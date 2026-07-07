@@ -1049,45 +1049,8 @@
         "reviewed_sha": "e28e45e2256ea73187107f230cc7beeb37a6c301"
       }
     ],
-    "proof-narrative-lean-equiv": [
-      {
-        "field_hash": {
-          "md": "3a9f36e5496a",
-          "ts": "ad778f177952",
-          "lean": "27e8663f2f5d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.804312Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.804312Z",
-        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:full-pole-structure-mass-trace' \u2192 expected 'full_pole_structure_mass_trace'; Lean declares: qPochhammer, qPochhammerPoly, HabiroCompletion, habiro_truncation_bound, habiro_truncation_bound_supercrit. Structural match via content."
-      }
-    ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
-        "reviewed_at": "2026-07-07T14:26:56.804312Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.804312Z"
-        },
-        "field_hash": {
-          "md": "3a9f36e5496a",
-          "ts": "ad778f177952",
-          "lean": "27e8663f2f5d"
-        }
-      }
-    ]
+    "proof-narrative-lean-equiv": [],
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.804312Z"
 }

@@ -29,66 +29,10 @@
         "reviewed_at": "2026-05-28T15:41:35.986Z",
         "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
         "notes": "Label 'def:groebner-basis' \u2192 expected 'groebner_basis'; Lean declares: IsGSBasis, IsGSBasis.isUnital. Structural match via content."
-      },
-      {
-        "field_hash": {
-          "md": "9a535b4e1acc",
-          "ts": "c57fe7f0bb4c",
-          "lean": "cb1317704060"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:54.952158Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:54.952158Z",
-        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'def:groebner-basis' \u2192 expected 'groebner_basis'; Lean declares: IsGSBasis, IsGSBasis.isUnital. Structural match via content."
       }
     ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "9a535b4e1acc",
-          "ts": "c57fe7f0bb4c",
-          "lean": "cb1317704060"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/drain-batch",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:54.952158Z",
-          "agent_skill": "local/prepare-merge-auto"
-        },
-        "reviewed_at": "2026-07-07T14:26:54.952158Z",
-        "reviewed_sha": "a60319f319d74654752b4454b7d03890ca907d1a",
-        "notes": "Auto-drained by agent"
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "9a535b4e1acc",
-          "ts": "c57fe7f0bb4c",
-          "lean": "cb1317704060"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/drain-batch",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:54.952158Z",
-          "agent_skill": "local/prepare-merge-auto"
-        },
-        "reviewed_at": "2026-07-07T14:26:54.952158Z",
-        "reviewed_sha": "a60319f319d74654752b4454b7d03890ca907d1a",
-        "notes": "Auto-drained by agent"
-      }
-    ],
+    "fit-section-chapter": [],
+    "wall-side-statement": [],
     "voice-status-leak": [
       {
         "field_hash": {

@@ -798,23 +798,6 @@
         "reviewed_at": "2026-06-22T02:56:53.976Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
-      },
-      {
-        "field_hash": {
-          "md": "7d0f08b85831",
-          "ts": "de94586a6dd0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.511832Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.511832Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-false-claim": [
@@ -834,23 +817,6 @@
         "notes": "No false claims identified in 'Proof of the Markov-trace GNS embedding': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/algebraic-gns-embedding-proof.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "7d0f08b85831",
-          "ts": "de94586a6dd0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.511832Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.511832Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-vacuous": [
@@ -869,23 +835,6 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Proof of the Markov-trace GNS embedding' presents substantial mathematical content: presentation by braid generators $\\sigma_1, \\ldots, \\sigma_{n-1}$ modulo the Hec...",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "7d0f08b85831",
-          "ts": "de94586a6dd0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.511832Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.511832Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-circular": [
@@ -905,23 +854,6 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Proof of the Markov-trace GNS embedding'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/algebraic-gns-embedding-proof.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "7d0f08b85831",
-          "ts": "de94586a6dd0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.511832Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.511832Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-overclaim": [
@@ -940,23 +872,6 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No overclaims: the scope of 'Proof of the Markov-trace GNS embedding' is appropriately qualified.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "7d0f08b85831",
-          "ts": "de94586a6dd0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.511832Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.511832Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-hidden-dof": [
@@ -976,23 +891,6 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Proof of the Markov-trace GNS embedding'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/algebraic-gns-embedding-proof.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "7d0f08b85831",
-          "ts": "de94586a6dd0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.511832Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.511832Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-non-sequitur": [
@@ -1012,23 +910,6 @@
         "notes": "The argument flow in 'Proof of the Markov-trace GNS embedding' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/algebraic-gns-embedding-proof.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "7d0f08b85831",
-          "ts": "de94586a6dd0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.511832Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.511832Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1047,23 +928,6 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "7d0f08b85831",
-          "ts": "de94586a6dd0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.511832Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.511832Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-citation-misuse": [
@@ -1083,23 +947,6 @@
         "notes": "No citations are present in 'Proof of the Markov-trace GNS embedding', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/algebraic-gns-embedding-proof.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "7d0f08b85831",
-          "ts": "de94586a6dd0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.511832Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.511832Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1119,23 +966,6 @@
         "notes": "Key terms and symbols in 'Proof of the Markov-trace GNS embedding' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/algebraic-gns-embedding-proof.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "7d0f08b85831",
-          "ts": "de94586a6dd0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.511832Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.511832Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-empirical-fragility": [
@@ -1155,25 +985,6 @@
         "notes": "The algebraic and logical relations in 'Proof of the Markov-trace GNS embedding' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/algebraic-gns-embedding-proof.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "7d0f08b85831",
-          "ts": "de94586a6dd0"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.511832Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.511832Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "severity": "critical",
-        "evidence": "2.003 > 2 (narrowly)",
-        "notes": "The GNS positivity hinges on q0 roughly 1.11 yielding a trace parameter barely above 2 (2.003 > 2). This is extremely fragile. A slight drift in q0 could break the entire Hilbert space positivity."
       }
     ],
     "da-physical-implausibility": [
@@ -1193,23 +1004,6 @@
         "notes": "The physical concepts described in 'Proof of the Markov-trace GNS embedding' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/algebraic-gns-embedding-proof.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "7d0f08b85831",
-          "ts": "de94586a6dd0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.511832Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.511832Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-reproducibility": [
@@ -1229,23 +1023,6 @@
         "notes": "The derivation steps and formal definitions in 'Proof of the Markov-trace GNS embedding' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/algebraic-gns-embedding-proof.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "7d0f08b85831",
-          "ts": "de94586a6dd0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.511832Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.511832Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-referee-verdict": [
@@ -1266,23 +1043,6 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Proof of the Markov-trace GNS embedding' are consistent.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "7d0f08b85831",
-          "ts": "de94586a6dd0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.511832Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.511832Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ]
   },

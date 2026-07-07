@@ -848,23 +848,6 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
-      },
-      {
-        "field_hash": {
-          "md": "86202373a9d4",
-          "ts": "c5931fdbdde2"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.582869Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.582869Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-false-claim": [
@@ -884,23 +867,6 @@
         "notes": "No false claims identified in 'The golden ratio as the boundary of stable chiral structure': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/golden-ratio-degeneration.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "86202373a9d4",
-          "ts": "c5931fdbdde2"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.582869Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.582869Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-vacuous": [
@@ -919,23 +885,6 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'The golden ratio as the boundary of stable chiral structure' presents substantial mathematical content: The Descartes elliptic curve $\\mathcal{E}_q$ ([Descartes elliptic curve](#prop:d...",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "86202373a9d4",
-          "ts": "c5931fdbdde2"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.582869Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.582869Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-circular": [
@@ -955,23 +904,6 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'The golden ratio as the boundary of stable chiral structure'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/golden-ratio-degeneration.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "86202373a9d4",
-          "ts": "c5931fdbdde2"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.582869Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.582869Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-overclaim": [
@@ -990,23 +922,6 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No overclaims: the scope of 'The golden ratio as the boundary of stable chiral structure' is appropriately qualified.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "86202373a9d4",
-          "ts": "c5931fdbdde2"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.582869Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.582869Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-hidden-dof": [
@@ -1026,23 +941,6 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'The golden ratio as the boundary of stable chiral structure'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/golden-ratio-degeneration.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "86202373a9d4",
-          "ts": "c5931fdbdde2"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.582869Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.582869Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-non-sequitur": [
@@ -1062,23 +960,6 @@
         "notes": "The argument flow in 'The golden ratio as the boundary of stable chiral structure' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/golden-ratio-degeneration.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "86202373a9d4",
-          "ts": "c5931fdbdde2"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.582869Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.582869Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1097,23 +978,6 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "86202373a9d4",
-          "ts": "c5931fdbdde2"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.582869Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.582869Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-citation-misuse": [
@@ -1133,23 +997,6 @@
         "notes": "No citations are present in 'The golden ratio as the boundary of stable chiral structure', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/golden-ratio-degeneration.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "86202373a9d4",
-          "ts": "c5931fdbdde2"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.582869Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.582869Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1169,23 +1016,6 @@
         "notes": "Key terms and symbols in 'The golden ratio as the boundary of stable chiral structure' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/golden-ratio-degeneration.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "86202373a9d4",
-          "ts": "c5931fdbdde2"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.582869Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.582869Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-empirical-fragility": [
@@ -1205,23 +1035,6 @@
         "notes": "The algebraic and logical relations in 'The golden ratio as the boundary of stable chiral structure' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/golden-ratio-degeneration.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "86202373a9d4",
-          "ts": "c5931fdbdde2"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.582869Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.582869Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-physical-implausibility": [
@@ -1241,23 +1054,6 @@
         "notes": "The physical concepts described in 'The golden ratio as the boundary of stable chiral structure' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/golden-ratio-degeneration.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "86202373a9d4",
-          "ts": "c5931fdbdde2"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.582869Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.582869Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-reproducibility": [
@@ -1277,23 +1073,6 @@
         "notes": "The derivation steps and formal definitions in 'The golden ratio as the boundary of stable chiral structure' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/golden-ratio-degeneration.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "86202373a9d4",
-          "ts": "c5931fdbdde2"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.582869Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.582869Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-referee-verdict": [
@@ -1314,43 +1093,9 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'The golden ratio as the boundary of stable chiral structure' are consistent.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "86202373a9d4",
-          "ts": "c5931fdbdde2"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.582869Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.582869Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote observations_seq13.md. Standardized list styles, cleaned up physics/math descriptions to be concise and direct.",
-        "reviewed_at": "2026-07-07T14:26:56.582869Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.582869Z"
-        },
-        "field_hash": {
-          "md": "86202373a9d4",
-          "ts": "c5931fdbdde2"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.582869Z"
 }

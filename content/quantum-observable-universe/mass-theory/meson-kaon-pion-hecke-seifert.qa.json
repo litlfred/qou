@@ -33,45 +33,8 @@
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
       }
     ],
-    "proof-narrative-lean-equiv": [
-      {
-        "field_hash": {
-          "md": "571a3283efce",
-          "ts": "c32346ca48d5",
-          "lean": "3e2de7d5f873"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.781409Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.781409Z",
-        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:meson-kaon-pion-hecke-seifert' \u2192 expected 'meson_kaon_pion_hecke_seifert'; Lean declares: seifertEuler, seifert_ratio_T25_T23, chi_21, chi_21_odd, mesonMassRatio.... Structural match via content."
-      }
-    ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote prose sections of mass-theory_seq46.md to enforce H1-H8 and milnor-brevity. Preserved all math blocks and original section markers. Ensured linear flow, minimal technical clutter, and short declarative sentences.",
-        "reviewed_at": "2026-07-07T14:26:56.781409Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.781409Z"
-        },
-        "field_hash": {
-          "md": "571a3283efce",
-          "ts": "c32346ca48d5",
-          "lean": "3e2de7d5f873"
-        }
-      }
-    ]
+    "proof-narrative-lean-equiv": [],
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.781409Z"
 }

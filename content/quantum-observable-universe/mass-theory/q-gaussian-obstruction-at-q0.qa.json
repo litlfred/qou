@@ -1283,23 +1283,6 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Statement contains only the bare claim without physical interpretation.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "ad7ffa50a40d",
-          "ts": "6ef1c6db70d5",
-          "lean": "ebf2e42db002"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.766756Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.766756Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "fit-section-chapter": [
@@ -1336,23 +1319,6 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Registered in sec:exceptional-divisor-reeb neighborhood; the q-Gaussian/braid-fluctuation obstruction at the substrate q_0 is a legitimate mass-theory substrate-statistics result."
-      },
-      {
-        "field_hash": {
-          "md": "ad7ffa50a40d",
-          "ts": "6ef1c6db70d5",
-          "lean": "ebf2e42db002"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.766756Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.766756Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "wall-side-statement": [
@@ -1388,23 +1354,6 @@
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
         "evidence": "content/quantum-observable-universe/mass-theory/q-gaussian-obstruction-at-q0.lean:1 \u2014 Lean file exists",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "ad7ffa50a40d",
-          "ts": "6ef1c6db70d5",
-          "lean": "ebf2e42db002"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.766756Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.766756Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "wall-side-proof": [
@@ -1440,23 +1389,6 @@
         "notes": "The Lean proof contains a sorry placeholder, indicating it is incomplete.",
         "evidence": "content/quantum-observable-universe/mass-theory/q-gaussian-obstruction-at-q0.lean:1 \u2014 sorry placeholder present",
         "severity": "major"
-      },
-      {
-        "field_hash": {
-          "md": "ad7ffa50a40d",
-          "ts": "6ef1c6db70d5",
-          "lean": "ebf2e42db002"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.766756Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.766756Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1524,24 +1456,6 @@
         },
         "reviewed_at": "2026-06-28T22:34:58.468Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
-      },
-      {
-        "field_hash": {
-          "md": "ad7ffa50a40d",
-          "ts": "6ef1c6db70d5",
-          "lean": "ebf2e42db002"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.766756Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.766756Z",
-        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:q-gaussian-obstruction-at-q0' \u2192 expected 'q_gaussian_obstruction_at_q0'; Lean declares: qGaussianObstructionAtQ0. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1560,23 +1474,6 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Proof strategy is outlined in markdown but Lean proof is incomplete.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "ad7ffa50a40d",
-          "ts": "6ef1c6db70d5",
-          "lean": "ebf2e42db002"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.766756Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.766756Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1641,23 +1538,6 @@
           "max": 1,
           "value": 0.82
         }
-      },
-      {
-        "field_hash": {
-          "md": "ad7ffa50a40d",
-          "ts": "6ef1c6db70d5",
-          "lean": "ebf2e42db002"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.766756Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.766756Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-rater-novelty": [
@@ -1680,23 +1560,6 @@
           "value": 0.8,
           "max": 1
         }
-      },
-      {
-        "field_hash": {
-          "md": "ad7ffa50a40d",
-          "ts": "6ef1c6db70d5",
-          "lean": "ebf2e42db002"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.766756Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.766756Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-statement-integrity": [
@@ -1753,23 +1616,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "ad7ffa50a40d",
-          "ts": "6ef1c6db70d5",
-          "lean": "ebf2e42db002"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.766756Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.766756Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1826,23 +1672,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "ad7ffa50a40d",
-          "ts": "6ef1c6db70d5",
-          "lean": "ebf2e42db002"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.766756Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.766756Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-no-trivial-true": [
@@ -1881,23 +1710,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "ad7ffa50a40d",
-          "ts": "6ef1c6db70d5",
-          "lean": "ebf2e42db002"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.766756Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.766756Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-no-false-premise": [
@@ -1954,23 +1766,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "ad7ffa50a40d",
-          "ts": "6ef1c6db70d5",
-          "lean": "ebf2e42db002"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.766756Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.766756Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1989,23 +1784,6 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No unused hypotheses are present in the Lean proof.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "ad7ffa50a40d",
-          "ts": "6ef1c6db70d5",
-          "lean": "ebf2e42db002"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.766756Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.766756Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-no-decide-masking": [
@@ -2044,23 +1822,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "ad7ffa50a40d",
-          "ts": "6ef1c6db70d5",
-          "lean": "ebf2e42db002"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.766756Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.766756Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-false-claim": [
@@ -2080,23 +1841,6 @@
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/q-gaussian-obstruction-at-q0.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "ad7ffa50a40d",
-          "ts": "6ef1c6db70d5",
-          "lean": "ebf2e42db002"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.766756Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.766756Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-vacuous": [
@@ -2115,23 +1859,6 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling contains 'sorry' placeholders, rendering the proof vacuous.",
         "severity": "major"
-      },
-      {
-        "field_hash": {
-          "md": "ad7ffa50a40d",
-          "ts": "6ef1c6db70d5",
-          "lean": "ebf2e42db002"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.766756Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.766756Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-circular": [
@@ -2151,23 +1878,6 @@
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/q-gaussian-obstruction-at-q0.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "ad7ffa50a40d",
-          "ts": "6ef1c6db70d5",
-          "lean": "ebf2e42db002"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.766756Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.766756Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-overclaim": [
@@ -2186,25 +1896,6 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "ad7ffa50a40d",
-          "ts": "6ef1c6db70d5",
-          "lean": "ebf2e42db002"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.766756Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.766756Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "severity": "major",
-        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules."
       }
     ],
     "da-hidden-dof": [
@@ -2224,25 +1915,6 @@
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/q-gaussian-obstruction-at-q0.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "ad7ffa50a40d",
-          "ts": "6ef1c6db70d5",
-          "lean": "ebf2e42db002"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.766756Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.766756Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "severity": "major",
-        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules."
       }
     ],
     "da-non-sequitur": [
@@ -2262,23 +1934,6 @@
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/q-gaussian-obstruction-at-q0.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "ad7ffa50a40d",
-          "ts": "6ef1c6db70d5",
-          "lean": "ebf2e42db002"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.766756Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.766756Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -2297,23 +1952,6 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean proof contains a sorry, representing a divergence from the fully claimed narrative.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "ad7ffa50a40d",
-          "ts": "6ef1c6db70d5",
-          "lean": "ebf2e42db002"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.766756Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.766756Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-citation-misuse": [
@@ -2333,23 +1971,6 @@
         "notes": "No issues found for da-citation-misuse.",
         "evidence": "content/quantum-observable-universe/mass-theory/q-gaussian-obstruction-at-q0.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "ad7ffa50a40d",
-          "ts": "6ef1c6db70d5",
-          "lean": "ebf2e42db002"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.766756Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.766756Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-definitional-ambiguity": [
@@ -2369,23 +1990,6 @@
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/q-gaussian-obstruction-at-q0.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "ad7ffa50a40d",
-          "ts": "6ef1c6db70d5",
-          "lean": "ebf2e42db002"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.766756Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.766756Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-empirical-fragility": [
@@ -2405,25 +2009,6 @@
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/q-gaussian-obstruction-at-q0.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "ad7ffa50a40d",
-          "ts": "6ef1c6db70d5",
-          "lean": "ebf2e42db002"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.766756Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.766756Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "severity": "major",
-        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules."
       }
     ],
     "da-physical-implausibility": [
@@ -2443,25 +2028,6 @@
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/q-gaussian-obstruction-at-q0.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "ad7ffa50a40d",
-          "ts": "6ef1c6db70d5",
-          "lean": "ebf2e42db002"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.766756Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.766756Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "severity": "major",
-        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules."
       }
     ],
     "da-reproducibility": [
@@ -2481,23 +2047,6 @@
         "notes": "No issues found for da-reproducibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/q-gaussian-obstruction-at-q0.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "ad7ffa50a40d",
-          "ts": "6ef1c6db70d5",
-          "lean": "ebf2e42db002"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.766756Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.766756Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-referee-verdict": [
@@ -2518,25 +2067,6 @@
         "severity": "major",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling contains 'sorry' placeholders, rendering the formalization and proof incomplete."
-      },
-      {
-        "field_hash": {
-          "md": "ad7ffa50a40d",
-          "ts": "6ef1c6db70d5",
-          "lean": "ebf2e42db002"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.766756Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.766756Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "severity": "major",
-        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules. Referee might reject due to suspected numerology."
       }
     ],
     "bib-cite-resolves": [
@@ -2559,25 +2089,7 @@
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
-        "reviewed_at": "2026-07-07T14:26:56.766756Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.766756Z"
-        },
-        "field_hash": {
-          "md": "ad7ffa50a40d",
-          "ts": "6ef1c6db70d5",
-          "lean": "ebf2e42db002"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.766756Z"
 }

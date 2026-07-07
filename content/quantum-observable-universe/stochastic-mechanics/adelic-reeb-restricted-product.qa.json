@@ -1047,25 +1047,7 @@
         "reviewed_sha": "516c0a8b09f6d2042487867c114c5d002cd32290"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Cleaned up the graded Baer-star and classical limit implications. Reduced clutter around the Riemann hypothesis statement and macroscopic stability.",
-        "reviewed_at": "2026-07-07T14:26:56.031368Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.031368Z"
-        },
-        "field_hash": {
-          "md": "1b3877f46491",
-          "ts": "aafb2a8d9d3c",
-          "lean": "1d8949545791"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.031368Z"
 }

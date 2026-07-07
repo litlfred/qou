@@ -33,25 +33,7 @@
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote multiple blocks related to jet prolongation and brane tower. Used strong, active verbs. Compressed the recursive SU(2) tower example. Consolidated standalone math equations that didn't need vertical spacing. Preserved all markdown file markers.",
-        "reviewed_at": "2026-07-07T14:26:55.692466Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.692466Z"
-        },
-        "field_hash": {
-          "md": "3d339be3848e",
-          "ts": "391f2bb08d9c",
-          "lean": "d7ac3ab8a062"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:55.692466Z"
 }

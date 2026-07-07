@@ -33,45 +33,8 @@
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
       }
     ],
-    "proof-narrative-lean-equiv": [
-      {
-        "field_hash": {
-          "md": "ba7af05eb5cf",
-          "ts": "b854d2bc9a1c",
-          "lean": "5e9507368e40"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.434881Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.434881Z",
-        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:moduli-symmetry-d4' aligns with Lean declaration. Sorry-free."
-      }
-    ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote prose blocks to adhere to Milnor standards. Improved economy, preserved all math.",
-        "reviewed_at": "2026-07-07T14:26:56.434881Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.434881Z"
-        },
-        "field_hash": {
-          "md": "ba7af05eb5cf",
-          "ts": "b854d2bc9a1c",
-          "lean": "5e9507368e40"
-        }
-      }
-    ]
+    "proof-narrative-lean-equiv": [],
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.434881Z"
 }

@@ -33,45 +33,8 @@
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
       }
     ],
-    "proof-narrative-lean-equiv": [
-      {
-        "field_hash": {
-          "md": "b48799712aea",
-          "ts": "e2c09a8f38c2",
-          "lean": "08ddab0ffdef"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.862836Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.862836Z",
-        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:t-beta-markov-frobenius-collapse' \u2192 expected 't_beta_markov_frobenius_collapse'; Lean declares: completing_the_square, t_beta_collapse, min_norm_value. Structural match via content."
-      }
-    ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote mass-theory_seq11.md to strictly follow H1-H8. Streamlined LP constraints and operator choices. Clarified the categorical reading vs empirical consequences. All formulas and code structures preserved.",
-        "reviewed_at": "2026-07-07T14:26:56.862836Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.862836Z"
-        },
-        "field_hash": {
-          "md": "b48799712aea",
-          "ts": "e2c09a8f38c2",
-          "lean": "08ddab0ffdef"
-        }
-      }
-    ]
+    "proof-narrative-lean-equiv": [],
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.862836Z"
 }

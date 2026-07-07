@@ -33,45 +33,8 @@
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
       }
     ],
-    "proof-narrative-lean-equiv": [
-      {
-        "field_hash": {
-          "md": "e812ddd406c0",
-          "ts": "ec72e10dbe11",
-          "lean": "41cfe5716397"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.886408Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.886408Z",
-        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:quantum-dilogarithm-stratified' \u2192 expected 'quantum_dilogarithm_stratified'; Lean declares: DepthGradedFrobeniusModule, truncatedPairing, phi_q_frobenius_truncation, partialProductPairing, partial_product_truncation. Structural match via content."
-      }
-    ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
-        "reviewed_at": "2026-07-07T14:26:56.886408Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.886408Z"
-        },
-        "field_hash": {
-          "md": "e812ddd406c0",
-          "ts": "ec72e10dbe11",
-          "lean": "41cfe5716397"
-        }
-      }
-    ]
+    "proof-narrative-lean-equiv": [],
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.886408Z"
 }

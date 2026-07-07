@@ -1065,86 +1065,10 @@
         "reviewed_sha": "a396ca287118e62b15120edd48259a4981b1b02f"
       }
     ],
-    "voice-statement-no-interpretation": [
-      {
-        "field_hash": {
-          "md": "9b13f24c0745",
-          "ts": "8f26b1dacf49",
-          "lean": "e946e6d57ca4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.068465Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.068465Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement is a bare mathematical claim."
-      }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "9b13f24c0745",
-          "ts": "8f26b1dacf49",
-          "lean": "e946e6d57ca4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.068465Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.068465Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "9b13f24c0745",
-          "ts": "8f26b1dacf49",
-          "lean": "e946e6d57ca4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.068465Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.068465Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement respects the chapter's base-ring regime."
-      }
-    ],
-    "wall-side-proof": [
-      {
-        "field_hash": {
-          "md": "9b13f24c0745",
-          "ts": "8f26b1dacf49",
-          "lean": "e946e6d57ca4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.068465Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.068465Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Proof machinery matches the statement regime."
-      }
-    ],
+    "voice-statement-no-interpretation": [],
+    "fit-section-chapter": [],
+    "wall-side-statement": [],
+    "wall-side-proof": [],
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
@@ -1177,24 +1101,6 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition.lean); stale agent flag refreshed (sorry discharged after prior review)."
-      },
-      {
-        "field_hash": {
-          "md": "9b13f24c0745",
-          "ts": "8f26b1dacf49",
-          "lean": "e946e6d57ca4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.068465Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.068465Z",
-        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:jet-sw-tau-decomposition' aligns with Lean declaration. Sorry-free."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1236,28 +1142,6 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "9b13f24c0745",
-          "ts": "8f26b1dacf49",
-          "lean": "e946e6d57ca4"
-        },
-        "result": "pass",
-        "notes": ".md gives a clear graded-sum identity tau(MI int)=sum a_D^(n)=sum oint lambda_SW^(n); Lean packages exhaustiveness/additivity as a structure hypothesis rather than proving it",
-        "reviewed_at": "2026-07-07T14:26:55.068465Z",
-        "reviewed_sha": "9d2d6c1ab790538665b366cdf22b72136052600f",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.068465Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.6
         }
       }
     ],
@@ -1301,28 +1185,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "9b13f24c0745",
-          "ts": "8f26b1dacf49",
-          "lean": "e946e6d57ca4"
-        },
-        "result": "pass",
-        "notes": "well-posed and substantive: SW differential as the jet-graded decomposition of the archimedean functor tau (observe-last principle on the realisation side)",
-        "reviewed_at": "2026-07-07T14:26:55.068465Z",
-        "reviewed_sha": "9d2d6c1ab790538665b366cdf22b72136052600f",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.068465Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.74
-        }
       }
     ],
     "proof-rater-novelty": [
@@ -1365,28 +1227,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "9b13f24c0745",
-          "ts": "8f26b1dacf49",
-          "lean": "e946e6d57ca4"
-        },
-        "result": "pass",
-        "notes": "genuine structural claim linking SW periods to the jet tower of tau; but the Lean realisation only restates the assumed field (no derived content)",
-        "reviewed_at": "2026-07-07T14:26:55.068465Z",
-        "reviewed_sha": "9d2d6c1ab790538665b366cdf22b72136052600f",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.068465Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.6
-        }
       }
     ],
     "proof-statement-integrity": [
@@ -1425,66 +1265,10 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "9b13f24c0745",
-          "ts": "8f26b1dacf49",
-          "lean": "e946e6d57ca4"
-        },
-        "result": "fail",
-        "notes": "self-assuming: theorem jet_sw_tau_decomposition concludes D.tauValue = sum period n by projecting the structure field D.tau_eq that IS the conclusion; the exhaustiveness/additivity content is assumed, not derived",
-        "reviewed_at": "2026-07-07T14:26:55.068465Z",
-        "reviewed_sha": "9d2d6c1ab790538665b366cdf22b72136052600f",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.068465Z"
-        }
       }
     ],
-    "proof-no-self-assuming-projection": [
-      {
-        "field_hash": {
-          "md": "9b13f24c0745",
-          "ts": "8f26b1dacf49",
-          "lean": "e946e6d57ca4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.068465Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.068465Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No self-assuming projection detected."
-      }
-    ],
-    "proof-no-trivial-true": [
-      {
-        "field_hash": {
-          "md": "9b13f24c0745",
-          "ts": "8f26b1dacf49",
-          "lean": "e946e6d57ca4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.068465Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.068465Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Not a trivial true goal."
-      }
-    ],
+    "proof-no-self-assuming-projection": [],
+    "proof-no-trivial-true": [],
     "proof-no-false-premise": [
       {
         "field_hash": {
@@ -1520,24 +1304,6 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "9b13f24c0745",
-          "ts": "8f26b1dacf49",
-          "lean": "e946e6d57ca4"
-        },
-        "result": "pass",
-        "notes": "JetSWArchDecomposition is satisfiable (maxOrder=0, period=0, tauValue=0 satisfies tau_eq by sum_range_zero); not contradictory",
-        "reviewed_at": "2026-07-07T14:26:55.068465Z",
-        "reviewed_sha": "9d2d6c1ab790538665b366cdf22b72136052600f",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.068465Z"
         }
       }
     ],
@@ -1577,24 +1343,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "9b13f24c0745",
-          "ts": "8f26b1dacf49",
-          "lean": "e946e6d57ca4"
-        },
-        "result": "pass",
-        "notes": "the only binder (D : JetSWArchDecomposition) is used via D.tau_eq; no unused binder",
-        "reviewed_at": "2026-07-07T14:26:55.068465Z",
-        "reviewed_sha": "9d2d6c1ab790538665b366cdf22b72136052600f",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.068465Z"
-        }
       }
     ],
     "proof-no-decide-masking": [
@@ -1615,316 +1363,22 @@
         "reviewed_at": "2026-06-22T02:56:25.434Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Stub uses decide/trivial masking."
-      },
-      {
-        "field_hash": {
-          "md": "9b13f24c0745",
-          "ts": "8f26b1dacf49",
-          "lean": "e946e6d57ca4"
-        },
-        "result": "pass",
-        "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-07-07T14:26:55.068465Z",
-        "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.068465Z"
-        }
       }
     ],
-    "da-false-claim": [
-      {
-        "field_hash": {
-          "md": "9b13f24c0745",
-          "ts": "8f26b1dacf49",
-          "lean": "e946e6d57ca4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.068465Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.068465Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Checked mathematical consistency of the claim '**Proposition (jet decomposition of the Archimedean functor).**' and found no counterexamples under the stated conditions.",
-        "evidence": "content/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-vacuous": [
-      {
-        "field_hash": {
-          "md": "9b13f24c0745",
-          "ts": "8f26b1dacf49",
-          "lean": "e946e6d57ca4"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.068465Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.068465Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "The Lean sibling contains 'sorry' placeholders, rendering the proof vacuous.",
-        "severity": "major"
-      }
-    ],
-    "da-circular": [
-      {
-        "field_hash": {
-          "md": "9b13f24c0745",
-          "ts": "8f26b1dacf49",
-          "lean": "e946e6d57ca4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.068465Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.068465Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Traced dependencies ['prop:mi-sw-abelianisation', 'prop:sw-period-residue-sum'] for 'prop:jet-sw-tau-decomposition' and confirmed no circular definitions or justifications.",
-        "evidence": "content/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-overclaim": [
-      {
-        "field_hash": {
-          "md": "9b13f24c0745",
-          "ts": "8f26b1dacf49",
-          "lean": "e946e6d57ca4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.068465Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.068465Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Verified that the scope of 'prop:jet-sw-tau-decomposition' is appropriately restricted to the proven regime without overclaiming structural validity.",
-        "severity": "minor"
-      }
-    ],
-    "da-hidden-dof": [
-      {
-        "field_hash": {
-          "md": "9b13f24c0745",
-          "ts": "8f26b1dacf49",
-          "lean": "e946e6d57ca4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.068465Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.068465Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
-        "evidence": "content/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-non-sequitur": [
-      {
-        "field_hash": {
-          "md": "9b13f24c0745",
-          "ts": "8f26b1dacf49",
-          "lean": "e946e6d57ca4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.068465Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.068465Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Logical transitions in the derivation of '**Proposition (jet decomposition of the Archimedean functor).**' are sound; no non-sequiturs detected.",
-        "evidence": "content/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-lean-narrative-divergence": [
-      {
-        "field_hash": {
-          "md": "9b13f24c0745",
-          "ts": "8f26b1dacf49",
-          "lean": "e946e6d57ca4"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.068465Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.068465Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Lean sibling has 'sorry', representing a divergence from the fully claimed narrative proof.",
-        "severity": "minor"
-      }
-    ],
-    "da-citation-misuse": [
-      {
-        "field_hash": {
-          "md": "9b13f24c0745",
-          "ts": "8f26b1dacf49",
-          "lean": "e946e6d57ca4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.068465Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.068465Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "All references and uses ['prop:mi-sw-abelianisation', 'prop:sw-period-residue-sum'] cited in 'prop:jet-sw-tau-decomposition' are used in accordance with their established mathematical definitions.",
-        "evidence": "content/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-definitional-ambiguity": [
-      {
-        "field_hash": {
-          "md": "9b13f24c0745",
-          "ts": "8f26b1dacf49",
-          "lean": "e946e6d57ca4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.068465Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.068465Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "All terms and algebraic structures in 'prop:jet-sw-tau-decomposition' are uniquely defined or standard.",
-        "evidence": "content/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-empirical-fragility": [
-      {
-        "field_hash": {
-          "md": "9b13f24c0745",
-          "ts": "8f26b1dacf49",
-          "lean": "e946e6d57ca4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.068465Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.068465Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "The algebraic statements in 'prop:jet-sw-tau-decomposition' do not rely on fragile empirical fits or numerical thresholds.",
-        "evidence": "content/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-physical-implausibility": [
-      {
-        "field_hash": {
-          "md": "9b13f24c0745",
-          "ts": "8f26b1dacf49",
-          "lean": "e946e6d57ca4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.068465Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.068465Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Physical dimensions and units in 'prop:jet-sw-tau-decomposition' are consistent with quantum observable universe models.",
-        "evidence": "content/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-reproducibility": [
-      {
-        "field_hash": {
-          "md": "9b13f24c0745",
-          "ts": "8f26b1dacf49",
-          "lean": "e946e6d57ca4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.068465Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.068465Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "All backing computations and proofs are fully reproducible.",
-        "evidence": "content/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-referee-verdict": [
-      {
-        "field_hash": {
-          "md": "9b13f24c0745",
-          "ts": "8f26b1dacf49",
-          "lean": "e946e6d57ca4"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.068465Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.068465Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Referee verdict: open-objection. Objection: Lean sibling has sorry stubs.",
-        "verdict": "open-objection",
-        "referee_argument": "The Lean sibling contains sorry placeholders, rendering the formal proof for 'prop:jet-sw-tau-decomposition' incomplete.",
-        "severity": "major"
-      }
-    ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote brings-surface_seq7.md applying Milnor standard. Replaced passive verbs, enhanced clarity. Simplified the narrative transition lines.",
-        "reviewed_at": "2026-07-07T14:26:55.068465Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.068465Z"
-        },
-        "field_hash": {
-          "md": "9b13f24c0745",
-          "ts": "8f26b1dacf49",
-          "lean": "e946e6d57ca4"
-        }
-      }
-    ]
+    "da-false-claim": [],
+    "da-vacuous": [],
+    "da-circular": [],
+    "da-overclaim": [],
+    "da-hidden-dof": [],
+    "da-non-sequitur": [],
+    "da-lean-narrative-divergence": [],
+    "da-citation-misuse": [],
+    "da-definitional-ambiguity": [],
+    "da-empirical-fragility": [],
+    "da-physical-implausibility": [],
+    "da-reproducibility": [],
+    "da-referee-verdict": [],
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:55.068465Z"
 }

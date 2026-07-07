@@ -1967,101 +1967,11 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "proof-no-placeholder-stub": [
-      {
-        "field_hash": {
-          "md": "23b331e0a356",
-          "ts": "69bd58c8cdd0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/lean-proof-vacuity-audit",
-          "agent_date": "2026-07-07T14:26:57.459707Z",
-          "agent_skill": "local/lean-proof-vacuity-audit",
-          "agent_model": "gemini-3.1-pro"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.459707Z",
-        "reviewed_sha": "a9ce9ecfe24e6c7c9d0b9f25699b35ec666faa32",
-        "notes": "4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): current Lean is honest \u2014 real statement/derivation or cited sorry; the 2026-06-22 placeholder-marker fail predates the 2026-06-30 rewrite (hash drift verified). Criterion pass."
-      }
-    ],
-    "voice-statement-no-interpretation": [
-      {
-        "field_hash": {
-          "md": "23b331e0a356",
-          "ts": "69bd58c8cdd0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.459707Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.459707Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement is a bare mathematical claim."
-      }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "23b331e0a356",
-          "ts": "69bd58c8cdd0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.459707Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.459707Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "23b331e0a356",
-          "ts": "69bd58c8cdd0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.459707Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.459707Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement respects the chapter's base-ring regime."
-      }
-    ],
-    "wall-side-proof": [
-      {
-        "field_hash": {
-          "md": "23b331e0a356",
-          "ts": "69bd58c8cdd0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.459707Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.459707Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Proof machinery matches the statement regime."
-      }
-    ],
+    "proof-no-placeholder-stub": [],
+    "voice-statement-no-interpretation": [],
+    "fit-section-chapter": [],
+    "wall-side-statement": [],
+    "wall-side-proof": [],
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
@@ -2133,27 +2043,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "23b331e0a356",
-          "ts": "69bd58c8cdd0"
-        },
-        "result": "warn",
-        "notes": "md has a clear 4-part (i)-(iv) proof but Lean is pure field projection; the actual factorization derivation is absent from Lean.",
-        "reviewed_at": "2026-07-07T14:26:57.459707Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.459707Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.45
-        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -2193,27 +2082,6 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "23b331e0a356",
-          "ts": "69bd58c8cdd0"
-        },
-        "result": "pass",
-        "notes": "Well-posed: Wedderburn 3-channel factorization of nuclear Markov trace with ordering-independent scalar channels + 2\u00d72 standard transfer matrices; concrete \u2075\u2076Fe speedup analysis.",
-        "reviewed_at": "2026-07-07T14:26:57.459707Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.459707Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.8
         }
       }
     ],
@@ -2255,27 +2123,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "23b331e0a356",
-          "ts": "69bd58c8cdd0"
-        },
-        "result": "pass",
-        "notes": "Hadronic Hecke alphabet + jet-descended nucleon-block precomputation is a substantive computational construction, not a restatement.",
-        "reviewed_at": "2026-07-07T14:26:57.459707Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.459707Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.72
-        }
       }
     ],
     "proof-statement-integrity": [
@@ -2311,23 +2158,6 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "23b331e0a356",
-          "ts": "69bd58c8cdd0"
-        },
-        "result": "pass",
-        "notes": "Conjunction faithfully encodes md master factorization trM=W_sym\u00b7S+W_std(z\u00b7a+b)+W_alt\u00b7A plus cost(4,36) and eval-counts(1,1) over \u211d; no :True/sorry/native_decide.",
-        "reviewed_at": "2026-07-07T14:26:57.459707Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.459707Z"
         }
       }
     ],
@@ -2365,23 +2195,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "23b331e0a356",
-          "ts": "69bd58c8cdd0"
-        },
-        "result": "fail",
-        "notes": "thm := \u27e8ctx.h_master,\u27e8ctx.h_cost_std,ctx.h_cost_naive\u27e9,\u2026\u27e9; h_master IS the headline factorization conclusion, projected from a class field. Wedderburn/transfer-matrix derivation only in md.",
-        "reviewed_at": "2026-07-07T14:26:57.459707Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.459707Z"
-        }
       }
     ],
     "proof-no-trivial-true": [
@@ -2401,23 +2214,6 @@
         "reviewed_at": "2026-06-22T02:57:24.657Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Goal or proof is trivial/vacuous."
-      },
-      {
-        "field_hash": {
-          "md": "23b331e0a356",
-          "ts": "69bd58c8cdd0"
-        },
-        "result": "pass",
-        "notes": "Re-audit 2026-06-25: no `: True` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/Interactions.lean, content/quantum-observable-universe/lean/QOU/Interactions/nucleon_ordering_factorization.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-07-07T14:26:57.459707Z",
-        "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.459707Z"
-        }
       }
     ],
     "proof-no-false-premise": [
@@ -2453,23 +2249,6 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "23b331e0a356",
-          "ts": "69bd58c8cdd0"
-        },
-        "result": "pass",
-        "notes": "Class equations (master identity, cost=4/36, evals=1) jointly satisfiable; no contradiction.",
-        "reviewed_at": "2026-07-07T14:26:57.459707Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.459707Z"
         }
       }
     ],
@@ -2507,23 +2286,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "23b331e0a356",
-          "ts": "69bd58c8cdd0"
-        },
-        "result": "pass",
-        "notes": "Sole binder [ctx] used (5 field projections consumed); A_eq and other fields are class data, not theorem hypothesis binders.",
-        "reviewed_at": "2026-07-07T14:26:57.459707Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.459707Z"
-        }
       }
     ],
     "proof-no-decide-masking": [
@@ -2543,314 +2305,22 @@
         "reviewed_at": "2026-06-22T02:57:25.257Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Stub uses decide/trivial masking."
-      },
-      {
-        "field_hash": {
-          "md": "23b331e0a356",
-          "ts": "69bd58c8cdd0"
-        },
-        "result": "pass",
-        "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/Interactions.lean, content/quantum-observable-universe/lean/QOU/Interactions/nucleon_ordering_factorization.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-07-07T14:26:57.459707Z",
-        "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.459707Z"
-        }
       }
     ],
-    "da-false-claim": [
-      {
-        "field_hash": {
-          "md": "23b331e0a356",
-          "ts": "69bd58c8cdd0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.459707Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.459707Z",
-        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "No false claims identified in 'Nucleon-level ordering factorization via jet-descended confinement': mathematical reasoning is consistent.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/nucleon-ordering-factorization.ts:1"
-      }
-    ],
-    "da-vacuous": [
-      {
-        "field_hash": {
-          "md": "23b331e0a356",
-          "ts": "69bd58c8cdd0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.459707Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.459707Z",
-        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The block 'Nucleon-level ordering factorization via jet-descended confinement' presents substantial mathematical content: The Wedderburn--Artin decomposition of $H_3(q)$ into irreducible representations, combined with jet-descended confine...",
-        "severity": "minor"
-      }
-    ],
-    "da-circular": [
-      {
-        "field_hash": {
-          "md": "23b331e0a356",
-          "ts": "69bd58c8cdd0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.459707Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.459707Z",
-        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "No circular reasoning or self-assuming definitions detected in 'Nucleon-level ordering factorization via jet-descended confinement'.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/nucleon-ordering-factorization.ts:1"
-      }
-    ],
-    "da-overclaim": [
-      {
-        "field_hash": {
-          "md": "23b331e0a356",
-          "ts": "69bd58c8cdd0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.459707Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.459707Z",
-        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "No overclaims: the scope of 'Nucleon-level ordering factorization via jet-descended confinement' is appropriately qualified.",
-        "severity": "minor"
-      }
-    ],
-    "da-hidden-dof": [
-      {
-        "field_hash": {
-          "md": "23b331e0a356",
-          "ts": "69bd58c8cdd0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.459707Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.459707Z",
-        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Nucleon-level ordering factorization via jet-descended confinement'.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/nucleon-ordering-factorization.ts:1"
-      }
-    ],
-    "da-non-sequitur": [
-      {
-        "field_hash": {
-          "md": "23b331e0a356",
-          "ts": "69bd58c8cdd0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.459707Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.459707Z",
-        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The argument flow in 'Nucleon-level ordering factorization via jet-descended confinement' is logically sound, mapping onto the cited dependencies.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/nucleon-ordering-factorization.ts:1"
-      }
-    ],
-    "da-lean-narrative-divergence": [
-      {
-        "field_hash": {
-          "md": "23b331e0a356",
-          "ts": "69bd58c8cdd0"
-        },
-        "result": "fail",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.459707Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.459707Z",
-        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The referenced Lean file content/quantum-observable-universe/particle-interactions/nucleon-ordering-factorization.lean is missing, leading to complete divergence.",
-        "severity": "minor"
-      }
-    ],
-    "da-citation-misuse": [
-      {
-        "field_hash": {
-          "md": "23b331e0a356",
-          "ts": "69bd58c8cdd0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.459707Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.459707Z",
-        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "No citations are present in 'Nucleon-level ordering factorization via jet-descended confinement', hence no citation misuse is possible.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/nucleon-ordering-factorization.ts:1"
-      }
-    ],
-    "da-definitional-ambiguity": [
-      {
-        "field_hash": {
-          "md": "23b331e0a356",
-          "ts": "69bd58c8cdd0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.459707Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.459707Z",
-        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Key terms and symbols in 'Nucleon-level ordering factorization via jet-descended confinement' are mathematically defined and unambiguous.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/nucleon-ordering-factorization.ts:1"
-      }
-    ],
-    "da-empirical-fragility": [
-      {
-        "field_hash": {
-          "md": "23b331e0a356",
-          "ts": "69bd58c8cdd0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.459707Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.459707Z",
-        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The algebraic and logical relations in 'Nucleon-level ordering factorization via jet-descended confinement' are independent of empirical tuning parameters.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/nucleon-ordering-factorization.ts:1"
-      }
-    ],
-    "da-physical-implausibility": [
-      {
-        "field_hash": {
-          "md": "23b331e0a356",
-          "ts": "69bd58c8cdd0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.459707Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.459707Z",
-        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The physical concepts described in 'Nucleon-level ordering factorization via jet-descended confinement' are consistent with quantum observable mechanics.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/nucleon-ordering-factorization.ts:1"
-      }
-    ],
-    "da-reproducibility": [
-      {
-        "field_hash": {
-          "md": "23b331e0a356",
-          "ts": "69bd58c8cdd0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.459707Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.459707Z",
-        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The derivation steps and formal definitions in 'Nucleon-level ordering factorization via jet-descended confinement' are reproducible.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/nucleon-ordering-factorization.ts:1"
-      }
-    ],
-    "da-referee-verdict": [
-      {
-        "field_hash": {
-          "md": "23b331e0a356",
-          "ts": "69bd58c8cdd0"
-        },
-        "result": "fail",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.459707Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.459707Z",
-        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/particle-interactions/nucleon-ordering-factorization.lean is missing.",
-        "severity": "critical",
-        "verdict": "open-objection",
-        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/particle-interactions/nucleon-ordering-factorization.lean is missing entirely, preventing formal verification of the claims in 'Nucleon-level ordering factorization via jet-descended confinement'."
-      }
-    ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Applied Milnor exposition standard (H1-H8) and brevity rules. Shortened sentences, removed editorializing ('surprisingly', 'remarkably'), replaced 'this book' with 'this paper', and maintained Math, markdown, and cross-block consistency.",
-        "reviewed_at": "2026-07-07T14:26:57.459707Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.459707Z"
-        },
-        "field_hash": {
-          "md": "23b331e0a356",
-          "ts": "69bd58c8cdd0"
-        }
-      }
-    ]
+    "da-false-claim": [],
+    "da-vacuous": [],
+    "da-circular": [],
+    "da-overclaim": [],
+    "da-hidden-dof": [],
+    "da-non-sequitur": [],
+    "da-lean-narrative-divergence": [],
+    "da-citation-misuse": [],
+    "da-definitional-ambiguity": [],
+    "da-empirical-fragility": [],
+    "da-physical-implausibility": [],
+    "da-reproducibility": [],
+    "da-referee-verdict": [],
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:57.459707Z"
 }

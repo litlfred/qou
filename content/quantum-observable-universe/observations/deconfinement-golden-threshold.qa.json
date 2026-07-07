@@ -1059,23 +1059,6 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
-      },
-      {
-        "field_hash": {
-          "md": "04c64bf71944",
-          "ts": "b92b9d7232b5"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.683478Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.683478Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-false-claim": [
@@ -1095,23 +1078,6 @@
         "notes": "No false claims identified in 'Quark-gluon plasma deconfinement as the golden ratio phase transition': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/deconfinement-golden-threshold.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "04c64bf71944",
-          "ts": "b92b9d7232b5"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.683478Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.683478Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-vacuous": [
@@ -1130,23 +1096,6 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Quark-gluon plasma deconfinement as the golden ratio phase transition' presents substantial mathematical content: The quark-gluon plasma (QGP) deconfinement transition \u2014 where hadrons dissolve i...",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "04c64bf71944",
-          "ts": "b92b9d7232b5"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.683478Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.683478Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-circular": [
@@ -1166,23 +1115,6 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Quark-gluon plasma deconfinement as the golden ratio phase transition'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/deconfinement-golden-threshold.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "04c64bf71944",
-          "ts": "b92b9d7232b5"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.683478Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.683478Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-overclaim": [
@@ -1201,23 +1133,6 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No overclaims: the scope of 'Quark-gluon plasma deconfinement as the golden ratio phase transition' is appropriately qualified.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "04c64bf71944",
-          "ts": "b92b9d7232b5"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.683478Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.683478Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-hidden-dof": [
@@ -1237,25 +1152,6 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Quark-gluon plasma deconfinement as the golden ratio phase transition'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/deconfinement-golden-threshold.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "04c64bf71944",
-          "ts": "b92b9d7232b5"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.683478Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.683478Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "severity": "major",
-        "evidence": "k_B T_c / \\Lambda_{QCD} ~ (q - q_{gold}) / q",
-        "notes": "The link between the mathematical golden ratio threshold of the elliptic curve and the physical QGP deconfinement temperature seems numerological. The formula k_B T_c / \\Lambda_QCD ~ (q_0 - 0.382)/q_0 lacks a proper thermodynamic derivation and appears to be a constructed coincidence."
       }
     ],
     "da-non-sequitur": [
@@ -1275,23 +1171,6 @@
         "notes": "The argument flow in 'Quark-gluon plasma deconfinement as the golden ratio phase transition' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/deconfinement-golden-threshold.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "04c64bf71944",
-          "ts": "b92b9d7232b5"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.683478Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.683478Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1310,23 +1189,6 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "04c64bf71944",
-          "ts": "b92b9d7232b5"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.683478Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.683478Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-citation-misuse": [
@@ -1346,23 +1208,6 @@
         "notes": "No citations are present in 'Quark-gluon plasma deconfinement as the golden ratio phase transition', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/deconfinement-golden-threshold.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "04c64bf71944",
-          "ts": "b92b9d7232b5"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.683478Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.683478Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1382,23 +1227,6 @@
         "notes": "Key terms and symbols in 'Quark-gluon plasma deconfinement as the golden ratio phase transition' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/deconfinement-golden-threshold.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "04c64bf71944",
-          "ts": "b92b9d7232b5"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.683478Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.683478Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-empirical-fragility": [
@@ -1418,25 +1246,6 @@
         "notes": "The algebraic and logical relations in 'Quark-gluon plasma deconfinement as the golden ratio phase transition' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/deconfinement-golden-threshold.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "04c64bf71944",
-          "ts": "b92b9d7232b5"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.683478Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.683478Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "severity": "major",
-        "evidence": "k_B T_c / \\Lambda_{QCD} ~ (q - q_{gold}) / q",
-        "notes": "The link between the mathematical golden ratio threshold of the elliptic curve and the physical QGP deconfinement temperature seems numerological. The formula k_B T_c / \\Lambda_QCD ~ (q_0 - 0.382)/q_0 lacks a proper thermodynamic derivation and appears to be a constructed coincidence."
       }
     ],
     "da-physical-implausibility": [
@@ -1456,25 +1265,6 @@
         "notes": "The physical concepts described in 'Quark-gluon plasma deconfinement as the golden ratio phase transition' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/deconfinement-golden-threshold.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "04c64bf71944",
-          "ts": "b92b9d7232b5"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.683478Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.683478Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "severity": "major",
-        "evidence": "k_B T_c / \\Lambda_{QCD} ~ (q - q_{gold}) / q",
-        "notes": "The link between the mathematical golden ratio threshold of the elliptic curve and the physical QGP deconfinement temperature seems numerological. The formula k_B T_c / \\Lambda_QCD ~ (q_0 - 0.382)/q_0 lacks a proper thermodynamic derivation and appears to be a constructed coincidence."
       }
     ],
     "da-reproducibility": [
@@ -1494,23 +1284,6 @@
         "notes": "The derivation steps and formal definitions in 'Quark-gluon plasma deconfinement as the golden ratio phase transition' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/deconfinement-golden-threshold.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "04c64bf71944",
-          "ts": "b92b9d7232b5"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.683478Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.683478Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-referee-verdict": [
@@ -1531,43 +1304,9 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Quark-gluon plasma deconfinement as the golden ratio phase transition' are consistent.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "04c64bf71944",
-          "ts": "b92b9d7232b5"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.683478Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.683478Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote observations_seq14.md. Removed narrative framing in favor of tight declarative sentences. Converted lists and propositions to strict formatting.",
-        "reviewed_at": "2026-07-07T14:26:56.683478Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.683478Z"
-        },
-        "field_hash": {
-          "md": "04c64bf71944",
-          "ts": "b92b9d7232b5"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.683478Z"
 }

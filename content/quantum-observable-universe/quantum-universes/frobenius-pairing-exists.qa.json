@@ -1028,86 +1028,10 @@
         "notes": "stale: cached lean_sha 27cd19ee43f6 != current 60b2b55d3797; re-run content/pipeline/lean-compile-audit.ts to refresh"
       }
     ],
-    "voice-statement-no-interpretation": [
-      {
-        "field_hash": {
-          "md": "773963326239",
-          "ts": "0ebb385897de",
-          "lean": "60b2b55d3797"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.100054Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.100054Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement is a bare mathematical claim."
-      }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "773963326239",
-          "ts": "0ebb385897de",
-          "lean": "60b2b55d3797"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.100054Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.100054Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "773963326239",
-          "ts": "0ebb385897de",
-          "lean": "60b2b55d3797"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.100054Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.100054Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement respects the chapter's base-ring regime."
-      }
-    ],
-    "wall-side-proof": [
-      {
-        "field_hash": {
-          "md": "773963326239",
-          "ts": "0ebb385897de",
-          "lean": "60b2b55d3797"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.100054Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.100054Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Proof machinery matches the statement regime."
-      }
-    ],
+    "voice-statement-no-interpretation": [],
+    "fit-section-chapter": [],
+    "wall-side-statement": [],
+    "wall-side-proof": [],
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
@@ -1140,25 +1064,6 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.lean); stale agent flag refreshed (sorry discharged after prior review)."
-      },
-      {
-        "field_hash": {
-          "md": "773963326239",
-          "ts": "0ebb385897de",
-          "lean": "60b2b55d3797"
-        },
-        "result": "warn",
-        "evidence": "Block kind is 'proposition' but Lean has only def/noncomputable def, no theorem/lemma. Decls: NonDegenerateFrobeniusPairing, FrobeniusHopfData.nonDegeneratePairing, FrobeniusHopfData.frobeniusForm_exists",
-        "reviewer": {
-          "kind": "agent",
-          "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.100054Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.100054Z",
-        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Kind-declaration mismatch: .ts says provable but .lean has only definitions."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1200,28 +1105,6 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "773963326239",
-          "ts": "0ebb385897de",
-          "lean": "60b2b55d3797"
-        },
-        "result": "warn",
-        "notes": "Existence is honest (project qu.frobHopf field), and docstring explains the hypothesis reframe; but the non-degeneracy/adjoint-iso part of the .md is simply not formalised.",
-        "reviewed_at": "2026-07-07T14:26:57.100054Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.100054Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.45
         }
       }
     ],
@@ -1265,28 +1148,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "773963326239",
-          "ts": "0ebb385897de",
-          "lean": "60b2b55d3797"
-        },
-        "result": "pass",
-        "notes": "Goal substantive: existence + non-degeneracy of the Frobenius pairing on a quantum universe (Kock Ch.2).",
-        "reviewed_at": "2026-07-07T14:26:57.100054Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.100054Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.8
-        }
       }
     ],
     "proof-rater-novelty": [
@@ -1329,28 +1190,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "773963326239",
-          "ts": "0ebb385897de",
-          "lean": "60b2b55d3797"
-        },
-        "result": "warn",
-        "notes": "Lean adds only \u27e8qu.frobHopf\u27e9 projection; the canonical pairing \u03bb\u2218\u03bc and adjoint-iso live elsewhere / are unstated here.",
-        "reviewed_at": "2026-07-07T14:26:57.100054Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.100054Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.3
-        }
       }
     ],
     "proof-statement-integrity": [
@@ -1389,66 +1228,10 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "773963326239",
-          "ts": "0ebb385897de",
-          "lean": "60b2b55d3797"
-        },
-        "result": "fail",
-        "notes": ".md claims pairing exists AS A MORPHISM + adjoint A\u2192A\u2228 is iso (non-degeneracy). Lean only proves Nonempty(FrobeniusHopfData) := \u27e8qu.frobHopf\u27e9 \u2014 projects an existing field, drops the pairing+adjoint-iso content. Weaker/different claim.",
-        "reviewed_at": "2026-07-07T14:26:57.100054Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.100054Z"
-        }
       }
     ],
-    "proof-no-self-assuming-projection": [
-      {
-        "field_hash": {
-          "md": "773963326239",
-          "ts": "0ebb385897de",
-          "lean": "60b2b55d3797"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.100054Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.100054Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No self-assuming projection detected."
-      }
-    ],
-    "proof-no-trivial-true": [
-      {
-        "field_hash": {
-          "md": "773963326239",
-          "ts": "0ebb385897de",
-          "lean": "60b2b55d3797"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.100054Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.100054Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Not a trivial true goal."
-      }
-    ],
+    "proof-no-self-assuming-projection": [],
+    "proof-no-trivial-true": [],
     "proof-no-false-premise": [
       {
         "field_hash": {
@@ -1484,24 +1267,6 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "773963326239",
-          "ts": "0ebb385897de",
-          "lean": "60b2b55d3797"
-        },
-        "result": "pass",
-        "notes": "QuantumUniverse k is satisfiable. No contradictory premise.",
-        "reviewed_at": "2026-07-07T14:26:57.100054Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.100054Z"
         }
       }
     ],
@@ -1541,24 +1306,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "773963326239",
-          "ts": "0ebb385897de",
-          "lean": "60b2b55d3797"
-        },
-        "result": "pass",
-        "notes": "{k},[Field k],qu all used in the conclusion type. No unused binder.",
-        "reviewed_at": "2026-07-07T14:26:57.100054Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.100054Z"
-        }
       }
     ],
     "proof-no-decide-masking": [
@@ -1579,314 +1326,21 @@
         "reviewed_at": "2026-06-22T02:57:22.143Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Stub uses decide/trivial masking."
-      },
-      {
-        "field_hash": {
-          "md": "773963326239",
-          "ts": "0ebb385897de",
-          "lean": "60b2b55d3797"
-        },
-        "result": "pass",
-        "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-07-07T14:26:57.100054Z",
-        "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.100054Z"
-        }
       }
     ],
-    "da-false-claim": [
-      {
-        "field_hash": {
-          "md": "773963326239",
-          "ts": "0ebb385897de",
-          "lean": "60b2b55d3797"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.100054Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.100054Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.ts:1",
-        "notes": "No false claims identified in 'Let (\\mathbf{C}, A, \\tau) be a': mathematical reasoning is consistent."
-      }
-    ],
-    "da-vacuous": [
-      {
-        "field_hash": {
-          "md": "773963326239",
-          "ts": "0ebb385897de",
-          "lean": "60b2b55d3797"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.100054Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.100054Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.ts:1",
-        "notes": "The claims in 'Let (\\mathbf{C}, A, \\tau) be a' are non-vacuous as they present substantial mathematical content."
-      }
-    ],
-    "da-circular": [
-      {
-        "field_hash": {
-          "md": "773963326239",
-          "ts": "0ebb385897de",
-          "lean": "60b2b55d3797"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.100054Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.100054Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.ts:1",
-        "notes": "No circular reasoning or self-assuming definitions detected in 'Let (\\mathbf{C}, A, \\tau) be a'."
-      }
-    ],
-    "da-overclaim": [
-      {
-        "field_hash": {
-          "md": "773963326239",
-          "ts": "0ebb385897de",
-          "lean": "60b2b55d3797"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.100054Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.100054Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.ts:1",
-        "notes": "No overclaims: the scope of 'Let (\\mathbf{C}, A, \\tau) be a' is appropriately qualified."
-      }
-    ],
-    "da-hidden-dof": [
-      {
-        "field_hash": {
-          "md": "773963326239",
-          "ts": "0ebb385897de",
-          "lean": "60b2b55d3797"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.100054Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.100054Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.ts:1",
-        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Let (\\mathbf{C}, A, \\tau) be a'."
-      }
-    ],
-    "da-non-sequitur": [
-      {
-        "field_hash": {
-          "md": "773963326239",
-          "ts": "0ebb385897de",
-          "lean": "60b2b55d3797"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.100054Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.100054Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.ts:1",
-        "notes": "The argument flow in 'Let (\\mathbf{C}, A, \\tau) be a' is logically sound, mapping onto the cited dependencies."
-      }
-    ],
-    "da-lean-narrative-divergence": [
-      {
-        "field_hash": {
-          "md": "773963326239",
-          "ts": "0ebb385897de",
-          "lean": "60b2b55d3797"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.100054Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.100054Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.lean:1",
-        "notes": "No narrative divergence: the Lean sibling implements the structure claimed in 'Let (\\mathbf{C}, A, \\tau) be a'."
-      }
-    ],
-    "da-citation-misuse": [
-      {
-        "field_hash": {
-          "md": "773963326239",
-          "ts": "0ebb385897de",
-          "lean": "60b2b55d3797"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.100054Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.100054Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.ts:1",
-        "notes": "No citations are present in 'Let (\\mathbf{C}, A, \\tau) be a', hence no citation misuse is possible."
-      }
-    ],
-    "da-definitional-ambiguity": [
-      {
-        "field_hash": {
-          "md": "773963326239",
-          "ts": "0ebb385897de",
-          "lean": "60b2b55d3797"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.100054Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.100054Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.ts:1",
-        "notes": "Key terms and symbols in 'Let (\\mathbf{C}, A, \\tau) be a' are mathematically defined and unambiguous."
-      }
-    ],
-    "da-empirical-fragility": [
-      {
-        "field_hash": {
-          "md": "773963326239",
-          "ts": "0ebb385897de",
-          "lean": "60b2b55d3797"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.100054Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.100054Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.ts:1",
-        "notes": "The algebraic and logical relations in 'Let (\\mathbf{C}, A, \\tau) be a' are independent of empirical tuning parameters."
-      }
-    ],
-    "da-physical-implausibility": [
-      {
-        "field_hash": {
-          "md": "773963326239",
-          "ts": "0ebb385897de",
-          "lean": "60b2b55d3797"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.100054Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.100054Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.ts:1",
-        "notes": "The physical concepts described in 'Let (\\mathbf{C}, A, \\tau) be a' are consistent with quantum observable mechanics."
-      }
-    ],
-    "da-reproducibility": [
-      {
-        "field_hash": {
-          "md": "773963326239",
-          "ts": "0ebb385897de",
-          "lean": "60b2b55d3797"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.100054Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.100054Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.ts:1",
-        "notes": "The derivation steps and formal definitions in 'Let (\\mathbf{C}, A, \\tau) be a' are reproducible."
-      }
-    ],
-    "da-referee-verdict": [
-      {
-        "field_hash": {
-          "md": "773963326239",
-          "ts": "0ebb385897de",
-          "lean": "60b2b55d3797"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.100054Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.100054Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing-exists.md:1 \u2014 Let (\\mathbf{C}, A, \\tau) be a",
-        "notes": "Referee verdict: clean.",
-        "verdict": "clean",
-        "referee_argument": "No significant objections; the mathematical claims in 'Let (\\mathbf{C}, A, \\tau) be a' are consistent."
-      }
-    ],
+    "da-false-claim": [],
+    "da-vacuous": [],
+    "da-circular": [],
+    "da-overclaim": [],
+    "da-hidden-dof": [],
+    "da-non-sequitur": [],
+    "da-lean-narrative-divergence": [],
+    "da-citation-misuse": [],
+    "da-definitional-ambiguity": [],
+    "da-empirical-fragility": [],
+    "da-physical-implausibility": [],
+    "da-reproducibility": [],
+    "da-referee-verdict": [],
     "bib-cite-resolves": [
       {
         "field_hash": {
@@ -1907,25 +1361,7 @@
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote QU intro and axioms for brevity (H1). Brought SU(2) geometric intuition forward (H2, H3). Maintained math exactly. Unified cross-block flow.",
-        "reviewed_at": "2026-07-07T14:26:57.100054Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.100054Z"
-        },
-        "field_hash": {
-          "md": "773963326239",
-          "ts": "0ebb385897de",
-          "lean": "60b2b55d3797"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:57.100054Z"
 }

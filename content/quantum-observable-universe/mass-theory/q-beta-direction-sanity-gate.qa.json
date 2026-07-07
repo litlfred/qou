@@ -33,45 +33,8 @@
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
       }
     ],
-    "proof-narrative-lean-equiv": [
-      {
-        "field_hash": {
-          "md": "f33aff99c279",
-          "ts": "c1ba44a978e8",
-          "lean": "0b03f6f78070"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.857533Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.857533Z",
-        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:q-beta-direction-sanity-gate' \u2192 expected 'q_beta_direction_sanity_gate'; Lean declares: qBetaTargetMagnitudeAtQ0, directionSanityThreshold, DirectionSanityGateClass, qbeta_direction_sanity_magnitude_match, direction_sanity_gate_reject.... Structural match via content."
-      }
-    ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice. Grouped logical steps for clarity, removing repetitive transitional filler. Emphasized 'why before what'. Maintained mathematical and technical accuracy.",
-        "reviewed_at": "2026-07-07T14:26:56.857533Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.857533Z"
-        },
-        "field_hash": {
-          "md": "f33aff99c279",
-          "ts": "c1ba44a978e8",
-          "lean": "0b03f6f78070"
-        }
-      }
-    ]
+    "proof-narrative-lean-equiv": [],
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.857533Z"
 }

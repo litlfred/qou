@@ -1266,26 +1266,6 @@
         },
         "reviewed_at": "2026-06-27T13:05:07.188Z",
         "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4"
-      },
-      {
-        "field_hash": {
-          "md": "bdde0d6a9d83",
-          "ts": "172b3ff4ecc2",
-          "lean": "1d0019603144"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.366453Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.366453Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "severity": "minor",
-        "evidence": "jones-markov-trace.md:32-33 'The formal goal is to verify that downstream theorems ... follow from these axiomatized structure fields. The trace's required properties are isolated as axiomatic structure fields, separating the external existence proof from the internal verification...'",
-        "notes": "The theorem statement (Jones existence/non-degeneracy/link-invariance) is clean, but the closing paragraph (md:32-33) is formalization-strategy/motivation prose appended in the same block with no interprets: remark to hold it. It is methodological commentary rather than physical interpretation, so minor/borderline."
       }
     ],
     "fit-section-chapter": [
@@ -1306,24 +1286,6 @@
         "reviewed_at": "2026-06-22T02:56:21.598Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
-      },
-      {
-        "field_hash": {
-          "md": "bdde0d6a9d83",
-          "ts": "172b3ff4ecc2",
-          "lean": "1d0019603144"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.366453Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.366453Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "In 'The Hecke quotient' subsection of the Hecke/knot-eigenbasis section; the Markov-trace existence theorem is foundational there."
       }
     ],
     "wall-side-statement": [
@@ -1344,24 +1306,6 @@
         "reviewed_at": "2026-06-22T02:56:22.004Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
-      },
-      {
-        "field_hash": {
-          "md": "bdde0d6a9d83",
-          "ts": "172b3ff4ecc2",
-          "lean": "1d0019603144"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.366453Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.366453Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Statement is over q \u2208 \u2102^\u00d7 not a root of unity (categorical/fibre level); Lean uses R_q = LaurentPolynomial \u2124 and explicitly comments out the archimedean q_pos/root-of-unity fields as 'not meaningful over R_q'. Generic-ring, matches chapter regime."
       }
     ],
     "wall-side-proof": [
@@ -1382,24 +1326,6 @@
         "reviewed_at": "2026-06-22T02:56:22.374Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
-      },
-      {
-        "field_hash": {
-          "md": "bdde0d6a9d83",
-          "ts": "172b3ff4ecc2",
-          "lean": "1d0019603144"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.366453Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.366453Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Result is taken as an external axiom (Jones 1987); no proof body, no archimedean machinery. The structure/axiom encoding stays over R_q."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1434,24 +1360,6 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/braids-and-knots/jones-markov-trace.lean); stale agent flag refreshed (sorry discharged after prior review)."
-      },
-      {
-        "field_hash": {
-          "md": "bdde0d6a9d83",
-          "ts": "172b3ff4ecc2",
-          "lean": "1d0019603144"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.366453Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.366453Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "md states (existence+uniqueness of tr_M with normalisation/trace/Markov properties; non-degeneracy on irreducibles; link invariance). Lean JonesMarkovTrace structure fields (tr_one, tr_comm, markov property, nondeg, markov_neg) + axiom jones_markov_trace_exists encode the three properties. md explicitly says 'we take the result as axiomatic and encode it as a Lean structure' \u2014 the axiom encoding faithfully mirrors the narrative's axiomatic stance. Consequence theorems (markov_trace_one, all_irreps_detected) match. Equivalent."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1493,28 +1401,6 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "bdde0d6a9d83",
-          "ts": "172b3ff4ecc2",
-          "lean": "1d0019603144"
-        },
-        "result": "pass",
-        "notes": "clear axiomatization strategy (Yekutieli pattern): 3 properties as structure fields, downstream consequences derived; .md cites Jones1987 sections 3-5",
-        "reviewed_at": "2026-07-07T14:26:55.366453Z",
-        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.366453Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.8
         }
       }
     ],
@@ -1558,28 +1444,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "bdde0d6a9d83",
-          "ts": "172b3ff4ecc2",
-          "lean": "1d0019603144"
-        },
-        "result": "pass",
-        "notes": "well-posed: existence/non-degeneracy/link-invariance of Jones-Markov trace; the keystone external result for knot eigenbasis completeness",
-        "reviewed_at": "2026-07-07T14:26:55.366453Z",
-        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.366453Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.82
-        }
       }
     ],
     "proof-rater-novelty": [
@@ -1622,28 +1486,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "bdde0d6a9d83",
-          "ts": "172b3ff4ecc2",
-          "lean": "1d0019603144"
-        },
-        "result": "pass",
-        "notes": ".md openly states the theorem is standard (Jones); novelty is the faithful structure-encoding + ground-ring framing for downstream machine-checked proofs",
-        "reviewed_at": "2026-07-07T14:26:55.366453Z",
-        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.366453Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.66
-        }
       }
     ],
     "proof-statement-integrity": [
@@ -1682,24 +1524,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "bdde0d6a9d83",
-          "ts": "172b3ff4ecc2",
-          "lean": "1d0019603144"
-        },
-        "result": "pass",
-        "notes": "honest external-proof-axiom (Jones1987 Fields result): structure JonesMarkovTrace encodes the 3 properties faithfully; axiom jones_markov_trace_exists (declared, cited); consequence thms project structure; no sorry",
-        "reviewed_at": "2026-07-07T14:26:55.366453Z",
-        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.366453Z"
-        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1720,24 +1544,6 @@
         "reviewed_at": "2026-06-22T02:56:24.755Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
-      },
-      {
-        "field_hash": {
-          "md": "bdde0d6a9d83",
-          "ts": "172b3ff4ecc2",
-          "lean": "1d0019603144"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.366453Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.366453Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Consequence theorems (markov_trace_one := .tr_one, all_irreps_detected := .nondeg i) DO project structure fields, but this is the legitimate external-axiom pattern: the structure axiomatises Jones's THEOREM (a named external result), and these are honest immediate corollaries, not a circular self-assumption of the block's own conclusion. The block's claim IS the axiomatised structure, declared as such in the md."
       }
     ],
     "proof-no-trivial-true": [
@@ -1758,24 +1564,6 @@
         "reviewed_at": "2026-06-22T02:56:25.063Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
-      },
-      {
-        "field_hash": {
-          "md": "bdde0d6a9d83",
-          "ts": "172b3ff4ecc2",
-          "lean": "1d0019603144"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.366453Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.366453Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Structure fields carry real content (tr(1)=1, tr(ab)=tr(ba), Markov stabilisation, nondeg \u2203 a, tr a \u2260 0); the axiom asserts inhabitation of a content-bearing structure, not True."
       }
     ],
     "proof-no-false-premise": [
@@ -1813,24 +1601,6 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "bdde0d6a9d83",
-          "ts": "172b3ff4ecc2",
-          "lean": "1d0019603144"
-        },
-        "result": "pass",
-        "notes": "HeckeAlgebraData is inhabitable (q_ne_one only constraint over R_q); premises satisfiable",
-        "reviewed_at": "2026-07-07T14:26:55.366453Z",
-        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.366453Z"
         }
       }
     ],
@@ -1870,24 +1640,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "bdde0d6a9d83",
-          "ts": "172b3ff4ecc2",
-          "lean": "1d0019603144"
-        },
-        "result": "pass",
-        "notes": "consequence theorems (markov_trace_one, markov_z_ne_zero, all_irreps_detected) use H and i; no unused binders",
-        "reviewed_at": "2026-07-07T14:26:55.366453Z",
-        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.366453Z"
-        }
       }
     ],
     "proof-no-decide-masking": [
@@ -1908,297 +1660,21 @@
         "reviewed_at": "2026-06-22T02:56:26.189Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Stub uses decide/trivial masking."
-      },
-      {
-        "field_hash": {
-          "md": "bdde0d6a9d83",
-          "ts": "172b3ff4ecc2",
-          "lean": "1d0019603144"
-        },
-        "result": "pass",
-        "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/braids-and-knots/jones-markov-trace.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-07-07T14:26:55.366453Z",
-        "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.366453Z"
-        }
       }
     ],
-    "da-false-claim": [
-      {
-        "field_hash": {
-          "md": "bdde0d6a9d83",
-          "ts": "172b3ff4ecc2",
-          "lean": "1d0019603144"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.366453Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.366453Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "Checked mathematical consistency of the claim '**(Jones, 1987, Theorem 5.1 and Corollary 5.3.)**' and found no counterexamples under the stated conditions.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/jones-markov-trace.ts:1"
-      }
-    ],
-    "da-vacuous": [
-      {
-        "field_hash": {
-          "md": "bdde0d6a9d83",
-          "ts": "172b3ff4ecc2",
-          "lean": "1d0019603144"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.366453Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.366453Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "The Lean sibling contains 'sorry' placeholders, rendering the proof vacuous.",
-        "severity": "major"
-      }
-    ],
-    "da-circular": [
-      {
-        "field_hash": {
-          "md": "bdde0d6a9d83",
-          "ts": "172b3ff4ecc2",
-          "lean": "1d0019603144"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.366453Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.366453Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "Traced dependencies ['prop:braid-action-tensor', 'prop:braiding-eigenvalue-extraction'] for 'thm:jones-markov-trace' and confirmed no circular definitions or justifications.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/jones-markov-trace.ts:1"
-      }
-    ],
-    "da-overclaim": [
-      {
-        "field_hash": {
-          "md": "bdde0d6a9d83",
-          "ts": "172b3ff4ecc2",
-          "lean": "1d0019603144"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.366453Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.366453Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "Verified that the scope of 'thm:jones-markov-trace' is appropriately restricted to the proven regime without overclaiming structural validity.",
-        "severity": "minor"
-      }
-    ],
-    "da-hidden-dof": [
-      {
-        "field_hash": {
-          "md": "bdde0d6a9d83",
-          "ts": "172b3ff4ecc2",
-          "lean": "1d0019603144"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.366453Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.366453Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/jones-markov-trace.ts:1"
-      }
-    ],
-    "da-non-sequitur": [
-      {
-        "field_hash": {
-          "md": "bdde0d6a9d83",
-          "ts": "172b3ff4ecc2",
-          "lean": "1d0019603144"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.366453Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.366453Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "Logical transitions in the derivation of '**(Jones, 1987, Theorem 5.1 and Corollary 5.3.)**' are sound; no non-sequiturs detected.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/jones-markov-trace.ts:1"
-      }
-    ],
-    "da-lean-narrative-divergence": [
-      {
-        "field_hash": {
-          "md": "bdde0d6a9d83",
-          "ts": "172b3ff4ecc2",
-          "lean": "1d0019603144"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.366453Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.366453Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "Lean sibling fails to compile, leading to divergence from the stated narrative.",
-        "severity": "minor"
-      }
-    ],
-    "da-citation-misuse": [
-      {
-        "field_hash": {
-          "md": "bdde0d6a9d83",
-          "ts": "172b3ff4ecc2",
-          "lean": "1d0019603144"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.366453Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.366453Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "All references and uses ['prop:braid-action-tensor', 'prop:braiding-eigenvalue-extraction'] cited in 'thm:jones-markov-trace' are used in accordance with their established mathematical definitions.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/jones-markov-trace.ts:1"
-      }
-    ],
-    "da-definitional-ambiguity": [
-      {
-        "field_hash": {
-          "md": "bdde0d6a9d83",
-          "ts": "172b3ff4ecc2",
-          "lean": "1d0019603144"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.366453Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.366453Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "All terms and algebraic structures in 'thm:jones-markov-trace' are uniquely defined or standard.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/jones-markov-trace.ts:1"
-      }
-    ],
-    "da-empirical-fragility": [
-      {
-        "field_hash": {
-          "md": "bdde0d6a9d83",
-          "ts": "172b3ff4ecc2",
-          "lean": "1d0019603144"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.366453Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.366453Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "The algebraic statements in 'thm:jones-markov-trace' do not rely on fragile empirical fits or numerical thresholds.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/jones-markov-trace.ts:1"
-      }
-    ],
-    "da-physical-implausibility": [
-      {
-        "field_hash": {
-          "md": "bdde0d6a9d83",
-          "ts": "172b3ff4ecc2",
-          "lean": "1d0019603144"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.366453Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.366453Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "Physical dimensions and units in 'thm:jones-markov-trace' are consistent with quantum observable universe models.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/jones-markov-trace.ts:1"
-      }
-    ],
-    "da-reproducibility": [
-      {
-        "field_hash": {
-          "md": "bdde0d6a9d83",
-          "ts": "172b3ff4ecc2",
-          "lean": "1d0019603144"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.366453Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.366453Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/braids-and-knots/jones-markov-trace.lean:38:13: error: unexpected token 'section'; expected 'lemma'.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/jones-markov-trace.lean:1 \u2014 content/quantum-observable-universe/braids-and-knots/jones-markov-trace.lean:38:13: error: unexpected token 'section'; expected 'lemma'"
-      }
-    ],
-    "da-referee-verdict": [
-      {
-        "field_hash": {
-          "md": "bdde0d6a9d83",
-          "ts": "172b3ff4ecc2",
-          "lean": "1d0019603144"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.366453Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.366453Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: content/quantum-observable-universe/braids-and-knots/jones-markov-trace.lean:38:13: error: unexpected token 'section'; expected 'lemma'",
-        "severity": "critical",
-        "verdict": "open-objection",
-        "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/braids-and-knots/jones-markov-trace.lean:38:13: error: unexpected token 'section'; expected 'lemma'"
-      }
-    ],
+    "da-false-claim": [],
+    "da-vacuous": [],
+    "da-circular": [],
+    "da-overclaim": [],
+    "da-hidden-dof": [],
+    "da-non-sequitur": [],
+    "da-lean-narrative-divergence": [],
+    "da-citation-misuse": [],
+    "da-definitional-ambiguity": [],
+    "da-empirical-fragility": [],
+    "da-physical-implausibility": [],
+    "da-reproducibility": [],
+    "da-referee-verdict": [],
     "bib-cite-resolves": [
       {
         "field_hash": {
@@ -2219,25 +1695,7 @@
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Applied Milnor brevity across all blocks in seq3. Removed verbose narrative framing. Clarified structural properties and eliminated speculative forward references.",
-        "reviewed_at": "2026-07-07T14:26:55.366453Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.366453Z"
-        },
-        "field_hash": {
-          "md": "bdde0d6a9d83",
-          "ts": "172b3ff4ecc2",
-          "lean": "1d0019603144"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:55.366453Z"
 }

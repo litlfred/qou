@@ -33,45 +33,8 @@
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
       }
     ],
-    "proof-narrative-lean-equiv": [
-      {
-        "field_hash": {
-          "md": "0390b4f503f7",
-          "ts": "f6272faa55bc",
-          "lean": "38db3bc59a24"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.867001Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.867001Z",
-        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:binding-error-amplification' \u2192 expected 'binding_error_amplification'; Lean declares: amplification, binding_rel_error, helium4_amplification_gt_130. Structural match via content."
-      }
-    ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote mass-theory_seq1.md for Milnor standards: stripped technical debt disclaimers, declarative voice.",
-        "reviewed_at": "2026-07-07T14:26:56.867001Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.867001Z"
-        },
-        "field_hash": {
-          "md": "0390b4f503f7",
-          "ts": "f6272faa55bc",
-          "lean": "38db3bc59a24"
-        }
-      }
-    ]
+    "proof-narrative-lean-equiv": [],
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.867001Z"
 }

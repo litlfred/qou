@@ -1027,86 +1027,10 @@
         "reviewed_sha": "a396ca287118e62b15120edd48259a4981b1b02f"
       }
     ],
-    "voice-statement-no-interpretation": [
-      {
-        "field_hash": {
-          "md": "2449edadde66",
-          "ts": "115610e2c416",
-          "lean": "962e744abe06"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.839678Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.839678Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement is a bare mathematical claim."
-      }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "2449edadde66",
-          "ts": "115610e2c416",
-          "lean": "962e744abe06"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.839678Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.839678Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "2449edadde66",
-          "ts": "115610e2c416",
-          "lean": "962e744abe06"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.839678Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.839678Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement respects the chapter's base-ring regime."
-      }
-    ],
-    "wall-side-proof": [
-      {
-        "field_hash": {
-          "md": "2449edadde66",
-          "ts": "115610e2c416",
-          "lean": "962e744abe06"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.839678Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.839678Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Proof machinery matches the statement regime."
-      }
-    ],
+    "voice-statement-no-interpretation": [],
+    "fit-section-chapter": [],
+    "wall-side-statement": [],
+    "wall-side-proof": [],
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
@@ -1181,28 +1105,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "2449edadde66",
-          "ts": "115610e2c416",
-          "lean": "962e744abe06"
-        },
-        "result": "warn",
-        "notes": "Narrative gives the torus-generator + Maurer-Cartan uniqueness argument, but Lean defers to an axiom; no Lean-level proof steps.",
-        "reviewed_at": "2026-07-07T14:26:55.839678Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.839678Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.55
-        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1244,28 +1146,6 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "2449edadde66",
-          "ts": "115610e2c416",
-          "lean": "962e744abe06"
-        },
-        "result": "pass",
-        "notes": "Uniqueness of (xi,theta) from vertical-generator + normalization axioms; well-posed rigidity statement.",
-        "reviewed_at": "2026-07-07T14:26:55.839678Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.839678Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.76
         }
       }
     ],
@@ -1309,28 +1189,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "2449edadde66",
-          "ts": "115610e2c416",
-          "lean": "962e744abe06"
-        },
-        "result": "pass",
-        "notes": "Categorical reformulation of Reeb-vector uniqueness via weight decomposition; modest novelty.",
-        "reviewed_at": "2026-07-07T14:26:55.839678Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.839678Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.66
-        }
       }
     ],
     "proof-statement-integrity": [
@@ -1369,66 +1227,10 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "2449edadde66",
-          "ts": "115610e2c416",
-          "lean": "962e744abe06"
-        },
-        "result": "pass",
-        "notes": "md: any two categorical Reeb derivations w/ same weight decomp coincide. Lean encodes uniqueness HEq xi & HEq theta given h_A,h_forms,h_projV via named axiom (3b); real uniqueness conjunction, no True/sorry/degenerate-weakening.",
-        "reviewed_at": "2026-07-07T14:26:55.839678Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.839678Z"
-        }
       }
     ],
-    "proof-no-self-assuming-projection": [
-      {
-        "field_hash": {
-          "md": "2449edadde66",
-          "ts": "115610e2c416",
-          "lean": "962e744abe06"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.839678Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.839678Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No self-assuming projection detected."
-      }
-    ],
-    "proof-no-trivial-true": [
-      {
-        "field_hash": {
-          "md": "2449edadde66",
-          "ts": "115610e2c416",
-          "lean": "962e744abe06"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.839678Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.839678Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Not a trivial true goal."
-      }
-    ],
+    "proof-no-self-assuming-projection": [],
+    "proof-no-trivial-true": [],
     "proof-no-false-premise": [
       {
         "field_hash": {
@@ -1464,24 +1266,6 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "2449edadde66",
-          "ts": "115610e2c416",
-          "lean": "962e744abe06"
-        },
-        "result": "pass",
-        "notes": "Premises (r1.A=r2.A, forms eq, proj_V HEq) satisfiable (e.g. r1=r2); not contradictory.",
-        "reviewed_at": "2026-07-07T14:26:55.839678Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.839678Z"
         }
       }
     ],
@@ -1521,24 +1305,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "2449edadde66",
-          "ts": "115610e2c416",
-          "lean": "962e744abe06"
-        },
-        "result": "pass",
-        "notes": "Thm forwards r1,r2,h_A,h_forms,h_projV to the axiom; all consumed. No dead binders.",
-        "reviewed_at": "2026-07-07T14:26:55.839678Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.839678Z"
-        }
       }
     ],
     "proof-no-decide-masking": [
@@ -1559,311 +1325,21 @@
         "reviewed_at": "2026-06-22T02:56:37.695Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Stub uses decide/trivial masking."
-      },
-      {
-        "field_hash": {
-          "md": "2449edadde66",
-          "ts": "115610e2c416",
-          "lean": "962e744abe06"
-        },
-        "result": "pass",
-        "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/quantum-observable-universes/categorical-reeb-unique.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-07-07T14:26:55.839678Z",
-        "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.839678Z"
-        }
       }
     ],
-    "da-false-claim": [
-      {
-        "field_hash": {
-          "md": "2449edadde66",
-          "ts": "115610e2c416",
-          "lean": "962e744abe06"
-        },
-        "result": "warn",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.839678Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.839678Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "categorical-reeb-unique.lean:1",
-        "notes": "The mathematical claims in 'Uniqueness of the categorical Reeb derivation' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/quantum-observable-universes/categorical-reeb-unique.lean:30:69: error: unexpected token '/--'; expected 'lemma'."
-      }
-    ],
-    "da-vacuous": [
-      {
-        "field_hash": {
-          "md": "2449edadde66",
-          "ts": "115610e2c416",
-          "lean": "962e744abe06"
-        },
-        "result": "fail",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.839678Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.839678Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "major",
-        "evidence": "categorical-reeb-unique.lean:1",
-        "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-reeb-unique.lean contains 'sorry' placeholders, rendering the formal proof vacuous."
-      }
-    ],
-    "da-circular": [
-      {
-        "field_hash": {
-          "md": "2449edadde66",
-          "ts": "115610e2c416",
-          "lean": "962e744abe06"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.839678Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.839678Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "categorical-reeb-unique.ts:1",
-        "notes": "No circular reasoning or self-assuming definitions detected in 'Uniqueness of the categorical Reeb derivation'."
-      }
-    ],
-    "da-overclaim": [
-      {
-        "field_hash": {
-          "md": "2449edadde66",
-          "ts": "115610e2c416",
-          "lean": "962e744abe06"
-        },
-        "result": "warn",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.839678Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.839678Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "notes": "The prose presents 'Uniqueness of the categorical Reeb derivation' as verified, but the sibling Lean file fails to compile."
-      }
-    ],
-    "da-hidden-dof": [
-      {
-        "field_hash": {
-          "md": "2449edadde66",
-          "ts": "115610e2c416",
-          "lean": "962e744abe06"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.839678Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.839678Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "categorical-reeb-unique.ts:1",
-        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Uniqueness of the categorical Reeb derivation'."
-      }
-    ],
-    "da-non-sequitur": [
-      {
-        "field_hash": {
-          "md": "2449edadde66",
-          "ts": "115610e2c416",
-          "lean": "962e744abe06"
-        },
-        "result": "warn",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.839678Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.839678Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "categorical-reeb-unique.lean:1",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/quantum-observable-universes/categorical-reeb-unique.lean."
-      }
-    ],
-    "da-lean-narrative-divergence": [
-      {
-        "field_hash": {
-          "md": "2449edadde66",
-          "ts": "115610e2c416",
-          "lean": "962e744abe06"
-        },
-        "result": "fail",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.839678Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.839678Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-reeb-unique.lean fails compilation, causing divergence from the narrative."
-      }
-    ],
-    "da-citation-misuse": [
-      {
-        "field_hash": {
-          "md": "2449edadde66",
-          "ts": "115610e2c416",
-          "lean": "962e744abe06"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.839678Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.839678Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "categorical-reeb-unique.ts:1",
-        "notes": "No citations are present in 'Uniqueness of the categorical Reeb derivation', hence no citation misuse is possible."
-      }
-    ],
-    "da-definitional-ambiguity": [
-      {
-        "field_hash": {
-          "md": "2449edadde66",
-          "ts": "115610e2c416",
-          "lean": "962e744abe06"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.839678Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.839678Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "categorical-reeb-unique.ts:1",
-        "notes": "Key terms and symbols in 'Uniqueness of the categorical Reeb derivation' are mathematically defined and unambiguous."
-      }
-    ],
-    "da-empirical-fragility": [
-      {
-        "field_hash": {
-          "md": "2449edadde66",
-          "ts": "115610e2c416",
-          "lean": "962e744abe06"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.839678Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.839678Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "categorical-reeb-unique.ts:1",
-        "notes": "The algebraic and logical relations in 'Uniqueness of the categorical Reeb derivation' are independent of empirical tuning parameters."
-      }
-    ],
-    "da-physical-implausibility": [
-      {
-        "field_hash": {
-          "md": "2449edadde66",
-          "ts": "115610e2c416",
-          "lean": "962e744abe06"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.839678Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.839678Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "categorical-reeb-unique.ts:1",
-        "notes": "The physical concepts described in 'Uniqueness of the categorical Reeb derivation' are consistent with quantum observable mechanics."
-      }
-    ],
-    "da-reproducibility": [
-      {
-        "field_hash": {
-          "md": "2449edadde66",
-          "ts": "115610e2c416",
-          "lean": "962e744abe06"
-        },
-        "result": "fail",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.839678Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.839678Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "categorical-reeb-unique.lean:1 \u2014 content/quantum-observable-universe/quantum-observable-universes/categorical-reeb-unique.lean:30:69: error: unexpected token '/--'; expected 'lemma'",
-        "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-reeb-unique.lean fails compilation, indicating a reproducibility failure."
-      }
-    ],
-    "da-referee-verdict": [
-      {
-        "field_hash": {
-          "md": "2449edadde66",
-          "ts": "115610e2c416",
-          "lean": "962e744abe06"
-        },
-        "result": "fail",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.839678Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.839678Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "major",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-reeb-unique.lean contains 'sorry' placeholders.",
-        "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-reeb-unique.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous."
-      }
-    ],
+    "da-false-claim": [],
+    "da-vacuous": [],
+    "da-circular": [],
+    "da-overclaim": [],
+    "da-hidden-dof": [],
+    "da-non-sequitur": [],
+    "da-lean-narrative-divergence": [],
+    "da-citation-misuse": [],
+    "da-definitional-ambiguity": [],
+    "da-empirical-fragility": [],
+    "da-physical-implausibility": [],
+    "da-reproducibility": [],
+    "da-referee-verdict": [],
     "bib-cite-resolves": [
       {
         "field_hash": {
@@ -1884,25 +1360,7 @@
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote seq7 to H1-H8. Replaced lists with smooth exposition. Removed meta-chatter and direct references to 'proof blocks'. Condensed overlapping existence/uniqueness into clear declarative statements.",
-        "reviewed_at": "2026-07-07T14:26:55.839678Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.839678Z"
-        },
-        "field_hash": {
-          "md": "2449edadde66",
-          "ts": "115610e2c416",
-          "lean": "962e744abe06"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:55.839678Z"
 }

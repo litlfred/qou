@@ -1307,26 +1307,7 @@
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
       }
     ],
-    "proof-narrative-lean-equiv": [
-      {
-        "field_hash": {
-          "md": "9a059c5207f7",
-          "ts": "491b248eac4d",
-          "lean": "fa7c92acd66b"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.284604Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.284604Z",
-        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Conjecture with class/axiom axiomatisation \u2014 structural match."
-      }
-    ],
+    "proof-narrative-lean-equiv": [],
     "milnor-amalgamated-flow": [
       {
         "result": "pass",

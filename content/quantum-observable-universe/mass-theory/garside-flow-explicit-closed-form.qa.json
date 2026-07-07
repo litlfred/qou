@@ -1076,22 +1076,6 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "remark interprets prop:six-canonical-knot-operators, placed in sec:exceptional-divisor-reeb (geometric face) right after garside-as-compound-flow. The explicit closed-form Garside trajectory in color coordinates is on-topic; it is an interpretive remark with formal backing (interprets set), no new unproved provable claim."
-      },
-      {
-        "field_hash": {
-          "md": "0156de6c8e4e",
-          "ts": "40451e0412b0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-25",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.970545Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.970545Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-false-claim": [
@@ -1111,22 +1095,6 @@
         "notes": "No false claims identified in 'Explicit closed-form for the Garside trajectory in color coordinates'; the algebraic relation involving $I_1$ is mathematically consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-theory/garside-flow-explicit-closed-form.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "0156de6c8e4e",
-          "ts": "40451e0412b0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-25",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.970545Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.970545Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-vacuous": [
@@ -1145,22 +1113,6 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The block 'Explicit closed-form for the Garside trajectory in color coordinates' presents substantial mathematical content, establishing relation $I_1$.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "0156de6c8e4e",
-          "ts": "40451e0412b0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-25",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.970545Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.970545Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-circular": [
@@ -1180,22 +1132,6 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Explicit closed-form for the Garside trajectory in color coordinates'. The construction is derived from rem:garside-as-compound-flow.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-theory/garside-flow-explicit-closed-form.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "0156de6c8e4e",
-          "ts": "40451e0412b0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-25",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.970545Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.970545Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-overclaim": [
@@ -1214,22 +1150,6 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No overclaims: the scope of 'Explicit closed-form for the Garside trajectory in color coordinates' is appropriately qualified and constrained.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "0156de6c8e4e",
-          "ts": "40451e0412b0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-25",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.970545Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.970545Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-hidden-dof": [
@@ -1249,22 +1169,6 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Explicit closed-form for the Garside trajectory in color coordinates'. All constants are canonically derived.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-theory/garside-flow-explicit-closed-form.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "0156de6c8e4e",
-          "ts": "40451e0412b0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-25",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.970545Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.970545Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-non-sequitur": [
@@ -1284,22 +1188,6 @@
         "notes": "The argument flow in 'Explicit closed-form for the Garside trajectory in color coordinates' is logically sound, mapping onto the cited dependencies: rem:garside-as-compound-flow.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-theory/garside-flow-explicit-closed-form.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "0156de6c8e4e",
-          "ts": "40451e0412b0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-25",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.970545Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.970545Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1318,22 +1206,6 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "0156de6c8e4e",
-          "ts": "40451e0412b0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-25",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.970545Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.970545Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-citation-misuse": [
@@ -1353,22 +1225,6 @@
         "notes": "No citations are present in 'Explicit closed-form for the Garside trajectory in color coordinates', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-theory/garside-flow-explicit-closed-form.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "0156de6c8e4e",
-          "ts": "40451e0412b0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-25",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.970545Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.970545Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1388,22 +1244,6 @@
         "notes": "Key terms and symbols (including $I_1$) in 'Explicit closed-form for the Garside trajectory in color coordinates' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-theory/garside-flow-explicit-closed-form.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "0156de6c8e4e",
-          "ts": "40451e0412b0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-25",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.970545Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.970545Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-empirical-fragility": [
@@ -1423,22 +1263,6 @@
         "notes": "The algebraic and logical relations in 'Explicit closed-form for the Garside trajectory in color coordinates' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-theory/garside-flow-explicit-closed-form.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "0156de6c8e4e",
-          "ts": "40451e0412b0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-25",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.970545Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.970545Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-physical-implausibility": [
@@ -1458,22 +1282,6 @@
         "notes": "The physical concepts described in 'Explicit closed-form for the Garside trajectory in color coordinates' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-theory/garside-flow-explicit-closed-form.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "0156de6c8e4e",
-          "ts": "40451e0412b0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-25",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.970545Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.970545Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-reproducibility": [
@@ -1493,22 +1301,6 @@
         "notes": "The derivation steps and formal definitions in 'Explicit closed-form for the Garside trajectory in color coordinates' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-theory/garside-flow-explicit-closed-form.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "0156de6c8e4e",
-          "ts": "40451e0412b0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-25",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.970545Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.970545Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-referee-verdict": [
@@ -1529,42 +1321,9 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Explicit closed-form for the Garside trajectory in color coordinates' are consistent."
-      },
-      {
-        "field_hash": {
-          "md": "0156de6c8e4e",
-          "ts": "40451e0412b0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-25",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.970545Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.970545Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote seq17 enforcing Milnor rules. Restructured wordy trajectory explanations into direct mathematical prose. Streamlined 'why before what' for the Reeb bundle and geometric constructs. Verified math formatting.",
-        "reviewed_at": "2026-07-07T14:26:56.970545Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.970545Z"
-        },
-        "field_hash": {
-          "md": "0156de6c8e4e",
-          "ts": "40451e0412b0"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.970545Z"
 }

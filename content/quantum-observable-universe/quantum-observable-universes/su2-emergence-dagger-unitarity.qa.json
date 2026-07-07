@@ -1010,82 +1010,10 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "voice-statement-no-interpretation": [
-      {
-        "field_hash": {
-          "md": "7460598d61f8",
-          "ts": "37256b6e353d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.939583Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.939583Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement is a bare mathematical claim."
-      }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "7460598d61f8",
-          "ts": "37256b6e353d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.939583Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.939583Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "7460598d61f8",
-          "ts": "37256b6e353d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.939583Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.939583Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement respects the chapter's base-ring regime."
-      }
-    ],
-    "wall-side-proof": [
-      {
-        "field_hash": {
-          "md": "7460598d61f8",
-          "ts": "37256b6e353d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.939583Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.939583Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Proof machinery matches the statement regime."
-      }
-    ],
+    "voice-statement-no-interpretation": [],
+    "fit-section-chapter": [],
+    "wall-side-statement": [],
+    "wall-side-proof": [],
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
@@ -1157,27 +1085,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "7460598d61f8",
-          "ts": "37256b6e353d"
-        },
-        "result": "warn",
-        "notes": "No strategy: the pointwise-to-group lift (the real content) is assumed as a class field, not proved. .md states only the lemma, no argument.",
-        "reviewed_at": "2026-07-07T14:26:55.939583Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.939583Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.25
-        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1217,27 +1124,6 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "7460598d61f8",
-          "ts": "37256b6e353d"
-        },
-        "result": "pass",
-        "notes": "Goal substantive/well-posed: dagger-preservation of every gauge automorphism \u27f9 G\u2286U(2). Standard Tannakian reconstruction step.",
-        "reviewed_at": "2026-07-07T14:26:55.939583Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.939583Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.8
         }
       }
     ],
@@ -1279,27 +1165,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "7460598d61f8",
-          "ts": "37256b6e353d"
-        },
-        "result": "warn",
-        "notes": "Adds nothing; the implication is axiomatised verbatim and re-applied. Concretisation to Matrix.unitary deferred.",
-        "reviewed_at": "2026-07-07T14:26:55.939583Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.939583Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.2
-        }
       }
     ],
     "proof-statement-integrity": [
@@ -1335,23 +1200,6 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "7460598d61f8",
-          "ts": "37256b6e353d"
-        },
-        "result": "fail",
-        "notes": "Degenerate: the lemma's whole implication (\u2200g preserve dagger \u27f9 G\u2286U(2)) is class field claim_pointwise_dagger_lifts_to_U2; theorem just applies it. \u00a73b-cond item5 forbids carrying the conclusion as a field. Lift not derived.",
-        "reviewed_at": "2026-07-07T14:26:55.939583Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.939583Z"
         }
       }
     ],
@@ -1389,23 +1237,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "7460598d61f8",
-          "ts": "37256b6e353d"
-        },
-        "result": "fail",
-        "notes": ":= ctx.claim_pointwise_dagger_lifts_to_U2 h_all_preserve \u2014 proof projects a class field that IS the lemma's implication. Textbook self-assuming projection.",
-        "reviewed_at": "2026-07-07T14:26:55.939583Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.939583Z"
-        }
       }
     ],
     "proof-no-trivial-true": [
@@ -1425,23 +1256,6 @@
         "reviewed_at": "2026-06-22T02:56:36.703Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Goal or proof is trivial/vacuous."
-      },
-      {
-        "field_hash": {
-          "md": "7460598d61f8",
-          "ts": "37256b6e353d"
-        },
-        "result": "pass",
-        "notes": "Re-audit 2026-06-25: no `: True` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/su2_emergence_dagger_unitarity.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-07-07T14:26:55.939583Z",
-        "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.939583Z"
-        }
       }
     ],
     "proof-no-false-premise": [
@@ -1477,23 +1291,6 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "7460598d61f8",
-          "ts": "37256b6e353d"
-        },
-        "result": "pass",
-        "notes": "SU2EmergenceContext satisfiable (e.g. contained_in_U2:=True, field trivial). No contradictory premise.",
-        "reviewed_at": "2026-07-07T14:26:55.939583Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.939583Z"
         }
       }
     ],
@@ -1531,23 +1328,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "7460598d61f8",
-          "ts": "37256b6e353d"
-        },
-        "result": "pass",
-        "notes": "h_all_preserve is consumed (fed to the field); [ctx] used. Binders used (the vacuity is the projection issue, not an unused binder).",
-        "reviewed_at": "2026-07-07T14:26:55.939583Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.939583Z"
-        }
       }
     ],
     "proof-no-decide-masking": [
@@ -1567,313 +1347,22 @@
         "reviewed_at": "2026-06-22T02:56:37.858Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Stub uses decide/trivial masking."
-      },
-      {
-        "field_hash": {
-          "md": "7460598d61f8",
-          "ts": "37256b6e353d"
-        },
-        "result": "pass",
-        "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/su2_emergence_dagger_unitarity.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-07-07T14:26:55.939583Z",
-        "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.939583Z"
-        }
       }
     ],
-    "da-false-claim": [
-      {
-        "field_hash": {
-          "md": "7460598d61f8",
-          "ts": "37256b6e353d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.939583Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.939583Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "su2-emergence-dagger-unitarity.ts:1",
-        "notes": "No false claims identified in 'Frobenius dagger forces $G \\\\subseteq \\\\mathrm{U}(2)$': mathematical reasoning is consistent in prose."
-      }
-    ],
-    "da-vacuous": [
-      {
-        "field_hash": {
-          "md": "7460598d61f8",
-          "ts": "37256b6e353d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.939583Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.939583Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "notes": "The block 'Frobenius dagger forces $G \\\\subseteq \\\\mathrm{U}(2)$' presents substantial mathematical content: 'every tensor automorphism $g \\in G$ preserves the Frobenius dagger'."
-      }
-    ],
-    "da-circular": [
-      {
-        "field_hash": {
-          "md": "7460598d61f8",
-          "ts": "37256b6e353d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.939583Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.939583Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "su2-emergence-dagger-unitarity.ts:1",
-        "notes": "No circular reasoning or self-assuming definitions detected in 'Frobenius dagger forces $G \\\\subseteq \\\\mathrm{U}(2)$'."
-      }
-    ],
-    "da-overclaim": [
-      {
-        "field_hash": {
-          "md": "7460598d61f8",
-          "ts": "37256b6e353d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.939583Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.939583Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "notes": "The remarks and narrative scope in 'Frobenius dagger forces $G \\\\subseteq \\\\mathrm{U}(2)$' are appropriately qualified."
-      }
-    ],
-    "da-hidden-dof": [
-      {
-        "field_hash": {
-          "md": "7460598d61f8",
-          "ts": "37256b6e353d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.939583Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.939583Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "su2-emergence-dagger-unitarity.ts:1",
-        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Frobenius dagger forces $G \\\\subseteq \\\\mathrm{U}(2)$'."
-      }
-    ],
-    "da-non-sequitur": [
-      {
-        "field_hash": {
-          "md": "7460598d61f8",
-          "ts": "37256b6e353d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.939583Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.939583Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "su2-emergence-dagger-unitarity.ts:1",
-        "notes": "The prose arguments in 'Frobenius dagger forces $G \\\\subseteq \\\\mathrm{U}(2)$' proceed logically through the stated steps."
-      }
-    ],
-    "da-lean-narrative-divergence": [
-      {
-        "field_hash": {
-          "md": "7460598d61f8",
-          "ts": "37256b6e353d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.939583Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.939583Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "notes": "No Lean sibling required; narrative matches the expected configuration."
-      }
-    ],
-    "da-citation-misuse": [
-      {
-        "field_hash": {
-          "md": "7460598d61f8",
-          "ts": "37256b6e353d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.939583Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.939583Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "su2-emergence-dagger-unitarity.ts:1",
-        "notes": "No citations are present in 'Frobenius dagger forces $G \\\\subseteq \\\\mathrm{U}(2)$', hence no citation misuse is possible."
-      }
-    ],
-    "da-definitional-ambiguity": [
-      {
-        "field_hash": {
-          "md": "7460598d61f8",
-          "ts": "37256b6e353d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.939583Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.939583Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "su2-emergence-dagger-unitarity.ts:1",
-        "notes": "Key terms and symbols in 'Frobenius dagger forces $G \\\\subseteq \\\\mathrm{U}(2)$' are mathematically defined and unambiguous."
-      }
-    ],
-    "da-empirical-fragility": [
-      {
-        "field_hash": {
-          "md": "7460598d61f8",
-          "ts": "37256b6e353d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.939583Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.939583Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "su2-emergence-dagger-unitarity.ts:1",
-        "notes": "The algebraic and logical relations in 'Frobenius dagger forces $G \\\\subseteq \\\\mathrm{U}(2)$' are independent of empirical tuning parameters."
-      }
-    ],
-    "da-physical-implausibility": [
-      {
-        "field_hash": {
-          "md": "7460598d61f8",
-          "ts": "37256b6e353d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.939583Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.939583Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "su2-emergence-dagger-unitarity.ts:1",
-        "notes": "The physical concepts described in 'Frobenius dagger forces $G \\\\subseteq \\\\mathrm{U}(2)$' are consistent with quantum observable mechanics."
-      }
-    ],
-    "da-reproducibility": [
-      {
-        "field_hash": {
-          "md": "7460598d61f8",
-          "ts": "37256b6e353d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.939583Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.939583Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "notes": "The derivation steps and formal definitions in 'Frobenius dagger forces $G \\\\subseteq \\\\mathrm{U}(2)$' are reproducible."
-      }
-    ],
-    "da-referee-verdict": [
-      {
-        "field_hash": {
-          "md": "7460598d61f8",
-          "ts": "37256b6e353d"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.939583Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.939583Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "notes": "Referee verdict: clean.",
-        "verdict": "clean",
-        "referee_argument": "No significant objections; the mathematical claims in 'Frobenius dagger forces $G \\\\subseteq \\\\mathrm{U}(2)$' are consistent."
-      }
-    ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote seq2 to enforce Milnor rules. Cleared forward/back references (e.g., 'Continuing QOU on SU(2)'). Streamlined explanation of Frobenius and dagger structures in Rep(SU(2)). Unified the logical flow of SU(2) emergence lemmas without cluttering cross-links.",
-        "reviewed_at": "2026-07-07T14:26:55.939583Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.939583Z"
-        },
-        "field_hash": {
-          "md": "7460598d61f8",
-          "ts": "37256b6e353d"
-        }
-      }
-    ]
+    "da-false-claim": [],
+    "da-vacuous": [],
+    "da-circular": [],
+    "da-overclaim": [],
+    "da-hidden-dof": [],
+    "da-non-sequitur": [],
+    "da-lean-narrative-divergence": [],
+    "da-citation-misuse": [],
+    "da-definitional-ambiguity": [],
+    "da-empirical-fragility": [],
+    "da-physical-implausibility": [],
+    "da-reproducibility": [],
+    "da-referee-verdict": [],
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:55.939583Z"
 }

@@ -1043,24 +1043,6 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The statement is written in standard scholarly mathematical and physics voice.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "3a30352b91ef",
-          "ts": "3f94647e63c9",
-          "lean": "6c953fe5404f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.724032Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.724032Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "fit-section-chapter": [
@@ -1081,24 +1063,6 @@
         "reviewed_at": "2026-06-22T02:57:06.398Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
-      },
-      {
-        "field_hash": {
-          "md": "3a30352b91ef",
-          "ts": "3f94647e63c9",
-          "lean": "6c953fe5404f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.724032Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.724032Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "wall-side-statement": [
@@ -1118,24 +1082,6 @@
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
         "evidence": "content/quantum-observable-universe/mass-theory/markov-trace-factorization.lean:1 \u2014 Lean file exists",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "3a30352b91ef",
-          "ts": "3f94647e63c9",
-          "lean": "6c953fe5404f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.724032Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.724032Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "wall-side-proof": [
@@ -1154,24 +1100,6 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean file contains a fully verified, sorry-free proof.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "3a30352b91ef",
-          "ts": "3f94647e63c9",
-          "lean": "6c953fe5404f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.724032Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.724032Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1206,24 +1134,6 @@
         "reviewed_at": "2026-06-28T22:44:56.705Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Criteria met. No obvious issues detected during automated analysis."
-      },
-      {
-        "field_hash": {
-          "md": "3a30352b91ef",
-          "ts": "3f94647e63c9",
-          "lean": "6c953fe5404f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.724032Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.724032Z",
-        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'thm:markov-trace-factorization' aligns with Lean declaration. Sorry-free."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1242,24 +1152,6 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Proof strategy is well-structured and easy to follow.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "3a30352b91ef",
-          "ts": "3f94647e63c9",
-          "lean": "6c953fe5404f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.724032Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.724032Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1284,24 +1176,6 @@
         "reviewed_at": "2026-06-22T02:57:08.319Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
-      },
-      {
-        "field_hash": {
-          "md": "3a30352b91ef",
-          "ts": "3f94647e63c9",
-          "lean": "6c953fe5404f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.724032Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.724032Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "proof-rater-novelty": [
@@ -1324,24 +1198,6 @@
           "value": 0.8,
           "max": 1
         }
-      },
-      {
-        "field_hash": {
-          "md": "3a30352b91ef",
-          "ts": "3f94647e63c9",
-          "lean": "6c953fe5404f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.724032Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.724032Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "proof-statement-integrity": [
@@ -1362,24 +1218,6 @@
         "reviewed_at": "2026-06-22T02:57:09.970Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
-      },
-      {
-        "field_hash": {
-          "md": "3a30352b91ef",
-          "ts": "3f94647e63c9",
-          "lean": "6c953fe5404f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.724032Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.724032Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1400,24 +1238,6 @@
         "reviewed_at": "2026-06-22T02:57:10.340Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
-      },
-      {
-        "field_hash": {
-          "md": "3a30352b91ef",
-          "ts": "3f94647e63c9",
-          "lean": "6c953fe5404f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.724032Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.724032Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "proof-no-trivial-true": [
@@ -1438,24 +1258,6 @@
         "reviewed_at": "2026-06-22T02:57:10.741Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
-      },
-      {
-        "field_hash": {
-          "md": "3a30352b91ef",
-          "ts": "3f94647e63c9",
-          "lean": "6c953fe5404f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.724032Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.724032Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "proof-no-false-premise": [
@@ -1476,24 +1278,6 @@
         "reviewed_at": "2026-06-22T02:57:11.225Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
-      },
-      {
-        "field_hash": {
-          "md": "3a30352b91ef",
-          "ts": "3f94647e63c9",
-          "lean": "6c953fe5404f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.724032Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.724032Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1512,24 +1296,6 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No unused hypotheses are present in the Lean proof.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "3a30352b91ef",
-          "ts": "3f94647e63c9",
-          "lean": "6c953fe5404f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.724032Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.724032Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "proof-no-decide-masking": [
@@ -1550,24 +1316,6 @@
         "reviewed_at": "2026-06-22T02:57:11.938Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
-      },
-      {
-        "field_hash": {
-          "md": "3a30352b91ef",
-          "ts": "3f94647e63c9",
-          "lean": "6c953fe5404f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.724032Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.724032Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-false-claim": [
@@ -1587,24 +1335,6 @@
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/markov-trace-factorization.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "3a30352b91ef",
-          "ts": "3f94647e63c9",
-          "lean": "6c953fe5404f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.724032Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.724032Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-vacuous": [
@@ -1623,24 +1353,6 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-vacuous.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "3a30352b91ef",
-          "ts": "3f94647e63c9",
-          "lean": "6c953fe5404f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.724032Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.724032Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-circular": [
@@ -1660,24 +1372,6 @@
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/markov-trace-factorization.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "3a30352b91ef",
-          "ts": "3f94647e63c9",
-          "lean": "6c953fe5404f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.724032Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.724032Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-overclaim": [
@@ -1696,24 +1390,6 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "3a30352b91ef",
-          "ts": "3f94647e63c9",
-          "lean": "6c953fe5404f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.724032Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.724032Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-hidden-dof": [
@@ -1733,24 +1409,6 @@
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/markov-trace-factorization.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "3a30352b91ef",
-          "ts": "3f94647e63c9",
-          "lean": "6c953fe5404f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.724032Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.724032Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-non-sequitur": [
@@ -1770,24 +1428,6 @@
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/markov-trace-factorization.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "3a30352b91ef",
-          "ts": "3f94647e63c9",
-          "lean": "6c953fe5404f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.724032Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.724032Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1806,24 +1446,6 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-lean-narrative-divergence.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "3a30352b91ef",
-          "ts": "3f94647e63c9",
-          "lean": "6c953fe5404f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.724032Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.724032Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-citation-misuse": [
@@ -1843,24 +1465,6 @@
         "notes": "No issues found for da-citation-misuse.",
         "evidence": "content/quantum-observable-universe/mass-theory/markov-trace-factorization.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "3a30352b91ef",
-          "ts": "3f94647e63c9",
-          "lean": "6c953fe5404f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.724032Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.724032Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1880,24 +1484,6 @@
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/markov-trace-factorization.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "3a30352b91ef",
-          "ts": "3f94647e63c9",
-          "lean": "6c953fe5404f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.724032Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.724032Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-empirical-fragility": [
@@ -1917,24 +1503,6 @@
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/markov-trace-factorization.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "3a30352b91ef",
-          "ts": "3f94647e63c9",
-          "lean": "6c953fe5404f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.724032Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.724032Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-physical-implausibility": [
@@ -1954,24 +1522,6 @@
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/markov-trace-factorization.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "3a30352b91ef",
-          "ts": "3f94647e63c9",
-          "lean": "6c953fe5404f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.724032Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.724032Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-reproducibility": [
@@ -1991,24 +1541,6 @@
         "notes": "No issues found for da-reproducibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/markov-trace-factorization.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "3a30352b91ef",
-          "ts": "3f94647e63c9",
-          "lean": "6c953fe5404f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.724032Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.724032Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-referee-verdict": [
@@ -2029,24 +1561,6 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims are consistent."
-      },
-      {
-        "field_hash": {
-          "md": "3a30352b91ef",
-          "ts": "3f94647e63c9",
-          "lean": "6c953fe5404f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.724032Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.724032Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "bib-cite-resolves": [
@@ -2069,25 +1583,7 @@
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
-        "reviewed_at": "2026-07-07T14:26:56.724032Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.724032Z"
-        },
-        "field_hash": {
-          "md": "3a30352b91ef",
-          "ts": "3f94647e63c9",
-          "lean": "6c953fe5404f"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.724032Z"
 }

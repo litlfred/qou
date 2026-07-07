@@ -33,25 +33,7 @@
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewritten per Milnor standards. Shortened prose, eliminated forward refs, un-cluttered Lean notation while keeping core structural claims. Preserved math.",
-        "reviewed_at": "2026-07-07T14:26:55.387120Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.387120Z"
-        },
-        "field_hash": {
-          "md": "7ed6a670268a",
-          "ts": "239c0e93722e",
-          "lean": "9a2e78c76f80"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:55.387120Z"
 }

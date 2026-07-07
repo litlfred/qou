@@ -33,45 +33,8 @@
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
       }
     ],
-    "proof-narrative-lean-equiv": [
-      {
-        "field_hash": {
-          "md": "890ba7cd7de4",
-          "ts": "7fd47da78c24",
-          "lean": "8a45dd3735e9"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.974020Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.974020Z",
-        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:gram-determinant-plancherel-ratio' aligns with Lean declaration. Sorry-free."
-      }
-    ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote mass-theory_seq5.md for Milnor standards: stripped unnecessary adjectives, improved flow.",
-        "reviewed_at": "2026-07-07T14:26:56.974020Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.974020Z"
-        },
-        "field_hash": {
-          "md": "890ba7cd7de4",
-          "ts": "7fd47da78c24",
-          "lean": "8a45dd3735e9"
-        }
-      }
-    ]
+    "proof-narrative-lean-equiv": [],
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.974020Z"
 }

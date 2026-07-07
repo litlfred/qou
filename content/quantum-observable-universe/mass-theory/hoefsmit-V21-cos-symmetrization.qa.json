@@ -1010,24 +1010,7 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Smoothed transitions, enforced present tense and active voice across blocks. Kept all mathematical definitions intact. Applied Economy and Linear Argument to remove redundancies and non-essential commentary. Replaced passive voice and first-person-singular.",
-        "reviewed_at": "2026-07-07T14:26:56.749395Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.749395Z"
-        },
-        "field_hash": {
-          "md": "02a371afefe0",
-          "ts": "3d251d049ba1"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.749395Z"
 }

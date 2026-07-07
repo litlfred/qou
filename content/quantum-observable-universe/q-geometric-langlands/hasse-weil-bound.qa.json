@@ -1047,25 +1047,7 @@
         "reviewed_sha": "7415132ccce30885dcfd323600b8bcf311c431e4"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Integrated equations and inline text cleanly. Stripped rhetorical flourish. Made the geometric chain logical and declarative.",
-        "reviewed_at": "2026-07-07T14:26:56.175880Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.175880Z"
-        },
-        "field_hash": {
-          "md": "5faf6df39fed",
-          "ts": "0db851dfa4b3",
-          "lean": "bc01730b6740"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.175880Z"
 }

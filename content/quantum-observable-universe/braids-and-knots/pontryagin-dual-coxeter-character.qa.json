@@ -51,25 +51,7 @@
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Applied Milnor brevity. Cleaned up wordy 'Mathematical Novelty' blurbs to focus on exact claims. Removed unnecessary forward references.",
-        "reviewed_at": "2026-07-07T14:26:55.320019Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.320019Z"
-        },
-        "field_hash": {
-          "md": "d140d8626372",
-          "ts": "3def03d54601",
-          "lean": "3359b4352bb9"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:55.320019Z"
 }

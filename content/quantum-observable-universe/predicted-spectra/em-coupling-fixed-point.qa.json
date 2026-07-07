@@ -13,45 +13,8 @@
     "lean": "d8679da00b03"
   },
   "criteria": {
-    "proof-narrative-lean-equiv": [
-      {
-        "field_hash": {
-          "md": "7a1c9e8ba2b7",
-          "ts": "5cf2d51fddc8",
-          "lean": "d8679da00b03"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.320505Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.320505Z",
-        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:em-coupling-fixed-point' \u2192 expected 'em_coupling_fixed_point'; Lean declares: qIntReal, treeInverse, alphaInvConst, habiroNorm, hbarQ.... Structural match via content."
-      }
-    ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote prose blocks to adhere to Milnor standards. Improved economy, preserved all math.",
-        "reviewed_at": "2026-07-07T14:26:56.320505Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.320505Z"
-        },
-        "field_hash": {
-          "md": "7a1c9e8ba2b7",
-          "ts": "5cf2d51fddc8",
-          "lean": "d8679da00b03"
-        }
-      }
-    ]
+    "proof-narrative-lean-equiv": [],
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.320505Z"
 }

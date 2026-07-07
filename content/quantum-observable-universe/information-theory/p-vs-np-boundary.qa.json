@@ -1047,25 +1047,7 @@
         "reviewed_sha": "7415132ccce30885dcfd323600b8bcf311c431e4"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Flattened complex tables/lists into dense, exact prose where appropriate. Aligned notation. Replaced 'we define' with direct declarative statements. Improved transitions between blocks while retaining original file markers.",
-        "reviewed_at": "2026-07-07T14:26:55.598839Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.598839Z"
-        },
-        "field_hash": {
-          "md": "11e2444aaf5f",
-          "ts": "931114f9bc0a",
-          "lean": "396e5ee41b2f"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:55.598839Z"
 }

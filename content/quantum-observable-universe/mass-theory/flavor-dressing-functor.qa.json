@@ -910,23 +910,6 @@
         "reviewed_at": "2026-06-22T02:57:02.153Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
-      },
-      {
-        "field_hash": {
-          "md": "c9cbb3512f31",
-          "ts": "ba0a5deea3ca",
-          "lean": "4f887a10f20b"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-25",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.836601Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.836601Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "wall-side-statement": [
@@ -946,23 +929,6 @@
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
         "evidence": "content/quantum-observable-universe/mass-theory/flavor-dressing-functor.lean:1 \u2014 Lean file exists",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "c9cbb3512f31",
-          "ts": "ba0a5deea3ca",
-          "lean": "4f887a10f20b"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-25",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.836601Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.836601Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-false-claim": [
@@ -982,23 +948,6 @@
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/flavor-dressing-functor.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "c9cbb3512f31",
-          "ts": "ba0a5deea3ca",
-          "lean": "4f887a10f20b"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-25",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.836601Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.836601Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-vacuous": [
@@ -1017,23 +966,6 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-vacuous.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "c9cbb3512f31",
-          "ts": "ba0a5deea3ca",
-          "lean": "4f887a10f20b"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-25",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.836601Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.836601Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-circular": [
@@ -1053,23 +985,6 @@
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/flavor-dressing-functor.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "c9cbb3512f31",
-          "ts": "ba0a5deea3ca",
-          "lean": "4f887a10f20b"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-25",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.836601Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.836601Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-overclaim": [
@@ -1088,23 +1003,6 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "c9cbb3512f31",
-          "ts": "ba0a5deea3ca",
-          "lean": "4f887a10f20b"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-25",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.836601Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.836601Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-hidden-dof": [
@@ -1124,23 +1022,6 @@
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/flavor-dressing-functor.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "c9cbb3512f31",
-          "ts": "ba0a5deea3ca",
-          "lean": "4f887a10f20b"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-25",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.836601Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.836601Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-non-sequitur": [
@@ -1160,23 +1041,6 @@
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/flavor-dressing-functor.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "c9cbb3512f31",
-          "ts": "ba0a5deea3ca",
-          "lean": "4f887a10f20b"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-25",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.836601Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.836601Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1195,23 +1059,6 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-lean-narrative-divergence.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "c9cbb3512f31",
-          "ts": "ba0a5deea3ca",
-          "lean": "4f887a10f20b"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-25",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.836601Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.836601Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-citation-misuse": [
@@ -1231,23 +1078,6 @@
         "notes": "No issues found for da-citation-misuse.",
         "evidence": "content/quantum-observable-universe/mass-theory/flavor-dressing-functor.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "c9cbb3512f31",
-          "ts": "ba0a5deea3ca",
-          "lean": "4f887a10f20b"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-25",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.836601Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.836601Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1267,23 +1097,6 @@
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/flavor-dressing-functor.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "c9cbb3512f31",
-          "ts": "ba0a5deea3ca",
-          "lean": "4f887a10f20b"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-25",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.836601Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.836601Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-empirical-fragility": [
@@ -1303,23 +1116,6 @@
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/flavor-dressing-functor.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "c9cbb3512f31",
-          "ts": "ba0a5deea3ca",
-          "lean": "4f887a10f20b"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-25",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.836601Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.836601Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-physical-implausibility": [
@@ -1339,23 +1135,6 @@
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/flavor-dressing-functor.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "c9cbb3512f31",
-          "ts": "ba0a5deea3ca",
-          "lean": "4f887a10f20b"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-25",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.836601Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.836601Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-reproducibility": [
@@ -1375,23 +1154,6 @@
         "notes": "No issues found for da-reproducibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/flavor-dressing-functor.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "c9cbb3512f31",
-          "ts": "ba0a5deea3ca",
-          "lean": "4f887a10f20b"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-25",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.836601Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.836601Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-referee-verdict": [
@@ -1412,64 +1174,10 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "The mathematical claim and definitions are correctly formalised and verified in Lean."
-      },
-      {
-        "field_hash": {
-          "md": "c9cbb3512f31",
-          "ts": "ba0a5deea3ca",
-          "lean": "4f887a10f20b"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-25",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.836601Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.836601Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
-    "proof-narrative-lean-equiv": [
-      {
-        "field_hash": {
-          "md": "c9cbb3512f31",
-          "ts": "ba0a5deea3ca",
-          "lean": "4f887a10f20b"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.836601Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.836601Z",
-        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'def:flavor-dressing-functor' \u2192 expected 'flavor_dressing_functor'; Lean declares: Flavor, FlavorDressingFunctor. Structural match via content."
-      }
-    ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote prose sections of mass-theory_seq36.md to enforce H1-H8 and milnor-brevity. Preserved all math blocks and original section markers. Ensured linear flow, minimal technical clutter, and short declarative sentences.",
-        "reviewed_at": "2026-07-07T14:26:56.836601Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.836601Z"
-        },
-        "field_hash": {
-          "md": "c9cbb3512f31",
-          "ts": "ba0a5deea3ca",
-          "lean": "4f887a10f20b"
-        }
-      }
-    ]
+    "proof-narrative-lean-equiv": [],
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.836601Z"
 }

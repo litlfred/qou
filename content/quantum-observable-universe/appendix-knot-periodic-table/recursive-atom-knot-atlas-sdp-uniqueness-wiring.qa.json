@@ -817,24 +817,7 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote introductory prose, knot glossary, and methodology descriptions. Enforced brevity and eliminated conversational padding. Preserved all tables and data.",
-        "reviewed_at": "2026-07-07T14:26:56.482905Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.482905Z"
-        },
-        "field_hash": {
-          "md": "f2e9212634cb",
-          "ts": "a5a53551a1a8"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.482905Z"
 }

@@ -69,24 +69,6 @@
         "reviewed_at": "2026-07-04T00:30:14.885Z",
         "reviewed_sha": "c588e48cb73bc995f7d35dc988f12a9aef882e2c",
         "notes": "Candidate flagged by heuristic scan \u2014 requires agent confirmation per lean-proof-vacuity-audit."
-      },
-      {
-        "field_hash": {
-          "md": "4679967eaf97",
-          "ts": "04bb82ed1f52",
-          "lean": "f1c5d1904903"
-        },
-        "result": "pass",
-        "notes": "Re-encoded (owner follow-up): the vacuous selectionUnique : \u2200_,\u2203_oStar,True and trivially-satisfiable strongDuality/lpFeasibility fields are replaced by content-bearing LP predicates (objective/supplyAction/Feasible/Optimal) and two genuine cited LP hypotheses \u2014 strongDuality (an objective-maximal feasible optimum exists) + complementarySlackness (every optimum has singleton support). knot_operator_lp_selection now DERIVES the unique-selection conclusion by composing them (not projecting a True-stub). Matches the .md's existence+uniqueness claim; generic ordered ring \u00a77c; lean-direct exit 0.",
-        "reviewed_at": "2026-07-07T14:26:56.744765Z",
-        "reviewed_sha": "f5e914bc969a3256bbd9712addcea5cc1a14d89d",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/lean-proof-vacuity-audit",
-          "agent_skill": "local/lean-proof-vacuity-audit",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.744765Z"
-        }
       }
     ],
     "voice-status-leak": [
@@ -1105,45 +1087,8 @@
         "reviewed_sha": "7415132ccce30885dcfd323600b8bcf311c431e4"
       }
     ],
-    "proof-narrative-lean-equiv": [
-      {
-        "field_hash": {
-          "md": "4679967eaf97",
-          "ts": "04bb82ed1f52",
-          "lean": "f1c5d1904903"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.744765Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.744765Z",
-        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:knot-operator-lp-selection' aligns with Lean declaration. Sorry-free."
-      }
-    ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Kept all formulas. Removed overly defensive framing.",
-        "reviewed_at": "2026-07-07T14:26:56.744765Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.744765Z"
-        },
-        "field_hash": {
-          "md": "4679967eaf97",
-          "ts": "04bb82ed1f52",
-          "lean": "f1c5d1904903"
-        }
-      }
-    ]
+    "proof-narrative-lean-equiv": [],
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.744765Z"
 }

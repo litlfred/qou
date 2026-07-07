@@ -1047,45 +1047,8 @@
         "reviewed_sha": "7415132ccce30885dcfd323600b8bcf311c431e4"
       }
     ],
-    "proof-narrative-lean-equiv": [
-      {
-        "field_hash": {
-          "md": "9523effebb58",
-          "ts": "9438cbfb7ac1",
-          "lean": "8c4022db2d21"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.040535Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.040535Z",
-        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:x5-bring-weight-identification' \u2192 expected 'x5_bring_weight_identification'; Lean declares: zeta5, zeta5_pow_five, bring_weight_match. Structural match via content."
-      }
-    ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote brings-surface_seq2.md. Shortened sentences, removed conversational filler, preserved math intact. Enforced declarative style. Fixed cross-block consistency.",
-        "reviewed_at": "2026-07-07T14:26:55.040535Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.040535Z"
-        },
-        "field_hash": {
-          "md": "9523effebb58",
-          "ts": "9438cbfb7ac1",
-          "lean": "8c4022db2d21"
-        }
-      }
-    ]
+    "proof-narrative-lean-equiv": [],
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:55.040535Z"
 }

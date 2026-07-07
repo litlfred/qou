@@ -33,25 +33,7 @@
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Removed strategy blocks and merged redundant properties into declarative sentences. Removed commutative diagrams. Removed conversational padding.",
-        "reviewed_at": "2026-07-07T14:26:55.844468Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.844468Z"
-        },
-        "field_hash": {
-          "md": "f21c5ba8780f",
-          "ts": "137537f15aad",
-          "lean": "0d0737a2e640"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:55.844468Z"
 }

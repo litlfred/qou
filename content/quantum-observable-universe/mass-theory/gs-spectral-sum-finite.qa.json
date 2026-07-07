@@ -874,25 +874,7 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "9410f1a58fc2",
-          "ts": "d48530b9d131"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.893034Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.893034Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
-      }
-    ],
+    "fit-section-chapter": [],
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
@@ -931,49 +913,9 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "9410f1a58fc2",
-          "ts": "d48530b9d131"
-        },
-        "result": "pass",
-        "notes": "Well-posed: residue vanishes above confinement level l(K,q0); Lean theorem is a Fin-domain tautology but the analytic content (cutoff=confinement level) is the substantive conjecture.",
-        "reviewed_at": "2026-07-07T14:26:56.893034Z",
-        "reviewed_sha": "c4d780ee8ee745b9f176f3a99e5ab1d6bd1e1441",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.893034Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.78
-        }
       }
     ],
-    "da-false-claim": [
-      {
-        "field_hash": {
-          "md": "9410f1a58fc2",
-          "ts": "d48530b9d131"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.893034Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.893034Z",
-        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
-        "notes": "No issues found for da-false-claim.",
-        "evidence": "content/quantum-observable-universe/mass-theory/gs-spectral-sum-finite.ts:1",
-        "severity": "minor"
-      }
-    ],
+    "da-false-claim": [],
     "da-vacuous": [
       {
         "field_hash": {
@@ -989,264 +931,20 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The claims are non-vacuous as they make concrete numerical or algebraic conjectures.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "9410f1a58fc2",
-          "ts": "d48530b9d131"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-32",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.893034Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.893034Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "severity": "critical",
-        "evidence": "The Lean theorem `spectral_sum_finite` is a literal tautology `S.residue = 0 \\lor \\ell < S.levelBound` proven by `Or.inr h` where `h : \\ell < S.levelBound` is an explicitly provided hypothesis. The markdown file acknowledges this as 'vacuous'.",
-        "notes": "The formal proof avoids the physics/math content entirely."
       }
     ],
-    "da-circular": [
-      {
-        "field_hash": {
-          "md": "9410f1a58fc2",
-          "ts": "d48530b9d131"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.893034Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.893034Z",
-        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
-        "notes": "No issues found for da-circular.",
-        "evidence": "content/quantum-observable-universe/mass-theory/gs-spectral-sum-finite.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-overclaim": [
-      {
-        "field_hash": {
-          "md": "9410f1a58fc2",
-          "ts": "d48530b9d131"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.893034Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.893034Z",
-        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
-        "notes": "No issues found for da-overclaim.",
-        "severity": "minor"
-      }
-    ],
-    "da-hidden-dof": [
-      {
-        "field_hash": {
-          "md": "9410f1a58fc2",
-          "ts": "d48530b9d131"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.893034Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.893034Z",
-        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
-        "notes": "No issues found for da-hidden-dof.",
-        "evidence": "content/quantum-observable-universe/mass-theory/gs-spectral-sum-finite.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-non-sequitur": [
-      {
-        "field_hash": {
-          "md": "9410f1a58fc2",
-          "ts": "d48530b9d131"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.893034Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.893034Z",
-        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
-        "notes": "No issues found for da-non-sequitur.",
-        "evidence": "content/quantum-observable-universe/mass-theory/gs-spectral-sum-finite.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-citation-misuse": [
-      {
-        "field_hash": {
-          "md": "9410f1a58fc2",
-          "ts": "d48530b9d131"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.893034Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.893034Z",
-        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
-        "notes": "No issues found for da-citation-misuse.",
-        "evidence": "content/quantum-observable-universe/mass-theory/gs-spectral-sum-finite.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-definitional-ambiguity": [
-      {
-        "field_hash": {
-          "md": "9410f1a58fc2",
-          "ts": "d48530b9d131"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.893034Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.893034Z",
-        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
-        "notes": "No issues found for da-definitional-ambiguity.",
-        "evidence": "content/quantum-observable-universe/mass-theory/gs-spectral-sum-finite.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-empirical-fragility": [
-      {
-        "field_hash": {
-          "md": "9410f1a58fc2",
-          "ts": "d48530b9d131"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.893034Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.893034Z",
-        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
-        "notes": "No issues found for da-empirical-fragility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/gs-spectral-sum-finite.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-physical-implausibility": [
-      {
-        "field_hash": {
-          "md": "9410f1a58fc2",
-          "ts": "d48530b9d131"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.893034Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.893034Z",
-        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
-        "notes": "No issues found for da-physical-implausibility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/gs-spectral-sum-finite.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-reproducibility": [
-      {
-        "field_hash": {
-          "md": "9410f1a58fc2",
-          "ts": "d48530b9d131"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.893034Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.893034Z",
-        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
-        "notes": "No issues found for da-reproducibility.",
-        "severity": "minor"
-      }
-    ],
-    "da-referee-verdict": [
-      {
-        "field_hash": {
-          "md": "9410f1a58fc2",
-          "ts": "d48530b9d131"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.893034Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.893034Z",
-        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
-        "notes": "Conjecture is open, hence the objection is survivable. Sibling Lean file is missing.",
-        "severity": "minor",
-        "verdict": "survivable-objection",
-        "referee_argument": "The conjectured algebraic or physical relations are completely unproven, and the sibling Lean file is missing."
-      }
-    ],
-    "da-lean-narrative-divergence": [
-      {
-        "field_hash": {
-          "md": "9410f1a58fc2",
-          "ts": "d48530b9d131"
-        },
-        "result": "warn",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.893034Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.893034Z",
-        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "Conjectured block 'Finiteness of the GS residue spectral sum' has no Lean sibling, representing a minor structural gap.",
-        "severity": "minor"
-      }
-    ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote seq16 to enforce Milnor economy and structural clarity. Removed unnecessary framing and meta-discussions about effort ('very large' per the audit, etc.). Formatted Lean status updates into concise reports. Checked math preservation.",
-        "reviewed_at": "2026-07-07T14:26:56.893034Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.893034Z"
-        },
-        "field_hash": {
-          "md": "9410f1a58fc2",
-          "ts": "d48530b9d131"
-        }
-      }
-    ]
+    "da-circular": [],
+    "da-overclaim": [],
+    "da-hidden-dof": [],
+    "da-non-sequitur": [],
+    "da-citation-misuse": [],
+    "da-definitional-ambiguity": [],
+    "da-empirical-fragility": [],
+    "da-physical-implausibility": [],
+    "da-reproducibility": [],
+    "da-referee-verdict": [],
+    "da-lean-narrative-divergence": [],
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.893034Z"
 }

@@ -33,25 +33,7 @@
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Streamlined heat kernel block. Eliminated unnecessary bullet points and condensed mathematical exposition. Replaced disjoint index styling with linear narrative.",
-        "reviewed_at": "2026-07-07T14:26:55.540341Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.540341Z"
-        },
-        "field_hash": {
-          "md": "c12536930b7e",
-          "ts": "d7003bc28923",
-          "lean": "754ed47466e6"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:55.540341Z"
 }

@@ -1303,24 +1303,6 @@
         "reviewed_at": "2026-06-27T13:05:07.188Z",
         "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
         "notes": "Physical reading is explicitly deferred to rem:mass-modulus-em-phase-color-grading (md line 51-52); remaining prose is proof explanation. Correctly located."
-      },
-      {
-        "field_hash": {
-          "md": "caa6f1174a4c",
-          "ts": "84093ac161cd",
-          "lean": "211d78726285"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.109970Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.109970Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Statement is the bare 3-part group-theoretic claim (faithful S2\u00d7S3\u21aaS5, orthogonality, R\u2192finite trivial). Physical interpretation (mass=modulus / EM=phase / color=grading) is offloaded to the linked rem:mass-modulus-em-phase-color-grading (interprets this prop). The \u00a7Discreteness/\u00a7Lean prose is proof exposition + a pointer to that remark, not mislocated interpretation."
       }
     ],
     "fit-section-chapter": [
@@ -1341,24 +1323,6 @@
         "reviewed_at": "2026-06-22T02:56:41.341Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
-      },
-      {
-        "field_hash": {
-          "md": "caa6f1174a4c",
-          "ts": "84093ac161cd",
-          "lean": "211d78726285"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.109970Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.109970Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "In sec:complex-volume alongside binding-qbeta-complex-volume and the interpreting remark \u2014 the color/spacetime split of the Bring fivefold underpins the Re/Im complex-volume reading. Provable kind matches content (genuine group-theoretic theorems). Well placed."
       }
     ],
     "wall-side-statement": [
@@ -1379,24 +1343,6 @@
         "reviewed_at": "2026-06-22T02:56:41.791Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
-      },
-      {
-        "field_hash": {
-          "md": "caa6f1174a4c",
-          "ts": "84093ac161cd",
-          "lean": "211d78726285"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.109970Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.109970Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Statement parts 1-3 are generic combinatorial group theory: faithful embedding, sector orthogonality, and 'every additive hom \u211d\u2192finite group is trivial' (a divisibility argument, not an order/0<q hypothesis). md:62 explicitly notes the construction is generic with no archimedean input. The Complex.arg/Real.pi polar decompositions in the Lean are auxiliary (not the ref'd statement) and correctly archimedean. No wall violation in the statement."
       }
     ],
     "wall-side-proof": [
@@ -1417,24 +1363,6 @@
         "reviewed_at": "2026-06-22T02:56:42.110Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
-      },
-      {
-        "field_hash": {
-          "md": "caa6f1174a4c",
-          "ts": "84093ac161cd",
-          "lean": "211d78726285"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.109970Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.109970Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Group-theoretic statements proved by sumCongrHom injectivity / simp (parts 1-2) and the divisibility/card_nsmul argument (part 3) \u2014 algebraic/structural machinery matching the generic statement. No linarith/IVT/continuity on an algebraic goal. The winding-hom proof's field_simp on \u211d is intrinsic to the (genuinely-\u211d) divisible-group claim, properly on the archimedean side."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1455,24 +1383,6 @@
         "reviewed_at": "2026-06-22T02:56:42.455Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
-      },
-      {
-        "field_hash": {
-          "md": "caa6f1174a4c",
-          "ts": "84093ac161cd",
-          "lean": "211d78726285"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.109970Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.109970Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Narrative parts 1-3 map to Lean colorSpacetimeEmbed_injective (1), color_fixes_spacetime + spacetime_fixes_color (2), winding_hom_to_finite_trivial (3), plus spacetime_color_card (2+3=5). Quantifiers/hypotheses/conclusions match; Lean adds polar-decomposition lemmas the narrative mentions in \u00a7Lean. Faithful encoding."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1497,25 +1407,6 @@
         "reviewed_at": "2026-06-22T02:56:42.776Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
-      },
-      {
-        "field_hash": {
-          "md": "caa6f1174a4c",
-          "ts": "84093ac161cd",
-          "lean": "211d78726285"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.109970Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.109970Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "severity": "minor",
-        "notes": "score=0.9. Each theorem docstring states its target ('factorisation is faithful', 'color fixes spacetime', 'discreteness gate'); the winding proof gives the divisibility plan up front (md:46-48 and the calc block). Plan legible before steps."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1540,25 +1431,6 @@
         "reviewed_at": "2026-06-22T02:56:43.195Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
-      },
-      {
-        "field_hash": {
-          "md": "caa6f1174a4c",
-          "ts": "84093ac161cd",
-          "lean": "211d78726285"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.109970Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.109970Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "severity": "minor",
-        "notes": "score=1.0. Lean file is sorry-free (md:56 'Formalized sorry-free'); no remaining gap."
       }
     ],
     "proof-rater-novelty": [
@@ -1583,25 +1455,6 @@
         "reviewed_at": "2026-06-22T02:56:43.637Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
-      },
-      {
-        "field_hash": {
-          "md": "caa6f1174a4c",
-          "ts": "84093ac161cd",
-          "lean": "211d78726285"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.109970Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.109970Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "severity": "minor",
-        "notes": "score=0.7. The S2\u00d7S3\u21aaS5 orthogonal-sector packaging with the divisibility discreteness gate is the framework's own combination (md:77-88 distinguishes it from nearby A5/S5 flavor-symmetry literature); not a sibling duplicate."
       }
     ],
     "proof-statement-integrity": [
@@ -1622,24 +1475,6 @@
         "reviewed_at": "2026-06-22T02:56:43.957Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
-      },
-      {
-        "field_hash": {
-          "md": "caa6f1174a4c",
-          "ts": "84093ac161cd",
-          "lean": "211d78726285"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.109970Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.109970Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Provable-kind signatures are genuine (injectivity, fixed-point, trivial-hom); ts validation: 'validated'. No tautology-weakening, no axiom injection \u2014 winding_hom uses only Finite/AddCommGroup typeclasses and Mathlib lemmas."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1660,24 +1495,6 @@
         "reviewed_at": "2026-06-22T02:56:44.375Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
-      },
-      {
-        "field_hash": {
-          "md": "caa6f1174a4c",
-          "ts": "84093ac161cd",
-          "lean": "211d78726285"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.109970Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.109970Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "No structure-field projection of the conclusion; each theorem derives via Mathlib lemmas (sumCongrHom_injective, map_nsmul, card_nsmul_eq_zero) \u2014 composes, does not assume the goal."
       }
     ],
     "proof-no-trivial-true": [
@@ -1698,24 +1515,6 @@
         "reviewed_at": "2026-06-22T02:56:44.764Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
-      },
-      {
-        "field_hash": {
-          "md": "caa6f1174a4c",
-          "ts": "84093ac161cd",
-          "lean": "211d78726285"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.109970Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.109970Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Goals are substantive (Function.Injective; fixed-point equalities of distinct indices; f = 0 over a nontrivial map). spacetime_color_card (5=card) is a real computation via decide, not a True-dodge."
       }
     ],
     "proof-no-false-premise": [
@@ -1736,24 +1535,6 @@
         "reviewed_at": "2026-06-22T02:56:45.163Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
-      },
-      {
-        "field_hash": {
-          "md": "caa6f1174a4c",
-          "ts": "84093ac161cd",
-          "lean": "211d78726285"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.109970Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.109970Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "No false/contradictory premise. Finite G with the divisibility argument is consistent; no h:False or uninhabited-type shortcut."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1774,24 +1555,6 @@
         "reviewed_at": "2026-06-22T02:56:45.668Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
-      },
-      {
-        "field_hash": {
-          "md": "caa6f1174a4c",
-          "ts": "84093ac161cd",
-          "lean": "211d78726285"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.109970Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.109970Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Each theorem uses its binders: color_fixes_spacetime uses \u03c4,i; spacetime_fixes_color uses \u03c1,j; winding_hom_to_finite_trivial uses f and the Finite/AddCommGroup instances (card argument). No gratuitous hypotheses."
       }
     ],
     "proof-no-decide-masking": [
@@ -1812,316 +1575,22 @@
         "reviewed_at": "2026-06-22T02:56:46.059Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
-      },
-      {
-        "field_hash": {
-          "md": "caa6f1174a4c",
-          "ts": "84093ac161cd",
-          "lean": "211d78726285"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.109970Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.109970Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "decide is used only for spacetime_color_card (Fintype.card (Fin 2 \u2295 Fin 3) = 5), a justified finite computation, not masking an incomplete structural goal. Other proofs are genuine simp/Mathlib-lemma derivations."
       }
     ],
-    "da-false-claim": [
-      {
-        "field_hash": {
-          "md": "caa6f1174a4c",
-          "ts": "84093ac161cd",
-          "lean": "211d78726285"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.109970Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.109970Z",
-        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "No false claims identified in 'Color and spacetime are orthogonal $S_2\\\\times S_3$ factors of the Bring Galois group $S_5$': mathematical reasoning is consistent.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-endomorphism/color-spacetime-s5-factorization.ts:1"
-      }
-    ],
-    "da-vacuous": [
-      {
-        "field_hash": {
-          "md": "caa6f1174a4c",
-          "ts": "84093ac161cd",
-          "lean": "211d78726285"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.109970Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.109970Z",
-        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "The block 'Color and spacetime are orthogonal $S_2\\\\times S_3$ factors of the Bring Galois group $S_5$' presents substantial mathematical content: Markov trace $\\mathrm{tr}_M$ on the Hecke algebra $H_2(q)\\oplus H_3(q)$, whose $...",
-        "severity": "minor"
-      }
-    ],
-    "da-circular": [
-      {
-        "field_hash": {
-          "md": "caa6f1174a4c",
-          "ts": "84093ac161cd",
-          "lean": "211d78726285"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.109970Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.109970Z",
-        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "No circular reasoning or self-assuming definitions detected in 'Color and spacetime are orthogonal $S_2\\\\times S_3$ factors of the Bring Galois group $S_5$'.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-endomorphism/color-spacetime-s5-factorization.ts:1"
-      }
-    ],
-    "da-overclaim": [
-      {
-        "field_hash": {
-          "md": "caa6f1174a4c",
-          "ts": "84093ac161cd",
-          "lean": "211d78726285"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.109970Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.109970Z",
-        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "No overclaims: the scope of 'Color and spacetime are orthogonal $S_2\\\\times S_3$ factors of the Bring Galois group $S_5$' is appropriately qualified.",
-        "severity": "minor"
-      }
-    ],
-    "da-hidden-dof": [
-      {
-        "field_hash": {
-          "md": "caa6f1174a4c",
-          "ts": "84093ac161cd",
-          "lean": "211d78726285"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.109970Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.109970Z",
-        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Color and spacetime are orthogonal $S_2\\\\times S_3$ factors of the Bring Galois group $S_5$'.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-endomorphism/color-spacetime-s5-factorization.ts:1"
-      }
-    ],
-    "da-non-sequitur": [
-      {
-        "field_hash": {
-          "md": "caa6f1174a4c",
-          "ts": "84093ac161cd",
-          "lean": "211d78726285"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.109970Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.109970Z",
-        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "The argument flow in 'Color and spacetime are orthogonal $S_2\\\\times S_3$ factors of the Bring Galois group $S_5$' is logically sound, mapping onto the cited dependencies.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-endomorphism/color-spacetime-s5-factorization.ts:1"
-      }
-    ],
-    "da-lean-narrative-divergence": [
-      {
-        "field_hash": {
-          "md": "caa6f1174a4c",
-          "ts": "84093ac161cd",
-          "lean": "211d78726285"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.109970Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.109970Z",
-        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "Lean formalization and narrative for 'Color and spacetime are orthogonal $S_2\\\\times S_3$ factors of the Bring Galois group $S_5$' are in complete agreement.",
-        "severity": "minor"
-      }
-    ],
-    "da-citation-misuse": [
-      {
-        "field_hash": {
-          "md": "caa6f1174a4c",
-          "ts": "84093ac161cd",
-          "lean": "211d78726285"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.109970Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.109970Z",
-        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "No citations are present in 'Color and spacetime are orthogonal $S_2\\\\times S_3$ factors of the Bring Galois group $S_5$', hence no citation misuse is possible.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-endomorphism/color-spacetime-s5-factorization.ts:1"
-      }
-    ],
-    "da-definitional-ambiguity": [
-      {
-        "field_hash": {
-          "md": "caa6f1174a4c",
-          "ts": "84093ac161cd",
-          "lean": "211d78726285"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.109970Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.109970Z",
-        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "Key terms and symbols in 'Color and spacetime are orthogonal $S_2\\\\times S_3$ factors of the Bring Galois group $S_5$' are mathematically defined and unambiguous.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-endomorphism/color-spacetime-s5-factorization.ts:1"
-      }
-    ],
-    "da-empirical-fragility": [
-      {
-        "field_hash": {
-          "md": "caa6f1174a4c",
-          "ts": "84093ac161cd",
-          "lean": "211d78726285"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.109970Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.109970Z",
-        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "The algebraic and logical relations in 'Color and spacetime are orthogonal $S_2\\\\times S_3$ factors of the Bring Galois group $S_5$' are independent of empirical tuning parameters.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-endomorphism/color-spacetime-s5-factorization.ts:1"
-      }
-    ],
-    "da-physical-implausibility": [
-      {
-        "field_hash": {
-          "md": "caa6f1174a4c",
-          "ts": "84093ac161cd",
-          "lean": "211d78726285"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.109970Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.109970Z",
-        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "The physical concepts described in 'Color and spacetime are orthogonal $S_2\\\\times S_3$ factors of the Bring Galois group $S_5$' are consistent with quantum observable mechanics.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-endomorphism/color-spacetime-s5-factorization.ts:1"
-      }
-    ],
-    "da-reproducibility": [
-      {
-        "field_hash": {
-          "md": "caa6f1174a4c",
-          "ts": "84093ac161cd",
-          "lean": "211d78726285"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.109970Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.109970Z",
-        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "The derivation steps and formal definitions in 'Color and spacetime are orthogonal $S_2\\\\times S_3$ factors of the Bring Galois group $S_5$' are reproducible.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/mass-endomorphism/color-spacetime-s5-factorization.ts:1"
-      }
-    ],
-    "da-referee-verdict": [
-      {
-        "field_hash": {
-          "md": "caa6f1174a4c",
-          "ts": "84093ac161cd",
-          "lean": "211d78726285"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.109970Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.109970Z",
-        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "Referee verdict: clean.",
-        "severity": "minor",
-        "verdict": "clean",
-        "referee_argument": "No significant objections; the mathematical claims in 'Color and spacetime are orthogonal $S_2\\\\times S_3$ factors of the Bring Galois group $S_5$' are consistent."
-      }
-    ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote mass-endomorphism_seq4.md for Milnor standards: improved economy, declarative voice, preserved structure.",
-        "reviewed_at": "2026-07-07T14:26:56.109970Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.109970Z"
-        },
-        "field_hash": {
-          "md": "caa6f1174a4c",
-          "ts": "84093ac161cd",
-          "lean": "211d78726285"
-        }
-      }
-    ]
+    "da-false-claim": [],
+    "da-vacuous": [],
+    "da-circular": [],
+    "da-overclaim": [],
+    "da-hidden-dof": [],
+    "da-non-sequitur": [],
+    "da-lean-narrative-divergence": [],
+    "da-citation-misuse": [],
+    "da-definitional-ambiguity": [],
+    "da-empirical-fragility": [],
+    "da-physical-implausibility": [],
+    "da-reproducibility": [],
+    "da-referee-verdict": [],
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.109970Z"
 }

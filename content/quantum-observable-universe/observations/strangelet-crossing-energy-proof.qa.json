@@ -11,27 +11,7 @@
     "ts": "7853d8720884"
   },
   "criteria": {
-    "da-non-sequitur": [
-      {
-        "field_hash": {
-          "md": "32d23cb14154",
-          "ts": "7853d8720884"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-21",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.649233Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.649233Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "severity": "major",
-        "evidence": "file:19: larger for strange matter by a factor of 8/6 = 4/3",
-        "notes": "The proof establishes that T_{2,3} has 3 crossings and T_{2,5} has 5 crossings. Concluding that the binding component is larger by a factor of 8/6 = 4/3 does not follow from the numbers 3 and 5. The arithmetic logic jumps without justification."
-      }
-    ],
+    "da-non-sequitur": [],
     "bib-cite-resolves": [
       {
         "field_hash": {

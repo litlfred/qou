@@ -31,24 +31,7 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Kept all formulas. Removed overly defensive framing.",
-        "reviewed_at": "2026-07-07T14:26:56.720732Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.720732Z"
-        },
-        "field_hash": {
-          "md": "58b87822a60c",
-          "ts": "c7ae983bc4e5"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.720732Z"
 }

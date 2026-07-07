@@ -33,45 +33,8 @@
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
       }
     ],
-    "proof-narrative-lean-equiv": [
-      {
-        "field_hash": {
-          "md": "b4646326c39f",
-          "ts": "fc3185813acf",
-          "lean": "7f9e87a2aac1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.789217Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.789217Z",
-        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:rho-k-h3a-refinement' aligns with Lean declaration. Sorry-free."
-      }
-    ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote prose sections of mass-theory_seq48.md to enforce H1-H8 and milnor-brevity. Preserved all math blocks and original section markers. Ensured linear flow, minimal technical clutter, and short declarative sentences.",
-        "reviewed_at": "2026-07-07T14:26:56.789217Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.789217Z"
-        },
-        "field_hash": {
-          "md": "b4646326c39f",
-          "ts": "fc3185813acf",
-          "lean": "7f9e87a2aac1"
-        }
-      }
-    ]
+    "proof-narrative-lean-equiv": [],
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.789217Z"
 }

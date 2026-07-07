@@ -874,25 +874,7 @@
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Replaced the philosophical quote with direct geometry. Reduced framing in the intro. Removed parenthetical citations to internal definitions.",
-        "reviewed_at": "2026-07-07T14:26:55.759735Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.759735Z"
-        },
-        "field_hash": {
-          "md": "7862ba458d9f",
-          "ts": "d0f43388000c",
-          "lean": "60de5c068e7e"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:55.759735Z"
 }

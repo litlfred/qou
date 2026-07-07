@@ -1221,25 +1221,7 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "proof-no-placeholder-stub": [
-      {
-        "field_hash": {
-          "md": "779ced6eae4a",
-          "ts": "ecf3fab17a11"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/lean-proof-vacuity-audit",
-          "agent_date": "2026-07-07T14:26:56.591266Z",
-          "agent_skill": "local/lean-proof-vacuity-audit",
-          "agent_model": "gemini-3.1-pro"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.591266Z",
-        "reviewed_sha": "a9ce9ecfe24e6c7c9d0b9f25699b35ec666faa32",
-        "notes": "4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): placeholder-stub marker no longer present \u2014 criterion pass. Residual self-assuming-projection / statement-scope issue tracked under proof-statement-integrity and bean qsb2; do not re-fail this criterion for it."
-      }
-    ],
+    "proof-no-placeholder-stub": [],
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
@@ -1286,23 +1268,6 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
-      },
-      {
-        "field_hash": {
-          "md": "779ced6eae4a",
-          "ts": "ecf3fab17a11"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.591266Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.591266Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "fit-section-chapter": [
@@ -1336,23 +1301,6 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
-      },
-      {
-        "field_hash": {
-          "md": "779ced6eae4a",
-          "ts": "ecf3fab17a11"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.591266Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.591266Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "wall-side-statement": [
@@ -1387,23 +1335,6 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "observations is an explicitly-archimedean chapter; the 0 < q hypothesis and \u211d specialisation are appropriate, and the .lean sibling note declares the \u00a77c archimedean specialisation."
-      },
-      {
-        "field_hash": {
-          "md": "779ced6eae4a",
-          "ts": "ecf3fab17a11"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.591266Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.591266Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "wall-side-proof": [
@@ -1438,23 +1369,6 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "linarith is used to derive part (3)'s strict inequality 8q\u207b\u00b9 > 6q\u207b\u00b9 from q\u207b\u00b9 > 0; the ordering proof matches the archimedean-chapter statement's side."
-      },
-      {
-        "field_hash": {
-          "md": "779ced6eae4a",
-          "ts": "ecf3fab17a11"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.591266Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.591266Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1503,23 +1417,6 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Lean theorem encodes the three narrative claims (Q=0; E_cross formula; 0<q \u2192 E_bind_uds=8q\u207b\u00b9, E_bind_udd=6q\u207b\u00b9, E_bind_udd<E_bind_uds) as a faithful conjunction; quantifiers/hypotheses/conclusion match."
-      },
-      {
-        "field_hash": {
-          "md": "779ced6eae4a",
-          "ts": "ecf3fab17a11"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.591266Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.591266Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1581,23 +1478,6 @@
           "max": 1,
           "value": 0.68
         }
-      },
-      {
-        "field_hash": {
-          "md": "779ced6eae4a",
-          "ts": "ecf3fab17a11"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.591266Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.591266Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1659,23 +1539,6 @@
           "max": 1,
           "value": 0.78
         }
-      },
-      {
-        "field_hash": {
-          "md": "779ced6eae4a",
-          "ts": "ecf3fab17a11"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.591266Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.591266Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "proof-rater-novelty": [
@@ -1737,23 +1600,6 @@
           "max": 1,
           "value": 0.7
         }
-      },
-      {
-        "field_hash": {
-          "md": "779ced6eae4a",
-          "ts": "ecf3fab17a11"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.591266Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.591266Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "proof-statement-integrity": [
@@ -1807,23 +1653,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "779ced6eae4a",
-          "ts": "ecf3fab17a11"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.591266Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.591266Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1877,23 +1706,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "779ced6eae4a",
-          "ts": "ecf3fab17a11"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.591266Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.591266Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "proof-no-trivial-true": [
@@ -1945,23 +1757,6 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Goal is a substantive conjunction, not True/x=x; the q\u207b\u00b9>0 \u2192 8q\u207b\u00b9>6q\u207b\u00b9 inequality is genuinely derived via linarith. Claims (1)/(2) are conditional-class field projections (legitimate \u00a73b-cond disposition), not vacuous-True masking."
-      },
-      {
-        "field_hash": {
-          "md": "779ced6eae4a",
-          "ts": "ecf3fab17a11"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.591266Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.591266Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "proof-no-false-premise": [
@@ -2015,23 +1810,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "779ced6eae4a",
-          "ts": "ecf3fab17a11"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.591266Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.591266Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -2085,23 +1863,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "779ced6eae4a",
-          "ts": "ecf3fab17a11"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.591266Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.591266Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "proof-no-decide-masking": [
@@ -2153,23 +1914,6 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Proof uses refine/intro/rw/linarith; no decide and no trivial masking an incomplete goal."
-      },
-      {
-        "field_hash": {
-          "md": "779ced6eae4a",
-          "ts": "ecf3fab17a11"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.591266Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.591266Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-false-claim": [
@@ -2189,23 +1933,6 @@
         "notes": "No false claims identified in 'Crossing energy of strange quark matter is purely strong': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/strangelet-crossing-energy.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "779ced6eae4a",
-          "ts": "ecf3fab17a11"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.591266Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.591266Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-vacuous": [
@@ -2224,23 +1951,6 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Crossing energy of strange quark matter is purely strong' presents substantial mathematical content: Let $\\mathcal{S}_N$ be a composite of $N$ baryon-number units of strange quark m...",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "779ced6eae4a",
-          "ts": "ecf3fab17a11"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.591266Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.591266Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-circular": [
@@ -2260,23 +1970,6 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Crossing energy of strange quark matter is purely strong'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/strangelet-crossing-energy.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "779ced6eae4a",
-          "ts": "ecf3fab17a11"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.591266Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.591266Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-overclaim": [
@@ -2295,23 +1988,6 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No overclaims: the scope of 'Crossing energy of strange quark matter is purely strong' is appropriately qualified.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "779ced6eae4a",
-          "ts": "ecf3fab17a11"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.591266Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.591266Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-hidden-dof": [
@@ -2331,23 +2007,6 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Crossing energy of strange quark matter is purely strong'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/strangelet-crossing-energy.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "779ced6eae4a",
-          "ts": "ecf3fab17a11"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.591266Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.591266Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-non-sequitur": [
@@ -2367,23 +2026,6 @@
         "notes": "The argument flow in 'Crossing energy of strange quark matter is purely strong' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/strangelet-crossing-energy.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "779ced6eae4a",
-          "ts": "ecf3fab17a11"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.591266Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.591266Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -2402,23 +2044,6 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The referenced Lean file content/quantum-observable-universe/observations/strangelet-crossing-energy.lean is missing, leading to complete divergence.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "779ced6eae4a",
-          "ts": "ecf3fab17a11"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.591266Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.591266Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-citation-misuse": [
@@ -2438,23 +2063,6 @@
         "notes": "No citations are present in 'Crossing energy of strange quark matter is purely strong', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/strangelet-crossing-energy.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "779ced6eae4a",
-          "ts": "ecf3fab17a11"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.591266Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.591266Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-definitional-ambiguity": [
@@ -2474,23 +2082,6 @@
         "notes": "Key terms and symbols in 'Crossing energy of strange quark matter is purely strong' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/strangelet-crossing-energy.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "779ced6eae4a",
-          "ts": "ecf3fab17a11"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.591266Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.591266Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-empirical-fragility": [
@@ -2510,23 +2101,6 @@
         "notes": "The algebraic and logical relations in 'Crossing energy of strange quark matter is purely strong' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/strangelet-crossing-energy.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "779ced6eae4a",
-          "ts": "ecf3fab17a11"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.591266Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.591266Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-physical-implausibility": [
@@ -2546,23 +2120,6 @@
         "notes": "The physical concepts described in 'Crossing energy of strange quark matter is purely strong' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/strangelet-crossing-energy.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "779ced6eae4a",
-          "ts": "ecf3fab17a11"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.591266Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.591266Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-reproducibility": [
@@ -2582,23 +2139,6 @@
         "notes": "The derivation steps and formal definitions in 'Crossing energy of strange quark matter is purely strong' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/strangelet-crossing-energy.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "779ced6eae4a",
-          "ts": "ecf3fab17a11"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.591266Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.591266Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-referee-verdict": [
@@ -2619,43 +2159,9 @@
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/observations/strangelet-crossing-energy.lean is missing, preventing formal verification of the claims in 'Crossing energy of strange quark matter is purely strong'.",
         "severity": "critical"
-      },
-      {
-        "field_hash": {
-          "md": "779ced6eae4a",
-          "ts": "ecf3fab17a11"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.591266Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.591266Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote observations_seq14.md. Removed narrative framing in favor of tight declarative sentences. Converted lists and propositions to strict formatting.",
-        "reviewed_at": "2026-07-07T14:26:56.591266Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.591266Z"
-        },
-        "field_hash": {
-          "md": "779ced6eae4a",
-          "ts": "ecf3fab17a11"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.591266Z"
 }

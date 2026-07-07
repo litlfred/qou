@@ -31,24 +31,7 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote observations_seq11.md. Pruned verbiage from k12-barrier bypass, ensuring exact technical statements remain while stripping meta-commentary.",
-        "reviewed_at": "2026-07-07T14:26:56.678808Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.678808Z"
-        },
-        "field_hash": {
-          "md": "fc9cddb1f487",
-          "ts": "486e12056df0"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.678808Z"
 }

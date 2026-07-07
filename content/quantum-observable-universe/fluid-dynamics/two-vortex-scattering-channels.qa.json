@@ -817,24 +817,7 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote fluid-dynamics_seq0.md. Replaced passives with strong action verbs. Used present tense consistently. Emphasized linearity and succinctness.",
-        "reviewed_at": "2026-07-07T14:26:56.255768Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.255768Z"
-        },
-        "field_hash": {
-          "md": "fee048bed00e",
-          "ts": "eeead421b4f1"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.255768Z"
 }

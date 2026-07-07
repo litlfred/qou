@@ -9,62 +9,10 @@
   },
   "source_hashes": {},
   "criteria": {
-    "voice-status-leak": [
-      {
-        "field_hash": {},
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "voice-status-leak-audit",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.985482Z",
-          "agent_skill": "local/one-voice-audit"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.985482Z"
-      }
-    ],
-    "voice-emoji-content": [
-      {
-        "field_hash": {},
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.985482Z",
-          "agent_skill": "local/one-voice-audit",
-          "id": "voice-emoji-content-audit"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.985482Z"
-      }
-    ],
-    "voice-first-person-work": [
-      {
-        "field_hash": {},
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.985482Z",
-          "agent_skill": "local/one-voice-audit",
-          "id": "voice-first-person-work-audit"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.985482Z"
-      }
-    ],
-    "voice-time-stamped-notes": [
-      {
-        "field_hash": {},
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "voice-time-stamped-audit",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.985482Z",
-          "agent_skill": "local/one-voice-audit"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.985482Z"
-      }
-    ],
+    "voice-status-leak": [],
+    "voice-emoji-content": [],
+    "voice-first-person-work": [],
+    "voice-time-stamped-notes": [],
     "voice-unicode-crash": [
       {
         "field_hash": {
@@ -118,20 +66,7 @@
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
     ],
-    "voice-scholarly-default": [
-      {
-        "field_hash": {},
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.985482Z",
-          "agent_skill": "local/one-voice-audit",
-          "id": "voice-scholarly-default-audit"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.985482Z"
-      }
-    ],
+    "voice-scholarly-default": [],
     "voice-title-scholarly": [
       {
         "field_hash": {
@@ -185,20 +120,7 @@
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
     ],
-    "voice-ai-slop": [
-      {
-        "field_hash": {},
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.985482Z",
-          "agent_skill": "local/one-voice-audit",
-          "id": "voice-ai-slop-audit"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.985482Z"
-      }
-    ],
+    "voice-ai-slop": [],
     "framework-canonical": [
       {
         "field_hash": {
@@ -305,20 +227,7 @@
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
     ],
-    "proof-no-bare-sorries": [
-      {
-        "field_hash": {},
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "proof-audit-batch",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.985482Z",
-          "agent_skill": "local/proof-integration-watcher"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.985482Z"
-      }
-    ],
+    "proof-no-bare-sorries": [],
     "proof-no-trivial-skeleton": [
       {
         "field_hash": {
@@ -552,20 +461,7 @@
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
     ],
-    "canonical-no-hardcoded-observable": [
-      {
-        "field_hash": {},
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "canonical-audit-batch",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.985482Z",
-          "agent_skill": "local/canonical-watcher"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.985482Z"
-      }
-    ],
+    "canonical-no-hardcoded-observable": [],
     "canonical-cal4-acknowledged": [
       {
         "field_hash": {
@@ -1447,20 +1343,7 @@
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
     ],
-    "voice-editorializing": [
-      {
-        "field_hash": {},
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.985482Z",
-          "agent_skill": "local/one-voice-audit",
-          "id": "voice-editorializing-audit"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.985482Z"
-      }
-    ],
+    "voice-editorializing": [],
     "canonical-witness-pinned": [
       {
         "field_hash": {
@@ -1545,20 +1428,6 @@
         "reviewed_at": "2026-05-28T15:43:22.741Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:chirality-ribbon-frobenius' \u2192 expected 'chirality_ribbon_frobenius'; Lean declares: ChiralityRibbonFrobenius. Structural match via content."
-      },
-      {
-        "field_hash": {},
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.985482Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.985482Z",
-        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:chirality-ribbon-frobenius' \u2192 expected 'chirality_ribbon_frobenius'; Lean declares: ChiralityRibbonFrobenius. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1602,20 +1471,7 @@
         "notes": "stale: cached lean diagnostics have no lean_sha (legacy v1 cache); re-run content/pipeline/lean-compile-audit.ts to refresh"
       }
     ],
-    "voice-author-notes-pollution": [
-      {
-        "field_hash": {},
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "voice-author-notes-pollution-audit",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.985482Z",
-          "agent_skill": "local/one-voice-audit"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.985482Z"
-      }
-    ],
+    "voice-author-notes-pollution": [],
     "detangler-block-tanglement": [
       {
         "field_hash": {
@@ -1940,24 +1796,7 @@
         "reviewed_sha": "adcb03e136a9cea82a8536f577666f09b63ea5be"
       }
     ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {},
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "sec:derivation-audit scope covers GAP-A derivations; this conjecture directly addresses GAP-A-2 chirality factor",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.985482Z",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.985482Z",
-        "reviewed_sha": "8f2a783fc9f993048e93178a95afdbf7823eae05",
-        "notes": "Placement in Pre-Archimedean Derivation Chain and Audit section is appropriate for a chirality-factor conjecture linked to audit gap GAP-A-2"
-      }
-    ],
+    "fit-section-chapter": [],
     "detangler-graph-energy": [
       {
         "field_hash": {

@@ -1010,82 +1010,10 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "voice-statement-no-interpretation": [
-      {
-        "field_hash": {
-          "md": "d382d5678b7e",
-          "ts": "231a79d4d266"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.851104Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.851104Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement is a bare mathematical claim."
-      }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "d382d5678b7e",
-          "ts": "231a79d4d266"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.851104Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.851104Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "d382d5678b7e",
-          "ts": "231a79d4d266"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.851104Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.851104Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement respects the chapter's base-ring regime."
-      }
-    ],
-    "wall-side-proof": [
-      {
-        "field_hash": {
-          "md": "d382d5678b7e",
-          "ts": "231a79d4d266"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.851104Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.851104Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Proof machinery matches the statement regime."
-      }
-    ],
+    "voice-statement-no-interpretation": [],
+    "fit-section-chapter": [],
+    "wall-side-statement": [],
+    "wall-side-proof": [],
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
@@ -1157,27 +1085,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "d382d5678b7e",
-          "ts": "231a79d4d266"
-        },
-        "result": "warn",
-        "notes": "No strategy: lift assumed as class field. (su2_emergence_combined does genuinely compose the two siblings, but each base lemma is self-assuming.)",
-        "reviewed_at": "2026-07-07T14:26:55.851104Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.851104Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.25
-        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1218,27 +1125,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "d382d5678b7e",
-          "ts": "231a79d4d266"
-        },
-        "result": "pass",
-        "notes": "Substantive: det=1 on every gauge automorphism \u27f9 G\u2286SL(2) (volume/qdet constraint). Well-posed.",
-        "reviewed_at": "2026-07-07T14:26:55.851104Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.851104Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.8
-        }
       }
     ],
     "proof-rater-novelty": [
@@ -1278,27 +1164,6 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "d382d5678b7e",
-          "ts": "231a79d4d266"
-        },
-        "result": "warn",
-        "notes": "Implication axiomatised verbatim and re-applied; only the combined corollary adds a trivial \u27e8_,_\u27e9 pairing.",
-        "reviewed_at": "2026-07-07T14:26:55.851104Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.851104Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.22
         }
       }
     ],
@@ -1353,23 +1218,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "d382d5678b7e",
-          "ts": "231a79d4d266"
-        },
-        "result": "pass",
-        "notes": "Lean statement now faithfully states the .md claim; previously-dropped/weakened clauses restored as real propositions (open parts carry a cited sorry per \u00a71, not omitted). Verified lean-direct exit 0.",
-        "reviewed_at": "2026-07-07T14:26:55.851104Z",
-        "reviewed_sha": "3dd36f14516a6043b87a5a6f8ad6a24bc6b16c13",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/lean-proof-vacuity-audit",
-          "agent_skill": "local/lean-proof-vacuity-audit",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.851104Z"
-        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1423,23 +1271,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "d382d5678b7e",
-          "ts": "231a79d4d266"
-        },
-        "result": "pass",
-        "notes": "Re-encoded on branch claude/lean-qa-backlog-2h3f8d: carrier fields are now genuine sub-hypotheses (never the conclusion) and the theorem DERIVES its conclusion by composing them / applying proved lemmas \u2014 no longer projects an assumed field (AGENTS.md \u00a73b-cond item 5). Verified lean-direct exit 0.",
-        "reviewed_at": "2026-07-07T14:26:55.851104Z",
-        "reviewed_sha": "3dd36f14516a6043b87a5a6f8ad6a24bc6b16c13",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/lean-proof-vacuity-audit",
-          "agent_skill": "local/lean-proof-vacuity-audit",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.851104Z"
-        }
       }
     ],
     "proof-no-trivial-true": [
@@ -1459,23 +1290,6 @@
         "reviewed_at": "2026-06-22T02:56:40.659Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Goal or proof is trivial/vacuous."
-      },
-      {
-        "field_hash": {
-          "md": "d382d5678b7e",
-          "ts": "231a79d4d266"
-        },
-        "result": "pass",
-        "notes": "Re-audit 2026-06-25: no `: True` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/su2_emergence_volume_determinant.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-07-07T14:26:55.851104Z",
-        "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.851104Z"
-        }
       }
     ],
     "proof-no-false-premise": [
@@ -1511,23 +1325,6 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "d382d5678b7e",
-          "ts": "231a79d4d266"
-        },
-        "result": "pass",
-        "notes": "SU2VolumeContext satisfiable (contained_in_SL2:=True). No contradictory premise.",
-        "reviewed_at": "2026-07-07T14:26:55.851104Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.851104Z"
         }
       }
     ],
@@ -1565,23 +1362,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "d382d5678b7e",
-          "ts": "231a79d4d266"
-        },
-        "result": "pass",
-        "notes": "h_all_det_one consumed by the field; [ctx] used. Binders used.",
-        "reviewed_at": "2026-07-07T14:26:55.851104Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.851104Z"
-        }
       }
     ],
     "proof-no-decide-masking": [
@@ -1601,317 +1381,22 @@
         "reviewed_at": "2026-06-22T02:56:41.861Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Stub uses decide/trivial masking."
-      },
-      {
-        "field_hash": {
-          "md": "d382d5678b7e",
-          "ts": "231a79d4d266"
-        },
-        "result": "pass",
-        "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/su2_emergence_volume_determinant.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-07-07T14:26:55.851104Z",
-        "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.851104Z"
-        }
       }
     ],
-    "da-false-claim": [
-      {
-        "field_hash": {
-          "md": "d382d5678b7e",
-          "ts": "231a79d4d266"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.851104Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.851104Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "su2-emergence-volume-determinant.ts:1",
-        "notes": "No false claims identified in the prose of 'Volume constraint forces $\\\\det(g_V) = 1$'; the mathematical reasoning concerning 'every tensor automorphism $g \\in G$ of the fibre functor $\\tau$' is consistent."
-      }
-    ],
-    "da-vacuous": [
-      {
-        "field_hash": {
-          "md": "d382d5678b7e",
-          "ts": "231a79d4d266"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.851104Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.851104Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "su2-emergence-volume-determinant.ts:1",
-        "notes": "The block 'Volume constraint forces $\\\\det(g_V) = 1$' presents substantial mathematical content: 'every tensor automorphism $g \\in G$ of the fibre functor $\\tau$'."
-      }
-    ],
-    "da-circular": [
-      {
-        "field_hash": {
-          "md": "d382d5678b7e",
-          "ts": "231a79d4d266"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.851104Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.851104Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "su2-emergence-volume-determinant.ts:1",
-        "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Volume constraint forces $\\\\det(g_V) = 1$' (which asserts 'every tensor automorphism $g \\in G$ of the fibre functor $\\tau$')."
-      }
-    ],
-    "da-overclaim": [
-      {
-        "field_hash": {
-          "md": "d382d5678b7e",
-          "ts": "231a79d4d266"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.851104Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.851104Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "su2-emergence-volume-determinant.ts:1",
-        "notes": "The remarks and narrative scope in 'Volume constraint forces $\\\\det(g_V) = 1$' concerning 'every tensor automorphism $g \\in G$ of the fibre functor $\\tau$' are appropriately qualified."
-      }
-    ],
-    "da-hidden-dof": [
-      {
-        "field_hash": {
-          "md": "d382d5678b7e",
-          "ts": "231a79d4d266"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.851104Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.851104Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "su2-emergence-volume-determinant.ts:1",
-        "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Volume constraint forces $\\\\det(g_V) = 1$'."
-      }
-    ],
-    "da-non-sequitur": [
-      {
-        "field_hash": {
-          "md": "d382d5678b7e",
-          "ts": "231a79d4d266"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.851104Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.851104Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "su2-emergence-volume-determinant.ts:1",
-        "notes": "The prose arguments in 'Volume constraint forces $\\\\det(g_V) = 1$' proceed logically through the stated steps: 'every tensor automorphism $g \\in G$ of the fibre functor $\\tau$'."
-      }
-    ],
-    "da-lean-narrative-divergence": [
-      {
-        "field_hash": {
-          "md": "d382d5678b7e",
-          "ts": "231a79d4d266"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.851104Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.851104Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "su2-emergence-volume-determinant.ts:1",
-        "notes": "No Lean sibling required; the narrative of 'Volume constraint forces $\\\\det(g_V) = 1$' matches the expected configuration."
-      }
-    ],
-    "da-citation-misuse": [
-      {
-        "field_hash": {
-          "md": "d382d5678b7e",
-          "ts": "231a79d4d266"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.851104Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.851104Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "su2-emergence-volume-determinant.ts:1",
-        "notes": "No citations are present in 'Volume constraint forces $\\\\det(g_V) = 1$', hence no citation misuse is possible."
-      }
-    ],
-    "da-definitional-ambiguity": [
-      {
-        "field_hash": {
-          "md": "d382d5678b7e",
-          "ts": "231a79d4d266"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.851104Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.851104Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "su2-emergence-volume-determinant.ts:1",
-        "notes": "Key terms and symbols in 'Volume constraint forces $\\\\det(g_V) = 1$' (e.g. from 'every tensor automorphism $g \\in G$ of the fibre functor $\\tau$') are mathematically defined and unambiguous."
-      }
-    ],
-    "da-empirical-fragility": [
-      {
-        "field_hash": {
-          "md": "d382d5678b7e",
-          "ts": "231a79d4d266"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.851104Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.851104Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "su2-emergence-volume-determinant.ts:1",
-        "notes": "The algebraic and logical relations in 'Volume constraint forces $\\\\det(g_V) = 1$' are independent of empirical tuning parameters."
-      }
-    ],
-    "da-physical-implausibility": [
-      {
-        "field_hash": {
-          "md": "d382d5678b7e",
-          "ts": "231a79d4d266"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.851104Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.851104Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "su2-emergence-volume-determinant.ts:1",
-        "notes": "The physical concepts described in 'Volume constraint forces $\\\\det(g_V) = 1$' are consistent with quantum observable mechanics."
-      }
-    ],
-    "da-reproducibility": [
-      {
-        "field_hash": {
-          "md": "d382d5678b7e",
-          "ts": "231a79d4d266"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.851104Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.851104Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "su2-emergence-volume-determinant.ts:1",
-        "notes": "The derivation steps and formal definitions in 'Volume constraint forces $\\\\det(g_V) = 1$' are reproducible."
-      }
-    ],
-    "da-referee-verdict": [
-      {
-        "field_hash": {
-          "md": "d382d5678b7e",
-          "ts": "231a79d4d266"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.851104Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.851104Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "notes": "Referee verdict: clean.",
-        "verdict": "clean",
-        "referee_argument": "No significant objections; the mathematical claims in 'Volume constraint forces $\\\\det(g_V) = 1$' (concerning 'every tensor automorphism $g \\in G$ of the fibre functor $\\tau$') are consistent and formally verified."
-      }
-    ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote seq2 to enforce Milnor rules. Cleared forward/back references (e.g., 'Continuing QOU on SU(2)'). Streamlined explanation of Frobenius and dagger structures in Rep(SU(2)). Unified the logical flow of SU(2) emergence lemmas without cluttering cross-links.",
-        "reviewed_at": "2026-07-07T14:26:55.851104Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.851104Z"
-        },
-        "field_hash": {
-          "md": "d382d5678b7e",
-          "ts": "231a79d4d266"
-        }
-      }
-    ]
+    "da-false-claim": [],
+    "da-vacuous": [],
+    "da-circular": [],
+    "da-overclaim": [],
+    "da-hidden-dof": [],
+    "da-non-sequitur": [],
+    "da-lean-narrative-divergence": [],
+    "da-citation-misuse": [],
+    "da-definitional-ambiguity": [],
+    "da-empirical-fragility": [],
+    "da-physical-implausibility": [],
+    "da-reproducibility": [],
+    "da-referee-verdict": [],
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:55.851104Z"
 }

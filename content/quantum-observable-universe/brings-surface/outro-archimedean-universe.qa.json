@@ -124,24 +124,7 @@
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Applied Milnor brevity. Reduced meta-text, fixed tone, preserved all tables and math.",
-        "reviewed_at": "2026-07-07T14:26:55.098537Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.098537Z"
-        },
-        "field_hash": {
-          "md": "a649f25bd9bc",
-          "ts": "d1939e9aa641"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:55.098537Z"
 }

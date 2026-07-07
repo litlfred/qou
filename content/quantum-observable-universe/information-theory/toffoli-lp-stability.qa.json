@@ -1049,25 +1049,7 @@
         "reviewed_sha": "7415132ccce30885dcfd323600b8bcf311c431e4"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote blocks linearly, resolved forward references, cleaned mathematical notation and integrated tables smoothly. Removed index-style bullet points in favor of connected prose. Tightened terminology around Reeb derivation and Toffoli matrix.",
-        "reviewed_at": "2026-07-07T14:26:55.609271Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.609271Z"
-        },
-        "field_hash": {
-          "md": "6ec9d59c2b9a",
-          "ts": "cc4bffbb32f6",
-          "lean": "a6e1884a5a96"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:55.609271Z"
 }

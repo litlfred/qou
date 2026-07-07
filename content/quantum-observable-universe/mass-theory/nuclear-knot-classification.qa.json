@@ -1081,23 +1081,6 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Statement contains only the bare claim without physical interpretation.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "d2578713b445",
-          "ts": "1603c7b01bac",
-          "lean": "8990e53e81a6"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.737449Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.737449Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "fit-section-chapter": [
@@ -1118,23 +1101,6 @@
         "reviewed_at": "2026-06-22T02:56:58.884Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
-      },
-      {
-        "field_hash": {
-          "md": "d2578713b445",
-          "ts": "1603c7b01bac",
-          "lean": "8990e53e81a6"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.737449Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.737449Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "wall-side-statement": [
@@ -1154,23 +1120,6 @@
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
         "evidence": "content/quantum-observable-universe/mass-theory/nuclear-knot-classification.lean:1 \u2014 Lean file exists",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "d2578713b445",
-          "ts": "1603c7b01bac",
-          "lean": "8990e53e81a6"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.737449Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.737449Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "wall-side-proof": [
@@ -1189,23 +1138,6 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean file contains a fully verified, sorry-free proof.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "d2578713b445",
-          "ts": "1603c7b01bac",
-          "lean": "8990e53e81a6"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.737449Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.737449Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1239,24 +1171,6 @@
         },
         "reviewed_at": "2026-06-28T22:34:58.468Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
-      },
-      {
-        "field_hash": {
-          "md": "d2578713b445",
-          "ts": "1603c7b01bac",
-          "lean": "8990e53e81a6"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.737449Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.737449Z",
-        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:nuclear-knot-classification' aligns with Lean declaration. Sorry-free."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1275,23 +1189,6 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Proof strategy is well-structured and easy to follow.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "d2578713b445",
-          "ts": "1603c7b01bac",
-          "lean": "8990e53e81a6"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.737449Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.737449Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1316,23 +1213,6 @@
         "reviewed_at": "2026-06-22T02:57:00.968Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
-      },
-      {
-        "field_hash": {
-          "md": "d2578713b445",
-          "ts": "1603c7b01bac",
-          "lean": "8990e53e81a6"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.737449Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.737449Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-rater-novelty": [
@@ -1355,23 +1235,6 @@
           "value": 0.8,
           "max": 1
         }
-      },
-      {
-        "field_hash": {
-          "md": "d2578713b445",
-          "ts": "1603c7b01bac",
-          "lean": "8990e53e81a6"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.737449Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.737449Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-statement-integrity": [
@@ -1392,23 +1255,6 @@
         "reviewed_at": "2026-06-22T02:57:01.683Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
-      },
-      {
-        "field_hash": {
-          "md": "d2578713b445",
-          "ts": "1603c7b01bac",
-          "lean": "8990e53e81a6"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.737449Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.737449Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1429,23 +1275,6 @@
         "reviewed_at": "2026-06-22T02:57:02.023Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
-      },
-      {
-        "field_hash": {
-          "md": "d2578713b445",
-          "ts": "1603c7b01bac",
-          "lean": "8990e53e81a6"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.737449Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.737449Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-no-trivial-true": [
@@ -1466,23 +1295,6 @@
         "reviewed_at": "2026-06-22T02:57:02.392Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
-      },
-      {
-        "field_hash": {
-          "md": "d2578713b445",
-          "ts": "1603c7b01bac",
-          "lean": "8990e53e81a6"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.737449Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.737449Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-no-false-premise": [
@@ -1503,23 +1315,6 @@
         "reviewed_at": "2026-06-22T02:57:02.810Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
-      },
-      {
-        "field_hash": {
-          "md": "d2578713b445",
-          "ts": "1603c7b01bac",
-          "lean": "8990e53e81a6"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.737449Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.737449Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1538,23 +1333,6 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No unused hypotheses are present in the Lean proof.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "d2578713b445",
-          "ts": "1603c7b01bac",
-          "lean": "8990e53e81a6"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.737449Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.737449Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-no-decide-masking": [
@@ -1575,23 +1353,6 @@
         "reviewed_at": "2026-06-22T02:57:03.597Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
-      },
-      {
-        "field_hash": {
-          "md": "d2578713b445",
-          "ts": "1603c7b01bac",
-          "lean": "8990e53e81a6"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.737449Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.737449Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-false-claim": [
@@ -1611,23 +1372,6 @@
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/nuclear-knot-classification.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "d2578713b445",
-          "ts": "1603c7b01bac",
-          "lean": "8990e53e81a6"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.737449Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.737449Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-vacuous": [
@@ -1646,23 +1390,6 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-vacuous.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "d2578713b445",
-          "ts": "1603c7b01bac",
-          "lean": "8990e53e81a6"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.737449Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.737449Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-circular": [
@@ -1682,23 +1409,6 @@
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/nuclear-knot-classification.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "d2578713b445",
-          "ts": "1603c7b01bac",
-          "lean": "8990e53e81a6"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.737449Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.737449Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-overclaim": [
@@ -1717,25 +1427,6 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "d2578713b445",
-          "ts": "1603c7b01bac",
-          "lean": "8990e53e81a6"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.737449Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.737449Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "severity": "major",
-        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules."
       }
     ],
     "da-hidden-dof": [
@@ -1755,25 +1446,6 @@
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/nuclear-knot-classification.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "d2578713b445",
-          "ts": "1603c7b01bac",
-          "lean": "8990e53e81a6"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.737449Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.737449Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "severity": "major",
-        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules."
       }
     ],
     "da-non-sequitur": [
@@ -1793,23 +1465,6 @@
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/nuclear-knot-classification.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "d2578713b445",
-          "ts": "1603c7b01bac",
-          "lean": "8990e53e81a6"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.737449Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.737449Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1828,23 +1483,6 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-lean-narrative-divergence.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "d2578713b445",
-          "ts": "1603c7b01bac",
-          "lean": "8990e53e81a6"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.737449Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.737449Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-citation-misuse": [
@@ -1864,23 +1502,6 @@
         "notes": "No issues found for da-citation-misuse.",
         "evidence": "content/quantum-observable-universe/mass-theory/nuclear-knot-classification.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "d2578713b445",
-          "ts": "1603c7b01bac",
-          "lean": "8990e53e81a6"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.737449Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.737449Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1900,23 +1521,6 @@
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/nuclear-knot-classification.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "d2578713b445",
-          "ts": "1603c7b01bac",
-          "lean": "8990e53e81a6"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.737449Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.737449Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-empirical-fragility": [
@@ -1936,25 +1540,6 @@
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/nuclear-knot-classification.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "d2578713b445",
-          "ts": "1603c7b01bac",
-          "lean": "8990e53e81a6"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.737449Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.737449Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "severity": "major",
-        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules."
       }
     ],
     "da-physical-implausibility": [
@@ -1974,25 +1559,6 @@
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/nuclear-knot-classification.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "d2578713b445",
-          "ts": "1603c7b01bac",
-          "lean": "8990e53e81a6"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.737449Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.737449Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "severity": "major",
-        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules."
       }
     ],
     "da-reproducibility": [
@@ -2012,23 +1578,6 @@
         "notes": "No issues found for da-reproducibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/nuclear-knot-classification.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "d2578713b445",
-          "ts": "1603c7b01bac",
-          "lean": "8990e53e81a6"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.737449Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.737449Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-referee-verdict": [
@@ -2049,25 +1598,6 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "The mathematical claim and definitions are correctly formalised and verified in Lean."
-      },
-      {
-        "field_hash": {
-          "md": "d2578713b445",
-          "ts": "1603c7b01bac",
-          "lean": "8990e53e81a6"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.737449Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.737449Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "severity": "major",
-        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules. Referee might reject due to suspected numerology."
       }
     ]
   },

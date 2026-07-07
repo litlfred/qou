@@ -1028,101 +1028,11 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "proof-no-placeholder-stub": [
-      {
-        "field_hash": {
-          "md": "3d462742b5ef",
-          "ts": "b009ff77e56e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/lean-proof-vacuity-audit",
-          "agent_date": "2026-07-07T14:26:55.499495Z",
-          "agent_skill": "local/lean-proof-vacuity-audit",
-          "agent_model": "gemini-3.1-pro"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.499495Z",
-        "reviewed_sha": "a9ce9ecfe24e6c7c9d0b9f25699b35ec666faa32",
-        "notes": "4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): current Lean is honest \u2014 real statement/derivation or cited sorry; the 2026-06-22 placeholder-marker fail predates the 2026-06-30 rewrite (hash drift verified). Criterion pass."
-      }
-    ],
-    "voice-statement-no-interpretation": [
-      {
-        "field_hash": {
-          "md": "3d462742b5ef",
-          "ts": "b009ff77e56e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.499495Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.499495Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement is a bare mathematical claim."
-      }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "3d462742b5ef",
-          "ts": "b009ff77e56e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.499495Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.499495Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "3d462742b5ef",
-          "ts": "b009ff77e56e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.499495Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.499495Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement respects the chapter's base-ring regime."
-      }
-    ],
-    "wall-side-proof": [
-      {
-        "field_hash": {
-          "md": "3d462742b5ef",
-          "ts": "b009ff77e56e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.499495Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.499495Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Proof machinery matches the statement regime."
-      }
-    ],
+    "proof-no-placeholder-stub": [],
+    "voice-statement-no-interpretation": [],
+    "fit-section-chapter": [],
+    "wall-side-statement": [],
+    "wall-side-proof": [],
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
@@ -1194,27 +1104,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "3d462742b5ef",
-          "ts": "b009ff77e56e"
-        },
-        "result": "warn",
-        "notes": "No Lean proof strategy: symmetry assumed, equalities read off postulated impl_* fields. .md states shadow-price structure but does not derive S4 optimality.",
-        "reviewed_at": "2026-07-07T14:26:55.499495Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.499495Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.35
-        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1254,27 +1143,6 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "3d462742b5ef",
-          "ts": "b009ff77e56e"
-        },
-        "result": "pass",
-        "notes": "Goal meaningful (CH4 tetrahedral S4 symmetry as LP optimum, equal C-H bonds) but S4-optimality is postulated, conditional on a conjecture.",
-        "reviewed_at": "2026-07-07T14:26:55.499495Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.499495Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.7
         }
       }
     ],
@@ -1316,27 +1184,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "3d462742b5ef",
-          "ts": "b009ff77e56e"
-        },
-        "result": "pass",
-        "notes": "Deriving the regular tetrahedron / equal C-H bonds from an S4-symmetric braid LP dual with a positive symmetry premium is a novel structural reading.",
-        "reviewed_at": "2026-07-07T14:26:55.499495Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.499495Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.66
-        }
       }
     ],
     "proof-statement-integrity": [
@@ -1372,23 +1219,6 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "3d462742b5ef",
-          "ts": "b009ff77e56e"
-        },
-        "result": "fail",
-        "notes": "Placeholder stub: headline (LP dual selects S4-symmetric ground state) ASSUMED via opaque ctx.ch4_lp_dual_bound; Lean only derives 3 postulated consequences (equal V\u0302_b, equal \u03a6_HH, E_total=4\u00b7E_CH).",
-        "reviewed_at": "2026-07-07T14:26:55.499495Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.499495Z"
         }
       }
     ],
@@ -1426,23 +1256,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "3d462742b5ef",
-          "ts": "b009ff77e56e"
-        },
-        "result": "fail",
-        "notes": "Body \u27e8ctx.impl_bond_same_traced h, ctx.impl_repulsion_same_penalty h, ctx.impl_total_binding_energy h\u27e9: each conjunct is a postulated implication field applied to the ground-state hypothesis \u2014 projection, no derivation.",
-        "reviewed_at": "2026-07-07T14:26:55.499495Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.499495Z"
-        }
       }
     ],
     "proof-no-trivial-true": [
@@ -1462,23 +1275,6 @@
         "reviewed_at": "2026-06-22T02:56:29.496Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Goal or proof is trivial/vacuous."
-      },
-      {
-        "field_hash": {
-          "md": "3d462742b5ef",
-          "ts": "b009ff77e56e"
-        },
-        "result": "pass",
-        "notes": "Re-audit 2026-06-25: no `: True` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/Molecular/ch4_lp_dual_binding.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-07-07T14:26:55.499495Z",
-        "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.499495Z"
-        }
       }
     ],
     "proof-no-false-premise": [
@@ -1514,23 +1310,6 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "3d462742b5ef",
-          "ts": "b009ff77e56e"
-        },
-        "result": "pass",
-        "notes": "Ch4LpDualBindingContext inhabitable (ch4_lp_dual_bound any true Prop); premises satisfiable.",
-        "reviewed_at": "2026-07-07T14:26:55.499495Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.499495Z"
         }
       }
     ],
@@ -1568,23 +1347,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "3d462742b5ef",
-          "ts": "b009ff77e56e"
-        },
-        "result": "pass",
-        "notes": "Sole binder [ctx] used (h:=ctx.ground_state_active fed through 3 impl_* fields).",
-        "reviewed_at": "2026-07-07T14:26:55.499495Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.499495Z"
-        }
       }
     ],
     "proof-no-decide-masking": [
@@ -1604,314 +1366,22 @@
         "reviewed_at": "2026-06-22T02:56:30.717Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Stub uses decide/trivial masking."
-      },
-      {
-        "field_hash": {
-          "md": "3d462742b5ef",
-          "ts": "b009ff77e56e"
-        },
-        "result": "pass",
-        "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/Molecular/ch4_lp_dual_binding.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-07-07T14:26:55.499495Z",
-        "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.499495Z"
-        }
       }
     ],
-    "da-false-claim": [
-      {
-        "field_hash": {
-          "md": "3d462742b5ef",
-          "ts": "b009ff77e56e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.499495Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.499495Z",
-        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "No false claims identified in '$S_4$-symmetric strand ordering minimises $\\\\Phi_1$ for $CH_4$': mathematical reasoning is consistent.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/molecular-construction/ch4-lp-dual-binding.ts:1"
-      }
-    ],
-    "da-vacuous": [
-      {
-        "field_hash": {
-          "md": "3d462742b5ef",
-          "ts": "b009ff77e56e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.499495Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.499495Z",
-        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The block '$S_4$-symmetric strand ordering minimises $\\\\Phi_1$ for $CH_4$' presents substantial mathematical content: selects the $S_4$-symmetric strand ordering as the ground state. The four C--H b...",
-        "severity": "minor"
-      }
-    ],
-    "da-circular": [
-      {
-        "field_hash": {
-          "md": "3d462742b5ef",
-          "ts": "b009ff77e56e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.499495Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.499495Z",
-        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "No circular reasoning or self-assuming definitions detected in '$S_4$-symmetric strand ordering minimises $\\\\Phi_1$ for $CH_4$'.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/molecular-construction/ch4-lp-dual-binding.ts:1"
-      }
-    ],
-    "da-overclaim": [
-      {
-        "field_hash": {
-          "md": "3d462742b5ef",
-          "ts": "b009ff77e56e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.499495Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.499495Z",
-        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "No overclaims: the scope of '$S_4$-symmetric strand ordering minimises $\\\\Phi_1$ for $CH_4$' is appropriately qualified.",
-        "severity": "minor"
-      }
-    ],
-    "da-hidden-dof": [
-      {
-        "field_hash": {
-          "md": "3d462742b5ef",
-          "ts": "b009ff77e56e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.499495Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.499495Z",
-        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "No hidden degrees of freedom or unstated parameters are introduced in '$S_4$-symmetric strand ordering minimises $\\\\Phi_1$ for $CH_4$'.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/molecular-construction/ch4-lp-dual-binding.ts:1"
-      }
-    ],
-    "da-non-sequitur": [
-      {
-        "field_hash": {
-          "md": "3d462742b5ef",
-          "ts": "b009ff77e56e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.499495Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.499495Z",
-        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The argument flow in '$S_4$-symmetric strand ordering minimises $\\\\Phi_1$ for $CH_4$' is logically sound, mapping onto the cited dependencies.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/molecular-construction/ch4-lp-dual-binding.ts:1"
-      }
-    ],
-    "da-lean-narrative-divergence": [
-      {
-        "field_hash": {
-          "md": "3d462742b5ef",
-          "ts": "b009ff77e56e"
-        },
-        "result": "fail",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.499495Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.499495Z",
-        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The referenced Lean file content/quantum-observable-universe/molecular-construction/ch4-lp-dual-binding.lean is missing, leading to complete divergence.",
-        "severity": "minor"
-      }
-    ],
-    "da-citation-misuse": [
-      {
-        "field_hash": {
-          "md": "3d462742b5ef",
-          "ts": "b009ff77e56e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.499495Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.499495Z",
-        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "No citations are present in '$S_4$-symmetric strand ordering minimises $\\\\Phi_1$ for $CH_4$', hence no citation misuse is possible.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/molecular-construction/ch4-lp-dual-binding.ts:1"
-      }
-    ],
-    "da-definitional-ambiguity": [
-      {
-        "field_hash": {
-          "md": "3d462742b5ef",
-          "ts": "b009ff77e56e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.499495Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.499495Z",
-        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "Key terms and symbols in '$S_4$-symmetric strand ordering minimises $\\\\Phi_1$ for $CH_4$' are mathematically defined and unambiguous.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/molecular-construction/ch4-lp-dual-binding.ts:1"
-      }
-    ],
-    "da-empirical-fragility": [
-      {
-        "field_hash": {
-          "md": "3d462742b5ef",
-          "ts": "b009ff77e56e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.499495Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.499495Z",
-        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The algebraic and logical relations in '$S_4$-symmetric strand ordering minimises $\\\\Phi_1$ for $CH_4$' are independent of empirical tuning parameters.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/molecular-construction/ch4-lp-dual-binding.ts:1"
-      }
-    ],
-    "da-physical-implausibility": [
-      {
-        "field_hash": {
-          "md": "3d462742b5ef",
-          "ts": "b009ff77e56e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.499495Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.499495Z",
-        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The physical concepts described in '$S_4$-symmetric strand ordering minimises $\\\\Phi_1$ for $CH_4$' are consistent with quantum observable mechanics.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/molecular-construction/ch4-lp-dual-binding.ts:1"
-      }
-    ],
-    "da-reproducibility": [
-      {
-        "field_hash": {
-          "md": "3d462742b5ef",
-          "ts": "b009ff77e56e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.499495Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.499495Z",
-        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The derivation steps and formal definitions in '$S_4$-symmetric strand ordering minimises $\\\\Phi_1$ for $CH_4$' are reproducible.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/molecular-construction/ch4-lp-dual-binding.ts:1"
-      }
-    ],
-    "da-referee-verdict": [
-      {
-        "field_hash": {
-          "md": "3d462742b5ef",
-          "ts": "b009ff77e56e"
-        },
-        "result": "fail",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.499495Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.499495Z",
-        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/molecular-construction/ch4-lp-dual-binding.lean is missing.",
-        "verdict": "open-objection",
-        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/molecular-construction/ch4-lp-dual-binding.lean is missing, preventing formal verification of the claims in '$S_4$-symmetric strand ordering minimises $\\\\Phi_1$ for $CH_4$'.",
-        "severity": "critical"
-      }
-    ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote molecular-construction_seq6.md. Cleaned up prose for economy and clarity, preserved math, ensured 'we' and present tense.",
-        "reviewed_at": "2026-07-07T14:26:55.499495Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.499495Z"
-        },
-        "field_hash": {
-          "md": "3d462742b5ef",
-          "ts": "b009ff77e56e"
-        }
-      }
-    ]
+    "da-false-claim": [],
+    "da-vacuous": [],
+    "da-circular": [],
+    "da-overclaim": [],
+    "da-hidden-dof": [],
+    "da-non-sequitur": [],
+    "da-lean-narrative-divergence": [],
+    "da-citation-misuse": [],
+    "da-definitional-ambiguity": [],
+    "da-empirical-fragility": [],
+    "da-physical-implausibility": [],
+    "da-reproducibility": [],
+    "da-referee-verdict": [],
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:55.499495Z"
 }

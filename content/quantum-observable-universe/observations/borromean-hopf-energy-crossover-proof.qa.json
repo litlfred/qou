@@ -11,25 +11,7 @@
     "ts": "014a4019f5f7"
   },
   "criteria": {
-    "da-false-claim": [
-      {
-        "field_hash": {
-          "md": "e79c260d14bb",
-          "ts": "014a4019f5f7"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-21",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.511327Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.511327Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "The proof sketch aligns logically with the framework's definitions of Borromean and Hopf volumes without making apparent mathematical errors."
-      }
-    ],
+    "da-false-claim": [],
     "bib-cite-resolves": [
       {
         "field_hash": {

@@ -33,45 +33,8 @@
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
       }
     ],
-    "proof-narrative-lean-equiv": [
-      {
-        "field_hash": {
-          "md": "8fe08909c54c",
-          "ts": "9331fd6f2e80",
-          "lean": "5771d58fe201"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.715010Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.715010Z",
-        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:lepton-bring-surface-h3-3channel' \u2192 expected 'lepton_bring_surface_h3_3channel'; Lean declares: W_1D_irrep, W_STD, hecke_ab, hecke_ab_correct, lepton_V_hat_h3_3channel.... Structural match via content."
-      }
-    ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
-        "reviewed_at": "2026-07-07T14:26:56.715010Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.715010Z"
-        },
-        "field_hash": {
-          "md": "8fe08909c54c",
-          "ts": "9331fd6f2e80",
-          "lean": "5771d58fe201"
-        }
-      }
-    ]
+    "proof-narrative-lean-equiv": [],
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.715010Z"
 }

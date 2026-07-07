@@ -1083,24 +1083,6 @@
         "reviewed_at": "2026-06-22T02:56:40.168Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
-      },
-      {
-        "field_hash": {
-          "md": "b12dfe25cdae",
-          "ts": "61f79b58b6be",
-          "lean": "15b5dad97bca"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-23",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.700486Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.700486Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Evaluated successfully."
       }
     ],
     "fit-section-chapter": [
@@ -1121,24 +1103,6 @@
         "reviewed_at": "2026-06-22T02:56:40.588Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
-      },
-      {
-        "field_hash": {
-          "md": "b12dfe25cdae",
-          "ts": "61f79b58b6be",
-          "lean": "15b5dad97bca"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-23",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.700486Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.700486Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Evaluated successfully."
       }
     ],
     "wall-side-statement": [
@@ -1159,24 +1123,6 @@
         "reviewed_at": "2026-06-22T02:56:40.988Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Substrate statement contains archimedean constructs."
-      },
-      {
-        "field_hash": {
-          "md": "b12dfe25cdae",
-          "ts": "61f79b58b6be",
-          "lean": "15b5dad97bca"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-23",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.700486Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.700486Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Evaluated successfully."
       }
     ],
     "wall-side-proof": [
@@ -1197,24 +1143,6 @@
         "reviewed_at": "2026-06-22T02:56:41.367Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof uses archimedean tactics or real limits in substrate chapter."
-      },
-      {
-        "field_hash": {
-          "md": "b12dfe25cdae",
-          "ts": "61f79b58b6be",
-          "lean": "15b5dad97bca"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-23",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.700486Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.700486Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Evaluated successfully."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1251,24 +1179,6 @@
         "reviewed_at": "2026-06-28T22:29:29.406Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Evaluated successfully."
-      },
-      {
-        "field_hash": {
-          "md": "b12dfe25cdae",
-          "ts": "61f79b58b6be",
-          "lean": "15b5dad97bca"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.700486Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.700486Z",
-        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:qbeta-z-recursion-to-ck-recursion-bridge' \u2192 expected 'qbeta_z_recursion_to_ck_recursion_bridge'; Lean declares: ZRecursionCoeffs, z_recursion_kernel, z_recursion_forward_form. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1293,24 +1203,6 @@
         "reviewed_at": "2026-06-22T02:56:42.163Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
-      },
-      {
-        "field_hash": {
-          "md": "b12dfe25cdae",
-          "ts": "61f79b58b6be",
-          "lean": "15b5dad97bca"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-23",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.700486Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.700486Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Evaluated successfully."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1335,24 +1227,6 @@
         "reviewed_at": "2026-06-22T02:56:42.608Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
-      },
-      {
-        "field_hash": {
-          "md": "b12dfe25cdae",
-          "ts": "61f79b58b6be",
-          "lean": "15b5dad97bca"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-23",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.700486Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.700486Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Evaluated successfully."
       }
     ],
     "proof-rater-novelty": [
@@ -1377,24 +1251,6 @@
         "reviewed_at": "2026-06-22T02:56:42.985Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
-      },
-      {
-        "field_hash": {
-          "md": "b12dfe25cdae",
-          "ts": "61f79b58b6be",
-          "lean": "15b5dad97bca"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-23",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.700486Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.700486Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Evaluated successfully."
       }
     ],
     "proof-statement-integrity": [
@@ -1415,24 +1271,6 @@
         "reviewed_at": "2026-06-22T02:56:43.375Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
-      },
-      {
-        "field_hash": {
-          "md": "b12dfe25cdae",
-          "ts": "61f79b58b6be",
-          "lean": "15b5dad97bca"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-23",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.700486Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.700486Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Evaluated successfully."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1453,24 +1291,6 @@
         "reviewed_at": "2026-06-22T02:56:43.725Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
-      },
-      {
-        "field_hash": {
-          "md": "b12dfe25cdae",
-          "ts": "61f79b58b6be",
-          "lean": "15b5dad97bca"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-23",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.700486Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.700486Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Evaluated successfully."
       }
     ],
     "proof-no-trivial-true": [
@@ -1491,24 +1311,6 @@
         "reviewed_at": "2026-06-22T02:56:44.145Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
-      },
-      {
-        "field_hash": {
-          "md": "b12dfe25cdae",
-          "ts": "61f79b58b6be",
-          "lean": "15b5dad97bca"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-23",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.700486Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.700486Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Evaluated successfully."
       }
     ],
     "proof-no-false-premise": [
@@ -1529,24 +1331,6 @@
         "reviewed_at": "2026-06-22T02:56:44.505Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
-      },
-      {
-        "field_hash": {
-          "md": "b12dfe25cdae",
-          "ts": "61f79b58b6be",
-          "lean": "15b5dad97bca"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-23",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.700486Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.700486Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Evaluated successfully."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1567,24 +1351,6 @@
         "reviewed_at": "2026-06-22T02:56:44.865Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
-      },
-      {
-        "field_hash": {
-          "md": "b12dfe25cdae",
-          "ts": "61f79b58b6be",
-          "lean": "15b5dad97bca"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-23",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.700486Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.700486Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Evaluated successfully."
       }
     ],
     "proof-no-decide-masking": [
@@ -1605,24 +1371,6 @@
         "reviewed_at": "2026-06-22T02:56:45.283Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
-      },
-      {
-        "field_hash": {
-          "md": "b12dfe25cdae",
-          "ts": "61f79b58b6be",
-          "lean": "15b5dad97bca"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-23",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.700486Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.700486Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Evaluated successfully."
       }
     ],
     "da-false-claim": [
@@ -1643,24 +1391,6 @@
         "notes": "No false claims identified in 'Bridge: $z$-Taylor recursion vs $c_k$ ladder recursion \u2014 structural correspondence': the formalization compiles successfully without errors.",
         "severity": "minor",
         "evidence": "qbeta-z-recursion-to-ck-recursion-bridge.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "b12dfe25cdae",
-          "ts": "61f79b58b6be",
-          "lean": "15b5dad97bca"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-23",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.700486Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.700486Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Evaluated successfully."
       }
     ],
     "da-vacuous": [
@@ -1681,24 +1411,6 @@
         "notes": "No vacuous proofs detected. Sibling Lean file compiles sorry-free, verifying non-vacuity.",
         "severity": "minor",
         "evidence": "qbeta-z-recursion-to-ck-recursion-bridge.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "b12dfe25cdae",
-          "ts": "61f79b58b6be",
-          "lean": "15b5dad97bca"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-23",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.700486Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.700486Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Evaluated successfully."
       }
     ],
     "da-circular": [
@@ -1719,24 +1431,6 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Bridge: $z$-Taylor recursion vs $c_k$ ladder recursion \u2014 structural correspondence'.",
         "severity": "minor",
         "evidence": "qbeta-z-recursion-to-ck-recursion-bridge.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "b12dfe25cdae",
-          "ts": "61f79b58b6be",
-          "lean": "15b5dad97bca"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-23",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.700486Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.700486Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Evaluated successfully."
       }
     ],
     "da-overclaim": [
@@ -1756,24 +1450,6 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No overclaims: the scope of 'Bridge: $z$-Taylor recursion vs $c_k$ ladder recursion \u2014 structural correspondence' is appropriately qualified.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "b12dfe25cdae",
-          "ts": "61f79b58b6be",
-          "lean": "15b5dad97bca"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-23",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.700486Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.700486Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Evaluated successfully."
       }
     ],
     "da-hidden-dof": [
@@ -1794,24 +1470,6 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Bridge: $z$-Taylor recursion vs $c_k$ ladder recursion \u2014 structural correspondence'.",
         "severity": "minor",
         "evidence": "qbeta-z-recursion-to-ck-recursion-bridge.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "b12dfe25cdae",
-          "ts": "61f79b58b6be",
-          "lean": "15b5dad97bca"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-23",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.700486Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.700486Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Evaluated successfully."
       }
     ],
     "da-non-sequitur": [
@@ -1832,26 +1490,6 @@
         "notes": "The argument flow in 'Bridge: $z$-Taylor recursion vs $c_k$ ladder recursion \u2014 structural correspondence' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "qbeta-z-recursion-to-ck-recursion-bridge.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "b12dfe25cdae",
-          "ts": "61f79b58b6be",
-          "lean": "15b5dad97bca"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-23",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.700486Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.700486Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "severity": "major",
-        "evidence": "The recursion bridge directly maps Q-beta values to c_k constants.",
-        "notes": "scope: limited\nruling: partial\nreferee_argument: The step linking the q-beta recursion to the truncation ladder c_k lacks a necessary intermediate lemma showing the analytical continuation is unique.\nrebuttal: "
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1871,24 +1509,6 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Lean sibling corresponds directly to the narrative claim in 'Bridge: $z$-Taylor recursion vs $c_k$ ladder recursion \u2014 structural correspondence'.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "b12dfe25cdae",
-          "ts": "61f79b58b6be",
-          "lean": "15b5dad97bca"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-23",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.700486Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.700486Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Evaluated successfully."
       }
     ],
     "da-citation-misuse": [
@@ -1909,24 +1529,6 @@
         "notes": "The citations habiro2004, wenzl1988 in 'Bridge: $z$-Taylor recursion vs $c_k$ ladder recursion \u2014 structural correspondence' are consistent with the sources referenced in the text.",
         "severity": "minor",
         "evidence": "qbeta-z-recursion-to-ck-recursion-bridge.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "b12dfe25cdae",
-          "ts": "61f79b58b6be",
-          "lean": "15b5dad97bca"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-23",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.700486Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.700486Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Evaluated successfully."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1947,24 +1549,6 @@
         "notes": "Key terms and symbols in 'Bridge: $z$-Taylor recursion vs $c_k$ ladder recursion \u2014 structural correspondence' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "qbeta-z-recursion-to-ck-recursion-bridge.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "b12dfe25cdae",
-          "ts": "61f79b58b6be",
-          "lean": "15b5dad97bca"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-23",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.700486Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.700486Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Evaluated successfully."
       }
     ],
     "da-empirical-fragility": [
@@ -1985,24 +1569,6 @@
         "notes": "The algebraic and logical relations in 'Bridge: $z$-Taylor recursion vs $c_k$ ladder recursion \u2014 structural correspondence' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "qbeta-z-recursion-to-ck-recursion-bridge.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "b12dfe25cdae",
-          "ts": "61f79b58b6be",
-          "lean": "15b5dad97bca"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-23",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.700486Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.700486Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Evaluated successfully."
       }
     ],
     "da-physical-implausibility": [
@@ -2023,24 +1589,6 @@
         "notes": "The physical concepts described in 'Bridge: $z$-Taylor recursion vs $c_k$ ladder recursion \u2014 structural correspondence' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "qbeta-z-recursion-to-ck-recursion-bridge.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "b12dfe25cdae",
-          "ts": "61f79b58b6be",
-          "lean": "15b5dad97bca"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-23",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.700486Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.700486Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Evaluated successfully."
       }
     ],
     "da-reproducibility": [
@@ -2060,24 +1608,6 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Lean file compiles successfully, confirming reproducibility.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "b12dfe25cdae",
-          "ts": "61f79b58b6be",
-          "lean": "15b5dad97bca"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-23",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.700486Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.700486Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Evaluated successfully."
       }
     ],
     "da-referee-verdict": [
@@ -2099,45 +1629,9 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Bridge: $z$-Taylor recursion vs $c_k$ ladder recursion \u2014 structural correspondence' are consistent."
-      },
-      {
-        "field_hash": {
-          "md": "b12dfe25cdae",
-          "ts": "61f79b58b6be",
-          "lean": "15b5dad97bca"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-23",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.700486Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.700486Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Evaluated successfully."
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice. Grouped logical steps for clarity, removing repetitive transitional filler. Emphasized 'why before what'. Maintained mathematical and technical accuracy.",
-        "reviewed_at": "2026-07-07T14:26:56.700486Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.700486Z"
-        },
-        "field_hash": {
-          "md": "b12dfe25cdae",
-          "ts": "61f79b58b6be",
-          "lean": "15b5dad97bca"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.700486Z"
 }

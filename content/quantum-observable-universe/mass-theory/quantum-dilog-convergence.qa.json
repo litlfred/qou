@@ -1028,83 +1028,10 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "voice-statement-no-interpretation": [
-      {
-        "field_hash": {
-          "md": "2fad016d7144",
-          "ts": "05ef8e686236"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.757496Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.757496Z",
-        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
-        "notes": "Statement contains only the bare claim without physical interpretation.",
-        "severity": "minor"
-      }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "2fad016d7144",
-          "ts": "05ef8e686236"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.757496Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.757496Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "2fad016d7144",
-          "ts": "05ef8e686236"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.757496Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.757496Z",
-        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
-        "notes": "The sibling Lean file content/quantum-observable-universe/mass-theory/quantum-dilog-convergence.lean is missing entirely.",
-        "evidence": "content/quantum-observable-universe/mass-theory/quantum-dilog-convergence.md:1",
-        "severity": "minor"
-      }
-    ],
-    "wall-side-proof": [
-      {
-        "field_hash": {
-          "md": "2fad016d7144",
-          "ts": "05ef8e686236"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.757496Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.757496Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Proof machinery matches the statement regime."
-      }
-    ],
+    "voice-statement-no-interpretation": [],
+    "fit-section-chapter": [],
+    "wall-side-statement": [],
+    "wall-side-proof": [],
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
@@ -1176,27 +1103,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "2fad016d7144",
-          "ts": "05ef8e686236"
-        },
-        "result": "pass",
-        "notes": "Crystal-clear: reduce product convergence to geometric summability of Sigma q^-k, uniform denom lower bound, one-plus-summable criterion. Fully realized in Lean.",
-        "reviewed_at": "2026-07-07T14:26:56.757496Z",
-        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.757496Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.9
-        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1236,27 +1142,6 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "2fad016d7144",
-          "ts": "05ef8e686236"
-        },
-        "result": "pass",
-        "notes": "Well-posed analytic existence (Phi_q multipliable on |z|<q for q>1 via analytic continuation); substantive convergence-half of brane-tower programme.",
-        "reviewed_at": "2026-07-07T14:26:56.757496Z",
-        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.757496Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.85
         }
       }
     ],
@@ -1298,27 +1183,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "2fad016d7144",
-          "ts": "05ef8e686236"
-        },
-        "result": "pass",
-        "notes": "Standard analysis result, but a real sorry-free Lean formalization (genuine Mathlib multipliability + q-difference functional eq) \u2014 solid contribution, not a restatement.",
-        "reviewed_at": "2026-07-07T14:26:56.757496Z",
-        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.757496Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.68
-        }
       }
     ],
     "proof-statement-integrity": [
@@ -1354,23 +1218,6 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "2fad016d7144",
-          "ts": "05ef8e686236"
-        },
-        "result": "pass",
-        "notes": "Genuine sorry-free Mathlib proof: quantumDilog_multipliable proves Phi_q multipliable for 1<q,|z|<q via geometric summability + non-vanishing factors + Real.multipliable_one_add_of_summable. Faithfully encodes .md claim. Bonus functional-eq proved.",
-        "reviewed_at": "2026-07-07T14:26:56.757496Z",
-        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.757496Z"
         }
       }
     ],
@@ -1408,23 +1255,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "2fad016d7144",
-          "ts": "05ef8e686236"
-        },
-        "result": "pass",
-        "notes": "Full constructive analysis (summable_geometric, zpow bounds, comparison test, tprod reindex); no := field projection. Conclusion genuinely derived from Mathlib lemmas.",
-        "reviewed_at": "2026-07-07T14:26:56.757496Z",
-        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.757496Z"
-        }
       }
     ],
     "proof-no-trivial-true": [
@@ -1444,23 +1274,6 @@
         "reviewed_at": "2026-06-22T02:57:09.811Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Goal or proof is trivial/vacuous."
-      },
-      {
-        "field_hash": {
-          "md": "2fad016d7144",
-          "ts": "05ef8e686236"
-        },
-        "result": "pass",
-        "notes": "Re-audit 2026-06-25: no `: True` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/MassEndomorphism/PhiQConvergence.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-07-07T14:26:56.757496Z",
-        "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.757496Z"
-        }
       }
     ],
     "proof-no-false-premise": [
@@ -1496,23 +1309,6 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "2fad016d7144",
-          "ts": "05ef8e686236"
-        },
-        "result": "pass",
-        "notes": "1<q and |z|<q jointly satisfiable (substrate q0~1.11, |z|<q). No contradictory premise; all theorems have inhabited hypotheses.",
-        "reviewed_at": "2026-07-07T14:26:56.757496Z",
-        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.757496Z"
         }
       }
     ],
@@ -1550,23 +1346,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "2fad016d7144",
-          "ts": "05ef8e686236"
-        },
-        "result": "pass",
-        "notes": "hq:1<q and hz:|z|<q are load-bearing throughout (hq in every summability/positivity step; hz in quantumDilog_multipliable lower bound c=1-|z|/q). No unused binder.",
-        "reviewed_at": "2026-07-07T14:26:56.757496Z",
-        "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.757496Z"
-        }
       }
     ],
     "proof-no-decide-masking": [
@@ -1586,242 +1365,19 @@
         "reviewed_at": "2026-06-22T02:57:10.990Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Stub uses decide/trivial masking."
-      },
-      {
-        "field_hash": {
-          "md": "2fad016d7144",
-          "ts": "05ef8e686236"
-        },
-        "result": "pass",
-        "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/MassEndomorphism/PhiQConvergence.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-07-07T14:26:56.757496Z",
-        "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.757496Z"
-        }
       }
     ],
-    "da-false-claim": [
-      {
-        "field_hash": {
-          "md": "2fad016d7144",
-          "ts": "05ef8e686236"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.757496Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.757496Z",
-        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
-        "notes": "No issues found for da-false-claim.",
-        "evidence": "content/quantum-observable-universe/mass-theory/quantum-dilog-convergence.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-vacuous": [
-      {
-        "field_hash": {
-          "md": "2fad016d7144",
-          "ts": "05ef8e686236"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.757496Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.757496Z",
-        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
-        "notes": "No issues found for da-vacuous.",
-        "severity": "minor"
-      }
-    ],
-    "da-circular": [
-      {
-        "field_hash": {
-          "md": "2fad016d7144",
-          "ts": "05ef8e686236"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.757496Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.757496Z",
-        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
-        "notes": "No issues found for da-circular.",
-        "evidence": "content/quantum-observable-universe/mass-theory/quantum-dilog-convergence.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-overclaim": [
-      {
-        "field_hash": {
-          "md": "2fad016d7144",
-          "ts": "05ef8e686236"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.757496Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.757496Z",
-        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
-        "notes": "No issues found for da-overclaim.",
-        "severity": "minor"
-      }
-    ],
-    "da-hidden-dof": [
-      {
-        "field_hash": {
-          "md": "2fad016d7144",
-          "ts": "05ef8e686236"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.757496Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.757496Z",
-        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
-        "notes": "No issues found for da-hidden-dof.",
-        "evidence": "content/quantum-observable-universe/mass-theory/quantum-dilog-convergence.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-non-sequitur": [
-      {
-        "field_hash": {
-          "md": "2fad016d7144",
-          "ts": "05ef8e686236"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.757496Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.757496Z",
-        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
-        "notes": "No issues found for da-non-sequitur.",
-        "evidence": "content/quantum-observable-universe/mass-theory/quantum-dilog-convergence.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-citation-misuse": [
-      {
-        "field_hash": {
-          "md": "2fad016d7144",
-          "ts": "05ef8e686236"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.757496Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.757496Z",
-        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
-        "notes": "No issues found for da-citation-misuse.",
-        "evidence": "content/quantum-observable-universe/mass-theory/quantum-dilog-convergence.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-definitional-ambiguity": [
-      {
-        "field_hash": {
-          "md": "2fad016d7144",
-          "ts": "05ef8e686236"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.757496Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.757496Z",
-        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
-        "notes": "No issues found for da-definitional-ambiguity.",
-        "evidence": "content/quantum-observable-universe/mass-theory/quantum-dilog-convergence.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-empirical-fragility": [
-      {
-        "field_hash": {
-          "md": "2fad016d7144",
-          "ts": "05ef8e686236"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.757496Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.757496Z",
-        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
-        "notes": "No issues found for da-empirical-fragility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/quantum-dilog-convergence.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-physical-implausibility": [
-      {
-        "field_hash": {
-          "md": "2fad016d7144",
-          "ts": "05ef8e686236"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.757496Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.757496Z",
-        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
-        "notes": "No issues found for da-physical-implausibility.",
-        "evidence": "content/quantum-observable-universe/mass-theory/quantum-dilog-convergence.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-reproducibility": [
-      {
-        "field_hash": {
-          "md": "2fad016d7144",
-          "ts": "05ef8e686236"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.757496Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.757496Z",
-        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
-        "notes": "No issues found for da-reproducibility.",
-        "severity": "minor"
-      }
-    ],
+    "da-false-claim": [],
+    "da-vacuous": [],
+    "da-circular": [],
+    "da-overclaim": [],
+    "da-hidden-dof": [],
+    "da-non-sequitur": [],
+    "da-citation-misuse": [],
+    "da-definitional-ambiguity": [],
+    "da-empirical-fragility": [],
+    "da-physical-implausibility": [],
+    "da-reproducibility": [],
     "da-referee-verdict": [
       {
         "field_hash": {
@@ -1839,63 +1395,10 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file is missing, preventing formal verification of the claims."
-      },
-      {
-        "field_hash": {
-          "md": "2fad016d7144",
-          "ts": "05ef8e686236"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-27",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.757496Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.757496Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "verdict: clean"
       }
     ],
-    "da-lean-narrative-divergence": [
-      {
-        "field_hash": {
-          "md": "2fad016d7144",
-          "ts": "05ef8e686236"
-        },
-        "result": "fail",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.757496Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.757496Z",
-        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "The referenced Lean file content/quantum-observable-universe/mass-theory/quantum-dilog-convergence.lean is missing, leading to complete divergence.",
-        "severity": "minor"
-      }
-    ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote mass-theory_seq8.md via precise python replacement for Milnor standards: clean declarative prose, no wasted words.",
-        "reviewed_at": "2026-07-07T14:26:56.757496Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.757496Z"
-        },
-        "field_hash": {
-          "md": "2fad016d7144",
-          "ts": "05ef8e686236"
-        }
-      }
-    ]
+    "da-lean-narrative-divergence": [],
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.757496Z"
 }

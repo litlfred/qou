@@ -891,24 +891,6 @@
         "reviewed_at": "2026-06-22T02:56:54.311Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
-      },
-      {
-        "field_hash": {
-          "md": "efbef2c88deb",
-          "ts": "d302fc71849f",
-          "lean": "c41be4b37bc1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.679495Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.679495Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -973,24 +955,6 @@
           "max": 1,
           "value": 0.68
         }
-      },
-      {
-        "field_hash": {
-          "md": "efbef2c88deb",
-          "ts": "d302fc71849f",
-          "lean": "c41be4b37bc1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.679495Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.679495Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-false-claim": [
@@ -1011,24 +975,6 @@
         "notes": "No false claims identified in 'S_5 action on H_n(q) at the electroweak slice': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/n-v-bring-action.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "efbef2c88deb",
-          "ts": "d302fc71849f",
-          "lean": "c41be4b37bc1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.679495Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.679495Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-vacuous": [
@@ -1048,24 +994,6 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The claims in 'S_5 action on H_n(q) at the electroweak slice' are non-vacuous as they make concrete conjectures about 'observable universe with substrate parameter $q_0$ and Bring...'.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "efbef2c88deb",
-          "ts": "d302fc71849f",
-          "lean": "c41be4b37bc1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.679495Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.679495Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-circular": [
@@ -1086,24 +1014,6 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'S_5 action on H_n(q) at the electroweak slice'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/n-v-bring-action.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "efbef2c88deb",
-          "ts": "d302fc71849f",
-          "lean": "c41be4b37bc1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.679495Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.679495Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-overclaim": [
@@ -1123,24 +1033,6 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose in 'S_5 action on H_n(q) at the electroweak slice' presents the result as established, but the Lean formalization is incomplete (has sorry).",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "efbef2c88deb",
-          "ts": "d302fc71849f",
-          "lean": "c41be4b37bc1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.679495Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.679495Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-hidden-dof": [
@@ -1161,24 +1053,6 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'S_5 action on H_n(q) at the electroweak slice'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/n-v-bring-action.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "efbef2c88deb",
-          "ts": "d302fc71849f",
-          "lean": "c41be4b37bc1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.679495Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.679495Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-non-sequitur": [
@@ -1199,24 +1073,6 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/observations/n-v-bring-action.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/n-v-bring-action.lean:1"
-      },
-      {
-        "field_hash": {
-          "md": "efbef2c88deb",
-          "ts": "d302fc71849f",
-          "lean": "c41be4b37bc1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.679495Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.679495Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1236,24 +1092,6 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/observations/n-v-bring-action.lean uses a class-conjecture pattern, matching the conjectural nature of 'S_5 action on H_n(q) at the electroweak slice'.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "efbef2c88deb",
-          "ts": "d302fc71849f",
-          "lean": "c41be4b37bc1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.679495Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.679495Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-citation-misuse": [
@@ -1274,24 +1112,6 @@
         "notes": "Citations to bring1786, klein1888 are correct and contextually appropriate.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/n-v-bring-action.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "efbef2c88deb",
-          "ts": "d302fc71849f",
-          "lean": "c41be4b37bc1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.679495Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.679495Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1312,24 +1132,6 @@
         "notes": "Key terms and symbols in 'S_5 action on H_n(q) at the electroweak slice' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/n-v-bring-action.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "efbef2c88deb",
-          "ts": "d302fc71849f",
-          "lean": "c41be4b37bc1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.679495Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.679495Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-empirical-fragility": [
@@ -1350,24 +1152,6 @@
         "notes": "The algebraic and logical relations in 'S_5 action on H_n(q) at the electroweak slice' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/n-v-bring-action.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "efbef2c88deb",
-          "ts": "d302fc71849f",
-          "lean": "c41be4b37bc1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.679495Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.679495Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-physical-implausibility": [
@@ -1388,24 +1172,6 @@
         "notes": "The physical concepts described in 'S_5 action on H_n(q) at the electroweak slice' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/n-v-bring-action.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "efbef2c88deb",
-          "ts": "d302fc71849f",
-          "lean": "c41be4b37bc1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.679495Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.679495Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-reproducibility": [
@@ -1426,24 +1192,6 @@
         "notes": "The Lean sibling content/quantum-observable-universe/observations/n-v-bring-action.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/n-v-bring-action.lean:1 \u2014 content/quantum-observable-universe/observations/n-v-bring-action.lean:18:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/GroupTheory/SpecificGroups/Alternating.olean' of module Mathlib.GroupTheory.SpecificGroups.Alternating does not exist"
-      },
-      {
-        "field_hash": {
-          "md": "efbef2c88deb",
-          "ts": "d302fc71849f",
-          "lean": "c41be4b37bc1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.679495Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.679495Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-referee-verdict": [
@@ -1465,24 +1213,6 @@
         "verdict": "survivable-objection",
         "referee_argument": "The conjectured algebraic or physical relations in 'S_5 action on H_n(q) at the electroweak slice' remain unproven and are represented as sorry stubs in the formalization.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "efbef2c88deb",
-          "ts": "d302fc71849f",
-          "lean": "c41be4b37bc1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.679495Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.679495Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "bib-cite-resolves": [
@@ -1505,25 +1235,7 @@
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Applied Milnor exposition standard (H1-H8) and brevity rules. Shortened sentences, removed editorializing ('surprisingly', 'remarkably'), replaced 'this book' with 'this paper', and maintained Math, markdown, and cross-block consistency.",
-        "reviewed_at": "2026-07-07T14:26:56.679495Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.679495Z"
-        },
-        "field_hash": {
-          "md": "efbef2c88deb",
-          "ts": "d302fc71849f",
-          "lean": "c41be4b37bc1"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.679495Z"
 }

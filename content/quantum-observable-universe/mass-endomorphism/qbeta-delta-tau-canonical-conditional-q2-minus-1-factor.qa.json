@@ -33,25 +33,7 @@
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote mass-endomorphism_seq9.md for Milnor standards: declarative voice, concise phrasing, removed colloquialisms.",
-        "reviewed_at": "2026-07-07T14:26:56.158606Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.158606Z"
-        },
-        "field_hash": {
-          "md": "7442de0a33ff",
-          "ts": "5e14094e0626",
-          "lean": "d44acfb69d51"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.158606Z"
 }

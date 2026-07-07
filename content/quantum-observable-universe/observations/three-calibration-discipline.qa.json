@@ -1083,26 +1083,6 @@
         "severity": "minor",
         "evidence": "`## Discussion` (4 numbered points: motivation, overdetermination physical meaning, audit consequences) and `## Audit hook` follow the statement+proof in the same block; no companion `interprets:` remark.",
         "notes": "Borderline: the Discussion is tightly bound to the discipline claim and largely proof-sketch/audit framing rather than free-floating physical interpretation. WARN, not FAIL."
-      },
-      {
-        "field_hash": {
-          "md": "bc9c23394a99",
-          "ts": "22487e0d576f",
-          "lean": "d5f435c797d1"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.616503Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.616503Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "severity": "minor",
-        "evidence": "three-calibration-discipline.md:62-123: '## Discussion' section with sub-points 1-4 (interpretation, overdetermination, audit consequence) follows the proposition statement in the same block.",
-        "notes": "The block carries a substantial '## Discussion' with motivation/audit-consequence prose rather than routing it to a linked interprets: remark. Borderline: much of the Discussion is scope/applicability clarification (the m_e^a m_pi^c Q(q0) discipline and its audit hook) which is arguably part of the statement's meaning, not external physical interpretation. Flagged warn rather than fail since no clean physical-interpretation remark is mislocated and the prose stays on the dimensional-discipline claim."
       }
     ],
     "fit-section-chapter": [
@@ -1123,23 +1103,6 @@
         "reviewed_at": "2026-06-22T02:56:53.952Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
-      },
-      {
-        "field_hash": {
-          "md": "bc9c23394a99",
-          "ts": "22487e0d576f",
-          "lean": "d5f435c797d1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.616503Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.616503Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "wall-side-statement": [
@@ -1160,23 +1123,6 @@
         "reviewed_at": "2026-06-22T02:56:54.298Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is correctly placed in an archimedean chapter."
-      },
-      {
-        "field_hash": {
-          "md": "bc9c23394a99",
-          "ts": "22487e0d576f",
-          "lean": "d5f435c797d1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.616503Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.616503Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "wall-side-proof": [
@@ -1197,23 +1143,6 @@
         "reviewed_at": "2026-06-22T02:56:54.656Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof matches the archimedean regime."
-      },
-      {
-        "field_hash": {
-          "md": "bc9c23394a99",
-          "ts": "22487e0d576f",
-          "lean": "d5f435c797d1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.616503Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.616503Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1234,23 +1163,6 @@
         "reviewed_at": "2026-06-22T02:56:54.984Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
-      },
-      {
-        "field_hash": {
-          "md": "bc9c23394a99",
-          "ts": "22487e0d576f",
-          "lean": "d5f435c797d1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.616503Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.616503Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1275,24 +1187,6 @@
         "reviewed_at": "2026-06-22T02:56:55.405Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
-      },
-      {
-        "field_hash": {
-          "md": "bc9c23394a99",
-          "ts": "22487e0d576f",
-          "lean": "d5f435c797d1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.616503Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.616503Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "score=0.7. Narrative proof-sketch states the plan up front (induction along the 19-link chain, step-by-step Q(q)-rationality preservation). Lean strategy is a single class-field projection, plan obvious."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1317,24 +1211,6 @@
         "reviewed_at": "2026-06-22T02:56:55.734Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
-      },
-      {
-        "field_hash": {
-          "md": "bc9c23394a99",
-          "ts": "22487e0d576f",
-          "lean": "d5f435c797d1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.616503Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.616503Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "score=0.4. Narrative is explicitly conditional/open: 'A fully tower-summed derivation ... remains open' and the proposition is conditional on the chain being realised; the Lean discharges the conditional via a class instance (the realisation is the open input). Core-conditional, not routine."
       }
     ],
     "proof-rater-novelty": [
@@ -1359,24 +1235,6 @@
         "reviewed_at": "2026-06-22T02:56:56.153Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
-      },
-      {
-        "field_hash": {
-          "md": "bc9c23394a99",
-          "ts": "22487e0d576f",
-          "lean": "d5f435c797d1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.616503Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.616503Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "score=0.8. The cohomological-alignment framing (3 calibrations = 3 real DOF of H^1=2W) is the distinctive discipline hook; not a duplicate of a sibling proof."
       }
     ],
     "proof-statement-integrity": [
@@ -1397,24 +1255,6 @@
         "reviewed_at": "2026-06-22T02:56:56.564Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
-      },
-      {
-        "field_hash": {
-          "md": "bc9c23394a99",
-          "ts": "22487e0d576f",
-          "lean": "d5f435c797d1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.616503Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.616503Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Last commit 19d0cf1d relabeled docstrings to the decay-width framing across .md/.ts/.lean together (owner ruling 2026-06-26, PR #2866 in authorNotes); the theorem signature mass X = m_e^a\u00b7m_pi^c\u00b7towerValue X is structurally unchanged. lean.ref resolves to the class-conditional theorem (no sorryAx)."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1453,24 +1293,6 @@
         "severity": "critical",
         "evidence": "three-calibration-discipline.lean:139-146: 'theorem threeCalibrationDiscipline ... : c.mass X = c.m_e^... * c.m_pi^... * c.towerValue X := c.mass_factorisation X' \u2014 the class field mass_factorisation (lines 128-133) has a type IDENTICAL to the theorem conclusion.",
         "notes": "Verbatim projection of the class field whose type IS the declaration's conclusion (P \u22a2 P). The sibling hypothesis fields m_e_pos, q_0_pos, m_pi_pos are unused; the proof composes nothing. Per \u00a73b-cond non-degeneracy clause this is the vacuous self-assuming projection pattern (class axiomatises the block's own conclusion rather than genuine sub-hypotheses). Mitigating context: AGENTS.md states this proposition is deliberately a \u00a73b structural-assumption 'class', not a free-standing theorem \u2014 but the headline theorem still merely returns the assumed field. Routes to lean-proof-review."
-      },
-      {
-        "field_hash": {
-          "md": "bc9c23394a99",
-          "ts": "22487e0d576f",
-          "lean": "d5f435c797d1"
-        },
-        "result": "pass",
-        "notes": "Owner-approved (Option B). threeCalibrationDiscipline faithfully surfaces the \u00a73b structural-assumption axiom (the .md's headline factorisation IS the discipline axiom \u2014 statement-integrity matches exactly), and a genuinely-derived companion threeCalibrationDiscipline_mass_pos now composes the factorisation with the previously-dead positivity hypotheses m_e_pos/m_pi_pos to prove towerValue X>0 \u27f9 mass X>0 (sorry-free). Not a harmful self-projection: the class encodes the framework's calibration-count assumption, and the discipline now yields a real inference. lean-direct exit 0.",
-        "reviewed_at": "2026-07-07T14:26:56.616503Z",
-        "reviewed_sha": "3a68ebaa7bb2627150332e3a5ae8d6f146969984",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/lean-proof-vacuity-audit",
-          "agent_skill": "local/lean-proof-vacuity-audit",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.616503Z"
-        }
       }
     ],
     "proof-no-trivial-true": [
@@ -1491,24 +1313,6 @@
         "reviewed_at": "2026-06-22T02:56:57.442Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
-      },
-      {
-        "field_hash": {
-          "md": "bc9c23394a99",
-          "ts": "22487e0d576f",
-          "lean": "d5f435c797d1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.616503Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.616503Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Conclusion is a real equation mass X = m_e^a\u00b7m_pi^c\u00b7towerValue X, not True/rfl-tautology."
       }
     ],
     "proof-no-false-premise": [
@@ -1529,23 +1333,6 @@
         "reviewed_at": "2026-06-22T02:56:57.839Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
-      },
-      {
-        "field_hash": {
-          "md": "bc9c23394a99",
-          "ts": "22487e0d576f",
-          "lean": "d5f435c797d1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.616503Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.616503Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1566,26 +1353,6 @@
         "reviewed_at": "2026-06-22T02:56:58.387Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
-      },
-      {
-        "field_hash": {
-          "md": "bc9c23394a99",
-          "ts": "22487e0d576f",
-          "lean": "d5f435c797d1"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.616503Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.616503Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "severity": "major",
-        "evidence": "three-calibration-discipline.lean:98-99,104-105,110-111: class fields m_e_pos (0 < m_e), q_0_pos (1 < q_0), m_pi_pos (0 < m_pi) are declared but never referenced by theorem threeCalibrationDiscipline (lines 139-146), which uses only mass_factorisation.",
-        "notes": "The positivity hypotheses are part of the conditional-class interface but play no role in deriving the factorisation; the headline theorem ignores all three. This is consistent with the self-assuming-projection finding above \u2014 the only field used is the one equal to the goal. Routes to lean-proof-review."
       }
     ],
     "proof-no-decide-masking": [
@@ -1606,23 +1373,6 @@
         "reviewed_at": "2026-06-22T02:56:58.692Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
-      },
-      {
-        "field_hash": {
-          "md": "bc9c23394a99",
-          "ts": "22487e0d576f",
-          "lean": "d5f435c797d1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.616503Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.616503Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1652,25 +1402,6 @@
         "reviewed_at": "2026-06-24T03:58:58Z",
         "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e",
         "severity": "major"
-      },
-      {
-        "field_hash": {
-          "md": "bc9c23394a99",
-          "ts": "22487e0d576f",
-          "lean": "d5f435c797d1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.616503Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.616503Z",
-        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "Lean formalization and narrative for 'Three-calibration discipline ($m_e$, $m_\\\\mu$, $m_\\\\pi$) aligned to (co)homological data' are in complete agreement.",
-        "severity": "minor"
       }
     ],
     "da-overclaim": [
@@ -1700,25 +1431,6 @@
         "reviewed_at": "2026-06-24T03:58:58Z",
         "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e",
         "severity": "major"
-      },
-      {
-        "field_hash": {
-          "md": "bc9c23394a99",
-          "ts": "22487e0d576f",
-          "lean": "d5f435c797d1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.616503Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.616503Z",
-        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "No overclaims: the scope of 'Three-calibration discipline ($m_e$, $m_\\\\mu$, $m_\\\\pi$) aligned to (co)homological data' is appropriately qualified.",
-        "severity": "minor"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1748,26 +1460,6 @@
         "reviewed_at": "2026-06-24T03:58:58Z",
         "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "bc9c23394a99",
-          "ts": "22487e0d576f",
-          "lean": "d5f435c797d1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.616503Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.616503Z",
-        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "Key terms and symbols in 'Three-calibration discipline ($m_e$, $m_\\\\mu$, $m_\\\\pi$) aligned to (co)homological data' are mathematically defined and unambiguous.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/three-calibration-discipline.ts:1"
       }
     ],
     "da-hidden-dof": [
@@ -1815,24 +1507,6 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Three-calibration discipline ($m_e$, $m_\\\\mu$, $m_\\\\pi$) aligned to (co)homological data'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/three-calibration-discipline.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "bc9c23394a99",
-          "ts": "22487e0d576f",
-          "lean": "d5f435c797d1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-21",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.616503Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.616503Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "The block establishes a strict and falsifiable calibration discipline (exactly three inputs: m_e, m_\\mu/m_e, m_\\pi) explicitly designed to prohibit hidden degrees of freedom in the model."
       }
     ],
     "da-citation-misuse": [
@@ -1862,26 +1536,6 @@
         "reviewed_at": "2026-06-24T03:58:58Z",
         "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "bc9c23394a99",
-          "ts": "22487e0d576f",
-          "lean": "d5f435c797d1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.616503Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.616503Z",
-        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "Citations to jones1985, kock2004, wenzl1988 are correct and contextually appropriate.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/three-calibration-discipline.ts:1"
       }
     ],
     "da-referee-verdict": [
@@ -1903,201 +1557,16 @@
         },
         "reviewed_at": "2026-06-24T03:58:58Z",
         "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e"
-      },
-      {
-        "field_hash": {
-          "md": "bc9c23394a99",
-          "ts": "22487e0d576f",
-          "lean": "d5f435c797d1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.616503Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.616503Z",
-        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "Referee verdict: clean.",
-        "verdict": "clean",
-        "referee_argument": "No significant objections; the mathematical claims in 'Three-calibration discipline ($m_e$, $m_\\\\mu$, $m_\\\\pi$) aligned to (co)homological data' are consistent.",
-        "severity": "minor"
       }
     ],
-    "da-false-claim": [
-      {
-        "field_hash": {
-          "md": "bc9c23394a99",
-          "ts": "22487e0d576f",
-          "lean": "d5f435c797d1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.616503Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.616503Z",
-        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "No false claims identified in 'Three-calibration discipline ($m_e$, $m_\\\\mu$, $m_\\\\pi$) aligned to (co)homological data': mathematical reasoning is consistent.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/three-calibration-discipline.ts:1"
-      }
-    ],
-    "da-vacuous": [
-      {
-        "field_hash": {
-          "md": "bc9c23394a99",
-          "ts": "22487e0d576f",
-          "lean": "d5f435c797d1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.616503Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.616503Z",
-        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The block 'Three-calibration discipline ($m_e$, $m_\\\\mu$, $m_\\\\pi$) aligned to (co)homological data' presents substantial mathematical content: calibration inputs \u2014 the three real degrees of freedom of the first cohomology o...",
-        "severity": "minor"
-      }
-    ],
-    "da-circular": [
-      {
-        "field_hash": {
-          "md": "bc9c23394a99",
-          "ts": "22487e0d576f",
-          "lean": "d5f435c797d1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.616503Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.616503Z",
-        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "No circular reasoning or self-assuming definitions detected in 'Three-calibration discipline ($m_e$, $m_\\\\mu$, $m_\\\\pi$) aligned to (co)homological data'.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/three-calibration-discipline.ts:1"
-      }
-    ],
-    "da-non-sequitur": [
-      {
-        "field_hash": {
-          "md": "bc9c23394a99",
-          "ts": "22487e0d576f",
-          "lean": "d5f435c797d1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.616503Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.616503Z",
-        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The argument flow in 'Three-calibration discipline ($m_e$, $m_\\\\mu$, $m_\\\\pi$) aligned to (co)homological data' is logically sound, mapping onto the cited dependencies.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/three-calibration-discipline.ts:1"
-      }
-    ],
-    "da-empirical-fragility": [
-      {
-        "field_hash": {
-          "md": "bc9c23394a99",
-          "ts": "22487e0d576f",
-          "lean": "d5f435c797d1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.616503Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.616503Z",
-        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The algebraic and logical relations in 'Three-calibration discipline ($m_e$, $m_\\\\mu$, $m_\\\\pi$) aligned to (co)homological data' are independent of empirical tuning parameters.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/three-calibration-discipline.ts:1"
-      }
-    ],
-    "da-physical-implausibility": [
-      {
-        "field_hash": {
-          "md": "bc9c23394a99",
-          "ts": "22487e0d576f",
-          "lean": "d5f435c797d1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.616503Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.616503Z",
-        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The physical concepts described in 'Three-calibration discipline ($m_e$, $m_\\\\mu$, $m_\\\\pi$) aligned to (co)homological data' are consistent with quantum observable mechanics.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/three-calibration-discipline.ts:1"
-      }
-    ],
-    "da-reproducibility": [
-      {
-        "field_hash": {
-          "md": "bc9c23394a99",
-          "ts": "22487e0d576f",
-          "lean": "d5f435c797d1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.616503Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.616503Z",
-        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The derivation steps and formal definitions in 'Three-calibration discipline ($m_e$, $m_\\\\mu$, $m_\\\\pi$) aligned to (co)homological data' are reproducible.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/three-calibration-discipline.ts:1"
-      }
-    ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote observations_seq0.md. Enforced concise, active prose. Replaced third person passive with 'we'. Ensured math integrity.",
-        "reviewed_at": "2026-07-07T14:26:56.616503Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.616503Z"
-        },
-        "field_hash": {
-          "md": "bc9c23394a99",
-          "ts": "22487e0d576f",
-          "lean": "d5f435c797d1"
-        }
-      }
-    ]
+    "da-false-claim": [],
+    "da-vacuous": [],
+    "da-circular": [],
+    "da-non-sequitur": [],
+    "da-empirical-fragility": [],
+    "da-physical-implausibility": [],
+    "da-reproducibility": [],
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.616503Z"
 }

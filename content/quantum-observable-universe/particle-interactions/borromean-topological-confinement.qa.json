@@ -31,24 +31,7 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote seq14 to strictly enforce Milnor brevity. Trimmed fluff and meta-commentary, ensuring straightforward descriptive sentences. Fixed non-linear forward references.",
-        "reviewed_at": "2026-07-07T14:26:57.315555Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.315555Z"
-        },
-        "field_hash": {
-          "md": "9922edd659ce",
-          "ts": "2deb95a32e4b"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:57.315555Z"
 }

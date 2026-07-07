@@ -893,26 +893,7 @@
         "reviewed_sha": "7415132ccce30885dcfd323600b8bcf311c431e4"
       }
     ],
-    "proof-narrative-lean-equiv": [
-      {
-        "field_hash": {
-          "md": "6b8e9ee9101d",
-          "ts": "077f57784289",
-          "lean": "626a5c53d7fb"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.743478Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.743478Z",
-        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'conj:im-q-physical-role' \u2192 expected 'im_q_physical_role'; Lean declares: default_q_real, mass_observable_conj_invariance, ImQCandidateRole, im_q_observable_pairing. Structural match via content."
-      }
-    ]
+    "proof-narrative-lean-equiv": []
   },
   "updated_at": "2026-07-07T14:26:56.743478Z"
 }

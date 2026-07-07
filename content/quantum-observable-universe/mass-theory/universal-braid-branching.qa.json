@@ -1053,45 +1053,8 @@
         "reviewed_sha": "7415132ccce30885dcfd323600b8bcf311c431e4"
       }
     ],
-    "proof-narrative-lean-equiv": [
-      {
-        "field_hash": {
-          "md": "a04338485224",
-          "ts": "4ed1b5b75b2a",
-          "lean": "2d35407ae9ce"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.935055Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.935055Z",
-        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:universal-braid-branching' aligns with Lean declaration. Sorry-free."
-      }
-    ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote mass-theory_seq8.md via precise python replacement for Milnor standards: clean declarative prose, no wasted words.",
-        "reviewed_at": "2026-07-07T14:26:56.935055Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.935055Z"
-        },
-        "field_hash": {
-          "md": "a04338485224",
-          "ts": "4ed1b5b75b2a",
-          "lean": "2d35407ae9ce"
-        }
-      }
-    ]
+    "proof-narrative-lean-equiv": [],
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.935055Z"
 }

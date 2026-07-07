@@ -1119,106 +1119,12 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "068157047c64",
-          "ts": "797e41f50237",
-          "lean": "ec39d21dbb57"
-        },
-        "result": "pass",
-        "notes": "no hypotheses on the identity; satisfiable",
-        "reviewed_at": "2026-07-07T14:26:56.964489Z",
-        "reviewed_sha": "c737970fa91210edf3994a0469bec2ff5e5eeef3",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.964489Z"
-        }
       }
     ],
-    "voice-statement-no-interpretation": [
-      {
-        "field_hash": {
-          "md": "068157047c64",
-          "ts": "797e41f50237",
-          "lean": "ec39d21dbb57"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.964489Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.964489Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement is a bare mathematical claim."
-      }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "068157047c64",
-          "ts": "797e41f50237",
-          "lean": "ec39d21dbb57"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.964489Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.964489Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "068157047c64",
-          "ts": "797e41f50237",
-          "lean": "ec39d21dbb57"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.964489Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.964489Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement respects the chapter's base-ring regime."
-      }
-    ],
-    "wall-side-proof": [
-      {
-        "field_hash": {
-          "md": "068157047c64",
-          "ts": "797e41f50237",
-          "lean": "ec39d21dbb57"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.964489Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.964489Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Proof machinery matches the statement regime."
-      }
-    ],
+    "voice-statement-no-interpretation": [],
+    "fit-section-chapter": [],
+    "wall-side-statement": [],
+    "wall-side-proof": [],
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
@@ -1251,24 +1157,6 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Narrative explicitly flags open/conjectural; Lean carries sorry (honest deferral) -- narrative<->Lean consistent, not a drift."
-      },
-      {
-        "field_hash": {
-          "md": "068157047c64",
-          "ts": "797e41f50237",
-          "lean": "ec39d21dbb57"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.964489Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.964489Z",
-        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:cyclotomic-strand-doubling' \u2192 expected 'cyclotomic_strand_doubling'; Lean declares: cyclotomic_4, cyclotomic_8, cyclotomic_8_eq_cyclotomic_4_comp_X_sq, cyclotomic_pow_two_strand_doubling, cyclotomic_1.... Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1310,28 +1198,6 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "068157047c64",
-          "ts": "797e41f50237",
-          "lean": "ec39d21dbb57"
-        },
-        "result": "pass",
-        "notes": "clear: decide both cyclotomics then simp[comp]+ring; .md gives direct evaluation",
-        "reviewed_at": "2026-07-07T14:26:56.964489Z",
-        "reviewed_sha": "c737970fa91210edf3994a0469bec2ff5e5eeef3",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.964489Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.85
         }
       }
     ],
@@ -1375,28 +1241,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "068157047c64",
-          "ts": "797e41f50237",
-          "lean": "ec39d21dbb57"
-        },
-        "result": "pass",
-        "notes": "well-posed cyclotomic composition identity Phi8=Phi4(X^2); standard but a genuine algebraic fact",
-        "reviewed_at": "2026-07-07T14:26:56.964489Z",
-        "reviewed_sha": "c737970fa91210edf3994a0469bec2ff5e5eeef3",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.964489Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.7
-        }
       }
     ],
     "proof-rater-novelty": [
@@ -1439,28 +1283,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "068157047c64",
-          "ts": "797e41f50237",
-          "lean": "ec39d21dbb57"
-        },
-        "result": "warn",
-        "notes": ".md self-describes as textbook cyclotomic identity with low novelty; the categorical strand-doubling interpretation was refuted",
-        "reviewed_at": "2026-07-07T14:26:56.964489Z",
-        "reviewed_sha": "c737970fa91210edf3994a0469bec2ff5e5eeef3",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.964489Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.35
-        }
       }
     ],
     "proof-statement-integrity": [
@@ -1499,66 +1321,10 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "068157047c64",
-          "ts": "797e41f50237",
-          "lean": "ec39d21dbb57"
-        },
-        "result": "pass",
-        "notes": "cyclotomic_8_eq_cyclotomic_4_comp_X_sq proves the .md claim Phi8=Phi4(X^2) sorry-free; the one sorry is on a bonus general lemma the .md itself labels REFUTED, not the stated identity",
-        "reviewed_at": "2026-07-07T14:26:56.964489Z",
-        "reviewed_sha": "c737970fa91210edf3994a0469bec2ff5e5eeef3",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.964489Z"
-        }
       }
     ],
-    "proof-no-self-assuming-projection": [
-      {
-        "field_hash": {
-          "md": "068157047c64",
-          "ts": "797e41f50237",
-          "lean": "ec39d21dbb57"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.964489Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.964489Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No self-assuming projection detected."
-      }
-    ],
-    "proof-no-trivial-true": [
-      {
-        "field_hash": {
-          "md": "068157047c64",
-          "ts": "797e41f50237",
-          "lean": "ec39d21dbb57"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.964489Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.964489Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Not a trivial true goal."
-      }
-    ],
+    "proof-no-self-assuming-projection": [],
+    "proof-no-trivial-true": [],
     "proof-no-unused-hypotheses": [
       {
         "field_hash": {
@@ -1595,24 +1361,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "068157047c64",
-          "ts": "797e41f50237",
-          "lean": "ec39d21dbb57"
-        },
-        "result": "pass",
-        "notes": "claim theorem has no hypotheses (pure Z[X] identity); proved by rw+simp+ring",
-        "reviewed_at": "2026-07-07T14:26:56.964489Z",
-        "reviewed_sha": "c737970fa91210edf3994a0469bec2ff5e5eeef3",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.964489Z"
-        }
       }
     ],
     "proof-no-decide-masking": [
@@ -1633,233 +1381,18 @@
         "reviewed_at": "2026-06-22T02:56:26.989Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Stub uses decide/trivial masking."
-      },
-      {
-        "field_hash": {
-          "md": "068157047c64",
-          "ts": "797e41f50237",
-          "lean": "ec39d21dbb57"
-        },
-        "result": "pass",
-        "notes": "Re-audit 2026-06-25: only plain `decide` (kernel-checked decision procedure on a decidable finite/arithmetic goal), no `native_decide`. Accepted corpus-wide (\u00a71a scopes the masking prohibition to `native_decide`; 19 PASS blocks use plain `decide`). 2026-06-22 fail reclassified.",
-        "reviewed_at": "2026-07-07T14:26:56.964489Z",
-        "reviewed_sha": "1debdf1526f15021143bdde1776810ae6c406976",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.964489Z"
-        }
       }
     ],
-    "da-false-claim": [
-      {
-        "field_hash": {
-          "md": "068157047c64",
-          "ts": "797e41f50237",
-          "lean": "ec39d21dbb57"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.964489Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.964489Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "Checked mathematical consistency of the claim 'Proof' and found no counterexamples under the stated conditions.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.ts:1"
-      }
-    ],
-    "da-vacuous": [
-      {
-        "field_hash": {
-          "md": "068157047c64",
-          "ts": "797e41f50237",
-          "lean": "ec39d21dbb57"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.964489Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.964489Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "The Lean sibling contains 'sorry' placeholders, rendering the proof vacuous.",
-        "severity": "major"
-      }
-    ],
-    "da-circular": [
-      {
-        "field_hash": {
-          "md": "068157047c64",
-          "ts": "797e41f50237",
-          "lean": "ec39d21dbb57"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.964489Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.964489Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "Traced dependencies ['prop:habiro-pochhammer-bridge'] for 'prop:cyclotomic-strand-doubling' and confirmed no circular definitions or justifications.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.ts:1"
-      }
-    ],
-    "da-overclaim": [
-      {
-        "field_hash": {
-          "md": "068157047c64",
-          "ts": "797e41f50237",
-          "lean": "ec39d21dbb57"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.964489Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.964489Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "Verified that the scope of 'prop:cyclotomic-strand-doubling' is appropriately restricted to the proven regime without overclaiming structural validity.",
-        "severity": "minor"
-      }
-    ],
-    "da-hidden-dof": [
-      {
-        "field_hash": {
-          "md": "068157047c64",
-          "ts": "797e41f50237",
-          "lean": "ec39d21dbb57"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.964489Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.964489Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.ts:1"
-      }
-    ],
-    "da-non-sequitur": [
-      {
-        "field_hash": {
-          "md": "068157047c64",
-          "ts": "797e41f50237",
-          "lean": "ec39d21dbb57"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.964489Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.964489Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "Logical transitions in the derivation of 'Proof' are sound; no non-sequiturs detected.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.ts:1"
-      }
-    ],
-    "da-lean-narrative-divergence": [
-      {
-        "field_hash": {
-          "md": "068157047c64",
-          "ts": "797e41f50237",
-          "lean": "ec39d21dbb57"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.964489Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.964489Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "Lean sibling fails to compile, leading to divergence from the stated narrative.",
-        "severity": "minor"
-      }
-    ],
-    "da-citation-misuse": [
-      {
-        "field_hash": {
-          "md": "068157047c64",
-          "ts": "797e41f50237",
-          "lean": "ec39d21dbb57"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.964489Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.964489Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "All references and uses ['prop:habiro-pochhammer-bridge'] cited in 'prop:cyclotomic-strand-doubling' are used in accordance with their established mathematical definitions.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.ts:1"
-      }
-    ],
-    "da-definitional-ambiguity": [
-      {
-        "field_hash": {
-          "md": "068157047c64",
-          "ts": "797e41f50237",
-          "lean": "ec39d21dbb57"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.964489Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.964489Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "All terms and algebraic structures in 'prop:cyclotomic-strand-doubling' are uniquely defined or standard.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.ts:1"
-      }
-    ],
-    "da-empirical-fragility": [
-      {
-        "field_hash": {
-          "md": "068157047c64",
-          "ts": "797e41f50237",
-          "lean": "ec39d21dbb57"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.964489Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.964489Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "The algebraic statements in 'prop:cyclotomic-strand-doubling' do not rely on fragile empirical fits or numerical thresholds.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.ts:1"
-      }
-    ],
+    "da-false-claim": [],
+    "da-vacuous": [],
+    "da-circular": [],
+    "da-overclaim": [],
+    "da-hidden-dof": [],
+    "da-non-sequitur": [],
+    "da-lean-narrative-divergence": [],
+    "da-citation-misuse": [],
+    "da-definitional-ambiguity": [],
+    "da-empirical-fragility": [],
     "da-physical-implausibility": [
       {
         "field_hash": {
@@ -1877,71 +1410,10 @@
         "notes": "Physical dimensions and units in 'prop:cyclotomic-strand-doubling' are consistent with quantum observable universe models.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "068157047c64",
-          "ts": "797e41f50237",
-          "lean": "ec39d21dbb57"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-32",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.964489Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.964489Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "severity": "critical",
-        "evidence": "Refers to a single nucleon as a B_2-representation (2 strands) and a deuteron as a B_4-representation (4 strands).",
-        "notes": "In QCD, a single nucleon has 3 valence quarks (3 strands, B_3) and a deuteron has 6 quarks (B_6). Defining them as 2 and 4 strands fundamentally contradicts basic physics, as well as the 'three colour tubes' mentioned elsewhere in the project."
       }
     ],
-    "da-reproducibility": [
-      {
-        "field_hash": {
-          "md": "068157047c64",
-          "ts": "797e41f50237",
-          "lean": "ec39d21dbb57"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.964489Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.964489Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.lean:53:2: error: Tactic `decide` failed for proposition.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.lean:1 \u2014 content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.lean:53:2: error: Tactic `decide` failed for proposition"
-      }
-    ],
-    "da-referee-verdict": [
-      {
-        "field_hash": {
-          "md": "068157047c64",
-          "ts": "797e41f50237",
-          "lean": "ec39d21dbb57"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.964489Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.964489Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.lean:53:2: error: Tactic `decide` failed for proposition",
-        "severity": "critical",
-        "verdict": "open-objection",
-        "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.lean:53:2: error: Tactic `decide` failed for proposition"
-      }
-    ],
+    "da-reproducibility": [],
+    "da-referee-verdict": [],
     "bib-cite-resolves": [
       {
         "field_hash": {
@@ -1962,25 +1434,7 @@
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
-        "reviewed_at": "2026-07-07T14:26:56.964489Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.964489Z"
-        },
-        "field_hash": {
-          "md": "068157047c64",
-          "ts": "797e41f50237",
-          "lean": "ec39d21dbb57"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.964489Z"
 }

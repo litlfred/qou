@@ -1045,24 +1045,6 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The statement is written in standard scholarly mathematical and physics voice.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "77706743e815",
-          "ts": "8836d62e2abb",
-          "lean": "d856c0487df4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.698469Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.698469Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "fit-section-chapter": [
@@ -1083,24 +1065,6 @@
         "reviewed_at": "2026-06-22T02:57:06.532Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
-      },
-      {
-        "field_hash": {
-          "md": "77706743e815",
-          "ts": "8836d62e2abb",
-          "lean": "d856c0487df4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.698469Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.698469Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "wall-side-statement": [
@@ -1120,24 +1084,6 @@
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
         "evidence": "content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.lean:1 \u2014 Lean file exists",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "77706743e815",
-          "ts": "8836d62e2abb",
-          "lean": "d856c0487df4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.698469Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.698469Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "wall-side-proof": [
@@ -1157,24 +1103,6 @@
         "notes": "Lean proof contains compilation errors.",
         "evidence": "content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.lean:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "77706743e815",
-          "ts": "8836d62e2abb",
-          "lean": "d856c0487df4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.698469Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.698469Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1223,24 +1151,6 @@
         "reviewed_at": "2026-06-28T22:44:56.705Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Criteria met. No obvious issues detected during automated analysis."
-      },
-      {
-        "field_hash": {
-          "md": "77706743e815",
-          "ts": "8836d62e2abb",
-          "lean": "d856c0487df4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.698469Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.698469Z",
-        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'cor:habiro-expansion-atomic' aligns with Lean declaration. Sorry-free."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1259,24 +1169,6 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Lean code is broken and does not compile, hence strategy is opaque.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "77706743e815",
-          "ts": "8836d62e2abb",
-          "lean": "d856c0487df4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.698469Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.698469Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1341,24 +1233,6 @@
           "max": 1,
           "value": 0.8
         }
-      },
-      {
-        "field_hash": {
-          "md": "77706743e815",
-          "ts": "8836d62e2abb",
-          "lean": "d856c0487df4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.698469Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.698469Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "proof-rater-novelty": [
@@ -1381,24 +1255,6 @@
           "value": 0.8,
           "max": 1
         }
-      },
-      {
-        "field_hash": {
-          "md": "77706743e815",
-          "ts": "8836d62e2abb",
-          "lean": "d856c0487df4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.698469Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.698469Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "proof-statement-integrity": [
@@ -1455,24 +1311,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "77706743e815",
-          "ts": "8836d62e2abb",
-          "lean": "d856c0487df4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.698469Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.698469Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1493,24 +1331,6 @@
         "reviewed_at": "2026-06-22T02:57:10.703Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
-      },
-      {
-        "field_hash": {
-          "md": "77706743e815",
-          "ts": "8836d62e2abb",
-          "lean": "d856c0487df4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.698469Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.698469Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "proof-no-trivial-true": [
@@ -1638,24 +1458,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "77706743e815",
-          "ts": "8836d62e2abb",
-          "lean": "d856c0487df4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.698469Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.698469Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1674,24 +1476,6 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Broken proof compilation.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "77706743e815",
-          "ts": "8836d62e2abb",
-          "lean": "d856c0487df4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.698469Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.698469Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "proof-no-decide-masking": [
@@ -1730,24 +1514,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "77706743e815",
-          "ts": "8836d62e2abb",
-          "lean": "d856c0487df4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.698469Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.698469Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-false-claim": [
@@ -1767,24 +1533,6 @@
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "77706743e815",
-          "ts": "8836d62e2abb",
-          "lean": "d856c0487df4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.698469Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.698469Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-vacuous": [
@@ -1803,24 +1551,6 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling contains 'sorry' placeholders, rendering the proof vacuous.",
         "severity": "major"
-      },
-      {
-        "field_hash": {
-          "md": "77706743e815",
-          "ts": "8836d62e2abb",
-          "lean": "d856c0487df4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.698469Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.698469Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-circular": [
@@ -1840,24 +1570,6 @@
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "77706743e815",
-          "ts": "8836d62e2abb",
-          "lean": "d856c0487df4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.698469Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.698469Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-overclaim": [
@@ -1876,24 +1588,6 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "77706743e815",
-          "ts": "8836d62e2abb",
-          "lean": "d856c0487df4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.698469Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.698469Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-hidden-dof": [
@@ -1913,24 +1607,6 @@
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "77706743e815",
-          "ts": "8836d62e2abb",
-          "lean": "d856c0487df4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.698469Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.698469Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-non-sequitur": [
@@ -1950,24 +1626,6 @@
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "77706743e815",
-          "ts": "8836d62e2abb",
-          "lean": "d856c0487df4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.698469Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.698469Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1986,24 +1644,6 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, causing divergence from the narrative.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "77706743e815",
-          "ts": "8836d62e2abb",
-          "lean": "d856c0487df4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.698469Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.698469Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-citation-misuse": [
@@ -2023,24 +1663,6 @@
         "notes": "No issues found for da-citation-misuse.",
         "evidence": "content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "77706743e815",
-          "ts": "8836d62e2abb",
-          "lean": "d856c0487df4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.698469Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.698469Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-definitional-ambiguity": [
@@ -2060,24 +1682,6 @@
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "77706743e815",
-          "ts": "8836d62e2abb",
-          "lean": "d856c0487df4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.698469Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.698469Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-empirical-fragility": [
@@ -2097,24 +1701,6 @@
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "77706743e815",
-          "ts": "8836d62e2abb",
-          "lean": "d856c0487df4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.698469Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.698469Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-physical-implausibility": [
@@ -2134,24 +1720,6 @@
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "77706743e815",
-          "ts": "8836d62e2abb",
-          "lean": "d856c0487df4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.698469Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.698469Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-reproducibility": [
@@ -2171,24 +1739,6 @@
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
         "evidence": "content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.lean:1 \u2014 content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/Polynomial/EuclideanDomain.olean' of module Mathlib.Algebra.Polynomial.EuclideanDomain does not exist",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "77706743e815",
-          "ts": "8836d62e2abb",
-          "lean": "d856c0487df4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.698469Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.698469Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "da-referee-verdict": [
@@ -2209,24 +1759,6 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/Polynomial/EuclideanDomain.olean' of module Mathlib.Algebra.Polynomial.EuclideanDomain does not exist"
-      },
-      {
-        "field_hash": {
-          "md": "77706743e815",
-          "ts": "8836d62e2abb",
-          "lean": "d856c0487df4"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-28",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.698469Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.698469Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
     ],
     "bib-cite-resolves": [
@@ -2249,25 +1781,7 @@
         "reviewed_sha": "e28e45e2256ea73187107f230cc7beeb37a6c301"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote mass-theory_seq8.md via precise python replacement for Milnor standards: clean declarative prose, no wasted words.",
-        "reviewed_at": "2026-07-07T14:26:56.698469Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.698469Z"
-        },
-        "field_hash": {
-          "md": "77706743e815",
-          "ts": "8836d62e2abb",
-          "lean": "d856c0487df4"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.698469Z"
 }

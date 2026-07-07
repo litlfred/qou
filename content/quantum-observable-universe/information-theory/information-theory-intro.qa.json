@@ -832,22 +832,6 @@
         "reviewed_at": "2026-06-22T02:56:27.529Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
-      },
-      {
-        "field_hash": {
-          "md": "de5490a1fde0",
-          "ts": "d71d3d69a519"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.588571Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.588571Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-false-claim": [
@@ -866,22 +850,6 @@
         "notes": "No false claims identified in 'sec:info-theory-intro': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/information-theory-intro.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "de5490a1fde0",
-          "ts": "d71d3d69a519"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.588571Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.588571Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-vacuous": [
@@ -899,22 +867,6 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The block 'sec:info-theory-intro' presents substantial mathematical content: The categorical framework of the QOU determines not only the geometry and partic...",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "de5490a1fde0",
-          "ts": "d71d3d69a519"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.588571Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.588571Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-circular": [
@@ -933,22 +885,6 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'sec:info-theory-intro'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/information-theory-intro.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "de5490a1fde0",
-          "ts": "d71d3d69a519"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.588571Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.588571Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-overclaim": [
@@ -966,25 +902,6 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No overclaims: the scope of 'sec:info-theory-intro' is appropriately qualified.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "de5490a1fde0",
-          "ts": "d71d3d69a519"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.588571Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.588571Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "severity": "critical",
-        "evidence": "derives the Planck scale, the speed of light, mass--energy equivalence, the gravitational constant, and the operational entropy from the substrate parameter q",
-        "notes": "Extremely strong claim that reads like post-hoc rationalization or numerology. Deriving all fundamental constants from a single categorical parameter q requires extraordinary evidence which is likely empirically fragile."
       }
     ],
     "da-hidden-dof": [
@@ -1003,22 +920,6 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'sec:info-theory-intro'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/information-theory-intro.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "de5490a1fde0",
-          "ts": "d71d3d69a519"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.588571Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.588571Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-non-sequitur": [
@@ -1037,22 +938,6 @@
         "notes": "The argument flow in 'sec:info-theory-intro' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/information-theory-intro.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "de5490a1fde0",
-          "ts": "d71d3d69a519"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.588571Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.588571Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1070,22 +955,6 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "de5490a1fde0",
-          "ts": "d71d3d69a519"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.588571Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.588571Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-citation-misuse": [
@@ -1104,22 +973,6 @@
         "notes": "No citations are present in 'sec:info-theory-intro', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/information-theory-intro.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "de5490a1fde0",
-          "ts": "d71d3d69a519"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.588571Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.588571Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1138,22 +991,6 @@
         "notes": "Key terms and symbols in 'sec:info-theory-intro' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/information-theory-intro.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "de5490a1fde0",
-          "ts": "d71d3d69a519"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.588571Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.588571Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-empirical-fragility": [
@@ -1172,24 +1009,6 @@
         "notes": "The algebraic and logical relations in 'sec:info-theory-intro' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/information-theory-intro.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "de5490a1fde0",
-          "ts": "d71d3d69a519"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.588571Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.588571Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "severity": "major",
-        "notes": "Predicting physical constants from a pure categorical framework risks massive empirical contradiction if predictions don't match precision measurements."
       }
     ],
     "da-physical-implausibility": [
@@ -1208,22 +1027,6 @@
         "notes": "The physical concepts described in 'sec:info-theory-intro' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/information-theory-intro.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "de5490a1fde0",
-          "ts": "d71d3d69a519"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.588571Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.588571Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-reproducibility": [
@@ -1242,22 +1045,6 @@
         "notes": "The derivation steps and formal definitions in 'sec:info-theory-intro' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/information-theory-intro.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "de5490a1fde0",
-          "ts": "d71d3d69a519"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.588571Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.588571Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-referee-verdict": [
@@ -1277,42 +1064,9 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'sec:info-theory-intro' are consistent."
-      },
-      {
-        "field_hash": {
-          "md": "de5490a1fde0",
-          "ts": "d71d3d69a519"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.588571Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.588571Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Smoothed transitions, removed forward references, applied milnor brevity.",
-        "reviewed_at": "2026-07-07T14:26:55.588571Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.588571Z"
-        },
-        "field_hash": {
-          "md": "de5490a1fde0",
-          "ts": "d71d3d69a519"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:55.588571Z"
 }

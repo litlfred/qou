@@ -1029,86 +1029,10 @@
         "reviewed_sha": "7415132ccce30885dcfd323600b8bcf311c431e4"
       }
     ],
-    "voice-statement-no-interpretation": [
-      {
-        "field_hash": {
-          "md": "1dd242bc43c4",
-          "ts": "42b5583d4d8a",
-          "lean": "8093e2d56f81"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.137947Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.137947Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement is a bare mathematical claim."
-      }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "1dd242bc43c4",
-          "ts": "42b5583d4d8a",
-          "lean": "8093e2d56f81"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.137947Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.137947Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "1dd242bc43c4",
-          "ts": "42b5583d4d8a",
-          "lean": "8093e2d56f81"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.137947Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.137947Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement respects the chapter's base-ring regime."
-      }
-    ],
-    "wall-side-proof": [
-      {
-        "field_hash": {
-          "md": "1dd242bc43c4",
-          "ts": "42b5583d4d8a",
-          "lean": "8093e2d56f81"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.137947Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.137947Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Proof machinery matches the statement regime."
-      }
-    ],
+    "voice-statement-no-interpretation": [],
+    "fit-section-chapter": [],
+    "wall-side-statement": [],
+    "wall-side-proof": [],
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
@@ -1141,24 +1065,6 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.lean); stale agent flag refreshed (sorry discharged after prior review)."
-      },
-      {
-        "field_hash": {
-          "md": "1dd242bc43c4",
-          "ts": "42b5583d4d8a",
-          "lean": "8093e2d56f81"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.137947Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.137947Z",
-        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'cor:descartes-knot-eigenbasis' aligns with Lean declaration. Sorry-free."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1200,28 +1106,6 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "1dd242bc43c4",
-          "ts": "42b5583d4d8a",
-          "lean": "8093e2d56f81"
-        },
-        "result": "pass",
-        "notes": ".md gives clear 4-step chain (Hecke from R-matrix -> semisimple -> Schur-Weyl -> Markov detection); Lean structures mirror it though the capstone is axiom-backed",
-        "reviewed_at": "2026-07-07T14:26:55.137947Z",
-        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.137947Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.7
         }
       }
     ],
@@ -1265,28 +1149,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "1dd242bc43c4",
-          "ts": "42b5583d4d8a",
-          "lean": "8093e2d56f81"
-        },
-        "result": "pass",
-        "notes": "well-posed corollary: Descartes condition (chi=-6, q not root of unity) instantiates complete knot-type eigenbasis via Schur-Weyl + Markov detection",
-        "reviewed_at": "2026-07-07T14:26:55.137947Z",
-        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.137947Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.78
-        }
       }
     ],
     "proof-rater-novelty": [
@@ -1329,28 +1191,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "1dd242bc43c4",
-          "ts": "42b5583d4d8a",
-          "lean": "8093e2d56f81"
-        },
-        "result": "pass",
-        "notes": "substantive instantiation tying chi=-6 Descartes universe to knot-eigenbasis completeness; concrete n=3 trefoil/unknot detection witnesses are real content",
-        "reviewed_at": "2026-07-07T14:26:55.137947Z",
-        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.137947Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.68
-        }
       }
     ],
     "proof-statement-integrity": [
@@ -1389,66 +1229,10 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "1dd242bc43c4",
-          "ts": "42b5583d4d8a",
-          "lean": "8093e2d56f81"
-        },
-        "result": "fail",
-        "notes": "main descartes_knot_eigenbasis := descartes_knot_eigenbasis_axiom (declared axiom) with degenerately-weak conclusion (exists jonesVal != 0, trivial in R_q), not 'complete eigenbasis'; also references commented-out D.q_pos (lines 73/106/284/289) -> non-compiling",
-        "reviewed_at": "2026-07-07T14:26:55.137947Z",
-        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.137947Z"
-        }
       }
     ],
-    "proof-no-self-assuming-projection": [
-      {
-        "field_hash": {
-          "md": "1dd242bc43c4",
-          "ts": "42b5583d4d8a",
-          "lean": "8093e2d56f81"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.137947Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.137947Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No self-assuming projection detected."
-      }
-    ],
-    "proof-no-trivial-true": [
-      {
-        "field_hash": {
-          "md": "1dd242bc43c4",
-          "ts": "42b5583d4d8a",
-          "lean": "8093e2d56f81"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.137947Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.137947Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Not a trivial true goal."
-      }
-    ],
+    "proof-no-self-assuming-projection": [],
+    "proof-no-trivial-true": [],
     "proof-no-false-premise": [
       {
         "field_hash": {
@@ -1484,24 +1268,6 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "1dd242bc43c4",
-          "ts": "42b5583d4d8a",
-          "lean": "8093e2d56f81"
-        },
-        "result": "pass",
-        "notes": "DescartesData premises (euler=-6, dimV=2, q_ne_one) satisfiable; not contradictory (the defect is the axiom/weak-conclusion + missing q_pos, not a false premise)",
-        "reviewed_at": "2026-07-07T14:26:55.137947Z",
-        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.137947Z"
         }
       }
     ],
@@ -1541,24 +1307,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "1dd242bc43c4",
-          "ts": "42b5583d4d8a",
-          "lean": "8093e2d56f81"
-        },
-        "result": "pass",
-        "notes": "proved corollaries (n3_both_detected, eigenvalues_distinct, particle_count) use their D/n binders; no unused explicit binder among the genuine theorems",
-        "reviewed_at": "2026-07-07T14:26:55.137947Z",
-        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.137947Z"
-        }
       }
     ],
     "proof-no-decide-masking": [
@@ -1579,297 +1327,21 @@
         "reviewed_at": "2026-06-22T02:56:25.917Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Stub uses decide/trivial masking."
-      },
-      {
-        "field_hash": {
-          "md": "1dd242bc43c4",
-          "ts": "42b5583d4d8a",
-          "lean": "8093e2d56f81"
-        },
-        "result": "pass",
-        "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.lean, content/quantum-observable-universe/lean/QOU/Archimedean.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-07-07T14:26:55.137947Z",
-        "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.137947Z"
-        }
       }
     ],
-    "da-false-claim": [
-      {
-        "field_hash": {
-          "md": "1dd242bc43c4",
-          "ts": "42b5583d4d8a",
-          "lean": "8093e2d56f81"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.137947Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.137947Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Checked mathematical consistency of the claim '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md \u00a77c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' and found no counterexamples under the stated conditions.",
-        "evidence": "content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-vacuous": [
-      {
-        "field_hash": {
-          "md": "1dd242bc43c4",
-          "ts": "42b5583d4d8a",
-          "lean": "8093e2d56f81"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.137947Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.137947Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "The Lean sibling contains 'sorry' placeholders, rendering the proof vacuous.",
-        "severity": "major"
-      }
-    ],
-    "da-circular": [
-      {
-        "field_hash": {
-          "md": "1dd242bc43c4",
-          "ts": "42b5583d4d8a",
-          "lean": "8093e2d56f81"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.137947Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.137947Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Traced dependencies ['cor:descartes-braid-structure', 'thm:jones-markov-trace', 'prop:knot-eigenbasis-complete'] for 'cor:descartes-knot-eigenbasis' and confirmed no circular definitions or justifications.",
-        "evidence": "content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-overclaim": [
-      {
-        "field_hash": {
-          "md": "1dd242bc43c4",
-          "ts": "42b5583d4d8a",
-          "lean": "8093e2d56f81"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.137947Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.137947Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Verified that the scope of 'cor:descartes-knot-eigenbasis' is appropriately restricted to the proven regime without overclaiming structural validity.",
-        "severity": "minor"
-      }
-    ],
-    "da-hidden-dof": [
-      {
-        "field_hash": {
-          "md": "1dd242bc43c4",
-          "ts": "42b5583d4d8a",
-          "lean": "8093e2d56f81"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.137947Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.137947Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
-        "evidence": "content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-non-sequitur": [
-      {
-        "field_hash": {
-          "md": "1dd242bc43c4",
-          "ts": "42b5583d4d8a",
-          "lean": "8093e2d56f81"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.137947Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.137947Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Logical transitions in the derivation of '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md \u00a77c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' are sound; no non-sequiturs detected.",
-        "evidence": "content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-lean-narrative-divergence": [
-      {
-        "field_hash": {
-          "md": "1dd242bc43c4",
-          "ts": "42b5583d4d8a",
-          "lean": "8093e2d56f81"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.137947Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.137947Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Lean sibling fails to compile, leading to divergence from the stated narrative.",
-        "severity": "minor"
-      }
-    ],
-    "da-citation-misuse": [
-      {
-        "field_hash": {
-          "md": "1dd242bc43c4",
-          "ts": "42b5583d4d8a",
-          "lean": "8093e2d56f81"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.137947Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.137947Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "All references and uses ['cor:descartes-braid-structure', 'thm:jones-markov-trace', 'prop:knot-eigenbasis-complete'] cited in 'cor:descartes-knot-eigenbasis' are used in accordance with their established mathematical definitions.",
-        "evidence": "content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-definitional-ambiguity": [
-      {
-        "field_hash": {
-          "md": "1dd242bc43c4",
-          "ts": "42b5583d4d8a",
-          "lean": "8093e2d56f81"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.137947Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.137947Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "All terms and algebraic structures in 'cor:descartes-knot-eigenbasis' are uniquely defined or standard.",
-        "evidence": "content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-empirical-fragility": [
-      {
-        "field_hash": {
-          "md": "1dd242bc43c4",
-          "ts": "42b5583d4d8a",
-          "lean": "8093e2d56f81"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.137947Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.137947Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "The algebraic statements in 'cor:descartes-knot-eigenbasis' do not rely on fragile empirical fits or numerical thresholds.",
-        "evidence": "content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-physical-implausibility": [
-      {
-        "field_hash": {
-          "md": "1dd242bc43c4",
-          "ts": "42b5583d4d8a",
-          "lean": "8093e2d56f81"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.137947Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.137947Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Physical dimensions and units in 'cor:descartes-knot-eigenbasis' are consistent with quantum observable universe models.",
-        "evidence": "content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-reproducibility": [
-      {
-        "field_hash": {
-          "md": "1dd242bc43c4",
-          "ts": "42b5583d4d8a",
-          "lean": "8093e2d56f81"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.137947Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.137947Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.lean:42:13: error: unexpected token 'section'; expected 'lemma'.",
-        "evidence": "content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.lean:1 \u2014 content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.lean:42:13: error: unexpected token 'section'; expected 'lemma'",
-        "severity": "minor"
-      }
-    ],
-    "da-referee-verdict": [
-      {
-        "field_hash": {
-          "md": "1dd242bc43c4",
-          "ts": "42b5583d4d8a",
-          "lean": "8093e2d56f81"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.137947Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.137947Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.lean:42:13: error: unexpected token 'section'; expected 'lemma'",
-        "verdict": "open-objection",
-        "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis.lean:42:13: error: unexpected token 'section'; expected 'lemma'",
-        "severity": "critical"
-      }
-    ],
+    "da-false-claim": [],
+    "da-vacuous": [],
+    "da-circular": [],
+    "da-overclaim": [],
+    "da-hidden-dof": [],
+    "da-non-sequitur": [],
+    "da-lean-narrative-divergence": [],
+    "da-citation-misuse": [],
+    "da-definitional-ambiguity": [],
+    "da-empirical-fragility": [],
+    "da-physical-implausibility": [],
+    "da-reproducibility": [],
+    "da-referee-verdict": [],
     "bib-cite-resolves": [
       {
         "field_hash": {
@@ -1890,25 +1362,7 @@
         "reviewed_sha": "7415132ccce30885dcfd323600b8bcf311c431e4"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote brings-surface_seq7.md applying Milnor standard. Replaced passive verbs, enhanced clarity. Simplified the narrative transition lines.",
-        "reviewed_at": "2026-07-07T14:26:55.137947Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.137947Z"
-        },
-        "field_hash": {
-          "md": "1dd242bc43c4",
-          "ts": "42b5583d4d8a",
-          "lean": "8093e2d56f81"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:55.137947Z"
 }

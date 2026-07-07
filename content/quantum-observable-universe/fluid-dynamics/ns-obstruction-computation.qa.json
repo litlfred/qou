@@ -31,24 +31,7 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote fluid-dynamics_seq5.md. Enforced Economy, Concrete before Abstract, Why precedes What. Preserved markers.",
-        "reviewed_at": "2026-07-07T14:26:56.275833Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.275833Z"
-        },
-        "field_hash": {
-          "md": "57826b97e9a8",
-          "ts": "e96512398250"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.275833Z"
 }

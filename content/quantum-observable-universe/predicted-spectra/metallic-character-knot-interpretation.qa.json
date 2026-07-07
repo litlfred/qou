@@ -31,24 +31,7 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote prose blocks to adhere to Milnor standards. Improved economy, preserved all math.",
-        "reviewed_at": "2026-07-07T14:26:56.388331Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.388331Z"
-        },
-        "field_hash": {
-          "md": "85dcfba1650f",
-          "ts": "54b6ab26d956"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.388331Z"
 }

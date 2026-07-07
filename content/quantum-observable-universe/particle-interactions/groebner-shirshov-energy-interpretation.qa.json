@@ -1155,24 +1155,7 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Applied Milnor exposition standard (H1-H8) and brevity rules. Shortened sentences, removed editorializing ('surprisingly', 'remarkably'), replaced 'this book' with 'this paper', and maintained Math, markdown, and cross-block consistency.",
-        "reviewed_at": "2026-07-07T14:26:57.166425Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.166425Z"
-        },
-        "field_hash": {
-          "md": "7f4bc5908f21",
-          "ts": "1c84f57a9a56"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:57.166425Z"
 }

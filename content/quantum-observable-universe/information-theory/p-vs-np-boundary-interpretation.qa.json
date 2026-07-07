@@ -31,24 +31,7 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Flattened complex tables/lists into dense, exact prose where appropriate. Aligned notation. Replaced 'we define' with direct declarative statements. Improved transitions between blocks while retaining original file markers.",
-        "reviewed_at": "2026-07-07T14:26:55.580594Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.580594Z"
-        },
-        "field_hash": {
-          "md": "5dc7b2268ffe",
-          "ts": "0ed8b588def5"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:55.580594Z"
 }

@@ -31,24 +31,7 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote mass-theory_seq6.md for Milnor standards: clean prose, declarative.",
-        "reviewed_at": "2026-07-07T14:26:56.830939Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.830939Z"
-        },
-        "field_hash": {
-          "md": "a063ba88d298",
-          "ts": "5680407e03ee"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.830939Z"
 }

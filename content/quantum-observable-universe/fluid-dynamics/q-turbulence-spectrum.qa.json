@@ -1010,101 +1010,11 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "proof-no-placeholder-stub": [
-      {
-        "field_hash": {
-          "md": "ed077b092ff2",
-          "ts": "d0096a4b6a48"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/lean-proof-vacuity-audit",
-          "agent_date": "2026-07-07T14:26:56.286844Z",
-          "agent_skill": "local/lean-proof-vacuity-audit",
-          "agent_model": "gemini-3.1-pro"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.286844Z",
-        "reviewed_sha": "a9ce9ecfe24e6c7c9d0b9f25699b35ec666faa32",
-        "notes": "4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): placeholder-stub marker no longer present \u2014 criterion pass. Residual self-assuming-projection / statement-scope issue tracked under proof-statement-integrity and bean qsb2; do not re-fail this criterion for it."
-      }
-    ],
-    "voice-statement-no-interpretation": [
-      {
-        "field_hash": {
-          "md": "ed077b092ff2",
-          "ts": "d0096a4b6a48"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.286844Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.286844Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement is a bare mathematical claim."
-      }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "ed077b092ff2",
-          "ts": "d0096a4b6a48"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.286844Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.286844Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "ed077b092ff2",
-          "ts": "d0096a4b6a48"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.286844Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.286844Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement respects the chapter's base-ring regime."
-      }
-    ],
-    "wall-side-proof": [
-      {
-        "field_hash": {
-          "md": "ed077b092ff2",
-          "ts": "d0096a4b6a48"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.286844Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.286844Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Proof machinery matches the statement regime."
-      }
-    ],
+    "proof-no-placeholder-stub": [],
+    "voice-statement-no-interpretation": [],
+    "fit-section-chapter": [],
+    "wall-side-statement": [],
+    "wall-side-proof": [],
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
@@ -1176,27 +1086,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "ed077b092ff2",
-          "ts": "d0096a4b6a48"
-        },
-        "result": "warn",
-        "notes": "md gives closed forms but no derivation of the bound/gap; Lean only assumes them as fields",
-        "reviewed_at": "2026-07-07T14:26:56.286844Z",
-        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.286844Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.62
-        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1236,27 +1125,6 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "ed077b092ff2",
-          "ts": "d0096a4b6a48"
-        },
-        "result": "pass",
-        "notes": "q-deformed Kolmogorov spectrum + discrete cascade + finite mode count + spectral gap: well-posed physical claims",
-        "reviewed_at": "2026-07-07T14:26:56.286844Z",
-        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.286844Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.7
         }
       }
     ],
@@ -1298,27 +1166,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "ed077b092ff2",
-          "ts": "d0096a4b6a48"
-        },
-        "result": "warn",
-        "notes": "q-Kolmogorov analogue is a plausible deformation but largely a restatement; Lean adds nothing beyond the assumed identities",
-        "reviewed_at": "2026-07-07T14:26:56.286844Z",
-        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.286844Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.6
-        }
       }
     ],
     "proof-statement-integrity": [
@@ -1354,23 +1201,6 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "ed077b092ff2",
-          "ts": "d0096a4b6a48"
-        },
-        "result": "fail",
-        "notes": "theorem projects all 4 claim-fields (claim_i..claim_iv) of QTurbulenceSpectrumContext; the conclusions ARE the assumed class fields (self-assuming projection, vacuous per AGENTS.md 3b-cond item5)",
-        "reviewed_at": "2026-07-07T14:26:56.286844Z",
-        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.286844Z"
         }
       }
     ],
@@ -1408,23 +1238,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "ed077b092ff2",
-          "ts": "d0096a4b6a48"
-        },
-        "result": "fail",
-        "notes": "body = <ctx.claim_iv_spectral_gap_positive.left, ...>; every conjunct returned is a context field that is itself the conclusion",
-        "reviewed_at": "2026-07-07T14:26:56.286844Z",
-        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.286844Z"
-        }
       }
     ],
     "proof-no-trivial-true": [
@@ -1444,23 +1257,6 @@
         "reviewed_at": "2026-06-22T02:56:49.600Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Goal or proof is trivial/vacuous."
-      },
-      {
-        "field_hash": {
-          "md": "ed077b092ff2",
-          "ts": "d0096a4b6a48"
-        },
-        "result": "pass",
-        "notes": "Re-audit 2026-06-25: no `: True` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/FluidDynamics/q_turbulence_spectrum.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-07-07T14:26:56.286844Z",
-        "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.286844Z"
-        }
       }
     ],
     "proof-no-false-premise": [
@@ -1496,23 +1292,6 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "ed077b092ff2",
-          "ts": "d0096a4b6a48"
-        },
-        "result": "pass",
-        "notes": "class fields (q_gt_one:1<q, Re_q_eq, spectral-gap>0 etc) are jointly satisfiable; no contradictory premise",
-        "reviewed_at": "2026-07-07T14:26:56.286844Z",
-        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.286844Z"
         }
       }
     ],
@@ -1550,23 +1329,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "ed077b092ff2",
-          "ts": "d0096a4b6a48"
-        },
-        "result": "pass",
-        "notes": "single [ctx] instance binder; all four projected fields used in the proof term",
-        "reviewed_at": "2026-07-07T14:26:56.286844Z",
-        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.286844Z"
-        }
       }
     ],
     "proof-no-decide-masking": [
@@ -1586,301 +1348,22 @@
         "reviewed_at": "2026-06-22T02:56:50.794Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Stub uses decide/trivial masking."
-      },
-      {
-        "field_hash": {
-          "md": "ed077b092ff2",
-          "ts": "d0096a4b6a48"
-        },
-        "result": "pass",
-        "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/FluidDynamics/q_turbulence_spectrum.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-07-07T14:26:56.286844Z",
-        "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.286844Z"
-        }
       }
     ],
-    "da-false-claim": [
-      {
-        "field_hash": {
-          "md": "ed077b092ff2",
-          "ts": "d0096a4b6a48"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.286844Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.286844Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "No false claims identified in '$q$-deformed energy cascade and modified Kolmogorov spectrum': mathematical reasoning is consistent.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-vacuous": [
-      {
-        "field_hash": {
-          "md": "ed077b092ff2",
-          "ts": "d0096a4b6a48"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.286844Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.286844Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "The block '$q$-deformed energy cascade and modified Kolmogorov spectrum' presents substantial mathematical content: In the brane fluid with [substrate parameter](#def:substrate-parameter) $q > 1$ ...",
-        "severity": "minor"
-      }
-    ],
-    "da-circular": [
-      {
-        "field_hash": {
-          "md": "ed077b092ff2",
-          "ts": "d0096a4b6a48"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.286844Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.286844Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "No circular reasoning or self-assuming definitions detected in '$q$-deformed energy cascade and modified Kolmogorov spectrum'.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-overclaim": [
-      {
-        "field_hash": {
-          "md": "ed077b092ff2",
-          "ts": "d0096a4b6a48"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.286844Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.286844Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "No overclaims: the scope of '$q$-deformed energy cascade and modified Kolmogorov spectrum' is appropriately qualified.",
-        "severity": "minor"
-      }
-    ],
-    "da-hidden-dof": [
-      {
-        "field_hash": {
-          "md": "ed077b092ff2",
-          "ts": "d0096a4b6a48"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.286844Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.286844Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "No hidden degrees of freedom or unstated parameters are introduced in '$q$-deformed energy cascade and modified Kolmogorov spectrum'.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-non-sequitur": [
-      {
-        "field_hash": {
-          "md": "ed077b092ff2",
-          "ts": "d0096a4b6a48"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.286844Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.286844Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "The argument flow in '$q$-deformed energy cascade and modified Kolmogorov spectrum' is logically sound, mapping onto the cited dependencies.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-lean-narrative-divergence": [
-      {
-        "field_hash": {
-          "md": "ed077b092ff2",
-          "ts": "d0096a4b6a48"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.286844Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.286844Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "The referenced Lean file content/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.lean is missing, leading to complete divergence.",
-        "severity": "minor"
-      }
-    ],
-    "da-citation-misuse": [
-      {
-        "field_hash": {
-          "md": "ed077b092ff2",
-          "ts": "d0096a4b6a48"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.286844Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.286844Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "No citations are present in '$q$-deformed energy cascade and modified Kolmogorov spectrum', hence no citation misuse is possible.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-definitional-ambiguity": [
-      {
-        "field_hash": {
-          "md": "ed077b092ff2",
-          "ts": "d0096a4b6a48"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.286844Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.286844Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Key terms and symbols in '$q$-deformed energy cascade and modified Kolmogorov spectrum' are mathematically defined and unambiguous.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-empirical-fragility": [
-      {
-        "field_hash": {
-          "md": "ed077b092ff2",
-          "ts": "d0096a4b6a48"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.286844Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.286844Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "The algebraic and logical relations in '$q$-deformed energy cascade and modified Kolmogorov spectrum' are independent of empirical tuning parameters.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-physical-implausibility": [
-      {
-        "field_hash": {
-          "md": "ed077b092ff2",
-          "ts": "d0096a4b6a48"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.286844Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.286844Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "The physical concepts described in '$q$-deformed energy cascade and modified Kolmogorov spectrum' are consistent with quantum observable mechanics.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-reproducibility": [
-      {
-        "field_hash": {
-          "md": "ed077b092ff2",
-          "ts": "d0096a4b6a48"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.286844Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.286844Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "The derivation steps and formal definitions in '$q$-deformed energy cascade and modified Kolmogorov spectrum' are reproducible.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-referee-verdict": [
-      {
-        "field_hash": {
-          "md": "ed077b092ff2",
-          "ts": "d0096a4b6a48"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.286844Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.286844Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.lean is missing.",
-        "verdict": "open-objection",
-        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.lean is missing, preventing formal verification of the claims in '$q$-deformed energy cascade and modified Kolmogorov spectrum'.",
-        "severity": "critical"
-      }
-    ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote fluid-dynamics_seq2.md. Shortened exposition. Strengthened active voice. Maintained math precision and markers.",
-        "reviewed_at": "2026-07-07T14:26:56.286844Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.286844Z"
-        },
-        "field_hash": {
-          "md": "ed077b092ff2",
-          "ts": "d0096a4b6a48"
-        }
-      }
-    ]
+    "da-false-claim": [],
+    "da-vacuous": [],
+    "da-circular": [],
+    "da-overclaim": [],
+    "da-hidden-dof": [],
+    "da-non-sequitur": [],
+    "da-lean-narrative-divergence": [],
+    "da-citation-misuse": [],
+    "da-definitional-ambiguity": [],
+    "da-empirical-fragility": [],
+    "da-physical-implausibility": [],
+    "da-reproducibility": [],
+    "da-referee-verdict": [],
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.286844Z"
 }

@@ -2560,25 +2560,7 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "proof-no-placeholder-stub": [
-      {
-        "field_hash": {
-          "md": "ce02401f0769",
-          "ts": "a08fce7917e3"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/lean-proof-vacuity-audit",
-          "agent_date": "2026-07-07T14:26:57.441323Z",
-          "agent_skill": "local/lean-proof-vacuity-audit",
-          "agent_model": "gemini-3.1-pro"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.441323Z",
-        "reviewed_sha": "a9ce9ecfe24e6c7c9d0b9f25699b35ec666faa32",
-        "notes": "4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): current Lean is honest \u2014 real statement/derivation or cited sorry; the 2026-06-22 placeholder-marker fail predates the 2026-06-30 rewrite (hash drift verified). Criterion pass."
-      }
-    ],
+    "proof-no-placeholder-stub": [],
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
@@ -2626,22 +2608,6 @@
         "reviewed_at": "2026-06-28T23:15:46.583Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Passes criterion based on structural review."
-      },
-      {
-        "field_hash": {
-          "md": "ce02401f0769",
-          "ts": "a08fce7917e3"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-38",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.441323Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.441323Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "fit-section-chapter": [
@@ -2691,22 +2657,6 @@
         "reviewed_at": "2026-06-28T23:15:46.583Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Passes criterion based on structural review."
-      },
-      {
-        "field_hash": {
-          "md": "ce02401f0769",
-          "ts": "a08fce7917e3"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-38",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.441323Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.441323Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "wall-side-statement": [
@@ -2756,22 +2706,6 @@
         "reviewed_at": "2026-06-28T23:15:46.583Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Passes criterion based on structural review."
-      },
-      {
-        "field_hash": {
-          "md": "ce02401f0769",
-          "ts": "a08fce7917e3"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-38",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.441323Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.441323Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "wall-side-proof": [
@@ -2821,22 +2755,6 @@
         "reviewed_at": "2026-06-28T23:15:46.583Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Passes criterion based on structural review."
-      },
-      {
-        "field_hash": {
-          "md": "ce02401f0769",
-          "ts": "a08fce7917e3"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-38",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.441323Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.441323Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -2900,22 +2818,6 @@
         "reviewed_at": "2026-06-28T23:15:46.583Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Passes criterion based on structural review."
-      },
-      {
-        "field_hash": {
-          "md": "ce02401f0769",
-          "ts": "a08fce7917e3"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-38",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.441323Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.441323Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -3007,22 +2909,6 @@
         "reviewed_at": "2026-06-28T23:15:46.583Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Passes criterion based on structural review."
-      },
-      {
-        "field_hash": {
-          "md": "ce02401f0769",
-          "ts": "a08fce7917e3"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-38",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.441323Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.441323Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -3114,22 +3000,6 @@
         "reviewed_at": "2026-06-28T23:15:46.583Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Passes criterion based on structural review."
-      },
-      {
-        "field_hash": {
-          "md": "ce02401f0769",
-          "ts": "a08fce7917e3"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-38",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.441323Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.441323Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-rater-novelty": [
@@ -3221,22 +3091,6 @@
         "reviewed_at": "2026-06-28T23:15:46.583Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Passes criterion based on structural review."
-      },
-      {
-        "field_hash": {
-          "md": "ce02401f0769",
-          "ts": "a08fce7917e3"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-38",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.441323Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.441323Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-statement-integrity": [
@@ -3320,22 +3174,6 @@
         "reviewed_at": "2026-06-28T23:15:46.583Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Passes criterion based on structural review."
-      },
-      {
-        "field_hash": {
-          "md": "ce02401f0769",
-          "ts": "a08fce7917e3"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-38",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.441323Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.441323Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -3419,22 +3257,6 @@
         "reviewed_at": "2026-06-28T23:15:46.583Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Passes criterion based on structural review."
-      },
-      {
-        "field_hash": {
-          "md": "ce02401f0769",
-          "ts": "a08fce7917e3"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-38",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.441323Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.441323Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-no-trivial-true": [
@@ -3501,22 +3323,6 @@
         "reviewed_at": "2026-06-28T23:15:46.583Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Passes criterion based on structural review."
-      },
-      {
-        "field_hash": {
-          "md": "ce02401f0769",
-          "ts": "a08fce7917e3"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-38",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.441323Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.441323Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-no-false-premise": [
@@ -3600,22 +3406,6 @@
         "reviewed_at": "2026-06-28T23:15:46.583Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Passes criterion based on structural review."
-      },
-      {
-        "field_hash": {
-          "md": "ce02401f0769",
-          "ts": "a08fce7917e3"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-38",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.441323Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.441323Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -3699,22 +3489,6 @@
         "reviewed_at": "2026-06-28T23:15:46.583Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Passes criterion based on structural review."
-      },
-      {
-        "field_hash": {
-          "md": "ce02401f0769",
-          "ts": "a08fce7917e3"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-38",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.441323Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.441323Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "proof-no-decide-masking": [
@@ -3781,22 +3555,6 @@
         "reviewed_at": "2026-06-28T23:15:46.583Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Passes criterion based on structural review."
-      },
-      {
-        "field_hash": {
-          "md": "ce02401f0769",
-          "ts": "a08fce7917e3"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-38",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.441323Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.441323Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-false-claim": [
@@ -3848,22 +3606,6 @@
         "severity": "critical",
         "evidence": "binomial(A-1, floor((A-1)/2)) terms ... scales polynomially",
         "notes": "Mathematical false claim: the binomial coefficient central term grows exponentially, roughly 2^A / sqrt(A), not polynomially. The claim of polynomial scaling is false."
-      },
-      {
-        "field_hash": {
-          "md": "ce02401f0769",
-          "ts": "a08fce7917e3"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-38",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.441323Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.441323Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-vacuous": [
@@ -3912,22 +3654,6 @@
         "reviewed_at": "2026-06-28T23:15:46.583Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Passes criterion based on structural review."
-      },
-      {
-        "field_hash": {
-          "md": "ce02401f0769",
-          "ts": "a08fce7917e3"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-38",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.441323Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.441323Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-circular": [
@@ -3977,22 +3703,6 @@
         "reviewed_at": "2026-06-28T23:15:46.583Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Passes criterion based on structural review."
-      },
-      {
-        "field_hash": {
-          "md": "ce02401f0769",
-          "ts": "a08fce7917e3"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-38",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.441323Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.441323Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-overclaim": [
@@ -4043,22 +3753,6 @@
         "severity": "critical",
         "evidence": "binomial(A-1, floor((A-1)/2)) terms ... scales polynomially",
         "notes": "Mathematical false claim: the binomial coefficient central term grows exponentially, roughly 2^A / sqrt(A), not polynomially. The claim of polynomial scaling is false."
-      },
-      {
-        "field_hash": {
-          "md": "ce02401f0769",
-          "ts": "a08fce7917e3"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-38",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.441323Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.441323Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-hidden-dof": [
@@ -4108,22 +3802,6 @@
         "reviewed_at": "2026-06-28T23:15:46.583Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Passes criterion based on structural review."
-      },
-      {
-        "field_hash": {
-          "md": "ce02401f0769",
-          "ts": "a08fce7917e3"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-38",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.441323Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.441323Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-non-sequitur": [
@@ -4173,22 +3851,6 @@
         "reviewed_at": "2026-06-28T23:15:46.583Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Passes criterion based on structural review."
-      },
-      {
-        "field_hash": {
-          "md": "ce02401f0769",
-          "ts": "a08fce7917e3"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-38",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.441323Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.441323Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -4237,22 +3899,6 @@
         "reviewed_at": "2026-06-28T23:15:46.583Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Passes criterion based on structural review."
-      },
-      {
-        "field_hash": {
-          "md": "ce02401f0769",
-          "ts": "a08fce7917e3"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-38",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.441323Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.441323Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-citation-misuse": [
@@ -4302,22 +3948,6 @@
         "reviewed_at": "2026-06-28T23:15:46.583Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Passes criterion based on structural review."
-      },
-      {
-        "field_hash": {
-          "md": "ce02401f0769",
-          "ts": "a08fce7917e3"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-38",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.441323Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.441323Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-definitional-ambiguity": [
@@ -4367,22 +3997,6 @@
         "reviewed_at": "2026-06-28T23:15:46.583Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Passes criterion based on structural review."
-      },
-      {
-        "field_hash": {
-          "md": "ce02401f0769",
-          "ts": "a08fce7917e3"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-38",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.441323Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.441323Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-empirical-fragility": [
@@ -4432,22 +4046,6 @@
         "reviewed_at": "2026-06-28T23:15:46.583Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Passes criterion based on structural review."
-      },
-      {
-        "field_hash": {
-          "md": "ce02401f0769",
-          "ts": "a08fce7917e3"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-38",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.441323Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.441323Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-physical-implausibility": [
@@ -4497,22 +4095,6 @@
         "reviewed_at": "2026-06-28T23:15:46.583Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Passes criterion based on structural review."
-      },
-      {
-        "field_hash": {
-          "md": "ce02401f0769",
-          "ts": "a08fce7917e3"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-38",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.441323Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.441323Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-reproducibility": [
@@ -4561,22 +4143,6 @@
         "reviewed_at": "2026-06-28T23:15:46.583Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Passes criterion based on structural review."
-      },
-      {
-        "field_hash": {
-          "md": "ce02401f0769",
-          "ts": "a08fce7917e3"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-38",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.441323Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.441323Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-referee-verdict": [
@@ -4627,42 +4193,9 @@
         "reviewed_at": "2026-06-28T23:15:46.583Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Passes criterion based on structural review."
-      },
-      {
-        "field_hash": {
-          "md": "ce02401f0769",
-          "ts": "a08fce7917e3"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-38",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.441323Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.441323Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Applied Milnor exposition standard (H1-H8) and brevity rules. Shortened sentences, removed editorializing ('surprisingly', 'remarkably'), replaced 'this book' with 'this paper', and maintained Math, markdown, and cross-block consistency.",
-        "reviewed_at": "2026-07-07T14:26:57.441323Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.441323Z"
-        },
-        "field_hash": {
-          "md": "ce02401f0769",
-          "ts": "a08fce7917e3"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:57.441323Z"
 }

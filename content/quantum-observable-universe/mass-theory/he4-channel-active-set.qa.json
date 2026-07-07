@@ -1049,45 +1049,8 @@
         "reviewed_sha": "e28e45e2256ea73187107f230cc7beeb37a6c301"
       }
     ],
-    "proof-narrative-lean-equiv": [
-      {
-        "field_hash": {
-          "md": "61fc181ebe74",
-          "ts": "4e01fcd06fd0",
-          "lean": "5ac15f145fb0"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.876822Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.876822Z",
-        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:he4-channel-active-set' \u2192 expected 'he4_channel_active_set'; Lean declares: Channel, InActiveSet, HasHe4ChannelActiveSet, he4_strong_duality_value, he4_primal_obj_eq_tTp_xTp.... Structural match via content."
-      }
-    ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote mass-theory_seq11.md to strictly follow H1-H8. Streamlined LP constraints and operator choices. Clarified the categorical reading vs empirical consequences. All formulas and code structures preserved.",
-        "reviewed_at": "2026-07-07T14:26:56.876822Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.876822Z"
-        },
-        "field_hash": {
-          "md": "61fc181ebe74",
-          "ts": "4e01fcd06fd0",
-          "lean": "5ac15f145fb0"
-        }
-      }
-    ]
+    "proof-narrative-lean-equiv": [],
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.876822Z"
 }

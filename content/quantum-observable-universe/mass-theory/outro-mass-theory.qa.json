@@ -11,24 +11,7 @@
     "ts": "b39834247f44"
   },
   "criteria": {
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Condensed derivations to core propositions. Removed verbose implementation details.",
-        "reviewed_at": "2026-07-07T14:26:56.991957Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.991957Z"
-        },
-        "field_hash": {
-          "md": "bfb28faa34cd",
-          "ts": "b39834247f44"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.991957Z"
 }

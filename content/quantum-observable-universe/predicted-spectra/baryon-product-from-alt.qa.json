@@ -33,45 +33,8 @@
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
       }
     ],
-    "proof-narrative-lean-equiv": [
-      {
-        "field_hash": {
-          "md": "e381eceac7f2",
-          "ts": "f7fbaccda4d9",
-          "lean": "3764ffe0fc56"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.334492Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.334492Z",
-        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:baryon-product-from-alt' \u2192 expected 'baryon_product_from_alt'; Lean declares: signCharacter, signCharacter_eq_one_or_neg_one, signCharacter_mul, signCharacter_one, baryonProductFromAlt. Structural match via content."
-      }
-    ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote prose blocks to adhere to Milnor standards. Improved economy, preserved all math.",
-        "reviewed_at": "2026-07-07T14:26:56.334492Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.334492Z"
-        },
-        "field_hash": {
-          "md": "e381eceac7f2",
-          "ts": "f7fbaccda4d9",
-          "lean": "3764ffe0fc56"
-        }
-      }
-    ]
+    "proof-narrative-lean-equiv": [],
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.334492Z"
 }

@@ -9,20 +9,7 @@
   },
   "source_hashes": {},
   "criteria": {
-    "proof-no-bare-sorries": [
-      {
-        "field_hash": {},
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "proof-audit-batch",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.316128Z",
-          "agent_skill": "local/proof-integration-watcher"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.316128Z"
-      }
-    ],
+    "proof-no-bare-sorries": [],
     "proof-no-trivial-skeleton": [
       {
         "field_hash": {
@@ -89,20 +76,6 @@
           "version": "v1"
         },
         "reviewed_at": "2026-05-28T15:43:22.741Z",
-        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:reading-a-conditional-linking-weight' \u2192 expected 'reading_a_conditional_linking_weight'; Lean declares: linkingWeightReadingA, ReadingAValidAtH2, readingA_h2_coefficient, readingA_eq_familyA_plus_correction, readingA_h0_eq_family_a_h0.... Structural match via content."
-      },
-      {
-        "field_hash": {},
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.316128Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.316128Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:reading-a-conditional-linking-weight' \u2192 expected 'reading_a_conditional_linking_weight'; Lean declares: linkingWeightReadingA, ReadingAValidAtH2, readingA_h2_coefficient, readingA_eq_familyA_plus_correction, readingA_h0_eq_family_a_h0.... Structural match via content."
       }

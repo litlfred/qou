@@ -31,24 +31,7 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote mass-theory_seq1.md for Milnor standards: stripped technical debt disclaimers, declarative voice.",
-        "reviewed_at": "2026-07-07T14:26:56.890711Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.890711Z"
-        },
-        "field_hash": {
-          "md": "d3f6e72a2522",
-          "ts": "da6a29fcff4a"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.890711Z"
 }

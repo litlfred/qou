@@ -893,25 +893,7 @@
         "reviewed_sha": "29f7a9f34893aa1857c3a7132af430b22ec793f5"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote instances of 'the paper' to 'this paper'. Tightened the Wenzl positivity explanations and the Collatz Hausdorff comparison.",
-        "reviewed_at": "2026-07-07T14:26:56.088524Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.088524Z"
-        },
-        "field_hash": {
-          "md": "fab3fed41a38",
-          "ts": "ce04024cf4b0",
-          "lean": "667203ec8e03"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.088524Z"
 }

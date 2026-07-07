@@ -33,45 +33,8 @@
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
       }
     ],
-    "proof-narrative-lean-equiv": [
-      {
-        "field_hash": {
-          "md": "0c5f8e1e3228",
-          "ts": "c44e1aa79ce0",
-          "lean": "cd81e4479e2a"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.903852Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.903852Z",
-        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'conj:brane-tower-z-habiro' \u2192 expected 'brane_tower_z_habiro'; Lean declares: BraneTowerZHabiro, canonical, falsifiabilityThresholdPct, witnessUniformKBestMaxErrPct, witnessNStarRuleMaxErrPct.... Structural match via content."
-      }
-    ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote mass-theory_seq8.md via precise python replacement for Milnor standards: clean declarative prose, no wasted words.",
-        "reviewed_at": "2026-07-07T14:26:56.903852Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.903852Z"
-        },
-        "field_hash": {
-          "md": "0c5f8e1e3228",
-          "ts": "c44e1aa79ce0",
-          "lean": "cd81e4479e2a"
-        }
-      }
-    ]
+    "proof-narrative-lean-equiv": [],
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.903852Z"
 }

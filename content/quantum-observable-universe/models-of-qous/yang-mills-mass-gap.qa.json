@@ -856,24 +856,7 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Simplified explanations, removed forward/backward references (e.g., specific section links). Fixed terminology. Maintained all math formulas exactly.",
-        "reviewed_at": "2026-07-07T14:26:55.402323Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.402323Z"
-        },
-        "field_hash": {
-          "md": "3379eaee9ca1",
-          "ts": "8e01bb898bb1"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:55.402323Z"
 }

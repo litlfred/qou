@@ -33,45 +33,8 @@
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
       }
     ],
-    "proof-narrative-lean-equiv": [
-      {
-        "field_hash": {
-          "md": "6db50ac0b375",
-          "ts": "0a0c5a3d6aa2",
-          "lean": "099389983be7"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.955311Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.955311Z",
-        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'def:wenzl-A-operator' \u2192 expected 'wenzl_A_operator'; Lean declares: WenzlPartition, WenzlAOperator. Structural match via content."
-      }
-    ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Kept all formulas. Removed overly defensive framing.",
-        "reviewed_at": "2026-07-07T14:26:56.955311Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.955311Z"
-        },
-        "field_hash": {
-          "md": "6db50ac0b375",
-          "ts": "0a0c5a3d6aa2",
-          "lean": "099389983be7"
-        }
-      }
-    ]
+    "proof-narrative-lean-equiv": [],
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.955311Z"
 }

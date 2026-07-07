@@ -1048,86 +1048,10 @@
         "notes": "stale: cached lean_sha dffe15058b1b != current 6f5e2c2050fb; re-run content/pipeline/lean-compile-audit.ts to refresh"
       }
     ],
-    "voice-statement-no-interpretation": [
-      {
-        "field_hash": {
-          "md": "8224f9153930",
-          "ts": "064515b68b58",
-          "lean": "4243fb25e2db"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.868786Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.868786Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement is a bare mathematical claim."
-      }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "8224f9153930",
-          "ts": "064515b68b58",
-          "lean": "4243fb25e2db"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.868786Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.868786Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "8224f9153930",
-          "ts": "064515b68b58",
-          "lean": "4243fb25e2db"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.868786Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.868786Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement respects the chapter's base-ring regime."
-      }
-    ],
-    "wall-side-proof": [
-      {
-        "field_hash": {
-          "md": "8224f9153930",
-          "ts": "064515b68b58",
-          "lean": "4243fb25e2db"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.868786Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.868786Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Proof machinery matches the statement regime."
-      }
-    ],
+    "voice-statement-no-interpretation": [],
+    "fit-section-chapter": [],
+    "wall-side-statement": [],
+    "wall-side-proof": [],
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
@@ -1202,28 +1126,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "8224f9153930",
-          "ts": "064515b68b58",
-          "lean": "4243fb25e2db"
-        },
-        "result": "warn",
-        "notes": "Part(a) existence via adjoint_exists_unique' is a clear derivation; the closed-form part is just an axiom invocation, no adjoint-linearity derivation shown.",
-        "reviewed_at": "2026-07-07T14:26:55.868786Z",
-        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.868786Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.5
-        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1265,28 +1167,6 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "8224f9153930",
-          "ts": "064515b68b58",
-          "lean": "4243fb25e2db"
-        },
-        "result": "pass",
-        "notes": "Well-posed: closed form for formal adjoint \u03b4_q of d_q via Webster pairing; standard Tanaka-Webster adjoint theory.",
-        "reviewed_at": "2026-07-07T14:26:55.868786Z",
-        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.868786Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.8
         }
       }
     ],
@@ -1330,28 +1210,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "8224f9153930",
-          "ts": "064515b68b58",
-          "lean": "4243fb25e2db"
-        },
-        "result": "warn",
-        "notes": "Formula content lives entirely in q_codifferential_formula_axiom; the theorem adds only a re-export. Adjoint decomposition not actually proved.",
-        "reviewed_at": "2026-07-07T14:26:55.868786Z",
-        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.868786Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.45
-        }
       }
     ],
     "proof-statement-integrity": [
@@ -1390,66 +1248,10 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "8224f9153930",
-          "ts": "064515b68b58",
-          "lean": "4243fb25e2db"
-        },
-        "result": "fail",
-        "notes": "Statement matches .md, but proof := q_codifferential_formula_axiom: the closed form (derivable by adjoint algebra) is a bespoke axiom restating the conclusion. Part(a) exists IS derived; the formula is assumed.",
-        "reviewed_at": "2026-07-07T14:26:55.868786Z",
-        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.868786Z"
-        }
       }
     ],
-    "proof-no-self-assuming-projection": [
-      {
-        "field_hash": {
-          "md": "8224f9153930",
-          "ts": "064515b68b58",
-          "lean": "4243fb25e2db"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.868786Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.868786Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No self-assuming projection detected."
-      }
-    ],
-    "proof-no-trivial-true": [
-      {
-        "field_hash": {
-          "md": "8224f9153930",
-          "ts": "064515b68b58",
-          "lean": "4243fb25e2db"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.868786Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.868786Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Not a trivial true goal."
-      }
-    ],
+    "proof-no-self-assuming-projection": [],
+    "proof-no-trivial-true": [],
     "proof-no-false-premise": [
       {
         "field_hash": {
@@ -1485,24 +1287,6 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "8224f9153930",
-          "ts": "064515b68b58",
-          "lean": "4243fb25e2db"
-        },
-        "result": "pass",
-        "notes": "Geometric axioms (websterInner bilinear, adjoint_exists_unique', \u03b4 adjoint of d) are standard, realisable over \u211d; no contradictory premise.",
-        "reviewed_at": "2026-07-07T14:26:55.868786Z",
-        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.868786Z"
         }
       }
     ],
@@ -1542,24 +1326,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "8224f9153930",
-          "ts": "064515b68b58",
-          "lean": "4243fb25e2db"
-        },
-        "result": "pass",
-        "notes": "Sole binder (q:R\u02e3) used in statement and passed to the axiom. No unused binder.",
-        "reviewed_at": "2026-07-07T14:26:55.868786Z",
-        "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.868786Z"
-        }
       }
     ],
     "proof-no-decide-masking": [
@@ -1580,330 +1346,22 @@
         "reviewed_at": "2026-06-22T02:56:36.227Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Stub uses decide/trivial masking."
-      },
-      {
-        "field_hash": {
-          "md": "8224f9153930",
-          "ts": "064515b68b58",
-          "lean": "4243fb25e2db"
-        },
-        "result": "pass",
-        "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/quantum-observable-universes/q-codifferential-formula-prop.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-07-07T14:26:55.868786Z",
-        "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.868786Z"
-        }
       }
     ],
-    "da-false-claim": [
-      {
-        "field_hash": {
-          "md": "8224f9153930",
-          "ts": "064515b68b58",
-          "lean": "4243fb25e2db"
-        },
-        "result": "warn",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.868786Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.868786Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "q-codifferential-formula-prop.lean:1",
-        "notes": "The mathematical claims in 'Closed formula for the $q$-codifferential $\\\\delta_q$' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/quantum-observable-universes/q-codifferential-formula-prop.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/Group/Units.olean' of module Mathlib.Algebra.Group.Units does not exist."
-      }
-    ],
-    "da-vacuous": [
-      {
-        "field_hash": {
-          "md": "8224f9153930",
-          "ts": "064515b68b58",
-          "lean": "4243fb25e2db"
-        },
-        "result": "fail",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.868786Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.868786Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "major",
-        "evidence": "q-codifferential-formula-prop.lean:1",
-        "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/q-codifferential-formula-prop.lean contains 'sorry' placeholders, rendering the formal proof vacuous."
-      }
-    ],
-    "da-circular": [
-      {
-        "field_hash": {
-          "md": "8224f9153930",
-          "ts": "064515b68b58",
-          "lean": "4243fb25e2db"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.868786Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.868786Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "q-codifferential-formula-prop.ts:1",
-        "notes": "No circular reasoning or self-assuming definitions detected in 'Closed formula for the $q$-codifferential $\\\\delta_q$'."
-      }
-    ],
-    "da-overclaim": [
-      {
-        "field_hash": {
-          "md": "8224f9153930",
-          "ts": "064515b68b58",
-          "lean": "4243fb25e2db"
-        },
-        "result": "warn",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.868786Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.868786Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "notes": "The prose presents 'Closed formula for the $q$-codifferential $\\\\delta_q$' as verified, but the sibling Lean file fails to compile."
-      }
-    ],
-    "da-hidden-dof": [
-      {
-        "field_hash": {
-          "md": "8224f9153930",
-          "ts": "064515b68b58",
-          "lean": "4243fb25e2db"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.868786Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.868786Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "q-codifferential-formula-prop.ts:1",
-        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Closed formula for the $q$-codifferential $\\\\delta_q$'."
-      }
-    ],
-    "da-non-sequitur": [
-      {
-        "field_hash": {
-          "md": "8224f9153930",
-          "ts": "064515b68b58",
-          "lean": "4243fb25e2db"
-        },
-        "result": "warn",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.868786Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.868786Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "q-codifferential-formula-prop.lean:1",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/quantum-observable-universes/q-codifferential-formula-prop.lean."
-      }
-    ],
-    "da-lean-narrative-divergence": [
-      {
-        "field_hash": {
-          "md": "8224f9153930",
-          "ts": "064515b68b58",
-          "lean": "4243fb25e2db"
-        },
-        "result": "fail",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.868786Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.868786Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/q-codifferential-formula-prop.lean fails compilation, causing divergence from the narrative."
-      }
-    ],
-    "da-citation-misuse": [
-      {
-        "field_hash": {
-          "md": "8224f9153930",
-          "ts": "064515b68b58",
-          "lean": "4243fb25e2db"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.868786Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.868786Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "q-codifferential-formula-prop.ts:1",
-        "notes": "No citations are present in 'Closed formula for the $q$-codifferential $\\\\delta_q$', hence no citation misuse is possible."
-      }
-    ],
-    "da-definitional-ambiguity": [
-      {
-        "field_hash": {
-          "md": "8224f9153930",
-          "ts": "064515b68b58",
-          "lean": "4243fb25e2db"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.868786Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.868786Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "q-codifferential-formula-prop.ts:1",
-        "notes": "Key terms and symbols in 'Closed formula for the $q$-codifferential $\\\\delta_q$' are mathematically defined and unambiguous."
-      }
-    ],
-    "da-empirical-fragility": [
-      {
-        "field_hash": {
-          "md": "8224f9153930",
-          "ts": "064515b68b58",
-          "lean": "4243fb25e2db"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.868786Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.868786Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "q-codifferential-formula-prop.ts:1",
-        "notes": "The empirical claims in 'Closed formula for the $q$-codifferential $\\\\delta_q$' are structurally anchored to the QOU mass framework and are stable."
-      }
-    ],
-    "da-physical-implausibility": [
-      {
-        "field_hash": {
-          "md": "8224f9153930",
-          "ts": "064515b68b58",
-          "lean": "4243fb25e2db"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.868786Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.868786Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "q-codifferential-formula-prop.ts:1",
-        "notes": "The physical concepts described in 'Closed formula for the $q$-codifferential $\\\\delta_q$' are consistent with quantum observable mechanics."
-      }
-    ],
-    "da-reproducibility": [
-      {
-        "field_hash": {
-          "md": "8224f9153930",
-          "ts": "064515b68b58",
-          "lean": "4243fb25e2db"
-        },
-        "result": "fail",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.868786Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.868786Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "q-codifferential-formula-prop.lean:1 \u2014 content/quantum-observable-universe/quantum-observable-universes/q-codifferential-formula-prop.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/Group/Units.olean' of module Mathlib.Algebra.Group.Units does not exist",
-        "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/q-codifferential-formula-prop.lean fails compilation, indicating a reproducibility failure."
-      }
-    ],
-    "da-referee-verdict": [
-      {
-        "field_hash": {
-          "md": "8224f9153930",
-          "ts": "064515b68b58",
-          "lean": "4243fb25e2db"
-        },
-        "result": "fail",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.868786Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.868786Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "major",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/q-codifferential-formula-prop.lean contains 'sorry' placeholders.",
-        "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/q-codifferential-formula-prop.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous."
-      }
-    ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Deleted the Lean diagnostics blocks. Shortened pedagogical 'dictionary' translations into clean geometric facts. Unified definitions.",
-        "reviewed_at": "2026-07-07T14:26:55.868786Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.868786Z"
-        },
-        "field_hash": {
-          "md": "8224f9153930",
-          "ts": "064515b68b58",
-          "lean": "4243fb25e2db"
-        }
-      }
-    ]
+    "da-false-claim": [],
+    "da-vacuous": [],
+    "da-circular": [],
+    "da-overclaim": [],
+    "da-hidden-dof": [],
+    "da-non-sequitur": [],
+    "da-lean-narrative-divergence": [],
+    "da-citation-misuse": [],
+    "da-definitional-ambiguity": [],
+    "da-empirical-fragility": [],
+    "da-physical-implausibility": [],
+    "da-reproducibility": [],
+    "da-referee-verdict": [],
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:55.868786Z"
 }

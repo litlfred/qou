@@ -1051,25 +1051,7 @@
         "reviewed_sha": "7415132ccce30885dcfd323600b8bcf311c431e4"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote observations_seq14.md. Removed narrative framing in favor of tight declarative sentences. Converted lists and propositions to strict formatting.",
-        "reviewed_at": "2026-07-07T14:26:56.669764Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.669764Z"
-        },
-        "field_hash": {
-          "md": "73650a381c44",
-          "ts": "b75e5538dc61",
-          "lean": "66ab875456dc"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.669764Z"
 }

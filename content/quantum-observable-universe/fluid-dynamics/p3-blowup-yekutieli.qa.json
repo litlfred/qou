@@ -9,62 +9,10 @@
   },
   "source_hashes": {},
   "criteria": {
-    "voice-status-leak": [
-      {
-        "field_hash": {},
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "voice-status-leak-audit",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.231663Z",
-          "agent_skill": "local/one-voice-audit"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.231663Z"
-      }
-    ],
-    "voice-emoji-content": [
-      {
-        "field_hash": {},
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.231663Z",
-          "agent_skill": "local/one-voice-audit",
-          "id": "voice-emoji-content-audit"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.231663Z"
-      }
-    ],
-    "voice-first-person-work": [
-      {
-        "field_hash": {},
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.231663Z",
-          "agent_skill": "local/one-voice-audit",
-          "id": "voice-first-person-work-audit"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.231663Z"
-      }
-    ],
-    "voice-time-stamped-notes": [
-      {
-        "field_hash": {},
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "voice-time-stamped-audit",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.231663Z",
-          "agent_skill": "local/one-voice-audit"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.231663Z"
-      }
-    ],
+    "voice-status-leak": [],
+    "voice-emoji-content": [],
+    "voice-first-person-work": [],
+    "voice-time-stamped-notes": [],
     "voice-unicode-crash": [
       {
         "field_hash": {
@@ -118,20 +66,7 @@
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
     ],
-    "voice-scholarly-default": [
-      {
-        "field_hash": {},
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.231663Z",
-          "agent_skill": "local/one-voice-audit",
-          "id": "voice-scholarly-default-audit"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.231663Z"
-      }
-    ],
+    "voice-scholarly-default": [],
     "voice-title-scholarly": [
       {
         "field_hash": {
@@ -185,20 +120,7 @@
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
     ],
-    "voice-ai-slop": [
-      {
-        "field_hash": {},
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.231663Z",
-          "agent_skill": "local/one-voice-audit",
-          "id": "voice-ai-slop-audit"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.231663Z"
-      }
-    ],
+    "voice-ai-slop": [],
     "framework-canonical": [
       {
         "field_hash": {
@@ -305,20 +227,7 @@
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
     ],
-    "proof-no-bare-sorries": [
-      {
-        "field_hash": {},
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "proof-audit-batch",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.231663Z",
-          "agent_skill": "local/proof-integration-watcher"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.231663Z"
-      }
-    ],
+    "proof-no-bare-sorries": [],
     "proof-no-trivial-skeleton": [
       {
         "field_hash": {
@@ -499,20 +408,7 @@
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
     ],
-    "canonical-no-hardcoded-observable": [
-      {
-        "field_hash": {},
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "canonical-audit-batch",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.231663Z",
-          "agent_skill": "local/canonical-watcher"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.231663Z"
-      }
-    ],
+    "canonical-no-hardcoded-observable": [],
     "canonical-cal4-acknowledged": [
       {
         "field_hash": {
@@ -1394,20 +1290,7 @@
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
     ],
-    "voice-editorializing": [
-      {
-        "field_hash": {},
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.231663Z",
-          "agent_skill": "local/one-voice-audit",
-          "id": "voice-editorializing-audit"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.231663Z"
-      }
-    ],
+    "voice-editorializing": [],
     "canonical-witness-pinned": [
       {
         "field_hash": {
@@ -1492,20 +1375,6 @@
         "reviewed_at": "2026-05-28T15:43:22.741Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:blowup-yekutieli' \u2192 expected 'blowup_yekutieli'; Lean declares: BlowupYekutieli, BlowupYekutieli. Structural match via content."
-      },
-      {
-        "field_hash": {},
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.231663Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.231663Z",
-        "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'prop:blowup-yekutieli' \u2192 expected 'blowup_yekutieli'; Lean declares: BlowupYekutieli, BlowupYekutieli. Structural match via content."
       }
     ],
     "proof-lean-compiles": [
@@ -1549,20 +1418,7 @@
         "notes": "stale: cached lean diagnostics have no lean_sha (legacy v1 cache); re-run content/pipeline/lean-compile-audit.ts to refresh"
       }
     ],
-    "voice-author-notes-pollution": [
-      {
-        "field_hash": {},
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "voice-author-notes-pollution-audit",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.231663Z",
-          "agent_skill": "local/one-voice-audit"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.231663Z"
-      }
-    ],
+    "voice-author-notes-pollution": [],
     "q-usage-regime-detected": [
       {
         "field_hash": {

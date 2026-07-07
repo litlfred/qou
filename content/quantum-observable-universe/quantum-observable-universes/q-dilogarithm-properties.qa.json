@@ -31,24 +31,7 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Removed conversational intros and diagrams. Unified theorems.",
-        "reviewed_at": "2026-07-07T14:26:55.972599Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.972599Z"
-        },
-        "field_hash": {
-          "md": "575e22932356",
-          "ts": "bfb37e2b15f5"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:55.972599Z"
 }

@@ -1047,25 +1047,7 @@
         "reviewed_sha": "c7fd591217c36c9bfda17f48721666a890ebec8c"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote climax-volume-mass_seq1.md. Eliminated passive voice where possible. Tightened transitions. Maintained the math and precise definitions.",
-        "reviewed_at": "2026-07-07T14:26:57.033525Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.033525Z"
-        },
-        "field_hash": {
-          "md": "d2e091583f7f",
-          "ts": "c16a00d596b7",
-          "lean": "dc385ae21714"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:57.033525Z"
 }

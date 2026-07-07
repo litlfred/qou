@@ -1967,101 +1967,11 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "proof-no-placeholder-stub": [
-      {
-        "field_hash": {
-          "md": "97d849c5ad5d",
-          "ts": "c7b4681b4542"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/lean-proof-vacuity-audit",
-          "agent_date": "2026-07-07T14:26:57.150351Z",
-          "agent_skill": "local/lean-proof-vacuity-audit",
-          "agent_model": "gemini-3.1-pro"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.150351Z",
-        "reviewed_sha": "a9ce9ecfe24e6c7c9d0b9f25699b35ec666faa32",
-        "notes": "4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): placeholder-stub marker no longer present \u2014 criterion pass. Residual self-assuming-projection / statement-scope issue tracked under proof-statement-integrity and bean qsb2; do not re-fail this criterion for it."
-      }
-    ],
-    "voice-statement-no-interpretation": [
-      {
-        "field_hash": {
-          "md": "97d849c5ad5d",
-          "ts": "c7b4681b4542"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.150351Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.150351Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement is a bare mathematical claim."
-      }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "97d849c5ad5d",
-          "ts": "c7b4681b4542"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.150351Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.150351Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "97d849c5ad5d",
-          "ts": "c7b4681b4542"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.150351Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.150351Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement respects the chapter's base-ring regime."
-      }
-    ],
-    "wall-side-proof": [
-      {
-        "field_hash": {
-          "md": "97d849c5ad5d",
-          "ts": "c7b4681b4542"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.150351Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.150351Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Proof machinery matches the statement regime."
-      }
-    ],
+    "proof-no-placeholder-stub": [],
+    "voice-statement-no-interpretation": [],
+    "fit-section-chapter": [],
+    "wall-side-statement": [],
+    "wall-side-proof": [],
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
@@ -2133,27 +2043,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "97d849c5ad5d",
-          "ts": "c7b4681b4542"
-        },
-        "result": "warn",
-        "notes": "md two-stage proof (pair production then flavor-only confinement) is clear, but Lean axiomatizes the conclusion as h_N_F rather than computing the NF.",
-        "reviewed_at": "2026-07-07T14:26:57.150351Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.150351Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.55
-        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -2193,27 +2082,6 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "97d849c5ad5d",
-          "ts": "c7b4681b4542"
-        },
-        "result": "pass",
-        "notes": "Nucleon NF independence of photon polarization (categorical asymptotic freedom) is well-posed and physically substantive.",
-        "reviewed_at": "2026-07-07T14:26:57.150351Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.150351Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.74
         }
       }
     ],
@@ -2255,27 +2123,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "97d849c5ad5d",
-          "ts": "c7b4681b4542"
-        },
-        "result": "pass",
-        "notes": "Categorical statement of asymptotic freedom (EM initial conditions wash out under B3 confinement) \u2014 non-trivial physical interpretation.",
-        "reviewed_at": "2026-07-07T14:26:57.150351Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.150351Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.66
-        }
       }
     ],
     "proof-statement-integrity": [
@@ -2311,23 +2158,6 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "97d849c5ad5d",
-          "ts": "c7b4681b4542"
-        },
-        "result": "pass",
-        "notes": "Conclusion \u2200\u03c6 N_F \u03c6 = N_F 0 0 0 faithfully states the md \u03c6-independence claim; no sorry/native_decide. (Substance assumed via h_N_F \u2014 flagged under self-assuming-projection.)",
-        "reviewed_at": "2026-07-07T14:26:57.150351Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.150351Z"
         }
       }
     ],
@@ -2365,23 +2195,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "97d849c5ad5d",
-          "ts": "c7b4681b4542"
-        },
-        "result": "fail",
-        "notes": "Class field h_N_F : \u2200\u03c6 N_F \u03c6 = N_F_zero IS the universality; theorem proves goal by rw[ctx.h_N_F, ctx.h_N_F_zero] \u2014 derivation-chain washout (md proof) not encoded, the claim is assumed.",
-        "reviewed_at": "2026-07-07T14:26:57.150351Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.150351Z"
-        }
       }
     ],
     "proof-no-trivial-true": [
@@ -2401,23 +2214,6 @@
         "reviewed_at": "2026-06-22T02:57:25.574Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Goal or proof is trivial/vacuous."
-      },
-      {
-        "field_hash": {
-          "md": "97d849c5ad5d",
-          "ts": "c7b4681b4542"
-        },
-        "result": "pass",
-        "notes": "Re-audit 2026-06-25: no `: True` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/Interactions.lean, content/quantum-observable-universe/lean/QOU/Interactions/confinementUniversality.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-07-07T14:26:57.150351Z",
-        "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.150351Z"
-        }
       }
     ],
     "proof-no-false-premise": [
@@ -2453,23 +2249,6 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "97d849c5ad5d",
-          "ts": "c7b4681b4542"
-        },
-        "result": "pass",
-        "notes": "h_N_F + h_N_F_zero (constant N_F) are jointly satisfiable; no contradiction.",
-        "reviewed_at": "2026-07-07T14:26:57.150351Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.150351Z"
         }
       }
     ],
@@ -2507,23 +2286,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "97d849c5ad5d",
-          "ts": "c7b4681b4542"
-        },
-        "result": "pass",
-        "notes": "Only binder is [ctx]; used. (Z,N data fields are class data, not theorem hypotheses.)",
-        "reviewed_at": "2026-07-07T14:26:57.150351Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.150351Z"
-        }
       }
     ],
     "proof-no-decide-masking": [
@@ -2543,295 +2305,21 @@
         "reviewed_at": "2026-06-22T02:57:25.760Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Stub uses decide/trivial masking."
-      },
-      {
-        "field_hash": {
-          "md": "97d849c5ad5d",
-          "ts": "c7b4681b4542"
-        },
-        "result": "pass",
-        "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/Interactions.lean, content/quantum-observable-universe/lean/QOU/Interactions/confinementUniversality.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-07-07T14:26:57.150351Z",
-        "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.150351Z"
-        }
       }
     ],
-    "da-false-claim": [
-      {
-        "field_hash": {
-          "md": "97d849c5ad5d",
-          "ts": "c7b4681b4542"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.150351Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.150351Z",
-        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "No false claims identified in 'Confinement universality: nucleon NF independent of photon polarization': mathematical reasoning is consistent in prose.",
-        "severity": "minor",
-        "evidence": "confinement-universality.ts:1"
-      }
-    ],
-    "da-vacuous": [
-      {
-        "field_hash": {
-          "md": "97d849c5ad5d",
-          "ts": "c7b4681b4542"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.150351Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.150351Z",
-        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The block 'Confinement universality: nucleon NF independent of photon polarization' presents substantial mathematical content: '$(\\varphi_0, \\varphi_1, \\varphi_{01})$'.",
-        "severity": "minor"
-      }
-    ],
-    "da-circular": [
-      {
-        "field_hash": {
-          "md": "97d849c5ad5d",
-          "ts": "c7b4681b4542"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.150351Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.150351Z",
-        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "No circular reasoning or self-assuming definitions detected in 'Confinement universality: nucleon NF independent of photon polarization'.",
-        "severity": "minor",
-        "evidence": "confinement-universality.ts:1"
-      }
-    ],
-    "da-overclaim": [
-      {
-        "field_hash": {
-          "md": "97d849c5ad5d",
-          "ts": "c7b4681b4542"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.150351Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.150351Z",
-        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The remarks and narrative scope in 'Confinement universality: nucleon NF independent of photon polarization' are appropriately qualified.",
-        "severity": "minor"
-      }
-    ],
-    "da-hidden-dof": [
-      {
-        "field_hash": {
-          "md": "97d849c5ad5d",
-          "ts": "c7b4681b4542"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.150351Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.150351Z",
-        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Confinement universality: nucleon NF independent of photon polarization'.",
-        "severity": "minor",
-        "evidence": "confinement-universality.ts:1"
-      }
-    ],
-    "da-non-sequitur": [
-      {
-        "field_hash": {
-          "md": "97d849c5ad5d",
-          "ts": "c7b4681b4542"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.150351Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.150351Z",
-        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The prose arguments in 'Confinement universality: nucleon NF independent of photon polarization' proceed logically through the stated steps.",
-        "severity": "minor",
-        "evidence": "confinement-universality.ts:1"
-      }
-    ],
-    "da-lean-narrative-divergence": [
-      {
-        "field_hash": {
-          "md": "97d849c5ad5d",
-          "ts": "c7b4681b4542"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.150351Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.150351Z",
-        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "No Lean sibling required; narrative matches the expected configuration.",
-        "severity": "minor"
-      }
-    ],
-    "da-citation-misuse": [
-      {
-        "field_hash": {
-          "md": "97d849c5ad5d",
-          "ts": "c7b4681b4542"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.150351Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.150351Z",
-        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "No citations are present in 'Confinement universality: nucleon NF independent of photon polarization', hence no citation misuse is possible.",
-        "severity": "minor",
-        "evidence": "confinement-universality.ts:1"
-      }
-    ],
-    "da-definitional-ambiguity": [
-      {
-        "field_hash": {
-          "md": "97d849c5ad5d",
-          "ts": "c7b4681b4542"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.150351Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.150351Z",
-        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Key terms and symbols in 'Confinement universality: nucleon NF independent of photon polarization' are mathematically defined and unambiguous.",
-        "severity": "minor",
-        "evidence": "confinement-universality.ts:1"
-      }
-    ],
-    "da-empirical-fragility": [
-      {
-        "field_hash": {
-          "md": "97d849c5ad5d",
-          "ts": "c7b4681b4542"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.150351Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.150351Z",
-        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The algebraic and logical relations in 'Confinement universality: nucleon NF independent of photon polarization' are independent of empirical tuning parameters.",
-        "severity": "minor",
-        "evidence": "confinement-universality.ts:1"
-      }
-    ],
-    "da-physical-implausibility": [
-      {
-        "field_hash": {
-          "md": "97d849c5ad5d",
-          "ts": "c7b4681b4542"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.150351Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.150351Z",
-        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The physical concepts described in 'Confinement universality: nucleon NF independent of photon polarization' are consistent with quantum observable mechanics.",
-        "severity": "minor",
-        "evidence": "confinement-universality.ts:1"
-      }
-    ],
-    "da-reproducibility": [
-      {
-        "field_hash": {
-          "md": "97d849c5ad5d",
-          "ts": "c7b4681b4542"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.150351Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.150351Z",
-        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The derivation steps and formal definitions in 'Confinement universality: nucleon NF independent of photon polarization' are reproducible.",
-        "severity": "minor"
-      }
-    ],
-    "da-referee-verdict": [
-      {
-        "field_hash": {
-          "md": "97d849c5ad5d",
-          "ts": "c7b4681b4542"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.150351Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.150351Z",
-        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Referee verdict: clean.",
-        "severity": "minor",
-        "verdict": "clean",
-        "referee_argument": "No significant objections; the mathematical claims in 'Confinement universality: nucleon NF independent of photon polarization' are consistent."
-      }
-    ],
+    "da-false-claim": [],
+    "da-vacuous": [],
+    "da-circular": [],
+    "da-overclaim": [],
+    "da-hidden-dof": [],
+    "da-non-sequitur": [],
+    "da-lean-narrative-divergence": [],
+    "da-citation-misuse": [],
+    "da-definitional-ambiguity": [],
+    "da-empirical-fragility": [],
+    "da-physical-implausibility": [],
+    "da-reproducibility": [],
+    "da-referee-verdict": [],
     "milnor-amalgamated-flow": [
       {
         "result": "pass",

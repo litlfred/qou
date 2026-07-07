@@ -1048,45 +1048,8 @@
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4"
       }
     ],
-    "proof-narrative-lean-equiv": [
-      {
-        "field_hash": {
-          "md": "b6d6b4cf2b7e",
-          "ts": "843795500e26",
-          "lean": "a76b739d90fd"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.018910Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.018910Z",
-        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:genus-maximal-descent' \u2192 expected 'genus_maximal_descent'; Lean declares: GenusMaximalDescent, genus_eq_four, hurwitz_bound_genus_four, s5_within_hurwitz, genus_unique. Structural match via content."
-      }
-    ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote brings-surface_seq8.md. Clarified reasoning chains. Dropped filler language. Ensured tight transition phrasing. Kept math and references solid.",
-        "reviewed_at": "2026-07-07T14:26:55.018910Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.018910Z"
-        },
-        "field_hash": {
-          "md": "b6d6b4cf2b7e",
-          "ts": "843795500e26",
-          "lean": "a76b739d90fd"
-        }
-      }
-    ]
+    "proof-narrative-lean-equiv": [],
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:55.018910Z"
 }

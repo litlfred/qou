@@ -52,45 +52,8 @@
         "reviewed_sha": "1804cf0916c26ee8a2f3d969adf8d59726f6c07c"
       }
     ],
-    "proof-narrative-lean-equiv": [
-      {
-        "field_hash": {
-          "md": "d60f57860a1f",
-          "ts": "61a6947286a9",
-          "lean": "54f4c0126d5a"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.308827Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.308827Z",
-        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:bloch-group-quotient-construction' \u2192 expected 'bloch_group_quotient_construction'; Lean declares: PentagonShape, pentagonGenerator, RogersPair, RogersPair.shape, one_sub_inv_ne_zero.... Structural match via content."
-      }
-    ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote prose blocks to adhere to Milnor standards. Improved economy, preserved all math.",
-        "reviewed_at": "2026-07-07T14:26:56.308827Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.308827Z"
-        },
-        "field_hash": {
-          "md": "d60f57860a1f",
-          "ts": "61a6947286a9",
-          "lean": "54f4c0126d5a"
-        }
-      }
-    ]
+    "proof-narrative-lean-equiv": [],
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.308827Z"
 }

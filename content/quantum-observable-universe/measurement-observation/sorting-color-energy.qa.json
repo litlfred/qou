@@ -1010,24 +1010,7 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Tightened paragraphs. Removed cross-references to unknown targets. Kept physics/math logic intact.",
-        "reviewed_at": "2026-07-07T14:26:56.443315Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.443315Z"
-        },
-        "field_hash": {
-          "md": "b8d2a80c8e9f",
-          "ts": "615760fbe885"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.443315Z"
 }

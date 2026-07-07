@@ -13,26 +13,7 @@
     "lean": "3706ae5cc3a7"
   },
   "criteria": {
-    "proof-narrative-lean-equiv": [
-      {
-        "field_hash": {
-          "md": "5f62a25aabcc",
-          "ts": "bdc8bf2ace5b",
-          "lean": "3706ae5cc3a7"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.204039Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.204039Z",
-        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:electroweak-triplet-bring-embedding' aligns with Lean declaration. Sorry-free."
-      }
-    ],
+    "proof-narrative-lean-equiv": [],
     "milnor-amalgamated-flow": [
       {
         "result": "pass",

@@ -31,24 +31,7 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Removed strategy blocks and merged redundant properties into declarative sentences. Removed commutative diagrams. Removed conversational padding.",
-        "reviewed_at": "2026-07-07T14:26:55.924888Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.924888Z"
-        },
-        "field_hash": {
-          "md": "288541a580af",
-          "ts": "4ba12b739ce9"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:55.924888Z"
 }

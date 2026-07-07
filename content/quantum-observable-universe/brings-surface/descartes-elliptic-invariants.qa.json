@@ -31,24 +31,7 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote brings-surface_seq7.md applying Milnor standard. Replaced passive verbs, enhanced clarity. Simplified the narrative transition lines.",
-        "reviewed_at": "2026-07-07T14:26:55.115034Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.115034Z"
-        },
-        "field_hash": {
-          "md": "9e88bd49c6c2",
-          "ts": "a953c3d86c49"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:55.115034Z"
 }

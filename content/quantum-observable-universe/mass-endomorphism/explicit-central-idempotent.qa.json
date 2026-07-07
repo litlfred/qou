@@ -33,25 +33,7 @@
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote mass-endomorphism_seq10.md for Milnor standards: improved economy, declarative voice, preserved structure.",
-        "reviewed_at": "2026-07-07T14:26:56.143687Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.143687Z"
-        },
-        "field_hash": {
-          "md": "7147a53af21a",
-          "ts": "231c5a878d65",
-          "lean": "a6076b68e822"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.143687Z"
 }

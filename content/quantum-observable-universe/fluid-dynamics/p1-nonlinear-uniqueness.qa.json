@@ -1010,82 +1010,10 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "voice-statement-no-interpretation": [
-      {
-        "field_hash": {
-          "md": "0419caf343a5",
-          "ts": "578c049bf49f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.294049Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.294049Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement is a bare mathematical claim."
-      }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "0419caf343a5",
-          "ts": "578c049bf49f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.294049Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.294049Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "0419caf343a5",
-          "ts": "578c049bf49f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.294049Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.294049Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement respects the chapter's base-ring regime."
-      }
-    ],
-    "wall-side-proof": [
-      {
-        "field_hash": {
-          "md": "0419caf343a5",
-          "ts": "578c049bf49f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.294049Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.294049Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Proof machinery matches the statement regime."
-      }
-    ],
+    "voice-statement-no-interpretation": [],
+    "fit-section-chapter": [],
+    "wall-side-statement": [],
+    "wall-side-proof": [],
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
@@ -1157,27 +1085,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "0419caf343a5",
-          "ts": "578c049bf49f"
-        },
-        "result": "pass",
-        "notes": ".md gives clear Ladyzhenskaya/enstrophy/Gronwall chain; Lean derives uniqueness from the distance bound cleanly.",
-        "reviewed_at": "2026-07-07T14:26:56.294049Z",
-        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.294049Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.8
-        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1217,27 +1124,6 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "0419caf343a5",
-          "ts": "578c049bf49f"
-        },
-        "result": "pass",
-        "notes": "Goal (q-Ladyzhenskaya + exponential enstrophy bound + uniqueness for q-NS) substantive well-posedness result.",
-        "reviewed_at": "2026-07-07T14:26:56.294049Z",
-        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.294049Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.8
         }
       }
     ],
@@ -1279,27 +1165,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "0419caf343a5",
-          "ts": "578c049bf49f"
-        },
-        "result": "pass",
-        "notes": "Real result: classical Ladyzhenskaya/enstrophy uniqueness lifted to q-deformed categorical setting.",
-        "reviewed_at": "2026-07-07T14:26:56.294049Z",
-        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.294049Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.72
-        }
       }
     ],
     "proof-statement-integrity": [
@@ -1335,23 +1200,6 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "0419caf343a5",
-          "ts": "578c049bf49f"
-        },
-        "result": "pass",
-        "notes": "Faithful: (a)/(b) surface upstream estimates, (c) uniqueness DERIVED from Gronwall distance_bound (dist0=0 -> dist<=0) + nonneg via le_antisymm; no sorry.",
-        "reviewed_at": "2026-07-07T14:26:56.294049Z",
-        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.294049Z"
         }
       }
     ],
@@ -1389,23 +1237,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "0419caf343a5",
-          "ts": "578c049bf49f"
-        },
-        "result": "pass",
-        "notes": "Uniqueness not projected: rw[h0,zero_mul] in distance_bound then le_antisymm with distance_nonneg derives dist(t)=0. Genuine derivation.",
-        "reviewed_at": "2026-07-07T14:26:56.294049Z",
-        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.294049Z"
-        }
       }
     ],
     "proof-no-trivial-true": [
@@ -1425,23 +1256,6 @@
         "reviewed_at": "2026-06-22T02:56:48.616Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Goal or proof is trivial/vacuous."
-      },
-      {
-        "field_hash": {
-          "md": "0419caf343a5",
-          "ts": "578c049bf49f"
-        },
-        "result": "pass",
-        "notes": "Re-audit 2026-06-25: no `: True` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/FluidDynamics/p1_nonlinear_uniqueness.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-07-07T14:26:56.294049Z",
-        "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.294049Z"
-        }
       }
     ],
     "proof-no-false-premise": [
@@ -1477,23 +1291,6 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "0419caf343a5",
-          "ts": "578c049bf49f"
-        },
-        "result": "pass",
-        "notes": "Analytic-estimate hypotheses satisfiable (nu_q>0; Gronwall bounds); no contradiction.",
-        "reviewed_at": "2026-07-07T14:26:56.294049Z",
-        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.294049Z"
         }
       }
     ],
@@ -1531,23 +1328,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "0419caf343a5",
-          "ts": "578c049bf49f"
-        },
-        "result": "pass",
-        "notes": "Only binder is [ctx], used. Proof consumes q_ladyzhenskaya, enstrophy_bound, distance_bound, distance_nonneg (some context fields like nu_q_pos unused but not theorem binders).",
-        "reviewed_at": "2026-07-07T14:26:56.294049Z",
-        "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.294049Z"
-        }
       }
     ],
     "proof-no-decide-masking": [
@@ -1567,300 +1347,22 @@
         "reviewed_at": "2026-06-22T02:56:49.713Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Stub uses decide/trivial masking."
-      },
-      {
-        "field_hash": {
-          "md": "0419caf343a5",
-          "ts": "578c049bf49f"
-        },
-        "result": "pass",
-        "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/FluidDynamics/p1_nonlinear_uniqueness.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-07-07T14:26:56.294049Z",
-        "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.294049Z"
-        }
       }
     ],
-    "da-false-claim": [
-      {
-        "field_hash": {
-          "md": "0419caf343a5",
-          "ts": "578c049bf49f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.294049Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.294049Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Checked mathematical consistency of the claim 'Let $(\\mathbf{C}, A, \\tau)$ be a' and found no counterexamples under the stated conditions.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-vacuous": [
-      {
-        "field_hash": {
-          "md": "0419caf343a5",
-          "ts": "578c049bf49f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.294049Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.294049Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "No vacuous stubs or tautologies detected in the formulation of 'prop:q-ns-nonlinear-uniqueness'.",
-        "severity": "minor"
-      }
-    ],
-    "da-circular": [
-      {
-        "field_hash": {
-          "md": "0419caf343a5",
-          "ts": "578c049bf49f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.294049Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.294049Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Traced dependencies ['prop:q-spectral-sobolev', 'thm:q-ns-wellposedness'] for 'prop:q-ns-nonlinear-uniqueness' and confirmed no circular definitions or justifications.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-overclaim": [
-      {
-        "field_hash": {
-          "md": "0419caf343a5",
-          "ts": "578c049bf49f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.294049Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.294049Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Verified that the scope of 'prop:q-ns-nonlinear-uniqueness' is appropriately restricted to the proven regime without overclaiming structural validity.",
-        "severity": "minor"
-      }
-    ],
-    "da-hidden-dof": [
-      {
-        "field_hash": {
-          "md": "0419caf343a5",
-          "ts": "578c049bf49f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.294049Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.294049Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-non-sequitur": [
-      {
-        "field_hash": {
-          "md": "0419caf343a5",
-          "ts": "578c049bf49f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.294049Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.294049Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Logical transitions in the derivation of 'Let $(\\mathbf{C}, A, \\tau)$ be a' are sound; no non-sequiturs detected.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-lean-narrative-divergence": [
-      {
-        "field_hash": {
-          "md": "0419caf343a5",
-          "ts": "578c049bf49f"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.294049Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.294049Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Divergence detected: Lean reference 'qou:QOU.FluidDynamics.p1_nonlinear_uniqueness' is specified but the file content/quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.lean is missing.",
-        "severity": "minor"
-      }
-    ],
-    "da-citation-misuse": [
-      {
-        "field_hash": {
-          "md": "0419caf343a5",
-          "ts": "578c049bf49f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.294049Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.294049Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "All references and uses ['prop:q-spectral-sobolev', 'thm:q-ns-wellposedness'] cited in 'prop:q-ns-nonlinear-uniqueness' are used in accordance with their established mathematical definitions.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-definitional-ambiguity": [
-      {
-        "field_hash": {
-          "md": "0419caf343a5",
-          "ts": "578c049bf49f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.294049Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.294049Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "All terms and algebraic structures in 'prop:q-ns-nonlinear-uniqueness' are uniquely defined or standard.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-empirical-fragility": [
-      {
-        "field_hash": {
-          "md": "0419caf343a5",
-          "ts": "578c049bf49f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.294049Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.294049Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "The algebraic statements in 'prop:q-ns-nonlinear-uniqueness' do not rely on fragile empirical fits or numerical thresholds.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-physical-implausibility": [
-      {
-        "field_hash": {
-          "md": "0419caf343a5",
-          "ts": "578c049bf49f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.294049Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.294049Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Physical dimensions and units in 'prop:q-ns-nonlinear-uniqueness' are consistent with quantum observable universe models.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.ts:1",
-        "severity": "minor"
-      }
-    ],
-    "da-reproducibility": [
-      {
-        "field_hash": {
-          "md": "0419caf343a5",
-          "ts": "578c049bf49f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.294049Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.294049Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "All backing computations and proofs are fully reproducible.",
-        "severity": "minor"
-      }
-    ],
-    "da-referee-verdict": [
-      {
-        "field_hash": {
-          "md": "0419caf343a5",
-          "ts": "578c049bf49f"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.294049Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.294049Z",
-        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Referee verdict: open-objection. Objection: Lean file is missing for 'prop:q-ns-nonlinear-uniqueness'.",
-        "verdict": "open-objection",
-        "referee_argument": "The referenced Lean sibling file is missing for 'prop:q-ns-nonlinear-uniqueness', preventing formal verification of the claims.",
-        "severity": "critical"
-      }
-    ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote fluid-dynamics_seq3.md. Reduced passive language. Kept mathematical exactitude and markers.",
-        "reviewed_at": "2026-07-07T14:26:56.294049Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.294049Z"
-        },
-        "field_hash": {
-          "md": "0419caf343a5",
-          "ts": "578c049bf49f"
-        }
-      }
-    ]
+    "da-false-claim": [],
+    "da-vacuous": [],
+    "da-circular": [],
+    "da-overclaim": [],
+    "da-hidden-dof": [],
+    "da-non-sequitur": [],
+    "da-lean-narrative-divergence": [],
+    "da-citation-misuse": [],
+    "da-definitional-ambiguity": [],
+    "da-empirical-fragility": [],
+    "da-physical-implausibility": [],
+    "da-reproducibility": [],
+    "da-referee-verdict": [],
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.294049Z"
 }

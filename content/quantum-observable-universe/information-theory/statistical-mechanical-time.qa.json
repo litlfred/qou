@@ -852,22 +852,6 @@
         "reviewed_at": "2026-06-22T02:56:27.763Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
-      },
-      {
-        "field_hash": {
-          "md": "5beedbfc925a",
-          "ts": "f3d475d84f82"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.556680Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.556680Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-false-claim": [
@@ -886,22 +870,6 @@
         "notes": "No false claims identified in 'Statistical mechanical emergence of continuous time': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/statistical-mechanical-time.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "5beedbfc925a",
-          "ts": "f3d475d84f82"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.556680Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.556680Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-vacuous": [
@@ -919,22 +887,6 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The block 'Statistical mechanical emergence of continuous time' presents substantial mathematical content: The information-theoretic time $\\mathcal{T}$ ([information-theoretic time](#def:...",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "5beedbfc925a",
-          "ts": "f3d475d84f82"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.556680Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.556680Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-circular": [
@@ -953,22 +905,6 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Statistical mechanical emergence of continuous time'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/statistical-mechanical-time.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "5beedbfc925a",
-          "ts": "f3d475d84f82"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.556680Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.556680Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-overclaim": [
@@ -986,22 +922,6 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No overclaims: the scope of 'Statistical mechanical emergence of continuous time' is appropriately qualified.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "5beedbfc925a",
-          "ts": "f3d475d84f82"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.556680Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.556680Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-hidden-dof": [
@@ -1020,22 +940,6 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Statistical mechanical emergence of continuous time'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/statistical-mechanical-time.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "5beedbfc925a",
-          "ts": "f3d475d84f82"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.556680Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.556680Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-non-sequitur": [
@@ -1054,22 +958,6 @@
         "notes": "The argument flow in 'Statistical mechanical emergence of continuous time' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/statistical-mechanical-time.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "5beedbfc925a",
-          "ts": "f3d475d84f82"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.556680Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.556680Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1087,22 +975,6 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "5beedbfc925a",
-          "ts": "f3d475d84f82"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.556680Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.556680Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-citation-misuse": [
@@ -1121,22 +993,6 @@
         "notes": "No citations are present in 'Statistical mechanical emergence of continuous time', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/statistical-mechanical-time.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "5beedbfc925a",
-          "ts": "f3d475d84f82"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.556680Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.556680Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1155,22 +1011,6 @@
         "notes": "Key terms and symbols in 'Statistical mechanical emergence of continuous time' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/statistical-mechanical-time.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "5beedbfc925a",
-          "ts": "f3d475d84f82"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.556680Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.556680Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-empirical-fragility": [
@@ -1189,25 +1029,6 @@
         "notes": "The algebraic and logical relations in 'Statistical mechanical emergence of continuous time' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/statistical-mechanical-time.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "5beedbfc925a",
-          "ts": "f3d475d84f82"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.556680Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.556680Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "severity": "critical",
-        "evidence": "quantum-gravitational discreteness should produce O(\\hbar_q) ~ 10% corrections to the continuous Reeb flow",
-        "notes": "Asserting a 10% correction to continuous time is catastrophically ruled out by all high-precision empirical tests of quantum electrodynamics (e.g., the anomalous magnetic dipole moment of the electron is verified to 12 decimal places). A 10% discrete-time effect breaks macroscopic physics entirely."
       }
     ],
     "da-physical-implausibility": [
@@ -1226,24 +1047,6 @@
         "notes": "The physical concepts described in 'Statistical mechanical emergence of continuous time' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/statistical-mechanical-time.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "5beedbfc925a",
-          "ts": "f3d475d84f82"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.556680Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.556680Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "severity": "major",
-        "notes": "The model treats Planck time as comprising only ~10 discrete operations, turning continuous time into a poorly smoothed statistical artifact. This invalidates Lorentz invariance and local field theory."
       }
     ],
     "da-reproducibility": [
@@ -1262,22 +1065,6 @@
         "notes": "The derivation steps and formal definitions in 'Statistical mechanical emergence of continuous time' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/statistical-mechanical-time.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "5beedbfc925a",
-          "ts": "f3d475d84f82"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.556680Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.556680Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-referee-verdict": [
@@ -1297,42 +1084,9 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Statistical mechanical emergence of continuous time' are consistent."
-      },
-      {
-        "field_hash": {
-          "md": "5beedbfc925a",
-          "ts": "f3d475d84f82"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.556680Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.556680Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Smoothed transitions, applied milnor brevity.",
-        "reviewed_at": "2026-07-07T14:26:55.556680Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.556680Z"
-        },
-        "field_hash": {
-          "md": "5beedbfc925a",
-          "ts": "f3d475d84f82"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:55.556680Z"
 }

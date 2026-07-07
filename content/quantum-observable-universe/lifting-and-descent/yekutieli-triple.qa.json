@@ -875,25 +875,7 @@
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote blocks in lifting-and-descent_seq9.md using direct prose, short sentences, active voice per Milnor standard.",
-        "reviewed_at": "2026-07-07T14:26:55.680372Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.680372Z"
-        },
-        "field_hash": {
-          "md": "e65222fb837d",
-          "ts": "fdffc73aa6f8",
-          "lean": "3e9bef617c75"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:55.680372Z"
 }

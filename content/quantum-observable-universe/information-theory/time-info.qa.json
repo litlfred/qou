@@ -832,22 +832,6 @@
         "reviewed_at": "2026-06-22T02:56:27.625Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
-      },
-      {
-        "field_hash": {
-          "md": "293937485518",
-          "ts": "c18c4338bc38"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.611513Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.611513Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-false-claim": [
@@ -866,22 +850,6 @@
         "notes": "No false claims identified in 'sec:time-info': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/time-info.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "293937485518",
-          "ts": "c18c4338bc38"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.611513Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.611513Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-vacuous": [
@@ -899,22 +867,6 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The block 'sec:time-info' presents substantial mathematical content: Time in the QOU is not an external parameter imposed on the dynamics \u2014 it is the...",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "293937485518",
-          "ts": "c18c4338bc38"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.611513Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.611513Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-circular": [
@@ -933,22 +885,6 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'sec:time-info'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/time-info.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "293937485518",
-          "ts": "c18c4338bc38"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.611513Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.611513Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-overclaim": [
@@ -966,22 +902,6 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No overclaims: the scope of 'sec:time-info' is appropriately qualified.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "293937485518",
-          "ts": "c18c4338bc38"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.611513Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.611513Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-hidden-dof": [
@@ -1000,22 +920,6 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'sec:time-info'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/time-info.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "293937485518",
-          "ts": "c18c4338bc38"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.611513Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.611513Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-non-sequitur": [
@@ -1034,22 +938,6 @@
         "notes": "The argument flow in 'sec:time-info' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/time-info.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "293937485518",
-          "ts": "c18c4338bc38"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.611513Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.611513Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1067,22 +955,6 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "293937485518",
-          "ts": "c18c4338bc38"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.611513Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.611513Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-citation-misuse": [
@@ -1101,22 +973,6 @@
         "notes": "No citations are present in 'sec:time-info', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/time-info.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "293937485518",
-          "ts": "c18c4338bc38"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.611513Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.611513Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1135,22 +991,6 @@
         "notes": "Key terms and symbols in 'sec:time-info' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/time-info.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "293937485518",
-          "ts": "c18c4338bc38"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.611513Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.611513Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-empirical-fragility": [
@@ -1169,25 +1009,6 @@
         "notes": "The algebraic and logical relations in 'sec:time-info' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/time-info.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "293937485518",
-          "ts": "c18c4338bc38"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.611513Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.611513Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "severity": "critical",
-        "evidence": "At our local substrate parameter... approximately 10 discrete operations compose each Planck unit",
-        "notes": "Asserting that there are only 10 discrete operations per Planck time implies massive discreteness effects that completely contradict established empirical constraints on Lorentz invariance."
       }
     ],
     "da-physical-implausibility": [
@@ -1206,24 +1027,6 @@
         "notes": "The physical concepts described in 'sec:time-info' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/time-info.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "293937485518",
-          "ts": "c18c4338bc38"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.611513Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.611513Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "severity": "major",
-        "notes": "Coarse-graining time using \\hbar_q ~ 0.1 as a proxy for the Boltzmann constant creates a scenario where standard continuum field theory cannot hold, making the framework implausible for reproducing standard model physics."
       }
     ],
     "da-reproducibility": [
@@ -1242,22 +1045,6 @@
         "notes": "The derivation steps and formal definitions in 'sec:time-info' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/time-info.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "293937485518",
-          "ts": "c18c4338bc38"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.611513Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.611513Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-referee-verdict": [
@@ -1277,22 +1064,6 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'sec:time-info' are consistent."
-      },
-      {
-        "field_hash": {
-          "md": "293937485518",
-          "ts": "c18c4338bc38"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.611513Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.611513Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ]
   },

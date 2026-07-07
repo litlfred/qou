@@ -1028,101 +1028,11 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "proof-no-placeholder-stub": [
-      {
-        "field_hash": {
-          "md": "e6a677ae896b",
-          "ts": "740364ec6273"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/lean-proof-vacuity-audit",
-          "agent_date": "2026-07-07T14:26:55.784998Z",
-          "agent_skill": "local/lean-proof-vacuity-audit",
-          "agent_model": "gemini-3.1-pro"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.784998Z",
-        "reviewed_sha": "a9ce9ecfe24e6c7c9d0b9f25699b35ec666faa32",
-        "notes": "4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): placeholder-stub marker no longer present \u2014 criterion pass. Residual self-assuming-projection / statement-scope issue tracked under proof-statement-integrity and bean qsb2; do not re-fail this criterion for it."
-      }
-    ],
-    "voice-statement-no-interpretation": [
-      {
-        "field_hash": {
-          "md": "e6a677ae896b",
-          "ts": "740364ec6273"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.784998Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.784998Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement is a bare mathematical claim."
-      }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "e6a677ae896b",
-          "ts": "740364ec6273"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.784998Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.784998Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "e6a677ae896b",
-          "ts": "740364ec6273"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.784998Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.784998Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement respects the chapter's base-ring regime."
-      }
-    ],
-    "wall-side-proof": [
-      {
-        "field_hash": {
-          "md": "e6a677ae896b",
-          "ts": "740364ec6273"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.784998Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.784998Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Proof machinery matches the statement regime."
-      }
-    ],
+    "proof-no-placeholder-stub": [],
+    "voice-statement-no-interpretation": [],
+    "fit-section-chapter": [],
+    "wall-side-statement": [],
+    "wall-side-proof": [],
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
@@ -1194,27 +1104,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "e6a677ae896b",
-          "ts": "740364ec6273"
-        },
-        "result": "warn",
-        "notes": "md states no real proof; Lean offers no strategy -- conclusion is a class field projected. Elementary (2rho-id)^2 algebra absent; orbit half unaddressed.",
-        "reviewed_at": "2026-07-07T14:26:55.784998Z",
-        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.784998Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.4
-        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1255,27 +1144,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "e6a677ae896b",
-          "ts": "740364ec6273"
-        },
-        "result": "pass",
-        "notes": "(2(rho-1/2 id))^2=id for a projector, and P(V)=G/T as closed coadjoint orbit; well-posed standard Lie/projector fact.",
-        "reviewed_at": "2026-07-07T14:26:55.784998Z",
-        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.784998Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.72
-        }
       }
     ],
     "proof-rater-novelty": [
@@ -1315,27 +1183,6 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "e6a677ae896b",
-          "ts": "740364ec6273"
-        },
-        "result": "warn",
-        "notes": "Standard coadjoint-orbit embedding of P(V); Lean adds nothing derivational (opaque field projection).",
-        "reviewed_at": "2026-07-07T14:26:55.784998Z",
-        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.784998Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.45
         }
       }
     ],
@@ -1390,23 +1237,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "e6a677ae896b",
-          "ts": "740364ec6273"
-        },
-        "result": "pass",
-        "notes": "Lean statement now faithfully states the .md claim; previously-dropped/weakened clauses restored as real propositions (open parts carry a cited sorry per \u00a71, not omitted). Verified lean-direct exit 0.",
-        "reviewed_at": "2026-07-07T14:26:55.784998Z",
-        "reviewed_sha": "3dd36f14516a6043b87a5a6f8ad6a24bc6b16c13",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/lean-proof-vacuity-audit",
-          "agent_skill": "local/lean-proof-vacuity-audit",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.784998Z"
-        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1460,23 +1290,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "e6a677ae896b",
-          "ts": "740364ec6273"
-        },
-        "result": "pass",
-        "notes": "Re-encoded on branch claude/lean-qa-backlog-2h3f8d: carrier fields are now genuine sub-hypotheses (never the conclusion) and the theorem DERIVES its conclusion by composing them / applying proved lemmas \u2014 no longer projects an assumed field (AGENTS.md \u00a73b-cond item 5). Verified lean-direct exit 0.",
-        "reviewed_at": "2026-07-07T14:26:55.784998Z",
-        "reviewed_sha": "3dd36f14516a6043b87a5a6f8ad6a24bc6b16c13",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/lean-proof-vacuity-audit",
-          "agent_skill": "local/lean-proof-vacuity-audit",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.784998Z"
-        }
       }
     ],
     "proof-no-trivial-true": [
@@ -1496,23 +1309,6 @@
         "reviewed_at": "2026-06-22T02:56:38.133Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Goal or proof is trivial/vacuous."
-      },
-      {
-        "field_hash": {
-          "md": "e6a677ae896b",
-          "ts": "740364ec6273"
-        },
-        "result": "pass",
-        "notes": "Re-audit 2026-06-25: no `: True` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse.lean, content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/fai_projector_coadjoint_orbit.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-07-07T14:26:55.784998Z",
-        "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.784998Z"
-        }
       }
     ],
     "proof-no-false-premise": [
@@ -1548,23 +1344,6 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "e6a677ae896b",
-          "ts": "740364ec6273"
-        },
-        "result": "pass",
-        "notes": "Class inhabitable (twice_sigma_sq:=id_V satisfies the field); no contradictory premise.",
-        "reviewed_at": "2026-07-07T14:26:55.784998Z",
-        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.784998Z"
         }
       }
     ],
@@ -1602,23 +1381,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "e6a677ae896b",
-          "ts": "740364ec6273"
-        },
-        "result": "pass",
-        "notes": "Sole binder [ctx] is referenced. (Class fields half_id, sigma_rho are decorative/unused, but not theorem binders.)",
-        "reviewed_at": "2026-07-07T14:26:55.784998Z",
-        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.784998Z"
-        }
       }
     ],
     "proof-no-decide-masking": [
@@ -1638,317 +1400,22 @@
         "reviewed_at": "2026-06-22T02:56:39.246Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Stub uses decide/trivial masking."
-      },
-      {
-        "field_hash": {
-          "md": "e6a677ae896b",
-          "ts": "740364ec6273"
-        },
-        "result": "pass",
-        "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse.lean, content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/fai_projector_coadjoint_orbit.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-07-07T14:26:55.784998Z",
-        "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.784998Z"
-        }
       }
     ],
-    "da-false-claim": [
-      {
-        "field_hash": {
-          "md": "e6a677ae896b",
-          "ts": "740364ec6273"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.784998Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.784998Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "fai-projector-coadjoint-orbit.ts:1",
-        "notes": "No false claims identified in the prose of 'Rank-1 projectors embed $\\\\mathbb{P}(V)$ as a coadjoint orbit in $\\\\mathrm{Ad}(A)$'; the mathematical reasoning concerning 'Let $V \\in \\mathbf{C}$ be the standard representation (categorical' is consistent."
-      }
-    ],
-    "da-vacuous": [
-      {
-        "field_hash": {
-          "md": "e6a677ae896b",
-          "ts": "740364ec6273"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.784998Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.784998Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "fai-projector-coadjoint-orbit.ts:1",
-        "notes": "The block 'Rank-1 projectors embed $\\\\mathbb{P}(V)$ as a coadjoint orbit in $\\\\mathrm{Ad}(A)$' presents substantial mathematical content: 'Let $V \\in \\mathbf{C}$ be the standard representation (categorical'."
-      }
-    ],
-    "da-circular": [
-      {
-        "field_hash": {
-          "md": "e6a677ae896b",
-          "ts": "740364ec6273"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.784998Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.784998Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "fai-projector-coadjoint-orbit.ts:1",
-        "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Rank-1 projectors embed $\\\\mathbb{P}(V)$ as a coadjoint orbit in $\\\\mathrm{Ad}(A)$' (which asserts 'Let $V \\in \\mathbf{C}$ be the standard representation (categorical')."
-      }
-    ],
-    "da-overclaim": [
-      {
-        "field_hash": {
-          "md": "e6a677ae896b",
-          "ts": "740364ec6273"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.784998Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.784998Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "fai-projector-coadjoint-orbit.ts:1",
-        "notes": "The remarks and narrative scope in 'Rank-1 projectors embed $\\\\mathbb{P}(V)$ as a coadjoint orbit in $\\\\mathrm{Ad}(A)$' concerning 'Let $V \\in \\mathbf{C}$ be the standard representation (categorical' are appropriately qualified."
-      }
-    ],
-    "da-hidden-dof": [
-      {
-        "field_hash": {
-          "md": "e6a677ae896b",
-          "ts": "740364ec6273"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.784998Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.784998Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "fai-projector-coadjoint-orbit.ts:1",
-        "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Rank-1 projectors embed $\\\\mathbb{P}(V)$ as a coadjoint orbit in $\\\\mathrm{Ad}(A)$'."
-      }
-    ],
-    "da-non-sequitur": [
-      {
-        "field_hash": {
-          "md": "e6a677ae896b",
-          "ts": "740364ec6273"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.784998Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.784998Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "fai-projector-coadjoint-orbit.ts:1",
-        "notes": "The prose arguments in 'Rank-1 projectors embed $\\\\mathbb{P}(V)$ as a coadjoint orbit in $\\\\mathrm{Ad}(A)$' proceed logically through the stated steps: 'Let $V \\in \\mathbf{C}$ be the standard representation (categorical'."
-      }
-    ],
-    "da-lean-narrative-divergence": [
-      {
-        "field_hash": {
-          "md": "e6a677ae896b",
-          "ts": "740364ec6273"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.784998Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.784998Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "fai-projector-coadjoint-orbit.ts:1",
-        "notes": "No Lean sibling required; the narrative of 'Rank-1 projectors embed $\\\\mathbb{P}(V)$ as a coadjoint orbit in $\\\\mathrm{Ad}(A)$' matches the expected configuration."
-      }
-    ],
-    "da-citation-misuse": [
-      {
-        "field_hash": {
-          "md": "e6a677ae896b",
-          "ts": "740364ec6273"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.784998Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.784998Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "fai-projector-coadjoint-orbit.ts:1",
-        "notes": "No citations are present in 'Rank-1 projectors embed $\\\\mathbb{P}(V)$ as a coadjoint orbit in $\\\\mathrm{Ad}(A)$', hence no citation misuse is possible."
-      }
-    ],
-    "da-definitional-ambiguity": [
-      {
-        "field_hash": {
-          "md": "e6a677ae896b",
-          "ts": "740364ec6273"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.784998Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.784998Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "fai-projector-coadjoint-orbit.ts:1",
-        "notes": "Key terms and symbols in 'Rank-1 projectors embed $\\\\mathbb{P}(V)$ as a coadjoint orbit in $\\\\mathrm{Ad}(A)$' (e.g. from 'Let $V \\in \\mathbf{C}$ be the standard representation (categorical') are mathematically defined and unambiguous."
-      }
-    ],
-    "da-empirical-fragility": [
-      {
-        "field_hash": {
-          "md": "e6a677ae896b",
-          "ts": "740364ec6273"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.784998Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.784998Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "fai-projector-coadjoint-orbit.ts:1",
-        "notes": "The algebraic and logical relations in 'Rank-1 projectors embed $\\\\mathbb{P}(V)$ as a coadjoint orbit in $\\\\mathrm{Ad}(A)$' are independent of empirical tuning parameters."
-      }
-    ],
-    "da-physical-implausibility": [
-      {
-        "field_hash": {
-          "md": "e6a677ae896b",
-          "ts": "740364ec6273"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.784998Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.784998Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "fai-projector-coadjoint-orbit.ts:1",
-        "notes": "The physical concepts described in 'Rank-1 projectors embed $\\\\mathbb{P}(V)$ as a coadjoint orbit in $\\\\mathrm{Ad}(A)$' are consistent with quantum observable mechanics."
-      }
-    ],
-    "da-reproducibility": [
-      {
-        "field_hash": {
-          "md": "e6a677ae896b",
-          "ts": "740364ec6273"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.784998Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.784998Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "fai-projector-coadjoint-orbit.ts:1",
-        "notes": "The derivation steps and formal definitions in 'Rank-1 projectors embed $\\\\mathbb{P}(V)$ as a coadjoint orbit in $\\\\mathrm{Ad}(A)$' are reproducible."
-      }
-    ],
-    "da-referee-verdict": [
-      {
-        "field_hash": {
-          "md": "e6a677ae896b",
-          "ts": "740364ec6273"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.784998Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.784998Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "notes": "Referee verdict: clean.",
-        "verdict": "clean",
-        "referee_argument": "No significant objections; the mathematical claims in 'Rank-1 projectors embed $\\\\mathbb{P}(V)$ as a coadjoint orbit in $\\\\mathrm{Ad}(A)$' (concerning 'Let $V \\in \\mathbf{C}$ be the standard representation (categorical') are consistent and formally verified."
-      }
-    ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote seq8. Simplified the intro. Removed editorializing about 'arc layers'. Stripped back-references. Clarified the transition functions as gerbe morphisms and the role of the Woronowicz calculus deformation.",
-        "reviewed_at": "2026-07-07T14:26:55.784998Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.784998Z"
-        },
-        "field_hash": {
-          "md": "e6a677ae896b",
-          "ts": "740364ec6273"
-        }
-      }
-    ]
+    "da-false-claim": [],
+    "da-vacuous": [],
+    "da-circular": [],
+    "da-overclaim": [],
+    "da-hidden-dof": [],
+    "da-non-sequitur": [],
+    "da-lean-narrative-divergence": [],
+    "da-citation-misuse": [],
+    "da-definitional-ambiguity": [],
+    "da-empirical-fragility": [],
+    "da-physical-implausibility": [],
+    "da-reproducibility": [],
+    "da-referee-verdict": [],
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:55.784998Z"
 }

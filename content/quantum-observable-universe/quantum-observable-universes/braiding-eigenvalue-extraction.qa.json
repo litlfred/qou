@@ -1027,86 +1027,10 @@
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4"
       }
     ],
-    "voice-statement-no-interpretation": [
-      {
-        "field_hash": {
-          "md": "afb14130fc3b",
-          "ts": "a3a8d2a08953",
-          "lean": "073f6af238d7"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.826701Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.826701Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement is a bare mathematical claim."
-      }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "afb14130fc3b",
-          "ts": "a3a8d2a08953",
-          "lean": "073f6af238d7"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.826701Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.826701Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
-      }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "afb14130fc3b",
-          "ts": "a3a8d2a08953",
-          "lean": "073f6af238d7"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.826701Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.826701Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement respects the chapter's base-ring regime."
-      }
-    ],
-    "wall-side-proof": [
-      {
-        "field_hash": {
-          "md": "afb14130fc3b",
-          "ts": "a3a8d2a08953",
-          "lean": "073f6af238d7"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.826701Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.826701Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Proof machinery matches the statement regime."
-      }
-    ],
+    "voice-statement-no-interpretation": [],
+    "fit-section-chapter": [],
+    "wall-side-statement": [],
+    "wall-side-proof": [],
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
@@ -1181,28 +1105,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "afb14130fc3b",
-          "ts": "a3a8d2a08953",
-          "lean": "073f6af238d7"
-        },
-        "result": "pass",
-        "notes": "Clear 3-part structure: Mathlib braiding setup, named spectral-decomp wall axiom, then proved pure-algebra derivation of the eigenvalue/Hecke data.",
-        "reviewed_at": "2026-07-07T14:26:55.826701Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.826701Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.8
-        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1244,28 +1146,6 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "afb14130fc3b",
-          "ts": "a3a8d2a08953",
-          "lean": "073f6af238d7"
-        },
-        "result": "pass",
-        "notes": "q as braiding eigenvalue on S^2V, forced (lam_sym,lam_anti)=(q,-q^-1) by det=-1, Hecke (T-q)(T+q^-1)=0; well-posed categorical extraction.",
-        "reviewed_at": "2026-07-07T14:26:55.826701Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.826701Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.82
         }
       }
     ],
@@ -1309,28 +1189,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "afb14130fc3b",
-          "ts": "a3a8d2a08953",
-          "lean": "073f6af238d7"
-        },
-        "result": "pass",
-        "notes": "Standard Kassel manipulation, but framed as a proof that the substrate q is fully fixed by the categorical braiding (microscopic->macroscopic constraint); modest genuine novelty.",
-        "reviewed_at": "2026-07-07T14:26:55.826701Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.826701Z"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.72
-        }
       }
     ],
     "proof-statement-integrity": [
@@ -1369,66 +1227,10 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "afb14130fc3b",
-          "ts": "a3a8d2a08953",
-          "lean": "073f6af238d7"
-        },
-        "result": "pass",
-        "notes": "Main thm braiding_eigenvalue_extraction genuinely derives lambda_anti=-q^-1 + Hecke relation from det constraint (field_simp/ring/linarith), sorry-free; spectral decomp honestly axiomatized as the wall (axiom + kassel1995 Ref). Faithful to md.",
-        "reviewed_at": "2026-07-07T14:26:55.826701Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.826701Z"
-        }
       }
     ],
-    "proof-no-self-assuming-projection": [
-      {
-        "field_hash": {
-          "md": "afb14130fc3b",
-          "ts": "a3a8d2a08953",
-          "lean": "073f6af238d7"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.826701Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.826701Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No self-assuming projection detected."
-      }
-    ],
-    "proof-no-trivial-true": [
-      {
-        "field_hash": {
-          "md": "afb14130fc3b",
-          "ts": "a3a8d2a08953",
-          "lean": "073f6af238d7"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.826701Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.826701Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Not a trivial true goal."
-      }
-    ],
+    "proof-no-self-assuming-projection": [],
+    "proof-no-trivial-true": [],
     "proof-no-false-premise": [
       {
         "field_hash": {
@@ -1464,24 +1266,6 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "afb14130fc3b",
-          "ts": "a3a8d2a08953",
-          "lean": "073f6af238d7"
-        },
-        "result": "pass",
-        "notes": "Premises lam_sym!=0, lam_anti!=0, lam_sym*lam_anti=-1 jointly satisfiable in R_q=Z[q,q^-1] (q, -q^-1); not contradictory.",
-        "reviewed_at": "2026-07-07T14:26:55.826701Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.826701Z"
         }
       }
     ],
@@ -1521,24 +1305,6 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
-      },
-      {
-        "field_hash": {
-          "md": "afb14130fc3b",
-          "ts": "a3a8d2a08953",
-          "lean": "073f6af238d7"
-        },
-        "result": "pass",
-        "notes": "In proved thms hls/hla/hdet all consumed (h_anti_val via field_simp, struct fields); classical_limit/quantum_regime use their hyps. No dead binders in proof bodies.",
-        "reviewed_at": "2026-07-07T14:26:55.826701Z",
-        "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.826701Z"
-        }
       }
     ],
     "proof-no-decide-masking": [
@@ -1559,311 +1325,21 @@
         "reviewed_at": "2026-06-22T02:56:37.908Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Stub uses decide/trivial masking."
-      },
-      {
-        "field_hash": {
-          "md": "afb14130fc3b",
-          "ts": "a3a8d2a08953",
-          "lean": "073f6af238d7"
-        },
-        "result": "pass",
-        "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/quantum-observable-universes/braiding-eigenvalue-extraction.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-07-07T14:26:55.826701Z",
-        "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.826701Z"
-        }
       }
     ],
-    "da-false-claim": [
-      {
-        "field_hash": {
-          "md": "afb14130fc3b",
-          "ts": "a3a8d2a08953",
-          "lean": "073f6af238d7"
-        },
-        "result": "warn",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.826701Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.826701Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "braiding-eigenvalue-extraction.lean:1",
-        "notes": "The mathematical claims in 'Extraction of $q$ from the braiding eigenvalues' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/quantum-observable-universes/braiding-eigenvalue-extraction.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/CategoryTheory/Monoidal/Braided/Basic.olean' of module Mathlib.CategoryTheory.Monoidal.Braided.Basic does not exist."
-      }
-    ],
-    "da-vacuous": [
-      {
-        "field_hash": {
-          "md": "afb14130fc3b",
-          "ts": "a3a8d2a08953",
-          "lean": "073f6af238d7"
-        },
-        "result": "fail",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.826701Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.826701Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "major",
-        "evidence": "braiding-eigenvalue-extraction.lean:1",
-        "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/braiding-eigenvalue-extraction.lean contains 'sorry' placeholders, rendering the formal proof vacuous."
-      }
-    ],
-    "da-circular": [
-      {
-        "field_hash": {
-          "md": "afb14130fc3b",
-          "ts": "a3a8d2a08953",
-          "lean": "073f6af238d7"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.826701Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.826701Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "braiding-eigenvalue-extraction.ts:1",
-        "notes": "No circular reasoning or self-assuming definitions detected in 'Extraction of $q$ from the braiding eigenvalues'."
-      }
-    ],
-    "da-overclaim": [
-      {
-        "field_hash": {
-          "md": "afb14130fc3b",
-          "ts": "a3a8d2a08953",
-          "lean": "073f6af238d7"
-        },
-        "result": "warn",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.826701Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.826701Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "notes": "The prose presents 'Extraction of $q$ from the braiding eigenvalues' as verified, but the sibling Lean file fails to compile."
-      }
-    ],
-    "da-hidden-dof": [
-      {
-        "field_hash": {
-          "md": "afb14130fc3b",
-          "ts": "a3a8d2a08953",
-          "lean": "073f6af238d7"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.826701Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.826701Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "braiding-eigenvalue-extraction.ts:1",
-        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Extraction of $q$ from the braiding eigenvalues'."
-      }
-    ],
-    "da-non-sequitur": [
-      {
-        "field_hash": {
-          "md": "afb14130fc3b",
-          "ts": "a3a8d2a08953",
-          "lean": "073f6af238d7"
-        },
-        "result": "warn",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.826701Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.826701Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "braiding-eigenvalue-extraction.lean:1",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/quantum-observable-universes/braiding-eigenvalue-extraction.lean."
-      }
-    ],
-    "da-lean-narrative-divergence": [
-      {
-        "field_hash": {
-          "md": "afb14130fc3b",
-          "ts": "a3a8d2a08953",
-          "lean": "073f6af238d7"
-        },
-        "result": "fail",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.826701Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.826701Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/braiding-eigenvalue-extraction.lean fails compilation, causing divergence from the narrative."
-      }
-    ],
-    "da-citation-misuse": [
-      {
-        "field_hash": {
-          "md": "afb14130fc3b",
-          "ts": "a3a8d2a08953",
-          "lean": "073f6af238d7"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.826701Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.826701Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "braiding-eigenvalue-extraction.ts:1",
-        "notes": "The citations kassel1995, woronowicz1988 in 'Extraction of $q$ from the braiding eigenvalues' are consistent with the sources referenced in the text."
-      }
-    ],
-    "da-definitional-ambiguity": [
-      {
-        "field_hash": {
-          "md": "afb14130fc3b",
-          "ts": "a3a8d2a08953",
-          "lean": "073f6af238d7"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.826701Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.826701Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "braiding-eigenvalue-extraction.ts:1",
-        "notes": "Key terms and symbols in 'Extraction of $q$ from the braiding eigenvalues' are mathematically defined and unambiguous."
-      }
-    ],
-    "da-empirical-fragility": [
-      {
-        "field_hash": {
-          "md": "afb14130fc3b",
-          "ts": "a3a8d2a08953",
-          "lean": "073f6af238d7"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.826701Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.826701Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "braiding-eigenvalue-extraction.ts:1",
-        "notes": "The empirical claims in 'Extraction of $q$ from the braiding eigenvalues' are structurally anchored to the QOU mass framework and are stable."
-      }
-    ],
-    "da-physical-implausibility": [
-      {
-        "field_hash": {
-          "md": "afb14130fc3b",
-          "ts": "a3a8d2a08953",
-          "lean": "073f6af238d7"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.826701Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.826701Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "braiding-eigenvalue-extraction.ts:1",
-        "notes": "The physical concepts described in 'Extraction of $q$ from the braiding eigenvalues' are consistent with quantum observable mechanics."
-      }
-    ],
-    "da-reproducibility": [
-      {
-        "field_hash": {
-          "md": "afb14130fc3b",
-          "ts": "a3a8d2a08953",
-          "lean": "073f6af238d7"
-        },
-        "result": "fail",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.826701Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.826701Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "braiding-eigenvalue-extraction.lean:1 \u2014 content/quantum-observable-universe/quantum-observable-universes/braiding-eigenvalue-extraction.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/CategoryTheory/Monoidal/Braided/Basic.olean' of module Mathlib.CategoryTheory.Monoidal.Braided.Basic does not exist",
-        "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/braiding-eigenvalue-extraction.lean fails compilation, indicating a reproducibility failure."
-      }
-    ],
-    "da-referee-verdict": [
-      {
-        "field_hash": {
-          "md": "afb14130fc3b",
-          "ts": "a3a8d2a08953",
-          "lean": "073f6af238d7"
-        },
-        "result": "fail",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.826701Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.826701Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "major",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/braiding-eigenvalue-extraction.lean contains 'sorry' placeholders.",
-        "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/braiding-eigenvalue-extraction.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous."
-      }
-    ],
+    "da-false-claim": [],
+    "da-vacuous": [],
+    "da-circular": [],
+    "da-overclaim": [],
+    "da-hidden-dof": [],
+    "da-non-sequitur": [],
+    "da-lean-narrative-divergence": [],
+    "da-citation-misuse": [],
+    "da-definitional-ambiguity": [],
+    "da-empirical-fragility": [],
+    "da-physical-implausibility": [],
+    "da-reproducibility": [],
+    "da-referee-verdict": [],
     "bib-cite-resolves": [
       {
         "field_hash": {
@@ -1884,25 +1360,7 @@
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote seq9 enforcing H1-H8. Stripped the pure-meta novelty block entirely. Streamlined the spectral chart derivation. Condensed the classical vs quantum planck limits into tight declarative statements.",
-        "reviewed_at": "2026-07-07T14:26:55.826701Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.826701Z"
-        },
-        "field_hash": {
-          "md": "afb14130fc3b",
-          "ts": "a3a8d2a08953",
-          "lean": "073f6af238d7"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:55.826701Z"
 }

@@ -1114,23 +1114,6 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Statement contains only the bare claim without physical interpretation.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "88f9569dd3e4",
-          "ts": "c1a659e74212"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-26",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.882849Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.882849Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes without major issues."
       }
     ],
     "fit-section-chapter": [
@@ -1151,23 +1134,6 @@
         "reviewed_at": "2026-06-22T02:57:04.427Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
-      },
-      {
-        "field_hash": {
-          "md": "88f9569dd3e4",
-          "ts": "c1a659e74212"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-26",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.882849Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.882849Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes without major issues."
       }
     ],
     "wall-side-statement": [
@@ -1186,23 +1152,6 @@
         "notes": "The sibling Lean file content/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.lean is missing entirely.",
         "evidence": "content/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.md:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "88f9569dd3e4",
-          "ts": "c1a659e74212"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-26",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.882849Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.882849Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes without major issues."
       }
     ],
     "wall-side-proof": [
@@ -1223,23 +1172,6 @@
         "reviewed_at": "2026-06-22T02:57:05.086Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
-      },
-      {
-        "field_hash": {
-          "md": "88f9569dd3e4",
-          "ts": "c1a659e74212"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-26",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.882849Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.882849Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes without major issues."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1260,23 +1192,6 @@
         "reviewed_at": "2026-06-22T02:57:05.496Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
-      },
-      {
-        "field_hash": {
-          "md": "88f9569dd3e4",
-          "ts": "c1a659e74212"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-26",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.882849Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.882849Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes without major issues."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1301,23 +1216,6 @@
         "reviewed_at": "2026-06-22T02:57:05.882Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
-      },
-      {
-        "field_hash": {
-          "md": "88f9569dd3e4",
-          "ts": "c1a659e74212"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-26",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.882849Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.882849Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes without major issues."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1342,23 +1240,6 @@
         "reviewed_at": "2026-06-22T02:57:06.250Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
-      },
-      {
-        "field_hash": {
-          "md": "88f9569dd3e4",
-          "ts": "c1a659e74212"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-26",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.882849Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.882849Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes without major issues."
       }
     ],
     "proof-rater-novelty": [
@@ -1383,23 +1264,6 @@
         "reviewed_at": "2026-06-22T02:57:06.651Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
-      },
-      {
-        "field_hash": {
-          "md": "88f9569dd3e4",
-          "ts": "c1a659e74212"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-26",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.882849Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.882849Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes without major issues."
       }
     ],
     "proof-statement-integrity": [
@@ -1420,23 +1284,6 @@
         "reviewed_at": "2026-06-22T02:57:06.991Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
-      },
-      {
-        "field_hash": {
-          "md": "88f9569dd3e4",
-          "ts": "c1a659e74212"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-26",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.882849Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.882849Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes without major issues."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1457,23 +1304,6 @@
         "reviewed_at": "2026-06-22T02:57:07.386Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
-      },
-      {
-        "field_hash": {
-          "md": "88f9569dd3e4",
-          "ts": "c1a659e74212"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-26",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.882849Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.882849Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes without major issues."
       }
     ],
     "proof-no-trivial-true": [
@@ -1494,23 +1324,6 @@
         "reviewed_at": "2026-06-22T02:57:07.803Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
-      },
-      {
-        "field_hash": {
-          "md": "88f9569dd3e4",
-          "ts": "c1a659e74212"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-26",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.882849Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.882849Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes without major issues."
       }
     ],
     "proof-no-false-premise": [
@@ -1531,23 +1344,6 @@
         "reviewed_at": "2026-06-22T02:57:08.181Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
-      },
-      {
-        "field_hash": {
-          "md": "88f9569dd3e4",
-          "ts": "c1a659e74212"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-26",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.882849Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.882849Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes without major issues."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1568,23 +1364,6 @@
         "reviewed_at": "2026-06-22T02:57:09.523Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
-      },
-      {
-        "field_hash": {
-          "md": "88f9569dd3e4",
-          "ts": "c1a659e74212"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-26",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.882849Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.882849Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes without major issues."
       }
     ],
     "proof-no-decide-masking": [
@@ -1605,23 +1384,6 @@
         "reviewed_at": "2026-06-22T02:57:09.877Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
-      },
-      {
-        "field_hash": {
-          "md": "88f9569dd3e4",
-          "ts": "c1a659e74212"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-26",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.882849Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.882849Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-false-claim": [
@@ -1640,23 +1402,6 @@
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "88f9569dd3e4",
-          "ts": "c1a659e74212"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-26",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.882849Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.882849Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-vacuous": [
@@ -1674,23 +1419,6 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-vacuous.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "88f9569dd3e4",
-          "ts": "c1a659e74212"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-26",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.882849Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.882849Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-circular": [
@@ -1709,23 +1437,6 @@
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "88f9569dd3e4",
-          "ts": "c1a659e74212"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-26",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.882849Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.882849Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-overclaim": [
@@ -1743,23 +1454,6 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "88f9569dd3e4",
-          "ts": "c1a659e74212"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-26",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.882849Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.882849Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-hidden-dof": [
@@ -1778,23 +1472,6 @@
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "88f9569dd3e4",
-          "ts": "c1a659e74212"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-26",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.882849Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.882849Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-non-sequitur": [
@@ -1813,23 +1490,6 @@
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "88f9569dd3e4",
-          "ts": "c1a659e74212"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-26",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.882849Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.882849Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-citation-misuse": [
@@ -1848,23 +1508,6 @@
         "notes": "No issues found for da-citation-misuse.",
         "evidence": "content/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "88f9569dd3e4",
-          "ts": "c1a659e74212"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-26",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.882849Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.882849Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1883,23 +1526,6 @@
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "88f9569dd3e4",
-          "ts": "c1a659e74212"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-26",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.882849Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.882849Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-empirical-fragility": [
@@ -1918,23 +1544,6 @@
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "88f9569dd3e4",
-          "ts": "c1a659e74212"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-26",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.882849Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.882849Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-physical-implausibility": [
@@ -1953,23 +1562,6 @@
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.ts:1",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "88f9569dd3e4",
-          "ts": "c1a659e74212"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-26",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.882849Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.882849Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-reproducibility": [
@@ -1987,23 +1579,6 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-reproducibility.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "88f9569dd3e4",
-          "ts": "c1a659e74212"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-26",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.882849Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.882849Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-referee-verdict": [
@@ -2038,23 +1613,6 @@
         "reviewed_at": "2026-06-28T22:43:02.109Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "verdict: clean"
-      },
-      {
-        "field_hash": {
-          "md": "88f9569dd3e4",
-          "ts": "c1a659e74212"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-26",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.882849Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.882849Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes without major issues."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -2073,43 +1631,9 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The referenced Lean file content/quantum-observable-universe/mass-theory/cyclotomic-depth3-dimension-synthesis.lean is missing, leading to complete divergence.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "88f9569dd3e4",
-          "ts": "c1a659e74212"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-26",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.882849Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.882849Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes without major issues."
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
-        "reviewed_at": "2026-07-07T14:26:56.882849Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.882849Z"
-        },
-        "field_hash": {
-          "md": "88f9569dd3e4",
-          "ts": "c1a659e74212"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.882849Z"
 }

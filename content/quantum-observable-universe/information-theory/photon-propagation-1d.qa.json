@@ -1437,22 +1437,6 @@
         "reviewed_at": "2026-06-22T02:56:27.569Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
-      },
-      {
-        "field_hash": {
-          "md": "2650b9c0907b",
-          "ts": "f8acd6bef2f9"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.558903Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.558903Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-false-claim": [
@@ -1471,22 +1455,6 @@
         "notes": "No false claims identified in 'Photon modes and $q$-deformed dispersion in a 1D channel': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/photon-propagation-1d.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "2650b9c0907b",
-          "ts": "f8acd6bef2f9"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.558903Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.558903Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-vacuous": [
@@ -1504,22 +1472,6 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The block 'Photon modes and $q$-deformed dispersion in a 1D channel' presents substantial mathematical content: A photon is the trivial strand $\\gamma$ \u2014 knot-trivial under Markov closure \u2014 so...",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "2650b9c0907b",
-          "ts": "f8acd6bef2f9"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.558903Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.558903Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-circular": [
@@ -1538,22 +1490,6 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Photon modes and $q$-deformed dispersion in a 1D channel'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/photon-propagation-1d.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "2650b9c0907b",
-          "ts": "f8acd6bef2f9"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.558903Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.558903Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-overclaim": [
@@ -1571,22 +1507,6 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No overclaims: the scope of 'Photon modes and $q$-deformed dispersion in a 1D channel' is appropriately qualified.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "2650b9c0907b",
-          "ts": "f8acd6bef2f9"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.558903Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.558903Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-hidden-dof": [
@@ -1605,22 +1525,6 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Photon modes and $q$-deformed dispersion in a 1D channel'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/photon-propagation-1d.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "2650b9c0907b",
-          "ts": "f8acd6bef2f9"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.558903Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.558903Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-non-sequitur": [
@@ -1639,22 +1543,6 @@
         "notes": "The argument flow in 'Photon modes and $q$-deformed dispersion in a 1D channel' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/photon-propagation-1d.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "2650b9c0907b",
-          "ts": "f8acd6bef2f9"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.558903Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.558903Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1672,22 +1560,6 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "2650b9c0907b",
-          "ts": "f8acd6bef2f9"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.558903Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.558903Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-citation-misuse": [
@@ -1706,22 +1578,6 @@
         "notes": "No citations are present in 'Photon modes and $q$-deformed dispersion in a 1D channel', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/photon-propagation-1d.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "2650b9c0907b",
-          "ts": "f8acd6bef2f9"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.558903Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.558903Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1740,22 +1596,6 @@
         "notes": "Key terms and symbols in 'Photon modes and $q$-deformed dispersion in a 1D channel' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/photon-propagation-1d.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "2650b9c0907b",
-          "ts": "f8acd6bef2f9"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.558903Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.558903Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-empirical-fragility": [
@@ -1774,25 +1614,6 @@
         "notes": "The algebraic and logical relations in 'Photon modes and $q$-deformed dispersion in a 1D channel' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/photon-propagation-1d.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "2650b9c0907b",
-          "ts": "f8acd6bef2f9"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.558903Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.558903Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "severity": "major",
-        "evidence": "group velocity acquires O(1 - q^{-1}) corrections",
-        "notes": "Asserting that the speed of light is dispersive and acquires macroscopic O(0.1) corrections strongly violates established constraints on Lorentz invariance from gamma-ray bursts."
       }
     ],
     "da-physical-implausibility": [
@@ -1811,22 +1632,6 @@
         "notes": "The physical concepts described in 'Photon modes and $q$-deformed dispersion in a 1D channel' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/photon-propagation-1d.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "2650b9c0907b",
-          "ts": "f8acd6bef2f9"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.558903Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.558903Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-reproducibility": [
@@ -1845,22 +1650,6 @@
         "notes": "The derivation steps and formal definitions in 'Photon modes and $q$-deformed dispersion in a 1D channel' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/photon-propagation-1d.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "2650b9c0907b",
-          "ts": "f8acd6bef2f9"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.558903Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.558903Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-referee-verdict": [
@@ -1880,42 +1669,9 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Photon modes and $q$-deformed dispersion in a 1D channel' are consistent."
-      },
-      {
-        "field_hash": {
-          "md": "2650b9c0907b",
-          "ts": "f8acd6bef2f9"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-20",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.558903Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.558903Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote blocks linearly: stripped forward references (e.g. 'The following sections define...', 'We document its relation...'), removed redundancy between intro and definition blocks, unified terminology around one-dimensional channels, and tightened phrasing for brevity and impact. Preserved all math and original file markers.",
-        "reviewed_at": "2026-07-07T14:26:55.558903Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.558903Z"
-        },
-        "field_hash": {
-          "md": "2650b9c0907b",
-          "ts": "f8acd6bef2f9"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:55.558903Z"
 }

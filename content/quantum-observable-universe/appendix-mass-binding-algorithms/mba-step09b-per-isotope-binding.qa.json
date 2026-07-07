@@ -1,24 +1,7 @@
 {
   "$schema": "block-qa/v1",
   "criteria": {
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Tightened step-by-step prose descriptions for mass-binding algorithms. Condensed descriptions into short, declarative sentences, applying Milnor brevity standards.",
-        "reviewed_at": "2026-07-07T14:26:56.220165Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.220165Z"
-        },
-        "field_hash": {
-          "md": "42c559b87080",
-          "ts": "daaef739191a"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "source_hashes": {
     "md": "42c559b87080",

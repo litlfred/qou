@@ -33,45 +33,8 @@
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
       }
     ],
-    "proof-narrative-lean-equiv": [
-      {
-        "field_hash": {
-          "md": "640af1af8ab6",
-          "ts": "9d978ebf8e3a",
-          "lean": "9439400fac34"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.874673Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.874673Z",
-        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:lusztig-vs-hermitian-bar' \u2192 expected 'lusztig_vs_hermitian_bar'; Lean declares: lusztig_eq_hermitian_iff_real, lusztig_eq_hermitian_on_real. Structural match via content."
-      }
-    ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote mass-theory_seq7.md for Milnor standards: clean prose, declarative.",
-        "reviewed_at": "2026-07-07T14:26:56.874673Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.874673Z"
-        },
-        "field_hash": {
-          "md": "640af1af8ab6",
-          "ts": "9d978ebf8e3a",
-          "lean": "9439400fac34"
-        }
-      }
-    ]
+    "proof-narrative-lean-equiv": [],
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.874673Z"
 }

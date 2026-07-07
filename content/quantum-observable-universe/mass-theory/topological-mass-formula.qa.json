@@ -1048,45 +1048,8 @@
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4"
       }
     ],
-    "proof-narrative-lean-equiv": [
-      {
-        "field_hash": {
-          "md": "64cbc856c8de",
-          "ts": "075466dde826",
-          "lean": "13a4384e1534"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.938216Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.938216Z",
-        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:topological-mass-formula' \u2192 expected 'topological_mass_formula'; Lean declares: quantumPlanck, quantumPlanck_pos, archimedeanMass, ArchimedeanMassFormula, archimedeanMass_pos. Structural match via content."
-      }
-    ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote mass-theory_seq0.md for Milnor standards: clean prose, declarative.",
-        "reviewed_at": "2026-07-07T14:26:56.938216Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.938216Z"
-        },
-        "field_hash": {
-          "md": "64cbc856c8de",
-          "ts": "075466dde826",
-          "lean": "13a4384e1534"
-        }
-      }
-    ]
+    "proof-narrative-lean-equiv": [],
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.938216Z"
 }

@@ -1047,25 +1047,7 @@
         "reviewed_sha": "e28e45e2256ea73187107f230cc7beeb37a6c301"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote observations_seq10.md. Stripped subjective wording, maintained exact definitions, clarified sentence structures. Adhered to 'we' / present tense.",
-        "reviewed_at": "2026-07-07T14:26:56.601862Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.601862Z"
-        },
-        "field_hash": {
-          "md": "8afb2d037f94",
-          "ts": "99909304258d",
-          "lean": "bdcd3868cf88"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.601862Z"
 }
