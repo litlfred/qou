@@ -16,11 +16,17 @@ it: the 4₁ Ohtsuki ladder to **order 11 at dps 220** (Vol recovered to rel `6�
 
 ## Finding: the action is REAL-positive, ≈ 0.69
 
+The **forcing reason** for reality is amphichirality (§ below, `CS(4₁)=0`); the
+sign structure is **corroborating evidence, not a proof**:
+
 - **κ_k are all positive and monotone growing** (`0.554, 0.731, 2.655, 13.1, 84.6,
   677, 6444, 71114, 895302, 1.2×10⁷, 2.6×10⁸`). A single **real-positive** Borel
-  singularity gives `b_k = κ_k/k! ~ C/A^k` — all one sign. A complex-conjugate pair
-  `|A|e^{±iθ}` would give `κ_k ~ (k!/|A|^k)·2cos(kθ+φ)` — **sign-oscillating**. No
-  oscillation through 11 orders ⇒ **real-positive dominant singularity**.
+  singularity gives `b_k = κ_k/k! ~ C/A^k` — all one sign; a complex-conjugate pair
+  `|A|e^{±iθ}` gives `κ_k ~ (k!/|A|^k)·2cos(kθ+φ)` — sign-oscillating. No oscillation
+  through 11 orders is **consistent with** a real-positive dominant singularity —
+  but is **not** a logical proof: a small-phase pair (`θ ≲ π/11 ≈ 16°`) would not yet
+  have flipped a sign, and a single dominant singularity is not guaranteed at finite
+  order. (This is the same finite-order-positivity caveat the PR exists to respect.)
 - Large-order ratio `A_k = k·κ_{k-1}/κ_k`: `…, 0.750, 0.735, 0.725, 0.715, …`
   (smoothly decreasing); Richardson (k=6..10) ⇒ **A ≈ 0.69**. Closest framework
   candidates `2/e ≈ 0.736` (rel 5.7%), `Vol/π ≈ 0.646` (rel 7%) — **none clean;
