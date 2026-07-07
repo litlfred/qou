@@ -592,16 +592,28 @@ candidates (hyperbolic/compact × $m_e$/$E_{\text{cross}}$) miss by
 23–99 %. The zero-point family is excluded *as the unit* under these
 anchors; the zero-point reading of the $-\tfrac12$ itself is untouched.
 
-**D3 — next formalize-first target (note).** The reeb-flow chain's one
-residual postulate (*linking amplitude = CWF unit-tangent functional on the
-channel direction $(1, z)$*) reads, in the toroidal frame, as: the channel
-direction is the winding slope $\tan\theta = z$ of a geodesic pair on the
-shared torus, and the CWF functional is the normalized winding tangent. The
-concrete discharge candidate: **prove that the Gauss linking integral of a
-$(1, z)$-slope curve pair on the Clifford torus equals the normalized
-exchange component $\sin\theta = g$** — classical differential geometry,
-plausibly provable, and it would reduce the ²H derivation chain to the
-deformation choice + unit. Queued as the program's next step;
+**D3 — the CWF postulate discharged to a units convention (3/3,
+[`gauss_linking_channel_slope_probe.py`](../../computations/substrate/gauss_linking_channel_slope_probe.py)).**
+The reeb-flow chain's one residual postulate (*linking amplitude = CWF
+unit-tangent functional on the channel direction $(1, z)$*) is now plain
+linking geometry. Exactly (symbolic, geometry-independent): on a torus with
+cycle circumferences $(2\pi R, 2\pi r)$, the $(1,n)$ geodesic pair has
+metric slope $z = nr/R$, period length $L = 2\pi R\sqrt{1+z^2}$, and
+$|\mathrm{Lk}| = n$ (Gauss-integral-verified to $10^{-7}$ for $n = 1,2,3$;
+sign = orientation convention), so
+
+$$
+\frac{|\mathrm{Lk}| \cdot 2\pi r}{L} \;=\; \frac{z}{\sqrt{1+z^2}} \;=\; g
+\qquad \text{for every } (R, r).
+$$
+
+**The linking number per unit arc length, in exchange-cycle units, is
+$\sin\theta = g$ — derived, not postulated.** Composed with §2d (tangent =
+Markov weight) and D1 ($z$ = canonical Markov parameter), the ²H magnitude
+chain is now: canonical Markov parameter → channel slope → linking rate.
+The residual assumption shrinks to a **normalization convention** (arc
+length measured in exchange-cycle units). Remaining ²H opens: that
+convention, the D1 deformation choice, and $E_{\text{unit}}$.
 `conj:whipple-rotation-intertwining` is the bar-involution face of the same
 identification.
 
