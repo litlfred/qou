@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-07-07T14:37:52.214804+00:00",
-  "commitSha": "88448b7c28e8316b8a4a08c632220250d941eeb7",
+  "computedAt": "2026-07-07T14:43:44.657941+00:00",
+  "commitSha": "2ac1bc97e663e514a3d27348540e4e8e31443cf4",
   "assertions": [
     {
       "name": "WP1_wenzl_boundaries_exist",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 41,
+  "durationMs": 58,
   "computation": "qbeta-c4-wenzl-pochhammer-channel",
   "scriptFile": "qbeta_c4_wenzl_pochhammer_channel_probe.py",
-  "scriptHash": "10866c10453b",
-  "scriptCommitSha": "88448b7c28e8316b8a4a08c632220250d941eeb7",
+  "scriptHash": "30cf9b3ab8a4",
+  "scriptCommitSha": "2ac1bc97e663e514a3d27348540e4e8e31443cf4",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -80,9 +80,28 @@
     "wp2_c4even_b_sqrt3": "-120701/1920",
     "wp2_max_rational_height": 2483340421,
     "wp2_is_generic_not_structured": true,
+    "wp3_break_rung_from_c6c10_witness": 8,
     "wp3_c8_break_is_eight_q_boundary": true,
     "channel": "phase / root-of-unity (surviving candidate); magnitude-channel candidates q-Hermite/q-Bessel/toroidal excluded",
     "determines_c4": false,
-    "handoff": "PR #3458 evaluation map in the Wenzl-Pochhammer basis"
+    "handoff": "PR #3458 evaluation map in the Wenzl-Pochhammer basis",
+    "upstream_witness_hashes": [
+      {
+        "path": "qbeta-ck-sseries-exact-rational.witness.json",
+        "sha256": "1b1a4e57157efd097c58a18696529975cf62a2af93ce0bd69376aaead86469f5",
+        "size_bytes": 3999,
+        "commitSha": "45676495cbb013a717c12ee84569a564d61df977",
+        "scriptCommitSha": "unknown",
+        "computedAt": "2026-07-03T11:24:32.851063+00:00"
+      },
+      {
+        "path": "qbeta-c6-c10-crossanchor-falsification.witness.json",
+        "sha256": "42979a75824e9b6502ead538c0bcb357f162a339f91875ce51a4e7b4ea537318",
+        "size_bytes": 4560,
+        "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
+        "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
+        "computedAt": "2026-06-22T13:27:29.667225+00:00"
+      }
+    ]
   }
 }
