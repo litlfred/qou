@@ -800,254 +800,175 @@
         "notes": "The block content is well-aligned with the chapter scope."
       }
     ],
-    "da-false-claim": [
-      {
-        "field_hash": {
-          "md": "bdbdef9d9627",
-          "ts": "e9d3b15aef61"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent"
-        },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "su2-emergence-dagger-unitarity-proof.ts:1",
-        "notes": "No false claims identified in the prose of 'Proof: Frobenius dagger forces $G \\\\subseteq \\\\mathrm{U}(2)$'; the mathematical reasoning concerning '$\\int_A \\colon A \\to \\mathbf{1}$ is non-degenerate, inducing the' is consistent."
+    "da-false-claim": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:32:59+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-vacuous": [
-      {
-        "field_hash": {
-          "md": "bdbdef9d9627",
-          "ts": "e9d3b15aef61"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent"
-        },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "su2-emergence-dagger-unitarity-proof.ts:1",
-        "notes": "The block 'Proof: Frobenius dagger forces $G \\\\subseteq \\\\mathrm{U}(2)$' presents substantial mathematical content: '$\\int_A \\colon A \\to \\mathbf{1}$ is non-degenerate, inducing the'."
+    },
+    "da-vacuous": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:32:59+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-circular": [
-      {
-        "field_hash": {
-          "md": "bdbdef9d9627",
-          "ts": "e9d3b15aef61"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent"
-        },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "su2-emergence-dagger-unitarity-proof.ts:1",
-        "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Proof: Frobenius dagger forces $G \\\\subseteq \\\\mathrm{U}(2)$' (which asserts '$\\int_A \\colon A \\to \\mathbf{1}$ is non-degenerate, inducing the')."
+    },
+    "da-circular": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:32:59+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-overclaim": [
-      {
-        "field_hash": {
-          "md": "bdbdef9d9627",
-          "ts": "e9d3b15aef61"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent"
-        },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "su2-emergence-dagger-unitarity-proof.ts:1",
-        "notes": "The remarks and narrative scope in 'Proof: Frobenius dagger forces $G \\\\subseteq \\\\mathrm{U}(2)$' concerning '$\\int_A \\colon A \\to \\mathbf{1}$ is non-degenerate, inducing the' are appropriately qualified."
+    },
+    "da-overclaim": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:32:59+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-hidden-dof": [
-      {
-        "field_hash": {
-          "md": "bdbdef9d9627",
-          "ts": "e9d3b15aef61"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent"
-        },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "su2-emergence-dagger-unitarity-proof.ts:1",
-        "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Proof: Frobenius dagger forces $G \\\\subseteq \\\\mathrm{U}(2)$'."
+    },
+    "da-hidden-dof": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:32:59+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-non-sequitur": [
-      {
-        "field_hash": {
-          "md": "bdbdef9d9627",
-          "ts": "e9d3b15aef61"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent"
-        },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "su2-emergence-dagger-unitarity-proof.ts:1",
-        "notes": "The prose arguments in 'Proof: Frobenius dagger forces $G \\\\subseteq \\\\mathrm{U}(2)$' proceed logically through the stated steps: '$\\int_A \\colon A \\to \\mathbf{1}$ is non-degenerate, inducing the'."
+    },
+    "da-non-sequitur": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:32:59+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-lean-narrative-divergence": [
-      {
-        "field_hash": {
-          "md": "bdbdef9d9627",
-          "ts": "e9d3b15aef61"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent"
-        },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "su2-emergence-dagger-unitarity-proof.ts:1",
-        "notes": "No Lean sibling required; the narrative of 'Proof: Frobenius dagger forces $G \\\\subseteq \\\\mathrm{U}(2)$' matches the expected configuration."
+    },
+    "da-lean-narrative-divergence": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:32:59+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-citation-misuse": [
-      {
-        "field_hash": {
-          "md": "bdbdef9d9627",
-          "ts": "e9d3b15aef61"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent"
-        },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "su2-emergence-dagger-unitarity-proof.ts:1",
-        "notes": "No citations are present in 'Proof: Frobenius dagger forces $G \\\\subseteq \\\\mathrm{U}(2)$', hence no citation misuse is possible."
+    },
+    "da-citation-misuse": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:32:59+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-definitional-ambiguity": [
-      {
-        "field_hash": {
-          "md": "bdbdef9d9627",
-          "ts": "e9d3b15aef61"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent"
-        },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "su2-emergence-dagger-unitarity-proof.ts:1",
-        "notes": "Key terms and symbols in 'Proof: Frobenius dagger forces $G \\\\subseteq \\\\mathrm{U}(2)$' (e.g. from '$\\int_A \\colon A \\to \\mathbf{1}$ is non-degenerate, inducing the') are mathematically defined and unambiguous."
+    },
+    "da-definitional-ambiguity": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:32:59+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-empirical-fragility": [
-      {
-        "field_hash": {
-          "md": "bdbdef9d9627",
-          "ts": "e9d3b15aef61"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent"
-        },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "su2-emergence-dagger-unitarity-proof.ts:1",
-        "notes": "The empirical claims in 'Proof: Frobenius dagger forces $G \\\\subseteq \\\\mathrm{U}(2)$' (quoting '$\\int_A \\colon A \\to \\mathbf{1}$ is non-degenerate, inducing the') are structurally anchored to the QOU mass framework and are stable."
+    },
+    "da-empirical-fragility": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:32:59+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-physical-implausibility": [
-      {
-        "field_hash": {
-          "md": "bdbdef9d9627",
-          "ts": "e9d3b15aef61"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent"
-        },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "su2-emergence-dagger-unitarity-proof.ts:1",
-        "notes": "The physical concepts described in 'Proof: Frobenius dagger forces $G \\\\subseteq \\\\mathrm{U}(2)$' are consistent with quantum observable mechanics."
+    },
+    "da-physical-implausibility": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:32:59+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-reproducibility": [
-      {
-        "field_hash": {
-          "md": "bdbdef9d9627",
-          "ts": "e9d3b15aef61"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent"
-        },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "su2-emergence-dagger-unitarity-proof.ts:1",
-        "notes": "The derivation steps and formal definitions in 'Proof: Frobenius dagger forces $G \\\\subseteq \\\\mathrm{U}(2)$' are reproducible."
+    },
+    "da-reproducibility": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:32:59+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-referee-verdict": [
-      {
-        "field_hash": {
-          "md": "bdbdef9d9627",
-          "ts": "e9d3b15aef61"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent"
-        },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "notes": "Referee verdict: clean.",
-        "verdict": "clean",
-        "referee_argument": "No significant objections; the mathematical claims in 'Proof: Frobenius dagger forces $G \\\\subseteq \\\\mathrm{U}(2)$' (concerning '$\\int_A \\colon A \\to \\mathbf{1}$ is non-degenerate, inducing the') are consistent and formally verified."
+    },
+    "da-referee-verdict": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:32:59+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ]
+    }
   },
   "updated_at": "2026-07-03T00:52:58.083Z"
 }

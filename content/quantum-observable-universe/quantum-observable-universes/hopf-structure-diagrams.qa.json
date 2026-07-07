@@ -854,280 +854,175 @@
         "notes": "The block content is well-aligned with the chapter scope."
       }
     ],
-    "da-false-claim": [
-      {
-        "field_hash": {
-          "md": "ea423d12411a",
-          "ts": "a4a3811131b1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.758494Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.758494Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "hopf-structure-diagrams.ts:1",
-        "notes": "No false claims identified in the prose of 'Hopf-algebra structure: coassociativity'; the mathematical reasoning concerning 'Write $\\mathcal{O}_q = \\mathcal{O}_q(\\mathrm{SU}(2))$.' is consistent."
+    "da-false-claim": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:00+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-vacuous": [
-      {
-        "field_hash": {
-          "md": "ea423d12411a",
-          "ts": "a4a3811131b1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.758494Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.758494Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "hopf-structure-diagrams.ts:1",
-        "notes": "The block 'Hopf-algebra structure: coassociativity' presents substantial mathematical content: 'Write $\\mathcal{O}_q = \\mathcal{O}_q(\\mathrm{SU}(2))$.'."
+    },
+    "da-vacuous": {
+      "result": "fail",
+      "notes": "Content is too brief and may be vacuous. author resolution needed",
+      "reviewed_at": "2026-07-07T23:33:00+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-circular": [
-      {
-        "field_hash": {
-          "md": "ea423d12411a",
-          "ts": "a4a3811131b1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.758494Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.758494Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "hopf-structure-diagrams.ts:1",
-        "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Hopf-algebra structure: coassociativity' (which asserts 'Write $\\mathcal{O}_q = \\mathcal{O}_q(\\mathrm{SU}(2))$.')."
+    },
+    "da-circular": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:00+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-overclaim": [
-      {
-        "field_hash": {
-          "md": "ea423d12411a",
-          "ts": "a4a3811131b1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.758494Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.758494Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "hopf-structure-diagrams.ts:1",
-        "notes": "The remarks and narrative scope in 'Hopf-algebra structure: coassociativity' concerning 'Write $\\mathcal{O}_q = \\mathcal{O}_q(\\mathrm{SU}(2))$.' are appropriately qualified."
+    },
+    "da-overclaim": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:00+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-hidden-dof": [
-      {
-        "field_hash": {
-          "md": "ea423d12411a",
-          "ts": "a4a3811131b1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.758494Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.758494Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "hopf-structure-diagrams.ts:1",
-        "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Hopf-algebra structure: coassociativity'."
+    },
+    "da-hidden-dof": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:00+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-non-sequitur": [
-      {
-        "field_hash": {
-          "md": "ea423d12411a",
-          "ts": "a4a3811131b1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.758494Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.758494Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "hopf-structure-diagrams.ts:1",
-        "notes": "The prose arguments in 'Hopf-algebra structure: coassociativity' proceed logically through the stated steps: 'Write $\\mathcal{O}_q = \\mathcal{O}_q(\\mathrm{SU}(2))$.'."
+    },
+    "da-non-sequitur": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:00+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-lean-narrative-divergence": [
-      {
-        "field_hash": {
-          "md": "ea423d12411a",
-          "ts": "a4a3811131b1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.758494Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.758494Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "hopf-structure-diagrams.ts:1",
-        "notes": "No Lean sibling required; the narrative of 'Hopf-algebra structure: coassociativity' matches the expected configuration."
+    },
+    "da-lean-narrative-divergence": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:00+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-citation-misuse": [
-      {
-        "field_hash": {
-          "md": "ea423d12411a",
-          "ts": "a4a3811131b1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.758494Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.758494Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "hopf-structure-diagrams.ts:1",
-        "notes": "No citations are present in 'Hopf-algebra structure: coassociativity', hence no citation misuse is possible."
+    },
+    "da-citation-misuse": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:00+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-definitional-ambiguity": [
-      {
-        "field_hash": {
-          "md": "ea423d12411a",
-          "ts": "a4a3811131b1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.758494Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.758494Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "hopf-structure-diagrams.ts:1",
-        "notes": "Key terms and symbols in 'Hopf-algebra structure: coassociativity' (e.g. from 'Write $\\mathcal{O}_q = \\mathcal{O}_q(\\mathrm{SU}(2))$.') are mathematically defined and unambiguous."
+    },
+    "da-definitional-ambiguity": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:00+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-empirical-fragility": [
-      {
-        "field_hash": {
-          "md": "ea423d12411a",
-          "ts": "a4a3811131b1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.758494Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.758494Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "hopf-structure-diagrams.ts:1",
-        "notes": "The empirical claims in 'Hopf-algebra structure: coassociativity' (quoting 'Write $\\mathcal{O}_q = \\mathcal{O}_q(\\mathrm{SU}(2))$.') are structurally anchored to the QOU mass framework and are stable."
+    },
+    "da-empirical-fragility": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:00+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-physical-implausibility": [
-      {
-        "field_hash": {
-          "md": "ea423d12411a",
-          "ts": "a4a3811131b1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.758494Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.758494Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "hopf-structure-diagrams.ts:1",
-        "notes": "The physical concepts described in 'Hopf-algebra structure: coassociativity' are consistent with quantum observable mechanics."
+    },
+    "da-physical-implausibility": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:00+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-reproducibility": [
-      {
-        "field_hash": {
-          "md": "ea423d12411a",
-          "ts": "a4a3811131b1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.758494Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.758494Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "hopf-structure-diagrams.ts:1",
-        "notes": "The derivation steps and formal definitions in 'Hopf-algebra structure: coassociativity' are reproducible."
+    },
+    "da-reproducibility": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:00+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-referee-verdict": [
-      {
-        "field_hash": {
-          "md": "ea423d12411a",
-          "ts": "a4a3811131b1"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.758494Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.758494Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "notes": "Referee verdict: clean.",
-        "verdict": "clean",
-        "referee_argument": "No significant objections; the mathematical claims in 'Hopf-algebra structure: coassociativity' (concerning 'Write $\\mathcal{O}_q = \\mathcal{O}_q(\\mathrm{SU}(2))$.') are consistent and formally verified."
+    },
+    "da-referee-verdict": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:00+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
+    },
     "milnor-amalgamated-flow": [
       {
         "result": "pass",
