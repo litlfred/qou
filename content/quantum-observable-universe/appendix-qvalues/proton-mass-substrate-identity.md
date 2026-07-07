@@ -106,19 +106,11 @@ instead removes the $X$ term: the production $m_n$ residual drops to
 $\sim 1\,\mathrm{ppb}$ and the $\mathfrak{Q}_\beta$ residual to
 $+1.25\,\mathrm{ppm}$ (on $\mathfrak{Q}_\beta$ itself).
 
-The QOU 3-calibration discipline reduces to **2 calibrations**
-$(m_e, m_\mu/m_e)$ for the baryon + $\mathfrak{Q}_\beta$ sector (or equivalently
-$(m_e, q_0)$ via the muon-anchor identity $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$).
+The 3-calibration discipline reduces to **2 calibrations** $(m_e, m_\mu/m_e)$ for the baryon and $\mathfrak{Q}_\beta$ sector. This equates to $(m_e, q_0)$ via the muon-anchor identity $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$.
 
 ## Consistency gap: decay-rate cross-check
 
-The production neutron now **consumes** the categorical
-$\mathfrak{Q}_\beta \approx 0.78233\,\mathrm{MeV}$ (Kashiwara $b^2$, parameter-free)
-directly, so the historical $2113\,\mathrm{ppm}$ gap between the flavor-split
-mass-derived $\mathfrak{Q}_\beta$ and the categorical ladder is **closed at the
-production level**. The remaining open item is the *exact* closure —
-promoting the $\mathfrak{Q}_\beta$ near-match to a derivation — which would
-cohomologically prove the $q_0 \leftrightarrow \mathfrak{Q}_\beta$ relationship.
+The production neutron directly **consumes** the parameter-free Kashiwara $b^2$ categorical $\mathfrak{Q}_\beta \approx 0.78233\,\mathrm{MeV}$. This **closes** the historical $2113\,\mathrm{ppm}$ gap between the flavor-split mass-derived $\mathfrak{Q}_\beta$ and the categorical ladder at the production level. Exact closure remains open. Promoting the $\mathfrak{Q}_\beta$ near-match to a derivation would cohomologically prove the $q_0 \leftrightarrow \mathfrak{Q}_\beta$ relationship.
 
 A decay-width cross-check connects both derivations to experimental
 lifetimes via the Fermi theory:
@@ -127,11 +119,7 @@ $\mathfrak{D}_n \propto G_F^2 \mathfrak{Q}_\beta^5 f(\mathfrak{Q}_\beta/\mathfra
 where $\mathfrak{D}_K = \hbar / (\text{lifetime of } K)$ is the
 decay width in the paper's fraktur-observable convention (avoiding
 collision with $\tau$ = fibre functor and $\Gamma$ = sheaf sections).
-The ratio $\mathfrak{D}_\mu / \mathfrak{D}_n$ eliminates $G_F$ and
-provides a $\mathfrak{Q}_\beta$-independent consistency test: if both
-$\mathfrak{m}_\mu$ and $\mathfrak{Q}_\beta$ are substrate-derived, the lifetime
-ratio $\hbar/\mathfrak{D}_n \div \hbar/\mathfrak{D}_\mu$ should match
-CODATA ($\approx 4 \times 10^8$) from categorical invariants alone.
+The ratio $\mathfrak{D}_\mu / \mathfrak{D}_n$ eliminates $G_F$ and provides a $\mathfrak{Q}_\beta$-independent consistency test. If both $\mathfrak{m}_\mu$ and $\mathfrak{Q}_\beta$ are substrate-derived, the lifetime ratio $\hbar/\mathfrak{D}_n \div \hbar/\mathfrak{D}_\mu$ matches CODATA ($\approx 4 \times 10^8$) strictly from categorical invariants.
 
 ## Open work for full categorical proof
 

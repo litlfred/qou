@@ -8,10 +8,7 @@ obstructions genuinely bite and which are only apparent.
 
 ## 0. An audit, not an axiomatisation
 
-The obvious shortcut — "axiomatise a single integration operator
-on $\mathbf{No}$ and use it everywhere" — is closed off by a
-theorem. Costin, Ehrlich, and Friedman [@costin-ehrlich-friedman2015]
-prove a two-sided result on integration over the surreals:
+The shortcut of axiomatising a single integration operator on $\mathbf{No}$ is mathematically closed. Costin, Ehrlich, and Friedman [@costin-ehrlich-friedman2015] prove a two-sided result on integration over the surreals:
 
 - **Positive direction.** A robust algebraic integral exists for
   the class of semi-algebraic, analytic, and Écalle–Borel
@@ -29,23 +26,11 @@ prove a two-sided result on integration over the surreals:
   $C(\mathbf{No})$ can simultaneously be translation-invariant,
   $\sigma$-additive, and non-degenerate.
 
-The lesson for QOU is that we do **not** want a measure on all
-of $C(\mathbf{No})$ — that object does not exist, and trying to
-manufacture one via a categorical proxy (e.g.\ asserting the
-Frobenius pairing $\int_A : A \otimes A \to \mathbf{1}$ at $A =
-C(\mathbf{No})$) would just smuggle the obstruction into the
-axiom. What we want instead is an audit: for each genuine
-use of an analytic structure in the main paper, decide whether
-the use lifts to $\mathbf{No}$ on the CEF-positive side
-(algebraic / transserial) or whether it requires a
-custom workaround. The audit below is that exercise.
+We do **not** postulate a measure on all of $C(\mathbf{No})$. That object does not exist. Manufacturing one via a categorical proxy (e.g.\ asserting the Frobenius pairing $\int_A : A \otimes A \to \mathbf{1}$ at $A = C(\mathbf{No})$) smuggles the obstruction into the axiom. Instead, we audit each genuine use of an analytic structure in this paper to determine whether the use lifts to $\mathbf{No}$ on the CEF-positive side (algebraic / transserial) or requires a custom workaround. We perform this audit below.
 
 ## 1. Lebesgue measure: one genuine use, no others
 
-A text search for Lebesgue, Haar, and Hausdorff measures across
-the content objects returns only a handful of matches, almost
-all of which turn out to be *categorical* or *algebraic* by
-closer inspection:
+We evaluate Lebesgue, Haar, and Hausdorff measures across the content objects. Almost all instances are *categorical* or *algebraic* upon inspection:
 
 See [Table 1](#tbl:analytic-obstructions-table1-data).
 
@@ -148,12 +133,4 @@ obstructions after audit:
 
 See [Table 2](#tbl:analytic-obstructions-table2-data).
 
-**Conclusion.** The surreal lift is dramatically less lossy than a
-first-pass survey suggests. With two narrow exceptions — the
-Möbius energy integral and the hyperbolic-volume side of the
-Kashaev comparison — every load-bearing step of the QOU mass
-formula and the categorical axioms transfers to $\mathbf{No}$
-without modification. The appendix's remaining work is
-constructive, not defensive: building new structures
-(birthday grading, $\varepsilon$-relaxed axioms, standard-part
-functor) in the surreal ambient.
+**Conclusion.** The surreal lift preserves nearly all structure. With two narrow exceptions — the Möbius energy integral and the hyperbolic-volume side of the Kashaev comparison — every load-bearing step of the mass formula and categorical axioms transfers to $\mathbf{No}$ without modification. The remaining work constructs new structures (birthday grading, $\varepsilon$-relaxed axioms, standard-part functor) in the surreal ambient.

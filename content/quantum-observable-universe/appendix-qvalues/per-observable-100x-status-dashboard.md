@@ -1,15 +1,6 @@
 **Remark (per-observable $100\times$ experimental status — dashboard).**
 
-*This remark declares the live per-observable accuracy dashboard at
-[`computations/per-observable-100x-status.witness.json`](#) — emitted
-by [`per_observable_100x_status.py`](#) — as a first-class,
-auto-regenerated artifact, so its headline counts stay current instead
-of being hand-maintained. The witness reports the **L2 leg** of the
-precision-goals: for each predicted observable, whether it meets its
-$100\times$ accuracy target. Its `summary` field carries the headline
-(`total`, `beats_1x_count`, `beats_100x_count`) — read
-`beats_100x_count` for how many of the seven observables currently
-pass and which still gate L2 closure.*
+*This block designates the live per-observable accuracy dashboard at [`computations/per-observable-100x-status.witness.json`](#) — emitted by [`per_observable_100x_status.py`](#) — as a first-class, auto-regenerated artifact. Headline counts remain current without manual maintenance. The witness reports the precision-goal **L2 leg**: for each predicted observable, whether it meets its $100\times$ accuracy target. Its `summary` field carries the headline (`total`, `beats_1x_count`, `beats_100x_count`). The `beats_100x_count` identifies how many of the seven observables currently pass and which still gate L2 closure.*
 
 **Target.** For each predicted observable $O$ with experimental
 uncertainty $\sigma_{\mathrm{exp}}(O)$, the $100\times$ target is
