@@ -338,7 +338,6 @@ export default chapter({
         "qbeta-c8-c10-silver-rationals",
         "q-beta-c-k-recursion-from-habiro-q-difference",
         "q-beta-c-k-recursion-from-habiro-q-difference-interpretation",
-        "pre-archimedean-mass-gap",
         "q-bessel-c-k-recurrence-cfinite",
         "q-bessel-second-order-qdifference",
         "jackson-q-bessel-contiguity-recurrence",
