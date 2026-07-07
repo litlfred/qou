@@ -1301,7 +1301,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Statement is the existence claim (a fixed-depth recurrence exists by Cayley-Hamilton); the surrounding text distinguishes existence vs identification half — that is scope clarification, not mislocated physical interpretation."
+        "notes": "Statement is the existence claim (a fixed-depth recurrence exists by Cayley-Hamilton); the surrounding text distinguishes existence vs identification half \u2014 that is scope clarification, not mislocated physical interpretation."
       },
       {
         "field_hash": {
@@ -1318,6 +1318,19 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The statement is written in standard scholarly mathematical and physics voice.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies voice-statement-no-interpretation.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "fit-section-chapter": [
@@ -1354,6 +1367,19 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "In 'q-difference prolongation and periods' section; the prolonged SW periods / Gauss-Manin recurrence is exactly that section's subject. Well placed."
+      },
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies fit-section-chapter.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "wall-side-statement": [
@@ -1387,8 +1413,21 @@
         "reviewed_at": "2026-06-28T05:50:25.638Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
-        "evidence": "content/quantum-observable-universe/mass-theory/prolonged-periods-fixed-depth.lean:1 — Lean file exists",
+        "evidence": "content/quantum-observable-universe/mass-theory/prolonged-periods-fixed-depth.lean:1 \u2014 Lean file exists",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies wall-side-statement.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "wall-side-proof": [
@@ -1406,7 +1445,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Proof uses pow_add, Finset.mul_sum, mul_smul_comm — module/ring algebra only; no archimedean machinery. Method matches the algebraic statement."
+        "notes": "Proof uses pow_add, Finset.mul_sum, mul_smul_comm \u2014 module/ring algebra only; no archimedean machinery. Method matches the algebraic statement."
       },
       {
         "field_hash": {
@@ -1423,6 +1462,19 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean file contains a fully verified, sorry-free proof.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies wall-side-proof.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1474,7 +1526,20 @@
         },
         "reviewed_at": "2026-07-06T04:41:29.430Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:prolonged-periods-fixed-depth' → expected 'prolonged_periods_fixed_depth'; Lean declares: prolongation_fixed_depth_recurrence. Structural match via content."
+        "notes": "Label 'prop:prolonged-periods-fixed-depth' \u2192 expected 'prolonged_periods_fixed_depth'; Lean declares: prolongation_fixed_depth_recurrence. Structural match via content."
+      },
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies proof-narrative-lean-equiv.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1493,7 +1558,7 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "minor",
-        "notes": "score 0.9 — plan stated up front (Cayley-Hamilton -> operator recurrence -> apply linear functional for period recurrence), both in .md and Lean docstring; the 3-line proof is fully legible."
+        "notes": "score 0.9 \u2014 plan stated up front (Cayley-Hamilton -> operator recurrence -> apply linear functional for period recurrence), both in .md and Lean docstring; the 3-line proof is fully legible."
       },
       {
         "field_hash": {
@@ -1510,6 +1575,19 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Proof strategy is well-structured and easy to follow.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies proof-rater-strategy-clarity.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1550,7 +1628,20 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "minor",
-        "notes": "score 1.0 — the Lean theorem prolongation_fixed_depth_recurrence is sorry-free. (The remaining 'identification half' is an explicitly separate downstream conjecture, not a gap in this proof.)"
+        "notes": "score 1.0 \u2014 the Lean theorem prolongation_fixed_depth_recurrence is sorry-free. (The remaining 'identification half' is an explicitly separate downstream conjecture, not a gap in this proof.)"
+      },
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies proof-rater-goal-plausibility.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-rater-novelty": [
@@ -1569,7 +1660,7 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "minor",
-        "notes": "score 0.6 — Cayley-Hamilton -> linear recurrence is a standard argument, but its application as the existence half of the q-difference prolongation keystone is non-duplicated in the corpus."
+        "notes": "score 0.6 \u2014 Cayley-Hamilton -> linear recurrence is a standard argument, but its application as the existence half of the q-difference prolongation keystone is non-duplicated in the corpus."
       },
       {
         "field_hash": {
@@ -1589,6 +1680,19 @@
         "score": {
           "value": 0.8,
           "max": 1
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies proof-rater-novelty.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
         }
       }
     ],
@@ -1626,6 +1730,19 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Signature is a clean generic theorem with hCH as explicit hypothesis; proof is sorry-free term/tactic (no sorryAx), no axiom injection, statement not weakened to a tautology."
+      },
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies proof-statement-integrity.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1662,6 +1779,19 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Conclusion M^(n+d)=Sum c_j M^(n+j) is DERIVED from hCH via pow_add/mul_smul_comm; it is not a field whose type is the conclusion handed back."
+      },
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies proof-no-self-assuming-projection.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-no-trivial-true": [
@@ -1698,6 +1828,19 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Goal is a genuine operator equation, not True/rfl/x=x."
+      },
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies proof-no-trivial-true.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-no-false-premise": [
@@ -1734,6 +1877,19 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Hypothesis hCH (a Cayley-Hamilton relation) is satisfiable (true for any End on a finite-rank module); no False/0=1/uninhabited premise."
+      },
+      {
+        "result": "fail",
+        "notes": "Block contains unsupported statements or placeholders (sorry/admit/TODO). Author resolution needed.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1751,7 +1907,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "hCH is rewritten in, n is used in the exponents, c/d/M all appear in the conclusion — every binder is load-bearing."
+        "notes": "hCH is rewritten in, n is used in the exponents, c/d/M all appear in the conclusion \u2014 every binder is load-bearing."
       },
       {
         "field_hash": {
@@ -1768,6 +1924,19 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No unused hypotheses are present in the Lean proof.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies proof-no-unused-hypotheses.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-no-decide-masking": [
@@ -1804,6 +1973,19 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Proof is rw + Finset.sum_congr; no decide/trivial masking."
+      },
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies proof-no-decide-masking.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-false-claim": [
@@ -1823,6 +2005,19 @@
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/prolonged-periods-fixed-depth.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "fail",
+        "notes": "Block contains unsupported statements or placeholders (sorry/admit/TODO). Author resolution needed.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-vacuous": [
@@ -1841,6 +2036,19 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-vacuous.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies da-vacuous.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-circular": [
@@ -1860,6 +2068,19 @@
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/prolonged-periods-fixed-depth.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies da-circular.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-overclaim": [
@@ -1878,6 +2099,19 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies da-overclaim.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1897,6 +2131,19 @@
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/prolonged-periods-fixed-depth.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies da-hidden-dof.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1916,6 +2163,19 @@
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/prolonged-periods-fixed-depth.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies da-non-sequitur.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1934,6 +2194,19 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-lean-narrative-divergence.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies da-lean-narrative-divergence.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1953,6 +2226,19 @@
         "notes": "No issues found for da-citation-misuse.",
         "evidence": "content/quantum-observable-universe/mass-theory/prolonged-periods-fixed-depth.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies da-citation-misuse.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1972,6 +2258,19 @@
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/prolonged-periods-fixed-depth.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies da-definitional-ambiguity.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1991,6 +2290,19 @@
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/prolonged-periods-fixed-depth.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies da-empirical-fragility.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -2010,6 +2322,19 @@
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/prolonged-periods-fixed-depth.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies da-physical-implausibility.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-reproducibility": [
@@ -2029,6 +2354,19 @@
         "notes": "No issues found for da-reproducibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/prolonged-periods-fixed-depth.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies da-reproducibility.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -2049,6 +2387,49 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims are consistent."
+      },
+      {
+        "result": "fail",
+        "notes": "Block contains unsupported statements or placeholders (sorry/admit/TODO). Author resolution needed.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies expo-milnor-clarity.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies milnor-brevity.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ]
   },

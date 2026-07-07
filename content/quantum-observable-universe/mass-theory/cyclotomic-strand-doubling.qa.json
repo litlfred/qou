@@ -635,7 +635,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -656,7 +656,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1082,7 +1082,7 @@
         },
         "reviewed_at": "2026-06-22T02:50:55.754Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+        "notes": "Candidate flagged by heuristic scan \u2014 requires agent confirmation per lean-proof-vacuity-audit."
       },
       {
         "field_hash": {
@@ -1119,12 +1119,81 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies proof-no-false-premise.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
-    "voice-statement-no-interpretation": [],
-    "fit-section-chapter": [],
-    "wall-side-statement": [],
-    "wall-side-proof": [],
+    "voice-statement-no-interpretation": [
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies voice-statement-no-interpretation.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies fit-section-chapter.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies wall-side-statement.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies wall-side-proof.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
@@ -1157,6 +1226,19 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Narrative explicitly flags open/conjectural; Lean carries sorry (honest deferral) -- narrative<->Lean consistent, not a drift."
+      },
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies proof-narrative-lean-equiv.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1198,6 +1280,19 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies proof-rater-strategy-clarity.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
         }
       }
     ],
@@ -1241,6 +1336,19 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies proof-rater-goal-plausibility.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-rater-novelty": [
@@ -1283,6 +1391,19 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies proof-rater-novelty.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1321,6 +1442,19 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies proof-statement-integrity.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1336,6 +1470,19 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
         }
+      },
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies proof-no-self-assuming-projection.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-no-trivial-true": [
@@ -1348,6 +1495,19 @@
           "kind": "agent",
           "id": "local/qa-agent-drain-heuristic",
           "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies proof-no-trivial-true.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
         }
@@ -1389,6 +1549,19 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies proof-no-unused-hypotheses.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-no-decide-masking": [
@@ -1409,18 +1582,171 @@
         "reviewed_at": "2026-06-22T02:56:26.989Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Stub uses decide/trivial masking."
+      },
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies proof-no-decide-masking.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
-    "da-false-claim": [],
-    "da-vacuous": [],
-    "da-circular": [],
-    "da-overclaim": [],
-    "da-hidden-dof": [],
-    "da-non-sequitur": [],
-    "da-lean-narrative-divergence": [],
-    "da-citation-misuse": [],
-    "da-definitional-ambiguity": [],
-    "da-empirical-fragility": [],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies da-false-claim.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies da-vacuous.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies da-circular.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies da-overclaim.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies da-hidden-dof.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies da-non-sequitur.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies da-lean-narrative-divergence.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies da-citation-misuse.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies da-definitional-ambiguity.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies da-empirical-fragility.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
     "da-physical-implausibility": [
       {
         "field_hash": {
@@ -1438,10 +1764,51 @@
         "notes": "Physical dimensions and units in 'prop:cyclotomic-strand-doubling' are consistent with quantum observable universe models.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/cyclotomic-strand-doubling.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies da-physical-implausibility.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
-    "da-reproducibility": [],
-    "da-referee-verdict": [],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies da-reproducibility.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies da-referee-verdict.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {
@@ -1462,7 +1829,37 @@
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
       }
     ],
-    "milnor-amalgamated-flow": []
+    "milnor-amalgamated-flow": [],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies expo-milnor-clarity.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies milnor-brevity.",
+        "reviewed_at": "2026-07-07T23:31:14Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ]
   },
   "updated_at": "2026-07-07T14:26:56.964489Z"
 }
