@@ -1795,6 +1795,27 @@ theorem labelAt_eq_orderStat (t : Specht.Tableau μ)
   exact congrFun key r
 
 omit [CharZero k] in
+/-- **Column content under the `S_n`-action (sorry-free).** The action `σ • t = σ.symm.trans
+t` sends the label at cell `c` to `σ` of the old label (`colPattern (σ•t) l = colPattern t
+(σ.symm l)`), so column `j`'s content of `σ•t` is the `σ`-image of column `j`'s labels of
+`t`. For the Garnir fibre element `σ`, this is exactly the reindexing that turns the abstract
+`A∪B` shuffle into the concrete `colContent (σ•t) j`, feeding `count_dom_of_top`. -/
+theorem colContent_smul (σ : Equiv.Perm (Fin (Specht.nOf μ))) (t : Specht.Tableau μ) (j : ℕ) :
+    colContent (σ • t) j
+      = (Finset.univ.filter (fun m => Specht.colPattern t m = j)).image (fun m => (σ m : ℕ)) := by
+  classical
+  unfold colContent
+  have hset : (Finset.univ.filter (fun l => Specht.colPattern (σ • t) l = j))
+      = (Finset.univ.filter (fun m => Specht.colPattern t m = j)).image σ := by
+    ext l
+    simp only [Finset.mem_filter, Finset.mem_univ, true_and, Finset.mem_image,
+      Specht.colPattern_smul, Specht.arrow_smul_apply]
+    constructor
+    · intro hl; exact ⟨σ.symm l, hl, Equiv.apply_symm_apply σ l⟩
+    · rintro ⟨m, hm, rfl⟩; rwa [Equiv.symm_apply_apply]
+  rw [hset, Finset.image_image]; rfl
+
+omit [CharZero k] in
 /-- The labels in column `c` of `t` with row index `< m` number exactly `m`, provided
 `m ≤ μ.colLen c` (they biject with rows `0, …, m-1`, all of which occur in column `c`). -/
 theorem card_col_labels_row_lt_of_le (t : Specht.Tableau μ) (c m : ℕ)
