@@ -73,7 +73,9 @@ def main():
     q0_muon = mp.mpf("1.10997859555733")
     S_swing = abs(S_proton / S_muon - 1)
     q_rel = abs(q0_proton / q0_muon - 1)
-    log_sensitivity = S_swing / q_rel  # d(ln S)/d(ln q0), order of magnitude
+    # |d ln S / d ln q0| computed directly via log-ratios (matches the annotation
+    # and stays well-defined for small deltas); S_swing/q_rel is the linearized proxy.
+    log_sensitivity = abs(mp.log(S_proton / S_muon)) / abs(mp.log(q0_proton / q0_muon))
     print(f"\n=== A. swing + sensitivity ===")
     print(f"  S_proton={mp.nstr(S_proton,6)}  S_muon={mp.nstr(S_muon,6)}  "
           f"swing={mp.nstr(S_swing,4)}")
