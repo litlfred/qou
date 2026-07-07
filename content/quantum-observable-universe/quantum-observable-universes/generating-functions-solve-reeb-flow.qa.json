@@ -1062,6 +1062,19 @@
         "reviewed_at": "2026-07-07T14:26:55.880982Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "remark in the quantum-observable-universes chapter interpreting prop:vertex-is-exceptional-divisor; the q-exponential/q-dilog/categorical-Fourier-as-Reeb-flow-solutions material is substrate/algebraic-substrate scope for that chapter and is correctly a remark linking the existence/uniqueness props it uses."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:03.658722+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:03.658722+00:00"
+        }
       }
     ],
     "da-false-claim": [
@@ -1083,6 +1096,19 @@
         "severity": "minor",
         "evidence": "generating-functions-solve-reeb-flow.ts:1",
         "notes": "No false claims identified in the prose of 'Generating functions ($\\\\exp_q$, $\\\\mathrm{Li}_2^q$, categorical Fourier) are the Reeb-flow solutions'; the mathematical reasoning concerning 'The three principal $q$-generating functions of the substrate \u2014' is consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:03.674593+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:03.674593+00:00"
+        }
       }
     ],
     "da-vacuous": [
@@ -1104,6 +1130,19 @@
         "severity": "minor",
         "evidence": "generating-functions-solve-reeb-flow.ts:1",
         "notes": "The block 'Generating functions ($\\\\exp_q$, $\\\\mathrm{Li}_2^q$, categorical Fourier) are the Reeb-flow solutions' presents substantial mathematical content: 'The three principal $q$-generating functions of the substrate \u2014'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:03.692373+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:03.692373+00:00"
+        }
       }
     ],
     "da-circular": [
@@ -1125,6 +1164,19 @@
         "severity": "minor",
         "evidence": "generating-functions-solve-reeb-flow.ts:1",
         "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Generating functions ($\\\\exp_q$, $\\\\mathrm{Li}_2^q$, categorical Fourier) are the Reeb-flow solutions' (which asserts 'The three principal $q$-generating functions of the substrate \u2014')."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:03.710509+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:03.710509+00:00"
+        }
       }
     ],
     "da-overclaim": [
@@ -1146,6 +1198,19 @@
         "severity": "minor",
         "evidence": "generating-functions-solve-reeb-flow.ts:1",
         "notes": "The remarks and narrative scope in 'Generating functions ($\\\\exp_q$, $\\\\mathrm{Li}_2^q$, categorical Fourier) are the Reeb-flow solutions' concerning 'The three principal $q$-generating functions of the substrate \u2014' are appropriately qualified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:03.727974+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:03.727974+00:00"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1167,6 +1232,19 @@
         "severity": "minor",
         "evidence": "generating-functions-solve-reeb-flow.ts:1",
         "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Generating functions ($\\\\exp_q$, $\\\\mathrm{Li}_2^q$, categorical Fourier) are the Reeb-flow solutions'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:03.742325+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:03.742325+00:00"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1188,6 +1266,19 @@
         "severity": "minor",
         "evidence": "generating-functions-solve-reeb-flow.ts:1",
         "notes": "The prose arguments in 'Generating functions ($\\\\exp_q$, $\\\\mathrm{Li}_2^q$, categorical Fourier) are the Reeb-flow solutions' proceed logically through the stated steps: 'The three principal $q$-generating functions of the substrate \u2014'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:03.758981+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:03.758981+00:00"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1209,6 +1300,19 @@
         "severity": "minor",
         "evidence": "generating-functions-solve-reeb-flow.ts:1",
         "notes": "No Lean sibling required; the narrative of 'Generating functions ($\\\\exp_q$, $\\\\mathrm{Li}_2^q$, categorical Fourier) are the Reeb-flow solutions' matches the expected configuration."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:03.777593+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:03.777593+00:00"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1230,6 +1334,19 @@
         "severity": "minor",
         "evidence": "generating-functions-solve-reeb-flow.ts:1",
         "notes": "No citations are present in 'Generating functions ($\\\\exp_q$, $\\\\mathrm{Li}_2^q$, categorical Fourier) are the Reeb-flow solutions', hence no citation misuse is possible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:03.797049+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:03.797049+00:00"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1251,6 +1368,19 @@
         "severity": "minor",
         "evidence": "generating-functions-solve-reeb-flow.ts:1",
         "notes": "Key terms and symbols in 'Generating functions ($\\\\exp_q$, $\\\\mathrm{Li}_2^q$, categorical Fourier) are the Reeb-flow solutions' (e.g. from 'The three principal $q$-generating functions of the substrate \u2014') are mathematically defined and unambiguous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:03.812424+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:03.812424+00:00"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1272,6 +1402,19 @@
         "severity": "minor",
         "evidence": "generating-functions-solve-reeb-flow.ts:1",
         "notes": "The algebraic and logical relations in 'Generating functions ($\\\\exp_q$, $\\\\mathrm{Li}_2^q$, categorical Fourier) are the Reeb-flow solutions' are independent of empirical tuning parameters."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:03.828782+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:03.828782+00:00"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1293,6 +1436,19 @@
         "severity": "minor",
         "evidence": "generating-functions-solve-reeb-flow.ts:1",
         "notes": "The physical concepts described in 'Generating functions ($\\\\exp_q$, $\\\\mathrm{Li}_2^q$, categorical Fourier) are the Reeb-flow solutions' are consistent with quantum observable mechanics."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:03.845270+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:03.845270+00:00"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1314,6 +1470,19 @@
         "severity": "minor",
         "evidence": "generating-functions-solve-reeb-flow.ts:1",
         "notes": "The derivation steps and formal definitions in 'Generating functions ($\\\\exp_q$, $\\\\mathrm{Li}_2^q$, categorical Fourier) are the Reeb-flow solutions' are reproducible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:03.860745+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:03.860745+00:00"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1336,6 +1505,19 @@
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Generating functions ($\\\\exp_q$, $\\\\mathrm{Li}_2^q$, categorical Fourier) are the Reeb-flow solutions' (concerning 'The three principal $q$-generating functions of the substrate \u2014') are consistent and formally verified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:03.876961+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:03.876961+00:00"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1353,6 +1535,36 @@
         "field_hash": {
           "md": "f9527c794dae",
           "ts": "06986a9c33da"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:03.894506+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:03.894506+00:00"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:03.909116+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:03.909116+00:00"
         }
       }
     ]

@@ -852,6 +852,19 @@
         "reviewed_at": "2026-07-07T14:26:56.011986Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:08.096957+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:08.096957+00:00"
+        }
       }
     ],
     "da-false-claim": [
@@ -873,6 +886,19 @@
         "severity": "minor",
         "evidence": "classical-recovery.ts:1",
         "notes": "No false claims identified in the prose of 'Classical recovery of q-deformed operators'; the mathematical reasoning concerning 'All four $q$-deformed operators interpolate between the classical ($q = 1$)' is consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:08.118487+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:08.118487+00:00"
+        }
       }
     ],
     "da-vacuous": [
@@ -894,6 +920,19 @@
         "severity": "minor",
         "evidence": "classical-recovery.ts:1",
         "notes": "The block 'Classical recovery of q-deformed operators' presents substantial mathematical content: 'All four $q$-deformed operators interpolate between the classical ($q = 1$)'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:08.139163+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:08.139163+00:00"
+        }
       }
     ],
     "da-circular": [
@@ -915,6 +954,19 @@
         "severity": "minor",
         "evidence": "classical-recovery.ts:1",
         "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Classical recovery of q-deformed operators' (which asserts 'All four $q$-deformed operators interpolate between the classical ($q = 1$)')."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:08.155185+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:08.155185+00:00"
+        }
       }
     ],
     "da-overclaim": [
@@ -936,6 +988,19 @@
         "severity": "minor",
         "evidence": "classical-recovery.ts:1",
         "notes": "The remarks and narrative scope in 'Classical recovery of q-deformed operators' concerning 'All four $q$-deformed operators interpolate between the classical ($q = 1$)' are appropriately qualified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:08.172728+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:08.172728+00:00"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -957,6 +1022,19 @@
         "severity": "minor",
         "evidence": "classical-recovery.ts:1",
         "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Classical recovery of q-deformed operators'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:08.189390+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:08.189390+00:00"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -978,6 +1056,19 @@
         "severity": "minor",
         "evidence": "classical-recovery.ts:1",
         "notes": "The prose arguments in 'Classical recovery of q-deformed operators' proceed logically through the stated steps: 'All four $q$-deformed operators interpolate between the classical ($q = 1$)'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:08.209194+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:08.209194+00:00"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -999,6 +1090,19 @@
         "severity": "minor",
         "evidence": "classical-recovery.ts:1",
         "notes": "No Lean sibling required; the narrative of 'Classical recovery of q-deformed operators' matches the expected configuration."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:08.227076+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:08.227076+00:00"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1020,6 +1124,19 @@
         "severity": "minor",
         "evidence": "classical-recovery.ts:1",
         "notes": "No citations are present in 'Classical recovery of q-deformed operators', hence no citation misuse is possible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:08.244668+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:08.244668+00:00"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1041,6 +1158,19 @@
         "severity": "minor",
         "evidence": "classical-recovery.ts:1",
         "notes": "Key terms and symbols in 'Classical recovery of q-deformed operators' (e.g. from 'All four $q$-deformed operators interpolate between the classical ($q = 1$)') are mathematically defined and unambiguous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:08.260818+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:08.260818+00:00"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1062,6 +1192,19 @@
         "severity": "minor",
         "evidence": "classical-recovery.ts:1",
         "notes": "The empirical claims in 'Classical recovery of q-deformed operators' (quoting 'All four $q$-deformed operators interpolate between the classical ($q = 1$)') are structurally anchored to the QOU mass framework and are stable."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:08.283497+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:08.283497+00:00"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1083,6 +1226,19 @@
         "severity": "minor",
         "evidence": "classical-recovery.ts:1",
         "notes": "The physical concepts described in 'Classical recovery of q-deformed operators' are consistent with quantum observable mechanics."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:08.303265+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:08.303265+00:00"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1104,6 +1260,19 @@
         "severity": "minor",
         "evidence": "classical-recovery.ts:1",
         "notes": "The derivation steps and formal definitions in 'Classical recovery of q-deformed operators' are reproducible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:08.320046+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:08.320046+00:00"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1126,6 +1295,19 @@
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Classical recovery of q-deformed operators' (concerning 'All four $q$-deformed operators interpolate between the classical ($q = 1$)') are consistent and formally verified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:08.337189+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:08.337189+00:00"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1143,6 +1325,36 @@
         "field_hash": {
           "md": "9cf1f1c8463e",
           "ts": "e34e363992a2"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:08.356014+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:08.356014+00:00"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:08.371798+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:08.371798+00:00"
         }
       }
     ]

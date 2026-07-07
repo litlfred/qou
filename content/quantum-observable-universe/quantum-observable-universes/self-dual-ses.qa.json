@@ -852,6 +852,19 @@
         "reviewed_at": "2026-07-07T14:26:55.753375Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:02.280188+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:02.280188+00:00"
+        }
       }
     ],
     "da-false-claim": [
@@ -873,6 +886,19 @@
         "severity": "minor",
         "evidence": "self-dual-ses.ts:1",
         "notes": "No false claims identified in the prose of 'Self-duality as a short exact sequence'; the mathematical reasoning concerning 'The $q$-Hodge star $\\star_q$ ([$q$-Hodge star](#def:q-hodge-star)) is an' is consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:02.297678+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:02.297678+00:00"
+        }
       }
     ],
     "da-vacuous": [
@@ -894,6 +920,19 @@
         "severity": "minor",
         "evidence": "self-dual-ses.ts:1",
         "notes": "The block 'Self-duality as a short exact sequence' presents substantial mathematical content: 'The $q$-Hodge star $\\star_q$ ([$q$-Hodge star](#def:q-hodge-star)) is an'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:02.312509+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:02.312509+00:00"
+        }
       }
     ],
     "da-circular": [
@@ -915,6 +954,19 @@
         "severity": "minor",
         "evidence": "self-dual-ses.ts:1",
         "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Self-duality as a short exact sequence' (which asserts 'The $q$-Hodge star $\\star_q$ ([$q$-Hodge star](#def:q-hodge-star)) is an')."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:02.330035+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:02.330035+00:00"
+        }
       }
     ],
     "da-overclaim": [
@@ -936,6 +988,19 @@
         "severity": "minor",
         "evidence": "self-dual-ses.ts:1",
         "notes": "The remarks and narrative scope in 'Self-duality as a short exact sequence' concerning 'The $q$-Hodge star $\\star_q$ ([$q$-Hodge star](#def:q-hodge-star)) is an' are appropriately qualified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:02.346738+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:02.346738+00:00"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -957,6 +1022,19 @@
         "severity": "minor",
         "evidence": "self-dual-ses.ts:1",
         "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Self-duality as a short exact sequence'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:02.364432+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:02.364432+00:00"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -978,6 +1056,19 @@
         "severity": "minor",
         "evidence": "self-dual-ses.ts:1",
         "notes": "The prose arguments in 'Self-duality as a short exact sequence' proceed logically through the stated steps: 'The $q$-Hodge star $\\star_q$ ([$q$-Hodge star](#def:q-hodge-star)) is an'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:02.384090+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:02.384090+00:00"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -999,6 +1090,19 @@
         "severity": "minor",
         "evidence": "self-dual-ses.ts:1",
         "notes": "No Lean sibling required; the narrative of 'Self-duality as a short exact sequence' matches the expected configuration."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:02.401141+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:02.401141+00:00"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1020,6 +1124,19 @@
         "severity": "minor",
         "evidence": "self-dual-ses.ts:1",
         "notes": "No citations are present in 'Self-duality as a short exact sequence', hence no citation misuse is possible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:02.417355+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:02.417355+00:00"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1041,6 +1158,19 @@
         "severity": "minor",
         "evidence": "self-dual-ses.ts:1",
         "notes": "Key terms and symbols in 'Self-duality as a short exact sequence' (e.g. from 'The $q$-Hodge star $\\star_q$ ([$q$-Hodge star](#def:q-hodge-star)) is an') are mathematically defined and unambiguous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:02.431730+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:02.431730+00:00"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1062,6 +1192,19 @@
         "severity": "minor",
         "evidence": "self-dual-ses.ts:1",
         "notes": "The algebraic and logical relations in 'Self-duality as a short exact sequence' are independent of empirical tuning parameters."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:02.448702+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:02.448702+00:00"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1083,6 +1226,19 @@
         "severity": "minor",
         "evidence": "self-dual-ses.ts:1",
         "notes": "The physical concepts described in 'Self-duality as a short exact sequence' are consistent with quantum observable mechanics."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:02.467918+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:02.467918+00:00"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1104,6 +1260,19 @@
         "severity": "minor",
         "evidence": "self-dual-ses.ts:1",
         "notes": "The derivation steps and formal definitions in 'Self-duality as a short exact sequence' are reproducible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:02.483691+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:02.483691+00:00"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1126,6 +1295,19 @@
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Self-duality as a short exact sequence' (concerning 'The $q$-Hodge star $\\star_q$ ([$q$-Hodge star](#def:q-hodge-star)) is an') are consistent and formally verified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:02.501459+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:02.501459+00:00"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1143,6 +1325,36 @@
         "field_hash": {
           "md": "67a7dde12d2c",
           "ts": "0225067ead24"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:02.518179+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:02.518179+00:00"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:02.533682+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:02.533682+00:00"
         }
       }
     ]

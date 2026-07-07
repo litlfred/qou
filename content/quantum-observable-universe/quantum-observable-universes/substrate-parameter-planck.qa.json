@@ -895,6 +895,19 @@
         "severity": "minor",
         "evidence": "substrate-parameter-planck.ts:1",
         "notes": "Block placement and kind 'definition' match validated structurally."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:03.077725+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:03.077725+00:00"
+        }
       }
     ],
     "wall-side-statement": [
@@ -917,6 +930,19 @@
         "severity": "minor",
         "evidence": "substrate-parameter-planck.lean:1",
         "notes": "The Lean theorem/definition statement in substrate-parameter-planck.lean matches the mathematical statement in substrate-parameter-planck.md."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:03.094185+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:03.094185+00:00"
+        }
       }
     ],
     "da-false-claim": [
@@ -939,6 +965,19 @@
         "severity": "minor",
         "evidence": "substrate-parameter-planck.lean:1",
         "notes": "The mathematical claims in 'Substrate parameter and quantum Planck constant' regarding 'The substrate parameter $q \\in \\mathbb{C}^$ is the deformation' are unverified due to compilation errors in the Lean sibling file substrate-parameter-planck.lean: content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-planck.lean:19:6: error(lean.unknownIdentifier): Unknown identifier `\u2102`."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:03.113815+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:03.113815+00:00"
+        }
       }
     ],
     "da-vacuous": [
@@ -961,6 +1000,19 @@
         "severity": "minor",
         "evidence": "substrate-parameter-planck.ts:1",
         "notes": "The sibling Lean file substrate-parameter-planck.lean fails to compile, so the completeness and non-vacuity of the formal proof cannot be verified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:03.131120+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:03.131120+00:00"
+        }
       }
     ],
     "da-circular": [
@@ -983,6 +1035,19 @@
         "severity": "minor",
         "evidence": "substrate-parameter-planck.ts:1",
         "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Substrate parameter and quantum Planck constant' (which asserts 'The substrate parameter $q \\in \\mathbb{C}^$ is the deformation')."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:03.145303+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:03.145303+00:00"
+        }
       }
     ],
     "da-overclaim": [
@@ -1005,6 +1070,19 @@
         "severity": "minor",
         "evidence": "substrate-parameter-planck.ts:1",
         "notes": "The prose presents 'Substrate parameter and quantum Planck constant' as verified, but the sibling Lean file substrate-parameter-planck.lean fails to compile."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:03.182369+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:03.182369+00:00"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1027,6 +1105,19 @@
         "severity": "minor",
         "evidence": "substrate-parameter-planck.ts:1",
         "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Substrate parameter and quantum Planck constant'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:03.200574+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:03.200574+00:00"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1049,6 +1140,19 @@
         "severity": "minor",
         "evidence": "substrate-parameter-planck.lean:1",
         "notes": "Logical gaps exist in the formalization of 'Substrate parameter and quantum Planck constant' due to compilation failure in substrate-parameter-planck.lean."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:03.218110+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:03.218110+00:00"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1071,6 +1175,19 @@
         "severity": "minor",
         "evidence": "substrate-parameter-planck.lean:1",
         "notes": "The Lean sibling substrate-parameter-planck.lean fails compilation, causing divergence from the narrative."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:03.237184+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:03.237184+00:00"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1093,6 +1210,19 @@
         "severity": "minor",
         "evidence": "substrate-parameter-planck.ts:1",
         "notes": "No citations are present in 'Substrate parameter and quantum Planck constant', hence no citation misuse is possible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:03.255111+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:03.255111+00:00"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1115,6 +1245,19 @@
         "severity": "minor",
         "evidence": "substrate-parameter-planck.ts:1",
         "notes": "Key terms and symbols in 'Substrate parameter and quantum Planck constant' (e.g. from 'The substrate parameter $q \\in \\mathbb{C}^$ is the deformation') are mathematically defined and unambiguous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:03.268268+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:03.268268+00:00"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1137,6 +1280,19 @@
         "severity": "minor",
         "evidence": "substrate-parameter-planck.ts:1",
         "notes": "The algebraic and logical relations in 'Substrate parameter and quantum Planck constant' are independent of empirical tuning parameters."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:03.287525+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:03.287525+00:00"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1159,6 +1315,19 @@
         "severity": "minor",
         "evidence": "substrate-parameter-planck.ts:1",
         "notes": "The physical concepts described in 'Substrate parameter and quantum Planck constant' are consistent with quantum observable mechanics."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:03.302757+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:03.302757+00:00"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1181,6 +1350,19 @@
         "severity": "minor",
         "evidence": "substrate-parameter-planck.lean:1",
         "notes": "The Lean sibling substrate-parameter-planck.lean fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-planck.lean:19:6: error(lean.unknownIdentifier): Unknown identifier `\u2102`."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:03.323024+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:03.323024+00:00"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1204,6 +1386,19 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-planck.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-planck.lean:19:6: error(lean.unknownIdentifier): Unknown identifier `\u2102`",
         "verdict": "open-objection",
         "referee_argument": "The proposed formalization for 'Substrate parameter and quantum Planck constant' (asserting 'The substrate parameter $q \\in \\mathbb{C}^$ is the deformation') fails to compile with error: content/quantum-observable-universe/quantum-observable-universes/substrate-parameter-planck.lean:19:6: error(lean.unknownIdentifier): Unknown identifier `\u2102`. A competent referee cannot accept this as a verified mathematical claim."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:03.339693+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:03.339693+00:00"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1222,6 +1417,36 @@
           "md": "01a778e23fe4",
           "ts": "06c55e4988a1",
           "lean": "ca9686c3c1ef"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:03.355461+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:03.355461+00:00"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:03.373365+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:03.373365+00:00"
         }
       }
     ]

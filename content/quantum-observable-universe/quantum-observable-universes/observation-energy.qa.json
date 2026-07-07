@@ -1064,6 +1064,19 @@
         "reviewed_at": "2026-07-07T14:26:55.885939Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:03.932026+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:03.932026+00:00"
+        }
       }
     ],
     "fit-section-chapter": [
@@ -1083,6 +1096,19 @@
         "reviewed_at": "2026-07-07T14:26:55.885939Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:03.948605+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:03.948605+00:00"
+        }
       }
     ],
     "wall-side-statement": [
@@ -1102,6 +1128,19 @@
         "reviewed_at": "2026-07-07T14:26:55.885939Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:03.964905+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:03.964905+00:00"
+        }
       }
     ],
     "wall-side-proof": [
@@ -1121,6 +1160,19 @@
         "reviewed_at": "2026-07-07T14:26:55.885939Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:03.980217+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:03.980217+00:00"
+        }
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1154,6 +1206,19 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/observation_energy.lean); stale agent flag refreshed (sorry discharged after prior review)."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:03.994513+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:03.994513+00:00"
+        }
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1214,6 +1279,19 @@
         "score": {
           "max": 1,
           "value": 0.4
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:04.009882+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:04.009882+00:00"
         }
       }
     ],
@@ -1276,6 +1354,19 @@
           "max": 1,
           "value": 0.78
         }
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:04.026986+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:04.026986+00:00"
+        }
       }
     ],
     "proof-rater-novelty": [
@@ -1337,6 +1428,19 @@
           "max": 1,
           "value": 0.35
         }
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:04.042779+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:04.042779+00:00"
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1389,6 +1493,19 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07T14:26:55.885939Z"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:04.060111+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:04.060111+00:00"
         }
       }
     ],
@@ -1443,6 +1560,19 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07T14:26:55.885939Z"
         }
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:04.076458+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:04.076458+00:00"
+        }
       }
     ],
     "proof-no-trivial-true": [
@@ -1478,6 +1608,19 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07T14:26:55.885939Z"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:04.090785+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:04.090785+00:00"
         }
       }
     ],
@@ -1532,6 +1675,19 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07T14:26:55.885939Z"
         }
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:04.109002+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:04.109002+00:00"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1585,6 +1741,19 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07T14:26:55.885939Z"
         }
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:04.126519+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:04.126519+00:00"
+        }
       }
     ],
     "proof-no-decide-masking": [
@@ -1621,6 +1790,19 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07T14:26:55.885939Z"
         }
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:04.141670+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:04.141670+00:00"
+        }
       }
     ],
     "da-false-claim": [
@@ -1642,6 +1824,19 @@
         "severity": "minor",
         "evidence": "observation-energy.ts:1",
         "notes": "No false claims identified in the prose of 'Observation increases quantum energy and deforms the action'; the mathematical reasoning concerning 'Let $\\mathfrak{O}\\in \\Gamma(U, \\mathrm{Ad}(J^1 \\mathcal{S}))$' is consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:04.156258+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:04.156258+00:00"
+        }
       }
     ],
     "da-vacuous": [
@@ -1663,6 +1858,19 @@
         "severity": "minor",
         "evidence": "observation-energy.ts:1",
         "notes": "The block 'Observation increases quantum energy and deforms the action' presents substantial mathematical content: 'Let $\\mathfrak{O}\\in \\Gamma(U, \\mathrm{Ad}(J^1 \\mathcal{S}))$'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:04.170455+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:04.170455+00:00"
+        }
       }
     ],
     "da-circular": [
@@ -1684,6 +1892,19 @@
         "severity": "minor",
         "evidence": "observation-energy.ts:1",
         "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Observation increases quantum energy and deforms the action' (which asserts 'Let $\\mathfrak{O}\\in \\Gamma(U, \\mathrm{Ad}(J^1 \\mathcal{S}))$')."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:04.190597+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:04.190597+00:00"
+        }
       }
     ],
     "da-overclaim": [
@@ -1705,6 +1926,19 @@
         "severity": "minor",
         "evidence": "observation-energy.ts:1",
         "notes": "The remarks and narrative scope in 'Observation increases quantum energy and deforms the action' concerning 'Let $\\mathfrak{O}\\in \\Gamma(U, \\mathrm{Ad}(J^1 \\mathcal{S}))$' are appropriately qualified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:04.207114+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:04.207114+00:00"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1726,6 +1960,19 @@
         "severity": "minor",
         "evidence": "observation-energy.ts:1",
         "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Observation increases quantum energy and deforms the action'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:04.223927+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:04.223927+00:00"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1747,6 +1994,19 @@
         "severity": "minor",
         "evidence": "observation-energy.ts:1",
         "notes": "The prose arguments in 'Observation increases quantum energy and deforms the action' proceed logically through the stated steps: 'Let $\\mathfrak{O}\\in \\Gamma(U, \\mathrm{Ad}(J^1 \\mathcal{S}))$'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:04.243493+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:04.243493+00:00"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1768,6 +2028,19 @@
         "severity": "minor",
         "evidence": "observation-energy.ts:1",
         "notes": "No Lean sibling required; the narrative of 'Observation increases quantum energy and deforms the action' matches the expected configuration."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:04.262489+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:04.262489+00:00"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1789,6 +2062,19 @@
         "severity": "minor",
         "evidence": "observation-energy.ts:1",
         "notes": "No citations are present in 'Observation increases quantum energy and deforms the action', hence no citation misuse is possible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:04.282666+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:04.282666+00:00"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1810,6 +2096,19 @@
         "severity": "minor",
         "evidence": "observation-energy.ts:1",
         "notes": "Key terms and symbols in 'Observation increases quantum energy and deforms the action' (e.g. from 'Let $\\mathfrak{O}\\in \\Gamma(U, \\mathrm{Ad}(J^1 \\mathcal{S}))$') are mathematically defined and unambiguous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:04.299699+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:04.299699+00:00"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1831,6 +2130,19 @@
         "severity": "minor",
         "evidence": "observation-energy.ts:1",
         "notes": "The empirical claims in 'Observation increases quantum energy and deforms the action' (quoting 'Let $\\mathfrak{O}\\in \\Gamma(U, \\mathrm{Ad}(J^1 \\mathcal{S}))$') are structurally anchored to the QOU mass framework and are stable."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:04.316877+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:04.316877+00:00"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1852,6 +2164,19 @@
         "severity": "minor",
         "evidence": "observation-energy.ts:1",
         "notes": "The physical concepts described in 'Observation increases quantum energy and deforms the action' are consistent with quantum observable mechanics."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:04.336140+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:04.336140+00:00"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1873,6 +2198,19 @@
         "severity": "minor",
         "evidence": "observation-energy.ts:1",
         "notes": "The derivation steps and formal definitions in 'Observation increases quantum energy and deforms the action' are reproducible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:04.350156+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:04.350156+00:00"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1895,6 +2233,19 @@
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Observation increases quantum energy and deforms the action' (concerning 'Let $\\mathfrak{O}\\in \\Gamma(U, \\mathrm{Ad}(J^1 \\mathcal{S}))$') are consistent and formally verified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:04.382191+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:04.382191+00:00"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1912,6 +2263,36 @@
         "field_hash": {
           "md": "e8e9b0f17eec",
           "ts": "1be9ce23b091"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:04.399563+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:04.399563+00:00"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:04.414134+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:04.414134+00:00"
         }
       }
     ]

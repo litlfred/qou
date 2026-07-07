@@ -816,6 +816,19 @@
         "reviewed_at": "2026-07-07T14:26:55.766094Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:01.486944+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:01.486944+00:00"
+        }
       }
     ],
     "da-false-claim": [
@@ -837,6 +850,19 @@
         "severity": "minor",
         "evidence": "categorical-action-notation.ts:1",
         "notes": "No false claims identified in the prose of 'Notation for the categorical action'; the mathematical reasoning concerning 'Let $(\\mathbf{C}, A, \\tau)$ be a' is consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:01.504278+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:01.504278+00:00"
+        }
       }
     ],
     "da-vacuous": [
@@ -858,6 +884,19 @@
         "severity": "minor",
         "evidence": "categorical-action-notation.ts:1",
         "notes": "The block 'Notation for the categorical action' presents substantial mathematical content: 'Let $(\\mathbf{C}, A, \\tau)$ be a'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:01.521524+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:01.521524+00:00"
+        }
       }
     ],
     "da-circular": [
@@ -879,6 +918,19 @@
         "severity": "minor",
         "evidence": "categorical-action-notation.ts:1",
         "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Notation for the categorical action' (which asserts 'Let $(\\mathbf{C}, A, \\tau)$ be a')."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:01.538170+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:01.538170+00:00"
+        }
       }
     ],
     "da-overclaim": [
@@ -900,6 +952,19 @@
         "severity": "minor",
         "evidence": "categorical-action-notation.ts:1",
         "notes": "The remarks and narrative scope in 'Notation for the categorical action' concerning 'Let $(\\mathbf{C}, A, \\tau)$ be a' are appropriately qualified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:01.554021+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:01.554021+00:00"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -921,6 +986,19 @@
         "severity": "minor",
         "evidence": "categorical-action-notation.ts:1",
         "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Notation for the categorical action'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:01.570285+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:01.570285+00:00"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -942,6 +1020,19 @@
         "severity": "minor",
         "evidence": "categorical-action-notation.ts:1",
         "notes": "The prose arguments in 'Notation for the categorical action' proceed logically through the stated steps: 'Let $(\\mathbf{C}, A, \\tau)$ be a'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:01.586252+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:01.586252+00:00"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -963,6 +1054,19 @@
         "severity": "minor",
         "evidence": "categorical-action-notation.ts:1",
         "notes": "No Lean sibling required; the narrative of 'Notation for the categorical action' matches the expected configuration."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:01.604358+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:01.604358+00:00"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -984,6 +1088,19 @@
         "severity": "minor",
         "evidence": "categorical-action-notation.ts:1",
         "notes": "No citations are present in 'Notation for the categorical action', hence no citation misuse is possible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:01.622597+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:01.622597+00:00"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1005,6 +1122,19 @@
         "severity": "minor",
         "evidence": "categorical-action-notation.ts:1",
         "notes": "Key terms and symbols in 'Notation for the categorical action' (e.g. from 'Let $(\\mathbf{C}, A, \\tau)$ be a') are mathematically defined and unambiguous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:01.641723+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:01.641723+00:00"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1026,6 +1156,19 @@
         "severity": "minor",
         "evidence": "categorical-action-notation.ts:1",
         "notes": "The algebraic and logical relations in 'Notation for the categorical action' are independent of empirical tuning parameters."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:01.658988+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:01.658988+00:00"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1047,6 +1190,19 @@
         "severity": "minor",
         "evidence": "categorical-action-notation.ts:1",
         "notes": "The physical concepts described in 'Notation for the categorical action' are consistent with quantum observable mechanics."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:01.676115+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:01.676115+00:00"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1068,6 +1224,19 @@
         "severity": "minor",
         "evidence": "categorical-action-notation.ts:1",
         "notes": "The derivation steps and formal definitions in 'Notation for the categorical action' are reproducible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:01.701325+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:01.701325+00:00"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1090,6 +1259,19 @@
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Notation for the categorical action' (concerning 'Let $(\\mathbf{C}, A, \\tau)$ be a') are consistent and formally verified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:01.719224+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:01.719224+00:00"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1107,6 +1289,36 @@
         "field_hash": {
           "md": "7c4c12ca6f0c",
           "ts": "ed7d88d32183"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:01.734758+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:01.734758+00:00"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:01.753177+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:01.753177+00:00"
         }
       }
     ]

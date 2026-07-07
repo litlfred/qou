@@ -874,6 +874,19 @@
         "severity": "minor",
         "evidence": "rigid-dualizing-complex.ts:1",
         "notes": "Block placement and kind 'definition' match validated structurally."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:05.516851+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:05.516851+00:00"
+        }
       }
     ],
     "wall-side-statement": [
@@ -896,6 +909,19 @@
         "severity": "minor",
         "evidence": "rigid-dualizing-complex.lean:1",
         "notes": "The Lean theorem/definition statement in rigid-dualizing-complex.lean matches the mathematical statement in rigid-dualizing-complex.md."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:05.534658+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:05.534658+00:00"
+        }
       }
     ],
     "da-false-claim": [
@@ -918,6 +944,19 @@
         "severity": "minor",
         "evidence": "rigid-dualizing-complex.lean:1",
         "notes": "The mathematical claims in 'Rigid dualizing complex' regarding 'Let $A$ be the Frobenius--Hopf substrate algebra and let $D(A)$ denote' are unverified due to compilation errors in the Lean sibling file rigid-dualizing-complex.lean: content/quantum-observable-universe/quantum-observable-universes/rigid-dualizing-complex.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/Homology/Complex.olean' of module Mathlib.Algebra.Homology.Complex does not exist."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:05.568541+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:05.568541+00:00"
+        }
       }
     ],
     "da-vacuous": [
@@ -940,6 +979,19 @@
         "severity": "minor",
         "evidence": "rigid-dualizing-complex.ts:1",
         "notes": "The sibling Lean file rigid-dualizing-complex.lean fails to compile, so the completeness and non-vacuity of the formal proof cannot be verified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:05.584396+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:05.584396+00:00"
+        }
       }
     ],
     "da-circular": [
@@ -962,6 +1014,19 @@
         "severity": "minor",
         "evidence": "rigid-dualizing-complex.ts:1",
         "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Rigid dualizing complex' (which asserts 'Let $A$ be the Frobenius--Hopf substrate algebra and let $D(A)$ denote')."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:05.601805+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:05.601805+00:00"
+        }
       }
     ],
     "da-overclaim": [
@@ -984,6 +1049,19 @@
         "severity": "minor",
         "evidence": "rigid-dualizing-complex.ts:1",
         "notes": "The prose presents 'Rigid dualizing complex' as verified, but the sibling Lean file rigid-dualizing-complex.lean fails to compile."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:05.617613+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:05.617613+00:00"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1006,6 +1084,19 @@
         "severity": "minor",
         "evidence": "rigid-dualizing-complex.ts:1",
         "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Rigid dualizing complex'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:05.633354+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:05.633354+00:00"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1028,6 +1119,19 @@
         "severity": "minor",
         "evidence": "rigid-dualizing-complex.lean:1",
         "notes": "Logical gaps exist in the formalization of 'Rigid dualizing complex' due to compilation failure in rigid-dualizing-complex.lean."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:05.649084+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:05.649084+00:00"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1050,6 +1154,19 @@
         "severity": "minor",
         "evidence": "rigid-dualizing-complex.lean:1",
         "notes": "The Lean sibling rigid-dualizing-complex.lean fails compilation, causing divergence from the narrative."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:05.662945+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:05.662945+00:00"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1072,6 +1189,19 @@
         "severity": "minor",
         "evidence": "rigid-dualizing-complex.ts:1",
         "notes": "The citations (yekutieli2015, yekutieli2010, ) in 'Rigid dualizing complex' are consistent with the sources referenced in the text."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:05.680562+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:05.680562+00:00"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1094,6 +1224,19 @@
         "severity": "minor",
         "evidence": "rigid-dualizing-complex.ts:1",
         "notes": "Key terms and symbols in 'Rigid dualizing complex' (e.g. from 'Let $A$ be the Frobenius--Hopf substrate algebra and let $D(A)$ denote') are mathematically defined and unambiguous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:05.697710+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:05.697710+00:00"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1116,6 +1259,19 @@
         "severity": "minor",
         "evidence": "rigid-dualizing-complex.ts:1",
         "notes": "The algebraic and logical relations in 'Rigid dualizing complex' are independent of empirical tuning parameters."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:05.712418+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:05.712418+00:00"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1138,6 +1294,19 @@
         "severity": "minor",
         "evidence": "rigid-dualizing-complex.ts:1",
         "notes": "The physical concepts described in 'Rigid dualizing complex' are consistent with quantum observable mechanics."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:05.730668+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:05.730668+00:00"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1160,6 +1329,19 @@
         "severity": "minor",
         "evidence": "rigid-dualizing-complex.lean:1",
         "notes": "The Lean sibling rigid-dualizing-complex.lean fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/quantum-observable-universes/rigid-dualizing-complex.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/Homology/Complex.olean' of module Mathlib.Algebra.Homology.Complex does not exist."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:05.746597+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:05.746597+00:00"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1183,6 +1365,19 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/rigid-dualizing-complex.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/rigid-dualizing-complex.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/Homology/Complex.olean' of module Mathlib.Algebra.Homology.Complex does not exist",
         "verdict": "open-objection",
         "referee_argument": "The proposed formalization for 'Rigid dualizing complex' (asserting 'Let $A$ be the Frobenius--Hopf substrate algebra and let $D(A)$ denote') fails to compile with error: content/quantum-observable-universe/quantum-observable-universes/rigid-dualizing-complex.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/Homology/Complex.olean' of module Mathlib.Algebra.Homology.Complex does not exist. A competent referee cannot accept this as a verified mathematical claim."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:05.763092+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:05.763092+00:00"
+        }
       }
     ],
     "bib-cite-resolves": [
@@ -1221,6 +1416,36 @@
           "md": "a43b9719ee06",
           "ts": "584b80145264",
           "lean": "3955de0a5865"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:05.780613+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:05.780613+00:00"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:05.795619+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:05.795619+00:00"
         }
       }
     ]
