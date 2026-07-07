@@ -9,15 +9,17 @@ $$
 \mathrm{num}(q) = q^{14} - 5q^{12} + 10q^{10} - 16q^{8} + 16q^{6} - 10q^{4} + 5q^{2} - 1.
 $$
 
-**The cyclotomic content is trivial and the residue is a cubic.** Exactly,
-$\mathrm{num}(q) = (q^2 - 1)\,R_{12}(q)$, so the only cyclotomic factor is
-$\Phi_1 \Phi_2 = q^2 - 1$; the fourth cyclotomic polynomial $\Phi_4 = q^2 + 1$
-does **not** divide $\mathrm{num}$ (it leaves the nonzero remainder $-64$, i.e.
-$\mathrm{num} = -64$ at $q = i$). The residue $R_{12}$ is even and palindromic,
-collapsing in the bar-even loop-trace variable $y = q^2 + q^{-2} = 2\cosh 2\lambda$ to
+**The cyclotomic content factors cleanly into a quantum differential.** Exactly,
+$\mathrm{num}(q) = (q^2 - 1)\,R_{12}(q)$, which means the bar-odd part of the categorical net evaluates *exactly* to:
 
 $$
-R_{12}(q) = q^{6}\,C(y), \qquad C(y) = y^3 - 4y^2 + 3y - 2.
+\Delta_{\mathrm{net}}^{\mathrm{odd}} = \frac{q - q^{-1}}{4} \cdot C(y) = \frac{h}{4} \cdot C(y)
+$$
+
+where $h = q - q^{-1}$ is the quantum differential and $C(y)$ is a cubic in the bar-even loop-trace variable $y = q^2 + q^{-2} = 2\cosh 2\lambda$ given by:
+
+$$
+C(y) = y^3 - 4y^2 + 3y - 2.
 $$
 
 $C$ is irreducible over $\mathbb{Q}$ (its only possible rational roots $\pm 1, \pm 2$
@@ -33,12 +35,12 @@ carrier**: this is the structural reason the real-$q$ $c_3$ closures fail.
 bar-odd carrier over the knot sectors of the $\mathbf{H}_3$ normal form isolates
 the origin of the cubic:
 
-| knot sector | crossings | bar-odd contribution in $y$ |
+| knot sector | crossings | $\Delta^{\mathrm{odd}}_{\mathrm{sector}}$ |
 |---|---|---|
 | virtual ($\sigma_0, \sigma_1$) | 1 | $0$ |
 | trefoil ($\sigma_0\sigma_1\sigma_0$) | 3 | $0$ |
-| unknot ($\mathbf{1}$) | 0 | $C_{\mathrm{unknot}}(y) = 2y^2 - 7y + 4$ |
-| Hopf ($\sigma_0\sigma_1 + \sigma_1\sigma_0$) | 2 | $C_{\mathrm{Hopf}}(y) = y^3 - 6y^2 + 10y - 6$ |
+| unknot ($\mathbf{1}$) | 0 | $\frac{h}{4} \cdot (2y^2 - 7y + 4) = \frac{h}{4} \cdot C_{\mathrm{unknot}}(y)$ |
+| Hopf ($\sigma_0\sigma_1 + \sigma_1\sigma_0$) | 2 | $\frac{h}{4} \cdot (y^3 - 6y^2 + 10y - 6) = \frac{h}{4} \cdot C_{\mathrm{Hopf}}(y)$ |
 
 with $C = C_{\mathrm{Hopf}} + C_{\mathrm{unknot}}$. The odd-crossing sectors
 (virtual, trefoil) are bar-even and vanish; the identity contributes only a
