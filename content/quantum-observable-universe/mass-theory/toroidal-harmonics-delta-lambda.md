@@ -26,7 +26,7 @@ It does **not** establish the following, which remain open:
 - **The $w$-ODE is not yet identified with the proved $z$-recursion.**
   The pre-archimedean Markov recursion
   $4(n+1)a_{n+1} + 6n\,a_n + (2n-1)a_{n-1} = 0$
-  ([`lem:interface-knot-markov-z`](#)) is written in the variable
+  ([`prop:interface-knot-markov-z`](#prop:interface-knot-markov-z)) is written in the variable
   $w = q-1$ — a *different* $w$ from the $w = z^2$ here. Matching the two
   is part of the open $z \to c_k$ **f-map**; it is asserted, not proved.
 - **No $c_k$ is made exact by this map.** In particular $c_3$ is

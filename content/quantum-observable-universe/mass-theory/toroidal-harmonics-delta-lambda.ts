@@ -11,6 +11,6 @@ export default proposition({
     status: "verified"
   },
   uses: [
-    "lem:interface-knot-markov-z"
+    "prop:interface-knot-markov-z"
   ]
 });
