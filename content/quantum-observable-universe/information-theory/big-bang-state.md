@@ -1,4 +1,4 @@
-Let $U \subset M_0$ be an affine chart carrying a bundle initial condition $\mathcal{S}_0 = \sum_i (p_i, H_i)$ (see [bundle initial conditions](#def:bundle-initial-conditions)).
+Let $U \subset M_0$ be an affine chart carrying a bundle initial condition $\mathcal{S}_0 = \sum_i (p_i, H_i)$ .
 
 **Definition.** A **big bang state** is a bundle initial condition with a trivial degree-$0$ algebra:
 $$
@@ -10,7 +10,7 @@ $$
 Equivalently, every constituent satisfies $H_i = \varnothing$ (a photon with zero fibre data), and the section $s_0 \in \Gamma(U, A_0)$ encoding their identity vanishes. There are no degree-$0$ observables at $\mathcal{S}_0$. The remaining higher-jet data—sections of $A_1/A_0$ (linear transport) and $A_2/A_0$ (curvature)—provides the seed for the forward light cone $\mathcal{S}_1, \mathcal{S}_2, \ldots$
 
 **Relation to the jet horizon.**
-A big bang state is algebraically identical to the data on one side of a jet horizon (see [jet horizon](#def:jet-horizon)). Both are characterised by the vanishing of $A_0$. The difference is purely contextual:
+A big bang state is algebraically identical to the data on one side of a jet horizon . Both are characterised by the vanishing of $A_0$. The difference is purely contextual:
 
 | Concept | Algebraic condition | Role |
 |:--------|:---:|:---|

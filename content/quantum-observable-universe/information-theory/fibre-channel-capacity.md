@@ -1,7 +1,7 @@
-*Interpretation of the [one-dimensional QOU channel](#def:one-dim-qou-channel).*
+*Interpretation of the one-dimensional channel.*
 
-The information transmitted by a single fibre is encoded in its braid word $\beta$. The receiver reads out the Markov trace $\mathrm{tr}_M(\beta)$. The **capacity** of the channel is therefore the entropy of the reachable trace image. This counts the number of distinguishable values $\mathrm{tr}_M(\beta)$ can take as $\beta$ ranges over the admissible braids on the fibre's $n$ strands. Braid words sharing the same trace are indistinguishable to the receiver. Capacity counts trace-classes, not raw braids.
+Information is encoded in the braid word $\beta$ and read out via the Markov trace $\mathrm{tr}_M(\beta)$. Braid words sharing the same trace are indistinguishable to the receiver. The **capacity** of the channel is the entropy of the reachable trace image. It counts the distinguishable values of $\mathrm{tr}_M(\beta)$ rather than the raw braids.
 
-Each elementary crossing provides at most the operational entropy $\eta_q = (2q-1)/q^3$ of information. The capacity of an $n$-strand fibre carrying a length-$\ell$ braid is bounded by $\ell\,\eta_q$ $q$-bits. This realizes the one-dimensional specialisation of the Bekenstein and Bremermann limits. 
+An elementary crossing provides at most the operational entropy $\eta_q = (2q-1)/q^3$. The capacity of an $n$-strand fibre carrying a length-$\ell$ braid is bounded by $\ell\,\eta_q$ $q$-bits. This bound constitutes a one-dimensional analogue of the Bekenstein and Bremermann limits. 
 
-Parallel fibres do not interact. The total capacity is strictly additive. The joint Markov trace of $k$ cladded fibres multiplies, meaning their log-capacities add. A bundle of $k$ independent fibres carries $k$ times the single-fibre rate. This is the categorical analogue of the classical rule that independent channels add their capacities.
+Because parallel fibres do not interact, their joint Markov trace multiplies and their capacities add. A bundle of $k$ independent fibres carries exactly $k$ times the single-fibre capacity. This mirrors the classical additivity of independent information channels.
