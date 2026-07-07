@@ -1,10 +1,4 @@
-Let $(\mathbf{C}, \otimes, \mathbf{1})$ be a :refterm[monoidal category]{#monoidal-category} and
-let $V$ be an object with dual $V^{\vee}$, evaluation
-$\mathrm{ev} \colon V \otimes V^{\vee} \to \mathbf{1}$, and
-coevaluation $\mathrm{coev} \colon \mathbf{1} \to V^{\vee} \otimes V$.
-The **snake identities** (also called *zig-zag identities*) are the
-equations that make $(\mathrm{ev}, \mathrm{coev})$ exhibit $V^{\vee}$
-as a dual of $V$; they are the two commutative diagrams:
+Let $(\mathbf{C}, \otimes, \mathbf{1})$ be a :refterm[monoidal category]{#monoidal-category}. Let $V$ be an object with dual $V^{\vee}$, evaluation $\mathrm{ev} \colon V \otimes V^{\vee} \to \mathbf{1}$, and coevaluation $\mathrm{coev} \colon \mathbf{1} \to V^{\vee} \otimes V$. The **snake identities** are the equations making $(\mathrm{ev}, \mathrm{coev})$ exhibit $V^{\vee}$ as a :refterm[right dual]{#right-dual} of $V$:
 
 ```tex
 \begin{equation}\label{eq:snake-identities}
@@ -38,9 +32,4 @@ as a dual of $V$; they are the two commutative diagrams:
 \end{equation}
 ```
 
-These identities express the fact that $(\mathrm{ev}, \mathrm{coev})$
-exhibit $V^{\vee}$ as a :refterm[right dual]{#right-dual} of $V$ (equivalently, that the pair
-forms an :defterm[exact pairing]{#exact-pairing}). The
-terminology "snake" comes from the graphical calculus, where the
-composites trace out an S-shaped curve that straightens to a vertical
-line.
+The pair forms an :defterm[exact pairing]{#exact-pairing}. In graphical calculus, the composites trace an S-shaped curve that straightens to a vertical line.
