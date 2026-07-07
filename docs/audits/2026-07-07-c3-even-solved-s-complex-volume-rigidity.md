@@ -90,6 +90,27 @@ ladder in the shape of our `c_k`. Literature (q-hyperbolic functions):
 | Garoufalidis–Gu–Mariño | resurgence / Stokes constants of J_N | quantum-modular corrections as resurgent data |
 | Garoufalidis 2004 (`garoufalidis2004`, cited) | AJ / Â-polynomial | q-holonomic parent of the c_k recursion |
 
+### 3a. Ohtsuki pursued — the 4₁ computation (concrete)
+
+Probe [`qbeta_ohtsuki_figure_eight_ladder.py`](scripts/qbeta_ohtsuki_figure_eight_ladder.py)
+(4/4, 60 dps) computes the figure-eight Kashaev invariant
+`J_N(4₁) = Σ_{k<N} ∏_{j≤k}(2 sin(πj/N))²` and fits its asymptotics:
+
+- **Volume conjecture recovered to rel err `2.4×10⁻¹²`**: `2π·(slope) = 2.0298832128`
+  vs `Vol(4₁) = 2Λ(π/3) = 2.0298832128`. The quantum object `J_N` (the 𝔙_q side)
+  has exponential rate = the **classical** `𝔙(4₁)` — the 𝔙_q↔𝔙 bridge, concrete.
+- **Leading constant `b = −¼ log 3`** exactly (measured `−0.274653`), i.e. the
+  `3^(−1/4)` prefactor — the **same √3/hexagonal ζ₃ constant** that appears in the
+  c_3^even ℚ(√3) rungs. Structural consistency (not a fit): the even channel and
+  the figure-eight quantum volume share the ζ₃ hexagonal datum.
+- **κ-ladder** (Ohtsuki corrections): `κ₁ ≈ 0.554, κ₂ ≈ 0.730, κ₃ ≈ 2.814`.
+
+**These κ_k are fixed-knot, anchor-invariant.** They pin the c_k ladder
+*structure* (the derived even channel); they do **not** — and must not —
+reproduce S's 2×10⁶ swing, which is a circular-extraction artifact, not fibre
+physics. **Bridging the Ohtsuki κ_k (in the `2π/N` basis) to our `u = b·ℏ_q²`
+ladder normalization is exactly the open f-map** — the next concrete step.
+
 ## 4. Does this get us closer? — honest assessment
 
 - **Closer to a sharp statement + runnable experiment: yes.** The keystone is now
