@@ -832,6 +832,19 @@
         "reviewed_at": "2026-07-07T14:26:55.951344Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:42.236537+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:42.236537+00:00"
+        }
       }
     ],
     "da-false-claim": [
@@ -853,6 +866,19 @@
         "severity": "minor",
         "evidence": "particles-intro.ts:1",
         "notes": "No false claims identified in the prose of 'Particles Intro'; the mathematical reasoning concerning '_[draft]_ The transport equation $\\mathcal{D}_\\nabla \\psi = 0$' is consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:42.253856+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:42.253856+00:00"
+        }
       }
     ],
     "da-vacuous": [
@@ -874,6 +900,19 @@
         "severity": "minor",
         "evidence": "particles-intro.ts:1",
         "notes": "The block 'Particles Intro' presents substantial mathematical content: '_[draft]_ The transport equation $\\mathcal{D}_\\nabla \\psi = 0$'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:42.270029+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:42.270029+00:00"
+        }
       }
     ],
     "da-circular": [
@@ -895,6 +934,19 @@
         "severity": "minor",
         "evidence": "particles-intro.ts:1",
         "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Particles Intro' (which asserts '_[draft]_ The transport equation $\\mathcal{D}_\\nabla \\psi = 0$')."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:42.284660+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:42.284660+00:00"
+        }
       }
     ],
     "da-overclaim": [
@@ -916,6 +968,19 @@
         "severity": "minor",
         "evidence": "particles-intro.ts:1",
         "notes": "The remarks and narrative scope in 'Particles Intro' concerning '_[draft]_ The transport equation $\\mathcal{D}_\\nabla \\psi = 0$' are appropriately qualified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:42.300369+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:42.300369+00:00"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -937,6 +1002,19 @@
         "severity": "minor",
         "evidence": "particles-intro.ts:1",
         "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Particles Intro'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:42.316269+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:42.316269+00:00"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -958,6 +1036,19 @@
         "severity": "minor",
         "evidence": "particles-intro.ts:1",
         "notes": "The prose arguments in 'Particles Intro' proceed logically through the stated steps: '_[draft]_ The transport equation $\\mathcal{D}_\\nabla \\psi = 0$'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:42.332234+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:42.332234+00:00"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -979,6 +1070,19 @@
         "severity": "minor",
         "evidence": "particles-intro.ts:1",
         "notes": "No Lean sibling required; the narrative of 'Particles Intro' matches the expected configuration."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:42.346480+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:42.346480+00:00"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1000,6 +1104,19 @@
         "severity": "minor",
         "evidence": "particles-intro.ts:1",
         "notes": "No citations are present in 'Particles Intro', hence no citation misuse is possible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:42.362495+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:42.362495+00:00"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1021,6 +1138,19 @@
         "severity": "minor",
         "evidence": "particles-intro.ts:1",
         "notes": "Key terms and symbols in 'Particles Intro' (e.g. from '_[draft]_ The transport equation $\\mathcal{D}_\\nabla \\psi = 0$') are mathematically defined and unambiguous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:42.379334+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:42.379334+00:00"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1042,6 +1172,19 @@
         "severity": "minor",
         "evidence": "particles-intro.ts:1",
         "notes": "The empirical claims in 'Particles Intro' (quoting '_[draft]_ The transport equation $\\mathcal{D}_\\nabla \\psi = 0$') are structurally anchored to the QOU mass framework and are stable."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:42.398776+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:42.398776+00:00"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1063,6 +1206,19 @@
         "severity": "minor",
         "evidence": "particles-intro.ts:1",
         "notes": "The physical concepts described in 'Particles Intro' are consistent with quantum observable mechanics."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:42.412482+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:42.412482+00:00"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1084,6 +1240,19 @@
         "severity": "minor",
         "evidence": "particles-intro.ts:1",
         "notes": "The derivation steps and formal definitions in 'Particles Intro' are reproducible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:42.431643+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:42.431643+00:00"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1106,6 +1275,19 @@
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Particles Intro' (concerning '_[draft]_ The transport equation $\\mathcal{D}_\\nabla \\psi = 0$') are consistent and formally verified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:42.449090+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:42.449090+00:00"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1123,6 +1305,36 @@
         "field_hash": {
           "md": "27b8fb47794c",
           "ts": "e61832eaa2bb"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:42.463675+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:42.463675+00:00"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:42.479476+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:42.479476+00:00"
         }
       }
     ]

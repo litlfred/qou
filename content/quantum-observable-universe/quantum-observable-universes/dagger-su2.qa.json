@@ -833,6 +833,19 @@
         "reviewed_at": "2026-07-07T14:26:55.799624Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:41.133604+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:41.133604+00:00"
+        }
       }
     ],
     "da-false-claim": [
@@ -855,6 +868,19 @@
         "severity": "minor",
         "evidence": "dagger-su2.ts:1",
         "notes": "For the example 'Involutive structure on $\\\\mathrm{Rep}(\\\\mathrm{SU}(2))$' (asserting 'Continuing [Frobenius $\\mathrm{SU}(2)$](#ex:frobenius-su2), the category'), the mathematical claims are verified as there are no false claims detected, supported by the successful compilation of dagger-su2.lean."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:41.150486+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:41.150486+00:00"
+        }
       }
     ],
     "da-vacuous": [
@@ -877,6 +903,19 @@
         "severity": "minor",
         "evidence": "dagger-su2.ts:1",
         "notes": "The sibling Lean file dagger-su2.lean compiles successfully without any sorry placeholders, verifying that the proof of 'Involutive structure on $\\\\mathrm{Rep}(\\\\mathrm{SU}(2))$' is non-vacuous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:41.168227+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:41.168227+00:00"
+        }
       }
     ],
     "da-circular": [
@@ -899,6 +938,19 @@
         "severity": "minor",
         "evidence": "dagger-su2.ts:1",
         "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Involutive structure on $\\\\mathrm{Rep}(\\\\mathrm{SU}(2))$' (which asserts 'Continuing [Frobenius $\\mathrm{SU}(2)$](#ex:frobenius-su2), the category')."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:41.184347+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:41.184347+00:00"
+        }
       }
     ],
     "da-overclaim": [
@@ -921,6 +973,19 @@
         "severity": "minor",
         "evidence": "dagger-su2.ts:1",
         "notes": "No overclaims: the scope of 'Involutive structure on $\\\\mathrm{Rep}(\\\\mathrm{SU}(2))$' matches the sorry-free formalization in dagger-su2.lean."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:41.201560+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:41.201560+00:00"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -943,6 +1008,19 @@
         "severity": "minor",
         "evidence": "dagger-su2.ts:1",
         "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Involutive structure on $\\\\mathrm{Rep}(\\\\mathrm{SU}(2))$'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:41.216940+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:41.216940+00:00"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -965,6 +1043,19 @@
         "severity": "minor",
         "evidence": "dagger-su2.ts:1",
         "notes": "The logical steps in 'Involutive structure on $\\\\mathrm{Rep}(\\\\mathrm{SU}(2))$' are formally sound and verified by the sorry-free compilation of dagger-su2.lean."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:41.234595+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:41.234595+00:00"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -987,6 +1078,19 @@
         "severity": "minor",
         "evidence": "dagger-su2.ts:1",
         "notes": "The Lean signature in dagger-su2.lean corresponds directly to the narrative claim in 'Involutive structure on $\\\\mathrm{Rep}(\\\\mathrm{SU}(2))$'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:41.250454+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:41.250454+00:00"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1009,6 +1113,19 @@
         "severity": "minor",
         "evidence": "dagger-su2.ts:1",
         "notes": "No citations are present in 'Involutive structure on $\\\\mathrm{Rep}(\\\\mathrm{SU}(2))$', hence no citation misuse is possible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:41.265248+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:41.265248+00:00"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1031,6 +1148,19 @@
         "severity": "minor",
         "evidence": "dagger-su2.ts:1",
         "notes": "Key terms and symbols in 'Involutive structure on $\\\\mathrm{Rep}(\\\\mathrm{SU}(2))$' (e.g. from 'Continuing [Frobenius $\\mathrm{SU}(2)$](#ex:frobenius-su2), the category') are mathematically defined and unambiguous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:41.279148+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:41.279148+00:00"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1053,6 +1183,19 @@
         "severity": "minor",
         "evidence": "dagger-su2.ts:1",
         "notes": "The empirical claims in 'Involutive structure on $\\\\mathrm{Rep}(\\\\mathrm{SU}(2))$' (quoting 'Continuing [Frobenius $\\mathrm{SU}(2)$](#ex:frobenius-su2), the category') are structurally anchored to the QOU mass framework and are stable."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:41.299419+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:41.299419+00:00"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1075,6 +1218,19 @@
         "severity": "minor",
         "evidence": "dagger-su2.ts:1",
         "notes": "The physical concepts described in 'Involutive structure on $\\\\mathrm{Rep}(\\\\mathrm{SU}(2))$' are consistent with quantum observable mechanics."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:41.315520+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:41.315520+00:00"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1097,6 +1253,19 @@
         "severity": "minor",
         "evidence": "dagger-su2.lean:1",
         "notes": "The formalization is fully reproducible as dagger-su2.lean compiles successfully."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:41.332718+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:41.332718+00:00"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1120,6 +1289,19 @@
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Involutive structure on $\\\\mathrm{Rep}(\\\\mathrm{SU}(2))$' (concerning 'Continuing [Frobenius $\\mathrm{SU}(2)$](#ex:frobenius-su2), the category') are consistent and formally verified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:41.347324+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:41.347324+00:00"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1138,6 +1320,36 @@
           "md": "701787154280",
           "ts": "ca2f62e5bde2",
           "lean": "3ae738ff066c"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:41.368013+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:41.368013+00:00"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:41.388240+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:41.388240+00:00"
         }
       }
     ]

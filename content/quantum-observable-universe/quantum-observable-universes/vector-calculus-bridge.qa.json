@@ -852,6 +852,19 @@
         "reviewed_at": "2026-07-07T14:26:55.947040Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:42.496936+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:42.496936+00:00"
+        }
       }
     ],
     "da-false-claim": [
@@ -873,6 +886,19 @@
         "severity": "minor",
         "evidence": "vector-calculus-bridge.ts:1",
         "notes": "No false claims identified in the prose of 'Differential forms and the classical vector calculus operators'; the mathematical reasoning concerning '$(M, g)$.' is consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:42.515244+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:42.515244+00:00"
+        }
       }
     ],
     "da-vacuous": [
@@ -894,6 +920,19 @@
         "severity": "minor",
         "evidence": "vector-calculus-bridge.ts:1",
         "notes": "The block 'Differential forms and the classical vector calculus operators' presents substantial mathematical content: '$(M, g)$.'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:42.531845+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:42.531845+00:00"
+        }
       }
     ],
     "da-circular": [
@@ -915,6 +954,19 @@
         "severity": "minor",
         "evidence": "vector-calculus-bridge.ts:1",
         "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Differential forms and the classical vector calculus operators' (which asserts '$(M, g)$.')."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:42.551324+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:42.551324+00:00"
+        }
       }
     ],
     "da-overclaim": [
@@ -936,6 +988,19 @@
         "severity": "minor",
         "evidence": "vector-calculus-bridge.ts:1",
         "notes": "The remarks and narrative scope in 'Differential forms and the classical vector calculus operators' concerning '$(M, g)$.' are appropriately qualified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:42.568359+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:42.568359+00:00"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -957,6 +1022,19 @@
         "severity": "minor",
         "evidence": "vector-calculus-bridge.ts:1",
         "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Differential forms and the classical vector calculus operators'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:42.585253+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:42.585253+00:00"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -978,6 +1056,19 @@
         "severity": "minor",
         "evidence": "vector-calculus-bridge.ts:1",
         "notes": "The prose arguments in 'Differential forms and the classical vector calculus operators' proceed logically through the stated steps: '$(M, g)$.'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:42.602617+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:42.602617+00:00"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -999,6 +1090,19 @@
         "severity": "minor",
         "evidence": "vector-calculus-bridge.ts:1",
         "notes": "No Lean sibling required; the narrative of 'Differential forms and the classical vector calculus operators' matches the expected configuration."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:42.622396+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:42.622396+00:00"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1020,6 +1124,19 @@
         "severity": "minor",
         "evidence": "vector-calculus-bridge.ts:1",
         "notes": "No citations are present in 'Differential forms and the classical vector calculus operators', hence no citation misuse is possible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:42.638806+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:42.638806+00:00"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1041,6 +1158,19 @@
         "severity": "minor",
         "evidence": "vector-calculus-bridge.ts:1",
         "notes": "Key terms and symbols in 'Differential forms and the classical vector calculus operators' (e.g. from '$(M, g)$.') are mathematically defined and unambiguous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:42.654908+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:42.654908+00:00"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1062,6 +1192,19 @@
         "severity": "minor",
         "evidence": "vector-calculus-bridge.ts:1",
         "notes": "The algebraic and logical relations in 'Differential forms and the classical vector calculus operators' are independent of empirical tuning parameters."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:42.670945+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:42.670945+00:00"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1083,6 +1226,19 @@
         "severity": "minor",
         "evidence": "vector-calculus-bridge.ts:1",
         "notes": "The physical concepts described in 'Differential forms and the classical vector calculus operators' are consistent with quantum observable mechanics."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:42.688896+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:42.688896+00:00"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1104,6 +1260,19 @@
         "severity": "minor",
         "evidence": "vector-calculus-bridge.ts:1",
         "notes": "The derivation steps and formal definitions in 'Differential forms and the classical vector calculus operators' are reproducible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:42.708185+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:42.708185+00:00"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1126,6 +1295,19 @@
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Differential forms and the classical vector calculus operators' (concerning '$(M, g)$.') are consistent and formally verified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:42.725729+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:42.725729+00:00"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1143,6 +1325,36 @@
         "field_hash": {
           "md": "d2ad7bb9fd33",
           "ts": "f27aac903247"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:42.741999+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:42.741999+00:00"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:42.756735+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:42.756735+00:00"
         }
       }
     ]

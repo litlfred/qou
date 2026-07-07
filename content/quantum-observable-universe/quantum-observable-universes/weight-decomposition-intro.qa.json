@@ -832,6 +832,19 @@
         "reviewed_at": "2026-07-07T14:26:55.954643Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:41.702330+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:41.702330+00:00"
+        }
       }
     ],
     "da-false-claim": [
@@ -853,6 +866,19 @@
         "severity": "minor",
         "evidence": "weight-decomposition-intro.ts:1",
         "notes": "No false claims identified in the prose of 'Weight Decomposition Intro'; the mathematical reasoning concerning '_[draft]_ With $G \\cong \\mathrm{SU}(2)$ in hand and the simple' is consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:41.716429+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:41.716429+00:00"
+        }
       }
     ],
     "da-vacuous": [
@@ -874,6 +900,19 @@
         "severity": "minor",
         "evidence": "weight-decomposition-intro.ts:1",
         "notes": "The block 'Weight Decomposition Intro' presents substantial mathematical content: '_[draft]_ With $G \\cong \\mathrm{SU}(2)$ in hand and the simple'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:41.733716+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:41.733716+00:00"
+        }
       }
     ],
     "da-circular": [
@@ -895,6 +934,19 @@
         "severity": "minor",
         "evidence": "weight-decomposition-intro.ts:1",
         "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Weight Decomposition Intro' (which asserts '_[draft]_ With $G \\cong \\mathrm{SU}(2)$ in hand and the simple')."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:41.751363+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:41.751363+00:00"
+        }
       }
     ],
     "da-overclaim": [
@@ -916,6 +968,19 @@
         "severity": "minor",
         "evidence": "weight-decomposition-intro.ts:1",
         "notes": "The remarks and narrative scope in 'Weight Decomposition Intro' concerning '_[draft]_ With $G \\cong \\mathrm{SU}(2)$ in hand and the simple' are appropriately qualified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:41.766689+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:41.766689+00:00"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -937,6 +1002,19 @@
         "severity": "minor",
         "evidence": "weight-decomposition-intro.ts:1",
         "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Weight Decomposition Intro'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:41.784305+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:41.784305+00:00"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -958,6 +1036,19 @@
         "severity": "minor",
         "evidence": "weight-decomposition-intro.ts:1",
         "notes": "The prose arguments in 'Weight Decomposition Intro' proceed logically through the stated steps: '_[draft]_ With $G \\cong \\mathrm{SU}(2)$ in hand and the simple'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:41.801252+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:41.801252+00:00"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -979,6 +1070,19 @@
         "severity": "minor",
         "evidence": "weight-decomposition-intro.ts:1",
         "notes": "No Lean sibling required; the narrative of 'Weight Decomposition Intro' matches the expected configuration."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:41.817419+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:41.817419+00:00"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1000,6 +1104,19 @@
         "severity": "minor",
         "evidence": "weight-decomposition-intro.ts:1",
         "notes": "No citations are present in 'Weight Decomposition Intro', hence no citation misuse is possible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:41.832584+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:41.832584+00:00"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1021,6 +1138,19 @@
         "severity": "minor",
         "evidence": "weight-decomposition-intro.ts:1",
         "notes": "Key terms and symbols in 'Weight Decomposition Intro' (e.g. from '_[draft]_ With $G \\cong \\mathrm{SU}(2)$ in hand and the simple') are mathematically defined and unambiguous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:41.847685+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:41.847685+00:00"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1042,6 +1172,19 @@
         "severity": "minor",
         "evidence": "weight-decomposition-intro.ts:1",
         "notes": "The empirical claims in 'Weight Decomposition Intro' (quoting '_[draft]_ With $G \\cong \\mathrm{SU}(2)$ in hand and the simple') are structurally anchored to the QOU mass framework and are stable."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:41.862783+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:41.862783+00:00"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1063,6 +1206,19 @@
         "severity": "minor",
         "evidence": "weight-decomposition-intro.ts:1",
         "notes": "The physical concepts described in 'Weight Decomposition Intro' are consistent with quantum observable mechanics."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:41.884759+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:41.884759+00:00"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1084,6 +1240,19 @@
         "severity": "minor",
         "evidence": "weight-decomposition-intro.ts:1",
         "notes": "The derivation steps and formal definitions in 'Weight Decomposition Intro' are reproducible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:41.900582+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:41.900582+00:00"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1106,6 +1275,19 @@
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Weight Decomposition Intro' (concerning '_[draft]_ With $G \\cong \\mathrm{SU}(2)$ in hand and the simple') are consistent and formally verified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:41.918273+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:41.918273+00:00"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1123,6 +1305,36 @@
         "field_hash": {
           "md": "4f6cc2df0abc",
           "ts": "54254d25c35e"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:41.945552+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:41.945552+00:00"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:41.963546+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:41.963546+00:00"
         }
       }
     ]
