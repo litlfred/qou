@@ -1,8 +1,9 @@
 # Independent determination of the Q_β crossing weight `w(q)` — formalize-first scope
 
 **Date:** 2026-07-07 · **Axis:** z→c_k f-map keystone — the forward direction
-· **Follows:** [KC19 affine narrowing](../audits/2026-07-07-qbeta-crossing-weight-affine-narrowing.md)
-(PR #3473) · **Status:** FORMALIZE-FIRST SCOPE (hypothesis + pre-registered
+· **Follows:** KC19 affine narrowing ([PR #3473](https://github.com/litlfred/qou/pull/3473);
+its audit doc `docs/audits/2026-07-07-qbeta-crossing-weight-affine-narrowing.md`
+lands on `main` when #3473 merges) · **Status:** FORMALIZE-FIRST SCOPE (hypothesis + pre-registered
 decidable gates). **No `c_k` value, no wiring** (registry §8 guard).
 
 ## 1. What KC19 leaves open — a single scalar
