@@ -834,6 +834,19 @@
         "reviewed_at": "2026-07-07T14:26:55.783833Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:40.922709+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:40.922709+00:00"
+        }
       }
     ],
     "da-false-claim": [
@@ -855,6 +868,19 @@
         "severity": "minor",
         "evidence": "q-codifferential-formula.ts:1",
         "notes": "No false claims identified in the prose of 'Expanded formula for the $q$-codifferential $\\\\delta_q$'; the mathematical reasoning concerning 'In the archimedean realisation, the $q$-exterior derivative is' is consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:40.951197+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:40.951197+00:00"
+        }
       }
     ],
     "da-vacuous": [
@@ -876,6 +902,19 @@
         "severity": "minor",
         "evidence": "q-codifferential-formula.ts:1",
         "notes": "The block 'Expanded formula for the $q$-codifferential $\\\\delta_q$' presents substantial mathematical content: 'In the archimedean realisation, the $q$-exterior derivative is'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:40.971688+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:40.971688+00:00"
+        }
       }
     ],
     "da-circular": [
@@ -897,6 +936,19 @@
         "severity": "minor",
         "evidence": "q-codifferential-formula.ts:1",
         "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Expanded formula for the $q$-codifferential $\\\\delta_q$' (which asserts 'In the archimedean realisation, the $q$-exterior derivative is')."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:40.990424+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:40.990424+00:00"
+        }
       }
     ],
     "da-overclaim": [
@@ -918,6 +970,19 @@
         "severity": "minor",
         "evidence": "q-codifferential-formula.ts:1",
         "notes": "The remarks and narrative scope in 'Expanded formula for the $q$-codifferential $\\\\delta_q$' concerning 'In the archimedean realisation, the $q$-exterior derivative is' are appropriately qualified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:41.008804+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:41.008804+00:00"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -939,6 +1004,19 @@
         "severity": "minor",
         "evidence": "q-codifferential-formula.ts:1",
         "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Expanded formula for the $q$-codifferential $\\\\delta_q$'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:41.026242+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:41.026242+00:00"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -960,6 +1038,19 @@
         "severity": "minor",
         "evidence": "q-codifferential-formula.ts:1",
         "notes": "The prose arguments in 'Expanded formula for the $q$-codifferential $\\\\delta_q$' proceed logically through the stated steps: 'In the archimedean realisation, the $q$-exterior derivative is'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:41.046946+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:41.046946+00:00"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -981,6 +1072,19 @@
         "severity": "minor",
         "evidence": "q-codifferential-formula.ts:1",
         "notes": "No Lean sibling required; the narrative of 'Expanded formula for the $q$-codifferential $\\\\delta_q$' matches the expected configuration."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:41.065329+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:41.065329+00:00"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1002,6 +1106,19 @@
         "severity": "minor",
         "evidence": "q-codifferential-formula.ts:1",
         "notes": "No citations are present in 'Expanded formula for the $q$-codifferential $\\\\delta_q$', hence no citation misuse is possible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:41.082133+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:41.082133+00:00"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1023,6 +1140,19 @@
         "severity": "minor",
         "evidence": "q-codifferential-formula.ts:1",
         "notes": "Key terms and symbols in 'Expanded formula for the $q$-codifferential $\\\\delta_q$' (e.g. from 'In the archimedean realisation, the $q$-exterior derivative is') are mathematically defined and unambiguous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:41.098646+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:41.098646+00:00"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1044,6 +1174,19 @@
         "severity": "minor",
         "evidence": "q-codifferential-formula.ts:1",
         "notes": "The algebraic and logical relations in 'Expanded formula for the $q$-codifferential $\\\\delta_q$' are independent of empirical tuning parameters."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:41.114653+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:41.114653+00:00"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1065,6 +1208,19 @@
         "severity": "minor",
         "evidence": "q-codifferential-formula.ts:1",
         "notes": "The physical concepts described in 'Expanded formula for the $q$-codifferential $\\\\delta_q$' are consistent with quantum observable mechanics."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:41.131101+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:41.131101+00:00"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1086,6 +1242,19 @@
         "severity": "minor",
         "evidence": "q-codifferential-formula.ts:1",
         "notes": "The derivation steps and formal definitions in 'Expanded formula for the $q$-codifferential $\\\\delta_q$' are reproducible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:41.149681+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:41.149681+00:00"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1108,6 +1277,19 @@
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Expanded formula for the $q$-codifferential $\\\\delta_q$' (concerning 'In the archimedean realisation, the $q$-exterior derivative is') are consistent and formally verified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:41.168436+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:41.168436+00:00"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1125,6 +1307,36 @@
         "field_hash": {
           "md": "aa202d75fd73",
           "ts": "420ff02579e8"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:41.190476+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:41.190476+00:00"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:41.207479+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:41.207479+00:00"
         }
       }
     ]

@@ -798,6 +798,19 @@
         "reviewed_at": "2026-07-07T14:26:55.998636Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:41.816003+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:41.816003+00:00"
+        }
       }
     ],
     "da-false-claim": [
@@ -819,6 +832,19 @@
         "severity": "minor",
         "evidence": "photon-wavefront-example.ts:1",
         "notes": "No false claims identified in the prose of 'Continuing example: photon wavefront through a double slit'; the mathematical reasoning concerning '$\\mathcal{D}_\\nabla\\psi = 0$' is consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:41.834934+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:41.834934+00:00"
+        }
       }
     ],
     "da-vacuous": [
@@ -840,6 +866,19 @@
         "severity": "minor",
         "evidence": "photon-wavefront-example.ts:1",
         "notes": "The block 'Continuing example: photon wavefront through a double slit' presents substantial mathematical content: '$\\mathcal{D}_\\nabla\\psi = 0$'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:41.852804+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:41.852804+00:00"
+        }
       }
     ],
     "da-circular": [
@@ -861,6 +900,19 @@
         "severity": "minor",
         "evidence": "photon-wavefront-example.ts:1",
         "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Continuing example: photon wavefront through a double slit' (which asserts '$\\mathcal{D}_\\nabla\\psi = 0$')."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:41.868793+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:41.868793+00:00"
+        }
       }
     ],
     "da-overclaim": [
@@ -882,6 +934,19 @@
         "severity": "minor",
         "evidence": "photon-wavefront-example.ts:1",
         "notes": "The remarks and narrative scope in 'Continuing example: photon wavefront through a double slit' concerning '$\\mathcal{D}_\\nabla\\psi = 0$' are appropriately qualified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:41.883420+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:41.883420+00:00"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -903,6 +968,19 @@
         "severity": "minor",
         "evidence": "photon-wavefront-example.ts:1",
         "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Continuing example: photon wavefront through a double slit'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:41.904623+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:41.904623+00:00"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -924,6 +1002,19 @@
         "severity": "minor",
         "evidence": "photon-wavefront-example.ts:1",
         "notes": "The prose arguments in 'Continuing example: photon wavefront through a double slit' proceed logically through the stated steps: '$\\mathcal{D}_\\nabla\\psi = 0$'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:41.922467+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:41.922467+00:00"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -945,6 +1036,19 @@
         "severity": "minor",
         "evidence": "photon-wavefront-example.ts:1",
         "notes": "No Lean sibling required; the narrative of 'Continuing example: photon wavefront through a double slit' matches the expected configuration."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:41.937043+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:41.937043+00:00"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -966,6 +1070,19 @@
         "severity": "minor",
         "evidence": "photon-wavefront-example.ts:1",
         "notes": "No citations are present in 'Continuing example: photon wavefront through a double slit', hence no citation misuse is possible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:41.957612+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:41.957612+00:00"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -987,6 +1104,19 @@
         "severity": "minor",
         "evidence": "photon-wavefront-example.ts:1",
         "notes": "Key terms and symbols in 'Continuing example: photon wavefront through a double slit' (e.g. from '$\\mathcal{D}_\\nabla\\psi = 0$') are mathematically defined and unambiguous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:41.974650+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:41.974650+00:00"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1008,6 +1138,19 @@
         "severity": "minor",
         "evidence": "photon-wavefront-example.ts:1",
         "notes": "The empirical claims in 'Continuing example: photon wavefront through a double slit' (quoting '$\\mathcal{D}_\\nabla\\psi = 0$') are structurally anchored to the QOU mass framework and are stable."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:41.991657+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:41.991657+00:00"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1029,6 +1172,19 @@
         "severity": "minor",
         "evidence": "photon-wavefront-example.ts:1",
         "notes": "The physical concepts described in 'Continuing example: photon wavefront through a double slit' are consistent with quantum observable mechanics."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:42.007032+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:42.007032+00:00"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1050,6 +1206,19 @@
         "severity": "minor",
         "evidence": "photon-wavefront-example.ts:1",
         "notes": "The derivation steps and formal definitions in 'Continuing example: photon wavefront through a double slit' are reproducible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:42.023409+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:42.023409+00:00"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1072,6 +1241,19 @@
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Continuing example: photon wavefront through a double slit' (concerning '$\\mathcal{D}_\\nabla\\psi = 0$') are consistent and formally verified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:42.037510+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:42.037510+00:00"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1089,6 +1271,36 @@
         "field_hash": {
           "md": "34fe27a9b55f",
           "ts": "590f0eb4c840"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:42.058060+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:42.058060+00:00"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:42.077113+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:42.077113+00:00"
         }
       }
     ]

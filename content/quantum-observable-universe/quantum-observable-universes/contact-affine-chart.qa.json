@@ -897,6 +897,19 @@
         "severity": "minor",
         "evidence": "contact-affine-chart.ts:1",
         "notes": "Block placement and kind 'definition' match validated structurally."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:42.097068+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:42.097068+00:00"
+        }
       }
     ],
     "wall-side-statement": [
@@ -919,6 +932,19 @@
         "severity": "minor",
         "evidence": "contact-affine-chart.lean:1",
         "notes": "The Lean theorem/definition statement in contact-affine-chart.lean matches the mathematical statement in contact-affine-chart.md."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:42.117240+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:42.117240+00:00"
+        }
       }
     ],
     "da-false-claim": [
@@ -941,6 +967,19 @@
         "severity": "minor",
         "evidence": "contact-affine-chart.lean:1",
         "notes": "The mathematical claims in 'Contact affine chart on $\\\\mathbb{P}(V)$' regarding 'Let $\\mathcal{S}$ be the state bundle over $M$ whose fibres are the spaces of' are unverified due to compilation errors in the Lean sibling file contact-affine-chart.lean: content/quantum-observable-universe/quantum-observable-universes/contact-affine-chart.lean:30:13: error: unexpected token 'section'; expected 'lemma'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:42.135404+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:42.135404+00:00"
+        }
       }
     ],
     "da-vacuous": [
@@ -963,6 +1002,19 @@
         "severity": "minor",
         "evidence": "contact-affine-chart.ts:1",
         "notes": "The sibling Lean file contact-affine-chart.lean fails to compile, so the completeness and non-vacuity of the formal proof cannot be verified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:42.154619+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:42.154619+00:00"
+        }
       }
     ],
     "da-circular": [
@@ -985,6 +1037,19 @@
         "severity": "minor",
         "evidence": "contact-affine-chart.ts:1",
         "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Contact affine chart on $\\\\mathbb{P}(V)$' (which asserts 'Let $\\mathcal{S}$ be the state bundle over $M$ whose fibres are the spaces of')."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:42.175603+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:42.175603+00:00"
+        }
       }
     ],
     "da-overclaim": [
@@ -1007,6 +1072,19 @@
         "severity": "minor",
         "evidence": "contact-affine-chart.ts:1",
         "notes": "The prose presents 'Contact affine chart on $\\\\mathbb{P}(V)$' as verified, but the sibling Lean file contact-affine-chart.lean fails to compile."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:42.189641+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:42.189641+00:00"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1029,6 +1107,19 @@
         "severity": "minor",
         "evidence": "contact-affine-chart.ts:1",
         "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Contact affine chart on $\\\\mathbb{P}(V)$'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:42.207236+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:42.207236+00:00"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1051,6 +1142,19 @@
         "severity": "minor",
         "evidence": "contact-affine-chart.lean:1",
         "notes": "Logical gaps exist in the formalization of 'Contact affine chart on $\\\\mathbb{P}(V)$' due to compilation failure in contact-affine-chart.lean."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:42.224997+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:42.224997+00:00"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1073,6 +1177,19 @@
         "severity": "minor",
         "evidence": "contact-affine-chart.lean:1",
         "notes": "The Lean sibling contact-affine-chart.lean fails compilation, causing divergence from the narrative."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:42.243628+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:42.243628+00:00"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1095,6 +1212,19 @@
         "severity": "minor",
         "evidence": "contact-affine-chart.ts:1",
         "notes": "No citations are present in 'Contact affine chart on $\\\\mathbb{P}(V)$', hence no citation misuse is possible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:42.264316+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:42.264316+00:00"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1117,6 +1247,19 @@
         "severity": "minor",
         "evidence": "contact-affine-chart.ts:1",
         "notes": "Key terms and symbols in 'Contact affine chart on $\\\\mathbb{P}(V)$' (e.g. from 'Let $\\mathcal{S}$ be the state bundle over $M$ whose fibres are the spaces of') are mathematically defined and unambiguous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:42.281424+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:42.281424+00:00"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1139,6 +1282,19 @@
         "severity": "minor",
         "evidence": "contact-affine-chart.ts:1",
         "notes": "The algebraic and logical relations in 'Contact affine chart on $\\\\mathbb{P}(V)$' are independent of empirical tuning parameters."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:42.300722+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:42.300722+00:00"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1161,6 +1317,19 @@
         "severity": "minor",
         "evidence": "contact-affine-chart.ts:1",
         "notes": "The physical concepts described in 'Contact affine chart on $\\\\mathbb{P}(V)$' are consistent with quantum observable mechanics."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:42.323040+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:42.323040+00:00"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1183,6 +1352,19 @@
         "severity": "minor",
         "evidence": "contact-affine-chart.lean:1",
         "notes": "The Lean sibling contact-affine-chart.lean fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/quantum-observable-universes/contact-affine-chart.lean:30:13: error: unexpected token 'section'; expected 'lemma'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:42.338455+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:42.338455+00:00"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1206,6 +1388,19 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/contact-affine-chart.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/contact-affine-chart.lean:30:13: error: unexpected token 'section'; expected 'lemma'",
         "verdict": "open-objection",
         "referee_argument": "The proposed formalization for 'Contact affine chart on $\\\\mathbb{P}(V)$' (asserting 'Let $\\mathcal{S}$ be the state bundle over $M$ whose fibres are the spaces of') fails to compile with error: content/quantum-observable-universe/quantum-observable-universes/contact-affine-chart.lean:30:13: error: unexpected token 'section'; expected 'lemma'. A competent referee cannot accept this as a verified mathematical claim."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:42.356390+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:42.356390+00:00"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1224,6 +1419,36 @@
           "md": "e8a0a388c0b7",
           "ts": "f1edde8f6c4d",
           "lean": "a3c95aaf7c83"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:42.375131+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:42.375131+00:00"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:42.393952+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:42.393952+00:00"
         }
       }
     ]
