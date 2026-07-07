@@ -907,7 +907,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Hard-codes q_0\u22481.1100 / MeV / \u03bb_scale but carries the \u00a77c archimedean-specialisation banner at categorical-proton.md:1, so the wall is correctly declared. (Separate content note, out of this criterion's scope: line 108 reintroduces the purged \u03bb_scale factor \u2014 flag to canonical-watcher.)"
+        "notes": "Hard-codes q_0≈1.1100 / MeV / λ_scale but carries the §7c archimedean-specialisation banner at categorical-proton.md:1, so the wall is correctly declared. (Separate content note, out of this criterion's scope: line 108 reintroduces the purged λ_scale factor — flag to canonical-watcher.)"
       }
     ],
     "da-false-claim": [],
@@ -928,6 +928,150 @@
       {
         "result": "pass",
         "notes": "Rewrote seq24"
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-07T23:27:02.000Z",
+        "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-07T23:27:02.000Z",
+        "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-07T23:27:02.000Z",
+        "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-07T23:27:02.000Z",
+        "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-07T23:27:02.000Z",
+        "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-07T23:27:02.000Z",
+        "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "Heuristic score",
+        "reviewed_at": "2026-07-07T23:27:02.000Z",
+        "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "Heuristic score",
+        "reviewed_at": "2026-07-07T23:27:02.000Z",
+        "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "Heuristic score",
+        "reviewed_at": "2026-07-07T23:27:02.000Z",
+        "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        },
+        "score": {
+          "value": 0.85
+        }
       }
     ]
   },

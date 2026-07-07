@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/electroweak-triplet-charge-spin-from-involution.lean"
   },
   "source_hashes": {
-    "md": "4934ebc1d642",
+    "md": "b3047ee2e31f",
     "ts": "816034935aac",
     "lean": "89c323a45829"
   },
@@ -19,7 +19,27 @@
         "result": "pass",
         "notes": "Rewrote seq18"
       }
+    ],
+    "proof-no-false-premise": [
+      {
+        "field_hash": {
+          "lean": "89c323a45829"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/particle-interactions/electroweak-triplet-charge-spin-from-involution.lean:504 [discharged-impossible-hyp] theorem writheI3_does_not_select_neutral_slot :",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
+          "version": "v1",
+          "script_hash": "8fdbde090260",
+          "script_commit_sha": "239996fb1e626107772708d482f01bf9f81a1326"
+        },
+        "reviewed_at": "2026-07-07T23:24:10.556Z",
+        "reviewed_sha": "b49291acba5b6a9d49bbd4cc2fd93f2dc65ee9e4",
+        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+      }
     ]
   },
-  "updated_at": "2026-07-07T14:26:57.263066Z"
+  "updated_at": "2026-07-07T23:24:10.556Z"
 }

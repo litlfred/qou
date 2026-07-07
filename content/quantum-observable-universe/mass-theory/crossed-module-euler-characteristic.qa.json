@@ -1043,7 +1043,20 @@
         },
         "reviewed_at": "2026-06-22T02:50:55.754Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Candidate flagged by heuristic scan \u2014 requires agent confirmation per lean-proof-vacuity-audit."
+        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+      },
+      {
+        "result": "fail",
+        "notes": "Agent reviewed script candidate: Confirmed vacuity issue.",
+        "reviewed_at": "2026-07-07T23:27:02.000Z",
+        "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "voice-statement-no-interpretation": [],

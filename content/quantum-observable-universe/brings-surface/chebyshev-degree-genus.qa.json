@@ -8,7 +8,8 @@
   },
   "source_hashes": {
     "md": "f201ffde2a3c",
-    "ts": "b283b5f20e3e"
+    "ts": "b283b5f20e3e",
+    "lean": "1ec9f4e7e360"
   },
   "criteria": {
     "voice-status-leak": [
@@ -571,7 +572,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/brings-surface/chebyshev-degree-genus.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
+        "evidence": "quantum-observable-universe/brings-surface/chebyshev-degree-genus.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -591,7 +592,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/brings-surface/chebyshev-degree-genus.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
+        "evidence": "quantum-observable-universe/brings-surface/chebyshev-degree-genus.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1365,17 +1366,17 @@
         },
         "result": "fail",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/lean/QOU/Archimedean/chebyshev_degree_genus.lean:97 [discharged-impossible-hyp] theorem hecke_deg_monic : \u2200 n : \u2115, 0 < n \u2192",
+        "evidence": "content/quantum-observable-universe/lean/QOU/Archimedean/chebyshev_degree_genus.lean:97 [discharged-impossible-hyp] theorem hecke_deg_monic : ∀ n : ℕ, 0 < n →",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
           "version": "v1",
-          "script_hash": "85d9f0223908",
-          "script_commit_sha": "33a07854edc6009b6b5ac0331a50b162498d581f"
+          "script_hash": "8fdbde090260",
+          "script_commit_sha": "239996fb1e626107772708d482f01bf9f81a1326"
         },
-        "reviewed_at": "2026-07-04T00:30:14.885Z",
-        "reviewed_sha": "c588e48cb73bc995f7d35dc988f12a9aef882e2c",
-        "notes": "Candidate flagged by heuristic scan \u2014 requires agent confirmation per lean-proof-vacuity-audit."
+        "reviewed_at": "2026-07-07T23:24:10.556Z",
+        "reviewed_sha": "b49291acba5b6a9d49bbd4cc2fd93f2dc65ee9e4",
+        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1448,5 +1449,5 @@
     "da-referee-verdict": [],
     "milnor-amalgamated-flow": []
   },
-  "updated_at": "2026-07-07T14:26:55.124863Z"
+  "updated_at": "2026-07-07T23:24:10.556Z"
 }

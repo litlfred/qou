@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/zeta8-witness-level2-su2.lean"
   },
   "source_hashes": {
-    "md": "b228f7a7c59d",
+    "md": "97a6bf0a7688",
     "ts": "a7c34f50136e",
     "lean": "21b690eda41c"
   },
@@ -1503,6 +1503,24 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "field_hash": {
+          "lean": "21b690eda41c"
+        },
+        "result": "fail",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/mass-theory/zeta8-witness-level2-su2.lean:64 [discharged-impossible-hyp] theorem qPoch_seven_eq_eight (hζ : IsPrimitiveRoot ζ 8) : qPoch ζ 7 = (8 : R) := by | content/quantum-observable-universe/mass-theory/zeta8-witness-level2-su2.lean:118 [discharged-impossible-hyp] theorem qInt_four_eq_zero (hζ : IsPrimitiveRoot ζ 8) : qInt ζ 4 = 0 := by",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
+          "version": "v1",
+          "script_hash": "8fdbde090260",
+          "script_commit_sha": "239996fb1e626107772708d482f01bf9f81a1326"
+        },
+        "reviewed_at": "2026-07-07T23:24:10.556Z",
+        "reviewed_sha": "b49291acba5b6a9d49bbd4cc2fd93f2dc65ee9e4",
+        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1883,5 +1901,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.430Z"
+  "updated_at": "2026-07-07T23:24:10.556Z"
 }

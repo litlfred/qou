@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.lean"
   },
   "source_hashes": {
-    "md": "77706743e815",
+    "md": "c0201d60037f",
     "ts": "8836d62e2abb",
     "lean": "d856c0487df4"
   },
@@ -1082,7 +1082,7 @@
         "reviewed_at": "2026-06-28T05:50:25.638Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
-        "evidence": "content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.lean:1 \u2014 Lean file exists",
+        "evidence": "content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.lean:1 — Lean file exists",
         "severity": "minor"
       }
     ],
@@ -1387,21 +1387,21 @@
       },
       {
         "field_hash": {
-          "lean": "36e61eceb7f8"
+          "lean": "d856c0487df4"
         },
         "result": "fail",
         "severity": "critical",
-        "evidence": "content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.lean:174 [exists-true-tautology] theorem habiro_expansion_atomic (p : \u2124[X]) :",
+        "evidence": "content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.lean:174 [exists-true-tautology] theorem habiro_expansion_atomic (p : ℤ[X]) :",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
           "version": "v1",
-          "script_hash": "85d9f0223908",
-          "script_commit_sha": "33a07854edc6009b6b5ac0331a50b162498d581f"
+          "script_hash": "8fdbde090260",
+          "script_commit_sha": "239996fb1e626107772708d482f01bf9f81a1326"
         },
-        "reviewed_at": "2026-07-04T00:30:14.885Z",
-        "reviewed_sha": "c588e48cb73bc995f7d35dc988f12a9aef882e2c",
-        "notes": "Candidate flagged by heuristic scan \u2014 requires agent confirmation per lean-proof-vacuity-audit."
+        "reviewed_at": "2026-07-07T23:24:10.556Z",
+        "reviewed_sha": "b49291acba5b6a9d49bbd4cc2fd93f2dc65ee9e4",
+        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
       }
     ],
     "proof-no-false-premise": [
@@ -1737,7 +1737,7 @@
         "reviewed_at": "2026-06-28T05:50:25.638Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
-        "evidence": "content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.lean:1 \u2014 content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/Polynomial/EuclideanDomain.olean' of module Mathlib.Algebra.Polynomial.EuclideanDomain does not exist",
+        "evidence": "content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.lean:1 — content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/Polynomial/EuclideanDomain.olean' of module Mathlib.Algebra.Polynomial.EuclideanDomain does not exist",
         "severity": "minor"
       }
     ],
@@ -1783,5 +1783,5 @@
     ],
     "milnor-amalgamated-flow": []
   },
-  "updated_at": "2026-07-07T14:26:56.698469Z"
+  "updated_at": "2026-07-07T23:24:10.556Z"
 }
