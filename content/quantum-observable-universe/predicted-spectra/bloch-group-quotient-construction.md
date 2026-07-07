@@ -5,13 +5,13 @@ $$
             \;\big/\; \mathrm{pentagonSubgroup},
 $$
 
-where `PreBlochElement F` carries the pre-Bloch elements (`val ≠ 0 ∧ val ≠ 1`) and `pentagonSubgroup` is the `AddSubgroup.closure` of the 5-term pentagon-relation generators. The quotient inherits an `AddCommGroup` structure from Mathlib's `QuotientAddGroup` instance, with a canonical projection `quot : PreBlochGroup F →+ BlochGroup F` and the standard universal property.
+where `PreBlochElement F` carries the pre-Bloch elements (`val ≠ 0` and `val ≠ 1`) and `pentagonSubgroup` is the `AddSubgroup.closure` of the five-term pentagon-relation generators. The quotient inherits an `AddCommGroup` structure from the `QuotientAddGroup` instance in Mathlib. It carries a canonical projection `quot : PreBlochGroup F →+ BlochGroup F` and satisfies the standard universal property.
 
 See [Table](#tbl:bloch-group-quotient-construction-table-data) for the Lean structure.
 
-This construction closes a substantive Mathlib gap. The carrier types are backed by a real Lean construction, making `BlochGroup F` a genuine `AddCommGroup` rather than a typeclass ansatz. The `HasBlochGroup ℝ` instance is concretely inhabited.
+This construction yields a genuine `AddCommGroup` rather than a typeclass ansatz. The carrier types admit a real Lean construction. The `HasBlochGroup ℝ` instance is concretely inhabited.
 
-The current `PentagonShape F` accepts arbitrary 5-tuples of pre-Bloch elements, making `pentagonRelationGenerators` too permissive. Degenerate shapes with repeated entries trivialise the quotient. We must constrain `PentagonShape F` via a `ValidPentagonShape F` predicate enforcing the Rogers-form constraints:
+The unconstrained `PentagonShape F` accepts arbitrary five-tuples of pre-Bloch elements. This makes `pentagonRelationGenerators` too permissive. Degenerate shapes with repeated entries trivialize the quotient. A `ValidPentagonShape F` predicate must constrain `PentagonShape F` to enforce the Rogers-form constraints:
 
 $$
   e_3 \;\equiv\; e_2 / e_1, \quad
@@ -19,7 +19,7 @@ $$
   e_5 \;\equiv\; (1 - e_2)/(1 - e_1).
 $$
 
-These derive from a valid Rogers pair `(x, y) \in F^\times \times F^\times` with `x \neq y, x \neq 0, x \neq 1, y \neq 0, y \neq 1`. This requires decidability of the pentagon-domain conditions on `F`, a pentagon-shape map `F \times F \to \text{PentagonShape F}`, and restricting `pentagonRelationGenerators` over the `ValidPentagonShape F` subtype. The structural skeleton accommodates this via the validity predicate and constrained range.
+These constraints derive from a valid Rogers pair `(x, y) \in F^\times \times F^\times` with `x \neq y`, `x \neq 0`, `x \neq 1`, `y \neq 0`, and `y \neq 1`. This derivation requires decidability of the pentagon-domain conditions on `F`, a pentagon-shape map `F \times F \to \text{PentagonShape F}`, and the restriction of `pentagonRelationGenerators` to the `ValidPentagonShape F` subtype. The structural skeleton accommodates this restriction via the validity predicate and the constrained range.
 
 The §3b-cond chain anchored by `prop:archimedean-functor-uniqueness` brings `BlochSuslinUniqueness` closer to unconditional inhabitation. The remaining work includes the pentagon identity proof for $\mathrm{Cl}_2$ on the unit-circle subset, Bloch-Wigner regulator $D \otimes \mathbb{Q}$ injectivity, and the Suslin map $K_3^{\mathrm{ind}}(\mathbb{C}) \to \mathbb{R}$.
 

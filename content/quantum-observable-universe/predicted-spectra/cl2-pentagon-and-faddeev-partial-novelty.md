@@ -1,1 +1,1 @@
-**Remark.** Resolving the boundary scaffolding for the Faddeev-Kashaev relation anchors the pentagon formulation in a formal setting. This establishes consistency boundaries required to extend these relations over non-standard algebraic domains.
+**Remark.** Extending these relations over non-standard algebraic domains requires consistency boundaries. Resolving the boundary scaffolding for the Faddeev-Kashaev relation anchors the pentagon formulation formally. This establishes the required consistency boundaries.
