@@ -29,6 +29,19 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Block placement and kind 'remark' match validated structurally.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:01.874Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-false-claim": [
@@ -50,6 +63,19 @@
         "notes": "No false claims identified in 'Quantum-modularity of the bar-involution (conjectural analogy)': mathematical reasoning is consistent in prose.",
         "severity": "minor",
         "evidence": "q-beta-c-k-recursion-from-habiro-q-difference-interpretation.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:01.874Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-vacuous": [
@@ -70,6 +96,19 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The block 'Quantum-modularity of the bar-involution (conjectural analogy)' presents substantial mathematical content: 'The bar-involution $q\\mapsto q^{-1}$ that fixes the leading coefficient'.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:01.874Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-circular": [
@@ -91,6 +130,19 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Quantum-modularity of the bar-involution (conjectural analogy)'.",
         "severity": "minor",
         "evidence": "q-beta-c-k-recursion-from-habiro-q-difference-interpretation.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:01.874Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-overclaim": [
@@ -111,6 +163,19 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The remarks and narrative scope in 'Quantum-modularity of the bar-involution (conjectural analogy)' are appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:01.874Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -132,6 +197,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Quantum-modularity of the bar-involution (conjectural analogy)'.",
         "severity": "minor",
         "evidence": "q-beta-c-k-recursion-from-habiro-q-difference-interpretation.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:01.874Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -153,6 +231,19 @@
         "notes": "The prose arguments in 'Quantum-modularity of the bar-involution (conjectural analogy)' proceed logically through the stated steps.",
         "severity": "minor",
         "evidence": "q-beta-c-k-recursion-from-habiro-q-difference-interpretation.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:01.874Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -173,6 +264,19 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No Lean sibling required; narrative matches the expected configuration.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:01.874Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -194,6 +298,19 @@
         "notes": "The citations zagier2010 in 'Quantum-modularity of the bar-involution (conjectural analogy)' are consistent with the sources referenced in the text.",
         "severity": "minor",
         "evidence": "q-beta-c-k-recursion-from-habiro-q-difference-interpretation.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:01.874Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -215,6 +332,19 @@
         "notes": "Key terms and symbols in 'Quantum-modularity of the bar-involution (conjectural analogy)' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "q-beta-c-k-recursion-from-habiro-q-difference-interpretation.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:01.874Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -236,6 +366,19 @@
         "notes": "The empirical claims in 'Quantum-modularity of the bar-involution (conjectural analogy)' are structurally anchored to the QOU mass framework and are stable.",
         "severity": "minor",
         "evidence": "q-beta-c-k-recursion-from-habiro-q-difference-interpretation.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:01.874Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -257,6 +400,19 @@
         "notes": "The physical concepts described in 'Quantum-modularity of the bar-involution (conjectural analogy)' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "q-beta-c-k-recursion-from-habiro-q-difference-interpretation.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:01.874Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-reproducibility": [
@@ -277,6 +433,19 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The derivation steps and formal definitions in 'Quantum-modularity of the bar-involution (conjectural analogy)' are reproducible.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:01.874Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -299,6 +468,19 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Quantum-modularity of the bar-involution (conjectural analogy)' are consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:01.874Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "bib-cite-resolves": [
@@ -336,6 +518,36 @@
         "field_hash": {
           "md": "0614593a070d",
           "ts": "032216d9248b"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:01.874Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:01.874Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
         }
       }
     ]
