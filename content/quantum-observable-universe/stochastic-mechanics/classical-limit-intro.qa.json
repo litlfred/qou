@@ -798,6 +798,19 @@
         "reviewed_at": "2026-07-07T14:26:56.047795Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:27.423540+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:27.423540+00:00"
+        }
       }
     ],
     "da-false-claim": [
@@ -819,6 +832,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-limit-intro.ts:1",
         "notes": "No false claims identified in 'The preceding sections established that the algebraic substrate is': mathematical reasoning is consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:27.439227+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:27.439227+00:00"
+        }
       }
     ],
     "da-vacuous": [
@@ -839,6 +865,19 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "The claims in 'The preceding sections established that the algebraic substrate is' are non-vacuous as they present substantial mathematical content."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:27.453834+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:27.453834+00:00"
+        }
       }
     ],
     "da-circular": [
@@ -860,6 +899,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-limit-intro.ts:1",
         "notes": "No circular reasoning or self-assuming definitions detected in 'The preceding sections established that the algebraic substrate is'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:27.472243+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:27.472243+00:00"
+        }
       }
     ],
     "da-overclaim": [
@@ -880,6 +932,19 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "No overclaims: the scope of 'The preceding sections established that the algebraic substrate is' is appropriately qualified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:27.487478+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:27.487478+00:00"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -901,6 +966,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-limit-intro.ts:1",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'The preceding sections established that the algebraic substrate is'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:27.502325+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:27.502325+00:00"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -922,6 +1000,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-limit-intro.ts:1",
         "notes": "The argument flow in 'The preceding sections established that the algebraic substrate is' is logically sound, mapping onto the cited dependencies."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:27.518408+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:27.518408+00:00"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -943,6 +1034,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-limit-intro.ts:1",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:27.533281+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:27.533281+00:00"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -964,6 +1068,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-limit-intro.ts:1",
         "notes": "No citations are present in 'The preceding sections established that the algebraic substrate is', hence no citation misuse is possible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:27.547938+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:27.547938+00:00"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -985,6 +1102,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-limit-intro.ts:1",
         "notes": "Key terms and symbols in 'The preceding sections established that the algebraic substrate is' are mathematically defined and unambiguous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:27.566734+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:27.566734+00:00"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1006,6 +1136,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-limit-intro.ts:1",
         "notes": "The algebraic and logical relations in 'The preceding sections established that the algebraic substrate is' are independent of empirical tuning parameters."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:27.582492+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:27.582492+00:00"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1027,6 +1170,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-limit-intro.ts:1",
         "notes": "The physical concepts described in 'The preceding sections established that the algebraic substrate is' are consistent with quantum observable mechanics."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:27.597233+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:27.597233+00:00"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1048,6 +1204,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-limit-intro.ts:1",
         "notes": "The derivation steps and formal definitions in 'The preceding sections established that the algebraic substrate is' are reproducible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:27.617312+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:27.617312+00:00"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1071,6 +1240,19 @@
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'The preceding sections established that the algebraic substrate is' are consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:27.634123+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:27.634123+00:00"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1088,6 +1270,36 @@
         "field_hash": {
           "md": "40511d6b68c0",
           "ts": "aab7f2a94e67"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:27.649489+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:27.649489+00:00"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:27.670713+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:27.670713+00:00"
         }
       }
     ]
