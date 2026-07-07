@@ -152,17 +152,41 @@ def main() -> int:
     else:
         print(f"  [lift] all {NCOLS} columns lifted with {len(runs)} prime(s)"
               f"  ({time.time()-t0:.0f}s)")
+        # checkpoint: survive container restarts mid-verification
+        ckpt = Path(__file__).with_name(
+            "borromean-recurrence-lifted-operator.json")
+        ckpt.write_text(json.dumps(
+            {c: {"P": [str(f) for f in Pf], "Q": [str(f) for f in Qf]}
+             for c, (Pf, Qf) in lifted.items()}) + "\n")
+        print(f"  [ckpt] lifted operator -> {ckpt.name}", flush=True)
         # ── assemble + exact symbolic verification ─────────────────────
         import sympy as sp
         sys.path.insert(0, str(Path(__file__).parent))
         from habiro_borromean_colored_jones import habiro_borromean, s as ssym
 
         qsym = sp.symbols("q")
-        entry = {}
+        Pnum, Qden = {}, {}
         for c, (Pf, Qf) in lifted.items():
-            num = sum(sp.Rational(f) * qsym**i for i, f in enumerate(Pf))
-            den = sum(sp.Rational(f) * qsym**i for i, f in enumerate(Qf))
-            entry[c] = sp.cancel(num / den) if den != 0 else sp.Integer(0)
+            Pnum[c] = sp.Poly([sp.Rational(f) for f in reversed(Pf)], qsym)
+            Qden[c] = sp.Poly([sp.Rational(f) for f in reversed(Qf)], qsym)
+        # clear the WHOLE identity once by D = lcm of all denominators;
+        # each entry becomes the POLYNOMIAL e_c = P_c * (D / Q_c), and the
+        # verification is a pure Laurent-polynomial identity — fast and
+        # exactly equivalent (D is nonzero).
+        D = sp.Poly(1, qsym)
+        for c in range(NCOLS):
+            if not Qden[c].is_zero:
+                D = sp.lcm(D, Qden[c])
+        print(f"  [verify] common denominator degree: {D.degree()}"
+              f"  ({time.time()-t0:.0f}s)", flush=True)
+        entry = {}
+        for c in range(NCOLS):
+            if Qden[c].is_zero or Pnum[c].is_zero:
+                entry[c] = sp.Integer(0)
+            else:
+                cof, rem = sp.div(D, Qden[c])
+                assert rem.is_zero
+                entry[c] = (Pnum[c] * cof).as_expr()
 
         def coeff(i, k_):
             return entry[i * NBLK + (k_ + W_WIN)]
@@ -181,10 +205,11 @@ def main() -> int:
                 lhs += ai * Jsym[n + i]
             rhs = sum(rhs_coeff(k_) * msym**k_
                       for k_ in range(-W_WIN, W_WIN + 1))
-            diff = sp.cancel(sp.together((lhs - rhs).subs(qsym, ssym**2)))
-            zero = diff.equals(0) or sp.simplify(diff) == 0
-            print(f"  [verify] n={n}: exact symbolic annihilation? {zero}"
-                  f"  ({time.time()-t0:.0f}s)", flush=True)
+            diff = sp.expand((lhs - rhs).subs(qsym, ssym**2))
+            zero = diff == 0
+            print(f"  [verify] n={n}: exact symbolic annihilation (D-cleared "
+                  f"polynomial identity)? {zero}  ({time.time()-t0:.0f}s)",
+                  flush=True)
             if not zero:
                 verified = False
                 break
