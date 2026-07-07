@@ -1,1 +1,1 @@
-This sub-section establishes the categorical proton's uniqueness through Borromean linking and extends this construction to the neutron. The Borromean linking step serves as the structural anchor. Every subsequent bound-state assignment factors through this two-stage construction.
+Borromean linking establishes the categorical proton's uniqueness. This linking provides the structural anchor. The construction extends to the neutron. Every bound-state assignment factors through this two-stage construction.

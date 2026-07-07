@@ -1,4 +1,4 @@
-Noble gases have closed sub-Hopf links. Metals possess an outermost sub-Hopf link with unfilled linking sites and low crossing energy, permitting neighbouring atoms to share sites.
+Noble gases possess closed sub-Hopf links. Metals possess an incomplete outermost sub-Hopf link with low crossing energy. This allows neighbouring atoms to share sites.
 
 **Metallic bonding.**
 In a metallic lattice, adjacent residual sub-links $R_a$ and $R_b$ merge their open linking sites. Outermost trefoils Hopf-link to the neighbour offering the lowest crossing energy. This models electron delocalisation:
@@ -11,10 +11,10 @@ $$
   R_a \cup R_b \text{ with merged linking sites.}
 $$
 
-Delocalised trefoils form a lattice-spanning sub-Hopf chain, analogous to a conduction band. Trefoils slide along this chain via Reidemeister II moves (crossing exchanges) without altering total linking number.
+Delocalised trefoils form a lattice-spanning sub-Hopf chain. This acts as a conduction band. Trefoils slide along this chain via Reidemeister II moves. These crossing exchanges conserve the total linking number.
 
 **Strategy.**
-We translate macroscopic metallic properties into structural conditions on sub-Hopf links. Macroscopic conductivity corresponds to Reidemeister II mobility of outermost knots. Shared bonding becomes merged linking sites. Energetic inequalities derive from crossing energies, parametrized by the residual index $\lambda(R)$.
+We translate macroscopic properties into structural conditions on sub-Hopf links. Macroscopic conductivity corresponds to Reidemeister II mobility. Shared bonding becomes merged linking sites. Energetic inequalities derive from crossing energies, parametrized by the residual index $\lambda(R)$.
 
 **Classification.**
 The residual sub-link size $|R|$ and shell capacity $2n_{k+1}^2$ govern metallic behaviour.
@@ -27,25 +27,25 @@ The residual sub-link size $|R|$ and shell capacity $2n_{k+1}^2$ govern metallic
 | $\lvert R\rvert = 2n^2 - 1$ | Weak nonmetal (halogens) | F, Cl, Br |
 | $\lvert R\rvert = 2n^2$ | Noble gas (no residual) | He, Ne, Ar |
 
-Alkali metals ($|R| = 1$) contain one loose curl. The minimal crossing energy to detach it matches their low ionization energies and high reactivity.
+Alkali metals ($|R| = 1$) contain one loose curl. The minimal crossing energy to detach this curl matches their low ionization energy and high reactivity.
 
-Transition metals have partially filled $d$-sub-links ($\ell = 2$, Seifert genus 2) with 10 linking sites. With $|R_d|$ between 1 and 9, multiple open sites exist at similar crossing energies. This yields:
+Transition metals have partially filled $d$-sub-links. These have $\ell = 2$, Seifert genus $2$, and $10$ linking sites. For $|R_d|$ between $1$ and $9$, multiple open sites exist at similar crossing energies. This yields:
 - Variable oxidation states: Trefoils detach or share at similar energy costs.
-- Catalytic activity: Open $d$-sites temporarily Hopf-link to substrate trefoils before release.
+- Catalytic activity: Open $d$-sites temporarily Hopf-link to substrate trefoils.
 - Magnetic behaviour: Unpaired trefoils carry uncompensated writhe, producing a net magnetic moment.
 
 **Conductivity.**
-Electrical conductivity corresponds to trefoil mobility along the lattice-spanning chain. An external field biases Reidemeister II moves, producing a net drift of trefoils.
+Electrical conductivity requires trefoil mobility along the lattice-spanning chain. An external field biases Reidemeister II moves. This produces a net drift of trefoils.
 
-Resistance arises from pinning sites—local energy barriers to crossing exchanges. These barriers derive from:
+Resistance arises from pinning sites. These local energy barriers impede crossing exchanges. The barriers derive from:
 - Lattice defects that disrupt chain topology.
 - Thermal fluctuations that induce transient Reidemeister I moves.
 - Phonons that modulate crossing energies via periodic compressions.
 
-Low temperatures minimize crossing disruptions, lowering resistance.
+Low temperatures minimize crossing disruptions and lower resistance.
 
 **Residual linking number.**
-Noble gases have $R = \varnothing$: no residual sub-link, no open linking sites, and no delocalisation. The residual linking number $\lambda(R)$ parametrizes this spectrum:
+Noble gases have $R = \varnothing$. They lack residual sub-links, open linking sites, and delocalisation. The residual linking number $\lambda(R)$ parametrizes the chemical spectrum:
 
 $$
   \lambda(R) = 0 \Longleftrightarrow \text{noble gas},

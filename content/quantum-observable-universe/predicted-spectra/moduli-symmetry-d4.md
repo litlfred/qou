@@ -9,15 +9,14 @@ $$
   \qquad\text{(Hecke bar involution)},
 $$
 
-generate a faithful action of the **dihedral group of order 8**:
+generate a faithful action of the dihedral group of order 8:
 
 $$
   D_4
    =  \langle\,\sigma,\,\tau \;\mid\; \sigma^4 = \tau^2 = (\sigma\tau)^2 = 1\,\rangle.
 $$
 
-The relation $(\sigma\tau)^2 = 1$ is the dihedral commutation
-$\tau\sigma\tau = \sigma^{-1}$. Verification:
+The relation $(\sigma\tau)^2 = 1$ enforces the dihedral commutation $\tau\sigma\tau = \sigma^{-1}$. Verification:
 
 $$
   \tau\sigma\tau(q)
@@ -30,8 +29,7 @@ $$
 
 **The golden octet.**
 
-The $D_4$-orbit of $\varphi$ in $\mathbb{C}^\times$ is the
-**golden octet**
+The $D_4$-orbit of $\varphi$ in $\mathbb{C}^\times$ forms the golden octet:
 
 $$
   G_8
@@ -47,13 +45,13 @@ The eight elements partition by stabilizer into two cosets:
 | $\sigma\langle 1\rangle$-orbit through $\varphi$ | $\{\varphi, i\varphi, -\varphi, -i\varphi\}$ | $\sigma^k \cdot \varphi$ | real (golden quartet $Q_+$) plus imaginary axis |
 | $\sigma\langle 1\rangle$-orbit through $1/\varphi$ | $\{1/\varphi, i/\varphi, -1/\varphi, -i/\varphi\}$ | $\sigma^k \cdot 1/\varphi$ | bar-image of $Q_+$, by $\tau$ |
 
-The intersection $G_8 \cap \mathbb{R}$ is the previous golden quartet
+The intersection $G_8 \cap \mathbb{R}$ recovers the golden quartet
 $Q = \{\,\varphi,\,-\varphi,\,1/\varphi,\,-1/\varphi\,\}$
-([golden-quartet-galois](#prop:golden-quartet-galois));
-the intersection $G_8 \cap i\mathbb{R}$ is its $\pi/2$-rotation
+([golden-quartet-galois](#prop:golden-quartet-galois)).
+The intersection $G_8 \cap i\mathbb{R}$ recovers its $\pi/2$-rotation
 $iQ = \{\,i\varphi,\,-i\varphi,\,i/\varphi,\,-i/\varphi\,\}$.
 
-Equivalently, the octet consists of the eight roots of
+Equivalently, the octet contains the eight roots of
 
 $$
   P_{\mathbb{C}}(z)  :=  P(z) \cdot P(z/i)
@@ -61,5 +59,4 @@ $$
    =  z^8 - 7z^4 + 1
 $$
 
-over $\mathbb{Q}(i)$, where $P(z) = z^4 - 3z^2 + 1$ is the quartic
-of the golden quartet.
+over $\mathbb{Q}(i)$, where $P(z) = z^4 - 3z^2 + 1$ is the quartic of the golden quartet.
