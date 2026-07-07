@@ -1,0 +1,69 @@
+{
+  "computation": "qbeta-hopf-cubic-complex-roots",
+  "description": "Hopf-cubic odd carrier: complex roots (chiral realization) + substrate eval; closes the parity\u2194chirality dictionary (even=amphichiral 4_1 real / odd=chiral Hopf complex cubic).",
+  "audit_only": true,
+  "tier": "structural-exact (identities, discriminants, roots; no QOU fit)",
+  "computedAt": "2026-07-07T16:58:00.620286+00:00",
+  "commitSha": "99908f69baa5b8f81502ed034106059bd1578646",
+  "engine": "mpmath",
+  "engineVersion": "1.3.0",
+  "scriptFile": "qbeta_hopf_cubic_complex_roots.py",
+  "scriptHash": "9aba186dfadc",
+  "assertions": [
+    {
+      "name": "sector_identity_C_eq_Hopf_plus_unknot",
+      "passed": true
+    },
+    {
+      "name": "disc_Hopf_is_neg76",
+      "passed": true
+    },
+    {
+      "name": "disc_total_is_neg152",
+      "passed": true
+    },
+    {
+      "name": "prime19_shared_fingerprint",
+      "passed": true
+    },
+    {
+      "name": "one_real_two_complex_roots",
+      "passed": true
+    },
+    {
+      "name": "cHopf_at_2_is_minus2",
+      "passed": true
+    },
+    {
+      "name": "cubic_is_fibre_not_swing",
+      "passed": true
+    },
+    {
+      "name": "cHopf_y0_near_c3_fibre_level",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "disc_cHopf": -76,
+    "disc_cTotal": -152,
+    "cHopf_roots": [
+      "3.76929235424",
+      "(1.11535382288 + 0.589742805022j)",
+      "(1.11535382288 - 0.589742805022j)"
+    ],
+    "complex_root_real_part": "1.115353823",
+    "cHopf_at_2": "-2.0",
+    "cHopf_at_substrate": "-2.0873289",
+    "cHopf_anchor_swing": "9.268e-9",
+    "c3_anchor_swing": "0.02433",
+    "verdict": "Parity\u2194chirality dictionary CLOSED. bar-EVEN \u2194 amphichiral 4_1 (CS=0, \ud835\udd19 real, \u211a(\u221a3); #3482) ; bar-ODD \u2194 chiral Hopf \u2194 the cubic C_Hopf=y\u00b3\u22126y\u00b2+10y\u22126 with disc=-76<0 (one real + a COMPLEX-CONJUGATE pair \u2014 the odd channel's complex source is a negative-discriminant cubic, arithmetic, NOT a hyperbolic iCS). Shared prime-19 fingerprint (disc C=-152). C_Hopf(2)=-2 exactly = J_Hopf(q=1) = the c_3 near-match; at the substrate y0\u22482.0437, C_Hopf(y0)\u2248-2.087 \u2248 c_3, but ANCHOR-INVARIANT (swing<1e-6 vs c_3's 2.4%) \u2014 confirming the cubic is the FIBRE carrier and the swing is the S archimedean leak (rigidity prune). Complex-root real part \u2248 q0 (flagged only). Confirms qbeta-odd-carrier-hopf-cubic.md; formalized in HopfCubicOddCarrier.lean. No fit; no c_k value; no wiring; no tier change."
+  },
+  "context": {
+    "axis": "z->c_k f-map keystone: odd-channel chiral Hopf cubic",
+    "corpus": "content/.../mass-theory/qbeta-odd-carrier-hopf-cubic.md",
+    "even_partner": "self-dual-higgs-real-volume.md (4_1 amphichiral, CS=0)",
+    "lean": "QOU.QBeta.HopfCubic (cTotal_eq_cHopf_add_cUnknot, cHopf_at_two, cHopf_discriminant_eq, prime_19_divides_both_discriminants)",
+    "fibre_vs_leak": "C_Hopf(y0) anchor-invariant \u21d2 fibre carrier; swing = S (SRigidityPrune.no_anchor_invariant_realizes_swing)"
+  }
+}
