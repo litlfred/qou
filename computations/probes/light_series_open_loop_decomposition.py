@@ -39,7 +39,6 @@ docs/audits/2026-07-06-reeb-flow-pn-magnitude-provenance-and-1four-extension.md 
 """
 from __future__ import annotations
 
-import os
 import sys
 import time
 from itertools import combinations
@@ -57,7 +56,6 @@ from substrate.experimental_constants import M_E_MEV  # noqa: E402
 from substrate.witness_base import WitnessBuilder  # noqa: E402
 
 set_compute_dps()
-COMP = str(_COMP)
 
 # (name, Z, N, B_AME MeV)
 ISOTOPES = [
@@ -131,7 +129,6 @@ def full_det(Z, N, g):
 def main() -> int:
     t0 = time.monotonic()
     q, _, z = load_q_50dps()
-    v = mp.sqrt(q)
     g = z / mp.sqrt(1 + z * z)
     m_e = mp.mpf(str(M_E_MEV))
     E0 = m_e / (q * (q - 1))
