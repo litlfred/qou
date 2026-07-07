@@ -2,7 +2,10 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Data.Complex.Basic
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Chebyshev
+import Mathlib.RingTheory.Derivation.Basic
 import QOU.BraidKnot.MarkovParameterRecursion
+
+open Derivation
 
 /-!
 # Toroidal Harmonics Basis
@@ -72,6 +75,34 @@ theorem toroidal_ode_to_markov_w (n : ℝ) (f : ℝ → ℝ) (w : ℝ)
     let y := fun x => f (1 / (2 * (x + 1)))
     let x := x_of_w w
     ToroidalOperator n y x = 0 ↔ ToroidalMarkovWOperator n f w = 0 := by
-  sorry
+  sorry -- Relies on `toroidal_ode_to_markov_w_diffalg` below plus analytic chain-rule bounds.
+
+/-- 
+  The Toroidal Harmonic Operator intertwines with `ToroidalMarkovWOperator` 
+  in the setting of differential algebra. We formalize this by taking a commutative 
+  algebra `K` over `ℝ` that is a field, equipped with a derivation `D` (representing `d/dw`). 
+  This bypasses the analytic limits and `DifferentiableAt` side conditions by working in 
+  the formal algebraic geometry of the differential operators.
+-/
+theorem toroidal_ode_to_markov_w_diffalg
+    {K : Type*} [Field K] [CharZero K] [Algebra ℝ K]
+    (D : Derivation ℝ K K)
+    (n : K)
+    (w : K)
+    (_hw : D w = 1)
+    (hw_ne : w ≠ 0)
+    (f : K) :
+  let x := (1/2 : K) / w - 1
+  let D_x_f := -2 * w^2 * D f
+  let D_x2_f := 4 * w^4 * D (D f) + 8 * w^3 * D f
+  4 * ((1 - x^2) * D_x2_f - 2 * x * D_x_f + (n^2 - 1/4 : K) * f) = 
+  (16 * w^3 - 4 * w^2) * D (D f) + 16 * w^2 * D f + (4*n^2 - 1 : K) * f := by
+  intros x D_x_f D_x2_f
+  dsimp [x, D_x_f, D_x2_f]
+  have h_2_ne : (2 : K) ≠ 0 := by norm_num
+  have h_4_ne : (4 : K) ≠ 0 := by norm_num
+  have h_2w_ne : (2 : K) * w ≠ 0 := mul_ne_zero h_2_ne hw_ne
+  field_simp
+  ring
 
 end QOU.QBeta
