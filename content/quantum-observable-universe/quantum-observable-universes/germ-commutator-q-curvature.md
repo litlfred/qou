@@ -1,4 +1,3 @@
-**Proposition (Germ-commutator equals the $q$-curvature).**
 *At a point $p$, let two independent observations
 ([observation](#def:observation)) perturb the substrate parameter by
 germ-level increments $\delta q_1, \delta q_2$ in the germ algebra
