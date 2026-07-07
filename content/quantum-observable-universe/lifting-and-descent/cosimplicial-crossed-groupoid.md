@@ -1,10 +1,10 @@
-Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with [recursive brane tower](#def:recursive-brane-tower) $\{A_n\}_{n \geq 0}$ and substrate parameter $q$. Equipped with the Yekutieli triples $(x^{(n)}, g^{(n)}, a^{(n)})$ ([Yekutieli triple](#def:yekutieli-triple)), the assignment
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with recursive brane tower $\{A_n\}_{n \geq 0}$ ([recursive brane tower](#def:recursive-brane-tower)) and substrate parameter $q$. Equipped with the Yekutieli triples $(x^{(n)}, g^{(n)}, a^{(n)})$ ([Yekutieli triple](#def:yekutieli-triple)), the assignment
 
 $$
   [n]  \longmapsto  \mathfrak{G}_n
 $$
 
-from the simplex category $\Delta$ to the $2$-category of gerbes on $M$ extends to a *cosimplicial crossed groupoid*: a cosimplicial object in the category of crossed groupoids, where:
+from the simplex category $\Delta$ to the $2$-category of gerbes on $M$ extends to a *cosimplicial crossed groupoid*. In this cosimplicial object:
 
 1. The coface maps $\delta^i \colon \mathfrak{G}_{n} \to \mathfrak{G}_{n+1}$ are given by jet prolongation acting on objects (inserting the $i$-th degeneracy in the Cech nerve).
 2. The codegeneracy maps $\sigma^j \colon \mathfrak{G}_{n+1} \to \mathfrak{G}_{n}$ are given by the :refterm[descent]{#descent} homomorphism $\mathfrak{d}_{n+1}$ (collapsing the $j$-th face).

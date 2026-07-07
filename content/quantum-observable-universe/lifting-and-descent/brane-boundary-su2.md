@@ -1,6 +1,6 @@
 Continuing the [brane tower for SU(2)](#ex:recursive-brane-tower-su2), we evaluate the [brane boundary](#def:brane-boundary) at level $0$.
 
-**The singular set.** For $G = \mathrm{SU}(2)$ acting on $\mathbb{CP}^1$ via the Hopf fibration, the singular set $S$ comprises the fixed points of the $\mathrm{U}(1)$-action: the north and south poles $\{0, \infty\} \subset \mathbb{CP}^1$. These dictate the vortex loci where the fibre degenerates.
+**The singular set.** For $G = \mathrm{SU}(2)$ acting on $\mathbb{CP}^1$ via the Hopf fibration, the singular set $S$ comprises the fixed points of the $\mathrm{U}(1)$-action: the north and south poles $\{0, \infty\} \subset \mathbb{CP}^1$. These fixed points dictate the vortex loci where the fibre degenerates.
 
 **Categorical boundary.** The brane boundary $\partial A_0$ is the kernel of the restriction $r_0|_S \colon A_0 \to A_0|_S$:
 

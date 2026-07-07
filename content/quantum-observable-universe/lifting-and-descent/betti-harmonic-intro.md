@@ -1,5 +1,5 @@
-The Euler characteristic stabilizes along the tower, aggregating Hodge-theoretic data. This section refines that aggregate into Betti numbers, fixes a $q$-harmonic basis, and filters the basis into fermionic and bosonic sectors via the curvature commutator.
+The Euler characteristic stabilizes along the tower, aggregating Hodge-theoretic data. We now refine this aggregate into Betti numbers, fix a $q$-harmonic basis, and filter the basis into fermionic and bosonic sectors via the curvature commutator.
 
-The Betti numbers of the brane tower expose the dimensions $b_k(A_n)$ packaged by the Euler characteristic. The $q$-harmonic basis chooses representatives compatible with the substrate parameter, splitting by $\mathrm{SU}(2)$ weight. Crucially, the algebraic filter $[\text{--}, F]$ classifies the harmonic basis into commuting (bosonic) and anti-commuting (fermionic) sectors. The distributional connection at the limit prepares the geometry for descent.
+The Betti numbers of the brane tower track the dimensions $b_k(A_n)$ packaged by the Euler characteristic. The $q$-harmonic basis chooses representatives compatible with the substrate parameter, splitting by $\mathrm{SU}(2)$ weight. The algebraic filter $[\text{--}, F]$ then classifies this basis into commuting (bosonic) and anti-commuting (fermionic) sectors. The distributional connection at the limit prepares the geometry for descent.
 
-The next section, *Descent*, projects the brane tower onto its physically realised stratum using this fermion--boson filter and eigenspace data.
+The next section projects the brane tower onto its physically realised stratum using this fermion--boson filter and eigenspace data.
