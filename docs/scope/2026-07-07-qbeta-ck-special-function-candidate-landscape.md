@@ -41,15 +41,31 @@ PR #1821's `dc_3/dq≈4.66×10⁶` impossibility is a bound on smooth **real**
 functions. The bar-odd c_k source is the **phase channel**, on which the
 magnitude/smoothness wall is silent.
 
-## The surviving direction
+## The surviving direction — Wenzl–Pochhammer (probed)
 
 **Wenzl–Pochhammer is the one candidate in the right channel.** It does not
 model c_k as a smooth real function; it locates the Habiro element's
 **boundaries at roots of unity** (`[n]_q = 0`), which is the phase / root-of-
-unity structure. This is consistent with — and feeds — PR #3458's evaluation-map
-program: the map extracts a **phase** of the pure-phase fibre `Φ_b`, with the
-near-singularity sought as a **root-of-unity accumulation** on `|q|=1` (per the
-channel-separation handoff), *not* a fitted real-q pole.
+unity structure. Probe
+[`qbeta_c4_wenzl_pochhammer_channel_probe.py`](../../computations/qbeta/qbeta_c4_wenzl_pochhammer_channel_probe.py)
+(3/3) makes this concrete:
+
+| gate | finding |
+|---|---|
+| **WP1** boundaries | `[4]_q = [8]_q = [12]_q = 0` exactly at `ζ₄, ζ₈, ζ₁₂` — the Wenzl-tower annihilators (`[4m]_q=0`, the `m∣k` vanishing) |
+| **WP2** c_4 closed form? | the **exact** `c_4^even` (9fnm, ∈ ℚ(√3)=ℚ(ζ₁₂)⁺) has rational height `~2.5×10⁹` ⇒ a **generic ℚ(√3) element, NOT a low-complexity W-P value** — W-P gives no clean c_4 closed form |
+| **WP3** c_8 boundary | the known c_k pattern-break at **c_8** (c6-c10 falsification) coincides with the **second** Wenzl boundary `[8]_q=0` at ζ₈ |
+
+**Honest verdict (scope-(a)):** W-P is confirmed the correct **channel** (roots
+of unity; `[4m]_q` boundaries; `c_8`-break ↔ `[8]_q`), but it does **not** hand
+c_4 a closed form — the exact `c_4^even` is generic in ℚ(√3), and the canonical
+c_4 (~4–5 sig figs, PR #1805) cannot be identified by a fit (C14). This is
+consistent with — and feeds — PR #3458's evaluation-map program: the map
+extracts a **phase** of the pure-phase fibre `Φ_b`, a Habiro element in the
+**Wenzl–Pochhammer basis** whose `ζ_{4m}` boundaries generate the ladder, with
+the near-singularity sought as a **root-of-unity accumulation** on `|q|=1`, *not*
+a fitted real-q pole. **c_4 is determined by that evaluation map, not by a
+special-function substitution.**
 
 **Concrete continuation (non-fishing):** the q-Bessel refutation was against a
 **real-x** ansatz (magnitude channel); the phase-channel reframe means a
