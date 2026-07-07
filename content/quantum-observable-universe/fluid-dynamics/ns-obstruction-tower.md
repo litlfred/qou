@@ -7,9 +7,9 @@ and
 [`conj:regularity-breakdown`](#conj:regularity-breakdown);
 "NS obstruction tower").**
 
-Let $(\mathbf{C}, A, \tau)$ define a QOU carrying Euler characteristic $\chi(A)$ and [Yekutieli obstruction classes](#def:quantum-characteristic-classes) $\kappa_n \in H^2(\mathcal{S}, \mathcal{B})$. Let $\Sigma \subset \mathcal{S}$ denote the precise collision locus of two anti-parallel vortex filaments.
+Let $(\mathbf{C}, A, \tau)$ define a QOU carrying Euler characteristic $\chi(A)$ and [obstruction classes](#def:quantum-characteristic-classes) $\kappa_n \in H^2(\mathcal{S}, \mathcal{B})$. Let $\Sigma \subset \mathcal{S}$ denote the precise collision locus of two anti-parallel vortex filaments.
 
-The [boundary observability](#def:ns-regular-qou) $\mathrm{Obs}_\partial(A)$ derives directly from the restriction of the Yekutieli obstruction classes down to the collision locus:
+The [boundary observability](#def:ns-regular-qou) $\mathrm{Obs}_\partial(A)$ derives directly from the restriction of the obstruction classes down to the collision locus:
 
 $$
   \mathrm{Obs}_\partial(A)

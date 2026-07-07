@@ -48,9 +48,9 @@ $$
 $$
 A torus knot $T_{2,p}$ admits a localized knot structure on $\Sigma_g$ if and only if $a_p \notin \mathfrak{I}_g$. For $g = 4$, $\mathfrak{I}_4 = (u^5)$. Every $T_{2,p}$ with $p \geq 11$ has $a_p \in (u^5)$ because $\deg_u a_p \geq 5$.
 
-## Part III: Yekutieli obstruction = leading coefficient
+## Part III: obstruction = leading coefficient
 
-The Yekutieli obstruction class $\kappa(T_{2,p}) \in H^2(\Sigma_g, \mathbb{Z})$ is the image of the leading monomial of $a_p$ under projection $\pi_g$:
+The obstruction class $\kappa(T_{2,p}) \in H^2(\Sigma_g, \mathbb{Z})$ is the image of the leading monomial of $a_p$ under projection $\pi_g$:
 $$
   \kappa(T_{2,p})
   = \begin{cases}

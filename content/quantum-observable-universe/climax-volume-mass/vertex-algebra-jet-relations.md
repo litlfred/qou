@@ -242,7 +242,7 @@ $$
 
 The rigidity trace of the identity remains level-invariant. In Hecke generators: the quantum factorial $[n]_q!$ at the base strand count persists through jet prolongation.
 
-### JC-4: Yekutieli obstruction at level $n$
+### JC-4: obstruction at level $n$
 
 $$
   \kappa_n

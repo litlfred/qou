@@ -8,7 +8,7 @@ $$
 $$
 which terminates in $1$ step. At each step, the $G_q$-action is faithful. Observability ensures strict dimension reduction.
 
-**(2) First obstruction equals the Euler class.** The Yekutieli obstruction $\kappa_0 \in H^2(\mathbb{CP}^1, \mathbb{Z}) \cong \mathbb{Z}$ equals the Euler class of the Reeb bundle. For the Hopf fibration, this is $c_1(\text{Hopf}) = 1$. Under the trace map:
+**(2) First obstruction equals the Euler class.** The obstruction $\kappa_0 \in H^2(\mathbb{CP}^1, \mathbb{Z}) \cong \mathbb{Z}$ equals the Euler class of the Reeb bundle. For the Hopf fibration, this is $c_1(\text{Hopf}) = 1$. Under the trace map:
 $$
   \kappa_0  \longmapsto  \chi(A)
   =  \mathrm{tr}(\mathrm{id}_A)
@@ -33,4 +33,4 @@ $$
 $$
 This embedding realizes $\mathbb{CP}^1 \cong S^2$ as the unit sphere in $\mathfrak{su}(2) \cong \mathbb{R}^3$. At the north pole $p = 0$, the involution acts as $\sigma(v) = e_3 v e_3^{-1}$. This is the identity on $\mathrm{U}(1)$-invariant sections and negation on off-diagonal components. The fiber data at $p = \infty$ is conjugate via the Weyl group element $w \colon e_3 \mapsto -e_3$.
 
-**Conclusion.** All five properties hold for $\mathrm{SU}(2)$. The quantum universe $(\mathrm{Rep}(\mathrm{SU}(2)), \mathcal{O}(\mathrm{SU}(2)), \tau)$ with observability and the Yekutieli lifting condition is a quantum observable universe. Descent terminates in $1$ step, the brane tower is perpetually obstructed, there are $2$ branch points on $\mathbb{CP}^1$, and the fiber data is governed by the adjoint embedding $S^2 \hookrightarrow \mathfrak{su}(2)$.
+**Conclusion.** All five properties hold for $\mathrm{SU}(2)$. The quantum universe $(\mathrm{Rep}(\mathrm{SU}(2)), \mathcal{O}(\mathrm{SU}(2)), \tau)$ with observability and the Quantum lifting condition is a quantum observable universe. Descent terminates in $1$ step, the brane tower is perpetually obstructed, there are $2$ branch points on $\mathbb{CP}^1$, and the fiber data is governed by the adjoint embedding $S^2 \hookrightarrow \mathfrak{su}(2)$.

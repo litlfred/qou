@@ -73,7 +73,7 @@ The geometric term $\mathrm{Geom}(K) = \mathrm{Vol}(K)/\hbar_q^{2}$ acts safely 
 
 [*$q$-Geometric Langlands*](#chap:q-geometric-langlands) forcefully connects the framework to the geometric Langlands programme. The Hasse–Weil bound precisely enforces the Riemann hypothesis on the $q$-zeta function of Bring's curve.
 
-The [Glossary](#chap:glossary), [Knot-Periodic Table](#app:knot-periodic-table), and [Index of Definitions](#app:index-definitions) supply the formal reference data. This paper's hardest results strictly unite behind the Yekutieli obstruction class $\kappa_n \in H^2(S, B)$. The $q$-deformed millennium problems—Navier–Stokes, Yang–Mills, P vs NP, Riemann, BSD—all precisely reduce to the vanishing of this single class.
+The [Glossary](#chap:glossary), [Knot-Periodic Table](#app:knot-periodic-table), and [Index of Definitions](#app:index-definitions) supply the formal reference data. This paper's hardest results strictly unite behind the obstruction class $\kappa_n \in H^2(S, B)$. The $q$-deformed millennium problems—Navier–Stokes, Yang–Mills, P vs NP, Riemann, BSD—all precisely reduce to the vanishing of this single class.
 
 **Calibration.**
 The framework requires **exactly three** calibration inputs—$m_e$, $\mathfrak{D}_\beta$, and $\mathfrak{D}_\pi$—to fix the state space's cohomology. Every other physical mass, binding energy, and coupling acts strictly as a zero-parameter prediction.

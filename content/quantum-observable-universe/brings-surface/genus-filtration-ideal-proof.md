@@ -12,7 +12,7 @@ the truncation $\pi_4 \colon \mathbb{Z}[u] \to \mathbb{Z}[u]/(u^5)$
 has kernel $\mathfrak{I}_4 = (u^5)$, identified with the Seifert
 cycles that have no target in $H_1(\Sigma_4)$.  Finally, by
 ([Yekutieli leading coefficient](#lem:yekutieli-leading-coefficient)),
-the Yekutieli obstruction $\kappa(T_{2,p})$ at level $n = 5$
+the obstruction $\kappa(T_{2,p})$ at level $n = 5$
 equals the leading Chebyshev coefficient $c_{(p-1)/2} = 1$, which
 is nonzero for $q \neq 1$.  Both characterisations therefore
 agree.  $\square$

@@ -1,4 +1,4 @@
-The Yekutieli obstruction classes $\kappa_n \in H^2(\mathcal{S}, \mathcal{B})$ ([quantum characteristic classes](#def:quantum-characteristic-classes)) reside in the second cohomology of the state bundle with coefficients in the band $\mathcal{B} = \mathcal{O}_M^\times$. In the archimedean realisation, $\mathcal{B} = \mathbb{G}_m$, the multiplicative group scheme. The torsion structure of $\mathbb{G}_m$ imposes a natural filtration on the obstruction space.
+The obstruction classes $\kappa_n \in H^2(\mathcal{S}, \mathcal{B})$ ([quantum characteristic classes](#def:quantum-characteristic-classes)) reside in the second cohomology of the state bundle with coefficients in the band $\mathcal{B} = \mathcal{O}_M^\times$. In the archimedean realisation, $\mathcal{B} = \mathbb{G}_m$, the multiplicative group scheme. The torsion structure of $\mathbb{G}_m$ imposes a natural filtration on the obstruction space.
 
 **The Kummer exact sequence.** For each integer $n \geq 1$, the $n$-th power map on $\mathbb{G}_m$ fits into a short exact sequence of sheaves on $\mathcal{S}$:
 $$
