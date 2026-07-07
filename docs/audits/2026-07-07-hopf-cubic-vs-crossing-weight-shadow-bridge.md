@@ -64,11 +64,44 @@ carry the substrate swing. The keystone's open scalar `w(q)` beyond leading
 order remains the sole locus of the c_3 anchor-dependence (KC19's conclusion),
 now corroborated from the Hopf-cubic side.
 
+## Where `w(q)`'s complex structure lives — the chirality parity (Borel–Padé bridge)
+
+The [Borel–Padé landing](2026-07-07-borel-pade-action-real-amphichiral.md)
+(sibling, same day) established that the f-map's even channel is **real** — forced
+by the figure-eight/pion **amphichirality** (`CS(4₁) = 0`, `𝔙(4₁) = Vol` real) —
+and concluded that any **complex** odd-channel structure "must enter through a
+**chiral** knot elsewhere, not the figure-eight." KC20's sector decomposition
+names that knot: the odd-channel cubic is the **Hopf-link (2-crossing)** sector,
+and the **Hopf link is chiral**. The discriminants confirm the parity exactly
+(witness `qbeta-hopf-cubic-shadow-bridge`, assertions 6–7):
+
+| channel | sector (knot) | chirality | cubic/quadratic disc | roots |
+|---|---|---|---|---|
+| even | unknot / identity | — | `disc(C_unknot) = +17` | **real** (`ℚ(√17)`) |
+| **odd** | **Hopf link** | **chiral** | `disc(C_Hopf) = −76 = −2²·19` | **complex-conjugate pair** |
+| total | — | — | `disc(C) = −152 = −2³·19` | complex-conjugate pair |
+
+So the odd-channel cubic carries **genuinely non-real** algebraic structure
+(negative discriminant), sourced by a **chiral** knot — exactly the ingredient
+the Borel–Padé audit says the odd channel needs and the amphichiral
+figure-eight/pion (real even channel) cannot supply. This localizes the open
+scalar `w(q)`: its **complex / fibre structure is Hopf-sector (chiral) sourced**,
+complementary to the real, amphichiral-`4₁` even channel.
+
+**Scope (flagged).** This is a *structural correspondence* — the odd cubic's
+complex roots ↔ the chirality of its source knot — coordinating two same-day
+landings; it is **not** a claim that `C_Hopf`'s complex roots *are* the Hopf
+link's complex volume, nor a derivation of `w(q)` or `c_3`. The exact facts
+(discriminant signs, chirality of the Hopf link vs amphichirality of `4₁`) are
+solid; the identification of the complex-volume mechanism remains open
+(Subgoal-2 / CAL-2 floor).
+
 ## Discipline
 
 Structural reconciliation (scope-(a)); no `c_3` value, no fit, no wiring, no
 tier change (flip-flop guard §8). The shadow identity `C_Hopf(2) = −2` is
-Lean-certified; the substrate rigidity is an exact-arithmetic witness.
+Lean-certified; the substrate rigidity and the chirality-parity discriminants
+are exact-arithmetic witnesses.
 
 ## Cross-references
 
