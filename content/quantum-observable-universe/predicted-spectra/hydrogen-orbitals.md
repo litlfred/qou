@@ -27,7 +27,7 @@ $$
   \text{two R-I moves at exceptional divisor.}
 $$
 
-The bare mass $m_e \approx 0.511$ MeV remains unchanged. Reidemeister moves preserve knot type (the Reidemeister-invariance conjecture). The binding energy $E_n = -13.6/n^2$ eV changes because R-I moves alter the embedding. The electron remains a trefoil but shifts to a higher writhe state.
+The bare mass $m_e \approx 0.511$ MeV remains unchanged. Reidemeister moves preserve knot type (the Reidemeister mass-invariance conjecture). The binding energy $E_n = -13.6/n^2$ eV changes because R-I moves alter the embedding. The electron remains a trefoil but shifts to a higher writhe state.
 
 The shell number $n$ matches the writhe level:
 

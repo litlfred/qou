@@ -57,4 +57,4 @@ production. Cross-PR coordination tracked in
 
 ### Notes
 
-*Per AGENTS.md \"$\\Delta_\\lambda$ gate (Track A blocker)\" rule: **do not propose a seventh fit-based ansatz**. The three-calibration discipline review will reject it. Productive directions include GAP-A-3, GAP-A-4 (categorical brane-tower level selection / $\\rho$ general rule) and Option E (Kashiwara crystal). Full context: [`docs/audits/2026-05-18-delta-lambda-gating-context.md`](../../../docs/audits/2026-05-18-delta-lambda-gating-context.md).*
+*Per AGENTS.md "$\Delta_\lambda$ gate (Track A blocker)" rule: **do not propose a seventh fit-based ansatz**. The three-calibration discipline review will reject it. Productive directions include GAP-A-3, GAP-A-4 (categorical brane-tower level selection / $\rho$ general rule) and Option E (Kashiwara crystal). Full context: [`docs/audits/2026-05-18-delta-lambda-gating-context.md`](../../../docs/audits/2026-05-18-delta-lambda-gating-context.md).*

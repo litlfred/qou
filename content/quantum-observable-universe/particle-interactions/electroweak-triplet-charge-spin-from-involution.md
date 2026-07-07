@@ -42,13 +42,11 @@ Charge conjugation is crossing reversal. The operation $C = (\sigma \leftrightar
 
 Admitting the signed asymmetry does not force which slot is $W$. Two distinct signed labelings both satisfy the full $C$-invariance neutrality constraint yet disagree on the charged slot. The signed test constrains the neutral slot to be amphichiral, but not which slot it is.
 
-The $C$-invariance criterion excludes every pure even-twist slot from being the neutral member. Each carrier $\sigma_1^{2k}$ has signed writhe $2k 
-eq 0$, so none is $C$-invariant. The neutral electroweak boson is necessarily not a single even-twist slot. It must be the mixed $(W^3, B) \mapsto (Z, \gamma)$ Weinberg combination.
+The $C$-invariance criterion excludes every pure even-twist slot from being the neutral member. Each carrier $\sigma_1^{2k}$ has signed writhe $2k \neq 0$, so none is $C$-invariant. The neutral electroweak boson is necessarily not a single even-twist slot. It must be the mixed $(W^3, B) \mapsto (Z, \gamma)$ Weinberg combination.
 
 **The two natural realizations of the second charge also fail.**
 
-A hypothetical second baryon or color-trace charge nonzero on exactly one vector slot would determine the neutral slot uniquely. The pairwise linking number $\mathrm{Lk}$ and the Milnor triple linking $ar\mu(123)$ do not qualify. The even-twist carrier is a two-component link, so $ar\mu(123) \equiv 0$ on every carrier. $\mathrm{Lk}(T(2,2k)) = k 
-eq 0$ on every carrier. Neither is nonzero on exactly one vector slot.
+A hypothetical second baryon or color-trace charge nonzero on exactly one vector slot would determine the neutral slot uniquely. The pairwise linking number $\mathrm{Lk}$ and the Milnor triple linking $\bar\mu(123)$ do not qualify. The even-twist carrier is a two-component link, so $\bar\mu(123) \equiv 0$ on every carrier. $\mathrm{Lk}(T(2,2k)) = k \neq 0$ on every carrier. Neither is nonzero on exactly one vector slot.
 
 **The group-structure data does force the label.**
 

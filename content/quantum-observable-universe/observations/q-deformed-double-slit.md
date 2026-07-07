@@ -14,9 +14,9 @@ As $q \to 1$, $d_q \to d$. For $q > 1$, the vertical differential introduces tra
 
 The Reeb contraction drives wavefront spreading ([wavefront propagation](#rem:wavefront-propagation)). The phase difference along path $\gamma$ grazing the slit boundary is
 
-```tex
+$$
 \Delta\phi =  \Delta\phi_{\mathrm{classical}} +  \hbar_q \int_{\gamma} \pi_V \circ d,
-```
+$$
 
 The integral depends on the slit material's torsion intensity. The Lagrangian simplifies on an instanton background ([instanton on-shell](#rem:instanton-on-shell)):
 

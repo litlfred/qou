@@ -3,6 +3,6 @@
 When $\mathbf{C}$ is $R$-linear, each hom-set carries the structure of an $R$-module. Composition is $R$-bilinear.
 
 **Mathlib reference.**
-We denote the hom-set from `X` to `Y` by `X ⟶ Y`.
+We denote the hom-set from `X` to `Y` by `X → Y`.
 Import: `Mathlib.CategoryTheory.Category.Basic`.
 The type is `CategoryTheory.Category.Hom X Y`.

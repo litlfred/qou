@@ -4,7 +4,7 @@ $$
   \mathcal{H}_q
   = 
   \sum_{i} \oint_{\varrho_i}
-  v \cdot \omegads
+  v \cdot \omega\,ds
   + 
   2\sum_{i < j}
   \mathrm{lk}_q(\varrho_i, \varrho_j)
@@ -47,6 +47,6 @@ Then:
 
    capturing the full topological structure of the vortex tangle missed by $\mathcal{H}_q$.
 
-4. **Classical limit.** As $q \to 1$, the representations collapse ($[j]_q[j+1]_q \to j(j+1)$), linking reduces to Gauss linking ($\mathrm{lk}_q \to \mathrm{lk}$), and $\mathcal{H}_q$ simplifies to classical Moffatt helicity $H = \int v \cdot \omegadV$.
+4. **Classical limit.** As $q \to 1$, the representations collapse ($[j]_q[j+1]_q \to j(j+1)$), linking reduces to Gauss linking ($\mathrm{lk}_q \to \mathrm{lk}$), and $\mathcal{H}_q$ simplifies to classical Moffatt helicity $H = \int v \cdot \omega\,dV$.
 
 **Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

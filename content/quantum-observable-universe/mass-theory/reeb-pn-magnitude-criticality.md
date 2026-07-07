@@ -3,7 +3,7 @@
 and let*
 
 ```tex
-\begin{aligned}
+\begin{align*}
   M(b) &= \begin{pmatrix} 1 & b \\ b & -1 \end{pmatrix},
   &S(a,w) &= \begin{pmatrix}
      0 & a & w & w\\
@@ -11,7 +11,7 @@ and let*
      w & w & 0 & -a\\
      w & w & -a & 0
   \end{pmatrix}
-\end{aligned}
+\end{align*}
 ```
 
 *denote the symmetric-sector exchange matrix and the uniform-magnitude
