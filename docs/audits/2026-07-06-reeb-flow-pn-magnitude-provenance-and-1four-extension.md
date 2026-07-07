@@ -133,6 +133,37 @@ i.e. physical linking reads the TL channel decomposition through the Gauss
 integrand. Everything downstream of that sentence is proved
 (§2b I1–I3 + [`ReebPnMagnitude.lean`](../../content/quantum-observable-universe/lean/QOU/MassTheory/ReebPnMagnitude.lean)).
 
+## 2e. Proof program for the ²H law — what is provable, proved, and forbidden (tranche 3b)
+
+Owner asked for a proof of the ²H tier (option 1). Honest decomposition:
+
+**Strong form is unprovable.** $5g = 2.23364$ vs AME $2.2245660$: the law
+carries an irreducible **+0.41 %** residual, so no derivation can make
+$B = 5g\,E_{\text{unit}}$ exact. The provable target is the leading-order
+statement plus a correction ladder:
+$B(^2\mathrm{H}) = \sqrt5\,E_{\text{unit}}\,(1 - x/10 + 3x^2/200 - \cdots)$,
+$x = (v-v^{-1})^2$ — the same base-value-times-deformation-ladder shape as
+the $Q_\beta$ $c_k$ series, with base $\sqrt5\,E_{\text{unit}}$.
+
+**Proved now (Lean, sorry-free).** The dimensionless core is the
+**marginal-stability characterization**: over any commutative ring
+$\det(1 + g\,M(b)) = 1 - g^2(1+b^2)$ (`ss_det_marginal`), hence the landed
+magnitude — which satisfies $g^2(1+[2]_v^2) = 1$ by I1/I2 — is exactly the
+point where the deformed ss-sector determinant **vanishes**
+(`ss_det_zero_at_criticality`). The deuteron's exchange sector sits at
+marginal stability, matching its physical signature (barely bound, no bound
+excited state), and AME lies on the bound side ($B_{\text{AME}} < 5g$,
+correct sign). Both criticality candidates $5g$ and $1/g = \lvert\mu_q\rvert$
+straddle within $g\,x \approx 0.0049$ MeV of each other; AME is below both.
+
+**Forbidden step (entropy bound).** $E_{\text{unit}} = 0.99594$ MeV must
+come from a structural argument, **not** a wider scan: at the law's own
+0.4 % match precision, a two-factor scan over ~10 canonical energies × ~10
+dimensionless dressings expects $\gtrsim 1$ accidental hit — a match found
+that way carries no evidence (the PSLQ entropy-bound precedent, PR #1805).
+The §3d single-factor scan stands as the only admissible search; the unit
+identification remains the genuine open of this law.
+
 ## 3. [1⁴] extension at the landed magnitude (new probe)
 
 [`b4_1four_reeb_flow_magnitude.py`](../../computations/probes/b4_1four_reeb_flow_magnitude.py)
