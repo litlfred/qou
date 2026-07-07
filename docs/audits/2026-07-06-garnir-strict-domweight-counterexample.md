@@ -232,6 +232,36 @@ they establish the Garnir relation `Σ sgn·e = 0` and the coset reindexing, whi
 measure-independent. Only the *dominance conclusion* (`garnir_assembly`'s strict-`domWeight`
 premise, `straightening_step*`'s goal shape, and the induction measure) changes.
 
+### 5.1 Progress (2026-07-07) — 6 sorry-free bricks + a cleaner path
+
+Landed sorry-free on the branch (`lean`-direct exit 0; file stays at ONE sorry, colMax):
+`colWordNum`/`cmajSig` (measure), `cmajSig_lt_of_col_row`, **`colWordNum_swap_lt`** (a
+within-column descent swap strictly lowers `colWordNum` — the analogue of
+`domWeight_swap_lt`), `colStandard_of_colWordMin`, `exists_row_descent_of_colWordMin`
+(roadmap step 1), and **`garnir_assembly_gen`** (the measure-generic assembly, parametric
+over `P : Tableau → Prop`).
+
+**The shuffle transversal is NOT needed — use the full group.** A relation-validated model
+(`/tmp/garnir/vo2.py`) shows: aggregate `sgn(σ)` over **all** of `S_{A∪B}` (the already-proved
+`garnir_full_annihilation`, `Σ_{σ∈garnirG} sgn(σ)·(σ·e_t) = 0`) and group the resulting
+polytabloids by their **column-sorted** tableau. Then **every** column-sorted tableau with
+*nonzero* aggregated coefficient (other than `t`) has strictly smaller `colWordNum` —
+0 failures over shapes to `(3,2,1)`. The non-decreasing terms **cancel to zero
+coefficient**. So the plan is:
+
+1. `garnir_full_annihilation` (proved) ⇒ `|H|·e_t = −Σ_{σ∈garnirG\H} sgn(σ)·e_{σ·t}`
+   (the `σ∈H⊆colStab` part collapses to `|H|·e_t` via column antisymmetry; needs `CharZero`
+   for the `1/|H|`).
+2. Rewrite each `e_{σ·t} = sgn(colsort σ)·e_{colsort(σ·t)}` and group by the column-sorted
+   tableau `t'`.
+3. **The remaining core:** show the aggregated coefficient `c_{t'} = 0` for every `t'` with
+   `colWordNum t' ≥ colWordNum t` (the cancellation), leaving only `colWordNum`-smaller
+   terms — then `garnir_assembly_gen` (or a full-group variant) closes colMax. Empirically
+   the fibre of `t'` is a single `H`-coset, so this is the coset-sign-collapse
+   (`sum_sign_rep_coset_collapse`, proved) combined with the row-collision cancellation
+   (`garnir_row_collision`, proved) — the genuine hard combinatorial content, but now
+   framed without any explicit shuffle-transversal object.
+
 **Effort estimate.** Research-grade but now well-scoped: Mathlib has no Specht modules, but
 the termination order is settled and Lean-ready. Steps 1–4 are a focused restatement +
 one new combinatorial lemma (step 3), not open-ended research.
