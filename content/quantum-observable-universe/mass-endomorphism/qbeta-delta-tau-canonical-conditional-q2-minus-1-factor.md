@@ -11,7 +11,7 @@ $$
   + y_{(1,1,1)}(q) \chi_{(1,1,1)}(q).
 $$
 
-Then for $q > 0$, the trace difference factors as:
+For $q > 0$, the trace difference factors as:
 
 $$
   \Delta\tau_M^{\text{can}}(q) = (q^2 - 1) P^{\text{can}}(q),
@@ -23,7 +23,7 @@ $$
   P^{\text{can}}(q) = y_{(3)}(q) P_{(3)}(q) + y_{(2,1)}(q) P_{(2,1)}(q) + y_{(1,1,1)}(q) P_{(1,1,1)}(q).
 $$
 
-Here $P_\lambda(q)$ are the per-block witnesses from `chi_blocks_have_q2_minus_1_factor`. In particular, $\Delta\tau_M^{\text{can}}(1) = 0$.
+Here $P_\lambda(q)$ form the per-block witnesses from `chi_blocks_have_q2_minus_1_factor`. In particular, $\Delta\tau_M^{\text{can}}(1) = 0$.
 
 ## Cross-references
 

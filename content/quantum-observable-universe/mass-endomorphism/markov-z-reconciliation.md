@@ -16,7 +16,7 @@ $$
 $$
 giving $z_{\mathrm{m}} \approx 0.499$ at $q_0$.
 
-**Relation.** The two parameters are related by
+**Relation.** The two parameters satisfy
 $$
   z_{\mathrm{J}}
   \;=\;
@@ -24,6 +24,6 @@ $$
 $$
 since $z_{\mathrm{m}}^2 = 1/(q^{1/2}+q^{-1/2})^2$ by definition. Equivalently, $z_{\mathrm{m}} = z_{\mathrm{J}}^{1/2}\,(q - 1)^{-1/2}$.
 
-**Origin of the two conventions.** Convention 1 normalises the Jones polynomial as a *link invariant*. The factor $(q-1)$ absorbs the writhe correction and makes $J_L(q)$ independent of the braid representative. Convention 2 arises when we evaluate the trace on a *single generator* $\sigma_i$ without the writhe prefactor. We have $\mathrm{tr}_M(\sigma_i) = z_{\mathrm{m}}$ in Convention 2, whereas $\mathrm{tr}_M(\sigma_i) = z_{\mathrm{J}}$ in Convention 1.
+**Origin of the two conventions.** Convention 1 normalises the Jones polynomial as a link invariant. The factor $(q-1)$ absorbs the writhe correction and makes $J_L(q)$ independent of the braid representative. Convention 2 arises when we evaluate the trace on a single generator $\sigma_i$ without the writhe prefactor. We have $\mathrm{tr}_M(\sigma_i) = z_{\mathrm{m}}$ in Convention 2, whereas $\mathrm{tr}_M(\sigma_i) = z_{\mathrm{J}}$ in Convention 1.
 
 All mass tables, vertex volumes, and nuclear binding computations in this paper use $z = z_{\mathrm{m}} = 1/(q^{1/2} + q^{-1/2})$. The Jones–Markov trace theorem statement retains $z_{\mathrm{J}}$ to match the original reference.

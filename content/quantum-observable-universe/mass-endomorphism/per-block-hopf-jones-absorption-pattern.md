@@ -40,15 +40,14 @@ $$
 
 Evaluating at $q = 1$ yields $1 (-2) + 4 (-1/2) + 1 (-2) = -6$. 
 
-Under the Markov-bridge $y_\lambda$ weighting, $y_\lambda$ at $q=1$ satisfies $\mathrm{tr}_M(1)=1$, $\mathrm{tr}_M(\sigma)=z=1/2$, and $\mathrm{tr}_M(\sigma_1\sigma_2)=z^2=1/4$. This yields $y_{(3)}(1)=1/2$, $y_{(2,1)}(1)=1/4$, and $y_{(1,1,1)}(1)=0$. The sum is:
+Under the Markov-bridge $y_\lambda$ weighting, $y_\lambda$ at $q=1$ satisfies $\mathrm{tr}_M(1)=1$, $\mathrm{tr}_M(\sigma)=z=1/2$, and $\mathrm{tr}_M(\sigma_1\sigma_2)=z^2=1/4$. This yields $y_{(3)}(1)=1/2$, $y_{(2,1)}(1)=1/4$, and $y_{(1,1,1)}(1)=0$. The sum evaluates to:
 
 $$
 y_{(3)}(1) (-2) + y_{(2,1)}(1) (-1) + y_{(1,1,1)}(1) (-2) = -\tfrac{5}{4}.
 $$
 
-This is the Markov-trace leading-order coefficient $\tau_M(\mathcal{B}_n - \mathcal{B}_p) \approx -\tfrac{5}{4}\varepsilon + O(\varepsilon^2)$. At the substrate parameter $q_0$, the $y_\lambda$ values are $q$-dependent rational functions rather than a probability measure. A direct computation gives $\tau_M(\mathcal{B}_n - \mathcal{B}_p) \approx -0.142$, consistent with the $y_\lambda(q_0) \chi_\lambda(q_0)$ sum.
+This provides the Markov-trace leading-order coefficient $\tau_M(\mathcal{B}_n - \mathcal{B}_p) \approx -\tfrac{5}{4}\varepsilon + O(\varepsilon^2)$. At the substrate parameter $q_0$, the $y_\lambda$ values constitute $q$-dependent rational functions rather than a probability measure. A direct computation gives $\tau_M(\mathcal{B}_n - \mathcal{B}_p) \approx -0.142$, consistent with the $y_\lambda(q_0) \chi_\lambda(q_0)$ sum.
 
 ## Significance
 
-This per-block absorption pattern provides the foundation for extending the coefficient sequence beyond $c_3$. Higher precision-ladder coefficients $c_k$ for $k \geq 4$ arise from products of the per-block linear-in-$\hbar_q$ factors, producing $\hbar_q^k$ at order $k$. Each block's contribution carries the leading-order Hopf-Jones absorption, modulated by the block's cyclotomic-factor structure ($\Phi_4^2$ for one-dimensional representations; $\Phi_8$ for two-dimensional representations).
-
+This per-block absorption pattern establishes the foundation for extending the coefficient sequence beyond $c_3$. Higher precision-ladder coefficients $c_k$ for $k \geq 4$ arise from products of the per-block linear-in-$\hbar_q$ factors, producing $\hbar_q^k$ at order $k$. Each block's contribution carries the leading-order Hopf-Jones absorption, modulated by the block's cyclotomic-factor structure ($\Phi_4^2$ for one-dimensional representations; $\Phi_8$ for two-dimensional representations).
