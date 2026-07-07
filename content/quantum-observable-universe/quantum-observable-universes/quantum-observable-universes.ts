@@ -253,8 +253,6 @@ export default chapter({
         "notation-special-cases",
         "c-quantum-observable-universe",
         "archimedean-realisations",
-        // Phase 7 orphan reconnection (2026-05-25):
-        "affine-light-cone-figure",
       ],
     }),
 
