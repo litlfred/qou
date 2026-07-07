@@ -1,15 +1,11 @@
 **Corollary (knot factor for Markov-amphicheiral knots).**
-*Let $\mathcal{K}$ be **Markov-amphicheiral**: its mirror braid
-representative $\beta_\mathcal{K}^*$ is conjugate to
-$\beta_\mathcal{K}$ in $H_n(R, q)$ — i.e. there exists
-$w \in H_n(R, q)^{\times}$ with*
+*Let $\mathcal{K}$ be Markov-amphicheiral. Its mirror braid representative $\beta_\mathcal{K}^*$ is conjugate to $\beta_\mathcal{K}$ in $H_n(R, q)$. There exists $w \in H_n(R, q)^{\times}$ such that:*
 
 $$
   \beta_\mathcal{K}^* \;=\; w\,\beta_\mathcal{K}\, w^{-1}.
 $$
 
-*Then the knot factor is a sum of positive squares weighted by
-Plancherel weights:*
+*The knot factor is therefore a sum of positive squares weighted by Plancherel weights:*
 
 $$
   a_\mathcal{K} \;=\;

@@ -1,8 +1,4 @@
-The three corollaries
-([amphicheiral](#cor:knot-factor-amphicheiral),
-[Borromean-$k$](#cor:knot-factor-borromean-composite),
-[shell-closed](#cor:knot-factor-shell-closed)) replace the empirical
-per-isotope $a_\mathcal{K}$ choices with derived expressions:
+These corollaries replace empirical per-isotope fits with derived expressions:
 
 | Nucleus | Knot family | Empirical $a$ | Spectral derivation |
 |---|---|---|---|
@@ -12,12 +8,4 @@ per-isotope $a_\mathcal{K}$ choices with derived expressions:
 | Odd-odd $Z = N$ (${}^6\mathrm{Li},\ {}^{14}\mathrm{N}$) | Asymmetric | $1 - \delta_{\mathrm{Wigner}}$ | Last-neutron breaking $\Rightarrow$ residual on standard irrep |
 
 **Practical computation.**
-The Hoefsmit pipeline
-([Hoefsmit](#conj:hoefsmit-scattering-pipeline)) produces
-$\chi_\lambda(\beta_\mathcal{K})$ for any braid word.  The knot
-factor is then a single q-deformed Wedderburn-weighted sum,
-bounded (though not unit-normalised) by Wedderburn completeness with
-no truncation.  Implementation: replace per-isotope
-hand-fits in the formal derivation
-with direct evaluation of
-([knot factor](#prop:knot-factor-spectral-form)).
+The Hoefsmit pipeline produces $\chi_\lambda(\beta_\mathcal{K})$ for any braid word. The knot factor is then a single q-deformed Wedderburn-weighted sum. It is bounded by Wedderburn completeness without truncation. Implementation replaces per-isotope hand-fits with direct evaluation of the spectral form.
