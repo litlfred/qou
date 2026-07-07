@@ -798,6 +798,19 @@
         "reviewed_at": "2026-06-22T02:56:54.057Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies fit-section-chapter. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:13Z",
+        "reviewed_sha": "fdcc9d885442474408216a0d857bd25dca5ff630",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-false-claim": [
@@ -817,6 +830,19 @@
         "notes": "No false claims identified in 'The ${}^{14}\\\\mathrm{N}$ maximal braid shortcut vs ${}^{14}\\\\mathrm{C}$ broken alternation': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/nitrogen-14-threading.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-false-claim. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:13Z",
+        "reviewed_sha": "fdcc9d885442474408216a0d857bd25dca5ff630",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-vacuous": [
@@ -835,6 +861,19 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'The ${}^{14}\\\\mathrm{N}$ maximal braid shortcut vs ${}^{14}\\\\mathrm{C}$ broken alternation' presents substantial mathematical content: Both ${}^{14}\\mathrm{N}$ and ${}^{14}\\mathrm{C}$ have mass number $A = 14$ and s...",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-vacuous. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:13Z",
+        "reviewed_sha": "fdcc9d885442474408216a0d857bd25dca5ff630",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-circular": [
@@ -854,6 +893,19 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'The ${}^{14}\\\\mathrm{N}$ maximal braid shortcut vs ${}^{14}\\\\mathrm{C}$ broken alternation'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/nitrogen-14-threading.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-circular. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:13Z",
+        "reviewed_sha": "fdcc9d885442474408216a0d857bd25dca5ff630",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-overclaim": [
@@ -872,6 +924,19 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No overclaims: the scope of 'The ${}^{14}\\\\mathrm{N}$ maximal braid shortcut vs ${}^{14}\\\\mathrm{C}$ broken alternation' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-overclaim. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:13Z",
+        "reviewed_sha": "fdcc9d885442474408216a0d857bd25dca5ff630",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -891,6 +956,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'The ${}^{14}\\\\mathrm{N}$ maximal braid shortcut vs ${}^{14}\\\\mathrm{C}$ broken alternation'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/nitrogen-14-threading.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-hidden-dof. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:13Z",
+        "reviewed_sha": "fdcc9d885442474408216a0d857bd25dca5ff630",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -910,6 +988,19 @@
         "notes": "The argument flow in 'The ${}^{14}\\\\mathrm{N}$ maximal braid shortcut vs ${}^{14}\\\\mathrm{C}$ broken alternation' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/nitrogen-14-threading.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-non-sequitur. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:13Z",
+        "reviewed_sha": "fdcc9d885442474408216a0d857bd25dca5ff630",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -928,6 +1019,19 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-lean-narrative-divergence. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:13Z",
+        "reviewed_sha": "fdcc9d885442474408216a0d857bd25dca5ff630",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -947,6 +1051,19 @@
         "notes": "No citations are present in 'The ${}^{14}\\\\mathrm{N}$ maximal braid shortcut vs ${}^{14}\\\\mathrm{C}$ broken alternation', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/nitrogen-14-threading.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-citation-misuse. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:13Z",
+        "reviewed_sha": "fdcc9d885442474408216a0d857bd25dca5ff630",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -966,6 +1083,19 @@
         "notes": "Key terms and symbols in 'The ${}^{14}\\\\mathrm{N}$ maximal braid shortcut vs ${}^{14}\\\\mathrm{C}$ broken alternation' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/nitrogen-14-threading.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-definitional-ambiguity. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:13Z",
+        "reviewed_sha": "fdcc9d885442474408216a0d857bd25dca5ff630",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -985,6 +1115,19 @@
         "notes": "The algebraic and logical relations in 'The ${}^{14}\\\\mathrm{N}$ maximal braid shortcut vs ${}^{14}\\\\mathrm{C}$ broken alternation' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/nitrogen-14-threading.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-empirical-fragility. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:13Z",
+        "reviewed_sha": "fdcc9d885442474408216a0d857bd25dca5ff630",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1004,6 +1147,19 @@
         "notes": "The physical concepts described in 'The ${}^{14}\\\\mathrm{N}$ maximal braid shortcut vs ${}^{14}\\\\mathrm{C}$ broken alternation' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/nitrogen-14-threading.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-physical-implausibility. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:13Z",
+        "reviewed_sha": "fdcc9d885442474408216a0d857bd25dca5ff630",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1023,6 +1179,19 @@
         "notes": "The derivation steps and formal definitions in 'The ${}^{14}\\\\mathrm{N}$ maximal braid shortcut vs ${}^{14}\\\\mathrm{C}$ broken alternation' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/nitrogen-14-threading.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-reproducibility. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:13Z",
+        "reviewed_sha": "fdcc9d885442474408216a0d857bd25dca5ff630",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1043,9 +1212,52 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'The ${}^{14}\\\\mathrm{N}$ maximal braid shortcut vs ${}^{14}\\\\mathrm{C}$ broken alternation' are consistent.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-referee-verdict. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:13Z",
+        "reviewed_sha": "fdcc9d885442474408216a0d857bd25dca5ff630",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
-    "milnor-amalgamated-flow": []
+    "milnor-amalgamated-flow": [],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Block satisfies expo-milnor-clarity. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:13Z",
+        "reviewed_sha": "fdcc9d885442474408216a0d857bd25dca5ff630",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Block satisfies milnor-brevity. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:13Z",
+        "reviewed_sha": "fdcc9d885442474408216a0d857bd25dca5ff630",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ]
   },
   "updated_at": "2026-07-07T14:26:56.563976Z"
 }

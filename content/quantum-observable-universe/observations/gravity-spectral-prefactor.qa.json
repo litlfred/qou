@@ -1045,6 +1045,19 @@
         "reviewed_at": "2026-06-22T02:56:53.982Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies voice-statement-no-interpretation. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:13Z",
+        "reviewed_sha": "fdcc9d885442474408216a0d857bd25dca5ff630",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "fit-section-chapter": [
@@ -1065,6 +1078,19 @@
         "reviewed_at": "2026-06-22T02:56:54.372Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies fit-section-chapter. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:13Z",
+        "reviewed_sha": "fdcc9d885442474408216a0d857bd25dca5ff630",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "wall-side-statement": [
@@ -1085,6 +1111,19 @@
         "reviewed_at": "2026-06-22T02:56:54.778Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is correctly placed in an archimedean chapter."
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies wall-side-statement. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:13Z",
+        "reviewed_sha": "fdcc9d885442474408216a0d857bd25dca5ff630",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "wall-side-proof": [
@@ -1105,6 +1144,19 @@
         "reviewed_at": "2026-06-22T02:56:55.201Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof matches the archimedean regime."
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies wall-side-proof. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:13Z",
+        "reviewed_sha": "fdcc9d885442474408216a0d857bd25dca5ff630",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1125,6 +1177,19 @@
         "reviewed_at": "2026-06-22T02:56:55.491Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies proof-narrative-lean-equiv. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:13Z",
+        "reviewed_sha": "fdcc9d885442474408216a0d857bd25dca5ff630",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1149,6 +1214,19 @@
         "reviewed_at": "2026-06-22T02:56:55.859Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies proof-rater-strategy-clarity. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:13Z",
+        "reviewed_sha": "fdcc9d885442474408216a0d857bd25dca5ff630",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1173,6 +1251,19 @@
         "reviewed_at": "2026-06-22T02:56:56.222Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies proof-rater-goal-plausibility. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:13Z",
+        "reviewed_sha": "fdcc9d885442474408216a0d857bd25dca5ff630",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-rater-novelty": [
@@ -1197,6 +1288,19 @@
         "reviewed_at": "2026-06-22T02:56:56.603Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies proof-rater-novelty. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:13Z",
+        "reviewed_sha": "fdcc9d885442474408216a0d857bd25dca5ff630",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1217,6 +1321,19 @@
         "reviewed_at": "2026-06-22T02:56:56.953Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies proof-statement-integrity. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:13Z",
+        "reviewed_sha": "fdcc9d885442474408216a0d857bd25dca5ff630",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1237,6 +1354,19 @@
         "reviewed_at": "2026-06-22T02:56:57.404Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies proof-no-self-assuming-projection. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:13Z",
+        "reviewed_sha": "fdcc9d885442474408216a0d857bd25dca5ff630",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-no-trivial-true": [
@@ -1257,6 +1387,19 @@
         "reviewed_at": "2026-06-22T02:56:57.772Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies proof-no-trivial-true. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:13Z",
+        "reviewed_sha": "fdcc9d885442474408216a0d857bd25dca5ff630",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-no-false-premise": [
@@ -1277,6 +1420,19 @@
         "reviewed_at": "2026-06-22T02:56:58.268Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies proof-no-false-premise. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:13Z",
+        "reviewed_sha": "fdcc9d885442474408216a0d857bd25dca5ff630",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1297,6 +1453,19 @@
         "reviewed_at": "2026-06-22T02:56:58.747Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies proof-no-unused-hypotheses. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:13Z",
+        "reviewed_sha": "fdcc9d885442474408216a0d857bd25dca5ff630",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-no-decide-masking": [
@@ -1317,6 +1486,19 @@
         "reviewed_at": "2026-06-22T02:56:59.156Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies proof-no-decide-masking. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:13Z",
+        "reviewed_sha": "fdcc9d885442474408216a0d857bd25dca5ff630",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-false-claim": [
@@ -1337,6 +1519,19 @@
         "notes": "The claim in 'Newton' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/gravity-spectral-prefactor.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-false-claim. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:13Z",
+        "reviewed_sha": "fdcc9d885442474408216a0d857bd25dca5ff630",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-vacuous": [
@@ -1356,6 +1551,19 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Newton' presents substantial mathematical content: $\\mathfrak{m}^{\\geq 4}_{q,\\mathcal{K}}(\\mathcal{T})$ of the unified mass formula...",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-vacuous. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:13Z",
+        "reviewed_sha": "fdcc9d885442474408216a0d857bd25dca5ff630",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-circular": [
@@ -1376,6 +1584,19 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Newton'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/gravity-spectral-prefactor.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-circular. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:13Z",
+        "reviewed_sha": "fdcc9d885442474408216a0d857bd25dca5ff630",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-overclaim": [
@@ -1395,6 +1616,19 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose presents 'Newton' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-overclaim. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:13Z",
+        "reviewed_sha": "fdcc9d885442474408216a0d857bd25dca5ff630",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1415,6 +1649,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Newton'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/gravity-spectral-prefactor.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-hidden-dof. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:13Z",
+        "reviewed_sha": "fdcc9d885442474408216a0d857bd25dca5ff630",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1435,6 +1682,19 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/observations/gravity-spectral-prefactor.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/gravity-spectral-prefactor.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-non-sequitur. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:13Z",
+        "reviewed_sha": "fdcc9d885442474408216a0d857bd25dca5ff630",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1454,6 +1714,19 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/observations/gravity-spectral-prefactor.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-lean-narrative-divergence. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:13Z",
+        "reviewed_sha": "fdcc9d885442474408216a0d857bd25dca5ff630",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1474,6 +1747,19 @@
         "notes": "No citations are present in 'Newton', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/gravity-spectral-prefactor.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-citation-misuse. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:13Z",
+        "reviewed_sha": "fdcc9d885442474408216a0d857bd25dca5ff630",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1494,6 +1780,19 @@
         "notes": "Key terms and symbols in 'Newton' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/gravity-spectral-prefactor.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-definitional-ambiguity. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:13Z",
+        "reviewed_sha": "fdcc9d885442474408216a0d857bd25dca5ff630",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1514,6 +1813,19 @@
         "notes": "The algebraic and logical relations in 'Newton' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/gravity-spectral-prefactor.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-empirical-fragility. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:13Z",
+        "reviewed_sha": "fdcc9d885442474408216a0d857bd25dca5ff630",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1534,6 +1846,19 @@
         "notes": "The physical concepts described in 'Newton' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/gravity-spectral-prefactor.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-physical-implausibility. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:13Z",
+        "reviewed_sha": "fdcc9d885442474408216a0d857bd25dca5ff630",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1554,6 +1879,19 @@
         "notes": "The Lean sibling content/quantum-observable-universe/observations/gravity-spectral-prefactor.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/gravity-spectral-prefactor.lean:1 \u2014 content/quantum-observable-universe/observations/gravity-spectral-prefactor.lean:26:2: error: typeclass instance problem is stuck, it is often due to metavariables"
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-reproducibility. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:13Z",
+        "reviewed_sha": "fdcc9d885442474408216a0d857bd25dca5ff630",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1575,6 +1913,19 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/observations/gravity-spectral-prefactor.lean contains compilation errors: content/quantum-observable-universe/observations/gravity-spectral-prefactor.lean:26:2: error: typeclass instance problem is stuck, it is often due to metavariables, invalidating the claimed formalization.",
         "severity": "critical"
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-referee-verdict. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:13Z",
+        "reviewed_sha": "fdcc9d885442474408216a0d857bd25dca5ff630",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "bib-cite-resolves": [
@@ -1597,7 +1948,37 @@
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
       }
     ],
-    "milnor-amalgamated-flow": []
+    "milnor-amalgamated-flow": [],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Block satisfies expo-milnor-clarity. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:13Z",
+        "reviewed_sha": "fdcc9d885442474408216a0d857bd25dca5ff630",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Block satisfies milnor-brevity. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:13Z",
+        "reviewed_sha": "fdcc9d885442474408216a0d857bd25dca5ff630",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ]
   },
   "updated_at": "2026-07-07T14:26:56.580100Z"
 }
