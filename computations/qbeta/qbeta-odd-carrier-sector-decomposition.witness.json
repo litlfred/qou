@@ -1,6 +1,8 @@
 {
   "computation": "qbeta-odd-carrier-sector-decomposition",
   "engine": "python-exact",
+  "scriptFile": "qbeta_odd_carrier_sector_decomposition.py",
+  "commitSha": "8e02a8afa278d319b0c9899c3753970bfa40ccf0",
   "data": {
     "num_matches_audit": true,
     "sector_bar_odd_vanishes": {
