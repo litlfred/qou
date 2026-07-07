@@ -26,6 +26,7 @@ import datetime
 import hashlib
 import json
 import os
+import re
 import subprocess
 import sys
 
@@ -33,14 +34,54 @@ import mpmath as mp
 
 mp.mp.dps = 40
 
+# --- production sources whose Q_β / binding wiring the audit inspects -------
+# The audit does NOT trust a hardcoded table; it derives `uses_c3` from a live
+# scan of these files, so a future change that wires c_3 into production flips
+# the assertion to FAIL (addresses the "self-fulfilling audit" review point).
+_REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+_PRODUCTION_SOURCES = [
+    os.path.join(_REPO_ROOT, "computations", "canonical_mass.py"),    # mass table + m_n + Δ_pn
+    os.path.join(_REPO_ROOT, "computations", "derived_masses.py"),    # the Q_β function itself
+]
+# A c_3 wiring signature: a literal c_3 rung (`c_3`, `c3`, `c[3]`, `c_k[3]`) OR a
+# call to an order≥3 truncation (`*_n3_*`, `*_n4_*`, …). Production Q_β is the
+# order-2 `q_beta_kashiwara_n2_mev`; anything ≥ n3 or a bare c_3 means c_3 is wired.
+_C3_WIRING_RE = re.compile(r"\bc_?3\b|\bc\[3\]|c_k\[3\]|_n[3-9]_|_n1[0-9]_")
+
+
+def _production_uses_c3():
+    """Live scan: does any production Q_β/binding source reference a c_3 rung or an
+    order≥3 truncation? Returns (bool, dict of per-file hits). Falsifiable — if c_3
+    is ever wired in, this returns True and the audit FAILS (not self-fulfilling)."""
+    hits = {}
+    for path in _PRODUCTION_SOURCES:
+        rel = os.path.relpath(path, _REPO_ROOT)
+        if not os.path.exists(path):
+            hits[rel] = ["<missing — production layout changed; re-audit>"]
+            continue
+        with open(path, "r") as f:
+            matched = [
+                f"{i}:{ln.strip()}"
+                for i, ln in enumerate(f, 1)
+                if _C3_WIRING_RE.search(ln) and "n2_mev" not in ln  # n2 = order 2, the c_2 rung
+            ]
+        if matched:
+            hits[rel] = matched
+    return (len(hits) > 0), hits
+
 
 def _repo_head_sha():
-    sha = subprocess.check_output(
-        ["git", "rev-parse", "HEAD"],
-        cwd=os.path.dirname(os.path.abspath(__file__)), text=True,
-    ).strip()
+    """Repo HEAD at emission time. Fails loudly (never returns None/empty) so a
+    witness is never written with missing provenance (I14 PROV_MISSING)."""
+    try:
+        sha = subprocess.check_output(
+            ["git", "rev-parse", "HEAD"],
+            cwd=os.path.dirname(os.path.abspath(__file__)), text=True,
+        ).strip()
+    except (subprocess.SubprocessError, OSError) as e:
+        raise RuntimeError(f"cannot resolve commitSha ({e}) — refusing to emit witness") from e
     if not sha:
-        raise RuntimeError("empty commitSha")
+        raise RuntimeError("empty commitSha — refusing to emit witness without provenance")
     return sha
 
 
@@ -77,16 +118,22 @@ def main():
           abs(S_swing - c3_swing) < 1e-3)
 
     # --- Part B: production wiring audit (which observables use c_3) ---
-    # Verified by grep of canonical_mass.py (m_n = m_p + q_beta_kashiwara_n2_mev()
-    # + m_e -- the N2/c_2-level Q_β) and the binding dashboards (tr_M, not Q_β).
+    # `uses_c3` is DERIVED from a live scan of the production Q_β sources
+    # (canonical_mass.py, derived_masses.py) -- NOT hardcoded. If a future change
+    # wires c_3 (a c_3 rung or any order≥3 truncation) into production, the scan
+    # returns True and every Q_β-dependent assertion below FAILS.
+    c3_wired, c3_hits = _production_uses_c3()
+    # Only Q_β-dependent observables *could* pick up c_3; the scan gates those.
+    # Binding is tr_M (strong sector) -- structurally disjoint from the weak-sector
+    # Q_β ladder, so it carries no c_3 channel regardless of the scan.
     table_impact = {
-        "m_e":   {"uses_qbeta": False, "uses_c3": False, "cal3_anchor_effect": "none (CAL-1)"},
-        "m_mu":  {"uses_qbeta": False, "uses_c3": False, "cal3_anchor_effect": "none (m_e·Vol(4_1)/ℏ_q²)"},
-        "m_pi":  {"uses_qbeta": False, "uses_c3": False, "cal3_anchor_effect": "none (CAL-3 scale itself)"},
-        "m_p":   {"uses_qbeta": False, "uses_c3": False, "cal3_anchor_effect": "none (muon-anchored Hecke energy)"},
-        "m_n":   {"uses_qbeta": True,  "uses_c3": False, "cal3_anchor_effect": "none in production (Q_β at c_2/N2 level)"},
-        "Delta_pn": {"uses_qbeta": True, "uses_c3": False, "cal3_anchor_effect": "none in production (c_2/N2-level Q_β)"},
-        "Q_beta": {"uses_qbeta": True, "uses_c3": False, "cal3_anchor_effect": "reclassify IF wired: predicted -> CAL-3-calibrated"},
+        "m_e":   {"uses_qbeta": False, "uses_c3": False,    "cal3_anchor_effect": "none (CAL-1)"},
+        "m_mu":  {"uses_qbeta": False, "uses_c3": False,    "cal3_anchor_effect": "none (m_e·Vol(4_1)/ℏ_q²)"},
+        "m_pi":  {"uses_qbeta": False, "uses_c3": False,    "cal3_anchor_effect": "none (CAL-3 scale itself)"},
+        "m_p":   {"uses_qbeta": False, "uses_c3": False,    "cal3_anchor_effect": "none (muon-anchored Hecke energy)"},
+        "m_n":   {"uses_qbeta": True,  "uses_c3": c3_wired, "cal3_anchor_effect": "none in production (Q_β at c_2/N2 level)"},
+        "Delta_pn": {"uses_qbeta": True, "uses_c3": c3_wired, "cal3_anchor_effect": "none in production (c_2/N2-level Q_β)"},
+        "Q_beta": {"uses_qbeta": True, "uses_c3": c3_wired, "cal3_anchor_effect": "reclassify IF wired: predicted -> CAL-3-calibrated"},
         "binding_B_AME": {"uses_qbeta": False, "uses_c3": False, "cal3_anchor_effect": "none (tr_M Jones-Markov, not Q_β)"},
     }
     any_c3 = any(v["uses_c3"] for v in table_impact.values())
@@ -112,7 +159,8 @@ def main():
     )
 
     now = datetime.datetime.now(datetime.timezone.utc).isoformat()
-    src = open(__file__, "rb").read()
+    with open(__file__, "rb") as f:
+        src = f.read()
     witness = {
         "computation": "qbeta-cal3-anchor-table-impact",
         "description": "CAL-3 anchoring of c_3: κ_(2,1)·S factorization (matches "
@@ -134,6 +182,12 @@ def main():
             "S_cross_anchor_swing": mp.nstr(S_swing, 4),
             "c3_cross_anchor_swing": mp.nstr(c3_swing, 4),
             "table_impact": table_impact,
+            "production_c3_scan": {
+                "sources": [os.path.relpath(p, _REPO_ROOT) for p in _PRODUCTION_SOURCES],
+                "c3_wired": c3_wired,
+                "hits": c3_hits,
+                "regex": _C3_WIRING_RE.pattern,
+            },
             "verdict": verdict,
         },
         "context": {

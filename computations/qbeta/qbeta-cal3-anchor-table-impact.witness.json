@@ -3,12 +3,12 @@
   "description": "CAL-3 anchoring of c_3: \u03ba_(2,1)\u00b7S factorization (matches CAL3AnchorStructure.lean) + production-wiring audit showing the mass/binding tables are c_3-independent (Q_\u03b2 is c_2/N2-level).",
   "audit_only": true,
   "tier": "structural-exact (factorization + wiring audit; no fit, no c_k value)",
-  "computedAt": "2026-07-07T13:24:03.860296+00:00",
-  "commitSha": "e74d21934994762635d1e29954b2cf91315aa1f8",
+  "computedAt": "2026-07-07T13:36:09.769917+00:00",
+  "commitSha": "7e150b334ed55e9e55db118e1b8ed179e149131a",
   "engine": "mpmath",
   "engineVersion": "1.3.0",
   "scriptFile": "qbeta_cal3_anchor_table_impact.py",
-  "scriptHash": "fcc71ce0ffa3",
+  "scriptHash": "011f847a41a6",
   "assertions": [
     {
       "name": "kappa_carrier_anchor_rigid_swing_lt_1e-4",
@@ -91,6 +91,15 @@
         "uses_c3": false,
         "cal3_anchor_effect": "none (tr_M Jones-Markov, not Q_\u03b2)"
       }
+    },
+    "production_c3_scan": {
+      "sources": [
+        "computations/canonical_mass.py",
+        "computations/derived_masses.py"
+      ],
+      "c3_wired": false,
+      "hits": {},
+      "regex": "\\bc_?3\\b|\\bc\\[3\\]|c_k\\[3\\]|_n[3-9]_|_n1[0-9]_"
     },
     "verdict": "CAL-3-anchoring c_3 changes NOTHING in the current mass/binding tables. (A) The odd channel factors as c_3^odd = \u03ba_(2,1)(q_0)\u00b7S: \u03ba is the derived pure-q carrier (anchor-rigid, swing 9.33e-5), S \u2248 -908/-887 carries the full 2.43% cross-anchor swing. (B) Wiring audit: production Q_\u03b2 is c_2/N2-level (q_beta_kashiwara_n2_mev), so m_n and \u0394_pn are c_3-INDEPENDENT; the mass table (m_e,m_\u03bc,m_\u03c0,m_p) has no Q_\u03b2 dependence; binding (B_AME) uses tr_M, not Q_\u03b2. So no table row moves. IF c_3 were later wired into Q_\u03b2, that is a CALIBRATION (Q_\u03b2/m_n/\u0394_pn reclassify predicted->CAL-3-anchored) -- a bookkeeping move, not an accuracy win, and it would REMOVE them from the predicted-observable 100\u00d7 count. No fit; no c_k value; nothing wired."
   },
