@@ -235,7 +235,13 @@ export default chapter({
         "reeb-flow-bridge",
         "reeb-contact-universal-computer",
         "brings-coordinate-ring",
-        "magic-numbers-bring",
+        // conj:magic-numbers-bring relocated to observations/
+        // sec:beta-decay-magic-shells-k12-barrier-bypass (2026-07-07):
+        // a tier-E nuclear-physics conjecture belongs with the magic-
+        // numbers cluster (next to prop:magic-numbers-from-q), not in
+        // the foundational algebraic-substrate section. uses[] deps
+        // (def:brings-coordinate-ring here, prop:homological-shell-
+        // condensation in mass-endomorphism) remain backward refs.
         "rigid-dualizing-complex",
         "rigid-dualizing-brings",
         "substrate-self-duality",
