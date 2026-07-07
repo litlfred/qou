@@ -5,7 +5,3 @@ Let $(\mathbf{C}, A, \tau)$ be a [quantum universe](#def:quantum-universe) over 
 3. *Perpetual obstruction.* If $\kappa_0$ is non-torsion in $H^2(\mathcal{S}, \mathcal{B})$, then $\kappa_n \neq 0$ for all $n \geq 0$. The class $\kappa_0$ and the jet corrections at level $n$ live in complementary subgroups of $H^2(\mathcal{S}, \mathcal{B})$. The corrections cannot cancel $\kappa_0$.
 4. *Branch point formula.* The geometric :refterm[descent]{#descent} from $\mathbb{P}(V)$ ([projective line object](#def:projective-line-object)) to points has $B$ branch points with total ramification $R_{\mathrm{tot}} = 2d + \lvert\chi(A)\rvert$ via Riemann--Hurwitz, where $d$ is the degree of the covering.
 5. *Terminal fiber data.* At each branch point $p$, the QOU reduces to fiber data $(A, \tau, q(p))$ with the involution $\sigma \colon \mathbb{P}(V) \hookrightarrow \mathrm{Ad}(A)$ ([fibre adjoint involution](#prop:fiber-adjoint-involution)).
-
-## Lean formalization
-
-The companion Lean `qu_to_qou_exists` encodes an existence stub (`∃ q, True`) pending a faithful statement. The structural proof above is the intended content, deferred via `sorry`.

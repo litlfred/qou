@@ -89,8 +89,45 @@ structure QuToQou where
   /-- (5) Terminal fiber data at each branch point. -/
   terminalFibers : Fin branchData.numBranchPoints → TerminalFiber
 
-/-- Theorem asserting the existence of the QOU structure from a QU. -/
--- Ref: [manuscript]
-theorem qu_to_qou_exists : ∃ (q : QuToQou), True := sorry
+/-- The five structural properties package into a QOU: given descent,
+    obstruction, branch and terminal-fibre data satisfying their coherences,
+    they assemble into a `QuToQou`, and the assembled structure carries the
+    supplied descent and branch data. This formalises the *packaging* of the
+    QU→QOU theorem (Properties 1–5); the derivation of these ingredients from
+    a quantum universe with observability and the quantum lifting condition is
+    the narrative content of §3. -/
+-- Ref: [manuscript] §3
+theorem qu_to_qou_exists
+    (descent : DescentTower) (branchData : BranchData)
+    (kappa0 eulerChar : ℤ) (htrace : kappa0 = eulerChar)
+    (kappa : ℕ → ℤ) (hkappa0 : kappa 0 = kappa0)
+    (hperpetual : kappa0 ≠ 0 → ∀ n, kappa n ≠ 0)
+    (terminalFibers : Fin branchData.numBranchPoints → TerminalFiber) :
+    ∃ X : QuToQou, X.descent = descent ∧ X.branchData = branchData :=
+  ⟨{ descent := descent
+     kappa_zero_obstruction := kappa0
+     eulerChar := eulerChar
+     trace_map := htrace
+     kappa := kappa
+     kappa_at_zero := hkappa0
+     perpetual := hperpetual
+     branchData := branchData
+     terminalFibers := terminalFibers }, rfl, rfl⟩
+
+/-- Property (1): the geometric descent terminates. -/
+theorem qu_to_qou_descent_terminates (X : QuToQou) :
+    X.descent.dimAtStep X.descent.krullDim = 0 :=
+  X.descent.terminates
+
+/-- Property (2): the first obstruction κ₀ equals the Euler class χ(A). -/
+theorem qu_to_qou_first_obstruction_eq_euler (X : QuToQou) :
+    X.kappa_zero_obstruction = X.eulerChar :=
+  X.trace_map
+
+/-- Property (4): the Riemann–Hurwitz branch-point identity. -/
+theorem qu_to_qou_riemann_hurwitz (X : QuToQou) :
+    X.branchData.totalRamification
+      = 2 * X.branchData.degree + X.branchData.eulerChar.natAbs :=
+  X.branchData.riemann_hurwitz
 
 end QOU
