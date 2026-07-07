@@ -104,7 +104,10 @@ SIX_TERM_WITNESS = _pb.witness_path("mass-formula-6term.witness.json", HERE)
 # Tier selection per isotope
 TIER_BY_SYM = {
     "1H":  "trivial (A=1, B=0 by convention; m_atom = m_p + m_e)",
-    "D":   "reeb-flow (pn-bond sub-ceiling magnitude)",
+    # Owner ruling 2026-07-07 (PR #3448 §3f, option a): tier kept, labeled
+    # NEAR-MATCH — dimensionless structure Lean-proved, MeV unit anchor OPEN,
+    # +0.41% residual real. See 2026-07-06 reeb-flow audit §2e/§2f.
+    "D":   "reeb-flow (pn-bond sub-ceiling magnitude; NEAR-MATCH: unit anchor open, +0.41%)",
     # NOTE: kashaev-with-inter-correction gives D to 23 ppb but is
     # documented in d_inter_correction_test.py as 'numerical coincidence'
     # — NO paper proposition derives it. Reverted to Reeb-flow derivation.
