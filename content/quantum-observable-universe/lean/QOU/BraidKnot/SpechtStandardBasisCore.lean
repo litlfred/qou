@@ -1860,6 +1860,25 @@ theorem colContent_colStab_eq {ρ : Equiv.Perm (Fin (Specht.nOf μ))} (t : Spech
     exact ⟨ρ.symm l, by rw [hcol]; exact hl, by rw [Equiv.apply_symm_apply]⟩
 
 omit [CharZero k] in
+/-- **Equal column content ⇒ equal cell labels (sorry-free).** Two column-word-minimal
+(hence column-standard) tableaux with the *same* column-`c` content have the *same* label at
+every cell `(r, c)` — both are the increasing enumeration of that content
+(`labelAt_eq_orderStat`), and `orderEmbOfFin` depends only on the finset. This is the lemma
+that turns "the fibre and `t` share a column's content" into "they agree cell-by-cell on
+that column" — supplying both the `hleft` (columns left of `j`) and the strict-row
+comparison for `colWordNum_lt_of_first_diff_col`. -/
+theorem labelAt_eq_of_colContent_eq (u v : Specht.Tableau μ)
+    (hmaxu : ∀ σ : Specht.colStab u,
+      colWordNum u ≤ colWordNum ((σ : Equiv.Perm (Fin (Specht.nOf μ))) • u))
+    (hmaxv : ∀ σ : Specht.colStab v,
+      colWordNum v ≤ colWordNum ((σ : Equiv.Perm (Fin (Specht.nOf μ))) • v))
+    (c : ℕ) (hcc : colContent u c = colContent v c) (r : Fin (μ.colLen c)) :
+    labelAt u (YoungDiagram.mem_iff_lt_colLen.mpr r.isLt)
+      = labelAt v (YoungDiagram.mem_iff_lt_colLen.mpr r.isLt) := by
+  rw [labelAt_eq_orderStat u hmaxu c r, labelAt_eq_orderStat v hmaxv c r]
+  simp only [hcc]
+
+omit [CharZero k] in
 /-- The labels in column `c` of `t` with row index `< m` number exactly `m`, provided
 `m ≤ μ.colLen c` (they biject with rows `0, …, m-1`, all of which occur in column `c`). -/
 theorem card_col_labels_row_lt_of_le (t : Specht.Tableau μ) (c m : ℕ)
