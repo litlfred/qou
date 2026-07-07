@@ -17,7 +17,7 @@ producing a two-component link in $S^3$ fibered over $\mathcal{S}_c$. This is th
 Iterating Hopf linking builds the leptonic and mesonic sectors.
 
 **Operation 2: Color-tube threading.**
-The three color tubes $(r, g, b) = (w_2 - z, w_3 - z, w_4 - z)$ from Bring's surface ([color tube coordinates](#def:color-tube-coordinates)) provide a second linking operation. Given three generators $T_{m_1,n_1}$, $T_{m_2,n_2}$, $T_{m_3,n_3}$, their **color-tube linking** threads each knot through one of the three chiral fibers:
+The three color tubes $(r, g, b) = (w_2 - z, w_3 - z, w_4 - z)$ from Bring's surface provide a second linking operation. Given three generators $T_{m_1,n_1}$, $T_{m_2,n_2}$, $T_{m_3,n_3}$, their **color-tube linking** threads each knot through one of the three chiral fibers:
 
 $$
   \ell_c  \colon 
@@ -27,7 +27,7 @@ $$
   \mathbin{\cup_g} T_{m_3,n_3}.
 $$
 
-The $S_3 \subset S_5$ permutation symmetry of the color coordinates ([color tube interpretation](#rem:color-tube-interpretation)) ensures this linking is invariant under color permutations. This reproduces the $\mathrm{SU}(3)$ color confinement condition: only color-singlet combinations produce observable hadrons.
+The $S_3 \subset S_5$ permutation symmetry of the color coordinates ensures this linking is invariant under color permutations. This reproduces the $\mathrm{SU}(3)$ color confinement condition. Only color-singlet combinations produce observable hadrons.
 
 **Operation 3: Skein crossing change.**
 The $q$-deformed Skein relation at a crossing
@@ -37,7 +37,7 @@ $$
   =  (q^{1/2} - q^{-1/2}) L_0
 $$
 
-acts as a transmutation operation. Resolving or introducing crossings in a linked configuration converts torus topologies into hyperbolic ones. In particular, the figure-eight knot $4_1$ (muon) is not a generator. It arises from a crossing change on a linked trefoil pair:
+acts as a transmutation operation. Resolving or introducing crossings in a linked configuration converts torus topologies into hyperbolic ones. The figure-eight knot $4_1$ (muon) is not a generator. It arises from a crossing change on a linked trefoil pair:
 
 $$
   T_{2,3} \mathbin{\cup_{\mathrm{Hopf}}} T_{2,3}
@@ -45,4 +45,4 @@ $$
   4_1 +  \text{(Skein remainder)}.
 $$
 
-The muon is literally a Skein excitation of the electron.
+The muon is a Skein excitation of the electron.

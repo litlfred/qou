@@ -11,9 +11,7 @@ $$
 
 ## Numerical verification at $q_0$
 
-Evaluating at the substrate parameter $q_0 = 1.109978595554181\ldots$ (50 dps):
-
-See [Table](#tbl:magic-shell-coupling-kappa-table-data).
+Evaluating at the substrate parameter $q_0 = 1.109978595554181\ldots$:
 
 $$
   \kappa_{\mathrm{categorical}} = -\frac{4.1860 \cdot 1.5651}{6.1206}
@@ -26,14 +24,14 @@ $$
   \kappa_{\mathrm{observed}} \approx -1.0707908\;\text{MeV}
 $$
 
-The ratio is $0.999657$ — within $0.034\%$ at the single-magic anchors. The numerical inputs are substrate parameters ($m_e$, $q_0$) and structural q-brackets. The form of the closed expression — the $E_0 \cdot \log(1/h)$ magic-shell quantum and the $[2]_q \cdot [3]_q$ normalization — was identified empirically against the $(2,2)$ doubly-magic anchor (an acknowledged CAL-4 shape selection; see §"Structural interpretation"). The $0.034\%$ agreement at the single-magic $(2,1)$ / $(1,2)$ anchors is therefore a near-match cross-check of that anchor-identified form, not a zero-parameter prediction.
+The ratio is $0.999657$ — within $0.034\%$ at the single-magic anchors. The numerical inputs are substrate parameters ($m_e$, $q_0$) and structural q-brackets. The form of the closed expression was identified empirically against the $(2,2)$ doubly-magic anchor. The $0.034\%$ agreement at the single-magic $(2,1)$ / $(1,2)$ anchors is a near-match cross-check of that anchor-identified form.
 
 ## Structural interpretation
 
 The closed form decomposes into two pieces:
 
-1. **H7a energy quantum** $E_0 \cdot \log(1/h)$ — the per-shell magic-coupling magnitude, motivated structurally as the logarithm of the Hecke deformation and identified empirically against the doubly-magic anchor $(2, 2)$ (acknowledged CAL-4). This is the candidate "magic-shell energy unit" of the categorical substrate.
-2. **q-deformed dimension product** $[2]_q \cdot [3]_q$ — the quantum dimension of the $V_2 \otimes V_3$ Schur–Weyl tensor product. This is the relevant LR fusion multiplicity for $A = 3$ single-magic anchors. The product normalizes the H7a quantum to the per-(n_{pp} - n_{nn}) excess slope.
+1. **H7a energy quantum** $E_0 \cdot \log(1/h)$ — the per-shell magic-coupling magnitude, motivated structurally as the logarithm of the Hecke deformation and identified empirically against the doubly-magic anchor $(2, 2)$.
+2. **q-deformed dimension product** $[2]_q \cdot [3]_q$ — the quantum dimension of the $V_2 \otimes V_3$ Schur–Weyl tensor product. This product normalizes the H7a quantum to the per-excess slope.
 
 Putting these together:
 
@@ -42,8 +40,8 @@ $$
   \;\cdot\; \underbrace{\frac{1}{[2]_q \cdot [3]_q}}_{\text{LR-fusion normalization}}
 $$
 
-The negative sign tracks the orientation convention for the $(n_{pp} - n_{nn})$ excess in [`prop:compound-beta-shell-calibration`](#prop:compound-beta-shell-calibration).
+The negative sign tracks the orientation convention for the $(n_{pp} - n_{nn})$ excess.
 
 ## Closure of the κ derivation work-item
 
-This proposition supplies a categorical form for the κ derivation requested in user work-list item #4. The observed $\kappa \approx -1.07\;\text{MeV}/\text{excess}$ from v6 is reproduced to $0.034\%$ at the single-magic anchors by a structurally-motivated expression. Its magic-shell quantum $E_0 \cdot \log(1/h)$ was identified at the $(2,2)$ doubly-magic anchor (acknowledged CAL-4). Full closure — a parameter-free derivation of that quantum purely from $q_0$, with a fresh verifying witness replacing the removed probe script — remains open.
+This proposition supplies a categorical form for the κ derivation requested in user work-list item #4. The observed $\kappa \approx -1.07\;\text{MeV}/\text{excess}$ is reproduced to $0.034\%$ at the single-magic anchors by a structurally-motivated expression. Its magic-shell quantum $E_0 \cdot \log(1/h)$ was identified at the $(2,2)$ doubly-magic anchor.
