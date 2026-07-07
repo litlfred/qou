@@ -30,22 +30,30 @@ mechanically instead of by memory — the anti-self-deception design):
                                   and compared to the literature candidate
                                   e^{iπ(1+2c_b²)/6}, c_b = i(b+1/b)/2 — match
                                   reported, not assumed)
-  V5 modular-double product     : DIAGNOSTIC, non-gating. The memory-
-                                  transcribed double product
-                                  ∏_k (1+e^{2πib²(k+½)}e^{2πbz})
-                                     /(1+e^{−2πib^{−2}(k+½)}e^{2πb^{−1}z})
-                                  is ratio-tested (constant-free) against
-                                  Φ^{±1}·e^{iπaz²}, a∈{0,±½,±1}. VERDICT of
-                                  the 2026-07-07 run: NO match (best 1/Φ·
-                                  e^{iπz²/2} at 2.2e-2) — the transcription is
-                                  QUARANTINED pending a verified literature
-                                  source; the INTEGRAL is the canonical Φ_b.
+  V5 modular-double product     : GATING (verified 2026-07-07). The double
+                                  product ∏_k (1+e^{2πib²(k+½)}e^{2πbz})
+                                  /(1+e^{−2πib^{−2}(k+½)}e^{2πb^{−1}z})
+                                  equals Φ_b EXACTLY: ratio test 7.5e-37,
+                                  direct P/Φ = 1 to 1.8e-37. The first run's
+                                  2.2e-2 mismatch was a COMPLEX-POWER BRANCH
+                                  BUG (qq**(k+½) via mpmath's principal branch
+                                  sign-flips when arg(qq) ≈ ±π) — fixed by
+                                  building each term as an explicit
+                                  exponential. A concrete instance of the
+                                  suspected historical Φ-compute inaccuracy.
   V6 shift equation, complex b  : gating validation of the integral evaluator
                                   at b = e^{iπ/6}, independent of any product
                                   transcription.
 
-References: Faddeev–Kashaev (math/0604094); Andersen–Kashaev TQFT;
-Dimofte–Gukov arXiv:1003.4808.
+LITERATURE VERIFICATION (uploads/0604094v1.pdf — Hikami, arXiv:math/0604094,
+"Generalized volume conjecture and the A-polynomials"): with the variable map
+γ = πb², φ = 2πbz, this evaluator IS Hikami's Faddeev integral Φ_γ(φ),
+eq (2.1) (same contour ℝ+i0 above the origin), and the battery results match
+the paper's identities exactly:
+  V1 ↔ eq (2.4a)   V2 ↔ eq (2.4b)   V3 ↔ eq (2.2) duality
+  V4 ↔ eq (2.3): the inversion constant e^{−iπ(1+2c_b²)/6} = e^{iπ(b²+b⁻²)/12}
+  pole/zero lattice ↔ eq (2.5): z = ±(c_b + i(m·b + n/b)), m,n ≥ 0.
+Also: Faddeev–Kashaev; Andersen–Kashaev TQFT; Dimofte–Gukov arXiv:1003.4808.
 """
 from __future__ import annotations
 
@@ -97,12 +105,15 @@ def phi_b_double_product(z, b, kmax=200):
     qt = mp.e ** (-two_pi_i / b ** 2)         # |qt| < 1 required
     if mp.fabs(qq) >= 1 or mp.fabs(qt) >= 1:
         raise ValueError("double product needs Im b² > 0")
-    num_base = mp.e ** (2 * mp.pi * b * z)
-    den_base = mp.e ** (2 * mp.pi * z / b)
+    # BRANCH-SAFE half-integer powers: qq**(k+1/2) via mpmath's principal
+    # branch flips sign when arg(qq) ≈ ±π (our case: qq ≈ −0.0043). Build
+    # every term as an explicit exponential instead — no branch ambiguity.
+    # (This was the sole cause of the first battery run's 2.2e-2 V5 residual.)
     prod = mp.mpf(1)
     for k in range(kmax):
-        n = 1 + qq ** (k + mp.mpf(1) / 2) * num_base
-        d = 1 + qt ** (k + mp.mpf(1) / 2) * den_base
+        kk = k + mp.mpf(1) / 2
+        n = 1 + mp.e ** (two_pi_i * b ** 2 * kk + 2 * mp.pi * b * z)
+        d = 1 + mp.e ** (-two_pi_i / b ** 2 * kk + 2 * mp.pi * z / b)
         prod *= n / d
         if mp.fabs(qq) ** (k + 1) < mp.mpf(10) ** (-mp.mp.dps) and \
            mp.fabs(qt) ** (k + 1) < mp.mpf(10) ** (-mp.mp.dps):
@@ -182,15 +193,14 @@ def main() -> int:
             if err < best_err:
                 best_key, best_err = f"{orient} · e^(iπ·{mp.nstr(a,3)}·z²)", err
     print(f"  V5 double product (b=e^(iπ/6)) ratio test — best candidate: {best_key}")
-    print(f"     rel.err {best_err:.1e}")
-    if best_err < 1e-12:
-        print("     OK — product transcription matches the integral (convention above).")
-    else:
-        print("     DIAGNOSTIC (non-gating): the memory-transcribed product formula does")
-        print("     NOT equal Φ_b up to any Gaussian dressing e^(iπ·a·z²), a∈[−1,1].")
-        print("     phi_b_double_product is QUARANTINED — do not use it as Φ_b until the")
-        print("     product formula is re-transcribed from a verified literature source.")
-        print("     The INTEGRAL evaluator is the validated canonical Φ_b (V1–V4, V6).")
+    print(f"     rel.err {best_err:.1e}  {'OK' if best_err < 1e-12 else 'FAIL'}")
+    ok_all = ok_all and best_err < 1e-12
+    # Direct constant: P/Φ should be exactly 1 (FK product identity, no
+    # prefactor). Verified after the branch-safe fix; gating.
+    c_meas = phi_b_double_product(z1, bc) / p1
+    c_err = _relerr(c_meas, mp.mpf(1))
+    print(f"     direct P/Φ = {mp.nstr(c_meas, 12)}   |P/Φ − 1| rel {c_err:.1e}  {'OK' if c_err < 1e-12 else 'FAIL'}")
+    ok_all = ok_all and c_err < 1e-12
 
     # ---- V6: shift equation at the COMPLEX b of the product regime ----
     # Validates the integral evaluator off the real-b axis, independently of

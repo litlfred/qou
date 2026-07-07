@@ -151,6 +151,26 @@ in-script `WitnessBuilder` names + `faddeev_h4` identifiers). No module
 imports referenced them, so no import breakage. Pre-existing stray
 `git_files.txt` (a filename dump) left untouched.
 
+## 4b. Resolution (2026-07-07) — validated evaluator + the historical inaccuracy pinned
+
+- **`Φ_b` now exists in the compute, literature-verified**:
+  [`computations/qbeta/phi_b_evaluator.py`](../../computations/qbeta/phi_b_evaluator.py)
+  implements the Faddeev integral and passes a gating battery (shift equations
+  in `b` and `1/b` at real *and* complex `b`; modular duality; inversion with
+  the constant `e^{iπ(b²+b⁻²)/12}`; the FK modular-double product identity to
+  **1.8e-37**). Conventions verified line-by-line against the owner-uploaded
+  source [`uploads/0604094v1.pdf`](../../uploads/0604094v1.pdf) (Hikami,
+  arXiv:math/0604094, eqs (2.1)–(2.5)) via the map `γ = πb²`, `φ = 2πbz`.
+- **The suspected "Φ compute inaccuracy" has a pinned mechanism**: the
+  battery's first run caught a **complex-power principal-branch bug**
+  (`qq**(k+½)` sign-flips when `arg(qq) ≈ ±π`), which had produced a 2.2e-2
+  error masquerading as a formula/convention discrepancy. Any historical Φ
+  probe raising complex bases to half-integer powers is suspect for the same
+  bug class; the fix is explicit exponentials (no branch ambiguity).
+- The evaluator's **native regime is real `b` ⇔ |q| = 1** — the fibre/decay
+  face where `F_odd` lives. The real-substrate continuation
+  (`arg b = −π/4`) remains open.
+
 ## 5. Coordination
 
 - Complements the [two-saddle scope](../scope/2026-07-06-qbeta-fmap-torus-knot-cs-phase-geometry.md)
