@@ -88,7 +88,7 @@ export default chapter({
       ],
     }),
     section({
-      title: "Yekutieli lifting: Kummer-motivic enrichment",
+      title: "Kummer filtration and motivic Galois enrichment",
       label: "sec:yekutieli-lifting-kummer-motivic",
       blocks: [
         "yekutieli-lifting-kummer-motivic-intro",
