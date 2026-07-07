@@ -75,7 +75,8 @@
       "lean": "QOU.BraidKnot.ck_a1_bar_odd_of_c3_odd",
       "parity": "odd-part-nonzero",
       "q1_shadow": "2",
-      "source": "docs/audits/2026-07-07-a1-bar-odd-parity-shadow-investigation.md; fixed-point rule QOU.QBeta.fixed_eval_two_mul_kills_bar_odd (proved-lean)"
+      "source": "docs/audits/2026-07-07-a1-bar-odd-parity-shadow-investigation.md; fixed-point rule QOU.QBeta.fixed_eval_two_mul_kills_bar_odd (proved-lean)",
+      "standing_reading": "odd-part reading owner-granted 2026-07-07 (investigation audit \u00a74): parity gates test the odd part, shadow gates the even part; the exactly-odd antecedent is NOT established"
     },
     {
       "id": "KC7",
@@ -107,7 +108,8 @@
       "tier": "gate",
       "parity": null,
       "q1_shadow": null,
-      "source": "gate 4(c), 2026-06-05 consolidation; QOU.QBeta.shadow_carried_by_even_part (proved-lean)"
+      "source": "gate 4(c), 2026-06-05 consolidation; QOU.QBeta.shadow_carried_by_even_part (proved-lean)",
+      "standing_reading": "shadow gate tests the BAR-EVEN PART (owner-granted 2026-07-07)"
     },
     {
       "id": "KC11",

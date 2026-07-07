@@ -190,6 +190,9 @@ registry is authoritative. Each should carry a one-line banner → this file.
 
 ---
 
+
+> **Standing reading (owner-granted 2026-07-07).** For every kernel/f-map constraint: **parity gates test the bar-ODD part** of a coefficient; **shadow gates test the bar-EVEN part** (`shadow_carried_by_even_part`). "a₁ exactly bar-odd" is the never-proved antecedent of the *conditional* KC6 lemma — do not restate it as fact. Ref: [investigation audit](../audits/2026-07-07-a1-bar-odd-parity-shadow-investigation.md) §4.
+
 ## 8. Flip-flop guard (standing rule)
 
 1. **Do not re-wire** any c_k≥3 or d_k≥4 to production without (a) explicit

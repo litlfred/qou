@@ -231,9 +231,10 @@ canonical candidates for clean parity. Decidable checks (exact, radicals):
   has a nonzero bar-odd part (swing channel); its bar-even part carries the
   shadow** (`shadow_carried_by_even_part`, sorry-free, ZBarParity §5).
   Docstring of `ck_a1_bar_odd_of_c3_odd` clarified (conditional scope; no math change;
-  file still compiles, lean-direct exit 0). The c4qz/T1 kills survive
-  re-examination. 🟡 Owner sign-off requested on making this the standing
-  reading (prose/gate re-scope only).
+  file still compiles, lean-direct exit 0). **Owner sign-off GRANTED
+  (2026-07-07):** the odd-part reading (parity gates test the odd part;
+  shadow gates the even part) is now the **standing reading** for the f-map
+  program — registry KC6/KC10, investigation audit §4.
 - **T2 (`ciei`) scoped, not started:**
   [`docs/scope/2026-07-06-z-ck-fmap-ib-rebasing-scope.md`](../scope/2026-07-06-z-ck-fmap-ib-rebasing-scope.md)
   — I-B is now the load-bearing route (B1 induced recurrence → B2 re-based
@@ -351,6 +352,7 @@ anchors, no c_k values:
 | date | event |
 |---|---|
 | 2026-07-06 | Tranche opened; beans `uz9i`/`3iwu`/`ea56`/`c4qz`/`iw8o`; this ledger landed as first commit. PR [#3449](https://github.com/litlfred/qou/pull/3449). |
+| 2026-07-07 | **PR #3449 MERGED to main** (rebase-merge, KC13–KC16 + prevention infra + 2 caught upstream bugs). Follow-up tranche (milestone `22ie`): **(1)** owner-granted the odd-part reading as standing (audit §4, registry KC6/KC10, ledger §4-ter); **(2)** B3 u-side transfer **scoped** ([`2026-07-07-z-ck-fmap-b3-uside-transfer-scope.md`](../scope/2026-07-07-z-ck-fmap-b3-uside-transfer-scope.md), bean `m9j4`) — the transfer `bar(u) = q²·u` is bar-even-with-twist; gates B3-U1/U2/U3 pre-stated. The u-side descent is the remaining keystone (crosses the fibre↔archimedean wall; multi-session). |
 | 2026-07-06 | Intent posted on overlapping siblings [#3429](https://github.com/litlfred/qou/pull/3429) (f-map power-class pincer — same axis; C15 row/probe-id collision flagged) and [#3447](https://github.com/litlfred/qou/pull/3447) (c₃-not-exact verdict — framing here confirmed consistent). Gemini reviewer at daily quota; Copilot reviewer check failed (bot-side) — docs-only PR, no code CI. |
 | 2026-07-06 | **Bean `c4qz` DONE — I-A raw-slot identification KILLED on slot bar-parity (scope-(a)); `α₂ ≡ −1` identity + golden bar-pair locus `x* = φ^{±2}` survive** (§4-bis outcome). Next open moves: bar-pair-symmetrized evaluation, I-B re-basing, Z3 carrier factorization. |
 | 2026-07-06 | **Bean `ea56` DONE — the z-alone exclusion (scope-(a)).** `z(q)=√q/(1+q)` proved **exactly bar-EVEN** (twist 1) and `κ_{(2,1)}` exactly bar-ODD, sorry-free Lean [`QOU/QBeta/ZBarParity.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/ZBarParity.lean) (`lean`-direct exit 0) + sympy-exact 7/7 witness. Since the bar-fixed locus is a subring and `a₁ = −c₃` is bar-ODD nonzero, **no scalar rational function of z alone can source `a₁`** — class Z2 excluded; survivors are Z3 (bar-even z-functional × bar-odd carrier) and Z4 (operator-level / P-C15). Hypothesis-class lattice: [`docs/scope/2026-07-06-z-ck-fmap-hypothesis-class.md`](../scope/2026-07-06-z-ck-fmap-hypothesis-class.md). Bean `c4qz` unblocked. |
