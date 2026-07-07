@@ -1246,6 +1246,62 @@ theorem garnir_assembly (t : Specht.Tableau μ)
     refine Finset.sum_congr rfl (fun π hπ => ?_)
     rw [(Finset.mem_filter.mp hπ).2]
 
+omit [CharZero k] in
+/-- **Garnir assembly, measure-generic (sorry-free).** The `domWeight`-free version of
+`garnir_assembly`: parametric over an arbitrary predicate `P : Tableau → Prop` classifying
+the "good" (further-reducible or terminal) neighbours. Given a transversal `T ∋ π₀` with
+the signed representation sum vanishing (`hann`) and every non-distinguished rep `π`
+landing in `P` (`hgood`), the polytabloid `e_t` is a `k`-linear combination of
+polytabloids of tableaux all satisfying `P`. The reindexing (identity isolation →
+`sum_fiberwise` aggregation) is measure-agnostic; only the classifying predicate changes.
+
+The `colWordNum` `straightening_step_colMax` instantiates this with
+`P t' := colWordNum t' < colWordNum t` (via `hgood` = the column-word-decrease bound). -/
+theorem garnir_assembly_gen (t : Specht.Tableau μ) (P : Specht.Tableau μ → Prop)
+    (T : Finset (Equiv.Perm (Fin (Specht.nOf μ))))
+    (π₀ : Equiv.Perm (Fin (Specht.nOf μ))) (hπ₀ : π₀ ∈ T)
+    (hfix : Specht.Mtab.rep μ π₀ (Specht.polytabloid (k := k) t)
+      = (Equiv.Perm.sign π₀ : ℤ) • Specht.polytabloid (k := k) t)
+    (hgood : ∀ π ∈ T, π ≠ π₀ → P ((π : Equiv.Perm (Fin (Specht.nOf μ))) • t))
+    (hann : ∑ π ∈ T, (Equiv.Perm.sign π : ℤ) •
+        Specht.Mtab.rep μ π (Specht.polytabloid (k := k) t) = 0) :
+    ∃ (s : Finset (Specht.Tableau μ)) (c : Specht.Tableau μ → k),
+      (∀ t' ∈ s, P t') ∧
+      Specht.polytabloid (k := k) t = ∑ t' ∈ s, c t' • Specht.polytabloid (k := k) t' := by
+  classical
+  set E := T.erase π₀ with hE
+  rw [← Finset.add_sum_erase T _ hπ₀] at hann
+  rw [hfix, smul_smul] at hann
+  have hs2 : (Equiv.Perm.sign π₀ : ℤ) * (Equiv.Perm.sign π₀ : ℤ) = 1 := by
+    rcases Int.units_eq_one_or (Equiv.Perm.sign π₀) with h | h <;> rw [h] <;> decide
+  rw [hs2, one_smul] at hann
+  have hexp : Specht.polytabloid (k := k) t
+      = ∑ π ∈ E, (-(Equiv.Perm.sign π : k)) •
+          Specht.polytabloid (k := k) ((π : Equiv.Perm (Fin (Specht.nOf μ))) • t) := by
+    have hneg : Specht.polytabloid (k := k) t
+        = - ∑ π ∈ E, (Equiv.Perm.sign π : ℤ) •
+            Specht.Mtab.rep μ π (Specht.polytabloid (k := k) t) := by
+      rw [eq_neg_iff_add_eq_zero]; exact hann
+    rw [hneg, ← Finset.sum_neg_distrib]
+    refine Finset.sum_congr rfl (fun π _ => ?_)
+    rw [← polytabloid_rep_smul, ← neg_smul, ← Int.cast_smul_eq_zsmul k, Int.cast_neg]
+  refine ⟨E.image (fun π => (π : Equiv.Perm (Fin (Specht.nOf μ))) • t),
+    fun t' => ∑ π ∈ E.filter (fun π => (π : Equiv.Perm (Fin (Specht.nOf μ))) • t = t'),
+      (-(Equiv.Perm.sign π : k)), ?_, ?_⟩
+  · intro t' ht'
+    rw [Finset.mem_image] at ht'
+    obtain ⟨π, hπ, rfl⟩ := ht'
+    exact hgood π (Finset.mem_of_mem_erase hπ) (Finset.ne_of_mem_erase hπ)
+  · rw [hexp]
+    rw [← Finset.sum_fiberwise_of_maps_to
+          (g := fun π => (π : Equiv.Perm (Fin (Specht.nOf μ))) • t)
+          (t := E.image (fun π => (π : Equiv.Perm (Fin (Specht.nOf μ))) • t))
+          (fun π _ => Finset.mem_image_of_mem _ (by assumption))]
+    refine Finset.sum_congr rfl (fun t' _ => ?_)
+    rw [Finset.sum_smul]
+    refine Finset.sum_congr rfl (fun π hπ => ?_)
+    rw [(Finset.mem_filter.mp hπ).2]
+
 /-! #### Garnir set — column label counts (sorry-free)
 
 Foundational cardinalities for the Garnir pigeonhole: the labels sitting in a fixed
