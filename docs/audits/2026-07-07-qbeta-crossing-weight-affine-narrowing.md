@@ -81,15 +81,15 @@ the narrowing exposes:
   the bridge, and this audit shows the bridge is affine, so the carrier feeds
   `w` linearly.
 
-## Suggested registry row
+## Registry row (landed)
 
 **KC19** — evaluation map affine in the crossing weight ⇒ ladder factor Möbius;
 bar-odd part `= 2h(w−w₀)/(4w₀²−h²)` (linear in `(w−w₀)`, fixed anchor-free
 bar-odd kernel); anchor-rigidity of the evaluation ⇒ `c_3` swing lives in
-`w(q)`. Tier: proved-lean (`CrossingWeightAffine.lean`) + symbolic-exact.
-(To be added to [`ck-dk-canonical-registry.md §9`](../coordination/ck-dk-canonical-registry.md)
-+ JSON twin when the keystone tranche branch #3449 next touches the registry —
-coordinated there to avoid a cross-branch §9 edit collision.)
+`w(q)`. Tier: proved-lean (`CrossingWeightAffine.lean`). Landed in
+[`ck-dk-canonical-registry.md §9`](../coordination/ck-dk-canonical-registry.md)
++ JSON twin (validator: 19 rows, 0 errors). Intent posted on the #3449 keystone
+branch so the two §9 histories stay reconciled at rebase.
 
 ## Cross-references
 

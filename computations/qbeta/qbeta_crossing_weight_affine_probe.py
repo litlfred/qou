@@ -61,8 +61,9 @@ def _repo_head_sha():
 
 
 def main():
-    q = sp.symbols("q", positive=True)
     # h is bar-ODD (q -> 1/q sends h -> -h); w, w0 are bar-EVEN abstract weights.
+    # The narrowing is purely algebraic in these parity symbols; the substrate q
+    # never enters (the kernel K(q) is anchor-free), so no q symbol is needed.
     h, w, w0 = sp.symbols("h w w0")
     assertions = []
 

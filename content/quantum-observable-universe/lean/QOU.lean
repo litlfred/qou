@@ -186,6 +186,7 @@ import QOU.QBeta.H4RouteBBranchingPrune
 import QOU.QBeta.QLommelOrderRecurrence
 import QOU.QBeta.HoefsmitBBarParity
 import QOU.QBeta.StageCSigma3LiftObligation
+import QOU.QBeta.CrossingWeightAffine
 -- Concrete H₃(q) Markov-trace functional (NF model: linearity, cyclicity,
 -- Hecke σ₀²=hσ₀+1, Markov reduction tr(x·σ₁)=z·tr(x)); cross-checked vs
 -- `gram.py` / `pyhecke.trace_formal`. Was an orphan under `Machinery/`.
