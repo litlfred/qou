@@ -3,9 +3,9 @@ The Markov trace on the Iwahori–Hecke algebra $H_r(q)$ induces a unique inner 
 ## Statement
 
 **Proposition.**
-*Let $H_r(q)$ be the Iwahori–Hecke algebra on $r$ strands with parameter $q \neq 0, 1$, and let $R(H_r(q)) = \bigoplus_{\lambda \vdash r} \mathbb{Z} \cdot [\lambda]$ be its representation ring.*
+*Let $H_r(q)$ be the Iwahori–Hecke algebra on $r$ strands with parameter $q \neq 0, 1$. Let $R(H_r(q)) = \bigoplus_{\lambda \vdash r} \mathbb{Z} \cdot [\lambda]$ be its representation ring.*
 
-**(i)** *The Markov trace $\mathrm{tr}_M \colon H_r(q) \to \mathbb{Q}(q^{1/2})$, with Markov parameter $z = (q^{1/2} + q^{-1/2})^{-1}$, descends to a bilinear form on $R(H_r(q))$:*
+**(i)** *The Markov trace $\mathrm{tr}_M \colon H_r(q) \to \mathbb{Q}(q^{1/2})$ uses Markov parameter $z = (q^{1/2} + q^{-1/2})^{-1}$. It descends to a bilinear form on $R(H_r(q))$:*
 
 $$
   \langle [\lambda], [\mu] \rangle_{\mathrm{RJ}}
