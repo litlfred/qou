@@ -898,293 +898,175 @@
         "notes": "The Lean theorem/definition statement in categorical-dirac-operator.lean matches the mathematical statement in categorical-dirac-operator.md."
       }
     ],
-    "da-false-claim": [
-      {
-        "field_hash": {
-          "md": "3abb0d183be5",
-          "ts": "3fe773c54304",
-          "lean": "891b68e3e9bb"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.815191Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.815191Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "categorical-dirac-operator.ts:1",
-        "notes": "For the definition 'Categorical Dirac operator' (asserting 'Let $(\\mathbf{C}, A, \\tau)$ be a'), the mathematical claims are verified as there are no false claims detected, supported by the successful compilation of categorical-dirac-operator.lean."
+    "da-false-claim": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:31+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-vacuous": [
-      {
-        "field_hash": {
-          "md": "3abb0d183be5",
-          "ts": "3fe773c54304",
-          "lean": "891b68e3e9bb"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.815191Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.815191Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "categorical-dirac-operator.ts:1",
-        "notes": "The sibling Lean file categorical-dirac-operator.lean compiles successfully without any sorry placeholders, verifying that the proof of 'Categorical Dirac operator' is non-vacuous."
+    },
+    "da-vacuous": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:31+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-circular": [
-      {
-        "field_hash": {
-          "md": "3abb0d183be5",
-          "ts": "3fe773c54304",
-          "lean": "891b68e3e9bb"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.815191Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.815191Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "categorical-dirac-operator.ts:1",
-        "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Categorical Dirac operator' (which asserts 'Let $(\\mathbf{C}, A, \\tau)$ be a')."
+    },
+    "da-circular": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:31+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-overclaim": [
-      {
-        "field_hash": {
-          "md": "3abb0d183be5",
-          "ts": "3fe773c54304",
-          "lean": "891b68e3e9bb"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.815191Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.815191Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "categorical-dirac-operator.ts:1",
-        "notes": "No overclaims: the scope of 'Categorical Dirac operator' matches the sorry-free formalization in categorical-dirac-operator.lean."
+    },
+    "da-overclaim": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:31+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-hidden-dof": [
-      {
-        "field_hash": {
-          "md": "3abb0d183be5",
-          "ts": "3fe773c54304",
-          "lean": "891b68e3e9bb"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.815191Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.815191Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "categorical-dirac-operator.ts:1",
-        "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Categorical Dirac operator'."
+    },
+    "da-hidden-dof": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:31+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-non-sequitur": [
-      {
-        "field_hash": {
-          "md": "3abb0d183be5",
-          "ts": "3fe773c54304",
-          "lean": "891b68e3e9bb"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.815191Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.815191Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "categorical-dirac-operator.ts:1",
-        "notes": "The logical steps in 'Categorical Dirac operator' are formally sound and verified by the sorry-free compilation of categorical-dirac-operator.lean."
+    },
+    "da-non-sequitur": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:31+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-lean-narrative-divergence": [
-      {
-        "field_hash": {
-          "md": "3abb0d183be5",
-          "ts": "3fe773c54304",
-          "lean": "891b68e3e9bb"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.815191Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.815191Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "categorical-dirac-operator.ts:1",
-        "notes": "The Lean signature in categorical-dirac-operator.lean corresponds directly to the narrative claim in 'Categorical Dirac operator'."
+    },
+    "da-lean-narrative-divergence": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:31+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-citation-misuse": [
-      {
-        "field_hash": {
-          "md": "3abb0d183be5",
-          "ts": "3fe773c54304",
-          "lean": "891b68e3e9bb"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.815191Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.815191Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "categorical-dirac-operator.ts:1",
-        "notes": "No citations are present in 'Categorical Dirac operator', hence no citation misuse is possible."
+    },
+    "da-citation-misuse": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:31+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-definitional-ambiguity": [
-      {
-        "field_hash": {
-          "md": "3abb0d183be5",
-          "ts": "3fe773c54304",
-          "lean": "891b68e3e9bb"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.815191Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.815191Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "categorical-dirac-operator.ts:1",
-        "notes": "Key terms and symbols in 'Categorical Dirac operator' (e.g. from 'Let $(\\mathbf{C}, A, \\tau)$ be a') are mathematically defined and unambiguous."
+    },
+    "da-definitional-ambiguity": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:31+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-empirical-fragility": [
-      {
-        "field_hash": {
-          "md": "3abb0d183be5",
-          "ts": "3fe773c54304",
-          "lean": "891b68e3e9bb"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.815191Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.815191Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "categorical-dirac-operator.ts:1",
-        "notes": "The algebraic and logical relations in 'Categorical Dirac operator' are independent of empirical tuning parameters."
+    },
+    "da-empirical-fragility": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:31+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-physical-implausibility": [
-      {
-        "field_hash": {
-          "md": "3abb0d183be5",
-          "ts": "3fe773c54304",
-          "lean": "891b68e3e9bb"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.815191Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.815191Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "categorical-dirac-operator.ts:1",
-        "notes": "The physical concepts described in 'Categorical Dirac operator' are consistent with quantum observable mechanics."
+    },
+    "da-physical-implausibility": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:31+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-reproducibility": [
-      {
-        "field_hash": {
-          "md": "3abb0d183be5",
-          "ts": "3fe773c54304",
-          "lean": "891b68e3e9bb"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.815191Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.815191Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "categorical-dirac-operator.lean:1",
-        "notes": "The formalization is fully reproducible as categorical-dirac-operator.lean compiles successfully."
+    },
+    "da-reproducibility": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:31+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-referee-verdict": [
-      {
-        "field_hash": {
-          "md": "3abb0d183be5",
-          "ts": "3fe773c54304",
-          "lean": "891b68e3e9bb"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.815191Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.815191Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "notes": "Referee verdict: clean.",
-        "verdict": "clean",
-        "referee_argument": "No significant objections; the mathematical claims in 'Categorical Dirac operator' (concerning 'Let $(\\mathbf{C}, A, \\tau)$ be a') are consistent and formally verified."
+    },
+    "da-referee-verdict": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:31+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
+    },
     "bib-cite-resolves": [
       {
         "field_hash": {
