@@ -1,0 +1,38 @@
+{
+  "computation": "alternating_tower_borromean_winding_probe",
+  "description": "T6: the alternating three-strand word (figure-eight/Borromean family) is the modulus-deformed color rotation on the Hoefsmit block — same Chebyshev flow, angle 2pi/3 at q=1, exact elliptic/hyperbolic boundary at q = phi; anchors at windings k = 2, 3.",
+  "discipline": "no fit; sympy symbolic exact; fibre-level only (no q_0 evaluation, no observables); (a)-scoped; golden-ratio boundary is an exact spectral fact, not an anchor (cf. PR #3444 numerology cut).",
+  "auditOnly": "docs/audits/2026-07-06-parabolic-cylinder-toroidal-channel-interpolation.md",
+  "results": {
+    "tau": "-q**2 + 1 - 1/q**2",
+    "winding_pair": "uniform word: rigid theta = 2pi/3 (T2b); alternating word: theta'(q) = arccos((1 - q^2 - q^{-2})/2)",
+    "anchor_levels": "4_1 (lepton) at k=2; Borromean B_3 (nucleon) at k=3 — consecutive windings",
+    "ellipticity": "elliptic iff q^2 + q^{-2} < 3; parabolic exactly at q = (1+sqrt5)/2; hyperbolic beyond",
+    "related": [
+      "toroidal-level-selection-three-strand-probe.witness.json (rigid direction)",
+      "toroidal-level-selection-hopf-probe.witness.json (two-strand)"
+    ]
+  },
+  "assertions": {
+    "trace_closed_form_1_minus_q2_minus_qm2": true,
+    "det_one": true,
+    "tau_bar_even": true,
+    "tau_q_dependent": true,
+    "tau_classical_limit_minus_one": true,
+    "chebyshev_recurrence_k_le_5": true,
+    "golden_boundary_q2_plus_qm2_eq_3_at_phi": true,
+    "phi_defining_identity": true,
+    "abs_tau_minus_2_identity": true,
+    "classical_angle_2pi_over_3": true
+  },
+  "allPassed": true,
+  "verdict": "THE ALTERNATING (HYPERBOLIC-ANCHOR) TOWER IS THE MODULUS-DEFORMED COLOR ROTATION: tr rho(sigma_1 sigma_2^{-1}) = 1 - q^2 - q^{-2} (bar-even, det 1), equal to the rigid zeta_3 value -1 at q = 1 and deforming with the modulus; the tower obeys the same mu = 1/2 Chebyshev degree flow, elliptic for q^2 + q^{-2} < 3 with the exact parabolic boundary at q = phi (phi^2 = phi + 1 — a spectral-transition point of the trace polynomial, NOT a fitted anchor; cf. #3444). The figure-eight (k = 2, lepton anchor) and Borromean (k = 3, nucleon carrier) sit at consecutive integer windings of this deformed rotation — the nucleon IS a lattice point, k = 3, matching its torus-link shadow on the rigid direction. SCOPE (a): structural; no observable evaluated; nothing wired.",
+  "scriptHash": "3d6f3e486bb8",
+  "scriptCommitSha": "unknown",
+  "commitSha": "e2341f53c1484370f4f4a29461471369b73ca992",
+  "engine": "sympy",
+  "computedAt": "2026-07-07T02:53:41.175061+00:00",
+  "durationMs": 0,
+  "engineVersion": "sympy 1.14.0",
+  "scriptFile": "alternating_tower_borromean_winding_probe.py"
+}
