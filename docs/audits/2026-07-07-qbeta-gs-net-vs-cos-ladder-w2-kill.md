@@ -44,11 +44,11 @@ carries a **leading `O(ℏ_q²) = O(u)` term** (`9/8`), **below** where the
 `c_2 u²` rung lives. So the full GS augmentation is **not** of the pure ladder
 shape `cos·(1 + c_k u²)`; it disagrees with the production ladder at `O(u)`.
 
-**Numeric corroboration at q₀** (proton-pinned): the full GS net gives
-`Q_β = +0.746%` vs CODATA, **4.5× worse** than the N=0 truncation `Q_A`
-(`+0.166%`). `Q_β^GS/Q_A = 1.00579 > 1` (cosh-like) vs the production
-`Q_N1/Q_A = 0.99840 < 1` (cos-like). The categorical higher orders push Q_β
-**away** from the ladder.
+**Numeric corroboration at q₀** (proton-pinned, via `qou_substrate.constants.q_at`
++ `codata_constants`): the full GS net gives `Q_β = +0.747%` vs CODATA,
+**4.4× worse** than the N=0 truncation `Q_A` (`+0.168%`). `Q_β^GS/Q_A = 1.00579
+> 1` (cosh-like) vs the production `Q_N1/Q_A = 0.99840 < 1` (cos-like). The
+categorical higher orders push Q_β **away** from the ladder.
 
 ## Scope — what this does and does not say
 
@@ -76,6 +76,16 @@ Faddeev structure, [torus-CS geometry scope](../scope/2026-07-06-qbeta-fmap-toru
 The `w−1` departure remains the object; its cosh-like GS value is the new
 datum. **W3 (does the stabilization reproduce `c_2=−1`) is moot** for the
 full-GS-net hypothesis under this kill.
+
+**Consistency with KC20** (sibling, landed on main): KC20 finds the Q_β
+bar-**odd** carrier's non-cyclotomic content is an irreducible cubic sourced by
+the Hopf sector, and that "real-q/quadratic `c_3` closures are structurally
+excluded; the open odd channel is the Hopf-sector cubic field via KC18/KC19
+archimedean evaluation." This W2 kill is the **bar-even** counterpart on the
+same object: the *full* categorical net is cosh-like (bar-even growth), so the
+observable's bar-odd decay ladder is not read off the net directly — both
+findings point to the archimedean (Rogers↔Faddeev) evaluation step as the
+locus, not a direct categorical-net expansion.
 
 ## Reproducibility
 

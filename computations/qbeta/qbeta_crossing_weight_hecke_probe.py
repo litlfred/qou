@@ -73,8 +73,16 @@ def main():
     assertions = []
 
     def check(name, passed, detail=""):
-        assertions.append({"name": name, "passed": bool(passed), "detail": detail})
+        assertions.append({"name": name, "passed": bool(passed),
+                           "skipped": False, "detail": detail})
         print(f"  [{'PASS' if passed else 'FAIL'}] {name}  {detail}")
+
+    def skip(name, reason):
+        # A skipped check is NOT a pass: recorded with skipped=True and
+        # passed=False so a green `allPassed` cannot hide an un-run gate.
+        assertions.append({"name": name, "passed": False,
+                           "skipped": True, "detail": f"SKIPPED: {reason}"})
+        print(f"  [SKIP] {name}  {reason}")
 
     def ser(expr):
         return sp.expand(sp.series(expr.subs(q, 1 / (1 - t)), t, 0, N).removeO())
@@ -99,22 +107,34 @@ def main():
           and dnet_t.coeff(t, 2) == counit_t.coeff(t, 2),
           f"dnet[t^3]={dnet_t.coeff(t,3)} vs counit[t^3]={counit_t.coeff(t,3)}")
 
-    # numeric Frobenius pairing <v, G^-1 1>_G == net(v) at q0 (bonus, needs pyhecke+numpy)
+    # Numeric Frobenius-pairing cross-checks against the actual pyhecke Gram
+    # matrix G (needs pyhecke+numpy). These are G-DEPENDENT (they fail if the
+    # committed G / z drift) -- unlike the model identity ε=<·,G^-1 1>=net, which
+    # holds for any G by construction and is therefore NOT a drift gate.
     try:
         import numpy as np
         from pyhecke import gram
         hv, zv = gram.h, gram.z
         v = np.array([hv * hv / 2, -hv / 2, -hv / 2, 0.0, 0.0, 0.0])
+        # (a) Markov trace tr_M(v) = <v, e_γ>_G = h^2/2 - h*z : uses G's Markov
+        # column non-trivially -> genuine G-dependent check.
+        egamma = np.array([1, 0, 0, 0, 0, 0.0])
+        trM_pairing = float(v @ gram.G @ egamma)
+        check("W1_trM_pairing_G_dependent",
+              abs(trM_pairing - float(hv * hv / 2 - hv * zv)) < 1e-12,
+              f"<v,e_γ>_G={trM_pairing:.12g} vs h^2/2-h*z={float(hv*hv/2-hv*zv):.12g}")
+        # (b) the cointegral ω = G^-1·1 matches the committed net-ansatz value
+        # (tests G^-1; drift in G moves ω).
         omega = np.linalg.solve(gram.G, np.ones(6))
-        eps_pairing = float(v @ gram.G @ omega)
-        counit_num = float(hv * hv / 2 - hv)
-        check("W1_frobenius_pairing_reproduces_counit_numeric",
-              abs(eps_pairing - counit_num) < 1e-12,
-              f"<v,G^-1 1>={eps_pairing:.12g} vs h^2/2-h={counit_num:.12g}")
+        omega_ref = np.array([0.601, 0.188, 0.188, 0.396, 0.396, 0.026])
+        check("W1_cointegral_matches_net_ansatz",
+              float(np.max(np.abs(omega - omega_ref))) < 2e-3,
+              f"ω=G^-1·1={np.round(omega,3).tolist()} vs net-ansatz {omega_ref.tolist()}")
     except Exception as e:  # pragma: no cover
-        check("W1_frobenius_pairing_reproduces_counit_numeric", True,
-              f"SKIPPED (pyhecke/numpy unavailable: {type(e).__name__}); "
-              f"symbolic W1 above stands")
+        skip("W1_trM_pairing_G_dependent",
+             f"pyhecke/numpy unavailable ({type(e).__name__}); symbolic W1 stands")
+        skip("W1_cointegral_matches_net_ansatz",
+             f"pyhecke/numpy unavailable ({type(e).__name__})")
 
     # ---- W2: does the full GS net match the production cos-ladder? ----
     ratio_A = ser(sp.cancel(dnet / counit))     # Q_beta^GS / Q_A
@@ -147,10 +167,13 @@ def main():
     try:
         import mpmath as mp
         mp.mp.dps = 40
-        q0 = mp.mpf("1.10997858275138")
+        # Centralized constants (precision-safe) rather than hard-coded literals.
+        from qou_substrate.constants import q_at
+        from computations.substrate import codata_constants as C
+        q0 = q_at(40)                                  # proton-pinned substrate q₀
+        me = mp.mpf(str(C.M_E_MEV))
+        Qcod = mp.mpf(str(C.Q_BETA_MEV))
         ratioA_f = sp.lambdify(q, sp.cancel(dnet / counit), "mpmath")
-        me = mp.mpf("0.51099895069")
-        Qcod = mp.mpf("0.782347")
         Q_A = me * abs(q0 ** 2 - 2 * q0 - 1) * (q0 + 1) / (2 * q0 ** 3)
         err_N0 = float((Q_A / Qcod - 1) * 100)
         err_GS = float((Q_A * abs(ratioA_f(q0)) / Qcod - 1) * 100)
@@ -158,10 +181,17 @@ def main():
               abs(err_GS) > abs(err_N0),
               f"N=0 Q_A err={err_N0:.3f}%  vs  full-GS err={err_GS:.3f}% (worse)")
     except Exception as e:  # pragma: no cover
-        check("W2_full_gs_worse_than_N0_truncation", True,
-              f"SKIPPED (mpmath unavailable: {type(e).__name__})")
+        skip("W2_full_gs_worse_than_N0_truncation",
+             f"mpmath/constants unavailable ({type(e).__name__}); symbolic W2 stands")
 
-    all_passed = all(a["passed"] for a in assertions)
+    ran = [a for a in assertions if not a["skipped"]]
+    skipped = [a for a in assertions if a["skipped"]]
+    all_ran_passed = all(a["passed"] for a in ran)
+    all_ran = len(skipped) == 0
+    all_passed = all_ran_passed and all_ran   # green only if every gate actually ran
+    if skipped:
+        print(f"  NOTE: {len(skipped)} gate(s) SKIPPED (env) -> not fully green: "
+              + ", ".join(a["name"] for a in skipped))
     verdict = (
         "W1 PASS + W2 KILL (scope-(a)). The first-principles categorical Q_beta net "
         "-- the augmentation Delta(net) of the H_3 GS-reduced nucleon NF -- reproduces "
@@ -174,8 +204,11 @@ def main():
         "orders push away from the ladder. scope-(a): this refutes the hypothesis "
         "'full GS augmentation == production ladder', NOT the ladder ansatz or any c_k. "
         "W3 (c_2 reproduction) is moot under this kill. NO c_k value; nothing wired."
-        if all_passed else
-        "INCONCLUSIVE -- a gate assertion failed; re-derive before citing."
+        + ("" if all_ran else
+           f"  [NOTE: {len(skipped)} numeric cross-check(s) skipped in this env; "
+           "the symbolic W1/W2 gates that ran carry the finding.]")
+        if all_ran_passed else
+        "INCONCLUSIVE -- a gate assertion that RAN failed; re-derive before citing."
     )
 
     now = datetime.datetime.now(datetime.timezone.utc).isoformat()
@@ -196,6 +229,9 @@ def main():
         "scriptHash": hashlib.sha256(src).hexdigest()[:12],
         "assertions": assertions,
         "allPassed": all_passed,
+        "allRan": all_ran,
+        "ranPassed": all_ran_passed,
+        "skippedCount": len(skipped),
         "result": {
             "Q_beta_GS_over_Q_A_minus_1": str(sp.expand(ratio_A - 1)),
             "Q_beta_GS_over_Q_N1_minus_1": str(resid),
@@ -217,7 +253,9 @@ def main():
     print("=== Q_beta crossing-weight from H_3 GS reducer (W1/W2) ===")
     print("VERDICT:", verdict)
     print("witness ->", out)
-    return 0 if all_passed else 1
+    # Exit 0 iff every gate that RAN passed (the finding holds); skipped numeric
+    # cross-checks are surfaced via witness allRan/skippedCount, not hidden.
+    return 0 if all_ran_passed else 1
 
 
 if __name__ == "__main__":
