@@ -219,4 +219,33 @@ theorem cubicC_Hopf_rrt_candidates_all_nonzero :
       cubicC_Hopf (6 : ℚ) ≠ 0 ∧ cubicC_Hopf (-6 : ℚ) ≠ 0 := by
   refine ⟨?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_⟩ <;> · unfold cubicC_Hopf; norm_num
 
+/-! ## §6. Classical (q=1) shadow: the Hopf cubic reproduces the c_3 shadow
+
+At the classical trace point `q = 1` the trace variable is `y = q²+q⁻² = 2`.
+The c_3 q=1 shadow is `−2` (registry KC10, `= J_Hopf(q=1)`). The Hopf-sector
+cubic reproduces it exactly — a carrier-side confirmation that the c_3→−2 shadow
+lives in the Hopf (double-crossing) sector (KC20/§5).
+
+**Scope (STRICT).** This is a **shadow-level** (q=1) identity only. It does NOT
+extend to the substrate: `C_Hopf` at the substrate trace value is anchor-rigid
+while the physical `c_3` swings 2.375% across anchors, so the cubic does not
+determine `c_3` off `q=1` — the swing lives in the crossing weight `w(q)`
+(registry KC19). See
+`docs/audits/2026-07-07-hopf-cubic-vs-crossing-weight-shadow-bridge.md`. The
+total carrier gives `C(2) = −4 = C_Hopf(2) + C_unknot(2)`; the shadow `−2`
+matches the per-sector Hopf value `J_Hopf(1)`, not the total. -/
+
+/-- **Shadow identity.** `C_Hopf(2) = −2` — the Hopf-sector cubic at the
+    classical trace value `y = 2` (`q = 1`) equals the c_3 q=1 shadow
+    `−2 = J_Hopf(1)` (KC10). -/
+theorem cubicC_Hopf_classical_shadow : cubicC_Hopf (2 : R) = -2 := by
+  unfold cubicC_Hopf; norm_num
+
+/-- **Unknot-sector value at the classical point.** `C_unknot(2) = −2` — the
+    identity sector coincidentally also equals `−2` at `y = 2`; recorded so the
+    shadow match is not mis-read as Hopf-exclusive. The total is
+    `C(2) = C_Hopf(2) + C_unknot(2) = −4` (`cubicC_two`). -/
+theorem cubicC_unknot_classical : cubicC_unknot (2 : R) = -2 := by
+  unfold cubicC_unknot; norm_num
+
 end QOU.QBeta.Zeta4Residue
