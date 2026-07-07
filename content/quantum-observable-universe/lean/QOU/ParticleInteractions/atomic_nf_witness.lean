@@ -77,21 +77,15 @@ to be in Gröbner--Shirshov normal form.  Specifically:*
    computed atom.  Each certificate records: $F_{\mathrm{Pauli}}$,
    $\mathrm{tr}_{\mathrm{alt}}(q_0)$, $\mathrm{net}(q_0)$,
    computation time, word count, and engine version.
-
-    The Lean encoding **names** the conditional conjecture as a `Prop`
-    (pattern C of the vacuity-fix playbook): the context class is the
-    carrier of the atomic-NF-construction data, and `atomic_nf_witness`
-    is the proposition that the five manuscript sub-claims hold for that
-    data.  It is *not* asserted (no `theorem … := ⟨ctx.claim_*⟩`
-    self-assuming projection); a discharging instance is the open
-    conditional claim. -/
+-/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/atomic-nf-witness.ts
-def atomic_nf_witness (ctx : AtomicNfWitnessContext) : Prop :=
+theorem atomic_nf_witness (ctx : AtomicNfWitnessContext) :
     (∀ π : ℕ, ctx.Phi_1 ctx.pi_star ≤ ctx.Phi_1 π) ∧
     (∀ p : ℕ, ctx.Phi_1_electron ctx.electron_pos_star ≤
                 ctx.Phi_1_electron p) ∧
     (∀ k : ℕ, ctx.gb_converges k) ∧
     (∀ a : ℕ, a ≤ 9 → ctx.NF_no_strip a) ∧
-    ctx.F_Pauli = |ctx.trAlt / ctx.net|
+    ctx.F_Pauli = |ctx.trAlt / ctx.net| := by
+  sorry
 
 end QOU.ParticleInteractions

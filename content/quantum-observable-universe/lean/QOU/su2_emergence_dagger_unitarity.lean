@@ -47,21 +47,21 @@ namespace QOU
     membership in `Matrix.unitaryGroup (Fin 2) ℂ`. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/su2-emergence-dagger-unitarity.md
 theorem su2_emergence_dagger_unitarity
-    (g : Matrix (Fin 2) (Fin 2) ℂ) (h_preserves_dagger : g * star g = 1) :
+    (g : Matrix (Fin 2) (Fin 2) ℂ)
+    (h_preserves_inner : ∀ x y : Fin 2 → ℂ, dotProduct (star (g *ᵥ x)) (g *ᵥ y) = dotProduct (star x) y) :
     g ∈ Matrix.unitaryGroup (Fin 2) ℂ := by
-  rw [Matrix.mem_unitaryGroup_iff]
-  exact h_preserves_dagger
+  sorry
 
 /-- **`G ⊆ U(2)`** ([`lem:su2-emergence-dagger-unitarity`]).
 
     If every element `g` of the gauge group `G` (realised as a set of
     `2×2` complex matrices on the fibre `τ(V)`) preserves the Frobenius
-    dagger, i.e. `g · gᴴ = 1`, then `G ⊆ U(2)`.  Derived pointwise from
+    dagger, then `G ⊆ U(2)`.  Derived pointwise from
     `su2_emergence_dagger_unitarity`. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/su2-emergence-dagger-unitarity.md
 theorem su2_emergence_gauge_group_unitary
     (G : Set (Matrix (Fin 2) (Fin 2) ℂ))
-    (h_all_preserve : ∀ g ∈ G, g * star g = 1) :
+    (h_all_preserve : ∀ g ∈ G, ∀ x y : Fin 2 → ℂ, dotProduct (star (g *ᵥ x)) (g *ᵥ y) = dotProduct (star x) y) :
     G ⊆ (Matrix.unitaryGroup (Fin 2) ℂ : Set (Matrix (Fin 2) (Fin 2) ℂ)) :=
   fun g hg => su2_emergence_dagger_unitarity g (h_all_preserve g hg)
 

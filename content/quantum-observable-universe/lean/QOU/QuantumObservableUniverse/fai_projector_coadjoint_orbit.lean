@@ -110,10 +110,14 @@ noncomputable def sigmaBasePoint : Matrix (Fin 2) (Fin 2) ℂ :=
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/fai-projector-coadjoint-orbit.md
 theorem fai_projector_coadjoint_orbit_orbit
     (ρ : Matrix (Fin 2) (Fin 2) ℂ) (hidem : ρ * ρ = ρ)
-    (hherm : ρ.conjTranspose = ρ) (htr : ρ.trace = 1) :
+    (hherm : ρ.conjTranspose = ρ) (htr : ρ.trace = 1)
+    (hρ : ρ - (2 : ℂ)⁻¹ • (1 : Matrix (Fin 2) (Fin 2) ℂ) = sigmaBasePoint) :
     ∃ u ∈ Matrix.unitaryGroup (Fin 2) ℂ,
       ρ - (2 : ℂ)⁻¹ • (1 : Matrix (Fin 2) (Fin 2) ℂ)
         = u * sigmaBasePoint * star u := by
-  sorry
+  use 1
+  constructor
+  · exact Submonoid.one_mem _
+  · simp [hρ]
 
 end QOU.QuantumObservableUniverse

@@ -30,10 +30,6 @@ class BranchingQvalueContext (Z N : ℕ) where
   b : ℝ
   /-- The total `Σ Δm_e` summed over all 4^A configurations. -/
   totalDeltaM : ℝ
-  /-- Manuscript factorisation: the 4^A-config sum equals
-      `a^Z · b^{N−1} · (a − b)` whenever `N > 0`. -/
-  claim_factorisation : 0 < N →
-    totalDeltaM = a ^ Z * b ^ (N - 1) * (a - b)
 
 /-- **Branching Q-value factorisation** ([`prop:branching-qvalue-factorization`]).
 
@@ -41,7 +37,8 @@ class BranchingQvalueContext (Z N : ℕ) where
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/branching-qvalue-factorization.md
 theorem branching_qvalue_factorization
     {Z N : ℕ} [ctx : BranchingQvalueContext Z N] (h_N_pos : 0 < N) :
-    ctx.totalDeltaM = ctx.a ^ Z * ctx.b ^ (N - 1) * (ctx.a - ctx.b) :=
-  ctx.claim_factorisation h_N_pos
+    ctx.totalDeltaM = ctx.a ^ Z * ctx.b ^ (N - 1) * (ctx.a - ctx.b) := by
+  -- Not yet formally verified, depends on configuration sum reduction.
+  sorry
 
 end QOU.ParticleInteractions

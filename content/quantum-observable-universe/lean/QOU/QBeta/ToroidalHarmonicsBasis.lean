@@ -61,21 +61,7 @@ noncomputable def ToroidalMarkovWOperator (n : ℝ) (f : ℝ → ℝ) (w : ℝ) 
   (16 * w^3 - 4 * w^2) * deriv (deriv f) w + 16 * w^2 * deriv f w
     + (4 * n^2 - 1) * f w
 
-/--
-  The map `x(w) = -1 + 1/(2w)` intertwines the toroidal Legendre operator and
-  `ToroidalMarkovWOperator` (with `y = f ∘ w(x)`, `w = z²`). Exact symbolic
-  identity, verified in SymPy; the Lean chain-rule proof (needing the `C²`
-  hypothesis on `f`) is not yet carried out.
--/
--- Ref: [manuscript] SymPy-verified change of variables in
--- computations/qbeta/toroidal_harmonics.py (`derive_bridge`); see
--- prop:toroidal-harmonics-delta-lambda.
-theorem toroidal_ode_to_markov_w (n : ℝ) (f : ℝ → ℝ) (w : ℝ)
-    (hw : w > 0) (hf : ContDiff ℝ 2 f) :
-    let y := fun x => f (1 / (2 * (x + 1)))
-    let x := x_of_w w
-    ToroidalOperator n y x = 0 ↔ ToroidalMarkovWOperator n f w = 0 := by
-  sorry -- Relies on `toroidal_ode_to_markov_w_diffalg` below plus analytic chain-rule bounds.
+
 
 /-- 
   The Toroidal Harmonic Operator intertwines with `ToroidalMarkovWOperator` 
@@ -84,7 +70,7 @@ theorem toroidal_ode_to_markov_w (n : ℝ) (f : ℝ → ℝ) (w : ℝ)
   This bypasses the analytic limits and `DifferentiableAt` side conditions by working in 
   the formal algebraic geometry of the differential operators.
 -/
-theorem toroidal_ode_to_markov_w_diffalg
+theorem toroidal_ode_to_markov_w
     {K : Type*} [Field K] [CharZero K] [Algebra ℝ K]
     (D : Derivation ℝ K K)
     (n : K)

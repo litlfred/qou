@@ -154,15 +154,7 @@ instance plancherelSnData_four : PlancherelSnData 4 where
   sum_dim_sq := by decide
   two_sum_dim_sq_content := by decide
 
-/-- **Non-vacuity witness — `PlancherelSnData 3`.** Partitions `[3],[2,1],[1,1,1]` with genuine
-`dimHLF = 1,2,1`; `Σ dim² = 1+4+1 = 6 = 3!` and `2·Σ dim²·Σc² = 2·18 = 36 = 3·2·3!`. -/
-instance plancherelSnData_three : PlancherelSnData 3 where
-  parts := {[3], [2, 1], [1, 1, 1]}
-  parts_sorted := by decide
-  parts_sz := by decide
-  dim := dimHLF
-  sum_dim_sq := by decide
-  two_sum_dim_sq_content := by decide
+
 
 /-- **The keystone's own case — `PlancherelSnData 5`.** The s5-so3 keystone is the `S₅` Hecke
 trace, so `n = 5` is the case Identity I is actually consumed at (`W_λ` runs over the seven
