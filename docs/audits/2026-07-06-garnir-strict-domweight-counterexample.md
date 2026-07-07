@@ -26,15 +26,15 @@ The entire algebraic + annihilation + reindexing half of the Garnir relation:
 |---|---|
 | `card_col_labels`, `card_col_labels_row_lt_of_le` | column label counts |
 | `garnir_row_collision` | the pigeonhole (`|A|+|B| = colLen j + 1`) → same-row `(a∈A,b∈B)` collision |
-| `garnir_full_annihilation` | `∑_{σ∈S_{A∪B}} sgn(σ)·(σ·e_t) = 0` |
+| `garnir_full_annihilation` | `Σ_{σ∈S_{A∪B}} sgn(σ)·(σ·e_t) = 0` |
 | `sum_sign_rep_polytabloid_eq_zero_of_family` | rep-level annihilation ⟸ tabloid family |
 | `sum_sign_rep_coset_collapse`, `transversal_sum_eq_zero` | `|S_A×S_B|` cancellation over `CharZero` |
 | `garnirGSub`/`garnirHSub`, `*_coe`, `garnir_transversal_exists` | subgroups + left transversal (via `Subgroup.exists_left_transversal_of_le`) |
-| `sum_over_garnirG_reindex` | Finset reindex `∑_G = ∑_T ∑_H` |
+| `sum_over_garnirG_reindex` | Finset reindex `Σ_G = Σ_T Σ_H` |
 | `garnir_assembly` | isolate a sign-fixing `π₀ ∈ T`, reduce `e_t` to the other reps |
 
 These compose: `garnir_full_annihilation → sum_over_garnirG_reindex → transversal_sum_eq_zero`
-gives `∑_{π∈T} sgn(π)·(π·e_t) = 0`, and `garnir_assembly` isolates `e_t`. **The only
+gives `Σ_{π∈T} sgn(π)·(π·e_t) = 0`, and `garnir_assembly` isolates `e_t`. **The only
 missing input is the dominance hypothesis `hdom`** — and that hypothesis is false.
 
 ## 2. The counterexample (verified)
@@ -63,7 +63,7 @@ the coefficient of `e_t` **itself** (its leading tabloid is `{t}`, like `e_t`'s)
 ## 3. Why `garnir_assembly`'s shape is wrong
 
 `garnir_assembly` assumes the Garnir relation has the form
-`e_t = ∑_{π ≠ π₀} c_π · e_{π•t}` with every `e_{π•t}` strictly more dominant. The truth
+`e_t = Σ_{π ≠ π₀} c_π · e_{π•t}` with every `e_{π•t}` strictly more dominant. The truth
 is `(1 + κ)·e_t = (strictly-dominant terms)` where `κ` collects the same-tabloid cosets:
 the correct straightening solves for `e_t` after absorbing those, using the **partial
 dominance order + sign cancellation**, not a strict linear measure. `domWeight` (a strict
@@ -94,7 +94,7 @@ standard polytabloids are a basis, so coordinates are unique).
 (`domCount' f i m = #{l : l < m ∧ f l ≤ i}`, summed over `i,m`) counts *small labels in
 top rows*, so it is **maximized** by `{1,2,3}{4,5}` — which is exactly `{t}`. Therefore
 `{t' : domWeight t' > domWeight t}` is **empty** (nothing exceeds the maximum). The goal
-`∃ s, (∀ t' ∈ s, domWeight t < domWeight t') ∧ e_t = ∑_{t'∈s} c_{t'} e_{t'}` then forces
+`∃ s, (∀ t' ∈ s, domWeight t < domWeight t') ∧ e_t = Σ_{t'∈s} c_{t'} e_{t'}` then forces
 `s = ∅`, i.e. `e_t = 0` — contradicting `e_t ≠ 0`. ∎
 
 The three standard terms of `e_t` sit at dominance `=`, `<`, `<` relative to `{t}`
@@ -145,9 +145,9 @@ Specht modules in Mathlib at all).
 > refutation" failure *counts* for `row-inversions` and lex `(domWeight, row-inversions)`
 > from a small-case model (`model2.py`/`exhaustive2.py`). That model had a **sign bug** —
 > it dropped the coset rep's `sgn(π)` factor, so its "Garnir terms" did **not** satisfy the
-> Garnir relation `∑ sgn·e = 0` (checked: **all** (t,descent) pairs violated it). Those
+> Garnir relation `Σ sgn·e = 0` (checked: **all** (t,descent) pairs violated it). Those
 > specific counts are withdrawn. The corrected model (`/tmp/garnir/vo2.py`) satisfies
-> `∑ sgn·e = 0` on every (t,descent) pair for shapes up to `(4,2)` and is the basis for the
+> `Σ sgn·e = 0` on every (t,descent) pair for shapes up to `(4,2)` and is the basis for the
 > validated result below. The §3.5 disproof is **unaffected** — it used the exact
 > standard-basis expansion (direct `poly_vec` + rational solve), not the shuffle model.
 
@@ -213,7 +213,7 @@ The keystone (which measure) is now settled empirically (§4.5): the **column-wo
    `∀ t'∈s, e_{t'} ∈ range standardPolytabloid ∨ colWordNum t' < colWordNum t`
    (each Garnir term is already standard **or** strictly column-word-smaller). The identity
    coset contributes coefficient `1` (t column-standard ⇒ colsort sign `+1`), so
-   `e_t = −∑_{non-id} c·e_{t'}` with **no** `CharZero` division needed.
+   `e_t = −Σ_{non-id} c·e_{t'}` with **no** `CharZero` division needed.
 3. **Prove the column-word-decrease lemma** for the shuffle transversal: every non-identity
    shuffle rep's column-sorted image has strictly smaller `colWordNum`. This is the new
    combinatorial core (replaces the false dominance claim); validated exhaustively to
@@ -228,7 +228,7 @@ needs re-expressing: a column-sort toward the standard column order **lowers** `
 (the sorted column word is lex-smallest), consistent with the descending induction.
 
 **What is reusable as-is:** the 17 sorry-free algebraic/annihilation/reindex lemmas (§1) —
-they establish the Garnir relation `∑ sgn·e = 0` and the coset reindexing, which are
+they establish the Garnir relation `Σ sgn·e = 0` and the coset reindexing, which are
 measure-independent. Only the *dominance conclusion* (`garnir_assembly`'s strict-`domWeight`
 premise, `straightening_step*`'s goal shape, and the induction measure) changes.
 
