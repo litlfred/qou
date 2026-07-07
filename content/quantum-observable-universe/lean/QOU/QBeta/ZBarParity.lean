@@ -319,11 +319,6 @@ identity below; `b` is a bar-fixed (Hoefsmit) constant, carried inert. -/
     even-channel ladder-variable re-normalization. -/
 theorem utilde_bar_even (q qi b : R) (h : q * qi = 1) :
     qi * (b * (1 - q) ^ 2) = q * (b * (1 - qi) ^ 2) := by
-  have hsq := hbar_sq_bar_even_twist q qi h
-  have hq2 : qi * q ^ 2 = q := by linear_combination q * h
-  calc qi * (b * (1 - q) ^ 2)
-      = qi * (b * (q ^ 2 * (1 - qi) ^ 2)) := by rw [hsq]
-    _ = (qi * q ^ 2) * (b * (1 - qi) ^ 2) := by ring
-    _ = q * (b * (1 - qi) ^ 2) := by rw [hq2]
+  linear_combination qi * b * hbar_sq_bar_even_twist q qi h + b * (1 - qi) ^ 2 * q * h
 
 end QOU.QBeta
