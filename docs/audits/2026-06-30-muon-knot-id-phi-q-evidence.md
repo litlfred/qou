@@ -88,7 +88,7 @@ the lepton sector. It favours $T(2,5)$, and it did not exist when the
 
 ### 2. The Φ_q probe (2026-06-30, this PR)
 
-[`xi_ell_faddeev_phi_q_probe.py`](../../computations/xi_ell_faddeev_phi_q_probe.py)
+[`xi_ell_phi_q_probe.py`](../../computations/xi_ell_phi_q_probe.py)
 (`xi-ell-faddeev-phi-q-probe.witness.json`) evaluates the per-braid mass
 tower with the proper Plancherel-weighted Wedderburn $\hat V_i$ under five
 dilog normalizations. The two muon candidates behave **qualitatively
@@ -160,11 +160,11 @@ files are changed by this audit. Requested owner ruling:
 
 Until then, the lepton ξ_ℓ work
 ([`lepton-mass-tower-canonical.md`](../../content/quantum-observable-universe/mass-theory/lepton-mass-tower-canonical.md)
-§"Faddeev Φ_q probe") treats the muon knot as **unresolved and gating**.
+§"compact q-dilog Φ_q probe") treats the muon knot as **unresolved and gating**.
 
 ## Cross-references
 
 - Prior audit: [`2026-05-24-muon-knot-id-conflict.md`](2026-05-24-muon-knot-id-conflict.md)
 - S₅ theorem: [`2026-06-02-lepton-t2n-torus-tower.md`](2026-06-02-lepton-t2n-torus-tower.md)
-- Φ_q probe: [`xi_ell_faddeev_phi_q_probe.py`](../../computations/xi_ell_faddeev_phi_q_probe.py)
+- Φ_q probe: [`xi_ell_phi_q_probe.py`](../../computations/xi_ell_phi_q_probe.py)
 - Conjecture doc: [`lepton-mass-tower-canonical.md`](../../content/quantum-observable-universe/mass-theory/lepton-mass-tower-canonical.md)

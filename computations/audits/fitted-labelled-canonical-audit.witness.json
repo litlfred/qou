@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-04T21:12:38.833610+00:00",
-  "commitSha": "8a73503b9e713aa161a75591937299b76f594800",
+  "computedAt": "2026-07-07T11:12:40.062538+00:00",
+  "commitSha": "7ca5952753323939489ccaa92aaca71e05b2f2fa",
   "assertions": [
     {
       "name": "no_fitted_labelled_canonical",
@@ -17,7 +17,7 @@
   "computation": "fitted-labelled-canonical-audit",
   "scriptFile": "fitted_labelled_canonical_audit.py",
   "scriptHash": "34338951a64d",
-  "scriptCommitSha": "592eade9c548e0ce537c7ff63885a554f16089d3",
+  "scriptCommitSha": "1da0d890632ea152192a8e7310668552f5258417",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,18 +26,15 @@
   },
   "environment": {
     "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.3.0"
   },
   "description": "Audits production scripts in computations/ for the CAL-4-disguised-as-canonical pattern: a hardcoded numerical literal at module level combined with a 'substrate/canonical/derived' claim in the docstring, where neither the variable name nor the surrounding context tags the literal as validation/CODATA/acknowledged. Introduced 2026-05-22 after the LAMBDA_PROTON_DOC discovery in m_p_borromean_verification_50dps.py (see docs/canonical-derivation-cheat-sheet.md §5 fix #1).",
   "contentBlock": "prop:three-calibration-inputs",
   "data": {
     "total_issues": 2,
     "flagged_script_count": 2,
-    "scripts_scanned": 1710,
+    "scripts_scanned": 1768,
     "rows": [
       {
         "path": "computations/metallic_q_n4_character_sweep.py",

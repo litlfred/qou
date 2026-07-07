@@ -2,10 +2,10 @@
 """Bar-symmetry test for the three linking_weight candidates.
 
 Per AGENTS.md "Critical framing — do NOT treat λ_scale as a separate
-object" + the canonical-derivation cheat sheet §4 "Φ_q (Faddeev) vs
+object" + the canonical-derivation cheat sheet §4 "Φ_q (compact q-dilog) vs
 Li_2^q (Rogers) — context sorting":
 
-  - Φ_q (Faddeev): NOT bar-symmetric (carries dimensional mass scale)
+  - Φ_q (compact q-dilog): NOT bar-symmetric (carries dimensional mass scale)
   - Li_2^q (Rogers): bar-symmetric (Li_2^q = ̄Φ_q under q ↔ q⁻¹)
 
 Tests whether each candidate linking_weight satisfies the
@@ -17,8 +17,8 @@ bar-involution invariance `f(q) = f(q⁻¹)`:
     trace of a link's braid representative is bar-invariant)
   - Bring color-tube `1/(1 − h·q^{10})`: NOT bar-symmetric (the q^{10}
     factor is the Φ_q-side asymmetry)
-  - Faddeev h⁴ `1/(1 − h⁴)`: bar-symmetric (h⁴ is even under h ↔ −h)
-  - Combined Bring + Faddeev h⁴: NOT bar-symmetric (Bring's asymmetry
+  - compact-q-dilog h⁴ `1/(1 − h⁴)`: bar-symmetric (h⁴ is even under h ↔ −h)
+  - Combined Bring + compact-q-dilog h⁴: NOT bar-symmetric (Bring's asymmetry
     propagates)
 
 ## Context — is the Bring asymmetry a "violation"?
@@ -38,7 +38,7 @@ precedent for bar-symmetric linking_weight in the mass chain.
 Bring color-tube introduces NEW bar-asymmetry that doesn't exist
 in either established candidate.
 
-This is a STRUCTURAL DEFICIENCY of the Bring + Faddeev h⁴ candidate:
+This is a STRUCTURAL DEFICIENCY of the Bring + compact-q-dilog h⁴ candidate:
 its +108 ppm m_p match at q₀ relies on the q^{10} asymmetry. Under
 bar-symmetrisation (`(f(q) + f(q⁻¹))/2`), the numerical value at q₀
 shifts from 2.4619 to ~1.7 — losing the numerical match.
@@ -48,7 +48,7 @@ shifts from 2.4619 to ~1.7 — losing the numerical match.
 Three candidate linking_weights for VolDensity(𝓑₃):
   1. Family A — PROVED Wedderburn, bar-symmetric, +2.89 % m_p gap
   2. via-Jones — Markov trace, bar-symmetric, +47 % closer than Family A
-  3. Bring + Faddeev h⁴ — NOT bar-symmetric, +108 ppm m_p match
+  3. Bring + compact-q-dilog h⁴ — NOT bar-symmetric, +108 ppm m_p match
 
 The bar-asymmetry of (3) is an additional axis of categorical
 distinctness from (1) and (2). It does NOT directly disqualify the
@@ -128,8 +128,8 @@ def main() -> int:
         ("Family A `(3q²+4+3q⁻²)/4`", family_a),
         ("via-Jones (Markov trace bridge)", via_jones),
         ("Bring color-tube `1/(1-h·q^10)`", bring),
-        ("Faddeev h⁴ `1/(1-h⁴)`", faddeev_h4),
-        ("Bring + Faddeev h⁴ (combined)", combined),
+        ("compact-q-dilog h⁴ `1/(1-h⁴)`", faddeev_h4),
+        ("Bring + compact-q-dilog h⁴ (combined)", combined),
         ("Bring SYMMETRISED (bring + bring∘inv)/2", bring_sym),
         ("Combined SYMMETRISED", combined_sym),
     ]:
@@ -168,9 +168,9 @@ def main() -> int:
         "Bar-symmetry (q ↔ q⁻¹) test for three candidate "
         "linking_weight forms in VolDensity(𝓑₃). Family A and via-Jones "
         "are bar-symmetric; Bring color-tube and the combined Bring + "
-        "Faddeev h⁴ are bar-asymmetric (Φ_q-side mass-anchor "
+        "compact-q-dilog h⁴ are bar-asymmetric (Φ_q-side mass-anchor "
         "convention, per the cheat sheet §4). The +108 ppm m_p match "
-        "of the Bring + Faddeev h⁴ candidate relies on the q^{10} "
+        "of the Bring + compact-q-dilog h⁴ candidate relies on the q^{10} "
         "asymmetry — symmetrising loses the numerical match. This is "
         "an additional axis of categorical distinctness between the "
         "three candidates."
@@ -183,7 +183,7 @@ def main() -> int:
         "Three candidates split into TWO bar-symmetry classes: "
         "(1) Family A and via-Jones are bar-symmetric (linking_weight "
         "respects q ↔ q⁻¹ involution); (2) Bring color-tube and the "
-        "combined Bring + Faddeev h⁴ are bar-asymmetric (Φ_q-side, per "
+        "combined Bring + compact-q-dilog h⁴ are bar-asymmetric (Φ_q-side, per "
         "the cheat sheet §4 convention sorting). The asymmetry is "
         "framework-consistent for mass-anchor compute (37 scripts use "
         "Φ_q), but introduces NEW asymmetry that neither Family A nor "

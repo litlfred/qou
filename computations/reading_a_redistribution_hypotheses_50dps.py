@@ -56,7 +56,7 @@ which is outside this single-session scope.
 
 - Companion probe: `family_a_per_partition_h_decomposition_50dps.py`
 - [PR #1272](https://github.com/litlfred/qou/pull/1272) — γγ̄ decomposition
-- [PR #1276](https://github.com/litlfred/qou/pull/1276) — Bring + Faddeev h⁴ candidate
+- [PR #1276](https://github.com/litlfred/qou/pull/1276) — Bring + compact-q-dilog h⁴ candidate
 - [PR #1285](https://github.com/litlfred/qou/pull/1285) — markov_trace mpf precision fix
 """
 from __future__ import annotations

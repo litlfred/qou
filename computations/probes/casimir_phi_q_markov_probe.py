@@ -10,7 +10,7 @@
 
 The audit's follow-up suggestions: (a) Cherednik 2006 q-zeta via
 Macdonald operators, or (b) non-q-zeta derivation via Markov-trace
-or Φ_q (Faddeev) evaluation.
+or Φ_q (compact q-dilog) evaluation.
 
 This probe explores **practical proxies** for both, without
 implementing Macdonald operators from scratch:

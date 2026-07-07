@@ -173,6 +173,8 @@ export default chapter({
           label: "sec:mass-algebraic-complex-volume-ladder",
           blocks: [
             "complex-volume-ladder-intro",
+            "phi-b-bar-parity-decomposition",
+            "phi-b-unitary-bar-odd",
             "q-beta-categorical-precision-ladder",
             "q-beta-c3-hopf-three-fold-markov",
             "ck-extraction-from-algebraic-rules",
@@ -735,6 +737,11 @@ export default chapter({
         "jet-convergence-classical-limit",
         "wigner-np-pairing",
         "wigner-np-pairing-proof",
+        // Reeb-flow pn-bond magnitude (2026-07-07): the proved
+        // exchange-criticality algebra + the open CWF linking postulate
+        // behind the ²H reeb-flow tier (owner ruling: NEAR-MATCH label).
+        "reeb-pn-magnitude-criticality",
+        "reeb-linking-cwf-normalization",
         "unified-iterative-correction",
         "unified-iterative-correction-proof",
         "unified-iterative-correction-table-data",

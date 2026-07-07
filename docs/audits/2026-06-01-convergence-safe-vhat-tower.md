@@ -135,10 +135,10 @@ decisive quantity.
 
 ---
 
-## Candidate 1 — Faddeev Φ_q (mass-channel dilog)
+## Candidate 1 — compact q-dilog Φ_q (mass-channel dilog)
 
 **Structural justification under test.** Cheat-sheet §4 sorts `Li_2^q`
-(Rogers, bar-symmetric, BINDING channel) vs `Φ_q` (Faddeev, bar-asymmetric,
+(Rogers, bar-symmetric, BINDING channel) vs `Φ_q` (compact-q-dilog, bar-asymmetric,
 MASS channel). Since the V̂_i tower is a MASS contribution (m_p absolute),
 should it use `Φ_q`?
 

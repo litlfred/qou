@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Sweep — Bring color-tube + Faddeev h⁴ candidate vs Family A production
+"""Sweep — Bring color-tube + compact-q-dilog h⁴ candidate vs Family A production
 across the full 65-isotope mass table.
 
 Per the user-picked next step (audit `2026-05-25-m-p-m-n-full-chain-audit.md`
-+ `m_p_bring_plus_faddeev_h4_probe.py`'s +108 ppm m_p result): test
++ `m_p_bring_plus_phi_q_h4_probe.py`'s +108 ppm m_p result): test
 whether the candidate
   linking_weight(q) = 1/(1 − h·q^{10}) + 1/(1 − h⁴) − 1
 preserves the +0.03% Δm/M_N flavor-split match AND closes the +2.89%
@@ -16,12 +16,12 @@ binding-energy column (binding is computed separately via Kashaev
 `ρ_F · Vol_hyp` in `mass_table_ppb.py`, independent of linking_weight).
 
 The mass shift propagates linearly per nucleon:
-  Δm_p = m_p_Bring+Faddeev − m_p_FamilyA  ≈ −27.0 MeV per proton
+  Δm_p = m_p_Bring + compact-q-dilog − m_p_FamilyA  ≈ −27.0 MeV per proton
   Δm_n ≈ −27.0 MeV per neutron
   Δm_atom ≈ Z·Δm_p + N·Δm_n  (linear, since B is unchanged)
 
-Output: `mass-table-bring-faddeev-h4-sweep.witness.json` — per-isotope
-column of m_pred (Family A) vs m_pred (Bring + Faddeev h⁴) + delta + rel
+Output: `mass-table-bring-phi-q-h4-sweep.witness.json` — per-isotope
+column of m_pred (Family A) vs m_pred (Bring + compact-q-dilog h⁴) + delta + rel
 err vs CODATA.
 
 This is PROBE/EXPLORATORY (per Rule 14): the categorical proof of the
@@ -62,13 +62,13 @@ from _li_2_q_util import (  # noqa: E402
 mp.mp.dps = 80
 
 
-def linking_weight_bring_plus_faddeev_h4(q: mp.mpf, q_inv: mp.mpf | None = None) -> mp.mpf:
-    """Candidate: Bring color-tube + Faddeev h⁴ additive composition.
+def linking_weight_bring_plus_phi_q_h4(q: mp.mpf, q_inv: mp.mpf | None = None) -> mp.mpf:
+    """Candidate: Bring color-tube + compact-q-dilog h⁴ additive composition.
 
       linking_weight(q) = 1/(1 − h_q · q^{10}) + 1/(1 − h_q⁴) − 1
 
     Both factors are Φ_q functional-equation ratios at substrate-natural
-    z values (z_1 = h·q^{10} for Bring; z_2 = h⁴ for Faddeev recursion
+    z values (z_1 = h·q^{10} for Bring; z_2 = h⁴ for compact-q-dilog recursion
     at the even-substrate KLR-canonical-basis vector).
     Rule-14 compliant (driver (i) + driver (xiii) of the 13-driver menu).
     """
@@ -90,7 +90,7 @@ def main() -> int:
 
     # ── Both candidates' m_p, m_n ────────────────────────────────
     lam_A = linking_weight_family_a(Q0, Q_INV)
-    lam_BF = linking_weight_bring_plus_faddeev_h4(Q0, Q_INV)
+    lam_BF = linking_weight_bring_plus_phi_q_h4(Q0, Q_INV)
     dm_over_Mn = flavor_split_subleading(Q0, Q_INV)
 
     m_avg_A = scale_const * lam_A
@@ -102,7 +102,7 @@ def main() -> int:
     m_n_BF = m_avg_BF * (1 + dm_over_Mn / 2)
 
     print("=" * 80)
-    print("Mass-table sweep — Bring + Faddeev h⁴ vs Family A production")
+    print("Mass-table sweep — Bring + compact-q-dilog h⁴ vs Family A production")
     print("=" * 80)
     print()
     print(f"linking_weight Family A      = {mp.nstr(lam_A, 15)}")
@@ -149,7 +149,7 @@ def main() -> int:
         if m_pred_A is None or m_codata is None:
             continue
 
-        # Bring + Faddeev shift: each nucleon's mass is scaled, but the
+        # Bring + compact-q-dilog shift: each nucleon's mass is scaled, but the
         # binding energy B is unchanged. So:
         #   m_pred_BF_atom = Z * m_p_BF + N * m_n_BF − B_pred
         # Substituting m_pred_A_atom = Z * m_p_A + N * m_n_A − B_pred:
@@ -163,7 +163,7 @@ def main() -> int:
         err_A = (m_pred_A_mp - m_codata_mp) / m_codata_mp
         err_BF = (m_pred_BF_mp - m_codata_mp) / m_codata_mp
 
-        # Improvement factor (FamilyA error / Bring+Faddeev error)
+        # Improvement factor (FamilyA error / Bring + compact-q-dilog error)
         if abs(err_BF) > 1e-15:
             improve_factor = abs(err_A) / abs(err_BF)
         else:
@@ -177,10 +177,10 @@ def main() -> int:
         out_rows.append({
             "atom": atom, "Z": Z, "N": N, "A": A,
             "m_FamilyA_MeV": mp.nstr(m_pred_A_mp, 18),
-            "m_Bring_Faddeev_h4_MeV": mp.nstr(m_pred_BF_mp, 18),
+            "m_Bring_compact q-dilog_h4_MeV": mp.nstr(m_pred_BF_mp, 18),
             "m_codata_MeV": mp.nstr(m_codata_mp, 12),
             "err_FamilyA_pct": mp.nstr(err_A * 100, 10),
-            "err_Bring_Faddeev_h4_pct": mp.nstr(err_BF * 100, 10),
+            "err_Bring_compact q-dilog_h4_pct": mp.nstr(err_BF * 100, 10),
             "improvement_factor": str(improve_factor),
         })
 
@@ -195,7 +195,7 @@ def main() -> int:
             if r["improvement_factor"] not in ("inf", "nan")
         )
         max_err_BF = max(
-            abs(float(r["err_Bring_Faddeev_h4_pct"])) for r in out_rows
+            abs(float(r["err_Bring_compact q-dilog_h4_pct"])) for r in out_rows
         )
         max_err_A = max(
             abs(float(r["err_FamilyA_pct"])) for r in out_rows
@@ -210,9 +210,9 @@ def main() -> int:
         print("=" * 80)
 
     # ── Witness ──────────────────────────────────────────────────
-    w = WitnessBuilder("mass-table-bring-faddeev-h4-sweep", engine="mpmath")
+    w = WitnessBuilder("mass-table-bring-phi-q-h4-sweep", engine="mpmath")
     w.set_description(
-        "Sweep of the Bring color-tube + Faddeev h⁴ candidate "
+        "Sweep of the Bring color-tube + compact-q-dilog h⁴ candidate "
         "linking_weight `1/(1 − h·q^{10}) + 1/(1 − h⁴) − 1` against "
         "the Family A production output across the full isotope mass "
         "table (mass-table-comprehensive.witness.json). The candidate "
@@ -220,24 +220,24 @@ def main() -> int:
         "+108 ppm); the shift propagates linearly to atomic masses as "
         "Z·Δm_p + N·Δm_n (binding unchanged). RULE 14 compliance: both "
         "factors are Φ_q functional-equation ratios at substrate-natural "
-        "z values (driver i Faddeev iterated + driver xiii KLR positivity). "
+        "z values (driver i iterated compact-q-dilog + driver xiii KLR positivity). "
         "Open load-bearing step: additive-vs-multiplicative composition "
         "categorical proof at H_4."
     )
     w.set_content_block("conj:borromean-baryon-mass-formula")
     w.add_parameter("dps", 80)
     w.add_parameter("linking_weight_FamilyA", mp.nstr(lam_A, 25))
-    w.add_parameter("linking_weight_Bring_Faddeev_h4", mp.nstr(lam_BF, 25))
+    w.add_parameter("linking_weight_Bring_compact q-dilog_h4", mp.nstr(lam_BF, 25))
     w.add_parameter("m_p_FamilyA_MeV", mp.nstr(m_p_A, 15))
-    w.add_parameter("m_p_Bring_Faddeev_h4_MeV", mp.nstr(m_p_BF, 15))
+    w.add_parameter("m_p_Bring_compact q-dilog_h4_MeV", mp.nstr(m_p_BF, 15))
     w.add_parameter("m_n_FamilyA_MeV", mp.nstr(m_n_A, 15))
-    w.add_parameter("m_n_Bring_Faddeev_h4_MeV", mp.nstr(m_n_BF, 15))
+    w.add_parameter("m_n_Bring_compact q-dilog_h4_MeV", mp.nstr(m_n_BF, 15))
     w.add_data("isotope_rows", out_rows)
     if out_rows:
         w.add_data("summary", {
             "n_isotopes": len(out_rows),
             "max_err_FamilyA_pct": f"{max_err_A:.10f}",
-            "max_err_Bring_Faddeev_h4_pct": f"{max_err_BF:.10f}",
+            "max_err_Bring_compact q-dilog_h4_pct": f"{max_err_BF:.10f}",
             "avg_improvement_factor": f"{avg_improve:.4f}",
             "max_improvement_factor": f"{max_improve:.4f}",
         })
@@ -248,7 +248,7 @@ def main() -> int:
             expected=1,
             tolerance=None,
             source=(
-                "Bring + Faddeev h⁴ candidate strictly tightens the "
+                "Bring + compact-q-dilog h⁴ candidate strictly tightens the "
                 "worst-case atomic mass error vs Family A across all "
                 "isotopes (both reductions are linear shifts; binding "
                 "energy column unchanged)."

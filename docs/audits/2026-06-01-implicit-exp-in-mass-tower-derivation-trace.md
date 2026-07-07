@@ -26,7 +26,7 @@ might lose exp structure. NO closure attempt, NO candidate-fishing.
 m(W) = |tr_M(W)| + Σ_n [ Σ Φ_q(|tr_M(ξ)|) + z² Σ Φ_q(|tr_M(ξξ')|) ]
 ```
 
-`Φ_q` is the **Faddeev quantum dilogarithm**, which is the archimedean
+`Φ_q` is the **compact quantum dilogarithm**, which is the archimedean
 realization of `exp(Li_2^q(...))` — literally an exponential at the categorical
 level.
 
@@ -63,7 +63,7 @@ pairing → tr_M, the exp structure becomes the χ_λ(W) characters — but
 each χ_λ(W) is itself the trace of an ordered product of σ_i matrices,
 which is the finite-dim representation of a path-ordered exp.
 
-### Site 2: Φ_q (Faddeev quantum dilogarithm) in mass-tower formula
+### Site 2: Φ_q (compact quantum dilogarithm) in mass-tower formula
 
 Per `per-braid-mass-tower.md`:
 

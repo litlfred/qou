@@ -52,6 +52,10 @@ cross-referenced so they are never conflated again.
 | `(c_k, d_k)` | eigenvalue-factor **pair** in `χ_sym(β) = ∏_k(c_k q + d_k)` | no — different object | per-block character blocks |
 | **d_k** | m_p mass **brane-tower** coefficients (mass-side analog of the Q_β ladder) | **YES** (§4) | [`2026-05-30-qbeta-ck-mp-dk-deep-audit.md`](../audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md), mass compute |
 | `d_k` | chain-complex **differential** (`d_{k+1}∘d_k = 0`, d²=0) | no — unrelated homological `d` | [`confined-knot-binding.md`](../../content/quantum-observable-universe/mass-theory/confined-knot-binding.md) |
+| **a₁ (kernel)** | c_k-recursion kernel **leading coefficient** `a₁ = −c₃ = √2·Φ₂ ≈ 2.07`; q=1 shadow `2 ≠ 0`; parity: nonzero bar-ODD **part** (NOT exactly odd — see §9 KC6) | **YES** (§9) | `QBetaCKRecursionKernelConstraints.lean` |
+| `a₁` (heat-route) | per-mode heat coefficient `κ_{(2,1)}(q)·S` — **exactly** bar-odd, vanishes at q=1, magnitude ~1e-3 (Stage B refuted the per-mode identification; 2000× magnitude mismatch) | no — **distinct object**; do NOT transfer its attributes to the kernel a₁ (the 2026-07-07 tension was exactly this transfer) | [2026-06-13 heat audit](../audits/2026-06-13-qbeta-heat-fmap-symbolic-and-literature.md); [2026-07-07 investigation](../audits/2026-07-07-a1-bar-odd-parity-shadow-investigation.md) |
+| `a_n` (z-Taylor) | ℏ-Taylor coefficients of `Δtr_M` / the `z(q)` 3-term recursion sequence (PR #2465 / #1739) | no — upstream z-side data, related by the **open f-map** | `qbeta-z-recursion-to-ck-recursion-bridge.md` |
+| **Φ₂** | the #1887 phase's second coefficient, `Φ₂ = −c₃/√2` — same object as the kernel a₁ up to `√2` (conditional lemma `ck_a1_eq_sqrt2_phi2`) | **YES** (via a₁; §9) | PR #1887 / #1900 |
 
 ---
 
@@ -185,6 +189,9 @@ registry is authoritative. Each should carry a one-line banner → this file.
 - `AGENTS.md` "c_3 SETTLED" note (the settle drifted again 2026-06-03/04)
 
 ---
+
+
+> **Standing reading (owner-granted 2026-07-07).** For every kernel/f-map constraint: **parity gates test the bar-ODD part** of a coefficient; **shadow gates test the bar-EVEN part** (`shadow_carried_by_even_part`). "a₁ exactly bar-odd" is the never-proved antecedent of the *conditional* KC6 lemma — do not restate it as fact. Ref: [investigation audit](../audits/2026-07-07-a1-bar-odd-parity-shadow-investigation.md) §4.
 
 ## 8. Flip-flop guard (standing rule)
 

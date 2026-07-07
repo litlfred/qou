@@ -1,0 +1,39 @@
+{
+  "computation": "hoefsmit_toroidal_ladder_probe",
+  "description": "P1 of the parabolic-cylinder/toroidal channel-interpolation audit: symbolic verification that the Hoefsmit 2x2 channel-mixing structure forces the toroidal half-integer Legendre degree shift (classical and q-bracket layers).",
+  "discipline": "no fit; sympy symbolic exact; fibre-level only (no q_0, no observables); (a)-scoped.",
+  "auditOnly": "docs/audits/2026-07-06-parabolic-cylinder-toroidal-channel-interpolation.md",
+  "results": {
+    "classical_block": "Matrix([[1/d, sqrt(d - 1)*sqrt(d + 1)/d], [sqrt(d - 1)*sqrt(d + 1)/d, -1/d]])",
+    "eigencolumns": "(sqrt(d+1), sqrt(d-1)) <-> +1; (sqrt(d-1), -sqrt(d+1)) <-> -1",
+    "ladder_match_solutions_classical": [
+      "(-1/2, -3/2)",
+      "(-1/2, 1/2)"
+    ],
+    "ladder_match_solutions_q": [
+      "(1/sqrt(q), q**(-3/2))",
+      "(1/sqrt(q), sqrt(q))"
+    ],
+    "b_squared_simplified": "1 - q**(2*rho)*(q**2 - 1)**2/(q**2*(q**(2*rho) - 1)**2)"
+  },
+  "assertions": {
+    "classical_eigencolumn_plus": true,
+    "classical_eigencolumn_minus": true,
+    "classical_mixing_sq_(d2-1)/d2": true,
+    "toroidal_locus_forced_alpha_-1/2_beta_1/2": true,
+    "toroidal_locus_explicit_check": true,
+    "corpus_bsq_eq_bracket_ratio": true,
+    "bracket_identity_[d-1][d+1]=[d]^2-1": true,
+    "q_toroidal_locus_forced": true
+  },
+  "allPassed": true,
+  "verdict": "TOROIDAL HALF-INTEGER DEGREE SHIFT DERIVED, NOT FITTED: matching the Hoefsmit channel-mixing amplitude sqrt(d^2-1)/d against the associated-Legendre order-ladder factor sqrt((n-mu)(n+mu+1)) identically in the axial distance d forces degree n = d - 1/2 (the toroidal nu - 1/2) and order mu = 1/2, up to the Legendre reflection mu -> -mu-1. The corpus Hoefsmit convention a_rho = h/(1-q^{-2rho}), b = sqrt(a_rho a_{-rho}+1) satisfies b^2 = [rho-1][rho+1]/[rho]^2 exactly (h = q - q^{-1}), and the forcing computation q-deforms verbatim (q^{2alpha+1} = 1). SCOPE (a): ladder-coefficient identification only — supports the toroidal channel-interpolation lead structurally; it is NOT a full eigenfunction transform, NOT wired to production, and licenses no numerical claim.",
+  "scriptHash": "798acf6ff805",
+  "scriptCommitSha": "unknown",
+  "commitSha": "452252a4c67b4f2399d20c737a1bf4ddbd69382c",
+  "engine": "sympy",
+  "computedAt": "2026-07-06T22:13:04.960938+00:00",
+  "durationMs": 0,
+  "engineVersion": "sympy 1.14.0",
+  "scriptFile": "hoefsmit_toroidal_ladder_probe.py"
+}

@@ -87,9 +87,9 @@ phase-planned in the section "Extension plan" at end.
 
 19. **Narrative–compute–Lean drift on mass-endomorphism tower**:
     - **Paper (.md)**: symmetric Li_2^q form, all-pairs z²
-    - **Compute (`mass_endomorphism.py`)**: Faddeev Φ_q, all-pairs z²
+    - **Compute (`mass_endomorphism.py`)**: compact q-dilog Φ_q, all-pairs z²
     - **Lean (`mass-endomorphism-tower.lean`)**: adjacent-only,
-      Faddeev Φ_q
+      compact q-dilog Φ_q
 
     Three different conventions in three layers.  This is the
     foundational drift underlying many subsequent gaps.

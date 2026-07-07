@@ -17,7 +17,7 @@ scale at q_proton):
 - **Ratio Φ_q(+v)/Φ_q(-v) ≈ 13.3** — 92% per-term divergence
 
 The `|...|` makes `Φ_q(-v) → Φ_q(+v)`, throwing away the bar-asymmetric
-distinction in the Faddeev q-dilogarithm. If the categorical chain
+distinction in the compact q-dilog. If the categorical chain
 should produce signed V̂ (and any is negative), the `|...|` is a
 substantial structural correction.
 
@@ -62,7 +62,7 @@ computations/hydrogen_qshuffle_compound.py:145
 Per `_phi_q_util.py` docstring (`prop:li2q-phiq-bar-symmetrization`):
 
 > Φ_q is the **archimedean / post-τ** form of the q-dilogarithm —
-> **bar-asymmetric**, lives on ℝ via the Faddeev state integral.
+> **bar-asymmetric**, lives on ℝ via the compact q-dilog.
 
 **bar-asymmetric** means `Φ_q(z) ≠ Φ_q(-z)` in general. The structural
 content of Φ_q distinguishes signed inputs. Applying `|...|` BEFORE

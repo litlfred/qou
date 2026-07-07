@@ -16,7 +16,7 @@ UTILITY computes the Lean-proven algebraic Cauchy limit `zHabiroLimit qinv
 eulerCoeff` — i.e. the Φ_q utility matches the Lean formalization.
 
 SCOPE — do not overstate (see VERDICT below). This certifies the *algebraic
-Cauchy-limit* half ONLY. The Faddeev Φ_q is the root-of-unity face of the
+Cauchy-limit* half ONLY. The compact q-dilog Φ_q is the root-of-unity face of the
 quantum dilogarithm; it is the SUPERSEDED `brane-legacy` evaluator and is NOT
 the production real-q mass-tower term — that is the bounded Rogers −Li₂^q
 (`li2q`). The Euler identity holding on (0, q) says nothing about masses.
@@ -25,7 +25,7 @@ VERDICT — the Φ_q production mass-wire is REFUTED, not pending
 (docs/audits/2026-06-18-zhabiro-physical-z-pin-and-wiring-verdict.md). The
 physical brane-tower argument z_i = |V̂_i^full| (per-generator additive
 Wedderburn traced volume, per `per-braid-mass-tower.md`) is pinned at
-0.59–0.99. At those z the Faddeev Φ_q is convergent-but-ENORMOUS (10²–10⁶ — see
+0.59–0.99. At those z the compact q-dilog Φ_q is convergent-but-ENORMOUS (10²–10⁶ — see
 the z=1.0 sample below, Φ_q ≈ 9e5), so routing it into the canonical mass table
 REGRESSES it: the −737 MeV mirror-nucleus isospin pathology
 (zhabiro-physical-z-pin.witness.json + brane-tower-isospin-diagnosis). The only

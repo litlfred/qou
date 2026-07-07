@@ -54,7 +54,7 @@ on-scale (wiring a tuned-prefactor correction would be a CAL-4 fit).
 | 7 | **proton-mass near-identity** (0.24 ppm, 0 free params; 3 ingredients proved) | partial | "near-identity … needs categorical proof"; "12 = empirical near-match" | **UNWIRED-REAL** — not refuted; the integers await derivation |
 | 8 | **α_EM Habiro `[2]_q·(1−h²α)`** (PR #1511, Taylor-exact) | YES | "NEAR-MATCH 4.18 ppm" | **UNWIRED/partly-wired-REAL** — element derived; residual ppm open |
 | — | **c_3 as a UNIVERSAL real-q fibre element** | no (c_2=−1 is) | "FALSIFIED" | **WRONG** — `dc₃/dq ≈ 4.6×10⁶` impossible for smooth real `f` (forced cross-anchor) |
-| — | **Φ_q (Faddeev) as the archimedean face** | — | "REFUTED-DIAGNOSTIC" | **WRONG** as production face — real-q saddle is `li2q` (in production) |
+| — | **Φ_q (compact q-dilog) as the archimedean face** | — | "REFUTED-DIAGNOSTIC" | **WRONG** as production face — real-q saddle is `li2q` (in production) |
 | — | **q-factorial per-knot ratio** (PR #1383) | — | "RETRACTED … backhanded fitting" | **WRONG** — disguised multi-parameter fit (implied 12.7 vs actual 0.67) |
 | — | **ν_SDP per-block-PSD reading** | — | "sharpened-negative" | **WRONG** — fails out-of-sample anchor (T at H₅: 1≠2) |
 

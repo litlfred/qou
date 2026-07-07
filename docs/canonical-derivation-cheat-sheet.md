@@ -240,7 +240,7 @@ with per-interface factors $f_i \in \{z, \, z - h\}$ for positive ($\sigma$, bot
 
 ---
 
-## 4. Φ_q (Faddeev) vs Li_2^q (Rogers) — context sorting
+## 4. Φ_q (compact q-dilog) vs Li_2^q (Rogers) — context sorting
 
 The QOU framework uses **two distinct q-dilogarithms**, NOT interchangeable. Confusion between them was a known historical bug (`mass-endomorphism-tower.md` SUPERSEDED banner; stage-1b audit in `126699b8c`).
 
@@ -381,7 +381,7 @@ The forward work has shifted from §5 mechanics to scientific closure:
 | Murnaghan-Nakayama for Hecke characters | `[ram1991]` |
 | Frobenius pairing / Hopf algebra symmetric structure | `[majid1995]`, `[kassel1995]` |
 | Yekutieli multiplicative integration | `[yekutieli2015]` |
-| Quantum dilogarithm Φ_q (Faddeev) | `[faddeev1996]` |
+| Quantum dilogarithm Φ_q (compact q-dilog) | `[faddeev1996]` |
 | Rogers q-dilogarithm Li_2^q | `[kashaev1995]`, `[kirillov1995]` |
 | Macdonald-Schur polynomials | `[macdonald1995]` |
 | Bring surface χ = −6 | `[bring1786]`, `[klein1884]` (historical) |
@@ -493,7 +493,7 @@ compute has already established:
   sign-flipped). See §9.3 and [`2026-05-31-isospin-mirror-v9-discipline-assessment.md`](audits/2026-05-31-isospin-mirror-v9-discipline-assessment.md).
 - **Volumes** enter as the knot volumes of the canonical braid — `Vol(𝓑₃)` (proton,
   step 9a), `Vol(6₂)`, Borromean `8G` — through the q-hyperbolic infra
-  (`knot-volumes.py`, `Li_2^q` / Faddeev `Φ_q`, §4 context-sorting).
+  (`knot-volumes.py`, `Li_2^q` / compact-q-dilog `Φ_q`, §4 context-sorting).
 
 So: **`Δ_λ = (q-Reeb phase density)_λ`, evaluated through the q-hyperbolic
 infrastructure, summed over the partition** — exactly the `density × volume`

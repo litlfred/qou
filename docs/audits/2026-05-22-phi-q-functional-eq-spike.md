@@ -16,13 +16,13 @@
 
 PR #928 + #939 left only ONE structurally distinct path open for
 deriving λ_scale ≈ 2.4599527869 from substrate data: the
-**non-linear** route via Φ_q (Faddeev quantum dilogarithm)
+**non-linear** route via Φ_q (compact quantum dilogarithm)
 functional equations / pentagon identities. PSLQ-style linear
 searches over q-dilog, Bloch-Wigner, hyperbolic-knot, and ℚ(ζ_60)
 trace-field bases have all exhausted to negative at coefficient
 bound 10³⁰.
 
-Faddeev's Φ_q satisfies a key functional equation:
+compact-q-dilog Φ_q satisfies a key functional equation:
 
 $$
   \Phi_q(q \cdot z) = \frac{1}{1 - z} \cdot \Phi_q(z),
@@ -100,12 +100,12 @@ ppb precision under non-linear Φ_q identities is now strong.
    (a combination of V̂_S, hyperbolic-knot vol ratios, or other
    structural data not in the tested list).
 2. **Higher-order operator-theoretic identities**: the genuine
-   Faddeev pentagon `Φ_q(U)Φ_q(V) = Φ_q(V)Φ_q(UV)Φ_q(U)` for
+   compact-q-dilog pentagon `Φ_q(U)Φ_q(V) = Φ_q(V)Φ_q(UV)Φ_q(U)` for
    Heisenberg-paired (U, V) is a quantum identity, not a
    commutative ratio. Implementing this in the spike would
    require the Stone-von Neumann unique representation; out of
    scope here.
-3. **Modular transformations**: Faddeev's Φ_q is well-defined on
+3. **Modular transformations**: compact-q-dilog Φ_q is well-defined on
    the upper half-plane / on |q| = 1 via the modular dual `q̃ =
    exp(−2πi/b²)`. For real `q_0 > 1`, the modular framework is
    not directly applicable.

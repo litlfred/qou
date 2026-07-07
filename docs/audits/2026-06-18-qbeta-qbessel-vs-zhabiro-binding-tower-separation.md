@@ -91,7 +91,7 @@ yet are distinct objects:
    Option-E / GAP-A-3 / GAP-A-4 and the ⁴He JSJ volume
    ([`2026-05-18-delta-lambda-gating-context.md`](2026-05-18-delta-lambda-gating-context.md)).
 
-The Faddeev quantum dilogarithm (face 1) and the Hahn–Exton q-Bessel (faces 2, 3)
+The compact quantum dilogarithm (face 1) and the Hahn–Exton q-Bessel (faces 2, 3)
 share the `(·;q)_n` skeleton and the contraction-limit home, but a quantum
 *dilogarithm* is not a q-*Bessel* function, and the argument and order recurrences
 of the q-Bessel are themselves distinct. So the three open keystones are the **same

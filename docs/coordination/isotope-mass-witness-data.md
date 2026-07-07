@@ -67,7 +67,7 @@ No new review comments since the original triage.
    `rho_prefactor_structural_verifier.py` (with backward-compat
    alias key in witness).
 
-2. **Symmetric Li_2^q replaces Faddeev Φ_q** per paper canon
+2. **Symmetric Li_2^q replaces compact q-dilog Φ_q** per paper canon
    (2026-05-03 revision). Removes the pole artifact at
    |V̂_proton|=0.989 > q⁻¹=0.901 that gave spurious 1.50% closure.
 
@@ -105,7 +105,7 @@ Owner directives this cycle:
    ~24 actionable gaps; INDEX in
    `docs/audits/2026-05-16-compute-paper-lean-audit-INDEX.md`)
 2. "not adjacent only, full tail, canonical derived only" →
-   switched T2/T3 from Faddeev Φ_q to symmetric Li_2^q per
+   switched T2/T3 from compact q-dilog Φ_q to symmetric Li_2^q per
    paper canon (2026-05-03 revision)
 3. "validate the V̂_i terms, full tail, hydrogen step-by-step" →
    landed `hydrogen_step_by_step.py` (additive convention)
@@ -132,7 +132,7 @@ the same T5 V1 vs V2 owner-decision is now audit GAP #17.
 ### Headline empirical finding (2026-05-17)
 
 m(¹H) prediction under the paper-canonical Li_2^q tower
-(symmetric q-dilog, replaces retired Faddeev Φ_q):
+(symmetric q-dilog, replaces retired compact q-dilog Φ_q):
 
 | convention | m(¹H) pred | Δ vs CODATA 938.78 |
 |---|---:|---:|
@@ -141,7 +141,7 @@ m(¹H) prediction under the paper-canonical Li_2^q tower
 
 The 932 MeV shortfall is **NOT** from additive-vs-compound
 choice (same order of magnitude). The previous 1.50 % closure
-was a Faddeev Φ_q artifact at |V̂_p|=0.989 > q⁻¹=0.901 (sitting
+was a compact q-dilog Φ_q artifact at |V̂_p|=0.989 > q⁻¹=0.901 (sitting
 near the pole of Π(1−q⁻ᵏz)⁻¹). Canonical Li_2^q is mathematically
 clean (no pole at q_0 inputs) but the truncated T1-T6 tower is
 structurally off by ~170×.

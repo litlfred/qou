@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 **CONTEXT (per prop:li2q-phiq-bar-symmetrization).** This script is a
-**BINDING-context DIAGNOSTIC**: it documents the Faddeev Φ_q failure
+**BINDING-context DIAGNOSTIC**: it documents the compact q-dilog Φ_q failure
 mode (the −737 MeV mirror-nucleus pathology in the T2/T3 brane tower)
 that motivates the Li_2^q migration recommended by the bar-symmetrization
 identity. Φ_q is retained here intentionally — the script's purpose is

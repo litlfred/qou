@@ -58,7 +58,7 @@ Probe [`computations/probes/zhabiro_physical_z_pin.py`] (mpmath 50 dps,
 witness `zhabiro-physical-z-pin.witness.json`) evaluates both forms at each
 exact physical z_i:
 
-- **Φ_q(z) = ∏(1 − q^{−k} z)^{−1}** — Faddeev, the **SUPERSEDED**
+- **Φ_q(z) = ∏(1 − q^{−k} z)^{−1}** — compact-q-dilog, the **SUPERSEDED**
   `brane-legacy` tower mode.
 - **−Li₂^q(−z) = Σ (−1)^{n+1} z^n /(n·[n]_q)** — symmetric, the **PRODUCTION**
   `li2q` tower mode (`prop:mass-endomorphism-tower`; sweep default).

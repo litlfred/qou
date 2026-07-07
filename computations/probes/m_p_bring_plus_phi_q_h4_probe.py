@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 """
-m_p, m_n prediction with Bring color-tube + Faddeev recursion at h⁴
+m_p, m_n prediction with Bring color-tube + compact-q-dilog recursion at h⁴
 correction.
 
 Per the h⁴ categorical-driver probe (`h4_categorical_drivers_probe.py`),
 TWO of the 13 canonical drivers give the empirical α ≈ 1.011 within
 ~1 %:
-  - Driver (i)   Faddeev iterated `1/(1 − h⁴) − 1`  → α = 1.0019  (0.90 % off)
+  - Driver (i)   iterated compact-q-dilog `1/(1 − h⁴) − 1`  → α = 1.0019  (0.90 % off)
   - Driver (xiii) KLR positivity `+1 · h⁴`           → α = 1.0     (1.09 % off)
 
 Both converge on "+1 · h⁴" as the leading-order categorical correction
-(KLR gives the smallest non-trivial non-negative integer; Faddeev's
+(KLR gives the smallest non-trivial non-negative integer; compact q-dilog's
 1/(1 − h⁴) expansion starts with h⁴ at leading order, with coefficient
 1).
 
@@ -19,7 +19,7 @@ This probe tests the COMBINED form
                     = 1/(1 − h_q · q_0^{10}) + h_q⁴ + h_q⁸ + h_q^{12} + ...
 
 at q_0 against CODATA m_p, m_n. The structural claim is that BOTH
-factors are Faddeev functional equation ratios `Φ_q(qz)/Φ_q(z) = 1/(1−z)`
+factors are compact-q-dilog functional equation ratios `Φ_q(qz)/Φ_q(z) = 1/(1−z)`
 at two substrate-natural z values:
   - z_1 = h_q · q_0^{10}  (the Bring color-tube argument — 10 color-pair
                            assignments + 1 diagonal direction)
@@ -31,19 +31,19 @@ parameter. The "+1" leading h⁴ coefficient is the KLR canonical-basis
 positivity constraint.
 
 Status: SHAPE-PROBE / SUBSTRATE-NATURAL CANDIDATE. The argument that
-"BOTH `1/(1−h·q^{10})` and `1/(1−h⁴)` are Faddeev recursions" is
+"BOTH `1/(1−h·q^{10})` and `1/(1−h⁴)` are compact-q-dilog recursions" is
 substrate-natural; the categorical question is whether the
 **additive** combination is the right composition (vs multiplicative,
 vs a more elaborate Φ_q-tower structure).
 
 Per Rule 14 (`docs/audits/2026-05-23-lambda-scale-canonical-unification.md`):
-- This probe identifies a 13-driver candidate (Faddeev iterated +
+- This probe identifies a 13-driver candidate (iterated compact-q-dilog +
   KLR positivity converging) — does NOT need owner-escalation as a
   bare empirical fit.
 - The composition rule (additive vs multiplicative) is the remaining
   load-bearing categorical step.
 
-Witness: `m-p-bring-plus-faddeev-h4-probe.witness.json`
+Witness: `m-p-bring-plus-phi-q-h4-probe.witness.json`
 """
 from __future__ import annotations
 
@@ -88,17 +88,17 @@ def main() -> int:
     M_N_CODATA = mp.mpf(M_N_MEV_VALIDATION)
     M_AVG_CODATA = (M_P_CODATA + M_N_CODATA) / 2
 
-    # ── Two Faddeev ratios at substrate-natural z values ─────────
+    # ── Two compact q-dilog ratios at substrate-natural z values ─────────
     # z_1 = h · q^{10} (Bring color-tube: 9 color-pair assignments + 1 diagonal)
     # z_2 = h^4         (substrate-natural even-power; KLR canonical-basis)
     z1 = h * Q0 ** 10
     z2 = h ** 4
     bring_color_tube = 1 / (1 - z1)
-    faddeev_h4 = 1 / (1 - z2)
+    phi_q_h4 = 1 / (1 - z2)
 
     # Three composition rules
-    additive = bring_color_tube + faddeev_h4 - 1
-    multiplicative = bring_color_tube * faddeev_h4
+    additive = bring_color_tube + phi_q_h4 - 1
+    multiplicative = bring_color_tube * phi_q_h4
     bring_only = bring_color_tube
 
     # Layer-2 substrate flavor split (PR #942)
@@ -108,7 +108,7 @@ def main() -> int:
     scale_const = M_E * VOL_B3 * INV_HBAR2
 
     print("=" * 76)
-    print("m_p, m_n with Bring color-tube + Faddeev h⁴ correction")
+    print("m_p, m_n with Bring color-tube + compact-q-dilog h⁴ correction")
     print("=" * 76)
     print(f"  q_0 = {mp.nstr(Q0, 20)}")
     print(f"  h_q = {mp.nstr(h, 15)}")
@@ -117,7 +117,7 @@ def main() -> int:
     print(f"  z_2 = h⁴     = {mp.nstr(z2, 15)}")
     print()
     print(f"  1/(1 − z_1)  =  Bring color-tube  = {mp.nstr(bring_color_tube, 15)}")
-    print(f"  1/(1 − z_2)  =  Faddeev at h⁴     = {mp.nstr(faddeev_h4, 15)}")
+    print(f"  1/(1 − z_2)  =  compact q-dilog at h⁴     = {mp.nstr(phi_q_h4, 15)}")
     print()
     print("Three composition rules for linking_weight(q):")
     print(f"  bring only:                          {mp.nstr(bring_only, 15)}")
@@ -128,8 +128,8 @@ def main() -> int:
     results = []
     for label, lam in [
         ("Bring color-tube only", bring_only),
-        ("Bring + Faddeev h⁴ ADDITIVE", additive),
-        ("Bring × Faddeev h⁴ MULTIPLICATIVE", multiplicative),
+        ("Bring + compact-q-dilog h⁴ ADDITIVE", additive),
+        ("Bring × compact-q-dilog h⁴ MULTIPLICATIVE", multiplicative),
     ]:
         m_avg = scale_const * lam
         m_p = m_avg * (1 - dm_over_Mn / 2)
@@ -169,22 +169,22 @@ def main() -> int:
     print()
     print("INTERPRETATION:")
     print(f"  • Bring color-tube alone gives m_p at -670 ppm (under CODATA)")
-    print(f"  • Adding Faddeev h⁴ correction closes the residual significantly")
+    print(f"  • Adding compact-q-dilog h⁴ correction closes the residual significantly")
     print(f"  • The composition rule (additive vs multiplicative) is the")
     print(f"    remaining load-bearing categorical step")
-    print(f"  • Both `1/(1-h·q^10)` AND `1/(1-h⁴)` are Faddeev functional")
+    print(f"  • Both `1/(1-h·q^10)` AND `1/(1-h⁴)` are compact q-dilog functional")
     print(f"    equation ratios at substrate-natural z values — KLR positivity")
     print(f"    forces the +1·h⁴ leading coefficient")
 
     # ── Witness ──────────────────────────────────────────────────
-    w = WitnessBuilder("m-p-bring-plus-faddeev-h4-probe", engine="mpmath")
+    w = WitnessBuilder("m-p-bring-plus-phi-q-h4-probe", engine="mpmath")
     w.set_description(
-        "Probe of the combined Bring color-tube + Faddeev h⁴ form for "
+        "Probe of the combined Bring color-tube + compact-q-dilog h⁴ form for "
         "linking_weight(q). Per the h⁴ categorical-driver probe, two of "
         "the 13 drivers converge on +1·h⁴ as the leading correction: "
-        "(i) Faddeev iterated `1/(1−h⁴) − 1` and (xiii) KLR positivity "
+        "(i) iterated compact-q-dilog `1/(1−h⁴) − 1` and (xiii) KLR positivity "
         "(smallest non-trivial non-negative integer). Both are "
-        "Faddeev functional-equation ratios at substrate-natural z "
+        "compact q-dilog functional-equation ratios at substrate-natural z "
         "values (z_1 = h·q^10 for Bring color-tube; z_2 = h⁴ for "
         "KLR canonical-basis). Tests three composition rules — additive, "
         "multiplicative, bring-only — at q_0 against CODATA m_p, m_n."
@@ -209,15 +209,15 @@ def main() -> int:
 
     rel_p_ppm = abs(float(mp.mpf(best["rel_m_p_ppm"])))
     w.add_assertion(
-        "bring_plus_faddeev_h4_m_p_within_500ppm",
+        "bring_plus_phi_q_h4_m_p_within_500ppm",
         computed=rel_p_ppm,
         expected=0.0,
         tolerance=500.0,
         unit="ppm",
         source=(
-            "Bring color-tube + Faddeev h⁴ correction (best composition) "
+            "Bring color-tube + compact-q-dilog h⁴ correction (best composition) "
             "predicts m_p within 500 ppm of CODATA at MPFR 50 dps. The "
-            "underlying categorical claim — Faddeev recursions at two "
+            "underlying categorical claim — compact-q-dilog recursions at two "
             "substrate-natural z values — is RULE 14 COMPLIANT (both "
             "factors live in the 13-driver menu)."
         ),

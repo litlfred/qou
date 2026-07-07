@@ -76,7 +76,7 @@ Tier-search scripts:
 Two q-dilogarithms are used in the framework
 ([`docs/canonical-derivation-cheat-sheet.md §4`](../canonical-derivation-cheat-sheet.md)):
 
-| | Φ_q (Faddeev) | Li_2^q (Rogers) |
+| | Φ_q (compact q-dilog) | Li_2^q (Rogers) |
 |---|---|---|
 | Bar-symmetry | NOT (mass-anchor, asymmetric) | YES (binding, bar-symmetric) |
 | Context | MASS | BINDING |
@@ -121,7 +121,7 @@ tower has a curvature feature (inflection point) at q_0.
 From the cheat sheet, the Phase 5b synthesis
 `Li_2^q ↔ cos_q(h) ↔ cosh(h)` provides three avenues for the
 same bar-symmetric kernel. The **mass-side equivalent**
-(Faddeev tower, bar-anti-symmetric) is queued as the §7 #4
+(compact-q-dilog tower, bar-anti-symmetric) is queued as the §7 #4
 open frontier in
 [`docs/audits/2026-05-20-compute-wiring-audit-pr-852.md`](../audits/2026-05-20-compute-wiring-audit-pr-852.md):
 > "q-dilog tower direct λ_p_scale derivation (post-bar-anti-sym,
@@ -145,7 +145,7 @@ PSLQ via `mpmath.pslq`.
 
 **Estimated cost.** Hours, similar to Bring-Bloch tier searches.
 
-### Strategy B — Faddeev `Φ_q` mass-side PSLQ
+### Strategy B — compact-q-dilog `Φ_q` mass-side PSLQ
 
 Same as Strategy A but with `Φ_q(w)` (bar-asymmetric). The
 mass-anchor context is the right side for `λ_scale` which
@@ -668,7 +668,7 @@ point:
     fit-siblings of Family A — same antipattern that
     LAMBDA_*_FITTED_FROM_CODATA was before #895 — and should
     NOT be presented as substrate-pure refinement candidates.
-  - **Original brief Strategies A / B (Rogers / Faddeev PSLQ
+  - **Original brief Strategies A / B (Rogers / compact-q-dilog PSLQ
     direct).** Refuted at Tier 0 by commit `af2d27ee` on main:
     23-element substrate-natural Li_2^q + Φ_q basis at
     `{1/φ, 1/φ², 3/7, 1/[2]_q, ±h_q, ±h_q²}` with classical
@@ -707,7 +707,7 @@ point:
 
     ```
     λ_p  ≈  1/(1 − h_q · q_0^10)  =  2.45999923...
-         =  Φ_q(h_q · q_0^11) / Φ_q(h_q · q_0^10)   (Faddeev functional eq)
+         =  Φ_q(h_q · q_0^11) / Φ_q(h_q · q_0^10)   (compact-q-dilog functional eq)
     ```
 
     The integer power n=10 (n=8, 9, 11, 12 give 13–51 % error) is
@@ -729,10 +729,10 @@ point:
     (Yekutieli per-cell), not in the coincidence basin. Both
     Reading B (Yekutieli) and `1/(1 − h_q · q_0^10)` (Faddeev
     pentagon × Bring color-tube) have explicit load-bearing
-    Phase 5q open work items. The Faddeev form is **3.4× closer
+    Phase 5q open work items. The compact-q-dilog form is **3.4× closer
     to CODATA** (19 ppm) than the prior `5/2 − h²·G` numerology
     coincidence (5.6 ppm — wait, 19 vs 5.6 means 5/2−h²·G is
-    *3.4× closer*, not the Faddeev form). Actually:
+    *3.4× closer*, not the compact-q-dilog form). Actually:
     - `5/2 − h²·G`: 5.6 ppm (smaller error)
     - `1/(1 − h_q · q_0^10)`: 19 ppm
     The numerology-coincidence form is still closer; the

@@ -11,14 +11,14 @@ Faddeev / Bloch-Wigner family of categorical attacks on Q_β residue A
 
 | Symbol | Definition | Notes |
 |--------|-----------|-------|
-| `qDilogPartial q N` | `∑_{n=1}^N q^n / (n · (1 - q^n))` | Truncated Faddeev / quantum dilog (finite version) |
+| `qDilogPartial q N` | `∑_{n=1}^N q^n / (n · (1 - q^n))` | Truncated compact q-dilog (finite version; legacy "Faddeev" naming) |
 | `blochWignerD q n` | `0` for real `q > 0` (Bloch-Wigner vanishes on real positive axis) | Per Chain 1 β NEGATIVE result (PR #1768) |
 
 ## Why this matters
 
 The AGENTS.md "Critical framing" note states: the Q_β c_3 problem is a
 **fibre-level Habiro element** whose archimedean evaluation at q_0 is
-sought. Faddeev / Li_2^q vs. Φ_q context-sorting determines the
+sought. compact-q-dilog / Li_2^q vs. Φ_q context-sorting determines the
 expansion. This file provides the symbolic primitives.
 
 ## Theorems provided (all proved)
@@ -43,7 +43,7 @@ namespace QOU.Machinery
 
 /-! ## Partial q-dilogarithm `Li_2^q_N(q) = ∑_{n=1}^N q^n / (n·(1-q^n))` -/
 
-/-- Partial q-dilogarithm (truncated Faddeev form). Sums from `n = 1`
+/-- Partial q-dilogarithm (truncated compact-q-dilog form). Sums from `n = 1`
 to `N`. Returns 0 when `N = 0`. -/
 noncomputable def qDilogPartial (q : ℝ) (N : ℕ) : ℝ :=
   ∑ n ∈ Finset.range N, (q ^ (n + 1) / ((n + 1) * (1 - q ^ (n + 1))))
@@ -83,16 +83,23 @@ recorded here. -/
 theorem blochWignerD_real_pos (q : ℝ) (n : ℕ) (_hq : 0 < q) :
     blochWignerD q n = 0 := rfl
 
-/-! ## Conditional class for Faddeev / Φ_q context
+/-! ## Conditional class for compact-q-dilog / Φ_q context
 
-The Φ_q (Faddeev) vs. Li_2^q (Rogers) distinction is context-sorting
+The Φ_q (compact q-dilog) vs. Li_2^q (Rogers) distinction is context-sorting
 infrastructure for the Habiro element promotion. -/
 
-/-- Conditional class axiomatising the Faddeev quantum-dilogarithm
+/-- Conditional class axiomatising the compact quantum dilogarithm
 context for the Habiro element. NEAR-MATCH tier; instance not
-constructed (requires upstream Faddeev / Bloch-Wigner machinery). -/
+constructed (requires upstream Bloch–Wigner machinery).
+
+**Legacy name.** `FaddeevQuantumDilogContext` (and the field prefix
+`faddeev_`) are retained for compatibility with existing `lean.ref`
+consumers, but the object here is the **compact q-Pochhammer `Φ_q`**
+`∏(1−q^{-k}z)^{-1}` — **not** Faddeev's non-compact modular-double `Φ_b`
+(see `QOU.QBeta.FaddeevModularDouble` and the 2026-07-06 terminology
+ruling in `docs/audits/2026-07-06-qbeta-faddeev-phi-b-modular-double-accuracy.md`). -/
 class FaddeevQuantumDilogContext (q : ℝ) : Prop where
-  /-- The Faddeev `Φ_q` infinite product has a well-defined functional
+  /-- The compact-q-dilog `Φ_q` infinite product has a well-defined functional
   equation at q (opaque marker for the open derivation). -/
   faddeev_functional_equation : True
 

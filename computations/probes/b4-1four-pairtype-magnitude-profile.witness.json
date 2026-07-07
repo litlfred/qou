@@ -1,0 +1,99 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15 + mpmath 1.4.1",
+  "computedAt": "2026-07-07T03:30:54.424205+00:00",
+  "commitSha": "5e3d301cf2776e4d7a7132d08affd12f0b258690",
+  "assertions": [
+    {
+      "name": "A_total_matches_uniform_probe",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "b4-1four-pairtype-magnitude-profile",
+  "scriptFile": "b4_1four_pairtype_magnitude_profile.py",
+  "scriptHash": "0b45e3ecd62d",
+  "scriptCommitSha": "5e3d301cf2776e4d7a7132d08affd12f0b258690",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "[1⁴] per-pair-type magnitude enumeration (A uniform g / B pn=g,like=z / C control / D uniform z) with type-aware Ursell cumulant profiles vs AME. Audit-only; no fit; no selection.",
+  "tier": "exploratory (preregistered 4-option enumeration)",
+  "result": {
+    "constants": {
+      "q0": "1.10997859556",
+      "z": "0.499320334",
+      "g_reeb": "0.4467270678",
+      "E0_MeV": "4.1859808"
+    },
+    "ame_targets": {
+      "b2_pn": "2.224566",
+      "b3": "1.4264",
+      "b4": "9.2431",
+      "B4He": "28.29566"
+    },
+    "options": [
+      {
+        "option": "A_uniform_g",
+        "magnitudes": {
+          "pp": "0.44672707",
+          "nn": "0.44672707",
+          "pn": "0.44672707"
+        },
+        "det4": "0.0017406534",
+        "b2_pn_MeV": "0.9317995",
+        "b2_pn_ratio": "0.41887",
+        "b2_pp_MeV": "0.9317995",
+        "b2_nn_MeV": "0.9317995",
+        "b3_MeV": "1.486812",
+        "b3_ratio": "1.0424",
+        "b4_MeV": "15.05756",
+        "b4_ratio": "1.6291",
+        "B4_total_MeV": "26.59561",
+        "B4_ratio": "0.93992"
+      },
+      {
+        "option": "B_pn_g_like_z",
+        "magnitudes": {
+          "pp": "0.49932033",
+          "nn": "0.49932033",
+          "pn": "0.44672707"
+        },
+        "det4": "-0.035718134",
+        "status": "UNPHYSICAL (some det ≤ 0)"
+      },
+      {
+        "option": "C_pn_z_like_g",
+        "magnitudes": {
+          "pp": "0.44672707",
+          "nn": "0.44672707",
+          "pn": "0.49932033"
+        },
+        "det4": "-0.15756422",
+        "status": "UNPHYSICAL (some det ≤ 0)"
+      },
+      {
+        "option": "D_uniform_z",
+        "magnitudes": {
+          "pp": "0.49932033",
+          "nn": "0.49932033",
+          "pn": "0.49932033"
+        },
+        "det4": "-0.18512048",
+        "status": "UNPHYSICAL (some det ≤ 0)"
+      }
+    ],
+    "verdict": "Preregistered enumeration; no option selected. Type-aware Ursell profiles reported per option against the AME targets. Scope-(a): results constrain the listed (type→magnitude) assignments only."
+  },
+  "auditOnly": true
+}

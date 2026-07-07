@@ -80,7 +80,7 @@ reframes:
 ## What this means for PR #1276
 
 PR [#1276](https://github.com/litlfred/qou/pull/1276) reports
-+108 ppm m_p error with Bring + Faddeev h⁴. Reading-A
++108 ppm m_p error with Bring + compact-q-dilog h⁴. Reading-A
 alone (no Bring, no Faddeev, just `−G` h² coefficient swap)
 already achieves **0.3 ppm**. If Reading-A is the correct
 categorical derivation (Yekutieli per-cell curvature), it is
@@ -103,7 +103,7 @@ categorical derivation (Yekutieli per-cell curvature), it is
 - PR #1285 (markov_trace mpf precision fix) — base of stack
 - PR #1287 (h-expansion + per-partition + redistribution probes) — same branch
 - PR #1272 (γγ̄ decomposition, Reading-A target) — sibling
-- PR #1276 (Bring + Faddeev h⁴ candidate) — sibling
+- PR #1276 (Bring + compact-q-dilog h⁴ candidate) — sibling
 """
 from __future__ import annotations
 
@@ -205,7 +205,7 @@ def main() -> int:
     print(f"  m_p (CODATA)    = {mp.nstr(m_p_codata, 12)} MeV")
 
     # === PR #1276 comparison ===
-    print(f"\n[Comparison to PR #1276 Bring + Faddeev h⁴]")
+    print(f"\n[Comparison to PR #1276 Bring + compact-q-dilog h⁴]")
     h_q10 = h * q ** 10
     bring_term = 1 / (1 - h_q10)
     faddeev_term = 1 / (1 - h ** 4) - 1

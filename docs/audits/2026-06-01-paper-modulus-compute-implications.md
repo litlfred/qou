@@ -44,7 +44,7 @@ But production scripts compute:
 
 > `m_prod(𝔥) = Σ Phi_q(|v|) + ...` (or Li_2^q(-|v|))
 
-The compute uses Φ_q (Faddeev, bar-asymmetric, MASS context per
+The compute uses Φ_q (compact-q-dilog, bar-asymmetric, MASS context per
 `prop:li2q-phiq-bar-symmetrization`) while the paper categorical
 statement uses Li_2^q (Rogers, bar-symmetric, BINDING context). The
 `|...|` is inside the Φ_q / Li_2^q call.

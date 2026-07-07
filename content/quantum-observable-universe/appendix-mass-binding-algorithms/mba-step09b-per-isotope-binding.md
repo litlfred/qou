@@ -206,3 +206,15 @@ structural exception. This is a $\sim3\%$ *structural* result, not a ppQ closure
 > Lean-proved), which reproduces $^3$H (p-n-n) to within $0.16\%$ with no fit. A
 > distinct all-pairs mean-field model, if wanted, would need its own derivation —
 > the canonical braid does not realise one.
+
+### Tier note: the deuteron reeb-flow branch (2026-07-07)
+
+*For $^{2}\mathrm{H}$ the production tier evaluates the exchange-sector
+magnitude $g$ with $g^2(1+[2]_v^2)=1$
+([criticality proposition](../mass-theory/reeb-pn-magnitude-criticality.md))
+and the linear rule $B = 5g$ [MeV]. The dimensionless structure is proved;
+the physical identification is the
+[CWF linking conjecture](../mass-theory/reeb-linking-cwf-normalization.md);
+the MeV unit anchor is open, so the tier carries a NEAR-MATCH label
+(owner ruling, audit §3f) and this branch is reported as near-match,
+never as derived.*
