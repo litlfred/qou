@@ -46,6 +46,8 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 def qint_at_root(k: int, m: int):
     """[k]_q = (q^k − 1)/(q − 1) evaluated at q = ζ_m (primitive m-th root)."""
+    if m == 1:                       # ζ_1 = 1 ⇒ [k]_1 = k (avoid 0/0)
+        return sp.Integer(k)
     z = sp.exp(2 * sp.pi * sp.I / m)
     return sp.simplify((z ** k - 1) / (z - 1))
 
