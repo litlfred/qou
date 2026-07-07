@@ -21,9 +21,10 @@ $[1^4]$ complete-graph exchange matrix on nucleon blocks $[p,p,n,n]$. Then:*
 2. *(Cayley–Hamilton form)* $M(b)^2 = (1 + b^2)\cdot\mathbf{1}$; in
    particular the classical $b = 2$ gives the scalar $5$.
 3. *(Marginal stability)* $\det\bigl(\mathbf{1} + g\,M(b)\bigr)
-   = 1 - g^2(1+b^2)$; hence any $g$ with $g^2(1 + [2]_v^2) = 1$ is
-   exactly the point where the deformed symmetric-sector determinant
-   vanishes.
+   = 1 - g^2(1+b^2)$ for every $b$; hence, specializing to the deformed
+   pn-degree $b = [2]_v$, any $g$ with $g^2(1 + [2]_v^2) = 1$ is exactly
+   the point where the deformed symmetric-sector determinant
+   $\det\bigl(\mathbf{1} + g\,M([2]_v)\bigr)$ vanishes.
 4. *(pn-sign blindness)* With $D = \mathrm{diag}(1,1,-1,-1)$ one has
    $D\,S(a,w)\,D = S(a,-w)$, and consequently
    $\det(\mathbf{1} + S(a,w)) = \det(\mathbf{1} + S(a,-w))$ and
