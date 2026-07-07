@@ -240,6 +240,12 @@ export default chapter({
         "double-magic-delta-i-bound-table2-data",
         "double-magic-delta-i-bound-table1-data",
         "magic-numbers-from-q",
+        // Relocated from quantum-observable-universes/
+        // sec:algebraic-substrate-reeb (2026-07-07): the conjectured
+        // full-seven-magic-numbers ↔ S₅-stable Bring period-lattice
+        // ranks, sibling to prop:magic-numbers-from-q's {2,8,20,28}
+        // derivation.
+        "magic-numbers-bring",
         "k12-barrier-bypass",
         "q-deformed-nuclear-models-comparison",
         "non-magic-Li6-diagram",
