@@ -1,1 +1,1 @@
-This section develops bring. The blocks below trace the construction from `su2-generators` onward.
+This section develops the algebraic substructure of Bring's surface. The construction proceeds from the $\mathrm{SU}(2)$ generators.
