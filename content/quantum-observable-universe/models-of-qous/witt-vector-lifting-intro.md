@@ -1,6 +1,1 @@
-The $\mathbb{Q}_\pp$ realisation ([$p$-adic realisation](#ex:p-adic-realisation)) provides
-a QOU over characteristic $0$, while the $\mathbb{F}_\pp$ realisation
-([finite field realisation](#ex:finite-field-realisation)) provides one over
-characteristic $\pp$.  The passage between them is mediated by the
-*Witt vector functor* $W$ and the theory of formal groups
-over $\pp$-adic rings.
+The $\mathbb{Q}_p$ realisation provides a QOU over characteristic $0$. The $\mathbb{F}_p$ realisation provides one over characteristic $p$. The *Witt vector functor* $W$ and the theory of formal groups over $p$-adic rings mediate the passage between them.
