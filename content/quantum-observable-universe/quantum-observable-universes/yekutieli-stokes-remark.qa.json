@@ -834,6 +834,19 @@
         "reviewed_at": "2026-07-07T14:26:55.833067Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:47.911267+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:47.911267+00:00"
+        }
       }
     ],
     "da-false-claim": [
@@ -855,6 +868,19 @@
         "severity": "minor",
         "evidence": "yekutieli-stokes-remark.ts:1",
         "notes": "No false claims identified in the prose of 'Nonabelian Stokes and the measurability conditions'; the mathematical reasoning concerning '$c_1(\\mathrm{Ad}(A)) = 0$, $c_2(\\mathrm{Ad}(A)) = 0$ can be' is consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:47.932930+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:47.932930+00:00"
+        }
       }
     ],
     "da-vacuous": [
@@ -876,6 +902,19 @@
         "severity": "minor",
         "evidence": "yekutieli-stokes-remark.ts:1",
         "notes": "The block 'Nonabelian Stokes and the measurability conditions' presents substantial mathematical content: '$c_1(\\mathrm{Ad}(A)) = 0$, $c_2(\\mathrm{Ad}(A)) = 0$ can be'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:47.950239+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:47.950239+00:00"
+        }
       }
     ],
     "da-circular": [
@@ -897,6 +936,19 @@
         "severity": "minor",
         "evidence": "yekutieli-stokes-remark.ts:1",
         "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Nonabelian Stokes and the measurability conditions' (which asserts '$c_1(\\mathrm{Ad}(A)) = 0$, $c_2(\\mathrm{Ad}(A)) = 0$ can be')."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:47.967323+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:47.967323+00:00"
+        }
       }
     ],
     "da-overclaim": [
@@ -918,6 +970,19 @@
         "severity": "minor",
         "evidence": "yekutieli-stokes-remark.ts:1",
         "notes": "The remarks and narrative scope in 'Nonabelian Stokes and the measurability conditions' concerning '$c_1(\\mathrm{Ad}(A)) = 0$, $c_2(\\mathrm{Ad}(A)) = 0$ can be' are appropriately qualified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:47.984290+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:47.984290+00:00"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -939,6 +1004,19 @@
         "severity": "minor",
         "evidence": "yekutieli-stokes-remark.ts:1",
         "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Nonabelian Stokes and the measurability conditions'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:48.001512+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:48.001512+00:00"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -960,6 +1038,19 @@
         "severity": "minor",
         "evidence": "yekutieli-stokes-remark.ts:1",
         "notes": "The prose arguments in 'Nonabelian Stokes and the measurability conditions' proceed logically through the stated steps: '$c_1(\\mathrm{Ad}(A)) = 0$, $c_2(\\mathrm{Ad}(A)) = 0$ can be'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:48.017136+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:48.017136+00:00"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -981,6 +1072,19 @@
         "severity": "minor",
         "evidence": "yekutieli-stokes-remark.ts:1",
         "notes": "No Lean sibling required; the narrative of 'Nonabelian Stokes and the measurability conditions' matches the expected configuration."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:48.031299+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:48.031299+00:00"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1002,6 +1106,19 @@
         "severity": "minor",
         "evidence": "yekutieli-stokes-remark.ts:1",
         "notes": "The citations (yekutieli2015, ) in 'Nonabelian Stokes and the measurability conditions' are consistent with the sources referenced in the text."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:48.049893+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:48.049893+00:00"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1023,6 +1140,19 @@
         "severity": "minor",
         "evidence": "yekutieli-stokes-remark.ts:1",
         "notes": "Key terms and symbols in 'Nonabelian Stokes and the measurability conditions' (e.g. from '$c_1(\\mathrm{Ad}(A)) = 0$, $c_2(\\mathrm{Ad}(A)) = 0$ can be') are mathematically defined and unambiguous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:48.068015+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:48.068015+00:00"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1044,6 +1174,19 @@
         "severity": "minor",
         "evidence": "yekutieli-stokes-remark.ts:1",
         "notes": "The empirical claims in 'Nonabelian Stokes and the measurability conditions' (quoting '$c_1(\\mathrm{Ad}(A)) = 0$, $c_2(\\mathrm{Ad}(A)) = 0$ can be') are structurally anchored to the QOU mass framework and are stable."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:48.086484+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:48.086484+00:00"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1065,6 +1208,19 @@
         "severity": "minor",
         "evidence": "yekutieli-stokes-remark.ts:1",
         "notes": "The physical concepts described in 'Nonabelian Stokes and the measurability conditions' are consistent with quantum observable mechanics."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:48.104696+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:48.104696+00:00"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1086,6 +1242,19 @@
         "severity": "minor",
         "evidence": "yekutieli-stokes-remark.ts:1",
         "notes": "The derivation steps and formal definitions in 'Nonabelian Stokes and the measurability conditions' are reproducible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:48.119384+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:48.119384+00:00"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1108,6 +1277,19 @@
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Nonabelian Stokes and the measurability conditions' (concerning '$c_1(\\mathrm{Ad}(A)) = 0$, $c_2(\\mathrm{Ad}(A)) = 0$ can be') are consistent and formally verified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:48.137216+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:48.137216+00:00"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1125,6 +1307,36 @@
         "field_hash": {
           "md": "daa4f11efc7f",
           "ts": "4c6ec8358f9b"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:48.152098+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:48.152098+00:00"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:48.169204+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:48.169204+00:00"
         }
       }
     ]

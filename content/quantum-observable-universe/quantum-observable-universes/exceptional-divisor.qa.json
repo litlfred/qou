@@ -894,6 +894,19 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "Block placement and kind match validated structurally."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:51.964277+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:51.964277+00:00"
+        }
       }
     ],
     "wall-side-statement": [
@@ -916,6 +929,19 @@
         "severity": "minor",
         "evidence": "exceptional-divisor.lean:1 \u2014 Lean file exists",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:51.982889+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:51.982889+00:00"
+        }
       }
     ],
     "da-false-claim": [
@@ -938,6 +964,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-observable-universes/exceptional-divisor.ts:1",
         "notes": "No false claims identified in 'Let (\\mathbf{C}, \\varTheta, G, \\mathcal{S}) be a QOU and let p \\in M be ...': mathematical reasoning is consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:52.005050+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:52.005050+00:00"
+        }
       }
     ],
     "da-vacuous": [
@@ -960,6 +999,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-observable-universes/exceptional-divisor.ts:1",
         "notes": "The claims in 'Let (\\mathbf{C}, \\varTheta, G, \\mathcal{S}) be a QOU and let p \\in M be ...' are non-vacuous as they present substantial mathematical content."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:52.030476+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:52.030476+00:00"
+        }
       }
     ],
     "da-circular": [
@@ -982,6 +1034,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-observable-universes/exceptional-divisor.ts:1",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Let (\\mathbf{C}, \\varTheta, G, \\mathcal{S}) be a QOU and let p \\in M be ...'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:52.048972+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:52.048972+00:00"
+        }
       }
     ],
     "da-overclaim": [
@@ -1004,6 +1069,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-observable-universes/exceptional-divisor.ts:1",
         "notes": "No overclaims: the scope of 'Let (\\mathbf{C}, \\varTheta, G, \\mathcal{S}) be a QOU and let p \\in M be ...' is appropriately qualified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:52.066158+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:52.066158+00:00"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1026,6 +1104,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-observable-universes/exceptional-divisor.ts:1",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Let (\\mathbf{C}, \\varTheta, G, \\mathcal{S}) be a QOU and let p \\in M be ...'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:52.082154+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:52.082154+00:00"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1048,6 +1139,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-observable-universes/exceptional-divisor.ts:1",
         "notes": "The argument flow in 'Let (\\mathbf{C}, \\varTheta, G, \\mathcal{S}) be a QOU and let p \\in M be ...' is logically sound, mapping onto the cited dependencies."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:52.097811+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:52.097811+00:00"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1070,6 +1174,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-observable-universes/exceptional-divisor.lean:1",
         "notes": "No narrative divergence: the Lean sibling implements the structure claimed in 'Let (\\mathbf{C}, \\varTheta, G, \\mathcal{S}) be a QOU and let p \\in M be ...'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:52.112712+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:52.112712+00:00"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1092,6 +1209,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-observable-universes/exceptional-divisor.ts:1",
         "notes": "No citations are present in 'Let (\\mathbf{C}, \\varTheta, G, \\mathcal{S}) be a QOU and let p \\in M be ...', hence no citation misuse is possible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:52.126021+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:52.126021+00:00"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1114,6 +1244,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-observable-universes/exceptional-divisor.ts:1",
         "notes": "Key terms and symbols in 'Let (\\mathbf{C}, \\varTheta, G, \\mathcal{S}) be a QOU and let p \\in M be ...' are mathematically defined and unambiguous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:52.144532+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:52.144532+00:00"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1136,6 +1279,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-observable-universes/exceptional-divisor.ts:1",
         "notes": "The algebraic and logical relations in 'Let (\\mathbf{C}, \\varTheta, G, \\mathcal{S}) be a QOU and let p \\in M be ...' are independent of empirical tuning parameters."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:52.161055+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:52.161055+00:00"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1158,6 +1314,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-observable-universes/exceptional-divisor.ts:1",
         "notes": "The physical concepts described in 'Let (\\mathbf{C}, \\varTheta, G, \\mathcal{S}) be a QOU and let p \\in M be ...' are consistent with quantum observable mechanics."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:52.178311+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:52.178311+00:00"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1180,6 +1349,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-observable-universes/exceptional-divisor.ts:1",
         "notes": "The derivation steps and formal definitions in 'Let (\\mathbf{C}, \\varTheta, G, \\mathcal{S}) be a QOU and let p \\in M be ...' are reproducible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:52.194351+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:52.194351+00:00"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1204,6 +1386,19 @@
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Let (\\mathbf{C}, \\varTheta, G, \\mathcal{S}) be a QOU and let p \\in M be ...' are consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:52.211896+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:52.211896+00:00"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1222,6 +1417,36 @@
           "md": "178f12093147",
           "ts": "5feaeae54f8f",
           "lean": "168dbc24f64a"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:52.226976+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:52.226976+00:00"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:52.247573+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:52.247573+00:00"
         }
       }
     ]

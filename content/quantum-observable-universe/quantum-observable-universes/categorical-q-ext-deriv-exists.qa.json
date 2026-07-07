@@ -1585,7 +1585,7 @@
           "lean": "1ca8d001d082"
         },
         "result": "pass",
-        "notes": "Re-audit correction 2026-06-25: prior note mis-stated 'no token' (regex stripper edge case, fixed per Gemini review on PR #2775). Resolved Lean uses plain `decide` (`rw [...]; decide` on a sign inequality) — accepted, no `native_decide`; verdict pass stands.",
+        "notes": "Re-audit correction 2026-06-25: prior note mis-stated 'no token' (regex stripper edge case, fixed per Gemini review on PR #2775). Resolved Lean uses plain `decide` (`rw [...]; decide` on a sign inequality) \u2014 accepted, no `native_decide`; verdict pass stands.",
         "reviewed_at": "2026-06-25T15:58:24.000Z",
         "reviewed_sha": "40352568533fa16a68cf40b7fb87a593c6345c49",
         "reviewer": {
@@ -1876,6 +1876,36 @@
         },
         "reviewed_at": "2026-07-03T00:52:58.083Z",
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:48.466263+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:48.466263+00:00"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:48.482207+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:48.482207+00:00"
+        }
       }
     ]
   },

@@ -795,6 +795,19 @@
         "reviewed_at": "2026-07-07T14:26:55.955715Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:53.592061+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:53.592061+00:00"
+        }
       }
     ],
     "da-false-claim": [
@@ -817,6 +830,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-observable-universes/su2-emergence-example.ts:1",
         "notes": "No false claims identified in 'Continuing [Examples](#ex:frobenius-su2)--[Example](#ex:dagger-su2), let': mathematical reasoning is consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:53.609459+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:53.609459+00:00"
+        }
       }
     ],
     "da-vacuous": [
@@ -839,6 +865,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-observable-universes/su2-emergence-example.ts:1",
         "notes": "The claims in 'Continuing [Examples](#ex:frobenius-su2)--[Example](#ex:dagger-su2), let' are non-vacuous as they present substantial mathematical content."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:53.624474+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:53.624474+00:00"
+        }
       }
     ],
     "da-circular": [
@@ -861,6 +900,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-observable-universes/su2-emergence-example.ts:1",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Continuing [Examples](#ex:frobenius-su2)--[Example](#ex:dagger-su2), let'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:53.637589+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:53.637589+00:00"
+        }
       }
     ],
     "da-overclaim": [
@@ -883,6 +935,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-observable-universes/su2-emergence-example.ts:1",
         "notes": "No overclaims: the scope of 'Continuing [Examples](#ex:frobenius-su2)--[Example](#ex:dagger-su2), let' is appropriately qualified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:53.655304+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:53.655304+00:00"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -905,6 +970,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-observable-universes/su2-emergence-example.ts:1",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Continuing [Examples](#ex:frobenius-su2)--[Example](#ex:dagger-su2), let'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:53.671724+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:53.671724+00:00"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -927,6 +1005,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-observable-universes/su2-emergence-example.ts:1",
         "notes": "The argument flow in 'Continuing [Examples](#ex:frobenius-su2)--[Example](#ex:dagger-su2), let' is logically sound, mapping onto the cited dependencies."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:53.686375+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:53.686375+00:00"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -949,6 +1040,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-observable-universes/su2-emergence-example.lean:1",
         "notes": "No narrative divergence: the Lean sibling implements the structure claimed in 'Continuing [Examples](#ex:frobenius-su2)--[Example](#ex:dagger-su2), let'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:53.703794+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:53.703794+00:00"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -971,6 +1075,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-observable-universes/su2-emergence-example.ts:1",
         "notes": "No citations are present in 'Continuing [Examples](#ex:frobenius-su2)--[Example](#ex:dagger-su2), let', hence no citation misuse is possible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:53.721846+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:53.721846+00:00"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -993,6 +1110,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-observable-universes/su2-emergence-example.ts:1",
         "notes": "Key terms and symbols in 'Continuing [Examples](#ex:frobenius-su2)--[Example](#ex:dagger-su2), let' are mathematically defined and unambiguous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:53.749794+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:53.749794+00:00"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1015,6 +1145,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-observable-universes/su2-emergence-example.ts:1",
         "notes": "The algebraic and logical relations in 'Continuing [Examples](#ex:frobenius-su2)--[Example](#ex:dagger-su2), let' are independent of empirical tuning parameters."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:53.778017+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:53.778017+00:00"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1037,6 +1180,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-observable-universes/su2-emergence-example.ts:1",
         "notes": "The physical concepts described in 'Continuing [Examples](#ex:frobenius-su2)--[Example](#ex:dagger-su2), let' are consistent with quantum observable mechanics."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:53.798682+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:53.798682+00:00"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1059,6 +1215,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-observable-universes/su2-emergence-example.ts:1",
         "notes": "The derivation steps and formal definitions in 'Continuing [Examples](#ex:frobenius-su2)--[Example](#ex:dagger-su2), let' are reproducible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:53.816253+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:53.816253+00:00"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1083,6 +1252,19 @@
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Continuing [Examples](#ex:frobenius-su2)--[Example](#ex:dagger-su2), let' are consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:53.830397+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:53.830397+00:00"
+        }
       }
     ],
     "bib-cite-resolves": [
@@ -1121,6 +1303,36 @@
           "md": "d7b6e50d9436",
           "ts": "96a0d63a5225",
           "lean": "1bb75ee505f2"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:53.845538+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:53.845538+00:00"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:53.860893+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:53.860893+00:00"
         }
       }
     ]

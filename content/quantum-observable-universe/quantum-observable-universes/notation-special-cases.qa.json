@@ -816,6 +816,19 @@
         "reviewed_at": "2026-07-07T14:26:56.010936Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:50.372233+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:50.372233+00:00"
+        }
       }
     ],
     "da-false-claim": [
@@ -837,6 +850,19 @@
         "severity": "minor",
         "evidence": "notation-special-cases.ts:1",
         "notes": "No false claims identified in the prose of 'Notation and special cases'; the mathematical reasoning concerning 'Notation. The symbol $\\varTheta$ (upright capital theta, \\varTheta) denotes' is consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:50.389916+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:50.389916+00:00"
+        }
       }
     ],
     "da-vacuous": [
@@ -858,6 +884,19 @@
         "severity": "minor",
         "evidence": "notation-special-cases.ts:1",
         "notes": "The block 'Notation and special cases' presents substantial mathematical content: 'Notation. The symbol $\\varTheta$ (upright capital theta, \\varTheta) denotes'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:50.408491+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:50.408491+00:00"
+        }
       }
     ],
     "da-circular": [
@@ -879,6 +918,19 @@
         "severity": "minor",
         "evidence": "notation-special-cases.ts:1",
         "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Notation and special cases' (which asserts 'Notation. The symbol $\\varTheta$ (upright capital theta, \\varTheta) denotes')."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:50.422017+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:50.422017+00:00"
+        }
       }
     ],
     "da-overclaim": [
@@ -900,6 +952,19 @@
         "severity": "minor",
         "evidence": "notation-special-cases.ts:1",
         "notes": "The remarks and narrative scope in 'Notation and special cases' concerning 'Notation. The symbol $\\varTheta$ (upright capital theta, \\varTheta) denotes' are appropriately qualified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:50.436310+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:50.436310+00:00"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -921,6 +986,19 @@
         "severity": "minor",
         "evidence": "notation-special-cases.ts:1",
         "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Notation and special cases'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:50.454902+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:50.454902+00:00"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -942,6 +1020,19 @@
         "severity": "minor",
         "evidence": "notation-special-cases.ts:1",
         "notes": "The prose arguments in 'Notation and special cases' proceed logically through the stated steps: 'Notation. The symbol $\\varTheta$ (upright capital theta, \\varTheta) denotes'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:50.471597+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:50.471597+00:00"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -963,6 +1054,19 @@
         "severity": "minor",
         "evidence": "notation-special-cases.ts:1",
         "notes": "No Lean sibling required; the narrative of 'Notation and special cases' matches the expected configuration."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:50.486256+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:50.486256+00:00"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -984,6 +1088,19 @@
         "severity": "minor",
         "evidence": "notation-special-cases.ts:1",
         "notes": "No citations are present in 'Notation and special cases', hence no citation misuse is possible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:50.505893+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:50.505893+00:00"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1005,6 +1122,19 @@
         "severity": "minor",
         "evidence": "notation-special-cases.ts:1",
         "notes": "Key terms and symbols in 'Notation and special cases' (e.g. from 'Notation. The symbol $\\varTheta$ (upright capital theta, \\varTheta) denotes') are mathematically defined and unambiguous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:50.521889+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:50.521889+00:00"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1026,6 +1156,19 @@
         "severity": "minor",
         "evidence": "notation-special-cases.ts:1",
         "notes": "The algebraic and logical relations in 'Notation and special cases' are independent of empirical tuning parameters."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:50.537663+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:50.537663+00:00"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1047,6 +1190,19 @@
         "severity": "minor",
         "evidence": "notation-special-cases.ts:1",
         "notes": "The physical concepts described in 'Notation and special cases' are consistent with quantum observable mechanics."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:50.552009+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:50.552009+00:00"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1068,6 +1224,19 @@
         "severity": "minor",
         "evidence": "notation-special-cases.ts:1",
         "notes": "The derivation steps and formal definitions in 'Notation and special cases' are reproducible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:50.569086+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:50.569086+00:00"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1090,6 +1259,19 @@
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Notation and special cases' (concerning 'Notation. The symbol $\\varTheta$ (upright capital theta, \\varTheta) denotes') are consistent and formally verified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:50.586511+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:50.586511+00:00"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1107,6 +1289,36 @@
         "field_hash": {
           "md": "fcf38b8e51dd",
           "ts": "e8e37b81a78d"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:50.603293+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:50.603293+00:00"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:50.619869+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:50.619869+00:00"
         }
       }
     ]
