@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-07T12:37:49.739336+00:00",
-  "commitSha": "1be55fb41416b17ae6f149d015791358828abf08",
+  "computedAt": "2026-07-07T12:41:15.478792+00:00",
+  "commitSha": "829bbbc82d40d3c43faf327e0d9572fafd17b04d",
   "assertions": [
     {
       "name": "G1a_unimodular_magnitude",
-      "computed": 0.0,
+      "computed": 9.055679078826712e-72,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-25,
@@ -14,7 +14,7 @@
     },
     {
       "name": "G1b_magnitude_derivative_flat",
-      "computed": 1.1479437019748901e-35,
+      "computed": 9.055679078826712e-66,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-20,
@@ -30,7 +30,7 @@
     },
     {
       "name": "G3_crossfactor_sigma_unitary",
-      "computed": 2.2958874039497803e-41,
+      "computed": 0.0,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-20,
@@ -38,11 +38,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2005,
+  "durationMs": 4235,
   "computation": "qbeta-fmap-phi-b-channel-separation",
   "scriptFile": "qbeta_fmap_phi_b_channel_separation_probe.py",
-  "scriptHash": "4022b10ae9e0",
-  "scriptCommitSha": "1be55fb41416b17ae6f149d015791358828abf08",
+  "scriptHash": "2b859d7059f2",
+  "scriptCommitSha": "829bbbc82d40d3c43faf327e0d9572fafd17b04d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -63,12 +63,12 @@
       {
         "point": "zeta_4 (b^2 = 1/4, q = i)",
         "b_sq": "0.25",
-        "q": "(2.0670321098263988236e-43 + 1.0j)",
+        "q": "(4.0818387351412635823e-72 + 1.0j)",
         "points": [
           {
             "z": "0.1",
-            "abs_Phi_b_minus_1": "0.000e+00",
-            "d_abs_dz": "0.000e+00",
+            "abs_Phi_b_minus_1": "9.056e-72",
+            "d_abs_dz": "9.056e-66",
             "d_arg_dz": "1.773672",
             "crossfactor_abs_minus_1": "0.000e+00"
           },
@@ -91,12 +91,12 @@
             "abs_Phi_b_minus_1": "0.000e+00",
             "d_abs_dz": "0.000e+00",
             "d_arg_dz": "2.059236",
-            "crossfactor_abs_minus_1": "2.296e-41"
+            "crossfactor_abs_minus_1": "0.000e+00"
           },
           {
             "z": "0.2",
             "abs_Phi_b_minus_1": "0.000e+00",
-            "d_abs_dz": "1.148e-35",
+            "d_abs_dz": "0.000e+00",
             "d_arg_dz": "2.431784",
             "crossfactor_abs_minus_1": "0.000e+00"
           }
