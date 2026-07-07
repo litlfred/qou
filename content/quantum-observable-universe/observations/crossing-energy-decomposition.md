@@ -1,4 +1,4 @@
-The [crossing energy](#def:crossing-energy) assigns weight $+q$ to positive crossings and $-q^{-1}$ to negative crossings, where $q > 1$. Writing $q = e^\lambda$ with $\lambda = \ln q > 0$, the crossing weights decompose into symmetric and antisymmetric components under the mirror operation $\sigma$:
+The [crossing energy](#def:crossing-energy) assigns $+q$ to positive crossings and $-q^{-1}$ to negative crossings ($q > 1$). Writing $q = e^\lambda$ with $\lambda = \ln q > 0$, the weights decompose into symmetric and antisymmetric components under the mirror operation $\sigma$:
 
 $$
   q = \cosh\lambda + \sinh\lambda, \qquad
@@ -8,9 +8,9 @@ $$
 **Statement.**
 Let $\mathfrak{H}$ be a knot composite with crossing energy $\mathfrak{E}_{\mathrm{cross}}(\mathfrak{H}) = \sum_i \epsilon_i$, where $\epsilon_i \in \{q, -q^{-1}\}$.
 
-1. **Symmetric channel.** The component $E_{\mathrm{sym}}(\mathfrak{H}) = \sum_i |\epsilon_i| \cdot \cosh(\ln q) \cdot \mathrm{sgn}(\epsilon_i)$ remains invariant under the mirror operation $\sigma$, which reverses all crossing signs.
+1. **Symmetric channel.** The component $E_{\mathrm{sym}}(\mathfrak{H}) = \sum_i |\epsilon_i| \cdot \cosh(\ln q) \cdot \mathrm{sgn}(\epsilon_i)$ is invariant under $\sigma$.
 2. **Antisymmetric channel.** The component $E_{\mathrm{asym}}(\mathfrak{H}) = \sum_i |\epsilon_i| \cdot \sinh(\ln q) \cdot \mathrm{sgn}(\epsilon_i)$ reverses sign under $\sigma$.
-3. **Pair cancellation.** For a particle-antiparticle pair $(\mathfrak{H}, \mathfrak{H}^{\sigma})$, the combined crossing energy is strictly antisymmetric:
+3. **Pair cancellation.** For a particle-antiparticle pair $(\mathfrak{H}, \mathfrak{H}^{\sigma})$, the combined crossing energy is antisymmetric:
 
    $$
      \mathfrak{E}_{\mathrm{cross}}(\mathfrak{H}) + \mathfrak{E}_{\mathrm{cross}}(\mathfrak{H}^{\sigma})
@@ -24,11 +24,11 @@ Let $\mathfrak{H}$ be a knot composite with crossing energy $\mathfrak{E}_{\math
      = \tanh(\ln q),
    $$
 
-   which is independent of the specific knot composite $\mathfrak{H}$.
+   which is independent of $\mathfrak{H}$.
 
 ## Algebraic-to-hyperbolic bridge
 
-This decomposition serves as the per-crossing instance of a general identity. Writing $\lambda = \ln q$, every algebraic $q$-power maps to a hyperbolic exponential:
+Writing $\lambda = \ln q$, every algebraic $q$-power maps to a hyperbolic exponential:
 
 $$
   q^{n} = \cosh(n\lambda) + \sinh(n\lambda),
@@ -36,13 +36,13 @@ $$
   q^{n} - q^{-n} = 2\sinh(n\lambda).
 $$
 
-Consequently, the **quantum integer expresses a ratio of hyperbolic sines**:
+The quantum integer evaluates to a ratio of hyperbolic sines:
 
 $$
   [n]_q \;=\; \frac{q^{n} - q^{-n}}{q - q^{-1}}
   \;=\; \frac{\sinh(n\lambda)}{\sinh(\lambda)}.
 $$
 
-This details how the Hecke datum is archimedean: the discrete algebraic invariant $[n]_q \in \mathbb{Z}[q^{\pm 1/2}]$ evaluates the transcendental hyperbolic sine at the crossing rapidity $\lambda$. It functions as the $q$-deformed seed of the Kashaev volume realization ([Kashaev as Archimedean realisation](#rem:kashaev-as-archimedean-realization)), where the $N \to \infty$ limit of the colored Jones polynomial integrates these hyperbolic lengths into the transcendental knot volume. The $\cosh = q^{n} + q^{-n}$ symmetric (strong) and $\sinh = q^{n} - q^{-n}$ antisymmetric (Coulomb) channels represent the real and "rotational" parts of that exponential.
+This Archimedean evaluation of the Hecke datum seeds the Kashaev volume realization ([Kashaev as Archimedean realisation](#rem:kashaev-as-archimedean-realization)). The limit $N \to \infty$ of the colored Jones polynomial integrates these lengths into the knot volume. The symmetric $\cosh$ and antisymmetric $\sinh$ channels denote the real and rotational parts.
 
-These identities are formalized in the Lean sibling (`q_pow_eq_cosh_add_sinh`, `two_sinh_nat_log`, `qbracket_eq_sinh_ratio`), holding valid for all $q > 0$.
+We formalized these identities in Lean (`q_pow_eq_cosh_add_sinh`, `two_sinh_nat_log`, `qbracket_eq_sinh_ratio`) for $q > 0$.

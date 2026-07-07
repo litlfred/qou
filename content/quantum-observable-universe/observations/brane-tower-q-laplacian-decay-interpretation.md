@@ -1,3 +1,1 @@
-**Physical reading.** Dropping locality demands a summation over all causally connected knots. This sum is formally infinite. The q-Laplacian exponential mode-damping restricts the appreciable contributions to the lowest few jet levels. The remaining levels suffer geometric suppression. This renders the non-local integration finite. It is dominated by local contributions and computable to arbitrary precision by truncating the tower at any fixed level.
-
-This establishes the convergence underlying the treatment of composite operators. In the Gröbner–Shirshov tower expansion of a hadron's mass, the local single-jet contribution provides the leading term. The corrections form a geometric series scaling by $\hbar_q^2 \cdot q^{-2}$.
+**Physical reading.** Non-local integration restricts appreciable contributions to the lowest jet levels. The local single-jet contribution leads. Corrections form a geometric series. 

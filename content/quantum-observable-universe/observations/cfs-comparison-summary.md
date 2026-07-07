@@ -1,36 +1,24 @@
-Finster's causal fermion systems (CFS) [`finster2021`, `finster2022`, `finster2024`, `dappiaggi2024`] are a parallel programme for unifying quantum field theory with general relativity. CFS posits a Borel measure $\rho$ on a set of operators with bounded signature. Dynamics are determined by a causal action $\mathcal{S}_{\mathrm{CFS}} = \iint \mathcal{L}_{\mathrm{CFS}}(x, y)\,d\rho\,d\rho$, where $\mathcal{L}_{\mathrm{CFS}}$ is built from differences $\lvert\lambda_i\rvert - \lvert\lambda_j\rvert$ of eigenvalues of the operator product $x \cdot y$. The non-commutative probability lens places CFS and QOU on common ground. The comparison yields three structural conclusions.
+Finster's causal fermion systems (CFS) [`finster2021`] provide a parallel unification programme. The non-commutative probability lens places CFS and QOU on common ground.
 
 ## Structural agreements
 
-1. **Same carrier algebra.** Both QOU's inductive-limit Hecke algebra $(H_\infty(q), \mathrm{tr}_M)$ — embedded via Jones–Wenzl GNS as a type II$_1$ factor ([algebraic GNS embedding](#prop:algebraic-gns-embedding)) — and CFS's regularised operator algebra are finite type II$_1$ factors with faithful tracial state.
-2. **Same universality class.** Under joint Faddeev / Kerov–Vershik scaling, both sit in the free-probability universality class (Voiculescu–Biane, Féray–Méliot [`biane1998`]). The asymptotic spectral measure of QOU under the q-Plancherel weight ([q-Plancherel asymptotic skeleton](#prop:q-plancherel-asymptotic-skeleton)) and CFS's universal measure $\rho$ are objects in the same class of free-probability spectral distributions.
-3. **Common commutative-shadow data type.** The traceful Plancherel projection $\Pi_{\mathrm{tr}} \colon (A_q, \mathrm{tr}_M) \to (\widehat{A}_q, \tilde w_\lambda, \{\chi_\lambda\})$ sends QOU's non-commutative algebraic data to a (measure, functional-family) pair on the commutative spectrum. This is structurally a CFS-style data type. The kernel of $\Pi_{\mathrm{tr}}$ contains commutators, braid relations, knot crossing-order, and non-trace free-probability cumulants. QOU has this data; CFS structurally cannot represent it.
+1. **Same carrier algebra.** Both embed as finite type II$_1$ factors.
+2. **Same universality class.** Both occupy the free-probability universality class.
+3. **Common commutative-shadow data type.** The traceful Plancherel projection maps non-commutative algebraic data to a commutative spectrum measure.
 
 ## Structural differences
 
-The two continuum theories evaluate different real-valued functionals on the shared spectral data. The QOU natural quadratic kernel is the Frobenius Gram matrix $G(x, y) := \mathrm{tr}_M(x \cdot y)$ (bilinear, trace-additive in the spectrum of $x \cdot y$). The Finster causal Lagrangian $\mathcal{L}_{\mathrm{CFS}}(x, y)$ is built from eigenvalue differences (non-linear, trace-subtractive).
+QOU evaluates the Frobenius Gram matrix $G(x, y) := \mathrm{tr}_M(x \cdot y)$. The Finster causal Lagrangian $\mathcal{L}_{\mathrm{CFS}}(x, y)$ evaluates eigenvalue differences.
 
-This functional mismatch exhibits concretely:
-
-- **Strict pointwise mismatch at $n = 2$.** On the unit pair $(1, 1) \in H_2(R, q) \times H_2(R, q)$:
-  $$
-    G(1, 1) = \mathrm{tr}_M(1) = 1
-    \qquad\text{but}\qquad
-    \mathcal{L}_{\mathrm{CFS}}(1, 1) = 0
-  $$
-  (Finster's pair-difference functional vanishes when all eigenvalues of $x \cdot y$ are equal).
-- **Integral mismatch under any centered free-probability limit.** $G$ is odd under $x \mapsto -x$ (trace is linear); $\mathcal{L}_{\mathrm{CFS}}$ is even (depends on $\lvert\lambda\rvert$). Under any centered limit measure $\rho_\infty$ symmetric under $x \mapsto -x$: $\langle G \rangle_{\rho_\infty\otimes\rho_\infty} = 0$ but $\langle \mathcal{L}_{\mathrm{CFS}}\rangle > 0$ strictly (by Finster's non-negativity).
-- **Explicit algebraic decomposition.** Even taking the squared QOU kernel $G_2(x, y) := \mathrm{tr}_M((x\cdot y)^2)$ (an even modification of $G$) does not produce equality. For self-adjoint $x, y$ with real-spectrum product on a block of dimension $n$ with normalised Markov trace ($\mathrm{tr}_M(1) = 1$), the Finster pair-difference Lagrangian satisfies
-  $$
-    \mathcal{L}_{\mathrm{CFS}}(x, y)
-    = n^{2}\,\bigl(G_2(x, y) - \lVert x \cdot y\rVert_1^{\,2}\bigr),
-  $$
-  where $\lVert x \cdot y\rVert_1 = \mathrm{tr}_M\lvert x \cdot y\rvert$ is the (normalised) trace-class norm. Equivalently, after normalising $\mathcal{L}_{\mathrm{CFS}}$ by $n^{2}$: $\mathcal{L}_{\mathrm{CFS}}^{(\mathrm{norm})}(x, y) = G_2(x, y) - \lVert x \cdot y\rVert_1^{\,2}$. The Finster action equals QOU's energy-quadratic minus an explicit trace-class correction. The correction term $\lVert x \cdot y\rVert_1^{\,2}$ is the concentration penalty that distinguishes CFS dynamics from QOU dynamics. On the unit pair $(1, 1)$, it equals $G_2$, giving $\mathcal{L}_{\mathrm{CFS}}(1,1) = 0$ exactly.
+This yields functional mismatches:
+- **Pointwise mismatch.** $G(1, 1) = 1$ but $\mathcal{L}_{\mathrm{CFS}}(1, 1) = 0$.
+- **Integral mismatch.** $G$ is odd under $x \mapsto -x$; $\mathcal{L}_{\mathrm{CFS}}$ is even.
+- **Algebraic decomposition.** $\mathcal{L}_{\mathrm{CFS}}^{(\mathrm{norm})}(x, y) = G_2(x, y) - \lVert x \cdot y\rVert_1^{\,2}$.
 
 ## Open numerical question
 
-Whether the correction moment $\langle \lVert x \cdot y\rVert_1^{\,2}\rangle_{\rho_\infty}$ might coincidentally vanish at the QOU substrate value $q_0 \approx 1.110$ remains open. It is generically expected to be non-zero given the full support of the limit measure. If this integral vanishes at $q_0$, QOU and CFS predict equal total action values at the substrate (though they still differ in local dynamics via the pointwise mismatch). Otherwise, QOU and CFS are confirmed as distinct continuum theories of the same operator-algebra substrate.
+Whether the correction moment vanishes at $q_0 \approx 1.110$ remains open. 
 
 ## Corollary for QOU
 
-The framework developed in this section (non-commutative probability, q-CLT, Jones–Wenzl carrier, Plancherel asymptotics) stands independently of any CFS comparison. The QOU phenomena that CFS cannot natively express (knot topology, braid statistics, chirality, Gröbner–Shirshov reduction) are pre-projection algebra data. They are killed by $\Pi_{\mathrm{tr}}$ and are therefore outside the reach of any commutative-shadow framework. Particle physics is derived from these QOU phenomena. Consequently, QOU's predictions are not recoverable from a Finster-style continuum theory alone.
+The QOU phenomena (knot topology, braid statistics) are pre-projection algebra data. They lie outside any commutative-shadow framework.

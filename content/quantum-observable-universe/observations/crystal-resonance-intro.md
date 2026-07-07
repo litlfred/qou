@@ -1,7 +1,6 @@
-The proton-radius and gravity sections extract a local value of $q$ from existing data. This section addresses experiments designed to probe substrate variation directly. 
+Macroscopic structures typically average over substrate variation, blurring the precise local value of $q$. Crystal resonance avoids this. A perfect lattice forces constructive interference of Reeb shifts. This section specifies the crystal experiments.
+- Experimental configuration outlines the necessary hardware, from continuous-wave drivers to ultra-pure crystalline targets.
+- Resonance spectrum and measurement defines the observables, linking the $q$-dependent Bragg peaks to the underlying geometry.
+- Expected bounds and sensitivity analyses the projected accuracy of the measurement.
 
-Lattice-probe models appear first. A periodic crystal is modeled sampling the substrate phase. This methodology is extended to large-aperture Substrate Telescopes. Collective rotor dynamics in the lattice predicts a non-monotonic magnetic-friction signature.
-
-The experimental discussion follows. Existing resonance measurements are summarized. Proposed lattice geometries and planned experiments are documented alongside their experimental protocols. The section concludes with Bose-Einstein condensate (BEC) vortex predictions, supplying the baseline for the Breit-Wheeler high-energy pair-creation analysis.
-
-_(draft.)_
+We establish the $q$-crystal shift effect first.
