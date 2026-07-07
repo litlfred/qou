@@ -66,7 +66,8 @@ def main() -> int:
     print("=" * 78)
     print(" q-Hermite entry gate for the c_k precision ladder (0 fitted params)")
     print("=" * 78)
-    wb = WitnessBuilder("qbeta-c4-qhermite-entry-gate", engine="sympy+mpmath")
+    wb = WitnessBuilder("qbeta-c4-qhermite-entry-gate", engine="sympy",
+                        engine_version=f"sympy {sp.__version__} + mpmath {mp.__version__}")
     wb.set_description(
         "Formalize-first entry gate: does the natural continuous q-Hermite "
         "structure supply the c_k? q-Hermite gen func = product of compact Φ_q "
