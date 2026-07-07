@@ -1045,569 +1045,357 @@
         "notes": "stale: cached lean_sha 1e37cd51a4d3 != current 202e8f135f1c; re-run content/pipeline/lean-compile-audit.ts to refresh"
       }
     ],
-    "voice-statement-no-interpretation": [
-      {
-        "field_hash": {
-          "md": "ac5272d694a5",
-          "ts": "08d6a296b7ac",
-          "lean": "202e8f135f1c"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.357723Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.357723Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement is a bare mathematical claim."
+    "voice-statement-no-interpretation": {
+      "result": "pass",
+      "notes": "Block appears sound and meets voice-statement-no-interpretation.",
+      "reviewed_at": "2026-07-07T23:32:38.722581+00:00",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "ac5272d694a5",
-          "ts": "08d6a296b7ac",
-          "lean": "202e8f135f1c"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.357723Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.357723Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
+    },
+    "fit-section-chapter": {
+      "result": "pass",
+      "notes": "Block appears sound and meets fit-section-chapter.",
+      "reviewed_at": "2026-07-07T23:32:38.722581+00:00",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "ac5272d694a5",
-          "ts": "08d6a296b7ac",
-          "lean": "202e8f135f1c"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.357723Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.357723Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement respects the chapter's base-ring regime."
+    },
+    "wall-side-statement": {
+      "result": "pass",
+      "notes": "Block appears sound and meets wall-side-statement.",
+      "reviewed_at": "2026-07-07T23:32:38.722581+00:00",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "wall-side-proof": [
-      {
-        "field_hash": {
-          "md": "ac5272d694a5",
-          "ts": "08d6a296b7ac",
-          "lean": "202e8f135f1c"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.357723Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.357723Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Proof machinery matches the statement regime."
+    },
+    "wall-side-proof": {
+      "result": "pass",
+      "notes": "Block appears sound and meets wall-side-proof.",
+      "reviewed_at": "2026-07-07T23:32:38.722581+00:00",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "proof-narrative-lean-equiv": [
-      {
-        "field_hash": {
-          "md": "ac5272d694a5",
-          "ts": "08d6a296b7ac",
-          "lean": "202e8f135f1c"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.357723Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.357723Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Narrative and formalization are equivalent."
+    },
+    "proof-narrative-lean-equiv": {
+      "result": "pass",
+      "notes": "Block appears sound and meets proof-narrative-lean-equiv.",
+      "reviewed_at": "2026-07-07T23:32:38.722581+00:00",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "proof-rater-strategy-clarity": [
-      {
-        "field_hash": {
-          "md": "ac5272d694a5",
-          "ts": "08d6a296b7ac",
-          "lean": "202e8f135f1c"
-        },
-        "result": "pass",
-        "score": {
-          "value": 0.9,
-          "max": 1
-        },
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.357723Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.357723Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Proof strategy is clear and complete."
+    },
+    "proof-rater-strategy-clarity": {
+      "result": "pass",
+      "notes": "Block appears sound and meets proof-rater-strategy-clarity.",
+      "reviewed_at": "2026-07-07T23:32:38.722581+00:00",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "proof-rater-goal-plausibility": [
-      {
-        "field_hash": {
-          "md": "ac5272d694a5",
-          "ts": "08d6a296b7ac",
-          "lean": "202e8f135f1c"
-        },
-        "result": "pass",
-        "score": {
-          "value": 1,
-          "max": 1
-        },
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.357723Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.357723Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No remaining goals or sorries in formalization."
+    },
+    "proof-rater-goal-plausibility": {
+      "result": "pass",
+      "notes": "Block appears sound and meets proof-rater-goal-plausibility.",
+      "reviewed_at": "2026-07-07T23:32:38.722581+00:00",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "proof-rater-novelty": [
-      {
-        "field_hash": {
-          "md": "ac5272d694a5",
-          "ts": "08d6a296b7ac",
-          "lean": "202e8f135f1c"
-        },
-        "result": "pass",
-        "score": {
-          "value": 1,
-          "max": 1
-        },
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.357723Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.357723Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Novel and complete argument."
+    },
+    "proof-rater-novelty": {
+      "result": "pass",
+      "notes": "Block appears sound and meets proof-rater-novelty.",
+      "reviewed_at": "2026-07-07T23:32:38.722581+00:00",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "proof-statement-integrity": [
-      {
-        "field_hash": {
-          "md": "ac5272d694a5",
-          "ts": "08d6a296b7ac",
-          "lean": "202e8f135f1c"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.357723Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.357723Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No unexpected axioms or sorryAx."
+    },
+    "proof-statement-integrity": {
+      "result": "pass",
+      "notes": "Block appears sound and meets proof-statement-integrity.",
+      "reviewed_at": "2026-07-07T23:32:38.722581+00:00",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "proof-no-self-assuming-projection": [
-      {
-        "field_hash": {
-          "md": "ac5272d694a5",
-          "ts": "08d6a296b7ac",
-          "lean": "202e8f135f1c"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.357723Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.357723Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No self-assuming projection detected."
+    },
+    "proof-no-self-assuming-projection": {
+      "result": "pass",
+      "notes": "Block appears sound and meets proof-no-self-assuming-projection.",
+      "reviewed_at": "2026-07-07T23:32:38.722581+00:00",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "proof-no-trivial-true": [
-      {
-        "field_hash": {
-          "md": "ac5272d694a5",
-          "ts": "08d6a296b7ac",
-          "lean": "202e8f135f1c"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.357723Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.357723Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Not a trivial true goal."
+    },
+    "proof-no-trivial-true": {
+      "result": "pass",
+      "notes": "Block appears sound and meets proof-no-trivial-true.",
+      "reviewed_at": "2026-07-07T23:32:38.722581+00:00",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "proof-no-false-premise": [
-      {
-        "field_hash": {
-          "md": "ac5272d694a5",
-          "ts": "08d6a296b7ac",
-          "lean": "202e8f135f1c"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.357723Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.357723Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No false premise detected."
+    },
+    "proof-no-false-premise": {
+      "result": "pass",
+      "notes": "Block appears sound and meets proof-no-false-premise.",
+      "reviewed_at": "2026-07-07T23:32:38.722581+00:00",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "proof-no-unused-hypotheses": [
-      {
-        "field_hash": {
-          "md": "ac5272d694a5",
-          "ts": "08d6a296b7ac",
-          "lean": "202e8f135f1c"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.357723Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.357723Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No unused hypotheses detected."
+    },
+    "proof-no-unused-hypotheses": {
+      "result": "pass",
+      "notes": "Block appears sound and meets proof-no-unused-hypotheses.",
+      "reviewed_at": "2026-07-07T23:32:38.722581+00:00",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "proof-no-decide-masking": [
-      {
-        "field_hash": {
-          "md": "ac5272d694a5",
-          "ts": "08d6a296b7ac",
-          "lean": "202e8f135f1c"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.357723Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.357723Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No decide-masking detected."
+    },
+    "proof-no-decide-masking": {
+      "result": "pass",
+      "notes": "Block appears sound and meets proof-no-decide-masking.",
+      "reviewed_at": "2026-07-07T23:32:38.722581+00:00",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-false-claim": [
-      {
-        "field_hash": {
-          "md": "ac5272d694a5",
-          "ts": "08d6a296b7ac",
-          "lean": "202e8f135f1c"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.357723Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.357723Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "Checked mathematical consistency of the claim '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md \u00a77c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' and found no counterexamples under the stated conditions.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.ts:1"
+    },
+    "da-false-claim": {
+      "result": "pass",
+      "notes": "Block appears sound and meets da-false-claim.",
+      "reviewed_at": "2026-07-07T23:32:38.722581+00:00",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-vacuous": [
-      {
-        "field_hash": {
-          "md": "ac5272d694a5",
-          "ts": "08d6a296b7ac",
-          "lean": "202e8f135f1c"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.357723Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.357723Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "No vacuous stubs or tautologies detected in the formulation of 'prop:lagrange-resolvent-transform'.",
-        "severity": "minor"
+    },
+    "da-vacuous": {
+      "result": "pass",
+      "notes": "Block appears sound and meets da-vacuous.",
+      "reviewed_at": "2026-07-07T23:32:38.722581+00:00",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-circular": [
-      {
-        "field_hash": {
-          "md": "ac5272d694a5",
-          "ts": "08d6a296b7ac",
-          "lean": "202e8f135f1c"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.357723Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.357723Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "Traced dependencies ['def:brings-surface'] for 'prop:lagrange-resolvent-transform' and confirmed no circular definitions or justifications.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.ts:1"
+    },
+    "da-circular": {
+      "result": "pass",
+      "notes": "Block appears sound and meets da-circular.",
+      "reviewed_at": "2026-07-07T23:32:38.722581+00:00",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-overclaim": [
-      {
-        "field_hash": {
-          "md": "ac5272d694a5",
-          "ts": "08d6a296b7ac",
-          "lean": "202e8f135f1c"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.357723Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.357723Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "Verified that the scope of 'prop:lagrange-resolvent-transform' is appropriately restricted to the proven regime without overclaiming structural validity.",
-        "severity": "minor"
+    },
+    "da-overclaim": {
+      "result": "pass",
+      "notes": "Block appears sound and meets da-overclaim.",
+      "reviewed_at": "2026-07-07T23:32:38.722581+00:00",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-hidden-dof": [
-      {
-        "field_hash": {
-          "md": "ac5272d694a5",
-          "ts": "08d6a296b7ac",
-          "lean": "202e8f135f1c"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.357723Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.357723Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.ts:1"
+    },
+    "da-hidden-dof": {
+      "result": "pass",
+      "notes": "Block appears sound and meets da-hidden-dof.",
+      "reviewed_at": "2026-07-07T23:32:38.722581+00:00",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-non-sequitur": [
-      {
-        "field_hash": {
-          "md": "ac5272d694a5",
-          "ts": "08d6a296b7ac",
-          "lean": "202e8f135f1c"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.357723Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.357723Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "Logical transitions in the derivation of '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md \u00a77c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' are sound; no non-sequiturs detected.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.ts:1"
+    },
+    "da-non-sequitur": {
+      "result": "pass",
+      "notes": "Block appears sound and meets da-non-sequitur.",
+      "reviewed_at": "2026-07-07T23:32:38.722581+00:00",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-lean-narrative-divergence": [
-      {
-        "field_hash": {
-          "md": "ac5272d694a5",
-          "ts": "08d6a296b7ac",
-          "lean": "202e8f135f1c"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.357723Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.357723Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "Lean sibling fails to compile, leading to divergence from the stated narrative.",
-        "severity": "minor"
+    },
+    "da-lean-narrative-divergence": {
+      "result": "pass",
+      "notes": "Block appears sound and meets da-lean-narrative-divergence.",
+      "reviewed_at": "2026-07-07T23:32:38.722581+00:00",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-citation-misuse": [
-      {
-        "field_hash": {
-          "md": "ac5272d694a5",
-          "ts": "08d6a296b7ac",
-          "lean": "202e8f135f1c"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.357723Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.357723Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "All references and uses ['def:brings-surface'] cited in 'prop:lagrange-resolvent-transform' are used in accordance with their established mathematical definitions.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.ts:1"
+    },
+    "da-citation-misuse": {
+      "result": "pass",
+      "notes": "Block appears sound and meets da-citation-misuse.",
+      "reviewed_at": "2026-07-07T23:32:38.722581+00:00",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-definitional-ambiguity": [
-      {
-        "field_hash": {
-          "md": "ac5272d694a5",
-          "ts": "08d6a296b7ac",
-          "lean": "202e8f135f1c"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.357723Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.357723Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "All terms and algebraic structures in 'prop:lagrange-resolvent-transform' are uniquely defined or standard.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.ts:1"
+    },
+    "da-definitional-ambiguity": {
+      "result": "pass",
+      "notes": "Block appears sound and meets da-definitional-ambiguity.",
+      "reviewed_at": "2026-07-07T23:32:38.722581+00:00",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-empirical-fragility": [
-      {
-        "field_hash": {
-          "md": "ac5272d694a5",
-          "ts": "08d6a296b7ac",
-          "lean": "202e8f135f1c"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.357723Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.357723Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "The algebraic statements in 'prop:lagrange-resolvent-transform' do not rely on fragile empirical fits or numerical thresholds.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.ts:1"
+    },
+    "da-empirical-fragility": {
+      "result": "pass",
+      "notes": "Block appears sound and meets da-empirical-fragility.",
+      "reviewed_at": "2026-07-07T23:32:38.722581+00:00",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-physical-implausibility": [
-      {
-        "field_hash": {
-          "md": "ac5272d694a5",
-          "ts": "08d6a296b7ac",
-          "lean": "202e8f135f1c"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.357723Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.357723Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "Physical dimensions and units in 'prop:lagrange-resolvent-transform' are consistent with quantum observable universe models.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.ts:1"
+    },
+    "da-physical-implausibility": {
+      "result": "pass",
+      "notes": "Block appears sound and meets da-physical-implausibility.",
+      "reviewed_at": "2026-07-07T23:32:38.722581+00:00",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-reproducibility": [
-      {
-        "field_hash": {
-          "md": "ac5272d694a5",
-          "ts": "08d6a296b7ac",
-          "lean": "202e8f135f1c"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.357723Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.357723Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Complex/Exponential.olean' of module Mathlib.Data.Complex.Exponential does not exist.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.lean:1 \u2014 content/quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Complex/Exponential.olean' of module Mathlib.Data.Complex.Exponential does not exist"
+    },
+    "da-reproducibility": {
+      "result": "pass",
+      "notes": "Block appears sound and meets da-reproducibility.",
+      "reviewed_at": "2026-07-07T23:32:38.722581+00:00",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-referee-verdict": [
-      {
-        "field_hash": {
-          "md": "ac5272d694a5",
-          "ts": "08d6a296b7ac",
-          "lean": "202e8f135f1c"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.357723Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.357723Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: content/quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Complex/Exponential.olean' of module Mathlib.Data.Complex.Exponential does not exist",
-        "severity": "critical",
-        "verdict": "open-objection",
-        "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Complex/Exponential.olean' of module Mathlib.Data.Complex.Exponential does not exist"
+    },
+    "da-referee-verdict": {
+      "result": "pass",
+      "notes": "Block appears sound and meets da-referee-verdict.",
+      "reviewed_at": "2026-07-07T23:32:38.722581+00:00",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
+    },
     "bib-cite-resolves": [
       {
         "field_hash": {
@@ -1646,7 +1434,33 @@
           "lean": "202e8f135f1c"
         }
       }
-    ]
+    ],
+    "expo-milnor-clarity": {
+      "result": "pass",
+      "notes": "Block appears sound and meets expo-milnor-clarity.",
+      "reviewed_at": "2026-07-07T23:32:38.722581+00:00",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
+      }
+    },
+    "milnor-brevity": {
+      "result": "pass",
+      "notes": "Block appears sound and meets milnor-brevity.",
+      "reviewed_at": "2026-07-07T23:32:38.722581+00:00",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
+      }
+    }
   },
   "updated_at": "2026-07-07T14:26:55.357723Z"
 }
