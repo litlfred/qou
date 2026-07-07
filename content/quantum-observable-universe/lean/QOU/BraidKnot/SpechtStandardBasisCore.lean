@@ -1481,6 +1481,61 @@ def garnirA (t : Specht.Tableau μ) (i j : ℕ) : Finset (Fin (Specht.nOf μ)) :
 def garnirB (t : Specht.Tableau μ) (i j : ℕ) : Finset (Fin (Specht.nOf μ)) :=
   Finset.univ.filter (fun l => Specht.colPattern t l = j + 1 ∧ Specht.rowPattern t l ≤ i)
 
+omit [CharZero k] in
+/-- **`B < A` entirely (sorry-free) — the foundation of the fibre-decrease bound.**
+At a Garnir row descent (`labelAt t hij1 ≤ labelAt t hij`, i.e. the col-`j+1` label at
+row `i` is below the col-`j` label at row `i`) of a column-word-minimal (hence
+column-standard) `t`, **every** label `b ∈ B` (col `j+1`, rows `≤ i`) is strictly smaller
+than **every** label `a ∈ A` (col `j`, rows `≥ i`). Reason: column-standardness makes
+`b ≤ labelAt(i,j+1)` (b at row `≤ i` in col `j+1`) and `labelAt(i,j) ≤ a` (a at row `≥ i`
+in col `j`), while the descent + label-distinctness give
+`labelAt(i,j+1) < labelAt(i,j)`. This is why any non-identity fibre — which moves a
+`B`-label into column `j` — strictly lowers `colWordNum` (column `j` is read first). -/
+theorem garnir_B_lt_A (t : Specht.Tableau μ) (i j : ℕ)
+    (hij : (i, j) ∈ μ) (hij1 : (i, j + 1) ∈ μ)
+    (hmax : ∀ σ : Specht.colStab t,
+      colWordNum t ≤ colWordNum ((σ : Equiv.Perm (Fin (Specht.nOf μ))) • t))
+    (hdesc : labelAt t hij1 ≤ labelAt t hij)
+    {a b : Fin (Specht.nOf μ)}
+    (ha : a ∈ garnirA t i j) (hb : b ∈ garnirB t i j) :
+    (b : ℕ) < (a : ℕ) := by
+  classical
+  -- the distinguished labels at the two descent cells
+  set a₀ := t.symm ⟨(i, j), (YoungDiagram.mem_cells _).2 hij⟩ with ha0
+  set b₀ := t.symm ⟨(i, j + 1), (YoungDiagram.mem_cells _).2 hij1⟩ with hb0
+  have hta0 : (t a₀ : ℕ × ℕ) = (i, j) := by rw [ha0, Equiv.apply_symm_apply]
+  have htb0 : (t b₀ : ℕ × ℕ) = (i, j + 1) := by rw [hb0, Equiv.apply_symm_apply]
+  have hcol_a0 : Specht.colPattern t a₀ = j := by show (t a₀ : ℕ × ℕ).2 = j; rw [hta0]
+  have hrow_a0 : Specht.rowPattern t a₀ = i := by show (t a₀ : ℕ × ℕ).1 = i; rw [hta0]
+  have hcol_b0 : Specht.colPattern t b₀ = j + 1 := by show (t b₀ : ℕ × ℕ).2 = j + 1; rw [htb0]
+  have hrow_b0 : Specht.rowPattern t b₀ = i := by show (t b₀ : ℕ × ℕ).1 = i; rw [htb0]
+  rw [garnirA, Finset.mem_filter] at ha
+  rw [garnirB, Finset.mem_filter] at hb
+  obtain ⟨_, hca, hra⟩ := ha
+  obtain ⟨_, hcb, hrb⟩ := hb
+  -- a₀ ≤ a : same column j, and rowPattern a ≥ i = rowPattern a₀
+  have ha0a : (a₀ : ℕ) ≤ (a : ℕ) := by
+    by_contra hlt
+    push_neg at hlt
+    have := colStandard_of_colWordMin t hmax (by rw [hca, hcol_a0]) hlt
+    rw [hrow_a0] at this; omega
+  -- b ≤ b₀ : same column j+1, and rowPattern b ≤ i = rowPattern b₀
+  have hbb0 : (b : ℕ) ≤ (b₀ : ℕ) := by
+    by_contra hlt
+    push_neg at hlt
+    have := colStandard_of_colWordMin t hmax (by rw [hcol_b0, hcb]) hlt
+    rw [hrow_b0] at this; omega
+  -- labelAt values, and strictness from distinct cells
+  have hla : labelAt t hij = (a₀ : ℕ) := by rw [labelAt, ← ha0]
+  have hlb : labelAt t hij1 = (b₀ : ℕ) := by rw [labelAt, ← hb0]
+  have hne : (b₀ : ℕ) ≠ (a₀ : ℕ) := by
+    intro he
+    have : b₀ = a₀ := Fin.ext he
+    rw [this, hta0] at htb0
+    exact (by simp : ((i, j) : ℕ × ℕ) ≠ (i, j + 1)) htb0
+  rw [hla] at hdesc; rw [hlb] at hdesc
+  omega
+
 /-- The Garnir permutation set `S_{A∪B}`: permutations fixing every label outside
 `A ∪ B`.  A subgroup (as a `Finset`) closed under right-multiplication by any
 transposition of two labels of `A ∪ B`. -/
