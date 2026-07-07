@@ -102,7 +102,7 @@ def main() -> int:
         b_ame = float(ame[(Z, Z + N)][0])
 
         def err(x):
-            return None if (x is None or not b_ame) else 100 * (x - b_ame) / b_ame
+            return None if (x is None or not b_ame) else round(100 * (x - b_ame) / b_ame, 3)
 
         rows.append({
             "iso": name, "n": n,
@@ -113,9 +113,9 @@ def main() -> int:
             "B_redist_MeV": None if B_redist is None else round(B_redist, 5),
             "B_exch_MeV": round(B_exch, 5),
             "B_AME_MeV": round(b_ame, 5),
-            "err_scalar_pct": None if err(B_scalar) is None else round(err(B_scalar), 3),
-            "err_norm_pct": None if err(B_norm) is None else round(err(B_norm), 3),
-            "err_exch_pct": None if err(B_exch) is None else round(err(B_exch), 3),
+            "err_scalar_pct": err(B_scalar),
+            "err_norm_pct": err(B_norm),
+            "err_exch_pct": err(B_exch),
         })
 
     # verdict text keyed on the deuteron
