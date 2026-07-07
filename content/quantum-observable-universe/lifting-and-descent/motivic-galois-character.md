@@ -22,5 +22,4 @@ is the Frobenius character on the cyclotomic projection $\rho_p \colon \widehat{
 **Choice of level.**
 Working directly with $\chi^{\mathrm{mot}}_A$ replaces per-level Čech-cocycle non-vanishing arguments with a single non-vanishing statement about the character ([motivic perpetual obstruction](#conj:motivic-perpetual-obstruction)). The Čech-cocycle and Hochschild presentations of $\kappa_n$ become realizations of $\chi^{\mathrm{mot}}_A$ at the archimedean and Hochschild-deformation places. The [Hochschild–Kummer](#rem:hochschild-kummer-connection) duality corresponds to the duality between these two realizations.
 
-**Lean axiomatization.**
-The formal-chain class [`MotivicGaloisCharacter`](../../lean/QOU/LiftingDescent/MotivicGaloisCharacter.lean) takes a `MotivicSubstrate K0 Mhat Target` instance as a hypothesis. It exposes the character $\chi^{\mathrm{mot}}_A$ and its compatibility with each local realization $\rho_p$. We treat the `sorry` in any concrete instance as a substrate axiom.
+Conditional on the motivic substrate, the character $\chi^{\mathrm{mot}}_A$ is defined and is compatible with each local realization $\rho_p$.
