@@ -14,23 +14,23 @@ The torus links $T(2, 2k)$ on the Bring's surface have genus $k - 1$ and interac
 | $T(2,6)$ | 2 | 2 ($D_r \cup D_g$ etc.) | $Z$ boson |
 | $T(2,8)$ | 3 | **all 3** ($D_r \cup D_g \cup D_b$) | **Higgs** |
 
-The torus link $T(2,8)$ is the **first and only** link with a Seifert surface genus large enough to span all three exceptional divisors. Its genus ($3$) exactly matches the number of color tubes.
+The torus link $T(2,8)$ is the first and only link with a Seifert surface genus large enough to span all three exceptional divisors. Its genus ($3$) exactly matches the number of color tubes.
 
 **Scalar (spin $0$) character of $T(2,8)$.**
 
 The two components of $T(2,8)$ each wind $4$ times around the torus longitude and $1$ time around the meridian. The fermion--boson correspondence ([fermion--boson knot--link](#prop:fermion-boson-knot-link)) identifies even-$n$ links as bosons, with components related by the fiber adjoint involution.
 
-For $T(2,8)$, the linking number is $4$ — the two components cross each other $8$ times, contributing $4$ crossings each. The **net Reeb winding** of the two components cancels exactly: one winds $+4$ and the other $-4$ around the Reeb direction. The total angular momentum vanishes:
+For $T(2,8)$, the linking number is $4$. The two components cross each other $8$ times, contributing $4$ crossings each. The Reeb winding of the two components cancels exactly: one winds $+4$ and the other $-4$ around the Reeb direction. The total angular momentum vanishes:
 
 $$
   J =  J_1 + J_2 =  +4 + (-4) =  0.
 $$
 
-The torus link $T(2,8)$ is therefore a **scalar** (spin-$0$) boson. It is the only member of the $T(2,n)$ family where Reeb windings cancel exactly due to genus-$3$ symmetry.
+The torus link $T(2,8)$ is therefore a scalar (spin-$0$) boson. It is the only member of the $T(2,n)$ family where Reeb windings cancel exactly due to genus-$3$ symmetry.
 
 **The Higgs mechanism as linking with $T(2,8)$.**
 
-A particle (knot or link) acquires mass by **crossing** with $T(2,8)$. The crossing energy ([crossing energy](#def:crossing-energy)) of the interaction is proportional to the number of crossings between the particle and the Higgs link:
+A particle (knot or link) acquires mass by crossing with $T(2,8)$. The crossing energy ([crossing energy](#def:crossing-energy)) of the interaction is proportional to the number of crossings between the particle and the Higgs link:
 
 $$
   m_{\mathrm{Higgs}}  \propto 
@@ -57,4 +57,4 @@ The Higgs mass stems from the genus-$3$ Seifert surface volume, determined by th
 
 **Uniqueness of the Higgs.**
 
-On the genus-$4$ Bring's surface, the Seifert surface of $T(2,8)$ has genus $3$, filling $3$ of the $4$ available handles. Up to isotopy, there is exactly **one** way to embed a genus-$3$ surface into a genus-$4$ surface leaving one handle free. The next link $T(2,10)$ would require genus $4$ (all handles), saturating the surface and precluding the coexistence of Borromean and knot structures. Therefore, $T(2,8)$ is the unique Higgs candidate.
+On the genus-$4$ Bring's surface, the Seifert surface of $T(2,8)$ has genus $3$, filling $3$ of the $4$ available handles. Up to isotopy, there is exactly one way to embed a genus-$3$ surface into a genus-$4$ surface leaving one handle free. The next link $T(2,10)$ would require genus $4$ (all handles), saturating the surface and precluding the coexistence of Borromean and knot structures. Therefore, $T(2,8)$ is the unique Higgs candidate.
