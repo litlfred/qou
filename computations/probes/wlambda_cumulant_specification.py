@@ -86,6 +86,11 @@ def main() -> int:
 
     # collective-determinant binding per isotope
     B = {"2H": B_det(1, 1), "3H": B_det(1, 2), "3He": B_det(2, 1), "4He": B_det(2, 2)}
+    for name, val in B.items():
+        if val is None:
+            raise ValueError(f"Determinant for {name} is non-positive (det ≤ 0); "
+                             "cannot compute a collective binding — the magnitude "
+                             "exceeds the physicality ceiling for this isotope.")
     # Ursell inversion of the determinant series
     det_b2 = B["2H"]
     det_B3 = (B["3H"] + B["3He"]) / 2
@@ -94,7 +99,6 @@ def main() -> int:
     det_cum = {"b2": det_b2, "b3": det_b3, "b4": det_b4}
 
     # single-pair OPEN-bond value (proved exact b₂; ReebPnMagnitude 5g)
-    b2_open = 5 * g * (AME["b2"] / (5 * g))  # = AME b₂ by the ²H calibration; 5g in the near-match unit
     five_g = 5 * g
 
     rows = []
