@@ -255,6 +255,30 @@ So the a₁ incident class cannot recur:
 5. **AGENTS.md STRICT rule** "Conditional-proved ≠ premise-established"
    (owner-visible file; wordsmith at will).
 
+## 4-quinquies. Bean `ciei` step B1+B2 — pre-statement (BEFORE any run)
+
+4₁'s cyclotomic (Habiro) expansion is `J_N = Σ_{k=0}^{N−1} ω_k(x)`,
+`ω_k = ∏_{j=1}^k (x + x⁻¹ − q^j − q^{−j})`, `x = q^N` — coefficients
+`C_k ≡ 1` (termwise equal to the certificate's Habiro–Le summand
+`q^{Nk}(q^{−N−1};q^{−1})_k(q^{−N+1};q)_k`, per `aj_figure_eight_certificate.py`).
+Checks (exact symbolic, no anchors, no c_k values):
+
+- **B1-K1 (transcription gate):** the ω-sum must satisfy the verified
+  inhomogeneous order-2 operator `a₂J_{N+2} + a₁J_{N+1} + a₀J_N = b`
+  exactly for N = 1..8. Mismatch → transcription wrong, stop.
+- **B1 structural readout:** with `C_k ≡ 1`, the induced coefficient
+  recurrence in the cyclotomic basis is the trivial depth-1 constant
+  `C_{k+1} = C_k` — the basis change absorbs the operator's complexity; the
+  basis elements carry it via the clean first-order factor recurrence
+  `ω_{k+1}/ω_k = (x + x⁻¹ − q^{k+1} − q^{−(k+1)})`.
+- **B2-K2 (parity gate, the load-bearing check):** bar-parity of the factor
+  `x + x⁻¹ − q^j − q^{−j}` and of `ω_k` under `(q,x) ↦ (1/q,1/x)` must be
+  clean (exact or monomial twist). Non-monomial → cyclotomic re-basing
+  ALSO fails to repair the parity defect ⇒ strong scope-(a) verdict against
+  Z4-via-4₁ at every basis tested; fall back to Z3 carriers/other knots.
+- **B3 partial (shadow orders):** record q=1/x=1 vanishing structure of
+  `ω_k` (expected `((x−1)²/x)^k` at q=1 — even orders, echoing T3).
+
 ## 5. Session log
 
 | date | event |
