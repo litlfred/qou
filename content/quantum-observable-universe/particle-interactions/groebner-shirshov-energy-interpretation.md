@@ -1,12 +1,2 @@
 **Remark (physical interpretation).**
-The energy functional $E(\mathcal{N}(Z, N))$ gives the Skein binding energy of the nucleus, expressed in the Gröbner--Shirshov normal form. Each Hecke step $\sigma_i^2 \to (q - q^{-1})\sigma_i + 1$ resolves a double crossing into a weighted single crossing plus a resolved (identity) term:
-
-$$
-  \underset{\text{double crossing}}{\sigma_i^2}
-   \longrightarrow 
-  \underset{\text{weighted single}}{(q - q^{-1})\sigma_i}
-  + 
-  \underset{\text{resolved}}{1}
-$$
-
-The factor $(q - q^{-1})$ acts as the crossing asymmetry. This is the same quantity that determines the crossing asymmetry $(q - q^{-1})$ from the Hecke relation. The Hecke reduction algebraically expresses the physical process of resolving a double crossing into its electromagnetic and strong components.
+The energy functional $E(\mathcal{N}(Z, N))$ gives the Skein binding energy of the nucleus. Each Hecke step resolves a double crossing into a weighted single crossing plus a resolved identity term. The factor $(q - q^{-1})$ acts as the crossing asymmetry. The Hecke reduction algebraically expresses the physical process of resolving a double crossing into its electromagnetic and strong components.

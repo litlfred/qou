@@ -1,43 +1,42 @@
-**Proposition (far-commutation obstruction — the non-abelian $\mathrm{SU}(2)_L$ structure is not carried by the slots).**
-*Let $A$ be a ring. Let $\sigma_1, \sigma_3, \sigma_5 \in A$ be the braid generators hosting the electroweak carriers on the disjoint strand-pairs $1\text{--}2 \mid 3\text{--}4 \mid 5\text{--}6$ of [`thm:hoefsmit-ew-cell-content`](#thm:hoefsmit-ew-cell-content). These are subject to the braid far-commutation relation $\sigma_i \sigma_j = \sigma_j \sigma_i$ for $|i - j| \ge 2$. Let $\mathcal{A}_{\mathrm{slot}} \subseteq A$ be the subalgebra they generate. Suppose $J_1, J_2, J_3 \in A$ realise an $\mathfrak{su}(2)_L$ adjoint structure relation $\lbrack J_1, J_2 \rbrack = J_3$ with $J_3 \ne 0$. Then $J_1$ and $J_2$ cannot both lie in $\mathcal{A}_{\mathrm{slot}}$. The non-abelian $\mathrm{SU}(2)_L$ structure therefore cannot be realised purely among the far-commuting slots.*
+**Proposition (far-commutation obstruction).**
+*Let $A$ be a ring. Let $\sigma_1, \sigma_3, \sigma_5 \in A$ be the braid generators hosting the electroweak carriers on the disjoint strand-pairs. These are subject to the braid far-commutation relation $\sigma_i \sigma_j = \sigma_j \sigma_i$ for $|i - j| \ge 2$. Let $\mathcal{A}_{\mathrm{slot}} \subseteq A$ be the subalgebra they generate. Suppose $J_1, J_2, J_3 \in A$ realise an $\mathfrak{su}(2)_L$ adjoint structure relation $\lbrack J_1, J_2 
+brack = J_3$ with $J_3 
+e 0$. Then $J_1$ and $J_2$ cannot both lie in $\mathcal{A}_{\mathrm{slot}}$. The non-abelian $\mathrm{SU}(2)_L$ structure therefore cannot be realised purely among the far-commuting slots.*
 
 ### Statement (formal)
 
-The slot indices $1, 3, 5$ are pairwise far apart:
-$$
-  |1 - 3| = 2, \qquad |1 - 5| = 4, \qquad |3 - 5| = 2.
-$$
-The far-commutation relation applies to every pair. Thus $\sigma_1, \sigma_3, \sigma_5$ pairwise commute. Consequently, the subalgebra $\mathcal{A}_{\mathrm{slot}} = \langle \sigma_1, \sigma_3, \sigma_5 \rangle$ is **commutative**. Every commutator $\lbrack x, y \rbrack = xy - yx$ vanishes for $x, y \in \mathcal{A}_{\mathrm{slot}}$. In particular, the three carriers $W \leftrightarrow \sigma_1^{4}$, $Z \leftrightarrow \sigma_3^{6}$, $H \leftrightarrow \sigma_5^{8}$ pairwise commute.
+The slot indices $1, 3, 5$ are pairwise far apart. Thus $\sigma_1, \sigma_3, \sigma_5$ pairwise commute. Consequently, the subalgebra $\mathcal{A}_{\mathrm{slot}} = \langle \sigma_1, \sigma_3, \sigma_5 
+angle$ is commutative. Every commutator $\lbrack x, y 
+brack = xy - yx$ vanishes for $x, y \in \mathcal{A}_{\mathrm{slot}}$. The three carriers $W \leftrightarrow \sigma_1^{4}$, $Z \leftrightarrow \sigma_3^{6}$, $H \leftrightarrow \sigma_5^{8}$ pairwise commute.
 
 The obstruction is the incompatibility of two facts:
 
-1. **Commuting operators have vanishing bracket.** For $x, y \in \mathcal{A}_{\mathrm{slot}}$, $\lbrack x, y \rbrack = 0$.
-2. **The $\mathfrak{su}(2)_L$ adjoint is non-abelian.** Its generators satisfy $\lbrack J_a, J_b \rbrack = \varepsilon_{abc} J_c \ne 0$. A nonzero bracket forbids commutation.
+1. **Commuting operators have vanishing bracket.** For $x, y \in \mathcal{A}_{\mathrm{slot}}$, $\lbrack x, y 
+brack = 0$.
+2. **The $\mathfrak{su}(2)_L$ adjoint is non-abelian.** Its generators satisfy $\lbrack J_a, J_b 
+brack = arepsilon_{abc} J_c 
+e 0$. A nonzero bracket forbids commutation.
 
-If both $J_1, J_2 \in \mathcal{A}_{\mathrm{slot}}$, then $\lbrack J_1, J_2 \rbrack = 0$ by (1), contradicting $J_3 \ne 0$ by (2). At least one $\mathfrak{su}(2)_L$ generator must escape the slot subalgebra.
+If both $J_1, J_2 \in \mathcal{A}_{\mathrm{slot}}$, then $\lbrack J_1, J_2 
+brack = 0$ by (1), contradicting $J_3 
+e 0$ by (2). At least one $\mathfrak{su}(2)_L$ generator must escape the slot subalgebra.
 
-### What this forces (localization, not closure)
+### What this forces
 
-This result is a **structural exclusion**. It proves an impossibility, not a numerical near-miss. The invariant forbidding the realisation is the identical vanishing of the commutator on a commutative subalgebra. It does **not** fit the gauge group into the framework by fiat, nor does it supply the Weinberg angle. It establishes *where the missing structure must reside*.
+This result is a structural exclusion. It proves an impossibility, not a numerical near-miss. It establishes where the missing structure must reside.
 
-The far-commutation relation covers only pairs with $|i - j| \ge 2$. The adjacent generators $\sigma_2, \sigma_4$ bridge strand-pairs $2\text{--}3$ and $4\text{--}5$. For these:
-$$
-  |2 - 1| = |2 - 3| = |4 - 3| = |4 - 5| = 1 < 2.
-$$
-These are exactly the generators the relation does not cover. They do **not** commute with the slots. The categorical linking operation $\mathrm{Lk}_R^{(k)}$ of [`conj:categorical-linking-operation`](#conj:categorical-linking-operation) braids *between* strand-pairs through precisely these generators. The non-abelian $\mathrm{SU}(2)_L$ structure must therefore be carried by the **inter-slot linking**, not by the individual slots.
+The far-commutation relation covers only pairs with $|i - j| \ge 2$. The adjacent generators $\sigma_2, \sigma_4$ bridge strand-pairs $2	ext{--}3$ and $4	ext{--}5$. These do not commute with the slots. The categorical linking operation $\mathrm{Lk}_R^{(k)}$ braids between strand-pairs through precisely these generators. The non-abelian $\mathrm{SU}(2)_L$ structure must therefore be carried by the inter-slot linking, not by the individual slots.
 
-This **narrows** the group-assignment postulate $\texttt{EWGroupAssignment}$ of [`thm:ew-triplet-charge-spin-from-involution`](#thm:ew-triplet-charge-spin-from-involution). The residual $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ input—which slot is the neutral Cartan member $W^3 \to Z$ versus the charged root member $W^\pm$—is a property of the bracket-carrying linking data, not of the mutually commuting slots. This is consistent with the prior finding that no single-slot topological invariant forces the label (`which_slot_is_W_free` in [`thm:ew-triplet-charge-spin-from-involution`](#thm:ew-triplet-charge-spin-from-involution)). The label lives where the non-abelianness lives: in the linking, not the slots.
+This narrows the group-assignment postulate. The residual $\mathrm{SU}(2)_L 	imes \mathrm{U}(1)_Y$ input is a property of the bracket-carrying linking data, not of the mutually commuting slots. The label lives where the non-abelianness lives: in the linking, not the slots.
 
 ### Lean structure
 
-The formalisation is purely algebraic over a generic ring (no archimedean structure):
+The formalisation is purely algebraic over a generic ring:
 
 - `bracket_eq_zero_of_commute`: commuting elements have zero commutator.
-- `nonabelian_bracket_forbids_commute`: the crux ($\lbrack x, y \rbrack = z \ne 0 \implies x, y$ do not commute).
-- `commute_of_mem_closure`: the submonoid generated by a pairwise-commuting set is commutative (via the centralizer submonoid).
-- `slotSubmonoid_commutative`, `carriers_commute`: the slot subalgebra is mutually abelian; the carriers $\sigma_1^4, \sigma_3^6, \sigma_5^8$ pairwise commute.
+- `nonabelian_bracket_forbids_commute`: the crux.
+- `commute_of_mem_closure`: the submonoid generated by a pairwise-commuting set is commutative.
+- `slotSubmonoid_commutative`, `carriers_commute`: the slot subalgebra is mutually abelian.
 - `su2L_nonabelianness_not_in_slots`, `su2L_generator_escapes_slots`: the capstone obstruction and its positive form.
 
-All are sorry-free.e form.
-
-All sorry-free.
+All are verified sorry-free.
