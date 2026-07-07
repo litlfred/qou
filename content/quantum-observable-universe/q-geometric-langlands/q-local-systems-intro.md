@@ -1,3 +1,1 @@
-We establish the automorphic-side geometry upon which the $q$-Hecke correspondences will act. We define $q$-local systems on a brane curve $X$ and the $q$-flat connections that supply their $q$-holonomy residues. Two interpretive remarks track the quantum deformation. Remark: From monodromy to $q$-monodromy casts the $q$-monodromy condition as a $\mathbb{G}_m$-family of holonomies degenerating to the classical case at $q = 1$. Remark: The $d_q^2 \neq 0$ obstruction as curvature interprets the failure of $d_q^2 = 0$ as the curvature class obstructing exact $q$-flatness. This fixes the moduli of $q$-local systems and their flat sections.
-
-_(draft.)_
+We establish the automorphic-side geometry upon which the $q$-Hecke correspondences act. We define $q$-local systems on a brane curve $X$ and the $q$-flat connections that supply their $q$-holonomy residues.

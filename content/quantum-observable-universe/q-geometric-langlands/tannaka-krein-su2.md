@@ -1,8 +1,8 @@
-Continuing the [substrate parameter for SU(2)](#ex:substrate-parameter-su2), we execute the [Tannaka--Krein reconstruction](#thm:tannaka-krein-isomorphism) algorithm concretely. This replaces the abstract reconstruction theorem with an explicit computation.
+We execute the Tannaka--Krein reconstruction algorithm concretely for $\mathrm{SU}(2)$.
 
-**Step 1: the :refterm[monoidal category]{#monoidal-category}.** We start with $\mathbf{C} = \mathrm{Rep}(\mathrm{SU}_q(2))$ and the forgetful fibre functor $\tau \colon \mathbf{C} \to \mathrm{Vect}_\mathbb{C}$. The simple objects are $V_0, V_{1/2}, V_1, V_{3/2}, \ldots$ with dimension $\dim V_j = 2j + 1$.
+**Step 1: The monoidal category.** We start with $\mathbf{C} = \mathrm{Rep}(\mathrm{SU}_q(2))$ and the forgetful fibre functor $\tau \colon \mathbf{C} \to \mathrm{Vect}_\mathbb{C}$. The simple objects are $V_0, V_{1/2}, V_1, V_{3/2}, \ldots$ with dimension $\dim V_j = 2j + 1$.
 
-**Step 2: compute the coend.** The reconstructed Hopf algebra is $H = \mathrm{coend}(\tau^\vee \otimes \tau)$, given by:
+**Step 2: Compute the coend.** The reconstructed Hopf algebra is $H = \mathrm{coend}(\tau^\vee \otimes \tau)$:
 
 $$
   H = \bigoplus_{j \in \frac{1}{2}\mathbb{Z}_{\geq 0}}
@@ -12,7 +12,7 @@ $$
 
 The relation $\sim$ identifies $(\tau(f)^* \otimes \mathrm{id})$ with $(\mathrm{id} \otimes \tau(f))$ for all morphisms $f$. The matrix coefficients $t^j_{m,m'} \in V_j^* \otimes V_j$ form a basis.
 
-**Step 3: reconstruct the algebra structure.** Multiplication on $H$ arises from the tensor product in $\mathbf{C}$. For the fundamental representation $V = V_{1/2}$, the four matrix coefficients $\alpha, \beta, \bar\alpha, \bar\beta$ generate $H$. The relations derive from the $R$-matrix:
+**Step 3: Reconstruct the algebra structure.** Multiplication on $H$ arises from the tensor product in $\mathbf{C}$. For the fundamental representation $V = V_{1/2}$, the four matrix coefficients $\alpha, \beta, \bar\alpha, \bar\beta$ generate $H$. The relations derive from the $R$-matrix:
 
 $$
   \alpha\beta = q\,\beta\alpha, \quad
@@ -23,7 +23,7 @@ $$
 
 along with the quantum determinant $\alpha\bar\beta - q\,\beta\bar\alpha = 1$.
 
-**Step 4: reconstruct the coalgebra.** The comultiplication follows from the monoidal structure via $\Delta(t^j_{m,m'}) = \sum_{k} t^j_{m,k} \otimes t^j_{k,m'}$. On the generators, this is:
+**Step 4: Reconstruct the coalgebra.** The comultiplication follows from the monoidal structure via $\Delta(t^j_{m,m'}) = \sum_{k} t^j_{m,k} \otimes t^j_{k,m'}$. On the generators:
 
 $$
   \Delta\begin{pmatrix} \alpha & \beta \\ \bar\alpha & \bar\beta \end{pmatrix}
@@ -34,6 +34,6 @@ $$
 
 The counit is $\varepsilon(t^j_{m,m'}) = \delta_{mm'}$. The antipode is $S(\alpha) = \bar\beta$, $S(\beta) = -q^{-1}\beta$, $S(\bar\alpha) = -q\bar\alpha$, and $S(\bar\beta) = \alpha$. Equivalently, $S(u) = u^{-1}$ where $u = \bigl(\begin{smallmatrix} \alpha & \beta \\ \bar\alpha & \bar\beta \end{smallmatrix}\bigr)$.
 
-**Result.** The algorithm outputs $H \cong \mathcal{O}_q(\mathrm{SU}(2))$. We recover the quantum coordinate ring entirely from the monoidal structure of its representation category. Every step remains finite. We form the coend, read off generators from the fundamental representation, and extract relations from the $R$-matrix.
+**Result.** The algorithm outputs $H \cong \mathcal{O}_q(\mathrm{SU}(2))$. We recover the quantum coordinate ring entirely from the monoidal structure of its representation category. 
 
-**Bring's surface specialisation.** On Bring's QOU, $q$ assumes the value dictated by the Descartes condition ([constructive extraction of $q$](#ex:substrate-parameter-brings)). The reconstruction then yields $\mathcal{O}_{q_{\mathrm{Bring}}}(\mathrm{SU}(2))$ equipped with its $S_5$-equivariant structure. The weight spaces of $H$ automatically encode the Reeb spectrum ([constructive Reeb derivation](#ex:categorical-reeb-brings)).
+On Bring's quantum observable universe, $q$ assumes the value dictated by the Descartes condition. The reconstruction then yields $\mathcal{O}_{q_{\mathrm{Bring}}}(\mathrm{SU}(2))$ equipped with its $S_5$-equivariant structure. The weight spaces of $H$ automatically encode the Reeb spectrum.
