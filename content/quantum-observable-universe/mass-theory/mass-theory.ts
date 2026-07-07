@@ -345,6 +345,7 @@ export default chapter({
         "qbeta-c4-from-c3-c8-product-identity",
         "qbeta-z-recursion-to-ck-recursion-bridge",
         "qbeta-z-recursion-to-ck-recursion-bridge-proof",
+        "qbeta-odd-carrier-hopf-cubic",
         "q-beta-c-2-eq-neg-one-structural",
         "q-beta-c-2-eq-neg-one-structural-proof",
         "q-beta-bar-even-kernel-invariant",
