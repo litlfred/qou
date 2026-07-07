@@ -16,3 +16,6 @@ $$
 
 **Remark.**
 *The cemetery group is emergent. It is defined as the kernel of $\tau$ rather than postulated. We use $\mathcal{Z}_n$ computationally as a homological filter on crystal-graph traversals.*
+
+
+**Terms defined:** :defterm[cemetery-group]

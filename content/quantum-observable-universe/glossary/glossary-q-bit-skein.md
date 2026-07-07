@@ -1,6 +1,8 @@
 The identification of one $q$-bit with one Skein operation unifies several structures in this paper.
 
-### One $q$-bit $=$ one crossing resolution
+### :defterm[q-bit-skein]
+
+One $q$-bit $=$ one crossing resolution
 
 Each application of the Skein relation
 

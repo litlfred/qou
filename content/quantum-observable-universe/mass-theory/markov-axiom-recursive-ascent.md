@@ -7,3 +7,6 @@
 4. *Recursing on $T_{w'}$ until reaching the base case $\mathrm{tr}_M^{(1)}(\mathbf{1}) = 1$.*
 
 The recursive ascent path boundedly evaluates the trace without materialising unwieldy symbolic matrix representations. The production implementation completes the $^4\mathrm{He}$ mass derivation end-to-end in ~60 seconds.
+
+
+**Terms defined:** :defterm[markov-axiom-recursive-ascent]

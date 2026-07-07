@@ -8,3 +8,6 @@ $$
 $$
 
 When $q = 1$ this reduces to $\mathcal{D}_\nabla = \nabla$, the undeformed covariant derivative. The $q$-deformation interpolates between the full connection and its projection onto the Reeb direction. As $q \to \infty$, we obtain $\mathcal{D}_\nabla \to \iota_\xi\nabla$, the purely contact component.
+
+
+**Terms defined:** :defterm[categorical-dirac-operator]

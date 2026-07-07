@@ -12,3 +12,6 @@ $$
 See [Table](#tbl:knot-particle-generation-table-data).
 
 We reserve $q$ for the substrate parameter and $p$ for base points. The winding indices are always $(m,n)$.
+
+
+**Terms defined:** :defterm[torus-knot-generators], :defterm[linking-operations]

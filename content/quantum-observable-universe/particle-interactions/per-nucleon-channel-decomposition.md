@@ -56,3 +56,6 @@ $$
 **Channel sum:** $b = \sum_c G_N(c) = -3(q^2-1)(q^2+1)^2/(4q^3)$.
 
 The values $\{G_P(c), G_N(c)\}$ are algebraic functions of $q$ and determine all nuclear Q-values via the branching factorization.
+
+
+**Terms defined:** :defterm[per-nucleon-channel-decomposition]

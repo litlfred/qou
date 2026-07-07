@@ -5,3 +5,6 @@ $$
 $$
 
 This $q$-deformed prime counting function accumulates the weights of fundamental defects ordered by norm. The function $\psi_q(X)$ encodes the distribution of matter across the spectral fiber, weighted by the quantum Planck constant. In the classical limit $q \to 1$, we recover the classical Chebyshev function $\psi(X)$.
+
+
+**Terms defined:** :defterm[q-chebyshev-function]

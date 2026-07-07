@@ -10,3 +10,6 @@ $$
 $$
 
 A maximal ideal constitutes a fundamental defect if it lies over a prime ideal of the center of $A$. The fraction $\frac{N(\mathfrak{m})^{\hbar_q} - 1}{\hbar_q}$ deforms the classical logarithm. As $q \to 1$, we have $\hbar_q \to 0$. L'Hôpital's rule recovers $\Lambda_q(\mathfrak{m}) \to \log N(\mathfrak{m}) = \Lambda(\mathfrak{m})$, restoring the classical von Mangoldt function.
+
+
+**Terms defined:** :defterm[q-von-mangoldt-function]

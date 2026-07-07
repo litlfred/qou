@@ -5,3 +5,6 @@ $$
 $$
 
 The algebra $A$ is **without quasi-zeros** if no such element exists. We assume that $R$ has no quasi-zeros. This ensures that leading-term decompositions are well-defined and the division algorithm terminates correctly. It guarantees that $R$-linear hom-spaces have no phantom morphisms annihilated by all compositions, making the Frobenius pairing non-degenerate.
+
+
+**Terms defined:** :defterm[no-quasi-zeros]
