@@ -1678,6 +1678,80 @@ theorem card_col_labels (t : Specht.Tableau μ) (c : ℕ) :
       rw [Equiv.apply_symm_apply]
 
 omit [CharZero k] in
+/-- **Column-`j` label content of a tableau, as a `Finset ℕ`** — the set of the labels
+sitting in column `j` (the image of the column-`j` label fibre under `Fin.val`). This is
+the order-statistics substrate for the column-word decrease: the Garnir shuffle only
+changes the *contents* of columns `j` and `j+1`, and the resulting column-word change is
+governed by how these `Finset ℕ` contents compare (`orderStat_le_of_count_ge`). -/
+def colContent (t : Specht.Tableau μ) (j : ℕ) : Finset ℕ :=
+  (Finset.univ.filter (fun l => Specht.colPattern t l = j)).image Fin.val
+
+omit [CharZero k] in
+/-- **`colContent` cardinality (sorry-free).** Column `j` holds exactly `μ.colLen j`
+labels; `Fin.val` is injective, so the image keeps that count. Supplies the
+`s.card = k` hypothesis for `orderEmbOfFin`. -/
+theorem colContent_card (t : Specht.Tableau μ) (j : ℕ) :
+    (colContent t j).card = μ.colLen j := by
+  classical
+  rw [colContent, Finset.card_image_of_injOn (fun a _ b _ h => Fin.val_injective h)]
+  exact card_col_labels t j
+
+omit [CharZero k] in
+/-- **Cell label = order statistic (sorry-free).** For a column-word-minimal (hence
+column-standard, `colStandard_of_colWordMin`) tableau `t`, the label sitting at cell
+`(r, j)` is the `r`-th smallest label of column `j` — reading a sorted column
+top-to-bottom enumerates `colContent t j` in increasing order. This is the
+tableau ↔ order-statistic bridge that lets the abstract `orderStat_le_of_count_ge`
+domination be read off actual tableaux, feeding the column-word decrease bound. -/
+theorem labelAt_eq_orderStat (t : Specht.Tableau μ)
+    (hmax : ∀ σ : Specht.colStab t,
+      colWordNum t ≤ colWordNum ((σ : Equiv.Perm (Fin (Specht.nOf μ))) • t))
+    (j : ℕ) (r : Fin (μ.colLen j)) :
+    labelAt t (YoungDiagram.mem_iff_lt_colLen.mpr r.isLt) =
+      (colContent t j).orderEmbOfFin (colContent_card t j) r := by
+  classical
+  -- column/row pattern of the label sitting at cell `(m, j)`
+  have hpat : ∀ (m : ℕ) (hm : (m, j) ∈ μ),
+      Specht.colPattern t (t.symm ⟨(m, j), (YoungDiagram.mem_cells _).mpr hm⟩) = j ∧
+      Specht.rowPattern t (t.symm ⟨(m, j), (YoungDiagram.mem_cells _).mpr hm⟩) = m := by
+    intro m hm
+    refine ⟨?_, ?_⟩
+    · show ((t (t.symm ⟨(m, j), _⟩) : ℕ × ℕ)).2 = j; rw [Equiv.apply_symm_apply]
+    · show ((t (t.symm ⟨(m, j), _⟩) : ℕ × ℕ)).1 = m; rw [Equiv.apply_symm_apply]
+  -- The map `x ↦ labelAt t (x, j)` is the increasing enumeration of `colContent t j`.
+  have key : (fun x : Fin (μ.colLen j) =>
+        labelAt t (YoungDiagram.mem_iff_lt_colLen.mpr x.isLt))
+      = ⇑((colContent t j).orderEmbOfFin (colContent_card t j)) := by
+    apply Finset.orderEmbOfFin_unique
+    · -- membership: the label at cell `(x, j)` lies in column `j`, hence in `colContent`
+      intro x
+      rw [colContent, Finset.mem_image]
+      refine ⟨t.symm ⟨(↑x, j), (YoungDiagram.mem_cells _).mpr
+        (YoungDiagram.mem_iff_lt_colLen.mpr x.isLt)⟩, ?_, rfl⟩
+      simp only [Finset.mem_filter, Finset.mem_univ, true_and]
+      exact (hpat (↑x) (YoungDiagram.mem_iff_lt_colLen.mpr x.isLt)).1
+    · -- StrictMono: rows increase ⇒ (column-standardness) labels increase
+      intro a b hab
+      have hla := hpat (↑a) (YoungDiagram.mem_iff_lt_colLen.mpr a.isLt)
+      have hlb := hpat (↑b) (YoungDiagram.mem_iff_lt_colLen.mpr b.isLt)
+      have hab' : (↑a : ℕ) < (↑b : ℕ) := hab
+      show (t.symm ⟨((↑a : ℕ), j), _⟩ : Fin (Specht.nOf μ)).val
+         < (t.symm ⟨((↑b : ℕ), j), _⟩ : Fin (Specht.nOf μ)).val
+      by_contra hcon
+      push_neg at hcon
+      rcases eq_or_lt_of_le hcon with h | h
+      · -- equal labels ⇒ same cell ⇒ equal rows ⇒ `↑a = ↑b`, contradicting `↑a < ↑b`
+        have heq : (t.symm ⟨((↑b : ℕ), j), _⟩ : Fin (Specht.nOf μ))
+                 = t.symm ⟨((↑a : ℕ), j), _⟩ := Fin.val_injective h
+        rw [heq, hla.2] at hlb
+        omega
+      · -- `↑b`-label `<` `↑a`-label ⇒ (column-standardness) row `↑b` `<` row `↑a`, absurd
+        have hrow := colStandard_of_colWordMin t hmax (hlb.1.trans hla.1.symm) h
+        rw [hla.2, hlb.2] at hrow
+        omega
+  exact congrFun key r
+
+omit [CharZero k] in
 /-- The labels in column `c` of `t` with row index `< m` number exactly `m`, provided
 `m ≤ μ.colLen c` (they biject with rows `0, …, m-1`, all of which occur in column `c`). -/
 theorem card_col_labels_row_lt_of_le (t : Specht.Tableau μ) (c m : ℕ)
