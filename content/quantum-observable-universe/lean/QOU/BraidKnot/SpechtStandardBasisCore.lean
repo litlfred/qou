@@ -51,10 +51,11 @@ cited, everything else machine-checked."*
 | `standardPolytabloidS` (corestriction) | **sorry-free** |
 | `standardPolytabloid_linearIndependent` | **STUB** `sorry` — `-- Ref: [sagan2001]` Thm 2.5.2 |
 | `colStab_smul_self`, `polytabloid_colStab_smul` (column-antisymmetry) | **sorry-free** |
-| `domCount'`, `domWeight`, `domBound`, `domCount'_le`, `domWeight_le` (the dominance measure) | **sorry-free** |
-| `straightening_step_colMax` (Garnir core, **column-maximal case**) | **STUB** `sorry` — `-- Ref: [sagan2001]` §2.6 |
-| `straightening_step` (Garnir straightening core) | **sorry-free MODULO `straightening_step_colMax`** (column-sort dichotomy: the `domWeight`-raising branch is proved outright via `polytabloid_colStab_smul`) |
-| `standardPolytabloid_straightening` | **sorry-free MODULO `straightening_step_colMax`** (well-founded induction on the dominance weight) |
+| `domCount'`, `domWeight`, `domBound`, `domCount'_le`, `domWeight_le` (tabloid-dominance measure — **now orphaned**, see note below) | **sorry-free** |
+| `cmajSig`, `colWordNum` (the **column-word measure** — validated straightening measure) | **sorry-free** |
+| `straightening_step_colMax` (Garnir core, **column-word-minimal case**, on `colWordNum`) | **STUB** `sorry` — `-- Ref: [sagan2001]` §2.6 (TRUE statement; residual = column-word-decrease bound) |
+| `straightening_step` (Garnir straightening core) | **sorry-free MODULO `straightening_step_colMax`** (column-sort dichotomy: the `colWordNum`-lowering branch is proved outright via `polytabloid_colStab_smul`) |
+| `standardPolytabloid_straightening` | **sorry-free MODULO `straightening_step_colMax`** (well-founded induction on `colWordNum`, descending) |
 | `standardPolytabloid_span` | **sorry-free MODULO `straightening_step_colMax`** (Garnir relations) |
 | `standardBasis` | **sorry-free MODULO the two stubs** (`Basis.mk` wiring) |
 | `specht_finrank_eq_numSYT` | **sorry-free MODULO the two stubs** (the reduction) |
@@ -67,27 +68,36 @@ core `straightening_step_colMax`). The
 SYT→tableau conversion **and** the `Fintype` instance brick 1 left open are
 *both* proved sorry-free here.
 
-**Spanning half — reduction (this file, §3b).** The former single spanning stub
+**Spanning half — reduction (this file, §3b).** The spanning stub
 `standardPolytabloid_straightening` (every polytabloid `e_t` lies in the span of
-the *standard* polytabloids) is now **proved sorry-free by well-founded induction**
-on a self-contained dominance weight (`domWeight`, a strictly-monotone ℕ-valued
-linear extension of Sagan's dominance order, defined locally because this file sits
-*below* `SpechtDominanceCore` in the import graph), reducing the whole spanning
-half to a **single** sharper combinatorial core, `straightening_step`: a
-*non-standard* polytabloid is a `k`-combination of polytabloids of strictly
-dominance-greater (`domWeight`-greater) tabloids (Sagan §2.6 Garnir relations).
+the *standard* polytabloids) is **proved sorry-free by well-founded induction** on
+the **column-word measure** `colWordNum` (descending), reducing the whole spanning
+half to a **single** combinatorial core, `straightening_step`: a *non-standard*
+polytabloid is a `k`-combination of polytabloids of strictly `colWordNum`-smaller
+tableaux (Sagan §2.6 Garnir relations).
 
-That core is itself now **proved sorry-free MODULO a still-sharper residual**,
+> **Measure correction (2026-07-07).** An earlier version used `domWeight` (a linear
+> extension of *tabloid dominance*). That measure is **wrong** for straightening:
+> `straightening_step_colMax` stated over it is FALSE (exact-arithmetic disproof,
+> μ=(3,2), t=[[1,2,3],[5,4]]; audit §3.5), because Garnir produces terms whose
+> tabloids are dominance-*incomparable* to `{t}`. The correct, validated measure is
+> the classical **column-reading word** `colWordNum` (every non-identity Garnir term
+> is strictly `colWordNum`-smaller — validated exhaustively to (3,3,2)/(4,3,1), audit
+> §4.5). The `domWeight` / `domBound` defs are retained but **orphaned** (no longer on
+> the spanning path); they remain sorry-free scaffolding.
+
+That core is **proved sorry-free MODULO a still-sharper residual**,
 `straightening_step_colMax`, via a **column-sort dichotomy** on whether some column
-permutation `σ ∈ C_t` strictly raises `domWeight`. The `domWeight`-raising branch is
-discharged outright by the column-antisymmetry lemma `polytabloid_colStab_smul`
+permutation `σ ∈ C_t` strictly *lowers* `colWordNum`. The `colWordNum`-lowering branch
+is discharged outright by the column-antisymmetry lemma `polytabloid_colStab_smul`
 (`e_{σ·t} = sgn(σ)·e_t` for `σ ∈ C_t`, proved sorry-free here): since `sgn(σ)² = 1`,
 `e_t = sgn(σ)·e_{σ·t}`, a one-term combination whose single term is strictly
-`domWeight`-greater by the branch hypothesis. What remains is only the
-**column-maximal** branch (no `σ ∈ C_t` raises `domWeight`, so the column-sort is
-exhausted): the genuine Garnir coset-sum at a row descent, isolated as the residual
-`straightening_step_colMax` with the sharpening hypothesis that `t` is
-column-dominance-maximal.
+`colWordNum`-smaller by the branch hypothesis. What remains is only the
+**column-word-minimal** branch (no `σ ∈ C_t` lowers `colWordNum`, i.e. columns are
+sorted): the genuine Garnir coset-sum at a row descent, isolated as the residual
+`straightening_step_colMax`. Its one open piece is the **column-word-decrease bound**
+(every non-identity shuffle-transversal term is `colWordNum`-smaller); the coset-sum
+algebra it consumes is already proved sorry-free.
 
 ## References
 - [sagan2001] Sagan, *The Symmetric Group*, §2.5 (the standard basis, Thm 2.5.2;
@@ -800,6 +810,37 @@ theorem domWeight_le (t : Specht.Tableau μ) : domWeight t ≤ domBound μ := by
     _ = (Specht.nOf μ + 1) * ((Specht.nOf μ + 1) * Specht.nOf μ) := by
         simp [Finset.sum_const, Finset.card_range, Nat.mul_comm, Nat.mul_left_comm]
 
+/-! #### The column-word measure (validated replacement for `domWeight`)
+
+`domWeight` (a linear extension of *tabloid dominance*) is the WRONG measure for
+the straightening induction: `straightening_step_colMax` stated over it is FALSE
+(exact-arithmetic disproof, μ=(3,2), t=[[1,2,3],[5,4]]; see
+`docs/audits/2026-07-06-garnir-strict-domweight-counterexample.md` §3.5). Garnir
+straightening produces terms whose *tabloids are dominance-incomparable* to `{t}`,
+so no tabloid-level measure orders them.
+
+The correct measure is the classical **column-reading word** (James Thm 8.4,
+Sagan §2.6): read the labels in column-major cell order (column index first, then
+row) into a word, compared lexicographically. Encoded as a single `ℕ` (base
+`n+1`, first column-major cell most significant), *every* non-identity Garnir
+straightening term has strictly smaller `colWordNum` — validated exhaustively to
+shape (3,3,2)/(4,3,1) (audit §4.5). The straightening induction runs on this
+measure DESCENDING. -/
+
+/-- Column-major **significance exponent** of a cell `c`: the number of `μ`-cells
+strictly LATER in column-major order (compare column index first, then row). The
+first column-major cell (top of the leftmost column) has the highest exponent. -/
+def cmajSig (μ : YoungDiagram) (c : ℕ × ℕ) : ℕ :=
+  (μ.cells.filter (fun c' => c.2 < c'.2 ∨ (c.2 = c'.2 ∧ c.1 < c'.1))).card
+
+/-- The **column-word measure** of a tableau — the validated well-founded measure
+for Garnir straightening (replaces the false-for-this-purpose `domWeight`). Reads
+the labels in column-major cell order and encodes base `(n+1)` with the first
+cell most significant. Every non-identity Garnir straightening term has strictly
+smaller `colWordNum`. -/
+def colWordNum (t : Specht.Tableau μ) : ℕ :=
+  ∑ l : Fin (Specht.nOf μ), (l : ℕ) * (Specht.nOf μ + 1) ^ (cmajSig μ ((t l : ℕ × ℕ)))
+
 /-! #### Column-maximality kills column descents (Garnir steps 3b/3c, sorry-free)
 
 Two sorry-free pieces: (3b) the transposition of two same-column labels lies in the
@@ -1437,118 +1478,115 @@ theorem sum_over_garnirG_reindex {M : Type*} [AddCommMonoid M] (t : Specht.Table
 /-! #### The single residual straightening core + the induction skeleton -/
 
 omit [CharZero k] in
-/-- **STUB — the residual straightening core, SHARPENED to the column-maximal case
+/-- **STUB — the residual straightening core, on the CORRECT `colWordNum` measure
 (Sagan §2.6 Garnir relations).**
 A polytabloid `e_t` that is *not itself* a standard polytabloid **and** whose tableau
-`t` is already **column-(dominance-)maximal** — no column permutation `σ ∈ C_t`
-strictly raises the dominance measure `domWeight` (hypothesis `hmax`) — is a
-`k`-linear combination of polytabloids of **strictly `domWeight`-greater** tabloids.
+`t` is already **column-word-minimal** — no column permutation `σ ∈ C_t` *lowers* the
+column-word measure `colWordNum` (hypothesis `hmax`: `colWordNum t ≤ colWordNum (σ•t)`
+for all `σ`, i.e. `t`'s columns are already sorted) — is a `k`-linear combination of
+polytabloids of **strictly `colWordNum`-smaller** tableaux.
+
+This restatement replaces the earlier `domWeight`-based version, which was **false**
+(exact-arithmetic disproof, μ=(3,2), t=[[1,2,3],[5,4]]; audit §3.5): `domWeight`
+(tabloid dominance) cannot order the Garnir terms because they are dominance-
+*incomparable* to `{t}`. The **column-word** measure does order them — every
+non-identity Garnir term is strictly `colWordNum`-smaller (validated exhaustively to
+shape (3,3,2)/(4,3,1); audit §4.5). This theorem is therefore now a TRUE statement.
 
 This is the *irreducible* combinatorial heart of the straightening algorithm with the
-**column-sort already exhausted**: because `hmax` says no column permutation can raise
-`domWeight` further, the column-antisymmetry lever `polytabloid_colStab_smul` (proved
-above) is spent, and closing this requires a genuine **Garnir coset-sum identity at a
-row descent** (Sagan §2.6), whose non-identity coset terms are `±e_{π•t}` with
-`domWeight (π•t) > domWeight t`. The general `straightening_step` (below) reduces to
-this case sorry-free by splitting on whether a `domWeight`-raising column permutation
+**column-sort already exhausted**: because `hmax` says no column permutation lowers
+`colWordNum` further (columns sorted), the column-antisymmetry lever
+`polytabloid_colStab_smul` is spent, and closing this requires the **Garnir coset-sum
+identity at a row descent** (Sagan §2.6) — proved sorry-free below
+(`garnir_full_annihilation`, `sum_over_garnirG_reindex`, `transversal_sum_eq_zero`,
+`garnir_transversal_exists`, `sum_sign_rep_polytabloid_eq_zero_of_family`) — plus the
+new **column-word decrease** lemma. The general `straightening_step` reduces to this
+case sorry-free by splitting on whether a `colWordNum`-lowering column permutation
 exists.
 
-`hmax` is a genuine restriction (a column-maximal `t` is column-standard up to the
-row order), so this is an honest sub-case, cited but not vacuous: for a column-maximal
-non-standard `t` a row descent between adjacent columns exists and the Garnir relation
-yields strictly dominance-greater — hence strictly `domWeight`-greater — terms. -/
+`hmax` is a genuine restriction (a column-word-minimal `t` is column-standard), so
+this is an honest sub-case: for a column-standard non-standard `t` a row descent
+between adjacent columns exists and the Garnir relation yields strictly
+`colWordNum`-smaller terms. -/
 theorem straightening_step_colMax (t : Specht.Tableau μ)
     (h : Specht.polytabloid (k := k) t ∉ Set.range (standardPolytabloid (k := k) (μ := μ)))
     (hmax : ∀ σ : Specht.colStab t,
-      domWeight ((σ : Equiv.Perm (Fin (Specht.nOf μ))) • t) ≤ domWeight t) :
+      colWordNum t ≤ colWordNum ((σ : Equiv.Perm (Fin (Specht.nOf μ))) • t)) :
     ∃ (s : Finset (Specht.Tableau μ)) (c : Specht.Tableau μ → k),
-      (∀ t' ∈ s, domWeight t < domWeight t') ∧
+      (∀ t' ∈ s, colWordNum t' < colWordNum t) ∧
       Specht.polytabloid (k := k) t = ∑ t' ∈ s, c t' • Specht.polytabloid (k := k) t' := by
-  -- Ref: [sagan2001] §2.6 (Garnir relations / straightening algorithm). See also
-  -- [james1984representation] §8. With the column-sort exhausted (`hmax`: `t` is
-  -- column-dominance-maximal), the residual is a pure Garnir coset-sum identity at a
-  -- row descent, whose non-identity terms are polytabloids of strictly
-  -- dominance-greater (hence `domWeight`-greater) tabloids.
+  -- Ref: [sagan2001] §2.6 (Garnir relations / straightening algorithm); also
+  -- [james1984representation] §8. Restated (2026-07-07) on the CORRECT `colWordNum`
+  -- measure (the earlier `domWeight` goal was FALSE — audit §3.5). With the column-sort
+  -- exhausted (`hmax`: `t` is column-word-minimal ⇒ columns sorted), the residual is a
+  -- pure Garnir coset-sum identity at a row descent, whose non-identity terms are
+  -- polytabloids of strictly `colWordNum`-SMALLER tableaux.
   --
-  -- REDUCTION ROADMAP (the algebraic half is already proved sorry-free; only the
-  -- combinatorial Garnir-set construction remains). The proved pieces compose as
+  -- REDUCTION ROADMAP. The algebraic (annihilation + coset-reindex) half is proved
+  -- sorry-free; the remaining obligations are the Garnir-set construction and the NEW
+  -- column-word-decrease bound. The proved pieces compose as
   --   Garnir set → hfam → `sum_sign_rep_polytabloid_eq_zero_of_family`
-  --              → `transversal_sum_eq_zero` → `garnir_assembly` → this goal.
+  --              → `transversal_sum_eq_zero` → `garnir_assembly` → e_t = Σ (non-id terms).
   --
-  -- 1. Take the row descent from `exists_row_descent_of_colMax t h hmax`:
-  --    cells (i,j),(i,j+1) ∈ μ with `labelAt t hij1 ≤ labelAt t hij`.
+  -- 1. Take the row descent from `exists_row_descent_of_colMax t h hmax` (column-word-
+  --    minimal ⇒ column-standard ⇒ a row descent exists): cells (i,j),(i,j+1) ∈ μ with
+  --    `labelAt t hij1 ≤ labelAt t hij`.
   -- 2. Garnir label-sets (as `Finset (Fin (nOf μ))`, via `colPattern`/`rowPattern`):
   --      A := univ.filter (fun l => colPattern t l = j     ∧ i ≤ rowPattern t l)
   --      B := univ.filter (fun l => colPattern t l = j + 1 ∧ rowPattern t l ≤ i)
-  --    Disjoint (columns j ≠ j+1). Cardinalities via the labels↔rows bijection in a
-  --    column (each column c has one label per row 0..colLen c − 1):
-  --      |A| = colLen j − i,  |B| = i + 1  (rows 0..i all in col j+1 since (i,j+1)∈μ),
-  --    so |A| + |B| = colLen j + 1.
-  -- 3. `H := (S_A × S_B)` as the subgroup of perms supported on A resp. B, and `T` a
-  --    left transversal of H in `S_{A∪B}`; both are `⊆ colStab t` for H (A,B live in
-  --    single columns), giving `garnir_assembly`'s `1 ∈ T` and
-  --    `transversal_sum_eq_zero`'s `hH`, `0 < H.card`.
-  -- 4. hfam (the pigeonhole crux, now fully worked out): for every ρ ∈ colStab t set
-  --    φ l := rowPattern t (ρ⁻¹ l). φ is injective on A and on B (a column has ≤ 1
-  --    label per row, and t is a bijection); φ(A), φ(B) ⊆ {0..colLen j − 1} (φ(B) via
-  --    colLen (j+1) ≤ colLen j). Were φ(A) ∩ φ(B) = ∅ they would occupy
-  --    |A|+|B| = colLen j + 1 distinct rows inside a colLen j-element set — impossible
-  --    (`Finset.exists_ne_map_eq_of_card_lt_of_maps_to`). Hence ∃ a∈A, b∈B with
-  --    rowPattern (ρ•t) a = rowPattern (ρ•t) b (`rowPattern_smul`), so
-  --    τ_ρ := Equiv.swap a b ∈ rowStab (ρ•t) ∩ S_{A∪B}; feed `mtab_sum_sign_smul_of_eq_zero`
-  --    at the tableau ρ•t (G = S_{A∪B} right-τ_ρ-closed) to get hfam ρ.
-  -- 5. dominance — THIS THEOREM'S GOAL IS FALSE AS STATED (definitive, 2026-07-07).
-  --    The goal demands `∀ t' ∈ s, domWeight t < domWeight t'` (every Garnir term
-  --    STRICTLY domWeight-greater). That is unsatisfiable. Exact-arithmetic disproof
-  --    (μ=(3,2), t=[[1,2,3],[5,4]]; `/tmp/garnir/solve.py`, and
-  --    docs/audits/2026-07-06-garnir-strict-domweight-counterexample.md §3.5):
-  --      • t is column-maximal (hmax ✓) and non-standard (h ✓), e_t ≠ 0.
-  --      • Unique standard-basis expansion:
-  --          e_t = e_{[[1,2,3],[4,5]]} − e_{[[1,3,4],[2,5]]} + e_{[[1,3,5],[2,4]]},
-  --        whose three tabloids sit at dominance =, <, < relative to {t} (never >).
-  --      • `domWeight` (small-labels-on-top count) is MAXIMIZED by {1,2,3}{4,5} = {t},
-  --        so {t' : domWeight t' > domWeight t} = ∅ ⇒ s = ∅ ⇒ e_t = 0, contradiction.
-  --    Consequence: the `domBound − domWeight` INCREASING induction is mis-directed —
-  --    standard tableaux are domWeight-MINIMA of straightening, not maxima. The parent
-  --    `straightening_step` inherits the false goal shape. Fixing this is a framework
-  --    RESTATEMENT (terms dominance-`⊴`, or the classical column-word/last-letter order),
-  --    not a matter of closing this sorry. Empirically both naive termination measures
-  --    (row-inversions alone; lex (domWeight, row-inversions)) also fail exhaustively
-  --    (audit §4.5). DO NOT attempt to discharge this sorry against the current signature.
-  -- STATUS: steps 1–4 (the coset-sum machinery) are proved sorry-free and REUSABLE
+  --    Disjoint; |A| + |B| = colLen j + 1 (rows 0..i all in col j+1 since (i,j+1)∈μ).
+  -- 3. `H := (S_A × S_B)`, `T` a left transversal of H in `S_{A∪B}` (the SHUFFLE
+  --    transversal — reps increasing on A and on B). Feeds `garnir_assembly` /
+  --    `transversal_sum_eq_zero` (both `⊆ colStab t`; `1 ∈ T`; `0 < H.card`). For a
+  --    column-standard t the identity coset contributes coefficient 1, so
+  --    e_t = −Σ_{non-id π∈T} c_π · e_{π•t} directly (no CharZero division).
+  -- 4. hfam (the pigeonhole crux, worked out): for every ρ ∈ colStab t,
+  --    φ l := rowPattern t (ρ⁻¹ l) is injective on A and on B and maps into
+  --    {0..colLen j − 1}; |A|+|B| = colLen j + 1 forces a collision a∈A,b∈B in the
+  --    same row, so `Equiv.swap a b ∈ rowStab (ρ•t) ∩ S_{A∪B}` and
+  --    `mtab_sum_sign_smul_of_eq_zero` at ρ•t gives hfam ρ.
+  -- 5. **column-word decrease (the genuine remaining core).** For the shuffle
+  --    transversal, every non-identity rep's column-sorted image `t'` satisfies
+  --    `colWordNum t' < colWordNum t`. VALIDATED exhaustively (all col-standard
+  --    tableaux, all row descents, shapes to (3,3,2)/(4,3,1); audit §4.5) — this is a
+  --    TRUE statement, unlike the old `domWeight` claim. The Lean proof needs: the
+  --    column word of the sorted A-column is lex-smaller after the shuffle moves a
+  --    smaller B-label into an earlier column-major cell. This is the one open piece.
+  -- STATUS: the coset-sum machinery (steps 1–4) is proved sorry-free and REUSABLE
   --   (`garnir_full_annihilation`, `sum_over_garnirG_reindex`, `transversal_sum_eq_zero`,
-  --   `garnir_transversal_exists`, `sum_sign_rep_polytabloid_eq_zero_of_family`). The
-  --   dominance CONCLUSION is false; the algebraic annihilation half stands.
-  -- Ref: [sagan2001] §2.6; [james1984representation] §8.
+  --   `garnir_transversal_exists`, `sum_sign_rep_polytabloid_eq_zero_of_family`).
+  --   Everything DOWNSTREAM of this theorem is now sorry-free on `colWordNum` — the
+  --   spanning chain is SOUND. Only the step-5 column-word-decrease bound + the Garnir-
+  --   set wiring remain. Ref: [sagan2001] §2.6; [james1984representation] §8.
   sorry
 
 omit [CharZero k] in
 /-- **Straightening step (Sagan §2.6) — reduced sorry-free to the column-maximal core.**
 A polytabloid `e_t` that is *not itself* a standard polytabloid is a `k`-linear
-combination of polytabloids of **strictly dominance-greater** tabloids (encoded by the
-strictly-monotone measure `domWeight`). From this core, the full spanning half
+combination of polytabloids of **strictly `colWordNum`-smaller** tableaux (the
+validated column-word measure). From this core, the full spanning half
 (`standardPolytabloid_straightening`) follows sorry-free by well-founded induction on
-`domBound μ - domWeight t`.
+`colWordNum t` (descending).
 
 **Reduction (sorry-free half).** Split on whether some column permutation `σ ∈ C_t`
-strictly raises `domWeight`:
+strictly *lowers* `colWordNum` (equivalently: `t`'s columns are not yet sorted):
 
-* **Column-raising** (`∃ σ ∈ C_t, domWeight t < domWeight (σ•t)`) — handled here
+* **Column-lowering** (`∃ σ ∈ C_t, colWordNum (σ•t) < colWordNum t`) — handled here
   outright by the column-antisymmetry lever `polytabloid_colStab_smul`: since
   `e_{σ•t} = sgn(σ)·e_t` and `sgn(σ)² = 1`, we get `e_t = sgn(σ)·e_{σ•t}`, a
-  one-term combination over `{σ•t}`, and `domWeight t < domWeight (σ•t)` is exactly
+  one-term combination over `{σ•t}`, and `colWordNum (σ•t) < colWordNum t` is exactly
   the branch hypothesis. No dominance theory needed.
-* **Column-maximal** (no such `σ`) — delegated to `straightening_step_colMax`, the
-  single sharpened Garnir residual, which now carries the extra hypothesis `hmax`
-  that no column permutation raises `domWeight`. -/
+* **Column-word-minimal** (no such `σ`, i.e. columns sorted) — delegated to
+  `straightening_step_colMax`, the single Garnir residual, which carries the
+  hypothesis `hmax` that no column permutation lowers `colWordNum`. -/
 theorem straightening_step (t : Specht.Tableau μ)
     (h : Specht.polytabloid (k := k) t ∉ Set.range (standardPolytabloid (k := k) (μ := μ))) :
     ∃ (s : Finset (Specht.Tableau μ)) (c : Specht.Tableau μ → k),
-      (∀ t' ∈ s, domWeight t < domWeight t') ∧
+      (∀ t' ∈ s, colWordNum t' < colWordNum t) ∧
       Specht.polytabloid (k := k) t = ∑ t' ∈ s, c t' • Specht.polytabloid (k := k) t' := by
   classical
   by_cases hraise : ∃ σ : Specht.colStab t,
-      domWeight t < domWeight ((σ : Equiv.Perm (Fin (Specht.nOf μ))) • t)
+      colWordNum ((σ : Equiv.Perm (Fin (Specht.nOf μ))) • t) < colWordNum t
   · -- Column-raising case: fully proved via column-antisymmetry.
     obtain ⟨σ, hσ⟩ := hraise
     set σ0 : Equiv.Perm (Fin (Specht.nOf μ)) := (σ : Equiv.Perm (Fin (Specht.nOf μ))) with hσ0
@@ -1572,16 +1610,18 @@ omit [CharZero k] in
 /-- **Spanning half — now proved sorry-free MODULO the single core
 `straightening_step`.** Every polytabloid `e_t` (arbitrary tableau `t`) lies in the
 span of the *standard* polytabloids, by well-founded (strong) induction on the
-measure `domBound μ - domWeight t`: if `e_t` is already a standard polytabloid it is
-in the spanning set; otherwise `straightening_step` rewrites it over tabloids of
-strictly greater `domWeight` (strictly smaller measure), each in the span by the
-induction hypothesis, and the span is closed under `k`-linear combinations. -/
+**column-word measure** `colWordNum t` (DESCENDING): if `e_t` is already a standard
+polytabloid it is in the spanning set; otherwise `straightening_step` rewrites it
+over tableaux of strictly *smaller* `colWordNum`, each in the span by the induction
+hypothesis, and the span is closed under `k`-linear combinations. (The measure is
+`colWordNum`, not `domWeight`: `domWeight` — tabloid dominance — cannot drive this
+induction, since Garnir produces dominance-incomparable terms; see the audit doc.) -/
 theorem standardPolytabloid_straightening :
     ∀ t : Specht.Tableau μ,
       Specht.polytabloid (k := k) t ∈
         Submodule.span k (Set.range (standardPolytabloid (k := k) (μ := μ))) := by
   intro t
-  generalize hg : domBound μ - domWeight t = g
+  generalize hg : colWordNum t = g
   induction g using Nat.strong_induction_on generalizing t with
   | _ g IH =>
     by_cases hr : Specht.polytabloid (k := k) t ∈
@@ -1591,9 +1631,8 @@ theorem standardPolytabloid_straightening :
       rw [heq]
       refine Submodule.sum_mem _ (fun t' ht' => ?_)
       refine Submodule.smul_mem _ _ ?_
-      have hlt : domWeight t < domWeight t' := hgt t' ht'
-      have hb : domWeight t' ≤ domBound μ := domWeight_le t'
-      exact IH (domBound μ - domWeight t') (by omega) t' rfl
+      have hlt : colWordNum t' < colWordNum t := hgt t' ht'
+      exact IH (colWordNum t') (by omega) t' rfl
 
 omit [CharZero k] in
 /-- **M^μ-level span identity.** The standard polytabloids span exactly `S^μ`
