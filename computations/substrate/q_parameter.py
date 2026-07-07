@@ -67,11 +67,14 @@ from qou_substrate.constants import *  # noqa: F401,F403,E402
 #     the precision/prediction producers (~279 proton witnesses).
 #
 # The corpus is genuinely MIXED (sweep 2026-07-06: 279 proton + 455 muon), so a
-# blanket flip is WRONG. This block therefore applies the muon (ideal) anchor ONLY
-# when the caller opts in via the `QOU_Q0_ANCHOR` env var; the DEFAULT is the
-# physical/proton anchor (the `import *` above, unchanged).  A canonical-derivation
-# producer runs muon-consistent by exporting `QOU_Q0_ANCHOR=ideal`; a physical
-# producer leaves it unset (proton).
+# blanket flip is WRONG. This block applies the muon (ideal) anchor when EITHER
+# (a) the caller opts in via the `QOU_Q0_ANCHOR` env var, OR (b) the env var is
+# unset AND the running producer's stem is listed under `ideal_muon` in
+# `q0_anchor_manifest.json` (the auto-select below). Everything else — env unset
+# and stem not in `ideal_muon`, or an explicit physical/proton value — keeps the
+# physical/proton anchor (the `import *` above, unchanged). So a canonical
+# producer is muon either by its manifest tag or by exporting
+# `QOU_Q0_ANCHOR=ideal`; a physical producer leaves it unset and is not tagged.
 #
 #   QOU_Q0_ANCHOR ∈ {ideal, muon, canonical}  → muon override (below)
 #   QOU_Q0_ANCHOR unset / {physical, proton, experimental} → proton (no override)
@@ -92,7 +95,7 @@ if not _anchor:
         import json as _mj
         from pathlib import Path as _MP
         _man = _mj.loads((_MP(__file__).resolve().parent.parent
-                          / "q0_anchor_manifest.json").read_text())
+                          / "q0_anchor_manifest.json").read_text(encoding="utf-8"))
         _stem = _MP(_sys.argv[0]).stem if (_sys.argv and _sys.argv[0]) else ""
         if _stem in _man.get("ideal_muon", []):
             _anchor = "ideal"
@@ -106,7 +109,7 @@ if _anchor in ("ideal", "muon", "canonical"):
     from pathlib import Path as _P
 
     _QPIN = _P(__file__).resolve().parent.parent / "q-pinning-50-digit.witness.json"
-    _d = _json.loads(_QPIN.read_text())["derived_50_digit"]
+    _d = _json.loads(_QPIN.read_text(encoding="utf-8"))["derived_50_digit"]
     if not _d["q"].startswith("1.109978595557"):
         raise ValueError(f"q-pinning witness q={_d['q'][:16]} not canonical muon")
 
