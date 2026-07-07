@@ -33,7 +33,21 @@
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
       }
     ],
-    "proof-narrative-lean-equiv": [],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
     "milnor-amalgamated-flow": [],
     "proof-statement-integrity": [
       {
@@ -47,6 +61,19 @@
           "agent_skill": "local/qa-agent-drain-heuristic",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
         }
       }
     ],
@@ -63,6 +90,19 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
         }
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
       }
     ],
     "proof-no-trivial-true": [
@@ -77,6 +117,19 @@
           "agent_skill": "local/qa-agent-drain-heuristic",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
         }
       }
     ],
@@ -93,6 +146,19 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
         }
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
       }
     ],
     "proof-no-decide-masking": [
@@ -108,6 +174,19 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
         }
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -122,6 +201,19 @@
           "agent_skill": "local/qa-agent-drain-heuristic",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
         }
       }
     ],
@@ -141,6 +233,19 @@
         "score": {
           "value": 0.85
         }
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -159,6 +264,19 @@
         "score": {
           "value": 0.85
         }
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
       }
     ],
     "proof-rater-novelty": [
@@ -176,6 +294,274 @@
         },
         "score": {
           "value": 0.85
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "result": "pass",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "result": "pass",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "result": "pass",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "warn",
+        "notes": "Uses words like 'obviously' or 'trivial' which might mask false claims. author resolution needed.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
         }
       }
     ]
