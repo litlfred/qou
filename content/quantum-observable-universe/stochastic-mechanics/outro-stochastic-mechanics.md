@@ -1,13 +1,3 @@
-This closes the stochastic-mechanics chapter.  The Markov closure
-map, $\varphi_q$ AJ machinery, Lusztig canonical basis at $q = 1$,
-and reverse limit $q \to \infty$ assembled here give the
-substrate-level stochastic content that the classical-limit and
-information-theoretic chapters consume as input.  The reconnected
-orphan blocks land the bridge between the Markov closure map and
-the classical-limit construction explicitly, closing the
-stochastic-mechanics narrative arc.
+This closes the stochastic-mechanics chapter. The Markov closure map, $\varphi_q$ AJ machinery, Lusztig canonical basis at $q = 1$, and reverse limit $q \to \infty$ assembled here give the substrate-level stochastic content that the classical-limit and information-theoretic chapters consume as input. The reconnected orphan blocks land the bridge between the Markov closure map and the classical-limit construction explicitly, closing the stochastic-mechanics narrative arc.
 
-The next chapter (climax: volume-mass duality) extracts the
-hyperbolic-volume content that pairs with the substrate-level
-mass spectrum, and the chapters after that specialise the duality
-to atomic isotopes and the $\beta$-decay $Q$-value predictions.
+The next chapter extracts the hyperbolic-volume content that pairs with the substrate-level mass spectrum. The subsequent chapters specialise the duality to atomic isotopes and the $\beta$-decay $Q$-value predictions.
