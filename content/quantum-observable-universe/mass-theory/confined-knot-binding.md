@@ -1,124 +1,20 @@
 **Proposition.**
-*Let $\beta \in H_3(R, q)$ be a confined nuclear braid
-([atomic braid](#def:atomic-braid)) — typically
-$\beta = T_w = \mathtt{atom\_braid\_word\_3A}(Z, N)$
-(the canonical formalism)
-— built from crossing operators
-$c_k \sigma_{i_k} + d_k \cdot 1 \in H_3(R, q)$ at generators
-$\sigma_{i_k}$ with parameters $(c_k, d_k)$ (the $k$-th letter of
-$T_w$ in its GB normal form). The Wedderburn-Artin decomposition
-([three-parameter decomposition](#prop:three-parameters-wedderburn))
-separates each crossing's contribution into three channels:*
+*Let $\beta \in H_3(R, q)$ be a confined nuclear braid built from crossing operators at generators $\sigma_{i_k}$. The Wedderburn-Artin decomposition separates each crossing's contribution into three channels:*
 
 $$
   \hat{V}(c, d)
   = W_{\mathrm{sym}} \cdot \chi_{\mathrm{sym}}(c, d)
   + W_{\mathrm{std}} \cdot \chi_{\mathrm{std}}(c, d)
-  + W_{\mathrm{alt}} \cdot \chi_{\mathrm{alt}}(c, d)
+  + W_{\mathrm{alt}} \cdot \chi_{\mathrm{alt}}(c, d).
 $$
 
-*where the Wedderburn weights are:*
-
-$$
-  W_{\mathrm{sym}} = W_{\mathrm{alt}}
-  = \frac{q^2}{q^4 + 4q^2 + 1},
-  \qquad
-  W_{\mathrm{std}}
-  = \frac{(q^2 + 1)^2}{q^4 + 4q^2 + 1}
-$$
-
-*and the channel characters are:*
-
-$$
-  \chi_{\mathrm{sym}}(c, d) = cq + d,
-  \quad
-  \chi_{\mathrm{alt}}(c, d) = -\frac{c}{q} + d,
-  \quad
-  \chi_{\mathrm{std}}(c, d) = z \cdot a + b
-$$
-
-*with $(a, b)$ accumulated via the transfer-matrix recurrence
-$\bigl[\begin{smallmatrix} a' \\ b' \end{smallmatrix}\bigr]
-= \bigl[\begin{smallmatrix} cH_A + d & c \\ c & d
-\end{smallmatrix}\bigr]
-\bigl[\begin{smallmatrix} a \\ b \end{smallmatrix}\bigr]$,
-$H_A = q - q^{-1}$, $z = 1/(\sqrt{q} + 1/\sqrt{q})$.*
-
-**Extremal cancellation (symmetric crossings).**
-*For any crossing with $d = -H_A/2$ (the symmetric mixing
-$\tfrac{1}{2}(\sigma + \sigma^{-1})$, which encodes the
-proton-neutron nuclear force):*
-
-$$
-  \chi_{\mathrm{sym}} = \frac{q^2 + 1}{2q},
-  \qquad
-  \chi_{\mathrm{alt}} = -\frac{q^2 + 1}{2q}
-$$
-
-*Since $W_{\mathrm{sym}} = W_{\mathrm{alt}}$, the extremal
-contributions cancel exactly:*
-
-$$
-  W_{\mathrm{sym}} \cdot \chi_{\mathrm{sym}}
-  + W_{\mathrm{alt}} \cdot \chi_{\mathrm{alt}} = 0
-$$
-
-*The binding volume of a symmetric crossing is carried entirely
-by the standard representation:*
+*The extremal contributions exactly cancel for symmetric crossings encoding the proton-neutron force. The binding volume transfers entirely to the standard representation:*
 
 $$
   \hat{V}_{\mathrm{pn}}
-  = W_{\mathrm{std}} \cdot \Bigl(z - \frac{H_A}{2}\Bigr)
+  = W_{\mathrm{std}} \cdot \Bigl(z - \frac{H_A}{2}\Bigr).
 $$
 
-**Cross-channel interaction (adjacent generators).**
-*The symmetric and alternating representations are $1$-dimensional,
-so products of consecutive crossings on the same generator are
-scalar: $\chi_{\mathrm{sym}}(\beta) = \prod_k (c_k q + d_k)$.
-The standard representation is $2$-dimensional — consecutive
-crossings compose as $2 \times 2$ matrix products:*
+*The 2-dimensional standard representation creates non-commuting cross-channel interactions between adjacent generators. This generates the Markov-weighted pair interaction term $\delta_{\times}$.*
 
-$$
-  M_i = \prod_k \begin{pmatrix}
-    c_k H_A + d_k & c_k \\ c_k & d_k
-  \end{pmatrix}
-$$
-
-*This non-commutativity produces the cross-channel term between
-adjacent generators $i$ and $i{+}1$, weighted by the Markov
-parameter $z^2 = \mathrm{tr}_M(\sigma_i \sigma_{i+1})$:*
-
-$$
-  \delta_{\times}
-  = z^2 \sum_{|i-j|=1}
-    \ln\bigl\lvert
-      \hat{V}_i^{\mathrm{full}} \cdot \hat{V}_j^{\mathrm{full}}
-    \bigr\rvert
-$$
-
-*The weight $z^2$ is derived from the Hecke algebra (not fitted):
-it is the Markov trace of the adjacent generator product
-$\mathrm{tr}_M(\sigma_0 \sigma_1) = z^2$.*
-
-**General confined-state character ratio.**
-*For an $A$-nucleon system with construction at jet levels
-$\ell = 0$ (quark), $\ell = 1$ (nucleon), $\ell = 2$ (nucleus),
-the knot factor at each level is the character ratio:*
-
-$$
-  a_\ell
-  = \frac{\hat{V}_\ell(\text{confined})}
-         {\hat{V}_\ell(\text{free})}
-$$
-
-*measuring how the confined state's Wedderburn volume departs from
-the free constituent product at that jet level.  The total knot
-factor is:*
-
-$$
-  a(Z, N) = \prod_\ell a_\ell
-$$
-
-*This product emerges from the algebraic structure of $H_3(R, q)$ —
-the character ratios are functions of $q$ alone, with no empirical
-input.*
+For an $A$-nucleon system constructed sequentially through quark, nucleon, and nuclear jet levels, the character ratio measures the volume departure from the free constituents. The total knot factor multiplies these strict, empirically-independent character ratios across all levels.
