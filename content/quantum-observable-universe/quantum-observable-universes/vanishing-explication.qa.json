@@ -818,280 +818,175 @@
         "notes": "The block content is well-aligned with the chapter scope."
       }
     ],
-    "da-false-claim": [
-      {
-        "field_hash": {
-          "md": "ffc567b41810",
-          "ts": "967ab60b2d44"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.019060Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.019060Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "vanishing-explication.ts:1",
-        "notes": "No false claims identified in the prose of 'Vanishing conditions'; the mathematical reasoning concerning 'In [$\\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-univer...' is consistent."
+    "da-false-claim": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:18+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-vacuous": [
-      {
-        "field_hash": {
-          "md": "ffc567b41810",
-          "ts": "967ab60b2d44"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.019060Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.019060Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "vanishing-explication.ts:1",
-        "notes": "The block 'Vanishing conditions' presents substantial mathematical content: 'In [$\\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-univer...'."
+    },
+    "da-vacuous": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:18+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-circular": [
-      {
-        "field_hash": {
-          "md": "ffc567b41810",
-          "ts": "967ab60b2d44"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.019060Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.019060Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "vanishing-explication.ts:1",
-        "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Vanishing conditions' (which asserts 'In [$\\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-univer...')."
+    },
+    "da-circular": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:18+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-overclaim": [
-      {
-        "field_hash": {
-          "md": "ffc567b41810",
-          "ts": "967ab60b2d44"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.019060Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.019060Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "vanishing-explication.ts:1",
-        "notes": "The remarks and narrative scope in 'Vanishing conditions' concerning 'In [$\\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-univer...' are appropriately qualified."
+    },
+    "da-overclaim": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:18+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-hidden-dof": [
-      {
-        "field_hash": {
-          "md": "ffc567b41810",
-          "ts": "967ab60b2d44"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.019060Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.019060Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "vanishing-explication.ts:1",
-        "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Vanishing conditions'."
+    },
+    "da-hidden-dof": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:18+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-non-sequitur": [
-      {
-        "field_hash": {
-          "md": "ffc567b41810",
-          "ts": "967ab60b2d44"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.019060Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.019060Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "vanishing-explication.ts:1",
-        "notes": "The prose arguments in 'Vanishing conditions' proceed logically through the stated steps: 'In [$\\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-univer...'."
+    },
+    "da-non-sequitur": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:18+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-lean-narrative-divergence": [
-      {
-        "field_hash": {
-          "md": "ffc567b41810",
-          "ts": "967ab60b2d44"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.019060Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.019060Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "vanishing-explication.ts:1",
-        "notes": "No Lean sibling required; the narrative of 'Vanishing conditions' matches the expected configuration."
+    },
+    "da-lean-narrative-divergence": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:18+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-citation-misuse": [
-      {
-        "field_hash": {
-          "md": "ffc567b41810",
-          "ts": "967ab60b2d44"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.019060Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.019060Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "vanishing-explication.ts:1",
-        "notes": "No citations are present in 'Vanishing conditions', hence no citation misuse is possible."
+    },
+    "da-citation-misuse": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:18+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-definitional-ambiguity": [
-      {
-        "field_hash": {
-          "md": "ffc567b41810",
-          "ts": "967ab60b2d44"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.019060Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.019060Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "vanishing-explication.ts:1",
-        "notes": "Key terms and symbols in 'Vanishing conditions' (e.g. from 'In [$\\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-univer...') are mathematically defined and unambiguous."
+    },
+    "da-definitional-ambiguity": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:18+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-empirical-fragility": [
-      {
-        "field_hash": {
-          "md": "ffc567b41810",
-          "ts": "967ab60b2d44"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.019060Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.019060Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "vanishing-explication.ts:1",
-        "notes": "The algebraic and logical relations in 'Vanishing conditions' are independent of empirical tuning parameters."
+    },
+    "da-empirical-fragility": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:18+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-physical-implausibility": [
-      {
-        "field_hash": {
-          "md": "ffc567b41810",
-          "ts": "967ab60b2d44"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.019060Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.019060Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "vanishing-explication.ts:1",
-        "notes": "The physical concepts described in 'Vanishing conditions' are consistent with quantum observable mechanics."
+    },
+    "da-physical-implausibility": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:18+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-reproducibility": [
-      {
-        "field_hash": {
-          "md": "ffc567b41810",
-          "ts": "967ab60b2d44"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.019060Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.019060Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "vanishing-explication.ts:1",
-        "notes": "The derivation steps and formal definitions in 'Vanishing conditions' are reproducible."
+    },
+    "da-reproducibility": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:18+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-referee-verdict": [
-      {
-        "field_hash": {
-          "md": "ffc567b41810",
-          "ts": "967ab60b2d44"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.019060Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.019060Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "notes": "Referee verdict: clean.",
-        "verdict": "clean",
-        "referee_argument": "No significant objections; the mathematical claims in 'Vanishing conditions' (concerning 'In [$\\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-univer...') are consistent and formally verified."
+    },
+    "da-referee-verdict": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:18+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
+    },
     "milnor-amalgamated-flow": [
       {
         "result": "pass",

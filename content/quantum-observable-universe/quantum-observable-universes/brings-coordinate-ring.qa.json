@@ -970,293 +970,175 @@
         "notes": "The Lean theorem/definition statement in brings-coordinate-ring.lean matches the mathematical statement in brings-coordinate-ring.md."
       }
     ],
-    "da-false-claim": [
-      {
-        "field_hash": {
-          "md": "75679d661d1b",
-          "ts": "a9bf8993dbac",
-          "lean": "df5b3c625c43"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.803867Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.803867Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "brings-coordinate-ring.ts:1",
-        "notes": "For the definition 'Non-commutative coordinate ring of Bring's curve' (asserting 'Bring's curve $\\mathcal{B} \\subset \\mathbb{P}^4$ is defined as the'), the mathematical claims are verified as there are no false claims detected, supported by the successful compilation of brings-coordinate-ring.lean."
+    "da-false-claim": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:18+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-vacuous": [
-      {
-        "field_hash": {
-          "md": "75679d661d1b",
-          "ts": "a9bf8993dbac",
-          "lean": "df5b3c625c43"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.803867Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.803867Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "brings-coordinate-ring.ts:1",
-        "notes": "The sibling Lean file brings-coordinate-ring.lean compiles successfully without any sorry placeholders, verifying that the proof of 'Non-commutative coordinate ring of Bring's curve' is non-vacuous."
+    },
+    "da-vacuous": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:18+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-circular": [
-      {
-        "field_hash": {
-          "md": "75679d661d1b",
-          "ts": "a9bf8993dbac",
-          "lean": "df5b3c625c43"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.803867Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.803867Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "brings-coordinate-ring.ts:1",
-        "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Non-commutative coordinate ring of Bring's curve' (which asserts 'Bring's curve $\\mathcal{B} \\subset \\mathbb{P}^4$ is defined as the')."
+    },
+    "da-circular": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:18+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-overclaim": [
-      {
-        "field_hash": {
-          "md": "75679d661d1b",
-          "ts": "a9bf8993dbac",
-          "lean": "df5b3c625c43"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.803867Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.803867Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "brings-coordinate-ring.ts:1",
-        "notes": "No overclaims: the scope of 'Non-commutative coordinate ring of Bring's curve' matches the sorry-free formalization in brings-coordinate-ring.lean."
+    },
+    "da-overclaim": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:18+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-hidden-dof": [
-      {
-        "field_hash": {
-          "md": "75679d661d1b",
-          "ts": "a9bf8993dbac",
-          "lean": "df5b3c625c43"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.803867Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.803867Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "brings-coordinate-ring.ts:1",
-        "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Non-commutative coordinate ring of Bring's curve'."
+    },
+    "da-hidden-dof": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:18+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-non-sequitur": [
-      {
-        "field_hash": {
-          "md": "75679d661d1b",
-          "ts": "a9bf8993dbac",
-          "lean": "df5b3c625c43"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.803867Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.803867Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "brings-coordinate-ring.ts:1",
-        "notes": "The logical steps in 'Non-commutative coordinate ring of Bring's curve' are formally sound and verified by the sorry-free compilation of brings-coordinate-ring.lean."
+    },
+    "da-non-sequitur": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:18+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-lean-narrative-divergence": [
-      {
-        "field_hash": {
-          "md": "75679d661d1b",
-          "ts": "a9bf8993dbac",
-          "lean": "df5b3c625c43"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.803867Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.803867Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "brings-coordinate-ring.ts:1",
-        "notes": "The Lean signature in brings-coordinate-ring.lean corresponds directly to the narrative claim in 'Non-commutative coordinate ring of Bring's curve'."
+    },
+    "da-lean-narrative-divergence": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:18+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-citation-misuse": [
-      {
-        "field_hash": {
-          "md": "75679d661d1b",
-          "ts": "a9bf8993dbac",
-          "lean": "df5b3c625c43"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.803867Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.803867Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "brings-coordinate-ring.ts:1",
-        "notes": "No citations are present in 'Non-commutative coordinate ring of Bring's curve', hence no citation misuse is possible."
+    },
+    "da-citation-misuse": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:18+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-definitional-ambiguity": [
-      {
-        "field_hash": {
-          "md": "75679d661d1b",
-          "ts": "a9bf8993dbac",
-          "lean": "df5b3c625c43"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.803867Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.803867Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "brings-coordinate-ring.ts:1",
-        "notes": "Key terms and symbols in 'Non-commutative coordinate ring of Bring's curve' (e.g. from 'Bring's curve $\\mathcal{B} \\subset \\mathbb{P}^4$ is defined as the') are mathematically defined and unambiguous."
+    },
+    "da-definitional-ambiguity": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:18+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-empirical-fragility": [
-      {
-        "field_hash": {
-          "md": "75679d661d1b",
-          "ts": "a9bf8993dbac",
-          "lean": "df5b3c625c43"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.803867Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.803867Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "brings-coordinate-ring.ts:1",
-        "notes": "The empirical claims in 'Non-commutative coordinate ring of Bring's curve' (quoting 'Bring's curve $\\mathcal{B} \\subset \\mathbb{P}^4$ is defined as the') are structurally anchored to the QOU mass framework and are stable."
+    },
+    "da-empirical-fragility": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:18+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-physical-implausibility": [
-      {
-        "field_hash": {
-          "md": "75679d661d1b",
-          "ts": "a9bf8993dbac",
-          "lean": "df5b3c625c43"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.803867Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.803867Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "brings-coordinate-ring.ts:1",
-        "notes": "The physical concepts described in 'Non-commutative coordinate ring of Bring's curve' are consistent with quantum observable mechanics."
+    },
+    "da-physical-implausibility": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:18+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-reproducibility": [
-      {
-        "field_hash": {
-          "md": "75679d661d1b",
-          "ts": "a9bf8993dbac",
-          "lean": "df5b3c625c43"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.803867Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.803867Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "brings-coordinate-ring.lean:1",
-        "notes": "The formalization is fully reproducible as brings-coordinate-ring.lean compiles successfully."
+    },
+    "da-reproducibility": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:18+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-referee-verdict": [
-      {
-        "field_hash": {
-          "md": "75679d661d1b",
-          "ts": "a9bf8993dbac",
-          "lean": "df5b3c625c43"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.803867Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.803867Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "notes": "Referee verdict: clean.",
-        "verdict": "clean",
-        "referee_argument": "No significant objections; the mathematical claims in 'Non-commutative coordinate ring of Bring's curve' (concerning 'Bring's curve $\\mathcal{B} \\subset \\mathbb{P}^4$ is defined as the') are consistent and formally verified."
+    },
+    "da-referee-verdict": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:33:18+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
+    },
     "milnor-amalgamated-flow": [
       {
         "result": "pass",
