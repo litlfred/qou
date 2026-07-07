@@ -1083,6 +1083,19 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Statement contains only the bare claim without physical interpretation.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:13.452Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "fit-section-chapter": [
@@ -1103,6 +1116,19 @@
         "reviewed_at": "2026-07-07T14:26:56.829649Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:13.452Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "wall-side-statement": [
@@ -1124,6 +1150,19 @@
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
         "evidence": "content/quantum-observable-universe/mass-theory/bar-parity-split.lean:1 \u2014 Lean file exists",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:13.452Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "wall-side-proof": [
@@ -1144,6 +1183,19 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean file contains a fully verified, sorry-free proof.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:13.452Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1180,6 +1232,19 @@
         "reviewed_at": "2026-07-07T14:26:56.829649Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:bar-parity-split' \u2192 expected 'bar_parity_split'; Lean declares: evenPart, oddPart, evenPart_add_oddPart, evenPart_fixed, oddPart_anti. Structural match via content."
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:13.452Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1200,6 +1265,19 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Proof strategy is well-structured and easy to follow.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:13.452Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1224,6 +1302,19 @@
         "reviewed_at": "2026-07-07T14:26:56.829649Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:13.452Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-rater-novelty": [
@@ -1248,6 +1339,19 @@
           "value": 0.8,
           "max": 1
         }
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:13.452Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1268,6 +1372,19 @@
         "reviewed_at": "2026-07-07T14:26:56.829649Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:13.452Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1288,6 +1405,19 @@
         "reviewed_at": "2026-07-07T14:26:56.829649Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:13.452Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-no-trivial-true": [
@@ -1308,6 +1438,19 @@
         "reviewed_at": "2026-07-07T14:26:56.829649Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:13.452Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-no-false-premise": [
@@ -1328,6 +1471,19 @@
         "reviewed_at": "2026-07-07T14:26:56.829649Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:13.452Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1348,6 +1504,19 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No unused hypotheses are present in the Lean proof.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:13.452Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-no-decide-masking": [
@@ -1368,6 +1537,19 @@
         "reviewed_at": "2026-07-07T14:26:56.829649Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:13.452Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-false-claim": [
@@ -1389,6 +1571,19 @@
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/bar-parity-split.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:13.452Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-vacuous": [
@@ -1409,6 +1604,19 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-vacuous.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:13.452Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-circular": [
@@ -1430,6 +1638,19 @@
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/bar-parity-split.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:13.452Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-overclaim": [
@@ -1450,6 +1671,19 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:13.452Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1471,6 +1705,19 @@
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/bar-parity-split.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:13.452Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1492,6 +1739,19 @@
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/bar-parity-split.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:13.452Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1512,6 +1772,19 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-lean-narrative-divergence.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:13.452Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1533,6 +1806,19 @@
         "notes": "No issues found for da-citation-misuse.",
         "evidence": "content/quantum-observable-universe/mass-theory/bar-parity-split.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:13.452Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1554,6 +1840,19 @@
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/bar-parity-split.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:13.452Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1575,6 +1874,19 @@
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/bar-parity-split.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:13.452Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1596,6 +1908,19 @@
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/bar-parity-split.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:13.452Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1617,6 +1942,19 @@
         "notes": "No issues found for da-reproducibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/bar-parity-split.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:13.452Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1639,6 +1977,19 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "The mathematical claim and definitions are correctly formalised and verified in Lean."
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:13.452Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1657,6 +2008,36 @@
           "md": "a5fd6662d0b8",
           "ts": "0c50feb9849d",
           "lean": "6b80e94f4159"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:13.452Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:13.452Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
         }
       }
     ]
