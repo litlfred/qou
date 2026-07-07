@@ -1,0 +1,12 @@
+{
+  "computation": "qbeta-hopf-discriminant-parity",
+  "description": "Demonstrates the discriminant parity of the Hopf and unknot sectors for c_3",
+  "delta_Hopf": -76,
+  "delta_unknot": 17,
+  "delta_total": -152,
+  "roots_Hopf_real": 1,
+  "roots_Hopf_complex": 2,
+  "roots_unknot_real": 2,
+  "roots_unknot_complex": 0,
+  "chirality_parity": "Hopf link has negative discriminant -> complex structure. Unknot has positive discriminant -> real structure."
+}

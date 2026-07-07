@@ -1,0 +1,5 @@
+{
+  "computation": "qbeta-w-odd-crossing-weight-modulation",
+  "description": "Calculates how the crossing weight w(q) modulates the irreducible (h/4)C(y)",
+  "mod_net_odd": "q**7*w**2/4 - 7*q**5*w**2/4 + q**5/2 + 19*q**3*w**2/4 - 9*q**3/4 - 31*q*w**2/4 + 15*q/4 + 31*w**2/(4*q) - 15/(4*q) - 19*w**2/(4*q**3) + 9/(4*q**3) + 7*w**2/(4*q**5) - 1/(2*q**5) - w**2/(4*q**7)"
+}
