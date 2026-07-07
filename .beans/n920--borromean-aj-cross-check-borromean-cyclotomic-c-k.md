@@ -4,7 +4,7 @@ title: 'Borromean AJ: cross-check Borromean cyclotomic c_k against Habiro [H1] (
 status: in-progress
 type: task
 created_at: 2026-07-04T10:42:30Z
-updated_at: 2026-07-06T22:54:25Z
+updated_at: 2026-07-07T11:17:41Z
 ---
 
 UNBLOCKED 2026-07-06: owner uploaded uploads/0508100v6.pdf (GL2011).
@@ -30,3 +30,14 @@ modular fit on 1260 samples, column 6; degrees <=150 excluded, fits at
 Options: (a) Python+multiprocessing overnight run, (b) Rust-side
 (hecke-engine) modular interpolation tranche, (c) proper qZeilberger.
 Existence certificate (r<=4 excluded, three verified windows) stands.
+PHASE-2 CONDITIONING DIAGNOSIS 2026-07-07 (PR #3450, audit
+docs/audits/2026-07-07-borromean-recurrence-reconstruction-conditioning.md):
+the RREF-nullspace-per-sample interpolation produces RATIO entries of
+q-degree up to 252 (median 208) — coeff_c/coeff_free — and one genuinely
+low-degree column (181) destabilized the multi-prime CRT consensus. Fix
+committed: --degrees as bisection hints + per-column modal-degree CRT
+consensus + lifted-operator checkpoint + atomic p0 regen. Validation
+gated on an uninterrupted ~35min run (container reclaim killed 3 runs).
+Two clean routes forward: (1) finish the fixed CRT pipeline; (2) qZeilberger
+(proof-grade, mirrors aj_figure_eight_certificate.py, Lean-formalizable).
+Existence certificate stands regardless.
