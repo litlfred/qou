@@ -654,7 +654,47 @@ $E_{\text{unit}}$ (the zero-point family pruned by D2; single-factor class
 exhausted by the sibling; scans forbidden by the entropy bound). The
 derivation is closed down to one fundamental-energy input.
 
-## 15. Corpus-grep record
+## 15. Full-derivation program, tranche 3 (E_unit parity wall + closed-form Lean)
+
+**Closed-form `5g` formalized (option 3).** Two theorems added to
+[`QOU.MassTheory.DeuteronFusion`](../../content/quantum-observable-universe/mass-theory/deuteron-fusion-frame.lean)
+(`lean`-direct exit 0, sorry-free): `five_g_closed` — at criticality
+$g^2(5+x) = 1$ gives $(5g)^2(5+x) = 25$, the radical-free form of
+$5g = 5/\sqrt{5+x}$ whose Taylor expansion **is** the §2e correction ladder
+(D4); and `deformation_split` — $25(1/g)^2 = (5+x)^2(5g)^2$, the exact
+$1 + x/5$ split of the two deformations.
+
+**D5 — E_unit is bar-even; the transition sector is parity-excluded
+([`e_unit_parity_constraint_probe.py`](../../computations/substrate/e_unit_parity_constraint_probe.py)).**
+The owner-approved counit/transition-sector attack, run formalize-first:
+
+- **(b) structural exclusion.** $B(^2\mathrm{H})$ is a *binding* energy
+  (bar-even, cosh channel) and $5g$ is bar-even ($z = 1/[2]_v$, $[2]_v$
+  bar-invariant, $g^2$ bar-even — checked exactly), so
+  $E_{\text{unit}} = B/(5g)$ is **bar-even**. This **excludes the entire
+  bar-odd transition sector** — in particular $\mathfrak{Q}_\beta$ (the
+  sinh/β-decay partner) cannot be $E_{\text{unit}}$. Invariant cited:
+  bar-parity of the binding channel (the cosh/sinh split; PR #3445 §12).
+- **(a) bar-even single-factor negative.** Predicted-first, the licensed
+  bar-even candidates ($m_e$, $2m_e$, $E_0$, $m_e[2]_v$) all miss
+  $E_{\text{unit}} = 0.995940$ MeV — closest $2m_e$ at 2.6 %, well outside
+  the law's 0.4 % scale.
+- **Anti-laundering guard (recorded).** The within-0.4 % coincidence
+  $E_{\text{unit}}/\mathfrak{Q}_\beta \approx 4/\pi$ (0.2 %) is **not**
+  claimed: $4/\pi$ has no categorical derivation, $\mathfrak{Q}_\beta$ is
+  parity-excluded by (b), and the entropy bound forbids reading a 0.4 % hit
+  as evidence.
+
+**The wall, localized.** Closing $E_{\text{unit}}$ requires a *new bar-even
+absolute energy* $\approx 0.996$ MeV, unreachable from the existing anchors
+by one derived factor — Subgoal-2 (absolute scales), declined 2026-05-08
+and only narrowly reopened for the s5-so3 keystone. The full-derivation
+program has reduced $B(^2\mathrm{H})$ to exactly this single owner-gated
+bar-even scale: the **5** is forced (D1), the deformation is $5g$ (D4), $g$
+is a linking rate (D3), and the residual unit is now known to be bar-even,
+transition-sector-excluded, and single-factor-negative (D5).
+
+## 16. Corpus-grep record
 
 - `parabolic cylinder|Weber equation|Hermite`: hits are the Askey/channel
   cluster cited above + bibliography; no prior parabolic-cylinder treatment.
