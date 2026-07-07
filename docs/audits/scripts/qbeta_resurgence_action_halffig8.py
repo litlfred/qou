@@ -110,7 +110,6 @@ def main():
     print(f"  A (large-order estimate) ≈ {mp.nstr(A_limit,8)}")
 
     # Candidate framework values for the geometric-trivial action gap.
-    lam = mp.mpf("0.50747080310923"),  # Λ(π/3)
     candidates = {
         "Vol(4_1)/2π":   Vol_41 / (2 * mp.pi),
         "Λ(π/3)=Vol/4":  Vol_41 / 4,
