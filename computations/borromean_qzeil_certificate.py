@@ -16,7 +16,7 @@ a_0..a_r (rational in x) and a certificate Cert(x,y)=P(x,y)/DEN(x,y) with
 Multiplying by F(n,l) and summing l>=0 (F=0 for l>=n) telescopes the RHS,
 giving  sum_i a_i(x) J_{B,n+i} = -Cert(x,1)*F(n,0),  F(n,0)={n}^2/{1}^2 —
 the operator annihilates the tower up to the explicit boundary term.
-This IS the first Borromean recurrence with a telescoping certificate
+Success here WOULD BE the first Borromean recurrence with a telescoping certificate
 (link-AJ is otherwise formulated-only: Sawabe 2024, Hopf+Whitehead).
 
 Solve strategy: (*) is LINEAR in the unknown coefficients of the a_i and
@@ -263,7 +263,7 @@ def main() -> int:
         "computedAt": datetime.now(timezone.utc).isoformat(),
         "description": ("Borromean diagonal colored-Jones qZeilberger creative-"
                         "telescoping: exact operator + certificate, telescoping "
-                        "identity verified symbolically; first Borromean recurrence "
+                        "identity verified symbolically; would be the first Borromean recurrence "
                         "with a certificate (link-AJ otherwise formulated-only)"),
         "computation": "borromean-qzeil-certificate",
         "audit_only": True,
