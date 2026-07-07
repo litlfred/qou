@@ -2,7 +2,7 @@ Bring's surface enters the framework as a rigid selection. Its categorical Euler
 $$
   \chi(A) = -6
 $$
-([Euler characteristic](#lem:brings-euler-characteristic)). Bring's surface ([Bring's surface](#def:brings-surface)) is the genus-$4$ curve that realises this value. This rigidity provides the QOU counterpart to the Swampland "island of consistency".
+ is the genus-$4$ curve that realises this value. This rigidity provides the QOU counterpart to the Swampland "island of consistency".
 
 **The Swampland statement.**
 Within the landscape of effective field theories, only a sparse subset admits a quantum-gravity completion \cite{vafa2005}. Consistency criteria such as the Weak Gravity Conjecture \cite{arkani-hamed2007} carve out the admissible region. This leaves isolated islands rather than a continuum.

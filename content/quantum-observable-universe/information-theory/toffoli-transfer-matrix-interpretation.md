@@ -1,7 +1,6 @@
-**Explicit values at $q = q_0$
-([local substrate $q$](#prop:local-substrate-q)):**
+**Explicit values at the local substrate parameter $q = q_0$:**
 
-| Controls | $c_{k_1 k_2}$ | $P_{\mathrm{flip}}$ | $P_{7,6}$ ratio |
+| Controls | $c_{k_1 k_2}$ | $P_{\mathrm{flip}}$ | Ratio |
 |:--------:|:-----------:|:-------------------:|:---:|
 | $\mathfrak{p}\mathfrak{p}$ | $1$ | $+0.0495$ | $1\times$ |
 | mixed | $1$ | $+0.0495$ | $1\times$ |
