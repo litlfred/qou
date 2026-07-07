@@ -368,6 +368,23 @@ check it reproduces `c_2 = −1` + the `c_3 → −2` shadow — the cheaper
 basis-re-expansion alternative is now formalize-first excluded. Full finding:
 [`2026-07-07-z-ck-fmap-b3u-uside-transfer-obstruction.md`](../audits/2026-07-07-z-ck-fmap-b3u-uside-transfer-obstruction.md).
 
+## 4-octies. Archimedean evaluation map — bar-decomposition (2026-07-07)
+
+Following the B3-U obstruction (the `c_k` come from the archimedean evaluation,
+not a `u`-re-expansion), the evaluation map is the counit `ε` / Markov trace
+`tr_M` on the nucleon NF diff (`QBetaCounitTrace`, Lean-proved):
+`ε = h²/2 − h`, `tr_M = h²/2 − h·z`. Since `h = q − q⁻¹` is bar-ODD and `z`
+bar-EVEN (KC13), the map splits **exactly**: bar-even identity term `h²/2`
+(shadow/mass) + bar-odd crossing/loop term (`−h` / `−h·z`, the odd channel).
+This **realizes the standing reading on the actual map** — the bar-odd carrier
+`D(q)` (KC15) feeds the observable through the Markov crossing term, not the
+identity term. Registry **KC18**; sorry-free Lean `epsNP_decomp` /
+`epsNP_bar_image` / `trMNP_decomp` / `trMNP_bar_image` (exit 0); probe 8/8.
+**Sharpened keystone:** derive the higher-order crossing weight (beyond leading
+`z`) whose odd part reproduces the `c_3 → −2` odd-channel signature — a bounded
+trace-side target, no longer a `u`-series search. Full finding:
+[`2026-07-07-z-ck-fmap-eval-map-bar-decomposition.md`](../audits/2026-07-07-z-ck-fmap-eval-map-bar-decomposition.md).
+
 ## 5. Session log
 
 | date | event |
