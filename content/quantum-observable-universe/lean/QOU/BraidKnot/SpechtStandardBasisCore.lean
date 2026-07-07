@@ -1106,6 +1106,25 @@ theorem count_dom_of_top {A B S : Finset ℕ} (hBA : ∀ b ∈ B, ∀ a ∈ A, b
     congr 1; apply Finset.filter_congr; intro x _; simp [not_le]
   omega
 
+/-- **Count-domination is preserved by adding a common disjoint part (sorry-free).** If `X`
+is count-dominated by `Y` (`≤ w` counts) and `P` is disjoint from both, then `P ∪ X` is
+count-dominated by `P ∪ Y`. For the fibre decrease `P` is column `j`'s labels above the
+descent row (fixed by the Garnir element), `X = A` (top-`|A|`), `Y = S = π(A)`. -/
+theorem filter_le_card_union_mono {P X Y : Finset ℕ}
+    (hPX : Disjoint P X) (hPY : Disjoint P Y)
+    (hXY : ∀ w, (X.filter (· ≤ w)).card ≤ (Y.filter (· ≤ w)).card) (w : ℕ) :
+    ((P ∪ X).filter (· ≤ w)).card ≤ ((P ∪ Y).filter (· ≤ w)).card := by
+  classical
+  have hX : ((P ∪ X).filter (· ≤ w)).card
+      = (P.filter (· ≤ w)).card + (X.filter (· ≤ w)).card := by
+    rw [Finset.filter_union, Finset.card_union_of_disjoint
+      (hPX.mono (Finset.filter_subset _ _) (Finset.filter_subset _ _))]
+  have hY : ((P ∪ Y).filter (· ≤ w)).card
+      = (P.filter (· ≤ w)).card + (Y.filter (· ≤ w)).card := by
+    rw [Finset.filter_union, Finset.card_union_of_disjoint
+      (hPY.mono (Finset.filter_subset _ _) (Finset.filter_subset _ _))]
+  rw [hX, hY]; exact Nat.add_le_add_left (hXY w) _
+
 /-- **First-difference comparison for `colWordNum` (sorry-free).** If `u` and `v` agree
 (as labels) on every cell column-major-*earlier* than a cell `c₀` (i.e. `cmajSig` strictly
 larger), and `v` has a strictly smaller label at `c₀`, then `colWordNum v < colWordNum u`.
@@ -1814,6 +1833,31 @@ theorem colContent_smul (σ : Equiv.Perm (Fin (Specht.nOf μ))) (t : Specht.Tabl
     · intro hl; exact ⟨σ.symm l, hl, Equiv.apply_symm_apply σ l⟩
     · rintro ⟨m, hm, rfl⟩; rwa [Equiv.symm_apply_apply]
   rw [hset, Finset.image_image]; rfl
+
+omit [CharZero k] in
+/-- **A column permutation preserves every column's content (sorry-free).** If `ρ ∈ C_t`
+(fixes the column pattern) then `colContent (ρ•t) c = colContent t c` for every column `c`.
+The column-sort `ρ` that produces the column-word-minimal image of a fibre `π•t` therefore
+leaves each `colContent (π•t) c` unchanged — which is what lets `labelAt_eq_orderStat` read
+the sorted image's cell labels off the (unsorted) fibre's column content. -/
+theorem colContent_colStab_eq {ρ : Equiv.Perm (Fin (Specht.nOf μ))} (t : Specht.Tableau μ)
+    (hρ : ρ ∈ Specht.colStab t) (c : ℕ) :
+    colContent (ρ • t) c = colContent t c := by
+  classical
+  have hcol : ∀ l, Specht.colPattern t (ρ.symm l) = Specht.colPattern t l := fun l => by
+    calc Specht.colPattern t (ρ.symm l)
+        = (ρ • Specht.colPattern t) l := (Specht.arrow_smul_apply _ _ _ _).symm
+      _ = Specht.colPattern t l := by rw [Specht.mem_colStab.mp hρ]
+  rw [colContent_smul]
+  unfold colContent
+  ext v
+  simp only [Finset.mem_image, Finset.mem_filter, Finset.mem_univ, true_and]
+  constructor
+  · rintro ⟨m, hm, rfl⟩
+    refine ⟨ρ m, ?_, rfl⟩
+    have hm' := hcol (ρ m); rw [Equiv.symm_apply_apply] at hm'; rw [← hm']; exact hm
+  · rintro ⟨l, hl, rfl⟩
+    exact ⟨ρ.symm l, by rw [hcol]; exact hl, by rw [Equiv.apply_symm_apply]⟩
 
 omit [CharZero k] in
 /-- The labels in column `c` of `t` with row index `< m` number exactly `m`, provided
