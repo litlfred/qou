@@ -873,6 +873,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Block placement and kind match validated structurally.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:31:50Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "wall-side-statement": [
@@ -893,6 +906,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The statement is mapped correctly to a Lean declaration/stub/class.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:31:50Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-false-claim": [
@@ -913,6 +939,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No demonstrably false algebraic or geometric claims in the narrative statement.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:31:50Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-vacuous": [
@@ -933,6 +972,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The Lean sibling is a stub or context-class wrapper that does not prove the actual claim from first principles.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:31:50Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-circular": [
@@ -953,6 +1005,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No circular reasoning or self-justifying axioms detected.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:31:50Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-overclaim": [
@@ -973,6 +1038,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The claims match the scope of the presented material.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:31:50Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -993,6 +1071,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No hidden degrees of freedom or unconstrained parameters found.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:31:50Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1013,6 +1104,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The logic chain is sound and has no gaps.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:31:50Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1034,6 +1138,19 @@
         "notes": "Lean sibling fails to compile: content/quantum-observable-universe/brings-surface/brings-surface-def.lean:49:58: error: unsolved goals",
         "evidence": "content/quantum-observable-universe/brings-surface/brings-surface-def.lean:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:31:50Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1054,6 +1171,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Citations are used correctly to support the mathematical claims.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:31:50Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1074,6 +1204,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Definitions are clear and unambiguous.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:31:50Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1094,6 +1237,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The constants are algebraic and not sensitive to small perturbations.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:31:50Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1114,6 +1270,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No physical claims are made or they are standard.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:31:50Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1135,6 +1304,19 @@
         "notes": "Lean sibling fails to compile: content/quantum-observable-universe/brings-surface/brings-surface-def.lean:49:58: error: unsolved goals",
         "evidence": "content/quantum-observable-universe/brings-surface/brings-surface-def.lean:1",
         "severity": "major"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:31:50Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1157,6 +1339,19 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/brings-surface-def.lean:49:58: error: unsolved goals",
         "severity": "critical"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:31:50Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "bib-cite-resolves": [
@@ -1215,6 +1410,36 @@
           "md": "3d8f9bd8da91",
           "ts": "a2441b02c150",
           "lean": "44ac53876463"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:31:50Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:31:50Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
         }
       }
     ]

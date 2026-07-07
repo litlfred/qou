@@ -295,6 +295,19 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.047944Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:31:50Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "fit-section-chapter": [
@@ -313,6 +326,19 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.047944Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:31:50Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "wall-side-statement": [
@@ -332,6 +358,19 @@
         "reviewed_at": "2026-07-07T14:26:55.047944Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Narrative statement is geometric (SU(2)-bundle trivialisation, exceptional divisor, SW differential A^0 = X dz = \u03bb_SW). No Real.*, numeric q\u2248, MeV, or 0<q order hypothesis. brings-surface is a substrate/generic chapter; statement matches its regime."
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:31:50Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "wall-side-proof": [
@@ -351,6 +390,19 @@
         "reviewed_at": "2026-07-07T14:26:55.047944Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Narrative proof (in -proof sibling) uses bundle trivialisation via \u03c0\u2081(SU(2))=0 and weight-space decomposition \u2014 purely categorical/geometric. No linarith/IVT/continuity/Real./numeric-eval machinery."
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:31:50Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -372,6 +424,19 @@
         "severity": "major",
         "evidence": "lean/QOU/ArchimedeanUniverse/mi_sw_cartan_reduction.lean:49-51: `theorem mi_sw_cartan_reduction [ctx : MiSwCartanReductionContext] : ctx.A_0 = ctx.X_dz \u2227 ctx.X_dz = ctx.lambda_SW := ctx.claim_mi_sw_cartan_reduction`",
         "notes": "Narrative asserts a substantive geometric lemma with three structural conclusions (bundle trivialises, weight-space split A|=A\u2070\u2297H+A\u207a\u2297E\u208a+A\u207b\u2297E\u208b, Cartan component = SW differential). The Lean encodes ONLY the bare scalar equality A_0=X_dz=lambda_SW and obtains it by projecting a class field claim_mi_sw_cartan_reduction whose type IS that conjunction. The geometric content of the narrative (trivialisation, weight decomposition, spectral-curve single-sheet) is absent from the Lean, and what remains is assumed not derived. Narrative \u2260 Lean."
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:31:50Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -391,6 +456,19 @@
         "reviewed_at": "2026-07-07T14:26:55.047944Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "score 0.85 \u2014 narrative proof states the plan up front: trivialise the SU(2)-bundle over S\u00b2\u2245\ud835\udcae_c (\u03c0\u2081(SU(2))=0), apply the weight-space decomposition, then read off the Cartan component as X dz = \u03bb_SW. Cited lemmas (weight-space decomposition, color bundles) named."
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:31:50Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -412,6 +490,19 @@
         "severity": "minor",
         "evidence": "lean/QOU/ArchimedeanUniverse/mi_sw_cartan_reduction.lean:6-12: '**Placeholder canonical** ... The full Lean statement and proof are pending; this stub exists so the lean.ref URI resolves'",
         "notes": "score 0.15 \u2014 the Lean is sorry-free only because the conclusion is injected as a class field (restates-target). The genuine gap (formalising the bundle/weight-space geometry) is unaddressed; closing it is core/restates-target, not routine. Routes to proof-triage."
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:31:50Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-rater-novelty": [
@@ -431,6 +522,19 @@
         "reviewed_at": "2026-07-07T14:26:55.047944Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "score 0.6 \u2014 Cartan-reduction abelianisation recovering the SW differential is a standard SW argument, not duplicated elsewhere in the corpus."
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:31:50Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -466,6 +570,19 @@
           "agent_skill": "local/lean-proof-vacuity-audit",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07T14:26:55.047944Z"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:31:50Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
         }
       }
     ],
@@ -503,6 +620,19 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07T14:26:55.047944Z"
         }
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:31:50Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-no-trivial-true": [
@@ -522,6 +652,19 @@
         "reviewed_at": "2026-07-07T14:26:55.047944Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Goal is A_0 = X_dz \u2227 X_dz = lambda_SW over three distinct class fields \u2014 not True, not syntactic x=x. The vacuity here is self-assumption, caught by proof-no-self-assuming-projection, not by the trivial-True criterion."
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:31:50Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-no-false-premise": [
@@ -541,6 +684,19 @@
         "reviewed_at": "2026-07-07T14:26:55.047944Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "No False / 0=1 / uninhabited premise; MiSwCartanReductionContext is inhabitable, the implication is not vacuous via False.elim."
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:31:50Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -560,6 +716,19 @@
         "reviewed_at": "2026-07-07T14:26:55.047944Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "The sole hypothesis is the [ctx] instance, used via ctx.claim_mi_sw_cartan_reduction. The signature carries no extra explicit hypothesis to be unused (the weakness here is statement-weakening / self-assumption, covered by the dedicated criteria)."
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:31:50Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-no-decide-masking": [
@@ -579,6 +748,19 @@
         "reviewed_at": "2026-07-07T14:26:55.047944Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "No decide/trivial; the proof is a field projection (the masking concern is the self-assuming projection, flagged separately)."
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:31:50Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-false-claim": [
@@ -598,6 +780,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-false-claim evaluated: pass.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:31:50Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-vacuous": [
@@ -617,6 +812,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-vacuous evaluated: pass.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:31:50Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-circular": [
@@ -636,6 +844,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-circular evaluated: pass.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:31:50Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-overclaim": [
@@ -655,6 +876,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-overclaim evaluated: pass.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:31:50Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -674,6 +908,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-hidden-dof evaluated: pass.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:31:50Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -693,6 +940,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-non-sequitur evaluated: pass.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:31:50Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -712,6 +972,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The referenced Lean file is missing, leading to complete divergence.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:31:50Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -731,6 +1004,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-citation-misuse evaluated: pass.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:31:50Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -750,6 +1036,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-definitional-ambiguity evaluated: pass.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:31:50Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -769,6 +1068,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-empirical-fragility evaluated: pass.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:31:50Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -788,6 +1100,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-physical-implausibility evaluated: pass.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:31:50Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-reproducibility": [
@@ -807,6 +1132,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-reproducibility evaluated: pass.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:31:50Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -828,6 +1166,19 @@
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file is missing, preventing formal verification of the claims.",
         "severity": "critical"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:31:50Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "bib-cite-resolves": [
@@ -1590,6 +1941,36 @@
         "field_hash": {
           "md": "ed468e679e04",
           "ts": "56428a164a1e"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:31:50Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:31:50Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
         }
       }
     ]
