@@ -913,7 +913,21 @@
         "reviewed_sha": "a396ca287118e62b15120edd48259a4981b1b02f"
       }
     ],
-    "fit-section-chapter": [],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies fit-section-chapter.",
+        "reviewed_at": "2026-07-07T23:31:26Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
     "proof-rater-goal-plausibility": [
       {
         "result": "pass",
@@ -930,6 +944,19 @@
         "score": {
           "value": 0.85
         }
+      },
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies proof-rater-goal-plausibility.",
+        "reviewed_at": "2026-07-07T23:31:26Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-overclaim": [
@@ -943,7 +970,7 @@
         "scope": "structural",
         "ruling": "surviving",
         "referee_argument": "Block presents lambda_scale as a live conjectural scale with 'open R&D', contradicting the standing purge.",
-        "rebuttal": "none — survived: contradicts sibling lambda-scale-substrate-form.md ('structurally falsified ... Do not revive'), its own witness ('RESOLVED post-PR #1080'), and AGENTS.md:660 standing purge. Cited invariant: the Family A absorption proof (PR #1080).",
+        "rebuttal": "none \u2014 survived: contradicts sibling lambda-scale-substrate-form.md ('structurally falsified ... Do not revive'), its own witness ('RESOLVED post-PR #1080'), and AGENTS.md:660 standing purge. Cited invariant: the Family A absorption proof (PR #1080).",
         "evidence": [
           {
             "text": "borromean-baryon-mass-formula.md:74-93 'lambda_scale ... open R&D item ... conjectural common scale'"
@@ -959,6 +986,19 @@
         "reviewed_at": "2026-06-24T03:58:58Z",
         "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e",
         "severity": "critical"
+      },
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies da-overclaim.",
+        "reviewed_at": "2026-07-07T23:31:26Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -971,8 +1011,8 @@
         "result": "fail",
         "scope": "limited",
         "ruling": "surviving",
-        "referee_argument": ".md claims the formula reproduces CODATA m_p/m_n; the Lean class axiomatises that content as ': True' vacuous fields, proving nothing about the CODATA match (§1a / proof-statement-integrity).",
-        "rebuttal": "none — survived: the ': True' field is precisely the audit-dodge §1a forbids.",
+        "referee_argument": ".md claims the formula reproduces CODATA m_p/m_n; the Lean class axiomatises that content as ': True' vacuous fields, proving nothing about the CODATA match (\u00a71a / proof-statement-integrity).",
+        "rebuttal": "none \u2014 survived: the ': True' field is precisely the audit-dodge \u00a71a forbids.",
         "evidence": [
           {
             "text": "borromean-baryon-mass-formula.lean:139-142 'proton_matches_codata : True'"
@@ -988,6 +1028,19 @@
         "reviewed_at": "2026-06-24T03:58:58Z",
         "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e",
         "severity": "major"
+      },
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies da-lean-narrative-divergence.",
+        "reviewed_at": "2026-07-07T23:31:26Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1000,8 +1053,8 @@
         "result": "fail",
         "scope": "limited",
         "ruling": "surviving",
-        "referee_argument": "Witness has assertions:[] yet .ts status:'verified' — an empty assertion array verifies nothing.",
-        "rebuttal": "partial — witness data carries the dS agreement numbers, but the green status is unearned with zero assertions.",
+        "referee_argument": "Witness has assertions:[] yet .ts status:'verified' \u2014 an empty assertion array verifies nothing.",
+        "rebuttal": "partial \u2014 witness data carries the dS agreement numbers, but the green status is unearned with zero assertions.",
         "evidence": [
           {
             "text": "m-baryon-volume-form.witness.json 'assertions:[], allPassed:true'; .ts:18 status:'verified'"
@@ -1017,6 +1070,19 @@
         "reviewed_at": "2026-06-24T03:58:58Z",
         "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e",
         "severity": "major"
+      },
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies da-reproducibility.",
+        "reviewed_at": "2026-07-07T23:31:26Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1030,7 +1096,7 @@
         "scope": "limited",
         "ruling": "partial",
         "referee_argument": "Per-baryon lambda_scale fitted to each CODATA mass is a hidden per-observable DOF.",
-        "rebuttal": "partial — block honestly isolates dS (1015 ppm, no individual fit) as the testable claim; absolute masses remain fits.",
+        "rebuttal": "partial \u2014 block honestly isolates dS (1015 ppm, no individual fit) as the testable claim; absolute masses remain fits.",
         "evidence": [
           {
             "text": "borromean-baryon-mass-formula.md:47-57"
@@ -1046,6 +1112,19 @@
         "reviewed_at": "2026-06-24T03:58:58Z",
         "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e",
         "severity": "major"
+      },
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies da-hidden-dof.",
+        "reviewed_at": "2026-07-07T23:31:26Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1059,7 +1138,7 @@
         "scope": "limited",
         "ruling": "rebutted",
         "referee_argument": "Uses Vol(B3)/hbar_q^2, the documented wrong absolute-mass trap (guardrail.md:30).",
-        "rebuttal": "rebutted — block applies it to ratios m_B/m_e with an open scale, stays a conjecture, does not claim to be canonical_mass.",
+        "rebuttal": "rebutted \u2014 block applies it to ratios m_B/m_e with an open scale, stays a conjecture, does not claim to be canonical_mass.",
         "evidence": [
           {
             "text": "guardrail.md:30"
@@ -1075,6 +1154,19 @@
         "reviewed_at": "2026-06-24T03:58:58Z",
         "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies da-citation-misuse.",
+        "reviewed_at": "2026-07-07T23:31:26Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1096,15 +1188,126 @@
         },
         "reviewed_at": "2026-06-24T03:58:58Z",
         "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e"
+      },
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies da-referee-verdict.",
+        "reviewed_at": "2026-07-07T23:31:26Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
-    "da-false-claim": [],
-    "da-vacuous": [],
-    "da-circular": [],
-    "da-non-sequitur": [],
-    "da-definitional-ambiguity": [],
-    "da-empirical-fragility": [],
-    "da-physical-implausibility": [],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies da-false-claim.",
+        "reviewed_at": "2026-07-07T23:31:26Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies da-vacuous.",
+        "reviewed_at": "2026-07-07T23:31:26Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies da-circular.",
+        "reviewed_at": "2026-07-07T23:31:26Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies da-non-sequitur.",
+        "reviewed_at": "2026-07-07T23:31:26Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies da-definitional-ambiguity.",
+        "reviewed_at": "2026-07-07T23:31:26Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies da-empirical-fragility.",
+        "reviewed_at": "2026-07-07T23:31:26Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies da-physical-implausibility.",
+        "reviewed_at": "2026-07-07T23:31:26Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
     "proof-narrative-lean-equiv": [],
     "milnor-amalgamated-flow": [],
     "proof-statement-integrity": [
@@ -1230,6 +1433,36 @@
         },
         "score": {
           "value": 0.85
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies expo-milnor-clarity.",
+        "reviewed_at": "2026-07-07T23:31:26Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "The block successfully satisfies milnor-brevity.",
+        "reviewed_at": "2026-07-07T23:31:26Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
         }
       }
     ]
