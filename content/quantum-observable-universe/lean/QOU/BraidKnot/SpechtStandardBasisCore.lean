@@ -1117,6 +1117,63 @@ theorem exists_row_descent_of_colMax (t : Specht.Tableau μ)
         show Specht.rowPattern t b = i from by show (t b : ℕ × ℕ).1 = i; rw [htb]] at hrow
     omega
 
+/-- **Column-standardness under column-word-minimality (sorry-free) — the `colWordNum`
+analogue of `colStandard_of_colMax`.** If `t` is column-word-minimal (`hmax`: no
+`σ ∈ C_t` *lowers* `colWordNum`), then each column's labels strictly increase with the
+row. A violation (`↑a < ↑b` same column but `rowPattern t b < rowPattern t a`) would be a
+column descent, giving a `colWordNum`-*lowering* transposition (`colStab_swap_mem` +
+`colWordNum_swap_lt`) that contradicts `hmax`. -/
+theorem colStandard_of_colWordMin (t : Specht.Tableau μ)
+    (hmax : ∀ σ : Specht.colStab t,
+      colWordNum t ≤ colWordNum ((σ : Equiv.Perm (Fin (Specht.nOf μ))) • t))
+    {a b : Fin (Specht.nOf μ)}
+    (hcol : Specht.colPattern t a = Specht.colPattern t b)
+    (hab : (a : ℕ) < (b : ℕ)) :
+    Specht.rowPattern t a < Specht.rowPattern t b := by
+  rcases lt_trichotomy (Specht.rowPattern t a) (Specht.rowPattern t b) with h | h | h
+  · exact h
+  · exfalso
+    have hcell : (t a : ℕ × ℕ) = (t b : ℕ × ℕ) := Prod.ext h hcol
+    have hab' : a = b := t.injective (Subtype.ext hcell)
+    exact (Nat.ne_of_lt hab) (by rw [hab'])
+  · exfalso
+    exact absurd (hmax ⟨Equiv.swap a b, colStab_swap_mem t hcol⟩)
+      (not_le.mpr (colWordNum_swap_lt t hab hcol h))
+
+omit [CharZero k] in
+/-- **Pure row-descent existence under column-word-minimality (sorry-free) — the
+`colWordNum` analogue of `exists_row_descent_of_colMax`.** A column-word-minimal `t`
+whose polytabloid is non-standard has a **row descent** (column descents are killed by
+`colStandard_of_colWordMin`). This is the row descent the `colWordNum` Garnir coset-sum
+step of `straightening_step_colMax` consumes. -/
+theorem exists_row_descent_of_colWordMin (t : Specht.Tableau μ)
+    (h : Specht.polytabloid (k := k) t ∉ Set.range (standardPolytabloid (k := k) (μ := μ)))
+    (hmax : ∀ σ : Specht.colStab t,
+      colWordNum t ≤ colWordNum ((σ : Equiv.Perm (Fin (Specht.nOf μ))) • t)) :
+    ∃ i j, ∃ (hij : (i, j) ∈ μ) (hij1 : (i, j + 1) ∈ μ), labelAt t hij1 ≤ labelAt t hij := by
+  rcases exists_descent_of_not_mem_range (k := k) t h with hrow | hcol
+  · exact hrow
+  · exfalso
+    obtain ⟨i, j, hij, hi1j, hle⟩ := hcol
+    set a := t.symm ⟨(i + 1, j), (YoungDiagram.mem_cells _).2 hi1j⟩ with ha
+    set b := t.symm ⟨(i, j), (YoungDiagram.mem_cells _).2 hij⟩ with hb
+    have hta : (t a : ℕ × ℕ) = (i + 1, j) := by rw [ha, Equiv.apply_symm_apply]
+    have htb : (t b : ℕ × ℕ) = (i, j) := by rw [hb, Equiv.apply_symm_apply]
+    have hle' : (a : ℕ) ≤ (b : ℕ) := hle
+    have hne : a ≠ b := by
+      intro he
+      rw [he] at hta
+      rw [htb] at hta
+      exact (by simp : ((i, j) : ℕ × ℕ) ≠ (i + 1, j)) hta
+    have hab : (a : ℕ) < (b : ℕ) := lt_of_le_of_ne hle' (fun he => hne (Fin.ext he))
+    have hcolab : Specht.colPattern t a = Specht.colPattern t b := by
+      show (t a : ℕ × ℕ).2 = (t b : ℕ × ℕ).2
+      rw [hta, htb]
+    have hrow := colStandard_of_colWordMin t hmax hcolab hab
+    rw [show Specht.rowPattern t a = i + 1 from by show (t a : ℕ × ℕ).1 = i + 1; rw [hta],
+        show Specht.rowPattern t b = i from by show (t b : ℕ × ℕ).1 = i; rw [htb]] at hrow
+    omega
+
 omit [CharZero k] in
 /-- **Garnir assembly (sorry-free) — the `domWeight`-era bookkeeping helper.**
 Given a transversal `T ∋ π₀` for which (i) the signed representation sum vanishes
