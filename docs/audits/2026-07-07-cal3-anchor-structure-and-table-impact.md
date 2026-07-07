@@ -45,7 +45,7 @@ rigidity of a *single categorical* `g`, which no Lean scaffold establishes.
 ## Impact on the mass and binding tables: **none**
 
 Production-wiring audit (probe
-[`qbeta_cal3_anchor_table_impact.py`](../../computations/qbeta/qbeta_cal3_anchor_table_impact.py),
+[`qbeta_cal3_anchor_table_impact.py`](scripts/qbeta_cal3_anchor_table_impact.py),
 5/5). The `uses_c3` column is **derived from a live scan** of the production Q_β
 sources (`canonical_mass.py`, `derived_masses.py`) — *not* hardcoded — so a future
 change that wires a c_3 rung (or any order≥3 truncation) flips the assertion to

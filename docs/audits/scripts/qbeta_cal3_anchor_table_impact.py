@@ -38,7 +38,19 @@ mp.mp.dps = 40
 # The audit does NOT trust a hardcoded table; it derives `uses_c3` from a live
 # scan of these files, so a future change that wires c_3 into production flips
 # the assertion to FAIL (addresses the "self-fulfilling audit" review point).
-_REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+def _find_repo_root():
+    """Walk up from this file until a dir with the repo markers is found. Robust
+    to the script's own location (self-contained; no shared-module import)."""
+    d = os.path.dirname(os.path.abspath(__file__))
+    while d != os.path.dirname(d):
+        if os.path.isdir(os.path.join(d, "computations")) and \
+           os.path.exists(os.path.join(d, "AGENTS.md")):
+            return d
+        d = os.path.dirname(d)
+    raise RuntimeError("repo root not found (no dir with computations/ + AGENTS.md)")
+
+
+_REPO_ROOT = _find_repo_root()
 _PRODUCTION_SOURCES = [
     os.path.join(_REPO_ROOT, "computations", "canonical_mass.py"),    # mass table + m_n + Δ_pn
     os.path.join(_REPO_ROOT, "computations", "derived_masses.py"),    # the Q_β function itself
