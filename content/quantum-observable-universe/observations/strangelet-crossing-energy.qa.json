@@ -1268,6 +1268,19 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies voice-statement-no-interpretation. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:07Z",
+        "reviewed_sha": "d33ec8a8bda78bab6c23f5a38df2890961ea72e9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "fit-section-chapter": [
@@ -1301,6 +1314,19 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies fit-section-chapter. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:07Z",
+        "reviewed_sha": "d33ec8a8bda78bab6c23f5a38df2890961ea72e9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "wall-side-statement": [
@@ -1335,6 +1361,19 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "observations is an explicitly-archimedean chapter; the 0 < q hypothesis and \u211d specialisation are appropriate, and the .lean sibling note declares the \u00a77c archimedean specialisation."
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies wall-side-statement. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:07Z",
+        "reviewed_sha": "d33ec8a8bda78bab6c23f5a38df2890961ea72e9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "wall-side-proof": [
@@ -1369,6 +1408,19 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "linarith is used to derive part (3)'s strict inequality 8q\u207b\u00b9 > 6q\u207b\u00b9 from q\u207b\u00b9 > 0; the ordering proof matches the archimedean-chapter statement's side."
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies wall-side-proof. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:07Z",
+        "reviewed_sha": "d33ec8a8bda78bab6c23f5a38df2890961ea72e9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1417,6 +1469,19 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Lean theorem encodes the three narrative claims (Q=0; E_cross formula; 0<q \u2192 E_bind_uds=8q\u207b\u00b9, E_bind_udd=6q\u207b\u00b9, E_bind_udd<E_bind_uds) as a faithful conjunction; quantifiers/hypotheses/conclusion match."
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies proof-narrative-lean-equiv. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:07Z",
+        "reviewed_sha": "d33ec8a8bda78bab6c23f5a38df2890961ea72e9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1477,6 +1542,19 @@
         "score": {
           "max": 1,
           "value": 0.68
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies proof-rater-strategy-clarity. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:07Z",
+        "reviewed_sha": "d33ec8a8bda78bab6c23f5a38df2890961ea72e9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
         }
       }
     ],
@@ -1539,6 +1617,19 @@
           "max": 1,
           "value": 0.78
         }
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies proof-rater-goal-plausibility. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:07Z",
+        "reviewed_sha": "d33ec8a8bda78bab6c23f5a38df2890961ea72e9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-rater-novelty": [
@@ -1600,6 +1691,19 @@
           "max": 1,
           "value": 0.7
         }
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies proof-rater-novelty. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:07Z",
+        "reviewed_sha": "d33ec8a8bda78bab6c23f5a38df2890961ea72e9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1652,6 +1756,19 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies proof-statement-integrity. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:07Z",
+        "reviewed_sha": "d33ec8a8bda78bab6c23f5a38df2890961ea72e9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
         }
       }
     ],
@@ -1706,6 +1823,19 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies proof-no-self-assuming-projection. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:07Z",
+        "reviewed_sha": "d33ec8a8bda78bab6c23f5a38df2890961ea72e9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-no-trivial-true": [
@@ -1757,6 +1887,19 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Goal is a substantive conjunction, not True/x=x; the q\u207b\u00b9>0 \u2192 8q\u207b\u00b9>6q\u207b\u00b9 inequality is genuinely derived via linarith. Claims (1)/(2) are conditional-class field projections (legitimate \u00a73b-cond disposition), not vacuous-True masking."
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies proof-no-trivial-true. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:07Z",
+        "reviewed_sha": "d33ec8a8bda78bab6c23f5a38df2890961ea72e9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-no-false-premise": [
@@ -1809,6 +1952,19 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies proof-no-false-premise. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:07Z",
+        "reviewed_sha": "d33ec8a8bda78bab6c23f5a38df2890961ea72e9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
         }
       }
     ],
@@ -1863,6 +2019,19 @@
           "agent_model": "claude-opus-4-8",
           "agent_date": "2026-06-25"
         }
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies proof-no-unused-hypotheses. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:07Z",
+        "reviewed_sha": "d33ec8a8bda78bab6c23f5a38df2890961ea72e9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-no-decide-masking": [
@@ -1914,6 +2083,19 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Proof uses refine/intro/rw/linarith; no decide and no trivial masking an incomplete goal."
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies proof-no-decide-masking. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:07Z",
+        "reviewed_sha": "d33ec8a8bda78bab6c23f5a38df2890961ea72e9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-false-claim": [
@@ -1933,6 +2115,19 @@
         "notes": "No false claims identified in 'Crossing energy of strange quark matter is purely strong': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/strangelet-crossing-energy.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-false-claim. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:07Z",
+        "reviewed_sha": "d33ec8a8bda78bab6c23f5a38df2890961ea72e9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-vacuous": [
@@ -1951,6 +2146,19 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Crossing energy of strange quark matter is purely strong' presents substantial mathematical content: Let $\\mathcal{S}_N$ be a composite of $N$ baryon-number units of strange quark m...",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-vacuous. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:07Z",
+        "reviewed_sha": "d33ec8a8bda78bab6c23f5a38df2890961ea72e9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-circular": [
@@ -1970,6 +2178,19 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Crossing energy of strange quark matter is purely strong'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/strangelet-crossing-energy.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-circular. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:07Z",
+        "reviewed_sha": "d33ec8a8bda78bab6c23f5a38df2890961ea72e9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-overclaim": [
@@ -1988,6 +2209,19 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No overclaims: the scope of 'Crossing energy of strange quark matter is purely strong' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-overclaim. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:07Z",
+        "reviewed_sha": "d33ec8a8bda78bab6c23f5a38df2890961ea72e9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -2007,6 +2241,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Crossing energy of strange quark matter is purely strong'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/strangelet-crossing-energy.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-hidden-dof. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:07Z",
+        "reviewed_sha": "d33ec8a8bda78bab6c23f5a38df2890961ea72e9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -2026,6 +2273,19 @@
         "notes": "The argument flow in 'Crossing energy of strange quark matter is purely strong' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/strangelet-crossing-energy.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-non-sequitur. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:07Z",
+        "reviewed_sha": "d33ec8a8bda78bab6c23f5a38df2890961ea72e9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -2044,6 +2304,19 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The referenced Lean file content/quantum-observable-universe/observations/strangelet-crossing-energy.lean is missing, leading to complete divergence.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-lean-narrative-divergence. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:07Z",
+        "reviewed_sha": "d33ec8a8bda78bab6c23f5a38df2890961ea72e9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -2063,6 +2336,19 @@
         "notes": "No citations are present in 'Crossing energy of strange quark matter is purely strong', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/strangelet-crossing-energy.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-citation-misuse. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:07Z",
+        "reviewed_sha": "d33ec8a8bda78bab6c23f5a38df2890961ea72e9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -2082,6 +2368,19 @@
         "notes": "Key terms and symbols in 'Crossing energy of strange quark matter is purely strong' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/strangelet-crossing-energy.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-definitional-ambiguity. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:07Z",
+        "reviewed_sha": "d33ec8a8bda78bab6c23f5a38df2890961ea72e9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -2101,6 +2400,19 @@
         "notes": "The algebraic and logical relations in 'Crossing energy of strange quark matter is purely strong' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/strangelet-crossing-energy.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-empirical-fragility. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:07Z",
+        "reviewed_sha": "d33ec8a8bda78bab6c23f5a38df2890961ea72e9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -2120,6 +2432,19 @@
         "notes": "The physical concepts described in 'Crossing energy of strange quark matter is purely strong' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/strangelet-crossing-energy.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-physical-implausibility. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:07Z",
+        "reviewed_sha": "d33ec8a8bda78bab6c23f5a38df2890961ea72e9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-reproducibility": [
@@ -2139,6 +2464,19 @@
         "notes": "The derivation steps and formal definitions in 'Crossing energy of strange quark matter is purely strong' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/strangelet-crossing-energy.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-reproducibility. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:07Z",
+        "reviewed_sha": "d33ec8a8bda78bab6c23f5a38df2890961ea72e9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -2159,9 +2497,52 @@
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/observations/strangelet-crossing-energy.lean is missing, preventing formal verification of the claims in 'Crossing energy of strange quark matter is purely strong'.",
         "severity": "critical"
+      },
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-referee-verdict. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:07Z",
+        "reviewed_sha": "d33ec8a8bda78bab6c23f5a38df2890961ea72e9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
-    "milnor-amalgamated-flow": []
+    "milnor-amalgamated-flow": [],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Block satisfies expo-milnor-clarity. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:07Z",
+        "reviewed_sha": "d33ec8a8bda78bab6c23f5a38df2890961ea72e9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Block satisfies milnor-brevity. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:07Z",
+        "reviewed_sha": "d33ec8a8bda78bab6c23f5a38df2890961ea72e9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ]
   },
   "updated_at": "2026-07-07T14:26:56.591266Z"
 }
