@@ -181,6 +181,7 @@ import QOU.QBeta.QCasoratianAbel
 import QOU.QBeta.QCasoratianBarParity
 import QOU.QBeta.ZBarParity
 import QOU.QBeta.CAL3AnchorStructure
+import QOU.QBeta.SRigidityPrune
 import QOU.QBeta.H4RouteBBranchingPrune
 import QOU.QBeta.QLommelOrderRecurrence
 import QOU.QBeta.HoefsmitBBarParity
