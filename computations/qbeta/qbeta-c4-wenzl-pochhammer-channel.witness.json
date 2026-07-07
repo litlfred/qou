@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-07-07T14:27:49.324100+00:00",
-  "commitSha": "1ac0f3574c251b7c7bf171529895c509777af6f7",
+  "computedAt": "2026-07-07T14:33:23.374367+00:00",
+  "commitSha": "4a3bc17216f2ce4de927671c71d74343988dcf3d",
   "assertions": [
     {
       "name": "WP1_wenzl_boundaries_exist",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 41,
+  "durationMs": 51,
   "computation": "qbeta-c4-wenzl-pochhammer-channel",
   "scriptFile": "qbeta_c4_wenzl_pochhammer_channel_probe.py",
   "scriptHash": "ea3718aa7c98",
-  "scriptCommitSha": "1ac0f3574c251b7c7bf171529895c509777af6f7",
+  "scriptCommitSha": "3583ffc0d64302bcb97d6a62cf54b19b76b36db7",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
