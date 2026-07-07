@@ -1,7 +1,5 @@
 **Proposition.**
-Let $\mathcal{X}_5 \colon y^2 = x^5 - 1$ be the hyperelliptic quintic
-of Definition [def:hyperelliptic-quintic](#def:hyperelliptic-quintic).
-The map
+Let $\mathcal{X}_5 \colon y^2 = x^5 - 1$ be the hyperelliptic quintic of Definition [def:hyperelliptic-quintic](#def:hyperelliptic-quintic). The map
 
 $$
   \phi_5 \colon \mathcal{X}_5 \longrightarrow \mathcal{X}_5,
@@ -11,6 +9,4 @@ $$
   \zeta_5  =  e^{2\pi i/5},
 $$
 
-is an automorphism of $\mathcal{X}_5$ of order $5$.  It generates
-a cyclic group $\langle \phi_5 \rangle \cong \mathbb{Z}_5$ inside
-$\mathrm{Aut}(\mathcal{X}_5)$.
+is an automorphism of $\mathcal{X}_5$ of order $5$. It generates a cyclic group $\langle \phi_5 \rangle \cong \mathbb{Z}_5$ inside $\mathrm{Aut}(\mathcal{X}_5)$.
