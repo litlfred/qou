@@ -4,7 +4,7 @@ export default remark({
   interprets: "prop:gb-spectral-sequence",
   label: "rem:gb-spectral-sequence-interpretation",
   title:
-    "What remains open, structural value, and the Picard–Lefschetz archimedean realisation",
+    "Open questions, structural value, and the Picard–Lefschetz archimedean realisation",
   tags: [
     "spectral-sequence",
     "cohomology",

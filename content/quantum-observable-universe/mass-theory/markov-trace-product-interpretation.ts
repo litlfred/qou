@@ -3,7 +3,7 @@ import { remark } from "../../schema/builders";
 export default remark({
   interprets: "thm:markov-trace-product",
   label: "rem:markov-trace-product-interpretation",
-  title: "Connection to the vertex operator algebra",
+  title: "Vertex operator algebra of the Markov-trace product",
   tags: [
     "markov-trace",
     "vertex-operator",

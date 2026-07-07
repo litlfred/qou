@@ -4,7 +4,7 @@ export default remark({
   interprets: "def:poisson-object",
   label: "rem:poisson-hkr-connection",
   title:
-    "Relation to HKR and skew-Poisson integration",
+    "HKR and skew-Poisson integration",
   uses: [
     "def:poisson-object",
     "def:classical-limit-obstruction",
