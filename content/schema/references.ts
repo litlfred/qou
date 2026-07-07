@@ -5492,7 +5492,7 @@ export const references: CSLData[] = [
     page: "055",
     DOI: "10.3842/SIGMA.2024.055",
     URL: "https://arxiv.org/abs/2111.06645",
-    note: "arXiv:2111.06645, SIGMA 20 (2024) 055. Added 2026-06-04 from uploads/2111.06645v3.pdf. Rigorous all-orders refinement of the Kashaev volume conjecture: a matrix invariant whose (sigma_0, sigma_1) entry is the Kashaev invariant in the Habiro ring (sigma_0 = trivial rep / unknot column). DIRECT fit with QOU's Kashaev / Habiro-ring content (QOU.Kashaev.VolumeConjecture, Phi_q / Li_2^q). Preferred citation for the Kashaev-on-trivial-knot sub-part over the bare 1995 conjecture.",
+    note: "arXiv:2111.06645, SIGMA 20 (2024) 055. Added 2026-06-04 from uploads/2111.06645v3.pdf. Rigorous all-orders refinement of the Kashaev volume conjecture: a matrix invariant whose ($\\sigma_0$, $\\sigma_1$) entry is the Kashaev invariant in the Habiro ring ($\\sigma_0$ = trivial rep / unknot column). DIRECT fit with QOU's Kashaev / Habiro-ring content (QOU.Kashaev.VolumeConjecture, $\\Phi_q$ / $\\mathrm{Li}_2^q$). Preferred citation for the Kashaev-on-trivial-knot sub-part over the bare 1995 conjecture.",
   }),
 
   // ── Internal QOU derivation pull requests ───────────────────────
@@ -6434,7 +6434,7 @@ export const references: CSLData[] = [
     id: "ponsot-teschner2001",
     type: "article-journal",
     title:
-      "Clebsch-Gordan and Racah-Wigner coefficients for a continuous series of representations of U_q(sl(2,R))",
+      "Clebsch-Gordan and Racah-Wigner coefficients for a continuous series of representations of $U_q(\\mathrm{sl}(2,\\mathbb{R}))$",
     author: [
       { family: "Ponsot", given: "Bénédicte" },
       { family: "Teschner", given: "Jörg" },
@@ -6445,7 +6445,7 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[2001]] },
     DOI: "10.1007/PL00005590",
     URL: "https://arxiv.org/abs/math/0007097",
-    note: "Non-compact Askey-Wilson/Racah level of the modular double (q = e^{i pi b^2}, q~ = e^{-i pi/b^2}); the b <-> 1/b duality is the 6j-level form of the channel rotation.",
+    note: "Non-compact Askey-Wilson/Racah level of the modular double ($q = e^{i\\pi b^2}$, $\\tilde q = e^{-i\\pi/b^2}$); the b <-> 1/b duality is the 6j-level form of the channel rotation.",
   }),
 
   // ── Creutzig–Milas 2014 (false theta functions: the log-VOA character side) ──
