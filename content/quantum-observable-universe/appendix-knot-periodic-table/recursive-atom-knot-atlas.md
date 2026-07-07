@@ -1,32 +1,13 @@
-The atlas answers a single question: if every particle and atom is a
-confined braid at the substrate value $q_0$, which specific knot or
-link is each one, and does the invariant that knot carries reproduce
-the measured mass or binding energy? Collecting the answer as one
-$q_0$-indexed registry — rather than an isolated calculation per
-isotope — lets a composite entry be built recursively from the nucleon
-and $\alpha$-cluster entries it contains, and lets every prediction be
-read against the same AME 2020 reference column. The construction
-mechanics below make the identification precise; the layered extension
-then carries the same machinery across every isotope.
+This atlas identifies the specific knot or link for each confined braid at the substrate value $q_0$, verifying whether its invariant reproduces the measured mass or binding energy. A single $q_0$-indexed registry enables recursive construction of composite entries from nucleon and $\alpha$-cluster constituents, ensuring uniform comparison against the AME 2020 reference. We detail the precise identification mechanics below; a layered extension then applies this machinery to every isotope.
 
 **Atlas (recursive, $q_0$-indexed).**
-*Each entry of the atlas is determined by the
-[GB-NF / confinement source of truth](#def:confined-particle): a
-particle/atom is identified by the Markov-equivalence class
-$[K]_M$ of its canonical Hecke element $T_w \in H_{n_0}(q_0)$,
-expressed in $\sigma_*$ braid generators of the braid group $B_{n_0}$.
-Confinement at $q_0$ is verified via the
-[confinement SDP](#prop:confinement-sdp).*
+*The [confinement source of truth](#def:confined-particle) determines each entry. A particle or atom is identified by the Markov-equivalence class $[K]_M$ of its canonical Hecke element $T_w \in H_{n_0}(q_0)$, expressed in $\sigma_*$ generators of the braid group $B_{n_0}$. The [confinement SDP](#prop:confinement-sdp) verifies confinement at $q_0$.*
 
-*Each entry occupies **two rows**: the first gives the braid word
-in normal form (NF, shortlex Gröbner–Shirshov); the second gives
-the prediction and AME residual. Composite entries reference
-earlier entries (recursive structure).*
+*Each entry occupies **two rows**: the first gives the braid word in normal form (NF, shortlex Gröbner–Shirshov); the second gives the prediction and AME residual. Composite entries reference earlier entries.*
 
 ## Methodology classification (STRICT)
 
-Every atlas entry carries a **methodology tag** recording how its
-particle–knot identification was obtained.
+Every entry carries a **methodology tag** recording its derivation method.
 
 | Tag | Definition | Examples |
 |---|---|---|
@@ -36,13 +17,9 @@ particle–knot identification was obtained.
 | `magic-A-formula` | Algebraic shell-closure formula $A \cdot 8G$ for double-magic light nuclei; no single hyperbolic knot. | ${}^{4}$He. |
 | `recursive-on-⁴He` | Built from $n \cdot {}^{4}\mathrm{He} + n_{\alpha\alpha} \cdot c_{\alpha\alpha}$ recursion; principled given ${}^{4}$He. | ${}^{8}$Be–${}^{40}$Ca. |
 
-The principled pipeline computes $\mathrm{Vol}_{\mathrm{hyp}}$ from the
-$\sigma$-braid word at $\geq 50$ decimal digits via SnapPy's
-`Link(braid_closure=...).exterior.high_precision` inside
-`mpmath.workdps(50)`; symbolic-in-$q$ Markov-trace coefficients $y_\lambda$
-are supplied by the Wenzl bridge ([`y_lambda_wenzl_bridge_extended.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/y_lambda_wenzl_bridge_extended.py)).
+The principled pipeline computes $\mathrm{Vol}_{\mathrm{hyp}}$ from the $\sigma$-braid word at $\geq 50$ decimal digits via SnapPy's `Link(braid_closure=...).exterior.high_precision` and `mpmath.workdps(50)`. The Wenzl bridge ([`y_lambda_wenzl_bridge_extended.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/y_lambda_wenzl_bridge_extended.py)) supplies symbolic-in-$q$ Markov-trace coefficients $y_\lambda$.
 
-For atoms $A \geq 5$, where the combinatorics of the full $\mathcal{H}_{3A}$ space explode and `SnapPea` topological limits fail, we bypass the full evaluation by taking the exact symbolic trace restricted solely to **active block-partitions** (`closed_form_tau_M`), sidestepping the combinatorial blow-up. This exact symbolic trace $B_{sym} = -\alpha \ln |\tau_M|$ is shown side-by-side with the rigorous Q-CLT finite-sum approximation $B_{qCLT} = -\alpha \sum \ln |\hat{V}_i|$.
+For atoms $A \geq 5$, the combinatorics of $\mathcal{H}_{3A}$ explode and `SnapPea` limits fail. We sidestep this by computing the exact symbolic trace restricted to active block-partitions (`closed_form_tau_M`). We show this exact trace $B_{sym} = -\alpha \ln |\tau_M|$ alongside the rigorous Q-CLT finite-sum approximation $B_{qCLT} = -\alpha \sum \ln |\hat{V}_i|$.
 
 ## Notation legend (auto-included)
 
@@ -68,53 +45,31 @@ For atoms $A \geq 5$, where the combinatorics of the full $\mathcal{H}_{3A}$ spa
 
 ## Braid-closure visualisations (gallery before table)
 
-For reference, the following closures appear in the atlas. Each
-shows the braid word and its closed-knot/link form.
+The following closures appear in the atlas, providing the braid word and its closed knot/link form.
 
 ### $\widehat{\sigma_1^3}$ in $B_2$ — the **trefoil $3_1 = T_{2, 3}$**
 
-Word: $\sigma_1^3$. Closure (in $B_2$, two-strand braid closed
-into a single circle): the **trefoil knot**, simplest nontrivial
-prime knot. Alternative names: $T_{2, 3}$, left-handed trefoil
-(positive crossings) or right-handed (with $\sigma_1^{-3}$).
-Used for: **electron** ($e^-$), and as the binding factor for
-nucleons in $H_3$. Hyperbolic volume: $0$ (torus knot).
+Word: $\sigma_1^3$. Closure: the **trefoil knot** ($T_{2, 3}$, left-handed, or simplest nontrivial prime knot). Used for: the **electron** ($e^-$), and as the nucleon binding factor in $H_3$. Hyperbolic volume: $0$ (torus knot).
 
 ### $\widehat{(\sigma_1 \sigma_2^{-1})^3}$ in $B_3$ — **Borromean rings $\mathcal{B}_3$**
 
-Word: $\sigma_1 \sigma_2^{-1} \sigma_1 \sigma_2^{-1} \sigma_1 \sigma_2^{-1}$.
-Closure: three pairwise-unlinked circles that are jointly linked
-(remove one $\to$ all separate). Hyperbolic volume:
-$\mathrm{Vol}(\mathcal{B}_3) = 8 G \approx 7.328$ (Catalan-related).
-Used for: **proton** $B_3(\mathrm{uud})$, **neutron** $B_3(\mathrm{udd})$,
-where the flavor labels colour the crossings.
+Word: $(\sigma_1 \sigma_2^{-1})^3$. Closure: three pairwise-unlinked circles that are jointly linked. Hyperbolic volume: $\mathrm{Vol}(\mathcal{B}_3) = 8 G \approx 7.328$. Used for: the **proton** $B_3(\mathrm{uud})$ and **neutron** $B_3(\mathrm{udd})$, where flavor labels colour the crossings.
 
 ### $\widehat{(\sigma_1 \sigma_2^{-1})^2}$ in $B_3$ — **figure-eight $4_1$**
 
-Word: $\sigma_1 \sigma_2^{-1} \sigma_1 \sigma_2^{-1}$. Closure: the
-**figure-eight knot**, amphichiral (equal to its mirror).
-Hyperbolic volume: $\mathrm{Vol}(4_1) = :val[Vol_4_1]{precision=6} \cdot \pi$, the
-smallest among hyperbolic knots. Used for: **Higgs field** (mass
-mechanism).
+Word: $(\sigma_1 \sigma_2^{-1})^2$. Closure: the amphichiral **figure-eight knot**. Hyperbolic volume: $\mathrm{Vol}(4_1) = :val[Vol_4_1]{precision=6} \cdot \pi$ (smallest hyperbolic volume). Used for: the **Higgs field** (mass mechanism).
 
 ### $\widehat{\sigma_1^2}$ in $B_2$ — **Hopf link $L_H$**
 
-Word: $\sigma_1^2$. Closure: two circles linked once. Hyperbolic
-volume: $0$ (torus link). Used for: **gluon** (lowest force
-carrier), and as the binding link in deuteron $D = [\mathfrak{p}, \mathfrak{n}]_{L_H}$.
+Word: $\sigma_1^2$. Closure: two circles linked once. Hyperbolic volume: $0$ (torus link). Used for: the **gluon** (lowest force carrier) and the binding link in deuteron $D = [\mathfrak{p}, \mathfrak{n}]_{L_H}$.
 
 ### $\widehat{\mathbf{1}_{B_4}}$ — **photon ($\gamma$)**
 
-Word: $\mathbf{1}_{B_4}$ (identity, no crossings). Closure:
-4 disjoint unknots — knot-trivial, but the 4 strands carry
-polarisation $\times$ chirality components on the exceptional divisor
-$\mathcal{S}_p$. Used for: **photon**, vacuum-flux carrier.
+Word: $\mathbf{1}_{B_4}$ (identity, no crossings). Closure: 4 disjoint unknots. The 4 strands carry polarisation $\times$ chirality components on the exceptional divisor $\mathcal{S}_p$. Used for: the **photon** (vacuum-flux carrier).
 
 ### Hyperbolic atom-knots inventory
 
-Brief inventory of the hyperbolic-knot identifications used in
-the atlas. Methodology tag indicates how each identification was
-obtained.
+This inventory lists hyperbolic-knot identifications and their methodology tags.
 
 | Knot / link | Source | Crossings | $\mathrm{Vol}_{\mathrm{hyp}}$ | Used for | Methodology |
 |---|---|---|---|---|---|
@@ -229,21 +184,17 @@ obtained.
 
 ## Statistical summary
 
-Principled entries:
+Principled entry summary:
 
-- Tritium $^3$H at $\sim 1.6 \times 10^{-3}$ (`manual-historical`).
-- Deuteron $^2$H at $\sim 1.1 \times 10^{-2}$ (`manual-historical`).
-- $\alpha$-cluster atoms ${}^{8}$Be–${}^{40}$Ca: mean $|\mathrm{err}| \sim 8$%
- (`recursive-on-⁴He`).
+- Tritium $^3$H: $\sim 1.6 \times 10^{-3}$ error (`manual-historical`).
+- Deuteron $^2$H: $\sim 1.1 \times 10^{-2}$ error (`manual-historical`).
+- $\alpha$-cluster atoms ${}^{8}$Be–${}^{40}$Ca: mean $|\mathrm{err}| \sim 8$% (`recursive-on-⁴He`).
 
-Atlas covers $\ell \leq 2$ at $q_0$; further atoms ($\ell = 3$
-molecules, heavier nuclei) are covered by the all-atoms /
-all-isotopes extension below.
+The atlas covers $\ell \leq 2$ at $q_0$. The all-isotopes extension below covers $\ell = 3$ molecules and heavier nuclei.
 
 ## All-atoms / all-isotopes extension
 
-A layered framework extends the atlas to every isotope (real or
-theoretical) under a single registry:
+A layered framework extends the atlas to all isotopes under a single registry:
 
 | Layer | Coverage | Pipeline |
 |---|---|---|
@@ -253,14 +204,11 @@ theoretical) under a single registry:
 | **Layer 4** | Heavy nuclei ($A > 40$) | Brane-tower asymptotic + LP-active-set ansatz |
 | **Layer 5** | Theoretical / hypothetical isotopes | Same Layer-1/3 machinery; flagged `prediction-only` |
 
-Per-isotope records follow the [`IsotopeRecord`](https://github.com/litlfred/qou/blob/main/computations/isotope_record_schema.py)
-dataclass schema with explicit knot-operator catalogue. Layer-1
-pipeline implementation: [`canonical_mass_table_extended.py`](https://github.com/litlfred/qou/blob/main/computations/canonical_mass_table_extended.py).
+Per-isotope records follow the [`IsotopeRecord`](https://github.com/litlfred/qou/blob/main/computations/isotope_record_schema.py) schema with an explicit knot-operator catalogue. The Layer-1 pipeline is implemented in [`canonical_mass_table_extended.py`](https://github.com/litlfred/qou/blob/main/computations/canonical_mass_table_extended.py).
 
 ### Knot-operator catalogue — per-step primitives
 
-Every per-isotope record exposes a structured list of the knot
-operators used to build its canonical braid. The primitives are:
+Each per-isotope record lists the knot operators used to build its canonical braid:
 
 **Intra-nucleon operators** (acting on the 3 strands at base $3k$):
 
@@ -297,13 +245,7 @@ where $h = q_0 - q_0^{-1}$.
 | $c_{\alpha\alpha}$ | $\alpha$–$\alpha$ pair-energy correction (${}^{8}$Be, ${}^{12}$C, $\ldots$, ${}^{40}$Ca) |
 | $\alpha$–N attachment | Layer 3: $^4$He cluster + valence nucleon (for non-magic $A$) |
 
-For an atom with mass number $A$, the canonical braid word in
-$B_{3A}$ is built sequentially per nucleon: at each $k \in \{0,
-\ldots, A-1\}$ apply the intra block at base $3k$ and $3k+1$,
-then (for $k < A-1$) apply the inter-nucleon interface at $3k+2$
-between nucleon $k$ and $k+1$. The full sequence is enumerated by
-[`build_knot_operator_catalogue(Z, N)`](https://github.com/litlfred/qou/blob/main/computations/isotope_record_schema.py)
-and reported in every per-isotope record.
+For an atom with mass number $A$, we build the canonical braid word in $B_{3A}$ sequentially per nucleon. At each $k \in \{0, \dots, A-1\}$, we apply the intra block at base $3k$ and $3k+1$. For $k < A-1$, we then apply the inter-nucleon interface at $3k+2$ between nucleon $k$ and $k+1$. The [`build_knot_operator_catalogue(Z, N)`](https://github.com/litlfred/qou/blob/main/computations/isotope_record_schema.py) function enumerates this sequence.
 
 ### Layer-1 canonical $|\mathrm{tr}_M(q_0)|$ table
 
@@ -326,15 +268,7 @@ _Computed via [`canonical_mass_table_extended.py`](https://github.com/litlfred/q
 
 ## Per-element stability summary ($Z = 1$ to $92$)
 
-_Merged from the legacy `knot-periodic-table-grid` block (deleted as
-part of the atlas consolidation): the predicted neutron count
-$N_{\mathrm{pred}}$ from the β-stability formula, the closed
-$\alpha$ sub-links $k_\alpha$ (structural cluster count), and the
-QOU mass $M_q$ vs. the observed AME2020 mass $M_o$. The per-Z
-sections below give the full isotope chain + L1/L2/L3 layer
-attribution; this section is the one-row-per-element rollup. See
-[knot-periodic-table intro](#prose:knot-periodic-table) for the
-mass-formula derivation and column-key conventions._
+_This table summarizes element stability: predicted neutron count $N_{\mathrm{pred}}$, closed $\alpha$ sub-links $k_\alpha$, and predicted mass $M_q$ versus observed AME2020 mass $M_o$. The subsequent per-Z sections provide full isotope chains and layer attributions. See [knot-periodic-table intro](#prose:knot-periodic-table) for derivations and conventions._
 
 | $\#$ | Element | $Z$ | $N$ | $N_{\mathrm{pred}}$ | $\Delta$ | $k_\alpha$ | $M_q$ (MeV) | $M_o$ (MeV) | $B/A$ |
 |---:|------|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -436,7 +370,7 @@ mass-formula derivation and column-key conventions._
 
 ## Per-element coverage (AME 2020 cross-reference)
 
-_Auto-rendered from per-Z shards `canonical-isotope-witness-Z<NN>.witness.json` (emitted by [`canonical_isotope_witness.py`](https://github.com/litlfred/qou/blob/main/computations/canonical_isotope_witness.py)). Each row carries the Layer used (L1 canonical |tr_M|, L2 α-cluster recursion, L3 paper-six-term [pending], L4 composite mass), the framework prediction, the AME 2020 reference, and the residual. `Predicts = mass` for free nucleons (p, n) — value is the Borromean tower nucleon mass conditional on `conj:borromean-baryon-mass-formula`. `Predicts = binding_energy` for D and up; AME 2020 reference is the total binding energy. $M_{\text{composite}}$ is the L4 composite mass $N \cdot m_n + Z \cdot m_p - B$ when both nucleon masses (Borromean) and a binding-energy prediction are available; reference is the AME atomic mass converted via 1 u = 931.49410242 MeV._
+_Auto-rendered from per-Z shards [`canonical-isotope-witness-Z<NN>.witness.json`](https://github.com/litlfred/qou/blob/main/computations/canonical_isotope_witness.py). Each row reports the Layer used, the framework prediction, the AME 2020 reference, and the residual. Free nucleons (p, n) predict mass via the Borromean tower. Deuterium and heavier atoms predict binding energy. The L4 composite mass $M_{\text{composite}}$ computes $N \cdot m_n + Z \cdot m_p - B$. AME mass is converted via $1 \text{ u} = 931.49410242$ MeV._
 
 ### neutron (Z = 0)
 

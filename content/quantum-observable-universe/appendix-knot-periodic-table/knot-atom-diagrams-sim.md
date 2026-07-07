@@ -1,24 +1,12 @@
-Interactive SVG visualization of the knot structure of light atoms
-($Z \leq 4$): hydrogen, helium, lithium, and beryllium.
+Interactive SVG visualization of the knot structure for light atoms ($Z \leq 4$): hydrogen, helium, lithium, and beryllium.
 
-Rendering each atom as a knot makes its particle content and internal
-linkage legible at a glance: one reads off which knot type carries each
-proton, neutron, and electron, and sees how the nuclear and electronic
-sub-links are joined.
+Rendering atoms as knots explicitly details their particle content and internal linkage. A composite knot diagram depicts the nuclear sub-link (protons, neutrons) joined to the electronic sub-link (electrons) via Hopf links:
 
-Each atom is displayed as a composite knot diagram in which a nuclear
-sub-link (protons and neutrons) and an electronic sub-link (electrons)
-are joined by Hopf links, with the following legend:
+- **Protons**: solid left trefoils $T_{2,3}$ (filled).
+- **Neutrons**: unknots $K_{0_1}$ (circles).
+- **Electrons**: outlined right trefoils $T_{2,3}^{\sigma}$ (hollow).
+- **Hopf links** $\mathcal{L}_H$: connect nuclear and electronic sub-links.
+- **Closed sub-shells**: colored borders (green = $1s^2$, blue = $2s^2$, brown = nuclear).
+- **Borromean structure** $\mathcal{B}_3$: present for $Z \geq 3$.
 
-- **Protons** as solid left trefoils $T_{2,3}$ (filled).
-- **Neutrons** as unknots $K_{0_1}$ (circles).
-- **Electrons** as outlined right trefoils $T_{2,3}^{\sigma}$ (hollow).
-- **Hopf links** $\mathcal{L}_H$ connecting nuclear and electronic
-  sub-links.
-- **Closed sub-shells** highlighted with colored borders
-  (green = $1s^2$, blue = $2s^2$, brown = nuclear).
-- **Borromean structure** $\mathcal{B}_3$ for $Z \geq 3$.
-
-See the reference table in
-[knot atom diagrams](#rem:knot-atom-diagrams) for the complete
-notation and transfer matrix data.
+See [knot atom diagrams](#rem:knot-atom-diagrams) for complete notation and transfer matrix data.

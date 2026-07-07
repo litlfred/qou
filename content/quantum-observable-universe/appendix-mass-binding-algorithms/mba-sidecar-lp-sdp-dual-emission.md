@@ -40,13 +40,7 @@ present.
 
 ### Why this is mandatory
 
-*The dual variables **are** the binding-energy shadow prices.
-The active demand channels (`y_star[i] > 0`) name the most
-receptive sub-braids — they identify which Wedderburn blocks the
-bound state actually saturates. Solving only the primal loses
-this structural information, which has been the historical
-pattern (58 of 58 LP/SDP witnesses on `main` lacked the dual at
-the time this rule was added).*
+*The dual variables **are** the binding-energy shadow prices. Active demand channels (`y_star[i] > 0`) name the receptive sub-braids, identifying the Wedderburn blocks saturated by the bound state. Solving only the primal drops this structural information, a historical flaw (58 of 58 LP/SDP witnesses on `main` lacked the dual when this rule was introduced).*
 
 ### Correctness conditions
 

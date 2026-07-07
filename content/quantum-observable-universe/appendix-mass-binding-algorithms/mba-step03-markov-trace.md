@@ -100,34 +100,8 @@ $\mathrm{tr}_M(1) = 1$; closure of any braid containing a full
 twist $\Delta_n^2$ in the centre acquires a factor
 $(q^{n(n-1)})$ from the central character (Schur–Weyl).*
 
-*Large-$A$ scaling (atom braids of step 9b): the multi-nucleon
-braid word has a **monotone** non-decreasing generator sequence —
-nucleon $k$ uses $\sigma_{3k},\sigma_{3k+1}$ and one interface
-crossing $\sigma_{3k+2}$, never revisiting a generator — so each
-$O_g$ is a polynomial in a single $\sigma_g$. In the
-multiplicity-free seminormal (Gelfand–Zetlin) basis $\sigma_g$
-moves only one level of the chain
-$\varnothing \subset s_1 \subset \cdots \subset s_n = \lambda$, and
-trace closure forces each $O_g$ to its diagonal block, collapsing
-step 3–4 to a transfer matrix over fine-Bratteli edges
-$s_g \subset s_{g+1}$. This yields every $\chi^\lambda(\beta)$ in a
-single sweep without materialising the $d_\lambda$-dimensional
-Hoefsmit representation: the cost is the fine-Bratteli edge count
-(a few thousand at $n = 21$) rather than $n!$, extending the
-numerical $\mathrm{tr}_M$ at $q_0$ to $A \geq 6$ ($^6$Li, $^7$Li,
-and beyond) in seconds. Implemented in
-[`chi_monotone_transfer.py`](../../../computations/chi_monotone_transfer.py)
-with the per-atom trace assembly in
-[`tr_m_atom_via_transfer.py`](../../../computations/tr_m_atom_via_transfer.py)
-(witness
-[`tr-m-atom-via-transfer.witness.json`](../../../computations/tr-m-atom-via-transfer.witness.json)),
-validated to the 50-dps floor against the Hoefsmit characters
-($n \leq 6$) and the cached per-basis-vector trace witnesses
-($n \leq 12$). The production binding consumers
-[`binding_canonical`](../../../computations/binding_canonical.py)
-and
-[`canonical_tr_m_via_branching`](../../../computations/canonical_tr_m_via_branching.py)
-($A \geq 3$) route their atom-trace through this transfer path (the
-former brute-force atom-level Wedderburn tower,
-`atom_level_wedderburn_tower.py`, is retained only as a
-$d_\lambda$-explicit cross-check).*
+*For large-$A$ scaling (Step 9b atom braids), the multi-nucleon braid word features a **monotone** non-decreasing generator sequence. Nucleon $k$ uses $\sigma_{3k}, \sigma_{3k+1}$ and one interface crossing $\sigma_{3k+2}$, never revisiting a generator. Thus, each $O_g$ is a polynomial in a single $\sigma_g$.
+
+In the multiplicity-free seminormal (Gelfand–Zetlin) basis, $\sigma_g$ moves exactly one level of the chain $\varnothing \subset s_1 \subset \cdots \subset s_n = \lambda$. Trace closure forces each $O_g$ into its diagonal block. This collapses Steps 3–4 into a transfer matrix over fine-Bratteli edges $s_g \subset s_{g+1}$. We compute every $\chi^\lambda(\beta)$ in a single sweep without materializing the $d_\lambda$-dimensional Hoefsmit representation. The computational cost scales with the fine-Bratteli edge count (e.g., a few thousand at $n = 21$) rather than $n!$. This extends numerical $\mathrm{tr}_M$ evaluation at $q_0$ to $A \geq 6$ ($^6$Li, $^7$Li, and beyond) in seconds.
+
+The implementation resides in [`chi_monotone_transfer.py`](../../../computations/chi_monotone_transfer.py), with per-atom trace assembly in [`tr_m_atom_via_transfer.py`](../../../computations/tr_m_atom_via_transfer.py) (witness [`tr-m-atom-via-transfer.witness.json`](../../../computations/tr-m-atom-via-transfer.witness.json)). We validate it to the 50-dps floor against Hoefsmit characters ($n \leq 6$) and cached per-basis-vector trace witnesses ($n \leq 12$). The production binding consumers [`binding_canonical`](../../../computations/binding_canonical.py) and [`canonical_tr_m_via_branching`](../../../computations/canonical_tr_m_via_branching.py) ($A \geq 3$) route their atom-trace through this transfer path. The brute-force atom-level Wedderburn tower (`atom_level_wedderburn_tower.py`) serves strictly as a $d_\lambda$-explicit cross-check.*

@@ -57,7 +57,4 @@ cross-check against the symbolic Taylor expansion.*
 
 ### Notes
 
-*The jet-prefix truncation is the **gate** between symbolic
-($q$-exact) compute and the archimedean evaluation at $q_0$. The
-choice of $N$ is precision-driven; see the $c_k$ truncation
-sidecar for the analogous truncation in the $\mathfrak{Q}_\beta$ ladder.*
+*The jet-prefix truncation **gates** symbolic ($q$-exact) compute from archimedean evaluation at $q_0$. Target precision determines $N$. See the $c_k$ truncation sidecar for the analogous truncation in the $\mathfrak{Q}_\beta$ ladder.*

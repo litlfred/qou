@@ -5,6 +5,7 @@ export default proposition({
   title: "Numerical scale of the uniform bound",
   tags: ["binding-energy", "numerical-scale", "probe"],
   lean: {
+    ref: "qou:QOU.Appendix.DeltaMaxNumericalScale.delta_max_numerical_scale",
     validation: "not_checked",
   },
   computation: {
