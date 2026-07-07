@@ -140,10 +140,20 @@ def main() -> int:
     lifted = try_lift()
     k = 1
     while lifted is None and k < MAX_PRIMES:
-        runs.append(run_prime(primes[k], degrees, runlog))
+        # a non-generic prime (dividing a true leading coefficient) makes
+        # some column's pinned-degree fit ambiguous — the sampler now
+        # rejects that hard (Copilot uniqueness fix); skip such primes.
+        try:
+            runs.append(run_prime(primes[k], degrees, runlog))
+        except RuntimeError as e:
+            print(f"  [prime] p={primes[k]} SKIPPED (non-generic): "
+                  f"{str(e)[-120:]}", flush=True)
+            runlog.append({"prime": str(primes[k]), "skipped": True})
+            k += 1
+            continue
         k += 1
         lifted = try_lift()
-        print(f"  [lift] after {k} primes: "
+        print(f"  [lift] after {len(runs)} usable primes: "
               f"{'SUCCESS' if lifted is not None else 'incomplete'}", flush=True)
     if lifted is None:
         print(f"  LIFT FAILED after {MAX_PRIMES} primes — record and stop")
