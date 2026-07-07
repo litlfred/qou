@@ -1,6 +1,7 @@
 **Conjecture (CWF linking normalization).**
-*There is a linking-amplitude assignment $\ell : R \to R$ on bond factors
-such that*
+*Let $K$ be a field containing the bond-factor algebra, with
+$[2]_v = v + v^{-1}$ invertible. There is a linking-amplitude assignment
+$\ell : K \to K$ on bond factors such that*
 
 $$
   \ell(z)^2\,\bigl(1 + z^2\bigr) \;=\; z^2
