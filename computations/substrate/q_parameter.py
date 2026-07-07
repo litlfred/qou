@@ -178,8 +178,48 @@ if _anchor in ("ideal", "muon", "canonical"):
         TWO_Q_MP     = Q_MP + Q_INV_MP
         TANH_LN_Q_MP = HA_MP / TWO_Q_MP
         LN_Q_MP      = _mp.log(Q_MP)
-    except ImportError:
-        pass
-  except Exception as _exc:  # leave proton values if witness unreadable
-    import sys as _sys
-    print(f"[q_parameter] muon override skipped: {_exc}", file=_sys.stderr)
+
+        # ── q_at / q_str re-bound to the canonical MUON source ──
+        # The imported `q_at`/`q_str` (from `import *`) Newton-solve the PROTON
+        # pin, so a producer doing `from q_parameter import q_at; q_at(dps)` got
+        # PROTON even under the ideal anchor — the bean-`yfvb` sweep (2026-07-06)
+        # found this is why muon-committed producers still drifted proton-ward
+        # (both the direct-`qou_substrate` importers and the ones already on
+        # `q_parameter.q_at`). Re-bind to the 70-digit muon witness string so
+        # `q_at(dps)` is muon-consistent at any working precision (the witness is
+        # the ONLY faithful muon source — matches neither the proton solve nor the
+        # `q_muon_at()` closed form). `dps` sets the mpf working precision; the 70
+        # significant digits are the canonical muon ceiling.
+        _MUON_Q_STR = _d["q"]
+
+        def q_at(dps: int = 50, _s=_MUON_Q_STR, _m=_mp):
+            prev = _m.mp.dps
+            try:
+                _m.mp.dps = max(prev, dps)
+                return +_m.mpf(_s)
+            finally:
+                _m.mp.dps = prev
+
+        def q_str(dps: int = 50, _s=_MUON_Q_STR, _m=_mp):
+            return _m.nstr(_m.mpf(_s), dps, strip_zeros=False)
+    except ImportError as _ie:
+        # NO SILENT FALLBACK (owner directive 2026-07-06): under the ideal anchor
+        # the caller explicitly asked for muon. mpmath is required to bind the
+        # _MP family AND the muon `q_at`/`q_str`; without it those names stay the
+        # proton values from `import *`, so a producer would silently emit PROTON
+        # under an ideal request — exactly the tnjb corruption this branch closes.
+        raise RuntimeError(
+            "q_parameter: ideal/muon anchor requested (QOU_Q0_ANCHOR="
+            f"{_anchor!r}) but mpmath is unavailable — cannot establish the muon "
+            "q_at/_MP family; refusing to fall back to proton silently."
+        ) from _ie
+  except Exception as _exc:
+    # NO SILENT FALLBACK: an unreadable/non-canonical q-pinning witness under the
+    # ideal anchor must HARD-FAIL, not leave the proton `import *` values in place
+    # (which would silently proton-drift the witness). A requested muon anchor that
+    # cannot be satisfied is an error, never a silent proton result.
+    raise RuntimeError(
+        f"q_parameter: ideal/muon anchor requested (QOU_Q0_ANCHOR={_anchor!r}) but "
+        f"the muon override could not be established: {_exc!r}. Refusing to fall "
+        "back to proton silently (bean yfvb / tnjb anti-corruption)."
+    ) from _exc
