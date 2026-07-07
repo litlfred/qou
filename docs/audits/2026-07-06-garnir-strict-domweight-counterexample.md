@@ -139,36 +139,44 @@ unitriangularity) is now the preferred route. Either way the residual is the **s
 transversal + a correct well-founded order** — the part Mathlib does not provide (no
 Specht modules in Mathlib at all).
 
-## 4.5 Empirical refutation of the naive lex measure (exhaustive, 2026-07-07)
+## 4.5 domWeight (tabloid dominance) is insufficient — but the COLUMN-WORD order works (exhaustive, validated 2026-07-07)
 
-A faithful small-case model of the shuffle-transversal Garnir straightening
-(`/tmp/garnir/model2.py`, `exhaustive2.py`) tested the two obvious termination measures
-against **every** column-standard tableau and **every** row descent, for shapes up to
-`(4,3)` / `(3,3,2)`. Both **fail**:
+> **Retraction note.** An earlier revision of this section reported "exhaustive
+> refutation" failure *counts* for `row-inversions` and lex `(domWeight, row-inversions)`
+> from a small-case model (`model2.py`/`exhaustive2.py`). That model had a **sign bug** —
+> it dropped the coset rep's `sgn(π)` factor, so its "Garnir terms" did **not** satisfy the
+> Garnir relation `∑ sgn·e = 0` (checked: **all** (t,descent) pairs violated it). Those
+> specific counts are withdrawn. The corrected model (`/tmp/garnir/vo2.py`) satisfies
+> `∑ sgn·e = 0` on every (t,descent) pair for shapes up to `(4,2)` and is the basis for the
+> validated result below. The §3.5 disproof is **unaffected** — it used the exact
+> standard-basis expansion (direct `poly_vec` + rational solve), not the shuffle model.
 
-| candidate measure | requirement (on every non-standard, non-identity term) | result |
-|---|---|---|
-| `sec = row-inversions` alone | `sec(π•t) < sec(t)` | **FAILS** — `(3,2)`, `(4,2)`, `(3,3)`, … have terms with equal or *higher* row-inversions (e.g. `(4,2)`: 45 failing terms, some `1→2`) |
-| lex `(domWeight ▷, row-inversions ↓)` | term strictly `▷ t`, else same-tabloid & `sec ↓` | **FAILS** — `(3,3)`: 104/360 terms; `(4,3)`: 1009/2940. Failing terms are strictly *less* dominant **and** non-standard |
+With the **corrected, relation-validated** shuffle-transversal model, tableau-level
+termination measures were tested for strict decrease on **every non-standard, non-identity**
+single-step Garnir term, over all column-standard tableaux and all row descents, shapes up
+to `(3,3,2)` (3967 non-standard terms):
 
-**Worked counterexample (the smallest).** `t = [[1,2,3],[5,4]]` (column-standard, row
-descent at `(1,0)`). Garnir set `A = {5}` (col 0, row ≥ 1), `B = {2,4}` (col 1, row ≤ 1).
-The shuffle transversal has three reps; besides the identity and the standard term
-`[[1,2,3],[4,5]]`, it produces `[[1,4,3],[2,5]]` — which is **column-standard,
-non-standard** (row-0 descent `4>3`), **strictly less dominant** than `t`
-(`{1,2,3}{4,5} ▷ {1,3,4}{2,5}`), and has the **same** row-inversion count (`1→1`). So
-neither `domWeight` nor row-inversions decreases on a term that still needs straightening.
+| candidate measure | strict-decrease failures |
+|---|---|
+| `domWeight` descending (tabloid dominance, ℕ linear ext.) | **FAILS** — e.g. `(3,3)`: 216; `(4,3)`: 1805 |
+| `domWeight` ascending | **FAILS** — `(4,3)`: 2012 |
+| row-reading word, lex | **FAILS** — `(4,3)`: 201 |
+| **column-reading word, lex `<`** (col-major, first entry most significant) | **0 failures** — every shape, incl. `(4,3)`=2814, `(3,3,2)`=3967 |
+| ℕ-encoded column word `Σ_k w_k·(n+1)^{…}` (Lean-ready) | **0 failures** — same |
 
-**Scope of this refutation (STRICT — per AGENTS.md "before declaring refuted").** This is a
-**scope-limited negative (a)**: the two *specific naive measures above*, in this
-combinatorial model, do not monotonically decrease. It is **not** a structural exclusion —
-the classical standard-basis theorem is true, so *some* well-founded order works. The
-correct order is the **last-letter / column-word dominance** used by James (Thm 8.4) and
-Sagan (§2.6.4–5), which compares tableaux (not just row-tabloids) and is genuinely subtler
-than any lexicographic combination of `domWeight` + a local inversion count. The lesson:
-**model the classical column-word order faithfully in the Python harness and re-run the
-exhaustive check *before* writing any Lean, so the formalized measure is one that provably
-terminates.**
+**Why `domWeight` cannot work:** Garnir produces terms whose *tabloids are
+dominance-incomparable* to `{t}` (e.g. `(2,2,2)`: `t=[[1,2],[5,3],[6,4]]` →
+`[[1,3],[2,4],[6,5]]`, `INCOMP`). No linear extension of tabloid dominance orders those
+consistently. The **column-reading word** (a tableau-level, not tabloid-level, statistic)
+does — this is the classical straightening order (James Thm 8.4, Sagan §2.6.4–5).
+
+**The validated measure (keystone for the restatement).** Read `t` column-major
+(left-to-right, top-to-bottom): `colWord t = [t(0,0), t(1,0), …, t(0,1), t(1,1), …]`.
+Encode as `colWordNum t = Σ_k colWord(t)[k]·(n+1)^{(n-1-k)}` (first column entry most
+significant; entries `< n+1` so base `n+1` is faithful). **Every non-standard Garnir term
+`t'` satisfies `colWordNum t' < colWordNum t`.** Standard tableaux are the lex-minima
+within a column class, so the strong induction on `colWordNum` (descending) terminates at
+standard polytabloids. This is the drop-in replacement for `domWeight`.
 
 ## 4.6 LSP / elan toolchain — the fetch blocker is fixed (2026-07-07)
 
@@ -192,25 +200,41 @@ without a `lake build` that risks the Mathlib re-clone/wipe. `lean`-direct (LEAN
 restored oleans) therefore remains the verification path. The elan alias should be added to
 the sandbox Lean-setup so future sessions get a working LSP handshake.
 
-## 5. Concrete next steps (revised 2026-07-07 after §4.5)
+## 5. Concrete next steps (revised 2026-07-07 — column-word order validated)
 
-0. **Model the classical column-word (last-letter) order in the Python harness** and re-run
-   the exhaustive check until a measure passes on every non-standard term for all shapes up
-   to ≥ `(4,3)`. Do **not** formalize a measure that has not passed this check — both naive
-   candidates looked plausible and failed.
-1. Replace `garnir_transversal_exists` (arbitrary transversal) with a **shuffle
-   transversal** constructed from order-preserving bijections `A ≃ σ(A)`, `B ≃ σ(B)`.
-2. With the *validated* order from step 0, either prove the leading-tabloid unitriangularity
-   lemma (Option B, now preferred) or the column-word decrease for shuffle reps.
-3. Re-shape `garnir_assembly` to the `(1+κ)·e_t = dominant` form (absorb same-tabloid
-   cosets), and rework `straightening_step` / `standardPolytabloid_straightening` onto the
-   validated order — **not** the `domBound − domWeight` measure, which §4.5 shows is
-   unsound even with a row-inversion tie-breaker.
+The keystone (which measure) is now settled empirically (§4.5): the **column-word measure
+`colWordNum`**. The restatement is:
 
-**Effort estimate.** This is research-grade: Mathlib has no Specht modules, the correct
-termination order is the subtle column-word dominance, and steps 1–3 each need fresh
-formalization. Realistically multi-day. The 17 sorry-free algebraic lemmas (§1) are the
-durable asset and stand regardless of which order closes the induction.
+1. **Define `colWordNum t : ℕ`** (column-major reading word, base-`(n+1)` positional
+   encoding, first column entry most significant) alongside the existing `colPattern`.
+   A fixed ceiling `colWordBound μ` (= `(n+1)^n`, or the sum bound) plays `domBound`'s role.
+2. **Restate `straightening_step`** — replace the false goal `∀ t'∈s, domWeight t < domWeight t'`
+   with:
+   `∀ t'∈s, e_{t'} ∈ range standardPolytabloid ∨ colWordNum t' < colWordNum t`
+   (each Garnir term is already standard **or** strictly column-word-smaller). The identity
+   coset contributes coefficient `1` (t column-standard ⇒ colsort sign `+1`), so
+   `e_t = −∑_{non-id} c·e_{t'}` with **no** `CharZero` division needed.
+3. **Prove the column-word-decrease lemma** for the shuffle transversal: every non-identity
+   shuffle rep's column-sorted image has strictly smaller `colWordNum`. This is the new
+   combinatorial core (replaces the false dominance claim); validated exhaustively to
+   `(3,3,2)`.
+4. **Rework `standardPolytabloid_straightening`** to strong-induct on `colWordNum t`
+   (descending) instead of `domBound − domWeight t`. The `standardPolytabloid_span_eq_specht`
+   / `_span` corollaries then follow unchanged (they only consume the `_straightening`
+   conclusion, which keeps the same *type*).
+
+The column-antisymmetry branch of `straightening_step` (the `∃ σ ∈ C_t` raising case) also
+needs re-expressing: a column-sort toward the standard column order **lowers** `colWordNum`
+(the sorted column word is lex-smallest), consistent with the descending induction.
+
+**What is reusable as-is:** the 17 sorry-free algebraic/annihilation/reindex lemmas (§1) —
+they establish the Garnir relation `∑ sgn·e = 0` and the coset reindexing, which are
+measure-independent. Only the *dominance conclusion* (`garnir_assembly`'s strict-`domWeight`
+premise, `straightening_step*`'s goal shape, and the induction measure) changes.
+
+**Effort estimate.** Research-grade but now well-scoped: Mathlib has no Specht modules, but
+the termination order is settled and Lean-ready. Steps 1–4 are a focused restatement +
+one new combinatorial lemma (step 3), not open-ended research.
 
 The roadmap comment on `straightening_step_colMax` carries a condensed version of §2–§3
 so the next pass does not re-wire the false `hdom`.
