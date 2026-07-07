@@ -208,6 +208,8 @@ export default chapter({
         "hoefsmit-binding-amplitude-proof",
         "hoefsmit-toroidal-ladder-locus",
         "hoefsmit-toroidal-ladder-locus-proof",
+        "three-strand-color-winding-rigidity",
+        "three-strand-color-winding-rigidity-proof",
         // Keystone: 4₁ (Higgs) amphichiral ⇒ CS=0 ⇒ real complex volume;
         // the bare Higgs gives only the mass face, Q_β is the binding defect.
         "self-dual-higgs-real-volume",
