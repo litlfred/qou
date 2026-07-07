@@ -1,0 +1,8 @@
+<!-- FILE_START: hoefsmit-convergence-magic-shells-intro.md -->
+This subsection extracts the magic-shell consequences of the Hoefsmit-convergence construction. The blocks cover the magic-shell stabilisation conjecture, two-row-stratum analysis, the $^4$He worked example (channel-active-set, two-row dominance, and magic-shell fingerprint), Schur-Weyl vanishing, the SW-3-root rational integrand, Markov-trace Frobenius selection, the Hecke 1d-irrep closed-form character, and the Hoefsmit $V_{21}$ cosine symmetrisation.
+
+The structural pattern mirrors the operator level: the Wedderburn decomposition of $H_n(q)$ assigns each Young partition $\lambda$ a weight $y_\lambda$, and only the small-rank rows ($\lambda \in \{(n), (n-1,1), (n-2,2)\}$) carry non-negligible Frobenius mass at $q_0$. Magic shells are the integers $A$ at which a row's contribution stabilises against further Hoefsmit branching. The two-row stratum freezes when the SW-3-root denominator $\prod_{i<j}(1 - q^{2(\lambda_i - \lambda_j + j - i)})$ saturates, and the $V_{21}$ cosine symmetrisation pins the relative phase of the trivial against the standard 1d-irrep. The Hecke closed-form character makes both vanishings explicit, and the Markov-trace selection rule identifies the winning partition.
+
+The output provides the substrate-level magic-shell prediction tabulated against the empirical noble-gas sequence. The next subsection consumes this prediction wholesale via the vertex-factorisation Feynman bridge.
+<!-- FILE_END: hoefsmit-convergence-magic-shells-intro.md -->
+

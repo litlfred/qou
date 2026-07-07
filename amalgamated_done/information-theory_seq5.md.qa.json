@@ -1,0 +1,12 @@
+{
+  "criteria": {
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote blocks linearly, resolved forward references, cleaned mathematical notation and integrated tables smoothly. Removed index-style bullet points in favor of connected prose. Tightened terminology around Reeb derivation and Toffoli matrix.",
+        "reviewed_at": "2026-07-06T22:48:00Z",
+        "reviewer": { "kind": "agent", "id": "milnor-editor", "version": "v1" }
+      }
+    ]
+  }
+}

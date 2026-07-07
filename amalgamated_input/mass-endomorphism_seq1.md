@@ -1,0 +1,487 @@
+<!-- FILE_START: mass-endomorphism-conjecture.md -->
+In the unified six-term formula
+([unified knot mass](#thm:knot-mass-formula-unified)),
+$|\mathrm{tr}_M(\rho(\beta))|$ is **Term 1** ($E_\infty^{0,*}$,
+vortex-specific) and the brane tower $\sum \Phi_q(z_i)$ supplies
+**Terms 2–3** ($E_\infty^{1,*}$ and $E_\infty^{2,*}$). In the
+archimedean realisation these three terms together evaluate to
+$\mathrm{Vol}(K)/\hbar_q^2$
+([topological decomposition](#thm:topological-mass)).
+Terms 4–6 (Frobenius co-Casimir, chirality, jet prefix) are
+separate structural pieces handled elsewhere; this conjecture
+concerns only the tower piece.
+
+The **Hecke mass element**
+$\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$
+([Hecke mass element](#def:hecke-mass-element)) is categorically
+defined: it is the fibre functor image of the mass integrand
+$(\int_A \otimes \mathrm{id}) \circ \Delta \circ \varrho$, and
+its Markov trace gives the full categorical mass
+([mass via Markov trace](#prop:hecke-mass-trace)). The **open
+problem** is computing $\Phi_{\mathrm{mass}}(\beta)$ explicitly
+— expressing its NF decomposition in the basis
+$\{\gamma, \sigma_0, \sigma_1, L_+, L_-, e^-\}$ for specific
+braid words.
+
+## Scope: convenience target, not load-bearing
+
+A note on what this conjecture **is** and **is not** about, added
+ after the P3.1 conjectural-propagation audit:
+
+- **Load-bearing claim** (already proved, *not* part of this
+ conjecture): the categorical mass equals the infinite-series sum
+
+ $$
+    \mathfrak{m}(\varrho)
+    \;=\;
+    \bigl|\mathrm{tr}_M(\rho(\beta))\bigr|
+    \;+\; \sum_{n \ge 0}\!\Bigl(
+      \textstyle\sum_i \Phi_q(|\hat V_i^{(n)}|)
+      + z^2 \sum_{(i,j)} \Phi_q(|\hat V_i^{(n)} \hat V_j^{(n)}|)
+    \Bigr).
+  $$
+
+ This is
+ [`thm:knot-mass-formula-unified`](#thm:knot-mass-formula-unified) +
+ [`prop:mass-endomorphism-tower`](#prop:mass-endomorphism-tower);
+ it does **not** depend on the closed-form conjecture below.
+ Every algebraic-side downstream block whose actual derivation
+ uses the mass tower can route through the infinite series.
+
+- **Convenience target** (the conjectural content of THIS block):
+ the existence of a *single* element
+ $\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$ — a finite-rank Hecke
+ element — whose Markov trace gives the full categorical mass.
+ This would make the infinite series collapse to a closed-form
+ evaluation. Useful for symbolic computation; not required for
+ the structure of any paper-side derivation.
+
+If this conjecture **fails** (no closed-form $\Phi_{\mathrm{mass}}$
+exists in finite-rank $H_n(R, q)$), the algebraic-side mass formula
+remains valid as the infinite series. Compute scripts that try to
+materialise $\Phi_{\mathrm{mass}}$ as a single element would have
+to truncate explicitly; those that only ever evaluate the infinite
+sum at $q_0$ (the dominant case) are unaffected.
+
+The failure consequence column in
+[`docs/audits/conjecture-cones.md`](../../../docs/audits/conjecture-cones.md)
+already records this scope correctly: "tower formula remains
+correct as an *infinite series*; the closed form is a
+convenience". This section spells out the distinction in the
+conjecture's own prose, in line with the user's clarifying
+question.
+
+## Statement
+
+**Conjecture (explicit mass endomorphism).**
+*The Hecke mass element $\Phi_{\mathrm{mass}}(\beta)$
+([Hecke mass element](#def:hecke-mass-element)) admits a
+closed-form NF decomposition in $H_n(R, q)$ expressible in terms
+of the braid word $\beta$, the substrate parameter $q$, and
+the quantum dilogarithm $\Phi_q$. Specifically, the
+transient component satisfies:*
+
+$$
+  \mathrm{tr}_M\!\bigl(\Phi^{\mathrm{trans}}(\beta)\bigr)
+  =
+  \sum_{i=1}^{N} \Phi_q(z_i)
+  =
+  \frac{\mathrm{Vol}(K_\beta)}{\hbar_q^2}
+  -
+  \bigl|\mathrm{tr}_M\!\bigl(\rho(\beta)\bigr)\bigr|,
+$$
+
+*where the spectral coordinates $z_i$ of the blow-up centres
+are determined by the braid word and the Briggs--Klein chart.*
+
+## Tower convergence
+
+The electron mass $\mathrm{Li}_2(q^{-2})/\hbar_q^2$ can be
+decomposed as a sum over brane levels
+$n = 1, 2, \ldots$, with level $n$ contributing
+$q^{-2n}/n^2$ to $\mathrm{Li}_2$:
+
+| Levels | Fraction of $\mathrm{Li}_2(q^{-2})$ |
+|:---:|:---:|
+| $N = 1$ | $73.9\%$ |
+| $N = 3$ | $94.3\%$ |
+| $N = 10$ | $99.75\%$ |
+| $N = 20$ | $99.99\%$ |
+
+The tower effectively converges in $\sim 20$ terms,
+consistent with $t_P = 1/\hbar_q \approx 10$ Reeb
+operations per Planck time. The first brane level alone
+provides $74\%$ of the electron mass; the remaining
+$26\%$ comes from higher jet prolongations.
+
+## Established results
+
+**Step 1 (Categorical $\to$ Markov, proved).**
+$\mathfrak{m}(\varrho)|_{\text{single level}} = |\mathrm{tr}_M(\rho(\beta))|$.
+This is
+[categorical mass as Markov trace](#prop:categorical-mass-markov):
+the Nakayama automorphism is $S^2 = \mathrm{id}$, so the
+mass reduces to the Markov trace of the braid word.
+
+**Step 2 (Tower sum $\to$ Vol, archimedean).**
+$\mathfrak{m}(\varrho)|_{\text{full tower}} = \mathrm{Vol}(K)/\hbar_q^2$.
+This is the
+[archimedean mass formula](#prop:topological-mass-formula):
+the descended trace gives $\mathrm{Vol}(K)$, each transient
+trace gives $\Phi_q(z_i)$, and they sum to
+$\mathrm{Vol}(K)/\hbar_q^2$.
+
+**Step 3 (Markov trace $\neq$ Vol, the gap).**
+The Jones--Markov trace $\mathrm{tr}_M(\rho(\beta))$ is
+the Jones polynomial $J(K; q)$ — a Laurent polynomial
+in $q^{1/2}$. The hyperbolic volume $\mathrm{Vol}(K)$ is a
+transcendental number. These are **different knot
+invariants**: $J(\text{trefoil}; q) = -q^{-4} + q^{-3} + q^{-1}$
+while $\mathrm{Vol}(\text{trefoil}) = 0$.
+
+The bridge between them is the **Volume Conjecture**
+\cite{kashaev1997, murakami-murakami2001}:
+
+$$
+  \lim_{N \to \infty}
+  \frac{2\pi}{N}
+  \log |J_N(K; e^{2\pi i/N})|
+  =
+  \mathrm{Vol}(S^3 \setminus K),
+$$
+
+where $J_N$ is the $N$-colored Jones polynomial. This limit
+involves:
+- evaluating at roots of unity ($q = e^{2\pi i/N}$, not
+ generic $q$),
+- the $N$-dimensional representation (not the fundamental),
+- an asymptotic limit ($N \to \infty$).
+
+Each step moves away from the Hecke algebra at generic $q$.
+
+The **Habiro ring** ([Habiro ring](#def:habiro-ring)) partially
+closes this gap: the colored Jones polynomials for all $N$
+coexist as a single element of $\widehat{\mathbb{Z}[q]}$.
+The algebraic quantum volume
+([algebraic quantum volume](#def:algebraic-quantum-volume))
+$\mathrm{Vol}_q(\beta) = \prod \hat{V}_i$ embeds into
+$\widehat{\mathbb{Z}[q^{1/2}]}$, and its evaluations at
+roots of unity collectively encode the hyperbolic volume via
+the Volume Conjecture. The mass at $q_0$ is a **different**
+specialisation of the same Habiro element — not through roots
+of unity, but through direct evaluation at the substrate
+parameter.
+
+## Encoding requirements for $\Phi_{\mathrm{mass}}$
+
+The brane tower $\{A_n\}$ provides the categorical version of
+$N \to \infty$: each brane level $n$ contributes a transient
+trace $\Phi_q(z_n)$, and the full mass sums over all levels.
+A mass endomorphism $\Phi_{\mathrm{mass}}$ would need to
+encode this sum as a **single** element of $H_n(R, q)$.
+
+The quantum dilogarithm $\Phi_q(z) = \prod_{k=1}^{\infty}(1 - q^{-k}z)^{-1}$
+is an **infinite product** — it is not a finite element of
+$H_n(R, q)$ for any $n$. However, the brane tower truncates at
+finite $N$ (determined by the knot crossing number), so the
+relevant sum is finite. The question is whether this finite
+sum has a closed-form expression in $H_n(R, q)$.
+
+**Habiro-ring home for the tower limit.** *Even when the brane
+tower does not truncate finitely, the partial sums*
+
+$$
+  \Phi_{\mathrm{mass}}^{(N)}(\beta)
+  \;:=\;
+  \sum_{i=1}^{N} \Phi_q(z_i)
+$$
+
+*form a Cauchy sequence in the $(q;q)_n$-adic topology on
+$\widehat{\mathbb{Z}[q]}$ ([Habiro ring](#def:habiro-ring)): each
+factor $\Phi_q(z_i)$ has cyclotomic-denominator structure (the
+$[k]_q$ in $\Phi_q$ are cyclotomic), so successive partial sums
+agree modulo $((q;q)_n)$ for $n$ growing with $N$. Therefore the
+limit*
+
+$$
+  \Phi_{\mathrm{mass}}^{(\infty)}(\beta)
+  \;\in\;\widehat{\mathbb{Z}[q]}
+$$
+
+*exists as an element of the Habiro completion — well-defined
+purely algebraically, with no analytic convergence required. This
+limit object **is** the motive of the mass:* it carries the
+combinatorial data needed to map to $\mathrm{Vol}(K)/\hbar_q^2$
+**only** when the archimedean realization
+[$\rho_\infty$](#def:archimedean-realization-functor) of
+the [motivic substrate](#def:motivic-substrate) is applied at
+$q_0 \in \mathbb{R}$. The non-archimedean realizations
+$\{\rho_p\}$ recover the colored-Jones data via cyclotomic
+projection $\widehat{\mathbb{Z}[q]} \to \mathbb{Z}[q]/\Phi_N(q)$
+without any complex-analytic limit.
+
+The conjecture's "closed-form expression in $H_n(R, q)$" is a
+question at the level of the **finite-rank Hecke algebra**; the
+$N \to \infty$ tower limit is then a question at the level of the
+**Habiro completion** $\widehat{\mathbb{Z}[q]}$. Both senses are
+algebraic.
+
+**Two distinct convergence problems (clarificationf).**
+*The Habiro completion above resolves the* $N \to \infty$ *tower-limit
+problem (number of summands) in the* $((q;q)_n)$*-adic topology on* $q$.
+*This is well-defined and at* $q_0 \approx 1.11$ *(real,* $|q| > 1$,
+*outside the natural boundary* $S^1$*) the Habiro evaluation
+agrees with the analytic infinite product.*
+
+*A separate convergence problem affects the brane tower numerically:
+for the per-generator volumes* $|\hat{V}_i|$ *of low isotopes, all values
+sit at* $|\hat{V}_i| \in [0.85, 1.0]$ *— at the boundary of the
+* $z$*-radius of convergence of* $\Phi_q(z) = \prod (1 - q^{-k} z)^{-1}$.
+*Numerically* $\Phi_q(0.989) \approx 6.7 \times 10^5$ *and* $\Phi_q(1) \approx 9 \times 10^5$.
+*The Habiro framework above is about completion in* $q$*, not in* $z$;
+*it does not regularize the* $|\hat{V}|\approx 1$ *behaviour.*
+
+*Two partial mitigations are documented but neither universally
+closes the gap:*
+
+
+2. *The [$z$-Habiro completion](#def:z-habiro-ring) — analogous to the
+ $q$-Habiro one above but in the $z$-variable. The cyclotomic
+ denominator structure in $z$ parallel to $(q; q)_n$ in $q$ is*
+
+ $$
+     P_n(q, z) \;=\; \prod_{k=1}^{n} \bigl(1 - q^{-k} z\bigr)
+     \;=\; (z q^{-1};\, q^{-1})_n,
+   $$
+
+ *whose zero locus is exactly the first $n$ poles of $\Phi_q$. The
+ completion $\widehat{\mathbb{Z}[q^{\pm 1}][z]}_z = \varprojlim_n
+   \mathbb{Z}[q^{\pm 1}][z] / (P_n(q, z))$ has cyclotomic projections
+ $\pi_n^{(z)}$ that act as structural truncations at depth $n$,
+ replacing Yekutieli's ad-hoc cutoff with a quotient by a
+ structural ideal. The* [conjecture that the brane tower lives in
+ this ring](#conj:brane-tower-z-habiro) *has two independent claims:
+ (a) the algebraic Cauchy-limit (the partial sums converge in the
+ $z$-Habiro topology), and (b) the existence of a canonical
+ level-selection rule $n_\star(\mathfrak{H})$ derivable from
+ substrate data.*
+
+
+
+1. **Algebraic Cauchy-limit (claim a) without `n_\star`:** prove
+ convergence in the $z$-Habiro topology and use the cyclotomic
+ projection at arbitrary fixed depth as a structural object
+ independent of binding-formula closure.
+2. **Magic-shell structural term:** add a separate
+ $\Delta_{\text{shell}}(Z, N)$ contribution to the binding formula
+ distinguishing closed-shell stabilization from the brane-tower
+ transient (motivated by the LP-dual active-set finding).
+3. **Markov-trace audit on ${}^3\mathrm{He}$:** verify
+ $|\mathrm{tr}_M(\beta_{{}^3\mathrm{He}})|$ at q_0 against the
+ canonical reducer to confirm the structural gap is real and not
+ a Markov-trace mis-count.
+
+The brane tower contribution remains **not computable in closed
+form for** $|\hat{V}|\approx 1$ under the original conjecture; the
+descended Markov trace plus Frobenius co-Casimir alone reproduces
+the binding within $\sim 30\%$ for low isotopes empirically.
+
+## Descended vs transient mass (computed)
+
+The Hecke mass element splits as
+$\Phi_{\mathrm{mass}} = \Phi^{\mathrm{desc}} + \Phi^{\mathrm{trans}}$
+([Hecke mass element](#def:hecke-mass-element)). At $q_0$,
+the transient (tower) component dominates overwhelmingly:
+
+| Particle | $\mathrm{tr}_M(\Phi^{\mathrm{desc}})$ | $\mathrm{tr}_M(\Phi^{\mathrm{trans}})$ | Ratio trans/desc |
+|:---:|:---:|:---:|:---:|
+| $e^-$ (trefoil) | $0.551$ | $111.86$ | $203\times$ |
+| $4_1$ (figure-eight) | $0.182$ | $207.40$ | $1137\times$ |
+
+The single-level (descended) Markov trace contributes **less
+than $0.5\%$** of the total mass. The mass is almost entirely
+a brane tower effect — the accumulated quantum dilogarithm
+across exceptional divisors.
+
+## Computational verification (single-level)
+
+Three single-level approaches were tested for the proton
+($uud$) and neutron ($udd$) Borromean braids:
+
+| Method | Proton | Neutron | Ratio $n/p$ | CODATA |
+|:---|:---:|:---:|:---:|:---:|
+| $\lvert\mathrm{tr}_M(\beta)\rvert$ | $1.165$ | $0.911$ | $0.782$ | $1.001$ |
+| $\Phi_q/\hbar_q^2$ | $-89.8$ | $-125.2$ | $1.395$ | $1.001$ |
+| GS energy | $0.852$ | $1.184$ | $1.390$ | $1.001$ |
+
+**None of these single-level computations reproduce the
+neutron-to-proton mass ratio.** The quantum dilogarithm
+$\Phi_q = \sum \log \lvert\hat{V}_i\rvert$ gives the correct
+**binding energy differences** between nuclei (Q-values at
+Level 0), but not single-nucleon absolute masses.
+
+The proton mass 938.272 MeV in the paper comes from the
+pair Skein formula $m_p = \mathcal{S}_{uu} + 2\mathcal{S}_{ud}$,
+which requires the **dressed quark mass** $\mu_\mathfrak{u} \approx 311$ MeV
+as input — calibrated from CODATA $m_p$. The structural
+content (pair formula, splitting isolation, binding energy)
+is categorically derived; the absolute scale is calibrated.
+
+## Candidate structures
+
+**(a) Figure-eight $4_1$ as Higgs coupling.**
+The figure-eight knot $4_1 = (\sigma_0\sigma_1^{-1})^2$ is the
+gluon unit squared. Its NF is
+$h^2\gamma + h^3\sigma_0 - h\sigma_1 - h^2 L_+ + L_-$ with
+zero electron content. As a mass operator, the pairing
+$\mathrm{tr}_M(e^- \cdot 4_1) = hz^2 + z = \mathrm{tr}_M(e^-)$
+does not produce the correct mass ratios. The figure-eight
+encodes the **mass mechanism** (amphichiral, hyperbolic,
+$\mathrm{Vol} = 2.0299$) but acts as the identity on the trefoil
+in $H_3(R, q)$.
+
+**(b) Tower-accumulated operator.**
+The mass endomorphism may be the product
+$\Phi_{\mathrm{mass}} = \prod_{n=0}^{N} (1 + \Phi_q(z_n))$
+of Hecke elements at each brane level, composed via the
+comultiplication. This would be an element of $H_n(R, q)$
+growing with $N$ — a categorically defined object, but not a
+fixed element independent of the knot.
+
+**(c) Spectral decomposition via RJ weights.**
+The Rosso--Jones inner product
+([RJ canonical inner product](#prop:rj-canonical-inner-product))
+decomposes the Markov trace over irreps:
+$\mathrm{tr}_M = \sum_\lambda d_\lambda(q) \cdot \mathrm{tr}_\lambda$.
+A mass endomorphism could be a **reweighting** of the irreps:
+$\Phi_{\mathrm{mass}} = \sum_\lambda w_\lambda(q) \cdot e_\lambda$,
+where $w_\lambda$ encodes the volume information. The Volume
+Conjecture would then be the statement that the weights
+$w_\lambda$ grow exponentially with $\lambda$, recovering
+$\mathrm{Vol}(K)$ in the limit.
+
+## Relation to knot operator selection
+
+The multi-channel decomposition
+([knot operator selection](#prop:knot-operator-selection))
+showed that interactions decompose over irreps of $H_n(R, q)$
+weighted by quantum dimensions. The mass endomorphism
+conjecture is the statement that **mass is a specific
+reweighting of the same decomposition** — the weights that
+produce $\mathrm{Vol}(K)$ instead of $J(K; q)$.
+
+If the conjecture holds, then:
+- The **operator selection** framework (Frobenius dual,
+ Gram matrix, demand/supply) applies to mass, with
+ $\Phi_{\mathrm{mass}}$ replacing the identity.
+- The **Higgs field** is the dominant contribution to
+ $\Phi_{\mathrm{mass}}$ for leptons (it supplies the
+ volume that the trefoil lacks).
+- The **graviton** would be the residual of
+ $\Phi_{\mathrm{mass}}$ after subtracting the Higgs
+ contribution.
+<!-- FILE_END: mass-endomorphism-conjecture.md -->
+
+<!-- FILE_START: mass-identity.md -->
+Let $(\mathbf{C}, A, \tau)$ be a
+([quantum observable universe](#def:quantum-observable-universe)) and let
+$\{A_n\}_{n \geq 0}$ be its
+([recursive brane tower](#def:recursive-brane-tower)).  Since $\mathbf{C}$ is a
+$R$-linear rigid :refterm[monoidal category]{#monoidal-category}, the Frobenius--Hopf object $A$
+admits a categorical trace
+$\mathrm{tr} \colon \mathrm{End}_{\mathbf{C}}(A) \to R$ (cf.\ \cite{stolz-teichner-2012})
+defined by the composition
+
+$$
+  \mathrm{tr}(f)
+  = 
+  \bigl(\mathbf{1}
+  \xrightarrow{ \mathrm{coev}}
+  A \otimes A^{\vee}
+  \xrightarrow{f \otimes \mathrm{id}}
+  A \otimes A^{\vee}
+  \xrightarrow{ \mathrm{ev}}
+  \mathbf{1}\bigr),
+$$
+
+where $\mathrm{coev}$ and $\mathrm{ev}$ are the rigidity morphisms.
+Let $\Delta \colon A \to A \otimes A$ be the comultiplication (encoding
+the connection) and let $\int_A \colon A \to \mathbf{1}$ be the
+Frobenius form.
+
+The **inertial mass** of a morphism $\varrho \colon \mathbf{1} \to A$
+(a "closed cycle" in the Frobenius--Hopf object) is
+
+$$
+  \mathfrak{m}(\varrho)
+  = 
+  \bigl\lVert
+  \mathrm{tr}\bigl(
+    (\int_A \otimes \mathrm{id})
+    \circ \Delta
+    \circ \varrho
+  \bigr)
+  \bigr\rVert,
+$$
+
+where $\lVert \cdot \rVert$ is the norm on $R$ induced by the
+[Frobenius pairing](#def:frobenius-pairing).  The mass measures the resistance of the
+Frobenius--Hopf structure to transporting the cycle $\varrho$ through
+the comultiplication.
+
+**Archimedean specialisation (§7c).** This block spans the substrate wall by design: the pre-archimedean `frobeniusMass` is valued in the generic ground ring $R$ (the Frobenius norm $\lVert x\rVert_F = \langle x, x\rangle_F$ stays in $R$), while the post-$\tau$ `scalarMass` is the archimedean realisation $R \to \mathbb{R}$, $x \mapsto \lVert x\rVert$, obtained by evaluating the Frobenius norm at the substrate parameter $q = q_0$. The $R \to \mathbb{R}$ realisation map is intrinsically wall-crossing and cannot be made either $\mathbb{R}$-free or generic-only; it is acknowledged here rather than split off.
+<!-- FILE_END: mass-identity.md -->
+
+<!-- FILE_START: mass-identity-exists.md -->
+Let $(\mathbf{C}, A, \tau)$ be a [quantum observable universe](#def:quantum-observable-universe) and $\varrho \colon \mathbf{1} \to A$ a closed cycle. The inertial mass
+$$
+  \mathfrak{m}(\varrho)
+  \;=\;
+  \bigl\lVert
+    \mathrm{tr}\bigl( (\int_A \otimes \mathrm{id}) \circ \Delta \circ \varrho \bigr)
+  \bigr\rVert
+$$
+([mass identity](#def:mass-identity)) exists as a well-defined element of $R$ for every $\varrho$. We prove uniqueness in [uniqueness of the mass identity](#prop:mass-identity-unique).
+<!-- FILE_END: mass-identity-exists.md -->
+
+<!-- FILE_START: mass-identity-unique.md -->
+Given a fixed [quantum observable universe](#def:quantum-observable-universe) $(\mathbf{C}, A, \tau)$ and a fixed closed cycle $\varrho \colon \mathbf{1} \to A$, the scalar ambiguity of the Frobenius pairing uniquely determines the inertial mass $\mathfrak{m}(\varrho)$ ([uniqueness of Frobenius pairing](#prop:frobenius-pairing-unique)). Specifically, if $\int_A^{(1)} = c \int_A^{(2)}$, then $\mathfrak{m}_{(1)}(\varrho) = |c| \cdot \mathfrak{m}_{(2)}(\varrho)$. 
+
+Once we fix a normalisation for $\int_A$, the mass function $\mathfrak{m} \colon \mathrm{Hom}_{\mathbf{C}}(\mathbf{1}, A) \to R$ is unique.
+<!-- FILE_END: mass-identity-unique.md -->
+
+<!-- FILE_START: mass-identity-su2.md -->
+Continuing the [brane tower for SU(2)](#ex:recursive-brane-tower-su2), we compute the [mass identity](#def:mass-identity) for $G = \mathrm{SU}(2)$.
+
+**Setup.** Take $A = \mathcal{O}(\mathrm{SU}(2))$ with Frobenius form $\int_A = \int_{\mathrm{SU}(2)} (-) d\mu$, where $\mu$ is the normalised Haar measure. The comultiplication is $\Delta(f)(x, y) = f(xy)$. The categorical trace is $\mathrm{tr}(\phi) = (\int_A \otimes \mathrm{id}) \circ \Delta \circ \phi$.
+
+**The mass formula.** For a cycle $\varrho \in A$, the [mass identity](#def:mass-identity) gives:
+$$
+  \mathfrak{m}(\varrho)
+  =  \bigl\lVert \mathrm{tr}\bigl((\int_A \otimes \mathrm{id})
+  \circ \Delta \circ \varrho\bigr) \bigr\rVert.
+$$
+Since $\Delta(f)(x, y) = f(xy)$, the inner composition evaluates to $(\int_A \otimes \mathrm{id})(\Delta(\varrho)) = \int_{\mathrm{SU}(2)} \varrho(xy) d\mu(x)$. This is the convolution of $\varrho$ with the Haar measure.
+
+**Fundamental representation.** For the spin-$\tfrac{1}{2}$ representation $V_{1/2}$, a cycle $\varrho$ encircling a vortex in $\mathbb{CP}^1 \cong \mathrm{SU}(2)/\mathrm{U}(1)$ has mass:
+$$
+  \mathfrak{m}(\varrho)
+  =  \biggl\lVert \int_{\mathrm{SU}(2)}
+  \mathrm{tr}_{V_{1/2}}\!\bigl(\Delta(\varrho)\bigr) d\mu
+  \biggr\rVert.
+$$
+The comultiplication maps $f(x) \mapsto f(xy)$, so the trace picks out the character $\chi_{1/2}(g) = 2\cos(\varTheta/2)$ of the fundamental representation. Integrating this character against a winding-number-$1$ cycle yields $\mathfrak{m}(\varrho) = 1$.
+<!-- FILE_END: mass-identity-su2.md -->
+
+<!-- FILE_START: mass-noncommutative-drag.md -->
+When the substrate parameter satisfies $q(p) \neq 1$ everywhere in the recursive brane tower, the comultiplication on the Frobenius--Hopf object $A$ ([quantum universe](#def:quantum-universe)) is non-cocommutative. Consequently, the algebra $\mathcal{A}_\infty$ ([direct limit algebra](#def:direct-limit-algebra)) does not reduce to a commutative direct limit. Moving a vortex through $J^1 \mathcal{S}_n$ then requires a continuous rearrangement of the $\mathrm{SU}_q(2)$ fibre data. This rearrangement is the source of the inertial resistance described in [mass geometric drag](#rem:mass-geometric-drag).
+<!-- FILE_END: mass-noncommutative-drag.md -->
+
+<!-- FILE_START: mass-identity-C.md -->
+Consider the archimedean quantum observable universe $(\mathbf{C}, \varTheta, G, \mathcal{S})$ ([$\mathbb{C}$-quantum observable universe](#ex:c-quantum-observable-universe)) with instanton connection $A$, Levi form $L$, and self-dual curvature $F^+$. We realise the categorical mass ([mass identity](#def:mass-identity)) as Yekutieli's nonabelian multiplicative integral [yekutieli2015].
+<!-- FILE_END: mass-identity-C.md -->
+
+<!-- FILE_START: mass-geometric-drag.md -->
+In the ([recursive brane tower](#def:recursive-brane-tower)), mass is not an intrinsic property of a point-particle. Instead, it measures the resistance encountered by a stable vortex propagating through the $1$-jet bundle $J^1 \mathcal{S}_n$ ([jet prolongation](#prop:jet-prolongation)). The substrate parameter $q$ ([substrate parameter](#def:substrate-parameter)) varies from fibre to fibre. Translating the vortex along the base therefore requires a corresponding variation of the Frobenius--Hopf structure on each fibre. The mass quantifies this variation.
+<!-- FILE_END: mass-geometric-drag.md -->
+

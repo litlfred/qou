@@ -186,6 +186,7 @@ def collect():
                 s["prov"] += 1
                 lp = resolve_lean(ts, src)
                 if lp is None:
+                    print(f"BINGO: {ch} / {ts.name}")
                     s["missing"] += 1
                 else:
                     cls = classify_lean(lp)

@@ -1,0 +1,12 @@
+{
+  "criteria": {
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote blocks linearly: stripped forward references (e.g. 'The following sections define...', 'We document its relation...'), removed redundancy between intro and definition blocks, unified terminology around one-dimensional channels, and tightened phrasing for brevity and impact. Preserved all math and original file markers.",
+        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewer": { "kind": "agent", "id": "milnor-editor", "version": "v1" }
+      }
+    ]
+  }
+}
