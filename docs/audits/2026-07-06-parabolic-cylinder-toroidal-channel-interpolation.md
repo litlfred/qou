@@ -617,7 +617,44 @@ convention, the D1 deformation choice, and $E_{\text{unit}}$.
 `conj:whipple-rotation-intertwining` is the bar-involution face of the same
 identification.
 
-## 14. Corpus-grep record
+## 14. Full-derivation program, tranche 2 (deformation selection + formalization)
+
+**D4 — deformation ambiguity resolved in favour of $5g$ (6/6 exact,
+[`deformation_selection_5g_probe.py`](../../computations/substrate/deformation_selection_5g_probe.py)).**
+The two canonical deformations of the classical 5 are *exactly* the
+reeb-flow criticality pair: the fully-deformed candidate
+$(1 + [2]_v^2)\,g$ equals $1/g$ (since $g^2(1+[2]_v^2) = 1$), so the D1
+ambiguity is the audit's §2e "$5g$ vs $1/g = |\mu_q|$" straddle. They split
+by the exact factor $1 + x/5$, $x = (v-v^{-1})^2$ (from
+$1 + [2]_v^2 = 5 + x$), and the §2e provable-target ladder
+$\sqrt5(1 - x/10 + 3x^2/200 - \tfrac{1}{400}x^3 - \cdots)$ is **term-by-term
+the Taylor expansion of $5g = 5/\sqrt{5+x}$** — not a family of unknowns.
+Structural selection (recorded, (a)-scoped, not a proof): by D3 $g$ is a
+metric linking *rate* (deforms) while channel weights are counting data —
+topological integers, $q$-rigid per §11 — so the weight stays the classical
+5 and only the rate deforms, selecting $5g$. Consequence: the dimensionless
+law is exact as $5g$, sharpening $E_{\text{unit}} = B_{\text{AME}}/5g =
+0.995940$ MeV into a genuinely fundamental-energy target (the +0.41 %
+residual belongs entirely to the unit or to beyond-bond physics).
+
+**Formalization.** The exact algebraic backbone is Lean-proved sorry-free
+([`QOU.MassTheory.DeuteronFusion`](../../content/quantum-observable-universe/mass-theory/deuteron-fusion-frame.lean),
+`lean`-direct exit 0): `fusion_identity` ($[2]_v^2 = [3]_v+1$),
+`five_plus_x`, `total_dim_at_one` (= 5), `linking_rate_sq` (the
+geometry-independent D3 core, radicals cleared), `criticality_reciprocal`,
+`deformation_ii_eq_inv` ($s g = 1/g$), all over a generic field (§7c). The
+fusion frame is promoted to
+[`prop:deuteron-fusion-frame`](../../content/quantum-observable-universe/mass-theory/deuteron-fusion-frame.md)
+in `sec:mass-formula-derivation`.
+
+**Program status.** For $B(^2\mathrm{H}) = 5g\,E_{\text{unit}}$: the **5**
+is forced (D1), the deformation is selected as $5g$ (D4), $g$ is derived as
+a linking rate modulo a units convention (D3); the single remaining open is
+$E_{\text{unit}}$ (the zero-point family pruned by D2; single-factor class
+exhausted by the sibling; scans forbidden by the entropy bound). The
+derivation is closed down to one fundamental-energy input.
+
+## 15. Corpus-grep record
 
 - `parabolic cylinder|Weber equation|Hermite`: hits are the Askey/channel
   cluster cited above + bibliography; no prior parabolic-cylinder treatment.
