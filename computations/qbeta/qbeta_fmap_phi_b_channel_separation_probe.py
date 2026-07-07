@@ -52,10 +52,13 @@ from witness_base import WitnessBuilder  # noqa: E402
 mp.mp.dps = 40
 
 # Fibre points fixed by corpus structure (subset of the merged reference set).
-POINTS = [
-    ("zeta_4 (b^2 = 1/4, q = i)", mp.mpf(1) / 4),
-    ("zeta_6 (b^2 = 1/6, q = e^{iπ/3})", mp.mpf(1) / 6),
-]
+# Evaluate the b² literals inside an explicit precision context (unary `+`
+# forces re-rounding to the working dps) so no import-time default truncates.
+with mp.workdps(40):
+    POINTS = [
+        ("zeta_4 (b^2 = 1/4, q = i)", +(mp.mpf(1) / 4)),
+        ("zeta_6 (b^2 = 1/6, q = e^{iπ/3})", +(mp.mpf(1) / 6)),
+    ]
 # Small real base points + a finite-difference step for the z-derivatives.
 Z_BASE = [mp.mpf("0.10"), mp.mpf("0.20")]
 DZ = mp.mpf("1e-6")
@@ -90,7 +93,7 @@ def main() -> int:
 
     for label, b2 in POINTS:
         b = mp.sqrt(b2)
-        q = mp.e ** (2 * mp.pi * mp.mpc(0, 1) * b2)
+        q = mp.exp(2 * mp.pi * mp.j * b2)
         print(f"\n  {label}:  b = {mp.nstr(b, 10)},  q = {mp.nstr(q, 8)}")
         pts = []
         for z in Z_BASE:
@@ -99,7 +102,7 @@ def main() -> int:
             # magnitude channel
             mag = mp.fabs(v)
             magp = mp.fabs(vp)
-            unimod = abs(float(mag) - 1.0)
+            unimod = float(mp.fabs(mag - 1))
             dmag = float(mp.fabs((magp - mag) / DZ))
             # phase channel (unwrapped locally via the small step)
             arg = mp.arg(v)
@@ -107,7 +110,7 @@ def main() -> int:
             dphase = float(mp.fabs((argp - arg) / DZ))
             # G3: cross-point connecting factor w = Φ_b(z+DZ)·conj Φ_b(z) — σ-unitary?
             w = vp * mp.conj(v)
-            crossfac = abs(float(mp.fabs(w)) - 1.0)
+            crossfac = float(mp.fabs(mp.fabs(w) - 1))
 
             max_unimod_err = max(max_unimod_err, unimod)
             max_mag_deriv = max(max_mag_deriv, dmag)

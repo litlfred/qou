@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-07T12:17:55.979379+00:00",
-  "commitSha": "e98e484ae0e9c1fd1689383aec08613be1cdb81a",
+  "computedAt": "2026-07-07T12:37:49.739336+00:00",
+  "commitSha": "1be55fb41416b17ae6f149d015791358828abf08",
   "assertions": [
     {
       "name": "G1a_unimodular_magnitude",
@@ -30,7 +30,7 @@
     },
     {
       "name": "G3_crossfactor_sigma_unitary",
-      "computed": 0.0,
+      "computed": 2.2958874039497803e-41,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-20,
@@ -38,11 +38,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1992,
+  "durationMs": 2005,
   "computation": "qbeta-fmap-phi-b-channel-separation",
   "scriptFile": "qbeta_fmap_phi_b_channel_separation_probe.py",
-  "scriptHash": "273c551c4aaf",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "4022b10ae9e0",
+  "scriptCommitSha": "1be55fb41416b17ae6f149d015791358828abf08",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -63,7 +63,7 @@
       {
         "point": "zeta_4 (b^2 = 1/4, q = i)",
         "b_sq": "0.25",
-        "q": "(-7.0352072526480147402e-42 + 1.0j)",
+        "q": "(2.0670321098263988236e-43 + 1.0j)",
         "points": [
           {
             "z": "0.1",
@@ -91,7 +91,7 @@
             "abs_Phi_b_minus_1": "0.000e+00",
             "d_abs_dz": "0.000e+00",
             "d_arg_dz": "2.059236",
-            "crossfactor_abs_minus_1": "0.000e+00"
+            "crossfactor_abs_minus_1": "2.296e-41"
           },
           {
             "z": "0.2",
