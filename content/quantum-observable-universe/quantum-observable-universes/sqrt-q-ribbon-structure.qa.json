@@ -852,6 +852,19 @@
         "reviewed_at": "2026-07-07T14:26:55.794872Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:29.391540+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:29.391540+00:00"
+        }
       }
     ],
     "da-false-claim": [
@@ -873,6 +886,19 @@
         "severity": "minor",
         "evidence": "sqrt-q-ribbon-structure.ts:1",
         "notes": "No false claims identified in the prose of 'The element $\\\\sqrt{q}$ and the ribbon structure'; the mathematical reasoning concerning 'are $q$ and $-q^{-1}$; neither involves $q^{1/2}$.  The element' is consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:29.406883+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:29.406883+00:00"
+        }
       }
     ],
     "da-vacuous": [
@@ -894,6 +920,19 @@
         "severity": "minor",
         "evidence": "sqrt-q-ribbon-structure.ts:1",
         "notes": "The block 'The element $\\\\sqrt{q}$ and the ribbon structure' presents substantial mathematical content: 'are $q$ and $-q^{-1}$; neither involves $q^{1/2}$.  The element'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:29.421146+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:29.421146+00:00"
+        }
       }
     ],
     "da-circular": [
@@ -915,6 +954,19 @@
         "severity": "minor",
         "evidence": "sqrt-q-ribbon-structure.ts:1",
         "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'The element $\\\\sqrt{q}$ and the ribbon structure' (which asserts 'are $q$ and $-q^{-1}$; neither involves $q^{1/2}$.  The element')."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:29.439210+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:29.439210+00:00"
+        }
       }
     ],
     "da-overclaim": [
@@ -936,6 +988,19 @@
         "severity": "minor",
         "evidence": "sqrt-q-ribbon-structure.ts:1",
         "notes": "The remarks and narrative scope in 'The element $\\\\sqrt{q}$ and the ribbon structure' concerning 'are $q$ and $-q^{-1}$; neither involves $q^{1/2}$.  The element' are appropriately qualified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:29.456643+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:29.456643+00:00"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -957,6 +1022,19 @@
         "severity": "minor",
         "evidence": "sqrt-q-ribbon-structure.ts:1",
         "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'The element $\\\\sqrt{q}$ and the ribbon structure'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:29.474095+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:29.474095+00:00"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -978,6 +1056,19 @@
         "severity": "minor",
         "evidence": "sqrt-q-ribbon-structure.ts:1",
         "notes": "The prose arguments in 'The element $\\\\sqrt{q}$ and the ribbon structure' proceed logically through the stated steps: 'are $q$ and $-q^{-1}$; neither involves $q^{1/2}$.  The element'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:29.490665+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:29.490665+00:00"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -999,6 +1090,19 @@
         "severity": "minor",
         "evidence": "sqrt-q-ribbon-structure.ts:1",
         "notes": "No Lean sibling required; the narrative of 'The element $\\\\sqrt{q}$ and the ribbon structure' matches the expected configuration."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:29.508347+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:29.508347+00:00"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1020,6 +1124,19 @@
         "severity": "minor",
         "evidence": "sqrt-q-ribbon-structure.ts:1",
         "notes": "No citations are present in 'The element $\\\\sqrt{q}$ and the ribbon structure', hence no citation misuse is possible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:29.525529+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:29.525529+00:00"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1041,6 +1158,19 @@
         "severity": "minor",
         "evidence": "sqrt-q-ribbon-structure.ts:1",
         "notes": "Key terms and symbols in 'The element $\\\\sqrt{q}$ and the ribbon structure' (e.g. from 'are $q$ and $-q^{-1}$; neither involves $q^{1/2}$.  The element') are mathematically defined and unambiguous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:29.540615+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:29.540615+00:00"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1062,6 +1192,19 @@
         "severity": "minor",
         "evidence": "sqrt-q-ribbon-structure.ts:1",
         "notes": "The empirical claims in 'The element $\\\\sqrt{q}$ and the ribbon structure' (quoting 'are $q$ and $-q^{-1}$; neither involves $q^{1/2}$.  The element') are structurally anchored to the QOU mass framework and are stable."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:29.556958+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:29.556958+00:00"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1083,6 +1226,19 @@
         "severity": "minor",
         "evidence": "sqrt-q-ribbon-structure.ts:1",
         "notes": "The physical concepts described in 'The element $\\\\sqrt{q}$ and the ribbon structure' are consistent with quantum observable mechanics."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:29.575876+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:29.575876+00:00"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1104,6 +1260,19 @@
         "severity": "minor",
         "evidence": "sqrt-q-ribbon-structure.ts:1",
         "notes": "The derivation steps and formal definitions in 'The element $\\\\sqrt{q}$ and the ribbon structure' are reproducible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:29.591924+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:29.591924+00:00"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1126,6 +1295,19 @@
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'The element $\\\\sqrt{q}$ and the ribbon structure' (concerning 'are $q$ and $-q^{-1}$; neither involves $q^{1/2}$.  The element') are consistent and formally verified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:29.609515+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:29.609515+00:00"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1143,6 +1325,36 @@
         "field_hash": {
           "md": "08cd8ca1e202",
           "ts": "fbdc20abdab4"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:29.625800+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:29.625800+00:00"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:29.644802+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:29.644802+00:00"
         }
       }
     ]

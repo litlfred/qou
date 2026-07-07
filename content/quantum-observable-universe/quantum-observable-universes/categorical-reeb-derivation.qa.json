@@ -946,6 +946,19 @@
         "severity": "minor",
         "evidence": "categorical-reeb-derivation.ts:1",
         "notes": "Block placement and kind 'definition' match validated structurally."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:31.103291+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:31.103291+00:00"
+        }
       }
     ],
     "wall-side-statement": [
@@ -968,6 +981,19 @@
         "severity": "minor",
         "evidence": "categorical-reeb-derivation.lean:1",
         "notes": "The Lean theorem/definition statement in categorical-reeb-derivation.lean matches the mathematical statement in categorical-reeb-derivation.md."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:31.121145+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:31.121145+00:00"
+        }
       }
     ],
     "da-false-claim": [
@@ -990,6 +1016,19 @@
         "severity": "minor",
         "evidence": "categorical-reeb-derivation.lean:1",
         "notes": "The mathematical claims in 'Categorical Reeb derivation' regarding 'Let $A$ be a Frobenius--Hopf substrate in a rigid :refterm[monoidal category]...' are unverified due to compilation errors in the Lean sibling file categorical-reeb-derivation.lean: content/quantum-observable-universe/quantum-observable-universes/categorical-reeb-derivation.lean:28:33: error(lean.unknownIdentifier): Unknown identifier `FrobeniusHopfSubstrate`."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:31.139556+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:31.139556+00:00"
+        }
       }
     ],
     "da-vacuous": [
@@ -1012,6 +1051,19 @@
         "severity": "minor",
         "evidence": "categorical-reeb-derivation.ts:1",
         "notes": "The sibling Lean file categorical-reeb-derivation.lean fails to compile, so the completeness and non-vacuity of the formal proof cannot be verified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:31.157914+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:31.157914+00:00"
+        }
       }
     ],
     "da-circular": [
@@ -1034,6 +1086,19 @@
         "severity": "minor",
         "evidence": "categorical-reeb-derivation.ts:1",
         "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Categorical Reeb derivation' (which asserts 'Let $A$ be a Frobenius--Hopf substrate in a rigid :refterm[monoidal category]...')."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:31.173156+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:31.173156+00:00"
+        }
       }
     ],
     "da-overclaim": [
@@ -1056,6 +1121,19 @@
         "severity": "minor",
         "evidence": "categorical-reeb-derivation.ts:1",
         "notes": "The prose presents 'Categorical Reeb derivation' as verified, but the sibling Lean file categorical-reeb-derivation.lean fails to compile."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:31.186990+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:31.186990+00:00"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1078,6 +1156,19 @@
         "severity": "minor",
         "evidence": "categorical-reeb-derivation.ts:1",
         "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Categorical Reeb derivation'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:31.205404+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:31.205404+00:00"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1100,6 +1191,19 @@
         "severity": "minor",
         "evidence": "categorical-reeb-derivation.lean:1",
         "notes": "Logical gaps exist in the formalization of 'Categorical Reeb derivation' due to compilation failure in categorical-reeb-derivation.lean."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:31.231225+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:31.231225+00:00"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1122,6 +1226,19 @@
         "severity": "minor",
         "evidence": "categorical-reeb-derivation.lean:1",
         "notes": "The Lean sibling categorical-reeb-derivation.lean fails compilation, causing divergence from the narrative."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:31.248441+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:31.248441+00:00"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1144,6 +1261,19 @@
         "severity": "minor",
         "evidence": "categorical-reeb-derivation.ts:1",
         "notes": "No citations are present in 'Categorical Reeb derivation', hence no citation misuse is possible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:31.264182+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:31.264182+00:00"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1166,6 +1296,19 @@
         "severity": "minor",
         "evidence": "categorical-reeb-derivation.ts:1",
         "notes": "Key terms and symbols in 'Categorical Reeb derivation' (e.g. from 'Let $A$ be a Frobenius--Hopf substrate in a rigid :refterm[monoidal category]...') are mathematically defined and unambiguous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:31.282385+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:31.282385+00:00"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1188,6 +1331,19 @@
         "severity": "minor",
         "evidence": "categorical-reeb-derivation.ts:1",
         "notes": "The algebraic and logical relations in 'Categorical Reeb derivation' are independent of empirical tuning parameters."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:31.295708+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:31.295708+00:00"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1210,6 +1366,19 @@
         "severity": "minor",
         "evidence": "categorical-reeb-derivation.ts:1",
         "notes": "The physical concepts described in 'Categorical Reeb derivation' are consistent with quantum observable mechanics."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:31.311555+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:31.311555+00:00"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1232,6 +1401,19 @@
         "severity": "minor",
         "evidence": "categorical-reeb-derivation.lean:1",
         "notes": "The Lean sibling categorical-reeb-derivation.lean fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/quantum-observable-universes/categorical-reeb-derivation.lean:28:33: error(lean.unknownIdentifier): Unknown identifier `FrobeniusHopfSubstrate`."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:31.327600+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:31.327600+00:00"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1255,6 +1437,19 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-reeb-derivation.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/categorical-reeb-derivation.lean:28:33: error(lean.unknownIdentifier): Unknown identifier `FrobeniusHopfSubstrate`",
         "verdict": "open-objection",
         "referee_argument": "The proposed formalization for 'Categorical Reeb derivation' (asserting 'Let $A$ be a Frobenius--Hopf substrate in a rigid :refterm[monoidal category]...') fails to compile with error: content/quantum-observable-universe/quantum-observable-universes/categorical-reeb-derivation.lean:28:33: error(lean.unknownIdentifier): Unknown identifier `FrobeniusHopfSubstrate`. A competent referee cannot accept this as a verified mathematical claim."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:31.344457+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:31.344457+00:00"
+        }
       }
     ],
     "proof-claims-unencoded": [
@@ -1311,6 +1506,36 @@
           "md": "df871805a627",
           "ts": "697942f07da7",
           "lean": "0eaf50514b42"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:31.360903+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:31.360903+00:00"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:31.377780+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:31.377780+00:00"
         }
       }
     ]

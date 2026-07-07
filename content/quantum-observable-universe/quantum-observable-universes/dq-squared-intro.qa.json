@@ -832,6 +832,19 @@
         "reviewed_at": "2026-07-07T14:26:55.918347Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:25.426335+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:25.426335+00:00"
+        }
       }
     ],
     "da-false-claim": [
@@ -853,6 +866,19 @@
         "severity": "minor",
         "evidence": "dq-squared-intro.ts:1",
         "notes": "No false claims identified in the prose of 'Dq Squared Intro'; the mathematical reasoning concerning 'how the deformed differential $d_q$ behaves under iteration.' is consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:25.442743+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:25.442743+00:00"
+        }
       }
     ],
     "da-vacuous": [
@@ -874,6 +900,19 @@
         "severity": "minor",
         "evidence": "dq-squared-intro.ts:1",
         "notes": "The block 'Dq Squared Intro' presents substantial mathematical content: 'how the deformed differential $d_q$ behaves under iteration.'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:25.459546+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:25.459546+00:00"
+        }
       }
     ],
     "da-circular": [
@@ -895,6 +934,19 @@
         "severity": "minor",
         "evidence": "dq-squared-intro.ts:1",
         "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Dq Squared Intro' (which asserts 'how the deformed differential $d_q$ behaves under iteration.')."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:25.479866+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:25.479866+00:00"
+        }
       }
     ],
     "da-overclaim": [
@@ -916,6 +968,19 @@
         "severity": "minor",
         "evidence": "dq-squared-intro.ts:1",
         "notes": "The remarks and narrative scope in 'Dq Squared Intro' concerning 'how the deformed differential $d_q$ behaves under iteration.' are appropriately qualified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:25.496126+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:25.496126+00:00"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -937,6 +1002,19 @@
         "severity": "minor",
         "evidence": "dq-squared-intro.ts:1",
         "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Dq Squared Intro'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:25.511686+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:25.511686+00:00"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -958,6 +1036,19 @@
         "severity": "minor",
         "evidence": "dq-squared-intro.ts:1",
         "notes": "The prose arguments in 'Dq Squared Intro' proceed logically through the stated steps: 'how the deformed differential $d_q$ behaves under iteration.'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:25.531719+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:25.531719+00:00"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -979,6 +1070,19 @@
         "severity": "minor",
         "evidence": "dq-squared-intro.ts:1",
         "notes": "No Lean sibling required; the narrative of 'Dq Squared Intro' matches the expected configuration."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:25.547004+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:25.547004+00:00"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1000,6 +1104,19 @@
         "severity": "minor",
         "evidence": "dq-squared-intro.ts:1",
         "notes": "No citations are present in 'Dq Squared Intro', hence no citation misuse is possible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:25.563443+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:25.563443+00:00"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1021,6 +1138,19 @@
         "severity": "minor",
         "evidence": "dq-squared-intro.ts:1",
         "notes": "Key terms and symbols in 'Dq Squared Intro' (e.g. from 'how the deformed differential $d_q$ behaves under iteration.') are mathematically defined and unambiguous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:25.580608+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:25.580608+00:00"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1042,6 +1172,19 @@
         "severity": "minor",
         "evidence": "dq-squared-intro.ts:1",
         "notes": "The algebraic and logical relations in 'Dq Squared Intro' are independent of empirical tuning parameters."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:25.603808+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:25.603808+00:00"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1063,6 +1206,19 @@
         "severity": "minor",
         "evidence": "dq-squared-intro.ts:1",
         "notes": "The physical concepts described in 'Dq Squared Intro' are consistent with quantum observable mechanics."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:25.627481+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:25.627481+00:00"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1084,6 +1240,19 @@
         "severity": "minor",
         "evidence": "dq-squared-intro.ts:1",
         "notes": "The derivation steps and formal definitions in 'Dq Squared Intro' are reproducible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:25.643685+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:25.643685+00:00"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1106,6 +1275,19 @@
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Dq Squared Intro' (concerning 'how the deformed differential $d_q$ behaves under iteration.') are consistent and formally verified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:25.660443+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:25.660443+00:00"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1123,6 +1305,36 @@
         "field_hash": {
           "md": "fd986a6e36c1",
           "ts": "8ddc2f92909c"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:25.683359+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:25.683359+00:00"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:25.699173+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:25.699173+00:00"
         }
       }
     ]

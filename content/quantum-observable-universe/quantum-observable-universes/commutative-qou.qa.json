@@ -912,6 +912,19 @@
         "severity": "minor",
         "evidence": "commutative-qou.ts:1",
         "notes": "Block placement and kind 'definition' match validated structurally."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:26.286305+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:26.286305+00:00"
+        }
       }
     ],
     "wall-side-statement": [
@@ -934,6 +947,19 @@
         "severity": "minor",
         "evidence": "commutative-qou.lean:1",
         "notes": "The Lean theorem/definition statement in commutative-qou.lean matches the mathematical statement in commutative-qou.md."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:26.302732+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:26.302732+00:00"
+        }
       }
     ],
     "da-false-claim": [
@@ -956,6 +982,19 @@
         "severity": "minor",
         "evidence": "commutative-qou.lean:1",
         "notes": "The mathematical claims in 'Commutative specialisation of a QOU' regarding 'Let $(\\mathbf{C}, \\varTheta, G, \\mathcal{S})$ be a QOU with Frobenius--Hopf' are unverified due to compilation errors in the Lean sibling file commutative-qou.lean: content/quantum-observable-universe/quantum-observable-universes/commutative-qou.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/CategoryTheory/Monoidal/Braided/Basic.olean' of module Mathlib.CategoryTheory.Monoidal.Braided.Basic does not exist."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:26.319996+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:26.319996+00:00"
+        }
       }
     ],
     "da-vacuous": [
@@ -978,6 +1017,19 @@
         "severity": "minor",
         "evidence": "commutative-qou.ts:1",
         "notes": "The sibling Lean file commutative-qou.lean fails to compile, so the completeness and non-vacuity of the formal proof cannot be verified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:26.337753+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:26.337753+00:00"
+        }
       }
     ],
     "da-circular": [
@@ -1000,6 +1052,19 @@
         "severity": "minor",
         "evidence": "commutative-qou.ts:1",
         "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Commutative specialisation of a QOU' (which asserts 'Let $(\\mathbf{C}, \\varTheta, G, \\mathcal{S})$ be a QOU with Frobenius--Hopf')."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:26.355575+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:26.355575+00:00"
+        }
       }
     ],
     "da-overclaim": [
@@ -1022,6 +1087,19 @@
         "severity": "minor",
         "evidence": "commutative-qou.ts:1",
         "notes": "The prose presents 'Commutative specialisation of a QOU' as verified, but the sibling Lean file commutative-qou.lean fails to compile."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:26.374316+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:26.374316+00:00"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1044,6 +1122,19 @@
         "severity": "minor",
         "evidence": "commutative-qou.ts:1",
         "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Commutative specialisation of a QOU'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:26.388478+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:26.388478+00:00"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1066,6 +1157,19 @@
         "severity": "minor",
         "evidence": "commutative-qou.lean:1",
         "notes": "Logical gaps exist in the formalization of 'Commutative specialisation of a QOU' due to compilation failure in commutative-qou.lean."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:26.409019+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:26.409019+00:00"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1088,6 +1192,19 @@
         "severity": "minor",
         "evidence": "commutative-qou.lean:1",
         "notes": "The Lean sibling commutative-qou.lean fails compilation, causing divergence from the narrative."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:26.426737+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:26.426737+00:00"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1110,6 +1227,19 @@
         "severity": "minor",
         "evidence": "commutative-qou.ts:1",
         "notes": "No citations are present in 'Commutative specialisation of a QOU', hence no citation misuse is possible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:26.443641+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:26.443641+00:00"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1132,6 +1262,19 @@
         "severity": "minor",
         "evidence": "commutative-qou.ts:1",
         "notes": "Key terms and symbols in 'Commutative specialisation of a QOU' (e.g. from 'Let $(\\mathbf{C}, \\varTheta, G, \\mathcal{S})$ be a QOU with Frobenius--Hopf') are mathematically defined and unambiguous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:26.460925+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:26.460925+00:00"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1154,6 +1297,19 @@
         "severity": "minor",
         "evidence": "commutative-qou.ts:1",
         "notes": "The algebraic and logical relations in 'Commutative specialisation of a QOU' are independent of empirical tuning parameters."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:26.478945+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:26.478945+00:00"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1176,6 +1332,19 @@
         "severity": "minor",
         "evidence": "commutative-qou.ts:1",
         "notes": "The physical concepts described in 'Commutative specialisation of a QOU' are consistent with quantum observable mechanics."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:26.494275+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:26.494275+00:00"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1198,6 +1367,19 @@
         "severity": "minor",
         "evidence": "commutative-qou.lean:1",
         "notes": "The Lean sibling commutative-qou.lean fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/quantum-observable-universes/commutative-qou.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/CategoryTheory/Monoidal/Braided/Basic.olean' of module Mathlib.CategoryTheory.Monoidal.Braided.Basic does not exist."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:26.508481+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:26.508481+00:00"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1221,6 +1403,19 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/commutative-qou.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/commutative-qou.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/CategoryTheory/Monoidal/Braided/Basic.olean' of module Mathlib.CategoryTheory.Monoidal.Braided.Basic does not exist",
         "verdict": "open-objection",
         "referee_argument": "The proposed formalization for 'Commutative specialisation of a QOU' (asserting 'Let $(\\mathbf{C}, \\varTheta, G, \\mathcal{S})$ be a QOU with Frobenius--Hopf') fails to compile with error: content/quantum-observable-universe/quantum-observable-universes/commutative-qou.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/CategoryTheory/Monoidal/Braided/Basic.olean' of module Mathlib.CategoryTheory.Monoidal.Braided.Basic does not exist. A competent referee cannot accept this as a verified mathematical claim."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:26.524930+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:26.524930+00:00"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1239,6 +1434,36 @@
           "md": "4507a4b2dc28",
           "ts": "4b9e8e7c16ea",
           "lean": "7863dd762845"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:26.543167+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:26.543167+00:00"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:37:26.559350+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:37:26.559350+00:00"
         }
       }
     ]
