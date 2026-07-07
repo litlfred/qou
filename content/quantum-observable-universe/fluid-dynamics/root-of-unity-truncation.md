@@ -7,97 +7,50 @@ and
 [`conj:regularity-breakdown`](#conj:regularity-breakdown);
 "Root-of-unity truncation").**
 
-The [QOU axiom](#def:substrate-parameter) requires that $q$ is
-**not** a root of unity. But the limit $q \to 1$ passes through
-a dense set of roots of unity, and at each root the
-representation theory undergoes a dramatic truncation that
-**strengthens** regularity. The blowup at $q = 1$ is the
-accumulation of infinitely many such truncations.
+The governing [QOU axiom](#def:substrate-parameter) rigorously demands that $q$ remains **not** a root of unity. However, forcibly passing the limit $q \to 1$ directly through the dense set of unity roots triggers a radical truncation across the representation theory that forcibly **strengthens** classical regularity. The resulting macroscopic blowup operating at $q = 1$ behaves merely as the pure mathematical accumulation gathering these infinite truncations.
 
-The truncation mechanism itself — the vanishing of the $q$-integer
-$[\kappa]_q$ at $q = e^{i\pi/\kappa}$, collapsing the $q$-Laplacian
-spectral tower $[k]_q^2$ to the finite Verlinde/ADE set — is
-established in
-[the $q$-Laplacian spectral tower](#prop:q-laplacian-spectral-tower).
-Here we read off its fluid-dynamical consequence.
+The core truncation mechanism — driven exclusively by the vanishing of the $q$-integer $[\kappa]_q$ executing exactly at $q = e^{i\pi/\kappa}$, which cleanly collapses the spanning $q$-Laplacian spectral tower $[k]_q^2$ straight into the constrained finite Verlinde/ADE set — finds derivation strictly within [the $q$-Laplacian spectral tower](#prop:q-laplacian-spectral-tower). The following formally extracts the resulting fluid-dynamical consequence.
 
 **Three regimes of $\mathrm{SU}_q(2)$ representations.**
 
 1. **Generic $q > 1$ (QOU regime).**
- Infinitely many simple objects $V_j$, $j = 0, 1/2, 1, \ldots$
- Quantum dimensions $[2j+1]_q > 0$ for all $j$.
- Eigenvalues $[k]_q^2 \sim q^{2k}$ (exponential growth).
- The [well-posedness theorem](#thm:q-ns-wellposedness) gives
- global regularity.
-
-2. **Root of unity $q = e^{i\pi/\kappa}$, $\kappa \in \mathbb{Z}_{\geq 2}$.**
- Only **finitely many** simple objects: $j = 0, 1/2, \ldots,
-   (\kappa-2)/2$. The quantum dimension $[2j+1]_q$ vanishes at
- $j = (\kappa-1)/2$, truncating the representation category.
- The Verlinde formula governs fusion:
+ Contains infinitely many valid simple objects $V_j$, indexing $j = 0, 1/2, 1, \ldots$ Quantum dimensions rigorously hold $[2j+1]_q > 0$ across all valid $j$. The physical eigenvalues scale as $[k]_q^2 \sim q^{2k}$ (providing strict exponential growth). The core [well-posedness theorem](#thm:q-ns-wellposedness) mechanically guarantees global regularity.
+2. **Root of unity $q = e^{i\pi/\kappa}$, bounded $\kappa \in \mathbb{Z}_{\geq 2}$.**
+ Contains strictly **finitely many** simple objects, spanning $j = 0, 1/2, \ldots, (\kappa-2)/2$. The active quantum dimension $[2j+1]_q$ forcibly zeroes out at precisely $j = (\kappa-1)/2$, cleanly truncating the entire representation category. The strict Verlinde formula regulates all physical fusion:
 
  $$
      N_{ij}^k
      = \int_0^1 \frac{S_{ik}S_{jk}}{S_{0k}}dk,
    $$
 
- where $S$ is the modular $S$-matrix. The representation
- category becomes a **modular tensor category** — the algebraic
- input for Chern--Simons TQFT at level $\kappa$.
-
+ where $S$ acts as the modular $S$-matrix. The resulting representation category devolves directly into a **modular tensor category** — identically matching the required algebraic input driving Chern--Simons TQFT cleanly at level $\kappa$.
 3. **$q = 1$ (classical limit).**
- Infinite simple objects with $[k]_1 = k$ (polynomial).
- No truncation, no exponential damping. The
- [regularity breakdown](#conj:regularity-breakdown) regime.
+ Spans an infinite array of simple objects evaluating $[k]_1 = k$ (strictly polynomial scaling). All truncation ceases. All exponential damping vanishes. This establishes exactly the [regularity breakdown](#conj:regularity-breakdown) regime.
 
 **Root-of-unity regularity is stronger than generic.**
 
-At $q = e^{i\pi/\kappa}$, the q-NS system has at most
-$(\kappa-1)/2$ active vortex modes (the truncated representation
-category has finitely many objects). This is a **hard cutoff**,
-not the soft exponential damping of generic $q > 1$:
+Evaluated cleanly at $q = e^{i\pi/\kappa}$, the operating q-NS system mechanically supports at most exactly $(\kappa-1)/2$ active vortex modes (as the tightly truncated representation category contains strictly finitely many objects). This forms an absolute **hard cutoff**, fundamentally differing from the generic soft exponential damping controlling $q > 1$:
 
-- Generic $q > 1$: modes with $[k]_q > \mathrm{Re}_q^{1/2}$
- are exponentially damped but nonzero.
-- Root of unity: modes with $j > (\kappa-2)/2$ **do not exist**
- in the category. The Hilbert space is finite-dimensional.
+- Within generic $q > 1$: valid modes breaching $[k]_q > \mathrm{Re}_q^{1/2}$ safely experience exponential damping but strictly remain nonzero.
+- Operating at root of unity: any hypothetical modes breaching $j > (\kappa-2)/2$ mathematically **do not exist** anywhere inside the governing category. The entire bounded Hilbert space remains strictly finite-dimensional.
 
-A finite-dimensional ODE is by definition globally regular
-(Picard--Lindelöf). So at every root of unity, the q-NS
-system is not only well-posed but **finite-dimensional**.
+A purely finite-dimensional ODE mathematically defaults to globally regular unconditionally (enforcing Picard--Lindelöf). Consequently, situated exactly at every isolated root of unity, the operative q-NS system operates not merely as well-posed, but absolutely **finite-dimensional**.
 
 **The $q = 1$ accumulation.**
 
-As $\kappa \to \infty$, $q = e^{i\pi/\kappa} \to 1$. The
-truncation level $j_{\max} = (\kappa-2)/2 \to \infty$: more
-and more modes become available. The sequence of
-finite-dimensional systems approaches the infinite-dimensional
-classical system.
+Driving $\kappa \to \infty$ smoothly pulls $q = e^{i\pi/\kappa} \to 1$. The hard truncation level actively scales up: $j_{\max} = (\kappa-2)/2 \to \infty$. Steadily, more and more functional modes mechanically unlock. The strict mathematical sequence traversing these rigidly finite-dimensional systems flawlessly approaches the pure infinite-dimensional classical baseline.
 
-The blowup at $q = 1$ is the statement that this
-infinite-dimensional limit is **singular**: no finite truncation
-blows up, but the limit of all truncations can. This is
-precisely the structure of a **phase transition at the
-accumulation point**.
+The absolute blowup occurring at $q = 1$ effectively states that this terminal infinite-dimensional limit executes as mathematically **singular**: while no isolated finite truncation can ever trigger a blowup, the exact accumulation limit gathering all conceivable truncations effortlessly can. This maps the precise physical structure dictating a macroscopic **phase transition stationed at the exact accumulation point**.
 
 **Connection to the core aspect ratio.**
 
-At a root of unity $q = e^{i\pi/\kappa}$, the vortex core
-shape is controlled by the **modular tensor category** structure.
-The fusion rules $N_{ij}^k$ determine which mode interactions
-are allowed. The truncation $j \leq (\kappa-2)/2$ forbids
-high-frequency core deformations: the core **cannot** develop
-fine-scale structure beyond the cutoff. In particular:
+Operating at an isolated root of unity $q = e^{i\pi/\kappa}$, the exact geometric shape controlling the physical vortex core answers directly to the strict **modular tensor category** structure. The explicit fusion rules $N_{ij}^k$ logically dictate all valid mode interactions. The hard truncation boundary spanning $j \leq (\kappa-2)/2$ completely outlaws high-frequency geometric core deformations: the physical core mathematically **cannot** form fine-scale spatial structure exceeding the strict cutoff. Examining this physically:
 
-- The core aspect ratio $\kappa(t) = a_\perp/a_\parallel$
- is controlled by the Fourier modes of the core boundary.
-- At root of unity: only $(\kappa-1)/2$ modes exist, so
- $\kappa(t)$ is a trigonometric polynomial of bounded degree.
-- A trigonometric polynomial of degree $N$ satisfies
- $|\kappa'(t)| \leq N\|\kappa\|_\infty$ (Bernstein
- inequality), preventing rapid oscillation.
+- The continuous core aspect ratio $\kappa(t) = a_\perp/a_\parallel$ strictly answers to the isolated Fourier modes spanning the core boundary.
+- Operating at root of unity: exactly $(\kappa-1)/2$ modes logically exist. Consequently, $\kappa(t)$ forms merely a basic trigonometric polynomial obeying a strictly bounded degree.
+- Any valid trigonometric polynomial scaled to degree $N$ rigidly obeys $|\kappa'(t)| \leq N\|\kappa\|_\infty$ (enforcing the Bernstein inequality), mathematically preventing rapid physical oscillation.
 
-This gives an **explicit bound** at each root of unity:
+This sequence delivers an **explicit mathematical bound** actively functioning at every isolated root of unity:
 
 $$
   \sup_{t < T^*} \kappa(t)
@@ -105,35 +58,17 @@ $$
   1 + C \cdot (\kappa - 1)
 $$
 
-for some universal constant $C$. The bound grows linearly
-with the truncation level $\kappa$, and diverges as
-$\kappa \to \infty$ ($q \to 1$).
+relying on some shared universal constant $C$. The resulting mathematical bound steadily grows linearly pacing the truncation level $\kappa$, mathematically diverging flawlessly as $\kappa \to \infty$ ($q \to 1$).
 
 **The refined gap.**
 
-The original [vorticity lower bound](#prop:vorticity-lower-bound)
-requires $\sup_t \kappa(t) \leq C$ with $C$ independent of $q$.
-The root-of-unity analysis gives $\kappa(t) \leq 1 + C(\kappa-1)$,
-which grows with $\kappa$. The question is the **rate of growth**:
+The baseline [vorticity lower bound](#prop:vorticity-lower-bound) strictly mandates $\sup_t \kappa(t) \leq C$, keeping $C$ rigidly independent of $q$. The unified root-of-unity analysis directly supplies $\kappa(t) \leq 1 + C(\kappa-1)$, which visibly scales alongside $\kappa$. The absolute question zeroes in on the **rate of growth**:
 
-- If $\kappa(t) \leq C_0$ uniformly (independent of $\kappa$):
- the core stays circular, the lower bound holds, and NS blows up.
- Counter-example established.
+- Assuming $\kappa(t) \leq C_0$ uniformly (operating entirely independent of $\kappa$): the physical core remains permanently circular. The rigorous lower bound flawlessly holds. NS definitively blows up. The counter-example stands mathematically established.
+- Assuming $\kappa(t) \sim \kappa$ (exhibiting purely linear growth): the physical core safely flattens exactly mirroring the rate unlocking new modes. Physical vorticity safely spreads forming a wide sheet. The strict lower bound $\omega \geq c/(T^*-t)$ potentially fails. NS may function as completely regular.
+- Assuming $\kappa(t) \sim \kappa^\beta$ spanning $0 < \beta < 1$: an intermediate regime triggers. The firm lower bound holds cleanly provided $\beta < 1/2$ (confirming the physical flattening remains mathematically slower than the approach).
 
-- If $\kappa(t) \sim \kappa$ (linear growth): the core flattens at
- the same rate as modes become available. The vorticity spreads
- into a sheet, and the lower bound $\omega \geq c/(T^*-t)$ may
- fail. NS might be regular.
-
-- If $\kappa(t) \sim \kappa^\beta$ with $0 < \beta < 1$: an
- intermediate case. The lower bound holds if $\beta < 1/2$
- (the flattening is slower than the approach).
-
-The [Levi form condition number](#def:levi-form-defect) at the
-vortex core is $\lambda_{\max}/\lambda_{\min}$, which equals
-$\kappa(t)^2$. The contact structure degenerates (becomes
-integrable) iff $\lambda_{\min} \to 0$, i.e. $\kappa(t) \to
-\infty$. So:
+The explicit [Levi form condition number](#def:levi-form-defect) governing the vortex core rigidly evaluates to $\lambda_{\max}/\lambda_{\min}$, perfectly equating to $\kappa(t)^2$. The underlying contact structure mathematically degenerates (flipping completely integrable) exactly if and only if $\lambda_{\min} \to 0$, driving $\kappa(t) \to \infty$. Consequently:
 
 $$
   \boxed{

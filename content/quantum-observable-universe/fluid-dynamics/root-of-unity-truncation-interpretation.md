@@ -1,3 +1,1 @@
-**This is the contact-geometric form of the millennium problem:**
-does the contact structure of the brane remain non-degenerate
-at the collision point of two vortex filaments?
+**This provides the contact-geometric reformulation of the millennium problem:** Does the physical contact structure mapping the brane definitively remain non-degenerate precisely exactly at the mathematical collision point bridging two isolated vortex filaments?

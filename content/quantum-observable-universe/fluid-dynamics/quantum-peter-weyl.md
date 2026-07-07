@@ -1,11 +1,5 @@
 **Statement.**
-Let $(\mathbf{C}, A, \tau)$ be a
-[QOU](#def:quantum-observable-universe) with
-[substrate parameter](#def:substrate-parameter) $q > 1$.  Let
-$\{V_j\}_{j \in \frac{1}{2}\mathbb{Z}_{\geq 0}}$ be the simple
-objects of $\mathbf{C}$ indexed by spin $j$, with categorical
-dimension $\dim(V_j) = 2j + 1$.  For each $j, m, n$ with
-$-j \leq m, n \leq j$, define the **matrix coefficient**
+Let $(\mathbf{C}, A, \tau)$ define a [QOU](#def:quantum-observable-universe) with [substrate parameter](#def:substrate-parameter) $q > 1$. Let $\{V_j\}_{j \in \frac{1}{2}\mathbb{Z}_{\geq 0}}$ denote the simple objects of $\mathbf{C}$ indexed by spin $j$, with categorical dimension $\dim(V_j) = 2j + 1$. For indices $-j \leq m, n \leq j$, define the **matrix coefficient**
 
 $$
   D^j_{mn}
@@ -16,14 +10,12 @@ $$
    \in  A,
 $$
 
-where $\{e^j_m\}$ is an orthonormal basis of $\tau(V_j)$ and
-$\mathrm{ev}, \mathrm{coev}$ are the evaluation and coevaluation
-from the rigid structure.
+where $\{e^j_m\}$ forms an orthonormal basis of $\tau(V_j)$, and $\mathrm{ev}, \mathrm{coev}$ represent the rigid evaluation and coevaluation maps.
 
 Then:
 
-**(a) Orthogonality.**  With respect to the
-[Frobenius pairing](#def:frobenius-pairing):
+**(a) Orthogonality.**
+Under the [Frobenius pairing](#def:frobenius-pairing):
 
 $$
   \int_A (D^j_{mn})^\dagger \cdot D^{j'}_{m'n'}
@@ -33,10 +25,8 @@ $$
 
 where $[2j+1]_q$ is the quantum dimension.
 
-**(b) Completeness.**  The matrix coefficients
-$\{[2j+1]_q^{1/2}D^j_{mn}\}$ form a complete orthonormal
-system in the Hilbert completion
-$L^2(A) = \overline{A}^{\int_A}$:
+**(b) Completeness.**
+The set $\{[2j+1]_q^{1/2}D^j_{mn}\}$ constitutes a complete orthonormal system over the Hilbert completion $L^2(A) = \overline{A}^{\int_A}$:
 
 $$
   \sum_{j \geq 0} [2j+1]_q
@@ -44,13 +34,11 @@ $$
   =  \mathrm{id}_A.
 $$
 
-**(c) $\Delta_q$-eigendecomposition.**  Each matrix coefficient
-$D^j_{mn}$ is an eigenfunction of $\Delta_q$ with eigenvalue
-$[j]_q[j+1]_q$ (the $q$-Casimir):
+**(c) $\Delta_q$-eigendecomposition.**
+Each coefficient $D^j_{mn}$ functions as a strict eigenfunction of $\Delta_q$, taking eigenvalue $[j]_q[j+1]_q$ (the $q$-Casimir):
 
 $$
   \Delta_qD^j_{mn} = [j]_q[j+1]_qD^j_{mn}.
 $$
 
-The eigenspace of eigenvalue $[j]_q[j+1]_q$ has dimension
-$(2j+1)^2$.
+The dimension of the corresponding eigenspace evaluates exactly to $(2j+1)^2$.

@@ -1,11 +1,6 @@
-Let $(\mathbf{C}, A, \tau)$ be a
-[QOU](#def:quantum-observable-universe) with
-[weight decomposition](#def:weight-decomposition)
-$(\pi_H, \pi_V)$ and
-[Reeb derivation](#def:categorical-reeb) $\xi$.
+Let $(\mathbf{C}, A, \tau)$ define a [QOU](#def:quantum-observable-universe) equipped with [weight decomposition](#def:weight-decomposition) $(\pi_H, \pi_V)$ and [Reeb derivation](#def:categorical-reeb) $\xi$.
 
-**The substrate line bundle** is the trivial
-$\mathbb{G}_m$-torsor
+**The substrate line bundle** represents the trivial $\mathbb{G}_m$-torsor
 
 $$
   \mathcal{Q}
@@ -15,21 +10,12 @@ $$
   \mathrm{Spec}R,
 $$
 
-whose fibre at each $R$-point is $\mathbb{G}_m(R) = R^\times$.
-A **substrate section** is a global section
-$q \colon \mathrm{Spec}R \to \mathcal{Q}$, i.e. an element
-$q \in R^\times$.
+possessing fibre $\mathbb{G}_m(R) = R^\times$ across each $R$-point. A **substrate section** defines a global section $q \colon \mathrm{Spec}R \to \mathcal{Q}$, resolving to an element $q \in R^\times$.
 
-When $(\mathbf{C}, A, \tau)$ is fibred over a space $M$
-(archimedean realisation), the substrate line bundle is
-$\mathcal{Q}_M = M \times \mathbb{G}_m$ and a substrate
-section is a map $q \colon M \to \mathbb{G}_m(k) = k^\times$.
+Fibring $(\mathbf{C}, A, \tau)$ over a space $M$ (the archimedean realisation) recasts the substrate line bundle as $\mathcal{Q}_M = M \times \mathbb{G}_m$. A substrate section operates as a strict map $q \colon M \to \mathbb{G}_m(k) = k^\times$.
 
 **The $\mathbb{P}^1$-compactification.**
-Embed $\mathbb{G}_m \hookrightarrow \mathbb{P}^1$ via the
-standard inclusion
-$k^\times \hookrightarrow k \cup \{\infty\} = \mathbb{P}^1(k)$.
-The compactified substrate bundle is
+Embed $\mathbb{G}_m \hookrightarrow \mathbb{P}^1$ via the standard inclusion $k^\times \hookrightarrow k \cup \{\infty\} = \mathbb{P}^1(k)$. The compactified substrate bundle evaluates to
 
 $$
   \bar{\mathcal{Q}}_M
@@ -38,19 +24,16 @@ $$
    \to  M.
 $$
 
-A substrate section extends to a $\mathbb{P}^1$-valued section
-$\bar{q} \colon M \to \mathbb{P}^1$.  The three distinguished
-sections are:
+A given substrate section extends uniquely to a $\mathbb{P}^1$-valued section $\bar{q} \colon M \to \mathbb{P}^1$. Three specific sections dominate the physics:
 
 | Section | Value | Differential $d_q$ | Regime |
 |---|---|---|---|
-| $q = 0$ | $[0] \in \mathbb{P}^1$ | Undefined ($q^{-1}$ pole) | Boundary (spatial divergence) |
-| $q = 1$ | $[1] \in \mathbb{P}^1$ | $d$ (full de Rham) | Classical |
-| $q = \infty$ | $[\infty] \in \mathbb{P}^1$ | $\pi_V \circ d$ (vertical) | Deep quantum |
+| $q = 0$ | $[0] \in \mathbb{P}^1$ | Undefined (strict $q^{-1}$ pole) | Boundary (divergent spatial metric) |
+| $q = 1$ | $[1] \in \mathbb{P}^1$ | $d$ (unmodified de Rham) | Classical |
+| $q = \infty$ | $[\infty] \in \mathbb{P}^1$ | $\pi_V \circ d$ (purely vertical) | Deep quantum |
 
 **The universal family.**
-Over $\mathbb{G}_m = \mathrm{Spec}\mathbb{Z}[q, q^{-1}]$,
-define the **universal substrate differential**
+Operating over $\mathbb{G}_m = \mathrm{Spec}\mathbb{Z}[q, q^{-1}]$, the **universal substrate differential** is
 
 $$
   \mathbf{d}
@@ -61,9 +44,4 @@ $$
   \bigl(\Omega^k(A), \Omega^{k+1}(A)\bigr).
 $$
 
-This is a morphism of $\mathbb{Z}[q, q^{-1}]$-modules.  For
-any ring homomorphism
-$\iota \colon \mathbb{Z}[q, q^{-1}] \to k$ sending
-$q \mapsto q_0$, the base change
-$\mathbf{d} \otimes_\iota k$ recovers the differential
-$d_{q_0}$ at the specialisation $q_0$.
+This acts as a strict morphism of $\mathbb{Z}[q, q^{-1}]$-modules. Given a ring homomorphism $\iota \colon \mathbb{Z}[q, q^{-1}] \to k$ executing $q \mapsto q_0$, the targeted base change $\mathbf{d} \otimes_\iota k$ exactly recovers the differential $d_{q_0}$ spanning the specialisation $q_0$.

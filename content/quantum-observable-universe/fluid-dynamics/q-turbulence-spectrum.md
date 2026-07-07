@@ -1,12 +1,6 @@
-In the brane fluid with [substrate parameter](#def:substrate-parameter)
-$q > 1$ and [Planck--Reynolds number](#rem:planck-reynolds)
-$\mathrm{Re}_q = 2/(q-1)$, the energy spectrum of a turbulent
-vortex tangle satisfies a $q$-deformed Kolmogorov law.
+In the brane fluid defined by [substrate parameter](#def:substrate-parameter) $q > 1$ and [Planck--Reynolds number](#rem:planck-reynolds) $\mathrm{Re}_q = 2/(q-1)$, the energy spectrum of a turbulent vortex tangle obeys a $q$-deformed Kolmogorov law.
 
-1. **$q$-deformed energy spectrum.**  Let $E(k)$ denote the energy
-   per unit wavenumber in the brane fluid.  In the inertial range
-   $1 \ll k \ll k_{\max}$, where $k_{\max}$ is the viscous cutoff
-   set by $\mathrm{Re}_q$, the spectrum is
+1. **$q$-deformed energy spectrum.** Let $E(k)$ denote the energy per unit wavenumber. In the inertial range $1 \ll k \ll k_{\max}$, where $k_{\max}$ denotes the viscous cutoff imposed by $\mathrm{Re}_q$, the spectrum evaluates to
 
    $$
      E_q(k)
@@ -15,18 +9,9 @@ vortex tangle satisfies a $q$-deformed Kolmogorov law.
      \frac{[k]_q^{-5/3}}{[k]_q / k},
    $$
 
-   where $\varepsilon$ is the energy dissipation rate,
-   $C_q$ is a $q$-dependent Kolmogorov constant, and the ratio
-   $[k]_q / k$ accounts for the non-uniform spacing of
-   $q$-integers.  As $q \to 1$, $[k]_q \to k$ and the classical
-   Kolmogorov spectrum $E(k) = C_K\varepsilon^{2/3}k^{-5/3}$
-   is recovered.
+   where $\varepsilon$ represents the energy dissipation rate, $C_q$ acts as a $q$-dependent Kolmogorov constant, and the ratio $[k]_q / k$ corrects for the non-uniform spacing of $q$-integers. As $q \to 1$, $[k]_q \to k$ and the spectrum converges to the classical Kolmogorov law $E(k) = C_K\varepsilon^{2/3}k^{-5/3}$.
 
-2. **Discrete cascade.**  Unlike classical turbulence, where energy
-   cascades continuously from large to small scales, the
-   $q$-deformed cascade is **discrete**: energy transfers occur
-   between modes labelled by $q$-integers $[k]_q$, with transfer
-   rate
+2. **Discrete cascade.** Classical turbulence cascades energy continuously from large to small scales. The $q$-deformed cascade operates **discretely**: energy transfers sequentially between modes indexed by $q$-integers $[k]_q$, executing at the transfer rate
 
    $$
      T_{k \to k+1}
@@ -36,13 +21,9 @@ vortex tangle satisfies a $q$-deformed Kolmogorov law.
           {[k+1]_q - [k]_q}.
    $$
 
-   For the symmetric $q$-integer, the denominator satisfies
-   $[k+1]_q - [k]_q \sim q^k \cdot q/(q+1)$ for large $k$.
-   The transfer rate decreases exponentially at high
-   wavenumbers, providing a natural UV cutoff.
+   For large $k$, the denominator scales as $[k+1]_q - [k]_q \sim q^k \cdot q/(q+1)$. The transfer rate thus drops exponentially at high wavenumbers, enforcing a strict structural UV cutoff.
 
-3. **Finite cascade depth.**  The number of active modes in the
-   cascade is bounded by
+3. **Finite cascade depth.** The number of active modes participating in the cascade strictly bounds to
 
    $$
      N_{\mathrm{modes}}
@@ -55,26 +36,16 @@ vortex tangle satisfies a $q$-deformed Kolmogorov law.
      \biggr\rfloor.
    $$
 
-   At $q \approx 1.110$, $N_{\mathrm{modes}} \approx 21$.
-   (This counts all modes participating in the cascade; the
-   [Planck--Reynolds](#rem:planck-reynolds) bound $k_{\max} \approx 4$
-   is the stricter count of modes with significant amplitude.)
+   At the physical anchor $q \approx 1.110$, $N_{\mathrm{modes}} \approx 21$. (This accounts for all modes spanning the cascade; the [Planck--Reynolds](#rem:planck-reynolds) bound $k_{\max} \approx 4$ measures only those modes carrying significant amplitude.)
 
-4. **Spectral gap.**  Below the fundamental mode $k = 1$, there
-   is a **spectral gap**
+4. **Spectral gap.** Below the fundamental mode $k = 1$, a **spectral gap** isolates the ground state (laminar flow) from the first excited mode:
 
    $$
      \Delta E_{\mathrm{gap}}
      = 
      C_q\varepsilon^{2/3}
      \bigl([1]_q^{-5/3} - [2]_q^{-5/3}\bigr)
-      >  0,
+      >  0.
    $$
 
-   separating the ground state (laminar flow) from the first
-   excited mode.  This gap prevents spontaneous onset of turbulence
-   below a threshold energy injection rate — the brane fluid is
-   stable against infinitesimal perturbations, unlike classical
-   Navier--Stokes where $\mathrm{Re} \to \infty$ always produces
-   instability.
-
+   This gap halts the spontaneous onset of turbulence below a rigid threshold energy injection rate. The brane fluid remains structurally stable against infinitesimal perturbations, unlike classical Navier--Stokes where $\mathrm{Re} \to \infty$ guarantees instability.
