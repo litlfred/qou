@@ -877,8 +877,8 @@
         "result": "fail",
         "scope": "limited",
         "ruling": "surviving",
-        "referee_argument": "dressed-quark-numerology-at-q0.md:21-23 'm_n-m_p ... is no longer an input — it is a prediction at -0.53% residual', but the substrate split it relies on (flavor-split-substrate-proof.md Step 2 ansatz (2)) is selected by '(c) numerical agreement to -0.67% at q=q_0' (fit-selected).",
-        "rebuttal": "partial→survived — policy-compliant (remark titled 'numerology'; the difference relation genuinely removes Δm from the calibration count); the fitted-ansatz caveat is disclosed upstream. Scope-limited, not structural.",
+        "referee_argument": "dressed-quark-numerology-at-q0.md:21-23 'm_n-m_p ... is no longer an input \u2014 it is a prediction at -0.53% residual', but the substrate split it relies on (flavor-split-substrate-proof.md Step 2 ansatz (2)) is selected by '(c) numerical agreement to -0.67% at q=q_0' (fit-selected).",
+        "rebuttal": "partial\u2192survived \u2014 policy-compliant (remark titled 'numerology'; the difference relation genuinely removes \u0394m from the calibration count); the fitted-ansatz caveat is disclosed upstream. Scope-limited, not structural.",
         "evidence": [
           {
             "text": "dressed-quark-numerology-at-q0.md:21-23; flavor-split-substrate-proof.md:45"
@@ -906,7 +906,7 @@
         "scope": "limited",
         "ruling": "surviving",
         "referee_argument": "Downstream HadronicMass.lean:352,357 dressed_mass_up:=311.10 etc.; :407 theorem dressed_quark_mass_difference proves =1.29 by norm_num on the literals (vacuous), under a docstring 'Derived from the Borromean Skein decomposition'.",
-        "rebuttal": "partial→survived (downstream) — divergence lives in HadronicMass.lean not the target remark; the target does not uses/interprets that decl, and the canonical m_p route is canonical_mass.py (muon-anchored) not this pair-Skein chain. Pre-documented open item (2026-05-17 audit). The 'Derived from' docstring on a norm_num-on-literals theorem is the live action.",
+        "rebuttal": "partial\u2192survived (downstream) \u2014 divergence lives in HadronicMass.lean not the target remark; the target does not uses/interprets that decl, and the canonical m_p route is canonical_mass.py (muon-anchored) not this pair-Skein chain. Pre-documented open item (2026-05-17 audit). The 'Derived from' docstring on a norm_num-on-literals theorem is the live action.",
         "evidence": [
           {
             "text": "HadronicMass.lean:352,407"
@@ -934,7 +934,7 @@
         "scope": "limited",
         "ruling": "rebutted",
         "referee_argument": "33%-of-bound 'agreement' is weak evidence.",
-        "rebuttal": "rebutted — block explicitly states bound-tightening 'remains open (no canonical closed form committed)' and gives the closed-form slack ratio; honest, no overclaim.",
+        "rebuttal": "rebutted \u2014 block explicitly states bound-tightening 'remains open (no canonical closed form committed)' and gives the closed-form slack ratio; honest, no overclaim.",
         "evidence": [
           {
             "text": "dressed-quark-numerology-at-q0.md:86,106-107"
@@ -1157,6 +1157,18 @@
         "notes": "The derivation steps and formal definitions in 'Dressed-quark numerology at $q_0$' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/dressed-quark-numerology-at-q0.ts:1"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Applied Milnor exposition standard (H1-H8) and brevity rules. Shortened sentences, removed editorializing ('surprisingly', 'remarkably'), replaced 'this book' with 'this paper', and maintained Math, markdown, and cross-block consistency.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

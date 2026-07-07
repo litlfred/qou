@@ -988,7 +988,7 @@
         },
         "reviewed_at": "2026-06-28T07:55:41.531Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Checked mathematical consistency of the claim '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' and found no counterexamples under the stated conditions.",
+        "notes": "Checked mathematical consistency of the claim '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md \u00a77c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' and found no counterexamples under the stated conditions.",
         "evidence": "content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.ts:1",
         "severity": "minor"
       }
@@ -1007,7 +1007,7 @@
         },
         "reviewed_at": "2026-06-28T07:55:41.531Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "The conjecture makes non-trivial claims regarding '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' and is not vacuous.",
+        "notes": "The conjecture makes non-trivial claims regarding '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md \u00a77c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' and is not vacuous.",
         "severity": "minor"
       }
     ],
@@ -1081,7 +1081,7 @@
         },
         "reviewed_at": "2026-06-28T07:55:41.531Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
-        "notes": "Logical transitions in the derivation of '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' are sound; no non-sequiturs detected.",
+        "notes": "Logical transitions in the derivation of '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md \u00a77c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' are sound; no non-sequiturs detected.",
         "evidence": "content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.ts:1",
         "severity": "minor"
       }
@@ -1195,7 +1195,7 @@
         "reviewed_at": "2026-06-28T07:55:41.531Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/LinearAlgebra/Dimension.olean' of module Mathlib.LinearAlgebra.Dimension does not exist.",
-        "evidence": "content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.lean:1 — content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/LinearAlgebra/Dimension.olean' of module Mathlib.LinearAlgebra.Dimension does not exist",
+        "evidence": "content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.lean:1 \u2014 content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/LinearAlgebra/Dimension.olean' of module Mathlib.LinearAlgebra.Dimension does not exist",
         "severity": "minor"
       }
     ],
@@ -1215,7 +1215,7 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Conjecture 'conj:orbital-space-normal-bundle' is open; sibling Lean file contains sorry stubs.",
         "verdict": "survivable-objection",
-        "referee_argument": "The conjecture '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' is only partially formalized in Lean and relies on sorry stubs.",
+        "referee_argument": "The conjecture '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md \u00a77c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' is only partially formalized in Lean and relies on sorry stubs.",
         "severity": "minor"
       }
     ],
@@ -1255,6 +1255,18 @@
         "reviewed_at": "2026-07-06T04:41:30.202Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'conj:orbital-space-normal-bundle' aligns with Lean declaration. Sorry-free."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Applied Milnor brevity. Reduced meta-text, fixed tone, preserved all tables and math.",
+        "reviewed_at": "2026-07-06T22:42:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

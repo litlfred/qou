@@ -891,7 +891,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The Lean theorem statement in content/quantum-observable-universe/mass-theory/adelic-substrate.lean matches the mathematical statement in /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-theory/adelic-substrate.md.",
         "severity": "minor",
-        "evidence": "adelic-substrate.lean:1 — Lean file exists"
+        "evidence": "adelic-substrate.lean:1 \u2014 Lean file exists"
       }
     ],
     "da-false-claim": [
@@ -1129,7 +1129,7 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/adelic-substrate.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "adelic-substrate.lean:1 — content/quantum-observable-universe/mass-theory/adelic-substrate.lean:24:17: error: unexpected token '/--'; expected term"
+        "evidence": "adelic-substrate.lean:1 \u2014 content/quantum-observable-universe/mass-theory/adelic-substrate.lean:24:17: error: unexpected token '/--'; expected term"
       }
     ],
     "da-referee-verdict": [
@@ -1188,7 +1188,19 @@
         },
         "reviewed_at": "2026-07-06T04:41:29.430Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'def:adelic-substrate' → expected 'adelic_substrate'; Lean declares: AdelicSubstrate. Structural match via content."
+        "notes": "Label 'def:adelic-substrate' \u2192 expected 'adelic_substrate'; Lean declares: AdelicSubstrate. Structural match via content."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote mass-theory_seq7.md for Milnor standards: clean prose, declarative.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

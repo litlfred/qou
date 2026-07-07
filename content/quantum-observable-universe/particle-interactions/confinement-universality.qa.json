@@ -1084,7 +1084,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/particle-interactions/confinement-universality.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "quantum-observable-universe/particle-interactions/confinement-universality.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -1104,7 +1104,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/particle-interactions/confinement-universality.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "quantum-observable-universe/particle-interactions/confinement-universality.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1981,7 +1981,7 @@
         },
         "reviewed_at": "2026-07-02T17:07:15.000Z",
         "reviewed_sha": "a9ce9ecfe24e6c7c9d0b9f25699b35ec666faa32",
-        "notes": "4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): placeholder-stub marker no longer present — criterion pass. Residual self-assuming-projection / statement-scope issue tracked under proof-statement-integrity and bean qsb2; do not re-fail this criterion for it."
+        "notes": "4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): placeholder-stub marker no longer present \u2014 criterion pass. Residual self-assuming-projection / statement-scope issue tracked under proof-statement-integrity and bean qsb2; do not re-fail this criterion for it."
       }
     ],
     "voice-statement-no-interpretation": [
@@ -2260,7 +2260,7 @@
           "ts": "c7b4681b4542"
         },
         "result": "pass",
-        "notes": "Categorical statement of asymptotic freedom (EM initial conditions wash out under B3 confinement) — non-trivial physical interpretation.",
+        "notes": "Categorical statement of asymptotic freedom (EM initial conditions wash out under B3 confinement) \u2014 non-trivial physical interpretation.",
         "reviewed_at": "2026-06-25T17:06:11.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -2317,7 +2317,7 @@
           "ts": "c7b4681b4542"
         },
         "result": "pass",
-        "notes": "Conclusion ∀φ N_F φ = N_F 0 0 0 faithfully states the md φ-independence claim; no sorry/native_decide. (Substance assumed via h_N_F — flagged under self-assuming-projection.)",
+        "notes": "Conclusion \u2200\u03c6 N_F \u03c6 = N_F 0 0 0 faithfully states the md \u03c6-independence claim; no sorry/native_decide. (Substance assumed via h_N_F \u2014 flagged under self-assuming-projection.)",
         "reviewed_at": "2026-06-25T17:06:11.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -2370,7 +2370,7 @@
           "ts": "c7b4681b4542"
         },
         "result": "fail",
-        "notes": "Class field h_N_F : ∀φ N_F φ = N_F_zero IS the universality; theorem proves goal by rw[ctx.h_N_F, ctx.h_N_F_zero] — derivation-chain washout (md proof) not encoded, the claim is assumed.",
+        "notes": "Class field h_N_F : \u2200\u03c6 N_F \u03c6 = N_F_zero IS the universality; theorem proves goal by rw[ctx.h_N_F, ctx.h_N_F_zero] \u2014 derivation-chain washout (md proof) not encoded, the claim is assumed.",
         "reviewed_at": "2026-06-25T17:06:11.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -2802,6 +2802,12 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Confinement universality: nucleon NF independent of photon polarization' are consistent."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq4"
       }
     ]
   },

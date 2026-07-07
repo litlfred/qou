@@ -1145,7 +1145,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/particle-interactions/confinement-phase-stratification.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "quantum-observable-universe/particle-interactions/confinement-phase-stratification.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -1166,7 +1166,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/particle-interactions/confinement-phase-stratification.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "quantum-observable-universe/particle-interactions/confinement-phase-stratification.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -2394,7 +2394,7 @@
         },
         "reviewed_at": "2026-07-06T04:41:29.802Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:confinement-phase-stratification' → expected 'confinement_phase_stratification'; Lean declares: ConfinedParticleTy, confinementLocus, ConfinementPhaseStratification_open, ConfinementPhaseStratification_mu_constant, ConfinementPhaseStratification. Structural match via content."
+        "notes": "Label 'prop:confinement-phase-stratification' \u2192 expected 'confinement_phase_stratification'; Lean declares: ConfinedParticleTy, confinementLocus, ConfinementPhaseStratification_open, ConfinementPhaseStratification_mu_constant, ConfinementPhaseStratification. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2509,7 +2509,7 @@
           "lean": "006ae4472536"
         },
         "result": "pass",
-        "notes": "SDP confinement locus open + μ/σ_F locally constant on phases (Boyd-Vandenberghe §5.6) is well-posed, substantive phase-scoping result.",
+        "notes": "SDP confinement locus open + \u03bc/\u03c3_F locally constant on phases (Boyd-Vandenberghe \u00a75.6) is well-posed, substantive phase-scoping result.",
         "reviewed_at": "2026-06-25T17:04:58.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -2633,7 +2633,7 @@
           "lean": "006ae4472536"
         },
         "result": "fail",
-        "notes": "Sibling proves headline (IsOpen + μ-constant) via two sorry's; library projects typeclass Prop fields that ARE the conclusions (locus_open:=h.locus_open). Statement faithful but not derived (not downstream of a conj, so conclusion-as-axiom is degenerate).",
+        "notes": "Sibling proves headline (IsOpen + \u03bc-constant) via two sorry's; library projects typeclass Prop fields that ARE the conclusions (locus_open:=h.locus_open). Statement faithful but not derived (not downstream of a conj, so conclusion-as-axiom is degenerate).",
         "reviewed_at": "2026-06-25T17:04:58.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -2650,7 +2650,7 @@
           "ts": "08d5240ba178"
         },
         "result": "pass",
-        "notes": "Verified honest on branch claude/lean-qa-backlog-2h3f8d: carrier fields are genuine inputs and the theorem either derives its conclusion by composing them / summing / applying proved lemmas, or states the real .md claim with a cited sorry (§3b-cond item 5 + §1). No field projection remains. lean-direct exit 0. (Prior script fail entry was stale — the anti-pattern was already removed in the current file.)",
+        "notes": "Verified honest on branch claude/lean-qa-backlog-2h3f8d: carrier fields are genuine inputs and the theorem either derives its conclusion by composing them / summing / applying proved lemmas, or states the real .md claim with a cited sorry (\u00a73b-cond item 5 + \u00a71). No field projection remains. lean-direct exit 0. (Prior script fail entry was stale \u2014 the anti-pattern was already removed in the current file.)",
         "reviewed_at": "2026-07-04T10:56:05.000Z",
         "reviewed_sha": "4736a53600d78315c025af9d838303bdcc62bf97",
         "reviewer": {
@@ -2706,7 +2706,7 @@
           "lean": "006ae4472536"
         },
         "result": "fail",
-        "notes": "Library theorems phase_locus_open/_mu_constant/_sigmaF return HasPhaseStratification fields whose types ARE the conclusions; conclusion axiomatized as class field then projected (§3b-cond non-degeneracy item-5 violated).",
+        "notes": "Library theorems phase_locus_open/_mu_constant/_sigmaF return HasPhaseStratification fields whose types ARE the conclusions; conclusion axiomatized as class field then projected (\u00a73b-cond non-degeneracy item-5 violated).",
         "reviewed_at": "2026-06-25T17:04:58.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -2723,7 +2723,7 @@
           "ts": "08d5240ba178"
         },
         "result": "pass",
-        "notes": "Verified honest on branch claude/lean-qa-backlog-2h3f8d: carrier fields are genuine inputs and the theorem either derives its conclusion by composing them / summing / applying proved lemmas, or states the real .md claim with a cited sorry (§3b-cond item 5 + §1). No field projection remains. lean-direct exit 0. (Prior script fail entry was stale — the anti-pattern was already removed in the current file.)",
+        "notes": "Verified honest on branch claude/lean-qa-backlog-2h3f8d: carrier fields are genuine inputs and the theorem either derives its conclusion by composing them / summing / applying proved lemmas, or states the real .md claim with a cited sorry (\u00a73b-cond item 5 + \u00a71). No field projection remains. lean-direct exit 0. (Prior script fail entry was stale \u2014 the anti-pattern was already removed in the current file.)",
         "reviewed_at": "2026-07-04T10:56:05.000Z",
         "reviewed_sha": "4736a53600d78315c025af9d838303bdcc62bf97",
         "reviewer": {
@@ -2817,7 +2817,7 @@
           "lean": "006ae4472536"
         },
         "result": "pass",
-        "notes": "Premises (connected C ⊆ locus, real-axis data) satisfiable (unit-particle model: universal locus); no contradiction.",
+        "notes": "Premises (connected C \u2286 locus, real-axis data) satisfiable (unit-particle model: universal locus); no contradiction.",
         "reviewed_at": "2026-06-25T17:04:58.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -2873,7 +2873,7 @@
           "lean": "006ae4472536"
         },
         "result": "pass",
-        "notes": "All binders (P, [HasRealAxisData], [HasPhaseStratification], C, hC, hsub, q₁q₂, h₁h₂) referenced; Fact-instance fields all consumed.",
+        "notes": "All binders (P, [HasRealAxisData], [HasPhaseStratification], C, hC, hsub, q\u2081q\u2082, h\u2081h\u2082) referenced; Fact-instance fields all consumed.",
         "reviewed_at": "2026-06-25T17:04:58.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -3158,7 +3158,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/confinement-phase-stratification.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "confinement-phase-stratification.lean:1 — content/quantum-observable-universe/particle-interactions/confinement-phase-stratification.lean:37:79: error: unexpected identifier; expected 'lemma'"
+        "evidence": "confinement-phase-stratification.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/confinement-phase-stratification.lean:37:79: error: unexpected identifier; expected 'lemma'"
       }
     ],
     "da-referee-verdict": [
@@ -3180,6 +3180,12 @@
         "severity": "major",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/confinement-phase-stratification.lean fails compilation, indicating that the claims cannot be formally verified in Lean."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq19"
       }
     ]
   },

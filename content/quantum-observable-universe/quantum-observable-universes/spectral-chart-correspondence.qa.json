@@ -1189,7 +1189,7 @@
           "lean": "cb3e0980427a"
         },
         "result": "pass",
-        "notes": "Clear: prove λ_sym⁻¹=-λ_anti algebraically, isolate the one missing-infra step as a named axiom, compose. Classical limit lemma included.",
+        "notes": "Clear: prove \u03bb_sym\u207b\u00b9=-\u03bb_anti algebraically, isolate the one missing-infra step as a named axiom, compose. Classical limit lemma included.",
         "reviewed_at": "2026-06-25T17:05:26.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1253,7 +1253,7 @@
           "lean": "cb3e0980427a"
         },
         "result": "pass",
-        "notes": "Substantive: Hecke braiding eigenvalues (q,-q⁻¹) fix the P_q(V) chart-glue κ=q⁻¹; both readings well-posed.",
+        "notes": "Substantive: Hecke braiding eigenvalues (q,-q\u207b\u00b9) fix the P_q(V) chart-glue \u03ba=q\u207b\u00b9; both readings well-posed.",
         "reviewed_at": "2026-06-25T17:05:26.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1377,7 +1377,7 @@
           "lean": "cb3e0980427a"
         },
         "result": "pass",
-        "notes": "Core identity λ_sym⁻¹=-λ_anti genuinely proved (field_simp/linear_combination from det_constraint=-1). Only axiom is the categorical chart-glue interpretation (flagged missing-infra wall), not the algebraic conclusion. Faithful to .md.",
+        "notes": "Core identity \u03bb_sym\u207b\u00b9=-\u03bb_anti genuinely proved (field_simp/linear_combination from det_constraint=-1). Only axiom is the categorical chart-glue interpretation (flagged missing-infra wall), not the algebraic conclusion. Faithful to .md.",
         "reviewed_at": "2026-06-25T17:05:26.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1473,7 +1473,7 @@
           "lean": "cb3e0980427a"
         },
         "result": "pass",
-        "notes": "det_constraint λ_sym·λ_anti=-1 with both ≠0 satisfiable (λ_sym=q,λ_anti=-q⁻¹). No contradictory premise.",
+        "notes": "det_constraint \u03bb_sym\u00b7\u03bb_anti=-1 with both \u22600 satisfiable (\u03bb_sym=q,\u03bb_anti=-q\u207b\u00b9). No contradictory premise.",
         "reviewed_at": "2026-06-25T17:05:26.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1596,7 +1596,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "spectral-chart-correspondence.lean:1",
-        "notes": "The mathematical claims in 'Spectral--chart correspondence: Hecke eigenspaces realise the chart-glue of $\\\\mathbb{P}_q(V)$' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/quantum-observable-universes/spectral-chart-correspondence.lean:51:2: error: unexpected token 'λ'; expected command."
+        "notes": "The mathematical claims in 'Spectral--chart correspondence: Hecke eigenspaces realise the chart-glue of $\\\\mathbb{P}_q(V)$' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/quantum-observable-universes/spectral-chart-correspondence.lean:51:2: error: unexpected token '\u03bb'; expected command."
       }
     ],
     "da-vacuous": [
@@ -1813,7 +1813,7 @@
         "reviewed_at": "2026-06-28T11:19:33.145Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "spectral-chart-correspondence.lean:1 — content/quantum-observable-universe/quantum-observable-universes/spectral-chart-correspondence.lean:51:2: error: unexpected token 'λ'; expected command",
+        "evidence": "spectral-chart-correspondence.lean:1 \u2014 content/quantum-observable-universe/quantum-observable-universes/spectral-chart-correspondence.lean:51:2: error: unexpected token '\u03bb'; expected command",
         "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/spectral-chart-correspondence.lean fails compilation, indicating a reproducibility failure."
       }
     ],
@@ -1856,6 +1856,18 @@
         },
         "reviewed_at": "2026-07-05T04:39:43.766Z",
         "reviewed_sha": "7415132ccce30885dcfd323600b8bcf311c431e4"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq9 enforcing H1-H8. Stripped the pure-meta novelty block entirely. Streamlined the spectral chart derivation. Condensed the classical vs quantum planck limits into tight declarative statements.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

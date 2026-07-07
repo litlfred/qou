@@ -1140,7 +1140,7 @@
         },
         "reviewed_at": "2026-07-06T04:41:29.430Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:terminal-resolution' → expected 'terminal_resolution'; Lean declares: substrate_q, hbar_q, vol_figure_eight, codata_proton_MeV, codata_neutron_MeV.... Structural match via content."
+        "notes": "Label 'prop:terminal-resolution' \u2192 expected 'terminal_resolution'; Lean declares: substrate_q, hbar_q, vol_figure_eight, codata_proton_MeV, codata_neutron_MeV.... Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1611,6 +1611,18 @@
         },
         "reviewed_at": "2026-07-03T00:52:56.534Z",
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote prose sections of mass-theory_seq47.md to enforce H1-H8 and milnor-brevity. Preserved all math blocks and original section markers. Ensured linear flow, minimal technical clutter, and short declarative sentences.",
+        "reviewed_at": "2026-07-06T22:51:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

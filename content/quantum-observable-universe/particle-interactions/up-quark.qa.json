@@ -1210,7 +1210,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/up-quark.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/up-quark.lean:1 — content/quantum-observable-universe/particle-interactions/up-quark.lean:29:13: error: unexpected token 'section'; expected 'lemma'"
+        "evidence": "content/quantum-observable-universe/particle-interactions/up-quark.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/up-quark.lean:29:13: error: unexpected token 'section'; expected 'lemma'"
       }
     ],
     "da-referee-verdict": [
@@ -1269,7 +1269,13 @@
         },
         "reviewed_at": "2026-07-06T04:41:29.802Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'def:up-quark' → expected 'up_quark'; Lean declares: R_q, q_param, q_inv_param, UpQuark, up_quark_is_unknot.... Structural match via content."
+        "notes": "Label 'def:up-quark' \u2192 expected 'up_quark'; Lean declares: R_q, q_param, q_inv_param, UpQuark, up_quark_is_unknot.... Structural match via content."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq4"
       }
     ]
   },

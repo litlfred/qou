@@ -2053,7 +2053,7 @@
           "lean": "eebe516e5768"
         },
         "result": "pass",
-        "notes": "Conjecture: derive Frobenius CPT-saturation Boolean from Type-B fold orbit-closure σ(Λ)⊆Λ (n=3 worked example); well-posed, substantive, removes a posited flag.",
+        "notes": "Conjecture: derive Frobenius CPT-saturation Boolean from Type-B fold orbit-closure \u03c3(\u039b)\u2286\u039b (n=3 worked example); well-posed, substantive, removes a posited flag.",
         "reviewed_at": "2026-06-25T17:06:12.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -2121,7 +2121,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:57.781Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The claims in 'CPT-saturation as Type-B fold-orbit closure: deriving $\\\\rho_F \\\\in \\\\{m_e, 2m_e\\\\}$ from crystal structure' are non-vacuous as they make concrete conjectures about 'transpose involution $\\lambda \\mapsto \\lambda^{T}$ — the Dynkin involution on the $A_{n-1}$ crystal that, after foldi...'.",
+        "notes": "The claims in 'CPT-saturation as Type-B fold-orbit closure: deriving $\\\\rho_F \\\\in \\\\{m_e, 2m_e\\\\}$ from crystal structure' are non-vacuous as they make concrete conjectures about 'transpose involution $\\lambda \\mapsto \\lambda^{T}$ \u2014 the Dynkin involution on the $A_{n-1}$ crystal that, after foldi...'.",
         "severity": "minor"
       }
     ],
@@ -2320,7 +2320,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean:1 — content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean:43:51: error: unexpected identifier; expected 'lemma'"
+        "evidence": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.lean:43:51: error: unexpected identifier; expected 'lemma'"
       }
     ],
     "da-referee-verdict": [
@@ -2379,7 +2379,19 @@
         },
         "reviewed_at": "2026-07-06T04:41:29.802Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Conjecture with class/axiom axiomatisation — structural match."
+        "notes": "Conjecture with class/axiom axiomatisation \u2014 structural match."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Applied Milnor exposition standard (H1-H8) and brevity rules. Shortened sentences, removed editorializing ('surprisingly', 'remarkably'), replaced 'this book' with 'this paper', and maintained Math, markdown, and cross-block consistency.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

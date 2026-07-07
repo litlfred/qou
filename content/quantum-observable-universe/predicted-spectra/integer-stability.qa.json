@@ -1120,7 +1120,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean theorem statement in content/quantum-observable-universe/predicted-spectra/integer-stability.lean matches the mathematical statement in /Users/litlfred/space_cats/qou/content/quantum-observable-universe/predicted-spectra/integer-stability.md.",
         "severity": "minor",
-        "evidence": "integer-stability.lean:1 — Lean file exists"
+        "evidence": "integer-stability.lean:1 \u2014 Lean file exists"
       }
     ],
     "wall-side-proof": [
@@ -1607,6 +1607,18 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Integer stability: the valley of stability as a Diophantine constraint' are consistent."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote prose blocks to adhere to Milnor standards. Improved economy, preserved all math.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

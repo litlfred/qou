@@ -715,7 +715,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/particle-interactions/qbeta-counit-closed-form.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "quantum-observable-universe/particle-interactions/qbeta-counit-closed-form.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -735,7 +735,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/particle-interactions/qbeta-counit-closed-form.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "quantum-observable-universe/particle-interactions/qbeta-counit-closed-form.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1723,7 +1723,7 @@
           "ts": "ca57dbc5d21b"
         },
         "result": "pass",
-        "notes": "Well-posed: closed form of the Frobenius-counit Q-value + the counit-vs-Markov-trace distinction (gap h(z-1), z≤1/2 on substrate); concrete algebraic identity.",
+        "notes": "Well-posed: closed form of the Frobenius-counit Q-value + the counit-vs-Markov-trace distinction (gap h(z-1), z\u22641/2 on substrate); concrete algebraic identity.",
         "reviewed_at": "2026-06-25T17:10:26.000Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
@@ -1784,7 +1784,7 @@
           "ts": "ca57dbc5d21b"
         },
         "result": "pass",
-        "notes": "The energy-scale factorization (E_0=m_e·c_q²·ℏ_q^E) and counit≠tr_M functional distinction are substantive framework results, not a restatement.",
+        "notes": "The energy-scale factorization (E_0=m_e\u00b7c_q\u00b2\u00b7\u210f_q^E) and counit\u2260tr_M functional distinction are substantive framework results, not a restatement.",
         "reviewed_at": "2026-06-25T17:10:26.000Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
@@ -1841,7 +1841,7 @@
           "ts": "ca57dbc5d21b"
         },
         "result": "pass",
-        "notes": "QBetaEnergyScale.Qbeta_closed proves md headline ε(Δ)·E_0 = m_e(q+1)(q²-2q-1)/2q³ over generic [Field R], sorry-free; E0_eq derives E_0=m_e/(q(q-1)). Faithful, no :True/sorry/native_decide.",
+        "notes": "QBetaEnergyScale.Qbeta_closed proves md headline \u03b5(\u0394)\u00b7E_0 = m_e(q+1)(q\u00b2-2q-1)/2q\u00b3 over generic [Field R], sorry-free; E0_eq derives E_0=m_e/(q(q-1)). Faithful, no :True/sorry/native_decide.",
         "reviewed_at": "2026-06-25T17:10:26.000Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
@@ -1894,7 +1894,7 @@
           "ts": "ca57dbc5d21b"
         },
         "result": "pass",
-        "notes": "Not a projection: Qbeta_closed unfolds cqSq/hbarE/epsNPq then field_simp;ring — the closed form is DERIVED from definitions, not assumed as a class field.",
+        "notes": "Not a projection: Qbeta_closed unfolds cqSq/hbarE/epsNPq then field_simp;ring \u2014 the closed form is DERIVED from definitions, not assumed as a class field.",
         "reviewed_at": "2026-06-25T17:10:26.000Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
@@ -1983,7 +1983,7 @@
           "ts": "ca57dbc5d21b"
         },
         "result": "pass",
-        "notes": "q≠0, q-1≠0, 2≠0 are satisfiable in a generic field; no contradictory premise.",
+        "notes": "q\u22600, q-1\u22600, 2\u22600 are satisfiable in a generic field; no contradictory premise.",
         "reviewed_at": "2026-06-25T17:10:26.000Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
@@ -2327,6 +2327,12 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/particle-interactions/qbeta-counit-closed-form.lean is missing entirely, preventing formal verification of the claims in 'Closed form of the counit $Q$-value $\\\\varepsilon(\\\\Delta)\\\\cdot\\\\mathfrak{E}_0$'."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq8"
       }
     ]
   },

@@ -48,7 +48,19 @@
         },
         "reviewed_at": "2026-07-06T04:41:29.430Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:q-beta-q-eq-one-shadow-gate' → expected 'q_beta_q_eq_one_shadow_gate'; Lean declares: hopfJonesAtQOne, QOneShadowGateClass, qbeta_q_eq_one_shadow_anchors, q_eq_one_shadow_gate_reject_c2, q_eq_one_shadow_gate_reject_c3.... Structural match via content."
+        "notes": "Label 'prop:q-beta-q-eq-one-shadow-gate' \u2192 expected 'q_beta_q_eq_one_shadow_gate'; Lean declares: hopfJonesAtQOne, QOneShadowGateClass, qbeta_q_eq_one_shadow_anchors, q_eq_one_shadow_gate_reject_c2, q_eq_one_shadow_gate_reject_c3.... Structural match via content."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice. Grouped logical steps for clarity, removing repetitive transitional filler. Emphasized 'why before what'. Maintained mathematical and technical accuracy.",
+        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

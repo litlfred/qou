@@ -1357,7 +1357,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "substrate-radial-coordinate.lean:1",
-        "notes": "The mathematical claims in 'Substrate parameter as the radial coordinate' regarding 'Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). U...' are unverified due to compilation errors in the Lean sibling file substrate-radial-coordinate.lean: content/quantum-observable-universe/quantum-observable-universes/substrate-radial-coordinate.lean:53:3: error: unknown tactic."
+        "notes": "The mathematical claims in 'Substrate parameter as the radial coordinate' regarding 'Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md \u00a77c). U...' are unverified due to compilation errors in the Lean sibling file substrate-radial-coordinate.lean: content/quantum-observable-universe/quantum-observable-universes/substrate-radial-coordinate.lean:53:3: error: unknown tactic."
       }
     ],
     "da-vacuous": [
@@ -1397,7 +1397,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "substrate-radial-coordinate.ts:1",
-        "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Substrate parameter as the radial coordinate' (which asserts 'Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). U...')."
+        "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Substrate parameter as the radial coordinate' (which asserts 'Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md \u00a77c). U...')."
       }
     ],
     "da-overclaim": [
@@ -1517,7 +1517,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "substrate-radial-coordinate.ts:1",
-        "notes": "Key terms and symbols in 'Substrate parameter as the radial coordinate' (e.g. from 'Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). U...') are mathematically defined and unambiguous."
+        "notes": "Key terms and symbols in 'Substrate parameter as the radial coordinate' (e.g. from 'Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md \u00a77c). U...') are mathematically defined and unambiguous."
       }
     ],
     "da-empirical-fragility": [
@@ -1537,7 +1537,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "substrate-radial-coordinate.ts:1",
-        "notes": "The empirical claims in 'Substrate parameter as the radial coordinate' (quoting 'Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). U...') are structurally anchored to the QOU mass framework and are stable."
+        "notes": "The empirical claims in 'Substrate parameter as the radial coordinate' (quoting 'Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md \u00a77c). U...') are structurally anchored to the QOU mass framework and are stable."
       }
     ],
     "da-physical-implausibility": [
@@ -1598,7 +1598,19 @@
         "severity": "critical",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/substrate-radial-coordinate.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/substrate-radial-coordinate.lean:53:3: error: unknown tactic",
         "verdict": "open-objection",
-        "referee_argument": "The proposed formalization for 'Substrate parameter as the radial coordinate' (asserting 'Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). U...') fails to compile with error: content/quantum-observable-universe/quantum-observable-universes/substrate-radial-coordinate.lean:53:3: error: unknown tactic. A competent referee cannot accept this as a verified mathematical claim."
+        "referee_argument": "The proposed formalization for 'Substrate parameter as the radial coordinate' (asserting 'Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md \u00a77c). U...') fails to compile with error: content/quantum-observable-universe/quantum-observable-universes/substrate-radial-coordinate.lean:53:3: error: unknown tactic. A competent referee cannot accept this as a verified mathematical claim."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq8. Simplified the intro. Removed editorializing about 'arc layers'. Stripped back-references. Clarified the transition functions as gerbe morphisms and the role of the Woronowicz calculus deformation.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

@@ -1332,7 +1332,7 @@
         "scope": "limited",
         "ruling": "partial",
         "referee_argument": "Body presents q_0 as fixed by the muon identity; the block's witness pins q_0 on m_p/m_e and demotes m_mu/m_e to a 9.5-sigma prediction.",
-        "rebuttal": "partial — disclosed in sibling substrate-anchor-alternatives.md and re-pin audit 2026-05-30; muon identity is the legitimate transparent cross-check, but .md/.lean read stale vs the 2026-05-28 re-pin.",
+        "rebuttal": "partial \u2014 disclosed in sibling substrate-anchor-alternatives.md and re-pin audit 2026-05-30; muon identity is the legitimate transparent cross-check, but .md/.lean read stale vs the 2026-05-28 re-pin.",
         "evidence": [
           {
             "text": "local-substrate-q.md:11-21 vs .ts:21-24 witness anchor 'm_p/m_e'"
@@ -1361,7 +1361,7 @@
         "scope": "limited",
         "ruling": "partial",
         "referee_argument": "Lean hardcodes m_mu/m_e and proves only range-membership of the muon constant; never references m_p/m_e, so the formal artifact is one re-pin behind production.",
-        "rebuttal": "partial — Lean honestly scoped ('NOT part of the formal proof chain', validation:not_checked); muon identity remains valid as cross-check.",
+        "rebuttal": "partial \u2014 Lean honestly scoped ('NOT part of the formal proof chain', validation:not_checked); muon identity remains valid as cross-check.",
         "evidence": [
           {
             "text": "local-substrate-q.lean:17 'm_mu/m_e = 206.7682830'"
@@ -1390,7 +1390,7 @@
         "scope": "limited",
         "ruling": "rebutted",
         "referee_argument": "Could unique_q_solution be a self-assuming projection?",
-        "rebuttal": "rebutted — genuinely derives exists-unique via Real.sqrt inversion, sorry-free (linarith/ring/Real.sq_sqrt); well-posedness proved.",
+        "rebuttal": "rebutted \u2014 genuinely derives exists-unique via Real.sqrt inversion, sorry-free (linarith/ring/Real.sq_sqrt); well-posedness proved.",
         "evidence": [
           {
             "text": "local-substrate-q.lean:65-95"
@@ -1418,7 +1418,7 @@
         "scope": "limited",
         "ruling": "rebutted",
         "referee_argument": "Does the volume conjecture smuggle an unproved bridge?",
-        "rebuttal": "rebutted — flagged as tau-side naming not derivation; Vol(4_1)=3Cl_2(pi/3)~2.0299 is the standard figure-8 value, SnapPy-witnessed to 1e-14.",
+        "rebuttal": "rebutted \u2014 flagged as tau-side naming not derivation; Vol(4_1)=3Cl_2(pi/3)~2.0299 is the standard figure-8 value, SnapPy-witnessed to 1e-14.",
         "evidence": [
           {
             "text": "local-substrate-q-proof.md:11-16"
@@ -1444,7 +1444,7 @@
         },
         "result": "warn",
         "verdict": "survivable-objection",
-        "referee_argument": "The headline equation (1-q^-1)^2 = Vol(4_1)/(m_mu/m_e) presents q_0 as muon-determined, but the live pin (and the block's own witness) is the proton ratio m_p/m_e — a cross-check identity stated as the determination (disclosure gap, not a math error).",
+        "referee_argument": "The headline equation (1-q^-1)^2 = Vol(4_1)/(m_mu/m_e) presents q_0 as muon-determined, but the live pin (and the block's own witness) is the proton ratio m_p/m_e \u2014 a cross-check identity stated as the determination (disclosure gap, not a math error).",
         "reviewer": {
           "kind": "agent",
           "id": "local/devils-advocate-watcher",
@@ -1613,7 +1613,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/observations/local-substrate-q.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/local-substrate-q.lean:1 — content/quantum-observable-universe/observations/local-substrate-q.lean:72:12: error(lean.unknownIdentifier): Unknown constant `Real.sqrt_lt_one`"
+        "evidence": "content/quantum-observable-universe/observations/local-substrate-q.lean:1 \u2014 content/quantum-observable-universe/observations/local-substrate-q.lean:72:12: error(lean.unknownIdentifier): Unknown constant `Real.sqrt_lt_one`"
       }
     ],
     "bib-cite-resolves": [
@@ -1634,6 +1634,18 @@
         },
         "reviewed_at": "2026-07-05T04:39:43.766Z",
         "reviewed_sha": "7415132ccce30885dcfd323600b8bcf311c431e4"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote observations_seq16.md. Unified tone, adhered to present tense, removed future commitments from the introduction text.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

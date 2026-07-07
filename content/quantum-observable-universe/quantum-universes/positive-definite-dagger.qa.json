@@ -585,7 +585,7 @@
         "reviewed_at": "2026-07-05T11:55:26.473Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "severity": "major",
-        "evidence": "../qou/content/quantum-observable-universe/quantum-universes/positive-definite-dagger.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "../qou/content/quantum-observable-universe/quantum-universes/positive-definite-dagger.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -605,7 +605,7 @@
         "reviewed_at": "2026-07-05T11:55:26.473Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "severity": "major",
-        "evidence": "../qou/content/quantum-observable-universe/quantum-universes/positive-definite-dagger.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "../qou/content/quantum-observable-universe/quantum-universes/positive-definite-dagger.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1144,7 +1144,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Positivity stated over generic `End(𝟙) ≅ R` (a square in R via pivotal structure), no Real.*/order-over-ℝ hard-coded; matches the generic quantum-universes regime."
+        "notes": "Positivity stated over generic `End(\ud835\udfd9) \u2245 R` (a square in R via pivotal structure), no Real.*/order-over-\u211d hard-coded; matches the generic quantum-universes regime."
       }
     ],
     "wall-side-proof": [
@@ -1180,7 +1180,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Proof sketch uses antipode S²=id, Frobenius associativity, and non-degeneracy — algebraic; 'square in R, hence positive' is a pivotal-structure argument, no archimedean machinery (linarith/IVT/Real.*)."
+        "notes": "Proof sketch uses antipode S\u00b2=id, Frobenius associativity, and non-degeneracy \u2014 algebraic; 'square in R, hence positive' is a pivotal-structure argument, no archimedean machinery (linarith/IVT/Real.*)."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1231,8 +1231,8 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "major",
-        "evidence": "positive-definite-dagger.lean:57-60: `theorem positive_definite_dagger_exists (C) ... : ∃ (p : PositiveDefiniteStructure C), True := sorry` vs positive-definite-dagger.md:10-15: \"† is a positive-definite involutive structure ... for every non-zero morphism f : 𝟙 → X, the composite f† ∘ f is a positive element\".",
-        "notes": "Theorem-changing divergence: the narrative asserts the substantive positive-definiteness property (∀ nonzero f, f†∘f positive). The Lean conclusion is `∃ p, True` — a `True`-weakened existence that asserts NONE of the positivity content (the `True` conjunct discharges vacuously); the real positivity is buried only in the unused `positive_definite` field of the structure, and the whole thing is `sorry`. Lean does not encode the narrative claim. Should be `∃ p : PositiveDefiniteStructure C, ...` stating the genuine property, not paired with `True`."
+        "evidence": "positive-definite-dagger.lean:57-60: `theorem positive_definite_dagger_exists (C) ... : \u2203 (p : PositiveDefiniteStructure C), True := sorry` vs positive-definite-dagger.md:10-15: \"\u2020 is a positive-definite involutive structure ... for every non-zero morphism f : \ud835\udfd9 \u2192 X, the composite f\u2020 \u2218 f is a positive element\".",
+        "notes": "Theorem-changing divergence: the narrative asserts the substantive positive-definiteness property (\u2200 nonzero f, f\u2020\u2218f positive). The Lean conclusion is `\u2203 p, True` \u2014 a `True`-weakened existence that asserts NONE of the positivity content (the `True` conjunct discharges vacuously); the real positivity is buried only in the unused `positive_definite` field of the structure, and the whole thing is `sorry`. Lean does not encode the narrative claim. Should be `\u2203 p : PositiveDefiniteStructure C, ...` stating the genuine property, not paired with `True`."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1283,7 +1283,7 @@
           "lean": "2dabb305a819"
         },
         "result": "warn",
-        "notes": ".md proof sketch (involutive via S²=id+Frobenius assoc; positivity via non-degeneracy) is clear, but Lean does none of it: one file sorries, the other assumes the implication.",
+        "notes": ".md proof sketch (involutive via S\u00b2=id+Frobenius assoc; positivity via non-degeneracy) is clear, but Lean does none of it: one file sorries, the other assumes the implication.",
         "reviewed_at": "2026-06-25T17:08:05.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1347,7 +1347,7 @@
           "lean": "2dabb305a819"
         },
         "result": "pass",
-        "notes": "Well-posed: Frobenius dagger f†=∫∘μ(S(f)⊗-) is involutive + positive-definite (categorical GNS positivity, Kock Ch.2).",
+        "notes": "Well-posed: Frobenius dagger f\u2020=\u222b\u2218\u03bc(S(f)\u2297-) is involutive + positive-definite (categorical GNS positivity, Kock Ch.2).",
         "reviewed_at": "2026-06-25T17:08:05.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1471,7 +1471,7 @@
           "lean": "2dabb305a819"
         },
         "result": "fail",
-        "notes": "Both Lean files deficient: positive-definite-dagger.lean proves ∃p,True := sorry (vacuous True goal + sorry); frobenius_dagger_positive_definite.lean axiomatises the positivity implication as class field claim_dagger_positive. Neither derives f†∘f>0.",
+        "notes": "Both Lean files deficient: positive-definite-dagger.lean proves \u2203p,True := sorry (vacuous True goal + sorry); frobenius_dagger_positive_definite.lean axiomatises the positivity implication as class field claim_dagger_positive. Neither derives f\u2020\u2218f>0.",
         "reviewed_at": "2026-06-25T17:08:05.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1527,7 +1527,7 @@
           "lean": "2dabb305a819"
         },
         "result": "fail",
-        "notes": "frobenius_dagger_positive_definite := ctx.claim_dagger_positive f h — projects the class field that IS the positivity conclusion. Self-assuming projection.",
+        "notes": "frobenius_dagger_positive_definite := ctx.claim_dagger_positive f h \u2014 projects the class field that IS the positivity conclusion. Self-assuming projection.",
         "reviewed_at": "2026-06-25T17:08:05.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1982,10 +1982,22 @@
         "reviewed_at": "2026-06-28T11:19:33.342Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/quantum-universes/positive-definite-dagger.md:1 — Let (\\mathbf{C}, A, \\tau) be a",
+        "evidence": "content/quantum-observable-universe/quantum-universes/positive-definite-dagger.md:1 \u2014 Let (\\mathbf{C}, A, \\tau) be a",
         "notes": "Conjecture/Proof is open with sorry placeholders, hence the objection is survivable.",
         "verdict": "survivable-objection",
         "referee_argument": "The positive-definiteness of the dagger structure remains unproven, relying on a sorry placeholder in content/quantum-observable-universe/quantum-universes/positive-definite-dagger.lean."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Shortened the consequences introduction. Clearly defined the Frobenius relation and involutive structures. Separated the adjoint notations properly.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

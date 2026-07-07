@@ -30,7 +30,7 @@
         },
         "reviewed_at": "2026-07-04T00:11:46.063Z",
         "reviewed_sha": "b3302691b06ff4207b2e72cda23501bf922042e8",
-        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+        "notes": "Candidate flagged by heuristic scan \u2014 requires agent confirmation per lean-proof-vacuity-audit."
       },
       {
         "field_hash": {
@@ -47,7 +47,7 @@
         },
         "reviewed_at": "2026-07-04T00:15:23.700181Z",
         "reviewed_sha": "b3302691b06ff4207b2e72cda23501bf922042e8",
-        "notes": "Agent-CONFIRMED genuine (ledger 2026-07-03): both theorems return inst.regime_eq verbatim — a String-label equation, trivially satisfiable; the AJ-saddle identification is not encoded. Demote to conjecture or re-encode; owner sign-off pending.",
+        "notes": "Agent-CONFIRMED genuine (ledger 2026-07-03): both theorems return inst.regime_eq verbatim \u2014 a String-label equation, trivially satisfiable; the AJ-saddle identification is not encoded. Demote to conjecture or re-encode; owner sign-off pending.",
         "severity": "critical"
       },
       {
@@ -65,7 +65,7 @@
         },
         "reviewed_at": "2026-07-04T00:30:51.499613Z",
         "reviewed_sha": "c588e48cb73bc995f7d35dc988f12a9aef882e2c",
-        "notes": "RESOLVED (supersedes the 2026-07-03 agent fail): sibling re-encoded — String-label classes replaced by content-bearing QDiffOperator model; conditional theorems now DERIVE via proved superposition lemma (Annihilates.add_smul) instead of projecting a conclusion field; qWeyl_commutation + saddle_regimes_disjoint proved unconditionally; no class instance fabricated. lean-direct exit 0, sorry-free."
+        "notes": "RESOLVED (supersedes the 2026-07-03 agent fail): sibling re-encoded \u2014 String-label classes replaced by content-bearing QDiffOperator model; conditional theorems now DERIVE via proved superposition lemma (Annihilates.add_smul) instead of projecting a conclusion field; qWeyl_commutation + saddle_regimes_disjoint proved unconditionally; no class instance fabricated. lean-direct exit 0, sorry-free."
       }
     ],
     "voice-status-leak": [
@@ -1100,6 +1100,18 @@
         },
         "reviewed_at": "2026-07-05T23:06:25.607Z",
         "reviewed_sha": "516c0a8b09f6d2042487867c114c5d002cd32290"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Connected the orphan stochastic mechanics blocks cleanly. Made the reverse crystal limits and AJ machinery arguments crisp.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

@@ -1043,7 +1043,7 @@
         },
         "reviewed_at": "2026-06-22T02:50:55.754Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+        "notes": "Candidate flagged by heuristic scan \u2014 requires agent confirmation per lean-proof-vacuity-audit."
       },
       {
         "field_hash": {
@@ -1214,7 +1214,7 @@
           "ts": "184752838afe"
         },
         "result": "pass",
-        "notes": "Explicit finite computation (6 crossings, 15 pairs, trace=-12, -12=2·(-6)). Clear & checkable arithmetic. No Lean.",
+        "notes": "Explicit finite computation (6 crossings, 15 pairs, trace=-12, -12=2\u00b7(-6)). Clear & checkable arithmetic. No Lean.",
         "reviewed_at": "2026-06-25T17:07:14.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1275,7 +1275,7 @@
           "ts": "184752838afe"
         },
         "result": "pass",
-        "notes": "Goal (tr(Σ s_k s_l c_k c_l)=-12=dim(V)·χ(Σ_4) for Borromean) well-posed; conditional on prop:quaternion-from-hecke-eigenspaces. No Lean.",
+        "notes": "Goal (tr(\u03a3 s_k s_l c_k c_l)=-12=dim(V)\u00b7\u03c7(\u03a3_4) for Borromean) well-posed; conditional on prop:quaternion-from-hecke-eigenspaces. No Lean.",
         "reviewed_at": "2026-06-25T17:07:14.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1336,7 +1336,7 @@
           "ts": "184752838afe"
         },
         "result": "warn",
-        "notes": "χ(Σ_4) bridge interesting but -12=dim(V)·χ identification rests on the specific Q_8 crossing assignment; coincidence-flavored. No Lean.",
+        "notes": "\u03c7(\u03a3_4) bridge interesting but -12=dim(V)\u00b7\u03c7 identification rests on the specific Q_8 crossing assignment; coincidence-flavored. No Lean.",
         "reviewed_at": "2026-06-25T17:07:14.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1845,6 +1845,18 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The referenced Lean file content/quantum-observable-universe/mass-theory/crossed-module-euler-characteristic.lean is missing, leading to complete divergence.",
         "severity": "minor"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
+        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

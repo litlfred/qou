@@ -1136,7 +1136,7 @@
         "reviewed_at": "2026-06-28T07:55:42.658Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The Lean sibling content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.lean fails compilation, indicating a reproducibility failure.",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.lean:1 — /Users/litlfred/space_cats/qou/content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.lean:18:24: error: failed to synthesize",
+        "evidence": "content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.lean:1 \u2014 /Users/litlfred/space_cats/qou/content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.lean:18:24: error: failed to synthesize",
         "severity": "minor"
       }
     ],
@@ -1158,6 +1158,18 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.lean contains compilation errors: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.lean:18:24: error: failed to synthesize, invalidating the claimed formalization.",
         "severity": "critical"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote fluid-dynamics_seq0.md. Replaced passives with strong action verbs. Used present tense consistently. Emphasized linearity and succinctness.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

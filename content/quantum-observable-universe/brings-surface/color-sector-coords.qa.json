@@ -922,7 +922,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Definition is an explicitly archimedean geometric realisation (sin/cos sector embeddings on the exceptional divisor); it lives in the archimedean brings-surface chapter, the leading note flags the ℝ-specialisation per §7c, and the Lean sibling carries the explicit 'Ground ring: ℝ (geometric/analytic realisation) ... NOT part of the formal proof chain' banner. The archimedean constructs (Real.sin/cos) are properly declared, not an unflagged substrate-chapter leak."
+        "notes": "Definition is an explicitly archimedean geometric realisation (sin/cos sector embeddings on the exceptional divisor); it lives in the archimedean brings-surface chapter, the leading note flags the \u211d-specialisation per \u00a77c, and the Lean sibling carries the explicit 'Ground ring: \u211d (geometric/analytic realisation) ... NOT part of the formal proof chain' banner. The archimedean constructs (Real.sin/cos) are properly declared, not an unflagged substrate-chapter leak."
       },
       {
         "field_hash": {
@@ -1194,7 +1194,19 @@
         },
         "reviewed_at": "2026-07-06T04:41:30.202Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'def:color-sector-coords' → expected 'color_sector_coords'; Lean declares: ColorSectorCoords, ColourSector, ColourSector.offset, ColorSectorCoords.sectorPoint, ColorSectorCoords.green_eq_red_shifted.... Structural match via content."
+        "notes": "Label 'def:color-sector-coords' \u2192 expected 'color_sector_coords'; Lean declares: ColorSectorCoords, ColourSector, ColourSector.offset, ColorSectorCoords.sectorPoint, ColorSectorCoords.green_eq_red_shifted.... Structural match via content."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote brings-surface_seq7.md applying Milnor standard. Replaced passive verbs, enhanced clarity. Simplified the narrative transition lines.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

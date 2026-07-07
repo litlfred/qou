@@ -1111,7 +1111,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
-        "evidence": "content/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.lean:1 — Lean file exists",
+        "evidence": "content/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.lean:1 \u2014 Lean file exists",
         "severity": "minor"
       },
       {
@@ -1145,7 +1145,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Lean proof contains compilation errors.",
-        "evidence": "content/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.lean:1 — content/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.lean:36:40: error: invalid binder annotation, type is not a class instance",
+        "evidence": "content/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.lean:1 \u2014 content/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.lean:36:40: error: invalid binder annotation, type is not a class instance",
         "severity": "minor"
       },
       {
@@ -1210,7 +1210,7 @@
         },
         "reviewed_at": "2026-07-06T04:41:29.430Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'lem:tower-pair-equality-fixed-level' → expected 'tower_pair_equality_fixed_level'; Lean declares: JetLevelPairData, pairContribTotal, TowerPairEqualityFixedLevel, TowerPairEqualitySymmetric. Structural match via content."
+        "notes": "Label 'lem:tower-pair-equality-fixed-level' \u2192 expected 'tower_pair_equality_fixed_level'; Lean declares: JetLevelPairData, pairContribTotal, TowerPairEqualityFixedLevel, TowerPairEqualitySymmetric. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1916,7 +1916,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
-        "evidence": "content/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.lean:1 — content/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.lean:36:40: error: invalid binder annotation, type is not a class instance",
+        "evidence": "content/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.lean:1 \u2014 content/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.lean:36:40: error: invalid binder annotation, type is not a class instance",
         "severity": "minor"
       },
       {
@@ -1988,6 +1988,18 @@
         },
         "reviewed_at": "2026-07-05T11:55:26.473Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
+        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

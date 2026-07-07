@@ -1040,7 +1040,7 @@
         },
         "reviewed_at": "2026-07-02T17:07:15.000Z",
         "reviewed_sha": "a9ce9ecfe24e6c7c9d0b9f25699b35ec666faa32",
-        "notes": "4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): current Lean is honest — real statement/derivation or cited sorry; the 2026-06-22 placeholder-marker fail predates the 2026-06-30 rewrite (hash drift verified). Criterion pass."
+        "notes": "4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): current Lean is honest \u2014 real statement/derivation or cited sorry; the 2026-06-22 placeholder-marker fail predates the 2026-06-30 rewrite (hash drift verified). Criterion pass."
       }
     ],
     "voice-statement-no-interpretation": [
@@ -1197,7 +1197,7 @@
           "ts": "5effc0f8be48"
         },
         "result": "warn",
-        "notes": "Lean is a single impl_* projection of a definitional Φ₁ identity. .md has a clear primal/dual LP + numeric evaluation, but the Lean encodes none of the optimisation.",
+        "notes": "Lean is a single impl_* projection of a definitional \u03a6\u2081 identity. .md has a clear primal/dual LP + numeric evaluation, but the Lean encodes none of the optimisation.",
         "reviewed_at": "2026-06-25T17:08:54.000Z",
         "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
@@ -1258,7 +1258,7 @@
           "ts": "5effc0f8be48"
         },
         "result": "pass",
-        "notes": "Goal well-posed (H2 covalent binding via LP dual, y_cov*=2Φ₁^H−Φ₁^H2>0, explicit 50-dps numerics) but the Lean only states the volume sum identity; conditional on a conjecture.",
+        "notes": "Goal well-posed (H2 covalent binding via LP dual, y_cov*=2\u03a6\u2081^H\u2212\u03a6\u2081^H2>0, explicit 50-dps numerics) but the Lean only states the volume sum identity; conditional on a conjecture.",
         "reviewed_at": "2026-06-25T17:08:53.000Z",
         "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
@@ -1376,7 +1376,7 @@
           "ts": "5effc0f8be48"
         },
         "result": "fail",
-        "notes": "Placeholder stub: theorem proves only the volume identity Φ₁^H2=Σln|V̂_i| (i=0..2), ASSUMED via opaque ctx.h2_lp_dual_bound and projected from impl_*. The .md LP-dual selection / binding-energy claim is not encoded.",
+        "notes": "Placeholder stub: theorem proves only the volume identity \u03a6\u2081^H2=\u03a3ln|V\u0302_i| (i=0..2), ASSUMED via opaque ctx.h2_lp_dual_bound and projected from impl_*. The .md LP-dual selection / binding-energy claim is not encoded.",
         "reviewed_at": "2026-06-25T17:08:53.000Z",
         "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
@@ -1429,7 +1429,7 @@
           "ts": "5effc0f8be48"
         },
         "result": "fail",
-        "notes": "Body := ctx.impl_h2_lp_dual_binding h: single postulated implication field applied to the ground-state hypothesis directly yields the conclusion equation — projection, no derivation.",
+        "notes": "Body := ctx.impl_h2_lp_dual_binding h: single postulated implication field applied to the ground-state hypothesis directly yields the conclusion equation \u2014 projection, no derivation.",
         "reviewed_at": "2026-06-25T17:08:53.000Z",
         "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
@@ -1862,6 +1862,18 @@
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/molecular-construction/h2-lp-dual-binding.lean is missing, preventing formal verification of the claims in 'LP dual gives optimal $H_2$ binding'.",
         "severity": "critical"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote molecular-construction_seq3.md. Smoothed transitions, applied 'we/our', enforced brevity and economy, and removed editorializing.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

@@ -888,7 +888,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "definition in sec:fundamental-fermions (lepton sector) alongside electron-knot/neutrino-knot; the positron is exactly this section's subject and names a new construction (mirror trefoil σ(T_{2,3}))."
+        "notes": "definition in sec:fundamental-fermions (lepton sector) alongside electron-knot/neutrino-knot; the positron is exactly this section's subject and names a new construction (mirror trefoil \u03c3(T_{2,3}))."
       }
     ],
     "wall-side-statement": [
@@ -924,7 +924,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Definition is over the formal ground ring R_q=ℤ[q,q⁻¹] (Lean) with specialisation ι:R_q→ℝ named for evaluation; charge/orientation are integers. No archimedean construct hard-coded — generic/substrate side, consistent with a knot definition."
+        "notes": "Definition is over the formal ground ring R_q=\u2124[q,q\u207b\u00b9] (Lean) with specialisation \u03b9:R_q\u2192\u211d named for evaluation; charge/orientation are integers. No archimedean construct hard-coded \u2014 generic/substrate side, consistent with a knot definition."
       }
     ],
     "da-false-claim": [
@@ -1162,7 +1162,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/positron-knot.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "positron-knot.lean:1 — content/quantum-observable-universe/predicted-spectra/positron-knot.lean:28:13: error: unexpected token 'section'; expected 'lemma'"
+        "evidence": "positron-knot.lean:1 \u2014 content/quantum-observable-universe/predicted-spectra/positron-knot.lean:28:13: error: unexpected token 'section'; expected 'lemma'"
       }
     ],
     "da-referee-verdict": [
@@ -1221,7 +1221,19 @@
         },
         "reviewed_at": "2026-07-06T04:41:30.359Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'def:positron-knot' → expected 'positron_knot'; Lean declares: R_q, q_param, q_inv_param, Positron, positron_is_mirror_torus_knot.... Structural match via content."
+        "notes": "Label 'def:positron-knot' \u2192 expected 'positron_knot'; Lean declares: R_q, q_param, q_inv_param, Positron, positron_is_mirror_torus_knot.... Structural match via content."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote prose blocks to adhere to Milnor standards. Improved economy, preserved all math. Forward references resolved or smoothed.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

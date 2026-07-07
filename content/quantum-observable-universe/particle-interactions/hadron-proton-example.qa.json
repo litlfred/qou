@@ -1696,7 +1696,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:57.781Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The block 'The proton as a Borromean hadron' presents substantial mathematical content: The proton is a hadron — a stable knot composite — whose three constituents are linked in a Borromean configuration.",
+        "notes": "The block 'The proton as a Borromean hadron' presents substantial mathematical content: The proton is a hadron \u2014 a stable knot composite \u2014 whose three constituents are linked in a Borromean configuration.",
         "severity": "minor"
       }
     ],
@@ -1906,6 +1906,18 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'The proton as a Borromean hadron' are consistent."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq14 to strictly enforce Milnor brevity. Trimmed fluff and meta-commentary, ensuring straightforward descriptive sentences. Fixed non-linear forward references.",
+        "reviewed_at": "2026-07-06T22:47:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

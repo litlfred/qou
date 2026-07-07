@@ -1773,7 +1773,7 @@
         },
         "reviewed_at": "2026-06-23T11:59:48.389Z",
         "reviewed_sha": "010231d905101857ff9f9b277f96791cf7b461bb",
-        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+        "notes": "Candidate flagged by heuristic scan \u2014 requires agent confirmation per lean-proof-vacuity-audit."
       },
       {
         "field_hash": {
@@ -2027,7 +2027,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/typed-garside-element.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/typed-garside-element.lean:1 — content/quantum-observable-universe/particle-interactions/typed-garside-element.lean:12:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RingTheory/HeckeAlgebra.olean' of module Mathlib.RingTheory.HeckeAlgebra does not exist"
+        "evidence": "content/quantum-observable-universe/particle-interactions/typed-garside-element.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/typed-garside-element.lean:12:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RingTheory/HeckeAlgebra.olean' of module Mathlib.RingTheory.HeckeAlgebra does not exist"
       }
     ],
     "da-referee-verdict": [
@@ -2066,7 +2066,13 @@
         },
         "reviewed_at": "2026-07-06T04:41:29.802Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'def:typed-garside-element' → expected 'typed_garside_element'; Lean declares: NucleonType, typedCrossingCoeff, NuclearOrdering, protonCount, neutronCount.... Structural match via content."
+        "notes": "Label 'def:typed-garside-element' \u2192 expected 'typed_garside_element'; Lean declares: NucleonType, typedCrossingCoeff, NuclearOrdering, protonCount, neutronCount.... Structural match via content."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq7"
       }
     ]
   },

@@ -888,7 +888,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The Lean theorem 'qou:QOU.BraidGroup' statement in content/quantum-observable-universe/braids-and-knots/braid-group.lean structurally matches the mathematical formulation of 'def:braid-group' in content/quantum-observable-universe/braids-and-knots/braid-group.md.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/braid-group.lean:1 — Lean file exists"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/braid-group.lean:1 \u2014 Lean file exists"
       }
     ],
     "da-false-claim": [
@@ -1154,6 +1154,18 @@
         },
         "reviewed_at": "2026-07-05T11:55:26.473Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Applied Milnor brevity. Cleaned up forward references (such as to Trefoil knot group). Shortened declarative sentences in knot-notation-convention and fundamental-knots-operator-basis. Kept math and tables untouched.",
+        "reviewed_at": "2026-07-06T22:42:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

@@ -979,7 +979,7 @@
           "lean": "c1db26f8977c"
         },
         "result": "pass",
-        "notes": "Goal: algebraic independence of Vol(4_1),Vol(5_2),Vol(B_3) over ℚ[q,q⁻¹]; explicit special case of Kontsevich-Zagier/Grothendieck period conj. Library Lean proves structural half + alg-indep⇒irrational chain. Deeply well-posed.",
+        "notes": "Goal: algebraic independence of Vol(4_1),Vol(5_2),Vol(B_3) over \u211a[q,q\u207b\u00b9]; explicit special case of Kontsevich-Zagier/Grothendieck period conj. Library Lean proves structural half + alg-indep\u21d2irrational chain. Deeply well-posed.",
         "reviewed_at": "2026-06-25T17:07:16.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1268,7 +1268,19 @@
         },
         "reviewed_at": "2026-07-06T04:41:30.359Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Conjecture with class/axiom axiomatisation — structural match."
+        "notes": "Conjecture with class/axiom axiomatisation \u2014 structural match."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote prose blocks to adhere to Milnor standards. Improved economy, preserved all math.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

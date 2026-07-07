@@ -1064,7 +1064,7 @@
         },
         "reviewed_at": "2026-06-22T02:50:55.754Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+        "notes": "Candidate flagged by heuristic scan \u2014 requires agent confirmation per lean-proof-vacuity-audit."
       },
       {
         "field_hash": {
@@ -1591,7 +1591,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean:1 — content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean:33:45: error: Function expected at"
+        "evidence": "content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean:1 \u2014 content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean:33:45: error: Function expected at"
       }
     ],
     "da-referee-verdict": [
@@ -1613,6 +1613,18 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean contains compilation errors: content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean:33:45: error: Function expected at, invalidating the claimed formalization.",
         "severity": "critical"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Applied Milnor exposition standard (H1-H8) and brevity rules. Shortened sentences, removed editorializing ('surprisingly', 'remarkably'), replaced 'this book' with 'this paper', and maintained Math, markdown, and cross-block consistency.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

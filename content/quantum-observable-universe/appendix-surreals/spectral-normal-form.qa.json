@@ -938,7 +938,7 @@
           "ts": "bccb34242b20"
         },
         "result": "pass",
-        "notes": "Well-posed dictionary: spectral gap/closure & singularity type read off leading Ow-exponent of eigenvalues (rational in ε); verified on transfer matrix (gap 2, Ow=-2).",
+        "notes": "Well-posed dictionary: spectral gap/closure & singularity type read off leading Ow-exponent of eigenvalues (rational in \u03b5); verified on transfer matrix (gap 2, Ow=-2).",
         "reviewed_at": "2026-06-25T16:54:08.000Z",
         "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
         "reviewer": {
@@ -961,7 +961,7 @@
           "ts": "bccb34242b20"
         },
         "result": "pass",
-        "notes": "Conjecture; class SpectralNormalForm is honest §3b placeholder (residual=0 + instance:=sorry), self-labeled placeholder. No theorem masquerade.",
+        "notes": "Conjecture; class SpectralNormalForm is honest \u00a73b placeholder (residual=0 + instance:=sorry), self-labeled placeholder. No theorem masquerade.",
         "reviewed_at": "2026-06-25T16:54:08.000Z",
         "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
         "reviewer": {
@@ -1018,7 +1018,7 @@
           "ts": "bccb34242b20"
         },
         "result": "pass",
-        "notes": "No hypotheses; residual:ℝ=0 satisfiable.",
+        "notes": "No hypotheses; residual:\u211d=0 satisfiable.",
         "reviewed_at": "2026-06-25T16:54:08.000Z",
         "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
         "reviewer": {
@@ -1037,7 +1037,7 @@
           "ts": "bccb34242b20"
         },
         "result": "pass",
-        "notes": "Algebraic case tractable (eigenvalues rational in ε ⇒ Ow directly); transcendental case needs Berarducci–Mantova; clear falsification.",
+        "notes": "Algebraic case tractable (eigenvalues rational in \u03b5 \u21d2 Ow directly); transcendental case needs Berarducci\u2013Mantova; clear falsification.",
         "reviewed_at": "2026-06-25T16:54:09.000Z",
         "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
         "reviewer": {
@@ -1060,7 +1060,7 @@
           "ts": "bccb34242b20"
         },
         "result": "pass",
-        "notes": "Novel Ow-exponent dictionary replacing ε-δ spectral perturbation; .md frames it as a dictionary 'more testable than open', moderate depth.",
+        "notes": "Novel Ow-exponent dictionary replacing \u03b5-\u03b4 spectral perturbation; .md frames it as a dictionary 'more testable than open', moderate depth.",
         "reviewed_at": "2026-06-25T16:54:09.000Z",
         "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
         "reviewer": {
@@ -1305,6 +1305,18 @@
         "severity": "minor",
         "verdict": "survivable-objection",
         "referee_argument": "The conjectured algebraic or physical relations are completely unproven, and the sibling Lean file is missing."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Ensured references to 'the main paper' and 'the QOU paper' were changed to 'this paper'. Maintained consistency and economy of language.",
+        "reviewed_at": "2026-07-06T22:46:20Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

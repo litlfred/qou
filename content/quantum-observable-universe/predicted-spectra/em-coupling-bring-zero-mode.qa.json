@@ -1241,7 +1241,7 @@
           "ts": "127b17240b9c"
         },
         "result": "pass",
-        "notes": "Goal: additive Bring zero-mode 1/α=q[9][10]+2/(3π); residual -4.2e-6. Well-posed, two independent geometric identifications of 2/(3π).",
+        "notes": "Goal: additive Bring zero-mode 1/\u03b1=q[9][10]+2/(3\u03c0); residual -4.2e-6. Well-posed, two independent geometric identifications of 2/(3\u03c0).",
         "reviewed_at": "2026-06-25T17:05:19.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1302,7 +1302,7 @@
           "ts": "127b17240b9c"
         },
         "result": "pass",
-        "notes": "Geometric decomposition of α correction via Bring genus-4 Hodge/Gauss-Bonnet + group-homology pairing bypassing BW transcendence obstruction; nontrivial framing.",
+        "notes": "Geometric decomposition of \u03b1 correction via Bring genus-4 Hodge/Gauss-Bonnet + group-homology pairing bypassing BW transcendence obstruction; nontrivial framing.",
         "reviewed_at": "2026-06-25T17:05:19.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1359,7 +1359,7 @@
           "ts": "127b17240b9c"
         },
         "result": "pass",
-        "notes": "§3b-cond: bring_zero_mode_additive_form [BringZeroModeBlochClass] proved sorry-free via hodgeRatio_at_g4; hodge/area identity 240·(π/20)=12π⇒2/(3π) checks. Honest conditional, conj-carrying instance=sorry per §3b.",
+        "notes": "\u00a73b-cond: bring_zero_mode_additive_form [BringZeroModeBlochClass] proved sorry-free via hodgeRatio_at_g4; hodge/area identity 240\u00b7(\u03c0/20)=12\u03c0\u21d22/(3\u03c0) checks. Honest conditional, conj-carrying instance=sorry per \u00a73b.",
         "reviewed_at": "2026-06-25T17:05:19.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1412,7 +1412,7 @@
           "ts": "127b17240b9c"
         },
         "result": "pass",
-        "notes": "Main thm unpacks hZ.bring_zero_mode_realised then rw[hθ,hodgeRatio_at_g4] — transforms witness via the proved g=4 identity, not a bare field projection.",
+        "notes": "Main thm unpacks hZ.bring_zero_mode_realised then rw[h\u03b8,hodgeRatio_at_g4] \u2014 transforms witness via the proved g=4 identity, not a bare field projection.",
         "reviewed_at": "2026-06-25T17:05:19.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1501,7 +1501,7 @@
           "ts": "127b17240b9c"
         },
         "result": "pass",
-        "notes": "Class inhabited (instance canonical, sorry=conjecture per §3b); hodgeRatio_at_g4/homology_ratio_exact use only Real.pi≠0. Premises satisfiable.",
+        "notes": "Class inhabited (instance canonical, sorry=conjecture per \u00a73b); hodgeRatio_at_g4/homology_ratio_exact use only Real.pi\u22600. Premises satisfiable.",
         "reviewed_at": "2026-06-25T17:05:19.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1554,7 +1554,7 @@
           "ts": "127b17240b9c"
         },
         "result": "pass",
-        "notes": "[hZ:BringZeroModeBlochClass] used (obtain ⟨θ,hθ⟩); g param in hodgeRatio used. No idle binders.",
+        "notes": "[hZ:BringZeroModeBlochClass] used (obtain \u27e8\u03b8,h\u03b8\u27e9); g param in hodgeRatio used. No idle binders.",
         "reviewed_at": "2026-06-25T17:05:19.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1844,6 +1844,18 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Additive Bring zero-mode form $1/\\\\alpha_{EM} = q\\\\cdot[9]_q\\\\cdot[10]_q + 2g/(4\\\\pi(g-1))$ (conditional)' are consistent."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote prose blocks to adhere to Milnor standards. Improved economy, preserved all math.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

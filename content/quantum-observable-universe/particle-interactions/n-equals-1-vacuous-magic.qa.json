@@ -2496,7 +2496,7 @@
         },
         "reviewed_at": "2026-07-06T04:41:29.802Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:n-equals-1-vacuous-magic' → expected 'n_equals_1_vacuous_magic'; Lean declares: one_isAlgebraicallyPrime. Structural match via content."
+        "notes": "Label 'prop:n-equals-1-vacuous-magic' \u2192 expected 'n_equals_1_vacuous_magic'; Lean declares: one_isAlgebraicallyPrime. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2947,6 +2947,12 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Vacuous primality at $n = 1$' are consistent."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq3"
       }
     ]
   },

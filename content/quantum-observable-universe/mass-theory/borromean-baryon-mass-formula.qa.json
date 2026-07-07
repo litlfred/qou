@@ -962,7 +962,7 @@
         "scope": "structural",
         "ruling": "surviving",
         "referee_argument": "Block presents lambda_scale as a live conjectural scale with 'open R&D', contradicting the standing purge.",
-        "rebuttal": "none — survived: contradicts sibling lambda-scale-substrate-form.md ('structurally falsified ... Do not revive'), its own witness ('RESOLVED post-PR #1080'), and AGENTS.md:660 standing purge. Cited invariant: the Family A absorption proof (PR #1080).",
+        "rebuttal": "none \u2014 survived: contradicts sibling lambda-scale-substrate-form.md ('structurally falsified ... Do not revive'), its own witness ('RESOLVED post-PR #1080'), and AGENTS.md:660 standing purge. Cited invariant: the Family A absorption proof (PR #1080).",
         "evidence": [
           {
             "text": "borromean-baryon-mass-formula.md:74-93 'lambda_scale ... open R&D item ... conjectural common scale'"
@@ -1007,8 +1007,8 @@
         "result": "fail",
         "scope": "limited",
         "ruling": "surviving",
-        "referee_argument": ".md claims the formula reproduces CODATA m_p/m_n; the Lean class axiomatises that content as ': True' vacuous fields, proving nothing about the CODATA match (§1a / proof-statement-integrity).",
-        "rebuttal": "none — survived: the ': True' field is precisely the audit-dodge §1a forbids.",
+        "referee_argument": ".md claims the formula reproduces CODATA m_p/m_n; the Lean class axiomatises that content as ': True' vacuous fields, proving nothing about the CODATA match (\u00a71a / proof-statement-integrity).",
+        "rebuttal": "none \u2014 survived: the ': True' field is precisely the audit-dodge \u00a71a forbids.",
         "evidence": [
           {
             "text": "borromean-baryon-mass-formula.lean:139-142 'proton_matches_codata : True'"
@@ -1053,8 +1053,8 @@
         "result": "fail",
         "scope": "limited",
         "ruling": "surviving",
-        "referee_argument": "Witness has assertions:[] yet .ts status:'verified' — an empty assertion array verifies nothing.",
-        "rebuttal": "partial — witness data carries the dS agreement numbers, but the green status is unearned with zero assertions.",
+        "referee_argument": "Witness has assertions:[] yet .ts status:'verified' \u2014 an empty assertion array verifies nothing.",
+        "rebuttal": "partial \u2014 witness data carries the dS agreement numbers, but the green status is unearned with zero assertions.",
         "evidence": [
           {
             "text": "m-baryon-volume-form.witness.json 'assertions:[], allPassed:true'; .ts:18 status:'verified'"
@@ -1101,7 +1101,7 @@
         "scope": "limited",
         "ruling": "partial",
         "referee_argument": "Per-baryon lambda_scale fitted to each CODATA mass is a hidden per-observable DOF.",
-        "rebuttal": "partial — block honestly isolates dS (1015 ppm, no individual fit) as the testable claim; absolute masses remain fits.",
+        "rebuttal": "partial \u2014 block honestly isolates dS (1015 ppm, no individual fit) as the testable claim; absolute masses remain fits.",
         "evidence": [
           {
             "text": "borromean-baryon-mass-formula.md:47-57"
@@ -1148,7 +1148,7 @@
         "scope": "limited",
         "ruling": "rebutted",
         "referee_argument": "Uses Vol(B3)/hbar_q^2, the documented wrong absolute-mass trap (guardrail.md:30).",
-        "rebuttal": "rebutted — block applies it to ratios m_B/m_e with an open scale, stays a conjecture, does not claim to be canonical_mass.",
+        "rebuttal": "rebutted \u2014 block applies it to ratios m_B/m_e with an open scale, stays a conjecture, does not claim to be canonical_mass.",
         "evidence": [
           {
             "text": "guardrail.md:30"
@@ -1371,7 +1371,19 @@
         },
         "reviewed_at": "2026-07-06T04:41:29.430Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Conjecture with class/axiom axiomatisation — structural match."
+        "notes": "Conjecture with class/axiom axiomatisation \u2014 structural match."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote prose sections of mass-theory_seq46.md to enforce H1-H8 and milnor-brevity. Preserved all math blocks and original section markers. Ensured linear flow, minimal technical clutter, and short declarative sentences.",
+        "reviewed_at": "2026-07-06T22:51:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

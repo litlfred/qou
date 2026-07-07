@@ -1081,8 +1081,20 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
-        "referee_argument": "none — expository prose contains no surviving objections.",
+        "referee_argument": "none \u2014 expository prose contains no surviving objections.",
         "severity": "minor"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Applied Milnor brevity. Reduced meta-text, fixed tone, preserved all tables and math.",
+        "reviewed_at": "2026-07-06T22:42:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

@@ -1081,7 +1081,7 @@
         "reviewed_at": "2026-06-28T05:50:25.638Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
-        "evidence": "content/quantum-observable-universe/mass-theory/vertex-is-exceptional-divisor.lean:1 — Lean file exists",
+        "evidence": "content/quantum-observable-universe/mass-theory/vertex-is-exceptional-divisor.lean:1 \u2014 Lean file exists",
         "severity": "minor"
       }
     ],
@@ -1260,7 +1260,7 @@
         },
         "reviewed_at": "2026-06-23T11:59:48.389Z",
         "reviewed_sha": "010231d905101857ff9f9b277f96791cf7b461bb",
-        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+        "notes": "Candidate flagged by heuristic scan \u2014 requires agent confirmation per lean-proof-vacuity-audit."
       },
       {
         "field_hash": {
@@ -1558,7 +1558,7 @@
         "reviewed_at": "2026-06-28T05:50:25.638Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
-        "evidence": "content/quantum-observable-universe/mass-theory/vertex-is-exceptional-divisor.lean:1 — content/quantum-observable-universe/mass-theory/vertex-is-exceptional-divisor.lean:18:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/FiberBundle/Basic.olean' of module Mathlib.Topology.FiberBundle.Basic does not exist",
+        "evidence": "content/quantum-observable-universe/mass-theory/vertex-is-exceptional-divisor.lean:1 \u2014 content/quantum-observable-universe/mass-theory/vertex-is-exceptional-divisor.lean:18:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/FiberBundle/Basic.olean' of module Mathlib.Topology.FiberBundle.Basic does not exist",
         "severity": "minor"
       }
     ],
@@ -1600,6 +1600,18 @@
         },
         "reviewed_at": "2026-07-05T11:55:26.473Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
+        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

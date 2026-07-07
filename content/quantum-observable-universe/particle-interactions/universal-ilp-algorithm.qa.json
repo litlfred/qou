@@ -1612,7 +1612,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/universal-ilp-algorithm.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/universal-ilp-algorithm.lean:1 — content/quantum-observable-universe/particle-interactions/universal-ilp-algorithm.lean:29:2: error: failed to synthesize"
+        "evidence": "content/quantum-observable-universe/particle-interactions/universal-ilp-algorithm.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/universal-ilp-algorithm.lean:29:2: error: failed to synthesize"
       }
     ],
     "da-referee-verdict": [
@@ -1651,7 +1651,13 @@
         },
         "reviewed_at": "2026-07-06T04:41:29.802Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'def:universal-ilp-algorithm' → expected 'universal_ilp_algorithm'; Lean declares: KnotOperator, gram_matrix, frobenius_positive, universal_ilp, universal_ilp_selects_minimum. Structural match via content."
+        "notes": "Label 'def:universal-ilp-algorithm' \u2192 expected 'universal_ilp_algorithm'; Lean declares: KnotOperator, gram_matrix, frobenius_positive, universal_ilp, universal_ilp_selects_minimum. Structural match via content."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq9"
       }
     ]
   },

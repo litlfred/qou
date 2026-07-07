@@ -941,7 +941,7 @@
           "lean": "9da15eb5ac8e"
         },
         "result": "pass",
-        "notes": "Conjecture: GS NF-term growth ratio γ(Z) separates 3 regimes (s-pair=1, p-pair~1.3, opening≥3) with a clean gap (1.4,3.0). Chebyshev engine PROVED (sibling helium_shell_closure n(2)=n(1)=2 sorry-free); only the propagation to γ-regimes is conjectural. Scope honestly limited (pairing not noble-gas).",
+        "notes": "Conjecture: GS NF-term growth ratio \u03b3(Z) separates 3 regimes (s-pair=1, p-pair~1.3, opening\u22653) with a clean gap (1.4,3.0). Chebyshev engine PROVED (sibling helium_shell_closure n(2)=n(1)=2 sorry-free); only the propagation to \u03b3-regimes is conjectural. Scope honestly limited (pairing not noble-gas).",
         "reviewed_at": "2026-06-25T17:11:00.000Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
@@ -1233,6 +1233,18 @@
         },
         "reviewed_at": "2026-07-03T00:52:57.117Z",
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote molecular-construction_seq2.md. Stripped fluff, enforced 'we' and present tense. Converted definitions and conjectures to follow linear, clear style without editorialising.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

@@ -805,7 +805,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -826,7 +826,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1437,7 +1437,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Narrative ('J¹(A) inherits Frobenius–Hopf, is again a quantum universe') matches Lean signature `∃ jet : JetPreservesQU C, jet.original = fh` (JetPreservesQU encodes eval_preserves_mul + mono unit section). The decl is `sorry` but the .md (line 41-43) honestly discloses 'the construction is deferred there via sorry'. Signature expresses the same claim; this is the honest 'stated, not yet proved' case, not a divergence."
+        "notes": "Narrative ('J\u00b9(A) inherits Frobenius\u2013Hopf, is again a quantum universe') matches Lean signature `\u2203 jet : JetPreservesQU C, jet.original = fh` (JetPreservesQU encodes eval_preserves_mul + mono unit section). The decl is `sorry` but the .md (line 41-43) honestly discloses 'the construction is deferred there via sorry'. Signature expresses the same claim; this is the honest 'stated, not yet proved' case, not a divergence."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1676,7 +1676,7 @@
           "lean": "afc5dfb3bc4b"
         },
         "result": "pass",
-        "notes": "theorem categorical_jet_prolongation : exists jet:JetPreservesQU C, jet.original=fh := sorry — faithful, non-degenerate structural statement (JetPreservesQU bundles real content: eval_preserves_mul, mono unitSection); transparent CITED sorry (-- Ref kock2004/manuscript), not a projection/:True",
+        "notes": "theorem categorical_jet_prolongation : exists jet:JetPreservesQU C, jet.original=fh := sorry \u2014 faithful, non-degenerate structural statement (JetPreservesQU bundles real content: eval_preserves_mul, mono unitSection); transparent CITED sorry (-- Ref kock2004/manuscript), not a projection/:True",
         "reviewed_at": "2026-06-25T17:07:53.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -2156,7 +2156,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.lean:1 — ../lifting-and-descent/categorical-jet-prolongation.lean:32:7: error: Function expected at"
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.lean:1 \u2014 ../lifting-and-descent/categorical-jet-prolongation.lean:32:7: error: Function expected at"
       }
     ],
     "da-referee-verdict": [
@@ -2197,6 +2197,18 @@
         },
         "reviewed_at": "2026-07-03T00:52:56.146Z",
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote blocks regarding categorical jet prolongation, Reeb flow, and primes as orbits. Compacted verbose descriptions into active statements. Standardized list formats. Checked file markers.",
+        "reviewed_at": "2026-07-06T23:01:02Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

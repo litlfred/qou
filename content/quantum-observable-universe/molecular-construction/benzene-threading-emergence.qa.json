@@ -1042,7 +1042,7 @@
         },
         "reviewed_at": "2026-07-02T17:07:15.000Z",
         "reviewed_sha": "a9ce9ecfe24e6c7c9d0b9f25699b35ec666faa32",
-        "notes": "4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): current Lean is honest — real statement/derivation or cited sorry; the 2026-06-22 placeholder-marker fail predates the 2026-06-30 rewrite (hash drift verified). Criterion pass."
+        "notes": "4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): current Lean is honest \u2014 real statement/derivation or cited sorry; the 2026-06-22 placeholder-marker fail predates the 2026-06-30 rewrite (hash drift verified). Criterion pass."
       }
     ],
     "voice-statement-no-interpretation": [
@@ -1260,7 +1260,7 @@
           "ts": "f434254b330b"
         },
         "result": "pass",
-        "notes": "Goal physically meaningful (benzene aromaticity as LP-optimal threading link, resonance E≈1.56eV) but the optimality is postulated, and the q-integer mass formula it's conditional on is itself a conjecture.",
+        "notes": "Goal physically meaningful (benzene aromaticity as LP-optimal threading link, resonance E\u22481.56eV) but the optimality is postulated, and the q-integer mass formula it's conditional on is itself a conjecture.",
         "reviewed_at": "2026-06-25T17:06:49.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1321,7 +1321,7 @@
           "ts": "f434254b330b"
         },
         "result": "pass",
-        "notes": "Reading benzene aromaticity / Kekulé resonance as an LP dual over braid configurations selecting torus link T(2,6) is a genuinely novel framing.",
+        "notes": "Reading benzene aromaticity / Kekul\u00e9 resonance as an LP dual over braid configurations selecting torus link T(2,6) is a genuinely novel framing.",
         "reviewed_at": "2026-06-25T17:06:49.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1378,7 +1378,7 @@
           "ts": "f434254b330b"
         },
         "result": "fail",
-        "notes": "Placeholder stub: headline '.md claim (LP dual selects T(2,6) as optimal π config) is ASSUMED via opaque ctx.threading_optimal, not proved. Lean only derives 3 postulated consequences (crossings, |D6|=12, Alexander≠0).",
+        "notes": "Placeholder stub: headline '.md claim (LP dual selects T(2,6) as optimal \u03c0 config) is ASSUMED via opaque ctx.threading_optimal, not proved. Lean only derives 3 postulated consequences (crossings, |D6|=12, Alexander\u22600).",
         "reviewed_at": "2026-06-25T17:06:49.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1395,7 +1395,7 @@
           "ts": "f434254b330b"
         },
         "result": "pass",
-        "notes": "Lean statement now faithfully states the .md claim; previously-dropped/weakened clauses restored as real propositions (open parts carry a cited sorry per §1, not omitted). Verified lean-direct exit 0.",
+        "notes": "Lean statement now faithfully states the .md claim; previously-dropped/weakened clauses restored as real propositions (open parts carry a cited sorry per \u00a71, not omitted). Verified lean-direct exit 0.",
         "reviewed_at": "2026-07-04T10:41:58.000Z",
         "reviewed_sha": "3dd36f14516a6043b87a5a6f8ad6a24bc6b16c13",
         "reviewer": {
@@ -1448,7 +1448,7 @@
           "ts": "f434254b330b"
         },
         "result": "fail",
-        "notes": "Body ⟨ctx.impl_more_shared_crossings h, ctx.impl_d6_symmetry h, ctx.impl_alexander_polynomial_weight h⟩: each conjunct of the conclusion is a postulated implication-field applied to the optimality hypothesis — projection, no derivation.",
+        "notes": "Body \u27e8ctx.impl_more_shared_crossings h, ctx.impl_d6_symmetry h, ctx.impl_alexander_polynomial_weight h\u27e9: each conjunct of the conclusion is a postulated implication-field applied to the optimality hypothesis \u2014 projection, no derivation.",
         "reviewed_at": "2026-06-25T17:06:49.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1465,7 +1465,7 @@
           "ts": "f434254b330b"
         },
         "result": "pass",
-        "notes": "Re-encoded on branch claude/lean-qa-backlog-2h3f8d: carrier fields are now genuine sub-hypotheses (never the conclusion) and the theorem DERIVES its conclusion by composing them / applying proved lemmas — no longer projects an assumed field (AGENTS.md §3b-cond item 5). Verified lean-direct exit 0.",
+        "notes": "Re-encoded on branch claude/lean-qa-backlog-2h3f8d: carrier fields are now genuine sub-hypotheses (never the conclusion) and the theorem DERIVES its conclusion by composing them / applying proved lemmas \u2014 no longer projects an assumed field (AGENTS.md \u00a73b-cond item 5). Verified lean-direct exit 0.",
         "reviewed_at": "2026-07-04T10:41:58.000Z",
         "reviewed_sha": "3dd36f14516a6043b87a5a6f8ad6a24bc6b16c13",
         "reviewer": {
@@ -1898,6 +1898,18 @@
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/molecular-construction/benzene-threading-emergence.lean is missing, preventing formal verification of the claims in 'Threading link $T(2,6)$ emerges as the LP-optimal $\\\\pi$ configuration'.",
         "severity": "critical"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote molecular-construction_seq8.md. Fixed first-person pronouns, improved sentence economy, retained equations and tables as is.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

@@ -48,7 +48,19 @@
         },
         "reviewed_at": "2026-07-06T04:41:29.430Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:binding-error-amplification' → expected 'binding_error_amplification'; Lean declares: amplification, binding_rel_error, helium4_amplification_gt_130. Structural match via content."
+        "notes": "Label 'prop:binding-error-amplification' \u2192 expected 'binding_error_amplification'; Lean declares: amplification, binding_rel_error, helium4_amplification_gt_130. Structural match via content."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote mass-theory_seq1.md for Milnor standards: stripped technical debt disclaimers, declarative voice.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

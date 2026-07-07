@@ -62,7 +62,7 @@
         },
         "reviewed_at": "2026-06-28T10:58:41.228Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "The block 'Action on the GS ideal, operator algebra, interaction catalogue, and composition rules' presents substantial mathematical content: '$T_{K_1, K_2}(q)$ acts on the Gröbner--Shirshov-reduced Hecke chain,'.",
+        "notes": "The block 'Action on the GS ideal, operator algebra, interaction catalogue, and composition rules' presents substantial mathematical content: '$T_{K_1, K_2}(q)$ acts on the Gr\u00f6bner--Shirshov-reduced Hecke chain,'.",
         "severity": "minor"
       }
     ],
@@ -291,6 +291,18 @@
         "reviewed_at": "2026-07-03T00:52:56.534Z",
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89",
         "notes": "block has no .lean sibling"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote mass-theory_seq4.md for Milnor standards: clean prose, declarative.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

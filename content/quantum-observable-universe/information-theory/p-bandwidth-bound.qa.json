@@ -1,36 +1,48 @@
 {
- "$schema": "block-qa/v1",
- "label": "prop:p-bandwidth-bound",
- "kind": "proposition",
- "paths": {
-  "ts": "../qou/content/quantum-observable-universe/information-theory/p-bandwidth-bound.ts",
-  "md": "../qou/content/quantum-observable-universe/information-theory/p-bandwidth-bound.md"
- },
- "source_hashes": {
-  "md": "cd990d1fc4fa",
-  "ts": "c3873a52bfc1"
- },
- "criteria": {
-  "bib-cite-resolves": [
-   {
-    "field_hash": {
-     "md": "cd990d1fc4fa",
-     "ts": "c3873a52bfc1"
-    },
-    "result": "n/a",
-    "reviewer": {
-     "kind": "script",
-     "id": "content/pipeline/qa-checkers-extended.ts",
-     "version": "v1",
-     "script_hash": "6a0f3410ed24",
-     "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
-     "deps_hash": "2bab44ced743"
-    },
-    "reviewed_at": "2026-07-03T00:52:56.008Z",
-    "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89",
-    "notes": "block has no .lean sibling"
-   }
-  ]
- },
- "updated_at": "2026-07-04T00:30:14.885Z"
+  "$schema": "block-qa/v1",
+  "label": "prop:p-bandwidth-bound",
+  "kind": "proposition",
+  "paths": {
+    "ts": "../qou/content/quantum-observable-universe/information-theory/p-bandwidth-bound.ts",
+    "md": "../qou/content/quantum-observable-universe/information-theory/p-bandwidth-bound.md"
+  },
+  "source_hashes": {
+    "md": "cd990d1fc4fa",
+    "ts": "c3873a52bfc1"
+  },
+  "criteria": {
+    "bib-cite-resolves": [
+      {
+        "field_hash": {
+          "md": "cd990d1fc4fa",
+          "ts": "c3873a52bfc1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "6a0f3410ed24",
+          "script_commit_sha": "0c745a7ec6b59505512108c8098861b729a59eec",
+          "deps_hash": "2bab44ced743"
+        },
+        "reviewed_at": "2026-07-03T00:52:56.008Z",
+        "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Flattened complex tables/lists into dense, exact prose where appropriate. Aligned notation. Replaced 'we define' with direct declarative statements. Improved transitions between blocks while retaining original file markers.",
+        "reviewed_at": "2026-07-06T22:51:10Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
+      }
+    ]
+  },
+  "updated_at": "2026-07-04T00:30:14.885Z"
 }

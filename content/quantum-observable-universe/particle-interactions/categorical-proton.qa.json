@@ -924,7 +924,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Hard-codes q_0≈1.1100 / MeV / λ_scale but carries the §7c archimedean-specialisation banner at categorical-proton.md:1, so the wall is correctly declared. (Separate content note, out of this criterion's scope: line 108 reintroduces the purged λ_scale factor — flag to canonical-watcher.)"
+        "notes": "Hard-codes q_0\u22481.1100 / MeV / \u03bb_scale but carries the \u00a77c archimedean-specialisation banner at categorical-proton.md:1, so the wall is correctly declared. (Separate content note, out of this criterion's scope: line 108 reintroduces the purged \u03bb_scale factor \u2014 flag to canonical-watcher.)"
       },
       {
         "field_hash": {
@@ -942,7 +942,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean theorem statement in content/quantum-observable-universe/particle-interactions/categorical-proton.lean matches the mathematical statement in content/quantum-observable-universe/particle-interactions/categorical-proton.md.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/categorical-proton.lean:1 — Lean file exists"
+        "evidence": "content/quantum-observable-universe/particle-interactions/categorical-proton.lean:1 \u2014 Lean file exists"
       }
     ],
     "da-false-claim": [
@@ -1180,7 +1180,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/categorical-proton.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/categorical-proton.lean:1 — content/quantum-observable-universe/particle-interactions/categorical-proton.lean:46:36: error: unsolved goals"
+        "evidence": "content/quantum-observable-universe/particle-interactions/categorical-proton.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/categorical-proton.lean:46:36: error: unsolved goals"
       }
     ],
     "da-referee-verdict": [
@@ -1219,7 +1219,13 @@
         },
         "reviewed_at": "2026-07-06T04:41:29.802Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'def:categorical-proton' → expected 'categorical_proton'; Lean declares: CategoricalProton, q, q, proton_mass, proton_mass_from_substrate_axiom.... Structural match via content."
+        "notes": "Label 'def:categorical-proton' \u2192 expected 'categorical_proton'; Lean declares: CategoricalProton, q, q, proton_mass, proton_mass_from_substrate_axiom.... Structural match via content."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq24"
       }
     ]
   },

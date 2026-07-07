@@ -887,7 +887,7 @@
         },
         "reviewed_at": "2026-06-28T10:58:44.479Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
-        "notes": "The block 'Bound-state Wedderburn channels $(3,1) \\\\leftrightarrow (2,1,1)$ are Frobenius-self-dual transpose pair' presents substantial mathematical content: 'H_2 molecular bound state — $\\lambda^{(T_{3,5})} = (3, 1)$ and'.",
+        "notes": "The block 'Bound-state Wedderburn channels $(3,1) \\\\leftrightarrow (2,1,1)$ are Frobenius-self-dual transpose pair' presents substantial mathematical content: 'H_2 molecular bound state \u2014 $\\lambda^{(T_{3,5})} = (3, 1)$ and'.",
         "severity": "minor"
       }
     ],
@@ -1096,6 +1096,18 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Bound-state Wedderburn channels $(3,1) \\\\leftrightarrow (2,1,1)$ are Frobenius-self-dual transpose pair' are consistent."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
+        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

@@ -1696,7 +1696,7 @@
           "lean": "bf429eae5836"
         },
         "result": "pass",
-        "notes": "Conjecture: Geom(K) is the UNIQUE additive/functorial/normalized volume functional (Vol for hyperbolic, CS for torus), via Neumann-Zagier + Yekutieli rigidity; well-posed, substantive. Sibling proves ∃! conditional on classes.",
+        "notes": "Conjecture: Geom(K) is the UNIQUE additive/functorial/normalized volume functional (Vol for hyperbolic, CS for torus), via Neumann-Zagier + Yekutieli rigidity; well-posed, substantive. Sibling proves \u2203! conditional on classes.",
         "reviewed_at": "2026-06-25T17:07:48.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -2022,7 +2022,13 @@
         },
         "reviewed_at": "2026-07-06T04:41:29.802Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Conjecture with class/axiom axiomatisation — structural match."
+        "notes": "Conjecture with class/axiom axiomatisation \u2014 structural match."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq24"
       }
     ]
   },

@@ -1368,7 +1368,7 @@
         "reviewed_at": "2026-06-28T07:55:40.081Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Proof is content-free (self-assuming projection / P -> P).",
-        "evidence": "topological-charge-quantization.lean:180-181 — Res_xi ≫ Φ = Φ := h_reeb_residue",
+        "evidence": "topological-charge-quantization.lean:180-181 \u2014 Res_xi \u226b \u03a6 = \u03a6 := h_reeb_residue",
         "severity": "major"
       }
     ],
@@ -1592,6 +1592,18 @@
         },
         "reviewed_at": "2026-07-03T00:52:55.404Z",
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Applied Milnor brevity. Stripped forward references in intro. Streamlined technical definitions.",
+        "reviewed_at": "2026-07-06T22:42:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

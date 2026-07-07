@@ -868,7 +868,7 @@
         "reviewed_at": "2026-06-28T11:19:33.145Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "notes": "The block 'Q Opers Intro' presents substantial mathematical content: '$q$-Oper (def) — a $\\check{G}_q$-bundle on $X$ equipped with a'."
+        "notes": "The block 'Q Opers Intro' presents substantial mathematical content: '$q$-Oper (def) \u2014 a $\\check{G}_q$-bundle on $X$ equipped with a'."
       }
     ],
     "da-circular": [
@@ -1076,6 +1076,18 @@
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Q Opers Intro' are consistent."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Eliminated the draft markers and explicit block references ('The remaining blocks...'). Smoothed exposition into continuous narrative. Maintained concrete before abstract.",
+        "reviewed_at": "2026-07-06T22:46:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

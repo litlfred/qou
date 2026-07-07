@@ -1160,7 +1160,7 @@
         },
         "reviewed_at": "2026-07-06T04:41:29.802Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:gram-weighted-qvalue' → expected 'gram_weighted_qvalue'; Lean declares: GramMatrix, frobeniusNormSq, frobeniusNorm, nfReductionCost, gramWeight.... Structural match via content."
+        "notes": "Label 'prop:gram-weighted-qvalue' \u2192 expected 'gram_weighted_qvalue'; Lean declares: GramMatrix, frobeniusNormSq, frobeniusNorm, nfReductionCost, gramWeight.... Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1589,7 +1589,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean:1 — content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean:84:2: error: Tactic `split_ifs` failed: no if-then-else conditions to split"
+        "evidence": "content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean:84:2: error: Tactic `split_ifs` failed: no if-then-else conditions to split"
       }
     ],
     "da-referee-verdict": [
@@ -1611,6 +1611,12 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean for 'Gram-weighted $\\\\mathcal{Q}_q$-value from Frobenius norm of conversion channels' fails compilation with error: content/quantum-observable-universe/particle-interactions/gram-weighted-qvalue.lean:84:2: error: Tactic `split_ifs` failed: no if-then-else conditions to split. This invalidates the claim of formal verification."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq7"
       }
     ]
   },

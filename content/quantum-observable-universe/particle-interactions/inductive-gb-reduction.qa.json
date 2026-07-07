@@ -1485,7 +1485,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/particle-interactions/inductive-gb-reduction.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "quantum-observable-universe/particle-interactions/inductive-gb-reduction.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       },
       {
         "field_hash": {
@@ -1503,7 +1503,7 @@
         "reviewed_at": "2026-06-28T23:19:37.774Z",
         "reviewed_sha": "a16bed8babb124a3c1d689d9052923a74622eb30",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/particle-interactions/inductive-gb-reduction.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "content/quantum-observable-universe/particle-interactions/inductive-gb-reduction.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -1523,7 +1523,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/particle-interactions/inductive-gb-reduction.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "quantum-observable-universe/particle-interactions/inductive-gb-reduction.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       },
       {
         "field_hash": {
@@ -1541,7 +1541,7 @@
         "reviewed_at": "2026-06-28T23:19:37.774Z",
         "reviewed_sha": "a16bed8babb124a3c1d689d9052923a74622eb30",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/particle-interactions/inductive-gb-reduction.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "content/quantum-observable-universe/particle-interactions/inductive-gb-reduction.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -2574,7 +2574,7 @@
         },
         "reviewed_at": "2026-07-02T17:07:15.000Z",
         "reviewed_sha": "a9ce9ecfe24e6c7c9d0b9f25699b35ec666faa32",
-        "notes": "4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): current Lean is honest — real statement/derivation or cited sorry; the 2026-06-22 placeholder-marker fail predates the 2026-06-30 rewrite (hash drift verified). Criterion pass."
+        "notes": "4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): current Lean is honest \u2014 real statement/derivation or cited sorry; the 2026-06-22 placeholder-marker fail predates the 2026-06-30 rewrite (hash drift verified). Criterion pass."
       }
     ],
     "voice-statement-no-interpretation": [
@@ -2951,7 +2951,7 @@
           "ts": "0fd1f52b1cba"
         },
         "result": "warn",
-        "notes": "md proof (per-step term bound |N|×2×6 + Hecke square rule C²=H_A·C+1) is clear, but Lean only assumes the three bounds on a context class.",
+        "notes": "md proof (per-step term bound |N|\u00d72\u00d76 + Hecke square rule C\u00b2=H_A\u00b7C+1) is clear, but Lean only assumes the three bounds on a context class.",
         "reviewed_at": "2026-06-25T17:10:52.000Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
@@ -3056,7 +3056,7 @@
           "ts": "0fd1f52b1cba"
         },
         "result": "pass",
-        "notes": "Polynomial O(A²)/O(A³) scaling of inductive GS nuclear NF (reduce-after-each-mult) with binomial term bound is well-posed and substantive.",
+        "notes": "Polynomial O(A\u00b2)/O(A\u00b3) scaling of inductive GS nuclear NF (reduce-after-each-mult) with binomial term bound is well-posed and substantive.",
         "reviewed_at": "2026-06-25T17:10:52.000Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
@@ -3161,7 +3161,7 @@
           "ts": "0fd1f52b1cba"
         },
         "result": "pass",
-        "notes": "Inductive reduce-as-you-go GS scaling (10^10 unreduced → 128 NF terms for O-16) is a useful algorithmic contribution.",
+        "notes": "Inductive reduce-as-you-go GS scaling (10^10 unreduced \u2192 128 NF terms for O-16) is a useful algorithmic contribution.",
         "reviewed_at": "2026-06-25T17:10:52.000Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
@@ -3262,7 +3262,7 @@
           "ts": "0fd1f52b1cba"
         },
         "result": "fail",
-        "notes": "Lean conclusion (NF_size A ≤ C(A-1,⌊(A-1)/2⌋) ∧ n_mult ≤ A² ∧ n_steps ≤ A³) faithfully states the md bounds, but they are posited as class fields h_NF_size/h_multiplications/h_reduction_steps; the GS inductive reduction mechanism (Hecke square rule) producing them is absent — no derivation.",
+        "notes": "Lean conclusion (NF_size A \u2264 C(A-1,\u230a(A-1)/2\u230b) \u2227 n_mult \u2264 A\u00b2 \u2227 n_steps \u2264 A\u00b3) faithfully states the md bounds, but they are posited as class fields h_NF_size/h_multiplications/h_reduction_steps; the GS inductive reduction mechanism (Hecke square rule) producing them is absent \u2014 no derivation.",
         "reviewed_at": "2026-06-25T17:10:51.000Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
@@ -3359,7 +3359,7 @@
           "ts": "0fd1f52b1cba"
         },
         "result": "fail",
-        "notes": "theorem := ⟨ctx.h_NF_size, ctx.h_multiplications, ctx.h_reduction_steps⟩ — conclusion is verbatim the 3 class bound-fields.",
+        "notes": "theorem := \u27e8ctx.h_NF_size, ctx.h_multiplications, ctx.h_reduction_steps\u27e9 \u2014 conclusion is verbatim the 3 class bound-fields.",
         "reviewed_at": "2026-06-25T17:10:52.000Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
@@ -3536,7 +3536,7 @@
           "ts": "0fd1f52b1cba"
         },
         "result": "pass",
-        "notes": "Complexity bounds (≤ choose, ≤A², ≤A³) jointly satisfiable; no contradiction.",
+        "notes": "Complexity bounds (\u2264 choose, \u2264A\u00b2, \u2264A\u00b3) jointly satisfiable; no contradiction.",
         "reviewed_at": "2026-06-25T17:10:52.000Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
@@ -3783,7 +3783,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:58.919Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "No false claims identified in 'Inductive Gröbner--Shirshov reduction (polynomial scaling)': mathematical reasoning is consistent in prose.",
+        "notes": "No false claims identified in 'Inductive Gr\u00f6bner--Shirshov reduction (polynomial scaling)': mathematical reasoning is consistent in prose.",
         "severity": "minor",
         "evidence": "inductive-gb-reduction.ts:1"
       },
@@ -3848,7 +3848,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:58.919Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The block 'Inductive Gröbner--Shirshov reduction (polynomial scaling)' presents substantial mathematical content: '$A$'.",
+        "notes": "The block 'Inductive Gr\u00f6bner--Shirshov reduction (polynomial scaling)' presents substantial mathematical content: '$A$'.",
         "severity": "minor"
       },
       {
@@ -3910,7 +3910,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:58.919Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "No circular reasoning or self-assuming definitions detected in 'Inductive Gröbner--Shirshov reduction (polynomial scaling)'.",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Inductive Gr\u00f6bner--Shirshov reduction (polynomial scaling)'.",
         "severity": "minor",
         "evidence": "inductive-gb-reduction.ts:1"
       },
@@ -3973,7 +3973,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:58.919Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The remarks and narrative scope in 'Inductive Gröbner--Shirshov reduction (polynomial scaling)' are appropriately qualified.",
+        "notes": "The remarks and narrative scope in 'Inductive Gr\u00f6bner--Shirshov reduction (polynomial scaling)' are appropriately qualified.",
         "severity": "minor"
       },
       {
@@ -4037,7 +4037,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:58.919Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Inductive Gröbner--Shirshov reduction (polynomial scaling)'.",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Inductive Gr\u00f6bner--Shirshov reduction (polynomial scaling)'.",
         "severity": "minor",
         "evidence": "inductive-gb-reduction.ts:1"
       },
@@ -4100,7 +4100,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:58.919Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The prose arguments in 'Inductive Gröbner--Shirshov reduction (polynomial scaling)' proceed logically through the stated steps.",
+        "notes": "The prose arguments in 'Inductive Gr\u00f6bner--Shirshov reduction (polynomial scaling)' proceed logically through the stated steps.",
         "severity": "minor",
         "evidence": "inductive-gb-reduction.ts:1"
       },
@@ -4225,7 +4225,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:58.919Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "No citations are present in 'Inductive Gröbner--Shirshov reduction (polynomial scaling)', hence no citation misuse is possible.",
+        "notes": "No citations are present in 'Inductive Gr\u00f6bner--Shirshov reduction (polynomial scaling)', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "inductive-gb-reduction.ts:1"
       },
@@ -4288,7 +4288,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:58.919Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Key terms and symbols in 'Inductive Gröbner--Shirshov reduction (polynomial scaling)' are mathematically defined and unambiguous.",
+        "notes": "Key terms and symbols in 'Inductive Gr\u00f6bner--Shirshov reduction (polynomial scaling)' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "inductive-gb-reduction.ts:1"
       },
@@ -4351,7 +4351,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:58.919Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The algebraic and logical relations in 'Inductive Gröbner--Shirshov reduction (polynomial scaling)' are independent of empirical tuning parameters.",
+        "notes": "The algebraic and logical relations in 'Inductive Gr\u00f6bner--Shirshov reduction (polynomial scaling)' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "inductive-gb-reduction.ts:1"
       },
@@ -4414,7 +4414,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:58.919Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The physical concepts described in 'Inductive Gröbner--Shirshov reduction (polynomial scaling)' are consistent with quantum observable mechanics.",
+        "notes": "The physical concepts described in 'Inductive Gr\u00f6bner--Shirshov reduction (polynomial scaling)' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "inductive-gb-reduction.ts:1"
       },
@@ -4477,7 +4477,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:58.919Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The derivation steps and formal definitions in 'Inductive Gröbner--Shirshov reduction (polynomial scaling)' are reproducible.",
+        "notes": "The derivation steps and formal definitions in 'Inductive Gr\u00f6bner--Shirshov reduction (polynomial scaling)' are reproducible.",
         "severity": "minor"
       },
       {
@@ -4542,7 +4542,7 @@
         "notes": "Referee verdict: clean.",
         "severity": "minor",
         "verdict": "clean",
-        "referee_argument": "No significant objections; the mathematical claims in 'Inductive Gröbner--Shirshov reduction (polynomial scaling)' are consistent."
+        "referee_argument": "No significant objections; the mathematical claims in 'Inductive Gr\u00f6bner--Shirshov reduction (polynomial scaling)' are consistent."
       },
       {
         "field_hash": {
@@ -4587,6 +4587,18 @@
         },
         "reviewed_at": "2026-06-28T23:16:47.486Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Applied Milnor exposition standard (H1-H8) and brevity rules. Shortened sentences, removed editorializing ('surprisingly', 'remarkably'), replaced 'this book' with 'this paper', and maintained Math, markdown, and cross-block consistency.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

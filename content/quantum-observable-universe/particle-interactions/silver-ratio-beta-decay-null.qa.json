@@ -1372,7 +1372,7 @@
         },
         "reviewed_at": "2026-07-06T04:41:29.802Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:silver-ratio-beta-decay-null' → expected 'silver_ratio_beta_decay_null'; Lean declares: heckeSkein, deltaNet, silver_ratio_polynomial_root, beta_decay_null_iff_h_zero_or_two, hecke_quadratic_silver_ratio_self_referential.... Structural match via content."
+        "notes": "Label 'prop:silver-ratio-beta-decay-null' \u2192 expected 'silver_ratio_beta_decay_null'; Lean declares: heckeSkein, deltaNet, silver_ratio_polynomial_root, beta_decay_null_iff_h_zero_or_two, hecke_quadratic_silver_ratio_self_referential.... Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2727,7 +2727,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/silver-ratio-beta-decay-null.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "silver-ratio-beta-decay-null.lean:1 — content/quantum-observable-universe/particle-interactions/silver-ratio-beta-decay-null.lean:35:4: error: `simp` made no progress"
+        "evidence": "silver-ratio-beta-decay-null.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/silver-ratio-beta-decay-null.lean:35:4: error: `simp` made no progress"
       },
       {
         "field_hash": {
@@ -2863,6 +2863,12 @@
         },
         "reviewed_at": "2026-07-05T04:39:43.766Z",
         "reviewed_sha": "7415132ccce30885dcfd323600b8bcf311c431e4"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq8"
       }
     ]
   },

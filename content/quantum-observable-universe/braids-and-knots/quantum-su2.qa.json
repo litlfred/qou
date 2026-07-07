@@ -888,7 +888,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The Lean theorem 'qou:QOU.QuantumSu2' statement in content/quantum-observable-universe/braids-and-knots/quantum-su2.lean structurally matches the mathematical formulation of 'def:quantum-su2' in content/quantum-observable-universe/braids-and-knots/quantum-su2.md.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/quantum-su2.lean:1 — Lean file exists"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/quantum-su2.lean:1 \u2014 Lean file exists"
       }
     ],
     "da-false-claim": [
@@ -1113,7 +1113,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/braids-and-knots/quantum-su2.lean:29:13: error: unexpected token 'section'; expected 'lemma'.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/quantum-su2.lean:1 — content/quantum-observable-universe/braids-and-knots/quantum-su2.lean:29:13: error: unexpected token 'section'; expected 'lemma'"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/quantum-su2.lean:1 \u2014 content/quantum-observable-universe/braids-and-knots/quantum-su2.lean:29:13: error: unexpected token 'section'; expected 'lemma'"
       }
     ],
     "da-referee-verdict": [
@@ -1154,6 +1154,18 @@
         },
         "reviewed_at": "2026-07-03T00:52:55.297Z",
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Applied Milnor brevity. Cleaned up wordy 'Mathematical Novelty' blurbs to focus on exact claims. Removed unnecessary forward references.",
+        "reviewed_at": "2026-07-06T22:42:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

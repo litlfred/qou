@@ -198,7 +198,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "minor",
-        "evidence": "quantum-observable-universe/brings-surface/brings-q-hyperbolic-geometry.md:3: While the Euclidean sector ($E_q(2)$) of the theory is governed by the Hahn–Exton $q$-Bessel function (the third kind, $J_\\nu^{(3)}(x;q)$) as seen in the ladder coefficients, the $q$-hyperbolic geomet"
+        "evidence": "quantum-observable-universe/brings-surface/brings-q-hyperbolic-geometry.md:3: While the Euclidean sector ($E_q(2)$) of the theory is governed by the Hahn\u2013Exton $q$-Bessel function (the third kind, $J_\\nu^{(3)}(x;q)$) as seen in the ladder coefficients, the $q$-hyperbolic geomet"
       },
       {
         "field_hash": {
@@ -1062,7 +1062,7 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/brings-surface/brings-surface.ts: grep -c 'brings-q-hyperbolic-geometry' = 0 — the block is not referenced in any section's `blocks[]` of the chapter manifest.",
+        "evidence": "content/quantum-observable-universe/brings-surface/brings-surface.ts: grep -c 'brings-q-hyperbolic-geometry' = 0 \u2014 the block is not referenced in any section's `blocks[]` of the chapter manifest.",
         "notes": "Orphan placement: the block file lives under brings-surface/ but is not filed into any section of brings-surface.ts (unlike the explicit sec:brings-surface-orphan-reconnect blocks). Its subject (q-Bessel / SU_q(1,1) q-hyperbolic deformation) leans toward the q-Bessel/QBeta machinery (it `uses` prf:jackson-q-bessel-contiguity, whose home is mass-theory). Needs an explicit home section; if kept in this chapter, sec:brings-smoothness or the orphan-reconnect section is the natural slot. Not a clean misfile to a different chapter, hence warn."
       }
     ],
@@ -1295,6 +1295,18 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims are consistent.",
         "severity": "minor"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote brings-surface_seq9.md applying Milnor standard. Trimmed fat. Clarified relations. Used strong active verbs.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

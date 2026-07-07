@@ -911,7 +911,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean theorem statement in content/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean matches the mathematical statement in /Users/litlfred/space_cats/qou/content/quantum-observable-universe/predicted-spectra/beta-decay-skein.md.",
         "severity": "minor",
-        "evidence": "beta-decay-skein.lean:1 — Lean file exists"
+        "evidence": "beta-decay-skein.lean:1 \u2014 Lean file exists"
       }
     ],
     "da-false-claim": [
@@ -929,7 +929,7 @@
         },
         "reviewed_at": "2026-06-28T11:12:00.041Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The mathematical claims in 'Beta decay as a Skein crossing change on the Gröbner normal form' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean:153:31: error: failed to synthesize.",
+        "notes": "The mathematical claims in 'Beta decay as a Skein crossing change on the Gr\u00f6bner normal form' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean:153:31: error: failed to synthesize.",
         "severity": "minor",
         "evidence": "beta-decay-skein.lean:1"
       }
@@ -969,7 +969,7 @@
         },
         "reviewed_at": "2026-06-28T11:12:00.041Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The definition 'Beta decay as a Skein crossing change on the Gröbner normal form' is formulated via non-circular relations to existing primitives.",
+        "notes": "The definition 'Beta decay as a Skein crossing change on the Gr\u00f6bner normal form' is formulated via non-circular relations to existing primitives.",
         "severity": "minor",
         "evidence": "beta-decay-skein.ts:1"
       }
@@ -989,7 +989,7 @@
         },
         "reviewed_at": "2026-06-28T11:12:00.041Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The prose presents 'Beta decay as a Skein crossing change on the Gröbner normal form' as verified, but the sibling Lean file fails to compile.",
+        "notes": "The prose presents 'Beta decay as a Skein crossing change on the Gr\u00f6bner normal form' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
       }
     ],
@@ -1008,7 +1008,7 @@
         },
         "reviewed_at": "2026-06-28T11:12:00.041Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Beta decay as a Skein crossing change on the Gröbner normal form'.",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Beta decay as a Skein crossing change on the Gr\u00f6bner normal form'.",
         "severity": "minor",
         "evidence": "beta-decay-skein.ts:1"
       }
@@ -1067,7 +1067,7 @@
         },
         "reviewed_at": "2026-06-28T11:12:00.041Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "No citations are present in 'Beta decay as a Skein crossing change on the Gröbner normal form', hence no citation misuse is possible.",
+        "notes": "No citations are present in 'Beta decay as a Skein crossing change on the Gr\u00f6bner normal form', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "beta-decay-skein.ts:1"
       }
@@ -1087,7 +1087,7 @@
         },
         "reviewed_at": "2026-06-28T11:12:00.041Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "Key terms and symbols in 'Beta decay as a Skein crossing change on the Gröbner normal form' are mathematically defined and unambiguous.",
+        "notes": "Key terms and symbols in 'Beta decay as a Skein crossing change on the Gr\u00f6bner normal form' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "beta-decay-skein.ts:1"
       }
@@ -1107,7 +1107,7 @@
         },
         "reviewed_at": "2026-06-28T11:12:00.041Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The empirical claims in 'Beta decay as a Skein crossing change on the Gröbner normal form' are structurally anchored to the QOU mass framework and are stable.",
+        "notes": "The empirical claims in 'Beta decay as a Skein crossing change on the Gr\u00f6bner normal form' are structurally anchored to the QOU mass framework and are stable.",
         "severity": "minor",
         "evidence": "beta-decay-skein.ts:1"
       }
@@ -1127,7 +1127,7 @@
         },
         "reviewed_at": "2026-06-28T11:12:00.041Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The physical concepts described in 'Beta decay as a Skein crossing change on the Gröbner normal form' are consistent with quantum observable mechanics.",
+        "notes": "The physical concepts described in 'Beta decay as a Skein crossing change on the Gr\u00f6bner normal form' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "beta-decay-skein.ts:1"
       }
@@ -1149,7 +1149,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "beta-decay-skein.lean:1 — content/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean:153:31: error: failed to synthesize"
+        "evidence": "beta-decay-skein.lean:1 \u2014 content/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean:153:31: error: failed to synthesize"
       }
     ],
     "da-referee-verdict": [
@@ -1188,7 +1188,19 @@
         },
         "reviewed_at": "2026-07-06T04:41:30.359Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'def:beta-decay-skein' → expected 'beta_decay_skein'; Lean declares: WeakVertex, weakVertex, weak_vertex_crossings, crossing_budget_correct, NuclearLink.... Structural match via content."
+        "notes": "Label 'def:beta-decay-skein' \u2192 expected 'beta_decay_skein'; Lean declares: WeakVertex, weakVertex, weak_vertex_crossings, crossing_budget_correct, NuclearLink.... Structural match via content."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote prose blocks to adhere to Milnor standards. Improved economy, preserved all math.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

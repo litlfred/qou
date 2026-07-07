@@ -938,7 +938,7 @@
           "ts": "755cdc25adf6"
         },
         "result": "pass",
-        "notes": "conjecture P!=NP at non-torsion q_0: a Clay Millennium Problem — maximally well-posed and substantive (framework's chi(A)=-6 'fourth evaluation' framing is speculative, but the GOAL is canonical)",
+        "notes": "conjecture P!=NP at non-torsion q_0: a Clay Millennium Problem \u2014 maximally well-posed and substantive (framework's chi(A)=-6 'fourth evaluation' framing is speculative, but the GOAL is canonical)",
         "reviewed_at": "2026-06-25T17:07:05.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1184,6 +1184,18 @@
         "severity": "minor",
         "verdict": "survivable-objection",
         "referee_argument": "The conjectured relations in '$\\\\mathrm{P} \\\\neq \\\\mathrm{NP}$ at non-torsion $q \\\\in \\\\mathbb{G}_m$' are unproven, and the sibling Lean file is missing."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Flattened complex tables/lists into dense, exact prose where appropriate. Aligned notation. Replaced 'we define' with direct declarative statements. Improved transitions between blocks while retaining original file markers.",
+        "reviewed_at": "2026-07-06T22:51:10Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

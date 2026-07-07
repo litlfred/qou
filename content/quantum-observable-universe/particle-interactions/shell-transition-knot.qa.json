@@ -1691,7 +1691,7 @@
         },
         "result": "fail",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/particle-interactions/shell-transition-knot.lean:20 [native_decide] theorem hoCumulative_eq_sum (N : ℕ) : | content/quantum-observable-universe/particle-interactions/shell-transition-knot.lean:34 [native_decide] theorem ho_closures : | content/quantum-observable-universe/particle-interactions/shell-transition-knot.lean:72 [native_decide] theorem stability_pairs_correct : | content/quantum-observable-universe/particle-interactions/shell-transition-knot.lean:82 [native_decide] theorem first_three_eq_ho : | content/quantum-observable-universe/particle-interactions/shell-transition-knot.lean:89 [native_decide] theorem fourth_pair : | content/quantum-observable-universe/particle-interactions/shell-transition-knot.lean:94 [native_decide] theorem shellTransition_counts :",
+        "evidence": "content/quantum-observable-universe/particle-interactions/shell-transition-knot.lean:20 [native_decide] theorem hoCumulative_eq_sum (N : \u2115) : | content/quantum-observable-universe/particle-interactions/shell-transition-knot.lean:34 [native_decide] theorem ho_closures : | content/quantum-observable-universe/particle-interactions/shell-transition-knot.lean:72 [native_decide] theorem stability_pairs_correct : | content/quantum-observable-universe/particle-interactions/shell-transition-knot.lean:82 [native_decide] theorem first_three_eq_ho : | content/quantum-observable-universe/particle-interactions/shell-transition-knot.lean:89 [native_decide] theorem fourth_pair : | content/quantum-observable-universe/particle-interactions/shell-transition-knot.lean:94 [native_decide] theorem shellTransition_counts :",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/lean-vacuity-axiom-audit.ts",
@@ -1701,7 +1701,7 @@
         },
         "reviewed_at": "2026-06-22T02:50:55.754Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+        "notes": "Candidate flagged by heuristic scan \u2014 requires agent confirmation per lean-proof-vacuity-audit."
       },
       {
         "field_hash": {
@@ -2057,7 +2057,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/shell-transition-knot.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "shell-transition-knot.lean:1 — content/quantum-observable-universe/particle-interactions/shell-transition-knot.lean:7:5: error: unknown namespace `Finset`"
+        "evidence": "shell-transition-knot.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/shell-transition-knot.lean:7:5: error: unknown namespace `Finset`"
       }
     ],
     "da-referee-verdict": [
@@ -2096,7 +2096,19 @@
         },
         "reviewed_at": "2026-07-06T04:41:29.802Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'conj:shell-transition-knot' → expected 'shell_transition_knot'; Lean declares: hoShellSize, hoCumulative, hoCumulative_eq_sum, ho_closures, shellTransitionStates.... Structural match via content."
+        "notes": "Label 'conj:shell-transition-knot' \u2192 expected 'shell_transition_knot'; Lean declares: hoShellSize, hoCumulative, hoCumulative_eq_sum, ho_closures, shellTransitionStates.... Structural match via content."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq14 to strictly enforce Milnor brevity. Trimmed fluff and meta-commentary, ensuring straightforward descriptive sentences. Fixed non-linear forward references.",
+        "reviewed_at": "2026-07-06T22:47:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

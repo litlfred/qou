@@ -1082,7 +1082,7 @@
         "reviewed_at": "2026-06-27T13:05:09.443Z",
         "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
         "severity": "minor",
-        "evidence": "Extensive physical-interpretation prose (beta decay as 1-jet, double beta decay as 2-jet, 0νββ neutrino propagator, jet bundle, Reeb decomposition connection) follows the proposition in the same block; no `interprets:` remark.",
+        "evidence": "Extensive physical-interpretation prose (beta decay as 1-jet, double beta decay as 2-jet, 0\u03bd\u03b2\u03b2 neutrino propagator, jet bundle, Reeb decomposition connection) follows the proposition in the same block; no `interprets:` remark.",
         "notes": "Bulk is mathematical structure (jet expansion, transfer matrix), but the decay-physics/jet-bundle framing is interpretive. WARN."
       },
       {
@@ -1101,7 +1101,7 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "minor",
         "evidence": "generator-volume-decomposition.md:108 '## Beta decay as the 1-jet variation', :126 '## Double beta decay as the 2-jet variation', :274 '## Connection to the Reeb decomposition'",
-        "notes": "Extensive physical interpretation (single/double beta decay, 0νββ neutrino propagator, Reeb-flow correspondence) follows the proposition statement in the same block with no companion interprets: remark. Much is mathematical (jet expansion), but the decay-physics and Reeb-connection sections are interpretive and better placed in a linked remark."
+        "notes": "Extensive physical interpretation (single/double beta decay, 0\u03bd\u03b2\u03b2 neutrino propagator, Reeb-flow correspondence) follows the proposition statement in the same block with no companion interprets: remark. Much is mathematical (jet expansion), but the decay-physics and Reeb-connection sections are interpretive and better placed in a linked remark."
       }
     ],
     "fit-section-chapter": [
@@ -1172,7 +1172,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Carries the §7c archimedean-specialisation banner at md:1; the transfer-matrix/jet content is combinatorial with a declared ℝ realisation."
+        "notes": "Carries the \u00a77c archimedean-specialisation banner at md:1; the transfer-matrix/jet content is combinatorial with a declared \u211d realisation."
       }
     ],
     "wall-side-proof": [
@@ -1208,7 +1208,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Proof is the Hecke relation + far commutativity (span closure, step count) — algebraic, matches the statement."
+        "notes": "Proof is the Hecke relation + far commutativity (span closure, step count) \u2014 algebraic, matches the statement."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1259,8 +1259,8 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "major",
-        "evidence": "generator-volume-decomposition.lean:127-131 'theorem generator_volume_decomposition_prop (q : ℝ) (A : ℕ) (nuclear_energy : ℝ) ... : nuclear_energy = generator_volume_decomposition q crossings_per_gen := by sorry'",
-        "notes": "The ref decl's top-level statement equates a FREE variable nuclear_energy with the computed sum — it does not encode 'the nuclear energy decomposes as Σ generator volumes' (nuclear_energy is unconstrained, the claim is true only because of sorry), so it diverges from the narrative's substantive decomposition claim. Hypothesis h_len is unused (sorry). The proved sub-lemmas (energy_additive, beta_decay_locality) are genuine, but the manifest-referenced generator_volume_decomposition_prop is a sorry stub with a vacuous free-variable conclusion. (Note also crossingNN/crossingMixed reference an undefined q_half at lean:60,65 — a probable build error.)"
+        "evidence": "generator-volume-decomposition.lean:127-131 'theorem generator_volume_decomposition_prop (q : \u211d) (A : \u2115) (nuclear_energy : \u211d) ... : nuclear_energy = generator_volume_decomposition q crossings_per_gen := by sorry'",
+        "notes": "The ref decl's top-level statement equates a FREE variable nuclear_energy with the computed sum \u2014 it does not encode 'the nuclear energy decomposes as \u03a3 generator volumes' (nuclear_energy is unconstrained, the claim is true only because of sorry), so it diverges from the narrative's substantive decomposition claim. Hypothesis h_len is unused (sorry). The proved sub-lemmas (energy_additive, beta_decay_locality) are genuine, but the manifest-referenced generator_volume_decomposition_prop is a sorry stub with a vacuous free-variable conclusion. (Note also crossingNN/crossingMixed reference an undefined q_half at lean:60,65 \u2014 a probable build error.)"
       },
       {
         "field_hash": {
@@ -1327,7 +1327,7 @@
           "lean": "14e75b4042a7"
         },
         "result": "pass",
-        "notes": "Clear: Hecke σ²=(q-q⁻¹)σ+1 closes {1,σ}; transfer recurrence; far-commutativity ⇒ additivity; β-locality from tail cancellation — all reflected in Lean lemmas.",
+        "notes": "Clear: Hecke \u03c3\u00b2=(q-q\u207b\u00b9)\u03c3+1 closes {1,\u03c3}; transfer recurrence; far-commutativity \u21d2 additivity; \u03b2-locality from tail cancellation \u2014 all reflected in Lean lemmas.",
         "reviewed_at": "2026-06-25T17:07:48.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1391,7 +1391,7 @@
           "lean": "14e75b4042a7"
         },
         "result": "pass",
-        "notes": "Binding energy = Σ generator volumes via 2×2 transfer-matrix recurrence, O(A²); jet expansion = β/2β decay orders. Well-posed, substantive.",
+        "notes": "Binding energy = \u03a3 generator volumes via 2\u00d72 transfer-matrix recurrence, O(A\u00b2); jet expansion = \u03b2/2\u03b2 decay orders. Well-posed, substantive.",
         "reviewed_at": "2026-06-25T17:07:48.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1455,7 +1455,7 @@
           "lean": "14e75b4042a7"
         },
         "result": "pass",
-        "notes": "Jet-bundle reading (1-jet=β, 2-jet=2β nuclear matrix element, ∞-jet=exact) of the transfer-matrix product is a genuinely novel decomposition.",
+        "notes": "Jet-bundle reading (1-jet=\u03b2, 2-jet=2\u03b2 nuclear matrix element, \u221e-jet=exact) of the transfer-matrix product is a genuinely novel decomposition.",
         "reviewed_at": "2026-06-25T17:07:48.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -2006,7 +2006,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean:1 — content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean:60:14: error(lean.unknownIdentifier): Unknown identifier `q_half`"
+        "evidence": "content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean:60:14: error(lean.unknownIdentifier): Unknown identifier `q_half`"
       }
     ],
     "da-referee-verdict": [
@@ -2028,6 +2028,18 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean for 'Nuclear energy as a sum of generator volumes via Chebyshev recurrence' fails compilation with error: content/quantum-observable-universe/particle-interactions/generator-volume-decomposition.lean:60:14: error(lean.unknownIdentifier): Unknown identifier `q_half`. This invalidates the claim of formal verification."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Applied Milnor exposition standard (H1-H8) and brevity rules. Shortened sentences, removed editorializing ('surprisingly', 'remarkably'), replaced 'this book' with 'this paper', and maintained Math, markdown, and cross-block consistency.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

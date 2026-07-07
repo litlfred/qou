@@ -1062,7 +1062,7 @@
         "reviewed_at": "2026-06-27T13:05:07.188Z",
         "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
         "severity": "minor",
-        "evidence": "The genus-bound finiteness statement (lines 13-37) is followed by a 'Physical interpretation' section (lines 38-69) with four substantive numbered points of physical interpretation in the same block — 'Lepton generations', 'Quark sector' (T_{3,4} color binding / T_{3,5} weak interaction), 'Saturation', and 'Hyperbolic knots are derived'. The .ts has no interprets: and there is no companion remark holding this interpretation.",
+        "evidence": "The genus-bound finiteness statement (lines 13-37) is followed by a 'Physical interpretation' section (lines 38-69) with four substantive numbered points of physical interpretation in the same block \u2014 'Lepton generations', 'Quark sector' (T_{3,4} color binding / T_{3,5} weak interaction), 'Saturation', and 'Hyperbolic knots are derived'. The .ts has no interprets: and there is no companion remark holding this interpretation.",
         "notes": "The bare claim is the (m-1)(n-1)<=8 finiteness of the generator set; the particle-physics reading (lepton generations, quark sector mediators, why no 4th generation) is substantive interpretation that should live in a linked remark."
       },
       {
@@ -1081,7 +1081,7 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "minor",
         "evidence": "torus-knot-generators.md:38-75: '**Physical interpretation.** 1. **Lepton generations.** ... 2. **Quark sector.** ... 3. **Saturation.** ... 4. **Hyperbolic knots are derived.** ... **Remark on the cutoff.**'",
-        "notes": "The proposition block carries an extensive 'Physical interpretation' section (lepton generations, quark sector, saturation, hyperbolic-knots-derived) plus a 'Remark on the cutoff' — substantive physical-meaning/downstream-consequence prose appended after the statement+proof. No companion `interprets:` remark holds it; the .ts lists only proofs[] and uses[]. This interpretation is mislocated inside the provable block and should move to a linked remark."
+        "notes": "The proposition block carries an extensive 'Physical interpretation' section (lepton generations, quark sector, saturation, hyperbolic-knots-derived) plus a 'Remark on the cutoff' \u2014 substantive physical-meaning/downstream-consequence prose appended after the statement+proof. No companion `interprets:` remark holds it; the .ts lists only proofs[] and uses[]. This interpretation is mislocated inside the provable block and should move to a linked remark."
       },
       {
         "field_hash": {
@@ -1172,7 +1172,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Statement is genus/coprime-pair arithmetic over ℕ (g(T_{m,n})=(m-1)(n-1)/2 ≤ 4); no Real.*, MeV, or order-over-ℝ hypothesis. Lean sibling is over ℕ. The chapter is the archimedean Descartes universe, and the combinatorial statement matches it; the leading note flags the ℝ-specialisation framing for any analytic part."
+        "notes": "Statement is genus/coprime-pair arithmetic over \u2115 (g(T_{m,n})=(m-1)(n-1)/2 \u2264 4); no Real.*, MeV, or order-over-\u211d hypothesis. Lean sibling is over \u2115. The chapter is the archimedean Descartes universe, and the combinatorial statement matches it; the leading note flags the \u211d-specialisation framing for any analytic part."
       }
     ],
     "wall-side-proof": [
@@ -1208,7 +1208,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Narrative proof ('Genus bound from χ=-6') is Seifert-genus arithmetic and crossing-change inequalities; Lean proof uses nlinarith/interval_cases/omega over ℕ — no IVT/continuity/Real machinery. Method matches the algebraic/combinatorial statement."
+        "notes": "Narrative proof ('Genus bound from \u03c7=-6') is Seifert-genus arithmetic and crossing-change inequalities; Lean proof uses nlinarith/interval_cases/omega over \u2115 \u2014 no IVT/continuity/Real machinery. Method matches the algebraic/combinatorial statement."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1245,8 +1245,8 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "minor",
-        "evidence": "torus-knot-generators.md:23-27 'admits exactly six coprime pairs ... |G|=7' vs torus-knot-generators.lean:24-28 'theorem torus_knot_generators_finite (g:ℕ)(hg:g=4): ∃ S:Finset(ℕ×ℕ), ∀ m n, m≥2 → n>m → Coprime m n → seifertGenus m n ≤ g → (m,n)∈S'",
-        "notes": "Lean encodes the FINITENESS half (∃ finite S containing every qualifying pair) — matching the block title 'Finiteness of the T_{m,n} generator set' — but not the narrative's stronger 'exactly six pairs / |G|=7' enumeration. Quantifiers and hypotheses (m≥2, n>m, coprime, genus≤g) align; only the strength of the conclusion is weaker (containment, not exact cardinality). Reconcilable for a reader who reads the decl as the finiteness lemma; not a theorem-changing contradiction, hence warn not fail."
+        "evidence": "torus-knot-generators.md:23-27 'admits exactly six coprime pairs ... |G|=7' vs torus-knot-generators.lean:24-28 'theorem torus_knot_generators_finite (g:\u2115)(hg:g=4): \u2203 S:Finset(\u2115\u00d7\u2115), \u2200 m n, m\u22652 \u2192 n>m \u2192 Coprime m n \u2192 seifertGenus m n \u2264 g \u2192 (m,n)\u2208S'",
+        "notes": "Lean encodes the FINITENESS half (\u2203 finite S containing every qualifying pair) \u2014 matching the block title 'Finiteness of the T_{m,n} generator set' \u2014 but not the narrative's stronger 'exactly six pairs / |G|=7' enumeration. Quantifiers and hypotheses (m\u22652, n>m, coprime, genus\u2264g) align; only the strength of the conclusion is weaker (containment, not exact cardinality). Reconcilable for a reader who reads the decl as the finiteness lemma; not a theorem-changing contradiction, hence warn not fail."
       },
       {
         "field_hash": {
@@ -1262,7 +1262,7 @@
         },
         "reviewed_at": "2026-07-06T04:41:30.202Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:torus-knot-generators' → expected 'torus_knot_generators'; Lean declares: seifertGenus, torus_knot_generators_finite. Structural match via content."
+        "notes": "Label 'prop:torus-knot-generators' \u2192 expected 'torus_knot_generators'; Lean declares: seifertGenus, torus_knot_generators_finite. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1302,7 +1302,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "score 0.9 — narrative states the plan up front (genus bound g(T_{m,n})=(m-1)(n-1)/2 ≤ 2g=8 selects finitely many pairs); Lean proof is a clear bound-then-interval_cases enumeration."
+        "notes": "score 0.9 \u2014 narrative states the plan up front (genus bound g(T_{m,n})=(m-1)(n-1)/2 \u2264 2g=8 selects finitely many pairs); Lean proof is a clear bound-then-interval_cases enumeration."
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1342,7 +1342,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "score 1.0 — Lean proof is sorry-free (subst/nlinarith/interval_cases/omega close all goals)."
+        "notes": "score 1.0 \u2014 Lean proof is sorry-free (subst/nlinarith/interval_cases/omega close all goals)."
       }
     ],
     "proof-rater-novelty": [
@@ -1382,7 +1382,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "score 0.7 — standard finite-enumeration argument; distinct from sibling embeddability-closure (which checks a fixed dictionary list rather than deriving the bound)."
+        "notes": "score 0.7 \u2014 standard finite-enumeration argument; distinct from sibling embeddability-closure (which checks a fixed dictionary list rather than deriving the bound)."
       }
     ],
     "proof-statement-integrity": [
@@ -1454,7 +1454,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Conclusion is derived by explicit witness ⟨{6 pairs}, ...⟩ + interval_cases, not projected from a hypothesis field."
+        "notes": "Conclusion is derived by explicit witness \u27e8{6 pairs}, ...\u27e9 + interval_cases, not projected from a hypothesis field."
       }
     ],
     "proof-no-trivial-true": [
@@ -1490,7 +1490,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Goal is a real ∃/∀ finiteness statement, not True/rfl."
+        "notes": "Goal is a real \u2203/\u2200 finiteness statement, not True/rfl."
       }
     ],
     "proof-no-false-premise": [
@@ -1857,6 +1857,18 @@
         },
         "reviewed_at": "2026-07-05T11:55:26.473Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Applied Milnor brevity. Removed bloated prose. Un-cluttered internal references. Restructured paragraphs to flow logically.",
+        "reviewed_at": "2026-07-06T22:42:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

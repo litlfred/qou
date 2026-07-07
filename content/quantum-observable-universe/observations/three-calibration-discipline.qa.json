@@ -1396,7 +1396,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Last commit 19d0cf1d relabeled docstrings to the decay-width framing across .md/.ts/.lean together (owner ruling 2026-06-26, PR #2866 in authorNotes); the theorem signature mass X = m_e^a·m_pi^c·towerValue X is structurally unchanged. lean.ref resolves to the class-conditional theorem (no sorryAx)."
+        "notes": "Last commit 19d0cf1d relabeled docstrings to the decay-width framing across .md/.ts/.lean together (owner ruling 2026-06-26, PR #2866 in authorNotes); the theorem signature mass X = m_e^a\u00b7m_pi^c\u00b7towerValue X is structurally unchanged. lean.ref resolves to the class-conditional theorem (no sorryAx)."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1433,8 +1433,8 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "critical",
-        "evidence": "three-calibration-discipline.lean:139-146: 'theorem threeCalibrationDiscipline ... : c.mass X = c.m_e^... * c.m_pi^... * c.towerValue X := c.mass_factorisation X' — the class field mass_factorisation (lines 128-133) has a type IDENTICAL to the theorem conclusion.",
-        "notes": "Verbatim projection of the class field whose type IS the declaration's conclusion (P ⊢ P). The sibling hypothesis fields m_e_pos, q_0_pos, m_pi_pos are unused; the proof composes nothing. Per §3b-cond non-degeneracy clause this is the vacuous self-assuming projection pattern (class axiomatises the block's own conclusion rather than genuine sub-hypotheses). Mitigating context: AGENTS.md states this proposition is deliberately a §3b structural-assumption 'class', not a free-standing theorem — but the headline theorem still merely returns the assumed field. Routes to lean-proof-review."
+        "evidence": "three-calibration-discipline.lean:139-146: 'theorem threeCalibrationDiscipline ... : c.mass X = c.m_e^... * c.m_pi^... * c.towerValue X := c.mass_factorisation X' \u2014 the class field mass_factorisation (lines 128-133) has a type IDENTICAL to the theorem conclusion.",
+        "notes": "Verbatim projection of the class field whose type IS the declaration's conclusion (P \u22a2 P). The sibling hypothesis fields m_e_pos, q_0_pos, m_pi_pos are unused; the proof composes nothing. Per \u00a73b-cond non-degeneracy clause this is the vacuous self-assuming projection pattern (class axiomatises the block's own conclusion rather than genuine sub-hypotheses). Mitigating context: AGENTS.md states this proposition is deliberately a \u00a73b structural-assumption 'class', not a free-standing theorem \u2014 but the headline theorem still merely returns the assumed field. Routes to lean-proof-review."
       },
       {
         "field_hash": {
@@ -1442,7 +1442,7 @@
           "ts": "22487e0d576f"
         },
         "result": "pass",
-        "notes": "Owner-approved (Option B). threeCalibrationDiscipline faithfully surfaces the §3b structural-assumption axiom (the .md's headline factorisation IS the discipline axiom — statement-integrity matches exactly), and a genuinely-derived companion threeCalibrationDiscipline_mass_pos now composes the factorisation with the previously-dead positivity hypotheses m_e_pos/m_pi_pos to prove towerValue X>0 ⟹ mass X>0 (sorry-free). Not a harmful self-projection: the class encodes the framework's calibration-count assumption, and the discipline now yields a real inference. lean-direct exit 0.",
+        "notes": "Owner-approved (Option B). threeCalibrationDiscipline faithfully surfaces the \u00a73b structural-assumption axiom (the .md's headline factorisation IS the discipline axiom \u2014 statement-integrity matches exactly), and a genuinely-derived companion threeCalibrationDiscipline_mass_pos now composes the factorisation with the previously-dead positivity hypotheses m_e_pos/m_pi_pos to prove towerValue X>0 \u27f9 mass X>0 (sorry-free). Not a harmful self-projection: the class encodes the framework's calibration-count assumption, and the discipline now yields a real inference. lean-direct exit 0.",
         "reviewed_at": "2026-07-04T13:10:13.000Z",
         "reviewed_sha": "3a68ebaa7bb2627150332e3a5ae8d6f146969984",
         "reviewer": {
@@ -1487,7 +1487,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Conclusion is a real equation mass X = m_e^a·m_pi^c·towerValue X, not True/rfl-tautology."
+        "notes": "Conclusion is a real equation mass X = m_e^a\u00b7m_pi^c\u00b7towerValue X, not True/rfl-tautology."
       }
     ],
     "proof-no-false-premise": [
@@ -1560,7 +1560,7 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "major",
         "evidence": "three-calibration-discipline.lean:98-99,104-105,110-111: class fields m_e_pos (0 < m_e), q_0_pos (1 < q_0), m_pi_pos (0 < m_pi) are declared but never referenced by theorem threeCalibrationDiscipline (lines 139-146), which uses only mass_factorisation.",
-        "notes": "The positivity hypotheses are part of the conditional-class interface but play no role in deriving the factorisation; the headline theorem ignores all three. This is consistent with the self-assuming-projection finding above — the only field used is the one equal to the goal. Routes to lean-proof-review."
+        "notes": "The positivity hypotheses are part of the conditional-class interface but play no role in deriving the factorisation; the headline theorem ignores all three. This is consistent with the self-assuming-projection finding above \u2014 the only field used is the one equal to the goal. Routes to lean-proof-review."
       }
     ],
     "proof-no-decide-masking": [
@@ -1608,8 +1608,8 @@
         "result": "fail",
         "scope": "limited",
         "ruling": "surviving",
-        "referee_argument": "Prose asserts 'exactly three inputs, a fourth is a hard audit failure'; the Lean class carries mass_factorisation (the conclusion) as an axiom field and the theorem merely projects it — encodes neither 'exactly three' nor 'no fourth'.",
-        "rebuttal": "none — survived as narrative-Lean gap; honestly labelled a stub but does not prove the headline count.",
+        "referee_argument": "Prose asserts 'exactly three inputs, a fourth is a hard audit failure'; the Lean class carries mass_factorisation (the conclusion) as an axiom field and the theorem merely projects it \u2014 encodes neither 'exactly three' nor 'no fourth'.",
+        "rebuttal": "none \u2014 survived as narrative-Lean gap; honestly labelled a stub but does not prove the headline count.",
         "evidence": [
           {
             "text": "three-calibration-discipline.lean:133-140 ':= c.mass_factorisation X'"
@@ -1655,7 +1655,7 @@
         "scope": "limited",
         "ruling": "partial",
         "referee_argument": "Block states Q_beta derivation as fact; corpus says the key link is an unproved ansatz with undischarged fit/residual ambiguity.",
-        "rebuttal": "partial — sibling epistemic-status-of-calibrations.md:80-88 concedes 'postulated, not derived', but the honesty is in siblings not this block's assertive prose.",
+        "rebuttal": "partial \u2014 sibling epistemic-status-of-calibrations.md:80-88 concedes 'postulated, not derived', but the honesty is in siblings not this block's assertive prose.",
         "evidence": [
           {
             "text": "three-calibration-discipline.md:25; audit 2026-05-24-q-beta-net-ansatz-fitting-finding.md:27 'POSTULATED, NOT DERIVED'"
@@ -1700,8 +1700,8 @@
         "result": "fail",
         "scope": "limited",
         "ruling": "surviving",
-        "referee_argument": "'Exactly three' survives relabeling — the corpus has >=3 mutually inconsistent calibration triples (m_pi vs Q_beta(n) vs {m_e,m_p,m_n}).",
-        "rebuttal": "partial→survived: a 2026-06-16 refined-framing note canonicalises (m_e, m_mu/m_e, m_pi) but corpus-wide convergence is incomplete.",
+        "referee_argument": "'Exactly three' survives relabeling \u2014 the corpus has >=3 mutually inconsistent calibration triples (m_pi vs Q_beta(n) vs {m_e,m_p,m_n}).",
+        "rebuttal": "partial\u2192survived: a 2026-06-16 refined-framing note canonicalises (m_e, m_mu/m_e, m_pi) but corpus-wide convergence is incomplete.",
         "evidence": [
           {
             "text": "three-calibration-discipline.md (CAL-3=m_pi) vs 2026-05-11-...-violations.md:16-18 (CAL-3=Q_beta(n))"
@@ -1748,7 +1748,7 @@
         "scope": "limited",
         "ruling": "rebutted",
         "referee_argument": "Anchoring q_0 on m_p/m_e looks like a 4th input.",
-        "rebuttal": "rebutted — re-determines the same H1 modulus (one datum); m_mu/m_e becomes a 9.5-sigma cross-check, not a new DOF.",
+        "rebuttal": "rebutted \u2014 re-determines the same H1 modulus (one datum); m_mu/m_e becomes a 9.5-sigma cross-check, not a new DOF.",
         "evidence": [
           {
             "text": "three-calibration-discipline.md:99-108"
@@ -1811,7 +1811,7 @@
         "scope": "limited",
         "ruling": "rebutted",
         "referee_argument": "uses[] cites three-calibration-inputs / calibration-cohomology-alignment.",
-        "rebuttal": "rebutted — both cited props back the 2+1=3 count and the m_pi independence (Vol(Hopf)=0).",
+        "rebuttal": "rebutted \u2014 both cited props back the 2+1=3 count and the m_pi independence (Vol(Hopf)=0).",
         "evidence": [
           {
             "text": "three-calibration-discipline.ts uses[]"
@@ -1856,7 +1856,7 @@
         },
         "result": "warn",
         "verdict": "survivable-objection",
-        "referee_argument": "The 'exactly three calibrations, Q_beta derived' claim presents as settled what the corpus's own audits flag as open — Q_beta's derivation rests on a relation the corpus labels 'POSTULATED, NOT DERIVED', and the Lean sibling proves only a tautological factorisation, not the count.",
+        "referee_argument": "The 'exactly three calibrations, Q_beta derived' claim presents as settled what the corpus's own audits flag as open \u2014 Q_beta's derivation rests on a relation the corpus labels 'POSTULATED, NOT DERIVED', and the Lean sibling proves only a tautological factorisation, not the count.",
         "reviewer": {
           "kind": "agent",
           "id": "local/devils-advocate-watcher",
@@ -1922,7 +1922,7 @@
         },
         "reviewed_at": "2026-06-28T11:04:37.262Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The block 'Three-calibration discipline ($m_e$, $m_\\\\mu$, $m_\\\\pi$) aligned to (co)homological data' presents substantial mathematical content: calibration inputs — the three real degrees of freedom of the first cohomology o...",
+        "notes": "The block 'Three-calibration discipline ($m_e$, $m_\\\\mu$, $m_\\\\pi$) aligned to (co)homological data' presents substantial mathematical content: calibration inputs \u2014 the three real degrees of freedom of the first cohomology o...",
         "severity": "minor"
       }
     ],
@@ -2024,6 +2024,18 @@
         "notes": "The derivation steps and formal definitions in 'Three-calibration discipline ($m_e$, $m_\\\\mu$, $m_\\\\pi$) aligned to (co)homological data' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/three-calibration-discipline.ts:1"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote observations_seq0.md. Enforced concise, active prose. Replaced third person passive with 'we'. Ensured math integrity.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

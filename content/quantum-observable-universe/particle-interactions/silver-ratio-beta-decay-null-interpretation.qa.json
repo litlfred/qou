@@ -352,7 +352,7 @@
         "reviewed_at": "2026-06-28T23:06:52.243Z",
         "reviewed_sha": "69f7ec22fef86f1af72bf3de80b1d5994ffe52b4",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/particle-interactions/silver-ratio-beta-decay-null-interpretation.md:74: status-section-header: ## Outlier status of $c_5$ — involution + Leibniz interpretation"
+        "evidence": "content/quantum-observable-universe/particle-interactions/silver-ratio-beta-decay-null-interpretation.md:74: status-section-header: ## Outlier status of $c_5$ \u2014 involution + Leibniz interpretation"
       },
       {
         "field_hash": {
@@ -370,7 +370,7 @@
         "reviewed_at": "2026-06-28T23:19:37.903Z",
         "reviewed_sha": "a16bed8babb124a3c1d689d9052923a74622eb30",
         "severity": "major",
-        "evidence": "content/quantum-observable-universe/particle-interactions/silver-ratio-beta-decay-null-interpretation.md:68: status-section-header: ## Outlier status of $c_5$ — involution + Leibniz interpretation"
+        "evidence": "content/quantum-observable-universe/particle-interactions/silver-ratio-beta-decay-null-interpretation.md:68: status-section-header: ## Outlier status of $c_5$ \u2014 involution + Leibniz interpretation"
       }
     ],
     "framework-canonical": [
@@ -1582,6 +1582,12 @@
         "reviewed_at": "2026-06-28T23:19:37.903Z",
         "reviewed_sha": "a16bed8babb124a3c1d689d9052923a74622eb30",
         "notes": "block has no .lean sibling"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq8"
       }
     ]
   },

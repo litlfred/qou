@@ -715,7 +715,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/particle-interactions/demand-stability.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "quantum-observable-universe/particle-interactions/demand-stability.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       },
       {
         "field_hash": {
@@ -751,7 +751,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/particle-interactions/demand-stability.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "quantum-observable-universe/particle-interactions/demand-stability.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       },
       {
         "field_hash": {
@@ -1554,7 +1554,7 @@
         },
         "reviewed_at": "2026-07-02T17:07:15.000Z",
         "reviewed_sha": "a9ce9ecfe24e6c7c9d0b9f25699b35ec666faa32",
-        "notes": "4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): placeholder-stub marker no longer present — criterion pass. Residual self-assuming-projection / statement-scope issue tracked under proof-statement-integrity and bean qsb2; do not re-fail this criterion for it."
+        "notes": "4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): placeholder-stub marker no longer present \u2014 criterion pass. Residual self-assuming-projection / statement-scope issue tracked under proof-statement-integrity and bean qsb2; do not re-fail this criterion for it."
       }
     ],
     "voice-statement-no-interpretation": [
@@ -1772,7 +1772,7 @@
           "ts": "2f8ce1f759c4"
         },
         "result": "pass",
-        "notes": "Demand profile (negative NF coeffs) as stability diagnostic — beta-stable/shell-closed/doubly-magic criteria are well-posed and substantive.",
+        "notes": "Demand profile (negative NF coeffs) as stability diagnostic \u2014 beta-stable/shell-closed/doubly-magic criteria are well-posed and substantive.",
         "reviewed_at": "2026-06-25T17:06:12.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1890,7 +1890,7 @@
           "ts": "2f8ce1f759c4"
         },
         "result": "fail",
-        "notes": "Lean collapses 3 distinct iff-characterizations (beta-stable, shell-closed=∅, doubly-magic) of the md into ONE assumed conjunction at a single (Z,N); drops the 'iff' and full neighbor-minimization quantification.",
+        "notes": "Lean collapses 3 distinct iff-characterizations (beta-stable, shell-closed=\u2205, doubly-magic) of the md into ONE assumed conjunction at a single (Z,N); drops the 'iff' and full neighbor-minimization quantification.",
         "reviewed_at": "2026-06-25T17:06:12.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -1943,7 +1943,7 @@
           "ts": "2f8ce1f759c4"
         },
         "result": "fail",
-        "notes": "theorem demand_stability := ⟨ctx.claim_i_beta_stable, ctx.claim_ii_shell_closed, ctx.claim_iii_doubly_magic⟩ — conclusion is verbatim the 3 class fields.",
+        "notes": "theorem demand_stability := \u27e8ctx.claim_i_beta_stable, ctx.claim_ii_shell_closed, ctx.claim_iii_doubly_magic\u27e9 \u2014 conclusion is verbatim the 3 class fields.",
         "reviewed_at": "2026-06-25T17:06:12.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -2032,7 +2032,7 @@
           "ts": "2f8ce1f759c4"
         },
         "result": "pass",
-        "notes": "claim_i (dem ≤ neighbors) ∧ claim_ii (dem=0) ∧ claim_iii (trM minimal) jointly satisfiable (dem=0 ≤ all); no contradiction.",
+        "notes": "claim_i (dem \u2264 neighbors) \u2227 claim_ii (dem=0) \u2227 claim_iii (trM minimal) jointly satisfiable (dem=0 \u2264 all); no contradiction.",
         "reviewed_at": "2026-06-25T17:06:12.000Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
@@ -2166,7 +2166,7 @@
         },
         "reviewed_at": "2026-06-28T11:11:57.781Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The block 'Demand profile determines nuclear and atomic stability' presents substantial mathematical content: The demand profile of a derived atom (derived atom) — the set of negative NF coefficients — is the categorical diagno...",
+        "notes": "The block 'Demand profile determines nuclear and atomic stability' presents substantial mathematical content: The demand profile of a derived atom (derived atom) \u2014 the set of negative NF coefficients \u2014 is the categorical diagno...",
         "severity": "minor"
       }
     ],
@@ -2376,6 +2376,12 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/particle-interactions/demand-stability.lean is missing entirely, preventing formal verification of the claims in 'Demand profile determines nuclear and atomic stability'."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq5"
       }
     ]
   },

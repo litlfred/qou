@@ -890,7 +890,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean theorem statement in content/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean matches the mathematical statement in content/quantum-observable-universe/models-of-qous/spatial-realization-functor.md.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean:1 — Lean file exists"
+        "evidence": "content/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean:1 \u2014 Lean file exists"
       }
     ],
     "da-false-claim": [
@@ -1127,7 +1127,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean:1 — content/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean:44:13: error: Function expected at"
+        "evidence": "content/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean:1 \u2014 content/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean:44:13: error: Function expected at"
       }
     ],
     "da-referee-verdict": [
@@ -1169,6 +1169,18 @@
         },
         "reviewed_at": "2026-07-05T18:21:24.666Z",
         "reviewed_sha": "f5b9cd25162f407863fe3f6d8e77b544491798b2"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Tightened paragraphs, used 'we' consistently, replaced references with direct, plain descriptions where necessary.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

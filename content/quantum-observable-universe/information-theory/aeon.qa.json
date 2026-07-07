@@ -1150,7 +1150,7 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/information-theory/aeon.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/aeon.lean:1 — /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/aeon.lean:55:2: error: don't know how to synthesize implicit argument `α`"
+        "evidence": "content/quantum-observable-universe/information-theory/aeon.lean:1 \u2014 /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/aeon.lean:55:2: error: don't know how to synthesize implicit argument `\u03b1`"
       }
     ],
     "da-referee-verdict": [
@@ -1167,10 +1167,10 @@
         },
         "reviewed_at": "2026-06-28T10:51:03.753Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/information-theory/aeon.lean fails compilation: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/aeon.lean:55:2: error: don't know how to synthesize implicit argument `α`",
+        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/information-theory/aeon.lean fails compilation: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/aeon.lean:55:2: error: don't know how to synthesize implicit argument `\u03b1`",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/information-theory/aeon.lean contains compilation errors: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/aeon.lean:55:2: error: don't know how to synthesize implicit argument `α`, invalidating the claimed formalization."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/information-theory/aeon.lean contains compilation errors: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/aeon.lean:55:2: error: don't know how to synthesize implicit argument `\u03b1`, invalidating the claimed formalization."
       }
     ],
     "bib-cite-resolves": [
@@ -1191,6 +1191,18 @@
         },
         "reviewed_at": "2026-07-03T00:52:56.008Z",
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Smoothed transitions, removed forward references, applied milnor brevity.",
+        "reviewed_at": "2026-07-07T02:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

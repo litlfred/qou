@@ -1124,8 +1124,8 @@
         "result": "warn",
         "scope": "limited",
         "ruling": "partial",
-        "referee_argument": "term6-binding-density.md:101,123 linked ../../../docs/audits/-Term6-scaling-heavy.witness.json and -alpha-categorical-derivation.witness.json — both dropped the 2026-05-02- prefix (dead links).",
-        "rebuttal": "partial→fixed — the witnesses exist and are findable (off-by-a-prefix); a link-hygiene bug, not a substantive reproducibility failure. AUTO-DISCHARGED this PR: both URLs restored to the 2026-05-02- prefix.",
+        "referee_argument": "term6-binding-density.md:101,123 linked ../../../docs/audits/-Term6-scaling-heavy.witness.json and -alpha-categorical-derivation.witness.json \u2014 both dropped the 2026-05-02- prefix (dead links).",
+        "rebuttal": "partial\u2192fixed \u2014 the witnesses exist and are findable (off-by-a-prefix); a link-hygiene bug, not a substantive reproducibility failure. AUTO-DISCHARGED this PR: both URLs restored to the 2026-05-02- prefix.",
         "evidence": [
           {
             "text": "term6-binding-density.md:101,123 (fixed)"
@@ -1153,7 +1153,7 @@
         "scope": "limited",
         "ruling": "rebutted",
         "referee_argument": "The c_4 keystone was just exposed as a rounded fit (probe f2ff63c), so this block must be tainted.",
-        "rebuttal": "rebutted — distinct object: f2ff63c {46,4,29} is the m_p absolute-mass term-6 c_4 Habiro residue; this block is the B(Z,N) binding-density alpha/beta fit, never referenced by the keystone probe; block already discloses calibrated status with R^2/sigma_resid + 'open derivation' note.",
+        "rebuttal": "rebutted \u2014 distinct object: f2ff63c {46,4,29} is the m_p absolute-mass term-6 c_4 Habiro residue; this block is the B(Z,N) binding-density alpha/beta fit, never referenced by the keystone probe; block already discloses calibrated status with R^2/sigma_resid + 'open derivation' note.",
         "evidence": [
           {
             "text": "term6-binding-density.md:18,88-95,117-119; probe f2ff63c"
@@ -1180,7 +1180,7 @@
         "scope": "structural",
         "ruling": "rebutted",
         "referee_argument": "Term6BindingDensity.lean class could be a self-assuming projection.",
-        "rebuttal": "rebutted — class fields are INPUTS (T_6, alpha, beta, delta_M, tolerance); binding_density_within_tolerance derives the eps-bounded claim, non-degenerate existential; genuine §3b-cond conditional class, sorry honest + cited.",
+        "rebuttal": "rebutted \u2014 class fields are INPUTS (T_6, alpha, beta, delta_M, tolerance); binding_density_within_tolerance derives the eps-bounded claim, non-degenerate existential; genuine \u00a73b-cond conditional class, sorry honest + cited.",
         "evidence": [
           {
             "text": "Term6BindingDensity.lean:67-105"
@@ -1400,6 +1400,18 @@
         "notes": "The physical concepts described in 'Term 6 binding density: $B(Z,N)/A \\\\approx \\\\alpha \\\\cdot T_6(Z,N)/A^3 + \\\\beta + \\\\delta_M(Z,N)$' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-theory/term6-binding-density.ts:1"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
+        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

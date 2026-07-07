@@ -834,7 +834,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "linearisation-convention.ts:1",
-        "notes": "No false claims identified in the prose of 'Linearisation convention and the role of $J$'; the mathematical reasoning concerning 'Throughout this paper the symbol $i$ in the Schrödinger equation is' is consistent."
+        "notes": "No false claims identified in the prose of 'Linearisation convention and the role of $J$'; the mathematical reasoning concerning 'Throughout this paper the symbol $i$ in the Schr\u00f6dinger equation is' is consistent."
       }
     ],
     "da-vacuous": [
@@ -853,7 +853,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "linearisation-convention.ts:1",
-        "notes": "The block 'Linearisation convention and the role of $J$' presents substantial mathematical content: 'Throughout this paper the symbol $i$ in the Schrödinger equation is'."
+        "notes": "The block 'Linearisation convention and the role of $J$' presents substantial mathematical content: 'Throughout this paper the symbol $i$ in the Schr\u00f6dinger equation is'."
       }
     ],
     "da-circular": [
@@ -872,7 +872,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "linearisation-convention.ts:1",
-        "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Linearisation convention and the role of $J$' (which asserts 'Throughout this paper the symbol $i$ in the Schrödinger equation is')."
+        "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Linearisation convention and the role of $J$' (which asserts 'Throughout this paper the symbol $i$ in the Schr\u00f6dinger equation is')."
       }
     ],
     "da-overclaim": [
@@ -891,7 +891,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "linearisation-convention.ts:1",
-        "notes": "The remarks and narrative scope in 'Linearisation convention and the role of $J$' concerning 'Throughout this paper the symbol $i$ in the Schrödinger equation is' are appropriately qualified."
+        "notes": "The remarks and narrative scope in 'Linearisation convention and the role of $J$' concerning 'Throughout this paper the symbol $i$ in the Schr\u00f6dinger equation is' are appropriately qualified."
       }
     ],
     "da-hidden-dof": [
@@ -929,7 +929,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "linearisation-convention.ts:1",
-        "notes": "The prose arguments in 'Linearisation convention and the role of $J$' proceed logically through the stated steps: 'Throughout this paper the symbol $i$ in the Schrödinger equation is'."
+        "notes": "The prose arguments in 'Linearisation convention and the role of $J$' proceed logically through the stated steps: 'Throughout this paper the symbol $i$ in the Schr\u00f6dinger equation is'."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -986,7 +986,7 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "linearisation-convention.ts:1",
-        "notes": "Key terms and symbols in 'Linearisation convention and the role of $J$' (e.g. from 'Throughout this paper the symbol $i$ in the Schrödinger equation is') are mathematically defined and unambiguous."
+        "notes": "Key terms and symbols in 'Linearisation convention and the role of $J$' (e.g. from 'Throughout this paper the symbol $i$ in the Schr\u00f6dinger equation is') are mathematically defined and unambiguous."
       }
     ],
     "da-empirical-fragility": [
@@ -1063,7 +1063,19 @@
         "severity": "minor",
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
-        "referee_argument": "No significant objections; the mathematical claims in 'Linearisation convention and the role of $J$' (concerning 'Throughout this paper the symbol $i$ in the Schrödinger equation is') are consistent and formally verified."
+        "referee_argument": "No significant objections; the mathematical claims in 'Linearisation convention and the role of $J$' (concerning 'Throughout this paper the symbol $i$ in the Schr\u00f6dinger equation is') are consistent and formally verified."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Deleted the conversational 'intro' blocks detailing file navigation. Kept factual claims and removed conversational cross-referencing.",
+        "reviewed_at": "2026-07-06T22:46:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

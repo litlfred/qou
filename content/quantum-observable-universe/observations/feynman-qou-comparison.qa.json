@@ -887,7 +887,7 @@
         },
         "reviewed_at": "2026-06-28T11:04:37.262Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The block 'Feynman vs QOU: term-by-term atomic mass comparison' presents substantial mathematical content: The Bethe--Weizsäcker semi-empirical mass formula (SEMF) decomposes nuclear bind...",
+        "notes": "The block 'Feynman vs QOU: term-by-term atomic mass comparison' presents substantial mathematical content: The Bethe--Weizs\u00e4cker semi-empirical mass formula (SEMF) decomposes nuclear bind...",
         "severity": "minor"
       }
     ],
@@ -1097,6 +1097,18 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Feynman vs QOU: term-by-term atomic mass comparison' are consistent.",
         "severity": "minor"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Applied Milnor exposition standard (H1-H8) and brevity rules. Shortened sentences, removed editorializing ('surprisingly', 'remarkably'), replaced 'this book' with 'this paper', and maintained Math, markdown, and cross-block consistency.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

@@ -1361,7 +1361,7 @@
         },
         "reviewed_at": "2026-07-06T04:41:29.802Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'thm:hyperelliptic-z5-classification' → expected 'hyperelliptic_z5_classification'; Lean declares: AdmissibleBranchSize, minimal_z5_branch_size. Structural match via content."
+        "notes": "Label 'thm:hyperelliptic-z5-classification' \u2192 expected 'hyperelliptic_z5_classification'; Lean declares: AdmissibleBranchSize, minimal_z5_branch_size. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1790,7 +1790,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.lean:1 — content/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Parity.olean' of module Mathlib.Data.Nat.Parity does not exist"
+        "evidence": "content/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/hyperelliptic-z5-classification.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Parity.olean' of module Mathlib.Data.Nat.Parity does not exist"
       }
     ],
     "da-referee-verdict": [
@@ -1832,6 +1832,12 @@
         },
         "reviewed_at": "2026-07-05T05:15:12.693Z",
         "reviewed_sha": "e28e45e2256ea73187107f230cc7beeb37a6c301"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq23"
       }
     ]
   },

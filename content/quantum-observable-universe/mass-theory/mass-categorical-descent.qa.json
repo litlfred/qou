@@ -571,7 +571,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/mass-theory/mass-categorical-descent.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "quantum-observable-universe/mass-theory/mass-categorical-descent.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -591,7 +591,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/mass-theory/mass-categorical-descent.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "quantum-observable-universe/mass-theory/mass-categorical-descent.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1042,7 +1042,7 @@
         },
         "reviewed_at": "2026-07-02T17:07:15.000Z",
         "reviewed_sha": "a9ce9ecfe24e6c7c9d0b9f25699b35ec666faa32",
-        "notes": "4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): current Lean is honest — real statement/derivation or cited sorry; the 2026-06-22 placeholder-marker fail predates the 2026-06-30 rewrite (hash drift verified). Criterion pass."
+        "notes": "4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): current Lean is honest \u2014 real statement/derivation or cited sorry; the 2026-06-22 placeholder-marker fail predates the 2026-06-30 rewrite (hash drift verified). Criterion pass."
       }
     ],
     "voice-statement-no-interpretation": [
@@ -1392,7 +1392,7 @@
           "ts": "94fe9fa2e8c6"
         },
         "result": "pass",
-        "notes": "Verified honest on branch claude/lean-qa-backlog-2h3f8d: carrier fields are genuine inputs and the theorem either derives its conclusion by composing them / summing / applying proved lemmas, or states the real .md claim with a cited sorry (§3b-cond item 5 + §1). No field projection remains. lean-direct exit 0. (Prior script fail entry was stale — the anti-pattern was already removed in the current file.)",
+        "notes": "Verified honest on branch claude/lean-qa-backlog-2h3f8d: carrier fields are genuine inputs and the theorem either derives its conclusion by composing them / summing / applying proved lemmas, or states the real .md claim with a cited sorry (\u00a73b-cond item 5 + \u00a71). No field projection remains. lean-direct exit 0. (Prior script fail entry was stale \u2014 the anti-pattern was already removed in the current file.)",
         "reviewed_at": "2026-07-04T10:56:05.000Z",
         "reviewed_sha": "4736a53600d78315c025af9d838303bdcc62bf97",
         "reviewer": {
@@ -1445,7 +1445,7 @@
           "ts": "94fe9fa2e8c6"
         },
         "result": "fail",
-        "notes": "mass_categorical_descent := <ctx.claim_i_descent_decomposition, ctx.claim_ii_BW_recovery> directly returns the two class fields equal to the conclusion conjuncts (§3b-cond item5 degenerate).",
+        "notes": "mass_categorical_descent := <ctx.claim_i_descent_decomposition, ctx.claim_ii_BW_recovery> directly returns the two class fields equal to the conclusion conjuncts (\u00a73b-cond item5 degenerate).",
         "reviewed_at": "2026-06-25T17:09:35.000Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
@@ -1462,7 +1462,7 @@
           "ts": "94fe9fa2e8c6"
         },
         "result": "pass",
-        "notes": "Verified honest on branch claude/lean-qa-backlog-2h3f8d: carrier fields are genuine inputs and the theorem either derives its conclusion by composing them / summing / applying proved lemmas, or states the real .md claim with a cited sorry (§3b-cond item 5 + §1). No field projection remains. lean-direct exit 0. (Prior script fail entry was stale — the anti-pattern was already removed in the current file.)",
+        "notes": "Verified honest on branch claude/lean-qa-backlog-2h3f8d: carrier fields are genuine inputs and the theorem either derives its conclusion by composing them / summing / applying proved lemmas, or states the real .md claim with a cited sorry (\u00a73b-cond item 5 + \u00a71). No field projection remains. lean-direct exit 0. (Prior script fail entry was stale \u2014 the anti-pattern was already removed in the current file.)",
         "reviewed_at": "2026-07-04T10:56:05.000Z",
         "reviewed_sha": "4736a53600d78315c025af9d838303bdcc62bf97",
         "reviewer": {
@@ -1735,7 +1735,7 @@
         "reviewed_at": "2026-06-28T22:55:43.946Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "severity": "critical",
-        "evidence": "Table mapping Bethe-Weizsäcker terms (Volume, Pairing, Wigner, Surface, Coulomb, Exchange, Shell, Hook) to Casimir levels and blow-up loci.",
+        "evidence": "Table mapping Bethe-Weizs\u00e4cker terms (Volume, Pairing, Wigner, Surface, Coulomb, Exchange, Shell, Hook) to Casimir levels and blow-up loci.",
         "notes": "Severe post-hoc rationalization. Mapping macroscopic empirical droplet model terms perfectly to algebraic representation theory constructs is highly suspicious."
       }
     ],
@@ -1899,6 +1899,18 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The referenced Lean file content/quantum-observable-universe/mass-theory/mass-categorical-descent.lean is missing, leading to complete divergence.",
         "severity": "minor"
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
+        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
       }
     ]
   },

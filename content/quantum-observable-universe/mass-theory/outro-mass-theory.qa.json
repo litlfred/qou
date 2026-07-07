@@ -10,6 +10,19 @@
     "ts": "b39834247f44",
     "md": "2c3a73f900c7"
   },
-  "criteria": {},
+  "criteria": {
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Condensed derivations to core propositions. Removed verbose implementation details.",
+        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1"
+        }
+      }
+    ]
+  },
   "updated_at": "2026-06-01T16:06:38.106Z"
 }
