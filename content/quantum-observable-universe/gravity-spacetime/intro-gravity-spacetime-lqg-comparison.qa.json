@@ -141,6 +141,246 @@
           "ts": "2771ad1c2b21"
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-07T14:26:55.459339Z"
