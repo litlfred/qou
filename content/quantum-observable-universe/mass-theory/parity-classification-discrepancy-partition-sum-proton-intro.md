@@ -1,3 +1,1 @@
-Continuation of the preceding sub-section.
-
-The arc identifies the partition-sum proton residual that resolves the empirical chirality discrepancy.  The five-table data block supplies the substrate-flow numerics; the closing $np$-discrepancy resolution pins the substrate-level mechanism that distinguishes proton from neutron in the binding-energy formula.
+We now resolve the empirical chirality discrepancy using the partition-sum proton residual. We trace the substrate-level mechanism distinguishing proton from neutron. We document the resulting corrections to the binding energy formula.
