@@ -1,4 +1,4 @@
-**Lemma.** Each exceptional-divisor summand evaluates to the quantum dilogarithm in the spectral coordinates of the Briggs--Klein chart at $E_i$:
+**Lemma.** *Each exceptional-divisor summand evaluates to the quantum dilogarithm in the spectral coordinates of the Briggs--Klein chart at $E_i$:*
 
 $$
   \bigl\lVert

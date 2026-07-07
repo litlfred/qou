@@ -7,13 +7,13 @@ $$
   \;\in\; \mathbb{Z}[\zeta_{2p}].
 $$
 
-Here $f(u) = \sum_{m \geq 0} a_m(u) (u; u)_m$ is the Habiro cyclotomic expansion of the atomic Markov trace $\mathrm{tr}_M(T_w, q)$ and $u = q^{1/2}$. The cyclotomic Pochhammer $(u; u)_m$ vanishes for $m \geq 2p$. This forces the sum to terminate after a finite number of terms.
+Here $f(u) = \sum_{m \geq 0} a_m(u) (u; u)_m$ represents the Habiro cyclotomic expansion of the atomic Markov trace $\mathrm{tr}_M(T_w, q)$ and $u = q^{1/2}$. The cyclotomic Pochhammer $(u; u)_m$ vanishes for $m \geq 2p$. This forces the sum to terminate after a finite number of terms.
 
 ## Construction and verification
 
-- **Compatibility verification.** We perform two finite-place coherence checks on every $(p, \text{atom})$ cell. First, Galois-norm integrality: the trace $N(\mathrm{Frob}_p) = \sum_{\sigma \in \mathrm{Gal}(\mathbb{Q}(\zeta_{2p})/\mathbb{Q})} \sigma(\mathrm{Frob}_p)$ is a rational integer (residual $< 10^{-7}$). Second, Weil purity at small primes: at $p \in \{2, 3\}$, the orbit-spread $\max|\sigma(\mathrm{Frob}_p)| - \min|\sigma(\mathrm{Frob}_p)|$ is below $10^{-10}$ for every atom, and the inferred weight $w = 2 \log_p |\mathrm{Frob}_p|$ takes integer or near-integer values. At larger primes, the spread grows. The QOU motive is mixed in general, consistent with the brane tower being a sum across cohomology degrees.
+- **Compatibility verification.** We perform two finite-place coherence checks on every $(p, \text{atom})$ cell. First, Galois-norm integrality holds: the trace $N(\mathrm{Frob}_p) = \sum_{\sigma \in \mathrm{Gal}(\mathbb{Q}(\zeta_{2p})/\mathbb{Q})} \sigma(\mathrm{Frob}_p)$ yields a rational integer (residual $< 10^{-7}$). Second, Weil purity holds at small primes: at $p \in \{2, 3\}$, the orbit-spread $\max|\sigma(\mathrm{Frob}_p)| - \min|\sigma(\mathrm{Frob}_p)|$ remains below $10^{-10}$ for every atom, and the inferred weight $w = 2 \log_p |\mathrm{Frob}_p|$ takes integer or near-integer values. At larger primes, the spread grows. The QOU motive remains mixed in general, consistent with the brane tower forming a sum across cohomology degrees.
 
-- **Lean instance.** The instance in [`qou-motivic-galois-instance.lean`](qou-motivic-galois-instance.lean) discharges [`def:motivic-galois-character`](#def:motivic-galois-character) for the QOU substrate. The `frobenius_at` field maps each prime to its extracted Frobenius eigenvalue. The `almost_everywhere_nontrivial` field is a substrate axiom (AGENTS.md §3b), backed by a numerical witness for primes $p \leq 13$.
+- **Lean instance.** The instance in [`qou-motivic-galois-instance.lean`](qou-motivic-galois-instance.lean) discharges [`def:motivic-galois-character`](#def:motivic-galois-character) for the QOU substrate. The `frobenius_at` field maps each prime to its extracted Frobenius eigenvalue. The `almost_everywhere_nontrivial` field functions as a substrate axiom (AGENTS.md §3b), backed by a numerical witness for primes $p \leq 13$.
 
 ## Per-cell summary
 
@@ -31,4 +31,4 @@ This instance discharges audit GAP 5b ([`docs/audits/family-4-motivic-path.md`](
 
 ## Coherence
 
-Cross-prime coherence follows structurally from the Habiro theorem. Any two evaluations $f|_{u = \zeta_{2p}}$ and $f|_{u = \zeta_{2q}}$ are extracted from the same Habiro element and respect the natural Galois action on $\mathbb{Q}(\mu_\infty)$. The deeper $\ell$-adic archimedean Weil/Deligne behaviour lies outside this construction.
+Cross-prime coherence follows structurally from the Habiro theorem. Any two evaluations $f|_{u = \zeta_{2p}}$ and $f|_{u = \zeta_{2q}}$ extract from the same Habiro element and respect the natural Galois action on $\mathbb{Q}(\mu_\infty)$. The deeper $\ell$-adic archimedean Weil/Deligne behaviour lies outside this construction.

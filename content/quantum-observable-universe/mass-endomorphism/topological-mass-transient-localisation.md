@@ -1,5 +1,5 @@
 **Lemma.**
-*The transient component $\alpha - \hat{\tau}_n(\alpha)$ is supported exclusively on disjoint discs $D_i$ centred at the blow-up points $p_1, \ldots, p_N$. The norm of its multiplicative integral reduces to a sum over the exceptional divisors $E_i$:*
+*The transient component $\alpha - \hat{\tau}_n(\alpha)$ operates exclusively on disjoint discs $D_i$ centred at the blow-up points $p_1, \ldots, p_N$. The norm of its multiplicative integral reduces to a sum over the exceptional divisors $E_i$:*
 
 $$
   \bigl\lVert

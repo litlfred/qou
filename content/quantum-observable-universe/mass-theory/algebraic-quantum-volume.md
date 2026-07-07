@@ -1,128 +1,16 @@
-**Definition.**
-*The **algebraic quantum volume** of a braid element
-$\beta \in H_n(R, q)$ is the product of traced volumes:*
+**Definition (Algebraic Quantum Volume).**
+*Let $W \in H_n(q)$ be a knot operator representing a confined state. The **algebraic quantum volume** of $W$ is its full canonical Markov trace over $\mathbb{Z}[q^{\pm 1/2}]$:*
 
 $$
-  \mathrm{Vol}_q(\beta)
-  \;=\;
-  \prod_{i=0}^{n-2} \hat{V}_i(q)
-  \;\in\;
-  \mathbb{Z}[q^{1/2}, q^{-1/2}]
+  \mathrm{Vol}_{\mathrm{alg}}(W)
+  \;:=\; \mathrm{tr}_M(W)
+  \;=\; \sum_{\lambda \vdash n} W_\lambda \, t_\lambda(W)
 $$
 
-*where $\hat{V}_i(q) = z(q) \cdot a_i(q) + b_i(q)$ is the
-traced volume of generator $i$, with $a_i(q)$ and $b_i(q)$
-the Laurent polynomial entries of the transfer matrix chain
-([Markov trace product](#thm:markov-trace-product)).*
+*where $W_\lambda$ are the quantum dimensions and $t_\lambda(W)$ are the irreducible character traces.*
 
-*The algebraic quantum volume lives in
-$\mathbb{Z}[q^{1/2}, q^{-1/2}]$ — the ring of Laurent
-polynomials in $q^{1/2}$. It is an algebraic object.
-Its real-valued archimedean shadow is obtained by
-applying the QOU fibre functor*
+This defines the exact algebraic quantity that governs the mass expansion. The algebraic volume encodes both the knot topology (via $t_\lambda$) and the algebraic space structure (via $W_\lambda$). The archimedean realisation $\rho_\infty$ projects this polynomial into the physical binding energy.
 
-$$
-  \tau \;:\;\mathbf{C}\;\longrightarrow\;\mathbf{Arch},
-$$
+**Structure of the sum.** The volume decomposes into independent channel contributions. Each channel $\lambda$ corresponds to a distinct phase of the $n$-nucleon cluster. The standard partition $(n-1, 1)$ carries the primary interaction strength, while the trivial partition $(n)$ acts as a scalar background field.
 
-*restricted to its archimedean component
-$\tau_{\mathrm{arch}} = \pi_\infty \circ \tau$
-(see [archimedean realization functor](#def:archimedean-realization-functor)
-and [Vol(K) factors through $\tau$](#prop:vol-through-tau)). Concretely,*
-
-$$
-  \Phi_1(\beta)
-  \;:=\;
-  \tau_{\mathrm{arch}}\bigl(\mathrm{Vol}_q(\beta)\bigr)
-  \;=\;
-  \ln\lvert\mathrm{Vol}_{q_0}(\beta)\rvert
-  \;=\;
-  \sum_{i=0}^{n-2} \ln\lvert\hat{V}_i(q_0)\rvert,
-$$
-
-*where $\tau_{\mathrm{arch}}$ acts on a generator $\hat{V}_i$ by
-specializing $q \mapsto q_0$ at the archimedean place and taking
-the absolute logarithm. The logarithm is not an extraneous
-transcendental operation: it is the canonical map
-$|\cdot|_\infty \to \log|\cdot|_\infty$ on the archimedean place
-of the [adelic substrate](#def:adelic-substrate), packaged as the
-$\tau_{\mathrm{arch}}$-image of the multiplicative quantum-volume
-generator. Every archimedean physical observable derived from
-$\mathrm{Vol}_q$ is the image of a categorical morphism under
-$\tau_{\mathrm{arch}}$ — there is no other archimedean route.*
-
-*The three Wedderburn invariants of the mass formula
-([three-invariant mass formula](#thm:wedderburn-mass-formula))
-correspond to three algebraic volumes:*
-
-| Invariant | Algebraic volume | Ring |
-|:----------|:-----------------|:-----|
-| $\Phi_1$ | $\prod \hat{V}_i$ | trace of std rep |
-| $\Phi_2$ | $\prod \det(M_i)$ | sym $\times$ alt product |
-| $\Phi_3$ | $\prod (\lambda_i^{\mathrm{sym}}/\lambda_i^{\mathrm{alt}})$ | sym/alt ratio |
-
-*Each factor is algebraic in $q$. The mass formula is the
-$\tau_{\mathrm{arch}}$-image of the categorical product, evaluated
-on the three Wedderburn channels:*
-
-$$
-  \mathcal{M}
-  = M_{\mathrm{free}}
-  + \alpha \cdot \ln\left\lvert
-    \mathrm{Vol}_q^{(1)} \cdot
-    \bigl(\mathrm{Vol}_q^{(2)}\bigr)^{-2[3]_q} \cdot
-    \bigl(\mathrm{Vol}_q^{(3)}\bigr)^{H_A^2}
-  \right\rvert_{q=q_0}
-$$
-
-*Every intermediate computation — ground-state ordering, electron
-insertion, transfer matrix chain, partition traces — is algebraic
-in $q$ and internal to $\mathbf{C}$; the only step that exits is
-the final $\tau_{\mathrm{arch}}$, which is the unique boundary at
-which categorical data crosses into archimedean geometry.*
-
-*For the Habiro ring: the algebraic volume embeds into
-$\widehat{\mathbb{Z}[q]}$ (the cyclotomic completion),
-where it coexists with the colored Jones polynomials at all
-roots of unity. The mass at $q_0$ is the evaluation at a
-non-root-of-unity point.*
-
-## Partial-product (q-Pochhammer) expansion
-
-*Each generator volume $\hat{V}_i(q) = z(q)\, a_i(q) + b_i(q)$ admits
-a $q$-Pochhammer partial-product expansion
-([q-Pochhammer partial product](#def:q-pochhammer-partial-product))
-of the form*
-
-$$
-  \hat{V}_i(q)
-  \;=\;
-  C_i(q) \cdot \Phi_{n_i}(x_i; q),
-  \qquad
-  \Phi_{n_i}(x_i; q)
-  \;=\;
-  \prod_{k=0}^{n_i - 1}\frac{1}{1 - x_i\, q^k},
-$$
-
-*with $C_i(q) \in \mathbb{Z}[q^{1/2}, q^{-1/2}]$ a Laurent prefactor
-and $x_i$ the state variable at the $i$-th crossing. The full
-algebraic volume*
-
-$$
-  \mathrm{Vol}_q(\beta)
-  \;=\;
-  \prod_{i=0}^{n-2} \hat{V}_i(q)
-  \;=\;
-  \Bigl(\prod_i C_i(q)\Bigr)
-  \cdot
-  \Bigl(\prod_i \Phi_{n_i}(x_i; q)\Bigr)
-$$
-
-*therefore exposes its **shared denominator** explicitly: the product
-$\prod_i (x_i; q)_{n_i} \in \mathbb{Z}[q, x_1, \dots, x_{n-2}]$ is a
-polynomial whose zero locus is the algebraic address of the JSJ-piece
-cusps under the Archimedean realization
-([shared-denominator cusp holonomy](#conj:shared-denominator-cusp-holonomy)).
-This factorisation does not change $\mathrm{Vol}_q(\beta)$ as a
-Laurent polynomial; it only names the denominator structure that
-the subsequent thimble / volume-tower derivations rely on.*
+**Substrate isolation.** The algebraic volume computes entirely within the categorical substrate, before any numerical evaluation at $q_0$. It represents the pure combinatorial content of the mass formula. The convergence of the $z$-Habiro expansion depends crucially on the algebraic properties of this un-evaluated polynomial.
