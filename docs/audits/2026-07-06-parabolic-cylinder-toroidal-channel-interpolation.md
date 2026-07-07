@@ -664,35 +664,52 @@ $5g = 5/\sqrt{5+x}$ whose Taylor expansion **is** the §2e correction ladder
 (D4); and `deformation_split` — $25(1/g)^2 = (5+x)^2(5g)^2$, the exact
 $1 + x/5$ split of the two deformations.
 
-**D5 — E_unit is bar-even; the transition sector is parity-excluded
+**D5 — a *conditional* parity constraint on E_unit
 ([`e_unit_parity_constraint_probe.py`](../../computations/substrate/e_unit_parity_constraint_probe.py)).**
-The owner-approved counit/transition-sector attack, run formalize-first:
 
-- **(b) structural exclusion.** $B(^2\mathrm{H})$ is a *binding* energy
-  (bar-even, cosh channel) and $5g$ is bar-even ($z = 1/[2]_v$, $[2]_v$
-  bar-invariant, $g^2$ bar-even — checked exactly), so
-  $E_{\text{unit}} = B/(5g)$ is **bar-even**. This **excludes the entire
-  bar-odd transition sector** — in particular $\mathfrak{Q}_\beta$ (the
-  sinh/β-decay partner) cannot be $E_{\text{unit}}$. Invariant cited:
-  bar-parity of the binding channel (the cosh/sinh split; PR #3445 §12).
+> **Superseded / re-scoped (see
+> [`docs/coordination/e-unit-deuteron-scale.md`](../coordination/e-unit-deuteron-scale.md)).**
+> The subsections below were written before the reeb-flow §2h landing
+> (`ss_det_no_linear_term`) and the owner's CAL-4 correction. They are
+> **conditional**, not settled: the "(b) structural exclusion" holds only
+> *if* $B(^2\mathrm{H})$ is bar-even, and that antecedent is now **open**
+> (§2h data weakly favour a bar-*even* unit $2m_e$, but do not settle it).
+> The Lean lemmas `barEven_of_mul` / `barEven_ne_barOdd` are correct
+> *conditionals*; what is open is their antecedent. Read this subsection
+> as "IF $B$ is bar-even THEN …", and see the ledger for the corrected
+> picture (E_unit is a 3-CAL function via $\hbar/\mathfrak{D}$, **not** a
+> new bar-even absolute scale / CAL-4).
+
+Formalize-first attempt (conditional):
+
+- **(b) structural exclusion — CONDITIONAL on $B(^2\mathrm{H})$ bar-even.**
+  $5g$ is bar-even ($z = 1/[2]_v$, $[2]_v$ bar-invariant, $g^2$ bar-even —
+  proved exactly). *If* $B$ is a bar-even binding, then
+  $E_{\text{unit}} = B/(5g)$ is bar-even and the bar-odd $\mathfrak{Q}_\beta$
+  is excluded. The antecedent is the open point: for the β-threshold
+  deuteron $B$ may carry bar-odd (weak-sector) character, in which case
+  $E_{\text{unit}} = \hbar/\mathfrak{D}$ is the bar-odd decay-width energy —
+  the owner's $\mathfrak{D}$ reinterpretation. Which parity holds is
+  empirically open.
 - **(a) bar-even single-factor negative.** Predicted-first, the licensed
   bar-even candidates ($m_e$, $2m_e$, $E_0$, $m_e[2]_v$) all miss
-  $E_{\text{unit}} = 0.995940$ MeV — closest $2m_e$ at 2.6 %, well outside
-  the law's 0.4 % scale.
+  $E_{\text{unit}} = 0.995940$ MeV — closest $2m_e$ at 2.6 %, outside the
+  law's 0.4 % scale. (This stands regardless of parity.)
 - **Anti-laundering guard (recorded).** The within-0.4 % coincidence
   $E_{\text{unit}}/\mathfrak{Q}_\beta \approx 4/\pi$ (0.2 %) is **not**
-  claimed: $4/\pi$ has no categorical derivation, $\mathfrak{Q}_\beta$ is
-  parity-excluded by (b), and the entropy bound forbids reading a 0.4 % hit
-  as evidence.
+  claimed: $4/\pi$ has no categorical derivation and the entropy bound
+  forbids reading a 0.4 % hit as evidence.
 
-**The wall, localized.** Closing $E_{\text{unit}}$ requires a *new bar-even
-absolute energy* $\approx 0.996$ MeV, unreachable from the existing anchors
-by one derived factor — Subgoal-2 (absolute scales), declined 2026-05-08
-and only narrowly reopened for the s5-so3 keystone. The full-derivation
-program has reduced $B(^2\mathrm{H})$ to exactly this single owner-gated
-bar-even scale: the **5** is forced (D1), the deformation is $5g$ (D4), $g$
-is a linking rate (D3), and the residual unit is now known to be bar-even,
-transition-sector-excluded, and single-factor-negative (D5).
+**The wall, localized (corrected framing).** `E_unit` is **not** a fourth
+calibration (that would be CAL-4, a cohomology violation — H¹(Bring) = 2W
+has three DOF): it must be a *function of the three CALs*, with
+$\hbar/\mathfrak{D}$ (a CAL-2 datum) the natural carrier. The landed §2h
+result independently shows the exchange sector is **scale-free** so the unit
+is external; numerically no canonical energy of *either* parity matches to
+better than ~2.6 %. So the program has reduced $B(^2\mathrm{H})$ to a single
+external, parity-open, 3-CAL unit: the **5** is forced (D1), the deformation
+is $5g$ (D4), $g$ is a linking rate (D3); the unit is an honest open, and
+the §3f NEAR-MATCH ruling holds.
 
 ## 16. Corpus-grep record
 
