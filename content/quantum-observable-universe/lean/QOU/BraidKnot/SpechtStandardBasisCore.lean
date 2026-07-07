@@ -975,6 +975,80 @@ theorem digit_bound_indexed {ι : Type*} (B K : ℕ) (hB : 1 ≤ B) (s : Finset 
         Nat.mul_le_mul_left _ (Finset.sum_le_sum_of_subset h4)
     _ < B ^ K := by have hg := geom_sum_pred B K hB; rw [Finset.mul_sum]; omega
 
+/-- `#{i : Fin n | (i:ℕ) ≤ m} = m + 1` for `m < n` (sorry-free). -/
+theorem card_fin_le (n m : ℕ) (hm : m < n) :
+    (Finset.univ.filter (fun i : Fin n => (i : ℕ) ≤ m)).card = m + 1 := by
+  rw [← Finset.card_image_of_injective _ Fin.val_injective]
+  have : (Finset.univ.filter (fun i : Fin n => (i : ℕ) ≤ m)).image Fin.val
+      = Finset.range (m + 1) := by
+    ext k
+    simp only [Finset.mem_image, Finset.mem_filter, Finset.mem_univ, true_and, Finset.mem_range]
+    constructor
+    · rintro ⟨i, hi, rfl⟩; omega
+    · intro hk; exact ⟨⟨k, by omega⟩, by simpa using by omega, rfl⟩
+  rw [this, Finset.card_range]
+
+/-- `#{i : Fin n | (i:ℕ) < m} = m` for `m ≤ n` (sorry-free). -/
+theorem card_fin_lt (n m : ℕ) (hm : m ≤ n) :
+    (Finset.univ.filter (fun i : Fin n => (i : ℕ) < m)).card = m := by
+  rw [← Finset.card_image_of_injective _ Fin.val_injective]
+  have : (Finset.univ.filter (fun i : Fin n => (i : ℕ) < m)).image Fin.val
+      = Finset.range m := by
+    ext k
+    simp only [Finset.mem_image, Finset.mem_filter, Finset.mem_univ, true_and, Finset.mem_range]
+    constructor
+    · rintro ⟨i, hi, rfl⟩; omega
+    · intro hk; exact ⟨⟨k, by omega⟩, by simpa using hk, rfl⟩
+  rw [this, Finset.card_range]
+
+/-- **Order-statistic domination (sorry-free).** If for every threshold `w` the finset `X`
+has at least as many elements `≤ w` as `Y`, then `X`'s `r`-th smallest is `≤` `Y`'s `r`-th
+smallest (`orderEmbOfFin` = the increasing enumeration). The order-theoretic core of the
+fibre-decrease: `B < A` makes `A` the top-`|A|` subset, so its column content dominates. -/
+theorem orderStat_le_of_count_ge {X Y : Finset ℕ} (h : X.card = Y.card)
+    (hcount : ∀ w, (Y.filter (· ≤ w)).card ≤ (X.filter (· ≤ w)).card)
+    (r : Fin X.card) :
+    X.orderEmbOfFin rfl r ≤ Y.orderEmbOfFin h.symm r := by
+  classical
+  set v := Y.orderEmbOfFin h.symm r with hv
+  have hYcount : (r : ℕ) + 1 ≤ (Y.filter (· ≤ v)).card := by
+    have hsub : (Finset.univ.filter (fun i : Fin X.card => (i : ℕ) ≤ (r:ℕ))).image
+          (Y.orderEmbOfFin h.symm) ⊆ Y.filter (· ≤ v) := by
+      intro y hy
+      rw [Finset.mem_image] at hy
+      obtain ⟨i, hi, rfl⟩ := hy
+      rw [Finset.mem_filter] at hi ⊢
+      refine ⟨Finset.orderEmbOfFin_mem _ _ _, ?_⟩
+      rw [hv]; exact (Y.orderEmbOfFin h.symm).monotone (by exact_mod_cast hi.2)
+    calc (r : ℕ) + 1 = (Finset.univ.filter (fun i : Fin X.card => (i : ℕ) ≤ (r:ℕ))).card :=
+              (card_fin_le X.card r r.2).symm
+        _ = _ := (Finset.card_image_of_injective _ (Y.orderEmbOfFin h.symm).injective).symm
+        _ ≤ _ := Finset.card_le_card hsub
+  have hXcount : (r : ℕ) + 1 ≤ (X.filter (· ≤ v)).card := le_trans hYcount (hcount v)
+  by_contra hlt
+  push_neg at hlt
+  have hbad : (X.filter (· ≤ v)).card ≤ (r : ℕ) := by
+    have hsub : X.filter (· ≤ v) ⊆
+        (Finset.univ.filter (fun i : Fin X.card => (i:ℕ) < (r:ℕ))).image (X.orderEmbOfFin rfl) := by
+      intro x hx
+      rw [Finset.mem_filter] at hx
+      obtain ⟨i, rfl⟩ : ∃ i, X.orderEmbOfFin rfl i = x := by
+        have hxc : x ∈ (X : Set ℕ) := Finset.mem_coe.mpr hx.1
+        rw [← Finset.range_orderEmbOfFin X rfl] at hxc
+        exact hxc
+      rw [Finset.mem_image]
+      refine ⟨i, ?_, rfl⟩
+      rw [Finset.mem_filter]
+      refine ⟨Finset.mem_univ _, ?_⟩
+      by_contra hge; push_neg at hge
+      have : v < X.orderEmbOfFin rfl i :=
+        lt_of_lt_of_le hlt ((X.orderEmbOfFin rfl).monotone (by exact_mod_cast hge))
+      exact absurd hx.2 (not_le.mpr this)
+    calc (X.filter (· ≤ v)).card ≤ _ := Finset.card_le_card hsub
+      _ ≤ (Finset.univ.filter (fun i : Fin X.card => (i:ℕ) < (r:ℕ))).card := Finset.card_image_le
+      _ = (r : ℕ) := card_fin_lt X.card r (le_of_lt r.2)
+  omega
+
 /-- **First-difference comparison for `colWordNum` (sorry-free).** If `u` and `v` agree
 (as labels) on every cell column-major-*earlier* than a cell `c₀` (i.e. `cmajSig` strictly
 larger), and `v` has a strictly smaller label at `c₀`, then `colWordNum v < colWordNum u`.
