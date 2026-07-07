@@ -43,13 +43,28 @@ the origin of the cubic:
 | Hopf ($\sigma_0\sigma_1 + \sigma_1\sigma_0$) | 2 | $\frac{h}{4} \cdot (y^3 - 6y^2 + 10y - 6) = \frac{h}{4} \cdot C_{\mathrm{Hopf}}(y)$ |
 
 with $C = C_{\mathrm{Hopf}} + C_{\mathrm{unknot}}$. The odd-crossing sectors
-(virtual, trefoil) are bar-even and vanish; the identity contributes only a
-quadratic; the **cubic — hence the degree-3 field — is sourced entirely by the
-Hopf-link (double-crossing) sector**. $C_{\mathrm{Hopf}}$ is itself irreducible
-(discriminant $-76 = -2^2 \cdot 19$), and the prime $19$ is the arithmetic
-fingerprint shared with the total $C$. So the obstruction is not a
-$3$-dimensional representation ($\mathbf{H}_3$ has none — its Wedderburn blocks
-are $1, 2, 1$) nor a single knot invariant, but the two-crossing isospin
-amplitude difference. Any genuine odd-channel closure must supply the cubic
-field of $C_{\mathrm{Hopf}}$, routed through the archimedean evaluation of the
-Markov crossing term, rather than a fibre-level real-$q$ formula.
+(virtual, trefoil) are bar-even and vanish.
+
+**Topological discriminant parity.** The complex structure (imaginary parity) of the
+odd channel is generated entirely by the topology of the chiral crossing interactions.
+The irreducible $C_{\mathrm{Hopf}}$ carries a **negative** discriminant ($-76 = -2^2 \cdot 19$),
+inducing a complex-conjugate pair of roots (the chiral Hopf link). The trivial identity
+sector $C_{\mathrm{unknot}}$, by contrast, is amphichiral, carrying a **positive**
+discriminant ($17$) and purely real roots. The field-theoretic imaginary mass is exactly
+sourced by the chirality of the two-crossing sector.
+
+**Quantum trace evaluation and $w^2$ factorization.** When evaluated under the full
+Markov quantum trace with the affine crossing weight $w(q)$ attached, the trace is a
+linear functional. The exact algebraic modulation of the odd channel factors perfectly
+across the knot sectors. The $2$-crossing Hopf sector is scaled exactly by $w^2$,
+while the $0$-crossing unknot sector is scaled by $w^0 = 1$:
+
+$$
+\Delta_{\mathrm{odd}}(w) = \frac{h}{4} \left[ w^2 \cdot C_{\mathrm{Hopf}}(y) + 1 \cdot C_{\mathrm{unknot}}(y) \right].
+$$
+
+The entire swing in the open scalar $c_3$ observed across the nucleon substrate thus isolates
+structurally to the exact $w(q)^2$ modulation acting precisely on the subset of terms housing
+the non-trivial complex root pair ($C_{\mathrm{Hopf}}$). Any genuine odd-channel closure must
+supply the cubic field of $C_{\mathrm{Hopf}}$ through the archimedean evaluation of the crossing weight,
+rather than a fibre-level real-$q$ formula.
