@@ -73,6 +73,7 @@ export default chapter({
         "binding-error-amplification",
         "binding-error-amplification-proof",
         "deuteron-fusion-frame",
+        "frakD-energy-decomposition",
         "wedderburn-mass-formula",
         "wedderburn-mass-formula-proof",
         "frobenius-s-classification",
