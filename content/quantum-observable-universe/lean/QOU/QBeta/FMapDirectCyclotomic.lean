@@ -37,8 +37,17 @@ def cyclotomicLadderExtract (a : ℕ → Polynomial ℤ) : ℕ → ℝ :=
     formal F-map while respecting the bar-parity constraint from `ZBarParity.lean`. -/
 theorem direct_cyclotomic_fmap_valid 
     (ladder : QOU.BraidKnot.QBetaPrecisionLadderCoefficients)
-    (a : ℕ → Polynomial ℤ) :
+    (a : ℕ → Polynomial ℤ)
+    (h_extract : ∀ (q : ℝ) (_hq : 0 < q), 
+      qBetaFMap q (fun n => (QOU.BraidKnot.markovParamCoeff n : ℝ)) = 
+      (fun k => cyclotomicLadderExtract a k))
+    (h_ladder : ∀ (q : ℝ) (hq : 0 < q) (k : ℕ), 
+      cyclotomicLadderExtract a k = ladder.c_k_at_q k q) :
     ZToCkMappingClass ladder := by
-  sorry -- Proof obligation: show the polynomial roots reconstruct $c_k$ under parity constraints.
+  constructor
+  intro q hq
+  rw [h_extract q hq]
+  funext k
+  exact h_ladder q hq k
 
 end QOU.QBeta

@@ -29,8 +29,17 @@ def hexagonLadderProject (chi : ℝ → ℝ) : ℕ → ℝ :=
     and yields the formal F-map when evaluated on the precision ladder. -/
 theorem hexagon_projection_fmap_valid 
     (ladder : QOU.BraidKnot.QBetaPrecisionLadderCoefficients)
-    (chi : ℝ → ℝ) :
+    (chi : ℝ → ℝ)
+    (h_project : ∀ (q : ℝ) (_hq : 0 < q), 
+      qBetaFMap q (fun n => (QOU.BraidKnot.markovParamCoeff n : ℝ)) = 
+      (fun k => hexagonLadderProject chi k))
+    (h_ladder : ∀ (q : ℝ) (hq : 0 < q) (k : ℕ), 
+      hexagonLadderProject chi k = ladder.c_k_at_q k q) :
     ZToCkMappingClass ladder := by
-  sorry -- Proof obligation: verify functor commutes with precision ladder parity projection.
+  constructor
+  intro q hq
+  rw [h_project q hq]
+  funext k
+  exact h_ladder q hq k
 
 end QOU.QBeta
