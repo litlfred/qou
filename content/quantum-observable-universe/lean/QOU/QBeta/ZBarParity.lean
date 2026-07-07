@@ -271,4 +271,23 @@ theorem pochNum_bar_twist (q qi : R) (h : q * qi = 1) (k : ℕ) :
             simp only [pochNum, Finset.prod_range_succ]
             ring
 
+/-! ## §8. The u-side ladder variable: `u^k` carries a degree-dependent twist
+
+The observable ladder lives in `u = b·ℏ_q²`, which is bar-EVEN up to the
+monomial twist `q²` (`hbar_sq_bar_even_twist`: `bar(u) = q²·u`). Hence the
+`u`-monomial `u^k` transforms with the **degree-dependent** twist `q^{2k}` —
+a *scaling*, not the KC16 index-inversion. This is the structural obstruction
+found by probe `qbeta_b3u_uside_transfer_probe.py` (B3-U1): the `(u;u)_m`
+Habiro basis carries no clean monomial bar-twist, so the fibre index-parity
+(KC16) does not descend to a clean per-rung parity of the `c_k`; the odd
+channel enters through the archimedean evaluation map, not a fibre basis
+change. -/
+
+/-- **`u`-monomial twist.** If `u'` is the bar-image of the ladder variable
+    with `u' = t·u` (here `t = q²` from `bar(u) = q²·u`), then `u'^k = t^k·u^k`.
+    The twist `t^k = q^{2k}` is degree-dependent (a scaling), in contrast to
+    the constant / Gauss-sum twists of the `q`-side bases (KC12/KC16). -/
+theorem uPow_bar_twist (t u : R) (k : ℕ) : (t * u) ^ k = t ^ k * u ^ k :=
+  mul_pow t u k
+
 end QOU.QBeta
