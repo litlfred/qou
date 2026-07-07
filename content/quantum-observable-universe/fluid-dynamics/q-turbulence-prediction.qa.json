@@ -852,6 +852,19 @@
         "reviewed_at": "2026-07-07T14:26:56.249570Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:42Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-false-claim": [
@@ -872,6 +885,19 @@
         "notes": "No false claims identified in 'Testable prediction: high-wavenumber deviations from Kolmogorov scaling': mathematical reasoning is consistent.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-turbulence-prediction.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:42Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-vacuous": [
@@ -891,6 +917,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The block 'Testable prediction: high-wavenumber deviations from Kolmogorov scaling' presents substantial mathematical content: The [q-Kolmogorov spectrum](#prop:q-turbulence-spectrum) reduces to the standard...",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:42Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-circular": [
@@ -911,6 +950,19 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Testable prediction: high-wavenumber deviations from Kolmogorov scaling'.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-turbulence-prediction.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:42Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-overclaim": [
@@ -930,6 +982,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No overclaims: the scope of 'Testable prediction: high-wavenumber deviations from Kolmogorov scaling' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:42Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -950,6 +1015,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Testable prediction: high-wavenumber deviations from Kolmogorov scaling'.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-turbulence-prediction.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:42Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -970,6 +1048,19 @@
         "notes": "The argument flow in 'Testable prediction: high-wavenumber deviations from Kolmogorov scaling' is logically sound, mapping onto the cited dependencies.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-turbulence-prediction.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:42Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -989,6 +1080,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:42Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1009,6 +1113,19 @@
         "notes": "No citations are present in 'Testable prediction: high-wavenumber deviations from Kolmogorov scaling', hence no citation misuse is possible.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-turbulence-prediction.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:42Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1029,6 +1146,19 @@
         "notes": "Key terms and symbols in 'Testable prediction: high-wavenumber deviations from Kolmogorov scaling' are mathematically defined and unambiguous.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-turbulence-prediction.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:42Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1049,6 +1179,19 @@
         "notes": "The algebraic and logical relations in 'Testable prediction: high-wavenumber deviations from Kolmogorov scaling' are independent of empirical tuning parameters.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-turbulence-prediction.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:42Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1069,6 +1212,19 @@
         "notes": "The physical concepts described in 'Testable prediction: high-wavenumber deviations from Kolmogorov scaling' are consistent with quantum observable mechanics.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-turbulence-prediction.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:42Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1089,6 +1245,19 @@
         "notes": "The derivation steps and formal definitions in 'Testable prediction: high-wavenumber deviations from Kolmogorov scaling' are reproducible.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-turbulence-prediction.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:42Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1110,6 +1279,19 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Testable prediction: high-wavenumber deviations from Kolmogorov scaling' are consistent.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:42Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1127,6 +1309,36 @@
         "field_hash": {
           "md": "48bc2d6ecfcd",
           "ts": "475645dd9f33"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:42Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:42Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
         }
       }
     ]

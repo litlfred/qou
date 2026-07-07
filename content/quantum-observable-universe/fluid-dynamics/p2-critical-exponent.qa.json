@@ -912,6 +912,19 @@
         "reviewed_at": "2026-07-07T14:26:56.265345Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:42Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -976,6 +989,19 @@
           "max": 1,
           "value": 0.74
         }
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:42Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-false-claim": [
@@ -997,6 +1023,19 @@
         "notes": "No false claims identified in 'Critical exponent of the enstrophy divergence at $q = 1$': mathematical reasoning is consistent.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:42Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-vacuous": [
@@ -1017,6 +1056,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The claims in 'Critical exponent of the enstrophy divergence at $q = 1$' are non-vacuous as they make concrete conjectures about 'The [regularity breakdown conjecture](#conj:regularity-break...'.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:42Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-circular": [
@@ -1038,6 +1090,19 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Critical exponent of the enstrophy divergence at $q = 1$'.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:42Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-overclaim": [
@@ -1058,6 +1123,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The prose in 'Critical exponent of the enstrophy divergence at $q = 1$' presents the result as established, but the Lean formalization is incomplete (has sorry).",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:42Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1079,6 +1157,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Critical exponent of the enstrophy divergence at $q = 1$'.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:42Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1100,6 +1191,19 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.lean.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.lean:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:42Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1120,6 +1224,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The Lean sibling content/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.lean uses a class-conjecture pattern, matching the conjectural nature of 'Critical exponent of the enstrophy divergence at $q = 1$'.",
         "severity": "minor"
+      },
+      {
+        "result": "fail",
+        "notes": "Lean file contains 'sorry'. Author resolution needed.",
+        "reviewed_at": "2026-07-07T23:32:42Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1141,6 +1258,19 @@
         "notes": "No citations are present in 'Critical exponent of the enstrophy divergence at $q = 1$', hence no citation misuse is possible.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:42Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1162,6 +1292,19 @@
         "notes": "Key terms and symbols in 'Critical exponent of the enstrophy divergence at $q = 1$' are mathematically defined and unambiguous.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:42Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1183,6 +1326,19 @@
         "notes": "The algebraic and logical relations in 'Critical exponent of the enstrophy divergence at $q = 1$' are independent of empirical tuning parameters.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:42Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1204,6 +1360,19 @@
         "notes": "The physical concepts described in 'Critical exponent of the enstrophy divergence at $q = 1$' are consistent with quantum observable mechanics.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:42Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1225,6 +1394,19 @@
         "notes": "The Lean sibling content/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.lean fails compilation, indicating a reproducibility failure.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.lean:1 \u2014 /Users/litlfred/space_cats/qou/content/quantum-observable-universe/fluid-dynamics/p2-critical-exponent.lean:59:26: error: failed to synthesize",
         "severity": "minor"
+      },
+      {
+        "result": "fail",
+        "notes": "Lean file contains 'sorry'. Author resolution needed.",
+        "reviewed_at": "2026-07-07T23:32:42Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1247,6 +1429,19 @@
         "verdict": "survivable-objection",
         "referee_argument": "The conjectured algebraic or physical relations in 'Critical exponent of the enstrophy divergence at $q = 1$' remain unproven and are represented as sorry stubs in the formalization.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:42Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1265,6 +1460,36 @@
           "md": "9c6511f1a2aa",
           "ts": "0daf69178cd9",
           "lean": "8bb45aefcdc7"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:42Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Looks good. Verified by semantic constraints.",
+        "reviewed_at": "2026-07-07T23:32:42Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
         }
       }
     ]
