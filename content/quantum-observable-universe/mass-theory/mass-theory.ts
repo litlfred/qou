@@ -174,6 +174,7 @@ export default chapter({
           blocks: [
             "complex-volume-ladder-intro",
             "phi-b-bar-parity-decomposition",
+            "phi-b-unitary-bar-odd",
             "q-beta-categorical-precision-ladder",
             "q-beta-c3-hopf-three-fold-markov",
             "ck-extraction-from-algebraic-rules",

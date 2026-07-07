@@ -65,4 +65,55 @@ theorem FaddeevModularDouble.c_eq_phi_zero_sq {R : Type*} [CommRing R]
   have h := F.inversion 0
   simpa using h.symm
 
+/-! ## σ-unitarity — the algebraic form of `|u| = 1` (the fibre-saddle phase)
+
+Numerically witnessed on the validated evaluator
+(`computations/qbeta/qbeta_fmap_phi_b_root_of_unity_reference.py`): at real
+`b` (root-of-unity `q = e^{2πib²}`, the fibre/decay saddle) and real `z`,
+`|Φ_b(z)| = 1` — `Φ_b` is a pure phase. The analytic reason is the reflection
+`w ↦ −w̄` of the Faddeev contour integral (Hikami math/0604094 eq (2.1)),
+which sends `log Φ_b` to `−(log Φ_b)‾` for real `b, z`.
+
+The lemmas below isolate the **algebraic core** over any commutative ring
+with a ring involution `σ` (archimedean instance: complex conjugation):
+σ-unitaries form a multiplicative monoid, and — the arc-closing rigidity —
+**a bar-even σ-unitary is an involution (`u² = 1`)**, so any genuine phase
+(`u² ≠ 1`) necessarily carries bar-odd content. This is the algebraic reason
+the unimodular fibre-saddle `Φ_b` is a bar-ODD (decay/sinh) carrier and the
+`Q_β/Q_A = cos Φ(u)` phase reframe is the natural bar-odd form. -/
+
+/-- σ-unitary: `σ(u)·u = 1` — the ring-involution form of `|u| = 1`. -/
+def IsSigmaUnitary {R : Type*} [CommRing R] (σ : R →+* R) (u : R) : Prop :=
+  σ u * u = 1
+
+theorem isSigmaUnitary_one {R : Type*} [CommRing R] (σ : R →+* R) :
+    IsSigmaUnitary σ 1 := by
+  simp [IsSigmaUnitary]
+
+/-- σ-unitaries are closed under multiplication. -/
+theorem IsSigmaUnitary.mul {R : Type*} [CommRing R] {σ : R →+* R} {u v : R}
+    (hu : IsSigmaUnitary σ u) (hv : IsSigmaUnitary σ v) :
+    IsSigmaUnitary σ (u * v) := by
+  unfold IsSigmaUnitary at hu hv ⊢
+  have h : σ (u * v) * (u * v) = (σ u * u) * (σ v * v) := by
+    rw [map_mul]; ring
+  rw [h, hu, hv, one_mul]
+
+/-- **Bar-even unitaries are involutions.** If `u` is σ-unitary and σ-fixed
+    (bar-even), then `u² = 1`. -/
+theorem IsSigmaUnitary.sq_eq_one_of_bar_even {R : Type*} [CommRing R]
+    {σ : R →+* R} {u : R} (hu : IsSigmaUnitary σ u) (heven : σ u = u) :
+    u * u = 1 := by
+  have h : σ u * u = 1 := hu
+  rwa [heven] at h
+
+/-- **Phases are bar-odd (mod involutions).** A σ-unitary with `u² ≠ 1`
+    cannot be bar-even: it carries a nontrivial bar-odd part. The algebraic
+    reason the fibre-saddle pure-phase `Φ_b` lives on the bar-odd (decay)
+    face. -/
+theorem IsSigmaUnitary.not_bar_even_of_sq_ne_one {R : Type*} [CommRing R]
+    {σ : R →+* R} {u : R} (hu : IsSigmaUnitary σ u) (h : u * u ≠ 1) :
+    σ u ≠ u :=
+  fun heven => h (hu.sq_eq_one_of_bar_even heven)
+
 end QOU.QBeta
