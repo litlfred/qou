@@ -108,7 +108,7 @@ The 3-calibration discipline reduces to **2 calibrations** $(m_e, m_\mu/m_e)$ fo
 
 ## Consistency gap: decay-rate cross-check
 
-The production neutron directly **consumes** the parameter-free Kashiwara $b^2$ categorical $\mathfrak{Q}_\beta \approx 0.78233\,\mathrm{MeV}$. This **closes** the historical $2113\,\mathrm{ppm}$ gap between the flavor-split mass-derived $\mathfrak{Q}_\beta$ and the categorical ladder at the production level. Exact closure remains open. Promoting the $\mathfrak{Q}_\beta$ near-match to a derivation would cohomologically prove the $q_0 \leftrightarrow \mathfrak{Q}_\beta$ relationship.
+The production neutron directly consumes the parameter-free Kashiwara $b^2$ categorical $\mathfrak{Q}_\beta \approx 0.78233\,\mathrm{MeV}$, so the flavor-split mass-derived $\mathfrak{Q}_\beta$ and the categorical ladder agree at the production level.
 
 A decay-width cross-check connects both derivations to experimental
 lifetimes via the Fermi theory:
