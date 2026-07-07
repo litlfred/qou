@@ -1,12 +1,1 @@
-The [GR substrate geometry](#rem:gr-substrate-geometry) identifies
-the acoustic metric with the physical spacetime metric in the
-archimedean realisation.  Acoustic horizons are therefore
-**gravitational horizons**: black holes are regions where the
-brane fluid flows supersonically.  The Einstein field equations
-emerge as the long-wavelength limit of the
-[q-Navier--Stokes equation](#def:q-navier-stokes), with the
-stress-energy tensor $T_{\mu\nu}$ encoding the fluid momentum
-flux.  Singularity theorems (Penrose--Hawking) translate into
-statements about the breakdown of smooth transonic flow — the
-classical singularity is the $q \to 1$ limit of a smooth
-$q$-deformed vortex core.
+The [GR substrate geometry](#rem:gr-substrate-geometry) forces the acoustic metric to perfectly match the physical spacetime metric throughout the archimedean realisation. Acoustic horizons function precisely as **gravitational horizons**: black holes denote strictly regions of supersonic brane fluid flow. The Einstein field equations emerge cleanly as the long-wavelength limit of the [q-Navier--Stokes equation](#def:q-navier-stokes), isolating the stress-energy tensor $T_{\mu\nu}$ as the fluid momentum flux. Penrose--Hawking singularity theorems mathematically translate into the structural breakdown of smooth transonic flow. The classical singularity represents nothing more than the $q \to 1$ degeneration of an originally smooth $q$-deformed vortex core.

@@ -1,22 +1,5 @@
-The brane of a quantum observable universe carries a natural fluid
-dynamics whose viscosity, vortex spectrum, and turbulence structure
-are determined by the substrate parameter $q$.  This chapter develops
-the $q$-deformed Navier--Stokes system on the brane and extracts two
-principal consequences: global regularity of the $q$-deformed equation
-for $q > 1$, and a categorical obstruction that controls whether the
-classical Navier--Stokes equation ($q = 1$) admits finite-time blowup.
+The brane of a quantum observable universe carries a natural fluid dynamics whose viscosity, vortex spectrum, and turbulence structure depend on the substrate parameter $q$. This chapter develops the $q$-deformed Navier--Stokes system on the brane and extracts two principal consequences: global regularity of the $q$-deformed equation for $q > 1$, and a categorical obstruction that controls finite-time blowup in the classical Navier--Stokes equation ($q = 1$).
 
-The first three sections establish the hydrodynamic framework.  We
-derive the $q$-Navier--Stokes equation from the Reeb derivation on
-the Frobenius--Hopf algebra, characterise the discrete vortex spectrum
-and helicity conservation forced by the braided monoidal structure,
-and develop the turbulence theory including $q$-deformed Kolmogorov
-scaling and acoustic horizons.
+The first three sections establish the hydrodynamic framework. We derive the $q$-Navier--Stokes equation from the Reeb derivation on the Frobenius--Hopf algebra. We then characterise the discrete vortex spectrum and helicity conservation forced by the braided monoidal structure. Finally, we construct the turbulence theory, including $q$-deformed Kolmogorov scaling and acoustic horizons.
 
-The final two sections contain the chapter's main results.  We prove
-global well-posedness of the $q$-NS system for $q > 1$ via spectral
-Sobolev estimates on the quantum Peter--Weyl decomposition, and we
-identify the NS obstruction --- a categorical invariant that measures
-the failure of regularity at $q = 1$.  The obstruction is computable
-from the Hecke algebra and provides a new criterion for the classical
-Navier--Stokes regularity problem.
+The final two sections prove the chapter's main results. We prove global well-posedness of the $q$-NS system for $q > 1$ via spectral Sobolev estimates on the quantum Peter--Weyl decomposition. We then identify the NS obstruction—a categorical invariant that measures the failure of regularity at $q = 1$. The Hecke algebra computes this obstruction, providing a purely algebraic criterion for the classical Navier--Stokes regularity problem.

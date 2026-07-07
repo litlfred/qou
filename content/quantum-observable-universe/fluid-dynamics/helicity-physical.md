@@ -1,11 +1,3 @@
-The [conservation of categorical helicity](#prop:helicity-conservation)
-is the fluid-dynamical expression of topological charge conservation.
-A vortex configuration cannot change its total helicity by smooth
-evolution — helicity redistributes between writhe, twist, and linking,
-as observed in [trefoil chirality flips](#rem:trefoil-vortex-chirality-flip).
+The [conservation of categorical helicity](#prop:helicity-conservation) physically manifests topological charge conservation within the fluid. Smooth evolution cannot alter the total helicity of a vortex configuration. It merely redistributes helicity among writhe, twist, and linking, as demonstrated by [trefoil chirality flips](#rem:trefoil-vortex-chirality-flip).
 
-The quantisation of $\Gamma_i^{(q)} = [j_i]_q[j_i+1]_q$ ensures
-that each term in the helicity sum is individually quantised.
-Helicity takes values in a discrete lattice determined by the
-$\mathrm{SU}_q(2)$ representation labels $\{j_i\}$, not only
-a continuous conserved quantity.
+The exact quantisation of $\Gamma_i^{(q)} = [j_i]_q[j_i+1]_q$ mandates that each term in the helicity sum remains individually quantised. Consequently, helicity is restricted to a discrete lattice structured by the $\mathrm{SU}_q(2)$ representation labels $\{j_i\}$. It is not a continuous conserved variable.

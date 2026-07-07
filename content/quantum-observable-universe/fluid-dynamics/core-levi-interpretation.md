@@ -1,6 +1,4 @@
-The [core-Levi equivalence](#prop:core-levi-form) reformulates
-the Navier--Stokes millennium problem as a question about the
-contact geometry of the brane:
+The [core-Levi equivalence](#prop:core-levi-form) translates the Navier--Stokes millennium problem strictly into the contact geometry of the underlying brane:
 
 $$
   \text{NS blows up}
@@ -12,33 +10,11 @@ $$
 
 **Interpretation of each outcome.**
 
-If the Levi form **stays non-degenerate** ($\kappa = O(1)$):
-vorticity concentrates in tubular cores, the lower bound
-$\|\omega\|_\infty \geq c/(T^*-t)$ holds, BKM diverges, and
-NS loses regularity.  The [counter-example](#conj:ns-counterexample)
-is established.  Physically: the contact structure resists
-integrability, the vortex remains a topological defect, and the
-collision produces a genuine singularity.
+If the Levi form **remains non-degenerate** ($\kappa = O(1)$): Vorticity mechanically concentrates into tight tubular cores. The absolute lower bound $\|\omega\|_\infty \geq c/(T^*-t)$ holds, triggering BKM divergence and breaking NS regularity. The [counter-example](#conj:ns-counterexample) successfully executes. The contact structure rigorously defies integrability; the vortex holds as a valid topological defect, producing an unavoidable physical singularity.
 
-If the Levi form **degenerates** ($\kappa \to 0$ or $\infty$):
-vorticity spreads into a sheet, the lower bound fails, and NS
-might be regular.  Physically: the contact structure becomes
-partially integrable at the collision locus — a 2-dimensional
-integral submanifold forms, the observability axiom fails locally,
-and the vortex dissolves into a diffuse structure that classical
-viscosity can regularise.
+If the Levi form **degenerates** (driving $\kappa \to 0$ or $\infty$): Vorticity dissipates into a thin sheet. The structural lower bound fails, leaving NS potentially regular. The contact structure has partially succumbed to integrability exactly at the collision locus, successfully forming a 2-dimensional integral submanifold. Local observability collapses, and the vortex structure devolves into a diffuse smear smoothly absorbed by classical viscosity.
 
 **The root-of-unity constraint.**
-At $q = e^{i\pi/\kappa}$, the [truncation](#prop:root-of-unity-truncation)
-to $(\kappa-1)/2$ modes bounds the core aspect ratio by
-$1 + C(\kappa-1)$.  As $\kappa \to \infty$ ($q \to 1$), this
-bound diverges — but only linearly.  The collision dynamics
-drives $\kappa(t)$ at a rate set by the Biot--Savart stretching
-$\sim 1/(T^*-t)$.  Whether the representation-theoretic bound
-$O(\kappa)$ or the dynamical rate $O(1/(T^*-t))$ wins
-determines the answer.
+Evaluating at $q = e^{i\pi/\kappa}$, the explicit [truncation](#prop:root-of-unity-truncation) back to $(\kappa-1)/2$ modes restricts the core aspect ratio beneath $1 + C(\kappa-1)$. Sending $\kappa \to \infty$ ($q \to 1$) diverges this bound, but restricts the divergence exclusively to a linear rate. Biot--Savart stretching propels collision dynamics at $\sim 1/(T^*-t)$. The terminal outcome depends entirely on whether the representation-theoretic bound $O(\kappa)$ outpaces the dynamical rate $O(1/(T^*-t))$.
 
-The contact-geometric reformulation is:
-**does finite-dimensional approximation of $\mathrm{SU}_q(2)$
-preserve the non-degeneracy of the Levi form in the
-infinite-dimensional limit?**
+The overarching contact-geometric test: **does executing a finite-dimensional approximation over $\mathrm{SU}_q(2)$ correctly preserve Levi form non-degeneracy straight through the infinite-dimensional limit?**
