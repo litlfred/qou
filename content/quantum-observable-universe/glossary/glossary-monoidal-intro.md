@@ -1,1 +1,1 @@
-Glossary entries for monoidal-category terminology used in the paper.
+We define monoidal-category terminology used throughout this paper.

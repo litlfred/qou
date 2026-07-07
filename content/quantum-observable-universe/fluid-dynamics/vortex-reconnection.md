@@ -1,10 +1,4 @@
-When two vortex filaments approach, the divisor
-$\{\psi = 0\}$ undergoes surgery.  The quantum pressure $Q_q$
-regularises the classical reconnection singularity.  Let $D = \sum_i n_i\varrho_i$ be the effective
-divisor encoding the vortex configuration, where $\varrho_i$ are
-the filament components and $n_i \in \frac{1}{2}\mathbb{Z}$ are
-their intensity levels.  Reconnection is a **birational
-transformation** of the divisor:
+When two vortex filaments approach, the divisor $\{\psi = 0\}$ undergoes surgery. The quantum pressure $Q_q$ acts to regularise the classical reconnection singularity. Let $D = \sum_i n_i\varrho_i$ denote the effective divisor framing the vortex configuration, where $\varrho_i$ represent the filament components and $n_i \in \frac{1}{2}\mathbb{Z}$ identify their intensity levels. Reconnection constitutes a **birational transformation** on the divisor:
 
 $$
   D =  \cdots + \varrho_i + \varrho_j + \cdots
@@ -12,16 +6,11 @@ $$
   D' =  \cdots + \varrho_i' + \varrho_j' + \cdots,
 $$
 
-where $\varrho_i'$ and $\varrho_j'$ are the reconnected filaments.
-The surgery preserves:
+where $\varrho_i'$ and $\varrho_j'$ designate the reconnected filaments. The surgery preserves three quantities:
 
-- **Total circulation**: $\Gamma_i^{(q)} + \Gamma_j^{(q)} =
-  \Gamma_{i'}^{(q)} + \Gamma_{j'}^{(q)}$ (conservation of
-  $\mathrm{SU}_q(2)$ Casimir).
-- **Categorical helicity**: $\mathcal{H}_q[D] = \mathcal{H}_q[D']$
-  ([helicity conservation](#prop:helicity-conservation)), though
-  writhe and twist may redistribute.
-- **Total homology class**: $[D] = [D']$ in $H_1(\mathcal{S})$.
+- **Total circulation**: $\Gamma_i^{(q)} + \Gamma_j^{(q)} = \Gamma_{i'}^{(q)} + \Gamma_{j'}^{(q)}$ (enforcing conservation of the $\mathrm{SU}_q(2)$ Casimir).
+- **Categorical helicity**: $\mathcal{H}_q[D] = \mathcal{H}_q[D']$ ([helicity conservation](#prop:helicity-conservation)), although writhe and twist are free to redistribute.
+- **Total homology class**: $[D] = [D']$ evaluated in $H_1(\mathcal{S})$.
 
 **Three types of divisor surgery.**
 
@@ -31,39 +20,19 @@ The surgery preserves:
 | **Strand exchange** | $\varrho_i, \varrho_j \to \varrho_i', \varrho_j'$ | Reconnection | $-q^{-1}$ (antisymmetric) |
 | **Annihilation** | $\varrho_i, \bar\varrho_i \to E_0$ | Pair annihilation $\to$ exceptional divisor | — |
 
-The first two types correspond to the two eigenvalues of the
-[Hecke relation](#rem:braid-fluid) $(T - q)(T + q^{-1}) = 0$,
-confirming the [braid--fluid correspondence](#rem:braid-fluid).
-The third type — annihilation — occurs when a filament meets its
-orientation-reversed partner $\bar\varrho_i$.  The pair collapses
-to an exceptional divisor $E_0 \cong \mathbb{CP}^1$, releasing
-energy $2\mathcal{E}_q[\varrho_i]$ as radiation (Kelvin waves
-propagating along neighbouring filaments).
+The first two classes map exactly to the two eigenvalues of the [Hecke relation](#rem:braid-fluid) $(T - q)(T + q^{-1}) = 0$, explicitly verifying the [braid--fluid correspondence](#rem:braid-fluid). The third class, annihilation, triggers when a filament encounters its orientation-reversed partner $\bar\varrho_i$. The pair physically collapses into an exceptional divisor $E_0 \cong \mathbb{CP}^1$, jettisoning energy $2\mathcal{E}_q[\varrho_i]$ as Kelvin-wave radiation along adjacent filaments.
 
 **Blowup and pair creation.**
-The reverse process — **blowup** of an exceptional divisor — is
-pair creation.  A sufficiently energetic Kelvin wave on a filament
-$\varrho_k$ concentrates energy at a point; when the local energy
-density exceeds $2\mathcal{E}_q[\varrho_{\min}]$ (twice the
-[geodesic vortex](#rem:geodesic-vortices) energy of the
-fundamental mode), the exceptional divisor inflates into a
-filament--anti-filament pair:
+The inverse mechanism — the **blowup** of an exceptional divisor — constitutes pair creation. When an intense Kelvin wave on a filament $\varrho_k$ concentrates energy locally, and that density breaches $2\mathcal{E}_q[\varrho_{\min}]$ (twice the fundamental [geodesic vortex](#rem:geodesic-vortices) energy), the exceptional divisor forcefully inflates into a filament--anti-filament pair:
 
 $$
-  E_0  \to  \varrho_{\mathrm{new}} + \bar\varrho_{\mathrm{new}},
+  E_0  \to  \varrho_{\mathrm{new}} + \bar\varrho_{\mathrm{new}}.
 $$
 
-with the new filaments inheriting the minimum intensity level
-$j = \frac{1}{2}$.  This is the fluid-dynamical realisation of
-pair production: a photon (Kelvin wave) creates an
-electron--positron pair (vortex--antivortex pair).
+These newly spawned filaments adopt the absolute minimum intensity level $j = \frac{1}{2}$. This serves as the precise fluid-dynamical mapping of pair production: a photon (the Kelvin wave) generates an electron--positron pair (the vortex--antivortex pair).
 
 **Selection rules.**
-Not all reconnections are allowed.  The
-$\mathrm{SU}_q(2)$ representation theory imposes **fusion rules**
-on divisor surgery: the reconnection
-$\varrho_i + \varrho_j \to \varrho_{i'} + \varrho_{j'}$ is
-permitted only if the Clebsch--Gordan decomposition
+Reconnections are strictly filtered. The $\mathrm{SU}_q(2)$ representation theory issues rigid **fusion rules** controlling divisor surgery. The specific reconnection $\varrho_i + \varrho_j \to \varrho_{i'} + \varrho_{j'}$ proceeds if and only if the Clebsch--Gordan decomposition
 
 $$
   V_{j_i} \otimes V_{j_j}
@@ -71,24 +40,11 @@ $$
   \bigoplus_{J = |j_i - j_j|}^{j_i + j_j} V_J
 $$
 
-contains the representation $V_{j_{i'}} \otimes V_{j_{j'}}$
-as a summand.  This connects vortex reconnection to the
-Clebsch--Gordan coefficients of the
-quantum group.
+incorporates the target representation $V_{j_{i'}} \otimes V_{j_{j'}}$ as a viable summand. This binds vortex reconnection entirely to the structural Clebsch--Gordan coefficients of the quantum group.
 
 **Connection to chirality.**
-The [trefoil chirality flip](#rem:trefoil-vortex-chirality-flip)
-identified three routes for chirality reversal.  In the divisor
-language:
+The [trefoil chirality flip](#rem:trefoil-vortex-chirality-flip) defines three avenues for chirality reversal. Translated to divisor terms:
 
-1. **Passage through exceptional divisor**: the vortex momentarily
-   collapses to $E_0$ and re-inflates with reversed orientation —
-   a pair annihilation followed by pair creation with opposite
-   chirality.
-2. **Complex substrate rotation**: the divisor rotates through a
-   path in the complexified state bundle that is homotopically
-   non-trivial — no surgery needed, but the ambient space must
-   be complexified.
-3. **Reidemeister reconnection**: a sequence of strand exchanges
-   (Reidemeister moves) that changes the knot type — this is a
-   shell transition, not a particle-type change.
+1. **Passage through exceptional divisor**: The vortex collapses briefly to $E_0$ and re-inflates bearing reversed orientation. This is effectively pair annihilation paired directly with opposite-chirality pair creation.
+2. **Complex substrate rotation**: The divisor sweeps through a homotopically non-trivial path mapped inside the complexified state bundle. No surgery occurs, but the ambient manifold must accommodate complexification.
+3. **Reidemeister reconnection**: A structural series of strand exchanges (Reidemeister moves) explicitly alters the core knot type. This denotes a shell transition, not a modification of particle identity.
