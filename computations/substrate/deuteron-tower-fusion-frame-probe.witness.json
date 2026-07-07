@@ -28,10 +28,10 @@
   "allPassed": true,
   "verdict": "THE 5g LAW'S DIMENSIONLESS CONTENT IS CANONICAL-TOWER DATA (exact): the bond factor z IS the corpus Markov-trace parameter (pyhecke.gram z = 1/[2]_v at v = sqrt(q0), checked live); the integer 5 is FORCED by the fusion identity [2]^2 = [3]+1 (1+[2]_v^2 = 2+[3]_v -> 5 at v=1, the total quantum dimension of the two-nucleon channel decomposition); and 1+[2]_v^2 = 4 - tau(v) ties the marginal-stability denominator to the alternating winding trace whose k=1,2,3 levels are unknot/figure-eight/Borromean — bond, lepton anchor, nucleon carrier on one tower. Criticality g^2(1+[2]^2)=1 is identically the normalized channel projection. SHARPENED OPEN (honest): the classical 5 admits >=2 canonical deformations (5g vs sqrt(2+[3]_v)); the frame does not select one, and the unit E_unit remains the genuine open — no candidate proposed, no scan run. SCOPE (a): exact algebra + structural reading; nothing wired.",
   "scriptHash": "7fec0dd09332",
-  "scriptCommitSha": "unknown",
-  "commitSha": "8620c877dc5ea2b9aaa16ba897026e74395e4894",
+  "scriptCommitSha": "fc7c315715b08614f0b78d8eaa62e5eba39f267b",
+  "commitSha": "68080e358fb09c1966f289a523db8ee571515d3d",
   "engine": "sympy+pyhecke",
-  "computedAt": "2026-07-07T03:53:30.224195+00:00",
+  "computedAt": "2026-07-07T05:18:22.466901+00:00",
   "durationMs": 0,
   "scriptFile": "deuteron_tower_fusion_frame_probe.py"
 }
