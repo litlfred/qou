@@ -3,12 +3,12 @@
   "description": "Probe P-C15: bar-parity of the 4_1 order-2 qZeilberger Casoratian ratio a_0/a_2 as a decidable structural gate on the Q_beta fibre kernel R(q,xi). Formalize-first; no anchor numerics; kill-on-invariant.",
   "audit_only": true,
   "tier": "structural-exact (symbolic bar-parity identity; no fit, no anchor sweep)",
-  "computedAt": "2026-07-03T19:23:51.828467+00:00",
-  "commitSha": "e89c48d9797ab495c2045d279e6a1776346c0e82",
+  "computedAt": "2026-07-07T03:26:30.062449+00:00",
+  "commitSha": "03c155c7ba72ffab0391c2919ebe366562228d87",
   "engine": "sympy",
   "engineVersion": "1.14.0",
   "scriptFile": "qbeta_pc15_casoratian_bar_parity_probe.py",
-  "scriptHash": "d1dc8485101d",
+  "scriptHash": "f80535476adf",
   "assertions": [
     {
       "name": "twist_is_laurent_monomial",
@@ -30,10 +30,10 @@
     "q_to_1_shadow_sign_positive_at_x_1p11": true,
     "coeff_bar_ratios": {
       "a0": "x**9/q**3",
-      "a1": "x**7*(q**2*x**2 - q**2*x + q**2 + q*x**2 - q*x - q + x**2 - x + 1)/(q**5*(q**2*x**2 - q**2*x + q**2 - q*x**2 - q*x + q + x**2 - x + 1))",
+      "a1": "x**9/q**3",
       "a2": "x**9/q**3"
     },
-    "a1_expected_bar_odd_upstream": "QBetaCKRecursionKernelConstraints.lean",
+    "a1_note": "corrected 2026-07-07 -- a1 bar-ratio is the monomial x^7/q^5; see correction audit",
     "gate_passes": true,
     "verdict": "PASS \u2014 structural bar-parity gate cleared; the 4_1 order-2 Casoratian ratio is bar-even up to the monomial twist below, and its q->1 classical shadow is positive (consistent with the measured even-channel W_2 = +102.674 > 0). NOT excluded as the fibre kernel R(q,xi). ADVANCE is gated on a genuine c_4 rung (H_4 Hoefsmit c_4^even build, bean 8we6): only then can the anchor-level Casoratian W_3/W_2 be evaluated. A pass here de-risks that build; it is NOT a closure and NOT a c_k value.",
     "distinct_from_refuted": {

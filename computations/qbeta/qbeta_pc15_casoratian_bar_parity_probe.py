@@ -18,7 +18,7 @@ a_1 bar-ODD, a_2 = c_2 = -1, constant depth-2 kernel refuted).  The newly-landed
     a_2 J_{N+2} + a_1 J_{N+1} + a_0 J_N = b ,   x := q^N ,
 
     a_0 = (x - 1)(x^2 q^3 - 1) / x^6
-    a_1 = -(x q - 1)^2 (x q + 1)(...) / x^6      [bar-odd, upstream-proved]
+    a_1 = -(x q - 1)^2 (x q + 1)(...) / (x^8 q^2)  [bar-even up to monomial twist; corrected 2026-07-07]
     a_2 = (x q^2 - 1)(x^2 q - 1) / x^6
 
 is a candidate for that kernel — a *different object* from every refuted class C1–C14
@@ -66,8 +66,12 @@ def main():
     # Exact operator coefficients (verbatim from aj_figure_eight_certificate.py).
     a0 = (x - 1) * (x**2 * q**3 - 1) / x**6
     a2 = (x * q**2 - 1) * (x**2 * q - 1) / x**6
-    a1 = -((x * q - 1) ** 2 * (x * q + 1) * (x**2 * q**2 - x**2 * q + x**2
-            - x * q**2 - x * q - x + q**2 + q + 1)) / x**6  # bar-odd, upstream
+    # CORRECTED 2026-07-07: previous transcription of a1 here did NOT match
+    # aj_figure_eight_certificate.py (different quartic factor + denominator);
+    # see docs/audits/2026-07-07-pc15-a1-transcription-error-correction.md.
+    a1 = -((x * q - 1) ** 2 * (x * q + 1)
+           * (x**4 * q**4 - x**3 * q**3 - x**2 * q**3 - x**2 * q - x * q + 1)) \
+         / (x**8 * q**2)
 
     # Casoratian ratio  W_{N+1}/W_N = a_0 / a_2   (Abel–Heine).
     R = sp.cancel(sp.together(a0 / a2))
@@ -117,7 +121,7 @@ def main():
         "q_to_1_classical_shadow": str(R_classical),
         "q_to_1_shadow_sign_positive_at_x_1p11": shadow_positive,
         "coeff_bar_ratios": {"a0": str(a0_bar), "a1": str(a1_bar), "a2": str(a2_bar)},
-        "a1_expected_bar_odd_upstream": "QBetaCKRecursionKernelConstraints.lean",
+        "a1_note": "corrected 2026-07-07 -- a1 bar-ratio is the monomial x^7/q^5; see correction audit",
         "gate_passes": passes,
         "verdict": verdict,
         "distinct_from_refuted": {

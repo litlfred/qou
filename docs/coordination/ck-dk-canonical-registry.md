@@ -241,7 +241,8 @@ witness) · `conditional` (Lean implication; hypothesis named, NOT established)
 | KC8 | simple pole of `g(u)` at `u_substrate` (radius/ratio test) | gate §4(a), empirical basis | — | PR #1727; `prop:q-beta-radius-of-convergence-gate` |
 | KC9 | ζ₄ residue; period-3 (ζ₃/ζ₆) resonance | empirical | — | 2026-06-01 audits |
 | KC10 | q=1 shadows: `c₂ → −1`, `c₃ → −2`; per KC6 the shadow gate tests the **bar-even part** (`shadow_carried_by_even_part`) | gate §4(c) | — / even-part | 2026-06-05 gates; ZBarParity §5 |
-| KC11 | 4₁ middle-coefficient bar-covariance is **non-monomial** ⇒ pointwise / pair-symmetrized slot identifications excluded | symbolic-exact | — | PR #3449 (c4qz + T1 witnesses) |
+| KC11 | 4₁ operator slot ratios are **exactly bar-invariant** (twist 1, incl. `α₁` — corrected 2026-07-07; the earlier "non-monomial" row was a transcription-error artifact): raw pointwise slots are bar-EVEN with zero odd part and cannot source the bar-odd channel | symbolic-exact | even / — | PR #3449 ([correction audit](../audits/2026-07-07-pc15-a1-transcription-error-correction.md)) |
+| KC15 | pair-difference `D(q) = α₁(q,φ²) − α₁(q,φ⁻²)` on the golden bar-pair is **exactly bar-ODD**, `D(1) = 0` — canonical odd-channel candidate from the 4₁ operator; Habiro basis `ω_k` exactly bar-even (`cycFactor_bar_invariant`), `C_k ≡ 1` | symbolic-exact + proved-lean (`QOU.QBeta.cycFactor_bar_invariant`) | odd / `0` | PR #3449 (T1 + B1 witnesses) |
 | KC12 | 4₁ Casoratian ratio `a₀/a₂` bar-invariant (twist 1) | proved-lean (`casoratian_ratio_bar_invariant`) | even / `1` | P-C15 |
 | KC13 | `z` exactly bar-even; `κ_{(2,1)}` exactly bar-odd; no scalar z-functional sources the odd channel | proved-lean (`z_bar_invariant`, `kappa21_bar_odd`, ZBarParity) | even resp. odd / `1/2` resp. `0` | PR #3449 |
 | KC14 | `f(z)·κ_{(2,1)}` order-blocked at q=1 (odd total order vs finite nonzero shadow) | symbolic-exact | — | PR #3449 (T3 witness) |

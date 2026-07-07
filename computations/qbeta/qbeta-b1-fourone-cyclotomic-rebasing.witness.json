@@ -1,0 +1,45 @@
+{
+  "computation": "qbeta-b1-fourone-cyclotomic-rebasing",
+  "description": "I-B step B1+B2 (bean ciei): 4_1 cyclotomic re-basing. Transcription gate (omega-sum vs certified inhomogeneous order-2 operator, N=1..8 exact) + basis bar-parity gate. Pre-stated in ledger SS4-quinquies (commit 03c155c7).",
+  "audit_only": true,
+  "tier": "structural-exact (symbolic; no fit, no anchors)",
+  "computedAt": "2026-07-07T03:28:01.957528+00:00",
+  "commitSha": "03c155c7ba72ffab0391c2919ebe366562228d87",
+  "engine": "sympy",
+  "engineVersion": "1.14.0",
+  "scriptFile": "qbeta_b1_fourone_cyclotomic_rebasing_probe.py",
+  "scriptHash": "376e56f7927a",
+  "assertions": [
+    {
+      "name": "B1K1_omega_sum_satisfies_certified_operator_N1_8",
+      "passed": true
+    },
+    {
+      "name": "B2K2_cyclotomic_factor_bar_invariant_twist_1",
+      "passed": true
+    },
+    {
+      "name": "B2K2_omega_k_bar_invariant_twist_1_sampled_k3",
+      "passed": true
+    },
+    {
+      "name": "B3_omega_k_q1_shadow_is_xm1_sq_over_x_pow_k",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "cyclotomic_form": "J_N = sum_k omega_k, omega_k = prod_{j<=k} (x + 1/x - q^j - q^-j), C_k = 1",
+    "induced_coefficient_recurrence": "C_{k+1} = C_k (trivial depth-1 constant, by C_k = 1)",
+    "factor_bar_parity": "exactly invariant (twist 1)",
+    "omega_q1_shadow": "((x-1)^2/x)^k -- even vanishing orders 2k at x=1",
+    "verdict": "B1+B2 PASS -- the cyclotomic (Habiro) basis DIAGONALIZES the bar involution for 4_1: every basis element omega_k is EXACTLY bar-invariant (twist 1), the coefficients are C_k = 1 (trivial depth-1 constant recurrence), and the operator is FULLY bar-even slot-wise (with the corrected certificate a_1, all three slot ratios are twist-1 invariant), consistent with the basis picture. Consequences: (i) the whole 4_1 element is bar-EVEN in this basis, consistent with the overall-F bar-even gate (KC7); (ii) the bar-ODD channel (kernel a_1's odd part) can only enter through the LADDER EVALUATION map (u-twist q^2, sqrt-u prefactor, epsilon-expansion) -- exactly the quantum-modular S-shadow picture (2026-06-13 audit SS2-quater); (iii) q=1 shadow orders of omega_k are EVEN (2k), echoing the T3 z-side even-order phenomenon. B3 (the (u;u)_m -> u^k composition + slot re-derivation) remains open -- NOT a closure, NO c_k value."
+  },
+  "context": {
+    "axis": "z->c_k f-map keystone, bean ciei (I-B step B1+B2)",
+    "prestatement": "docs/coordination/z-ck-fmap-keystone.md SS4-quinquies (commit 03c155c7)",
+    "scope": "docs/scope/2026-07-06-z-ck-fmap-ib-rebasing-scope.md",
+    "operator_source": "computations/aj_figure_eight_certificate.py",
+    "lean_certificate": "QOU.QBeta.cycFactor_bar_invariant (ZBarParity SS6)"
+  }
+}

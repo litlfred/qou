@@ -75,8 +75,11 @@ def main():
     # (same source as the P-C15 probe).
     a0 = (x - 1) * (x**2 * q**3 - 1) / x**6
     a2 = (x * q**2 - 1) * (x**2 * q - 1) / x**6
-    a1 = -((x * q - 1) ** 2 * (x * q + 1) * (x**2 * q**2 - x**2 * q + x**2
-            - x * q**2 - x * q - x + q**2 + q + 1)) / x**6  # bar-odd upstream
+    # CORRECTED 2026-07-07: use the certificate's verified a1 (the earlier
+    # P-C15 transcription was wrong); see the correction audit.
+    a1 = -((x * q - 1) ** 2 * (x * q + 1)
+           * (x**4 * q**4 - x**3 * q**3 - x**2 * q**3 - x**2 * q - x * q + 1)) \
+         / (x**8 * q**2)
 
     alpha1 = sp.cancel(sp.together(-a1 / a2))
     alpha2 = sp.cancel(sp.together(-a0 / a2))
@@ -114,9 +117,14 @@ def main():
         "(alpha_1 bar-ODD, alpha_2 bar-even). NOT a closure, NOT a c_k value, nothing "
         "wired; the identification at q != 1 (I-B cyclotomic re-basing) remains open."
         if all_passed else
-        "KILL -- a pre-stated criterion failed; record a scope-(a) refutation row for "
-        "I-A in the ledger and fall back to I-B / Z3 carriers. Do NOT run any anchor "
-        "sweep."
+        "K2-as-pre-stated FAILED, corrected mechanism (2026-07-07): with the certificate's "
+        "verified a_1, ALL slot ratios are EXACTLY bar-invariant (twist 1) -- alpha_1 is "
+        "bar-EVEN with ZERO odd part, so the raw pointwise slot still cannot source the "
+        "bar-ODD kernel channel (same scope-(a) conclusion as before, opposite mechanism: "
+        "exactly-even, not non-monomial). The raw slots supply the bar-even SKELETON "
+        "(alpha_2 = -1 identically; alpha_1 shadow 2 on the golden bar-pair); the odd "
+        "channel must enter via the pair-difference D(q) (T1 survivor) or the ladder "
+        "evaluation map. Do NOT run any anchor sweep."
     )
 
     now = datetime.datetime.now(datetime.timezone.utc).isoformat()

@@ -69,7 +69,11 @@ has *de facto* treated (B) as binding, not (A).
    part** (`shadow_carried_by_even_part`). Concretely, for I-B step B2: the
    induced kernel's `a₁`-slot must have **nonzero bar-odd part** (not: be
    exactly odd), and its bar-even part carries the `→ 2` shadow.
-3. **The K2 kill of c4qz/T1 survives re-examination** — those gates tested
+3. **[SUPERSEDED on the mechanism — see the
+   [P-C15 correction audit](2026-07-07-pc15-a1-transcription-error-correction.md):
+   the "non-monomial covariance" was a transcription-error artifact; the slots are
+   exactly bar-even, T1's D(q) is exactly bar-odd (SURVIVOR), and verdict items 1–2
+   are strengthened.]** Original text: **The K2 kill of c4qz/T1 survives re-examination** — those gates tested
    "bar-odd up to monomial twist", and the raw/pair-symmetrized slots failed
    even the weaker requirement of *clean parity decomposition with monomial
    twists*; under the odd-part reading the operative question becomes whether

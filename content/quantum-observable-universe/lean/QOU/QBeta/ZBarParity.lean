@@ -205,4 +205,27 @@ theorem shadow_carried_by_even_part {S : Type*} [Field S]
   have hzero : φ o = 0 := (mul_eq_zero.mp hkill).resolve_left h2
   rw [hsplit, map_add, hzero, add_zero]
 
+/-! ## §6. The 4₁ cyclotomic (Habiro) basis is bar-invariant
+
+The 4₁ colored Jones has the cyclotomic expansion `J_N = Σ_k ω_k` with
+`ω_k = ∏_{j=1}^k (x + x⁻¹ − q^j − q^{−j})`, `x = q^N`, and coefficients
+`C_k ≡ 1` (Habiro; the certificate's Habiro–Le summand, termwise). Each
+factor — in the pair encoding `(q, qi, x, xi)` — is literally symmetric
+under the bar swap `(q, x) ↦ (qi, xi)`, so every `ω_k` is exactly
+bar-invariant: the cyclotomic basis diagonalizes the bar involution for 4₁
+(probe `qbeta_b1_fourone_cyclotomic_rebasing_probe.py`, B2-K2). -/
+
+/-- The 4₁ cyclotomic factor `x + x⁻¹ − q^j − q^{−j}` in the pair encoding. -/
+def cycFactor (q qi x xi : R) (j : ℕ) : R := x + xi - q ^ j - qi ^ j
+
+/-- **The cyclotomic factor is exactly bar-invariant** — applying the bar swap
+    `(q, x) ↦ (qi, xi)` returns the same element, with no hypotheses at all
+    (pure symmetry of the expression). Hence every Habiro basis element `ω_k`
+    (a product of such factors) is exactly bar-even, and the 4₁ element with
+    `C_k ≡ 1` is bar-even in this basis. -/
+theorem cycFactor_bar_invariant (q qi x xi : R) (j : ℕ) :
+    cycFactor qi q xi x j = cycFactor q qi x xi j := by
+  unfold cycFactor
+  ring
+
 end QOU.QBeta

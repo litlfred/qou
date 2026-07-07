@@ -3,12 +3,12 @@
   "description": "T1 (bean 7vfu): bar-parity of the pair-symmetrized 4_1 operator slot alpha_1 over the golden bar-conjugate locus {phi^2, phi^-2}. Kill criteria pre-stated in ledger SS4-ter (commit 44b0b82c).",
   "audit_only": true,
   "tier": "structural-exact (symbolic parity over algebraic locus; no fit, no anchors)",
-  "computedAt": "2026-07-06T23:44:01.684353+00:00",
-  "commitSha": "44b0b82cbdf17cffa67c15a264e5725be3488bd1",
+  "computedAt": "2026-07-07T03:27:58.018863+00:00",
+  "commitSha": "03c155c7ba72ffab0391c2919ebe366562228d87",
   "engine": "sympy",
   "engineVersion": "1.14.0",
   "scriptFile": "qbeta_t1_barpair_symmetrization_probe.py",
-  "scriptHash": "4000f9d9b093",
+  "scriptHash": "d46bdbeb7ae8",
   "assertions": [
     {
       "name": "locus_pair_product_one",
@@ -20,23 +20,23 @@
     },
     {
       "name": "T1K1_D_bar_odd_exact_or_neg_monomial_twist",
-      "passed": false
+      "passed": true
     },
     {
       "name": "T1K2_S_bar_even_exact_or_pos_monomial_twist",
-      "passed": false
+      "passed": true
     }
   ],
-  "allPassed": false,
+  "allPassed": true,
   "result": {
     "x_star": "sqrt(5)/2 + 3/2",
-    "D": "2*sqrt(5)*(-q**8 + 10*q**7 - 16*q**6 - 13*q**5 + 47*q**4 - 31*q**3 + q**2 + 4*q - 1)/(-q**6 + 7*q**5 + 2*q**4 - 21*q**3 + 2*q**2 + 7*q - 1)",
-    "S": "(-6*q**8 + 48*q**7 - 60*q**6 - 78*q**5 + 202*q**4 - 158*q**3 + 10*q**2 + 28*q - 6)/(-q**6 + 7*q**5 + 2*q**4 - 21*q**3 + 2*q**2 + 7*q - 1)",
-    "D_parity": "neither",
-    "D_twist_or_ratio": "(q**7 - 3*q**6 - 4*q**5 + 27*q**4 - 20*q**3 - 7*q**2 + 9*q - 1)/(q**2*(q**7 - 9*q**6 + 7*q**5 + 20*q**4 - 27*q**3 + 4*q**2 + 3*q - 1))",
-    "S_parity": "neither",
-    "S_twist_or_ratio": "(3*q**8 - 14*q**7 - 5*q**6 + 79*q**5 - 101*q**4 + 39*q**3 + 30*q**2 - 24*q + 3)/(q**2*(3*q**8 - 24*q**7 + 30*q**6 + 39*q**5 - 101*q**4 + 79*q**3 - 5*q**2 - 14*q + 3))",
-    "verdict": "KILL -- neither symmetrized combination has clean bar-parity; raw pair-symmetrization is excluded (scope-(a)). Escalate to I-B re-basing / Z3 carriers. Do NOT run any anchor sweep."
+    "D": "sqrt(5)*(-3*q**10 + 23*q**9 - 10*q**8 - 57*q**7 + 44*q**6 - 44*q**4 + 57*q**3 + 10*q**2 - 23*q + 3)/(q**2*(-q**6 + 7*q**5 + 2*q**4 - 21*q**3 + 2*q**2 + 7*q - 1))",
+    "S": "(-7*q**10 + 55*q**9 - 28*q**8 - 145*q**7 + 120*q**6 - 10*q**5 + 120*q**4 - 145*q**3 - 28*q**2 + 55*q - 7)/(q**2*(-q**6 + 7*q**5 + 2*q**4 - 21*q**3 + 2*q**2 + 7*q - 1))",
+    "D_parity": "odd",
+    "D_twist_or_ratio": "-1",
+    "S_parity": "even",
+    "S_twist_or_ratio": "1",
+    "verdict": "SURVIVOR -- the pair-difference D(q) = alpha_1(q,x*) - alpha_1(q,1/x*) on the golden bar-pair locus is a bar-ODD scalar canonically built from the 4_1 operator on its own c_3-shadow locus (D(1) = 0 as bar-oddness requires). Feeds Z3/Z4 as a candidate odd carrier ingredient. NOT a closure, NOT a c_k value, nothing wired; the q!=1 identification (I-B) remains open."
   },
   "context": {
     "axis": "z->c_k f-map keystone, bean 7vfu (T1)",

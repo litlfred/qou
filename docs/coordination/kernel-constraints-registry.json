@@ -10,7 +10,13 @@
       "empirical": "data-derived (extraction / fitted / anchor-dependent)",
       "gate": "adopted screening requirement for candidates (not a theorem about the true object)"
     },
-    "parity_values": ["even", "odd", "odd-part-nonzero", "mixed", null],
+    "parity_values": [
+      "even",
+      "odd",
+      "odd-part-nonzero",
+      "mixed",
+      null
+    ],
     "rule_R3": "parity == 'exactly-odd' is FORBIDDEN together with a nonzero q1_shadow; encode exact oddness as parity='odd' and q1_shadow='0' (fixed-point rule QOU.QBeta.fixed_eval_two_mul_kills_bar_odd)"
   },
   "constraints": [
@@ -105,11 +111,11 @@
     },
     {
       "id": "KC11",
-      "statement": "4_1 middle-coefficient bar-covariance is NON-MONOMIAL: pointwise and pair-symmetrized slot identifications excluded (I-A, T1 kills)",
+      "statement": "4_1 operator slot ratios are EXACTLY bar-invariant (twist 1, incl. alpha_1 -- corrected 2026-07-07; earlier 'non-monomial' claim was a transcription-error artifact): raw pointwise slots are bar-EVEN with zero odd part and cannot source the bar-odd channel",
       "tier": "symbolic-exact",
-      "parity": null,
+      "parity": "even",
       "q1_shadow": null,
-      "source": "PR #3449: qbeta-c4qz-fourone-operator-q1-shadow.witness.json, qbeta-t1-barpair-symmetrization.witness.json"
+      "source": "PR #3449; docs/audits/2026-07-07-pc15-a1-transcription-error-correction.md"
     },
     {
       "id": "KC12",
@@ -136,6 +142,15 @@
       "parity": null,
       "q1_shadow": null,
       "source": "PR #3449 (qbeta-t3-carrier-q1-order-preflight.witness.json)"
+    },
+    {
+      "id": "KC15",
+      "statement": "pair-difference D(q) = alpha_1(q,phi^2) - alpha_1(q,phi^-2) on the golden bar-pair is EXACTLY bar-ODD with D(1) = 0 (canonical odd-channel candidate); the 4_1 Habiro basis omega_k is exactly bar-even with C_k = 1",
+      "tier": "proved-lean",
+      "lean": "QOU.QBeta.cycFactor_bar_invariant",
+      "parity": "odd",
+      "q1_shadow": "0",
+      "source": "PR #3449 (T1 + B1 witnesses; correction audit)"
     }
   ]
 }
