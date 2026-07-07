@@ -88,8 +88,11 @@ W_WIN = 11                   # m-window: a_i supported on m^k, |k| <= W_WIN
 NBLK = 2 * W_WIN + 1         # 23
 NCOLS = (R_ORD + 2) * NBLK   # 184  (blocks a_0..a_6, then b)
 R_FIT = NCOLS + 20           # fit rows per base point group
-DEG_CAP = 240                # per-column rational-fit degree cap (covers the
-                             # measured max coeff q-degree ~218 with margin)
+DEG_CAP = 320                # per-column rational-fit degree cap.  The canonical
+                             # (6,11) ratio entries reach q-degree ~252 (median
+                             # ~208; conditioning audit PR #3450), so 240 is too
+                             # low — some columns fail to fit.  320 covers 252
+                             # with ~27% margin.  NEED scales with this below.
 NHOLD = 15                   # holdout samples for fit validation
 CKPT = Path(__file__).with_name("borromean-reconstruct-ckpt.json")
 OUT = Path(__file__).with_name("borromean-operator-explicit.json")
