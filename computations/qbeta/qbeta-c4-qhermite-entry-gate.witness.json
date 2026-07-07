@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-07T14:27:48.903193+00:00",
-  "commitSha": "1ac0f3574c251b7c7bf171529895c509777af6f7",
+  "computedAt": "2026-07-07T14:33:22.871284+00:00",
+  "commitSha": "4a3bc17216f2ce4de927671c71d74343988dcf3d",
   "assertions": [
     {
       "name": "G1_cumulant_has_q1_pole",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 160,
+  "durationMs": 145,
   "computation": "qbeta-c4-qhermite-entry-gate",
   "scriptFile": "qbeta_c4_qhermite_entry_gate_probe.py",
   "scriptHash": "3defc43137f4",
-  "scriptCommitSha": "1ac0f3574c251b7c7bf171529895c509777af6f7",
+  "scriptCommitSha": "3583ffc0d64302bcb97d6a62cf54b19b76b36db7",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
