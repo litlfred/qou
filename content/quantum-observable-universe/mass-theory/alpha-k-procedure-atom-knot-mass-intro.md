@@ -1,3 +1,1 @@
-Continuation of the preceding sub-section.
-
-The arc proceeds through the atom-knot mass derivation (with tables and a proof block), the joint-tower SDP confinement assembly with table data, and the $y_\lambda$ closed-form Wenzl-bridge identification.  The output is the per-atom-knot mass coefficient table consumed by the next sub-section's Wenzl-bridge specialisation.
+We now derive the atom-knot mass. We assemble the joint-tower SDP confinement constraints and identify the $y_\lambda$ closed-form Wenzl bridge. This yields the per-atom-knot mass coefficient table.
