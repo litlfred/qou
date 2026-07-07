@@ -17,4 +17,15 @@ export default definition({
     ref: "qou:QOU.LiftingDescent.MotivicGaloisCharacter",
     validation: "not_checked",
   },
+  authorNotes: [
+    {
+      kind: "note",
+      body:
+        "Lean: the formal-chain `class MotivicGaloisCharacter` takes a " +
+        "`MotivicSubstrate K0 Mhat Target` instance as a hypothesis and " +
+        "exposes $\\chi^{\\mathrm{mot}}_A$ with its compatibility with each " +
+        "local realization $\\rho_p$; the `sorry` in any concrete instance " +
+        "is the substrate axiom.",
+    },
+  ],
 });
