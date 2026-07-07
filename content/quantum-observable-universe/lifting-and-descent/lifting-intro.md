@@ -1,5 +1,1 @@
-The categorical jet object $J^1(A)$ ([categorical jet](#def:categorical-jet))
-encodes first-order deformations of the Frobenius--Hopf object. In this
-section we develop the *lifting* programme: promoting a quantum
-observable universe on $A$ to one on $J^1(A)$, and iterating to build
-the brane tower.
+The categorical jet object $J^1(A)$ ([categorical jet](#def:categorical-jet)) exactly encodes the first-order deformations of the Frobenius–Hopf object. This section develops the *lifting* programme: formally promoting a quantum observable universe on $A$ to one on $J^1(A)$, and recursively iterating to construct the brane tower.
