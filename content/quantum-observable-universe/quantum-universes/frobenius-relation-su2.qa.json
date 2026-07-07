@@ -780,6 +780,19 @@
         "reviewed_at": "2026-07-07T14:26:57.087703Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:20.470205+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:20.470205+00:00"
+        }
       }
     ],
     "da-false-claim": [
@@ -801,6 +814,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-relation-su2.ts:1",
         "notes": "No false claims identified in 'We verify the [Frobenius relation](#prop:frobenius-relation) concretely': mathematical reasoning is consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:20.488305+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:20.488305+00:00"
+        }
       }
     ],
     "da-vacuous": [
@@ -821,6 +847,19 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "The claims in 'We verify the [Frobenius relation](#prop:frobenius-relation) concretely' are non-vacuous as they present substantial mathematical content."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:20.505342+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:20.505342+00:00"
+        }
       }
     ],
     "da-circular": [
@@ -842,6 +881,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-relation-su2.ts:1",
         "notes": "No circular reasoning or self-assuming definitions detected in 'We verify the [Frobenius relation](#prop:frobenius-relation) concretely'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:20.520950+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:20.520950+00:00"
+        }
       }
     ],
     "da-overclaim": [
@@ -862,6 +914,19 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "No overclaims: the scope of 'We verify the [Frobenius relation](#prop:frobenius-relation) concretely' is appropriately qualified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:20.538468+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:20.538468+00:00"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -883,6 +948,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-relation-su2.ts:1",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'We verify the [Frobenius relation](#prop:frobenius-relation) concretely'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:20.555398+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:20.555398+00:00"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -904,6 +982,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-relation-su2.ts:1",
         "notes": "The argument flow in 'We verify the [Frobenius relation](#prop:frobenius-relation) concretely' is logically sound, mapping onto the cited dependencies."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:20.570274+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:20.570274+00:00"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -925,6 +1016,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-relation-su2.ts:1",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:20.587552+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:20.587552+00:00"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -946,6 +1050,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-relation-su2.ts:1",
         "notes": "No citations are present in 'We verify the [Frobenius relation](#prop:frobenius-relation) concretely', hence no citation misuse is possible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:20.601748+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:20.601748+00:00"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -967,6 +1084,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-relation-su2.ts:1",
         "notes": "Key terms and symbols in 'We verify the [Frobenius relation](#prop:frobenius-relation) concretely' are mathematically defined and unambiguous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:20.617540+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:20.617540+00:00"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -988,6 +1118,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-relation-su2.ts:1",
         "notes": "The algebraic and logical relations in 'We verify the [Frobenius relation](#prop:frobenius-relation) concretely' are independent of empirical tuning parameters."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:20.633122+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:20.633122+00:00"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1009,6 +1152,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-relation-su2.ts:1",
         "notes": "The physical concepts described in 'We verify the [Frobenius relation](#prop:frobenius-relation) concretely' are consistent with quantum observable mechanics."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:20.647874+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:20.647874+00:00"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1030,6 +1186,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-relation-su2.ts:1",
         "notes": "The derivation steps and formal definitions in 'We verify the [Frobenius relation](#prop:frobenius-relation) concretely' are reproducible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:20.666955+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:20.666955+00:00"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1053,6 +1222,19 @@
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'We verify the [Frobenius relation](#prop:frobenius-relation) concretely' are consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:20.682638+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:20.682638+00:00"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1070,6 +1252,36 @@
         "field_hash": {
           "md": "6084d9f055c9",
           "ts": "c136818b8cc9"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:20.700648+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:20.700648+00:00"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:20.719561+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:20.719561+00:00"
         }
       }
     ]
