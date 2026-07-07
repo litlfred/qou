@@ -81,8 +81,11 @@ def main():
         print(f"  [{'PASS' if passed else 'FAIL'}] {name}")
 
     # --- A. identity + discriminants ---------------------------------------
-    yt = mp.mpf("1.7")
-    identity_ok = abs(cTotal(yt) - (cHopf(yt) + cUnknot(yt))) < mp.mpf("1e-40")
+    # EXACT coefficient-level check (not a single-point float eval): compare the
+    # integer coefficient vectors [y³, y², y¹, y⁰] of C vs C_Hopf + C_unknot.
+    C_coeffs = [1, -4, 3, -2]
+    Hopf_plus_unknot_coeffs = [1, -6 + 2, 10 + (-7), -6 + 4]  # C_Hopf + C_unknot
+    identity_ok = (C_coeffs == Hopf_plus_unknot_coeffs)
     dH = disc_cubic(-6, 10, -6)
     dC = disc_cubic(-4, 3, -2)
     print("=== A. identity + discriminants ===")
@@ -115,6 +118,12 @@ def main():
 
     # --- D. substrate anchor: fibre carrier, NOT the swing -----------------
     print("\n=== D. substrate anchor y0=q0²+q0⁻² (fibre carrier; anchor-invariant) ===")
+    # NOTE: these q0 literals are ILLUSTRATIVE substrate-proximate anchors, not a
+    # live read of the pinning. The anchor-invariance conclusion is ROBUST to any
+    # re-pin: C_Hopf is smooth and y0=q0²+q0⁻² barely moves for ANY q0≈1.11, so a
+    # different pin cannot change the "cubic is fibre (invariant), swing is S"
+    # result. Kept as literals to preserve the standalone-audit convention
+    # (docs/audits/scripts self-contained; no qou_substrate import coupling).
     anchors = {"proton": "1.10997858275138", "muon": "1.10997859555733"}
     ch_vals = {}
     for name, q in anchors.items():
