@@ -1,4 +1,4 @@
-Quarks are not fundamental knots. A quark is a neutrino (an unknot) trapped in a color tube of Bring's surface. It is Borromean-linked with two other unknots in the exceptional divisor.
+Quarks are not fundamental knots. A quark is a neutrino (an unknot) trapped in a color tube of Bring's surface. It links Borromean-style with two other unknots in the exceptional divisor.
 
 **Conjecture.**
 *The baryon is the Borromean link $\mathcal{B}_3$ of three unknots threaded through the color tubes $(r, g, b)$ of the Bring's surface ([color tube coordinates](#def:color-tube-coordinates)), bound by the Hopf link $\mathcal{L}_H$:*

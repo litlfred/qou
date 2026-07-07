@@ -1,1 +1,1 @@
-The per-chapter symbol register: every mathematical symbol used in the paper, its font family, and its collision-avoidance rules.
+This appendix contains the per-chapter symbol register. It lists every mathematical symbol used in the paper, its font family, and its collision-avoidance rules.
