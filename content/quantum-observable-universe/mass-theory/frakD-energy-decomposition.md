@@ -18,7 +18,7 @@ This is the energy-level form of the complex-volume split
 $\mathfrak{V} = \mathrm{Vol} + i\,\mathrm{CS}$: the retained part is the
 binding-proper (cosh) channel, the emitted part is the radiated
 $\gamma\bar\gamma$ / decay-width (sinh) channel. Reading the deuteron law
-$B(^2\mathrm{H}) = 5g \cdot E_{\text{unit}}$ through this split makes the
+$B({}^2\mathrm{H}) = 5g \cdot E_{\text{unit}}$ through this split makes the
 "$E_{\text{unit}} = \hbar/\mathfrak{D}$" reinterpretation precise: *if* the
 unit is a decay-width energy (bar-odd), then it is its own emitted part with
 zero retained part — a purely decay-channel energy
@@ -41,7 +41,7 @@ $E_0 \cdot (\cosh\text{-channel})$ and its `emitted E` column is
 $E_0 \cdot |\sinh\text{-channel}|$. The
 `emitted/retained` ratio rises from $0.96$ at the deuteron — the least
 saturated, most decay-like light binding, matching its $\beta$-threshold
-character — toward $1.00$ by $^6\mathrm{Li}$. The Lean sibling
+character — toward $1.00$ by ${}^6\mathrm{Li}$. The Lean sibling
 (`QOU.MassTheory.FrakD`) proves the projection is well-defined and
 parity-correct over a generic field: `evenPart_barEven`, `oddPart_barOdd`,
 `even_add_odd` (reconstruction), and `oddPart_eq_zero_iff_barEven` (a
