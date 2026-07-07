@@ -344,6 +344,29 @@ re-resolve the manifest and can wipe the restored oleans. Whole
 Mathlib, so narrow `import Mathlib.Tactic` to the specific tactic modules
 (`Tactic.Ring`, `Tactic.FieldSimp`, …) rather than trying to build it.
 
+## Conditional-lemma naming + citation discipline (STRICT, 2026-07-07)
+
+A hypothesis-carrying constraint lemma proves the **implication**, never the
+**premise**. Two rules, added after the a₁ parity-shadow incident
+([investigation audit](../../../docs/audits/2026-07-07-a1-bar-odd-parity-shadow-investigation.md)),
+in which a conditional lemma's modelling hypothesis (`c₃` exactly bar-odd)
+was propagated as established fact by prose shorthand for a month:
+
+1. **Name the hypothesis (`_of_` style).** A lemma whose statement is an
+   implication from a *modelling hypothesis* (not a structural setup like
+   typeclass assumptions) must carry the hypothesis in its name, Mathlib
+   style: `ck_a1_bar_odd_of_c3_odd`, not `ck_a1_bar_odd`. Every citation
+   then transports the antecedent automatically.
+2. **Cite conditionals as conditionals.** Prose citing a conditional lemma
+   in a constraint list / audit / ledger must say "conditional" (and name
+   the hypothesis on first use). The kernel/f-map constraint registry
+   ([`ck-dk-canonical-registry.md` §9](../../../docs/coordination/ck-dk-canonical-registry.md))
+   is authoritative for tiers; its validator
+   (`kernel_constraints_registry_validate.py --lint-docs`) flags violations,
+   and enforces the fixed-point rule **exactly-bar-odd ⇒ zero q=1 shadow**
+   (`QOU.QBeta.fixed_eval_two_mul_kills_bar_odd`) so this contradiction
+   class is machine-caught.
+
 ## CRITICAL: Imports before doc blocks (Lean 4.24+)
 
 All `import` statements **must** come before `/-! ... -/` module

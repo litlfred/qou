@@ -1,0 +1,141 @@
+{
+  "schema": "kernel-constraints-registry/v1",
+  "updated": "2026-07-07",
+  "authoritative_markdown": "docs/coordination/ck-dk-canonical-registry.md#9-kernel--f-map-structural-constraint-registry-added-2026-07-07",
+  "meta": {
+    "tiers": {
+      "proved-lean": "unconditional Lean theorem (decl named in `lean`)",
+      "symbolic-exact": "sympy-exact symbolic witness (no fit, no anchors)",
+      "conditional": "Lean implication; `hypothesis` names the antecedent, which is NOT established",
+      "empirical": "data-derived (extraction / fitted / anchor-dependent)",
+      "gate": "adopted screening requirement for candidates (not a theorem about the true object)"
+    },
+    "parity_values": ["even", "odd", "odd-part-nonzero", "mixed", null],
+    "rule_R3": "parity == 'exactly-odd' is FORBIDDEN together with a nonzero q1_shadow; encode exact oddness as parity='odd' and q1_shadow='0' (fixed-point rule QOU.QBeta.fixed_eval_two_mul_kills_bar_odd)"
+  },
+  "constraints": [
+    {
+      "id": "KC1",
+      "statement": "kernel depth >= 2 (depth-1 cannot produce f_2 = -1 from f_1 = 0)",
+      "tier": "proved-lean",
+      "lean": "QOU.BraidKnot.ck_recursion_depth_one_refuted",
+      "parity": null,
+      "q1_shadow": null,
+      "source": "PR #1900"
+    },
+    {
+      "id": "KC2",
+      "statement": "depth-2 slot a_2 = c_2 = -1",
+      "tier": "conditional",
+      "hypothesis": "depth-2 recursion holds at n=2 with seeds f_0=1, f_1=0",
+      "lean": "QOU.BraidKnot.ck_a2_eq_c2_depth_two",
+      "parity": "even",
+      "q1_shadow": "-1",
+      "source": "PR #1900; c_2 bar-even per PR #1602"
+    },
+    {
+      "id": "KC3",
+      "statement": "depth-2 slot a_1 = -c_3",
+      "tier": "conditional",
+      "hypothesis": "depth-2 recursion holds at n=3 with seed f_1=0",
+      "lean": "QOU.BraidKnot.ck_a1_eq_neg_c3_depth_two",
+      "parity": "odd-part-nonzero",
+      "q1_shadow": "2",
+      "source": "PR #1900"
+    },
+    {
+      "id": "KC4",
+      "statement": "a_1 = sqrt(2)*Phi_2 (kernel leading coefficient IS the #1887 Phi_2 target)",
+      "tier": "conditional",
+      "hypothesis": "phase relation c_3 = -(Phi_1*Phi_2) with Phi_1 = sqrt(2)",
+      "lean": "QOU.BraidKnot.ck_a1_eq_sqrt2_phi2",
+      "parity": "odd-part-nonzero",
+      "q1_shadow": "2",
+      "source": "PR #1887 / #1900"
+    },
+    {
+      "id": "KC5",
+      "statement": "constant kernels refuted: constant depth-2 over-determines c_4 = 1 - c_3^2 (3.4x miss vs fitted); constants refuted through depth 4",
+      "tier": "empirical",
+      "parity": null,
+      "q1_shadow": null,
+      "source": "PR #1900; commit eca145ca"
+    },
+    {
+      "id": "KC6",
+      "statement": "a_1 parity: NONZERO bar-ODD PART (anchor-swing channel); bar-even part carries the q=1 shadow 2. NOT exactly odd: exactly-odd + q=1-regular forces zero shadow (fixed-point rule).",
+      "tier": "conditional",
+      "hypothesis": "c_3 exactly eta-odd pointwise -- modelling hypothesis from the #1887 swing narrative, NOT established (see 2026-07-07 investigation audit)",
+      "lean": "QOU.BraidKnot.ck_a1_bar_odd_of_c3_odd",
+      "parity": "odd-part-nonzero",
+      "q1_shadow": "2",
+      "source": "docs/audits/2026-07-07-a1-bar-odd-parity-shadow-investigation.md; fixed-point rule QOU.QBeta.fixed_eval_two_mul_kills_bar_odd (proved-lean)"
+    },
+    {
+      "id": "KC7",
+      "statement": "overall F bar-even under q -> 1/q",
+      "tier": "gate",
+      "parity": "even",
+      "q1_shadow": null,
+      "source": "gate 4(b); PR #1875 prop:q-beta-bar-even-kernel-invariant"
+    },
+    {
+      "id": "KC8",
+      "statement": "g(u) = sum c_k u^k has its nearest singularity (simple pole) at u_substrate; ratio test c_{k+1}/c_k -> 1/u_substrate",
+      "tier": "gate",
+      "parity": null,
+      "q1_shadow": null,
+      "source": "gate 4(a); PR #1727 prop:q-beta-radius-of-convergence-gate"
+    },
+    {
+      "id": "KC9",
+      "statement": "zeta_4 residue structure; period-3 (zeta_3/zeta_6) q-difference Fourier resonance",
+      "tier": "empirical",
+      "parity": null,
+      "q1_shadow": null,
+      "source": "2026-06-01 audits"
+    },
+    {
+      "id": "KC10",
+      "statement": "q=1 shadows: c_2 -> -1, c_3 -> -2 = J_Hopf(1); per KC6 the shadow gate tests the BAR-EVEN PART of a coefficient (shadow_carried_by_even_part)",
+      "tier": "gate",
+      "parity": null,
+      "q1_shadow": null,
+      "source": "gate 4(c), 2026-06-05 consolidation; QOU.QBeta.shadow_carried_by_even_part (proved-lean)"
+    },
+    {
+      "id": "KC11",
+      "statement": "4_1 middle-coefficient bar-covariance is NON-MONOMIAL: pointwise and pair-symmetrized slot identifications excluded (I-A, T1 kills)",
+      "tier": "symbolic-exact",
+      "parity": null,
+      "q1_shadow": null,
+      "source": "PR #3449: qbeta-c4qz-fourone-operator-q1-shadow.witness.json, qbeta-t1-barpair-symmetrization.witness.json"
+    },
+    {
+      "id": "KC12",
+      "statement": "4_1 Casoratian ratio a_0/a_2 is bar-invariant (twist 1); q->1 shadow 1",
+      "tier": "proved-lean",
+      "lean": "QOU.QBeta.casoratian_ratio_bar_invariant",
+      "parity": "even",
+      "q1_shadow": "1",
+      "source": "P-C15 (2026-07-03)"
+    },
+    {
+      "id": "KC13",
+      "statement": "z = sqrt(q)/(1+q) exactly bar-even (twist 1); kappa_(2,1) exactly bar-odd (twist 1, q=1 shadow 0); no scalar rational z-functional can source the bar-odd channel",
+      "tier": "proved-lean",
+      "lean": "QOU.QBeta.z_bar_invariant; QOU.QBeta.kappa21_bar_odd; QOU.QBeta.bar_even_ne_bar_odd_of_ne_zero",
+      "parity": "even",
+      "q1_shadow": "1/2",
+      "source": "PR #3449 (ZBarParity.lean; qbeta-z-bar-parity-fmap-class.witness.json)"
+    },
+    {
+      "id": "KC14",
+      "statement": "f(z)*kappa_(2,1) with f rational-in-z and q=1-regular is order-blocked at q=1 (odd total order 3-2k vs finite nonzero shadow 2): excluded as sole a_1 source",
+      "tier": "symbolic-exact",
+      "parity": null,
+      "q1_shadow": null,
+      "source": "PR #3449 (qbeta-t3-carrier-q1-order-preflight.witness.json)"
+    }
+  ]
+}

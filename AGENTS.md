@@ -601,6 +601,33 @@ refutations missing the (a)/(b) scope; `local/compute-author`
 §formalize-first is the forward complement (prove the invariant that
 *would* justify a (b) before running the wide search).
 
+## Conditional-proved ≠ premise-established (STRICT, 2026-07-07)
+
+The sibling of "sorry-free ≠ derived" (registry §1): a **hypothesis-carrying
+Lean lemma proves the implication, never the premise.** Do not restate a
+conditional lemma's antecedent as established fact in constraint lists,
+audit docs, ledgers, or chat ("a₁ bar-odd" when the Lean says "IF c₃ is
+odd THEN a₁ is odd"). Rules:
+
+1. **Constraint lists carry per-row epistemic tiers** (`proved-lean` /
+   `symbolic-exact` / `conditional` + named hypothesis / `empirical` /
+   `gate`). For kernel/f-map constraints the authoritative table is
+   [`ck-dk-canonical-registry.md` §9](docs/coordination/ck-dk-canonical-registry.md)
+   + JSON twin + validator (`kernel_constraints_registry_validate.py`,
+   `--lint-docs --strict` for CI); update the registry, not a new scatter
+   of status notes.
+2. **Conditional lemmas wear their hypothesis in the name** (Mathlib `_of_`
+   style) — see `local/formalizer.md` §Conditional-lemma naming.
+3. **Machine-checked contradiction rule:** `parity: exactly-odd` together
+   with a nonzero q=1 shadow is impossible
+   (`QOU.QBeta.fixed_eval_two_mul_kills_bar_odd`) and fails the validator.
+4. **Attributes do not transfer across overloaded symbols** — check registry
+   §2 before asserting a property of `a₁`/`Φ₂`/`c_k`-like symbols; distinct
+   objects sharing a glyph is a recurring root cause.
+
+History: the a₁ parity-shadow incident,
+[`docs/audits/2026-07-07-a1-bar-odd-parity-shadow-investigation.md`](docs/audits/2026-07-07-a1-bar-odd-parity-shadow-investigation.md).
+
 ## Formalize-first probe discipline (STRICT — narrow the search before running it)
 
 **Too much time is lost chasing numerical rainbows that a one-line
