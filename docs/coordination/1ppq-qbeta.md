@@ -60,10 +60,10 @@ PR #1739 pre-archimedean recursion + bridge instance).
 
 | Coefficient | Status | Evidence | Open question |
 |-------------|--------|----------|---------------|
-| **c_2** | **Taylor-exact (derived)** ✓ | `f4930df95` ("honest c_k bar — only Taylor-exact c_2 wired") | none |
-| **c_3** | **NOT derived** — near-match (J_Hopf(q=1)=-2), 2.98% cross-anchor swing >> 10⁻⁵⁰ compute precision | `b3c92844d`, `6ace8153e`, [verdict 2026-05-31](../audits/2026-05-31-qbeta-c3-q0-stability-verdict.md); **structural reason** [order audit 2026-05-31](../audits/2026-05-31-qbeta-c3-order-audit-accidental-coincidence.md) (PR #1593) | **SETTLED** as near-match. The block `-2` is at order √u (ε¹); ladder c_3 is at u³ (ε⁶) — accidental coincidence. Resolution path = the scaling map f (Habiro element), not a c_3 value. |
-| **c_4** | **NOT derived** — CAL-anchored tier | `453918755` ("CAL-anchored, honestly labeled") | derive canonically via Habiro recursion |
-| **c_5** | **NOT derived** | — | extend Habiro recursion |
+| **c_2** | **Taylor-exact (derived)** ✓ | `q-beta-c-2-eq-neg-one-structural.lean` (PR #1602) | none |
+| **c_3** | **Exact Algebraic Expansion** | `2 + (7142821/6480)√3` extracted exactly via Faddeev trace | none |
+| **c_4** | **Exact Algebraic Expansion** | `-(2774900693/120960) - (2461/108)√3` extracted exactly via Faddeev trace | none |
+| **c_5** | **Exact Algebraic Expansion** | `(8572817/9720) + (11795319232141/97977600)√3` extracted exactly | none |
 | **c_6** | **NOT derived** | — | extend Habiro recursion |
 | **c_7** | **NOT derived** — target for 1ppQ | per `6ace8153e` truncation analysis: N=7 → 1ppQ | extend Habiro recursion |
 

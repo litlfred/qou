@@ -30,20 +30,35 @@ def hook (l : List ℕ) (i j : ℕ) : ℕ :=
 This is because row `r` reaches `s`, but row `r+1` is strictly shorter. -/
 lemma colLen_corner (l : List ℕ) (hl : l.Sorted (· ≥ ·)) (r : ℕ) (hc : IsCorner l r) :
     colLen l (l.getD r 0 - 1) = r + 1 := by
-  sorry
+  have h1 : r < colLen l (l.getD r 0 - 1) := by
+    rw [QOU.BraidKnot.IdentityI.colLen_duality l hl r]
+    obtain ⟨hr, hnext⟩ := hc
+    have : 0 < l.getD r 0 := by omega
+    omega
+  have h2 : ¬ (r + 1 < colLen l (l.getD r 0 - 1)) := by
+    rw [QOU.BraidKnot.IdentityI.colLen_duality l hl (r + 1)]
+    obtain ⟨hr, hnext⟩ := hc
+    omega
+  omega
 
 /-! ### Hook Simplifications at the Corner -/
 
 /-- For a corner row `r`, the arm contribution to the hook simplifies. -/
 lemma hook_r_j (l : List ℕ) (hl : l.Sorted (· ≥ ·)) (r : ℕ) (hc : IsCorner l r) {j : ℕ} (hj : j < l.getD r 0 - 1) :
     hook l r j = (l.getD r 0 - 1 - j) + (colLen l j - r) := by
-  sorry
+  unfold hook
+  have : colLen l j ≥ r + 1 := by
+    have hj' : j < l.getD r 0 := by omega
+    exact (QOU.BraidKnot.IdentityI.colLen_duality l hl r j).mpr hj'
+  omega
 
 /-- For a corner column `s = λ_r - 1`, the leg contribution to the hook simplifies. -/
 lemma hook_i_s (l : List ℕ) (hl : l.Sorted (· ≥ ·)) (r : ℕ) (hc : IsCorner l r) {i : ℕ} (hi : i < r) :
     let s := l.getD r 0 - 1
     hook l i s = (l.getD i 0 - s) + (r - i) := by
-  sorry
+  unfold hook
+  have hcol : colLen l (l.getD r 0 - 1) = r + 1 := colLen_corner l hl r hc
+  omega
 
 /-! ### Hook Sums -/
 
