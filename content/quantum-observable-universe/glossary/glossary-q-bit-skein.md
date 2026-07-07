@@ -1,4 +1,4 @@
-The identification of one $q$-bit with one Skein operation unifies several structures in this paper.
+The :defterm[$q$-bit–Skein identification]{#q-bit-skein} of one $q$-bit with one Skein operation unifies several structures in this paper.
 
 ### One $q$-bit $=$ one crossing resolution
 

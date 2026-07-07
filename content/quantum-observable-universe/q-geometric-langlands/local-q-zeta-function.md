@@ -1,4 +1,4 @@
-We define the **local $q$-zeta function** of Bring's curve $\mathcal{B}$ as the generating function for point counts over finite extensions:
+We define the :defterm[local $q$-zeta function]{#local-q-zeta-function} of Bring's curve $\mathcal{B}$ as the generating function for point counts over finite extensions:
 
 $$
 Z(\mathcal{B}, t) = \exp\!\left(\sum_{n=1}^{\infty} \frac{|\mathcal{B}(\mathbb{F}_{q^n})|}{n} t^n\right) = \frac{P(t)}{(1-t)(1-qt)},

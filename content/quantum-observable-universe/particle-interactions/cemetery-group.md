@@ -5,7 +5,7 @@ $$
   \tau(M) \;:=\; \sum_{d \in \mathbb{Z}} (-1)^d \dim_R M_d \;\in\; R.
 $$
 
-*The **cemetery group** of $H_n(R, q)$ is the localising Serre subcategory*
+*The :defterm[cemetery group]{#cemetery-group} of $H_n(R, q)$ is the localising Serre subcategory*
 
 $$
   \mathcal{Z}_n \;:=\; \ker \tau

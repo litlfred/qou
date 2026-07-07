@@ -27,7 +27,7 @@ $$
   \text{two R-I moves at exceptional divisor.}
 $$
 
-The bare mass $m_e \approx 0.511$ MeV remains unchanged. Reidemeister moves preserve knot type ([Reidemeister invariance](#conj:reidemeister-mass-invariance)). The binding energy $E_n = -13.6/n^2$ eV changes because R-I moves alter the embedding. The electron remains a trefoil but shifts to a higher writhe state.
+The bare mass $m_e \approx 0.511$ MeV remains unchanged. Reidemeister moves preserve knot type (the Reidemeister-invariance conjecture). The binding energy $E_n = -13.6/n^2$ eV changes because R-I moves alter the embedding. The electron remains a trefoil but shifts to a higher writhe state.
 
 The shell number $n$ matches the writhe level:
 
@@ -61,4 +61,4 @@ The sum $\sum(2\ell + 1) = n^2$ matches standard quantum mechanics. The topologi
 
 *The space of sections of the normal bundle $N_{T_{2,3}}$ of the trefoil in the Bring's surface, at total framing twist $k = 2(n-1)$, has dimension $n^2$.*
 
-This appears as [Conjecture](#conj:orbital-space-normal-bundle) below. The $2\ell + 1$ orientations and the cutoff $\ell \leq n - 1$ must follow from the $\mathrm{SO}(3)$ representation theory of this section space.
+This appears as a conjecture below. The $2\ell + 1$ orientations and the cutoff $\ell \leq n - 1$ must follow from the $\mathrm{SO}(3)$ representation theory of this section space.

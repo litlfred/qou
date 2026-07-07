@@ -1,5 +1,5 @@
 **Definition.**
-*The per-nucleon channel decomposition of the typed Garside element for a nucleus of mass number $A$ is the factorization*
+*The :defterm[per-nucleon channel decomposition]{#per-nucleon-channel-decomposition} of the typed Garside element for a nucleus of mass number $A$ is the factorization*
 
 $$
   G(c_1, \ldots, c_A)

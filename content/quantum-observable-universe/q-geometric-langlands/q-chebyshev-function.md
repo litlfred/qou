@@ -1,4 +1,4 @@
-We define the **$q$-Chebyshev function** as the partial sum of the $q$-von Mangoldt function over the geometry:
+We define the :defterm[$q$-Chebyshev function]{#q-chebyshev-function} as the partial sum of the $q$-von Mangoldt function over the geometry:
 
 $$
 \psi_q(X) = \sum_{\substack{\mathfrak{m} \in \mathrm{MaxSpec}(\mathcal{O}_q(\mathcal{B})) \\ N(\mathfrak{m}) \le X}} \Lambda_q(\mathfrak{m}).
