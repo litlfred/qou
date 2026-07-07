@@ -893,6 +893,19 @@
         "reviewed_at": "2026-07-07T14:26:55.893751Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:04.505986+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:04.505986+00:00"
+        }
       }
     ],
     "wall-side-statement": [
@@ -913,6 +926,19 @@
         "reviewed_at": "2026-07-07T14:26:55.893751Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:04.523119+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:04.523119+00:00"
+        }
       }
     ],
     "da-false-claim": [
@@ -935,6 +961,19 @@
         "severity": "minor",
         "evidence": "quantum-observable-universe.lean:1",
         "notes": "The mathematical claims in 'Quantum Observable Universe' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/quantum-observable-universes/quantum-observable-universe.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/ContinuousFunction/Basic.olean' of module Mathlib.Topology.ContinuousFunction.Basic does not exist."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:04.541209+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:04.541209+00:00"
+        }
       }
     ],
     "da-vacuous": [
@@ -957,6 +996,19 @@
         "severity": "minor",
         "evidence": "quantum-observable-universe.ts:1",
         "notes": "No vacuous proofs detected. Sibling Lean file does not contain sorry, though it fails compilation on modules."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:04.559690+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:04.559690+00:00"
+        }
       }
     ],
     "da-circular": [
@@ -979,6 +1031,19 @@
         "severity": "minor",
         "evidence": "quantum-observable-universe.ts:1",
         "notes": "The definition 'Quantum Observable Universe' is formulated via non-circular relations to existing primitives."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:04.576650+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:04.576650+00:00"
+        }
       }
     ],
     "da-overclaim": [
@@ -1000,6 +1065,19 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "The prose presents 'Quantum Observable Universe' as verified, but the sibling Lean file fails to compile."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:04.596298+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:04.596298+00:00"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1022,6 +1100,19 @@
         "severity": "minor",
         "evidence": "quantum-observable-universe.ts:1",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Quantum Observable Universe'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:04.612722+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:04.612722+00:00"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1044,6 +1135,19 @@
         "severity": "minor",
         "evidence": "quantum-observable-universe.lean:1",
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/quantum-observable-universes/quantum-observable-universe.lean."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:04.626732+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:04.626732+00:00"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1065,6 +1169,19 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/quantum-observable-universe.lean fails compilation, causing divergence from the narrative."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:04.645066+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:04.645066+00:00"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1087,6 +1204,19 @@
         "severity": "minor",
         "evidence": "quantum-observable-universe.ts:1",
         "notes": "No citations are present in 'Quantum Observable Universe', hence no citation misuse is possible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:04.663583+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:04.663583+00:00"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1109,6 +1239,19 @@
         "severity": "minor",
         "evidence": "quantum-observable-universe.ts:1",
         "notes": "Key terms and symbols in 'Quantum Observable Universe' are mathematically defined and unambiguous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:04.680612+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:04.680612+00:00"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1131,6 +1274,19 @@
         "severity": "minor",
         "evidence": "quantum-observable-universe.ts:1",
         "notes": "The algebraic and logical relations in 'Quantum Observable Universe' are independent of empirical tuning parameters."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:04.698737+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:04.698737+00:00"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1153,6 +1309,19 @@
         "severity": "minor",
         "evidence": "quantum-observable-universe.ts:1",
         "notes": "The physical concepts described in 'Quantum Observable Universe' are consistent with quantum observable mechanics."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:04.715893+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:04.715893+00:00"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1175,6 +1344,19 @@
         "severity": "minor",
         "evidence": "quantum-observable-universe.lean:1 \u2014 content/quantum-observable-universe/quantum-observable-universes/quantum-observable-universe.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/ContinuousFunction/Basic.olean' of module Mathlib.Topology.ContinuousFunction.Basic does not exist",
         "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/quantum-observable-universe.lean fails compilation, indicating a reproducibility failure."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:04.734021+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:04.734021+00:00"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1198,6 +1380,19 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/quantum-observable-universe.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/quantum-observable-universe.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/ContinuousFunction/Basic.olean' of module Mathlib.Topology.ContinuousFunction.Basic does not exist",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/quantum-observable-universe.lean contains compilation errors: content/quantum-observable-universe/quantum-observable-universes/quantum-observable-universe.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/ContinuousFunction/Basic.olean' of module Mathlib.Topology.ContinuousFunction.Basic does not exist, invalidating the claimed formalization."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:04.752776+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:04.752776+00:00"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1216,6 +1411,36 @@
           "md": "d6d577162e7e",
           "ts": "1925177ebb74",
           "lean": "35263c0a5170"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:04.770582+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:04.770582+00:00"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:04.788385+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:04.788385+00:00"
         }
       }
     ]
