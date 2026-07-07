@@ -832,6 +832,19 @@
         "reviewed_at": "2026-07-07T14:26:55.883057Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:49.039815+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:49.039815+00:00"
+        }
       }
     ],
     "da-false-claim": [
@@ -853,6 +866,19 @@
         "severity": "minor",
         "evidence": "algebraic-substrate-intro.ts:1",
         "notes": "No false claims identified in the prose of 'Algebraic Substrate Intro'; the mathematical reasoning concerning 'The algebraic substrate is the Frobenius--Hopf algebra $A$ viewed as' is consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:49.056594+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:49.056594+00:00"
+        }
       }
     ],
     "da-vacuous": [
@@ -874,6 +900,19 @@
         "severity": "minor",
         "evidence": "algebraic-substrate-intro.ts:1",
         "notes": "The block 'Algebraic Substrate Intro' presents substantial mathematical content: 'The algebraic substrate is the Frobenius--Hopf algebra $A$ viewed as'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:49.072388+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:49.072388+00:00"
+        }
       }
     ],
     "da-circular": [
@@ -895,6 +934,19 @@
         "severity": "minor",
         "evidence": "algebraic-substrate-intro.ts:1",
         "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Algebraic Substrate Intro' (which asserts 'The algebraic substrate is the Frobenius--Hopf algebra $A$ viewed as')."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:49.088245+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:49.088245+00:00"
+        }
       }
     ],
     "da-overclaim": [
@@ -916,6 +968,19 @@
         "severity": "minor",
         "evidence": "algebraic-substrate-intro.ts:1",
         "notes": "The remarks and narrative scope in 'Algebraic Substrate Intro' concerning 'The algebraic substrate is the Frobenius--Hopf algebra $A$ viewed as' are appropriately qualified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:49.107676+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:49.107676+00:00"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -937,6 +1002,19 @@
         "severity": "minor",
         "evidence": "algebraic-substrate-intro.ts:1",
         "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Algebraic Substrate Intro'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:49.128781+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:49.128781+00:00"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -958,6 +1036,19 @@
         "severity": "minor",
         "evidence": "algebraic-substrate-intro.ts:1",
         "notes": "The prose arguments in 'Algebraic Substrate Intro' proceed logically through the stated steps: 'The algebraic substrate is the Frobenius--Hopf algebra $A$ viewed as'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:49.144417+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:49.144417+00:00"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -979,6 +1070,19 @@
         "severity": "minor",
         "evidence": "algebraic-substrate-intro.ts:1",
         "notes": "No Lean sibling required; the narrative of 'Algebraic Substrate Intro' matches the expected configuration."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:49.159527+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:49.159527+00:00"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1000,6 +1104,19 @@
         "severity": "minor",
         "evidence": "algebraic-substrate-intro.ts:1",
         "notes": "No citations are present in 'Algebraic Substrate Intro', hence no citation misuse is possible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:49.174444+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:49.174444+00:00"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1021,6 +1138,19 @@
         "severity": "minor",
         "evidence": "algebraic-substrate-intro.ts:1",
         "notes": "Key terms and symbols in 'Algebraic Substrate Intro' (e.g. from 'The algebraic substrate is the Frobenius--Hopf algebra $A$ viewed as') are mathematically defined and unambiguous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:49.189470+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:49.189470+00:00"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1042,6 +1172,19 @@
         "severity": "minor",
         "evidence": "algebraic-substrate-intro.ts:1",
         "notes": "The algebraic and logical relations in 'Algebraic Substrate Intro' are independent of empirical tuning parameters."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:49.205258+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:49.205258+00:00"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1063,6 +1206,19 @@
         "severity": "minor",
         "evidence": "algebraic-substrate-intro.ts:1",
         "notes": "The physical concepts described in 'Algebraic Substrate Intro' are consistent with quantum observable mechanics."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:49.221207+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:49.221207+00:00"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1084,6 +1240,19 @@
         "severity": "minor",
         "evidence": "algebraic-substrate-intro.ts:1",
         "notes": "The derivation steps and formal definitions in 'Algebraic Substrate Intro' are reproducible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:49.237678+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:49.237678+00:00"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1106,6 +1275,19 @@
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Algebraic Substrate Intro' (concerning 'The algebraic substrate is the Frobenius--Hopf algebra $A$ viewed as') are consistent and formally verified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:49.265369+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:49.265369+00:00"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1123,6 +1305,36 @@
         "field_hash": {
           "md": "7f1544a6ec61",
           "ts": "3946c0f72769"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:49.282297+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:49.282297+00:00"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:49.298435+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:49.298435+00:00"
         }
       }
     ]

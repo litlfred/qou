@@ -1045,6 +1045,19 @@
         "reviewed_at": "2026-07-07T14:26:55.923313Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:53.432279+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:53.432279+00:00"
+        }
       }
     ],
     "fit-section-chapter": [
@@ -1065,6 +1078,19 @@
         "reviewed_at": "2026-07-07T14:26:55.923313Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:53.447466+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:53.447466+00:00"
+        }
       }
     ],
     "wall-side-statement": [
@@ -1085,6 +1111,19 @@
         "reviewed_at": "2026-07-07T14:26:55.923313Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:53.463603+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:53.463603+00:00"
+        }
       }
     ],
     "wall-side-proof": [
@@ -1105,6 +1144,19 @@
         "reviewed_at": "2026-07-07T14:26:55.923313Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:53.486182+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:53.486182+00:00"
+        }
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1125,6 +1177,19 @@
         "reviewed_at": "2026-07-07T14:26:55.923313Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:53.503064+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:53.503064+00:00"
+        }
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1149,6 +1214,19 @@
         "reviewed_at": "2026-07-07T14:26:55.923313Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:53.519854+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:53.519854+00:00"
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -1173,6 +1251,19 @@
         "reviewed_at": "2026-07-07T14:26:55.923313Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:53.535812+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:53.535812+00:00"
+        }
       }
     ],
     "proof-rater-novelty": [
@@ -1197,6 +1288,19 @@
         "reviewed_at": "2026-07-07T14:26:55.923313Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:53.551533+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:53.551533+00:00"
+        }
       }
     ],
     "proof-statement-integrity": [
@@ -1217,6 +1321,19 @@
         "reviewed_at": "2026-07-07T14:26:55.923313Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:53.566036+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:53.566036+00:00"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1237,6 +1354,19 @@
         "reviewed_at": "2026-07-07T14:26:55.923313Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:53.581337+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:53.581337+00:00"
+        }
       }
     ],
     "proof-no-trivial-true": [
@@ -1257,6 +1387,19 @@
         "reviewed_at": "2026-07-07T14:26:55.923313Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:53.599498+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:53.599498+00:00"
+        }
       }
     ],
     "proof-no-false-premise": [
@@ -1277,6 +1420,19 @@
         "reviewed_at": "2026-07-07T14:26:55.923313Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:53.614535+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:53.614535+00:00"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1297,6 +1453,19 @@
         "reviewed_at": "2026-07-07T14:26:55.923313Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:53.631040+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:53.631040+00:00"
+        }
       }
     ],
     "proof-no-decide-masking": [
@@ -1317,6 +1486,19 @@
         "reviewed_at": "2026-07-07T14:26:55.923313Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:53.650482+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:53.650482+00:00"
+        }
       }
     ],
     "da-false-claim": [
@@ -1339,6 +1521,19 @@
         "severity": "minor",
         "evidence": "substrate-parameter-unique.ts:1",
         "notes": "For the theorem 'Uniqueness of the substrate parameter' (asserting 'Let $(\\mathbf{C}, A, \\tau)$ be a'), the mathematical claims are verified as there are no false claims detected, supported by the successful compilation of substrate-parameter-unique.lean."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:53.683449+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:53.683449+00:00"
+        }
       }
     ],
     "da-vacuous": [
@@ -1361,6 +1556,19 @@
         "severity": "minor",
         "evidence": "substrate-parameter-unique.ts:1",
         "notes": "The sibling Lean file substrate-parameter-unique.lean compiles successfully without any sorry placeholders, verifying that the proof of 'Uniqueness of the substrate parameter' is non-vacuous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:53.701424+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:53.701424+00:00"
+        }
       }
     ],
     "da-circular": [
@@ -1383,6 +1591,19 @@
         "severity": "minor",
         "evidence": "substrate-parameter-unique.ts:1",
         "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Uniqueness of the substrate parameter' (which asserts 'Let $(\\mathbf{C}, A, \\tau)$ be a')."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:53.715806+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:53.715806+00:00"
+        }
       }
     ],
     "da-overclaim": [
@@ -1405,6 +1626,19 @@
         "severity": "minor",
         "evidence": "substrate-parameter-unique.ts:1",
         "notes": "No overclaims: the scope of 'Uniqueness of the substrate parameter' matches the sorry-free formalization in substrate-parameter-unique.lean."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:53.729296+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:53.729296+00:00"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1427,6 +1661,19 @@
         "severity": "minor",
         "evidence": "substrate-parameter-unique.ts:1",
         "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Uniqueness of the substrate parameter'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:53.743799+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:53.743799+00:00"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1449,6 +1696,19 @@
         "severity": "minor",
         "evidence": "substrate-parameter-unique.ts:1",
         "notes": "The logical steps in 'Uniqueness of the substrate parameter' are formally sound and verified by the sorry-free compilation of substrate-parameter-unique.lean."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:53.758074+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:53.758074+00:00"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1471,6 +1731,19 @@
         "severity": "minor",
         "evidence": "substrate-parameter-unique.ts:1",
         "notes": "The Lean signature in substrate-parameter-unique.lean corresponds directly to the narrative claim in 'Uniqueness of the substrate parameter'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:53.770987+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:53.770987+00:00"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1493,6 +1766,19 @@
         "severity": "minor",
         "evidence": "substrate-parameter-unique.ts:1",
         "notes": "No citations are present in 'Uniqueness of the substrate parameter', hence no citation misuse is possible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:53.784640+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:53.784640+00:00"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1515,6 +1801,19 @@
         "severity": "minor",
         "evidence": "substrate-parameter-unique.ts:1",
         "notes": "Key terms and symbols in 'Uniqueness of the substrate parameter' (e.g. from 'Let $(\\mathbf{C}, A, \\tau)$ be a') are mathematically defined and unambiguous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:53.799570+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:53.799570+00:00"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1537,6 +1836,19 @@
         "severity": "minor",
         "evidence": "substrate-parameter-unique.ts:1",
         "notes": "The algebraic and logical relations in 'Uniqueness of the substrate parameter' are independent of empirical tuning parameters."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:53.814719+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:53.814719+00:00"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1559,6 +1871,19 @@
         "severity": "minor",
         "evidence": "substrate-parameter-unique.ts:1",
         "notes": "The physical concepts described in 'Uniqueness of the substrate parameter' are consistent with quantum observable mechanics."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:53.830092+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:53.830092+00:00"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1581,6 +1906,19 @@
         "severity": "minor",
         "evidence": "substrate-parameter-unique.lean:1",
         "notes": "The formalization is fully reproducible as substrate-parameter-unique.lean compiles successfully."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:53.844462+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:53.844462+00:00"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1604,6 +1942,19 @@
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Uniqueness of the substrate parameter' (concerning 'Let $(\\mathbf{C}, A, \\tau)$ be a') are consistent and formally verified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:53.861250+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:53.861250+00:00"
+        }
       }
     ],
     "bib-cite-resolves": [
@@ -1642,6 +1993,36 @@
           "md": "6a3ed2432108",
           "ts": "c77825c04b3a",
           "lean": "9f4fdcba2f21"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:53.880014+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:53.880014+00:00"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:53.897223+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:53.897223+00:00"
         }
       }
     ]

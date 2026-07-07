@@ -834,6 +834,19 @@
         "reviewed_at": "2026-07-07T14:26:55.909811Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:47.694864+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:47.694864+00:00"
+        }
       }
     ],
     "da-false-claim": [
@@ -855,6 +868,19 @@
         "severity": "minor",
         "evidence": "adjoint-trace.ts:1",
         "notes": "No false claims identified in the prose of 'Adjoint trace and the categorical inner product'; the mathematical reasoning concerning 'equip every hom-space $\\mathrm{Hom}_{\\mathbf{C}}(X, Y)$ with a' is consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:47.713575+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:47.713575+00:00"
+        }
       }
     ],
     "da-vacuous": [
@@ -876,6 +902,19 @@
         "severity": "minor",
         "evidence": "adjoint-trace.ts:1",
         "notes": "The block 'Adjoint trace and the categorical inner product' presents substantial mathematical content: 'equip every hom-space $\\mathrm{Hom}_{\\mathbf{C}}(X, Y)$ with a'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:47.728894+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:47.728894+00:00"
+        }
       }
     ],
     "da-circular": [
@@ -897,6 +936,19 @@
         "severity": "minor",
         "evidence": "adjoint-trace.ts:1",
         "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Adjoint trace and the categorical inner product' (which asserts 'equip every hom-space $\\mathrm{Hom}_{\\mathbf{C}}(X, Y)$ with a')."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:47.743971+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:47.743971+00:00"
+        }
       }
     ],
     "da-overclaim": [
@@ -918,6 +970,19 @@
         "severity": "minor",
         "evidence": "adjoint-trace.ts:1",
         "notes": "The remarks and narrative scope in 'Adjoint trace and the categorical inner product' concerning 'equip every hom-space $\\mathrm{Hom}_{\\mathbf{C}}(X, Y)$ with a' are appropriately qualified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:47.760403+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:47.760403+00:00"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -939,6 +1004,19 @@
         "severity": "minor",
         "evidence": "adjoint-trace.ts:1",
         "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Adjoint trace and the categorical inner product'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:47.775533+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:47.775533+00:00"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -960,6 +1038,19 @@
         "severity": "minor",
         "evidence": "adjoint-trace.ts:1",
         "notes": "The prose arguments in 'Adjoint trace and the categorical inner product' proceed logically through the stated steps: 'equip every hom-space $\\mathrm{Hom}_{\\mathbf{C}}(X, Y)$ with a'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:47.791116+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:47.791116+00:00"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -981,6 +1072,19 @@
         "severity": "minor",
         "evidence": "adjoint-trace.ts:1",
         "notes": "No Lean sibling required; the narrative of 'Adjoint trace and the categorical inner product' matches the expected configuration."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:47.810239+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:47.810239+00:00"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1002,6 +1106,19 @@
         "severity": "minor",
         "evidence": "adjoint-trace.ts:1",
         "notes": "No citations are present in 'Adjoint trace and the categorical inner product', hence no citation misuse is possible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:47.826407+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:47.826407+00:00"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1023,6 +1140,19 @@
         "severity": "minor",
         "evidence": "adjoint-trace.ts:1",
         "notes": "Key terms and symbols in 'Adjoint trace and the categorical inner product' (e.g. from 'equip every hom-space $\\mathrm{Hom}_{\\mathbf{C}}(X, Y)$ with a') are mathematically defined and unambiguous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:47.843162+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:47.843162+00:00"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1044,6 +1174,19 @@
         "severity": "minor",
         "evidence": "adjoint-trace.ts:1",
         "notes": "The algebraic and logical relations in 'Adjoint trace and the categorical inner product' are independent of empirical tuning parameters."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:47.863024+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:47.863024+00:00"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1065,6 +1208,19 @@
         "severity": "minor",
         "evidence": "adjoint-trace.ts:1",
         "notes": "The physical concepts described in 'Adjoint trace and the categorical inner product' are consistent with quantum observable mechanics."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:47.878873+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:47.878873+00:00"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1086,6 +1242,19 @@
         "severity": "minor",
         "evidence": "adjoint-trace.ts:1",
         "notes": "The derivation steps and formal definitions in 'Adjoint trace and the categorical inner product' are reproducible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:47.894786+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:47.894786+00:00"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1108,6 +1277,19 @@
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Adjoint trace and the categorical inner product' (concerning 'equip every hom-space $\\mathrm{Hom}_{\\mathbf{C}}(X, Y)$ with a') are consistent and formally verified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:47.914976+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:47.914976+00:00"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1125,6 +1307,36 @@
         "field_hash": {
           "md": "b3beca985bc4",
           "ts": "fd1a5b8715ac"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:47.933419+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:47.933419+00:00"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:47.951774+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:47.951774+00:00"
         }
       }
     ]

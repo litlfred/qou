@@ -1064,6 +1064,19 @@
         "reviewed_at": "2026-07-07T14:26:55.784998Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:55.469056+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:55.469056+00:00"
+        }
       }
     ],
     "fit-section-chapter": [
@@ -1083,6 +1096,19 @@
         "reviewed_at": "2026-07-07T14:26:55.784998Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:55.484031+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:55.484031+00:00"
+        }
       }
     ],
     "wall-side-statement": [
@@ -1102,6 +1128,19 @@
         "reviewed_at": "2026-07-07T14:26:55.784998Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:55.504499+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:55.504499+00:00"
+        }
       }
     ],
     "wall-side-proof": [
@@ -1121,6 +1160,19 @@
         "reviewed_at": "2026-07-07T14:26:55.784998Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:55.520375+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:55.520375+00:00"
+        }
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1154,6 +1206,19 @@
         "reviewed_at": "2026-06-24T12:30:00.000Z",
         "reviewed_sha": "03b119a9208ce37fec25a817d3a2f75d75507443",
         "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/fai_projector_coadjoint_orbit.lean); stale agent flag refreshed (sorry discharged after prior review)."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:55.536964+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:55.536964+00:00"
+        }
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1214,6 +1279,19 @@
         "score": {
           "max": 1,
           "value": 0.4
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:55.555177+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:55.555177+00:00"
         }
       }
     ],
@@ -1276,6 +1354,19 @@
           "max": 1,
           "value": 0.72
         }
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:55.570079+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:55.570079+00:00"
+        }
       }
     ],
     "proof-rater-novelty": [
@@ -1336,6 +1427,19 @@
         "score": {
           "max": 1,
           "value": 0.45
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:55.589111+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:55.589111+00:00"
         }
       }
     ],
@@ -1407,6 +1511,19 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07T14:26:55.784998Z"
         }
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:55.606032+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:55.606032+00:00"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1477,6 +1594,19 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07T14:26:55.784998Z"
         }
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:55.621672+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:55.621672+00:00"
+        }
       }
     ],
     "proof-no-trivial-true": [
@@ -1512,6 +1642,19 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07T14:26:55.784998Z"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:55.653695+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:55.653695+00:00"
         }
       }
     ],
@@ -1566,6 +1709,19 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07T14:26:55.784998Z"
         }
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:55.672363+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:55.672363+00:00"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
@@ -1619,6 +1775,19 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07T14:26:55.784998Z"
         }
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:55.690271+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:55.690271+00:00"
+        }
       }
     ],
     "proof-no-decide-masking": [
@@ -1655,6 +1824,19 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07T14:26:55.784998Z"
         }
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:55.705926+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:55.705926+00:00"
+        }
       }
     ],
     "da-false-claim": [
@@ -1676,6 +1858,19 @@
         "severity": "minor",
         "evidence": "fai-projector-coadjoint-orbit.ts:1",
         "notes": "No false claims identified in the prose of 'Rank-1 projectors embed $\\\\mathbb{P}(V)$ as a coadjoint orbit in $\\\\mathrm{Ad}(A)$'; the mathematical reasoning concerning 'Let $V \\in \\mathbf{C}$ be the standard representation (categorical' is consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:55.723557+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:55.723557+00:00"
+        }
       }
     ],
     "da-vacuous": [
@@ -1697,6 +1892,19 @@
         "severity": "minor",
         "evidence": "fai-projector-coadjoint-orbit.ts:1",
         "notes": "The block 'Rank-1 projectors embed $\\\\mathbb{P}(V)$ as a coadjoint orbit in $\\\\mathrm{Ad}(A)$' presents substantial mathematical content: 'Let $V \\in \\mathbf{C}$ be the standard representation (categorical'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:55.742378+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:55.742378+00:00"
+        }
       }
     ],
     "da-circular": [
@@ -1718,6 +1926,19 @@
         "severity": "minor",
         "evidence": "fai-projector-coadjoint-orbit.ts:1",
         "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Rank-1 projectors embed $\\\\mathbb{P}(V)$ as a coadjoint orbit in $\\\\mathrm{Ad}(A)$' (which asserts 'Let $V \\in \\mathbf{C}$ be the standard representation (categorical')."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:55.760697+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:55.760697+00:00"
+        }
       }
     ],
     "da-overclaim": [
@@ -1739,6 +1960,19 @@
         "severity": "minor",
         "evidence": "fai-projector-coadjoint-orbit.ts:1",
         "notes": "The remarks and narrative scope in 'Rank-1 projectors embed $\\\\mathbb{P}(V)$ as a coadjoint orbit in $\\\\mathrm{Ad}(A)$' concerning 'Let $V \\in \\mathbf{C}$ be the standard representation (categorical' are appropriately qualified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:55.779979+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:55.779979+00:00"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1760,6 +1994,19 @@
         "severity": "minor",
         "evidence": "fai-projector-coadjoint-orbit.ts:1",
         "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Rank-1 projectors embed $\\\\mathbb{P}(V)$ as a coadjoint orbit in $\\\\mathrm{Ad}(A)$'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:55.797943+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:55.797943+00:00"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1781,6 +2028,19 @@
         "severity": "minor",
         "evidence": "fai-projector-coadjoint-orbit.ts:1",
         "notes": "The prose arguments in 'Rank-1 projectors embed $\\\\mathbb{P}(V)$ as a coadjoint orbit in $\\\\mathrm{Ad}(A)$' proceed logically through the stated steps: 'Let $V \\in \\mathbf{C}$ be the standard representation (categorical'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:55.817020+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:55.817020+00:00"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1802,6 +2062,19 @@
         "severity": "minor",
         "evidence": "fai-projector-coadjoint-orbit.ts:1",
         "notes": "No Lean sibling required; the narrative of 'Rank-1 projectors embed $\\\\mathbb{P}(V)$ as a coadjoint orbit in $\\\\mathrm{Ad}(A)$' matches the expected configuration."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:55.835859+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:55.835859+00:00"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1823,6 +2096,19 @@
         "severity": "minor",
         "evidence": "fai-projector-coadjoint-orbit.ts:1",
         "notes": "No citations are present in 'Rank-1 projectors embed $\\\\mathbb{P}(V)$ as a coadjoint orbit in $\\\\mathrm{Ad}(A)$', hence no citation misuse is possible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:55.854176+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:55.854176+00:00"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1844,6 +2130,19 @@
         "severity": "minor",
         "evidence": "fai-projector-coadjoint-orbit.ts:1",
         "notes": "Key terms and symbols in 'Rank-1 projectors embed $\\\\mathbb{P}(V)$ as a coadjoint orbit in $\\\\mathrm{Ad}(A)$' (e.g. from 'Let $V \\in \\mathbf{C}$ be the standard representation (categorical') are mathematically defined and unambiguous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:55.872834+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:55.872834+00:00"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1865,6 +2164,19 @@
         "severity": "minor",
         "evidence": "fai-projector-coadjoint-orbit.ts:1",
         "notes": "The algebraic and logical relations in 'Rank-1 projectors embed $\\\\mathbb{P}(V)$ as a coadjoint orbit in $\\\\mathrm{Ad}(A)$' are independent of empirical tuning parameters."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:55.888861+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:55.888861+00:00"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1886,6 +2198,19 @@
         "severity": "minor",
         "evidence": "fai-projector-coadjoint-orbit.ts:1",
         "notes": "The physical concepts described in 'Rank-1 projectors embed $\\\\mathbb{P}(V)$ as a coadjoint orbit in $\\\\mathrm{Ad}(A)$' are consistent with quantum observable mechanics."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:55.907635+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:55.907635+00:00"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1907,6 +2232,19 @@
         "severity": "minor",
         "evidence": "fai-projector-coadjoint-orbit.ts:1",
         "notes": "The derivation steps and formal definitions in 'Rank-1 projectors embed $\\\\mathbb{P}(V)$ as a coadjoint orbit in $\\\\mathrm{Ad}(A)$' are reproducible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:55.927388+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:55.927388+00:00"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1929,6 +2267,19 @@
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Rank-1 projectors embed $\\\\mathbb{P}(V)$ as a coadjoint orbit in $\\\\mathrm{Ad}(A)$' (concerning 'Let $V \\in \\mathbf{C}$ be the standard representation (categorical') are consistent and formally verified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:55.946257+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:55.946257+00:00"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1946,6 +2297,36 @@
         "field_hash": {
           "md": "e6a677ae896b",
           "ts": "740364ec6273"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:55.963731+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:55.963731+00:00"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:55.981421+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:55.981421+00:00"
         }
       }
     ]

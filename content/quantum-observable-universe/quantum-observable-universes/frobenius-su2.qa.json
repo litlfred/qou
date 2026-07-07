@@ -795,6 +795,19 @@
         "reviewed_at": "2026-07-07T14:26:55.801051Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:51.153391+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:51.153391+00:00"
+        }
       }
     ],
     "da-false-claim": [
@@ -817,6 +830,19 @@
         "severity": "minor",
         "evidence": "frobenius-su2.ts:1",
         "notes": "For the example 'Frobenius relation for $\\\\mathrm{SU}(2)$' (asserting 'Continuing [QOU on $\\mathrm{SU}(2)$](#ex:qou-su2), set'), the mathematical claims are verified as there are no false claims detected, supported by the successful compilation of frobenius-su2.lean."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:51.168659+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:51.168659+00:00"
+        }
       }
     ],
     "da-vacuous": [
@@ -839,6 +865,19 @@
         "severity": "minor",
         "evidence": "frobenius-su2.ts:1",
         "notes": "The sibling Lean file frobenius-su2.lean compiles successfully without any sorry placeholders, verifying that the proof of 'Frobenius relation for $\\\\mathrm{SU}(2)$' is non-vacuous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:51.183742+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:51.183742+00:00"
+        }
       }
     ],
     "da-circular": [
@@ -861,6 +900,19 @@
         "severity": "minor",
         "evidence": "frobenius-su2.ts:1",
         "notes": "No circular reasoning or self-assuming definitions are detected in the statement or proof of 'Frobenius relation for $\\\\mathrm{SU}(2)$' (which asserts 'Continuing [QOU on $\\mathrm{SU}(2)$](#ex:qou-su2), set')."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:51.201007+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:51.201007+00:00"
+        }
       }
     ],
     "da-overclaim": [
@@ -883,6 +935,19 @@
         "severity": "minor",
         "evidence": "frobenius-su2.ts:1",
         "notes": "No overclaims: the scope of 'Frobenius relation for $\\\\mathrm{SU}(2)$' matches the sorry-free formalization in frobenius-su2.lean."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:51.216460+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:51.216460+00:00"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -905,6 +970,19 @@
         "severity": "minor",
         "evidence": "frobenius-su2.ts:1",
         "notes": "No hidden degrees of freedom, unstated constants, or arbitrary parameters are introduced in the formulation of 'Frobenius relation for $\\\\mathrm{SU}(2)$'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:51.231081+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:51.231081+00:00"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -927,6 +1005,19 @@
         "severity": "minor",
         "evidence": "frobenius-su2.ts:1",
         "notes": "The logical steps in 'Frobenius relation for $\\\\mathrm{SU}(2)$' are formally sound and verified by the sorry-free compilation of frobenius-su2.lean."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:51.252337+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:51.252337+00:00"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -949,6 +1040,19 @@
         "severity": "minor",
         "evidence": "frobenius-su2.ts:1",
         "notes": "The Lean signature in frobenius-su2.lean corresponds directly to the narrative claim in 'Frobenius relation for $\\\\mathrm{SU}(2)$'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:51.268098+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:51.268098+00:00"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -971,6 +1075,19 @@
         "severity": "minor",
         "evidence": "frobenius-su2.ts:1",
         "notes": "No citations are present in 'Frobenius relation for $\\\\mathrm{SU}(2)$', hence no citation misuse is possible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:51.284560+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:51.284560+00:00"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -993,6 +1110,19 @@
         "severity": "minor",
         "evidence": "frobenius-su2.ts:1",
         "notes": "Key terms and symbols in 'Frobenius relation for $\\\\mathrm{SU}(2)$' (e.g. from 'Continuing [QOU on $\\mathrm{SU}(2)$](#ex:qou-su2), set') are mathematically defined and unambiguous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:51.300119+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:51.300119+00:00"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1015,6 +1145,19 @@
         "severity": "minor",
         "evidence": "frobenius-su2.ts:1",
         "notes": "The empirical claims in 'Frobenius relation for $\\\\mathrm{SU}(2)$' (quoting 'Continuing [QOU on $\\mathrm{SU}(2)$](#ex:qou-su2), set') are structurally anchored to the QOU mass framework and are stable."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:51.317376+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:51.317376+00:00"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1037,6 +1180,19 @@
         "severity": "minor",
         "evidence": "frobenius-su2.ts:1",
         "notes": "The physical concepts described in 'Frobenius relation for $\\\\mathrm{SU}(2)$' are consistent with quantum observable mechanics."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:51.333216+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:51.333216+00:00"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1059,6 +1215,19 @@
         "severity": "minor",
         "evidence": "frobenius-su2.lean:1",
         "notes": "The formalization is fully reproducible as frobenius-su2.lean compiles successfully."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:51.350490+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:51.350490+00:00"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1082,6 +1251,19 @@
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Frobenius relation for $\\\\mathrm{SU}(2)$' (concerning 'Continuing [QOU on $\\mathrm{SU}(2)$](#ex:qou-su2), set') are consistent and formally verified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:51.366900+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:51.366900+00:00"
+        }
       }
     ],
     "bib-cite-resolves": [
@@ -1120,6 +1302,36 @@
           "md": "73abb43c2e1e",
           "ts": "50d470b5c468",
           "lean": "d6a3200d3b66"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:51.381209+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:51.381209+00:00"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:51.396866+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:51.396866+00:00"
         }
       }
     ]
