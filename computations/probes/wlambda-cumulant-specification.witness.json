@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15 + mpmath 1.3.0",
-  "computedAt": "2026-07-07T14:14:54.165302+00:00",
-  "commitSha": "672f5bdf1a097a25d32ff86545447e0ca89f2a46",
+  "computedAt": "2026-07-07T14:21:32.515239+00:00",
+  "commitSha": "9ba2937b0a120103ef3563a998b95635bafd6d7f",
   "assertions": [
     {
       "name": "det_b3_near_AME_within_10pct",
@@ -12,11 +12,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 63,
+  "durationMs": 3,
   "computation": "wlambda-cumulant-specification",
   "scriptFile": "wlambda_cumulant_specification.py",
-  "scriptHash": "d713f417eebf",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "31ead4c0430b",
+  "scriptCommitSha": "9ba2937b0a120103ef3563a998b95635bafd6d7f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
