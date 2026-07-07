@@ -15,7 +15,7 @@ basis) **does not descend to the observable `c_k` via a naive re-expansion in
 
 | gate | finding |
 |---|---|
-| **B3-U1** basis image | `bar(u) = q²·u` is a **scaling**, not KC16's inversion `q ↦ q⁻¹`. The `(u;u)_m` Habiro basis carries **no clean monomial bar-twist**: `P_m(q²u)/P_m(u)` is non-monomial for every `m ≥ 1` (e.g. `m=1`: `(q²u−1)/(u−1)`). |
+| **B3-U1** basis image | `bar(u) = q²·u` is a **scaling**, not KC16's inversion `q ↦ q⁻¹`. The `(u;u)_m` Habiro basis carries **no clean monomial bar-twist**: `P_m(q²u)/P_m(u)` **fails already at `m=1`** — `(q²u−1)/(u−1)`, a two-term ratio with no common factor since `q² ≠ 1` — verified `m=1..4` by the probe. |
 | **B3-U2** per-rung twist | Overall-`F` bar-evenness (KC7) under `(q↦q⁻¹, u↦q²u)` would force `c_k(q⁻¹) = q^(−2k)·c_k(q)`. This is **contradicted by the derived `c_2 = −1`** (a bar-trivial real constant: `c_2(q⁻¹) = −1 ≠ −q⁻⁴`). |
 | **B3-U3** carrier placement | `u ~ (q−1)²` vanishes to **even order 2** in `(q−1)`; a bar-odd carrier (e.g. `κ_(2,1)`, `D(q)`) vanishes to **odd order** at `q=1`. So bar-odd fibre content **cannot** be a real power series in `u` — parities mismatch. |
 
