@@ -8,6 +8,9 @@ export default algorithm({
     "thm:knot-mass-formula-unified",
     "alg:markov-trace",
     "prop:linear-chain-bond-count",
+    // ²H reeb-flow tier (owner ruling 2026-07-07: kept, NEAR-MATCH label)
+    "prop:reeb-pn-magnitude-criticality",
+    "conj:reeb-linking-cwf-normalization",
   ],
   computation: {
     engine: "python+mpmath",
