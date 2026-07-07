@@ -1,9 +1,4 @@
-Let $(\mathbf{C}, A, \tau)$ be a
-([quantum observable universe](#def:quantum-observable-universe)) whose ambient category
-$\mathbf{C}$ is braided monoidal with braiding
-$c_{X,Y}\colon X\otimes Y \xrightarrow{ \sim } Y\otimes X$.
-For each object $V$ in $\mathbf{C}$ and each $n \geq 2$, there is a
-group homomorphism
+Let $(\mathbf{C}, A, \tau)$ be a [quantum observable universe](#def:quantum-observable-universe) whose ambient category $\mathbf{C}$ is braided monoidal with braiding $c_{X,Y}\colon X\otimes Y \xrightarrow{ \sim } Y\otimes X$. For each object $V$ in $\mathbf{C}$ and each $n \geq 2$, there is a group homomorphism
 
 $$
   \rho_n\colon B_n  \longrightarrow  \mathrm{Aut}_{\mathbf{C}}(V^{\otimes n})
@@ -22,10 +17,6 @@ given on the Artin generators by
 \end{equation}
 ```
 
-The braid relation
-$\rho_n(\sigma_i)\rho_n(\sigma_{i+1})\rho_n(\sigma_i) = \rho_n(\sigma_{i+1})\rho_n(\sigma_i)\rho_n(\sigma_{i+1})$
-is equivalent to the Yang--Baxter equation for the braiding $c_{V,V}$.
+The braid relation $\rho_n(\sigma_i)\rho_n(\sigma_{i+1})\rho_n(\sigma_i) = \rho_n(\sigma_{i+1})\rho_n(\sigma_i)\rho_n(\sigma_{i+1})$ is mathematically equivalent to the Yang--Baxter equation for the braiding $c_{V,V}$.
 
-
-
-**Mathematical Novelty:** While the braid-group action is a standard result (e.g., Kassel Thm XIII.1.3), its complete, sorry-free categorical Lean formalization in a generic braided monoidal category via an explicit hexagon and naturality chase represents a non-trivial engineering contribution to formal verification.
+**Mathematical Novelty:** The braid-group action is standard (e.g., Kassel Thm XIII.1.3). However, its complete categorical Lean formalization in a generic braided monoidal category, achieved via an explicit hexagon and naturality chase, represents a non-trivial engineering contribution to formal verification.
