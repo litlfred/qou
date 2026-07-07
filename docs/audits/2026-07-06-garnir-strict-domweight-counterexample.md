@@ -277,6 +277,41 @@ This eliminates two red herrings (the shuffle-transversal construction and the
 the termination order is settled and Lean-ready. Steps 1–4 are a focused restatement +
 one new combinatorial lemma (step 3), not open-ended research.
 
+## 5.2 Progress ledger (PR #3464, 2026-07-07) — 9 sorry-free bricks; 2 pieces remain
+
+The colMax proof machinery is largely built. **Landed sorry-free** on PR #3464 (all
+`lean`-direct exit 0; file stays at ONE sorry, colMax, throughout):
+
+| Brick | What it gives |
+|---|---|
+| `garnir_B_lt_A` | `B < A` entirely at a Garnir row descent (column-standard + descent + distinctness) |
+| `colStab_smul_eq` | `C_{σ·s} = C_s` for `σ ∈ C_s` |
+| `exists_colWordMin_form` | the **colsort substitute** — every `s` has `ρ ∈ C_s` with `ρ·s` column-word-minimal and `colWordNum(ρ·s) ≤ colWordNum s` (well-founded descent on `colWordNum`; **no explicit `colsort` Equiv needed**) |
+| `colWordNum_eq_cellSum` | `colWordNum` reindexed as `Σ_cell (label c)·(n+1)^{cmajSig c}` |
+| `cmajSig_lt_of_before`, `cmajSig_injOn` | `cmajSig` = the positional index (bijection `cells → {0..n-1}`) |
+| `geom_sum_pred`, `geom_digit_bound`, `digit_bound_indexed` | base-`(n+1)` digit bound `Σ d·B^e < B^K` |
+| **`colWordNum_lt_of_first_diff`** | **most-significant-differing-cell comparison** — the technically hardest brick; if `u,v` agree on all column-major-earlier cells and `v` is smaller at `c₀`, then `colWordNum v < colWordNum u` |
+
+**Two pieces remain to close the colMax sorry:**
+
+1. **Order-statistics fibre-decrease.** Feed the Garnir structure into
+   `colWordNum_lt_of_first_diff`: `s'` = col-word-min form of `π·t` (via
+   `exists_colWordMin_form`) and `t` first differ in column `j`; their column-`j` contents
+   are `P∪S` vs `P∪A` (`P` = rows-`<i` labels, `S` = `π`'s reassignment). Since `B < A`
+   (`garnir_B_lt_A`), `A` is the top-`|A|` subset, so `sorted(P∪S) ≤ sorted(P∪A)`
+   elementwise with a strict drop; the first strict cell is the `c₀` fed to the
+   first-difference lemma. **Needs new sorted-subset-domination infrastructure** (relate a
+   column-standard tableau's cell labels to the sorted column content; top-`k` dominance;
+   locate the first-difference index). No direct Mathlib support.
+2. **colMax wiring.** A **colsort-transform assembly**: `garnir_assembly_gen` yields
+   `e_t = Σ c·e_{π·t}` (raw); rewrite each `e_{π·t} = ±e_{s'_π}` (`exists_colWordMin_form`
+   + `polytabloid_colStab_smul`) and re-aggregate, with `colWordNum(s'_π) < colWordNum t`
+   from piece 1. Plus assembling `hann` from `garnir_full_annihilation` +
+   `sum_over_garnirG_reindex` + `transversal_sum_eq_zero` + `garnir_transversal_exists`.
+
+Both are known arguments (fully mapped), but each is a genuine multi-lemma sub-project
+distinct from the arithmetic above — the natural handoff boundary.
+
 The roadmap comment on `straightening_step_colMax` carries a condensed version of §2–§3
 so the next pass does not re-wire the false `hdom`.
 
