@@ -72,7 +72,7 @@ def main():
 
     # bar involution on the abstract parity symbols: h -> -h, w -> w, w0 -> w0.
     def bar(e):
-        return e.subs(h, -sp.Symbol("h_tmp")).subs(sp.Symbol("h_tmp"), h) if False else e.subs(h, -h)
+        return e.subs(h, -h)
 
     def even_part(e):
         return sp.simplify((e + bar(e)) / 2)
