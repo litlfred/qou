@@ -61,7 +61,7 @@ def li2q_sym(z_arg: mp.mpf, q: mp.mpf, max_terms: int = 600) -> mp.mpf:
 
 
 def log_phi_q(z_arg: mp.mpf, q: mp.mpf, max_k: int = 100000) -> mp.mpf:
-    """log of the Faddeev / q-Pochhammer quantum dilogarithm
+    """log of the compact (q-Pochhammer) quantum dilogarithm — legacy "Faddeev" mislabel corrected
     Φ_q(z) = ∏_{k≥1} (1 - q^{-k} z)^{-1}, i.e.
         log Φ_q(z) = − Σ_{k≥1} log(1 - q^{-k} z).
     Converges for |z| < q (q^{-k} z → 0 geometrically).
@@ -244,7 +244,7 @@ def main() -> int:
         "ratios_to_electron": out_ratios,
         "timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds"),
     }
-    out = Path(__file__).resolve().parent / "xi-ell-faddeev-phi-q-probe.witness.json"
+    out = Path(__file__).resolve().parent / "xi-ell-phi-q-probe.witness.json"
     out.write_text(json.dumps(witness, indent=2))
     print(f"\nWitness: {out}")
     return 0

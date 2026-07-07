@@ -11,7 +11,7 @@ Faddeev / Bloch-Wigner family of categorical attacks on Q_β residue A
 
 | Symbol | Definition | Notes |
 |--------|-----------|-------|
-| `qDilogPartial q N` | `∑_{n=1}^N q^n / (n · (1 - q^n))` | Truncated Faddeev / quantum dilog (finite version) |
+| `qDilogPartial q N` | `∑_{n=1}^N q^n / (n · (1 - q^n))` | Truncated compact q-dilog (finite version; legacy "Faddeev" naming) |
 | `blochWignerD q n` | `0` for real `q > 0` (Bloch-Wigner vanishes on real positive axis) | Per Chain 1 β NEGATIVE result (PR #1768) |
 
 ## Why this matters
@@ -90,7 +90,14 @@ infrastructure for the Habiro element promotion. -/
 
 /-- Conditional class axiomatising the compact quantum dilogarithm
 context for the Habiro element. NEAR-MATCH tier; instance not
-constructed (requires upstream Faddeev / Bloch-Wigner machinery). -/
+constructed (requires upstream Bloch–Wigner machinery).
+
+**Legacy name.** `FaddeevQuantumDilogContext` (and the field prefix
+`faddeev_`) are retained for compatibility with existing `lean.ref`
+consumers, but the object here is the **compact q-Pochhammer `Φ_q`**
+`∏(1−q^{-k}z)^{-1}` — **not** Faddeev's non-compact modular-double `Φ_b`
+(see `QOU.QBeta.FaddeevModularDouble` and the 2026-07-06 terminology
+ruling in `docs/audits/2026-07-06-qbeta-faddeev-phi-b-modular-double-accuracy.md`). -/
 class FaddeevQuantumDilogContext (q : ℝ) : Prop where
   /-- The compact-q-dilog `Φ_q` infinite product has a well-defined functional
   equation at q (opaque marker for the open derivation). -/

@@ -1,11 +1,11 @@
 {
-  "description": "\u03be_\u2113 Faddeev \u03a6_q vs symmetric Li_2^q per-braid tower probe (proper Wedderburn V\u0302_i)",
+  "description": "ξ_ℓ compact q-dilog Φ_q vs symmetric Li_2^q per-braid tower probe (proper Wedderburn V̂_i)",
   "computation": "xi_ell_phi_q_probe",
   "audit_only": true,
   "precision_dps": 50,
   "context": {
-    "tests": "lepton-mass-tower-canonical.md \u00a7Two-constraint obstruction (Phase 4)",
-    "hypothesis": "Faddeev \u03a6_q (log \u03a6_q ~ Li_2/\u210f) supplies the ~100\u00d7 the symmetric Li_2^q tower lacks while staying nonzero on torus knots",
+    "tests": "lepton-mass-tower-canonical.md §Two-constraint obstruction (Phase 4)",
+    "hypothesis": "compact q-dilog Φ_q (log Φ_q ~ Li_2/ℏ) supplies the ~100× the symmetric Li_2^q tower lacks while staying nonzero on torus knots",
     "V_hat_source": "per_generator_V_hat_general (proper Plancherel Wedderburn, NOT crude |tr_M|^(1/n))",
     "q0_pin": "muon-anchored canonical (matches per-generator-V-hat-general.witness.json)"
   },
@@ -16,7 +16,7 @@
     "z": "0.49932033403359825002067994493580750360052408362741"
   },
   "leptons": {
-    "electron \u03c3_1\u00b3 T(2,3)": {
+    "electron σ_1³ T(2,3)": {
       "V_hat": [
         "0.31643502549313529126351340892142616212368011474609"
       ],
@@ -25,7 +25,7 @@
       "m_phi_direct": "23.138801376128726581973340541517519343591449740253",
       "m_log_phi": "3.1277410354047058384015412523433815947734442160048"
     },
-    "muon T(2,5) \u03c3_1\u2075": {
+    "muon T(2,5) σ_1⁵": {
       "V_hat": [
         "0.54273650780217796985027689515845850110054016113281"
       ],
@@ -34,7 +34,7 @@
       "m_phi_direct": "323.71867956789996810660319674682535866642339540732",
       "m_log_phi": "5.7781968902754397707452433320892233989902479521896"
     },
-    "muon 4_1 (\u03c3_1\u03c3_2\u207b\u00b9)\u00b2": {
+    "muon 4_1 (σ_1σ_2⁻¹)²": {
       "V_hat": [
         "1.0090188660543881749021011273725889623165130615234",
         "1.0090188660532082298715295110014267265796661376953"
@@ -44,7 +44,7 @@
       "m_phi_direct": "2698245.8333556134820075029243042826598717654362771",
       "m_log_phi": "31.476420567530261876267794270520837104049685269242"
     },
-    "tau T(2,7) \u03c3_1\u2077": {
+    "tau T(2,7) σ_1⁷": {
       "V_hat": [
         "0.79275895036418542183298541203839704394340515136719"
       ],
@@ -55,7 +55,7 @@
     }
   },
   "ratios_to_electron": {
-    "muon T(2,5) \u03c3_1\u2075": {
+    "muon T(2,5) σ_1⁵": {
       "codata": "206.768283",
       "ratio_li2q_sym": "1.6402399320597872559959240386016448924738527510907",
       "ratio_phi_direct": "13.99029596675073015355175169133348258788696942963",
@@ -63,7 +63,7 @@
       "ratio_phi_rescaled": "9.9778564979159683860319583441792348682700101373795",
       "ratio_log_phi_rescaled": "1.8290137366240764112947199922591815720936166288857"
     },
-    "muon 4_1 (\u03c3_1\u03c3_2\u207b\u00b9)\u00b2": {
+    "muon 4_1 (σ_1σ_2⁻¹)²": {
       "codata": "206.768283",
       "ratio_li2q_sym": "6.3393779108847281658416303084091209736183516466349",
       "ratio_phi_direct": "116611.30537812878398799938696703592237829061955692",
@@ -71,7 +71,7 @@
       "ratio_phi_rescaled": "13041.909680968697124038324644887200318261061260352",
       "ratio_log_phi_rescaled": "9.1771107767015645091091230308488394605917015865391"
     },
-    "tau T(2,7) \u03c3_1\u2077": {
+    "tau T(2,7) σ_1⁷": {
       "codata": "3477.23",
       "ratio_li2q_sym": "2.2916142431223563247947460330296955241380887646131",
       "ratio_phi_direct": "526.77083727123263773661060123101855924564744650344",
