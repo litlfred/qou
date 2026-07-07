@@ -1,25 +1,16 @@
 **Proposition (far-commutation obstruction).**
-*Let $A$ be a ring. Let $\sigma_1, \sigma_3, \sigma_5 \in A$ be the braid generators hosting the electroweak carriers on the disjoint strand-pairs. These are subject to the braid far-commutation relation $\sigma_i \sigma_j = \sigma_j \sigma_i$ for $|i - j| \ge 2$. Let $\mathcal{A}_{\mathrm{slot}} \subseteq A$ be the subalgebra they generate. Suppose $J_1, J_2, J_3 \in A$ realise an $\mathfrak{su}(2)_L$ adjoint structure relation $\lbrack J_1, J_2 
-brack = J_3$ with $J_3 
-e 0$. Then $J_1$ and $J_2$ cannot both lie in $\mathcal{A}_{\mathrm{slot}}$. The non-abelian $\mathrm{SU}(2)_L$ structure therefore cannot be realised purely among the far-commuting slots.*
+*Let $A$ be a ring. Let $\sigma_1, \sigma_3, \sigma_5 \in A$ be the braid generators hosting the electroweak carriers on the disjoint strand-pairs. These are subject to the braid far-commutation relation $\sigma_i \sigma_j = \sigma_j \sigma_i$ for $|i - j| \ge 2$. Let $\mathcal{A}_{\mathrm{slot}} \subseteq A$ be the subalgebra they generate. Suppose $J_1, J_2, J_3 \in A$ realise an $\mathfrak{su}(2)_L$ adjoint structure relation $\lbrack J_1, J_2 \rbrack = J_3$ with $J_3 \ne 0$. Then $J_1$ and $J_2$ cannot both lie in $\mathcal{A}_{\mathrm{slot}}$. The non-abelian $\mathrm{SU}(2)_L$ structure therefore cannot be realised purely among the far-commuting slots.*
 
 ### Statement (formal)
 
-The slot indices $1, 3, 5$ are pairwise far apart. Thus $\sigma_1, \sigma_3, \sigma_5$ pairwise commute. Consequently, the subalgebra $\mathcal{A}_{\mathrm{slot}} = \langle \sigma_1, \sigma_3, \sigma_5 
-angle$ is commutative. Every commutator $\lbrack x, y 
-brack = xy - yx$ vanishes for $x, y \in \mathcal{A}_{\mathrm{slot}}$. The three carriers $W \leftrightarrow \sigma_1^{4}$, $Z \leftrightarrow \sigma_3^{6}$, $H \leftrightarrow \sigma_5^{8}$ pairwise commute.
+The slot indices $1, 3, 5$ are pairwise far apart. Thus $\sigma_1, \sigma_3, \sigma_5$ pairwise commute. Consequently, the subalgebra $\mathcal{A}_{\mathrm{slot}} = \langle \sigma_1, \sigma_3, \sigma_5 \rangle$ is commutative. Every commutator $\lbrack x, y \rbrack = xy - yx$ vanishes for $x, y \in \mathcal{A}_{\mathrm{slot}}$. The three carriers $W \leftrightarrow \sigma_1^{4}$, $Z \leftrightarrow \sigma_3^{6}$, $H \leftrightarrow \sigma_5^{8}$ pairwise commute.
 
 The obstruction is the incompatibility of two facts:
 
-1. **Commuting operators have vanishing bracket.** For $x, y \in \mathcal{A}_{\mathrm{slot}}$, $\lbrack x, y 
-brack = 0$.
-2. **The $\mathfrak{su}(2)_L$ adjoint is non-abelian.** Its generators satisfy $\lbrack J_a, J_b 
-brack = arepsilon_{abc} J_c 
-e 0$. A nonzero bracket forbids commutation.
+1. **Commuting operators have vanishing bracket.** For $x, y \in \mathcal{A}_{\mathrm{slot}}$, $\lbrack x, y \rbrack = 0$.
+2. **The $\mathfrak{su}(2)_L$ adjoint is non-abelian.** Its generators satisfy $\lbrack J_a, J_b \rbrack = \varepsilon_{abc} J_c \ne 0$. A nonzero bracket forbids commutation.
 
-If both $J_1, J_2 \in \mathcal{A}_{\mathrm{slot}}$, then $\lbrack J_1, J_2 
-brack = 0$ by (1), contradicting $J_3 
-e 0$ by (2). At least one $\mathfrak{su}(2)_L$ generator must escape the slot subalgebra.
+If both $J_1, J_2 \in \mathcal{A}_{\mathrm{slot}}$, then $\lbrack J_1, J_2 \rbrack = 0$ by (1), contradicting $J_3 \ne 0$ by (2). At least one $\mathfrak{su}(2)_L$ generator must escape the slot subalgebra.
 
 ### What this forces
 

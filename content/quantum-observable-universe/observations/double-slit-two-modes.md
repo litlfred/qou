@@ -42,7 +42,7 @@ Linearly polarized light traces a sinusoidal fringe modulation:
 $$
   \delta\Delta\Phi(\alpha)
   = 
-  (\cos\alphaq - \sin\alphaq^{-1})
+  (\cos\alpha_q - \sin\alpha_q^{-1})
   \hbar_q\mathrm{Vol}(K_{\mathrm{mat}})\Delta\phi_\xi.
 $$
 

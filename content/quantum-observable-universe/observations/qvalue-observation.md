@@ -16,4 +16,4 @@ The method leverages the eigenvalue asymmetry $q$ versus $-q^{-1}$ of the Iwahor
 
 **Error structure.**
 
-The parametric uncertainty $\deltaQ / \delta q_0$ is negligible. The residual errors stem from the shell correction approximation. Improving $F_{\mathrm{shell}}$ requires extending the spectral decomposition ([spectral decomposition](#cor:spectral-decomposition-qvalue)).
+The parametric uncertainty $\delta Q / \delta q_0$ is negligible. The residual errors stem from the shell correction approximation. Improving $F_{\mathrm{shell}}$ requires extending the spectral decomposition ([spectral decomposition](#cor:spectral-decomposition-qvalue)).

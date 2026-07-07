@@ -19,10 +19,10 @@ This categorical architecture is formalized in the following Lean definition (`Q
 -- from QOU/CategoricalDynamics.lean
 /-- A Point is a morphism from the terminal object (pt) to M.
     Categorically, we avoid geometric coordinates. -/
-def PointMorphism := ⊤_ C ⟶ M
+def PointMorphism := ⊤_ C → M
 
 /-- Discrete time step evolution as an endomorphism of the universe object M. -/
-variable (TimeStep : M ⟶ M)
+variable (TimeStep : M → M)
 
 /-- A 'flowed' point is the composition of the original point morphism with the time step. -/
 def flowPoint (p : PointMorphism M) : PointMorphism M :=
