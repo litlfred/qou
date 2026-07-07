@@ -942,4 +942,3 @@
 | [ex:topological-mass-trefoil](#ex:topological-mass-trefoil) | Topological mass of the trefoil knot (electron) | Ch 10 | — |
 | [ex:trefoil-operator-algebra](#ex:trefoil-operator-algebra) | Trefoil braid relation and operator algebra | Ch 5 | — |
 | [ex:tritium-decay-knot-equation](#ex:tritium-decay-knot-equation) | Tritium decay as a Skein crossing change: ${}^3_1\mathrm{H} \to {}^3_2\mathrm{He} + e^- + \nu_e^{\sigma}$ | Ch 13 | — |
-

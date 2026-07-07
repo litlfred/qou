@@ -1,1 +1,1 @@
-Glossary entries for rigidity, duality, and pivotal-category terminology.
+We define rigidity, duality, and pivotal-category terminology used throughout this paper.

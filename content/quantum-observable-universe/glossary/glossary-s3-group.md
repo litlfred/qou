@@ -1,6 +1,4 @@
-Imposing the involution relations $\sigma_i^2=\mathrm{id}$ on the braid
-group $B_3$ ([braid group](#def:braid-group)) yields the
-:defterm[symmetric group $S_3$]{#s3-group}
+Imposing the involution relations $\sigma_i^2=\mathrm{id}$ on the braid group $B_3$ yields the **:defterm[symmetric group $S_3$]{#s3-group}**:
 
 ```tex
 \begin{equation}\label{eq:s3-presentation}
