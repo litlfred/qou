@@ -71,3 +71,18 @@ degree — q-Gosper is strictly harder, not the clean next step. The right
 route is the committed Rust CRT pipeline (PR #3450) in a PERSISTENT
 compute environment (only blocker was 5 container restarts). Existence
 certificate (evidence-grade) stands.
+
+CYCLOTOMIC COEFFICIENTS DELIVERED 2026-07-07 (PR #3470,
+docs/audits/2026-07-07-borromean-habiro-cyclotomic-coefficients.md):
+the headline input — Habiro cyclotomic coefficients C_l(q) of the
+diagonal Borromean rings — extracted C_0..C_6 exactly and verified
+OVER-DETERMINED (same C_l rebuild J_{B,n} for n=1..7; non-circular
+n-independence). Basis {n+j}{n-j}=(q^n+q^-n)-(q^j+q^-j) IS Habiro's
+standard cyclotomic basis, so these are THE coefficients. Poles at
+roots of unity (Habiro-ring structure, expected for a link);
+palindromic numerators (amphichirality). NO c_k identification
+asserted (corpus c_k = Q_beta/meson/m_p truncation coeffs, distinct
+object) — supplied as clean input, no forced coincidence.
+Also this branch: laptop-runnable explicit-operator reconstruction
+script (borromean_operator_reconstruct_laptop.py) delivered for the
+degree-terminus-blocked multi-hour CRT run.
