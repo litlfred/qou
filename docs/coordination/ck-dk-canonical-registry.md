@@ -197,3 +197,49 @@ registry is authoritative. Each should carry a one-line banner → this file.
    not promote a coefficient's tier.
 4. **Update this registry** (not a new audit doc) when a rung's status changes —
    that is what keeps "one approach" true.
+
+---
+
+## 9. Kernel / f-map structural-constraint registry (added 2026-07-07)
+
+One authoritative table of every structural constraint on the open kernel
+`R(q,ξ)` / element `F(q)` / kernel coefficients `a_j`, with a per-row
+**epistemic tier** — added after the a₁ parity-shadow incident
+([investigation audit](../audits/2026-07-07-a1-bar-odd-parity-shadow-investigation.md)),
+in which a *conditional* lemma's hypothesis was propagated as established
+fact by prose shorthand. Same discipline as §3/§4: when any doc states a
+kernel constraint, it must agree with this table or update it.
+
+> **Machine-readable twin + validator.**
+> [`kernel-constraints-registry.json`](kernel-constraints-registry.json) mirrors
+> this table; [`kernel_constraints_registry_validate.py`](kernel_constraints_registry_validate.py)
+> enforces: (R2) every `conditional` row names its hypothesis; (R3)
+> **`parity: exactly-odd` ⇒ `q1_shadow: 0`** (the fixed-point rule
+> `QOU.QBeta.fixed_eval_two_mul_kills_bar_odd` — the machine form of the
+> incident); (R4) every `proved-lean` row names its decl; (R5, warn)
+> conditional lemmas should carry `_of_` names. Doc-lint mode
+> (`--lint-docs`, warn-only; `--strict` fails) flags citations of
+> conditional decls not marked "conditional" nearby.
+
+Tiers: `proved-lean` (unconditional Lean) · `symbolic-exact` (sympy-exact
+witness) · `conditional` (Lean implication; hypothesis named, NOT established)
+· `empirical` (data-derived) · `gate` (adopted screening requirement).
+
+| id | constraint | tier | parity / q=1 shadow | source |
+|---|---|---|---|---|
+| KC1 | kernel depth ≥ 2 | proved-lean (`ck_recursion_depth_one_refuted`) | — | PR #1900 |
+| KC2 | depth-2 slot `a₂ = c₂ = −1` | conditional (hyp: depth-2 recursion at n=2, seeds `f₀=1, f₁=0`; `ck_a2_eq_c2_depth_two`) | even / `−1` | PR #1900 |
+| KC3 | depth-2 slot `a₁ = −c₃` | conditional (hyp: depth-2 recursion at n=3; `ck_a1_eq_neg_c3_depth_two`) | see KC6 / `2` | PR #1900 |
+| KC4 | `a₁ = √2·Φ₂` | conditional (hyp: phase relation + `Φ₁=√2`; `ck_a1_eq_sqrt2_phi2`) | see KC6 | PR #1887/#1900 |
+| KC5 | constant kernels refuted (depth-2 over-determines `c₄ = 1−c₃²`, 3.4× miss; constants refuted through depth 4) | empirical | — | PR #1900; commit `eca145ca` |
+| KC6 | `a₁` parity: **nonzero bar-ODD part** (anchor-swing channel); bar-even part carries the `→2` shadow. NOT exactly odd — exactly-odd ⇒ zero q=1 shadow (`fixed_eval_two_mul_kills_bar_odd`) | conditional (hyp: c₃ exactly η-odd — modelling hypothesis, NOT established; `ck_a1_bar_odd_of_c3_odd`) + proved-lean fixed-point rule | odd-part-nonzero / `2` | [2026-07-07 investigation](../audits/2026-07-07-a1-bar-odd-parity-shadow-investigation.md) |
+| KC7 | overall `F` bar-even | gate §4(b) | even / — | PR #1875 (`prop:q-beta-bar-even-kernel-invariant`) |
+| KC8 | simple pole of `g(u)` at `u_substrate` (radius/ratio test) | gate §4(a), empirical basis | — | PR #1727; `prop:q-beta-radius-of-convergence-gate` |
+| KC9 | ζ₄ residue; period-3 (ζ₃/ζ₆) resonance | empirical | — | 2026-06-01 audits |
+| KC10 | q=1 shadows: `c₂ → −1`, `c₃ → −2`; per KC6 the shadow gate tests the **bar-even part** (`shadow_carried_by_even_part`) | gate §4(c) | — / even-part | 2026-06-05 gates; ZBarParity §5 |
+| KC11 | 4₁ operator slot ratios are **exactly bar-invariant** (twist 1, incl. `α₁` — corrected 2026-07-07; the earlier "non-monomial" row was a transcription-error artifact): raw pointwise slots are bar-EVEN with zero odd part and cannot source the bar-odd channel | symbolic-exact | even / — | PR #3449 ([correction audit](../audits/2026-07-07-pc15-a1-transcription-error-correction.md)) |
+| KC15 | pair-difference `D(q) = α₁(q,φ²) − α₁(q,φ⁻²)` on the golden bar-pair is **exactly bar-ODD**, `D(1) = 0` — canonical odd-channel candidate from the 4₁ operator; Habiro basis `ω_k` exactly bar-even (`cycFactor_bar_invariant`), `C_k ≡ 1` | symbolic-exact + proved-lean (`QOU.QBeta.cycFactor_bar_invariant`) | odd / `0` | PR #3449 (T1 + B1 witnesses) |
+| KC16 | one-sided Habiro basis `(q;q)_k` has **index-alternating bar-parity**: `bar((q;q)_k) = (−1)^k q^{−k(k+1)/2} (q;q)_k` — parity re-mix supplied by the **basis**; x=1 shadow of the 4₁ cyclotomic basis = Kashaev double; u-side transfer open | proved-lean (`pochNum_bar_twist`, induction, generic `CommRing`) | mixed / — | PR #3449 (B3 witness) |
+| KC12 | 4₁ Casoratian ratio `a₀/a₂` bar-invariant (twist 1) | proved-lean (`casoratian_ratio_bar_invariant`) | even / `1` | P-C15 |
+| KC13 | `z` exactly bar-even; `κ_{(2,1)}` exactly bar-odd; no scalar z-functional sources the odd channel | proved-lean (`z_bar_invariant`, `kappa21_bar_odd`, ZBarParity) | even resp. odd / `1/2` resp. `0` | PR #3449 |
+| KC14 | `f(z)·κ_{(2,1)}` order-blocked at q=1 (odd total order vs finite nonzero shadow) | symbolic-exact | — | PR #3449 (T3 witness) |
