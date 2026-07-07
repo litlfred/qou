@@ -14,9 +14,9 @@ ingredients, all machine-certified:
 
 | result | statement | tier |
 |---|---|---|
-| KC13 | `z = √q/(1+q)` exactly bar-even; `κ_{(2,1)}` exactly bar-odd | proved-lean |
+| KC13 | `z = √q/(1+q)` exactly bar-even; `κ_(2,1)` exactly bar-odd | proved-lean |
 | KC15 | `D(q) = α₁(q,φ²) − α₁(q,φ⁻²)` exactly bar-odd, `D(1) = 0` | proved-lean |
-| KC16 | one-sided Habiro basis `(q;q)_k` index-alternating: even k ↔ bar-even, odd k ↔ bar-odd, twist `q^{−k(k+1)/2}` | proved-lean |
+| KC16 | one-sided Habiro basis `(q;q)_k` index-alternating: even k ↔ bar-even, odd k ↔ bar-odd, twist `q^(−k(k+1)/2)` | proved-lean |
 | ZBarParity §2 | `ℏ_q = 1 − q⁻¹` bar-odd (twist `−q`); `ℏ_q²` bar-even (twist `q²`) | proved-lean |
 
 **The open object** is the *transfer*: the observable ladder lives in
@@ -39,13 +39,13 @@ So the bar involution does **not** fix `u` pointwise — it scales it by `q²`.
 Consequences to formalize:
 
 1. **`u`-monomials carry a bar-twist that grows with degree:**
-   `bar(u^k) = q^{2k}·u^k`. The `u`-adic grading is therefore bar-compatible
+   `bar(u^k) = q^(2k)·u^k`. The `u`-adic grading is therefore bar-compatible
    *up to a degree-dependent monomial* — the same shape as the KC16 Gauss-sum
-   twist `q^{−k(k+1)/2}` on `(q;q)_k`. The transfer is the composition of
+   twist `q^(−k(k+1)/2)` on `(q;q)_k`. The transfer is the composition of
    these two twists; the open question is whether they **cancel to a clean
    index-parity** on the `c_k`.
 2. **The `(u;u)_m` Habiro basis vs the KC16 one-sided `(q;q)_k`:** the ladder
-   basis `(u;u)_m = ∏_{j=1}^m (1 − u^j)` is built from `u`, not `q`. Under
+   basis `(u;u)_m = Π_(j=1)^m (1 − u^j)` is built from `u`, not `q`. Under
    `bar(u) = q²u` it is **not** the same object as `(q;q)_k`; the two are
    related by the `q ↦ u` substitution that IS the transfer map. Making that
    substitution explicit — and tracking the twist — is step B3-U1.
