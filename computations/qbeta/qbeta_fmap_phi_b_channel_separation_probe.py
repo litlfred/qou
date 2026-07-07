@@ -47,14 +47,17 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 
 from phi_b_evaluator import phi_b  # noqa: E402
+from qou_substrate.precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
-mp.mp.dps = 40
+# Repo precision discipline: use the shared COMPUTE_DPS (not a hardcoded dps) so
+# the run precision matches the witness precisionMetadata.compute_dps.
+DPS = set_compute_dps()
 
 # Fibre points fixed by corpus structure (subset of the merged reference set).
 # Evaluate the b² literals inside an explicit precision context (unary `+`
 # forces re-rounding to the working dps) so no import-time default truncates.
-with mp.workdps(40):
+with mp.workdps(DPS):
     POINTS = [
         ("zeta_4 (b^2 = 1/4, q = i)", +(mp.mpf(1) / 4)),
         ("zeta_6 (b^2 = 1/6, q = e^{iπ/3})", +(mp.mpf(1) / 6)),
@@ -104,10 +107,9 @@ def main() -> int:
             magp = mp.fabs(vp)
             unimod = float(mp.fabs(mag - 1))
             dmag = float(mp.fabs((magp - mag) / DZ))
-            # phase channel (unwrapped locally via the small step)
-            arg = mp.arg(v)
-            argp = mp.arg(vp)
-            dphase = float(mp.fabs((argp - arg) / DZ))
+            # phase channel — local phase increment arg(vp/v) is branch-cut
+            # robust (the ratio's argument is the principal-branch increment).
+            dphase = float(mp.fabs(mp.arg(vp / v)) / DZ)
             # G3: cross-point connecting factor w = Φ_b(z+DZ)·conj Φ_b(z) — σ-unitary?
             w = vp * mp.conj(v)
             crossfac = float(mp.fabs(mp.fabs(w) - 1))
