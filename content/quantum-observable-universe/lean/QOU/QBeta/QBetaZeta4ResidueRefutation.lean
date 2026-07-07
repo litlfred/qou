@@ -248,4 +248,39 @@ theorem cubicC_Hopf_classical_shadow : cubicC_Hopf (2 : R) = -2 := by
 theorem cubicC_unknot_classical : cubicC_unknot (2 : R) = -2 := by
   unfold cubicC_unknot; norm_num
 
+/-! ## §7. Discriminant parity: origin of the odd-channel complex structure
+
+The chiral Hopf link sector carries a NEGATIVE discriminant (`−76`), generating
+a complex-conjugate pair of roots. The amphichiral unknot (trivial) sector
+carries a POSITIVE discriminant (`17`), generating purely real roots.
+The entire complex structure (imaginary parity) of the odd channel thus arises
+strictly from the topology of the chiral crossing interactions, isolated in the
+double-crossing term. -/
+
+/-- Discriminant of a generic monic cubic `y³ + by² + cy + d`. -/
+def discMonicCubic (b c d : R) : R :=
+  18 * b * c * d - 4 * b ^ 3 * d + b ^ 2 * c ^ 2 - 4 * c ^ 3 - 27 * d ^ 2
+
+/-- Discriminant of a generic quadratic `ay² + by + c`. -/
+def discQuadratic (a b c : R) : R :=
+  b ^ 2 - 4 * a * c
+
+/-- **Discriminant of the Hopf cubic is negative (`−76`).**
+    The `−76 = −2²·19 < 0` implies a complex-conjugate pair of roots: the
+    chiral Hopf link introduces complex structure (imaginary parity). -/
+theorem disc_cubicC_Hopf : discMonicCubic (-6 : R) 10 (-6) = -76 := by
+  unfold discMonicCubic; norm_num
+
+/-- **Discriminant of the total cubic is negative (`−152`).**
+    The total odd-channel cubic `C(y)` inherits its complex structure from
+    the Hopf sector, sharing the prime `19` (`−152 = −2³·19`). -/
+theorem disc_cubicC_total : discMonicCubic (-4 : R) 3 (-2) = -152 := by
+  unfold discMonicCubic; norm_num
+
+/-- **Discriminant of the unknot quadratic is positive (`17`).**
+    The amphichiral trivial knot introduces no complex structure (`17 > 0`
+    implies real roots in `ℚ(√17)`). -/
+theorem disc_cubicC_unknot : discQuadratic 2 (-7 : R) 4 = 17 := by
+  unfold discQuadratic; norm_num
+
 end QOU.QBeta.Zeta4Residue
