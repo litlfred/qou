@@ -133,7 +133,7 @@ theorem ladder_departure (h w : R) (hh : h ≠ 0) (htwo : (2 : R) ≠ 0)
     the fixed scaling `(h−2)/2` equals `(q² − 2q − 1)/(2q)` — the same
     `q² − 2q − 1` factor carried by `Q_β` itself. So the crossing weight departs
     from the topological loop `w = 1` along the Q_β decay-numerator direction. -/
-theorem departure_factor_eq (q : R) (hq : q ≠ 0) :
+theorem departure_factor_eq (q : R) (hq : q ≠ 0) (htwo : (2 : R) ≠ 0) :
     (q - q⁻¹ - 2) / 2 = (q ^ 2 - 2 * q - 1) / (2 * q) := by
   field_simp; ring
 
