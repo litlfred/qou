@@ -1,6 +1,6 @@
 **Proposition (compound β-decay calibration across magic shells).**
 
-*Let $E_0^{(2)} = \mathfrak{Q}_\beta = 0.782$ MeV be the free-neutron β-decay Q-value—the $H^2$ calibration of the [three-calibration discipline](#prop:three-calibration-discipline). Let a β-decay $(Z, N) \to (Z+1, N-1)$ cross a magic anchor $A_{\mathrm{magic}} \in \{2, 8, 20, 28, 50, 82, 126\}$. Assume the parent contains $\sigma_{\mathrm{shell}}$ (via [shell self-duality](#prop:shell-schur-weyl-self-duality)) and the daughter contains a different shell operator or a cross-shell transition ([shell-transition knot](#conj:shell-transition-knot)). Then the Q-value of the magic-crossing decay is:*
+*Let $E_0^{(2)} = \mathfrak{Q}_\beta = 0.782$ MeV be the free-neutron β-decay Q-value. Let a β-decay $(Z, N) \to (Z+1, N-1)$ cross a magic anchor $A_{\mathrm{magic}} \in \{2, 8, 20, 28, 50, 82, 126\}$. Assume the parent contains $\sigma_{\mathrm{shell}}$ and the daughter contains a different shell operator or a cross-shell transition. Then the Q-value of the magic-crossing decay is:*
 
 $$
   \mathfrak{Q}_\beta(A_{\mathrm{magic}}\text{-crossing})
@@ -15,6 +15,4 @@ $$
   \Bigr).
 $$
 
-*Equivalently, the shell-binding target $y_{\mathrm{target}}(A_{\mathrm{magic}})$ correlates to the cumulative β-decay chain reaching the magic anchor via the categorical trace. To formalize the full binding scale, we combine multiple β-decay Q-values along the isobar chain through the magic anchor. (See [compound-beta-shell-calibration-probe](#audit:compound-beta-shell-calibration-probe) for empirical consistency checks.)*
-
-A β-decay $(Z, N) \to (Z+1, N-1)$ in the Hecke algebra corresponds to the data in [Table 1](#tbl:compound-beta-shell-calibration-table1-data).
+*Equivalently, the shell-binding target $y_{\mathrm{target}}(A_{\mathrm{magic}})$ correlates to the cumulative β-decay chain reaching the magic anchor via the categorical trace. To formalize the full binding scale, we combine multiple β-decay Q-values along the isobar chain through the magic anchor.*

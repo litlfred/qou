@@ -1,5 +1,5 @@
 **Definition.**
-*Fix the substrate parameter $q$. Sort the Wedderburn-block knot operators by energy ([knot operator energy](#def:knot-operator-energy)):*
+*Fix the substrate parameter $q$. Sort the Wedderburn-block knot operators by energy:*
 
 $$
   0 \;<\; E_1(q) \;\leq\; E_2(q) \;\leq\; \cdots \;\leq\; E_m(q),
@@ -14,27 +14,27 @@ $$
   \;\{\lambda : E(\lambda, q) \leq E_\ell(q)\}.
 $$
 
-*Tied operators (those with $E(\lambda_i, q) = E(\lambda_j, q)$) enter the filtration **together** at the level of their common energy. The filtration is therefore well-defined under degeneracy.*
+*Tied operators enter the filtration together at the level of their common energy. The filtration is well-defined under degeneracy.*
 
-*A closed braid $K$ with Hecke normal form ([Hecke normal form](#def:hecke-normal-form)) $T_w \in H_n(R, q)$ is **confined at level $\ell$ at $q$** if and only if $\ell$ is the smallest integer with $T_w \in J^\ell(q)$. We write $\ell(K, q) := \min\{\ell : T_w \in J^\ell(q)\}$.*
+*A closed braid $K$ with Hecke normal form $T_w \in H_n(R, q)$ is **confined at level $\ell$ at $q$** if and only if $\ell$ is the smallest integer with $T_w \in J^\ell(q)$. We write $\ell(K, q) := \min\{\ell : T_w \in J^\ell(q)\}$.*
 
 **$q$-dependence.**
-*The filtration is intrinsically $q$-dependent. The relative ordering of $E(\lambda, q)$ shifts with $q$, so a knot may have $\ell(K, q_1) \neq \ell(K, q_2)$ for $q_1 \neq q_2$. There are two regimes of $q$-dependence:*
+*The filtration is intrinsically $q$-dependent. The relative ordering of $E(\lambda, q)$ shifts with $q$. A knot may have $\ell(K, q_1) \neq \ell(K, q_2)$ for $q_1 \neq q_2$. There are two regimes of $q$-dependence:*
 
 1. *Reordering: $E(\lambda_i, q)$ and $E(\lambda_j, q)$ swap relative position at some $q^* \in Q$. The filtration re-indexes but the set of operators at each level remains continuous.*
-2. *Vanishing: $E(\lambda_\ell, q^*) = 0$ at the LP boundary ([knot operator energy](#def:knot-operator-energy)). The operator drops out of the filtration entirely, $J^\ell$ collapses, and the level structure rebuilds. This is a categorical phase transition.*
+2. *Vanishing: $E(\lambda_\ell, q^*) = 0$ at the LP boundary. The operator drops out of the filtration entirely, $J^\ell$ collapses, and the level structure rebuilds. This is a categorical phase transition.*
 
-**Per-atom truncation $k_{\max}(K, q)$—witnessed, not chosen.**
-*The truncation $k_{\max}$ is **not a global pragmatic parameter**. The **interaction-strand requirement** determines it per atom-knot $K$ at $q$: $k_{\max}(K, q)$ is the smallest $k$ such that the NF $T_w$ of $K$ requires no partition of size $> k$ to express its operator content. Concretely:*
+**Per-atom truncation $k_{\max}(K, q)$.**
+*The truncation $k_{\max}$ is not a global parameter. The interaction-strand requirement determines it per atom-knot $K$ at $q$. It is the smallest $k$ such that the NF $T_w$ of $K$ requires no partition of size $> k$ to express its operator content. Concretely:*
 
 1. *Compute the NF $T_w \in H_{n(K)}(q)$.*
-2. *Determine the maximal $k \leq n(K)$ such that the operator $T_w$ has a nonzero projection on some Wedderburn block $\lambda \vdash k$ with $d_\lambda \geq 2$ (mixing rep).*
+2. *Determine the maximal $k \leq n(K)$ such that the operator $T_w$ has a nonzero projection on some Wedderburn block $\lambda \vdash k$ with $d_\lambda \geq 2$.*
 3. *Set $k_{\max}(K, q)$ to this value.*
 
-*Non-magic atoms typically have small $k_{\max}$ (few generators needed for the interaction graph). Magic configurations have larger $k_{\max}$ because shell closure forces additional operator content. We compute this once per atom-knot and **witness** it as part of $K$'s NF data, never choosing it externally.*
+*Non-magic atoms typically have small $k_{\max}$. Magic configurations have larger $k_{\max}$ because shell closure forces additional operator content. We compute this once per atom-knot and witness it as part of $K$'s NF data.*
 
 **Magic configurations.**
-*A confined knot $K$ at $q$ is **deeply confined** at level $\ell$ if and only if $E_\ell(q) \ll E_{\ell+1}(q)$ (there is a large energy gap to the next operator). In nuclear contexts, this corresponds to **magic numbers** $A \in \{2, 8, 20, 28, 50, 82, 126\}$: the nucleus sits at the bottom of an energy gap, far from the next LP-boundary. Its $k_{\max}(K, q)$ jumps to a higher value than its non-magic neighbors because more strand interactions are required to express the closed-shell structure.*
+*A confined knot $K$ at $q$ is **deeply confined** at level $\ell$ if and only if $E_\ell(q) \ll E_{\ell+1}(q)$. In nuclear contexts, this corresponds to magic numbers $A \in \{2, 8, 20, 28, 50, 82, 126\}$. The nucleus sits at the bottom of an energy gap, far from the next LP-boundary. Its $k_{\max}(K, q)$ jumps to a higher value than its non-magic neighbors.*
 
 **Categorical interpretation.**
-*Conjecturally, the filtration $J^\bullet(q)$ coincides with the $\mathbb{Z}$-grading filtration on the corresponding KLR module under the Brundan–Kleshchev isomorphism (see [confinement–grading correspondence](#conj:confinement-grading-correspondence)). This identifies the heuristic shadow-price ordering with a rigid homological grading and supplies a structural cutoff for the crystal-graph traversal that replaces S-polynomial overlap analysis.*
+*Conjecturally, the filtration $J^\bullet(q)$ coincides with the $\mathbb{Z}$-grading filtration on the corresponding KLR module under the Brundan–Kleshchev isomorphism. This identifies the heuristic shadow-price ordering with a rigid homological grading.*
