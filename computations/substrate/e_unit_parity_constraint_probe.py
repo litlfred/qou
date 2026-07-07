@@ -70,14 +70,17 @@ two_v = v + 1 / v
 E_UNIT = mp.mpf("0.995940")            # B_AME / 5g, MeV
 LAW_PREC = mp.mpf("0.004")            # the 2H law's own 0.4% residual scale
 
-# (1) parity: [2]_v is bar-invariant (v -> 1/v); so is g^2.
+# (1) parity: [2]_v is bar-invariant (v -> 1/v); so is g^2. The bar image is
+# the same expression with the summands reordered, so under IEEE/mpmath
+# (addition is commutative and exact-rounded) these are EQUAL, not merely
+# close — use exact `==` to reflect the algebraic identity (Copilot review).
 two_v_bar = (1 / v) + v
-parity_two_v_ok = abs(two_v_bar - two_v) < mp.mpf("1e-45")
+parity_two_v_ok = two_v_bar == two_v
 z = 1 / two_v
 g_sq = z**2 / (1 + z**2)
 z_bar = 1 / two_v_bar
 g_sq_bar = z_bar**2 / (1 + z_bar**2)
-parity_g_ok = abs(g_sq_bar - g_sq) < mp.mpf("1e-45")
+parity_g_ok = g_sq_bar == g_sq
 
 # Q_beta (bar-odd) — computed only to DOCUMENT the exclusion, not as a candidate.
 Qb = me * abs(q**2 - 2 * q - 1) * (q + 1) / (2 * q**3)
