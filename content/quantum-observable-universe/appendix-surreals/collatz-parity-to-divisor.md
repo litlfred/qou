@@ -1,30 +1,23 @@
-### From integer parity to the $[2]_q$-divisor
+Classical Collatz hinges on parity. Parity is residue modulo $2$. The integer $2$ is the smallest prime, the only even prime, and the denominator of the halving step $n/2$.
 
-Classical Collatz hinges on parity: is $n$ even or odd? Parity is residue modulo $2$. The number $2$ is the smallest prime, the only even prime, and the denominator of the halving step $n/2$.
-
-In the QOU, the integer $2$ lifts to the quantum integer $[2]_q = q + 1$ (see [q-Collatz conjecture](#conj:q-collatz)). The $[2]_q$-divisor is the locus where $[2]_q = 0$:
+In the QOU, the integer $2$ lifts to the quantum integer $[2]_q = q + 1$. The $[2]_q$-divisor is the locus where $[2]_q = 0$:
 
 $$
-  D_{[2]}  :=  \{q : [2]_q = 0\}
-  =  \{-1\}.
+D_{[2]} := \{q : [2]_q = 0\} = \{-1\}.
 $$
 
-This locus degenerates the $q$-analog of "dividing by $2$". The halving step ceases to exist.
+This locus degenerates the halving step.
 
-**Kummer obstruction at the divisor.** The point $q = -1$ belongs to $\mu_2$. The Kummer obstruction ([root-of-unity truncation](#prop:root-of-unity-truncation)) at level $n = 2$ asks whether $2$ divides $\chi(A) = -6$. It does. The obstruction vanishes. The QOU axioms resolve the singularity. At $q = -1$, the residue ring is $\mathbb{Z}[q^{\pm 1}]/(q+1) \cong \mathbb{Z}$, and the $[2]_q$-adic valuation ([$[2]_q$-adic valuation](#def:two-q-adic-valuation)) specializes to the ordinary $2$-adic valuation.
+The point $q = -1$ belongs to $\mu_2$. The Kummer obstruction ([root-of-unity truncation](#prop:root-of-unity-truncation)) at level $n = 2$ asks whether $2$ divides $\chi(A) = -6$. It does. The obstruction vanishes. At $q = -1$, the residue ring is $\mathbb{Z}[q^{\pm 1}]/(q+1) \cong \mathbb{Z}$, and the $[2]_q$-adic valuation specializes to the ordinary $2$-adic valuation.
 
-### Necessity of orbit–divisor contact
-
-The Skein-Collatz map ([conj:q-collatz](#conj:q-collatz)) has two branches:
+The Skein-Collatz map has two branches:
 
 - **Even branch** ($P/[2]_q$): Each application decreases $\log|P|$ by $\log [2]_q$. The orbit moves toward $1$.
-- **Odd branch** ($([3]_q P + 1)/[2]_q$): Multiplication by $[3]_q$ increases $\log|P|$ by $\log([3]_q/[2]_q)$, despite the single built-in division by $[2]_q$.
+- **Odd branch** ($([3]_q P + 1)/[2]_q$): Multiplication by $[3]_q$ increases $\log|P|$ by $\log([3]_q/[2]_q)$, despite the single division by $[2]_q$.
 
-Tripling inflates the orbit. Halving deflates it. Convergence requires the halvings to dominate on average.
+Tripling inflates the orbit. Halving deflates it. Convergence requires halvings to dominate on average.
 
-After each odd step, the result $\mathcal{C}_q(P)$ is $q$-even, guaranteed by the Skein divisibility identity $[3]_q = q[2]_q + 1$. The integer $v_{[2]}(\mathcal{C}_q(P))$ measures contact order with $D_{[2]}$. It dictates how many consecutive halvings follow before the next odd step.
-
-### The margin
+After each odd step, the result $\mathcal{C}_q(P)$ is $q$-even. The integer $v_{[2]}(\mathcal{C}_q(P))$ measures contact order with $D_{[2]}$. It dictates how many consecutive halvings follow before the next odd step.
 
 | Quantity | Formula | At $q = 1$ | At $q_0$ |
 |----------|---------|-----------|----------|
