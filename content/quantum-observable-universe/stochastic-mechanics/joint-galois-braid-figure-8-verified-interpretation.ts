@@ -4,7 +4,7 @@ export default remark({
   interprets: "prop:joint-galois-braid-figure-8-verified",
   label: "rem:joint-galois-braid-figure-8-verified-interpretation",
   title:
-    "Why the figure-8 cell is structurally trivial, and the remaining chiral-pair cases",
+    "Structural triviality of the figure-8 cell and the remaining chiral-pair cases",
   uses: [
     "prop:joint-galois-braid-figure-8-verified",
     "conj:joint-galois-braid-action",

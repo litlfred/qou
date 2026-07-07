@@ -8,7 +8,7 @@ import { remark } from "../../schema/builders";
  */
 export default remark({
   label: "rem:assembly-projector-scope",
-  title: "What existence does and does not buy",
+  title: "Scope of the assembly-projector existence result",
   interprets: "prop:assembly-projector-exists",
   uses: ["def:molecular-assembly-projector"],
   tags: [

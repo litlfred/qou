@@ -4,7 +4,7 @@ export default remark({
   interprets: "def:q-from-epsilon",
   label: "rem:q-from-epsilon-rationale",
   title:
-    "Why take $\\varepsilon$ primitive and the $q-1 \\leftrightarrow \\varepsilon$ convention",
+    "Primitivity of $\\varepsilon$ and the $q-1 \\leftrightarrow \\varepsilon$ convention",
   uses: [
     "def:q-from-epsilon",
     "def:frobenius-hopf-substrate",
