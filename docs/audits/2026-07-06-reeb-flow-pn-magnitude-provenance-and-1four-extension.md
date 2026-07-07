@@ -379,7 +379,7 @@ research opens of this program collapse to **two**:
    (β-sector) observable, not a binding one, and **already corpus-addressed**:
    the mechanism by which the writhe sign $w(K)$ enters observables is the
    ribbon twist $\varTheta_\lambda = q^{2c(\lambda)}$, derived in
-   [`prop:chirality-writhe-ribbon-derivation`](chirality-writhe-ribbon-derivation.md)
+   [`prop:chirality-writhe-ribbon-derivation`](../../content/quantum-observable-universe/mass-theory/chirality-writhe-ribbon-derivation.md)
    (chiral factor $a_K = 1 + w(K)\,h$, a bar-odd object), and the [1⁴] sign
    block itself is Lean-formalized in the isospin limit
    (`QOU.BraidKnot.H4SignBlockIsospinLimit`, sign rep $\sigma_i \mapsto -q^{-1}$).
