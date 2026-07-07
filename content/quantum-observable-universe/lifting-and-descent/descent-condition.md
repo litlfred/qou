@@ -11,4 +11,3 @@ Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with recursive bran
 where $g_{ijk}^{(n)} = g_{ij}^{(n)} \cdot g_{jk}^{(n)} \cdot (g_{ik}^{(n)})^{-1}$ is the Cech $1$-cocycle deviation at level $n$, $d(g_{ijk}^{(n)})$ is the Cech coboundary (measuring failure of the $1$-cocycle condition), and $a_{ij}^{(n)}, a_{jk}^{(n)} \in \mathcal{O}_M^{\times}$ are the $2$-morphisms (quantum deformation feedback from $\mathrm{SU}_{q_n}(2)$).
 
 Equivalently, the obstruction class $\kappa_n$ ([quantum characteristic classes](#def:quantum-characteristic-classes)) is the cohomology class of the twisted $2$-cocycle $[a_{ij}^{(n)} \cdot (\cdot) \cdot (a_{jk}^{(n)})^{-1}]$ in $H^2(M, \mathcal{O}_M^{\times})$.
-
