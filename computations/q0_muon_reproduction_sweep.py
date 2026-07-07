@@ -133,12 +133,12 @@ def run_one(producer: Path, rel_tol: float, timeout: int = 1800) -> tuple[str, l
     for anchor, envval in order:
         env = dict(os.environ); env["QOU_Q0_ANCHOR"] = envval
         env["PYTHONPATH"] = _pp + ((os.pathsep + env["PYTHONPATH"]) if env.get("PYTHONPATH") else "")
-        r = subprocess.run([sys.executable, "-u", producer.name], cwd=HERE,
+        r = subprocess.run([sys.executable, "-u", str(producer.resolve())], cwd=HERE,
                            capture_output=True, text=True, timeout=timeout, env=env)
         try:
             if r.returncode != 0:
                 return (f"RUN_FAILED (exit {r.returncode}): {r.stderr.strip()[-160:]}", [])
-            fresh = json.loads(wit.read_text())
+            fresh = json.loads(wit.read_text(encoding="utf-8"))
         finally:
             # Blanket-restore the WHOLE computations/ tree, not just `rel`: a
             # producer may emit several witnesses (incl. nested
@@ -166,17 +166,21 @@ def main() -> int:
 
     producers = list(args.producers)
     if args.all_manifest:
-        man = json.loads((HERE / "q0_anchor_manifest.json").read_text())
+        man = json.loads((HERE / "q0_anchor_manifest.json").read_text(encoding="utf-8"))
         producers = [f"{st}.py" for st in man["ideal_muon"] + man["physical_proton"]]
 
     overall_ok = True
     npass = nsub = nother = 0
     for p in producers:
-        prod = (HERE / p) if not Path(p).is_absolute() else Path(p)
+        # Resolve robustly regardless of cwd: an existing path (absolute, or
+        # relative to the invocation dir such as `computations/foo.py` from repo
+        # root) is used as-is; otherwise fall back to the HERE/ prefix.
+        _pp = Path(p)
+        prod = _pp if _pp.exists() else (HERE / p)
         try:
             status, diffs = run_one(prod, args.rel_tol, args.timeout)
         except subprocess.TimeoutExpired:
-            status, diffs = ("TIMEOUT (>1800s)", [])
+            status, diffs = (f"TIMEOUT (>{args.timeout}s)", [])
         mark = "✓" if status.startswith("PASS") else ("–" if status in ("NO_WITNESS", "NO_COMMITTED") else "✗")
         print(f"{mark} {prod.name}: {status}")
         for path, a, b in diffs[:6]:
