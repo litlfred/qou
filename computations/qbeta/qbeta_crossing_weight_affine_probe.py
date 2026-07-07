@@ -125,6 +125,27 @@ def main():
     check("C2_counit_ref_identity",
           sp.simplify((Lc - 1) - (-2 * (w - 1) / (h - 2))) == 0)
 
+    # (D) The crossing-weight departure w-1 (counit reference w0=1), as a
+    # function of the ladder variable u. Invert the ladder L = 1 + c2 u^2 + ...:
+    #   w = 1 - (h-2)/2 * (L - 1),  so w - 1 = -(h-2)/2 * sum_{k>=2} c_k u^k.
+    # Here h = q - 1/q is expressed in the substrate q so the Q_beta
+    # decay-numerator factor (q^2-2q-1) can be exhibited (anchor-free identity;
+    # q is a free symbol, NOT the substrate value -- no anchor).
+    qs = sp.symbols("qs", positive=True)
+    hq = qs - 1 / qs
+    us, c2s, c3s = sp.symbols("u c2 c3")
+    w_dep = sp.expand(1 - (hq - 2) / 2 * (c2s * us**2 + c3s * us**3)) - 1
+    # leading [u^2] coefficient (with the derived c2 = -1) is the Q_beta
+    # decay-numerator prefactor (q^2-2q-1)/(2q):
+    check("D_departure_leading_is_qbeta_numerator_factor",
+          sp.simplify(w_dep.coeff(us, 2).subs(c2s, -1) - (qs**2 - 2 * qs - 1) / (2 * qs)) == 0)
+    # the fixed prefactor (h-2)/2 = (q^2-2q-1)/(2q) -- same factor as Q_beta:
+    check("D_departure_prefactor_factor_identity",
+          sp.simplify((hq - 2) / 2 - (qs**2 - 2 * qs - 1) / (2 * qs)) == 0)
+    # the [u^3] coefficient is -(h-2)/2 * c3 -- the sole OPEN scalar (= c3):
+    check("D_departure_u3_is_open_c3_times_prefactor",
+          sp.simplify(w_dep.coeff(us, 3) - (-(hq - 2) / 2 * c3s)) == 0)
+
     all_passed = all(a["passed"] for a in assertions)
     verdict = (
         "CONFIRMED (scope-(a) structural narrowing): the Q_beta evaluation map "
@@ -167,6 +188,10 @@ def main():
             "even_part": "(4*w*w0 - h^2)/(4*w0^2 - h^2)  (bar-even)",
             "fixed_kernel": "K(q) = 2h/(4*w0^2 - h^2)  (anchor-free bar-odd rational fn of q)",
             "c2_reference_identity": "L(w0=1) - 1 = -2*(w - 1)/(h - 2)",
+            "departure": "w - 1 = -(h-2)/2 * sum_{k>=2} c_k u^k  (counit reference w0=1)",
+            "departure_leading": "[u^2] coeff = (q^2-2q-1)/(2q) using derived c2=-1 "
+                                 "(the Q_beta decay-numerator factor)",
+            "departure_open_scalar": "[u^3] coeff = -(q^2-2q-1)/(2q) * c3 -- sole open scalar, = c3",
             "verdict": verdict,
         },
         "context": {
