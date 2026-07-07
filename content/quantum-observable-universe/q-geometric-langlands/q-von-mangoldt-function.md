@@ -1,6 +1,6 @@
 To measure the arithmetic weight of fundamental defects in a quantum observable universe, we deform the classical von Mangoldt function. 
 
-We define the **$q$-von Mangoldt function** over the maximal ideals $\mathfrak{m}$ of the coordinate ring $\mathcal{O}_q(\mathcal{B})$. Let $N(\mathfrak{m})$ denote the norm of $\mathfrak{m}$, given by the cardinality of its residue field. We set:
+We define the :defterm[$q$-von Mangoldt function]{#q-von-mangoldt-function} over the maximal ideals $\mathfrak{m}$ of the coordinate ring $\mathcal{O}_q(\mathcal{B})$. Let $N(\mathfrak{m})$ denote the norm of $\mathfrak{m}$, given by the cardinality of its residue field. We set:
 
 $$
 \Lambda_q(\mathfrak{m}) = \begin{cases}
