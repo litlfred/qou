@@ -1,6 +1,6 @@
-Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with substrate parameter $q \in k^{\times}$ ([substrate parameter](#def:substrate-parameter)). Let $\gamma_i$ ($i = 1,2$) be two paths from a source to a screen position $y$. Each path passes through one slit of width $a$. The slits are separated by distance $d$.
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with substrate parameter $q \in k^{\times}$ ([substrate parameter](#def:substrate-parameter)). Let $\gamma_i$ ($i = 1,2$) be two paths through slits of width $a$ separated by distance $d$.
 
-The $q$-deformed path phase accumulated along $\gamma_i$ is
+The $q$-deformed path phase along $\gamma_i$ is
 
 $$
   \Phi_q^{(i)}(y)
@@ -11,13 +11,13 @@ $$
 
 The terms are:
 
-- $\Phi_{\mathrm{geom}}^{(i)} = (2\pi/\lambda)\ell_i(y)$: The geometric (de Broglie) phase. $\ell_i(y)$ is the Euclidean path length through slit $i$ to screen point $y$.
-- $\Phi_{\mathrm{Reeb}}^{(i)} = \int_{\gamma_i} \iota_\xi\varTheta$: The Reeb phase. This is the rotation accumulated by the internal color fibre along $\gamma_i$ ([Reeb derivation](#def:categorical-reeb)).
+- $\Phi_{\mathrm{geom}}^{(i)} = (2\pi/\lambda)\ell_i(y)$: The geometric phase.
+- $\Phi_{\mathrm{Reeb}}^{(i)} = \int_{\gamma_i} \iota_\xi\varTheta$: The Reeb phase ([Reeb derivation](#def:categorical-reeb)).
 - $\hbar_q = 1 - q^{-1}$: The [quantum Planck constant](#def:quantum-planck-constant).
 
-This decomposition follows directly from the [$q$-exterior derivative](#def:categorical-q-ext-deriv) $d_q = q^{-1}d + (1 - q^{-1})\pi_V \circ d$. It splits every phase integral into a horizontal (geometric) part weighted by $q^{-1}$ and a vertical (Reeb) part weighted by $1 - q^{-1}$.
+This decomposition stems from the [$q$-exterior derivative](#def:categorical-q-ext-deriv) $d_q = q^{-1}d + (1 - q^{-1})\pi_V \circ d$.
 
-The $q$-deformed phase difference between the two paths is
+The $q$-deformed phase difference is
 
 $$
   \Delta\Phi_q(y)
@@ -26,4 +26,4 @@ $$
         +  (1 - q^{-1})\Delta\phi_\xi(y).
 $$
 
-Here $\theta$ is the scattering angle and $\Delta\phi_\xi(y) = \Phi_{\mathrm{Reeb}}^{(1)}(y) - \Phi_{\mathrm{Reeb}}^{(2)}(y)$ is the Reeb phase mismatch. At $q = 1$, the Reeb term vanishes, recovering the standard Young phase difference.
+Here $\theta$ is the scattering angle and $\Delta\phi_\xi(y)$ is the Reeb phase mismatch. At $q = 1$, the Reeb term vanishes.

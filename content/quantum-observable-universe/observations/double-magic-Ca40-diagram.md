@@ -20,7 +20,7 @@ This diagram is symmetric under transposition. Arms equal legs, yielding $\sum c
 
 ## Rigid LR fusion at $A = 40$
 
-The double-magic conjecture ([`prop:diagrammatic-double-magic-lr-fusion`](#prop:diagrammatic-double-magic-lr-fusion)) predicts the LR product collapses to a single self-conjugate $\nu_{20, 20} \vdash 40$ with multiplicity one:
+The double-magic conjecture predicts the LR product collapses to a single self-conjugate $\nu_{20, 20} \vdash 40$ with multiplicity one:
 
 $$
   V_{\lambda_{20}} \otimes V_{\mu_{20}}

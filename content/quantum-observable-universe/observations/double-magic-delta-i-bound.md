@@ -1,6 +1,6 @@
 ## Statement
 
-**Proposition 9 (LR-fusion adjacent-shell compatibility).**
+**Proposition (LR-fusion adjacent-shell compatibility).**
 *Let $(i_Z, i_N) \in \{1, \ldots, 7\} \times \{1, \ldots, 7\}$ be the Bring shell indices of an isotope's proton and neutron magic numbers. Define $\Delta i := i_N - i_Z$. Then every empirically observed doubly-magic isotope has*
 
 $$
@@ -62,6 +62,6 @@ The $\Delta i \leq 1$ constraint reduces the search space for double-magic LR-fu
 
 This restriction accelerates the algebraic-primality verifier ([`sdp-primality-verifier-spec.md`](https://github.com/litlfred/qou/blob/claude/qou-algebraic-refactor-1qVFc/computations/sdp-primality-verifier-spec.md)). The LR-coefficient computation per pair scales as $O(p(n))^2$.
 
-Empirical tests on small-$n$ pairs via [`optimised_magic_verifier.py`](https://github.com/litlfred/qou/blob/claude/qou-algebraic-refactor-1qVFc/computations/optimised_magic_verifier.py) measure an approximate $16\times$ speedup on the tractable subset.
+Empirical tests on small-$n$ pairs via `optimised_magic_verifier.py` measure an approximate $16\times$ speedup on the tractable subset.
 
 Coupled with the Bring 6-knot basis restriction, which cuts partition enumeration from $p(n)$ to $\leq 6$ for shell-binding analysis, these structural predictions enable significant compute savings beyond generic LP/SDP solvers.
