@@ -29,4 +29,18 @@ theorem net_odd_eq_cubic_trace (q : F) (hq : q ≠ 0) :
   rw [hR]
   field_simp
 
+/-- The modulated bar-odd component of the categorical net with crossing weight `w` attached.
+    The Hopf sector (2 crossings) is scaled by `w^2`, while the unknot sector
+    (0 crossings) is scaled by `w^0 = 1`. -/
+def netOddModulated (q w : F) : F :=
+  ((q - q⁻¹) / 4) * (w ^ 2 * cubicC_Hopf (q ^ 2 + q⁻¹ ^ 2) + cubicC_unknot (q ^ 2 + q⁻¹ ^ 2))
+
+/-- When the crossing weight `w = 1`, the modulated odd channel recovers the original
+    unweighted categorical net bar-odd component. -/
+theorem netOddModulated_one (q : F) (hq : q ≠ 0) :
+    netOddModulated q 1 = numOdd q / (4 * q ^ 7) := by
+  unfold netOddModulated
+  rw [one_pow, one_mul, ← cubicC_sector_decomp]
+  exact (net_odd_eq_cubic_trace q hq).symm
+
 end QOU.QBeta.WOddTranche
