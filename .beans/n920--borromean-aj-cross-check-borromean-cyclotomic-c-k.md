@@ -4,7 +4,7 @@ title: 'Borromean AJ: cross-check Borromean cyclotomic c_k against Habiro [H1] (
 status: in-progress
 type: task
 created_at: 2026-07-04T10:42:30Z
-updated_at: 2026-07-07T12:23:50Z
+updated_at: 2026-07-07T12:37:27Z
 ---
 
 UNBLOCKED 2026-07-06: owner uploaded uploads/0508100v6.pdf (GL2011).
@@ -52,3 +52,12 @@ normalization (pins the minimal telescoper → nullity 1), or restrict to
 polynomial a_i + Gosper-DEN cert. Not closed tonight (compute env: 5+
 container restarts destroyed runs). Foundation + existence certificate +
 Habiro transcription all stand.
+ROUTE-2 CAPSTONE 2026-07-07 (docs/audits/2026-07-07-borromean-qzeilberger-
+route-diagnosis.md): all 3 telescoping shortcuts diagnosed — symbolic
+sp.solve too slow (cube); fixed-q nullspace swamped by a=0 cert-homogeneous
+solutions; op-projection gives a SPURIOUS r*=2 (tower-verify False,
+contradicts existence cert) because the free rich certificate Gosper-sums
+anything. PINNED REQUIREMENT: exact q-Gosper certificate-denominator
+normalization (Gosper-Petkovsek greatest-factorial factorization of s) —
+a standalone ~200-400 line q-Gosper impl, fast (no long compute window),
+the well-scoped next step. Foundation + existence cert stand.
