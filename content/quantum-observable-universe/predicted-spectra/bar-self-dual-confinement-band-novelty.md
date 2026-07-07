@@ -1,1 +1,1 @@
-**Remark.** This formulation collapses three disjoint asymmetric phase regimes into a single bar-self-dual confinement band. It utilizes standard involution bounds to define a rigid phase boundary for the framework.
+**Remark.** To define a rigid phase boundary, this formulation unifies three disjoint asymmetric phase regimes into a single bar-self-dual confinement band using standard involution bounds.

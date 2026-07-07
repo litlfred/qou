@@ -1,8 +1,7 @@
 <!-- Theorem (proved by composition of two named identities). -->
 
 **Proposition (multiplicative-chain form of $\alpha_{EM}^{-1}$).**
-*Working over $R = \mathbb{Z}[q^{\pm 1/2}, (q - q^{-1})^{-1}]$ with
-the canonical substrate parameter $q$,*
+*Let $R = \mathbb{Z}[q^{\pm 1/2}, (q - q^{-1})^{-1}]$ be the base ring. Let $q$ be the canonical substrate parameter. The inverse fine-structure constant admits the decomposition:*
 
 $$
   \boxed{\;\;
