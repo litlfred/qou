@@ -120,8 +120,8 @@ which is **forbidden** (terminology ruling 2026-07-06,
   `QOU.QBeta.FaddeevModularDouble` ($\Phi_b$). The legacy Lean class
   `QOU.Machinery.FaddeevQuantumDilogContext` names the **compact** $\Phi_q$
   (kept for `lean.ref` compatibility; its docstring flags this).
-- **Residual collision (open):** a few Askey-two-saddle prose sites use the
-  single glyph "$\Phi_q$" where context makes clear the non-compact
-  regulator is meant. Resolving that (a distinct glyph, or always writing
-  $\Phi_b$) is a follow-up notation decision; until then, disambiguate in
-  surrounding prose.
+- **Residual collision — follow-up cleanup:** a few Askey-two-saddle prose
+  sites use the single glyph "$\Phi_q$" where context makes clear the
+  non-compact regulator is meant. Resolving that (a distinct glyph, or always
+  writing $\Phi_b$) is a follow-up notation decision; until then, disambiguate
+  in surrounding prose.
