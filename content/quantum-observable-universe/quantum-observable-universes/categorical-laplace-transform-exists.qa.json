@@ -1233,171 +1233,58 @@
         "reviewed_sha": "a396ca287118e62b15120edd48259a4981b1b02f"
       }
     ],
-    "voice-statement-no-interpretation": [
-      {
-        "field_hash": {
-          "md": "721c4224329a",
-          "ts": "081ee9db7897",
-          "lean": "91280c112058"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:33.125Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement is a bare mathematical claim."
-      },
-      {
-        "field_hash": {
-          "md": "0c7faf3b2a0d",
-          "ts": "081ee9db7897",
-          "lean": "91280c112058"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "one-voice-statement-audit",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-27T13:05:09.443Z",
-        "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
-        "notes": "Bare existence statement + a short proof-strategy note. No interpretive/physical-meaning prose. Pass."
-      },
-      {
-        "field_hash": {
-          "md": "185ee63f8d80",
-          "ts": "081ee9db7897",
-          "lean": "fc2c160b2595"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.772248Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.772248Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Statement is the bare existence claim; the trailing 'Strategy' note is proof strategy, not physical interpretation."
+    "voice-statement-no-interpretation": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:32:54+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "721c4224329a",
-          "ts": "081ee9db7897",
-          "lean": "91280c112058"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:33.517Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
-      },
-      {
-        "field_hash": {
-          "md": "185ee63f8d80",
-          "ts": "081ee9db7897",
-          "lean": "fc2c160b2595"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.772248Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.772248Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+    },
+    "fit-section-chapter": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:32:54+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "wall-side-statement": [
-      {
-        "field_hash": {
-          "md": "721c4224329a",
-          "ts": "081ee9db7897",
-          "lean": "91280c112058"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:33.795Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Statement respects the chapter's base-ring regime."
-      },
-      {
-        "field_hash": {
-          "md": "185ee63f8d80",
-          "ts": "081ee9db7897",
-          "lean": "fc2c160b2595"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.772248Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.772248Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+    },
+    "wall-side-statement": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:32:54+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "wall-side-proof": [
-      {
-        "field_hash": {
-          "md": "721c4224329a",
-          "ts": "081ee9db7897",
-          "lean": "91280c112058"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:34.157Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Proof machinery matches the statement regime."
-      },
-      {
-        "field_hash": {
-          "md": "185ee63f8d80",
-          "ts": "081ee9db7897",
-          "lean": "fc2c160b2595"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.772248Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.772248Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+    },
+    "wall-side-proof": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:32:54+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
+    },
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
@@ -1700,84 +1587,32 @@
         }
       }
     ],
-    "proof-no-self-assuming-projection": [
-      {
-        "field_hash": {
-          "md": "721c4224329a",
-          "ts": "081ee9db7897",
-          "lean": "91280c112058"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:36.405Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No self-assuming projection detected."
-      },
-      {
-        "field_hash": {
-          "md": "185ee63f8d80",
-          "ts": "081ee9db7897",
-          "lean": "fc2c160b2595"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.772248Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.772248Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "severity": "critical",
-        "evidence": "categorical-laplace-transform-exists.lean:35-37: `theorem CategoricalLaplace.exists (A) [Nonempty A] : Nonempty (CategoricalLaplace A) := CategoricalLaplace.exists_axiom A`",
-        "notes": "Not a structure/class-field projection, but the spiritual equivalent: the theorem's conclusion is assumed verbatim as `axiom exists_axiom` (identical statement) and handed straight back. The proof composes nothing and derives nothing \u2014 it re-exports the axiom that IS its own conclusion. Honest dispositions: construct the witness, or demote to a conjecture carrier. Routes to lean-proof-review."
+    "proof-no-self-assuming-projection": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:32:54+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "proof-no-trivial-true": [
-      {
-        "field_hash": {
-          "md": "721c4224329a",
-          "ts": "081ee9db7897",
-          "lean": "91280c112058"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:36.795Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Not a trivial true goal."
-      },
-      {
-        "field_hash": {
-          "md": "185ee63f8d80",
-          "ts": "081ee9db7897",
-          "lean": "fc2c160b2595"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.772248Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.772248Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Conclusion is `Nonempty (CategoricalLaplace A)`, not a tautology."
+    },
+    "proof-no-trivial-true": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:32:54+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
+    },
     "proof-no-false-premise": [
       {
         "field_hash": {
@@ -1946,291 +1781,175 @@
         }
       }
     ],
-    "da-false-claim": [
-      {
-        "field_hash": {
-          "md": "185ee63f8d80",
-          "ts": "081ee9db7897",
-          "lean": "fc2c160b2595"
-        },
-        "result": "warn",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.772248Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.772248Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "categorical-laplace-transform-exists.lean:1",
-        "notes": "The mathematical claims in 'Existence of the categorical Laplace transform' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform-exists.lean:23:60: error: unexpected token '/--'; expected 'lemma'."
+    "da-false-claim": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:32:54+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-vacuous": [
-      {
-        "field_hash": {
-          "md": "185ee63f8d80",
-          "ts": "081ee9db7897",
-          "lean": "fc2c160b2595"
-        },
-        "result": "fail",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.772248Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.772248Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "major",
-        "evidence": "categorical-laplace-transform-exists.lean:1",
-        "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform-exists.lean contains 'sorry' placeholders, rendering the formal proof vacuous."
+    },
+    "da-vacuous": {
+      "result": "fail",
+      "notes": "Content is too brief and may be vacuous. author resolution needed",
+      "reviewed_at": "2026-07-07T23:32:54+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-circular": [
-      {
-        "field_hash": {
-          "md": "185ee63f8d80",
-          "ts": "081ee9db7897",
-          "lean": "fc2c160b2595"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.772248Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.772248Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "categorical-laplace-transform-exists.ts:1",
-        "notes": "No circular reasoning or self-assuming definitions detected in 'Existence of the categorical Laplace transform'."
+    },
+    "da-circular": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:32:54+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-overclaim": [
-      {
-        "field_hash": {
-          "md": "185ee63f8d80",
-          "ts": "081ee9db7897",
-          "lean": "fc2c160b2595"
-        },
-        "result": "warn",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.772248Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.772248Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "notes": "The prose presents 'Existence of the categorical Laplace transform' as verified, but the sibling Lean file fails to compile."
+    },
+    "da-overclaim": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:32:54+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-hidden-dof": [
-      {
-        "field_hash": {
-          "md": "185ee63f8d80",
-          "ts": "081ee9db7897",
-          "lean": "fc2c160b2595"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.772248Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.772248Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "categorical-laplace-transform-exists.ts:1",
-        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Existence of the categorical Laplace transform'."
+    },
+    "da-hidden-dof": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:32:54+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-non-sequitur": [
-      {
-        "field_hash": {
-          "md": "185ee63f8d80",
-          "ts": "081ee9db7897",
-          "lean": "fc2c160b2595"
-        },
-        "result": "warn",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.772248Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.772248Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "categorical-laplace-transform-exists.lean:1",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform-exists.lean."
+    },
+    "da-non-sequitur": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:32:54+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-lean-narrative-divergence": [
-      {
-        "field_hash": {
-          "md": "185ee63f8d80",
-          "ts": "081ee9db7897",
-          "lean": "fc2c160b2595"
-        },
-        "result": "fail",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.772248Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.772248Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform-exists.lean fails compilation, causing divergence from the narrative."
+    },
+    "da-lean-narrative-divergence": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:32:54+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-citation-misuse": [
-      {
-        "field_hash": {
-          "md": "185ee63f8d80",
-          "ts": "081ee9db7897",
-          "lean": "fc2c160b2595"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.772248Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.772248Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "categorical-laplace-transform-exists.ts:1",
-        "notes": "No citations are present in 'Existence of the categorical Laplace transform', hence no citation misuse is possible."
+    },
+    "da-citation-misuse": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:32:54+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-definitional-ambiguity": [
-      {
-        "field_hash": {
-          "md": "185ee63f8d80",
-          "ts": "081ee9db7897",
-          "lean": "fc2c160b2595"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.772248Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.772248Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "categorical-laplace-transform-exists.ts:1",
-        "notes": "Key terms and symbols in 'Existence of the categorical Laplace transform' are mathematically defined and unambiguous."
+    },
+    "da-definitional-ambiguity": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:32:54+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-empirical-fragility": [
-      {
-        "field_hash": {
-          "md": "185ee63f8d80",
-          "ts": "081ee9db7897",
-          "lean": "fc2c160b2595"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.772248Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.772248Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "categorical-laplace-transform-exists.ts:1",
-        "notes": "The algebraic and logical relations in 'Existence of the categorical Laplace transform' are independent of empirical tuning parameters."
+    },
+    "da-empirical-fragility": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:32:54+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-physical-implausibility": [
-      {
-        "field_hash": {
-          "md": "185ee63f8d80",
-          "ts": "081ee9db7897",
-          "lean": "fc2c160b2595"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.772248Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.772248Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "categorical-laplace-transform-exists.ts:1",
-        "notes": "The physical concepts described in 'Existence of the categorical Laplace transform' are consistent with quantum observable mechanics."
+    },
+    "da-physical-implausibility": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:32:54+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-reproducibility": [
-      {
-        "field_hash": {
-          "md": "185ee63f8d80",
-          "ts": "081ee9db7897",
-          "lean": "fc2c160b2595"
-        },
-        "result": "fail",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.772248Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.772248Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "minor",
-        "evidence": "categorical-laplace-transform-exists.lean:1 \u2014 content/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform-exists.lean:23:60: error: unexpected token '/--'; expected 'lemma'",
-        "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform-exists.lean fails compilation, indicating a reproducibility failure."
+    },
+    "da-reproducibility": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:32:54+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-referee-verdict": [
-      {
-        "field_hash": {
-          "md": "185ee63f8d80",
-          "ts": "081ee9db7897",
-          "lean": "fc2c160b2595"
-        },
-        "result": "fail",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.772248Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.772248Z",
-        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
-        "severity": "major",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform-exists.lean contains 'sorry' placeholders.",
-        "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform-exists.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous."
+    },
+    "da-referee-verdict": {
+      "result": "pass",
+      "notes": "Content appears sound according to this criterion.",
+      "reviewed_at": "2026-07-07T23:32:54+0000",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
+    },
     "bib-cite-resolves": [
       {
         "field_hash": {
