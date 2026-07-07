@@ -462,11 +462,12 @@ multiplication by `τ`, then the signed sum of basis tabloids
 `{gτ·t} = {g·t}` (`τ` fixes the row pattern) while `sgn(gτ) = -sgn(g)`.
 This is the Mathlib-side realisation of "the full column antisymmetriser of a
 Garnir set annihilates the tabloid" (Sagan §2.6). It is the algebraic ingredient
-the column-maximal Garnir core (`straightening_step_colMax`, still `sorry`)
-consumes; the three pieces still missing on top of it — the coset→polytabloid
+the Garnir core (`straightening_step_colMax`, still `sorry`)
+consumes; the pieces still missing on top of it — the coset→polytabloid
 antisymmetriser bridge (needs `CharZero k`), the Garnir-set/row-descent existence
-for a column-maximal non-standard tableau, and the dominance strict-increase —
-are recorded in the module docstring. -/
+for a column-word-minimal non-standard tableau, and the **column-word decrease**
+(`colWordNum (π•t) < colWordNum t`; the former `domWeight`-increase claim was FALSE —
+audit §3.5) — are recorded in the module docstring. -/
 -- Ref: [sagan2001] Sagan, *The Symmetric Group*, §2.6 (Garnir relations).
 theorem mtab_sum_sign_smul_of_eq_zero (t : Specht.Tableau μ)
     (G : Finset (Equiv.Perm (Fin (Specht.nOf μ))))
@@ -1038,18 +1039,25 @@ theorem exists_row_descent_of_colMax (t : Specht.Tableau μ)
     omega
 
 omit [CharZero k] in
-/-- **Garnir assembly (sorry-free) — Garnir piece 2, final bookkeeping.**
-Given a transversal `T ∋ 1` for which (i) the signed representation sum vanishes
-(`hann` — the output of `transversal_sum_eq_zero`), and (ii) every *non-identity*
+/-- **Garnir assembly (sorry-free) — the `domWeight`-era bookkeeping helper.**
+Given a transversal `T ∋ π₀` for which (i) the signed representation sum vanishes
+(`hann` — the output of `transversal_sum_eq_zero`), and (ii) every *non-distinguished*
 representative `π` strictly raises the dominance measure
 (`hdom : domWeight t < domWeight (π • t)`), the polytabloid `e_t` is a `k`-linear
 combination of polytabloids of strictly `domWeight`-greater tabloids.
 
-Pure bookkeeping: isolate the identity term `sgn(1)·(1·e_t) = e_t` from `hann`, giving
-`e_t = ∑_{π ∈ T, π ≠ 1} (−sgn π)·e_{π·t}` (via equivariance `polytabloid_rep_smul`),
-then reindex the permutation sum to a sum over the tableaux `{π·t}` with fibrewise-
-aggregated coefficients. This is the interface that closes `straightening_step_colMax`
-once the Garnir set supplies `hann` and `hdom`. -/
+Pure bookkeeping: isolate the distinguished term `sgn(π₀)·(π₀·e_t) = ±e_t` from `hann`,
+giving `e_t = ∑_{π ∈ T, π ≠ π₀} (−sgn π)·e_{π·t}` (via equivariance
+`polytabloid_rep_smul`), then reindex the permutation sum to a sum over the tableaux
+`{π·t}` with fibrewise-aggregated coefficients.
+
+**Orphaned by the 2026-07-07 measure correction.** `straightening_step_colMax` has been
+restated over `colWordNum` (the `domWeight` version was FALSE — audit §3.5), so this
+`domWeight`-based assembly is NO LONGER on the straightening path and does not close the
+current `colMax`. It is retained sorry-free (parallel to the orphaned `domWeight`/
+`domBound` scaffolding); the `colWordNum` colMax will want an analogous assembly whose
+`hdom` reads `colWordNum (π • t) < colWordNum t`. The *reindexing* argument here (identity
+isolation → `sum_image` fibre-aggregation) is measure-agnostic and transcribes directly. -/
 theorem garnir_assembly (t : Specht.Tableau μ)
     (T : Finset (Equiv.Perm (Fin (Specht.nOf μ))))
     (π₀ : Equiv.Perm (Fin (Specht.nOf μ))) (hπ₀ : π₀ ∈ T)
@@ -1526,11 +1534,18 @@ theorem straightening_step_colMax (t : Specht.Tableau μ)
   -- sorry-free; the remaining obligations are the Garnir-set construction and the NEW
   -- column-word-decrease bound. The proved pieces compose as
   --   Garnir set → hfam → `sum_sign_rep_polytabloid_eq_zero_of_family`
-  --              → `transversal_sum_eq_zero` → `garnir_assembly` → e_t = Σ (non-id terms).
+  --              → `transversal_sum_eq_zero` → (colWordNum analogue of `garnir_assembly`)
+  --              → e_t = Σ (non-id terms).
+  --   NB `garnir_assembly` itself is `domWeight`-typed (now orphaned); its measure-agnostic
+  --   reindexing transcribes to a `colWordNum` version whose `hdom` reads
+  --   `colWordNum (π•t) < colWordNum t`.
   --
-  -- 1. Take the row descent from `exists_row_descent_of_colMax t h hmax` (column-word-
-  --    minimal ⇒ column-standard ⇒ a row descent exists): cells (i,j),(i,j+1) ∈ μ with
-  --    `labelAt t hij1 ≤ labelAt t hij`.
+  -- 1. Obtain the row descent. `exists_row_descent_of_colMax` is stated with a
+  --    `domWeight`-maximality hypothesis, so it does NOT accept the new `colWordNum`
+  --    `hmax` as-is — it needs a colWordNum-adapted restatement (or route via the shared
+  --    fact: `hmax` ⇒ `t` column-standard ⇒ a row descent (i,j),(i,j+1) ∈ μ with
+  --    `labelAt t hij1 ≤ labelAt t hij` exists; the column-standardness argument is
+  --    measure-agnostic — cf. `colStandard_of_colMax`, likewise `domWeight`-typed).
   -- 2. Garnir label-sets (as `Finset (Fin (nOf μ))`, via `colPattern`/`rowPattern`):
   --      A := univ.filter (fun l => colPattern t l = j     ∧ i ≤ rowPattern t l)
   --      B := univ.filter (fun l => colPattern t l = j + 1 ∧ rowPattern t l ≤ i)
@@ -1587,7 +1602,8 @@ theorem straightening_step (t : Specht.Tableau μ)
   classical
   by_cases hraise : ∃ σ : Specht.colStab t,
       colWordNum ((σ : Equiv.Perm (Fin (Specht.nOf μ))) • t) < colWordNum t
-  · -- Column-raising case: fully proved via column-antisymmetry.
+  · -- Column-lowering case (`colWordNum (σ•t) < colWordNum t`): fully proved via
+    -- column-antisymmetry.
     obtain ⟨σ, hσ⟩ := hraise
     set σ0 : Equiv.Perm (Fin (Specht.nOf μ)) := (σ : Equiv.Perm (Fin (Specht.nOf μ))) with hσ0
     have hmem : σ0 ∈ Specht.colStab t := σ.property
