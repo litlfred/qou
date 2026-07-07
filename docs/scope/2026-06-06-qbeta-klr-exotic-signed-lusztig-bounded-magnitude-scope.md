@@ -62,7 +62,7 @@ Specifying such a convention IS a research project — Lusztig's positivity theo
 |---|---|---|
 | ✅ refuted | B / C / C′ / D | 4 preflights (PRs #1914 + #1924) |
 | ⚠️ NARROWED HARD (N1-N4) | C″ exotic signed Lusztig | bounded magnitude (N1) + cont. 11 saturation (N2) + cross-anchor rigidity (N3) + **N4 rank-≥9 magnitude artifact** ([2026-07-07 prune](../audits/2026-07-07-qbeta-exotic-lusztig-n4-magnitude-prune.md)) |
-| 🛑 viable (strongly reinforced) | **A** (CAL-3-anchored permanently) | **3 corpus + 4 preflight + 3 structural narrowings** |
+| 🛑 viable (strongly reinforced) | **A** (CAL-3-anchored permanently) | **3 corpus + 4 preflight + 4 structural narrowings (N1–N4)** |
 
 ## Cross-refs
 

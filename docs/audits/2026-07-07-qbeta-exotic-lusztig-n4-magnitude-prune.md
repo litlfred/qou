@@ -34,9 +34,15 @@ eigenvalue-sum is exactly `h`). A length-2 signed character is a product of two
 eigenvalues, so `|D_w| ≤ q₀² ≈ 1.23`. Reaching `|Σ| ≈ 40` by summing `O(1)` terms
 needs `~32` length-2 Weyl elements:
 
-| rank | #(length-2 elements of S_n) |
+| rank | #(length-2 elements of Sₙ) |
 |---|---|
-| S₃ | 2 | S₄ | 5 | S₅ | 9 | S₆ | 14 | S₇ | 20 | S₈ | 27 | **S₉** | **≥ 32** |
+| S₃ | 2 |
+| S₄ | 5 |
+| S₅ | 9 |
+| S₆ | 14 |
+| S₇ | 20 |
+| S₈ | 27 |
+| **S₉** | **≥ 32** |
 
 So the escape requires **rank n ≥ 9** — physically absurd for a nucleon, which
 lives in `H₃/H₄` Hecke (rank 3–4). Probe
