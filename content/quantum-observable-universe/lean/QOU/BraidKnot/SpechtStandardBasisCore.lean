@@ -2303,6 +2303,31 @@ theorem sum_over_garnirG_reindex {M : Type*} [AddCommMonoid M] (t : Specht.Table
           (fun a ha b hb => hinj (Finset.mem_coe.mpr ha) (Finset.mem_coe.mpr hb))]
     _ = ∑ π ∈ T, ∑ ρ ∈ garnirH t i j, F (π * ρ) := by rw [Finset.sum_product]
 
+/-! #### Fibre-decrease core — the column-word decrease of each non-identity Garnir term -/
+
+omit [CharZero k] in
+/-- **A Garnir element fixes the content of every column left of `j` (sorry-free).** For
+`π ∈ S_{A∪B}` (`garnirG`), a column `c < j` holds only labels *outside* `A∪B` (`A` is in
+column `j`, `B` in `j+1`), so `π` fixes them pointwise and `colContent (π•t) c = colContent t
+c`. Combined with `colContent_colStab_eq` + `labelAt_eq_of_colContent_eq`, this discharges
+`colWordNum_lt_of_first_diff_col`'s `hleft`: the fibre and `t` agree on every cell to the
+left of the Garnir columns. -/
+theorem colContent_garnirG_eq_of_lt {π : Equiv.Perm (Fin (Specht.nOf μ))}
+    (t : Specht.Tableau μ) (i j : ℕ) (hπ : π ∈ garnirG t i j) {c : ℕ} (hc : c < j) :
+    colContent (π • t) c = colContent t c := by
+  classical
+  simp only [garnirG, Finset.mem_filter, Finset.mem_univ, true_and] at hπ
+  rw [colContent_smul]
+  unfold colContent
+  apply Finset.image_congr
+  intro l hl
+  rw [Finset.mem_coe, Finset.mem_filter] at hl
+  have hnotAB : l ∉ garnirA t i j ∪ garnirB t i j := by
+    rw [Finset.mem_union, garnirA, garnirB, Finset.mem_filter, Finset.mem_filter]
+    rintro (⟨_, hcj, _⟩ | ⟨_, hcj, _⟩) <;> rw [hl.2] at hcj <;> omega
+  show ((π l : Fin (Specht.nOf μ)) : ℕ) = ((l : Fin (Specht.nOf μ)) : ℕ)
+  rw [hπ l hnotAB]
+
 /-! #### The single residual straightening core + the induction skeleton -/
 
 omit [CharZero k] in
