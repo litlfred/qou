@@ -1,7 +1,4 @@
-**Proposition (meson EM sinh-channel closed-form).**
-*Let $R$ be a field and $q \in R^\times$. Writing the substrate Planck
-quantum $\hbar_q = (q - 1)/q$, the following are equal:*
-
+Let $R$ be a field and $q \in R^\times$. Writing the substrate Planck quantum $\hbar_q = (q - 1)/q$, we have:
 $$
   1 + \hbar_q - \hbar_q^2/2
   \;=\;
@@ -11,12 +8,7 @@ $$
   \;=\;
   \frac{3 q^2 - 1}{2 q^2}.
 $$
-## Significance: the meson $m_K^2/m_\pi^2$ closure form
-
-Substituting the closed form into the meson mass-squared ratio gives
-a **single closed-form derived expression** for the full
-$m_K^2 / m_\pi^2$ ratio:
-
+Substituting this closed form into the meson mass-squared ratio gives:
 $$
   \frac{m_K^2}{m_\pi^2}
   \;=\;
@@ -26,32 +18,4 @@ $$
   \cdot
   \frac{3 q^2 - 1}{2 q^2}.
 $$
-
-Both pieces are framework-derived (no fitted integers): the strong
-fusion $[3]_q \cdot [4]_q$ from the qq̄ 2-body decomposition
-([`prop:meson-qcg-fusion-identity`](#prop:meson-qcg-fusion-identity)),
-and the sinh-channel EM correction from the CS-corrected
-$\alpha_{\mathrm{em}} = q \cdot [9]_q \cdot [10]_q$ ([force-carrier
-Diophantine uniqueness](#prop:force-carrier-bring-uniqueness))
-multiplied by $(3 q^2 - 1)/(2 q^2)$.
-
-(See [`docs/audits/2026-05-28-meson-mass-ratio-derived-vs-fitted.md`](../../../docs/audits/2026-05-28-meson-mass-ratio-derived-vs-fitted.md)
-for the archimedean substrate evaluation.)
-
-## Structural reading
-
-The numerator $3 q^2 - 1$ has a Bring-surface generation structure:
-**3** is the number of saturating-genus generation torus knots
-$T_{2,3}, T_{2,5}, T_{2,7}$ on Bring's surface (per the same
-Diophantine uniqueness that fixes the force-carrier set), and $q^2$
-is the substrate's squared coupling. The denominator $2 q^2$
-contributes the standard EM-self-energy halving (Casimir) and puts
-the correction on the substrate-natural scale. Per
-`prop:cosh-sinh-q-bridge` (#1417, $[n]_q
-= \sinh(n\lambda)/\sinh(\lambda)$ with $\sinh$ = Coulomb channel),
-this is the sinh-side categorical-action correction on the qq̄ pair,
-modulo a rigorous first-principles derivation of the
-$\hbar_q - \hbar_q^2/2$ truncation order.
-
-
-**Mathematical Novelty:** While the proved identity relies on the elementary textbook rational-function algebra $1+\hbar_q-\hbar_q^2/2 = (3q^2-1)/(2q^2)$, the interpretive novelty is highly framework-specific. Specifically, the meson $m_K^2/m_\pi^2$ closure significance and its Bring 3-generation reading provide a novel physical interpretation of this algebraic form.
+Both pieces are framework-derived. The strong fusion $[3]_q \cdot [4]_q$ originates from the qq̄ 2-body decomposition, and the sinh-channel EM correction from the CS-corrected $\alpha_{\mathrm{em}}$.

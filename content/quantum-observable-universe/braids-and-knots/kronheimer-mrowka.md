@@ -1,9 +1,1 @@
-Kronheimer and Mrowka proved that the fundamental group of every
-non-trivial knot admits a non-trivial representation into
-$\mathrm{SU}(2)$, and hence into
-$\mathrm{PSL}(2,\mathbb{C})$.  In the
-QOU context, this guarantees that every non-trivial knot type
-contributing to the fibre bundle carries a non-abelian gauge holonomy.
-The restriction to traceless elements of $\mathrm{SU}(2)$ aligns with
-the category-theoretic setup of [Section](#sec:enveloping-algebras),
-where the representation factors through the adjoint form.
+Kronheimer and Mrowka proved that the fundamental group of every non-trivial knot admits a non-trivial representation into $\mathrm{SU}(2)$, and hence into $\mathrm{PSL}(2,\mathbb{C})$. Consequently, every non-trivial knot type contributing to the fibre bundle carries a non-abelian gauge holonomy. Restricting to traceless elements of $\mathrm{SU}(2)$ ensures the representation factors through the adjoint form.
