@@ -1,66 +1,18 @@
-> **SUPERSEDED-$\rho_q$ note .** Any use of the
-> scalar substrate density $\rho_q = 1/\hbar_q^2$ in this block is the
-> structurally-wrong leading-order ansatz per
-> [`mass-endomorphism-tower.md` §SUPERSEDED](mass-endomorphism-tower.md);
-> the canonical replacement is the operator-valued $A^\lambda_{\mu, \nu}(I)$
-> graded expansion [`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md).
-> Full purge tracking: [`docs/audits/-superseded-rho-q-purge.md`](../../../docs/audits/-superseded-rho-q-purge.md).
+> **SUPERSEDED-$\rho_q$ note .** Any use of the scalar substrate density $\rho_q = 1/\hbar_q^2$ in this block is the structurally-wrong leading-order ansatz per [`mass-endomorphism-tower.md` §SUPERSEDED](mass-endomorphism-tower.md).
 
-**Reading.** The encounter chapter is the place in the
-manuscript where the Archimedean wall is most crossed by
-accident. The hyperbolic-volume language and the
-$q$-Pochhammer language *coincide* under
-[$\tau_{\mathrm{arch}}$](#def:archimedean-realization-functor),
-which can lead an author to write a derivation step in one
-language while it logically belongs to the other. This remark
-states the discipline once.
-
-**The wall.** Every derivation step in the manuscript belongs
-to exactly one of two registers:
+**The Archimedean wall.**
+Every derivation step belongs to exactly one of two registers:
 
 | Register | Coefficient ring | Operative invariants | Examples |
-|---------------|-------------------------------------------------------------------|---------------------------------------|---------------------------------------|
-| **Pre-$\tau$** | $R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$ (or its $z$-Habiro completion) | Hecke spectra; Markov traces; LP/SDP feasibility | Confinement SDP; Gröbner--Shirshov reductions |
-| **Post-$\tau$** | $\mathbb{R}$ (or $\mathbb{C}$) via $\tau_{\mathrm{arch}}$ | Hyperbolic volumes; thimble depths; mass eigenvalues | Mostow rigidity; PL thimble flow; Bloch--Wigner $D(z)$ |
+|---|---|---|---|
+| **Pre-$\tau$** | $R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$ (or $z$-Habiro) | Hecke spectra, Markov traces | SDP feasibility, Gröbner--Shirshov reductions |
+| **Post-$\tau$** | $\mathbb{R}$ via $\tau_{\mathrm{arch}}$ | Hyperbolic volumes | PL thimble flow, Bloch--Wigner $D(z)$ |
 
-The functor $\tau_{\mathrm{arch}}$ is the **only** legal way to
-cross from the left column to the right. Specifically:
+The functor $\tau_{\mathrm{arch}}$ is the only legal bridge between these columns.
 
-* No derivation step on the left may use a value from the right
- (e.g. a hyperbolic volume) as input. Such values are *outputs*
- of $\tau_{\mathrm{arch}}$, not algebraic data.
+* Pre-$\tau$ derivation steps cannot use post-$\tau$ values (e.g., hyperbolic volume) as inputs.
+* Post-$\tau$ derivation steps cannot claim algebraic-side identities (e.g., Hecke relations) that only hold prior to realization.
+* Bridging equalities that cross the wall must use $\approx$ unless stating an explicit error term. They describe the functor, not algebraic derivation steps.
 
-* No derivation step on the right may claim algebraic-side
- identities (e.g. Hecke relations) — those hold in $R$ before
- $\tau_{\mathrm{arch}}$ is applied. After $\tau_{\mathrm{arch}}$
- one has only the realised real numbers.
-
-* When a canonical equality bridges the two sides — e.g. the
- mass formula
- $\tau_{\mathrm{arch}}(\mathfrak{m}^{\mathrm{trans}}(\varrho_K))
-  = \rho_q \cdot \mathrm{Vol}_{\mathrm{hyp}}(U \setminus K)$ — it
- is a statement *about the functor*, not a derivation step on
- either side alone. canonical comparisons of such bridges with
- experimental data must use $\approx$ unless an explicit error
- term is present.
-
-**Motivic shorthand.** The cleanest algebraic-side home for
-encounter data is the **$z$-Habiro completion**
-$\hat{\mathbb{Z}}[q^{\pm 1}][z]_z$: it allows one to treat the
-poles of the quantum dilogarithm $\Phi_q$ algebraically — as
-quotients of cyclotomic ideals — rather than as divergent
-analytic limits. Under $\tau_{\mathrm{arch}}$ these algebraic
-poles realise as the cusps of the hyperbolic triangulation
-([pole-to-cusp bijection](#conj:algebraic-geometric-dilog-equivalence)).
-
-**Self-check.** When writing or reviewing an encounter-side
-derivation, ask:
-
-1. *Which column does my coefficient ring live in?*
-2. *Have I used any data from the other column without going
- through $\tau_{\mathrm{arch}}$?*
-3. *Are bridging equalities written with $\approx$ (or with an
- explicit error term)?*
-
-If any answer is wrong, fix the derivation; do not hide the
-crossing in prose.
+**Motivic shorthand.**
+The $z$-Habiro completion cleanly houses algebraic encounter data, treating quantum dilogarithm poles as quotients of cyclotomic ideals. Under $\tau_{\mathrm{arch}}$, these algebraic poles realize as hyperbolic-triangulation cusps. Any violation of the wall boundary breaks the formal derivation.

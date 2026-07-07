@@ -1,14 +1,3 @@
-The preceding sub-section developed the Plancherel-$\alpha$
-spectral foundations ($\alpha_{\mathrm{em}}$ categorical trace,
-Plancherel term-7 formulation, weight boundedness, unified
-curvature-rank-mass formula, chirality residue mass term,
-$E_\infty$-page identifications, spectral-sequence $H^3$ explicit
-form, chirality-writhe ribbon derivation, Gram-matrix spectral
-connection). This sub-section then traces the knot-factor
-identification and the Wedderburn enumeration that close the
-mass-tower arc: knot-factor spectral derivation + amphicheiral +
-Borromean-composite + shell-closed + spectral summary, Pauli-
-factor Wedderburn, mass-formula Wedderburn enumeration, mass-tower
-coefficient stratification, and the flavor-dressing functor.
+We now identify the knot factors and enumerate the Wedderburn channels. This closes the mass-tower arc.
 
-The closing blocks specialise the substrate-level knot-factor to amphicheiral knots, Borromean composites, and shell-closed configurations, then exhibit the Pauli-factor Wedderburn decomposition and the mass-tower coefficient stratification that the next sub-section consumes.
+We previously established the Plancherel-alpha spectral foundations. We now apply those tools to specific knot classes. We evaluate the knot factor for amphicheiral knots, Borromean composites, and shell-closed configurations. Finally, we formulate the Pauli factor via Wedderburn decomposition and stratify the mass-tower coefficients.

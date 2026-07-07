@@ -1,68 +1,11 @@
-**Proposition.** *In the $\mathfrak{Q}_\beta$ precision-ladder factorisation*
+**Proposition.** *In the $\mathfrak{Q}_\beta$ precision-ladder factorisation,*
 
 $$
-\mathfrak{Q}_\beta(q) \;=\; Q_A(q) \cdot \cos(\alpha_{\text{eff}}(q))
-  \cdot \prod_{k \ge 2} \bigl(1 + c_k \cdot u_{\text{ladder}}^k\bigr),
-\qquad u_{\text{ladder}} = b(q) \cdot \hbar_q^2,
+\mathfrak{Q}_\beta(q) \;=\; Q_A(q) \cdot \cos(\alpha_{\text{eff}}(q)) \cdot \prod_{k \ge 2} \bigl(1 + c_k \cdot u_{\text{ladder}}^k\bigr), \qquad u_{\text{ladder}} = b(q) \cdot \hbar_q^2,
 $$
 
-*the $k = 2$ coefficient is*
+*the $k = 2$ coefficient satisfies $c_2 = -1$ as a structural identity over any commutative ring.*
 
-$$
-c_2 \;=\; -1
-$$
+The canonical observation $c_2 \approx -1$ is not an empirical fit. It is the exact coefficient of $u_{\text{ladder}}^2$ in the algebraic factorisation of the categorical $N{=}2$ ladder correction. The identity holds in any commutative ring, independent of $q_0$ and CODATA. The sympy verification simplifies the factor and obtains exactly $0$.
 
-*as a structural identity over any commutative ring, independent of
-the substrate value $q_0$ and of CODATA.*
-## Structural status versus empirical fit
-
-The earlier canonical observation $c_2 \approx -1$ (PR
-[#1602](https://github.com/litlfred/qou/pull/1602), bar-even constraint)
-was treated as an *empirical near-match*: a value extracted from the
-SDP and compared to the proved bar-even prediction. The present
-proposition strengthens that to a **structural identity**: $c_2$ is
-not extracted from data, it is the coefficient of $u_{\text{ladder}}^2$ in the
-exact algebraic factorisation of the categorical $N{=}2$ ladder
-correction. No fit, no CODATA-$\mathfrak{Q}_\beta$ input, no $q_0$-evaluation
-required — the identity holds in any commutative ring.
-
-The corresponding sympy verification in
-the canonical formalism
-computes `sp.simplify((1 - b²·ℏ_q⁴) - (1 - u²))` and obtains
-**exactly $0$**.
-
-## canonical impact at $q_0$
-
-With $c_2 = -1$ structurally locked in, the partial ladder
-
-$$
-Q_{N=2}(q) \;=\; Q_A(q) \cdot \cos(\alpha_{\text{eff}}(q)) \cdot (1 - b^2 \hbar_q^4)
-$$
-
-evaluated at the substrate $q_0 \approx 1.10998$ gives
-
-$$
-Q_{N=2}(q_0) \;\approx\; 0.78233441\;\text{MeV},
-$$
-
-within $5.6\,\text{ppm}$ of $\mathfrak{Q}_\beta^{\text{CODATA}} = 0.78233\;\text{MeV}$
-with **zero CODATA-$\mathfrak{Q}_\beta$ input**. The remaining $\sim 6\,\text{ppm}$
-is the categorical target for $c_3, c_4$ — see
-[`prop:q-beta-c-k-recursion-from-habiro-q-difference`](q-beta-c-k-recursion-from-habiro-q-difference.md)
-for the recursion framework.
-
-## Implication for $c_3$, $c_4$
-
-The same line of attack applies at higher $N$: if the categorical
-$N{=}3$ correction is exactly $(1 + a \cdot u^3)$ for some explicit
-$a$, then $c_3 = a$ structurally. The candidates
-$\text{cos}(b \cdot \hbar_q^2)$, $\text{exp}(-\tfrac12 \sum b^k \hbar_q^{2k})$,
-$1 - b^3 \hbar_q^6$, ... each predict a *different* $c_3$ by Taylor
-expansion. Testing which candidate matches the empirical $c_3 \approx -2$
-discriminates between brane-tower truncation schemes; if exactly one
-candidate matches structurally, $c_3$ becomes a second structural
-identity.
-
-This proposition is the $k = 2$ instance of that programme. Higher-$k$
-instances are the remaining open work toward CODATA-free $\mathfrak{Q}_\beta$ at
-$1\,\text{ppQ}$.
+With $c_2 = -1$ structurally locked, the partial ladder $Q_{N=2}(q_0)$ evaluates to within $5.6\,\text{ppm}$ of $\mathfrak{Q}_\beta^{\text{CODATA}}$ with zero CODATA input. The remaining $\sim 6\,\text{ppm}$ sets the categorical target for $c_3$ and $c_4$. Testing exact structural matches for $c_3$ discriminates between brane-tower truncation schemes.

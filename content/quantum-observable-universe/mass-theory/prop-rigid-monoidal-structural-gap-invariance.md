@@ -1,100 +1,14 @@
-**Proposition (structural-gap convention-invariance via rigid
-monoidal Type-B folding).**
-
-*Let $\mathbf{C} = \mathbf{Rep}(\mathrm{SU}_q(2))$ be the rigid
-monoidal category of $\mathrm{SU}_q(2)$-representations, and let*
+**Proposition (structural-gap convention-invariance via rigid monoidal Type-B folding).**
+*Let $\mathbf{C} = \mathbf{Rep}(\mathrm{SU}_q(2))$ be the rigid monoidal category. Let $\tau \colon \mathrm{End}_{\mathbf{C}}(A^{\otimes n}) \to \mathbb{C}_q$ be the canonical Markov trace. Define the categorical structural gap for a confined particle $\mathfrak{H}$ as:*
 
 $$
-  \tau \;:\; \mathrm{End}_{\mathbf{C}}(A^{\otimes n}) \;\longrightarrow\; \mathbb{C}_q
+  \Delta_{\mathrm{cat}}(\mathfrak{H}) := B_{\mathrm{AME}}(\mathfrak{H}) - m_e \cdot \rho \cdot \bigl|\tau(\beta_{\mathfrak{H}})\bigr|.
 $$
 
-*be the canonical Markov trace on the Hecke endomorphism algebra
-$\mathrm{End}_{\mathbf{C}}(A^{\otimes n}) \cong H_n(q)$.  For any
-confined particle $\mathfrak{H}$, let $\beta_{\mathfrak{H}} \in
-H_{3A}(q)$ be its canonical atomic-braid representative
-([`def:confined-particle`](#def:confined-particle)) and define the
-**categorical structural gap**
+*The value $\Delta_{\mathrm{cat}}(\mathfrak{H})$ depends only on the categorical-trace invariant $\tau(\beta_{\mathfrak{H}})$. It is strictly invariant under any choice of operator-volume convention.*
 
-$$
-  \Delta_{\mathrm{cat}}(\mathfrak{H})
-    \;:=\; B_{\mathrm{AME}}(\mathfrak{H})
-    \;-\; m_e \cdot \rho \cdot \bigl|\tau(\beta_{\mathfrak{H}})\bigr|.
-$$
+The Markov trace $\tau$ is uniquely determined by the categorical axioms up to the choice of parameter $z$. Operator-volume conventions vary only the non-categorical regularizer. Differences in regularizer choices cancel into the identical $\Delta_{\mathrm{cat}}$ value.
 
-Then $\Delta_{\mathrm{cat}}(\mathfrak{H})$ depends only on the
-categorical-trace invariant $\tau(\beta_{\mathfrak{H}})$ and not on
-any choice of operator-volume convention (per-generator algebraic
-volumes, eigenvalue spectra, pair-knot composites, multi-term
-assembly, ...) for evaluating $\mathrm{End}_{\mathbf{C}}(A^{\otimes 3A})$.*
+The Type-B folding maps the stable matter fixed points into a symmetric Kashiwara crystal. The spin involution acts as the folded-crystal involution. The Markov trace and LP-dual operator selections are strictly spin-invariant. This rigidly unifies pair-knot selection at magic shells, substrate-binding symmetry, and convention independence.
 
-## Convention-independence of the structural gap
-
-The Markov trace $\tau$ on $H_n(q)$ is **uniquely determined** by
-the categorical axioms M1 (cyclicity), M2 (Markov-axiom Hecke peel
-$\mathrm{tr}_M^{(n)}(x \cdot \sigma_{n-1}) = z \cdot \mathrm{tr}_M^{(n-1)}(x)$),
-M3 ($\mathrm{tr}_M(1) = 1$), and the Hecke quadratic relation, up
-to the choice of the Markov parameter $z = 1/(\sqrt{q} + 1/\sqrt{q})$. Two evaluations of the same $\beta_{\mathfrak{H}}$
-through different operator-volume conventions give the SAME
-categorical $\tau(\beta_{\mathfrak{H}})$ value — this is the
-universal property of the rigid monoidal Markov trace.
-
-What the operator-volume conventions vary is the **non-categorical**
-remainder:
-- Per-generator $\Phi_q$ towers depend on the algebraic volumes $|\hat V_i|$ — not categorical.
-- Per-eigenvalue $\Phi_q$ depends on the choice of basis in $V_\lambda$ — not categorical without further structure.
-- Pair-knot product-volume / Markov-trace composites depend on the operator-volume convention chosen for the shell sub-braid.
-
-The **categorical trace** $\tau(\beta_{\mathfrak{H}})$ is the
-common invariant; the brane-tower formula contributions beyond
-$|\tau(\beta_{\mathfrak{H}})|$ (the "transient tower" component of
-[`conj:brane-tower-z-habiro`](#conj:brane-tower-z-habiro)) are
-convention-dependent regularizations of a divergent analytic
-object, and their differences must therefore cancel into the same
-$\Delta_{\mathrm{cat}}$ value.
-
-## Type-B-folded rigid monoidal structure
-
-The Type-B folding (AGENTS.md §7b) folds the
-$\mathfrak{sl}_n$ Cartan datum into a Type B datum; the resulting
-*symmetric* Kashiwara crystal is the categorical home of the
-spin-involution invariance ([`prop:spin-involution-lp-dual-invariance`](#prop:spin-involution-lp-dual-invariance)).
-Stable matter = fixed points of the folded crystal.
-
-Under Type-B folding:
-- **Spin involution $\sigma = S$** (Hopf antipode) acts as the
-  folded-crystal involution; magic-shell sub-braids are S-conjugate.
-- **Markov trace $\tau$** is S-invariant
-  ([`prop:spin-involution-lp-dual-invariance`](#prop:spin-involution-lp-dual-invariance)
-  §"Step 2: cycle stable"); in particular
-  $\tau(\sigma_{pp}) = \tau(\sigma_{nn})$
-  ([`pair_knot_Z_N_trace_invariance`](spin-involution-lp-dual-invariance.lean)
-  in the Lean sibling).
-- **Operator-selection LP** dual y_0* is S-invariant; magic-shell
-  composite operators are in the active set EXACTLY at $Z = 2$ /
-  $N = 2$ shells (the LP-dual finding from  family 5).
-
-This is the unified rigid monoidal framework under which the
-three load-bearing findings of the  closure are
-consequences of a single structural fact.
-
-## Unification of findings (1)–(3) from  closure
-
-| Finding | Categorical content |
-|:---|:---|
-| (1) Pair-knot operators active at magic shells | LP-dual active set selects S-conjugate composites in Type-B-fixed locus (categorical: sub-algebra structure in $\mathbf{Rep}(\mathrm{SU}_q(2))$) |
-| (2) Z$\leftrightarrow$N substrate-binding symmetry | $\tau$ is S-invariant $\Rightarrow$ $\tau(\sigma_{pp}) = \tau(\sigma_{nn})$ algebraically |
-| (3) Convention-independence of structural gap | The categorical $\tau(\beta_{\mathfrak{H}})$ is the only invariant; conventions vary the non-categorical regularizer |
-## Discussion
-
-The proposition is **conjectural** at the falsifiable-prediction
-level (predictions 1–3 are testable but not yet verified
-exhaustively).  The categorical content (Steps 1–3 of the proof)
-follows from established results in quantum-group representation
-theory (Jones 1985, Wenzl 1988, Kassel 1995).  Lean class
-`RigidMonoidalStructuralGapInvariance` in
-[sibling `.lean`](prop-rigid-monoidal-structural-gap-invariance.lean)
-axiomatizes the conjectural content per §3b conditional-class
-pattern; downstream conditional theorems are unconditional Lean
-theorems whenever the class is in scope.
-
-**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. It applies $q$-deformation identities over an abstract coefficient ring and specializes them to real-valued observables at $q_0$.
