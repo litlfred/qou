@@ -1483,14 +1483,16 @@ def garnirB (t : Specht.Tableau μ) (i j : ℕ) : Finset (Fin (Specht.nOf μ)) :
 
 omit [CharZero k] in
 /-- **`B < A` entirely (sorry-free) — the foundation of the fibre-decrease bound.**
-At a Garnir row descent (`labelAt t hij1 ≤ labelAt t hij`, i.e. the col-`j+1` label at
-row `i` is below the col-`j` label at row `i`) of a column-word-minimal (hence
-column-standard) `t`, **every** label `b ∈ B` (col `j+1`, rows `≤ i`) is strictly smaller
-than **every** label `a ∈ A` (col `j`, rows `≥ i`). Reason: column-standardness makes
-`b ≤ labelAt(i,j+1)` (b at row `≤ i` in col `j+1`) and `labelAt(i,j) ≤ a` (a at row `≥ i`
-in col `j`), while the descent + label-distinctness give
+At a Garnir row descent — `labelAt t hij1 ≤ labelAt t hij`, i.e. in label order the
+col-`j+1` entry at row `i` is `≤` the col-`j` entry at row `i` — of a column-word-minimal
+(hence column-standard) `t`, **every** label `b ∈ B` (col `j+1`, rows `≤ i`) is strictly
+smaller (in label order) than **every** label `a ∈ A` (col `j`, rows `≥ i`). Reason:
+column-standardness gives `b ≤ labelAt(i,j+1)` (b at row `≤ i` in col `j+1`) and
+`labelAt(i,j) ≤ a` (a at row `≥ i` in col `j`), while the descent + label-distinctness give
 `labelAt(i,j+1) < labelAt(i,j)`. This is why any non-identity fibre — which moves a
-`B`-label into column `j` — strictly lowers `colWordNum` (column `j` is read first). -/
+`B`-label into column `j` — strictly lowers `colWordNum`: column `j` precedes column `j+1`
+in the column-major reading, so a smaller label entering column `j`'s cells lowers a more
+significant digit of the base-`(n+1)` word. -/
 theorem garnir_B_lt_A (t : Specht.Tableau μ) (i j : ℕ)
     (hij : (i, j) ∈ μ) (hij1 : (i, j + 1) ∈ μ)
     (hmax : ∀ σ : Specht.colStab t,
