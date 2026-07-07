@@ -83,9 +83,16 @@ has *de facto* treated (B) as binding, not (A).
    `ck_a1_bar_odd_of_c3_odd` (conditional lemma, no math change): its antecedent is a
    modelling hypothesis, not established; see this audit.
 
-**Owner sign-off requested** on verdict items 1–2 becoming the standing
-reading (they only re-scope prose/gates; no Lean statement changes, since
-the Lean was conditional all along).
+**Owner sign-off GRANTED (2026-07-07).** Verdict items 1–2 are now the
+**standing reading** for the f-map program: parity gates test the *odd part*
+of a kernel coefficient; shadow gates test the *even part*
+(`shadow_carried_by_even_part`). "a₁ exactly bar-odd" is **not** an
+established premise — it is the never-proved antecedent of the conditional
+`ck_a1_bar_odd_of_c3_odd` (registry KC6, tier `conditional`). Any future
+probe or audit that asserts exact bar-oddness of a q=1-regular kernel
+coefficient with a nonzero shadow is inconsistent (fixed-point rule
+`fixed_eval_two_mul_kills_bar_odd`) and fails the kernel-constraints
+validator. Recorded across: registry §9 KC6/KC10; ledger §4-ter.
 
 ## 5. Cross-references
 
