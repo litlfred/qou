@@ -921,6 +921,27 @@ theorem cmajSig_injOn : Set.InjOn (cmajSig μ) μ.cells := by
     · exact absurd heq.symm (Nat.ne_of_gt (cmajSig_lt_of_before hcf (Or.inr ⟨h.symm, h1⟩)))
   · exact absurd heq.symm (Nat.ne_of_gt (cmajSig_lt_of_before hcf (Or.inl h)))
 
+/-- **Converse of `cmajSig` monotonicity (sorry-free).** Column-major order is linear, so a
+strictly larger `cmajSig` forces the cell column-major-*before*: `cmajSig c₀ < cmajSig c`
+gives `c` precedes `c₀` (smaller column, or same column and smaller row). This is what
+discharges the `hhigh` hypothesis of `colWordNum_lt_of_first_diff` — "every
+higher-significance cell agrees" reduces to "every column-major-earlier cell agrees",
+which for the fibre decrease is "cells in columns `< j`, and cells in column `j` above the
+first change". -/
+theorem before_of_cmajSig_lt {c c₀ : ℕ × ℕ} (hc : c ∈ μ.cells)
+    (h : cmajSig μ c₀ < cmajSig μ c) :
+    c.2 < c₀.2 ∨ (c.2 = c₀.2 ∧ c.1 < c₀.1) := by
+  by_contra hcon
+  push_neg at hcon
+  obtain ⟨hcol, hrow⟩ := hcon
+  rcases lt_trichotomy c.2 c₀.2 with hlt | heqc | hgt
+  · exact absurd hlt (not_lt.mpr hcol)
+  · rcases lt_trichotomy c.1 c₀.1 with h1 | h1 | h1
+    · exact absurd h1 (not_lt.mpr (hrow heqc))
+    · exact absurd (Prod.ext h1 heqc ▸ h) (lt_irrefl _)
+    · exact absurd (cmajSig_lt_of_before hc (Or.inr ⟨heqc.symm, h1⟩)) (by omega)
+  · exact absurd (cmajSig_lt_of_before hc (Or.inl hgt)) (by omega)
+
 /-- Geometric identity over ℕ: `(∑_{x<K} (B-1)·B^x) + 1 = B^K` for `1 ≤ B`. -/
 theorem geom_sum_pred (B K : ℕ) (hB : 1 ≤ B) :
     (∑ x ∈ Finset.range K, (B - 1) * B ^ x) + 1 = B ^ K := by
