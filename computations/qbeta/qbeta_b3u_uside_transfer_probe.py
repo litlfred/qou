@@ -44,7 +44,7 @@ def _repo_head_sha():
         return None
 
 
-def _is_monomial(expr, *gens):
+def _is_monomial(expr):
     expr = sp.powsimp(sp.cancel(sp.together(expr)))
     num, den = sp.fraction(sp.together(expr))
     return (len(sp.Add.make_args(sp.expand(num))) == 1
@@ -80,7 +80,7 @@ def main():
         return r
 
     # --- B3-U1: basis image is a clean monomial twist?  (expect NO) ---
-    u1_clean = all(_is_monomial(P(m, q**2 * u) / P(m, u), q, u) for m in range(1, 5))
+    u1_clean = all(_is_monomial(P(m, q**2 * u) / P(m, u)) for m in range(1, 5))
     # gate is stated as "clean descent"; the honest finding is the NEGATION.
     check("B3U1_basis_image_NOT_clean_monomial_twist", not u1_clean)
 
