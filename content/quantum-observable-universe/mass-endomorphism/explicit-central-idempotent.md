@@ -8,7 +8,7 @@ $$
 
 *is the $q$-content of the box containing $k$ at row $i(k)$ and column $j(k)$ ([`prop:hoefsmit-seminormal-form`](#prop:hoefsmit-seminormal-form)).*
 
-*The central primitive idempotent $e_\lambda \in Z(H_n(q))$ projecting onto the $\lambda$-Wedderburn block ([`prop:wedderburn-weight-canonical`](#prop:wedderburn-weight-canonical)) has the explicit formula:*
+*The central primitive idempotent $e_\lambda \in Z(H_n(q))$ projecting onto the $\lambda$-Wedderburn block ([`prop:wedderburn-weight-canonical`](#prop:wedderburn-weight-canonical)) carries the explicit formula:*
 
 $$
   \boxed{\;
@@ -19,24 +19,24 @@ $$
   \;}
 $$
 
-*where $\mathrm{C}(n) := \{c(\square; q) : \square \in \mu,\; \mu \vdash n\}$ comprises the distinct $q$-contents arising across every partition $\mu \vdash n$. The inner product excludes the eigenvalue $c(T(k); q)$. Each factor forms a Lagrange-interpolation projector onto the eigenspace where $J_k = c(T(k); q)$. This completely constructs $Z(H_n(q))$.*
+*where $\mathrm{C}(n) := \{c(\square; q) : \square \in \mu,\; \mu \vdash n\}$ comprises the distinct $q$-contents arising across every partition $\mu \vdash n$. The inner product excludes the eigenvalue $c(T(k); q)$. Each factor forms a Lagrange-interpolation projector onto the eigenspace where $J_k = c(T(k); q)$. This construction completely specifies $Z(H_n(q))$.*
 
 ## Cross-checks
 
 1. **Sum-to-identity.** $\sum_{\lambda \vdash n} e_\lambda = 1 \in H_n(q)$, confirming the completeness of the partition decomposition.
 2. **Orthogonality.** $e_\lambda e_\mu = \delta_{\lambda \mu} e_\lambda$ via Lagrange interpolation in commuting variables.
 3. **Self-adjointness.** For a self-conjugate partition $\lambda = \lambda'$, every box $\square \in \lambda$ has a transposed partner $\square'$ with $c(\square'; q) = c(\square; q^{-1}) = *(c(\square; q))$. The product remains bar-fixed term-by-term: $*(e_\lambda) = e_\lambda$.
-4. **Bar-pairing.** For a chiral partition $\lambda \neq \lambda'$, we have $*(e_\lambda) = e_{\lambda'}$. The sum $e_\lambda + e_{\lambda'}$ is bar-fixed.
+4. **Bar-pairing.** For a chiral partition $\lambda \neq \lambda'$, we have $*(e_\lambda) = e_{\lambda'}$. The sum $e_\lambda + e_{\lambda'}$ remains bar-fixed.
 
 ## Small $n$ examples
 
 | $n$ | $\lambda$ | bar-class | $e_\lambda$ structure |
 |---|---|---|---|
-| 2 | $(2)$ | self-conjugate | $\frac{L_2 - (-q^{-2})}{q^2 - (-q^{-2})} = \frac{q^{-1}\sigma_1 + 1}{q + q^{-1}}$ |
-| 2 | $(1,1)$ | self-conjugate | $\frac{L_2 - q^2}{(-q^{-2}) - q^2} = \frac{q\sigma_1^{-1} - 1}{-q - q^{-1}}$ |
-| 3 | $(3)$ | chiral pair w/ $(1,1,1)$ | $q$-deformed symmetriser |
-| 3 | $(2,1)$ | self-conjugate | standard 2D representation idempotent |
-| 4 | $(2,2)$ | self-conjugate | bar-fixed; witnesses $\mathrm{Vol}(4_1)$ via depth-2 pairing with $\mathrm{Li}_2^q(\zeta_6)$ |
+| $2$ | $(2)$ | self-conjugate | $\frac{L_2 - (-q^{-2})}{q^2 - (-q^{-2})} = \frac{q^{-1}\sigma_1 + 1}{q + q^{-1}}$ |
+| $2$ | $(1,1)$ | self-conjugate | $\frac{L_2 - q^2}{(-q^{-2}) - q^2} = \frac{q\sigma_1^{-1} - 1}{-q - q^{-1}}$ |
+| $3$ | $(3)$ | chiral pair w/ $(1,1,1)$ | $q$-deformed symmetriser |
+| $3$ | $(2,1)$ | self-conjugate | standard 2D representation idempotent |
+| $4$ | $(2,2)$ | self-conjugate | bar-fixed; witnesses $\mathrm{Vol}(4_1)$ via depth-2 pairing with $\mathrm{Li}_2^q(\zeta_6)$ |
 
 ## Significance
 
@@ -48,7 +48,7 @@ $$
   \mathcal{P}_2 / \mathcal{P}_1
 $$
 
-forms a Bloch-regulator period computable to arbitrary precision. For the figure-8 knot ($\lambda = (2,2)$, $z = \zeta_6$):
+forms a Bloch-regulator period computable to arbitrary precision. For the figure-$8$ knot ($\lambda = (2,2)$, $z = \zeta_6$):
 
 $$
   \tau_{\mathrm{arch}}\bigl( e_{(2,2)} \cdot \mathrm{Li}_2^q(\zeta_6) \bigr)
@@ -60,8 +60,8 @@ This is numerically verified in [`conj:bring-figure-eight-depth-2-witness`](#con
 
 ## Provenance
 
-The Murphy-element diagonalization of $Z(H_n(q))$ originates with Murphy (1981, symmetric group) and Dipper–James (1986, Hecke algebra). The Lagrange-interpolation form offers the cleanest computable expression, standard in implementations like SageMath's `IwahoriHeckeAlgebra` and the local `pyhecke-native` module.
+The Murphy-element diagonalization of $Z(H_n(q))$ originates with Murphy (1981, symmetric group) and Dipper–James (1986, Hecke algebra). The Lagrange-interpolation form offers the cleanest computable expression. It is standard in implementations like SageMath's `IwahoriHeckeAlgebra` and the local `pyhecke-native` module.
 
 ## Lean formalization
 
-The declaration `explicit_central_idempotent_via_murphy` defines the Murphy-element construction of the central idempotent. Its proof is deferred (`sorry`) awaiting formalization of Dipper–James.
+The declaration `explicit_central_idempotent_via_murphy` defines the Murphy-element construction of the central idempotent. Its proof remains deferred (`sorry`) awaiting formalization of Dipper–James.

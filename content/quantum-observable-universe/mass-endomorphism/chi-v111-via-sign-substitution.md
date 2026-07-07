@@ -1,9 +1,6 @@
 **V_(1,1,1) per-irrep character via sign-rep substitution.**
 
-Per the closure gap analysis (item 2 of ), V_(1,1,1) is the
-antisymmetric 1-d irrep of $H_3(q)$. The character can be derived
-**directly via scalar arithmetic** (analogous to V_(3)) using the
-sign-rep action:
+$V_{(1,1,1)}$ constitutes the antisymmetric 1-d irrep of $H_3(q)$. The character is derived directly via scalar arithmetic (analogous to $V_{(3)}$) using the sign-rep action:
 
   - $\sigma_i \mapsto -q^{-1}$
   - $\sigma_i^{-1} \mapsto -q$

@@ -27,11 +27,11 @@ $$
 
 ## Categorical interpretation
 
-The Iwahori-Hecke algebra $H_n(q)$ is a Hopf algebra with antipode $S(\sigma_i) = \sigma_i^{-1}$. The Hecke quadratic relation $\sigma_i^2 = (q - q^{-1}) \sigma_i + 1$ implies $\sigma_i^{-1} = \sigma_i - (q - q^{-1})$. The antipode acts linearly on the generators with a $q \leftrightarrow q^{-1}$ component.
+The Iwahori-Hecke algebra $H_n(q)$ forms a Hopf algebra with antipode $S(\sigma_i) = \sigma_i^{-1}$. The Hecke quadratic relation $\sigma_i^2 = (q - q^{-1}) \sigma_i + 1$ implies $\sigma_i^{-1} = \sigma_i - (q - q^{-1})$. The antipode acts linearly on the generators with a $q \leftrightarrow q^{-1}$ component.
 
-The Markov trace $\operatorname{tr}_M$ is the Frobenius integral on $H_n(q)$ ([`prop:categorical-mass-markov`](#prop:categorical-mass-markov)). For Frobenius algebras with non-trivial Nakayama automorphism, the trace satisfies $\operatorname{tr}(S^2(x)) = \operatorname{tr}(x)$. For the Hecke algebra, $S^2$ acts as $q \leftrightarrow q^{-1}$ on the structural variable $q$ while preserving the algebra structure.
+The Markov trace $\operatorname{tr}_M$ provides the Frobenius integral on $H_n(q)$ ([`prop:categorical-mass-markov`](#prop:categorical-mass-markov)). For Frobenius algebras with non-trivial Nakayama automorphism, the trace satisfies $\operatorname{tr}(S^2(x)) = \operatorname{tr}(x)$. For the Hecke algebra, $S^2$ acts as $q \leftrightarrow q^{-1}$ on the structural variable $q$ while preserving the algebra structure.
 
-The minus sign in $\operatorname{tr}_M(\mathcal{B}_p)(1/q) = -\operatorname{tr}_M(\mathcal{B}_p)(q)$ reflects the **odd parity** of the proton word $\mathcal{B}_p$ under the antipode-induced involution. Here $S(\mathcal{B}_p)$ is the reversed word with each $\sigma$ replaced by $\sigma^{-1}$. The $11$-crossing (odd) length contributes a parity sign. Specifically, the proton's word length $\ell(\mathcal{B}_p) = 11$ has odd parity.
+The minus sign in $\operatorname{tr}_M(\mathcal{B}_p)(1/q) = -\operatorname{tr}_M(\mathcal{B}_p)(q)$ reflects the odd parity of the proton word $\mathcal{B}_p$ under the antipode-induced involution. Here $S(\mathcal{B}_p)$ constructs the reversed word with each $\sigma$ replaced by $\sigma^{-1}$. The $11$-crossing (odd) length contributes a parity sign. Specifically, the proton's word length $\ell(\mathcal{B}_p) = 11$ has odd parity.
 
 ## Generalization conjecture
 

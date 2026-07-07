@@ -1,17 +1,17 @@
 ## Terminology: "condensation"
 
-The vanishing $E_\infty^{p, >0}(n) = 0$ means that *every* higher
-:refterm[descent]{#descent} residue collapses onto the diagonal: there are no
+The vanishing $E_\infty^{p, >0}(n) = 0$ dictates that every higher
+:refterm[descent]{#descent} residue collapses onto the diagonal. There are no
 off-diagonal jet-tower contributions at saturated $n$. The shell
 condenses into a single graded piece. For $n \notin \mathfrak{M}$
-the off-diagonal pieces survive, providing the algebraic content of
+the off-diagonal pieces survive. They provide the algebraic content of
 non-saturation (residual capacity to absorb crossing energy).
 
-The phenomenology this picks up is the standard one — at
+The phenomenology this picks up is standard. At
 $n \in \mathfrak{M}$ the binding-energy curve flattens, the next
 nucleon adds nearly-zero binding, and the shell is mathematically
-"full". The refactor names this directly in the spectral sequence,
-not via shell-model fitting.
+"full". The refactor identifies this directly in the spectral sequence,
+rather than via shell-model fitting.
 
 ## Conditional content via the categorical-neutrality conjecture
 
@@ -24,12 +24,12 @@ this with Yekutieli rigidity \cite{yekutieli2010}, the :refterm[descent]{#descen
 involution $\hat\tau$ inherits the corresponding self-conjugacy on
 $A_n$, and the BB stratification becomes self-dual: the strata above
 the $E_2$ collapse line cancel pairwise. The conjectured
-$E_\infty^{p, >0}(n) = 0$ is the algebraic-geometry crystallisation
+$E_\infty^{p, >0}(n) = 0$ forms the algebraic-geometry crystallisation
 of this cancellation.
 
-This conditional structure is the reason both conjectures are
-authored together: the categorical conjecture is the *Hecke-side*
-content; the homological conjecture is its *brane-tower-side* image
+This conditional structure justifies authoring both conjectures
+together. The categorical conjecture forms the Hecke-side
+content; the homological conjecture forms its brane-tower-side image
 under Yekutieli rigidity. A proof of either implies the other under
 the substrate axioms.
 
@@ -40,7 +40,7 @@ Numerical verification at $k = 3, \dots, 10$
 empirically confirms $E_\infty^{p, >0}(n) = 0$ at $n = 2, 8, 20$ via
 direct computation of :refterm[descent]{#descent} residues from Hoefsmit matrices. The
 combinatorial blow-up at $k \geq 12$ blocks the matrix-evaluation
-approach; the homological framework analytically bypasses this
+approach. The homological framework analytically bypasses this
 barrier by replacing per-partition matrix computation with
 spectral-sequence arithmetic
 ([rem:k12-barrier-bypass](../observations/k12-barrier-bypass.md)).
@@ -48,20 +48,20 @@ spectral-sequence arithmetic
 ## Operator-level support (clarification)
 
 The "Wedderburn support of $\Phi_n$ onto self-conjugate
-partitions" in §"Conditional content" above is **operator-level**:
+partitions" in §"Conditional content" above describes operator-level support.
 $\Phi_n$ has zero matrix entries on non-self-conjugate isotypical
 components, but the operator on the self-conjugate components is
-generically non-trivial. It is **not** the Plancherel-weighted
+generically non-trivial. It is not the Plancherel-weighted
 character sum $\sum_{\lambda = \lambda'} w_\lambda \chi^\lambda$,
 which vanishes identically at certain atomic-braid cycle types
 (see [reframing memo](../../../docs/audits/-self-conj-support-reframing.md)).
 The $E_\infty^{p, >0}(n) = 0$ collapse condition stated above is
 precisely operator-level (page collapse on the associated graded
-algebra), and is consistent with this reading.
+algebra). It remains consistent with this reading.
 
 ## Discussion
 
-**Conjectural** under AGENTS.md §3b. The supporting evidence is:
+This remains conjectural under AGENTS.md §3b. The supporting evidence comprises:
 
 1. Numerical verification at $n \in \{2, 8, 20\}$ via the
  matrix-evaluation programme.
@@ -70,12 +70,12 @@ algebra), and is consistent with this reading.
  under Yekutieli rigidity (the Hecke-side conjecture is stated
  independently).
 3. Phenomenological agreement: the seven values
- $\{2, 8, 20, 28, 50, 82, 126\}$ are the only nucleon counts at
+ $\{2, 8, 20, 28, 50, 82, 126\}$ form the only nucleon counts at
  which the experimental binding curve exhibits a discontinuous
  first-derivative drop (the empirical signature of shell closure).
 
-The downstream cone is the higher-magic-number predictions
-$n \in \{50, 82, 126\}$ where matrix evaluation is unavailable.
+The downstream cone affects the higher-magic-number predictions
+$n \in \{50, 82, 126\}$ where matrix evaluation remains unavailable.
 Per §3b, any provable result quoting these higher-magic-number
 predictions transitively depends on this conjecture and must be
 typed `conjecture` until either the conjecture is proved or the

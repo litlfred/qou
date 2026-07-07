@@ -1,4 +1,4 @@
-The unified knot mass formula ([unified knot mass](#thm:knot-mass-formula-unified)) has six structural terms. These emerge as pages of a **spectral sequence** associated with the Gröbner–Shirshov filtration $J^\bullet(q)$ on $H_n(R, q)$. We make this spectral-sequence structure precise and state the $E_\infty$ convergence target.
+The unified knot mass formula ([unified knot mass](#thm:knot-mass-formula-unified)) comprises six structural terms. These emerge as pages of a spectral sequence associated with the Gröbner–Shirshov filtration $J^\bullet(q)$ on $H_n(R, q)$. We make this spectral-sequence structure precise and state the $E_\infty$ convergence target.
 
 **Definition (filtered differential algebra).**
 *The Hecke algebra $H_n(R, q)$ with the confinement filtration $J^\bullet(q)$ ([confinement level](#def:confinement-level)) carries a natural differential $d$ induced by three Gröbner–Shirshov rewriting rules ([Hecke normal form](#def:hecke-normal-form)):*
@@ -7,7 +7,7 @@ The unified knot mass formula ([unified knot mass](#thm:knot-mass-formula-unifie
 2. *Far commutativity: $d_{\mathrm{F}}(\sigma_i \sigma_j) = \sigma_j \sigma_i$ for $|i - j| \geq 2$.*
 3. *Yang–Baxter: $d_{\mathrm{YB}}(\sigma_i \sigma_{i+1} \sigma_i) = \sigma_{i+1} \sigma_i \sigma_{i+1}$.*
 
-*Each rule lowers filtration degree. The direct sum $d = d_H + d_F + d_{YB}$ satisfies $d \circ d = 0$ on the filtered complex. This makes $(H_n(R, q), J^\bullet, d)$ a **filtered differential algebra**.*
+*Each rule lowers filtration degree. The direct sum $d = d_H + d_F + d_{YB}$ satisfies $d \circ d = 0$ on the filtered complex. This makes $(H_n(R, q), J^\bullet, d)$ a filtered differential algebra.*
 
 **Proposition (GB spectral sequence).**
 *The filtered differential algebra $(H_n(R, q), J^\bullet, d)$ has an associated spectral sequence $(E_r^{\ell, *}, d_r)$ with:*
@@ -32,7 +32,7 @@ $$
   \mathrm{gr}^\ell\bigl(H_n(R, q)\bigr).
 $$
 
-*The Markov trace $\mathrm{tr}_M: H_n(R, q) \to \mathbb{C}$ is a $d$-closed linear functional. It descends to $E_\infty$.*
+*The Markov trace $\mathrm{tr}_M: H_n(R, q) \to \mathbb{C}$ forms a $d$-closed linear functional. It descends to $E_\infty$.*
 
 **Identification of the six mass terms with spectral-sequence pages.**
 
@@ -42,7 +42,7 @@ See [Table](#tbl:gb-spectral-sequence-table-data).
 
 **Derivation of $d \circ d = 0$ (via Hochschild complex).**
 
-*The rewriting rules $d_H, d_F, d_{YB}$ define a reduction procedure. To obtain $d \circ d = 0$, we pass to the **Hochschild cochain complex** over the natural ground ring $R$:*
+*The rewriting rules $d_H, d_F, d_{YB}$ define a reduction procedure. To obtain $d \circ d = 0$, we pass to the Hochschild cochain complex over the natural ground ring $R$:*
 
 $$
   C^k(H_n(R, q), H_n(R, q))
@@ -50,7 +50,7 @@ $$
   \mathrm{Hom}_R\bigl(H_n(R, q)^{\otimes k},\ H_n(R, q)\bigr),
 $$
 
-*where $R$ is the categorical base ring. This is the target of the fibre functor $\tau \colon \mathbf{C} \to R\text{-}\mathrm{Mod}$ ([Tannaka–Krein reconstruction](#prop:tannaka-krein-reconstruction)). $R$ is the commutative ring in which Markov-trace values live before archimedean calibration $\tau \colon R \to \mathbb{R}$ ([categorical mass, Markov](#prop:categorical-mass-markov)).*
+*where $R$ forms the categorical base ring. This forms the target of the fibre functor $\tau \colon \mathbf{C} \to R\text{-}\mathrm{Mod}$ ([Tannaka–Krein reconstruction](#prop:tannaka-krein-reconstruction)). $R$ is the commutative ring in which Markov-trace values live before archimedean calibration $\tau \colon R \to \mathbb{R}$ ([categorical mass, Markov](#prop:categorical-mass-markov)).*
 
 *Under different realisations ([knot operator energy](#def:knot-operator-energy)):*
 
@@ -58,7 +58,7 @@ $$
 - *$p$-adic: $R$ contains $\mathbb{Q}_p[q, q^{-1}]$.*
 - *Finite-field: $R$ contains $\mathbb{F}_p[q, q^{-1}]$.*
 
-*The spectral-sequence construction works over any such $R$. The physics application uses the archimedean realisation. The derivation is ring-agnostic. Complex numbers appear only as a derived embedding $R \hookrightarrow \mathbb{C}$ when we extract residues at roots of unity ([GB residue spectral sum](#prop:gb-residue-spectral-sum)).*
+*The spectral-sequence construction operates over any such $R$. The physics application uses the archimedean realisation. The derivation is ring-agnostic. Complex numbers appear only as a derived embedding $R \hookrightarrow \mathbb{C}$ when we extract residues at roots of unity ([GB residue spectral sum](#prop:gb-residue-spectral-sum)).*
 
 *We equip the complex with the standard Hochschild differential:*
 
@@ -70,7 +70,7 @@ $$
   + (-1)^{k+1} f(a_0 \otimes \cdots \otimes a_{k-1}) \cdot a_k.
 $$
 
-*The identity $d \circ d = 0$ is a classical theorem for any associative $R$-algebra. It holds verbatim for $H_n(R, q)$. The Markov trace $\mathrm{tr}_M$ is a **cyclic 0-cochain** (satisfying $\mathrm{tr}_M(ab) = \mathrm{tr}_M(ba)$). It is therefore $d$-closed at degree $0$.*
+*The identity $d \circ d = 0$ is a classical theorem for any associative $R$-algebra. It holds verbatim for $H_n(R, q)$. The Markov trace $\mathrm{tr}_M$ forms a cyclic $0$-cochain (satisfying $\mathrm{tr}_M(ab) = \mathrm{tr}_M(ba)$). It is therefore $d$-closed at degree $0$.*
 
 *The confinement filtration $J^\bullet(q)$ induces a decreasing filtration on $C^\bullet$:*
 
@@ -80,14 +80,14 @@ $$
   \{f \in C^k \mid f\bigl(J^{p_1}(q)^{\otimes k}\bigr) \subset J^{p + p_1}(q)\},
 $$
 
-*This filtration is compatible with the Hochschild differential ($d(F^p) \subset F^p$), forming the **filtered Hochschild complex**.*
+*This filtration maintains compatibility with the Hochschild differential ($d(F^p) \subset F^p$), forming the filtered Hochschild complex.*
 
 *Therefore:*
 
 1. **$d \circ d = 0$ holds** *on the filtered complex.*
-2. **Filtration preservation** *follows because $J^\bullet$ is an ideal-filtration compatible with multiplication.*
+2. **Filtration preservation** *follows because $J^\bullet$ provides an ideal-filtration compatible with multiplication.*
 
-*Hence $(C^\bullet(H_n(R, q)), d, F^\bullet)$ is a filtered cochain complex with spectral sequence pages $(E_r^{p, q}, d_r)$.*
+*Hence $(C^\bullet(H_n(R, q)), d, F^\bullet)$ forms a filtered cochain complex with spectral sequence pages $(E_r^{p, q}, d_r)$.*
 
 **Convergence $E_\infty \Rightarrow \mathrm{gr}\,H_n(R, q)$.**
 
@@ -97,7 +97,7 @@ $$
 2. *Exhaustive: $\bigcap_\ell J^\ell = 0$ for any generic $q = q_0$. Partition energies $E_\ell(q_0)$ are distinct and positive ([confinement level, uniqueness](#prop:confinement-level-unique)).*
 3. *Finite-dimensional at each degree $J^\ell(q)/J^{\ell+1}(q)$.*
 
-*These are the classical convergence conditions for a filtered spectral sequence. Therefore:*
+*These provide the classical convergence conditions for a filtered spectral sequence. Therefore:*
 
 $$
   E_\infty^{p, q}

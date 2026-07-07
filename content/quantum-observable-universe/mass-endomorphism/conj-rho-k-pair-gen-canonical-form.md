@@ -17,7 +17,7 @@ m_e \cdot |\mathrm{tr}_M(\mathcal{B}_K)| \cdot \left(\rho_K^{\text{LO}} + \rho_K
 \;+\; O(\hbar_q^{6})
 $$
 
-*matches CODATA to sub-percent accuracy across $Z = 1..20$. Here, $\hat V_i^{\text{full}}$ denotes the Wedderburn-traced per-generator volumes, and $z = 1/(q^{1/2} + q^{-1/2})$ is the Markov parameter.*
+*matches CODATA to sub-percent accuracy across $Z = 1..20$. Here, $\hat V_i^{\text{full}}$ denotes the Wedderburn-traced per-generator volumes, and $z = 1/(q^{1/2} + q^{-1/2})$ forms the Markov parameter.*
 
 ## Empirical evidence
 
@@ -27,7 +27,7 @@ $$
 | Wedderburn-decomposed | $\alpha z^2 \sum \|V_i V_j\|_{\text{Wedderburn}}$ (with $w_{sym}, w_{std}, w_{alt}$) | Degrades (wrong functional form) |
 | Six-term theorem $T_3$ | $-z^2 \sum \text{Li}_2^q(-\|V_i V_j\|)$ | Expected per [`thm:knot-mass-formula-unified`](knot-mass-formula-unified.md); wiring pending |
 
-The Kashaev-limit form (six-term $T_3$) is the anticipated canonical form. Its derivation as a leading-order expansion in $\hbar_q$ remains incomplete. This must parallel the single-generator Kashaev derivation $\alpha \sum \ln|V_i|$.
+The Kashaev-limit form (six-term $T_3$) provides the anticipated canonical form. Its derivation as a leading-order expansion in $\hbar_q$ remains incomplete. This must parallel the single-generator Kashaev derivation $\alpha \sum \ln|V_i|$.
 
 ## Conjecture status
 
@@ -54,9 +54,9 @@ w_{\text{alt}}\, \lambda_i^{\text{alt}} \lambda_j^{\text{alt}},
 $$
 
 where:
-- $w_{\text{sym}}, w_{\text{std}}, w_{\text{alt}}$ are Wedderburn–Markov weights from [`thm:wedderburn-mass-formula`](wedderburn-mass-formula.md).
-- $\lambda_i^\bullet$ are per-generator eigenvalues within each Wedderburn channel.
-- $M_i$ is the per-generator $2 \times 2$ standard-representation transfer matrix.
+- $w_{\text{sym}}, w_{\text{std}}, w_{\text{alt}}$ denote Wedderburn–Markov weights from [`thm:wedderburn-mass-formula`](wedderburn-mass-formula.md).
+- $\lambda_i^\bullet$ denote per-generator eigenvalues within each Wedderburn channel.
+- $M_i$ denotes the per-generator $2 \times 2$ standard-representation transfer matrix.
 
 The standard-channel pair coupling relies on the Markov-traced $2 \times 2$ matrix product $M_i M_j$. This captures braid non-commutativity, superseding the naive scalar product $V_i^{\text{std}} \cdot V_j^{\text{std}}$.
 
@@ -99,4 +99,4 @@ Deriving the canonical $f_2$ yields four consequences:
 
 ## Archimedean specialization
 
-We state this conjecture on the archimedean side of the substrate wall. It asserts a real-mass sub-percent recovery bound: $\forall M \ge 0,\ \exists M_{\mathrm{rec}},\ |M_{\mathrm{rec}} - M| \le M/100$ over $\mathbb{R}$. The generic $q$-deformation functional $f_2(q, \hat V_i, \hat V_j)$ serves as input. The conjectural statement intrinsically addresses real masses; it is not a separable archimedean specialization of an otherwise $\mathbb{R}$-free construction.
+We state this conjecture on the archimedean side of the substrate wall. It asserts a real-mass sub-percent recovery bound: $\forall M \ge 0,\ \exists M_{\mathrm{rec}},\ |M_{\mathrm{rec}} - M| \le M/100$ over $\mathbb{R}$. The generic $q$-deformation functional $f_2(q, \hat V_i, \hat V_j)$ serves as input. The conjectural statement intrinsically addresses real masses; it does not constitute a separable archimedean specialization of an otherwise $\mathbb{R}$-free construction.
