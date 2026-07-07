@@ -18,12 +18,12 @@
     * even_add_odd — reconstruction E = retained + emitted (char ≠ 2)
     * oddPart_eq_zero_iff_barEven — the emitted channel vanishes iff E is
       purely retained (pure binding, no decay channel)
-    * retained_emitted_of_frakD — if `E_unit = ℏ/𝔇` with the width datum 𝔇
+    * frakD_is_pure_emitted — if `E_unit = ℏ/𝔇` with the width datum 𝔇
       bar-odd, then E_unit is its own emitted part (purely decay-channel)
 
   Generic field with an involutive ring endomorphism; no ℝ, no √ (§7c).
 
-  -- Ref: [neumann-zagier1985] https://doi.org/10.1007/BF01388558
+  -- Ref: [neumann-zagier1985] https://doi.org/10.1016/0040-9383(85)90004-7
   -- Ref: [jones1987] https://doi.org/10.2307/1971403
 -/
 
