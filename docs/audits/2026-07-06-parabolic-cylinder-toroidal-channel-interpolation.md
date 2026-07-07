@@ -583,7 +583,9 @@ near-matches with a ~1 MeV unit; the frame does not select one, and
 $E_{\text{unit}}$ stays open.
 
 **D2 — zero-point unit family pruned (4/4 negative,
-[`zeropoint_unit_candidate_gate_probe.py`](../../computations/substrate/zeropoint-unit-candidate-gate-probe.witness.json)).**
+[`zeropoint_unit_candidate_gate_probe.py`](../../computations/substrate/zeropoint_unit_candidate_gate_probe.py),
+witness
+[`zeropoint-unit-candidate-gate-probe.witness.json`](../../computations/substrate/zeropoint-unit-candidate-gate-probe.witness.json)).**
 Predicted-first: if the unit were the Fock zero-point of the forced
 $-\tfrac12$ (half a winding quantum × canonical anchor), the four licensed
 candidates (hyperbolic/compact × $m_e$/$E_{\text{cross}}$) miss by

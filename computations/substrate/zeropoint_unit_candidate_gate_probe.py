@@ -31,16 +31,16 @@ import mpmath as mp
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, _HERE)
-sys.path.insert(0, os.path.normpath(
-    os.path.join(_HERE, "..", "..", "tools", "pyhecke", "python")))
 
 mp.mp.dps = 50
 
-from q_parameter import Q as Q0, E_CROSS  # noqa: E402
+# 50-dps canonical exports (Copilot review: the f64 Q / E_CROSS exports
+# truncate to ~16 digits; use the high-precision names).
+from q_parameter import Q_50_DIGIT_STR, E_CROSS_MP  # noqa: E402
 
-q = mp.mpf(str(Q0))
+q = mp.mpf(Q_50_DIGIT_STR)
 M_E = mp.mpf("0.51099895069")      # CODATA m_e, MeV
-E0 = mp.mpf(str(E_CROSS))          # canonical crossing energy anchor
+E0 = mp.mpf(E_CROSS_MP)            # canonical crossing energy anchor, 50 dps
 E_UNIT_TARGET = mp.mpf("0.995940")  # SS2f ledger, MeV
 
 x_hyp = (q - 1 / q) ** 2 / 2       # cosh(2 ln q) - 1
