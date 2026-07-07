@@ -921,6 +921,35 @@ theorem cmajSig_injOn : Set.InjOn (cmajSig μ) μ.cells := by
     · exact absurd heq.symm (Nat.ne_of_gt (cmajSig_lt_of_before hcf (Or.inr ⟨h.symm, h1⟩)))
   · exact absurd heq.symm (Nat.ne_of_gt (cmajSig_lt_of_before hcf (Or.inl h)))
 
+/-- Geometric identity over ℕ: `(∑_{x<K} (B-1)·B^x) + 1 = B^K` for `1 ≤ B`. -/
+theorem geom_sum_pred (B K : ℕ) (hB : 1 ≤ B) :
+    (∑ x ∈ Finset.range K, (B - 1) * B ^ x) + 1 = B ^ K := by
+  induction K with
+  | zero => simp
+  | succ n ih =>
+    rw [Finset.sum_range_succ, pow_succ]
+    have hb : B - 1 + 1 = B := Nat.sub_add_cancel hB
+    have key : (B - 1) * B ^ n + B ^ n = B ^ n * B := by
+      have h1 : (B - 1) * B ^ n + B ^ n = (B - 1 + 1) * B ^ n := by ring
+      rw [h1, hb]; ring
+    omega
+
+/-- **Base-`B` digit bound (sorry-free):** a sum of digits `< B` at DISTINCT positions
+`< K` is `< B^K`. The arithmetic core of the "most-significant differing cell"
+comparison. -/
+theorem geom_digit_bound (B K : ℕ) (hB : 1 ≤ B) (s : Finset ℕ)
+    (hs : ∀ x ∈ s, x < K) (d : ℕ → ℕ) (hd : ∀ x, d x < B) :
+    ∑ x ∈ s, d x * B ^ x < B ^ K := by
+  have hsub : s ⊆ Finset.range K := fun x hx => Finset.mem_range.mpr (hs x hx)
+  calc ∑ x ∈ s, d x * B ^ x
+      ≤ ∑ x ∈ s, (B - 1) * B ^ x := by
+        apply Finset.sum_le_sum
+        intro x _
+        exact Nat.mul_le_mul_right _ (by have := hd x; omega)
+    _ ≤ ∑ x ∈ Finset.range K, (B - 1) * B ^ x :=
+        Finset.sum_le_sum_of_subset hsub
+    _ < B ^ K := by have := geom_sum_pred B K hB; omega
+
 /-- **Keystone (sorry-free): a within-column descent swap strictly lowers `colWordNum`.**
 If labels `a < b` sit in the same column with `b` in an EARLIER row than `a` (a column
 descent — the larger label higher up), swapping them strictly decreases the column-word
