@@ -33,8 +33,9 @@ a conditional class (`ZToCkMappingClass`).
 namespace QOU.QBeta
 
 /-- The abstract f-map from the Markov $a_n$ coefficients to the Q_β ladder 
-    $c_k$ coefficients. -/
-axiom qBetaFMap : (ℕ → ℝ) → (ℕ → ℝ)
+    $c_k$ coefficients. It is parametrised by $q$ since the categorical 
+    derivation (e.g. Hexagon equations) introduces $q$-dependent weights. -/
+axiom qBetaFMap : ℝ → (ℕ → ℝ) → (ℕ → ℝ)
 
 /-- 
   **Z to C_k Mapping Class** (§3b-cond open f-map)
@@ -50,7 +51,7 @@ class ZToCkMappingClass (ladder : QOU.BraidKnot.QBetaPrecisionLadderCoefficients
       at every evaluated $q > 0$. -/
   f_map_bridges_to_ck : 
     ∀ (q : ℝ) (_hq : 0 < q), 
-      qBetaFMap (fun n => (QOU.BraidKnot.markovParamCoeff n : ℝ)) = 
+      qBetaFMap q (fun n => (QOU.BraidKnot.markovParamCoeff n : ℝ)) = 
       (fun k => ladder.c_k_at_q k q)
 
 /-- 
@@ -61,7 +62,7 @@ theorem fmap_c2_is_minus_one
     {ladder : QOU.BraidKnot.QBetaPrecisionLadderCoefficients}
     [h : ZToCkMappingClass ladder] 
     (q : ℝ) (hq : 0 < q) : 
-    qBetaFMap (fun n => (QOU.BraidKnot.markovParamCoeff n : ℝ)) 2 = -1 := by
+    qBetaFMap q (fun n => (QOU.BraidKnot.markovParamCoeff n : ℝ)) 2 = -1 := by
   rw [h.f_map_bridges_to_ck q hq]
   exact ladder.c_2_eq q
 
