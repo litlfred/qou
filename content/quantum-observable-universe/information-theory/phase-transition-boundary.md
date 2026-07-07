@@ -1,41 +1,23 @@
 Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with $N$ particle knots in a region $U$. A **phase transition** occurs at a critical temperature $T_q^{(c)}$. At this temperature, the dominant saddle point of the partition function $Z_q$ jumps discontinuously between topologically distinct sectors of $\mathrm{Conf}(U)$.
 
-The **$S^3$ boundary action** determines the critical temperatures. It restricts the categorical action $\mathfrak{S}_q$ to the Hopf base $S^2$ of the fibration $S^1 \hookrightarrow S^3_q \to S^2$:
-
+The **$S^3$ boundary action** dictates the critical temperatures. It restricts the categorical action $\mathfrak{S}_q$ to the Hopf base $S^2$ of the fibration $S^1 \hookrightarrow S^3_q \to S^2$:
 $$
-  \mathfrak{S}_q^{(\partial)}
-  \;:=\;
-  \mathrm{tr}_{\mathrm{Ad}}
-  \!\oint_{S^2}
-  \omega_{\mathcal{F}} \,\wedge\, *\eta_q,
+  \mathfrak{S}_q^{(\partial)} = \mathrm{tr}_{\mathrm{Ad}} \!\oint_{S^2} \omega_{\mathcal{F}} \,\wedge\, *\eta_q,
 $$
-
-This integral is the non-abelian Stokes surface integral of the adjoint connection ([Yekutieli triple](#def:yekutieli-triple)).
+This precisely constitutes the non-abelian Stokes surface integral of the adjoint connection.
 
 The gas--liquid critical temperature is
-
 $$
-  T_q^{(g \to l)}
-  \;=\;
-  \frac{\mathfrak{S}_q^{(\partial)}}{[2]_q}.
+  T_q^{(g \to l)} = \frac{\mathfrak{S}_q^{(\partial)}}{[2]_q}.
 $$
-
 The liquid--solid critical temperature is
-
 $$
-  T_q^{(l \to s)}
-  \;=\;
-  \frac{\mathfrak{S}_q^{(\partial)}}{[2]_q \cdot [n_K]_q},
+  T_q^{(l \to s)} = \frac{\mathfrak{S}_q^{(\partial)}}{[2]_q \cdot [n_K]_q},
 $$
+where $n_K$ denotes the crossing number of the particle knot.
 
-where $n_K$ is the crossing number of the particle knot.
-
-Sublimation is a direct solid--gas transition. It occurs when topological obstruction blocks the intermediate liquid phase. In this case, the Hecke representation at the mixed-channel temperature admits a non-split extension:
-
+Sublimation represents a direct solid--gas transition. It occurs when topological obstruction rigorously blocks the intermediate liquid phase. In this case, the Hecke representation at the mixed-channel temperature forms a non-split extension:
 $$
-  0 \;\to\; V_{\mathrm{sym}} \;\to\;
-  V_{\mathrm{mixed}} \;\to\;
-  V_{\mathrm{asym}} \;\to\; 0
+  0 \to V_{\mathrm{sym}} \to V_{\mathrm{mixed}} \to V_{\mathrm{asym}} \to 0.
 $$
-
-This extension is classified by $\mathrm{Ext}^1_{H_n(q)}(V_{\mathrm{asym}}, V_{\mathrm{sym}}) \cong \mathbb{Z}$. The Hopf invariant of $\pi_3(S^2) = \mathbb{Z}$ generates it.
+This extension is classified by $\mathrm{Ext}^1_{H_n(q)}(V_{\mathrm{asym}}, V_{\mathrm{sym}}) \cong \mathbb{Z}$. The Hopf invariant of $\pi_3(S^2) = \mathbb{Z}$ inherently generates it.

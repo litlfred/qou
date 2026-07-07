@@ -1,4 +1,4 @@
-The aeon structure ([aeon](#def:aeon)) parallels Penrose's **Conformal Cyclic Cosmology** (CCC) \cite{penrose2010}. The underlying mechanism, however, differs.
+The aeon structure  parallels Penrose's **Conformal Cyclic Cosmology** (CCC) \cite{penrose2010}. The underlying mechanism, however, differs.
 
 **Penrose's CCC.**
 In CCC, the infinite future of one aeon is conformally identified with the Big Bang of the next. At $t \to \infty$, all massive particles have decayed to massless radiation. Massless particles, such as photons and gravitons, are conformally invariant. The conformal structure at $t \to \infty$ is therefore compatible with the conformal structure at $t = 0$ of the successor aeon. The transition is a conformal rescaling $g \mapsto \Omega^2 g$ with $\Omega \to 0$.
