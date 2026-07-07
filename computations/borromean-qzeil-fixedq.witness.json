@@ -1,0 +1,16 @@
+{
+  "engine": "python 3.11.15 / sympy 1.14.0 (fixed-q mod-p)",
+  "scriptFile": "computations/borromean_qzeil_fixedq.py",
+  "commitSha": "521d58c6ac5be647a8d2cd67574ddcbd82fd8373",
+  "scriptHash": "7c55f397a081",
+  "computedAt": "2026-07-07T12:21:18.988681+00:00",
+  "description": "Fixed-q mod-p qZeilberger telescoping solve for the Borromean diagonal colored Jones: minimal operator+certificate shape + cross-q0 verification",
+  "computation": "borromean-qzeil-fixedq",
+  "audit_only": true,
+  "foundation": "borromean_qzeil_ratios.py (shift ratios verified 6/6)",
+  "verdict": {
+    "found": false,
+    "searched": "r<=7, DX<=10, EY<=10"
+  },
+  "wall_seconds": 76.9
+}
