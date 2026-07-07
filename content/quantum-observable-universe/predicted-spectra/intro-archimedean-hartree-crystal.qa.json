@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/predicted-spectra/intro-archimedean-hartree-crystal.md"
   },
   "source_hashes": {
-    "ts": "41a29b27c7e6",
-    "md": "f6eb10f34cb3"
+    "md": "a57cfc3a7727",
+    "ts": "41a29b27c7e6"
   },
   "criteria": {
     "q-usage-regime-detected": [
@@ -130,14 +130,20 @@
       {
         "result": "pass",
         "notes": "Rewrote prose blocks to adhere to Milnor standards. Improved economy, preserved all math.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.361423Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.361423Z"
+        },
+        "field_hash": {
+          "md": "a57cfc3a7727",
+          "ts": "41a29b27c7e6"
         }
       }
     ]
   },
-  "updated_at": "2026-06-01T16:06:38.106Z"
+  "updated_at": "2026-07-07T14:26:56.361423Z"
 }

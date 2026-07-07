@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-01T13:36:37.162853+00:00",
-  "commitSha": "417e511ad96a7416b3b52d2f93704cd0eee0d8f7",
+  "computedAt": "2026-07-07T13:48:41.476884+00:00",
+  "commitSha": "85da4f43133d9d70ca3582f4fa4f31771b5ec3f1",
   "assertions": [
     {
       "name": "N3_beats_100x_experimental_target",
-      "computed": 38.61,
+      "computed": 13.36,
       "expected": 6.02,
       "passed": false,
       "tolerance": 0.5,
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 18,
+  "durationMs": 9,
   "computation": "qbeta-ck-truncation-order-analysis",
   "scriptFile": "qbeta_ck_truncation_order_analysis.py",
-  "scriptHash": "32b0a2c48b06",
-  "scriptCommitSha": "9e45f6d48aa26ae872730fdcb25ff1b624100511",
+  "scriptHash": "e0e96fd4282a",
+  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,45 +26,46 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Canonical reference framing the Q_β precision ladder as a TRUNCATION ORDER of a convergent series Q_β = Q_base·Π(1+c_k·u^k), u = b·ℏ_q² ≈ 0.00852. Establishes the N(ε) formula (N ≥ log10(1/ε)/2.07 − 1), per-rung term sizes, the q₀-stability floor diagnosis (c_k≥3 are q₀-dependent near-matches, not Taylor-exact), and the Habiro-element fix (parallel α_EM #1511). Written to stop the recurring c_k wire/un-wire flip-flop by separating 'N = truncation order chosen by precision' from 'c_k canonicity tier (proved/near-match/fitted)'.",
   "contentBlock": "prop:q-beta-categorical-precision-ladder",
   "data": {
     "ladder_step": {
       "u_formula": "b · ℏ_q²",
-      "u_value": "0.0085172345501561421893",
-      "one_over_u": "117.409001022",
-      "digits_per_rung_log10_inv_u": "2.0697014"
+      "u_value": "0.0085172363404849214399",
+      "one_over_u": "117.408976342",
+      "digits_per_rung_log10_inv_u": "2.0697013"
     },
     "N_of_epsilon_formula": "N ≥ log10(1/ε) / log10(1/u) − 1",
     "N_of_epsilon_table": [
       {
         "target": "100× experimental (7.8 ppb)",
         "epsilon": "7.8e-9",
-        "N_lower_bound": 2.9174276179581735,
+        "N_lower_bound": 2.91742779074545,
         "N_required": 3
       },
       {
         "target": "1 ppb",
         "epsilon": "1.0e-9",
-        "N_lower_bound": 3.348453371609761,
+        "N_lower_bound": 3.3484535634084334,
         "N_required": 4
       },
       {
         "target": "1 ppt",
         "epsilon": "1.0e-12",
-        "N_lower_bound": 4.797937828813015,
+        "N_lower_bound": 4.797938084544578,
         "N_required": 5
       },
       {
         "target": "1 ppQ (10⁻¹⁵)",
         "epsilon": "1.0e-15",
-        "N_lower_bound": 6.247422286016269,
+        "N_lower_bound": 6.247422605680722,
         "N_required": 7
       }
     ],
@@ -73,25 +74,25 @@
         "k": 2,
         "c_k": "-1",
         "term_ppb": null,
-        "cumulative_residual_ppb": 1274.351604029868
+        "cumulative_residual_ppb": 1249.0942611624273
       },
       {
         "k": 3,
         "c_k": "J_Hopf(q=1)=-2",
-        "term_ppb": 1235.736336246708,
-        "cumulative_residual_ppb": 38.61369302057756
+        "term_ppb": 1235.7371155048506,
+        "cumulative_residual_ppb": 13.355602105437498
       },
       {
         "k": 4,
         "c_k": "c_3·b⁴",
-        "term_ppb": 5.963080811245165,
-        "cumulative_residual_ppb": 32.65061197907582
+        "term_ppb": 5.963085834421668,
+        "cumulative_residual_ppb": 7.392516191375227
       },
       {
         "k": 5,
         "c_k": "c_3²·3+b",
-        "term_ppb": 0.5767532493924187,
-        "cumulative_residual_ppb": 33.22736524729959
+        "term_ppb": 0.5767538555777204,
+        "cumulative_residual_ppb": 7.9692700512166095
       }
     ],
     "non_monotonicity_note": "N=4 residual (+0.055 ppb) is better than N=5 (+0.63 ppb). A convergent series with EXACT c_k would be monotone; the reversal is the signature that c_k≥3 are q₀-dependent near-matches.",

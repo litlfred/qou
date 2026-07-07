@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/models-of-qous/enveloping-algebras.md"
   },
   "source_hashes": {
-    "md": "4cd1e1ff335a",
+    "md": "82fadfd98a9f",
     "ts": "1eb4fd14bf9c"
   },
   "criteria": {
@@ -784,18 +784,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "4cd1e1ff335a",
-          "ts": "4badb2ea65f7"
+          "md": "82fadfd98a9f",
+          "ts": "1eb4fd14bf9c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.421802Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:23.312Z",
+        "reviewed_at": "2026-07-07T14:26:55.421802Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -803,16 +803,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "4cd1e1ff335a",
-          "ts": "4badb2ea65f7"
+          "md": "82fadfd98a9f",
+          "ts": "1eb4fd14bf9c"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.421802Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.674Z",
+        "reviewed_at": "2026-07-07T14:26:55.421802Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No false claims identified in 'sec:enveloping-algebras': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -822,16 +824,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "4cd1e1ff335a",
-          "ts": "4badb2ea65f7"
+          "md": "82fadfd98a9f",
+          "ts": "1eb4fd14bf9c"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.421802Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.681Z",
+        "reviewed_at": "2026-07-07T14:26:55.421802Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The block 'sec:enveloping-algebras' presents substantial mathematical content: $\\mathcal{U}_q(\\mathfrak{su}(2))$ and its triangular decomposition....",
         "severity": "minor"
@@ -840,16 +844,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "4cd1e1ff335a",
-          "ts": "4badb2ea65f7"
+          "md": "82fadfd98a9f",
+          "ts": "1eb4fd14bf9c"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.421802Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.687Z",
+        "reviewed_at": "2026-07-07T14:26:55.421802Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No circular reasoning or self-assuming definitions detected in 'sec:enveloping-algebras'.",
         "severity": "minor",
@@ -859,16 +865,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "4cd1e1ff335a",
-          "ts": "4badb2ea65f7"
+          "md": "82fadfd98a9f",
+          "ts": "1eb4fd14bf9c"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.421802Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.693Z",
+        "reviewed_at": "2026-07-07T14:26:55.421802Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No overclaims: the scope of 'sec:enveloping-algebras' is appropriately qualified.",
         "severity": "minor"
@@ -877,16 +885,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "4cd1e1ff335a",
-          "ts": "4badb2ea65f7"
+          "md": "82fadfd98a9f",
+          "ts": "1eb4fd14bf9c"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.421802Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.699Z",
+        "reviewed_at": "2026-07-07T14:26:55.421802Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'sec:enveloping-algebras'.",
         "severity": "minor",
@@ -896,16 +906,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "4cd1e1ff335a",
-          "ts": "4badb2ea65f7"
+          "md": "82fadfd98a9f",
+          "ts": "1eb4fd14bf9c"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.421802Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.705Z",
+        "reviewed_at": "2026-07-07T14:26:55.421802Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The argument flow in 'sec:enveloping-algebras' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -915,16 +927,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "4cd1e1ff335a",
-          "ts": "4badb2ea65f7"
+          "md": "82fadfd98a9f",
+          "ts": "1eb4fd14bf9c"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.421802Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.712Z",
+        "reviewed_at": "2026-07-07T14:26:55.421802Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
@@ -933,16 +947,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "4cd1e1ff335a",
-          "ts": "4badb2ea65f7"
+          "md": "82fadfd98a9f",
+          "ts": "1eb4fd14bf9c"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.421802Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.718Z",
+        "reviewed_at": "2026-07-07T14:26:55.421802Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No citations are present in 'sec:enveloping-algebras', hence no citation misuse is possible.",
         "severity": "minor",
@@ -952,16 +968,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "4cd1e1ff335a",
-          "ts": "4badb2ea65f7"
+          "md": "82fadfd98a9f",
+          "ts": "1eb4fd14bf9c"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.421802Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.723Z",
+        "reviewed_at": "2026-07-07T14:26:55.421802Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Key terms and symbols in 'sec:enveloping-algebras' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -971,16 +989,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "4cd1e1ff335a",
-          "ts": "4badb2ea65f7"
+          "md": "82fadfd98a9f",
+          "ts": "1eb4fd14bf9c"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.421802Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.729Z",
+        "reviewed_at": "2026-07-07T14:26:55.421802Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The algebraic and logical relations in 'sec:enveloping-algebras' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -990,16 +1010,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "4cd1e1ff335a",
-          "ts": "4badb2ea65f7"
+          "md": "82fadfd98a9f",
+          "ts": "1eb4fd14bf9c"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.421802Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.735Z",
+        "reviewed_at": "2026-07-07T14:26:55.421802Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The physical concepts described in 'sec:enveloping-algebras' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1009,16 +1031,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "4cd1e1ff335a",
-          "ts": "4badb2ea65f7"
+          "md": "82fadfd98a9f",
+          "ts": "1eb4fd14bf9c"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.421802Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.741Z",
+        "reviewed_at": "2026-07-07T14:26:55.421802Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The derivation steps and formal definitions in 'sec:enveloping-algebras' are reproducible.",
         "severity": "minor",
@@ -1028,16 +1052,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "4cd1e1ff335a",
-          "ts": "4badb2ea65f7"
+          "md": "82fadfd98a9f",
+          "ts": "1eb4fd14bf9c"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.421802Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.747Z",
+        "reviewed_at": "2026-07-07T14:26:55.421802Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -1049,14 +1075,20 @@
       {
         "result": "pass",
         "notes": "Maintained brevity, replaced passive and forward-looking expressions, retained mathematical content accurately.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.421802Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.421802Z"
+        },
+        "field_hash": {
+          "md": "82fadfd98a9f",
+          "ts": "1eb4fd14bf9c"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T18:21:24.666Z"
+  "updated_at": "2026-07-07T14:26:55.421802Z"
 }

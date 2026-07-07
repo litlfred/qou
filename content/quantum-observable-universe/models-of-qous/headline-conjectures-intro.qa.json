@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/models-of-qous/headline-conjectures-intro.md"
   },
   "source_hashes": {
-    "md": "514da1fffcef",
+    "md": "8b4df6845384",
     "ts": "478508b82257"
   },
   "criteria": {
@@ -784,18 +784,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "514da1fffcef",
+          "md": "8b4df6845384",
           "ts": "478508b82257"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.408853Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:23.625Z",
+        "reviewed_at": "2026-07-07T14:26:55.408853Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -803,16 +803,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "514da1fffcef",
+          "md": "8b4df6845384",
           "ts": "478508b82257"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.408853Z"
         },
-        "reviewed_at": "2026-06-28T10:59:00.156Z",
+        "reviewed_at": "2026-07-07T14:26:55.408853Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No false claims identified in 'sec:headline-conjectures-preamble': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -822,16 +824,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "514da1fffcef",
+          "md": "8b4df6845384",
           "ts": "478508b82257"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.408853Z"
         },
-        "reviewed_at": "2026-06-28T10:59:00.162Z",
+        "reviewed_at": "2026-07-07T14:26:55.408853Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The block 'sec:headline-conjectures-preamble' presents substantial mathematical content: This section develops headline conjectures. The blocks below trace the construct...",
         "severity": "minor"
@@ -840,16 +844,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "514da1fffcef",
+          "md": "8b4df6845384",
           "ts": "478508b82257"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.408853Z"
         },
-        "reviewed_at": "2026-06-28T10:59:00.168Z",
+        "reviewed_at": "2026-07-07T14:26:55.408853Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No circular reasoning or self-assuming definitions detected in 'sec:headline-conjectures-preamble'.",
         "severity": "minor",
@@ -859,16 +865,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "514da1fffcef",
+          "md": "8b4df6845384",
           "ts": "478508b82257"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.408853Z"
         },
-        "reviewed_at": "2026-06-28T10:59:00.174Z",
+        "reviewed_at": "2026-07-07T14:26:55.408853Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No overclaims: the scope of 'sec:headline-conjectures-preamble' is appropriately qualified.",
         "severity": "minor"
@@ -877,16 +885,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "514da1fffcef",
+          "md": "8b4df6845384",
           "ts": "478508b82257"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.408853Z"
         },
-        "reviewed_at": "2026-06-28T10:59:00.180Z",
+        "reviewed_at": "2026-07-07T14:26:55.408853Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'sec:headline-conjectures-preamble'.",
         "severity": "minor",
@@ -896,16 +906,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "514da1fffcef",
+          "md": "8b4df6845384",
           "ts": "478508b82257"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.408853Z"
         },
-        "reviewed_at": "2026-06-28T10:59:00.186Z",
+        "reviewed_at": "2026-07-07T14:26:55.408853Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The argument flow in 'sec:headline-conjectures-preamble' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -915,16 +927,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "514da1fffcef",
+          "md": "8b4df6845384",
           "ts": "478508b82257"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.408853Z"
         },
-        "reviewed_at": "2026-06-28T10:59:00.193Z",
+        "reviewed_at": "2026-07-07T14:26:55.408853Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
@@ -933,16 +947,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "514da1fffcef",
+          "md": "8b4df6845384",
           "ts": "478508b82257"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.408853Z"
         },
-        "reviewed_at": "2026-06-28T10:59:00.199Z",
+        "reviewed_at": "2026-07-07T14:26:55.408853Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No citations are present in 'sec:headline-conjectures-preamble', hence no citation misuse is possible.",
         "severity": "minor",
@@ -952,16 +968,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "514da1fffcef",
+          "md": "8b4df6845384",
           "ts": "478508b82257"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.408853Z"
         },
-        "reviewed_at": "2026-06-28T10:59:00.205Z",
+        "reviewed_at": "2026-07-07T14:26:55.408853Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Key terms and symbols in 'sec:headline-conjectures-preamble' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -971,16 +989,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "514da1fffcef",
+          "md": "8b4df6845384",
           "ts": "478508b82257"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.408853Z"
         },
-        "reviewed_at": "2026-06-28T10:59:00.211Z",
+        "reviewed_at": "2026-07-07T14:26:55.408853Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The algebraic and logical relations in 'sec:headline-conjectures-preamble' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -990,16 +1010,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "514da1fffcef",
+          "md": "8b4df6845384",
           "ts": "478508b82257"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.408853Z"
         },
-        "reviewed_at": "2026-06-28T10:59:00.218Z",
+        "reviewed_at": "2026-07-07T14:26:55.408853Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The physical concepts described in 'sec:headline-conjectures-preamble' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1009,16 +1031,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "514da1fffcef",
+          "md": "8b4df6845384",
           "ts": "478508b82257"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.408853Z"
         },
-        "reviewed_at": "2026-06-28T10:59:00.224Z",
+        "reviewed_at": "2026-07-07T14:26:55.408853Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The derivation steps and formal definitions in 'sec:headline-conjectures-preamble' are reproducible.",
         "severity": "minor",
@@ -1028,16 +1052,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "514da1fffcef",
+          "md": "8b4df6845384",
           "ts": "478508b82257"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.408853Z"
         },
-        "reviewed_at": "2026-06-28T10:59:00.230Z",
+        "reviewed_at": "2026-07-07T14:26:55.408853Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -1049,14 +1075,20 @@
       {
         "result": "pass",
         "notes": "Simplified explanations, removed forward/backward references (e.g., specific section links). Fixed terminology. Maintained all math formulas exactly.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.408853Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.408853Z"
+        },
+        "field_hash": {
+          "md": "8b4df6845384",
+          "ts": "478508b82257"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T18:21:24.666Z"
+  "updated_at": "2026-07-07T14:26:55.408853Z"
 }

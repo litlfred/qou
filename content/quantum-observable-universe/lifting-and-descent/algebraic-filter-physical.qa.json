@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/lifting-and-descent/algebraic-filter-physical.md"
   },
   "source_hashes": {
-    "md": "a6c48ad67726",
+    "md": "e15f517fc815",
     "ts": "eacdaab57710"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Rewrote blocks in lifting-and-descent_seq7.md ensuring concise declarative phrasing and tight transitions, preserving equations and markdown tags.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.726746Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.726746Z"
+        },
+        "field_hash": {
+          "md": "e15f517fc815",
+          "ts": "eacdaab57710"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.146Z"
+  "updated_at": "2026-07-07T14:26:55.726746Z"
 }

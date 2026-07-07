@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/predicted-spectra/quantum-dilogarithm-volume.lean"
   },
   "source_hashes": {
-    "md": "ab5df6bff957",
+    "md": "d2704948be40",
     "ts": "471d1d4ac6cd",
     "lean": "93bc2507bbb1"
   },
@@ -1030,19 +1030,19 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "1bf90fe92592",
-          "ts": "0e8e72e7b720",
+          "md": "d2704948be40",
+          "ts": "471d1d4ac6cd",
           "lean": "93bc2507bbb1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.314089Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:47.789Z",
+        "reviewed_at": "2026-07-07T14:26:56.314089Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
       }
@@ -1050,19 +1050,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "1bf90fe92592",
-          "ts": "0e8e72e7b720",
+          "md": "d2704948be40",
+          "ts": "471d1d4ac6cd",
           "lean": "93bc2507bbb1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.314089Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:48.156Z",
+        "reviewed_at": "2026-07-07T14:26:56.314089Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1070,19 +1070,19 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "1bf90fe92592",
-          "ts": "0e8e72e7b720",
+          "md": "d2704948be40",
+          "ts": "471d1d4ac6cd",
           "lean": "93bc2507bbb1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.314089Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:48.557Z",
+        "reviewed_at": "2026-07-07T14:26:56.314089Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is correctly placed in an archimedean chapter."
       }
@@ -1090,19 +1090,19 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "1bf90fe92592",
-          "ts": "0e8e72e7b720",
+          "md": "d2704948be40",
+          "ts": "471d1d4ac6cd",
           "lean": "93bc2507bbb1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.314089Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:48.961Z",
+        "reviewed_at": "2026-07-07T14:26:56.314089Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof matches the archimedean regime."
       }
@@ -1128,7 +1128,7 @@
       },
       {
         "field_hash": {
-          "md": "ab5df6bff957",
+          "md": "d2704948be40",
           "ts": "471d1d4ac6cd",
           "lean": "93bc2507bbb1"
         },
@@ -1136,9 +1136,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.314089Z"
         },
-        "reviewed_at": "2026-07-06T04:41:30.359Z",
+        "reviewed_at": "2026-07-07T14:26:56.314089Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:quantum-dilogarithm-volume' aligns with Lean declaration. Sorry-free."
       }
@@ -1146,8 +1148,8 @@
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "1bf90fe92592",
-          "ts": "0e8e72e7b720",
+          "md": "d2704948be40",
+          "ts": "471d1d4ac6cd",
           "lean": "93bc2507bbb1"
         },
         "result": "pass",
@@ -1158,11 +1160,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.314089Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:49.753Z",
+        "reviewed_at": "2026-07-07T14:26:56.314089Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
       }
@@ -1170,8 +1172,8 @@
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "1bf90fe92592",
-          "ts": "0e8e72e7b720",
+          "md": "d2704948be40",
+          "ts": "471d1d4ac6cd",
           "lean": "93bc2507bbb1"
         },
         "result": "pass",
@@ -1182,11 +1184,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.314089Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:50.105Z",
+        "reviewed_at": "2026-07-07T14:26:56.314089Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
       }
@@ -1194,8 +1196,8 @@
     "proof-rater-novelty": [
       {
         "field_hash": {
-          "md": "1bf90fe92592",
-          "ts": "0e8e72e7b720",
+          "md": "d2704948be40",
+          "ts": "471d1d4ac6cd",
           "lean": "93bc2507bbb1"
         },
         "result": "pass",
@@ -1206,11 +1208,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.314089Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:50.477Z",
+        "reviewed_at": "2026-07-07T14:26:56.314089Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
       }
@@ -1218,19 +1220,19 @@
     "proof-statement-integrity": [
       {
         "field_hash": {
-          "md": "1bf90fe92592",
-          "ts": "0e8e72e7b720",
+          "md": "d2704948be40",
+          "ts": "471d1d4ac6cd",
           "lean": "93bc2507bbb1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.314089Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:50.832Z",
+        "reviewed_at": "2026-07-07T14:26:56.314089Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
       }
@@ -1238,19 +1240,19 @@
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "1bf90fe92592",
-          "ts": "0e8e72e7b720",
+          "md": "d2704948be40",
+          "ts": "471d1d4ac6cd",
           "lean": "93bc2507bbb1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.314089Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:51.183Z",
+        "reviewed_at": "2026-07-07T14:26:56.314089Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
       }
@@ -1258,19 +1260,19 @@
     "proof-no-trivial-true": [
       {
         "field_hash": {
-          "md": "1bf90fe92592",
-          "ts": "0e8e72e7b720",
+          "md": "d2704948be40",
+          "ts": "471d1d4ac6cd",
           "lean": "93bc2507bbb1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.314089Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:51.541Z",
+        "reviewed_at": "2026-07-07T14:26:56.314089Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
       }
@@ -1278,19 +1280,19 @@
     "proof-no-false-premise": [
       {
         "field_hash": {
-          "md": "1bf90fe92592",
-          "ts": "0e8e72e7b720",
+          "md": "d2704948be40",
+          "ts": "471d1d4ac6cd",
           "lean": "93bc2507bbb1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.314089Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:51.859Z",
+        "reviewed_at": "2026-07-07T14:26:56.314089Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
       }
@@ -1298,19 +1300,19 @@
     "proof-no-unused-hypotheses": [
       {
         "field_hash": {
-          "md": "1bf90fe92592",
-          "ts": "0e8e72e7b720",
+          "md": "d2704948be40",
+          "ts": "471d1d4ac6cd",
           "lean": "93bc2507bbb1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.314089Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:52.260Z",
+        "reviewed_at": "2026-07-07T14:26:56.314089Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
       }
@@ -1318,19 +1320,19 @@
     "proof-no-decide-masking": [
       {
         "field_hash": {
-          "md": "1bf90fe92592",
-          "ts": "0e8e72e7b720",
+          "md": "d2704948be40",
+          "ts": "471d1d4ac6cd",
           "lean": "93bc2507bbb1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.314089Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:52.659Z",
+        "reviewed_at": "2026-07-07T14:26:56.314089Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
@@ -1338,17 +1340,19 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "1bf90fe92592",
-          "ts": "0e8e72e7b720",
+          "md": "d2704948be40",
+          "ts": "471d1d4ac6cd",
           "lean": "93bc2507bbb1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.314089Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.314089Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'Nuclear energy from the quantum dilogarithm of the Markov trace': the formalization compiles successfully without errors.",
         "severity": "minor",
@@ -1358,17 +1362,19 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "1bf90fe92592",
-          "ts": "0e8e72e7b720",
+          "md": "d2704948be40",
+          "ts": "471d1d4ac6cd",
           "lean": "93bc2507bbb1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.314089Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.314089Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No vacuous proofs detected. Sibling Lean file compiles sorry-free, verifying non-vacuity.",
         "severity": "minor",
@@ -1378,17 +1384,19 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "1bf90fe92592",
-          "ts": "0e8e72e7b720",
+          "md": "d2704948be40",
+          "ts": "471d1d4ac6cd",
           "lean": "93bc2507bbb1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.314089Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.314089Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Nuclear energy from the quantum dilogarithm of the Markov trace'.",
         "severity": "minor",
@@ -1398,17 +1406,19 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "1bf90fe92592",
-          "ts": "0e8e72e7b720",
+          "md": "d2704948be40",
+          "ts": "471d1d4ac6cd",
           "lean": "93bc2507bbb1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.314089Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.314089Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'Nuclear energy from the quantum dilogarithm of the Markov trace' is appropriately qualified.",
         "severity": "minor"
@@ -1417,17 +1427,19 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "1bf90fe92592",
-          "ts": "0e8e72e7b720",
+          "md": "d2704948be40",
+          "ts": "471d1d4ac6cd",
           "lean": "93bc2507bbb1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.314089Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.314089Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Nuclear energy from the quantum dilogarithm of the Markov trace'.",
         "severity": "minor",
@@ -1437,17 +1449,19 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "1bf90fe92592",
-          "ts": "0e8e72e7b720",
+          "md": "d2704948be40",
+          "ts": "471d1d4ac6cd",
           "lean": "93bc2507bbb1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.314089Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.314089Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The argument flow in 'Nuclear energy from the quantum dilogarithm of the Markov trace' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -1457,17 +1471,19 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "1bf90fe92592",
-          "ts": "0e8e72e7b720",
+          "md": "d2704948be40",
+          "ts": "471d1d4ac6cd",
           "lean": "93bc2507bbb1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.314089Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.314089Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Lean sibling corresponds directly to the narrative claim in 'Nuclear energy from the quantum dilogarithm of the Markov trace'.",
         "severity": "minor"
@@ -1476,17 +1492,19 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "1bf90fe92592",
-          "ts": "0e8e72e7b720",
+          "md": "d2704948be40",
+          "ts": "471d1d4ac6cd",
           "lean": "93bc2507bbb1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.314089Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.314089Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Nuclear energy from the quantum dilogarithm of the Markov trace', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1496,17 +1514,19 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "1bf90fe92592",
-          "ts": "0e8e72e7b720",
+          "md": "d2704948be40",
+          "ts": "471d1d4ac6cd",
           "lean": "93bc2507bbb1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.314089Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.314089Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Nuclear energy from the quantum dilogarithm of the Markov trace' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1516,17 +1536,19 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "1bf90fe92592",
-          "ts": "0e8e72e7b720",
+          "md": "d2704948be40",
+          "ts": "471d1d4ac6cd",
           "lean": "93bc2507bbb1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.314089Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.314089Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The empirical claims in 'Nuclear energy from the quantum dilogarithm of the Markov trace' are structurally anchored to the QOU mass framework and are stable.",
         "severity": "minor",
@@ -1536,17 +1558,19 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "1bf90fe92592",
-          "ts": "0e8e72e7b720",
+          "md": "d2704948be40",
+          "ts": "471d1d4ac6cd",
           "lean": "93bc2507bbb1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.314089Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.314089Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Nuclear energy from the quantum dilogarithm of the Markov trace' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1556,17 +1580,19 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "1bf90fe92592",
-          "ts": "0e8e72e7b720",
+          "md": "d2704948be40",
+          "ts": "471d1d4ac6cd",
           "lean": "93bc2507bbb1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.314089Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.314089Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Lean file compiles successfully, confirming reproducibility.",
         "severity": "minor"
@@ -1575,17 +1601,19 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "1bf90fe92592",
-          "ts": "0e8e72e7b720",
+          "md": "d2704948be40",
+          "ts": "471d1d4ac6cd",
           "lean": "93bc2507bbb1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.314089Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.314089Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -1614,5 +1642,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:30.359Z"
+  "updated_at": "2026-07-07T14:26:56.314089Z"
 }

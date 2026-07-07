@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/appendix-surreals-archimedean/standard-part-classical-limit.md"
   },
   "source_hashes": {
-    "md": "ee07d53c410e",
+    "md": "80e8a1b3a000",
     "ts": "9f05d1c65787"
   },
   "criteria": {
@@ -821,14 +821,20 @@
       {
         "result": "pass",
         "notes": "Streamlined surreal integration caveats. Stripped subjective wording ('obvious shortcut', 'dramatically less lossy') in favor of objective algebraic limitations and positive results. Ensured first-person plural.",
-        "reviewed_at": "2026-07-06T22:44:43Z",
+        "reviewed_at": "2026-07-07T14:26:56.090342Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.090342Z"
+        },
+        "field_hash": {
+          "md": "80e8a1b3a000",
+          "ts": "9f05d1c65787"
         }
       }
     ]
   },
-  "updated_at": "2026-07-04T20:31:58.368Z"
+  "updated_at": "2026-07-07T14:26:56.090342Z"
 }

@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/derived-atom.lean"
   },
   "source_hashes": {
-    "md": "b72fee013433",
+    "md": "9f36a4eda5aa",
     "ts": "8fcdd84013db",
     "lean": "cced03f409c9"
   },
@@ -1523,19 +1523,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "b72fee013433",
+          "md": "9f36a4eda5aa",
           "ts": "8fcdd84013db",
-          "lean": "19a8a367f5c4"
+          "lean": "cced03f409c9"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.244048Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:19.376Z",
+        "reviewed_at": "2026-07-07T14:26:57.244048Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1543,19 +1543,19 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "b72fee013433",
+          "md": "9f36a4eda5aa",
           "ts": "8fcdd84013db",
-          "lean": "19a8a367f5c4"
+          "lean": "cced03f409c9"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.244048Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:19.713Z",
+        "reviewed_at": "2026-07-07T14:26:57.244048Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -1563,17 +1563,19 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "b72fee013433",
+          "md": "9f36a4eda5aa",
           "ts": "8fcdd84013db",
-          "lean": "19a8a367f5c4"
+          "lean": "cced03f409c9"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.244048Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.244048Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The claim in 'Derived atom $\\\\mathcal{A}(Z, N)$ from pair production' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/derived-atom.lean:24:4: error: `QOU.Interactions.DerivedAtom` has already been declared.",
         "severity": "minor",
@@ -1583,17 +1585,19 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "b72fee013433",
+          "md": "9f36a4eda5aa",
           "ts": "8fcdd84013db",
-          "lean": "19a8a367f5c4"
+          "lean": "cced03f409c9"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.244048Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.244048Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Derived atom $\\\\mathcal{A}(Z, N)$ from pair production' presents substantial mathematical content: A derived atom $\\mathcal{A}(Z, N)$ with atomic number $Z$ and neutron number $N$ is the endpoint of the following cat...",
         "severity": "minor"
@@ -1602,17 +1606,19 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "b72fee013433",
+          "md": "9f36a4eda5aa",
           "ts": "8fcdd84013db",
-          "lean": "19a8a367f5c4"
+          "lean": "cced03f409c9"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.244048Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.244048Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Derived atom $\\\\mathcal{A}(Z, N)$ from pair production'.",
         "severity": "minor",
@@ -1622,17 +1628,19 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "b72fee013433",
+          "md": "9f36a4eda5aa",
           "ts": "8fcdd84013db",
-          "lean": "19a8a367f5c4"
+          "lean": "cced03f409c9"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.244048Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.244048Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose presents 'Derived atom $\\\\mathcal{A}(Z, N)$ from pair production' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
@@ -1641,17 +1649,19 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "b72fee013433",
+          "md": "9f36a4eda5aa",
           "ts": "8fcdd84013db",
-          "lean": "19a8a367f5c4"
+          "lean": "cced03f409c9"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.244048Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.244048Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Derived atom $\\\\mathcal{A}(Z, N)$ from pair production'.",
         "severity": "minor",
@@ -1661,17 +1671,19 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "b72fee013433",
+          "md": "9f36a4eda5aa",
           "ts": "8fcdd84013db",
-          "lean": "19a8a367f5c4"
+          "lean": "cced03f409c9"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.244048Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.244048Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/derived-atom.lean.",
         "severity": "minor",
@@ -1681,17 +1693,19 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "b72fee013433",
+          "md": "9f36a4eda5aa",
           "ts": "8fcdd84013db",
-          "lean": "19a8a367f5c4"
+          "lean": "cced03f409c9"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.244048Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.244048Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/derived-atom.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
@@ -1700,17 +1714,19 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "b72fee013433",
+          "md": "9f36a4eda5aa",
           "ts": "8fcdd84013db",
-          "lean": "19a8a367f5c4"
+          "lean": "cced03f409c9"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.244048Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.244048Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Derived atom $\\\\mathcal{A}(Z, N)$ from pair production', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1720,17 +1736,19 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "b72fee013433",
+          "md": "9f36a4eda5aa",
           "ts": "8fcdd84013db",
-          "lean": "19a8a367f5c4"
+          "lean": "cced03f409c9"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.244048Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.244048Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Derived atom $\\\\mathcal{A}(Z, N)$ from pair production' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1740,17 +1758,19 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "b72fee013433",
+          "md": "9f36a4eda5aa",
           "ts": "8fcdd84013db",
-          "lean": "19a8a367f5c4"
+          "lean": "cced03f409c9"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.244048Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.244048Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Derived atom $\\\\mathcal{A}(Z, N)$ from pair production' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1760,17 +1780,19 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "b72fee013433",
+          "md": "9f36a4eda5aa",
           "ts": "8fcdd84013db",
-          "lean": "19a8a367f5c4"
+          "lean": "cced03f409c9"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.244048Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.244048Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Derived atom $\\\\mathcal{A}(Z, N)$ from pair production' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1780,17 +1802,19 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "b72fee013433",
+          "md": "9f36a4eda5aa",
           "ts": "8fcdd84013db",
-          "lean": "19a8a367f5c4"
+          "lean": "cced03f409c9"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.244048Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.244048Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/derived-atom.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
@@ -1800,17 +1824,19 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "b72fee013433",
+          "md": "9f36a4eda5aa",
           "ts": "8fcdd84013db",
-          "lean": "19a8a367f5c4"
+          "lean": "cced03f409c9"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.244048Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.244048Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/derived-atom.lean fails compilation: content/quantum-observable-universe/particle-interactions/derived-atom.lean:24:4: error: `QOU.Interactions.DerivedAtom` has already been declared",
         "severity": "critical",
@@ -1841,7 +1867,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "b72fee013433",
+          "md": "9f36a4eda5aa",
           "ts": "8fcdd84013db",
           "lean": "cced03f409c9"
         },
@@ -1849,9 +1875,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.244048Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_at": "2026-07-07T14:26:57.244048Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Lean sibling is a stub/re-exporter; canonical formalisation lives in a Lake package and is audited by lean-compile-audit."
       }
@@ -1863,5 +1891,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.802Z"
+  "updated_at": "2026-07-07T14:26:57.244048Z"
 }

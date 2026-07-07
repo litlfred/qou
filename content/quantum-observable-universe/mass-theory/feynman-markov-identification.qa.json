@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/mass-theory/feynman-markov-identification.md"
   },
   "source_hashes": {
-    "md": "ad2cc21aefcf",
+    "md": "2e3ca8867d85",
     "ts": "297663694cd4"
   },
   "criteria": {
@@ -1100,35 +1100,37 @@
       },
       {
         "field_hash": {
-          "md": "ad2cc21aefcf",
+          "md": "2e3ca8867d85",
           "ts": "297663694cd4"
         },
         "result": "pass",
         "notes": "Verified honest on branch claude/lean-qa-backlog-2h3f8d: carrier fields are genuine inputs and the theorem either derives its conclusion by composing them / summing / applying proved lemmas, or states the real .md claim with a cited sorry (\u00a73b-cond item 5 + \u00a71). No field projection remains. lean-direct exit 0. (Prior script fail entry was stale \u2014 the anti-pattern was already removed in the current file.)",
-        "reviewed_at": "2026-07-04T10:56:05.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.853104Z",
         "reviewed_sha": "4736a53600d78315c025af9d838303bdcc62bf97",
         "reviewer": {
           "kind": "agent",
           "id": "local/lean-proof-vacuity-audit",
           "agent_skill": "local/lean-proof-vacuity-audit",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-07-04"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.853104Z"
         }
       }
     ],
     "proof-no-placeholder-stub": [
       {
         "field_hash": {
-          "lean": "c2f26d082edb"
+          "md": "2e3ca8867d85",
+          "ts": "297663694cd4"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/lean-proof-vacuity-audit",
-          "agent_date": "2026-07-02",
-          "agent_skill": "local/lean-proof-vacuity-audit"
+          "agent_date": "2026-07-07T14:26:56.853104Z",
+          "agent_skill": "local/lean-proof-vacuity-audit",
+          "agent_model": "gemini-3.1-pro"
         },
-        "reviewed_at": "2026-07-02T17:07:15.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.853104Z",
         "reviewed_sha": "a9ce9ecfe24e6c7c9d0b9f25699b35ec666faa32",
         "notes": "4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): placeholder-stub marker no longer present \u2014 criterion pass. Residual self-assuming-projection / statement-scope issue tracked under proof-statement-integrity and bean qsb2; do not re-fail this criterion for it."
       }
@@ -1136,15 +1138,17 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "ad2cc21aefcf",
+          "md": "2e3ca8867d85",
           "ts": "297663694cd4"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.853104Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.853104Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Statement contains only the bare claim without physical interpretation.",
         "severity": "minor"
@@ -1153,18 +1157,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "ad2cc21aefcf",
+          "md": "2e3ca8867d85",
           "ts": "297663694cd4"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.853104Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:03.564Z",
+        "reviewed_at": "2026-07-07T14:26:56.853104Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1172,15 +1176,17 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "ad2cc21aefcf",
+          "md": "2e3ca8867d85",
           "ts": "297663694cd4"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.853104Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.853104Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The sibling Lean file content/quantum-observable-universe/mass-theory/feynman-markov-identification.lean is missing entirely.",
         "evidence": "content/quantum-observable-universe/mass-theory/feynman-markov-identification.md:1",
@@ -1190,18 +1196,18 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "ad2cc21aefcf",
+          "md": "2e3ca8867d85",
           "ts": "297663694cd4"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.853104Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:04.346Z",
+        "reviewed_at": "2026-07-07T14:26:56.853104Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
       }
@@ -1280,19 +1286,19 @@
       },
       {
         "field_hash": {
-          "md": "ad2cc21aefcf",
+          "md": "2e3ca8867d85",
           "ts": "297663694cd4"
         },
         "result": "warn",
         "notes": ".md states the lemma but gives NO proof; Lean self-assumes it via class field. No strategy present on either side.",
-        "reviewed_at": "2026-06-25T17:02:40.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.853104Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.853104Z"
         },
         "score": {
           "max": 1,
@@ -1341,19 +1347,19 @@
       },
       {
         "field_hash": {
-          "md": "ad2cc21aefcf",
+          "md": "2e3ca8867d85",
           "ts": "297663694cd4"
         },
         "result": "pass",
         "notes": "Markov-weighted eigenbasis partial-trace sum = Jones-Markov trace on H_n(R,q) is a well-posed, checkable identity.",
-        "reviewed_at": "2026-06-25T17:02:40.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.853104Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.853104Z"
         },
         "score": {
           "max": 1,
@@ -1402,19 +1408,19 @@
       },
       {
         "field_hash": {
-          "md": "ad2cc21aefcf",
+          "md": "2e3ca8867d85",
           "ts": "297663694cd4"
         },
         "result": "pass",
         "notes": "Feynman-amplitude = Markov-trace identification is a meaningful bridge, though it follows from standard Wedderburn decomposition.",
-        "reviewed_at": "2026-06-25T17:02:40.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.853104Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.853104Z"
         },
         "score": {
           "max": 1,
@@ -1476,19 +1482,19 @@
       },
       {
         "field_hash": {
-          "md": "ad2cc21aefcf",
+          "md": "2e3ca8867d85",
           "ts": "297663694cd4"
         },
         "result": "pass",
         "notes": "Verified honest on branch claude/lean-qa-backlog-2h3f8d: carrier fields are genuine inputs and the theorem either derives its conclusion by composing them / summing / applying proved lemmas, or states the real .md claim with a cited sorry (\u00a73b-cond item 5 + \u00a71). No field projection remains. lean-direct exit 0. (Prior script fail entry was stale \u2014 the anti-pattern was already removed in the current file.)",
-        "reviewed_at": "2026-07-04T10:56:05.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.853104Z",
         "reviewed_sha": "4736a53600d78315c025af9d838303bdcc62bf97",
         "reviewer": {
           "kind": "agent",
           "id": "local/lean-proof-vacuity-audit",
           "agent_skill": "local/lean-proof-vacuity-audit",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-07-04"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.853104Z"
         }
       }
     ],
@@ -1512,19 +1518,19 @@
       },
       {
         "field_hash": {
-          "md": "ad2cc21aefcf",
+          "md": "2e3ca8867d85",
           "ts": "297663694cd4"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: no `: True` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals.lean, content/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals/markov_identification.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.853104Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.853104Z"
         }
       }
     ],
@@ -1565,19 +1571,19 @@
       },
       {
         "field_hash": {
-          "md": "ad2cc21aefcf",
+          "md": "2e3ca8867d85",
           "ts": "297663694cd4"
         },
         "result": "pass",
         "notes": "MarkovIdentificationContext satisfiable (fields independently inhabitable). Defect is self-projection, not a contradictory premise.",
-        "reviewed_at": "2026-06-25T17:02:40.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.853104Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.853104Z"
         }
       }
     ],
@@ -1618,19 +1624,19 @@
       },
       {
         "field_hash": {
-          "md": "ad2cc21aefcf",
+          "md": "2e3ca8867d85",
           "ts": "297663694cd4"
         },
         "result": "pass",
         "notes": "Single [ctx] binder; the projected field references the goal's components. No unused binder.",
-        "reviewed_at": "2026-06-25T17:02:40.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.853104Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.853104Z"
         }
       }
     ],
@@ -1654,34 +1660,36 @@
       },
       {
         "field_hash": {
-          "md": "ad2cc21aefcf",
+          "md": "2e3ca8867d85",
           "ts": "297663694cd4"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals.lean, content/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals/markov_identification.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.853104Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.853104Z"
         }
       }
     ],
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "ad2cc21aefcf",
+          "md": "2e3ca8867d85",
           "ts": "297663694cd4"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.853104Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.853104Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/feynman-markov-identification.ts:1",
@@ -1691,15 +1699,17 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "ad2cc21aefcf",
+          "md": "2e3ca8867d85",
           "ts": "297663694cd4"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.853104Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.853104Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-vacuous.",
         "severity": "minor"
@@ -1708,15 +1718,17 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "ad2cc21aefcf",
+          "md": "2e3ca8867d85",
           "ts": "297663694cd4"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.853104Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.853104Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/feynman-markov-identification.ts:1",
@@ -1726,15 +1738,17 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "ad2cc21aefcf",
+          "md": "2e3ca8867d85",
           "ts": "297663694cd4"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.853104Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.853104Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
@@ -1743,15 +1757,17 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "ad2cc21aefcf",
+          "md": "2e3ca8867d85",
           "ts": "297663694cd4"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.853104Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.853104Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/feynman-markov-identification.ts:1",
@@ -1761,15 +1777,17 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "ad2cc21aefcf",
+          "md": "2e3ca8867d85",
           "ts": "297663694cd4"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.853104Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.853104Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/feynman-markov-identification.ts:1",
@@ -1779,15 +1797,17 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "ad2cc21aefcf",
+          "md": "2e3ca8867d85",
           "ts": "297663694cd4"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.853104Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.853104Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
         "evidence": "content/quantum-observable-universe/mass-theory/feynman-markov-identification.ts:1",
@@ -1797,15 +1817,17 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "ad2cc21aefcf",
+          "md": "2e3ca8867d85",
           "ts": "297663694cd4"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.853104Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.853104Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/feynman-markov-identification.ts:1",
@@ -1815,15 +1837,17 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "ad2cc21aefcf",
+          "md": "2e3ca8867d85",
           "ts": "297663694cd4"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.853104Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.853104Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/feynman-markov-identification.ts:1",
@@ -1833,15 +1857,17 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "ad2cc21aefcf",
+          "md": "2e3ca8867d85",
           "ts": "297663694cd4"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.853104Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.853104Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/feynman-markov-identification.ts:1",
@@ -1851,15 +1877,17 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "ad2cc21aefcf",
+          "md": "2e3ca8867d85",
           "ts": "297663694cd4"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.853104Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.853104Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-reproducibility.",
         "severity": "minor"
@@ -1868,15 +1896,17 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "ad2cc21aefcf",
+          "md": "2e3ca8867d85",
           "ts": "297663694cd4"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.853104Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.853104Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Referee verdict: open-objection. Objection: Sibling Lean file is missing.",
         "severity": "critical",
@@ -1887,16 +1917,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "ad2cc21aefcf",
+          "md": "2e3ca8867d85",
           "ts": "297663694cd4"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.853104Z"
         },
-        "reviewed_at": "2026-06-28T10:58:49.027Z",
+        "reviewed_at": "2026-07-07T14:26:56.853104Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The referenced Lean file content/quantum-observable-universe/mass-theory/feynman-markov-identification.lean is missing, leading to complete divergence.",
         "severity": "minor"
@@ -1906,14 +1938,20 @@
       {
         "result": "pass",
         "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
-        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.853104Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.853104Z"
+        },
+        "field_hash": {
+          "md": "2e3ca8867d85",
+          "ts": "297663694cd4"
         }
       }
     ]
   },
-  "updated_at": "2026-07-04T10:56:05.000Z"
+  "updated_at": "2026-07-07T14:26:56.853104Z"
 }

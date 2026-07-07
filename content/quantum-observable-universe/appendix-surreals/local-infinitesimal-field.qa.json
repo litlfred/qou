@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/appendix-surreals/local-infinitesimal-field.md"
   },
   "source_hashes": {
-    "md": "3381ffc58a1b",
+    "md": "f3b40514771c",
     "ts": "daf9368c107b"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Ensured references to 'the main paper' and 'the QOU paper' were changed to 'this paper'. Maintained consistency and economy of language.",
-        "reviewed_at": "2026-07-06T22:46:20Z",
+        "reviewed_at": "2026-07-07T14:26:56.068358Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.068358Z"
+        },
+        "field_hash": {
+          "md": "f3b40514771c",
+          "ts": "daf9368c107b"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:55.206Z"
+  "updated_at": "2026-07-07T14:26:56.068358Z"
 }

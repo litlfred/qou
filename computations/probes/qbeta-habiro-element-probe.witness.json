@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath+sympy",
-  "engineVersion": "python 3.12.3",
-  "computedAt": "2026-06-02T06:44:55.148765+00:00",
-  "commitSha": "c4dffb015789e9617ce335c4b7a6c0b865bc7517",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-07-07T13:58:23.800714+00:00",
+  "commitSha": "85da4f43133d9d70ca3582f4fa4f31771b5ec3f1",
   "assertions": [
     {
       "name": "habiro_infrastructure_reproduces_witness",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 749,
+  "durationMs": 281,
   "computation": "qbeta-habiro-element-probe",
   "scriptFile": "qbeta_habiro_element_probe.py",
-  "scriptHash": "2c75c801d281",
-  "scriptCommitSha": "dbac23bb580c2b0d15e58409ec4efc87cd64468c",
+  "scriptHash": "6cd682db7cbe",
+  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,11 +26,12 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Q_β Habiro element search — keystone probe per 1ppq-qbeta.md PROBE NEW. (A) verify habiro_exact_qbeta.py reproduces witness tr_M to ≤ 10 ppm; (B) test α_EM-parallel candidate Habiro elements [2]_q·(1−h²α)-style for Q_β c_k; (C) enumerate structural constraints from the witness file.",
   "contentBlock": "prop:neutron-qvalue-symbolic",
@@ -39,16 +40,16 @@
     "subtask_A_habiro_reproduction": {
       "p": {
         "tr_M_habiro": "1.06530614425444997566663340374",
-        "tr_M_witness": "1.06530622859238930000000000000",
-        "abs_diff": "8.4337939e-8",
-        "rel_ppm": "0.079168",
+        "tr_M_witness": "1.06530622861316626170946619823",
+        "abs_diff": "8.4358716e-8",
+        "rel_ppm": "0.079187",
         "passes_10ppm": true
       },
       "n": {
         "tr_M_habiro": "0.923233229911637177970269912007",
-        "tr_M_witness": "0.923233297169583800000000000000",
-        "abs_diff": "6.7257947e-8",
-        "rel_ppm": "0.072850",
+        "tr_M_witness": "0.923233297186152879199028120638",
+        "abs_diff": "6.7274516e-8",
+        "rel_ppm": "0.072868",
         "passes_10ppm": true
       }
     },

@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean"
   },
   "source_hashes": {
-    "md": "f6307e75f017",
+    "md": "28b8d0cf6b5c",
     "ts": "ae0cb1f75475",
     "lean": "2827aea7e5cf"
   },
@@ -1068,7 +1068,7 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "f6307e75f017",
+          "md": "28b8d0cf6b5c",
           "ts": "ae0cb1f75475",
           "lean": "2827aea7e5cf"
         },
@@ -1076,9 +1076,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.401431Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.401431Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The statement is written in standard scholarly mathematical and physics voice.",
         "severity": "minor"
@@ -1087,7 +1089,7 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "f6307e75f017",
+          "md": "28b8d0cf6b5c",
           "ts": "ae0cb1f75475",
           "lean": "2827aea7e5cf"
         },
@@ -1095,9 +1097,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.401431Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.401431Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Block placement and kind 'proposition' match validated structurally.",
         "severity": "minor"
@@ -1106,7 +1110,7 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "f6307e75f017",
+          "md": "28b8d0cf6b5c",
           "ts": "ae0cb1f75475",
           "lean": "2827aea7e5cf"
         },
@@ -1114,9 +1118,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.401431Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.401431Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean theorem statement in content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean matches the mathematical statement in /Users/litlfred/space_cats/qou/content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.md.",
         "severity": "minor",
@@ -1126,7 +1132,7 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "f6307e75f017",
+          "md": "28b8d0cf6b5c",
           "ts": "ae0cb1f75475",
           "lean": "2827aea7e5cf"
         },
@@ -1134,9 +1140,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.401431Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.401431Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean file contains a fully verified, sorry-free proof.",
         "severity": "minor",
@@ -1177,7 +1185,7 @@
       },
       {
         "field_hash": {
-          "md": "f6307e75f017",
+          "md": "28b8d0cf6b5c",
           "ts": "ae0cb1f75475",
           "lean": "2827aea7e5cf"
         },
@@ -1185,9 +1193,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.401431Z"
         },
-        "reviewed_at": "2026-07-06T04:41:30.359Z",
+        "reviewed_at": "2026-07-07T14:26:56.401431Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:spectrahedral-phase-collapse' aligns with Lean declaration. Sorry-free."
       }
@@ -1195,7 +1205,7 @@
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "f6307e75f017",
+          "md": "28b8d0cf6b5c",
           "ts": "ae0cb1f75475",
           "lean": "2827aea7e5cf"
         },
@@ -1203,9 +1213,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.401431Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.401431Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Proof strategy is well-structured and easy to follow.",
         "severity": "minor"
@@ -1214,7 +1226,7 @@
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "f6307e75f017",
+          "md": "28b8d0cf6b5c",
           "ts": "ae0cb1f75475",
           "lean": "2827aea7e5cf"
         },
@@ -1222,9 +1234,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.401431Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.401431Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Proof compiles sorry-free.",
         "severity": "minor",
@@ -1234,7 +1248,7 @@
     "proof-rater-novelty": [
       {
         "field_hash": {
-          "md": "f6307e75f017",
+          "md": "28b8d0cf6b5c",
           "ts": "ae0cb1f75475",
           "lean": "2827aea7e5cf"
         },
@@ -1242,9 +1256,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.401431Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.401431Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The mathematical and physical connections explored in this block are highly novel.",
         "severity": "minor",
@@ -1254,7 +1270,7 @@
     "proof-statement-integrity": [
       {
         "field_hash": {
-          "md": "f6307e75f017",
+          "md": "28b8d0cf6b5c",
           "ts": "ae0cb1f75475",
           "lean": "2827aea7e5cf"
         },
@@ -1262,9 +1278,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.401431Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.401431Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Signature is stable and contains no unexpected axioms/sorryAx.",
         "severity": "minor"
@@ -1273,7 +1291,7 @@
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "f6307e75f017",
+          "md": "28b8d0cf6b5c",
           "ts": "ae0cb1f75475",
           "lean": "2827aea7e5cf"
         },
@@ -1281,9 +1299,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.401431Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.401431Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No self-assuming projections are used in the proof.",
         "severity": "minor"
@@ -1292,7 +1312,7 @@
     "proof-no-trivial-true": [
       {
         "field_hash": {
-          "md": "f6307e75f017",
+          "md": "28b8d0cf6b5c",
           "ts": "ae0cb1f75475",
           "lean": "2827aea7e5cf"
         },
@@ -1300,9 +1320,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.401431Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.401431Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The proof relies on sorry stubs.",
         "severity": "minor"
@@ -1311,7 +1333,7 @@
     "proof-no-false-premise": [
       {
         "field_hash": {
-          "md": "f6307e75f017",
+          "md": "28b8d0cf6b5c",
           "ts": "ae0cb1f75475",
           "lean": "2827aea7e5cf"
         },
@@ -1319,9 +1341,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.401431Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.401431Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The proof assumptions are consistent and do not contain false premises.",
         "severity": "minor"
@@ -1330,7 +1354,7 @@
     "proof-no-unused-hypotheses": [
       {
         "field_hash": {
-          "md": "f6307e75f017",
+          "md": "28b8d0cf6b5c",
           "ts": "ae0cb1f75475",
           "lean": "2827aea7e5cf"
         },
@@ -1338,9 +1362,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.401431Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.401431Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No unused hypotheses are present in the Lean proof.",
         "severity": "minor"
@@ -1349,7 +1375,7 @@
     "proof-no-decide-masking": [
       {
         "field_hash": {
-          "md": "f6307e75f017",
+          "md": "28b8d0cf6b5c",
           "ts": "ae0cb1f75475",
           "lean": "2827aea7e5cf"
         },
@@ -1357,9 +1383,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.401431Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.401431Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The proof does not use decide tactics to mask verification steps.",
         "severity": "minor"
@@ -1368,7 +1396,7 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "f6307e75f017",
+          "md": "28b8d0cf6b5c",
           "ts": "ae0cb1f75475",
           "lean": "2827aea7e5cf"
         },
@@ -1376,9 +1404,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.401431Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.401431Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The mathematical claims in 'Spectrahedral collapse and conformal rigidity' are formally unproved due to 'sorry' stubs in the sibling Lean file.",
         "severity": "minor",
@@ -1388,7 +1418,7 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "f6307e75f017",
+          "md": "28b8d0cf6b5c",
           "ts": "ae0cb1f75475",
           "lean": "2827aea7e5cf"
         },
@@ -1396,9 +1426,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.401431Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.401431Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "major",
@@ -1408,7 +1440,7 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "f6307e75f017",
+          "md": "28b8d0cf6b5c",
           "ts": "ae0cb1f75475",
           "lean": "2827aea7e5cf"
         },
@@ -1416,9 +1448,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.401431Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.401431Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Spectrahedral collapse and conformal rigidity'.",
         "severity": "minor",
@@ -1428,7 +1462,7 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "f6307e75f017",
+          "md": "28b8d0cf6b5c",
           "ts": "ae0cb1f75475",
           "lean": "2827aea7e5cf"
         },
@@ -1436,9 +1470,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.401431Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.401431Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose presents 'Spectrahedral collapse and conformal rigidity' as verified, but the sibling Lean proof contains sorry stubs.",
         "severity": "minor"
@@ -1447,7 +1483,7 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "f6307e75f017",
+          "md": "28b8d0cf6b5c",
           "ts": "ae0cb1f75475",
           "lean": "2827aea7e5cf"
         },
@@ -1455,9 +1491,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.401431Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.401431Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Spectrahedral collapse and conformal rigidity'.",
         "severity": "minor",
@@ -1467,7 +1505,7 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "f6307e75f017",
+          "md": "28b8d0cf6b5c",
           "ts": "ae0cb1f75475",
           "lean": "2827aea7e5cf"
         },
@@ -1475,9 +1513,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.401431Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.401431Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Logical gaps exist due to incomplete proof (sorry stubs) in content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean.",
         "severity": "minor",
@@ -1487,7 +1527,7 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "f6307e75f017",
+          "md": "28b8d0cf6b5c",
           "ts": "ae0cb1f75475",
           "lean": "2827aea7e5cf"
         },
@@ -1495,9 +1535,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.401431Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.401431Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean contains sorry, causing divergence from the fully-verified narrative.",
         "severity": "minor"
@@ -1506,7 +1548,7 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "f6307e75f017",
+          "md": "28b8d0cf6b5c",
           "ts": "ae0cb1f75475",
           "lean": "2827aea7e5cf"
         },
@@ -1514,9 +1556,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.401431Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.401431Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Spectrahedral collapse and conformal rigidity', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1526,7 +1570,7 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "f6307e75f017",
+          "md": "28b8d0cf6b5c",
           "ts": "ae0cb1f75475",
           "lean": "2827aea7e5cf"
         },
@@ -1534,9 +1578,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.401431Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.401431Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Spectrahedral collapse and conformal rigidity' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1546,7 +1592,7 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "f6307e75f017",
+          "md": "28b8d0cf6b5c",
           "ts": "ae0cb1f75475",
           "lean": "2827aea7e5cf"
         },
@@ -1554,9 +1600,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.401431Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.401431Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The empirical claims in 'Spectrahedral collapse and conformal rigidity' are structurally anchored to the QOU mass framework and are stable.",
         "severity": "minor",
@@ -1566,7 +1614,7 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "f6307e75f017",
+          "md": "28b8d0cf6b5c",
           "ts": "ae0cb1f75475",
           "lean": "2827aea7e5cf"
         },
@@ -1574,9 +1622,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.401431Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.401431Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Spectrahedral collapse and conformal rigidity' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1586,7 +1636,7 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "f6307e75f017",
+          "md": "28b8d0cf6b5c",
           "ts": "ae0cb1f75475",
           "lean": "2827aea7e5cf"
         },
@@ -1594,9 +1644,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.401431Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.401431Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean contains sorry, indicating incomplete verification.",
         "severity": "minor"
@@ -1605,7 +1657,7 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "f6307e75f017",
+          "md": "28b8d0cf6b5c",
           "ts": "ae0cb1f75475",
           "lean": "2827aea7e5cf"
         },
@@ -1613,9 +1665,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.401431Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.401431Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/spectrahedral-phase-collapse.lean contains 'sorry' placeholders.",
         "severity": "major",
@@ -1627,14 +1681,21 @@
       {
         "result": "pass",
         "notes": "Rewrote prose blocks to adhere to Milnor standards. Improved economy, preserved all math.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.401431Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.401431Z"
+        },
+        "field_hash": {
+          "md": "28b8d0cf6b5c",
+          "ts": "ae0cb1f75475",
+          "lean": "2827aea7e5cf"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:30.359Z"
+  "updated_at": "2026-07-07T14:26:56.401431Z"
 }

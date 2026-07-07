@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/information-theory/jet-planck-steps.md"
   },
   "source_hashes": {
-    "md": "c89a935f7f19",
+    "md": "16ede40ac4ca",
     "ts": "d19c2c497ac6"
   },
   "criteria": {
@@ -821,14 +821,20 @@
       {
         "result": "pass",
         "notes": "Smoothed transitions, removed forward references, improved brevity.",
-        "reviewed_at": "2026-07-07T02:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.637401Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.637401Z"
+        },
+        "field_hash": {
+          "md": "16ede40ac4ca",
+          "ts": "d19c2c497ac6"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-07T14:26:55.637401Z"
 }

@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/spin-involution-lp-dual-invariance.lean"
   },
   "source_hashes": {
-    "md": "3ddd432656cd",
+    "md": "8a8bde4a1b18",
     "ts": "822086bd3d8d",
     "lean": "9247d7f6ec3b"
   },
@@ -36,7 +36,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "3ddd432656cd",
+          "md": "8a8bde4a1b18",
           "ts": "822086bd3d8d",
           "lean": "9247d7f6ec3b"
         },
@@ -44,9 +44,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.881008Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_at": "2026-07-07T14:26:56.881008Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Block kind 'undefined' has no provable Lean content expected."
       }
@@ -55,14 +57,21 @@
       {
         "result": "pass",
         "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
-        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.881008Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.881008Z"
+        },
+        "field_hash": {
+          "md": "8a8bde4a1b18",
+          "ts": "822086bd3d8d",
+          "lean": "9247d7f6ec3b"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.430Z"
+  "updated_at": "2026-07-07T14:26:56.881008Z"
 }

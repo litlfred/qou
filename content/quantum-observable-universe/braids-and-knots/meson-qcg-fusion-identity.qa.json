@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/braids-and-knots/meson-qcg-fusion-identity.lean"
   },
   "source_hashes": {
-    "md": "25a84d401dfb",
+    "md": "00cce348245e",
     "ts": "34026fdab4a4",
     "lean": "b286ae91d5c9"
   },
@@ -37,14 +37,21 @@
       {
         "result": "pass",
         "notes": "Applied Milnor brevity. Trimmed internal cross references and bloated narrative commentary. Tightened 'Mathematical Novelty' notes to single clear sentences. Retained all math.",
-        "reviewed_at": "2026-07-06T22:42:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.318630Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.318630Z"
+        },
+        "field_hash": {
+          "md": "00cce348245e",
+          "ts": "34026fdab4a4",
+          "lean": "b286ae91d5c9"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:55.297Z"
+  "updated_at": "2026-07-07T14:26:55.318630Z"
 }

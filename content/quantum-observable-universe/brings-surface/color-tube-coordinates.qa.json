@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/brings-surface/color-tube-coordinates.lean"
   },
   "source_hashes": {
-    "md": "571700487f78",
+    "md": "0a0f4fb32cee",
     "ts": "9f4f555a9126",
     "lean": "5f2767bab109"
   },
@@ -878,16 +878,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "571700487f78",
+          "md": "0a0f4fb32cee",
           "ts": "9f4f555a9126",
-          "lean": "a9fe045a80f2"
+          "lean": "5f2767bab109"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.110819Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.110819Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Block placement and kind match validated structurally.",
         "severity": "minor"
@@ -896,16 +898,18 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "571700487f78",
+          "md": "0a0f4fb32cee",
           "ts": "9f4f555a9126",
-          "lean": "a9fe045a80f2"
+          "lean": "5f2767bab109"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.110819Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.110819Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Narrative mentions complex numbers C, but the Lean code is generic over commutative rings. No wall conditional banner is present in the markdown.",
         "evidence": "color-tube-coordinates.md:514 \u2014 Let z = x_0/x_1 \\in \\mathbb{P}^1(\\mathbb{C}) be the spacetime ratio",
@@ -915,16 +919,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "571700487f78",
+          "md": "0a0f4fb32cee",
           "ts": "9f4f555a9126",
-          "lean": "a9fe045a80f2"
+          "lean": "5f2767bab109"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.110819Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.110819Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-false-claim evaluated: pass.",
         "severity": "minor"
@@ -933,16 +939,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "571700487f78",
+          "md": "0a0f4fb32cee",
           "ts": "9f4f555a9126",
-          "lean": "a9fe045a80f2"
+          "lean": "5f2767bab109"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.110819Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.110819Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-vacuous evaluated: pass.",
         "severity": "minor"
@@ -951,16 +959,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "571700487f78",
+          "md": "0a0f4fb32cee",
           "ts": "9f4f555a9126",
-          "lean": "a9fe045a80f2"
+          "lean": "5f2767bab109"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.110819Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.110819Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-circular evaluated: pass.",
         "severity": "minor"
@@ -969,16 +979,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "571700487f78",
+          "md": "0a0f4fb32cee",
           "ts": "9f4f555a9126",
-          "lean": "a9fe045a80f2"
+          "lean": "5f2767bab109"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.110819Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.110819Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-overclaim evaluated: pass.",
         "severity": "minor"
@@ -987,16 +999,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "571700487f78",
+          "md": "0a0f4fb32cee",
           "ts": "9f4f555a9126",
-          "lean": "a9fe045a80f2"
+          "lean": "5f2767bab109"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.110819Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.110819Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-hidden-dof evaluated: pass.",
         "severity": "minor"
@@ -1005,16 +1019,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "571700487f78",
+          "md": "0a0f4fb32cee",
           "ts": "9f4f555a9126",
-          "lean": "a9fe045a80f2"
+          "lean": "5f2767bab109"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.110819Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.110819Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-non-sequitur evaluated: pass.",
         "severity": "minor"
@@ -1023,16 +1039,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "571700487f78",
+          "md": "0a0f4fb32cee",
           "ts": "9f4f555a9126",
-          "lean": "a9fe045a80f2"
+          "lean": "5f2767bab109"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.110819Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.110819Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Lean sibling fails to compile: content/quantum-observable-universe/brings-surface/color-tube-coordinates.lean:72:2: error: ring_nf made no progress on goal",
         "evidence": "content/quantum-observable-universe/brings-surface/color-tube-coordinates.lean:1",
@@ -1042,16 +1060,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "571700487f78",
+          "md": "0a0f4fb32cee",
           "ts": "9f4f555a9126",
-          "lean": "a9fe045a80f2"
+          "lean": "5f2767bab109"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.110819Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.110819Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-citation-misuse evaluated: pass.",
         "severity": "minor"
@@ -1060,16 +1080,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "571700487f78",
+          "md": "0a0f4fb32cee",
           "ts": "9f4f555a9126",
-          "lean": "a9fe045a80f2"
+          "lean": "5f2767bab109"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.110819Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.110819Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-definitional-ambiguity evaluated: pass.",
         "severity": "minor"
@@ -1078,16 +1100,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "571700487f78",
+          "md": "0a0f4fb32cee",
           "ts": "9f4f555a9126",
-          "lean": "a9fe045a80f2"
+          "lean": "5f2767bab109"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.110819Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.110819Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-empirical-fragility evaluated: pass.",
         "severity": "minor"
@@ -1096,16 +1120,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "571700487f78",
+          "md": "0a0f4fb32cee",
           "ts": "9f4f555a9126",
-          "lean": "a9fe045a80f2"
+          "lean": "5f2767bab109"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.110819Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.110819Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-physical-implausibility evaluated: pass.",
         "severity": "minor"
@@ -1114,16 +1140,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "571700487f78",
+          "md": "0a0f4fb32cee",
           "ts": "9f4f555a9126",
-          "lean": "a9fe045a80f2"
+          "lean": "5f2767bab109"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.110819Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.110819Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Lean sibling fails to compile: content/quantum-observable-universe/brings-surface/color-tube-coordinates.lean:72:2: error: ring_nf made no progress on goal",
         "evidence": "content/quantum-observable-universe/brings-surface/color-tube-coordinates.lean:1",
@@ -1133,16 +1161,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "571700487f78",
+          "md": "0a0f4fb32cee",
           "ts": "9f4f555a9126",
-          "lean": "a9fe045a80f2"
+          "lean": "5f2767bab109"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.110819Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.110819Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/color-tube-coordinates.lean:72:2: error: ring_nf made no progress on goal",
         "verdict": "open-objection",
@@ -1153,7 +1183,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "571700487f78",
+          "md": "0a0f4fb32cee",
           "ts": "9f4f555a9126",
           "lean": "5f2767bab109"
         },
@@ -1161,9 +1191,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.110819Z"
         },
-        "reviewed_at": "2026-07-06T04:41:30.202Z",
+        "reviewed_at": "2026-07-07T14:26:55.110819Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'def:color-tube-coordinates' \u2192 expected 'color_tube_coordinates'; Lean declares: ColorTubeCoordinates, ColorTubeCoordinates.colorVector, color_recovers_resolvent, shifted_sum, ColorTubeCoordinates.p1.... Structural match via content."
       }
@@ -1172,14 +1204,21 @@
       {
         "result": "pass",
         "notes": "Rewrote brings-surface_seq4.md. Ensured brevity and directness. Broke up large paragraphs. Maintained exact math block formatting.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.110819Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.110819Z"
+        },
+        "field_hash": {
+          "md": "0a0f4fb32cee",
+          "ts": "9f4f555a9126",
+          "lean": "5f2767bab109"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:30.202Z"
+  "updated_at": "2026-07-07T14:26:55.110819Z"
 }

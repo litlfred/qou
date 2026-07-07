@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/models-of-qous/main-commutative-diagram-proof.lean"
   },
   "source_hashes": {
-    "md": "9e0e7c00ee83",
+    "md": "4c5279b67bd3",
     "ts": "80d6e7e03e5a",
     "lean": "6e522ecb9d2b"
   },
@@ -780,19 +780,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "9e0e7c00ee83",
+          "md": "4c5279b67bd3",
           "ts": "80d6e7e03e5a",
-          "lean": "7259eaab6303"
+          "lean": "6e522ecb9d2b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.415770Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:22.863Z",
+        "reviewed_at": "2026-07-07T14:26:55.415770Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -800,17 +800,19 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "9e0e7c00ee83",
+          "md": "4c5279b67bd3",
           "ts": "80d6e7e03e5a",
-          "lean": "7259eaab6303"
+          "lean": "6e522ecb9d2b"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.415770Z"
         },
-        "reviewed_at": "2026-06-28T10:58:58.948Z",
+        "reviewed_at": "2026-07-07T14:26:55.415770Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The claim in 'Proof of Main Commutative Diagram' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
@@ -820,17 +822,19 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "9e0e7c00ee83",
+          "md": "4c5279b67bd3",
           "ts": "80d6e7e03e5a",
-          "lean": "7259eaab6303"
+          "lean": "6e522ecb9d2b"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.415770Z"
         },
-        "reviewed_at": "2026-06-28T10:58:58.954Z",
+        "reviewed_at": "2026-07-07T14:26:55.415770Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The block 'Proof of Main Commutative Diagram' presents substantial mathematical content: We verify commutativity by tracing both paths around the diagram....",
         "severity": "minor"
@@ -839,17 +843,19 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "9e0e7c00ee83",
+          "md": "4c5279b67bd3",
           "ts": "80d6e7e03e5a",
-          "lean": "7259eaab6303"
+          "lean": "6e522ecb9d2b"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.415770Z"
         },
-        "reviewed_at": "2026-06-28T10:58:58.960Z",
+        "reviewed_at": "2026-07-07T14:26:55.415770Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Proof of Main Commutative Diagram'.",
         "severity": "minor",
@@ -859,17 +865,19 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "9e0e7c00ee83",
+          "md": "4c5279b67bd3",
           "ts": "80d6e7e03e5a",
-          "lean": "7259eaab6303"
+          "lean": "6e522ecb9d2b"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.415770Z"
         },
-        "reviewed_at": "2026-06-28T10:58:58.966Z",
+        "reviewed_at": "2026-07-07T14:26:55.415770Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The prose presents 'Proof of Main Commutative Diagram' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
@@ -878,17 +886,19 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "9e0e7c00ee83",
+          "md": "4c5279b67bd3",
           "ts": "80d6e7e03e5a",
-          "lean": "7259eaab6303"
+          "lean": "6e522ecb9d2b"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.415770Z"
         },
-        "reviewed_at": "2026-06-28T10:58:58.972Z",
+        "reviewed_at": "2026-07-07T14:26:55.415770Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Proof of Main Commutative Diagram'.",
         "severity": "minor",
@@ -898,17 +908,19 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "9e0e7c00ee83",
+          "md": "4c5279b67bd3",
           "ts": "80d6e7e03e5a",
-          "lean": "7259eaab6303"
+          "lean": "6e522ecb9d2b"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.415770Z"
         },
-        "reviewed_at": "2026-06-28T10:58:58.978Z",
+        "reviewed_at": "2026-07-07T14:26:55.415770Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/models-of-qous/main-commutative-diagram-proof.lean.",
         "severity": "minor",
@@ -918,17 +930,19 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "9e0e7c00ee83",
+          "md": "4c5279b67bd3",
           "ts": "80d6e7e03e5a",
-          "lean": "7259eaab6303"
+          "lean": "6e522ecb9d2b"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.415770Z"
         },
-        "reviewed_at": "2026-06-28T10:58:58.985Z",
+        "reviewed_at": "2026-07-07T14:26:55.415770Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The Lean sibling content/quantum-observable-universe/models-of-qous/main-commutative-diagram-proof.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
@@ -937,17 +951,19 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "9e0e7c00ee83",
+          "md": "4c5279b67bd3",
           "ts": "80d6e7e03e5a",
-          "lean": "7259eaab6303"
+          "lean": "6e522ecb9d2b"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.415770Z"
         },
-        "reviewed_at": "2026-06-28T10:58:58.991Z",
+        "reviewed_at": "2026-07-07T14:26:55.415770Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No citations are present in 'Proof of Main Commutative Diagram', hence no citation misuse is possible.",
         "severity": "minor",
@@ -957,17 +973,19 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "9e0e7c00ee83",
+          "md": "4c5279b67bd3",
           "ts": "80d6e7e03e5a",
-          "lean": "7259eaab6303"
+          "lean": "6e522ecb9d2b"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.415770Z"
         },
-        "reviewed_at": "2026-06-28T10:58:58.997Z",
+        "reviewed_at": "2026-07-07T14:26:55.415770Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Key terms and symbols in 'Proof of Main Commutative Diagram' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -977,17 +995,19 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "9e0e7c00ee83",
+          "md": "4c5279b67bd3",
           "ts": "80d6e7e03e5a",
-          "lean": "7259eaab6303"
+          "lean": "6e522ecb9d2b"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.415770Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.003Z",
+        "reviewed_at": "2026-07-07T14:26:55.415770Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The algebraic and logical relations in 'Proof of Main Commutative Diagram' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -997,17 +1017,19 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "9e0e7c00ee83",
+          "md": "4c5279b67bd3",
           "ts": "80d6e7e03e5a",
-          "lean": "7259eaab6303"
+          "lean": "6e522ecb9d2b"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.415770Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.009Z",
+        "reviewed_at": "2026-07-07T14:26:55.415770Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The physical concepts described in 'Proof of Main Commutative Diagram' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1017,37 +1039,41 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "9e0e7c00ee83",
+          "md": "4c5279b67bd3",
           "ts": "80d6e7e03e5a",
-          "lean": "7259eaab6303"
+          "lean": "6e522ecb9d2b"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.415770Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.015Z",
+        "reviewed_at": "2026-07-07T14:26:55.415770Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The Lean sibling content/quantum-observable-universe/models-of-qous/main-commutative-diagram-proof.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/models-of-qous/main-commutative-diagram-proof.lean:1 — content/quantum-observable-universe/models-of-qous/main-commutative-diagram-proof.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/ContinuousFunction/Basic.olean' of module Mathlib.Topology.ContinuousFunction.Basic does not exist"
+        "evidence": "content/quantum-observable-universe/models-of-qous/main-commutative-diagram-proof.lean:1 \u2014 content/quantum-observable-universe/models-of-qous/main-commutative-diagram-proof.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/ContinuousFunction/Basic.olean' of module Mathlib.Topology.ContinuousFunction.Basic does not exist"
       }
     ],
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "9e0e7c00ee83",
+          "md": "4c5279b67bd3",
           "ts": "80d6e7e03e5a",
-          "lean": "7259eaab6303"
+          "lean": "6e522ecb9d2b"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.415770Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.021Z",
+        "reviewed_at": "2026-07-07T14:26:55.415770Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/models-of-qous/main-commutative-diagram-proof.lean fails compilation: content/quantum-observable-universe/models-of-qous/main-commutative-diagram-proof.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/ContinuousFunction/Basic.olean' of module Mathlib.Topology.ContinuousFunction.Basic does not exist",
         "severity": "critical",
@@ -1076,5 +1102,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-05T18:21:24.666Z"
+  "updated_at": "2026-07-07T14:26:55.415770Z"
 }

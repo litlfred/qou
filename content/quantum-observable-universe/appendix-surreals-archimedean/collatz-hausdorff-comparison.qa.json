@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/appendix-surreals-archimedean/collatz-hausdorff-comparison.md"
   },
   "source_hashes": {
-    "md": "96d2e4d50353",
+    "md": "fb1005508d08",
     "ts": "4918345214ee"
   },
   "criteria": {
@@ -821,14 +821,20 @@
       {
         "result": "pass",
         "notes": "Rewrote instances of 'the paper' to 'this paper'. Tightened the Wenzl positivity explanations and the Collatz Hausdorff comparison.",
-        "reviewed_at": "2026-07-06T22:45:43Z",
+        "reviewed_at": "2026-07-07T14:26:56.095249Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.095249Z"
+        },
+        "field_hash": {
+          "md": "fb1005508d08",
+          "ts": "4918345214ee"
         }
       }
     ]
   },
-  "updated_at": "2026-07-04T20:31:58.368Z"
+  "updated_at": "2026-07-07T14:26:56.095249Z"
 }

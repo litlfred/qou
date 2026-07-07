@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/information-theory/aeon-adjacency.lean"
   },
   "source_hashes": {
-    "md": "6a38d2208706",
+    "md": "006b4a3b177d",
     "ts": "8bf6b8808158",
     "lean": "68a82386b60e"
   },
@@ -37,14 +37,21 @@
       {
         "result": "pass",
         "notes": "Smoothed transitions, removed forward references, applied milnor brevity.",
-        "reviewed_at": "2026-07-07T02:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.540716Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.540716Z"
+        },
+        "field_hash": {
+          "md": "006b4a3b177d",
+          "ts": "8bf6b8808158",
+          "lean": "68a82386b60e"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.008Z"
+  "updated_at": "2026-07-07T14:26:55.540716Z"
 }

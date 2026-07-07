@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/quantum-observable-universes/q-exponential.lean"
   },
   "source_hashes": {
-    "md": "fd9cb56792dc",
+    "md": "1400424c3c1e",
     "ts": "1b2b2ea6a99e",
     "lean": "2caa94593ffc"
   },
@@ -37,14 +37,21 @@
       {
         "result": "pass",
         "notes": "Deleted LaTeX tikz diagrams and conversational framing. Shortened properties.",
-        "reviewed_at": "2026-07-06T22:46:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.945723Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.945723Z"
+        },
+        "field_hash": {
+          "md": "1400424c3c1e",
+          "ts": "1b2b2ea6a99e",
+          "lean": "2caa94593ffc"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:58.083Z"
+  "updated_at": "2026-07-07T14:26:55.945723Z"
 }

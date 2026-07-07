@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/molecular-construction/palindromicity-orbital-type.lean"
   },
   "source_hashes": {
-    "md": "beb11bb24ad8",
+    "md": "1cb6f073a89b",
     "ts": "3b07c600d482",
     "lean": "add8378bc05f"
   },
@@ -910,19 +910,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "beb11bb24ad8",
+          "md": "1cb6f073a89b",
           "ts": "3b07c600d482",
-          "lean": "03731008cba8"
+          "lean": "add8378bc05f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.487436Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:25.659Z",
+        "reviewed_at": "2026-07-07T14:26:55.487436Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -930,9 +930,9 @@
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "beb11bb24ad8",
+          "md": "1cb6f073a89b",
           "ts": "3b07c600d482",
-          "lean": "03731008cba8"
+          "lean": "add8378bc05f"
         },
         "result": "pass",
         "score": {
@@ -942,11 +942,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.487436Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:25.974Z",
+        "reviewed_at": "2026-07-07T14:26:55.487436Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
       }
@@ -954,7 +954,7 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "beb11bb24ad8",
+          "md": "1cb6f073a89b",
           "ts": "3b07c600d482",
           "lean": "add8378bc05f"
         },
@@ -962,9 +962,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.487436Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.487436Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No false claims identified in 'Palindromicity and orbital type': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -974,7 +976,7 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "beb11bb24ad8",
+          "md": "1cb6f073a89b",
           "ts": "3b07c600d482",
           "lean": "add8378bc05f"
         },
@@ -982,9 +984,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.487436Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.487436Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The claims in 'Palindromicity and orbital type' are non-vacuous as they make concrete conjectures about 'palindromic (Poincar\u00e9-dual) if and only if all occupied sub-...'.",
         "severity": "minor"
@@ -993,7 +997,7 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "beb11bb24ad8",
+          "md": "1cb6f073a89b",
           "ts": "3b07c600d482",
           "lean": "add8378bc05f"
         },
@@ -1001,9 +1005,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.487436Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.487436Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Palindromicity and orbital type'.",
         "severity": "minor",
@@ -1013,7 +1019,7 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "beb11bb24ad8",
+          "md": "1cb6f073a89b",
           "ts": "3b07c600d482",
           "lean": "add8378bc05f"
         },
@@ -1021,9 +1027,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.487436Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.487436Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No overclaims: the scope of 'Palindromicity and orbital type' is appropriately qualified.",
         "severity": "minor"
@@ -1032,7 +1040,7 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "beb11bb24ad8",
+          "md": "1cb6f073a89b",
           "ts": "3b07c600d482",
           "lean": "add8378bc05f"
         },
@@ -1040,9 +1048,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.487436Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.487436Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Palindromicity and orbital type'.",
         "severity": "minor",
@@ -1052,7 +1062,7 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "beb11bb24ad8",
+          "md": "1cb6f073a89b",
           "ts": "3b07c600d482",
           "lean": "add8378bc05f"
         },
@@ -1060,9 +1070,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.487436Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.487436Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The argument flow in 'Palindromicity and orbital type' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -1072,7 +1084,7 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "beb11bb24ad8",
+          "md": "1cb6f073a89b",
           "ts": "3b07c600d482",
           "lean": "add8378bc05f"
         },
@@ -1080,9 +1092,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.487436Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.487436Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Lean and narrative statements for 'Palindromicity and orbital type' are structurally aligned.",
         "severity": "minor"
@@ -1091,7 +1105,7 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "beb11bb24ad8",
+          "md": "1cb6f073a89b",
           "ts": "3b07c600d482",
           "lean": "add8378bc05f"
         },
@@ -1099,9 +1113,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.487436Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.487436Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Citations to iwahori1964, jones1987 are correct and contextually appropriate.",
         "severity": "minor",
@@ -1111,7 +1127,7 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "beb11bb24ad8",
+          "md": "1cb6f073a89b",
           "ts": "3b07c600d482",
           "lean": "add8378bc05f"
         },
@@ -1119,9 +1135,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.487436Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.487436Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Key terms and symbols in 'Palindromicity and orbital type' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1131,7 +1149,7 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "beb11bb24ad8",
+          "md": "1cb6f073a89b",
           "ts": "3b07c600d482",
           "lean": "add8378bc05f"
         },
@@ -1139,9 +1157,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.487436Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.487436Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The algebraic and logical relations in 'Palindromicity and orbital type' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1151,7 +1171,7 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "beb11bb24ad8",
+          "md": "1cb6f073a89b",
           "ts": "3b07c600d482",
           "lean": "add8378bc05f"
         },
@@ -1159,9 +1179,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.487436Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.487436Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The physical concepts described in 'Palindromicity and orbital type' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1171,7 +1193,7 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "beb11bb24ad8",
+          "md": "1cb6f073a89b",
           "ts": "3b07c600d482",
           "lean": "add8378bc05f"
         },
@@ -1179,9 +1201,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.487436Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.487436Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The derivation steps and formal definitions in 'Palindromicity and orbital type' are reproducible.",
         "severity": "minor",
@@ -1191,7 +1215,7 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "beb11bb24ad8",
+          "md": "1cb6f073a89b",
           "ts": "3b07c600d482",
           "lean": "add8378bc05f"
         },
@@ -1199,9 +1223,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.487436Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.487436Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
@@ -1233,14 +1259,21 @@
       {
         "result": "pass",
         "notes": "Rewrote molecular-construction_seq2.md. Stripped fluff, enforced 'we' and present tense. Converted definitions and conjectures to follow linear, clear style without editorialising.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.487436Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.487436Z"
+        },
+        "field_hash": {
+          "md": "1cb6f073a89b",
+          "ts": "3b07c600d482",
+          "lean": "add8378bc05f"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.117Z"
+  "updated_at": "2026-07-07T14:26:55.487436Z"
 }

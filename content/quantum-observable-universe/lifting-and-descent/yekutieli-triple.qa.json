@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/lifting-and-descent/yekutieli-triple.lean"
   },
   "source_hashes": {
-    "md": "25fe12c7a5bc",
+    "md": "e65222fb837d",
     "ts": "fdffc73aa6f8",
     "lean": "3e9bef617c75"
   },
@@ -879,14 +879,21 @@
       {
         "result": "pass",
         "notes": "Rewrote blocks in lifting-and-descent_seq9.md using direct prose, short sentences, active voice per Milnor standard.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.680372Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.680372Z"
+        },
+        "field_hash": {
+          "md": "e65222fb837d",
+          "ts": "fdffc73aa6f8",
+          "lean": "3e9bef617c75"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-07T14:26:55.680372Z"
 }

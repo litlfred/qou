@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/wedderburn-weight-canonical.lean"
   },
   "source_hashes": {
-    "md": "d9f44aba914b",
+    "md": "af5c72bc40b1",
     "ts": "5dc46fea297b",
     "lean": "95176e60c321"
   },
@@ -36,7 +36,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "d9f44aba914b",
+          "md": "af5c72bc40b1",
           "ts": "5dc46fea297b",
           "lean": "95176e60c321"
         },
@@ -44,9 +44,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.703768Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_at": "2026-07-07T14:26:56.703768Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:wedderburn-weight-canonical' \u2192 expected 'wedderburn_weight_canonical'; Lean declares: Partition, WedderburnWeightCanonical, WedderburnWeightCanonical.y_self_conjugate, WedderburnWeightCanonical.beta_over_C. Structural match via content."
       }
@@ -55,14 +57,21 @@
       {
         "result": "pass",
         "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
-        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.703768Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.703768Z"
+        },
+        "field_hash": {
+          "md": "af5c72bc40b1",
+          "ts": "5dc46fea297b",
+          "lean": "95176e60c321"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.430Z"
+  "updated_at": "2026-07-07T14:26:56.703768Z"
 }

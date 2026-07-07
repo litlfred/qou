@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/glossary/glossary-s3-group.lean"
   },
   "source_hashes": {
-    "md": "0720cfe45a4d",
+    "md": "97baf8c187d5",
     "ts": "580af7233a8c",
     "lean": "118248733030"
   },
@@ -837,7 +837,7 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "0720cfe45a4d",
+          "md": "97baf8c187d5",
           "ts": "580af7233a8c",
           "lean": "118248733030"
         },
@@ -845,11 +845,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.462788Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:51.496Z",
+        "reviewed_at": "2026-07-07T14:26:56.462788Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -857,16 +857,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "0720cfe45a4d",
+          "md": "97baf8c187d5",
           "ts": "580af7233a8c",
           "lean": "118248733030"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.462788Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.462788Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The claim in 'Symmetric group $S_3$' is unverified due to Lean compilation failures in sibling file.",
         "evidence": "content/quantum-observable-universe/glossary/glossary-s3-group.lean:1",
@@ -876,16 +878,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "0720cfe45a4d",
+          "md": "97baf8c187d5",
           "ts": "580af7233a8c",
           "lean": "118248733030"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.462788Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.462788Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The block 'Symmetric group $S_3$' presents substantial mathematical content: Imposing the involution relations $\\sigma_i^2=\\mathrm{id}$ on the braid group $B...",
         "severity": "minor"
@@ -894,16 +898,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "0720cfe45a4d",
+          "md": "97baf8c187d5",
           "ts": "580af7233a8c",
           "lean": "118248733030"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.462788Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.462788Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Symmetric group $S_3$'.",
         "evidence": "content/quantum-observable-universe/glossary/glossary-s3-group.ts:1",
@@ -913,16 +919,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "0720cfe45a4d",
+          "md": "97baf8c187d5",
           "ts": "580af7233a8c",
           "lean": "118248733030"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.462788Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.462788Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The prose presents 'Symmetric group $S_3$' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
@@ -931,16 +939,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "0720cfe45a4d",
+          "md": "97baf8c187d5",
           "ts": "580af7233a8c",
           "lean": "118248733030"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.462788Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.462788Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Symmetric group $S_3$'.",
         "evidence": "content/quantum-observable-universe/glossary/glossary-s3-group.ts:1",
@@ -950,16 +960,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "0720cfe45a4d",
+          "md": "97baf8c187d5",
           "ts": "580af7233a8c",
           "lean": "118248733030"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.462788Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.462788Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/glossary/glossary-s3-group.lean.",
         "evidence": "content/quantum-observable-universe/glossary/glossary-s3-group.lean:1",
@@ -969,16 +981,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "0720cfe45a4d",
+          "md": "97baf8c187d5",
           "ts": "580af7233a8c",
           "lean": "118248733030"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.462788Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.462788Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The Lean sibling content/quantum-observable-universe/glossary/glossary-s3-group.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
@@ -987,16 +1001,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "0720cfe45a4d",
+          "md": "97baf8c187d5",
           "ts": "580af7233a8c",
           "lean": "118248733030"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.462788Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.462788Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No citations are present in 'Symmetric group $S_3$', hence no citation misuse is possible.",
         "evidence": "content/quantum-observable-universe/glossary/glossary-s3-group.ts:1",
@@ -1006,16 +1022,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "0720cfe45a4d",
+          "md": "97baf8c187d5",
           "ts": "580af7233a8c",
           "lean": "118248733030"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.462788Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.462788Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Key terms and symbols in 'Symmetric group $S_3$' are mathematically defined and unambiguous.",
         "evidence": "content/quantum-observable-universe/glossary/glossary-s3-group.ts:1",
@@ -1025,16 +1043,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "0720cfe45a4d",
+          "md": "97baf8c187d5",
           "ts": "580af7233a8c",
           "lean": "118248733030"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.462788Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.462788Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The algebraic and logical relations in 'Symmetric group $S_3$' are independent of empirical tuning parameters.",
         "evidence": "content/quantum-observable-universe/glossary/glossary-s3-group.ts:1",
@@ -1044,16 +1064,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "0720cfe45a4d",
+          "md": "97baf8c187d5",
           "ts": "580af7233a8c",
           "lean": "118248733030"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.462788Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.462788Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The physical concepts described in 'Symmetric group $S_3$' are consistent with quantum observable mechanics.",
         "evidence": "content/quantum-observable-universe/glossary/glossary-s3-group.ts:1",
@@ -1063,16 +1085,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "0720cfe45a4d",
+          "md": "97baf8c187d5",
           "ts": "580af7233a8c",
           "lean": "118248733030"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.462788Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.462788Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The Lean sibling content/quantum-observable-universe/glossary/glossary-s3-group.lean fails compilation, indicating a reproducibility failure.",
         "evidence": "content/quantum-observable-universe/glossary/glossary-s3-group.lean:1 \u2014 /Users/litlfred/space_cats/qou/content/quantum-observable-universe/glossary/glossary-s3-group.lean:24:18: error(lean.unknownIdentifier): Unknown identifier `Fintype.card`",
@@ -1082,16 +1106,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "0720cfe45a4d",
+          "md": "97baf8c187d5",
           "ts": "580af7233a8c",
           "lean": "118248733030"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.462788Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.462788Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/glossary/glossary-s3-group.lean fails compilation: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/glossary/glossary-s3-group.lean:24:18: error(lean.unknownIdentifier): Unknown identifier `Fintype.card`",
         "verdict": "open-objection",
@@ -1123,14 +1149,21 @@
       {
         "result": "pass",
         "notes": "Smoothed transitions, applied concrete-before-abstract, removed forward references.",
-        "reviewed_at": "2026-07-07T02:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.462788Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.462788Z"
+        },
+        "field_hash": {
+          "md": "97baf8c187d5",
+          "ts": "580af7233a8c",
+          "lean": "118248733030"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:55.920Z"
+  "updated_at": "2026-07-07T14:26:56.462788Z"
 }

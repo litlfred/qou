@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/phi-q-tower-jsj-bridge.lean"
   },
   "source_hashes": {
-    "md": "5289ab3c6232",
+    "md": "4ceca5708b3e",
     "ts": "86547a7899e5",
     "lean": "46faa0bb4823"
   },
@@ -36,7 +36,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "5289ab3c6232",
+          "md": "4ceca5708b3e",
           "ts": "86547a7899e5",
           "lean": "46faa0bb4823"
         },
@@ -44,9 +44,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.856332Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_at": "2026-07-07T14:26:56.856332Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'rem:phi-q-tower-jsj-bridge' \u2192 expected 'phi_q_tower_jsj_bridge'; Lean declares: rho, rho_pos, TowerSummandRealization, PerPieceBridge, bridge.... Structural match via content."
       }
@@ -55,14 +57,21 @@
       {
         "result": "pass",
         "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
-        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.856332Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.856332Z"
+        },
+        "field_hash": {
+          "md": "4ceca5708b3e",
+          "ts": "86547a7899e5",
+          "lean": "46faa0bb4823"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.430Z"
+  "updated_at": "2026-07-07T14:26:56.856332Z"
 }

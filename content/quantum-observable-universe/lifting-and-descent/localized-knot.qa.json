@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/lifting-and-descent/localized-knot.lean"
   },
   "source_hashes": {
-    "md": "c26aadb4779a",
+    "md": "b8ae2859fcda",
     "ts": "e171b2a598f2",
     "lean": "5eb4e74e52b9"
   },
@@ -878,16 +878,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "c26aadb4779a",
+          "md": "b8ae2859fcda",
           "ts": "e171b2a598f2",
-          "lean": "73554dd87c09"
+          "lean": "5eb4e74e52b9"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.722797Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.722797Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Block placement and kind match validated structurally.",
         "severity": "minor"
@@ -896,16 +898,18 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "c26aadb4779a",
+          "md": "b8ae2859fcda",
           "ts": "e171b2a598f2",
-          "lean": "73554dd87c09"
+          "lean": "5eb4e74e52b9"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.722797Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.722797Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The statement matches the formal definition, but the Lean sibling fails compilation.",
         "severity": "minor",
@@ -915,16 +919,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "c26aadb4779a",
+          "md": "b8ae2859fcda",
           "ts": "e171b2a598f2",
-          "lean": "73554dd87c09"
+          "lean": "5eb4e74e52b9"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.722797Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.722797Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No false claims identified in 'Let (\\mathbf{C}, A, \\tau) be a quantum observable universe with': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -934,16 +940,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "c26aadb4779a",
+          "md": "b8ae2859fcda",
           "ts": "e171b2a598f2",
-          "lean": "73554dd87c09"
+          "lean": "5eb4e74e52b9"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.722797Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.722797Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/lifting-and-descent/localized-knot.lean fails compilation, rendering the verification vacuous.",
         "severity": "major",
@@ -953,16 +961,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "c26aadb4779a",
+          "md": "b8ae2859fcda",
           "ts": "e171b2a598f2",
-          "lean": "73554dd87c09"
+          "lean": "5eb4e74e52b9"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.722797Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.722797Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Let (\\mathbf{C}, A, \\tau) be a quantum observable universe with'.",
         "severity": "minor",
@@ -972,16 +982,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "c26aadb4779a",
+          "md": "b8ae2859fcda",
           "ts": "e171b2a598f2",
-          "lean": "73554dd87c09"
+          "lean": "5eb4e74e52b9"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.722797Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.722797Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The prose in 'Let (\\mathbf{C}, A, \\tau) be a quantum observable universe with' presents the result as established, but the Lean formalization is incomplete (contains sorry / fails compilation).",
         "severity": "minor"
@@ -990,16 +1002,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "c26aadb4779a",
+          "md": "b8ae2859fcda",
           "ts": "e171b2a598f2",
-          "lean": "73554dd87c09"
+          "lean": "5eb4e74e52b9"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.722797Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.722797Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Let (\\mathbf{C}, A, \\tau) be a quantum observable universe with'.",
         "severity": "minor",
@@ -1009,16 +1023,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "c26aadb4779a",
+          "md": "b8ae2859fcda",
           "ts": "e171b2a598f2",
-          "lean": "73554dd87c09"
+          "lean": "5eb4e74e52b9"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.722797Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.722797Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The argument flow in 'Let (\\mathbf{C}, A, \\tau) be a quantum observable universe with' has logical gaps due to compilation failure in its Lean sibling.",
         "severity": "minor",
@@ -1028,16 +1044,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "c26aadb4779a",
+          "md": "b8ae2859fcda",
           "ts": "e171b2a598f2",
-          "lean": "73554dd87c09"
+          "lean": "5eb4e74e52b9"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.722797Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.722797Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/lifting-and-descent/localized-knot.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor",
@@ -1047,16 +1065,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "c26aadb4779a",
+          "md": "b8ae2859fcda",
           "ts": "e171b2a598f2",
-          "lean": "73554dd87c09"
+          "lean": "5eb4e74e52b9"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.722797Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.722797Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No citations are present in 'Let (\\mathbf{C}, A, \\tau) be a quantum observable universe with', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1066,16 +1086,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "c26aadb4779a",
+          "md": "b8ae2859fcda",
           "ts": "e171b2a598f2",
-          "lean": "73554dd87c09"
+          "lean": "5eb4e74e52b9"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.722797Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.722797Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Key terms and symbols in 'Let (\\mathbf{C}, A, \\tau) be a quantum observable universe with' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1085,16 +1107,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "c26aadb4779a",
+          "md": "b8ae2859fcda",
           "ts": "e171b2a598f2",
-          "lean": "73554dd87c09"
+          "lean": "5eb4e74e52b9"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.722797Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.722797Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The algebraic and logical relations in 'Let (\\mathbf{C}, A, \\tau) be a quantum observable universe with' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1104,16 +1128,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "c26aadb4779a",
+          "md": "b8ae2859fcda",
           "ts": "e171b2a598f2",
-          "lean": "73554dd87c09"
+          "lean": "5eb4e74e52b9"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.722797Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.722797Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The physical concepts described in 'Let (\\mathbf{C}, A, \\tau) be a quantum observable universe with' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1123,16 +1149,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "c26aadb4779a",
+          "md": "b8ae2859fcda",
           "ts": "e171b2a598f2",
-          "lean": "73554dd87c09"
+          "lean": "5eb4e74e52b9"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.722797Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.722797Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/lifting-and-descent/localized-knot.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
@@ -1142,16 +1170,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "c26aadb4779a",
+          "md": "b8ae2859fcda",
           "ts": "e171b2a598f2",
-          "lean": "73554dd87c09"
+          "lean": "5eb4e74e52b9"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.722797Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.722797Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Referee verdict: open-objection. Sibling Lean file has issues: da-vacuous, da-lean-narrative-divergence, da-reproducibility.",
         "severity": "critical",
@@ -1163,14 +1193,21 @@
       {
         "result": "pass",
         "notes": "Rewrote localized-knot blocks. Converted list block into standard numbered markdown format. Formatted sentences cleanly and declaratively. Maintained strict preservation of original definition block markers.",
-        "reviewed_at": "2026-07-06T23:01:28Z",
+        "reviewed_at": "2026-07-07T14:26:55.722797Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.722797Z"
+        },
+        "field_hash": {
+          "md": "b8ae2859fcda",
+          "ts": "e171b2a598f2",
+          "lean": "5eb4e74e52b9"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-07T14:26:55.722797Z"
 }

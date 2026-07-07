@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/predicted-spectra/cl2-pentagon-and-faddeev-partial.lean"
   },
   "source_hashes": {
-    "md": "2d9d241106fc",
+    "md": "a8585dad9da3",
     "ts": "85d83eb3f640",
     "lean": "a9ad5d15d76d"
   },
@@ -1050,7 +1050,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "2d9d241106fc",
+          "md": "a8585dad9da3",
           "ts": "85d83eb3f640",
           "lean": "a9ad5d15d76d"
         },
@@ -1058,9 +1058,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.374134Z"
         },
-        "reviewed_at": "2026-07-06T04:41:30.359Z",
+        "reviewed_at": "2026-07-07T14:26:56.374134Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:cl2-pentagon-and-faddeev-partial' \u2192 expected 'cl2_pentagon_and_faddeev_partial'; Lean declares: Cl_2_pentagon_at_zero_unconditional, Cl_2_pentagon_zero_substitution, Cl_2_pentagon_consistent_with_zero, faddeev_kashaev_at_zero_unconditional, faddeev_kashaev_consistency_at_zero.... Structural match via content."
       }
@@ -1069,14 +1071,21 @@
       {
         "result": "pass",
         "notes": "Rewrote prose blocks to adhere to Milnor standards. Improved economy, preserved all math.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.374134Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.374134Z"
+        },
+        "field_hash": {
+          "md": "a8585dad9da3",
+          "ts": "85d83eb3f640",
+          "lean": "a9ad5d15d76d"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:30.359Z"
+  "updated_at": "2026-07-07T14:26:56.374134Z"
 }

@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/quantum-observable-universes/braiding-induced-ordering.lean"
   },
   "source_hashes": {
-    "md": "b0a02c7679d6",
+    "md": "b4e7dcdda575",
     "ts": "09ca76d12cbe",
     "lean": "6bb31f3d00d1"
   },
@@ -37,14 +37,21 @@
       {
         "result": "pass",
         "notes": "Rewrote seq0. Fused the repetitive lemma blocks into an integrated existence statement. Compressed the meta-narrative about integration and Stokes theorem into direct physical interpretations. Re-wrote the introduction to immediately present the four axioms and their justification.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.823439Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.823439Z"
+        },
+        "field_hash": {
+          "md": "b4e7dcdda575",
+          "ts": "09ca76d12cbe",
+          "lean": "6bb31f3d00d1"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:58.083Z"
+  "updated_at": "2026-07-07T14:26:55.823439Z"
 }

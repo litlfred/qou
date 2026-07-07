@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/organic-chemistry/outro-organic-chemistry.md"
   },
   "source_hashes": {
-    "ts": "f6939f5690c2",
-    "md": "8a9c3fd6fd8b"
+    "md": "17c72296ba8f",
+    "ts": "f6939f5690c2"
   },
   "criteria": {
     "q-usage-regime-detected": [
@@ -130,14 +130,20 @@
       {
         "result": "pass",
         "notes": "Applied Milnor exposition standard (H1-H8) and brevity rules. Shortened sentences, removed editorializing ('surprisingly', 'remarkably'), replaced 'this book' with 'this paper', and maintained Math, markdown, and cross-block consistency.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:54.976821Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.976821Z"
+        },
+        "field_hash": {
+          "md": "17c72296ba8f",
+          "ts": "f6939f5690c2"
         }
       }
     ]
   },
-  "updated_at": "2026-06-01T16:06:38.106Z"
+  "updated_at": "2026-07-07T14:26:54.976821Z"
 }

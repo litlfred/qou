@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum-novelty.md"
   },
   "source_hashes": {
-    "md": "a765ffec1daf",
+    "md": "92abfc0828bd",
     "ts": "1f5c845439a5"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Rewrote fluid-dynamics_seq1.md. Pruned passive phrases. Maintained strict equivalence in Math equations.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.251534Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.251534Z"
+        },
+        "field_hash": {
+          "md": "92abfc0828bd",
+          "ts": "1f5c845439a5"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:55.699Z"
+  "updated_at": "2026-07-07T14:26:56.251534Z"
 }

@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/mass-theory/intro-alpha-k-procedure.md"
   },
   "source_hashes": {
-    "ts": "76ee764b3f14",
-    "md": "1877ef3cf935"
+    "md": "e2e01c6814af",
+    "ts": "76ee764b3f14"
   },
   "criteria": {
     "q-usage-regime-detected": [
@@ -128,14 +128,20 @@
       {
         "result": "pass",
         "notes": "Rewrote prose sections of mass-theory_seq37.md to enforce H1-H8 and milnor-brevity. Preserved all math blocks and original section markers. Ensured linear flow, minimal technical clutter, and short declarative sentences.",
-        "reviewed_at": "2026-07-06T22:49:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.855881Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.855881Z"
+        },
+        "field_hash": {
+          "md": "e2e01c6814af",
+          "ts": "76ee764b3f14"
         }
       }
     ]
   },
-  "updated_at": "2026-06-01T16:06:38.106Z"
+  "updated_at": "2026-07-07T14:26:56.855881Z"
 }

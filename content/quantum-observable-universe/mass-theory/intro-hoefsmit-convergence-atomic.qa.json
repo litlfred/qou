@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/mass-theory/intro-hoefsmit-convergence-atomic.md"
   },
   "source_hashes": {
-    "ts": "92e8f299e433",
-    "md": "2fea2372c9c4"
+    "md": "564af2d1478d",
+    "ts": "92e8f299e433"
   },
   "criteria": {
     "q-usage-regime-detected": [
@@ -130,14 +130,20 @@
       {
         "result": "pass",
         "notes": "Rewrote mass-theory_seq8.md via precise python replacement for Milnor standards: clean declarative prose, no wasted words.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.717016Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.717016Z"
+        },
+        "field_hash": {
+          "md": "564af2d1478d",
+          "ts": "92e8f299e433"
         }
       }
     ]
   },
-  "updated_at": "2026-06-01T16:06:38.106Z"
+  "updated_at": "2026-07-07T14:26:56.717016Z"
 }

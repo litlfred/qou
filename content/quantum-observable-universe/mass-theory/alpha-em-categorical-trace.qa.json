@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/mass-theory/alpha-em-categorical-trace.md"
   },
   "source_hashes": {
-    "md": "d19808aae245",
+    "md": "b1c3fb015fbf",
     "ts": "94f05ee4664f"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
-        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.951757Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.951757Z"
+        },
+        "field_hash": {
+          "md": "b1c3fb015fbf",
+          "ts": "94f05ee4664f"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-07T14:26:56.951757Z"
 }

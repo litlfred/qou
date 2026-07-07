@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/lifting-and-descent/localized-knot-intro.md"
   },
   "source_hashes": {
-    "ts": "acb52cd9694b",
-    "md": "7ec0eec8bcbc"
+    "md": "a84e67339495",
+    "ts": "acb52cd9694b"
   },
   "criteria": {
     "q-usage-regime-detected": [
@@ -128,14 +128,20 @@
       {
         "result": "pass",
         "notes": "Rewrote localized-knot blocks. Converted list block into standard numbered markdown format. Formatted sentences cleanly and declaratively. Maintained strict preservation of original definition block markers.",
-        "reviewed_at": "2026-07-06T23:01:28Z",
+        "reviewed_at": "2026-07-07T14:26:55.705360Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.705360Z"
+        },
+        "field_hash": {
+          "md": "a84e67339495",
+          "ts": "acb52cd9694b"
         }
       }
     ]
   },
-  "updated_at": "2026-06-01T16:06:38.106Z"
+  "updated_at": "2026-07-07T14:26:55.705360Z"
 }

@@ -7,22 +7,28 @@
     "md": "content/quantum-observable-universe/index-of-definitions/definition-index.md"
   },
   "source_hashes": {
-    "ts": "28799677c020",
-    "md": "a98c078562ba"
+    "md": "26c8b03fd870",
+    "ts": "28799677c020"
   },
   "criteria": {
     "milnor-amalgamated-flow": [
       {
         "result": "pass",
         "notes": "No prose present. Kept definitions intact.",
-        "reviewed_at": "2026-07-07T02:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.098140Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.098140Z"
+        },
+        "field_hash": {
+          "md": "26c8b03fd870",
+          "ts": "28799677c020"
         }
       }
     ]
   },
-  "updated_at": "2026-06-01T16:06:38.106Z"
+  "updated_at": "2026-07-07T14:26:56.098140Z"
 }

@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/atom-knot-exists.lean"
   },
   "source_hashes": {
-    "md": "e2343a14966d",
+    "md": "dde701aae249",
     "ts": "080bf3a55a04",
     "lean": "a88417ddfd6c"
   },
@@ -2266,19 +2266,19 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "32bc02a8ea92",
+          "md": "dde701aae249",
           "ts": "080bf3a55a04",
-          "lean": "927381cecd88"
+          "lean": "a88417ddfd6c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.291303Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:19.082Z",
+        "reviewed_at": "2026-07-07T14:26:57.291303Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
       }
@@ -2286,19 +2286,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "32bc02a8ea92",
+          "md": "dde701aae249",
           "ts": "080bf3a55a04",
-          "lean": "927381cecd88"
+          "lean": "a88417ddfd6c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.291303Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:19.457Z",
+        "reviewed_at": "2026-07-07T14:26:57.291303Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -2306,19 +2306,19 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "32bc02a8ea92",
+          "md": "dde701aae249",
           "ts": "080bf3a55a04",
-          "lean": "927381cecd88"
+          "lean": "a88417ddfd6c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.291303Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:19.937Z",
+        "reviewed_at": "2026-07-07T14:26:57.291303Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -2326,19 +2326,19 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "32bc02a8ea92",
+          "md": "dde701aae249",
           "ts": "080bf3a55a04",
-          "lean": "927381cecd88"
+          "lean": "a88417ddfd6c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.291303Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:20.325Z",
+        "reviewed_at": "2026-07-07T14:26:57.291303Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
       }
@@ -2364,7 +2364,7 @@
       },
       {
         "field_hash": {
-          "md": "e2343a14966d",
+          "md": "dde701aae249",
           "ts": "080bf3a55a04",
           "lean": "a88417ddfd6c"
         },
@@ -2372,9 +2372,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.291303Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_at": "2026-07-07T14:26:57.291303Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:atom-knot-exists' \u2192 expected 'atom_knot_exists'; Lean declares: AtomKnot.exists. Structural match via content."
       }
@@ -2382,9 +2384,9 @@
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "32bc02a8ea92",
+          "md": "dde701aae249",
           "ts": "080bf3a55a04",
-          "lean": "927381cecd88"
+          "lean": "a88417ddfd6c"
         },
         "result": "pass",
         "score": {
@@ -2394,11 +2396,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.291303Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:21.016Z",
+        "reviewed_at": "2026-07-07T14:26:57.291303Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
       }
@@ -2406,9 +2408,9 @@
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "32bc02a8ea92",
+          "md": "dde701aae249",
           "ts": "080bf3a55a04",
-          "lean": "927381cecd88"
+          "lean": "a88417ddfd6c"
         },
         "result": "pass",
         "score": {
@@ -2418,11 +2420,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.291303Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:21.346Z",
+        "reviewed_at": "2026-07-07T14:26:57.291303Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
       }
@@ -2430,9 +2432,9 @@
     "proof-rater-novelty": [
       {
         "field_hash": {
-          "md": "32bc02a8ea92",
+          "md": "dde701aae249",
           "ts": "080bf3a55a04",
-          "lean": "927381cecd88"
+          "lean": "a88417ddfd6c"
         },
         "result": "pass",
         "score": {
@@ -2442,11 +2444,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.291303Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:21.779Z",
+        "reviewed_at": "2026-07-07T14:26:57.291303Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
       }
@@ -2454,19 +2456,19 @@
     "proof-statement-integrity": [
       {
         "field_hash": {
-          "md": "32bc02a8ea92",
+          "md": "dde701aae249",
           "ts": "080bf3a55a04",
-          "lean": "927381cecd88"
+          "lean": "a88417ddfd6c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.291303Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:22.178Z",
+        "reviewed_at": "2026-07-07T14:26:57.291303Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
       }
@@ -2474,19 +2476,19 @@
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "32bc02a8ea92",
+          "md": "dde701aae249",
           "ts": "080bf3a55a04",
-          "lean": "927381cecd88"
+          "lean": "a88417ddfd6c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.291303Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:22.626Z",
+        "reviewed_at": "2026-07-07T14:26:57.291303Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
       }
@@ -2494,19 +2496,19 @@
     "proof-no-trivial-true": [
       {
         "field_hash": {
-          "md": "32bc02a8ea92",
+          "md": "dde701aae249",
           "ts": "080bf3a55a04",
-          "lean": "927381cecd88"
+          "lean": "a88417ddfd6c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.291303Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:22.991Z",
+        "reviewed_at": "2026-07-07T14:26:57.291303Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
       }
@@ -2514,19 +2516,19 @@
     "proof-no-false-premise": [
       {
         "field_hash": {
-          "md": "32bc02a8ea92",
+          "md": "dde701aae249",
           "ts": "080bf3a55a04",
-          "lean": "927381cecd88"
+          "lean": "a88417ddfd6c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.291303Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:23.400Z",
+        "reviewed_at": "2026-07-07T14:26:57.291303Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
       }
@@ -2534,19 +2536,19 @@
     "proof-no-unused-hypotheses": [
       {
         "field_hash": {
-          "md": "32bc02a8ea92",
+          "md": "dde701aae249",
           "ts": "080bf3a55a04",
-          "lean": "927381cecd88"
+          "lean": "a88417ddfd6c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.291303Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:23.777Z",
+        "reviewed_at": "2026-07-07T14:26:57.291303Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
       }
@@ -2554,19 +2556,19 @@
     "proof-no-decide-masking": [
       {
         "field_hash": {
-          "md": "32bc02a8ea92",
+          "md": "dde701aae249",
           "ts": "080bf3a55a04",
-          "lean": "927381cecd88"
+          "lean": "a88417ddfd6c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.291303Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:24.158Z",
+        "reviewed_at": "2026-07-07T14:26:57.291303Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
@@ -2574,17 +2576,19 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "32bc02a8ea92",
+          "md": "dde701aae249",
           "ts": "080bf3a55a04",
-          "lean": "927381cecd88"
+          "lean": "a88417ddfd6c"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.291303Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.291303Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The claim in 'Existence of the atom-knot for any (Z, N)' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/atom-knot-exists.lean:17:66: error: unexpected identifier; expected '}'.",
         "severity": "minor",
@@ -2594,17 +2598,19 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "32bc02a8ea92",
+          "md": "dde701aae249",
           "ts": "080bf3a55a04",
-          "lean": "927381cecd88"
+          "lean": "a88417ddfd6c"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.291303Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.291303Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Existence of the atom-knot for any (Z, N)' presents substantial mathematical content: the atom-knot of type $(Z, N)$ exists as a closed braid in $H_{3(Z+N)}(q)$ on the generic locus.",
         "severity": "minor"
@@ -2613,17 +2619,19 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "32bc02a8ea92",
+          "md": "dde701aae249",
           "ts": "080bf3a55a04",
-          "lean": "927381cecd88"
+          "lean": "a88417ddfd6c"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.291303Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.291303Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Existence of the atom-knot for any (Z, N)'.",
         "severity": "minor",
@@ -2633,17 +2641,19 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "32bc02a8ea92",
+          "md": "dde701aae249",
           "ts": "080bf3a55a04",
-          "lean": "927381cecd88"
+          "lean": "a88417ddfd6c"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.291303Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.291303Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose presents 'Existence of the atom-knot for any (Z, N)' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
@@ -2652,17 +2662,19 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "32bc02a8ea92",
+          "md": "dde701aae249",
           "ts": "080bf3a55a04",
-          "lean": "927381cecd88"
+          "lean": "a88417ddfd6c"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.291303Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.291303Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Existence of the atom-knot for any (Z, N)'.",
         "severity": "minor",
@@ -2672,17 +2684,19 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "32bc02a8ea92",
+          "md": "dde701aae249",
           "ts": "080bf3a55a04",
-          "lean": "927381cecd88"
+          "lean": "a88417ddfd6c"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.291303Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.291303Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/atom-knot-exists.lean.",
         "severity": "minor",
@@ -2692,17 +2706,19 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "32bc02a8ea92",
+          "md": "dde701aae249",
           "ts": "080bf3a55a04",
-          "lean": "927381cecd88"
+          "lean": "a88417ddfd6c"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.291303Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.291303Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/atom-knot-exists.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
@@ -2711,17 +2727,19 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "32bc02a8ea92",
+          "md": "dde701aae249",
           "ts": "080bf3a55a04",
-          "lean": "927381cecd88"
+          "lean": "a88417ddfd6c"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.291303Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.291303Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Existence of the atom-knot for any (Z, N)', hence no citation misuse is possible.",
         "severity": "minor",
@@ -2731,17 +2749,19 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "32bc02a8ea92",
+          "md": "dde701aae249",
           "ts": "080bf3a55a04",
-          "lean": "927381cecd88"
+          "lean": "a88417ddfd6c"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.291303Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.291303Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Existence of the atom-knot for any (Z, N)' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -2751,17 +2771,19 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "32bc02a8ea92",
+          "md": "dde701aae249",
           "ts": "080bf3a55a04",
-          "lean": "927381cecd88"
+          "lean": "a88417ddfd6c"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.291303Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.291303Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Existence of the atom-knot for any (Z, N)' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -2771,17 +2793,19 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "32bc02a8ea92",
+          "md": "dde701aae249",
           "ts": "080bf3a55a04",
-          "lean": "927381cecd88"
+          "lean": "a88417ddfd6c"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.291303Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.291303Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Existence of the atom-knot for any (Z, N)' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -2791,17 +2815,19 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "32bc02a8ea92",
+          "md": "dde701aae249",
           "ts": "080bf3a55a04",
-          "lean": "927381cecd88"
+          "lean": "a88417ddfd6c"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.291303Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.291303Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/atom-knot-exists.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
@@ -2811,17 +2837,19 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "32bc02a8ea92",
+          "md": "dde701aae249",
           "ts": "080bf3a55a04",
-          "lean": "927381cecd88"
+          "lean": "a88417ddfd6c"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.291303Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.291303Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/atom-knot-exists.lean fails compilation: content/quantum-observable-universe/particle-interactions/atom-knot-exists.lean:17:66: error: unexpected identifier; expected '}'",
         "severity": "critical",
@@ -2836,5 +2864,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.802Z"
+  "updated_at": "2026-07-07T14:26:57.291303Z"
 }

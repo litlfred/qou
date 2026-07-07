@@ -8,7 +8,7 @@
   },
   "source_hashes": {
     "md": "2935e0f3f444",
-    "ts": "3d611254d644"
+    "ts": "ea780da47a7b"
   },
   "criteria": {
     "voice-status-leak": [
@@ -633,7 +633,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/mass-theory/content-scaling-correspondence.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "quantum-observable-universe/mass-theory/content-scaling-correspondence.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -654,7 +654,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/mass-theory/content-scaling-correspondence.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "quantum-observable-universe/mass-theory/content-scaling-correspondence.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1105,14 +1105,16 @@
       {
         "field_hash": {
           "md": "2935e0f3f444",
-          "ts": "3d611254d644"
+          "ts": "ea780da47a7b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.959208Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.959208Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Statement contains only the bare claim without physical interpretation.",
         "severity": "minor"
@@ -1122,18 +1124,17 @@
       {
         "field_hash": {
           "md": "2935e0f3f444",
-          "ts": "3d611254d644",
-          "lean": "32d1576290aa"
+          "ts": "ea780da47a7b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.959208Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:02.406Z",
+        "reviewed_at": "2026-07-07T14:26:56.959208Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1142,14 +1143,16 @@
       {
         "field_hash": {
           "md": "2935e0f3f444",
-          "ts": "3d611254d644"
+          "ts": "ea780da47a7b"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.959208Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.959208Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The sibling Lean file content/quantum-observable-universe/mass-theory/content-scaling-correspondence.lean is missing entirely.",
         "evidence": "content/quantum-observable-universe/mass-theory/content-scaling-correspondence.md:1",
@@ -1160,18 +1163,17 @@
       {
         "field_hash": {
           "md": "2935e0f3f444",
-          "ts": "3d611254d644",
-          "lean": "32d1576290aa"
+          "ts": "ea780da47a7b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.959208Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:03.116Z",
+        "reviewed_at": "2026-07-07T14:26:56.959208Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
       }
@@ -1253,18 +1255,18 @@
       {
         "field_hash": {
           "md": "2935e0f3f444",
-          "ts": "3d611254d644"
+          "ts": "ea780da47a7b"
         },
         "result": "warn",
-        "notes": "content↔m_j identity clear, but the content→BW scaling-function table (incl. |c|>=3 row T^p(T+1)^p/A^p w/ free exponent p) is asserted, not derived; 1-line proof.",
-        "reviewed_at": "2026-06-25T17:07:14.000Z",
+        "notes": "content\u2194m_j identity clear, but the content\u2192BW scaling-function table (incl. |c|>=3 row T^p(T+1)^p/A^p w/ free exponent p) is asserted, not derived; 1-line proof.",
+        "reviewed_at": "2026-07-07T14:26:56.959208Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.959208Z"
         },
         "score": {
           "max": 1,
@@ -1315,18 +1317,18 @@
       {
         "field_hash": {
           "md": "2935e0f3f444",
-          "ts": "3d611254d644"
+          "ts": "ea780da47a7b"
         },
         "result": "pass",
         "notes": "Goal (q-Schur-Weyl: Young content c=j-i = SU_q(2) magnetic m_j) is standard and well-posed. No Lean.",
-        "reviewed_at": "2026-06-25T17:07:14.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.959208Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.959208Z"
         },
         "score": {
           "max": 1,
@@ -1377,18 +1379,18 @@
       {
         "field_hash": {
           "md": "2935e0f3f444",
-          "ts": "3d611254d644"
+          "ts": "ea780da47a7b"
         },
         "result": "warn",
         "notes": "Mapping Young-content to BW liquid-drop scaling is suggestive but reads as fitted (free p); thin derivation. No Lean.",
-        "reviewed_at": "2026-06-25T17:07:14.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.959208Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.959208Z"
         },
         "score": {
           "max": 1,
@@ -1435,18 +1437,18 @@
       {
         "field_hash": {
           "md": "2935e0f3f444",
-          "ts": "3d611254d644"
+          "ts": "ea780da47a7b"
         },
         "result": "n/a",
         "notes": "No Lean file resolves (lean[] empty); judgment criterion n/a.",
-        "reviewed_at": "2026-06-25T17:06:31.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.959208Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.959208Z"
         }
       }
     ],
@@ -1489,18 +1491,18 @@
       {
         "field_hash": {
           "md": "2935e0f3f444",
-          "ts": "3d611254d644"
+          "ts": "ea780da47a7b"
         },
         "result": "n/a",
         "notes": "No Lean file resolves (lean[] empty); judgment criterion n/a.",
-        "reviewed_at": "2026-06-25T17:06:32.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.959208Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.959208Z"
         }
       }
     ],
@@ -1526,18 +1528,18 @@
       {
         "field_hash": {
           "md": "2935e0f3f444",
-          "ts": "3d611254d644"
+          "ts": "ea780da47a7b"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: no `: True` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/BraidKnot.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.959208Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.959208Z"
         }
       }
     ],
@@ -1580,18 +1582,18 @@
       {
         "field_hash": {
           "md": "2935e0f3f444",
-          "ts": "3d611254d644"
+          "ts": "ea780da47a7b"
         },
         "result": "n/a",
         "notes": "No Lean file resolves (lean[] empty); judgment criterion n/a.",
-        "reviewed_at": "2026-06-25T17:06:32.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.959208Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.959208Z"
         }
       }
     ],
@@ -1634,18 +1636,18 @@
       {
         "field_hash": {
           "md": "2935e0f3f444",
-          "ts": "3d611254d644"
+          "ts": "ea780da47a7b"
         },
         "result": "n/a",
         "notes": "No Lean file resolves (lean[] empty); judgment criterion n/a.",
-        "reviewed_at": "2026-06-25T17:06:32.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.959208Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.959208Z"
         }
       }
     ],
@@ -1671,18 +1673,18 @@
       {
         "field_hash": {
           "md": "2935e0f3f444",
-          "ts": "3d611254d644"
+          "ts": "ea780da47a7b"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/BraidKnot.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.959208Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.959208Z"
         }
       }
     ],
@@ -1690,14 +1692,16 @@
       {
         "field_hash": {
           "md": "2935e0f3f444",
-          "ts": "3d611254d644"
+          "ts": "ea780da47a7b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.959208Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.959208Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/content-scaling-correspondence.ts:1",
@@ -1708,14 +1712,16 @@
       {
         "field_hash": {
           "md": "2935e0f3f444",
-          "ts": "3d611254d644"
+          "ts": "ea780da47a7b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.959208Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.959208Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-vacuous.",
         "severity": "minor"
@@ -1725,14 +1731,16 @@
       {
         "field_hash": {
           "md": "2935e0f3f444",
-          "ts": "3d611254d644"
+          "ts": "ea780da47a7b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.959208Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.959208Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/content-scaling-correspondence.ts:1",
@@ -1743,14 +1751,16 @@
       {
         "field_hash": {
           "md": "2935e0f3f444",
-          "ts": "3d611254d644"
+          "ts": "ea780da47a7b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.959208Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.959208Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
@@ -1760,14 +1770,16 @@
       {
         "field_hash": {
           "md": "2935e0f3f444",
-          "ts": "3d611254d644"
+          "ts": "ea780da47a7b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.959208Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.959208Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/content-scaling-correspondence.ts:1",
@@ -1778,14 +1790,16 @@
       {
         "field_hash": {
           "md": "2935e0f3f444",
-          "ts": "3d611254d644"
+          "ts": "ea780da47a7b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.959208Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.959208Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/content-scaling-correspondence.ts:1",
@@ -1796,14 +1810,16 @@
       {
         "field_hash": {
           "md": "2935e0f3f444",
-          "ts": "3d611254d644"
+          "ts": "ea780da47a7b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.959208Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.959208Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
         "evidence": "content/quantum-observable-universe/mass-theory/content-scaling-correspondence.ts:1",
@@ -1814,14 +1830,16 @@
       {
         "field_hash": {
           "md": "2935e0f3f444",
-          "ts": "3d611254d644"
+          "ts": "ea780da47a7b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.959208Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.959208Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/content-scaling-correspondence.ts:1",
@@ -1832,14 +1850,16 @@
       {
         "field_hash": {
           "md": "2935e0f3f444",
-          "ts": "3d611254d644"
+          "ts": "ea780da47a7b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.959208Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.959208Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/content-scaling-correspondence.ts:1",
@@ -1850,14 +1870,16 @@
       {
         "field_hash": {
           "md": "2935e0f3f444",
-          "ts": "3d611254d644"
+          "ts": "ea780da47a7b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.959208Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.959208Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/content-scaling-correspondence.ts:1",
@@ -1868,14 +1890,16 @@
       {
         "field_hash": {
           "md": "2935e0f3f444",
-          "ts": "3d611254d644"
+          "ts": "ea780da47a7b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.959208Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.959208Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-reproducibility.",
         "severity": "minor"
@@ -1885,14 +1909,16 @@
       {
         "field_hash": {
           "md": "2935e0f3f444",
-          "ts": "3d611254d644"
+          "ts": "ea780da47a7b"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.959208Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.959208Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Referee verdict: open-objection. Objection: Sibling Lean file is missing.",
         "severity": "critical",
@@ -1904,20 +1930,22 @@
       {
         "field_hash": {
           "md": "2935e0f3f444",
-          "ts": "3d611254d644"
+          "ts": "ea780da47a7b"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.959208Z"
         },
-        "reviewed_at": "2026-06-28T10:58:48.602Z",
+        "reviewed_at": "2026-07-07T14:26:56.959208Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The referenced Lean file content/quantum-observable-universe/mass-theory/content-scaling-correspondence.lean is missing, leading to complete divergence.",
         "severity": "minor"
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-07T14:26:56.959208Z"
 }

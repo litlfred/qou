@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/gravity-spacetime/intro-gravity-spacetime-lqg-comparison.md"
   },
   "source_hashes": {
-    "ts": "2771ad1c2b21",
-    "md": "74ae2d118ff2"
+    "md": "9007623a8227",
+    "ts": "2771ad1c2b21"
   },
   "criteria": {
     "q-usage-regime-detected": [
@@ -128,14 +128,20 @@
       {
         "result": "pass",
         "notes": "Smoothed transitions, removed forward references, improved economy, applied concrete-before-abstract.",
-        "reviewed_at": "2026-07-07T02:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.459339Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.459339Z"
+        },
+        "field_hash": {
+          "md": "9007623a8227",
+          "ts": "2771ad1c2b21"
         }
       }
     ]
   },
-  "updated_at": "2026-06-01T16:06:38.106Z"
+  "updated_at": "2026-07-07T14:26:55.459339Z"
 }

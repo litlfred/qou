@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/molecular-construction/symmetric-block-domain-weight.lean"
   },
   "source_hashes": {
-    "md": "0979519b9c12",
+    "md": "f34c2f4f1482",
     "ts": "857d289a856c",
     "lean": "c26fcb11feb2"
   },
@@ -1072,19 +1072,19 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "0c93304b267d",
+          "md": "f34c2f4f1482",
           "ts": "857d289a856c",
-          "lean": "6509d84003b8"
+          "lean": "c26fcb11feb2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.464075Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:25.675Z",
+        "reviewed_at": "2026-07-07T14:26:55.464075Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
       }
@@ -1092,19 +1092,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "0c93304b267d",
+          "md": "f34c2f4f1482",
           "ts": "857d289a856c",
-          "lean": "6509d84003b8"
+          "lean": "c26fcb11feb2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.464075Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:26.042Z",
+        "reviewed_at": "2026-07-07T14:26:55.464075Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1112,19 +1112,19 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "0c93304b267d",
+          "md": "f34c2f4f1482",
           "ts": "857d289a856c",
-          "lean": "6509d84003b8"
+          "lean": "c26fcb11feb2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.464075Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:26.452Z",
+        "reviewed_at": "2026-07-07T14:26:55.464075Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -1132,19 +1132,19 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "0c93304b267d",
+          "md": "f34c2f4f1482",
           "ts": "857d289a856c",
-          "lean": "6509d84003b8"
+          "lean": "c26fcb11feb2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.464075Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:26.922Z",
+        "reviewed_at": "2026-07-07T14:26:55.464075Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
       }
@@ -1152,19 +1152,19 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "0c93304b267d",
+          "md": "f34c2f4f1482",
           "ts": "857d289a856c",
-          "lean": "6509d84003b8"
+          "lean": "c26fcb11feb2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.464075Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:27.284Z",
+        "reviewed_at": "2026-07-07T14:26:55.464075Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
       }
@@ -1172,9 +1172,9 @@
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "0c93304b267d",
+          "md": "f34c2f4f1482",
           "ts": "857d289a856c",
-          "lean": "6509d84003b8"
+          "lean": "c26fcb11feb2"
         },
         "result": "pass",
         "score": {
@@ -1184,11 +1184,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.464075Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:27.606Z",
+        "reviewed_at": "2026-07-07T14:26:55.464075Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
       }
@@ -1196,9 +1196,9 @@
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "0c93304b267d",
+          "md": "f34c2f4f1482",
           "ts": "857d289a856c",
-          "lean": "6509d84003b8"
+          "lean": "c26fcb11feb2"
         },
         "result": "pass",
         "score": {
@@ -1208,11 +1208,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.464075Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:27.989Z",
+        "reviewed_at": "2026-07-07T14:26:55.464075Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
       }
@@ -1220,9 +1220,9 @@
     "proof-rater-novelty": [
       {
         "field_hash": {
-          "md": "0c93304b267d",
+          "md": "f34c2f4f1482",
           "ts": "857d289a856c",
-          "lean": "6509d84003b8"
+          "lean": "c26fcb11feb2"
         },
         "result": "pass",
         "score": {
@@ -1232,11 +1232,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.464075Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:28.354Z",
+        "reviewed_at": "2026-07-07T14:26:55.464075Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
       }
@@ -1244,19 +1244,19 @@
     "proof-statement-integrity": [
       {
         "field_hash": {
-          "md": "0c93304b267d",
+          "md": "f34c2f4f1482",
           "ts": "857d289a856c",
-          "lean": "6509d84003b8"
+          "lean": "c26fcb11feb2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.464075Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:28.763Z",
+        "reviewed_at": "2026-07-07T14:26:55.464075Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
       }
@@ -1264,19 +1264,19 @@
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "0c93304b267d",
+          "md": "f34c2f4f1482",
           "ts": "857d289a856c",
-          "lean": "6509d84003b8"
+          "lean": "c26fcb11feb2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.464075Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:29.210Z",
+        "reviewed_at": "2026-07-07T14:26:55.464075Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
       }
@@ -1284,19 +1284,19 @@
     "proof-no-trivial-true": [
       {
         "field_hash": {
-          "md": "0c93304b267d",
+          "md": "f34c2f4f1482",
           "ts": "857d289a856c",
-          "lean": "6509d84003b8"
+          "lean": "c26fcb11feb2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.464075Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:29.609Z",
+        "reviewed_at": "2026-07-07T14:26:55.464075Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
       }
@@ -1304,19 +1304,19 @@
     "proof-no-false-premise": [
       {
         "field_hash": {
-          "md": "0c93304b267d",
+          "md": "f34c2f4f1482",
           "ts": "857d289a856c",
-          "lean": "6509d84003b8"
+          "lean": "c26fcb11feb2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.464075Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:29.987Z",
+        "reviewed_at": "2026-07-07T14:26:55.464075Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
       }
@@ -1324,19 +1324,19 @@
     "proof-no-unused-hypotheses": [
       {
         "field_hash": {
-          "md": "0c93304b267d",
+          "md": "f34c2f4f1482",
           "ts": "857d289a856c",
-          "lean": "6509d84003b8"
+          "lean": "c26fcb11feb2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.464075Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:30.344Z",
+        "reviewed_at": "2026-07-07T14:26:55.464075Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
       }
@@ -1344,19 +1344,19 @@
     "proof-no-decide-masking": [
       {
         "field_hash": {
-          "md": "0c93304b267d",
+          "md": "f34c2f4f1482",
           "ts": "857d289a856c",
-          "lean": "6509d84003b8"
+          "lean": "c26fcb11feb2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.464075Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:30.719Z",
+        "reviewed_at": "2026-07-07T14:26:55.464075Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
@@ -1364,17 +1364,19 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "0c93304b267d",
+          "md": "f34c2f4f1482",
           "ts": "857d289a856c",
-          "lean": "6509d84003b8"
+          "lean": "c26fcb11feb2"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.464075Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.464075Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The claim in 'Symmetric-block domain weight: lone/bond $= q^2$' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
@@ -1384,17 +1386,19 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "0c93304b267d",
+          "md": "f34c2f4f1482",
           "ts": "857d289a856c",
-          "lean": "6509d84003b8"
+          "lean": "c26fcb11feb2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.464075Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.464075Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Symmetric-block domain weight: lone/bond $= q^2$' presents substantial mathematical content: monoid \u2014 the one-dimensional Wedderburn block that a molecule's $C_{nv}$ assembl...",
         "severity": "minor"
@@ -1403,17 +1407,19 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "0c93304b267d",
+          "md": "f34c2f4f1482",
           "ts": "857d289a856c",
-          "lean": "6509d84003b8"
+          "lean": "c26fcb11feb2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.464075Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.464075Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Symmetric-block domain weight: lone/bond $= q^2$'.",
         "severity": "minor",
@@ -1423,17 +1429,19 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "0c93304b267d",
+          "md": "f34c2f4f1482",
           "ts": "857d289a856c",
-          "lean": "6509d84003b8"
+          "lean": "c26fcb11feb2"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.464075Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.464075Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose presents 'Symmetric-block domain weight: lone/bond $= q^2$' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
@@ -1442,17 +1450,19 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "0c93304b267d",
+          "md": "f34c2f4f1482",
           "ts": "857d289a856c",
-          "lean": "6509d84003b8"
+          "lean": "c26fcb11feb2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.464075Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.464075Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Symmetric-block domain weight: lone/bond $= q^2$'.",
         "severity": "minor",
@@ -1462,17 +1472,19 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "0c93304b267d",
+          "md": "f34c2f4f1482",
           "ts": "857d289a856c",
-          "lean": "6509d84003b8"
+          "lean": "c26fcb11feb2"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.464075Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.464075Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/molecular-construction/symmetric-block-domain-weight.lean.",
         "severity": "minor",
@@ -1482,17 +1494,19 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "0c93304b267d",
+          "md": "f34c2f4f1482",
           "ts": "857d289a856c",
-          "lean": "6509d84003b8"
+          "lean": "c26fcb11feb2"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.464075Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.464075Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/molecular-construction/symmetric-block-domain-weight.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
@@ -1501,17 +1515,19 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "0c93304b267d",
+          "md": "f34c2f4f1482",
           "ts": "857d289a856c",
-          "lean": "6509d84003b8"
+          "lean": "c26fcb11feb2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.464075Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.464075Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No citations are present in 'Symmetric-block domain weight: lone/bond $= q^2$', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1521,17 +1537,19 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "0c93304b267d",
+          "md": "f34c2f4f1482",
           "ts": "857d289a856c",
-          "lean": "6509d84003b8"
+          "lean": "c26fcb11feb2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.464075Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.464075Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Key terms and symbols in 'Symmetric-block domain weight: lone/bond $= q^2$' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1541,17 +1559,19 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "0c93304b267d",
+          "md": "f34c2f4f1482",
           "ts": "857d289a856c",
-          "lean": "6509d84003b8"
+          "lean": "c26fcb11feb2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.464075Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.464075Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The algebraic and logical relations in 'Symmetric-block domain weight: lone/bond $= q^2$' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1561,17 +1581,19 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "0c93304b267d",
+          "md": "f34c2f4f1482",
           "ts": "857d289a856c",
-          "lean": "6509d84003b8"
+          "lean": "c26fcb11feb2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.464075Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.464075Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The physical concepts described in 'Symmetric-block domain weight: lone/bond $= q^2$' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1581,17 +1603,19 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "0c93304b267d",
+          "md": "f34c2f4f1482",
           "ts": "857d289a856c",
-          "lean": "6509d84003b8"
+          "lean": "c26fcb11feb2"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.464075Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.464075Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/molecular-construction/symmetric-block-domain-weight.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
@@ -1601,17 +1625,19 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "0c93304b267d",
+          "md": "f34c2f4f1482",
           "ts": "857d289a856c",
-          "lean": "6509d84003b8"
+          "lean": "c26fcb11feb2"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.464075Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.464075Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/molecular-construction/symmetric-block-domain-weight.lean fails compilation: content/quantum-observable-universe/molecular-construction/symmetric-block-domain-weight.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/BigOperators/Group/List.olean' of module Mathlib.Algebra.BigOperators.Group.List does not exist",
         "verdict": "open-objection",
@@ -1623,14 +1649,21 @@
       {
         "result": "pass",
         "notes": "Rewrote molecular-construction_seq7.md. Fixed prose flow across sections, removed excessive emphasis, standardised on 'we', maintained mathematical exactness while smoothing the text.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.464075Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.464075Z"
+        },
+        "field_hash": {
+          "md": "f34c2f4f1482",
+          "ts": "857d289a856c",
+          "lean": "c26fcb11feb2"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.117Z"
+  "updated_at": "2026-07-07T14:26:55.464075Z"
 }

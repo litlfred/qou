@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/quantum-observable-universes/intro-heisenberg-commutator.md"
   },
   "source_hashes": {
-    "ts": "2a8433c70b81",
-    "md": "e1f8552fc457"
+    "md": "f47c71ce9608",
+    "ts": "2a8433c70b81"
   },
   "criteria": {
     "q-usage-regime-detected": [
@@ -128,14 +128,20 @@
       {
         "result": "pass",
         "notes": "Replaced the philosophical quote with direct geometry. Reduced framing in the intro. Removed parenthetical citations to internal definitions.",
-        "reviewed_at": "2026-07-06T22:46:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.761712Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.761712Z"
+        },
+        "field_hash": {
+          "md": "f47c71ce9608",
+          "ts": "2a8433c70b81"
         }
       }
     ]
   },
-  "updated_at": "2026-06-01T16:06:38.106Z"
+  "updated_at": "2026-07-07T14:26:55.761712Z"
 }

@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/information-theory/vdw-pskew-isolation.lean"
   },
   "source_hashes": {
-    "md": "0cc61108b965",
+    "md": "641e54ef342b",
     "ts": "6dd84e902117",
     "lean": "027a98b7b582"
   },
@@ -37,14 +37,21 @@
       {
         "result": "pass",
         "notes": "Flattened representation theoretic phase boundaries. Streamlined van der Waals isolation logic. Stripped explicit lean block annotations and reference IDs per brevity rules. Condensed bridging text in H-bond boiling sections. Maintained all file markers.",
-        "reviewed_at": "2026-07-06T22:56:32Z",
+        "reviewed_at": "2026-07-07T14:26:55.581747Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.581747Z"
+        },
+        "field_hash": {
+          "md": "641e54ef342b",
+          "ts": "6dd84e902117",
+          "lean": "027a98b7b582"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.008Z"
+  "updated_at": "2026-07-07T14:26:55.581747Z"
 }

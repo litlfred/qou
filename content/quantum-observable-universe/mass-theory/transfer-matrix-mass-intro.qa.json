@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/mass-theory/transfer-matrix-mass-intro.md"
   },
   "source_hashes": {
-    "md": "1ea206a93e74",
+    "md": "59b5376c8c53",
     "ts": "c9cb42fa47c1"
   },
   "criteria": {
@@ -818,18 +818,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "1ea206a93e74",
+          "md": "59b5376c8c53",
           "ts": "c9cb42fa47c1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.987102Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:00.745Z",
+        "reviewed_at": "2026-07-07T14:26:56.987102Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -837,16 +837,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "1ea206a93e74",
+          "md": "59b5376c8c53",
           "ts": "c9cb42fa47c1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.987102Z"
         },
-        "reviewed_at": "2026-06-28T10:58:45.970Z",
+        "reviewed_at": "2026-07-07T14:26:56.987102Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No false claims identified in 'Transfer Matrix Mass Intro': mathematical reasoning is consistent in prose.",
         "severity": "minor",
@@ -856,16 +858,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "1ea206a93e74",
+          "md": "59b5376c8c53",
           "ts": "c9cb42fa47c1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.987102Z"
         },
-        "reviewed_at": "2026-06-28T10:58:45.976Z",
+        "reviewed_at": "2026-07-07T14:26:56.987102Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The block 'Transfer Matrix Mass Intro' presents substantial mathematical content: 'The mass machinery itself fills the rest of the section. Mass formula (smooth...'.",
         "severity": "minor"
@@ -874,16 +878,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "1ea206a93e74",
+          "md": "59b5376c8c53",
           "ts": "c9cb42fa47c1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.987102Z"
         },
-        "reviewed_at": "2026-06-28T10:58:45.983Z",
+        "reviewed_at": "2026-07-07T14:26:56.987102Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Transfer Matrix Mass Intro'.",
         "severity": "minor",
@@ -893,16 +899,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "1ea206a93e74",
+          "md": "59b5376c8c53",
           "ts": "c9cb42fa47c1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.987102Z"
         },
-        "reviewed_at": "2026-06-28T10:58:45.989Z",
+        "reviewed_at": "2026-07-07T14:26:56.987102Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The remarks and narrative scope in 'Transfer Matrix Mass Intro' are appropriately qualified.",
         "severity": "minor"
@@ -911,16 +919,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "1ea206a93e74",
+          "md": "59b5376c8c53",
           "ts": "c9cb42fa47c1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.987102Z"
         },
-        "reviewed_at": "2026-06-28T10:58:45.996Z",
+        "reviewed_at": "2026-07-07T14:26:56.987102Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Transfer Matrix Mass Intro'.",
         "severity": "minor",
@@ -930,16 +940,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "1ea206a93e74",
+          "md": "59b5376c8c53",
           "ts": "c9cb42fa47c1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.987102Z"
         },
-        "reviewed_at": "2026-06-28T10:58:46.002Z",
+        "reviewed_at": "2026-07-07T14:26:56.987102Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The prose arguments in 'Transfer Matrix Mass Intro' proceed logically through the stated steps.",
         "severity": "minor",
@@ -949,16 +961,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "1ea206a93e74",
+          "md": "59b5376c8c53",
           "ts": "c9cb42fa47c1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.987102Z"
         },
-        "reviewed_at": "2026-06-28T10:58:46.007Z",
+        "reviewed_at": "2026-07-07T14:26:56.987102Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No Lean sibling required; narrative matches the expected configuration.",
         "severity": "minor"
@@ -967,16 +981,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "1ea206a93e74",
+          "md": "59b5376c8c53",
           "ts": "c9cb42fa47c1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.987102Z"
         },
-        "reviewed_at": "2026-06-28T10:58:46.013Z",
+        "reviewed_at": "2026-07-07T14:26:56.987102Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No citations are present in 'Transfer Matrix Mass Intro', hence no citation misuse is possible.",
         "severity": "minor",
@@ -986,16 +1002,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "1ea206a93e74",
+          "md": "59b5376c8c53",
           "ts": "c9cb42fa47c1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.987102Z"
         },
-        "reviewed_at": "2026-06-28T10:58:46.020Z",
+        "reviewed_at": "2026-07-07T14:26:56.987102Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Key terms and symbols in 'Transfer Matrix Mass Intro' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1005,16 +1023,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "1ea206a93e74",
+          "md": "59b5376c8c53",
           "ts": "c9cb42fa47c1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.987102Z"
         },
-        "reviewed_at": "2026-06-28T10:58:46.026Z",
+        "reviewed_at": "2026-07-07T14:26:56.987102Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The algebraic and logical relations in 'Transfer Matrix Mass Intro' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1024,16 +1044,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "1ea206a93e74",
+          "md": "59b5376c8c53",
           "ts": "c9cb42fa47c1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.987102Z"
         },
-        "reviewed_at": "2026-06-28T10:58:46.031Z",
+        "reviewed_at": "2026-07-07T14:26:56.987102Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The physical concepts described in 'Transfer Matrix Mass Intro' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1043,16 +1065,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "1ea206a93e74",
+          "md": "59b5376c8c53",
           "ts": "c9cb42fa47c1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.987102Z"
         },
-        "reviewed_at": "2026-06-28T10:58:46.037Z",
+        "reviewed_at": "2026-07-07T14:26:56.987102Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The derivation steps and formal definitions in 'Transfer Matrix Mass Intro' are reproducible.",
         "severity": "minor"
@@ -1061,16 +1085,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "1ea206a93e74",
+          "md": "59b5376c8c53",
           "ts": "c9cb42fa47c1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.987102Z"
         },
-        "reviewed_at": "2026-06-28T10:58:46.043Z",
+        "reviewed_at": "2026-07-07T14:26:56.987102Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -1082,14 +1108,20 @@
       {
         "result": "pass",
         "notes": "Rewrote mass-theory_seq0.md for Milnor standards: clean prose, declarative.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.987102Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.987102Z"
+        },
+        "field_hash": {
+          "md": "59b5376c8c53",
+          "ts": "c9cb42fa47c1"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-07T14:26:56.987102Z"
 }

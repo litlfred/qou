@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/fluid-dynamics/p5-counterexample.lean"
   },
   "source_hashes": {
-    "md": "c263b087c198",
+    "md": "e6dd2e40f32c",
     "ts": "77beb45ac355",
     "lean": "06c19b0ea1ad"
   },
@@ -898,14 +898,21 @@
       {
         "result": "pass",
         "notes": "Smoothed transitions, applied concrete-before-abstract, removed forward references.",
-        "reviewed_at": "2026-07-07T02:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.243837Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.243837Z"
+        },
+        "field_hash": {
+          "md": "e6dd2e40f32c",
+          "ts": "77beb45ac355",
+          "lean": "06c19b0ea1ad"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-07T14:26:56.243837Z"
 }

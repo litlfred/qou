@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.md"
   },
   "source_hashes": {
-    "md": "4fbc1842acaa",
+    "md": "994291ab3056",
     "ts": "336c9b3f19d3"
   },
   "criteria": {
@@ -1031,18 +1031,18 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "4fbc1842acaa",
+          "md": "994291ab3056",
           "ts": "336c9b3f19d3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.245846Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:46.312Z",
+        "reviewed_at": "2026-07-07T14:26:56.245846Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
       }
@@ -1050,18 +1050,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "4fbc1842acaa",
+          "md": "994291ab3056",
           "ts": "336c9b3f19d3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.245846Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:46.756Z",
+        "reviewed_at": "2026-07-07T14:26:56.245846Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1069,18 +1069,18 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "4fbc1842acaa",
+          "md": "994291ab3056",
           "ts": "336c9b3f19d3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.245846Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:47.150Z",
+        "reviewed_at": "2026-07-07T14:26:56.245846Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -1088,18 +1088,18 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "4fbc1842acaa",
+          "md": "994291ab3056",
           "ts": "336c9b3f19d3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.245846Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:47.520Z",
+        "reviewed_at": "2026-07-07T14:26:56.245846Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
       }
@@ -1178,19 +1178,19 @@
       },
       {
         "field_hash": {
-          "md": "4fbc1842acaa",
+          "md": "994291ab3056",
           "ts": "336c9b3f19d3"
         },
         "result": "pass",
         "notes": ".md gives full Kummer-sequence + divisibility argument; Lean derives (i)/(ii) with clear tactic proof.",
-        "reviewed_at": "2026-06-25T16:51:53.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.245846Z",
         "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.245846Z"
         },
         "score": {
           "max": 1,
@@ -1239,19 +1239,19 @@
       },
       {
         "field_hash": {
-          "md": "4fbc1842acaa",
+          "md": "994291ab3056",
           "ts": "336c9b3f19d3"
         },
         "result": "pass",
         "notes": "Goal (Kummer obstruction persists at infinitely many levels n not dividing chi(A)) substantive and well-posed.",
-        "reviewed_at": "2026-06-25T16:51:53.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.245846Z",
         "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.245846Z"
         },
         "score": {
           "max": 1,
@@ -1300,19 +1300,19 @@
       },
       {
         "field_hash": {
-          "md": "4fbc1842acaa",
+          "md": "994291ab3056",
           "ts": "336c9b3f19d3"
         },
         "result": "pass",
         "notes": "Real result: obstruction non-vanishing through infinite Kummer tower; Lean proves the unboundedness lemma outright.",
-        "reviewed_at": "2026-06-25T16:51:53.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.245846Z",
         "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.245846Z"
         },
         "score": {
           "max": 1,
@@ -1357,19 +1357,19 @@
       },
       {
         "field_hash": {
-          "md": "4fbc1842acaa",
+          "md": "994291ab3056",
           "ts": "336c9b3f19d3"
         },
         "result": "pass",
         "notes": "Faithful: derives (i) contrapositive of kappa_iff_dvd, PROVES (ii) via Int.le_of_dvd+omega, (iii) restates hyp; no sorry; non-degenerate conditional-class.",
-        "reviewed_at": "2026-06-25T16:51:53.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.245846Z",
         "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.245846Z"
         }
       }
     ],
@@ -1410,19 +1410,19 @@
       },
       {
         "field_hash": {
-          "md": "4fbc1842acaa",
+          "md": "994291ab3056",
           "ts": "336c9b3f19d3"
         },
         "result": "pass",
         "notes": "Not a projection: (i) is .mp+contradiction, (ii) genuine integer-arithmetic proof (natAbs+N+1 > |chi|); only (iii) restates a field.",
-        "reviewed_at": "2026-06-25T16:51:53.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.245846Z",
         "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.245846Z"
         }
       }
     ],
@@ -1446,19 +1446,19 @@
       },
       {
         "field_hash": {
-          "md": "4fbc1842acaa",
+          "md": "994291ab3056",
           "ts": "336c9b3f19d3"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: no `: True` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/FluidDynamics/ns_kummer_specialisation.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.245846Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.245846Z"
         }
       }
     ],
@@ -1499,19 +1499,19 @@
       },
       {
         "field_hash": {
-          "md": "4fbc1842acaa",
+          "md": "994291ab3056",
           "ts": "336c9b3f19d3"
         },
         "result": "pass",
         "notes": "Hypotheses (chi_A != 0; vanish-iff-divides) satisfiable, e.g. chi_A=-6; no contradiction.",
-        "reviewed_at": "2026-06-25T16:51:53.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.245846Z",
         "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.245846Z"
         }
       }
     ],
@@ -1552,19 +1552,19 @@
       },
       {
         "field_hash": {
-          "md": "4fbc1842acaa",
+          "md": "994291ab3056",
           "ts": "336c9b3f19d3"
         },
         "result": "pass",
         "notes": "Both fields used: kappa_iff_dvd (i)+(iii), chi_A_ne_zero (ii via abs_pos). All consumed.",
-        "reviewed_at": "2026-06-25T16:51:53.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.245846Z",
         "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.245846Z"
         }
       }
     ],
@@ -1588,34 +1588,36 @@
       },
       {
         "field_hash": {
-          "md": "4fbc1842acaa",
+          "md": "994291ab3056",
           "ts": "336c9b3f19d3"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/FluidDynamics/ns_kummer_specialisation.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.245846Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.245846Z"
         }
       }
     ],
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "4fbc1842acaa",
+          "md": "994291ab3056",
           "ts": "336c9b3f19d3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.245846Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.245846Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No false claims identified in 'Kummer specialisation: the NS obstruction survives $q = 1$ for $\\\\gcd(\\\\chi(A), n) \\\\neq n$': mathematical reasoning is consistent.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.ts:1",
@@ -1625,15 +1627,17 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "4fbc1842acaa",
+          "md": "994291ab3056",
           "ts": "336c9b3f19d3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.245846Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.245846Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The block 'Kummer specialisation: the NS obstruction survives $q = 1$ for $\\\\gcd(\\\\chi(A), n) \\\\neq n$' presents substantial mathematical content: Let $(\\mathbf{C}, A, \\tau)$ be a QOU with $\\kappa_0 = e(\\xi) \\in H^2(\\mathcal{S}...",
         "severity": "minor"
@@ -1642,15 +1646,17 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "4fbc1842acaa",
+          "md": "994291ab3056",
           "ts": "336c9b3f19d3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.245846Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.245846Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Kummer specialisation: the NS obstruction survives $q = 1$ for $\\\\gcd(\\\\chi(A), n) \\\\neq n$'.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.ts:1",
@@ -1660,15 +1666,17 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "4fbc1842acaa",
+          "md": "994291ab3056",
           "ts": "336c9b3f19d3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.245846Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.245846Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No overclaims: the scope of 'Kummer specialisation: the NS obstruction survives $q = 1$ for $\\\\gcd(\\\\chi(A), n) \\\\neq n$' is appropriately qualified.",
         "severity": "minor"
@@ -1677,15 +1685,17 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "4fbc1842acaa",
+          "md": "994291ab3056",
           "ts": "336c9b3f19d3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.245846Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.245846Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Kummer specialisation: the NS obstruction survives $q = 1$ for $\\\\gcd(\\\\chi(A), n) \\\\neq n$'.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.ts:1",
@@ -1695,15 +1705,17 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "4fbc1842acaa",
+          "md": "994291ab3056",
           "ts": "336c9b3f19d3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.245846Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.245846Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The argument flow in 'Kummer specialisation: the NS obstruction survives $q = 1$ for $\\\\gcd(\\\\chi(A), n) \\\\neq n$' is logically sound, mapping onto the cited dependencies.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.ts:1",
@@ -1713,15 +1725,17 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "4fbc1842acaa",
+          "md": "994291ab3056",
           "ts": "336c9b3f19d3"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.245846Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.245846Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The referenced Lean file content/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.lean is missing, leading to complete divergence.",
         "severity": "minor"
@@ -1730,15 +1744,17 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "4fbc1842acaa",
+          "md": "994291ab3056",
           "ts": "336c9b3f19d3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.245846Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.245846Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No citations are present in 'Kummer specialisation: the NS obstruction survives $q = 1$ for $\\\\gcd(\\\\chi(A), n) \\\\neq n$', hence no citation misuse is possible.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.ts:1",
@@ -1748,15 +1764,17 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "4fbc1842acaa",
+          "md": "994291ab3056",
           "ts": "336c9b3f19d3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.245846Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.245846Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Key terms and symbols in 'Kummer specialisation: the NS obstruction survives $q = 1$ for $\\\\gcd(\\\\chi(A), n) \\\\neq n$' are mathematically defined and unambiguous.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.ts:1",
@@ -1766,15 +1784,17 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "4fbc1842acaa",
+          "md": "994291ab3056",
           "ts": "336c9b3f19d3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.245846Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.245846Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The algebraic and logical relations in 'Kummer specialisation: the NS obstruction survives $q = 1$ for $\\\\gcd(\\\\chi(A), n) \\\\neq n$' are independent of empirical tuning parameters.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.ts:1",
@@ -1784,15 +1804,17 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "4fbc1842acaa",
+          "md": "994291ab3056",
           "ts": "336c9b3f19d3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.245846Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.245846Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The physical concepts described in 'Kummer specialisation: the NS obstruction survives $q = 1$ for $\\\\gcd(\\\\chi(A), n) \\\\neq n$' are consistent with quantum observable mechanics.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.ts:1",
@@ -1802,15 +1824,17 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "4fbc1842acaa",
+          "md": "994291ab3056",
           "ts": "336c9b3f19d3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.245846Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.245846Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The derivation steps and formal definitions in 'Kummer specialisation: the NS obstruction survives $q = 1$ for $\\\\gcd(\\\\chi(A), n) \\\\neq n$' are reproducible.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.ts:1",
@@ -1820,15 +1844,17 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "4fbc1842acaa",
+          "md": "994291ab3056",
           "ts": "336c9b3f19d3"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.245846Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.245846Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.lean is missing.",
         "verdict": "open-objection",
@@ -1840,14 +1866,20 @@
       {
         "result": "pass",
         "notes": "Rewrote fluid-dynamics_seq5.md. Enforced Economy, Concrete before Abstract, Why precedes What. Preserved markers.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.245846Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.245846Z"
+        },
+        "field_hash": {
+          "md": "994291ab3056",
+          "ts": "336c9b3f19d3"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:55.699Z"
+  "updated_at": "2026-07-07T14:26:56.245846Z"
 }

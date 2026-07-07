@@ -7,23 +7,25 @@
     "md": "../qou/content/quantum-observable-universe/observations/sdp-regime-switch-interpretation.md"
   },
   "source_hashes": {
-    "md": "6bb263e8e923",
+    "md": "46750c9702ac",
     "ts": "7ea9ac405871"
   },
   "criteria": {
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "6bb263e8e923",
+          "md": "46750c9702ac",
           "ts": "7ea9ac405871"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-22",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.574861Z"
         },
-        "reviewed_at": "2026-06-28T22:26:06.236Z",
+        "reviewed_at": "2026-07-07T14:26:56.574861Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes basic QA."
       }
@@ -31,16 +33,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "6bb263e8e923",
+          "md": "46750c9702ac",
           "ts": "7ea9ac405871"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-22",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.574861Z"
         },
-        "reviewed_at": "2026-06-28T22:26:06.236Z",
+        "reviewed_at": "2026-07-07T14:26:56.574861Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes basic QA."
       }
@@ -48,16 +52,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "6bb263e8e923",
+          "md": "46750c9702ac",
           "ts": "7ea9ac405871"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-22",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.574861Z"
         },
-        "reviewed_at": "2026-06-28T22:26:06.236Z",
+        "reviewed_at": "2026-07-07T14:26:56.574861Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes basic QA."
       }
@@ -65,16 +71,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "6bb263e8e923",
+          "md": "46750c9702ac",
           "ts": "7ea9ac405871"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-22",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.574861Z"
         },
-        "reviewed_at": "2026-06-28T22:26:06.236Z",
+        "reviewed_at": "2026-07-07T14:26:56.574861Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes basic QA."
       }
@@ -82,16 +90,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "6bb263e8e923",
+          "md": "46750c9702ac",
           "ts": "7ea9ac405871"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-22",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.574861Z"
         },
-        "reviewed_at": "2026-06-28T22:26:06.236Z",
+        "reviewed_at": "2026-07-07T14:26:56.574861Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes basic QA."
       }
@@ -99,16 +109,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "6bb263e8e923",
+          "md": "46750c9702ac",
           "ts": "7ea9ac405871"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-22",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.574861Z"
         },
-        "reviewed_at": "2026-06-28T22:26:06.236Z",
+        "reviewed_at": "2026-07-07T14:26:56.574861Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes basic QA."
       }
@@ -116,16 +128,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "6bb263e8e923",
+          "md": "46750c9702ac",
           "ts": "7ea9ac405871"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-22",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.574861Z"
         },
-        "reviewed_at": "2026-06-28T22:26:06.236Z",
+        "reviewed_at": "2026-07-07T14:26:56.574861Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes basic QA."
       }
@@ -133,16 +147,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "6bb263e8e923",
+          "md": "46750c9702ac",
           "ts": "7ea9ac405871"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-22",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.574861Z"
         },
-        "reviewed_at": "2026-06-28T22:26:06.236Z",
+        "reviewed_at": "2026-07-07T14:26:56.574861Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes basic QA."
       }
@@ -150,16 +166,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "6bb263e8e923",
+          "md": "46750c9702ac",
           "ts": "7ea9ac405871"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-22",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.574861Z"
         },
-        "reviewed_at": "2026-06-28T22:26:06.236Z",
+        "reviewed_at": "2026-07-07T14:26:56.574861Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes basic QA."
       }
@@ -167,16 +185,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "6bb263e8e923",
+          "md": "46750c9702ac",
           "ts": "7ea9ac405871"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-22",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.574861Z"
         },
-        "reviewed_at": "2026-06-28T22:26:06.236Z",
+        "reviewed_at": "2026-07-07T14:26:56.574861Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes basic QA."
       }
@@ -184,16 +204,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "6bb263e8e923",
+          "md": "46750c9702ac",
           "ts": "7ea9ac405871"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-22",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.574861Z"
         },
-        "reviewed_at": "2026-06-28T22:26:06.236Z",
+        "reviewed_at": "2026-07-07T14:26:56.574861Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes basic QA."
       }
@@ -201,16 +223,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "6bb263e8e923",
+          "md": "46750c9702ac",
           "ts": "7ea9ac405871"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-22",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.574861Z"
         },
-        "reviewed_at": "2026-06-28T22:26:06.236Z",
+        "reviewed_at": "2026-07-07T14:26:56.574861Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes basic QA."
       }
@@ -218,16 +242,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "6bb263e8e923",
+          "md": "46750c9702ac",
           "ts": "7ea9ac405871"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-22",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.574861Z"
         },
-        "reviewed_at": "2026-06-28T22:26:06.236Z",
+        "reviewed_at": "2026-07-07T14:26:56.574861Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes basic QA."
       }
@@ -235,16 +261,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "6bb263e8e923",
+          "md": "46750c9702ac",
           "ts": "7ea9ac405871"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-22",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.574861Z"
         },
-        "reviewed_at": "2026-06-28T22:26:06.236Z",
+        "reviewed_at": "2026-07-07T14:26:56.574861Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes basic QA."
       }
@@ -273,14 +301,20 @@
       {
         "result": "pass",
         "notes": "Rewrote observations_seq13.md. Standardized list styles, cleaned up physics/math descriptions to be concise and direct.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.574861Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.574861Z"
+        },
+        "field_hash": {
+          "md": "46750c9702ac",
+          "ts": "7ea9ac405871"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.226Z"
+  "updated_at": "2026-07-07T14:26:56.574861Z"
 }

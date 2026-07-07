@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/mass-theory/gs-spectral-decomposition-existence.md"
   },
   "source_hashes": {
-    "md": "dbe2247887e5",
+    "md": "a70e109e2759",
     "ts": "e08cbdf1f4a6"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Rewrote seq16 to enforce Milnor economy and structural clarity. Removed unnecessary framing and meta-discussions about effort ('very large' per the audit, etc.). Formatted Lean status updates into concise reports. Checked math preservation.",
-        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.892708Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.892708Z"
+        },
+        "field_hash": {
+          "md": "a70e109e2759",
+          "ts": "e08cbdf1f4a6"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-07T14:26:56.892708Z"
 }

@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/predicted-spectra/q-value-transition.lean"
   },
   "source_hashes": {
-    "md": "16acf64e586b",
+    "md": "b19eb9cfad25",
     "ts": "00604b8866e5",
     "lean": "eba278470526"
   },
@@ -877,17 +877,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "bbaad392d50a",
-          "ts": "a585fe48577f",
-          "lean": "23be3fc94f82"
+          "md": "b19eb9cfad25",
+          "ts": "00604b8866e5",
+          "lean": "eba278470526"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.393591Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.393591Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Block placement and kind 'definition' match validated structurally.",
         "severity": "minor"
@@ -896,17 +898,19 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "bbaad392d50a",
-          "ts": "a585fe48577f",
-          "lean": "23be3fc94f82"
+          "md": "b19eb9cfad25",
+          "ts": "00604b8866e5",
+          "lean": "eba278470526"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.393591Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.393591Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling fails compilation, preventing statement verification: content/quantum-observable-universe/predicted-spectra/q-value-transition.lean:91:61: error: mod_cast has type",
         "severity": "minor"
@@ -915,17 +919,19 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "bbaad392d50a",
-          "ts": "a585fe48577f",
-          "lean": "23be3fc94f82"
+          "md": "b19eb9cfad25",
+          "ts": "00604b8866e5",
+          "lean": "eba278470526"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.393591Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.393591Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The mathematical claims in '$\\\\mathcal{Q}_q$-Value as Categorical Action Difference' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/predicted-spectra/q-value-transition.lean:91:61: error: mod_cast has type.",
         "severity": "minor",
@@ -935,17 +941,19 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "bbaad392d50a",
-          "ts": "a585fe48577f",
-          "lean": "23be3fc94f82"
+          "md": "b19eb9cfad25",
+          "ts": "00604b8866e5",
+          "lean": "eba278470526"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.393591Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.393591Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/q-value-transition.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "minor",
@@ -955,17 +963,19 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "bbaad392d50a",
-          "ts": "a585fe48577f",
-          "lean": "23be3fc94f82"
+          "md": "b19eb9cfad25",
+          "ts": "00604b8866e5",
+          "lean": "eba278470526"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.393591Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.393591Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in '$\\\\mathcal{Q}_q$-Value as Categorical Action Difference'.",
         "severity": "minor",
@@ -975,17 +985,19 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "bbaad392d50a",
-          "ts": "a585fe48577f",
-          "lean": "23be3fc94f82"
+          "md": "b19eb9cfad25",
+          "ts": "00604b8866e5",
+          "lean": "eba278470526"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.393591Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.393591Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The remarks and narrative scope in '$\\\\mathcal{Q}_q$-Value as Categorical Action Difference' are appropriately qualified.",
         "severity": "minor"
@@ -994,17 +1006,19 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "bbaad392d50a",
-          "ts": "a585fe48577f",
-          "lean": "23be3fc94f82"
+          "md": "b19eb9cfad25",
+          "ts": "00604b8866e5",
+          "lean": "eba278470526"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.393591Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.393591Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in '$\\\\mathcal{Q}_q$-Value as Categorical Action Difference'.",
         "severity": "minor",
@@ -1014,17 +1028,19 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "bbaad392d50a",
-          "ts": "a585fe48577f",
-          "lean": "23be3fc94f82"
+          "md": "b19eb9cfad25",
+          "ts": "00604b8866e5",
+          "lean": "eba278470526"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.393591Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.393591Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/predicted-spectra/q-value-transition.lean.",
         "severity": "minor",
@@ -1034,17 +1050,19 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "bbaad392d50a",
-          "ts": "a585fe48577f",
-          "lean": "23be3fc94f82"
+          "md": "b19eb9cfad25",
+          "ts": "00604b8866e5",
+          "lean": "eba278470526"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.393591Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.393591Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/q-value-transition.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
@@ -1053,17 +1071,19 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "bbaad392d50a",
-          "ts": "a585fe48577f",
-          "lean": "23be3fc94f82"
+          "md": "b19eb9cfad25",
+          "ts": "00604b8866e5",
+          "lean": "eba278470526"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.393591Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.393591Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in '$\\\\mathcal{Q}_q$-Value as Categorical Action Difference', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1073,17 +1093,19 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "bbaad392d50a",
-          "ts": "a585fe48577f",
-          "lean": "23be3fc94f82"
+          "md": "b19eb9cfad25",
+          "ts": "00604b8866e5",
+          "lean": "eba278470526"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.393591Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.393591Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in '$\\\\mathcal{Q}_q$-Value as Categorical Action Difference' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1093,17 +1115,19 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "bbaad392d50a",
-          "ts": "a585fe48577f",
-          "lean": "23be3fc94f82"
+          "md": "b19eb9cfad25",
+          "ts": "00604b8866e5",
+          "lean": "eba278470526"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.393591Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.393591Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in '$\\\\mathcal{Q}_q$-Value as Categorical Action Difference' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1113,17 +1137,19 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "bbaad392d50a",
-          "ts": "a585fe48577f",
-          "lean": "23be3fc94f82"
+          "md": "b19eb9cfad25",
+          "ts": "00604b8866e5",
+          "lean": "eba278470526"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.393591Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.393591Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in '$\\\\mathcal{Q}_q$-Value as Categorical Action Difference' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1133,17 +1159,19 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "bbaad392d50a",
-          "ts": "a585fe48577f",
-          "lean": "23be3fc94f82"
+          "md": "b19eb9cfad25",
+          "ts": "00604b8866e5",
+          "lean": "eba278470526"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.393591Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.393591Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/q-value-transition.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
@@ -1153,17 +1181,19 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "bbaad392d50a",
-          "ts": "a585fe48577f",
-          "lean": "23be3fc94f82"
+          "md": "b19eb9cfad25",
+          "ts": "00604b8866e5",
+          "lean": "eba278470526"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.393591Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.393591Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/q-value-transition.lean fails compilation.",
         "severity": "major",
@@ -1174,7 +1204,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "16acf64e586b",
+          "md": "b19eb9cfad25",
           "ts": "00604b8866e5",
           "lean": "eba278470526"
         },
@@ -1182,9 +1212,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.393591Z"
         },
-        "reviewed_at": "2026-07-06T04:41:30.359Z",
+        "reviewed_at": "2026-07-07T14:26:56.393591Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'def:Q-value-transition' \u2192 expected 'Q_value_transition'; Lean declares: QqValue, QqValue.value, QAnomaly, hbar_q', delta_q_eff.... Structural match via content."
       }
@@ -1193,14 +1225,21 @@
       {
         "result": "pass",
         "notes": "Rewrote prose blocks to adhere to Milnor standards. Improved economy, preserved all math.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.393591Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.393591Z"
+        },
+        "field_hash": {
+          "md": "b19eb9cfad25",
+          "ts": "00604b8866e5",
+          "lean": "eba278470526"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:30.359Z"
+  "updated_at": "2026-07-07T14:26:56.393591Z"
 }

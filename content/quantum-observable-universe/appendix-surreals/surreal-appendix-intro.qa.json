@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/appendix-surreals/surreal-appendix-intro.md"
   },
   "source_hashes": {
-    "md": "e9e4425c9e82",
+    "md": "bb8899d2b12e",
     "ts": "08defa39e281"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Rewrote introductory surreal sections. Removed passive voice, replaced references to 'the main paper' with 'this paper', and eliminated subjective phrasing like 'a substantial list'.",
-        "reviewed_at": "2026-07-06T22:47:14Z",
+        "reviewed_at": "2026-07-07T14:26:56.087835Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.087835Z"
+        },
+        "field_hash": {
+          "md": "bb8899d2b12e",
+          "ts": "08defa39e281"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:55.206Z"
+  "updated_at": "2026-07-07T14:26:56.087835Z"
 }

@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.lean"
   },
   "source_hashes": {
-    "md": "1444b7b14067",
+    "md": "0652a24edf97",
     "ts": "038c8f53fedb",
     "lean": "19294c152ec2"
   },
@@ -2210,17 +2210,19 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "0e772640ff09",
+          "md": "0652a24edf97",
           "ts": "038c8f53fedb",
-          "lean": "b9a66a7f4f53"
+          "lean": "19294c152ec2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.182436Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.182436Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The statement is written in standard scholarly mathematical and physics voice.",
         "severity": "minor"
@@ -2229,17 +2231,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "0e772640ff09",
+          "md": "0652a24edf97",
           "ts": "038c8f53fedb",
-          "lean": "b9a66a7f4f53"
+          "lean": "19294c152ec2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.182436Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.182436Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Block placement and kind 'proposition' match validated structurally.",
         "severity": "minor"
@@ -2248,17 +2252,19 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "0e772640ff09",
+          "md": "0652a24edf97",
           "ts": "038c8f53fedb",
-          "lean": "b9a66a7f4f53"
+          "lean": "19294c152ec2"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.182436Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.182436Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling fails compilation, preventing statement verification: content/quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.lean:12:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Tactic/Omega.olean' of module Mathlib.Tactic.Omega does not exist",
         "severity": "minor"
@@ -2267,17 +2273,19 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "0e772640ff09",
+          "md": "0652a24edf97",
           "ts": "038c8f53fedb",
-          "lean": "b9a66a7f4f53"
+          "lean": "19294c152ec2"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.182436Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.182436Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Lean proof contains compilation errors.",
         "severity": "minor"
@@ -2303,7 +2311,7 @@
       },
       {
         "field_hash": {
-          "md": "1444b7b14067",
+          "md": "0652a24edf97",
           "ts": "038c8f53fedb",
           "lean": "19294c152ec2"
         },
@@ -2311,9 +2319,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.182436Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_at": "2026-07-07T14:26:57.182436Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:lepton-meson-torus-knot-dictionary' \u2192 expected 'lepton_meson_torus_knot_dictionary'; Lean declares: leptonTorusKnotIndex, mesonCrossingCount, lepton_meson_crossing_match, meson_crossing_is_sum. Structural match via content."
       }
@@ -2321,17 +2331,19 @@
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "0e772640ff09",
+          "md": "0652a24edf97",
           "ts": "038c8f53fedb",
-          "lean": "b9a66a7f4f53"
+          "lean": "19294c152ec2"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.182436Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.182436Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Lean code is broken and does not compile, hence strategy is opaque.",
         "severity": "minor"
@@ -2340,17 +2352,19 @@
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "0e772640ff09",
+          "md": "0652a24edf97",
           "ts": "038c8f53fedb",
-          "lean": "b9a66a7f4f53"
+          "lean": "19294c152ec2"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.182436Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.182436Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Proof does not compile due to compilation errors: content/quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.lean:12:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Tactic/Omega.olean' of module Mathlib.Tactic.Omega does not exist",
         "severity": "minor"
@@ -2359,17 +2373,19 @@
     "proof-rater-novelty": [
       {
         "field_hash": {
-          "md": "0e772640ff09",
+          "md": "0652a24edf97",
           "ts": "038c8f53fedb",
-          "lean": "b9a66a7f4f53"
+          "lean": "19294c152ec2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.182436Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.182436Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The mathematical and physical connections explored in this block are highly novel.",
         "severity": "minor"
@@ -2378,17 +2394,19 @@
     "proof-statement-integrity": [
       {
         "field_hash": {
-          "md": "0e772640ff09",
+          "md": "0652a24edf97",
           "ts": "038c8f53fedb",
-          "lean": "b9a66a7f4f53"
+          "lean": "19294c152ec2"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.182436Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.182436Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling fails compilation, preventing statement verification: content/quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.lean:12:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Tactic/Omega.olean' of module Mathlib.Tactic.Omega does not exist",
         "severity": "minor"
@@ -2397,17 +2415,19 @@
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "0e772640ff09",
+          "md": "0652a24edf97",
           "ts": "038c8f53fedb",
-          "lean": "b9a66a7f4f53"
+          "lean": "19294c152ec2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.182436Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.182436Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No self-assuming projections are used in the proof.",
         "severity": "minor"
@@ -2416,17 +2436,19 @@
     "proof-no-trivial-true": [
       {
         "field_hash": {
-          "md": "0e772640ff09",
+          "md": "0652a24edf97",
           "ts": "038c8f53fedb",
-          "lean": "b9a66a7f4f53"
+          "lean": "19294c152ec2"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.182436Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.182436Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The proof relies on sorry stubs.",
         "severity": "minor"
@@ -2435,17 +2457,19 @@
     "proof-no-false-premise": [
       {
         "field_hash": {
-          "md": "0e772640ff09",
+          "md": "0652a24edf97",
           "ts": "038c8f53fedb",
-          "lean": "b9a66a7f4f53"
+          "lean": "19294c152ec2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.182436Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.182436Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The proof assumptions are consistent and do not contain false premises.",
         "severity": "minor"
@@ -2454,17 +2478,19 @@
     "proof-no-unused-hypotheses": [
       {
         "field_hash": {
-          "md": "0e772640ff09",
+          "md": "0652a24edf97",
           "ts": "038c8f53fedb",
-          "lean": "b9a66a7f4f53"
+          "lean": "19294c152ec2"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.182436Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.182436Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Broken proof compilation.",
         "severity": "minor"
@@ -2473,17 +2499,19 @@
     "proof-no-decide-masking": [
       {
         "field_hash": {
-          "md": "0e772640ff09",
+          "md": "0652a24edf97",
           "ts": "038c8f53fedb",
-          "lean": "b9a66a7f4f53"
+          "lean": "19294c152ec2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.182436Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.182436Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The proof does not use decide tactics to mask verification steps.",
         "severity": "minor"
@@ -2492,17 +2520,19 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "0e772640ff09",
+          "md": "0652a24edf97",
           "ts": "038c8f53fedb",
-          "lean": "b9a66a7f4f53"
+          "lean": "19294c152ec2"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.182436Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.182436Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The mathematical claims in 'Torus-knot dictionary: leptons at $H_2$ vs mesons at $H_3$' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.lean:12:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Tactic/Omega.olean' of module Mathlib.Tactic.Omega does not exist.",
         "severity": "minor",
@@ -2512,17 +2542,19 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "0e772640ff09",
+          "md": "0652a24edf97",
           "ts": "038c8f53fedb",
-          "lean": "b9a66a7f4f53"
+          "lean": "19294c152ec2"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.182436Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.182436Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "minor",
@@ -2532,17 +2564,19 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "0e772640ff09",
+          "md": "0652a24edf97",
           "ts": "038c8f53fedb",
-          "lean": "b9a66a7f4f53"
+          "lean": "19294c152ec2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.182436Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.182436Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Torus-knot dictionary: leptons at $H_2$ vs mesons at $H_3$'.",
         "severity": "minor",
@@ -2552,17 +2586,19 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "0e772640ff09",
+          "md": "0652a24edf97",
           "ts": "038c8f53fedb",
-          "lean": "b9a66a7f4f53"
+          "lean": "19294c152ec2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.182436Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.182436Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The remarks and narrative scope in 'Torus-knot dictionary: leptons at $H_2$ vs mesons at $H_3$' are appropriately qualified.",
         "severity": "minor"
@@ -2571,17 +2607,19 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "0e772640ff09",
+          "md": "0652a24edf97",
           "ts": "038c8f53fedb",
-          "lean": "b9a66a7f4f53"
+          "lean": "19294c152ec2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.182436Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.182436Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Torus-knot dictionary: leptons at $H_2$ vs mesons at $H_3$'.",
         "severity": "minor",
@@ -2591,17 +2629,19 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "0e772640ff09",
+          "md": "0652a24edf97",
           "ts": "038c8f53fedb",
-          "lean": "b9a66a7f4f53"
+          "lean": "19294c152ec2"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.182436Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.182436Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.lean.",
         "severity": "minor",
@@ -2611,17 +2651,19 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "0e772640ff09",
+          "md": "0652a24edf97",
           "ts": "038c8f53fedb",
-          "lean": "b9a66a7f4f53"
+          "lean": "19294c152ec2"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.182436Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.182436Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
@@ -2630,17 +2672,19 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "0e772640ff09",
+          "md": "0652a24edf97",
           "ts": "038c8f53fedb",
-          "lean": "b9a66a7f4f53"
+          "lean": "19294c152ec2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.182436Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.182436Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The citations jones1987, kashaev1997 in 'Torus-knot dictionary: leptons at $H_2$ vs mesons at $H_3$' are consistent with the sources referenced in the text.",
         "severity": "minor",
@@ -2650,17 +2694,19 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "0e772640ff09",
+          "md": "0652a24edf97",
           "ts": "038c8f53fedb",
-          "lean": "b9a66a7f4f53"
+          "lean": "19294c152ec2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.182436Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.182436Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Torus-knot dictionary: leptons at $H_2$ vs mesons at $H_3$' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -2670,17 +2716,19 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "0e772640ff09",
+          "md": "0652a24edf97",
           "ts": "038c8f53fedb",
-          "lean": "b9a66a7f4f53"
+          "lean": "19294c152ec2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.182436Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.182436Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Torus-knot dictionary: leptons at $H_2$ vs mesons at $H_3$' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -2690,17 +2738,19 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "0e772640ff09",
+          "md": "0652a24edf97",
           "ts": "038c8f53fedb",
-          "lean": "b9a66a7f4f53"
+          "lean": "19294c152ec2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.182436Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.182436Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Torus-knot dictionary: leptons at $H_2$ vs mesons at $H_3$' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -2710,17 +2760,19 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "0e772640ff09",
+          "md": "0652a24edf97",
           "ts": "038c8f53fedb",
-          "lean": "b9a66a7f4f53"
+          "lean": "19294c152ec2"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.182436Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.182436Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
@@ -2730,17 +2782,19 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "0e772640ff09",
+          "md": "0652a24edf97",
           "ts": "038c8f53fedb",
-          "lean": "b9a66a7f4f53"
+          "lean": "19294c152ec2"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.182436Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.182436Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.lean fails compilation.",
         "severity": "major",
@@ -2775,5 +2829,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.802Z"
+  "updated_at": "2026-07-07T14:26:57.182436Z"
 }

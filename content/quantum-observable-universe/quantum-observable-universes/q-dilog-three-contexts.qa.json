@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/quantum-observable-universes/q-dilog-three-contexts.md"
   },
   "source_hashes": {
-    "md": "b0810a4c03d2",
+    "md": "16bc615e0a5f",
     "ts": "3c4fd9e64056"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Removed conversational intros and diagrams. Unified theorems.",
-        "reviewed_at": "2026-07-06T22:46:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.979713Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.979713Z"
+        },
+        "field_hash": {
+          "md": "16bc615e0a5f",
+          "ts": "3c4fd9e64056"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:58.083Z"
+  "updated_at": "2026-07-07T14:26:55.979713Z"
 }

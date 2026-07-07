@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/molecular-construction/h2-covalent-channel-interference.md"
   },
   "source_hashes": {
-    "md": "4394b08a8500",
+    "md": "0fc560c22289",
     "ts": "4d4e9586acfa"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Rewrote molecular-construction_seq3.md. Smoothed transitions, applied 'we/our', enforced brevity and economy, and removed editorializing.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.468017Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.468017Z"
+        },
+        "field_hash": {
+          "md": "0fc560c22289",
+          "ts": "4d4e9586acfa"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.117Z"
+  "updated_at": "2026-07-07T14:26:55.468017Z"
 }

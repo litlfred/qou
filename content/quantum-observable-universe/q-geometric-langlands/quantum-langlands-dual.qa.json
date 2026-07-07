@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/q-geometric-langlands/quantum-langlands-dual.lean"
   },
   "source_hashes": {
-    "md": "c8f276ffb154",
+    "md": "d53c0cec96d7",
     "ts": "d2dc71fd3aaa",
     "lean": "df7792a12d99"
   },
@@ -37,14 +37,21 @@
       {
         "result": "pass",
         "notes": "Flattened complex conjectures into direct geometric facts. Removed bold definitions and nested headers. Stripped Lean/diagnostics metadata that cluttered the math.",
-        "reviewed_at": "2026-07-06T22:46:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.201060Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.201060Z"
+        },
+        "field_hash": {
+          "md": "d53c0cec96d7",
+          "ts": "d2dc71fd3aaa",
+          "lean": "df7792a12d99"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.994Z"
+  "updated_at": "2026-07-07T14:26:56.201060Z"
 }

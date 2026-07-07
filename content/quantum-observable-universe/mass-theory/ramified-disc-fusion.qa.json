@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/mass-theory/ramified-disc-fusion.md"
   },
   "source_hashes": {
-    "md": "cea2918cb5fc",
+    "md": "2b0b74c57f6f",
     "ts": "b697f5dc18b8"
   },
   "criteria": {
@@ -1326,15 +1326,17 @@
       },
       {
         "field_hash": {
-          "md": "cea2918cb5fc",
+          "md": "2b0b74c57f6f",
           "ts": "b697f5dc18b8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.713410Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.713410Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Statement contains only the bare claim without physical interpretation.",
         "severity": "minor"
@@ -1358,16 +1360,18 @@
       },
       {
         "field_hash": {
-          "md": "cea2918cb5fc",
+          "md": "2b0b74c57f6f",
           "ts": "b697f5dc18b8"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.713410Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:56.713410Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Block placement and kind 'proposition' match validated structurally for 'Ramified-disc fusion at the foundry boundary' within chapter 'mass-theory'.",
         "severity": "minor"
@@ -1391,15 +1395,17 @@
       },
       {
         "field_hash": {
-          "md": "cea2918cb5fc",
+          "md": "2b0b74c57f6f",
           "ts": "b697f5dc18b8"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.713410Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.713410Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The sibling Lean file content/quantum-observable-universe/mass-theory/ramified-disc-fusion.lean is missing entirely.",
         "evidence": "content/quantum-observable-universe/mass-theory/ramified-disc-fusion.md:1",
@@ -1424,16 +1430,18 @@
       },
       {
         "field_hash": {
-          "md": "cea2918cb5fc",
+          "md": "2b0b74c57f6f",
           "ts": "b697f5dc18b8"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.713410Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:56.713410Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Lean proof is missing because the Lean file content/quantum-observable-universe/mass-theory/ramified-disc-fusion.lean is not found.",
         "severity": "major"
@@ -1459,16 +1467,18 @@
       },
       {
         "field_hash": {
-          "md": "cea2918cb5fc",
+          "md": "2b0b74c57f6f",
           "ts": "b697f5dc18b8"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.713410Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:56.713410Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The referenced Lean file content/quantum-observable-universe/mass-theory/ramified-disc-fusion.lean is missing, so narrative-proof equivalence cannot be verified.",
         "severity": "minor"
@@ -1477,16 +1487,18 @@
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "cea2918cb5fc",
+          "md": "2b0b74c57f6f",
           "ts": "b697f5dc18b8"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.713410Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:56.713410Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean file content/quantum-observable-universe/mass-theory/ramified-disc-fusion.lean is missing, so proof strategy clarity cannot be evaluated.",
         "severity": "minor"
@@ -1495,16 +1507,18 @@
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "cea2918cb5fc",
+          "md": "2b0b74c57f6f",
           "ts": "b697f5dc18b8"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.713410Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:56.713410Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No Lean sibling required; goal is plausible from markdown.",
         "severity": "minor"
@@ -1513,16 +1527,18 @@
     "proof-rater-novelty": [
       {
         "field_hash": {
-          "md": "cea2918cb5fc",
+          "md": "2b0b74c57f6f",
           "ts": "b697f5dc18b8"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.713410Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:56.713410Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The mathematical and physical connections explored in 'Ramified-disc fusion at the foundry boundary' are highly novel.",
         "score": {
@@ -1538,16 +1554,18 @@
     "proof-statement-integrity": [
       {
         "field_hash": {
-          "md": "cea2918cb5fc",
+          "md": "2b0b74c57f6f",
           "ts": "b697f5dc18b8"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.713410Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:56.713410Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No Lean sibling required; statement has integrity.",
         "severity": "minor"
@@ -1556,16 +1574,18 @@
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "cea2918cb5fc",
+          "md": "2b0b74c57f6f",
           "ts": "b697f5dc18b8"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.713410Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:56.713410Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The theorem statement does not project from a self-assuming class or hypothesis.",
         "severity": "minor"
@@ -1592,16 +1612,18 @@
       },
       {
         "field_hash": {
-          "md": "cea2918cb5fc",
+          "md": "2b0b74c57f6f",
           "ts": "b697f5dc18b8"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.713410Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:56.713410Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The proof does not rely on trivial True stubs.",
         "severity": "minor"
@@ -1610,16 +1632,18 @@
     "proof-no-false-premise": [
       {
         "field_hash": {
-          "md": "cea2918cb5fc",
+          "md": "2b0b74c57f6f",
           "ts": "b697f5dc18b8"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.713410Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:56.713410Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No false premises or conflicting hypotheses detected in the statements.",
         "severity": "minor"
@@ -1628,16 +1652,18 @@
     "proof-no-unused-hypotheses": [
       {
         "field_hash": {
-          "md": "cea2918cb5fc",
+          "md": "2b0b74c57f6f",
           "ts": "b697f5dc18b8"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.713410Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:56.713410Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No Lean sibling to check for unused hypotheses.",
         "severity": "minor"
@@ -1646,16 +1672,18 @@
     "proof-no-decide-masking": [
       {
         "field_hash": {
-          "md": "cea2918cb5fc",
+          "md": "2b0b74c57f6f",
           "ts": "b697f5dc18b8"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.713410Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:56.713410Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No decide masking or native_decide bypasses detected in the formalization.",
         "severity": "minor"
@@ -1664,15 +1692,17 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "cea2918cb5fc",
+          "md": "2b0b74c57f6f",
           "ts": "b697f5dc18b8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.713410Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.713410Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/ramified-disc-fusion.ts:1",
@@ -1682,15 +1712,17 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "cea2918cb5fc",
+          "md": "2b0b74c57f6f",
           "ts": "b697f5dc18b8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.713410Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.713410Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-vacuous.",
         "severity": "minor"
@@ -1699,15 +1731,17 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "cea2918cb5fc",
+          "md": "2b0b74c57f6f",
           "ts": "b697f5dc18b8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.713410Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.713410Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/ramified-disc-fusion.ts:1",
@@ -1717,15 +1751,17 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "cea2918cb5fc",
+          "md": "2b0b74c57f6f",
           "ts": "b697f5dc18b8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.713410Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.713410Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
@@ -1734,15 +1770,17 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "cea2918cb5fc",
+          "md": "2b0b74c57f6f",
           "ts": "b697f5dc18b8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.713410Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.713410Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/ramified-disc-fusion.ts:1",
@@ -1752,15 +1790,17 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "cea2918cb5fc",
+          "md": "2b0b74c57f6f",
           "ts": "b697f5dc18b8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.713410Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.713410Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/ramified-disc-fusion.ts:1",
@@ -1770,15 +1810,17 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "cea2918cb5fc",
+          "md": "2b0b74c57f6f",
           "ts": "b697f5dc18b8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.713410Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.713410Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
         "evidence": "content/quantum-observable-universe/mass-theory/ramified-disc-fusion.ts:1",
@@ -1788,15 +1830,17 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "cea2918cb5fc",
+          "md": "2b0b74c57f6f",
           "ts": "b697f5dc18b8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.713410Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.713410Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/ramified-disc-fusion.ts:1",
@@ -1806,15 +1850,17 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "cea2918cb5fc",
+          "md": "2b0b74c57f6f",
           "ts": "b697f5dc18b8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.713410Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.713410Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/ramified-disc-fusion.ts:1",
@@ -1824,15 +1870,17 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "cea2918cb5fc",
+          "md": "2b0b74c57f6f",
           "ts": "b697f5dc18b8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.713410Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.713410Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/ramified-disc-fusion.ts:1",
@@ -1842,15 +1890,17 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "cea2918cb5fc",
+          "md": "2b0b74c57f6f",
           "ts": "b697f5dc18b8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.713410Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.713410Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-reproducibility.",
         "severity": "minor"
@@ -1859,15 +1909,17 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "cea2918cb5fc",
+          "md": "2b0b74c57f6f",
           "ts": "b697f5dc18b8"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.713410Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.713410Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Referee verdict: open-objection. Objection: Sibling Lean file is missing.",
         "severity": "critical",
@@ -1878,16 +1930,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "cea2918cb5fc",
+          "md": "2b0b74c57f6f",
           "ts": "b697f5dc18b8"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.713410Z"
         },
-        "reviewed_at": "2026-06-28T10:58:48.450Z",
+        "reviewed_at": "2026-07-07T14:26:56.713410Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The referenced Lean file content/quantum-observable-universe/mass-theory/ramified-disc-fusion.lean is missing, leading to complete divergence.",
         "severity": "minor"
@@ -1897,14 +1951,20 @@
       {
         "result": "pass",
         "notes": "Rewrote seq17 enforcing Milnor rules. Restructured wordy trajectory explanations into direct mathematical prose. Streamlined 'why before what' for the Reeb bundle and geometric constructs. Verified math formatting.",
-        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.713410Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.713410Z"
+        },
+        "field_hash": {
+          "md": "2b0b74c57f6f",
+          "ts": "b697f5dc18b8"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-07T14:26:56.713410Z"
 }

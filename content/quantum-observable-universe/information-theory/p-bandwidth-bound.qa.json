@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/information-theory/p-bandwidth-bound.md"
   },
   "source_hashes": {
-    "md": "cd990d1fc4fa",
+    "md": "44b106f67058",
     "ts": "c3873a52bfc1"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Flattened complex tables/lists into dense, exact prose where appropriate. Aligned notation. Replaced 'we define' with direct declarative statements. Improved transitions between blocks while retaining original file markers.",
-        "reviewed_at": "2026-07-06T22:51:10Z",
+        "reviewed_at": "2026-07-07T14:26:55.644284Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.644284Z"
+        },
+        "field_hash": {
+          "md": "44b106f67058",
+          "ts": "c3873a52bfc1"
         }
       }
     ]
   },
-  "updated_at": "2026-07-04T00:30:14.885Z"
+  "updated_at": "2026-07-07T14:26:55.644284Z"
 }

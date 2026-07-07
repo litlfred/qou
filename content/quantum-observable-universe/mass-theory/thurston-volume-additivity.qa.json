@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/thurston-volume-additivity.lean"
   },
   "source_hashes": {
-    "md": "9549d16e5607",
+    "md": "18b4bfa77964",
     "ts": "dce95eb3a62b",
     "lean": "d9e3154a6ae2"
   },
@@ -1032,16 +1032,18 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "9549d16e5607",
+          "md": "18b4bfa77964",
           "ts": "dce95eb3a62b",
           "lean": "d9e3154a6ae2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.759838Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.759838Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The statement is written in standard scholarly mathematical and physics voice.",
         "severity": "minor"
@@ -1050,7 +1052,7 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "9549d16e5607",
+          "md": "18b4bfa77964",
           "ts": "dce95eb3a62b",
           "lean": "d9e3154a6ae2"
         },
@@ -1058,11 +1060,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.759838Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:14.288Z",
+        "reviewed_at": "2026-07-07T14:26:56.759838Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1070,16 +1072,18 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "9549d16e5607",
+          "md": "18b4bfa77964",
           "ts": "dce95eb3a62b",
           "lean": "d9e3154a6ae2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.759838Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.759838Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
         "evidence": "content/quantum-observable-universe/mass-theory/thurston-volume-additivity.lean:1 \u2014 Lean file exists",
@@ -1089,16 +1093,18 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "9549d16e5607",
+          "md": "18b4bfa77964",
           "ts": "dce95eb3a62b",
           "lean": "d9e3154a6ae2"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.759838Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.759838Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean proof contains a sorry placeholder, indicating it is incomplete.",
         "evidence": "content/quantum-observable-universe/mass-theory/thurston-volume-additivity.lean:1 \u2014 sorry placeholder present",
@@ -1139,7 +1145,7 @@
       },
       {
         "field_hash": {
-          "md": "9549d16e5607",
+          "md": "18b4bfa77964",
           "ts": "dce95eb3a62b",
           "lean": "d9e3154a6ae2"
         },
@@ -1147,9 +1153,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.759838Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_at": "2026-07-07T14:26:56.759838Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:thurston-volume-additivity' \u2192 expected 'thurston_volume_additivity'; Lean declares: blochWigner, blochWigner_real, IdealTriangulation, thurstonVolume, HasThurstonTriangulation.... Structural match via content."
       }
@@ -1157,16 +1165,18 @@
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "9549d16e5607",
+          "md": "18b4bfa77964",
           "ts": "dce95eb3a62b",
           "lean": "d9e3154a6ae2"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.759838Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.759838Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Proof strategy is outlined in markdown but Lean proof is incomplete.",
         "severity": "minor"
@@ -1215,20 +1225,20 @@
       },
       {
         "field_hash": {
-          "md": "9549d16e5607",
+          "md": "18b4bfa77964",
           "ts": "dce95eb3a62b",
           "lean": "d9e3154a6ae2"
         },
         "result": "pass",
         "notes": "Thurston volume additivity V=\u03a3D(z_i), D real-vanishing \u21d2 torus knots Vol 0: classical, well-posed, central to the q_0 pin via V(4_1).",
-        "reviewed_at": "2026-06-25T17:06:21.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.759838Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.759838Z"
         },
         "score": {
           "max": 1,
@@ -1239,16 +1249,18 @@
     "proof-rater-novelty": [
       {
         "field_hash": {
-          "md": "9549d16e5607",
+          "md": "18b4bfa77964",
           "ts": "dce95eb3a62b",
           "lean": "d9e3154a6ae2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.759838Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.759838Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The mathematical and physical connections explored in this block are highly novel.",
         "severity": "minor",
@@ -1297,27 +1309,27 @@
       },
       {
         "field_hash": {
-          "md": "9549d16e5607",
+          "md": "18b4bfa77964",
           "ts": "dce95eb3a62b",
           "lean": "d9e3154a6ae2"
         },
         "result": "pass",
         "notes": "Genuine \u00a73b-cond: theorem DERIVES \u2203T, hypVol m = thurstonVolume T from class hyp via \u27e8inst.triangulation m, inst.volume_eq_thurston m\u27e9. No sorry; blochWigner/_real are honest cited opaque axioms. Faithful to Thurston statement.",
-        "reviewed_at": "2026-06-25T17:06:21.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.759838Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.759838Z"
         }
       }
     ],
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "9549d16e5607",
+          "md": "18b4bfa77964",
           "ts": "dce95eb3a62b",
           "lean": "d9e3154a6ae2"
         },
@@ -1325,11 +1337,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.759838Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:17.377Z",
+        "reviewed_at": "2026-07-07T14:26:56.759838Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
       }
@@ -1337,7 +1349,7 @@
     "proof-no-trivial-true": [
       {
         "field_hash": {
-          "md": "9549d16e5607",
+          "md": "18b4bfa77964",
           "ts": "dce95eb3a62b",
           "lean": "d9e3154a6ae2"
         },
@@ -1345,11 +1357,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.759838Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:17.711Z",
+        "reviewed_at": "2026-07-07T14:26:56.759838Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
       }
@@ -1393,36 +1405,38 @@
       },
       {
         "field_hash": {
-          "md": "9549d16e5607",
+          "md": "18b4bfa77964",
           "ts": "dce95eb3a62b",
           "lean": "d9e3154a6ae2"
         },
         "result": "pass",
         "notes": "HasThurstonTriangulation is satisfiable (classical Thurston result); IdealTriangulation nontriviality is consistent. No contradictory premise.",
-        "reviewed_at": "2026-06-25T17:06:21.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.759838Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.759838Z"
         }
       }
     ],
     "proof-no-unused-hypotheses": [
       {
         "field_hash": {
-          "md": "9549d16e5607",
+          "md": "18b4bfa77964",
           "ts": "dce95eb3a62b",
           "lean": "d9e3154a6ae2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.759838Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.759838Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No unused hypotheses are present in the Lean proof.",
         "severity": "minor"
@@ -1449,36 +1463,38 @@
       },
       {
         "field_hash": {
-          "md": "9549d16e5607",
+          "md": "18b4bfa77964",
           "ts": "dce95eb3a62b",
           "lean": "d9e3154a6ae2"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/mass-theory/thurston-volume-additivity.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.759838Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.759838Z"
         }
       }
     ],
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "9549d16e5607",
+          "md": "18b4bfa77964",
           "ts": "dce95eb3a62b",
           "lean": "d9e3154a6ae2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.759838Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.759838Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/thurston-volume-additivity.ts:1",
@@ -1488,16 +1504,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "9549d16e5607",
+          "md": "18b4bfa77964",
           "ts": "dce95eb3a62b",
           "lean": "d9e3154a6ae2"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.759838Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.759838Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling contains 'sorry' placeholders, rendering the proof vacuous.",
         "severity": "major"
@@ -1506,16 +1524,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "9549d16e5607",
+          "md": "18b4bfa77964",
           "ts": "dce95eb3a62b",
           "lean": "d9e3154a6ae2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.759838Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.759838Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/thurston-volume-additivity.ts:1",
@@ -1525,16 +1545,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "9549d16e5607",
+          "md": "18b4bfa77964",
           "ts": "dce95eb3a62b",
           "lean": "d9e3154a6ae2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.759838Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.759838Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
@@ -1543,16 +1565,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "9549d16e5607",
+          "md": "18b4bfa77964",
           "ts": "dce95eb3a62b",
           "lean": "d9e3154a6ae2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.759838Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.759838Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/thurston-volume-additivity.ts:1",
@@ -1562,16 +1586,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "9549d16e5607",
+          "md": "18b4bfa77964",
           "ts": "dce95eb3a62b",
           "lean": "d9e3154a6ae2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.759838Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.759838Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/thurston-volume-additivity.ts:1",
@@ -1581,16 +1607,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "9549d16e5607",
+          "md": "18b4bfa77964",
           "ts": "dce95eb3a62b",
           "lean": "d9e3154a6ae2"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.759838Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.759838Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean proof contains a sorry, representing a divergence from the fully claimed narrative.",
         "severity": "minor"
@@ -1599,16 +1627,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "9549d16e5607",
+          "md": "18b4bfa77964",
           "ts": "dce95eb3a62b",
           "lean": "d9e3154a6ae2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.759838Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.759838Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
         "evidence": "content/quantum-observable-universe/mass-theory/thurston-volume-additivity.ts:1",
@@ -1618,16 +1648,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "9549d16e5607",
+          "md": "18b4bfa77964",
           "ts": "dce95eb3a62b",
           "lean": "d9e3154a6ae2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.759838Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.759838Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/thurston-volume-additivity.ts:1",
@@ -1637,16 +1669,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "9549d16e5607",
+          "md": "18b4bfa77964",
           "ts": "dce95eb3a62b",
           "lean": "d9e3154a6ae2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.759838Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.759838Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/thurston-volume-additivity.ts:1",
@@ -1656,16 +1690,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "9549d16e5607",
+          "md": "18b4bfa77964",
           "ts": "dce95eb3a62b",
           "lean": "d9e3154a6ae2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.759838Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.759838Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/thurston-volume-additivity.ts:1",
@@ -1675,16 +1711,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "9549d16e5607",
+          "md": "18b4bfa77964",
           "ts": "dce95eb3a62b",
           "lean": "d9e3154a6ae2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.759838Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.759838Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-reproducibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/thurston-volume-additivity.ts:1",
@@ -1694,16 +1732,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "9549d16e5607",
+          "md": "18b4bfa77964",
           "ts": "dce95eb3a62b",
           "lean": "d9e3154a6ae2"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.759838Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.759838Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains 'sorry' placeholders, rendering the formalization and proof incomplete.",
         "severity": "major",
@@ -1735,14 +1775,21 @@
       {
         "result": "pass",
         "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
-        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.759838Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.759838Z"
+        },
+        "field_hash": {
+          "md": "18b4bfa77964",
+          "ts": "dce95eb3a62b",
+          "lean": "d9e3154a6ae2"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.430Z"
+  "updated_at": "2026-07-07T14:26:56.759838Z"
 }

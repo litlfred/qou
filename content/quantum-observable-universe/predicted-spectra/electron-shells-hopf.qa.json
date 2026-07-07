@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/predicted-spectra/electron-shells-hopf.lean"
   },
   "source_hashes": {
-    "md": "9bbf3730634e",
+    "md": "bfe31dc60926",
     "ts": "8a257a6241f7",
     "lean": "3dabe476c5ad"
   },
@@ -1079,7 +1079,7 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "9bbf3730634e",
+          "md": "bfe31dc60926",
           "ts": "8a257a6241f7",
           "lean": "3dabe476c5ad"
         },
@@ -1087,11 +1087,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.372870Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:50.566Z",
+        "reviewed_at": "2026-07-07T14:26:56.372870Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1099,7 +1099,7 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "9bbf3730634e",
+          "md": "bfe31dc60926",
           "ts": "8a257a6241f7",
           "lean": "3dabe476c5ad"
         },
@@ -1107,9 +1107,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.372870Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.372870Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The mathematical claims in 'Electron shells as closed sub-Hopf links of the trefoil chain' are formally unproved due to 'sorry' stubs in the sibling Lean file.",
         "severity": "minor",
@@ -1119,7 +1121,7 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "9bbf3730634e",
+          "md": "bfe31dc60926",
           "ts": "8a257a6241f7",
           "lean": "3dabe476c5ad"
         },
@@ -1127,9 +1129,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.372870Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.372870Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/electron-shells-hopf.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "major",
@@ -1139,7 +1143,7 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "9bbf3730634e",
+          "md": "bfe31dc60926",
           "ts": "8a257a6241f7",
           "lean": "3dabe476c5ad"
         },
@@ -1147,9 +1151,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.372870Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.372870Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Electron shells as closed sub-Hopf links of the trefoil chain'.",
         "severity": "minor",
@@ -1159,7 +1165,7 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "9bbf3730634e",
+          "md": "bfe31dc60926",
           "ts": "8a257a6241f7",
           "lean": "3dabe476c5ad"
         },
@@ -1167,9 +1173,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.372870Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.372870Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose presents 'Electron shells as closed sub-Hopf links of the trefoil chain' as verified, but the sibling Lean proof contains sorry stubs.",
         "severity": "minor"
@@ -1178,7 +1186,7 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "9bbf3730634e",
+          "md": "bfe31dc60926",
           "ts": "8a257a6241f7",
           "lean": "3dabe476c5ad"
         },
@@ -1186,9 +1194,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.372870Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.372870Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Electron shells as closed sub-Hopf links of the trefoil chain'.",
         "severity": "minor",
@@ -1198,7 +1208,7 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "9bbf3730634e",
+          "md": "bfe31dc60926",
           "ts": "8a257a6241f7",
           "lean": "3dabe476c5ad"
         },
@@ -1206,9 +1216,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.372870Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.372870Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Logical gaps exist due to incomplete proof (sorry stubs) in content/quantum-observable-universe/predicted-spectra/electron-shells-hopf.lean.",
         "severity": "minor",
@@ -1218,7 +1230,7 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "9bbf3730634e",
+          "md": "bfe31dc60926",
           "ts": "8a257a6241f7",
           "lean": "3dabe476c5ad"
         },
@@ -1226,9 +1238,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.372870Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.372870Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/electron-shells-hopf.lean contains sorry, causing divergence from the fully-verified narrative.",
         "severity": "minor"
@@ -1237,7 +1251,7 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "9bbf3730634e",
+          "md": "bfe31dc60926",
           "ts": "8a257a6241f7",
           "lean": "3dabe476c5ad"
         },
@@ -1245,9 +1259,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.372870Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.372870Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Electron shells as closed sub-Hopf links of the trefoil chain', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1257,7 +1273,7 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "9bbf3730634e",
+          "md": "bfe31dc60926",
           "ts": "8a257a6241f7",
           "lean": "3dabe476c5ad"
         },
@@ -1265,9 +1281,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.372870Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.372870Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Electron shells as closed sub-Hopf links of the trefoil chain' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1277,7 +1295,7 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "9bbf3730634e",
+          "md": "bfe31dc60926",
           "ts": "8a257a6241f7",
           "lean": "3dabe476c5ad"
         },
@@ -1285,9 +1303,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.372870Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.372870Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The empirical claims in 'Electron shells as closed sub-Hopf links of the trefoil chain' are structurally anchored to the QOU mass framework and are stable.",
         "severity": "minor",
@@ -1297,7 +1317,7 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "9bbf3730634e",
+          "md": "bfe31dc60926",
           "ts": "8a257a6241f7",
           "lean": "3dabe476c5ad"
         },
@@ -1305,9 +1325,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.372870Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.372870Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Electron shells as closed sub-Hopf links of the trefoil chain' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1317,7 +1339,7 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "9bbf3730634e",
+          "md": "bfe31dc60926",
           "ts": "8a257a6241f7",
           "lean": "3dabe476c5ad"
         },
@@ -1325,9 +1347,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.372870Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.372870Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/electron-shells-hopf.lean contains sorry, indicating incomplete verification.",
         "severity": "minor"
@@ -1336,7 +1360,7 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "9bbf3730634e",
+          "md": "bfe31dc60926",
           "ts": "8a257a6241f7",
           "lean": "3dabe476c5ad"
         },
@@ -1344,9 +1368,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.372870Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.372870Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/electron-shells-hopf.lean contains 'sorry' placeholders.",
         "severity": "major",
@@ -1357,7 +1383,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "9bbf3730634e",
+          "md": "bfe31dc60926",
           "ts": "8a257a6241f7",
           "lean": "3dabe476c5ad"
         },
@@ -1365,9 +1391,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.372870Z"
         },
-        "reviewed_at": "2026-07-06T04:41:30.359Z",
+        "reviewed_at": "2026-07-07T14:26:56.372870Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'rem:electron-shells-hopf' \u2192 expected 'electron_shells_hopf'; Lean declares: ElectronShellsHopf, electron_shells_hopf_conjecture. Structural match via content."
       }
@@ -1376,14 +1404,21 @@
       {
         "result": "pass",
         "notes": "Rewrote prose blocks to adhere to Milnor standards. Improved economy, preserved all math.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.372870Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.372870Z"
+        },
+        "field_hash": {
+          "md": "bfe31dc60926",
+          "ts": "8a257a6241f7",
+          "lean": "3dabe476c5ad"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:30.359Z"
+  "updated_at": "2026-07-07T14:26:56.372870Z"
 }

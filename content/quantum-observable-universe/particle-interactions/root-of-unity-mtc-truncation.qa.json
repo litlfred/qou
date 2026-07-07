@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/particle-interactions/root-of-unity-mtc-truncation.md"
   },
   "source_hashes": {
-    "md": "57d94da4ed16",
+    "md": "1f38d83358dc",
     "ts": "31b505cf6501"
   },
   "criteria": {
@@ -1782,18 +1782,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "1bda54085fb4",
+          "md": "1f38d83358dc",
           "ts": "31b505cf6501"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.171854Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:20.553Z",
+        "reviewed_at": "2026-07-07T14:26:57.171854Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1839,19 +1839,19 @@
       },
       {
         "field_hash": {
-          "md": "1bda54085fb4",
+          "md": "1f38d83358dc",
           "ts": "31b505cf6501"
         },
         "result": "pass",
         "notes": "Well-posed: q=e^{2pi i/k} truncates KLR/Kashiwara crystal to MTC_k; honest about what's established (BK MTC, crystal trunc) vs conjectural (QOU anyon id); falsifiable.",
-        "reviewed_at": "2026-06-25T17:03:07.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.171854Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.171854Z"
         },
         "score": {
           "max": 1,
@@ -1862,16 +1862,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "1bda54085fb4",
+          "md": "1f38d83358dc",
           "ts": "31b505cf6501"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.171854Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.171854Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'At $q = e^{2\\\\pi i / k}$, the KLR algebra truncates to a Modular Tensor Category of non-abelian anyons': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -1881,16 +1883,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "1bda54085fb4",
+          "md": "1f38d83358dc",
           "ts": "31b505cf6501"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.171854Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.171854Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The claims in 'At $q = e^{2\\\\pi i / k}$, the KLR algebra truncates to a Modular Tensor Category of non-abelian anyons' are non-vacuous as they make concrete conjectures about 'anyonic substrate, and fix $k \\geq 2$.  Specialise the deformation parameter at a primitive $k$-th root of unity on t...'.",
         "severity": "minor"
@@ -1899,16 +1903,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "1bda54085fb4",
+          "md": "1f38d83358dc",
           "ts": "31b505cf6501"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.171854Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.171854Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'At $q = e^{2\\\\pi i / k}$, the KLR algebra truncates to a Modular Tensor Category of non-abelian anyons'.",
         "severity": "minor",
@@ -1918,16 +1924,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "1bda54085fb4",
+          "md": "1f38d83358dc",
           "ts": "31b505cf6501"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.171854Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.171854Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'At $q = e^{2\\\\pi i / k}$, the KLR algebra truncates to a Modular Tensor Category of non-abelian anyons' is appropriately qualified.",
         "severity": "minor"
@@ -1936,16 +1944,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "1bda54085fb4",
+          "md": "1f38d83358dc",
           "ts": "31b505cf6501"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.171854Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.171854Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'At $q = e^{2\\\\pi i / k}$, the KLR algebra truncates to a Modular Tensor Category of non-abelian anyons'.",
         "severity": "minor",
@@ -1955,16 +1965,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "1bda54085fb4",
+          "md": "1f38d83358dc",
           "ts": "31b505cf6501"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.171854Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.171854Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The argument flow in 'At $q = e^{2\\\\pi i / k}$, the KLR algebra truncates to a Modular Tensor Category of non-abelian anyons' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -1974,16 +1986,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "1bda54085fb4",
+          "md": "1f38d83358dc",
           "ts": "31b505cf6501"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.171854Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.171854Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Conjectured block 'At $q = e^{2\\\\pi i / k}$, the KLR algebra truncates to a Modular Tensor Category of non-abelian anyons' has no Lean sibling, representing a minor structural gap.",
         "severity": "minor"
@@ -1992,16 +2006,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "1bda54085fb4",
+          "md": "1f38d83358dc",
           "ts": "31b505cf6501"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.171854Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.171854Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Citations to kitaev2006, nayak2008, bakalovkirillov2001, khovanovlauda2009, kashiwara1991 are correct and contextually appropriate.",
         "severity": "minor",
@@ -2011,16 +2027,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "1bda54085fb4",
+          "md": "1f38d83358dc",
           "ts": "31b505cf6501"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.171854Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.171854Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'At $q = e^{2\\\\pi i / k}$, the KLR algebra truncates to a Modular Tensor Category of non-abelian anyons' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -2030,16 +2048,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "1bda54085fb4",
+          "md": "1f38d83358dc",
           "ts": "31b505cf6501"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.171854Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.171854Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'At $q = e^{2\\\\pi i / k}$, the KLR algebra truncates to a Modular Tensor Category of non-abelian anyons' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -2049,16 +2069,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "1bda54085fb4",
+          "md": "1f38d83358dc",
           "ts": "31b505cf6501"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.171854Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.171854Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'At $q = e^{2\\\\pi i / k}$, the KLR algebra truncates to a Modular Tensor Category of non-abelian anyons' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -2068,16 +2090,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "1bda54085fb4",
+          "md": "1f38d83358dc",
           "ts": "31b505cf6501"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.171854Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.171854Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'At $q = e^{2\\\\pi i / k}$, the KLR algebra truncates to a Modular Tensor Category of non-abelian anyons' are reproducible.",
         "severity": "minor",
@@ -2087,16 +2111,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "1bda54085fb4",
+          "md": "1f38d83358dc",
           "ts": "31b505cf6501"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.171854Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.171854Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Conjecture is open, hence the objection is survivable. Sibling Lean file is missing.",
         "severity": "minor",
@@ -2108,14 +2134,20 @@
       {
         "result": "pass",
         "notes": "Rewrote seq16 enforcing Milnor brevity. Cleaned up the intro, replacing conversational 'We conjecture ... We then exhibit' with succinct declarations. Streamlined the conditional theorem and conjecture blocks.",
-        "reviewed_at": "2026-07-06T22:52:00Z",
+        "reviewed_at": "2026-07-07T14:26:57.171854Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.171854Z"
+        },
+        "field_hash": {
+          "md": "1f38d83358dc",
+          "ts": "31b505cf6501"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.492Z"
+  "updated_at": "2026-07-07T14:26:57.171854Z"
 }

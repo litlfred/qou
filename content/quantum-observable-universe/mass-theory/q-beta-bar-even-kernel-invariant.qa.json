@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-invariant.lean"
   },
   "source_hashes": {
-    "md": "ff64e302f740",
+    "md": "476d8ec28ded",
     "ts": "db624ec82f98",
     "lean": "03bd5da4dd1a"
   },
@@ -36,7 +36,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "ff64e302f740",
+          "md": "476d8ec28ded",
           "ts": "db624ec82f98",
           "lean": "03bd5da4dd1a"
         },
@@ -44,9 +44,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.869135Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_at": "2026-07-07T14:26:56.869135Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:q-beta-bar-even-kernel-invariant' \u2192 expected 'q_beta_bar_even_kernel_invariant'; Lean declares: bar_even_quadratic_term_in_t_squared, bar_even_invariant_pure_uk_term, bar_even_test_n2. Structural match via content."
       }
@@ -55,14 +57,21 @@
       {
         "result": "pass",
         "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice. Grouped logical steps for clarity, removing repetitive transitional filler. Emphasized 'why before what'. Maintained mathematical and technical accuracy.",
-        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.869135Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.869135Z"
+        },
+        "field_hash": {
+          "md": "476d8ec28ded",
+          "ts": "db624ec82f98",
+          "lean": "03bd5da4dd1a"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.430Z"
+  "updated_at": "2026-07-07T14:26:56.869135Z"
 }

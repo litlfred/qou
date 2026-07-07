@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/glossary/glossary-no-quasi-zeros.md"
   },
   "source_hashes": {
-    "md": "d41812853eb3",
+    "md": "c0a8db4d7f36",
     "ts": "f56bfa770767"
   },
   "criteria": {
@@ -820,18 +820,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "d41812853eb3",
+          "md": "c0a8db4d7f36",
           "ts": "f56bfa770767"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.469035Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:51.560Z",
+        "reviewed_at": "2026-07-07T14:26:56.469035Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -839,15 +839,17 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "d41812853eb3",
+          "md": "c0a8db4d7f36",
           "ts": "f56bfa770767"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.469035Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.469035Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No false claims identified in 'Algebra without quasi-zeros': mathematical reasoning is consistent.",
         "evidence": "content/quantum-observable-universe/glossary/glossary-no-quasi-zeros.ts:1",
@@ -857,15 +859,17 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "d41812853eb3",
+          "md": "c0a8db4d7f36",
           "ts": "f56bfa770767"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.469035Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.469035Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The block 'Algebra without quasi-zeros' presents substantial mathematical content: with unity and $A$ an $R$-algebra.  An element $a \\in A$ is a...",
         "severity": "minor"
@@ -874,15 +878,17 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "d41812853eb3",
+          "md": "c0a8db4d7f36",
           "ts": "f56bfa770767"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.469035Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.469035Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Algebra without quasi-zeros'.",
         "evidence": "content/quantum-observable-universe/glossary/glossary-no-quasi-zeros.ts:1",
@@ -892,15 +898,17 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "d41812853eb3",
+          "md": "c0a8db4d7f36",
           "ts": "f56bfa770767"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.469035Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.469035Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No overclaims: the scope of 'Algebra without quasi-zeros' is appropriately qualified.",
         "severity": "minor"
@@ -909,15 +917,17 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "d41812853eb3",
+          "md": "c0a8db4d7f36",
           "ts": "f56bfa770767"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.469035Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.469035Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Algebra without quasi-zeros'.",
         "evidence": "content/quantum-observable-universe/glossary/glossary-no-quasi-zeros.ts:1",
@@ -927,15 +937,17 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "d41812853eb3",
+          "md": "c0a8db4d7f36",
           "ts": "f56bfa770767"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.469035Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.469035Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The argument flow in 'Algebra without quasi-zeros' is logically sound, mapping onto the cited dependencies.",
         "evidence": "content/quantum-observable-universe/glossary/glossary-no-quasi-zeros.ts:1",
@@ -945,15 +957,17 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "d41812853eb3",
+          "md": "c0a8db4d7f36",
           "ts": "f56bfa770767"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.469035Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.469035Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
@@ -962,15 +976,17 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "d41812853eb3",
+          "md": "c0a8db4d7f36",
           "ts": "f56bfa770767"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.469035Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.469035Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Citations to leitnerpawloski2004 are correct and contextually appropriate.",
         "evidence": "content/quantum-observable-universe/glossary/glossary-no-quasi-zeros.ts:1",
@@ -980,15 +996,17 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "d41812853eb3",
+          "md": "c0a8db4d7f36",
           "ts": "f56bfa770767"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.469035Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.469035Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Key terms and symbols in 'Algebra without quasi-zeros' are mathematically defined and unambiguous.",
         "evidence": "content/quantum-observable-universe/glossary/glossary-no-quasi-zeros.ts:1",
@@ -998,15 +1016,17 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "d41812853eb3",
+          "md": "c0a8db4d7f36",
           "ts": "f56bfa770767"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.469035Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.469035Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The algebraic and logical relations in 'Algebra without quasi-zeros' are independent of empirical tuning parameters.",
         "evidence": "content/quantum-observable-universe/glossary/glossary-no-quasi-zeros.ts:1",
@@ -1016,15 +1036,17 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "d41812853eb3",
+          "md": "c0a8db4d7f36",
           "ts": "f56bfa770767"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.469035Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.469035Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The physical concepts described in 'Algebra without quasi-zeros' are consistent with quantum observable mechanics.",
         "evidence": "content/quantum-observable-universe/glossary/glossary-no-quasi-zeros.ts:1",
@@ -1034,15 +1056,17 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "d41812853eb3",
+          "md": "c0a8db4d7f36",
           "ts": "f56bfa770767"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.469035Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.469035Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The derivation steps and formal definitions in 'Algebra without quasi-zeros' are reproducible.",
         "evidence": "content/quantum-observable-universe/glossary/glossary-no-quasi-zeros.ts:1",
@@ -1052,15 +1076,17 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "d41812853eb3",
+          "md": "c0a8db4d7f36",
           "ts": "f56bfa770767"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.469035Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.469035Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
@@ -1072,14 +1098,20 @@
       {
         "result": "pass",
         "notes": "Smoothed transitions, removed forward references, improved economy.",
-        "reviewed_at": "2026-07-07T02:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.469035Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.469035Z"
+        },
+        "field_hash": {
+          "md": "c0a8db4d7f36",
+          "ts": "f56bfa770767"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-07T14:26:56.469035Z"
 }

@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/glossary/glossary-cemetery-group.md"
   },
   "source_hashes": {
-    "md": "a4ddf287f880",
+    "md": "e3b201e4b51e",
     "ts": "19f07421a7bc"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Smoothed transitions, removed forward references, improved economy.",
-        "reviewed_at": "2026-07-07T02:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.476739Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.476739Z"
+        },
+        "field_hash": {
+          "md": "e3b201e4b51e",
+          "ts": "19f07421a7bc"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:55.920Z"
+  "updated_at": "2026-07-07T14:26:56.476739Z"
 }

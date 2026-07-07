@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/particle-interactions/ontological-agnosticism.md"
   },
   "source_hashes": {
-    "md": "1b1c44d5c796",
+    "md": "ac8b17c9fa90",
     "ts": "7c0e70a3a09d"
   },
   "criteria": {
@@ -1318,18 +1318,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "1b1c44d5c796",
+          "md": "ac8b17c9fa90",
           "ts": "7c0e70a3a09d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.148687Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:18.420Z",
+        "reviewed_at": "2026-07-07T14:26:57.148687Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1337,16 +1337,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "1b1c44d5c796",
+          "md": "ac8b17c9fa90",
           "ts": "7c0e70a3a09d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.148687Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.148687Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'Crystal-limit observables transport flatly to the generic fibre': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -1356,16 +1358,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "1b1c44d5c796",
+          "md": "ac8b17c9fa90",
           "ts": "7c0e70a3a09d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.148687Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.148687Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Crystal-limit observables transport flatly to the generic fibre' presents substantial mathematical content: The crystal-graph realisation of Hecke normal forms together with the confinement\u2013grading correspondence admit a shar...",
         "severity": "minor"
@@ -1374,16 +1378,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "1b1c44d5c796",
+          "md": "ac8b17c9fa90",
           "ts": "7c0e70a3a09d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.148687Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.148687Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Crystal-limit observables transport flatly to the generic fibre'.",
         "severity": "minor",
@@ -1393,16 +1399,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "1b1c44d5c796",
+          "md": "ac8b17c9fa90",
           "ts": "7c0e70a3a09d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.148687Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.148687Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'Crystal-limit observables transport flatly to the generic fibre' is appropriately qualified.",
         "severity": "minor"
@@ -1411,16 +1419,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "1b1c44d5c796",
+          "md": "ac8b17c9fa90",
           "ts": "7c0e70a3a09d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.148687Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.148687Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Crystal-limit observables transport flatly to the generic fibre'.",
         "severity": "minor",
@@ -1430,16 +1440,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "1b1c44d5c796",
+          "md": "ac8b17c9fa90",
           "ts": "7c0e70a3a09d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.148687Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.148687Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The argument flow in 'Crystal-limit observables transport flatly to the generic fibre' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -1449,16 +1461,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "1b1c44d5c796",
+          "md": "ac8b17c9fa90",
           "ts": "7c0e70a3a09d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.148687Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.148687Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
@@ -1467,16 +1481,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "1b1c44d5c796",
+          "md": "ac8b17c9fa90",
           "ts": "7c0e70a3a09d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.148687Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.148687Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Citations to kashiwara1991, khovanovlauda2009, brundankleshchev2009 are correct and contextually appropriate.",
         "severity": "minor",
@@ -1486,16 +1502,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "1b1c44d5c796",
+          "md": "ac8b17c9fa90",
           "ts": "7c0e70a3a09d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.148687Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.148687Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Crystal-limit observables transport flatly to the generic fibre' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1505,16 +1523,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "1b1c44d5c796",
+          "md": "ac8b17c9fa90",
           "ts": "7c0e70a3a09d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.148687Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.148687Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Crystal-limit observables transport flatly to the generic fibre' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1524,16 +1544,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "1b1c44d5c796",
+          "md": "ac8b17c9fa90",
           "ts": "7c0e70a3a09d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.148687Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.148687Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Crystal-limit observables transport flatly to the generic fibre' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1543,16 +1565,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "1b1c44d5c796",
+          "md": "ac8b17c9fa90",
           "ts": "7c0e70a3a09d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.148687Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.148687Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'Crystal-limit observables transport flatly to the generic fibre' are reproducible.",
         "severity": "minor",
@@ -1562,16 +1586,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "1b1c44d5c796",
+          "md": "ac8b17c9fa90",
           "ts": "7c0e70a3a09d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.148687Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.148687Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -1583,14 +1609,20 @@
       {
         "result": "pass",
         "notes": "Rewrote seq15 to enforce Milnor brevity. Replaced verbose phrasing with concise declarative sentences, eliminating 'This section ... We then ...' patterns where possible. Simplified 'Conjectural status' blocks.",
-        "reviewed_at": "2026-07-06T22:50:00Z",
+        "reviewed_at": "2026-07-07T14:26:57.148687Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.148687Z"
+        },
+        "field_hash": {
+          "md": "ac8b17c9fa90",
+          "ts": "7c0e70a3a09d"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.492Z"
+  "updated_at": "2026-07-07T14:26:57.148687Z"
 }

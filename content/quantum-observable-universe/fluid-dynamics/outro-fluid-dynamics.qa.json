@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/fluid-dynamics/outro-fluid-dynamics.md"
   },
   "source_hashes": {
-    "ts": "6a9507a4bf30",
-    "md": "3728a0945140"
+    "md": "4627050046f2",
+    "ts": "6a9507a4bf30"
   },
   "criteria": {
     "q-usage-regime-detected": [
@@ -129,7 +129,7 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "3728a0945140",
+          "md": "4627050046f2",
           "ts": "6a9507a4bf30"
         },
         "result": "pass",
@@ -137,18 +137,18 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.267636Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T10:12:28.698Z",
+        "reviewed_at": "2026-07-07T14:26:56.267636Z",
         "reviewed_sha": "b9d92344e258d5bcb202e00e98ef195dda20d8f4"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "3728a0945140",
+          "md": "4627050046f2",
           "ts": "6a9507a4bf30"
         },
         "result": "pass",
@@ -156,18 +156,18 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.267636Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T10:12:28.731Z",
+        "reviewed_at": "2026-07-07T14:26:56.267636Z",
         "reviewed_sha": "b9d92344e258d5bcb202e00e98ef195dda20d8f4"
       }
     ],
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "3728a0945140",
+          "md": "4627050046f2",
           "ts": "6a9507a4bf30"
         },
         "result": "n/a",
@@ -175,18 +175,18 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.267636Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T10:12:28.762Z",
+        "reviewed_at": "2026-07-07T14:26:56.267636Z",
         "reviewed_sha": "b9d92344e258d5bcb202e00e98ef195dda20d8f4"
       }
     ],
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "3728a0945140",
+          "md": "4627050046f2",
           "ts": "6a9507a4bf30"
         },
         "result": "pass",
@@ -194,18 +194,18 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.267636Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T10:12:28.792Z",
+        "reviewed_at": "2026-07-07T14:26:56.267636Z",
         "reviewed_sha": "b9d92344e258d5bcb202e00e98ef195dda20d8f4"
       }
     ],
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "3728a0945140",
+          "md": "4627050046f2",
           "ts": "6a9507a4bf30"
         },
         "result": "n/a",
@@ -213,11 +213,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-08",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.267636Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-08T10:12:28.823Z",
+        "reviewed_at": "2026-07-07T14:26:56.267636Z",
         "reviewed_sha": "b9d92344e258d5bcb202e00e98ef195dda20d8f4"
       }
     ],
@@ -225,14 +225,20 @@
       {
         "result": "pass",
         "notes": "Smoothed transitions, applied concrete-before-abstract, removed forward references.",
-        "reviewed_at": "2026-07-07T02:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.267636Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.267636Z"
+        },
+        "field_hash": {
+          "md": "4627050046f2",
+          "ts": "6a9507a4bf30"
         }
       }
     ]
   },
-  "updated_at": "2026-06-08T10:12:28.823Z"
+  "updated_at": "2026-07-07T14:26:56.267636Z"
 }

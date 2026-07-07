@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform.lean"
   },
   "source_hashes": {
-    "md": "9223c082da92",
+    "md": "818e3bc41290",
     "ts": "2dd1e1c4fce9",
     "lean": "8c5af0a51679"
   },
@@ -37,14 +37,21 @@
       {
         "result": "pass",
         "notes": "Removed strategy blocks and merged redundant properties into declarative sentences. Removed commutative diagrams. Removed conversational padding.",
-        "reviewed_at": "2026-07-06T22:46:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.005785Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.005785Z"
+        },
+        "field_hash": {
+          "md": "818e3bc41290",
+          "ts": "2dd1e1c4fce9",
+          "lean": "8c5af0a51679"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:58.083Z"
+  "updated_at": "2026-07-07T14:26:56.005785Z"
 }

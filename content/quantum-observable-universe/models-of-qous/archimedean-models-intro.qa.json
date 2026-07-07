@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/models-of-qous/archimedean-models-intro.md"
   },
   "source_hashes": {
-    "md": "4f6d0d92352a",
+    "md": "6749dbb68bb1",
     "ts": "1bb5133949e1"
   },
   "criteria": {
@@ -784,18 +784,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "15aaceb44b7b",
+          "md": "6749dbb68bb1",
           "ts": "1bb5133949e1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.414656Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:22.933Z",
+        "reviewed_at": "2026-07-07T14:26:55.414656Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -803,16 +803,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "15aaceb44b7b",
+          "md": "6749dbb68bb1",
           "ts": "1bb5133949e1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.414656Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.110Z",
+        "reviewed_at": "2026-07-07T14:26:55.414656Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No false claims identified in 'sec:archimedean-models-intro': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -822,16 +824,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "15aaceb44b7b",
+          "md": "6749dbb68bb1",
           "ts": "1bb5133949e1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.414656Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.117Z",
+        "reviewed_at": "2026-07-07T14:26:55.414656Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The block 'sec:archimedean-models-intro' presents substantial mathematical content: _[draft]_ We turn to archimedean specialisations: realisations of the QOU axioms...",
         "severity": "minor"
@@ -840,16 +844,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "15aaceb44b7b",
+          "md": "6749dbb68bb1",
           "ts": "1bb5133949e1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.414656Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.123Z",
+        "reviewed_at": "2026-07-07T14:26:55.414656Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No circular reasoning or self-assuming definitions detected in 'sec:archimedean-models-intro'.",
         "severity": "minor",
@@ -859,16 +865,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "15aaceb44b7b",
+          "md": "6749dbb68bb1",
           "ts": "1bb5133949e1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.414656Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.129Z",
+        "reviewed_at": "2026-07-07T14:26:55.414656Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No overclaims: the scope of 'sec:archimedean-models-intro' is appropriately qualified.",
         "severity": "minor"
@@ -877,16 +885,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "15aaceb44b7b",
+          "md": "6749dbb68bb1",
           "ts": "1bb5133949e1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.414656Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.135Z",
+        "reviewed_at": "2026-07-07T14:26:55.414656Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'sec:archimedean-models-intro'.",
         "severity": "minor",
@@ -896,16 +906,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "15aaceb44b7b",
+          "md": "6749dbb68bb1",
           "ts": "1bb5133949e1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.414656Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.142Z",
+        "reviewed_at": "2026-07-07T14:26:55.414656Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The argument flow in 'sec:archimedean-models-intro' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -915,16 +927,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "15aaceb44b7b",
+          "md": "6749dbb68bb1",
           "ts": "1bb5133949e1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.414656Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.148Z",
+        "reviewed_at": "2026-07-07T14:26:55.414656Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
@@ -933,16 +947,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "15aaceb44b7b",
+          "md": "6749dbb68bb1",
           "ts": "1bb5133949e1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.414656Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.154Z",
+        "reviewed_at": "2026-07-07T14:26:55.414656Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No citations are present in 'sec:archimedean-models-intro', hence no citation misuse is possible.",
         "severity": "minor",
@@ -952,16 +968,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "15aaceb44b7b",
+          "md": "6749dbb68bb1",
           "ts": "1bb5133949e1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.414656Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.160Z",
+        "reviewed_at": "2026-07-07T14:26:55.414656Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Key terms and symbols in 'sec:archimedean-models-intro' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -971,16 +989,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "15aaceb44b7b",
+          "md": "6749dbb68bb1",
           "ts": "1bb5133949e1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.414656Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.166Z",
+        "reviewed_at": "2026-07-07T14:26:55.414656Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The algebraic and logical relations in 'sec:archimedean-models-intro' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -990,16 +1010,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "15aaceb44b7b",
+          "md": "6749dbb68bb1",
           "ts": "1bb5133949e1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.414656Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.172Z",
+        "reviewed_at": "2026-07-07T14:26:55.414656Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The physical concepts described in 'sec:archimedean-models-intro' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1009,16 +1031,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "15aaceb44b7b",
+          "md": "6749dbb68bb1",
           "ts": "1bb5133949e1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.414656Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.179Z",
+        "reviewed_at": "2026-07-07T14:26:55.414656Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The derivation steps and formal definitions in 'sec:archimedean-models-intro' are reproducible.",
         "severity": "minor",
@@ -1028,16 +1052,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "15aaceb44b7b",
+          "md": "6749dbb68bb1",
           "ts": "1bb5133949e1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.414656Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.185Z",
+        "reviewed_at": "2026-07-07T14:26:55.414656Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -1049,14 +1075,20 @@
       {
         "result": "pass",
         "notes": "Removed back-references, used short declarative sentences, tightened explanations of limits, enforced Milnor economy and structural requirements.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.414656Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.414656Z"
+        },
+        "field_hash": {
+          "md": "6749dbb68bb1",
+          "ts": "1bb5133949e1"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T18:21:24.666Z"
+  "updated_at": "2026-07-07T14:26:55.414656Z"
 }

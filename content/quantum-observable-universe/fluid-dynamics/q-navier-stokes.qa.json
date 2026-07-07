@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.lean"
   },
   "source_hashes": {
-    "md": "06ed452e89a4",
+    "md": "dbf3f1fa510b",
     "ts": "28bcbe21a31d",
     "lean": "917004351dfa"
   },
@@ -878,19 +878,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "c05f79727077",
+          "md": "dbf3f1fa510b",
           "ts": "28bcbe21a31d",
-          "lean": "a2a33df3f718"
+          "lean": "917004351dfa"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.248485Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:46.336Z",
+        "reviewed_at": "2026-07-07T14:26:56.248485Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -898,19 +898,19 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "c05f79727077",
+          "md": "dbf3f1fa510b",
           "ts": "28bcbe21a31d",
-          "lean": "a2a33df3f718"
+          "lean": "917004351dfa"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.248485Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:46.749Z",
+        "reviewed_at": "2026-07-07T14:26:56.248485Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -918,16 +918,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "c05f79727077",
+          "md": "dbf3f1fa510b",
           "ts": "28bcbe21a31d",
-          "lean": "a2a33df3f718"
+          "lean": "917004351dfa"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.248485Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.248485Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The claim in '$q$-deformed Navier--Stokes equation' is unverified due to Lean compilation failures in sibling file.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.lean:1",
@@ -937,16 +939,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "c05f79727077",
+          "md": "dbf3f1fa510b",
           "ts": "28bcbe21a31d",
-          "lean": "a2a33df3f718"
+          "lean": "917004351dfa"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.248485Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.248485Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The block '$q$-deformed Navier--Stokes equation' presents substantial mathematical content: The [quantum Euler equation](#rem:madelung-fluid) describes inviscid flow in the...",
         "severity": "minor"
@@ -955,16 +959,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "c05f79727077",
+          "md": "dbf3f1fa510b",
           "ts": "28bcbe21a31d",
-          "lean": "a2a33df3f718"
+          "lean": "917004351dfa"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.248485Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.248485Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No circular reasoning or self-assuming definitions detected in '$q$-deformed Navier--Stokes equation'.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.ts:1",
@@ -974,16 +980,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "c05f79727077",
+          "md": "dbf3f1fa510b",
           "ts": "28bcbe21a31d",
-          "lean": "a2a33df3f718"
+          "lean": "917004351dfa"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.248485Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.248485Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The prose presents '$q$-deformed Navier--Stokes equation' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
@@ -992,16 +1000,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "c05f79727077",
+          "md": "dbf3f1fa510b",
           "ts": "28bcbe21a31d",
-          "lean": "a2a33df3f718"
+          "lean": "917004351dfa"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.248485Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.248485Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in '$q$-deformed Navier--Stokes equation'.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.ts:1",
@@ -1011,16 +1021,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "c05f79727077",
+          "md": "dbf3f1fa510b",
           "ts": "28bcbe21a31d",
-          "lean": "a2a33df3f718"
+          "lean": "917004351dfa"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.248485Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.248485Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.lean.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.lean:1",
@@ -1030,16 +1042,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "c05f79727077",
+          "md": "dbf3f1fa510b",
           "ts": "28bcbe21a31d",
-          "lean": "a2a33df3f718"
+          "lean": "917004351dfa"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.248485Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.248485Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The Lean sibling content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
@@ -1048,16 +1062,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "c05f79727077",
+          "md": "dbf3f1fa510b",
           "ts": "28bcbe21a31d",
-          "lean": "a2a33df3f718"
+          "lean": "917004351dfa"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.248485Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.248485Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No citations are present in '$q$-deformed Navier--Stokes equation', hence no citation misuse is possible.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.ts:1",
@@ -1067,16 +1083,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "c05f79727077",
+          "md": "dbf3f1fa510b",
           "ts": "28bcbe21a31d",
-          "lean": "a2a33df3f718"
+          "lean": "917004351dfa"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.248485Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.248485Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Key terms and symbols in '$q$-deformed Navier--Stokes equation' are mathematically defined and unambiguous.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.ts:1",
@@ -1086,16 +1104,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "c05f79727077",
+          "md": "dbf3f1fa510b",
           "ts": "28bcbe21a31d",
-          "lean": "a2a33df3f718"
+          "lean": "917004351dfa"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.248485Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.248485Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The algebraic and logical relations in '$q$-deformed Navier--Stokes equation' are independent of empirical tuning parameters.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.ts:1",
@@ -1105,16 +1125,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "c05f79727077",
+          "md": "dbf3f1fa510b",
           "ts": "28bcbe21a31d",
-          "lean": "a2a33df3f718"
+          "lean": "917004351dfa"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.248485Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.248485Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The physical concepts described in '$q$-deformed Navier--Stokes equation' are consistent with quantum observable mechanics.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.ts:1",
@@ -1124,16 +1146,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "c05f79727077",
+          "md": "dbf3f1fa510b",
           "ts": "28bcbe21a31d",
-          "lean": "a2a33df3f718"
+          "lean": "917004351dfa"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.248485Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.248485Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The Lean sibling content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.lean fails compilation, indicating a reproducibility failure.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.lean:1 \u2014 /Users/litlfred/space_cats/qou/content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.lean:18:24: error: failed to synthesize",
@@ -1143,16 +1167,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "c05f79727077",
+          "md": "dbf3f1fa510b",
           "ts": "28bcbe21a31d",
-          "lean": "a2a33df3f718"
+          "lean": "917004351dfa"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.248485Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.248485Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.lean fails compilation: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/fluid-dynamics/q-navier-stokes.lean:18:24: error: failed to synthesize",
         "verdict": "open-objection",
@@ -1164,14 +1190,21 @@
       {
         "result": "pass",
         "notes": "Rewrote fluid-dynamics_seq0.md. Replaced passives with strong action verbs. Used present tense consistently. Emphasized linearity and succinctness.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.248485Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.248485Z"
+        },
+        "field_hash": {
+          "md": "dbf3f1fa510b",
+          "ts": "28bcbe21a31d",
+          "lean": "917004351dfa"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-07T14:26:56.248485Z"
 }

@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/predicted-spectra/antineutrino-knot.lean"
   },
   "source_hashes": {
-    "md": "2485e16f5463",
+    "md": "f7bf48da0044",
     "ts": "e70c8eb7a09c",
     "lean": "c14629eae391"
   },
@@ -878,19 +878,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "2485e16f5463",
+          "md": "f7bf48da0044",
           "ts": "e70c8eb7a09c",
-          "lean": "beb88684a2b2"
+          "lean": "c14629eae391"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.394748Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:47.925Z",
+        "reviewed_at": "2026-07-07T14:26:56.394748Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -898,19 +898,19 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "2485e16f5463",
+          "md": "f7bf48da0044",
           "ts": "e70c8eb7a09c",
-          "lean": "beb88684a2b2"
+          "lean": "c14629eae391"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.394748Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:48.337Z",
+        "reviewed_at": "2026-07-07T14:26:56.394748Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is correctly placed in an archimedean chapter."
       }
@@ -918,17 +918,19 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "2485e16f5463",
+          "md": "f7bf48da0044",
           "ts": "e70c8eb7a09c",
-          "lean": "beb88684a2b2"
+          "lean": "c14629eae391"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.394748Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.394748Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The mathematical claims in 'Antineutrino as mirror unknot $T_{1,0}^{\\\\sigma}$' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/predicted-spectra/antineutrino-knot.lean:27:13: error: unexpected token 'section'; expected 'lemma'.",
         "severity": "minor",
@@ -938,17 +940,19 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "2485e16f5463",
+          "md": "f7bf48da0044",
           "ts": "e70c8eb7a09c",
-          "lean": "beb88684a2b2"
+          "lean": "c14629eae391"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.394748Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.394748Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No vacuous proofs detected. Sibling Lean file does not contain sorry, though it fails compilation on modules.",
         "severity": "minor",
@@ -958,17 +962,19 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "2485e16f5463",
+          "md": "f7bf48da0044",
           "ts": "e70c8eb7a09c",
-          "lean": "beb88684a2b2"
+          "lean": "c14629eae391"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.394748Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.394748Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The definition 'Antineutrino as mirror unknot $T_{1,0}^{\\\\sigma}$' is formulated via non-circular relations to existing primitives.",
         "severity": "minor",
@@ -978,17 +984,19 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "2485e16f5463",
+          "md": "f7bf48da0044",
           "ts": "e70c8eb7a09c",
-          "lean": "beb88684a2b2"
+          "lean": "c14629eae391"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.394748Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.394748Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose presents 'Antineutrino as mirror unknot $T_{1,0}^{\\\\sigma}$' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
@@ -997,17 +1005,19 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "2485e16f5463",
+          "md": "f7bf48da0044",
           "ts": "e70c8eb7a09c",
-          "lean": "beb88684a2b2"
+          "lean": "c14629eae391"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.394748Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.394748Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Antineutrino as mirror unknot $T_{1,0}^{\\\\sigma}$'.",
         "severity": "minor",
@@ -1017,17 +1027,19 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "2485e16f5463",
+          "md": "f7bf48da0044",
           "ts": "e70c8eb7a09c",
-          "lean": "beb88684a2b2"
+          "lean": "c14629eae391"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.394748Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.394748Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/predicted-spectra/antineutrino-knot.lean.",
         "severity": "minor",
@@ -1037,17 +1049,19 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "2485e16f5463",
+          "md": "f7bf48da0044",
           "ts": "e70c8eb7a09c",
-          "lean": "beb88684a2b2"
+          "lean": "c14629eae391"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.394748Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.394748Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/antineutrino-knot.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
@@ -1056,17 +1070,19 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "2485e16f5463",
+          "md": "f7bf48da0044",
           "ts": "e70c8eb7a09c",
-          "lean": "beb88684a2b2"
+          "lean": "c14629eae391"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.394748Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.394748Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Antineutrino as mirror unknot $T_{1,0}^{\\\\sigma}$', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1076,17 +1092,19 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "2485e16f5463",
+          "md": "f7bf48da0044",
           "ts": "e70c8eb7a09c",
-          "lean": "beb88684a2b2"
+          "lean": "c14629eae391"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.394748Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.394748Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Antineutrino as mirror unknot $T_{1,0}^{\\\\sigma}$' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1096,17 +1114,19 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "2485e16f5463",
+          "md": "f7bf48da0044",
           "ts": "e70c8eb7a09c",
-          "lean": "beb88684a2b2"
+          "lean": "c14629eae391"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.394748Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.394748Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The empirical claims in 'Antineutrino as mirror unknot $T_{1,0}^{\\\\sigma}$' are structurally anchored to the QOU mass framework and are stable.",
         "severity": "minor",
@@ -1116,17 +1136,19 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "2485e16f5463",
+          "md": "f7bf48da0044",
           "ts": "e70c8eb7a09c",
-          "lean": "beb88684a2b2"
+          "lean": "c14629eae391"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.394748Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.394748Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Antineutrino as mirror unknot $T_{1,0}^{\\\\sigma}$' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1136,17 +1158,19 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "2485e16f5463",
+          "md": "f7bf48da0044",
           "ts": "e70c8eb7a09c",
-          "lean": "beb88684a2b2"
+          "lean": "c14629eae391"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.394748Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.394748Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/antineutrino-knot.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
@@ -1156,17 +1180,19 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "2485e16f5463",
+          "md": "f7bf48da0044",
           "ts": "e70c8eb7a09c",
-          "lean": "beb88684a2b2"
+          "lean": "c14629eae391"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.394748Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.394748Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/antineutrino-knot.lean fails compilation: content/quantum-observable-universe/predicted-spectra/antineutrino-knot.lean:27:13: error: unexpected token 'section'; expected 'lemma'",
         "severity": "critical",
@@ -1177,7 +1203,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "2485e16f5463",
+          "md": "f7bf48da0044",
           "ts": "e70c8eb7a09c",
           "lean": "c14629eae391"
         },
@@ -1185,9 +1211,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.394748Z"
         },
-        "reviewed_at": "2026-07-06T04:41:30.359Z",
+        "reviewed_at": "2026-07-07T14:26:56.394748Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'def:antineutrino-knot' \u2192 expected 'antineutrino_knot'; Lean declares: R_q, q_param, q_inv_param, Antineutrino, unknot_amphichiral. Structural match via content."
       }
@@ -1196,14 +1224,21 @@
       {
         "result": "pass",
         "notes": "Rewrote prose blocks to adhere to Milnor standards. Improved economy, preserved all math. Forward references resolved or smoothed.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.394748Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.394748Z"
+        },
+        "field_hash": {
+          "md": "f7bf48da0044",
+          "ts": "e70c8eb7a09c",
+          "lean": "c14629eae391"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:30.359Z"
+  "updated_at": "2026-07-07T14:26:56.394748Z"
 }

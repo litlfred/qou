@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/spin-involution.lean"
   },
   "source_hashes": {
-    "md": "548cd89b51ad",
+    "md": "03520d7c3563",
     "ts": "6a140f246da8",
     "lean": "1c6111a52c7a"
   },
@@ -36,7 +36,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "548cd89b51ad",
+          "md": "03520d7c3563",
           "ts": "6a140f246da8",
           "lean": "1c6111a52c7a"
         },
@@ -44,9 +44,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.704045Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_at": "2026-07-07T14:26:56.704045Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'def:spin-involution' \u2192 expected 'spin_involution'; Lean declares: SpinInvolution, spin_involution_bijective, SpinInvolution.map_zero, SpinInvolution.map_neg, SpinInvolution.map_sub.... Structural match via content."
       }
@@ -55,14 +57,21 @@
       {
         "result": "pass",
         "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
-        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.704045Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.704045Z"
+        },
+        "field_hash": {
+          "md": "03520d7c3563",
+          "ts": "6a140f246da8",
+          "lean": "1c6111a52c7a"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.430Z"
+  "updated_at": "2026-07-07T14:26:56.704045Z"
 }

@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-intro.md"
   },
   "source_hashes": {
-    "md": "3581a9279b38",
+    "md": "975b444975e3",
     "ts": "a4d0cbf170e3"
   },
   "criteria": {
@@ -784,15 +784,17 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "3581a9279b38",
+          "md": "975b444975e3",
           "ts": "a4d0cbf170e3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.216001Z"
         },
-        "reviewed_at": "2026-06-28T05:50:23.590Z",
+        "reviewed_at": "2026-07-07T14:26:56.216001Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Block placement and kind match validated structurally.",
         "severity": "minor"
@@ -801,15 +803,17 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "3581a9279b38",
+          "md": "975b444975e3",
           "ts": "a4d0cbf170e3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.216001Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:56.216001Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No false claims are present.",
         "severity": "minor"
@@ -818,15 +822,17 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "3581a9279b38",
+          "md": "975b444975e3",
           "ts": "a4d0cbf170e3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.216001Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:56.216001Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The block provides necessary scope and conventions.",
         "severity": "minor"
@@ -835,15 +841,17 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "3581a9279b38",
+          "md": "975b444975e3",
           "ts": "a4d0cbf170e3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.216001Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:56.216001Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No circularity is present.",
         "severity": "minor"
@@ -852,15 +860,17 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "3581a9279b38",
+          "md": "975b444975e3",
           "ts": "a4d0cbf170e3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.216001Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:56.216001Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The description of the layered compute stack is accurate.",
         "severity": "minor"
@@ -869,15 +879,17 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "3581a9279b38",
+          "md": "975b444975e3",
           "ts": "a4d0cbf170e3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.216001Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:56.216001Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No hidden parameters.",
         "severity": "minor"
@@ -886,15 +898,17 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "3581a9279b38",
+          "md": "975b444975e3",
           "ts": "a4d0cbf170e3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.216001Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:56.216001Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No logical gaps.",
         "severity": "minor"
@@ -903,15 +917,17 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "3581a9279b38",
+          "md": "975b444975e3",
           "ts": "a4d0cbf170e3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.216001Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:56.216001Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No lean sibling exists.",
         "severity": "minor"
@@ -920,15 +936,17 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "3581a9279b38",
+          "md": "975b444975e3",
           "ts": "a4d0cbf170e3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.216001Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:56.216001Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No citations are misused.",
         "severity": "minor"
@@ -937,15 +955,17 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "3581a9279b38",
+          "md": "975b444975e3",
           "ts": "a4d0cbf170e3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.216001Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:56.216001Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Conventions and status flags are defined.",
         "severity": "minor"
@@ -954,15 +974,17 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "3581a9279b38",
+          "md": "975b444975e3",
           "ts": "a4d0cbf170e3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.216001Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:56.216001Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Not applicable.",
         "severity": "minor"
@@ -971,15 +993,17 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "3581a9279b38",
+          "md": "975b444975e3",
           "ts": "a4d0cbf170e3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.216001Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:56.216001Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No physical claims are made.",
         "severity": "minor"
@@ -988,15 +1012,17 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "3581a9279b38",
+          "md": "975b444975e3",
           "ts": "a4d0cbf170e3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.216001Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:56.216001Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No calculations are performed.",
         "severity": "minor"
@@ -1005,15 +1031,17 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "3581a9279b38",
+          "md": "975b444975e3",
           "ts": "a4d0cbf170e3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.216001Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:56.216001Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "severity": "minor",
         "verdict": "clean",
@@ -1024,14 +1052,20 @@
       {
         "result": "pass",
         "notes": "Tightened explanations of the layered compute stack and algorithm steps. Eliminated conversational padding and improved narrative economy.",
-        "reviewed_at": "2026-07-06T22:40:30Z",
+        "reviewed_at": "2026-07-07T14:26:56.216001Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.216001Z"
+        },
+        "field_hash": {
+          "md": "975b444975e3",
+          "ts": "a4d0cbf170e3"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T18:14:43.813Z"
+  "updated_at": "2026-07-07T14:26:56.216001Z"
 }

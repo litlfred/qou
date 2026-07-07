@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/quantum-universes/outro-quantum-universes.md"
   },
   "source_hashes": {
-    "ts": "fcf27e692a26",
-    "md": "533d3031f6e5"
+    "md": "98d8f02ad687",
+    "ts": "fcf27e692a26"
   },
   "criteria": {
     "q-usage-regime-detected": [
@@ -128,14 +128,20 @@
       {
         "result": "pass",
         "notes": "Cleaned up the categorical structures section. Ensured connection, jet, Hodge star, and Poisson object flow logically. Stripped filler words.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:57.098315Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.098315Z"
+        },
+        "field_hash": {
+          "md": "98d8f02ad687",
+          "ts": "fcf27e692a26"
         }
       }
     ]
   },
-  "updated_at": "2026-06-01T16:06:38.106Z"
+  "updated_at": "2026-07-07T14:26:57.098315Z"
 }

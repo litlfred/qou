@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/box-braid-irreducibility.lean"
   },
   "source_hashes": {
-    "md": "e174284ba6b8",
+    "md": "ec5522f7d0e6",
     "ts": "75dbd3ce6e58",
     "lean": "876952e9df64"
   },
@@ -2296,19 +2296,19 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "9e752ed4a2c6",
-          "ts": "f4efc1993260",
-          "lean": "cb48dd5ad012"
+          "md": "ec5522f7d0e6",
+          "ts": "75dbd3ce6e58",
+          "lean": "876952e9df64"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.123447Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:22.195Z",
+        "reviewed_at": "2026-07-07T14:26:57.123447Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
       }
@@ -2316,19 +2316,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "9e752ed4a2c6",
-          "ts": "f4efc1993260",
-          "lean": "cb48dd5ad012"
+          "md": "ec5522f7d0e6",
+          "ts": "75dbd3ce6e58",
+          "lean": "876952e9df64"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.123447Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:22.630Z",
+        "reviewed_at": "2026-07-07T14:26:57.123447Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -2336,19 +2336,19 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "9e752ed4a2c6",
-          "ts": "f4efc1993260",
-          "lean": "cb48dd5ad012"
+          "md": "ec5522f7d0e6",
+          "ts": "75dbd3ce6e58",
+          "lean": "876952e9df64"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.123447Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:23.060Z",
+        "reviewed_at": "2026-07-07T14:26:57.123447Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -2356,19 +2356,19 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "9e752ed4a2c6",
-          "ts": "f4efc1993260",
-          "lean": "cb48dd5ad012"
+          "md": "ec5522f7d0e6",
+          "ts": "75dbd3ce6e58",
+          "lean": "876952e9df64"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.123447Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:23.416Z",
+        "reviewed_at": "2026-07-07T14:26:57.123447Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
       }
@@ -2394,7 +2394,7 @@
       },
       {
         "field_hash": {
-          "md": "e174284ba6b8",
+          "md": "ec5522f7d0e6",
           "ts": "75dbd3ce6e58",
           "lean": "876952e9df64"
         },
@@ -2402,9 +2402,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.123447Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_at": "2026-07-07T14:26:57.123447Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:box-braid-irreducibility' \u2192 expected 'box_braid_irreducibility'; Lean declares: TorusKnot, TorusKnot.crossingNumber, T35, T35_crossing_number, TorusKnot.braidIndex.... Structural match via content."
       }
@@ -2412,9 +2414,9 @@
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "9e752ed4a2c6",
-          "ts": "f4efc1993260",
-          "lean": "cb48dd5ad012"
+          "md": "ec5522f7d0e6",
+          "ts": "75dbd3ce6e58",
+          "lean": "876952e9df64"
         },
         "result": "pass",
         "score": {
@@ -2424,11 +2426,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.123447Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:24.056Z",
+        "reviewed_at": "2026-07-07T14:26:57.123447Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
       }
@@ -2436,9 +2438,9 @@
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "9e752ed4a2c6",
-          "ts": "f4efc1993260",
-          "lean": "cb48dd5ad012"
+          "md": "ec5522f7d0e6",
+          "ts": "75dbd3ce6e58",
+          "lean": "876952e9df64"
         },
         "result": "pass",
         "score": {
@@ -2448,11 +2450,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.123447Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:24.365Z",
+        "reviewed_at": "2026-07-07T14:26:57.123447Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
       }
@@ -2460,9 +2462,9 @@
     "proof-rater-novelty": [
       {
         "field_hash": {
-          "md": "9e752ed4a2c6",
-          "ts": "f4efc1993260",
-          "lean": "cb48dd5ad012"
+          "md": "ec5522f7d0e6",
+          "ts": "75dbd3ce6e58",
+          "lean": "876952e9df64"
         },
         "result": "pass",
         "score": {
@@ -2472,11 +2474,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.123447Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:24.605Z",
+        "reviewed_at": "2026-07-07T14:26:57.123447Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
       }
@@ -2484,19 +2486,19 @@
     "proof-statement-integrity": [
       {
         "field_hash": {
-          "md": "9e752ed4a2c6",
-          "ts": "f4efc1993260",
-          "lean": "cb48dd5ad012"
+          "md": "ec5522f7d0e6",
+          "ts": "75dbd3ce6e58",
+          "lean": "876952e9df64"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.123447Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:24.857Z",
+        "reviewed_at": "2026-07-07T14:26:57.123447Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
       }
@@ -2504,19 +2506,19 @@
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "9e752ed4a2c6",
-          "ts": "f4efc1993260",
-          "lean": "cb48dd5ad012"
+          "md": "ec5522f7d0e6",
+          "ts": "75dbd3ce6e58",
+          "lean": "876952e9df64"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.123447Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:25.031Z",
+        "reviewed_at": "2026-07-07T14:26:57.123447Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
       }
@@ -2560,18 +2562,19 @@
       },
       {
         "field_hash": {
-          "md": "2aecb3ff6ed6",
-          "ts": "f4efc1993260",
+          "md": "ec5522f7d0e6",
+          "ts": "75dbd3ce6e58",
           "lean": "876952e9df64"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/lean-proof-vacuity-audit",
-          "agent_date": "2026-07-04",
-          "agent_skill": "local/lean-proof-vacuity-audit"
+          "agent_date": "2026-07-07T14:26:57.123447Z",
+          "agent_skill": "local/lean-proof-vacuity-audit",
+          "agent_model": "gemini-3.1-pro"
         },
-        "reviewed_at": "2026-07-04T00:15:23.700181Z",
+        "reviewed_at": "2026-07-07T14:26:57.123447Z",
         "reviewed_sha": "b3302691b06ff4207b2e72cda23501bf922042e8",
         "notes": "Resolved: flagged def-disguised-true (photon_neutrino_requires_T35) no longer present; scanner clean at current hash."
       }
@@ -2579,19 +2582,19 @@
     "proof-no-false-premise": [
       {
         "field_hash": {
-          "md": "9e752ed4a2c6",
-          "ts": "f4efc1993260",
-          "lean": "cb48dd5ad012"
+          "md": "ec5522f7d0e6",
+          "ts": "75dbd3ce6e58",
+          "lean": "876952e9df64"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.123447Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:25.370Z",
+        "reviewed_at": "2026-07-07T14:26:57.123447Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
       }
@@ -2599,19 +2602,19 @@
     "proof-no-unused-hypotheses": [
       {
         "field_hash": {
-          "md": "9e752ed4a2c6",
-          "ts": "f4efc1993260",
-          "lean": "cb48dd5ad012"
+          "md": "ec5522f7d0e6",
+          "ts": "75dbd3ce6e58",
+          "lean": "876952e9df64"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.123447Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:25.492Z",
+        "reviewed_at": "2026-07-07T14:26:57.123447Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
       }
@@ -2619,19 +2622,19 @@
     "proof-no-decide-masking": [
       {
         "field_hash": {
-          "md": "9e752ed4a2c6",
-          "ts": "f4efc1993260",
-          "lean": "cb48dd5ad012"
+          "md": "ec5522f7d0e6",
+          "ts": "75dbd3ce6e58",
+          "lean": "876952e9df64"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.123447Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:25.605Z",
+        "reviewed_at": "2026-07-07T14:26:57.123447Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
@@ -2639,17 +2642,19 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "9e752ed4a2c6",
-          "ts": "f4efc1993260",
-          "lean": "cb48dd5ad012"
+          "md": "ec5522f7d0e6",
+          "ts": "75dbd3ce6e58",
+          "lean": "876952e9df64"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.123447Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.123447Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The mathematical claims in 'The $\\\\gamma\\\\gamma \\\\to \\\\nu\\\\nu^{\\\\sigma}$ box braid is irreducible' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/particle-interactions/box-braid-irreducibility.lean:72:65: error: unsolved goals.",
         "severity": "minor",
@@ -2659,17 +2664,19 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "9e752ed4a2c6",
-          "ts": "f4efc1993260",
-          "lean": "cb48dd5ad012"
+          "md": "ec5522f7d0e6",
+          "ts": "75dbd3ce6e58",
+          "lean": "876952e9df64"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.123447Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.123447Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/box-braid-irreducibility.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "minor",
@@ -2679,17 +2686,19 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "9e752ed4a2c6",
-          "ts": "f4efc1993260",
-          "lean": "cb48dd5ad012"
+          "md": "ec5522f7d0e6",
+          "ts": "75dbd3ce6e58",
+          "lean": "876952e9df64"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.123447Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.123447Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'The $\\\\gamma\\\\gamma \\\\to \\\\nu\\\\nu^{\\\\sigma}$ box braid is irreducible'.",
         "severity": "minor",
@@ -2699,17 +2708,19 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "9e752ed4a2c6",
-          "ts": "f4efc1993260",
-          "lean": "cb48dd5ad012"
+          "md": "ec5522f7d0e6",
+          "ts": "75dbd3ce6e58",
+          "lean": "876952e9df64"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.123447Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.123447Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The remarks and narrative scope in 'The $\\\\gamma\\\\gamma \\\\to \\\\nu\\\\nu^{\\\\sigma}$ box braid is irreducible' are appropriately qualified.",
         "severity": "minor"
@@ -2718,17 +2729,19 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "9e752ed4a2c6",
-          "ts": "f4efc1993260",
-          "lean": "cb48dd5ad012"
+          "md": "ec5522f7d0e6",
+          "ts": "75dbd3ce6e58",
+          "lean": "876952e9df64"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.123447Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.123447Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'The $\\\\gamma\\\\gamma \\\\to \\\\nu\\\\nu^{\\\\sigma}$ box braid is irreducible'.",
         "severity": "minor",
@@ -2738,17 +2751,19 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "9e752ed4a2c6",
-          "ts": "f4efc1993260",
-          "lean": "cb48dd5ad012"
+          "md": "ec5522f7d0e6",
+          "ts": "75dbd3ce6e58",
+          "lean": "876952e9df64"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.123447Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.123447Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/box-braid-irreducibility.lean.",
         "severity": "minor",
@@ -2758,17 +2773,19 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "9e752ed4a2c6",
-          "ts": "f4efc1993260",
-          "lean": "cb48dd5ad012"
+          "md": "ec5522f7d0e6",
+          "ts": "75dbd3ce6e58",
+          "lean": "876952e9df64"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.123447Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.123447Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/box-braid-irreducibility.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
@@ -2777,17 +2794,19 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "9e752ed4a2c6",
-          "ts": "f4efc1993260",
-          "lean": "cb48dd5ad012"
+          "md": "ec5522f7d0e6",
+          "ts": "75dbd3ce6e58",
+          "lean": "876952e9df64"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.123447Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.123447Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'The $\\\\gamma\\\\gamma \\\\to \\\\nu\\\\nu^{\\\\sigma}$ box braid is irreducible', hence no citation misuse is possible.",
         "severity": "minor",
@@ -2797,17 +2816,19 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "9e752ed4a2c6",
-          "ts": "f4efc1993260",
-          "lean": "cb48dd5ad012"
+          "md": "ec5522f7d0e6",
+          "ts": "75dbd3ce6e58",
+          "lean": "876952e9df64"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.123447Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.123447Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'The $\\\\gamma\\\\gamma \\\\to \\\\nu\\\\nu^{\\\\sigma}$ box braid is irreducible' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -2817,17 +2838,19 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "9e752ed4a2c6",
-          "ts": "f4efc1993260",
-          "lean": "cb48dd5ad012"
+          "md": "ec5522f7d0e6",
+          "ts": "75dbd3ce6e58",
+          "lean": "876952e9df64"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.123447Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.123447Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'The $\\\\gamma\\\\gamma \\\\to \\\\nu\\\\nu^{\\\\sigma}$ box braid is irreducible' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -2837,17 +2860,19 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "9e752ed4a2c6",
-          "ts": "f4efc1993260",
-          "lean": "cb48dd5ad012"
+          "md": "ec5522f7d0e6",
+          "ts": "75dbd3ce6e58",
+          "lean": "876952e9df64"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.123447Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.123447Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'The $\\\\gamma\\\\gamma \\\\to \\\\nu\\\\nu^{\\\\sigma}$ box braid is irreducible' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -2857,17 +2882,19 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "9e752ed4a2c6",
-          "ts": "f4efc1993260",
-          "lean": "cb48dd5ad012"
+          "md": "ec5522f7d0e6",
+          "ts": "75dbd3ce6e58",
+          "lean": "876952e9df64"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.123447Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.123447Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/box-braid-irreducibility.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
@@ -2877,17 +2904,19 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "9e752ed4a2c6",
-          "ts": "f4efc1993260",
-          "lean": "cb48dd5ad012"
+          "md": "ec5522f7d0e6",
+          "ts": "75dbd3ce6e58",
+          "lean": "876952e9df64"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.123447Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.123447Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/box-braid-irreducibility.lean fails compilation.",
         "severity": "major",
@@ -2919,14 +2948,21 @@
       {
         "result": "pass",
         "notes": "Applied Milnor exposition standard (H1-H8) and brevity rules. Shortened sentences, removed editorializing ('surprisingly', 'remarkably'), replaced 'this book' with 'this paper', and maintained Math, markdown, and cross-block consistency.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:57.123447Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.123447Z"
+        },
+        "field_hash": {
+          "md": "ec5522f7d0e6",
+          "ts": "75dbd3ce6e58",
+          "lean": "876952e9df64"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.802Z"
+  "updated_at": "2026-07-07T14:26:57.123447Z"
 }

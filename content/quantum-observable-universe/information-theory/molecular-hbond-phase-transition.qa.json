@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/information-theory/molecular-hbond-phase-transition.md"
   },
   "source_hashes": {
-    "md": "a905dfcff6e4",
+    "md": "d70dae99c13a",
     "ts": "e4ab226af51d"
   },
   "criteria": {
@@ -842,18 +842,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "bf85dfb7c991",
+          "md": "d70dae99c13a",
           "ts": "e4ab226af51d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.584716Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:27.367Z",
+        "reviewed_at": "2026-07-07T14:26:55.584716Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -861,15 +861,17 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "bf85dfb7c991",
+          "md": "d70dae99c13a",
           "ts": "e4ab226af51d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.584716Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.584716Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No false claims identified in 'Molecular phase transitions: the hydrogen-bond network as the boundary action': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -879,15 +881,17 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "bf85dfb7c991",
+          "md": "d70dae99c13a",
           "ts": "e4ab226af51d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.584716Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.584716Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The block 'Molecular phase transitions: the hydrogen-bond network as the boundary action' presents substantial mathematical content: The critical temperatures of [`prop:phase-transition-boundary`](#prop:phase-tran...",
         "severity": "minor"
@@ -896,15 +900,17 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "bf85dfb7c991",
+          "md": "d70dae99c13a",
           "ts": "e4ab226af51d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.584716Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.584716Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Molecular phase transitions: the hydrogen-bond network as the boundary action'.",
         "severity": "minor",
@@ -914,15 +920,17 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "bf85dfb7c991",
+          "md": "d70dae99c13a",
           "ts": "e4ab226af51d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.584716Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.584716Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No overclaims: the scope of 'Molecular phase transitions: the hydrogen-bond network as the boundary action' is appropriately qualified.",
         "severity": "minor"
@@ -931,15 +939,17 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "bf85dfb7c991",
+          "md": "d70dae99c13a",
           "ts": "e4ab226af51d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.584716Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.584716Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Molecular phase transitions: the hydrogen-bond network as the boundary action'.",
         "severity": "minor",
@@ -949,15 +959,17 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "bf85dfb7c991",
+          "md": "d70dae99c13a",
           "ts": "e4ab226af51d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.584716Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.584716Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The argument flow in 'Molecular phase transitions: the hydrogen-bond network as the boundary action' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -967,15 +979,17 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "bf85dfb7c991",
+          "md": "d70dae99c13a",
           "ts": "e4ab226af51d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.584716Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.584716Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
@@ -984,15 +998,17 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "bf85dfb7c991",
+          "md": "d70dae99c13a",
           "ts": "e4ab226af51d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.584716Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.584716Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No citations are present in 'Molecular phase transitions: the hydrogen-bond network as the boundary action', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1002,15 +1018,17 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "bf85dfb7c991",
+          "md": "d70dae99c13a",
           "ts": "e4ab226af51d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.584716Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.584716Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Key terms and symbols in 'Molecular phase transitions: the hydrogen-bond network as the boundary action' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1020,15 +1038,17 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "bf85dfb7c991",
+          "md": "d70dae99c13a",
           "ts": "e4ab226af51d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.584716Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.584716Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The algebraic and logical relations in 'Molecular phase transitions: the hydrogen-bond network as the boundary action' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1038,15 +1058,17 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "bf85dfb7c991",
+          "md": "d70dae99c13a",
           "ts": "e4ab226af51d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.584716Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.584716Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The physical concepts described in 'Molecular phase transitions: the hydrogen-bond network as the boundary action' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1056,15 +1078,17 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "bf85dfb7c991",
+          "md": "d70dae99c13a",
           "ts": "e4ab226af51d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.584716Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.584716Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The derivation steps and formal definitions in 'Molecular phase transitions: the hydrogen-bond network as the boundary action' are reproducible.",
         "severity": "minor",
@@ -1074,15 +1098,17 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "bf85dfb7c991",
+          "md": "d70dae99c13a",
           "ts": "e4ab226af51d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.584716Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.584716Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -1094,14 +1120,20 @@
       {
         "result": "pass",
         "notes": "Flattened representation theoretic phase boundaries. Streamlined van der Waals isolation logic. Stripped explicit lean block annotations and reference IDs per brevity rules. Condensed bridging text in H-bond boiling sections. Maintained all file markers.",
-        "reviewed_at": "2026-07-06T22:56:32Z",
+        "reviewed_at": "2026-07-07T14:26:55.584716Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.584716Z"
+        },
+        "field_hash": {
+          "md": "d70dae99c13a",
+          "ts": "e4ab226af51d"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.008Z"
+  "updated_at": "2026-07-07T14:26:55.584716Z"
 }

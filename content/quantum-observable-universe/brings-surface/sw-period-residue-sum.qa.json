@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/brings-surface/sw-period-residue-sum.lean"
   },
   "source_hashes": {
-    "md": "552a801f3509",
+    "md": "602168a02862",
     "ts": "5e4e9a47ba2e",
     "lean": "b9507b5520ea"
   },
@@ -1068,7 +1068,7 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "552a801f3509",
+          "md": "602168a02862",
           "ts": "5e4e9a47ba2e",
           "lean": "b9507b5520ea"
         },
@@ -1076,11 +1076,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.036009Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:20.851Z",
+        "reviewed_at": "2026-07-07T14:26:55.036009Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
       }
@@ -1088,7 +1088,7 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "552a801f3509",
+          "md": "602168a02862",
           "ts": "5e4e9a47ba2e",
           "lean": "b9507b5520ea"
         },
@@ -1096,11 +1096,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.036009Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:21.276Z",
+        "reviewed_at": "2026-07-07T14:26:55.036009Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1108,7 +1108,7 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "552a801f3509",
+          "md": "602168a02862",
           "ts": "5e4e9a47ba2e",
           "lean": "b9507b5520ea"
         },
@@ -1116,11 +1116,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.036009Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:21.653Z",
+        "reviewed_at": "2026-07-07T14:26:55.036009Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -1128,7 +1128,7 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "552a801f3509",
+          "md": "602168a02862",
           "ts": "5e4e9a47ba2e",
           "lean": "b9507b5520ea"
         },
@@ -1136,11 +1136,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.036009Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:21.986Z",
+        "reviewed_at": "2026-07-07T14:26:55.036009Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
       }
@@ -1166,7 +1166,7 @@
       },
       {
         "field_hash": {
-          "md": "552a801f3509",
+          "md": "602168a02862",
           "ts": "5e4e9a47ba2e",
           "lean": "b9507b5520ea"
         },
@@ -1174,9 +1174,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.036009Z"
         },
-        "reviewed_at": "2026-07-06T04:41:30.202Z",
+        "reviewed_at": "2026-07-07T14:26:55.036009Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:sw-period-residue-sum' \u2192 expected 'sw_period_residue_sum'; Lean declares: SWPeriodResidue, sw_period_eq_residue_sum. Structural match via content."
       }
@@ -1184,7 +1186,7 @@
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "552a801f3509",
+          "md": "602168a02862",
           "ts": "5e4e9a47ba2e",
           "lean": "b9507b5520ea"
         },
@@ -1196,11 +1198,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.036009Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:22.827Z",
+        "reviewed_at": "2026-07-07T14:26:55.036009Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
       }
@@ -1208,7 +1210,7 @@
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "552a801f3509",
+          "md": "602168a02862",
           "ts": "5e4e9a47ba2e",
           "lean": "b9507b5520ea"
         },
@@ -1220,11 +1222,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.036009Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:23.186Z",
+        "reviewed_at": "2026-07-07T14:26:55.036009Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
       }
@@ -1232,7 +1234,7 @@
     "proof-rater-novelty": [
       {
         "field_hash": {
-          "md": "552a801f3509",
+          "md": "602168a02862",
           "ts": "5e4e9a47ba2e",
           "lean": "b9507b5520ea"
         },
@@ -1244,11 +1246,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.036009Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:23.546Z",
+        "reviewed_at": "2026-07-07T14:26:55.036009Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
       }
@@ -1256,7 +1258,7 @@
     "proof-statement-integrity": [
       {
         "field_hash": {
-          "md": "552a801f3509",
+          "md": "602168a02862",
           "ts": "5e4e9a47ba2e",
           "lean": "b9507b5520ea"
         },
@@ -1264,11 +1266,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.036009Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:24.020Z",
+        "reviewed_at": "2026-07-07T14:26:55.036009Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
       }
@@ -1276,7 +1278,7 @@
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "552a801f3509",
+          "md": "602168a02862",
           "ts": "5e4e9a47ba2e",
           "lean": "b9507b5520ea"
         },
@@ -1284,11 +1286,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.036009Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:24.587Z",
+        "reviewed_at": "2026-07-07T14:26:55.036009Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
       }
@@ -1296,7 +1298,7 @@
     "proof-no-trivial-true": [
       {
         "field_hash": {
-          "md": "552a801f3509",
+          "md": "602168a02862",
           "ts": "5e4e9a47ba2e",
           "lean": "b9507b5520ea"
         },
@@ -1304,11 +1306,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.036009Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:24.941Z",
+        "reviewed_at": "2026-07-07T14:26:55.036009Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
       }
@@ -1316,7 +1318,7 @@
     "proof-no-false-premise": [
       {
         "field_hash": {
-          "md": "552a801f3509",
+          "md": "602168a02862",
           "ts": "5e4e9a47ba2e",
           "lean": "b9507b5520ea"
         },
@@ -1324,11 +1326,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.036009Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:25.321Z",
+        "reviewed_at": "2026-07-07T14:26:55.036009Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
       }
@@ -1336,7 +1338,7 @@
     "proof-no-unused-hypotheses": [
       {
         "field_hash": {
-          "md": "552a801f3509",
+          "md": "602168a02862",
           "ts": "5e4e9a47ba2e",
           "lean": "b9507b5520ea"
         },
@@ -1344,11 +1346,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.036009Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:25.722Z",
+        "reviewed_at": "2026-07-07T14:26:55.036009Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
       }
@@ -1356,7 +1358,7 @@
     "proof-no-decide-masking": [
       {
         "field_hash": {
-          "md": "552a801f3509",
+          "md": "602168a02862",
           "ts": "5e4e9a47ba2e",
           "lean": "b9507b5520ea"
         },
@@ -1364,11 +1366,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.036009Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:26.097Z",
+        "reviewed_at": "2026-07-07T14:26:55.036009Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
@@ -1376,16 +1378,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "552a801f3509",
+          "md": "602168a02862",
           "ts": "5e4e9a47ba2e",
           "lean": "b9507b5520ea"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.036009Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:55.036009Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Checked mathematical consistency of the claim 'Let $\\mathcal{S}_c \\cong \\mathbb{P}^1(\\mathbb{C})$ be the exceptional divisor at a' and found no counterexamples under the stated conditions.",
         "evidence": "content/quantum-observable-universe/brings-surface/sw-period-residue-sum.ts:1",
@@ -1395,16 +1399,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "552a801f3509",
+          "md": "602168a02862",
           "ts": "5e4e9a47ba2e",
           "lean": "b9507b5520ea"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.036009Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:55.036009Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No vacuous stubs or tautologies detected in the formulation of 'prop:sw-period-residue-sum'.",
         "severity": "minor"
@@ -1413,16 +1419,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "552a801f3509",
+          "md": "602168a02862",
           "ts": "5e4e9a47ba2e",
           "lean": "b9507b5520ea"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.036009Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:55.036009Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Traced dependencies ['prop:mi-sw-abelianisation', 'rem:brings-smoothness'] for 'prop:sw-period-residue-sum' and confirmed no circular definitions or justifications.",
         "evidence": "content/quantum-observable-universe/brings-surface/sw-period-residue-sum.ts:1",
@@ -1432,16 +1440,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "552a801f3509",
+          "md": "602168a02862",
           "ts": "5e4e9a47ba2e",
           "lean": "b9507b5520ea"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.036009Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:55.036009Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Verified that the scope of 'prop:sw-period-residue-sum' is appropriately restricted to the proven regime without overclaiming structural validity.",
         "severity": "minor"
@@ -1450,16 +1460,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "552a801f3509",
+          "md": "602168a02862",
           "ts": "5e4e9a47ba2e",
           "lean": "b9507b5520ea"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.036009Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:55.036009Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
         "evidence": "content/quantum-observable-universe/brings-surface/sw-period-residue-sum.ts:1",
@@ -1469,16 +1481,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "552a801f3509",
+          "md": "602168a02862",
           "ts": "5e4e9a47ba2e",
           "lean": "b9507b5520ea"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.036009Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:55.036009Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Logical transitions in the derivation of 'Let $\\mathcal{S}_c \\cong \\mathbb{P}^1(\\mathbb{C})$ be the exceptional divisor at a' are sound; no non-sequiturs detected.",
         "evidence": "content/quantum-observable-universe/brings-surface/sw-period-residue-sum.ts:1",
@@ -1488,16 +1502,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "552a801f3509",
+          "md": "602168a02862",
           "ts": "5e4e9a47ba2e",
           "lean": "b9507b5520ea"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.036009Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:55.036009Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Lean sibling verification matches the narrative statements.",
         "severity": "minor"
@@ -1506,16 +1522,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "552a801f3509",
+          "md": "602168a02862",
           "ts": "5e4e9a47ba2e",
           "lean": "b9507b5520ea"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.036009Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:55.036009Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All references and uses ['prop:mi-sw-abelianisation', 'rem:brings-smoothness'] cited in 'prop:sw-period-residue-sum' are used in accordance with their established mathematical definitions.",
         "evidence": "content/quantum-observable-universe/brings-surface/sw-period-residue-sum.ts:1",
@@ -1525,16 +1543,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "552a801f3509",
+          "md": "602168a02862",
           "ts": "5e4e9a47ba2e",
           "lean": "b9507b5520ea"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.036009Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:55.036009Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All terms and algebraic structures in 'prop:sw-period-residue-sum' are uniquely defined or standard.",
         "evidence": "content/quantum-observable-universe/brings-surface/sw-period-residue-sum.ts:1",
@@ -1544,16 +1564,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "552a801f3509",
+          "md": "602168a02862",
           "ts": "5e4e9a47ba2e",
           "lean": "b9507b5520ea"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.036009Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:55.036009Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The algebraic statements in 'prop:sw-period-residue-sum' do not rely on fragile empirical fits or numerical thresholds.",
         "evidence": "content/quantum-observable-universe/brings-surface/sw-period-residue-sum.ts:1",
@@ -1563,16 +1585,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "552a801f3509",
+          "md": "602168a02862",
           "ts": "5e4e9a47ba2e",
           "lean": "b9507b5520ea"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.036009Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:55.036009Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Physical dimensions and units in 'prop:sw-period-residue-sum' are consistent with quantum observable universe models.",
         "evidence": "content/quantum-observable-universe/brings-surface/sw-period-residue-sum.ts:1",
@@ -1582,16 +1606,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "552a801f3509",
+          "md": "602168a02862",
           "ts": "5e4e9a47ba2e",
           "lean": "b9507b5520ea"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.036009Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:55.036009Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All backing computations and proofs are fully reproducible.",
         "evidence": "content/quantum-observable-universe/brings-surface/sw-period-residue-sum.ts:1",
@@ -1601,16 +1627,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "552a801f3509",
+          "md": "602168a02862",
           "ts": "5e4e9a47ba2e",
           "lean": "b9507b5520ea"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.036009Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:55.036009Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
@@ -1622,14 +1650,21 @@
       {
         "result": "pass",
         "notes": "Rewrote brings-surface_seq7.md applying Milnor standard. Replaced passive verbs, enhanced clarity. Simplified the narrative transition lines.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.036009Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.036009Z"
+        },
+        "field_hash": {
+          "md": "602168a02862",
+          "ts": "5e4e9a47ba2e",
+          "lean": "b9507b5520ea"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:30.202Z"
+  "updated_at": "2026-07-07T14:26:55.036009Z"
 }

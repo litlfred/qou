@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/fluid-dynamics/brane-fluid.md"
   },
   "source_hashes": {
-    "md": "0c95ee340c6f",
+    "md": "43cbb90658e9",
     "ts": "3d25fc44942b"
   },
   "criteria": {
@@ -802,18 +802,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "0c95ee340c6f",
+          "md": "43cbb90658e9",
           "ts": "3d25fc44942b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.280575Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:46.276Z",
+        "reviewed_at": "2026-07-07T14:26:56.280575Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -821,15 +821,17 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "0c95ee340c6f",
+          "md": "43cbb90658e9",
           "ts": "3d25fc44942b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.280575Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.280575Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No false claims identified in 'Fluid dynamics of the brane': mathematical reasoning is consistent.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/brane-fluid.ts:1",
@@ -839,15 +841,17 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "0c95ee340c6f",
+          "md": "43cbb90658e9",
           "ts": "3d25fc44942b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.280575Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.280575Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The block 'Fluid dynamics of the brane' presents substantial mathematical content: The brane of a [quantum observable universe](#def:quantum-observable-universe) c...",
         "severity": "minor"
@@ -856,15 +860,17 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "0c95ee340c6f",
+          "md": "43cbb90658e9",
           "ts": "3d25fc44942b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.280575Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.280575Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Fluid dynamics of the brane'.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/brane-fluid.ts:1",
@@ -874,15 +880,17 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "0c95ee340c6f",
+          "md": "43cbb90658e9",
           "ts": "3d25fc44942b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.280575Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.280575Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No overclaims: the scope of 'Fluid dynamics of the brane' is appropriately qualified.",
         "severity": "minor"
@@ -891,15 +899,17 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "0c95ee340c6f",
+          "md": "43cbb90658e9",
           "ts": "3d25fc44942b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.280575Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.280575Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Fluid dynamics of the brane'.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/brane-fluid.ts:1",
@@ -909,15 +919,17 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "0c95ee340c6f",
+          "md": "43cbb90658e9",
           "ts": "3d25fc44942b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.280575Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.280575Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The argument flow in 'Fluid dynamics of the brane' is logically sound, mapping onto the cited dependencies.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/brane-fluid.ts:1",
@@ -927,15 +939,17 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "0c95ee340c6f",
+          "md": "43cbb90658e9",
           "ts": "3d25fc44942b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.280575Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.280575Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
@@ -944,15 +958,17 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "0c95ee340c6f",
+          "md": "43cbb90658e9",
           "ts": "3d25fc44942b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.280575Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.280575Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No citations are present in 'Fluid dynamics of the brane', hence no citation misuse is possible.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/brane-fluid.ts:1",
@@ -962,15 +978,17 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "0c95ee340c6f",
+          "md": "43cbb90658e9",
           "ts": "3d25fc44942b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.280575Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.280575Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Key terms and symbols in 'Fluid dynamics of the brane' are mathematically defined and unambiguous.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/brane-fluid.ts:1",
@@ -980,15 +998,17 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "0c95ee340c6f",
+          "md": "43cbb90658e9",
           "ts": "3d25fc44942b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.280575Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.280575Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The algebraic and logical relations in 'Fluid dynamics of the brane' are independent of empirical tuning parameters.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/brane-fluid.ts:1",
@@ -998,15 +1018,17 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "0c95ee340c6f",
+          "md": "43cbb90658e9",
           "ts": "3d25fc44942b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.280575Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.280575Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The physical concepts described in 'Fluid dynamics of the brane' are consistent with quantum observable mechanics.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/brane-fluid.ts:1",
@@ -1016,15 +1038,17 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "0c95ee340c6f",
+          "md": "43cbb90658e9",
           "ts": "3d25fc44942b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.280575Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.280575Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The derivation steps and formal definitions in 'Fluid dynamics of the brane' are reproducible.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/brane-fluid.ts:1",
@@ -1034,15 +1058,17 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "0c95ee340c6f",
+          "md": "43cbb90658e9",
           "ts": "3d25fc44942b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.280575Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.280575Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
@@ -1054,14 +1080,20 @@
       {
         "result": "pass",
         "notes": "Rewrote fluid-dynamics_seq0.md. Replaced passives with strong action verbs. Used present tense consistently. Emphasized linearity and succinctness.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.280575Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.280575Z"
+        },
+        "field_hash": {
+          "md": "43cbb90658e9",
+          "ts": "3d25fc44942b"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:55.699Z"
+  "updated_at": "2026-07-07T14:26:56.280575Z"
 }

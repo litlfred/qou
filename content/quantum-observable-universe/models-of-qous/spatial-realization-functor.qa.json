@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean"
   },
   "source_hashes": {
-    "md": "3eb4ed10f530",
+    "md": "deb58835a172",
     "ts": "8c8d21d04ff1",
     "lean": "b200f3357e36"
   },
@@ -857,17 +857,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "3eb4ed10f530",
+          "md": "deb58835a172",
           "ts": "8c8d21d04ff1",
-          "lean": "76492eb239d2"
+          "lean": "b200f3357e36"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.436943Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.436943Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Block placement and kind 'definition' match validated structurally for 'Spatial realization functor' within chapter 'models-of-qous'.",
         "severity": "minor"
@@ -876,17 +878,19 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "3eb4ed10f530",
+          "md": "deb58835a172",
           "ts": "8c8d21d04ff1",
-          "lean": "76492eb239d2"
+          "lean": "b200f3357e36"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.436943Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.436943Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean theorem statement in content/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean matches the mathematical statement in content/quantum-observable-universe/models-of-qous/spatial-realization-functor.md.",
         "severity": "minor",
@@ -896,17 +900,19 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "3eb4ed10f530",
+          "md": "deb58835a172",
           "ts": "8c8d21d04ff1",
-          "lean": "76492eb239d2"
+          "lean": "b200f3357e36"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.436943Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.436943Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The claim in 'Spatial realization functor' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
@@ -916,17 +922,19 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "3eb4ed10f530",
+          "md": "deb58835a172",
           "ts": "8c8d21d04ff1",
-          "lean": "76492eb239d2"
+          "lean": "b200f3357e36"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.436943Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.436943Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Spatial realization functor' presents substantial mathematical content: Let $(\\mathbf{C}, A, \\tau)$ be a quantum observable universe ([quantum observabl...",
         "severity": "minor"
@@ -935,17 +943,19 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "3eb4ed10f530",
+          "md": "deb58835a172",
           "ts": "8c8d21d04ff1",
-          "lean": "76492eb239d2"
+          "lean": "b200f3357e36"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.436943Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.436943Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Spatial realization functor'.",
         "severity": "minor",
@@ -955,17 +965,19 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "3eb4ed10f530",
+          "md": "deb58835a172",
           "ts": "8c8d21d04ff1",
-          "lean": "76492eb239d2"
+          "lean": "b200f3357e36"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.436943Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.436943Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose presents 'Spatial realization functor' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
@@ -974,17 +986,19 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "3eb4ed10f530",
+          "md": "deb58835a172",
           "ts": "8c8d21d04ff1",
-          "lean": "76492eb239d2"
+          "lean": "b200f3357e36"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.436943Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.436943Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Spatial realization functor'.",
         "severity": "minor",
@@ -994,17 +1008,19 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "3eb4ed10f530",
+          "md": "deb58835a172",
           "ts": "8c8d21d04ff1",
-          "lean": "76492eb239d2"
+          "lean": "b200f3357e36"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.436943Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.436943Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean.",
         "severity": "minor",
@@ -1014,17 +1030,19 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "3eb4ed10f530",
+          "md": "deb58835a172",
           "ts": "8c8d21d04ff1",
-          "lean": "76492eb239d2"
+          "lean": "b200f3357e36"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.436943Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.436943Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
@@ -1033,17 +1051,19 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "3eb4ed10f530",
+          "md": "deb58835a172",
           "ts": "8c8d21d04ff1",
-          "lean": "76492eb239d2"
+          "lean": "b200f3357e36"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.436943Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.436943Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No citations are present in 'Spatial realization functor', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1053,17 +1073,19 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "3eb4ed10f530",
+          "md": "deb58835a172",
           "ts": "8c8d21d04ff1",
-          "lean": "76492eb239d2"
+          "lean": "b200f3357e36"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.436943Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.436943Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Key terms and symbols in 'Spatial realization functor' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1073,17 +1095,19 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "3eb4ed10f530",
+          "md": "deb58835a172",
           "ts": "8c8d21d04ff1",
-          "lean": "76492eb239d2"
+          "lean": "b200f3357e36"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.436943Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.436943Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The algebraic and logical relations in 'Spatial realization functor' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1093,17 +1117,19 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "3eb4ed10f530",
+          "md": "deb58835a172",
           "ts": "8c8d21d04ff1",
-          "lean": "76492eb239d2"
+          "lean": "b200f3357e36"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.436943Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.436943Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The physical concepts described in 'Spatial realization functor' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1113,17 +1139,19 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "3eb4ed10f530",
+          "md": "deb58835a172",
           "ts": "8c8d21d04ff1",
-          "lean": "76492eb239d2"
+          "lean": "b200f3357e36"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.436943Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.436943Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
@@ -1133,17 +1161,19 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "3eb4ed10f530",
+          "md": "deb58835a172",
           "ts": "8c8d21d04ff1",
-          "lean": "76492eb239d2"
+          "lean": "b200f3357e36"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.436943Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.436943Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean fails compilation: content/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean:44:13: error: Function expected at",
         "verdict": "open-objection",
@@ -1175,14 +1205,21 @@
       {
         "result": "pass",
         "notes": "Tightened paragraphs, used 'we' consistently, replaced references with direct, plain descriptions where necessary.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.436943Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.436943Z"
+        },
+        "field_hash": {
+          "md": "deb58835a172",
+          "ts": "8c8d21d04ff1",
+          "lean": "b200f3357e36"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T18:21:24.666Z"
+  "updated_at": "2026-07-07T14:26:55.436943Z"
 }

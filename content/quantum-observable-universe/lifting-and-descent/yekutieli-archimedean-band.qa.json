@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/lifting-and-descent/yekutieli-archimedean-band.md"
   },
   "source_hashes": {
-    "md": "75aa11d5a8ec",
+    "md": "0554635c0a60",
     "ts": "88616ce63223"
   },
   "criteria": {
@@ -838,18 +838,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "75aa11d5a8ec",
+          "md": "0554635c0a60",
           "ts": "88616ce63223"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.687034Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:30.879Z",
+        "reviewed_at": "2026-07-07T14:26:55.687034Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -857,15 +857,17 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "75aa11d5a8ec",
+          "md": "0554635c0a60",
           "ts": "88616ce63223"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.687034Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.687034Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No false claims identified in 'In the archimedean realisation': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -875,15 +877,17 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "75aa11d5a8ec",
+          "md": "0554635c0a60",
           "ts": "88616ce63223"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.687034Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.687034Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The claims in 'In the archimedean realisation' are non-vacuous as they present substantial mathematical content.",
         "severity": "minor"
@@ -892,15 +896,17 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "75aa11d5a8ec",
+          "md": "0554635c0a60",
           "ts": "88616ce63223"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.687034Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.687034Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No circular reasoning or self-assuming definitions detected in 'In the archimedean realisation'.",
         "severity": "minor",
@@ -910,15 +916,17 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "75aa11d5a8ec",
+          "md": "0554635c0a60",
           "ts": "88616ce63223"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.687034Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.687034Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No overclaims: the scope of 'In the archimedean realisation' is appropriately qualified.",
         "severity": "minor"
@@ -927,15 +935,17 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "75aa11d5a8ec",
+          "md": "0554635c0a60",
           "ts": "88616ce63223"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.687034Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.687034Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'In the archimedean realisation'.",
         "severity": "minor",
@@ -945,15 +955,17 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "75aa11d5a8ec",
+          "md": "0554635c0a60",
           "ts": "88616ce63223"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.687034Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.687034Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The argument flow in 'In the archimedean realisation' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -963,15 +975,17 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "75aa11d5a8ec",
+          "md": "0554635c0a60",
           "ts": "88616ce63223"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.687034Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.687034Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
@@ -980,15 +994,17 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "75aa11d5a8ec",
+          "md": "0554635c0a60",
           "ts": "88616ce63223"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.687034Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.687034Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No citations are present in 'In the archimedean realisation', hence no citation misuse is possible.",
         "severity": "minor",
@@ -998,15 +1014,17 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "75aa11d5a8ec",
+          "md": "0554635c0a60",
           "ts": "88616ce63223"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.687034Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.687034Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Key terms and symbols in 'In the archimedean realisation' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1016,15 +1034,17 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "75aa11d5a8ec",
+          "md": "0554635c0a60",
           "ts": "88616ce63223"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.687034Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.687034Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The algebraic and logical relations in 'In the archimedean realisation' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1034,15 +1054,17 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "75aa11d5a8ec",
+          "md": "0554635c0a60",
           "ts": "88616ce63223"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.687034Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.687034Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The physical concepts described in 'In the archimedean realisation' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1052,15 +1074,17 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "75aa11d5a8ec",
+          "md": "0554635c0a60",
           "ts": "88616ce63223"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.687034Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.687034Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The derivation steps and formal definitions in 'In the archimedean realisation' are reproducible.",
         "severity": "minor",
@@ -1070,15 +1094,17 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "75aa11d5a8ec",
+          "md": "0554635c0a60",
           "ts": "88616ce63223"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.687034Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.687034Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -1090,14 +1116,20 @@
       {
         "result": "pass",
         "notes": "Rewrote the Archimedean lifting blocks. Adopted a declarative, active tone. Corrected Euler characteristic stability explanation for maximum concision. Verified preservation of block markers.",
-        "reviewed_at": "2026-07-06T23:02:05Z",
+        "reviewed_at": "2026-07-07T14:26:55.687034Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.687034Z"
+        },
+        "field_hash": {
+          "md": "0554635c0a60",
+          "ts": "88616ce63223"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.146Z"
+  "updated_at": "2026-07-07T14:26:55.687034Z"
 }

@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/brings-surface/torus-embeddable-complete.lean"
   },
   "source_hashes": {
-    "md": "22b396959a67",
+    "md": "f494490a0ff1",
     "ts": "18abdb76d760",
     "lean": "7bb718fc7aff"
   },
@@ -1050,7 +1050,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "22b396959a67",
+          "md": "f494490a0ff1",
           "ts": "18abdb76d760",
           "lean": "7bb718fc7aff"
         },
@@ -1058,9 +1058,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.009497Z"
         },
-        "reviewed_at": "2026-07-06T04:41:30.202Z",
+        "reviewed_at": "2026-07-07T14:26:55.009497Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:torus-embeddable-complete' aligns with Lean declaration. Sorry-free."
       }
@@ -1069,14 +1071,21 @@
       {
         "result": "pass",
         "notes": "Applied Milnor brevity. Cleaned up excessive bolding and conversational asides. Streamlined derivation chain and modular arithmetic observations.",
-        "reviewed_at": "2026-07-06T22:42:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.009497Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.009497Z"
+        },
+        "field_hash": {
+          "md": "f494490a0ff1",
+          "ts": "18abdb76d760",
+          "lean": "7bb718fc7aff"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:30.202Z"
+  "updated_at": "2026-07-07T14:26:55.009497Z"
 }

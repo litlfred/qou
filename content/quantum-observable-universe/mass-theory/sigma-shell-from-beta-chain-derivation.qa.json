@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/sigma-shell-from-beta-chain-derivation.lean"
   },
   "source_hashes": {
-    "md": "f1ac6136a969",
+    "md": "8e184fa402e2",
     "ts": "c56311b2e585",
     "lean": "f556e8ba069d"
   },
@@ -36,7 +36,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "f1ac6136a969",
+          "md": "8e184fa402e2",
           "ts": "c56311b2e585",
           "lean": "f556e8ba069d"
         },
@@ -44,9 +44,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.819193Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_at": "2026-07-07T14:26:56.819193Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:sigma-shell-from-beta-chain-derivation' \u2192 expected 'sigma_shell_from_beta_chain_derivation'; Lean declares: SigmaShellAtMagic, SigmaShellFromBetaChainDerivation, sigma_shell_from_beta_chain. Structural match via content."
       }
@@ -55,14 +57,21 @@
       {
         "result": "pass",
         "notes": "Condensed derivations to core propositions. Removed verbose implementation details.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.819193Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.819193Z"
+        },
+        "field_hash": {
+          "md": "8e184fa402e2",
+          "ts": "c56311b2e585",
+          "lean": "f556e8ba069d"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.430Z"
+  "updated_at": "2026-07-07T14:26:56.819193Z"
 }

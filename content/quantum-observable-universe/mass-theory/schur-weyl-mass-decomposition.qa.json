@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/schur-weyl-mass-decomposition.lean"
   },
   "source_hashes": {
-    "md": "11c18950757e",
+    "md": "b55f64680835",
     "ts": "7439ce47604f",
     "lean": "6600315d6375"
   },
@@ -1032,16 +1032,18 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "11c18950757e",
+          "md": "b55f64680835",
           "ts": "7439ce47604f",
-          "lean": "465e02dee23a"
+          "lean": "6600315d6375"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.995729Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.995729Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Statement contains only the bare claim without physical interpretation.",
         "severity": "minor"
@@ -1050,19 +1052,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "11c18950757e",
+          "md": "b55f64680835",
           "ts": "7439ce47604f",
-          "lean": "465e02dee23a"
+          "lean": "6600315d6375"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.995729Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:05.727Z",
+        "reviewed_at": "2026-07-07T14:26:56.995729Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1070,16 +1072,18 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "11c18950757e",
+          "md": "b55f64680835",
           "ts": "7439ce47604f",
-          "lean": "465e02dee23a"
+          "lean": "6600315d6375"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.995729Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.995729Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
         "evidence": "content/quantum-observable-universe/mass-theory/schur-weyl-mass-decomposition.lean:1 \u2014 Lean file exists",
@@ -1089,16 +1093,18 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "11c18950757e",
+          "md": "b55f64680835",
           "ts": "7439ce47604f",
-          "lean": "465e02dee23a"
+          "lean": "6600315d6375"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.995729Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.995729Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Lean proof contains compilation errors.",
         "evidence": "content/quantum-observable-universe/mass-theory/schur-weyl-mass-decomposition.lean:1 \u2014 content/quantum-observable-universe/mass-theory/schur-weyl-mass-decomposition.lean:33:27: error: unexpected token '\u03bb'; expected ')'",
@@ -1124,7 +1130,7 @@
       },
       {
         "field_hash": {
-          "md": "11c18950757e",
+          "md": "b55f64680835",
           "ts": "7439ce47604f",
           "lean": "6600315d6375"
         },
@@ -1132,9 +1138,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.995729Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_at": "2026-07-07T14:26:56.995729Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:schur-weyl-mass-decomposition' \u2192 expected 'schur_weyl_mass_decomposition'; Lean declares: PartitionOfN, qHookProduct, schurAtQ, spechtCharacter, schurWeylWeight.... Structural match via content."
       }
@@ -1142,16 +1150,18 @@
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "11c18950757e",
+          "md": "b55f64680835",
           "ts": "7439ce47604f",
-          "lean": "465e02dee23a"
+          "lean": "6600315d6375"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.995729Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.995729Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Lean code is broken and does not compile, hence strategy is opaque.",
         "severity": "minor"
@@ -1160,9 +1170,9 @@
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "11c18950757e",
+          "md": "b55f64680835",
           "ts": "7439ce47604f",
-          "lean": "465e02dee23a"
+          "lean": "6600315d6375"
         },
         "result": "pass",
         "score": {
@@ -1172,11 +1182,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.995729Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:07.747Z",
+        "reviewed_at": "2026-07-07T14:26:56.995729Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
       }
@@ -1184,16 +1194,18 @@
     "proof-rater-novelty": [
       {
         "field_hash": {
-          "md": "11c18950757e",
+          "md": "b55f64680835",
           "ts": "7439ce47604f",
-          "lean": "465e02dee23a"
+          "lean": "6600315d6375"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.995729Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.995729Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The mathematical and physical connections explored in this block are highly novel.",
         "severity": "minor",
@@ -1206,19 +1218,19 @@
     "proof-statement-integrity": [
       {
         "field_hash": {
-          "md": "11c18950757e",
+          "md": "b55f64680835",
           "ts": "7439ce47604f",
-          "lean": "465e02dee23a"
+          "lean": "6600315d6375"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.995729Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:09.470Z",
+        "reviewed_at": "2026-07-07T14:26:56.995729Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
       }
@@ -1226,19 +1238,19 @@
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "11c18950757e",
+          "md": "b55f64680835",
           "ts": "7439ce47604f",
-          "lean": "465e02dee23a"
+          "lean": "6600315d6375"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.995729Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:09.860Z",
+        "reviewed_at": "2026-07-07T14:26:56.995729Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
       }
@@ -1246,19 +1258,19 @@
     "proof-no-trivial-true": [
       {
         "field_hash": {
-          "md": "11c18950757e",
+          "md": "b55f64680835",
           "ts": "7439ce47604f",
-          "lean": "465e02dee23a"
+          "lean": "6600315d6375"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.995729Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:10.206Z",
+        "reviewed_at": "2026-07-07T14:26:56.995729Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
       }
@@ -1266,19 +1278,19 @@
     "proof-no-false-premise": [
       {
         "field_hash": {
-          "md": "11c18950757e",
+          "md": "b55f64680835",
           "ts": "7439ce47604f",
-          "lean": "465e02dee23a"
+          "lean": "6600315d6375"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.995729Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:10.546Z",
+        "reviewed_at": "2026-07-07T14:26:56.995729Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
       }
@@ -1286,16 +1298,18 @@
     "proof-no-unused-hypotheses": [
       {
         "field_hash": {
-          "md": "11c18950757e",
+          "md": "b55f64680835",
           "ts": "7439ce47604f",
-          "lean": "465e02dee23a"
+          "lean": "6600315d6375"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.995729Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.995729Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Broken proof compilation.",
         "severity": "minor"
@@ -1304,19 +1318,19 @@
     "proof-no-decide-masking": [
       {
         "field_hash": {
-          "md": "11c18950757e",
+          "md": "b55f64680835",
           "ts": "7439ce47604f",
-          "lean": "465e02dee23a"
+          "lean": "6600315d6375"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.995729Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:11.426Z",
+        "reviewed_at": "2026-07-07T14:26:56.995729Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
@@ -1324,16 +1338,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "11c18950757e",
+          "md": "b55f64680835",
           "ts": "7439ce47604f",
-          "lean": "465e02dee23a"
+          "lean": "6600315d6375"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.995729Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.995729Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/schur-weyl-mass-decomposition.ts:1",
@@ -1343,16 +1359,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "11c18950757e",
+          "md": "b55f64680835",
           "ts": "7439ce47604f",
-          "lean": "465e02dee23a"
+          "lean": "6600315d6375"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.995729Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.995729Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-vacuous.",
         "severity": "minor"
@@ -1361,16 +1379,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "11c18950757e",
+          "md": "b55f64680835",
           "ts": "7439ce47604f",
-          "lean": "465e02dee23a"
+          "lean": "6600315d6375"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.995729Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.995729Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/schur-weyl-mass-decomposition.ts:1",
@@ -1380,16 +1400,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "11c18950757e",
+          "md": "b55f64680835",
           "ts": "7439ce47604f",
-          "lean": "465e02dee23a"
+          "lean": "6600315d6375"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.995729Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.995729Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
@@ -1398,16 +1420,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "11c18950757e",
+          "md": "b55f64680835",
           "ts": "7439ce47604f",
-          "lean": "465e02dee23a"
+          "lean": "6600315d6375"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.995729Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.995729Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/schur-weyl-mass-decomposition.ts:1",
@@ -1417,16 +1441,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "11c18950757e",
+          "md": "b55f64680835",
           "ts": "7439ce47604f",
-          "lean": "465e02dee23a"
+          "lean": "6600315d6375"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.995729Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.995729Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/schur-weyl-mass-decomposition.ts:1",
@@ -1436,16 +1462,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "11c18950757e",
+          "md": "b55f64680835",
           "ts": "7439ce47604f",
-          "lean": "465e02dee23a"
+          "lean": "6600315d6375"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.995729Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.995729Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, causing divergence from the narrative.",
         "severity": "minor"
@@ -1454,16 +1482,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "11c18950757e",
+          "md": "b55f64680835",
           "ts": "7439ce47604f",
-          "lean": "465e02dee23a"
+          "lean": "6600315d6375"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.995729Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.995729Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
         "evidence": "content/quantum-observable-universe/mass-theory/schur-weyl-mass-decomposition.ts:1",
@@ -1473,16 +1503,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "11c18950757e",
+          "md": "b55f64680835",
           "ts": "7439ce47604f",
-          "lean": "465e02dee23a"
+          "lean": "6600315d6375"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.995729Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.995729Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/schur-weyl-mass-decomposition.ts:1",
@@ -1492,16 +1524,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "11c18950757e",
+          "md": "b55f64680835",
           "ts": "7439ce47604f",
-          "lean": "465e02dee23a"
+          "lean": "6600315d6375"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.995729Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.995729Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/schur-weyl-mass-decomposition.ts:1",
@@ -1511,16 +1545,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "11c18950757e",
+          "md": "b55f64680835",
           "ts": "7439ce47604f",
-          "lean": "465e02dee23a"
+          "lean": "6600315d6375"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.995729Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.995729Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/schur-weyl-mass-decomposition.ts:1",
@@ -1530,16 +1566,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "11c18950757e",
+          "md": "b55f64680835",
           "ts": "7439ce47604f",
-          "lean": "465e02dee23a"
+          "lean": "6600315d6375"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.995729Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.995729Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
         "evidence": "content/quantum-observable-universe/mass-theory/schur-weyl-mass-decomposition.lean:1 \u2014 content/quantum-observable-universe/mass-theory/schur-weyl-mass-decomposition.lean:33:27: error: unexpected token '\u03bb'; expected ')'",
@@ -1549,16 +1587,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "11c18950757e",
+          "md": "b55f64680835",
           "ts": "7439ce47604f",
-          "lean": "465e02dee23a"
+          "lean": "6600315d6375"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.995729Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.995729Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/schur-weyl-mass-decomposition.lean:33:27: error: unexpected token '\u03bb'; expected ')'",
         "severity": "critical",
@@ -1590,14 +1630,21 @@
       {
         "result": "pass",
         "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
-        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.995729Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.995729Z"
+        },
+        "field_hash": {
+          "md": "b55f64680835",
+          "ts": "7439ce47604f",
+          "lean": "6600315d6375"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.430Z"
+  "updated_at": "2026-07-07T14:26:56.995729Z"
 }

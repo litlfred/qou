@@ -7,22 +7,28 @@
     "md": "content/quantum-observable-universe/mass-theory/outro-mass-theory.md"
   },
   "source_hashes": {
-    "ts": "b39834247f44",
-    "md": "2c3a73f900c7"
+    "md": "bfb28faa34cd",
+    "ts": "b39834247f44"
   },
   "criteria": {
     "milnor-amalgamated-flow": [
       {
         "result": "pass",
         "notes": "Condensed derivations to core propositions. Removed verbose implementation details.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.991957Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.991957Z"
+        },
+        "field_hash": {
+          "md": "bfb28faa34cd",
+          "ts": "b39834247f44"
         }
       }
     ]
   },
-  "updated_at": "2026-06-01T16:06:38.106Z"
+  "updated_at": "2026-07-07T14:26:56.991957Z"
 }

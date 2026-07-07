@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/lifting-and-descent/descent-lemma-su2.md"
   },
   "source_hashes": {
-    "md": "5ebf31518b1d",
+    "md": "721ab44e8227",
     "ts": "c265595bb824"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Applied Milnor standard (H1-H8) and milnor-brevity. Removed forward-referencing transition text. Streamlined definitions and SU(2) examples. Kept formulas intact and maintained cross-block consistency.",
-        "reviewed_at": "2026-07-06T23:05:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.712336Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.712336Z"
+        },
+        "field_hash": {
+          "md": "721ab44e8227",
+          "ts": "c265595bb824"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.146Z"
+  "updated_at": "2026-07-07T14:26:55.712336Z"
 }

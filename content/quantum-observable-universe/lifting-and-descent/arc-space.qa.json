@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/lifting-and-descent/arc-space.lean"
   },
   "source_hashes": {
-    "md": "f6dd207f172f",
+    "md": "3d339be3848e",
     "ts": "391f2bb08d9c",
     "lean": "d7ac3ab8a062"
   },
@@ -37,14 +37,21 @@
       {
         "result": "pass",
         "notes": "Rewrote multiple blocks related to jet prolongation and brane tower. Used strong, active verbs. Compressed the recursive SU(2) tower example. Consolidated standalone math equations that didn't need vertical spacing. Preserved all markdown file markers.",
-        "reviewed_at": "2026-07-06T23:00:20Z",
+        "reviewed_at": "2026-07-07T14:26:55.692466Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.692466Z"
+        },
+        "field_hash": {
+          "md": "3d339be3848e",
+          "ts": "391f2bb08d9c",
+          "lean": "d7ac3ab8a062"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.146Z"
+  "updated_at": "2026-07-07T14:26:55.692466Z"
 }

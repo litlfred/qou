@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/mass-theory/two-tier-scaling-pq.md"
   },
   "source_hashes": {
-    "md": "f852e2477bed",
+    "md": "5221e7d334c8",
     "ts": "7dad4579267b"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Rewrote mass-theory_seq1.md for Milnor standards: stripped technical debt disclaimers, declarative voice.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.810959Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.810959Z"
+        },
+        "field_hash": {
+          "md": "5221e7d334c8",
+          "ts": "7dad4579267b"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-07T14:26:56.810959Z"
 }

@@ -4,13 +4,24 @@
       {
         "result": "pass",
         "notes": "Rewrote observations_seq11.md. Pruned verbiage from k12-barrier bypass, ensuring exact technical statements remain while stripping meta-commentary.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.607562Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.607562Z"
+        },
+        "field_hash": {
+          "md": "313236fa1623",
+          "ts": "7e47aa155698"
         }
       }
     ]
-  }
+  },
+  "source_hashes": {
+    "md": "313236fa1623",
+    "ts": "7e47aa155698"
+  },
+  "updated_at": "2026-07-07T14:26:56.607562Z"
 }

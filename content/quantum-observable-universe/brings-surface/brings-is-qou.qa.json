@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/brings-surface/brings-is-qou.lean"
   },
   "source_hashes": {
-    "md": "0597aecf8285",
+    "md": "57db908e2060",
     "ts": "ba04a03db3ab",
     "lean": "181c4837e2b5"
   },
@@ -1050,7 +1050,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "0597aecf8285",
+          "md": "57db908e2060",
           "ts": "ba04a03db3ab",
           "lean": "181c4837e2b5"
         },
@@ -1058,9 +1058,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.999524Z"
         },
-        "reviewed_at": "2026-07-06T04:41:30.202Z",
+        "reviewed_at": "2026-07-07T14:26:54.999524Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:brings-is-qou' \u2192 expected 'brings_is_qou'; Lean declares: BringsIsQOU, brings_euler_char_neg_six, riemann_hurwitz_brings, standardBringsIsQOU. Structural match via content."
       }
@@ -1069,14 +1071,21 @@
       {
         "result": "pass",
         "notes": "Rewrote brings-surface_seq3.md. Reduced fluff. Consolidated narrative mapping to Milnor standard. Shortened sentences, clarified the physics meaning and geometric relationships.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:54.999524Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.999524Z"
+        },
+        "field_hash": {
+          "md": "57db908e2060",
+          "ts": "ba04a03db3ab",
+          "lean": "181c4837e2b5"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:30.202Z"
+  "updated_at": "2026-07-07T14:26:54.999524Z"
 }

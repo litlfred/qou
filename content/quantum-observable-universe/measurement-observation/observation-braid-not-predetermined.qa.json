@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/measurement-observation/observation-braid-not-predetermined.md"
   },
   "source_hashes": {
-    "md": "78ac40a45fc6",
+    "md": "65666e4d330d",
     "ts": "9f8e42d66573"
   },
   "criteria": {
@@ -821,14 +821,20 @@
       {
         "result": "pass",
         "notes": "Tightened paragraphs. Removed cross-references to unknown targets. Kept physics/math logic intact.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.449194Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.449194Z"
+        },
+        "field_hash": {
+          "md": "65666e4d330d",
+          "ts": "9f8e42d66573"
         }
       }
     ]
   },
-  "updated_at": "2026-07-04T20:31:54.711Z"
+  "updated_at": "2026-07-07T14:26:56.449194Z"
 }

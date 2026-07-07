@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/mass-theory/intro-gs-axiomatic-backing.md"
   },
   "source_hashes": {
-    "ts": "5a5e7b602ce1",
-    "md": "ee37485b1152"
+    "md": "afd6a62888b3",
+    "ts": "5a5e7b602ce1"
   },
   "criteria": {
     "q-usage-regime-detected": [
@@ -128,14 +128,20 @@
       {
         "result": "pass",
         "notes": "Rewrote seq16 to enforce Milnor economy and structural clarity. Removed unnecessary framing and meta-discussions about effort ('very large' per the audit, etc.). Formatted Lean status updates into concise reports. Checked math preservation.",
-        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.911407Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.911407Z"
+        },
+        "field_hash": {
+          "md": "afd6a62888b3",
+          "ts": "5a5e7b602ce1"
         }
       }
     ]
   },
-  "updated_at": "2026-06-01T16:06:38.106Z"
+  "updated_at": "2026-07-07T14:26:56.911407Z"
 }

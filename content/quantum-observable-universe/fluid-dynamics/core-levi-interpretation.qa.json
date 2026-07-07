@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/fluid-dynamics/core-levi-interpretation.md"
   },
   "source_hashes": {
-    "md": "ad7926960dbd",
+    "md": "2690805798ed",
     "ts": "09d776c42cc1"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Rewrote fluid-dynamics_seq4.md to eliminate passive fluff and prioritize 'Why'. Kept '<!-- FILE_START: ... -->' bounds.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.298237Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.298237Z"
+        },
+        "field_hash": {
+          "md": "2690805798ed",
+          "ts": "09d776c42cc1"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:55.699Z"
+  "updated_at": "2026-07-07T14:26:56.298237Z"
 }

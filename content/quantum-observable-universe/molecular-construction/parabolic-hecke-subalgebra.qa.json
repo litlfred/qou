@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/molecular-construction/parabolic-hecke-subalgebra.lean"
   },
   "source_hashes": {
-    "md": "bc5ca0baf3c4",
+    "md": "bc686c16a77d",
     "ts": "b6a2ce39d718",
     "lean": "44ac2ec54276"
   },
@@ -857,7 +857,7 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "bc5ca0baf3c4",
+          "md": "bc686c16a77d",
           "ts": "b6a2ce39d718",
           "lean": "44ac2ec54276"
         },
@@ -865,11 +865,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.504050Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:25.182Z",
+        "reviewed_at": "2026-07-07T14:26:55.504050Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -877,7 +877,7 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "bc5ca0baf3c4",
+          "md": "bc686c16a77d",
           "ts": "b6a2ce39d718",
           "lean": "44ac2ec54276"
         },
@@ -885,11 +885,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.504050Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:25.597Z",
+        "reviewed_at": "2026-07-07T14:26:55.504050Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -897,7 +897,7 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "bc5ca0baf3c4",
+          "md": "bc686c16a77d",
           "ts": "b6a2ce39d718",
           "lean": "44ac2ec54276"
         },
@@ -905,9 +905,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.504050Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.504050Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No false claims identified in 'Parabolic Hecke subalgebra $H_\\\\lambda(q) \\\\hookrightarrow H_N(q)$': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -917,7 +919,7 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "bc5ca0baf3c4",
+          "md": "bc686c16a77d",
           "ts": "b6a2ce39d718",
           "lean": "44ac2ec54276"
         },
@@ -925,9 +927,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.504050Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.504050Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Parabolic Hecke subalgebra $H_\\\\lambda(q) \\\\hookrightarrow H_N(q)$' presents substantial mathematical content: $\\lambda = (n_1,\\dots,n_k)$ with $\\sum_i n_i = N$, the **parabolic (Young) Hecke...",
         "severity": "minor"
@@ -936,7 +940,7 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "bc5ca0baf3c4",
+          "md": "bc686c16a77d",
           "ts": "b6a2ce39d718",
           "lean": "44ac2ec54276"
         },
@@ -944,9 +948,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.504050Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.504050Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Parabolic Hecke subalgebra $H_\\\\lambda(q) \\\\hookrightarrow H_N(q)$'.",
         "severity": "minor",
@@ -956,7 +962,7 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "bc5ca0baf3c4",
+          "md": "bc686c16a77d",
           "ts": "b6a2ce39d718",
           "lean": "44ac2ec54276"
         },
@@ -964,9 +970,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.504050Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.504050Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No overclaims: the scope of 'Parabolic Hecke subalgebra $H_\\\\lambda(q) \\\\hookrightarrow H_N(q)$' is appropriately qualified.",
         "severity": "minor"
@@ -975,7 +983,7 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "bc5ca0baf3c4",
+          "md": "bc686c16a77d",
           "ts": "b6a2ce39d718",
           "lean": "44ac2ec54276"
         },
@@ -983,9 +991,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.504050Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.504050Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Parabolic Hecke subalgebra $H_\\\\lambda(q) \\\\hookrightarrow H_N(q)$'.",
         "severity": "minor",
@@ -995,7 +1005,7 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "bc5ca0baf3c4",
+          "md": "bc686c16a77d",
           "ts": "b6a2ce39d718",
           "lean": "44ac2ec54276"
         },
@@ -1003,9 +1013,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.504050Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.504050Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The argument flow in 'Parabolic Hecke subalgebra $H_\\\\lambda(q) \\\\hookrightarrow H_N(q)$' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -1015,7 +1027,7 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "bc5ca0baf3c4",
+          "md": "bc686c16a77d",
           "ts": "b6a2ce39d718",
           "lean": "44ac2ec54276"
         },
@@ -1023,9 +1035,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.504050Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.504050Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Lean formalization and narrative for 'Parabolic Hecke subalgebra $H_\\\\lambda(q) \\\\hookrightarrow H_N(q)$' are in complete agreement.",
         "severity": "minor"
@@ -1034,7 +1048,7 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "bc5ca0baf3c4",
+          "md": "bc686c16a77d",
           "ts": "b6a2ce39d718",
           "lean": "44ac2ec54276"
         },
@@ -1042,9 +1056,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.504050Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.504050Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No citations are present in 'Parabolic Hecke subalgebra $H_\\\\lambda(q) \\\\hookrightarrow H_N(q)$', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1054,7 +1070,7 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "bc5ca0baf3c4",
+          "md": "bc686c16a77d",
           "ts": "b6a2ce39d718",
           "lean": "44ac2ec54276"
         },
@@ -1062,9 +1078,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.504050Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.504050Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Key terms and symbols in 'Parabolic Hecke subalgebra $H_\\\\lambda(q) \\\\hookrightarrow H_N(q)$' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1074,7 +1092,7 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "bc5ca0baf3c4",
+          "md": "bc686c16a77d",
           "ts": "b6a2ce39d718",
           "lean": "44ac2ec54276"
         },
@@ -1082,9 +1100,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.504050Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.504050Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The algebraic and logical relations in 'Parabolic Hecke subalgebra $H_\\\\lambda(q) \\\\hookrightarrow H_N(q)$' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1094,7 +1114,7 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "bc5ca0baf3c4",
+          "md": "bc686c16a77d",
           "ts": "b6a2ce39d718",
           "lean": "44ac2ec54276"
         },
@@ -1102,9 +1122,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.504050Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.504050Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The physical concepts described in 'Parabolic Hecke subalgebra $H_\\\\lambda(q) \\\\hookrightarrow H_N(q)$' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1114,7 +1136,7 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "bc5ca0baf3c4",
+          "md": "bc686c16a77d",
           "ts": "b6a2ce39d718",
           "lean": "44ac2ec54276"
         },
@@ -1122,9 +1144,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.504050Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.504050Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The derivation steps and formal definitions in 'Parabolic Hecke subalgebra $H_\\\\lambda(q) \\\\hookrightarrow H_N(q)$' are reproducible.",
         "severity": "minor",
@@ -1134,7 +1158,7 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "bc5ca0baf3c4",
+          "md": "bc686c16a77d",
           "ts": "b6a2ce39d718",
           "lean": "44ac2ec54276"
         },
@@ -1142,9 +1166,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.504050Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.504050Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
@@ -1176,14 +1202,21 @@
       {
         "result": "pass",
         "notes": "Streamlined aromaticity discussion. Short declarative sentences. Retained math.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.504050Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.504050Z"
+        },
+        "field_hash": {
+          "md": "bc686c16a77d",
+          "ts": "b6a2ce39d718",
+          "lean": "44ac2ec54276"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.117Z"
+  "updated_at": "2026-07-07T14:26:55.504050Z"
 }

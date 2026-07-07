@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/lifting-and-descent/jet-prolongation.lean"
   },
   "source_hashes": {
-    "md": "836e4aafeaa9",
+    "md": "adeb5bc0a8cb",
     "ts": "57e1114f73bb",
     "lean": "5164005b6c14"
   },
@@ -1031,19 +1031,19 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "836e4aafeaa9",
+          "md": "adeb5bc0a8cb",
           "ts": "57e1114f73bb",
-          "lean": "9f67623c767a"
+          "lean": "5164005b6c14"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.711032Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:29.635Z",
+        "reviewed_at": "2026-07-07T14:26:55.711032Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
       }
@@ -1051,19 +1051,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "836e4aafeaa9",
+          "md": "adeb5bc0a8cb",
           "ts": "57e1114f73bb",
-          "lean": "9f67623c767a"
+          "lean": "5164005b6c14"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.711032Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:29.988Z",
+        "reviewed_at": "2026-07-07T14:26:55.711032Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1071,19 +1071,19 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "836e4aafeaa9",
+          "md": "adeb5bc0a8cb",
           "ts": "57e1114f73bb",
-          "lean": "9f67623c767a"
+          "lean": "5164005b6c14"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.711032Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:30.388Z",
+        "reviewed_at": "2026-07-07T14:26:55.711032Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -1091,19 +1091,19 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "836e4aafeaa9",
+          "md": "adeb5bc0a8cb",
           "ts": "57e1114f73bb",
-          "lean": "9f67623c767a"
+          "lean": "5164005b6c14"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.711032Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:30.803Z",
+        "reviewed_at": "2026-07-07T14:26:55.711032Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
       }
@@ -1111,19 +1111,19 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "836e4aafeaa9",
+          "md": "adeb5bc0a8cb",
           "ts": "57e1114f73bb",
-          "lean": "9f67623c767a"
+          "lean": "5164005b6c14"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.711032Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:31.183Z",
+        "reviewed_at": "2026-07-07T14:26:55.711032Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
       }
@@ -1131,9 +1131,9 @@
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "836e4aafeaa9",
+          "md": "adeb5bc0a8cb",
           "ts": "57e1114f73bb",
-          "lean": "9f67623c767a"
+          "lean": "5164005b6c14"
         },
         "result": "pass",
         "score": {
@@ -1143,11 +1143,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.711032Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:31.615Z",
+        "reviewed_at": "2026-07-07T14:26:55.711032Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
       }
@@ -1155,9 +1155,9 @@
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "836e4aafeaa9",
+          "md": "adeb5bc0a8cb",
           "ts": "57e1114f73bb",
-          "lean": "9f67623c767a"
+          "lean": "5164005b6c14"
         },
         "result": "pass",
         "score": {
@@ -1167,11 +1167,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.711032Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:31.974Z",
+        "reviewed_at": "2026-07-07T14:26:55.711032Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
       }
@@ -1179,9 +1179,9 @@
     "proof-rater-novelty": [
       {
         "field_hash": {
-          "md": "836e4aafeaa9",
+          "md": "adeb5bc0a8cb",
           "ts": "57e1114f73bb",
-          "lean": "9f67623c767a"
+          "lean": "5164005b6c14"
         },
         "result": "pass",
         "score": {
@@ -1191,11 +1191,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.711032Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:32.413Z",
+        "reviewed_at": "2026-07-07T14:26:55.711032Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
       }
@@ -1203,19 +1203,19 @@
     "proof-statement-integrity": [
       {
         "field_hash": {
-          "md": "836e4aafeaa9",
+          "md": "adeb5bc0a8cb",
           "ts": "57e1114f73bb",
-          "lean": "9f67623c767a"
+          "lean": "5164005b6c14"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.711032Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:32.817Z",
+        "reviewed_at": "2026-07-07T14:26:55.711032Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
       }
@@ -1223,19 +1223,19 @@
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "836e4aafeaa9",
+          "md": "adeb5bc0a8cb",
           "ts": "57e1114f73bb",
-          "lean": "9f67623c767a"
+          "lean": "5164005b6c14"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.711032Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:33.235Z",
+        "reviewed_at": "2026-07-07T14:26:55.711032Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
       }
@@ -1243,19 +1243,19 @@
     "proof-no-trivial-true": [
       {
         "field_hash": {
-          "md": "836e4aafeaa9",
+          "md": "adeb5bc0a8cb",
           "ts": "57e1114f73bb",
-          "lean": "9f67623c767a"
+          "lean": "5164005b6c14"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.711032Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:33.606Z",
+        "reviewed_at": "2026-07-07T14:26:55.711032Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
       }
@@ -1263,19 +1263,19 @@
     "proof-no-false-premise": [
       {
         "field_hash": {
-          "md": "836e4aafeaa9",
+          "md": "adeb5bc0a8cb",
           "ts": "57e1114f73bb",
-          "lean": "9f67623c767a"
+          "lean": "5164005b6c14"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.711032Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:34.008Z",
+        "reviewed_at": "2026-07-07T14:26:55.711032Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
       }
@@ -1283,19 +1283,19 @@
     "proof-no-unused-hypotheses": [
       {
         "field_hash": {
-          "md": "836e4aafeaa9",
+          "md": "adeb5bc0a8cb",
           "ts": "57e1114f73bb",
-          "lean": "9f67623c767a"
+          "lean": "5164005b6c14"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.711032Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:34.384Z",
+        "reviewed_at": "2026-07-07T14:26:55.711032Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
       }
@@ -1303,19 +1303,19 @@
     "proof-no-decide-masking": [
       {
         "field_hash": {
-          "md": "836e4aafeaa9",
+          "md": "adeb5bc0a8cb",
           "ts": "57e1114f73bb",
-          "lean": "9f67623c767a"
+          "lean": "5164005b6c14"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.711032Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:34.715Z",
+        "reviewed_at": "2026-07-07T14:26:55.711032Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
@@ -1323,16 +1323,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "836e4aafeaa9",
+          "md": "adeb5bc0a8cb",
           "ts": "57e1114f73bb",
-          "lean": "9f67623c767a"
+          "lean": "5164005b6c14"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.711032Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.711032Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No false claims identified in 'Let (\\mathbf{C}, A, \\tau) be a quantum observable universe over a': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -1342,16 +1344,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "836e4aafeaa9",
+          "md": "adeb5bc0a8cb",
           "ts": "57e1114f73bb",
-          "lean": "9f67623c767a"
+          "lean": "5164005b6c14"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.711032Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.711032Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/lifting-and-descent/jet-prolongation.lean fails compilation, rendering the verification vacuous.",
         "severity": "major",
@@ -1361,16 +1365,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "836e4aafeaa9",
+          "md": "adeb5bc0a8cb",
           "ts": "57e1114f73bb",
-          "lean": "9f67623c767a"
+          "lean": "5164005b6c14"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.711032Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.711032Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Let (\\mathbf{C}, A, \\tau) be a quantum observable universe over a'.",
         "severity": "minor",
@@ -1380,16 +1386,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "836e4aafeaa9",
+          "md": "adeb5bc0a8cb",
           "ts": "57e1114f73bb",
-          "lean": "9f67623c767a"
+          "lean": "5164005b6c14"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.711032Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.711032Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The prose in 'Let (\\mathbf{C}, A, \\tau) be a quantum observable universe over a' presents the result as established, but the Lean formalization is incomplete (contains sorry / fails compilation).",
         "severity": "minor"
@@ -1398,16 +1406,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "836e4aafeaa9",
+          "md": "adeb5bc0a8cb",
           "ts": "57e1114f73bb",
-          "lean": "9f67623c767a"
+          "lean": "5164005b6c14"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.711032Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.711032Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Let (\\mathbf{C}, A, \\tau) be a quantum observable universe over a'.",
         "severity": "minor",
@@ -1417,16 +1427,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "836e4aafeaa9",
+          "md": "adeb5bc0a8cb",
           "ts": "57e1114f73bb",
-          "lean": "9f67623c767a"
+          "lean": "5164005b6c14"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.711032Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.711032Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The argument flow in 'Let (\\mathbf{C}, A, \\tau) be a quantum observable universe over a' has logical gaps due to compilation failure in its Lean sibling.",
         "severity": "minor",
@@ -1436,16 +1448,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "836e4aafeaa9",
+          "md": "adeb5bc0a8cb",
           "ts": "57e1114f73bb",
-          "lean": "9f67623c767a"
+          "lean": "5164005b6c14"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.711032Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.711032Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/lifting-and-descent/jet-prolongation.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor",
@@ -1455,16 +1469,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "836e4aafeaa9",
+          "md": "adeb5bc0a8cb",
           "ts": "57e1114f73bb",
-          "lean": "9f67623c767a"
+          "lean": "5164005b6c14"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.711032Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.711032Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No citations are present in 'Let (\\mathbf{C}, A, \\tau) be a quantum observable universe over a', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1474,16 +1490,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "836e4aafeaa9",
+          "md": "adeb5bc0a8cb",
           "ts": "57e1114f73bb",
-          "lean": "9f67623c767a"
+          "lean": "5164005b6c14"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.711032Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.711032Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Key terms and symbols in 'Let (\\mathbf{C}, A, \\tau) be a quantum observable universe over a' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1493,16 +1511,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "836e4aafeaa9",
+          "md": "adeb5bc0a8cb",
           "ts": "57e1114f73bb",
-          "lean": "9f67623c767a"
+          "lean": "5164005b6c14"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.711032Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.711032Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The algebraic and logical relations in 'Let (\\mathbf{C}, A, \\tau) be a quantum observable universe over a' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1512,16 +1532,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "836e4aafeaa9",
+          "md": "adeb5bc0a8cb",
           "ts": "57e1114f73bb",
-          "lean": "9f67623c767a"
+          "lean": "5164005b6c14"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.711032Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.711032Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The physical concepts described in 'Let (\\mathbf{C}, A, \\tau) be a quantum observable universe over a' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1531,16 +1553,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "836e4aafeaa9",
+          "md": "adeb5bc0a8cb",
           "ts": "57e1114f73bb",
-          "lean": "9f67623c767a"
+          "lean": "5164005b6c14"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.711032Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.711032Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/lifting-and-descent/jet-prolongation.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
@@ -1550,16 +1574,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "836e4aafeaa9",
+          "md": "adeb5bc0a8cb",
           "ts": "57e1114f73bb",
-          "lean": "9f67623c767a"
+          "lean": "5164005b6c14"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.711032Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.711032Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Referee verdict: open-objection. Sibling Lean file has issues: da-vacuous, da-lean-narrative-divergence, da-reproducibility.",
         "severity": "critical",
@@ -1591,14 +1617,21 @@
       {
         "result": "pass",
         "notes": "Rewrote multiple blocks related to jet prolongation and brane tower. Used strong, active verbs. Compressed the recursive SU(2) tower example. Consolidated standalone math equations that didn't need vertical spacing. Preserved all markdown file markers.",
-        "reviewed_at": "2026-07-06T23:00:20Z",
+        "reviewed_at": "2026-07-07T14:26:55.711032Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.711032Z"
+        },
+        "field_hash": {
+          "md": "adeb5bc0a8cb",
+          "ts": "57e1114f73bb",
+          "lean": "5164005b6c14"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-07T14:26:55.711032Z"
 }

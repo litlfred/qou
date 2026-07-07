@@ -7,8 +7,8 @@
     "md": "../qou/content/quantum-observable-universe/mass-theory/knot-operator-transition.md"
   },
   "source_hashes": {
-    "md": "97b1170b575b",
-    "ts": "23d5af277a60"
+    "md": "ff1591559275",
+    "ts": "53b4f7bad11d"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1104,15 +1104,17 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "97b1170b575b",
-          "ts": "23d5af277a60"
+          "md": "ff1591559275",
+          "ts": "53b4f7bad11d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.827289Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.827289Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The statement is written in standard scholarly mathematical and physics voice.",
         "severity": "minor"
@@ -1121,19 +1123,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "97b1170b575b",
-          "ts": "23d5af277a60",
-          "lean": "b0aa157e18b0"
+          "md": "ff1591559275",
+          "ts": "53b4f7bad11d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.827289Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:06.939Z",
+        "reviewed_at": "2026-07-07T14:26:56.827289Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1141,15 +1142,17 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "97b1170b575b",
-          "ts": "23d5af277a60"
+          "md": "ff1591559275",
+          "ts": "53b4f7bad11d"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.827289Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.827289Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The sibling Lean file content/quantum-observable-universe/mass-theory/knot-operator-transition.lean is missing entirely.",
         "evidence": "content/quantum-observable-universe/mass-theory/knot-operator-transition.md:1",
@@ -1159,19 +1162,18 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "97b1170b575b",
-          "ts": "23d5af277a60",
-          "lean": "b0aa157e18b0"
+          "md": "ff1591559275",
+          "ts": "53b4f7bad11d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.827289Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:07.635Z",
+        "reviewed_at": "2026-07-07T14:26:56.827289Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
       }
@@ -1252,19 +1254,19 @@
       },
       {
         "field_hash": {
-          "md": "97b1170b575b",
-          "ts": "23d5af277a60"
+          "md": "ff1591559275",
+          "ts": "53b4f7bad11d"
         },
         "result": "pass",
         "notes": ".md gives explicit operator/dominant-NF/knot-type table per transition; clear correspondence even if the topological identification is by inspection.",
-        "reviewed_at": "2026-06-25T17:06:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.827289Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.827289Z"
         },
         "score": {
           "max": 1,
@@ -1314,19 +1316,19 @@
       },
       {
         "field_hash": {
-          "md": "97b1170b575b",
-          "ts": "23d5af277a60"
+          "md": "ff1591559275",
+          "ts": "53b4f7bad11d"
         },
         "result": "warn",
         "notes": "Physical-topological claim (nucleon-addition knot hierarchy explaining 4He peak); plausible but largely asserted as a table, not derived from braid NF.",
-        "reviewed_at": "2026-06-25T17:06:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.827289Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.827289Z"
         },
         "score": {
           "max": 1,
@@ -1376,19 +1378,19 @@
       },
       {
         "field_hash": {
-          "md": "97b1170b575b",
-          "ts": "23d5af277a60"
+          "md": "ff1591559275",
+          "ts": "53b4f7bad11d"
         },
         "result": "pass",
         "notes": "Novel knot-theoretic reading of the nuclear shell/binding peak; the unknot->trefoil saturation tied to 4He is a distinctive QOU claim.",
-        "reviewed_at": "2026-06-25T17:06:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.827289Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.827289Z"
         },
         "score": {
           "max": 1,
@@ -1434,19 +1436,19 @@
       },
       {
         "field_hash": {
-          "md": "97b1170b575b",
-          "ts": "23d5af277a60"
+          "md": "ff1591559275",
+          "ts": "53b4f7bad11d"
         },
         "result": "pass",
         "notes": "Lean encodes the .md hierarchy table (unknot/sigma/Hopf/trefoil, saturating at 4th) via nucleonAdditionKnot; theorems rfl-prove the assignments + A>=3=>trefoil. Faithful (definitional table).",
-        "reviewed_at": "2026-06-25T17:06:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.827289Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.827289Z"
         }
       }
     ],
@@ -1488,19 +1490,19 @@
       },
       {
         "field_hash": {
-          "md": "97b1170b575b",
-          "ts": "23d5af277a60"
+          "md": "ff1591559275",
+          "ts": "53b4f7bad11d"
         },
         "result": "pass",
         "notes": "Proofs are rfl / match on the inductive def, not projection of a structure field equal to the conclusion.",
-        "reviewed_at": "2026-06-25T17:06:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.827289Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.827289Z"
         }
       }
     ],
@@ -1525,19 +1527,19 @@
       },
       {
         "field_hash": {
-          "md": "97b1170b575b",
-          "ts": "23d5af277a60"
+          "md": "ff1591559275",
+          "ts": "53b4f7bad11d"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: no `: True` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/BraidKnot.lean, content/quantum-observable-universe/lean/QOU/BraidKnot/knot_operator_transition.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.827289Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.827289Z"
         }
       }
     ],
@@ -1579,19 +1581,19 @@
       },
       {
         "field_hash": {
-          "md": "97b1170b575b",
-          "ts": "23d5af277a60"
+          "md": "ff1591559275",
+          "ts": "53b4f7bad11d"
         },
         "result": "pass",
         "notes": "3<=A is satisfiable; no contradictory premise.",
-        "reviewed_at": "2026-06-25T17:06:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.827289Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.827289Z"
         }
       }
     ],
@@ -1633,19 +1635,19 @@
       },
       {
         "field_hash": {
-          "md": "97b1170b575b",
-          "ts": "23d5af277a60"
+          "md": "ff1591559275",
+          "ts": "53b4f7bad11d"
         },
         "result": "pass",
         "notes": "knot_operator_transition uses h:3<=A in the match (3,_ / n+4,_). Hierarchy theorem has no hypotheses.",
-        "reviewed_at": "2026-06-25T17:06:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.827289Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.827289Z"
         }
       }
     ],
@@ -1670,34 +1672,36 @@
       },
       {
         "field_hash": {
-          "md": "97b1170b575b",
-          "ts": "23d5af277a60"
+          "md": "ff1591559275",
+          "ts": "53b4f7bad11d"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/BraidKnot.lean, content/quantum-observable-universe/lean/QOU/BraidKnot/knot_operator_transition.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.827289Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.827289Z"
         }
       }
     ],
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "97b1170b575b",
-          "ts": "23d5af277a60"
+          "md": "ff1591559275",
+          "ts": "53b4f7bad11d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.827289Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.827289Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/knot-operator-transition.ts:1",
@@ -1707,15 +1711,17 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "97b1170b575b",
-          "ts": "23d5af277a60"
+          "md": "ff1591559275",
+          "ts": "53b4f7bad11d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.827289Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.827289Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-vacuous.",
         "severity": "minor"
@@ -1724,15 +1730,17 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "97b1170b575b",
-          "ts": "23d5af277a60"
+          "md": "ff1591559275",
+          "ts": "53b4f7bad11d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.827289Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.827289Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/knot-operator-transition.ts:1",
@@ -1742,15 +1750,17 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "97b1170b575b",
-          "ts": "23d5af277a60"
+          "md": "ff1591559275",
+          "ts": "53b4f7bad11d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.827289Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.827289Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
@@ -1759,15 +1769,17 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "97b1170b575b",
-          "ts": "23d5af277a60"
+          "md": "ff1591559275",
+          "ts": "53b4f7bad11d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.827289Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.827289Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/knot-operator-transition.ts:1",
@@ -1777,15 +1789,17 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "97b1170b575b",
-          "ts": "23d5af277a60"
+          "md": "ff1591559275",
+          "ts": "53b4f7bad11d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.827289Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.827289Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/knot-operator-transition.ts:1",
@@ -1795,15 +1809,17 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "97b1170b575b",
-          "ts": "23d5af277a60"
+          "md": "ff1591559275",
+          "ts": "53b4f7bad11d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.827289Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.827289Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
         "evidence": "content/quantum-observable-universe/mass-theory/knot-operator-transition.ts:1",
@@ -1813,15 +1829,17 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "97b1170b575b",
-          "ts": "23d5af277a60"
+          "md": "ff1591559275",
+          "ts": "53b4f7bad11d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.827289Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.827289Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/knot-operator-transition.ts:1",
@@ -1831,15 +1849,17 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "97b1170b575b",
-          "ts": "23d5af277a60"
+          "md": "ff1591559275",
+          "ts": "53b4f7bad11d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.827289Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.827289Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/knot-operator-transition.ts:1",
@@ -1849,15 +1869,17 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "97b1170b575b",
-          "ts": "23d5af277a60"
+          "md": "ff1591559275",
+          "ts": "53b4f7bad11d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.827289Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.827289Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/knot-operator-transition.ts:1",
@@ -1867,15 +1889,17 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "97b1170b575b",
-          "ts": "23d5af277a60"
+          "md": "ff1591559275",
+          "ts": "53b4f7bad11d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.827289Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.827289Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-reproducibility.",
         "severity": "minor"
@@ -1884,15 +1908,17 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "97b1170b575b",
-          "ts": "23d5af277a60"
+          "md": "ff1591559275",
+          "ts": "53b4f7bad11d"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.827289Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.827289Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Referee verdict: open-objection. Objection: Sibling Lean file is missing.",
         "severity": "critical",
@@ -1903,16 +1929,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "97b1170b575b",
-          "ts": "23d5af277a60"
+          "md": "ff1591559275",
+          "ts": "53b4f7bad11d"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.827289Z"
         },
-        "reviewed_at": "2026-06-28T10:58:50.334Z",
+        "reviewed_at": "2026-07-07T14:26:56.827289Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The referenced Lean file content/quantum-observable-universe/mass-theory/knot-operator-transition.lean is missing, leading to complete divergence.",
         "severity": "minor"
@@ -1922,14 +1950,20 @@
       {
         "result": "pass",
         "notes": "Condensed derivations to core propositions. Removed verbose implementation details.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.827289Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.827289Z"
+        },
+        "field_hash": {
+          "md": "ff1591559275",
+          "ts": "53b4f7bad11d"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-07T14:26:56.827289Z"
 }

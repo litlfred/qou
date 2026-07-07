@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/mass-theory/knot-factor-spectral-derivation.md"
   },
   "source_hashes": {
-    "md": "db05f8470980",
+    "md": "7e8bb3d3fe7d",
     "ts": "d6e086dffdc6"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Rewrote prose sections of mass-theory_seq36.md to enforce H1-H8 and milnor-brevity. Preserved all math blocks and original section markers. Ensured linear flow, minimal technical clutter, and short declarative sentences.",
-        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.813350Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.813350Z"
+        },
+        "field_hash": {
+          "md": "7e8bb3d3fe7d",
+          "ts": "d6e086dffdc6"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-07T14:26:56.813350Z"
 }

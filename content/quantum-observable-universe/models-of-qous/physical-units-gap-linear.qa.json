@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/models-of-qous/physical-units-gap-linear.lean"
   },
   "source_hashes": {
-    "md": "5c4c0458c654",
+    "md": "de77776a5930",
     "ts": "91ca2068a882",
     "lean": "0440169118f6"
   },
@@ -1053,14 +1053,21 @@
       {
         "result": "pass",
         "notes": "Tightened language, enforced 'we' instead of passive voice, removed forward-looking references, preserved equations.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.438825Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.438825Z"
+        },
+        "field_hash": {
+          "md": "de77776a5930",
+          "ts": "91ca2068a882",
+          "lean": "0440169118f6"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T18:21:24.666Z"
+  "updated_at": "2026-07-07T14:26:55.438825Z"
 }

@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/flavor-dressed-mass-from-substrate-split.lean"
   },
   "source_hashes": {
-    "md": "5c32a270f93e",
+    "md": "5f818f61036a",
     "ts": "d53bd69e5ff2",
     "lean": "bcaf3453d9a1"
   },
@@ -36,7 +36,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "5c32a270f93e",
+          "md": "5f818f61036a",
           "ts": "d53bd69e5ff2",
           "lean": "bcaf3453d9a1"
         },
@@ -44,9 +44,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.841762Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_at": "2026-07-07T14:26:56.841762Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:flavor-dressed-mass-from-substrate-split' \u2192 expected 'flavor_dressed_mass_from_substrate_split'; Lean declares: substrate_split_factor, dressed_mass_split_substrate_closed_form, dressed_mass_from_substrate_split. Structural match via content."
       }
@@ -55,14 +57,21 @@
       {
         "result": "pass",
         "notes": "Rewrote prose sections of mass-theory_seq37.md to enforce H1-H8 and milnor-brevity. Preserved all math blocks and original section markers. Ensured linear flow, minimal technical clutter, and short declarative sentences.",
-        "reviewed_at": "2026-07-06T22:49:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.841762Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.841762Z"
+        },
+        "field_hash": {
+          "md": "5f818f61036a",
+          "ts": "d53bd69e5ff2",
+          "lean": "bcaf3453d9a1"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.430Z"
+  "updated_at": "2026-07-07T14:26:56.841762Z"
 }

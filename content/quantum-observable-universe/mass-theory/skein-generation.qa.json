@@ -9,8 +9,7 @@
   },
   "source_hashes": {
     "md": "f1db5ee7630b",
-    "ts": "644a3c5b2eb3",
-    "lean": "866074e29a75"
+    "ts": "644a3c5b2eb3"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1031,16 +1030,17 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "9b7e6408c38e",
-          "ts": "d2da6385eac9",
-          "lean": "ba11e48d5a0b"
+          "md": "f1db5ee7630b",
+          "ts": "644a3c5b2eb3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.719075Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.719075Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Statement contains only the bare claim without physical interpretation.",
         "severity": "minor"
@@ -1049,19 +1049,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "9b7e6408c38e",
-          "ts": "d2da6385eac9",
-          "lean": "ba11e48d5a0b"
+          "md": "f1db5ee7630b",
+          "ts": "644a3c5b2eb3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.719075Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:03.374Z",
+        "reviewed_at": "2026-07-07T14:26:56.719075Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1069,16 +1068,17 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "9b7e6408c38e",
-          "ts": "d2da6385eac9",
-          "lean": "ba11e48d5a0b"
+          "md": "f1db5ee7630b",
+          "ts": "644a3c5b2eb3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.719075Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.719075Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
         "evidence": "content/quantum-observable-universe/mass-theory/skein-generation.lean:1 \u2014 Lean file exists",
@@ -1088,16 +1088,17 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "9b7e6408c38e",
-          "ts": "d2da6385eac9",
-          "lean": "ba11e48d5a0b"
+          "md": "f1db5ee7630b",
+          "ts": "644a3c5b2eb3"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.719075Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.719075Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Lean proof contains compilation errors.",
         "evidence": "content/quantum-observable-universe/mass-theory/skein-generation.lean:1 \u2014 content/quantum-observable-universe/mass-theory/skein-generation.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Polynomial/Basic.olean' of module Mathlib.Data.Polynomial.Basic does not exist",
@@ -1107,16 +1108,17 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "9b7e6408c38e",
-          "ts": "d2da6385eac9",
-          "lean": "ba11e48d5a0b"
+          "md": "f1db5ee7630b",
+          "ts": "644a3c5b2eb3"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.719075Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.719075Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean proof is incomplete and fails to compile, so equivalence cannot be verified.",
         "severity": "minor"
@@ -1125,16 +1127,17 @@
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "9b7e6408c38e",
-          "ts": "d2da6385eac9",
-          "lean": "ba11e48d5a0b"
+          "md": "f1db5ee7630b",
+          "ts": "644a3c5b2eb3"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.719075Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.719075Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Lean code is broken and does not compile, hence strategy is opaque.",
         "severity": "minor"
@@ -1143,9 +1146,8 @@
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "9b7e6408c38e",
-          "ts": "d2da6385eac9",
-          "lean": "ba11e48d5a0b"
+          "md": "f1db5ee7630b",
+          "ts": "644a3c5b2eb3"
         },
         "result": "pass",
         "score": {
@@ -1155,11 +1157,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.719075Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:05.255Z",
+        "reviewed_at": "2026-07-07T14:26:56.719075Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
       }
@@ -1167,16 +1169,17 @@
     "proof-rater-novelty": [
       {
         "field_hash": {
-          "md": "9b7e6408c38e",
-          "ts": "d2da6385eac9",
-          "lean": "ba11e48d5a0b"
+          "md": "f1db5ee7630b",
+          "ts": "644a3c5b2eb3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.719075Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.719075Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The mathematical and physical connections explored in this block are highly novel.",
         "severity": "minor",
@@ -1189,19 +1192,18 @@
     "proof-statement-integrity": [
       {
         "field_hash": {
-          "md": "9b7e6408c38e",
-          "ts": "d2da6385eac9",
-          "lean": "ba11e48d5a0b"
+          "md": "f1db5ee7630b",
+          "ts": "644a3c5b2eb3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.719075Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:05.942Z",
+        "reviewed_at": "2026-07-07T14:26:56.719075Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
       }
@@ -1209,19 +1211,18 @@
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "9b7e6408c38e",
-          "ts": "d2da6385eac9",
-          "lean": "ba11e48d5a0b"
+          "md": "f1db5ee7630b",
+          "ts": "644a3c5b2eb3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.719075Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:06.390Z",
+        "reviewed_at": "2026-07-07T14:26:56.719075Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
       }
@@ -1229,19 +1230,18 @@
     "proof-no-trivial-true": [
       {
         "field_hash": {
-          "md": "9b7e6408c38e",
-          "ts": "d2da6385eac9",
-          "lean": "ba11e48d5a0b"
+          "md": "f1db5ee7630b",
+          "ts": "644a3c5b2eb3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.719075Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:06.959Z",
+        "reviewed_at": "2026-07-07T14:26:56.719075Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
       }
@@ -1249,19 +1249,18 @@
     "proof-no-false-premise": [
       {
         "field_hash": {
-          "md": "9b7e6408c38e",
-          "ts": "d2da6385eac9",
-          "lean": "ba11e48d5a0b"
+          "md": "f1db5ee7630b",
+          "ts": "644a3c5b2eb3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.719075Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:07.285Z",
+        "reviewed_at": "2026-07-07T14:26:56.719075Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
       }
@@ -1269,16 +1268,17 @@
     "proof-no-unused-hypotheses": [
       {
         "field_hash": {
-          "md": "9b7e6408c38e",
-          "ts": "d2da6385eac9",
-          "lean": "ba11e48d5a0b"
+          "md": "f1db5ee7630b",
+          "ts": "644a3c5b2eb3"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.719075Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.719075Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Broken proof compilation.",
         "severity": "minor"
@@ -1287,19 +1287,18 @@
     "proof-no-decide-masking": [
       {
         "field_hash": {
-          "md": "9b7e6408c38e",
-          "ts": "d2da6385eac9",
-          "lean": "ba11e48d5a0b"
+          "md": "f1db5ee7630b",
+          "ts": "644a3c5b2eb3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.719075Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:07.943Z",
+        "reviewed_at": "2026-07-07T14:26:56.719075Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
@@ -1307,16 +1306,17 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "9b7e6408c38e",
-          "ts": "d2da6385eac9",
-          "lean": "ba11e48d5a0b"
+          "md": "f1db5ee7630b",
+          "ts": "644a3c5b2eb3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.719075Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.719075Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/skein-generation.ts:1",
@@ -1326,16 +1326,17 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "9b7e6408c38e",
-          "ts": "d2da6385eac9",
-          "lean": "ba11e48d5a0b"
+          "md": "f1db5ee7630b",
+          "ts": "644a3c5b2eb3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.719075Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.719075Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-vacuous.",
         "severity": "minor"
@@ -1344,16 +1345,17 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "9b7e6408c38e",
-          "ts": "d2da6385eac9",
-          "lean": "ba11e48d5a0b"
+          "md": "f1db5ee7630b",
+          "ts": "644a3c5b2eb3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.719075Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.719075Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/skein-generation.ts:1",
@@ -1363,16 +1365,17 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "9b7e6408c38e",
-          "ts": "d2da6385eac9",
-          "lean": "ba11e48d5a0b"
+          "md": "f1db5ee7630b",
+          "ts": "644a3c5b2eb3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.719075Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.719075Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
@@ -1381,16 +1384,17 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "9b7e6408c38e",
-          "ts": "d2da6385eac9",
-          "lean": "ba11e48d5a0b"
+          "md": "f1db5ee7630b",
+          "ts": "644a3c5b2eb3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.719075Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.719075Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/skein-generation.ts:1",
@@ -1400,16 +1404,17 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "9b7e6408c38e",
-          "ts": "d2da6385eac9",
-          "lean": "ba11e48d5a0b"
+          "md": "f1db5ee7630b",
+          "ts": "644a3c5b2eb3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.719075Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.719075Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/skein-generation.ts:1",
@@ -1419,16 +1424,17 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "9b7e6408c38e",
-          "ts": "d2da6385eac9",
-          "lean": "ba11e48d5a0b"
+          "md": "f1db5ee7630b",
+          "ts": "644a3c5b2eb3"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.719075Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.719075Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, causing divergence from the narrative.",
         "severity": "minor"
@@ -1437,16 +1443,17 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "9b7e6408c38e",
-          "ts": "d2da6385eac9",
-          "lean": "ba11e48d5a0b"
+          "md": "f1db5ee7630b",
+          "ts": "644a3c5b2eb3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.719075Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.719075Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
         "evidence": "content/quantum-observable-universe/mass-theory/skein-generation.ts:1",
@@ -1456,16 +1463,17 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "9b7e6408c38e",
-          "ts": "d2da6385eac9",
-          "lean": "ba11e48d5a0b"
+          "md": "f1db5ee7630b",
+          "ts": "644a3c5b2eb3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.719075Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.719075Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/skein-generation.ts:1",
@@ -1475,16 +1483,17 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "9b7e6408c38e",
-          "ts": "d2da6385eac9",
-          "lean": "ba11e48d5a0b"
+          "md": "f1db5ee7630b",
+          "ts": "644a3c5b2eb3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.719075Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.719075Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/skein-generation.ts:1",
@@ -1494,16 +1503,17 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "9b7e6408c38e",
-          "ts": "d2da6385eac9",
-          "lean": "ba11e48d5a0b"
+          "md": "f1db5ee7630b",
+          "ts": "644a3c5b2eb3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.719075Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.719075Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/skein-generation.ts:1",
@@ -1513,16 +1523,17 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "9b7e6408c38e",
-          "ts": "d2da6385eac9",
-          "lean": "ba11e48d5a0b"
+          "md": "f1db5ee7630b",
+          "ts": "644a3c5b2eb3"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.719075Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.719075Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
         "evidence": "content/quantum-observable-universe/mass-theory/skein-generation.lean:1 \u2014 content/quantum-observable-universe/mass-theory/skein-generation.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Polynomial/Basic.olean' of module Mathlib.Data.Polynomial.Basic does not exist",
@@ -1532,16 +1543,17 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "9b7e6408c38e",
-          "ts": "d2da6385eac9",
-          "lean": "ba11e48d5a0b"
+          "md": "f1db5ee7630b",
+          "ts": "644a3c5b2eb3"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.719075Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.719075Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/skein-generation.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Polynomial/Basic.olean' of module Mathlib.Data.Polynomial.Basic does not exist",
         "severity": "critical",
@@ -1573,14 +1585,20 @@
       {
         "result": "pass",
         "notes": "Rewrote mass-theory_seq4.md for Milnor standards: clean prose, declarative.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.719075Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.719075Z"
+        },
+        "field_hash": {
+          "md": "f1db5ee7630b",
+          "ts": "644a3c5b2eb3"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-07T14:26:56.719075Z"
 }

@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/molecular-construction/assembly-projector-scope.md"
   },
   "source_hashes": {
-    "md": "77d53f674799",
+    "md": "1ed5b29b4705",
     "ts": "e7249773ba79"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Streamlined aromaticity discussion. Short declarative sentences. Retained math.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.523053Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.523053Z"
+        },
+        "field_hash": {
+          "md": "1ed5b29b4705",
+          "ts": "e7249773ba79"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.117Z"
+  "updated_at": "2026-07-07T14:26:55.523053Z"
 }

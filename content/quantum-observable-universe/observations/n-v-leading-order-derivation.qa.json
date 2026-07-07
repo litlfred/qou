@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/observations/n-v-leading-order-derivation.lean"
   },
   "source_hashes": {
-    "md": "af82ac00fdaf",
+    "md": "519b04cb70af",
     "ts": "a1710920a514",
     "lean": "c3d50395089f"
   },
@@ -914,19 +914,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "af82ac00fdaf",
-          "ts": "a0920fd8a777",
-          "lean": "fafbd60f13a6"
+          "md": "519b04cb70af",
+          "ts": "a1710920a514",
+          "lean": "c3d50395089f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.682299Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:54.519Z",
+        "reviewed_at": "2026-07-07T14:26:56.682299Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -934,9 +934,9 @@
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "af82ac00fdaf",
-          "ts": "a0920fd8a777",
-          "lean": "fafbd60f13a6"
+          "md": "519b04cb70af",
+          "ts": "a1710920a514",
+          "lean": "c3d50395089f"
         },
         "result": "pass",
         "score": {
@@ -946,11 +946,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.682299Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:54.890Z",
+        "reviewed_at": "2026-07-07T14:26:56.682299Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
       }
@@ -958,17 +958,19 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "af82ac00fdaf",
-          "ts": "a0920fd8a777",
-          "lean": "fafbd60f13a6"
+          "md": "519b04cb70af",
+          "ts": "a1710920a514",
+          "lean": "c3d50395089f"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.682299Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:56.682299Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The claim in 'Leading-order N_v = |S_5| \u00b7 q_0^90 (= 120 \u00b7 q_0^90)' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
@@ -978,17 +980,19 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "af82ac00fdaf",
-          "ts": "a0920fd8a777",
-          "lean": "fafbd60f13a6"
+          "md": "519b04cb70af",
+          "ts": "a1710920a514",
+          "lean": "c3d50395089f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.682299Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:56.682299Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The claims in 'Leading-order N_v = |S_5| \u00b7 q_0^90 (= 120 \u00b7 q_0^90)' are non-vacuous as they make concrete conjectures about '[the Bring action lemma](#conj:n-v-bring-action) with [the t...'.",
         "severity": "minor"
@@ -997,17 +1001,19 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "af82ac00fdaf",
-          "ts": "a0920fd8a777",
-          "lean": "fafbd60f13a6"
+          "md": "519b04cb70af",
+          "ts": "a1710920a514",
+          "lean": "c3d50395089f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.682299Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:56.682299Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Leading-order N_v = |S_5| \u00b7 q_0^90 (= 120 \u00b7 q_0^90)'.",
         "severity": "minor",
@@ -1017,17 +1023,19 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "af82ac00fdaf",
-          "ts": "a0920fd8a777",
-          "lean": "fafbd60f13a6"
+          "md": "519b04cb70af",
+          "ts": "a1710920a514",
+          "lean": "c3d50395089f"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.682299Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:56.682299Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose presents 'Leading-order N_v = |S_5| \u00b7 q_0^90 (= 120 \u00b7 q_0^90)' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
@@ -1036,17 +1044,19 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "af82ac00fdaf",
-          "ts": "a0920fd8a777",
-          "lean": "fafbd60f13a6"
+          "md": "519b04cb70af",
+          "ts": "a1710920a514",
+          "lean": "c3d50395089f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.682299Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:56.682299Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Leading-order N_v = |S_5| \u00b7 q_0^90 (= 120 \u00b7 q_0^90)'.",
         "severity": "minor",
@@ -1056,17 +1066,19 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "af82ac00fdaf",
-          "ts": "a0920fd8a777",
-          "lean": "fafbd60f13a6"
+          "md": "519b04cb70af",
+          "ts": "a1710920a514",
+          "lean": "c3d50395089f"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.682299Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:56.682299Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/observations/n-v-leading-order-derivation.lean.",
         "severity": "minor",
@@ -1076,17 +1088,19 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "af82ac00fdaf",
-          "ts": "a0920fd8a777",
-          "lean": "fafbd60f13a6"
+          "md": "519b04cb70af",
+          "ts": "a1710920a514",
+          "lean": "c3d50395089f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.682299Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:56.682299Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Lean and narrative statements for 'Leading-order N_v = |S_5| \u00b7 q_0^90 (= 120 \u00b7 q_0^90)' are structurally aligned.",
         "severity": "minor"
@@ -1095,17 +1109,19 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "af82ac00fdaf",
-          "ts": "a0920fd8a777",
-          "lean": "fafbd60f13a6"
+          "md": "519b04cb70af",
+          "ts": "a1710920a514",
+          "lean": "c3d50395089f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.682299Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:56.682299Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No citations are present in 'Leading-order N_v = |S_5| \u00b7 q_0^90 (= 120 \u00b7 q_0^90)', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1115,17 +1131,19 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "af82ac00fdaf",
-          "ts": "a0920fd8a777",
-          "lean": "fafbd60f13a6"
+          "md": "519b04cb70af",
+          "ts": "a1710920a514",
+          "lean": "c3d50395089f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.682299Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:56.682299Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Key terms and symbols in 'Leading-order N_v = |S_5| \u00b7 q_0^90 (= 120 \u00b7 q_0^90)' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1135,17 +1153,19 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "af82ac00fdaf",
-          "ts": "a0920fd8a777",
-          "lean": "fafbd60f13a6"
+          "md": "519b04cb70af",
+          "ts": "a1710920a514",
+          "lean": "c3d50395089f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.682299Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:56.682299Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The algebraic and logical relations in 'Leading-order N_v = |S_5| \u00b7 q_0^90 (= 120 \u00b7 q_0^90)' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1155,17 +1175,19 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "af82ac00fdaf",
-          "ts": "a0920fd8a777",
-          "lean": "fafbd60f13a6"
+          "md": "519b04cb70af",
+          "ts": "a1710920a514",
+          "lean": "c3d50395089f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.682299Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:56.682299Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The physical concepts described in 'Leading-order N_v = |S_5| \u00b7 q_0^90 (= 120 \u00b7 q_0^90)' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1175,17 +1197,19 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "af82ac00fdaf",
-          "ts": "a0920fd8a777",
-          "lean": "fafbd60f13a6"
+          "md": "519b04cb70af",
+          "ts": "a1710920a514",
+          "lean": "c3d50395089f"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.682299Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:56.682299Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/observations/n-v-leading-order-derivation.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
@@ -1195,17 +1219,19 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "af82ac00fdaf",
-          "ts": "a0920fd8a777",
-          "lean": "fafbd60f13a6"
+          "md": "519b04cb70af",
+          "ts": "a1710920a514",
+          "lean": "c3d50395089f"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.682299Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:56.682299Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Lean sibling content/quantum-observable-universe/observations/n-v-leading-order-derivation.lean contains compilation errors.",
         "verdict": "open-objection",
@@ -1217,14 +1243,21 @@
       {
         "result": "pass",
         "notes": "Applied Milnor exposition standard (H1-H8) and brevity rules. Shortened sentences, removed editorializing ('surprisingly', 'remarkably'), replaced 'this book' with 'this paper', and maintained Math, markdown, and cross-block consistency.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.682299Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.682299Z"
+        },
+        "field_hash": {
+          "md": "519b04cb70af",
+          "ts": "a1710920a514",
+          "lean": "c3d50395089f"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.226Z"
+  "updated_at": "2026-07-07T14:26:56.682299Z"
 }

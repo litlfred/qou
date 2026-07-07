@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/glossary/glossary-descent.lean"
   },
   "source_hashes": {
-    "md": "2a8ab556b662",
+    "md": "373292f73886",
     "ts": "f6a2847d2fba",
     "lean": "d2c03b703e9e"
   },
@@ -37,14 +37,21 @@
       {
         "result": "pass",
         "notes": "Smoothed transitions, applied concrete-before-abstract, removed forward references.",
-        "reviewed_at": "2026-07-07T02:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.471202Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.471202Z"
+        },
+        "field_hash": {
+          "md": "373292f73886",
+          "ts": "f6a2847d2fba",
+          "lean": "d2c03b703e9e"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:55.920Z"
+  "updated_at": "2026-07-07T14:26:56.471202Z"
 }

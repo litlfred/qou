@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/appendix-knot-periodic-table/knot-periodic-table-sim.md"
   },
   "source_hashes": {
-    "md": "e8f0bee5eb75",
+    "md": "9fe1f22247ac",
     "ts": "dd3df2f14443"
   },
   "criteria": {
@@ -766,15 +766,17 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "e8f0bee5eb75",
+          "md": "9fe1f22247ac",
           "ts": "dd3df2f14443"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.489524Z"
         },
-        "reviewed_at": "2026-06-28T05:50:23.590Z",
+        "reviewed_at": "2026-07-07T14:26:56.489524Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Block placement and kind match validated structurally.",
         "severity": "minor"
@@ -783,15 +785,17 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "e8f0bee5eb75",
+          "md": "9fe1f22247ac",
           "ts": "dd3df2f14443"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.489524Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:56.489524Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No claims are made in this simulator description.",
         "severity": "minor"
@@ -800,15 +804,17 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "e8f0bee5eb75",
+          "md": "9fe1f22247ac",
           "ts": "dd3df2f14443"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.489524Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:56.489524Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The block describes an interactive periodic table simulation.",
         "severity": "minor"
@@ -817,15 +823,17 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "e8f0bee5eb75",
+          "md": "9fe1f22247ac",
           "ts": "dd3df2f14443"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.489524Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:56.489524Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No circularity is present.",
         "severity": "minor"
@@ -834,15 +842,17 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "e8f0bee5eb75",
+          "md": "9fe1f22247ac",
           "ts": "dd3df2f14443"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.489524Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:56.489524Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No overclaims are present; it just describes the simulator interface.",
         "severity": "minor"
@@ -851,15 +861,17 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "e8f0bee5eb75",
+          "md": "9fe1f22247ac",
           "ts": "dd3df2f14443"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.489524Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:56.489524Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No hidden parameters.",
         "severity": "minor"
@@ -868,15 +880,17 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "e8f0bee5eb75",
+          "md": "9fe1f22247ac",
           "ts": "dd3df2f14443"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.489524Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:56.489524Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No logical gaps.",
         "severity": "minor"
@@ -885,15 +899,17 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "e8f0bee5eb75",
+          "md": "9fe1f22247ac",
           "ts": "dd3df2f14443"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.489524Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:56.489524Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No divergence is found.",
         "severity": "minor"
@@ -902,15 +918,17 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "e8f0bee5eb75",
+          "md": "9fe1f22247ac",
           "ts": "dd3df2f14443"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.489524Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:56.489524Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The citations are correct.",
         "severity": "minor"
@@ -919,15 +937,17 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "e8f0bee5eb75",
+          "md": "9fe1f22247ac",
           "ts": "dd3df2f14443"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.489524Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:56.489524Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Terms are defined.",
         "severity": "minor"
@@ -936,15 +956,17 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "e8f0bee5eb75",
+          "md": "9fe1f22247ac",
           "ts": "dd3df2f14443"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.489524Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:56.489524Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Not applicable.",
         "severity": "minor"
@@ -953,15 +975,17 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "e8f0bee5eb75",
+          "md": "9fe1f22247ac",
           "ts": "dd3df2f14443"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.489524Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:56.489524Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No physical claims are made directly.",
         "severity": "minor"
@@ -970,15 +994,17 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "e8f0bee5eb75",
+          "md": "9fe1f22247ac",
           "ts": "dd3df2f14443"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.489524Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:56.489524Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The simulator description matches the interface.",
         "severity": "minor"
@@ -987,21 +1013,23 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "e8f0bee5eb75",
+          "md": "9fe1f22247ac",
           "ts": "dd3df2f14443"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.489524Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:56.489524Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "severity": "minor",
         "verdict": "clean",
-        "referee_argument": "none — the block describes an interactive HTML simulation interface for a knot-centric periodic table and contains no direct mathematical or physical claims."
+        "referee_argument": "none \u2014 the block describes an interactive HTML simulation interface for a knot-centric periodic table and contains no direct mathematical or physical claims."
       }
     ]
   },
-  "updated_at": "2026-07-05T18:14:41.850Z"
+  "updated_at": "2026-07-07T14:26:56.489524Z"
 }

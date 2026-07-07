@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/measurement-observation/bundle-isotopy-equivalence.lean"
   },
   "source_hashes": {
-    "md": "f0c8ce33bc0e",
+    "md": "d2890c7ea8fa",
     "ts": "1e9fc01cf9b3",
     "lean": "3009bb4d3f05"
   },
@@ -877,7 +877,7 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "f0c8ce33bc0e",
+          "md": "d2890c7ea8fa",
           "ts": "1e9fc01cf9b3",
           "lean": "3009bb4d3f05"
         },
@@ -885,11 +885,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.447100Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:51.162Z",
+        "reviewed_at": "2026-07-07T14:26:56.447100Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -897,7 +897,7 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "f0c8ce33bc0e",
+          "md": "d2890c7ea8fa",
           "ts": "1e9fc01cf9b3",
           "lean": "3009bb4d3f05"
         },
@@ -905,11 +905,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.447100Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:51.529Z",
+        "reviewed_at": "2026-07-07T14:26:56.447100Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -917,7 +917,7 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "f0c8ce33bc0e",
+          "md": "d2890c7ea8fa",
           "ts": "1e9fc01cf9b3",
           "lean": "3009bb4d3f05"
         },
@@ -925,9 +925,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.447100Z"
         },
-        "reviewed_at": "2026-06-28T10:58:57.657Z",
+        "reviewed_at": "2026-07-07T14:26:56.447100Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No false claims identified in 'Isotopy equivalence of bundle initial conditions': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -937,7 +939,7 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "f0c8ce33bc0e",
+          "md": "d2890c7ea8fa",
           "ts": "1e9fc01cf9b3",
           "lean": "3009bb4d3f05"
         },
@@ -945,9 +947,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.447100Z"
         },
-        "reviewed_at": "2026-06-28T10:58:57.663Z",
+        "reviewed_at": "2026-07-07T14:26:56.447100Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The block 'Isotopy equivalence of bundle initial conditions' presents substantial mathematical content: Two bundle initial conditions ([Definition](#def:bundle-initial-conditions)) are...",
         "severity": "minor"
@@ -956,7 +960,7 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "f0c8ce33bc0e",
+          "md": "d2890c7ea8fa",
           "ts": "1e9fc01cf9b3",
           "lean": "3009bb4d3f05"
         },
@@ -964,9 +968,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.447100Z"
         },
-        "reviewed_at": "2026-06-28T10:58:57.669Z",
+        "reviewed_at": "2026-07-07T14:26:56.447100Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Isotopy equivalence of bundle initial conditions'.",
         "severity": "minor",
@@ -976,7 +982,7 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "f0c8ce33bc0e",
+          "md": "d2890c7ea8fa",
           "ts": "1e9fc01cf9b3",
           "lean": "3009bb4d3f05"
         },
@@ -984,9 +990,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.447100Z"
         },
-        "reviewed_at": "2026-06-28T10:58:57.676Z",
+        "reviewed_at": "2026-07-07T14:26:56.447100Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No overclaims: the scope of 'Isotopy equivalence of bundle initial conditions' is appropriately qualified.",
         "severity": "minor"
@@ -995,7 +1003,7 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "f0c8ce33bc0e",
+          "md": "d2890c7ea8fa",
           "ts": "1e9fc01cf9b3",
           "lean": "3009bb4d3f05"
         },
@@ -1003,9 +1011,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.447100Z"
         },
-        "reviewed_at": "2026-06-28T10:58:57.681Z",
+        "reviewed_at": "2026-07-07T14:26:56.447100Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Isotopy equivalence of bundle initial conditions'.",
         "severity": "minor",
@@ -1015,7 +1025,7 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "f0c8ce33bc0e",
+          "md": "d2890c7ea8fa",
           "ts": "1e9fc01cf9b3",
           "lean": "3009bb4d3f05"
         },
@@ -1023,9 +1033,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.447100Z"
         },
-        "reviewed_at": "2026-06-28T10:58:57.687Z",
+        "reviewed_at": "2026-07-07T14:26:56.447100Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The argument flow in 'Isotopy equivalence of bundle initial conditions' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -1035,7 +1047,7 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "f0c8ce33bc0e",
+          "md": "d2890c7ea8fa",
           "ts": "1e9fc01cf9b3",
           "lean": "3009bb4d3f05"
         },
@@ -1043,9 +1055,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.447100Z"
         },
-        "reviewed_at": "2026-06-28T10:58:57.693Z",
+        "reviewed_at": "2026-07-07T14:26:56.447100Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Lean formalization and narrative for 'Isotopy equivalence of bundle initial conditions' are in complete agreement.",
         "severity": "minor"
@@ -1054,7 +1068,7 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "f0c8ce33bc0e",
+          "md": "d2890c7ea8fa",
           "ts": "1e9fc01cf9b3",
           "lean": "3009bb4d3f05"
         },
@@ -1062,9 +1076,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.447100Z"
         },
-        "reviewed_at": "2026-06-28T10:58:57.699Z",
+        "reviewed_at": "2026-07-07T14:26:56.447100Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No citations are present in 'Isotopy equivalence of bundle initial conditions', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1074,7 +1090,7 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "f0c8ce33bc0e",
+          "md": "d2890c7ea8fa",
           "ts": "1e9fc01cf9b3",
           "lean": "3009bb4d3f05"
         },
@@ -1082,9 +1098,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.447100Z"
         },
-        "reviewed_at": "2026-06-28T10:58:57.706Z",
+        "reviewed_at": "2026-07-07T14:26:56.447100Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Key terms and symbols in 'Isotopy equivalence of bundle initial conditions' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1094,7 +1112,7 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "f0c8ce33bc0e",
+          "md": "d2890c7ea8fa",
           "ts": "1e9fc01cf9b3",
           "lean": "3009bb4d3f05"
         },
@@ -1102,9 +1120,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.447100Z"
         },
-        "reviewed_at": "2026-06-28T10:58:57.712Z",
+        "reviewed_at": "2026-07-07T14:26:56.447100Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The algebraic and logical relations in 'Isotopy equivalence of bundle initial conditions' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1114,7 +1134,7 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "f0c8ce33bc0e",
+          "md": "d2890c7ea8fa",
           "ts": "1e9fc01cf9b3",
           "lean": "3009bb4d3f05"
         },
@@ -1122,9 +1142,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.447100Z"
         },
-        "reviewed_at": "2026-06-28T10:58:57.718Z",
+        "reviewed_at": "2026-07-07T14:26:56.447100Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The physical concepts described in 'Isotopy equivalence of bundle initial conditions' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1134,7 +1156,7 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "f0c8ce33bc0e",
+          "md": "d2890c7ea8fa",
           "ts": "1e9fc01cf9b3",
           "lean": "3009bb4d3f05"
         },
@@ -1142,9 +1164,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.447100Z"
         },
-        "reviewed_at": "2026-06-28T10:58:57.723Z",
+        "reviewed_at": "2026-07-07T14:26:56.447100Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The derivation steps and formal definitions in 'Isotopy equivalence of bundle initial conditions' are reproducible.",
         "severity": "minor",
@@ -1154,7 +1178,7 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "f0c8ce33bc0e",
+          "md": "d2890c7ea8fa",
           "ts": "1e9fc01cf9b3",
           "lean": "3009bb4d3f05"
         },
@@ -1162,9 +1186,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.447100Z"
         },
-        "reviewed_at": "2026-06-28T10:58:57.729Z",
+        "reviewed_at": "2026-07-07T14:26:56.447100Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -1176,14 +1202,21 @@
       {
         "result": "pass",
         "notes": "Tightened paragraphs. Removed cross-references to unknown targets. Kept physics/math logic intact.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.447100Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.447100Z"
+        },
+        "field_hash": {
+          "md": "d2890c7ea8fa",
+          "ts": "1e9fc01cf9b3",
+          "lean": "3009bb4d3f05"
         }
       }
     ]
   },
-  "updated_at": "2026-07-04T20:31:54.711Z"
+  "updated_at": "2026-07-07T14:26:56.447100Z"
 }

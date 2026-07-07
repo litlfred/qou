@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/particle-interactions/intro-pair-production-anyon.md"
   },
   "source_hashes": {
-    "ts": "6754302b6b2c",
-    "md": "c6b4495abef0"
+    "md": "521a30ed3619",
+    "ts": "6754302b6b2c"
   },
   "criteria": {
     "q-usage-regime-detected": [
@@ -128,14 +128,20 @@
       {
         "result": "pass",
         "notes": "Rewrote seq16 enforcing Milnor brevity. Cleaned up the intro, replacing conversational 'We conjecture ... We then exhibit' with succinct declarations. Streamlined the conditional theorem and conjecture blocks.",
-        "reviewed_at": "2026-07-06T22:52:00Z",
+        "reviewed_at": "2026-07-07T14:26:57.391025Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.391025Z"
+        },
+        "field_hash": {
+          "md": "521a30ed3619",
+          "ts": "6754302b6b2c"
         }
       }
     ]
   },
-  "updated_at": "2026-06-01T16:06:38.106Z"
+  "updated_at": "2026-07-07T14:26:57.391025Z"
 }

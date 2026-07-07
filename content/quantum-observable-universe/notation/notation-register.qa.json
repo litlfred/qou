@@ -7,22 +7,28 @@
     "md": "content/quantum-observable-universe/notation/notation-register.md"
   },
   "source_hashes": {
-    "ts": "da134280c0f0",
-    "md": "6cb66edfb73d"
+    "md": "e927608180e0",
+    "ts": "da134280c0f0"
   },
   "criteria": {
     "milnor-amalgamated-flow": [
       {
         "result": "pass",
         "notes": "Rewrote notation_seq0.md. Fixed grammar, enforced 'we', and kept table references intact.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.453558Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.453558Z"
+        },
+        "field_hash": {
+          "md": "e927608180e0",
+          "ts": "da134280c0f0"
         }
       }
     ]
   },
-  "updated_at": "2026-06-01T16:06:38.106Z"
+  "updated_at": "2026-07-07T14:26:56.453558Z"
 }

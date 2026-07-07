@@ -7,42 +7,46 @@
     "md": "../qou/content/quantum-observable-universe/information-theory/photon-threading-mass-interpretation.md"
   },
   "source_hashes": {
-    "md": "5af0a4d08e88",
+    "md": "718d8b83e0c8",
     "ts": "f6f46bba831a"
   },
   "criteria": {
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "5af0a4d08e88",
+          "md": "718d8b83e0c8",
           "ts": "f6f46bba831a"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.565042Z"
         },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_at": "2026-07-07T14:26:55.565042Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "severity": "major",
         "evidence": "mass is the total traversal cost divided by c_q^2",
-        "notes": "Equating abstract algebraic operations (Gröbner-Shirshov basis reduction) to the physical mass of a hadron without referencing QCD dynamics (chiral symmetry breaking, trace anomaly) assumes topology is the sole origin of mass, which contradicts the Standard Model."
+        "notes": "Equating abstract algebraic operations (Gr\u00f6bner-Shirshov basis reduction) to the physical mass of a hadron without referencing QCD dynamics (chiral symmetry breaking, trace anomaly) assumes topology is the sole origin of mass, which contradicts the Standard Model."
       }
     ],
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "5af0a4d08e88",
+          "md": "718d8b83e0c8",
           "ts": "f6f46bba831a"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.565042Z"
         },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_at": "2026-07-07T14:26:55.565042Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "severity": "minor",
         "notes": "Predicting exact hadronic masses from crossing numbers invites immediate empirical falsification."
@@ -51,192 +55,216 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "5af0a4d08e88",
+          "md": "718d8b83e0c8",
           "ts": "f6f46bba831a"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.565042Z"
         },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_at": "2026-07-07T14:26:55.565042Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "5af0a4d08e88",
+          "md": "718d8b83e0c8",
           "ts": "f6f46bba831a"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.565042Z"
         },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_at": "2026-07-07T14:26:55.565042Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-circular": [
       {
         "field_hash": {
-          "md": "5af0a4d08e88",
+          "md": "718d8b83e0c8",
           "ts": "f6f46bba831a"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.565042Z"
         },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_at": "2026-07-07T14:26:55.565042Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "5af0a4d08e88",
+          "md": "718d8b83e0c8",
           "ts": "f6f46bba831a"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.565042Z"
         },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_at": "2026-07-07T14:26:55.565042Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "5af0a4d08e88",
+          "md": "718d8b83e0c8",
           "ts": "f6f46bba831a"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.565042Z"
         },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_at": "2026-07-07T14:26:55.565042Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "5af0a4d08e88",
+          "md": "718d8b83e0c8",
           "ts": "f6f46bba831a"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.565042Z"
         },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_at": "2026-07-07T14:26:55.565042Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "5af0a4d08e88",
+          "md": "718d8b83e0c8",
           "ts": "f6f46bba831a"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.565042Z"
         },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_at": "2026-07-07T14:26:55.565042Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "5af0a4d08e88",
+          "md": "718d8b83e0c8",
           "ts": "f6f46bba831a"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.565042Z"
         },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_at": "2026-07-07T14:26:55.565042Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "5af0a4d08e88",
+          "md": "718d8b83e0c8",
           "ts": "f6f46bba831a"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.565042Z"
         },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_at": "2026-07-07T14:26:55.565042Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "5af0a4d08e88",
+          "md": "718d8b83e0c8",
           "ts": "f6f46bba831a"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.565042Z"
         },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_at": "2026-07-07T14:26:55.565042Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "5af0a4d08e88",
+          "md": "718d8b83e0c8",
           "ts": "f6f46bba831a"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.565042Z"
         },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_at": "2026-07-07T14:26:55.565042Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "5af0a4d08e88",
+          "md": "718d8b83e0c8",
           "ts": "f6f46bba831a"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.565042Z"
         },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_at": "2026-07-07T14:26:55.565042Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
@@ -261,5 +289,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.008Z"
+  "updated_at": "2026-07-07T14:26:55.565042Z"
 }

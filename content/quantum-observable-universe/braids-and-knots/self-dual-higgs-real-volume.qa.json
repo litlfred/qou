@@ -7,8 +7,8 @@
     "md": "../qou/content/quantum-observable-universe/braids-and-knots/self-dual-higgs-real-volume.md"
   },
   "source_hashes": {
-    "md": "e9dec574c9b4",
-    "ts": "258116c3b6b7"
+    "md": "98fb6ab19034",
+    "ts": "c1e899df9487"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -53,14 +53,20 @@
       {
         "result": "pass",
         "notes": "Applied Milnor brevity. Trimmed internal cross references and bloated narrative commentary. Tightened 'Mathematical Novelty' notes to single clear sentences. Retained all math.",
-        "reviewed_at": "2026-07-06T22:42:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.334059Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.334059Z"
+        },
+        "field_hash": {
+          "md": "98fb6ab19034",
+          "ts": "c1e899df9487"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:55.297Z"
+  "updated_at": "2026-07-07T14:26:55.334059Z"
 }

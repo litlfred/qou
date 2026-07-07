@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/models-of-qous/p-adic-realisation.md"
   },
   "source_hashes": {
-    "md": "a46c62623aae",
+    "md": "9b8d96ae7159",
     "ts": "eccdb1f51ecc"
   },
   "criteria": {
@@ -767,14 +767,20 @@
       {
         "result": "pass",
         "notes": "Maintained brevity, replaced passive and forward-looking expressions, retained mathematical content accurately.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.409817Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.409817Z"
+        },
+        "field_hash": {
+          "md": "9b8d96ae7159",
+          "ts": "eccdb1f51ecc"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-07T14:26:55.409817Z"
 }

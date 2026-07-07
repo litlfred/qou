@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/mass-theory/calibration-algebraic-mass-intro.md"
   },
   "source_hashes": {
-    "md": "5bb5e274b139",
+    "md": "7d1179cd5db0",
     "ts": "74efddfc2db7"
   },
   "criteria": {
@@ -785,14 +785,20 @@
       {
         "result": "pass",
         "notes": "Rewrote mass-theory_seq1.md for Milnor standards: stripped technical debt disclaimers, declarative voice.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.795218Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.795218Z"
+        },
+        "field_hash": {
+          "md": "7d1179cd5db0",
+          "ts": "74efddfc2db7"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T04:39:43.766Z"
+  "updated_at": "2026-07-07T14:26:56.795218Z"
 }

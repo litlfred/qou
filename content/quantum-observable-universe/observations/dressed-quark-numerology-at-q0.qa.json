@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/observations/dressed-quark-numerology-at-q0.md"
   },
   "source_hashes": {
-    "md": "e98add5783af",
+    "md": "ab63f508c394",
     "ts": "d544cb4a65c4"
   },
   "criteria": {
@@ -855,23 +855,25 @@
       },
       {
         "field_hash": {
-          "md": "e98add5783af",
+          "md": "ab63f508c394",
           "ts": "d544cb4a65c4"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-21",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.573715Z"
         },
-        "reviewed_at": "2026-06-28T18:05:19.348Z",
+        "reviewed_at": "2026-07-07T14:26:56.573715Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "9afdd48d4a2d",
+          "md": "ab63f508c394",
           "ts": "d544cb4a65c4"
         },
         "result": "fail",
@@ -887,11 +889,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/devils-advocate-watcher",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-24",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.573715Z",
           "agent_skill": "local/devils-advocate-watcher"
         },
-        "reviewed_at": "2026-06-24T06:07:15Z",
+        "reviewed_at": "2026-07-07T14:26:56.573715Z",
         "reviewed_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782",
         "severity": "minor"
       }
@@ -899,7 +901,7 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "9afdd48d4a2d",
+          "md": "ab63f508c394",
           "ts": "d544cb4a65c4"
         },
         "result": "fail",
@@ -915,11 +917,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/devils-advocate-watcher",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-24",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.573715Z",
           "agent_skill": "local/devils-advocate-watcher"
         },
-        "reviewed_at": "2026-06-24T06:07:15Z",
+        "reviewed_at": "2026-07-07T14:26:56.573715Z",
         "reviewed_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782",
         "severity": "major"
       }
@@ -927,7 +929,7 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "9afdd48d4a2d",
+          "md": "ab63f508c394",
           "ts": "d544cb4a65c4"
         },
         "result": "pass",
@@ -943,11 +945,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/devils-advocate-watcher",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-24",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.573715Z",
           "agent_skill": "local/devils-advocate-watcher"
         },
-        "reviewed_at": "2026-06-24T06:07:15Z",
+        "reviewed_at": "2026-07-07T14:26:56.573715Z",
         "reviewed_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782",
         "severity": "minor"
       }
@@ -955,7 +957,7 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "9afdd48d4a2d",
+          "md": "ab63f508c394",
           "ts": "d544cb4a65c4"
         },
         "result": "warn",
@@ -964,27 +966,29 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/devils-advocate-watcher",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-24",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.573715Z",
           "agent_skill": "local/devils-advocate-watcher"
         },
-        "reviewed_at": "2026-06-24T06:07:15Z",
+        "reviewed_at": "2026-07-07T14:26:56.573715Z",
         "reviewed_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782"
       }
     ],
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "9afdd48d4a2d",
+          "md": "ab63f508c394",
           "ts": "d544cb4a65c4"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.573715Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.573715Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No false claims identified in 'Dressed-quark numerology at $q_0$': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -994,16 +998,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "9afdd48d4a2d",
+          "md": "ab63f508c394",
           "ts": "d544cb4a65c4"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.573715Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.573715Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Dressed-quark numerology at $q_0$' presents substantial mathematical content: At the substrate parameter $q_0 = 1.109978595554181\\ldots$ (50 dps), combining [...",
         "severity": "minor"
@@ -1012,16 +1018,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "9afdd48d4a2d",
+          "md": "ab63f508c394",
           "ts": "d544cb4a65c4"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.573715Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.573715Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Dressed-quark numerology at $q_0$'.",
         "severity": "minor",
@@ -1048,16 +1056,18 @@
       },
       {
         "field_hash": {
-          "md": "e98add5783af",
+          "md": "ab63f508c394",
           "ts": "d544cb4a65c4"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-21",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.573715Z"
         },
-        "reviewed_at": "2026-06-28T18:05:19.348Z",
+        "reviewed_at": "2026-07-07T14:26:56.573715Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "severity": "major",
         "evidence": "file:20: M_N (anchored by CODATA) and q_0 (the substrate parameter)",
@@ -1067,16 +1077,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "9afdd48d4a2d",
+          "md": "ab63f508c394",
           "ts": "d544cb4a65c4"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.573715Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.573715Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The argument flow in 'Dressed-quark numerology at $q_0$' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -1086,16 +1098,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "9afdd48d4a2d",
+          "md": "ab63f508c394",
           "ts": "d544cb4a65c4"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.573715Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.573715Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No citations are present in 'Dressed-quark numerology at $q_0$', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1105,16 +1119,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "9afdd48d4a2d",
+          "md": "ab63f508c394",
           "ts": "d544cb4a65c4"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.573715Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.573715Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Key terms and symbols in 'Dressed-quark numerology at $q_0$' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1124,16 +1140,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "9afdd48d4a2d",
+          "md": "ab63f508c394",
           "ts": "d544cb4a65c4"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.573715Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.573715Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The physical concepts described in 'Dressed-quark numerology at $q_0$' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1143,16 +1161,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "9afdd48d4a2d",
+          "md": "ab63f508c394",
           "ts": "d544cb4a65c4"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.573715Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.573715Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The derivation steps and formal definitions in 'Dressed-quark numerology at $q_0$' are reproducible.",
         "severity": "minor",
@@ -1163,14 +1183,20 @@
       {
         "result": "pass",
         "notes": "Applied Milnor exposition standard (H1-H8) and brevity rules. Shortened sentences, removed editorializing ('surprisingly', 'remarkably'), replaced 'this book' with 'this paper', and maintained Math, markdown, and cross-block consistency.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.573715Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.573715Z"
+        },
+        "field_hash": {
+          "md": "ab63f508c394",
+          "ts": "d544cb4a65c4"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.226Z"
+  "updated_at": "2026-07-07T14:26:56.573715Z"
 }

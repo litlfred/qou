@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/particle-interactions/branching-qvalue-factorization.md"
   },
   "source_hashes": {
-    "md": "53f9bd090113",
+    "md": "01c2c9b7e6ff",
     "ts": "e667f360a6e8"
   },
   "criteria": {
@@ -1810,18 +1810,18 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "1e08e9f7743e",
+          "md": "01c2c9b7e6ff",
           "ts": "e667f360a6e8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.167642Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:20.290Z",
+        "reviewed_at": "2026-07-07T14:26:57.167642Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
       }
@@ -1829,18 +1829,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "1e08e9f7743e",
+          "md": "01c2c9b7e6ff",
           "ts": "e667f360a6e8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.167642Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:20.625Z",
+        "reviewed_at": "2026-07-07T14:26:57.167642Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1848,18 +1848,18 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "1e08e9f7743e",
+          "md": "01c2c9b7e6ff",
           "ts": "e667f360a6e8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.167642Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:21.044Z",
+        "reviewed_at": "2026-07-07T14:26:57.167642Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -1867,18 +1867,18 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "1e08e9f7743e",
+          "md": "01c2c9b7e6ff",
           "ts": "e667f360a6e8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.167642Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:21.399Z",
+        "reviewed_at": "2026-07-07T14:26:57.167642Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
       }
@@ -2203,19 +2203,19 @@
       },
       {
         "field_hash": {
-          "md": "1e08e9f7743e",
+          "md": "01c2c9b7e6ff",
           "ts": "e667f360a6e8"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: no `: True` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/ParticleInteractions/branching_qvalue_factorization.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.167642Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.167642Z"
         }
       }
     ],
@@ -2341,35 +2341,37 @@
       },
       {
         "field_hash": {
-          "md": "1e08e9f7743e",
+          "md": "01c2c9b7e6ff",
           "ts": "e667f360a6e8"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/ParticleInteractions/branching_qvalue_factorization.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.167642Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.167642Z"
         }
       }
     ],
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "1e08e9f7743e",
+          "md": "01c2c9b7e6ff",
           "ts": "e667f360a6e8"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.167642Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.167642Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'Exact factorization of the branching Q-value': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -2379,16 +2381,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "1e08e9f7743e",
+          "md": "01c2c9b7e6ff",
           "ts": "e667f360a6e8"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.167642Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.167642Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Exact factorization of the branching Q-value' presents substantial mathematical content: The character sum over all $4^A$ channel configurations admits an exact closed-form factorization in terms of the spe...",
         "severity": "minor"
@@ -2397,16 +2401,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "1e08e9f7743e",
+          "md": "01c2c9b7e6ff",
           "ts": "e667f360a6e8"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.167642Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.167642Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Exact factorization of the branching Q-value'.",
         "severity": "minor",
@@ -2416,16 +2422,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "1e08e9f7743e",
+          "md": "01c2c9b7e6ff",
           "ts": "e667f360a6e8"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.167642Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.167642Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'Exact factorization of the branching Q-value' is appropriately qualified.",
         "severity": "minor"
@@ -2434,16 +2442,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "1e08e9f7743e",
+          "md": "01c2c9b7e6ff",
           "ts": "e667f360a6e8"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.167642Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.167642Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Exact factorization of the branching Q-value'.",
         "severity": "minor",
@@ -2453,16 +2463,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "1e08e9f7743e",
+          "md": "01c2c9b7e6ff",
           "ts": "e667f360a6e8"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.167642Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.167642Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The argument flow in 'Exact factorization of the branching Q-value' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -2472,16 +2484,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "1e08e9f7743e",
+          "md": "01c2c9b7e6ff",
           "ts": "e667f360a6e8"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.167642Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.167642Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The referenced Lean file content/quantum-observable-universe/particle-interactions/branching-qvalue-factorization.lean is missing, leading to complete divergence.",
         "severity": "minor"
@@ -2490,16 +2504,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "1e08e9f7743e",
+          "md": "01c2c9b7e6ff",
           "ts": "e667f360a6e8"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.167642Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.167642Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Exact factorization of the branching Q-value', hence no citation misuse is possible.",
         "severity": "minor",
@@ -2509,16 +2525,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "1e08e9f7743e",
+          "md": "01c2c9b7e6ff",
           "ts": "e667f360a6e8"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.167642Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.167642Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Exact factorization of the branching Q-value' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -2528,16 +2546,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "1e08e9f7743e",
+          "md": "01c2c9b7e6ff",
           "ts": "e667f360a6e8"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.167642Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.167642Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Exact factorization of the branching Q-value' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -2547,16 +2567,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "1e08e9f7743e",
+          "md": "01c2c9b7e6ff",
           "ts": "e667f360a6e8"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.167642Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.167642Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Exact factorization of the branching Q-value' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -2566,16 +2588,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "1e08e9f7743e",
+          "md": "01c2c9b7e6ff",
           "ts": "e667f360a6e8"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.167642Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.167642Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'Exact factorization of the branching Q-value' are reproducible.",
         "severity": "minor",
@@ -2585,16 +2609,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "1e08e9f7743e",
+          "md": "01c2c9b7e6ff",
           "ts": "e667f360a6e8"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.167642Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.167642Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/particle-interactions/branching-qvalue-factorization.lean is missing.",
         "severity": "critical",
@@ -2606,14 +2632,20 @@
       {
         "result": "pass",
         "notes": "Applied Milnor exposition standard (H1-H8) and brevity rules. Shortened sentences, removed editorializing ('surprisingly', 'remarkably'), replaced 'this book' with 'this paper', and maintained Math, markdown, and cross-block consistency.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:57.167642Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.167642Z"
+        },
+        "field_hash": {
+          "md": "01c2c9b7e6ff",
+          "ts": "e667f360a6e8"
         }
       }
     ]
   },
-  "updated_at": "2026-07-04T10:39:27.233Z"
+  "updated_at": "2026-07-07T14:26:57.167642Z"
 }

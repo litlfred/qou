@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/spin-from-so3-fiber.lean"
   },
   "source_hashes": {
-    "md": "1f9076e2aaa3",
+    "md": "f67a2fd0806a",
     "ts": "a815f88c9895",
     "lean": "01a66001ac03"
   },
@@ -36,7 +36,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "1f9076e2aaa3",
+          "md": "f67a2fd0806a",
           "ts": "a815f88c9895",
           "lean": "01a66001ac03"
         },
@@ -44,9 +44,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.285699Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_at": "2026-07-07T14:26:57.285699Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'conj:spin-from-so3-fiber' \u2192 expected 'spin_from_so3_fiber'; Lean declares: SpinFromSo3Fiber. Structural match via content."
       }
@@ -58,5 +60,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.802Z"
+  "updated_at": "2026-07-07T14:26:57.285699Z"
 }

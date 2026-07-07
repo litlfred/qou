@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/braids-and-knots/meson-em-sinh-closed-form.lean"
   },
   "source_hashes": {
-    "md": "d2cde9a38c7e",
+    "md": "5036243976ff",
     "ts": "20983b2e18e7",
     "lean": "104caf098b6b"
   },
@@ -37,14 +37,21 @@
       {
         "result": "pass",
         "notes": "Applied Milnor brevity. Trimmed internal cross references and bloated narrative commentary. Tightened 'Mathematical Novelty' notes to single clear sentences. Retained all math.",
-        "reviewed_at": "2026-07-06T22:42:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.328399Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.328399Z"
+        },
+        "field_hash": {
+          "md": "5036243976ff",
+          "ts": "20983b2e18e7",
+          "lean": "104caf098b6b"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:55.297Z"
+  "updated_at": "2026-07-07T14:26:55.328399Z"
 }

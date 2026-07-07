@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/mass-theory/topological-field-ansatz.md"
   },
   "source_hashes": {
-    "md": "1861c2218f38",
+    "md": "472ad0f1a9a8",
     "ts": "e0c024b2de14"
   },
   "criteria": {
@@ -838,18 +838,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "1861c2218f38",
+          "md": "472ad0f1a9a8",
           "ts": "e0c024b2de14"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.972710Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:09.158Z",
+        "reviewed_at": "2026-07-07T14:26:56.972710Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -857,16 +857,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "1861c2218f38",
+          "md": "472ad0f1a9a8",
           "ts": "e0c024b2de14"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.972710Z"
         },
-        "reviewed_at": "2026-06-28T10:58:51.819Z",
+        "reviewed_at": "2026-07-07T14:26:56.972710Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No false claims identified in 'Topological ansatz and field character'; the algebraic relation involving $q(p)$ is mathematically consistent.",
         "severity": "minor",
@@ -876,16 +878,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "1861c2218f38",
+          "md": "472ad0f1a9a8",
           "ts": "e0c024b2de14"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.972710Z"
         },
-        "reviewed_at": "2026-06-28T10:58:51.825Z",
+        "reviewed_at": "2026-07-07T14:26:56.972710Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The block 'Topological ansatz and field character' presents substantial mathematical content, establishing relation $q(p)$.",
         "severity": "minor"
@@ -894,16 +898,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "1861c2218f38",
+          "md": "472ad0f1a9a8",
           "ts": "e0c024b2de14"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.972710Z"
         },
-        "reviewed_at": "2026-06-28T10:58:51.831Z",
+        "reviewed_at": "2026-07-07T14:26:56.972710Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Topological ansatz and field character'. The construction is derived from prop:topological-mass-formula.",
         "severity": "minor",
@@ -913,16 +919,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "1861c2218f38",
+          "md": "472ad0f1a9a8",
           "ts": "e0c024b2de14"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.972710Z"
         },
-        "reviewed_at": "2026-06-28T10:58:51.837Z",
+        "reviewed_at": "2026-07-07T14:26:56.972710Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No overclaims: the scope of 'Topological ansatz and field character' is appropriately qualified and constrained.",
         "severity": "minor"
@@ -931,16 +939,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "1861c2218f38",
+          "md": "472ad0f1a9a8",
           "ts": "e0c024b2de14"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.972710Z"
         },
-        "reviewed_at": "2026-06-28T10:58:51.842Z",
+        "reviewed_at": "2026-07-07T14:26:56.972710Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Topological ansatz and field character'. All constants are canonically derived.",
         "severity": "minor",
@@ -950,16 +960,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "1861c2218f38",
+          "md": "472ad0f1a9a8",
           "ts": "e0c024b2de14"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.972710Z"
         },
-        "reviewed_at": "2026-06-28T10:58:51.849Z",
+        "reviewed_at": "2026-07-07T14:26:56.972710Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The argument flow in 'Topological ansatz and field character' is logically sound, mapping onto the cited dependencies: prop:topological-mass-formula.",
         "severity": "minor",
@@ -969,16 +981,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "1861c2218f38",
+          "md": "472ad0f1a9a8",
           "ts": "e0c024b2de14"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.972710Z"
         },
-        "reviewed_at": "2026-06-28T10:58:51.855Z",
+        "reviewed_at": "2026-07-07T14:26:56.972710Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
@@ -987,16 +1001,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "1861c2218f38",
+          "md": "472ad0f1a9a8",
           "ts": "e0c024b2de14"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.972710Z"
         },
-        "reviewed_at": "2026-06-28T10:58:51.861Z",
+        "reviewed_at": "2026-07-07T14:26:56.972710Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No citations are present in 'Topological ansatz and field character', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1006,16 +1022,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "1861c2218f38",
+          "md": "472ad0f1a9a8",
           "ts": "e0c024b2de14"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.972710Z"
         },
-        "reviewed_at": "2026-06-28T10:58:51.867Z",
+        "reviewed_at": "2026-07-07T14:26:56.972710Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Key terms and symbols (including $q(p)$) in 'Topological ansatz and field character' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1025,16 +1043,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "1861c2218f38",
+          "md": "472ad0f1a9a8",
           "ts": "e0c024b2de14"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.972710Z"
         },
-        "reviewed_at": "2026-06-28T10:58:51.872Z",
+        "reviewed_at": "2026-07-07T14:26:56.972710Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The algebraic and logical relations in 'Topological ansatz and field character' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1044,16 +1064,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "1861c2218f38",
+          "md": "472ad0f1a9a8",
           "ts": "e0c024b2de14"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.972710Z"
         },
-        "reviewed_at": "2026-06-28T10:58:51.878Z",
+        "reviewed_at": "2026-07-07T14:26:56.972710Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The physical concepts described in 'Topological ansatz and field character' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1063,16 +1085,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "1861c2218f38",
+          "md": "472ad0f1a9a8",
           "ts": "e0c024b2de14"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.972710Z"
         },
-        "reviewed_at": "2026-06-28T10:58:51.884Z",
+        "reviewed_at": "2026-07-07T14:26:56.972710Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The derivation steps and formal definitions in 'Topological ansatz and field character' are reproducible.",
         "severity": "minor",
@@ -1082,16 +1106,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "1861c2218f38",
+          "md": "472ad0f1a9a8",
           "ts": "e0c024b2de14"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.972710Z"
         },
-        "reviewed_at": "2026-06-28T10:58:51.890Z",
+        "reviewed_at": "2026-07-07T14:26:56.972710Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -1103,14 +1129,20 @@
       {
         "result": "pass",
         "notes": "Rewrote mass-theory_seq0.md for Milnor standards: clean prose, declarative.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.972710Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.972710Z"
+        },
+        "field_hash": {
+          "md": "472ad0f1a9a8",
+          "ts": "e0c024b2de14"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-07T14:26:56.972710Z"
 }

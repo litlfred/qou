@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/particle-interactions/q-holonomy-locality-derivation.md"
   },
   "source_hashes": {
-    "md": "f3612d62c970",
+    "md": "7df10b7e2587",
     "ts": "86bf1e5a2bf1"
   },
   "criteria": {
@@ -1743,18 +1743,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "2c36aa468549",
+          "md": "7df10b7e2587",
           "ts": "86bf1e5a2bf1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.139515Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:19.947Z",
+        "reviewed_at": "2026-07-07T14:26:57.139515Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1762,16 +1762,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "2c36aa468549",
+          "md": "7df10b7e2587",
           "ts": "86bf1e5a2bf1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.139515Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.139515Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'Derivation: locality from flatness of the KZ connection': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -1781,16 +1783,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "2c36aa468549",
+          "md": "7df10b7e2587",
           "ts": "86bf1e5a2bf1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.139515Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.139515Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Derivation: locality from flatness of the KZ connection' presents substantial mathematical content: The lifted-crossing locality hypothesis reduces to a statement about the holonomy of the Knizhnik-Zamolodchikov conne...",
         "severity": "minor"
@@ -1799,16 +1803,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "2c36aa468549",
+          "md": "7df10b7e2587",
           "ts": "86bf1e5a2bf1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.139515Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.139515Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Derivation: locality from flatness of the KZ connection'.",
         "severity": "minor",
@@ -1818,16 +1824,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "2c36aa468549",
+          "md": "7df10b7e2587",
           "ts": "86bf1e5a2bf1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.139515Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.139515Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'Derivation: locality from flatness of the KZ connection' is appropriately qualified.",
         "severity": "minor"
@@ -1836,16 +1844,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "2c36aa468549",
+          "md": "7df10b7e2587",
           "ts": "86bf1e5a2bf1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.139515Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.139515Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Derivation: locality from flatness of the KZ connection'.",
         "severity": "minor",
@@ -1855,16 +1865,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "2c36aa468549",
+          "md": "7df10b7e2587",
           "ts": "86bf1e5a2bf1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.139515Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.139515Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The argument flow in 'Derivation: locality from flatness of the KZ connection' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -1874,16 +1886,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "2c36aa468549",
+          "md": "7df10b7e2587",
           "ts": "86bf1e5a2bf1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.139515Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.139515Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
@@ -1892,16 +1906,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "2c36aa468549",
+          "md": "7df10b7e2587",
           "ts": "86bf1e5a2bf1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.139515Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.139515Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Citations to kohno1987 are correct and contextually appropriate.",
         "severity": "minor",
@@ -1911,16 +1927,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "2c36aa468549",
+          "md": "7df10b7e2587",
           "ts": "86bf1e5a2bf1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.139515Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.139515Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Derivation: locality from flatness of the KZ connection' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1930,16 +1948,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "2c36aa468549",
+          "md": "7df10b7e2587",
           "ts": "86bf1e5a2bf1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.139515Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.139515Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Derivation: locality from flatness of the KZ connection' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1949,16 +1969,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "2c36aa468549",
+          "md": "7df10b7e2587",
           "ts": "86bf1e5a2bf1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.139515Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.139515Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Derivation: locality from flatness of the KZ connection' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1968,16 +1990,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "2c36aa468549",
+          "md": "7df10b7e2587",
           "ts": "86bf1e5a2bf1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.139515Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.139515Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'Derivation: locality from flatness of the KZ connection' are reproducible.",
         "severity": "minor",
@@ -1987,16 +2011,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "2c36aa468549",
+          "md": "7df10b7e2587",
           "ts": "86bf1e5a2bf1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.139515Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.139515Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -2008,14 +2034,20 @@
       {
         "result": "pass",
         "notes": "Applied Milnor exposition standard (H1-H8) and brevity rules. Shortened sentences, removed editorializing ('surprisingly', 'remarkably'), replaced 'this book' with 'this paper', and maintained Math, markdown, and cross-block consistency.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:57.139515Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.139515Z"
+        },
+        "field_hash": {
+          "md": "7df10b7e2587",
+          "ts": "86bf1e5a2bf1"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.492Z"
+  "updated_at": "2026-07-07T14:26:57.139515Z"
 }

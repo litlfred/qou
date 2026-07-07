@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/mass-theory/intro-phi-q-markov-schur-weyl-tower.md"
   },
   "source_hashes": {
-    "ts": "6af1f9ba0ce9",
-    "md": "c2c8993ddb90"
+    "md": "63ed47a5f2e2",
+    "ts": "6af1f9ba0ce9"
   },
   "criteria": {
     "q-usage-regime-detected": [
@@ -128,14 +128,20 @@
       {
         "result": "pass",
         "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
-        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.751405Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.751405Z"
+        },
+        "field_hash": {
+          "md": "63ed47a5f2e2",
+          "ts": "6af1f9ba0ce9"
         }
       }
     ]
   },
-  "updated_at": "2026-06-01T16:06:38.106Z"
+  "updated_at": "2026-07-07T14:26:56.751405Z"
 }

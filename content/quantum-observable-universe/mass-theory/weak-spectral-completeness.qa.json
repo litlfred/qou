@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/weak-spectral-completeness.lean"
   },
   "source_hashes": {
-    "md": "dc3ee389286f",
+    "md": "8de0ce0e6beb",
     "ts": "0e29422fe829",
     "lean": "934809b38156"
   },
@@ -914,19 +914,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "dc3ee389286f",
+          "md": "8de0ce0e6beb",
           "ts": "0e29422fe829",
-          "lean": "fa1f8655c4ab"
+          "lean": "934809b38156"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.825763Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:11.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.825763Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -974,20 +974,20 @@
       },
       {
         "field_hash": {
-          "md": "dc3ee389286f",
+          "md": "8de0ce0e6beb",
           "ts": "0e29422fe829",
-          "lean": "fa1f8655c4ab"
+          "lean": "934809b38156"
         },
         "result": "pass",
-        "notes": "Conjecture: EW triplet T(2,4/6/8) admits complete idempotent decomposition in End(V^⊗6); bar-self-dual cell-content trace 4(q^18+q^-18)+... Well-posed completeness claim; NV-1 closure part is hedged (?=) but the core decomposition is concrete.",
-        "reviewed_at": "2026-06-25T17:09:36.000Z",
+        "notes": "Conjecture: EW triplet T(2,4/6/8) admits complete idempotent decomposition in End(V^\u22976); bar-self-dual cell-content trace 4(q^18+q^-18)+... Well-posed completeness claim; NV-1 closure part is hedged (?=) but the core decomposition is concrete.",
+        "reviewed_at": "2026-07-07T14:26:56.825763Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.825763Z"
         },
         "score": {
           "max": 1,
@@ -998,16 +998,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "dc3ee389286f",
+          "md": "8de0ce0e6beb",
           "ts": "0e29422fe829",
-          "lean": "fa1f8655c4ab"
+          "lean": "934809b38156"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.825763Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.825763Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/weak-spectral-completeness.ts:1",
@@ -1017,16 +1019,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "dc3ee389286f",
+          "md": "8de0ce0e6beb",
           "ts": "0e29422fe829",
-          "lean": "fa1f8655c4ab"
+          "lean": "934809b38156"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.825763Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.825763Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The claims are non-vacuous as they make concrete numerical or algebraic conjectures.",
         "severity": "minor"
@@ -1035,16 +1039,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "dc3ee389286f",
+          "md": "8de0ce0e6beb",
           "ts": "0e29422fe829",
-          "lean": "fa1f8655c4ab"
+          "lean": "934809b38156"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.825763Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.825763Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/weak-spectral-completeness.ts:1",
@@ -1054,16 +1060,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "dc3ee389286f",
+          "md": "8de0ce0e6beb",
           "ts": "0e29422fe829",
-          "lean": "fa1f8655c4ab"
+          "lean": "934809b38156"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.825763Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.825763Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
@@ -1072,16 +1080,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "dc3ee389286f",
+          "md": "8de0ce0e6beb",
           "ts": "0e29422fe829",
-          "lean": "fa1f8655c4ab"
+          "lean": "934809b38156"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.825763Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.825763Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/weak-spectral-completeness.ts:1",
@@ -1091,16 +1101,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "dc3ee389286f",
+          "md": "8de0ce0e6beb",
           "ts": "0e29422fe829",
-          "lean": "fa1f8655c4ab"
+          "lean": "934809b38156"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.825763Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.825763Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/weak-spectral-completeness.ts:1",
@@ -1110,16 +1122,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "dc3ee389286f",
+          "md": "8de0ce0e6beb",
           "ts": "0e29422fe829",
-          "lean": "fa1f8655c4ab"
+          "lean": "934809b38156"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.825763Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.825763Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean file uses the class-conjecture pattern with sorry, matching the conjectural nature of the markdown.",
         "severity": "minor"
@@ -1128,16 +1142,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "dc3ee389286f",
+          "md": "8de0ce0e6beb",
           "ts": "0e29422fe829",
-          "lean": "fa1f8655c4ab"
+          "lean": "934809b38156"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.825763Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.825763Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
         "evidence": "content/quantum-observable-universe/mass-theory/weak-spectral-completeness.ts:1",
@@ -1147,16 +1163,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "dc3ee389286f",
+          "md": "8de0ce0e6beb",
           "ts": "0e29422fe829",
-          "lean": "fa1f8655c4ab"
+          "lean": "934809b38156"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.825763Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.825763Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/weak-spectral-completeness.ts:1",
@@ -1166,16 +1184,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "dc3ee389286f",
+          "md": "8de0ce0e6beb",
           "ts": "0e29422fe829",
-          "lean": "fa1f8655c4ab"
+          "lean": "934809b38156"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.825763Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.825763Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/weak-spectral-completeness.ts:1",
@@ -1185,16 +1205,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "dc3ee389286f",
+          "md": "8de0ce0e6beb",
           "ts": "0e29422fe829",
-          "lean": "fa1f8655c4ab"
+          "lean": "934809b38156"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.825763Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.825763Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/weak-spectral-completeness.ts:1",
@@ -1204,35 +1226,39 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "dc3ee389286f",
+          "md": "8de0ce0e6beb",
           "ts": "0e29422fe829",
-          "lean": "fa1f8655c4ab"
+          "lean": "934809b38156"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.825763Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.825763Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
-        "evidence": "content/quantum-observable-universe/mass-theory/weak-spectral-completeness.lean:1 — content/quantum-observable-universe/mass-theory/weak-spectral-completeness.lean:64:10: error: failed to synthesize",
+        "evidence": "content/quantum-observable-universe/mass-theory/weak-spectral-completeness.lean:1 \u2014 content/quantum-observable-universe/mass-theory/weak-spectral-completeness.lean:64:10: error: failed to synthesize",
         "severity": "minor"
       }
     ],
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "dc3ee389286f",
+          "md": "8de0ce0e6beb",
           "ts": "0e29422fe829",
-          "lean": "fa1f8655c4ab"
+          "lean": "934809b38156"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.825763Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.825763Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders.",
         "severity": "minor",
@@ -1243,7 +1269,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "dc3ee389286f",
+          "md": "8de0ce0e6beb",
           "ts": "0e29422fe829",
           "lean": "934809b38156"
         },
@@ -1251,13 +1277,15 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.825763Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_at": "2026-07-07T14:26:56.825763Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'conj:weak-spectral-completeness' → expected 'weak_spectral_completeness'; Lean declares: WeakSpectralCompleteness, WeakSpectralCompletenessSkeleton, instWeakSpectralCompletenessCanonical. Structural match via content."
+        "notes": "Label 'conj:weak-spectral-completeness' \u2192 expected 'weak_spectral_completeness'; Lean declares: WeakSpectralCompleteness, WeakSpectralCompletenessSkeleton, instWeakSpectralCompletenessCanonical. Structural match via content."
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.430Z"
+  "updated_at": "2026-07-07T14:26:56.825763Z"
 }

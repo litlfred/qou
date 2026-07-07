@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/fluid-dynamics/kelvin-dispersion-derivation.lean"
   },
   "source_hashes": {
-    "md": "f00327d89cfd",
+    "md": "375dee0bd76a",
     "ts": "22fa222f74cf",
     "lean": "a20bed965170"
   },
@@ -1051,14 +1051,21 @@
       {
         "result": "pass",
         "notes": "Rewrote fluid-dynamics_seq2.md. Shortened exposition. Strengthened active voice. Maintained math precision and markers.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.276199Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.276199Z"
+        },
+        "field_hash": {
+          "md": "375dee0bd76a",
+          "ts": "22fa222f74cf",
+          "lean": "a20bed965170"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-07T14:26:56.276199Z"
 }

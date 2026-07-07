@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/braids-and-knots/f-bor-borromean-observable.lean"
   },
   "source_hashes": {
-    "md": "bf6f4bf23895",
+    "md": "bc5262bffb74",
     "ts": "4aac8373c6e8",
     "lean": "286fd2ed71af"
   },
@@ -912,19 +912,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "bf6f4bf23895",
-          "ts": "17da4fb4bda2",
+          "md": "bc5262bffb74",
+          "ts": "4aac8373c6e8",
           "lean": "286fd2ed71af"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.360600Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:22.134Z",
+        "reviewed_at": "2026-07-07T14:26:55.360600Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -932,19 +932,19 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "bf6f4bf23895",
-          "ts": "17da4fb4bda2",
+          "md": "bc5262bffb74",
+          "ts": "4aac8373c6e8",
           "lean": "286fd2ed71af"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.360600Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:22.514Z",
+        "reviewed_at": "2026-07-07T14:26:55.360600Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -952,8 +952,8 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "bf6f4bf23895",
-          "ts": "17da4fb4bda2",
+          "md": "bc5262bffb74",
+          "ts": "4aac8373c6e8",
           "lean": "286fd2ed71af"
         },
         "result": "fail",
@@ -969,11 +969,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/devils-advocate-watcher",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-24",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.360600Z",
           "agent_skill": "local/devils-advocate-watcher"
         },
-        "reviewed_at": "2026-06-24T04:12:24Z",
+        "reviewed_at": "2026-07-07T14:26:55.360600Z",
         "reviewed_sha": "a157b5058b8b10366a6a2051ad63f059f3320a81",
         "severity": "minor"
       }
@@ -981,8 +981,8 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "bf6f4bf23895",
-          "ts": "17da4fb4bda2",
+          "md": "bc5262bffb74",
+          "ts": "4aac8373c6e8",
           "lean": "286fd2ed71af"
         },
         "result": "pass",
@@ -998,19 +998,19 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/devils-advocate-watcher",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-24",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.360600Z",
           "agent_skill": "local/devils-advocate-watcher"
         },
-        "reviewed_at": "2026-06-24T04:12:24Z",
+        "reviewed_at": "2026-07-07T14:26:55.360600Z",
         "reviewed_sha": "a157b5058b8b10366a6a2051ad63f059f3320a81"
       }
     ],
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "bf6f4bf23895",
-          "ts": "17da4fb4bda2",
+          "md": "bc5262bffb74",
+          "ts": "4aac8373c6e8",
           "lean": "286fd2ed71af"
         },
         "result": "pass",
@@ -1026,19 +1026,19 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/devils-advocate-watcher",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-24",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.360600Z",
           "agent_skill": "local/devils-advocate-watcher"
         },
-        "reviewed_at": "2026-06-24T04:12:24Z",
+        "reviewed_at": "2026-07-07T14:26:55.360600Z",
         "reviewed_sha": "a157b5058b8b10366a6a2051ad63f059f3320a81"
       }
     ],
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "bf6f4bf23895",
-          "ts": "17da4fb4bda2",
+          "md": "bc5262bffb74",
+          "ts": "4aac8373c6e8",
           "lean": "286fd2ed71af"
         },
         "result": "pass",
@@ -1054,19 +1054,19 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/devils-advocate-watcher",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-24",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.360600Z",
           "agent_skill": "local/devils-advocate-watcher"
         },
-        "reviewed_at": "2026-06-24T04:12:24Z",
+        "reviewed_at": "2026-07-07T14:26:55.360600Z",
         "reviewed_sha": "a157b5058b8b10366a6a2051ad63f059f3320a81"
       }
     ],
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "bf6f4bf23895",
-          "ts": "17da4fb4bda2",
+          "md": "bc5262bffb74",
+          "ts": "4aac8373c6e8",
           "lean": "286fd2ed71af"
         },
         "result": "pass",
@@ -1075,27 +1075,29 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/devils-advocate-watcher",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-24",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.360600Z",
           "agent_skill": "local/devils-advocate-watcher"
         },
-        "reviewed_at": "2026-06-24T04:12:24Z",
+        "reviewed_at": "2026-07-07T14:26:55.360600Z",
         "reviewed_sha": "a157b5058b8b10366a6a2051ad63f059f3320a81"
       }
     ],
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "bf6f4bf23895",
+          "md": "bc5262bffb74",
           "ts": "4aac8373c6e8",
           "lean": "286fd2ed71af"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.360600Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.360600Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Checked mathematical consistency of the claim 'Cleaner form' and found no counterexamples under the stated conditions.",
         "severity": "minor",
@@ -1105,16 +1107,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "bf6f4bf23895",
+          "md": "bc5262bffb74",
           "ts": "4aac8373c6e8",
           "lean": "286fd2ed71af"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.360600Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.360600Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No vacuous stubs or tautologies detected in the formulation of 'def:f-bor-borromean-observable'.",
         "severity": "minor"
@@ -1123,16 +1127,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "bf6f4bf23895",
+          "md": "bc5262bffb74",
           "ts": "4aac8373c6e8",
           "lean": "286fd2ed71af"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.360600Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.360600Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Traced dependencies ['prop:borromean-markov-trace-closed-form', 'prop:y-lambda-closed-form-wenzl-bridge'] for 'def:f-bor-borromean-observable' and confirmed no circular definitions or justifications.",
         "severity": "minor",
@@ -1142,16 +1148,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "bf6f4bf23895",
+          "md": "bc5262bffb74",
           "ts": "4aac8373c6e8",
           "lean": "286fd2ed71af"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.360600Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.360600Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Verified that the scope of 'def:f-bor-borromean-observable' is appropriately restricted to the proven regime without overclaiming structural validity.",
         "severity": "minor"
@@ -1160,16 +1168,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "bf6f4bf23895",
+          "md": "bc5262bffb74",
           "ts": "4aac8373c6e8",
           "lean": "286fd2ed71af"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.360600Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.360600Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Logical transitions in the derivation of 'Cleaner form' are sound; no non-sequiturs detected.",
         "severity": "minor",
@@ -1179,16 +1189,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "bf6f4bf23895",
+          "md": "bc5262bffb74",
           "ts": "4aac8373c6e8",
           "lean": "286fd2ed71af"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.360600Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.360600Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The algebraic statements in 'def:f-bor-borromean-observable' do not rely on fragile empirical fits or numerical thresholds.",
         "severity": "minor",
@@ -1198,16 +1210,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "bf6f4bf23895",
+          "md": "bc5262bffb74",
           "ts": "4aac8373c6e8",
           "lean": "286fd2ed71af"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.360600Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.360600Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Physical dimensions and units in 'def:f-bor-borromean-observable' are consistent with quantum observable universe models.",
         "severity": "minor",
@@ -1217,16 +1231,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "bf6f4bf23895",
+          "md": "bc5262bffb74",
           "ts": "4aac8373c6e8",
           "lean": "286fd2ed71af"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.360600Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.360600Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All backing computations and proofs are fully reproducible.",
         "severity": "minor",
@@ -1237,14 +1253,21 @@
       {
         "result": "pass",
         "notes": "Rewritten per Milnor standards. Shortened prose, eliminated forward refs, un-cluttered Lean notation while keeping core structural claims. Preserved math.",
-        "reviewed_at": "2026-07-06T22:38:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.360600Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.360600Z"
+        },
+        "field_hash": {
+          "md": "bc5262bffb74",
+          "ts": "4aac8373c6e8",
+          "lean": "286fd2ed71af"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:55.297Z"
+  "updated_at": "2026-07-07T14:26:55.360600Z"
 }

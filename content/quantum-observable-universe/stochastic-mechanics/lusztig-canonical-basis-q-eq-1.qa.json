@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.lean"
   },
   "source_hashes": {
-    "md": "56b4732d92e2",
+    "md": "ebe8b5d611bc",
     "ts": "ab3d1ffde706",
     "lean": "29d452c75a76"
   },
@@ -913,19 +913,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "9bda98632fac",
+          "md": "ebe8b5d611bc",
           "ts": "ab3d1ffde706",
-          "lean": "fdbeec4d92b9"
+          "lean": "29d452c75a76"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.052511Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:38.768Z",
+        "reviewed_at": "2026-07-07T14:26:56.052511Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -973,20 +973,20 @@
       },
       {
         "field_hash": {
-          "md": "9bda98632fac",
+          "md": "ebe8b5d611bc",
           "ts": "ab3d1ffde706",
           "lean": "29d452c75a76"
         },
         "result": "pass",
         "notes": "Goal well-posed/substantive: D24 \u2014 Kashiwara crystal of H_n(q) decategorifies at q=1 to Lusztig canonical basis, KL polys as structure constants (KL1979/Lusztig1990/Kashiwara1991). Conditional conjecture. Lean stub is a bare holds:Prop placeholder.",
-        "reviewed_at": "2026-06-25T17:09:40.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.052511Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.052511Z"
         },
         "score": {
           "max": 1,
@@ -997,7 +997,7 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "9bda98632fac",
+          "md": "ebe8b5d611bc",
           "ts": "ab3d1ffde706",
           "lean": "29d452c75a76"
         },
@@ -1005,9 +1005,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.052511Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.052511Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.ts:1",
@@ -1017,7 +1019,7 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "9bda98632fac",
+          "md": "ebe8b5d611bc",
           "ts": "ab3d1ffde706",
           "lean": "29d452c75a76"
         },
@@ -1025,9 +1027,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.052511Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.052511Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.lean:1",
@@ -1037,7 +1041,7 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "9bda98632fac",
+          "md": "ebe8b5d611bc",
           "ts": "ab3d1ffde706",
           "lean": "29d452c75a76"
         },
@@ -1045,9 +1049,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.052511Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.052511Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.ts:1",
@@ -1057,7 +1063,7 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "9bda98632fac",
+          "md": "ebe8b5d611bc",
           "ts": "ab3d1ffde706",
           "lean": "29d452c75a76"
         },
@@ -1065,9 +1071,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.052511Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.052511Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "The prose in 'Conjecture (D24 Lusztig canonical basis closure, conditional on' presents the result as established, but the Lean formalization is incomplete (contains sorry / fails compilation)."
@@ -1076,7 +1084,7 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "9bda98632fac",
+          "md": "ebe8b5d611bc",
           "ts": "ab3d1ffde706",
           "lean": "29d452c75a76"
         },
@@ -1084,9 +1092,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.052511Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.052511Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.ts:1",
@@ -1096,7 +1106,7 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "9bda98632fac",
+          "md": "ebe8b5d611bc",
           "ts": "ab3d1ffde706",
           "lean": "29d452c75a76"
         },
@@ -1104,9 +1114,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.052511Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.052511Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.ts:1",
@@ -1116,7 +1128,7 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "9bda98632fac",
+          "md": "ebe8b5d611bc",
           "ts": "ab3d1ffde706",
           "lean": "29d452c75a76"
         },
@@ -1124,9 +1136,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.052511Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.052511Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.lean:1",
@@ -1136,7 +1150,7 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "9bda98632fac",
+          "md": "ebe8b5d611bc",
           "ts": "ab3d1ffde706",
           "lean": "29d452c75a76"
         },
@@ -1144,9 +1158,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.052511Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.052511Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.ts:1",
@@ -1156,7 +1172,7 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "9bda98632fac",
+          "md": "ebe8b5d611bc",
           "ts": "ab3d1ffde706",
           "lean": "29d452c75a76"
         },
@@ -1164,9 +1180,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.052511Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.052511Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.ts:1",
@@ -1176,7 +1194,7 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "9bda98632fac",
+          "md": "ebe8b5d611bc",
           "ts": "ab3d1ffde706",
           "lean": "29d452c75a76"
         },
@@ -1184,9 +1202,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.052511Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.052511Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.ts:1",
@@ -1196,7 +1216,7 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "9bda98632fac",
+          "md": "ebe8b5d611bc",
           "ts": "ab3d1ffde706",
           "lean": "29d452c75a76"
         },
@@ -1204,9 +1224,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.052511Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.052511Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.ts:1",
@@ -1216,7 +1238,7 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "9bda98632fac",
+          "md": "ebe8b5d611bc",
           "ts": "ab3d1ffde706",
           "lean": "29d452c75a76"
         },
@@ -1224,9 +1246,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.052511Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.052511Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.ts:1",
@@ -1236,7 +1260,7 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "9bda98632fac",
+          "md": "ebe8b5d611bc",
           "ts": "ab3d1ffde706",
           "lean": "29d452c75a76"
         },
@@ -1244,9 +1268,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.052511Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.052511Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.md:1 \u2014 Conjecture (D24 Lusztig canonical basis closure, conditional on",
@@ -1259,14 +1285,21 @@
       {
         "result": "pass",
         "notes": "Connected the orphan stochastic mechanics blocks cleanly. Made the reverse crystal limits and AJ machinery arguments crisp.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.052511Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.052511Z"
+        },
+        "field_hash": {
+          "md": "ebe8b5d611bc",
+          "ts": "ab3d1ffde706",
+          "lean": "29d452c75a76"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T23:06:25.607Z"
+  "updated_at": "2026-07-07T14:26:56.052511Z"
 }

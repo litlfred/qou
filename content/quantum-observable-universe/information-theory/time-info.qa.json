@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/information-theory/time-info.md"
   },
   "source_hashes": {
-    "md": "869d4ee84eae",
+    "md": "293937485518",
     "ts": "c18c4338bc38"
   },
   "criteria": {
@@ -835,16 +835,18 @@
       },
       {
         "field_hash": {
-          "md": "869d4ee84eae",
+          "md": "293937485518",
           "ts": "c18c4338bc38"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.611513Z"
         },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_at": "2026-07-07T14:26:55.611513Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
@@ -867,16 +869,18 @@
       },
       {
         "field_hash": {
-          "md": "869d4ee84eae",
+          "md": "293937485518",
           "ts": "c18c4338bc38"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.611513Z"
         },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_at": "2026-07-07T14:26:55.611513Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
@@ -893,21 +897,23 @@
         },
         "reviewed_at": "2026-06-28T10:51:03.753Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "The block 'sec:time-info' presents substantial mathematical content: Time in the QOU is not an external parameter imposed on the dynamics — it is the...",
+        "notes": "The block 'sec:time-info' presents substantial mathematical content: Time in the QOU is not an external parameter imposed on the dynamics \u2014 it is the...",
         "severity": "minor"
       },
       {
         "field_hash": {
-          "md": "869d4ee84eae",
+          "md": "293937485518",
           "ts": "c18c4338bc38"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.611513Z"
         },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_at": "2026-07-07T14:26:55.611513Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
@@ -930,16 +936,18 @@
       },
       {
         "field_hash": {
-          "md": "869d4ee84eae",
+          "md": "293937485518",
           "ts": "c18c4338bc38"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.611513Z"
         },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_at": "2026-07-07T14:26:55.611513Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
@@ -961,16 +969,18 @@
       },
       {
         "field_hash": {
-          "md": "869d4ee84eae",
+          "md": "293937485518",
           "ts": "c18c4338bc38"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.611513Z"
         },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_at": "2026-07-07T14:26:55.611513Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
@@ -993,16 +1003,18 @@
       },
       {
         "field_hash": {
-          "md": "869d4ee84eae",
+          "md": "293937485518",
           "ts": "c18c4338bc38"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.611513Z"
         },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_at": "2026-07-07T14:26:55.611513Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
@@ -1025,16 +1037,18 @@
       },
       {
         "field_hash": {
-          "md": "869d4ee84eae",
+          "md": "293937485518",
           "ts": "c18c4338bc38"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.611513Z"
         },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_at": "2026-07-07T14:26:55.611513Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
@@ -1056,16 +1070,18 @@
       },
       {
         "field_hash": {
-          "md": "869d4ee84eae",
+          "md": "293937485518",
           "ts": "c18c4338bc38"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.611513Z"
         },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_at": "2026-07-07T14:26:55.611513Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
@@ -1088,16 +1104,18 @@
       },
       {
         "field_hash": {
-          "md": "869d4ee84eae",
+          "md": "293937485518",
           "ts": "c18c4338bc38"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.611513Z"
         },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_at": "2026-07-07T14:26:55.611513Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
@@ -1120,16 +1138,18 @@
       },
       {
         "field_hash": {
-          "md": "869d4ee84eae",
+          "md": "293937485518",
           "ts": "c18c4338bc38"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.611513Z"
         },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_at": "2026-07-07T14:26:55.611513Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
@@ -1152,16 +1172,18 @@
       },
       {
         "field_hash": {
-          "md": "869d4ee84eae",
+          "md": "293937485518",
           "ts": "c18c4338bc38"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.611513Z"
         },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_at": "2026-07-07T14:26:55.611513Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "severity": "critical",
         "evidence": "At our local substrate parameter... approximately 10 discrete operations compose each Planck unit",
@@ -1187,16 +1209,18 @@
       },
       {
         "field_hash": {
-          "md": "869d4ee84eae",
+          "md": "293937485518",
           "ts": "c18c4338bc38"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.611513Z"
         },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_at": "2026-07-07T14:26:55.611513Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "severity": "major",
         "notes": "Coarse-graining time using \\hbar_q ~ 0.1 as a proxy for the Boltzmann constant creates a scenario where standard continuum field theory cannot hold, making the framework implausible for reproducing standard model physics."
@@ -1221,16 +1245,18 @@
       },
       {
         "field_hash": {
-          "md": "869d4ee84eae",
+          "md": "293937485518",
           "ts": "c18c4338bc38"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.611513Z"
         },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_at": "2026-07-07T14:26:55.611513Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
@@ -1254,19 +1280,21 @@
       },
       {
         "field_hash": {
-          "md": "869d4ee84eae",
+          "md": "293937485518",
           "ts": "c18c4338bc38"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.611513Z"
         },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_at": "2026-07-07T14:26:55.611513Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.008Z"
+  "updated_at": "2026-07-07T14:26:55.611513Z"
 }

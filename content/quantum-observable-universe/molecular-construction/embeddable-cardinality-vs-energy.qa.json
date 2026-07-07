@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/molecular-construction/embeddable-cardinality-vs-energy.md"
   },
   "source_hashes": {
-    "md": "2754e3f8cbf8",
+    "md": "bbab13577240",
     "ts": "045e747f4adf"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Rewrote molecular-construction_seq4.md. Smoothed block transitions, stripped excessive filler and editorialising, ensured 'we' and present tense.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.477080Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.477080Z"
+        },
+        "field_hash": {
+          "md": "bbab13577240",
+          "ts": "045e747f4adf"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.117Z"
+  "updated_at": "2026-07-07T14:26:55.477080Z"
 }

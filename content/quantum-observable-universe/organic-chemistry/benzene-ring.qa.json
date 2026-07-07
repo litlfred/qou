@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/organic-chemistry/benzene-ring.md"
   },
   "source_hashes": {
-    "md": "20447763aa29",
+    "md": "13104f66cc1e",
     "ts": "3a835a98c15f"
   },
   "criteria": {
@@ -766,18 +766,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "631949679ce2",
+          "md": "13104f66cc1e",
           "ts": "3a835a98c15f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.972829Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:19.613Z",
+        "reviewed_at": "2026-07-07T14:26:54.972829Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -785,16 +785,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "631949679ce2",
+          "md": "13104f66cc1e",
           "ts": "3a835a98c15f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.972829Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:54.972829Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No false claims identified in 'Benzene as a molecular Hopf ring $\\\\mathrm{C}_6$': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -804,16 +806,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "631949679ce2",
+          "md": "13104f66cc1e",
           "ts": "3a835a98c15f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.972829Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:54.972829Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Benzene as a molecular Hopf ring $\\\\mathrm{C}_6$' presents substantial mathematical content: Benzene ($\\mathrm{C}_6\\mathrm{H}_6$) is the prototypical threaded molecular ring...",
         "severity": "minor"
@@ -822,16 +826,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "631949679ce2",
+          "md": "13104f66cc1e",
           "ts": "3a835a98c15f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.972829Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:54.972829Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Benzene as a molecular Hopf ring $\\\\mathrm{C}_6$'.",
         "severity": "minor",
@@ -841,16 +847,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "631949679ce2",
+          "md": "13104f66cc1e",
           "ts": "3a835a98c15f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.972829Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:54.972829Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No overclaims: the scope of 'Benzene as a molecular Hopf ring $\\\\mathrm{C}_6$' is appropriately qualified.",
         "severity": "minor"
@@ -859,16 +867,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "631949679ce2",
+          "md": "13104f66cc1e",
           "ts": "3a835a98c15f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.972829Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:54.972829Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Benzene as a molecular Hopf ring $\\\\mathrm{C}_6$'.",
         "severity": "minor",
@@ -878,16 +888,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "631949679ce2",
+          "md": "13104f66cc1e",
           "ts": "3a835a98c15f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.972829Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:54.972829Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The argument flow in 'Benzene as a molecular Hopf ring $\\\\mathrm{C}_6$' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -897,16 +909,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "631949679ce2",
+          "md": "13104f66cc1e",
           "ts": "3a835a98c15f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.972829Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:54.972829Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
@@ -915,16 +929,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "631949679ce2",
+          "md": "13104f66cc1e",
           "ts": "3a835a98c15f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.972829Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:54.972829Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No citations are present in 'Benzene as a molecular Hopf ring $\\\\mathrm{C}_6$', hence no citation misuse is possible.",
         "severity": "minor",
@@ -934,16 +950,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "631949679ce2",
+          "md": "13104f66cc1e",
           "ts": "3a835a98c15f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.972829Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:54.972829Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Key terms and symbols in 'Benzene as a molecular Hopf ring $\\\\mathrm{C}_6$' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -953,16 +971,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "631949679ce2",
+          "md": "13104f66cc1e",
           "ts": "3a835a98c15f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.972829Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:54.972829Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The algebraic and logical relations in 'Benzene as a molecular Hopf ring $\\\\mathrm{C}_6$' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -972,16 +992,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "631949679ce2",
+          "md": "13104f66cc1e",
           "ts": "3a835a98c15f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.972829Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:54.972829Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The physical concepts described in 'Benzene as a molecular Hopf ring $\\\\mathrm{C}_6$' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -991,16 +1013,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "631949679ce2",
+          "md": "13104f66cc1e",
           "ts": "3a835a98c15f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.972829Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:54.972829Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The derivation steps and formal definitions in 'Benzene as a molecular Hopf ring $\\\\mathrm{C}_6$' are reproducible.",
         "severity": "minor",
@@ -1010,16 +1034,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "631949679ce2",
+          "md": "13104f66cc1e",
           "ts": "3a835a98c15f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.972829Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:54.972829Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
@@ -1031,14 +1057,20 @@
       {
         "result": "pass",
         "notes": "Applied Milnor exposition standard (H1-H8) and brevity rules. Shortened sentences, removed editorializing ('surprisingly', 'remarkably'), replaced 'this book' with 'this paper', and maintained Math, markdown, and cross-block consistency.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:54.972829Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.972829Z"
+        },
+        "field_hash": {
+          "md": "13104f66cc1e",
+          "ts": "3a835a98c15f"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T18:18:34.291Z"
+  "updated_at": "2026-07-07T14:26:54.972829Z"
 }

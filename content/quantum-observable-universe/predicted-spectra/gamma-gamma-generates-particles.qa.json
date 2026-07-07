@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/predicted-spectra/gamma-gamma-generates-particles.lean"
   },
   "source_hashes": {
-    "md": "bd10a5e883f2",
+    "md": "5ee39d67f73b",
     "ts": "f46e23f5fa14",
     "lean": "34cd5987c2f7"
   },
@@ -297,7 +297,7 @@
       },
       {
         "field_hash": {
-          "md": "bd10a5e883f2",
+          "md": "5ee39d67f73b",
           "ts": "f46e23f5fa14",
           "lean": "34cd5987c2f7"
         },
@@ -305,16 +305,18 @@
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.430856Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:56.430856Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "bd10a5e883f2",
+          "md": "5ee39d67f73b",
           "ts": "f46e23f5fa14",
           "lean": "34cd5987c2f7"
         },
@@ -322,9 +324,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.430856Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:56.430856Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "In sec:pair-production-knot-operators of Ch13; \u03b3\u03b3 pair-production generating the operator basis squarely fits the section scope."
       }
@@ -332,7 +336,7 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "bd10a5e883f2",
+          "md": "5ee39d67f73b",
           "ts": "f46e23f5fa14",
           "lean": "34cd5987c2f7"
         },
@@ -340,9 +344,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.430856Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:56.430856Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Generic-ring algebraic statement (Hecke H\u2083(q) coefficient identity); no archimedean construct, no numeric q\u2080, no order hypothesis."
       }
@@ -350,7 +356,7 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "bd10a5e883f2",
+          "md": "5ee39d67f73b",
           "ts": "f46e23f5fa14",
           "lean": "34cd5987c2f7"
         },
@@ -358,9 +364,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.430856Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:56.430856Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Proof is pure algebraic normal-form reduction; Lean uses simp over generic CommRing. No linarith/IVT/Real.* machinery."
       }
@@ -386,7 +394,7 @@
       },
       {
         "field_hash": {
-          "md": "bd10a5e883f2",
+          "md": "5ee39d67f73b",
           "ts": "f46e23f5fa14",
           "lean": "34cd5987c2f7"
         },
@@ -394,9 +402,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.430856Z"
         },
-        "reviewed_at": "2026-07-06T04:41:30.359Z",
+        "reviewed_at": "2026-07-07T14:26:56.430856Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:gamma-gamma-generates-particles' \u2192 expected 'gamma_gamma_generates_particles'; Lean declares: coeffLplus, coeffLminus, gamma_gamma_chirality_surjective, singlePhotonCoeffLminus, gamma_gamma_reaches_Lminus. Structural match via content."
       }
@@ -404,7 +414,7 @@
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "bd10a5e883f2",
+          "md": "5ee39d67f73b",
           "ts": "f46e23f5fa14",
           "lean": "34cd5987c2f7"
         },
@@ -412,9 +422,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.430856Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:56.430856Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "score=0.9: plan stated up front \u2014 expand \u03b3\u2081\u00b7\u03b3\u2082, reduce by the Hecke relation, read off the five/six basis coefficients, then the cross-color L\u208a/L\u208b surjectivity."
       }
@@ -422,7 +434,7 @@
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "bd10a5e883f2",
+          "md": "5ee39d67f73b",
           "ts": "f46e23f5fa14",
           "lean": "34cd5987c2f7"
         },
@@ -430,9 +442,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.430856Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:56.430856Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "score=1.0: Lean is sorry-free (simp / explicit witness)."
       }
@@ -440,7 +454,7 @@
     "proof-rater-novelty": [
       {
         "field_hash": {
-          "md": "bd10a5e883f2",
+          "md": "5ee39d67f73b",
           "ts": "f46e23f5fa14",
           "lean": "34cd5987c2f7"
         },
@@ -448,9 +462,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.430856Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:56.430856Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "score=0.7: standard Hecke normal-form computation, but the cross-color independent-chirality framing is non-duplicated in the section."
       }
@@ -458,7 +474,7 @@
     "proof-statement-integrity": [
       {
         "field_hash": {
-          "md": "bd10a5e883f2",
+          "md": "5ee39d67f73b",
           "ts": "f46e23f5fa14",
           "lean": "34cd5987c2f7"
         },
@@ -466,9 +482,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.430856Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:56.430856Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Provable-kind signatures unchanged; proofs are explicit witnesses / simp, no sorryAx or injected axioms."
       }
@@ -476,7 +494,7 @@
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "bd10a5e883f2",
+          "md": "5ee39d67f73b",
           "ts": "f46e23f5fa14",
           "lean": "34cd5987c2f7"
         },
@@ -484,9 +502,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.430856Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:56.430856Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Proofs construct explicit witnesses (\u27e8a,b,1,1,\u2026\u27e9, \u27e80,1,1,0,\u2026\u27e9) and compute; no field whose type is the conclusion handed back."
       }
@@ -494,7 +514,7 @@
     "proof-no-trivial-true": [
       {
         "field_hash": {
-          "md": "bd10a5e883f2",
+          "md": "5ee39d67f73b",
           "ts": "f46e23f5fa14",
           "lean": "34cd5987c2f7"
         },
@@ -502,9 +522,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.430856Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:56.430856Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Goals are genuine \u2203-statements about coeff equalities / inequality (coeffLminus \u2260 0); not True / x=x."
       }
@@ -512,7 +534,7 @@
     "proof-no-false-premise": [
       {
         "field_hash": {
-          "md": "bd10a5e883f2",
+          "md": "5ee39d67f73b",
           "ts": "f46e23f5fa14",
           "lean": "34cd5987c2f7"
         },
@@ -520,9 +542,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.430856Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:56.430856Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Only hypothesis is [Nontrivial R] on the second theorem; no False / contradictory premise."
       }
@@ -530,7 +554,7 @@
     "proof-no-unused-hypotheses": [
       {
         "field_hash": {
-          "md": "bd10a5e883f2",
+          "md": "5ee39d67f73b",
           "ts": "f46e23f5fa14",
           "lean": "34cd5987c2f7"
         },
@@ -538,9 +562,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.430856Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:56.430856Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "[Nontrivial R] is used via one_ne_zero in gamma_gamma_reaches_Lminus; first theorem has no hypotheses."
       }
@@ -548,7 +574,7 @@
     "proof-no-decide-masking": [
       {
         "field_hash": {
-          "md": "bd10a5e883f2",
+          "md": "5ee39d67f73b",
           "ts": "f46e23f5fa14",
           "lean": "34cd5987c2f7"
         },
@@ -556,9 +582,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.430856Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:56.430856Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "No decide/trivial; proofs are simp + explicit term construction."
       }
@@ -566,7 +594,7 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "bd10a5e883f2",
+          "md": "5ee39d67f73b",
           "ts": "f46e23f5fa14",
           "lean": "34cd5987c2f7"
         },
@@ -574,9 +602,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.430856Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.430856Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in '$\\\\gamma\\\\gamma$ production generates the operator basis': the formalization compiles successfully without errors.",
         "severity": "minor",
@@ -586,7 +616,7 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "bd10a5e883f2",
+          "md": "5ee39d67f73b",
           "ts": "f46e23f5fa14",
           "lean": "34cd5987c2f7"
         },
@@ -594,9 +624,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.430856Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.430856Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block '$\\\\gamma\\\\gamma$ production generates the operator basis' presents substantial mathematical content: '$\\gamma\\gamma$'.",
         "severity": "minor"
@@ -605,7 +637,7 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "bd10a5e883f2",
+          "md": "5ee39d67f73b",
           "ts": "f46e23f5fa14",
           "lean": "34cd5987c2f7"
         },
@@ -613,9 +645,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.430856Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.430856Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in '$\\\\gamma\\\\gamma$ production generates the operator basis'.",
         "severity": "minor",
@@ -625,7 +659,7 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "bd10a5e883f2",
+          "md": "5ee39d67f73b",
           "ts": "f46e23f5fa14",
           "lean": "34cd5987c2f7"
         },
@@ -633,9 +667,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.430856Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.430856Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The remarks and narrative scope in '$\\\\gamma\\\\gamma$ production generates the operator basis' are appropriately qualified.",
         "severity": "minor"
@@ -644,7 +680,7 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "bd10a5e883f2",
+          "md": "5ee39d67f73b",
           "ts": "f46e23f5fa14",
           "lean": "34cd5987c2f7"
         },
@@ -652,9 +688,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.430856Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.430856Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in '$\\\\gamma\\\\gamma$ production generates the operator basis'.",
         "severity": "minor",
@@ -664,7 +702,7 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "bd10a5e883f2",
+          "md": "5ee39d67f73b",
           "ts": "f46e23f5fa14",
           "lean": "34cd5987c2f7"
         },
@@ -672,9 +710,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.430856Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.430856Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose arguments in '$\\\\gamma\\\\gamma$ production generates the operator basis' proceed logically through the stated steps.",
         "severity": "minor",
@@ -684,7 +724,7 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "bd10a5e883f2",
+          "md": "5ee39d67f73b",
           "ts": "f46e23f5fa14",
           "lean": "34cd5987c2f7"
         },
@@ -692,9 +732,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.430856Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.430856Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Lean sibling corresponds directly to the narrative claim in '$\\\\gamma\\\\gamma$ production generates the operator basis'.",
         "severity": "minor"
@@ -703,7 +745,7 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "bd10a5e883f2",
+          "md": "5ee39d67f73b",
           "ts": "f46e23f5fa14",
           "lean": "34cd5987c2f7"
         },
@@ -711,9 +753,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.430856Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.430856Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in '$\\\\gamma\\\\gamma$ production generates the operator basis', hence no citation misuse is possible.",
         "severity": "minor",
@@ -723,7 +767,7 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "bd10a5e883f2",
+          "md": "5ee39d67f73b",
           "ts": "f46e23f5fa14",
           "lean": "34cd5987c2f7"
         },
@@ -731,9 +775,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.430856Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.430856Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in '$\\\\gamma\\\\gamma$ production generates the operator basis' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -743,7 +789,7 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "bd10a5e883f2",
+          "md": "5ee39d67f73b",
           "ts": "f46e23f5fa14",
           "lean": "34cd5987c2f7"
         },
@@ -751,9 +797,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.430856Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.430856Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in '$\\\\gamma\\\\gamma$ production generates the operator basis' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -763,7 +811,7 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "bd10a5e883f2",
+          "md": "5ee39d67f73b",
           "ts": "f46e23f5fa14",
           "lean": "34cd5987c2f7"
         },
@@ -771,9 +819,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.430856Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.430856Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in '$\\\\gamma\\\\gamma$ production generates the operator basis' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -783,7 +833,7 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "bd10a5e883f2",
+          "md": "5ee39d67f73b",
           "ts": "f46e23f5fa14",
           "lean": "34cd5987c2f7"
         },
@@ -791,9 +841,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.430856Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.430856Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Lean file compiles successfully, confirming reproducibility.",
         "severity": "minor"
@@ -802,7 +854,7 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "bd10a5e883f2",
+          "md": "5ee39d67f73b",
           "ts": "f46e23f5fa14",
           "lean": "34cd5987c2f7"
         },
@@ -810,9 +862,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.430856Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.430856Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -844,14 +898,21 @@
       {
         "result": "pass",
         "notes": "Rewrote prose blocks to adhere to Milnor standards. Improved economy, preserved all math.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.430856Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.430856Z"
+        },
+        "field_hash": {
+          "md": "5ee39d67f73b",
+          "ts": "f46e23f5fa14",
+          "lean": "34cd5987c2f7"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:30.359Z"
+  "updated_at": "2026-07-07T14:26:56.430856Z"
 }

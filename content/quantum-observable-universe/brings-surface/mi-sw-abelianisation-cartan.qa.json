@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/brings-surface/mi-sw-abelianisation-cartan.md"
   },
   "source_hashes": {
-    "md": "a46cf3f032dc",
+    "md": "ed468e679e04",
     "ts": "56428a164a1e"
   },
   "criteria": {
@@ -282,48 +282,54 @@
       },
       {
         "field_hash": {
-          "md": "a46cf3f032dc",
+          "md": "ed468e679e04",
           "ts": "56428a164a1e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.047944Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.047944Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "a46cf3f032dc",
+          "md": "ed468e679e04",
           "ts": "56428a164a1e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.047944Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.047944Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "a46cf3f032dc",
+          "md": "ed468e679e04",
           "ts": "56428a164a1e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.047944Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.047944Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Narrative statement is geometric (SU(2)-bundle trivialisation, exceptional divisor, SW differential A^0 = X dz = \u03bb_SW). No Real.*, numeric q\u2248, MeV, or 0<q order hypothesis. brings-surface is a substrate/generic chapter; statement matches its regime."
       }
@@ -331,16 +337,18 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "a46cf3f032dc",
+          "md": "ed468e679e04",
           "ts": "56428a164a1e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.047944Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.047944Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Narrative proof (in -proof sibling) uses bundle trivialisation via \u03c0\u2081(SU(2))=0 and weight-space decomposition \u2014 purely categorical/geometric. No linarith/IVT/continuity/Real./numeric-eval machinery."
       }
@@ -348,16 +356,18 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "a46cf3f032dc",
+          "md": "ed468e679e04",
           "ts": "56428a164a1e"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.047944Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.047944Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "major",
         "evidence": "lean/QOU/ArchimedeanUniverse/mi_sw_cartan_reduction.lean:49-51: `theorem mi_sw_cartan_reduction [ctx : MiSwCartanReductionContext] : ctx.A_0 = ctx.X_dz \u2227 ctx.X_dz = ctx.lambda_SW := ctx.claim_mi_sw_cartan_reduction`",
@@ -367,16 +377,18 @@
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "a46cf3f032dc",
+          "md": "ed468e679e04",
           "ts": "56428a164a1e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.047944Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.047944Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "score 0.85 \u2014 narrative proof states the plan up front: trivialise the SU(2)-bundle over S\u00b2\u2245\ud835\udcae_c (\u03c0\u2081(SU(2))=0), apply the weight-space decomposition, then read off the Cartan component as X dz = \u03bb_SW. Cited lemmas (weight-space decomposition, color bundles) named."
       }
@@ -384,16 +396,18 @@
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "a46cf3f032dc",
+          "md": "ed468e679e04",
           "ts": "56428a164a1e"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.047944Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.047944Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "minor",
         "evidence": "lean/QOU/ArchimedeanUniverse/mi_sw_cartan_reduction.lean:6-12: '**Placeholder canonical** ... The full Lean statement and proof are pending; this stub exists so the lean.ref URI resolves'",
@@ -403,16 +417,18 @@
     "proof-rater-novelty": [
       {
         "field_hash": {
-          "md": "a46cf3f032dc",
+          "md": "ed468e679e04",
           "ts": "56428a164a1e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.047944Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.047944Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "score 0.6 \u2014 Cartan-reduction abelianisation recovering the SW differential is a standard SW argument, not duplicated elsewhere in the corpus."
       }
@@ -437,19 +453,19 @@
       },
       {
         "field_hash": {
-          "md": "a46cf3f032dc",
+          "md": "ed468e679e04",
           "ts": "56428a164a1e"
         },
         "result": "pass",
         "notes": "Lean statement now faithfully states the .md claim; previously-dropped/weakened clauses restored as real propositions (open parts carry a cited sorry per \u00a71, not omitted). Verified lean-direct exit 0.",
-        "reviewed_at": "2026-07-04T10:41:58.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.047944Z",
         "reviewed_sha": "3dd36f14516a6043b87a5a6f8ad6a24bc6b16c13",
         "reviewer": {
           "kind": "agent",
           "id": "local/lean-proof-vacuity-audit",
           "agent_skill": "local/lean-proof-vacuity-audit",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-07-04"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.047944Z"
         }
       }
     ],
@@ -473,35 +489,37 @@
       },
       {
         "field_hash": {
-          "md": "a46cf3f032dc",
+          "md": "ed468e679e04",
           "ts": "56428a164a1e"
         },
         "result": "pass",
         "notes": "Re-encoded on branch claude/lean-qa-backlog-2h3f8d: carrier fields are now genuine sub-hypotheses (never the conclusion) and the theorem DERIVES its conclusion by composing them / applying proved lemmas \u2014 no longer projects an assumed field (AGENTS.md \u00a73b-cond item 5). Verified lean-direct exit 0.",
-        "reviewed_at": "2026-07-04T10:41:58.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.047944Z",
         "reviewed_sha": "3dd36f14516a6043b87a5a6f8ad6a24bc6b16c13",
         "reviewer": {
           "kind": "agent",
           "id": "local/lean-proof-vacuity-audit",
           "agent_skill": "local/lean-proof-vacuity-audit",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-07-04"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.047944Z"
         }
       }
     ],
     "proof-no-trivial-true": [
       {
         "field_hash": {
-          "md": "a46cf3f032dc",
+          "md": "ed468e679e04",
           "ts": "56428a164a1e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.047944Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.047944Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Goal is A_0 = X_dz \u2227 X_dz = lambda_SW over three distinct class fields \u2014 not True, not syntactic x=x. The vacuity here is self-assumption, caught by proof-no-self-assuming-projection, not by the trivial-True criterion."
       }
@@ -509,16 +527,18 @@
     "proof-no-false-premise": [
       {
         "field_hash": {
-          "md": "a46cf3f032dc",
+          "md": "ed468e679e04",
           "ts": "56428a164a1e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.047944Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.047944Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "No False / 0=1 / uninhabited premise; MiSwCartanReductionContext is inhabitable, the implication is not vacuous via False.elim."
       }
@@ -526,16 +546,18 @@
     "proof-no-unused-hypotheses": [
       {
         "field_hash": {
-          "md": "a46cf3f032dc",
+          "md": "ed468e679e04",
           "ts": "56428a164a1e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.047944Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.047944Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "The sole hypothesis is the [ctx] instance, used via ctx.claim_mi_sw_cartan_reduction. The signature carries no extra explicit hypothesis to be unused (the weakness here is statement-weakening / self-assumption, covered by the dedicated criteria)."
       }
@@ -543,16 +565,18 @@
     "proof-no-decide-masking": [
       {
         "field_hash": {
-          "md": "a46cf3f032dc",
+          "md": "ed468e679e04",
           "ts": "56428a164a1e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.047944Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.047944Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "No decide/trivial; the proof is a field projection (the masking concern is the self-assuming projection, flagged separately)."
       }
@@ -560,15 +584,17 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "a46cf3f032dc",
+          "md": "ed468e679e04",
           "ts": "56428a164a1e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.047944Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.047944Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-false-claim evaluated: pass.",
         "severity": "minor"
@@ -577,15 +603,17 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "a46cf3f032dc",
+          "md": "ed468e679e04",
           "ts": "56428a164a1e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.047944Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.047944Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-vacuous evaluated: pass.",
         "severity": "minor"
@@ -594,15 +622,17 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "a46cf3f032dc",
+          "md": "ed468e679e04",
           "ts": "56428a164a1e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.047944Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.047944Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-circular evaluated: pass.",
         "severity": "minor"
@@ -611,15 +641,17 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "a46cf3f032dc",
+          "md": "ed468e679e04",
           "ts": "56428a164a1e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.047944Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.047944Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-overclaim evaluated: pass.",
         "severity": "minor"
@@ -628,15 +660,17 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "a46cf3f032dc",
+          "md": "ed468e679e04",
           "ts": "56428a164a1e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.047944Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.047944Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-hidden-dof evaluated: pass.",
         "severity": "minor"
@@ -645,15 +679,17 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "a46cf3f032dc",
+          "md": "ed468e679e04",
           "ts": "56428a164a1e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.047944Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.047944Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-non-sequitur evaluated: pass.",
         "severity": "minor"
@@ -662,15 +698,17 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "a46cf3f032dc",
+          "md": "ed468e679e04",
           "ts": "56428a164a1e"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.047944Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.047944Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The referenced Lean file is missing, leading to complete divergence.",
         "severity": "minor"
@@ -679,15 +717,17 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "a46cf3f032dc",
+          "md": "ed468e679e04",
           "ts": "56428a164a1e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.047944Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.047944Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-citation-misuse evaluated: pass.",
         "severity": "minor"
@@ -696,15 +736,17 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "a46cf3f032dc",
+          "md": "ed468e679e04",
           "ts": "56428a164a1e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.047944Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.047944Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-definitional-ambiguity evaluated: pass.",
         "severity": "minor"
@@ -713,15 +755,17 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "a46cf3f032dc",
+          "md": "ed468e679e04",
           "ts": "56428a164a1e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.047944Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.047944Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-empirical-fragility evaluated: pass.",
         "severity": "minor"
@@ -730,15 +774,17 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "a46cf3f032dc",
+          "md": "ed468e679e04",
           "ts": "56428a164a1e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.047944Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.047944Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-physical-implausibility evaluated: pass.",
         "severity": "minor"
@@ -747,15 +793,17 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "a46cf3f032dc",
+          "md": "ed468e679e04",
           "ts": "56428a164a1e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.047944Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.047944Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-reproducibility evaluated: pass.",
         "severity": "minor"
@@ -764,15 +812,17 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "a46cf3f032dc",
+          "md": "ed468e679e04",
           "ts": "56428a164a1e"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.047944Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.047944Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Referee verdict: open-objection. Objection: Sibling Lean file is missing.",
         "verdict": "open-objection",
@@ -1529,14 +1579,20 @@
       {
         "result": "pass",
         "notes": "Rewrote brings-surface_seq7.md applying Milnor standard. Replaced passive verbs, enhanced clarity. Simplified the narrative transition lines.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.047944Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.047944Z"
+        },
+        "field_hash": {
+          "md": "ed468e679e04",
+          "ts": "56428a164a1e"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-07T14:26:55.047944Z"
 }

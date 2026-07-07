@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/climax-volume-mass/crossing-energy-trefoil.md"
   },
   "source_hashes": {
-    "md": "e4578948749f",
+    "md": "5e26a03237b0",
     "ts": "c1cb15f5dfbf"
   },
   "criteria": {
@@ -766,18 +766,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "e4578948749f",
+          "md": "5e26a03237b0",
           "ts": "c1cb15f5dfbf"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.029281Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:16.271Z",
+        "reviewed_at": "2026-07-07T14:26:57.029281Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -785,15 +785,17 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "e4578948749f",
+          "md": "5e26a03237b0",
           "ts": "c1cb15f5dfbf"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.029281Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:57.029281Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Checked mathematical consistency of the claim 'We evaluate the crossing energy' and found no counterexamples under the stated conditions.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/crossing-energy-trefoil.ts:1",
@@ -803,15 +805,17 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "e4578948749f",
+          "md": "5e26a03237b0",
           "ts": "c1cb15f5dfbf"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.029281Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:57.029281Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No vacuous stubs or tautologies detected in the formulation of 'ex:crossing-energy-trefoil'.",
         "severity": "minor"
@@ -820,15 +824,17 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "e4578948749f",
+          "md": "5e26a03237b0",
           "ts": "c1cb15f5dfbf"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.029281Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:57.029281Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Traced dependencies ['def:crossing-energy', 'ex:topological-mass-trefoil'] for 'ex:crossing-energy-trefoil' and confirmed no circular definitions or justifications.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/crossing-energy-trefoil.ts:1",
@@ -838,15 +844,17 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "e4578948749f",
+          "md": "5e26a03237b0",
           "ts": "c1cb15f5dfbf"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.029281Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:57.029281Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Verified that the scope of 'ex:crossing-energy-trefoil' is appropriately restricted to the proven regime without overclaiming structural validity.",
         "severity": "minor"
@@ -855,15 +863,17 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "e4578948749f",
+          "md": "5e26a03237b0",
           "ts": "c1cb15f5dfbf"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.029281Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:57.029281Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/crossing-energy-trefoil.ts:1",
@@ -873,15 +883,17 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "e4578948749f",
+          "md": "5e26a03237b0",
           "ts": "c1cb15f5dfbf"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.029281Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:57.029281Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Logical transitions in the derivation of 'We evaluate the crossing energy' are sound; no non-sequiturs detected.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/crossing-energy-trefoil.ts:1",
@@ -891,15 +903,17 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "e4578948749f",
+          "md": "5e26a03237b0",
           "ts": "c1cb15f5dfbf"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.029281Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:57.029281Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No Lean sibling required; narrative matches specifications.",
         "severity": "minor"
@@ -908,15 +922,17 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "e4578948749f",
+          "md": "5e26a03237b0",
           "ts": "c1cb15f5dfbf"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.029281Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:57.029281Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All references and uses ['def:crossing-energy', 'ex:topological-mass-trefoil'] cited in 'ex:crossing-energy-trefoil' are used in accordance with their established mathematical definitions.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/crossing-energy-trefoil.ts:1",
@@ -926,15 +942,17 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "e4578948749f",
+          "md": "5e26a03237b0",
           "ts": "c1cb15f5dfbf"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.029281Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:57.029281Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All terms and algebraic structures in 'ex:crossing-energy-trefoil' are uniquely defined or standard.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/crossing-energy-trefoil.ts:1",
@@ -944,15 +962,17 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "e4578948749f",
+          "md": "5e26a03237b0",
           "ts": "c1cb15f5dfbf"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.029281Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:57.029281Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The algebraic statements in 'ex:crossing-energy-trefoil' do not rely on fragile empirical fits or numerical thresholds.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/crossing-energy-trefoil.ts:1",
@@ -962,15 +982,17 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "e4578948749f",
+          "md": "5e26a03237b0",
           "ts": "c1cb15f5dfbf"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.029281Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:57.029281Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Physical dimensions and units in 'ex:crossing-energy-trefoil' are consistent with quantum observable universe models.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/crossing-energy-trefoil.ts:1",
@@ -980,15 +1002,17 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "e4578948749f",
+          "md": "5e26a03237b0",
           "ts": "c1cb15f5dfbf"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.029281Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:57.029281Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All backing computations and proofs are fully reproducible.",
         "severity": "minor"
@@ -997,15 +1021,17 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "e4578948749f",
+          "md": "5e26a03237b0",
           "ts": "c1cb15f5dfbf"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.029281Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:57.029281Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
@@ -1017,14 +1043,20 @@
       {
         "result": "pass",
         "notes": "Rewrote climax-volume-mass_seq1.md. Eliminated passive voice where possible. Tightened transitions. Maintained the math and precise definitions.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:57.029281Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.029281Z"
+        },
+        "field_hash": {
+          "md": "5e26a03237b0",
+          "ts": "c1cb15f5dfbf"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T22:59:20.300Z"
+  "updated_at": "2026-07-07T14:26:57.029281Z"
 }

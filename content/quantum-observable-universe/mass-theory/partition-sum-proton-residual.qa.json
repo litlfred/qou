@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/partition-sum-proton-residual.lean"
   },
   "source_hashes": {
-    "md": "b3aa587095ed",
+    "md": "9921d4bffd1a",
     "ts": "2a09407349f5",
     "lean": "b1e9ba40d0bd"
   },
@@ -36,7 +36,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "b3aa587095ed",
+          "md": "9921d4bffd1a",
           "ts": "2a09407349f5",
           "lean": "b1e9ba40d0bd"
         },
@@ -44,9 +44,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.926439Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_at": "2026-07-07T14:26:56.926439Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:partition-sum-proton-residual' \u2192 expected 'partition_sum_proton_residual'; Lean declares: invDimPartitionSum, protonTowerMass, protonTowerResidualMeV, protonCodata, electronMass.... Structural match via content."
       }
@@ -55,14 +57,21 @@
       {
         "result": "pass",
         "notes": "Rewrote prose sections of mass-theory_seq43.md to enforce H1-H8 and milnor-brevity. Preserved all math blocks and original section markers. Ensured linear flow, minimal technical clutter, and short declarative sentences.",
-        "reviewed_at": "2026-07-06T22:51:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.926439Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.926439Z"
+        },
+        "field_hash": {
+          "md": "9921d4bffd1a",
+          "ts": "2a09407349f5",
+          "lean": "b1e9ba40d0bd"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.430Z"
+  "updated_at": "2026-07-07T14:26:56.926439Z"
 }

@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/lambda-scale-substrate-form.lean"
   },
   "source_hashes": {
-    "md": "12a0d69ceca7",
+    "md": "a67e151f2ff5",
     "ts": "74438a86f61a",
     "lean": "fc14136005c3"
   },
@@ -1052,7 +1052,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "12a0d69ceca7",
+          "md": "a67e151f2ff5",
           "ts": "74438a86f61a",
           "lean": "fc14136005c3"
         },
@@ -1060,9 +1060,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.976289Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_at": "2026-07-07T14:26:56.976289Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:lambda-scale-substrate-form' \u2192 expected 'lambda_scale_substrate_form'; Lean declares: heckeDeformation, lambdaA_qForm, lambdaA_hForm, lambdaA_qForm_eq_hForm, lambdaA_c0.... Structural match via content."
       }
@@ -1071,14 +1073,21 @@
       {
         "result": "pass",
         "notes": "Rewrote prose sections of mass-theory_seq46.md to enforce H1-H8 and milnor-brevity. Preserved all math blocks and original section markers. Ensured linear flow, minimal technical clutter, and short declarative sentences.",
-        "reviewed_at": "2026-07-06T22:51:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.976289Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.976289Z"
+        },
+        "field_hash": {
+          "md": "a67e151f2ff5",
+          "ts": "74438a86f61a",
+          "lean": "fc14136005c3"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.430Z"
+  "updated_at": "2026-07-07T14:26:56.976289Z"
 }

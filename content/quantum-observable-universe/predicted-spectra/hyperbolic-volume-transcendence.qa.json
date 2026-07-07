@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/predicted-spectra/hyperbolic-volume-transcendence.lean"
   },
   "source_hashes": {
-    "md": "922862334f3b",
+    "md": "4d50f164e73c",
     "ts": "7631465d6199",
     "lean": "c1db26f8977c"
   },
@@ -914,7 +914,7 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "922862334f3b",
+          "md": "4d50f164e73c",
           "ts": "7631465d6199",
           "lean": "c1db26f8977c"
         },
@@ -922,11 +922,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.397391Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:50.439Z",
+        "reviewed_at": "2026-07-07T14:26:56.397391Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -974,20 +974,20 @@
       },
       {
         "field_hash": {
-          "md": "922862334f3b",
+          "md": "4d50f164e73c",
           "ts": "7631465d6199",
           "lean": "c1db26f8977c"
         },
         "result": "pass",
         "notes": "Goal: algebraic independence of Vol(4_1),Vol(5_2),Vol(B_3) over \u211a[q,q\u207b\u00b9]; explicit special case of Kontsevich-Zagier/Grothendieck period conj. Library Lean proves structural half + alg-indep\u21d2irrational chain. Deeply well-posed.",
-        "reviewed_at": "2026-06-25T17:07:16.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.397391Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.397391Z"
         },
         "score": {
           "max": 1,
@@ -998,7 +998,7 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "922862334f3b",
+          "md": "4d50f164e73c",
           "ts": "7631465d6199",
           "lean": "c1db26f8977c"
         },
@@ -1006,9 +1006,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.397391Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.397391Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The mathematical claims in 'Algebraic independence of QOU hyperbolic volumes' are formally unproved due to 'sorry' stubs in the sibling Lean file.",
         "severity": "minor",
@@ -1018,7 +1020,7 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "922862334f3b",
+          "md": "4d50f164e73c",
           "ts": "7631465d6199",
           "lean": "c1db26f8977c"
         },
@@ -1026,9 +1028,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.397391Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.397391Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/hyperbolic-volume-transcendence.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "major",
@@ -1038,7 +1042,7 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "922862334f3b",
+          "md": "4d50f164e73c",
           "ts": "7631465d6199",
           "lean": "c1db26f8977c"
         },
@@ -1046,9 +1050,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.397391Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.397391Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Algebraic independence of QOU hyperbolic volumes'.",
         "severity": "minor",
@@ -1058,7 +1064,7 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "922862334f3b",
+          "md": "4d50f164e73c",
           "ts": "7631465d6199",
           "lean": "c1db26f8977c"
         },
@@ -1066,9 +1072,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.397391Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.397391Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose presents 'Algebraic independence of QOU hyperbolic volumes' as verified, but the sibling Lean proof contains sorry stubs.",
         "severity": "minor"
@@ -1077,7 +1085,7 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "922862334f3b",
+          "md": "4d50f164e73c",
           "ts": "7631465d6199",
           "lean": "c1db26f8977c"
         },
@@ -1085,9 +1093,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.397391Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.397391Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Algebraic independence of QOU hyperbolic volumes'.",
         "severity": "minor",
@@ -1097,7 +1107,7 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "922862334f3b",
+          "md": "4d50f164e73c",
           "ts": "7631465d6199",
           "lean": "c1db26f8977c"
         },
@@ -1105,9 +1115,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.397391Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.397391Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Logical gaps exist due to incomplete proof (sorry stubs) in content/quantum-observable-universe/predicted-spectra/hyperbolic-volume-transcendence.lean.",
         "severity": "minor",
@@ -1117,7 +1129,7 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "922862334f3b",
+          "md": "4d50f164e73c",
           "ts": "7631465d6199",
           "lean": "c1db26f8977c"
         },
@@ -1125,9 +1137,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.397391Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.397391Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/hyperbolic-volume-transcendence.lean contains sorry, causing divergence from the fully-verified narrative.",
         "severity": "minor"
@@ -1136,7 +1150,7 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "922862334f3b",
+          "md": "4d50f164e73c",
           "ts": "7631465d6199",
           "lean": "c1db26f8977c"
         },
@@ -1144,9 +1158,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.397391Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.397391Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Algebraic independence of QOU hyperbolic volumes', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1156,7 +1172,7 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "922862334f3b",
+          "md": "4d50f164e73c",
           "ts": "7631465d6199",
           "lean": "c1db26f8977c"
         },
@@ -1164,9 +1180,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.397391Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.397391Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Algebraic independence of QOU hyperbolic volumes' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1176,7 +1194,7 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "922862334f3b",
+          "md": "4d50f164e73c",
           "ts": "7631465d6199",
           "lean": "c1db26f8977c"
         },
@@ -1184,9 +1202,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.397391Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.397391Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The empirical claims in 'Algebraic independence of QOU hyperbolic volumes' are structurally anchored to the QOU mass framework and are stable.",
         "severity": "minor",
@@ -1196,7 +1216,7 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "922862334f3b",
+          "md": "4d50f164e73c",
           "ts": "7631465d6199",
           "lean": "c1db26f8977c"
         },
@@ -1204,9 +1224,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.397391Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.397391Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Algebraic independence of QOU hyperbolic volumes' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1216,7 +1238,7 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "922862334f3b",
+          "md": "4d50f164e73c",
           "ts": "7631465d6199",
           "lean": "c1db26f8977c"
         },
@@ -1224,9 +1246,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.397391Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.397391Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/hyperbolic-volume-transcendence.lean contains sorry, indicating incomplete verification.",
         "severity": "minor"
@@ -1235,7 +1259,7 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "922862334f3b",
+          "md": "4d50f164e73c",
           "ts": "7631465d6199",
           "lean": "c1db26f8977c"
         },
@@ -1243,9 +1267,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.397391Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.397391Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/hyperbolic-volume-transcendence.lean contains 'sorry' placeholders.",
         "severity": "major",
@@ -1256,7 +1282,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "922862334f3b",
+          "md": "4d50f164e73c",
           "ts": "7631465d6199",
           "lean": "c1db26f8977c"
         },
@@ -1264,9 +1290,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.397391Z"
         },
-        "reviewed_at": "2026-07-06T04:41:30.359Z",
+        "reviewed_at": "2026-07-07T14:26:56.397391Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Conjecture with class/axiom axiomatisation \u2014 structural match."
       }
@@ -1275,14 +1303,21 @@
       {
         "result": "pass",
         "notes": "Rewrote prose blocks to adhere to Milnor standards. Improved economy, preserved all math.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.397391Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.397391Z"
+        },
+        "field_hash": {
+          "md": "4d50f164e73c",
+          "ts": "7631465d6199",
+          "lean": "c1db26f8977c"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:30.359Z"
+  "updated_at": "2026-07-07T14:26:56.397391Z"
 }

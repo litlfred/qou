@@ -8,8 +8,8 @@
     "lean": "../qou/content/quantum-observable-universe/information-theory/information-theoretic-time.lean"
   },
   "source_hashes": {
-    "md": "255318ec9340",
-    "ts": "1d15bd04f35b",
+    "md": "bdcd1dbd9419",
+    "ts": "b15fba3dab86",
     "lean": "fe0cc85722bf"
   },
   "criteria": {
@@ -895,16 +895,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "255318ec9340",
-          "ts": "1d15bd04f35b",
+          "md": "bdcd1dbd9419",
+          "ts": "b15fba3dab86",
           "lean": "fe0cc85722bf"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.619211Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.619211Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Block placement and kind 'definition' match validated structurally for 'Information-Theoretic Time'.",
         "severity": "minor"
@@ -913,35 +915,39 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "255318ec9340",
-          "ts": "1d15bd04f35b",
+          "md": "bdcd1dbd9419",
+          "ts": "b15fba3dab86",
           "lean": "fe0cc85722bf"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.619211Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.619211Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean theorem statement in content/quantum-observable-universe/information-theory/information-theoretic-time.lean matches the mathematical statement in content/quantum-observable-universe/information-theory/information-theoretic-time.md.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/information-theoretic-time.lean:1 — Lean file exists"
+        "evidence": "content/quantum-observable-universe/information-theory/information-theoretic-time.lean:1 \u2014 Lean file exists"
       }
     ],
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "255318ec9340",
-          "ts": "1d15bd04f35b",
+          "md": "bdcd1dbd9419",
+          "ts": "b15fba3dab86",
           "lean": "fe0cc85722bf"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.619211Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.619211Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The claim in 'Information-Theoretic Time' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
@@ -951,16 +957,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "255318ec9340",
-          "ts": "1d15bd04f35b",
+          "md": "bdcd1dbd9419",
+          "ts": "b15fba3dab86",
           "lean": "fe0cc85722bf"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.619211Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.619211Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The block 'Information-Theoretic Time' presents substantial mathematical content: Let $(\\mathbf{C}, A, \\tau)$ be a quantum observable universe with braiding-induc...",
         "severity": "minor"
@@ -969,16 +977,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "255318ec9340",
-          "ts": "1d15bd04f35b",
+          "md": "bdcd1dbd9419",
+          "ts": "b15fba3dab86",
           "lean": "fe0cc85722bf"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.619211Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.619211Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Information-Theoretic Time'.",
         "severity": "minor",
@@ -988,16 +998,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "255318ec9340",
-          "ts": "1d15bd04f35b",
+          "md": "bdcd1dbd9419",
+          "ts": "b15fba3dab86",
           "lean": "fe0cc85722bf"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.619211Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.619211Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The prose presents 'Information-Theoretic Time' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
@@ -1006,16 +1018,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "255318ec9340",
-          "ts": "1d15bd04f35b",
+          "md": "bdcd1dbd9419",
+          "ts": "b15fba3dab86",
           "lean": "fe0cc85722bf"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.619211Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.619211Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Information-Theoretic Time'.",
         "severity": "minor",
@@ -1025,16 +1039,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "255318ec9340",
-          "ts": "1d15bd04f35b",
+          "md": "bdcd1dbd9419",
+          "ts": "b15fba3dab86",
           "lean": "fe0cc85722bf"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.619211Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.619211Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/information-theory/information-theoretic-time.lean.",
         "severity": "minor",
@@ -1044,16 +1060,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "255318ec9340",
-          "ts": "1d15bd04f35b",
+          "md": "bdcd1dbd9419",
+          "ts": "b15fba3dab86",
           "lean": "fe0cc85722bf"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.619211Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.619211Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/information-theory/information-theoretic-time.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
@@ -1062,16 +1080,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "255318ec9340",
-          "ts": "1d15bd04f35b",
+          "md": "bdcd1dbd9419",
+          "ts": "b15fba3dab86",
           "lean": "fe0cc85722bf"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.619211Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.619211Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No citations are present in 'Information-Theoretic Time', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1081,16 +1101,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "255318ec9340",
-          "ts": "1d15bd04f35b",
+          "md": "bdcd1dbd9419",
+          "ts": "b15fba3dab86",
           "lean": "fe0cc85722bf"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.619211Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.619211Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Key terms and symbols in 'Information-Theoretic Time' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1100,16 +1122,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "255318ec9340",
-          "ts": "1d15bd04f35b",
+          "md": "bdcd1dbd9419",
+          "ts": "b15fba3dab86",
           "lean": "fe0cc85722bf"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.619211Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.619211Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The algebraic and logical relations in 'Information-Theoretic Time' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1119,16 +1143,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "255318ec9340",
-          "ts": "1d15bd04f35b",
+          "md": "bdcd1dbd9419",
+          "ts": "b15fba3dab86",
           "lean": "fe0cc85722bf"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.619211Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.619211Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The physical concepts described in 'Information-Theoretic Time' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1138,35 +1164,39 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "255318ec9340",
-          "ts": "1d15bd04f35b",
+          "md": "bdcd1dbd9419",
+          "ts": "b15fba3dab86",
           "lean": "fe0cc85722bf"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.619211Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.619211Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/information-theory/information-theoretic-time.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/information-theoretic-time.lean:1 — /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/information-theoretic-time.lean:48:8: error(lean.unknownIdentifier): Unknown identifier `inv_lt_one_iff_of_pos`"
+        "evidence": "content/quantum-observable-universe/information-theory/information-theoretic-time.lean:1 \u2014 /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/information-theoretic-time.lean:48:8: error(lean.unknownIdentifier): Unknown identifier `inv_lt_one_iff_of_pos`"
       }
     ],
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "255318ec9340",
-          "ts": "1d15bd04f35b",
+          "md": "bdcd1dbd9419",
+          "ts": "b15fba3dab86",
           "lean": "fe0cc85722bf"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.619211Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.619211Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/information-theory/information-theoretic-time.lean fails compilation: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/information-theoretic-time.lean:48:8: error(lean.unknownIdentifier): Unknown identifier `inv_lt_one_iff_of_pos`",
         "severity": "critical",
@@ -1175,5 +1205,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.008Z"
+  "updated_at": "2026-07-07T14:26:55.619211Z"
 }

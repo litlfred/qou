@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/molecular-construction/assembly-projector-exists.lean"
   },
   "source_hashes": {
-    "md": "9760e939c084",
+    "md": "1e873c8dfc5d",
     "ts": "4039595b2a38",
     "lean": "e3e24835fe2a"
   },
@@ -1030,7 +1030,7 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "4e986e162482",
+          "md": "1e873c8dfc5d",
           "ts": "4039595b2a38",
           "lean": "e3e24835fe2a"
         },
@@ -1038,11 +1038,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.496866Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:25.692Z",
+        "reviewed_at": "2026-07-07T14:26:55.496866Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
       }
@@ -1050,7 +1050,7 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "4e986e162482",
+          "md": "1e873c8dfc5d",
           "ts": "4039595b2a38",
           "lean": "e3e24835fe2a"
         },
@@ -1058,11 +1058,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.496866Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:26.062Z",
+        "reviewed_at": "2026-07-07T14:26:55.496866Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1070,7 +1070,7 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "4e986e162482",
+          "md": "1e873c8dfc5d",
           "ts": "4039595b2a38",
           "lean": "e3e24835fe2a"
         },
@@ -1078,11 +1078,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.496866Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:26.453Z",
+        "reviewed_at": "2026-07-07T14:26:55.496866Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -1090,7 +1090,7 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "4e986e162482",
+          "md": "1e873c8dfc5d",
           "ts": "4039595b2a38",
           "lean": "e3e24835fe2a"
         },
@@ -1098,11 +1098,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.496866Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:26.852Z",
+        "reviewed_at": "2026-07-07T14:26:55.496866Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
       }
@@ -1110,7 +1110,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "4e986e162482",
+          "md": "1e873c8dfc5d",
           "ts": "4039595b2a38",
           "lean": "e3e24835fe2a"
         },
@@ -1118,11 +1118,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.496866Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:27.220Z",
+        "reviewed_at": "2026-07-07T14:26:55.496866Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
       }
@@ -1130,7 +1130,7 @@
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "4e986e162482",
+          "md": "1e873c8dfc5d",
           "ts": "4039595b2a38",
           "lean": "e3e24835fe2a"
         },
@@ -1142,11 +1142,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.496866Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:27.583Z",
+        "reviewed_at": "2026-07-07T14:26:55.496866Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
       }
@@ -1154,7 +1154,7 @@
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "4e986e162482",
+          "md": "1e873c8dfc5d",
           "ts": "4039595b2a38",
           "lean": "e3e24835fe2a"
         },
@@ -1166,11 +1166,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.496866Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:28.002Z",
+        "reviewed_at": "2026-07-07T14:26:55.496866Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
       }
@@ -1178,7 +1178,7 @@
     "proof-rater-novelty": [
       {
         "field_hash": {
-          "md": "4e986e162482",
+          "md": "1e873c8dfc5d",
           "ts": "4039595b2a38",
           "lean": "e3e24835fe2a"
         },
@@ -1190,11 +1190,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.496866Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:28.369Z",
+        "reviewed_at": "2026-07-07T14:26:55.496866Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
       }
@@ -1202,7 +1202,7 @@
     "proof-statement-integrity": [
       {
         "field_hash": {
-          "md": "4e986e162482",
+          "md": "1e873c8dfc5d",
           "ts": "4039595b2a38",
           "lean": "e3e24835fe2a"
         },
@@ -1210,11 +1210,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.496866Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:28.715Z",
+        "reviewed_at": "2026-07-07T14:26:55.496866Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
       }
@@ -1222,7 +1222,7 @@
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "4e986e162482",
+          "md": "1e873c8dfc5d",
           "ts": "4039595b2a38",
           "lean": "e3e24835fe2a"
         },
@@ -1230,11 +1230,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.496866Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:29.090Z",
+        "reviewed_at": "2026-07-07T14:26:55.496866Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
       }
@@ -1242,7 +1242,7 @@
     "proof-no-trivial-true": [
       {
         "field_hash": {
-          "md": "4e986e162482",
+          "md": "1e873c8dfc5d",
           "ts": "4039595b2a38",
           "lean": "e3e24835fe2a"
         },
@@ -1250,11 +1250,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.496866Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:29.448Z",
+        "reviewed_at": "2026-07-07T14:26:55.496866Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
       }
@@ -1262,7 +1262,7 @@
     "proof-no-false-premise": [
       {
         "field_hash": {
-          "md": "4e986e162482",
+          "md": "1e873c8dfc5d",
           "ts": "4039595b2a38",
           "lean": "e3e24835fe2a"
         },
@@ -1270,11 +1270,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.496866Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:29.781Z",
+        "reviewed_at": "2026-07-07T14:26:55.496866Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
       }
@@ -1282,7 +1282,7 @@
     "proof-no-unused-hypotheses": [
       {
         "field_hash": {
-          "md": "4e986e162482",
+          "md": "1e873c8dfc5d",
           "ts": "4039595b2a38",
           "lean": "e3e24835fe2a"
         },
@@ -1290,11 +1290,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.496866Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:30.236Z",
+        "reviewed_at": "2026-07-07T14:26:55.496866Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
       }
@@ -1302,7 +1302,7 @@
     "proof-no-decide-masking": [
       {
         "field_hash": {
-          "md": "4e986e162482",
+          "md": "1e873c8dfc5d",
           "ts": "4039595b2a38",
           "lean": "e3e24835fe2a"
         },
@@ -1310,11 +1310,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.496866Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:30.605Z",
+        "reviewed_at": "2026-07-07T14:26:55.496866Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
@@ -1322,7 +1322,7 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "4e986e162482",
+          "md": "1e873c8dfc5d",
           "ts": "4039595b2a38",
           "lean": "e3e24835fe2a"
         },
@@ -1330,9 +1330,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.496866Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.496866Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No false claims identified in 'Existence of the symmetric-block assembly projector': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -1342,7 +1344,7 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "4e986e162482",
+          "md": "1e873c8dfc5d",
           "ts": "4039595b2a38",
           "lean": "e3e24835fe2a"
         },
@@ -1350,9 +1352,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.496866Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.496866Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Existence of the symmetric-block assembly projector' presents substantial mathematical content: of $N$ there exists a symmetric-block [assembly projector](#def:molecular-assemb...",
         "severity": "minor"
@@ -1361,7 +1365,7 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "4e986e162482",
+          "md": "1e873c8dfc5d",
           "ts": "4039595b2a38",
           "lean": "e3e24835fe2a"
         },
@@ -1369,9 +1373,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.496866Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.496866Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Existence of the symmetric-block assembly projector'.",
         "severity": "minor",
@@ -1381,7 +1387,7 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "4e986e162482",
+          "md": "1e873c8dfc5d",
           "ts": "4039595b2a38",
           "lean": "e3e24835fe2a"
         },
@@ -1389,9 +1395,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.496866Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.496866Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No overclaims: the scope of 'Existence of the symmetric-block assembly projector' is appropriately qualified.",
         "severity": "minor"
@@ -1400,7 +1408,7 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "4e986e162482",
+          "md": "1e873c8dfc5d",
           "ts": "4039595b2a38",
           "lean": "e3e24835fe2a"
         },
@@ -1408,9 +1416,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.496866Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.496866Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Existence of the symmetric-block assembly projector'.",
         "severity": "minor",
@@ -1420,7 +1430,7 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "4e986e162482",
+          "md": "1e873c8dfc5d",
           "ts": "4039595b2a38",
           "lean": "e3e24835fe2a"
         },
@@ -1428,9 +1438,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.496866Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.496866Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The argument flow in 'Existence of the symmetric-block assembly projector' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -1440,7 +1452,7 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "4e986e162482",
+          "md": "1e873c8dfc5d",
           "ts": "4039595b2a38",
           "lean": "e3e24835fe2a"
         },
@@ -1448,9 +1460,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.496866Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.496866Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Lean formalization and narrative for 'Existence of the symmetric-block assembly projector' are in complete agreement.",
         "severity": "minor"
@@ -1459,7 +1473,7 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "4e986e162482",
+          "md": "1e873c8dfc5d",
           "ts": "4039595b2a38",
           "lean": "e3e24835fe2a"
         },
@@ -1467,9 +1481,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.496866Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.496866Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Citations to wenzl1988, kassel1995 are correct and contextually appropriate.",
         "severity": "minor",
@@ -1479,7 +1495,7 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "4e986e162482",
+          "md": "1e873c8dfc5d",
           "ts": "4039595b2a38",
           "lean": "e3e24835fe2a"
         },
@@ -1487,9 +1503,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.496866Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.496866Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Key terms and symbols in 'Existence of the symmetric-block assembly projector' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1499,7 +1517,7 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "4e986e162482",
+          "md": "1e873c8dfc5d",
           "ts": "4039595b2a38",
           "lean": "e3e24835fe2a"
         },
@@ -1507,9 +1525,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.496866Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.496866Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The algebraic and logical relations in 'Existence of the symmetric-block assembly projector' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1519,7 +1539,7 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "4e986e162482",
+          "md": "1e873c8dfc5d",
           "ts": "4039595b2a38",
           "lean": "e3e24835fe2a"
         },
@@ -1527,9 +1547,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.496866Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.496866Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The physical concepts described in 'Existence of the symmetric-block assembly projector' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1539,7 +1561,7 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "4e986e162482",
+          "md": "1e873c8dfc5d",
           "ts": "4039595b2a38",
           "lean": "e3e24835fe2a"
         },
@@ -1547,9 +1569,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.496866Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.496866Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The derivation steps and formal definitions in 'Existence of the symmetric-block assembly projector' are reproducible.",
         "severity": "minor",
@@ -1559,7 +1583,7 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "4e986e162482",
+          "md": "1e873c8dfc5d",
           "ts": "4039595b2a38",
           "lean": "e3e24835fe2a"
         },
@@ -1567,9 +1591,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.496866Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.496866Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
@@ -1601,14 +1627,21 @@
       {
         "result": "pass",
         "notes": "Streamlined aromaticity discussion. Short declarative sentences. Retained math.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.496866Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.496866Z"
+        },
+        "field_hash": {
+          "md": "1e873c8dfc5d",
+          "ts": "4039595b2a38",
+          "lean": "e3e24835fe2a"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.117Z"
+  "updated_at": "2026-07-07T14:26:55.496866Z"
 }

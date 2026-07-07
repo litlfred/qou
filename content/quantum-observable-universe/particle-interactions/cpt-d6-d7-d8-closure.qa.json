@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/cpt-d6-d7-d8-closure.lean"
   },
   "source_hashes": {
-    "md": "1c586240fab9",
+    "md": "2a99e29dadda",
     "ts": "c5cc8e3d4151",
     "lean": "a92ff39633a2"
   },
@@ -1631,19 +1631,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "1c586240fab9",
+          "md": "2a99e29dadda",
           "ts": "c5cc8e3d4151",
-          "lean": "1bb13957ce1d"
+          "lean": "a92ff39633a2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.357377Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:18.937Z",
+        "reviewed_at": "2026-07-07T14:26:57.357377Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1651,9 +1651,9 @@
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "1c586240fab9",
+          "md": "2a99e29dadda",
           "ts": "c5cc8e3d4151",
-          "lean": "1bb13957ce1d"
+          "lean": "a92ff39633a2"
         },
         "result": "pass",
         "score": {
@@ -1663,11 +1663,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.357377Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:19.254Z",
+        "reviewed_at": "2026-07-07T14:26:57.357377Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
       }
@@ -1692,17 +1692,19 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "1c586240fab9",
+          "md": "2a99e29dadda",
           "ts": "c5cc8e3d4151",
-          "lean": "1bb13957ce1d"
+          "lean": "a92ff39633a2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.357377Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.357377Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'CPT closure: D6 + D7 + D8 jointly imply $C \\\\cdot P \\\\cdot T$ preserves the Markov trace': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -1712,17 +1714,19 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "1c586240fab9",
+          "md": "2a99e29dadda",
           "ts": "c5cc8e3d4151",
-          "lean": "1bb13957ce1d"
+          "lean": "a92ff39633a2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.357377Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.357377Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The claims in 'CPT closure: D6 + D7 + D8 jointly imply $C \\\\cdot P \\\\cdot T$ preserves the Markov trace' are non-vacuous as they make concrete conjectures about 'consistently: there exist actions $C$, $P$, $T$ on closed-braid representatives of $H_n(q)$ such that 1. $C$ is the c...'.",
         "severity": "minor"
@@ -1731,17 +1735,19 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "1c586240fab9",
+          "md": "2a99e29dadda",
           "ts": "c5cc8e3d4151",
-          "lean": "1bb13957ce1d"
+          "lean": "a92ff39633a2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.357377Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.357377Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'CPT closure: D6 + D7 + D8 jointly imply $C \\\\cdot P \\\\cdot T$ preserves the Markov trace'.",
         "severity": "minor",
@@ -1751,17 +1757,19 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "1c586240fab9",
+          "md": "2a99e29dadda",
           "ts": "c5cc8e3d4151",
-          "lean": "1bb13957ce1d"
+          "lean": "a92ff39633a2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.357377Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.357377Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'CPT closure: D6 + D7 + D8 jointly imply $C \\\\cdot P \\\\cdot T$ preserves the Markov trace' is appropriately qualified.",
         "severity": "minor"
@@ -1770,17 +1778,19 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "1c586240fab9",
+          "md": "2a99e29dadda",
           "ts": "c5cc8e3d4151",
-          "lean": "1bb13957ce1d"
+          "lean": "a92ff39633a2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.357377Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.357377Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'CPT closure: D6 + D7 + D8 jointly imply $C \\\\cdot P \\\\cdot T$ preserves the Markov trace'.",
         "severity": "minor",
@@ -1790,17 +1800,19 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "1c586240fab9",
+          "md": "2a99e29dadda",
           "ts": "c5cc8e3d4151",
-          "lean": "1bb13957ce1d"
+          "lean": "a92ff39633a2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.357377Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.357377Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The argument flow in 'CPT closure: D6 + D7 + D8 jointly imply $C \\\\cdot P \\\\cdot T$ preserves the Markov trace' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -1810,17 +1822,19 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "1c586240fab9",
+          "md": "2a99e29dadda",
           "ts": "c5cc8e3d4151",
-          "lean": "1bb13957ce1d"
+          "lean": "a92ff39633a2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.357377Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.357377Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Lean and narrative statements for 'CPT closure: D6 + D7 + D8 jointly imply $C \\\\cdot P \\\\cdot T$ preserves the Markov trace' are structurally aligned.",
         "severity": "minor"
@@ -1829,17 +1843,19 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "1c586240fab9",
+          "md": "2a99e29dadda",
           "ts": "c5cc8e3d4151",
-          "lean": "1bb13957ce1d"
+          "lean": "a92ff39633a2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.357377Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.357377Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Citations to wigner1937, jones1987, kassel1995 are correct and contextually appropriate.",
         "severity": "minor",
@@ -1849,17 +1865,19 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "1c586240fab9",
+          "md": "2a99e29dadda",
           "ts": "c5cc8e3d4151",
-          "lean": "1bb13957ce1d"
+          "lean": "a92ff39633a2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.357377Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.357377Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'CPT closure: D6 + D7 + D8 jointly imply $C \\\\cdot P \\\\cdot T$ preserves the Markov trace' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1869,17 +1887,19 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "1c586240fab9",
+          "md": "2a99e29dadda",
           "ts": "c5cc8e3d4151",
-          "lean": "1bb13957ce1d"
+          "lean": "a92ff39633a2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.357377Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.357377Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'CPT closure: D6 + D7 + D8 jointly imply $C \\\\cdot P \\\\cdot T$ preserves the Markov trace' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1889,17 +1909,19 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "1c586240fab9",
+          "md": "2a99e29dadda",
           "ts": "c5cc8e3d4151",
-          "lean": "1bb13957ce1d"
+          "lean": "a92ff39633a2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.357377Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.357377Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'CPT closure: D6 + D7 + D8 jointly imply $C \\\\cdot P \\\\cdot T$ preserves the Markov trace' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1909,17 +1931,19 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "1c586240fab9",
+          "md": "2a99e29dadda",
           "ts": "c5cc8e3d4151",
-          "lean": "1bb13957ce1d"
+          "lean": "a92ff39633a2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.357377Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.357377Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'CPT closure: D6 + D7 + D8 jointly imply $C \\\\cdot P \\\\cdot T$ preserves the Markov trace' are reproducible.",
         "severity": "minor",
@@ -1929,17 +1953,19 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "1c586240fab9",
+          "md": "2a99e29dadda",
           "ts": "c5cc8e3d4151",
-          "lean": "1bb13957ce1d"
+          "lean": "a92ff39633a2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.357377Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.357377Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -1970,7 +1996,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "1c586240fab9",
+          "md": "2a99e29dadda",
           "ts": "c5cc8e3d4151",
           "lean": "a92ff39633a2"
         },
@@ -1978,9 +2004,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.357377Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_at": "2026-07-07T14:26:57.357377Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Conjecture with class/axiom axiomatisation \u2014 structural match."
       }
@@ -1992,5 +2020,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.802Z"
+  "updated_at": "2026-07-07T14:26:57.357377Z"
 }

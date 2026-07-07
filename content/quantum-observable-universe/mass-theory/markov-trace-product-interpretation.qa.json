@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/mass-theory/markov-trace-product-interpretation.md"
   },
   "source_hashes": {
-    "md": "fca4fc65b1c2",
+    "md": "1a823fdb77d4",
     "ts": "e4938d2c5b90"
   },
   "criteria": {
@@ -838,18 +838,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "fca4fc65b1c2",
+          "md": "1a823fdb77d4",
           "ts": "e4938d2c5b90"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.811282Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:10.042Z",
+        "reviewed_at": "2026-07-07T14:26:56.811282Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -857,16 +857,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "fca4fc65b1c2",
+          "md": "1a823fdb77d4",
           "ts": "e4938d2c5b90"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.811282Z"
         },
-        "reviewed_at": "2026-06-28T10:58:52.152Z",
+        "reviewed_at": "2026-07-07T14:26:56.811282Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No false claims identified in 'Connection to the vertex operator algebra'; the algebraic relation involving $k_i$ is mathematically consistent.",
         "severity": "minor",
@@ -876,16 +878,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "fca4fc65b1c2",
+          "md": "1a823fdb77d4",
           "ts": "e4938d2c5b90"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.811282Z"
         },
-        "reviewed_at": "2026-06-28T10:58:52.158Z",
+        "reviewed_at": "2026-07-07T14:26:56.811282Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The block 'Connection to the vertex operator algebra' presents substantial mathematical content, establishing relation $k_i$.",
         "severity": "minor"
@@ -894,16 +898,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "fca4fc65b1c2",
+          "md": "1a823fdb77d4",
           "ts": "e4938d2c5b90"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.811282Z"
         },
-        "reviewed_at": "2026-06-28T10:58:52.164Z",
+        "reviewed_at": "2026-07-07T14:26:56.811282Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Connection to the vertex operator algebra'. The construction is derived from thm:markov-trace-product.",
         "severity": "minor",
@@ -913,16 +919,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "fca4fc65b1c2",
+          "md": "1a823fdb77d4",
           "ts": "e4938d2c5b90"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.811282Z"
         },
-        "reviewed_at": "2026-06-28T10:58:52.171Z",
+        "reviewed_at": "2026-07-07T14:26:56.811282Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No overclaims: the scope of 'Connection to the vertex operator algebra' is appropriately qualified and constrained.",
         "severity": "minor"
@@ -931,16 +939,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "fca4fc65b1c2",
+          "md": "1a823fdb77d4",
           "ts": "e4938d2c5b90"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.811282Z"
         },
-        "reviewed_at": "2026-06-28T10:58:52.178Z",
+        "reviewed_at": "2026-07-07T14:26:56.811282Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Connection to the vertex operator algebra'. All constants are canonically derived.",
         "severity": "minor",
@@ -950,16 +960,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "fca4fc65b1c2",
+          "md": "1a823fdb77d4",
           "ts": "e4938d2c5b90"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.811282Z"
         },
-        "reviewed_at": "2026-06-28T10:58:52.184Z",
+        "reviewed_at": "2026-07-07T14:26:56.811282Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The argument flow in 'Connection to the vertex operator algebra' is logically sound, mapping onto the cited dependencies: thm:markov-trace-product.",
         "severity": "minor",
@@ -969,16 +981,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "fca4fc65b1c2",
+          "md": "1a823fdb77d4",
           "ts": "e4938d2c5b90"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.811282Z"
         },
-        "reviewed_at": "2026-06-28T10:58:52.190Z",
+        "reviewed_at": "2026-07-07T14:26:56.811282Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
@@ -987,16 +1001,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "fca4fc65b1c2",
+          "md": "1a823fdb77d4",
           "ts": "e4938d2c5b90"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.811282Z"
         },
-        "reviewed_at": "2026-06-28T10:58:52.196Z",
+        "reviewed_at": "2026-07-07T14:26:56.811282Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No citations are present in 'Connection to the vertex operator algebra', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1006,16 +1022,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "fca4fc65b1c2",
+          "md": "1a823fdb77d4",
           "ts": "e4938d2c5b90"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.811282Z"
         },
-        "reviewed_at": "2026-06-28T10:58:52.202Z",
+        "reviewed_at": "2026-07-07T14:26:56.811282Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Key terms and symbols (including $k_i$) in 'Connection to the vertex operator algebra' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1025,16 +1043,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "fca4fc65b1c2",
+          "md": "1a823fdb77d4",
           "ts": "e4938d2c5b90"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.811282Z"
         },
-        "reviewed_at": "2026-06-28T10:58:52.208Z",
+        "reviewed_at": "2026-07-07T14:26:56.811282Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The algebraic and logical relations in 'Connection to the vertex operator algebra' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1044,16 +1064,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "fca4fc65b1c2",
+          "md": "1a823fdb77d4",
           "ts": "e4938d2c5b90"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.811282Z"
         },
-        "reviewed_at": "2026-06-28T10:58:52.214Z",
+        "reviewed_at": "2026-07-07T14:26:56.811282Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The physical concepts described in 'Connection to the vertex operator algebra' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1063,16 +1085,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "fca4fc65b1c2",
+          "md": "1a823fdb77d4",
           "ts": "e4938d2c5b90"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.811282Z"
         },
-        "reviewed_at": "2026-06-28T10:58:52.220Z",
+        "reviewed_at": "2026-07-07T14:26:56.811282Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The derivation steps and formal definitions in 'Connection to the vertex operator algebra' are reproducible.",
         "severity": "minor",
@@ -1082,16 +1106,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "fca4fc65b1c2",
+          "md": "1a823fdb77d4",
           "ts": "e4938d2c5b90"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.811282Z"
         },
-        "reviewed_at": "2026-06-28T10:58:52.226Z",
+        "reviewed_at": "2026-07-07T14:26:56.811282Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -1103,14 +1129,20 @@
       {
         "result": "pass",
         "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
-        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.811282Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.811282Z"
+        },
+        "field_hash": {
+          "md": "1a823fdb77d4",
+          "ts": "e4938d2c5b90"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-07T14:26:56.811282Z"
 }

@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/mass-theory/intro-mutant-jones-bloch-group.md"
   },
   "source_hashes": {
-    "ts": "063214f6be50",
-    "md": "a79efae87cc4"
+    "md": "84473b437ec1",
+    "ts": "063214f6be50"
   },
   "criteria": {
     "q-usage-regime-detected": [
@@ -128,14 +128,20 @@
       {
         "result": "pass",
         "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
-        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.909184Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.909184Z"
+        },
+        "field_hash": {
+          "md": "84473b437ec1",
+          "ts": "063214f6be50"
         }
       }
     ]
   },
-  "updated_at": "2026-06-01T16:06:38.106Z"
+  "updated_at": "2026-07-07T14:26:56.909184Z"
 }

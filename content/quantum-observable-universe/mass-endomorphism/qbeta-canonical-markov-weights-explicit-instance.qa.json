@@ -7,8 +7,8 @@
     "md": "../qou/content/quantum-observable-universe/mass-endomorphism/qbeta-canonical-markov-weights-explicit-instance.md"
   },
   "source_hashes": {
-    "md": "d24c4cc73138",
-    "ts": "a805e80e1a19"
+    "md": "82ad4aa7eb00",
+    "ts": "ba27bec7dbe9"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Rewrote mass-endomorphism_seq9.md for Milnor standards: declarative voice, concise phrasing, removed colloquialisms.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.137497Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.137497Z"
+        },
+        "field_hash": {
+          "md": "82ad4aa7eb00",
+          "ts": "ba27bec7dbe9"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.364Z"
+  "updated_at": "2026-07-07T14:26:56.137497Z"
 }

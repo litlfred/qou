@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean"
   },
   "source_hashes": {
-    "md": "9af042539bd6",
+    "md": "399089e71d93",
     "ts": "cc5a3e015b3d",
     "lean": "5df091a2aa14"
   },
@@ -2029,17 +2029,19 @@
       },
       {
         "field_hash": {
-          "md": "2acacd5e84ed",
+          "md": "399089e71d93",
           "ts": "cc5a3e015b3d",
-          "lean": "fda6252037d0"
+          "lean": "5df091a2aa14"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.257990Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:57.257990Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "minor",
         "evidence": "nuclear-groebner-reduction.md:130 '**Connection to the half-life.**' and :155 'This is the quantity that determines the half-life via the Fermi golden rule.'",
@@ -2067,17 +2069,19 @@
       },
       {
         "field_hash": {
-          "md": "2acacd5e84ed",
+          "md": "399089e71d93",
           "ts": "cc5a3e015b3d",
-          "lean": "fda6252037d0"
+          "lean": "5df091a2aa14"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.257990Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:57.257990Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
@@ -2102,17 +2106,19 @@
       },
       {
         "field_hash": {
-          "md": "2acacd5e84ed",
+          "md": "399089e71d93",
           "ts": "cc5a3e015b3d",
-          "lean": "fda6252037d0"
+          "lean": "5df091a2aa14"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.257990Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:57.257990Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Statement fixes the generic ground ring R=\u2124[q,q\u207b\u00b9] (md:13) \u2014 correctly substrate-generic, no archimedean construct in the claim."
       }
@@ -2138,17 +2144,19 @@
       },
       {
         "field_hash": {
-          "md": "2acacd5e84ed",
+          "md": "399089e71d93",
           "ts": "cc5a3e015b3d",
-          "lean": "fda6252037d0"
+          "lean": "5df091a2aa14"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.257990Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:57.257990Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Proof is Diamond-Lemma / confluence / length-lex termination \u2014 purely algebraic, matches the generic-ring statement."
       }
@@ -2206,7 +2214,7 @@
       },
       {
         "field_hash": {
-          "md": "9af042539bd6",
+          "md": "399089e71d93",
           "ts": "cc5a3e015b3d",
           "lean": "5df091a2aa14"
         },
@@ -2214,9 +2222,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.257990Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_at": "2026-07-07T14:26:57.257990Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Lean sibling is a stub/re-exporter; canonical formalisation lives in a Lake package and is audited by lean-compile-audit."
       }
@@ -2264,20 +2274,20 @@
       },
       {
         "field_hash": {
-          "md": "2acacd5e84ed",
+          "md": "399089e71d93",
           "ts": "cc5a3e015b3d",
-          "lean": "fda6252037d0"
+          "lean": "5df091a2aa14"
         },
         "result": "pass",
         "notes": "Clear 3-step md proof (G is GS basis / confluence\u21d2path-indep / termination); Lean defers core to a cited axiom but proves the length bound honestly.",
-        "reviewed_at": "2026-06-25T17:06:19.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.257990Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.257990Z"
         },
         "score": {
           "max": 1,
@@ -2328,20 +2338,20 @@
       },
       {
         "field_hash": {
-          "md": "2acacd5e84ed",
+          "md": "399089e71d93",
           "ts": "cc5a3e015b3d",
-          "lean": "fda6252037d0"
+          "lean": "5df091a2aa14"
         },
         "result": "pass",
         "notes": "Well-posed: unique GS normal form of nuclear braid in H_A(q) via Diamond Lemma; concrete reduction table (deuteron..\u2076Li) and A-1 length bound; standard confluence machinery.",
-        "reviewed_at": "2026-06-25T17:06:19.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.257990Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.257990Z"
         },
         "score": {
           "max": 1,
@@ -2392,20 +2402,20 @@
       },
       {
         "field_hash": {
-          "md": "2acacd5e84ed",
+          "md": "399089e71d93",
           "ts": "cc5a3e015b3d",
-          "lean": "fda6252037d0"
+          "lean": "5df091a2aa14"
         },
         "result": "pass",
         "notes": "Applies GS/Diamond-Lemma to nuclear braid words with the polynomial-scaling NF result; substantive framework construction, not a restatement.",
-        "reviewed_at": "2026-06-25T17:06:19.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.257990Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.257990Z"
         },
         "score": {
           "max": 1,
@@ -2452,20 +2462,20 @@
       },
       {
         "field_hash": {
-          "md": "2acacd5e84ed",
+          "md": "399089e71d93",
           "ts": "cc5a3e015b3d",
-          "lean": "fda6252037d0"
+          "lean": "5df091a2aa14"
         },
         "result": "pass",
         "notes": "Lib decl nuclear_groebner_reduction is a faithful Prop statement of the NF claim; existence via axiom normal_form_exists_unique (GS main thm, cited to UGB paper) + honest sorry in sibling; max_word_length_bound genuinely proved. No :True/projection.",
-        "reviewed_at": "2026-06-25T17:06:19.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.257990Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.257990Z"
         }
       }
     ],
@@ -2508,20 +2518,20 @@
       },
       {
         "field_hash": {
-          "md": "2acacd5e84ed",
+          "md": "399089e71d93",
           "ts": "cc5a3e015b3d",
-          "lean": "fda6252037d0"
+          "lean": "5df091a2aa14"
         },
         "result": "pass",
         "notes": "No projection: lib alias is a Prop-valued def (states, not proves); sibling theorem uses an honest sorry. Neither returns a class field as the conclusion.",
-        "reviewed_at": "2026-06-25T17:06:19.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.257990Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.257990Z"
         }
       }
     ],
@@ -2546,20 +2556,20 @@
       },
       {
         "field_hash": {
-          "md": "2acacd5e84ed",
+          "md": "399089e71d93",
           "ts": "cc5a3e015b3d",
-          "lean": "fda6252037d0"
+          "lean": "5df091a2aa14"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: no `: True` token in resolved Lean source (content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean, content/quantum-observable-universe/lean/QOU/Archimedean.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.257990Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.257990Z"
         }
       }
     ],
@@ -2602,20 +2612,20 @@
       },
       {
         "field_hash": {
-          "md": "2acacd5e84ed",
+          "md": "399089e71d93",
           "ts": "cc5a3e015b3d",
-          "lean": "fda6252037d0"
+          "lean": "5df091a2aa14"
         },
         "result": "pass",
         "notes": "1<q archimedean hypothesis is satisfiable; isReduced/Nodup premises consistent; no contradictory binder.",
-        "reviewed_at": "2026-06-25T17:06:19.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.257990Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.257990Z"
         }
       }
     ],
@@ -2658,20 +2668,20 @@
       },
       {
         "field_hash": {
-          "md": "2acacd5e84ed",
+          "md": "399089e71d93",
           "ts": "cc5a3e015b3d",
-          "lean": "fda6252037d0"
+          "lean": "5df091a2aa14"
         },
         "result": "pass",
         "notes": "max_word_length_bound uses all binders (hw via isReduced, hgen + hnodup in the calc); alias def binders (q,hq,p,n) appear in its Prop body.",
-        "reviewed_at": "2026-06-25T17:06:19.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.257990Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.257990Z"
         }
       }
     ],
@@ -2696,37 +2706,39 @@
       },
       {
         "field_hash": {
-          "md": "2acacd5e84ed",
+          "md": "399089e71d93",
           "ts": "cc5a3e015b3d",
-          "lean": "fda6252037d0"
+          "lean": "5df091a2aa14"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean, content/quantum-observable-universe/lean/QOU/Archimedean.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.257990Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.257990Z"
         }
       }
     ],
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "2acacd5e84ed",
+          "md": "399089e71d93",
           "ts": "cc5a3e015b3d",
-          "lean": "fda6252037d0"
+          "lean": "5df091a2aa14"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.257990Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.257990Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The claim in 'Unique nuclear normal form via Gr\u00f6bner reduction in $H_n(q)$' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean:33:63: error: unexpected identifier; expected 'lemma'.",
         "severity": "minor",
@@ -2736,17 +2748,19 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "2acacd5e84ed",
+          "md": "399089e71d93",
           "ts": "cc5a3e015b3d",
-          "lean": "fda6252037d0"
+          "lean": "5df091a2aa14"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.257990Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.257990Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "major",
@@ -2756,17 +2770,19 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "2acacd5e84ed",
+          "md": "399089e71d93",
           "ts": "cc5a3e015b3d",
-          "lean": "fda6252037d0"
+          "lean": "5df091a2aa14"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.257990Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.257990Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Unique nuclear normal form via Gr\u00f6bner reduction in $H_n(q)$'.",
         "severity": "minor",
@@ -2776,17 +2792,19 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "2acacd5e84ed",
+          "md": "399089e71d93",
           "ts": "cc5a3e015b3d",
-          "lean": "fda6252037d0"
+          "lean": "5df091a2aa14"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.257990Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.257990Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose in 'Unique nuclear normal form via Gr\u00f6bner reduction in $H_n(q)$' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean is incomplete (has sorry).",
         "severity": "minor"
@@ -2795,17 +2813,19 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "2acacd5e84ed",
+          "md": "399089e71d93",
           "ts": "cc5a3e015b3d",
-          "lean": "fda6252037d0"
+          "lean": "5df091a2aa14"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.257990Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.257990Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Unique nuclear normal form via Gr\u00f6bner reduction in $H_n(q)$'.",
         "severity": "minor",
@@ -2815,17 +2835,19 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "2acacd5e84ed",
+          "md": "399089e71d93",
           "ts": "cc5a3e015b3d",
-          "lean": "fda6252037d0"
+          "lean": "5df091a2aa14"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.257990Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.257990Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean.",
         "severity": "minor",
@@ -2835,17 +2857,19 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "2acacd5e84ed",
+          "md": "399089e71d93",
           "ts": "cc5a3e015b3d",
-          "lean": "fda6252037d0"
+          "lean": "5df091a2aa14"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.257990Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.257990Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
@@ -2854,17 +2878,19 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "2acacd5e84ed",
+          "md": "399089e71d93",
           "ts": "cc5a3e015b3d",
-          "lean": "fda6252037d0"
+          "lean": "5df091a2aa14"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.257990Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.257990Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Unique nuclear normal form via Gr\u00f6bner reduction in $H_n(q)$', hence no citation misuse is possible.",
         "severity": "minor",
@@ -2874,17 +2900,19 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "2acacd5e84ed",
+          "md": "399089e71d93",
           "ts": "cc5a3e015b3d",
-          "lean": "fda6252037d0"
+          "lean": "5df091a2aa14"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.257990Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.257990Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Unique nuclear normal form via Gr\u00f6bner reduction in $H_n(q)$' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -2894,17 +2922,19 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "2acacd5e84ed",
+          "md": "399089e71d93",
           "ts": "cc5a3e015b3d",
-          "lean": "fda6252037d0"
+          "lean": "5df091a2aa14"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.257990Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.257990Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Unique nuclear normal form via Gr\u00f6bner reduction in $H_n(q)$' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -2914,17 +2944,19 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "2acacd5e84ed",
+          "md": "399089e71d93",
           "ts": "cc5a3e015b3d",
-          "lean": "fda6252037d0"
+          "lean": "5df091a2aa14"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.257990Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.257990Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Unique nuclear normal form via Gr\u00f6bner reduction in $H_n(q)$' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -2934,17 +2966,19 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "2acacd5e84ed",
+          "md": "399089e71d93",
           "ts": "cc5a3e015b3d",
-          "lean": "fda6252037d0"
+          "lean": "5df091a2aa14"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.257990Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.257990Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
@@ -2954,17 +2988,19 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "2acacd5e84ed",
+          "md": "399089e71d93",
           "ts": "cc5a3e015b3d",
-          "lean": "fda6252037d0"
+          "lean": "5df091a2aa14"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.257990Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.257990Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean fails compilation: content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean:33:63: error: unexpected identifier; expected 'lemma'",
         "severity": "critical",
@@ -2976,14 +3012,21 @@
       {
         "result": "pass",
         "notes": "Applied Milnor exposition standard (H1-H8) and brevity rules. Shortened sentences, removed editorializing ('surprisingly', 'remarkably'), replaced 'this book' with 'this paper', and maintained Math, markdown, and cross-block consistency.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:57.257990Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.257990Z"
+        },
+        "field_hash": {
+          "md": "399089e71d93",
+          "ts": "cc5a3e015b3d",
+          "lean": "5df091a2aa14"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.802Z"
+  "updated_at": "2026-07-07T14:26:57.257990Z"
 }

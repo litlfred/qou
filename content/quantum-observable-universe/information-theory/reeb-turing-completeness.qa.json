@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/information-theory/reeb-turing-completeness.md"
   },
   "source_hashes": {
-    "md": "c424d8a791c3",
+    "md": "58818ab28b45",
     "ts": "367417004044"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Rewrote blocks linearly, resolved forward references, cleaned mathematical notation and integrated tables smoothly. Removed index-style bullet points in favor of connected prose. Tightened terminology around Reeb derivation and Toffoli matrix.",
-        "reviewed_at": "2026-07-06T22:48:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.634077Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.634077Z"
+        },
+        "field_hash": {
+          "md": "58818ab28b45",
+          "ts": "367417004044"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.008Z"
+  "updated_at": "2026-07-07T14:26:55.634077Z"
 }

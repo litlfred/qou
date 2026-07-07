@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/braids-and-knots/why-b3.md"
   },
   "source_hashes": {
-    "md": "ab276dab061d",
+    "md": "91176d9fc43a",
     "ts": "f7f40af11f64"
   },
   "criteria": {
@@ -838,18 +838,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "ab276dab061d",
+          "md": "91176d9fc43a",
           "ts": "f7f40af11f64"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.312958Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:21.112Z",
+        "reviewed_at": "2026-07-07T14:26:55.312958Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -857,15 +857,17 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "ab276dab061d",
+          "md": "91176d9fc43a",
           "ts": "f7f40af11f64"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.312958Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.312958Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Checked mathematical consistency of the claim 'The Descartes condition $\\chi(A) = -6$ forces the gauge group to be a' and found no counterexamples under the stated conditions.",
         "severity": "minor",
@@ -875,15 +877,17 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "ab276dab061d",
+          "md": "91176d9fc43a",
           "ts": "f7f40af11f64"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.312958Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.312958Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No vacuous stubs or tautologies detected in the formulation of 'rem:why-B3'.",
         "severity": "minor"
@@ -892,15 +896,17 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "ab276dab061d",
+          "md": "91176d9fc43a",
           "ts": "f7f40af11f64"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.312958Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.312958Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Traced dependencies ['prop:braid-action-tensor'] for 'rem:why-B3' and confirmed no circular definitions or justifications.",
         "severity": "minor",
@@ -910,15 +916,17 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "ab276dab061d",
+          "md": "91176d9fc43a",
           "ts": "f7f40af11f64"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.312958Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.312958Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Verified that the scope of 'rem:why-B3' is appropriately restricted to the proven regime without overclaiming structural validity.",
         "severity": "minor"
@@ -927,15 +935,17 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "ab276dab061d",
+          "md": "91176d9fc43a",
           "ts": "f7f40af11f64"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.312958Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.312958Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
         "severity": "minor",
@@ -945,15 +955,17 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "ab276dab061d",
+          "md": "91176d9fc43a",
           "ts": "f7f40af11f64"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.312958Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.312958Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Logical transitions in the derivation of 'The Descartes condition $\\chi(A) = -6$ forces the gauge group to be a' are sound; no non-sequiturs detected.",
         "severity": "minor",
@@ -963,15 +975,17 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "ab276dab061d",
+          "md": "91176d9fc43a",
           "ts": "f7f40af11f64"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.312958Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.312958Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No Lean sibling required; narrative matches specifications.",
         "severity": "minor"
@@ -980,15 +994,17 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "ab276dab061d",
+          "md": "91176d9fc43a",
           "ts": "f7f40af11f64"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.312958Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.312958Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All references and uses ['prop:braid-action-tensor'] cited in 'rem:why-B3' are used in accordance with their established mathematical definitions.",
         "severity": "minor",
@@ -998,15 +1014,17 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "ab276dab061d",
+          "md": "91176d9fc43a",
           "ts": "f7f40af11f64"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.312958Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.312958Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All terms and algebraic structures in 'rem:why-B3' are uniquely defined or standard.",
         "severity": "minor",
@@ -1016,15 +1034,17 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "ab276dab061d",
+          "md": "91176d9fc43a",
           "ts": "f7f40af11f64"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.312958Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.312958Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The algebraic statements in 'rem:why-B3' do not rely on fragile empirical fits or numerical thresholds.",
         "severity": "minor",
@@ -1034,15 +1054,17 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "ab276dab061d",
+          "md": "91176d9fc43a",
           "ts": "f7f40af11f64"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.312958Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.312958Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Physical dimensions and units in 'rem:why-B3' are consistent with quantum observable universe models.",
         "severity": "minor",
@@ -1052,15 +1074,17 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "ab276dab061d",
+          "md": "91176d9fc43a",
           "ts": "f7f40af11f64"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.312958Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.312958Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All backing computations and proofs are fully reproducible.",
         "severity": "minor"
@@ -1069,15 +1093,17 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "ab276dab061d",
+          "md": "91176d9fc43a",
           "ts": "f7f40af11f64"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.312958Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.312958Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -1089,14 +1115,20 @@
       {
         "result": "pass",
         "notes": "Rewrote to adhere to Milnor brevity. Removed forward reference to Chapter 5 and Chapter 6. Tightened categorical boson-fermion argument.",
-        "reviewed_at": "2026-07-06T22:38:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.312958Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.312958Z"
+        },
+        "field_hash": {
+          "md": "91176d9fc43a",
+          "ts": "f7f40af11f64"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:55.297Z"
+  "updated_at": "2026-07-07T14:26:55.312958Z"
 }

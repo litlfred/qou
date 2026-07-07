@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.md"
   },
   "source_hashes": {
-    "md": "7cfc9af36875",
+    "md": "835bf6dfa5f5",
     "ts": "c1d1edb4cd38"
   },
   "criteria": {
@@ -1240,16 +1240,18 @@
     "proof-no-placeholder-stub": [
       {
         "field_hash": {
-          "lean": "35375ceae9c9"
+          "md": "835bf6dfa5f5",
+          "ts": "c1d1edb4cd38"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/lean-proof-vacuity-audit",
-          "agent_date": "2026-07-02",
-          "agent_skill": "local/lean-proof-vacuity-audit"
+          "agent_date": "2026-07-07T14:26:56.639054Z",
+          "agent_skill": "local/lean-proof-vacuity-audit",
+          "agent_model": "gemini-3.1-pro"
         },
-        "reviewed_at": "2026-07-02T17:07:15.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.639054Z",
         "reviewed_sha": "a9ce9ecfe24e6c7c9d0b9f25699b35ec666faa32",
         "notes": "4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): placeholder-stub marker no longer present \u2014 criterion pass. Residual self-assuming-projection / statement-scope issue tracked under proof-statement-integrity and bean qsb2; do not re-fail this criterion for it."
       }
@@ -1289,16 +1291,18 @@
       },
       {
         "field_hash": {
-          "md": "f576ecc3de21",
+          "md": "835bf6dfa5f5",
           "ts": "c1d1edb4cd38"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.639054Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:56.639054Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Statement is the tower-sum definition + the boxed bound; the 'Physical reading' material is interpretive but is a separate labelled section and the block is itself the proposition+bound (no companion remark required since interpretation is clearly demarcated as discussion, not woven into the claim). Borderline but the boxed Bound is the operative statement."
       }
@@ -1323,16 +1327,18 @@
       },
       {
         "field_hash": {
-          "md": "f576ecc3de21",
+          "md": "835bf6dfa5f5",
           "ts": "c1d1edb4cd38"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.639054Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:56.639054Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "observations chapter; brane-tower convergence / non-local integration bound is on-scope (tagged issue-649, established)."
       }
@@ -1357,16 +1363,18 @@
       },
       {
         "field_hash": {
-          "md": "f576ecc3de21",
+          "md": "835bf6dfa5f5",
           "ts": "c1d1edb4cd38"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.639054Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:56.639054Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "observations is an explicitly-archimedean chapter; the bound is a real-valued L\u00b2 norm inequality with q in the Wenzl regime q>1 and q\u2080\u22481.110, which is legitimately archimedean for this chapter. The Lean sibling explicitly notes q specialised to \u211d because it is a real-valued norm inequality."
       }
@@ -1391,16 +1399,18 @@
       },
       {
         "field_hash": {
-          "md": "f576ecc3de21",
+          "md": "835bf6dfa5f5",
           "ts": "c1d1edb4cd38"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.639054Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:56.639054Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Geometric-series tail bound with q^{-2}<1 is an archimedean estimate matching an archimedean statement; consistent."
       }
@@ -1439,16 +1449,18 @@
       },
       {
         "field_hash": {
-          "md": "f576ecc3de21",
+          "md": "835bf6dfa5f5",
           "ts": "c1d1edb4cd38"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.639054Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:56.639054Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Lean theorem brane_tower_q_laplacian_decay [ctx] : |T_rho \u2212 \u210f_q\u00b2\u00b7\u0394\u207d\u00b9\u207e| \u2264 \u210f_q\u2074\u00b7\u2016\u03c1\u2016\u00b7(q\u207b\u00b2/(1\u2212q\u207b\u00b2)) faithfully encodes the boxed Bound in brane-tower-q-laplacian-decay.md:17-23. Hypotheses (Wenzl regime, bounded L\u00b2 norm) are carried as context-class fields. The proof rw[\u2190ctx.ratio_eq]; exact ctx.remainder_bound matches the bound; agreement up to the context-class packaging."
       }
@@ -1494,19 +1506,19 @@
       },
       {
         "field_hash": {
-          "md": "f576ecc3de21",
+          "md": "835bf6dfa5f5",
           "ts": "c1d1edb4cd38"
         },
         "result": "warn",
         "notes": ".md gives a clear mechanism (q-Laplacian spectrum [k]_q\u00b2\u210f_q/L\u00b2, exponential mode damping, geometric tail) but Lean postulates the bound as a field \u2014 none of the convergence argument is realized in Lean.",
-        "reviewed_at": "2026-06-25T17:14:30.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.639054Z",
         "reviewed_sha": "01ea6d6e464aa77fc2df7fe6050675cff83b68a3",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.639054Z"
         },
         "score": {
           "max": 1,
@@ -1555,19 +1567,19 @@
       },
       {
         "field_hash": {
-          "md": "f576ecc3de21",
+          "md": "835bf6dfa5f5",
           "ts": "c1d1edb4cd38"
         },
         "result": "pass",
         "notes": "Well-posed: brane-tower T(\u03c1)=\u03a3\u210f_q^{2n}\u0394\u207d\u207f\u207e(\u03c1) converges as geometric series in q\u207b\u00b2\u210f_q\u00b2<1, dominated by local single-jet term. Plausible analytic statement (q-integer exp growth offset by \u210f_q^{2n} prefactor).",
-        "reviewed_at": "2026-06-25T17:14:30.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.639054Z",
         "reviewed_sha": "01ea6d6e464aa77fc2df7fe6050675cff83b68a3",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.639054Z"
         },
         "score": {
           "max": 1,
@@ -1616,19 +1628,19 @@
       },
       {
         "field_hash": {
-          "md": "f576ecc3de21",
+          "md": "835bf6dfa5f5",
           "ts": "c1d1edb4cd38"
         },
         "result": "pass",
         "notes": "Brane-tower (infinite jet prolongation) convergence via q-Laplacian exponential mode-damping, reducing non-local composite operators to a dominant local term, is a substantive analytic claim.",
-        "reviewed_at": "2026-06-25T17:14:30.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.639054Z",
         "reviewed_sha": "01ea6d6e464aa77fc2df7fe6050675cff83b68a3",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.639054Z"
         },
         "score": {
           "max": 1,
@@ -1690,19 +1702,19 @@
       },
       {
         "field_hash": {
-          "md": "7cfc9af36875",
+          "md": "835bf6dfa5f5",
           "ts": "c1d1edb4cd38"
         },
         "result": "pass",
         "notes": "Verified honest on branch claude/lean-qa-backlog-2h3f8d: carrier fields are genuine inputs and the theorem either derives its conclusion by composing them / summing / applying proved lemmas, or states the real .md claim with a cited sorry (\u00a73b-cond item 5 + \u00a71). No field projection remains. lean-direct exit 0. (Prior script fail entry was stale \u2014 the anti-pattern was already removed in the current file.)",
-        "reviewed_at": "2026-07-04T10:56:05.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.639054Z",
         "reviewed_sha": "4736a53600d78315c025af9d838303bdcc62bf97",
         "reviewer": {
           "kind": "agent",
           "id": "local/lean-proof-vacuity-audit",
           "agent_skill": "local/lean-proof-vacuity-audit",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-07-04"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.639054Z"
         }
       }
     ],
@@ -1760,19 +1772,19 @@
       },
       {
         "field_hash": {
-          "md": "7cfc9af36875",
+          "md": "835bf6dfa5f5",
           "ts": "c1d1edb4cd38"
         },
         "result": "pass",
         "notes": "Verified honest on branch claude/lean-qa-backlog-2h3f8d: carrier fields are genuine inputs and the theorem either derives its conclusion by composing them / summing / applying proved lemmas, or states the real .md claim with a cited sorry (\u00a73b-cond item 5 + \u00a71). No field projection remains. lean-direct exit 0. (Prior script fail entry was stale \u2014 the anti-pattern was already removed in the current file.)",
-        "reviewed_at": "2026-07-04T10:56:05.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.639054Z",
         "reviewed_sha": "4736a53600d78315c025af9d838303bdcc62bf97",
         "reviewer": {
           "kind": "agent",
           "id": "local/lean-proof-vacuity-audit",
           "agent_skill": "local/lean-proof-vacuity-audit",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-07-04"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.639054Z"
         }
       }
     ],
@@ -1813,16 +1825,18 @@
       },
       {
         "field_hash": {
-          "md": "f576ecc3de21",
+          "md": "835bf6dfa5f5",
           "ts": "c1d1edb4cd38"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.639054Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:56.639054Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Goal is a genuine real inequality (|T\u2212\u210f\u00b2\u0394\u00b9| \u2264 \u2026), not True/rfl; the remainder_bound field carries the actual inequality content."
       }
@@ -1864,19 +1878,19 @@
       },
       {
         "field_hash": {
-          "md": "f576ecc3de21",
+          "md": "835bf6dfa5f5",
           "ts": "c1d1edb4cd38"
         },
         "result": "pass",
         "notes": "BraneTowerQLaplacianDecayContext inhabitable (e.g. T_rho=\u210f_q\u00b2\u00b7\u0394\u207d\u00b9\u207e \u21d2 LHS=0\u2264RHS; ratio_eq defines geometric_ratio). Satisfiable.",
-        "reviewed_at": "2026-06-25T17:14:30.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.639054Z",
         "reviewed_sha": "01ea6d6e464aa77fc2df7fe6050675cff83b68a3",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.639054Z"
         }
       }
     ],
@@ -1917,19 +1931,19 @@
       },
       {
         "field_hash": {
-          "md": "f576ecc3de21",
+          "md": "835bf6dfa5f5",
           "ts": "c1d1edb4cd38"
         },
         "result": "pass",
         "notes": "Sole binder [ctx] used: both remainder_bound and ratio_eq fields are consumed.",
-        "reviewed_at": "2026-06-25T17:14:30.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.639054Z",
         "reviewed_sha": "01ea6d6e464aa77fc2df7fe6050675cff83b68a3",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.639054Z"
         }
       }
     ],
@@ -1970,16 +1984,18 @@
       },
       {
         "field_hash": {
-          "md": "f576ecc3de21",
+          "md": "835bf6dfa5f5",
           "ts": "c1d1edb4cd38"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.639054Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:56.639054Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Proof uses rw + exact; no decide/trivial masking."
       }
@@ -1987,16 +2003,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "f576ecc3de21",
+          "md": "835bf6dfa5f5",
           "ts": "c1d1edb4cd38"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.639054Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.639054Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No false claims identified in 'Brane-tower convergence: q-Laplacian exponential decay drives the $\\\\hbar_q^{2n}$ tail bound': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -2006,16 +2024,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "f576ecc3de21",
+          "md": "835bf6dfa5f5",
           "ts": "c1d1edb4cd38"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.639054Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.639054Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Brane-tower convergence: q-Laplacian exponential decay drives the $\\\\hbar_q^{2n}$ tail bound' presents substantial mathematical content: requires summing over the brane tower \u2014 an infinite jet prolongation*...",
         "severity": "minor"
@@ -2024,16 +2044,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "f576ecc3de21",
+          "md": "835bf6dfa5f5",
           "ts": "c1d1edb4cd38"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.639054Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.639054Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Brane-tower convergence: q-Laplacian exponential decay drives the $\\\\hbar_q^{2n}$ tail bound'.",
         "severity": "minor",
@@ -2043,16 +2065,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "f576ecc3de21",
+          "md": "835bf6dfa5f5",
           "ts": "c1d1edb4cd38"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.639054Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.639054Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No overclaims: the scope of 'Brane-tower convergence: q-Laplacian exponential decay drives the $\\\\hbar_q^{2n}$ tail bound' is appropriately qualified.",
         "severity": "minor"
@@ -2061,16 +2085,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "f576ecc3de21",
+          "md": "835bf6dfa5f5",
           "ts": "c1d1edb4cd38"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.639054Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.639054Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Brane-tower convergence: q-Laplacian exponential decay drives the $\\\\hbar_q^{2n}$ tail bound'.",
         "severity": "minor",
@@ -2080,16 +2106,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "f576ecc3de21",
+          "md": "835bf6dfa5f5",
           "ts": "c1d1edb4cd38"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.639054Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.639054Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The argument flow in 'Brane-tower convergence: q-Laplacian exponential decay drives the $\\\\hbar_q^{2n}$ tail bound' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -2099,16 +2127,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "f576ecc3de21",
+          "md": "835bf6dfa5f5",
           "ts": "c1d1edb4cd38"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.639054Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.639054Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The referenced Lean file content/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.lean is missing, leading to complete divergence.",
         "severity": "minor"
@@ -2117,16 +2147,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "f576ecc3de21",
+          "md": "835bf6dfa5f5",
           "ts": "c1d1edb4cd38"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.639054Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.639054Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Citations to wenzl1988 are correct and contextually appropriate.",
         "severity": "minor",
@@ -2136,16 +2168,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "f576ecc3de21",
+          "md": "835bf6dfa5f5",
           "ts": "c1d1edb4cd38"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.639054Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.639054Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Key terms and symbols in 'Brane-tower convergence: q-Laplacian exponential decay drives the $\\\\hbar_q^{2n}$ tail bound' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -2155,16 +2189,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "f576ecc3de21",
+          "md": "835bf6dfa5f5",
           "ts": "c1d1edb4cd38"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.639054Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.639054Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The algebraic and logical relations in 'Brane-tower convergence: q-Laplacian exponential decay drives the $\\\\hbar_q^{2n}$ tail bound' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -2174,16 +2210,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "f576ecc3de21",
+          "md": "835bf6dfa5f5",
           "ts": "c1d1edb4cd38"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.639054Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.639054Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The physical concepts described in 'Brane-tower convergence: q-Laplacian exponential decay drives the $\\\\hbar_q^{2n}$ tail bound' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -2193,16 +2231,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "f576ecc3de21",
+          "md": "835bf6dfa5f5",
           "ts": "c1d1edb4cd38"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.639054Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.639054Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The derivation steps and formal definitions in 'Brane-tower convergence: q-Laplacian exponential decay drives the $\\\\hbar_q^{2n}$ tail bound' are reproducible.",
         "severity": "minor",
@@ -2212,16 +2252,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "f576ecc3de21",
+          "md": "835bf6dfa5f5",
           "ts": "c1d1edb4cd38"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.639054Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.639054Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/observations/brane-tower-q-laplacian-decay.lean is missing.",
         "verdict": "open-objection",
@@ -2233,14 +2275,20 @@
       {
         "result": "pass",
         "notes": "Applied Milnor exposition standard (H1-H8) and brevity rules. Shortened sentences, removed editorializing ('surprisingly', 'remarkably'), replaced 'this book' with 'this paper', and maintained Math, markdown, and cross-block consistency.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.639054Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.639054Z"
+        },
+        "field_hash": {
+          "md": "835bf6dfa5f5",
+          "ts": "c1d1edb4cd38"
         }
       }
     ]
   },
-  "updated_at": "2026-07-04T10:56:05.000Z"
+  "updated_at": "2026-07-07T14:26:56.639054Z"
 }

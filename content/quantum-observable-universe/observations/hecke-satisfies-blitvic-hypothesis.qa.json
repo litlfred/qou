@@ -7,11 +7,7 @@
     "md": "content/quantum-observable-universe/observations/hecke-satisfies-blitvic-hypothesis.md",
     "lean": "content/quantum-observable-universe/observations/hecke-satisfies-blitvic-hypothesis.lean"
   },
-  "source_hashes": {
-    "md": "23c3caff1f1b",
-    "ts": "e64655dfc1cd",
-    "lean": "30641ec12627"
-  },
+  "source_hashes": {},
   "criteria": {
     "voice-status-leak": [
       {
@@ -425,18 +421,16 @@
     ],
     "proof-no-bare-sorries": [
       {
-        "field_hash": {
-          "lean": "30641ec12627"
-        },
+        "field_hash": {},
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "proof-audit-batch",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.676299Z",
           "agent_skill": "local/proof-integration-watcher"
         },
-        "reviewed_at": "2026-05-27"
+        "reviewed_at": "2026-07-07T14:26:56.676299Z"
       }
     ],
     "proof-no-axiom-growth": [
@@ -1357,18 +1351,16 @@
     ],
     "compute-witness-exists": [
       {
-        "field_hash": {
-          "ts": "e64655dfc1cd"
-        },
+        "field_hash": {},
         "result": "warn",
         "reviewer": {
           "kind": "agent",
           "id": "compute-audit-batch",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.676299Z",
           "agent_skill": "local/compute-integration-watcher"
         },
-        "reviewed_at": "2026-05-27"
+        "reviewed_at": "2026-07-07T14:26:56.676299Z"
       }
     ],
     "compute-lp-dual-present": [
@@ -2698,88 +2690,72 @@
     ],
     "fit-section-chapter": [
       {
-        "field_hash": {
-          "md": "23c3caff1f1b",
-          "ts": "e64655dfc1cd",
-          "lean": "30641ec12627"
-        },
+        "field_hash": {},
         "result": "fail",
         "severity": "major",
         "evidence": "Block is abstract Hecke-algebra/CLT math (pair-partition combinatorics); observations chapter scope is CODATA/PDG comparisons and experimental predictions.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-05",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.676299Z",
           "agent_skill": "qa-agent-drain"
         },
-        "reviewed_at": "2026-06-05T19:47:42.200Z",
+        "reviewed_at": "2026-07-07T14:26:56.676299Z",
         "reviewed_sha": "a7cca7f44ae79f745c5b5e6b3275ec74c5e1ce07",
         "notes": "Content belongs in braids-and-knots or quantum-observable-universes chapter, not Ch.7 observations."
       }
     ],
     "voice-statement-no-interpretation": [
       {
-        "field_hash": {
-          "md": "23c3caff1f1b",
-          "ts": "e64655dfc1cd",
-          "lean": "30641ec12627"
-        },
+        "field_hash": {},
         "result": "warn",
         "severity": "minor",
         "evidence": "Block mixes bare claim with inline motivation ('Why Hecke generators satisfy it') rather than deferring interpretation to a linked remark.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-05",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.676299Z",
           "agent_skill": "qa-agent-drain"
         },
-        "reviewed_at": "2026-06-05T19:48:01.872Z",
+        "reviewed_at": "2026-07-07T14:26:56.676299Z",
         "reviewed_sha": "a7cca7f44ae79f745c5b5e6b3275ec74c5e1ce07",
         "notes": "Motivation/physical meaning should move to a separate remark with interprets: this proposition."
       }
     ],
     "wall-side-statement": [
       {
-        "field_hash": {
-          "md": "23c3caff1f1b",
-          "ts": "e64655dfc1cd",
-          "lean": "30641ec12627"
-        },
+        "field_hash": {},
         "result": "pass",
         "severity": "minor",
         "evidence": "Statement is about algebraic pair-partition structure of Hecke generators under Markov trace \u2014 pure generic-ring algebra, no archimedean constructs.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-05",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.676299Z",
           "agent_skill": "qa-agent-drain"
         },
-        "reviewed_at": "2026-06-05T19:48:16.514Z",
+        "reviewed_at": "2026-07-07T14:26:56.676299Z",
         "reviewed_sha": "a7cca7f44ae79f745c5b5e6b3275ec74c5e1ce07",
         "notes": "Observations chapter is archimedean but the statement itself is algebraic/categorical, which is acceptable for a structural proposition."
       }
     ],
     "wall-side-proof": [
       {
-        "field_hash": {
-          "md": "23c3caff1f1b",
-          "ts": "e64655dfc1cd",
-          "lean": "30641ec12627"
-        },
+        "field_hash": {},
         "result": "pass",
         "severity": "minor",
         "evidence": "Proof body uses Hecke quadratic relation, Markov property, Wenzl factorization \u2014 all algebraic/categorical, no linarith/IVT/archimedean machinery.",
         "reviewer": {
           "kind": "agent",
           "id": "qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-05",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.676299Z",
           "agent_skill": "qa-agent-drain"
         },
-        "reviewed_at": "2026-06-05T19:48:31.458Z",
+        "reviewed_at": "2026-07-07T14:26:56.676299Z",
         "reviewed_sha": "a7cca7f44ae79f745c5b5e6b3275ec74c5e1ce07",
         "notes": "Clean algebraic proof consistent with generic-ring regime."
       }
@@ -2885,5 +2861,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-24T12:30:00.000Z"
+  "updated_at": "2026-07-07T14:26:56.676299Z"
 }

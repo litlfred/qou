@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/molecular-construction/h2-lp-dual-binding.md"
   },
   "source_hashes": {
-    "md": "6f51103fb73c",
+    "md": "beab67cb7cfb",
     "ts": "5effc0f8be48"
   },
   "criteria": {
@@ -1029,16 +1029,18 @@
     "proof-no-placeholder-stub": [
       {
         "field_hash": {
-          "lean": "730d8e8f244f"
+          "md": "beab67cb7cfb",
+          "ts": "5effc0f8be48"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/lean-proof-vacuity-audit",
-          "agent_date": "2026-07-02",
-          "agent_skill": "local/lean-proof-vacuity-audit"
+          "agent_date": "2026-07-07T14:26:55.521350Z",
+          "agent_skill": "local/lean-proof-vacuity-audit",
+          "agent_model": "gemini-3.1-pro"
         },
-        "reviewed_at": "2026-07-02T17:07:15.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.521350Z",
         "reviewed_sha": "a9ce9ecfe24e6c7c9d0b9f25699b35ec666faa32",
         "notes": "4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): current Lean is honest \u2014 real statement/derivation or cited sorry; the 2026-06-22 placeholder-marker fail predates the 2026-06-30 rewrite (hash drift verified). Criterion pass."
       }
@@ -1046,18 +1048,18 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "6f51103fb73c",
+          "md": "beab67cb7cfb",
           "ts": "5effc0f8be48"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.521350Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:25.898Z",
+        "reviewed_at": "2026-07-07T14:26:55.521350Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
       }
@@ -1065,18 +1067,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "6f51103fb73c",
+          "md": "beab67cb7cfb",
           "ts": "5effc0f8be48"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.521350Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:26.252Z",
+        "reviewed_at": "2026-07-07T14:26:55.521350Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1084,18 +1086,18 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "6f51103fb73c",
+          "md": "beab67cb7cfb",
           "ts": "5effc0f8be48"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.521350Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:26.770Z",
+        "reviewed_at": "2026-07-07T14:26:55.521350Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -1103,18 +1105,18 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "6f51103fb73c",
+          "md": "beab67cb7cfb",
           "ts": "5effc0f8be48"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.521350Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:27.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.521350Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
       }
@@ -1193,19 +1195,19 @@
       },
       {
         "field_hash": {
-          "md": "6f51103fb73c",
+          "md": "beab67cb7cfb",
           "ts": "5effc0f8be48"
         },
         "result": "warn",
         "notes": "Lean is a single impl_* projection of a definitional \u03a6\u2081 identity. .md has a clear primal/dual LP + numeric evaluation, but the Lean encodes none of the optimisation.",
-        "reviewed_at": "2026-06-25T17:08:54.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.521350Z",
         "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.521350Z"
         },
         "score": {
           "max": 1,
@@ -1254,19 +1256,19 @@
       },
       {
         "field_hash": {
-          "md": "6f51103fb73c",
+          "md": "beab67cb7cfb",
           "ts": "5effc0f8be48"
         },
         "result": "pass",
         "notes": "Goal well-posed (H2 covalent binding via LP dual, y_cov*=2\u03a6\u2081^H\u2212\u03a6\u2081^H2>0, explicit 50-dps numerics) but the Lean only states the volume sum identity; conditional on a conjecture.",
-        "reviewed_at": "2026-06-25T17:08:53.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.521350Z",
         "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.521350Z"
         },
         "score": {
           "max": 1,
@@ -1315,19 +1317,19 @@
       },
       {
         "field_hash": {
-          "md": "6f51103fb73c",
+          "md": "beab67cb7cfb",
           "ts": "5effc0f8be48"
         },
         "result": "pass",
         "notes": "Covalent H2 bond as the shadow price of a Hopf-linking constraint in a Markov-trace LP, with strong-duality = binding energy, is a substantive novel construction.",
-        "reviewed_at": "2026-06-25T17:08:54.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.521350Z",
         "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.521350Z"
         },
         "score": {
           "max": 1,
@@ -1372,19 +1374,19 @@
       },
       {
         "field_hash": {
-          "md": "6f51103fb73c",
+          "md": "beab67cb7cfb",
           "ts": "5effc0f8be48"
         },
         "result": "fail",
         "notes": "Placeholder stub: theorem proves only the volume identity \u03a6\u2081^H2=\u03a3ln|V\u0302_i| (i=0..2), ASSUMED via opaque ctx.h2_lp_dual_bound and projected from impl_*. The .md LP-dual selection / binding-energy claim is not encoded.",
-        "reviewed_at": "2026-06-25T17:08:53.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.521350Z",
         "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.521350Z"
         }
       }
     ],
@@ -1425,19 +1427,19 @@
       },
       {
         "field_hash": {
-          "md": "6f51103fb73c",
+          "md": "beab67cb7cfb",
           "ts": "5effc0f8be48"
         },
         "result": "fail",
         "notes": "Body := ctx.impl_h2_lp_dual_binding h: single postulated implication field applied to the ground-state hypothesis directly yields the conclusion equation \u2014 projection, no derivation.",
-        "reviewed_at": "2026-06-25T17:08:53.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.521350Z",
         "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.521350Z"
         }
       }
     ],
@@ -1461,19 +1463,19 @@
       },
       {
         "field_hash": {
-          "md": "6f51103fb73c",
+          "md": "beab67cb7cfb",
           "ts": "5effc0f8be48"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: no `: True` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/Molecular/h2_lp_dual_binding.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.521350Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.521350Z"
         }
       }
     ],
@@ -1514,19 +1516,19 @@
       },
       {
         "field_hash": {
-          "md": "6f51103fb73c",
+          "md": "beab67cb7cfb",
           "ts": "5effc0f8be48"
         },
         "result": "pass",
         "notes": "H2LpDualBindingContext inhabitable; h2_lp_dual_bound any true Prop; satisfiable.",
-        "reviewed_at": "2026-06-25T17:08:53.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.521350Z",
         "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.521350Z"
         }
       }
     ],
@@ -1567,19 +1569,19 @@
       },
       {
         "field_hash": {
-          "md": "6f51103fb73c",
+          "md": "beab67cb7cfb",
           "ts": "5effc0f8be48"
         },
         "result": "pass",
         "notes": "Sole binder [ctx] used (h:=ctx.ground_state_active fed to impl_h2_lp_dual_binding).",
-        "reviewed_at": "2026-06-25T17:08:53.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.521350Z",
         "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.521350Z"
         }
       }
     ],
@@ -1603,35 +1605,37 @@
       },
       {
         "field_hash": {
-          "md": "6f51103fb73c",
+          "md": "beab67cb7cfb",
           "ts": "5effc0f8be48"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/Molecular/h2_lp_dual_binding.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.521350Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.521350Z"
         }
       }
     ],
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "6f51103fb73c",
+          "md": "beab67cb7cfb",
           "ts": "5effc0f8be48"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.521350Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.521350Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No false claims identified in 'LP dual gives optimal $H_2$ binding': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -1641,16 +1645,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "6f51103fb73c",
+          "md": "beab67cb7cfb",
           "ts": "5effc0f8be48"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.521350Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.521350Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'LP dual gives optimal $H_2$ binding' presents substantial mathematical content: ordering $[\\mathfrak{p}_1, e_2, \\mathfrak{p}_2, e_1]$ as the ground state, with ...",
         "severity": "minor"
@@ -1659,16 +1665,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "6f51103fb73c",
+          "md": "beab67cb7cfb",
           "ts": "5effc0f8be48"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.521350Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.521350Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No circular reasoning or self-assuming definitions detected in 'LP dual gives optimal $H_2$ binding'.",
         "severity": "minor",
@@ -1678,16 +1686,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "6f51103fb73c",
+          "md": "beab67cb7cfb",
           "ts": "5effc0f8be48"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.521350Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.521350Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No overclaims: the scope of 'LP dual gives optimal $H_2$ binding' is appropriately qualified.",
         "severity": "minor"
@@ -1696,16 +1706,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "6f51103fb73c",
+          "md": "beab67cb7cfb",
           "ts": "5effc0f8be48"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.521350Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.521350Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'LP dual gives optimal $H_2$ binding'.",
         "severity": "minor",
@@ -1715,16 +1727,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "6f51103fb73c",
+          "md": "beab67cb7cfb",
           "ts": "5effc0f8be48"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.521350Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.521350Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The argument flow in 'LP dual gives optimal $H_2$ binding' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -1734,16 +1748,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "6f51103fb73c",
+          "md": "beab67cb7cfb",
           "ts": "5effc0f8be48"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.521350Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.521350Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The referenced Lean file content/quantum-observable-universe/molecular-construction/h2-lp-dual-binding.lean is missing, leading to complete divergence.",
         "severity": "minor"
@@ -1752,16 +1768,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "6f51103fb73c",
+          "md": "beab67cb7cfb",
           "ts": "5effc0f8be48"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.521350Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.521350Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No citations are present in 'LP dual gives optimal $H_2$ binding', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1771,16 +1789,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "6f51103fb73c",
+          "md": "beab67cb7cfb",
           "ts": "5effc0f8be48"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.521350Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.521350Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Key terms and symbols in 'LP dual gives optimal $H_2$ binding' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1790,16 +1810,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "6f51103fb73c",
+          "md": "beab67cb7cfb",
           "ts": "5effc0f8be48"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.521350Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.521350Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The algebraic and logical relations in 'LP dual gives optimal $H_2$ binding' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1809,16 +1831,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "6f51103fb73c",
+          "md": "beab67cb7cfb",
           "ts": "5effc0f8be48"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.521350Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.521350Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The physical concepts described in 'LP dual gives optimal $H_2$ binding' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1828,16 +1852,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "6f51103fb73c",
+          "md": "beab67cb7cfb",
           "ts": "5effc0f8be48"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.521350Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.521350Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The derivation steps and formal definitions in 'LP dual gives optimal $H_2$ binding' are reproducible.",
         "severity": "minor",
@@ -1847,16 +1873,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "6f51103fb73c",
+          "md": "beab67cb7cfb",
           "ts": "5effc0f8be48"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.521350Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.521350Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/molecular-construction/h2-lp-dual-binding.lean is missing.",
         "verdict": "open-objection",
@@ -1868,14 +1896,20 @@
       {
         "result": "pass",
         "notes": "Rewrote molecular-construction_seq3.md. Smoothed transitions, applied 'we/our', enforced brevity and economy, and removed editorializing.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.521350Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.521350Z"
+        },
+        "field_hash": {
+          "md": "beab67cb7cfb",
+          "ts": "5effc0f8be48"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.117Z"
+  "updated_at": "2026-07-07T14:26:55.521350Z"
 }

@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/lifting-and-descent/blowup-regularity-as-lifting.md"
   },
   "source_hashes": {
-    "md": "b738f11901e6",
+    "md": "ada0845f470f",
     "ts": "51b0293a8d49"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Applied Milnor standards to lifting-and-descent_seq4.md. Cleaned up exposition of motivic substrate and blowup obstruction. Reorganized Kummer filtration flow for linear logic. Shorter sentences, active verbs. All math formulas preserved.",
-        "reviewed_at": "2026-07-06T23:07:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.677256Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.677256Z"
+        },
+        "field_hash": {
+          "md": "ada0845f470f",
+          "ts": "51b0293a8d49"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.146Z"
+  "updated_at": "2026-07-07T14:26:55.677256Z"
 }

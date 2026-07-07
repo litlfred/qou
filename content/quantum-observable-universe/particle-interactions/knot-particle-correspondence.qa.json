@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/knot-particle-correspondence.lean"
   },
   "source_hashes": {
-    "md": "934eb4316266",
+    "md": "50f359a58e78",
     "ts": "9f47cd75af28",
     "lean": "1dfe0eb28b92"
   },
@@ -1747,7 +1747,7 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "934eb4316266",
+          "md": "50f359a58e78",
           "ts": "9f47cd75af28",
           "lean": "1dfe0eb28b92"
         },
@@ -1755,11 +1755,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.237575Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:19.259Z",
+        "reviewed_at": "2026-07-07T14:26:57.237575Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
       }
@@ -1767,7 +1767,7 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "934eb4316266",
+          "md": "50f359a58e78",
           "ts": "9f47cd75af28",
           "lean": "1dfe0eb28b92"
         },
@@ -1775,11 +1775,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.237575Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:19.668Z",
+        "reviewed_at": "2026-07-07T14:26:57.237575Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1787,7 +1787,7 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "934eb4316266",
+          "md": "50f359a58e78",
           "ts": "9f47cd75af28",
           "lean": "1dfe0eb28b92"
         },
@@ -1795,11 +1795,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.237575Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:20.041Z",
+        "reviewed_at": "2026-07-07T14:26:57.237575Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -1807,7 +1807,7 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "934eb4316266",
+          "md": "50f359a58e78",
           "ts": "9f47cd75af28",
           "lean": "1dfe0eb28b92"
         },
@@ -1815,11 +1815,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.237575Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:20.492Z",
+        "reviewed_at": "2026-07-07T14:26:57.237575Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
       }
@@ -1845,7 +1845,7 @@
       },
       {
         "field_hash": {
-          "md": "934eb4316266",
+          "md": "50f359a58e78",
           "ts": "9f47cd75af28",
           "lean": "1dfe0eb28b92"
         },
@@ -1853,9 +1853,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.237575Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_at": "2026-07-07T14:26:57.237575Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:knot-particle-correspondence' aligns with Lean declaration. Sorry-free."
       }
@@ -1863,7 +1865,7 @@
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "934eb4316266",
+          "md": "50f359a58e78",
           "ts": "9f47cd75af28",
           "lean": "1dfe0eb28b92"
         },
@@ -1875,11 +1877,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.237575Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:21.239Z",
+        "reviewed_at": "2026-07-07T14:26:57.237575Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
       }
@@ -1887,7 +1889,7 @@
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "934eb4316266",
+          "md": "50f359a58e78",
           "ts": "9f47cd75af28",
           "lean": "1dfe0eb28b92"
         },
@@ -1899,11 +1901,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.237575Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:21.549Z",
+        "reviewed_at": "2026-07-07T14:26:57.237575Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
       }
@@ -1911,7 +1913,7 @@
     "proof-rater-novelty": [
       {
         "field_hash": {
-          "md": "934eb4316266",
+          "md": "50f359a58e78",
           "ts": "9f47cd75af28",
           "lean": "1dfe0eb28b92"
         },
@@ -1923,11 +1925,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.237575Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:22.002Z",
+        "reviewed_at": "2026-07-07T14:26:57.237575Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
       }
@@ -1935,7 +1937,7 @@
     "proof-statement-integrity": [
       {
         "field_hash": {
-          "md": "934eb4316266",
+          "md": "50f359a58e78",
           "ts": "9f47cd75af28",
           "lean": "1dfe0eb28b92"
         },
@@ -1943,11 +1945,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.237575Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:22.320Z",
+        "reviewed_at": "2026-07-07T14:26:57.237575Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
       }
@@ -1955,7 +1957,7 @@
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "934eb4316266",
+          "md": "50f359a58e78",
           "ts": "9f47cd75af28",
           "lean": "1dfe0eb28b92"
         },
@@ -1963,11 +1965,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.237575Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:22.677Z",
+        "reviewed_at": "2026-07-07T14:26:57.237575Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
       }
@@ -1975,7 +1977,7 @@
     "proof-no-trivial-true": [
       {
         "field_hash": {
-          "md": "934eb4316266",
+          "md": "50f359a58e78",
           "ts": "9f47cd75af28",
           "lean": "1dfe0eb28b92"
         },
@@ -1983,11 +1985,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.237575Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:23.082Z",
+        "reviewed_at": "2026-07-07T14:26:57.237575Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
       }
@@ -1995,7 +1997,7 @@
     "proof-no-false-premise": [
       {
         "field_hash": {
-          "md": "934eb4316266",
+          "md": "50f359a58e78",
           "ts": "9f47cd75af28",
           "lean": "1dfe0eb28b92"
         },
@@ -2003,11 +2005,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.237575Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:23.444Z",
+        "reviewed_at": "2026-07-07T14:26:57.237575Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
       }
@@ -2015,7 +2017,7 @@
     "proof-no-unused-hypotheses": [
       {
         "field_hash": {
-          "md": "934eb4316266",
+          "md": "50f359a58e78",
           "ts": "9f47cd75af28",
           "lean": "1dfe0eb28b92"
         },
@@ -2023,11 +2025,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.237575Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:23.827Z",
+        "reviewed_at": "2026-07-07T14:26:57.237575Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
       }
@@ -2035,7 +2037,7 @@
     "proof-no-decide-masking": [
       {
         "field_hash": {
-          "md": "934eb4316266",
+          "md": "50f359a58e78",
           "ts": "9f47cd75af28",
           "lean": "1dfe0eb28b92"
         },
@@ -2043,11 +2045,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.237575Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:24.102Z",
+        "reviewed_at": "2026-07-07T14:26:57.237575Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
@@ -2055,7 +2057,7 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "934eb4316266",
+          "md": "50f359a58e78",
           "ts": "9f47cd75af28",
           "lean": "1dfe0eb28b92"
         },
@@ -2063,9 +2065,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.237575Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.237575Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'Knot--particle correspondence via $q$-Schur--Weyl duality': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -2075,7 +2079,7 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "934eb4316266",
+          "md": "50f359a58e78",
           "ts": "9f47cd75af28",
           "lean": "1dfe0eb28b92"
         },
@@ -2083,9 +2087,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.237575Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.237575Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Knot--particle correspondence via $q$-Schur--Weyl duality' presents substantial mathematical content: Let $V = V_{1/2}$ be the fundamental representation of $\\mathcal{U}_q(\\mathfrak{su}(2))$ and let $B_n$ act faithfully...",
         "severity": "minor"
@@ -2094,7 +2100,7 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "934eb4316266",
+          "md": "50f359a58e78",
           "ts": "9f47cd75af28",
           "lean": "1dfe0eb28b92"
         },
@@ -2102,9 +2108,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.237575Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.237575Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Knot--particle correspondence via $q$-Schur--Weyl duality'.",
         "severity": "minor",
@@ -2114,7 +2122,7 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "934eb4316266",
+          "md": "50f359a58e78",
           "ts": "9f47cd75af28",
           "lean": "1dfe0eb28b92"
         },
@@ -2122,9 +2130,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.237575Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.237575Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'Knot--particle correspondence via $q$-Schur--Weyl duality' is appropriately qualified.",
         "severity": "minor"
@@ -2133,7 +2143,7 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "934eb4316266",
+          "md": "50f359a58e78",
           "ts": "9f47cd75af28",
           "lean": "1dfe0eb28b92"
         },
@@ -2141,9 +2151,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.237575Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.237575Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Knot--particle correspondence via $q$-Schur--Weyl duality'.",
         "severity": "minor",
@@ -2153,7 +2165,7 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "934eb4316266",
+          "md": "50f359a58e78",
           "ts": "9f47cd75af28",
           "lean": "1dfe0eb28b92"
         },
@@ -2161,9 +2173,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.237575Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.237575Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The argument flow in 'Knot--particle correspondence via $q$-Schur--Weyl duality' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -2173,7 +2187,7 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "934eb4316266",
+          "md": "50f359a58e78",
           "ts": "9f47cd75af28",
           "lean": "1dfe0eb28b92"
         },
@@ -2181,9 +2195,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.237575Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.237575Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Lean formalization and narrative for 'Knot--particle correspondence via $q$-Schur--Weyl duality' are in complete agreement.",
         "severity": "minor"
@@ -2192,7 +2208,7 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "934eb4316266",
+          "md": "50f359a58e78",
           "ts": "9f47cd75af28",
           "lean": "1dfe0eb28b92"
         },
@@ -2200,9 +2216,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.237575Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.237575Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Knot--particle correspondence via $q$-Schur--Weyl duality', hence no citation misuse is possible.",
         "severity": "minor",
@@ -2212,7 +2230,7 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "934eb4316266",
+          "md": "50f359a58e78",
           "ts": "9f47cd75af28",
           "lean": "1dfe0eb28b92"
         },
@@ -2220,9 +2238,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.237575Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.237575Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Knot--particle correspondence via $q$-Schur--Weyl duality' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -2232,7 +2252,7 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "934eb4316266",
+          "md": "50f359a58e78",
           "ts": "9f47cd75af28",
           "lean": "1dfe0eb28b92"
         },
@@ -2240,9 +2260,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.237575Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.237575Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Knot--particle correspondence via $q$-Schur--Weyl duality' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -2252,7 +2274,7 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "934eb4316266",
+          "md": "50f359a58e78",
           "ts": "9f47cd75af28",
           "lean": "1dfe0eb28b92"
         },
@@ -2260,9 +2282,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.237575Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.237575Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Knot--particle correspondence via $q$-Schur--Weyl duality' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -2272,7 +2296,7 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "934eb4316266",
+          "md": "50f359a58e78",
           "ts": "9f47cd75af28",
           "lean": "1dfe0eb28b92"
         },
@@ -2280,9 +2304,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.237575Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.237575Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'Knot--particle correspondence via $q$-Schur--Weyl duality' are reproducible.",
         "severity": "minor",
@@ -2292,7 +2318,7 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "934eb4316266",
+          "md": "50f359a58e78",
           "ts": "9f47cd75af28",
           "lean": "1dfe0eb28b92"
         },
@@ -2300,9 +2326,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.237575Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.237575Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -2334,14 +2362,21 @@
       {
         "result": "pass",
         "notes": "Rewrote seq13 to strictly enforce Milnor brevity. Trimmed fluff from section intros, removed editorializing like 'literally', and removed forward references masquerading as non-linear prose where possible. Preserved all math blocks and diagram structures.",
-        "reviewed_at": "2026-07-06T22:46:00Z",
+        "reviewed_at": "2026-07-07T14:26:57.237575Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.237575Z"
+        },
+        "field_hash": {
+          "md": "50f359a58e78",
+          "ts": "9f47cd75af28",
+          "lean": "1dfe0eb28b92"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.802Z"
+  "updated_at": "2026-07-07T14:26:57.237575Z"
 }

@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/mass-theory/six-canonical-knot-operators.md"
   },
   "source_hashes": {
-    "md": "7703e7ed43a1",
+    "md": "2511545d2adf",
     "ts": "280a4f5846ad"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Rewrote seq17 enforcing Milnor rules. Restructured wordy trajectory explanations into direct mathematical prose. Streamlined 'why before what' for the Reeb bundle and geometric constructs. Verified math formatting.",
-        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.763096Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.763096Z"
+        },
+        "field_hash": {
+          "md": "2511545d2adf",
+          "ts": "280a4f5846ad"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-07T14:26:56.763096Z"
 }

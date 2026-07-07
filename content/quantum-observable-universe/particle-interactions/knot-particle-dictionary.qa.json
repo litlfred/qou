@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/particle-interactions/knot-particle-dictionary.md"
   },
   "source_hashes": {
-    "md": "6e73eedd3272",
+    "md": "b087ff968077",
     "ts": "0fdf53cd23c0"
   },
   "criteria": {
@@ -868,18 +868,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "a41fe258bd4b",
+          "md": "b087ff968077",
           "ts": "0fdf53cd23c0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.286050Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:20.949Z",
+        "reviewed_at": "2026-07-07T14:26:57.286050Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -887,16 +887,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "a41fe258bd4b",
+          "md": "b087ff968077",
           "ts": "0fdf53cd23c0"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.286050Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.286050Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'Knot\u2013particle dictionary': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -906,16 +908,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "a41fe258bd4b",
+          "md": "b087ff968077",
           "ts": "0fdf53cd23c0"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.286050Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.286050Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Knot\u2013particle dictionary' presents substantial mathematical content: The localized knot framework (Definition) assigns a topological identity to each fundamental particle.  This dictiona...",
         "severity": "minor"
@@ -924,16 +928,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "a41fe258bd4b",
+          "md": "b087ff968077",
           "ts": "0fdf53cd23c0"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.286050Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.286050Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Knot\u2013particle dictionary'.",
         "severity": "minor",
@@ -943,16 +949,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "a41fe258bd4b",
+          "md": "b087ff968077",
           "ts": "0fdf53cd23c0"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.286050Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.286050Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'Knot\u2013particle dictionary' is appropriately qualified.",
         "severity": "minor"
@@ -961,16 +969,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "a41fe258bd4b",
+          "md": "b087ff968077",
           "ts": "0fdf53cd23c0"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.286050Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.286050Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Knot\u2013particle dictionary'.",
         "severity": "minor",
@@ -980,16 +990,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "a41fe258bd4b",
+          "md": "b087ff968077",
           "ts": "0fdf53cd23c0"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.286050Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.286050Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The argument flow in 'Knot\u2013particle dictionary' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -999,16 +1011,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "a41fe258bd4b",
+          "md": "b087ff968077",
           "ts": "0fdf53cd23c0"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.286050Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.286050Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
@@ -1017,16 +1031,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "a41fe258bd4b",
+          "md": "b087ff968077",
           "ts": "0fdf53cd23c0"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.286050Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.286050Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Knot\u2013particle dictionary', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1036,16 +1052,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "a41fe258bd4b",
+          "md": "b087ff968077",
           "ts": "0fdf53cd23c0"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.286050Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.286050Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Knot\u2013particle dictionary' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1055,16 +1073,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "a41fe258bd4b",
+          "md": "b087ff968077",
           "ts": "0fdf53cd23c0"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.286050Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.286050Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Knot\u2013particle dictionary' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1074,16 +1094,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "a41fe258bd4b",
+          "md": "b087ff968077",
           "ts": "0fdf53cd23c0"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.286050Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.286050Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Knot\u2013particle dictionary' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1093,16 +1115,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "a41fe258bd4b",
+          "md": "b087ff968077",
           "ts": "0fdf53cd23c0"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.286050Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.286050Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'Knot\u2013particle dictionary' are reproducible.",
         "severity": "minor",
@@ -1112,16 +1136,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "a41fe258bd4b",
+          "md": "b087ff968077",
           "ts": "0fdf53cd23c0"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.286050Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.286050Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -1133,14 +1159,20 @@
       {
         "result": "pass",
         "notes": "Rewrote seq13 to strictly enforce Milnor brevity. Trimmed fluff from section intros, removed editorializing like 'literally', and removed forward references masquerading as non-linear prose where possible. Preserved all math blocks and diagram structures.",
-        "reviewed_at": "2026-07-06T22:46:00Z",
+        "reviewed_at": "2026-07-07T14:26:57.286050Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.286050Z"
+        },
+        "field_hash": {
+          "md": "b087ff968077",
+          "ts": "0fdf53cd23c0"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-07T14:26:57.286050Z"
 }

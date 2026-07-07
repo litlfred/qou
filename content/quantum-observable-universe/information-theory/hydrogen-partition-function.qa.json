@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/information-theory/hydrogen-partition-function.lean"
   },
   "source_hashes": {
-    "md": "50c5035cf0f6",
+    "md": "84eac5c0a26e",
     "ts": "f3d60ec4db4b",
     "lean": "5acdc431797d"
   },
@@ -801,14 +801,21 @@
       {
         "result": "pass",
         "notes": "Streamlined stat-mech derivations. Compressed disjoint numbered lists in hydrogen section. Aligned physical derivations with concise declaratory statements. Preserved critical SUPERSEDED warning. Maintained all file markers.",
-        "reviewed_at": "2026-07-06T22:54:28Z",
+        "reviewed_at": "2026-07-07T14:26:55.567621Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.567621Z"
+        },
+        "field_hash": {
+          "md": "84eac5c0a26e",
+          "ts": "f3d60ec4db4b",
+          "lean": "5acdc431797d"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T04:39:43.766Z"
+  "updated_at": "2026-07-07T14:26:55.567621Z"
 }

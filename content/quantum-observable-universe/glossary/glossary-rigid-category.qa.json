@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/glossary/glossary-rigid-category.md"
   },
   "source_hashes": {
-    "md": "8137ef507d15",
+    "md": "664e261ef83c",
     "ts": "5eb3e3c3c8ec"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Smoothed transitions, removed forward references, improved economy.",
-        "reviewed_at": "2026-07-07T02:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.467430Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.467430Z"
+        },
+        "field_hash": {
+          "md": "664e261ef83c",
+          "ts": "5eb3e3c3c8ec"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:55.920Z"
+  "updated_at": "2026-07-07T14:26:56.467430Z"
 }

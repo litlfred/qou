@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/information-theory/q-heat-kernel-peter-weyl.lean"
   },
   "source_hashes": {
-    "md": "894aac8ae98d",
+    "md": "60f7e344fc6f",
     "ts": "de698ddcfef5",
     "lean": "011b477d8d9d"
   },
@@ -37,14 +37,21 @@
       {
         "result": "pass",
         "notes": "Streamlined heat kernel block. Eliminated unnecessary bullet points and condensed mathematical exposition. Replaced disjoint index styling with linear narrative.",
-        "reviewed_at": "2026-07-06T22:52:25Z",
+        "reviewed_at": "2026-07-07T14:26:55.615439Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.615439Z"
+        },
+        "field_hash": {
+          "md": "60f7e344fc6f",
+          "ts": "de698ddcfef5",
+          "lean": "011b477d8d9d"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.008Z"
+  "updated_at": "2026-07-07T14:26:55.615439Z"
 }

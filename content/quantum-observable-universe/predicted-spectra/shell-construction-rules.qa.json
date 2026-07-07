@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/predicted-spectra/shell-construction-rules.md"
   },
   "source_hashes": {
-    "md": "bd642d25a57f",
+    "md": "7a76c6c37f7a",
     "ts": "f1c471526da4"
   },
   "criteria": {
@@ -838,16 +838,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "bd642d25a57f",
+          "md": "7a76c6c37f7a",
           "ts": "f1c471526da4"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.428365Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.428365Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Block placement and kind 'remark' match validated structurally.",
         "severity": "minor"
@@ -856,16 +858,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "bd642d25a57f",
+          "md": "7a76c6c37f7a",
           "ts": "f1c471526da4"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.428365Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.428365Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'Construction rules for nuclear shells from the torus knot hierarchy': mathematical reasoning is consistent in prose.",
         "severity": "minor",
@@ -875,16 +879,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "bd642d25a57f",
+          "md": "7a76c6c37f7a",
           "ts": "f1c471526da4"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.428365Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.428365Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Construction rules for nuclear shells from the torus knot hierarchy' presents substantial mathematical content: 'The $Q$-value for any $\\beta^-$ decay'.",
         "severity": "minor"
@@ -893,16 +899,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "bd642d25a57f",
+          "md": "7a76c6c37f7a",
           "ts": "f1c471526da4"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.428365Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.428365Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Construction rules for nuclear shells from the torus knot hierarchy'.",
         "severity": "minor",
@@ -912,16 +920,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "bd642d25a57f",
+          "md": "7a76c6c37f7a",
           "ts": "f1c471526da4"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.428365Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.428365Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The remarks and narrative scope in 'Construction rules for nuclear shells from the torus knot hierarchy' are appropriately qualified.",
         "severity": "minor"
@@ -930,16 +940,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "bd642d25a57f",
+          "md": "7a76c6c37f7a",
           "ts": "f1c471526da4"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.428365Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.428365Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Construction rules for nuclear shells from the torus knot hierarchy'.",
         "severity": "minor",
@@ -949,16 +961,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "bd642d25a57f",
+          "md": "7a76c6c37f7a",
           "ts": "f1c471526da4"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.428365Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.428365Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose arguments in 'Construction rules for nuclear shells from the torus knot hierarchy' proceed logically through the stated steps.",
         "severity": "minor",
@@ -968,16 +982,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "bd642d25a57f",
+          "md": "7a76c6c37f7a",
           "ts": "f1c471526da4"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.428365Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.428365Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No Lean sibling required; narrative matches the expected configuration.",
         "severity": "minor"
@@ -986,16 +1002,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "bd642d25a57f",
+          "md": "7a76c6c37f7a",
           "ts": "f1c471526da4"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.428365Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.428365Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Construction rules for nuclear shells from the torus knot hierarchy', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1005,16 +1023,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "bd642d25a57f",
+          "md": "7a76c6c37f7a",
           "ts": "f1c471526da4"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.428365Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.428365Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Construction rules for nuclear shells from the torus knot hierarchy' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1024,16 +1044,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "bd642d25a57f",
+          "md": "7a76c6c37f7a",
           "ts": "f1c471526da4"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.428365Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.428365Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Construction rules for nuclear shells from the torus knot hierarchy' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1043,16 +1065,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "bd642d25a57f",
+          "md": "7a76c6c37f7a",
           "ts": "f1c471526da4"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.428365Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.428365Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Construction rules for nuclear shells from the torus knot hierarchy' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1062,16 +1086,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "bd642d25a57f",
+          "md": "7a76c6c37f7a",
           "ts": "f1c471526da4"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.428365Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.428365Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'Construction rules for nuclear shells from the torus knot hierarchy' are reproducible.",
         "severity": "minor"
@@ -1080,16 +1106,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "bd642d25a57f",
+          "md": "7a76c6c37f7a",
           "ts": "f1c471526da4"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.428365Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.428365Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -1101,14 +1129,20 @@
       {
         "result": "pass",
         "notes": "Rewrote prose blocks to adhere to Milnor standards. Improved economy, preserved all math.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.428365Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.428365Z"
+        },
+        "field_hash": {
+          "md": "7a76c6c37f7a",
+          "ts": "f1c471526da4"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.812Z"
+  "updated_at": "2026-07-07T14:26:56.428365Z"
 }

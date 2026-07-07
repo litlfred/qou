@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/mass-theory/three-calibration-inputs.md"
   },
   "source_hashes": {
-    "md": "56f1201a4b68",
+    "md": "d3f6e72a2522",
     "ts": "da6a29fcff4a"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Rewrote mass-theory_seq1.md for Milnor standards: stripped technical debt disclaimers, declarative voice.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.890711Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.890711Z"
+        },
+        "field_hash": {
+          "md": "d3f6e72a2522",
+          "ts": "da6a29fcff4a"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-07T14:26:56.890711Z"
 }

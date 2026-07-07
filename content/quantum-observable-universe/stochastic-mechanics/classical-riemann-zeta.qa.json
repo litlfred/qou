@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/stochastic-mechanics/classical-riemann-zeta.lean"
   },
   "source_hashes": {
-    "md": "ef0c9e4cbbc5",
+    "md": "401dc1066949",
     "ts": "0abd9255ee80",
     "lean": "fd983a67ac3f"
   },
@@ -894,7 +894,7 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "ef0c9e4cbbc5",
+          "md": "401dc1066949",
           "ts": "0abd9255ee80",
           "lean": "fd983a67ac3f"
         },
@@ -902,9 +902,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.053770Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.053770Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "Block placement and kind match validated structurally."
@@ -913,7 +915,7 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "ef0c9e4cbbc5",
+          "md": "401dc1066949",
           "ts": "0abd9255ee80",
           "lean": "fd983a67ac3f"
         },
@@ -921,9 +923,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.053770Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.053770Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "classical-riemann-zeta.lean:1 \u2014 Lean file exists",
@@ -933,7 +937,7 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "ef0c9e4cbbc5",
+          "md": "401dc1066949",
           "ts": "0abd9255ee80",
           "lean": "fd983a67ac3f"
         },
@@ -941,9 +945,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.053770Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.053770Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-riemann-zeta.ts:1",
@@ -953,7 +959,7 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "ef0c9e4cbbc5",
+          "md": "401dc1066949",
           "ts": "0abd9255ee80",
           "lean": "fd983a67ac3f"
         },
@@ -961,9 +967,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.053770Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.053770Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-riemann-zeta.ts:1",
@@ -973,7 +981,7 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "ef0c9e4cbbc5",
+          "md": "401dc1066949",
           "ts": "0abd9255ee80",
           "lean": "fd983a67ac3f"
         },
@@ -981,9 +989,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.053770Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.053770Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-riemann-zeta.ts:1",
@@ -993,7 +1003,7 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "ef0c9e4cbbc5",
+          "md": "401dc1066949",
           "ts": "0abd9255ee80",
           "lean": "fd983a67ac3f"
         },
@@ -1001,9 +1011,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.053770Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.053770Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-riemann-zeta.ts:1",
@@ -1013,7 +1025,7 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "ef0c9e4cbbc5",
+          "md": "401dc1066949",
           "ts": "0abd9255ee80",
           "lean": "fd983a67ac3f"
         },
@@ -1021,9 +1033,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.053770Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.053770Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-riemann-zeta.ts:1",
@@ -1033,7 +1047,7 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "ef0c9e4cbbc5",
+          "md": "401dc1066949",
           "ts": "0abd9255ee80",
           "lean": "fd983a67ac3f"
         },
@@ -1041,9 +1055,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.053770Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.053770Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-riemann-zeta.ts:1",
@@ -1053,7 +1069,7 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "ef0c9e4cbbc5",
+          "md": "401dc1066949",
           "ts": "0abd9255ee80",
           "lean": "fd983a67ac3f"
         },
@@ -1061,9 +1077,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.053770Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.053770Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-riemann-zeta.lean:1",
@@ -1073,7 +1091,7 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "ef0c9e4cbbc5",
+          "md": "401dc1066949",
           "ts": "0abd9255ee80",
           "lean": "fd983a67ac3f"
         },
@@ -1081,9 +1099,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.053770Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.053770Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-riemann-zeta.ts:1",
@@ -1093,7 +1113,7 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "ef0c9e4cbbc5",
+          "md": "401dc1066949",
           "ts": "0abd9255ee80",
           "lean": "fd983a67ac3f"
         },
@@ -1101,9 +1121,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.053770Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.053770Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-riemann-zeta.ts:1",
@@ -1113,7 +1135,7 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "ef0c9e4cbbc5",
+          "md": "401dc1066949",
           "ts": "0abd9255ee80",
           "lean": "fd983a67ac3f"
         },
@@ -1121,9 +1143,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.053770Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.053770Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-riemann-zeta.ts:1",
@@ -1133,7 +1157,7 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "ef0c9e4cbbc5",
+          "md": "401dc1066949",
           "ts": "0abd9255ee80",
           "lean": "fd983a67ac3f"
         },
@@ -1141,9 +1165,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.053770Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.053770Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-riemann-zeta.ts:1",
@@ -1153,7 +1179,7 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "ef0c9e4cbbc5",
+          "md": "401dc1066949",
           "ts": "0abd9255ee80",
           "lean": "fd983a67ac3f"
         },
@@ -1161,9 +1187,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.053770Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.053770Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-riemann-zeta.ts:1",
@@ -1173,7 +1201,7 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "ef0c9e4cbbc5",
+          "md": "401dc1066949",
           "ts": "0abd9255ee80",
           "lean": "fd983a67ac3f"
         },
@@ -1181,9 +1209,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.053770Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.053770Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-riemann-zeta.md:1 \u2014 Define the classical Riemann zeta function \\zeta(s) as the adelic",
@@ -1196,14 +1226,21 @@
       {
         "result": "pass",
         "notes": "Cleaned up the graded Baer-star and classical limit implications. Reduced clutter around the Riemann hypothesis statement and macroscopic stability.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.053770Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.053770Z"
+        },
+        "field_hash": {
+          "md": "401dc1066949",
+          "ts": "0abd9255ee80",
+          "lean": "fd983a67ac3f"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T23:04:20.088Z"
+  "updated_at": "2026-07-07T14:26:56.053770Z"
 }

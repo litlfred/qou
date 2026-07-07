@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/lifting-and-descent/reeb-primes-as-orbits.md"
   },
   "source_hashes": {
-    "md": "603a760a5cda",
+    "md": "403eba435d31",
     "ts": "3a3f6dc180c7"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Rewrote blocks regarding categorical jet prolongation, Reeb flow, and primes as orbits. Compacted verbose descriptions into active statements. Standardized list formats. Checked file markers.",
-        "reviewed_at": "2026-07-06T23:01:02Z",
+        "reviewed_at": "2026-07-07T14:26:55.668259Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.668259Z"
+        },
+        "field_hash": {
+          "md": "403eba435d31",
+          "ts": "3a3f6dc180c7"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.146Z"
+  "updated_at": "2026-07-07T14:26:55.668259Z"
 }

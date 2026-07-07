@@ -7,8 +7,8 @@
     "md": "../qou/content/quantum-observable-universe/information-theory/parallel-fibre-noninteraction.md"
   },
   "source_hashes": {
-    "md": "1f2ebd6f5d5e",
-    "ts": "1ad7126dc0c3"
+    "md": "9c19abf77108",
+    "ts": "922efe26f2e1"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Rewrote blocks linearly: stripped forward references (e.g. 'The following sections define...', 'We document its relation...'), removed redundancy between intro and definition blocks, unified terminology around one-dimensional channels, and tightened phrasing for brevity and impact. Preserved all math and original file markers.",
-        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.598360Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.598360Z"
+        },
+        "field_hash": {
+          "md": "9c19abf77108",
+          "ts": "922efe26f2e1"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.008Z"
+  "updated_at": "2026-07-07T14:26:55.598360Z"
 }

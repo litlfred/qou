@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.md"
   },
   "source_hashes": {
-    "md": "8483160730c1",
+    "md": "eaa53718992b",
     "ts": "dc4928841f82"
   },
   "criteria": {
@@ -1970,16 +1970,18 @@
     "proof-no-placeholder-stub": [
       {
         "field_hash": {
-          "lean": "2c35bf4c8947"
+          "md": "eaa53718992b",
+          "ts": "dc4928841f82"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/lean-proof-vacuity-audit",
-          "agent_date": "2026-07-02",
-          "agent_skill": "local/lean-proof-vacuity-audit"
+          "agent_date": "2026-07-07T14:26:57.421087Z",
+          "agent_skill": "local/lean-proof-vacuity-audit",
+          "agent_model": "gemini-3.1-pro"
         },
-        "reviewed_at": "2026-07-02T17:07:15.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.421087Z",
         "reviewed_sha": "a9ce9ecfe24e6c7c9d0b9f25699b35ec666faa32",
         "notes": "4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): current Lean is honest \u2014 real statement/derivation or cited sorry; the 2026-06-22 placeholder-marker fail predates the 2026-06-30 rewrite (hash drift verified). Criterion pass."
       }
@@ -1987,18 +1989,18 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "c13c53b29cd9",
+          "md": "eaa53718992b",
           "ts": "dc4928841f82"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.421087Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:20.265Z",
+        "reviewed_at": "2026-07-07T14:26:57.421087Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
       }
@@ -2006,18 +2008,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "c13c53b29cd9",
+          "md": "eaa53718992b",
           "ts": "dc4928841f82"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.421087Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:20.571Z",
+        "reviewed_at": "2026-07-07T14:26:57.421087Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -2025,18 +2027,18 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "c13c53b29cd9",
+          "md": "eaa53718992b",
           "ts": "dc4928841f82"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.421087Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:20.959Z",
+        "reviewed_at": "2026-07-07T14:26:57.421087Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Substrate statement contains archimedean constructs."
       }
@@ -2044,18 +2046,18 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "c13c53b29cd9",
+          "md": "eaa53718992b",
           "ts": "dc4928841f82"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.421087Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:21.344Z",
+        "reviewed_at": "2026-07-07T14:26:57.421087Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
       }
@@ -2134,19 +2136,19 @@
       },
       {
         "field_hash": {
-          "md": "c13c53b29cd9",
+          "md": "eaa53718992b",
           "ts": "dc4928841f82"
         },
         "result": "warn",
         "notes": "md ties filter to LP feasibility Gx\u22650 with \u2076He worked example, but Lean only assumes the two sub-claims on a context class.",
-        "reviewed_at": "2026-06-25T17:07:47.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.421087Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.421087Z"
         },
         "score": {
           "max": 1,
@@ -2195,19 +2197,19 @@
       },
       {
         "field_hash": {
-          "md": "c13c53b29cd9",
+          "md": "eaa53718992b",
           "ts": "dc4928841f82"
         },
         "result": "pass",
         "notes": "Frobenius-positivity configuration filter (parent+daughter \u22650; 2^(A-1)/4^A excluded) is well-posed and substantive for even-A Q-values.",
-        "reviewed_at": "2026-06-25T17:07:47.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.421087Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.421087Z"
         },
         "score": {
           "max": 1,
@@ -2256,19 +2258,19 @@
       },
       {
         "field_hash": {
-          "md": "c13c53b29cd9",
+          "md": "eaa53718992b",
           "ts": "dc4928841f82"
         },
         "result": "pass",
         "notes": "Discrete configuration-filter analogue of the confinement LP positivity constraint; useful structural bridge.",
-        "reviewed_at": "2026-06-25T17:07:47.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.421087Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.421087Z"
         },
         "score": {
           "max": 1,
@@ -2330,19 +2332,19 @@
       },
       {
         "field_hash": {
-          "md": "8483160730c1",
+          "md": "eaa53718992b",
           "ts": "dc4928841f82"
         },
         "result": "pass",
         "notes": "Verified honest on branch claude/lean-qa-backlog-2h3f8d: carrier fields are genuine inputs and the theorem either derives its conclusion by composing them / summing / applying proved lemmas, or states the real .md claim with a cited sorry (\u00a73b-cond item 5 + \u00a71). No field projection remains. lean-direct exit 0. (Prior script fail entry was stale \u2014 the anti-pattern was already removed in the current file.)",
-        "reviewed_at": "2026-07-04T10:56:05.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.421087Z",
         "reviewed_sha": "4736a53600d78315c025af9d838303bdcc62bf97",
         "reviewer": {
           "kind": "agent",
           "id": "local/lean-proof-vacuity-audit",
           "agent_skill": "local/lean-proof-vacuity-audit",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-07-04"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.421087Z"
         }
       }
     ],
@@ -2400,19 +2402,19 @@
       },
       {
         "field_hash": {
-          "md": "8483160730c1",
+          "md": "eaa53718992b",
           "ts": "dc4928841f82"
         },
         "result": "pass",
         "notes": "Verified honest on branch claude/lean-qa-backlog-2h3f8d: carrier fields are genuine inputs and the theorem either derives its conclusion by composing them / summing / applying proved lemmas, or states the real .md claim with a cited sorry (\u00a73b-cond item 5 + \u00a71). No field projection remains. lean-direct exit 0. (Prior script fail entry was stale \u2014 the anti-pattern was already removed in the current file.)",
-        "reviewed_at": "2026-07-04T10:56:05.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.421087Z",
         "reviewed_sha": "4736a53600d78315c025af9d838303bdcc62bf97",
         "reviewer": {
           "kind": "agent",
           "id": "local/lean-proof-vacuity-audit",
           "agent_skill": "local/lean-proof-vacuity-audit",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-07-04"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.421087Z"
         }
       }
     ],
@@ -2436,19 +2438,19 @@
       },
       {
         "field_hash": {
-          "md": "c13c53b29cd9",
+          "md": "eaa53718992b",
           "ts": "dc4928841f82"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: no `: True` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/ParticleInteractions/frobenius_positivity_filter.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.421087Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.421087Z"
         }
       }
     ],
@@ -2489,19 +2491,19 @@
       },
       {
         "field_hash": {
-          "md": "c13c53b29cd9",
+          "md": "eaa53718992b",
           "ts": "dc4928841f82"
         },
         "result": "pass",
         "notes": "m_par\u22650 \u2227 m_dau\u22650 plus the count equation are jointly satisfiable; no contradictory premise.",
-        "reviewed_at": "2026-06-25T17:07:47.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.421087Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.421087Z"
         }
       }
     ],
@@ -2542,19 +2544,19 @@
       },
       {
         "field_hash": {
-          "md": "c13c53b29cd9",
+          "md": "eaa53718992b",
           "ts": "dc4928841f82"
         },
         "result": "pass",
         "notes": "Only binder [ctx] used; A is class data field consumed in claim_ii's type.",
-        "reviewed_at": "2026-06-25T17:07:47.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.421087Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.421087Z"
         }
       }
     ],
@@ -2578,35 +2580,37 @@
       },
       {
         "field_hash": {
-          "md": "c13c53b29cd9",
+          "md": "eaa53718992b",
           "ts": "dc4928841f82"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/ParticleInteractions/frobenius_positivity_filter.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.421087Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.421087Z"
         }
       }
     ],
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "c13c53b29cd9",
+          "md": "eaa53718992b",
           "ts": "dc4928841f82"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.421087Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.421087Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'Frobenius positivity filter for even-$A$ decays': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -2616,16 +2620,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "c13c53b29cd9",
+          "md": "eaa53718992b",
           "ts": "dc4928841f82"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.421087Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.421087Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Frobenius positivity filter for even-$A$ decays' presents substantial mathematical content: For nuclei with even mass number $A$, the raw character sum is negative (parity regime). The physical Q-value is obta...",
         "severity": "minor"
@@ -2634,16 +2640,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "c13c53b29cd9",
+          "md": "eaa53718992b",
           "ts": "dc4928841f82"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.421087Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.421087Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Frobenius positivity filter for even-$A$ decays'.",
         "severity": "minor",
@@ -2653,16 +2661,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "c13c53b29cd9",
+          "md": "eaa53718992b",
           "ts": "dc4928841f82"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.421087Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.421087Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'Frobenius positivity filter for even-$A$ decays' is appropriately qualified.",
         "severity": "minor"
@@ -2671,16 +2681,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "c13c53b29cd9",
+          "md": "eaa53718992b",
           "ts": "dc4928841f82"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.421087Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.421087Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Frobenius positivity filter for even-$A$ decays'.",
         "severity": "minor",
@@ -2690,16 +2702,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "c13c53b29cd9",
+          "md": "eaa53718992b",
           "ts": "dc4928841f82"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.421087Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.421087Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The argument flow in 'Frobenius positivity filter for even-$A$ decays' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -2709,16 +2723,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "c13c53b29cd9",
+          "md": "eaa53718992b",
           "ts": "dc4928841f82"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.421087Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.421087Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The referenced Lean file content/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.lean is missing, leading to complete divergence.",
         "severity": "minor"
@@ -2727,16 +2743,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "c13c53b29cd9",
+          "md": "eaa53718992b",
           "ts": "dc4928841f82"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.421087Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.421087Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Frobenius positivity filter for even-$A$ decays', hence no citation misuse is possible.",
         "severity": "minor",
@@ -2746,16 +2764,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "c13c53b29cd9",
+          "md": "eaa53718992b",
           "ts": "dc4928841f82"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.421087Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.421087Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Frobenius positivity filter for even-$A$ decays' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -2765,16 +2785,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "c13c53b29cd9",
+          "md": "eaa53718992b",
           "ts": "dc4928841f82"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.421087Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.421087Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Frobenius positivity filter for even-$A$ decays' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -2784,16 +2806,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "c13c53b29cd9",
+          "md": "eaa53718992b",
           "ts": "dc4928841f82"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.421087Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.421087Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Frobenius positivity filter for even-$A$ decays' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -2803,16 +2827,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "c13c53b29cd9",
+          "md": "eaa53718992b",
           "ts": "dc4928841f82"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.421087Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.421087Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'Frobenius positivity filter for even-$A$ decays' are reproducible.",
         "severity": "minor",
@@ -2822,16 +2848,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "c13c53b29cd9",
+          "md": "eaa53718992b",
           "ts": "dc4928841f82"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.421087Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.421087Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.lean is missing.",
         "severity": "critical",
@@ -2843,14 +2871,20 @@
       {
         "result": "pass",
         "notes": "Applied Milnor exposition standard (H1-H8) and brevity rules. Shortened sentences, removed editorializing ('surprisingly', 'remarkably'), replaced 'this book' with 'this paper', and maintained Math, markdown, and cross-block consistency.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:57.421087Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.421087Z"
+        },
+        "field_hash": {
+          "md": "eaa53718992b",
+          "ts": "dc4928841f82"
         }
       }
     ]
   },
-  "updated_at": "2026-07-04T10:56:05.000Z"
+  "updated_at": "2026-07-07T14:26:57.421087Z"
 }

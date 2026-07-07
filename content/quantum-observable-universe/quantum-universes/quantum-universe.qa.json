@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/quantum-universes/quantum-universe.lean"
   },
   "source_hashes": {
-    "md": "5af98aeed5a1",
+    "md": "01c950cf830f",
     "ts": "78bc92437330",
     "lean": "077e0ad5ce84"
   },
@@ -878,7 +878,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "5af98aeed5a1",
+          "md": "01c950cf830f",
           "ts": "78bc92437330",
           "lean": "077e0ad5ce84"
         },
@@ -886,9 +886,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.120811Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.710Z",
+        "reviewed_at": "2026-07-07T14:26:57.120811Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'def:quantum-universe' \u2192 expected 'quantum_universe'; Lean declares: QuantumUniverse, FrobeniusHopfData. Structural match via content."
       }
@@ -897,14 +899,21 @@
       {
         "result": "pass",
         "notes": "Rewrote quantum-universes_seq0.md blocks into Milnor standard. Cleaned up SU(2) example and formal definitions. Strict present tense, no editorializing. Linear flow achieved.",
-        "reviewed_at": "2026-07-06T23:13:00Z",
+        "reviewed_at": "2026-07-07T14:26:57.120811Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.120811Z"
+        },
+        "field_hash": {
+          "md": "01c950cf830f",
+          "ts": "78bc92437330",
+          "lean": "077e0ad5ce84"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.710Z"
+  "updated_at": "2026-07-07T14:26:57.120811Z"
 }

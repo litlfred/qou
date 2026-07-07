@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/confined-particle.lean"
   },
   "source_hashes": {
-    "md": "61f696e2544c",
+    "md": "1c63748887ea",
     "ts": "74c025de9fe4",
     "lean": "339d8f006463"
   },
@@ -1561,7 +1561,7 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "61f696e2544c",
+          "md": "1c63748887ea",
           "ts": "74c025de9fe4",
           "lean": "339d8f006463"
         },
@@ -1569,11 +1569,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.350068Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:18.767Z",
+        "reviewed_at": "2026-07-07T14:26:57.350068Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1581,7 +1581,7 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "61f696e2544c",
+          "md": "1c63748887ea",
           "ts": "74c025de9fe4",
           "lean": "339d8f006463"
         },
@@ -1589,11 +1589,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.350068Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:19.262Z",
+        "reviewed_at": "2026-07-07T14:26:57.350068Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -1601,7 +1601,7 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "61f696e2544c",
+          "md": "1c63748887ea",
           "ts": "74c025de9fe4",
           "lean": "339d8f006463"
         },
@@ -1609,9 +1609,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.350068Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.350068Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'Confined particle': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -1621,7 +1623,7 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "61f696e2544c",
+          "md": "1c63748887ea",
           "ts": "74c025de9fe4",
           "lean": "339d8f006463"
         },
@@ -1629,9 +1631,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.350068Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.350068Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Confined particle' presents substantial mathematical content: P \\;=\\; (\\mathrm{name},\\ \\ell,\\ [K]_M,\\ n_0)",
         "severity": "minor"
@@ -1640,7 +1644,7 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "61f696e2544c",
+          "md": "1c63748887ea",
           "ts": "74c025de9fe4",
           "lean": "339d8f006463"
         },
@@ -1648,9 +1652,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.350068Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.350068Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Confined particle'.",
         "severity": "minor",
@@ -1660,7 +1666,7 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "61f696e2544c",
+          "md": "1c63748887ea",
           "ts": "74c025de9fe4",
           "lean": "339d8f006463"
         },
@@ -1668,9 +1674,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.350068Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.350068Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'Confined particle' is appropriately qualified.",
         "severity": "minor"
@@ -1679,7 +1687,7 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "61f696e2544c",
+          "md": "1c63748887ea",
           "ts": "74c025de9fe4",
           "lean": "339d8f006463"
         },
@@ -1687,9 +1695,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.350068Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.350068Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Confined particle'.",
         "severity": "minor",
@@ -1699,7 +1709,7 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "61f696e2544c",
+          "md": "1c63748887ea",
           "ts": "74c025de9fe4",
           "lean": "339d8f006463"
         },
@@ -1707,9 +1717,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.350068Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.350068Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The argument flow in 'Confined particle' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -1719,7 +1731,7 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "61f696e2544c",
+          "md": "1c63748887ea",
           "ts": "74c025de9fe4",
           "lean": "339d8f006463"
         },
@@ -1727,9 +1739,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.350068Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.350068Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Lean formalization and narrative for 'Confined particle' are in complete agreement.",
         "severity": "minor"
@@ -1738,7 +1752,7 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "61f696e2544c",
+          "md": "1c63748887ea",
           "ts": "74c025de9fe4",
           "lean": "339d8f006463"
         },
@@ -1746,9 +1760,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.350068Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.350068Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Confined particle', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1758,7 +1774,7 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "61f696e2544c",
+          "md": "1c63748887ea",
           "ts": "74c025de9fe4",
           "lean": "339d8f006463"
         },
@@ -1766,9 +1782,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.350068Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.350068Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Confined particle' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1778,7 +1796,7 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "61f696e2544c",
+          "md": "1c63748887ea",
           "ts": "74c025de9fe4",
           "lean": "339d8f006463"
         },
@@ -1786,9 +1804,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.350068Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.350068Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Confined particle' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1798,7 +1818,7 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "61f696e2544c",
+          "md": "1c63748887ea",
           "ts": "74c025de9fe4",
           "lean": "339d8f006463"
         },
@@ -1806,9 +1826,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.350068Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.350068Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Confined particle' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1818,7 +1840,7 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "61f696e2544c",
+          "md": "1c63748887ea",
           "ts": "74c025de9fe4",
           "lean": "339d8f006463"
         },
@@ -1826,9 +1848,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.350068Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.350068Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'Confined particle' are reproducible.",
         "severity": "minor",
@@ -1838,7 +1862,7 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "61f696e2544c",
+          "md": "1c63748887ea",
           "ts": "74c025de9fe4",
           "lean": "339d8f006463"
         },
@@ -1846,9 +1870,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.350068Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.350068Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -1859,7 +1885,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "61f696e2544c",
+          "md": "1c63748887ea",
           "ts": "74c025de9fe4",
           "lean": "339d8f006463"
         },
@@ -1867,9 +1893,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.350068Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_at": "2026-07-07T14:26:57.350068Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'def:confined-particle' \u2192 expected 'confined_particle'; Lean declares: MarkovClass, ConfinedParticle, confined. Structural match via content."
       }
@@ -1881,5 +1909,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.802Z"
+  "updated_at": "2026-07-07T14:26:57.350068Z"
 }

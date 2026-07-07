@@ -7,22 +7,24 @@
     "md": "../qou/content/quantum-observable-universe/information-theory/operational-entropy-properties.md"
   },
   "source_hashes": {
-    "md": "1346ad8b2dab",
+    "md": "082699a3102a",
     "ts": "f30f316a900e"
   },
   "criteria": {
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "066228fd1d17",
-          "ts": "2885dd47ef5c"
+          "md": "082699a3102a",
+          "ts": "f30f316a900e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.568549Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.568549Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Block placement and kind 'remark' match validated structurally for 'Hausdorff dimension, self-consistency, and regimes of $\\\\eta_q$'.",
         "severity": "minor"
@@ -31,15 +33,17 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "066228fd1d17",
-          "ts": "2885dd47ef5c"
+          "md": "082699a3102a",
+          "ts": "f30f316a900e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.568549Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.568549Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No false claims identified in 'Hausdorff dimension, self-consistency, and regimes of $\\\\eta_q$': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -49,15 +53,17 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "066228fd1d17",
-          "ts": "2885dd47ef5c"
+          "md": "082699a3102a",
+          "ts": "f30f316a900e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.568549Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.568549Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The block 'Hausdorff dimension, self-consistency, and regimes of $\\\\eta_q$' presents substantial mathematical content: The operational entropy $\\eta_q = (2q-1)/q^3$ ([operational entropy](#def:operat...",
         "severity": "minor"
@@ -66,15 +72,17 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "066228fd1d17",
-          "ts": "2885dd47ef5c"
+          "md": "082699a3102a",
+          "ts": "f30f316a900e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.568549Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.568549Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Hausdorff dimension, self-consistency, and regimes of $\\\\eta_q$'.",
         "severity": "minor",
@@ -84,15 +92,17 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "066228fd1d17",
-          "ts": "2885dd47ef5c"
+          "md": "082699a3102a",
+          "ts": "f30f316a900e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.568549Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.568549Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No overclaims: the scope of 'Hausdorff dimension, self-consistency, and regimes of $\\\\eta_q$' is appropriately qualified.",
         "severity": "minor"
@@ -101,15 +111,17 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "066228fd1d17",
-          "ts": "2885dd47ef5c"
+          "md": "082699a3102a",
+          "ts": "f30f316a900e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.568549Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.568549Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Hausdorff dimension, self-consistency, and regimes of $\\\\eta_q$'.",
         "severity": "minor",
@@ -119,15 +131,17 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "066228fd1d17",
-          "ts": "2885dd47ef5c"
+          "md": "082699a3102a",
+          "ts": "f30f316a900e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.568549Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.568549Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The argument flow in 'Hausdorff dimension, self-consistency, and regimes of $\\\\eta_q$' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -137,15 +151,17 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "066228fd1d17",
-          "ts": "2885dd47ef5c"
+          "md": "082699a3102a",
+          "ts": "f30f316a900e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.568549Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.568549Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
@@ -154,15 +170,17 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "066228fd1d17",
-          "ts": "2885dd47ef5c"
+          "md": "082699a3102a",
+          "ts": "f30f316a900e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.568549Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.568549Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No citations are present in 'Hausdorff dimension, self-consistency, and regimes of $\\\\eta_q$', hence no citation misuse is possible.",
         "severity": "minor",
@@ -172,15 +190,17 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "066228fd1d17",
-          "ts": "2885dd47ef5c"
+          "md": "082699a3102a",
+          "ts": "f30f316a900e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.568549Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.568549Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Key terms and symbols in 'Hausdorff dimension, self-consistency, and regimes of $\\\\eta_q$' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -190,15 +210,17 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "066228fd1d17",
-          "ts": "2885dd47ef5c"
+          "md": "082699a3102a",
+          "ts": "f30f316a900e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.568549Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.568549Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The algebraic and logical relations in 'Hausdorff dimension, self-consistency, and regimes of $\\\\eta_q$' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -208,15 +230,17 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "066228fd1d17",
-          "ts": "2885dd47ef5c"
+          "md": "082699a3102a",
+          "ts": "f30f316a900e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.568549Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.568549Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The physical concepts described in 'Hausdorff dimension, self-consistency, and regimes of $\\\\eta_q$' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -226,15 +250,17 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "066228fd1d17",
-          "ts": "2885dd47ef5c"
+          "md": "082699a3102a",
+          "ts": "f30f316a900e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.568549Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.568549Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The derivation steps and formal definitions in 'Hausdorff dimension, self-consistency, and regimes of $\\\\eta_q$' are reproducible.",
         "severity": "minor",
@@ -244,15 +270,17 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "066228fd1d17",
-          "ts": "2885dd47ef5c"
+          "md": "082699a3102a",
+          "ts": "f30f316a900e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.568549Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.568549Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -281,5 +309,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.008Z"
+  "updated_at": "2026-07-07T14:26:55.568549Z"
 }

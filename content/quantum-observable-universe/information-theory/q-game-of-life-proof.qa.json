@@ -7,23 +7,25 @@
     "md": "../qou/content/quantum-observable-universe/information-theory/q-game-of-life-proof.md"
   },
   "source_hashes": {
-    "md": "c7a4651af8e2",
+    "md": "0252255b7187",
     "ts": "e6f1cde490c0"
   },
   "criteria": {
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "c7a4651af8e2",
+          "md": "0252255b7187",
           "ts": "e6f1cde490c0"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.539365Z"
         },
-        "reviewed_at": "2026-06-28T18:00:05.797Z",
+        "reviewed_at": "2026-07-07T14:26:55.539365Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "severity": "critical",
         "evidence": "Each generator is unitary with respect to the Markov trace form... so U^\\dagger U = I",
@@ -33,176 +35,198 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "c7a4651af8e2",
+          "md": "0252255b7187",
           "ts": "e6f1cde490c0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.539365Z"
         },
-        "reviewed_at": "2026-06-28T18:00:05.797Z",
+        "reviewed_at": "2026-07-07T14:26:55.539365Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "c7a4651af8e2",
+          "md": "0252255b7187",
           "ts": "e6f1cde490c0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.539365Z"
         },
-        "reviewed_at": "2026-06-28T18:00:05.797Z",
+        "reviewed_at": "2026-07-07T14:26:55.539365Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-circular": [
       {
         "field_hash": {
-          "md": "c7a4651af8e2",
+          "md": "0252255b7187",
           "ts": "e6f1cde490c0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.539365Z"
         },
-        "reviewed_at": "2026-06-28T18:00:05.797Z",
+        "reviewed_at": "2026-07-07T14:26:55.539365Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "c7a4651af8e2",
+          "md": "0252255b7187",
           "ts": "e6f1cde490c0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.539365Z"
         },
-        "reviewed_at": "2026-06-28T18:00:05.797Z",
+        "reviewed_at": "2026-07-07T14:26:55.539365Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "c7a4651af8e2",
+          "md": "0252255b7187",
           "ts": "e6f1cde490c0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.539365Z"
         },
-        "reviewed_at": "2026-06-28T18:00:05.797Z",
+        "reviewed_at": "2026-07-07T14:26:55.539365Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "c7a4651af8e2",
+          "md": "0252255b7187",
           "ts": "e6f1cde490c0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.539365Z"
         },
-        "reviewed_at": "2026-06-28T18:00:05.797Z",
+        "reviewed_at": "2026-07-07T14:26:55.539365Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "c7a4651af8e2",
+          "md": "0252255b7187",
           "ts": "e6f1cde490c0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.539365Z"
         },
-        "reviewed_at": "2026-06-28T18:00:05.797Z",
+        "reviewed_at": "2026-07-07T14:26:55.539365Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "c7a4651af8e2",
+          "md": "0252255b7187",
           "ts": "e6f1cde490c0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.539365Z"
         },
-        "reviewed_at": "2026-06-28T18:00:05.797Z",
+        "reviewed_at": "2026-07-07T14:26:55.539365Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "c7a4651af8e2",
+          "md": "0252255b7187",
           "ts": "e6f1cde490c0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.539365Z"
         },
-        "reviewed_at": "2026-06-28T18:00:05.797Z",
+        "reviewed_at": "2026-07-07T14:26:55.539365Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "c7a4651af8e2",
+          "md": "0252255b7187",
           "ts": "e6f1cde490c0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.539365Z"
         },
-        "reviewed_at": "2026-06-28T18:00:05.797Z",
+        "reviewed_at": "2026-07-07T14:26:55.539365Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "c7a4651af8e2",
+          "md": "0252255b7187",
           "ts": "e6f1cde490c0"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.539365Z"
         },
-        "reviewed_at": "2026-06-28T18:00:05.797Z",
+        "reviewed_at": "2026-07-07T14:26:55.539365Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "severity": "major",
         "notes": "Proof conflates pseudo-unitarity with unitarity. This completely undermines any claim to modeling realistic quantum physics or standard BQP universality."
@@ -211,32 +235,36 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "c7a4651af8e2",
+          "md": "0252255b7187",
           "ts": "e6f1cde490c0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.539365Z"
         },
-        "reviewed_at": "2026-06-28T18:00:05.797Z",
+        "reviewed_at": "2026-07-07T14:26:55.539365Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "c7a4651af8e2",
+          "md": "0252255b7187",
           "ts": "e6f1cde490c0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.539365Z"
         },
-        "reviewed_at": "2026-06-28T18:00:05.797Z",
+        "reviewed_at": "2026-07-07T14:26:55.539365Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
@@ -261,5 +289,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.008Z"
+  "updated_at": "2026-07-07T14:26:55.539365Z"
 }

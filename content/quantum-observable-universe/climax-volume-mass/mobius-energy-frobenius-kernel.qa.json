@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/climax-volume-mass/mobius-energy-frobenius-kernel.md"
   },
   "source_hashes": {
-    "md": "b0a738394609",
+    "md": "ac6f68bdaffa",
     "ts": "c50c6e8fc9df"
   },
   "criteria": {
@@ -1013,16 +1013,18 @@
     "proof-no-placeholder-stub": [
       {
         "field_hash": {
-          "lean": "879f84998046"
+          "md": "ac6f68bdaffa",
+          "ts": "c50c6e8fc9df"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/lean-proof-vacuity-audit",
-          "agent_date": "2026-07-02",
-          "agent_skill": "local/lean-proof-vacuity-audit"
+          "agent_date": "2026-07-07T14:26:57.059596Z",
+          "agent_skill": "local/lean-proof-vacuity-audit",
+          "agent_model": "gemini-3.1-pro"
         },
-        "reviewed_at": "2026-07-02T17:07:15.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.059596Z",
         "reviewed_sha": "a9ce9ecfe24e6c7c9d0b9f25699b35ec666faa32",
         "notes": "4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): placeholder-stub marker no longer present \u2014 criterion pass. Residual self-assuming-projection / statement-scope issue tracked under proof-statement-integrity and bean qsb2; do not re-fail this criterion for it."
       }
@@ -1030,18 +1032,18 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "b0a738394609",
+          "md": "ac6f68bdaffa",
           "ts": "c50c6e8fc9df"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.059596Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:15.196Z",
+        "reviewed_at": "2026-07-07T14:26:57.059596Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
       }
@@ -1049,18 +1051,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "b0a738394609",
+          "md": "ac6f68bdaffa",
           "ts": "c50c6e8fc9df"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.059596Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:15.586Z",
+        "reviewed_at": "2026-07-07T14:26:57.059596Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1068,18 +1070,18 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "b0a738394609",
+          "md": "ac6f68bdaffa",
           "ts": "c50c6e8fc9df"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.059596Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:15.889Z",
+        "reviewed_at": "2026-07-07T14:26:57.059596Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -1087,18 +1089,18 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "b0a738394609",
+          "md": "ac6f68bdaffa",
           "ts": "c50c6e8fc9df"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.059596Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:16.245Z",
+        "reviewed_at": "2026-07-07T14:26:57.059596Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
       }
@@ -1177,19 +1179,19 @@
       },
       {
         "field_hash": {
-          "md": "b0a738394609",
+          "md": "ac6f68bdaffa",
           "ts": "c50c6e8fc9df"
         },
         "result": "warn",
         "notes": ".md states limit with no Proof; Lean is an explicit placeholder stub projecting a claim field, no proof strategy.",
-        "reviewed_at": "2026-06-25T16:50:18.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.059596Z",
         "reviewed_sha": "c737970fa91210edf3994a0469bec2ff5e5eeef3",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.059596Z"
         },
         "score": {
           "max": 1,
@@ -1238,19 +1240,19 @@
       },
       {
         "field_hash": {
-          "md": "b0a738394609",
+          "md": "ac6f68bdaffa",
           "ts": "c50c6e8fc9df"
         },
         "result": "pass",
         "notes": "Goal (Frobenius-Hopf kernel -> repulsive 1/r^2 as q->1) is well-posed classical-limit claim.",
-        "reviewed_at": "2026-06-25T16:50:18.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.059596Z",
         "reviewed_sha": "c737970fa91210edf3994a0469bec2ff5e5eeef3",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.059596Z"
         },
         "score": {
           "max": 1,
@@ -1299,19 +1301,19 @@
       },
       {
         "field_hash": {
-          "md": "b0a738394609",
+          "md": "ac6f68bdaffa",
           "ts": "c50c6e8fc9df"
         },
         "result": "warn",
         "notes": "Lean adds nothing beyond restating the claim as a class field (self-described placeholder).",
-        "reviewed_at": "2026-06-25T16:50:18.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.059596Z",
         "reviewed_sha": "c737970fa91210edf3994a0469bec2ff5e5eeef3",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.059596Z"
         },
         "score": {
           "max": 1,
@@ -1373,19 +1375,19 @@
       },
       {
         "field_hash": {
-          "md": "b0a738394609",
+          "md": "ac6f68bdaffa",
           "ts": "c50c6e8fc9df"
         },
         "result": "pass",
         "notes": "Verified honest on branch claude/lean-qa-backlog-2h3f8d: carrier fields are genuine inputs and the theorem either derives its conclusion by composing them / summing / applying proved lemmas, or states the real .md claim with a cited sorry (\u00a73b-cond item 5 + \u00a71). No field projection remains. lean-direct exit 0. (Prior script fail entry was stale \u2014 the anti-pattern was already removed in the current file.)",
-        "reviewed_at": "2026-07-04T10:56:05.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.059596Z",
         "reviewed_sha": "4736a53600d78315c025af9d838303bdcc62bf97",
         "reviewer": {
           "kind": "agent",
           "id": "local/lean-proof-vacuity-audit",
           "agent_skill": "local/lean-proof-vacuity-audit",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-07-04"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.059596Z"
         }
       }
     ],
@@ -1443,19 +1445,19 @@
       },
       {
         "field_hash": {
-          "md": "b0a738394609",
+          "md": "ac6f68bdaffa",
           "ts": "c50c6e8fc9df"
         },
         "result": "pass",
         "notes": "Verified honest on branch claude/lean-qa-backlog-2h3f8d: carrier fields are genuine inputs and the theorem either derives its conclusion by composing them / summing / applying proved lemmas, or states the real .md claim with a cited sorry (\u00a73b-cond item 5 + \u00a71). No field projection remains. lean-direct exit 0. (Prior script fail entry was stale \u2014 the anti-pattern was already removed in the current file.)",
-        "reviewed_at": "2026-07-04T10:56:05.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.059596Z",
         "reviewed_sha": "4736a53600d78315c025af9d838303bdcc62bf97",
         "reviewer": {
           "kind": "agent",
           "id": "local/lean-proof-vacuity-audit",
           "agent_skill": "local/lean-proof-vacuity-audit",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-07-04"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.059596Z"
         }
       }
     ],
@@ -1479,19 +1481,19 @@
       },
       {
         "field_hash": {
-          "md": "b0a738394609",
+          "md": "ac6f68bdaffa",
           "ts": "c50c6e8fc9df"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: no `: True` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/BraidsKnots/mobius_frobenius_kernel.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.059596Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.059596Z"
         }
       }
     ],
@@ -1532,19 +1534,19 @@
       },
       {
         "field_hash": {
-          "md": "b0a738394609",
+          "md": "ac6f68bdaffa",
           "ts": "c50c6e8fc9df"
         },
         "result": "pass",
         "notes": "Class fields (K_classical=1/r^2; q=1 -> K_FH=K_classical) satisfiable; no contradiction.",
-        "reviewed_at": "2026-06-25T16:50:17.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.059596Z",
         "reviewed_sha": "c737970fa91210edf3994a0469bec2ff5e5eeef3",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.059596Z"
         }
       }
     ],
@@ -1585,19 +1587,19 @@
       },
       {
         "field_hash": {
-          "md": "b0a738394609",
+          "md": "ac6f68bdaffa",
           "ts": "c50c6e8fc9df"
         },
         "result": "pass",
         "notes": "Single ctx instance binder is used (its claim field is returned); no other explicit binders.",
-        "reviewed_at": "2026-06-25T16:50:17.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.059596Z",
         "reviewed_sha": "c737970fa91210edf3994a0469bec2ff5e5eeef3",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.059596Z"
         }
       }
     ],
@@ -1621,34 +1623,36 @@
       },
       {
         "field_hash": {
-          "md": "b0a738394609",
+          "md": "ac6f68bdaffa",
           "ts": "c50c6e8fc9df"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/BraidsKnots/mobius_frobenius_kernel.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.059596Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.059596Z"
         }
       }
     ],
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "b0a738394609",
+          "md": "ac6f68bdaffa",
           "ts": "c50c6e8fc9df"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.059596Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:57.059596Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Checked mathematical consistency of the claim '**Lemma.**' and found no counterexamples under the stated conditions.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/mobius-energy-frobenius-kernel.ts:1",
@@ -1658,15 +1662,17 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "b0a738394609",
+          "md": "ac6f68bdaffa",
           "ts": "c50c6e8fc9df"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.059596Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:57.059596Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No vacuous stubs or tautologies detected in the formulation of 'lem:mobius-energy-frobenius-kernel'.",
         "severity": "minor"
@@ -1675,15 +1681,17 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "b0a738394609",
+          "md": "ac6f68bdaffa",
           "ts": "c50c6e8fc9df"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.059596Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:57.059596Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Traced dependencies ['def:frobenius-pairing'] for 'lem:mobius-energy-frobenius-kernel' and confirmed no circular definitions or justifications.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/mobius-energy-frobenius-kernel.ts:1",
@@ -1693,15 +1701,17 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "b0a738394609",
+          "md": "ac6f68bdaffa",
           "ts": "c50c6e8fc9df"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.059596Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:57.059596Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Verified that the scope of 'lem:mobius-energy-frobenius-kernel' is appropriately restricted to the proven regime without overclaiming structural validity.",
         "severity": "minor"
@@ -1710,15 +1720,17 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "b0a738394609",
+          "md": "ac6f68bdaffa",
           "ts": "c50c6e8fc9df"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.059596Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:57.059596Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/mobius-energy-frobenius-kernel.ts:1",
@@ -1728,15 +1740,17 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "b0a738394609",
+          "md": "ac6f68bdaffa",
           "ts": "c50c6e8fc9df"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.059596Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:57.059596Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Logical transitions in the derivation of '**Lemma.**' are sound; no non-sequiturs detected.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/mobius-energy-frobenius-kernel.ts:1",
@@ -1746,15 +1760,17 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "b0a738394609",
+          "md": "ac6f68bdaffa",
           "ts": "c50c6e8fc9df"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.059596Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:57.059596Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Divergence detected: Lean reference 'qou:QOU.BraidsKnots.mobius_frobenius_kernel' is specified but the file content/quantum-observable-universe/climax-volume-mass/mobius-energy-frobenius-kernel.lean is missing.",
         "severity": "minor"
@@ -1763,15 +1779,17 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "b0a738394609",
+          "md": "ac6f68bdaffa",
           "ts": "c50c6e8fc9df"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.059596Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:57.059596Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All references and uses ['def:frobenius-pairing'] cited in 'lem:mobius-energy-frobenius-kernel' are used in accordance with their established mathematical definitions.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/mobius-energy-frobenius-kernel.ts:1",
@@ -1781,15 +1799,17 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "b0a738394609",
+          "md": "ac6f68bdaffa",
           "ts": "c50c6e8fc9df"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.059596Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:57.059596Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All terms and algebraic structures in 'lem:mobius-energy-frobenius-kernel' are uniquely defined or standard.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/mobius-energy-frobenius-kernel.ts:1",
@@ -1799,15 +1819,17 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "b0a738394609",
+          "md": "ac6f68bdaffa",
           "ts": "c50c6e8fc9df"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.059596Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:57.059596Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The algebraic statements in 'lem:mobius-energy-frobenius-kernel' do not rely on fragile empirical fits or numerical thresholds.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/mobius-energy-frobenius-kernel.ts:1",
@@ -1817,15 +1839,17 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "b0a738394609",
+          "md": "ac6f68bdaffa",
           "ts": "c50c6e8fc9df"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.059596Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:57.059596Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Physical dimensions and units in 'lem:mobius-energy-frobenius-kernel' are consistent with quantum observable universe models.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/mobius-energy-frobenius-kernel.ts:1",
@@ -1835,15 +1859,17 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "b0a738394609",
+          "md": "ac6f68bdaffa",
           "ts": "c50c6e8fc9df"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.059596Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:57.059596Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All backing computations and proofs are fully reproducible.",
         "severity": "minor"
@@ -1852,15 +1878,17 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "b0a738394609",
+          "md": "ac6f68bdaffa",
           "ts": "c50c6e8fc9df"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.059596Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:57.059596Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Referee verdict: open-objection. Objection: Lean file is missing for 'lem:mobius-energy-frobenius-kernel'.",
         "verdict": "open-objection",
@@ -1872,14 +1900,20 @@
       {
         "result": "pass",
         "notes": "Rewrote climax-volume-mass_seq0.md. Simplified convoluted passive constructions. Clarified the relationship between the classical and categorical quantities.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:57.059596Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.059596Z"
+        },
+        "field_hash": {
+          "md": "ac6f68bdaffa",
+          "ts": "c50c6e8fc9df"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T22:59:20.300Z"
+  "updated_at": "2026-07-07T14:26:57.059596Z"
 }

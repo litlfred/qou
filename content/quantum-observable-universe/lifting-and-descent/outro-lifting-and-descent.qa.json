@@ -7,22 +7,28 @@
     "md": "content/quantum-observable-universe/lifting-and-descent/outro-lifting-and-descent.md"
   },
   "source_hashes": {
-    "ts": "bfc837f31bf5",
-    "md": "2c81e757d1fe"
+    "md": "264b4a63ae54",
+    "ts": "bfc837f31bf5"
   },
   "criteria": {
     "milnor-amalgamated-flow": [
       {
         "result": "pass",
         "notes": "Rewrote closing texts. Flattened phrasing and strengthened active voice in descriptions of downstream consequences. Preserved file markers.",
-        "reviewed_at": "2026-07-06T23:02:50Z",
+        "reviewed_at": "2026-07-07T14:26:55.660407Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.660407Z"
+        },
+        "field_hash": {
+          "md": "264b4a63ae54",
+          "ts": "bfc837f31bf5"
         }
       }
     ]
   },
-  "updated_at": "2026-06-01T16:06:38.106Z"
+  "updated_at": "2026-07-07T14:26:55.660407Z"
 }

@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/measurement-observation/outro-measurement-observation.md"
   },
   "source_hashes": {
-    "ts": "73ad1d9ea8a5",
-    "md": "fda0e3b03bb2"
+    "md": "cad606a3d459",
+    "ts": "73ad1d9ea8a5"
   },
   "criteria": {
     "q-usage-regime-detected": [
@@ -128,14 +128,20 @@
       {
         "result": "pass",
         "notes": "Tightened paragraphs. Removed cross-references to unknown targets. Kept physics/math logic intact.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.445361Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.445361Z"
+        },
+        "field_hash": {
+          "md": "cad606a3d459",
+          "ts": "73ad1d9ea8a5"
         }
       }
     ]
   },
-  "updated_at": "2026-06-01T16:06:38.106Z"
+  "updated_at": "2026-07-07T14:26:56.445361Z"
 }

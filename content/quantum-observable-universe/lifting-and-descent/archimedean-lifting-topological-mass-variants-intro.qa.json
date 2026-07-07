@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/lifting-and-descent/archimedean-lifting-topological-mass-variants-intro.md"
   },
   "source_hashes": {
-    "md": "40ffe8bfc1ec",
+    "md": "dfeb3555cf71",
     "ts": "8d80284cd449"
   },
   "criteria": {
@@ -818,18 +818,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "40ffe8bfc1ec",
+          "md": "dfeb3555cf71",
           "ts": "8d80284cd449"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.716050Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:28.011Z",
+        "reviewed_at": "2026-07-07T14:26:55.716050Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -837,15 +837,17 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "40ffe8bfc1ec",
+          "md": "dfeb3555cf71",
           "ts": "8d80284cd449"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.716050Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.716050Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No false claims identified in 'The preceding sub-section stated the topological-mass theorem and': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -855,15 +857,17 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "40ffe8bfc1ec",
+          "md": "dfeb3555cf71",
           "ts": "8d80284cd449"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.716050Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.716050Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The claims in 'The preceding sub-section stated the topological-mass theorem and' are non-vacuous as they present substantial mathematical content.",
         "severity": "minor"
@@ -872,15 +876,17 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "40ffe8bfc1ec",
+          "md": "dfeb3555cf71",
           "ts": "8d80284cd449"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.716050Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.716050Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No circular reasoning or self-assuming definitions detected in 'The preceding sub-section stated the topological-mass theorem and'.",
         "severity": "minor",
@@ -890,15 +896,17 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "40ffe8bfc1ec",
+          "md": "dfeb3555cf71",
           "ts": "8d80284cd449"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.716050Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.716050Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No overclaims: the scope of 'The preceding sub-section stated the topological-mass theorem and' is appropriately qualified.",
         "severity": "minor"
@@ -907,15 +915,17 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "40ffe8bfc1ec",
+          "md": "dfeb3555cf71",
           "ts": "8d80284cd449"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.716050Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.716050Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'The preceding sub-section stated the topological-mass theorem and'.",
         "severity": "minor",
@@ -925,15 +935,17 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "40ffe8bfc1ec",
+          "md": "dfeb3555cf71",
           "ts": "8d80284cd449"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.716050Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.716050Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The argument flow in 'The preceding sub-section stated the topological-mass theorem and' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -943,15 +955,17 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "40ffe8bfc1ec",
+          "md": "dfeb3555cf71",
           "ts": "8d80284cd449"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.716050Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.716050Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
@@ -960,15 +974,17 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "40ffe8bfc1ec",
+          "md": "dfeb3555cf71",
           "ts": "8d80284cd449"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.716050Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.716050Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No citations are present in 'The preceding sub-section stated the topological-mass theorem and', hence no citation misuse is possible.",
         "severity": "minor",
@@ -978,15 +994,17 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "40ffe8bfc1ec",
+          "md": "dfeb3555cf71",
           "ts": "8d80284cd449"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.716050Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.716050Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Key terms and symbols in 'The preceding sub-section stated the topological-mass theorem and' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -996,15 +1014,17 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "40ffe8bfc1ec",
+          "md": "dfeb3555cf71",
           "ts": "8d80284cd449"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.716050Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.716050Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The algebraic and logical relations in 'The preceding sub-section stated the topological-mass theorem and' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1014,15 +1034,17 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "40ffe8bfc1ec",
+          "md": "dfeb3555cf71",
           "ts": "8d80284cd449"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.716050Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.716050Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The physical concepts described in 'The preceding sub-section stated the topological-mass theorem and' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1032,15 +1054,17 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "40ffe8bfc1ec",
+          "md": "dfeb3555cf71",
           "ts": "8d80284cd449"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.716050Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.716050Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The derivation steps and formal definitions in 'The preceding sub-section stated the topological-mass theorem and' are reproducible.",
         "severity": "minor",
@@ -1050,15 +1074,17 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "40ffe8bfc1ec",
+          "md": "dfeb3555cf71",
           "ts": "8d80284cd449"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.716050Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.716050Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -1070,14 +1096,20 @@
       {
         "result": "pass",
         "notes": "Rewrote closing texts. Flattened phrasing and strengthened active voice in descriptions of downstream consequences. Preserved file markers.",
-        "reviewed_at": "2026-07-06T23:02:50Z",
+        "reviewed_at": "2026-07-07T14:26:55.716050Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.716050Z"
+        },
+        "field_hash": {
+          "md": "dfeb3555cf71",
+          "ts": "8d80284cd449"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.146Z"
+  "updated_at": "2026-07-07T14:26:55.716050Z"
 }

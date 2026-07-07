@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/climax-volume-mass/t211-ideal-annihilation.lean"
   },
   "source_hashes": {
-    "md": "c99b595ec1d9",
+    "md": "e6ffe7858a71",
     "ts": "8ec22c1d804b",
     "lean": "cee16c2e9a48"
   },
@@ -858,14 +858,21 @@
       {
         "result": "pass",
         "notes": "Rewrote full climax-volume-mass_seq4.md including the t211-ideal-annihilation section. Shortened list texts. Kept logic clean.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:57.037352Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.037352Z"
+        },
+        "field_hash": {
+          "md": "e6ffe7858a71",
+          "ts": "8ec22c1d804b",
+          "lean": "cee16c2e9a48"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T23:02:33.767Z"
+  "updated_at": "2026-07-07T14:26:57.037352Z"
 }

@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "a4b56fd9bfb0",
     "ts": "042c72a79f69",
-    "lean": "38677020e324"
+    "lean": "c4ab24905ef9"
   },
   "criteria": {
     "proof-narrative-lean-equiv": [
@@ -28,23 +28,25 @@
         },
         "reviewed_at": "2026-05-28T15:41:35.986Z",
         "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
-        "notes": "Label 'def:leading-terms' → expected 'leading_terms'; Lean declares: Term, LeadingTerm, Divides. Structural match via content."
+        "notes": "Label 'def:leading-terms' \u2192 expected 'leading_terms'; Lean declares: Term, LeadingTerm, Divides. Structural match via content."
       },
       {
         "field_hash": {
           "md": "a4b56fd9bfb0",
           "ts": "042c72a79f69",
-          "lean": "38677020e324"
+          "lean": "c4ab24905ef9"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.947849Z"
         },
-        "reviewed_at": "2026-05-28T15:43:23.399Z",
+        "reviewed_at": "2026-07-07T14:26:54.947849Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'def:leading-terms' → expected 'leading_terms'; Lean declares: Term, LeadingTerm, Divides. Structural match via content."
+        "notes": "Label 'def:leading-terms' \u2192 expected 'leading_terms'; Lean declares: Term, LeadingTerm, Divides. Structural match via content."
       }
     ],
     "fit-section-chapter": [
@@ -52,17 +54,17 @@
         "field_hash": {
           "md": "a4b56fd9bfb0",
           "ts": "042c72a79f69",
-          "lean": "38677020e324"
+          "lean": "c4ab24905ef9"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/drain-batch",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-06-13",
+          "agent_date": "2026-07-07T14:26:54.947849Z",
           "agent_skill": "local/prepare-merge-auto"
         },
-        "reviewed_at": "2026-06-13T13:17:26.046Z",
+        "reviewed_at": "2026-07-07T14:26:54.947849Z",
         "reviewed_sha": "a60319f319d74654752b4454b7d03890ca907d1a",
         "notes": "Auto-drained by agent"
       }
@@ -72,17 +74,17 @@
         "field_hash": {
           "md": "a4b56fd9bfb0",
           "ts": "042c72a79f69",
-          "lean": "38677020e324"
+          "lean": "c4ab24905ef9"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/drain-batch",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-06-13",
+          "agent_date": "2026-07-07T14:26:54.947849Z",
           "agent_skill": "local/prepare-merge-auto"
         },
-        "reviewed_at": "2026-06-13T13:17:26.046Z",
+        "reviewed_at": "2026-07-07T14:26:54.947849Z",
         "reviewed_sha": "a60319f319d74654752b4454b7d03890ca907d1a",
         "notes": "Auto-drained by agent"
       }
@@ -225,20 +227,20 @@
         "field_hash": {
           "md": "a4b56fd9bfb0",
           "ts": "042c72a79f69",
-          "lean": "38677020e324"
+          "lean": "c4ab24905ef9"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
           "kind": "agent",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-28",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.947849Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-28T16:22:25.000Z",
+        "reviewed_at": "2026-07-07T14:26:54.947849Z",
         "reviewed_sha": "112805b8753ec0251cbec0dd84bea59bfea434da",
-        "notes": "False positive: the flagged docstring 'Right multiplier in B.' is a terse, correct field doc — scholarly register, nothing informal.",
+        "notes": "False positive: the flagged docstring 'Right multiplier in B.' is a terse, correct field doc \u2014 scholarly register, nothing informal.",
         "severity": "minor"
       }
     ],
@@ -965,5 +967,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-28T16:22:25.000Z"
+  "updated_at": "2026-07-07T14:26:54.947849Z"
 }

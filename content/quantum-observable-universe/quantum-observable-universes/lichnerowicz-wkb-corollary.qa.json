@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/quantum-observable-universes/lichnerowicz-wkb-corollary.md"
   },
   "source_hashes": {
-    "md": "71bb7e0bb214",
+    "md": "f917861f5df8",
     "ts": "9b4fe14f8280"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Deleted the Lean diagnostics blocks. Shortened pedagogical 'dictionary' translations into clean geometric facts. Unified definitions.",
-        "reviewed_at": "2026-07-06T22:46:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.763213Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.763213Z"
+        },
+        "field_hash": {
+          "md": "f917861f5df8",
+          "ts": "9b4fe14f8280"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:58.083Z"
+  "updated_at": "2026-07-07T14:26:55.763213Z"
 }

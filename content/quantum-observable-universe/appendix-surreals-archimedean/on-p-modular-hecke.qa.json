@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/appendix-surreals-archimedean/on-p-modular-hecke.md"
   },
   "source_hashes": {
-    "md": "921be9e975f8",
+    "md": "377bd1670c83",
     "ts": "4f467f314a92"
   },
   "criteria": {
@@ -860,14 +860,20 @@
       {
         "result": "pass",
         "notes": "Rewrote instances of 'the main paper' to 'this paper'. Tightened nimber surreal framing for the modular Hecke conjecture.",
-        "reviewed_at": "2026-07-06T22:45:28Z",
+        "reviewed_at": "2026-07-07T14:26:56.092960Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.092960Z"
+        },
+        "field_hash": {
+          "md": "377bd1670c83",
+          "ts": "4f467f314a92"
         }
       }
     ]
   },
-  "updated_at": "2026-07-04T20:31:58.368Z"
+  "updated_at": "2026-07-07T14:26:56.092960Z"
 }

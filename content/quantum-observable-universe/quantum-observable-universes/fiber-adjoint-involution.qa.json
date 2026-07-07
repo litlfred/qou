@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/quantum-observable-universes/fiber-adjoint-involution.lean"
   },
   "source_hashes": {
-    "md": "37488fb8d06f",
+    "md": "40ac3d365ae3",
     "ts": "1e87926ef9da",
     "lean": "d23e3a25e6a6"
   },
@@ -1091,17 +1091,19 @@
       },
       {
         "field_hash": {
-          "md": "884036f2ca9e",
+          "md": "40ac3d365ae3",
           "ts": "1e87926ef9da",
-          "lean": "931353f56542"
+          "lean": "d23e3a25e6a6"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.952559Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.952559Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Statement is the three-part construction; the trailing 'Lean formalization' note is a status/scope note, not mislocated physical interpretation."
       }
@@ -1127,17 +1129,19 @@
       },
       {
         "field_hash": {
-          "md": "884036f2ca9e",
+          "md": "40ac3d365ae3",
           "ts": "1e87926ef9da",
-          "lean": "931353f56542"
+          "lean": "d23e3a25e6a6"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.952559Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.952559Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
@@ -1162,17 +1166,19 @@
       },
       {
         "field_hash": {
-          "md": "884036f2ca9e",
+          "md": "40ac3d365ae3",
           "ts": "1e87926ef9da",
-          "lean": "931353f56542"
+          "lean": "d23e3a25e6a6"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.952559Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.952559Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
@@ -1197,17 +1203,19 @@
       },
       {
         "field_hash": {
-          "md": "884036f2ca9e",
+          "md": "40ac3d365ae3",
           "ts": "1e87926ef9da",
-          "lean": "931353f56542"
+          "lean": "d23e3a25e6a6"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.952559Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.952559Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Proof body lives in the separate prf:fiber-adjoint-involution block; this .md is statement-only."
       }
@@ -1247,17 +1255,19 @@
       },
       {
         "field_hash": {
-          "md": "884036f2ca9e",
+          "md": "40ac3d365ae3",
           "ts": "1e87926ef9da",
-          "lean": "931353f56542"
+          "lean": "d23e3a25e6a6"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.952559Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.952559Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "minor",
         "evidence": "fiber-adjoint-involution.md:39: \"The companion Lean `fiber_adjoint_involution_exists` currently encodes an existence stub (`\u2203 inv, True`) pending a faithful statement\" vs fiber-adjoint-involution.lean:45-87: a real `structure FiberAdjointInvolution` (orbit_embed / involution / involution_sq / orbit_involution_compat / orbit_mono) with `theorem fiber_adjoint_involution_exists : Nonempty (FiberAdjointInvolution C fh) := ... sorry`",
@@ -1307,20 +1317,20 @@
       },
       {
         "field_hash": {
-          "md": "884036f2ca9e",
+          "md": "40ac3d365ae3",
           "ts": "1e87926ef9da",
-          "lean": "ec36dce9f9bf"
+          "lean": "d23e3a25e6a6"
         },
         "result": "warn",
         "notes": "Structure faithfully captures the 3 parts, but the existence theorem is exists inv,True := sorry -- no proof strategy realised in Lean.",
-        "reviewed_at": "2026-06-25T17:09:48.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.952559Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.952559Z"
         },
         "score": {
           "max": 1,
@@ -1371,20 +1381,20 @@
       },
       {
         "field_hash": {
-          "md": "884036f2ca9e",
+          "md": "40ac3d365ae3",
           "ts": "1e87926ef9da",
-          "lean": "ec36dce9f9bf"
+          "lean": "d23e3a25e6a6"
         },
         "result": "pass",
         "notes": "Frobenius self-duality A=A^v embeds P(V)=G/T as coadjoint orbit in Ad(A) w/ involution + Hom(1,Ad(A))=0; well-posed; structure encodes all 3 md parts.",
-        "reviewed_at": "2026-06-25T17:09:48.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.952559Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.952559Z"
         },
         "score": {
           "max": 1,
@@ -1435,20 +1445,20 @@
       },
       {
         "field_hash": {
-          "md": "884036f2ca9e",
+          "md": "40ac3d365ae3",
           "ts": "1e87926ef9da",
-          "lean": "ec36dce9f9bf"
+          "lean": "d23e3a25e6a6"
         },
         "result": "pass",
         "notes": "Categorical fibre-adjoint involution (CP^1 = S^2 in su(2)) framing of Frobenius self-duality; modest novelty; structure well-designed.",
-        "reviewed_at": "2026-06-25T17:09:48.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.952559Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.952559Z"
         },
         "score": {
           "max": 1,
@@ -1495,20 +1505,20 @@
       },
       {
         "field_hash": {
-          "md": "884036f2ca9e",
+          "md": "40ac3d365ae3",
           "ts": "1e87926ef9da",
-          "lean": "ec36dce9f9bf"
+          "lean": "d23e3a25e6a6"
         },
         "result": "fail",
         "notes": "Theorem fiber_adjoint_involution_exists : exists inv, True := sorry -- sorry-masked AND degenerate-weakened ('exists inv, True' is vacuous; substantive content sits in the FiberAdjointInvolution structure, not proved). md admits 'existence stub exists inv,True pending faithful statement'.",
-        "reviewed_at": "2026-06-25T17:09:47.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.952559Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.952559Z"
         }
       }
     ],
@@ -1551,20 +1561,20 @@
       },
       {
         "field_hash": {
-          "md": "884036f2ca9e",
+          "md": "40ac3d365ae3",
           "ts": "1e87926ef9da",
-          "lean": "ec36dce9f9bf"
+          "lean": "d23e3a25e6a6"
         },
         "result": "pass",
         "notes": "Failure mode is sorry + True-weakening, not a hypothesis-field projection; no := ctx.field self-assumption.",
-        "reviewed_at": "2026-06-25T17:09:48.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.952559Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.952559Z"
         }
       }
     ],
@@ -1589,20 +1599,20 @@
       },
       {
         "field_hash": {
-          "md": "884036f2ca9e",
+          "md": "40ac3d365ae3",
           "ts": "1e87926ef9da",
-          "lean": "ec36dce9f9bf"
+          "lean": "d23e3a25e6a6"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: no `: True` token in resolved Lean source (content/quantum-observable-universe/quantum-observable-universes/fiber-adjoint-involution.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.952559Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.952559Z"
         }
       }
     ],
@@ -1645,20 +1655,20 @@
       },
       {
         "field_hash": {
-          "md": "884036f2ca9e",
+          "md": "40ac3d365ae3",
           "ts": "1e87926ef9da",
-          "lean": "ec36dce9f9bf"
+          "lean": "d23e3a25e6a6"
         },
         "result": "pass",
         "notes": "Premises (Category/MonoidalCategory on C, FrobeniusHopfData fh) satisfiable; not contradictory.",
-        "reviewed_at": "2026-06-25T17:09:48.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.952559Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.952559Z"
         }
       }
     ],
@@ -1701,20 +1711,20 @@
       },
       {
         "field_hash": {
-          "md": "884036f2ca9e",
+          "md": "40ac3d365ae3",
           "ts": "1e87926ef9da",
-          "lean": "ec36dce9f9bf"
+          "lean": "d23e3a25e6a6"
         },
         "result": "pass",
         "notes": "C, fh appear in the statement type; sorry body uses nothing but no dead binder beyond the unproved goal. No unused-binder violation.",
-        "reviewed_at": "2026-06-25T17:09:48.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.952559Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.952559Z"
         }
       }
     ],
@@ -1739,37 +1749,39 @@
       },
       {
         "field_hash": {
-          "md": "884036f2ca9e",
+          "md": "40ac3d365ae3",
           "ts": "1e87926ef9da",
-          "lean": "ec36dce9f9bf"
+          "lean": "d23e3a25e6a6"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/quantum-observable-universes/fiber-adjoint-involution.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.952559Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.952559Z"
         }
       }
     ],
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "884036f2ca9e",
+          "md": "40ac3d365ae3",
           "ts": "1e87926ef9da",
-          "lean": "931353f56542"
+          "lean": "d23e3a25e6a6"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.952559Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.952559Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "fiber-adjoint-involution.lean:1",
@@ -1779,17 +1791,19 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "884036f2ca9e",
+          "md": "40ac3d365ae3",
           "ts": "1e87926ef9da",
-          "lean": "931353f56542"
+          "lean": "d23e3a25e6a6"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.952559Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.952559Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "major",
         "evidence": "fiber-adjoint-involution.lean:1",
@@ -1799,17 +1813,19 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "884036f2ca9e",
+          "md": "40ac3d365ae3",
           "ts": "1e87926ef9da",
-          "lean": "931353f56542"
+          "lean": "d23e3a25e6a6"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.952559Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.952559Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "fiber-adjoint-involution.ts:1",
@@ -1819,17 +1835,19 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "884036f2ca9e",
+          "md": "40ac3d365ae3",
           "ts": "1e87926ef9da",
-          "lean": "931353f56542"
+          "lean": "d23e3a25e6a6"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.952559Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.952559Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "fiber-adjoint-involution.ts:1",
@@ -1839,17 +1857,19 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "884036f2ca9e",
+          "md": "40ac3d365ae3",
           "ts": "1e87926ef9da",
-          "lean": "931353f56542"
+          "lean": "d23e3a25e6a6"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.952559Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.952559Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "fiber-adjoint-involution.ts:1",
@@ -1859,17 +1879,19 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "884036f2ca9e",
+          "md": "40ac3d365ae3",
           "ts": "1e87926ef9da",
-          "lean": "931353f56542"
+          "lean": "d23e3a25e6a6"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.952559Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.952559Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "fiber-adjoint-involution.lean:1",
@@ -1879,17 +1901,19 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "884036f2ca9e",
+          "md": "40ac3d365ae3",
           "ts": "1e87926ef9da",
-          "lean": "931353f56542"
+          "lean": "d23e3a25e6a6"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.952559Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.952559Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "fiber-adjoint-involution.lean:1",
@@ -1899,17 +1923,19 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "884036f2ca9e",
+          "md": "40ac3d365ae3",
           "ts": "1e87926ef9da",
-          "lean": "931353f56542"
+          "lean": "d23e3a25e6a6"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.952559Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.952559Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "fiber-adjoint-involution.ts:1",
@@ -1919,17 +1945,19 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "884036f2ca9e",
+          "md": "40ac3d365ae3",
           "ts": "1e87926ef9da",
-          "lean": "931353f56542"
+          "lean": "d23e3a25e6a6"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.952559Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.952559Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "fiber-adjoint-involution.ts:1",
@@ -1939,17 +1967,19 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "884036f2ca9e",
+          "md": "40ac3d365ae3",
           "ts": "1e87926ef9da",
-          "lean": "931353f56542"
+          "lean": "d23e3a25e6a6"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.952559Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.952559Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "fiber-adjoint-involution.ts:1",
@@ -1959,17 +1989,19 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "884036f2ca9e",
+          "md": "40ac3d365ae3",
           "ts": "1e87926ef9da",
-          "lean": "931353f56542"
+          "lean": "d23e3a25e6a6"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.952559Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.952559Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "fiber-adjoint-involution.ts:1",
@@ -1979,17 +2011,19 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "884036f2ca9e",
+          "md": "40ac3d365ae3",
           "ts": "1e87926ef9da",
-          "lean": "931353f56542"
+          "lean": "d23e3a25e6a6"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.952559Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.952559Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "fiber-adjoint-involution.lean:1",
@@ -1999,17 +2033,19 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "884036f2ca9e",
+          "md": "40ac3d365ae3",
           "ts": "1e87926ef9da",
-          "lean": "931353f56542"
+          "lean": "d23e3a25e6a6"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.952559Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.952559Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "major",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/fiber-adjoint-involution.lean contains 'sorry' placeholders.",
@@ -2021,14 +2057,21 @@
       {
         "result": "pass",
         "notes": "Rewrote seq8. Simplified the intro. Removed editorializing about 'arc layers'. Stripped back-references. Clarified the transition functions as gerbe morphisms and the role of the Woronowicz calculus deformation.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.952559Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.952559Z"
+        },
+        "field_hash": {
+          "md": "40ac3d365ae3",
+          "ts": "1e87926ef9da",
+          "lean": "d23e3a25e6a6"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T11:59:26.780Z"
+  "updated_at": "2026-07-07T14:26:55.952559Z"
 }

@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/stochastic-mechanics/outro-stochastic-mechanics.md"
   },
   "source_hashes": {
-    "ts": "43afb1d9d18a",
-    "md": "0664096afd16"
+    "md": "38021e8b71b0",
+    "ts": "43afb1d9d18a"
   },
   "criteria": {
     "q-usage-regime-detected": [
@@ -128,14 +128,20 @@
       {
         "result": "pass",
         "notes": "Connected the orphan stochastic mechanics blocks cleanly. Made the reverse crystal limits and AJ machinery arguments crisp.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.022979Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.022979Z"
+        },
+        "field_hash": {
+          "md": "38021e8b71b0",
+          "ts": "43afb1d9d18a"
         }
       }
     ]
   },
-  "updated_at": "2026-06-01T16:06:38.106Z"
+  "updated_at": "2026-07-07T14:26:56.022979Z"
 }

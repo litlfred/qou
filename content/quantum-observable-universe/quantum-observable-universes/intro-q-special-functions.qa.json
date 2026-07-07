@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/quantum-observable-universes/intro-q-special-functions.md"
   },
   "source_hashes": {
-    "ts": "72bde0591953",
-    "md": "d74b236b7180"
+    "md": "2315b6622261",
+    "ts": "72bde0591953"
   },
   "criteria": {
     "q-usage-regime-detected": [
@@ -128,14 +128,20 @@
       {
         "result": "pass",
         "notes": "Deleted LaTeX tikz diagrams and conversational framing. Shortened properties.",
-        "reviewed_at": "2026-07-06T22:46:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.856898Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.856898Z"
+        },
+        "field_hash": {
+          "md": "2315b6622261",
+          "ts": "72bde0591953"
         }
       }
     ]
   },
-  "updated_at": "2026-06-01T16:06:38.106Z"
+  "updated_at": "2026-07-07T14:26:55.856898Z"
 }

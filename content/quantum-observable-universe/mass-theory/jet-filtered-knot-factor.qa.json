@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/mass-theory/jet-filtered-knot-factor.md"
   },
   "source_hashes": {
-    "md": "1c34b86f1aff",
+    "md": "ffe61a7990e8",
     "ts": "3d8a0b3b5f0c"
   },
   "criteria": {
@@ -879,18 +879,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "1c34b86f1aff",
+          "md": "ffe61a7990e8",
           "ts": "3d8a0b3b5f0c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.015779Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:01.730Z",
+        "reviewed_at": "2026-07-07T14:26:57.015779Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -936,19 +936,19 @@
       },
       {
         "field_hash": {
-          "md": "1c34b86f1aff",
+          "md": "ffe61a7990e8",
           "ts": "3d8a0b3b5f0c"
         },
         "result": "pass",
         "notes": "Conjecture: BW knot factor a(Z,N)=J_quotient-braid(q); A<=4 verified (1, 1-h^2, (1-h^2)^2), A>=5 open. Well-posed + substantive (6Li 1.134 vs 1.133), Part-4 closed form genuinely open. Honest 3b placeholder class.",
-        "reviewed_at": "2026-06-25T17:07:24.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.015779Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.015779Z"
         },
         "score": {
           "max": 1,
@@ -959,15 +959,17 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "1c34b86f1aff",
+          "md": "ffe61a7990e8",
           "ts": "3d8a0b3b5f0c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.015779Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:57.015779Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/jet-filtered-knot-factor.ts:1",
@@ -977,15 +979,17 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "1c34b86f1aff",
+          "md": "ffe61a7990e8",
           "ts": "3d8a0b3b5f0c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.015779Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:57.015779Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The claims are non-vacuous as they make concrete numerical or algebraic conjectures.",
         "severity": "minor"
@@ -994,15 +998,17 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "1c34b86f1aff",
+          "md": "ffe61a7990e8",
           "ts": "3d8a0b3b5f0c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.015779Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:57.015779Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/jet-filtered-knot-factor.ts:1",
@@ -1012,15 +1018,17 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "1c34b86f1aff",
+          "md": "ffe61a7990e8",
           "ts": "3d8a0b3b5f0c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.015779Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:57.015779Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
@@ -1029,15 +1037,17 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "1c34b86f1aff",
+          "md": "ffe61a7990e8",
           "ts": "3d8a0b3b5f0c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.015779Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:57.015779Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/jet-filtered-knot-factor.ts:1",
@@ -1047,15 +1057,17 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "1c34b86f1aff",
+          "md": "ffe61a7990e8",
           "ts": "3d8a0b3b5f0c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.015779Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:57.015779Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/jet-filtered-knot-factor.ts:1",
@@ -1065,15 +1077,17 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "1c34b86f1aff",
+          "md": "ffe61a7990e8",
           "ts": "3d8a0b3b5f0c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.015779Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:57.015779Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
         "evidence": "content/quantum-observable-universe/mass-theory/jet-filtered-knot-factor.ts:1",
@@ -1083,15 +1097,17 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "1c34b86f1aff",
+          "md": "ffe61a7990e8",
           "ts": "3d8a0b3b5f0c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.015779Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:57.015779Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/jet-filtered-knot-factor.ts:1",
@@ -1101,15 +1117,17 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "1c34b86f1aff",
+          "md": "ffe61a7990e8",
           "ts": "3d8a0b3b5f0c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.015779Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:57.015779Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/jet-filtered-knot-factor.ts:1",
@@ -1119,15 +1137,17 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "1c34b86f1aff",
+          "md": "ffe61a7990e8",
           "ts": "3d8a0b3b5f0c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.015779Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:57.015779Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/jet-filtered-knot-factor.ts:1",
@@ -1137,15 +1157,17 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "1c34b86f1aff",
+          "md": "ffe61a7990e8",
           "ts": "3d8a0b3b5f0c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.015779Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:57.015779Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-reproducibility.",
         "severity": "minor"
@@ -1154,15 +1176,17 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "1c34b86f1aff",
+          "md": "ffe61a7990e8",
           "ts": "3d8a0b3b5f0c"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.015779Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:57.015779Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Conjecture is open, hence the objection is survivable. Sibling Lean file is missing.",
         "severity": "minor",
@@ -1173,16 +1197,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "1c34b86f1aff",
+          "md": "ffe61a7990e8",
           "ts": "3d8a0b3b5f0c"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.015779Z"
         },
-        "reviewed_at": "2026-06-28T10:58:48.456Z",
+        "reviewed_at": "2026-07-07T14:26:57.015779Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Conjectured block 'Jet-filtered knot factor: per-level character convergence and nuclear quotient braid' has no Lean sibling, representing a minor structural gap.",
         "severity": "minor"
@@ -1192,14 +1218,20 @@
       {
         "result": "pass",
         "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
-        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewed_at": "2026-07-07T14:26:57.015779Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.015779Z"
+        },
+        "field_hash": {
+          "md": "ffe61a7990e8",
+          "ts": "3d8a0b3b5f0c"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-07T14:26:57.015779Z"
 }

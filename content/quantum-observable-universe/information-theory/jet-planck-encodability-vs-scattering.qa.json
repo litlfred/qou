@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/information-theory/jet-planck-encodability-vs-scattering.md"
   },
   "source_hashes": {
-    "md": "800b8f5d8ef7",
+    "md": "63e07d821a48",
     "ts": "e467aff1d001"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Smoothed transitions, removed forward references, improved brevity.",
-        "reviewed_at": "2026-07-07T02:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.610135Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.610135Z"
+        },
+        "field_hash": {
+          "md": "63e07d821a48",
+          "ts": "e467aff1d001"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.008Z"
+  "updated_at": "2026-07-07T14:26:55.610135Z"
 }

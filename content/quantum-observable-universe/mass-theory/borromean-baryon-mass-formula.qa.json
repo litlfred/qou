@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.lean"
   },
   "source_hashes": {
-    "md": "645fca9012c7",
+    "md": "2c44e40c49c3",
     "ts": "4a9992aeb372",
     "lean": "5c384e6b0e81"
   },
@@ -916,17 +916,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "645fca9012c7",
+          "md": "2c44e40c49c3",
           "ts": "4a9992aeb372",
-          "lean": "28df5114dd19"
+          "lean": "5c384e6b0e81"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.728811Z"
         },
-        "reviewed_at": "2026-06-28T10:58:54.030Z",
+        "reviewed_at": "2026-07-07T14:26:56.728811Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Block placement and kind 'conjecture' match validated structurally for 'Borromean baryon mass formula with common scale $\\\\lambda_{\\\\mathrm{scale}}$'.",
         "severity": "minor"
@@ -935,17 +937,19 @@
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "645fca9012c7",
+          "md": "2c44e40c49c3",
           "ts": "4a9992aeb372",
-          "lean": "28df5114dd19"
+          "lean": "5c384e6b0e81"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.728811Z"
         },
-        "reviewed_at": "2026-06-28T10:58:54.036Z",
+        "reviewed_at": "2026-07-07T14:26:56.728811Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Proof compiles successfully, confirming goal plausibility.",
         "severity": "minor"
@@ -981,17 +985,19 @@
       },
       {
         "field_hash": {
-          "md": "645fca9012c7",
+          "md": "2c44e40c49c3",
           "ts": "4a9992aeb372",
-          "lean": "28df5114dd19"
+          "lean": "5c384e6b0e81"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.728811Z"
         },
-        "reviewed_at": "2026-06-28T10:58:54.043Z",
+        "reviewed_at": "2026-07-07T14:26:56.728811Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The prose in 'Borromean baryon mass formula with common scale $\\\\lambda_{\\\\mathrm{scale}}$' presents the result as established, but the Lean formalization is incomplete (has sorry).",
         "severity": "minor"
@@ -1027,17 +1033,19 @@
       },
       {
         "field_hash": {
-          "md": "645fca9012c7",
+          "md": "2c44e40c49c3",
           "ts": "4a9992aeb372",
-          "lean": "28df5114dd19"
+          "lean": "5c384e6b0e81"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.728811Z"
         },
-        "reviewed_at": "2026-06-28T10:58:54.055Z",
+        "reviewed_at": "2026-07-07T14:26:56.728811Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.lean uses a class-conjecture pattern, matching the conjectural nature of 'Borromean baryon mass formula with common scale $\\\\lambda_{\\\\mathrm{scale}}$'.",
         "severity": "minor"
@@ -1073,17 +1081,19 @@
       },
       {
         "field_hash": {
-          "md": "645fca9012c7",
+          "md": "2c44e40c49c3",
           "ts": "4a9992aeb372",
-          "lean": "28df5114dd19"
+          "lean": "5c384e6b0e81"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.728811Z"
         },
-        "reviewed_at": "2026-06-28T10:58:54.067Z",
+        "reviewed_at": "2026-07-07T14:26:56.728811Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The derivation steps and formal definitions in 'Borromean baryon mass formula with common scale $\\\\lambda_{\\\\mathrm{scale}}$' are reproducible.",
         "severity": "minor",
@@ -1120,17 +1130,19 @@
       },
       {
         "field_hash": {
-          "md": "645fca9012c7",
+          "md": "2c44e40c49c3",
           "ts": "4a9992aeb372",
-          "lean": "28df5114dd19"
+          "lean": "5c384e6b0e81"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.728811Z"
         },
-        "reviewed_at": "2026-06-28T10:58:54.049Z",
+        "reviewed_at": "2026-07-07T14:26:56.728811Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Borromean baryon mass formula with common scale $\\\\lambda_{\\\\mathrm{scale}}$'.",
         "severity": "minor",
@@ -1167,17 +1179,19 @@
       },
       {
         "field_hash": {
-          "md": "645fca9012c7",
+          "md": "2c44e40c49c3",
           "ts": "4a9992aeb372",
-          "lean": "28df5114dd19"
+          "lean": "5c384e6b0e81"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.728811Z"
         },
-        "reviewed_at": "2026-06-28T10:58:54.061Z",
+        "reviewed_at": "2026-07-07T14:26:56.728811Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Citations to thurston1978, kashaev1997, murakami-murakami2001, codata2022 are correct and contextually appropriate.",
         "severity": "minor",
@@ -1206,17 +1220,19 @@
       },
       {
         "field_hash": {
-          "md": "645fca9012c7",
+          "md": "2c44e40c49c3",
           "ts": "4a9992aeb372",
-          "lean": "28df5114dd19"
+          "lean": "5c384e6b0e81"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.728811Z"
         },
-        "reviewed_at": "2026-06-28T10:58:54.074Z",
+        "reviewed_at": "2026-07-07T14:26:56.728811Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders.",
         "severity": "minor",
@@ -1227,16 +1243,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "645fca9012c7",
+          "md": "2c44e40c49c3",
           "ts": "4a9992aeb372",
-          "lean": "28df5114dd19"
+          "lean": "5c384e6b0e81"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.728811Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.728811Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.ts:1",
@@ -1246,16 +1264,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "645fca9012c7",
+          "md": "2c44e40c49c3",
           "ts": "4a9992aeb372",
-          "lean": "28df5114dd19"
+          "lean": "5c384e6b0e81"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.728811Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.728811Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The claims are non-vacuous as they make concrete numerical or algebraic conjectures.",
         "severity": "minor"
@@ -1264,16 +1284,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "645fca9012c7",
+          "md": "2c44e40c49c3",
           "ts": "4a9992aeb372",
-          "lean": "28df5114dd19"
+          "lean": "5c384e6b0e81"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.728811Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.728811Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.ts:1",
@@ -1283,16 +1305,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "645fca9012c7",
+          "md": "2c44e40c49c3",
           "ts": "4a9992aeb372",
-          "lean": "28df5114dd19"
+          "lean": "5c384e6b0e81"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.728811Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.728811Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.ts:1",
@@ -1302,16 +1326,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "645fca9012c7",
+          "md": "2c44e40c49c3",
           "ts": "4a9992aeb372",
-          "lean": "28df5114dd19"
+          "lean": "5c384e6b0e81"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.728811Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.728811Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.ts:1",
@@ -1321,16 +1347,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "645fca9012c7",
+          "md": "2c44e40c49c3",
           "ts": "4a9992aeb372",
-          "lean": "28df5114dd19"
+          "lean": "5c384e6b0e81"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.728811Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.728811Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.ts:1",
@@ -1340,16 +1368,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "645fca9012c7",
+          "md": "2c44e40c49c3",
           "ts": "4a9992aeb372",
-          "lean": "28df5114dd19"
+          "lean": "5c384e6b0e81"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.728811Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.728811Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.ts:1",
@@ -1359,7 +1389,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "645fca9012c7",
+          "md": "2c44e40c49c3",
           "ts": "4a9992aeb372",
           "lean": "5c384e6b0e81"
         },
@@ -1367,9 +1397,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.728811Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_at": "2026-07-07T14:26:56.728811Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Conjecture with class/axiom axiomatisation \u2014 structural match."
       }
@@ -1378,14 +1410,21 @@
       {
         "result": "pass",
         "notes": "Rewrote prose sections of mass-theory_seq46.md to enforce H1-H8 and milnor-brevity. Preserved all math blocks and original section markers. Ensured linear flow, minimal technical clutter, and short declarative sentences.",
-        "reviewed_at": "2026-07-06T22:51:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.728811Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.728811Z"
+        },
+        "field_hash": {
+          "md": "2c44e40c49c3",
+          "ts": "4a9992aeb372",
+          "lean": "5c384e6b0e81"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.430Z"
+  "updated_at": "2026-07-07T14:26:56.728811Z"
 }

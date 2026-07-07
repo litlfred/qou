@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/quantum-observable-universes/substrate-self-duality.lean"
   },
   "source_hashes": {
-    "md": "4076b28d8643",
+    "md": "2c0e03ee8a86",
     "ts": "4eeca4b530ee",
     "lean": "58a91639bd82"
   },
@@ -37,14 +37,21 @@
       {
         "result": "pass",
         "notes": "Deleted conversational padding ('Continuing the...'). Repackaged conjectures as geometric properties of the model. Simplified block structure.",
-        "reviewed_at": "2026-07-06T22:46:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.882685Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.882685Z"
+        },
+        "field_hash": {
+          "md": "2c0e03ee8a86",
+          "ts": "4eeca4b530ee",
+          "lean": "58a91639bd82"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:58.083Z"
+  "updated_at": "2026-07-07T14:26:55.882685Z"
 }

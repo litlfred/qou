@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/information-theory/operational-entropy.lean"
   },
   "source_hashes": {
-    "md": "0820074a60af",
+    "md": "ac193f1b83e6",
     "ts": "2fd5d03865fc",
     "lean": "bfbf7bf90291"
   },
@@ -894,17 +894,19 @@
       },
       {
         "field_hash": {
-          "md": "0820074a60af",
+          "md": "ac193f1b83e6",
           "ts": "2fd5d03865fc",
-          "lean": "3f551f054a4e"
+          "lean": "bfbf7bf90291"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.570380Z"
         },
-        "reviewed_at": "2026-06-28T18:02:47.823Z",
+        "reviewed_at": "2026-07-07T14:26:55.570380Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
@@ -924,21 +926,23 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean theorem statement in content/quantum-observable-universe/information-theory/operational-entropy.lean matches the mathematical statement in content/quantum-observable-universe/information-theory/operational-entropy.md.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/operational-entropy.lean:1 — Lean file exists"
+        "evidence": "content/quantum-observable-universe/information-theory/operational-entropy.lean:1 \u2014 Lean file exists"
       },
       {
         "field_hash": {
-          "md": "0820074a60af",
+          "md": "ac193f1b83e6",
           "ts": "2fd5d03865fc",
-          "lean": "3f551f054a4e"
+          "lean": "bfbf7bf90291"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.570380Z"
         },
-        "reviewed_at": "2026-06-28T18:02:47.823Z",
+        "reviewed_at": "2026-07-07T14:26:55.570380Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
@@ -962,17 +966,19 @@
       },
       {
         "field_hash": {
-          "md": "0820074a60af",
+          "md": "ac193f1b83e6",
           "ts": "2fd5d03865fc",
-          "lean": "3f551f054a4e"
+          "lean": "bfbf7bf90291"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.570380Z"
         },
-        "reviewed_at": "2026-06-28T18:02:47.823Z",
+        "reviewed_at": "2026-07-07T14:26:55.570380Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
@@ -995,17 +1001,19 @@
       },
       {
         "field_hash": {
-          "md": "0820074a60af",
+          "md": "ac193f1b83e6",
           "ts": "2fd5d03865fc",
-          "lean": "3f551f054a4e"
+          "lean": "bfbf7bf90291"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.570380Z"
         },
-        "reviewed_at": "2026-06-28T18:02:47.823Z",
+        "reviewed_at": "2026-07-07T14:26:55.570380Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
@@ -1029,17 +1037,19 @@
       },
       {
         "field_hash": {
-          "md": "0820074a60af",
+          "md": "ac193f1b83e6",
           "ts": "2fd5d03865fc",
-          "lean": "3f551f054a4e"
+          "lean": "bfbf7bf90291"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.570380Z"
         },
-        "reviewed_at": "2026-06-28T18:02:47.823Z",
+        "reviewed_at": "2026-07-07T14:26:55.570380Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "severity": "minor",
         "notes": "Asserts the formula is 'forced' by G_Planck = 1, but G_Planck itself was likely derived from these internal definitions, bordering on circular self-consistency rather than independent physical derivation."
@@ -1064,17 +1074,19 @@
       },
       {
         "field_hash": {
-          "md": "0820074a60af",
+          "md": "ac193f1b83e6",
           "ts": "2fd5d03865fc",
-          "lean": "3f551f054a4e"
+          "lean": "bfbf7bf90291"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.570380Z"
         },
-        "reviewed_at": "2026-06-28T18:02:47.823Z",
+        "reviewed_at": "2026-07-07T14:26:55.570380Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
@@ -1098,17 +1110,19 @@
       },
       {
         "field_hash": {
-          "md": "0820074a60af",
+          "md": "ac193f1b83e6",
           "ts": "2fd5d03865fc",
-          "lean": "3f551f054a4e"
+          "lean": "bfbf7bf90291"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.570380Z"
         },
-        "reviewed_at": "2026-06-28T18:02:47.823Z",
+        "reviewed_at": "2026-07-07T14:26:55.570380Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
@@ -1132,17 +1146,19 @@
       },
       {
         "field_hash": {
-          "md": "0820074a60af",
+          "md": "ac193f1b83e6",
           "ts": "2fd5d03865fc",
-          "lean": "3f551f054a4e"
+          "lean": "bfbf7bf90291"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.570380Z"
         },
-        "reviewed_at": "2026-06-28T18:02:47.823Z",
+        "reviewed_at": "2026-07-07T14:26:55.570380Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
@@ -1165,17 +1181,19 @@
       },
       {
         "field_hash": {
-          "md": "0820074a60af",
+          "md": "ac193f1b83e6",
           "ts": "2fd5d03865fc",
-          "lean": "3f551f054a4e"
+          "lean": "bfbf7bf90291"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.570380Z"
         },
-        "reviewed_at": "2026-06-28T18:02:47.823Z",
+        "reviewed_at": "2026-07-07T14:26:55.570380Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
@@ -1199,17 +1217,19 @@
       },
       {
         "field_hash": {
-          "md": "0820074a60af",
+          "md": "ac193f1b83e6",
           "ts": "2fd5d03865fc",
-          "lean": "3f551f054a4e"
+          "lean": "bfbf7bf90291"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.570380Z"
         },
-        "reviewed_at": "2026-06-28T18:02:47.823Z",
+        "reviewed_at": "2026-07-07T14:26:55.570380Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
@@ -1233,17 +1253,19 @@
       },
       {
         "field_hash": {
-          "md": "0820074a60af",
+          "md": "ac193f1b83e6",
           "ts": "2fd5d03865fc",
-          "lean": "3f551f054a4e"
+          "lean": "bfbf7bf90291"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.570380Z"
         },
-        "reviewed_at": "2026-06-28T18:02:47.823Z",
+        "reviewed_at": "2026-07-07T14:26:55.570380Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
@@ -1267,17 +1289,19 @@
       },
       {
         "field_hash": {
-          "md": "0820074a60af",
+          "md": "ac193f1b83e6",
           "ts": "2fd5d03865fc",
-          "lean": "3f551f054a4e"
+          "lean": "bfbf7bf90291"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.570380Z"
         },
-        "reviewed_at": "2026-06-28T18:02:47.823Z",
+        "reviewed_at": "2026-07-07T14:26:55.570380Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
@@ -1301,17 +1325,19 @@
       },
       {
         "field_hash": {
-          "md": "0820074a60af",
+          "md": "ac193f1b83e6",
           "ts": "2fd5d03865fc",
-          "lean": "3f551f054a4e"
+          "lean": "bfbf7bf90291"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.570380Z"
         },
-        "reviewed_at": "2026-06-28T18:02:47.823Z",
+        "reviewed_at": "2026-07-07T14:26:55.570380Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
@@ -1331,21 +1357,23 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/information-theory/operational-entropy.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/information-theory/operational-entropy.lean:1 — /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/operational-entropy.lean:41:3: error: unknown tactic"
+        "evidence": "content/quantum-observable-universe/information-theory/operational-entropy.lean:1 \u2014 /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/operational-entropy.lean:41:3: error: unknown tactic"
       },
       {
         "field_hash": {
-          "md": "0820074a60af",
+          "md": "ac193f1b83e6",
           "ts": "2fd5d03865fc",
-          "lean": "3f551f054a4e"
+          "lean": "bfbf7bf90291"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.570380Z"
         },
-        "reviewed_at": "2026-06-28T18:02:47.823Z",
+        "reviewed_at": "2026-07-07T14:26:55.570380Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
@@ -1370,20 +1398,22 @@
       },
       {
         "field_hash": {
-          "md": "0820074a60af",
+          "md": "ac193f1b83e6",
           "ts": "2fd5d03865fc",
-          "lean": "3f551f054a4e"
+          "lean": "bfbf7bf90291"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.570380Z"
         },
-        "reviewed_at": "2026-06-28T18:02:47.823Z",
+        "reviewed_at": "2026-07-07T14:26:55.570380Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-07T14:26:55.570380Z"
 }

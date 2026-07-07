@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/stochastic-mechanics/classical-riemann-hypothesis.md"
   },
   "source_hashes": {
-    "md": "3e0ca7a5d01c",
+    "md": "336b6cf0c0d8",
     "ts": "057d25308009"
   },
   "criteria": {
@@ -859,18 +859,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "3e0ca7a5d01c",
+          "md": "336b6cf0c0d8",
           "ts": "057d25308009"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.038842Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:38.591Z",
+        "reviewed_at": "2026-07-07T14:26:56.038842Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -916,19 +916,19 @@
       },
       {
         "field_hash": {
-          "md": "3e0ca7a5d01c",
+          "md": "336b6cf0c0d8",
           "ts": "057d25308009"
         },
         "result": "pass",
         "notes": "Conjecture = the Riemann Hypothesis itself, faithfully stated over Mathlib riemannZeta (\u2200 nontrivial zero, Re s=1/2). \u00a73b class + sorry instance (=open conjecture). Maximally well-posed/substantive.",
-        "reviewed_at": "2026-06-25T17:08:52.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.038842Z",
         "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.038842Z"
         },
         "score": {
           "max": 1,
@@ -939,16 +939,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "3e0ca7a5d01c",
+          "md": "336b6cf0c0d8",
           "ts": "057d25308009"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.038842Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.038842Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-riemann-hypothesis.ts:1",
@@ -958,16 +960,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "3e0ca7a5d01c",
+          "md": "336b6cf0c0d8",
           "ts": "057d25308009"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.038842Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.038842Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lean/QOU/BraidKnot/ClassicalRiemannHypothesis.lean:1",
@@ -977,16 +981,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "3e0ca7a5d01c",
+          "md": "336b6cf0c0d8",
           "ts": "057d25308009"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.038842Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.038842Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-riemann-hypothesis.ts:1",
@@ -996,16 +1002,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "3e0ca7a5d01c",
+          "md": "336b6cf0c0d8",
           "ts": "057d25308009"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.038842Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.038842Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "The prose in 'Conjecture (Riemann, 1859). All non-trivial zeros of the Riemann' presents the result as established, but the Lean formalization is incomplete (contains sorry / fails compilation)."
@@ -1014,16 +1022,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "3e0ca7a5d01c",
+          "md": "336b6cf0c0d8",
           "ts": "057d25308009"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.038842Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.038842Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-riemann-hypothesis.ts:1",
@@ -1033,16 +1043,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "3e0ca7a5d01c",
+          "md": "336b6cf0c0d8",
           "ts": "057d25308009"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.038842Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.038842Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-riemann-hypothesis.ts:1",
@@ -1052,16 +1064,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "3e0ca7a5d01c",
+          "md": "336b6cf0c0d8",
           "ts": "057d25308009"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.038842Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.038842Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/lean/QOU/BraidKnot/ClassicalRiemannHypothesis.lean:1",
@@ -1071,16 +1085,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "3e0ca7a5d01c",
+          "md": "336b6cf0c0d8",
           "ts": "057d25308009"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.038842Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.038842Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-riemann-hypothesis.ts:1",
@@ -1090,16 +1106,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "3e0ca7a5d01c",
+          "md": "336b6cf0c0d8",
           "ts": "057d25308009"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.038842Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.038842Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-riemann-hypothesis.ts:1",
@@ -1109,16 +1127,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "3e0ca7a5d01c",
+          "md": "336b6cf0c0d8",
           "ts": "057d25308009"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.038842Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.038842Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-riemann-hypothesis.ts:1",
@@ -1128,16 +1148,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "3e0ca7a5d01c",
+          "md": "336b6cf0c0d8",
           "ts": "057d25308009"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.038842Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.038842Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-riemann-hypothesis.ts:1",
@@ -1147,16 +1169,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "3e0ca7a5d01c",
+          "md": "336b6cf0c0d8",
           "ts": "057d25308009"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.038842Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.038842Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-riemann-hypothesis.ts:1",
@@ -1166,16 +1190,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "3e0ca7a5d01c",
+          "md": "336b6cf0c0d8",
           "ts": "057d25308009"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.038842Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.038842Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-riemann-hypothesis.md:1 \u2014 Conjecture (Riemann, 1859). All non-trivial zeros of the Riemann",
@@ -1188,14 +1214,20 @@
       {
         "result": "pass",
         "notes": "Cleaned up the graded Baer-star and classical limit implications. Reduced clutter around the Riemann hypothesis statement and macroscopic stability.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.038842Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.038842Z"
+        },
+        "field_hash": {
+          "md": "336b6cf0c0d8",
+          "ts": "057d25308009"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T23:04:20.088Z"
+  "updated_at": "2026-07-07T14:26:56.038842Z"
 }

@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/lifting-and-descent/yekutieli-lifting-su2.md"
   },
   "source_hashes": {
-    "md": "14e34b8e83b5",
+    "md": "d52b0d4dc11a",
     "ts": "7653e5d67564"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Applied Milnor standard (H1-H8) and milnor-brevity. Compressed introductions. Improved linear flow of the Yekutieli central extension proofs. Short declarative sentences. Maintained cross-block flow.",
-        "reviewed_at": "2026-07-06T23:06:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.743581Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.743581Z"
+        },
+        "field_hash": {
+          "md": "d52b0d4dc11a",
+          "ts": "7653e5d67564"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.146Z"
+  "updated_at": "2026-07-07T14:26:55.743581Z"
 }

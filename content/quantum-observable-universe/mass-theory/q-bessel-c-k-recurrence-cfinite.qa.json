@@ -7,8 +7,8 @@
     "md": "../qou/content/quantum-observable-universe/mass-theory/q-bessel-c-k-recurrence-cfinite.md"
   },
   "source_hashes": {
-    "md": "705b277c57c1",
-    "ts": "b5153ef1e9fe"
+    "md": "19fb0417cc2c",
+    "ts": "4b89db354325"
   },
   "criteria": {
     "voice-status-leak": [
@@ -783,14 +783,20 @@
       {
         "result": "pass",
         "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice. Grouped logical steps for clarity, removing repetitive transitional filler. Emphasized 'why before what'. Maintained mathematical and technical accuracy.",
-        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.910562Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.910562Z"
+        },
+        "field_hash": {
+          "md": "19fb0417cc2c",
+          "ts": "4b89db354325"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-07T14:26:56.910562Z"
 }

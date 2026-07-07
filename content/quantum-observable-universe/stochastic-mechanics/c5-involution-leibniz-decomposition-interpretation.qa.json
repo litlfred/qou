@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/stochastic-mechanics/c5-involution-leibniz-decomposition-interpretation.md"
   },
   "source_hashes": {
-    "md": "8290cdf813a4",
+    "md": "308da8e28658",
     "ts": "3104a61685ec"
   },
   "criteria": {
@@ -821,14 +821,20 @@
       {
         "result": "pass",
         "notes": "Unified the Markov trace intro and properties. Eliminated wordy formulations and passive voice. Kept polynomial proofs focused and brief.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.056664Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.056664Z"
+        },
+        "field_hash": {
+          "md": "308da8e28658",
+          "ts": "3104a61685ec"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T23:04:20.088Z"
+  "updated_at": "2026-07-07T14:26:56.056664Z"
 }

@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/mass-theory/wigner-2-coefficient-interpretation.md"
   },
   "source_hashes": {
-    "md": "efd8c0fb117f",
+    "md": "4f36f64728c6",
     "ts": "0ef099d3f0c9"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
-        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.980929Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.980929Z"
+        },
+        "field_hash": {
+          "md": "4f36f64728c6",
+          "ts": "0ef099d3f0c9"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-07T14:26:56.980929Z"
 }

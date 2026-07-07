@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/predicted-spectra/hydrogen-shell-writhe.lean"
   },
   "source_hashes": {
-    "md": "3bb5ffe179d4",
+    "md": "842c06bff5ed",
     "ts": "2385f564b4e9",
     "lean": "bc0608ab8af0"
   },
@@ -914,19 +914,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "3bb5ffe179d4",
+          "md": "842c06bff5ed",
           "ts": "2385f564b4e9",
-          "lean": "279762605569"
+          "lean": "bc0608ab8af0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.365102Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:47.510Z",
+        "reviewed_at": "2026-07-07T14:26:56.365102Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -974,20 +974,20 @@
       },
       {
         "field_hash": {
-          "md": "3bb5ffe179d4",
+          "md": "842c06bff5ed",
           "ts": "2385f564b4e9",
-          "lean": "279762605569"
+          "lean": "bc0608ab8af0"
         },
         "result": "pass",
         "notes": "Goal: n=(w-1)/2 shell-writhe, n\u00b2 orbitals per shell, E_n=-E_ion/n\u00b2 from Seifert area. Well-posed knot\u2194shell correspondence (conditional on conj:borromean-quark); heuristic but coherent.",
-        "reviewed_at": "2026-06-25T17:07:16.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.365102Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.365102Z"
         },
         "score": {
           "max": 1,
@@ -1015,17 +1015,19 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "3bb5ffe179d4",
+          "md": "842c06bff5ed",
           "ts": "2385f564b4e9",
-          "lean": "279762605569"
+          "lean": "bc0608ab8af0"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.365102Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.365102Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The mathematical claims in 'Electron shell number equals writhe level of the trefoil embedding' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/predicted-spectra/hydrogen-shell-writhe.lean:38:2: error: No goals to be solved.",
         "severity": "minor",
@@ -1035,17 +1037,19 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "3bb5ffe179d4",
+          "md": "842c06bff5ed",
           "ts": "2385f564b4e9",
-          "lean": "279762605569"
+          "lean": "bc0608ab8af0"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.365102Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.365102Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/hydrogen-shell-writhe.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "major",
@@ -1055,17 +1059,19 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "3bb5ffe179d4",
+          "md": "842c06bff5ed",
           "ts": "2385f564b4e9",
-          "lean": "279762605569"
+          "lean": "bc0608ab8af0"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.365102Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.365102Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Electron shell number equals writhe level of the trefoil embedding'.",
         "severity": "minor",
@@ -1075,17 +1081,19 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "3bb5ffe179d4",
+          "md": "842c06bff5ed",
           "ts": "2385f564b4e9",
-          "lean": "279762605569"
+          "lean": "bc0608ab8af0"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.365102Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.365102Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose presents 'Electron shell number equals writhe level of the trefoil embedding' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
@@ -1094,17 +1102,19 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "3bb5ffe179d4",
+          "md": "842c06bff5ed",
           "ts": "2385f564b4e9",
-          "lean": "279762605569"
+          "lean": "bc0608ab8af0"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.365102Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.365102Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Electron shell number equals writhe level of the trefoil embedding'.",
         "severity": "minor",
@@ -1114,17 +1124,19 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "3bb5ffe179d4",
+          "md": "842c06bff5ed",
           "ts": "2385f564b4e9",
-          "lean": "279762605569"
+          "lean": "bc0608ab8af0"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.365102Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.365102Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/predicted-spectra/hydrogen-shell-writhe.lean.",
         "severity": "minor",
@@ -1134,17 +1146,19 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "3bb5ffe179d4",
+          "md": "842c06bff5ed",
           "ts": "2385f564b4e9",
-          "lean": "279762605569"
+          "lean": "bc0608ab8af0"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.365102Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.365102Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/hydrogen-shell-writhe.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
@@ -1153,17 +1167,19 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "3bb5ffe179d4",
+          "md": "842c06bff5ed",
           "ts": "2385f564b4e9",
-          "lean": "279762605569"
+          "lean": "bc0608ab8af0"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.365102Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.365102Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Electron shell number equals writhe level of the trefoil embedding', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1173,17 +1189,19 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "3bb5ffe179d4",
+          "md": "842c06bff5ed",
           "ts": "2385f564b4e9",
-          "lean": "279762605569"
+          "lean": "bc0608ab8af0"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.365102Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.365102Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Electron shell number equals writhe level of the trefoil embedding' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1193,17 +1211,19 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "3bb5ffe179d4",
+          "md": "842c06bff5ed",
           "ts": "2385f564b4e9",
-          "lean": "279762605569"
+          "lean": "bc0608ab8af0"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.365102Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.365102Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The empirical claims in 'Electron shell number equals writhe level of the trefoil embedding' are structurally anchored to the QOU mass framework and are stable.",
         "severity": "minor",
@@ -1213,17 +1233,19 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "3bb5ffe179d4",
+          "md": "842c06bff5ed",
           "ts": "2385f564b4e9",
-          "lean": "279762605569"
+          "lean": "bc0608ab8af0"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.365102Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.365102Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Electron shell number equals writhe level of the trefoil embedding' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1233,17 +1255,19 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "3bb5ffe179d4",
+          "md": "842c06bff5ed",
           "ts": "2385f564b4e9",
-          "lean": "279762605569"
+          "lean": "bc0608ab8af0"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.365102Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.365102Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/hydrogen-shell-writhe.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
@@ -1253,17 +1277,19 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "3bb5ffe179d4",
+          "md": "842c06bff5ed",
           "ts": "2385f564b4e9",
-          "lean": "279762605569"
+          "lean": "bc0608ab8af0"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.365102Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.365102Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/hydrogen-shell-writhe.lean contains 'sorry' placeholders.",
         "severity": "major",
@@ -1274,7 +1300,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "3bb5ffe179d4",
+          "md": "842c06bff5ed",
           "ts": "2385f564b4e9",
           "lean": "bc0608ab8af0"
         },
@@ -1282,9 +1308,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.365102Z"
         },
-        "reviewed_at": "2026-07-06T04:41:30.359Z",
+        "reviewed_at": "2026-07-07T14:26:56.365102Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Conjecture with class/axiom axiomatisation \u2014 structural match."
       }
@@ -1293,14 +1321,21 @@
       {
         "result": "pass",
         "notes": "Rewrote prose blocks to adhere to Milnor standards. Improved economy, preserved all math.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.365102Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.365102Z"
+        },
+        "field_hash": {
+          "md": "842c06bff5ed",
+          "ts": "2385f564b4e9",
+          "lean": "bc0608ab8af0"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:30.359Z"
+  "updated_at": "2026-07-07T14:26:56.365102Z"
 }

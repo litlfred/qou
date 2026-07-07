@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/climax-volume-mass/outro-climax-volume-mass.md"
   },
   "source_hashes": {
-    "ts": "e09f63571a0a",
-    "md": "138df50260e3"
+    "md": "f9c84bb38507",
+    "ts": "e09f63571a0a"
   },
   "criteria": {
     "q-usage-regime-detected": [
@@ -128,14 +128,20 @@
       {
         "result": "pass",
         "notes": "Rewrote full climax-volume-mass_seq4.md including the t211-ideal-annihilation section. Shortened list texts. Kept logic clean.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:57.065018Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.065018Z"
+        },
+        "field_hash": {
+          "md": "f9c84bb38507",
+          "ts": "e09f63571a0a"
         }
       }
     ]
   },
-  "updated_at": "2026-06-01T16:06:38.106Z"
+  "updated_at": "2026-07-07T14:26:57.065018Z"
 }

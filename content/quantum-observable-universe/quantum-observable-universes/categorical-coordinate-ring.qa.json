@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/quantum-observable-universes/categorical-coordinate-ring.lean"
   },
   "source_hashes": {
-    "md": "6acf2ffa47c0",
+    "md": "2ca0593cf87b",
     "ts": "b7ccc9ffc6e3",
     "lean": "f05c034a9f89"
   },
@@ -37,14 +37,21 @@
       {
         "result": "pass",
         "notes": "Deleted 'Remark' framing and conversational fillers. Converted tables to bullet points.",
-        "reviewed_at": "2026-07-06T22:46:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.875775Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.875775Z"
+        },
+        "field_hash": {
+          "md": "2ca0593cf87b",
+          "ts": "b7ccc9ffc6e3",
+          "lean": "f05c034a9f89"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:58.083Z"
+  "updated_at": "2026-07-07T14:26:55.875775Z"
 }

@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/mass-theory/t-beta-markov-frobenius-collapse-general.md"
   },
   "source_hashes": {
-    "md": "4f9631a107bd",
+    "md": "567f79946625",
     "ts": "5c0e47b803ca"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Rewrote mass-theory_seq11.md to strictly follow H1-H8. Streamlined LP constraints and operator choices. Clarified the categorical reading vs empirical consequences. All formulas and code structures preserved.",
-        "reviewed_at": "2026-07-06T23:10:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.912326Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.912326Z"
+        },
+        "field_hash": {
+          "md": "567f79946625",
+          "ts": "5c0e47b803ca"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-07T14:26:56.912326Z"
 }

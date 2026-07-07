@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/stochastic-mechanics/reeb-epsilon.lean"
   },
   "source_hashes": {
-    "md": "29d2418e92ad",
+    "md": "210171e38de1",
     "ts": "6c025abd1986",
     "lean": "53033c704132"
   },
@@ -857,19 +857,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "29d2418e92ad",
+          "md": "210171e38de1",
           "ts": "6c025abd1986",
-          "lean": "f3dd3404431a"
+          "lean": "53033c704132"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.037686Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:38.484Z",
+        "reviewed_at": "2026-07-07T14:26:56.037686Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -877,19 +877,19 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "29d2418e92ad",
+          "md": "210171e38de1",
           "ts": "6c025abd1986",
-          "lean": "f3dd3404431a"
+          "lean": "53033c704132"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.037686Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:38.947Z",
+        "reviewed_at": "2026-07-07T14:26:56.037686Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -897,7 +897,7 @@
     "proof-no-empty-prop-carrier": [
       {
         "field_hash": {
-          "md": "29d2418e92ad",
+          "md": "210171e38de1",
           "ts": "6c025abd1986",
           "lean": "53033c704132"
         },
@@ -905,11 +905,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/lean-conjecture-discipline",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-26",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.037686Z",
           "agent_skill": "local/lean-conjecture-discipline"
         },
-        "reviewed_at": "2026-06-26T14:30:00.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.037686Z",
         "reviewed_sha": "d9e1f48662ce4036c45a4fc6973f6a9ffd769de3",
         "notes": "Finding + resolution. PRIOR STATE: `class ArchimedeanInfinitesimal ... : Prop` was an empty marker (no fields) \u2014 it asserted nothing, so any downstream `[ArchimedeanInfinitesimal]`-conditional result was vacuous. The proof-anti-pattern checkers all missed it (no proof term, no sorry, no axiom, compiles). Surfaced by the new `proof-no-empty-prop-carrier` detector. RESOLVED in this change: positivity and archimedean smallness are now encoded as content-bearing primary-conjecture classes `ReebPositive` / `ArchimedeanInfinitesimal` (real-parameter inequality fields, \u00a73b Round-11 shape), classified `@conjecture: primary`, no instance (honest open state)."
       }
@@ -917,7 +917,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "29d2418e92ad",
+          "md": "210171e38de1",
           "ts": "6c025abd1986",
           "lean": "53033c704132"
         },
@@ -925,11 +925,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/lean-conjecture-discipline",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-26",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.037686Z",
           "agent_skill": "local/lean-conjecture-discipline"
         },
-        "reviewed_at": "2026-06-26T14:30:00.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.037686Z",
         "reviewed_sha": "d9e1f48662ce4036c45a4fc6973f6a9ffd769de3",
         "notes": "The two defining properties the docstring promises \u2014 positivity (`\u27e8v, \u03b5\u00b7v\u27e9 > 0`) and archimedean smallness (`n\u00b7\u03b5 < \u03bb`) \u2014 are now each encoded as a Lean class field, not merely described in prose while the structure carried only `\u03b5 \u2260 \ud835\udfd9`. Narrative and Lean are now in correspondence."
       }
@@ -955,7 +955,7 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "29d2418e92ad",
+          "md": "210171e38de1",
           "ts": "6c025abd1986",
           "lean": "53033c704132"
         },
@@ -963,9 +963,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.037686Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.037686Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/reeb-epsilon.ts:1",
@@ -975,7 +977,7 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "29d2418e92ad",
+          "md": "210171e38de1",
           "ts": "6c025abd1986",
           "lean": "53033c704132"
         },
@@ -983,9 +985,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.037686Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.037686Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/reeb-epsilon.ts:1",
@@ -995,7 +999,7 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "29d2418e92ad",
+          "md": "210171e38de1",
           "ts": "6c025abd1986",
           "lean": "53033c704132"
         },
@@ -1003,9 +1007,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.037686Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.037686Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/reeb-epsilon.ts:1",
@@ -1015,7 +1021,7 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "29d2418e92ad",
+          "md": "210171e38de1",
           "ts": "6c025abd1986",
           "lean": "53033c704132"
         },
@@ -1023,9 +1029,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.037686Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.037686Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/reeb-epsilon.ts:1",
@@ -1035,7 +1043,7 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "29d2418e92ad",
+          "md": "210171e38de1",
           "ts": "6c025abd1986",
           "lean": "53033c704132"
         },
@@ -1043,9 +1051,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.037686Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.037686Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/reeb-epsilon.ts:1",
@@ -1055,7 +1065,7 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "29d2418e92ad",
+          "md": "210171e38de1",
           "ts": "6c025abd1986",
           "lean": "53033c704132"
         },
@@ -1063,9 +1073,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.037686Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.037686Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/reeb-epsilon.ts:1",
@@ -1075,7 +1087,7 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "29d2418e92ad",
+          "md": "210171e38de1",
           "ts": "6c025abd1986",
           "lean": "53033c704132"
         },
@@ -1083,9 +1095,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.037686Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.037686Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/reeb-epsilon.lean:1",
@@ -1095,7 +1109,7 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "29d2418e92ad",
+          "md": "210171e38de1",
           "ts": "6c025abd1986",
           "lean": "53033c704132"
         },
@@ -1103,9 +1117,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.037686Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.037686Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/reeb-epsilon.ts:1",
@@ -1115,7 +1131,7 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "29d2418e92ad",
+          "md": "210171e38de1",
           "ts": "6c025abd1986",
           "lean": "53033c704132"
         },
@@ -1123,9 +1139,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.037686Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.037686Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/reeb-epsilon.ts:1",
@@ -1135,7 +1153,7 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "29d2418e92ad",
+          "md": "210171e38de1",
           "ts": "6c025abd1986",
           "lean": "53033c704132"
         },
@@ -1143,9 +1161,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.037686Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.037686Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/reeb-epsilon.ts:1",
@@ -1155,7 +1175,7 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "29d2418e92ad",
+          "md": "210171e38de1",
           "ts": "6c025abd1986",
           "lean": "53033c704132"
         },
@@ -1163,9 +1183,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.037686Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.037686Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/reeb-epsilon.ts:1",
@@ -1175,7 +1197,7 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "29d2418e92ad",
+          "md": "210171e38de1",
           "ts": "6c025abd1986",
           "lean": "53033c704132"
         },
@@ -1183,9 +1205,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.037686Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.037686Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/reeb-epsilon.ts:1",
@@ -1195,7 +1219,7 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "29d2418e92ad",
+          "md": "210171e38de1",
           "ts": "6c025abd1986",
           "lean": "53033c704132"
         },
@@ -1203,9 +1227,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.037686Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.037686Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/reeb-epsilon.md:1 \u2014 Let (\\mathbf{C}, A) be a quantum observable universe with categorical",
@@ -1238,14 +1264,21 @@
       {
         "result": "pass",
         "notes": "Streamlined the classical limit functor, making the transition from q-scale to macroscopic scale direct and declarative.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.037686Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.037686Z"
+        },
+        "field_hash": {
+          "md": "210171e38de1",
+          "ts": "6c025abd1986",
+          "lean": "53033c704132"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T23:06:25.607Z"
+  "updated_at": "2026-07-07T14:26:56.037686Z"
 }

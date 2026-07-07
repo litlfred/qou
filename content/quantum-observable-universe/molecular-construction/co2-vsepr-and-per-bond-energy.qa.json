@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/molecular-construction/co2-vsepr-and-per-bond-energy.md"
   },
   "source_hashes": {
-    "md": "8a6a06a507e0",
+    "md": "3e44557f2667",
     "ts": "79092f8aa8dd"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Rewrote molecular-construction_seq5.md. Enforced present tense and 'we', economy of phrasing, stripped non-technical filler.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.484598Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.484598Z"
+        },
+        "field_hash": {
+          "md": "3e44557f2667",
+          "ts": "79092f8aa8dd"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.117Z"
+  "updated_at": "2026-07-07T14:26:55.484598Z"
 }

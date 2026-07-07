@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/lifting-and-descent/descent-intro.md"
   },
   "source_hashes": {
-    "md": "764e5c116950",
+    "md": "d3dcc4731960",
     "ts": "79bbd22716a9"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Rewrote blocks in lifting-and-descent_seq8.md applying strict Milnor formatting and brevity.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.694612Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.694612Z"
+        },
+        "field_hash": {
+          "md": "d3dcc4731960",
+          "ts": "79bbd22716a9"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.146Z"
+  "updated_at": "2026-07-07T14:26:55.694612Z"
 }

@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/q-beta-c3-hopf-three-fold-markov.lean"
   },
   "source_hashes": {
-    "md": "08f21c405be2",
+    "md": "2ba10c9a9878",
     "ts": "1b787b762e52",
     "lean": "2c61855c9776"
   },
@@ -1052,7 +1052,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "08f21c405be2",
+          "md": "2ba10c9a9878",
           "ts": "1b787b762e52",
           "lean": "2c61855c9776"
         },
@@ -1060,9 +1060,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.704437Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_at": "2026-07-07T14:26:56.704437Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:q-beta-c3-hopf-three-fold-markov' aligns with Lean declaration. Sorry-free."
       }
@@ -1071,14 +1073,21 @@
       {
         "result": "pass",
         "notes": "Rewrote mass-theory_seq6.md for Milnor standards: clean prose, declarative.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.704437Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.704437Z"
+        },
+        "field_hash": {
+          "md": "2ba10c9a9878",
+          "ts": "1b787b762e52",
+          "lean": "2c61855c9776"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.430Z"
+  "updated_at": "2026-07-07T14:26:56.704437Z"
 }

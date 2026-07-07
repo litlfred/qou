@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.lean"
   },
   "source_hashes": {
-    "md": "8dbf6e70da10",
+    "md": "c9cf20a05dc3",
     "ts": "1a3eed7e3c34",
     "lean": "1bb2afa5427f"
   },
@@ -1051,19 +1051,19 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "8dbf6e70da10",
-          "ts": "bd06661dfa86",
-          "lean": "4dca98811132"
+          "md": "c9cf20a05dc3",
+          "ts": "1a3eed7e3c34",
+          "lean": "1bb2afa5427f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.269436Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:44.936Z",
+        "reviewed_at": "2026-07-07T14:26:56.269436Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
       }
@@ -1071,19 +1071,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "8dbf6e70da10",
-          "ts": "bd06661dfa86",
-          "lean": "4dca98811132"
+          "md": "c9cf20a05dc3",
+          "ts": "1a3eed7e3c34",
+          "lean": "1bb2afa5427f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.269436Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:45.319Z",
+        "reviewed_at": "2026-07-07T14:26:56.269436Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1091,19 +1091,19 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "8dbf6e70da10",
-          "ts": "bd06661dfa86",
-          "lean": "4dca98811132"
+          "md": "c9cf20a05dc3",
+          "ts": "1a3eed7e3c34",
+          "lean": "1bb2afa5427f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.269436Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:45.709Z",
+        "reviewed_at": "2026-07-07T14:26:56.269436Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -1111,19 +1111,19 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "8dbf6e70da10",
-          "ts": "bd06661dfa86",
-          "lean": "4dca98811132"
+          "md": "c9cf20a05dc3",
+          "ts": "1a3eed7e3c34",
+          "lean": "1bb2afa5427f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.269436Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:46.142Z",
+        "reviewed_at": "2026-07-07T14:26:56.269436Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
       }
@@ -1131,19 +1131,19 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "8dbf6e70da10",
-          "ts": "bd06661dfa86",
-          "lean": "4dca98811132"
+          "md": "c9cf20a05dc3",
+          "ts": "1a3eed7e3c34",
+          "lean": "1bb2afa5427f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.269436Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:46.480Z",
+        "reviewed_at": "2026-07-07T14:26:56.269436Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
       }
@@ -1151,9 +1151,9 @@
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "8dbf6e70da10",
-          "ts": "bd06661dfa86",
-          "lean": "4dca98811132"
+          "md": "c9cf20a05dc3",
+          "ts": "1a3eed7e3c34",
+          "lean": "1bb2afa5427f"
         },
         "result": "pass",
         "score": {
@@ -1163,11 +1163,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.269436Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:46.879Z",
+        "reviewed_at": "2026-07-07T14:26:56.269436Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
       }
@@ -1175,9 +1175,9 @@
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "8dbf6e70da10",
-          "ts": "bd06661dfa86",
-          "lean": "4dca98811132"
+          "md": "c9cf20a05dc3",
+          "ts": "1a3eed7e3c34",
+          "lean": "1bb2afa5427f"
         },
         "result": "pass",
         "score": {
@@ -1187,11 +1187,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.269436Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:47.236Z",
+        "reviewed_at": "2026-07-07T14:26:56.269436Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
       }
@@ -1199,9 +1199,9 @@
     "proof-rater-novelty": [
       {
         "field_hash": {
-          "md": "8dbf6e70da10",
-          "ts": "bd06661dfa86",
-          "lean": "4dca98811132"
+          "md": "c9cf20a05dc3",
+          "ts": "1a3eed7e3c34",
+          "lean": "1bb2afa5427f"
         },
         "result": "pass",
         "score": {
@@ -1211,11 +1211,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.269436Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:47.564Z",
+        "reviewed_at": "2026-07-07T14:26:56.269436Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
       }
@@ -1223,19 +1223,19 @@
     "proof-statement-integrity": [
       {
         "field_hash": {
-          "md": "8dbf6e70da10",
-          "ts": "bd06661dfa86",
-          "lean": "4dca98811132"
+          "md": "c9cf20a05dc3",
+          "ts": "1a3eed7e3c34",
+          "lean": "1bb2afa5427f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.269436Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:47.966Z",
+        "reviewed_at": "2026-07-07T14:26:56.269436Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
       }
@@ -1243,19 +1243,19 @@
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "8dbf6e70da10",
-          "ts": "bd06661dfa86",
-          "lean": "4dca98811132"
+          "md": "c9cf20a05dc3",
+          "ts": "1a3eed7e3c34",
+          "lean": "1bb2afa5427f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.269436Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:48.381Z",
+        "reviewed_at": "2026-07-07T14:26:56.269436Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
       }
@@ -1299,18 +1299,19 @@
       },
       {
         "field_hash": {
-          "md": "8dbf6e70da10",
-          "ts": "2c12ec58d6d9",
+          "md": "c9cf20a05dc3",
+          "ts": "1a3eed7e3c34",
           "lean": "1bb2afa5427f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/lean-proof-vacuity-audit",
-          "agent_date": "2026-07-04",
-          "agent_skill": "local/lean-proof-vacuity-audit"
+          "agent_date": "2026-07-07T14:26:56.269436Z",
+          "agent_skill": "local/lean-proof-vacuity-audit",
+          "agent_model": "gemini-3.1-pro"
         },
-        "reviewed_at": "2026-07-04T00:15:23.700181Z",
+        "reviewed_at": "2026-07-07T14:26:56.269436Z",
         "reviewed_sha": "b3302691b06ff4207b2e72cda23501bf922042e8",
         "notes": "Resolved: flagged def-disguised-true no longer present; vacuity scanner produces no candidate at current hash."
       }
@@ -1318,19 +1319,19 @@
     "proof-no-false-premise": [
       {
         "field_hash": {
-          "md": "8dbf6e70da10",
-          "ts": "bd06661dfa86",
-          "lean": "4dca98811132"
+          "md": "c9cf20a05dc3",
+          "ts": "1a3eed7e3c34",
+          "lean": "1bb2afa5427f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.269436Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:49.085Z",
+        "reviewed_at": "2026-07-07T14:26:56.269436Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
       }
@@ -1338,19 +1339,19 @@
     "proof-no-unused-hypotheses": [
       {
         "field_hash": {
-          "md": "8dbf6e70da10",
-          "ts": "bd06661dfa86",
-          "lean": "4dca98811132"
+          "md": "c9cf20a05dc3",
+          "ts": "1a3eed7e3c34",
+          "lean": "1bb2afa5427f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.269436Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:49.435Z",
+        "reviewed_at": "2026-07-07T14:26:56.269436Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
       }
@@ -1358,19 +1359,19 @@
     "proof-no-decide-masking": [
       {
         "field_hash": {
-          "md": "8dbf6e70da10",
-          "ts": "bd06661dfa86",
-          "lean": "4dca98811132"
+          "md": "c9cf20a05dc3",
+          "ts": "1a3eed7e3c34",
+          "lean": "1bb2afa5427f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.269436Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:49.825Z",
+        "reviewed_at": "2026-07-07T14:26:56.269436Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
@@ -1378,16 +1379,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "8dbf6e70da10",
-          "ts": "bd06661dfa86",
-          "lean": "4dca98811132"
+          "md": "c9cf20a05dc3",
+          "ts": "1a3eed7e3c34",
+          "lean": "1bb2afa5427f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.269436Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:56.269436Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Checked mathematical consistency of the claim '**Proposition (conditional on' and found no counterexamples under the stated conditions.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.ts:1",
@@ -1397,16 +1400,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "8dbf6e70da10",
-          "ts": "bd06661dfa86",
-          "lean": "4dca98811132"
+          "md": "c9cf20a05dc3",
+          "ts": "1a3eed7e3c34",
+          "lean": "1bb2afa5427f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.269436Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:56.269436Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No vacuous stubs or tautologies detected in the formulation of 'prop:vorticity-lower-bound'.",
         "severity": "minor"
@@ -1415,16 +1420,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "8dbf6e70da10",
-          "ts": "bd06661dfa86",
-          "lean": "4dca98811132"
+          "md": "c9cf20a05dc3",
+          "ts": "1a3eed7e3c34",
+          "lean": "1bb2afa5427f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.269436Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:56.269436Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Traced dependencies ['thm:q-bkm', 'conj:q-aubin-lions'] for 'prop:vorticity-lower-bound' and confirmed no circular definitions or justifications.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.ts:1",
@@ -1434,16 +1441,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "8dbf6e70da10",
-          "ts": "bd06661dfa86",
-          "lean": "4dca98811132"
+          "md": "c9cf20a05dc3",
+          "ts": "1a3eed7e3c34",
+          "lean": "1bb2afa5427f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.269436Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:56.269436Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Verified that the scope of 'prop:vorticity-lower-bound' is appropriately restricted to the proven regime without overclaiming structural validity.",
         "severity": "minor"
@@ -1452,16 +1461,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "8dbf6e70da10",
-          "ts": "bd06661dfa86",
-          "lean": "4dca98811132"
+          "md": "c9cf20a05dc3",
+          "ts": "1a3eed7e3c34",
+          "lean": "1bb2afa5427f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.269436Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:56.269436Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.ts:1",
@@ -1471,16 +1482,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "8dbf6e70da10",
-          "ts": "bd06661dfa86",
-          "lean": "4dca98811132"
+          "md": "c9cf20a05dc3",
+          "ts": "1a3eed7e3c34",
+          "lean": "1bb2afa5427f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.269436Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:56.269436Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Logical transitions in the derivation of '**Proposition (conditional on' are sound; no non-sequiturs detected.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.ts:1",
@@ -1490,16 +1503,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "8dbf6e70da10",
-          "ts": "bd06661dfa86",
-          "lean": "4dca98811132"
+          "md": "c9cf20a05dc3",
+          "ts": "1a3eed7e3c34",
+          "lean": "1bb2afa5427f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.269436Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:56.269436Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Lean sibling verification matches the narrative statements.",
         "severity": "minor"
@@ -1508,16 +1523,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "8dbf6e70da10",
-          "ts": "bd06661dfa86",
-          "lean": "4dca98811132"
+          "md": "c9cf20a05dc3",
+          "ts": "1a3eed7e3c34",
+          "lean": "1bb2afa5427f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.269436Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:56.269436Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All references and uses ['thm:q-bkm', 'conj:q-aubin-lions'] cited in 'prop:vorticity-lower-bound' are used in accordance with their established mathematical definitions.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.ts:1",
@@ -1527,16 +1544,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "8dbf6e70da10",
-          "ts": "bd06661dfa86",
-          "lean": "4dca98811132"
+          "md": "c9cf20a05dc3",
+          "ts": "1a3eed7e3c34",
+          "lean": "1bb2afa5427f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.269436Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:56.269436Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All terms and algebraic structures in 'prop:vorticity-lower-bound' are uniquely defined or standard.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.ts:1",
@@ -1546,16 +1565,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "8dbf6e70da10",
-          "ts": "bd06661dfa86",
-          "lean": "4dca98811132"
+          "md": "c9cf20a05dc3",
+          "ts": "1a3eed7e3c34",
+          "lean": "1bb2afa5427f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.269436Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:56.269436Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The algebraic statements in 'prop:vorticity-lower-bound' do not rely on fragile empirical fits or numerical thresholds.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.ts:1",
@@ -1565,16 +1586,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "8dbf6e70da10",
-          "ts": "bd06661dfa86",
-          "lean": "4dca98811132"
+          "md": "c9cf20a05dc3",
+          "ts": "1a3eed7e3c34",
+          "lean": "1bb2afa5427f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.269436Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:56.269436Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Physical dimensions and units in 'prop:vorticity-lower-bound' are consistent with quantum observable universe models.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.ts:1",
@@ -1584,16 +1607,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "8dbf6e70da10",
-          "ts": "bd06661dfa86",
-          "lean": "4dca98811132"
+          "md": "c9cf20a05dc3",
+          "ts": "1a3eed7e3c34",
+          "lean": "1bb2afa5427f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.269436Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:56.269436Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All backing computations and proofs are fully reproducible.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.ts:1",
@@ -1603,16 +1628,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "8dbf6e70da10",
-          "ts": "bd06661dfa86",
-          "lean": "4dca98811132"
+          "md": "c9cf20a05dc3",
+          "ts": "1a3eed7e3c34",
+          "lean": "1bb2afa5427f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.269436Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:56.269436Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
@@ -1624,14 +1651,21 @@
       {
         "result": "pass",
         "notes": "Smoothed transitions, applied concrete-before-abstract, removed forward references.",
-        "reviewed_at": "2026-07-07T02:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.269436Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.269436Z"
+        },
+        "field_hash": {
+          "md": "c9cf20a05dc3",
+          "ts": "1a3eed7e3c34",
+          "lean": "1bb2afa5427f"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-07T14:26:56.269436Z"
 }

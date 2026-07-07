@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/braids-and-knots/pion-half-figure-eight-formalization-note.md"
   },
   "source_hashes": {
-    "md": "3dcc3fb886fb",
+    "md": "27e624265f69",
     "ts": "bc5440d55687"
   },
   "criteria": {
@@ -53,14 +53,20 @@
       {
         "result": "pass",
         "notes": "Applied Milnor brevity. Trimmed internal cross references and bloated narrative commentary. Tightened 'Mathematical Novelty' notes to single clear sentences. Retained all math.",
-        "reviewed_at": "2026-07-06T22:42:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.334295Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.334295Z"
+        },
+        "field_hash": {
+          "md": "27e624265f69",
+          "ts": "bc5440d55687"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:55.297Z"
+  "updated_at": "2026-07-07T14:26:55.334295Z"
 }

@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.lean"
   },
   "source_hashes": {
-    "md": "35c47ee19482",
+    "md": "b753ce5390ac",
     "ts": "dc014b856387",
     "lean": "7fce09826c09"
   },
@@ -1085,19 +1085,19 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "35c47ee19482",
-          "ts": "4a9178f39f92",
+          "md": "b753ce5390ac",
+          "ts": "dc014b856387",
           "lean": "7fce09826c09"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.309408Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:47.044Z",
+        "reviewed_at": "2026-07-07T14:26:56.309408Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
       }
@@ -1105,19 +1105,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "35c47ee19482",
-          "ts": "4a9178f39f92",
+          "md": "b753ce5390ac",
+          "ts": "dc014b856387",
           "lean": "7fce09826c09"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.309408Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:47.393Z",
+        "reviewed_at": "2026-07-07T14:26:56.309408Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1125,19 +1125,19 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "35c47ee19482",
-          "ts": "4a9178f39f92",
+          "md": "b753ce5390ac",
+          "ts": "dc014b856387",
           "lean": "7fce09826c09"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.309408Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:47.799Z",
+        "reviewed_at": "2026-07-07T14:26:56.309408Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is correctly placed in an archimedean chapter."
       }
@@ -1145,19 +1145,19 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "35c47ee19482",
-          "ts": "4a9178f39f92",
+          "md": "b753ce5390ac",
+          "ts": "dc014b856387",
           "lean": "7fce09826c09"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.309408Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:48.176Z",
+        "reviewed_at": "2026-07-07T14:26:56.309408Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof matches the archimedean regime."
       }
@@ -1183,7 +1183,7 @@
       },
       {
         "field_hash": {
-          "md": "35c47ee19482",
+          "md": "b753ce5390ac",
           "ts": "dc014b856387",
           "lean": "7fce09826c09"
         },
@@ -1191,9 +1191,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.309408Z"
         },
-        "reviewed_at": "2026-07-06T04:41:30.359Z",
+        "reviewed_at": "2026-07-07T14:26:56.309408Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'lem:tilting-module-rigidity' aligns with Lean declaration. Sorry-free."
       }
@@ -1201,8 +1203,8 @@
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "35c47ee19482",
-          "ts": "4a9178f39f92",
+          "md": "b753ce5390ac",
+          "ts": "dc014b856387",
           "lean": "7fce09826c09"
         },
         "result": "pass",
@@ -1213,11 +1215,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.309408Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:48.939Z",
+        "reviewed_at": "2026-07-07T14:26:56.309408Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
       }
@@ -1225,8 +1227,8 @@
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "35c47ee19482",
-          "ts": "4a9178f39f92",
+          "md": "b753ce5390ac",
+          "ts": "dc014b856387",
           "lean": "7fce09826c09"
         },
         "result": "pass",
@@ -1237,11 +1239,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.309408Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:49.305Z",
+        "reviewed_at": "2026-07-07T14:26:56.309408Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
       }
@@ -1249,8 +1251,8 @@
     "proof-rater-novelty": [
       {
         "field_hash": {
-          "md": "35c47ee19482",
-          "ts": "4a9178f39f92",
+          "md": "b753ce5390ac",
+          "ts": "dc014b856387",
           "lean": "7fce09826c09"
         },
         "result": "pass",
@@ -1261,11 +1263,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.309408Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:49.683Z",
+        "reviewed_at": "2026-07-07T14:26:56.309408Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
       }
@@ -1273,19 +1275,19 @@
     "proof-statement-integrity": [
       {
         "field_hash": {
-          "md": "35c47ee19482",
-          "ts": "4a9178f39f92",
+          "md": "b753ce5390ac",
+          "ts": "dc014b856387",
           "lean": "7fce09826c09"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.309408Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:50.062Z",
+        "reviewed_at": "2026-07-07T14:26:56.309408Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
       }
@@ -1293,19 +1295,19 @@
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "35c47ee19482",
-          "ts": "4a9178f39f92",
+          "md": "b753ce5390ac",
+          "ts": "dc014b856387",
           "lean": "7fce09826c09"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.309408Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:50.402Z",
+        "reviewed_at": "2026-07-07T14:26:56.309408Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
       }
@@ -1313,19 +1315,19 @@
     "proof-no-trivial-true": [
       {
         "field_hash": {
-          "md": "35c47ee19482",
-          "ts": "4a9178f39f92",
+          "md": "b753ce5390ac",
+          "ts": "dc014b856387",
           "lean": "7fce09826c09"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.309408Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:50.743Z",
+        "reviewed_at": "2026-07-07T14:26:56.309408Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
       }
@@ -1333,19 +1335,19 @@
     "proof-no-false-premise": [
       {
         "field_hash": {
-          "md": "35c47ee19482",
-          "ts": "4a9178f39f92",
+          "md": "b753ce5390ac",
+          "ts": "dc014b856387",
           "lean": "7fce09826c09"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.309408Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:51.067Z",
+        "reviewed_at": "2026-07-07T14:26:56.309408Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
       }
@@ -1353,19 +1355,19 @@
     "proof-no-unused-hypotheses": [
       {
         "field_hash": {
-          "md": "35c47ee19482",
-          "ts": "4a9178f39f92",
+          "md": "b753ce5390ac",
+          "ts": "dc014b856387",
           "lean": "7fce09826c09"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.309408Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:51.409Z",
+        "reviewed_at": "2026-07-07T14:26:56.309408Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
       }
@@ -1373,19 +1375,19 @@
     "proof-no-decide-masking": [
       {
         "field_hash": {
-          "md": "35c47ee19482",
-          "ts": "4a9178f39f92",
+          "md": "b753ce5390ac",
+          "ts": "dc014b856387",
           "lean": "7fce09826c09"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.309408Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:51.811Z",
+        "reviewed_at": "2026-07-07T14:26:56.309408Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
@@ -1393,7 +1395,7 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "35c47ee19482",
+          "md": "b753ce5390ac",
           "ts": "dc014b856387",
           "lean": "7fce09826c09"
         },
@@ -1401,9 +1403,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.309408Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.309408Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The mathematical claims in 'Tilting module rigidity' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/BraidKnot/CemeteryGroupEmergence.olean' of module QOU.BraidKnot.CemeteryGroupEmergence does not exist.",
         "severity": "minor",
@@ -1413,7 +1417,7 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "35c47ee19482",
+          "md": "b753ce5390ac",
           "ts": "dc014b856387",
           "lean": "7fce09826c09"
         },
@@ -1421,9 +1425,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.309408Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.309408Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "minor",
@@ -1433,7 +1439,7 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "35c47ee19482",
+          "md": "b753ce5390ac",
           "ts": "dc014b856387",
           "lean": "7fce09826c09"
         },
@@ -1441,9 +1447,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.309408Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.309408Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Tilting module rigidity'.",
         "severity": "minor",
@@ -1453,7 +1461,7 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "35c47ee19482",
+          "md": "b753ce5390ac",
           "ts": "dc014b856387",
           "lean": "7fce09826c09"
         },
@@ -1461,9 +1469,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.309408Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.309408Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The remarks and narrative scope in 'Tilting module rigidity' are appropriately qualified.",
         "severity": "minor"
@@ -1472,7 +1482,7 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "35c47ee19482",
+          "md": "b753ce5390ac",
           "ts": "dc014b856387",
           "lean": "7fce09826c09"
         },
@@ -1480,9 +1490,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.309408Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.309408Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Tilting module rigidity'.",
         "severity": "minor",
@@ -1492,7 +1504,7 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "35c47ee19482",
+          "md": "b753ce5390ac",
           "ts": "dc014b856387",
           "lean": "7fce09826c09"
         },
@@ -1500,9 +1512,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.309408Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.309408Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.lean.",
         "severity": "minor",
@@ -1512,7 +1526,7 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "35c47ee19482",
+          "md": "b753ce5390ac",
           "ts": "dc014b856387",
           "lean": "7fce09826c09"
         },
@@ -1520,9 +1534,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.309408Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.309408Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
@@ -1531,7 +1547,7 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "35c47ee19482",
+          "md": "b753ce5390ac",
           "ts": "dc014b856387",
           "lean": "7fce09826c09"
         },
@@ -1539,9 +1555,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.309408Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.309408Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Tilting module rigidity', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1551,7 +1569,7 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "35c47ee19482",
+          "md": "b753ce5390ac",
           "ts": "dc014b856387",
           "lean": "7fce09826c09"
         },
@@ -1559,9 +1577,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.309408Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.309408Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Tilting module rigidity' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1571,7 +1591,7 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "35c47ee19482",
+          "md": "b753ce5390ac",
           "ts": "dc014b856387",
           "lean": "7fce09826c09"
         },
@@ -1579,9 +1599,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.309408Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.309408Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Tilting module rigidity' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1591,7 +1613,7 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "35c47ee19482",
+          "md": "b753ce5390ac",
           "ts": "dc014b856387",
           "lean": "7fce09826c09"
         },
@@ -1599,9 +1621,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.309408Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.309408Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Tilting module rigidity' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1611,7 +1635,7 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "35c47ee19482",
+          "md": "b753ce5390ac",
           "ts": "dc014b856387",
           "lean": "7fce09826c09"
         },
@@ -1619,9 +1643,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.309408Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.309408Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
@@ -1631,7 +1657,7 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "35c47ee19482",
+          "md": "b753ce5390ac",
           "ts": "dc014b856387",
           "lean": "7fce09826c09"
         },
@@ -1639,9 +1665,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.309408Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.309408Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.lean fails compilation.",
         "severity": "major",
@@ -1653,14 +1681,21 @@
       {
         "result": "pass",
         "notes": "Rewrote prose blocks to adhere to Milnor standards. Improved economy, preserved all math.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.309408Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.309408Z"
+        },
+        "field_hash": {
+          "md": "b753ce5390ac",
+          "ts": "dc014b856387",
+          "lean": "7fce09826c09"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:30.359Z"
+  "updated_at": "2026-07-07T14:26:56.309408Z"
 }

@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/quantum-observable-universes/observation-fermion-action.md"
   },
   "source_hashes": {
-    "md": "d119f07f78c8",
+    "md": "8ce550c773c1",
     "ts": "409e1717a0bd"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Unified definitions and their proofs of existence. Removed Lean diagnostics and internal architectural remarks ('Route 2a'). Stripped non-mathematical commentary.",
-        "reviewed_at": "2026-07-06T22:46:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.005349Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.005349Z"
+        },
+        "field_hash": {
+          "md": "8ce550c773c1",
+          "ts": "409e1717a0bd"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:58.083Z"
+  "updated_at": "2026-07-07T14:26:56.005349Z"
 }

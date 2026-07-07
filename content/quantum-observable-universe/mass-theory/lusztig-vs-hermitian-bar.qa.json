@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/lusztig-vs-hermitian-bar.lean"
   },
   "source_hashes": {
-    "md": "7f0615966097",
+    "md": "640af1af8ab6",
     "ts": "9d978ebf8e3a",
     "lean": "9439400fac34"
   },
@@ -36,7 +36,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "7f0615966097",
+          "md": "640af1af8ab6",
           "ts": "9d978ebf8e3a",
           "lean": "9439400fac34"
         },
@@ -44,9 +44,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.874673Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_at": "2026-07-07T14:26:56.874673Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:lusztig-vs-hermitian-bar' \u2192 expected 'lusztig_vs_hermitian_bar'; Lean declares: lusztig_eq_hermitian_iff_real, lusztig_eq_hermitian_on_real. Structural match via content."
       }
@@ -55,14 +57,21 @@
       {
         "result": "pass",
         "notes": "Rewrote mass-theory_seq7.md for Milnor standards: clean prose, declarative.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.874673Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.874673Z"
+        },
+        "field_hash": {
+          "md": "640af1af8ab6",
+          "ts": "9d978ebf8e3a",
+          "lean": "9439400fac34"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.430Z"
+  "updated_at": "2026-07-07T14:26:56.874673Z"
 }

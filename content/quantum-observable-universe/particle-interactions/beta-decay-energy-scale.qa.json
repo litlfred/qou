@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/particle-interactions/beta-decay-energy-scale.md"
   },
   "source_hashes": {
-    "md": "c09866b6dbd1",
+    "md": "1c026179412c",
     "ts": "7660f12ded36"
   },
   "criteria": {
@@ -1320,18 +1320,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "c09866b6dbd1",
+          "md": "1c026179412c",
           "ts": "7660f12ded36"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.383669Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:20.868Z",
+        "reviewed_at": "2026-07-07T14:26:57.383669Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1339,16 +1339,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "c09866b6dbd1",
+          "md": "1c026179412c",
           "ts": "7660f12ded36"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.383669Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.383669Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'Energy scale of the Hecke normal form: from dimensionless debt to MeV': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -1358,16 +1360,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "c09866b6dbd1",
+          "md": "1c026179412c",
           "ts": "7660f12ded36"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.383669Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.383669Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Energy scale of the Hecke normal form: from dimensionless debt to MeV' presents substantial mathematical content: The Gr\u00f6bner--Shirshov normal form coefficients are dimensionless Laurent polynomials in $q$.  To connect them to obse...",
         "severity": "minor"
@@ -1376,16 +1380,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "c09866b6dbd1",
+          "md": "1c026179412c",
           "ts": "7660f12ded36"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.383669Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.383669Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Energy scale of the Hecke normal form: from dimensionless debt to MeV'.",
         "severity": "minor",
@@ -1395,16 +1401,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "c09866b6dbd1",
+          "md": "1c026179412c",
           "ts": "7660f12ded36"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.383669Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.383669Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'Energy scale of the Hecke normal form: from dimensionless debt to MeV' is appropriately qualified.",
         "severity": "minor"
@@ -1413,16 +1421,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "c09866b6dbd1",
+          "md": "1c026179412c",
           "ts": "7660f12ded36"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.383669Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.383669Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Energy scale of the Hecke normal form: from dimensionless debt to MeV'.",
         "severity": "minor",
@@ -1432,16 +1442,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "c09866b6dbd1",
+          "md": "1c026179412c",
           "ts": "7660f12ded36"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.383669Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.383669Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The argument flow in 'Energy scale of the Hecke normal form: from dimensionless debt to MeV' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -1451,16 +1463,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "c09866b6dbd1",
+          "md": "1c026179412c",
           "ts": "7660f12ded36"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.383669Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.383669Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
@@ -1469,16 +1483,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "c09866b6dbd1",
+          "md": "1c026179412c",
           "ts": "7660f12ded36"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.383669Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.383669Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Energy scale of the Hecke normal form: from dimensionless debt to MeV', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1488,16 +1504,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "c09866b6dbd1",
+          "md": "1c026179412c",
           "ts": "7660f12ded36"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.383669Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.383669Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Energy scale of the Hecke normal form: from dimensionless debt to MeV' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1507,16 +1525,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "c09866b6dbd1",
+          "md": "1c026179412c",
           "ts": "7660f12ded36"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.383669Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.383669Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Energy scale of the Hecke normal form: from dimensionless debt to MeV' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1526,16 +1546,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "c09866b6dbd1",
+          "md": "1c026179412c",
           "ts": "7660f12ded36"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.383669Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.383669Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Energy scale of the Hecke normal form: from dimensionless debt to MeV' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1545,16 +1567,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "c09866b6dbd1",
+          "md": "1c026179412c",
           "ts": "7660f12ded36"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.383669Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.383669Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'Energy scale of the Hecke normal form: from dimensionless debt to MeV' are reproducible.",
         "severity": "minor",
@@ -1564,16 +1588,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "c09866b6dbd1",
+          "md": "1c026179412c",
           "ts": "7660f12ded36"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.383669Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.383669Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -1588,5 +1614,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.492Z"
+  "updated_at": "2026-07-07T14:26:57.383669Z"
 }

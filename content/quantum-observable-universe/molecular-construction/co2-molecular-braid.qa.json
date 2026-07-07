@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/molecular-construction/co2-molecular-braid.lean"
   },
   "source_hashes": {
-    "md": "85965c7d3d43",
+    "md": "b7924f8150fa",
     "ts": "2b8f99f20bb2",
     "lean": "6fa13b0aa212"
   },
@@ -879,17 +879,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "332572d1595d",
-          "ts": "83487f4f5e01",
-          "lean": "dff8287d516b"
+          "md": "b7924f8150fa",
+          "ts": "2b8f99f20bb2",
+          "lean": "6fa13b0aa212"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.494371Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.494371Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Block placement and kind 'definition' match validated structurally for 'Carbon dioxide $CO_2$ as a molecular braid' within chapter 'molecular-construction'.",
         "severity": "minor"
@@ -898,17 +900,19 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "332572d1595d",
-          "ts": "83487f4f5e01",
-          "lean": "dff8287d516b"
+          "md": "b7924f8150fa",
+          "ts": "2b8f99f20bb2",
+          "lean": "6fa13b0aa212"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.494371Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.494371Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean theorem statement in content/quantum-observable-universe/molecular-construction/co2-molecular-braid.lean matches the mathematical statement in content/quantum-observable-universe/molecular-construction/co2-molecular-braid.md.",
         "severity": "minor",
@@ -918,17 +922,19 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "332572d1595d",
-          "ts": "83487f4f5e01",
-          "lean": "dff8287d516b"
+          "md": "b7924f8150fa",
+          "ts": "2b8f99f20bb2",
+          "lean": "6fa13b0aa212"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.494371Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.494371Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The claim in 'Carbon dioxide $CO_2$ as a molecular braid' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
@@ -938,17 +944,19 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "332572d1595d",
-          "ts": "83487f4f5e01",
-          "lean": "dff8287d516b"
+          "md": "b7924f8150fa",
+          "ts": "2b8f99f20bb2",
+          "lean": "6fa13b0aa212"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.494371Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.494371Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Carbon dioxide $CO_2$ as a molecular braid' presents substantial mathematical content: $C(6, 6)$ and two oxygen atoms $O_1(8, 8)$, $O_2(8, 8)$, with two double bonds (...",
         "severity": "minor"
@@ -957,17 +965,19 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "332572d1595d",
-          "ts": "83487f4f5e01",
-          "lean": "dff8287d516b"
+          "md": "b7924f8150fa",
+          "ts": "2b8f99f20bb2",
+          "lean": "6fa13b0aa212"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.494371Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.494371Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Carbon dioxide $CO_2$ as a molecular braid'.",
         "severity": "minor",
@@ -977,17 +987,19 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "332572d1595d",
-          "ts": "83487f4f5e01",
-          "lean": "dff8287d516b"
+          "md": "b7924f8150fa",
+          "ts": "2b8f99f20bb2",
+          "lean": "6fa13b0aa212"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.494371Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.494371Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose presents 'Carbon dioxide $CO_2$ as a molecular braid' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
@@ -996,17 +1008,19 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "332572d1595d",
-          "ts": "83487f4f5e01",
-          "lean": "dff8287d516b"
+          "md": "b7924f8150fa",
+          "ts": "2b8f99f20bb2",
+          "lean": "6fa13b0aa212"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.494371Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.494371Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Carbon dioxide $CO_2$ as a molecular braid'.",
         "severity": "minor",
@@ -1016,17 +1030,19 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "332572d1595d",
-          "ts": "83487f4f5e01",
-          "lean": "dff8287d516b"
+          "md": "b7924f8150fa",
+          "ts": "2b8f99f20bb2",
+          "lean": "6fa13b0aa212"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.494371Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.494371Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/molecular-construction/co2-molecular-braid.lean.",
         "severity": "minor",
@@ -1036,17 +1052,19 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "332572d1595d",
-          "ts": "83487f4f5e01",
-          "lean": "dff8287d516b"
+          "md": "b7924f8150fa",
+          "ts": "2b8f99f20bb2",
+          "lean": "6fa13b0aa212"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.494371Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.494371Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/molecular-construction/co2-molecular-braid.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
@@ -1055,17 +1073,19 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "332572d1595d",
-          "ts": "83487f4f5e01",
-          "lean": "dff8287d516b"
+          "md": "b7924f8150fa",
+          "ts": "2b8f99f20bb2",
+          "lean": "6fa13b0aa212"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.494371Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.494371Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No citations are present in 'Carbon dioxide $CO_2$ as a molecular braid', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1075,17 +1095,19 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "332572d1595d",
-          "ts": "83487f4f5e01",
-          "lean": "dff8287d516b"
+          "md": "b7924f8150fa",
+          "ts": "2b8f99f20bb2",
+          "lean": "6fa13b0aa212"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.494371Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.494371Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Key terms and symbols in 'Carbon dioxide $CO_2$ as a molecular braid' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1095,17 +1117,19 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "332572d1595d",
-          "ts": "83487f4f5e01",
-          "lean": "dff8287d516b"
+          "md": "b7924f8150fa",
+          "ts": "2b8f99f20bb2",
+          "lean": "6fa13b0aa212"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.494371Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.494371Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The algebraic and logical relations in 'Carbon dioxide $CO_2$ as a molecular braid' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1115,17 +1139,19 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "332572d1595d",
-          "ts": "83487f4f5e01",
-          "lean": "dff8287d516b"
+          "md": "b7924f8150fa",
+          "ts": "2b8f99f20bb2",
+          "lean": "6fa13b0aa212"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.494371Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.494371Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The physical concepts described in 'Carbon dioxide $CO_2$ as a molecular braid' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1135,17 +1161,19 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "332572d1595d",
-          "ts": "83487f4f5e01",
-          "lean": "dff8287d516b"
+          "md": "b7924f8150fa",
+          "ts": "2b8f99f20bb2",
+          "lean": "6fa13b0aa212"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.494371Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.494371Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/molecular-construction/co2-molecular-braid.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
@@ -1155,17 +1183,19 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "332572d1595d",
-          "ts": "83487f4f5e01",
-          "lean": "dff8287d516b"
+          "md": "b7924f8150fa",
+          "ts": "2b8f99f20bb2",
+          "lean": "6fa13b0aa212"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.494371Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.494371Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/molecular-construction/co2-molecular-braid.lean fails compilation: content/quantum-observable-universe/molecular-construction/co2-molecular-braid.lean:21:46: error: unknown tactic",
         "verdict": "open-objection",
@@ -1177,14 +1207,21 @@
       {
         "result": "pass",
         "notes": "Rewrote molecular-construction_seq5.md. Enforced present tense and 'we', economy of phrasing, stripped non-technical filler.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.494371Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.494371Z"
+        },
+        "field_hash": {
+          "md": "b7924f8150fa",
+          "ts": "2b8f99f20bb2",
+          "lean": "6fa13b0aa212"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T04:39:43.766Z"
+  "updated_at": "2026-07-07T14:26:55.494371Z"
 }

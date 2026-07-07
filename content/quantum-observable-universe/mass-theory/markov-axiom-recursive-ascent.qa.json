@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/markov-axiom-recursive-ascent.lean"
   },
   "source_hashes": {
-    "md": "1b4b7f884121",
+    "md": "37d2cfa59899",
     "ts": "27b201fda4c0",
     "lean": "5313e319bf96"
   },
@@ -36,7 +36,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "1b4b7f884121",
+          "md": "37d2cfa59899",
           "ts": "27b201fda4c0",
           "lean": "5313e319bf96"
         },
@@ -44,9 +44,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.878808Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_at": "2026-07-07T14:26:56.878808Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'def:markov-axiom-recursive-ascent' \u2192 expected 'markov_axiom_recursive_ascent'; Lean declares: markov_peel. Structural match via content."
       }
@@ -55,14 +57,21 @@
       {
         "result": "pass",
         "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
-        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.878808Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.878808Z"
+        },
+        "field_hash": {
+          "md": "37d2cfa59899",
+          "ts": "27b201fda4c0",
+          "lean": "5313e319bf96"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.430Z"
+  "updated_at": "2026-07-07T14:26:56.878808Z"
 }

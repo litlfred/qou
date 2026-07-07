@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/braids-and-knots/fundamental-knots-operator-basis.md"
   },
   "source_hashes": {
-    "md": "b1e074e396d8",
+    "md": "422e354d0520",
     "ts": "d375765f5b33"
   },
   "criteria": {
@@ -268,31 +268,35 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "b1e074e396d8",
+          "md": "422e354d0520",
           "ts": "d375765f5b33"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.336924Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.336924Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "b1e074e396d8",
+          "md": "422e354d0520",
           "ts": "d375765f5b33"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.336924Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.336924Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No false mathematical or physical claims detected.",
         "evidence": "content/quantum-observable-universe/braids-and-knots/fundamental-knots-operator-basis.ts:1",
@@ -302,15 +306,17 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "b1e074e396d8",
+          "md": "422e354d0520",
           "ts": "d375765f5b33"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.336924Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.336924Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The block is non-vacuous as it provides concrete math content.",
         "severity": "minor"
@@ -319,15 +325,17 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "b1e074e396d8",
+          "md": "422e354d0520",
           "ts": "d375765f5b33"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.336924Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.336924Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No circularity or back-fitted arguments detected.",
         "evidence": "content/quantum-observable-universe/braids-and-knots/fundamental-knots-operator-basis.ts:1",
@@ -337,15 +345,17 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "b1e074e396d8",
+          "md": "422e354d0520",
           "ts": "d375765f5b33"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.336924Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.336924Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The narrative bounds match the algebraic results without overclaiming.",
         "severity": "minor"
@@ -354,15 +364,17 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "b1e074e396d8",
+          "md": "422e354d0520",
           "ts": "d375765f5b33"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.336924Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.336924Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No hidden degrees of freedom or undisclosed free parameters are introduced.",
         "evidence": "content/quantum-observable-universe/braids-and-knots/fundamental-knots-operator-basis.ts:1",
@@ -372,15 +384,17 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "b1e074e396d8",
+          "md": "422e354d0520",
           "ts": "d375765f5b33"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.336924Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.336924Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The steps follow logically from the premises.",
         "evidence": "content/quantum-observable-universe/braids-and-knots/fundamental-knots-operator-basis.ts:1",
@@ -390,15 +404,17 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "b1e074e396d8",
+          "md": "422e354d0520",
           "ts": "d375765f5b33"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.336924Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.336924Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No divergence; no Lean sibling required.",
         "severity": "minor"
@@ -407,15 +423,17 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "b1e074e396d8",
+          "md": "422e354d0520",
           "ts": "d375765f5b33"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.336924Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.336924Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All references are cited appropriately.",
         "evidence": "content/quantum-observable-universe/braids-and-knots/fundamental-knots-operator-basis.ts:1",
@@ -425,15 +443,17 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "b1e074e396d8",
+          "md": "422e354d0520",
           "ts": "d375765f5b33"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.336924Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.336924Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Terms and conventions are clearly stated.",
         "evidence": "content/quantum-observable-universe/braids-and-knots/fundamental-knots-operator-basis.ts:1",
@@ -443,15 +463,17 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "b1e074e396d8",
+          "md": "422e354d0520",
           "ts": "d375765f5b33"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.336924Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.336924Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No fragile numerical matches are claimed.",
         "evidence": "content/quantum-observable-universe/braids-and-knots/fundamental-knots-operator-basis.ts:1",
@@ -461,15 +483,17 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "b1e074e396d8",
+          "md": "422e354d0520",
           "ts": "d375765f5b33"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.336924Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.336924Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The physical claims are consistent with established physics.",
         "evidence": "content/quantum-observable-universe/braids-and-knots/fundamental-knots-operator-basis.ts:1",
@@ -479,15 +503,17 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "b1e074e396d8",
+          "md": "422e354d0520",
           "ts": "d375765f5b33"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.336924Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.336924Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The backing compute and witnesses are verified.",
         "severity": "minor"
@@ -496,15 +522,17 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "b1e074e396d8",
+          "md": "422e354d0520",
           "ts": "d375765f5b33"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.336924Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.336924Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
@@ -554,14 +582,20 @@
       {
         "result": "pass",
         "notes": "Applied Milnor brevity. Cleaned up forward references (such as to Trefoil knot group). Shortened declarative sentences in knot-notation-convention and fundamental-knots-operator-basis. Kept math and tables untouched.",
-        "reviewed_at": "2026-07-06T22:42:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.336924Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.336924Z"
+        },
+        "field_hash": {
+          "md": "422e354d0520",
+          "ts": "d375765f5b33"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:55.297Z"
+  "updated_at": "2026-07-07T14:26:55.336924Z"
 }

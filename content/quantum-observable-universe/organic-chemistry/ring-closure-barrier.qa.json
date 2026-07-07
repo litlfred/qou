@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean"
   },
   "source_hashes": {
-    "md": "ef73824c60df",
+    "md": "abedca35fef1",
     "ts": "141de25a8dd3",
     "lean": "e49602d5dd89"
   },
@@ -1068,19 +1068,19 @@
       },
       {
         "field_hash": {
-          "md": "d1174875f401",
+          "md": "abedca35fef1",
           "ts": "141de25a8dd3",
-          "lean": "16f25fad683e"
+          "lean": "e49602d5dd89"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.965185Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:24.846Z",
+        "reviewed_at": "2026-07-07T14:26:54.965185Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
@@ -1088,19 +1088,19 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "d1174875f401",
+          "md": "abedca35fef1",
           "ts": "141de25a8dd3",
-          "lean": "16f25fad683e"
+          "lean": "e49602d5dd89"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.965185Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:19.707Z",
+        "reviewed_at": "2026-07-07T14:26:54.965185Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
       }
@@ -1108,19 +1108,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "d1174875f401",
+          "md": "abedca35fef1",
           "ts": "141de25a8dd3",
-          "lean": "16f25fad683e"
+          "lean": "e49602d5dd89"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.965185Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:20.048Z",
+        "reviewed_at": "2026-07-07T14:26:54.965185Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1128,19 +1128,19 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "d1174875f401",
+          "md": "abedca35fef1",
           "ts": "141de25a8dd3",
-          "lean": "16f25fad683e"
+          "lean": "e49602d5dd89"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.965185Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:20.396Z",
+        "reviewed_at": "2026-07-07T14:26:54.965185Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -1148,19 +1148,19 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "d1174875f401",
+          "md": "abedca35fef1",
           "ts": "141de25a8dd3",
-          "lean": "16f25fad683e"
+          "lean": "e49602d5dd89"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.965185Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:20.847Z",
+        "reviewed_at": "2026-07-07T14:26:54.965185Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
       }
@@ -1168,19 +1168,19 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "d1174875f401",
+          "md": "abedca35fef1",
           "ts": "141de25a8dd3",
-          "lean": "16f25fad683e"
+          "lean": "e49602d5dd89"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.965185Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:21.237Z",
+        "reviewed_at": "2026-07-07T14:26:54.965185Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
       }
@@ -1188,9 +1188,9 @@
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "d1174875f401",
+          "md": "abedca35fef1",
           "ts": "141de25a8dd3",
-          "lean": "16f25fad683e"
+          "lean": "e49602d5dd89"
         },
         "result": "pass",
         "score": {
@@ -1200,11 +1200,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.965185Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:21.723Z",
+        "reviewed_at": "2026-07-07T14:26:54.965185Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
       }
@@ -1212,9 +1212,9 @@
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "d1174875f401",
+          "md": "abedca35fef1",
           "ts": "141de25a8dd3",
-          "lean": "16f25fad683e"
+          "lean": "e49602d5dd89"
         },
         "result": "pass",
         "score": {
@@ -1224,11 +1224,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.965185Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:22.062Z",
+        "reviewed_at": "2026-07-07T14:26:54.965185Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
       }
@@ -1236,9 +1236,9 @@
     "proof-rater-novelty": [
       {
         "field_hash": {
-          "md": "d1174875f401",
+          "md": "abedca35fef1",
           "ts": "141de25a8dd3",
-          "lean": "16f25fad683e"
+          "lean": "e49602d5dd89"
         },
         "result": "pass",
         "score": {
@@ -1248,11 +1248,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.965185Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:22.493Z",
+        "reviewed_at": "2026-07-07T14:26:54.965185Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
       }
@@ -1260,19 +1260,19 @@
     "proof-statement-integrity": [
       {
         "field_hash": {
-          "md": "d1174875f401",
+          "md": "abedca35fef1",
           "ts": "141de25a8dd3",
-          "lean": "16f25fad683e"
+          "lean": "e49602d5dd89"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.965185Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:22.798Z",
+        "reviewed_at": "2026-07-07T14:26:54.965185Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
       }
@@ -1280,19 +1280,19 @@
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "d1174875f401",
+          "md": "abedca35fef1",
           "ts": "141de25a8dd3",
-          "lean": "16f25fad683e"
+          "lean": "e49602d5dd89"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.965185Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:23.158Z",
+        "reviewed_at": "2026-07-07T14:26:54.965185Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
       }
@@ -1300,19 +1300,19 @@
     "proof-no-trivial-true": [
       {
         "field_hash": {
-          "md": "d1174875f401",
+          "md": "abedca35fef1",
           "ts": "141de25a8dd3",
-          "lean": "16f25fad683e"
+          "lean": "e49602d5dd89"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.965185Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:23.524Z",
+        "reviewed_at": "2026-07-07T14:26:54.965185Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
       }
@@ -1320,19 +1320,19 @@
     "proof-no-false-premise": [
       {
         "field_hash": {
-          "md": "d1174875f401",
+          "md": "abedca35fef1",
           "ts": "141de25a8dd3",
-          "lean": "16f25fad683e"
+          "lean": "e49602d5dd89"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.965185Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:23.977Z",
+        "reviewed_at": "2026-07-07T14:26:54.965185Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
       }
@@ -1340,19 +1340,19 @@
     "proof-no-unused-hypotheses": [
       {
         "field_hash": {
-          "md": "d1174875f401",
+          "md": "abedca35fef1",
           "ts": "141de25a8dd3",
-          "lean": "16f25fad683e"
+          "lean": "e49602d5dd89"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.965185Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:24.425Z",
+        "reviewed_at": "2026-07-07T14:26:54.965185Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
       }
@@ -1360,17 +1360,19 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "d1174875f401",
+          "md": "abedca35fef1",
           "ts": "141de25a8dd3",
-          "lean": "16f25fad683e"
+          "lean": "e49602d5dd89"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.965185Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:54.965185Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The claim in 'Ring-closure energy barrier from braid rearrangement' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
@@ -1380,17 +1382,19 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "d1174875f401",
+          "md": "abedca35fef1",
           "ts": "141de25a8dd3",
-          "lean": "16f25fad683e"
+          "lean": "e49602d5dd89"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.965185Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:54.965185Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Ring-closure energy barrier from braid rearrangement' presents substantial mathematical content: Closing a molecular Hopf chain into a ring is a **topological phase transition**...",
         "severity": "minor"
@@ -1399,17 +1403,19 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "d1174875f401",
+          "md": "abedca35fef1",
           "ts": "141de25a8dd3",
-          "lean": "16f25fad683e"
+          "lean": "e49602d5dd89"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.965185Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:54.965185Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Ring-closure energy barrier from braid rearrangement'.",
         "severity": "minor",
@@ -1419,17 +1425,19 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "d1174875f401",
+          "md": "abedca35fef1",
           "ts": "141de25a8dd3",
-          "lean": "16f25fad683e"
+          "lean": "e49602d5dd89"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.965185Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:54.965185Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose presents 'Ring-closure energy barrier from braid rearrangement' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
@@ -1438,17 +1446,19 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "d1174875f401",
+          "md": "abedca35fef1",
           "ts": "141de25a8dd3",
-          "lean": "16f25fad683e"
+          "lean": "e49602d5dd89"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.965185Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:54.965185Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Ring-closure energy barrier from braid rearrangement'.",
         "severity": "minor",
@@ -1458,17 +1468,19 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "d1174875f401",
+          "md": "abedca35fef1",
           "ts": "141de25a8dd3",
-          "lean": "16f25fad683e"
+          "lean": "e49602d5dd89"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.965185Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:54.965185Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean.",
         "severity": "minor",
@@ -1478,17 +1490,19 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "d1174875f401",
+          "md": "abedca35fef1",
           "ts": "141de25a8dd3",
-          "lean": "16f25fad683e"
+          "lean": "e49602d5dd89"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.965185Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:54.965185Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
@@ -1497,17 +1511,19 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "d1174875f401",
+          "md": "abedca35fef1",
           "ts": "141de25a8dd3",
-          "lean": "16f25fad683e"
+          "lean": "e49602d5dd89"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.965185Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:54.965185Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No citations are present in 'Ring-closure energy barrier from braid rearrangement', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1517,17 +1533,19 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "d1174875f401",
+          "md": "abedca35fef1",
           "ts": "141de25a8dd3",
-          "lean": "16f25fad683e"
+          "lean": "e49602d5dd89"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.965185Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:54.965185Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Key terms and symbols in 'Ring-closure energy barrier from braid rearrangement' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1537,17 +1555,19 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "d1174875f401",
+          "md": "abedca35fef1",
           "ts": "141de25a8dd3",
-          "lean": "16f25fad683e"
+          "lean": "e49602d5dd89"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.965185Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:54.965185Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The algebraic and logical relations in 'Ring-closure energy barrier from braid rearrangement' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1557,17 +1577,19 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "d1174875f401",
+          "md": "abedca35fef1",
           "ts": "141de25a8dd3",
-          "lean": "16f25fad683e"
+          "lean": "e49602d5dd89"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.965185Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:54.965185Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The physical concepts described in 'Ring-closure energy barrier from braid rearrangement' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1577,17 +1599,19 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "d1174875f401",
+          "md": "abedca35fef1",
           "ts": "141de25a8dd3",
-          "lean": "16f25fad683e"
+          "lean": "e49602d5dd89"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.965185Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:54.965185Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
@@ -1597,17 +1621,19 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "d1174875f401",
+          "md": "abedca35fef1",
           "ts": "141de25a8dd3",
-          "lean": "16f25fad683e"
+          "lean": "e49602d5dd89"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.965185Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:54.965185Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean fails compilation: content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean:33:45: error: Function expected at",
         "verdict": "open-objection",
@@ -1619,14 +1645,21 @@
       {
         "result": "pass",
         "notes": "Applied Milnor exposition standard (H1-H8) and brevity rules. Shortened sentences, removed editorializing ('surprisingly', 'remarkably'), replaced 'this book' with 'this paper', and maintained Math, markdown, and cross-block consistency.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:54.965185Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.965185Z"
+        },
+        "field_hash": {
+          "md": "abedca35fef1",
+          "ts": "141de25a8dd3",
+          "lean": "e49602d5dd89"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T18:18:34.291Z"
+  "updated_at": "2026-07-07T14:26:54.965185Z"
 }

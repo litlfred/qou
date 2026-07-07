@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/q-beta-cos-resummation.lean"
   },
   "source_hashes": {
-    "md": "1a3a331ec960",
+    "md": "a99da0045509",
     "ts": "fbaf29dac253",
     "lean": "046133d415f5"
   },
@@ -1052,7 +1052,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "1a3a331ec960",
+          "md": "a99da0045509",
           "ts": "fbaf29dac253",
           "lean": "046133d415f5"
         },
@@ -1060,9 +1060,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.370883Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_at": "2026-07-07T14:26:57.370883Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:q-beta-cos-resummation' aligns with Lean declaration. Sorry-free."
       }
@@ -1074,5 +1076,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.802Z"
+  "updated_at": "2026-07-07T14:26:57.370883Z"
 }

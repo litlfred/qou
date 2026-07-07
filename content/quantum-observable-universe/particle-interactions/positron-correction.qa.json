@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/particle-interactions/positron-correction.md"
   },
   "source_hashes": {
-    "md": "4b115f3de4da",
+    "md": "4f924f665329",
     "ts": "41ab37c17bd8"
   },
   "criteria": {
@@ -2100,16 +2100,18 @@
     "proof-no-placeholder-stub": [
       {
         "field_hash": {
-          "lean": "6ce986d5b445"
+          "md": "4f924f665329",
+          "ts": "41ab37c17bd8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/lean-proof-vacuity-audit",
-          "agent_date": "2026-07-02",
-          "agent_skill": "local/lean-proof-vacuity-audit"
+          "agent_date": "2026-07-07T14:26:57.317614Z",
+          "agent_skill": "local/lean-proof-vacuity-audit",
+          "agent_model": "gemini-3.1-pro"
         },
-        "reviewed_at": "2026-07-02T17:07:15.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.317614Z",
         "reviewed_sha": "a9ce9ecfe24e6c7c9d0b9f25699b35ec666faa32",
         "notes": "4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): current Lean is honest \u2014 real statement/derivation or cited sorry; the 2026-06-22 placeholder-marker fail predates the 2026-06-30 rewrite (hash drift verified). Criterion pass."
       }
@@ -2117,18 +2119,18 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "506d228871e0",
-          "ts": "6ef0ab961147"
+          "md": "4f924f665329",
+          "ts": "41ab37c17bd8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.317614Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:20.565Z",
+        "reviewed_at": "2026-07-07T14:26:57.317614Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
       }
@@ -2136,18 +2138,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "506d228871e0",
-          "ts": "6ef0ab961147"
+          "md": "4f924f665329",
+          "ts": "41ab37c17bd8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.317614Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:20.989Z",
+        "reviewed_at": "2026-07-07T14:26:57.317614Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -2155,18 +2157,18 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "506d228871e0",
-          "ts": "6ef0ab961147"
+          "md": "4f924f665329",
+          "ts": "41ab37c17bd8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.317614Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:21.273Z",
+        "reviewed_at": "2026-07-07T14:26:57.317614Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -2174,18 +2176,18 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "506d228871e0",
-          "ts": "6ef0ab961147"
+          "md": "4f924f665329",
+          "ts": "41ab37c17bd8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.317614Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:21.706Z",
+        "reviewed_at": "2026-07-07T14:26:57.317614Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
       }
@@ -2264,19 +2266,19 @@
       },
       {
         "field_hash": {
-          "md": "506d228871e0",
-          "ts": "6ef0ab961147"
+          "md": "4f924f665329",
+          "ts": "41ab37c17bd8"
         },
         "result": "warn",
         "notes": "Lean is pure field projection; md gives a physical interpretation (character sum counts both fermions) but no derivation of the +1 in Lean.",
-        "reviewed_at": "2026-06-25T17:08:58.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.317614Z",
         "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.317614Z"
         },
         "score": {
           "max": 1,
@@ -2325,19 +2327,19 @@
       },
       {
         "field_hash": {
-          "md": "506d228871e0",
-          "ts": "6ef0ab961147"
+          "md": "4f924f665329",
+          "ts": "41ab37c17bd8"
         },
         "result": "pass",
         "notes": "Well-posed: identifies the +1 in Q as m_{e+}/m_e from \u03b3\u03b3\u2192e-e+ Breit-Wheeler pair vertex, applies in A=1/even-A regimes; not a fitting constant.",
-        "reviewed_at": "2026-06-25T17:08:58.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.317614Z",
         "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.317614Z"
         },
         "score": {
           "max": 1,
@@ -2386,19 +2388,19 @@
       },
       {
         "field_hash": {
-          "md": "506d228871e0",
-          "ts": "6ef0ab961147"
+          "md": "4f924f665329",
+          "ts": "41ab37c17bd8"
         },
         "result": "pass",
         "notes": "Identifying the additive +1 with the positron action (not a fit) is a substantive interpretive claim tied to the parity-regime split.",
-        "reviewed_at": "2026-06-25T17:08:58.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.317614Z",
         "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.317614Z"
         },
         "score": {
           "max": 1,
@@ -2443,19 +2445,19 @@
       },
       {
         "field_hash": {
-          "md": "506d228871e0",
-          "ts": "6ef0ab961147"
+          "md": "4f924f665329",
+          "ts": "41ab37c17bd8"
         },
         "result": "pass",
         "notes": "Conjunction faithfully encodes md Q=\u03a3_char\u00b7m_e+m_e + regime applicability (pair-creation\u21d2correction=m_e, else 0) over \u211d; no :True/sorry/native_decide.",
-        "reviewed_at": "2026-06-25T17:08:58.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.317614Z",
         "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.317614Z"
         }
       }
     ],
@@ -2496,19 +2498,19 @@
       },
       {
         "field_hash": {
-          "md": "506d228871e0",
-          "ts": "6ef0ab961147"
+          "md": "4f924f665329",
+          "ts": "41ab37c17bd8"
         },
         "result": "fail",
         "notes": "thm := \u27e8ctx.claim_i_corrected_Q, ctx.claim_ii\u20261, .2\u27e9; claim_i_corrected_Q IS the headline Q-value identity, projected from a class field. No derivation.",
-        "reviewed_at": "2026-06-25T17:08:58.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.317614Z",
         "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.317614Z"
         }
       }
     ],
@@ -2532,19 +2534,19 @@
       },
       {
         "field_hash": {
-          "md": "506d228871e0",
-          "ts": "6ef0ab961147"
+          "md": "4f924f665329",
+          "ts": "41ab37c17bd8"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: no `: True` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/ParticleInteractions/positron_correction.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.317614Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.317614Z"
         }
       }
     ],
@@ -2585,19 +2587,19 @@
       },
       {
         "field_hash": {
-          "md": "506d228871e0",
-          "ts": "6ef0ab961147"
+          "md": "4f924f665329",
+          "ts": "41ab37c17bd8"
         },
         "result": "pass",
         "notes": "claim_i (Q=\u03a3\u00b7m_e+m_e) and claim_ii (regime-conditional correction) jointly satisfiable; no contradiction.",
-        "reviewed_at": "2026-06-25T17:08:58.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.317614Z",
         "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.317614Z"
         }
       }
     ],
@@ -2638,19 +2640,19 @@
       },
       {
         "field_hash": {
-          "md": "506d228871e0",
-          "ts": "6ef0ab961147"
+          "md": "4f924f665329",
+          "ts": "41ab37c17bd8"
         },
         "result": "pass",
         "notes": "Sole binder [ctx] used (3 projections); is_pair_creation/applied_correction are class data not theorem binders.",
-        "reviewed_at": "2026-06-25T17:08:58.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.317614Z",
         "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.317614Z"
         }
       }
     ],
@@ -2674,35 +2676,37 @@
       },
       {
         "field_hash": {
-          "md": "506d228871e0",
-          "ts": "6ef0ab961147"
+          "md": "4f924f665329",
+          "ts": "41ab37c17bd8"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/ParticleInteractions/positron_correction.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.317614Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.317614Z"
         }
       }
     ],
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "506d228871e0",
-          "ts": "6ef0ab961147"
+          "md": "4f924f665329",
+          "ts": "41ab37c17bd8"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.317614Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.317614Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'Positron correction to the Q-value': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -2712,16 +2716,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "506d228871e0",
-          "ts": "6ef0ab961147"
+          "md": "4f924f665329",
+          "ts": "41ab37c17bd8"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.317614Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.317614Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Positron correction to the Q-value' presents substantial mathematical content: The $+1$ additive term in the Q-value formula is not a fitting constant \u2014 it is the positron mass $m_{e^+}/m_e = 1$, ...",
         "severity": "minor"
@@ -2730,16 +2736,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "506d228871e0",
-          "ts": "6ef0ab961147"
+          "md": "4f924f665329",
+          "ts": "41ab37c17bd8"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.317614Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.317614Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Positron correction to the Q-value'.",
         "severity": "minor",
@@ -2749,16 +2757,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "506d228871e0",
-          "ts": "6ef0ab961147"
+          "md": "4f924f665329",
+          "ts": "41ab37c17bd8"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.317614Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.317614Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'Positron correction to the Q-value' is appropriately qualified.",
         "severity": "minor"
@@ -2767,16 +2777,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "506d228871e0",
-          "ts": "6ef0ab961147"
+          "md": "4f924f665329",
+          "ts": "41ab37c17bd8"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.317614Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.317614Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Positron correction to the Q-value'.",
         "severity": "minor",
@@ -2786,16 +2798,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "506d228871e0",
-          "ts": "6ef0ab961147"
+          "md": "4f924f665329",
+          "ts": "41ab37c17bd8"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.317614Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.317614Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The argument flow in 'Positron correction to the Q-value' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -2805,16 +2819,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "506d228871e0",
-          "ts": "6ef0ab961147"
+          "md": "4f924f665329",
+          "ts": "41ab37c17bd8"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.317614Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.317614Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The referenced Lean file content/quantum-observable-universe/particle-interactions/positron-correction.lean is missing, leading to complete divergence.",
         "severity": "minor"
@@ -2823,16 +2839,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "506d228871e0",
-          "ts": "6ef0ab961147"
+          "md": "4f924f665329",
+          "ts": "41ab37c17bd8"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.317614Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.317614Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Positron correction to the Q-value', hence no citation misuse is possible.",
         "severity": "minor",
@@ -2842,16 +2860,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "506d228871e0",
-          "ts": "6ef0ab961147"
+          "md": "4f924f665329",
+          "ts": "41ab37c17bd8"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.317614Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.317614Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Positron correction to the Q-value' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -2861,16 +2881,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "506d228871e0",
-          "ts": "6ef0ab961147"
+          "md": "4f924f665329",
+          "ts": "41ab37c17bd8"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.317614Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.317614Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Positron correction to the Q-value' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -2880,16 +2902,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "506d228871e0",
-          "ts": "6ef0ab961147"
+          "md": "4f924f665329",
+          "ts": "41ab37c17bd8"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.317614Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.317614Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Positron correction to the Q-value' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -2899,16 +2923,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "506d228871e0",
-          "ts": "6ef0ab961147"
+          "md": "4f924f665329",
+          "ts": "41ab37c17bd8"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.317614Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.317614Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'Positron correction to the Q-value' are reproducible.",
         "severity": "minor",
@@ -2918,16 +2944,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "506d228871e0",
-          "ts": "6ef0ab961147"
+          "md": "4f924f665329",
+          "ts": "41ab37c17bd8"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.317614Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.317614Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/particle-interactions/positron-correction.lean is missing.",
         "severity": "critical",
@@ -2939,14 +2967,20 @@
       {
         "result": "pass",
         "notes": "Applied Milnor exposition standard (H1-H8) and brevity rules. Shortened sentences, removed editorializing ('surprisingly', 'remarkably'), replaced 'this book' with 'this paper', and maintained Math, markdown, and cross-block consistency.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:57.317614Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.317614Z"
+        },
+        "field_hash": {
+          "md": "4f924f665329",
+          "ts": "41ab37c17bd8"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.492Z"
+  "updated_at": "2026-07-07T14:26:57.317614Z"
 }

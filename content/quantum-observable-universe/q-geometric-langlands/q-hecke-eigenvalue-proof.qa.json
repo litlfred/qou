@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/q-geometric-langlands/q-hecke-eigenvalue-proof.md"
   },
   "source_hashes": {
-    "md": "392c967fa233",
+    "md": "a38fd7674279",
     "ts": "640c2c211df6"
   },
   "criteria": {
@@ -784,18 +784,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "392c967fa233",
+          "md": "a38fd7674279",
           "ts": "640c2c211df6"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.198909Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:44.437Z",
+        "reviewed_at": "2026-07-07T14:26:56.198909Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -803,16 +803,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "392c967fa233",
+          "md": "a38fd7674279",
           "ts": "640c2c211df6"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.198909Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.198909Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "q-hecke-eigenvalue-proof.ts:1",
@@ -822,16 +824,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "392c967fa233",
+          "md": "a38fd7674279",
           "ts": "640c2c211df6"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.198909Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.198909Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "The block 'Proof of $q$-Hecke eigenvalue determination' presents substantial mathematical content: 'By Tannaka--Krein reconstruction, the quantum group $\\check{G}_q$ is'."
@@ -840,16 +844,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "392c967fa233",
+          "md": "a38fd7674279",
           "ts": "640c2c211df6"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.198909Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.198909Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "q-hecke-eigenvalue-proof.ts:1",
@@ -859,16 +865,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "392c967fa233",
+          "md": "a38fd7674279",
           "ts": "640c2c211df6"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.198909Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.198909Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "The remarks and narrative scope in 'Proof of $q$-Hecke eigenvalue determination' are appropriately qualified."
@@ -877,16 +885,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "392c967fa233",
+          "md": "a38fd7674279",
           "ts": "640c2c211df6"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.198909Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.198909Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "q-hecke-eigenvalue-proof.ts:1",
@@ -896,16 +906,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "392c967fa233",
+          "md": "a38fd7674279",
           "ts": "640c2c211df6"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.198909Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.198909Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "q-hecke-eigenvalue-proof.ts:1",
@@ -915,16 +927,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "392c967fa233",
+          "md": "a38fd7674279",
           "ts": "640c2c211df6"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.198909Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.198909Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "No Lean sibling required; narrative matches the expected configuration."
@@ -933,16 +947,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "392c967fa233",
+          "md": "a38fd7674279",
           "ts": "640c2c211df6"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.198909Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.198909Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "q-hecke-eigenvalue-proof.ts:1",
@@ -952,16 +968,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "392c967fa233",
+          "md": "a38fd7674279",
           "ts": "640c2c211df6"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.198909Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.198909Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "q-hecke-eigenvalue-proof.ts:1",
@@ -971,16 +989,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "392c967fa233",
+          "md": "a38fd7674279",
           "ts": "640c2c211df6"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.198909Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.198909Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "q-hecke-eigenvalue-proof.ts:1",
@@ -990,16 +1010,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "392c967fa233",
+          "md": "a38fd7674279",
           "ts": "640c2c211df6"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.198909Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.198909Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "q-hecke-eigenvalue-proof.ts:1",
@@ -1009,16 +1031,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "392c967fa233",
+          "md": "a38fd7674279",
           "ts": "640c2c211df6"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.198909Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.198909Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "The derivation steps and formal definitions in 'Proof of $q$-Hecke eigenvalue determination' are reproducible."
@@ -1027,16 +1051,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "392c967fa233",
+          "md": "a38fd7674279",
           "ts": "640c2c211df6"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.198909Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.198909Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "Referee verdict: clean.",
@@ -1045,5 +1071,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.994Z"
+  "updated_at": "2026-07-07T14:26:56.198909Z"
 }

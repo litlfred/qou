@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/molecular-construction/electron-shell-braid-capacity.lean"
   },
   "source_hashes": {
-    "md": "ddf77799ec14",
+    "md": "6ea52d1ca177",
     "ts": "f42e571f4c9a",
     "lean": "2af2ce00cc3d"
   },
@@ -877,19 +877,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "c095f5af454d",
-          "ts": "fb125052fa17",
-          "lean": "1c54a2c2764f"
+          "md": "6ea52d1ca177",
+          "ts": "f42e571f4c9a",
+          "lean": "2af2ce00cc3d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.474948Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:25.624Z",
+        "reviewed_at": "2026-07-07T14:26:55.474948Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -897,19 +897,19 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "c095f5af454d",
-          "ts": "fb125052fa17",
-          "lean": "1c54a2c2764f"
+          "md": "6ea52d1ca177",
+          "ts": "f42e571f4c9a",
+          "lean": "2af2ce00cc3d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.474948Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:25.990Z",
+        "reviewed_at": "2026-07-07T14:26:55.474948Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -917,17 +917,19 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "c095f5af454d",
-          "ts": "fb125052fa17",
-          "lean": "1c54a2c2764f"
+          "md": "6ea52d1ca177",
+          "ts": "f42e571f4c9a",
+          "lean": "2af2ce00cc3d"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.474948Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.474948Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The claim in 'Electron shell as braid bonding capacity' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
@@ -937,17 +939,19 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "c095f5af454d",
-          "ts": "fb125052fa17",
-          "lean": "1c54a2c2764f"
+          "md": "6ea52d1ca177",
+          "ts": "f42e571f4c9a",
+          "lean": "2af2ce00cc3d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.474948Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.474948Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Electron shell as braid bonding capacity' presents substantial mathematical content: of the $Z$ electrons is a trefoil $T_{2,3}$ Hopf-linked to the nuclear core.  Th...",
         "severity": "minor"
@@ -956,17 +960,19 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "c095f5af454d",
-          "ts": "fb125052fa17",
-          "lean": "1c54a2c2764f"
+          "md": "6ea52d1ca177",
+          "ts": "f42e571f4c9a",
+          "lean": "2af2ce00cc3d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.474948Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.474948Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Electron shell as braid bonding capacity'.",
         "severity": "minor",
@@ -976,17 +982,19 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "c095f5af454d",
-          "ts": "fb125052fa17",
-          "lean": "1c54a2c2764f"
+          "md": "6ea52d1ca177",
+          "ts": "f42e571f4c9a",
+          "lean": "2af2ce00cc3d"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.474948Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.474948Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose presents 'Electron shell as braid bonding capacity' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
@@ -995,17 +1003,19 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "c095f5af454d",
-          "ts": "fb125052fa17",
-          "lean": "1c54a2c2764f"
+          "md": "6ea52d1ca177",
+          "ts": "f42e571f4c9a",
+          "lean": "2af2ce00cc3d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.474948Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.474948Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Electron shell as braid bonding capacity'.",
         "severity": "minor",
@@ -1015,17 +1025,19 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "c095f5af454d",
-          "ts": "fb125052fa17",
-          "lean": "1c54a2c2764f"
+          "md": "6ea52d1ca177",
+          "ts": "f42e571f4c9a",
+          "lean": "2af2ce00cc3d"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.474948Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.474948Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/molecular-construction/electron-shell-braid-capacity.lean.",
         "severity": "minor",
@@ -1035,17 +1047,19 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "c095f5af454d",
-          "ts": "fb125052fa17",
-          "lean": "1c54a2c2764f"
+          "md": "6ea52d1ca177",
+          "ts": "f42e571f4c9a",
+          "lean": "2af2ce00cc3d"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.474948Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.474948Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/molecular-construction/electron-shell-braid-capacity.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
@@ -1054,17 +1068,19 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "c095f5af454d",
-          "ts": "fb125052fa17",
-          "lean": "1c54a2c2764f"
+          "md": "6ea52d1ca177",
+          "ts": "f42e571f4c9a",
+          "lean": "2af2ce00cc3d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.474948Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.474948Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No citations are present in 'Electron shell as braid bonding capacity', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1074,17 +1090,19 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "c095f5af454d",
-          "ts": "fb125052fa17",
-          "lean": "1c54a2c2764f"
+          "md": "6ea52d1ca177",
+          "ts": "f42e571f4c9a",
+          "lean": "2af2ce00cc3d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.474948Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.474948Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Key terms and symbols in 'Electron shell as braid bonding capacity' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1094,17 +1112,19 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "c095f5af454d",
-          "ts": "fb125052fa17",
-          "lean": "1c54a2c2764f"
+          "md": "6ea52d1ca177",
+          "ts": "f42e571f4c9a",
+          "lean": "2af2ce00cc3d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.474948Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.474948Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The algebraic and logical relations in 'Electron shell as braid bonding capacity' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1114,17 +1134,19 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "c095f5af454d",
-          "ts": "fb125052fa17",
-          "lean": "1c54a2c2764f"
+          "md": "6ea52d1ca177",
+          "ts": "f42e571f4c9a",
+          "lean": "2af2ce00cc3d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.474948Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.474948Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The physical concepts described in 'Electron shell as braid bonding capacity' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1134,17 +1156,19 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "c095f5af454d",
-          "ts": "fb125052fa17",
-          "lean": "1c54a2c2764f"
+          "md": "6ea52d1ca177",
+          "ts": "f42e571f4c9a",
+          "lean": "2af2ce00cc3d"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.474948Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.474948Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/molecular-construction/electron-shell-braid-capacity.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
@@ -1154,17 +1178,19 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "c095f5af454d",
-          "ts": "fb125052fa17",
-          "lean": "1c54a2c2764f"
+          "md": "6ea52d1ca177",
+          "ts": "f42e571f4c9a",
+          "lean": "2af2ce00cc3d"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.474948Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.474948Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/molecular-construction/electron-shell-braid-capacity.lean fails compilation: content/quantum-observable-universe/molecular-construction/electron-shell-braid-capacity.lean:19:47: error: unknown tactic",
         "verdict": "open-objection",
@@ -1176,14 +1202,21 @@
       {
         "result": "pass",
         "notes": "Rewrote molecular-construction_seq2.md. Stripped fluff, enforced 'we' and present tense. Converted definitions and conjectures to follow linear, clear style without editorialising.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.474948Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.474948Z"
+        },
+        "field_hash": {
+          "md": "6ea52d1ca177",
+          "ts": "f42e571f4c9a",
+          "lean": "2af2ce00cc3d"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T04:39:43.766Z"
+  "updated_at": "2026-07-07T14:26:55.474948Z"
 }

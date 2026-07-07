@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/quantum-observable-universes/qou-axioms-physical-reading.md"
   },
   "source_hashes": {
-    "md": "b1088385729a",
+    "md": "338bbb504eb3",
     "ts": "dc7e5b395886"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Rewrote seq0. Fused the repetitive lemma blocks into an integrated existence statement. Compressed the meta-narrative about integration and Stokes theorem into direct physical interpretations. Re-wrote the introduction to immediately present the four axioms and their justification.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.950758Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.950758Z"
+        },
+        "field_hash": {
+          "md": "338bbb504eb3",
+          "ts": "dc7e5b395886"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:58.083Z"
+  "updated_at": "2026-07-07T14:26:55.950758Z"
 }

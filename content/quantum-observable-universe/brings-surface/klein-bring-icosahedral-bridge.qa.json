@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/brings-surface/klein-bring-icosahedral-bridge.lean"
   },
   "source_hashes": {
-    "md": "095a65ecc90e",
+    "md": "0ed913719c3f",
     "ts": "5a2d97fc9a20",
     "lean": "e4e8e871acc1"
   },
@@ -36,7 +36,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "095a65ecc90e",
+          "md": "0ed913719c3f",
           "ts": "5a2d97fc9a20",
           "lean": "e4e8e871acc1"
         },
@@ -44,9 +44,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.020131Z"
         },
-        "reviewed_at": "2026-07-06T04:41:30.202Z",
+        "reviewed_at": "2026-07-07T14:26:55.020131Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'conj:klein-bring-icosahedral-bridge' \u2192 expected 'klein_bring_icosahedral_bridge'; Lean declares: triangle_235_spherical, icoOrder, icoOrder_two, icoOrder_three, icoOrder_five.... Structural match via content."
       }
@@ -55,14 +57,21 @@
       {
         "result": "pass",
         "notes": "Applied Milnor brevity. Reduced meta-text, fixed tone, preserved all tables and math.",
-        "reviewed_at": "2026-07-06T22:42:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.020131Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.020131Z"
+        },
+        "field_hash": {
+          "md": "0ed913719c3f",
+          "ts": "5a2d97fc9a20",
+          "lean": "e4e8e871acc1"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:30.202Z"
+  "updated_at": "2026-07-07T14:26:55.020131Z"
 }

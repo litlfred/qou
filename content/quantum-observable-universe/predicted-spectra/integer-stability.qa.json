@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/predicted-spectra/integer-stability.lean"
   },
   "source_hashes": {
-    "md": "0794d197f4e0",
+    "md": "2805449ebc9e",
     "ts": "2e553aa598e9",
     "lean": "31a74aef2798"
   },
@@ -1068,7 +1068,7 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "f77a889243b2",
+          "md": "2805449ebc9e",
           "ts": "2e553aa598e9",
           "lean": "31a74aef2798"
         },
@@ -1076,9 +1076,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.331210Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.331210Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The statement is written in standard scholarly mathematical and physics voice.",
         "severity": "minor"
@@ -1087,7 +1089,7 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "f77a889243b2",
+          "md": "2805449ebc9e",
           "ts": "2e553aa598e9",
           "lean": "31a74aef2798"
         },
@@ -1095,9 +1097,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.331210Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.331210Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Block placement and kind 'proposition' match validated structurally.",
         "severity": "minor"
@@ -1106,7 +1110,7 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "f77a889243b2",
+          "md": "2805449ebc9e",
           "ts": "2e553aa598e9",
           "lean": "31a74aef2798"
         },
@@ -1114,9 +1118,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.331210Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.331210Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean theorem statement in content/quantum-observable-universe/predicted-spectra/integer-stability.lean matches the mathematical statement in /Users/litlfred/space_cats/qou/content/quantum-observable-universe/predicted-spectra/integer-stability.md.",
         "severity": "minor",
@@ -1126,7 +1132,7 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "f77a889243b2",
+          "md": "2805449ebc9e",
           "ts": "2e553aa598e9",
           "lean": "31a74aef2798"
         },
@@ -1134,9 +1140,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.331210Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.331210Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean file contains a fully verified, sorry-free proof.",
         "severity": "minor",
@@ -1163,7 +1171,7 @@
       },
       {
         "field_hash": {
-          "md": "0794d197f4e0",
+          "md": "2805449ebc9e",
           "ts": "2e553aa598e9",
           "lean": "31a74aef2798"
         },
@@ -1171,9 +1179,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.331210Z"
         },
-        "reviewed_at": "2026-07-06T04:41:30.359Z",
+        "reviewed_at": "2026-07-07T14:26:56.331210Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:integer-stability' aligns with Lean declaration. Sorry-free."
       }
@@ -1181,7 +1191,7 @@
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "f77a889243b2",
+          "md": "2805449ebc9e",
           "ts": "2e553aa598e9",
           "lean": "31a74aef2798"
         },
@@ -1189,9 +1199,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.331210Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.331210Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Proof strategy is well-structured and easy to follow.",
         "severity": "minor"
@@ -1200,7 +1212,7 @@
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "f77a889243b2",
+          "md": "2805449ebc9e",
           "ts": "2e553aa598e9",
           "lean": "31a74aef2798"
         },
@@ -1208,9 +1220,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.331210Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.331210Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Proof compiles sorry-free.",
         "severity": "minor",
@@ -1220,7 +1234,7 @@
     "proof-rater-novelty": [
       {
         "field_hash": {
-          "md": "f77a889243b2",
+          "md": "2805449ebc9e",
           "ts": "2e553aa598e9",
           "lean": "31a74aef2798"
         },
@@ -1228,9 +1242,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.331210Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.331210Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The mathematical and physical connections explored in this block are highly novel.",
         "severity": "minor",
@@ -1240,7 +1256,7 @@
     "proof-statement-integrity": [
       {
         "field_hash": {
-          "md": "f77a889243b2",
+          "md": "2805449ebc9e",
           "ts": "2e553aa598e9",
           "lean": "31a74aef2798"
         },
@@ -1248,9 +1264,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.331210Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.331210Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Signature is stable and contains no unexpected axioms/sorryAx.",
         "severity": "minor"
@@ -1259,7 +1277,7 @@
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "f77a889243b2",
+          "md": "2805449ebc9e",
           "ts": "2e553aa598e9",
           "lean": "31a74aef2798"
         },
@@ -1267,9 +1285,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.331210Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.331210Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No self-assuming projections are used in the proof.",
         "severity": "minor"
@@ -1278,7 +1298,7 @@
     "proof-no-trivial-true": [
       {
         "field_hash": {
-          "md": "f77a889243b2",
+          "md": "2805449ebc9e",
           "ts": "2e553aa598e9",
           "lean": "31a74aef2798"
         },
@@ -1286,9 +1306,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.331210Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.331210Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The proof does not rely on trivial True stubs.",
         "severity": "minor"
@@ -1297,7 +1319,7 @@
     "proof-no-false-premise": [
       {
         "field_hash": {
-          "md": "f77a889243b2",
+          "md": "2805449ebc9e",
           "ts": "2e553aa598e9",
           "lean": "31a74aef2798"
         },
@@ -1305,9 +1327,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.331210Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.331210Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The proof assumptions are consistent and do not contain false premises.",
         "severity": "minor"
@@ -1316,7 +1340,7 @@
     "proof-no-unused-hypotheses": [
       {
         "field_hash": {
-          "md": "f77a889243b2",
+          "md": "2805449ebc9e",
           "ts": "2e553aa598e9",
           "lean": "31a74aef2798"
         },
@@ -1324,9 +1348,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.331210Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.331210Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No unused hypotheses are present in the Lean proof.",
         "severity": "minor"
@@ -1335,7 +1361,7 @@
     "proof-no-decide-masking": [
       {
         "field_hash": {
-          "md": "f77a889243b2",
+          "md": "2805449ebc9e",
           "ts": "2e553aa598e9",
           "lean": "31a74aef2798"
         },
@@ -1343,9 +1369,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.331210Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.331210Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The proof does not use decide tactics to mask verification steps.",
         "severity": "minor"
@@ -1354,7 +1382,7 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "f77a889243b2",
+          "md": "2805449ebc9e",
           "ts": "2e553aa598e9",
           "lean": "31a74aef2798"
         },
@@ -1362,9 +1390,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.331210Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.331210Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'Integer stability: the valley of stability as a Diophantine constraint': the formalization compiles successfully without errors.",
         "severity": "minor",
@@ -1374,7 +1404,7 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "f77a889243b2",
+          "md": "2805449ebc9e",
           "ts": "2e553aa598e9",
           "lean": "31a74aef2798"
         },
@@ -1382,9 +1412,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.331210Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.331210Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No vacuous proofs detected. Sibling Lean file compiles sorry-free, verifying non-vacuity.",
         "severity": "minor",
@@ -1394,7 +1426,7 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "f77a889243b2",
+          "md": "2805449ebc9e",
           "ts": "2e553aa598e9",
           "lean": "31a74aef2798"
         },
@@ -1402,9 +1434,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.331210Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.331210Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Integer stability: the valley of stability as a Diophantine constraint'.",
         "severity": "minor",
@@ -1414,7 +1448,7 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "f77a889243b2",
+          "md": "2805449ebc9e",
           "ts": "2e553aa598e9",
           "lean": "31a74aef2798"
         },
@@ -1422,9 +1456,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.331210Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.331210Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'Integer stability: the valley of stability as a Diophantine constraint' is appropriately qualified.",
         "severity": "minor"
@@ -1433,7 +1469,7 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "f77a889243b2",
+          "md": "2805449ebc9e",
           "ts": "2e553aa598e9",
           "lean": "31a74aef2798"
         },
@@ -1441,9 +1477,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.331210Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.331210Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Integer stability: the valley of stability as a Diophantine constraint'.",
         "severity": "minor",
@@ -1453,7 +1491,7 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "f77a889243b2",
+          "md": "2805449ebc9e",
           "ts": "2e553aa598e9",
           "lean": "31a74aef2798"
         },
@@ -1461,9 +1499,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.331210Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.331210Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The argument flow in 'Integer stability: the valley of stability as a Diophantine constraint' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -1473,7 +1513,7 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "f77a889243b2",
+          "md": "2805449ebc9e",
           "ts": "2e553aa598e9",
           "lean": "31a74aef2798"
         },
@@ -1481,9 +1521,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.331210Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.331210Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Lean sibling corresponds directly to the narrative claim in 'Integer stability: the valley of stability as a Diophantine constraint'.",
         "severity": "minor"
@@ -1492,7 +1534,7 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "f77a889243b2",
+          "md": "2805449ebc9e",
           "ts": "2e553aa598e9",
           "lean": "31a74aef2798"
         },
@@ -1500,9 +1542,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.331210Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.331210Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Integer stability: the valley of stability as a Diophantine constraint', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1512,7 +1556,7 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "f77a889243b2",
+          "md": "2805449ebc9e",
           "ts": "2e553aa598e9",
           "lean": "31a74aef2798"
         },
@@ -1520,9 +1564,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.331210Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.331210Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Integer stability: the valley of stability as a Diophantine constraint' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1532,7 +1578,7 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "f77a889243b2",
+          "md": "2805449ebc9e",
           "ts": "2e553aa598e9",
           "lean": "31a74aef2798"
         },
@@ -1540,9 +1586,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.331210Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.331210Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Integer stability: the valley of stability as a Diophantine constraint' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1552,7 +1600,7 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "f77a889243b2",
+          "md": "2805449ebc9e",
           "ts": "2e553aa598e9",
           "lean": "31a74aef2798"
         },
@@ -1560,9 +1608,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.331210Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.331210Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Integer stability: the valley of stability as a Diophantine constraint' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1572,7 +1622,7 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "f77a889243b2",
+          "md": "2805449ebc9e",
           "ts": "2e553aa598e9",
           "lean": "31a74aef2798"
         },
@@ -1580,9 +1630,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.331210Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.331210Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Lean file compiles successfully, confirming reproducibility.",
         "severity": "minor"
@@ -1591,7 +1643,7 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "f77a889243b2",
+          "md": "2805449ebc9e",
           "ts": "2e553aa598e9",
           "lean": "31a74aef2798"
         },
@@ -1599,9 +1651,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.331210Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.331210Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -1613,14 +1667,21 @@
       {
         "result": "pass",
         "notes": "Rewrote prose blocks to adhere to Milnor standards. Improved economy, preserved all math.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.331210Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.331210Z"
+        },
+        "field_hash": {
+          "md": "2805449ebc9e",
+          "ts": "2e553aa598e9",
+          "lean": "31a74aef2798"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:30.359Z"
+  "updated_at": "2026-07-07T14:26:56.331210Z"
 }

@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/stochastic-mechanics/markov-closure-map-axiomatic.lean"
   },
   "source_hashes": {
-    "md": "ef5833e324c5",
+    "md": "81a4b2249a1e",
     "ts": "3fe7977d6077",
     "lean": "4506a12a1982"
   },
@@ -858,14 +858,21 @@
       {
         "result": "pass",
         "notes": "Clarified the Markov closure map steps and removed forward references. Maintained the precision of the Q_beta derivation story.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.027294Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.027294Z"
+        },
+        "field_hash": {
+          "md": "81a4b2249a1e",
+          "ts": "3fe7977d6077",
+          "lean": "4506a12a1982"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T23:06:25.607Z"
+  "updated_at": "2026-07-07T14:26:56.027294Z"
 }

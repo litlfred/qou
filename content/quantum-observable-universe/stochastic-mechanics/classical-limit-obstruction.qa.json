@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.lean"
   },
   "source_hashes": {
-    "md": "ca8c765e076d",
+    "md": "db429a908736",
     "ts": "a119e888dc3c",
     "lean": "6b2e3022c520"
   },
@@ -858,17 +858,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "ca8c765e076d",
+          "md": "db429a908736",
           "ts": "a119e888dc3c",
-          "lean": "bfad3bb7c76e"
+          "lean": "6b2e3022c520"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.026180Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.026180Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "Block placement and kind match validated structurally."
@@ -877,17 +879,19 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "ca8c765e076d",
+          "md": "db429a908736",
           "ts": "a119e888dc3c",
-          "lean": "bfad3bb7c76e"
+          "lean": "6b2e3022c520"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.026180Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.026180Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "classical-limit-obstruction.lean:1 \u2014 Lean file exists",
@@ -897,17 +901,19 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "ca8c765e076d",
+          "md": "db429a908736",
           "ts": "a119e888dc3c",
-          "lean": "bfad3bb7c76e"
+          "lean": "6b2e3022c520"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.026180Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.026180Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.ts:1",
@@ -917,17 +923,19 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "ca8c765e076d",
+          "md": "db429a908736",
           "ts": "a119e888dc3c",
-          "lean": "bfad3bb7c76e"
+          "lean": "6b2e3022c520"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.026180Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.026180Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.ts:1",
@@ -937,17 +945,19 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "ca8c765e076d",
+          "md": "db429a908736",
           "ts": "a119e888dc3c",
-          "lean": "bfad3bb7c76e"
+          "lean": "6b2e3022c520"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.026180Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.026180Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.ts:1",
@@ -957,17 +967,19 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "ca8c765e076d",
+          "md": "db429a908736",
           "ts": "a119e888dc3c",
-          "lean": "bfad3bb7c76e"
+          "lean": "6b2e3022c520"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.026180Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.026180Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.ts:1",
@@ -977,17 +989,19 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "ca8c765e076d",
+          "md": "db429a908736",
           "ts": "a119e888dc3c",
-          "lean": "bfad3bb7c76e"
+          "lean": "6b2e3022c520"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.026180Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.026180Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.ts:1",
@@ -997,17 +1011,19 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "ca8c765e076d",
+          "md": "db429a908736",
           "ts": "a119e888dc3c",
-          "lean": "bfad3bb7c76e"
+          "lean": "6b2e3022c520"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.026180Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.026180Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.ts:1",
@@ -1017,17 +1033,19 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "ca8c765e076d",
+          "md": "db429a908736",
           "ts": "a119e888dc3c",
-          "lean": "bfad3bb7c76e"
+          "lean": "6b2e3022c520"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.026180Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.026180Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.lean:1",
@@ -1037,17 +1055,19 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "ca8c765e076d",
+          "md": "db429a908736",
           "ts": "a119e888dc3c",
-          "lean": "bfad3bb7c76e"
+          "lean": "6b2e3022c520"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.026180Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.026180Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.ts:1",
@@ -1057,17 +1077,19 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "ca8c765e076d",
+          "md": "db429a908736",
           "ts": "a119e888dc3c",
-          "lean": "bfad3bb7c76e"
+          "lean": "6b2e3022c520"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.026180Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.026180Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.ts:1",
@@ -1077,17 +1099,19 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "ca8c765e076d",
+          "md": "db429a908736",
           "ts": "a119e888dc3c",
-          "lean": "bfad3bb7c76e"
+          "lean": "6b2e3022c520"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.026180Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.026180Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.ts:1",
@@ -1097,17 +1121,19 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "ca8c765e076d",
+          "md": "db429a908736",
           "ts": "a119e888dc3c",
-          "lean": "bfad3bb7c76e"
+          "lean": "6b2e3022c520"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.026180Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.026180Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.ts:1",
@@ -1117,17 +1143,19 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "ca8c765e076d",
+          "md": "db429a908736",
           "ts": "a119e888dc3c",
-          "lean": "bfad3bb7c76e"
+          "lean": "6b2e3022c520"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.026180Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.026180Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.ts:1",
@@ -1137,17 +1165,19 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "ca8c765e076d",
+          "md": "db429a908736",
           "ts": "a119e888dc3c",
-          "lean": "bfad3bb7c76e"
+          "lean": "6b2e3022c520"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.026180Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.026180Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/classical-limit-obstruction.md:1 \u2014 Let (\\mathbf{C}, A, \\tau) be a quantum universe over a",
@@ -1180,14 +1210,21 @@
       {
         "result": "pass",
         "notes": "Streamlined the classical limit functor, making the transition from q-scale to macroscopic scale direct and declarative.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.026180Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.026180Z"
+        },
+        "field_hash": {
+          "md": "db429a908736",
+          "ts": "a119e888dc3c",
+          "lean": "6b2e3022c520"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-07T14:26:56.026180Z"
 }

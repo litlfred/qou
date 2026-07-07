@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/observations/symmetry-preserving-leptons.md"
   },
   "source_hashes": {
-    "md": "2ffcfbc929d0",
+    "md": "5f053751d023",
     "ts": "98f3b770abac"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Rewrote observations_seq1.md. Eliminated 'we establish' passivity where possible, replaced 'this chapter' with 'we', simplified structural signposting.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.660894Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.660894Z"
+        },
+        "field_hash": {
+          "md": "5f053751d023",
+          "ts": "98f3b770abac"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.226Z"
+  "updated_at": "2026-07-07T14:26:56.660894Z"
 }

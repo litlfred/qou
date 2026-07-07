@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/electroweak-triplet-far-commuting-minimal.lean"
   },
   "source_hashes": {
-    "md": "5502b063d05f",
+    "md": "2ea6714b526f",
     "ts": "ffeaf94c6148",
     "lean": "09d2631df968"
   },
@@ -16,7 +16,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "5502b063d05f",
+          "md": "2ea6714b526f",
           "ts": "ffeaf94c6148",
           "lean": "09d2631df968"
         },
@@ -24,9 +24,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.404822Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_at": "2026-07-07T14:26:57.404822Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'thm:ew-triplet-far-commuting-minimal' \u2192 expected 'ew_triplet_far_commuting_minimal'; Lean declares: strandsFor, far_commuting_top_index_ge, far_commuting_min_strands, far_commuting_min_witness, torusLinkGenus.... Structural match via content."
       }
@@ -38,5 +40,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.802Z"
+  "updated_at": "2026-07-07T14:26:57.404822Z"
 }

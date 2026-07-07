@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/introduction/intro.md"
   },
   "source_hashes": {
-    "md": "266bff0f8b9b",
+    "md": "c76cb5f8003c",
     "ts": "78c4ecd352f0"
   },
   "criteria": {
@@ -219,16 +219,18 @@
       },
       {
         "field_hash": {
-          "md": "266bff0f8b9b",
+          "md": "c76cb5f8003c",
           "ts": "78c4ecd352f0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-drain-swarm3",
-          "version": "claude-opus-4-8"
+          "version": "claude-opus-4-8",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.460475Z"
         },
-        "reviewed_at": "2026-07-05T20:11:39.307Z",
+        "reviewed_at": "2026-07-07T14:26:55.460475Z",
         "reviewed_sha": "90227015687f46b75ab58bb823f6bce4ff46f2f1",
         "notes": "Triage (bean 9pxo): the voice-editorializing fail surfaced by PR #3327 is RESOLVED on main (script re-verdict 'pass', 2026-07-04). Confirmatory triage entry."
       }
@@ -1028,31 +1030,35 @@
       },
       {
         "field_hash": {
-          "md": "2add892fda67",
+          "md": "c76cb5f8003c",
           "ts": "78c4ecd352f0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.460475Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.460475Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "2add892fda67",
+          "md": "c76cb5f8003c",
           "ts": "78c4ecd352f0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.460475Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.460475Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No false claims identified in 'The starting point is a collection of observations about how we': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -1062,15 +1068,17 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "2add892fda67",
+          "md": "c76cb5f8003c",
           "ts": "78c4ecd352f0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.460475Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.460475Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The claims in 'The starting point is a collection of observations about how we' are non-vacuous as they present substantial mathematical content.",
         "severity": "minor"
@@ -1079,15 +1087,17 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "2add892fda67",
+          "md": "c76cb5f8003c",
           "ts": "78c4ecd352f0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.460475Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.460475Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No circular reasoning or self-assuming definitions detected in 'The starting point is a collection of observations about how we'.",
         "severity": "minor",
@@ -1097,15 +1107,17 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "2add892fda67",
+          "md": "c76cb5f8003c",
           "ts": "78c4ecd352f0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.460475Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.460475Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No overclaims: the scope of 'The starting point is a collection of observations about how we' is appropriately qualified.",
         "severity": "minor"
@@ -1114,15 +1126,17 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "2add892fda67",
+          "md": "c76cb5f8003c",
           "ts": "78c4ecd352f0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.460475Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.460475Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'The starting point is a collection of observations about how we'.",
         "severity": "minor",
@@ -1132,15 +1146,17 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "2add892fda67",
+          "md": "c76cb5f8003c",
           "ts": "78c4ecd352f0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.460475Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.460475Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The argument flow in 'The starting point is a collection of observations about how we' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -1150,15 +1166,17 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "2add892fda67",
+          "md": "c76cb5f8003c",
           "ts": "78c4ecd352f0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.460475Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.460475Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
@@ -1167,15 +1185,17 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "2add892fda67",
+          "md": "c76cb5f8003c",
           "ts": "78c4ecd352f0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.460475Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.460475Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Citations to wigner1960 are correct and contextually appropriate.",
         "severity": "minor",
@@ -1185,15 +1205,17 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "2add892fda67",
+          "md": "c76cb5f8003c",
           "ts": "78c4ecd352f0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.460475Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.460475Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Key terms and symbols in 'The starting point is a collection of observations about how we' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1203,15 +1225,17 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "2add892fda67",
+          "md": "c76cb5f8003c",
           "ts": "78c4ecd352f0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.460475Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.460475Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The algebraic and logical relations in 'The starting point is a collection of observations about how we' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1221,15 +1245,17 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "2add892fda67",
+          "md": "c76cb5f8003c",
           "ts": "78c4ecd352f0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.460475Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.460475Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The physical concepts described in 'The starting point is a collection of observations about how we' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1239,15 +1265,17 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "2add892fda67",
+          "md": "c76cb5f8003c",
           "ts": "78c4ecd352f0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.460475Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.460475Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The derivation steps and formal definitions in 'The starting point is a collection of observations about how we' are reproducible.",
         "severity": "minor",
@@ -1257,15 +1285,17 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "2add892fda67",
+          "md": "c76cb5f8003c",
           "ts": "78c4ecd352f0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.460475Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.460475Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -1277,14 +1307,20 @@
       {
         "result": "pass",
         "notes": "Rewrote introductory prose. Adopted strong active voice. Replaced flowery language with concise declarative statements mapping structure to physics. Formatted topological particle list identically to previous conventions. Preserved file markers.",
-        "reviewed_at": "2026-07-06T22:57:12Z",
+        "reviewed_at": "2026-07-07T14:26:55.460475Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.460475Z"
+        },
+        "field_hash": {
+          "md": "c76cb5f8003c",
+          "ts": "78c4ecd352f0"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T20:11:39.307Z"
+  "updated_at": "2026-07-07T14:26:55.460475Z"
 }

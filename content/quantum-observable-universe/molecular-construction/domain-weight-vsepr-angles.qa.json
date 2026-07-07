@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/molecular-construction/domain-weight-vsepr-angles.md"
   },
   "source_hashes": {
-    "md": "7cf4a61e29d3",
+    "md": "38b25adb7737",
     "ts": "90f2563094a3"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Rewrote molecular-construction_seq7.md. Fixed prose flow across sections, removed excessive emphasis, standardised on 'we', maintained mathematical exactness while smoothing the text.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.463397Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.463397Z"
+        },
+        "field_hash": {
+          "md": "38b25adb7737",
+          "ts": "90f2563094a3"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.117Z"
+  "updated_at": "2026-07-07T14:26:55.463397Z"
 }

@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-sidecar-isovector-chiral-residue.md"
   },
   "source_hashes": {
-    "md": "0539eb4defa2",
+    "md": "f72192ecf8f3",
     "ts": "539112bc8ac7"
   },
   "criteria": {
@@ -1014,14 +1014,20 @@
       {
         "result": "pass",
         "notes": "Streamlined exposition of the sidecar algorithms, specifically Option E and the mirror split observations. Brought narrative chunks into compliance with Milnor brevity and declarative phrasing.",
-        "reviewed_at": "2026-07-06T22:42:45Z",
+        "reviewed_at": "2026-07-07T14:26:56.217310Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.217310Z"
+        },
+        "field_hash": {
+          "md": "f72192ecf8f3",
+          "ts": "539112bc8ac7"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T18:14:43.813Z"
+  "updated_at": "2026-07-07T14:26:56.217310Z"
 }

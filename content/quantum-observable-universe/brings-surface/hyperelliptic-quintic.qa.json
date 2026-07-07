@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/brings-surface/hyperelliptic-quintic.lean"
   },
   "source_hashes": {
-    "md": "2030e7924d1a",
+    "md": "057edfbc683b",
     "ts": "5dd3a133f664",
     "lean": "5c7989d8d071"
   },
@@ -857,19 +857,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "653f12ce581b",
-          "ts": "53f3a8705a35",
+          "md": "057edfbc683b",
+          "ts": "5dd3a133f664",
           "lean": "5c7989d8d071"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.117985Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:19.928Z",
+        "reviewed_at": "2026-07-07T14:26:55.117985Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -877,19 +877,19 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "653f12ce581b",
-          "ts": "53f3a8705a35",
+          "md": "057edfbc683b",
+          "ts": "5dd3a133f664",
           "lean": "5c7989d8d071"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.117985Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:20.318Z",
+        "reviewed_at": "2026-07-07T14:26:55.117985Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -897,16 +897,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "653f12ce581b",
-          "ts": "53f3a8705a35",
+          "md": "057edfbc683b",
+          "ts": "5dd3a133f664",
           "lean": "5c7989d8d071"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.117985Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.117985Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No demonstrably false algebraic or geometric claims in the narrative statement.",
         "severity": "minor"
@@ -915,16 +917,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "653f12ce581b",
-          "ts": "53f3a8705a35",
+          "md": "057edfbc683b",
+          "ts": "5dd3a133f664",
           "lean": "5c7989d8d071"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.117985Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.117985Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The proof is genuine and sorry-free, formalising the core claim.",
         "severity": "minor"
@@ -933,16 +937,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "653f12ce581b",
-          "ts": "53f3a8705a35",
+          "md": "057edfbc683b",
+          "ts": "5dd3a133f664",
           "lean": "5c7989d8d071"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.117985Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.117985Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No circular reasoning or self-justifying axioms detected.",
         "severity": "minor"
@@ -951,16 +957,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "653f12ce581b",
-          "ts": "53f3a8705a35",
+          "md": "057edfbc683b",
+          "ts": "5dd3a133f664",
           "lean": "5c7989d8d071"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.117985Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.117985Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The claims match the scope of the presented material.",
         "severity": "minor"
@@ -969,16 +977,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "653f12ce581b",
-          "ts": "53f3a8705a35",
+          "md": "057edfbc683b",
+          "ts": "5dd3a133f664",
           "lean": "5c7989d8d071"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.117985Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.117985Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No hidden degrees of freedom or unconstrained parameters found.",
         "severity": "minor"
@@ -987,16 +997,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "653f12ce581b",
-          "ts": "53f3a8705a35",
+          "md": "057edfbc683b",
+          "ts": "5dd3a133f664",
           "lean": "5c7989d8d071"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.117985Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.117985Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The logic chain is sound and has no gaps.",
         "severity": "minor"
@@ -1005,16 +1017,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "653f12ce581b",
-          "ts": "53f3a8705a35",
+          "md": "057edfbc683b",
+          "ts": "5dd3a133f664",
           "lean": "5c7989d8d071"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.117985Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.117985Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Lean sibling compiles clean without sorry.",
         "evidence": "content/quantum-observable-universe/brings-surface/hyperelliptic-quintic.lean:1",
@@ -1024,16 +1038,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "653f12ce581b",
-          "ts": "53f3a8705a35",
+          "md": "057edfbc683b",
+          "ts": "5dd3a133f664",
           "lean": "5c7989d8d071"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.117985Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.117985Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Citations are used correctly to support the mathematical claims.",
         "severity": "minor"
@@ -1042,16 +1058,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "653f12ce581b",
-          "ts": "53f3a8705a35",
+          "md": "057edfbc683b",
+          "ts": "5dd3a133f664",
           "lean": "5c7989d8d071"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.117985Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.117985Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Definitions are clear and unambiguous.",
         "severity": "minor"
@@ -1060,16 +1078,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "653f12ce581b",
-          "ts": "53f3a8705a35",
+          "md": "057edfbc683b",
+          "ts": "5dd3a133f664",
           "lean": "5c7989d8d071"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.117985Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.117985Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The constants are algebraic and not sensitive to small perturbations.",
         "severity": "minor"
@@ -1078,16 +1098,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "653f12ce581b",
-          "ts": "53f3a8705a35",
+          "md": "057edfbc683b",
+          "ts": "5dd3a133f664",
           "lean": "5c7989d8d071"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.117985Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.117985Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No physical claims are made or they are standard.",
         "severity": "minor"
@@ -1096,16 +1118,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "653f12ce581b",
-          "ts": "53f3a8705a35",
+          "md": "057edfbc683b",
+          "ts": "5dd3a133f664",
           "lean": "5c7989d8d071"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.117985Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.117985Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Lean sibling compiles clean without sorry.",
         "evidence": "content/quantum-observable-universe/brings-surface/hyperelliptic-quintic.lean:1",
@@ -1115,16 +1139,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "653f12ce581b",
-          "ts": "53f3a8705a35",
+          "md": "057edfbc683b",
+          "ts": "5dd3a133f664",
           "lean": "5c7989d8d071"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.117985Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.117985Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
@@ -1155,7 +1181,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "2030e7924d1a",
+          "md": "057edfbc683b",
           "ts": "5dd3a133f664",
           "lean": "5c7989d8d071"
         },
@@ -1163,9 +1189,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.117985Z"
         },
-        "reviewed_at": "2026-07-06T04:41:30.202Z",
+        "reviewed_at": "2026-07-07T14:26:55.117985Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'def:hyperelliptic-quintic' \u2192 expected 'hyperelliptic_quintic'; Lean declares: zeta5, HyperellipticQuintic, quinticDefining, fifthRoot, zeta5_pow_five.... Structural match via content."
       }
@@ -1174,14 +1202,21 @@
       {
         "result": "pass",
         "notes": "Rewrote brings-surface_seq2.md. Shortened sentences, removed conversational filler, preserved math intact. Enforced declarative style. Fixed cross-block consistency.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.117985Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.117985Z"
+        },
+        "field_hash": {
+          "md": "057edfbc683b",
+          "ts": "5dd3a133f664",
+          "lean": "5c7989d8d071"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:30.202Z"
+  "updated_at": "2026-07-07T14:26:55.117985Z"
 }

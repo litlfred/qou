@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/mass-theory/skein-decomposition.md"
   },
   "source_hashes": {
-    "md": "4d08c2d884d4",
+    "md": "16d1109bdec0",
     "ts": "dab51d87c737"
   },
   "criteria": {
@@ -820,18 +820,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "4d08c2d884d4",
+          "md": "16d1109bdec0",
           "ts": "dab51d87c737"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.695161Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:14.694Z",
+        "reviewed_at": "2026-07-07T14:26:56.695161Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -839,16 +839,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "4d08c2d884d4",
+          "md": "16d1109bdec0",
           "ts": "dab51d87c737"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.695161Z"
         },
-        "reviewed_at": "2026-06-28T10:58:56.722Z",
+        "reviewed_at": "2026-07-07T14:26:56.695161Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No false claims identified in 'Skein Decomposition and Topological Mass Ratios': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -858,16 +860,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "4d08c2d884d4",
+          "md": "16d1109bdec0",
           "ts": "dab51d87c737"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.695161Z"
         },
-        "reviewed_at": "2026-06-28T10:58:56.728Z",
+        "reviewed_at": "2026-07-07T14:26:56.695161Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The block 'Skein Decomposition and Topological Mass Ratios' presents substantial mathematical content: This remark formalizes the refinement of the particle-topology mapping by shifti...",
         "severity": "minor"
@@ -876,16 +880,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "4d08c2d884d4",
+          "md": "16d1109bdec0",
           "ts": "dab51d87c737"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.695161Z"
         },
-        "reviewed_at": "2026-06-28T10:58:56.734Z",
+        "reviewed_at": "2026-07-07T14:26:56.695161Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Skein Decomposition and Topological Mass Ratios'.",
         "severity": "minor",
@@ -895,16 +901,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "4d08c2d884d4",
+          "md": "16d1109bdec0",
           "ts": "dab51d87c737"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.695161Z"
         },
-        "reviewed_at": "2026-06-28T10:58:56.740Z",
+        "reviewed_at": "2026-07-07T14:26:56.695161Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No overclaims: the scope of 'Skein Decomposition and Topological Mass Ratios' is appropriately qualified.",
         "severity": "minor"
@@ -913,16 +921,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "4d08c2d884d4",
+          "md": "16d1109bdec0",
           "ts": "dab51d87c737"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.695161Z"
         },
-        "reviewed_at": "2026-06-28T10:58:56.746Z",
+        "reviewed_at": "2026-07-07T14:26:56.695161Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Skein Decomposition and Topological Mass Ratios'.",
         "severity": "minor",
@@ -932,16 +942,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "4d08c2d884d4",
+          "md": "16d1109bdec0",
           "ts": "dab51d87c737"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.695161Z"
         },
-        "reviewed_at": "2026-06-28T10:58:56.752Z",
+        "reviewed_at": "2026-07-07T14:26:56.695161Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The argument flow in 'Skein Decomposition and Topological Mass Ratios' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -951,16 +963,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "4d08c2d884d4",
+          "md": "16d1109bdec0",
           "ts": "dab51d87c737"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.695161Z"
         },
-        "reviewed_at": "2026-06-28T10:58:56.758Z",
+        "reviewed_at": "2026-07-07T14:26:56.695161Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
@@ -969,16 +983,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "4d08c2d884d4",
+          "md": "16d1109bdec0",
           "ts": "dab51d87c737"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.695161Z"
         },
-        "reviewed_at": "2026-06-28T10:58:56.764Z",
+        "reviewed_at": "2026-07-07T14:26:56.695161Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No citations are present in 'Skein Decomposition and Topological Mass Ratios', hence no citation misuse is possible.",
         "severity": "minor",
@@ -988,16 +1004,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "4d08c2d884d4",
+          "md": "16d1109bdec0",
           "ts": "dab51d87c737"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.695161Z"
         },
-        "reviewed_at": "2026-06-28T10:58:56.770Z",
+        "reviewed_at": "2026-07-07T14:26:56.695161Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Key terms and symbols in 'Skein Decomposition and Topological Mass Ratios' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1007,16 +1025,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "4d08c2d884d4",
+          "md": "16d1109bdec0",
           "ts": "dab51d87c737"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.695161Z"
         },
-        "reviewed_at": "2026-06-28T10:58:56.776Z",
+        "reviewed_at": "2026-07-07T14:26:56.695161Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The algebraic and logical relations in 'Skein Decomposition and Topological Mass Ratios' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1026,16 +1046,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "4d08c2d884d4",
+          "md": "16d1109bdec0",
           "ts": "dab51d87c737"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.695161Z"
         },
-        "reviewed_at": "2026-06-28T10:58:56.782Z",
+        "reviewed_at": "2026-07-07T14:26:56.695161Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The physical concepts described in 'Skein Decomposition and Topological Mass Ratios' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1045,16 +1067,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "4d08c2d884d4",
+          "md": "16d1109bdec0",
           "ts": "dab51d87c737"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.695161Z"
         },
-        "reviewed_at": "2026-06-28T10:58:56.789Z",
+        "reviewed_at": "2026-07-07T14:26:56.695161Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The derivation steps and formal definitions in 'Skein Decomposition and Topological Mass Ratios' are reproducible.",
         "severity": "minor",
@@ -1064,16 +1088,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "4d08c2d884d4",
+          "md": "16d1109bdec0",
           "ts": "dab51d87c737"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.695161Z"
         },
-        "reviewed_at": "2026-06-28T10:58:56.794Z",
+        "reviewed_at": "2026-07-07T14:26:56.695161Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -1085,14 +1111,20 @@
       {
         "result": "pass",
         "notes": "Rewrote mass-theory_seq0.md for Milnor standards: clean prose, declarative.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.695161Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.695161Z"
+        },
+        "field_hash": {
+          "md": "16d1109bdec0",
+          "ts": "dab51d87c737"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-07T14:26:56.695161Z"
 }

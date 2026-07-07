@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-02T02:55:31.781522+00:00",
-  "commitSha": "479a91eb23627224d9a9e4493e20984eb426ffff",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-07-07T13:42:11.541981+00:00",
+  "commitSha": "85da4f43133d9d70ca3582f4fa4f31771b5ec3f1",
   "assertions": [
     {
       "name": "wrapper_is_exact_algebraic_identity",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 18,
+  "durationMs": 12,
   "computation": "mn-wrapper-categorical-analysis-probe",
   "scriptFile": "mn_wrapper_categorical_analysis_probe.py",
-  "scriptHash": "9f6cda52d08f",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "b44df2621e99",
+  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,11 +26,12 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "m_n = m_p·(1+X/(1-X/2)) wrapper analysis. Verifies the wrapper is an exact algebraic identity; demonstrates the residual is intrinsic to X(q); cross-anchor sensitivity argument for the 100× target reachability.",
   "auditOnly": "docs/audits/2026-06-02-yekutieli-A2-qbeta-mn-he4-workplan.md",
