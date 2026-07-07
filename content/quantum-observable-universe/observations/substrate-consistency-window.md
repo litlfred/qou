@@ -8,11 +8,11 @@ $$
 
 See [Table 1](#tbl:substrate-consistency-window-table1-data).
 
-Three independent sectors of physics—strong (mass ratios), electromagnetic (fine structure constant), and weak (beta decay)—all point to the same $q$. This is the central empirical result of the QOU: the entire Standard Model parameter space collapses to a single point in the consistency window.
+Three independent sectors of physics—strong (mass ratios), electromagnetic (fine structure constant), and weak (beta decay)—all point to the same $q$. This is the central empirical result of the QOU. The entire Standard Model parameter space collapses to a single point in the consistency window.
 
 **Derived quantities within the window.**
 
-All entries below are zero-parameter predictions once $q$ is fixed by any one of the preceding determinations.
+All entries below are zero-parameter predictions once we fix $q$ by any one of the preceding determinations.
 
 *Dimensionless ratios.*
 

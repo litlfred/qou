@@ -21,7 +21,7 @@ The full-twist $\Delta_8^2$ acts on $V_{\lambda_{Z=8}}$ by $q^{c(\lambda_{Z=8})}
 
 ## $N$-block (frayed)
 
-The neutron count $N = 10$ is not magic. The categorical mass at level $10$ is not concentrated on a single self-conjugate partition. Instead, the Wedderburn support spreads over multiple non-self-conjugate $\mu \vdash 10$. Each contributes a non-trivial full-twist eigenvalue $q^{c(\mu)} \neq 1$. The neutron block is frayed: its support on Young's lattice forms a thicket of competing partitions rather than a single self-conjugate diagram.
+The neutron count $N = 10$ is not magic. The categorical mass at level $10$ is not concentrated on a single self-conjugate partition. Instead, the Wedderburn support spreads over multiple non-self-conjugate $\mu \vdash 10$. Each contributes a non-trivial full-twist eigenvalue $q^{c(\mu)} \neq 1$. The neutron block is frayed. Its support on Young's lattice forms a thicket of competing partitions rather than a single self-conjugate diagram.
 
 A representative non-self-conjugate partition is
 

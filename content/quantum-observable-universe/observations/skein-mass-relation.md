@@ -1,10 +1,10 @@
-The mass functional $\mathcal{M}(\mathfrak{H})$ for a composite hadron $\mathfrak{H}$ obeys the quantum Skein relation at every crossing in color-exchange space:
+The mass functional $\mathcal{M}(\mathfrak{H})$ obeys the quantum Skein relation:
 
 $$
 q \mathcal{M}(L_+) - q^{-1}\mathcal{M}(L_-) = (q^{1/2} - q^{-1/2})\mathcal{M}(L_0).
 $$
 
-Evaluating the lepton mass ratio $m_{\mu}/m_{e}$ against CODATA recommended values determines the local substrate parameter $q$ at leading order:
+Evaluating the lepton mass ratio $m_{\mu}/m_{e}$ determines the local substrate parameter $q$:
 
 $$
 \frac{m_{\mu}}{m_{e}} \;\stackrel{\text{LO}}{=}\; \frac{\mathrm{Vol}(4_1)}{\hbar_q^2}

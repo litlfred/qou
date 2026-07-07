@@ -1,4 +1,4 @@
-**Remark (interpretation).**
+**Remark.**
 The classification of [prop:s5-equivariant-torus-knots](#prop:s5-equivariant-torus-knots) admits a sharp physical reading. The three charged lepton generations map to torus knots:
 
 $$
@@ -26,4 +26,4 @@ The electron and muon are the only leptons whose cyclic rotational symmetry is r
 If lepton-generation structure derives from the cyclic symmetry of a $\Sigma_4$-embedded torus knot, the equivariant criterion predicts exactly two generations of charged leptons. Three generations are observed, matching the topological-embedding criterion. The equivariant proposition sharpens this: tau carries its mass because the symmetry-broken embedding still admits a Seifert surface, not because an $S_5$-compatible cyclic structure exists. This aligns with the weight-identification picture ([rem:weight-identification-consequences](#rem:weight-identification-consequences)), where the electron and muon representations fit into the $\mathbb{Z}_5$-graded structure of the $\mathcal{X}_5$ substrate.
 
 **Scope.**
-The proposition does not prohibit the tau; it dictates that the tau requires a different mechanism (symmetry-broken embedding) than the electron and muon (symmetry-preserving embedding). The genus saturation at $T_{2,9}$ excludes fourth and higher generations. The three-generation structure is $2 + 1$, not $3 + 0$.
+The proposition does not prohibit the tau. It dictates that the tau requires a different mechanism (symmetry-broken embedding) than the electron and muon (symmetry-preserving embedding). The genus saturation at $T_{2,9}$ excludes fourth and higher generations. The three-generation structure is $2 + 1$, not $3 + 0$.
