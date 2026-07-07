@@ -165,14 +165,14 @@ only for the hyperbolic muon (fails C1); the symmetric-$\mathrm{Li}_2^q$
 tower is nonzero everywhere but $O(1)$ (fails C2). The structural reason
 the $\mathrm{Li}_2^q$ tower stays $O(1)$ is that the **symmetric** (Rogers)
 $\mathrm{Li}_2^q(z) = \sum z^n/(n[n]_q) \to \mathrm{Li}_2(z)$ as $q\to1$ —
-no $1/\hbar$ blow-up — whereas the **Faddeev** quantum dilogarithm
+no $1/\hbar$ blow-up — whereas the **compact** quantum dilogarithm
 $\Phi_q$ has $\log\Phi_q \sim \mathrm{Li}_2/\hbar$, an $O(1/\hbar)$
 enhancement (two such factors give the $1/\hbar_q^2 \approx 102$ that the
 SUPERSEDED scalar carries). The concrete next direction is therefore to
-test the tower with the **Faddeev $\Phi_q$** in place of the symmetric
+test the tower with the **compact q-dilog $\Phi_q$** in place of the symmetric
 $\mathrm{Li}_2^q$: $\Phi_q$ is nonzero on torus knots (preserving C1) and
 its $1/\hbar$ asymptotic can supply the $O(10^2)$ ratio magnitude
-(targeting C2). This is the $\Phi_q$ (Faddeev) vs $\mathrm{Li}_2^q$
+(targeting C2). This is the $\Phi_q$ (compact q-dilog) vs $\mathrm{Li}_2^q$
 (Rogers) context-sorting flagged in the canonical-derivation cheat sheet —
 the lepton sector is where the choice is decisive rather than cosmetic.
 
@@ -181,15 +181,15 @@ the lepton sector is where the choice is decisive rather than cosmetic.
 > *universal-scalar $\times$ symmetric-$\mathrm{Li}_2^q$-tower* candidate
 > families, **as stated**, do not reproduce the lepton ratios. It is
 > **not** a structural exclusion of $\mathrm{Vol}_q^{\mathrm{tower}}$ or of
-> a categorical $\xi_\ell$ — the Faddeev-$\Phi_q$ tower is untested and is
+> a categorical $\xi_\ell$ — the compact-q-dilog $\Phi_q$ tower is untested and is
 > the indicated next probe. The muon *accuracy* (not the structural form)
 > remains Subgoal-2-blocked (q₀-repin out of scope, owner directive
 > 2026-05-08).
 
-## Faddeev $\Phi_q$ probe (Phase 5 finding)
+## Compact q-dilog $\Phi_q$ probe (Phase 5 finding)
 
 The Phase-4 resolution was tested directly: swap the symmetric
-$\mathrm{Li}_2^q$ for the Faddeev (q-Pochhammer) quantum dilogarithm
+$\mathrm{Li}_2^q$ for the compact (q-Pochhammer) quantum dilogarithm
 $\Phi_q(z) = \prod_{k\ge1}(1-q^{-k}z)^{-1}$ in the per-braid tower, with
 the **same** proper Plancherel-weighted Wedderburn $\hat V_i$
 (`xi-ell-faddeev-phi-q-probe.witness.json`):
@@ -232,7 +232,7 @@ the **same** proper Plancherel-weighted Wedderburn $\hat V_i$
 
 > **Scope (refuted-claim discipline).** A **scope-limited negative**:
 > neither *bare* $\Phi_q$ variant, as stated, reproduces the lepton
-> ratios. It is **not** an exclusion of the Faddeev-$\Phi_q$ direction —
+> ratios. It is **not** an exclusion of the compact-q-dilog $\Phi_q$ direction —
 > the $1/\hbar$ enhancement it supplies is validated. The missing piece is
 > the correct *argument normalization* (the near-singular $4_1$ behaviour
 > says $\Phi_q$ should act on a rescaled argument, not bare $\hat V$), the
