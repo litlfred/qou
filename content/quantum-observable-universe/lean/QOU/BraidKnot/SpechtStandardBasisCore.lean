@@ -1186,6 +1186,28 @@ theorem colWordNum_lt_of_first_diff (u v : Specht.Tableau μ) (c₀ : μ.cells)
     omega
   omega
 
+omit [CharZero k] in
+/-- **First-difference comparison in geometric (column-major) terms (sorry-free).** The
+`colWordNum_lt_of_first_diff` `hhigh` hypothesis, restated via `before_of_cmajSig_lt` in the
+two geometric conditions the fibre decrease actually supplies: `u` and `v` agree on every
+cell in a column strictly **left** of `c₀`'s column, and on every cell in `c₀`'s column
+**above** `c₀`; and `v` has a strictly smaller label at `c₀`. Then `colWordNum v <
+colWordNum u`. For the Garnir fibre decrease `c₀` is the top-most cell of column `j` whose
+label changes; columns `< j` are untouched and column `j` above `c₀` is unchanged. -/
+theorem colWordNum_lt_of_first_diff_col (u v : Specht.Tableau μ) (c₀ : μ.cells)
+    (hleft : ∀ c : μ.cells, (c : ℕ × ℕ).2 < (c₀ : ℕ × ℕ).2 →
+        ((u.symm c : Fin (Specht.nOf μ)) : ℕ) = ((v.symm c : Fin (Specht.nOf μ)) : ℕ))
+    (habove : ∀ c : μ.cells, (c : ℕ × ℕ).2 = (c₀ : ℕ × ℕ).2 → (c : ℕ × ℕ).1 < (c₀ : ℕ × ℕ).1 →
+        ((u.symm c : Fin (Specht.nOf μ)) : ℕ) = ((v.symm c : Fin (Specht.nOf μ)) : ℕ))
+    (hlt : ((v.symm c₀ : Fin (Specht.nOf μ)) : ℕ) < ((u.symm c₀ : Fin (Specht.nOf μ)) : ℕ)) :
+    colWordNum v < colWordNum u := by
+  apply colWordNum_lt_of_first_diff u v c₀
+  · intro c hc
+    rcases before_of_cmajSig_lt c.2 hc with hcol | ⟨hcol, hrow⟩
+    · exact hleft c hcol
+    · exact habove c hcol hrow
+  · exact hlt
+
 /-- **Keystone (sorry-free): a within-column descent swap strictly lowers `colWordNum`.**
 If labels `a < b` sit in the same column with `b` in an EARLIER row than `a` (a column
 descent — the larger label higher up), swapping them strictly decreases the column-word
