@@ -8,8 +8,8 @@ Two exact/high-precision facts (no fit, no wiring):
 
   (1) SHADOW MATCH (q=1, y=2):  C_Hopf(2) = −2  = the c_3 q=1 shadow (J_Hopf(1),
       KC10).  [Lean-certified: `cubicC_Hopf_classical_shadow`.]
-  (2) SUBSTRATE WALL:  C_Hopf(y₀) is ANCHOR-RIGID (identical at the proton and
-      muon pins to full precision) ≈ −2.0873, while the physical c_3 SWINGS
+  (2) SUBSTRATE WALL:  C_Hopf(y₀) is ANCHOR-RIGID (agrees at the proton and muon
+      pins to ~1e-8, rel swing < 1e-6) ≈ −2.0873, while the physical c_3 SWINGS
       2.375% (−2.06934 proton / −2.02019 muon).  An anchor-rigid quantity
       cannot equal an anchor-swinging one at both anchors ⇒ the cubic does NOT
       determine c_3; the swing lives in w(q) (KC19).  The −2.087 ≈ −2.07
@@ -76,8 +76,12 @@ def main() -> int:
     c3_rel_swing = abs((C3_PROTON - C3_MUON) / C3_PROTON)
     rigid_ok = ch_rel_swing < D("1e-6")            # anchor-rigid
     c3_swings_ok = c3_rel_swing > D("0.02")        # >2%
-    # the cubic cannot equal c_3 at BOTH anchors (rigid vs swinging)
-    not_a_bridge = not (chp == C3_PROTON and chm == C3_MUON)
+    # The cubic cannot equal c_3 at BOTH anchors: it is anchor-rigid while c_3
+    # swings, and it mismatches c_3 nontrivially at each anchor. Encode that
+    # conjunction directly (not the vacuous float-inequality).
+    mismatch_proton = abs(chp - C3_PROTON) > D("1e-3")
+    mismatch_muon = abs(chm - C3_MUON) > D("1e-3")
+    not_a_bridge = rigid_ok and c3_swings_ok and mismatch_proton and mismatch_muon
     # proximity is a near-coincidence, NOT an identity
     near_not_identity = (abs(chp - C3_PROTON) > D("1e-6")) and (abs(chp - C3_PROTON) < D("0.1"))
 
@@ -128,7 +132,7 @@ def main() -> int:
              "source": "C_Hopf(2)=-2 = c_3 q=1 shadow; Lean cubicC_Hopf_classical_shadow"},
             {"name": "C_Hopf_y0_anchor_rigid", "computed": 0.0 if rigid_ok else 1.0,
              "expected": 0.0, "tolerance": 0.0, "unit": "bool (0=rigid, rel swing<1e-6)",
-             "source": "C_Hopf(y0) identical proton vs muon to full precision"},
+             "source": "C_Hopf(y0) anchor-rigid: proton vs muon agree to ~1e-8 (rel swing<1e-6)"},
             {"name": "c3_anchor_swings_gt_2pct", "computed": 0.0 if c3_swings_ok else 1.0,
              "expected": 0.0, "tolerance": 0.0, "unit": "bool (0=swings>2%)",
              "source": "c_3 -2.069(p)/-2.020(m), 2.375% swing (2026-07-06 verdict)"},
