@@ -1,6 +1,6 @@
 {
   "_schema": "q0-anchor-manifest/v1",
-  "_convention": "ideal=muon (CAL-2 \ud835\udd07_\u03b2); physical=proton (m_p/m_e). q_parameter auto-selects by the running producer's stem; QOU_Q0_ANCHOR env var overrides.",
+  "_convention": "ideal=muon (CAL-2 𝔇_β); physical=proton (m_p/m_e). q_parameter auto-selects by the running producer's stem; QOU_Q0_ANCHOR env var overrides.",
   "ideal_muon": [
     "alpha_basis_knot_couplings",
     "alpha_em_4pi_fixed_point_solve",
@@ -110,7 +110,6 @@
     "h2s_chiral_residue_bar_antisymmetric",
     "h2s_chirality_residue_s3_holonomy",
     "h2s_lone_pair_asymmetry",
-    "h4_form_AB_cross_anchor_stability",
     "h4_residual_higher_precision_pslq",
     "h5_h3_functor_keystone",
     "hadron_knot_table",
@@ -176,7 +175,6 @@
     "mp_habiro_c4_keystone_probe",
     "mp_residual_exotic_basis_pslq",
     "mp_yekutieli_plancherel_scaffold",
-    "mp_yekutieli_sign_block_discrimination",
     "mu_substrate_tension_audit_100dps",
     "native_5_strand_baryon",
     "nf_transition_lifting",
@@ -255,7 +253,6 @@
     "y_lambda_q_schur_lean_verify",
     "yekutieli_half_h2_observable_hunt",
     "yekutieli_mi_h2_extraction",
-    "yekutieli_mp_substrate_closure_probe",
     "yekutieli_natural_reading_precision_floor_check",
     "yekutieli_per_cell_alpha_em_derivation_probe",
     "yekutieli_per_cell_dim_h3_normalisation_probe",
@@ -286,12 +283,14 @@
     "gram-matrix-dual",
     "gram_transfer_quadratic",
     "gs_filtration_binding_components",
+    "h4_form_AB_cross_anchor_stability",
     "low_isotope_binding_model_comparison",
     "m_p_substrate_identity_50dps",
     "mass_endomorphism",
     "mass_sweep_wiring_status",
     "mass_tower_operator_valued",
     "mass_vol_density",
+    "mp_yekutieli_sign_block_discrimination",
     "option_e_probe1_derive_1plusq_over_2",
     "per_atom_audit_witnesses",
     "probe_option_e_h6_entry_point",
@@ -312,7 +311,8 @@
     "unified_low_isotope_predictor",
     "vhat_tower_im_cancellation",
     "vol_density_per_block_wiring",
-    "y_lambda_tower_infra"
+    "y_lambda_tower_infra",
+    "yekutieli_mp_substrate_closure_probe"
   ],
   "ambiguous": []
 }
