@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-07T14:15:44.075721+00:00",
-  "commitSha": "2d1a378280451824e3df1576bfcd855470e5b27b",
+  "computedAt": "2026-07-07T14:27:48.903193+00:00",
+  "commitSha": "1ac0f3574c251b7c7bf171529895c509777af6f7",
   "assertions": [
     {
       "name": "G1_cumulant_has_q1_pole",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 69,
+  "durationMs": 160,
   "computation": "qbeta-c4-qhermite-entry-gate",
   "scriptFile": "qbeta_c4_qhermite_entry_gate_probe.py",
-  "scriptHash": "970fa926a82e",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "3defc43137f4",
+  "scriptCommitSha": "1ac0f3574c251b7c7bf171529895c509777af6f7",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -56,37 +56,37 @@
         "theta": "pi/3",
         "n": 1,
         "cos_ntheta": "1/2",
-        "kappa_pole_at_q1": true
+        "residue_nonzero": true
       },
       {
         "theta": "pi/3",
         "n": 2,
         "cos_ntheta": "-1/2",
-        "kappa_pole_at_q1": true
+        "residue_nonzero": true
       },
       {
         "theta": "pi/2",
         "n": 1,
         "cos_ntheta": "0",
-        "kappa_pole_at_q1": false
+        "residue_nonzero": false
       },
       {
         "theta": "pi/2",
         "n": 2,
         "cos_ntheta": "-1",
-        "kappa_pole_at_q1": true
+        "residue_nonzero": true
       },
       {
         "theta": "2pi/5",
         "n": 1,
         "cos_ntheta": "-1/4 + sqrt(5)/4",
-        "kappa_pole_at_q1": true
+        "residue_nonzero": true
       },
       {
         "theta": "2pi/5",
         "n": 2,
         "cos_ntheta": "-sqrt(5)/4 - 1/4",
-        "kappa_pole_at_q1": true
+        "residue_nonzero": true
       }
     ],
     "g2_c2_anchor_rows": [
@@ -116,13 +116,14 @@
       15,
       105
     ],
-    "g3_ck_canonical": {
+    "g3_ck_sdp_extracted": {
       "2": -1.0171,
       "3": -2.0097,
       "4": -1.1435,
       "5": -1.2229,
       "6": 3.4976
     },
+    "g2_c2_structural_target": -1,
     "qhermite_face": "bar-even (gen func = product of compact Φ_q); c_4 even-order ⇒ correct face",
     "verdict_scope": "(a) natural continuous-q-Hermite route excluded; Askey-scheme/derived-t(u,q) route not excluded, needs structural map",
     "invariant_cited": "q=1 pole of 1/(1-q^n) (compact q-dilog cumulant) vs finite c_2=-1 — same q=1 cusp obstruction as T14 Δ_λ probe"
