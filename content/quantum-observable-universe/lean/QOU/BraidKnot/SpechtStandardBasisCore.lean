@@ -1551,6 +1551,29 @@ theorem garnirH_card_pos (t : Specht.Tableau μ) (i j : ℕ) : 0 < (garnirH t i 
   · rw [Finset.mem_filter]
     exact ⟨Finset.mem_univ _, Subgroup.one_mem _⟩
 
+omit [CharZero k] in
+/-- **The `H`-part of the Garnir sum collapses to `|H|·e_t` (sorry-free).** Every
+`σ ∈ H = S_A × S_B ⊆ C_t` acts on `e_t` by its sign (column antisymmetry
+`polytabloid_colStab_smul` composed with equivariance `polytabloid_rep_smul`), so the
+signed term `sgn(σ)·(σ·e_t) = sgn(σ)²·e_t = e_t`. Summing over `H` gives `|H|` copies.
+This isolates `e_t` from `garnir_full_annihilation` for the full-group straightening path
+(see the audit doc §5.1): `|H|·e_t = −∑_{σ ∈ garnirG \ H} sgn(σ)·(σ·e_t)`. -/
+theorem garnir_H_sum_eq (t : Specht.Tableau μ) (i j : ℕ) :
+    ∑ σ ∈ garnirH t i j, (Equiv.Perm.sign σ : ℤ) •
+        Specht.Mtab.rep μ σ (Specht.polytabloid (k := k) t)
+      = (garnirH t i j).card • Specht.polytabloid (k := k) t := by
+  classical
+  have h1 : ∀ σ ∈ garnirH t i j,
+      (Equiv.Perm.sign σ : ℤ) • Specht.Mtab.rep μ σ (Specht.polytabloid (k := k) t)
+        = Specht.polytabloid (k := k) t := by
+    intro σ hσ
+    have hcol : σ ∈ Specht.colStab t := garnirH_subset_colStab t i j σ hσ
+    rw [← polytabloid_rep_smul, polytabloid_colStab_smul t hcol, smul_smul]
+    have hs2 : (Equiv.Perm.sign σ : ℤ) * (Equiv.Perm.sign σ : ℤ) = 1 := by
+      rcases Int.units_eq_one_or (Equiv.Perm.sign σ) with h | h <;> rw [h] <;> decide
+    rw [hs2, one_smul]
+  rw [Finset.sum_congr rfl h1, Finset.sum_const]
+
 /-- `S_{A∪B}` as a genuine `Subgroup` (via `fixingSubgroup` of the complement of
 `A ∪ B`), for the coset-transversal reindexing that connects `garnir_full_annihilation`
 to `garnir_assembly`. -/
