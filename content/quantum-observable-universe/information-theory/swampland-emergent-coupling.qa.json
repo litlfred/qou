@@ -281,6 +281,19 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.579960Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      },
+      {
+        "result": "warn",
+        "notes": "Contains 'sorry' which implies an unfinished proof.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-false-claim": [
@@ -301,6 +314,19 @@
         "notes": "No false claims identified in 'Swampland correspondence: the electromagnetic coupling and the Emergence Proposal': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/swampland-emergent-coupling.ts:1"
+      },
+      {
+        "result": "warn",
+        "notes": "Contains 'sorry' which implies an unfinished proof.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-vacuous": [
@@ -320,6 +346,19 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The block 'Swampland correspondence: the electromagnetic coupling and the Emergence Proposal' presents substantial mathematical content: The electromagnetic coupling is not a free input but a categorical trace ratio,...",
         "severity": "minor"
+      },
+      {
+        "result": "warn",
+        "notes": "Contains 'sorry' which implies an unfinished proof.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-circular": [
@@ -340,6 +379,19 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Swampland correspondence: the electromagnetic coupling and the Emergence Proposal'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/swampland-emergent-coupling.ts:1"
+      },
+      {
+        "result": "warn",
+        "notes": "Contains 'sorry' which implies an unfinished proof.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-overclaim": [
@@ -359,6 +411,19 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No overclaims: the scope of 'Swampland correspondence: the electromagnetic coupling and the Emergence Proposal' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "result": "warn",
+        "notes": "Contains 'sorry' which implies an unfinished proof.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -379,6 +444,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Swampland correspondence: the electromagnetic coupling and the Emergence Proposal'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/swampland-emergent-coupling.ts:1"
+      },
+      {
+        "result": "warn",
+        "notes": "Contains 'sorry' which implies an unfinished proof.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -399,6 +477,19 @@
         "notes": "The argument flow in 'Swampland correspondence: the electromagnetic coupling and the Emergence Proposal' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/swampland-emergent-coupling.ts:1"
+      },
+      {
+        "result": "warn",
+        "notes": "Contains 'sorry' which implies an unfinished proof.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -418,6 +509,19 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
+      },
+      {
+        "result": "warn",
+        "notes": "Contains 'sorry' which implies an unfinished proof.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -438,6 +542,19 @@
         "notes": "Citations to heidenreich2018, ooguri-vafa2007 are correct and contextually appropriate.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/swampland-emergent-coupling.ts:1"
+      },
+      {
+        "result": "warn",
+        "notes": "Contains 'sorry' which implies an unfinished proof.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -458,6 +575,19 @@
         "notes": "Key terms and symbols in 'Swampland correspondence: the electromagnetic coupling and the Emergence Proposal' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/swampland-emergent-coupling.ts:1"
+      },
+      {
+        "result": "warn",
+        "notes": "Contains 'sorry' which implies an unfinished proof.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -478,6 +608,19 @@
         "notes": "The algebraic and logical relations in 'Swampland correspondence: the electromagnetic coupling and the Emergence Proposal' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/swampland-emergent-coupling.ts:1"
+      },
+      {
+        "result": "warn",
+        "notes": "Contains 'sorry' which implies an unfinished proof.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -498,6 +641,19 @@
         "notes": "The physical concepts described in 'Swampland correspondence: the electromagnetic coupling and the Emergence Proposal' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/swampland-emergent-coupling.ts:1"
+      },
+      {
+        "result": "warn",
+        "notes": "Contains 'sorry' which implies an unfinished proof.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-reproducibility": [
@@ -518,6 +674,19 @@
         "notes": "The derivation steps and formal definitions in 'Swampland correspondence: the electromagnetic coupling and the Emergence Proposal' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/swampland-emergent-coupling.ts:1"
+      },
+      {
+        "result": "warn",
+        "notes": "Contains 'sorry' which implies an unfinished proof.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -539,6 +708,19 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Swampland correspondence: the electromagnetic coupling and the Emergence Proposal' are consistent."
+      },
+      {
+        "result": "warn",
+        "notes": "Contains 'sorry' which implies an unfinished proof.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "bib-cite-resolves": [
@@ -576,6 +758,36 @@
         "field_hash": {
           "md": "2266227dfa1f",
           "ts": "5d8d85d5c09d"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "warn",
+        "notes": "Contains 'sorry' which implies an unfinished proof.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "warn",
+        "notes": "Contains 'sorry' which implies an unfinished proof.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
         }
       }
     ]
