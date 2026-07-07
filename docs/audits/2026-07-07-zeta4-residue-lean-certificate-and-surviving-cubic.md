@@ -61,6 +61,39 @@ T1, scope-(a)). The remaining open Laurent/Habiro question — is `C(y)` a
 knot-invariant specialization of the 14-strand net braid `Δ_net` (denominator
 `4q⁷`)? — is now pinned to a concrete degree-3 object, the honest next target.
 
+## §4 — the cubic is a **degree-3** obstruction, disjoint from every quadratic anchor
+
+`C(y) = y³−4y²+3y−2` is monic with constant term `−2`, so (rational root
+theorem) any rational root lies in `{±1, ±2}`. All four are nonzero —
+`C(1)=−2, C(−1)=−10, C(2)=−4, C(−2)=−32` — so **`C` has no rational root and is
+irreducible over `ℚ`**; its root generates a genuine degree-3 field. Every
+substrate **quadratic** anchor sits at a *rational* trace value `y = q²+q⁻²`,
+and `C` misses each:
+
+| anchor | trace value `y = q²+q⁻²` | `C(y)` |
+|---|---|---|
+| golden `φ` | **3** (`φ²+φ⁻² = 3` exactly) | `−2` |
+| silver `1+√2` | **6** | `88` |
+| classical `q=1` | **2** | `−4` |
+| `√3` (`q²=3`) | `10/3` | `16/27` |
+
+A degree-≤2 substrate number can never be a root of an irreducible cubic, so
+**no quadratic-anchor / real-q closure can resolve the odd carrier** — the
+structural reason the KC-refuted real-q `c_3` class keeps failing: it searches a
+degree-≤2 space for a degree-3 object. Any genuine odd-channel closure must
+either supply the cubic field of `C` or route through the archimedean
+evaluation (KC18), not a quadratic anchor.
+
+These evaluations are Lean-certified (`cubicC_one/neg_one/two/neg_two`,
+`cubicC_golden`, `cubicC_silver`, `cubicC_rrt_candidates_all_nonzero` — the
+computational content of the RRT check; `lean`-direct exit 0).
+
+**Numerical aside (NOT a claim, numerology-flagged).** `C(3) = −2` coincides
+with the `c_3 → −2` q=1 shadow value; the golden anchor's trace value is exactly
+`y = 3`. Recorded as a coincidence pending any derivation — it is *not* wired,
+*not* a structural identification, and does not survive the corpus over-claim
+gates as anything more than an observation.
+
 ## Discipline
 
 Scope-(b) exclusion (cited invariant: the exact ℚ[q] factorisation, now
