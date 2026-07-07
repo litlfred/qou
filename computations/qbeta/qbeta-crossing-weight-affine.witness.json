@@ -3,12 +3,12 @@
   "description": "Q_beta ladder-factor bar-parity split: the evaluation map is affine in the crossing weight, so the ladder factor is Moebius and its bar-odd part is linear in the crossing-weight departure (w - w0) times a fixed anchor-free bar-odd kernel 2h/(4w0^2 - h^2). Sharpens KC18.",
   "audit_only": true,
   "tier": "structural-exact (symbolic bar-parity; no fit, no anchors)",
-  "computedAt": "2026-07-07T14:33:30.446030+00:00",
-  "commitSha": "ebb092b18ab8c635886debd9f20c4b33a85a872c",
+  "computedAt": "2026-07-07T14:38:59.183809+00:00",
+  "commitSha": "8bbec88dc1fc0adae2f883e08862c64919669739",
   "engine": "sympy",
   "engineVersion": "1.14.0",
   "scriptFile": "qbeta_crossing_weight_affine_probe.py",
-  "scriptHash": "32ec3f1270a2",
+  "scriptHash": "202b29218a38",
   "assertions": [
     {
       "name": "A_eval_affine_dEdw_eq_neg_h",
@@ -57,6 +57,18 @@
     {
       "name": "C2_counit_ref_identity",
       "passed": true
+    },
+    {
+      "name": "D_departure_leading_is_qbeta_numerator_factor",
+      "passed": true
+    },
+    {
+      "name": "D_departure_prefactor_factor_identity",
+      "passed": true
+    },
+    {
+      "name": "D_departure_u3_is_open_c3_times_prefactor",
+      "passed": true
     }
   ],
   "allPassed": true,
@@ -67,6 +79,9 @@
     "even_part": "(4*w*w0 - h^2)/(4*w0^2 - h^2)  (bar-even)",
     "fixed_kernel": "K(q) = 2h/(4*w0^2 - h^2)  (anchor-free bar-odd rational fn of q)",
     "c2_reference_identity": "L(w0=1) - 1 = -2*(w - 1)/(h - 2)",
+    "departure": "w - 1 = -(h-2)/2 * sum_{k>=2} c_k u^k  (counit reference w0=1)",
+    "departure_leading": "[u^2] coeff = (q^2-2q-1)/(2q) using derived c2=-1 (the Q_beta decay-numerator factor)",
+    "departure_open_scalar": "[u^3] coeff = -(q^2-2q-1)/(2q) * c3 -- sole open scalar, = c3",
     "verdict": "CONFIRMED (scope-(a) structural narrowing): the Q_beta evaluation map E(w) = h^2/2 - h*w is AFFINE in the crossing weight w, so the ladder factor L(w) = E(w)/E(w0) is Moebius in w and its bar-ODD (decay) part is EXACTLY 2h*(w - w0)/(4*w0^2 - h^2) -- LINEAR in the crossing-weight departure (w - w0) times the FIXED bar-odd kernel K(q) = 2h/(4*w0^2 - h^2). The evaluation map introduces neither nonlinearity nor anchor-dependence into the odd channel; the whole c_k odd-channel signature (incl. the c_3 -> -2 shadow) is the image of the single scalar bar-even departure (w - w0) under K(q). Since K(q) is a fixed rational function of q, the c_3 anchor-swing must live entirely in w(q). Sharpens KC18 (numerator split) to the ladder factor where the c_k live. NO c_k value; nothing wired."
   },
   "context": {

@@ -68,6 +68,37 @@ This sharpens KC18 (numerator split) to the ladder factor where the `c_k`
 live, and it does so without touching production: `c_2 = −1` remains the one
 derived rung; `c_3+` remain open (precision floor).
 
+## The crack at `w(u) − 1` — closed-form departure + the wall
+
+Inverting the Möbius ladder factor at the counit reference `w₀ = 1`
+(`L = 1 + Σ_{k≥2} c_k u^k`) gives the crossing-weight departure in closed form
+(Lean `ladder_departure`, sorry-free; probe assertions D1–D3):
+
+`w(u) − 1 = −(h−2)/2 · Σ_{k≥2} c_k u^k`
+
+with the **fixed prefactor** `(h−2)/2 = (q² − 2q − 1)/(2q)` — the **same
+`q² − 2q − 1` factor carried by `Q_β` itself** (Lean `departure_factor_eq`).
+So the effective crossing weight departs from the topological loop (`w = 1`, the
+counit) **along the Q_β decay-numerator direction**, scaled by the observable's
+own amplitude. Consequences, exactly localizing the open scalar:
+
+- **Leading term is derived.** Using `c_2 = −1`, the `[u²]` coefficient of
+  `w − 1` is `+(q² − 2q − 1)/(2q)` — fixed, no fit.
+- **The `[u³]` coefficient is `−(q² − 2q − 1)/(2q)·c_3` — i.e. the sole open
+  scalar of the whole departure is `c_3` itself.** This is the wall: the
+  inversion is exact but supplies *no independent input* for `c_3`; per KC19 the
+  evaluation is anchor-rigid, so that coefficient's value lives entirely in
+  `w(q)`'s fibre structure (the open f-map), consistent with the
+  [c_3-not-exact verdict](2026-07-06-c3-not-exact-cross-anchor-verdict.md).
+
+This is scope-(a): a closed form for the departure and a factor identity, **not**
+a `c_3` derivation. What it buys is precision — the keystone's remaining unknown
+is now a single named scalar (the `u³` coefficient of `w`, `= c_3`), tied
+structurally to the Q_β decay numerator; what would close it is an *independent*
+Hecke/Markov determination of `w(q)` beyond the leading topological loop (the
+forward "why the mass difference is a counit" direction of the
+[net-ansatz audit](2026-06-16-q-beta-net-ansatz-path-a-counit-vs-trace.md)).
+
 ## Scope / discipline
 
 Structural narrowing (scope-(a)), **not** a `c_3` derivation. No `c_k` value is

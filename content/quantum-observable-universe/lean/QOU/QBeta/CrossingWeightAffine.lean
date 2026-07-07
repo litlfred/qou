@@ -112,4 +112,29 @@ theorem ladder_counit_ref (h w : R) (hh : h ≠ 0) (htwo : (2 : R) ≠ 0)
   field_simp
   ring
 
+/-! ## The crossing-weight departure `w − 1` (counit reference)
+
+At the counit reference `w₀ = 1`, the ladder factor is `L(w) = (h − 2w)/(h − 2)`,
+and the `c_k` ladder is `L = 1 + Σ_{k≥2} c_k u^k`. Inverting recovers the
+crossing weight from the ladder tail: `w = 1 − (h−2)/2·(L − 1)`. So the
+**departure** `w − 1` is the ladder tail scaled by the fixed factor `−(h−2)/2`;
+with the derived `c_2 = −1` its leading term is `+(h−2)/2·u²`. -/
+
+/-- **Departure inversion.** The crossing weight is the counit value `1` minus
+    the ladder tail `(L − 1)` scaled by `(h−2)/2`. Machine form of
+    `w − 1 = −(h−2)/2·Σ_{k≥2} c_k u^k`. -/
+theorem ladder_departure (h w : R) (hh : h ≠ 0) (htwo : (2 : R) ≠ 0)
+    (hh2 : h - 2 ≠ 0) :
+    w = 1 - (h - 2) / 2 * (evalMap h w / evalMap h 1 - 1) := by
+  rw [ladder_counit_ref h w hh htwo hh2]
+  field_simp; ring
+
+/-- **Departure prefactor = Q_β decay-numerator factor.** With `h = q − q⁻¹`,
+    the fixed scaling `(h−2)/2` equals `(q² − 2q − 1)/(2q)` — the same
+    `q² − 2q − 1` factor carried by `Q_β` itself. So the crossing weight departs
+    from the topological loop `w = 1` along the Q_β decay-numerator direction. -/
+theorem departure_factor_eq (q : R) (hq : q ≠ 0) :
+    (q - q⁻¹ - 2) / 2 = (q ^ 2 - 2 * q - 1) / (2 * q) := by
+  field_simp; ring
+
 end QOU.QBeta.CrossingWeightAffine
