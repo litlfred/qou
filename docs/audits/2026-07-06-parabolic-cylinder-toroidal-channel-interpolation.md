@@ -549,7 +549,61 @@ $\theta'(q) = \arccos(\tfrac{1 - q^2 - q^{-2}}{2})$, $\theta'(1) = 2\pi/3$).
 deformed rotation, the same $k$ as their torus-link shadows on the rigid
 direction.
 
-## 13. Corpus-grep record
+## 13. Full-derivation program, tranche 1 (owner directive: "keep exploring until we can fully derive")
+
+Target: the ²H law $B = 5g\,E_{\text{unit}}$ (owner ruled near-match label,
+PR #3451). The §2f constraint ledger requires either a genuinely new derived
+energy or the conclusion that the linear law is not fundamental.
+
+**D1 — the fusion frame (7/7 exact,
+[`deuteron_tower_fusion_frame_probe.py`](../../computations/substrate/deuteron_tower_fusion_frame_probe.py)).**
+The dimensionless content of the $5g$ law is canonical-tower data:
+
+1. **The bond factor is the corpus Markov parameter.** `pyhecke.gram` sets
+   $z = 1/(\sqrt{q_0} + 1/\sqrt{q_0}) = 1/[2]_v$ — the reeb-flow bond
+   factor is *the* Ocneanu–Markov trace parameter of $\mathrm{tr}_M$
+   (checked live against the package value).
+2. **The 5 is forced by the fusion rule.** $[2]_v^2 = [3]_v + 1$
+   (spin $\tfrac12 \otimes \tfrac12 = 1 \oplus 0$ in quantum dimensions), so
+   $1 + [2]_v^2 = 2 + [3]_v \to 5$ at $v = 1$: the integer in $5g$ is the
+   classical total quantum dimension of the two-nucleon channel
+   decomposition, not a free constant.
+3. **Winding bridge.** $1 + [2]_v^2 = 4 - \tau(v)$ exactly, with $\tau$ the
+   §12 alternating winding trace — so $g = 1/\sqrt{4 - \tau(v)}$: the
+   deuteron bond magnitude, the muon anchor ($4_1$, $k{=}2$) and the
+   nucleon carrier ($\mathcal{B}_3$, $k{=}3$) are levels of one tower
+   ($k{=}1$ is the unknot → the bond).
+4. **Criticality = normalized channel projection**:
+   $g^2(1 + [2]_v^2) = 1$ identically — the marginal-stability zero and
+   the landed magnitude are the same statement.
+
+**Sharpened open (honest):** the classical 5 admits at least two canonical
+deformations ($5/\sqrt{2+[3]_v}$ vs $\sqrt{2+[3]_v}$), both ~0.4–0.6 %
+near-matches with a ~1 MeV unit; the frame does not select one, and
+$E_{\text{unit}}$ stays open.
+
+**D2 — zero-point unit family pruned (4/4 negative,
+[`zeropoint_unit_candidate_gate_probe.py`](../../computations/substrate/zeropoint-unit-candidate-gate-probe.witness.json)).**
+Predicted-first: if the unit were the Fock zero-point of the forced
+$-\tfrac12$ (half a winding quantum × canonical anchor), the four licensed
+candidates (hyperbolic/compact × $m_e$/$E_{\text{cross}}$) miss by
+23–99 %. The zero-point family is excluded *as the unit* under these
+anchors; the zero-point reading of the $-\tfrac12$ itself is untouched.
+
+**D3 — next formalize-first target (note).** The reeb-flow chain's one
+residual postulate (*linking amplitude = CWF unit-tangent functional on the
+channel direction $(1, z)$*) reads, in the toroidal frame, as: the channel
+direction is the winding slope $\tan\theta = z$ of a geodesic pair on the
+shared torus, and the CWF functional is the normalized winding tangent. The
+concrete discharge candidate: **prove that the Gauss linking integral of a
+$(1, z)$-slope curve pair on the Clifford torus equals the normalized
+exchange component $\sin\theta = g$** — classical differential geometry,
+plausibly provable, and it would reduce the ²H derivation chain to the
+deformation choice + unit. Queued as the program's next step;
+`conj:whipple-rotation-intertwining` is the bar-involution face of the same
+identification.
+
+## 14. Corpus-grep record
 
 - `parabolic cylinder|Weber equation|Hermite`: hits are the Askey/channel
   cluster cited above + bibliography; no prior parabolic-cylinder treatment.
