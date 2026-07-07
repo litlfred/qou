@@ -2,7 +2,7 @@
   "computation": "qbeta-hopf-cubic-shadow-bridge",
   "engine": "python-decimal",
   "scriptFile": "qbeta_hopf_cubic_shadow_bridge.py",
-  "commitSha": "7cb2a5900e21e917348d93f10c27700598fe3f02",
+  "commitSha": "377206e06ad2167e0ed35ebe83fd1bdb8c1856f5",
   "description": "Reconcile KC20 (Hopf cubic C_Hopf) with KC19 (affine crossing weight, c_3=open scalar). SHADOW: C_Hopf(2)=-2=c_3 q=1 shadow (Lean cubicC_Hopf_classical_shadow). SUBSTRATE: C_Hopf(y0) anchor-rigid ~-2.0873 while c_3 swings 2.375% -> cubic does NOT determine c_3; swing lives in w(q). Near-coincidence, not identity.",
   "data": {
     "shadow_C_Hopf_at_2": "-2",
@@ -13,6 +13,10 @@
     "C_Hopf_y0_muon": "-2.087328947383041644373952302805792447010825177426",
     "C_Hopf_anchor_rel_swing": "9.2679061862930792980655662865319237914321080905201E-9",
     "c3_anchor_rel_swing": "0.023753654671453040372726474703390929648665816803890",
+    "disc_C_Hopf": -76,
+    "disc_C_total": -152,
+    "disc_C_unknot": 17,
+    "chirality_parity": "odd/Hopf: disc<0 -> complex-conjugate roots (Hopf link CHIRAL); even/unknot: disc>0 -> real (Q(sqrt17)); matches Borel-Pade — complex structure enters via a CHIRAL knot (Hopf), not the amphichiral figure-eight/pion (even channel real)",
     "verdict": "shadow: exact Hopf match (q=1); substrate: no bridge (C_Hopf anchor-rigid vs c_3 swinging) — swing in w(q), KC19"
   },
   "assertions": [
@@ -55,6 +59,22 @@
       "tolerance": 0.0,
       "unit": "bool (0=near but not identity)",
       "source": "|C_Hopf(y0)-c3|~0.018, same order as the c_3 swing"
+    },
+    {
+      "name": "odd_Hopf_cubic_disc_negative_complex",
+      "computed": 0.0,
+      "expected": 0.0,
+      "tolerance": 0.0,
+      "unit": "bool (0=disc<0, complex pair)",
+      "source": "disc(C_Hopf)=-76<0 -> complex-conjugate roots; Hopf link is chiral"
+    },
+    {
+      "name": "even_unknot_disc_positive_real",
+      "computed": 0.0,
+      "expected": 0.0,
+      "tolerance": 0.0,
+      "unit": "bool (0=disc>0, real)",
+      "source": "disc(C_unknot)=17>0 -> real roots Q(sqrt17); amphichiral even channel real"
     }
   ],
   "audit_only": "docs/audits/2026-07-07-hopf-cubic-vs-crossing-weight-shadow-bridge.md",

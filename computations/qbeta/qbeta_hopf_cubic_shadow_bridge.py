@@ -40,6 +40,16 @@ def cubicC_Hopf(y: D) -> D:
     return y ** 3 - 6 * y ** 2 + 10 * y - 6
 
 
+def disc_cubic(a: int, b: int, c: int, d: int) -> int:
+    """Discriminant of a·y³+b·y²+c·y+d."""
+    return (18 * a * b * c * d - 4 * b ** 3 * d + b * b * c * c
+            - 4 * a * c ** 3 - 27 * a * a * d * d)
+
+
+def disc_quadratic(a: int, b: int, c: int) -> int:
+    return b * b - 4 * a * c
+
+
 def y_of(q: D) -> D:
     return q * q + 1 / (q * q)
 
@@ -71,6 +81,20 @@ def main() -> int:
     # proximity is a near-coincidence, NOT an identity
     near_not_identity = (abs(chp - C3_PROTON) > D("1e-6")) and (abs(chp - C3_PROTON) < D("0.1"))
 
+    # (3) chirality parity — where w(q)'s complex structure lives.
+    #   Borel-Padé (2026-07-07): the EVEN channel is REAL, forced by the
+    #   figure-eight/pion AMPHICHIRALITY (CS(4_1)=0); any COMPLEX odd-channel
+    #   structure must come from a CHIRAL knot elsewhere. The odd-channel cubic
+    #   C_Hopf (KC20) is the Hopf-link (2-crossing) sector, and the HOPF LINK IS
+    #   CHIRAL. Its discriminant is NEGATIVE ⇒ a complex-conjugate root pair
+    #   (genuinely non-real algebraic structure), while the identity-sector
+    #   quadratic C_unknot has POSITIVE discriminant (real, field Q(sqrt17)).
+    d_Hopf = disc_cubic(1, -6, 10, -6)          # -76 = -2^2 * 19  (< 0)
+    d_C = disc_cubic(1, -4, 3, -2)              # -152 = -2^3 * 19 (< 0)
+    d_unknot = disc_quadratic(2, -7, 4)         # 17 (> 0)
+    hopf_complex = d_Hopf < 0                    # complex-conjugate root pair
+    unknot_real = d_unknot > 0                   # real roots
+
     out = {
         "computation": "qbeta-hopf-cubic-shadow-bridge",
         "engine": "python-decimal",
@@ -89,6 +113,12 @@ def main() -> int:
             "C_Hopf_y0_proton": str(chp), "C_Hopf_y0_muon": str(chm),
             "C_Hopf_anchor_rel_swing": str(ch_rel_swing),
             "c3_anchor_rel_swing": str(c3_rel_swing),
+            "disc_C_Hopf": d_Hopf, "disc_C_total": d_C, "disc_C_unknot": d_unknot,
+            "chirality_parity": (
+                "odd/Hopf: disc<0 -> complex-conjugate roots (Hopf link CHIRAL); "
+                "even/unknot: disc>0 -> real (Q(sqrt17)); matches Borel-Pade — "
+                "complex structure enters via a CHIRAL knot (Hopf), not the "
+                "amphichiral figure-eight/pion (even channel real)"),
             "verdict": ("shadow: exact Hopf match (q=1); substrate: no bridge "
                         "(C_Hopf anchor-rigid vs c_3 swinging) — swing in w(q), KC19"),
         },
@@ -108,6 +138,12 @@ def main() -> int:
             {"name": "substrate_proximity_is_near_coincidence", "computed": 0.0 if near_not_identity else 1.0,
              "expected": 0.0, "tolerance": 0.0, "unit": "bool (0=near but not identity)",
              "source": "|C_Hopf(y0)-c3|~0.018, same order as the c_3 swing"},
+            {"name": "odd_Hopf_cubic_disc_negative_complex", "computed": 0.0 if hopf_complex else 1.0,
+             "expected": 0.0, "tolerance": 0.0, "unit": "bool (0=disc<0, complex pair)",
+             "source": "disc(C_Hopf)=-76<0 -> complex-conjugate roots; Hopf link is chiral"},
+            {"name": "even_unknot_disc_positive_real", "computed": 0.0 if unknot_real else 1.0,
+             "expected": 0.0, "tolerance": 0.0, "unit": "bool (0=disc>0, real)",
+             "source": "disc(C_unknot)=17>0 -> real roots Q(sqrt17); amphichiral even channel real"},
         ],
         "audit_only": "docs/audits/2026-07-07-hopf-cubic-vs-crossing-weight-shadow-bridge.md",
     }
