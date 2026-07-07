@@ -117,4 +117,53 @@ theorem R12_eq_cubic_trace {F : Type*} [Field F] (q : F) (hq : q ≠ 0) :
   field_simp
   ring
 
+/-! ## §4. `C(y)` is a degree-3 obstruction: no rational root, missed by every
+       quadratic substrate anchor
+
+`C(y) = y³ − 4y² + 3y − 2` is **monic with constant term −2**, so by the
+rational root theorem any rational root is an integer dividing `2`, i.e.
+`y ∈ {±1, ±2}`. The four evaluations below are all nonzero, so `C` has **no
+rational root** and (being a monic integer cubic) is **irreducible over ℚ** —
+its root generates a genuine **degree-3 field** (S₃ splitting, disc `−152`).
+
+Consequence for the c_3 odd channel: every substrate **quadratic** anchor sits
+at a rational trace value `y = q²+q⁻²` — golden `φ ↦ y = 3`, silver `1+√2 ↦
+y = 6`, classical `q = 1 ↦ y = 2` — and `C` is nonzero at each. A degree-≤2
+substrate number can never be a root of an irreducible cubic, so **no
+quadratic-anchor / real-q closure can resolve the odd carrier**; this is the
+structural reason those closures (KC-refuted class) keep failing. (Numerical
+aside, NOT a structural claim: `C(3) = −2` coincides with the `c_3 → −2` q=1
+shadow value; flagged as a coincidence pending any derivation.) -/
+
+/-- **RRT candidate `y = 1`:** `C(1) = −2 ≠ 0`. -/
+theorem cubicC_one : cubicC (1 : R) = -2 := by unfold cubicC; norm_num
+
+/-- **RRT candidate `y = −1`:** `C(−1) = −10 ≠ 0`. -/
+theorem cubicC_neg_one : cubicC (-1 : R) = -10 := by unfold cubicC; norm_num
+
+/-- **RRT candidate `y = 2` (also the classical `q = 1` trace value):**
+    `C(2) = −4 ≠ 0`. -/
+theorem cubicC_two : cubicC (2 : R) = -4 := by unfold cubicC; norm_num
+
+/-- **RRT candidate `y = −2`:** `C(−2) = −32 ≠ 0`. -/
+theorem cubicC_neg_two : cubicC (-2 : R) = -32 := by unfold cubicC; norm_num
+
+/-- **Golden-anchor trace value `y = φ²+φ⁻² = 3`:** `C(3) = −2 ≠ 0` — the golden
+    substrate anchor is not a root of the odd-channel cubic. -/
+theorem cubicC_golden : cubicC (3 : R) = -2 := by unfold cubicC; norm_num
+
+/-- **Silver-anchor trace value `y = (1+√2)²+(1+√2)⁻² = 6`:** `C(6) = 88 ≠ 0` —
+    the silver substrate anchor is not a root of the odd-channel cubic. -/
+theorem cubicC_silver : cubicC (6 : R) = 88 := by unfold cubicC; norm_num
+
+/-- **No rational root (`ℚ`).** The four RRT candidates `{±1, ±2}` are the only
+    possible rational roots of the monic integer cubic `C`; each is nonzero
+    (`cubicC_one/neg_one/two/neg_two`), so `C` has no root in `ℚ` and is
+    irreducible over `ℚ`. Stated as the disjunction of the certified
+    non-vanishings that the rational root theorem reduces the claim to. -/
+theorem cubicC_rrt_candidates_all_nonzero :
+    cubicC (1 : ℚ) ≠ 0 ∧ cubicC (-1 : ℚ) ≠ 0 ∧
+      cubicC (2 : ℚ) ≠ 0 ∧ cubicC (-2 : ℚ) ≠ 0 := by
+  refine ⟨?_, ?_, ?_, ?_⟩ <;> · unfold cubicC; norm_num
+
 end QOU.QBeta.Zeta4Residue
