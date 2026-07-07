@@ -1118,7 +1118,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
-        "evidence": "content/quantum-observable-universe/mass-theory/binding-genfun-qdifference.lean:1 — Lean file exists",
+        "evidence": "content/quantum-observable-universe/mass-theory/binding-genfun-qdifference.lean:1 \u2014 Lean file exists",
         "severity": "minor"
       }
     ],
@@ -1137,7 +1137,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean proof contains a sorry placeholder, indicating it is incomplete.",
-        "evidence": "content/quantum-observable-universe/mass-theory/binding-genfun-qdifference.lean:1 — sorry placeholder present",
+        "evidence": "content/quantum-observable-universe/mass-theory/binding-genfun-qdifference.lean:1 \u2014 sorry placeholder present",
         "severity": "major"
       }
     ],
@@ -1170,7 +1170,7 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean proof is a structural stub, which does not fully capture the narrative proof.",
-        "evidence": "content/quantum-observable-universe/mass-theory/binding-genfun-qdifference.lean:1 — sorry present",
+        "evidence": "content/quantum-observable-universe/mass-theory/binding-genfun-qdifference.lean:1 \u2014 sorry present",
         "severity": "minor"
       },
       {
@@ -1187,7 +1187,7 @@
         },
         "reviewed_at": "2026-07-06T04:41:29.430Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:binding-genfun-qdifference' → expected 'binding_genfun_qdifference'; Lean declares: BindingQDifferenceRecurrence, binding_qdifference_recurrence. Structural match via content."
+        "notes": "Label 'prop:binding-genfun-qdifference' \u2192 expected 'binding_genfun_qdifference'; Lean declares: BindingQDifferenceRecurrence, binding_qdifference_recurrence. Structural match via content."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1256,7 +1256,7 @@
           "lean": "94e6ef3b8fac"
         },
         "result": "pass",
-        "notes": "q-holonomic⟹P-recursive passage for the binding generating function, with the kernel R derived (not fitted) from SW root-of-unity structure, is well-posed and substantive.",
+        "notes": "q-holonomic\u27f9P-recursive passage for the binding generating function, with the kernel R derived (not fitted) from SW root-of-unity structure, is well-posed and substantive.",
         "reviewed_at": "2026-06-25T17:09:54.000Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
@@ -1338,7 +1338,7 @@
           "lean": "94e6ef3b8fac"
         },
         "result": "fail",
-        "notes": ".md claims the q-holonomic⟹P-recursive IMPLICATION (G(qx)=R·G of depth d ⟹ depth-d recurrence). Lean's structure carries the recurrence itself as a field; theorem := S.recurrence n just projects it. The G(qx)=R·G hypothesis + the passage are absent — conclusion assumed as a struct field. Degenerate.",
+        "notes": ".md claims the q-holonomic\u27f9P-recursive IMPLICATION (G(qx)=R\u00b7G of depth d \u27f9 depth-d recurrence). Lean's structure carries the recurrence itself as a field; theorem := S.recurrence n just projects it. The G(qx)=R\u00b7G hypothesis + the passage are absent \u2014 conclusion assumed as a struct field. Degenerate.",
         "reviewed_at": "2026-06-25T17:09:54.000Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
@@ -1434,7 +1434,7 @@
           "lean": "94e6ef3b8fac"
         },
         "result": "pass",
-        "notes": "BindingQDifferenceRecurrence is satisfiable (e.g. term≡0, any kernel); recurrence field not contradictory.",
+        "notes": "BindingQDifferenceRecurrence is satisfiable (e.g. term\u22610, any kernel); recurrence field not contradictory.",
         "reviewed_at": "2026-06-25T17:09:54.000Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
@@ -1745,6 +1745,36 @@
         "severity": "major",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling contains 'sorry' placeholders, rendering the formalization and proof incomplete."
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:23.817Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:23.817Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ]
   },
