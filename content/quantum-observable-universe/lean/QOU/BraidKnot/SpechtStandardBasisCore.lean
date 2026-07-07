@@ -842,6 +842,85 @@ smaller `colWordNum`. -/
 def colWordNum (t : Specht.Tableau μ) : ℕ :=
   ∑ l : Fin (Specht.nOf μ), (l : ℕ) * (Specht.nOf μ + 1) ^ (cmajSig μ ((t l : ℕ × ℕ)))
 
+/-- **`cmajSig` strict monotonicity (sorry-free).** Within one column (equal column
+index), a cell in an EARLIER row is column-major-*before*, hence has strictly larger
+`cmajSig` (more cells come after it). The engine of `colWordNum_swap_lt`. -/
+theorem cmajSig_lt_of_col_row {c c' : ℕ × ℕ} (hc' : c' ∈ μ.cells)
+    (hcol : c.2 = c'.2) (hrow : c.1 < c'.1) :
+    cmajSig μ c' < cmajSig μ c := by
+  classical
+  unfold cmajSig
+  apply Finset.card_lt_card
+  rw [Finset.ssubset_iff_of_subset]
+  · refine ⟨c', ?_, ?_⟩
+    · simp only [Finset.mem_filter]; exact ⟨hc', Or.inr ⟨hcol, hrow⟩⟩
+    · simp only [Finset.mem_filter, not_and]; intro _; push_neg
+      exact ⟨by omega, fun _ => by omega⟩
+  · intro x hx
+    simp only [Finset.mem_filter] at hx ⊢
+    obtain ⟨hxc, hlater⟩ := hx
+    refine ⟨hxc, ?_⟩
+    rcases hlater with h | ⟨h1, h2⟩
+    · left; omega
+    · rcases lt_or_eq_of_le (le_of_eq h1.symm) with h | h
+      · left; omega
+      · right; exact ⟨by omega, by omega⟩
+
+/-- **Keystone (sorry-free): a within-column descent swap strictly lowers `colWordNum`.**
+If labels `a < b` sit in the same column with `b` in an EARLIER row than `a` (a column
+descent — the larger label higher up), swapping them strictly decreases the column-word
+measure. This is the `colWordNum` analogue of `domWeight_swap_lt`, and the lever the
+`straightening_step` column-lowering branch and the `colMax` row-descent argument will
+consume. Proof: `cmajSig (t a) < cmajSig (t b)` (same column, `b` higher) gives
+`w a < w b` with `w m = (n+1)^{cmajSig (t m)}`; reindexing the swapped sum leaves only the
+`a,b` terms, and `b·w a + a·w b < a·w a + b·w b` is the rearrangement inequality. -/
+theorem colWordNum_swap_lt (t : Specht.Tableau μ) {a b : Fin (Specht.nOf μ)}
+    (hab : (a : ℕ) < (b : ℕ))
+    (hcol : Specht.colPattern t a = Specht.colPattern t b)
+    (hrow : Specht.rowPattern t b < Specht.rowPattern t a) :
+    colWordNum (Equiv.swap a b • t) < colWordNum t := by
+  classical
+  have hne : a ≠ b := fun h => (Nat.ne_of_lt hab) (by rw [h])
+  set B := Specht.nOf μ + 1 with hB
+  set w : Fin (Specht.nOf μ) → ℕ := fun m => B ^ (cmajSig μ ((t m : ℕ × ℕ))) with hw
+  have hsig : cmajSig μ ((t a : ℕ × ℕ)) < cmajSig μ ((t b : ℕ × ℕ)) := by
+    apply cmajSig_lt_of_col_row (c := ((t b : ℕ × ℕ))) (c' := ((t a : ℕ × ℕ))) (t a).property
+    · exact hcol.symm
+    · exact hrow
+  have hwab : w a < w b := by rw [hw]; exact Nat.pow_lt_pow_right (by omega) hsig
+  have hreindex : colWordNum (Equiv.swap a b • t)
+      = ∑ m : Fin (Specht.nOf μ), ((Equiv.swap a b m : Fin (Specht.nOf μ)) : ℕ) * w m := by
+    unfold colWordNum
+    rw [← Equiv.sum_comp (Equiv.swap a b)
+          (fun m => ((Equiv.swap a b m : Fin (Specht.nOf μ)) : ℕ) * w m)]
+    apply Finset.sum_congr rfl
+    intro l _
+    rw [Equiv.swap_apply_self, hw]
+    congr 2
+  have hct : colWordNum t = ∑ m : Fin (Specht.nOf μ), (m : ℕ) * w m := by
+    unfold colWordNum; rw [hw]
+  rw [hreindex, hct]
+  have hbmem : b ∈ Finset.univ.erase a := Finset.mem_erase.mpr ⟨hne.symm, Finset.mem_univ b⟩
+  have key : ∀ (g : Fin (Specht.nOf μ) → ℕ),
+      ∑ m, g m = g a + (g b + ∑ m ∈ (Finset.univ.erase a).erase b, g m) := by
+    intro g
+    rw [← Finset.add_sum_erase Finset.univ g (Finset.mem_univ a),
+        ← Finset.add_sum_erase (Finset.univ.erase a) g hbmem]
+  rw [key (fun m => ((Equiv.swap a b m : Fin (Specht.nOf μ)) : ℕ) * w m),
+      key (fun m => (m : ℕ) * w m)]
+  have htail : ∑ m ∈ (Finset.univ.erase a).erase b,
+        ((Equiv.swap a b m : Fin (Specht.nOf μ)) : ℕ) * w m
+      = ∑ m ∈ (Finset.univ.erase a).erase b, (m : ℕ) * w m := by
+    apply Finset.sum_congr rfl
+    intro m hm
+    have hma : m ≠ a := (Finset.mem_erase.mp (Finset.mem_of_mem_erase hm)).1
+    have hmb : m ≠ b := (Finset.mem_erase.mp hm).1
+    rw [Equiv.swap_apply_of_ne_of_ne hma hmb]
+  rw [htail, Equiv.swap_apply_left, Equiv.swap_apply_right]
+  have hcore : (b : ℕ) * w a + (a : ℕ) * w b < (a : ℕ) * w a + (b : ℕ) * w b := by
+    nlinarith [hab, hwab, Nat.zero_le (w a), Nat.zero_le (w b)]
+  omega
+
 /-! #### Column-maximality kills column descents (Garnir steps 3b/3c, sorry-free)
 
 Two sorry-free pieces: (3b) the transposition of two same-column labels lies in the
