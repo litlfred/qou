@@ -1,24 +1,7 @@
-**Proposition (forward form of the $z$-recursion).** *For any
-`ZRecursionCoeffs` instance with Taylor coefficient sequence $a_n$,
-and for $n \geq 1$,*
+**Proposition (forward form of the $z$-recursion).** *For any `ZRecursionCoeffs` instance with Taylor coefficient sequence $a_n$, and for $n \geq 1$,*
 
 $$
-  a_{n+1} = -\frac{3n}{2(n+1)} \cdot a_n
-            -\frac{2n-1}{4(n+1)} \cdot a_{n-1}.
+  a_{n+1} = -\frac{3n}{2(n+1)} \cdot a_n -\frac{2n-1}{4(n+1)} \cdot a_{n-1}.
 $$
 
-*Equivalently, $a_{n+1}$ is a linear combination of $a_n$ and $a_{n-1}$
-with $n$-dependent coefficients (kernel functions of $n$, NOT constant
-in $n$).*
-## Cross-references
-
-- Parent block #1 (upstream):
-  [`prop:qbeta-per-block-chi-closed-forms`](qbeta-per-block-chi-closed-forms.md)
-  (`ZRecursionCoeffs` class).
-- Parent block #2 (sibling on main):
-  [`prop:q-beta-c-k-recursion-from-habiro-q-difference`](../mass-theory/q-beta-c-k-recursion-from-habiro-q-difference.md)
-  (`CKRecursion` structure).
-- 1ppQ-Q$_\beta$ coordination ledger:
-  [`docs/coordination/1ppq-qbeta.md`](../../../docs/coordination/1ppq-qbeta.md).
-
-**Archimedean specialisation (§7c).** The recursion coefficients $a_n$ are the real $Q_\beta$ Taylor sequence; the forward form is stated over $\mathbb{R}$ (numerical evaluation of the $q$-difference recursion), placing this block on the archimedean side of the substrate wall.
+*The coefficients $a_n$ are real. The forward form is stated over $\mathbb{R}$.*

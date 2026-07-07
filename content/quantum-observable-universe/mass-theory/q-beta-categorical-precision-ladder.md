@@ -10,11 +10,8 @@
 > The content below is retained for HISTORICAL reference and for the
 > derivation narrative (it shows how the pattern was discovered).
 
-**$\mathfrak{Q}_\beta$ categorical-derivation precision ladder** — the closed-form
-prediction of free-neutron $\beta$-decay Q-value $\mathfrak{Q}_\beta$ at the
-substrate $q_0$ via a four-rung categorical recursion ending at $-0.0066$
-ppm residual against CODATA (well under the $0.0094$ ppm $N=3$ c(K)
-ceiling from `conj:archimedean-remainder-exponential-decay`).
+**$\mathfrak{Q}_\beta$ categorical-derivation precision ladder.**
+This derives the free-neutron $\beta$-decay Q-value $\mathfrak{Q}_\beta$ at the substrate $q_0$ via a four-rung categorical recursion. The series reaches a $-0.0066$ ppm residual against CODATA, below the $0.0094$ ppm $N=3$ c(K) ceiling from `conj:archimedean-remainder-exponential-decay`.
 
 ## The formula
 

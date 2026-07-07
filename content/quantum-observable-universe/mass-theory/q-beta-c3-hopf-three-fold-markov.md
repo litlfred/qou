@@ -85,27 +85,10 @@ giving $c_3 = -2$ as a **structural prediction**, not an empirical fit.
 Per the canonical formalism,
 the prediction is empirically observable:
 
-- N=2 (Kashiwara $b^2$ alone): residual $+1.25$ ppm (above CODATA's
-  $0.4$ ppm floor)
-- N=3 (+ structural $c_3 = -2$): residual $+0.011$ ppm (within floor)
-- **112$\times$ tightening** at N=3 from the structural identification.
+The N=2 step (Kashiwara $b^2$ alone) gives a residual of $+1.25$ ppm, well above CODATA's $0.4$ ppm floor. The N=3 step (structural $c_3 = -2$) yields $+0.011$ ppm, inside the floor. This represents a 112$\times$ tightening at N=3, observable above CODATA noise, verifying the categorical-chain prediction empirically.
 
-This 112$\times$ residual reduction is **observable above CODATA noise**,
-empirically validating the categorical-chain prediction.
-
-**Near-match tier (not Taylor-exact).** The identification
-$c_3 = J_{\text{Hopf}}(q=1) = -2$ is a **classical-limit near-match**, not
-a Taylor-exact coefficient — only $c_2 = -1$ is proved exact (per the
-$c_k$ truncation-order framing). Measured against the empirical $c_3$
-extracted from the operator-valued $N=3$ tower
-([`q-beta-operator-valued-N3.witness.json`](../../computations/q-beta-operator-valued-N3.witness.json),
-$c_3^{\text{emp}} \approx -2.0216$), the best simple model
-$c_3 = J_{\text{Hopf}}(q=1) - \hbar_q^2$ now sits at a residual
-$\approx 0.58\%$ (witness
-[`c3-hopf-habiro-analysis.witness.json`](../../computations/c3-hopf-habiro-analysis.witness.json)).
-This residual was $\approx 0.004\%$ against the pre-drift upstream input;
-the $\approx 0.58\%$ value reflects the refreshed $N=3$ operator-valued
-$c_3$, and is the size of the near-match gap — not evidence of exactness.
+**Near-match tier (not Taylor-exact).**
+The identification $c_3 = J_{\text{Hopf}}(q=1) = -2$ forms a classical-limit near-match, not a Taylor-exact coefficient. Only $c_2 = -1$ is proved exact. Evaluated against the empirical $c_3$ extracted from the operator-valued $N=3$ tower ($c_3^{\text{emp}} \approx -2.0216$), the simple model $c_3 = J_{\text{Hopf}}(q=1) - \hbar_q^2$ has a residual of $\approx 0.58\%$. This residual measures the near-match gap.
 
 ## Open formalization steps
 
