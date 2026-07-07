@@ -1,0 +1,130 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-07T14:15:44.075721+00:00",
+  "commitSha": "2d1a378280451824e3df1576bfcd855470e5b27b",
+  "assertions": [
+    {
+      "name": "G1_cumulant_has_q1_pole",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "κ_n=2cos(nθ)/(1-q^n) simple pole at q=1 for structural θ"
+    },
+    {
+      "name": "G2_c2_anchor_diverges",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "κ_2 diverges as q→1 (t∝u), cannot equal finite c_2=-1"
+    },
+    {
+      "name": "G3_moment_route_excluded",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "q-Hermite moments positive-growing vs c_k small mixed-sign"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 69,
+  "computation": "qbeta-c4-qhermite-entry-gate",
+  "scriptFile": "qbeta_c4_qhermite_entry_gate_probe.py",
+  "scriptHash": "970fa926a82e",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Formalize-first entry gate: does the natural continuous q-Hermite structure supply the c_k? q-Hermite gen func = product of compact Φ_q (bar-even/mass face; c_4 is even-order) — right face. But its cumulants κ_n = 2cos(nθ)/(1−q^n) have a q=1 pole (G1) so cannot equal the finite c_2=−1 (G2) without a fitted q-dependent variable change; its finite moments (Touchard–Riordan) are positive-growing vs the small mixed-sign c_k (G3). Verdict scope-(a): natural continuous-q-Hermite route excluded; deeper Askey-scheme / derived-t(u,q) route not excluded but needs a structural reason, not a fit (C14; PR #1805 entropy bound: c_4 ~4-5 sig figs). No fit to c_4.",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "g1_cumulant_pole_rows": [
+      {
+        "theta": "pi/3",
+        "n": 1,
+        "cos_ntheta": "1/2",
+        "kappa_pole_at_q1": true
+      },
+      {
+        "theta": "pi/3",
+        "n": 2,
+        "cos_ntheta": "-1/2",
+        "kappa_pole_at_q1": true
+      },
+      {
+        "theta": "pi/2",
+        "n": 1,
+        "cos_ntheta": "0",
+        "kappa_pole_at_q1": false
+      },
+      {
+        "theta": "pi/2",
+        "n": 2,
+        "cos_ntheta": "-1",
+        "kappa_pole_at_q1": true
+      },
+      {
+        "theta": "2pi/5",
+        "n": 1,
+        "cos_ntheta": "-1/4 + sqrt(5)/4",
+        "kappa_pole_at_q1": true
+      },
+      {
+        "theta": "2pi/5",
+        "n": 2,
+        "cos_ntheta": "-sqrt(5)/4 - 1/4",
+        "kappa_pole_at_q1": true
+      }
+    ],
+    "g2_c2_anchor_rows": [
+      {
+        "theta": "pi/3",
+        "kappa2_eps_1e-2": "-5.0251e+01",
+        "kappa2_eps_1e-6": "-5.0000e+05",
+        "diverges": true
+      },
+      {
+        "theta": "pi/2",
+        "kappa2_eps_1e-2": "-1.0050e+02",
+        "kappa2_eps_1e-6": "-1.0000e+06",
+        "diverges": true
+      },
+      {
+        "theta": "2pi/5",
+        "kappa2_eps_1e-2": "-8.1308e+01",
+        "kappa2_eps_1e-6": "-8.0902e+05",
+        "diverges": true
+      }
+    ],
+    "g3_moments_q1": [
+      1,
+      1,
+      3,
+      15,
+      105
+    ],
+    "g3_ck_canonical": {
+      "2": -1.0171,
+      "3": -2.0097,
+      "4": -1.1435,
+      "5": -1.2229,
+      "6": 3.4976
+    },
+    "qhermite_face": "bar-even (gen func = product of compact Φ_q); c_4 even-order ⇒ correct face",
+    "verdict_scope": "(a) natural continuous-q-Hermite route excluded; Askey-scheme/derived-t(u,q) route not excluded, needs structural map",
+    "invariant_cited": "q=1 pole of 1/(1-q^n) (compact q-dilog cumulant) vs finite c_2=-1 — same q=1 cusp obstruction as T14 Δ_λ probe"
+  }
+}
