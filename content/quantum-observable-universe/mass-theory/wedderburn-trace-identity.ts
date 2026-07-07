@@ -16,7 +16,7 @@ export default proposition({
     "hecke-algebra",
     "partition",
   ],
-  lean: { ref: "qou:QOU.BraidsAndKnots.plancherel_via_recipe",
+  lean: { ref: "qou:QOU.BraidsAndKnots.PlancherelViaRecipe.plancherel_via_recipe",
     validation: "not_checked",
   },
   uses: ["prop:three-parameters-wedderburn"],
