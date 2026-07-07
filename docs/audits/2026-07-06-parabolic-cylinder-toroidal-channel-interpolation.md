@@ -513,7 +513,43 @@ the gating doc every future ansatz must read:
 — candidates must pass the parity screen *before* any numerical run, and
 the Recommendation section points at it.
 
-## 12. Corpus-grep record
+## 12. Tranche 5 (owner picked: promote + Borromean test + prepare-merge)
+
+**T5 — winding rigidity promoted to a content block.**
+[`prop:three-strand-color-winding-rigidity`](../../content/quantum-observable-universe/braids-and-knots/three-strand-color-winding-rigidity.md)
+(+ proof block, `braids-and-knots`): $\mathrm{tr}\,M = -1$, $\det M = 1$,
+$M^3 = \mathrm{Id}$ for the uniform three-strand rotation on the $(2,1)$
+block, every $q^4 \neq 1$. Lean `threeStrand_cubes_to_one` sorry-free
+(`lean`-direct exit 0) over a generic field via Cayley–Hamilton
+(`M2.cube_of_trace_det`), with $\beta$ carried as a constrained variable
+(no $\sqrt{\ }$, §7c clean; self-contained `M2` carrier, no Mathlib
+matrix API).
+
+**T6 — the Borromean question answered (10/10).**
+[`alternating_tower_borromean_winding_probe.py`](../../computations/substrate/alternating_tower_borromean_winding_probe.py).
+The alternating word $A = \sigma_1\sigma_2^{-1}$ (whose power closures are
+the hyperbolic anchors: figure-eight $4_1$ at $k=2$, Borromean $\mathcal{B}_3$
+at $k=3$) has, on the same block,
+
+$$
+\mathrm{tr}\,\rho_{(2,1)}(A) = 1 - q^2 - q^{-2}, \qquad \det = 1,
+$$
+
+bar-even, $q$-dependent, equal to the rigid value $-1$ at $q = 1$. Its
+tower obeys the same $\mu = \tfrac12$ Chebyshev flow, **elliptic** for
+$q^2 + q^{-2} < 3$ with the exact parabolic boundary at
+$q = \varphi = (1+\sqrt5)/2$ ($\varphi^2 = \varphi + 1$; an exact
+spectral-transition point of the trace polynomial — **not** a fitted
+anchor, cf. the #3444 numerology cut). So the block carries two winding
+directions: the **rigid** $\zeta_3$ color rotation (uniform word, T5) and
+its **modulus-deformed** version (alternating word,
+$\theta'(q) = \arccos(\tfrac{1 - q^2 - q^{-2}}{2})$, $\theta'(1) = 2\pi/3$).
+**Answer to "does the nucleon sit at a lattice point": yes** — $4_1$
+(lepton) and $\mathcal{B}_3$ (nucleon) are the $k = 2, 3$ windings of the
+deformed rotation, the same $k$ as their torus-link shadows on the rigid
+direction.
+
+## 13. Corpus-grep record
 
 - `parabolic cylinder|Weber equation|Hermite`: hits are the Askey/channel
   cluster cited above + bibliography; no prior parabolic-cylinder treatment.
