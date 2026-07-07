@@ -111,6 +111,39 @@ reproduce S's 2×10⁶ swing, which is a circular-extraction artifact, not fibre
 physics. **Bridging the Ohtsuki κ_k (in the `2π/N` basis) to our `u = b·ℏ_q²`
 ladder normalization is exactly the open f-map** — the next concrete step.
 
+### 3b. The κ→u re-basing test — the f-map is resurgence, not a coefficient map
+
+Probe [`qbeta_fmap_ohtsuki_rebasing_test.py`](scripts/qbeta_fmap_ohtsuki_rebasing_test.py)
+(5/5, 80 dps) tests whether the f-map is "read the c_k off the Ohtsuki ladder":
+
+- **One-scale re-basing fails (parameter-free).** Fixing the single scale
+  `ũ = λ·(2π/N)` from rung 1 (`λ = e₁/κ₁ = 2.344`) and *predicting* the even
+  rungs: `e₂^pred = +4.02` vs actual `−15.04` (wrong **sign and magnitude**);
+  `e₃, e₄` likewise. No single scale maps the 4₁ Ohtsuki ladder to the QOU even
+  channel. (A *free per-order* change of variables could fit anything — the
+  Weber-ODE overfitting trap; the one-scale test is the honest version.)
+- **Structural reason (scope-(b)).** The colored Jones has an **essential
+  singularity** at q=1 (Kashaev `~ e^{N·Vol/2π}`); its Ohtsuki series is
+  **divergent asymptotic** — measured growth `|κ_{k+1}/κ_k| = 1.32 → 3.62 → 5.50`
+  (increasing). The Q_β ratio `∏(1+c_k u^k)` is **regular** at q=1 (→1). A regular
+  function and an essential-singularity function are **not** related by an
+  analytic change of variables — so the f-map **cannot** be a coefficient
+  re-basing. It is the **resurgence connection**: the c_k are the perturbative
+  series around the *trivial* flat connection; the Ohtsuki κ_k are around the
+  *geometric* (volume) connection; the bridge is the Stokes data
+  (Garoufalidis–Gu–Mariño), not a variable substitution.
+- **Knot-identification caveat.** 4₁ is the *lepton* knot (Vol enters m_μ). The
+  even channel's knot may differ (meson/pion sector); identifying the correct
+  knot is prerequisite to any sharper f-map test. The one-scale failure is
+  therefore scope-(a) w.r.t. the knot choice and scope-(b) w.r.t. the
+  analytic-type obstruction (which holds for *every* hyperbolic knot).
+
+**Nucleon-side volumes (Task 2).** Classical volumes: 4₁ = 2.02988 (lepton),
+5₂ = 2.82812, 6₁ = 3.16396, **Borromean 6³₂ = 7.32772 = 2·Vol(ideal octahedron)**
+exactly (nucleon). The Borromean *quantum* volume needs the 3-component link
+colored Jones — the next concrete compute (the single-sum Kashaev form is
+knot-only).
+
 ## 4. Does this get us closer? — honest assessment
 
 - **Closer to a sharp statement + runnable experiment: yes.** The keystone is now
