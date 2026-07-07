@@ -241,26 +241,37 @@ within-column descent swap strictly lowers `colWordNum` — the analogue of
 (roadmap step 1), and **`garnir_assembly_gen`** (the measure-generic assembly, parametric
 over `P : Tableau → Prop`).
 
-**The shuffle transversal is NOT needed — use the full group.** A relation-validated model
-(`/tmp/garnir/vo2.py`) shows: aggregate `sgn(σ)` over **all** of `S_{A∪B}` (the already-proved
-`garnir_full_annihilation`, `Σ_{σ∈garnirG} sgn(σ)·(σ·e_t) = 0`) and group the resulting
-polytabloids by their **column-sorted** tableau. Then **every** column-sorted tableau with
-*nonzero* aggregated coefficient (other than `t`) has strictly smaller `colWordNum` —
-0 failures over shapes to `(3,2,1)`. The non-decreasing terms **cancel to zero
-coefficient**. So the plan is:
+**No shuffle transversal AND no cancellation needed — the fibre-decrease fact.**
 
-1. `garnir_full_annihilation` (proved) ⇒ `|H|·e_t = −Σ_{σ∈garnirG\H} sgn(σ)·e_{σ·t}`
-   (the `σ∈H⊆colStab` part collapses to `|H|·e_t` via column antisymmetry; needs `CharZero`
-   for the `1/|H|`).
-2. Rewrite each `e_{σ·t} = sgn(colsort σ)·e_{colsort(σ·t)}` and group by the column-sorted
-   tableau `t'`.
-3. **The remaining core:** show the aggregated coefficient `c_{t'} = 0` for every `t'` with
-   `colWordNum t' ≥ colWordNum t` (the cancellation), leaving only `colWordNum`-smaller
-   terms — then `garnir_assembly_gen` (or a full-group variant) closes colMax. Empirically
-   the fibre of `t'` is a single `H`-coset, so this is the coset-sign-collapse
-   (`sum_sign_rep_coset_collapse`, proved) combined with the row-collision cancellation
-   (`garnir_row_collision`, proved) — the genuine hard combinatorial content, but now
-   framed without any explicit shuffle-transversal object.
+> **Correction (2026-07-07, same day).** An earlier revision of this §5.1 claimed the
+> full-group aggregation makes non-decreasing terms *cancel to zero coefficient*. That was
+> a **sign-bug artifact** in the model. The careful recomputation
+> (`/tmp/garnir/fullgroup_check.py`, `fiber2.py`) shows the true picture, which is cleaner:
+> every column-set **fibre** (= a coset of `H` in `garnirG`, = a choice of which `|A|` of the
+> `A∪B` labels occupy column `j`) has coefficient `±|H| ≠ 0` — nothing cancels — **and every
+> non-identity fibre's column-sorted tableau strictly decreases `colWordNum`** (0 failures
+> over all column-standard tableaux × all row descents, shapes to `(4,3,1)`/9016 fibres).
+
+Consequence — the plan needs neither a shuffle transversal nor a cancellation argument:
+
+1. `garnir_full_annihilation` (proved) + `garnir_H_sum_eq` (proved) ⇒
+   `|H|·e_t = −Σ_{σ∈garnirG\H} sgn(σ)·(σ·t)` (needs `CharZero` for `1/|H|`); equivalently, via
+   the existing `garnir_transversal_exists` + `transversal_sum_eq_zero`,
+   `Σ_{π∈T} sgn(π)·(π·t) = 0` for **any** transversal `T`.
+2. Isolate the identity-coset rep `π₀` (its `colsort(π₀·t) = t`); for every other rep `π`,
+   rewrite `e_{π·t} = sgn(colsortₚ)·e_{colsort(π·t)}` (column antisymmetry
+   `polytabloid_colStab_smul`, since `colsort(π·t)` is a column permutation of `π·t`), and
+   take `s = {colsort(π·t) : π∈T\{π₀}}`.
+3. **The one remaining core:** the **fibre-decrease bound**
+   `colWordNum(colsort(π·t)) < colWordNum t` for `π ∈ garnirG \ H`. Validated exhaustively
+   (step above); the Lean proof is the genuine combinatorial content — `π∉H` moves a smaller
+   `B`-label (col `j+1`, rows `≤ i`) into column `j`, so after column-sorting a strictly
+   smaller label lands in an earlier column-major cell, lowering the base-`(n+1)` word. This
+   is the analogue of `colWordNum_swap_lt` for the cross-column Garnir move (not a
+   within-column swap), and is the last sorry to discharge.
+
+This eliminates two red herrings (the shuffle-transversal construction and the
+"cancellation"); the residual is the single fibre-decrease bound.
 
 **Effort estimate.** Research-grade but now well-scoped: Mathlib has no Specht modules, but
 the termination order is settled and Lean-ready. Steps 1–4 are a focused restatement +
