@@ -161,4 +161,16 @@ theorem barEven_ne_barOdd {E Q : F} (hchar : (2 : F) ≠ 0)
   · exact hchar hc
   · exact hEne hz
 
+/-- **Parity of a product (bookkeeping).** bar-even × bar-odd is bar-odd.
+    So the deuteron law `B = (5g)·E_unit` has `B` bar-odd iff `E_unit` is
+    bar-odd (`5g` is bar-even). Which parity `B(²H)` actually carries is an
+    *empirical* question, currently open: the reeb-flow §2h data have the
+    bar-**even** `2mₑ` closest (+2.6 %) and the bar-**odd** `𝔔_β` worst
+    (−21 %), weakly favoring a bar-even unit — so this lemma is neutral
+    bookkeeping, not a claim that `B(²H)` is bar-odd. -/
+theorem barOdd_of_barEven_mul_barOdd {s U : F}
+    (hs : BarEven σ s) (hU : BarOdd σ U) : BarOdd σ (s * U) := by
+  show σ (s * U) = -(s * U)
+  rw [map_mul, hs, hU, mul_neg]
+
 end QOU.MassTheory.DeuteronFusion

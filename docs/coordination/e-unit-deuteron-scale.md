@@ -73,7 +73,44 @@ three calibrations? Predicted-first, no fishing; the golden-ratio-adjacent
 `E_unit/Q_β ≈ √φ` (0.09 %) is a **numerology trap** (the #3444 cut), not a
 candidate.
 
+## Reconciliation with the landed sibling §2h (tranche 6, `ss_det_no_linear_term`)
+
+A sibling reeb-flow tranche landed on main
+([`…-reeb-flow-pn-magnitude…` §2h](../audits/2026-07-06-reeb-flow-pn-magnitude-provenance-and-1four-extension.md))
+directly on `E_unit`, and it **supersedes the optimistic read of the 𝔇
+route**:
+
+- **§2h.1 (proved):** the deuteron is one *open* pn bond, so `B` is the
+  `O(g)` linear `5g` (the ss-matrix is traceless ⇒ no linear loop term;
+  `ss_det_no_linear_term`, sorry-free). The `g`-order is derived.
+- **§2h.2 (scope-a limit):** the exchange sector is **scale-free** — `g` and
+  `√5` are dimensionless Hecke matrix data — so `E_unit` is external, and
+  among canonical energies **the bar-even `2mₑ` is closest (+2.6 %)** while
+  the bar-odd **`Q_β` is the worst (−21 %)**.
+
+**Predicted-first 𝔇 test** (`e-unit-decay-width-reconcile-probe.witness.json`):
+`E_unit = Q_β·F` needs `F = 1.2709`; the genuine 2-body factors (`2`,
+`3/[2]_v`, `[3]_v/[2]_v`) miss by 18–57 %. So:
+
+- **The 𝔇 reinterpretation is architecturally correct** — it removes the
+  CAL-4 violation: `E_unit` must be a 3-CAL function, and `ℏ/𝔇` names *what
+  kind* of object it is. This stands.
+- **But numerically the decay-width sector is the worst**, and the landed
+  §2h data actually favor a **bar-even** unit (`2mₑ`), contradicting the
+  clean "bar-even × bar-odd = bar-odd" decomposition I proposed. The `√φ`
+  factor that would rescue `Q_β` is numerology (walled off).
+
+**Honest conclusion.** The parity *decomposition* is a hypothesis the numbers
+disfavor; the deuteron's binding parity is **empirically open** (§2h weakly
+favors bar-even). The `𝔇` route closes the *cohomology* question (no CAL-4)
+but **not the number** — it confirms the §2h scale-free wall from the
+decay-width side rather than crossing it.
+
 ## Status
 
-Open, in-scope (3-CAL). No Subgoal-2 reversal. Next step: state the bond-width
-`𝔇` construction from CAL-2 predicted-first, then evaluate once.
+Open, in-scope (3-CAL), **wall confirmed from two sides** (exchange-sector
+scale-free §2h; decay-width numerically worst, this ledger). No Subgoal-2
+reversal. The honest landing point: `B(²H)` is a physically-motivated
+near-match (`g`-order + `√5` derived; unit external), `E_unit` is a 3-CAL
+function (not CAL-4) of open parity. Not a closed derivation — matching the
+§3f NEAR-MATCH ruling.
