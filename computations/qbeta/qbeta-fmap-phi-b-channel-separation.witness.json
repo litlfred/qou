@@ -1,0 +1,112 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-07T12:17:55.979379+00:00",
+  "commitSha": "e98e484ae0e9c1fd1689383aec08613be1cdb81a",
+  "assertions": [
+    {
+      "name": "G1a_unimodular_magnitude",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-25,
+      "source": "|Φ_b(z)| = 1 at real b, real z (pure phase; prop:phi-b-unitary-bar-odd)"
+    },
+    {
+      "name": "G1b_magnitude_derivative_flat",
+      "computed": 1.1479437019748901e-35,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-20,
+      "source": "d|Φ_b|/dz ≈ 0 — magnitude channel carries no variation"
+    },
+    {
+      "name": "G2_phase_derivative_nonzero",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "|d arg Φ_b/dz| ≥ 1e-3 (min observed 1.7737) — phase channel carries the variation"
+    },
+    {
+      "name": "G3_crossfactor_sigma_unitary",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-20,
+      "source": "|Φ_b(z₂)·conj Φ_b(z₁)| = 1 — witnesses IsSigmaUnitary.crossFactor"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 1992,
+  "computation": "qbeta-fmap-phi-b-channel-separation",
+  "scriptFile": "qbeta_fmap_phi_b_channel_separation_probe.py",
+  "scriptHash": "273c551c4aaf",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Fibre-side spec for the z→c_k f-map keystone (PR #3458). On the validated Faddeev Φ_b (phi_b_evaluator.py), confirms the fibre-saddle object separates into a FLAT magnitude channel (d|Φ_b|/dz ≈ 0) and a VARYING phase channel (d arg Φ_b/dz ≠ 0), and witnesses QOU.QBeta.IsSigmaUnitary.crossFactor (cross-point connecting factor of two σ-unitaries is σ-unitary) with σ = conjugation. Records the channel classification of the c_3 cross-anchor swing: PR #1821's dc_3/dq ≈ 4.66e6 impossibility is a MAGNITUDE-channel bound; the bar-odd c_3 source lives in the phase channel, which the bound does not touch. C14 anti-fitting: no comparison to c_k / Φ₁ / residue A / dc_3/dq / any physical constant; the 4.66e6 observable-q slope is a separate channel and is NOT reproduced here.",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "fibre_points": [
+      {
+        "point": "zeta_4 (b^2 = 1/4, q = i)",
+        "b_sq": "0.25",
+        "q": "(-7.0352072526480147402e-42 + 1.0j)",
+        "points": [
+          {
+            "z": "0.1",
+            "abs_Phi_b_minus_1": "0.000e+00",
+            "d_abs_dz": "0.000e+00",
+            "d_arg_dz": "1.773672",
+            "crossfactor_abs_minus_1": "0.000e+00"
+          },
+          {
+            "z": "0.2",
+            "abs_Phi_b_minus_1": "0.000e+00",
+            "d_abs_dz": "0.000e+00",
+            "d_arg_dz": "2.157240",
+            "crossfactor_abs_minus_1": "0.000e+00"
+          }
+        ]
+      },
+      {
+        "point": "zeta_6 (b^2 = 1/6, q = e^{iπ/3})",
+        "b_sq": "0.166666666667",
+        "q": "(0.5 + 0.86602540378443864676j)",
+        "points": [
+          {
+            "z": "0.1",
+            "abs_Phi_b_minus_1": "0.000e+00",
+            "d_abs_dz": "0.000e+00",
+            "d_arg_dz": "2.059236",
+            "crossfactor_abs_minus_1": "0.000e+00"
+          },
+          {
+            "z": "0.2",
+            "abs_Phi_b_minus_1": "0.000e+00",
+            "d_abs_dz": "1.148e-35",
+            "d_arg_dz": "2.431784",
+            "crossfactor_abs_minus_1": "0.000e+00"
+          }
+        ]
+      }
+    ],
+    "dz_step": "1.0e-6",
+    "evaluator": "computations/qbeta/phi_b_evaluator.py (battery-gated)",
+    "lean_witnessed": "QOU.QBeta.IsSigmaUnitary.crossFactor (FaddeevModularDouble.lean, sorry-free)",
+    "channel_classification_of_c3_swing": "phase (bar-odd / Im 𝔙 / decay); PR #1821 dc_3/dq≈4.66e6 is a magnitude-channel bound, silent on the phase channel",
+    "min_phase_derivative": "1.773672"
+  }
+}
