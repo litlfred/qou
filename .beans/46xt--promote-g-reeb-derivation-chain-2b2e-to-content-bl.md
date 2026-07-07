@@ -1,10 +1,11 @@
 ---
 # 46xt
 title: 'Promote g_reeb derivation chain (§2b–§2e) to content blocks: proposition (Lean exists) + §3b conjecture for the CWF linking postulate + appendix-mass-binding sync'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-07-07T03:19:35Z
-updated_at: 2026-07-07T03:19:35Z
+updated_at: 2026-07-07T03:55:11Z
 parent: il97
 ---
 
