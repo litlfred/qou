@@ -1,6 +1,6 @@
-Gravity in this model emerges as the back-reaction of the gauge fields on the CR manifold $M$. The geometry must curve to accommodate the tension of the $\mathrm{SU}(2)$ instantons. The Levi form $L_\varTheta$ and its coupling to the gauge curvature $F_A$ effectively replace the metric. The *variational bicomplex* on the infinite jet bundle organises this coupling. This bicomplex is the double complex $(\Omega^{p,q}(J^\infty E), d_H, d_V)$. The horizontal differential $d_H$ acts along the base $M$, while the vertical differential $d_V$ acts along the fibre.
+Gravity in this model emerges as the back-reaction of the gauge fields on the CR manifold $M$. The geometry curves to accommodate the tension of the $\mathrm{SU}(2)$ instantons. The Levi form $L_\varTheta$ and its coupling to the gauge curvature $F_A$ replace the metric. The *variational bicomplex* on the infinite jet bundle organises this coupling. This bicomplex is the double complex $(\Omega^{p,q}(J^\infty E), d_H, d_V)$. The horizontal differential $d_H$ acts along the base $M$, while the vertical differential $d_V$ acts along the fibre.
 
-Variation of the action $\mathfrak{S}_q$ ([$q$-Yang--Mills--Levi functional](#def:q-yang-mills-levi)) with respect to the Levi form $L_\varTheta$ yields the field equations:
+Variation of the action $\mathfrak{S}_q$ with respect to the Levi form $L_\varTheta$ yields the field equations:
 
 $$
   \frac{\delta \mathfrak{S}_q}{\delta L_\varTheta}

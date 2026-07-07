@@ -1,4 +1,4 @@
-Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with weight decomposition $\pi_H, \pi_V$ ([weight decomposition](#def:weight-decomposition)) and categorical $q$-exterior derivative $d_q$ ([categorical $q$-exterior derivative](#def:categorical-q-ext-deriv)). 
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with weight decomposition $\pi_H, \pi_V$ and categorical $q$-exterior derivative $d_q$. 
 
 Under the fibre functor $\tau$, the categorical and geometric definitions of $d_q$ coincide. The categorical vertical derivative $\pi_V \circ d$ corresponds to the geometric operation of contracting with the Reeb vector field $\xi$ and wedging with the contact form $\varTheta$. This correspondence forms a commuting square:
 
