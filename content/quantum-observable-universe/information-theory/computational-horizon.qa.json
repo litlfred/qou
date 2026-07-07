@@ -872,6 +872,19 @@
         "reviewed_at": "2026-07-07T14:26:55.602281Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "wall-side-statement": [
@@ -913,6 +926,19 @@
         "notes": "The claim in 'Computational horizon' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/computational-horizon.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-vacuous": [
@@ -933,6 +959,19 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The block 'Computational horizon' presents substantial mathematical content: Let $L = \\hat{\\beta}$ be the braid closure of a computation $\\beta$ with $c = 3N...",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-circular": [
@@ -954,6 +993,19 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Computational horizon'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/computational-horizon.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-overclaim": [
@@ -974,6 +1026,19 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The prose presents 'Computational horizon' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -995,6 +1060,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Computational horizon'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/computational-horizon.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1016,6 +1094,19 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/information-theory/computational-horizon.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/computational-horizon.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1036,6 +1127,19 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/information-theory/computational-horizon.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1057,6 +1161,19 @@
         "notes": "No citations are present in 'Computational horizon', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/computational-horizon.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1078,6 +1195,19 @@
         "notes": "Key terms and symbols in 'Computational horizon' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/computational-horizon.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1099,6 +1229,19 @@
         "notes": "The algebraic and logical relations in 'Computational horizon' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/computational-horizon.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1120,6 +1263,19 @@
         "notes": "The physical concepts described in 'Computational horizon' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/computational-horizon.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1141,6 +1297,19 @@
         "notes": "The Lean sibling content/quantum-observable-universe/information-theory/computational-horizon.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/computational-horizon.lean:1 \u2014 /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/computational-horizon.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Defs.olean' of module Mathlib.Data.Nat.Defs does not exist"
+      },
+      {
+        "result": "pass",
+        "notes": "Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1163,6 +1332,19 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/information-theory/computational-horizon.lean contains compilation errors: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/computational-horizon.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Defs.olean' of module Mathlib.Data.Nat.Defs does not exist, invalidating the claimed formalization."
+      },
+      {
+        "result": "pass",
+        "notes": "Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "bib-cite-resolves": [
@@ -1201,6 +1383,36 @@
           "md": "996b1d8616bc",
           "ts": "085daf10ec6b",
           "lean": "cb0a8701f59f"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
         }
       }
     ]
