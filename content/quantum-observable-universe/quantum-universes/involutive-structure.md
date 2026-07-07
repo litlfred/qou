@@ -1,13 +1,7 @@
-Let $(\mathbf{C}, \otimes, \mathbf{1})$ be an $R$-linear rigid monoidal
-category. An **involutive structure** (also called a
-*$\ast$-structure* or *dagger structure*) on $\mathbf{C}$ is
-a contravariant endofunctor
-$\dagger \colon \mathbf{C}^{\mathrm{op}} \to \mathbf{C}$ satisfying:
+Let $(\mathbf{C}, \otimes, \mathbf{1})$ be an $R$-linear rigid monoidal category. An **involutive structure** on $\mathbf{C}$ is a contravariant endofunctor $\dagger \colon \mathbf{C}^{\mathrm{op}} \to \mathbf{C}$ satisfying:
 
-1. **Identity on objects:** $X^{\dagger} = X$ for every
-   object $X$.
-2. **Involutivity:** $f^{\dagger\dagger} = f$ for every
-   morphism $f$, depicted:
+1. **Identity on objects:** $X^{\dagger} = X$.
+2. **Involutivity:** $f^{\dagger\dagger} = f$:
 
    ```tex
    \begin{equation}\label{eq:involutivity-cd}
@@ -18,9 +12,7 @@ $\dagger \colon \mathbf{C}^{\mathrm{op}} \to \mathbf{C}$ satisfying:
    \end{equation}
    ```
 
-3. **Monoidal compatibility:**
-   $(\mathrm{id}_X \otimes f)^{\dagger} = \mathrm{id}_X \otimes f^{\dagger}$, i.e.
-   the following square commutes:
+3. **Monoidal compatibility:** $(\mathrm{id}_X \otimes f)^{\dagger} = \mathrm{id}_X \otimes f^{\dagger}$:
 
    ```tex
    \begin{equation}\label{eq:monoidal-dagger-cd}
@@ -34,8 +26,7 @@ $\dagger \colon \mathbf{C}^{\mathrm{op}} \to \mathbf{C}$ satisfying:
    \end{equation}
    ```
 
-4. **Contravariance:**
-   $(g \circ f)^{\dagger} = f^{\dagger} \circ g^{\dagger}$:
+4. **Contravariance:** $(g \circ f)^{\dagger} = f^{\dagger} \circ g^{\dagger}$:
 
    ```tex
    \begin{equation}\label{eq:dagger-contravariance}
@@ -46,12 +37,7 @@ $\dagger \colon \mathbf{C}^{\mathrm{op}} \to \mathbf{C}$ satisfying:
    \begin{tikzcd}[column sep=3em]
      Z \ar[r, "g^{\dagger}"] & Y \ar[r, "f^{\dagger}"] & X
    \end{tikzcd}
-   \qquad\text{(contravariance)}
    \end{equation}
    ```
 
-For the Hopf algebra $A$ in a quantum universe, the antipode $S$ provides
-a natural involutive structure on the representation category via
-$f^{\dagger} = \int_A \circ \mu(S(f) \otimes -)$. In the
-$\mathrm{SU}(2)$ example, this is the Hilbert-space adjoint
-([dagger on SU(2)](#ex:dagger-su2)).
+For the Hopf algebra $A$ in a quantum universe, the antipode $S$ provides an involutive structure via $f^{\dagger} = \int_A \circ \mu(S(f) \otimes -)$.

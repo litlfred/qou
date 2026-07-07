@@ -1,32 +1,5 @@
-We fix two pieces of notation that will appear throughout.
+We fix two pieces of notation.
 
-**The fundamental object $V$.**
-In a rigid :refterm[monoidal category]{#monoidal-category} $\mathbf{C}$, a volume constraint — a
-non-degenerate epimorphism $\epsilon \colon \Lambda^2 V \to \mathbf{1}$,
-introduced in [Chapter 2](#chap:qou) — forces
-$\mathrm{rank}(V) = 2$.  (If $\mathrm{rank}(V) = 1$ then
-$\Lambda^2 V = 0$ and no such epimorphism exists; if
-$\mathrm{rank}(V) \geq 3$ then
-$\mathrm{rank}(\Lambda^2 V) \geq 3$ and the non-degenerate
-epimorphism to the rank-$1$ unit object $\mathbf{1}$ cannot exist.)
-In the SU(2) example
-([Example](#ex:rigid-monoidal-vect)), the object this singles out is
-$V = V_{1/2} \cong \mathbb{C}^2$, the defining
-(spin-$\tfrac{1}{2}$) representation. Abstractly, then, the
-*fundamental object* $V$ is the unique (up to isomorphism) simple
-object of categorical dimension $2$ — a dimension that is not an
-independent assumption but a consequence of the constraint. Every
-other simple object $V_j$ is an exterior or symmetric power of $V$, so
-$V$ generates $\mathbf{C}$ as a tensor category.
+**The fundamental object $V$.** A volume constraint $\epsilon \colon \Lambda^2 V \to \mathbf{1}$ forces $\mathrm{rank}(V) = 2$. In $\mathrm{SU}(2)$, this singles out $V = V_{1/2} \cong \mathbb{C}^2$. Abstractly, $V$ is the unique simple object of categorical dimension $2$. Every other simple object is an exterior or symmetric power of $V$. Thus $V$ generates $\mathbf{C}$ as a tensor category.
 
-**The emergent gauge group $G = \mathrm{Aut}^{\otimes}(\tau)$.**
-No group is postulated *a priori*; the gauge group *emerges* from
-$(\mathbf{C}, \tau)$. Let $\tau \colon \mathbf{C} \to R\text{-}\mathrm{Mod}$
-be the forgetful functor. Concretely, a symmetry is a family of
-$R$-module automorphisms
-$\{g_X \colon \tau(X) \xrightarrow{\sim} \tau(X)\}_{X \in \mathbf{C}}$
-compatible with the tensor product; the *tensor automorphism group*
-$G = \mathrm{Aut}^{\otimes}(\tau)$ collects all such families — the
-monoidal natural automorphisms of $\tau$. By Tannaka--Krein duality,
-$G$ is an affine group scheme over $R$, and $\tau$ establishes a
-monoidal equivalence $\mathbf{C} \simeq \mathrm{Rep}(G)$.
+**The emergent gauge group $G$.** The gauge group emerges from $(\mathbf{C}, \tau)$. Let $\tau \colon \mathbf{C} \to R\text{-}\mathrm{Mod}$ be the forgetful functor. A symmetry is a family of $R$-module automorphisms compatible with the tensor product. The tensor automorphism group $G = \mathrm{Aut}^{\otimes}(\tau)$ collects these families. By Tannaka--Krein duality, $G$ is an affine group scheme over $R$, and $\mathbf{C} \simeq \mathrm{Rep}(G)$.
