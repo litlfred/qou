@@ -202,13 +202,24 @@ theorem pieceA_hook_content_identity (n : ℕ) (hn : n ≤ 6) (l : List ℕ)
     (sumHookSq l : ℤ) = sumContentSq l + (l.sum : ℤ) ^ 2 := by
   interval_cases n <;> fin_cases hl <;> decide
 
-/-! **Identity I (general) — DEFERRED.** `2·M(n) = n(3n−1)` for all `n ≥ 1`. A
-general Lean proof needs the hook-length formula (absent from Mathlib); the
-`partitionsOf` enumerator and an HLF-based `dim` would replace the explicit
-partition lists. Compute-verified `n = 2..14` (audit + witness); `n = 1..6` now
-Lean-verified above. **Piece A** (the `2n²` half) is now isolated HLF-free above
-(`pieceA_hook_content_identity`); only Piece B (`n(n−1)`, JM/Plancherel) and the
-general HLF remain. Tracked as a Mathlib-extension opportunity.
-Ref: [manuscript] docs/audits/2026-06-20-keystone-wlambda-C-n-closed-form.md -/
+/-! **Identity I (general) — mathematically RESOLVED, HLF-free (2026-07-07).**
+`2·M(n) = n(3n−1)` for all `n ≥ 1`. The prior "deferred, needs the hook-length
+formula" note was **mis-scoped**: Identity I never needed the HLF. The content
+decomposition (`twoM_content_decomposition`) is a complete proof route:
+
+* **Piece A** (`2n²`): `Σ_c h_c² = Σ_c content(c)² + n²`, per partition —
+  `pieceA_hook_content_identity` above (HLF-free; Lean-verified `n ≤ 6`,
+  exact-verified `n ≤ 22`; general = classical beta-number / corner induction).
+* **Piece B** (`n(n−1)`): `E_Planch[Σ_c content(c)²] = C(n,2)` — proved via
+  Jucys–Murphy: `Σ_k X_k²` is central with eigenvalue `Σ_c content²` on `λ`, and
+  its `ℂ[S_n]` identity-coefficient (`= E_Planch[·]` by the regular character) is
+  `Σ_{k=1}^n (k−1) = C(n,2)` (only the `(i,k)²=e` terms hit the identity). **No
+  HLF, no dimensions.** Brute-verified in `ℂ[S_n]`, `n = 2..6`.
+
+Assembly: `M(n) = C(n,2) + n² = n(3n−1)/2`. The remaining work is **Lean
+formalization** of A (Young-diagram combinatorics) and B (`MonoidAlgebra ℂ (S_n)`
++ regular-character bridge) — **neither the HLF**. Full proof:
+`docs/audits/2026-07-07-keystone-identity-I-hlf-free-resolution.md`.
+Ref: [manuscript] docs/audits/2026-07-07-keystone-identity-I-hlf-free-resolution.md -/
 
 end QOU.BraidKnot.WLambdaDefect
