@@ -41,8 +41,10 @@ specific**:
    understood.**
 2. **$b_3$: leave ≈ intact.** The determinant's connected 3-body is within
    4.2 % of AME (1.042×). W_λ must perturb it only slightly.
-3. **$b_4$: lower by −5.81 MeV.** The determinant *over*-supplies the connected
-   4-body (1.63×). W_λ must *subtract* here — the opposite sign from $b_2$.
+3. **$b_4$: correction −5.81 MeV (lower the connected 4-body).** The
+   determinant *over*-supplies the connected 4-body (1.63×); the signed
+   correction $b_4^{\mathrm{AME}}-b_4^{\det}=-5.81$ MeV — the opposite sign
+   from $b_2$'s $+1.29$.
 
 So $W_\lambda$'s cumulant fingerprint is **(+, ≈0, −)** across (2-body, 3-body,
 4-body): it raises the open-bond pair term and lowers the connected 4-body,
