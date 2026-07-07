@@ -1,0 +1,46 @@
+{
+  "computation": "qbeta-s-complex-volume-rigidity",
+  "description": "S=Q_\u03b2/E\u2080 vs complex volume \ud835\udd19(K): classical-\ud835\udd19 reading pruned (anchor-invariant vs cross-anchor swing, matching SRigidityPrune.lean); quantum-\ud835\udd19_q (Faddeev \u03a6_b) survivor.",
+  "audit_only": true,
+  "tier": "structural-exact + exploratory (prune proved; identification exploratory)",
+  "computedAt": "2026-07-07T14:26:34.872048+00:00",
+  "commitSha": "7a33411b615501c9eec008455fcce91abfdeb041",
+  "engine": "mpmath",
+  "engineVersion": "1.3.0",
+  "scriptFile": "qbeta_s_complex_volume_rigidity_probe.py",
+  "scriptHash": "d4c833d466d6",
+  "assertions": [
+    {
+      "name": "S_swings_cross_anchor",
+      "passed": true
+    },
+    {
+      "name": "sensitivity_exceeds_1e5_smooth_real_obstruction",
+      "passed": true
+    },
+    {
+      "name": "classical_volume_is_anchor_invariant",
+      "passed": true
+    },
+    {
+      "name": "pure_function_of_classical_vol_cannot_match_swing",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "S_proton": "908.4",
+    "S_muon": "886.8",
+    "S_cross_anchor_swing": "0.02436",
+    "log_sensitivity_order": "2.111e+6",
+    "best_classical_vol_candidate": "none clean",
+    "verdict": "Classical-\ud835\udd19 reading of S is PRUNED (scope-b, proved invariant SRigidityPrune.no_anchor_invariant_realizes_swing): \ud835\udd19(K)=Vol+iCS is a fixed-knot topological invariant \u21d2 anchor-invariant, so any pure f(\ud835\udd19(K)) is constant across anchors and cannot reproduce S's 2.44% cross-anchor swing (~2e6 log-sensitivity, the dc_3/dq obstruction). The SURVIVOR is the QUANTUM complex volume \ud835\udd19_q(K) \u2014 Faddeev \u03a6_b at q\u2080, anchor-dependent by construction \u2014 i.e. the Ohtsuki asymptotic series around \ud835\udd19 (\u03ba_k ladder \u2248 c_k). No numerical identification to a classical volume is clean, consistent with S being the quantum object. Deriving S still \u27fa substrate-deriving CAL-2 (\ud835\udd07_\u03b2, Q_\u03b2=\u210f/\ud835\udd07_\u03b2) = Subgoal-2 (declined). No fit; no c_k value; no wiring; no tier change."
+  },
+  "context": {
+    "axis": "z->c_k f-map keystone: odd-channel S vs complex volume",
+    "lean": "QOU.QBeta.SRigidity.no_anchor_invariant_realizes_swing",
+    "S_definition": "S = Q_\u03b2/E\u2080 = a_1/\u03ba_(2,1); heat-fmap \u00a72 (PR #1752)",
+    "survivor_route": "quantum \ud835\udd19_q(K) via Faddeev \u03a6_b; Ohtsuki series; conj:binding-qbeta-complex-volume",
+    "cal2_wall": "S carries Q_\u03b2=\u210f/\ud835\udd07_\u03b2 (CAL-2); derivation \u27fa Subgoal-2 (declined 2026-05-08)"
+  }
+}
