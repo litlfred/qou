@@ -3,12 +3,12 @@
   "description": "B3-U (bean z61d): u-side transfer gates U1/U2/U3 pre-stated in scope doc \u00a73 (merged PR #3455). Tests whether fibre parity (KC15/KC16) descends to the observable c_k via re-expansion in u = b*hbar_q^2. Exact symbolic; no anchors.",
   "audit_only": true,
   "tier": "structural-exact (symbolic; no fit, no anchors)",
-  "computedAt": "2026-07-07T11:46:22.212803+00:00",
-  "commitSha": "9aa93b2f585a1dae2c686cc117c165cdaa3e1c03",
+  "computedAt": "2026-07-07T11:54:15.776288+00:00",
+  "commitSha": "09dcb64c01d8cdaf7d33ab9c548211b2f8c2cef0",
   "engine": "sympy",
   "engineVersion": "1.14.0",
   "scriptFile": "qbeta_b3u_uside_transfer_probe.py",
-  "scriptHash": "ca26d7aa5759",
+  "scriptHash": "3c1c2f7c8911",
   "assertions": [
     {
       "name": "sanity_bar_u_equals_q2_u",
