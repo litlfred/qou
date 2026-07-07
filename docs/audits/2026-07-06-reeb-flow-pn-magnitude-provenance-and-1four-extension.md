@@ -188,6 +188,58 @@ algebra q-integers) is exhausted-negative; a successful bridge therefore
 needs either a genuinely new derived energy (e.g. counit/transition-sector)
 or the conclusion that the linear law is not fundamental.
 
+**Excluded sources (corpus record):**
+
+| source | disposition |
+|---|---|
+| m_e × bond-algebra q-integers (single factor) | §3d exhausted-negative |
+| **counit / transition sector** | **excluded as a magnitude source** — [`rho_k_counit_defect_form.py`](../../computations/rho_k_counit_defect_form.py) (bean `p7l6`): the counit defect $\varepsilon(\beta_K)-\varepsilon(\beta_K^{\mathrm{vac}})$ supplies the binding *sign* robustly (durable, structural) but its *magnitude explodes with $A$* (deuteron defect $\approx -30.3$ vs target $-4.35$; ratio $7\to515$ across the light series). A per-pair $E_{\text{unit}}$ is $A$-independent, so an $A$-exploding functional cannot be its source. The counit's contribution is the sign, not the scale. |
+
+So the two natural "new derived energy" routes flagged above are now both
+constrained: the counit route is A-exploding (excluded), leaving the
+exchange sector's own $m_e$-scale bridge (still open) or the conclusion
+that the linear law is not fundamental. The two-sector split (§2g) sharpens
+which sector the scale must come from.
+
+## 2g. Two-sector split of the pn-pair binding — trace binding is decoherence (tranche 5)
+
+The deuteron $b_2 = 2.2246$ sits *between* the exchange-sector marginal
+value ($-E_0\ln(1-g^2) \approx 0.93$) and the trace-sector suppression
+($\alpha\ln(\mathrm{tr}_{\text{free}}/\mathrm{tr}_{\text{atom}}) \approx 3.9$).
+Which sector does it live in? [`pn_pair_two_sector_split.py`](../../computations/probes/pn_pair_two_sector_split.py)
+splits the trace suppression into its two physically distinct parts using
+the Frobenius/Markov $\sharp$-Gram machinery (reusing `gram_norm_binding_probe`),
+for the atom word (with pn crossing) vs the free word:
+
+- $B_{\text{scalar}} = \alpha\ln(T_{\text{free}}/T_{\text{atom}})$ — total
+  collapse of the **scalar (identity) channel** (what Term 1 counts);
+- $B_{\text{norm}} = \tfrac{\alpha}{2}\ln(G_{\text{free}}/G_{\text{atom}})$ —
+  **genuine loss of total $\sharp$-length** (all channels);
+- $B_{\text{redist}} = B_{\text{scalar}} - B_{\text{norm}}$ — **decoherence**:
+  scalar amplitude that moved off-diagonal without leaving the total norm.
+
+| iso | $B_{\text{scalar}}$ | $B_{\text{norm}}$ | $B_{\text{redist}}$ | $B_{\text{exch}}$ | AME |
+|---|--:|--:|--:|--:|--:|
+| ²H | 3.890 | **−0.023** | 3.913 | 0.932 | 2.2246 |
+| ³H | 9.068 | +0.108 | 8.960 | 0.932 | 8.482 |
+| ³He | 6.797 | −0.231 | 7.028 | 0.932 | 7.718 |
+
+**Finding (measured, not asserted; scope-(a)).** The **genuine
+Frobenius-norm loss is $\approx 0$** for every isotope
+($|B_{\text{norm}}| \le 0.23$ MeV, sign-flipping under the p↔n mirror) —
+the word's total $\sharp$-length is *conserved* under binding. Therefore
+the trace sector's apparent 3.9 MeV binding is **$\approx$ entirely
+decoherence** (norm-conserving redistribution of scalar amplitude into
+off-diagonal channels), **not** genuine size reduction. This is the
+measured form of the §2e/§3c claim that Term 1 over-counts by booking
+trace decoherence as energy — now quantified: the over-count is the whole
+of it. Consequently $b_2 = 2.2246$ lives in **neither** pure sector — not
+in the $\approx 0$ norm-loss sector, not in the 3.9 MeV scalar-collapse
+sector — but at the exchange-sector **linear** value $5g = 2.234$
+(the reeb-flow tier). The split independently corroborates the tier
+choice: binding is an exchange-sector object, and the trace suppression
+that a naive Term-1 form would bind on is a decoherence artifact.
+
 ## 3. [1⁴] extension at the landed magnitude (new probe)
 
 [`b4_1four_reeb_flow_magnitude.py`](../../computations/probes/b4_1four_reeb_flow_magnitude.py)
