@@ -38,19 +38,35 @@ factor does not vanish, so the corpus "Φ_q" ≠ `Φ_b`.
 ## 2. Why this is the Q_β decay-face inaccuracy
 
 Per the two-saddle scope, Q_β = Im 𝔙 (bar-odd, sinh, decay) lives on the
-**root-of-unity / Faddeev** saddle. Two facts make the missing dual factor
-exactly the missing decay structure:
+**root-of-unity / Faddeev** saddle.
 
-- **The modular double `b ↔ b^{−1}` IS the bar involution `q ↔ q^{−1}`.**
-  `Φ_b = Φ_{b^{−1}}` is the S-duality; its `b↔b^{−1}`-**symmetric** part is
-  **bar-even (cosh)** = the Rogers / real-q / *mass* face, and its
-  **antisymmetric** part is **bar-odd (sinh)** = the CS / *decay* face. A
-  single-product form (no `b^{−1}`) has no modular double, hence **no
-  genuine bar-odd/CS content** — it can only ever model the bar-even/mass
-  face. Using it for the Q_β decay face is a category error.
+> **Correction (2026-07-07, self-review).** An earlier draft of this section
+> claimed "the modular double `b ↔ b^{−1}` **is** the bar involution
+> `q ↔ q^{−1}`," and that the compact single product "has no genuine bar-odd
+> content." **Both are wrong** and are retracted. With `q = e^{2πi b²}`:
+> `b ↔ b^{−1}` (modular / S-duality) maps `q → q̃` (the modular *dual*), **not**
+> `q → q^{−1}`; the bar `q → q^{−1}` corresponds to `b → i b`. They are
+> **distinct** involutions. And the compact form **is** bar-asymmetric under
+> `q ↔ q^{−1}` (`∏(1−q^{−k}z)^{−1}` at `q` ≠ at `q^{−1}`), so it does carry
+> bar-odd content. The claims below are the corrected, conservative ones.
+
+Two facts that **do** hold:
+
+- **The compact form lacks the modular double.** `Φ_b` is a *ratio* over
+  both `b` and `b^{−1}` (`Φ_b = Φ_{b^{−1}}`, the S-duality that pairs `q`
+  with `q̃`); the compact `∏(1−q^{−k}z)^{−1}` has the `b`-product only. The
+  missing `b^{−1}` factor is the **modular / quantum-Teichmüller (root-of-
+  unity) structure** — the analytic content of the Faddeev saddle that the
+  compact form cannot reproduce, regardless of its (nonzero) bar-odd part.
 - **The kernel is literally `sinh(zb)·sinh(zb^{−1})`** — the q-hyperbolic
-  sinh structure. The bar-odd (sinh) face of Q_β is carried by this kernel;
-  the compact product throws it away.
+  sinh structure, symmetric under the *modular* `b ↔ b^{−1}`. The compact
+  product throws away the `b^{−1}` factor and so the modular structure.
+
+The **bar-even/bar-odd (cosh/sinh) split** — the object the Lean
+`bar_parity_decomposition` proves and `prop:phi-b-bar-parity-decomposition`
+records — is the **bar `q ↔ q^{−1}`** parity, a *separate* structure from the
+modular double. Both are features of `Φ_b`; the compact form shares the bar
+parity but not the modular double.
 
 Corroborating corpus evidence that the Φ layer was already known-shaky:
 
