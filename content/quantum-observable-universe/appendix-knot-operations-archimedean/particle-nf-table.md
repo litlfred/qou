@@ -61,9 +61,9 @@ own knot type.
    any crossing yields the identity (photon) plus an
    $\mathrm{HA}$-weighted crossing.
 
-6. **Trefoil vs unknot test.**  Using full trefoil words
-   $\sigma_0\sigma_1\sigma_0$ as quark crossings (Model T)
-   gives $\Delta \times E_0 = -2.51$ MeV, overshooting
-   CODATA by $3\times$.  Single-crossing unknots (Model S)
-   give $\Delta \times E_0 = -0.782$ MeV, matching CODATA
-   exactly (witness: `trefoil-quark-nucleon-nf.witness.json`).
+6. **Single-crossing unknot quarks.**  Each quark enters as a
+   single-crossing unknot rather than a full trefoil word
+   $\sigma_0\sigma_1\sigma_0$: the trefoil assignment triples
+   $|\Delta \times E_0|$ to $-2.51$ MeV, whereas the
+   single-crossing assignment gives $\Delta \times E_0 = -0.782$ MeV,
+   in agreement with CODATA.
