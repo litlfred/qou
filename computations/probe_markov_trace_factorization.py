@@ -65,7 +65,8 @@ from markov.markov_trace_canonical import tr_M_word, tr_M_element  # noqa: E402
 from hecke_symbolic import (  # noqa: E402
     SymbolicHeckeElement, SymbolicHeckeDivision, HA as H_full,
 )
-from qou_substrate import Q_50_DIGIT_STR, WitnessBuilder  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402 (bean yfvb: muon under ideal anchor)
+from qou_substrate import WitnessBuilder  # noqa: E402
 from qou_substrate.precision import COMPUTE_DPS, OUTPUT_DPS  # noqa: E402
 
 mp.mp.dps = COMPUTE_DPS + 15
