@@ -1,0 +1,81 @@
+{
+  "computation": "qbeta-borel-pade-action",
+  "description": "Borel\u2013Pad\u00e9 of 4_1 Ohtsuki series: locate the instanton action A (f-map Stokes datum); test complex \ud835\udd19=Vol\u00b1iCS.",
+  "audit_only": true,
+  "tier": "structural-exact (Vol recovery) + numerical (Borel-Pad\u00e9 pole, order-limited)",
+  "computedAt": "2026-07-07T16:41:36.236455+00:00",
+  "commitSha": "af80b7ac0d27049e1c7818ba4159a7282670f9f2",
+  "engine": "mpmath",
+  "engineVersion": "1.3.0",
+  "scriptFile": "qbeta_borel_pade_action.py",
+  "scriptHash": "724e0801b705",
+  "assertions": [
+    {
+      "name": "vol41_recovered",
+      "passed": true
+    },
+    {
+      "name": "kappa_low_stable_vs_merged",
+      "passed": true
+    },
+    {
+      "name": "kappa_all_positive_real_singularity",
+      "passed": true
+    },
+    {
+      "name": "kappa_monotone_growing",
+      "passed": true
+    },
+    {
+      "name": "action_real_positive_order_0p7",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "vol41_recovered": "2.02988321281930725",
+    "kappa": [
+      "0.554216472405",
+      "0.731081807488",
+      "2.65452705695",
+      "13.0947749264",
+      "84.6421656274",
+      "676.946659075",
+      "6443.58191672",
+      "71114.3971615",
+      "895302.196259",
+      "12105353.917",
+      "259095274.914"
+    ],
+    "action_A_richardson": "0.693749273902",
+    "A_magnitude": "0.693749273902",
+    "A_is_complex": false,
+    "A_ratio_estimates": {
+      "2": "1.5161545",
+      "3": "0.82622832",
+      "4": "0.81086604",
+      "5": "0.77353733",
+      "6": "0.75021124",
+      "7": "0.73540256",
+      "8": "0.72486947",
+      "9": "0.71487547",
+      "10": "0.73959192",
+      "11": "0.51393794"
+    },
+    "pade_nearest_poles_by_M_froissart": {
+      "3": "0.71370437",
+      "4": "0.048688177",
+      "5": "(0.048642947 + 0.12134971j)"
+    },
+    "closest_candidate": "2/e",
+    "closest_rel": "0.057097",
+    "corrects_3478": "order-6 'complex |A|\u22480.5' was fit noise; real \u22480.7",
+    "verdict": "CORRECTION of #3478: the 4_1 resurgence action is REAL-POSITIVE, not complex. Clean order-11 \u03ba ladder (dps 220, Vol rec rel 5.97e-29) has \u03ba_k ALL POSITIVE and monotone growing \u21d2 a single real-positive dominant Borel singularity (a complex-conjugate pair would oscillate the \u03ba_k signs). The large-order ratio A_k=k\u00b7\u03ba_{k-1}/\u03ba_k Richardson-extrapolates to A\u22480.693749 (closest framework value 2/e, rel 0.0571). The #3478 order-6 'complex/oscillating |A|\u22480.5' read was low-order fit noise (\u03ba_4,5 imprecise at dps 100). Borel\u2013Pad\u00e9 nearest-pole is Froissart-unstable (jumps 0.71\u21920.049\u21920.049+0.12j across M) \u2014 reported as cross-check, NOT used for A. A is the f-map's Stokes datum. Still order-limited (\u03ba to 11); an exact saddle expansion to ~20 orders would pin the candidate match. No fit to QOU data; no c_k value; no wiring; no tier change."
+  },
+  "context": {
+    "axis": "z->c_k f-map keystone: Borel-Pad\u00e9 instanton action",
+    "prior": "PR #3474 (f-map=resurgence), #3478 (A oscillates, preliminary)",
+    "complex_action_meaning": "complex A \u21d4 \u00b1Vol conjugate connections \u21d4 \ud835\udd19=Vol\u00b1iCS",
+    "next": "~20 Ohtsuki orders (exact saddle expansion) to pin the candidate match"
+  }
+}
