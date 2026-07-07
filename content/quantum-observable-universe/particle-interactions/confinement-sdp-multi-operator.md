@@ -1,4 +1,4 @@
-**Remark.** Let $P_1$ and $P_2$ be [confined particles](#def:confined-particle) whose composite satisfies the [confinement SDP](#prop:confinement-sdp). Their **binding subword** is
+**Remark.** Let $P_1$ and $P_2$ be confined particles whose composite satisfies the confinement SDP. Their **binding subword** is
 
 $$
   W_{\mathrm{bind}}
@@ -17,4 +17,4 @@ $$
   \Phi^* \cdot \bigl(y_0^* I + \textstyle\sum_\lambda y_\lambda^* \pi_\lambda - T\bigr) \;=\; 0
 $$
 
-is a matrix equation, not a sum of scalar complementary-slackness relations. Its rank counts the **active dual support**—the number of Wedderburn blocks simultaneously coupled at the optimum. When the rank exceeds one, the confined state is a sum of operators from distinct blocks. The `electron-shell-ilp` witness observes this when it reports electrons alternating between $\sigma_1^{-1}$ and $\sigma_0^{-1}$: these are two tight dual blocks at the same $\Phi^*$.
+is a matrix equation. Its rank counts the **active dual support**—the number of Wedderburn blocks simultaneously coupled at the optimum. When the rank exceeds one, the confined state is a sum of operators from distinct blocks.

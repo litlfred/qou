@@ -1,6 +1,5 @@
-The **demand profile** of a derived atom ([derived atom](#def:derived-atom))—the set of negative NF coefficients—is the categorical diagnostic of stability.
-
-**Definition.** Let $\mathcal{A}(Z, N) = \sum_w c_w \cdot w$ be a derived atom in normal form. Its **demand profile** is
+**Definition.**
+*Let $\mathcal{A}(Z, N) = \sum_w c_w \cdot w$ be a derived atom in normal form. Its **demand profile** is*
 
 $$
   \mathrm{dem}(\mathcal{A})
@@ -10,6 +9,6 @@ $$
   \mathrm{NF}(B_A) \times \mathbb{R}_{<0}.
 $$
 
-The **demand magnitude** is $|\mathrm{dem}| = \sum_{c_w < 0} |c_w|$.
+*The **demand magnitude** is $|\mathrm{dem}| = \sum_{c_w < 0} |c_w|$.*
 
-**Archimedean specialisation (§7c).** This block invokes real- or complex-analytic constructs (observables, bounds, numerical evaluation). Categorical identities remain valid over an abstract coefficient ring; their archimedean realisation is specialised here.
+**Archimedean specialisation.** This block invokes real- or complex-analytic constructs. Categorical identities remain valid over an abstract coefficient ring; their archimedean realisation is specialised here.
