@@ -1,7 +1,6 @@
 ## Setup
 
-The $^4\mathrm{He}$ bound state admits three primary compositional
-channels (each summing to $A = 4$ nucleons):
+The $^4\mathrm{He}$ bound state admits three primary compositional channels summing to $A = 4$ nucleons:
 
 | channel | constituents | $\sum \Delta_\mathrm{cat}$ (MeV) | residual $t_i$ (MeV) |
 |---|---|---:|---:|
@@ -9,34 +8,24 @@ channels (each summing to $A = 4$ nucleons):
 | $\mathrm{T} \oplus p$             | $(1,2) + (1,0)$ | $7.83$ | $\mathbf{20.38}$ |
 | ${}^3\mathrm{He} \oplus n$        | $(2,1) + (0,1)$ | $7.04$ | $\mathbf{21.18}$ |
 
-The **channel binding residual** is
+We define the **channel binding residual**:
 $$
-  t_i \;:=\; \Delta_\mathrm{cat}({}^4\mathrm{He}) \;-\; \sum_{j \in \mathrm{channel}\, i} \Delta_\mathrm{cat}(j)
+  t_i \;:=\; \Delta_\mathrm{cat}({}^4\mathrm{He}) \;-\; \sum_{j \in \mathrm{channel}\, i} \Delta_\mathrm{cat}(j).
 $$
-— the binding that the magic-shell coupling
-must explain *beyond* the free-constituent sum. Empirical anchors
-loaded from
-[`magic-shell-empirical-instantiation.witness.json`](computations/magic-shell-empirical-instantiation.witness.json).
+This measures the binding that the magic-shell coupling must explain beyond the free constituents. We load the empirical anchors from [`magic-shell-empirical-instantiation.witness.json`](computations/magic-shell-empirical-instantiation.witness.json).
 
 ## LP formulation
 
-Apply the
-[`prop:operator-selection-lp`](#prop:operator-selection-lp)
-canonical form with $t \in \mathbb{R}^3$ the residual vector above,
-$G = I_3$ (channels orthogonal at leading order — corrections from
-shared sub-braids are sub-percent), and
+We apply the [`prop:operator-selection-lp`](#prop:operator-selection-lp) canonical form. The vector $t \in \mathbb{R}^3$ holds the residuals. The matrix $G = I_3$ because the channels are orthogonal at leading order. Sub-braid corrections are sub-percent. We set:
 $$
   n_\mathrm{target} \;=\; \Delta_\mathrm{coupling}(2, 2)
   \;=\; \Delta_\mathrm{cat}({}^4\mathrm{He}) - 2\,\Delta_\mathrm{cat}({}^3\mathrm{He})
-  \;=\; 13.197\,\mathrm{MeV}
+  \;=\; 13.197\,\mathrm{MeV}.
 $$
-(the doubly-magic anchor from ).
 
 ## Solution
 
-The LP solves uniquely (strong duality holds, duality gap $= 0$;
-$\mathrm{primal\_obj} = \mathrm{dual\_obj} = 268.949$). The primal
-weights $x^\star$ and dual shadow prices $y^\star$ are:
+The LP solves uniquely with a duality gap of $0$. We have $\mathrm{primal\_obj} = \mathrm{dual\_obj} = 268.949$. The primal weights $x^\star$ and dual shadow prices $y^\star$ are:
 
 | channel $i$ | $x^\star_i$ | $y^\star_i$ | status |
 |---|---:|---:|---|
@@ -44,49 +33,21 @@ weights $x^\star$ and dual shadow prices $y^\star$ are:
 | $\mathrm{T} \oplus p$             | $13.197$   | $0$              | primal-saturating |
 | ${}^3\mathrm{He} \oplus n$        | $0$        | $0.796$          | active |
 
-with $y_0^\star = 20.380$. The **active set** —
-constraints whose dual variable is positive — is therefore
+We have $y_0^\star = 20.380$. The **active set** contains the constraints with a positive dual variable:
 $$
   \mathcal{A}({}^4\mathrm{He}) \;=\; \{\,\mathrm{D} \oplus \mathrm{D},\; {}^3\mathrm{He} \oplus n\,\}.
 $$
 
 ## Proposition
 
-**(Conditional on
-[`he4-sdp-compositional-canonical evaluation.witness.json`](computations/he4-sdp-compositional-canonical evaluation.witness.json).)**
-For the $^4\mathrm{He}$ operator-selection LP defined above:
-
-1. **Unique primal optimum** at the $\mathrm{T} \oplus p$ channel:
-   $x^\star_{\mathrm{T} \oplus p} > 0$ and $x^\star_i = 0$ for all
-   $i \neq \mathrm{T} \oplus p$.
-2. **Active set** $\mathcal{A}({}^4\mathrm{He}) =
-   \{\,\mathrm{D} \oplus \mathrm{D},\; {}^3\mathrm{He} \oplus n\,\}$
-   (dual-tight constraints).
-3. **Dual ordering**
-   $y^\star_{\mathrm{D} \oplus \mathrm{D}} >
-    y^\star_{{}^3\mathrm{He} \oplus n} >
-    y^\star_{\mathrm{T} \oplus p} = 0$.
+**(Conditional on [`he4-sdp-compositional-canonical evaluation.witness.json`](computations/he4-sdp-compositional-canonical evaluation.witness.json).)**
+For the $^4\mathrm{He}$ operator-selection LP:
+1. **Unique primal optimum:** The system selects the $\mathrm{T} \oplus p$ channel with $x^\star_{\mathrm{T} \oplus p} > 0$ and $x^\star_i = 0$ for all $i \neq \mathrm{T} \oplus p$.
+2. **Active set:** The dual-tight constraints are $\mathcal{A}({}^4\mathrm{He}) = \{\,\mathrm{D} \oplus \mathrm{D},\; {}^3\mathrm{He} \oplus n\,\}$.
+3. **Dual ordering:** We have $y^\star_{\mathrm{D} \oplus \mathrm{D}} > y^\star_{{}^3\mathrm{He} \oplus n} > y^\star_{\mathrm{T} \oplus p} = 0$.
 
 ## Interpretation
 
-The LP "uses" the $\mathrm{T} \oplus p$ decomposition to satisfy
-the binding constraint (it has the smallest per-unit cost — the
-smallest residual after subtracting free constituents). But the
-**shadow prices identify $\mathrm{D} \oplus \mathrm{D}$ as the
-most binding-receptive sub-braid**: a unit perturbation of the
-deuteron-pairing channel would change the primal binding cost by
-$3.778$ MeV per MeV — five times more than the
-${}^3\mathrm{He} \oplus n$ channel and infinitely more than the
-$\mathrm{T} \oplus p$ channel (whose shadow price is zero, since
-it is the primal-saturating decomposition).
+The LP selects the $\mathrm{T} \oplus p$ decomposition to satisfy the binding constraint because it has the smallest residual. However, the shadow prices identify $\mathrm{D} \oplus \mathrm{D}$ as the most binding-receptive sub-braid. A unit perturbation of the deuteron-pairing channel changes the primal binding cost by $3.778$ MeV. This is five times the effect of the ${}^3\mathrm{He} \oplus n$ channel.
 
-This **two-tier structural fingerprint** is the channel-level
-analogue of the Wedderburn-block fingerprint
-[`prop:he4-two-row-dominance`](#prop:he4-two-row-dominance): both
-identify a $q$-symmetric deuteron-pairing structure as the
-load-bearing geometry of the doubly-magic
-magic-shell coupling, while
-$\mathrm{T} \oplus p$ provides the energetic accounting. The
-remark
-`rem:he4-magic-shell-fingerprint`
-makes this connection explicit.
+This two-tier fingerprint mirrors the Wedderburn-block fingerprint of [`prop:he4-two-row-dominance`](#prop:he4-two-row-dominance). Both identify a $q$-symmetric deuteron-pairing structure as the load-bearing geometry of the magic-shell coupling. The $\mathrm{T} \oplus p$ channel provides the energetic accounting. We make this connection explicit in `rem:he4-magic-shell-fingerprint`.
