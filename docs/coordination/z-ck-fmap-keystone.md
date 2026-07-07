@@ -128,7 +128,13 @@ Outcome semantics: PASS = I-A's shadow is *not excluded* (scope-(a) positive;
 no c_k value, nothing wired); any KILL → record scope-(a) refutation row and
 fall back to I-B / Z3 carriers.
 
-### Outcome (2026-07-06, run after pre-statement commit `c9b873b6`)
+### Outcome (2026-07-06, run after pre-statement commit `c9b873b6`) — ⚠ MECHANISM CORRECTED 2026-07-07
+
+> **Correction:** this run used P-C15's erroneous `a₁` transcription. The scope-(a)
+> conclusion (raw slots cannot source the odd channel) STANDS, but the mechanism is
+> corrected: all slot ratios are **exactly bar-invariant** (α₁ bar-EVEN, zero odd
+> part), not non-monomial. K1a/K1b/golden-locus unchanged. See
+> [correction audit](../audits/2026-07-07-pc15-a1-transcription-error-correction.md).
 
 **I-A KILLED on K2 (scope-(a)); K1a/K1b structure SURVIVES and transfers.**
 Probe [`qbeta_c4qz_fourone_operator_q1_shadow_probe.py`](../../computations/qbeta/qbeta_c4qz_fourone_operator_q1_shadow_probe.py)
@@ -191,7 +197,10 @@ canonical candidates for clean parity. Decidable checks (exact, radicals):
 
 ### 4-ter outcomes (2026-07-06, runs after pre-statement commit `44b0b82c`)
 
-- **T1 (`7vfu`) KILLED (scope-(a)).** Neither `D(q)` nor `S(q)` on the golden
+- **T1 (`7vfu`) — KILL RETRACTED 2026-07-07 → SURVIVOR** (wrong-`a₁` artifact; with the
+  certificate coefficient, `D(q)` is **exactly bar-ODD**, `S(q)` exactly even, 4/4 —
+  see [correction audit](../audits/2026-07-07-pc15-a1-transcription-error-correction.md)).
+  Original (superseded) record: **T1 (`7vfu`) KILLED (scope-(a)).** Neither `D(q)` nor `S(q)` on the golden
   pair has clean bar-parity — the twist ratios remain non-monomial
   ([probe](../../computations/qbeta/qbeta_t1_barpair_symmetrization_probe.py) →
   [witness](../../computations/qbeta/qbeta-t1-barpair-symmetrization.witness.json),
@@ -278,6 +287,20 @@ Checks (exact symbolic, no anchors, no c_k values):
   Z4-via-4₁ at every basis tested; fall back to Z3 carriers/other knots.
 - **B3 partial (shadow orders):** record q=1/x=1 vanishing structure of
   `ω_k` (expected `((x−1)²/x)^k` at q=1 — even orders, echoing T3).
+
+### 4-quinquies outcome (2026-07-07, run after pre-statement commit `03c155c7`)
+
+**B1-K1 initially FAILED — and the failure caught a real upstream bug:** P-C15's
+probe had mis-transcribed the certificate's `a₁` (different quartic + denominator).
+With the machine-verified certificate `a₁`: **B1-K1 PASSES symbolically N=1..8**;
+**B2-K2 PASSES** — the Habiro basis `ω_k` is exactly bar-invariant
+(Lean `QOU.QBeta.cycFactor_bar_invariant`, hypothesis-free); `C_k ≡ 1` (trivial
+depth-1 coefficient recurrence); q=1 shadows have even orders `2k`. Correction
+cascade (c4qz mechanism corrected; **T1 flips to SURVIVOR** — `D(q)` exactly
+bar-odd on the golden pair, the first odd-channel candidate; KC11 corrected,
+KC15 added; P-C15 witness re-emitted):
+[`2026-07-07-pc15-a1-transcription-error-correction.md`](../audits/2026-07-07-pc15-a1-transcription-error-correction.md).
+**Open (B3):** the `(u;u)_m → u^k` composition + the z-side convolution.
 
 ## 5. Session log
 

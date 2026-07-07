@@ -2,7 +2,8 @@
 """
 T1 (bean 7vfu) -- bar-pair symmetrized evaluation of alpha_1 on the golden locus.
 
-Follows the c4qz kill (I-A raw pointwise slots excluded on slot bar-parity):
+Follows c4qz (raw pointwise slots are exactly bar-EVEN with the corrected a_1
+-- they cannot source the odd channel):
 the K1b locus x* = (3+sqrt5)/2 = phi^2 is a bar-conjugate pair {x*, 1/x*},
 and the full bar involution (q,x) -> (1/q,1/x) PERMUTES the pair -- so the
 pair-symmetrized objects
@@ -63,8 +64,10 @@ def main():
     # Operator coefficients (verbatim, aj_figure_eight_certificate.py lineage).
     a0 = (x - 1) * (x**2 * q**3 - 1) / x**6
     a2 = (x * q**2 - 1) * (x**2 * q - 1) / x**6
-    a1 = -((x * q - 1) ** 2 * (x * q + 1) * (x**2 * q**2 - x**2 * q + x**2
-            - x * q**2 - x * q - x + q**2 + q + 1)) / x**6
+    # CORRECTED 2026-07-07: certificate's verified a1 (see correction audit).
+    a1 = -((x * q - 1) ** 2 * (x * q + 1)
+           * (x**4 * q**4 - x**3 * q**3 - x**2 * q**3 - x**2 * q - x * q + 1)) \
+         / (x**8 * q**2)
     alpha1 = sp.cancel(sp.together(-a1 / a2))
 
     xstar = sp.Rational(3, 2) + sp.sqrt(5) / 2      # phi^2, exact
