@@ -1,8 +1,8 @@
-We derive the electron configuration of atoms — the shell structure $1s^2 2s^2 2p^6 3s^2 3p^6 3d^{10} \ldots$ with shell capacities $2, 8, 18, 32, \ldots = 2n^2$ — from the **closed sub-Hopf link structure** of the multi-electron trefoil chain.
+We derive the electron configuration of atoms from the **closed sub-Hopf link structure** of the multi-electron trefoil chain. This yields the shell capacities $2, 8, 18, 32, \ldots = 2n^2$.
 
 **The electron link.**
 
-A neutral atom with $Z$ protons binds $Z$ electrons, each a trefoil $T_{2,3}$. The full atom ([stable nucleus](#def:stable-nucleus)) takes the form:
+A neutral atom with $Z$ protons binds $Z$ electrons. Each electron forms a trefoil $T_{2,3}$. The stable atom takes the form:
 
 $$
   \mathcal{A}(p, n)
@@ -12,17 +12,17 @@ $$
   \underbrace{p \cdot T_{2,3}}_{\text{electron cloud}}.
 $$
 
-The electron cloud $p \cdot T_{2,3}$ forms a chain of $p$ trefoils bound by Hopf links. An **electron shell** defines a maximal closed sub-Hopf link of this chain: a subset $S$ of trefoils such that $\bigbowtie_{i \in S} T_{2,3}$ splits from the remaining trefoils.
+The electron cloud $p \cdot T_{2,3}$ forms a chain of $p$ trefoils bound by Hopf links. An **electron shell** defines a maximal closed sub-Hopf link of this chain. It forms a subset $S$ of trefoils such that $\bigbowtie_{i \in S} T_{2,3}$ splits from the remaining chain.
 
 **First example: helium ($p = 2$, $n = 2$).**
 
-The electron cloud $T_{2,3} \oplus T_{2,3}$ forms a Hopf link of two trefoils. This pair acts as a **closed sub-link**: it rejects a third trefoil unless the linking number increases. The two electrons fill the $1s$ shell.
+The helium electron cloud $T_{2,3} \oplus T_{2,3}$ forms a Hopf link of two trefoils. This pair acts as a **closed sub-link**. It rejects a third trefoil unless the linking number increases. The two electrons fill the $1s$ shell.
 
-Topological closure makes helium a noble gas. A third electron (lithium) forces a new sub-link, weakly coupled to the first — the $2s$ shell.
+Topological closure makes helium a noble gas. A third electron (lithium) forces a new sub-link. This weakly couples to the first to form the $2s$ shell.
 
 **Shell capacities from sub-link closure.**
 
-We conjecture that the maximum number of trefoils forming a closed sub-Hopf link at linking level $n$ fixes the shell capacities $2n^2$. The rigorous derivation remains an open problem:
+We conjecture that the maximum number of trefoils in a closed sub-Hopf link at level $n$ fixes the shell capacity at $2n^2$. A rigorous derivation remains open:
 
 | Shell $n$ | Capacity $2n^2$ | Cumulative | Pure-$2n^2$ closure | Closed sub-link |
 |----------:|----------------:|-----------:|---------------------|----------------|
@@ -32,23 +32,23 @@ We conjecture that the maximum number of trefoils forming a closed sub-Hopf link
 | 4 | 32 | 60 | Nd (**not** noble) | $32 \cdot T_{2,3}$ |
 
 **Caveat — the pure-$2n^2$ closures are not the chemical noble gases.**
-The cumulative pure-$2n^2$ count $[2, 10, 28, 60, \ldots]$ maps the closed-shell sequence of a pure-Coulomb atom. The chemical noble gases $[2, 10, 18, 36, 54, 86]$ follow the **Madelung / $n+\ell$ (Aufbau)** ordering driven by electron–electron screening. The two sequences match only at He and Ne; they diverge at $n = 3$ (Ni, Nd are not inert). Reproducing the physical noble gases requires both the $2n^2$ derivation and a categorical screening mechanism (currently absent). We state the noble-gas identifications as a target, not an established consequence.
+The cumulative pure-$2n^2$ count $[2, 10, 28, 60, \ldots]$ maps the closed-shell sequence of a pure-Coulomb atom. The chemical noble gases $[2, 10, 18, 36, 54, 86]$ follow the **Madelung / $n+\ell$ (Aufbau)** ordering driven by electron–electron screening. The two sequences match only at He and Ne. They diverge at $n = 3$. Reproducing the physical noble gases requires both the $2n^2$ derivation and a categorical screening mechanism. We state the noble-gas identifications as a target.
 
-The noble gases (He, Ne, Ar, Kr, Xe, Rn) define atoms whose electron cloud reduces to a **union of closed sub-links**: every electron belongs to a complete shell.
+The noble gases (He, Ne, Ar, Kr, Xe, Rn) define atoms whose electron cloud reduces to a **union of closed sub-links**. Every electron belongs to a complete shell.
 
 **Photon absorption as a knot operation.**
 
-A photon absorption event promotes a single electron between sub-Hopf links. The knot picture models this as follows:
+A photon absorption event promotes a single electron between sub-Hopf links. The knot picture models this process:
 
 1. **Incoming photon**: A wavefront ([wavefront propagation](#rem:wavefront-propagation)) carries energy $E = h\nu$ specified by the categorical Lagrangian ([categorical Lagrangian](#def:categorical-lagrangian)).
-2. **Absorption**: The photon energy opens a crossing in the electron's sub-Hopf link, elevating the trefoil to an outer sub-link. This corresponds to a **single crossing change** in the Skein relation — the operation distinguishing $L_+$ from $L_-$.
-3. **Emission**: The electron decays, the crossing closes, and the system re-emits a photon of identical energy.
+2. **Absorption**: The photon energy opens a crossing in the electron sub-Hopf link. This elevates the trefoil to an outer sub-link. This step corresponds to a **single crossing change** in the Skein relation.
+3. **Emission**: The electron decays. The crossing closes. The system re-emits a photon of identical energy.
 
-Crossing changes that preserve the topological type of the remaining sub-links dictate the allowed transitions (selection rules).
+Crossing changes that preserve the topological type of the remaining sub-links dictate the selection rules.
 
 **Maximal shell number from stability.**
 
-The stability of the electron–hadron interaction bounds the number of electron shells: the outermost trefoil must remain Hopf-linked to the nucleus. Fluid dynamics interprets this via the vortex capture radius — the maximum distance at which the nuclear Hopf link's vortex tube captures the electron's vortex tube.
+The stability of the electron–hadron interaction bounds the number of electron shells. The outermost trefoil must remain Hopf-linked to the nucleus. Fluid dynamics models this via the vortex capture radius.
 
 The ionization energy of the outermost electron scales as:
 
@@ -61,8 +61,8 @@ where $n$ denotes the shell number. The atom ionizes when $E_{\mathrm{ion}}$ dro
 
 **Open problems.**
 
-1. **Shell capacity derivation**: Prove that the maximum number of trefoils in a closed sub-Hopf link at level $n$ strictly equals $2n^2$. This bound should emerge from a combinatorial constraint on the linking matrix of the trefoil chain.
-2. **Photon energy**: Derive the photon energy $E = h\nu$ from the categorical action. The wavefront equation supplies propagation; the frequency $\nu$ should match the winding number of the wavefront around the Reeb flow.
-3. **Selection rules**: Identify the permitted crossing changes (Skein operations) on the electron link. These recover the dipole selection rules $\Delta \ell = \pm 1$.
-4. **Orbital shapes**: Match electron orbitals ($s, p, d, f$) to the topological types of the sub-Hopf link (e.g., $s$ = unknotted Hopf pair, $p$ = trefoil Hopf triple). The angular momentum quantum number $\ell$ acts as the genus of the sub-link's Seifert surface.
-5. **Noble gas stability**: Prove that atoms whose electron cloud decomposes into a union of closed sub-links achieve maximal ionization energy at each period. The crossing energy of a complete sub-link must represent a local maximum.
+1. **Shell capacity derivation**: Prove that the maximum number of trefoils in a closed sub-Hopf link at level $n$ strictly equals $2n^2$.
+2. **Photon energy**: Derive the photon energy $E = h\nu$ from the categorical action. The wavefront equation supplies propagation. The frequency $\nu$ should match the winding number of the wavefront around the Reeb flow.
+3. **Selection rules**: Identify the permitted Skein operations on the electron link. These recover the dipole selection rules $\Delta \ell = \pm 1$.
+4. **Orbital shapes**: Match electron orbitals to the topological types of the sub-Hopf link. The angular momentum quantum number $\ell$ acts as the Seifert surface genus.
+5. **Noble gas stability**: Prove that atoms whose electron cloud decomposes into a union of closed sub-links achieve maximal ionization energy in each period. The crossing energy of a complete sub-link must represent a local maximum.

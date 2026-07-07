@@ -1,15 +1,15 @@
 **Remark (Clausen function `Cl_2` as repo-internal Mathlib filler).**
 
-Mathlib does not currently expose the Clausen function
+Mathlib lacks the Clausen function
 
 $$
   \mathrm{Cl}_2(\theta)
   \;:=\;
   \sum_{k = 1}^\infty \frac{\sin(k\theta)}{k^2}
-  \;=\; \mathrm{Im}\,\mathrm{Li}_2(e^{i\theta}),
+  \;=\; \mathrm{Im}\,\mathrm{Li}_2(e^{i\theta}).
 $$
 
-which is the imaginary part of the dilogarithm on the unit circle and the standard ingredient in hyperbolic volume formulas:
+This function evaluates the imaginary part of the dilogarithm on the unit circle. It dictates standard hyperbolic volume formulas:
 
 $$
   \mathrm{Vol}(4_1)\;=\;2\,\mathrm{Cl}_2(\pi/3)\;\approx\;:val[Vol_4_1]{precision=6},
@@ -17,23 +17,23 @@ $$
   \mathrm{Vol}(\mathcal{B}_3)\;=\;8\,\mathrm{Cl}_2(\pi/4)\;=\;8G\;\approx\;7.327724.
 $$
 
-The Lean file [`clausen-function-mathlib-filler.lean`](clausen-function-mathlib-filler.lean) provides:
+The Lean file [`clausen-function-mathlib-filler.lean`](clausen-function-mathlib-filler.lean) provides the necessary definitions.
 
 See [Table 1](#tbl:clausen-function-mathlib-filler-table1-data).
 
-This unconditionalizes the BW values used throughout the α_EM chain, replacing opaque references with explicit Lean carriers. Downstream blocks [`em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode), [`figure-8-archimedean-illustration`](../braids-and-knots/figure-8-archimedean-illustration.md), [`bring-hyperbolic-knot-bloch-decomposition`](#conj:bring-hyperbolic-knot-bloch-decomposition), and [`binding-scale-catalan`](../braids-and-knots/binding-scale-catalan.md) now reference $\mathrm{Cl}_2$, $\mathrm{Vol}(4_1)$, and $\mathrm{Vol}(\mathcal{B}_3)$ via these carriers.
+This construction unconditionalizes the Bloch-Wigner values in the $\alpha_{\text{EM}}$ chain. Explicit Lean carriers replace opaque references. The framework references $\mathrm{Cl}_2$, $\mathrm{Vol}(4_1)$, and $\mathrm{Vol}(\mathcal{B}_3)$ via these carriers in [`em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode), [`figure-8-archimedean-illustration`](../braids-and-knots/figure-8-archimedean-illustration.md), [`bring-hyperbolic-knot-bloch-decomposition`](#conj:bring-hyperbolic-knot-bloch-decomposition), and [`binding-scale-catalan`](../braids-and-knots/binding-scale-catalan.md).
 
-## Mathlib gaps still open after this filler
+## Mathlib gaps
 
 See [Table 2](#tbl:clausen-function-mathlib-filler-table2-data).
 
-The four §3b-cond classes (BlochSuslinUniqueness, ArchimedeanLimit, BringZeroModeBlochClass, BringHyperbolicDecomposition, BWQIndependence, BlochWignerInjective) remain as residual mathematical infrastructure gaps. Closing them in Lean requires upstream Mathlib contributions or substantial internal formalizations.
+Six conditional classes remain as mathematical infrastructure gaps: `BlochSuslinUniqueness`, `ArchimedeanLimit`, `BringZeroModeBlochClass`, `BringHyperbolicDecomposition`, `BWQIndependence`, and `BlochWignerInjective`. Closing these classes requires upstream Mathlib contributions or internal formalization.
 
 ## Pattern
 
-Each Mathlib gap forms a separate, scoped task. The $\mathrm{Cl}_2$ filler demonstrates the cleanest case: a single well-known function defined as a `tsum`, with two unconditional boundary lemmas and four sketched-but-open extensions awaiting Fourier-series infrastructure. This pattern extends to:
+Each Mathlib gap forms a scoped task. The $\mathrm{Cl}_2$ filler defines a single function as a `tsum`. It provides two unconditional boundary lemmas. Four sketched extensions require Fourier-series infrastructure. This pattern extends to:
 
-* A `Real.dilog` filler (extending the existing `LiTwo` to the complex domain via `Complex.dilog`).
-* A minimal `BlochGroup F` filler (free abelian group quotient by 5-term pentagon relations).
+* A `Real.dilog` filler extending `LiTwo` to the complex domain via `Complex.dilog`.
+* A `BlochGroup F` filler constructing the free abelian group quotient by 5-term pentagon relations.
 
-The present file restricts to the single-function $\mathrm{Cl}_2$ filler supporting the α_EM and figure-8 chains.
+This file isolates the $\mathrm{Cl}_2$ filler to support the $\alpha_{\text{EM}}$ and figure-8 chains.
