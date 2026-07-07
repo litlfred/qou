@@ -897,5 +897,15 @@ derivation that, once done, collapses the rest to a finite check (P1's was
 the prolongation kernel `R`, which via L3 fixes all terms). Prove the
 keystone, then **upgrade the conjecture to a §3b-cond conditional-class
 theorem** (rigorous modulo one named class instance) rather than leaving a
-bare conjecture. This staging is the honest path from `conjecture` →
 `validated conditional theorem`.
+
+## Axiomatization is NOT a Proof (Anti-Laundering Rule)
+
+Agents frequently conflate "Lean code that compiles with 0 errors" with "a mathematically proved theorem." 
+
+1. **Axioms and Conditional Classes do not satisfy "Proved".** 
+   If a user says "only do X if Y is proved," creating an `axiom`, `sorry`, or a conditional `class` (e.g., `[ZToCkMappingClass]`) to define the structure does **NOT** count as proving it. You must stop and state the math is open.
+2. **Never launder empirical fits through Lean axioms.** 
+   Do not use conditional classes as an excuse to wire un-derived constants into downstream dashboards or production scripts. If the closed-form math isn't proven from the 13 categorical drivers, the compute remains blocked.
+3. **Formalize-First means PROVING the invariant.**
+   Writing the structural scaffolding is good, but it does not unlock downstream physics code. Only a true closed-form derivation does.

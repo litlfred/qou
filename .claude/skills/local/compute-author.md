@@ -599,3 +599,4 @@ If any box is unchecked, **stop and resolve before writing code**.
   (P31).
 - **A fourth calibration anchor** — only CAL-1 / 2 / 3 exist; any new
   free parameter calibrated against experimental data is rejected.
+- **Laundering empirical fits via Lean Axioms** — creating a conditional class (`[ZToCkMappingClass]`) or axiom does **NOT** count as a proof and does **NOT** authorize using empirical constants in production downstream physics/dashboards. Axiomatization is NOT a proof.
