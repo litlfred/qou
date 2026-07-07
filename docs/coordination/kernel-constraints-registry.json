@@ -187,6 +187,15 @@
       "parity": "mixed",
       "q1_shadow": null,
       "source": "PR #3473; docs/audits/2026-07-07-qbeta-crossing-weight-affine-narrowing.md"
+    },
+    {
+      "id": "KC20",
+      "statement": "Q_beta bar-ODD carrier is NOT a root-of-unity object and its non-cyclotomic content is an IRREDUCIBLE cubic sourced by the Hopf sector. PROVED-LEAN: num=(q^2-1)*R12 (cyclotomic content exactly q^2-1); Phi4=q^2+1 does NOT divide num (num=-64 at q^2+1=0); R12=q^6*C(q^2+q^-2), C(y)=y^3-4y^2+3y-2; C and C_Hopf=y^3-6y^2+10y-6 have no rational root among their RRT candidates (=> irreducible over Q); C=C_Hopf+C_unknot (C_unknot=2y^2-7y+4). SYMBOLIC-EXACT (witness, not Lean): the sector attribution (virtual+trefoil bar-odd parts vanish; the cubic C_Hopf is the Hopf/2-crossing sector, C_unknot the identity sector) and the discriminants (C: -152=-2^3*19; C_Hopf: -76=-2^2*19). Consequence: degree-3 field => no quadratic anchor (golden y=3, silver y=6, q=1 y=2) is a root => real-q/quadratic c_3 closures structurally excluded; the open odd channel is the Hopf-sector cubic field via KC18/KC19 archimedean evaluation.",
+      "tier": "proved-lean",
+      "lean": "QOU.QBeta.Zeta4Residue.numOdd_factor; QOU.QBeta.Zeta4Residue.numOdd_at_phi4_root; QOU.QBeta.Zeta4Residue.R12_eq_cubic_trace; QOU.QBeta.Zeta4Residue.cubicC_rrt_candidates_all_nonzero; QOU.QBeta.Zeta4Residue.cubicC_sector_decomp; QOU.QBeta.Zeta4Residue.cubicC_Hopf_rrt_candidates_all_nonzero",
+      "parity": null,
+      "q1_shadow": null,
+      "source": "PR #3467; docs/audits/2026-07-07-zeta4-residue-lean-certificate-and-surviving-cubic.md; refines 2026-07-04 zeta4-fibre-cyclotomic refutation; complements KC19 (affine ladder, PR #3473)"
     }
   ]
 }
