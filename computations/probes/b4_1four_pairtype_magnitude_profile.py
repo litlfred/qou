@@ -153,10 +153,13 @@ def main() -> int:
         engine_version=f"python {platform.python_version()} + mpmath {mp.__version__}",
         output_dir=os.path.join(COMP, "probes"), start_time=t0,
     )
-    # Baseline consistency: option A must reproduce the uniform-g probe's totals.
-    a = rows[0]
-    wb.add_assertion("A_total_matches_uniform_probe_0.940x",
-                     computed=(a.get("B4_ratio") or "None")[:5], expected="0.939")
+    # Baseline consistency: option A must reproduce the uniform-g probe's
+    # total (26.59561 / 28.29566 = 0.9399185…), selected by name, numeric
+    # tolerance 1e-5 (Copilot #3451).
+    a = next(r for r in rows if r["option"] == "A_uniform_g")
+    dev = mp.fabs(mp.mpf(a["B4_ratio"]) - mp.mpf("0.9399185"))
+    wb.add_assertion("A_total_matches_uniform_probe",
+                     computed=str(bool(dev < mp.mpf("1e-5"))), expected="True")
     wb.save(extra={"auditOnly": True})
 
     print("=== [1⁴] per-pair-type magnitude profiles (type-aware Ursell) ===")
