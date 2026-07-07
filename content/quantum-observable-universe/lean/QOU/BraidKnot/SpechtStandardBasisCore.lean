@@ -1532,7 +1532,8 @@ theorem garnir_B_lt_A (t : Specht.Tableau μ) (i j : ℕ)
     intro he
     have : b₀ = a₀ := Fin.ext he
     rw [this, hta0] at htb0
-    exact (by simp : ((i, j) : ℕ × ℕ) ≠ (i, j + 1)) htb0
+    injection htb0 with _ h2
+    omega
   rw [hla] at hdesc; rw [hlb] at hdesc
   omega
 
