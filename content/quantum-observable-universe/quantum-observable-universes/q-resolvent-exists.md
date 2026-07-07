@@ -1,8 +1,1 @@
-For $s \in \mathrm{Hom}_{\mathbf{C}}(\mathbf{1}, A)$ outside the
-categorical spectrum of $\widehat{\Delta_q}$, the
-[$q$-resolvent](#def:q-resolvent)
-$R_q(s) = (s + \widehat{\Delta_q})^{-1}$ exists as an endomorphism of
-$\mathrm{End}_{\mathbf{C}}(A)$.
-
-Uniqueness is
-([uniqueness of $q$-resolvent](#prop:q-resolvent-unique)).
+For $s \in \mathrm{Hom}_{\mathbf{C}}(\mathbf{1}, A)$ outside the categorical spectrum of $\widehat{\Delta_q}$, the $q$-resolvent $R_q(s) = (s + \widehat{\Delta_q})^{-1}$ exists as an endomorphism of $\mathrm{End}_{\mathbf{C}}(A)$.
