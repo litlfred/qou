@@ -2328,6 +2328,109 @@ theorem colContent_garnirG_eq_of_lt {π : Equiv.Perm (Fin (Specht.nOf μ))}
   show ((π l : Fin (Specht.nOf μ)) : ℕ) = ((l : Fin (Specht.nOf μ)) : ℕ)
   rw [hπ l hnotAB]
 
+omit [CharZero k] in
+/-- **Fibre column-`j` count-domination (sorry-free) — the order-statistics heart.** At a
+Garnir row descent of a column-word-minimal `t`, the column-`j` content of the raw fibre
+`π•t` count-dominates that of `t`: for every `w`, `colContent t j` has no more elements
+`≤ w` than `colContent (π•t) j`. Reason: both share the fixed above-descent part `P`
+(column `j`, rows `< i`, which `π` fixes); the changing part is `A = garnirA` for `t` versus
+`S = π(A)` for `π•t`, and since **every** `B`-label is `< ` every `A`-label
+(`garnir_B_lt_A`), `A` is the *top-`|A|`* subset of `A∪B`, so any `|A|`-subset `S ⊆ A∪B`
+count-dominates it (`count_dom_of_top`); adding the common `P` preserves this
+(`filter_le_card_union_mono`). Via `orderStat_le_of_count_ge` this is exactly
+`labelAt (π•t sorted) (r,j) ≤ labelAt t (r,j)`. -/
+theorem fibre_colContent_j_count_dom {π : Equiv.Perm (Fin (Specht.nOf μ))}
+    (t : Specht.Tableau μ) {i j : ℕ} (hij : (i, j) ∈ μ) (hij1 : (i, j + 1) ∈ μ)
+    (hmax : ∀ σ : Specht.colStab t,
+      colWordNum t ≤ colWordNum ((σ : Equiv.Perm (Fin (Specht.nOf μ))) • t))
+    (hdesc : labelAt t hij1 ≤ labelAt t hij)
+    (hπG : π ∈ garnirG t i j) (w : ℕ) :
+    ((colContent t j).filter (· ≤ w)).card
+      ≤ ((colContent (π • t) j).filter (· ≤ w)).card := by
+  classical
+  set P := Finset.univ.filter
+    (fun l => Specht.colPattern t l = j ∧ Specht.rowPattern t l < i) with hPdef
+  -- column j (label level) splits into the fixed above-descent part `P` and `garnirA`
+  have hcolj : Finset.univ.filter (fun l => Specht.colPattern t l = j) = P ∪ garnirA t i j := by
+    ext l
+    simp only [hPdef, garnirA, Finset.mem_union, Finset.mem_filter, Finset.mem_univ, true_and]
+    constructor
+    · intro h; rcases lt_or_ge (Specht.rowPattern t l) i with hr | hr
+      · exact Or.inl ⟨h, hr⟩
+      · exact Or.inr ⟨h, hr⟩
+    · rintro (⟨h, _⟩ | ⟨h, _⟩) <;> exact h
+  have hdisjPA : Disjoint P (garnirA t i j) := by
+    rw [Finset.disjoint_left]; intro l hlP hlA
+    simp only [hPdef, garnirA, Finset.mem_filter, Finset.mem_univ, true_and] at hlP hlA
+    omega
+  -- `π` fixes the labels of `P` (they lie outside `A∪B`)
+  have hπfix : ∀ l ∈ P, π l = l := by
+    simp only [garnirG, Finset.mem_filter, Finset.mem_univ, true_and] at hπG
+    intro l hlP
+    apply hπG
+    simp only [hPdef, Finset.mem_filter, Finset.mem_univ, true_and] at hlP
+    rw [Finset.mem_union, garnirA, garnirB, Finset.mem_filter, Finset.mem_filter]
+    rintro (⟨_, hc, _⟩ | ⟨_, hc, _⟩) <;> omega
+  -- value-set decompositions of the two column contents
+  have hCt : colContent t j = P.image Fin.val ∪ (garnirA t i j).image Fin.val := by
+    unfold colContent; rw [hcolj, Finset.image_union]
+  have hCpt : colContent (π • t) j
+      = P.image Fin.val ∪ ((garnirA t i j).image π).image Fin.val := by
+    rw [colContent_smul, hcolj, Finset.image_union]
+    congr 1
+    · apply Finset.image_congr; intro l hl
+      rw [Finset.mem_coe] at hl
+      show ((π l : Fin (Specht.nOf μ)) : ℕ) = ((l : Fin (Specht.nOf μ)) : ℕ)
+      rw [hπfix l hl]
+    · rw [Finset.image_image]; rfl
+  -- `π(A) ⊆ A∪B` (π maps the Garnir cells onto themselves)
+  have hSsub : (garnirA t i j).image π ⊆ garnirA t i j ∪ garnirB t i j := by
+    intro x hx
+    rw [Finset.mem_image] at hx
+    obtain ⟨l, hlA, rfl⟩ := hx
+    by_contra hnot
+    have hfixπl : π (π l) = π l := by
+      simp only [garnirG, Finset.mem_filter, Finset.mem_univ, true_and] at hπG
+      exact hπG (π l) hnot
+    have hpll : π l = l := π.injective hfixπl
+    rw [hpll] at hnot
+    exact hnot (Finset.mem_union_left _ hlA)
+  have hSvalsub : ((garnirA t i j).image π).image Fin.val
+      ⊆ (garnirA t i j).image Fin.val ∪ (garnirB t i j).image Fin.val := by
+    rw [← Finset.image_union]; exact Finset.image_subset_image hSsub
+  have hScard : (((garnirA t i j).image π).image Fin.val).card
+      = ((garnirA t i j).image Fin.val).card := by
+    rw [Finset.card_image_of_injective _ Fin.val_injective,
+        Finset.card_image_of_injective _ π.injective,
+        Finset.card_image_of_injective _ Fin.val_injective]
+  -- `B < A` at the value level
+  have hBA : ∀ b ∈ (garnirB t i j).image Fin.val, ∀ a ∈ (garnirA t i j).image Fin.val, b < a := by
+    intro b hb a ha
+    rw [Finset.mem_image] at hb ha
+    obtain ⟨lb, hlbB, rfl⟩ := hb
+    obtain ⟨la, hlaA, rfl⟩ := ha
+    exact garnir_B_lt_A t i j hij hij1 hmax hdesc hlaA hlbB
+  -- disjointness of the fixed part `P` from both changing parts
+  have hPAval : Disjoint (P.image Fin.val) ((garnirA t i j).image Fin.val) := by
+    rw [Finset.disjoint_left]; rintro v hvP hvA
+    rw [Finset.mem_image] at hvP hvA
+    obtain ⟨l, hlP, rfl⟩ := hvP; obtain ⟨m, hmA, hlm⟩ := hvA
+    exact absurd (Fin.val_injective hlm ▸ hmA) (Finset.disjoint_left.mp hdisjPA hlP)
+  have hPBval : Disjoint (P.image Fin.val) ((garnirB t i j).image Fin.val) := by
+    rw [Finset.disjoint_left]; rintro v hvP hvB
+    rw [Finset.mem_image] at hvP hvB
+    obtain ⟨l, hlP, rfl⟩ := hvP; obtain ⟨m, hmB, hlm⟩ := hvB
+    have hml : m = l := Fin.val_injective hlm
+    rw [hml] at hmB
+    simp only [hPdef, garnirB, Finset.mem_filter, Finset.mem_univ, true_and] at hlP hmB
+    omega
+  have hPSval : Disjoint (P.image Fin.val) (((garnirA t i j).image π).image Fin.val) :=
+    Finset.disjoint_of_subset_right hSvalsub
+      (by rw [Finset.disjoint_union_right]; exact ⟨hPAval, hPBval⟩)
+  rw [hCt, hCpt]
+  exact filter_le_card_union_mono hPAval hPSval
+    (fun w => count_dom_of_top hBA hSvalsub hScard w) w
+
 /-! #### The single residual straightening core + the induction skeleton -/
 
 omit [CharZero k] in
