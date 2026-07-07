@@ -35,13 +35,15 @@ import sympy as sp
 
 
 def _repo_head_sha():
-    try:
-        return subprocess.check_output(
-            ["git", "rev-parse", "HEAD"],
-            cwd=os.path.dirname(os.path.abspath(__file__)), text=True,
-        ).strip()
-    except Exception:
-        return None
+    """Repo HEAD at emission time. Raises rather than returning None so a
+    witness is never written with missing provenance (I14 PROV_MISSING)."""
+    sha = subprocess.check_output(
+        ["git", "rev-parse", "HEAD"],
+        cwd=os.path.dirname(os.path.abspath(__file__)), text=True,
+    ).strip()
+    if not sha:
+        raise RuntimeError("empty commitSha — refusing to emit witness without provenance")
+    return sha
 
 
 def _is_monomial(expr):
@@ -102,7 +104,8 @@ def main():
         "OBSTRUCTION (scope-(a)): the fibre parity structure (KC15 D(q), KC16 "
         "index-alternating basis) does NOT descend to the observable c_k via a naive "
         "re-expansion in u = b*hbar_q^2. (U1) The (u;u)_m Habiro basis carries no clean "
-        "monomial bar-twist -- bar(u)=q^2 u is a SCALING, not the KC16 inversion. (U2) "
+        "monomial bar-twist -- failing already at m=1 (ratio (q^2 u-1)/(u-1)), verified "
+        "m=1..4 -- because bar(u)=q^2 u is a SCALING, not the KC16 inversion. (U2) "
         "The per-rung twist q^{-2k} that overall-F bar-evenness would impose is "
         "contradicted by the derived c_2 = -1 (a bar-trivial constant). (U3) u vanishes "
         "to EVEN order 2 in (q-1) while a bar-odd carrier vanishes to ODD order, so "
