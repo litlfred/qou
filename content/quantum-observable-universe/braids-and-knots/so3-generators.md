@@ -1,6 +1,4 @@
-Under the adjoint map to $\mathrm{SO}(3)$ the generators of
-$\mathrm{Dic}_3$ ([SU(2) generators](#def:su2-generators)) have images
-
+Under the adjoint map to $\mathrm{SO}(3)$, the generators of $\mathrm{Dic}_3$ have images:
 ```tex
 \begin{equation}\label{eq:so3-generators}
   R_\alpha
@@ -14,9 +12,7 @@ $\mathrm{Dic}_3$ ([SU(2) generators](#def:su2-generators)) have images
     1&0&0\\[2pt]
     0&-1&0\\[2pt]
     0&0&-1
-  \end{pmatrix}:
+  \end{pmatrix}.
 \end{equation}
 ```
-
-The rotation $R_\alpha$ is a rotation by $2\pi/3$ about the $e_3$-axis (3-cycle) and
-$R_\beta$ is a $\pi$-rotation about $e_1$ (2-cycle).
+The operator $R_\alpha$ is a $2\pi/3$ rotation about the $e_3$-axis representing a 3-cycle, and $R_\beta$ is a $\pi$ rotation about $e_1$ representing a 2-cycle.

@@ -1,18 +1,9 @@
-The universal $R$-matrix
-$\mathcal{R} \in \mathcal{U}_q(\mathfrak{su}(2)) \hat{\otimes} \mathcal{U}_q(\mathfrak{su}(2))$
-([quantum SU(2)](#def:quantum-su2)) satisfies the Yang--Baxter equation
-
+The universal $R$-matrix $\mathcal{R} \in \mathcal{U}_q(\mathfrak{su}(2)) \hat{\otimes} \mathcal{U}_q(\mathfrak{su}(2))$ satisfies the Yang--Baxter equation:
 $$
   \mathcal{R}_{12}\mathcal{R}_{13}\mathcal{R}_{23}
   = 
-  \mathcal{R}_{23}\mathcal{R}_{13}\mathcal{R}_{12},
+  \mathcal{R}_{23}\mathcal{R}_{13}\mathcal{R}_{12}.
 $$
+The braid operator $\check{R} = P \circ \mathcal{R}$ (with $P$ the tensor swap) furnishes a representation of the braid group on any tensor product of finite-dimensional $\mathcal{U}_q(\mathfrak{su}(2))$-modules.
 
-and the braid operator $\check{R} = P \circ \mathcal{R}$ (where $P$ is
-the tensor swap) furnishes a representation of the braid group on any
-tensor product of finite-dimensional
-$\mathcal{U}_q(\mathfrak{su}(2))$-modules, replacing the classical
-twist/flip involutions ([braid twist-flip](#def:braid-twist-flip)).
-
-
-**Mathematical Novelty:** The underlying R-matrix, Yang-Baxter, and braid-representation content is standard quantum-group theory. However, the specific identification of the eigenvalues $q, -q^{-1}$ (Hecke channels) provides the essential framework tie-in, connecting standard representation theory to the physical observable structures in this universe.
+**Mathematical Novelty:** While the underlying R-matrix theory is standard, identifying the exact eigenvalues $q, -q^{-1}$ (Hecke channels) provides the essential tie-in to the physical observable structures.
