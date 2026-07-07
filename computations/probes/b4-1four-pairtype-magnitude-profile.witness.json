@@ -1,22 +1,22 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15 + mpmath 1.4.1",
-  "computedAt": "2026-07-07T03:22:28.505128+00:00",
-  "commitSha": "75e56cf640f552bbf95045f48d102cee914f97f9",
+  "computedAt": "2026-07-07T03:30:54.424205+00:00",
+  "commitSha": "5e3d301cf2776e4d7a7132d08affd12f0b258690",
   "assertions": [
     {
-      "name": "A_total_matches_uniform_probe_0.940x",
-      "computed": "0.939",
-      "expected": "0.939",
+      "name": "A_total_matches_uniform_probe",
+      "computed": "True",
+      "expected": "True",
       "passed": true
     }
   ],
   "allPassed": true,
-  "durationMs": 65,
+  "durationMs": 6,
   "computation": "b4-1four-pairtype-magnitude-profile",
   "scriptFile": "b4_1four_pairtype_magnitude_profile.py",
-  "scriptHash": "187cea31d171",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "0b45e3ecd62d",
+  "scriptCommitSha": "5e3d301cf2776e4d7a7132d08affd12f0b258690",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
