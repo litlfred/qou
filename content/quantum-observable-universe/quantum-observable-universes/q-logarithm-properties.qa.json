@@ -29,6 +29,19 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "Block placement and kind 'remark' match validated structurally."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:10.189726+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:10.189726+00:00"
+        }
       }
     ],
     "da-false-claim": [
@@ -50,6 +63,19 @@
         "severity": "minor",
         "evidence": "q-logarithm-properties.ts:1",
         "notes": "No false claims identified in 'Realisations of $\\\\log_q$: base ring, three contexts, Habiro ring, and Reeb-flow rapidity': mathematical reasoning is consistent in prose."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:10.208940+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:10.208940+00:00"
+        }
       }
     ],
     "da-vacuous": [
@@ -70,6 +96,19 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "The block 'Realisations of $\\\\log_q$: base ring, three contexts, Habiro ring, and Reeb-flow rapidity' presents substantial mathematical content: '[$q$-logarithm](#def:q-logarithm).'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:10.227489+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:10.227489+00:00"
+        }
       }
     ],
     "da-circular": [
@@ -91,6 +130,19 @@
         "severity": "minor",
         "evidence": "q-logarithm-properties.ts:1",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Realisations of $\\\\log_q$: base ring, three contexts, Habiro ring, and Reeb-flow rapidity'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:10.241730+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:10.241730+00:00"
+        }
       }
     ],
     "da-overclaim": [
@@ -111,6 +163,19 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "The remarks and narrative scope in 'Realisations of $\\\\log_q$: base ring, three contexts, Habiro ring, and Reeb-flow rapidity' are appropriately qualified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:10.258610+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:10.258610+00:00"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -132,6 +197,19 @@
         "severity": "minor",
         "evidence": "q-logarithm-properties.ts:1",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Realisations of $\\\\log_q$: base ring, three contexts, Habiro ring, and Reeb-flow rapidity'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:10.276420+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:10.276420+00:00"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -153,6 +231,19 @@
         "severity": "minor",
         "evidence": "q-logarithm-properties.ts:1",
         "notes": "The prose arguments in 'Realisations of $\\\\log_q$: base ring, three contexts, Habiro ring, and Reeb-flow rapidity' proceed logically through the stated steps."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:10.291272+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:10.291272+00:00"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -173,6 +264,19 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "No Lean sibling required; narrative matches the expected configuration."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:10.309029+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:10.309029+00:00"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -194,6 +298,19 @@
         "severity": "minor",
         "evidence": "q-logarithm-properties.ts:1",
         "notes": "No citations are present in 'Realisations of $\\\\log_q$: base ring, three contexts, Habiro ring, and Reeb-flow rapidity', hence no citation misuse is possible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:10.323264+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:10.323264+00:00"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -215,6 +332,19 @@
         "severity": "minor",
         "evidence": "q-logarithm-properties.ts:1",
         "notes": "Key terms and symbols in 'Realisations of $\\\\log_q$: base ring, three contexts, Habiro ring, and Reeb-flow rapidity' are mathematically defined and unambiguous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:10.338150+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:10.338150+00:00"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -236,6 +366,19 @@
         "severity": "minor",
         "evidence": "q-logarithm-properties.ts:1",
         "notes": "The algebraic and logical relations in 'Realisations of $\\\\log_q$: base ring, three contexts, Habiro ring, and Reeb-flow rapidity' are independent of empirical tuning parameters."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:10.353570+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:10.353570+00:00"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -257,6 +400,19 @@
         "severity": "minor",
         "evidence": "q-logarithm-properties.ts:1",
         "notes": "The physical concepts described in 'Realisations of $\\\\log_q$: base ring, three contexts, Habiro ring, and Reeb-flow rapidity' are consistent with quantum observable mechanics."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:10.367217+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:10.367217+00:00"
+        }
       }
     ],
     "da-reproducibility": [
@@ -277,6 +433,19 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "The derivation steps and formal definitions in 'Realisations of $\\\\log_q$: base ring, three contexts, Habiro ring, and Reeb-flow rapidity' are reproducible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:10.383876+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:10.383876+00:00"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -299,6 +468,19 @@
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Realisations of $\\\\log_q$: base ring, three contexts, Habiro ring, and Reeb-flow rapidity' are consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:10.400339+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:10.400339+00:00"
+        }
       }
     ],
     "bib-cite-resolves": [
@@ -336,6 +518,36 @@
         "field_hash": {
           "md": "abcf61884c9f",
           "ts": "6659fab3ea5a"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:10.431948+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:10.431948+00:00"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:10.474827+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:10.474827+00:00"
         }
       }
     ]

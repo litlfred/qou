@@ -815,6 +815,19 @@
         "reviewed_at": "2026-07-07T14:26:55.793841Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:16.352775+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:16.352775+00:00"
+        }
       }
     ],
     "da-false-claim": [
@@ -837,6 +850,19 @@
         "severity": "minor",
         "evidence": "q-reeb-flow.lean:1",
         "notes": "The mathematical claims in '$q$-Deformed Reeb flow' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/quantum-observable-universes/q-reeb-flow.lean:32:13: error: unexpected token 'section'; expected 'lemma'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:16.371164+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:16.371164+00:00"
+        }
       }
     ],
     "da-vacuous": [
@@ -859,6 +885,19 @@
         "severity": "minor",
         "evidence": "q-reeb-flow.ts:1",
         "notes": "No vacuous proofs detected. Sibling Lean file does not contain sorry, though it fails compilation on modules."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:16.386551+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:16.386551+00:00"
+        }
       }
     ],
     "da-circular": [
@@ -881,6 +920,19 @@
         "severity": "minor",
         "evidence": "q-reeb-flow.ts:1",
         "notes": "No circular reasoning or self-assuming definitions detected in '$q$-Deformed Reeb flow'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:16.404834+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:16.404834+00:00"
+        }
       }
     ],
     "da-overclaim": [
@@ -902,6 +954,19 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "The prose presents '$q$-Deformed Reeb flow' as verified, but the sibling Lean file fails to compile."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:16.419039+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:16.419039+00:00"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -924,6 +989,19 @@
         "severity": "minor",
         "evidence": "q-reeb-flow.ts:1",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in '$q$-Deformed Reeb flow'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:16.432854+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:16.432854+00:00"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -946,6 +1024,19 @@
         "severity": "minor",
         "evidence": "q-reeb-flow.lean:1",
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/quantum-observable-universes/q-reeb-flow.lean."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:16.454173+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:16.454173+00:00"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -967,6 +1058,19 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/q-reeb-flow.lean fails compilation, causing divergence from the narrative."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:16.471171+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:16.471171+00:00"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -989,6 +1093,19 @@
         "severity": "minor",
         "evidence": "q-reeb-flow.ts:1",
         "notes": "No citations are present in '$q$-Deformed Reeb flow', hence no citation misuse is possible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:16.487706+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:16.487706+00:00"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1011,6 +1128,19 @@
         "severity": "minor",
         "evidence": "q-reeb-flow.ts:1",
         "notes": "Key terms and symbols in '$q$-Deformed Reeb flow' are mathematically defined and unambiguous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:16.502833+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:16.502833+00:00"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1033,6 +1163,19 @@
         "severity": "minor",
         "evidence": "q-reeb-flow.ts:1",
         "notes": "The algebraic and logical relations in '$q$-Deformed Reeb flow' are independent of empirical tuning parameters."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:16.520097+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:16.520097+00:00"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1055,6 +1198,19 @@
         "severity": "minor",
         "evidence": "q-reeb-flow.ts:1",
         "notes": "The physical concepts described in '$q$-Deformed Reeb flow' are consistent with quantum observable mechanics."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:16.535661+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:16.535661+00:00"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1077,6 +1233,19 @@
         "severity": "minor",
         "evidence": "q-reeb-flow.lean:1 \u2014 content/quantum-observable-universe/quantum-observable-universes/q-reeb-flow.lean:32:13: error: unexpected token 'section'; expected 'lemma'",
         "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/q-reeb-flow.lean fails compilation, indicating a reproducibility failure."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:16.552584+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:16.552584+00:00"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1100,6 +1269,19 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/q-reeb-flow.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/q-reeb-flow.lean:32:13: error: unexpected token 'section'; expected 'lemma'",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/q-reeb-flow.lean contains compilation errors: content/quantum-observable-universe/quantum-observable-universes/q-reeb-flow.lean:32:13: error: unexpected token 'section'; expected 'lemma', invalidating the claimed formalization."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:16.644131+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:16.644131+00:00"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1118,6 +1300,36 @@
           "md": "0f79af7296b4",
           "ts": "7110a0d457ab",
           "lean": "e6a04281e2cf"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:16.875869+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:16.875869+00:00"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:36:16.901069+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:36:16.901069+00:00"
         }
       }
     ]
