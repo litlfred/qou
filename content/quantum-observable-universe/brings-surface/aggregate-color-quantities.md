@@ -1,5 +1,4 @@
-Define the following $C_5$-equivariant quantities in color tube
-coordinates, with $\zeta = e^{2\pi i/5}$:
+Define the following $C_5$-equivariant quantities in color tube coordinates, with $\zeta = e^{2\pi i/5}$:
 
 ```tex
 \begin{align}
@@ -18,24 +17,17 @@ coordinates, with $\zeta = e^{2\pi i/5}$:
 \end{align}
 ```
 
-The subscript on $h_k$ denotes the degree of the $C_5$-equivariant
-invariant: $h_2$ pairs conjugate resolvents ($w_k$ with $w_{5-k}$)
-and $h_3$ pairs squared resolvents in the skip-one pattern.  The
-character $\chi_\zeta$ is the $\zeta$-weighted sum --- the Fourier
-dual of $p_1$.
+The subscript on $h_k$ denotes the degree of the $C_5$-equivariant invariant. $h_2$ pairs conjugate resolvents ($w_k$ with $w_{5-k}$). $h_3$ pairs squared resolvents in a skip-one pattern. The character $\chi_\zeta$ is the $\zeta$-weighted sum (the Fourier dual of $p_1$).
 
-These are related to the unshifted resolvent invariants
-$S = \sum_{k=1}^{4}w_k$ and $D = \sum_{k=1}^{4}\zeta^{-k}w_k$ by
+These relate to the unshifted resolvent invariants $S = \sum_{k=1}^{4}w_k$ and $D = \sum_{k=1}^{4}\zeta^{-k}w_k$ by
 
 ```tex
 \begin{equation}\label{eq:aggregate-shift}
-  S =  p_1(c) + 4z, \qquad D =  \chi_\zeta(c) - z,
+  S =  p_1(c) + 4z, \qquad D =  \chi_\zeta(c) - z.
 \end{equation}
 ```
 
-where the second identity uses $\sum_{k=1}^{4}\zeta^{-k} = -1$.
-The inverse Lagrange resolvent transform
-([Lagrange resolvents](#rem:lagrange-resolvents)) gives
+The second identity uses $\sum_{k=1}^{4}\zeta^{-k} = -1$. The inverse Lagrange resolvent transform ([Lagrange resolvents](#rem:lagrange-resolvents)) yields
 
 ```tex
 \begin{equation}\label{eq:z-from-SD}
