@@ -880,6 +880,47 @@ theorem cmajSig_lt_of_col_row {c c' : ℕ × ℕ} (hc' : c' ∈ μ.cells)
       · left; omega
       · right; exact ⟨by omega, by omega⟩
 
+/-- **`cmajSig` strict monotonicity, general column-major order (sorry-free).** If `c` is
+column-major-*before* `c'` (lexicographic on `(col, row)`), then `cmajSig c' < cmajSig c`.
+Generalises `cmajSig_lt_of_col_row` to cells in different columns. -/
+theorem cmajSig_lt_of_before {c c' : ℕ × ℕ} (hc' : c' ∈ μ.cells)
+    (hbefore : c.2 < c'.2 ∨ (c.2 = c'.2 ∧ c.1 < c'.1)) :
+    cmajSig μ c' < cmajSig μ c := by
+  classical
+  unfold cmajSig
+  apply Finset.card_lt_card
+  rw [Finset.ssubset_iff_of_subset]
+  · refine ⟨c', ?_, ?_⟩
+    · simp only [Finset.mem_filter]; exact ⟨hc', hbefore⟩
+    · simp only [Finset.mem_filter, not_and]; intro _
+      rintro (h | ⟨_, h⟩) <;> omega
+  · intro x hx
+    simp only [Finset.mem_filter] at hx ⊢
+    obtain ⟨hxc, hlater⟩ := hx
+    refine ⟨hxc, ?_⟩
+    rcases hbefore with h | ⟨h1, h2⟩ <;> rcases hlater with g | ⟨g1, g2⟩
+    · left; omega
+    · left; omega
+    · left; omega
+    · right; exact ⟨by omega, by omega⟩
+
+/-- **`cmajSig` is injective on cells (sorry-free).** Distinct cells have distinct
+significance — column-major order is linear, so one cell strictly precedes the other and
+has the strictly larger `cmajSig`. Makes `cmajSig` a bijection `μ.cells → {0,…,n-1}`, the
+positional index used by the base-`(n+1)` first-difference comparison. -/
+theorem cmajSig_injOn : Set.InjOn (cmajSig μ) μ.cells := by
+  intro c hc c' hc' heq
+  have hcf : c ∈ μ.cells := Finset.mem_coe.mp hc
+  have hcf' : c' ∈ μ.cells := Finset.mem_coe.mp hc'
+  by_contra hne
+  rcases lt_trichotomy c.2 c'.2 with h | h | h
+  · exact absurd heq (Nat.ne_of_gt (cmajSig_lt_of_before hcf' (Or.inl h)))
+  · rcases lt_trichotomy c.1 c'.1 with h1 | h1 | h1
+    · exact absurd heq (Nat.ne_of_gt (cmajSig_lt_of_before hcf' (Or.inr ⟨h, h1⟩)))
+    · exact hne (Prod.ext h1 h)
+    · exact absurd heq.symm (Nat.ne_of_gt (cmajSig_lt_of_before hcf (Or.inr ⟨h.symm, h1⟩)))
+  · exact absurd heq.symm (Nat.ne_of_gt (cmajSig_lt_of_before hcf (Or.inl h)))
+
 /-- **Keystone (sorry-free): a within-column descent swap strictly lowers `colWordNum`.**
 If labels `a < b` sit in the same column with `b` in an EARLIER row than `a` (a column
 descent — the larger label higher up), swapping them strictly decreases the column-word
