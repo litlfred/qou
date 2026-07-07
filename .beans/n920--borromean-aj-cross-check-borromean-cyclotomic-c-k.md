@@ -4,7 +4,7 @@ title: 'Borromean AJ: cross-check Borromean cyclotomic c_k against Habiro [H1] (
 status: in-progress
 type: task
 created_at: 2026-07-04T10:42:30Z
-updated_at: 2026-07-07T11:17:41Z
+updated_at: 2026-07-07T12:23:50Z
 ---
 
 UNBLOCKED 2026-07-06: owner uploaded uploads/0508100v6.pdf (GL2011).
@@ -41,3 +41,14 @@ gated on an uninterrupted ~35min run (container reclaim killed 3 runs).
 Two clean routes forward: (1) finish the fixed CRT pipeline; (2) qZeilberger
 (proof-grade, mirrors aj_figure_eight_certificate.py, Lean-formalizable).
 Existence certificate stands regardless.
+QZEILBERGER ROUTE 2026-07-07 (PR #3450): shift-ratios verified exact +
+q-proper-hypergeometric (borromean_qzeil_ratios.py, 6/6) — the well-posed-
+ness precondition, DELIVERED. Operator+cert solve: symbolic sp.solve too
+slow for the cube summand; fixed-q mod-p solve is fast but the naive
+(operator + poly-cert, free x-window) ansatz admits a LARGE telescoping
+family (nullity 41-311) because the nested R_i=prod r1(q^t x,y) share
+factors. PRECISE NEXT STEP: implement Gosper certificate-denominator
+normalization (pins the minimal telescoper → nullity 1), or restrict to
+polynomial a_i + Gosper-DEN cert. Not closed tonight (compute env: 5+
+container restarts destroyed runs). Foundation + existence certificate +
+Habiro transcription all stand.
