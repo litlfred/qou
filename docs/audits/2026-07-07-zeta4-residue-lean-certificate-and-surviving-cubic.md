@@ -94,12 +94,48 @@ with the `c_3 → −2` q=1 shadow value; the golden anchor's trace value is exa
 *not* a structural identification, and does not survive the corpus over-claim
 gates as anything more than an observation.
 
+## §5 — where the degree-3 comes from: the **Hopf (double-crossing) sector**
+
+Probe [`qbeta_odd_carrier_sector_decomposition.py`](../../computations/qbeta/qbeta_odd_carrier_sector_decomposition.py)
+→ [witness](../../computations/qbeta/qbeta-odd-carrier-sector-decomposition.witness.json)
+(7/7, exact ℚ-Laurent arithmetic, no sympy/floats/fit) decomposes the bar-odd
+carrier over the four **knot sectors** of the H₃ normal-form basis
+`{𝟏, σ₀, σ₁, σ₀σ₁, σ₁σ₀, σ₀σ₁σ₀}` (reading the neutron/proton amplitudes
+exactly from `free-neutron-decay.witness.json`):
+
+| knot sector | crossings | bar-odd contribution in `y = q²+q⁻²` | arithmetic |
+|---|---|---|---|
+| virtual (σ₀, σ₁) | 1 | **0** | bar-even |
+| trefoil (σ₀σ₁σ₀) | 3 | **0** | bar-even |
+| unknot (𝟏) | 0 (identity) | `C_unknot(y) = 2y² − 7y + 4` | quadratic, disc `17`, `ℚ(√17)` |
+| **Hopf (σ₀σ₁ + σ₁σ₀)** | **2** | **`C_Hopf(y) = y³ − 6y² + 10y − 6`** | **cubic, irreducible, disc `−76 = −2²·19`** |
+
+with `C = C_Hopf + C_unknot` exactly. **The degree-3 field is sourced entirely
+by the Hopf-link (double-crossing) sector**; the identity contributes only a
+quadratic, and the odd-crossing sectors (virtual, trefoil) vanish. So the cubic
+is **not** a 3-dim representation (H₃'s Wedderburn blocks are `1, 2, 1` — none
+is 3-dim) and **not** a single knot invariant — it is specifically the
+**2-crossing isospin amplitude difference** (refining the KC18 identification of
+the odd channel with the Markov crossing term). The discriminant prime **19** is
+shared by `C_Hopf` (`−76`) and the total `C` (`−152 = −2³·19`) — the arithmetic
+fingerprint of the sector.
+
+Lean-certified y-level identities (`cubicC_sector_decomp`,
+`cubicC_Hopf_rrt_candidates_all_nonzero`, sorry-free); the amplitude-level
+sector attribution is the exact-arithmetic witness above.
+
+**Consequence for the search.** The productive remaining direction for the c_3
+odd channel is the **Hopf-sector cubic field** (the disc-`19` `S₃` object)
+routed through the archimedean evaluation (KC18) — **not** a fibre real-q /
+quadratic-anchor formula (excluded, §4), and **not** a ζ₄-residue (excluded,
+§1–§3). Any candidate must supply the cubic field of `C_Hopf`.
+
 ## Discipline
 
 Scope-(b) exclusion (cited invariant: the exact ℚ[q] factorisation, now
 Lean-certified). No `c_k` value, no fit, no wiring, no registry tier change
 (flip-flop guard §8). The bar-odd `c_3` channel remains open; this narrows,
-does not close it.
+does not close it — and now **localises** it to the Hopf-sector cubic.
 
 ## Cross-references
 

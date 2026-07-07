@@ -166,4 +166,57 @@ theorem cubicC_rrt_candidates_all_nonzero :
       cubicC (2 : ℚ) ≠ 0 ∧ cubicC (-2 : ℚ) ≠ 0 := by
   refine ⟨?_, ?_, ?_, ?_⟩ <;> · unfold cubicC; norm_num
 
+/-! ## §5. Knot-sector decomposition: the degree-3 field is the **Hopf** sector
+
+Where does the cubic field come from? The bar-odd part of the net decay-width
+carrier `Δ_net = Δ(neutron) − Δ(proton)` on the H₃ normal-form basis
+`{𝟏, σ₀, σ₁, σ₀σ₁, σ₁σ₀, σ₀σ₁σ₀}` (knots unknot / virtual / Hopf / trefoil)
+decomposes **exactly** by knot sector (reproducible exact Laurent arithmetic,
+probe `qbeta_odd_carrier_sector_decomposition.py`, from
+`free-neutron-decay.witness.json`):
+
+- **virtual (σ₀, σ₁; 1 crossing) → 0** and **trefoil (σ₀σ₁σ₀; 3 crossings) → 0**:
+  the odd-crossing sectors are bar-EVEN, contributing nothing to the bar-odd
+  carrier.
+- **unknot (𝟏; identity) → a quadratic** `C_unknot(y) = 2y² − 7y + 4`
+  (disc `17`, field `ℚ(√17)`), in `y = q²+q⁻²`.
+- **Hopf (σ₀σ₁+σ₁σ₀; 2 crossings) → the cubic** `C_Hopf(y) = y³ − 6y² + 10y − 6`
+  (irreducible over `ℚ`, disc `−76 = −2²·19`).
+
+with `C = C_Hopf + C_unknot`. So the **degree-3 field of the odd channel is
+sourced entirely by the Hopf-link (double-crossing) sector**; the identity adds
+only a quadratic, and the odd-crossing sectors vanish. It is NOT a 3-dim
+representation (H₃'s Wedderburn blocks are `1,2,1` — none is 3-dim) nor a single
+knot invariant — it is specifically the 2-crossing amplitude in the isospin
+difference (refines the KC18 identification of the odd channel with the Markov
+crossing term). The discriminant prime `19` is shared by `C_Hopf` (`−76`) and
+the total `C` (`−152 = −2³·19`) — the arithmetic fingerprint of the sector. -/
+
+/-- Unknot/identity-sector contribution to the odd-channel cubic: the quadratic
+    `C_unknot(y) = 2y² − 7y + 4` (disc `17`). -/
+def cubicC_unknot (y : R) : R := 2 * y ^ 2 - 7 * y + 4
+
+/-- Hopf/double-crossing-sector contribution: the **cubic** `C_Hopf(y) =
+    y³ − 6y² + 10y − 6` — the source of the degree-3 field. -/
+def cubicC_Hopf (y : R) : R := y ^ 3 - 6 * y ^ 2 + 10 * y - 6
+
+/-- **Sector decomposition of the odd-channel cubic.** `C = C_Hopf + C_unknot`:
+    the total cubic splits exactly into the Hopf-sector cubic plus the
+    unknot-sector quadratic. The `y³` term — hence the degree-3 field — lives
+    entirely in the Hopf (double-crossing) summand. -/
+theorem cubicC_sector_decomp (y : R) :
+    cubicC y = cubicC_Hopf y + cubicC_unknot y := by
+  unfold cubicC cubicC_Hopf cubicC_unknot; ring
+
+/-- **The Hopf-sector cubic has no rational root** (RRT candidates = divisors of
+    `6`, i.e. `{±1, ±2, ±3, ±6}`, all nonzero: `C_Hopf` = `−1, −23, −2, −58, −3,
+    −117, 54, −498`), so it is irreducible over `ℚ`: the double-crossing sector
+    alone already carries an irreducible cubic field (disc `−76 = −2²·19`). -/
+theorem cubicC_Hopf_rrt_candidates_all_nonzero :
+    cubicC_Hopf (1 : ℚ) ≠ 0 ∧ cubicC_Hopf (-1 : ℚ) ≠ 0 ∧
+      cubicC_Hopf (2 : ℚ) ≠ 0 ∧ cubicC_Hopf (-2 : ℚ) ≠ 0 ∧
+      cubicC_Hopf (3 : ℚ) ≠ 0 ∧ cubicC_Hopf (-3 : ℚ) ≠ 0 ∧
+      cubicC_Hopf (6 : ℚ) ≠ 0 ∧ cubicC_Hopf (-6 : ℚ) ≠ 0 := by
+  refine ⟨?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_⟩ <;> · unfold cubicC_Hopf; norm_num
+
 end QOU.QBeta.Zeta4Residue
