@@ -23,7 +23,7 @@ sympy-exact 7/7:
 Since the bar-fixed locus is a subring (Lean `bar_fixed_add/_mul/_pow`), every
 scalar functional of `z` alone — any polynomial or rational function — is
 bar-EVEN. The c_k-recursion kernel's leading coefficient `a₁ = −c₃` is proved
-bar-ODD (`QBetaCKRecursionKernelConstraints.ck_a1_bar_odd`) and is empirically
+bar-ODD (`QBetaCKRecursionKernelConstraints.ck_a1_bar_odd_of_c3_odd`) and is empirically
 nonzero (`|c₃| ≈ 2.07`). A bar-even scalar equal to a bar-odd nonzero element
 forces `2a = 0` (Lean `bar_even_and_odd_two_mul_eq_zero`), impossible in
 characteristic ≠ 2. **Hence no scalar rational function of `z` alone can source

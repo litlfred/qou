@@ -26,7 +26,7 @@ is **jointly impossible**. At most one of (A), (B) can survive.
 |---|---|---|
 | [`QBetaReebSinhParity.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/QBetaReebSinhParity.lean) (PR #1887) | `cosh(kη)` bar-even, `sinh(kη)` bar-odd, and the **bar-antisymmetric PART** of `a·cosh + b·sinh` is `b·sinh` — component-level parity algebra. The docstring calls c₃ "the first bar-antisymmetric coefficient", citing PR #1866. | **No** — a statement about *parts*, not about c₃ pointwise |
 | PR #1866 ("even slice empty") | the even slice `cos(√2·u)` reproduces c₂ = −1 but gives **c₃ = 0**; a nonzero c₃ requires odd content (`Φ₂ ≠ 0` in the #1887 phase reframe `c₃ = −Φ₁Φ₂`) | **No** — this is *rung*/phase parity ("c₃ needs an odd ingredient"), not pointwise bar-antisymmetry of c₃ |
-| [`QBetaCKRecursionKernelConstraints.ck_a1_bar_odd`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/QBetaCKRecursionKernelConstraints.lean) | **conditional**: *IF* `∀η, c₃(−η) = −c₃(η)` *THEN* `a₁` is odd. The exactly-odd antecedent is a hypothesis, imported from the #1887 swing narrative — proved nowhere | **No** — hypothesis-carrying |
+| [`QBetaCKRecursionKernelConstraints.ck_a1_bar_odd_of_c3_odd`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/QBetaCKRecursionKernelConstraints.lean) | **conditional**: *IF* `∀η, c₃(−η) = −c₃(η)` *THEN* `a₁` is odd. The exactly-odd antecedent is a hypothesis, imported from the #1887 swing narrative — proved nowhere | **No** — hypothesis-carrying |
 | [2026-06-13 heat f-map audit](2026-06-13-qbeta-heat-fmap-symbolic-and-literature.md) §1 | the heat-route `a₁ = κ_{(2,1)}(q)·S` with `κ_{(2,1)}` **exactly bar-odd** (sympy-exact; Lean-certified on this branch) | **Yes — but for a different object** (see §3) |
 | Cross-anchor swing (`dc₃/dη ≈ 4.26×10⁶`) | the *extracted* c₃ differs 2.4% between anchors ~1e-8 apart in q₀ — but PR #1821 proved this slope **impossible for any smooth real f**, which is precisely why c₃ was refuted as a real-q element and moved to the fibre level | **No** — pointwise real η-parity statements about c₃(η) are ill-posed by the corpus's own #1821 verdict |
 
@@ -40,7 +40,7 @@ There are **two distinct `a₁` objects**:
 | object | parity | q=1 value | magnitude at q₀ |
 |---|---|---|---|
 | **heat-route `a₁`** = `κ_{(2,1)}·S` (2026-06-13 audit) | exactly bar-odd ✓ | `0` (κ has the `(q−1)³` factor) — **consistent** with odd | ~1e-3 (Stage B, 1ppQ ledger cont. 19: "\|a₁\| ~ 1e-3 vs √2·Φ₂ ≈ 2.069" — the per-mode refutation) |
-| **kernel `a₁`** = `−c₃ = √2·Φ₂` (`ck_a1_eq_neg_c3_depth_two`) | **not established** | shadow `2 ≠ 0` (gate §4(c)) | ≈ 2.07 |
+| **kernel `a₁`** = `−c₃ = √2·Φ₂` (conditional lemma `ck_a1_eq_neg_c3_depth_two`) | **not established** | shadow `2 ≠ 0` (gate §4(c)) | ≈ 2.07 |
 
 Stage B already recorded the 2000× magnitude mismatch when it refuted the
 per-mode identification; the *parity* attribute of the first object was
@@ -76,7 +76,7 @@ has *de facto* treated (B) as binding, not (A).
    the slot's odd part is well-defined and nonzero, which the non-monomial
    covariance still obstructs at the pointwise level. I-B remains the route.
 4. **Docstring clarification applied** (this PR) to
-   `ck_a1_bar_odd` (conditional lemma, no math change): its antecedent is a
+   `ck_a1_bar_odd_of_c3_odd` (conditional lemma, no math change): its antecedent is a
    modelling hypothesis, not established; see this audit.
 
 **Owner sign-off requested** on verdict items 1–2 becoming the standing

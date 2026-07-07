@@ -97,8 +97,13 @@ and the bar-antisymmetric *part* of a Reeb holonomy is its `sinh` component),
 not pointwise oddness of `c₃`. An *exactly* bar-odd `a₁` would moreover have
 zero q=1 shadow (`QOU.QBeta.fixed_eval_two_mul_kills_bar_odd`), contradicting
 the §4(c) gate `c₃ → -2`. Established reading: `a₁` has a nonzero bar-ODD
-part (the anchor-swing channel); its bar-even part carries the shadow. -/
-theorem ck_a1_bar_odd (c₃ a₁ : ℝ → ℝ)
+part (the anchor-swing channel); its bar-even part carries the shadow.
+
+Renamed 2026-07-07: `ck_a1_bar_odd` → `ck_a1_bar_odd_of_c3_odd` (the `_of_`
+naming rule for hypothesis-carrying constraint lemmas — the antecedent is
+now visible in every citation; see `local/formalizer.md` §Conditional-lemma
+naming). -/
+theorem ck_a1_bar_odd_of_c3_odd (c₃ a₁ : ℝ → ℝ)
     (hdef : ∀ η, a₁ η = -c₃ η) (hodd : ∀ η, c₃ (-η) = -c₃ η) (η : ℝ) :
     a₁ (-η) = -a₁ η := by
   rw [hdef, hodd, hdef]

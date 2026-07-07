@@ -122,7 +122,7 @@ the rung `k`. Candidate identifications:
    overdetermined unless K1a is identical; no solution → I-A killed.
 3. **K2:** the `α₁` slot must be bar-ODD (up to monomial twist) and `α₂`
    bar-EVEN under `q ↦ 1/q, x ↦ 1/x` — slot-parity match with
-   `ck_a1_bar_odd` + the ea56 exclusion. Wrong parity → I-A killed.
+   `ck_a1_bar_odd_of_c3_odd` + the ea56 exclusion. Wrong parity → I-A killed.
 
 Outcome semantics: PASS = I-A's shadow is *not excluded* (scope-(a) positive;
 no c_k value, nothing wired); any KILL → record scope-(a) refutation row and
@@ -184,7 +184,7 @@ canonical candidates for clean parity. Decidable checks (exact, radicals):
   q=1-regular f).
 - **T3-2 (tension flag, 🟡 owner):** any exactly-bar-odd function regular at
   q=1 vanishes there (`f(1) = −f(1)`); but `a₁ = −c₃ → 2 ≠ 0` at q=1. So
-  "a₁ exactly bar-odd" (ck_a1_bar_odd's hypothesis, from #1887) and
+  "a₁ exactly bar-odd" (ck_a1_bar_odd_of_c3_odd's hypothesis, from #1887) and
   "a₁ q=1-regular with shadow 2" are **jointly impossible** — the corpus
   constraint set must mean odd-PART dominance of the anchor swing, or a₁
   singular at q=1. To be verified symbolically and flagged, not resolved.
@@ -213,7 +213,7 @@ canonical candidates for clean parity. Decidable checks (exact, radicals):
   [`docs/audits/2026-07-07-a1-bar-odd-parity-shadow-investigation.md`](../audits/2026-07-07-a1-bar-odd-parity-shadow-investigation.md):
   **no corpus source establishes exact bar-oddness of kernel `a₁ = −c₃`** —
   #1887's Lean is component-level (`sinh` odd; bar-antisymmetric *part*);
-  #1866 is rung/phase parity (`c₃ = 0` on the even slice); `ck_a1_bar_odd`
+  #1866 is rung/phase parity (`c₃ = 0` on the even slice); `ck_a1_bar_odd_of_c3_odd`
   is conditional; pointwise real η-parity of c₃ is ill-posed by the corpus's
   own #1821 smooth-real refutation. Plus a **symbol-overloading finding**:
   the heat-route `a₁ = κ_{(2,1)}·S` (exactly odd, vanishes at q=1, ~1e-3) and
@@ -221,7 +221,7 @@ canonical candidates for clean parity. Decidable checks (exact, radicals):
   2000× magnitude mismatch, ledger cont. 19). Evidence-based reading: **`a₁`
   has a nonzero bar-odd part (swing channel); its bar-even part carries the
   shadow** (`shadow_carried_by_even_part`, sorry-free, ZBarParity §5).
-  Docstring of `ck_a1_bar_odd` clarified (conditional scope; no math change;
+  Docstring of `ck_a1_bar_odd_of_c3_odd` clarified (conditional scope; no math change;
   file still compiles, lean-direct exit 0). The c4qz/T1 kills survive
   re-examination. 🟡 Owner sign-off requested on making this the standing
   reading (prose/gate re-scope only).
@@ -230,6 +230,30 @@ canonical candidates for clean parity. Decidable checks (exact, radicals):
   — I-B is now the load-bearing route (B1 induced recurrence → B2 re-based
   parity → B3 shadow + basis composition); 4₁ is the cleanest test knot
   (`C_n ≡ 1`); reuses the n920 Habiro machinery landed on main.
+
+## 4-quater. Prevention tranche (bean `f2pz`, owner "do 1 2 3 4 5", 2026-07-07)
+
+So the a₁ incident class cannot recur:
+
+1. **Kernel/f-map constraint registry** — [`ck-dk-canonical-registry.md` §9](ck-dk-canonical-registry.md)
+   (14 rows KC1–KC14, per-row epistemic tier) + JSON twin
+   [`kernel-constraints-registry.json`](kernel-constraints-registry.json) +
+   validator [`kernel_constraints_registry_validate.py`](kernel_constraints_registry_validate.py)
+   (R1–R5 incl. the machine rule **exactly-bar-odd ⇒ zero q=1 shadow**;
+   0 errors, 9 standing warnings: R5 on three pre-existing decl names +
+   the historical 2026-06-05 scope doc, warn-only by design).
+2. **`_of_` naming rule** — `ck_a1_bar_odd` renamed
+   `ck_a1_bar_odd_of_c3_odd` (compiles, exit 0; on-branch citations
+   updated, historical docs untouched); rule codified in
+   `local/formalizer.md` §Conditional-lemma naming. The three older
+   conditional decls (KC2–KC4) kept their names — visible as standing R5
+   warnings rather than a wider rename.
+3. **Registry §2 disambiguation rows** for `a₁` (kernel vs heat-route),
+   `a_n` (z-Taylor), `Φ₂`.
+4. **Doc-citation lint** — `--lint-docs` mode of the validator (warn-only;
+   `--strict` for CI).
+5. **AGENTS.md STRICT rule** "Conditional-proved ≠ premise-established"
+   (owner-visible file; wordsmith at will).
 
 ## 5. Session log
 

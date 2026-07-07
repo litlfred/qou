@@ -10,7 +10,7 @@ The proved pre-archimedean backbone feeding the open f-map is the Markov
 parameter `z(q) = √q/(1+q)` (3-term recursion, PR #1739; bridge block
 `prop:qbeta-z-recursion-to-ck-recursion-bridge`). The open c_k-recursion
 kernel must have a **bar-ODD leading coefficient** `a₁ = −c₃`
-(`QOU.BraidKnot.QBetaCKRecursionKernelConstraints.ck_a1_bar_odd`).
+(`QOU.BraidKnot.QBetaCKRecursionKernelConstraints.ck_a1_bar_odd_of_c3_odd`).
 
 This file proves the parity bookkeeping of the z-side atoms under the fibre
 bar involution (`q ↦ q⁻¹`, in the half-power coordinate `s ↦ s⁻¹`, `s² = q`):
@@ -158,7 +158,7 @@ theorem bar_even_and_odd_two_mul_eq_zero (a : R)
     NONZERO element in characteristic ≠ 2.** Applied to the keystone: every
     scalar functional of `z` alone is bar-even (§1 + §4 closure), while the
     kernel's leading coefficient `a₁ = −c₃` is bar-odd
-    (`QBetaCKRecursionKernelConstraints.ck_a1_bar_odd`) and empirically
+    (`QBetaCKRecursionKernelConstraints.ck_a1_bar_odd_of_c3_odd`) and empirically
     nonzero — so `a₁` is NOT a scalar functional of `z` alone. -/
 theorem bar_even_ne_bar_odd_of_ne_zero {F : Type*} [Field F] (σF : F →+* F)
     (a : F) (heven : σF a = a) (hodd : σF a = -a)
