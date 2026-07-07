@@ -1,8 +1,7 @@
-# Bar-parity (sinh/cosh) decomposition of the modular double
+# Bar-parity (sinh/cosh) decomposition under the bar involution
 
 **Proposition.** *Let $R$ be a commutative ring and $\sigma\colon R\to R$ a
-ring involution (the modular double $b\mapsto b^{-1}$, equivalently the bar
-$q\mapsto q^{-1}$). For every $f\in R$,*
+ring involution — the bar $q\mapsto q^{-1}$. For every $f\in R$,*
 
 $$
 2f \;=\; \underbrace{(f+\sigma f)}_{\text{bar-even}} \;+\; \underbrace{(f-\sigma f)}_{\text{bar-odd}},
@@ -15,10 +14,14 @@ decomposition is unique and holds over any commutative ring.*
 
 ## Interpretation
 
-This is the algebraic core of the **sinh/cosh split** on the Faddeev
-modular double. The Faddeev non-compact quantum dilogarithm $\Phi_b$ is
-modular-invariant, $\Phi_b=\Phi_{b^{-1}}$, so its logarithm decomposes under
-$\sigma$ into a bar-even ($\cosh$) part and a bar-odd ($\sinh$) part.
+This is the algebraic core of the **sinh/cosh split** under the bar
+involution $\sigma$: any element — in particular $\log\Phi_b$ for the
+Faddeev quantum dilogarithm — decomposes into a bar-even ($\cosh$) and a
+bar-odd ($\sinh$) part. The Faddeev $\Phi_b$ *additionally* carries the
+**modular double** symmetry $\Phi_b=\Phi_{b^{-1}}$; this is a **distinct**
+involution ($b\mapsto b^{-1}$ maps $q=e^{2\pi i b^2}$ to its S-dual
+$\tilde q$, not to $q^{-1}$), and it is the structure the compact
+q-dilogarithm lacks — not the bar parity, which the compact form also has.
 
 Conditional on the complex-volume conjecture `conj:binding-qbeta-complex-volume`,
 the two parts are the two faces of the complex volume
