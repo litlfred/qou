@@ -950,6 +950,111 @@ theorem geom_digit_bound (B K : ℕ) (hB : 1 ≤ B) (s : Finset ℕ)
         Finset.sum_le_sum_of_subset hsub
     _ < B ^ K := by have := geom_sum_pred B K hB; omega
 
+/-- **Indexed base-`B` digit bound (sorry-free):** distinct positions `e i < K`, digits
+`d i < B` ⇒ `∑ d i·B^{e i} < B^K`. The form the cell-indexed first-difference comparison
+consumes (`e = cmajSig`, `d =` label). -/
+theorem digit_bound_indexed {ι : Type*} (B K : ℕ) (hB : 1 ≤ B) (s : Finset ι)
+    (e : ι → ℕ) (hinj : Set.InjOn e s) (he : ∀ i ∈ s, e i < K)
+    (d : ι → ℕ) (hd : ∀ i, d i < B) :
+    ∑ i ∈ s, d i * B ^ e i < B ^ K := by
+  classical
+  have h1 : ∑ i ∈ s, d i * B ^ e i ≤ ∑ i ∈ s, (B - 1) * B ^ e i := by
+    apply Finset.sum_le_sum; intro i _
+    exact Nat.mul_le_mul_right _ (by have := hd i; omega)
+  have h3 : ∑ i ∈ s, B ^ e i = ∑ x ∈ s.image e, B ^ x := by
+    rw [Finset.sum_image
+      (fun a ha b hb hab => hinj (Finset.mem_coe.mpr ha) (Finset.mem_coe.mpr hb) hab)]
+  have h4 : s.image e ⊆ Finset.range K := by
+    intro x hx; rw [Finset.mem_image] at hx; obtain ⟨i, hi, rfl⟩ := hx
+    exact Finset.mem_range.mpr (he i hi)
+  calc ∑ i ∈ s, d i * B ^ e i
+      ≤ ∑ i ∈ s, (B - 1) * B ^ e i := h1
+    _ = (B - 1) * ∑ i ∈ s, B ^ e i := by rw [Finset.mul_sum]
+    _ = (B - 1) * ∑ x ∈ s.image e, B ^ x := by rw [h3]
+    _ ≤ (B - 1) * ∑ x ∈ Finset.range K, B ^ x :=
+        Nat.mul_le_mul_left _ (Finset.sum_le_sum_of_subset h4)
+    _ < B ^ K := by have hg := geom_sum_pred B K hB; rw [Finset.mul_sum]; omega
+
+/-- **First-difference comparison for `colWordNum` (sorry-free).** If `u` and `v` agree
+(as labels) on every cell column-major-*earlier* than a cell `c₀` (i.e. `cmajSig` strictly
+larger), and `v` has a strictly smaller label at `c₀`, then `colWordNum v < colWordNum u`.
+This is the base-`(n+1)` "most-significant differing digit decides" principle, with
+`cmajSig` as the positional index. -/
+theorem colWordNum_lt_of_first_diff (u v : Specht.Tableau μ) (c₀ : μ.cells)
+    (hhigh : ∀ c : μ.cells, cmajSig μ (c₀ : ℕ × ℕ) < cmajSig μ (c : ℕ × ℕ) →
+        ((u.symm c : Fin (Specht.nOf μ)) : ℕ) = ((v.symm c : Fin (Specht.nOf μ)) : ℕ))
+    (hlt : ((v.symm c₀ : Fin (Specht.nOf μ)) : ℕ) < ((u.symm c₀ : Fin (Specht.nOf μ)) : ℕ)) :
+    colWordNum v < colWordNum u := by
+  classical
+  set B := Specht.nOf μ + 1 with hB
+  set K := cmajSig μ (c₀ : ℕ × ℕ) with hK
+  set gu : μ.cells → ℕ :=
+    fun c => ((u.symm c : Fin (Specht.nOf μ)) : ℕ) * B ^ cmajSig μ (c : ℕ × ℕ) with hgu
+  set gv : μ.cells → ℕ :=
+    fun c => ((v.symm c : Fin (Specht.nOf μ)) : ℕ) * B ^ cmajSig μ (c : ℕ × ℕ) with hgv
+  rw [colWordNum_eq_cellSum u, colWordNum_eq_cellSum v]
+  -- the predicate splitting cells: strictly higher significance than c₀
+  set p : μ.cells → Prop := fun c => K < cmajSig μ (c : ℕ × ℕ) with hp
+  -- high parts agree
+  have hhi : ∑ c ∈ Finset.univ.filter p, gv c = ∑ c ∈ Finset.univ.filter p, gu c := by
+    apply Finset.sum_congr rfl
+    intro c hc
+    rw [Finset.mem_filter] at hc
+    simp only [hgu, hgv]
+    rw [hhigh c hc.2]
+  -- low part: split off c₀
+  have hc0mem : c₀ ∈ Finset.univ.filter (fun c => ¬ p c) := by
+    rw [Finset.mem_filter]; exact ⟨Finset.mem_univ _, by rw [hp]; simp [hK]⟩
+  -- the erased low set has strictly smaller significance
+  set T := (Finset.univ.filter (fun c => ¬ p c)).erase c₀ with hT
+  have hTlt : ∀ c ∈ T, cmajSig μ (c : ℕ × ℕ) < K := by
+    intro c hc
+    rw [hT, Finset.mem_erase, Finset.mem_filter] at hc
+    obtain ⟨hcne, _, hcp⟩ := hc
+    rw [hp] at hcp; push_neg at hcp
+    rcases lt_or_eq_of_le hcp with h | h
+    · exact h
+    · exfalso; apply hcne
+      have : (c : ℕ × ℕ) = (c₀ : ℕ × ℕ) :=
+        cmajSig_injOn (Finset.mem_coe.mpr c.2) (Finset.mem_coe.mpr c₀.2) (by rw [h, hK])
+      exact Subtype.ext this
+  have hTinj : Set.InjOn (fun c : μ.cells => cmajSig μ (c : ℕ × ℕ)) T := by
+    intro c _ c' _ heq
+    exact Subtype.ext (cmajSig_injOn (Finset.mem_coe.mpr c.2) (Finset.mem_coe.mpr c'.2) heq)
+  -- digit bounds on the erased tails
+  have hRu : ∑ c ∈ T, gu c < B ^ K :=
+    digit_bound_indexed B K (by omega) T (fun c => cmajSig μ (c : ℕ × ℕ)) hTinj hTlt
+      (fun c => ((u.symm c : Fin (Specht.nOf μ)) : ℕ)) (fun c => by
+        show ((u.symm c : Fin (Specht.nOf μ)) : ℕ) < B
+        have := (u.symm c).isLt; rw [hB]; omega)
+  have hRv : ∑ c ∈ T, gv c < B ^ K :=
+    digit_bound_indexed B K (by omega) T (fun c => cmajSig μ (c : ℕ × ℕ)) hTinj hTlt
+      (fun c => ((v.symm c : Fin (Specht.nOf μ)) : ℕ)) (fun c => by
+        show ((v.symm c : Fin (Specht.nOf μ)) : ℕ) < B
+        have := (v.symm c).isLt; rw [hB]; omega)
+  -- assemble each side: Σ = high + (c₀ term + tail)
+  have hsplit : ∀ g : μ.cells → ℕ, ∑ c, g c
+      = (∑ c ∈ Finset.univ.filter p, g c) + (g c₀ + ∑ c ∈ T, g c) := by
+    intro g
+    rw [← Finset.sum_filter_add_sum_filter_not Finset.univ p g, hT,
+        Finset.add_sum_erase _ g hc0mem]
+  rw [hsplit gu, hsplit gv, hhi]
+  -- reduce to the low parts
+  have hc0u : gu c₀ = ((u.symm c₀ : Fin (Specht.nOf μ)) : ℕ) * B ^ K := by rw [hgu, hK]
+  have hc0v : gv c₀ = ((v.symm c₀ : Fin (Specht.nOf μ)) : ℕ) * B ^ K := by rw [hgv, hK]
+  have hkey : gv c₀ + ∑ c ∈ T, gv c < gu c₀ + ∑ c ∈ T, gu c := by
+    rw [hc0u, hc0v]
+    set a := ((v.symm c₀ : Fin (Specht.nOf μ)) : ℕ) with ha
+    set b := ((u.symm c₀ : Fin (Specht.nOf μ)) : ℕ) with hbb
+    set M := B ^ K with hM
+    have h1 : a + 1 ≤ b := hlt
+    have e2 : a * M + M ≤ b * M := by
+      have e1 : (a + 1) * M = a * M + M := by ring
+      rw [← e1]; exact Nat.mul_le_mul_right _ h1
+    have hv : ∑ c ∈ T, gv c < M := hRv
+    omega
+  omega
+
 /-- **Keystone (sorry-free): a within-column descent swap strictly lowers `colWordNum`.**
 If labels `a < b` sit in the same column with `b` in an EARLIER row than `a` (a column
 descent — the larger label higher up), swapping them strictly decreases the column-word
