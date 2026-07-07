@@ -1,14 +1,14 @@
 {
   "computation": "qbeta-net-bar-odd-projection",
   "description": "Bar-odd projection of the H_3 GS categorical net Delta(net) equals (h/4)*C(q^2+q^-2) with C(y)=y^3-4y^2+3y-2 -- an INDEPENDENT categorical derivation of KC20's irreducible odd-channel Hopf cubic.",
-  "audit_only": true,
+  "auditOnly": true,
   "tier": "symbolic-exact (sympy; no fit, no anchors)",
-  "computedAt": "2026-07-07T18:35:33.053498+00:00",
-  "commitSha": "567645a4966bd10061d4e6fffc655694ee555f91",
+  "computedAt": "2026-07-07T19:39:02.631578+00:00",
+  "commitSha": "2343c25c121e6561e6457c1b8cb714a5d2ca44a2",
   "engine": "sympy",
   "engineVersion": "1.14.0",
   "scriptFile": "qbeta_net_bar_odd_projection_probe.py",
-  "scriptHash": "f610f474a174",
+  "scriptHash": "c18f0c501a6c",
   "assertions": [
     {
       "name": "W_odd_1_projection_equals_KC20_cubic",
