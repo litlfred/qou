@@ -985,7 +985,7 @@ theorem card_fin_le (n m : ℕ) (hm : m < n) :
     simp only [Finset.mem_image, Finset.mem_filter, Finset.mem_univ, true_and, Finset.mem_range]
     constructor
     · rintro ⟨i, hi, rfl⟩; omega
-    · intro hk; exact ⟨⟨k, by omega⟩, by simpa using by omega, rfl⟩
+    · intro hk; exact ⟨⟨k, by omega⟩, show k ≤ m by omega, rfl⟩
   rw [this, Finset.card_range]
 
 /-- `#{i : Fin n | (i:ℕ) < m} = m` for `m ≤ n` (sorry-free). -/
@@ -998,7 +998,7 @@ theorem card_fin_lt (n m : ℕ) (hm : m ≤ n) :
     simp only [Finset.mem_image, Finset.mem_filter, Finset.mem_univ, true_and, Finset.mem_range]
     constructor
     · rintro ⟨i, hi, rfl⟩; omega
-    · intro hk; exact ⟨⟨k, by omega⟩, by simpa using hk, rfl⟩
+    · intro hk; exact ⟨⟨k, by omega⟩, hk, rfl⟩
   rw [this, Finset.card_range]
 
 /-- **Order-statistic domination (sorry-free).** If for every threshold `w` the finset `X`
@@ -1019,7 +1019,7 @@ theorem orderStat_le_of_count_ge {X Y : Finset ℕ} (h : X.card = Y.card)
       obtain ⟨i, hi, rfl⟩ := hy
       rw [Finset.mem_filter] at hi ⊢
       refine ⟨Finset.orderEmbOfFin_mem _ _ _, ?_⟩
-      rw [hv]; exact (Y.orderEmbOfFin h.symm).monotone (by exact_mod_cast hi.2)
+      rw [hv]; exact (Y.orderEmbOfFin h.symm).monotone hi.2
     calc (r : ℕ) + 1 = (Finset.univ.filter (fun i : Fin X.card => (i : ℕ) ≤ (r:ℕ))).card :=
               (card_fin_le X.card r r.2).symm
         _ = _ := (Finset.card_image_of_injective _ (Y.orderEmbOfFin h.symm).injective).symm
@@ -1042,11 +1042,47 @@ theorem orderStat_le_of_count_ge {X Y : Finset ℕ} (h : X.card = Y.card)
       refine ⟨Finset.mem_univ _, ?_⟩
       by_contra hge; push_neg at hge
       have : v < X.orderEmbOfFin rfl i :=
-        lt_of_lt_of_le hlt ((X.orderEmbOfFin rfl).monotone (by exact_mod_cast hge))
+        lt_of_lt_of_le hlt ((X.orderEmbOfFin rfl).monotone hge)
       exact absurd hx.2 (not_le.mpr this)
     calc (X.filter (· ≤ v)).card ≤ _ := Finset.card_le_card hsub
       _ ≤ (Finset.univ.filter (fun i : Fin X.card => (i:ℕ) < (r:ℕ))).card := Finset.card_image_le
       _ = (r : ℕ) := card_fin_lt X.card r (le_of_lt r.2)
+  omega
+
+/-- **Count-domination from the top-`|A|` structure (sorry-free).** If `A` is "above" `B`
+(every `b ∈ B` is below every `a ∈ A`) and `S ⊆ A ∪ B` has `|S| = |A|`, then for every
+threshold `w` the top set `A` has no more elements `≤ w` than `S`. Feeds
+`orderStat_le_of_count_ge`: a Garnir fibre's column-`j` content `S` (a different `|A|`-subset
+of `A∪B`) sorted-dominates `t`'s content `A`, because `B < A` makes `A` the top subset. -/
+theorem count_dom_of_top {A B S : Finset ℕ} (hBA : ∀ b ∈ B, ∀ a ∈ A, b < a)
+    (hS : S ⊆ A ∪ B) (hcard : S.card = A.card) (w : ℕ) :
+    (A.filter (· ≤ w)).card ≤ (S.filter (· ≤ w)).card := by
+  classical
+  have hgt : (S.filter (fun x => w < x)).card ≤ (A.filter (fun x => w < x)).card := by
+    by_cases hb : ∃ b ∈ B, w < b
+    · obtain ⟨b, hbB, hwb⟩ := hb
+      have hAall : A.filter (fun x => w < x) = A := by
+        apply Finset.filter_true_of_mem
+        intro a ha; exact lt_trans hwb (hBA b hbB a ha)
+      rw [hAall]
+      calc (S.filter (fun x => w < x)).card ≤ S.card := Finset.card_filter_le _ _
+        _ = A.card := hcard
+    · push_neg at hb
+      apply Finset.card_le_card
+      intro x hx
+      rw [Finset.mem_filter] at hx ⊢
+      obtain ⟨hxS, hxw⟩ := hx
+      have hxAB := hS hxS
+      rw [Finset.mem_union] at hxAB
+      rcases hxAB with hxA | hxB
+      · exact ⟨hxA, hxw⟩
+      · exact absurd hxw (not_lt.mpr (hb x hxB))
+  have hAeq := Finset.filter_card_add_filter_neg_card_eq_card (s := A) (p := (· ≤ w))
+  have hSeq := Finset.filter_card_add_filter_neg_card_eq_card (s := S) (p := (· ≤ w))
+  have hAneg : (A.filter (fun x => ¬ x ≤ w)).card = (A.filter (fun x => w < x)).card := by
+    congr 1; apply Finset.filter_congr; intro x _; simp [not_le]
+  have hSneg : (S.filter (fun x => ¬ x ≤ w)).card = (S.filter (fun x => w < x)).card := by
+    congr 1; apply Finset.filter_congr; intro x _; simp [not_le]
   omega
 
 /-- **First-difference comparison for `colWordNum` (sorry-free).** If `u` and `v` agree
