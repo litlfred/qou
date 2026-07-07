@@ -4,7 +4,7 @@ title: 'Borromean AJ: cross-check Borromean cyclotomic c_k against Habiro [H1] (
 status: in-progress
 type: task
 created_at: 2026-07-04T10:42:30Z
-updated_at: 2026-07-07T12:37:27Z
+updated_at: 2026-07-07T14:03:51Z
 ---
 
 UNBLOCKED 2026-07-06: owner uploaded uploads/0508100v6.pdf (GL2011).
@@ -61,3 +61,13 @@ anything. PINNED REQUIREMENT: exact q-Gosper certificate-denominator
 normalization (Gosper-Petkovsek greatest-factorial factorization of s) —
 a standalone ~200-400 line q-Gosper impl, fast (no long compute window),
 the well-scoped next step. Foundation + existence cert stand.
+DEGREE TERMINUS 2026-07-07 (docs/audits/2026-07-07-borromean-explicit-
+operator-degree-terminus.md): multi-q DQ-scan is decisive — operator-part
+of the telescoping nullspace grows LINEARLY with ansatz q-degree
+(72→145→294→494→772), never saturating, so NO low-degree telescoper
+exists. The minimal recurrence is intrinsically ~deg-126 in q (unique,
+route-independent). CORRECTION: qZeilberger does NOT reduce operator
+degree — q-Gosper is strictly harder, not the clean next step. The right
+route is the committed Rust CRT pipeline (PR #3450) in a PERSISTENT
+compute environment (only blocker was 5 container restarts). Existence
+certificate (evidence-grade) stands.

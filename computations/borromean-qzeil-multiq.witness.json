@@ -1,0 +1,47 @@
+{
+  "engine": "python 3.11.15 / sympy 1.14.0 / numpy (multi-q, int64 mod 2^31-1)",
+  "scriptFile": "computations/borromean_qzeil_multiq.py",
+  "commitSha": "7db9bfaa383da0bfd65d7888fa2b9373967f302f",
+  "scriptHash": "41e95b83ba79",
+  "computedAt": "2026-07-07T14:02:10.188240+00:00",
+  "description": "Decisive q-degree scan proving no low-degree qZeilberger telescoper exists for the Borromean diagonal colored Jones \u2014 the minimal recurrence is intrinsically high-degree; qZeilberger does not reduce it",
+  "computation": "borromean-qzeil-multiq",
+  "audit_only": true,
+  "verdict": {
+    "found": false,
+    "decisive_finding": "NO low-degree qZeilberger telescoper exists. The operator-part of the telescoping nullspace grows ~linearly with the ansatz q-degree DQ (never saturating at 1), so the genuine minimal recurrence for J_{B,n} is intrinsically HIGH-degree in q (CRT degree probe: ~126). qZeilberger does NOT reduce the operator degree \u2014 the minimal recurrence for the sum is unique, the SAME ~degree-126 object regardless of route. Therefore the explicit operator requires reconstructing ~degree-126 coefficients (the committed Rust multi-prime CRT pipeline, PR #3450), whose ONLY blocker was the compute environment (5 container restarts), NOT an algorithmic gap. q-Gosper would face the same reconstruction PLUS a certificate (strictly harder). Corrected recommendation: run the committed CRT pipeline in a persistent environment.",
+    "dq_scan": [
+      {
+        "DQ": 2,
+        "unk": 231,
+        "nullity": 150,
+        "op_part_vectors": 72
+      },
+      {
+        "DQ": 4,
+        "unk": 385,
+        "nullity": 289,
+        "op_part_vectors": 145
+      },
+      {
+        "DQ": 8,
+        "unk": 693,
+        "nullity": 570,
+        "op_part_vectors": 294
+      },
+      {
+        "DQ": 12,
+        "unk": 1001,
+        "nullity": 862,
+        "op_part_vectors": 494
+      },
+      {
+        "DQ": 16,
+        "unk": 1309,
+        "nullity": 1159,
+        "op_part_vectors": 772
+      }
+    ]
+  },
+  "wall_seconds": 8.4
+}
