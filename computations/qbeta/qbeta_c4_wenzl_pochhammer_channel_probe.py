@@ -70,6 +70,13 @@ def main() -> int:
     )
     wb.set_content_block("prop:phi-b-unitary-bar-odd")
 
+    # Load the upstream witnesses this probe depends on (records dependency
+    # hashes for witness_dependency_drift.py; WP2/WP3 derive from their data).
+    here = Path(__file__).resolve().parent
+    up_sseries = wb.add_upstream(here / "qbeta-ck-sseries-exact-rational.witness.json")
+    up_c6c10 = wb.add_upstream(
+        here / "qbeta-c6-c10-crossanchor-falsification.witness.json")
+
     # WP1 — Wenzl-Pochhammer annihilator boundaries [4m]_q = 0 at ζ_{4m}.
     print("\n  WP1 — Wenzl–Pochhammer boundaries [4m]_q = 0 at q = ζ_{4m}:")
     wp1_rows = []
@@ -85,8 +92,11 @@ def main() -> int:
     print(f"     at ζ_4: [4],[8],[12] all zero = {all(cross.values())} (m|k vanishing)")
 
     # WP2 — is exact c_4^even a low-complexity W-P value or generic ℚ(√3)?
+    # c_4^even is READ from the upstream 9fnm witness (not hard-coded).
     print("\n  WP2 — c_4^even (9fnm) complexity in ℚ(√3)=ℚ(ζ_12)⁺:")
-    a, b = sp.Rational(-2483340421, 1451520), sp.Rational(-120701, 1920)
+    c4_even = sp.sympify(up_sseries["data"]["c_k_even_exact"]["4"])
+    a = sp.Rational(c4_even.subs(sp.sqrt(3), 0))                 # rational part
+    b = sp.Rational(sp.simplify((c4_even - a) / sp.sqrt(3)))     # coeff of √3
     heights = [abs(a.p), a.q, abs(b.p), b.q]
     max_height = max(heights)
     structured = max_height <= 10 ** 4
@@ -96,13 +106,15 @@ def main() -> int:
     wp2_is_generic = not structured
 
     # WP3 — c_8 pattern-break (c6-c10 witness) ↔ [8]_q=0 second boundary.
+    # The break rung is READ from the upstream c6-c10 witness (not hard-coded);
+    # the gate genuinely checks it equals the [8]_q=0 boundary index.
     print("\n  WP3 — c_8 break (c6-c10 falsification) ↔ [8]_q=0 (ζ_8) boundary:")
-    c8_break_known = True   # c6-c10 witness: pattern breaks at first FREE rung c_8
+    c8_break_at = int(up_c6c10["data"]["pattern_breaks_at_free_rung"])
     eight_is_boundary = bool(sp.simplify(qint_at_root(8, 8)) == 0)
-    wp3_ok = c8_break_known and eight_is_boundary
-    print(f"     c_8 is first free-rung break (c6-c10 witness): {c8_break_known}")
+    wp3_ok = (c8_break_at == 8) and eight_is_boundary
+    print(f"     first free-rung break at c_{c8_break_at} (c6-c10 witness)")
     print(f"     [8]_q=0 at ζ_8 (second Wenzl boundary): {eight_is_boundary}")
-    print(f"     alignment k=8 ↔ [8]_q boundary: {wp3_ok}")
+    print(f"     alignment break-rung ↔ [8]_q boundary: {wp3_ok}")
 
     print("\n  VERDICT (scope-a): W-P is the correct CHANNEL for the c_k")
     print("  (roots of unity; [4m]_q boundaries; c_8-break ↔ [8]_q), but does NOT")
@@ -116,6 +128,7 @@ def main() -> int:
     wb.add_data("wp2_c4even_b_sqrt3", str(b))
     wb.add_data("wp2_max_rational_height", int(max_height))
     wb.add_data("wp2_is_generic_not_structured", bool(wp2_is_generic))
+    wb.add_data("wp3_break_rung_from_c6c10_witness", c8_break_at)
     wb.add_data("wp3_c8_break_is_eight_q_boundary", bool(wp3_ok))
     wb.add_data("channel", "phase / root-of-unity (surviving candidate); "
                 "magnitude-channel candidates q-Hermite/q-Bessel/toroidal excluded")
