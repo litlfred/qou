@@ -42,13 +42,27 @@ import json  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 # This probe is pure exact ℚ-arithmetic (no mpmath / no substrate deps), so it
-# uses WitnessBuilder when the substrate stack is importable and otherwise falls
-# back to a self-contained witness writer — it must run in any environment.
+# uses the canonical WitnessBuilder when the substrate stack is importable
+# (CI: emits full provenance) and otherwise falls back to a self-contained
+# writer that still emits the required provenance fields (sandbox without
+# mpmath) — it must run in any environment.
 try:
+    import _path_bridge  # noqa: E402, F401 — puts computations/substrate on sys.path
     from witness_base import WitnessBuilder  # noqa: E402
     _HAVE_WB = True
-except Exception:  # pragma: no cover - sandbox without mpmath
+except Exception:  # pragma: no cover - sandbox without mpmath/substrate
     _HAVE_WB = False
+
+
+def _git_head_sha() -> str:
+    import subprocess
+    try:
+        return subprocess.run(
+            ["git", "rev-parse", "HEAD"], cwd=str(HERE),
+            capture_output=True, text=True, check=True,
+        ).stdout.strip()
+    except Exception:
+        return ""
 
 
 class Lau(dict):
@@ -157,8 +171,11 @@ class _PlainWitness:
     """Minimal self-contained witness writer (no substrate/mpmath deps)."""
 
     def __init__(self, name, engine="python-exact"):
-        self._d = {"computation": name, "engine": engine, "data": {},
-                   "assertions": [], "audit_only": None, "description": ""}
+        self._d = {"computation": name, "engine": engine,
+                   "scriptFile": Path(__file__).name,
+                   "commitSha": _git_head_sha(),
+                   "data": {}, "assertions": [], "audit_only": None,
+                   "description": ""}
 
     def set_description(self, s): self._d["description"] = s
     def add_data(self, k, v): self._d["data"][k] = v
@@ -170,7 +187,8 @@ class _PlainWitness:
         out = HERE / f"{self._d['computation']}.witness.json"
         self._d["allPassed"] = all(a.get("computed") == a.get("expected")
                                    for a in self._d["assertions"])
-        out.write_text(json.dumps(self._d, indent=2, ensure_ascii=False))
+        out.write_text(json.dumps(self._d, indent=2, ensure_ascii=False),
+                       encoding="utf-8")
         return out
 
 
@@ -182,12 +200,20 @@ def _find_witness(name: str) -> Path:
 
 
 def main() -> int:
-    wit = json.load(open(_find_witness("free-neutron-decay.witness.json")))
+    wit = json.loads(
+        _find_witness("free-neutron-decay.witness.json").read_text(encoding="utf-8")
+    )
+
+    # Restricted evaluator for the witness `coefficient_symbolic` strings
+    # (Laurent polynomials in `q`). `__builtins__` is emptied so no arbitrary
+    # code can run even if the witness content is tampered with; only `q`
+    # (a `Lau` monomial) and arithmetic operators are in scope.
+    _EVAL_GLOBALS = {"__builtins__": {}, "q": Q}
 
     def coeff(side: str, ws: str) -> Lau:
         for t in wit[side]["nf_terms"]:
             if t["word_str"] == ws:
-                return eval(t["coefficient_symbolic"], {"q": Q})  # noqa: S307
+                return eval(t["coefficient_symbolic"], _EVAL_GLOBALS)  # noqa: S307
         return Lau()
 
     basis = [t["word_str"] for t in wit["neutron"]["nf_terms"]]
@@ -297,21 +323,27 @@ def main() -> int:
 
 
 def _pdiv(numer: Lau, den: Lau):
-    """Exact Laurent division numer/den (den a polynomial); return quotient Lau
-    or None if not divisible."""
+    """Exact Laurent division numer/den; return quotient Lau or None if not
+    divisible. Robust to an arbitrary Laurent denominator (any `min(den)`):
+    both operands are shifted by their minimum power before the polynomial
+    long-division and the quotient is shifted back."""
     if not numer:
         return Lau()
-    lo = min(numer)
-    a = [numer.get(i + lo, F(0)) for i in range(max(numer) - lo + 1)]
-    dd = max(den)
-    dl = [F(0)] * (dd + 1)
-    for k, v in den.items():
-        dl[k] = v
+    if not den:
+        return None
+    shift_num = min(numer)
+    shift_den = min(den)
+    deg_num = max(numer) - shift_num
+    deg_den = max(den) - shift_den
+    if deg_num < deg_den:
+        return None
+    a = [numer.get(i + shift_num, F(0)) for i in range(deg_num + 1)]
+    dl = [den.get(i + shift_den, F(0)) for i in range(deg_den + 1)]
     quo = {}
-    for i in range(len(a) - 1 - dd, -1, -1):
-        c = a[i + dd] / dl[dd]
-        quo[i + lo] = c
-        for j in range(dd + 1):
+    for i in range(deg_num - deg_den, -1, -1):
+        c = a[i + deg_den] / dl[deg_den]
+        quo[i + shift_num - shift_den] = c
+        for j in range(deg_den + 1):
             a[i + j] -= c * dl[j]
     if any(x != 0 for x in a):
         return None
