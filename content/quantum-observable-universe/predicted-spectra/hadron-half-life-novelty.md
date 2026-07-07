@@ -1,1 +1,1 @@
-**Remark (Categorical derivation).** This geometric framing derives the empirical weak-decay structure purely categorically. It unifies the Fermi golden rule and Sargent's rule within a single Markov-trace matrix element.
+**Remark (Categorical derivation).** This geometric framing derives the empirical weak-decay structure purely categorically. It unifies the Fermi golden rule and the Sargent rule within a single Markov-trace matrix element.

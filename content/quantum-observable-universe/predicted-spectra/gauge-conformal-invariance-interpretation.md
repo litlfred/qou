@@ -1,1 +1,1 @@
-**Remark.** Emitted photons propagate across the domain interface into the relaxed $q_{\text{baseline}}$ intergalactic medium. A coherent conformal shift occurs. Observers routinely misidentify the structurally required higher-order topological poles as massive dead star metallicities.
+**Remark.** Emitted photons propagate across the domain interface into the relaxed $q_{\text{baseline}}$ intergalactic medium. A coherent conformal shift occurs. Observers misidentify the structurally required higher-order topological poles as massive dead star metallicities.

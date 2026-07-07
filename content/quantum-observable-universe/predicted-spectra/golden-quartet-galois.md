@@ -12,7 +12,7 @@ $$
    =  (x^2 - x - 1)(x^2 + x - 1)
 $$
 
-over $\mathbb{Q}$. Under the Galois action of $\mathrm{Gal}(\mathbb{Q}(\sqrt{5})/\mathbb{Q}) = \langle \tau \rangle \cong \mathbb{Z}/2$ (with $\tau \colon \sqrt{5} \mapsto -\sqrt{5}$), the quartet splits into two orbits:
+over $\mathbb{Q}$. Under the Galois action $\mathrm{Gal}(\mathbb{Q}(\sqrt{5})/\mathbb{Q}) = \langle \tau \rangle \cong \mathbb{Z}/2$, where $\tau \colon \sqrt{5} \mapsto -\sqrt{5}$, the quartet splits into two orbits:
 
 $$
   Q_+  :=  \{\,\varphi,\;-1/\varphi\,\}
@@ -32,4 +32,4 @@ $$
   \iota(Q_+) = Q_-,\qquad \iota(Q_-) = Q_+.
 $$
 
-The joint group $G := \mathrm{Gal}(\mathbb{Q}(\sqrt{5})/\mathbb{Q}) \times \langle\iota\rangle \cong \mathbb{Z}/2 \times \mathbb{Z}/2$ therefore acts transitively and faithfully on $Q$.
+The joint group $G := \mathrm{Gal}(\mathbb{Q}(\sqrt{5})/\mathbb{Q}) \times \langle\iota\rangle \cong \mathbb{Z}/2 \times \mathbb{Z}/2$ acts transitively and faithfully on $Q$.

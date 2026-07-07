@@ -1,8 +1,8 @@
 **The picture.**
 
-Hydrogen comprises a large trefoil (the electron) and a small Borromean knot (the proton) threaded through it. The proton occupies the center as a dense, compact $\mathcal{B}_3$ of three unknots with $\mathrm{Vol} \approx 7.328$. The electron $T_{2,3}$ is a much larger trefoil that loops around the proton. They are Hopf-linked, with the electron passing through the proton's Seifert surface exactly once.
+Hydrogen couples a large trefoil electron to a small Borromean proton. The proton occupies the center as a compact $\mathcal{B}_3$ formed of three unknots with $\mathrm{Vol} \approx 7.328$. The electron $T_{2,3}$ loops around the proton. They Hopf-link. The electron passes through the proton's Seifert surface exactly once.
 
-The trefoil spins around the Borromean anchor. This spinning — the trefoil sweeping out a volume as it orbits — constitutes the electron cloud. The writhe of the trefoil and its wrapping around the proton determine the cloud's shape.
+The trefoil spins around the Borromean anchor. This motion sweeps out the electron cloud. The trefoil writhe and wrapping determine the cloud shape.
 
 ```tex
 \begin{tikzcd}[row sep=4em, column sep=5em]
@@ -12,13 +12,12 @@ The trefoil spins around the Borromean anchor. This spinning — the trefoil swe
     & \\
   & \underset{\text{proton (anchor)}}{\mathrm{Vol} \approx 7.328} &
 \end{tikzcd}
-```
 
-The Borromean volume pins the massive proton in place. The trefoil's zero volume keeps the electron light (deriving mass from vacuum drag alone). The Hopf link $\oplus$ provides the electromagnetic binding.
+The Borromean volume pins the massive proton in place. The zero volume of the trefoil keeps the electron light. Vacuum drag alone supplies its mass. The Hopf link $\oplus$ provides the electromagnetic binding.
 
 **Shell transitions as Reidemeister I moves.**
 
-The minimal diagram of the trefoil $T_{2,3}$ has writhe $w = +3$ (three positive crossings). Photon absorption executes a Reidemeister I move on the trefoil's embedding within the Hopf link. This adds a curl at the exceptional divisor, increasing the writhe by $+2$ (two R-I moves preserving knot type):
+The minimal diagram of the trefoil $T_{2,3}$ has writhe $w = +3$. Photon absorption executes a Reidemeister I move on the trefoil embedding within the Hopf link. This adds a curl at the exceptional divisor and increases the writhe by $+2$.
 
 $$
   n \to n + 1
@@ -28,38 +27,38 @@ $$
   \text{two R-I moves at exceptional divisor.}
 $$
 
-The bare mass $m_e \approx 0.511$ MeV remains unchanged, as R-I moves preserve knot type ([Reidemeister invariance](#conj:reidemeister-mass-invariance)). The binding energy $E_n = -13.6/n^2$ eV changes because R-I moves alter the embedding. The electron remains a trefoil but shifts to a different state (different writhe).
+The bare mass $m_e \approx 0.511$ MeV remains unchanged. Reidemeister moves preserve knot type ([Reidemeister invariance](#conj:reidemeister-mass-invariance)). The binding energy $E_n = -13.6/n^2$ eV changes because R-I moves alter the embedding. The electron remains a trefoil but shifts to a higher writhe state.
 
-The shell number $n$ corresponds to the writhe level:
+The shell number $n$ matches the writhe level:
 
 $$
   n =  \frac{w - 1}{2} =  1, 2, 3, 4, \ldots
   \qquad\text{for}\quad w = 3, 5, 7, 9, \ldots
 $$
 
-The curls added by R-I moves are localized at the exceptional divisor of the brane tower. The ground-state trefoil ($w = 3$) lies entirely in the base space $\mathcal{S}_0$. An excited trefoil ($w = 5$) places its extra curls in the blow-up $\mathcal{S}_1$.
+The added curls localize at the exceptional divisor of the brane tower. The ground-state trefoil ($w = 3$) lies in the base space $\mathcal{S}_0$. An excited trefoil ($w = 5$) places extra curls in the blow-up $\mathcal{S}_1$.
 
-**Sub-shells from resonance modes of the trefoil.**
+**Sub-shells from resonance modes.**
 
-The embedded trefoil $T_{2,3}$ in the Bring surface can vibrate transversely within its normal bundle $N_{T_{2,3}}$. The resonance frequencies of this vibration are the Laplacian eigenvalues on the trefoil curve. The mode numbers $\ell = 0, 1, 2, \ldots$ label the standing-wave patterns:
+The embedded trefoil $T_{2,3}$ vibrates transversely within its normal bundle $N_{T_{2,3}}$ in the Bring surface. Laplacian eigenvalues on the trefoil curve govern the resonance frequencies. The mode integers $\ell = 0, 1, 2, \ldots$ label the standing-wave patterns:
 
 - Mode $\ell = 0$: Uniform (no oscillation) — the $s$ orbital.
 - Mode $\ell = 1$: One wavelength around the curve — the $p$ orbital.
 - Mode $\ell = 2$: Two wavelengths — the $d$ orbital.
 
-At shell $n$, the Seifert surface at linking level $n$ has effective length proportional to $n$. Only modes with wavelength $\geq L/n$ fit on the trefoil, yielding the cutoff $\ell = 0, 1, \ldots, n - 1$. Each mode $\ell$ vibrates transversely in the ambient $3$-space. Projected onto the sphere, the $2\ell + 1$ standing-wave orientations are the spherical harmonics $Y_\ell^m$. Thus:
+At linking level $n$, the Seifert surface has effective length proportional to $n$. Only modes with wavelength $\geq L/n$ fit. This yields the cutoff $\ell = 0, 1, \ldots, n - 1$. Each mode $\ell$ vibrates transversely in ambient $3$-space. Projected onto the sphere, the $2\ell + 1$ standing-wave orientations match the spherical harmonics $Y_\ell^m$. Thus:
 
 $$
   \sum_{\ell=0}^{n-1} (2\ell + 1) =  n^2
   \quad\text{orbitals per shell.}
 $$
 
-This matches observation for all $n$.
+This sum reproduces the observed capacity for all $n$.
 
 **Note on geometric counting.**
 
-The sum $\sum(2\ell + 1) = n^2$ matches standard quantum mechanics (Laplacian eigenvalues on $S^2$ under $\mathrm{SO}(3)$). The topological structure identifies $\ell$ with resonance modes of the trefoil vibration and $n$ with the writhe level (R-I framing number). The remaining step is to prove:
+The sum $\sum(2\ell + 1) = n^2$ matches standard quantum mechanics. The topological model identifies $\ell$ with trefoil resonance modes and $n$ with the writhe framing number. The remaining step requires a proof:
 
 *The space of sections of the normal bundle $N_{T_{2,3}}$ of the trefoil in the Bring's surface, at total framing twist $k = 2(n-1)$, has dimension $n^2$.*
 
-This is stated as [Conjecture](#conj:orbital-space-normal-bundle) below. The $2\ell + 1$ orientations per mode and the cutoff $\ell \leq n - 1$ would follow directly from the $\mathrm{SO}(3)$ representation theory of this section space.
+This appears as [Conjecture](#conj:orbital-space-normal-bundle) below. The $2\ell + 1$ orientations and the cutoff $\ell \leq n - 1$ must follow from the $\mathrm{SO}(3)$ representation theory of this section space.
