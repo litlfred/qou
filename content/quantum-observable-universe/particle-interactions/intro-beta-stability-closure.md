@@ -1,3 +1,3 @@
 Beta stability—the condition that an isotope avoids $\beta^-$ and $\beta^+$ emission—is the categorical closure condition preserved by the substrate flow. This section identifies the substrate-level beta-stable subset. We use the deuteron as a first-principles anchor.
 
-We begin with the deuteron calculation. We then extend to the symbolic and operator-valued mass towers, recording closure properties under the substrate flow. We link the closure rule to the Mark-up rule. Finally, we supply the categorical version of the empirical valley of stability, which the next section refines into a Diophantine valley.
+We extend the deuteron calculation to the symbolic and operator-valued mass towers, recording closure properties under the substrate flow. We link the closure rule to the Mark-up rule. We supply the categorical version of the empirical valley of stability, which the next section refines into a Diophantine valley.

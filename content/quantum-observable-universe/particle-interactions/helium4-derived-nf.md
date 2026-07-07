@@ -3,7 +3,7 @@ Helium-4 $\mathcal{A}(2,2)$ contains two protons, two neutrons, and two electron
 
 ## Derivation
 
-Twelve $\gamma\gamma$ pair productions generate four nucleons. Each is confined by $\mathcal{B}_3$ ([confinement selection](#prop:confinement-operator-selection)) and stabilized by LP-derived gluon crossings: $2\sigma_0$ per proton and $L_+L_-$ per neutron ([integer LP gluon](#prop:mass-endomorphism-tower)). The four nucleons comprise 11 crossings per proton and 13 per neutron. Inter-nucleon typed crossings link them: $+\sigma$ for $p$-$p$, mixed for $p$-$n$, and shifted $-H_A$ for $n$-$n$.
+Twelve $\gamma\gamma$ pair productions generate four nucleons. Each is confined by $\mathcal{B}_3$ and stabilized by LP-derived gluon crossings. Inter-nucleon typed crossings link them: $+\sigma$ for $p$-$p$, mixed for $p$-$n$, and shifted $-H_A$ for $n$-$n$.
 
 ## Nucleus NF ($\alpha$ particle)
 
@@ -15,11 +15,11 @@ $$
   \mathrm{net}(\mathcal{N}(2,2)) \approx +0.749
 $$
 
-The four-nucleon Hopf chain generates large trefoil content from iterated proton-neutron crossings. The $e^- \approx +1.040$ term dominates.
+The four-nucleon Hopf chain generates large trefoil content from iterated proton-neutron crossings. The $e^-$ term dominates.
 
 ## Full atom NF (with $1s^2$ shell)
 
-We add two Hopf-linked electrons ([helium Hopf diagram](#rem:helium-hopf-diagram)):
+We add two Hopf-linked electrons:
 
 $$
   \mathrm{NF}(\mathcal{A}(2,2)) = +0.236\gamma - 0.061\sigma_0 + 0.176\sigma_1 + 0.384 L_+ - 0.037 L_- + 1.190 e^-.
@@ -30,17 +30,8 @@ $$
 $$
 
 **Stability analysis.**
-He-4 retains minor demand in $\sigma_0 = -0.061$ and $L_- = -0.037$. Compare with He-3:
-
-| Atom | $\mathrm{net}$ | Demand channels | $\mathrm{tr}_M$ |
-| :--- | ---: | :---: | ---: |
-| ${}^3\mathrm{He}$ | $+2.338$ | **0** (fully stable) | $1.230$ |
-| ${}^4\mathrm{He}$ | $+1.889$ | $2$ ($\sigma_0$, $L_-$) | $1.037$ |
-
-He-3 exhibits zero demand because all normal form coefficients are positive. He-4 exhibits two small demand channels. While both are stable, He-4 attains a lower Markov trace ($1.037$ versus $1.230$). The alpha particle minimizes the categorical action among $A=4$ configurations, reflecting doubly-magic enhanced binding.
+He-4 retains minor demand in $\sigma_0 = -0.061$ and $L_- = -0.037$. He-3 exhibits zero demand because all normal form coefficients are positive. He-4 exhibits two small demand channels. While both are stable, He-4 attains a lower Markov trace ($1.037$ versus $1.230$). The alpha particle minimizes the categorical action among $A=4$ configurations, reflecting doubly-magic enhanced binding.
 
 ## Comparison: He-3 vs He-4
 
-The He-3 atom ($2p + 1n + 2e^-$) achieves full demand closure with only three nucleons. He-4 adds a second neutron. This fourth nucleon slightly reopens the $\sigma_0$ and $L_-$ demand channels while reducing the overall Markov trace. The binding tightens despite the residual demand. This gives the categorical expression of doubly-magic $N=Z=2$ stability.
-
-**Witness**: `four-term-photon-to-atoms.witness.json`.
+The He-3 atom achieves full demand closure with only three nucleons. He-4 adds a second neutron. This fourth nucleon slightly reopens the $\sigma_0$ and $L_-$ demand channels while reducing the overall Markov trace. The binding tightens despite the residual demand. This gives the categorical expression of doubly-magic $N=Z=2$ stability.
