@@ -165,9 +165,12 @@ per-block-χ recursion; do not conflate it with the c_k ladder recursion.)
 - **Q_β: c_2 only** (`Q_N2`-level). `q_beta_predicted.py` wires **no** c_3+
   ladder rung; the ~0.17% truncation residual is the c_2-level gap.
 - **m_p: bare.** No d_k wired; ~2.89% categorical `VolDensity` gap stands.
-- **L2 100× dashboard: 3/7** beats-100× (`per-observable-100x-status.witness.json`,
-  `summary.beats_100x_count = 3`). The deep audit's "4/7"/"6/7" are **stale**
-  (pre proton-anchor re-pin).
+- **L2 100× dashboard: 2/7** beats-100× (`per-observable-100x-status.witness.json`,
+  `summary.beats_100x_count = 2`; m_e and m_K/m_π). The "3/7" recorded here
+  earlier — and the deep audit's "4/7"/"6/7" — are **stale**: m_p dropped from
+  the count on 2026-07-04 when its fitted Habiro tower was removed (de-fitted
+  round-trip +1.35 ppb, ~437× miss; see AGENTS.md §Precision goals and
+  `docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md`).
 - The c_3 structural form is locked behind the §3b-cond conditional class
   `QbetaC3StructuralFormClass` — **conditional, not a derivation**, not wired.
 

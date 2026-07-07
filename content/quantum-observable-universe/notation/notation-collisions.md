@@ -96,3 +96,32 @@ The category $\mathbf{Arch}$ is the target of $\tau$, not the name of a functor.
 **Critical distinction — $B_{\mathrm{sym}}$ (exact) vs $B_{\mathrm{lin}}$ (linear).** $B_{\mathrm{lin}}$ is the linearization of $B_{\mathrm{sym}}$ (Kashaev $\mathrm{tr}_M \sim \exp(\mathrm{Vol})$; the scalar $\Delta\mathrm{tr}$ is the first-order term). They are NOT interchangeable. Their ratio is the binding deficit
 $$ B_{\mathrm{sym}} / B_{\mathrm{lin}} \;\approx\; q_0^{\,5(2A-1)}, $$
 i.e. the $\Delta_\lambda = B_{\mathrm{AME}}/B_{\mathrm{lin}}$ residual. We always subscript $B$. A bare $B$ in prose denotes the production $B_{\mathrm{lin}}$.
+
+## Quantum dilogarithm: $\Phi_q$ (compact) vs $\Phi_b$ (Faddeev non-compact)
+
+Two distinct functions were historically both called "Faddeev $\Phi_q$",
+which is **forbidden** (terminology ruling 2026-07-06,
+[`2026-07-06-qbeta-faddeev-phi-b-modular-double-accuracy.md`](../../../docs/audits/2026-07-06-qbeta-faddeev-phi-b-modular-double-accuracy.md)):
+
+| Symbol | Definition | Correct name |
+|---|---|---|
+| $\Phi_q(z)$ | $\prod_{k\ge 1}(1 - q^{-k}z)^{-1}$ (reciprocal $q$-Pochhammer) | **compact quantum dilogarithm** / $q$-exponential |
+| $\Phi_b(z)$ | modular-double ratio, kernel $\sinh(zb)\sinh(z/b)$, poles at $c_b + ib\mathbb{N} + i b^{-1}\mathbb{N}$ | **Faddeev** (non-compact) quantum dilogarithm |
+
+- **"Faddeev" belongs to $\Phi_b$ only.** Never write "Faddeev $\Phi_q$" for
+  the compact form; write "compact quantum dilogarithm $\Phi_q$" (or
+  "$q$-Pochhammer").
+- $\Phi_q$ is correct on the real-$q$ / **mass** (bar-even, Rogers) face;
+  $\Phi_b$ is the **decay** ($\mathfrak{Q}_\beta$, bar-odd, root-of-unity)
+  face. At the real substrate $\Phi_b \to \Phi_q$ (the modular dual
+  $\tilde q$ is $\sim 10^{-165}$-suppressed).
+- Canonical evaluator: [`computations/qbeta/phi_b_evaluator.py`](../../../computations/qbeta/phi_b_evaluator.py)
+  ($\Phi_b$, literature-verified vs Hikami math/0604094); Lean structure
+  `QOU.QBeta.FaddeevModularDouble` ($\Phi_b$). The legacy Lean class
+  `QOU.Machinery.FaddeevQuantumDilogContext` names the **compact** $\Phi_q$
+  (kept for `lean.ref` compatibility; its docstring flags this).
+- **Residual collision (open):** a few Askey-two-saddle prose sites use the
+  single glyph "$\Phi_q$" where context makes clear the non-compact
+  regulator is meant. Resolving that (a distinct glyph, or always writing
+  $\Phi_b$) is a follow-up notation decision; until then, disambiguate in
+  surrounding prose.
