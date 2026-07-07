@@ -1,4 +1,4 @@
-The Kummer tower filtration provides the algebraic framework for understanding shell closure, the Pauli factor, and the odd-odd pairing deficit in the Gröbner--Shirshov normal form.
+The Kummer tower filtration provides the algebraic framework for shell closure, the Pauli factor, and the odd-odd pairing deficit in the Gröbner--Shirshov normal form.
 
 ## The $\mu_2$ torsion as Pauli evaluation
 
@@ -10,9 +10,9 @@ $$
   \sum_{w \in \mathrm{supp}} c_w \cdot (-q^{-1})^{\ell(w)}
 $$
 
-This sum is the $\mu_2$ Kummer evaluation. It applies the sign character of $\mathbb{G}_m$ to the normal form. The eigenvalue $-q^{-1}$ is the alternating root of the Hecke relation $\sigma^2 = (q - q^{-1})\sigma + 1$, alongside the symmetric root $q$.
+This sum is the $\mu_2$ Kummer evaluation. It applies the sign character of $\mathbb{G}_m$ to the normal form. The eigenvalue $-q^{-1}$ is the alternating root of the Hecke relation $\sigma^2 = (q - q^{-1})\sigma + 1$. The eigenvalue $q$ is the symmetric root.
 
-The Pauli factor
+The Pauli factor measures the $\mu_2$-torsion content:
 
 $$
   F_{\mathrm{Pauli}}^{(A)}
@@ -20,7 +20,7 @@ $$
   \frac{|\mathrm{tr}_{\mathrm{alt}}(\mathcal{N})|}{|\mathrm{net}(\mathcal{N})|}
 $$
 
-measures the $\mu_2$-torsion content of the normal form. It quantifies the amplitude present in the antisymmetric channel.
+It quantifies the amplitude present in the antisymmetric channel.
 
 ## Shell closure as Kummer divisibility
 
@@ -35,12 +35,12 @@ $$
 The obstruction vanishes when $n$ divides the Euler characteristic $\chi(A)$ of the brane configuration. We apply this to the nuclear braid.
 
 - At level $n = 2$, the obstruction $\kappa_0 \bmod 2 = 0$ vanishes when $\chi(A)$ is even. This corresponds to even-even nuclei. The Pauli factor is enhanced.
-- For magic numbers, the obstruction vanishes at specific levels $n$ corresponding to the shell capacities. Magic number 2 corresponds to $\mu_2$, magic 8 corresponds to $\mu_8$, and so on.
+- For magic numbers, the obstruction vanishes at specific levels $n$ corresponding to shell capacities. Magic number 2 corresponds to $\mu_2$. Magic 8 corresponds to $\mu_8$.
 - For doubly magic nuclei, both the proton and neutron obstructions vanish simultaneously at the same Kummer level.
 
 ## The pairing deficit as $\mu_2$ obstruction
 
-For odd-odd nuclei, both $Z$ and $N$ are odd. The Euler characteristic $\chi(A)$ is odd at the relevant level. The condition $\kappa_0 \bmod 2 \neq 0$ implies the obstruction persists at the $\mu_2$ level. This persistence has three effects:
+For odd-odd nuclei, both $Z$ and $N$ are odd. The Euler characteristic $\chi(A)$ is odd at the relevant level. The condition $\kappa_0 \bmod 2 \neq 0$ implies the obstruction persists at the $\mu_2$ level. This produces three effects:
 
 1. The normal form has a lower total amplitude. We observe $\mathrm{net}(\text{odd-odd}) < \mathrm{net}(\text{even-even})$ at the same $A$.
 2. The alternating trace is suppressed relative to the net amplitude.
@@ -72,12 +72,12 @@ Computational verification:
 | $12$ | $923319$ | $269$s (v3) / $\sim5$s (v6) | — |
 | $16$ | $3.4$M | $38$s (v6) | $A^3 = 4096$ (matches) |
 
-Applying the quotient during construction (v6) yields an effective complexity of $O(A^3)$. The complexity is cubic in the mass number. Nuclei up to $A = 40$ (${}^{40}\mathrm{Ca}$, doubly magic) are computationally tractable in minutes.
+Applying the quotient during construction yields an effective complexity of $O(A^3)$. The complexity is cubic in the mass number. Nuclei up to $A = 40$ (${}^{40}\mathrm{Ca}$, doubly magic) are computationally tractable in minutes.
 
 ## Symbolic witnesses
 
 The symbolic engine computes exact evaluations in $\mathbb{Z}[\check{q}, \check{q}^{-1}]$, where $\check{q} = q^{1/2}$ is the spinor information rate. It produces Laurent polynomial witnesses for $\mathrm{tr}_{\mathrm{alt}}(q)$ and $\mathrm{net}(q)$. We verify this through $A = 9$ (${}^9\mathrm{Be}$) without overflow.
 
-For $A > 9$, the integer coefficients grow as $O(q^{A^2})$. This growth requires either larger integer types or modular arithmetic for exact computation. The float engine (v6) serves as a cross-check at $q_0$.
+For $A > 9$, the integer coefficients grow as $O(q^{A^2})$. This growth requires either larger integer types or modular arithmetic for exact computation. The float engine serves as a cross-check at $q_0$.
 
-The polynomial coefficients grow following the Kummer tower. At level $n$, the coefficients involve the $q$-factorial $[n]_q!$, which possesses $O(n^2)$ digits. At $A = 16$, the maximum coefficient is approximately $10^{18}$, which fits within a 128-bit integer. At $A = 40$, the maximum coefficient reaches approximately $10^{100}$. This exceeds the 128-bit integer range and requires arbitrary-precision arithmetic or modular reduction.
+The polynomial coefficients grow following the Kummer tower. At level $n$, the coefficients involve the $q$-factorial $[n]_q!$. This possesses $O(n^2)$ digits. At $A = 16$, the maximum coefficient is approximately $10^{18}$. This fits within a 128-bit integer. At $A = 40$, the maximum coefficient reaches approximately $10^{100}$. This exceeds the 128-bit integer range and requires arbitrary-precision arithmetic or modular reduction.

@@ -1,10 +1,10 @@
-Evaluating the continuant recurrence at $q_0 \approx 1.1100$ for $n = 0, 1, \ldots, 9$ yields coefficients with recurrence residuals strictly bounded by $10^{-12}$.
+Evaluating the continuant recurrence at $q_0 \approx 1.1100$ for $n = 0, 1, \ldots, 9$ yields coefficients. Their recurrence residuals are strictly bounded by $10^{-12}$.
 
 ## Full normal form table
 
-See [Table](#tbl:lepton-tower-witness-table-data).
+See Table.
 
-Odd-$n$ torus knots $T_{2,n}$ with $n \leq 7$ exhaust the embeddable fermion spectrum on Bring's surface. The even-$n$ entries do not represent torus knots. We include them to demonstrate the monotone growth of the net coefficient.
+Odd-$n$ torus knots $T_{2,n}$ with $n \leq 7$ exhaust the embeddable fermion spectrum on Bring's surface. The even-$n$ entries do not represent torus knots. They demonstrate the monotone growth of the net coefficient.
 
 ## Lepton decay differences
 
@@ -34,4 +34,4 @@ $$
   = \frac{1.936}{1.253} = 1.545
 $$
 
-These values are not the physical mass ratios $m_\mu / m_e \approx 206.8$ and $m_\tau / m_e \approx 3477$. The net coefficients parameterise the topological complexity of the torus knot. Deriving the physical mass requires evaluating the full Seiberg--Witten integral over the jet bundle prolongation.
+These values are not the physical mass ratios $m_\mu / m_e \approx 206.8$ and $m_\tau / m_e \approx 3477$. The net coefficients parameterise the topological complexity of the torus knot. Deriving the physical mass requires evaluating the full Seiberg–Witten integral over the jet bundle prolongation.

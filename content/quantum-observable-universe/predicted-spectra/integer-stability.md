@@ -1,4 +1,4 @@
-The [beta-stability line](#prop:beta-stability) defines a continuous optimum $p^*(A)$. Physical nuclei require integer proton and neutron numbers. Stable hadrons correspond to integer solutions of a quadratic energy minimisation.
+Physical nuclei require integer proton and neutron numbers. Stable hadrons correspond to integer solutions of a quadratic energy minimisation. The continuous optimum $p^*(A)$ defines the beta-stability line.
 
 **Proposition.**
 Let $(\mathbf{C}, A, \tau)$ be the Descartes universe with substrate parameter $q$. At a fixed mass number $A = Z + N$, the nuclear binding energy is a strictly convex quadratic in the proton number $p$:
@@ -36,5 +36,5 @@ $$
 
 These are the **beta-decay thresholds**. At $A = A_k$, the nuclei $(k, A_k - k)$ and $(k + 1, A_k - k - 1)$ have equal binding energy. Beta decay is energetically neutral.
 
-**Archimedean specialisation (§7c).** 
+**Archimedean specialisation.** 
 The binding energy $E(p)$, its continuous optimum $p^*$, and the convex-minimisation argument are stated over $\mathbb{R}$. The integer-minimiser bound relies on the real ordering.
