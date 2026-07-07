@@ -8,6 +8,7 @@ export default remark({
   uses: ["def:quaternionic-spectral-resolvents"],
   cites: [
     "fred2005",
+    "leitnerpawloski2004",
     "lusztig1993",
   ],
 });
