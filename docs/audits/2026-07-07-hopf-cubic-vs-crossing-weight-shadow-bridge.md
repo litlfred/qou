@@ -37,8 +37,9 @@ shadow.)
 
 **(2) Substrate level — no bridge; the swing is upstream in `w(q)`.** At the
 substrate trace value `y₀ = q₀²+q₀⁻² ≈ 2.04371`, the Hopf cubic evaluates to a
-value that is **anchor-rigid** — identical at the proton and muon pins to 8
-digits — `C_Hopf(y₀) ≈ −2.0873`. But the physical `c_3` **swings 2.375%**
+value that is **anchor-rigid** — the proton and muon pins agree to ~1e-8
+(relative swing < 1e-6) — `C_Hopf(y₀) ≈ −2.0873`. But the physical `c_3`
+**swings 2.375%**
 (`−2.0693` proton, `−2.0202` muon,
 [c_3-not-exact verdict](2026-07-06-c3-not-exact-cross-anchor-verdict.md)). An
 anchor-rigid quantity cannot equal an anchor-swinging one at both anchors, so:

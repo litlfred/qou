@@ -2,7 +2,7 @@
   "computation": "qbeta-hopf-cubic-shadow-bridge",
   "engine": "python-decimal",
   "scriptFile": "qbeta_hopf_cubic_shadow_bridge.py",
-  "commitSha": "377206e06ad2167e0ed35ebe83fd1bdb8c1856f5",
+  "commitSha": "6ec666854e4e1b14cda3689e9d8a470c3b967a4e",
   "description": "Reconcile KC20 (Hopf cubic C_Hopf) with KC19 (affine crossing weight, c_3=open scalar). SHADOW: C_Hopf(2)=-2=c_3 q=1 shadow (Lean cubicC_Hopf_classical_shadow). SUBSTRATE: C_Hopf(y0) anchor-rigid ~-2.0873 while c_3 swings 2.375% -> cubic does NOT determine c_3; swing lives in w(q). Near-coincidence, not identity.",
   "data": {
     "shadow_C_Hopf_at_2": "-2",
@@ -34,7 +34,7 @@
       "expected": 0.0,
       "tolerance": 0.0,
       "unit": "bool (0=rigid, rel swing<1e-6)",
-      "source": "C_Hopf(y0) identical proton vs muon to full precision"
+      "source": "C_Hopf(y0) anchor-rigid: proton vs muon agree to ~1e-8 (rel swing<1e-6)"
     },
     {
       "name": "c3_anchor_swings_gt_2pct",
