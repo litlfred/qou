@@ -1,6 +1,6 @@
-**Conjecture (Brunnian property of $\mathcal{B}_3$).** *Let $\mathcal{B}_3 \subset \mathbb{R}^3$ be the standard Borromean link ([Borromean baryon](#def:borromean-baryon)), presented as the closed braid $\overline{(\sigma_0\sigma_1^{-1})^3}$ in $B_3$. For each $i \in \{0, 1, 2\}$, let $\mathcal{B}_3 \setminus K_i$ denote the two-component sub-link obtained by removing the $i$-th component. Then $\mathcal{B}_3 \setminus K_i$ is topologically equivalent to the trivial two-component unlink $U_2$.*
+**Conjecture (Brunnian property of $\mathcal{B}_3$).** *Let $\mathcal{B}_3 \subset \mathbb{R}^3$ be the standard Borromean link, presented as the closed braid $\overline{(\sigma_0\sigma_1^{-1})^3}$ in $B_3$. For each $i \in \{0, 1, 2\}$, let $\mathcal{B}_3 \setminus K_i$ denote the two-component sub-link obtained by removing the $i$-th component. Then $\mathcal{B}_3 \setminus K_i$ is topologically equivalent to the trivial two-component unlink $U_2$.*
 
-This formalizes the confinement mechanism of [topological mechanism of color confinement](#rem:borromean-topological-confinement): removing any single component dissolves the binding between the remaining two. This is the defining property of Brunnian links \cite{kawauchi1996}. Naive strand-deletion at the braid word level does not immediately yield the empty braid. For example, deleting the 0-th strand produces $(\sigma_0^{-1})^3 \in B_2$, whose closure is the negative trefoil $\overline{3_1}$. Topological equivalence to $U_2$ requires a sequence of Reidemeister moves.
+This formalizes the confinement mechanism. Removing any single component dissolves the binding between the remaining two. This is the defining property of Brunnian links \cite{kawauchi1996}. Naive strand-deletion at the braid word level does not immediately yield the empty braid. Deleting the 0-th strand produces $(\sigma_0^{-1})^3 \in B_2$, whose closure is the negative trefoil $\overline{3_1}$. Topological equivalence to $U_2$ requires a sequence of Reidemeister moves.
 
 ## Lean structure
 
@@ -20,4 +20,4 @@ theorem borromean_brunnian :
   sorry  -- Ref: [kawauchi1996] Survey of Knot Theory §1.5
 ```
 
-The `sorry` acts as a conjectural witness (per [AGENTS.md §3b-cond]). The gap is not a missing arithmetic fact, but the absence of Mathlib primitives for Reidemeister and Markov-move equivalence on braid-word closures. Formal topological equivalence to $U_2$ requires an explicit sequence of two R2 moves and one R3 move, which cannot be stated until the link-equivalence relation is formalized.
+The `sorry` acts as a conjectural witness. The gap is the absence of Mathlib primitives for Reidemeister and Markov-move equivalence on braid-word closures. Formal topological equivalence to $U_2$ requires an explicit sequence of two R2 moves and one R3 move. This cannot be stated until the link-equivalence relation is formalized.

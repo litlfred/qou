@@ -1,5 +1,3 @@
 The Wedderburn mass formula of §8 yields total atomic masses. To organize individual $\beta$-decay branches, we require a per-channel decomposition. We use an $S_3^A$ branching rule to separate the per-nucleon channels and factor out the spectator contribution. This exposes the active channel and yields an exact character-sum product for the branching $\mathcal{Q}_q$-value. The parity of the mass number $A$ then completely determines the sign and regime of this $\mathcal{Q}_q$-value.
 
 To fix the sign of the proton--neutron mass ordering, we apply a Yang--Baxter-corrected Markov trace on the trefoil braid. We then incorporate the positron branch correction, compute the closed-form tritium $\mathcal{Q}_q$-value, and impose a Frobenius positivity filter to exclude invalid configurations in even-$A$ decays. We map the categorical action to physical observables (mass, $\mathcal{Q}_q$-value, decay rate, and density). Finally, we show that the standard Borromean link $\mathcal{B}_3$ minimizes this categorical action, establishing the initial state for the molecular bond construction in Chapter 12.
-
-_(draft.)_

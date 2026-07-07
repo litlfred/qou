@@ -1,4 +1,4 @@
-A **Borromean baryon** is a hadron ([hadron](#def:hadron)) whose three constituents are unknots $K_{0_1}$ joined by the Borromean link $\mathcal{B}_3$ and bound by the Hopf link $\mathcal{L}_H$:
+A **Borromean baryon** is a hadron whose three constituents are unknots $K_{0_1}$ joined by the Borromean link $\mathcal{B}_3$ and bound by the Hopf link $\mathcal{L}_H$:
 
 $$
   B = 

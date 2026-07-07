@@ -8,7 +8,7 @@ $$
   = 0.
 $$
 
-Solving for $p$ (dropping the $-1$ and the small mass-difference correction):
+Solving for $p$:
 
 $$
   a_A  \frac{A - 2p}{A}
@@ -18,7 +18,7 @@ $$
 $$
 
 **Verification.**
-At $q = q_0$, with $a_C = (q - q^{-1}) \times 3.334 \approx 0.697$ MeV and $a_A \approx 23.29$ MeV, the formula reproduces the observed stable neutron numbers across the periodic table. The mean error is $|\Delta n| \approx 1.4$ neutrons (see [knot-periodic table](#prose:knot-periodic-table)).
+At $q = q_0$, with $a_C = (q - q^{-1}) \times 3.334 \approx 0.697$ MeV and $a_A \approx 23.29$ MeV, the formula reproduces the observed stable neutron numbers across the periodic table. The mean error is $|\Delta n| \approx 1.4$ neutrons.
 
 **Limiting behaviour.**
 
@@ -28,4 +28,4 @@ At $q = q_0$, with $a_C = (q - q^{-1}) \times 3.334 \approx 0.697$ MeV and $a_A 
 | Our universe | $q = q_0$ | $0.70$ | $1.0$--$1.6$ | Valley of stability |
 | Deep quantum | $q \to \infty$ | $\to \infty$ | $\to \infty$ | Coulomb overwhelms; no heavy nuclei |
 
-The entire nuclear chart --- dictating which isotope is stable for each element --- follows from the single parameter $q$.
+The entire nuclear chart follows from the single parameter $q$.
