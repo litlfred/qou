@@ -5,7 +5,7 @@ export default lemma({
   lean: { ref: "qou:QOU.Archimedean.yekutieli_leading_coefficient",
     validation: "not_checked",
   },
-  title: "Yekutieli obstruction equals the leading Chebyshev coefficient",
+  title: "obstruction equals the leading Chebyshev coefficient",
   tags: ["yekutieli", "obstruction", "chebyshev", "categorical-dq-squared"],
   uses: [
     "prop:categorical-dq-squared",

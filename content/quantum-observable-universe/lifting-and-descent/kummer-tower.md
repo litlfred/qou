@@ -14,7 +14,7 @@ $$
 $$
 The class $\kappa$ lies in $F^n$ if and only if it is $n$-divisible ($\kappa \bmod n = 0$).
 
-**The trace and divisibility.** The [QU-to-QOU theorem](#thm:qu-to-qou) establishes that the first Yekutieli obstruction is the Euler class of the Reeb bundle: $\kappa_0 = e(\xi)$, with trace $\mathrm{tr}(\kappa_0) = \chi(A)$. The divisibility of this trace controls the Kummer reduction at level $n$:
+**The trace and divisibility.** The [QU-to-QOU theorem](#thm:qu-to-qou) establishes that the first obstruction is the Euler class of the Reeb bundle: $\kappa_0 = e(\xi)$, with trace $\mathrm{tr}(\kappa_0) = \chi(A)$. The divisibility of this trace controls the Kummer reduction at level $n$:
 $$
   \kappa_0 \bmod n = 0
   \quad\Longleftrightarrow\quad
@@ -31,7 +31,7 @@ where $\delta_n$ is the jet correction at level $n$. The classes $\kappa_0$ and 
 This establishes the **perpetual obstruction** phenomenon. A non-torsion Euler class $\kappa_0$ produces a non-vanishing obstruction at every level of the brane tower. Jet refinement cannot remove it.
 
 **Summary.** For any quantum universe with non-zero Euler characteristic $\chi(A) \neq 0$:
-1. The Yekutieli obstruction $\kappa_0$ is non-trivial.
+1. The obstruction $\kappa_0$ is non-trivial.
 2. The Kummer tower filters the obstruction space by divisibility.
 3. The obstruction persists at all Kummer levels $n \nmid \chi(A)$.
 4. The complementary subgroup structure prevents jet corrections from cancelling the topological obstruction.

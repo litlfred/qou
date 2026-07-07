@@ -5,7 +5,7 @@ Let $A$ be a Frobenius–Hopf substrate with motivic class $[A] \in \widehat{\ma
 $$
   H^1_{\mathrm{Gal}}\!\bigl(\mathrm{Gal}(\bar{\mathbb{Q}}_p/\mathbb{Q}_p),\, \mu_n(1)\bigr)
 $$
-for every $n$ coprime to $p\,\chi(A)$. The Yekutieli obstruction $\kappa_0$ projects to a non-trivial Frobenius character at every such place.
+for every $n$ coprime to $p\,\chi(A)$. The obstruction $\kappa_0$ projects to a non-trivial Frobenius character at every such place.
 
 **Sketch (conditional on `[MotivicGaloisCharacter K0 Mhat Target motiveA]`).**
 We apply [QU-to-QOU](#thm:qu-to-qou) to identify $\kappa_0$ with the Euler class $e(\xi)$ of the Reeb bundle, satisfying $\mathrm{tr}(\kappa_0) = \chi(A)$. Under the realization $\rho_p \colon \widehat{\mathcal{M}} \to \mathbb{Z}[q]/\Phi_{p^k}(q)$ ([motivic substrate](#def:motivic-substrate)), the Euler class projects to a Frobenius character whose trace equals $\chi(A) \bmod p$. Because $p \nmid \chi(A)$, this trace is non-zero modulo $p$. The character is non-trivial. The class $\kappa_0$ retains a non-trivial Galois-cohomological component at every such place. By [Hochschild–Kummer](#rem:hochschild-kummer-connection), gerbe non-vanishing in $H^2(\mathcal{S}, \mathbb{G}_m)$ and Galois non-vanishing in $H^1_{\mathrm{Gal}}(\dots, \mu_n(1))$ are HKR-equivalent.

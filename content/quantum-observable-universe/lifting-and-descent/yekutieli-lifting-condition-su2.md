@@ -1,4 +1,4 @@
-We verify the [Yekutieli lifting condition](#def:yekutieli-lifting-condition) for $G = \mathrm{SU}(2)$ in [SU(2) as a QOU](#ex:qou-su2).
+We verify the [Quantum lifting condition](#def:yekutieli-lifting-condition) for $G = \mathrm{SU}(2)$ in [SU(2) as a QOU](#ex:qou-su2).
 
 **The site.** Let $\mathcal{S} = \mathbb{CP}^1$ with the analytic topology. The space $\mathbb{CP}^1 \cong \mathrm{SU}(2)/\mathrm{U}(1)$ is the flag variety of maximal tori in $\mathrm{SU}(2)$.
 
@@ -17,4 +17,4 @@ The obstruction to lifting a line bundle $L$ on $\mathbb{CP}^1$ to the total spa
 - The tautological line bundle $\mathcal{O}(-1)$ has $c_1 = -1 \neq 0$. It does not lift.
 - The trivial bundle $\mathcal{O}$ has $c_1 = 0$. It lifts via the constant section.
 
-The group $H^2(\mathbb{CP}^1, \mathbb{Z}) \cong \mathbb{Z}$ is torsion-free. The condition $\kappa(L) = 0$ is necessary and sufficient for a lift. The Yekutieli lifting condition holds for $\mathrm{SU}(2)$.
+The group $H^2(\mathbb{CP}^1, \mathbb{Z}) \cong \mathbb{Z}$ is torsion-free. The condition $\kappa(L) = 0$ is necessary and sufficient for a lift. The Quantum lifting condition holds for $\mathrm{SU}(2)$.

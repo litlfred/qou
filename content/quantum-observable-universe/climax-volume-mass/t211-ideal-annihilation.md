@@ -46,7 +46,7 @@ $$
   (1 - \hat{\tau}_n)(T_{(2,11)}^{(n+1)}) = 0.
 $$
 
-It retains no transient component, yields no input to the Yekutieli obstruction $\kappa_n$, and invokes no new physics at any level.
+It retains no transient component, yields no input to the obstruction $\kappa_n$, and invokes no new physics at any level.
 
 ***
 

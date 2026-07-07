@@ -8,4 +8,4 @@ Consequently:
 - $\chi(A) = \mathrm{tr}(\mathrm{id}_A)$ is strictly independent of $q$.
 - The Euler class $e(\xi)$ tracking the Reeb bundle is strictly independent of $q$.
 
-The entire architecture of the Yekutieli obstruction tower $\{\kappa_n \in H^2(\mathcal{S}, \mathcal{B})\}$ is a fixed property of $(\mathbf{C}, A, \tau)$, not a fluid artefact of the section $q$.
+The entire architecture of the obstruction tower $\{\kappa_n \in H^2(\mathcal{S}, \mathcal{B})\}$ is a fixed property of $(\mathbf{C}, A, \tau)$, not a fluid artefact of the section $q$.

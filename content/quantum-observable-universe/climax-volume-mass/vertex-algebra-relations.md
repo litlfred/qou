@@ -439,7 +439,7 @@ $$
 
 This forces genus $g = 4$ (Bring's surface), bounding the embeddable torus knots to the 7 generators $\mathcal{G}$.
 
-### C-5: Yekutieli obstruction classes
+### C-5: obstruction classes
 
 The quantum characteristic classes $\kappa_n \in H^2(\mathcal{S}, \mathcal{B})$ ([quantum characteristic classes](#def:quantum-characteristic-classes)) obstruct lifting from brane level $n$ to $n+1$. In knot variables, the failure of Markov stabilisation at the jet level detects this obstruction:
 

@@ -5,7 +5,7 @@ import { chapter, section } from "../../schema/builders";
  *
  * Develops the q-deformed Geometric Langlands correspondence within
  * the QOU framework.  The substrate parameter q ∈ G_m^{nt} defines a
- * G_m-family of deformations; the Yekutieli obstruction classes κ_n
+ * G_m-family of deformations; the obstruction classes κ_n
  * and their Kummer filtration control q-flatness; the Iwahori--Hecke algebra
  * H_n(q) from Ch 4 provides q-Hecke operators; and the fibre functor
  * τ from Ch 1 mediates the automorphic–spectral equivalence via
