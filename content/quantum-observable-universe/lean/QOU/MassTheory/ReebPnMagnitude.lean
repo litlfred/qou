@@ -69,6 +69,24 @@ theorem ss_matrix_sq (b : R) : ssMatrix b * ssMatrix b = (1 + b ^ 2) • 1 := by
     simp [ssMatrix, Matrix.mul_apply, Fin.sum_univ_two,
       Matrix.smul_apply] <;> ring
 
+/-- The ss-sector determinant is affine in `g²`:
+`det(1 + g·M(b)) = 1 − g²·(1 + b²)`. -/
+theorem ss_det_marginal (g b : R) :
+    (1 + g • ssMatrix b).det = 1 - g ^ 2 * (1 + b ^ 2) := by
+  simp [ssMatrix, Matrix.det_fin_two, Matrix.add_apply]
+  ring
+
+/-- **Marginal stability** — at the deformed criticality
+`g²·(1 + b²) = 1` (the landed magnitude, by I1/I2 with `b = [2]_v`) the
+ss-sector determinant vanishes exactly: `det(1 + g·M) = 0`.  The landed
+`g_reeb` is the marginal-stability point of the q-deformed exchange — the
+algebraic counterpart of the deuteron being marginally bound.  (Below
+criticality the determinant is positive; the AME value sits on the bound
+side, `B_AME < 5g`, consistent in sign.) -/
+theorem ss_det_zero_at_criticality (g b : R) (h : g ^ 2 * (1 + b ^ 2) = 1) :
+    (1 + g • ssMatrix b).det = 0 := by
+  rw [ss_det_marginal, h, sub_self]
+
 /-- The uniform-magnitude [1⁴] complete-graph exchange matrix on blocks
 `[p, p, n, n]`: pp entry `a`, nn entry `−a`, all four pn entries `w`. -/
 def exchangeMatrix (a w : R) : Matrix (Fin 4) (Fin 4) R :=
