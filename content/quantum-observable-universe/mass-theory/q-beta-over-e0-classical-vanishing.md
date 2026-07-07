@@ -1,4 +1,4 @@
-**Proposition.** *Let $\mathfrak{Q}_\beta(q)$ and $E_0^{(N{=}0)}(q)$ be the substrate closed forms from [`prop:neutron-qvalue-symbolic`](neutron-qvalue-symbolic.md) and [`rem:beta-decay-energy-scale`](beta-decay-energy-scale.md):*
+*Let $\mathfrak{Q}_\beta(q)$ and $E_0^{(N{=}0)}(q)$ be the substrate closed forms from [`prop:neutron-qvalue-symbolic`](neutron-qvalue-symbolic.md) and [`rem:beta-decay-energy-scale`](beta-decay-energy-scale.md):*
 
 $$
 \mathfrak{Q}_\beta(q) \;=\; m_e \cdot \frac{(2q + 1 - q^2)(q+1)}{2q^3},

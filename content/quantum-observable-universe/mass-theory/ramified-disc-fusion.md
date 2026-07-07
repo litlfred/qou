@@ -1,4 +1,3 @@
-**Proposition.**
 *Let $D \subset \mathcal{S}_p$ be a small open disc around a foundry boundary. Let $\widetilde{D} \subset \mathcal{R}_p$ denote the preimage $\pi_H^{-1}(D)$ together with the three colour-tube sections. Then:*
 
 1. **Fusion.** *$\widetilde{D}$ is a single connected topological disc with degree-$3$ ramification at the centre. The three sectors coalesce at the centre.*

@@ -1,5 +1,3 @@
-**Proposition (compound β-decay calibration across magic shells).**
-
 *Let $E_0^{(2)} = \mathfrak{Q}_\beta = 0.782$ MeV be the free-neutron β-decay Q-value. Let a β-decay $(Z, N) \to (Z+1, N-1)$ cross a magic anchor $A_{\mathrm{magic}} \in \{2, 8, 20, 28, 50, 82, 126\}$. Assume the parent contains $\sigma_{\mathrm{shell}}$ and the daughter contains a different shell operator or a cross-shell transition. Then the Q-value of the magic-crossing decay is:*
 
 $$

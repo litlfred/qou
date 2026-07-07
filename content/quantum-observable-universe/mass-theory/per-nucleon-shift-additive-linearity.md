@@ -1,4 +1,3 @@
-**Proposition (per-new-nucleon additive linearity).**
 *The atomic Markov-trace denominator shift exponent strictly obeys an additive-linearity recurrence:*
 
 $$

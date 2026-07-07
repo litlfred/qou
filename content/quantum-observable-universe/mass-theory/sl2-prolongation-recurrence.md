@@ -1,5 +1,3 @@
-**Proposition (symplectic prolongation $\Rightarrow$ one-parameter recurrence).**
-
 The recurrence on the prolonged Seiberg--Witten periods has depth $2$
 ([`prop:prolonged-periods-fixed-depth`](#prop:prolonged-periods-fixed-depth)
 together with the $S_5$-Hodge count $H^1 = 2W$): the $2\times 2$ prolongation

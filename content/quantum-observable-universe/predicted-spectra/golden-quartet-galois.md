@@ -1,4 +1,3 @@
-**Proposition (Golden quartet as Galois $\times$ bar orbit).**
 The golden quartet
 
 $$

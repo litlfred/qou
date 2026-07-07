@@ -1,4 +1,3 @@
-**Proposition** (Lusztig bar vs Hermitian $\ast$).
 *On the complex Iwahori–Hecke algebra $H_n(\mathbb{C}, q)$ with
 $q \in \mathbb{C}^\times$, the two ring anti-involutions*
 

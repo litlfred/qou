@@ -1,5 +1,3 @@
-**Proposition (B1 keystone is theorem-level at the torus-knot rows — combining Bloch–Suslin with Garoufalidis–Lê's proof of the Volume Conjecture for torus knots).**
-
 Every torus-knot row of [`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence) ("B1") is theorem-level, requiring no part of Goncharov's or Beilinson's conjectures.
 
 Among the seven Bring-natural torus-knot generators of [`rem:bring-embeddable-knots`](#rem:bring-embeddable-knots):

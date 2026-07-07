@@ -1,4 +1,3 @@
-**Theorem.**
 *Let $X$ be a smooth projective Riemann surface of minimal genus satisfying two conditions:*
 
 *(i) $X$ is hyperelliptic. There exists a degree-2 morphism $\pi \colon X \to \mathbb{P}^1$ with involution $\iota$.*

@@ -1,4 +1,3 @@
-**Proposition (third-generation meson mass ratio).**
 *The third-generation meson built on the torus knot $T(2,7)$ has mass ratio:*
 
 $$

@@ -1,4 +1,3 @@
-**Proposition.**
 *The confinement level $\ell(K, q) = \min\{\ell : T_w \in J^\ell(q)\}$ is unique and well-defined because:*
 
 1. *The filtration $J^\bullet(q)$ is **monotone**: $J^0(q) \subseteq J^1(q) \subseteq \cdots \subseteq J^m(q) = H_n(R, q)$.*

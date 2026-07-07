@@ -1,4 +1,3 @@
-**Proposition (positivity of centred Hecke variance).**
 *Let $q^{1/2} + q^{-1/2} > 2$. Let $z = 1/(q^{1/2}+q^{-1/2})$ and $\tilde\sigma_i := \sigma_i - z \cdot 1$. The variance*
 $$
   \mathrm{Var}(\sigma_i) \;:=\; \mathrm{tr}_M(\tilde\sigma_i^2)

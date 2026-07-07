@@ -1,4 +1,3 @@
-**Proposition (Newton's $G$ as universal-residue prefactor).**
 *Working over $A = H_n(R, q)$, the universal curvature-rank tail $\mathfrak{m}^{\geq 4}_{q,\mathcal{K}}(\mathcal{T})$ of the unified mass formula ([universal residue](#prop:plancherel-term-7-formulation)) carries a stratum-dependent prefactor:*
 
 $$

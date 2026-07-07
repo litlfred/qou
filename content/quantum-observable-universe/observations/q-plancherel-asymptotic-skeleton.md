@@ -1,4 +1,3 @@
-**Proposition (q-Plancherel asymptotic skeleton).**
 *Let $\tilde w_\lambda^{(n)} := \dim_q^2(\lambda) / [n]_q!$ be the q-deformed Wedderburn weight ([Wedderburn weight canonical form](#prop:wedderburn-weight-canonical)). We define a topological space $\Omega_q$ and pushforward maps*
 
 $$

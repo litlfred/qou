@@ -1,4 +1,3 @@
-**Proposition (writhe exponent of the torus-knot $\delta_q$ decoration).**
 *For the torus knot $T_{m,p}$, the $\delta_q$-decoration extracts the quantum integer at the writhe $w = (m-1)p$:*
 
 $$

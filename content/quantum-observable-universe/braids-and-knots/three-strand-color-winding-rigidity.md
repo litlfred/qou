@@ -1,4 +1,3 @@
-**Proposition (rigidity of the three-strand color winding).**
 *On the $2$-dimensional $(2,1)$ Hoefsmit block of $H_3(q)$, the uniform
 three-strand rotation $M = \rho_{(2,1)}(\sigma_1\sigma_2)$ has*
 

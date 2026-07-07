@@ -1,4 +1,4 @@
-**Proposition.** *Let $P$ be a confined particle. Let $\mathcal{G} \subset \mathbb{R}_{>1}$ be the generic locus of the substrate parameter $q$. The **confinement locus** of $P$ is*
+*Let $P$ be a confined particle. Let $\mathcal{G} \subset \mathbb{R}_{>1}$ be the generic locus of the substrate parameter $q$. The **confinement locus** of $P$ is*
 
 $$
   \Omega(P) \;:=\; \{\, q \in \mathcal{G} : \mathrm{confined}(P, q) \,\},

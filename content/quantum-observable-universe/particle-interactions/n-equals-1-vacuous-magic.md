@@ -1,4 +1,3 @@
-**Proposition (vacuous primality at $n = 1$).**
 *For every substrate $q > 1$, the integer $n = 1$ is algebraically prime. Equivalently, the canonical state $\psi_1(q)$ is not in the closed span of any non-trivial tensor product of canonical states indexed by a decomposition $1 = n_1 + \cdots + n_k$ with $k \geq 2$ and $n_i \geq 1$. No such decomposition exists.*
 
 The proof uses only elementary arithmetic. It uses no SDP analysis, Hecke-algebra machinery, or tensor-product manipulation. This is the base case of the recursion. Every primality check at $n \geq 2$ ultimately bottoms out at $n = 1$ through repeated decomposition.

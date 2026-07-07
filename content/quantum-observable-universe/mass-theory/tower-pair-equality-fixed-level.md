@@ -1,4 +1,3 @@
-**Lemma (pair-contribution equality at fixed jet level).**
 *Let $n \in \mathbb{N}$ be a brane jet level and let $\mathcal{P}_n = \{(i, j) : 0 \le i < j\}$ be the full set of unordered pair blow-up centres at level $n$. The pair contribution at level $n$ equals:*
 
 $$

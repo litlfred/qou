@@ -1,4 +1,3 @@
-**Proposition.**
 *The locus*
 
 $$

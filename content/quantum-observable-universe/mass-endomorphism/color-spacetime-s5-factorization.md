@@ -1,4 +1,3 @@
-**Proposition (Color and spacetime are orthogonal factors of the Bring Galois group).**
 *Let $K$ be a Bring-embeddable knot, evaluated through the categorical Markov trace $\mathrm{tr}_M$ on the Hecke algebra $H_2(q) \oplus H_3(q)$. The $2+3=5$ irreducible representations constitute the Bring fivefold. Bring's five homogeneous coordinates split as spacetime $(x_0, x_1)$ and color $(x_2, x_3, x_4)$. The substrate Galois group $S_5$ contains the block-diagonal product $S_2 \times S_3$. Then:*
 
 1. *The factorization $S_2 \times S_3 \hookrightarrow S_5$ acts faithfully.*

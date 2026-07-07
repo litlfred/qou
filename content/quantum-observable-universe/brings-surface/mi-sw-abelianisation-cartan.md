@@ -1,4 +1,3 @@
-**Lemma (Cartan reduction recovers the Seiberg--Witten differential).**
 Let $\mathcal{S}_c \cong \mathbb{P}^1(\mathbb{C})$ be the exceptional divisor at a branch point $z_c$ ([Bring's surface smoothness](#rem:brings-smoothness)). Let $\nabla_A$ be the $\mathrm{SU}(2)$-connection of the mass identity restricted to $\mathcal{S}_c$. Then:
 
 1. The principal $\mathrm{SU}(2)$-bundle trivialises over $\mathcal{S}_c$ (because $\pi_1(\mathrm{SU}(2)) = 0$ classifies every $\mathrm{SU}(2)$-bundle over $S^2$). Thus $\nabla_A$ reduces to an $\mathfrak{su}(2)$-valued $1$-form $A|_{\mathcal{S}_c}$.

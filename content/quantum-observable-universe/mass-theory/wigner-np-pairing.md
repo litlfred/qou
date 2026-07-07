@@ -1,4 +1,3 @@
-**Proposition.**
 *The self-conjugate $(2,2) \vdash 4$ partition at Hecke level $k = 4$ introduces the categorical Wigner energy from $T=0$ isoscalar np pairing. The energy scale equals exactly the $(2,2)$ $q$-hook product:*
 
 $$

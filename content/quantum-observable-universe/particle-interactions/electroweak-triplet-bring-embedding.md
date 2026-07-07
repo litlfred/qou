@@ -1,4 +1,3 @@
-**Proposition (electroweak triplet Bring embedding).**
 *The even-twist 2-component torus links $T(2,4), T(2,6), T(2,8)$ — the braids $\sigma_1^{2k} \in B_2$ for $k = 2, 3, 4$ — have Seifert genera $1, 2, 3$ respectively. These genera strictly increase and satisfy $g \leq 4 = g(\Sigma_4)$. The three links therefore co-embed in the genus-$4$ Seifert fiber of Bring's surface alongside the saturating force-carriers $\{T(2,9), T(3,5)\}$. Moreover, the three cells carry the pairwise-orthogonal Hoefsmit idempotent decomposition in $\mathrm{End}_R(V^{\otimes 6})$.*
 
 **Proof.**

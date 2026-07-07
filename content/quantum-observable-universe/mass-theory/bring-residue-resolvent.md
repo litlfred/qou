@@ -1,4 +1,3 @@
-**Proposition (Bring residue $\to$ canonical resolvent form).**
 *The substrate evaluation of the residue / Schwarz integral on
 Bring's surface around the simple pole of order $n$ of $\sigma$
 on the torus knot $T(p, k)$ with $\alpha_{\text{shift}}(p, k) = n$

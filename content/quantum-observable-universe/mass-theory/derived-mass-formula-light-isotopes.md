@@ -1,4 +1,3 @@
-**Proposition.**
 *The strict derived mass formula*
 
 $$

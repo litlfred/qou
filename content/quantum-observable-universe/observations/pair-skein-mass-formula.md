@@ -1,4 +1,3 @@
-**Lemma.**
 The Borromean braid of a nucleon with quarks $(q_1, q_2, q_3)$ contributes a pair Skein mass at each color-exchange crossing:
 
 $$

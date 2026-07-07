@@ -1,5 +1,3 @@
-**Proposition ($c_5$ involution + Leibniz decomposition).**
-
 *Let $c_5(q)$ be the precision-ladder coefficient at rung $N=5$ in the $\mathfrak{Q}_\beta$ categorical formula ([`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder)). Then $c_5$ admits the categorical decomposition:*
 
 $$

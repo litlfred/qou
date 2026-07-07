@@ -1,4 +1,3 @@
-**Proposition (flavor-dressed mass from substrate split).**
 *Let $\mu \colon \mathbf{Flavor} \to \mathbb{R}_{>0}$ be the flavor dressing functor. Let $M_N$ be the average nucleon mass, and $q = q_0$ the substrate parameter. The down-up dressed mass splitting is exactly determined by the substrate flavor formula:*
 
 $$

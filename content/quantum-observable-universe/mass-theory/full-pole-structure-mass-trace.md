@@ -1,4 +1,3 @@
-**Proposition (Habiro completion of the mass trace).**
 *The Markov trace of any closed braid lies natively within the Habiro cyclotomic completion:*
 
 $$

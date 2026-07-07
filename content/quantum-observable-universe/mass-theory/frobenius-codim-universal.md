@@ -1,4 +1,3 @@
-**Theorem (Frobenius quantum-co-dimension trace).**
 *Let $A = H_n(R, q)$ be a self-dual Frobenius algebra with Markov trace $\tau$. The quantum-co-dimension element*
 
 $$

@@ -1,4 +1,3 @@
-**Theorem.**
 *Let $(Z, N)$ be a neutral atom with atomic braid
 $\mathcal{A} \in H_{A+Z}(q)$
 ([atomic braid](#def:atomic-braid)).

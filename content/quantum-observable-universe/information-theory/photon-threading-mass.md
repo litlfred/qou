@@ -1,4 +1,3 @@
-**Proposition (mass as photon threading cost).**
 *Let $\mathfrak{H}$ be a knot composite with braid word $\beta_{\mathfrak{H}} \in B_n$. The categorical mass $\mathfrak{m}_{\mathfrak{H}}$ ([mass identity](#def:mass-identity)) equals the total Gröbner--Shirshov reduction cost of threading the photon strand $\gamma$ through the hadron braid:*
 
 $$

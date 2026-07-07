@@ -1,4 +1,3 @@
-**Proposition.**
 *Let $\beta \in H_3(R, q)$ be a confined nuclear braid built from crossing operators at generators $\sigma_{i_k}$. The Wedderburn-Artin decomposition separates each crossing's contribution into three channels:*
 
 $$

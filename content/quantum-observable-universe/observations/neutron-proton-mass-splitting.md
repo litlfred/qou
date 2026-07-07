@@ -1,4 +1,3 @@
-**Proposition.**
 *The neutron--proton mass difference is*
 
 $$

@@ -1,4 +1,3 @@
-**Lemma.**
 *The categorical Euler characteristic $\chi(A) = \mathrm{tr}(\mathrm{id}_A)$ for $A = \mathcal{O}_q(\mathrm{SU}(2))$ on Bring's surface $\Sigma_4$ equals*
 
 $$

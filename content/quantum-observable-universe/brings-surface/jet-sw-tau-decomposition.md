@@ -1,5 +1,3 @@
-**Proposition (jet decomposition of the Archimedean functor).**
-
 Let $\tau$ be the Archimedean realisation functor (step 9 of the canonical chain). Applied to the surface-ordered multiplicative integral of the mass-identity connection--curvature pair over the exceptional divisor $\mathcal{S}_c$, it decomposes as the sum over vertical (jet) degrees of the prolonged Seiberg--Witten periods:
 
 $$

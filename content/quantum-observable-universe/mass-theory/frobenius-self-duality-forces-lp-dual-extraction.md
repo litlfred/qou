@@ -1,4 +1,3 @@
-**Proposition.**
 *The Markov trace $\tau$ on $H_n(R,q)$ is a non-degenerate
 symmetric bilinear pairing. This makes $(H_n(R,q),\tau)$ a
 Frobenius algebra, hence canonically isomorphic to its

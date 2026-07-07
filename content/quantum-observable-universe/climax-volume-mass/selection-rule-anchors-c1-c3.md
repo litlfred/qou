@@ -1,5 +1,3 @@
-**Proposition (selection-rule anchors at c=1 and c=3).**
-
 *Let $q \in \mathbb{R}_{>0}$ and let $h := q - q^{-1}$. The per-component selection rule*
 
 $$

@@ -1,4 +1,3 @@
-**Proposition.**
 *For every jet level $n \ge 0$, the descended component of the mass integrand equals the invariant base-level holonomy:*
 
 $$

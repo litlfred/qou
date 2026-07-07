@@ -1,4 +1,3 @@
-**Proposition.**
 The nuclear binding energy is the quantum dilogarithm volume of the Markov trace, normalized by $\hbar_q^2$:
 
 $$

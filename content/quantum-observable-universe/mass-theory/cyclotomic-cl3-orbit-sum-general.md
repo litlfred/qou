@@ -1,4 +1,3 @@
-**Proposition (general orbit-sum identity for $\mathrm{Cl}_3$).**
 *For all $N \geq 2$, the real-part orbit sum reduces strictly to:*
 
 $$

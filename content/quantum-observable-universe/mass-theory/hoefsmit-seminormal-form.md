@@ -1,4 +1,3 @@
-**Proposition.**
 *For each partition $\lambda \vdash n$ and substrate parameter $q > 1$,
 the Hoefsmit seminormal form \cite{hoefsmit1974} gives an explicit
 matrix representation $\rho_\lambda\colon H_n(R, q) \to M_{d_\lambda}(\mathbb{C})$

@@ -1,4 +1,3 @@
-**Proposition (Wedderburn–Bratteli recursion).**
 *The Jones-Markov weights $\{y_\lambda^{(n)}\}_{n \geq 1}$ satisfy a multiplicity-free Bratteli recursion. For every $\lambda \,\vdash\, n + 1$:*
 
 $$

@@ -1,4 +1,3 @@
-**Proposition (graded Hecke energy truncation bound).**
 *Let $\hat{\beta}_K$ be the closure of $\mathcal{B}_K \in B_n$ and $\mathfrak{M}_K$ its highest-weight KLR module. The mass-spectrum generating function:*
 
 $$

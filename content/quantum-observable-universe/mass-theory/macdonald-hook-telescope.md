@@ -1,4 +1,3 @@
-**Proposition (Macdonald hook-content telescope).**
 *Let $Q = q^2$ and $X = q\,z\,/\,(1 - Q + q\,z)$. The Wenzl-bridge normalisation $Z_n$ telescopes identically to a geometric ratio:*
 
 $$

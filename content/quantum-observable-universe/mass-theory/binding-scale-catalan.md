@@ -1,4 +1,3 @@
-**Proposition.**
 *The binding energy scale in the atomic mass formula is
 the archimedean evaluation of the algebraic binding scale:*
 

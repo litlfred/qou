@@ -1,4 +1,3 @@
-**Proposition (silver-ratio trace degeneracy).**
 *Let $q$ be the substrate parameter and $h = q - q^{-1}$. Then:*
 
 $$

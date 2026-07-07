@@ -1,4 +1,3 @@
-**Proposition.**
 The fermion--boson decomposition coincides with the knot--link decomposition of the $T(2,n)$ torus family on Bring's surface:
 
 - A **fermion** ($\alpha_V \neq 0$) is a **knot** (1 component).

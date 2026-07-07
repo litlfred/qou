@@ -1,4 +1,3 @@
-**Lemma.**
 *Let $V$ be the fundamental representation of $\mathrm{SU}_q(2)$ with $q$ not a root of unity. Let $\beta \in B_n$ act on $V^{\otimes n}$ via the braid group representation $\rho_n \colon B_n \to \mathrm{Aut}(V^{\otimes n})$. Then*
 
 $$

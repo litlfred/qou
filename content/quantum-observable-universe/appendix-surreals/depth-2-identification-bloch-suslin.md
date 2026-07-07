@@ -1,5 +1,3 @@
-**Proposition (depth-2 identification of $G^{(2)}(\mathcal{H}_q)$ with the Bloch group $K_3^{\mathrm{ind}}(F) \otimes \mathbb{Q}$ — provable via Bloch–Suslin).**
-
 Let $F$ be a number field, $q \in F$ generic, and let $\mathcal{H}_q$ be the substrate convolution Hopf algebra over $F$ ([Frobenius–Hopf substrate](#def:frobenius-hopf-substrate)). The depth-2 identification is:
 
 $$

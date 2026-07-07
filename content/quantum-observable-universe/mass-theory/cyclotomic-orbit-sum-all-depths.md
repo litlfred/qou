@@ -1,4 +1,3 @@
-**Proposition (general orbit-sum identity at every depth $n$).**
 *For all depths $n \geq 2$, the orbit sum evaluates as:*
 
 $$

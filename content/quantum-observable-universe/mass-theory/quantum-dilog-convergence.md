@@ -1,4 +1,3 @@
-**Proposition (convergence of the quantum dilogarithm).**
 *Let $q \in \mathbb{R}$ with $1 < q$, and let $z \in \mathbb{R}$ with $|z| < q$. Then the quantum dilogarithm*
 
 $$

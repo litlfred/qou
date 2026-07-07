@@ -1,4 +1,3 @@
-**Proposition (algebraic cyclotomic residue).**
 *Let $T_w \in J^\ell / J^{\ell+1}$ have $\mathrm{tr}_{M, \ell}(T_w) \in \mathbb{Q}(q)$. The cyclotomic residue*
 
 $$

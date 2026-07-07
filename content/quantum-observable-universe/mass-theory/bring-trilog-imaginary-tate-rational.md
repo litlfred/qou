@@ -1,4 +1,3 @@
-**Proposition (Tate-rationality of the imaginary Bring trilog at $\zeta_5$).**
 *The imaginary part of the Bring trilog at $\zeta_5$ evaluates as:*
 
 $$

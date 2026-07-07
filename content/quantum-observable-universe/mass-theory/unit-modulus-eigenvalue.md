@@ -1,4 +1,3 @@
-**Proposition (unit-modulus eigenvalues and the Borromean fixed point).**
 *For any braid word $\beta$ of even length in $H_3(q)$, the
 eigenvalues of the standard representation $\rho_{(2,1)}(\beta)$
 lie on the unit circle $|\lambda| = 1$. The Borromean braid

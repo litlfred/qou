@@ -1,4 +1,3 @@
-**Proposition (Min-Frobenius-norm collapse — general unital R-algebra).**
 *Let $R$ be a strict-ordered field. Let $A$ be a unital $R$-algebra. Let $\tau : A \to R$ be an $R$-linear normalised trace ($\tau(1) = 1$, $\tau(xy) = \tau(yx)$). Assume $\tau$ is positive-semi-definite on squares: $0 \le \tau(X \cdot X)$ for all $X \in A$. For any $S \in R$ and $X \in A$ satisfying $\tau(X) = S$, we have:*
 $$
 S^2 \;\le\; \tau(X \cdot X).

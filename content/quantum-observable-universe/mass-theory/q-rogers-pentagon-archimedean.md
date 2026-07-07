@@ -1,4 +1,3 @@
-**Proposition (Post-$\tau$ pentagon = pre-$\tau$ pentagon + $q$-$\log^2$ Rogers correction).**
 *The pre-$\tau$ bare pentagon operates formally in the Hopf algebra without log-squared terms. Under the archimedean realization functor, the post-$\tau$ pentagon acquires the $\log_q^2$ correction:*
 
 $$

@@ -1,4 +1,4 @@
-**Lemma ("Surreal squeeze").** *Let $\varepsilon \in \mathrm{Der}(A)$ be the
+*Let $\varepsilon \in \mathrm{Der}(A)$ be the
 Reeb infinitesimal
 ([Reeb infinitesimal](#def:reeb-epsilon))
 and let $\delta > 0$ be a standard real number.  Then, inside the

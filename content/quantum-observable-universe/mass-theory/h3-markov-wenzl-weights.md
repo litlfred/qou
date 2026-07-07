@@ -1,4 +1,3 @@
-**Proposition (Closed-form Jones/Temperley–Lieb weights on $\mathrm{H}_3(q)$).**
 *Let $y_\lambda(q)$ denote the coefficient of $\chi^\lambda$ in the Frobenius
 expansion $\mathrm{tr}_M^{\mathrm{Jones}} = \sum_{\lambda \vdash 3} y_\lambda \,
 \chi^\lambda$ of the **Jones-normalised** Markov trace on $\mathrm{H}_3(q)$ —

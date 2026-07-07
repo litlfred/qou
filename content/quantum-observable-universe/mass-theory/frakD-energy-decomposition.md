@@ -1,4 +1,3 @@
-**Proposition (bar-parity energy decomposition).**
 *Let $\sigma$ be the bar involution (the substrate $q \mapsto q^{-1}$, an
 order-2 ring endomorphism) on a field $F$ of characteristic $\neq 2$. Every
 energy $E \in F$ splits canonically as*

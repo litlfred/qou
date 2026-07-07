@@ -1,4 +1,3 @@
-**Lemma.**
 *Suppose $V_{\mathrm{phys}} = \varinjlim V^{\otimes n}$ admits the complete eigenbasis of ([eigenbasis decomposition](#lem:feynman-eigenbasis-decomposition)). Then the Feynman path integral*
 
 $$

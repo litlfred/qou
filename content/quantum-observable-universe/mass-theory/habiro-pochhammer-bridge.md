@@ -1,4 +1,3 @@
-**Proposition (Habiro–Markov bridge via Pochhammer factorisation).**
 *Let $q \in \mathbb{R}_{>0}$, $u = \sqrt{q}$, and let
 $\{a_m(u)\}_{m=0}^{M}$ be the Habiro coefficients of a braid word
 $\beta \in B_n$ (integer polynomials in $u$). Define the two

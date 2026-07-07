@@ -1,4 +1,3 @@
-**Proposition.**
 *The vertex volume perturbation when going from $H_k$ to $H_{k+1}$
 is:*
 $$\delta\Phi_k = z^2 \cdot \mathrm{Vol}(4_1) \cdot [k{-}3]_q$$

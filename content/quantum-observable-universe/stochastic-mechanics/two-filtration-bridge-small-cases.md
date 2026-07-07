@@ -1,5 +1,3 @@
-**Proposition (two-filtration bridge map verified at small self-conjugate / chiral-pair partitions).**
-
 The two-filtration bridge conjecture ([`conj:two-filtration-bridge`](#conj:two-filtration-bridge)) predicts an iterated-integral depth $d_{\mathrm{II}}(\lambda)$ for each partition $\lambda$:
 
 $$

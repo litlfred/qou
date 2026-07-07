@@ -1,4 +1,3 @@
-**Proposition (three calibration inputs, aligned to (co)homology).**
 *The QOU framework admits exactly three external calibration inputs.
 Beyond these three, no further empirical, fitting, or numerological
 input is permitted — every other mass, Q-value, binding energy,

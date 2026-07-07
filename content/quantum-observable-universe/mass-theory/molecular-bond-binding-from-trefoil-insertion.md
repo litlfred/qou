@@ -1,4 +1,3 @@
-**Proposition (molecular bond binding energy from inverse-trefoil insertion).**
 *A covalent bond functions categorically as an inverse trefoil $T^{-1}$ inserted between two atomic braids $\mathcal{A}$ and $\mathcal{B}$. The molecular binding energy scales via the per-channel volume shifts:*
 
 $$

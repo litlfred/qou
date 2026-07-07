@@ -1,4 +1,3 @@
-**Proposition (closed-form $\sigma_{\mathrm{shell}}$ magnitude).**
 *Let $A_{\mathrm{magic}} \in \{2, 8, 20, 28, 50, 82, 126\}$ be a magic nucleon count, $n = 3 \cdot A_{\mathrm{magic}}$, and let $\lambda_{\mathrm{shell}} \vdash n$ be the staircase partition of $n$. For an atom $K$ with braid word $\mathcal{B}_K \in B_n$, the shell-operator magnitude $y_{\mathrm{target}}(A_{\mathrm{magic}})$ is derivable in closed form as:*
 
 $$

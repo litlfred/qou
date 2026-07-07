@@ -1,4 +1,3 @@
-**Proposition (convergence bound).**
 *Let $\mathcal{A}$ be the active set of partitions that dominate the Hoefsmit trace. The difference between the full trace $\mathrm{tr}_M(W)$ and the restricted trace over $\mathcal{A}$ is bounded by:*
 
 $$

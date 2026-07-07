@@ -1,4 +1,3 @@
-**Proposition.**
 *The closure of the nuclear braid $\mathcal{N}(Z,N)$ in $H_3(R, q)$
 determines a bulk modification factor $a(\mathcal{N})$ for the
 BW binding energy.  This factor is a single product over

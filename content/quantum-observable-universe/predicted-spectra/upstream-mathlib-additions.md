@@ -1,5 +1,3 @@
-**Proposition (Upstream Mathlib Additions).**
-
 The file [`upstream-mathlib-additions.lean`](upstream-mathlib-additions.lean) provides three unconditional additions for Mathlib:
 
 See [Table 1](#tbl:upstream-mathlib-additions-table1-data).

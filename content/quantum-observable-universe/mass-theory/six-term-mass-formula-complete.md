@@ -1,4 +1,3 @@
-**Theorem (the unified six-term mass formula).**
 *The categorical mass of the particle $\varrho$ breaks cleanly into six derived terms:*
 
 $$

@@ -1,4 +1,3 @@
-**Proposition (residue spectral sum, symbolic form).**
 *For a closed braid knot with Hecke normal form $T_w \in H_n(R, q)$, the categorical mass admits the symbolic decomposition:*
 
 $$

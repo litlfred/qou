@@ -1,4 +1,3 @@
-**Proposition (meson m_K/m_π ratio uniqueness via the α_shift universal chain).**
 *The substrate-evaluated ratio $m_K^2 / m_\pi^2$ factors uniquely through the torus knots $T(2, 3)$ and $T(2, 4)$ as:*
 $$
   [\alpha_{\text{shift}}(T(2,3))]_q \cdot [\alpha_{\text{shift}}(T(2,4))]_q

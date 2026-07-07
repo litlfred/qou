@@ -1,4 +1,3 @@
-**Proposition (spectral form of $F_{\mathrm{Pauli}}$).**
 *Working over $A = H_n(R, q)$, the Pauli statistical weight in nuclear $Q$-value formulas is the ratio of Wedderburn-block traces:*
 
 $$

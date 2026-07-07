@@ -1,4 +1,4 @@
-**Proposition.** *In the $\mathfrak{Q}_\beta$ precision-ladder factorisation,*
+*In the $\mathfrak{Q}_\beta$ precision-ladder factorisation,*
 
 $$
 \mathfrak{Q}_\beta(q) \;=\; Q_A(q) \cdot \cos(\alpha_{\text{eff}}(q)) \cdot \prod_{k \ge 2} \bigl(1 + c_k \cdot u_{\text{ladder}}^k\bigr), \qquad u_{\text{ladder}} = b(q) \cdot \hbar_q^2,

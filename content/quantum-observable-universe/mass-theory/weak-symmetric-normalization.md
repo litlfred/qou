@@ -1,4 +1,3 @@
-**Proposition (weak-sector symmetric-channel normalization).**
 *The symmetric-channel normalization $\mathcal{N}_{\rm sym}(q)$ evaluates the Plancherel-weighted character product across the electroweak symmetric channel:*
 
 $$

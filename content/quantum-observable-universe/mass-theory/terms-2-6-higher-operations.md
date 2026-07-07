@@ -1,4 +1,3 @@
-**Proposition (structural identifications for Terms 2 and 6).**
 *The unified knot mass formula enforces the following readings:*
 
 1. *(Term 2 is an infinite Wedderburn sum)* The Cauchy kernel $\Phi_q(z)$ represents the $k \to \infty$ limit of the level-$k$ Jones–Wenzl trace. It is exactly the cyclotomic basis of Habiro's unified quantum invariant.

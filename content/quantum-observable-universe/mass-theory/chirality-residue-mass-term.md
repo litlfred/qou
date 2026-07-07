@@ -1,4 +1,3 @@
-**Proposition (chirality / non-chirality split of the mass tower).**
 *The mass tower rigidly isolates into chirality and non-chirality segments based on the signed Young content $c_\lambda$:*
 
 $$

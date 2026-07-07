@@ -1,4 +1,3 @@
-**Proposition (force-carrier intertwining correspondence).**
 *When the torus-knot force carrier $T_{p,q}$ applies to an $n$-strand molecular braid, the dominant non-trivial Wedderburn weight rests strictly on the intertwining partition:*
 
 $$

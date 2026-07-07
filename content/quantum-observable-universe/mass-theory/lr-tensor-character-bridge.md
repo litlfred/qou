@@ -1,4 +1,3 @@
-**Corollary (k-factor parabolic specialisation).**
 *Let $n = \sum_i n_i$. For every partition $\nu \vdash n$ and product $\beta_1 \otimes \cdots \otimes \beta_k \in H_{n_1}(R, q) \times \cdots \times H_{n_k}(R, q)$, the tensor-product Hecke character factors exactly as:*
 
 $$

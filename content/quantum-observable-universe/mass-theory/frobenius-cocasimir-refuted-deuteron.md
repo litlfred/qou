@@ -1,4 +1,3 @@
-**Lemma (Frobenius co-Casimir refuted at deuteron).**
 *The Frobenius co-Casimir prescription $\Delta_\lambda = 1/\dim_q(\lambda)$ fails to close the binding energy formula for the deuteron.*
 
 *The signed binding density yields $+0.145 m_e$, missing the target $-4.35 m_e$. The gap vastly exceeds the tolerance. The sign is incorrect.*

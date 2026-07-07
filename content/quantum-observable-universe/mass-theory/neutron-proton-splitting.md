@@ -1,4 +1,3 @@
-**Proposition (neutron-proton mass splitting).**
 *The neutron-proton mass difference derives from the quantum dilogarithm volumes:*
 
 $$

@@ -1,4 +1,3 @@
-**Proposition (crystal-basis reduction of open problems).**
 *The Brundan-Kleshchev isomorphism and Lecouvey bijection reduce three of the four open mass-tower problems to finite-graph combinatorics on Kashiwara crystals.*
 
 The chirality factor average reduces to an integer multiplicity sum on a Type-B folded crystal. The folded Demazure components strictly evaluate the matter-antimatter imbalance.

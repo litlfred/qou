@@ -1,4 +1,3 @@
-**Proposition.**
 *Let $f$ be any fibre fold. Since $f$ is an additive map on the fibre coefficient ring, for any fibre quantities $x_{\mathfrak n}, x_{\mathfrak p}$:*
 
 $$

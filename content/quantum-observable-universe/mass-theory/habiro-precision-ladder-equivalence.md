@@ -1,4 +1,3 @@
-**Proposition (Habiro integrality of the Markov trace).**
 *The Markov trace $\operatorname{tr}_M(T_w, q)$ of any braid word
 admits a finite Habiro expansion with integer coefficients $a_m \in
 \mathbb{Z}[u]$. The Habiro form is the canonical representation: it is

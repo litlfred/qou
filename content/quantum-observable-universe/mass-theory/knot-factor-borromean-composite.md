@@ -1,4 +1,3 @@
-**Corollary (Borromean-$k$ composite knot factor).**
 *Consider a Brunnian $k$-component composite, where every $(k{-}1)$-component sublink is trivial. Its central-idempotent expansion equals the $k$-fold independent product of figure-eight pairings. The knot factor is:*
 
 $$

@@ -1,2 +1,1 @@
-**Lemma.**
 *The proton and neutron are Borromean configurations ($6_2^3$) of three quark vortices. They are internally bound by Hopf links $\mathcal{L}_{\mathrm{Hopf}}$. Since $\mathrm{Vol}(\mathcal{L}_{\mathrm{Hopf}}) = 0$, the mass contribution arises entirely from the Skein functional.*

@@ -1,4 +1,3 @@
-**Proposition.**
 *Let $q > 1$ be the substrate parameter and $\hbar_q = (q-1)/q$. Consider six quarks (two baryon-number units) with flavor content $(\mathfrak{u}, \mathfrak{d}, \mathfrak{s})^{\otimes 2}$. These six quarks can assemble in two topologically distinct configurations:*
 
 *1. Borromean phase ($\mathcal{P}_B$): Two Borromean baryons $\mathcal{B}_3 \cdot \mathcal{B}_3$. Each baryon possesses Borromean volume $V_B = 7.32772$ and features inter-baryon Hopf binding.*

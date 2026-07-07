@@ -1,5 +1,3 @@
-**Proposition (Iwahori–Hecke algebra is Baer-* at generic $q$).**
-
 *Let $R$ be a field of characteristic $0$ and let $q \in R$ be generic (not a root of unity, $q \neq 1$). Equip $H_n(q)$ with the bar involution $* \colon \sigma_i \mapsto \sigma_i^{-1}$, $q \mapsto q^{-1}$ (extended antilinearly). Then $H_n(q)$ is a Baer-*-ring. A self-adjoint idempotent (a projection) generates its right (resp. left) annihilator ideal.*
 
 ### Corollary

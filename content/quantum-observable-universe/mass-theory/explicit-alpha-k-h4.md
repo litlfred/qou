@@ -1,4 +1,3 @@
-**Proposition (explicit $\alpha_\lambda(H_4)$).**
 *For each $\lambda \,\vdash\, 4$, the Wedderburn-orthogonal representative $r_\lambda = \sum_C c_C \cdot T_{w_C}$ has coefficients $c_C(\lambda) \in \mathbb{Q}(q)$ defined as:*
 
 | $\lambda$ | $c_e$ | $c_{(12)}$ | $c_{(12)(34)}$ | $c_{(123)}$ | $c_{(1234)}$ |

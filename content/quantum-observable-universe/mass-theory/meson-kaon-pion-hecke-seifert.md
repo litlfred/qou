@@ -1,4 +1,3 @@
-**Proposition (kaon-to-pion mass ratio).**
 *The kaon-to-pion mass ratio factors into a Hecke character and a Seifert volume ratio:*
 
 $$

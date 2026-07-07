@@ -1,4 +1,3 @@
-**Proposition.**
 *Let $\gamma_k = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1 + \varphi_{01}\sigma_0\sigma_1$ be a 4-term photon. Let $\mathfrak{N}(\varphi_0, \varphi_1, \varphi_{01})$ denote the nucleon NF obtained by the derivation chain $\gamma\gamma \to q\bar{q} \to \mathcal{B}_3 \cdot \mathrm{crossings} \to \mathfrak{N}$.*
 
 *Then for all $\varphi_0, \varphi_1, \varphi_{01} \in \mathbb{R}$:*

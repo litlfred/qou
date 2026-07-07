@@ -1,4 +1,3 @@
-**Proposition (Bar-antisymmetry of the Skein relation).**
 The Hecke--Skein relation
 
 $$

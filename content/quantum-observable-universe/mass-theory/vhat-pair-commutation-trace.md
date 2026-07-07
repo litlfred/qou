@@ -1,4 +1,3 @@
-**Lemma (pair commutation at traced-volume level).**
 *Let $\hat V_i(q) = z(q)a_i(q) + b_i(q) \in \mathbb{Z}[q^{\pm 1/2}, z]$ be the traced volume of the $i$-th crossing of a closed braid. For any two indices $i, j$:*
 
 $$

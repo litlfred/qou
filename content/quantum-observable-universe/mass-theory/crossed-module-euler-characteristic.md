@@ -1,4 +1,3 @@
-**Proposition.**
 *Let $\beta_{\mathrm{Bor}} = (\sigma_1 \sigma_2^{-1})^3$ be the Borromean braid, and let $\Phi_0 \colon Q_8 \to H_3(q)$ be the crossed module feedback map defined by $\sigma_1 \mapsto i, \sigma_2 \mapsto j$. The $h^2$ coefficient of the multiplicative surface integral traced over the $2 \times 2$ quaternion representation evaluates to:*
 
 $$

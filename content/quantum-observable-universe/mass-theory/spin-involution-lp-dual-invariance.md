@@ -1,4 +1,3 @@
-**Proposition (spin-invariance of the LP-dual).**
 *Let $(A, \tau)$ be a Frobenius algebra with spin involution $\sigma$. Let $c \in A$ be $\sigma$-invariant. Let $\Sigma$ be a $\sigma$-stable set of central idempotents of $A$. For any $\beta \in A$, the optimal dual variable $y_0^*$ of the operator-selection LP*
 
 $$

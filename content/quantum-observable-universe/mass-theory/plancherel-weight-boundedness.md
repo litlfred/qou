@@ -1,4 +1,3 @@
-**Proposition (Plancherel weights are a probability distribution).**
 *For semisimple $A = H_n(R, q)$, the canonical Plancherel weights $w_\lambda = (\dim V_\lambda)^2/n!$ fulfill strict probability-distribution conditions:*
 
 1. *Non-negativity: Each $w_\lambda \in [0, 1]$.*

@@ -1,4 +1,3 @@
-**Proposition ($\gamma\gamma$ production generates the operator basis).**
 *Two independent photons multiplied in the Iwahori--Hecke algebra $H_3(q)$ reach every operator of the six-element basis $\{\mathbf{1}, \sigma_0, \sigma_1, L_+, L_-, e^-\}$. The photon and the elementary crossings generate the whole particle catalogue through pair production.*
 
 We write two colored photons with independent color weights:

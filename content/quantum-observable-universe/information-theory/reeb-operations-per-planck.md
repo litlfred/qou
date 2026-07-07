@@ -1,4 +1,3 @@
-**Proposition.**
 *Let $q \in k^\times \setminus \{1\}$. Let $t_P(q) = q/(q-1)$ be the Planck time ([Planck time](#def:planck-time)). The number of discrete $f_q$-iterations (evaluations of $f_q(z) = z^2 + c(q)$ on the exceptional divisor) comprising one Reeb circuit is*
 
 $$

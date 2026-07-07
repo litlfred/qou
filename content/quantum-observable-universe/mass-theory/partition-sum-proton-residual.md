@@ -1,4 +1,3 @@
-**Proposition (proton tower residual).**
 *Let $\mathfrak{m}^{\mathrm{tower}}(\mathfrak{p}, q_0)$ be the pure-tower proton mass. The proton tower residual equals the electron-scaled Frobenius co-Casimir trace at $n = 3$:*
 
 $$

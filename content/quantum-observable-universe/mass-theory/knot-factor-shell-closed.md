@@ -1,4 +1,3 @@
-**Corollary (shell-closed knot factor).**
 *For $Z = N$ even-even nuclei, the Markov chain on the three $H_3(R, q)$ partitions returns to equilibrium after every inter-nucleon crossing. The pp and nn character shifts cancel exactly. In the spectral language, $\beta_\mathcal{K} \cdot \beta_\mathcal{K}^*$ projects entirely onto the trivial idempotent $e_{(n)}$:*
 
 $$

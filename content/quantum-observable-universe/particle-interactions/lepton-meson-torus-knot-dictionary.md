@@ -1,4 +1,3 @@
-**Proposition (torus-knot dictionary).**
 *The lepton and meson mass towers are both indexed by torus knots $T(2, n)$ for $n = 3, 5, 7, \ldots$ (odd primes). We establish the following correspondence:*
 
 | Generation | $n$ | Lepton ($H_2$) | Quark flavor ($H_3$) | Meson ($q\bar{q}$) |

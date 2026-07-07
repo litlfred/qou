@@ -1,4 +1,3 @@
-**Proposition.**
 *Let $P = (\mathrm{name}, \ell, [K]_M, n_0)$ be a confined particle and let*
 
 $$

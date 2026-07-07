@@ -1,4 +1,3 @@
-**Proposition.**
 *The nuclear magic numbers $\{2, 8, 20, 28\}$ emerge from the substrate parameter $q_0$ through the per-partition nuclear character computation at Hecke levels $k = 3\ldots 10$.*
 
 *For each partition $\lambda \vdash k$ with Wedderburn weight $w_\lambda = \dim_q(\lambda)^2/[k]_q!$, the nuclear braid $\mathcal{N}(Z, Z)$ has character $\chi_\lambda(Z)$ computed from the Hoefsmit seminormal matrices. The cumulative Wedderburn-weighted signal*

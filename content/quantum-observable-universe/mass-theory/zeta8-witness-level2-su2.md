@@ -1,4 +1,3 @@
-**Proposition (Level-2 SU(2) Verlinde witness at $q = \zeta_8$).**
 *Let $\zeta$ be a primitive 8th root of unity in a field $R$ (the
 analytic model is $\zeta_8 = e^{i\pi/4} \in \mathbb{C}$). Then the
 following three algebraic facts hold:*

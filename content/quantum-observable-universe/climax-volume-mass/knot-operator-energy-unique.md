@@ -1,4 +1,3 @@
-**Proposition.**
 *The knot operator energy $E(\lambda, q) = |u_\lambda(q)|$ ([knot operator energy](#def:knot-operator-energy)) is **uniquely determined** by:*
 
 1. *the partition $\lambda \vdash k$ (a classical Young diagram — $q$-independent indexing),*

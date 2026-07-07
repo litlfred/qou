@@ -1,4 +1,3 @@
-**Theorem (far-commuting minimality of the even-twist triplet).**
 *Let $\sigma_a, \sigma_b, \sigma_c$ be pairwise far-commuting braid generators: $|a-b|, |b-c|, |a-c| \geq 2$. Then:*
 
 1. *(Minimality.) These generators require at least $6$ strands. With $1 \leq a < b < c$, the pairwise gap $\geq 2$ forces $c \geq 5$, yielding $n \geq c+1 \geq 6$. The bound is attained uniquely by the consecutive odd triple $(a,b,c) = (1,3,5)$ in $B_6$.*

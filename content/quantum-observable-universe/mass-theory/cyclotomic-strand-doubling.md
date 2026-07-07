@@ -1,4 +1,3 @@
-**Proposition (cyclotomic doubling identity).**
 *Over $\mathbb{Z}[X]$, the cyclotomic polynomials satisfy:*
 
 $$

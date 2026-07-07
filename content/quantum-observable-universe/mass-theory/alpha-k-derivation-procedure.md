@@ -1,4 +1,3 @@
-**Proposition (linear-system characterisation of $y_\lambda$).**
 *Over $H_n(R, q)$ at generic $q$, the Jones-Markov trace admits a unique central-character expansion:*
 
 $$

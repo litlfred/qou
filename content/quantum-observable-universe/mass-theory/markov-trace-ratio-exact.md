@@ -1,4 +1,3 @@
-**Proposition (normalization-independence of Markov-trace ratios).**
 *For braids $\beta_1, \beta_2 \in B_n$ with $\operatorname{tr}_M(\beta_2) \neq 0$, and for the Jones normalisation factor $C(n, q) = (-q^{1/2} - q^{-1/2})^{n-1}$:*
 
 $$

@@ -1,4 +1,3 @@
-**Theorem (substrate bound on dressed-quark splitting).**
 *For substrate parameter $q > 1$, the down-up splitting satisfies the two-sided bound:*
 
 $$

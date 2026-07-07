@@ -1,4 +1,3 @@
-**Proposition.**
 *By $q$-Schur--Weyl duality $V^{\otimes n} \cong \bigoplus_\lambda V_\lambda \otimes S_\lambda$,
 the content $c = j - i$ of a box at position $(i,j)$ in a Young diagram
 equals the magnetic quantum number $m_j$ of the corresponding

@@ -1,4 +1,3 @@
-**Proposition.**
 *Fix a bare nuclear confined particle $P_{\mathrm{bare}}$ at level $\ell = 2$ with atomic number $Z_{\max}$. Consider the dressing chain in the confinement category:*
 $$
   P_{\mathrm{bare}}

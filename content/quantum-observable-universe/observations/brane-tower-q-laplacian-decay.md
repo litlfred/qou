@@ -1,4 +1,3 @@
-**Proposition (brane-tower convergence via q-Laplacian decay).**
 *Summing over the brane tower yields the infinite jet prolongation*
 $$
   T(\rho) \;=\; \sum_{n \geq 1} \hbar_q^{2n} \, \Delta^{(n)}(\rho).

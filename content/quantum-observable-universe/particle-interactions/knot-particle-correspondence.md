@@ -1,4 +1,3 @@
-**Proposition.**
 *Let $V = V_{1/2}$ be the fundamental representation of $\mathcal{U}_q(\mathfrak{su}(2))$. Let $B_n$ act faithfully on $V^{\otimes n}$ via the $R$-matrix braiding. By $q$-Schur--Weyl duality, $V^{\otimes n}$ decomposes into irreducible summands labeled by partitions $\lambda \vdash n$.*
 
 *The Markov trace on $H_n(R, q)$ assigns a knot type $K_\lambda$ (the closure of any braid representative) to each irreducible summand. This establishes a bijection between irreducible summands of $V^{\otimes n}$ under the Iwahori--Hecke algebra $H_n(R, q)$ and knot/link types arising as closures of $n$-strand braids.*

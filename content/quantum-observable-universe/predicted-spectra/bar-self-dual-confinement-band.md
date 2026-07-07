@@ -1,4 +1,4 @@
-**Proposition.** Let $\iota \colon \mathbb{R}_{>0} \to \mathbb{R}_{>0}$ denote the bar involution $\iota(q) = q^{-1}$. The open interval
+Let $\iota \colon \mathbb{R}_{>0} \to \mathbb{R}_{>0}$ denote the bar involution $\iota(q) = q^{-1}$. The open interval
 
 $$
   \mathcal{B}  :=  \bigl(1/\varphi^2,\,\varphi^2\bigr) \subset  \mathbb{R}_{>0}

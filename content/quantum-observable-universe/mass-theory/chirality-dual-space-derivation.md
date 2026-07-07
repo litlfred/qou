@@ -1,4 +1,3 @@
-**Proposition (chirality from symmetric-channel duality).**
 *The chirality factor $a_K$ derives exactly from the symmetric-channel trace structure of the $H_3(q)$ Hecke generators. For every mixed $\mathrm{pn}$ crossing $c$ in the braid:*
 
 $$

@@ -1,4 +1,3 @@
-**Proposition (recipe: $\lambda \mapsto y_\lambda(q)$).**
 *For any partition $\lambda \,\vdash\, n$, we determine $y_\lambda(q)$ mechanically as a rational function in $\sqrt q$.*
 
 1. *Extract cell contents $c(i, j) = j - i$ and hook lengths $h(i, j)$. Define $n(\lambda) = \sum_i (i-1)\lambda_i$.*

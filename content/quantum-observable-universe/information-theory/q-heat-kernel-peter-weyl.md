@@ -1,4 +1,4 @@
-**Proposition ($q$-heat kernel spectral decomposition).** Applying the categorical Fourier transform to the $q$-heat equation diagonalises the $q$-Laplacian on each Peter--Weyl isotypic component of $\mathbf{Rep}(\mathrm{SU}_q(2))$. This yields an explicit spectral formula for the $q$-heat kernel.
+Applying the categorical Fourier transform to the $q$-heat equation diagonalises the $q$-Laplacian on each Peter--Weyl isotypic component of $\mathbf{Rep}(\mathrm{SU}_q(2))$. This yields an explicit spectral formula for the $q$-heat kernel.
 
 **Spectral decomposition.** A solution $u \colon \mathbb{R}_{\ge 0} \times \mathcal{S} \to \mathbb{C}$ to $\partial_t u = -\Delta_q u$ with initial datum $u_0$ decomposes as
 $$

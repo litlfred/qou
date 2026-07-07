@@ -1,4 +1,3 @@
-**Proposition (E-infinity page derivations).**
 *The six-term categorical mass formula components correlate strictly to $E_\infty^{p, *}$ pages:*
 
 $$

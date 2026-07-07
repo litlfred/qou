@@ -1,6 +1,5 @@
 ## Statement
 
-**Proposition (antipode-induced polynomial symmetry).**
 *Let $\mathcal{B}_p$ denote the proton braid in $B_3$ used in [`prop:atomic-mass-gb-nf`](#prop:atomic-mass-gb-nf). Let*
 
 $$
