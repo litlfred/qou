@@ -1,0 +1,81 @@
+{
+  "computation": "qbeta-crossing-weight-affine",
+  "description": "Q_beta ladder-factor bar-parity split: the evaluation map is affine in the crossing weight, so the ladder factor is Moebius and its bar-odd part is linear in the crossing-weight departure (w - w0) times a fixed anchor-free bar-odd kernel 2h/(4w0^2 - h^2). Sharpens KC18.",
+  "audit_only": true,
+  "tier": "structural-exact (symbolic bar-parity; no fit, no anchors)",
+  "computedAt": "2026-07-07T14:10:32.957653+00:00",
+  "commitSha": "b590e5943cda427780b0b2b0e9ce137a7ac63d04",
+  "engine": "sympy",
+  "engineVersion": "1.14.0",
+  "scriptFile": "qbeta_crossing_weight_affine_probe.py",
+  "scriptHash": "d302f9a5deb3",
+  "assertions": [
+    {
+      "name": "A_eval_affine_dEdw_eq_neg_h",
+      "passed": true
+    },
+    {
+      "name": "A_eval_diff_linear",
+      "passed": true
+    },
+    {
+      "name": "M_ladder_numer_degw_1",
+      "passed": true
+    },
+    {
+      "name": "M_ladder_denom_degw_0",
+      "passed": true
+    },
+    {
+      "name": "O_odd_part_eq_kernel_times_departure",
+      "passed": true
+    },
+    {
+      "name": "O_odd_part_is_bar_odd",
+      "passed": true
+    },
+    {
+      "name": "O_kernel_is_bar_odd",
+      "passed": true
+    },
+    {
+      "name": "O_odd_part_linear_in_w",
+      "passed": true
+    },
+    {
+      "name": "E_even_part_form",
+      "passed": true
+    },
+    {
+      "name": "E_even_part_is_bar_even",
+      "passed": true
+    },
+    {
+      "name": "K_denominator_bar_even",
+      "passed": true
+    },
+    {
+      "name": "C2_counit_ref_identity",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "eval_map": "E(w) = h^2/2 - h*w  (affine in w; dE/dw = -h)",
+    "ladder_factor": "L(w) = E(w)/E(w0)  (Moebius in w)",
+    "odd_part": "2h*(w - w0)/(4*w0^2 - h^2)  (linear in w - w0; bar-odd)",
+    "even_part": "(4*w*w0 - h^2)/(4*w0^2 - h^2)  (bar-even)",
+    "fixed_kernel": "K(q) = 2h/(4*w0^2 - h^2)  (anchor-free bar-odd rational fn of q)",
+    "c2_reference_identity": "L(w0=1) - 1 = -2*(w - 1)/(h - 2)",
+    "verdict": "CONFIRMED (scope-(a) structural narrowing): the Q_beta evaluation map E(w) = h^2/2 - h*w is AFFINE in the crossing weight w, so the ladder factor L(w) = E(w)/E(w0) is Moebius in w and its bar-ODD (decay) part is EXACTLY 2h*(w - w0)/(4*w0^2 - h^2) -- LINEAR in the crossing-weight departure (w - w0) times the FIXED bar-odd kernel K(q) = 2h/(4*w0^2 - h^2). The evaluation map introduces neither nonlinearity nor anchor-dependence into the odd channel; the whole c_k odd-channel signature (incl. the c_3 -> -2 shadow) is the image of the single scalar bar-even departure (w - w0) under K(q). Since K(q) is a fixed rational function of q, the c_3 anchor-swing must live entirely in w(q). Sharpens KC18 (numerator split) to the ladder factor where the c_k live. NO c_k value; nothing wired."
+  },
+  "context": {
+    "axis": "z->c_k f-map keystone: crossing-weight affine narrowing (trace side)",
+    "sharpens": "registry KC18 (docs/audits/2026-07-07-z-ck-fmap-eval-map-bar-decomposition.md)",
+    "eval_map_lean": "QOU.Interactions.QBetaCounitTrace (trMNP = h^2/2 - h*z)",
+    "new_lean": "QOU.QBeta.CrossingWeightAffine (this branch)",
+    "c3_not_exact": "docs/audits/2026-07-06-c3-not-exact-cross-anchor-verdict.md",
+    "z_bar_even": "QOU.QBeta.z_bar_invariant (KC13)",
+    "flip_flop_guard": "registry section 8 -- no c_k wired"
+  }
+}
