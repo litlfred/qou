@@ -1,7 +1,4 @@
-With notation as in [exceptional divisor](#def:exceptional-divisor), fix the
-substrate parameter $q$ ([substrate parameter](#def:substrate-parameter)) and set
-$\phi \in [0,\pi]$, $\psi \in [0, 2\pi/3]$.  Define the
-**red**, **green**, and **blue** sector embeddings by
+With notation as in [exceptional divisor](#def:exceptional-divisor), fix the substrate parameter $q$ ([substrate parameter](#def:substrate-parameter)) and set $\phi \in [0,\pi]$, $\psi \in [0, 2\pi/3]$. We define the **red**, **green**, and **blue** sector embeddings by
 
 ```tex
 \begin{align*}
@@ -15,21 +12,12 @@ $\phi \in [0,\pi]$, $\psi \in [0, 2\pi/3]$.  Define the
 \end{align*}
 ```
 
-The *color twist* $q\phi$ -- so named because the resulting geometry
-is a weave of colorful twisted tubes with fractal boundary
-structure -- rotates each sector by $q$ full turns as
-the latitude $\phi$ runs from the south pole ($0$) to the north pole ($\pi$),
-encoding the chirality of the substrate parameter.
+The *color twist* $q\phi$ rotates each sector by $q$ full turns as the latitude $\phi$ runs from the south pole ($0$) to the north pole ($\pi$). This encodes the chirality of the substrate parameter.
 
-The three sectors tile the exceptional divisor exactly:
+The three sectors tile the exceptional divisor precisely:
 
 $$
-  \mathcal{S}_p =  \mathfrak{r}(p) \cup \mathfrak{g}(p) \cup \mathfrak{b}(p),
+  \mathcal{S}_p =  \mathfrak{r}(p) \cup \mathfrak{g}(p) \cup \mathfrak{b}(p).
 $$
 
-where adjacent sectors share only their boundary meridians
-(at $\psi = 0$ and $\psi = 2\pi/3$ in each sector's local coordinate),
-and the union covers $\mathcal{S}_p$ without overlap.  The three sectors correspond to
-the three copies of $S_3 \subset S_5$ in
-[chirality and trefoil](#rem:chirality-trefoil): $\mathfrak{r}$ is the first, $\mathfrak{g}$ the
-second, and $\mathfrak{b}$ the third.
+Adjacent sectors share only their boundary meridians (at $\psi = 0$ and $\psi = 2\pi/3$ in each sector's local coordinate). The union covers $\mathcal{S}_p$ without overlap. The three sectors correspond to the three copies of $S_3 \subset S_5$ in [chirality and trefoil](#rem:chirality-trefoil): $\mathfrak{r}$ constitutes the first, $\mathfrak{g}$ the second, and $\mathfrak{b}$ the third.
