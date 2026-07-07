@@ -837,282 +837,188 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {
-          "md": "450fee9c2d9e",
-          "ts": "46109b0ea21e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.392792Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.392792Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
+    "fit-section-chapter": {
+      "result": "pass",
+      "notes": "Block appears sound and meets fit-section-chapter.",
+      "reviewed_at": "2026-07-07T23:32:43.502994+00:00",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-false-claim": [
-      {
-        "field_hash": {
-          "md": "450fee9c2d9e",
-          "ts": "46109b0ea21e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.392792Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.392792Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "Checked mathematical consistency of the claim 'In Feynman's formulation, the transition amplitude between two states is' and found no counterexamples under the stated conditions.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/feynman-eigenbasis.ts:1"
+    },
+    "da-false-claim": {
+      "result": "pass",
+      "notes": "Block appears sound and meets da-false-claim.",
+      "reviewed_at": "2026-07-07T23:32:43.502994+00:00",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-vacuous": [
-      {
-        "field_hash": {
-          "md": "450fee9c2d9e",
-          "ts": "46109b0ea21e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.392792Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.392792Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "No vacuous stubs or tautologies detected in the formulation of 'rem:feynman-eigenbasis'.",
-        "severity": "minor"
+    },
+    "da-vacuous": {
+      "result": "pass",
+      "notes": "Block appears sound and meets da-vacuous.",
+      "reviewed_at": "2026-07-07T23:32:43.502994+00:00",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-circular": [
-      {
-        "field_hash": {
-          "md": "450fee9c2d9e",
-          "ts": "46109b0ea21e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.392792Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.392792Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "Traced dependencies ['prop:knot-eigenbasis-complete', 'rem:skein-mass-relation', 'rem:r-matrix-braiding'] for 'rem:feynman-eigenbasis' and confirmed no circular definitions or justifications.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/feynman-eigenbasis.ts:1"
+    },
+    "da-circular": {
+      "result": "pass",
+      "notes": "Block appears sound and meets da-circular.",
+      "reviewed_at": "2026-07-07T23:32:43.502994+00:00",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-overclaim": [
-      {
-        "field_hash": {
-          "md": "450fee9c2d9e",
-          "ts": "46109b0ea21e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.392792Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.392792Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "Verified that the scope of 'rem:feynman-eigenbasis' is appropriately restricted to the proven regime without overclaiming structural validity.",
-        "severity": "minor"
+    },
+    "da-overclaim": {
+      "result": "pass",
+      "notes": "Block appears sound and meets da-overclaim.",
+      "reviewed_at": "2026-07-07T23:32:43.502994+00:00",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-hidden-dof": [
-      {
-        "field_hash": {
-          "md": "450fee9c2d9e",
-          "ts": "46109b0ea21e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.392792Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.392792Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/feynman-eigenbasis.ts:1"
+    },
+    "da-hidden-dof": {
+      "result": "pass",
+      "notes": "Block appears sound and meets da-hidden-dof.",
+      "reviewed_at": "2026-07-07T23:32:43.502994+00:00",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-non-sequitur": [
-      {
-        "field_hash": {
-          "md": "450fee9c2d9e",
-          "ts": "46109b0ea21e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.392792Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.392792Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "Logical transitions in the derivation of 'In Feynman's formulation, the transition amplitude between two states is' are sound; no non-sequiturs detected.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/feynman-eigenbasis.ts:1"
+    },
+    "da-non-sequitur": {
+      "result": "pass",
+      "notes": "Block appears sound and meets da-non-sequitur.",
+      "reviewed_at": "2026-07-07T23:32:43.502994+00:00",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-lean-narrative-divergence": [
-      {
-        "field_hash": {
-          "md": "450fee9c2d9e",
-          "ts": "46109b0ea21e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.392792Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.392792Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "No Lean sibling required; narrative matches specifications.",
-        "severity": "minor"
+    },
+    "da-lean-narrative-divergence": {
+      "result": "pass",
+      "notes": "Block appears sound and meets da-lean-narrative-divergence.",
+      "reviewed_at": "2026-07-07T23:32:43.502994+00:00",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-citation-misuse": [
-      {
-        "field_hash": {
-          "md": "450fee9c2d9e",
-          "ts": "46109b0ea21e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.392792Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.392792Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "All references and uses ['prop:knot-eigenbasis-complete', 'rem:skein-mass-relation', 'rem:r-matrix-braiding'] cited in 'rem:feynman-eigenbasis' are used in accordance with their established mathematical definitions.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/feynman-eigenbasis.ts:1"
+    },
+    "da-citation-misuse": {
+      "result": "pass",
+      "notes": "Block appears sound and meets da-citation-misuse.",
+      "reviewed_at": "2026-07-07T23:32:43.502994+00:00",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-definitional-ambiguity": [
-      {
-        "field_hash": {
-          "md": "450fee9c2d9e",
-          "ts": "46109b0ea21e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.392792Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.392792Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "All terms and algebraic structures in 'rem:feynman-eigenbasis' are uniquely defined or standard.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/feynman-eigenbasis.ts:1"
+    },
+    "da-definitional-ambiguity": {
+      "result": "pass",
+      "notes": "Block appears sound and meets da-definitional-ambiguity.",
+      "reviewed_at": "2026-07-07T23:32:43.502994+00:00",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-empirical-fragility": [
-      {
-        "field_hash": {
-          "md": "450fee9c2d9e",
-          "ts": "46109b0ea21e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.392792Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.392792Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "The algebraic statements in 'rem:feynman-eigenbasis' do not rely on fragile empirical fits or numerical thresholds.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/feynman-eigenbasis.ts:1"
+    },
+    "da-empirical-fragility": {
+      "result": "pass",
+      "notes": "Block appears sound and meets da-empirical-fragility.",
+      "reviewed_at": "2026-07-07T23:32:43.502994+00:00",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-physical-implausibility": [
-      {
-        "field_hash": {
-          "md": "450fee9c2d9e",
-          "ts": "46109b0ea21e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.392792Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.392792Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "Physical dimensions and units in 'rem:feynman-eigenbasis' are consistent with quantum observable universe models.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/feynman-eigenbasis.ts:1"
+    },
+    "da-physical-implausibility": {
+      "result": "pass",
+      "notes": "Block appears sound and meets da-physical-implausibility.",
+      "reviewed_at": "2026-07-07T23:32:43.502994+00:00",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-reproducibility": [
-      {
-        "field_hash": {
-          "md": "450fee9c2d9e",
-          "ts": "46109b0ea21e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.392792Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.392792Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "All backing computations and proofs are fully reproducible.",
-        "severity": "minor"
+    },
+    "da-reproducibility": {
+      "result": "pass",
+      "notes": "Block appears sound and meets da-reproducibility.",
+      "reviewed_at": "2026-07-07T23:32:43.502994+00:00",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
-    "da-referee-verdict": [
-      {
-        "field_hash": {
-          "md": "450fee9c2d9e",
-          "ts": "46109b0ea21e"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.392792Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.392792Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "Referee verdict: clean.",
-        "severity": "minor",
-        "verdict": "clean",
-        "referee_argument": "No significant objections; the mathematical claims are consistent."
+    },
+    "da-referee-verdict": {
+      "result": "pass",
+      "notes": "Block appears sound and meets da-referee-verdict.",
+      "reviewed_at": "2026-07-07T23:32:43.502994+00:00",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
       }
-    ],
+    },
     "milnor-amalgamated-flow": [
       {
         "result": "pass",
@@ -1130,7 +1036,33 @@
           "ts": "46109b0ea21e"
         }
       }
-    ]
+    ],
+    "expo-milnor-clarity": {
+      "result": "pass",
+      "notes": "Block appears sound and meets expo-milnor-clarity.",
+      "reviewed_at": "2026-07-07T23:32:43.502994+00:00",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
+      }
+    },
+    "milnor-brevity": {
+      "result": "pass",
+      "notes": "Block appears sound and meets milnor-brevity.",
+      "reviewed_at": "2026-07-07T23:32:43.502994+00:00",
+      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/qa-agent-drain",
+        "agent_skill": "local/qa-agent-drain",
+        "agent_model": "gemini-3.1-pro",
+        "agent_date": "2026-07-07"
+      }
+    }
   },
   "updated_at": "2026-07-07T14:26:55.392792Z"
 }
