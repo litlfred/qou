@@ -1,0 +1,150 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-07T03:47:17.479590+00:00",
+  "commitSha": "71dddb293e44f564d0e69615ce2778b5d2f81b93",
+  "assertions": [
+    {
+      "name": "shift_equation_gate_all_points",
+      "computed": 6.331662303937761e-25,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-15,
+      "source": "Faddeev shift equation (Hikami math/0604094 eq 2.4a) at each b"
+    },
+    {
+      "name": "unimodularity_fibre_saddle",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-25,
+      "source": "|Φ_b(z)| = 1 at real b, real z — the pure-phase fact behind prop:phi-b-unitary-bar-odd"
+    },
+    {
+      "name": "phi_b_zero_special_value",
+      "computed": 8.411152881937987e-37,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-15,
+      "source": "Φ_b(0) = +e^{iπ(b²+b⁻²)/24} (Hikami eq 2.3 at φ=0)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 2407,
+  "computation": "qbeta-fmap-phi-b-root-of-unity-reference",
+  "scriptFile": "qbeta_fmap_phi_b_root_of_unity_reference.py",
+  "scriptHash": "ee20f44a8478",
+  "scriptCommitSha": "71dddb293e44f564d0e69615ce2778b5d2f81b93",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Reference values of the validated Faddeev non-compact quantum dilogarithm Φ_b (phi_b_evaluator.py — literature-verified against uploads/0604094v1.pdf, Hikami math/0604094 eqs (2.1)-(2.5)) at rational b² (root-of-unity q, the fibre/decay saddle), for the F_odd construction. Every row gated by a local shift-equation check; unimodularity |Φ_b| = 1 (the pure-phase fact behind prop:phi-b-unitary-bar-odd) and the special value Φ_b(0) = +e^{iπ(b²+b⁻²)/24} asserted at every point. C14 anti-fitting: no comparison to c_k / Φ₁ / residue A / any physical constant.",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "points": [
+      {
+        "point": "zeta_4  (b^2 = 1/4, q = i)",
+        "b_sq": "0.25",
+        "b": "0.5",
+        "q": "(-3.69339199970190172451779054451e-37 + 1.0j)",
+        "shift_gate_rel_err": "1.282e-36",
+        "Phi_b_0": "(0.849202181526578887649096937343 + 0.528067850650367995873448820338j)",
+        "special_value_sign": "+",
+        "special_value_rel_err": "0.000e+00",
+        "values": [
+          {
+            "z": "0.1",
+            "Phi_b": "(0.754161915746838745676970728954 + 0.656688514317905591591696006196j)",
+            "abs_minus_1": "0.000e+00"
+          },
+          {
+            "z": "0.25",
+            "Phi_b": "(0.51857412866922632119085749662 + 0.855032673688527942478796776744j)",
+            "abs_minus_1": "0.000e+00"
+          }
+        ]
+      },
+      {
+        "point": "zeta_5^2 (b^2 = 2/5)",
+        "b_sq": "0.4",
+        "b": "0.632455532033675866399778708887",
+        "q": "(-0.809016994374947424102293417183 + 0.587785252292473129168705954639j)",
+        "shift_gate_rel_err": "2.261e-36",
+        "Phi_b_0": "(0.928809552871924233955547318615 + 0.370557437509836227822658657374j)",
+        "special_value_sign": "+",
+        "special_value_rel_err": "8.411e-37",
+        "values": [
+          {
+            "z": "0.1",
+            "Phi_b": "(0.870047932549151287179490030716 + 0.492967133860815808613068509937j)",
+            "abs_minus_1": "0.000e+00"
+          },
+          {
+            "z": "0.25",
+            "Phi_b": "(0.703664728934433359161549549442 + 0.710532159197337403746433455122j)",
+            "abs_minus_1": "0.000e+00"
+          }
+        ]
+      },
+      {
+        "point": "zeta_6  (b^2 = 1/6)",
+        "b_sq": "0.166666666667",
+        "b": "0.408248290463863016366214012451",
+        "q": "(0.5 + 0.866025403784438646763723170753j)",
+        "shift_gate_rel_err": "1.880e-37",
+        "Phi_b_0": "(0.691513055782269377761189253334 + 0.722363962059755580585916472667j)",
+        "special_value_sign": "+",
+        "special_value_rel_err": "7.523e-37",
+        "values": [
+          {
+            "z": "0.1",
+            "Phi_b": "(0.543562996279097977821715247144 + 0.839368375075025874611876608838j)",
+            "abs_minus_1": "0.000e+00"
+          },
+          {
+            "z": "0.25",
+            "Phi_b": "(0.222018267847061849231518269966 + 0.975042506120728206823178736118j)",
+            "abs_minus_1": "0.000e+00"
+          }
+        ]
+      },
+      {
+        "point": "self-dual (b^2 = 1, q = 1)",
+        "b_sq": "1.0",
+        "b": "1.0",
+        "q": "(1.0 + 1.4773567998807606898071162178e-36j)",
+        "shift_gate_rel_err": "6.332e-25",
+        "Phi_b_0": "(0.965925826289068286749743199729 + 0.258819045102520762348898837624j)",
+        "special_value_sign": "+",
+        "special_value_rel_err": "7.523e-37",
+        "values": [
+          {
+            "z": "0.1",
+            "Phi_b": "(0.929183134716192043808200430775 + 0.369619672310594025644098246595j)",
+            "abs_minus_1": "0.000e+00"
+          },
+          {
+            "z": "0.25",
+            "Phi_b": "(0.809965501838992042735519716745 + 0.586477523721676633050349581596j)",
+            "abs_minus_1": "0.000e+00"
+          }
+        ]
+      }
+    ],
+    "z_grid": [
+      "0.1",
+      "0.25"
+    ],
+    "evaluator": "computations/qbeta/phi_b_evaluator.py (battery-gated)"
+  }
+}

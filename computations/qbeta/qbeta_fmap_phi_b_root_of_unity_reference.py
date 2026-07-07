@@ -30,7 +30,11 @@ from pathlib import Path
 import mpmath as mp
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+
 from phi_b_evaluator import phi_b  # noqa: E402
+from witness_base import WitnessBuilder  # noqa: E402
 
 mp.mp.dps = 35
 
@@ -56,6 +60,24 @@ def main() -> int:
     print("=" * 78)
     print(" Φ_b at rational b² (root-of-unity q) — F_odd reference values (gated)")
     print("=" * 78)
+    wb = WitnessBuilder("qbeta-fmap-phi-b-root-of-unity-reference", engine="mpmath")
+    wb.set_description(
+        "Reference values of the validated Faddeev non-compact quantum "
+        "dilogarithm Φ_b (phi_b_evaluator.py — literature-verified against "
+        "uploads/0604094v1.pdf, Hikami math/0604094 eqs (2.1)-(2.5)) at "
+        "rational b² (root-of-unity q, the fibre/decay saddle), for the "
+        "F_odd construction. Every row gated by a local shift-equation "
+        "check; unimodularity |Φ_b| = 1 (the pure-phase fact behind "
+        "prop:phi-b-unitary-bar-odd) and the special value "
+        "Φ_b(0) = +e^{iπ(b²+b⁻²)/24} asserted at every point. "
+        "C14 anti-fitting: no comparison to c_k / Φ₁ / residue A / any "
+        "physical constant."
+    )
+    wb.set_content_block("prop:phi-b-unitary-bar-odd")
+    rows = []
+    max_shift_err = 0.0
+    max_unimod_err = 0.0
+    max_special_err = 0.0
     ok_all = True
     for label, b2 in POINTS:
         b = mp.sqrt(b2)
@@ -74,14 +96,47 @@ def main() -> int:
         print(f"     Φ_b(0) = {mp.nstr(v0, 16)}")
         print(f"       vs {sign}e^(iπ(b²+b⁻²)/24): rel.err {min(ep, em):.1e}"
               f"  {'OK' if min(ep, em) < 1e-15 else 'reported'}")
+        max_shift_err = max(max_shift_err, err)
+        max_special_err = max(max_special_err, min(ep, em))
+        vals = []
         for z in Z_GRID[1:]:
             v = phi_b(z, b)
+            unimod = abs(float(mp.fabs(v)) - 1.0)
+            max_unimod_err = max(max_unimod_err, unimod)
+            vals.append({"z": mp.nstr(mp.mpf(z), 6), "Phi_b": mp.nstr(v, 30),
+                         "abs_minus_1": f"{unimod:.3e}"})
             print(f"     Φ_b({mp.nstr(z, 3)}) = {mp.nstr(v, 16)}   |Φ| = {mp.nstr(mp.fabs(v), 12)}")
+        rows.append({
+            "point": label, "b_sq": mp.nstr(mp.mpf(b2), 12), "b": mp.nstr(b, 30),
+            "q": mp.nstr(q, 30), "shift_gate_rel_err": f"{err:.3e}",
+            "Phi_b_0": mp.nstr(v0, 30), "special_value_sign": sign,
+            "special_value_rel_err": f"{min(ep, em):.3e}", "values": vals,
+        })
     print()
     print("  SCOPE: reference data for the F_odd (bar-odd / fibre-saddle) build.")
     print("  Deliberately NOT compared to c_k / Φ₁ / residue A / any physical")
     print("  constant (C14 anti-fitting). The z-grid is arbitrary small reals.")
     print(f"\n  ALL GATES: {'OK' if ok_all else 'FAILURES'}")
+
+    wb.add_data("points", rows)
+    wb.add_data("z_grid", [mp.nstr(mp.mpf(z), 6) for z in Z_GRID[1:]])
+    wb.add_data("evaluator", "computations/qbeta/phi_b_evaluator.py (battery-gated)")
+    wb.add_assertion(
+        "shift_equation_gate_all_points",
+        computed=max_shift_err, expected=0.0, tolerance=1e-15,
+        source="Faddeev shift equation (Hikami math/0604094 eq 2.4a) at each b",
+    )
+    wb.add_assertion(
+        "unimodularity_fibre_saddle",
+        computed=max_unimod_err, expected=0.0, tolerance=1e-25,
+        source="|Φ_b(z)| = 1 at real b, real z — the pure-phase fact behind prop:phi-b-unitary-bar-odd",
+    )
+    wb.add_assertion(
+        "phi_b_zero_special_value",
+        computed=max_special_err, expected=0.0, tolerance=1e-15,
+        source="Φ_b(0) = +e^{iπ(b²+b⁻²)/24} (Hikami eq 2.3 at φ=0)",
+    )
+    wb.save()
     return 0 if ok_all else 1
 
 
