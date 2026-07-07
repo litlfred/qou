@@ -106,6 +106,19 @@ favors bar-even). The `𝔇` route closes the *cohomology* question (no CAL-4)
 but **not the number** — it confirms the §2h scale-free wall from the
 decay-width side rather than crossing it.
 
+## Sibling coordination (2026-07-07)
+
+| PR | branch | relationship | action |
+|---|---|---|---|
+| §2h reeb-flow (merged) | — | **dependency** — proved `ss_det_no_linear_term` (deuteron = open bond ⇒ linear 5g; exchange sector scale-free) | reconciled above; my work adds the CAL-4 correction + parity framing |
+| [#3429](https://github.com/litlfred/qou/pull/3429) | `claude/c3-derivation-q-beta-lhsg1a` | **overlap (bar-parity Lean)** — formalizing bar-even/ζ₄ prune lemmas for the Q_β f-map | posted intent: offered my `BarEven`/`BarOdd` σ-involution abstraction for reuse; shared the finding that bar-odd Q_β is the worst E_unit candidate (favors their bar-even constraint) |
+| [#3437](https://github.com/litlfred/qou/pull/3437) | `claude/open-conjecture-5nx8-2026-07-06` | **overlap (binding/decay parity)** — §3b `binding-qbeta-complex-volume` class | posted light intent: my 5g·E_unit parity factorization ↔ their Re/Im(𝔙) split; flagged deuteron parity empirically open |
+
+No §6 escalations: the sibling §2h and my `𝔇`-reconcile **agree** (unit
+external / scale-free), no inconsistent findings to reconcile. #3429's
+bar-even/ζ₄ constraint is **consistent** with my bar-odd-Q_β-is-worst
+finding.
+
 ## Status
 
 Open, in-scope (3-CAL), **wall confirmed from two sides** (exchange-sector
