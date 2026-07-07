@@ -852,6 +852,19 @@
         "reviewed_at": "2026-07-07T14:26:56.889460Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:33:54.919Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-false-claim": [
@@ -873,6 +886,19 @@
         "notes": "No false claims identified in 'Bound-state Wedderburn channels $(3,1) \\\\leftrightarrow (2,1,1)$ are Frobenius-self-dual transpose pair': mathematical reasoning is consistent in prose.",
         "severity": "minor",
         "evidence": "bound-state-frobenius-self-dual-channel.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:33:54.919Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-vacuous": [
@@ -893,6 +919,19 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The block 'Bound-state Wedderburn channels $(3,1) \\\\leftrightarrow (2,1,1)$ are Frobenius-self-dual transpose pair' presents substantial mathematical content: 'H_2 molecular bound state \u2014 $\\lambda^{(T_{3,5})} = (3, 1)$ and'.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:33:54.919Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-circular": [
@@ -914,6 +953,19 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Bound-state Wedderburn channels $(3,1) \\\\leftrightarrow (2,1,1)$ are Frobenius-self-dual transpose pair'.",
         "severity": "minor",
         "evidence": "bound-state-frobenius-self-dual-channel.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:33:54.919Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-overclaim": [
@@ -934,6 +986,19 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The remarks and narrative scope in 'Bound-state Wedderburn channels $(3,1) \\\\leftrightarrow (2,1,1)$ are Frobenius-self-dual transpose pair' are appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:33:54.919Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -955,6 +1020,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Bound-state Wedderburn channels $(3,1) \\\\leftrightarrow (2,1,1)$ are Frobenius-self-dual transpose pair'.",
         "severity": "minor",
         "evidence": "bound-state-frobenius-self-dual-channel.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:33:54.919Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -976,6 +1054,19 @@
         "notes": "The prose arguments in 'Bound-state Wedderburn channels $(3,1) \\\\leftrightarrow (2,1,1)$ are Frobenius-self-dual transpose pair' proceed logically through the stated steps.",
         "severity": "minor",
         "evidence": "bound-state-frobenius-self-dual-channel.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:33:54.919Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -996,6 +1087,19 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No Lean sibling required; narrative matches the expected configuration.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:33:54.919Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1017,6 +1121,19 @@
         "notes": "No citations are present in 'Bound-state Wedderburn channels $(3,1) \\\\leftrightarrow (2,1,1)$ are Frobenius-self-dual transpose pair', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "bound-state-frobenius-self-dual-channel.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:33:54.919Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1038,6 +1155,19 @@
         "notes": "Key terms and symbols in 'Bound-state Wedderburn channels $(3,1) \\\\leftrightarrow (2,1,1)$ are Frobenius-self-dual transpose pair' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "bound-state-frobenius-self-dual-channel.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:33:54.919Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1059,6 +1189,19 @@
         "notes": "The empirical claims in 'Bound-state Wedderburn channels $(3,1) \\\\leftrightarrow (2,1,1)$ are Frobenius-self-dual transpose pair' are structurally anchored to the QOU mass framework and are stable.",
         "severity": "minor",
         "evidence": "bound-state-frobenius-self-dual-channel.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:33:54.919Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1080,6 +1223,19 @@
         "notes": "The physical concepts described in 'Bound-state Wedderburn channels $(3,1) \\\\leftrightarrow (2,1,1)$ are Frobenius-self-dual transpose pair' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "bound-state-frobenius-self-dual-channel.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:33:54.919Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1100,6 +1256,19 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The derivation steps and formal definitions in 'Bound-state Wedderburn channels $(3,1) \\\\leftrightarrow (2,1,1)$ are Frobenius-self-dual transpose pair' are reproducible.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:33:54.919Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1122,6 +1291,19 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Bound-state Wedderburn channels $(3,1) \\\\leftrightarrow (2,1,1)$ are Frobenius-self-dual transpose pair' are consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:33:54.919Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1139,6 +1321,36 @@
         "field_hash": {
           "md": "a4b5e6f33eb4",
           "ts": "d005db0536a1"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:33:54.919Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:33:54.919Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
         }
       }
     ]
