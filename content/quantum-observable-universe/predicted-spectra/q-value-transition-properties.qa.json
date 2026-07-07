@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/predicted-spectra/q-value-transition-properties.md"
   },
   "source_hashes": {
-    "md": "3f7bc25a34c2",
+    "md": "d54e67fddca8",
     "ts": "092d940bd418"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Rewrote prose blocks to adhere to Milnor standards. Improved economy, preserved all math.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.315560Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.315560Z"
+        },
+        "field_hash": {
+          "md": "d54e67fddca8",
+          "ts": "092d940bd418"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.812Z"
+  "updated_at": "2026-07-07T14:26:56.315560Z"
 }

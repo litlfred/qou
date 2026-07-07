@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/predicted-spectra/intro-integer-stability-diophantine.md"
   },
   "source_hashes": {
-    "ts": "356ac20e73a7",
-    "md": "879e811c62b0"
+    "md": "1ad06463b951",
+    "ts": "356ac20e73a7"
   },
   "criteria": {
     "q-usage-regime-detected": [
@@ -128,14 +128,20 @@
       {
         "result": "pass",
         "notes": "Rewrote prose blocks to adhere to Milnor standards. Improved economy, preserved all math.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.304480Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.304480Z"
+        },
+        "field_hash": {
+          "md": "1ad06463b951",
+          "ts": "356ac20e73a7"
         }
       }
     ]
   },
-  "updated_at": "2026-06-01T16:06:38.106Z"
+  "updated_at": "2026-07-07T14:26:56.304480Z"
 }

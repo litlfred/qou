@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/observations/flavor-split-substrate-proof.md"
   },
   "source_hashes": {
-    "md": "8b87f2f297bb",
+    "md": "d643df6266ec",
     "ts": "01085ed457fb"
   },
   "criteria": {
@@ -801,16 +801,18 @@
       },
       {
         "field_hash": {
-          "md": "8b87f2f297bb",
+          "md": "d643df6266ec",
           "ts": "01085ed457fb"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-22",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.562688Z"
         },
-        "reviewed_at": "2026-06-28T22:25:29.647Z",
+        "reviewed_at": "2026-07-07T14:26:56.562688Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes basic QA."
       }
@@ -835,16 +837,18 @@
       },
       {
         "field_hash": {
-          "md": "8b87f2f297bb",
+          "md": "d643df6266ec",
           "ts": "01085ed457fb"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-22",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.562688Z"
         },
-        "reviewed_at": "2026-06-28T22:25:29.647Z",
+        "reviewed_at": "2026-07-07T14:26:56.562688Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes basic QA."
       }
@@ -868,16 +872,18 @@
       },
       {
         "field_hash": {
-          "md": "8b87f2f297bb",
+          "md": "d643df6266ec",
           "ts": "01085ed457fb"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-22",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.562688Z"
         },
-        "reviewed_at": "2026-06-28T22:25:29.647Z",
+        "reviewed_at": "2026-07-07T14:26:56.562688Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes basic QA."
       }
@@ -902,16 +908,18 @@
       },
       {
         "field_hash": {
-          "md": "8b87f2f297bb",
+          "md": "d643df6266ec",
           "ts": "01085ed457fb"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-22",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.562688Z"
         },
-        "reviewed_at": "2026-06-28T22:25:29.647Z",
+        "reviewed_at": "2026-07-07T14:26:56.562688Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes basic QA."
       }
@@ -935,16 +943,18 @@
       },
       {
         "field_hash": {
-          "md": "8b87f2f297bb",
+          "md": "d643df6266ec",
           "ts": "01085ed457fb"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-22",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.562688Z"
         },
-        "reviewed_at": "2026-06-28T22:25:29.647Z",
+        "reviewed_at": "2026-07-07T14:26:56.562688Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes basic QA."
       }
@@ -969,16 +979,18 @@
       },
       {
         "field_hash": {
-          "md": "8b87f2f297bb",
+          "md": "d643df6266ec",
           "ts": "01085ed457fb"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-22",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.562688Z"
         },
-        "reviewed_at": "2026-06-28T22:25:29.647Z",
+        "reviewed_at": "2026-07-07T14:26:56.562688Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "severity": "critical",
         "evidence": "h_q^2 * \\hbar_q / \\sqrt{q} ... matches CODATA to -0.10%",
@@ -1005,16 +1017,18 @@
       },
       {
         "field_hash": {
-          "md": "8b87f2f297bb",
+          "md": "d643df6266ec",
           "ts": "01085ed457fb"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-22",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.562688Z"
         },
-        "reviewed_at": "2026-06-28T22:25:29.647Z",
+        "reviewed_at": "2026-07-07T14:26:56.562688Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes basic QA."
       }
@@ -1038,16 +1052,18 @@
       },
       {
         "field_hash": {
-          "md": "8b87f2f297bb",
+          "md": "d643df6266ec",
           "ts": "01085ed457fb"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-22",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.562688Z"
         },
-        "reviewed_at": "2026-06-28T22:25:29.647Z",
+        "reviewed_at": "2026-07-07T14:26:56.562688Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes basic QA."
       }
@@ -1072,16 +1088,18 @@
       },
       {
         "field_hash": {
-          "md": "8b87f2f297bb",
+          "md": "d643df6266ec",
           "ts": "01085ed457fb"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-22",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.562688Z"
         },
-        "reviewed_at": "2026-06-28T22:25:29.647Z",
+        "reviewed_at": "2026-07-07T14:26:56.562688Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes basic QA."
       }
@@ -1106,16 +1124,18 @@
       },
       {
         "field_hash": {
-          "md": "8b87f2f297bb",
+          "md": "d643df6266ec",
           "ts": "01085ed457fb"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-22",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.562688Z"
         },
-        "reviewed_at": "2026-06-28T22:25:29.647Z",
+        "reviewed_at": "2026-07-07T14:26:56.562688Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes basic QA."
       }
@@ -1140,16 +1160,18 @@
       },
       {
         "field_hash": {
-          "md": "8b87f2f297bb",
+          "md": "d643df6266ec",
           "ts": "01085ed457fb"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-22",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.562688Z"
         },
-        "reviewed_at": "2026-06-28T22:25:29.647Z",
+        "reviewed_at": "2026-07-07T14:26:56.562688Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "severity": "critical",
         "evidence": "h_q^2 * \\hbar_q / \\sqrt{q} ... matches CODATA to -0.10%",
@@ -1176,16 +1198,18 @@
       },
       {
         "field_hash": {
-          "md": "8b87f2f297bb",
+          "md": "d643df6266ec",
           "ts": "01085ed457fb"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-22",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.562688Z"
         },
-        "reviewed_at": "2026-06-28T22:25:29.647Z",
+        "reviewed_at": "2026-07-07T14:26:56.562688Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes basic QA."
       }
@@ -1210,16 +1234,18 @@
       },
       {
         "field_hash": {
-          "md": "8b87f2f297bb",
+          "md": "d643df6266ec",
           "ts": "01085ed457fb"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-22",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.562688Z"
         },
-        "reviewed_at": "2026-06-28T22:25:29.647Z",
+        "reviewed_at": "2026-07-07T14:26:56.562688Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes basic QA."
       }
@@ -1245,20 +1271,22 @@
       },
       {
         "field_hash": {
-          "md": "8b87f2f297bb",
+          "md": "d643df6266ec",
           "ts": "01085ed457fb"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-22",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.562688Z"
         },
-        "reviewed_at": "2026-06-28T22:25:29.647Z",
+        "reviewed_at": "2026-07-07T14:26:56.562688Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes basic QA."
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.226Z"
+  "updated_at": "2026-07-07T14:26:56.562688Z"
 }

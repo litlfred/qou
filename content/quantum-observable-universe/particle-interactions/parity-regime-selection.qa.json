@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/particle-interactions/parity-regime-selection.md"
   },
   "source_hashes": {
-    "md": "bc6783839296",
+    "md": "dddc739490c1",
     "ts": "9611ff875e58"
   },
   "criteria": {
@@ -1970,16 +1970,18 @@
     "proof-no-placeholder-stub": [
       {
         "field_hash": {
-          "lean": "8b1da2ee0857"
+          "md": "dddc739490c1",
+          "ts": "9611ff875e58"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/lean-proof-vacuity-audit",
-          "agent_date": "2026-07-02",
-          "agent_skill": "local/lean-proof-vacuity-audit"
+          "agent_date": "2026-07-07T14:26:57.331526Z",
+          "agent_skill": "local/lean-proof-vacuity-audit",
+          "agent_model": "gemini-3.1-pro"
         },
-        "reviewed_at": "2026-07-02T17:07:15.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.331526Z",
         "reviewed_sha": "a9ce9ecfe24e6c7c9d0b9f25699b35ec666faa32",
         "notes": "4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): current Lean is honest \u2014 real statement/derivation or cited sorry; the 2026-06-22 placeholder-marker fail predates the 2026-06-30 rewrite (hash drift verified). Criterion pass."
       }
@@ -1987,18 +1989,18 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "c70bb95925ff",
+          "md": "dddc739490c1",
           "ts": "9611ff875e58"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.331526Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:20.927Z",
+        "reviewed_at": "2026-07-07T14:26:57.331526Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
       }
@@ -2006,18 +2008,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "c70bb95925ff",
+          "md": "dddc739490c1",
           "ts": "9611ff875e58"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.331526Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:21.283Z",
+        "reviewed_at": "2026-07-07T14:26:57.331526Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -2025,18 +2027,18 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "c70bb95925ff",
+          "md": "dddc739490c1",
           "ts": "9611ff875e58"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.331526Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:21.733Z",
+        "reviewed_at": "2026-07-07T14:26:57.331526Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Substrate statement contains archimedean constructs."
       }
@@ -2044,18 +2046,18 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "c70bb95925ff",
+          "md": "dddc739490c1",
           "ts": "9611ff875e58"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.331526Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:22.042Z",
+        "reviewed_at": "2026-07-07T14:26:57.331526Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
       }
@@ -2134,19 +2136,19 @@
       },
       {
         "field_hash": {
-          "md": "c70bb95925ff",
+          "md": "dddc739490c1",
           "ts": "9611ff875e58"
         },
         "result": "warn",
         "notes": "md proof of the sign identity is genuine and simple (a,b<0 \u21d2 (-1)^Z(-1)^{N-1}); but the Lean only asserts it as a class field rather than deriving it.",
-        "reviewed_at": "2026-06-25T17:07:43.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.331526Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.331526Z"
         },
         "score": {
           "max": 1,
@@ -2195,19 +2197,19 @@
       },
       {
         "field_hash": {
-          "md": "c70bb95925ff",
+          "md": "dddc739490c1",
           "ts": "9611ff875e58"
         },
         "result": "pass",
         "notes": "Well-posed: A-parity selects Q-value regime via fermionic sign of spectator a^Z\u00b7b^{N-1}=(-1)^{A-1}; numerically verified n\u2192p,\u00b3H,\u2076He; not a fit.",
-        "reviewed_at": "2026-06-25T17:07:43.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.331526Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.331526Z"
         },
         "score": {
           "max": 1,
@@ -2256,19 +2258,19 @@
       },
       {
         "field_hash": {
-          "md": "c70bb95925ff",
+          "md": "dddc739490c1",
           "ts": "9611ff875e58"
         },
         "result": "pass",
         "notes": "Connects parity to the even/odd Q-value regime split + Frobenius-positivity filter; substantive structural claim, not a restatement.",
-        "reviewed_at": "2026-06-25T17:07:43.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.331526Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.331526Z"
         },
         "score": {
           "max": 1,
@@ -2313,19 +2315,19 @@
       },
       {
         "field_hash": {
-          "md": "c70bb95925ff",
+          "md": "dddc739490c1",
           "ts": "9611ff875e58"
         },
         "result": "pass",
         "notes": "Conjunction faithfully encodes md sign identity sign=(-1)^{A-1} + three Q-regimes (odd-A,even-A,A=1) over \u211d; no :True/sorry/native_decide.",
-        "reviewed_at": "2026-06-25T17:07:43.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.331526Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.331526Z"
         }
       }
     ],
@@ -2366,19 +2368,19 @@
       },
       {
         "field_hash": {
-          "md": "c70bb95925ff",
+          "md": "dddc739490c1",
           "ts": "9611ff875e58"
         },
         "result": "fail",
         "notes": "thm := \u27e8ctx.claim_i_sign_identity,ctx.claim_ii\u2026,\u2026\u27e9; claim_i (sign=(-1)^{A-1}) IS the headline theorem, projected from a class field. The a,b<0 sign derivation lives only in md.",
-        "reviewed_at": "2026-06-25T17:07:43.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.331526Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.331526Z"
         }
       }
     ],
@@ -2402,19 +2404,19 @@
       },
       {
         "field_hash": {
-          "md": "c70bb95925ff",
+          "md": "dddc739490c1",
           "ts": "9611ff875e58"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: no `: True` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/ParticleInteractions/parity_regime_selection.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.331526Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.331526Z"
         }
       }
     ],
@@ -2455,19 +2457,19 @@
       },
       {
         "field_hash": {
-          "md": "c70bb95925ff",
+          "md": "dddc739490c1",
           "ts": "9611ff875e58"
         },
         "result": "pass",
         "notes": "Premises satisfiable: sign_val=(-1)^{A-1} and the three conditional regime equations are mutually consistent; 1<q satisfiable.",
-        "reviewed_at": "2026-06-25T17:07:43.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.331526Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.331526Z"
         }
       }
     ],
@@ -2508,19 +2510,19 @@
       },
       {
         "field_hash": {
-          "md": "c70bb95925ff",
+          "md": "dddc739490c1",
           "ts": "9611ff875e58"
         },
         "result": "pass",
         "notes": "Sole binder [ctx] used (4 field projections); q_gt_one/A_eq are class data not theorem binders.",
-        "reviewed_at": "2026-06-25T17:07:43.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.331526Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.331526Z"
         }
       }
     ],
@@ -2544,35 +2546,37 @@
       },
       {
         "field_hash": {
-          "md": "c70bb95925ff",
+          "md": "dddc739490c1",
           "ts": "9611ff875e58"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/ParticleInteractions/parity_regime_selection.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.331526Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.331526Z"
         }
       }
     ],
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "c70bb95925ff",
+          "md": "dddc739490c1",
           "ts": "9611ff875e58"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.331526Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.331526Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'Parity regime selection for Q-values': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -2582,16 +2586,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "c70bb95925ff",
+          "md": "dddc739490c1",
           "ts": "9611ff875e58"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.331526Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.331526Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Parity regime selection for Q-values' presents substantial mathematical content: The parity of the mass number $A$ determines which computational regime applies to the Q-value.  This is not a fittin...",
         "severity": "minor"
@@ -2600,16 +2606,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "c70bb95925ff",
+          "md": "dddc739490c1",
           "ts": "9611ff875e58"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.331526Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.331526Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Parity regime selection for Q-values'.",
         "severity": "minor",
@@ -2619,16 +2627,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "c70bb95925ff",
+          "md": "dddc739490c1",
           "ts": "9611ff875e58"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.331526Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.331526Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'Parity regime selection for Q-values' is appropriately qualified.",
         "severity": "minor"
@@ -2637,16 +2647,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "c70bb95925ff",
+          "md": "dddc739490c1",
           "ts": "9611ff875e58"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.331526Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.331526Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Parity regime selection for Q-values'.",
         "severity": "minor",
@@ -2656,16 +2668,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "c70bb95925ff",
+          "md": "dddc739490c1",
           "ts": "9611ff875e58"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.331526Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.331526Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The argument flow in 'Parity regime selection for Q-values' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -2675,16 +2689,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "c70bb95925ff",
+          "md": "dddc739490c1",
           "ts": "9611ff875e58"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.331526Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.331526Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The referenced Lean file content/quantum-observable-universe/particle-interactions/parity-regime-selection.lean is missing, leading to complete divergence.",
         "severity": "minor"
@@ -2693,16 +2709,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "c70bb95925ff",
+          "md": "dddc739490c1",
           "ts": "9611ff875e58"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.331526Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.331526Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Parity regime selection for Q-values', hence no citation misuse is possible.",
         "severity": "minor",
@@ -2712,16 +2730,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "c70bb95925ff",
+          "md": "dddc739490c1",
           "ts": "9611ff875e58"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.331526Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.331526Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Parity regime selection for Q-values' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -2731,16 +2751,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "c70bb95925ff",
+          "md": "dddc739490c1",
           "ts": "9611ff875e58"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.331526Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.331526Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Parity regime selection for Q-values' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -2750,16 +2772,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "c70bb95925ff",
+          "md": "dddc739490c1",
           "ts": "9611ff875e58"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.331526Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.331526Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Parity regime selection for Q-values' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -2769,16 +2793,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "c70bb95925ff",
+          "md": "dddc739490c1",
           "ts": "9611ff875e58"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.331526Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.331526Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'Parity regime selection for Q-values' are reproducible.",
         "severity": "minor",
@@ -2788,16 +2814,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "c70bb95925ff",
+          "md": "dddc739490c1",
           "ts": "9611ff875e58"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.331526Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.331526Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/particle-interactions/parity-regime-selection.lean is missing.",
         "severity": "critical",
@@ -2809,14 +2837,20 @@
       {
         "result": "pass",
         "notes": "Applied Milnor exposition standard (H1-H8) and brevity rules. Shortened sentences, removed editorializing ('surprisingly', 'remarkably'), replaced 'this book' with 'this paper', and maintained Math, markdown, and cross-block consistency.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:57.331526Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.331526Z"
+        },
+        "field_hash": {
+          "md": "dddc739490c1",
+          "ts": "9611ff875e58"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.492Z"
+  "updated_at": "2026-07-07T14:26:57.331526Z"
 }

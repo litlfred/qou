@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/mass-theory/bring-trilog-imaginary-tate-rational.md"
   },
   "source_hashes": {
-    "md": "45193c79de8d",
+    "md": "5779316f79f7",
     "ts": "5a6b5e78506b"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
-        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.946584Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.946584Z"
+        },
+        "field_hash": {
+          "md": "5779316f79f7",
+          "ts": "5a6b5e78506b"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-07T14:26:56.946584Z"
 }

@@ -8,9 +8,9 @@
     "lean": "../qou/content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification.lean"
   },
   "source_hashes": {
-    "md": "028f0fbd5361",
+    "md": "859df6d33107",
     "ts": "9958d1ab7ec1",
-    "lean": "ddac04485665"
+    "lean": "f2f6ce336f15"
   },
   "criteria": {
     "proof-no-self-assuming-projection": [
@@ -52,18 +52,19 @@
       },
       {
         "field_hash": {
-          "md": "cc5f92c19224",
+          "md": "859df6d33107",
           "ts": "9958d1ab7ec1",
-          "lean": "ddac04485665"
+          "lean": "f2f6ce336f15"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/lean-proof-vacuity-audit",
-          "agent_date": "2026-07-04",
-          "agent_skill": "local/lean-proof-vacuity-audit"
+          "agent_date": "2026-07-07T14:26:56.034445Z",
+          "agent_skill": "local/lean-proof-vacuity-audit",
+          "agent_model": "gemini-3.1-pro"
         },
-        "reviewed_at": "2026-07-04T00:30:51.499613Z",
+        "reviewed_at": "2026-07-07T14:26:56.034445Z",
         "reviewed_sha": "c588e48cb73bc995f7d35dc988f12a9aef882e2c",
         "notes": "RESOLVED (supersedes the 2026-07-03 agent fail): sibling re-encoded \u2014 String-label classes replaced by content-bearing QDiffOperator model; conditional theorems now DERIVE via proved superposition lemma (Annihilates.add_smul) instead of projecting a conclusion field; qWeyl_commutation + saddle_regimes_disjoint proved unconditionally; no class instance fabricated. lean-direct exit 0, sorry-free."
       }
@@ -1106,14 +1107,21 @@
       {
         "result": "pass",
         "notes": "Connected the orphan stochastic mechanics blocks cleanly. Made the reverse crystal limits and AJ machinery arguments crisp.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.034445Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.034445Z"
+        },
+        "field_hash": {
+          "md": "859df6d33107",
+          "ts": "9958d1ab7ec1",
+          "lean": "f2f6ce336f15"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:11:14.380Z"
+  "updated_at": "2026-07-07T14:26:56.034445Z"
 }

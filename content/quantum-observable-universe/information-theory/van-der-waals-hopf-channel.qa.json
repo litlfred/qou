@@ -8,8 +8,8 @@
     "lean": "../qou/content/quantum-observable-universe/information-theory/van-der-waals-hopf-channel.lean"
   },
   "source_hashes": {
-    "md": "3d480c782dbe",
-    "ts": "00bd8969d4b7",
+    "md": "a8cb14adce77",
+    "ts": "78b75f143b49",
     "lean": "b76d0bd893bf"
   },
   "criteria": {
@@ -897,19 +897,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "930253ae7d8f",
-          "ts": "df203dbb5562",
+          "md": "a8cb14adce77",
+          "ts": "78b75f143b49",
           "lean": "b76d0bd893bf"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.623757Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:27.225Z",
+        "reviewed_at": "2026-07-07T14:26:55.623757Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -917,19 +917,19 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "930253ae7d8f",
-          "ts": "df203dbb5562",
+          "md": "a8cb14adce77",
+          "ts": "78b75f143b49",
           "lean": "b76d0bd893bf"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.623757Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:27.616Z",
+        "reviewed_at": "2026-07-07T14:26:55.623757Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -937,16 +937,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "930253ae7d8f",
-          "ts": "df203dbb5562",
+          "md": "a8cb14adce77",
+          "ts": "78b75f143b49",
           "lean": "b76d0bd893bf"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.623757Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.623757Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No false claims identified in 'The van der Waals channel \u2014 the Hopf symmetric block': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -956,16 +958,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "930253ae7d8f",
-          "ts": "df203dbb5562",
+          "md": "a8cb14adce77",
+          "ts": "78b75f143b49",
           "lean": "b76d0bd893bf"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.623757Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.623757Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The block 'The van der Waals channel \u2014 the Hopf symmetric block' presents substantial mathematical content: algebra $H_2(q)$ (two molecules $=$ two strands), the **van der Waals channel** ...",
         "severity": "minor"
@@ -974,16 +978,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "930253ae7d8f",
-          "ts": "df203dbb5562",
+          "md": "a8cb14adce77",
+          "ts": "78b75f143b49",
           "lean": "b76d0bd893bf"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.623757Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.623757Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No circular reasoning or self-assuming definitions detected in 'The van der Waals channel \u2014 the Hopf symmetric block'.",
         "severity": "minor",
@@ -993,16 +999,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "930253ae7d8f",
-          "ts": "df203dbb5562",
+          "md": "a8cb14adce77",
+          "ts": "78b75f143b49",
           "lean": "b76d0bd893bf"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.623757Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.623757Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No overclaims: the scope of 'The van der Waals channel \u2014 the Hopf symmetric block' is appropriately qualified.",
         "severity": "minor"
@@ -1011,16 +1019,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "930253ae7d8f",
-          "ts": "df203dbb5562",
+          "md": "a8cb14adce77",
+          "ts": "78b75f143b49",
           "lean": "b76d0bd893bf"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.623757Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.623757Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'The van der Waals channel \u2014 the Hopf symmetric block'.",
         "severity": "minor",
@@ -1030,16 +1040,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "930253ae7d8f",
-          "ts": "df203dbb5562",
+          "md": "a8cb14adce77",
+          "ts": "78b75f143b49",
           "lean": "b76d0bd893bf"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.623757Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.623757Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The argument flow in 'The van der Waals channel \u2014 the Hopf symmetric block' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -1049,16 +1061,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "930253ae7d8f",
-          "ts": "df203dbb5562",
+          "md": "a8cb14adce77",
+          "ts": "78b75f143b49",
           "lean": "b76d0bd893bf"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.623757Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.623757Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Lean formalization and narrative for 'The van der Waals channel \u2014 the Hopf symmetric block' are in complete agreement.",
         "severity": "minor"
@@ -1067,16 +1081,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "930253ae7d8f",
-          "ts": "df203dbb5562",
+          "md": "a8cb14adce77",
+          "ts": "78b75f143b49",
           "lean": "b76d0bd893bf"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.623757Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.623757Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No citations are present in 'The van der Waals channel \u2014 the Hopf symmetric block', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1086,16 +1102,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "930253ae7d8f",
-          "ts": "df203dbb5562",
+          "md": "a8cb14adce77",
+          "ts": "78b75f143b49",
           "lean": "b76d0bd893bf"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.623757Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.623757Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Key terms and symbols in 'The van der Waals channel \u2014 the Hopf symmetric block' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1105,16 +1123,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "930253ae7d8f",
-          "ts": "df203dbb5562",
+          "md": "a8cb14adce77",
+          "ts": "78b75f143b49",
           "lean": "b76d0bd893bf"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.623757Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.623757Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The algebraic and logical relations in 'The van der Waals channel \u2014 the Hopf symmetric block' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1124,16 +1144,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "930253ae7d8f",
-          "ts": "df203dbb5562",
+          "md": "a8cb14adce77",
+          "ts": "78b75f143b49",
           "lean": "b76d0bd893bf"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.623757Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.623757Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The physical concepts described in 'The van der Waals channel \u2014 the Hopf symmetric block' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1143,16 +1165,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "930253ae7d8f",
-          "ts": "df203dbb5562",
+          "md": "a8cb14adce77",
+          "ts": "78b75f143b49",
           "lean": "b76d0bd893bf"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.623757Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.623757Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The derivation steps and formal definitions in 'The van der Waals channel \u2014 the Hopf symmetric block' are reproducible.",
         "severity": "minor",
@@ -1162,16 +1186,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "930253ae7d8f",
-          "ts": "df203dbb5562",
+          "md": "a8cb14adce77",
+          "ts": "78b75f143b49",
           "lean": "b76d0bd893bf"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.623757Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.623757Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -1183,14 +1209,21 @@
       {
         "result": "pass",
         "notes": "Flattened representation theoretic phase boundaries. Streamlined van der Waals isolation logic. Stripped explicit lean block annotations and reference IDs per brevity rules. Condensed bridging text in H-bond boiling sections. Maintained all file markers.",
-        "reviewed_at": "2026-07-06T22:56:32Z",
+        "reviewed_at": "2026-07-07T14:26:55.623757Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.623757Z"
+        },
+        "field_hash": {
+          "md": "a8cb14adce77",
+          "ts": "78b75f143b49",
+          "lean": "b76d0bd893bf"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.008Z"
+  "updated_at": "2026-07-07T14:26:55.623757Z"
 }

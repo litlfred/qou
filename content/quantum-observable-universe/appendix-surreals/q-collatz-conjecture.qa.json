@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/appendix-surreals/q-collatz-conjecture.md"
   },
   "source_hashes": {
-    "md": "a33d125903ce",
+    "md": "d0bbb160ee69",
     "ts": "dca4ac77df81"
   },
   "criteria": {
@@ -877,18 +877,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "a33d125903ce",
+          "md": "d0bbb160ee69",
           "ts": "dca4ac77df81"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.084209Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:39.246Z",
+        "reviewed_at": "2026-07-07T14:26:56.084209Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -934,19 +934,19 @@
       },
       {
         "field_hash": {
-          "md": "a33d125903ce",
+          "md": "d0bbb160ee69",
           "ts": "dca4ac77df81"
         },
         "result": "pass",
-        "notes": "Well-posed Skein-Collatz map on ℤ[q^±1] with q-parity; odd branch well-defined via Skein identity [3]_q=q[2]_q+1; orbit reaches 1 for q>1.",
-        "reviewed_at": "2026-06-25T16:54:08.000Z",
+        "notes": "Well-posed Skein-Collatz map on \u2124[q^\u00b11] with q-parity; odd branch well-defined via Skein identity [3]_q=q[2]_q+1; orbit reaches 1 for q>1.",
+        "reviewed_at": "2026-07-07T14:26:56.084209Z",
         "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.084209Z"
         },
         "score": {
           "max": 1,
@@ -957,95 +957,95 @@
     "proof-statement-integrity": [
       {
         "field_hash": {
-          "md": "a33d125903ce",
+          "md": "d0bbb160ee69",
           "ts": "dca4ac77df81"
         },
         "result": "pass",
-        "notes": "Conjecture; class QCollatz is honest §3b placeholder (residual=0 + instance:=sorry), self-labeled placeholder. No theorem masquerade.",
-        "reviewed_at": "2026-06-25T16:54:08.000Z",
+        "notes": "Conjecture; class QCollatz is honest \u00a73b placeholder (residual=0 + instance:=sorry), self-labeled placeholder. No theorem masquerade.",
+        "reviewed_at": "2026-07-07T14:26:56.084209Z",
         "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.084209Z"
         }
       }
     ],
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "a33d125903ce",
+          "md": "d0bbb160ee69",
           "ts": "dca4ac77df81"
         },
         "result": "pass",
         "notes": "Instance body is sorry (the conjecture), not a hypothesis projection.",
-        "reviewed_at": "2026-06-25T16:54:08.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.084209Z",
         "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.084209Z"
         }
       }
     ],
     "proof-no-unused-hypotheses": [
       {
         "field_hash": {
-          "md": "a33d125903ce",
+          "md": "d0bbb160ee69",
           "ts": "dca4ac77df81"
         },
         "result": "pass",
         "notes": "Class/instance take no explicit hyps.",
-        "reviewed_at": "2026-06-25T16:54:08.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.084209Z",
         "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.084209Z"
         }
       }
     ],
     "proof-no-false-premise": [
       {
         "field_hash": {
-          "md": "a33d125903ce",
+          "md": "d0bbb160ee69",
           "ts": "dca4ac77df81"
         },
         "result": "pass",
-        "notes": "No hypotheses; residual:ℝ=0 satisfiable.",
-        "reviewed_at": "2026-06-25T16:54:08.000Z",
+        "notes": "No hypotheses; residual:\u211d=0 satisfiable.",
+        "reviewed_at": "2026-07-07T14:26:56.084209Z",
         "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.084209Z"
         }
       }
     ],
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "a33d125903ce",
+          "md": "d0bbb160ee69",
           "ts": "dca4ac77df81"
         },
         "result": "pass",
-        "notes": "Concrete contraction estimate: [2]_q²-[3]_q=q margin, net factor [3]_q/[2]_q³<1; Skein crossing-resolution interpretation.",
-        "reviewed_at": "2026-06-25T16:54:08.000Z",
+        "notes": "Concrete contraction estimate: [2]_q\u00b2-[3]_q=q margin, net factor [3]_q/[2]_q\u00b3<1; Skein crossing-resolution interpretation.",
+        "reviewed_at": "2026-07-07T14:26:56.084209Z",
         "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.084209Z"
         },
         "score": {
           "max": 1,
@@ -1056,19 +1056,19 @@
     "proof-rater-novelty": [
       {
         "field_hash": {
-          "md": "a33d125903ce",
+          "md": "d0bbb160ee69",
           "ts": "dca4ac77df81"
         },
         "result": "pass",
-        "notes": "Novel q-deformation of Collatz via Skein-module crossing resolution with genuine new divisibility identities; κ_C=0 reformulation.",
-        "reviewed_at": "2026-06-25T16:54:08.000Z",
+        "notes": "Novel q-deformation of Collatz via Skein-module crossing resolution with genuine new divisibility identities; \u03ba_C=0 reformulation.",
+        "reviewed_at": "2026-07-07T14:26:56.084209Z",
         "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.084209Z"
         },
         "score": {
           "max": 1,
@@ -1079,15 +1079,17 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "a33d125903ce",
+          "md": "d0bbb160ee69",
           "ts": "dca4ac77df81"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.084209Z"
         },
-        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_at": "2026-07-07T14:26:56.084209Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No issues found for da-false-claim.",
         "severity": "minor",
@@ -1097,15 +1099,17 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "a33d125903ce",
+          "md": "d0bbb160ee69",
           "ts": "dca4ac77df81"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.084209Z"
         },
-        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_at": "2026-07-07T14:26:56.084209Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The claims are non-vacuous as they make concrete numerical or algebraic conjectures.",
         "severity": "minor"
@@ -1114,15 +1118,17 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "a33d125903ce",
+          "md": "d0bbb160ee69",
           "ts": "dca4ac77df81"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.084209Z"
         },
-        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_at": "2026-07-07T14:26:56.084209Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No issues found for da-circular.",
         "severity": "minor",
@@ -1132,15 +1138,17 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "a33d125903ce",
+          "md": "d0bbb160ee69",
           "ts": "dca4ac77df81"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.084209Z"
         },
-        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_at": "2026-07-07T14:26:56.084209Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
@@ -1149,15 +1157,17 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "a33d125903ce",
+          "md": "d0bbb160ee69",
           "ts": "dca4ac77df81"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.084209Z"
         },
-        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_at": "2026-07-07T14:26:56.084209Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No issues found for da-hidden-dof.",
         "severity": "minor",
@@ -1167,15 +1177,17 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "a33d125903ce",
+          "md": "d0bbb160ee69",
           "ts": "dca4ac77df81"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.084209Z"
         },
-        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_at": "2026-07-07T14:26:56.084209Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No issues found for da-non-sequitur.",
         "severity": "minor",
@@ -1185,15 +1197,17 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "a33d125903ce",
+          "md": "d0bbb160ee69",
           "ts": "dca4ac77df81"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.084209Z"
         },
-        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_at": "2026-07-07T14:26:56.084209Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The referenced Lean file is missing, representing a structural divergence between Lean and content block.",
         "severity": "minor"
@@ -1202,15 +1216,17 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "a33d125903ce",
+          "md": "d0bbb160ee69",
           "ts": "dca4ac77df81"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.084209Z"
         },
-        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_at": "2026-07-07T14:26:56.084209Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No issues found for da-citation-misuse.",
         "severity": "minor",
@@ -1220,15 +1236,17 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "a33d125903ce",
+          "md": "d0bbb160ee69",
           "ts": "dca4ac77df81"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.084209Z"
         },
-        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_at": "2026-07-07T14:26:56.084209Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No issues found for da-definitional-ambiguity.",
         "severity": "minor",
@@ -1238,15 +1256,17 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "a33d125903ce",
+          "md": "d0bbb160ee69",
           "ts": "dca4ac77df81"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.084209Z"
         },
-        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_at": "2026-07-07T14:26:56.084209Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No issues found for da-empirical-fragility.",
         "severity": "minor",
@@ -1256,15 +1276,17 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "a33d125903ce",
+          "md": "d0bbb160ee69",
           "ts": "dca4ac77df81"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.084209Z"
         },
-        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_at": "2026-07-07T14:26:56.084209Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No issues found for da-physical-implausibility.",
         "severity": "minor",
@@ -1274,15 +1296,17 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "a33d125903ce",
+          "md": "d0bbb160ee69",
           "ts": "dca4ac77df81"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.084209Z"
         },
-        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_at": "2026-07-07T14:26:56.084209Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No issues found for da-reproducibility.",
         "severity": "minor"
@@ -1291,15 +1315,17 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "a33d125903ce",
+          "md": "d0bbb160ee69",
           "ts": "dca4ac77df81"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.084209Z"
         },
-        "reviewed_at": "2026-06-28T07:05:43.329Z",
+        "reviewed_at": "2026-07-07T14:26:56.084209Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Conjecture is open, hence the objection is survivable. Sibling Lean file is missing.",
         "severity": "minor",
@@ -1308,5 +1334,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:55.206Z"
+  "updated_at": "2026-07-07T14:26:56.084209Z"
 }

@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/information-theory/toffoli-lp-stability.lean"
   },
   "source_hashes": {
-    "md": "54ec2ead62b9",
+    "md": "6ec9d59c2b9a",
     "ts": "cc4bffbb32f6",
     "lean": "a6e1884a5a96"
   },
@@ -1053,14 +1053,21 @@
       {
         "result": "pass",
         "notes": "Rewrote blocks linearly, resolved forward references, cleaned mathematical notation and integrated tables smoothly. Removed index-style bullet points in favor of connected prose. Tightened terminology around Reeb derivation and Toffoli matrix.",
-        "reviewed_at": "2026-07-06T22:48:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.609271Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.609271Z"
+        },
+        "field_hash": {
+          "md": "6ec9d59c2b9a",
+          "ts": "cc4bffbb32f6",
+          "lean": "a6e1884a5a96"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T04:39:43.766Z"
+  "updated_at": "2026-07-07T14:26:55.609271Z"
 }

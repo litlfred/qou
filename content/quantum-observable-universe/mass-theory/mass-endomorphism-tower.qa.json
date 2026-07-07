@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/mass-endomorphism-tower.lean"
   },
   "source_hashes": {
-    "md": "c7d0dac15253",
+    "md": "58c337e69ff8",
     "ts": "d50dd8322129",
     "lean": "3526fbb82bce"
   },
@@ -55,7 +55,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "83a47f59e02c",
+          "md": "58c337e69ff8",
           "ts": "d50dd8322129",
           "lean": "3526fbb82bce"
         },
@@ -63,9 +63,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.832719Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_at": "2026-07-07T14:26:56.832719Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:mass-endomorphism-tower' \u2192 expected 'mass_endomorphism_tower'; Lean declares: quantumDilogPoly, markovParamPoly, massPoly, proton_electron_ratio. Structural match via content."
       }
@@ -74,14 +76,21 @@
       {
         "result": "pass",
         "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
-        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.832719Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.832719Z"
+        },
+        "field_hash": {
+          "md": "58c337e69ff8",
+          "ts": "d50dd8322129",
+          "lean": "3526fbb82bce"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.430Z"
+  "updated_at": "2026-07-07T14:26:56.832719Z"
 }

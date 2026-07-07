@@ -7,23 +7,25 @@
     "md": "../qou/content/quantum-observable-universe/quantum-observable-universes/q-resolvent-properties.md"
   },
   "source_hashes": {
-    "md": "b67dd2919410",
+    "md": "a7d1761c9e25",
     "ts": "b7db6309eb05"
   },
   "criteria": {
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "b67dd2919410",
+          "md": "a7d1761c9e25",
           "ts": "b7db6309eb05"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.971876Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:55.971876Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "Block placement and kind match validated structurally."
@@ -32,16 +34,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "b67dd2919410",
+          "md": "a7d1761c9e25",
           "ts": "b7db6309eb05"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.971876Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:55.971876Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-observable-universes/q-resolvent-properties.ts:1",
@@ -51,16 +55,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "b67dd2919410",
+          "md": "a7d1761c9e25",
           "ts": "b7db6309eb05"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.971876Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:55.971876Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "The claims in 'This remark collects the Laplace-transform characterisation,' are non-vacuous as they present substantial mathematical content."
@@ -69,16 +75,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "b67dd2919410",
+          "md": "a7d1761c9e25",
           "ts": "b7db6309eb05"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.971876Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:55.971876Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-observable-universes/q-resolvent-properties.ts:1",
@@ -88,16 +96,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "b67dd2919410",
+          "md": "a7d1761c9e25",
           "ts": "b7db6309eb05"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.971876Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:55.971876Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "No overclaims: the scope of 'This remark collects the Laplace-transform characterisation,' is appropriately qualified."
@@ -106,16 +116,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "b67dd2919410",
+          "md": "a7d1761c9e25",
           "ts": "b7db6309eb05"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.971876Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:55.971876Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-observable-universes/q-resolvent-properties.ts:1",
@@ -125,16 +137,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "b67dd2919410",
+          "md": "a7d1761c9e25",
           "ts": "b7db6309eb05"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.971876Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:55.971876Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-observable-universes/q-resolvent-properties.ts:1",
@@ -144,16 +158,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "b67dd2919410",
+          "md": "a7d1761c9e25",
           "ts": "b7db6309eb05"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.971876Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:55.971876Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-observable-universes/q-resolvent-properties.ts:1",
@@ -163,16 +179,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "b67dd2919410",
+          "md": "a7d1761c9e25",
           "ts": "b7db6309eb05"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.971876Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:55.971876Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-observable-universes/q-resolvent-properties.ts:1",
@@ -182,16 +200,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "b67dd2919410",
+          "md": "a7d1761c9e25",
           "ts": "b7db6309eb05"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.971876Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:55.971876Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-observable-universes/q-resolvent-properties.ts:1",
@@ -201,16 +221,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "b67dd2919410",
+          "md": "a7d1761c9e25",
           "ts": "b7db6309eb05"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.971876Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:55.971876Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-observable-universes/q-resolvent-properties.ts:1",
@@ -220,16 +242,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "b67dd2919410",
+          "md": "a7d1761c9e25",
           "ts": "b7db6309eb05"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.971876Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:55.971876Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-observable-universes/q-resolvent-properties.ts:1",
@@ -239,16 +263,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "b67dd2919410",
+          "md": "a7d1761c9e25",
           "ts": "b7db6309eb05"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.971876Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:55.971876Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-observable-universes/q-resolvent-properties.ts:1",
@@ -258,16 +284,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "b67dd2919410",
+          "md": "a7d1761c9e25",
           "ts": "b7db6309eb05"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.971876Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:55.971876Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-observable-universes/q-resolvent-properties.md:1 \u2014 This remark collects the Laplace-transform characterisation,",
@@ -300,14 +328,20 @@
       {
         "result": "pass",
         "notes": "Unified existence/uniqueness statements and omitted structural tables. Condensed properties.",
-        "reviewed_at": "2026-07-06T22:46:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.971876Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.971876Z"
+        },
+        "field_hash": {
+          "md": "a7d1761c9e25",
+          "ts": "b7db6309eb05"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:58.083Z"
+  "updated_at": "2026-07-07T14:26:55.971876Z"
 }

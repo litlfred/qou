@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/information-theory/quantum-volume.lean"
   },
   "source_hashes": {
-    "md": "df8bac6afb71",
+    "md": "d4dfb8aa2b64",
     "ts": "dde148f946cf",
     "lean": "7a35dc439056"
   },
@@ -877,19 +877,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "dc543bc642c8",
-          "ts": "20a1949dbfcf",
-          "lean": "3a0f753408e2"
+          "md": "d4dfb8aa2b64",
+          "ts": "dde148f946cf",
+          "lean": "7a35dc439056"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.586201Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:26.833Z",
+        "reviewed_at": "2026-07-07T14:26:55.586201Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -897,19 +897,19 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "dc543bc642c8",
-          "ts": "20a1949dbfcf",
-          "lean": "3a0f753408e2"
+          "md": "d4dfb8aa2b64",
+          "ts": "dde148f946cf",
+          "lean": "7a35dc439056"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.586201Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:27.227Z",
+        "reviewed_at": "2026-07-07T14:26:55.586201Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -917,16 +917,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "dc543bc642c8",
-          "ts": "20a1949dbfcf",
-          "lean": "3a0f753408e2"
+          "md": "d4dfb8aa2b64",
+          "ts": "dde148f946cf",
+          "lean": "7a35dc439056"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.586201Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.586201Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The claim in 'Quantum volume' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
@@ -936,16 +938,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "dc543bc642c8",
-          "ts": "20a1949dbfcf",
-          "lean": "3a0f753408e2"
+          "md": "d4dfb8aa2b64",
+          "ts": "dde148f946cf",
+          "lean": "7a35dc439056"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.586201Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.586201Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The block 'Quantum volume' presents substantial mathematical content: Let $(\\mathbf{C}, A, \\tau)$ be a quantum observable universe and $\\mathcal{S} \\t...",
         "severity": "minor"
@@ -954,16 +958,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "dc543bc642c8",
-          "ts": "20a1949dbfcf",
-          "lean": "3a0f753408e2"
+          "md": "d4dfb8aa2b64",
+          "ts": "dde148f946cf",
+          "lean": "7a35dc439056"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.586201Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.586201Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Quantum volume'.",
         "severity": "minor",
@@ -973,16 +979,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "dc543bc642c8",
-          "ts": "20a1949dbfcf",
-          "lean": "3a0f753408e2"
+          "md": "d4dfb8aa2b64",
+          "ts": "dde148f946cf",
+          "lean": "7a35dc439056"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.586201Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.586201Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The prose presents 'Quantum volume' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
@@ -991,16 +999,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "dc543bc642c8",
-          "ts": "20a1949dbfcf",
-          "lean": "3a0f753408e2"
+          "md": "d4dfb8aa2b64",
+          "ts": "dde148f946cf",
+          "lean": "7a35dc439056"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.586201Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.586201Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Quantum volume'.",
         "severity": "minor",
@@ -1010,16 +1020,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "dc543bc642c8",
-          "ts": "20a1949dbfcf",
-          "lean": "3a0f753408e2"
+          "md": "d4dfb8aa2b64",
+          "ts": "dde148f946cf",
+          "lean": "7a35dc439056"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.586201Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.586201Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/information-theory/quantum-volume.lean.",
         "severity": "minor",
@@ -1029,16 +1041,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "dc543bc642c8",
-          "ts": "20a1949dbfcf",
-          "lean": "3a0f753408e2"
+          "md": "d4dfb8aa2b64",
+          "ts": "dde148f946cf",
+          "lean": "7a35dc439056"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.586201Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.586201Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/information-theory/quantum-volume.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
@@ -1047,16 +1061,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "dc543bc642c8",
-          "ts": "20a1949dbfcf",
-          "lean": "3a0f753408e2"
+          "md": "d4dfb8aa2b64",
+          "ts": "dde148f946cf",
+          "lean": "7a35dc439056"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.586201Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.586201Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No citations are present in 'Quantum volume', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1066,16 +1082,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "dc543bc642c8",
-          "ts": "20a1949dbfcf",
-          "lean": "3a0f753408e2"
+          "md": "d4dfb8aa2b64",
+          "ts": "dde148f946cf",
+          "lean": "7a35dc439056"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.586201Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.586201Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Key terms and symbols in 'Quantum volume' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1085,16 +1103,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "dc543bc642c8",
-          "ts": "20a1949dbfcf",
-          "lean": "3a0f753408e2"
+          "md": "d4dfb8aa2b64",
+          "ts": "dde148f946cf",
+          "lean": "7a35dc439056"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.586201Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.586201Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The algebraic and logical relations in 'Quantum volume' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1104,16 +1124,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "dc543bc642c8",
-          "ts": "20a1949dbfcf",
-          "lean": "3a0f753408e2"
+          "md": "d4dfb8aa2b64",
+          "ts": "dde148f946cf",
+          "lean": "7a35dc439056"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.586201Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.586201Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The physical concepts described in 'Quantum volume' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1123,16 +1145,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "dc543bc642c8",
-          "ts": "20a1949dbfcf",
-          "lean": "3a0f753408e2"
+          "md": "d4dfb8aa2b64",
+          "ts": "dde148f946cf",
+          "lean": "7a35dc439056"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.586201Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.586201Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/information-theory/quantum-volume.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
@@ -1142,16 +1166,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "dc543bc642c8",
-          "ts": "20a1949dbfcf",
-          "lean": "3a0f753408e2"
+          "md": "d4dfb8aa2b64",
+          "ts": "dde148f946cf",
+          "lean": "7a35dc439056"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.586201Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.586201Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/information-theory/quantum-volume.lean fails compilation: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/quantum-volume.lean:23:13: error: unexpected token 'section'; expected 'lemma'",
         "severity": "critical",
@@ -1163,14 +1189,21 @@
       {
         "result": "pass",
         "notes": "Streamlined stat-mech derivations. Compressed disjoint numbered lists in hydrogen section. Aligned physical derivations with concise declaratory statements. Preserved critical SUPERSEDED warning. Maintained all file markers.",
-        "reviewed_at": "2026-07-06T22:54:28Z",
+        "reviewed_at": "2026-07-07T14:26:55.586201Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.586201Z"
+        },
+        "field_hash": {
+          "md": "d4dfb8aa2b64",
+          "ts": "dde148f946cf",
+          "lean": "7a35dc439056"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T04:39:43.766Z"
+  "updated_at": "2026-07-07T14:26:55.586201Z"
 }

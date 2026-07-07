@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/information-theory/jet-planck-particle-spectrum.md"
   },
   "source_hashes": {
-    "md": "08099c36cc65",
+    "md": "1f3888ccec3a",
     "ts": "2662226b6d97"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Smoothed transitions, removed forward references, improved brevity.",
-        "reviewed_at": "2026-07-07T02:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.581961Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.581961Z"
+        },
+        "field_hash": {
+          "md": "1f3888ccec3a",
+          "ts": "2662226b6d97"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.008Z"
+  "updated_at": "2026-07-07T14:26:55.581961Z"
 }

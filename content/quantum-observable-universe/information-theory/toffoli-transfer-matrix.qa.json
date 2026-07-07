@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/information-theory/toffoli-transfer-matrix.md"
   },
   "source_hashes": {
-    "md": "3d98656cbc08",
+    "md": "bd0791cca6b5",
     "ts": "428e39921d44"
   },
   "criteria": {
@@ -1014,14 +1014,20 @@
       {
         "result": "pass",
         "notes": "Rewrote blocks linearly, resolved forward references, cleaned mathematical notation and integrated tables smoothly. Removed index-style bullet points in favor of connected prose. Tightened terminology around Reeb derivation and Toffoli matrix.",
-        "reviewed_at": "2026-07-06T22:48:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.640526Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.640526Z"
+        },
+        "field_hash": {
+          "md": "bd0791cca6b5",
+          "ts": "428e39921d44"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-07T14:26:55.640526Z"
 }

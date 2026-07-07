@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/wigner-2-coefficient.lean"
   },
   "source_hashes": {
-    "md": "8e8a23bbf5e5",
+    "md": "f84d34588cec",
     "ts": "3736684113ed",
     "lean": "8c82d083ffcb"
   },
@@ -1050,7 +1050,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "8e8a23bbf5e5",
+          "md": "f84d34588cec",
           "ts": "3736684113ed",
           "lean": "8c82d083ffcb"
         },
@@ -1058,9 +1058,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.789749Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_at": "2026-07-07T14:26:56.789749Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:wigner-2-coefficient' \u2192 expected 'wigner_2_coefficient'; Lean declares: a_rho, paired_sum_identity, sum_involution_double, self_conjugate_trace. Structural match via content."
       }
@@ -1069,14 +1071,21 @@
       {
         "result": "pass",
         "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
-        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.789749Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.789749Z"
+        },
+        "field_hash": {
+          "md": "f84d34588cec",
+          "ts": "3736684113ed",
+          "lean": "8c82d083ffcb"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.430Z"
+  "updated_at": "2026-07-07T14:26:56.789749Z"
 }

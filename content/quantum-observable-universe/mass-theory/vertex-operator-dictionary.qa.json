@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/mass-theory/vertex-operator-dictionary.md"
   },
   "source_hashes": {
-    "md": "940040419f6e",
+    "md": "9640b21236ee",
     "ts": "17e854826a7f"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Rewrote seq17 enforcing Milnor rules. Restructured wordy trajectory explanations into direct mathematical prose. Streamlined 'why before what' for the Reeb bundle and geometric constructs. Verified math formatting.",
-        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.729947Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.729947Z"
+        },
+        "field_hash": {
+          "md": "9640b21236ee",
+          "ts": "17e854826a7f"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-07T14:26:56.729947Z"
 }

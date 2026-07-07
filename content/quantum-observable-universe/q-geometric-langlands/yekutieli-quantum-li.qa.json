@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/q-geometric-langlands/yekutieli-quantum-li.md"
   },
   "source_hashes": {
-    "md": "d954017518ad",
+    "md": "f58df4c94439",
     "ts": "8f99a37b7050"
   },
   "criteria": {
@@ -838,18 +838,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "d954017518ad",
+          "md": "f58df4c94439",
           "ts": "8f99a37b7050"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.210095Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:43.786Z",
+        "reviewed_at": "2026-07-07T14:26:56.210095Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -857,16 +857,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "d954017518ad",
+          "md": "f58df4c94439",
           "ts": "8f99a37b7050"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.210095Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.210095Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "yekutieli-quantum-li.ts:1",
@@ -876,16 +878,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "d954017518ad",
+          "md": "f58df4c94439",
           "ts": "8f99a37b7050"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.210095Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.210095Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "The block 'The multiplicative integral as the quantum $\\\\mathrm{Li}(x)$' presents substantial mathematical content: '$\\mathrm{Li}(x) = \\int_2^x \\frac{dt}{\\ln t}$, but promoted from'."
@@ -894,16 +898,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "d954017518ad",
+          "md": "f58df4c94439",
           "ts": "8f99a37b7050"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.210095Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.210095Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "yekutieli-quantum-li.ts:1",
@@ -913,16 +919,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "d954017518ad",
+          "md": "f58df4c94439",
           "ts": "8f99a37b7050"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.210095Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.210095Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "The remarks and narrative scope in 'The multiplicative integral as the quantum $\\\\mathrm{Li}(x)$' are appropriately qualified."
@@ -931,16 +939,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "d954017518ad",
+          "md": "f58df4c94439",
           "ts": "8f99a37b7050"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.210095Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.210095Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "yekutieli-quantum-li.ts:1",
@@ -950,16 +960,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "d954017518ad",
+          "md": "f58df4c94439",
           "ts": "8f99a37b7050"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.210095Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.210095Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "yekutieli-quantum-li.ts:1",
@@ -969,16 +981,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "d954017518ad",
+          "md": "f58df4c94439",
           "ts": "8f99a37b7050"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.210095Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.210095Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "No Lean sibling required; narrative matches the expected configuration."
@@ -987,16 +1001,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "d954017518ad",
+          "md": "f58df4c94439",
           "ts": "8f99a37b7050"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.210095Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.210095Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "yekutieli-quantum-li.ts:1",
@@ -1006,16 +1022,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "d954017518ad",
+          "md": "f58df4c94439",
           "ts": "8f99a37b7050"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.210095Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.210095Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "yekutieli-quantum-li.ts:1",
@@ -1025,16 +1043,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "d954017518ad",
+          "md": "f58df4c94439",
           "ts": "8f99a37b7050"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.210095Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.210095Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "yekutieli-quantum-li.ts:1",
@@ -1044,16 +1064,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "d954017518ad",
+          "md": "f58df4c94439",
           "ts": "8f99a37b7050"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.210095Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.210095Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "yekutieli-quantum-li.ts:1",
@@ -1063,16 +1085,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "d954017518ad",
+          "md": "f58df4c94439",
           "ts": "8f99a37b7050"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.210095Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.210095Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "The derivation steps and formal definitions in 'The multiplicative integral as the quantum $\\\\mathrm{Li}(x)$' are reproducible."
@@ -1081,16 +1105,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "d954017518ad",
+          "md": "f58df4c94439",
           "ts": "8f99a37b7050"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.210095Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.210095Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "Referee verdict: clean.",
@@ -1102,14 +1128,20 @@
       {
         "result": "pass",
         "notes": "Ensured linear exposition. Removed conversational padding around Tannaka--Krein steps. Formatted explicit examples as natural continuations rather than cross-referenced callbacks.",
-        "reviewed_at": "2026-07-06T22:46:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.210095Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.210095Z"
+        },
+        "field_hash": {
+          "md": "f58df4c94439",
+          "ts": "8f99a37b7050"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.994Z"
+  "updated_at": "2026-07-07T14:26:56.210095Z"
 }

@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/information-theory/q-gaussian-solves-q-heat.lean"
   },
   "source_hashes": {
-    "md": "2ef5ebcdbabe",
+    "md": "c12536930b7e",
     "ts": "d7003bc28923",
     "lean": "754ed47466e6"
   },
@@ -37,14 +37,21 @@
       {
         "result": "pass",
         "notes": "Streamlined heat kernel block. Eliminated unnecessary bullet points and condensed mathematical exposition. Replaced disjoint index styling with linear narrative.",
-        "reviewed_at": "2026-07-06T22:52:25Z",
+        "reviewed_at": "2026-07-07T14:26:55.540341Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.540341Z"
+        },
+        "field_hash": {
+          "md": "c12536930b7e",
+          "ts": "d7003bc28923",
+          "lean": "754ed47466e6"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.008Z"
+  "updated_at": "2026-07-07T14:26:55.540341Z"
 }

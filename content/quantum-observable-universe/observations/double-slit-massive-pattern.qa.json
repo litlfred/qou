@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/observations/double-slit-massive-pattern.lean"
   },
   "source_hashes": {
-    "md": "6d46538be2fe",
+    "md": "c7499e7c93e0",
     "ts": "a38602a38e0e",
     "lean": "0d19252dd01d"
   },
@@ -1030,19 +1030,19 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "d43bf0546a41",
-          "ts": "edc4eddcc89a",
-          "lean": "c9313586cda0"
+          "md": "c7499e7c93e0",
+          "ts": "a38602a38e0e",
+          "lean": "0d19252dd01d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.531881Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:53.255Z",
+        "reviewed_at": "2026-07-07T14:26:56.531881Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
       }
@@ -1050,19 +1050,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "d43bf0546a41",
-          "ts": "edc4eddcc89a",
-          "lean": "c9313586cda0"
+          "md": "c7499e7c93e0",
+          "ts": "a38602a38e0e",
+          "lean": "0d19252dd01d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.531881Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:53.636Z",
+        "reviewed_at": "2026-07-07T14:26:56.531881Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1070,19 +1070,19 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "d43bf0546a41",
-          "ts": "edc4eddcc89a",
-          "lean": "c9313586cda0"
+          "md": "c7499e7c93e0",
+          "ts": "a38602a38e0e",
+          "lean": "0d19252dd01d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.531881Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:54.066Z",
+        "reviewed_at": "2026-07-07T14:26:56.531881Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is correctly placed in an archimedean chapter."
       }
@@ -1090,19 +1090,19 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "d43bf0546a41",
-          "ts": "edc4eddcc89a",
-          "lean": "c9313586cda0"
+          "md": "c7499e7c93e0",
+          "ts": "a38602a38e0e",
+          "lean": "0d19252dd01d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.531881Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:54.536Z",
+        "reviewed_at": "2026-07-07T14:26:56.531881Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof matches the archimedean regime."
       }
@@ -1184,20 +1184,20 @@
       },
       {
         "field_hash": {
-          "md": "d43bf0546a41",
-          "ts": "edc4eddcc89a",
-          "lean": "c9313586cda0"
+          "md": "c7499e7c93e0",
+          "ts": "a38602a38e0e",
+          "lean": "0d19252dd01d"
         },
         "result": "warn",
         "notes": "q=1 reductions proved by ring; but main inequality is asserted via a bespoke axiom, and compares fringe_spacing(q=1) vs envelope_width(q) \u2014 strategy unclear.",
-        "reviewed_at": "2026-06-25T17:06:24.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.531881Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.531881Z"
         },
         "score": {
           "max": 1,
@@ -1248,20 +1248,20 @@
       },
       {
         "field_hash": {
-          "md": "d43bf0546a41",
-          "ts": "edc4eddcc89a",
-          "lean": "c9313586cda0"
+          "md": "c7499e7c93e0",
+          "ts": "a38602a38e0e",
+          "lean": "0d19252dd01d"
         },
         "result": "pass",
         "notes": "Well-posed: q-deformed double-slit envelope/fringe formulas, q=1 -> Fraunhofer; excess width claim ties to bach2013 data.",
-        "reviewed_at": "2026-06-25T17:06:12.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.531881Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.531881Z"
         },
         "score": {
           "max": 1,
@@ -1312,20 +1312,20 @@
       },
       {
         "field_hash": {
-          "md": "d43bf0546a41",
-          "ts": "edc4eddcc89a",
-          "lean": "c9313586cda0"
+          "md": "c7499e7c93e0",
+          "ts": "a38602a38e0e",
+          "lean": "0d19252dd01d"
         },
         "result": "pass",
         "notes": "q-corrected interference pattern with three-scale Laplacian split (classical/spin/cross) is a substantive physical prediction.",
-        "reviewed_at": "2026-06-25T17:06:37.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.531881Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.531881Z"
         },
         "score": {
           "max": 1,
@@ -1372,39 +1372,39 @@
       },
       {
         "field_hash": {
-          "md": "d43bf0546a41",
-          "ts": "edc4eddcc89a",
-          "lean": "c9313586cda0"
+          "md": "c7499e7c93e0",
+          "ts": "a38602a38e0e",
+          "lean": "0d19252dd01d"
         },
         "result": "fail",
         "notes": "Main thm double_slit_massive_pattern discharged by custom 'axiom double_slit_massive_pattern_axiom' \u2014 substantive (envelope>Fraunhofer) claim asserted, not proved.",
-        "reviewed_at": "2026-06-25T17:05:35.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.531881Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.531881Z"
         }
       }
     ],
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "d43bf0546a41",
-          "ts": "edc4eddcc89a",
-          "lean": "c9313586cda0"
+          "md": "c7499e7c93e0",
+          "ts": "a38602a38e0e",
+          "lean": "0d19252dd01d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.531881Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:56.819Z",
+        "reviewed_at": "2026-07-07T14:26:56.531881Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
       }
@@ -1412,19 +1412,19 @@
     "proof-no-trivial-true": [
       {
         "field_hash": {
-          "md": "d43bf0546a41",
-          "ts": "edc4eddcc89a",
-          "lean": "c9313586cda0"
+          "md": "c7499e7c93e0",
+          "ts": "a38602a38e0e",
+          "lean": "0d19252dd01d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.531881Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:57.157Z",
+        "reviewed_at": "2026-07-07T14:26:56.531881Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
       }
@@ -1468,20 +1468,20 @@
       },
       {
         "field_hash": {
-          "md": "d43bf0546a41",
-          "ts": "edc4eddcc89a",
-          "lean": "c9313586cda0"
+          "md": "c7499e7c93e0",
+          "ts": "a38602a38e0e",
+          "lean": "0d19252dd01d"
         },
         "result": "pass",
         "notes": "Premises q!=0, q!=1, a!=0, 0<lambda*L/a, 0<ratio jointly satisfiable (e.g. q=q_0~1.11); not vacuous.",
-        "reviewed_at": "2026-06-25T17:06:00.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.531881Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.531881Z"
         }
       }
     ],
@@ -1524,20 +1524,20 @@
       },
       {
         "field_hash": {
-          "md": "d43bf0546a41",
-          "ts": "edc4eddcc89a",
-          "lean": "c9313586cda0"
+          "md": "c7499e7c93e0",
+          "ts": "a38602a38e0e",
+          "lean": "0d19252dd01d"
         },
         "result": "pass",
         "notes": "All binders (q,hq,hq1,lambda_,L,a_slit,ha,hpos,ratio,hr) forwarded to the axiom application; none orphaned.",
-        "reviewed_at": "2026-06-25T17:05:51.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.531881Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.531881Z"
         }
       }
     ],
@@ -1562,37 +1562,39 @@
       },
       {
         "field_hash": {
-          "md": "d43bf0546a41",
-          "ts": "edc4eddcc89a",
-          "lean": "c9313586cda0"
+          "md": "c7499e7c93e0",
+          "ts": "a38602a38e0e",
+          "lean": "0d19252dd01d"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/observations/double-slit-massive-pattern.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.531881Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.531881Z"
         }
       }
     ],
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "d43bf0546a41",
-          "ts": "edc4eddcc89a",
-          "lean": "c9313586cda0"
+          "md": "c7499e7c93e0",
+          "ts": "a38602a38e0e",
+          "lean": "0d19252dd01d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.531881Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.531881Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No false claims identified in 'Massive-particle interference pattern': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -1602,17 +1604,19 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "d43bf0546a41",
-          "ts": "edc4eddcc89a",
-          "lean": "c9313586cda0"
+          "md": "c7499e7c93e0",
+          "ts": "a38602a38e0e",
+          "lean": "0d19252dd01d"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.531881Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.531881Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/observations/double-slit-massive-pattern.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "major",
@@ -1622,17 +1626,19 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "d43bf0546a41",
-          "ts": "edc4eddcc89a",
-          "lean": "c9313586cda0"
+          "md": "c7499e7c93e0",
+          "ts": "a38602a38e0e",
+          "lean": "0d19252dd01d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.531881Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.531881Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Massive-particle interference pattern'.",
         "severity": "minor",
@@ -1642,17 +1648,19 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "d43bf0546a41",
-          "ts": "edc4eddcc89a",
-          "lean": "c9313586cda0"
+          "md": "c7499e7c93e0",
+          "ts": "a38602a38e0e",
+          "lean": "0d19252dd01d"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.531881Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.531881Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose in 'Massive-particle interference pattern' presents the result as established, but the Lean formalization is incomplete (has sorry).",
         "severity": "minor"
@@ -1661,17 +1669,19 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "d43bf0546a41",
-          "ts": "edc4eddcc89a",
-          "lean": "c9313586cda0"
+          "md": "c7499e7c93e0",
+          "ts": "a38602a38e0e",
+          "lean": "0d19252dd01d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.531881Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.531881Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Massive-particle interference pattern'.",
         "severity": "minor",
@@ -1681,17 +1691,19 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "d43bf0546a41",
-          "ts": "edc4eddcc89a",
-          "lean": "c9313586cda0"
+          "md": "c7499e7c93e0",
+          "ts": "a38602a38e0e",
+          "lean": "0d19252dd01d"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.531881Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.531881Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/observations/double-slit-massive-pattern.lean.",
         "severity": "minor",
@@ -1701,17 +1713,19 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "d43bf0546a41",
-          "ts": "edc4eddcc89a",
-          "lean": "c9313586cda0"
+          "md": "c7499e7c93e0",
+          "ts": "a38602a38e0e",
+          "lean": "0d19252dd01d"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.531881Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.531881Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/observations/double-slit-massive-pattern.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
@@ -1720,17 +1734,19 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "d43bf0546a41",
-          "ts": "edc4eddcc89a",
-          "lean": "c9313586cda0"
+          "md": "c7499e7c93e0",
+          "ts": "a38602a38e0e",
+          "lean": "0d19252dd01d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.531881Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.531881Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Citations to bach2013 are correct and contextually appropriate.",
         "severity": "minor",
@@ -1740,17 +1756,19 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "d43bf0546a41",
-          "ts": "edc4eddcc89a",
-          "lean": "c9313586cda0"
+          "md": "c7499e7c93e0",
+          "ts": "a38602a38e0e",
+          "lean": "0d19252dd01d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.531881Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.531881Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Key terms and symbols in 'Massive-particle interference pattern' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1760,17 +1778,19 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "d43bf0546a41",
-          "ts": "edc4eddcc89a",
-          "lean": "c9313586cda0"
+          "md": "c7499e7c93e0",
+          "ts": "a38602a38e0e",
+          "lean": "0d19252dd01d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.531881Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.531881Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The algebraic and logical relations in 'Massive-particle interference pattern' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1780,17 +1800,19 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "d43bf0546a41",
-          "ts": "edc4eddcc89a",
-          "lean": "c9313586cda0"
+          "md": "c7499e7c93e0",
+          "ts": "a38602a38e0e",
+          "lean": "0d19252dd01d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.531881Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.531881Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The physical concepts described in 'Massive-particle interference pattern' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1800,17 +1822,19 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "d43bf0546a41",
-          "ts": "edc4eddcc89a",
-          "lean": "c9313586cda0"
+          "md": "c7499e7c93e0",
+          "ts": "a38602a38e0e",
+          "lean": "0d19252dd01d"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.531881Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.531881Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/observations/double-slit-massive-pattern.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
@@ -1820,17 +1844,19 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "d43bf0546a41",
-          "ts": "edc4eddcc89a",
-          "lean": "c9313586cda0"
+          "md": "c7499e7c93e0",
+          "ts": "a38602a38e0e",
+          "lean": "0d19252dd01d"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.531881Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.531881Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/observations/double-slit-massive-pattern.lean fails compilation: content/quantum-observable-universe/observations/double-slit-massive-pattern.lean:67:2: error: No goals to be solved",
         "verdict": "open-objection",
@@ -1862,14 +1888,21 @@
       {
         "result": "pass",
         "notes": "Applied Milnor exposition standard (H1-H8) and brevity rules. Shortened sentences, removed editorializing ('surprisingly', 'remarkably'), replaced 'this book' with 'this paper', and maintained Math, markdown, and cross-block consistency.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.531881Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.531881Z"
+        },
+        "field_hash": {
+          "md": "c7499e7c93e0",
+          "ts": "a38602a38e0e",
+          "lean": "0d19252dd01d"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T04:39:43.766Z"
+  "updated_at": "2026-07-07T14:26:56.531881Z"
 }

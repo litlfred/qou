@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/observations/g-q-closed-form.md"
   },
   "source_hashes": {
-    "md": "c2b5ffb1ddc0",
+    "md": "eef6e575ce49",
     "ts": "e42cb04a98ca"
   },
   "criteria": {
@@ -838,18 +838,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "c2b5ffb1ddc0",
+          "md": "eef6e575ce49",
           "ts": "e42cb04a98ca"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.513424Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:53.584Z",
+        "reviewed_at": "2026-07-07T14:26:56.513424Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -857,16 +857,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "c2b5ffb1ddc0",
+          "md": "eef6e575ce49",
           "ts": "e42cb04a98ca"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.513424Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:56.513424Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No false claims identified in 'Closed $q$-rational form of $G(q)$ and Planck-unit consistency': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -876,16 +878,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "c2b5ffb1ddc0",
+          "md": "eef6e575ce49",
           "ts": "e42cb04a98ca"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.513424Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:56.513424Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Closed $q$-rational form of $G(q)$ and Planck-unit consistency' presents substantial mathematical content: $\\alpha = m_e \\cdot 8 G$ ([gravity spectral prefactor](#prop:gravity-spectral-pr...",
         "severity": "minor"
@@ -894,16 +898,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "c2b5ffb1ddc0",
+          "md": "eef6e575ce49",
           "ts": "e42cb04a98ca"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.513424Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:56.513424Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Closed $q$-rational form of $G(q)$ and Planck-unit consistency'.",
         "severity": "minor",
@@ -913,16 +919,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "c2b5ffb1ddc0",
+          "md": "eef6e575ce49",
           "ts": "e42cb04a98ca"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.513424Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:56.513424Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No overclaims: the scope of 'Closed $q$-rational form of $G(q)$ and Planck-unit consistency' is appropriately qualified.",
         "severity": "minor"
@@ -931,16 +939,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "c2b5ffb1ddc0",
+          "md": "eef6e575ce49",
           "ts": "e42cb04a98ca"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.513424Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:56.513424Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Closed $q$-rational form of $G(q)$ and Planck-unit consistency'.",
         "severity": "minor",
@@ -950,16 +960,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "c2b5ffb1ddc0",
+          "md": "eef6e575ce49",
           "ts": "e42cb04a98ca"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.513424Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:56.513424Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The argument flow in 'Closed $q$-rational form of $G(q)$ and Planck-unit consistency' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -969,16 +981,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "c2b5ffb1ddc0",
+          "md": "eef6e575ce49",
           "ts": "e42cb04a98ca"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.513424Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:56.513424Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
@@ -987,16 +1001,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "c2b5ffb1ddc0",
+          "md": "eef6e575ce49",
           "ts": "e42cb04a98ca"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.513424Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:56.513424Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No citations are present in 'Closed $q$-rational form of $G(q)$ and Planck-unit consistency', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1006,16 +1022,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "c2b5ffb1ddc0",
+          "md": "eef6e575ce49",
           "ts": "e42cb04a98ca"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.513424Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:56.513424Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Key terms and symbols in 'Closed $q$-rational form of $G(q)$ and Planck-unit consistency' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1025,16 +1043,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "c2b5ffb1ddc0",
+          "md": "eef6e575ce49",
           "ts": "e42cb04a98ca"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.513424Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:56.513424Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The algebraic and logical relations in 'Closed $q$-rational form of $G(q)$ and Planck-unit consistency' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1044,16 +1064,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "c2b5ffb1ddc0",
+          "md": "eef6e575ce49",
           "ts": "e42cb04a98ca"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.513424Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:56.513424Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The physical concepts described in 'Closed $q$-rational form of $G(q)$ and Planck-unit consistency' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1063,16 +1085,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "c2b5ffb1ddc0",
+          "md": "eef6e575ce49",
           "ts": "e42cb04a98ca"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.513424Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:56.513424Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The derivation steps and formal definitions in 'Closed $q$-rational form of $G(q)$ and Planck-unit consistency' are reproducible.",
         "severity": "minor",
@@ -1082,16 +1106,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "c2b5ffb1ddc0",
+          "md": "eef6e575ce49",
           "ts": "e42cb04a98ca"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.513424Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:56.513424Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
@@ -1103,14 +1129,20 @@
       {
         "result": "pass",
         "notes": "Rewrote observations_seq12.md. Adjusted intro for flow. Refined NS blowup block to be more declarative.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.513424Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.513424Z"
+        },
+        "field_hash": {
+          "md": "eef6e575ce49",
+          "ts": "e42cb04a98ca"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.226Z"
+  "updated_at": "2026-07-07T14:26:56.513424Z"
 }

@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/delta-skein-substrate-identity.lean"
   },
   "source_hashes": {
-    "md": "6aa49f1a45f0",
+    "md": "d4ae612659e5",
     "ts": "22145aceb0ff",
     "lean": "db1a73212f43"
   },
@@ -1888,7 +1888,7 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "08e49610380f",
+          "md": "d4ae612659e5",
           "ts": "22145aceb0ff",
           "lean": "db1a73212f43"
         },
@@ -1896,11 +1896,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.144888Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:20.404Z",
+        "reviewed_at": "2026-07-07T14:26:57.144888Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1908,7 +1908,7 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "08e49610380f",
+          "md": "d4ae612659e5",
           "ts": "22145aceb0ff",
           "lean": "db1a73212f43"
         },
@@ -1916,9 +1916,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.144888Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.144888Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'Substrate identity for the proton\u2013neutron Skein difference $\\\\Delta S(n-p)$': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -1928,7 +1930,7 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "08e49610380f",
+          "md": "d4ae612659e5",
           "ts": "22145aceb0ff",
           "lean": "db1a73212f43"
         },
@@ -1936,9 +1938,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.144888Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.144888Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Substrate identity for the proton\u2013neutron Skein difference $\\\\Delta S(n-p)$' presents substantial mathematical content: difference, conditional on common-scale conjecture).",
         "severity": "minor"
@@ -1947,7 +1951,7 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "08e49610380f",
+          "md": "d4ae612659e5",
           "ts": "22145aceb0ff",
           "lean": "db1a73212f43"
         },
@@ -1955,9 +1959,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.144888Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.144888Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Substrate identity for the proton\u2013neutron Skein difference $\\\\Delta S(n-p)$'.",
         "severity": "minor",
@@ -1967,7 +1973,7 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "08e49610380f",
+          "md": "d4ae612659e5",
           "ts": "22145aceb0ff",
           "lean": "db1a73212f43"
         },
@@ -1975,9 +1981,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.144888Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.144888Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'Substrate identity for the proton\u2013neutron Skein difference $\\\\Delta S(n-p)$' is appropriately qualified.",
         "severity": "minor"
@@ -1986,7 +1994,7 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "08e49610380f",
+          "md": "d4ae612659e5",
           "ts": "22145aceb0ff",
           "lean": "db1a73212f43"
         },
@@ -1994,9 +2002,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.144888Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.144888Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Substrate identity for the proton\u2013neutron Skein difference $\\\\Delta S(n-p)$'.",
         "severity": "minor",
@@ -2006,7 +2016,7 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "08e49610380f",
+          "md": "d4ae612659e5",
           "ts": "22145aceb0ff",
           "lean": "db1a73212f43"
         },
@@ -2014,9 +2024,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.144888Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.144888Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The argument flow in 'Substrate identity for the proton\u2013neutron Skein difference $\\\\Delta S(n-p)$' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -2026,7 +2038,7 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "08e49610380f",
+          "md": "d4ae612659e5",
           "ts": "22145aceb0ff",
           "lean": "db1a73212f43"
         },
@@ -2034,9 +2046,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.144888Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.144888Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Lean formalization and narrative for 'Substrate identity for the proton\u2013neutron Skein difference $\\\\Delta S(n-p)$' are in complete agreement.",
         "severity": "minor"
@@ -2045,7 +2059,7 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "08e49610380f",
+          "md": "d4ae612659e5",
           "ts": "22145aceb0ff",
           "lean": "db1a73212f43"
         },
@@ -2053,9 +2067,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.144888Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.144888Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Citations to codata2022 are correct and contextually appropriate.",
         "severity": "minor",
@@ -2065,7 +2081,7 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "08e49610380f",
+          "md": "d4ae612659e5",
           "ts": "22145aceb0ff",
           "lean": "db1a73212f43"
         },
@@ -2073,9 +2089,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.144888Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.144888Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Substrate identity for the proton\u2013neutron Skein difference $\\\\Delta S(n-p)$' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -2085,7 +2103,7 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "08e49610380f",
+          "md": "d4ae612659e5",
           "ts": "22145aceb0ff",
           "lean": "db1a73212f43"
         },
@@ -2093,9 +2111,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.144888Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.144888Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Substrate identity for the proton\u2013neutron Skein difference $\\\\Delta S(n-p)$' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -2105,7 +2125,7 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "08e49610380f",
+          "md": "d4ae612659e5",
           "ts": "22145aceb0ff",
           "lean": "db1a73212f43"
         },
@@ -2113,9 +2133,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.144888Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.144888Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Substrate identity for the proton\u2013neutron Skein difference $\\\\Delta S(n-p)$' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -2125,7 +2147,7 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "08e49610380f",
+          "md": "d4ae612659e5",
           "ts": "22145aceb0ff",
           "lean": "db1a73212f43"
         },
@@ -2133,9 +2155,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.144888Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.144888Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'Substrate identity for the proton\u2013neutron Skein difference $\\\\Delta S(n-p)$' are reproducible.",
         "severity": "minor",
@@ -2145,7 +2169,7 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "08e49610380f",
+          "md": "d4ae612659e5",
           "ts": "22145aceb0ff",
           "lean": "db1a73212f43"
         },
@@ -2153,9 +2177,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.144888Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.144888Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -2166,7 +2192,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "6aa49f1a45f0",
+          "md": "d4ae612659e5",
           "ts": "22145aceb0ff",
           "lean": "db1a73212f43"
         },
@@ -2174,9 +2200,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.144888Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_at": "2026-07-07T14:26:57.144888Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'rem:delta-skein-substrate-identity' \u2192 expected 'delta_skein_substrate_identity'; Lean declares: volBorromean, hbarQ, hbarQSq, deltaMassOverMe, delta_skein_eq_mass_splitting.... Structural match via content."
       }
@@ -2185,14 +2213,21 @@
       {
         "result": "pass",
         "notes": "Rewrote seq14 to strictly enforce Milnor brevity. Trimmed fluff and meta-commentary, ensuring straightforward descriptive sentences. Fixed non-linear forward references.",
-        "reviewed_at": "2026-07-06T22:47:00Z",
+        "reviewed_at": "2026-07-07T14:26:57.144888Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.144888Z"
+        },
+        "field_hash": {
+          "md": "d4ae612659e5",
+          "ts": "22145aceb0ff",
+          "lean": "db1a73212f43"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.802Z"
+  "updated_at": "2026-07-07T14:26:57.144888Z"
 }

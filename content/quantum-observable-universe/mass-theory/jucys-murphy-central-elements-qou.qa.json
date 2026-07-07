@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/jucys-murphy-central-elements-qou.lean"
   },
   "source_hashes": {
-    "md": "8eea34eb7bc0",
+    "md": "11464fe218cb",
     "ts": "66d0930b6fde",
     "lean": "046d46ce88f2"
   },
@@ -1082,7 +1082,7 @@
       },
       {
         "field_hash": {
-          "md": "8eea34eb7bc0",
+          "md": "11464fe218cb",
           "ts": "66d0930b6fde",
           "lean": "046d46ce88f2"
         },
@@ -1090,9 +1090,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-26",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.901335Z"
         },
-        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_at": "2026-07-07T14:26:56.901335Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
       }
@@ -1117,7 +1119,7 @@
       },
       {
         "field_hash": {
-          "md": "8eea34eb7bc0",
+          "md": "11464fe218cb",
           "ts": "66d0930b6fde",
           "lean": "046d46ce88f2"
         },
@@ -1125,9 +1127,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-26",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.901335Z"
         },
-        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_at": "2026-07-07T14:26:56.901335Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
       }
@@ -1152,7 +1156,7 @@
       },
       {
         "field_hash": {
-          "md": "8eea34eb7bc0",
+          "md": "11464fe218cb",
           "ts": "66d0930b6fde",
           "lean": "046d46ce88f2"
         },
@@ -1160,9 +1164,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-26",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.901335Z"
         },
-        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_at": "2026-07-07T14:26:56.901335Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
       }
@@ -1187,7 +1193,7 @@
       },
       {
         "field_hash": {
-          "md": "8eea34eb7bc0",
+          "md": "11464fe218cb",
           "ts": "66d0930b6fde",
           "lean": "046d46ce88f2"
         },
@@ -1195,9 +1201,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-26",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.901335Z"
         },
-        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_at": "2026-07-07T14:26:56.901335Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
       }
@@ -1253,7 +1261,7 @@
       },
       {
         "field_hash": {
-          "md": "8eea34eb7bc0",
+          "md": "11464fe218cb",
           "ts": "66d0930b6fde",
           "lean": "046d46ce88f2"
         },
@@ -1261,9 +1269,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.901335Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_at": "2026-07-07T14:26:56.901335Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:jucys-murphy-central-elements-qou' \u2192 expected 'jucys_murphy_central_elements_qou'; Lean declares: HeckeJMSpectrum, cellContent, jm_elements_commute, jm_esymm_central, jm_central_scalar_eq_esymm_qcontent.... Structural match via content."
       }
@@ -1287,7 +1297,7 @@
       },
       {
         "field_hash": {
-          "md": "8eea34eb7bc0",
+          "md": "11464fe218cb",
           "ts": "66d0930b6fde",
           "lean": "046d46ce88f2"
         },
@@ -1295,9 +1305,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-26",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.901335Z"
         },
-        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_at": "2026-07-07T14:26:56.901335Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
       }
@@ -1322,7 +1334,7 @@
       },
       {
         "field_hash": {
-          "md": "8eea34eb7bc0",
+          "md": "11464fe218cb",
           "ts": "66d0930b6fde",
           "lean": "046d46ce88f2"
         },
@@ -1330,9 +1342,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-26",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.901335Z"
         },
-        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_at": "2026-07-07T14:26:56.901335Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
       }
@@ -1360,7 +1374,7 @@
       },
       {
         "field_hash": {
-          "md": "8eea34eb7bc0",
+          "md": "11464fe218cb",
           "ts": "66d0930b6fde",
           "lean": "046d46ce88f2"
         },
@@ -1368,9 +1382,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-26",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.901335Z"
         },
-        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_at": "2026-07-07T14:26:56.901335Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
       }
@@ -1395,7 +1411,7 @@
       },
       {
         "field_hash": {
-          "md": "8eea34eb7bc0",
+          "md": "11464fe218cb",
           "ts": "66d0930b6fde",
           "lean": "046d46ce88f2"
         },
@@ -1403,9 +1419,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-26",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.901335Z"
         },
-        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_at": "2026-07-07T14:26:56.901335Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
       }
@@ -1430,7 +1448,7 @@
       },
       {
         "field_hash": {
-          "md": "8eea34eb7bc0",
+          "md": "11464fe218cb",
           "ts": "66d0930b6fde",
           "lean": "046d46ce88f2"
         },
@@ -1438,9 +1456,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-26",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.901335Z"
         },
-        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_at": "2026-07-07T14:26:56.901335Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
       }
@@ -1465,7 +1485,7 @@
       },
       {
         "field_hash": {
-          "md": "8eea34eb7bc0",
+          "md": "11464fe218cb",
           "ts": "66d0930b6fde",
           "lean": "046d46ce88f2"
         },
@@ -1473,9 +1493,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-26",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.901335Z"
         },
-        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_at": "2026-07-07T14:26:56.901335Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
       }
@@ -1500,7 +1522,7 @@
       },
       {
         "field_hash": {
-          "md": "8eea34eb7bc0",
+          "md": "11464fe218cb",
           "ts": "66d0930b6fde",
           "lean": "046d46ce88f2"
         },
@@ -1508,9 +1530,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-26",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.901335Z"
         },
-        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_at": "2026-07-07T14:26:56.901335Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
       }
@@ -1534,7 +1558,7 @@
       },
       {
         "field_hash": {
-          "md": "8eea34eb7bc0",
+          "md": "11464fe218cb",
           "ts": "66d0930b6fde",
           "lean": "046d46ce88f2"
         },
@@ -1542,9 +1566,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-26",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.901335Z"
         },
-        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_at": "2026-07-07T14:26:56.901335Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
       }
@@ -1569,7 +1595,7 @@
       },
       {
         "field_hash": {
-          "md": "8eea34eb7bc0",
+          "md": "11464fe218cb",
           "ts": "66d0930b6fde",
           "lean": "046d46ce88f2"
         },
@@ -1577,9 +1603,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-26",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.901335Z"
         },
-        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_at": "2026-07-07T14:26:56.901335Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
       }
@@ -1604,7 +1632,7 @@
       },
       {
         "field_hash": {
-          "md": "8eea34eb7bc0",
+          "md": "11464fe218cb",
           "ts": "66d0930b6fde",
           "lean": "046d46ce88f2"
         },
@@ -1612,9 +1640,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-26",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.901335Z"
         },
-        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_at": "2026-07-07T14:26:56.901335Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
       }
@@ -1638,7 +1668,7 @@
       },
       {
         "field_hash": {
-          "md": "8eea34eb7bc0",
+          "md": "11464fe218cb",
           "ts": "66d0930b6fde",
           "lean": "046d46ce88f2"
         },
@@ -1646,9 +1676,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-26",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.901335Z"
         },
-        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_at": "2026-07-07T14:26:56.901335Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
       }
@@ -1673,7 +1705,7 @@
       },
       {
         "field_hash": {
-          "md": "8eea34eb7bc0",
+          "md": "11464fe218cb",
           "ts": "66d0930b6fde",
           "lean": "046d46ce88f2"
         },
@@ -1681,9 +1713,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-26",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.901335Z"
         },
-        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_at": "2026-07-07T14:26:56.901335Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
       }
@@ -1707,7 +1741,7 @@
       },
       {
         "field_hash": {
-          "md": "8eea34eb7bc0",
+          "md": "11464fe218cb",
           "ts": "66d0930b6fde",
           "lean": "046d46ce88f2"
         },
@@ -1715,9 +1749,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-26",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.901335Z"
         },
-        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_at": "2026-07-07T14:26:56.901335Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
       }
@@ -1742,7 +1778,7 @@
       },
       {
         "field_hash": {
-          "md": "8eea34eb7bc0",
+          "md": "11464fe218cb",
           "ts": "66d0930b6fde",
           "lean": "046d46ce88f2"
         },
@@ -1750,9 +1786,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-26",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.901335Z"
         },
-        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_at": "2026-07-07T14:26:56.901335Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
       }
@@ -1777,7 +1815,7 @@
       },
       {
         "field_hash": {
-          "md": "8eea34eb7bc0",
+          "md": "11464fe218cb",
           "ts": "66d0930b6fde",
           "lean": "046d46ce88f2"
         },
@@ -1785,9 +1823,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-26",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.901335Z"
         },
-        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_at": "2026-07-07T14:26:56.901335Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
       }
@@ -1811,7 +1851,7 @@
       },
       {
         "field_hash": {
-          "md": "8eea34eb7bc0",
+          "md": "11464fe218cb",
           "ts": "66d0930b6fde",
           "lean": "046d46ce88f2"
         },
@@ -1819,9 +1859,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-26",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.901335Z"
         },
-        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_at": "2026-07-07T14:26:56.901335Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
       }
@@ -1846,7 +1888,7 @@
       },
       {
         "field_hash": {
-          "md": "8eea34eb7bc0",
+          "md": "11464fe218cb",
           "ts": "66d0930b6fde",
           "lean": "046d46ce88f2"
         },
@@ -1854,9 +1896,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-26",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.901335Z"
         },
-        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_at": "2026-07-07T14:26:56.901335Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
       }
@@ -1881,7 +1925,7 @@
       },
       {
         "field_hash": {
-          "md": "8eea34eb7bc0",
+          "md": "11464fe218cb",
           "ts": "66d0930b6fde",
           "lean": "046d46ce88f2"
         },
@@ -1889,9 +1933,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-26",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.901335Z"
         },
-        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_at": "2026-07-07T14:26:56.901335Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
       }
@@ -1916,7 +1962,7 @@
       },
       {
         "field_hash": {
-          "md": "8eea34eb7bc0",
+          "md": "11464fe218cb",
           "ts": "66d0930b6fde",
           "lean": "046d46ce88f2"
         },
@@ -1924,9 +1970,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-26",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.901335Z"
         },
-        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_at": "2026-07-07T14:26:56.901335Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
       }
@@ -1951,7 +1999,7 @@
       },
       {
         "field_hash": {
-          "md": "8eea34eb7bc0",
+          "md": "11464fe218cb",
           "ts": "66d0930b6fde",
           "lean": "046d46ce88f2"
         },
@@ -1959,9 +2007,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-26",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.901335Z"
         },
-        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_at": "2026-07-07T14:26:56.901335Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
       }
@@ -1986,7 +2036,7 @@
       },
       {
         "field_hash": {
-          "md": "8eea34eb7bc0",
+          "md": "11464fe218cb",
           "ts": "66d0930b6fde",
           "lean": "046d46ce88f2"
         },
@@ -1994,9 +2044,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-26",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.901335Z"
         },
-        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_at": "2026-07-07T14:26:56.901335Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
       }
@@ -2022,7 +2074,7 @@
       },
       {
         "field_hash": {
-          "md": "8eea34eb7bc0",
+          "md": "11464fe218cb",
           "ts": "66d0930b6fde",
           "lean": "046d46ce88f2"
         },
@@ -2030,9 +2082,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-26",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.901335Z"
         },
-        "reviewed_at": "2026-06-28T22:42:53.527Z",
+        "reviewed_at": "2026-07-07T14:26:56.901335Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Reviewed and passes without major issues."
       }
@@ -2061,14 +2115,21 @@
       {
         "result": "pass",
         "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
-        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.901335Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.901335Z"
+        },
+        "field_hash": {
+          "md": "11464fe218cb",
+          "ts": "66d0930b6fde",
+          "lean": "046d46ce88f2"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.430Z"
+  "updated_at": "2026-07-07T14:26:56.901335Z"
 }

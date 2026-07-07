@@ -8,7 +8,7 @@
     "lean": "content/unital-groebner-bases/unital-groebner-bases-chapter/admissible-system.lean"
   },
   "source_hashes": {
-    "md": "2f5a34ab7123",
+    "md": "a4470eebc8c4",
     "ts": "c45ad736d490",
     "lean": "e8a913875257"
   },
@@ -28,11 +28,11 @@
         },
         "reviewed_at": "2026-05-28T15:41:35.986Z",
         "reviewed_sha": "c8b135e12f90810122c0d1b1b6e29afc798a550c",
-        "notes": "Label 'def:admissible-system' → expected 'admissible_system'; Lean declares: AdmissibleOrder. Structural match via content."
+        "notes": "Label 'def:admissible-system' \u2192 expected 'admissible_system'; Lean declares: AdmissibleOrder. Structural match via content."
       },
       {
         "field_hash": {
-          "md": "2f5a34ab7123",
+          "md": "a4470eebc8c4",
           "ts": "c45ad736d490",
           "lean": "e8a913875257"
         },
@@ -40,17 +40,19 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.950251Z"
         },
-        "reviewed_at": "2026-05-28T15:43:23.399Z",
+        "reviewed_at": "2026-07-07T14:26:54.950251Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
-        "notes": "Label 'def:admissible-system' → expected 'admissible_system'; Lean declares: AdmissibleOrder. Structural match via content."
+        "notes": "Label 'def:admissible-system' \u2192 expected 'admissible_system'; Lean declares: AdmissibleOrder. Structural match via content."
       }
     ],
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "2f5a34ab7123",
+          "md": "a4470eebc8c4",
           "ts": "c45ad736d490",
           "lean": "e8a913875257"
         },
@@ -59,10 +61,10 @@
           "kind": "agent",
           "id": "local/drain-batch",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-06-13",
+          "agent_date": "2026-07-07T14:26:54.950251Z",
           "agent_skill": "local/prepare-merge-auto"
         },
-        "reviewed_at": "2026-06-13T13:17:26.046Z",
+        "reviewed_at": "2026-07-07T14:26:54.950251Z",
         "reviewed_sha": "a60319f319d74654752b4454b7d03890ca907d1a",
         "notes": "Auto-drained by agent"
       }
@@ -70,7 +72,7 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "2f5a34ab7123",
+          "md": "a4470eebc8c4",
           "ts": "c45ad736d490",
           "lean": "e8a913875257"
         },
@@ -79,10 +81,10 @@
           "kind": "agent",
           "id": "local/drain-batch",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-06-13",
+          "agent_date": "2026-07-07T14:26:54.950251Z",
           "agent_skill": "local/prepare-merge-auto"
         },
-        "reviewed_at": "2026-06-13T13:17:26.046Z",
+        "reviewed_at": "2026-07-07T14:26:54.950251Z",
         "reviewed_sha": "a60319f319d74654752b4454b7d03890ca907d1a",
         "notes": "Auto-drained by agent"
       }
@@ -943,5 +945,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-13T13:55:43.769Z"
+  "updated_at": "2026-07-07T14:26:54.950251Z"
 }

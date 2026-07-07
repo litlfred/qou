@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/qbeta-trace-counit-convergence.lean"
   },
   "source_hashes": {
-    "md": "e97163394dce",
+    "md": "6cc7ba2d57f7",
     "ts": "a5045a26f4f1",
     "lean": "5d81f8abaa07"
   },
@@ -1977,7 +1977,7 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "b3d2ff3173bc",
+          "md": "6cc7ba2d57f7",
           "ts": "a5045a26f4f1",
           "lean": "5d81f8abaa07"
         },
@@ -1985,11 +1985,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.209708Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:19.423Z",
+        "reviewed_at": "2026-07-07T14:26:57.209708Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -2037,20 +2037,20 @@
       },
       {
         "field_hash": {
-          "md": "b3d2ff3173bc",
+          "md": "6cc7ba2d57f7",
           "ts": "a5045a26f4f1",
           "lean": "5d81f8abaa07"
         },
         "result": "pass",
         "notes": "Well-posed functional-consistency identity: tower-summed tr_M nucleon mass diff = counit closed form; non-perturbative (N=0 misses by -56%); concrete RHS m_e(q+1)(q^2-2q-1)/2q^3.",
-        "reviewed_at": "2026-06-25T17:03:07.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.209708Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.209708Z"
         },
         "score": {
           "max": 1,
@@ -2061,7 +2061,7 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "b3d2ff3173bc",
+          "md": "6cc7ba2d57f7",
           "ts": "a5045a26f4f1",
           "lean": "5d81f8abaa07"
         },
@@ -2069,9 +2069,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.209708Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.209708Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The claim in 'Trace\u2013counit convergence of the $\\\\mathfrak{Q}_\\\\beta$ mass difference' is unverified because the formal proof in content/quantum-observable-universe/particle-interactions/qbeta-trace-counit-convergence.lean is incomplete (contains sorry).",
         "severity": "minor",
@@ -2081,7 +2083,7 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "b3d2ff3173bc",
+          "md": "6cc7ba2d57f7",
           "ts": "a5045a26f4f1",
           "lean": "5d81f8abaa07"
         },
@@ -2089,9 +2091,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.209708Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.209708Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The claims in 'Trace\u2013counit convergence of the $\\\\mathfrak{Q}_\\\\beta$ mass difference' are non-vacuous as they make concrete conjectures about 'The per-braid Markov-trace nucleon mass difference $\\mathfrak{m}(n) - \\mathfrak{m}(p) - m_e$, summed over the brane t...'.",
         "severity": "minor"
@@ -2100,7 +2104,7 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "b3d2ff3173bc",
+          "md": "6cc7ba2d57f7",
           "ts": "a5045a26f4f1",
           "lean": "5d81f8abaa07"
         },
@@ -2108,9 +2112,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.209708Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.209708Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Trace\u2013counit convergence of the $\\\\mathfrak{Q}_\\\\beta$ mass difference'.",
         "severity": "minor",
@@ -2120,7 +2126,7 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "b3d2ff3173bc",
+          "md": "6cc7ba2d57f7",
           "ts": "a5045a26f4f1",
           "lean": "5d81f8abaa07"
         },
@@ -2128,9 +2134,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.209708Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.209708Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose in 'Trace\u2013counit convergence of the $\\\\mathfrak{Q}_\\\\beta$ mass difference' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/qbeta-trace-counit-convergence.lean is incomplete (has sorry).",
         "severity": "minor"
@@ -2139,7 +2147,7 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "b3d2ff3173bc",
+          "md": "6cc7ba2d57f7",
           "ts": "a5045a26f4f1",
           "lean": "5d81f8abaa07"
         },
@@ -2147,9 +2155,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.209708Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.209708Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Trace\u2013counit convergence of the $\\\\mathfrak{Q}_\\\\beta$ mass difference'.",
         "severity": "minor",
@@ -2159,7 +2169,7 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "b3d2ff3173bc",
+          "md": "6cc7ba2d57f7",
           "ts": "a5045a26f4f1",
           "lean": "5d81f8abaa07"
         },
@@ -2167,9 +2177,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.209708Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.209708Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The argument flow in 'Trace\u2013counit convergence of the $\\\\mathfrak{Q}_\\\\beta$ mass difference' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -2179,7 +2191,7 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "b3d2ff3173bc",
+          "md": "6cc7ba2d57f7",
           "ts": "a5045a26f4f1",
           "lean": "5d81f8abaa07"
         },
@@ -2187,9 +2199,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.209708Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.209708Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/qbeta-trace-counit-convergence.lean uses a class-conjecture pattern, matching the conjectural nature of 'Trace\u2013counit convergence of the $\\\\mathfrak{Q}_\\\\beta$ mass difference'.",
         "severity": "minor"
@@ -2198,7 +2212,7 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "b3d2ff3173bc",
+          "md": "6cc7ba2d57f7",
           "ts": "a5045a26f4f1",
           "lean": "5d81f8abaa07"
         },
@@ -2206,9 +2220,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.209708Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.209708Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Trace\u2013counit convergence of the $\\\\mathfrak{Q}_\\\\beta$ mass difference', hence no citation misuse is possible.",
         "severity": "minor",
@@ -2218,7 +2234,7 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "b3d2ff3173bc",
+          "md": "6cc7ba2d57f7",
           "ts": "a5045a26f4f1",
           "lean": "5d81f8abaa07"
         },
@@ -2226,9 +2242,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.209708Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.209708Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Trace\u2013counit convergence of the $\\\\mathfrak{Q}_\\\\beta$ mass difference' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -2238,7 +2256,7 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "b3d2ff3173bc",
+          "md": "6cc7ba2d57f7",
           "ts": "a5045a26f4f1",
           "lean": "5d81f8abaa07"
         },
@@ -2246,9 +2264,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.209708Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.209708Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Trace\u2013counit convergence of the $\\\\mathfrak{Q}_\\\\beta$ mass difference' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -2258,7 +2278,7 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "b3d2ff3173bc",
+          "md": "6cc7ba2d57f7",
           "ts": "a5045a26f4f1",
           "lean": "5d81f8abaa07"
         },
@@ -2266,9 +2286,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.209708Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.209708Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Trace\u2013counit convergence of the $\\\\mathfrak{Q}_\\\\beta$ mass difference' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -2278,7 +2300,7 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "b3d2ff3173bc",
+          "md": "6cc7ba2d57f7",
           "ts": "a5045a26f4f1",
           "lean": "5d81f8abaa07"
         },
@@ -2286,9 +2308,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.209708Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.209708Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'Trace\u2013counit convergence of the $\\\\mathfrak{Q}_\\\\beta$ mass difference' are reproducible.",
         "severity": "minor",
@@ -2298,7 +2322,7 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "b3d2ff3173bc",
+          "md": "6cc7ba2d57f7",
           "ts": "a5045a26f4f1",
           "lean": "5d81f8abaa07"
         },
@@ -2306,9 +2330,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.209708Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.209708Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders.",
         "severity": "minor",
@@ -2319,7 +2345,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "e97163394dce",
+          "md": "6cc7ba2d57f7",
           "ts": "a5045a26f4f1",
           "lean": "5d81f8abaa07"
         },
@@ -2327,9 +2353,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.209708Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_at": "2026-07-07T14:26:57.209708Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Conjecture with class/axiom axiomatisation \u2014 structural match."
       }
@@ -2341,5 +2369,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.802Z"
+  "updated_at": "2026-07-07T14:26:57.209708Z"
 }

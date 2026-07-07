@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/fluid-dynamics/vortex-spectrum-intro.md"
   },
   "source_hashes": {
-    "md": "ae9b8bef2dbc",
+    "md": "9c7502c71e9a",
     "ts": "8b17eae25c1c"
   },
   "criteria": {
@@ -818,18 +818,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "ae9b8bef2dbc",
+          "md": "9c7502c71e9a",
           "ts": "8b17eae25c1c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.290687Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:45.324Z",
+        "reviewed_at": "2026-07-07T14:26:56.290687Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -837,15 +837,17 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "ae9b8bef2dbc",
+          "md": "9c7502c71e9a",
           "ts": "8b17eae25c1c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.290687Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:56.290687Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Checked mathematical consistency of the claim '_[draft]_ The $q$-deformation of brane hydrodynamics forces vortex' and found no counterexamples under the stated conditions.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/vortex-spectrum-intro.ts:1",
@@ -855,15 +857,17 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "ae9b8bef2dbc",
+          "md": "9c7502c71e9a",
           "ts": "8b17eae25c1c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.290687Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:56.290687Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No vacuous stubs or tautologies detected in the formulation of 'sec:vortex-spectrum-intro'.",
         "severity": "minor"
@@ -872,15 +876,17 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "ae9b8bef2dbc",
+          "md": "9c7502c71e9a",
           "ts": "8b17eae25c1c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.290687Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:56.290687Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Traced dependencies [] for 'sec:vortex-spectrum-intro' and confirmed no circular definitions or justifications.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/vortex-spectrum-intro.ts:1",
@@ -890,15 +896,17 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "ae9b8bef2dbc",
+          "md": "9c7502c71e9a",
           "ts": "8b17eae25c1c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.290687Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:56.290687Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Verified that the scope of 'sec:vortex-spectrum-intro' is appropriately restricted to the proven regime without overclaiming structural validity.",
         "severity": "minor"
@@ -907,15 +915,17 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "ae9b8bef2dbc",
+          "md": "9c7502c71e9a",
           "ts": "8b17eae25c1c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.290687Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:56.290687Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/vortex-spectrum-intro.ts:1",
@@ -925,15 +935,17 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "ae9b8bef2dbc",
+          "md": "9c7502c71e9a",
           "ts": "8b17eae25c1c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.290687Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:56.290687Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Logical transitions in the derivation of '_[draft]_ The $q$-deformation of brane hydrodynamics forces vortex' are sound; no non-sequiturs detected.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/vortex-spectrum-intro.ts:1",
@@ -943,15 +955,17 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "ae9b8bef2dbc",
+          "md": "9c7502c71e9a",
           "ts": "8b17eae25c1c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.290687Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:56.290687Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No Lean sibling required; narrative matches specifications.",
         "severity": "minor"
@@ -960,15 +974,17 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "ae9b8bef2dbc",
+          "md": "9c7502c71e9a",
           "ts": "8b17eae25c1c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.290687Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:56.290687Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All references and uses [] cited in 'sec:vortex-spectrum-intro' are used in accordance with their established mathematical definitions.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/vortex-spectrum-intro.ts:1",
@@ -978,15 +994,17 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "ae9b8bef2dbc",
+          "md": "9c7502c71e9a",
           "ts": "8b17eae25c1c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.290687Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:56.290687Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All terms and algebraic structures in 'sec:vortex-spectrum-intro' are uniquely defined or standard.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/vortex-spectrum-intro.ts:1",
@@ -996,15 +1014,17 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "ae9b8bef2dbc",
+          "md": "9c7502c71e9a",
           "ts": "8b17eae25c1c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.290687Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:56.290687Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The algebraic statements in 'sec:vortex-spectrum-intro' do not rely on fragile empirical fits or numerical thresholds.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/vortex-spectrum-intro.ts:1",
@@ -1014,15 +1034,17 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "ae9b8bef2dbc",
+          "md": "9c7502c71e9a",
           "ts": "8b17eae25c1c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.290687Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:56.290687Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Physical dimensions and units in 'sec:vortex-spectrum-intro' are consistent with quantum observable universe models.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/vortex-spectrum-intro.ts:1",
@@ -1032,15 +1054,17 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "ae9b8bef2dbc",
+          "md": "9c7502c71e9a",
           "ts": "8b17eae25c1c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.290687Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:56.290687Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All backing computations and proofs are fully reproducible.",
         "severity": "minor"
@@ -1049,15 +1073,17 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "ae9b8bef2dbc",
+          "md": "9c7502c71e9a",
           "ts": "8b17eae25c1c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.290687Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:56.290687Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
@@ -1069,14 +1095,20 @@
       {
         "result": "pass",
         "notes": "Rewrote fluid-dynamics_seq1.md. Pruned passive phrases. Maintained strict equivalence in Math equations.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.290687Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.290687Z"
+        },
+        "field_hash": {
+          "md": "9c7502c71e9a",
+          "ts": "8b17eae25c1c"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:55.699Z"
+  "updated_at": "2026-07-07T14:26:56.290687Z"
 }

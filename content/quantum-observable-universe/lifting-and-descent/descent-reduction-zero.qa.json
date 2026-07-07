@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/lifting-and-descent/descent-reduction-zero.md"
   },
   "source_hashes": {
-    "md": "0dbde387a08c",
+    "md": "6fbae4dfb3c8",
     "ts": "74f0b7b7dc3a"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Rewrote blocks in lifting-and-descent_seq8.md applying strict Milnor formatting and brevity.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.736234Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.736234Z"
+        },
+        "field_hash": {
+          "md": "6fbae4dfb3c8",
+          "ts": "74f0b7b7dc3a"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.146Z"
+  "updated_at": "2026-07-07T14:26:55.736234Z"
 }

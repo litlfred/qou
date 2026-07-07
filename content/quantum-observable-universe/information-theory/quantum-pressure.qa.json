@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/information-theory/quantum-pressure.lean"
   },
   "source_hashes": {
-    "md": "58c6d2c72d49",
+    "md": "01221d56a6f6",
     "ts": "676d62712265",
     "lean": "5fee94b50215"
   },
@@ -895,19 +895,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "58c6d2c72d49",
+          "md": "01221d56a6f6",
           "ts": "676d62712265",
-          "lean": "ccd413f2e26e"
+          "lean": "5fee94b50215"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.635889Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:26.833Z",
+        "reviewed_at": "2026-07-07T14:26:55.635889Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -915,19 +915,19 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "58c6d2c72d49",
+          "md": "01221d56a6f6",
           "ts": "676d62712265",
-          "lean": "ccd413f2e26e"
+          "lean": "5fee94b50215"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.635889Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:27.272Z",
+        "reviewed_at": "2026-07-07T14:26:55.635889Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -935,16 +935,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "58c6d2c72d49",
+          "md": "01221d56a6f6",
           "ts": "676d62712265",
-          "lean": "ccd413f2e26e"
+          "lean": "5fee94b50215"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.635889Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.635889Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The claim in 'Quantum pressure' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
@@ -954,16 +956,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "58c6d2c72d49",
+          "md": "01221d56a6f6",
           "ts": "676d62712265",
-          "lean": "ccd413f2e26e"
+          "lean": "5fee94b50215"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.635889Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.635889Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The block 'Quantum pressure' presents substantial mathematical content: Let $(\\mathbf{C}, A, \\tau)$ be a quantum observable universe with quantum temper...",
         "severity": "minor"
@@ -972,16 +976,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "58c6d2c72d49",
+          "md": "01221d56a6f6",
           "ts": "676d62712265",
-          "lean": "ccd413f2e26e"
+          "lean": "5fee94b50215"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.635889Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.635889Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Quantum pressure'.",
         "severity": "minor",
@@ -991,16 +997,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "58c6d2c72d49",
+          "md": "01221d56a6f6",
           "ts": "676d62712265",
-          "lean": "ccd413f2e26e"
+          "lean": "5fee94b50215"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.635889Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.635889Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The prose presents 'Quantum pressure' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
@@ -1009,16 +1017,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "58c6d2c72d49",
+          "md": "01221d56a6f6",
           "ts": "676d62712265",
-          "lean": "ccd413f2e26e"
+          "lean": "5fee94b50215"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.635889Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.635889Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Quantum pressure'.",
         "severity": "minor",
@@ -1028,16 +1038,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "58c6d2c72d49",
+          "md": "01221d56a6f6",
           "ts": "676d62712265",
-          "lean": "ccd413f2e26e"
+          "lean": "5fee94b50215"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.635889Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.635889Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/information-theory/quantum-pressure.lean.",
         "severity": "minor",
@@ -1047,16 +1059,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "58c6d2c72d49",
+          "md": "01221d56a6f6",
           "ts": "676d62712265",
-          "lean": "ccd413f2e26e"
+          "lean": "5fee94b50215"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.635889Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.635889Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/information-theory/quantum-pressure.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
@@ -1065,16 +1079,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "58c6d2c72d49",
+          "md": "01221d56a6f6",
           "ts": "676d62712265",
-          "lean": "ccd413f2e26e"
+          "lean": "5fee94b50215"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.635889Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.635889Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No citations are present in 'Quantum pressure', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1084,16 +1100,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "58c6d2c72d49",
+          "md": "01221d56a6f6",
           "ts": "676d62712265",
-          "lean": "ccd413f2e26e"
+          "lean": "5fee94b50215"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.635889Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.635889Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Key terms and symbols in 'Quantum pressure' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1103,16 +1121,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "58c6d2c72d49",
+          "md": "01221d56a6f6",
           "ts": "676d62712265",
-          "lean": "ccd413f2e26e"
+          "lean": "5fee94b50215"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.635889Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.635889Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The algebraic and logical relations in 'Quantum pressure' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1122,16 +1142,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "58c6d2c72d49",
+          "md": "01221d56a6f6",
           "ts": "676d62712265",
-          "lean": "ccd413f2e26e"
+          "lean": "5fee94b50215"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.635889Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.635889Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The physical concepts described in 'Quantum pressure' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1141,16 +1163,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "58c6d2c72d49",
+          "md": "01221d56a6f6",
           "ts": "676d62712265",
-          "lean": "ccd413f2e26e"
+          "lean": "5fee94b50215"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.635889Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.635889Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/information-theory/quantum-pressure.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
@@ -1160,16 +1184,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "58c6d2c72d49",
+          "md": "01221d56a6f6",
           "ts": "676d62712265",
-          "lean": "ccd413f2e26e"
+          "lean": "5fee94b50215"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.635889Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.635889Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/information-theory/quantum-pressure.lean fails compilation: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/quantum-pressure.lean:24:13: error: unexpected token 'section'; expected 'lemma'",
         "severity": "critical",
@@ -1181,14 +1207,21 @@
       {
         "result": "pass",
         "notes": "Streamlined stat-mech derivations. Compressed disjoint numbered lists in hydrogen section. Aligned physical derivations with concise declaratory statements. Preserved critical SUPERSEDED warning. Maintained all file markers.",
-        "reviewed_at": "2026-07-06T22:54:28Z",
+        "reviewed_at": "2026-07-07T14:26:55.635889Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.635889Z"
+        },
+        "field_hash": {
+          "md": "01221d56a6f6",
+          "ts": "676d62712265",
+          "lean": "5fee94b50215"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.008Z"
+  "updated_at": "2026-07-07T14:26:55.635889Z"
 }

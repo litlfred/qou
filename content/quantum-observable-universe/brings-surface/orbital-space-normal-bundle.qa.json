@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.lean"
   },
   "source_hashes": {
-    "md": "c16b29b56de7",
+    "md": "417525869a3e",
     "ts": "47ec8d258b4d",
     "lean": "a8fdba07b523"
   },
@@ -876,19 +876,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "3aa21ff6af95",
-          "ts": "576969162c3e",
-          "lean": "998069a14858"
+          "md": "417525869a3e",
+          "ts": "47ec8d258b4d",
+          "lean": "a8fdba07b523"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.077623Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:20.754Z",
+        "reviewed_at": "2026-07-07T14:26:55.077623Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -936,20 +936,20 @@
       },
       {
         "field_hash": {
-          "md": "3aa21ff6af95",
-          "ts": "576969162c3e",
-          "lean": "3b81c71853fb"
+          "md": "417525869a3e",
+          "ts": "47ec8d258b4d",
+          "lean": "a8fdba07b523"
         },
         "result": "pass",
         "notes": "Conjecture: orbital dim O_n=n^2 via SO(3) V_l decomposition; substantive, well-posed; Lean proves Sum(2l+1)=n^2 by induction+ring.",
-        "reviewed_at": "2026-06-25T16:47:49.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.077623Z",
         "reviewed_sha": "c737970fa91210edf3994a0469bec2ff5e5eeef3",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.077623Z"
         },
         "score": {
           "max": 1,
@@ -977,16 +977,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "3aa21ff6af95",
-          "ts": "576969162c3e",
-          "lean": "3b81c71853fb"
+          "md": "417525869a3e",
+          "ts": "47ec8d258b4d",
+          "lean": "a8fdba07b523"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.077623Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:55.077623Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Checked mathematical consistency of the claim '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md \u00a77c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' and found no counterexamples under the stated conditions.",
         "evidence": "content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.ts:1",
@@ -996,16 +998,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "3aa21ff6af95",
-          "ts": "576969162c3e",
-          "lean": "3b81c71853fb"
+          "md": "417525869a3e",
+          "ts": "47ec8d258b4d",
+          "lean": "a8fdba07b523"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.077623Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:55.077623Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The conjecture makes non-trivial claims regarding '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md \u00a77c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' and is not vacuous.",
         "severity": "minor"
@@ -1014,16 +1018,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "3aa21ff6af95",
-          "ts": "576969162c3e",
-          "lean": "3b81c71853fb"
+          "md": "417525869a3e",
+          "ts": "47ec8d258b4d",
+          "lean": "a8fdba07b523"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.077623Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:55.077623Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Traced dependencies ['conj:reidemeister-mass-invariance'] for 'conj:orbital-space-normal-bundle' and confirmed no circular definitions or justifications.",
         "evidence": "content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.ts:1",
@@ -1033,16 +1039,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "3aa21ff6af95",
-          "ts": "576969162c3e",
-          "lean": "3b81c71853fb"
+          "md": "417525869a3e",
+          "ts": "47ec8d258b4d",
+          "lean": "a8fdba07b523"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.077623Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:55.077623Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Verified that the scope of 'conj:orbital-space-normal-bundle' is appropriately restricted to the proven regime without overclaiming structural validity.",
         "severity": "minor"
@@ -1051,16 +1059,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "3aa21ff6af95",
-          "ts": "576969162c3e",
-          "lean": "3b81c71853fb"
+          "md": "417525869a3e",
+          "ts": "47ec8d258b4d",
+          "lean": "a8fdba07b523"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.077623Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:55.077623Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
         "evidence": "content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.ts:1",
@@ -1070,16 +1080,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "3aa21ff6af95",
-          "ts": "576969162c3e",
-          "lean": "3b81c71853fb"
+          "md": "417525869a3e",
+          "ts": "47ec8d258b4d",
+          "lean": "a8fdba07b523"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.077623Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:55.077623Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Logical transitions in the derivation of '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md \u00a77c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' are sound; no non-sequiturs detected.",
         "evidence": "content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.ts:1",
@@ -1089,16 +1101,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "3aa21ff6af95",
-          "ts": "576969162c3e",
-          "lean": "3b81c71853fb"
+          "md": "417525869a3e",
+          "ts": "47ec8d258b4d",
+          "lean": "a8fdba07b523"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.077623Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:55.077623Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The conjecture is formalized with sorry in content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.lean, which matches the open nature of the narrative.",
         "severity": "minor"
@@ -1107,16 +1121,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "3aa21ff6af95",
-          "ts": "576969162c3e",
-          "lean": "3b81c71853fb"
+          "md": "417525869a3e",
+          "ts": "47ec8d258b4d",
+          "lean": "a8fdba07b523"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.077623Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:55.077623Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All references and uses ['conj:reidemeister-mass-invariance'] cited in 'conj:orbital-space-normal-bundle' are used in accordance with their established mathematical definitions.",
         "evidence": "content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.ts:1",
@@ -1126,16 +1142,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "3aa21ff6af95",
-          "ts": "576969162c3e",
-          "lean": "3b81c71853fb"
+          "md": "417525869a3e",
+          "ts": "47ec8d258b4d",
+          "lean": "a8fdba07b523"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.077623Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:55.077623Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All terms and algebraic structures in 'conj:orbital-space-normal-bundle' are uniquely defined or standard.",
         "evidence": "content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.ts:1",
@@ -1145,16 +1163,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "3aa21ff6af95",
-          "ts": "576969162c3e",
-          "lean": "3b81c71853fb"
+          "md": "417525869a3e",
+          "ts": "47ec8d258b4d",
+          "lean": "a8fdba07b523"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.077623Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:55.077623Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The algebraic statements in 'conj:orbital-space-normal-bundle' do not rely on fragile empirical fits or numerical thresholds.",
         "evidence": "content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.ts:1",
@@ -1164,16 +1184,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "3aa21ff6af95",
-          "ts": "576969162c3e",
-          "lean": "3b81c71853fb"
+          "md": "417525869a3e",
+          "ts": "47ec8d258b4d",
+          "lean": "a8fdba07b523"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.077623Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:55.077623Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Physical dimensions and units in 'conj:orbital-space-normal-bundle' are consistent with quantum observable universe models.",
         "evidence": "content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.ts:1",
@@ -1183,16 +1205,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "3aa21ff6af95",
-          "ts": "576969162c3e",
-          "lean": "3b81c71853fb"
+          "md": "417525869a3e",
+          "ts": "47ec8d258b4d",
+          "lean": "a8fdba07b523"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.077623Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:55.077623Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/LinearAlgebra/Dimension.olean' of module Mathlib.LinearAlgebra.Dimension does not exist.",
         "evidence": "content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.lean:1 \u2014 content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/LinearAlgebra/Dimension.olean' of module Mathlib.LinearAlgebra.Dimension does not exist",
@@ -1202,16 +1226,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "3aa21ff6af95",
-          "ts": "576969162c3e",
-          "lean": "3b81c71853fb"
+          "md": "417525869a3e",
+          "ts": "47ec8d258b4d",
+          "lean": "a8fdba07b523"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.077623Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:55.077623Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Conjecture 'conj:orbital-space-normal-bundle' is open; sibling Lean file contains sorry stubs.",
         "verdict": "survivable-objection",
@@ -1242,7 +1268,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "c16b29b56de7",
+          "md": "417525869a3e",
           "ts": "47ec8d258b4d",
           "lean": "a8fdba07b523"
         },
@@ -1250,9 +1276,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.077623Z"
         },
-        "reviewed_at": "2026-07-06T04:41:30.202Z",
+        "reviewed_at": "2026-07-07T14:26:55.077623Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'conj:orbital-space-normal-bundle' aligns with Lean declaration. Sorry-free."
       }
@@ -1261,14 +1289,21 @@
       {
         "result": "pass",
         "notes": "Applied Milnor brevity. Reduced meta-text, fixed tone, preserved all tables and math.",
-        "reviewed_at": "2026-07-06T22:42:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.077623Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.077623Z"
+        },
+        "field_hash": {
+          "md": "417525869a3e",
+          "ts": "47ec8d258b4d",
+          "lean": "a8fdba07b523"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:30.202Z"
+  "updated_at": "2026-07-07T14:26:55.077623Z"
 }

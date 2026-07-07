@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/appendix-surreals/surreal-squeeze.lean"
   },
   "source_hashes": {
-    "md": "a51d9d0b419c",
+    "md": "3b7e75e7e4f8",
     "ts": "55c14e0bbbd9",
     "lean": "176e2ebf3658"
   },
@@ -37,14 +37,21 @@
       {
         "result": "pass",
         "notes": "Verified that the file already conforms well to the Milnor standard. Short declarative sentences explain the surreal squeeze without needing edits.",
-        "reviewed_at": "2026-07-06T22:46:32Z",
+        "reviewed_at": "2026-07-07T14:26:56.073210Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.073210Z"
+        },
+        "field_hash": {
+          "md": "3b7e75e7e4f8",
+          "ts": "55c14e0bbbd9",
+          "lean": "176e2ebf3658"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:55.206Z"
+  "updated_at": "2026-07-07T14:26:56.073210Z"
 }

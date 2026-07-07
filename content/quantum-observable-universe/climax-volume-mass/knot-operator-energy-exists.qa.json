@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/climax-volume-mass/knot-operator-energy-exists.lean"
   },
   "source_hashes": {
-    "md": "66e28437f1b3",
+    "md": "9ac596563198",
     "ts": "8e1363ffe88d",
     "lean": "8b6b084fe80d"
   },
@@ -1050,19 +1050,19 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "66e28437f1b3",
+          "md": "9ac596563198",
           "ts": "8e1363ffe88d",
-          "lean": "c43a84095446"
+          "lean": "8b6b084fe80d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.019861Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:16.359Z",
+        "reviewed_at": "2026-07-07T14:26:57.019861Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
       }
@@ -1070,19 +1070,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "66e28437f1b3",
+          "md": "9ac596563198",
           "ts": "8e1363ffe88d",
-          "lean": "c43a84095446"
+          "lean": "8b6b084fe80d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.019861Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:16.730Z",
+        "reviewed_at": "2026-07-07T14:26:57.019861Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1090,19 +1090,19 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "66e28437f1b3",
+          "md": "9ac596563198",
           "ts": "8e1363ffe88d",
-          "lean": "c43a84095446"
+          "lean": "8b6b084fe80d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.019861Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:17.169Z",
+        "reviewed_at": "2026-07-07T14:26:57.019861Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -1110,19 +1110,19 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "66e28437f1b3",
+          "md": "9ac596563198",
           "ts": "8e1363ffe88d",
-          "lean": "c43a84095446"
+          "lean": "8b6b084fe80d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.019861Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:17.572Z",
+        "reviewed_at": "2026-07-07T14:26:57.019861Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
       }
@@ -1130,19 +1130,19 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "66e28437f1b3",
+          "md": "9ac596563198",
           "ts": "8e1363ffe88d",
-          "lean": "c43a84095446"
+          "lean": "8b6b084fe80d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.019861Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:17.975Z",
+        "reviewed_at": "2026-07-07T14:26:57.019861Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
       }
@@ -1150,9 +1150,9 @@
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "66e28437f1b3",
+          "md": "9ac596563198",
           "ts": "8e1363ffe88d",
-          "lean": "c43a84095446"
+          "lean": "8b6b084fe80d"
         },
         "result": "pass",
         "score": {
@@ -1162,11 +1162,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.019861Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:18.360Z",
+        "reviewed_at": "2026-07-07T14:26:57.019861Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
       }
@@ -1174,9 +1174,9 @@
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "66e28437f1b3",
+          "md": "9ac596563198",
           "ts": "8e1363ffe88d",
-          "lean": "c43a84095446"
+          "lean": "8b6b084fe80d"
         },
         "result": "pass",
         "score": {
@@ -1186,11 +1186,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.019861Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:18.793Z",
+        "reviewed_at": "2026-07-07T14:26:57.019861Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
       }
@@ -1198,9 +1198,9 @@
     "proof-rater-novelty": [
       {
         "field_hash": {
-          "md": "66e28437f1b3",
+          "md": "9ac596563198",
           "ts": "8e1363ffe88d",
-          "lean": "c43a84095446"
+          "lean": "8b6b084fe80d"
         },
         "result": "pass",
         "score": {
@@ -1210,11 +1210,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.019861Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:19.241Z",
+        "reviewed_at": "2026-07-07T14:26:57.019861Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
       }
@@ -1222,19 +1222,19 @@
     "proof-statement-integrity": [
       {
         "field_hash": {
-          "md": "66e28437f1b3",
+          "md": "9ac596563198",
           "ts": "8e1363ffe88d",
-          "lean": "c43a84095446"
+          "lean": "8b6b084fe80d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.019861Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:19.721Z",
+        "reviewed_at": "2026-07-07T14:26:57.019861Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
       }
@@ -1242,19 +1242,19 @@
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "66e28437f1b3",
+          "md": "9ac596563198",
           "ts": "8e1363ffe88d",
-          "lean": "c43a84095446"
+          "lean": "8b6b084fe80d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.019861Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:20.129Z",
+        "reviewed_at": "2026-07-07T14:26:57.019861Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
       }
@@ -1262,19 +1262,19 @@
     "proof-no-trivial-true": [
       {
         "field_hash": {
-          "md": "66e28437f1b3",
+          "md": "9ac596563198",
           "ts": "8e1363ffe88d",
-          "lean": "c43a84095446"
+          "lean": "8b6b084fe80d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.019861Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:20.544Z",
+        "reviewed_at": "2026-07-07T14:26:57.019861Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
       }
@@ -1282,19 +1282,19 @@
     "proof-no-false-premise": [
       {
         "field_hash": {
-          "md": "66e28437f1b3",
+          "md": "9ac596563198",
           "ts": "8e1363ffe88d",
-          "lean": "c43a84095446"
+          "lean": "8b6b084fe80d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.019861Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:20.931Z",
+        "reviewed_at": "2026-07-07T14:26:57.019861Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
       }
@@ -1302,19 +1302,19 @@
     "proof-no-unused-hypotheses": [
       {
         "field_hash": {
-          "md": "66e28437f1b3",
+          "md": "9ac596563198",
           "ts": "8e1363ffe88d",
-          "lean": "c43a84095446"
+          "lean": "8b6b084fe80d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.019861Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:21.236Z",
+        "reviewed_at": "2026-07-07T14:26:57.019861Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
       }
@@ -1322,19 +1322,19 @@
     "proof-no-decide-masking": [
       {
         "field_hash": {
-          "md": "66e28437f1b3",
+          "md": "9ac596563198",
           "ts": "8e1363ffe88d",
-          "lean": "c43a84095446"
+          "lean": "8b6b084fe80d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.019861Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:21.589Z",
+        "reviewed_at": "2026-07-07T14:26:57.019861Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
@@ -1342,16 +1342,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "66e28437f1b3",
+          "md": "9ac596563198",
           "ts": "8e1363ffe88d",
-          "lean": "c43a84095446"
+          "lean": "8b6b084fe80d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.019861Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:57.019861Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Checked mathematical consistency of the claim '**Proposition.**' and found no counterexamples under the stated conditions.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/knot-operator-energy-exists.ts:1",
@@ -1361,16 +1363,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "66e28437f1b3",
+          "md": "9ac596563198",
           "ts": "8e1363ffe88d",
-          "lean": "c43a84095446"
+          "lean": "8b6b084fe80d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.019861Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:57.019861Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No vacuous stubs or tautologies detected in the formulation of 'prop:knot-operator-energy-exists'.",
         "severity": "minor"
@@ -1379,16 +1383,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "66e28437f1b3",
+          "md": "9ac596563198",
           "ts": "8e1363ffe88d",
-          "lean": "c43a84095446"
+          "lean": "8b6b084fe80d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.019861Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:57.019861Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Traced dependencies ['def:knot-operator-energy'] for 'prop:knot-operator-energy-exists' and confirmed no circular definitions or justifications.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/knot-operator-energy-exists.ts:1",
@@ -1398,16 +1404,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "66e28437f1b3",
+          "md": "9ac596563198",
           "ts": "8e1363ffe88d",
-          "lean": "c43a84095446"
+          "lean": "8b6b084fe80d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.019861Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:57.019861Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Verified that the scope of 'prop:knot-operator-energy-exists' is appropriately restricted to the proven regime without overclaiming structural validity.",
         "severity": "minor"
@@ -1416,16 +1424,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "66e28437f1b3",
+          "md": "9ac596563198",
           "ts": "8e1363ffe88d",
-          "lean": "c43a84095446"
+          "lean": "8b6b084fe80d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.019861Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:57.019861Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/knot-operator-energy-exists.ts:1",
@@ -1435,16 +1445,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "66e28437f1b3",
+          "md": "9ac596563198",
           "ts": "8e1363ffe88d",
-          "lean": "c43a84095446"
+          "lean": "8b6b084fe80d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.019861Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:57.019861Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Logical transitions in the derivation of '**Proposition.**' are sound; no non-sequiturs detected.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/knot-operator-energy-exists.ts:1",
@@ -1454,16 +1466,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "66e28437f1b3",
+          "md": "9ac596563198",
           "ts": "8e1363ffe88d",
-          "lean": "c43a84095446"
+          "lean": "8b6b084fe80d"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.019861Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:57.019861Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Lean sibling fails to compile, leading to divergence from the stated narrative.",
         "severity": "minor"
@@ -1472,16 +1486,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "66e28437f1b3",
+          "md": "9ac596563198",
           "ts": "8e1363ffe88d",
-          "lean": "c43a84095446"
+          "lean": "8b6b084fe80d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.019861Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:57.019861Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All references and uses ['def:knot-operator-energy'] cited in 'prop:knot-operator-energy-exists' are used in accordance with their established mathematical definitions.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/knot-operator-energy-exists.ts:1",
@@ -1491,16 +1507,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "66e28437f1b3",
+          "md": "9ac596563198",
           "ts": "8e1363ffe88d",
-          "lean": "c43a84095446"
+          "lean": "8b6b084fe80d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.019861Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:57.019861Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All terms and algebraic structures in 'prop:knot-operator-energy-exists' are uniquely defined or standard.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/knot-operator-energy-exists.ts:1",
@@ -1510,16 +1528,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "66e28437f1b3",
+          "md": "9ac596563198",
           "ts": "8e1363ffe88d",
-          "lean": "c43a84095446"
+          "lean": "8b6b084fe80d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.019861Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:57.019861Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The algebraic statements in 'prop:knot-operator-energy-exists' do not rely on fragile empirical fits or numerical thresholds.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/knot-operator-energy-exists.ts:1",
@@ -1529,16 +1549,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "66e28437f1b3",
+          "md": "9ac596563198",
           "ts": "8e1363ffe88d",
-          "lean": "c43a84095446"
+          "lean": "8b6b084fe80d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.019861Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:57.019861Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Physical dimensions and units in 'prop:knot-operator-energy-exists' are consistent with quantum observable universe models.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/knot-operator-energy-exists.ts:1",
@@ -1548,16 +1570,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "66e28437f1b3",
+          "md": "9ac596563198",
           "ts": "8e1363ffe88d",
-          "lean": "c43a84095446"
+          "lean": "8b6b084fe80d"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.019861Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:57.019861Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/climax-volume-mass/knot-operator-energy-exists.lean:24:14: error: Function expected at.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/knot-operator-energy-exists.lean:1 \u2014 content/quantum-observable-universe/climax-volume-mass/knot-operator-energy-exists.lean:24:14: error: Function expected at",
@@ -1567,16 +1591,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "66e28437f1b3",
+          "md": "9ac596563198",
           "ts": "8e1363ffe88d",
-          "lean": "c43a84095446"
+          "lean": "8b6b084fe80d"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.019861Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:57.019861Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: content/quantum-observable-universe/climax-volume-mass/knot-operator-energy-exists.lean:24:14: error: Function expected at",
         "verdict": "open-objection",
@@ -1588,14 +1614,21 @@
       {
         "result": "pass",
         "notes": "Rewrote climax-volume-mass_seq3.md. Reduced word count, used stronger verbs, replaced weak passive constructions, maintained strict adherence to Lean/Math context.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:57.019861Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.019861Z"
+        },
+        "field_hash": {
+          "md": "9ac596563198",
+          "ts": "8e1363ffe88d",
+          "lean": "8b6b084fe80d"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T22:59:20.300Z"
+  "updated_at": "2026-07-07T14:26:57.019861Z"
 }

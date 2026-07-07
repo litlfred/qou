@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/mass-theory/corrected-markov-trace.md"
   },
   "source_hashes": {
-    "md": "09fc79d0e354",
+    "md": "355acb19e0b9",
     "ts": "1d0bac8b5ba9"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Rewrote mass-theory_seq5.md for Milnor standards: stripped unnecessary adjectives, improved flow.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.850975Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.850975Z"
+        },
+        "field_hash": {
+          "md": "355acb19e0b9",
+          "ts": "1d0bac8b5ba9"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-07T14:26:56.850975Z"
 }

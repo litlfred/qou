@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.lean"
   },
   "source_hashes": {
-    "md": "fb2828f43082",
+    "md": "53c4cb852db1",
     "ts": "30a9217a058c",
     "lean": "d5c35ca903f2"
   },
@@ -1030,19 +1030,19 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "fb2828f43082",
+          "md": "53c4cb852db1",
           "ts": "30a9217a058c",
-          "lean": "7a4d279d9e3c"
+          "lean": "d5c35ca903f2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.163327Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:44.202Z",
+        "reviewed_at": "2026-07-07T14:26:56.163327Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
       }
@@ -1050,19 +1050,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "fb2828f43082",
+          "md": "53c4cb852db1",
           "ts": "30a9217a058c",
-          "lean": "7a4d279d9e3c"
+          "lean": "d5c35ca903f2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.163327Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:44.536Z",
+        "reviewed_at": "2026-07-07T14:26:56.163327Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1070,19 +1070,19 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "fb2828f43082",
+          "md": "53c4cb852db1",
           "ts": "30a9217a058c",
-          "lean": "7a4d279d9e3c"
+          "lean": "d5c35ca903f2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.163327Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:44.906Z",
+        "reviewed_at": "2026-07-07T14:26:56.163327Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -1090,19 +1090,19 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "fb2828f43082",
+          "md": "53c4cb852db1",
           "ts": "30a9217a058c",
-          "lean": "7a4d279d9e3c"
+          "lean": "d5c35ca903f2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.163327Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:45.283Z",
+        "reviewed_at": "2026-07-07T14:26:56.163327Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
       }
@@ -1184,20 +1184,20 @@
       },
       {
         "field_hash": {
-          "md": "fb2828f43082",
+          "md": "53c4cb852db1",
           "ts": "30a9217a058c",
-          "lean": "7a4d279d9e3c"
+          "lean": "d5c35ca903f2"
         },
         "result": "warn",
         "notes": "Narrative cites reconstruction theorem (reshetikhin1991/deligne1990) but Lean defers entire content to an axiom; no constructive strategy present.",
-        "reviewed_at": "2026-06-25T17:04:46.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.163327Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.163327Z"
         },
         "score": {
           "max": 1,
@@ -1248,20 +1248,20 @@
       },
       {
         "field_hash": {
-          "md": "fb2828f43082",
+          "md": "53c4cb852db1",
           "ts": "30a9217a058c",
-          "lean": "7a4d279d9e3c"
+          "lean": "d5c35ca903f2"
         },
         "result": "pass",
         "notes": "Tannaka-Krein equivalence Rep_loc(A) ~ Comod(H_xi) via fibre functor; standard, well-posed reconstruction statement.",
-        "reviewed_at": "2026-06-25T17:04:46.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.163327Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.163327Z"
         },
         "score": {
           "max": 1,
@@ -1312,20 +1312,20 @@
       },
       {
         "field_hash": {
-          "md": "fb2828f43082",
+          "md": "53c4cb852db1",
           "ts": "30a9217a058c",
-          "lean": "7a4d279d9e3c"
+          "lean": "d5c35ca903f2"
         },
         "result": "pass",
         "notes": "Specializes Tannaka-Krein to the localized-substrate / Reeb-Hopf-algebra setting; modest framing novelty over the classical theorem.",
-        "reviewed_at": "2026-06-25T17:04:46.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.163327Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.163327Z"
         },
         "score": {
           "max": 1,
@@ -1372,39 +1372,39 @@
       },
       {
         "field_hash": {
-          "md": "fb2828f43082",
+          "md": "53c4cb852db1",
           "ts": "30a9217a058c",
-          "lean": "7a4d279d9e3c"
+          "lean": "d5c35ca903f2"
         },
         "result": "pass",
         "notes": "md claim Rep_loc(A) simeq Comod(H_xi) faithfully encoded as Nonempty(RepLoc <=> ComodH) over opaque axiom types; backed by named axiom tannaka_krein_isomorphism_axiom + Ref (3b external-axiom), not sorry/trivial-instance masking.",
-        "reviewed_at": "2026-06-25T17:04:46.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.163327Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.163327Z"
         }
       }
     ],
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "fb2828f43082",
+          "md": "53c4cb852db1",
           "ts": "30a9217a058c",
-          "lean": "7a4d279d9e3c"
+          "lean": "d5c35ca903f2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.163327Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:47.758Z",
+        "reviewed_at": "2026-07-07T14:26:56.163327Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
       }
@@ -1412,19 +1412,19 @@
     "proof-no-trivial-true": [
       {
         "field_hash": {
-          "md": "fb2828f43082",
+          "md": "53c4cb852db1",
           "ts": "30a9217a058c",
-          "lean": "7a4d279d9e3c"
+          "lean": "d5c35ca903f2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.163327Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:48.153Z",
+        "reviewed_at": "2026-07-07T14:26:56.163327Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
       }
@@ -1468,20 +1468,20 @@
       },
       {
         "field_hash": {
-          "md": "fb2828f43082",
+          "md": "53c4cb852db1",
           "ts": "30a9217a058c",
-          "lean": "7a4d279d9e3c"
+          "lean": "d5c35ca903f2"
         },
         "result": "pass",
         "notes": "No premises; RepLoc/ComodH are inhabitable opaque types, no contradiction.",
-        "reviewed_at": "2026-06-25T17:04:46.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.163327Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.163327Z"
         }
       }
     ],
@@ -1524,20 +1524,20 @@
       },
       {
         "field_hash": {
-          "md": "fb2828f43082",
+          "md": "53c4cb852db1",
           "ts": "30a9217a058c",
-          "lean": "7a4d279d9e3c"
+          "lean": "d5c35ca903f2"
         },
         "result": "pass",
         "notes": "Theorem has no binders/hypotheses; nothing unused.",
-        "reviewed_at": "2026-06-25T17:04:46.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.163327Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.163327Z"
         }
       }
     ],
@@ -1562,37 +1562,39 @@
       },
       {
         "field_hash": {
-          "md": "fb2828f43082",
+          "md": "53c4cb852db1",
           "ts": "30a9217a058c",
-          "lean": "7a4d279d9e3c"
+          "lean": "d5c35ca903f2"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.lean, content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.163327Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.163327Z"
         }
       }
     ],
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "fb2828f43082",
+          "md": "53c4cb852db1",
           "ts": "30a9217a058c",
-          "lean": "7a4d279d9e3c"
+          "lean": "d5c35ca903f2"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.163327Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.163327Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "tannaka-krein-isomorphism.lean:1",
@@ -1602,17 +1604,19 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "fb2828f43082",
+          "md": "53c4cb852db1",
           "ts": "30a9217a058c",
-          "lean": "7a4d279d9e3c"
+          "lean": "d5c35ca903f2"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.163327Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.163327Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "major",
         "evidence": "tannaka-krein-isomorphism.lean:1",
@@ -1622,17 +1626,19 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "fb2828f43082",
+          "md": "53c4cb852db1",
           "ts": "30a9217a058c",
-          "lean": "7a4d279d9e3c"
+          "lean": "d5c35ca903f2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.163327Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.163327Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "tannaka-krein-isomorphism.ts:1",
@@ -1642,17 +1648,19 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "fb2828f43082",
+          "md": "53c4cb852db1",
           "ts": "30a9217a058c",
-          "lean": "7a4d279d9e3c"
+          "lean": "d5c35ca903f2"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.163327Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.163327Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "The prose presents 'Tannaka--Krein duality for the substrate' as verified, but the sibling Lean file fails to compile."
@@ -1661,17 +1669,19 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "fb2828f43082",
+          "md": "53c4cb852db1",
           "ts": "30a9217a058c",
-          "lean": "7a4d279d9e3c"
+          "lean": "d5c35ca903f2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.163327Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.163327Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "tannaka-krein-isomorphism.ts:1",
@@ -1681,17 +1691,19 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "fb2828f43082",
+          "md": "53c4cb852db1",
           "ts": "30a9217a058c",
-          "lean": "7a4d279d9e3c"
+          "lean": "d5c35ca903f2"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.163327Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.163327Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "tannaka-krein-isomorphism.lean:1",
@@ -1701,17 +1713,19 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "fb2828f43082",
+          "md": "53c4cb852db1",
           "ts": "30a9217a058c",
-          "lean": "7a4d279d9e3c"
+          "lean": "d5c35ca903f2"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.163327Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.163327Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.lean fails compilation, causing divergence from the narrative."
@@ -1720,17 +1734,19 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "fb2828f43082",
+          "md": "53c4cb852db1",
           "ts": "30a9217a058c",
-          "lean": "7a4d279d9e3c"
+          "lean": "d5c35ca903f2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.163327Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.163327Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "tannaka-krein-isomorphism.ts:1",
@@ -1740,17 +1756,19 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "fb2828f43082",
+          "md": "53c4cb852db1",
           "ts": "30a9217a058c",
-          "lean": "7a4d279d9e3c"
+          "lean": "d5c35ca903f2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.163327Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.163327Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "tannaka-krein-isomorphism.ts:1",
@@ -1760,17 +1778,19 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "fb2828f43082",
+          "md": "53c4cb852db1",
           "ts": "30a9217a058c",
-          "lean": "7a4d279d9e3c"
+          "lean": "d5c35ca903f2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.163327Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.163327Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "tannaka-krein-isomorphism.ts:1",
@@ -1780,17 +1800,19 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "fb2828f43082",
+          "md": "53c4cb852db1",
           "ts": "30a9217a058c",
-          "lean": "7a4d279d9e3c"
+          "lean": "d5c35ca903f2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.163327Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.163327Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "tannaka-krein-isomorphism.ts:1",
@@ -1800,17 +1822,19 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "fb2828f43082",
+          "md": "53c4cb852db1",
           "ts": "30a9217a058c",
-          "lean": "7a4d279d9e3c"
+          "lean": "d5c35ca903f2"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.163327Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.163327Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "tannaka-krein-isomorphism.lean:1 \u2014 content/quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.lean:37:68: error: unexpected token '/--'; expected 'lemma'",
@@ -1820,17 +1844,19 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "fb2828f43082",
+          "md": "53c4cb852db1",
           "ts": "30a9217a058c",
-          "lean": "7a4d279d9e3c"
+          "lean": "d5c35ca903f2"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.163327Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.163327Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "major",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/q-geometric-langlands/tannaka-krein-isomorphism.lean contains 'sorry' placeholders.",
@@ -1862,14 +1888,21 @@
       {
         "result": "pass",
         "notes": "Ensured linear exposition. Removed conversational padding around Tannaka--Krein steps. Formatted explicit examples as natural continuations rather than cross-referenced callbacks.",
-        "reviewed_at": "2026-07-06T22:46:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.163327Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.163327Z"
+        },
+        "field_hash": {
+          "md": "53c4cb852db1",
+          "ts": "30a9217a058c",
+          "lean": "d5c35ca903f2"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.994Z"
+  "updated_at": "2026-07-07T14:26:56.163327Z"
 }

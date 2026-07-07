@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/stochastic-mechanics/adelic-reeb-restricted-product.lean"
   },
   "source_hashes": {
-    "md": "308a55fe9906",
+    "md": "1b3877f46491",
     "ts": "aafb2a8d9d3c",
     "lean": "1d8949545791"
   },
@@ -1051,14 +1051,21 @@
       {
         "result": "pass",
         "notes": "Cleaned up the graded Baer-star and classical limit implications. Reduced clutter around the Riemann hypothesis statement and macroscopic stability.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.031368Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.031368Z"
+        },
+        "field_hash": {
+          "md": "1b3877f46491",
+          "ts": "aafb2a8d9d3c",
+          "lean": "1d8949545791"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T23:04:20.088Z"
+  "updated_at": "2026-07-07T14:26:56.031368Z"
 }

@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/information-theory/p-vs-np-boundary-intro.md"
   },
   "source_hashes": {
-    "md": "da9e30d6d938",
+    "md": "b31ff75355f9",
     "ts": "50f6befeb328"
   },
   "criteria": {
@@ -835,16 +835,18 @@
       },
       {
         "field_hash": {
-          "md": "da9e30d6d938",
+          "md": "b31ff75355f9",
           "ts": "50f6befeb328"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.591602Z"
         },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_at": "2026-07-07T14:26:55.591602Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
@@ -867,16 +869,18 @@
       },
       {
         "field_hash": {
-          "md": "da9e30d6d938",
+          "md": "b31ff75355f9",
           "ts": "50f6befeb328"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.591602Z"
         },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_at": "2026-07-07T14:26:55.591602Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
@@ -898,16 +902,18 @@
       },
       {
         "field_hash": {
-          "md": "da9e30d6d938",
+          "md": "b31ff75355f9",
           "ts": "50f6befeb328"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.591602Z"
         },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_at": "2026-07-07T14:26:55.591602Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
@@ -930,16 +936,18 @@
       },
       {
         "field_hash": {
-          "md": "da9e30d6d938",
+          "md": "b31ff75355f9",
           "ts": "50f6befeb328"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.591602Z"
         },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_at": "2026-07-07T14:26:55.591602Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
@@ -961,16 +969,18 @@
       },
       {
         "field_hash": {
-          "md": "da9e30d6d938",
+          "md": "b31ff75355f9",
           "ts": "50f6befeb328"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.591602Z"
         },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_at": "2026-07-07T14:26:55.591602Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "severity": "major",
         "notes": "Recasting the entire P vs NP problem as a jet horizon opacity claim is an enormous theoretical overreach that trivializes the core computational difficulty into geometric language."
@@ -995,16 +1005,18 @@
       },
       {
         "field_hash": {
-          "md": "da9e30d6d938",
+          "md": "b31ff75355f9",
           "ts": "50f6befeb328"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.591602Z"
         },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_at": "2026-07-07T14:26:55.591602Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "severity": "minor",
         "notes": "The exact geometric correspondence likely hides the combinatorial hardness of NP-complete problems in the 'opacity' parameter."
@@ -1029,16 +1041,18 @@
       },
       {
         "field_hash": {
-          "md": "da9e30d6d938",
+          "md": "b31ff75355f9",
           "ts": "50f6befeb328"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.591602Z"
         },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_at": "2026-07-07T14:26:55.591602Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
@@ -1060,16 +1074,18 @@
       },
       {
         "field_hash": {
-          "md": "da9e30d6d938",
+          "md": "b31ff75355f9",
           "ts": "50f6befeb328"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.591602Z"
         },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_at": "2026-07-07T14:26:55.591602Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
@@ -1092,16 +1108,18 @@
       },
       {
         "field_hash": {
-          "md": "da9e30d6d938",
+          "md": "b31ff75355f9",
           "ts": "50f6befeb328"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.591602Z"
         },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_at": "2026-07-07T14:26:55.591602Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
@@ -1124,16 +1142,18 @@
       },
       {
         "field_hash": {
-          "md": "da9e30d6d938",
+          "md": "b31ff75355f9",
           "ts": "50f6befeb328"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.591602Z"
         },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_at": "2026-07-07T14:26:55.591602Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
@@ -1156,16 +1176,18 @@
       },
       {
         "field_hash": {
-          "md": "da9e30d6d938",
+          "md": "b31ff75355f9",
           "ts": "50f6befeb328"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.591602Z"
         },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_at": "2026-07-07T14:26:55.591602Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
@@ -1188,16 +1210,18 @@
       },
       {
         "field_hash": {
-          "md": "da9e30d6d938",
+          "md": "b31ff75355f9",
           "ts": "50f6befeb328"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.591602Z"
         },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_at": "2026-07-07T14:26:55.591602Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
@@ -1220,16 +1244,18 @@
       },
       {
         "field_hash": {
-          "md": "da9e30d6d938",
+          "md": "b31ff75355f9",
           "ts": "50f6befeb328"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.591602Z"
         },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_at": "2026-07-07T14:26:55.591602Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
@@ -1253,16 +1279,18 @@
       },
       {
         "field_hash": {
-          "md": "da9e30d6d938",
+          "md": "b31ff75355f9",
           "ts": "50f6befeb328"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-20",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.591602Z"
         },
-        "reviewed_at": "2026-06-28T17:59:01.740Z",
+        "reviewed_at": "2026-07-07T14:26:55.591602Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
@@ -1270,14 +1298,20 @@
       {
         "result": "pass",
         "notes": "Flattened complex tables/lists into dense, exact prose where appropriate. Aligned notation. Replaced 'we define' with direct declarative statements. Improved transitions between blocks while retaining original file markers.",
-        "reviewed_at": "2026-07-06T22:51:10Z",
+        "reviewed_at": "2026-07-07T14:26:55.591602Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.591602Z"
+        },
+        "field_hash": {
+          "md": "b31ff75355f9",
+          "ts": "50f6befeb328"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.008Z"
+  "updated_at": "2026-07-07T14:26:55.591602Z"
 }

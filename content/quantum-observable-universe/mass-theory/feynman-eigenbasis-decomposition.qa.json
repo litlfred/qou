@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/mass-theory/feynman-eigenbasis-decomposition.md"
   },
   "source_hashes": {
-    "md": "72b143aa4e84",
+    "md": "9022049c5804",
     "ts": "48339defe7d8"
   },
   "criteria": {
@@ -1100,15 +1100,17 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "72b143aa4e84",
+          "md": "9022049c5804",
           "ts": "48339defe7d8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.988202Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.988202Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Statement contains only the bare claim without physical interpretation.",
         "severity": "minor"
@@ -1117,19 +1119,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "72b143aa4e84",
-          "ts": "48339defe7d8",
-          "lean": "9a535e920808"
+          "md": "9022049c5804",
+          "ts": "48339defe7d8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.988202Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:59.630Z",
+        "reviewed_at": "2026-07-07T14:26:56.988202Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1137,15 +1138,17 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "72b143aa4e84",
+          "md": "9022049c5804",
           "ts": "48339defe7d8"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.988202Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.988202Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The sibling Lean file content/quantum-observable-universe/mass-theory/feynman-eigenbasis-decomposition.lean is missing entirely.",
         "evidence": "content/quantum-observable-universe/mass-theory/feynman-eigenbasis-decomposition.md:1",
@@ -1155,19 +1158,18 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "72b143aa4e84",
-          "ts": "48339defe7d8",
-          "lean": "9a535e920808"
+          "md": "9022049c5804",
+          "ts": "48339defe7d8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.988202Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:00.381Z",
+        "reviewed_at": "2026-07-07T14:26:56.988202Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
       }
@@ -1175,19 +1177,18 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "72b143aa4e84",
-          "ts": "48339defe7d8",
-          "lean": "9a535e920808"
+          "md": "9022049c5804",
+          "ts": "48339defe7d8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.988202Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:00.796Z",
+        "reviewed_at": "2026-07-07T14:26:56.988202Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
       }
@@ -1195,9 +1196,8 @@
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "72b143aa4e84",
-          "ts": "48339defe7d8",
-          "lean": "9a535e920808"
+          "md": "9022049c5804",
+          "ts": "48339defe7d8"
         },
         "result": "pass",
         "score": {
@@ -1207,11 +1207,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.988202Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:01.189Z",
+        "reviewed_at": "2026-07-07T14:26:56.988202Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
       }
@@ -1219,9 +1219,8 @@
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "72b143aa4e84",
-          "ts": "48339defe7d8",
-          "lean": "9a535e920808"
+          "md": "9022049c5804",
+          "ts": "48339defe7d8"
         },
         "result": "pass",
         "score": {
@@ -1231,11 +1230,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.988202Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:01.618Z",
+        "reviewed_at": "2026-07-07T14:26:56.988202Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
       }
@@ -1243,9 +1242,8 @@
     "proof-rater-novelty": [
       {
         "field_hash": {
-          "md": "72b143aa4e84",
-          "ts": "48339defe7d8",
-          "lean": "9a535e920808"
+          "md": "9022049c5804",
+          "ts": "48339defe7d8"
         },
         "result": "pass",
         "score": {
@@ -1255,11 +1253,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.988202Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:01.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.988202Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
       }
@@ -1267,19 +1265,18 @@
     "proof-statement-integrity": [
       {
         "field_hash": {
-          "md": "72b143aa4e84",
-          "ts": "48339defe7d8",
-          "lean": "9a535e920808"
+          "md": "9022049c5804",
+          "ts": "48339defe7d8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.988202Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:02.354Z",
+        "reviewed_at": "2026-07-07T14:26:56.988202Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
       }
@@ -1287,19 +1284,18 @@
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "72b143aa4e84",
-          "ts": "48339defe7d8",
-          "lean": "9a535e920808"
+          "md": "9022049c5804",
+          "ts": "48339defe7d8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.988202Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:02.708Z",
+        "reviewed_at": "2026-07-07T14:26:56.988202Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
       }
@@ -1307,19 +1303,18 @@
     "proof-no-trivial-true": [
       {
         "field_hash": {
-          "md": "72b143aa4e84",
-          "ts": "48339defe7d8",
-          "lean": "9a535e920808"
+          "md": "9022049c5804",
+          "ts": "48339defe7d8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.988202Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:02.990Z",
+        "reviewed_at": "2026-07-07T14:26:56.988202Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
       }
@@ -1327,19 +1322,18 @@
     "proof-no-false-premise": [
       {
         "field_hash": {
-          "md": "72b143aa4e84",
-          "ts": "48339defe7d8",
-          "lean": "9a535e920808"
+          "md": "9022049c5804",
+          "ts": "48339defe7d8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.988202Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:03.439Z",
+        "reviewed_at": "2026-07-07T14:26:56.988202Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
       }
@@ -1347,19 +1341,18 @@
     "proof-no-unused-hypotheses": [
       {
         "field_hash": {
-          "md": "72b143aa4e84",
-          "ts": "48339defe7d8",
-          "lean": "9a535e920808"
+          "md": "9022049c5804",
+          "ts": "48339defe7d8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.988202Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:03.855Z",
+        "reviewed_at": "2026-07-07T14:26:56.988202Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
       }
@@ -1367,19 +1360,18 @@
     "proof-no-decide-masking": [
       {
         "field_hash": {
-          "md": "72b143aa4e84",
-          "ts": "48339defe7d8",
-          "lean": "9a535e920808"
+          "md": "9022049c5804",
+          "ts": "48339defe7d8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.988202Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:04.274Z",
+        "reviewed_at": "2026-07-07T14:26:56.988202Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
@@ -1387,15 +1379,17 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "72b143aa4e84",
+          "md": "9022049c5804",
           "ts": "48339defe7d8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.988202Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.988202Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/feynman-eigenbasis-decomposition.ts:1",
@@ -1405,15 +1399,17 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "72b143aa4e84",
+          "md": "9022049c5804",
           "ts": "48339defe7d8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.988202Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.988202Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-vacuous.",
         "severity": "minor"
@@ -1422,15 +1418,17 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "72b143aa4e84",
+          "md": "9022049c5804",
           "ts": "48339defe7d8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.988202Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.988202Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/feynman-eigenbasis-decomposition.ts:1",
@@ -1440,15 +1438,17 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "72b143aa4e84",
+          "md": "9022049c5804",
           "ts": "48339defe7d8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.988202Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.988202Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
@@ -1457,15 +1457,17 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "72b143aa4e84",
+          "md": "9022049c5804",
           "ts": "48339defe7d8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.988202Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.988202Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/feynman-eigenbasis-decomposition.ts:1",
@@ -1475,15 +1477,17 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "72b143aa4e84",
+          "md": "9022049c5804",
           "ts": "48339defe7d8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.988202Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.988202Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/feynman-eigenbasis-decomposition.ts:1",
@@ -1493,15 +1497,17 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "72b143aa4e84",
+          "md": "9022049c5804",
           "ts": "48339defe7d8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.988202Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.988202Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
         "evidence": "content/quantum-observable-universe/mass-theory/feynman-eigenbasis-decomposition.ts:1",
@@ -1511,15 +1517,17 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "72b143aa4e84",
+          "md": "9022049c5804",
           "ts": "48339defe7d8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.988202Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.988202Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/feynman-eigenbasis-decomposition.ts:1",
@@ -1529,15 +1537,17 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "72b143aa4e84",
+          "md": "9022049c5804",
           "ts": "48339defe7d8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.988202Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.988202Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/feynman-eigenbasis-decomposition.ts:1",
@@ -1547,15 +1557,17 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "72b143aa4e84",
+          "md": "9022049c5804",
           "ts": "48339defe7d8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.988202Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.988202Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/feynman-eigenbasis-decomposition.ts:1",
@@ -1565,15 +1577,17 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "72b143aa4e84",
+          "md": "9022049c5804",
           "ts": "48339defe7d8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.988202Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.988202Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-reproducibility.",
         "severity": "minor"
@@ -1582,15 +1596,17 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "72b143aa4e84",
+          "md": "9022049c5804",
           "ts": "48339defe7d8"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.988202Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.988202Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Referee verdict: open-objection. Objection: Sibling Lean file is missing.",
         "severity": "critical",
@@ -1601,16 +1617,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "72b143aa4e84",
+          "md": "9022049c5804",
           "ts": "48339defe7d8"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.988202Z"
         },
-        "reviewed_at": "2026-06-28T10:58:44.648Z",
+        "reviewed_at": "2026-07-07T14:26:56.988202Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No Lean sibling required; narrative matches the expected configuration.",
         "severity": "minor"
@@ -1620,14 +1638,20 @@
       {
         "result": "pass",
         "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
-        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.988202Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.988202Z"
+        },
+        "field_hash": {
+          "md": "9022049c5804",
+          "ts": "48339defe7d8"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-07T14:26:56.988202Z"
 }

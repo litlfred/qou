@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/quantum-universes/positive-definite-dagger.md"
   },
   "source_hashes": {
-    "md": "b81175d8bd7d",
+    "md": "9f0179ed588b",
     "ts": "5f55ba2fe404"
   },
   "criteria": {
@@ -1061,17 +1061,18 @@
       },
       {
         "field_hash": {
-          "md": "5b42f8bb30a7",
-          "ts": "5f55ba2fe404",
-          "lean": "2dabb305a819"
+          "md": "9f0179ed588b",
+          "ts": "5f55ba2fe404"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.078748Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:57.078748Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Statement is the dagger definition + positive-definiteness claim; the closing one-line 'categorical analogue of GNS positivity' is a brief contextual note, not substantive mislocated interpretation."
       }
@@ -1097,17 +1098,18 @@
       },
       {
         "field_hash": {
-          "md": "5b42f8bb30a7",
-          "ts": "5f55ba2fe404",
-          "lean": "2dabb305a819"
+          "md": "9f0179ed588b",
+          "ts": "5f55ba2fe404"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.078748Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:57.078748Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
@@ -1132,17 +1134,18 @@
       },
       {
         "field_hash": {
-          "md": "5b42f8bb30a7",
-          "ts": "5f55ba2fe404",
-          "lean": "2dabb305a819"
+          "md": "9f0179ed588b",
+          "ts": "5f55ba2fe404"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.078748Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:57.078748Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Positivity stated over generic `End(\ud835\udfd9) \u2245 R` (a square in R via pivotal structure), no Real.*/order-over-\u211d hard-coded; matches the generic quantum-universes regime."
       }
@@ -1168,17 +1171,18 @@
       },
       {
         "field_hash": {
-          "md": "5b42f8bb30a7",
-          "ts": "5f55ba2fe404",
-          "lean": "2dabb305a819"
+          "md": "9f0179ed588b",
+          "ts": "5f55ba2fe404"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.078748Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:57.078748Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Proof sketch uses antipode S\u00b2=id, Frobenius associativity, and non-degeneracy \u2014 algebraic; 'square in R, hence positive' is a pivotal-structure argument, no archimedean machinery (linarith/IVT/Real.*)."
       }
@@ -1218,17 +1222,18 @@
       },
       {
         "field_hash": {
-          "md": "5b42f8bb30a7",
-          "ts": "5f55ba2fe404",
-          "lean": "2dabb305a819"
+          "md": "9f0179ed588b",
+          "ts": "5f55ba2fe404"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.078748Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:57.078748Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "major",
         "evidence": "positive-definite-dagger.lean:57-60: `theorem positive_definite_dagger_exists (C) ... : \u2203 (p : PositiveDefiniteStructure C), True := sorry` vs positive-definite-dagger.md:10-15: \"\u2020 is a positive-definite involutive structure ... for every non-zero morphism f : \ud835\udfd9 \u2192 X, the composite f\u2020 \u2218 f is a positive element\".",
@@ -1278,20 +1283,19 @@
       },
       {
         "field_hash": {
-          "md": "5b42f8bb30a7",
-          "ts": "5f55ba2fe404",
-          "lean": "2dabb305a819"
+          "md": "9f0179ed588b",
+          "ts": "5f55ba2fe404"
         },
         "result": "warn",
         "notes": ".md proof sketch (involutive via S\u00b2=id+Frobenius assoc; positivity via non-degeneracy) is clear, but Lean does none of it: one file sorries, the other assumes the implication.",
-        "reviewed_at": "2026-06-25T17:08:05.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.078748Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.078748Z"
         },
         "score": {
           "max": 1,
@@ -1342,20 +1346,19 @@
       },
       {
         "field_hash": {
-          "md": "5b42f8bb30a7",
-          "ts": "5f55ba2fe404",
-          "lean": "2dabb305a819"
+          "md": "9f0179ed588b",
+          "ts": "5f55ba2fe404"
         },
         "result": "pass",
         "notes": "Well-posed: Frobenius dagger f\u2020=\u222b\u2218\u03bc(S(f)\u2297-) is involutive + positive-definite (categorical GNS positivity, Kock Ch.2).",
-        "reviewed_at": "2026-06-25T17:08:05.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.078748Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.078748Z"
         },
         "score": {
           "max": 1,
@@ -1406,20 +1409,19 @@
       },
       {
         "field_hash": {
-          "md": "5b42f8bb30a7",
-          "ts": "5f55ba2fe404",
-          "lean": "2dabb305a819"
+          "md": "9f0179ed588b",
+          "ts": "5f55ba2fe404"
         },
         "result": "warn",
         "notes": "Lean adds no derivation; positivity claim axiomatised as a field; existence file is sorry+True. PositiveDefiniteStructure def itself is mild content.",
-        "reviewed_at": "2026-06-25T17:08:06.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.078748Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.078748Z"
         },
         "score": {
           "max": 1,
@@ -1466,20 +1468,19 @@
       },
       {
         "field_hash": {
-          "md": "5b42f8bb30a7",
-          "ts": "5f55ba2fe404",
-          "lean": "2dabb305a819"
+          "md": "9f0179ed588b",
+          "ts": "5f55ba2fe404"
         },
         "result": "fail",
         "notes": "Both Lean files deficient: positive-definite-dagger.lean proves \u2203p,True := sorry (vacuous True goal + sorry); frobenius_dagger_positive_definite.lean axiomatises the positivity implication as class field claim_dagger_positive. Neither derives f\u2020\u2218f>0.",
-        "reviewed_at": "2026-06-25T17:08:05.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.078748Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.078748Z"
         }
       }
     ],
@@ -1522,20 +1523,19 @@
       },
       {
         "field_hash": {
-          "md": "5b42f8bb30a7",
-          "ts": "5f55ba2fe404",
-          "lean": "2dabb305a819"
+          "md": "9f0179ed588b",
+          "ts": "5f55ba2fe404"
         },
         "result": "fail",
         "notes": "frobenius_dagger_positive_definite := ctx.claim_dagger_positive f h \u2014 projects the class field that IS the positivity conclusion. Self-assuming projection.",
-        "reviewed_at": "2026-06-25T17:08:05.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.078748Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.078748Z"
         }
       }
     ],
@@ -1560,20 +1560,19 @@
       },
       {
         "field_hash": {
-          "md": "5b42f8bb30a7",
-          "ts": "5f55ba2fe404",
-          "lean": "2dabb305a819"
+          "md": "9f0179ed588b",
+          "ts": "5f55ba2fe404"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: no `: True` token in resolved Lean source (content/quantum-observable-universe/quantum-universes/positive-definite-dagger.lean, content/quantum-observable-universe/lean/QOU/frobenius_dagger_positive_definite.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.078748Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.078748Z"
         }
       }
     ],
@@ -1616,20 +1615,19 @@
       },
       {
         "field_hash": {
-          "md": "5b42f8bb30a7",
-          "ts": "5f55ba2fe404",
-          "lean": "2dabb305a819"
+          "md": "9f0179ed588b",
+          "ts": "5f55ba2fe404"
         },
         "result": "pass",
         "notes": "FrobeniusDaggerContext satisfiable (isPositive:=True etc.); PositiveDefiniteStructure C inhabitable. No contradictory premise.",
-        "reviewed_at": "2026-06-25T17:08:05.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.078748Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.078748Z"
         }
       }
     ],
@@ -1672,20 +1670,19 @@
       },
       {
         "field_hash": {
-          "md": "5b42f8bb30a7",
-          "ts": "5f55ba2fe404",
-          "lean": "2dabb305a819"
+          "md": "9f0179ed588b",
+          "ts": "5f55ba2fe404"
         },
         "result": "pass",
         "notes": "File2: ctx,f,h all used. File1: C + instances used. No unused binder (vacuity is the sorry + projection, not unused binders).",
-        "reviewed_at": "2026-06-25T17:08:05.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.078748Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.078748Z"
         }
       }
     ],
@@ -1710,37 +1707,37 @@
       },
       {
         "field_hash": {
-          "md": "5b42f8bb30a7",
-          "ts": "5f55ba2fe404",
-          "lean": "2dabb305a819"
+          "md": "9f0179ed588b",
+          "ts": "5f55ba2fe404"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/quantum-universes/positive-definite-dagger.lean, content/quantum-observable-universe/lean/QOU/frobenius_dagger_positive_definite.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.078748Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.078748Z"
         }
       }
     ],
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "5b42f8bb30a7",
-          "ts": "5f55ba2fe404",
-          "lean": "2dabb305a819"
+          "md": "9f0179ed588b",
+          "ts": "5f55ba2fe404"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.078748Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:57.078748Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/positive-definite-dagger.ts:1",
@@ -1750,17 +1747,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "5b42f8bb30a7",
-          "ts": "5f55ba2fe404",
-          "lean": "2dabb305a819"
+          "md": "9f0179ed588b",
+          "ts": "5f55ba2fe404"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.078748Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:57.078748Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/positive-definite-dagger.lean:1",
@@ -1770,17 +1768,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "5b42f8bb30a7",
-          "ts": "5f55ba2fe404",
-          "lean": "2dabb305a819"
+          "md": "9f0179ed588b",
+          "ts": "5f55ba2fe404"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.078748Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:57.078748Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/positive-definite-dagger.ts:1",
@@ -1790,17 +1789,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "5b42f8bb30a7",
-          "ts": "5f55ba2fe404",
-          "lean": "2dabb305a819"
+          "md": "9f0179ed588b",
+          "ts": "5f55ba2fe404"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.078748Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:57.078748Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "The prose in 'Let (\\mathbf{C}, A, \\tau) be a' presents the result as established, but the Lean formalization is incomplete (contains sorry / fails compilation)."
@@ -1809,17 +1809,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "5b42f8bb30a7",
-          "ts": "5f55ba2fe404",
-          "lean": "2dabb305a819"
+          "md": "9f0179ed588b",
+          "ts": "5f55ba2fe404"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.078748Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:57.078748Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/positive-definite-dagger.ts:1",
@@ -1829,17 +1830,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "5b42f8bb30a7",
-          "ts": "5f55ba2fe404",
-          "lean": "2dabb305a819"
+          "md": "9f0179ed588b",
+          "ts": "5f55ba2fe404"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.078748Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:57.078748Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/positive-definite-dagger.ts:1",
@@ -1849,17 +1851,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "5b42f8bb30a7",
-          "ts": "5f55ba2fe404",
-          "lean": "2dabb305a819"
+          "md": "9f0179ed588b",
+          "ts": "5f55ba2fe404"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.078748Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:57.078748Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/positive-definite-dagger.lean:1",
@@ -1869,17 +1872,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "5b42f8bb30a7",
-          "ts": "5f55ba2fe404",
-          "lean": "2dabb305a819"
+          "md": "9f0179ed588b",
+          "ts": "5f55ba2fe404"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.078748Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:57.078748Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/positive-definite-dagger.ts:1",
@@ -1889,17 +1893,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "5b42f8bb30a7",
-          "ts": "5f55ba2fe404",
-          "lean": "2dabb305a819"
+          "md": "9f0179ed588b",
+          "ts": "5f55ba2fe404"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.078748Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:57.078748Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/positive-definite-dagger.ts:1",
@@ -1909,17 +1914,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "5b42f8bb30a7",
-          "ts": "5f55ba2fe404",
-          "lean": "2dabb305a819"
+          "md": "9f0179ed588b",
+          "ts": "5f55ba2fe404"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.078748Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:57.078748Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/positive-definite-dagger.ts:1",
@@ -1929,17 +1935,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "5b42f8bb30a7",
-          "ts": "5f55ba2fe404",
-          "lean": "2dabb305a819"
+          "md": "9f0179ed588b",
+          "ts": "5f55ba2fe404"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.078748Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:57.078748Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/positive-definite-dagger.ts:1",
@@ -1949,17 +1956,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "5b42f8bb30a7",
-          "ts": "5f55ba2fe404",
-          "lean": "2dabb305a819"
+          "md": "9f0179ed588b",
+          "ts": "5f55ba2fe404"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.078748Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:57.078748Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/positive-definite-dagger.ts:1",
@@ -1969,17 +1977,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "5b42f8bb30a7",
-          "ts": "5f55ba2fe404",
-          "lean": "2dabb305a819"
+          "md": "9f0179ed588b",
+          "ts": "5f55ba2fe404"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.078748Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:57.078748Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/positive-definite-dagger.md:1 \u2014 Let (\\mathbf{C}, A, \\tau) be a",
@@ -1992,14 +2001,20 @@
       {
         "result": "pass",
         "notes": "Shortened the consequences introduction. Clearly defined the Frobenius relation and involutive structures. Separated the adjoint notations properly.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:57.078748Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.078748Z"
+        },
+        "field_hash": {
+          "md": "9f0179ed588b",
+          "ts": "5f55ba2fe404"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-07T14:26:57.078748Z"
 }

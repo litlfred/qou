@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/mass-theory/intro-parity-classification-discrepancy.md"
   },
   "source_hashes": {
-    "ts": "e072779241ba",
-    "md": "c6d8c4a56604"
+    "md": "229886c9ae01",
+    "ts": "e072779241ba"
   },
   "criteria": {
     "q-usage-regime-detected": [
@@ -128,14 +128,20 @@
       {
         "result": "pass",
         "notes": "Rewrote prose sections of mass-theory_seq42.md to enforce H1-H8 and milnor-brevity. Preserved all math blocks and original section markers. Ensured linear flow, minimal technical clutter, and short declarative sentences.",
-        "reviewed_at": "2026-07-06T22:51:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.956296Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.956296Z"
+        },
+        "field_hash": {
+          "md": "229886c9ae01",
+          "ts": "e072779241ba"
         }
       }
     ]
   },
-  "updated_at": "2026-06-01T16:06:38.106Z"
+  "updated_at": "2026-07-07T14:26:56.956296Z"
 }

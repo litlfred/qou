@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/models-of-qous/symmetric-point-channel-collapse.lean"
   },
   "source_hashes": {
-    "md": "e7c0471248dd",
+    "md": "d4c3737354dc",
     "ts": "97c9d450c125",
     "lean": "b61f4443ec22"
   },
@@ -1051,14 +1051,21 @@
       {
         "result": "pass",
         "notes": "Tightened language, enforced 'we' instead of passive voice, removed forward-looking references, preserved equations.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.423973Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.423973Z"
+        },
+        "field_hash": {
+          "md": "d4c3737354dc",
+          "ts": "97c9d450c125",
+          "lean": "b61f4443ec22"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T18:21:24.666Z"
+  "updated_at": "2026-07-07T14:26:55.423973Z"
 }

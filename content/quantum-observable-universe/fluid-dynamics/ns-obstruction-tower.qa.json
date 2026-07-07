@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.md"
   },
   "source_hashes": {
-    "md": "1759c7c70cc6",
+    "md": "a3390ddaddb9",
     "ts": "b7e562226f04"
   },
   "criteria": {
@@ -1013,18 +1013,18 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "1759c7c70cc6",
+          "md": "a3390ddaddb9",
           "ts": "b7e562226f04"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.270924Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:46.227Z",
+        "reviewed_at": "2026-07-07T14:26:56.270924Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
       }
@@ -1032,18 +1032,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "1759c7c70cc6",
+          "md": "a3390ddaddb9",
           "ts": "b7e562226f04"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.270924Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:46.700Z",
+        "reviewed_at": "2026-07-07T14:26:56.270924Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1051,18 +1051,18 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "1759c7c70cc6",
+          "md": "a3390ddaddb9",
           "ts": "b7e562226f04"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.270924Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:47.108Z",
+        "reviewed_at": "2026-07-07T14:26:56.270924Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -1070,18 +1070,18 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "1759c7c70cc6",
+          "md": "a3390ddaddb9",
           "ts": "b7e562226f04"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.270924Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:47.481Z",
+        "reviewed_at": "2026-07-07T14:26:56.270924Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
       }
@@ -1160,19 +1160,19 @@
       },
       {
         "field_hash": {
-          "md": "1759c7c70cc6",
+          "md": "a3390ddaddb9",
           "ts": "b7e562226f04"
         },
         "result": "pass",
         "notes": ".md gives detailed local-cohomology / restriction argument; Lean composes the iff cleanly.",
-        "reviewed_at": "2026-06-25T16:52:55.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.270924Z",
         "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.270924Z"
         },
         "score": {
           "max": 1,
@@ -1221,19 +1221,19 @@
       },
       {
         "field_hash": {
-          "md": "1759c7c70cc6",
+          "md": "a3390ddaddb9",
           "ts": "b7e562226f04"
         },
         "result": "pass",
         "notes": "Goal (NS-singular iff some restricted Yekutieli obstruction nonzero) substantive, well-posed criterion.",
-        "reviewed_at": "2026-06-25T16:52:55.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.270924Z",
         "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.270924Z"
         },
         "score": {
           "max": 1,
@@ -1282,19 +1282,19 @@
       },
       {
         "field_hash": {
-          "md": "1759c7c70cc6",
+          "md": "a3390ddaddb9",
           "ts": "b7e562226f04"
         },
         "result": "pass",
         "notes": "Real result: NS regularity criterion via Yekutieli tower restriction to collision locus.",
-        "reviewed_at": "2026-06-25T16:52:55.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.270924Z",
         "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.270924Z"
         },
         "score": {
           "max": 1,
@@ -1339,19 +1339,19 @@
       },
       {
         "field_hash": {
-          "md": "1759c7c70cc6",
+          "md": "a3390ddaddb9",
           "ts": "b7e562226f04"
         },
         "result": "pass",
         "notes": "Faithful: thm derives 'NS-singular iff exists n res_sigma n != 0' via Iff.intro from 2 directional hyps; no sorry; non-degenerate \u00a73b-cond.",
-        "reviewed_at": "2026-06-25T16:52:55.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.270924Z",
         "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.270924Z"
         }
       }
     ],
@@ -1392,19 +1392,19 @@
       },
       {
         "field_hash": {
-          "md": "1759c7c70cc6",
+          "md": "a3390ddaddb9",
           "ts": "b7e562226f04"
         },
         "result": "pass",
         "notes": "Not a projection: conclusion is an iff built by Iff.intro from forward (obstruction_forces_singular) + backward (singular_exhibits_obstruction) fields.",
-        "reviewed_at": "2026-06-25T16:52:55.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.270924Z",
         "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.270924Z"
         }
       }
     ],
@@ -1428,19 +1428,19 @@
       },
       {
         "field_hash": {
-          "md": "1759c7c70cc6",
+          "md": "a3390ddaddb9",
           "ts": "b7e562226f04"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: no `: True` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/FluidDynamics/ns_obstruction_tower.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.270924Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.270924Z"
         }
       }
     ],
@@ -1481,19 +1481,19 @@
       },
       {
         "field_hash": {
-          "md": "1759c7c70cc6",
+          "md": "a3390ddaddb9",
           "ts": "b7e562226f04"
         },
         "result": "pass",
         "notes": "Directional implications satisfiable; no contradictory hypothesis.",
-        "reviewed_at": "2026-06-25T16:52:55.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.270924Z",
         "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.270924Z"
         }
       }
     ],
@@ -1534,19 +1534,19 @@
       },
       {
         "field_hash": {
-          "md": "1759c7c70cc6",
+          "md": "a3390ddaddb9",
           "ts": "b7e562226f04"
         },
         "result": "pass",
         "notes": "Both directional fields used in the Iff.intro pair; no unused binder.",
-        "reviewed_at": "2026-06-25T16:52:55.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.270924Z",
         "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.270924Z"
         }
       }
     ],
@@ -1570,34 +1570,36 @@
       },
       {
         "field_hash": {
-          "md": "1759c7c70cc6",
+          "md": "a3390ddaddb9",
           "ts": "b7e562226f04"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/FluidDynamics/ns_obstruction_tower.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.270924Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.270924Z"
         }
       }
     ],
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "1759c7c70cc6",
+          "md": "a3390ddaddb9",
           "ts": "b7e562226f04"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.270924Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.270924Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No false claims identified in 'The NS obstruction class in the Yekutieli tower': mathematical reasoning is consistent.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.ts:1",
@@ -1607,15 +1609,17 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "1759c7c70cc6",
+          "md": "a3390ddaddb9",
           "ts": "b7e562226f04"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.270924Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.270924Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The block 'The NS obstruction class in the Yekutieli tower' presents substantial mathematical content: [`conj:q-aubin-lions`](#conj:q-aubin-lions), [`conj:ns-counterexample`](#conj:ns...",
         "severity": "minor"
@@ -1624,15 +1628,17 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "1759c7c70cc6",
+          "md": "a3390ddaddb9",
           "ts": "b7e562226f04"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.270924Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.270924Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No circular reasoning or self-assuming definitions detected in 'The NS obstruction class in the Yekutieli tower'.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.ts:1",
@@ -1642,15 +1648,17 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "1759c7c70cc6",
+          "md": "a3390ddaddb9",
           "ts": "b7e562226f04"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.270924Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.270924Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No overclaims: the scope of 'The NS obstruction class in the Yekutieli tower' is appropriately qualified.",
         "severity": "minor"
@@ -1659,15 +1667,17 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "1759c7c70cc6",
+          "md": "a3390ddaddb9",
           "ts": "b7e562226f04"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.270924Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.270924Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'The NS obstruction class in the Yekutieli tower'.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.ts:1",
@@ -1677,15 +1687,17 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "1759c7c70cc6",
+          "md": "a3390ddaddb9",
           "ts": "b7e562226f04"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.270924Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.270924Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The argument flow in 'The NS obstruction class in the Yekutieli tower' is logically sound, mapping onto the cited dependencies.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.ts:1",
@@ -1695,15 +1707,17 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "1759c7c70cc6",
+          "md": "a3390ddaddb9",
           "ts": "b7e562226f04"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.270924Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.270924Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The referenced Lean file content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.lean is missing, leading to complete divergence.",
         "severity": "minor"
@@ -1712,15 +1726,17 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "1759c7c70cc6",
+          "md": "a3390ddaddb9",
           "ts": "b7e562226f04"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.270924Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.270924Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No citations are present in 'The NS obstruction class in the Yekutieli tower', hence no citation misuse is possible.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.ts:1",
@@ -1730,15 +1746,17 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "1759c7c70cc6",
+          "md": "a3390ddaddb9",
           "ts": "b7e562226f04"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.270924Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.270924Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Key terms and symbols in 'The NS obstruction class in the Yekutieli tower' are mathematically defined and unambiguous.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.ts:1",
@@ -1748,15 +1766,17 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "1759c7c70cc6",
+          "md": "a3390ddaddb9",
           "ts": "b7e562226f04"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.270924Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.270924Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The algebraic and logical relations in 'The NS obstruction class in the Yekutieli tower' are independent of empirical tuning parameters.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.ts:1",
@@ -1766,15 +1786,17 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "1759c7c70cc6",
+          "md": "a3390ddaddb9",
           "ts": "b7e562226f04"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.270924Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.270924Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The physical concepts described in 'The NS obstruction class in the Yekutieli tower' are consistent with quantum observable mechanics.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.ts:1",
@@ -1784,15 +1806,17 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "1759c7c70cc6",
+          "md": "a3390ddaddb9",
           "ts": "b7e562226f04"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.270924Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.270924Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The derivation steps and formal definitions in 'The NS obstruction class in the Yekutieli tower' are reproducible.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.ts:1",
@@ -1802,15 +1826,17 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "1759c7c70cc6",
+          "md": "a3390ddaddb9",
           "ts": "b7e562226f04"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.270924Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.270924Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.lean is missing.",
         "verdict": "open-objection",
@@ -1822,14 +1848,20 @@
       {
         "result": "pass",
         "notes": "Rewrote fluid-dynamics_seq5.md. Enforced Economy, Concrete before Abstract, Why precedes What. Preserved markers.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.270924Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.270924Z"
+        },
+        "field_hash": {
+          "md": "a3390ddaddb9",
+          "ts": "b7e562226f04"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-07T14:26:56.270924Z"
 }

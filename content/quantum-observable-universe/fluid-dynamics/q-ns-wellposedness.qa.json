@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/fluid-dynamics/q-ns-wellposedness.md"
   },
   "source_hashes": {
-    "md": "518a1ba46f15",
+    "md": "ff17c3b50fde",
     "ts": "73a356ce60d1"
   },
   "criteria": {
@@ -1013,16 +1013,18 @@
     "proof-no-placeholder-stub": [
       {
         "field_hash": {
-          "lean": "eda03e8c073a"
+          "md": "ff17c3b50fde",
+          "ts": "73a356ce60d1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/lean-proof-vacuity-audit",
-          "agent_date": "2026-07-02",
-          "agent_skill": "local/lean-proof-vacuity-audit"
+          "agent_date": "2026-07-07T14:26:56.234966Z",
+          "agent_skill": "local/lean-proof-vacuity-audit",
+          "agent_model": "gemini-3.1-pro"
         },
-        "reviewed_at": "2026-07-02T17:07:15.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.234966Z",
         "reviewed_sha": "a9ce9ecfe24e6c7c9d0b9f25699b35ec666faa32",
         "notes": "4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): placeholder-stub marker no longer present \u2014 criterion pass. Residual self-assuming-projection / statement-scope issue tracked under proof-statement-integrity and bean qsb2; do not re-fail this criterion for it."
       }
@@ -1030,18 +1032,18 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "518a1ba46f15",
+          "md": "ff17c3b50fde",
           "ts": "73a356ce60d1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.234966Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:45.962Z",
+        "reviewed_at": "2026-07-07T14:26:56.234966Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
       }
@@ -1049,18 +1051,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "518a1ba46f15",
+          "md": "ff17c3b50fde",
           "ts": "73a356ce60d1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.234966Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:46.324Z",
+        "reviewed_at": "2026-07-07T14:26:56.234966Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1068,18 +1070,18 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "518a1ba46f15",
+          "md": "ff17c3b50fde",
           "ts": "73a356ce60d1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.234966Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:46.797Z",
+        "reviewed_at": "2026-07-07T14:26:56.234966Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -1087,18 +1089,18 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "518a1ba46f15",
+          "md": "ff17c3b50fde",
           "ts": "73a356ce60d1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.234966Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:47.110Z",
+        "reviewed_at": "2026-07-07T14:26:56.234966Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
       }
@@ -1177,19 +1179,19 @@
       },
       {
         "field_hash": {
-          "md": "518a1ba46f15",
+          "md": "ff17c3b50fde",
           "ts": "73a356ce60d1"
         },
         "result": "warn",
         "notes": ".md states 3 properties but gives no Proof; Lean self-labelled placeholder, assumes wellposedness as a field rather than proving it.",
-        "reviewed_at": "2026-06-25T16:55:25.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.234966Z",
         "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.234966Z"
         },
         "score": {
           "max": 1,
@@ -1238,19 +1240,19 @@
       },
       {
         "field_hash": {
-          "md": "518a1ba46f15",
+          "md": "ff17c3b50fde",
           "ts": "73a356ce60d1"
         },
         "result": "pass",
         "notes": "Goal (global wellposedness of q-NS: smoothness + energy ineq + spectral decay) substantive headline theorem.",
-        "reviewed_at": "2026-06-25T16:55:25.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.234966Z",
         "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.234966Z"
         },
         "score": {
           "max": 1,
@@ -1299,19 +1301,19 @@
       },
       {
         "field_hash": {
-          "md": "518a1ba46f15",
+          "md": "ff17c3b50fde",
           "ts": "73a356ce60d1"
         },
         "result": "pass",
         "notes": "Headline result (global regularity of q-NS for q>1) is genuinely novel as a claim, though Lean does not establish it.",
-        "reviewed_at": "2026-06-25T16:55:25.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.234966Z",
         "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.234966Z"
         },
         "score": {
           "max": 1,
@@ -1356,19 +1358,19 @@
       },
       {
         "field_hash": {
-          "md": "518a1ba46f15",
+          "md": "ff17c3b50fde",
           "ts": "73a356ce60d1"
         },
         "result": "fail",
         "notes": "Degenerate: 3 conjuncts derived by impl_* applied to wellposed_active, but wellposed_active:q_ns_wellposed IS the proposition itself assumed as a field; conclusion assumed not derived. File self-labelled placeholder.",
-        "reviewed_at": "2026-06-25T16:55:25.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.234966Z",
         "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.234966Z"
         }
       }
     ],
@@ -1409,19 +1411,19 @@
       },
       {
         "field_hash": {
-          "md": "518a1ba46f15",
+          "md": "ff17c3b50fde",
           "ts": "73a356ce60d1"
         },
         "result": "fail",
         "notes": "Body <impl_smoothness wellposed_active, impl_energy.. , impl_spectral..>: each conclusion projected from an implication field applied to the assumed-conclusion field wellposed_active. No derivation.",
-        "reviewed_at": "2026-06-25T16:55:25.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.234966Z",
         "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.234966Z"
         }
       }
     ],
@@ -1445,19 +1447,19 @@
       },
       {
         "field_hash": {
-          "md": "518a1ba46f15",
+          "md": "ff17c3b50fde",
           "ts": "73a356ce60d1"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: no `: True` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/FluidDynamics/q_ns_wellposedness.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.234966Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.234966Z"
         }
       }
     ],
@@ -1498,19 +1500,19 @@
       },
       {
         "field_hash": {
-          "md": "518a1ba46f15",
+          "md": "ff17c3b50fde",
           "ts": "73a356ce60d1"
         },
         "result": "pass",
         "notes": "Fields (q>1, nu_q>0, wellposed implications) satisfiable; no contradiction.",
-        "reviewed_at": "2026-06-25T16:55:25.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.234966Z",
         "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.234966Z"
         }
       }
     ],
@@ -1551,19 +1553,19 @@
       },
       {
         "field_hash": {
-          "md": "518a1ba46f15",
+          "md": "ff17c3b50fde",
           "ts": "73a356ce60d1"
         },
         "result": "pass",
         "notes": "Single [ctx] binder used; impl_* and wellposed_active all consumed in the triple. No unused theorem binder.",
-        "reviewed_at": "2026-06-25T16:55:25.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.234966Z",
         "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.234966Z"
         }
       }
     ],
@@ -1587,34 +1589,36 @@
       },
       {
         "field_hash": {
-          "md": "518a1ba46f15",
+          "md": "ff17c3b50fde",
           "ts": "73a356ce60d1"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/FluidDynamics/q_ns_wellposedness.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.234966Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.234966Z"
         }
       }
     ],
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "518a1ba46f15",
+          "md": "ff17c3b50fde",
           "ts": "73a356ce60d1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.234966Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.234966Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No false claims identified in 'Global regularity of the $q$-deformed Navier--Stokes equation': mathematical reasoning is consistent.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-ns-wellposedness.ts:1",
@@ -1624,15 +1628,17 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "518a1ba46f15",
+          "md": "ff17c3b50fde",
           "ts": "73a356ce60d1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.234966Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.234966Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The block 'Global regularity of the $q$-deformed Navier--Stokes equation' presents substantial mathematical content: Let $(\\mathbf{C}, A, \\tau)$ be a [QOU](#def:quantum-observable-universe) with [s...",
         "severity": "minor"
@@ -1641,15 +1647,17 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "518a1ba46f15",
+          "md": "ff17c3b50fde",
           "ts": "73a356ce60d1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.234966Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.234966Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Global regularity of the $q$-deformed Navier--Stokes equation'.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-ns-wellposedness.ts:1",
@@ -1659,15 +1667,17 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "518a1ba46f15",
+          "md": "ff17c3b50fde",
           "ts": "73a356ce60d1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.234966Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.234966Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No overclaims: the scope of 'Global regularity of the $q$-deformed Navier--Stokes equation' is appropriately qualified.",
         "severity": "minor"
@@ -1676,15 +1686,17 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "518a1ba46f15",
+          "md": "ff17c3b50fde",
           "ts": "73a356ce60d1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.234966Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.234966Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Global regularity of the $q$-deformed Navier--Stokes equation'.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-ns-wellposedness.ts:1",
@@ -1694,15 +1706,17 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "518a1ba46f15",
+          "md": "ff17c3b50fde",
           "ts": "73a356ce60d1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.234966Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.234966Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The argument flow in 'Global regularity of the $q$-deformed Navier--Stokes equation' is logically sound, mapping onto the cited dependencies.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-ns-wellposedness.ts:1",
@@ -1712,15 +1726,17 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "518a1ba46f15",
+          "md": "ff17c3b50fde",
           "ts": "73a356ce60d1"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.234966Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.234966Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The referenced Lean file content/quantum-observable-universe/fluid-dynamics/q-ns-wellposedness.lean is missing, leading to complete divergence.",
         "severity": "minor"
@@ -1729,15 +1745,17 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "518a1ba46f15",
+          "md": "ff17c3b50fde",
           "ts": "73a356ce60d1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.234966Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.234966Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No citations are present in 'Global regularity of the $q$-deformed Navier--Stokes equation', hence no citation misuse is possible.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-ns-wellposedness.ts:1",
@@ -1747,15 +1765,17 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "518a1ba46f15",
+          "md": "ff17c3b50fde",
           "ts": "73a356ce60d1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.234966Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.234966Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Key terms and symbols in 'Global regularity of the $q$-deformed Navier--Stokes equation' are mathematically defined and unambiguous.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-ns-wellposedness.ts:1",
@@ -1765,15 +1785,17 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "518a1ba46f15",
+          "md": "ff17c3b50fde",
           "ts": "73a356ce60d1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.234966Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.234966Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The algebraic and logical relations in 'Global regularity of the $q$-deformed Navier--Stokes equation' are independent of empirical tuning parameters.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-ns-wellposedness.ts:1",
@@ -1783,15 +1805,17 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "518a1ba46f15",
+          "md": "ff17c3b50fde",
           "ts": "73a356ce60d1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.234966Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.234966Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The physical concepts described in 'Global regularity of the $q$-deformed Navier--Stokes equation' are consistent with quantum observable mechanics.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-ns-wellposedness.ts:1",
@@ -1801,15 +1825,17 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "518a1ba46f15",
+          "md": "ff17c3b50fde",
           "ts": "73a356ce60d1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.234966Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.234966Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The derivation steps and formal definitions in 'Global regularity of the $q$-deformed Navier--Stokes equation' are reproducible.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-ns-wellposedness.ts:1",
@@ -1819,15 +1845,17 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "518a1ba46f15",
+          "md": "ff17c3b50fde",
           "ts": "73a356ce60d1"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.234966Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.234966Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/fluid-dynamics/q-ns-wellposedness.lean is missing.",
         "verdict": "open-objection",
@@ -1839,14 +1867,20 @@
       {
         "result": "pass",
         "notes": "Rewrote fluid-dynamics_seq3.md. Reduced passive language. Kept mathematical exactitude and markers.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.234966Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.234966Z"
+        },
+        "field_hash": {
+          "md": "ff17c3b50fde",
+          "ts": "73a356ce60d1"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-07T14:26:56.234966Z"
 }

@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-chain-map.md"
   },
   "source_hashes": {
-    "md": "02752eb7f261",
+    "md": "dc62a6e59bf8",
     "ts": "e0e6981bcb42"
   },
   "criteria": {
@@ -785,14 +785,20 @@
       {
         "result": "pass",
         "notes": "Streamlined chain map narrative. Enforced brevity and removed repetitive status legend text.",
-        "reviewed_at": "2026-07-06T22:40:56Z",
+        "reviewed_at": "2026-07-07T14:26:56.219464Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.219464Z"
+        },
+        "field_hash": {
+          "md": "dc62a6e59bf8",
+          "ts": "e0e6981bcb42"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T18:14:43.813Z"
+  "updated_at": "2026-07-07T14:26:56.219464Z"
 }

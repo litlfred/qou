@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/braids-and-knots/hecke-normal-form.lean"
   },
   "source_hashes": {
-    "md": "5b05289227da",
+    "md": "6f0b1d92828f",
     "ts": "b74bc0d6a719",
     "lean": "e13babd136c2"
   },
@@ -858,19 +858,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "55c699d29a5e",
-          "ts": "786b2aecb572",
-          "lean": "862ceff0d104"
+          "md": "6f0b1d92828f",
+          "ts": "b74bc0d6a719",
+          "lean": "e13babd136c2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.351552Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:21.001Z",
+        "reviewed_at": "2026-07-07T14:26:55.351552Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -878,19 +878,19 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "55c699d29a5e",
-          "ts": "786b2aecb572",
-          "lean": "862ceff0d104"
+          "md": "6f0b1d92828f",
+          "ts": "b74bc0d6a719",
+          "lean": "e13babd136c2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.351552Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:21.404Z",
+        "reviewed_at": "2026-07-07T14:26:55.351552Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -898,16 +898,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "55c699d29a5e",
-          "ts": "786b2aecb572",
-          "lean": "862ceff0d104"
+          "md": "6f0b1d92828f",
+          "ts": "b74bc0d6a719",
+          "lean": "e13babd136c2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.351552Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.351552Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Checked mathematical consistency of the claim '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md \u00a77c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' and found no counterexamples under the stated conditions.",
         "severity": "minor",
@@ -917,16 +919,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "55c699d29a5e",
-          "ts": "786b2aecb572",
-          "lean": "862ceff0d104"
+          "md": "6f0b1d92828f",
+          "ts": "b74bc0d6a719",
+          "lean": "e13babd136c2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.351552Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.351552Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No vacuous stubs or tautologies detected in the formulation of 'def:hecke-normal-form'.",
         "severity": "minor"
@@ -935,16 +939,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "55c699d29a5e",
-          "ts": "786b2aecb572",
-          "lean": "862ceff0d104"
+          "md": "6f0b1d92828f",
+          "ts": "b74bc0d6a719",
+          "lean": "e13babd136c2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.351552Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.351552Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Traced dependencies ['rem:hecke-algebra-from-braiding'] for 'def:hecke-normal-form' and confirmed no circular definitions or justifications.",
         "severity": "minor",
@@ -954,16 +960,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "55c699d29a5e",
-          "ts": "786b2aecb572",
-          "lean": "862ceff0d104"
+          "md": "6f0b1d92828f",
+          "ts": "b74bc0d6a719",
+          "lean": "e13babd136c2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.351552Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.351552Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Verified that the scope of 'def:hecke-normal-form' is appropriately restricted to the proven regime without overclaiming structural validity.",
         "severity": "minor"
@@ -972,16 +980,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "55c699d29a5e",
-          "ts": "786b2aecb572",
-          "lean": "862ceff0d104"
+          "md": "6f0b1d92828f",
+          "ts": "b74bc0d6a719",
+          "lean": "e13babd136c2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.351552Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.351552Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
         "severity": "minor",
@@ -991,16 +1001,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "55c699d29a5e",
-          "ts": "786b2aecb572",
-          "lean": "862ceff0d104"
+          "md": "6f0b1d92828f",
+          "ts": "b74bc0d6a719",
+          "lean": "e13babd136c2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.351552Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.351552Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Logical transitions in the derivation of '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md \u00a77c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' are sound; no non-sequiturs detected.",
         "severity": "minor",
@@ -1010,16 +1022,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "55c699d29a5e",
-          "ts": "786b2aecb572",
-          "lean": "862ceff0d104"
+          "md": "6f0b1d92828f",
+          "ts": "b74bc0d6a719",
+          "lean": "e13babd136c2"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.351552Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.351552Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Lean sibling fails to compile, leading to divergence from the stated narrative.",
         "severity": "minor"
@@ -1028,16 +1042,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "55c699d29a5e",
-          "ts": "786b2aecb572",
-          "lean": "862ceff0d104"
+          "md": "6f0b1d92828f",
+          "ts": "b74bc0d6a719",
+          "lean": "e13babd136c2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.351552Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.351552Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All references and uses ['rem:hecke-algebra-from-braiding'] cited in 'def:hecke-normal-form' are used in accordance with their established mathematical definitions.",
         "severity": "minor",
@@ -1047,16 +1063,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "55c699d29a5e",
-          "ts": "786b2aecb572",
-          "lean": "862ceff0d104"
+          "md": "6f0b1d92828f",
+          "ts": "b74bc0d6a719",
+          "lean": "e13babd136c2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.351552Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.351552Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All terms and algebraic structures in 'def:hecke-normal-form' are uniquely defined or standard.",
         "severity": "minor",
@@ -1066,16 +1084,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "55c699d29a5e",
-          "ts": "786b2aecb572",
-          "lean": "862ceff0d104"
+          "md": "6f0b1d92828f",
+          "ts": "b74bc0d6a719",
+          "lean": "e13babd136c2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.351552Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.351552Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The algebraic statements in 'def:hecke-normal-form' do not rely on fragile empirical fits or numerical thresholds.",
         "severity": "minor",
@@ -1085,16 +1105,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "55c699d29a5e",
-          "ts": "786b2aecb572",
-          "lean": "862ceff0d104"
+          "md": "6f0b1d92828f",
+          "ts": "b74bc0d6a719",
+          "lean": "e13babd136c2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.351552Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.351552Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Physical dimensions and units in 'def:hecke-normal-form' are consistent with quantum observable universe models.",
         "severity": "minor",
@@ -1104,16 +1126,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "55c699d29a5e",
-          "ts": "786b2aecb572",
-          "lean": "862ceff0d104"
+          "md": "6f0b1d92828f",
+          "ts": "b74bc0d6a719",
+          "lean": "e13babd136c2"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.351552Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.351552Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/braids-and-knots/hecke-normal-form.lean:39:52: error: unknown tactic.",
         "severity": "minor",
@@ -1123,16 +1147,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "55c699d29a5e",
-          "ts": "786b2aecb572",
-          "lean": "862ceff0d104"
+          "md": "6f0b1d92828f",
+          "ts": "b74bc0d6a719",
+          "lean": "e13babd136c2"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.351552Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.351552Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: content/quantum-observable-universe/braids-and-knots/hecke-normal-form.lean:39:52: error: unknown tactic",
         "severity": "critical",
@@ -1164,14 +1190,21 @@
       {
         "result": "pass",
         "notes": "Rewritten per Milnor standards. Shortened prose, eliminated forward refs, un-cluttered Lean notation while keeping core structural claims. Preserved math.",
-        "reviewed_at": "2026-07-06T22:38:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.351552Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.351552Z"
+        },
+        "field_hash": {
+          "md": "6f0b1d92828f",
+          "ts": "b74bc0d6a719",
+          "lean": "e13babd136c2"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-07T14:26:55.351552Z"
 }

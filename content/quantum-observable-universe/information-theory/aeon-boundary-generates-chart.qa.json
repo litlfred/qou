@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/information-theory/aeon-boundary-generates-chart.lean"
   },
   "source_hashes": {
-    "md": "2340d75d0487",
+    "md": "6efc38585b9a",
     "ts": "5fb1e114c7bc",
     "lean": "21e6928f12f4"
   },
@@ -37,14 +37,21 @@
       {
         "result": "pass",
         "notes": "Smoothed transitions, removed forward references, applied milnor brevity.",
-        "reviewed_at": "2026-07-07T02:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.564795Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.564795Z"
+        },
+        "field_hash": {
+          "md": "6efc38585b9a",
+          "ts": "5fb1e114c7bc",
+          "lean": "21e6928f12f4"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.008Z"
+  "updated_at": "2026-07-07T14:26:55.564795Z"
 }

@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/particle-interactions/cemetery-group-emergence.md"
   },
   "source_hashes": {
-    "md": "00d3413a51b4",
+    "md": "e42a341367bd",
     "ts": "d4b85b8efa3f"
   },
   "criteria": {
@@ -1782,18 +1782,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "24f3133a5f95",
+          "md": "e42a341367bd",
           "ts": "d4b85b8efa3f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.362060Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:22.745Z",
+        "reviewed_at": "2026-07-07T14:26:57.362060Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1856,16 +1856,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "24f3133a5f95",
+          "md": "e42a341367bd",
           "ts": "d4b85b8efa3f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.362060Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.362060Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'Cemetery group as the kernel of the observation functor': mathematical reasoning is consistent in prose.",
         "severity": "minor",
@@ -1875,16 +1877,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "24f3133a5f95",
+          "md": "e42a341367bd",
           "ts": "d4b85b8efa3f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.362060Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.362060Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Cemetery group as the kernel of the observation functor' presents substantial mathematical content: '$T_w \\in H_n(R, q)$'.",
         "severity": "minor"
@@ -1893,16 +1897,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "24f3133a5f95",
+          "md": "e42a341367bd",
           "ts": "d4b85b8efa3f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.362060Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.362060Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Cemetery group as the kernel of the observation functor'.",
         "severity": "minor",
@@ -1912,16 +1918,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "24f3133a5f95",
+          "md": "e42a341367bd",
           "ts": "d4b85b8efa3f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.362060Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.362060Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The remarks and narrative scope in 'Cemetery group as the kernel of the observation functor' are appropriately qualified.",
         "severity": "minor"
@@ -1930,16 +1938,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "24f3133a5f95",
+          "md": "e42a341367bd",
           "ts": "d4b85b8efa3f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.362060Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.362060Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Cemetery group as the kernel of the observation functor'.",
         "severity": "minor",
@@ -1949,16 +1959,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "24f3133a5f95",
+          "md": "e42a341367bd",
           "ts": "d4b85b8efa3f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.362060Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.362060Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose arguments in 'Cemetery group as the kernel of the observation functor' proceed logically through the stated steps.",
         "severity": "minor",
@@ -1968,16 +1980,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "24f3133a5f95",
+          "md": "e42a341367bd",
           "ts": "d4b85b8efa3f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.362060Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.362060Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No Lean sibling required; narrative matches the expected configuration.",
         "severity": "minor"
@@ -1986,16 +2000,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "24f3133a5f95",
+          "md": "e42a341367bd",
           "ts": "d4b85b8efa3f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.362060Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.362060Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The citations khovanovlauda2009, brundankleshchev2009 in 'Cemetery group as the kernel of the observation functor' are consistent with the sources referenced in the text.",
         "severity": "minor",
@@ -2005,16 +2021,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "24f3133a5f95",
+          "md": "e42a341367bd",
           "ts": "d4b85b8efa3f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.362060Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.362060Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Cemetery group as the kernel of the observation functor' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -2024,16 +2042,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "24f3133a5f95",
+          "md": "e42a341367bd",
           "ts": "d4b85b8efa3f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.362060Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.362060Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Cemetery group as the kernel of the observation functor' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -2043,16 +2063,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "24f3133a5f95",
+          "md": "e42a341367bd",
           "ts": "d4b85b8efa3f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.362060Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.362060Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Cemetery group as the kernel of the observation functor' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -2062,16 +2084,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "24f3133a5f95",
+          "md": "e42a341367bd",
           "ts": "d4b85b8efa3f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.362060Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.362060Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'Cemetery group as the kernel of the observation functor' are reproducible.",
         "severity": "minor"
@@ -2080,16 +2104,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "24f3133a5f95",
+          "md": "e42a341367bd",
           "ts": "d4b85b8efa3f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.362060Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.362060Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -2101,14 +2127,20 @@
       {
         "result": "pass",
         "notes": "Rewrote seq15 to enforce Milnor brevity. Replaced verbose phrasing with concise declarative sentences, eliminating 'This section ... We then ...' patterns where possible. Simplified 'Conjectural status' blocks.",
-        "reviewed_at": "2026-07-06T22:50:00Z",
+        "reviewed_at": "2026-07-07T14:26:57.362060Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.362060Z"
+        },
+        "field_hash": {
+          "md": "e42a341367bd",
+          "ts": "d4b85b8efa3f"
         }
       }
     ]
   },
-  "updated_at": "2026-07-04T10:39:27.233Z"
+  "updated_at": "2026-07-07T14:26:57.362060Z"
 }

@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/quantum-universes/frobenius-pairing.lean"
   },
   "source_hashes": {
-    "md": "bea2ef79d338",
+    "md": "f63663a4d31e",
     "ts": "5e442650695a",
     "lean": "175aaf598049"
   },
@@ -858,17 +858,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "27d12f6f61e9",
+          "md": "f63663a4d31e",
           "ts": "5e442650695a",
-          "lean": "25f9d2297a6c"
+          "lean": "175aaf598049"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.119228Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:57.119228Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "Block placement and kind match validated structurally."
@@ -877,17 +879,19 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "27d12f6f61e9",
+          "md": "f63663a4d31e",
           "ts": "5e442650695a",
-          "lean": "25f9d2297a6c"
+          "lean": "175aaf598049"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.119228Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:57.119228Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "frobenius-pairing.lean:1 \u2014 Lean file exists",
@@ -897,17 +901,19 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "27d12f6f61e9",
+          "md": "f63663a4d31e",
           "ts": "5e442650695a",
-          "lean": "25f9d2297a6c"
+          "lean": "175aaf598049"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.119228Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:57.119228Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing.ts:1",
@@ -917,17 +923,19 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "27d12f6f61e9",
+          "md": "f63663a4d31e",
           "ts": "5e442650695a",
-          "lean": "25f9d2297a6c"
+          "lean": "175aaf598049"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.119228Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:57.119228Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing.ts:1",
@@ -937,17 +945,19 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "27d12f6f61e9",
+          "md": "f63663a4d31e",
           "ts": "5e442650695a",
-          "lean": "25f9d2297a6c"
+          "lean": "175aaf598049"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.119228Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:57.119228Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing.ts:1",
@@ -957,17 +967,19 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "27d12f6f61e9",
+          "md": "f63663a4d31e",
           "ts": "5e442650695a",
-          "lean": "25f9d2297a6c"
+          "lean": "175aaf598049"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.119228Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:57.119228Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing.ts:1",
@@ -977,17 +989,19 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "27d12f6f61e9",
+          "md": "f63663a4d31e",
           "ts": "5e442650695a",
-          "lean": "25f9d2297a6c"
+          "lean": "175aaf598049"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.119228Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:57.119228Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing.ts:1",
@@ -997,17 +1011,19 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "27d12f6f61e9",
+          "md": "f63663a4d31e",
           "ts": "5e442650695a",
-          "lean": "25f9d2297a6c"
+          "lean": "175aaf598049"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.119228Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:57.119228Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing.ts:1",
@@ -1017,17 +1033,19 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "27d12f6f61e9",
+          "md": "f63663a4d31e",
           "ts": "5e442650695a",
-          "lean": "25f9d2297a6c"
+          "lean": "175aaf598049"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.119228Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:57.119228Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing.lean:1",
@@ -1037,17 +1055,19 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "27d12f6f61e9",
+          "md": "f63663a4d31e",
           "ts": "5e442650695a",
-          "lean": "25f9d2297a6c"
+          "lean": "175aaf598049"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.119228Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:57.119228Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing.ts:1",
@@ -1057,17 +1077,19 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "27d12f6f61e9",
+          "md": "f63663a4d31e",
           "ts": "5e442650695a",
-          "lean": "25f9d2297a6c"
+          "lean": "175aaf598049"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.119228Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:57.119228Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing.ts:1",
@@ -1077,17 +1099,19 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "27d12f6f61e9",
+          "md": "f63663a4d31e",
           "ts": "5e442650695a",
-          "lean": "25f9d2297a6c"
+          "lean": "175aaf598049"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.119228Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:57.119228Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing.ts:1",
@@ -1097,17 +1121,19 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "27d12f6f61e9",
+          "md": "f63663a4d31e",
           "ts": "5e442650695a",
-          "lean": "25f9d2297a6c"
+          "lean": "175aaf598049"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.119228Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:57.119228Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing.ts:1",
@@ -1117,17 +1143,19 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "27d12f6f61e9",
+          "md": "f63663a4d31e",
           "ts": "5e442650695a",
-          "lean": "25f9d2297a6c"
+          "lean": "175aaf598049"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.119228Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:57.119228Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing.ts:1",
@@ -1137,17 +1165,19 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "27d12f6f61e9",
+          "md": "f63663a4d31e",
           "ts": "5e442650695a",
-          "lean": "25f9d2297a6c"
+          "lean": "175aaf598049"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.119228Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:57.119228Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/frobenius-pairing.md:1 \u2014 Let (\\mathbf{C}, A, \\tau) be a",
@@ -1179,7 +1209,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "bea2ef79d338",
+          "md": "f63663a4d31e",
           "ts": "5e442650695a",
           "lean": "175aaf598049"
         },
@@ -1187,9 +1217,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.119228Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.710Z",
+        "reviewed_at": "2026-07-07T14:26:57.119228Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'def:frobenius-pairing' \u2192 expected 'frobenius_pairing'; Lean declares: FrobeniusPairing, FrobeniusHopfData.canonicalPairing, FrobeniusPairing.symmetric_of_comm, FrobeniusPairing.NonDegenerate, FrobeniusHopfData.hasNonDegeneratePairing. Structural match via content."
       }
@@ -1198,14 +1230,21 @@
       {
         "result": "pass",
         "notes": "Rewrote QU intro and axioms for brevity (H1). Brought SU(2) geometric intuition forward (H2, H3). Maintained math exactly. Unified cross-block flow.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:57.119228Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.119228Z"
+        },
+        "field_hash": {
+          "md": "f63663a4d31e",
+          "ts": "5e442650695a",
+          "lean": "175aaf598049"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.710Z"
+  "updated_at": "2026-07-07T14:26:57.119228Z"
 }

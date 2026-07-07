@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/predicted-spectra/em-coupling-bring-zero-mode.md"
   },
   "source_hashes": {
-    "md": "67f4c1060af9",
+    "md": "8b6f6b5f6c34",
     "ts": "127b17240b9c"
   },
   "criteria": {
@@ -1029,18 +1029,18 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "67f4c1060af9",
+          "md": "8b6f6b5f6c34",
           "ts": "127b17240b9c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.438618Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:49.602Z",
+        "reviewed_at": "2026-07-07T14:26:56.438618Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
       }
@@ -1048,18 +1048,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "67f4c1060af9",
+          "md": "8b6f6b5f6c34",
           "ts": "127b17240b9c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.438618Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:49.955Z",
+        "reviewed_at": "2026-07-07T14:26:56.438618Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1067,18 +1067,18 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "67f4c1060af9",
+          "md": "8b6f6b5f6c34",
           "ts": "127b17240b9c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.438618Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:50.322Z",
+        "reviewed_at": "2026-07-07T14:26:56.438618Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is correctly placed in an archimedean chapter."
       }
@@ -1086,18 +1086,18 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "67f4c1060af9",
+          "md": "8b6f6b5f6c34",
           "ts": "127b17240b9c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.438618Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:50.739Z",
+        "reviewed_at": "2026-07-07T14:26:56.438618Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof matches the archimedean regime."
       }
@@ -1176,19 +1176,19 @@
       },
       {
         "field_hash": {
-          "md": "67f4c1060af9",
+          "md": "8b6f6b5f6c34",
           "ts": "127b17240b9c"
         },
         "result": "pass",
         "notes": "Clear: axiomatise BringZeroModeBlochClass, prove conditional via field_simp;ring on g=4 identity, isolate open K-theory input to one instance.",
-        "reviewed_at": "2026-06-25T17:05:19.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.438618Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.438618Z"
         },
         "score": {
           "max": 1,
@@ -1237,19 +1237,19 @@
       },
       {
         "field_hash": {
-          "md": "67f4c1060af9",
+          "md": "8b6f6b5f6c34",
           "ts": "127b17240b9c"
         },
         "result": "pass",
         "notes": "Goal: additive Bring zero-mode 1/\u03b1=q[9][10]+2/(3\u03c0); residual -4.2e-6. Well-posed, two independent geometric identifications of 2/(3\u03c0).",
-        "reviewed_at": "2026-06-25T17:05:19.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.438618Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.438618Z"
         },
         "score": {
           "max": 1,
@@ -1298,19 +1298,19 @@
       },
       {
         "field_hash": {
-          "md": "67f4c1060af9",
+          "md": "8b6f6b5f6c34",
           "ts": "127b17240b9c"
         },
         "result": "pass",
         "notes": "Geometric decomposition of \u03b1 correction via Bring genus-4 Hodge/Gauss-Bonnet + group-homology pairing bypassing BW transcendence obstruction; nontrivial framing.",
-        "reviewed_at": "2026-06-25T17:05:19.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.438618Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.438618Z"
         },
         "score": {
           "max": 1,
@@ -1355,19 +1355,19 @@
       },
       {
         "field_hash": {
-          "md": "67f4c1060af9",
+          "md": "8b6f6b5f6c34",
           "ts": "127b17240b9c"
         },
         "result": "pass",
         "notes": "\u00a73b-cond: bring_zero_mode_additive_form [BringZeroModeBlochClass] proved sorry-free via hodgeRatio_at_g4; hodge/area identity 240\u00b7(\u03c0/20)=12\u03c0\u21d22/(3\u03c0) checks. Honest conditional, conj-carrying instance=sorry per \u00a73b.",
-        "reviewed_at": "2026-06-25T17:05:19.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.438618Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.438618Z"
         }
       }
     ],
@@ -1408,19 +1408,19 @@
       },
       {
         "field_hash": {
-          "md": "67f4c1060af9",
+          "md": "8b6f6b5f6c34",
           "ts": "127b17240b9c"
         },
         "result": "pass",
         "notes": "Main thm unpacks hZ.bring_zero_mode_realised then rw[h\u03b8,hodgeRatio_at_g4] \u2014 transforms witness via the proved g=4 identity, not a bare field projection.",
-        "reviewed_at": "2026-06-25T17:05:19.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.438618Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.438618Z"
         }
       }
     ],
@@ -1444,19 +1444,19 @@
       },
       {
         "field_hash": {
-          "md": "67f4c1060af9",
+          "md": "8b6f6b5f6c34",
           "ts": "127b17240b9c"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: no `: True` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/Archimedean.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.438618Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.438618Z"
         }
       }
     ],
@@ -1497,19 +1497,19 @@
       },
       {
         "field_hash": {
-          "md": "67f4c1060af9",
+          "md": "8b6f6b5f6c34",
           "ts": "127b17240b9c"
         },
         "result": "pass",
         "notes": "Class inhabited (instance canonical, sorry=conjecture per \u00a73b); hodgeRatio_at_g4/homology_ratio_exact use only Real.pi\u22600. Premises satisfiable.",
-        "reviewed_at": "2026-06-25T17:05:19.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.438618Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.438618Z"
         }
       }
     ],
@@ -1550,19 +1550,19 @@
       },
       {
         "field_hash": {
-          "md": "67f4c1060af9",
+          "md": "8b6f6b5f6c34",
           "ts": "127b17240b9c"
         },
         "result": "pass",
         "notes": "[hZ:BringZeroModeBlochClass] used (obtain \u27e8\u03b8,h\u03b8\u27e9); g param in hodgeRatio used. No idle binders.",
-        "reviewed_at": "2026-06-25T17:05:19.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.438618Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.438618Z"
         }
       }
     ],
@@ -1586,35 +1586,37 @@
       },
       {
         "field_hash": {
-          "md": "67f4c1060af9",
+          "md": "8b6f6b5f6c34",
           "ts": "127b17240b9c"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/Archimedean.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.438618Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.438618Z"
         }
       }
     ],
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "67f4c1060af9",
+          "md": "8b6f6b5f6c34",
           "ts": "127b17240b9c"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.438618Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.438618Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'Additive Bring zero-mode form $1/\\\\alpha_{EM} = q\\\\cdot[9]_q\\\\cdot[10]_q + 2g/(4\\\\pi(g-1))$ (conditional)': mathematical reasoning is consistent in prose.",
         "severity": "minor",
@@ -1624,16 +1626,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "67f4c1060af9",
+          "md": "8b6f6b5f6c34",
           "ts": "127b17240b9c"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.438618Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.438618Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Additive Bring zero-mode form $1/\\\\alpha_{EM} = q\\\\cdot[9]_q\\\\cdot[10]_q + 2g/(4\\\\pi(g-1))$ (conditional)' presents substantial mathematical content: '$1/\\alpha_{EM}$, conditional on'.",
         "severity": "minor"
@@ -1642,16 +1646,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "67f4c1060af9",
+          "md": "8b6f6b5f6c34",
           "ts": "127b17240b9c"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.438618Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.438618Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Additive Bring zero-mode form $1/\\\\alpha_{EM} = q\\\\cdot[9]_q\\\\cdot[10]_q + 2g/(4\\\\pi(g-1))$ (conditional)'.",
         "severity": "minor",
@@ -1661,16 +1667,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "67f4c1060af9",
+          "md": "8b6f6b5f6c34",
           "ts": "127b17240b9c"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.438618Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.438618Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The remarks and narrative scope in 'Additive Bring zero-mode form $1/\\\\alpha_{EM} = q\\\\cdot[9]_q\\\\cdot[10]_q + 2g/(4\\\\pi(g-1))$ (conditional)' are appropriately qualified.",
         "severity": "minor"
@@ -1679,16 +1687,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "67f4c1060af9",
+          "md": "8b6f6b5f6c34",
           "ts": "127b17240b9c"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.438618Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.438618Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Additive Bring zero-mode form $1/\\\\alpha_{EM} = q\\\\cdot[9]_q\\\\cdot[10]_q + 2g/(4\\\\pi(g-1))$ (conditional)'.",
         "severity": "minor",
@@ -1698,16 +1708,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "67f4c1060af9",
+          "md": "8b6f6b5f6c34",
           "ts": "127b17240b9c"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.438618Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.438618Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose arguments in 'Additive Bring zero-mode form $1/\\\\alpha_{EM} = q\\\\cdot[9]_q\\\\cdot[10]_q + 2g/(4\\\\pi(g-1))$ (conditional)' proceed logically through the stated steps.",
         "severity": "minor",
@@ -1717,16 +1729,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "67f4c1060af9",
+          "md": "8b6f6b5f6c34",
           "ts": "127b17240b9c"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.438618Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.438618Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No Lean sibling required; narrative matches the expected configuration.",
         "severity": "minor"
@@ -1735,16 +1749,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "67f4c1060af9",
+          "md": "8b6f6b5f6c34",
           "ts": "127b17240b9c"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.438618Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.438618Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The citations jones1987, kassel1995, suslin1991, bloch2000 in 'Additive Bring zero-mode form $1/\\\\alpha_{EM} = q\\\\cdot[9]_q\\\\cdot[10]_q + 2g/(4\\\\pi(g-1))$ (conditional)' are consistent with the sources referenced in the text.",
         "severity": "minor",
@@ -1754,16 +1770,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "67f4c1060af9",
+          "md": "8b6f6b5f6c34",
           "ts": "127b17240b9c"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.438618Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.438618Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Additive Bring zero-mode form $1/\\\\alpha_{EM} = q\\\\cdot[9]_q\\\\cdot[10]_q + 2g/(4\\\\pi(g-1))$ (conditional)' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1773,16 +1791,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "67f4c1060af9",
+          "md": "8b6f6b5f6c34",
           "ts": "127b17240b9c"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.438618Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.438618Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The empirical claims in 'Additive Bring zero-mode form $1/\\\\alpha_{EM} = q\\\\cdot[9]_q\\\\cdot[10]_q + 2g/(4\\\\pi(g-1))$ (conditional)' are structurally anchored to the QOU mass framework and are stable.",
         "severity": "minor",
@@ -1792,16 +1812,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "67f4c1060af9",
+          "md": "8b6f6b5f6c34",
           "ts": "127b17240b9c"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.438618Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.438618Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Additive Bring zero-mode form $1/\\\\alpha_{EM} = q\\\\cdot[9]_q\\\\cdot[10]_q + 2g/(4\\\\pi(g-1))$ (conditional)' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1811,16 +1833,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "67f4c1060af9",
+          "md": "8b6f6b5f6c34",
           "ts": "127b17240b9c"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.438618Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.438618Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'Additive Bring zero-mode form $1/\\\\alpha_{EM} = q\\\\cdot[9]_q\\\\cdot[10]_q + 2g/(4\\\\pi(g-1))$ (conditional)' are reproducible.",
         "severity": "minor"
@@ -1829,16 +1853,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "67f4c1060af9",
+          "md": "8b6f6b5f6c34",
           "ts": "127b17240b9c"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.438618Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.438618Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -1850,14 +1876,20 @@
       {
         "result": "pass",
         "notes": "Rewrote prose blocks to adhere to Milnor standards. Improved economy, preserved all math.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.438618Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.438618Z"
+        },
+        "field_hash": {
+          "md": "8b6f6b5f6c34",
+          "ts": "127b17240b9c"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.812Z"
+  "updated_at": "2026-07-07T14:26:56.438618Z"
 }

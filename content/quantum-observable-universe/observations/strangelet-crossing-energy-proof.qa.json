@@ -7,23 +7,25 @@
     "md": "../qou/content/quantum-observable-universe/observations/strangelet-crossing-energy-proof.md"
   },
   "source_hashes": {
-    "md": "27a4639e2317",
+    "md": "32d23cb14154",
     "ts": "7853d8720884"
   },
   "criteria": {
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "27a4639e2317",
+          "md": "32d23cb14154",
           "ts": "7853d8720884"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-21",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.649233Z"
         },
-        "reviewed_at": "2026-06-28T18:06:13.460Z",
+        "reviewed_at": "2026-07-07T14:26:56.649233Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "severity": "major",
         "evidence": "file:19: larger for strange matter by a factor of 8/6 = 4/3",
@@ -51,5 +53,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.226Z"
+  "updated_at": "2026-07-07T14:26:56.649233Z"
 }

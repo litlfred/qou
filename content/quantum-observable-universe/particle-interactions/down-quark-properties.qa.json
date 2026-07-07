@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/particle-interactions/down-quark-properties.md"
   },
   "source_hashes": {
-    "md": "701126cd1baf",
+    "md": "3002260c3c8d",
     "ts": "d26d184b72b8"
   },
   "criteria": {
@@ -1760,32 +1760,36 @@
       },
       {
         "field_hash": {
-          "md": "701126cd1baf",
+          "md": "3002260c3c8d",
           "ts": "d26d184b72b8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.207917Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:57.207917Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "701126cd1baf",
+          "md": "3002260c3c8d",
           "ts": "d26d184b72b8"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.207917Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.207917Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'Down quark: mass splitting and isolation': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -1795,16 +1799,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "701126cd1baf",
+          "md": "3002260c3c8d",
           "ts": "d26d184b72b8"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.207917Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.207917Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Down quark: mass splitting and isolation' presents substantial mathematical content: The up and down quarks are the same knot type (unknot) in the same environment (Borromean-linked in a color tube).  T...",
         "severity": "minor"
@@ -1813,16 +1819,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "701126cd1baf",
+          "md": "3002260c3c8d",
           "ts": "d26d184b72b8"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.207917Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.207917Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Down quark: mass splitting and isolation'.",
         "severity": "minor",
@@ -1832,16 +1840,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "701126cd1baf",
+          "md": "3002260c3c8d",
           "ts": "d26d184b72b8"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.207917Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.207917Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'Down quark: mass splitting and isolation' is appropriately qualified.",
         "severity": "minor"
@@ -1850,16 +1860,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "701126cd1baf",
+          "md": "3002260c3c8d",
           "ts": "d26d184b72b8"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.207917Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.207917Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Down quark: mass splitting and isolation'.",
         "severity": "minor",
@@ -1869,16 +1881,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "701126cd1baf",
+          "md": "3002260c3c8d",
           "ts": "d26d184b72b8"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.207917Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.207917Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The argument flow in 'Down quark: mass splitting and isolation' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -1888,16 +1902,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "701126cd1baf",
+          "md": "3002260c3c8d",
           "ts": "d26d184b72b8"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.207917Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.207917Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
@@ -1906,16 +1922,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "701126cd1baf",
+          "md": "3002260c3c8d",
           "ts": "d26d184b72b8"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.207917Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.207917Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Down quark: mass splitting and isolation', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1925,16 +1943,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "701126cd1baf",
+          "md": "3002260c3c8d",
           "ts": "d26d184b72b8"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.207917Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.207917Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Down quark: mass splitting and isolation' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1944,16 +1964,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "701126cd1baf",
+          "md": "3002260c3c8d",
           "ts": "d26d184b72b8"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.207917Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.207917Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Down quark: mass splitting and isolation' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1963,16 +1985,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "701126cd1baf",
+          "md": "3002260c3c8d",
           "ts": "d26d184b72b8"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.207917Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.207917Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Down quark: mass splitting and isolation' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1982,16 +2006,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "701126cd1baf",
+          "md": "3002260c3c8d",
           "ts": "d26d184b72b8"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.207917Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.207917Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'Down quark: mass splitting and isolation' are reproducible.",
         "severity": "minor",
@@ -2001,16 +2027,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "701126cd1baf",
+          "md": "3002260c3c8d",
           "ts": "d26d184b72b8"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.207917Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.207917Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -2025,5 +2053,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.492Z"
+  "updated_at": "2026-07-07T14:26:57.207917Z"
 }

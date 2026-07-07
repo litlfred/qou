@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/q-geometric-langlands/cyclotomic-l-value-decomposition.md"
   },
   "source_hashes": {
-    "md": "12d7aba4174c",
+    "md": "c69fb848d735",
     "ts": "1890f983dcc3"
   },
   "criteria": {
@@ -180,14 +180,20 @@
       {
         "result": "pass",
         "notes": "Flattened complex conjectures into direct geometric facts. Removed bold definitions and nested headers. Stripped Lean/diagnostics metadata that cluttered the math.",
-        "reviewed_at": "2026-07-06T22:46:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.196169Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.196169Z"
+        },
+        "field_hash": {
+          "md": "c69fb848d735",
+          "ts": "1890f983dcc3"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T05:26:50.219Z"
+  "updated_at": "2026-07-07T14:26:56.196169Z"
 }

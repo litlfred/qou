@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/braids-and-knots/rho-s3-holonomy-exposition.md"
   },
   "source_hashes": {
-    "md": "02727eb4078a",
+    "md": "b59ff0ef7863",
     "ts": "6fc4471d1a4a"
   },
   "criteria": {
@@ -838,18 +838,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "02727eb4078a",
+          "md": "b59ff0ef7863",
           "ts": "6fc4471d1a4a"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.387649Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:21.806Z",
+        "reviewed_at": "2026-07-07T14:26:55.387649Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -857,15 +857,17 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "02727eb4078a",
+          "md": "b59ff0ef7863",
           "ts": "6fc4471d1a4a"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.387649Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.387649Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Checked mathematical consistency of the claim 'Before encountering $\\rho$ in the equations that follow, it is worth' and found no counterexamples under the stated conditions.",
         "severity": "minor",
@@ -875,15 +877,17 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "02727eb4078a",
+          "md": "b59ff0ef7863",
           "ts": "6fc4471d1a4a"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.387649Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.387649Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No vacuous stubs or tautologies detected in the formulation of 'rem:rho-s3-holonomy-exposition'.",
         "severity": "minor"
@@ -892,15 +896,17 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "02727eb4078a",
+          "md": "b59ff0ef7863",
           "ts": "6fc4471d1a4a"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.387649Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.387649Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Traced dependencies ['rem:holonomy-trefoil', 'prop:lagrange-resolvent-transform'] for 'rem:rho-s3-holonomy-exposition' and confirmed no circular definitions or justifications.",
         "severity": "minor",
@@ -910,15 +916,17 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "02727eb4078a",
+          "md": "b59ff0ef7863",
           "ts": "6fc4471d1a4a"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.387649Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.387649Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Verified that the scope of 'rem:rho-s3-holonomy-exposition' is appropriately restricted to the proven regime without overclaiming structural validity.",
         "severity": "minor"
@@ -927,15 +935,17 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "02727eb4078a",
+          "md": "b59ff0ef7863",
           "ts": "6fc4471d1a4a"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.387649Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.387649Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
         "severity": "minor",
@@ -945,15 +955,17 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "02727eb4078a",
+          "md": "b59ff0ef7863",
           "ts": "6fc4471d1a4a"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.387649Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.387649Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Logical transitions in the derivation of 'Before encountering $\\rho$ in the equations that follow, it is worth' are sound; no non-sequiturs detected.",
         "severity": "minor",
@@ -963,15 +975,17 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "02727eb4078a",
+          "md": "b59ff0ef7863",
           "ts": "6fc4471d1a4a"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.387649Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.387649Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No Lean sibling required; narrative matches specifications.",
         "severity": "minor"
@@ -980,15 +994,17 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "02727eb4078a",
+          "md": "b59ff0ef7863",
           "ts": "6fc4471d1a4a"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.387649Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.387649Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All references and uses ['rem:holonomy-trefoil', 'prop:lagrange-resolvent-transform'] cited in 'rem:rho-s3-holonomy-exposition' are used in accordance with their established mathematical definitions.",
         "severity": "minor",
@@ -998,15 +1014,17 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "02727eb4078a",
+          "md": "b59ff0ef7863",
           "ts": "6fc4471d1a4a"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.387649Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.387649Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All terms and algebraic structures in 'rem:rho-s3-holonomy-exposition' are uniquely defined or standard.",
         "severity": "minor",
@@ -1016,15 +1034,17 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "02727eb4078a",
+          "md": "b59ff0ef7863",
           "ts": "6fc4471d1a4a"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.387649Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.387649Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The algebraic statements in 'rem:rho-s3-holonomy-exposition' do not rely on fragile empirical fits or numerical thresholds.",
         "severity": "minor",
@@ -1034,15 +1054,17 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "02727eb4078a",
+          "md": "b59ff0ef7863",
           "ts": "6fc4471d1a4a"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.387649Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.387649Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Physical dimensions and units in 'rem:rho-s3-holonomy-exposition' are consistent with quantum observable universe models.",
         "severity": "minor",
@@ -1052,15 +1074,17 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "02727eb4078a",
+          "md": "b59ff0ef7863",
           "ts": "6fc4471d1a4a"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.387649Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.387649Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All backing computations and proofs are fully reproducible.",
         "severity": "minor"
@@ -1069,15 +1093,17 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "02727eb4078a",
+          "md": "b59ff0ef7863",
           "ts": "6fc4471d1a4a"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.387649Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.387649Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -1089,14 +1115,20 @@
       {
         "result": "pass",
         "notes": "Applied Milnor brevity. Cleaned up forward references. Shorter sentences. Maintained all math.",
-        "reviewed_at": "2026-07-06T22:42:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.387649Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.387649Z"
+        },
+        "field_hash": {
+          "md": "b59ff0ef7863",
+          "ts": "6fc4471d1a4a"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:55.297Z"
+  "updated_at": "2026-07-07T14:26:55.387649Z"
 }

@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/typed-garside-element.lean"
   },
   "source_hashes": {
-    "md": "f90cc23b2bde",
+    "md": "a0544a432b35",
     "ts": "4ca795135db4",
     "lean": "08ea6d830a5c"
   },
@@ -1719,19 +1719,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "f90cc23b2bde",
+          "md": "a0544a432b35",
           "ts": "4ca795135db4",
-          "lean": "68046e6c2223"
+          "lean": "08ea6d830a5c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.177724Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:19.626Z",
+        "reviewed_at": "2026-07-07T14:26:57.177724Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1739,19 +1739,19 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "f90cc23b2bde",
+          "md": "a0544a432b35",
           "ts": "4ca795135db4",
-          "lean": "68046e6c2223"
+          "lean": "08ea6d830a5c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.177724Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:20.017Z",
+        "reviewed_at": "2026-07-07T14:26:57.177724Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -1777,7 +1777,7 @@
       },
       {
         "field_hash": {
-          "md": "f90cc23b2bde",
+          "md": "a0544a432b35",
           "ts": "4ca795135db4",
           "lean": "08ea6d830a5c"
         },
@@ -1785,10 +1785,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/lean-proof-vacuity-audit",
-          "agent_date": "2026-07-04",
-          "agent_skill": "local/lean-proof-vacuity-audit"
+          "agent_date": "2026-07-07T14:26:57.177724Z",
+          "agent_skill": "local/lean-proof-vacuity-audit",
+          "agent_model": "gemini-3.1-pro"
         },
-        "reviewed_at": "2026-07-04T00:15:23.700181Z",
+        "reviewed_at": "2026-07-07T14:26:57.177724Z",
         "reviewed_sha": "b3302691b06ff4207b2e72cda23501bf922042e8",
         "notes": "Resolved: both flagged def-disguised-true decls no longer present; scanner clean at current hash."
       }
@@ -1796,17 +1797,19 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "f90cc23b2bde",
+          "md": "a0544a432b35",
           "ts": "4ca795135db4",
-          "lean": "68046e6c2223"
+          "lean": "08ea6d830a5c"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.177724Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.177724Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The claim in 'Typed Garside element of the nuclear braid' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/typed-garside-element.lean:12:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RingTheory/HeckeAlgebra.olean' of module Mathlib.RingTheory.HeckeAlgebra does not exist.",
         "severity": "minor",
@@ -1816,17 +1819,19 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "f90cc23b2bde",
+          "md": "a0544a432b35",
           "ts": "4ca795135db4",
-          "lean": "68046e6c2223"
+          "lean": "08ea6d830a5c"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.177724Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.177724Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Typed Garside element of the nuclear braid' presents substantial mathematical content: Let $\\mathcal{A}(Z, N)$ be a nucleus with $A = Z + N$ nucleons in ordering $(t_0, \\ldots, t_{A-1})$ where $t_i \\in \\{...",
         "severity": "minor"
@@ -1835,17 +1840,19 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "f90cc23b2bde",
+          "md": "a0544a432b35",
           "ts": "4ca795135db4",
-          "lean": "68046e6c2223"
+          "lean": "08ea6d830a5c"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.177724Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.177724Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Typed Garside element of the nuclear braid'.",
         "severity": "minor",
@@ -1855,17 +1862,19 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "f90cc23b2bde",
+          "md": "a0544a432b35",
           "ts": "4ca795135db4",
-          "lean": "68046e6c2223"
+          "lean": "08ea6d830a5c"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.177724Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.177724Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose presents 'Typed Garside element of the nuclear braid' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
@@ -1874,17 +1883,19 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "f90cc23b2bde",
+          "md": "a0544a432b35",
           "ts": "4ca795135db4",
-          "lean": "68046e6c2223"
+          "lean": "08ea6d830a5c"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.177724Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.177724Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Typed Garside element of the nuclear braid'.",
         "severity": "minor",
@@ -1894,17 +1905,19 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "f90cc23b2bde",
+          "md": "a0544a432b35",
           "ts": "4ca795135db4",
-          "lean": "68046e6c2223"
+          "lean": "08ea6d830a5c"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.177724Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.177724Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/typed-garside-element.lean.",
         "severity": "minor",
@@ -1914,17 +1927,19 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "f90cc23b2bde",
+          "md": "a0544a432b35",
           "ts": "4ca795135db4",
-          "lean": "68046e6c2223"
+          "lean": "08ea6d830a5c"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.177724Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.177724Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/typed-garside-element.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
@@ -1933,17 +1948,19 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "f90cc23b2bde",
+          "md": "a0544a432b35",
           "ts": "4ca795135db4",
-          "lean": "68046e6c2223"
+          "lean": "08ea6d830a5c"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.177724Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.177724Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Typed Garside element of the nuclear braid', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1953,17 +1970,19 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "f90cc23b2bde",
+          "md": "a0544a432b35",
           "ts": "4ca795135db4",
-          "lean": "68046e6c2223"
+          "lean": "08ea6d830a5c"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.177724Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.177724Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Typed Garside element of the nuclear braid' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1973,17 +1992,19 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "f90cc23b2bde",
+          "md": "a0544a432b35",
           "ts": "4ca795135db4",
-          "lean": "68046e6c2223"
+          "lean": "08ea6d830a5c"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.177724Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.177724Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Typed Garside element of the nuclear braid' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1993,17 +2014,19 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "f90cc23b2bde",
+          "md": "a0544a432b35",
           "ts": "4ca795135db4",
-          "lean": "68046e6c2223"
+          "lean": "08ea6d830a5c"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.177724Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.177724Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Typed Garside element of the nuclear braid' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -2013,17 +2036,19 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "f90cc23b2bde",
+          "md": "a0544a432b35",
           "ts": "4ca795135db4",
-          "lean": "68046e6c2223"
+          "lean": "08ea6d830a5c"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.177724Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.177724Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/typed-garside-element.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
@@ -2033,17 +2058,19 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "f90cc23b2bde",
+          "md": "a0544a432b35",
           "ts": "4ca795135db4",
-          "lean": "68046e6c2223"
+          "lean": "08ea6d830a5c"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.177724Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.177724Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/typed-garside-element.lean fails compilation: content/quantum-observable-universe/particle-interactions/typed-garside-element.lean:12:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RingTheory/HeckeAlgebra.olean' of module Mathlib.RingTheory.HeckeAlgebra does not exist",
         "severity": "critical",
@@ -2054,7 +2081,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "f90cc23b2bde",
+          "md": "a0544a432b35",
           "ts": "4ca795135db4",
           "lean": "08ea6d830a5c"
         },
@@ -2062,9 +2089,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.177724Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_at": "2026-07-07T14:26:57.177724Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'def:typed-garside-element' \u2192 expected 'typed_garside_element'; Lean declares: NucleonType, typedCrossingCoeff, NuclearOrdering, protonCount, neutronCount.... Structural match via content."
       }
@@ -2076,5 +2105,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.802Z"
+  "updated_at": "2026-07-07T14:26:57.177724Z"
 }

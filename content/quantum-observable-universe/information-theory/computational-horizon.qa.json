@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/information-theory/computational-horizon.lean"
   },
   "source_hashes": {
-    "md": "53ba82ec3955",
+    "md": "996b1d8616bc",
     "ts": "085daf10ec6b",
     "lean": "cb0a8701f59f"
   },
@@ -857,19 +857,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "279b1dfa88c4",
-          "ts": "86db91af9a68",
-          "lean": "e3b14108a625"
+          "md": "996b1d8616bc",
+          "ts": "085daf10ec6b",
+          "lean": "cb0a8701f59f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.602281Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:26.525Z",
+        "reviewed_at": "2026-07-07T14:26:55.602281Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -877,19 +877,19 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "279b1dfa88c4",
-          "ts": "86db91af9a68",
-          "lean": "e3b14108a625"
+          "md": "996b1d8616bc",
+          "ts": "085daf10ec6b",
+          "lean": "cb0a8701f59f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.602281Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:26.894Z",
+        "reviewed_at": "2026-07-07T14:26:55.602281Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -897,16 +897,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "279b1dfa88c4",
-          "ts": "86db91af9a68",
-          "lean": "e3b14108a625"
+          "md": "996b1d8616bc",
+          "ts": "085daf10ec6b",
+          "lean": "cb0a8701f59f"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.602281Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.602281Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The claim in 'Computational horizon' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
@@ -916,16 +918,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "279b1dfa88c4",
-          "ts": "86db91af9a68",
-          "lean": "e3b14108a625"
+          "md": "996b1d8616bc",
+          "ts": "085daf10ec6b",
+          "lean": "cb0a8701f59f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.602281Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.602281Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The block 'Computational horizon' presents substantial mathematical content: Let $L = \\hat{\\beta}$ be the braid closure of a computation $\\beta$ with $c = 3N...",
         "severity": "minor"
@@ -934,16 +938,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "279b1dfa88c4",
-          "ts": "86db91af9a68",
-          "lean": "e3b14108a625"
+          "md": "996b1d8616bc",
+          "ts": "085daf10ec6b",
+          "lean": "cb0a8701f59f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.602281Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.602281Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Computational horizon'.",
         "severity": "minor",
@@ -953,16 +959,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "279b1dfa88c4",
-          "ts": "86db91af9a68",
-          "lean": "e3b14108a625"
+          "md": "996b1d8616bc",
+          "ts": "085daf10ec6b",
+          "lean": "cb0a8701f59f"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.602281Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.602281Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The prose presents 'Computational horizon' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
@@ -971,16 +979,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "279b1dfa88c4",
-          "ts": "86db91af9a68",
-          "lean": "e3b14108a625"
+          "md": "996b1d8616bc",
+          "ts": "085daf10ec6b",
+          "lean": "cb0a8701f59f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.602281Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.602281Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Computational horizon'.",
         "severity": "minor",
@@ -990,16 +1000,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "279b1dfa88c4",
-          "ts": "86db91af9a68",
-          "lean": "e3b14108a625"
+          "md": "996b1d8616bc",
+          "ts": "085daf10ec6b",
+          "lean": "cb0a8701f59f"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.602281Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.602281Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/information-theory/computational-horizon.lean.",
         "severity": "minor",
@@ -1009,16 +1021,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "279b1dfa88c4",
-          "ts": "86db91af9a68",
-          "lean": "e3b14108a625"
+          "md": "996b1d8616bc",
+          "ts": "085daf10ec6b",
+          "lean": "cb0a8701f59f"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.602281Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.602281Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/information-theory/computational-horizon.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
@@ -1027,16 +1041,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "279b1dfa88c4",
-          "ts": "86db91af9a68",
-          "lean": "e3b14108a625"
+          "md": "996b1d8616bc",
+          "ts": "085daf10ec6b",
+          "lean": "cb0a8701f59f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.602281Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.602281Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No citations are present in 'Computational horizon', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1046,16 +1062,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "279b1dfa88c4",
-          "ts": "86db91af9a68",
-          "lean": "e3b14108a625"
+          "md": "996b1d8616bc",
+          "ts": "085daf10ec6b",
+          "lean": "cb0a8701f59f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.602281Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.602281Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Key terms and symbols in 'Computational horizon' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1065,16 +1083,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "279b1dfa88c4",
-          "ts": "86db91af9a68",
-          "lean": "e3b14108a625"
+          "md": "996b1d8616bc",
+          "ts": "085daf10ec6b",
+          "lean": "cb0a8701f59f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.602281Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.602281Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The algebraic and logical relations in 'Computational horizon' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1084,16 +1104,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "279b1dfa88c4",
-          "ts": "86db91af9a68",
-          "lean": "e3b14108a625"
+          "md": "996b1d8616bc",
+          "ts": "085daf10ec6b",
+          "lean": "cb0a8701f59f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.602281Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.602281Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The physical concepts described in 'Computational horizon' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1103,16 +1125,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "279b1dfa88c4",
-          "ts": "86db91af9a68",
-          "lean": "e3b14108a625"
+          "md": "996b1d8616bc",
+          "ts": "085daf10ec6b",
+          "lean": "cb0a8701f59f"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.602281Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.602281Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/information-theory/computational-horizon.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
@@ -1122,16 +1146,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "279b1dfa88c4",
-          "ts": "86db91af9a68",
-          "lean": "e3b14108a625"
+          "md": "996b1d8616bc",
+          "ts": "085daf10ec6b",
+          "lean": "cb0a8701f59f"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.602281Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.602281Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/information-theory/computational-horizon.lean fails compilation: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/computational-horizon.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Defs.olean' of module Mathlib.Data.Nat.Defs does not exist",
         "severity": "critical",
@@ -1163,14 +1189,21 @@
       {
         "result": "pass",
         "notes": "Flattened complex tables/lists into dense, exact prose where appropriate. Aligned notation. Replaced 'we define' with direct declarative statements. Improved transitions between blocks while retaining original file markers.",
-        "reviewed_at": "2026-07-06T22:51:10Z",
+        "reviewed_at": "2026-07-07T14:26:55.602281Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.602281Z"
+        },
+        "field_hash": {
+          "md": "996b1d8616bc",
+          "ts": "085daf10ec6b",
+          "lean": "cb0a8701f59f"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T05:14:55.741Z"
+  "updated_at": "2026-07-07T14:26:55.602281Z"
 }

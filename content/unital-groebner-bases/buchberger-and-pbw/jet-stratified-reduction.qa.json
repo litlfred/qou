@@ -8,9 +8,9 @@
     "lean": "content/unital-groebner-bases/buchberger-and-pbw/jet-stratified-reduction.lean"
   },
   "source_hashes": {
-    "md": "de280dc3ddb2",
+    "md": "10c87273123e",
     "ts": "86ae1a6f4719",
-    "lean": "9270f70e463d"
+    "lean": "4aa2471e5d2e"
   },
   "criteria": {
     "proof-narrative-lean-equiv": [
@@ -33,17 +33,19 @@
       },
       {
         "field_hash": {
-          "md": "aeb89201e2c4",
+          "md": "10c87273123e",
           "ts": "86ae1a6f4719",
-          "lean": "9270f70e463d"
+          "lean": "4aa2471e5d2e"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.942825Z"
         },
-        "reviewed_at": "2026-05-28T15:43:23.399Z",
+        "reviewed_at": "2026-07-07T14:26:54.942825Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Lean sibling is a stub/re-exporter; canonical formalisation lives in a Lake package and is audited by lean-compile-audit."
       }
@@ -904,5 +906,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-13T13:55:43.769Z"
+  "updated_at": "2026-07-07T14:26:54.942825Z"
 }

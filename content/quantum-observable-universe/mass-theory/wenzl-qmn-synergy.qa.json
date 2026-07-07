@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/wenzl-qmn-synergy.lean"
   },
   "source_hashes": {
-    "md": "e47a4688606c",
+    "md": "e4d40dccbb6f",
     "ts": "96cae0ea5752",
     "lean": "defc7e949a82"
   },
@@ -1050,7 +1050,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "e47a4688606c",
+          "md": "e4d40dccbb6f",
           "ts": "96cae0ea5752",
           "lean": "defc7e949a82"
         },
@@ -1058,9 +1058,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.932765Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_at": "2026-07-07T14:26:56.932765Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:wenzl-qmn-synergy' \u2192 expected 'wenzl_qmn_synergy'; Lean declares: CanonicalPermutationBraid, length, cycleType, chi_qMN, yLambdaWenzl.... Structural match via content."
       }
@@ -1069,14 +1071,21 @@
       {
         "result": "pass",
         "notes": "Rewrote prose sections of mass-theory_seq40.md to enforce H1-H8 and milnor-brevity. Preserved all math blocks and original section markers. Ensured linear flow, minimal technical clutter, and short declarative sentences.",
-        "reviewed_at": "2026-07-06T22:50:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.932765Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.932765Z"
+        },
+        "field_hash": {
+          "md": "e4d40dccbb6f",
+          "ts": "96cae0ea5752",
+          "lean": "defc7e949a82"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.430Z"
+  "updated_at": "2026-07-07T14:26:56.932765Z"
 }

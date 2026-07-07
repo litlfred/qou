@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/molecular-construction/ilp-covalent-bond.lean"
   },
   "source_hashes": {
-    "md": "06b05df79504",
+    "md": "6d85d0c69ab9",
     "ts": "1ee12ac77830",
     "lean": "f8aa3cc42cf3"
   },
@@ -37,14 +37,21 @@
       {
         "result": "pass",
         "notes": "Tightened paragraphs. Removed 'draft'. Kept LP definitions and tables clean.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.483083Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.483083Z"
+        },
+        "field_hash": {
+          "md": "6d85d0c69ab9",
+          "ts": "1ee12ac77830",
+          "lean": "f8aa3cc42cf3"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.117Z"
+  "updated_at": "2026-07-07T14:26:55.483083Z"
 }

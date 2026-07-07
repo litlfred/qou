@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/braids-and-knots/outro-braids-and-knots.md"
   },
   "source_hashes": {
-    "ts": "7b101acfb4cc",
-    "md": "ac4a6c888adf"
+    "md": "c1fe7171c252",
+    "ts": "7b101acfb4cc"
   },
   "criteria": {
     "q-usage-regime-detected": [
@@ -128,14 +128,20 @@
       {
         "result": "pass",
         "notes": "Applied Milnor brevity. Trimmed internal cross references and bloated narrative commentary. Tightened 'Mathematical Novelty' notes to single clear sentences. Retained all math.",
-        "reviewed_at": "2026-07-06T22:42:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.386406Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.386406Z"
+        },
+        "field_hash": {
+          "md": "c1fe7171c252",
+          "ts": "7b101acfb4cc"
         }
       }
     ]
   },
-  "updated_at": "2026-06-01T16:06:38.106Z"
+  "updated_at": "2026-07-07T14:26:55.386406Z"
 }

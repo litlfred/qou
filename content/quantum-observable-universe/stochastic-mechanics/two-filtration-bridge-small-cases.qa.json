@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/stochastic-mechanics/two-filtration-bridge-small-cases.md"
   },
   "source_hashes": {
-    "md": "bc0e19b4848e",
+    "md": "b7381fd5ab51",
     "ts": "cfa8caab839e"
   },
   "criteria": {
@@ -1010,14 +1010,20 @@
       {
         "result": "pass",
         "notes": "Cleaned up the graded Baer-star and classical limit implications. Reduced clutter around the Riemann hypothesis statement and macroscopic stability.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.028154Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.028154Z"
+        },
+        "field_hash": {
+          "md": "b7381fd5ab51",
+          "ts": "cfa8caab839e"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T23:48:56.445Z"
+  "updated_at": "2026-07-07T14:26:56.028154Z"
 }

@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/quantum-observable-universes/q-lie-bracket.lean"
   },
   "source_hashes": {
-    "md": "a0b75b01a8c0",
+    "md": "506530e60ad7",
     "ts": "176e528535e5",
     "lean": "997b79d850a3"
   },
@@ -800,19 +800,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "a0b75b01a8c0",
+          "md": "506530e60ad7",
           "ts": "176e528535e5",
-          "lean": "852058a80f9c"
+          "lean": "997b79d850a3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.812685Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:36.930Z",
+        "reviewed_at": "2026-07-07T14:26:55.812685Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -820,17 +820,19 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "a0b75b01a8c0",
+          "md": "506530e60ad7",
           "ts": "176e528535e5",
-          "lean": "852058a80f9c"
+          "lean": "997b79d850a3"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.812685Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.812685Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "q-lie-bracket.lean:1",
@@ -840,17 +842,19 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "a0b75b01a8c0",
+          "md": "506530e60ad7",
           "ts": "176e528535e5",
-          "lean": "852058a80f9c"
+          "lean": "997b79d850a3"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.812685Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.812685Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "q-lie-bracket.ts:1",
@@ -860,17 +864,19 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "a0b75b01a8c0",
+          "md": "506530e60ad7",
           "ts": "176e528535e5",
-          "lean": "852058a80f9c"
+          "lean": "997b79d850a3"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.812685Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.812685Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "q-lie-bracket.ts:1",
@@ -880,17 +886,19 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "a0b75b01a8c0",
+          "md": "506530e60ad7",
           "ts": "176e528535e5",
-          "lean": "852058a80f9c"
+          "lean": "997b79d850a3"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.812685Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.812685Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "q-lie-bracket.ts:1",
@@ -900,17 +908,19 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "a0b75b01a8c0",
+          "md": "506530e60ad7",
           "ts": "176e528535e5",
-          "lean": "852058a80f9c"
+          "lean": "997b79d850a3"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.812685Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.812685Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "q-lie-bracket.ts:1",
@@ -920,17 +930,19 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "a0b75b01a8c0",
+          "md": "506530e60ad7",
           "ts": "176e528535e5",
-          "lean": "852058a80f9c"
+          "lean": "997b79d850a3"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.812685Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.812685Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "q-lie-bracket.lean:1",
@@ -940,17 +952,19 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "a0b75b01a8c0",
+          "md": "506530e60ad7",
           "ts": "176e528535e5",
-          "lean": "852058a80f9c"
+          "lean": "997b79d850a3"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.812685Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.812685Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "q-lie-bracket.lean:1",
@@ -960,17 +974,19 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "a0b75b01a8c0",
+          "md": "506530e60ad7",
           "ts": "176e528535e5",
-          "lean": "852058a80f9c"
+          "lean": "997b79d850a3"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.812685Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.812685Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "q-lie-bracket.ts:1",
@@ -980,17 +996,19 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "a0b75b01a8c0",
+          "md": "506530e60ad7",
           "ts": "176e528535e5",
-          "lean": "852058a80f9c"
+          "lean": "997b79d850a3"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.812685Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.812685Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "q-lie-bracket.ts:1",
@@ -1000,17 +1018,19 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "a0b75b01a8c0",
+          "md": "506530e60ad7",
           "ts": "176e528535e5",
-          "lean": "852058a80f9c"
+          "lean": "997b79d850a3"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.812685Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.812685Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "q-lie-bracket.ts:1",
@@ -1020,17 +1040,19 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "a0b75b01a8c0",
+          "md": "506530e60ad7",
           "ts": "176e528535e5",
-          "lean": "852058a80f9c"
+          "lean": "997b79d850a3"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.812685Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.812685Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "q-lie-bracket.ts:1",
@@ -1040,17 +1062,19 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "a0b75b01a8c0",
+          "md": "506530e60ad7",
           "ts": "176e528535e5",
-          "lean": "852058a80f9c"
+          "lean": "997b79d850a3"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.812685Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.812685Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "q-lie-bracket.lean:1",
@@ -1060,17 +1084,19 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "a0b75b01a8c0",
+          "md": "506530e60ad7",
           "ts": "176e528535e5",
-          "lean": "852058a80f9c"
+          "lean": "997b79d850a3"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.812685Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.812685Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "critical",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/q-lie-bracket.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/q-lie-bracket.lean:32:13: error: unexpected token 'section'; expected 'lemma'",
@@ -1082,14 +1108,21 @@
       {
         "result": "pass",
         "notes": "Deleted the 'archimedean specialisation (\u00a77c)' meta-notes. Removed motivational filler.",
-        "reviewed_at": "2026-07-06T22:46:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.812685Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.812685Z"
+        },
+        "field_hash": {
+          "md": "506530e60ad7",
+          "ts": "176e528535e5",
+          "lean": "997b79d850a3"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-07T14:26:55.812685Z"
 }

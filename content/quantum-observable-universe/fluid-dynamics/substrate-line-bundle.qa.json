@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/fluid-dynamics/substrate-line-bundle.lean"
   },
   "source_hashes": {
-    "md": "d5ade26014d2",
+    "md": "1b3b019128a5",
     "ts": "e404b78b0d91",
     "lean": "540ba5540378"
   },
@@ -895,19 +895,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "c144c6668cfe",
+          "md": "1b3b019128a5",
           "ts": "e404b78b0d91",
-          "lean": "b6d2feaada6b"
+          "lean": "540ba5540378"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.241221Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:46.023Z",
+        "reviewed_at": "2026-07-07T14:26:56.241221Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -915,19 +915,19 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "c144c6668cfe",
+          "md": "1b3b019128a5",
           "ts": "e404b78b0d91",
-          "lean": "b6d2feaada6b"
+          "lean": "540ba5540378"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.241221Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:46.430Z",
+        "reviewed_at": "2026-07-07T14:26:56.241221Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -935,16 +935,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "c144c6668cfe",
+          "md": "1b3b019128a5",
           "ts": "e404b78b0d91",
-          "lean": "b6d2feaada6b"
+          "lean": "540ba5540378"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.241221Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.241221Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The claim in 'The substrate line bundle and the $\\\\mathbb{G}_m$-family of differentials' is unverified due to Lean compilation failures in sibling file.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/substrate-line-bundle.lean:1",
@@ -954,16 +956,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "c144c6668cfe",
+          "md": "1b3b019128a5",
           "ts": "e404b78b0d91",
-          "lean": "b6d2feaada6b"
+          "lean": "540ba5540378"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.241221Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.241221Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The block 'The substrate line bundle and the $\\\\mathbb{G}_m$-family of differentials' presents substantial mathematical content: Let $(\\mathbf{C}, A, \\tau)$ be a [QOU](#def:quantum-observable-universe) with [w...",
         "severity": "minor"
@@ -972,16 +976,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "c144c6668cfe",
+          "md": "1b3b019128a5",
           "ts": "e404b78b0d91",
-          "lean": "b6d2feaada6b"
+          "lean": "540ba5540378"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.241221Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.241221Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No circular reasoning or self-assuming definitions detected in 'The substrate line bundle and the $\\\\mathbb{G}_m$-family of differentials'.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/substrate-line-bundle.ts:1",
@@ -991,16 +997,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "c144c6668cfe",
+          "md": "1b3b019128a5",
           "ts": "e404b78b0d91",
-          "lean": "b6d2feaada6b"
+          "lean": "540ba5540378"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.241221Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.241221Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The prose presents 'The substrate line bundle and the $\\\\mathbb{G}_m$-family of differentials' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
@@ -1009,16 +1017,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "c144c6668cfe",
+          "md": "1b3b019128a5",
           "ts": "e404b78b0d91",
-          "lean": "b6d2feaada6b"
+          "lean": "540ba5540378"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.241221Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.241221Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'The substrate line bundle and the $\\\\mathbb{G}_m$-family of differentials'.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/substrate-line-bundle.ts:1",
@@ -1028,16 +1038,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "c144c6668cfe",
+          "md": "1b3b019128a5",
           "ts": "e404b78b0d91",
-          "lean": "b6d2feaada6b"
+          "lean": "540ba5540378"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.241221Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.241221Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/fluid-dynamics/substrate-line-bundle.lean.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/substrate-line-bundle.lean:1",
@@ -1047,16 +1059,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "c144c6668cfe",
+          "md": "1b3b019128a5",
           "ts": "e404b78b0d91",
-          "lean": "b6d2feaada6b"
+          "lean": "540ba5540378"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.241221Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.241221Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The Lean sibling content/quantum-observable-universe/fluid-dynamics/substrate-line-bundle.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
@@ -1065,16 +1079,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "c144c6668cfe",
+          "md": "1b3b019128a5",
           "ts": "e404b78b0d91",
-          "lean": "b6d2feaada6b"
+          "lean": "540ba5540378"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.241221Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.241221Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No citations are present in 'The substrate line bundle and the $\\\\mathbb{G}_m$-family of differentials', hence no citation misuse is possible.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/substrate-line-bundle.ts:1",
@@ -1084,16 +1100,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "c144c6668cfe",
+          "md": "1b3b019128a5",
           "ts": "e404b78b0d91",
-          "lean": "b6d2feaada6b"
+          "lean": "540ba5540378"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.241221Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.241221Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Key terms and symbols in 'The substrate line bundle and the $\\\\mathbb{G}_m$-family of differentials' are mathematically defined and unambiguous.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/substrate-line-bundle.ts:1",
@@ -1103,16 +1121,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "c144c6668cfe",
+          "md": "1b3b019128a5",
           "ts": "e404b78b0d91",
-          "lean": "b6d2feaada6b"
+          "lean": "540ba5540378"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.241221Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.241221Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The algebraic and logical relations in 'The substrate line bundle and the $\\\\mathbb{G}_m$-family of differentials' are independent of empirical tuning parameters.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/substrate-line-bundle.ts:1",
@@ -1122,16 +1142,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "c144c6668cfe",
+          "md": "1b3b019128a5",
           "ts": "e404b78b0d91",
-          "lean": "b6d2feaada6b"
+          "lean": "540ba5540378"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.241221Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.241221Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The physical concepts described in 'The substrate line bundle and the $\\\\mathbb{G}_m$-family of differentials' are consistent with quantum observable mechanics.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/substrate-line-bundle.ts:1",
@@ -1141,16 +1163,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "c144c6668cfe",
+          "md": "1b3b019128a5",
           "ts": "e404b78b0d91",
-          "lean": "b6d2feaada6b"
+          "lean": "540ba5540378"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.241221Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.241221Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The Lean sibling content/quantum-observable-universe/fluid-dynamics/substrate-line-bundle.lean fails compilation, indicating a reproducibility failure.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/substrate-line-bundle.lean:1 \u2014 /Users/litlfred/space_cats/qou/content/quantum-observable-universe/fluid-dynamics/substrate-line-bundle.lean:13:23: error: failed to synthesize",
@@ -1160,16 +1184,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "c144c6668cfe",
+          "md": "1b3b019128a5",
           "ts": "e404b78b0d91",
-          "lean": "b6d2feaada6b"
+          "lean": "540ba5540378"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.241221Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.241221Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/fluid-dynamics/substrate-line-bundle.lean fails compilation: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/fluid-dynamics/substrate-line-bundle.lean:13:23: error: failed to synthesize",
         "verdict": "open-objection",
@@ -1181,14 +1207,21 @@
       {
         "result": "pass",
         "notes": "Rewrote fluid-dynamics_seq4.md to eliminate passive fluff and prioritize 'Why'. Kept '<!-- FILE_START: ... -->' bounds.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.241221Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.241221Z"
+        },
+        "field_hash": {
+          "md": "1b3b019128a5",
+          "ts": "e404b78b0d91",
+          "lean": "540ba5540378"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:55.699Z"
+  "updated_at": "2026-07-07T14:26:56.241221Z"
 }

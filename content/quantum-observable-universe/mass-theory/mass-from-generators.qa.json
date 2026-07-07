@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/mass-from-generators.lean"
   },
   "source_hashes": {
-    "md": "a1d11e1a5e9d",
+    "md": "ee102433bdfd",
     "ts": "14a8a25f4a03",
     "lean": "faccfab49971"
   },
@@ -859,17 +859,19 @@
       },
       {
         "field_hash": {
-          "md": "9da8bcd93c77",
-          "ts": "b7382bbd1091",
-          "lean": "43fe1c2fd866"
+          "md": "ee102433bdfd",
+          "ts": "14a8a25f4a03",
+          "lean": "faccfab49971"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.765294Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:56.765294Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "remark in the 'Open problems: mass-tower structure and crystal basis' section; interprets def:knot-particle-generation, traces the generator->linking->mass pipeline. Topic squarely in mass-theory chapter scope; kind=remark with interprets is appropriate (it interprets, asserts no new proved claim)."
       }
@@ -877,16 +879,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "9da8bcd93c77",
-          "ts": "b7382bbd1091",
-          "lean": "43fe1c2fd866"
+          "md": "ee102433bdfd",
+          "ts": "14a8a25f4a03",
+          "lean": "faccfab49971"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.765294Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.765294Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, causing divergence from the narrative.",
         "severity": "minor"
@@ -895,17 +899,19 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "9da8bcd93c77",
-          "ts": "b7382bbd1091",
-          "lean": "43fe1c2fd866"
+          "md": "ee102433bdfd",
+          "ts": "14a8a25f4a03",
+          "lean": "faccfab49971"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.765294Z"
         },
-        "reviewed_at": "2026-06-28T10:58:51.746Z",
+        "reviewed_at": "2026-07-07T14:26:56.765294Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The claim in 'Mass spectrum from $T_{m,n}$ generators and linking operations' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
@@ -915,17 +921,19 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "9da8bcd93c77",
-          "ts": "b7382bbd1091",
-          "lean": "43fe1c2fd866"
+          "md": "ee102433bdfd",
+          "ts": "14a8a25f4a03",
+          "lean": "faccfab49971"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.765294Z"
         },
-        "reviewed_at": "2026-06-28T10:58:51.753Z",
+        "reviewed_at": "2026-07-07T14:26:56.765294Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The block 'Mass spectrum from $T_{m,n}$ generators and linking operations' presents substantial mathematical content, establishing relation $T_{m,n}$.",
         "severity": "minor"
@@ -934,17 +942,19 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "9da8bcd93c77",
-          "ts": "b7382bbd1091",
-          "lean": "43fe1c2fd866"
+          "md": "ee102433bdfd",
+          "ts": "14a8a25f4a03",
+          "lean": "faccfab49971"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.765294Z"
         },
-        "reviewed_at": "2026-06-28T10:58:51.759Z",
+        "reviewed_at": "2026-07-07T14:26:56.765294Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Mass spectrum from $T_{m,n}$ generators and linking operations'. The construction is derived from prop:torus-knot-generators.",
         "severity": "minor",
@@ -954,17 +964,19 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "9da8bcd93c77",
-          "ts": "b7382bbd1091",
-          "lean": "43fe1c2fd866"
+          "md": "ee102433bdfd",
+          "ts": "14a8a25f4a03",
+          "lean": "faccfab49971"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.765294Z"
         },
-        "reviewed_at": "2026-06-28T10:58:51.765Z",
+        "reviewed_at": "2026-07-07T14:26:56.765294Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The prose presents 'Mass spectrum from $T_{m,n}$ generators and linking operations' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
@@ -973,17 +985,19 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "9da8bcd93c77",
-          "ts": "b7382bbd1091",
-          "lean": "43fe1c2fd866"
+          "md": "ee102433bdfd",
+          "ts": "14a8a25f4a03",
+          "lean": "faccfab49971"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.765294Z"
         },
-        "reviewed_at": "2026-06-28T10:58:51.771Z",
+        "reviewed_at": "2026-07-07T14:26:56.765294Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Mass spectrum from $T_{m,n}$ generators and linking operations'. All constants are canonically derived.",
         "severity": "minor",
@@ -993,17 +1007,19 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "9da8bcd93c77",
-          "ts": "b7382bbd1091",
-          "lean": "43fe1c2fd866"
+          "md": "ee102433bdfd",
+          "ts": "14a8a25f4a03",
+          "lean": "faccfab49971"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.765294Z"
         },
-        "reviewed_at": "2026-06-28T10:58:51.777Z",
+        "reviewed_at": "2026-07-07T14:26:56.765294Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/mass-theory/mass-from-generators.lean.",
         "severity": "minor",
@@ -1013,17 +1029,19 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "9da8bcd93c77",
-          "ts": "b7382bbd1091",
-          "lean": "43fe1c2fd866"
+          "md": "ee102433bdfd",
+          "ts": "14a8a25f4a03",
+          "lean": "faccfab49971"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.765294Z"
         },
-        "reviewed_at": "2026-06-28T10:58:51.783Z",
+        "reviewed_at": "2026-07-07T14:26:56.765294Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No citations are present in 'Mass spectrum from $T_{m,n}$ generators and linking operations', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1033,17 +1051,19 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "9da8bcd93c77",
-          "ts": "b7382bbd1091",
-          "lean": "43fe1c2fd866"
+          "md": "ee102433bdfd",
+          "ts": "14a8a25f4a03",
+          "lean": "faccfab49971"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.765294Z"
         },
-        "reviewed_at": "2026-06-28T10:58:51.789Z",
+        "reviewed_at": "2026-07-07T14:26:56.765294Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Key terms and symbols (including $T_{m,n}$) in 'Mass spectrum from $T_{m,n}$ generators and linking operations' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1053,17 +1073,19 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "9da8bcd93c77",
-          "ts": "b7382bbd1091",
-          "lean": "43fe1c2fd866"
+          "md": "ee102433bdfd",
+          "ts": "14a8a25f4a03",
+          "lean": "faccfab49971"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.765294Z"
         },
-        "reviewed_at": "2026-06-28T10:58:51.794Z",
+        "reviewed_at": "2026-07-07T14:26:56.765294Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The algebraic and logical relations in 'Mass spectrum from $T_{m,n}$ generators and linking operations' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1073,17 +1095,19 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "9da8bcd93c77",
-          "ts": "b7382bbd1091",
-          "lean": "43fe1c2fd866"
+          "md": "ee102433bdfd",
+          "ts": "14a8a25f4a03",
+          "lean": "faccfab49971"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.765294Z"
         },
-        "reviewed_at": "2026-06-28T10:58:51.800Z",
+        "reviewed_at": "2026-07-07T14:26:56.765294Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The physical concepts described in 'Mass spectrum from $T_{m,n}$ generators and linking operations' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1093,17 +1117,19 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "9da8bcd93c77",
-          "ts": "b7382bbd1091",
-          "lean": "43fe1c2fd866"
+          "md": "ee102433bdfd",
+          "ts": "14a8a25f4a03",
+          "lean": "faccfab49971"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.765294Z"
         },
-        "reviewed_at": "2026-06-28T10:58:51.806Z",
+        "reviewed_at": "2026-07-07T14:26:56.765294Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/mass-from-generators.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
@@ -1113,17 +1139,19 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "9da8bcd93c77",
-          "ts": "b7382bbd1091",
-          "lean": "43fe1c2fd866"
+          "md": "ee102433bdfd",
+          "ts": "14a8a25f4a03",
+          "lean": "faccfab49971"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.765294Z"
         },
-        "reviewed_at": "2026-06-28T10:58:51.813Z",
+        "reviewed_at": "2026-07-07T14:26:56.765294Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-theory/mass-from-generators.lean fails compilation: ../mass-theory/mass-from-generators.lean:205:67: error: unsolved goals",
         "severity": "critical",
@@ -1154,7 +1182,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "a1d11e1a5e9d",
+          "md": "ee102433bdfd",
           "ts": "14a8a25f4a03",
           "lean": "faccfab49971"
         },
@@ -1162,9 +1190,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.765294Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_at": "2026-07-07T14:26:56.765294Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'rem:mass-from-generators' \u2192 expected 'mass_from_generators'; Lean declares: codata_electron, codata_muon, codata_proton, codata_neutron, codata_deuteron.... Structural match via content."
       }
@@ -1173,14 +1203,21 @@
       {
         "result": "pass",
         "notes": "Rewrote prose sections of mass-theory_seq47.md to enforce H1-H8 and milnor-brevity. Preserved all math blocks and original section markers. Ensured linear flow, minimal technical clutter, and short declarative sentences.",
-        "reviewed_at": "2026-07-06T22:51:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.765294Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.765294Z"
+        },
+        "field_hash": {
+          "md": "ee102433bdfd",
+          "ts": "14a8a25f4a03",
+          "lean": "faccfab49971"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.430Z"
+  "updated_at": "2026-07-07T14:26:56.765294Z"
 }

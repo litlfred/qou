@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/lp-stable.lean"
   },
   "source_hashes": {
-    "md": "3693199a5fc3",
+    "md": "a9ba92821c4f",
     "ts": "08d2b32bbc48",
     "lean": "478c74a97b7e"
   },
@@ -36,7 +36,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "3693199a5fc3",
+          "md": "a9ba92821c4f",
           "ts": "08d2b32bbc48",
           "lean": "478c74a97b7e"
         },
@@ -44,13 +44,15 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.300426Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_at": "2026-07-07T14:26:57.300426Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'def:lp-stable' → expected 'lp_stable'; Lean declares: H3Vector, GramMatrix, LPStable, lpStable_zero. Structural match via content."
+        "notes": "Label 'def:lp-stable' \u2192 expected 'lp_stable'; Lean declares: H3Vector, GramMatrix, LPStable, lpStable_zero. Structural match via content."
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.802Z"
+  "updated_at": "2026-07-07T14:26:57.300426Z"
 }

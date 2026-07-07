@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.lean"
   },
   "source_hashes": {
-    "md": "8423261cc2ab",
+    "md": "b26193784250",
     "ts": "e8c10b6e76f3",
     "lean": "f1bf745976d3"
   },
@@ -1978,19 +1978,19 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "bf64d7a72d1b",
+          "md": "b26193784250",
           "ts": "e8c10b6e76f3",
-          "lean": "6435e6e87fd5"
+          "lean": "f1bf745976d3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.452505Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:19.394Z",
+        "reviewed_at": "2026-07-07T14:26:57.452505Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
       }
@@ -1998,19 +1998,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "bf64d7a72d1b",
+          "md": "b26193784250",
           "ts": "e8c10b6e76f3",
-          "lean": "6435e6e87fd5"
+          "lean": "f1bf745976d3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.452505Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:19.767Z",
+        "reviewed_at": "2026-07-07T14:26:57.452505Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -2018,19 +2018,19 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "bf64d7a72d1b",
+          "md": "b26193784250",
           "ts": "e8c10b6e76f3",
-          "lean": "6435e6e87fd5"
+          "lean": "f1bf745976d3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.452505Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:20.112Z",
+        "reviewed_at": "2026-07-07T14:26:57.452505Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -2038,19 +2038,19 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "bf64d7a72d1b",
+          "md": "b26193784250",
           "ts": "e8c10b6e76f3",
-          "lean": "6435e6e87fd5"
+          "lean": "f1bf745976d3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.452505Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:20.496Z",
+        "reviewed_at": "2026-07-07T14:26:57.452505Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
       }
@@ -2090,7 +2090,7 @@
       },
       {
         "field_hash": {
-          "md": "8423261cc2ab",
+          "md": "b26193784250",
           "ts": "e8c10b6e76f3",
           "lean": "f1bf745976d3"
         },
@@ -2098,9 +2098,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.452505Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_at": "2026-07-07T14:26:57.452505Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:nuclear-operator-regimes' \u2192 expected 'nuclear_operator_regimes'; Lean declares: NuclearBindingRegime, observedRegime, nuclearOperatorRegimes. Structural match via content."
       }
@@ -2148,20 +2150,20 @@
       },
       {
         "field_hash": {
-          "md": "bf64d7a72d1b",
+          "md": "b26193784250",
           "ts": "e8c10b6e76f3",
-          "lean": "6435e6e87fd5"
+          "lean": "f1bf745976d3"
         },
         "result": "warn",
         "notes": "No Lean proof strategy (:=trivial on :True); md gives observed LP transitions but no derivation of why each regime's operator minimizes demand.",
-        "reviewed_at": "2026-06-25T17:06:48.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.452505Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.452505Z"
         },
         "score": {
           "max": 1,
@@ -2212,20 +2214,20 @@
       },
       {
         "field_hash": {
-          "md": "bf64d7a72d1b",
+          "md": "b26193784250",
           "ts": "e8c10b6e76f3",
-          "lean": "6435e6e87fd5"
+          "lean": "f1bf745976d3"
         },
         "result": "pass",
         "notes": "md goal is substantive/well-posed (3 inter-nucleon binding regimes I/II/III with LP-witness demand table A\u22646); plausibility rates the md claim, independent of the vacuous Lean.",
-        "reviewed_at": "2026-06-25T17:06:48.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.452505Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.452505Z"
         },
         "score": {
           "max": 1,
@@ -2276,20 +2278,20 @@
       },
       {
         "field_hash": {
-          "md": "bf64d7a72d1b",
+          "md": "b26193784250",
           "ts": "e8c10b6e76f3",
-          "lean": "6435e6e87fd5"
+          "lean": "f1bf745976d3"
         },
         "result": "pass",
         "notes": "Regime classification (torus T_{2,5}\u2192Hopf L\u00b1\u2192bare crossing) with B_3-is-quark-level-only claim is a substantive empirical observation; cited witness nuclear-binding-lp.",
-        "reviewed_at": "2026-06-25T17:06:48.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.452505Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.452505Z"
         },
         "score": {
           "max": 1,
@@ -2336,39 +2338,39 @@
       },
       {
         "field_hash": {
-          "md": "bf64d7a72d1b",
+          "md": "b26193784250",
           "ts": "e8c10b6e76f3",
-          "lean": "6435e6e87fd5"
+          "lean": "f1bf745976d3"
         },
         "result": "fail",
         "notes": "Lean is 'def nuclearOperatorRegimes : True := by trivial' \u2014 concludes :True (def-disguised-true per AGENTS.md \u00a71a); encodes none of the md's 3-regime operator-selection claim. Degenerate weakening.",
-        "reviewed_at": "2026-06-25T17:06:48.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.452505Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.452505Z"
         }
       }
     ],
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "bf64d7a72d1b",
+          "md": "b26193784250",
           "ts": "e8c10b6e76f3",
-          "lean": "6435e6e87fd5"
+          "lean": "f1bf745976d3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.452505Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:22.872Z",
+        "reviewed_at": "2026-07-07T14:26:57.452505Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
       }
@@ -2412,7 +2414,7 @@
       },
       {
         "field_hash": {
-          "md": "8423261cc2ab",
+          "md": "b26193784250",
           "ts": "e8c10b6e76f3",
           "lean": "f1bf745976d3"
         },
@@ -2420,10 +2422,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/lean-proof-vacuity-audit",
-          "agent_date": "2026-07-04",
-          "agent_skill": "local/lean-proof-vacuity-audit"
+          "agent_date": "2026-07-07T14:26:57.452505Z",
+          "agent_skill": "local/lean-proof-vacuity-audit",
+          "agent_model": "gemini-3.1-pro"
         },
-        "reviewed_at": "2026-07-04T00:15:23.700181Z",
+        "reviewed_at": "2026-07-07T14:26:57.452505Z",
         "reviewed_sha": "b3302691b06ff4207b2e72cda23501bf922042e8",
         "notes": "Resolved: the 'def nuclearOperatorRegimes : True := trivial' encoding was replaced (docstring documents the fix); scanner clean at current hash."
       }
@@ -2467,20 +2470,20 @@
       },
       {
         "field_hash": {
-          "md": "bf64d7a72d1b",
+          "md": "b26193784250",
           "ts": "e8c10b6e76f3",
-          "lean": "6435e6e87fd5"
+          "lean": "f1bf745976d3"
         },
         "result": "pass",
         "notes": "No premise on the :True stub; nothing contradictory.",
-        "reviewed_at": "2026-06-25T17:06:48.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.452505Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.452505Z"
         }
       }
     ],
@@ -2523,20 +2526,20 @@
       },
       {
         "field_hash": {
-          "md": "bf64d7a72d1b",
+          "md": "b26193784250",
           "ts": "e8c10b6e76f3",
-          "lean": "6435e6e87fd5"
+          "lean": "f1bf745976d3"
         },
         "result": "pass",
         "notes": "No binders on the :True stub; vacuously no unused hypothesis.",
-        "reviewed_at": "2026-06-25T17:06:48.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.452505Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.452505Z"
         }
       }
     ],
@@ -2561,27 +2564,27 @@
       },
       {
         "field_hash": {
-          "md": "bf64d7a72d1b",
+          "md": "b26193784250",
           "ts": "e8c10b6e76f3",
-          "lean": "6435e6e87fd5"
+          "lean": "f1bf745976d3"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.lean, content/quantum-observable-universe/lean/QOU/Interactions.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.452505Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.452505Z"
         }
       }
     ],
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "bf64d7a72d1b",
+          "md": "b26193784250",
           "ts": "e8c10b6e76f3",
           "lean": "f1bf745976d3"
         },
@@ -2589,9 +2592,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.452505Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.452505Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'Three operator regimes for nuclear binding': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -2601,7 +2606,7 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "bf64d7a72d1b",
+          "md": "b26193784250",
           "ts": "e8c10b6e76f3",
           "lean": "f1bf745976d3"
         },
@@ -2609,9 +2614,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.452505Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.452505Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Three operator regimes for nuclear binding'.",
         "severity": "minor",
@@ -2621,7 +2628,7 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "bf64d7a72d1b",
+          "md": "b26193784250",
           "ts": "e8c10b6e76f3",
           "lean": "f1bf745976d3"
         },
@@ -2629,9 +2636,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.452505Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.452505Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'Three operator regimes for nuclear binding' is appropriately qualified.",
         "severity": "minor"
@@ -2640,7 +2649,7 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "bf64d7a72d1b",
+          "md": "b26193784250",
           "ts": "e8c10b6e76f3",
           "lean": "f1bf745976d3"
         },
@@ -2648,9 +2657,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.452505Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.452505Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Three operator regimes for nuclear binding'.",
         "severity": "minor",
@@ -2660,7 +2671,7 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "bf64d7a72d1b",
+          "md": "b26193784250",
           "ts": "e8c10b6e76f3",
           "lean": "f1bf745976d3"
         },
@@ -2668,9 +2679,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.452505Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.452505Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The argument flow in 'Three operator regimes for nuclear binding' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -2680,7 +2693,7 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "bf64d7a72d1b",
+          "md": "b26193784250",
           "ts": "e8c10b6e76f3",
           "lean": "f1bf745976d3"
         },
@@ -2688,9 +2701,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.452505Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.452505Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Lean formalization and narrative for 'Three operator regimes for nuclear binding' are in complete agreement.",
         "severity": "minor"
@@ -2699,7 +2714,7 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "bf64d7a72d1b",
+          "md": "b26193784250",
           "ts": "e8c10b6e76f3",
           "lean": "f1bf745976d3"
         },
@@ -2707,9 +2722,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.452505Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.452505Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Three operator regimes for nuclear binding', hence no citation misuse is possible.",
         "severity": "minor",
@@ -2719,7 +2736,7 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "bf64d7a72d1b",
+          "md": "b26193784250",
           "ts": "e8c10b6e76f3",
           "lean": "f1bf745976d3"
         },
@@ -2727,9 +2744,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.452505Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.452505Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Three operator regimes for nuclear binding' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -2739,7 +2758,7 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "bf64d7a72d1b",
+          "md": "b26193784250",
           "ts": "e8c10b6e76f3",
           "lean": "f1bf745976d3"
         },
@@ -2747,9 +2766,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.452505Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.452505Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Three operator regimes for nuclear binding' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -2759,7 +2780,7 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "bf64d7a72d1b",
+          "md": "b26193784250",
           "ts": "e8c10b6e76f3",
           "lean": "f1bf745976d3"
         },
@@ -2767,9 +2788,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.452505Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.452505Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Three operator regimes for nuclear binding' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -2779,7 +2802,7 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "bf64d7a72d1b",
+          "md": "b26193784250",
           "ts": "e8c10b6e76f3",
           "lean": "f1bf745976d3"
         },
@@ -2787,9 +2810,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.452505Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.452505Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'Three operator regimes for nuclear binding' are reproducible.",
         "severity": "minor",
@@ -2799,7 +2824,7 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "bf64d7a72d1b",
+          "md": "b26193784250",
           "ts": "e8c10b6e76f3",
           "lean": "f1bf745976d3"
         },
@@ -2807,9 +2832,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.452505Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.452505Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -2820,7 +2847,7 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "bf64d7a72d1b",
+          "md": "b26193784250",
           "ts": "e8c10b6e76f3",
           "lean": "f1bf745976d3"
         },
@@ -2828,9 +2855,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.452505Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.452505Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Three operator regimes for nuclear binding' presents substantial mathematical content: The inter-nucleon binding operator is not fixed \u2014 it transitions between three distinct regimes as the nucleus grows....",
         "severity": "minor"
@@ -2843,5 +2872,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.802Z"
+  "updated_at": "2026-07-07T14:26:57.452505Z"
 }

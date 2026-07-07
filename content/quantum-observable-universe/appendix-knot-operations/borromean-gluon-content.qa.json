@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/appendix-knot-operations/borromean-gluon-content.md"
   },
   "source_hashes": {
-    "md": "4ee2d24a20da",
+    "md": "4c58c6194d90",
     "ts": "c1b262225af3"
   },
   "criteria": {
@@ -821,14 +821,20 @@
       {
         "result": "pass",
         "notes": "Tightened explanations of Hecke relations. Shortened sentences, removed conversational filler. Ensured equations punctuate linear argument.",
-        "reviewed_at": "2026-07-06T22:37:49Z",
+        "reviewed_at": "2026-07-07T14:26:55.535182Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.535182Z"
+        },
+        "field_hash": {
+          "md": "4c58c6194d90",
+          "ts": "c1b262225af3"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T16:25:39.114Z"
+  "updated_at": "2026-07-07T14:26:55.535182Z"
 }

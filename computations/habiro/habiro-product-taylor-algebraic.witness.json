@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-27T22:59:16.279878+00:00",
-  "commitSha": "369d249fa49773b28e6167e33eebf4aa243eae7f",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-07-07T13:47:24.685501+00:00",
+  "commitSha": "85da4f43133d9d70ca3582f4fa4f31771b5ec3f1",
   "assertions": [
     {
       "name": "taylor_matches_numerical",
@@ -14,25 +14,33 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 5195,
+  "durationMs": 2860,
   "computation": "habiro-product-taylor-algebraic",
   "scriptFile": "habiro_product_taylor_algebraic.py",
-  "scriptHash": "274992860c8b",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "94ca00610445",
+  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
+    "compute_dps": 70,
+    "output_dps": 60,
     "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "truncation_bound": "1e-60"
   },
-  "description": "Full Π(1+u^k) Taylor expansion to order 6. Verifies bridge = Plancherel × Vol/ℏ² × (1+ℏ²)(1−ℏ²/30) at 7.8 ppm with c₂=29/30, c₄=−1/30. c₆ ≈ 8.2630 at ℏ⁶ order.",
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Full Π(1+u^k) Taylor expansion to order 6. Verifies bridge = Plancherel × Vol/ℏ² × (1+ℏ²)(1−ℏ²/30) at 7.8 ppm with c₂=29/30, c₄=−1/30. c₆ ≈ 7.9308 at ℏ⁶ order.",
   "auditOnly": "docs/audits/2026-05-28-habiro-product-correction-7ppm.md",
   "data": {
     "taylor_order": 6,
     "c2": "29/30",
     "c4": "-1/30",
-    "c6_approx": 8.263018911439138,
-    "bridge_at_q0_from_series": 120.56549645196851,
+    "c6_approx": 7.9308141313306235,
+    "bridge_at_q0_from_series": 120.565461647225,
     "bridge_exact": 127.729663744927,
     "residual_ppm": 7.8
   }

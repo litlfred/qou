@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/quantum-observable-universes/laplace-fourier-wick-rotation.md"
   },
   "source_hashes": {
-    "md": "9703af53f28d",
+    "md": "17269da005a1",
     "ts": "142a51fb9065"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Unified existence/uniqueness statements and omitted structural tables. Condensed properties.",
-        "reviewed_at": "2026-07-06T22:46:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.894737Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.894737Z"
+        },
+        "field_hash": {
+          "md": "17269da005a1",
+          "ts": "142a51fb9065"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:58.083Z"
+  "updated_at": "2026-07-07T14:26:55.894737Z"
 }

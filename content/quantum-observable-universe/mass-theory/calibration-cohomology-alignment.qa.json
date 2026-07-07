@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/calibration-cohomology-alignment.lean"
   },
   "source_hashes": {
-    "md": "135a111c1fba",
+    "md": "1ccbf850d11d",
     "ts": "45156b052ade",
     "lean": "c37878c3327e"
   },
@@ -1068,16 +1068,18 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "135a111c1fba",
+          "md": "1ccbf850d11d",
           "ts": "45156b052ade",
           "lean": "c37878c3327e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.785534Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.785534Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Statement contains only the bare claim without physical interpretation.",
         "severity": "minor"
@@ -1086,7 +1088,7 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "135a111c1fba",
+          "md": "1ccbf850d11d",
           "ts": "45156b052ade",
           "lean": "c37878c3327e"
         },
@@ -1094,11 +1096,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.785534Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:04.311Z",
+        "reviewed_at": "2026-07-07T14:26:56.785534Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1106,16 +1108,18 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "135a111c1fba",
+          "md": "1ccbf850d11d",
           "ts": "45156b052ade",
           "lean": "c37878c3327e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.785534Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.785534Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
         "evidence": "content/quantum-observable-universe/mass-theory/calibration-cohomology-alignment.lean:1 \u2014 Lean file exists",
@@ -1125,16 +1129,18 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "135a111c1fba",
+          "md": "1ccbf850d11d",
           "ts": "45156b052ade",
           "lean": "c37878c3327e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.785534Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.785534Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean file contains a fully verified, sorry-free proof.",
         "severity": "minor"
@@ -1159,7 +1165,7 @@
       },
       {
         "field_hash": {
-          "md": "135a111c1fba",
+          "md": "1ccbf850d11d",
           "ts": "45156b052ade",
           "lean": "c37878c3327e"
         },
@@ -1167,9 +1173,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.785534Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_at": "2026-07-07T14:26:56.785534Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:calibration-cohomology-alignment' \u2192 expected 'calibration_cohomology_alignment'; Lean declares: CalibrationCohomologyAlignment, calibrations_eq_cohomology, cohomology_data_count. Structural match via content."
       }
@@ -1177,16 +1185,18 @@
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "135a111c1fba",
+          "md": "1ccbf850d11d",
           "ts": "45156b052ade",
           "lean": "c37878c3327e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.785534Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.785534Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Proof strategy is well-structured and easy to follow.",
         "severity": "minor"
@@ -1195,7 +1205,7 @@
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "135a111c1fba",
+          "md": "1ccbf850d11d",
           "ts": "45156b052ade",
           "lean": "c37878c3327e"
         },
@@ -1207,11 +1217,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.785534Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:06.086Z",
+        "reviewed_at": "2026-07-07T14:26:56.785534Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
       }
@@ -1219,16 +1229,18 @@
     "proof-rater-novelty": [
       {
         "field_hash": {
-          "md": "135a111c1fba",
+          "md": "1ccbf850d11d",
           "ts": "45156b052ade",
           "lean": "c37878c3327e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.785534Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.785534Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The mathematical and physical connections explored in this block are highly novel.",
         "severity": "minor",
@@ -1241,7 +1253,7 @@
     "proof-statement-integrity": [
       {
         "field_hash": {
-          "md": "135a111c1fba",
+          "md": "1ccbf850d11d",
           "ts": "45156b052ade",
           "lean": "c37878c3327e"
         },
@@ -1249,11 +1261,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.785534Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:06.752Z",
+        "reviewed_at": "2026-07-07T14:26:56.785534Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
       }
@@ -1261,7 +1273,7 @@
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "135a111c1fba",
+          "md": "1ccbf850d11d",
           "ts": "45156b052ade",
           "lean": "c37878c3327e"
         },
@@ -1269,11 +1281,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.785534Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:07.182Z",
+        "reviewed_at": "2026-07-07T14:26:56.785534Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
       }
@@ -1281,7 +1293,7 @@
     "proof-no-trivial-true": [
       {
         "field_hash": {
-          "md": "135a111c1fba",
+          "md": "1ccbf850d11d",
           "ts": "45156b052ade",
           "lean": "c37878c3327e"
         },
@@ -1289,11 +1301,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.785534Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:07.572Z",
+        "reviewed_at": "2026-07-07T14:26:56.785534Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
       }
@@ -1301,7 +1313,7 @@
     "proof-no-false-premise": [
       {
         "field_hash": {
-          "md": "135a111c1fba",
+          "md": "1ccbf850d11d",
           "ts": "45156b052ade",
           "lean": "c37878c3327e"
         },
@@ -1309,11 +1321,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.785534Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:07.981Z",
+        "reviewed_at": "2026-07-07T14:26:56.785534Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
       }
@@ -1321,16 +1333,18 @@
     "proof-no-unused-hypotheses": [
       {
         "field_hash": {
-          "md": "135a111c1fba",
+          "md": "1ccbf850d11d",
           "ts": "45156b052ade",
           "lean": "c37878c3327e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.785534Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.785534Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No unused hypotheses are present in the Lean proof.",
         "severity": "minor"
@@ -1339,7 +1353,7 @@
     "proof-no-decide-masking": [
       {
         "field_hash": {
-          "md": "135a111c1fba",
+          "md": "1ccbf850d11d",
           "ts": "45156b052ade",
           "lean": "c37878c3327e"
         },
@@ -1347,11 +1361,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.785534Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:09.751Z",
+        "reviewed_at": "2026-07-07T14:26:56.785534Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
@@ -1359,7 +1373,7 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "135a111c1fba",
+          "md": "1ccbf850d11d",
           "ts": "45156b052ade",
           "lean": "c37878c3327e"
         },
@@ -1376,11 +1390,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/devils-advocate-watcher",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-24",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.785534Z",
           "agent_skill": "local/devils-advocate-watcher"
         },
-        "reviewed_at": "2026-06-24T11:19:38Z",
+        "reviewed_at": "2026-07-07T14:26:56.785534Z",
         "reviewed_sha": "4969df905a8d555017a1d0756f02b58dea170ddc",
         "severity": "major"
       }
@@ -1388,7 +1402,7 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "135a111c1fba",
+          "md": "1ccbf850d11d",
           "ts": "45156b052ade",
           "lean": "c37878c3327e"
         },
@@ -1405,11 +1419,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/devils-advocate-watcher",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-24",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.785534Z",
           "agent_skill": "local/devils-advocate-watcher"
         },
-        "reviewed_at": "2026-06-24T11:19:38Z",
+        "reviewed_at": "2026-07-07T14:26:56.785534Z",
         "reviewed_sha": "4969df905a8d555017a1d0756f02b58dea170ddc",
         "severity": "major"
       }
@@ -1417,7 +1431,7 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "135a111c1fba",
+          "md": "1ccbf850d11d",
           "ts": "45156b052ade",
           "lean": "c37878c3327e"
         },
@@ -1434,11 +1448,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/devils-advocate-watcher",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-24",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.785534Z",
           "agent_skill": "local/devils-advocate-watcher"
         },
-        "reviewed_at": "2026-06-24T11:19:38Z",
+        "reviewed_at": "2026-07-07T14:26:56.785534Z",
         "reviewed_sha": "4969df905a8d555017a1d0756f02b58dea170ddc",
         "severity": "minor"
       }
@@ -1446,7 +1460,7 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "135a111c1fba",
+          "md": "1ccbf850d11d",
           "ts": "45156b052ade",
           "lean": "c37878c3327e"
         },
@@ -1463,18 +1477,18 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/devils-advocate-watcher",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-24",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.785534Z",
           "agent_skill": "local/devils-advocate-watcher"
         },
-        "reviewed_at": "2026-06-24T11:19:38Z",
+        "reviewed_at": "2026-07-07T14:26:56.785534Z",
         "reviewed_sha": "4969df905a8d555017a1d0756f02b58dea170ddc"
       }
     ],
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "135a111c1fba",
+          "md": "1ccbf850d11d",
           "ts": "45156b052ade",
           "lean": "c37878c3327e"
         },
@@ -1484,27 +1498,29 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/devils-advocate-watcher",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-24",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.785534Z",
           "agent_skill": "local/devils-advocate-watcher"
         },
-        "reviewed_at": "2026-06-24T11:19:38Z",
+        "reviewed_at": "2026-07-07T14:26:56.785534Z",
         "reviewed_sha": "4969df905a8d555017a1d0756f02b58dea170ddc"
       }
     ],
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "135a111c1fba",
+          "md": "1ccbf850d11d",
           "ts": "45156b052ade",
           "lean": "c37878c3327e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.785534Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.785534Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/calibration-cohomology-alignment.ts:1",
@@ -1514,16 +1530,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "135a111c1fba",
+          "md": "1ccbf850d11d",
           "ts": "45156b052ade",
           "lean": "c37878c3327e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.785534Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.785534Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/calibration-cohomology-alignment.ts:1",
@@ -1533,16 +1551,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "135a111c1fba",
+          "md": "1ccbf850d11d",
           "ts": "45156b052ade",
           "lean": "c37878c3327e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.785534Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.785534Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/calibration-cohomology-alignment.ts:1",
@@ -1552,16 +1572,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "135a111c1fba",
+          "md": "1ccbf850d11d",
           "ts": "45156b052ade",
           "lean": "c37878c3327e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.785534Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.785534Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-lean-narrative-divergence.",
         "severity": "minor"
@@ -1570,16 +1592,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "135a111c1fba",
+          "md": "1ccbf850d11d",
           "ts": "45156b052ade",
           "lean": "c37878c3327e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.785534Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.785534Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/calibration-cohomology-alignment.ts:1",
@@ -1589,16 +1613,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "135a111c1fba",
+          "md": "1ccbf850d11d",
           "ts": "45156b052ade",
           "lean": "c37878c3327e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.785534Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.785534Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/calibration-cohomology-alignment.ts:1",
@@ -1608,16 +1634,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "135a111c1fba",
+          "md": "1ccbf850d11d",
           "ts": "45156b052ade",
           "lean": "c37878c3327e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.785534Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.785534Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/calibration-cohomology-alignment.ts:1",
@@ -1627,16 +1655,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "135a111c1fba",
+          "md": "1ccbf850d11d",
           "ts": "45156b052ade",
           "lean": "c37878c3327e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.785534Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.785534Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-reproducibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/calibration-cohomology-alignment.ts:1",
@@ -1647,14 +1677,21 @@
       {
         "result": "pass",
         "notes": "Smoothed transitions, enforced present tense and active voice across blocks. Kept all mathematical definitions intact. Applied Economy and Linear Argument to remove redundancies and non-essential commentary. Replaced passive voice and first-person-singular.",
-        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.785534Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.785534Z"
+        },
+        "field_hash": {
+          "md": "1ccbf850d11d",
+          "ts": "45156b052ade",
+          "lean": "c37878c3327e"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.430Z"
+  "updated_at": "2026-07-07T14:26:56.785534Z"
 }

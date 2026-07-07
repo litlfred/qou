@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/particle-interactions/knot-particle-generation-consequences.md"
   },
   "source_hashes": {
-    "md": "9f5c7888aed8",
+    "md": "abafcd33dbda",
     "ts": "7f9b8bf62006"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Rewrote seq13 to strictly enforce Milnor brevity. Trimmed fluff from section intros, removed editorializing like 'literally', and removed forward references masquerading as non-linear prose where possible. Preserved all math blocks and diagram structures.",
-        "reviewed_at": "2026-07-06T22:46:00Z",
+        "reviewed_at": "2026-07-07T14:26:57.169749Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.169749Z"
+        },
+        "field_hash": {
+          "md": "abafcd33dbda",
+          "ts": "7f9b8bf62006"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.492Z"
+  "updated_at": "2026-07-07T14:26:57.169749Z"
 }

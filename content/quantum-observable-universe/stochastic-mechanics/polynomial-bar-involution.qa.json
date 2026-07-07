@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/stochastic-mechanics/polynomial-bar-involution.lean"
   },
   "source_hashes": {
-    "md": "9145633edf08",
+    "md": "9adaea92062a",
     "ts": "7857d1393ac1",
     "lean": "c929b541d507"
   },
@@ -1051,14 +1051,21 @@
       {
         "result": "pass",
         "notes": "Unified the Markov trace intro and properties. Eliminated wordy formulations and passive voice. Kept polynomial proofs focused and brief.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.051438Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.051438Z"
+        },
+        "field_hash": {
+          "md": "9adaea92062a",
+          "ts": "7857d1393ac1",
+          "lean": "c929b541d507"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T23:06:25.607Z"
+  "updated_at": "2026-07-07T14:26:56.051438Z"
 }

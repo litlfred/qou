@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/predicted-spectra/golden-quartet-galois.lean"
   },
   "source_hashes": {
-    "md": "eed6435dd148",
+    "md": "35fac7035830",
     "ts": "10fc3bd14ce1",
     "lean": "b0eef5a5f8f0"
   },
@@ -1050,7 +1050,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "eed6435dd148",
+          "md": "35fac7035830",
           "ts": "10fc3bd14ce1",
           "lean": "b0eef5a5f8f0"
         },
@@ -1058,9 +1058,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.437051Z"
         },
-        "reviewed_at": "2026-07-06T04:41:30.359Z",
+        "reviewed_at": "2026-07-07T14:26:56.437051Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:golden-quartet-galois' aligns with Lean declaration. Sorry-free."
       }
@@ -1069,14 +1071,21 @@
       {
         "result": "pass",
         "notes": "Rewrote prose blocks to adhere to Milnor standards. Improved economy, preserved all math.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.437051Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.437051Z"
+        },
+        "field_hash": {
+          "md": "35fac7035830",
+          "ts": "10fc3bd14ce1",
+          "lean": "b0eef5a5f8f0"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:30.359Z"
+  "updated_at": "2026-07-07T14:26:56.437051Z"
 }

@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/quantum-universes/quantum-universe-exists.lean"
   },
   "source_hashes": {
-    "md": "b26df86b8947",
+    "md": "6ab5f44440dd",
     "ts": "7955d967219f",
     "lean": "6ec884256fac"
   },
@@ -1050,7 +1050,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "b26df86b8947",
+          "md": "6ab5f44440dd",
           "ts": "7955d967219f",
           "lean": "6ec884256fac"
         },
@@ -1058,9 +1058,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.102561Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.710Z",
+        "reviewed_at": "2026-07-07T14:26:57.102561Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:quantum-universe-exists' \u2192 expected 'quantum_universe_exists'; Lean declares: QuantumUniverse.exists_instance_axiom, QuantumUniverse.exists_instance. Structural match via content."
       }
@@ -1069,14 +1071,21 @@
       {
         "result": "pass",
         "notes": "Rewrote QU intro and axioms for brevity (H1). Brought SU(2) geometric intuition forward (H2, H3). Maintained math exactly. Unified cross-block flow.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:57.102561Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.102561Z"
+        },
+        "field_hash": {
+          "md": "6ab5f44440dd",
+          "ts": "7955d967219f",
+          "lean": "6ec884256fac"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.710Z"
+  "updated_at": "2026-07-07T14:26:57.102561Z"
 }

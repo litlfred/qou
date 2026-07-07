@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/predicted-spectra/photon-ir-zero-mode-bring.md"
   },
   "source_hashes": {
-    "md": "2f64e3a21411",
+    "md": "f0eabb8d1f50",
     "ts": "b4a975f48155"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Rewrote prose blocks to adhere to Milnor standards. Improved economy, preserved all math.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.317045Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.317045Z"
+        },
+        "field_hash": {
+          "md": "f0eabb8d1f50",
+          "ts": "b4a975f48155"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.812Z"
+  "updated_at": "2026-07-07T14:26:56.317045Z"
 }

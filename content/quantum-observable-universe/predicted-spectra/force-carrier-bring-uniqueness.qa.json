@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/predicted-spectra/force-carrier-bring-uniqueness.md"
   },
   "source_hashes": {
-    "md": "bb5db43af9a8",
+    "md": "0e258df3eda4",
     "ts": "75359030d51b"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Rewrote prose blocks to adhere to Milnor standards. Improved economy, preserved all math.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.418681Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.418681Z"
+        },
+        "field_hash": {
+          "md": "0e258df3eda4",
+          "ts": "75359030d51b"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.812Z"
+  "updated_at": "2026-07-07T14:26:56.418681Z"
 }

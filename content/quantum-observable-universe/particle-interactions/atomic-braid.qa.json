@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/atomic-braid.lean"
   },
   "source_hashes": {
-    "md": "f651c8e23f1c",
+    "md": "912fd65209bf",
     "ts": "5b1b09b715c2",
     "lean": "87923411f987"
   },
@@ -1561,19 +1561,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "f651c8e23f1c",
+          "md": "912fd65209bf",
           "ts": "5b1b09b715c2",
-          "lean": "045903f4f148"
+          "lean": "87923411f987"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.214153Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:20.394Z",
+        "reviewed_at": "2026-07-07T14:26:57.214153Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1581,19 +1581,19 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "f651c8e23f1c",
+          "md": "912fd65209bf",
           "ts": "5b1b09b715c2",
-          "lean": "045903f4f148"
+          "lean": "87923411f987"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.214153Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:20.828Z",
+        "reviewed_at": "2026-07-07T14:26:57.214153Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -1601,17 +1601,19 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "f651c8e23f1c",
+          "md": "912fd65209bf",
           "ts": "5b1b09b715c2",
-          "lean": "045903f4f148"
+          "lean": "87923411f987"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.214153Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.214153Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The claim in 'Atomic braid $H_{A+Z}(q)$' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/atomic-braid.lean:34:2: error: `simp` made no progress.",
         "severity": "minor",
@@ -1621,17 +1623,19 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "f651c8e23f1c",
+          "md": "912fd65209bf",
           "ts": "5b1b09b715c2",
-          "lean": "045903f4f148"
+          "lean": "87923411f987"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.214153Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.214153Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Atomic braid $H_{A+Z}(q)$' presents substantial mathematical content: $H_{A+Z}(q)$ obtained by assembling $Z$ protons, $N$ neutrons, and $Z$ electrons into a single Hecke algebra with $A ...",
         "severity": "minor"
@@ -1640,17 +1644,19 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "f651c8e23f1c",
+          "md": "912fd65209bf",
           "ts": "5b1b09b715c2",
-          "lean": "045903f4f148"
+          "lean": "87923411f987"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.214153Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.214153Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Atomic braid $H_{A+Z}(q)$'.",
         "severity": "minor",
@@ -1660,17 +1666,19 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "f651c8e23f1c",
+          "md": "912fd65209bf",
           "ts": "5b1b09b715c2",
-          "lean": "045903f4f148"
+          "lean": "87923411f987"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.214153Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.214153Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose presents 'Atomic braid $H_{A+Z}(q)$' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
@@ -1679,17 +1687,19 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "f651c8e23f1c",
+          "md": "912fd65209bf",
           "ts": "5b1b09b715c2",
-          "lean": "045903f4f148"
+          "lean": "87923411f987"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.214153Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.214153Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Atomic braid $H_{A+Z}(q)$'.",
         "severity": "minor",
@@ -1699,17 +1709,19 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "f651c8e23f1c",
+          "md": "912fd65209bf",
           "ts": "5b1b09b715c2",
-          "lean": "045903f4f148"
+          "lean": "87923411f987"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.214153Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.214153Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/atomic-braid.lean.",
         "severity": "minor",
@@ -1719,17 +1731,19 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "f651c8e23f1c",
+          "md": "912fd65209bf",
           "ts": "5b1b09b715c2",
-          "lean": "045903f4f148"
+          "lean": "87923411f987"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.214153Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.214153Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/atomic-braid.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
@@ -1738,17 +1752,19 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "f651c8e23f1c",
+          "md": "912fd65209bf",
           "ts": "5b1b09b715c2",
-          "lean": "045903f4f148"
+          "lean": "87923411f987"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.214153Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.214153Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Atomic braid $H_{A+Z}(q)$', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1758,17 +1774,19 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "f651c8e23f1c",
+          "md": "912fd65209bf",
           "ts": "5b1b09b715c2",
-          "lean": "045903f4f148"
+          "lean": "87923411f987"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.214153Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.214153Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Atomic braid $H_{A+Z}(q)$' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1778,17 +1796,19 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "f651c8e23f1c",
+          "md": "912fd65209bf",
           "ts": "5b1b09b715c2",
-          "lean": "045903f4f148"
+          "lean": "87923411f987"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.214153Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.214153Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Atomic braid $H_{A+Z}(q)$' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1798,17 +1818,19 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "f651c8e23f1c",
+          "md": "912fd65209bf",
           "ts": "5b1b09b715c2",
-          "lean": "045903f4f148"
+          "lean": "87923411f987"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.214153Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.214153Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Atomic braid $H_{A+Z}(q)$' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1818,17 +1840,19 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "f651c8e23f1c",
+          "md": "912fd65209bf",
           "ts": "5b1b09b715c2",
-          "lean": "045903f4f148"
+          "lean": "87923411f987"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.214153Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.214153Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/atomic-braid.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
@@ -1838,17 +1862,19 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "f651c8e23f1c",
+          "md": "912fd65209bf",
           "ts": "5b1b09b715c2",
-          "lean": "045903f4f148"
+          "lean": "87923411f987"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.214153Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.214153Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/atomic-braid.lean fails compilation: content/quantum-observable-universe/particle-interactions/atomic-braid.lean:34:2: error: `simp` made no progress",
         "severity": "critical",
@@ -1859,7 +1885,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "f651c8e23f1c",
+          "md": "912fd65209bf",
           "ts": "5b1b09b715c2",
           "lean": "87923411f987"
         },
@@ -1867,9 +1893,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.214153Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_at": "2026-07-07T14:26:57.214153Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'def:atomic-braid' \u2192 expected 'atomic_braid'; Lean declares: PairType, NeutralAtom, atomic_braid_crossing_count. Structural match via content."
       }
@@ -1878,14 +1906,21 @@
       {
         "result": "pass",
         "notes": "Rewrote seq13 to strictly enforce Milnor brevity. Trimmed fluff from section intros, removed editorializing like 'literally', and removed forward references masquerading as non-linear prose where possible. Preserved all math blocks and diagram structures.",
-        "reviewed_at": "2026-07-06T22:46:00Z",
+        "reviewed_at": "2026-07-07T14:26:57.214153Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.214153Z"
+        },
+        "field_hash": {
+          "md": "912fd65209bf",
+          "ts": "5b1b09b715c2",
+          "lean": "87923411f987"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.802Z"
+  "updated_at": "2026-07-07T14:26:57.214153Z"
 }

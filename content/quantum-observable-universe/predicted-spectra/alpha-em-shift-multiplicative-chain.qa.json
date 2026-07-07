@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/predicted-spectra/alpha-em-shift-multiplicative-chain.lean"
   },
   "source_hashes": {
-    "md": "6734a2dcb5c6",
+    "md": "0e42ecec1b31",
     "ts": "08949c5b9c0d",
     "lean": "04eede5cf91e"
   },
@@ -36,7 +36,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "6734a2dcb5c6",
+          "md": "0e42ecec1b31",
           "ts": "08949c5b9c0d",
           "lean": "04eede5cf91e"
         },
@@ -44,9 +44,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.348457Z"
         },
-        "reviewed_at": "2026-07-06T04:41:30.359Z",
+        "reviewed_at": "2026-07-07T14:26:56.348457Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:alpha-em-shift-multiplicative-chain' \u2192 expected 'alpha_em_shift_multiplicative_chain'; Lean declares: qIntegerIndex, alphaEmInvIndices, chainIndices, bareIndices, alpha_em_shift_chain. Structural match via content."
       }
@@ -55,14 +57,21 @@
       {
         "result": "pass",
         "notes": "Rewrote prose blocks to adhere to Milnor standards. Improved economy, preserved all math.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.348457Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.348457Z"
+        },
+        "field_hash": {
+          "md": "0e42ecec1b31",
+          "ts": "08949c5b9c0d",
+          "lean": "04eede5cf91e"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:30.359Z"
+  "updated_at": "2026-07-07T14:26:56.348457Z"
 }

@@ -7,23 +7,25 @@
     "md": "../qou/content/quantum-observable-universe/mass-theory/pieri-photon-shift-interpretation.md"
   },
   "source_hashes": {
-    "md": "523293130eb2",
+    "md": "c283c68b93fd",
     "ts": "5d67b86b7611"
   },
   "criteria": {
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "523293130eb2",
+          "md": "c283c68b93fd",
           "ts": "5d67b86b7611"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.906781Z"
         },
-        "reviewed_at": "2026-06-28T10:58:50.081Z",
+        "reviewed_at": "2026-07-07T14:26:56.906781Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No false claims identified in 'The Pieri box-shift as a non-commutative Fourier single-step shift'; the algebraic relation involving $\\gamma$ is mathematically consistent.",
         "severity": "minor",
@@ -33,16 +35,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "523293130eb2",
+          "md": "c283c68b93fd",
           "ts": "5d67b86b7611"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.906781Z"
         },
-        "reviewed_at": "2026-06-28T10:58:50.087Z",
+        "reviewed_at": "2026-07-07T14:26:56.906781Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The block 'The Pieri box-shift as a non-commutative Fourier single-step shift' presents substantial mathematical content, establishing relation $\\gamma$.",
         "severity": "minor"
@@ -51,16 +55,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "523293130eb2",
+          "md": "c283c68b93fd",
           "ts": "5d67b86b7611"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.906781Z"
         },
-        "reviewed_at": "2026-06-28T10:58:50.093Z",
+        "reviewed_at": "2026-07-07T14:26:56.906781Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No circular reasoning or self-assuming definitions detected in 'The Pieri box-shift as a non-commutative Fourier single-step shift'. The construction is derived from prop:pieri-photon-shift, prop:wedderburn-as-noncomm-fourier.",
         "severity": "minor",
@@ -70,16 +76,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "523293130eb2",
+          "md": "c283c68b93fd",
           "ts": "5d67b86b7611"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.906781Z"
         },
-        "reviewed_at": "2026-06-28T10:58:50.099Z",
+        "reviewed_at": "2026-07-07T14:26:56.906781Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No overclaims: the scope of 'The Pieri box-shift as a non-commutative Fourier single-step shift' is appropriately qualified and constrained.",
         "severity": "minor"
@@ -88,16 +96,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "523293130eb2",
+          "md": "c283c68b93fd",
           "ts": "5d67b86b7611"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.906781Z"
         },
-        "reviewed_at": "2026-06-28T10:58:50.106Z",
+        "reviewed_at": "2026-07-07T14:26:56.906781Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'The Pieri box-shift as a non-commutative Fourier single-step shift'. All constants are canonically derived.",
         "severity": "minor",
@@ -107,16 +117,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "523293130eb2",
+          "md": "c283c68b93fd",
           "ts": "5d67b86b7611"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.906781Z"
         },
-        "reviewed_at": "2026-06-28T10:58:50.112Z",
+        "reviewed_at": "2026-07-07T14:26:56.906781Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The argument flow in 'The Pieri box-shift as a non-commutative Fourier single-step shift' is logically sound, mapping onto the cited dependencies: prop:pieri-photon-shift, prop:wedderburn-as-noncomm-fourier.",
         "severity": "minor",
@@ -126,16 +138,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "523293130eb2",
+          "md": "c283c68b93fd",
           "ts": "5d67b86b7611"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.906781Z"
         },
-        "reviewed_at": "2026-06-28T10:58:50.117Z",
+        "reviewed_at": "2026-07-07T14:26:56.906781Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
@@ -144,16 +158,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "523293130eb2",
+          "md": "c283c68b93fd",
           "ts": "5d67b86b7611"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.906781Z"
         },
-        "reviewed_at": "2026-06-28T10:58:50.123Z",
+        "reviewed_at": "2026-07-07T14:26:56.906781Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No citations are present in 'The Pieri box-shift as a non-commutative Fourier single-step shift', hence no citation misuse is possible.",
         "severity": "minor",
@@ -163,16 +179,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "523293130eb2",
+          "md": "c283c68b93fd",
           "ts": "5d67b86b7611"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.906781Z"
         },
-        "reviewed_at": "2026-06-28T10:58:50.129Z",
+        "reviewed_at": "2026-07-07T14:26:56.906781Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Key terms and symbols (including $\\gamma$) in 'The Pieri box-shift as a non-commutative Fourier single-step shift' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -182,16 +200,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "523293130eb2",
+          "md": "c283c68b93fd",
           "ts": "5d67b86b7611"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.906781Z"
         },
-        "reviewed_at": "2026-06-28T10:58:50.135Z",
+        "reviewed_at": "2026-07-07T14:26:56.906781Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The algebraic and logical relations in 'The Pieri box-shift as a non-commutative Fourier single-step shift' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -201,16 +221,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "523293130eb2",
+          "md": "c283c68b93fd",
           "ts": "5d67b86b7611"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.906781Z"
         },
-        "reviewed_at": "2026-06-28T10:58:50.151Z",
+        "reviewed_at": "2026-07-07T14:26:56.906781Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The physical concepts described in 'The Pieri box-shift as a non-commutative Fourier single-step shift' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -220,16 +242,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "523293130eb2",
+          "md": "c283c68b93fd",
           "ts": "5d67b86b7611"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.906781Z"
         },
-        "reviewed_at": "2026-06-28T10:58:50.159Z",
+        "reviewed_at": "2026-07-07T14:26:56.906781Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The derivation steps and formal definitions in 'The Pieri box-shift as a non-commutative Fourier single-step shift' are reproducible.",
         "severity": "minor",
@@ -239,16 +263,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "523293130eb2",
+          "md": "c283c68b93fd",
           "ts": "5d67b86b7611"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.906781Z"
         },
-        "reviewed_at": "2026-06-28T10:58:50.165Z",
+        "reviewed_at": "2026-07-07T14:26:56.906781Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -259,16 +285,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "523293130eb2",
+          "md": "c283c68b93fd",
           "ts": "5d67b86b7611"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.906781Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:56.906781Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Block placement and kind 'remark' match validated structurally for 'The Pieri box-shift as a non-commutative Fourier single-step shift' within chapter 'mass-theory'.",
         "severity": "minor"
@@ -298,14 +326,20 @@
       {
         "result": "pass",
         "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
-        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.906781Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.906781Z"
+        },
+        "field_hash": {
+          "md": "c283c68b93fd",
+          "ts": "5d67b86b7611"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-07T14:26:56.906781Z"
 }

@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/mass-theory/six-term-mass-formula-complete.md"
   },
   "source_hashes": {
-    "md": "e9b4b389cd1f",
+    "md": "f99bc614d510",
     "ts": "aa8bcad8c6ea"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Rewrote prose sections of mass-theory_seq44.md to enforce H1-H8 and milnor-brevity. Preserved all math blocks and original section markers. Ensured linear flow, minimal technical clutter, and short declarative sentences.",
-        "reviewed_at": "2026-07-06T22:51:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.801160Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.801160Z"
+        },
+        "field_hash": {
+          "md": "f99bc614d510",
+          "ts": "aa8bcad8c6ea"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-07T14:26:56.801160Z"
 }

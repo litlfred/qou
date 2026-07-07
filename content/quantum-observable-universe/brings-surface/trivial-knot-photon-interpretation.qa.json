@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/brings-surface/trivial-knot-photon-interpretation.md"
   },
   "source_hashes": {
-    "md": "f09b8991f241",
+    "md": "a746834a381d",
     "ts": "2e9f9fa6b532"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Applied Milnor brevity. Reduced meta-text, fixed tone, preserved all tables and math.",
-        "reviewed_at": "2026-07-06T22:42:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.035301Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.035301Z"
+        },
+        "field_hash": {
+          "md": "a746834a381d",
+          "ts": "2e9f9fa6b532"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:55.404Z"
+  "updated_at": "2026-07-07T14:26:55.035301Z"
 }

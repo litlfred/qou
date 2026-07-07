@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/information-theory/cmb-boundary-datum.lean"
   },
   "source_hashes": {
-    "md": "10f58450834d",
+    "md": "2aac3d8d66a3",
     "ts": "8bab424dc206",
     "lean": "797193e16c20"
   },
@@ -37,14 +37,21 @@
       {
         "result": "pass",
         "notes": "Smoothed transitions, removed forward references, applied milnor brevity.",
-        "reviewed_at": "2026-07-07T02:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.585808Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.585808Z"
+        },
+        "field_hash": {
+          "md": "2aac3d8d66a3",
+          "ts": "8bab424dc206",
+          "lean": "797193e16c20"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.008Z"
+  "updated_at": "2026-07-07T14:26:55.585808Z"
 }

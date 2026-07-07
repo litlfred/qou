@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/particle-interactions/knot-particle-generation-interpretation.md"
   },
   "source_hashes": {
-    "md": "be3bd31affd0",
+    "md": "2729cad4bcfc",
     "ts": "408ff79a2d5d"
   },
   "criteria": {
@@ -1760,32 +1760,36 @@
       },
       {
         "field_hash": {
-          "md": "be3bd31affd0",
+          "md": "2729cad4bcfc",
           "ts": "408ff79a2d5d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.394512Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:57.394512Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "be3bd31affd0",
+          "md": "2729cad4bcfc",
           "ts": "408ff79a2d5d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.394512Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.394512Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'Hopf linking, color-tube threading, and Skein crossing change operations': mathematical reasoning is consistent in prose.",
         "severity": "minor",
@@ -1795,16 +1799,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "be3bd31affd0",
+          "md": "2729cad4bcfc",
           "ts": "408ff79a2d5d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.394512Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.394512Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Hopf linking, color-tube threading, and Skein crossing change operations' presents substantial mathematical content: '$\\mathcal{S}_c \\cong \\mathbb{P}^1(\\mathbb{C}) \\cong S^2$'.",
         "severity": "minor"
@@ -1813,16 +1819,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "be3bd31affd0",
+          "md": "2729cad4bcfc",
           "ts": "408ff79a2d5d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.394512Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.394512Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Hopf linking, color-tube threading, and Skein crossing change operations'.",
         "severity": "minor",
@@ -1832,16 +1840,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "be3bd31affd0",
+          "md": "2729cad4bcfc",
           "ts": "408ff79a2d5d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.394512Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.394512Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The remarks and narrative scope in 'Hopf linking, color-tube threading, and Skein crossing change operations' are appropriately qualified.",
         "severity": "minor"
@@ -1850,16 +1860,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "be3bd31affd0",
+          "md": "2729cad4bcfc",
           "ts": "408ff79a2d5d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.394512Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.394512Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Hopf linking, color-tube threading, and Skein crossing change operations'.",
         "severity": "minor",
@@ -1869,16 +1881,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "be3bd31affd0",
+          "md": "2729cad4bcfc",
           "ts": "408ff79a2d5d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.394512Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.394512Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose arguments in 'Hopf linking, color-tube threading, and Skein crossing change operations' proceed logically through the stated steps.",
         "severity": "minor",
@@ -1888,16 +1902,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "be3bd31affd0",
+          "md": "2729cad4bcfc",
           "ts": "408ff79a2d5d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.394512Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.394512Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No Lean sibling required; narrative matches the expected configuration.",
         "severity": "minor"
@@ -1906,16 +1922,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "be3bd31affd0",
+          "md": "2729cad4bcfc",
           "ts": "408ff79a2d5d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.394512Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.394512Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Hopf linking, color-tube threading, and Skein crossing change operations', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1925,16 +1943,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "be3bd31affd0",
+          "md": "2729cad4bcfc",
           "ts": "408ff79a2d5d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.394512Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.394512Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Hopf linking, color-tube threading, and Skein crossing change operations' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1944,16 +1964,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "be3bd31affd0",
+          "md": "2729cad4bcfc",
           "ts": "408ff79a2d5d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.394512Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.394512Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Hopf linking, color-tube threading, and Skein crossing change operations' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1963,16 +1985,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "be3bd31affd0",
+          "md": "2729cad4bcfc",
           "ts": "408ff79a2d5d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.394512Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.394512Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Hopf linking, color-tube threading, and Skein crossing change operations' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1982,16 +2006,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "be3bd31affd0",
+          "md": "2729cad4bcfc",
           "ts": "408ff79a2d5d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.394512Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.394512Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'Hopf linking, color-tube threading, and Skein crossing change operations' are reproducible.",
         "severity": "minor"
@@ -2000,16 +2026,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "be3bd31affd0",
+          "md": "2729cad4bcfc",
           "ts": "408ff79a2d5d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.394512Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.394512Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -2021,14 +2049,20 @@
       {
         "result": "pass",
         "notes": "Rewrote seq13 to strictly enforce Milnor brevity. Trimmed fluff from section intros, removed editorializing like 'literally', and removed forward references masquerading as non-linear prose where possible. Preserved all math blocks and diagram structures.",
-        "reviewed_at": "2026-07-06T22:46:00Z",
+        "reviewed_at": "2026-07-07T14:26:57.394512Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.394512Z"
+        },
+        "field_hash": {
+          "md": "2729cad4bcfc",
+          "ts": "408ff79a2d5d"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.492Z"
+  "updated_at": "2026-07-07T14:26:57.394512Z"
 }

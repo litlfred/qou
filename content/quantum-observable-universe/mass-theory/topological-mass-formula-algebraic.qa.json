@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/topological-mass-formula-algebraic.lean"
   },
   "source_hashes": {
-    "md": "dd9151f7f88a",
+    "md": "80036b646ba9",
     "ts": "f90a646a8d66",
     "lean": "ef9bebbc24ac"
   },
@@ -1050,7 +1050,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "dd9151f7f88a",
+          "md": "80036b646ba9",
           "ts": "f90a646a8d66",
           "lean": "ef9bebbc24ac"
         },
@@ -1058,9 +1058,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.748401Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_at": "2026-07-07T14:26:56.748401Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:topological-mass-formula-algebraic' \u2192 expected 'topological_mass_formula_algebraic'; Lean declares: AlgebraicMassData, AlgebraicMassFormula. Structural match via content."
       }
@@ -1069,14 +1071,21 @@
       {
         "result": "pass",
         "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
-        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.748401Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.748401Z"
+        },
+        "field_hash": {
+          "md": "80036b646ba9",
+          "ts": "f90a646a8d66",
+          "lean": "ef9bebbc24ac"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.430Z"
+  "updated_at": "2026-07-07T14:26:56.748401Z"
 }

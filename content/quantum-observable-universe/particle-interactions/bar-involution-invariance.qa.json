@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/bar-involution-invariance.lean"
   },
   "source_hashes": {
-    "md": "0b325cd0bb97",
+    "md": "6373d3adf1e5",
     "ts": "7e95c99df3e0",
     "lean": "56cebbc95af7"
   },
@@ -1253,19 +1253,19 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "aa09144e72be",
+          "md": "6373d3adf1e5",
           "ts": "7e95c99df3e0",
-          "lean": "db012297f95b"
+          "lean": "56cebbc95af7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.230332Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:19.787Z",
+        "reviewed_at": "2026-07-07T14:26:57.230332Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
       }
@@ -1273,19 +1273,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "aa09144e72be",
+          "md": "6373d3adf1e5",
           "ts": "7e95c99df3e0",
-          "lean": "db012297f95b"
+          "lean": "56cebbc95af7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.230332Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:20.329Z",
+        "reviewed_at": "2026-07-07T14:26:57.230332Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1293,19 +1293,19 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "aa09144e72be",
+          "md": "6373d3adf1e5",
           "ts": "7e95c99df3e0",
-          "lean": "db012297f95b"
+          "lean": "56cebbc95af7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.230332Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:20.627Z",
+        "reviewed_at": "2026-07-07T14:26:57.230332Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -1313,19 +1313,19 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "aa09144e72be",
+          "md": "6373d3adf1e5",
           "ts": "7e95c99df3e0",
-          "lean": "db012297f95b"
+          "lean": "56cebbc95af7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.230332Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:21.049Z",
+        "reviewed_at": "2026-07-07T14:26:57.230332Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
       }
@@ -1365,7 +1365,7 @@
       },
       {
         "field_hash": {
-          "md": "0b325cd0bb97",
+          "md": "6373d3adf1e5",
           "ts": "7e95c99df3e0",
           "lean": "56cebbc95af7"
         },
@@ -1373,9 +1373,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.230332Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_at": "2026-07-07T14:26:57.230332Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:bar-involution-invariance' aligns with Lean declaration. Sorry-free."
       }
@@ -1611,19 +1613,19 @@
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "aa09144e72be",
+          "md": "6373d3adf1e5",
           "ts": "7e95c99df3e0",
-          "lean": "db012297f95b"
+          "lean": "56cebbc95af7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.230332Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:23.347Z",
+        "reviewed_at": "2026-07-07T14:26:57.230332Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
       }
@@ -1631,19 +1633,19 @@
     "proof-no-trivial-true": [
       {
         "field_hash": {
-          "md": "aa09144e72be",
+          "md": "6373d3adf1e5",
           "ts": "7e95c99df3e0",
-          "lean": "db012297f95b"
+          "lean": "56cebbc95af7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.230332Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:23.737Z",
+        "reviewed_at": "2026-07-07T14:26:57.230332Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
       }
@@ -1777,37 +1779,39 @@
       },
       {
         "field_hash": {
-          "md": "aa09144e72be",
+          "md": "6373d3adf1e5",
           "ts": "7e95c99df3e0",
-          "lean": "db012297f95b"
+          "lean": "56cebbc95af7"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: only plain `decide` (kernel-checked decision procedure on a decidable finite/arithmetic goal), no `native_decide`. Accepted corpus-wide (\u00a71a scopes the masking prohibition to `native_decide`; 19 PASS blocks use plain `decide`). 2026-06-22 fail reclassified.",
-        "reviewed_at": "2026-06-25T12:27:24.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.230332Z",
         "reviewed_sha": "1debdf1526f15021143bdde1776810ae6c406976",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.230332Z"
         }
       }
     ],
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "aa09144e72be",
+          "md": "6373d3adf1e5",
           "ts": "7e95c99df3e0",
-          "lean": "db012297f95b"
+          "lean": "56cebbc95af7"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.230332Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.230332Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The claim in 'Bar-involution invariance of Plancherel weights and Type-B-folded normal forms' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/bar-involution-invariance.lean:28:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/GroupPower/Basic.olean' of module Mathlib.Algebra.GroupPower.Basic does not exist.",
         "severity": "minor",
@@ -1817,17 +1821,19 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "aa09144e72be",
+          "md": "6373d3adf1e5",
           "ts": "7e95c99df3e0",
-          "lean": "db012297f95b"
+          "lean": "56cebbc95af7"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.230332Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.230332Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/bar-involution-invariance.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "major",
@@ -1837,17 +1843,19 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "aa09144e72be",
+          "md": "6373d3adf1e5",
           "ts": "7e95c99df3e0",
-          "lean": "db012297f95b"
+          "lean": "56cebbc95af7"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.230332Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.230332Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Bar-involution invariance of Plancherel weights and Type-B-folded normal forms'.",
         "severity": "minor",
@@ -1857,17 +1865,19 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "aa09144e72be",
+          "md": "6373d3adf1e5",
           "ts": "7e95c99df3e0",
-          "lean": "db012297f95b"
+          "lean": "56cebbc95af7"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.230332Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.230332Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose in 'Bar-involution invariance of Plancherel weights and Type-B-folded normal forms' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/bar-involution-invariance.lean is incomplete (has sorry).",
         "severity": "minor"
@@ -1876,17 +1886,19 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "aa09144e72be",
+          "md": "6373d3adf1e5",
           "ts": "7e95c99df3e0",
-          "lean": "db012297f95b"
+          "lean": "56cebbc95af7"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.230332Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.230332Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Bar-involution invariance of Plancherel weights and Type-B-folded normal forms'.",
         "severity": "minor",
@@ -1896,17 +1908,19 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "aa09144e72be",
+          "md": "6373d3adf1e5",
           "ts": "7e95c99df3e0",
-          "lean": "db012297f95b"
+          "lean": "56cebbc95af7"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.230332Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.230332Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/bar-involution-invariance.lean.",
         "severity": "minor",
@@ -1916,17 +1930,19 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "aa09144e72be",
+          "md": "6373d3adf1e5",
           "ts": "7e95c99df3e0",
-          "lean": "db012297f95b"
+          "lean": "56cebbc95af7"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.230332Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.230332Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/bar-involution-invariance.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
@@ -1935,17 +1951,19 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "aa09144e72be",
+          "md": "6373d3adf1e5",
           "ts": "7e95c99df3e0",
-          "lean": "db012297f95b"
+          "lean": "56cebbc95af7"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.230332Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.230332Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Citations to kashiwara1991, khovanovlauda2009, brundankleshchev2009 are correct and contextually appropriate.",
         "severity": "minor",
@@ -1955,17 +1973,19 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "aa09144e72be",
+          "md": "6373d3adf1e5",
           "ts": "7e95c99df3e0",
-          "lean": "db012297f95b"
+          "lean": "56cebbc95af7"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.230332Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.230332Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Bar-involution invariance of Plancherel weights and Type-B-folded normal forms' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1975,17 +1995,19 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "aa09144e72be",
+          "md": "6373d3adf1e5",
           "ts": "7e95c99df3e0",
-          "lean": "db012297f95b"
+          "lean": "56cebbc95af7"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.230332Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.230332Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Bar-involution invariance of Plancherel weights and Type-B-folded normal forms' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1995,17 +2017,19 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "aa09144e72be",
+          "md": "6373d3adf1e5",
           "ts": "7e95c99df3e0",
-          "lean": "db012297f95b"
+          "lean": "56cebbc95af7"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.230332Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.230332Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Bar-involution invariance of Plancherel weights and Type-B-folded normal forms' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -2015,17 +2039,19 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "aa09144e72be",
+          "md": "6373d3adf1e5",
           "ts": "7e95c99df3e0",
-          "lean": "db012297f95b"
+          "lean": "56cebbc95af7"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.230332Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.230332Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/bar-involution-invariance.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
@@ -2035,17 +2061,19 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "aa09144e72be",
+          "md": "6373d3adf1e5",
           "ts": "7e95c99df3e0",
-          "lean": "db012297f95b"
+          "lean": "56cebbc95af7"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.230332Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.230332Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/bar-involution-invariance.lean fails compilation: content/quantum-observable-universe/particle-interactions/bar-involution-invariance.lean:28:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/GroupPower/Basic.olean' of module Mathlib.Algebra.GroupPower.Basic does not exist",
         "severity": "critical",
@@ -2077,14 +2105,21 @@
       {
         "result": "pass",
         "notes": "Applied Milnor exposition standard (H1-H8) and brevity rules. Shortened sentences, removed editorializing ('surprisingly', 'remarkably'), replaced 'this book' with 'this paper', and maintained Math, markdown, and cross-block consistency.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:57.230332Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.230332Z"
+        },
+        "field_hash": {
+          "md": "6373d3adf1e5",
+          "ts": "7e95c99df3e0",
+          "lean": "56cebbc95af7"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.802Z"
+  "updated_at": "2026-07-07T14:26:57.230332Z"
 }

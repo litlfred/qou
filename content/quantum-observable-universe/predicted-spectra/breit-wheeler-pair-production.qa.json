@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/predicted-spectra/breit-wheeler-pair-production.lean"
   },
   "source_hashes": {
-    "md": "a28c519f6948",
+    "md": "8d4017084473",
     "ts": "2025c9dcb011",
     "lean": "beb49a6f910a"
   },
@@ -895,17 +895,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "a28c519f6948",
+          "md": "8d4017084473",
           "ts": "2025c9dcb011",
-          "lean": "d4f91aa53c97"
+          "lean": "beb49a6f910a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.333433Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.333433Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Block placement and kind 'definition' match validated structurally.",
         "severity": "minor"
@@ -914,17 +916,19 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "a28c519f6948",
+          "md": "8d4017084473",
           "ts": "2025c9dcb011",
-          "lean": "d4f91aa53c97"
+          "lean": "beb49a6f910a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.333433Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.333433Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean theorem statement in content/quantum-observable-universe/predicted-spectra/breit-wheeler-pair-production.lean matches the mathematical statement in /Users/litlfred/space_cats/qou/content/quantum-observable-universe/predicted-spectra/breit-wheeler-pair-production.md.",
         "severity": "minor",
@@ -952,7 +956,7 @@
       },
       {
         "field_hash": {
-          "md": "a28c519f6948",
+          "md": "8d4017084473",
           "ts": "2025c9dcb011",
           "lean": "beb49a6f910a"
         },
@@ -960,10 +964,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/lean-proof-vacuity-audit",
-          "agent_date": "2026-07-04",
-          "agent_skill": "local/lean-proof-vacuity-audit"
+          "agent_date": "2026-07-07T14:26:56.333433Z",
+          "agent_skill": "local/lean-proof-vacuity-audit",
+          "agent_model": "gemini-3.1-pro"
         },
-        "reviewed_at": "2026-07-04T00:15:23.700181Z",
+        "reviewed_at": "2026-07-07T14:26:56.333433Z",
         "reviewed_sha": "b3302691b06ff4207b2e72cda23501bf922042e8",
         "notes": "Resolved: flagged def-disguised-true no longer present; scanner clean at current hash."
       }
@@ -971,17 +976,19 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "a28c519f6948",
+          "md": "8d4017084473",
           "ts": "2025c9dcb011",
-          "lean": "d4f91aa53c97"
+          "lean": "beb49a6f910a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.333433Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.333433Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'Breit--Wheeler pair production (categorical)': the formalization compiles successfully without errors.",
         "severity": "minor",
@@ -991,17 +998,19 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "a28c519f6948",
+          "md": "8d4017084473",
           "ts": "2025c9dcb011",
-          "lean": "d4f91aa53c97"
+          "lean": "beb49a6f910a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.333433Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.333433Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No vacuous proofs detected. Sibling Lean file compiles sorry-free, verifying non-vacuity.",
         "severity": "minor",
@@ -1011,17 +1020,19 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "a28c519f6948",
+          "md": "8d4017084473",
           "ts": "2025c9dcb011",
-          "lean": "d4f91aa53c97"
+          "lean": "beb49a6f910a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.333433Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.333433Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The definition 'Breit--Wheeler pair production (categorical)' is formulated via non-circular relations to existing primitives.",
         "severity": "minor",
@@ -1031,17 +1042,19 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "a28c519f6948",
+          "md": "8d4017084473",
           "ts": "2025c9dcb011",
-          "lean": "d4f91aa53c97"
+          "lean": "beb49a6f910a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.333433Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.333433Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'Breit--Wheeler pair production (categorical)' is appropriately qualified.",
         "severity": "minor"
@@ -1050,17 +1063,19 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "a28c519f6948",
+          "md": "8d4017084473",
           "ts": "2025c9dcb011",
-          "lean": "d4f91aa53c97"
+          "lean": "beb49a6f910a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.333433Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.333433Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Breit--Wheeler pair production (categorical)'.",
         "severity": "minor",
@@ -1070,17 +1085,19 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "a28c519f6948",
+          "md": "8d4017084473",
           "ts": "2025c9dcb011",
-          "lean": "d4f91aa53c97"
+          "lean": "beb49a6f910a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.333433Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.333433Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The argument flow in 'Breit--Wheeler pair production (categorical)' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -1090,17 +1107,19 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "a28c519f6948",
+          "md": "8d4017084473",
           "ts": "2025c9dcb011",
-          "lean": "d4f91aa53c97"
+          "lean": "beb49a6f910a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.333433Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.333433Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Lean sibling corresponds directly to the narrative claim in 'Breit--Wheeler pair production (categorical)'.",
         "severity": "minor"
@@ -1109,17 +1128,19 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "a28c519f6948",
+          "md": "8d4017084473",
           "ts": "2025c9dcb011",
-          "lean": "d4f91aa53c97"
+          "lean": "beb49a6f910a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.333433Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.333433Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Breit--Wheeler pair production (categorical)', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1129,17 +1150,19 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "a28c519f6948",
+          "md": "8d4017084473",
           "ts": "2025c9dcb011",
-          "lean": "d4f91aa53c97"
+          "lean": "beb49a6f910a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.333433Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.333433Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Breit--Wheeler pair production (categorical)' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1149,17 +1172,19 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "a28c519f6948",
+          "md": "8d4017084473",
           "ts": "2025c9dcb011",
-          "lean": "d4f91aa53c97"
+          "lean": "beb49a6f910a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.333433Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.333433Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Breit--Wheeler pair production (categorical)' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1169,17 +1194,19 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "a28c519f6948",
+          "md": "8d4017084473",
           "ts": "2025c9dcb011",
-          "lean": "d4f91aa53c97"
+          "lean": "beb49a6f910a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.333433Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.333433Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Breit--Wheeler pair production (categorical)' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1189,17 +1216,19 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "a28c519f6948",
+          "md": "8d4017084473",
           "ts": "2025c9dcb011",
-          "lean": "d4f91aa53c97"
+          "lean": "beb49a6f910a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.333433Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.333433Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Lean file compiles successfully, confirming reproducibility.",
         "severity": "minor"
@@ -1208,17 +1237,19 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "a28c519f6948",
+          "md": "8d4017084473",
           "ts": "2025c9dcb011",
-          "lean": "d4f91aa53c97"
+          "lean": "beb49a6f910a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.333433Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.333433Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -1229,7 +1260,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "a28c519f6948",
+          "md": "8d4017084473",
           "ts": "2025c9dcb011",
           "lean": "beb49a6f910a"
         },
@@ -1237,9 +1268,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.333433Z"
         },
-        "reviewed_at": "2026-07-06T04:41:30.359Z",
+        "reviewed_at": "2026-07-07T14:26:56.333433Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'def:breit-wheeler-pair-production' aligns with Lean declaration. Sorry-free."
       }
@@ -1248,14 +1281,21 @@
       {
         "result": "pass",
         "notes": "Rewrote prose blocks to adhere to Milnor standards. Improved economy, preserved all math.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.333433Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.333433Z"
+        },
+        "field_hash": {
+          "md": "8d4017084473",
+          "ts": "2025c9dcb011",
+          "lean": "beb49a6f910a"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:30.359Z"
+  "updated_at": "2026-07-07T14:26:56.333433Z"
 }

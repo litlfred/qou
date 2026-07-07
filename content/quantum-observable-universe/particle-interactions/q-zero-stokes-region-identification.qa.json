@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/q-zero-stokes-region-identification.lean"
   },
   "source_hashes": {
-    "md": "5445e087b80f",
+    "md": "805a3395b291",
     "ts": "b20c4daf0526",
     "lean": "3267c19b4d8b"
   },
@@ -36,7 +36,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "5445e087b80f",
+          "md": "805a3395b291",
           "ts": "b20c4daf0526",
           "lean": "3267c19b4d8b"
         },
@@ -44,9 +44,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.192784Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_at": "2026-07-07T14:26:57.192784Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Conjecture with class/axiom axiomatisation \u2014 structural match."
       }
@@ -58,5 +60,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.802Z"
+  "updated_at": "2026-07-07T14:26:57.192784Z"
 }

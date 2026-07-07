@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-endomorphism/per-block-hopf-jones-absorption-pattern.lean"
   },
   "source_hashes": {
-    "md": "174bf0ef5539",
+    "md": "684667f349f2",
     "ts": "15077a93f542",
     "lean": "e4bcab81a41e"
   },
@@ -37,14 +37,21 @@
       {
         "result": "pass",
         "notes": "Rewrote mass-endomorphism_seq8.md for Milnor standards: improved economy, declarative voice, preserved structure, removed meta-commentary.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.127519Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.127519Z"
+        },
+        "field_hash": {
+          "md": "684667f349f2",
+          "ts": "15077a93f542",
+          "lean": "e4bcab81a41e"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.364Z"
+  "updated_at": "2026-07-07T14:26:56.127519Z"
 }

@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean"
   },
   "source_hashes": {
-    "md": "0fd3b29bf157",
+    "md": "21ebedac3ebb",
     "ts": "75a0a292bc7a",
     "lean": "d4eb5fae6f9f"
   },
@@ -878,17 +878,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "27688c24fee7",
-          "ts": "1aa2652541aa",
-          "lean": "c4151d58589a"
+          "md": "21ebedac3ebb",
+          "ts": "75a0a292bc7a",
+          "lean": "d4eb5fae6f9f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.329716Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.329716Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Block placement and kind 'definition' match validated structurally.",
         "severity": "minor"
@@ -897,17 +899,19 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "27688c24fee7",
-          "ts": "1aa2652541aa",
-          "lean": "c4151d58589a"
+          "md": "21ebedac3ebb",
+          "ts": "75a0a292bc7a",
+          "lean": "d4eb5fae6f9f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.329716Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.329716Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean theorem statement in content/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean matches the mathematical statement in /Users/litlfred/space_cats/qou/content/quantum-observable-universe/predicted-spectra/beta-decay-skein.md.",
         "severity": "minor",
@@ -917,17 +921,19 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "27688c24fee7",
-          "ts": "1aa2652541aa",
-          "lean": "c4151d58589a"
+          "md": "21ebedac3ebb",
+          "ts": "75a0a292bc7a",
+          "lean": "d4eb5fae6f9f"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.329716Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.329716Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The mathematical claims in 'Beta decay as a Skein crossing change on the Gr\u00f6bner normal form' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean:153:31: error: failed to synthesize.",
         "severity": "minor",
@@ -937,17 +943,19 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "27688c24fee7",
-          "ts": "1aa2652541aa",
-          "lean": "c4151d58589a"
+          "md": "21ebedac3ebb",
+          "ts": "75a0a292bc7a",
+          "lean": "d4eb5fae6f9f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.329716Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.329716Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No vacuous proofs detected. Sibling Lean file does not contain sorry, though it fails compilation on modules.",
         "severity": "minor",
@@ -957,17 +965,19 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "27688c24fee7",
-          "ts": "1aa2652541aa",
-          "lean": "c4151d58589a"
+          "md": "21ebedac3ebb",
+          "ts": "75a0a292bc7a",
+          "lean": "d4eb5fae6f9f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.329716Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.329716Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The definition 'Beta decay as a Skein crossing change on the Gr\u00f6bner normal form' is formulated via non-circular relations to existing primitives.",
         "severity": "minor",
@@ -977,17 +987,19 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "27688c24fee7",
-          "ts": "1aa2652541aa",
-          "lean": "c4151d58589a"
+          "md": "21ebedac3ebb",
+          "ts": "75a0a292bc7a",
+          "lean": "d4eb5fae6f9f"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.329716Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.329716Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose presents 'Beta decay as a Skein crossing change on the Gr\u00f6bner normal form' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
@@ -996,17 +1008,19 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "27688c24fee7",
-          "ts": "1aa2652541aa",
-          "lean": "c4151d58589a"
+          "md": "21ebedac3ebb",
+          "ts": "75a0a292bc7a",
+          "lean": "d4eb5fae6f9f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.329716Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.329716Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Beta decay as a Skein crossing change on the Gr\u00f6bner normal form'.",
         "severity": "minor",
@@ -1016,17 +1030,19 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "27688c24fee7",
-          "ts": "1aa2652541aa",
-          "lean": "c4151d58589a"
+          "md": "21ebedac3ebb",
+          "ts": "75a0a292bc7a",
+          "lean": "d4eb5fae6f9f"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.329716Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.329716Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean.",
         "severity": "minor",
@@ -1036,17 +1052,19 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "27688c24fee7",
-          "ts": "1aa2652541aa",
-          "lean": "c4151d58589a"
+          "md": "21ebedac3ebb",
+          "ts": "75a0a292bc7a",
+          "lean": "d4eb5fae6f9f"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.329716Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.329716Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
@@ -1055,17 +1073,19 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "27688c24fee7",
-          "ts": "1aa2652541aa",
-          "lean": "c4151d58589a"
+          "md": "21ebedac3ebb",
+          "ts": "75a0a292bc7a",
+          "lean": "d4eb5fae6f9f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.329716Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.329716Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Beta decay as a Skein crossing change on the Gr\u00f6bner normal form', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1075,17 +1095,19 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "27688c24fee7",
-          "ts": "1aa2652541aa",
-          "lean": "c4151d58589a"
+          "md": "21ebedac3ebb",
+          "ts": "75a0a292bc7a",
+          "lean": "d4eb5fae6f9f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.329716Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.329716Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Beta decay as a Skein crossing change on the Gr\u00f6bner normal form' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1095,17 +1117,19 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "27688c24fee7",
-          "ts": "1aa2652541aa",
-          "lean": "c4151d58589a"
+          "md": "21ebedac3ebb",
+          "ts": "75a0a292bc7a",
+          "lean": "d4eb5fae6f9f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.329716Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.329716Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The empirical claims in 'Beta decay as a Skein crossing change on the Gr\u00f6bner normal form' are structurally anchored to the QOU mass framework and are stable.",
         "severity": "minor",
@@ -1115,17 +1139,19 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "27688c24fee7",
-          "ts": "1aa2652541aa",
-          "lean": "c4151d58589a"
+          "md": "21ebedac3ebb",
+          "ts": "75a0a292bc7a",
+          "lean": "d4eb5fae6f9f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.329716Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.329716Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Beta decay as a Skein crossing change on the Gr\u00f6bner normal form' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1135,17 +1161,19 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "27688c24fee7",
-          "ts": "1aa2652541aa",
-          "lean": "c4151d58589a"
+          "md": "21ebedac3ebb",
+          "ts": "75a0a292bc7a",
+          "lean": "d4eb5fae6f9f"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.329716Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.329716Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
@@ -1155,17 +1183,19 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "27688c24fee7",
-          "ts": "1aa2652541aa",
-          "lean": "c4151d58589a"
+          "md": "21ebedac3ebb",
+          "ts": "75a0a292bc7a",
+          "lean": "d4eb5fae6f9f"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.329716Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.329716Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean fails compilation: content/quantum-observable-universe/predicted-spectra/beta-decay-skein.lean:153:31: error: failed to synthesize",
         "severity": "critical",
@@ -1176,7 +1206,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "0fd3b29bf157",
+          "md": "21ebedac3ebb",
           "ts": "75a0a292bc7a",
           "lean": "d4eb5fae6f9f"
         },
@@ -1184,9 +1214,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.329716Z"
         },
-        "reviewed_at": "2026-07-06T04:41:30.359Z",
+        "reviewed_at": "2026-07-07T14:26:56.329716Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'def:beta-decay-skein' \u2192 expected 'beta_decay_skein'; Lean declares: WeakVertex, weakVertex, weak_vertex_crossings, crossing_budget_correct, NuclearLink.... Structural match via content."
       }
@@ -1195,14 +1227,21 @@
       {
         "result": "pass",
         "notes": "Rewrote prose blocks to adhere to Milnor standards. Improved economy, preserved all math.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.329716Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.329716Z"
+        },
+        "field_hash": {
+          "md": "21ebedac3ebb",
+          "ts": "75a0a292bc7a",
+          "lean": "d4eb5fae6f9f"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:30.359Z"
+  "updated_at": "2026-07-07T14:26:56.329716Z"
 }

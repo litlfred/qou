@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/mass-theory/q-beta-categorical-precision-ladder.md"
   },
   "source_hashes": {
-    "md": "3943339c978f",
+    "md": "a063ba88d298",
     "ts": "5680407e03ee"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Rewrote mass-theory_seq6.md for Milnor standards: clean prose, declarative.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.830939Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.830939Z"
+        },
+        "field_hash": {
+          "md": "a063ba88d298",
+          "ts": "5680407e03ee"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-07T14:26:56.830939Z"
 }

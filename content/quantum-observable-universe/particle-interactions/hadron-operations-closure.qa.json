@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/hadron-operations-closure.lean"
   },
   "source_hashes": {
-    "md": "8e523e2e36ee",
+    "md": "83cb14ea8720",
     "ts": "55e2532e5311",
     "lean": "4b79bb21bc55"
   },
@@ -1081,7 +1081,7 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "6177719bd45d",
+          "md": "83cb14ea8720",
           "ts": "55e2532e5311",
           "lean": "4b79bb21bc55"
         },
@@ -1089,11 +1089,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.199348Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:21.618Z",
+        "reviewed_at": "2026-07-07T14:26:57.199348Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
       }
@@ -1101,7 +1101,7 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "6177719bd45d",
+          "md": "83cb14ea8720",
           "ts": "55e2532e5311",
           "lean": "4b79bb21bc55"
         },
@@ -1109,11 +1109,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.199348Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:22.071Z",
+        "reviewed_at": "2026-07-07T14:26:57.199348Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1121,7 +1121,7 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "6177719bd45d",
+          "md": "83cb14ea8720",
           "ts": "55e2532e5311",
           "lean": "4b79bb21bc55"
         },
@@ -1129,11 +1129,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.199348Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:22.631Z",
+        "reviewed_at": "2026-07-07T14:26:57.199348Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -1141,7 +1141,7 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "6177719bd45d",
+          "md": "83cb14ea8720",
           "ts": "55e2532e5311",
           "lean": "4b79bb21bc55"
         },
@@ -1149,11 +1149,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.199348Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:22.950Z",
+        "reviewed_at": "2026-07-07T14:26:57.199348Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
       }
@@ -1179,7 +1179,7 @@
       },
       {
         "field_hash": {
-          "md": "8e523e2e36ee",
+          "md": "83cb14ea8720",
           "ts": "55e2532e5311",
           "lean": "4b79bb21bc55"
         },
@@ -1187,9 +1187,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.199348Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_at": "2026-07-07T14:26:57.199348Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:hadron-operations-closure' aligns with Lean declaration. Sorry-free."
       }
@@ -1197,7 +1199,7 @@
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "6177719bd45d",
+          "md": "83cb14ea8720",
           "ts": "55e2532e5311",
           "lean": "4b79bb21bc55"
         },
@@ -1209,11 +1211,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.199348Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:23.704Z",
+        "reviewed_at": "2026-07-07T14:26:57.199348Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
       }
@@ -1221,7 +1223,7 @@
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "6177719bd45d",
+          "md": "83cb14ea8720",
           "ts": "55e2532e5311",
           "lean": "4b79bb21bc55"
         },
@@ -1233,11 +1235,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.199348Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:23.978Z",
+        "reviewed_at": "2026-07-07T14:26:57.199348Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
       }
@@ -1245,7 +1247,7 @@
     "proof-rater-novelty": [
       {
         "field_hash": {
-          "md": "6177719bd45d",
+          "md": "83cb14ea8720",
           "ts": "55e2532e5311",
           "lean": "4b79bb21bc55"
         },
@@ -1257,11 +1259,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.199348Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:24.276Z",
+        "reviewed_at": "2026-07-07T14:26:57.199348Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
       }
@@ -1269,7 +1271,7 @@
     "proof-statement-integrity": [
       {
         "field_hash": {
-          "md": "6177719bd45d",
+          "md": "83cb14ea8720",
           "ts": "55e2532e5311",
           "lean": "4b79bb21bc55"
         },
@@ -1277,11 +1279,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.199348Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:24.630Z",
+        "reviewed_at": "2026-07-07T14:26:57.199348Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
       }
@@ -1289,7 +1291,7 @@
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "6177719bd45d",
+          "md": "83cb14ea8720",
           "ts": "55e2532e5311",
           "lean": "4b79bb21bc55"
         },
@@ -1297,11 +1299,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.199348Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:24.854Z",
+        "reviewed_at": "2026-07-07T14:26:57.199348Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
       }
@@ -1309,7 +1311,7 @@
     "proof-no-trivial-true": [
       {
         "field_hash": {
-          "md": "6177719bd45d",
+          "md": "83cb14ea8720",
           "ts": "55e2532e5311",
           "lean": "4b79bb21bc55"
         },
@@ -1317,11 +1319,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.199348Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:25.101Z",
+        "reviewed_at": "2026-07-07T14:26:57.199348Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
       }
@@ -1329,7 +1331,7 @@
     "proof-no-false-premise": [
       {
         "field_hash": {
-          "md": "6177719bd45d",
+          "md": "83cb14ea8720",
           "ts": "55e2532e5311",
           "lean": "4b79bb21bc55"
         },
@@ -1337,11 +1339,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.199348Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:25.215Z",
+        "reviewed_at": "2026-07-07T14:26:57.199348Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
       }
@@ -1349,7 +1351,7 @@
     "proof-no-unused-hypotheses": [
       {
         "field_hash": {
-          "md": "6177719bd45d",
+          "md": "83cb14ea8720",
           "ts": "55e2532e5311",
           "lean": "4b79bb21bc55"
         },
@@ -1357,11 +1359,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.199348Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:25.380Z",
+        "reviewed_at": "2026-07-07T14:26:57.199348Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
       }
@@ -1369,7 +1371,7 @@
     "proof-no-decide-masking": [
       {
         "field_hash": {
-          "md": "6177719bd45d",
+          "md": "83cb14ea8720",
           "ts": "55e2532e5311",
           "lean": "4b79bb21bc55"
         },
@@ -1377,11 +1379,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.199348Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:25.525Z",
+        "reviewed_at": "2026-07-07T14:26:57.199348Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
@@ -1389,7 +1391,7 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "6177719bd45d",
+          "md": "83cb14ea8720",
           "ts": "55e2532e5311",
           "lean": "4b79bb21bc55"
         },
@@ -1397,9 +1399,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.199348Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.199348Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'Closure of hadron operations under braiding, Hopf linking, skein action, and fusion': the formalization compiles successfully without errors.",
         "severity": "minor",
@@ -1409,7 +1413,7 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "6177719bd45d",
+          "md": "83cb14ea8720",
           "ts": "55e2532e5311",
           "lean": "4b79bb21bc55"
         },
@@ -1417,9 +1421,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.199348Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.199348Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Closure of hadron operations under braiding, Hopf linking, skein action, and fusion' presents substantial mathematical content: '$\\mathbf{C}$'.",
         "severity": "minor"
@@ -1428,7 +1434,7 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "6177719bd45d",
+          "md": "83cb14ea8720",
           "ts": "55e2532e5311",
           "lean": "4b79bb21bc55"
         },
@@ -1436,9 +1442,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.199348Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.199348Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Closure of hadron operations under braiding, Hopf linking, skein action, and fusion'.",
         "severity": "minor",
@@ -1448,7 +1456,7 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "6177719bd45d",
+          "md": "83cb14ea8720",
           "ts": "55e2532e5311",
           "lean": "4b79bb21bc55"
         },
@@ -1456,9 +1464,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.199348Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.199348Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The remarks and narrative scope in 'Closure of hadron operations under braiding, Hopf linking, skein action, and fusion' are appropriately qualified.",
         "severity": "minor"
@@ -1467,7 +1477,7 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "6177719bd45d",
+          "md": "83cb14ea8720",
           "ts": "55e2532e5311",
           "lean": "4b79bb21bc55"
         },
@@ -1475,9 +1485,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.199348Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.199348Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Closure of hadron operations under braiding, Hopf linking, skein action, and fusion'.",
         "severity": "minor",
@@ -1487,7 +1499,7 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "6177719bd45d",
+          "md": "83cb14ea8720",
           "ts": "55e2532e5311",
           "lean": "4b79bb21bc55"
         },
@@ -1495,9 +1507,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.199348Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.199348Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose arguments in 'Closure of hadron operations under braiding, Hopf linking, skein action, and fusion' proceed logically through the stated steps.",
         "severity": "minor",
@@ -1507,7 +1521,7 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "6177719bd45d",
+          "md": "83cb14ea8720",
           "ts": "55e2532e5311",
           "lean": "4b79bb21bc55"
         },
@@ -1515,9 +1529,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.199348Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.199348Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Lean sibling corresponds directly to the narrative claim in 'Closure of hadron operations under braiding, Hopf linking, skein action, and fusion'.",
         "severity": "minor"
@@ -1526,7 +1542,7 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "6177719bd45d",
+          "md": "83cb14ea8720",
           "ts": "55e2532e5311",
           "lean": "4b79bb21bc55"
         },
@@ -1534,9 +1550,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.199348Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.199348Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Closure of hadron operations under braiding, Hopf linking, skein action, and fusion', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1546,7 +1564,7 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "6177719bd45d",
+          "md": "83cb14ea8720",
           "ts": "55e2532e5311",
           "lean": "4b79bb21bc55"
         },
@@ -1554,9 +1572,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.199348Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.199348Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Closure of hadron operations under braiding, Hopf linking, skein action, and fusion' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1566,7 +1586,7 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "6177719bd45d",
+          "md": "83cb14ea8720",
           "ts": "55e2532e5311",
           "lean": "4b79bb21bc55"
         },
@@ -1574,9 +1594,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.199348Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.199348Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Closure of hadron operations under braiding, Hopf linking, skein action, and fusion' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1586,7 +1608,7 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "6177719bd45d",
+          "md": "83cb14ea8720",
           "ts": "55e2532e5311",
           "lean": "4b79bb21bc55"
         },
@@ -1594,9 +1616,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.199348Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.199348Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Closure of hadron operations under braiding, Hopf linking, skein action, and fusion' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1606,7 +1630,7 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "6177719bd45d",
+          "md": "83cb14ea8720",
           "ts": "55e2532e5311",
           "lean": "4b79bb21bc55"
         },
@@ -1614,9 +1638,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.199348Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.199348Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Lean file compiles successfully, confirming reproducibility.",
         "severity": "minor"
@@ -1625,7 +1651,7 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "6177719bd45d",
+          "md": "83cb14ea8720",
           "ts": "55e2532e5311",
           "lean": "4b79bb21bc55"
         },
@@ -1633,9 +1659,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.199348Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.199348Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -1667,14 +1695,21 @@
       {
         "result": "pass",
         "notes": "Applied Milnor exposition standard (H1-H8) and brevity rules. Shortened sentences, removed editorializing ('surprisingly', 'remarkably'), replaced 'this book' with 'this paper', and maintained Math, markdown, and cross-block consistency.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:57.199348Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.199348Z"
+        },
+        "field_hash": {
+          "md": "83cb14ea8720",
+          "ts": "55e2532e5311",
+          "lean": "4b79bb21bc55"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.802Z"
+  "updated_at": "2026-07-07T14:26:57.199348Z"
 }

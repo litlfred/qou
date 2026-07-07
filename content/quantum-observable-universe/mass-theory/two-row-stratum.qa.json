@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/two-row-stratum.lean"
   },
   "source_hashes": {
-    "md": "0a7d3f526d52",
+    "md": "0db8a3746a60",
     "ts": "7aabac6fe735",
     "lean": "b727667b616b"
   },
@@ -36,7 +36,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "0a7d3f526d52",
+          "md": "0db8a3746a60",
           "ts": "7aabac6fe735",
           "lean": "b727667b616b"
         },
@@ -44,9 +44,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.978654Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_at": "2026-07-07T14:26:56.978654Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Lean sibling is a stub/re-exporter; canonical formalisation lives in a Lake package and is audited by lean-compile-audit."
       }
@@ -55,14 +57,21 @@
       {
         "result": "pass",
         "notes": "Rewrote mass-theory_seq11.md to strictly follow H1-H8. Streamlined LP constraints and operator choices. Clarified the categorical reading vs empirical consequences. All formulas and code structures preserved.",
-        "reviewed_at": "2026-07-06T23:10:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.978654Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.978654Z"
+        },
+        "field_hash": {
+          "md": "0db8a3746a60",
+          "ts": "7aabac6fe735",
+          "lean": "b727667b616b"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.430Z"
+  "updated_at": "2026-07-07T14:26:56.978654Z"
 }

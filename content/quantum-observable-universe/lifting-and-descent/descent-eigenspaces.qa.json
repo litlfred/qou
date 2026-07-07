@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/lifting-and-descent/descent-eigenspaces.lean"
   },
   "source_hashes": {
-    "md": "181d2cb42463",
+    "md": "8d0be29059ac",
     "ts": "1650628d50b0",
     "lean": "28ad96ed6b98"
   },
@@ -1052,14 +1052,21 @@
       {
         "result": "pass",
         "notes": "Rewrote blocks in lifting-and-descent_seq8.md applying strict Milnor formatting and brevity.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.712988Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.712988Z"
+        },
+        "field_hash": {
+          "md": "8d0be29059ac",
+          "ts": "1650628d50b0",
+          "lean": "28ad96ed6b98"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-07T14:26:55.712988Z"
 }

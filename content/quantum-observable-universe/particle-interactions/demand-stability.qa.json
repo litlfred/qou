@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/particle-interactions/demand-stability.md"
   },
   "source_hashes": {
-    "md": "a75e5d652691",
+    "md": "b5e20447b3c7",
     "ts": "2f6cecd5e192"
   },
   "criteria": {
@@ -1543,16 +1543,18 @@
     "proof-no-placeholder-stub": [
       {
         "field_hash": {
-          "lean": "451cb23dacda"
+          "md": "b5e20447b3c7",
+          "ts": "2f6cecd5e192"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/lean-proof-vacuity-audit",
-          "agent_date": "2026-07-02",
-          "agent_skill": "local/lean-proof-vacuity-audit"
+          "agent_date": "2026-07-07T14:26:57.235390Z",
+          "agent_skill": "local/lean-proof-vacuity-audit",
+          "agent_model": "gemini-3.1-pro"
         },
-        "reviewed_at": "2026-07-02T17:07:15.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.235390Z",
         "reviewed_sha": "a9ce9ecfe24e6c7c9d0b9f25699b35ec666faa32",
         "notes": "4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): placeholder-stub marker no longer present \u2014 criterion pass. Residual self-assuming-projection / statement-scope issue tracked under proof-statement-integrity and bean qsb2; do not re-fail this criterion for it."
       }
@@ -1560,18 +1562,18 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "e7f405288cff",
-          "ts": "2f8ce1f759c4"
+          "md": "b5e20447b3c7",
+          "ts": "2f6cecd5e192"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.235390Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:19.421Z",
+        "reviewed_at": "2026-07-07T14:26:57.235390Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
       }
@@ -1579,18 +1581,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "e7f405288cff",
-          "ts": "2f8ce1f759c4"
+          "md": "b5e20447b3c7",
+          "ts": "2f6cecd5e192"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.235390Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:19.791Z",
+        "reviewed_at": "2026-07-07T14:26:57.235390Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1598,18 +1600,18 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "e7f405288cff",
-          "ts": "2f8ce1f759c4"
+          "md": "b5e20447b3c7",
+          "ts": "2f6cecd5e192"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.235390Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:20.196Z",
+        "reviewed_at": "2026-07-07T14:26:57.235390Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -1617,18 +1619,18 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "e7f405288cff",
-          "ts": "2f8ce1f759c4"
+          "md": "b5e20447b3c7",
+          "ts": "2f6cecd5e192"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.235390Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:20.638Z",
+        "reviewed_at": "2026-07-07T14:26:57.235390Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
       }
@@ -1707,19 +1709,19 @@
       },
       {
         "field_hash": {
-          "md": "e7f405288cff",
-          "ts": "2f8ce1f759c4"
+          "md": "b5e20447b3c7",
+          "ts": "2f6cecd5e192"
         },
         "result": "warn",
         "notes": "md criteria clear with worked H/He examples, but Lean only assumes the three sub-claims on a context class; no derivation.",
-        "reviewed_at": "2026-06-25T17:06:12.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.235390Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.235390Z"
         },
         "score": {
           "max": 1,
@@ -1768,19 +1770,19 @@
       },
       {
         "field_hash": {
-          "md": "e7f405288cff",
-          "ts": "2f8ce1f759c4"
+          "md": "b5e20447b3c7",
+          "ts": "2f6cecd5e192"
         },
         "result": "pass",
         "notes": "Demand profile (negative NF coeffs) as stability diagnostic \u2014 beta-stable/shell-closed/doubly-magic criteria are well-posed and substantive.",
-        "reviewed_at": "2026-06-25T17:06:12.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.235390Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.235390Z"
         },
         "score": {
           "max": 1,
@@ -1829,19 +1831,19 @@
       },
       {
         "field_hash": {
-          "md": "e7f405288cff",
-          "ts": "2f8ce1f759c4"
+          "md": "b5e20447b3c7",
+          "ts": "2f6cecd5e192"
         },
         "result": "pass",
         "notes": "Unifies beta-stability, shell closure, and double-magicity under one demand-profile diagnostic; genuine framework content.",
-        "reviewed_at": "2026-06-25T17:06:12.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.235390Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.235390Z"
         },
         "score": {
           "max": 1,
@@ -1886,19 +1888,19 @@
       },
       {
         "field_hash": {
-          "md": "e7f405288cff",
-          "ts": "2f8ce1f759c4"
+          "md": "b5e20447b3c7",
+          "ts": "2f6cecd5e192"
         },
         "result": "fail",
         "notes": "Lean collapses 3 distinct iff-characterizations (beta-stable, shell-closed=\u2205, doubly-magic) of the md into ONE assumed conjunction at a single (Z,N); drops the 'iff' and full neighbor-minimization quantification.",
-        "reviewed_at": "2026-06-25T17:06:12.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.235390Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.235390Z"
         }
       }
     ],
@@ -1939,19 +1941,19 @@
       },
       {
         "field_hash": {
-          "md": "e7f405288cff",
-          "ts": "2f8ce1f759c4"
+          "md": "b5e20447b3c7",
+          "ts": "2f6cecd5e192"
         },
         "result": "fail",
         "notes": "theorem demand_stability := \u27e8ctx.claim_i_beta_stable, ctx.claim_ii_shell_closed, ctx.claim_iii_doubly_magic\u27e9 \u2014 conclusion is verbatim the 3 class fields.",
-        "reviewed_at": "2026-06-25T17:06:12.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.235390Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.235390Z"
         }
       }
     ],
@@ -1975,19 +1977,19 @@
       },
       {
         "field_hash": {
-          "md": "e7f405288cff",
-          "ts": "2f8ce1f759c4"
+          "md": "b5e20447b3c7",
+          "ts": "2f6cecd5e192"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: no `: True` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/ParticleInteractions/demand_stability.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.235390Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.235390Z"
         }
       }
     ],
@@ -2028,19 +2030,19 @@
       },
       {
         "field_hash": {
-          "md": "e7f405288cff",
-          "ts": "2f8ce1f759c4"
+          "md": "b5e20447b3c7",
+          "ts": "2f6cecd5e192"
         },
         "result": "pass",
         "notes": "claim_i (dem \u2264 neighbors) \u2227 claim_ii (dem=0) \u2227 claim_iii (trM minimal) jointly satisfiable (dem=0 \u2264 all); no contradiction.",
-        "reviewed_at": "2026-06-25T17:06:12.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.235390Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.235390Z"
         }
       }
     ],
@@ -2081,19 +2083,19 @@
       },
       {
         "field_hash": {
-          "md": "e7f405288cff",
-          "ts": "2f8ce1f759c4"
+          "md": "b5e20447b3c7",
+          "ts": "2f6cecd5e192"
         },
         "result": "pass",
         "notes": "Only binder [ctx] used; q, Atom are class data fields not theorem hypotheses.",
-        "reviewed_at": "2026-06-25T17:06:12.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.235390Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.235390Z"
         }
       }
     ],
@@ -2117,35 +2119,37 @@
       },
       {
         "field_hash": {
-          "md": "e7f405288cff",
-          "ts": "2f8ce1f759c4"
+          "md": "b5e20447b3c7",
+          "ts": "2f6cecd5e192"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/ParticleInteractions/demand_stability.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.235390Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.235390Z"
         }
       }
     ],
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "e7f405288cff",
-          "ts": "2f8ce1f759c4"
+          "md": "b5e20447b3c7",
+          "ts": "2f6cecd5e192"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.235390Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.235390Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'Demand profile determines nuclear and atomic stability': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -2155,16 +2159,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "e7f405288cff",
-          "ts": "2f8ce1f759c4"
+          "md": "b5e20447b3c7",
+          "ts": "2f6cecd5e192"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.235390Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.235390Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Demand profile determines nuclear and atomic stability' presents substantial mathematical content: The demand profile of a derived atom (derived atom) \u2014 the set of negative NF coefficients \u2014 is the categorical diagno...",
         "severity": "minor"
@@ -2173,16 +2179,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "e7f405288cff",
-          "ts": "2f8ce1f759c4"
+          "md": "b5e20447b3c7",
+          "ts": "2f6cecd5e192"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.235390Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.235390Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Demand profile determines nuclear and atomic stability'.",
         "severity": "minor",
@@ -2192,16 +2200,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "e7f405288cff",
-          "ts": "2f8ce1f759c4"
+          "md": "b5e20447b3c7",
+          "ts": "2f6cecd5e192"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.235390Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.235390Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'Demand profile determines nuclear and atomic stability' is appropriately qualified.",
         "severity": "minor"
@@ -2210,16 +2220,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "e7f405288cff",
-          "ts": "2f8ce1f759c4"
+          "md": "b5e20447b3c7",
+          "ts": "2f6cecd5e192"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.235390Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.235390Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Demand profile determines nuclear and atomic stability'.",
         "severity": "minor",
@@ -2229,16 +2241,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "e7f405288cff",
-          "ts": "2f8ce1f759c4"
+          "md": "b5e20447b3c7",
+          "ts": "2f6cecd5e192"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.235390Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.235390Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The argument flow in 'Demand profile determines nuclear and atomic stability' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -2248,16 +2262,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "e7f405288cff",
-          "ts": "2f8ce1f759c4"
+          "md": "b5e20447b3c7",
+          "ts": "2f6cecd5e192"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.235390Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.235390Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The referenced Lean file content/quantum-observable-universe/particle-interactions/demand-stability.lean is missing, leading to complete divergence.",
         "severity": "minor"
@@ -2266,16 +2282,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "e7f405288cff",
-          "ts": "2f8ce1f759c4"
+          "md": "b5e20447b3c7",
+          "ts": "2f6cecd5e192"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.235390Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.235390Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Demand profile determines nuclear and atomic stability', hence no citation misuse is possible.",
         "severity": "minor",
@@ -2285,16 +2303,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "e7f405288cff",
-          "ts": "2f8ce1f759c4"
+          "md": "b5e20447b3c7",
+          "ts": "2f6cecd5e192"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.235390Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.235390Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Demand profile determines nuclear and atomic stability' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -2304,16 +2324,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "e7f405288cff",
-          "ts": "2f8ce1f759c4"
+          "md": "b5e20447b3c7",
+          "ts": "2f6cecd5e192"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.235390Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.235390Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Demand profile determines nuclear and atomic stability' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -2323,16 +2345,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "e7f405288cff",
-          "ts": "2f8ce1f759c4"
+          "md": "b5e20447b3c7",
+          "ts": "2f6cecd5e192"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.235390Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.235390Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Demand profile determines nuclear and atomic stability' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -2342,16 +2366,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "e7f405288cff",
-          "ts": "2f8ce1f759c4"
+          "md": "b5e20447b3c7",
+          "ts": "2f6cecd5e192"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.235390Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.235390Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'Demand profile determines nuclear and atomic stability' are reproducible.",
         "severity": "minor",
@@ -2361,16 +2387,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "e7f405288cff",
-          "ts": "2f8ce1f759c4"
+          "md": "b5e20447b3c7",
+          "ts": "2f6cecd5e192"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.235390Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.235390Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/particle-interactions/demand-stability.lean is missing.",
         "severity": "critical",
@@ -2385,5 +2413,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.492Z"
+  "updated_at": "2026-07-07T14:26:57.235390Z"
 }

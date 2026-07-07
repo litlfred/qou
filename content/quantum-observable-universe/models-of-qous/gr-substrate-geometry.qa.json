@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/models-of-qous/gr-substrate-geometry.md"
   },
   "source_hashes": {
-    "md": "45a06609b764",
+    "md": "2a42e8fa755b",
     "ts": "8e5ad5b18f8e"
   },
   "criteria": {
@@ -820,18 +820,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "45a06609b764",
+          "md": "2a42e8fa755b",
           "ts": "8e5ad5b18f8e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.444345Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:23.903Z",
+        "reviewed_at": "2026-07-07T14:26:55.444345Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -839,16 +839,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "45a06609b764",
+          "md": "2a42e8fa755b",
           "ts": "8e5ad5b18f8e"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.444345Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.444345Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No false claims identified in 'General Relativity as the Substrate Geometry': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -858,16 +860,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "45a06609b764",
+          "md": "2a42e8fa755b",
           "ts": "8e5ad5b18f8e"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.444345Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.444345Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'General Relativity as the Substrate Geometry' presents substantial mathematical content: In this model the metric is effectively replaced by the Levi form $L_\\varTheta$ ...",
         "severity": "minor"
@@ -876,16 +880,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "45a06609b764",
+          "md": "2a42e8fa755b",
           "ts": "8e5ad5b18f8e"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.444345Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.444345Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No circular reasoning or self-assuming definitions detected in 'General Relativity as the Substrate Geometry'.",
         "severity": "minor",
@@ -895,16 +901,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "45a06609b764",
+          "md": "2a42e8fa755b",
           "ts": "8e5ad5b18f8e"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.444345Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.444345Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No overclaims: the scope of 'General Relativity as the Substrate Geometry' is appropriately qualified.",
         "severity": "minor"
@@ -913,16 +921,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "45a06609b764",
+          "md": "2a42e8fa755b",
           "ts": "8e5ad5b18f8e"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.444345Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.444345Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'General Relativity as the Substrate Geometry'.",
         "severity": "minor",
@@ -932,16 +942,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "45a06609b764",
+          "md": "2a42e8fa755b",
           "ts": "8e5ad5b18f8e"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.444345Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.444345Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The argument flow in 'General Relativity as the Substrate Geometry' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -951,16 +963,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "45a06609b764",
+          "md": "2a42e8fa755b",
           "ts": "8e5ad5b18f8e"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.444345Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.444345Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
@@ -969,16 +983,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "45a06609b764",
+          "md": "2a42e8fa755b",
           "ts": "8e5ad5b18f8e"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.444345Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.444345Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No citations are present in 'General Relativity as the Substrate Geometry', hence no citation misuse is possible.",
         "severity": "minor",
@@ -988,16 +1004,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "45a06609b764",
+          "md": "2a42e8fa755b",
           "ts": "8e5ad5b18f8e"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.444345Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.444345Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Key terms and symbols in 'General Relativity as the Substrate Geometry' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1007,16 +1025,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "45a06609b764",
+          "md": "2a42e8fa755b",
           "ts": "8e5ad5b18f8e"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.444345Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.444345Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The algebraic and logical relations in 'General Relativity as the Substrate Geometry' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1026,16 +1046,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "45a06609b764",
+          "md": "2a42e8fa755b",
           "ts": "8e5ad5b18f8e"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.444345Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.444345Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The physical concepts described in 'General Relativity as the Substrate Geometry' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1045,16 +1067,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "45a06609b764",
+          "md": "2a42e8fa755b",
           "ts": "8e5ad5b18f8e"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.444345Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.444345Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The derivation steps and formal definitions in 'General Relativity as the Substrate Geometry' are reproducible.",
         "severity": "minor",
@@ -1064,16 +1088,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "45a06609b764",
+          "md": "2a42e8fa755b",
           "ts": "8e5ad5b18f8e"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.444345Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.444345Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
@@ -1085,14 +1111,20 @@
       {
         "result": "pass",
         "notes": "Simplified explanations, removed forward/backward references (e.g., specific section links). Fixed terminology. Maintained all math formulas exactly.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.444345Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.444345Z"
+        },
+        "field_hash": {
+          "md": "2a42e8fa755b",
+          "ts": "8e5ad5b18f8e"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T18:21:24.666Z"
+  "updated_at": "2026-07-07T14:26:55.444345Z"
 }

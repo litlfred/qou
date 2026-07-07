@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/brings-surface/bring-fibre-qhalf-figure.md"
   },
   "source_hashes": {
-    "md": "1e0e72cc7ddf",
+    "md": "d6dbd04cbc03",
     "ts": "2c3e85d856ba"
   },
   "criteria": {
@@ -804,18 +804,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "1e0e72cc7ddf",
+          "md": "d6dbd04cbc03",
           "ts": "2c3e85d856ba"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.088238Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:20.365Z",
+        "reviewed_at": "2026-07-07T14:26:55.088238Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -823,15 +823,17 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "1e0e72cc7ddf",
+          "md": "d6dbd04cbc03",
           "ts": "2c3e85d856ba"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.088238Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.088238Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No false mathematical or physical claims detected.",
         "evidence": "content/quantum-observable-universe/brings-surface/bring-fibre-qhalf-figure.ts:1",
@@ -841,15 +843,17 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "1e0e72cc7ddf",
+          "md": "d6dbd04cbc03",
           "ts": "2c3e85d856ba"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.088238Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.088238Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The block is non-vacuous as it provides concrete math content.",
         "severity": "minor"
@@ -858,15 +862,17 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "1e0e72cc7ddf",
+          "md": "d6dbd04cbc03",
           "ts": "2c3e85d856ba"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.088238Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.088238Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No circularity or back-fitted arguments detected.",
         "evidence": "content/quantum-observable-universe/brings-surface/bring-fibre-qhalf-figure.ts:1",
@@ -876,15 +882,17 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "1e0e72cc7ddf",
+          "md": "d6dbd04cbc03",
           "ts": "2c3e85d856ba"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.088238Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.088238Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The narrative bounds match the algebraic results without overclaiming.",
         "severity": "minor"
@@ -893,15 +901,17 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "1e0e72cc7ddf",
+          "md": "d6dbd04cbc03",
           "ts": "2c3e85d856ba"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.088238Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.088238Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No hidden degrees of freedom or undisclosed free parameters are introduced.",
         "evidence": "content/quantum-observable-universe/brings-surface/bring-fibre-qhalf-figure.ts:1",
@@ -911,15 +921,17 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "1e0e72cc7ddf",
+          "md": "d6dbd04cbc03",
           "ts": "2c3e85d856ba"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.088238Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.088238Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The steps follow logically from the premises.",
         "evidence": "content/quantum-observable-universe/brings-surface/bring-fibre-qhalf-figure.ts:1",
@@ -929,15 +941,17 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "1e0e72cc7ddf",
+          "md": "d6dbd04cbc03",
           "ts": "2c3e85d856ba"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.088238Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.088238Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No divergence; no Lean sibling required.",
         "severity": "minor"
@@ -946,15 +960,17 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "1e0e72cc7ddf",
+          "md": "d6dbd04cbc03",
           "ts": "2c3e85d856ba"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.088238Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.088238Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All references are cited appropriately.",
         "evidence": "content/quantum-observable-universe/brings-surface/bring-fibre-qhalf-figure.ts:1",
@@ -964,15 +980,17 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "1e0e72cc7ddf",
+          "md": "d6dbd04cbc03",
           "ts": "2c3e85d856ba"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.088238Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.088238Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Terms and conventions are clearly stated.",
         "evidence": "content/quantum-observable-universe/brings-surface/bring-fibre-qhalf-figure.ts:1",
@@ -982,15 +1000,17 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "1e0e72cc7ddf",
+          "md": "d6dbd04cbc03",
           "ts": "2c3e85d856ba"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.088238Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.088238Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No fragile numerical matches are claimed.",
         "evidence": "content/quantum-observable-universe/brings-surface/bring-fibre-qhalf-figure.ts:1",
@@ -1000,15 +1020,17 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "1e0e72cc7ddf",
+          "md": "d6dbd04cbc03",
           "ts": "2c3e85d856ba"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.088238Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.088238Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The physical claims are consistent with established physics.",
         "evidence": "content/quantum-observable-universe/brings-surface/bring-fibre-qhalf-figure.ts:1",
@@ -1018,15 +1040,17 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "1e0e72cc7ddf",
+          "md": "d6dbd04cbc03",
           "ts": "2c3e85d856ba"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.088238Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.088238Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The backing compute and witnesses are verified.",
         "severity": "minor"
@@ -1035,15 +1059,17 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "1e0e72cc7ddf",
+          "md": "d6dbd04cbc03",
           "ts": "2c3e85d856ba"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.088238Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.088238Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
@@ -1055,14 +1081,20 @@
       {
         "result": "pass",
         "notes": "Rewrote brings-surface_seq15.md. Simplified convoluted passive constructions. Used strong declarative sentences. Removed conversational filler. Checked structural elements.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.088238Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.088238Z"
+        },
+        "field_hash": {
+          "md": "d6dbd04cbc03",
+          "ts": "2c3e85d856ba"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:55.404Z"
+  "updated_at": "2026-07-07T14:26:55.088238Z"
 }

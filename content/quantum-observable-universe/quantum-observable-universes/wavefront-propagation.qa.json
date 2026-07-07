@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/quantum-observable-universes/wavefront-propagation.md"
   },
   "source_hashes": {
-    "md": "c428d22c9f8d",
+    "md": "0eb5d80c9890",
     "ts": "736fef75cd60"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Deleted LaTeX tikz diagrams representing redundant text. Shortened the intro and removed verbose cross-referencing.",
-        "reviewed_at": "2026-07-06T22:46:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.831586Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.831586Z"
+        },
+        "field_hash": {
+          "md": "0eb5d80c9890",
+          "ts": "736fef75cd60"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:58.083Z"
+  "updated_at": "2026-07-07T14:26:55.831586Z"
 }

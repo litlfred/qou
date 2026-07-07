@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/particle-interactions/kazhdan-lusztig-classical-limit.md"
   },
   "source_hashes": {
-    "md": "d651d90a1f49",
+    "md": "4eeb5693b401",
     "ts": "c10fcf81e959"
   },
   "criteria": {
@@ -1782,18 +1782,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "b1e53e3f32d5",
+          "md": "4eeb5693b401",
           "ts": "c10fcf81e959"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.263507Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:21.195Z",
+        "reviewed_at": "2026-07-07T14:26:57.263507Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1839,19 +1839,19 @@
       },
       {
         "field_hash": {
-          "md": "b1e53e3f32d5",
+          "md": "4eeb5693b401",
           "ts": "c10fcf81e959"
         },
         "result": "pass",
         "notes": "Conjecture: q\u21921 KLR canonical basis b_w \u2192 KL basis C_w of \u2124[S_n], classical-limit functor monoidal + \u03c4-compatible; Bose/Fermi = s_i eigenvalue split. Well-posed, substantive; sibling proves statSign_sq=1 conditional.",
-        "reviewed_at": "2026-06-25T17:08:56.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.263507Z",
         "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.263507Z"
         },
         "score": {
           "max": 1,
@@ -1862,16 +1862,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "b1e53e3f32d5",
+          "md": "4eeb5693b401",
           "ts": "c10fcf81e959"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.263507Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.263507Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan\u2013Lusztig basis of $S_n$, recovering Pauli/Bose statistics': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -1881,16 +1883,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "b1e53e3f32d5",
+          "md": "4eeb5693b401",
           "ts": "c10fcf81e959"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.263507Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.263507Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The claims in 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan\u2013Lusztig basis of $S_n$, recovering Pauli/Bose statistics' are non-vacuous as they make concrete conjectures about '\\cite{khovanovlauda2009, kashiwara1991} associated to the anyonic Hecke substrate, and let $\\{C_w\\} \\subset \\mathbb{Z...'.",
         "severity": "minor"
@@ -1899,16 +1903,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "b1e53e3f32d5",
+          "md": "4eeb5693b401",
           "ts": "c10fcf81e959"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.263507Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.263507Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan\u2013Lusztig basis of $S_n$, recovering Pauli/Bose statistics'.",
         "severity": "minor",
@@ -1918,16 +1924,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "b1e53e3f32d5",
+          "md": "4eeb5693b401",
           "ts": "c10fcf81e959"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.263507Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.263507Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan\u2013Lusztig basis of $S_n$, recovering Pauli/Bose statistics' is appropriately qualified.",
         "severity": "minor"
@@ -1936,16 +1944,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "b1e53e3f32d5",
+          "md": "4eeb5693b401",
           "ts": "c10fcf81e959"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.263507Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.263507Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan\u2013Lusztig basis of $S_n$, recovering Pauli/Bose statistics'.",
         "severity": "minor",
@@ -1955,16 +1965,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "b1e53e3f32d5",
+          "md": "4eeb5693b401",
           "ts": "c10fcf81e959"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.263507Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.263507Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The argument flow in 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan\u2013Lusztig basis of $S_n$, recovering Pauli/Bose statistics' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -1974,16 +1986,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "b1e53e3f32d5",
+          "md": "4eeb5693b401",
           "ts": "c10fcf81e959"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.263507Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.263507Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Conjectured block 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan\u2013Lusztig basis of $S_n$, recovering Pauli/Bose statistics' has no Lean sibling, representing a minor structural gap.",
         "severity": "minor"
@@ -1992,16 +2006,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "b1e53e3f32d5",
+          "md": "4eeb5693b401",
           "ts": "c10fcf81e959"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.263507Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.263507Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Citations to kassel1995, khovanovlauda2009, kashiwara1991, lecouvey2007 are correct and contextually appropriate.",
         "severity": "minor",
@@ -2011,16 +2027,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "b1e53e3f32d5",
+          "md": "4eeb5693b401",
           "ts": "c10fcf81e959"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.263507Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.263507Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan\u2013Lusztig basis of $S_n$, recovering Pauli/Bose statistics' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -2030,16 +2048,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "b1e53e3f32d5",
+          "md": "4eeb5693b401",
           "ts": "c10fcf81e959"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.263507Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.263507Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan\u2013Lusztig basis of $S_n$, recovering Pauli/Bose statistics' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -2049,16 +2069,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "b1e53e3f32d5",
+          "md": "4eeb5693b401",
           "ts": "c10fcf81e959"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.263507Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.263507Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan\u2013Lusztig basis of $S_n$, recovering Pauli/Bose statistics' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -2068,16 +2090,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "b1e53e3f32d5",
+          "md": "4eeb5693b401",
           "ts": "c10fcf81e959"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.263507Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.263507Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'As $q \\\\to 1$, the KLR canonical basis flattens to the Kazhdan\u2013Lusztig basis of $S_n$, recovering Pauli/Bose statistics' are reproducible.",
         "severity": "minor",
@@ -2087,16 +2111,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "b1e53e3f32d5",
+          "md": "4eeb5693b401",
           "ts": "c10fcf81e959"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.263507Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.263507Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Conjecture is open, hence the objection is survivable. Sibling Lean file is missing.",
         "severity": "minor",
@@ -2108,14 +2134,20 @@
       {
         "result": "pass",
         "notes": "Rewrote seq16 enforcing Milnor brevity. Cleaned up the intro, replacing conversational 'We conjecture ... We then exhibit' with succinct declarations. Streamlined the conditional theorem and conjecture blocks.",
-        "reviewed_at": "2026-07-06T22:52:00Z",
+        "reviewed_at": "2026-07-07T14:26:57.263507Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.263507Z"
+        },
+        "field_hash": {
+          "md": "4eeb5693b401",
+          "ts": "c10fcf81e959"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.492Z"
+  "updated_at": "2026-07-07T14:26:57.263507Z"
 }

@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/molecular-construction/co-lp-dual-binding.md"
   },
   "source_hashes": {
-    "md": "89be726984a5",
+    "md": "6dce3a01734d",
     "ts": "b2926a7f2550"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Rewrote molecular-construction_seq4.md. Smoothed block transitions, stripped excessive filler and editorialising, ensured 'we' and present tense.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.524525Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.524525Z"
+        },
+        "field_hash": {
+          "md": "6dce3a01734d",
+          "ts": "b2926a7f2550"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.117Z"
+  "updated_at": "2026-07-07T14:26:55.524525Z"
 }

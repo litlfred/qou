@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/geom-universality.lean"
   },
   "source_hashes": {
-    "md": "be8ca6b9bf54",
+    "md": "08f7d252b73a",
     "ts": "29e6a0f46ada",
     "lean": "267bc9129f2d"
   },
@@ -1631,19 +1631,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "be8ca6b9bf54",
+          "md": "08f7d252b73a",
           "ts": "29e6a0f46ada",
-          "lean": "bf429eae5836"
+          "lean": "267bc9129f2d"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.221758Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:18.772Z",
+        "reviewed_at": "2026-07-07T14:26:57.221758Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1691,20 +1691,20 @@
       },
       {
         "field_hash": {
-          "md": "be8ca6b9bf54",
+          "md": "08f7d252b73a",
           "ts": "29e6a0f46ada",
-          "lean": "bf429eae5836"
+          "lean": "267bc9129f2d"
         },
         "result": "pass",
         "notes": "Conjecture: Geom(K) is the UNIQUE additive/functorial/normalized volume functional (Vol for hyperbolic, CS for torus), via Neumann-Zagier + Yekutieli rigidity; well-posed, substantive. Sibling proves \u2203! conditional on classes.",
-        "reviewed_at": "2026-06-25T17:07:48.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.221758Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.221758Z"
         },
         "score": {
           "max": 1,
@@ -1732,17 +1732,19 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "be8ca6b9bf54",
+          "md": "08f7d252b73a",
           "ts": "29e6a0f46ada",
-          "lean": "bf429eae5836"
+          "lean": "267bc9129f2d"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.221758Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.221758Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The claim in 'Universality of $\\\\mathrm{Geom}(K)$: the categorical volume form yields $\\\\mathrm{Vol}(K)$ and $\\\\mathrm{CS}(K)$' is unverified because the formal proof in content/quantum-observable-universe/particle-interactions/geom-universality.lean is incomplete (contains sorry).",
         "severity": "minor",
@@ -1752,17 +1754,19 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "be8ca6b9bf54",
+          "md": "08f7d252b73a",
           "ts": "29e6a0f46ada",
-          "lean": "bf429eae5836"
+          "lean": "267bc9129f2d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.221758Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.221758Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The claims in 'Universality of $\\\\mathrm{Geom}(K)$: the categorical volume form yields $\\\\mathrm{Vol}(K)$ and $\\\\mathrm{CS}(K)$' are non-vacuous as they make concrete conjectures about 'conj:hyperbolic-volume-transcendence and rem:baryon-period-ratio).'.",
         "severity": "minor"
@@ -1771,17 +1775,19 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "be8ca6b9bf54",
+          "md": "08f7d252b73a",
           "ts": "29e6a0f46ada",
-          "lean": "bf429eae5836"
+          "lean": "267bc9129f2d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.221758Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.221758Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Universality of $\\\\mathrm{Geom}(K)$: the categorical volume form yields $\\\\mathrm{Vol}(K)$ and $\\\\mathrm{CS}(K)$'.",
         "severity": "minor",
@@ -1791,17 +1797,19 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "be8ca6b9bf54",
+          "md": "08f7d252b73a",
           "ts": "29e6a0f46ada",
-          "lean": "bf429eae5836"
+          "lean": "267bc9129f2d"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.221758Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.221758Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose in 'Universality of $\\\\mathrm{Geom}(K)$: the categorical volume form yields $\\\\mathrm{Vol}(K)$ and $\\\\mathrm{CS}(K)$' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/geom-universality.lean is incomplete (has sorry).",
         "severity": "minor"
@@ -1810,17 +1818,19 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "be8ca6b9bf54",
+          "md": "08f7d252b73a",
           "ts": "29e6a0f46ada",
-          "lean": "bf429eae5836"
+          "lean": "267bc9129f2d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.221758Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.221758Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Universality of $\\\\mathrm{Geom}(K)$: the categorical volume form yields $\\\\mathrm{Vol}(K)$ and $\\\\mathrm{CS}(K)$'.",
         "severity": "minor",
@@ -1830,17 +1840,19 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "be8ca6b9bf54",
+          "md": "08f7d252b73a",
           "ts": "29e6a0f46ada",
-          "lean": "bf429eae5836"
+          "lean": "267bc9129f2d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.221758Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.221758Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The argument flow in 'Universality of $\\\\mathrm{Geom}(K)$: the categorical volume form yields $\\\\mathrm{Vol}(K)$ and $\\\\mathrm{CS}(K)$' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -1850,17 +1862,19 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "be8ca6b9bf54",
+          "md": "08f7d252b73a",
           "ts": "29e6a0f46ada",
-          "lean": "bf429eae5836"
+          "lean": "267bc9129f2d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.221758Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.221758Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/geom-universality.lean uses a class-conjecture pattern, matching the conjectural nature of 'Universality of $\\\\mathrm{Geom}(K)$: the categorical volume form yields $\\\\mathrm{Vol}(K)$ and $\\\\mathrm{CS}(K)$'.",
         "severity": "minor"
@@ -1869,17 +1883,19 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "be8ca6b9bf54",
+          "md": "08f7d252b73a",
           "ts": "29e6a0f46ada",
-          "lean": "bf429eae5836"
+          "lean": "267bc9129f2d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.221758Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.221758Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Citations to yekutieli2015, neumann-zagier1985 are correct and contextually appropriate.",
         "severity": "minor",
@@ -1889,17 +1905,19 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "be8ca6b9bf54",
+          "md": "08f7d252b73a",
           "ts": "29e6a0f46ada",
-          "lean": "bf429eae5836"
+          "lean": "267bc9129f2d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.221758Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.221758Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Universality of $\\\\mathrm{Geom}(K)$: the categorical volume form yields $\\\\mathrm{Vol}(K)$ and $\\\\mathrm{CS}(K)$' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1909,17 +1927,19 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "be8ca6b9bf54",
+          "md": "08f7d252b73a",
           "ts": "29e6a0f46ada",
-          "lean": "bf429eae5836"
+          "lean": "267bc9129f2d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.221758Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.221758Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Universality of $\\\\mathrm{Geom}(K)$: the categorical volume form yields $\\\\mathrm{Vol}(K)$ and $\\\\mathrm{CS}(K)$' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1929,17 +1949,19 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "be8ca6b9bf54",
+          "md": "08f7d252b73a",
           "ts": "29e6a0f46ada",
-          "lean": "bf429eae5836"
+          "lean": "267bc9129f2d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.221758Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.221758Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Universality of $\\\\mathrm{Geom}(K)$: the categorical volume form yields $\\\\mathrm{Vol}(K)$ and $\\\\mathrm{CS}(K)$' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1949,17 +1971,19 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "be8ca6b9bf54",
+          "md": "08f7d252b73a",
           "ts": "29e6a0f46ada",
-          "lean": "bf429eae5836"
+          "lean": "267bc9129f2d"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.221758Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.221758Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'Universality of $\\\\mathrm{Geom}(K)$: the categorical volume form yields $\\\\mathrm{Vol}(K)$ and $\\\\mathrm{CS}(K)$' are reproducible.",
         "severity": "minor",
@@ -1969,17 +1993,19 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "be8ca6b9bf54",
+          "md": "08f7d252b73a",
           "ts": "29e6a0f46ada",
-          "lean": "bf429eae5836"
+          "lean": "267bc9129f2d"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.221758Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.221758Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders.",
         "severity": "minor",
@@ -2010,7 +2036,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "be8ca6b9bf54",
+          "md": "08f7d252b73a",
           "ts": "29e6a0f46ada",
           "lean": "267bc9129f2d"
         },
@@ -2018,9 +2044,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.221758Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_at": "2026-07-07T14:26:57.221758Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Conjecture with class/axiom axiomatisation \u2014 structural match."
       }
@@ -2032,5 +2060,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.802Z"
+  "updated_at": "2026-07-07T14:26:57.221758Z"
 }

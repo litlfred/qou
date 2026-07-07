@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/wigner-su4-from-spin-isospin.lean"
   },
   "source_hashes": {
-    "md": "74f27abf3c98",
+    "md": "da2a3d37a208",
     "ts": "9a404877f7e9",
     "lean": "0193f1de0d11"
   },
@@ -36,7 +36,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "74f27abf3c98",
+          "md": "da2a3d37a208",
           "ts": "9a404877f7e9",
           "lean": "0193f1de0d11"
         },
@@ -44,9 +44,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.408181Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_at": "2026-07-07T14:26:57.408181Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Conjecture with class/axiom axiomatisation \u2014 structural match."
       }
@@ -58,5 +60,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.802Z"
+  "updated_at": "2026-07-07T14:26:57.408181Z"
 }

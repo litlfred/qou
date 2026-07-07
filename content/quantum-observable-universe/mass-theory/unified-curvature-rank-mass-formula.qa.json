@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/unified-curvature-rank-mass-formula.lean"
   },
   "source_hashes": {
-    "md": "ecc88e24ab75",
+    "md": "b45f998fcd04",
     "ts": "1541d22ca708",
     "lean": "ad05ef27cdd1"
   },
@@ -1050,7 +1050,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "ecc88e24ab75",
+          "md": "b45f998fcd04",
           "ts": "1541d22ca708",
           "lean": "ad05ef27cdd1"
         },
@@ -1058,9 +1058,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.008389Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_at": "2026-07-07T14:26:57.008389Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:unified-curvature-rank-mass-formula' \u2192 expected 'unified_curvature_rank_mass_formula'; Lean declares: StratumBlock, Phi_at_depth, unified_curvature_rank_mass, unified_mass_finite, term_6_plus_term_7_eq_high_strata_axiom.... Structural match via content."
       }
@@ -1069,14 +1071,21 @@
       {
         "result": "pass",
         "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
-        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewed_at": "2026-07-07T14:26:57.008389Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.008389Z"
+        },
+        "field_hash": {
+          "md": "b45f998fcd04",
+          "ts": "1541d22ca708",
+          "lean": "ad05ef27cdd1"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.430Z"
+  "updated_at": "2026-07-07T14:26:57.008389Z"
 }

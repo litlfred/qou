@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/information-theory/aeon-boundary.lean"
   },
   "source_hashes": {
-    "md": "bde1f5bc2edc",
+    "md": "ac261717444f",
     "ts": "319755f4b1ff",
     "lean": "3f676b2915fd"
   },
@@ -37,14 +37,21 @@
       {
         "result": "pass",
         "notes": "Smoothed transitions, removed forward references, applied milnor brevity.",
-        "reviewed_at": "2026-07-07T02:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.608925Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.608925Z"
+        },
+        "field_hash": {
+          "md": "ac261717444f",
+          "ts": "319755f4b1ff",
+          "lean": "3f676b2915fd"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.008Z"
+  "updated_at": "2026-07-07T14:26:55.608925Z"
 }

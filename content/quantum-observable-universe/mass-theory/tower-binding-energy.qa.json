@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/tower-binding-energy.lean"
   },
   "source_hashes": {
-    "md": "9425f2df3d49",
+    "md": "1803f0c8db75",
     "ts": "2fdec2951869",
     "lean": "775599820168"
   },
@@ -1050,7 +1050,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "9425f2df3d49",
+          "md": "1803f0c8db75",
           "ts": "2fdec2951869",
           "lean": "775599820168"
         },
@@ -1058,9 +1058,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.842542Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_at": "2026-07-07T14:26:56.842542Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:tower-binding-energy' \u2192 expected 'tower_binding_energy'; Lean declares: wedderburnStd, wedderburnSym, wedderburnWeightsSum, wedderburnSymEqAlt, quantumDilog.... Structural match via content."
       }
@@ -1069,14 +1071,21 @@
       {
         "result": "pass",
         "notes": "Rewrote prose sections of mass-theory_seq46.md to enforce H1-H8 and milnor-brevity. Preserved all math blocks and original section markers. Ensured linear flow, minimal technical clutter, and short declarative sentences.",
-        "reviewed_at": "2026-07-06T22:51:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.842542Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.842542Z"
+        },
+        "field_hash": {
+          "md": "1803f0c8db75",
+          "ts": "2fdec2951869",
+          "lean": "775599820168"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.430Z"
+  "updated_at": "2026-07-07T14:26:56.842542Z"
 }

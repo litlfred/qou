@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/adelic-substrate.lean"
   },
   "source_hashes": {
-    "md": "58e4831542c6",
+    "md": "63bbd9ed946f",
     "ts": "c848c199c1dd",
     "lean": "910a10f03d8f"
   },
@@ -858,17 +858,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "58e4831542c6",
+          "md": "63bbd9ed946f",
           "ts": "c848c199c1dd",
-          "lean": "9836e5e8a0d3"
+          "lean": "910a10f03d8f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.726611Z"
         },
-        "reviewed_at": "2026-06-28T10:58:42.626Z",
+        "reviewed_at": "2026-07-07T14:26:56.726611Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Block placement and kind 'definition' match validated structurally.",
         "severity": "minor"
@@ -877,17 +879,19 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "58e4831542c6",
+          "md": "63bbd9ed946f",
           "ts": "c848c199c1dd",
-          "lean": "9836e5e8a0d3"
+          "lean": "910a10f03d8f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.726611Z"
         },
-        "reviewed_at": "2026-06-28T10:58:42.632Z",
+        "reviewed_at": "2026-07-07T14:26:56.726611Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The Lean theorem statement in content/quantum-observable-universe/mass-theory/adelic-substrate.lean matches the mathematical statement in /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-theory/adelic-substrate.md.",
         "severity": "minor",
@@ -897,17 +901,19 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "58e4831542c6",
+          "md": "63bbd9ed946f",
           "ts": "c848c199c1dd",
-          "lean": "9836e5e8a0d3"
+          "lean": "910a10f03d8f"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.726611Z"
         },
-        "reviewed_at": "2026-06-28T10:58:42.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.726611Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The mathematical claims in 'Adelic substrate $\\\\mathbb{A}$' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/mass-theory/adelic-substrate.lean:24:17: error: unexpected token '/--'; expected term.",
         "severity": "minor",
@@ -917,17 +923,19 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "58e4831542c6",
+          "md": "63bbd9ed946f",
           "ts": "c848c199c1dd",
-          "lean": "9836e5e8a0d3"
+          "lean": "910a10f03d8f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.726611Z"
         },
-        "reviewed_at": "2026-06-28T10:58:42.644Z",
+        "reviewed_at": "2026-07-07T14:26:56.726611Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No vacuous proofs detected. Sibling Lean file does not contain sorry, though it fails compilation on modules.",
         "severity": "minor",
@@ -937,17 +945,19 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "58e4831542c6",
+          "md": "63bbd9ed946f",
           "ts": "c848c199c1dd",
-          "lean": "9836e5e8a0d3"
+          "lean": "910a10f03d8f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.726611Z"
         },
-        "reviewed_at": "2026-06-28T10:58:42.650Z",
+        "reviewed_at": "2026-07-07T14:26:56.726611Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The definition 'Adelic substrate $\\\\mathbb{A}$' is formulated via non-circular relations to existing primitives.",
         "severity": "minor",
@@ -957,17 +967,19 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "58e4831542c6",
+          "md": "63bbd9ed946f",
           "ts": "c848c199c1dd",
-          "lean": "9836e5e8a0d3"
+          "lean": "910a10f03d8f"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.726611Z"
         },
-        "reviewed_at": "2026-06-28T10:58:42.657Z",
+        "reviewed_at": "2026-07-07T14:26:56.726611Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The prose presents 'Adelic substrate $\\\\mathbb{A}$' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
@@ -976,17 +988,19 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "58e4831542c6",
+          "md": "63bbd9ed946f",
           "ts": "c848c199c1dd",
-          "lean": "9836e5e8a0d3"
+          "lean": "910a10f03d8f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.726611Z"
         },
-        "reviewed_at": "2026-06-28T10:58:42.663Z",
+        "reviewed_at": "2026-07-07T14:26:56.726611Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Adelic substrate $\\\\mathbb{A}$'.",
         "severity": "minor",
@@ -996,17 +1010,19 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "58e4831542c6",
+          "md": "63bbd9ed946f",
           "ts": "c848c199c1dd",
-          "lean": "9836e5e8a0d3"
+          "lean": "910a10f03d8f"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.726611Z"
         },
-        "reviewed_at": "2026-06-28T10:58:42.669Z",
+        "reviewed_at": "2026-07-07T14:26:56.726611Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/mass-theory/adelic-substrate.lean.",
         "severity": "minor",
@@ -1016,17 +1032,19 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "58e4831542c6",
+          "md": "63bbd9ed946f",
           "ts": "c848c199c1dd",
-          "lean": "9836e5e8a0d3"
+          "lean": "910a10f03d8f"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.726611Z"
         },
-        "reviewed_at": "2026-06-28T10:58:42.675Z",
+        "reviewed_at": "2026-07-07T14:26:56.726611Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/adelic-substrate.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
@@ -1035,17 +1053,19 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "58e4831542c6",
+          "md": "63bbd9ed946f",
           "ts": "c848c199c1dd",
-          "lean": "9836e5e8a0d3"
+          "lean": "910a10f03d8f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.726611Z"
         },
-        "reviewed_at": "2026-06-28T10:58:42.680Z",
+        "reviewed_at": "2026-07-07T14:26:56.726611Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The citations tate1967 in 'Adelic substrate $\\\\mathbb{A}$' are consistent with the sources referenced in the text.",
         "severity": "minor",
@@ -1055,17 +1075,19 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "58e4831542c6",
+          "md": "63bbd9ed946f",
           "ts": "c848c199c1dd",
-          "lean": "9836e5e8a0d3"
+          "lean": "910a10f03d8f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.726611Z"
         },
-        "reviewed_at": "2026-06-28T10:58:42.686Z",
+        "reviewed_at": "2026-07-07T14:26:56.726611Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Key terms and symbols in 'Adelic substrate $\\\\mathbb{A}$' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1075,17 +1097,19 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "58e4831542c6",
+          "md": "63bbd9ed946f",
           "ts": "c848c199c1dd",
-          "lean": "9836e5e8a0d3"
+          "lean": "910a10f03d8f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.726611Z"
         },
-        "reviewed_at": "2026-06-28T10:58:42.693Z",
+        "reviewed_at": "2026-07-07T14:26:56.726611Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The algebraic and logical relations in 'Adelic substrate $\\\\mathbb{A}$' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1095,17 +1119,19 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "58e4831542c6",
+          "md": "63bbd9ed946f",
           "ts": "c848c199c1dd",
-          "lean": "9836e5e8a0d3"
+          "lean": "910a10f03d8f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.726611Z"
         },
-        "reviewed_at": "2026-06-28T10:58:42.699Z",
+        "reviewed_at": "2026-07-07T14:26:56.726611Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The physical concepts described in 'Adelic substrate $\\\\mathbb{A}$' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1115,17 +1141,19 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "58e4831542c6",
+          "md": "63bbd9ed946f",
           "ts": "c848c199c1dd",
-          "lean": "9836e5e8a0d3"
+          "lean": "910a10f03d8f"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.726611Z"
         },
-        "reviewed_at": "2026-06-28T10:58:42.705Z",
+        "reviewed_at": "2026-07-07T14:26:56.726611Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/adelic-substrate.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
@@ -1135,17 +1163,19 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "58e4831542c6",
+          "md": "63bbd9ed946f",
           "ts": "c848c199c1dd",
-          "lean": "9836e5e8a0d3"
+          "lean": "910a10f03d8f"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.726611Z"
         },
-        "reviewed_at": "2026-06-28T10:58:42.711Z",
+        "reviewed_at": "2026-07-07T14:26:56.726611Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-theory/adelic-substrate.lean fails compilation: content/quantum-observable-universe/mass-theory/adelic-substrate.lean:24:17: error: unexpected token '/--'; expected term",
         "severity": "critical",
@@ -1176,7 +1206,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "58e4831542c6",
+          "md": "63bbd9ed946f",
           "ts": "c848c199c1dd",
           "lean": "910a10f03d8f"
         },
@@ -1184,9 +1214,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.726611Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_at": "2026-07-07T14:26:56.726611Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'def:adelic-substrate' \u2192 expected 'adelic_substrate'; Lean declares: AdelicSubstrate. Structural match via content."
       }
@@ -1195,14 +1227,21 @@
       {
         "result": "pass",
         "notes": "Rewrote mass-theory_seq7.md for Milnor standards: clean prose, declarative.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.726611Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.726611Z"
+        },
+        "field_hash": {
+          "md": "63bbd9ed946f",
+          "ts": "c848c199c1dd",
+          "lean": "910a10f03d8f"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.430Z"
+  "updated_at": "2026-07-07T14:26:56.726611Z"
 }

@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/y-lambda-recipe-from-partition.lean"
   },
   "source_hashes": {
-    "md": "12517c8e20fd",
+    "md": "1f01fd409951",
     "ts": "f85a5a73fc95",
     "lean": "a2d0898b2ab3"
   },
@@ -36,7 +36,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "12517c8e20fd",
+          "md": "1f01fd409951",
           "ts": "f85a5a73fc95",
           "lean": "a2d0898b2ab3"
         },
@@ -44,9 +44,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.913182Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_at": "2026-07-07T14:26:56.913182Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:y-lambda-recipe-from-partition' \u2192 expected 'y_lambda_recipe_from_partition'; Lean declares: cellContent, cellHook, nPartition, hookDim, markovZ.... Structural match via content."
       }
@@ -55,14 +57,21 @@
       {
         "result": "pass",
         "notes": "Rewrote prose sections of mass-theory_seq39.md to enforce H1-H8 and milnor-brevity. Preserved all math blocks and original section markers. Ensured linear flow, minimal technical clutter, and short declarative sentences.",
-        "reviewed_at": "2026-07-06T22:49:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.913182Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.913182Z"
+        },
+        "field_hash": {
+          "md": "1f01fd409951",
+          "ts": "f85a5a73fc95",
+          "lean": "a2d0898b2ab3"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.430Z"
+  "updated_at": "2026-07-07T14:26:56.913182Z"
 }

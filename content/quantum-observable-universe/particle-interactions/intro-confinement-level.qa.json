@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/particle-interactions/intro-confinement-level.md"
   },
   "source_hashes": {
-    "ts": "ead18d5e4720",
-    "md": "890627540eba"
+    "md": "89117b43a430",
+    "ts": "ead18d5e4720"
   },
   "criteria": {
     "q-usage-regime-detected": [
@@ -128,14 +128,20 @@
       {
         "result": "pass",
         "notes": "Rewrote seq15 to enforce Milnor brevity. Replaced verbose phrasing with concise declarative sentences, eliminating 'This section ... We then ...' patterns where possible. Simplified 'Conjectural status' blocks.",
-        "reviewed_at": "2026-07-06T22:50:00Z",
+        "reviewed_at": "2026-07-07T14:26:57.196715Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.196715Z"
+        },
+        "field_hash": {
+          "md": "89117b43a430",
+          "ts": "ead18d5e4720"
         }
       }
     ]
   },
-  "updated_at": "2026-06-01T16:06:38.106Z"
+  "updated_at": "2026-07-07T14:26:57.196715Z"
 }

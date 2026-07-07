@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/mass-theory/operator-selection-lp.md"
   },
   "source_hashes": {
-    "md": "d5eaab277836",
+    "md": "ace35bbeaf00",
     "ts": "bdf5fe16b68e"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Rewrote mass-theory_seq8.md via precise python replacement for Milnor standards: clean declarative prose, no wasted words.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.966566Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.966566Z"
+        },
+        "field_hash": {
+          "md": "ace35bbeaf00",
+          "ts": "bdf5fe16b68e"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-07T14:26:56.966566Z"
 }

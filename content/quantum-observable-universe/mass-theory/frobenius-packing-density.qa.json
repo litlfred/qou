@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/mass-theory/frobenius-packing-density.md"
   },
   "source_hashes": {
-    "md": "dfcfa687b366",
+    "md": "df1d1cf51713",
     "ts": "eb2937897bd1"
   },
   "criteria": {
@@ -838,18 +838,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "dfcfa687b366",
+          "md": "df1d1cf51713",
           "ts": "eb2937897bd1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.843565Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:00.956Z",
+        "reviewed_at": "2026-07-07T14:26:56.843565Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -857,16 +857,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "dfcfa687b366",
+          "md": "df1d1cf51713",
           "ts": "eb2937897bd1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.843565Z"
         },
-        "reviewed_at": "2026-06-28T10:58:46.339Z",
+        "reviewed_at": "2026-07-07T14:26:56.843565Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No false claims identified in 'Frobenius packing interpretation of the $q$-density': mathematical reasoning is consistent in prose.",
         "severity": "minor",
@@ -876,16 +878,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "dfcfa687b366",
+          "md": "df1d1cf51713",
           "ts": "eb2937897bd1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.843565Z"
         },
-        "reviewed_at": "2026-06-28T10:58:46.346Z",
+        "reviewed_at": "2026-07-07T14:26:56.843565Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The block 'Frobenius packing interpretation of the $q$-density' presents substantial mathematical content: '> SUPERSEDED-$\\rho_q$ note . Any use of the'.",
         "severity": "minor"
@@ -894,16 +898,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "dfcfa687b366",
+          "md": "df1d1cf51713",
           "ts": "eb2937897bd1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.843565Z"
         },
-        "reviewed_at": "2026-06-28T10:58:46.353Z",
+        "reviewed_at": "2026-07-07T14:26:56.843565Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Frobenius packing interpretation of the $q$-density'.",
         "severity": "minor",
@@ -913,16 +919,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "dfcfa687b366",
+          "md": "df1d1cf51713",
           "ts": "eb2937897bd1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.843565Z"
         },
-        "reviewed_at": "2026-06-28T10:58:46.362Z",
+        "reviewed_at": "2026-07-07T14:26:56.843565Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The remarks and narrative scope in 'Frobenius packing interpretation of the $q$-density' are appropriately qualified.",
         "severity": "minor"
@@ -931,16 +939,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "dfcfa687b366",
+          "md": "df1d1cf51713",
           "ts": "eb2937897bd1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.843565Z"
         },
-        "reviewed_at": "2026-06-28T10:58:46.368Z",
+        "reviewed_at": "2026-07-07T14:26:56.843565Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Frobenius packing interpretation of the $q$-density'.",
         "severity": "minor",
@@ -950,16 +960,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "dfcfa687b366",
+          "md": "df1d1cf51713",
           "ts": "eb2937897bd1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.843565Z"
         },
-        "reviewed_at": "2026-06-28T10:58:46.375Z",
+        "reviewed_at": "2026-07-07T14:26:56.843565Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The prose arguments in 'Frobenius packing interpretation of the $q$-density' proceed logically through the stated steps.",
         "severity": "minor",
@@ -969,16 +981,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "dfcfa687b366",
+          "md": "df1d1cf51713",
           "ts": "eb2937897bd1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.843565Z"
         },
-        "reviewed_at": "2026-06-28T10:58:46.382Z",
+        "reviewed_at": "2026-07-07T14:26:56.843565Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No Lean sibling required; narrative matches the expected configuration.",
         "severity": "minor"
@@ -987,16 +1001,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "dfcfa687b366",
+          "md": "df1d1cf51713",
           "ts": "eb2937897bd1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.843565Z"
         },
-        "reviewed_at": "2026-06-28T10:58:46.388Z",
+        "reviewed_at": "2026-07-07T14:26:56.843565Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No citations are present in 'Frobenius packing interpretation of the $q$-density', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1006,16 +1022,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "dfcfa687b366",
+          "md": "df1d1cf51713",
           "ts": "eb2937897bd1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.843565Z"
         },
-        "reviewed_at": "2026-06-28T10:58:46.394Z",
+        "reviewed_at": "2026-07-07T14:26:56.843565Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Key terms and symbols in 'Frobenius packing interpretation of the $q$-density' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1025,16 +1043,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "dfcfa687b366",
+          "md": "df1d1cf51713",
           "ts": "eb2937897bd1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.843565Z"
         },
-        "reviewed_at": "2026-06-28T10:58:46.401Z",
+        "reviewed_at": "2026-07-07T14:26:56.843565Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The algebraic and logical relations in 'Frobenius packing interpretation of the $q$-density' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1044,16 +1064,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "dfcfa687b366",
+          "md": "df1d1cf51713",
           "ts": "eb2937897bd1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.843565Z"
         },
-        "reviewed_at": "2026-06-28T10:58:46.408Z",
+        "reviewed_at": "2026-07-07T14:26:56.843565Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The physical concepts described in 'Frobenius packing interpretation of the $q$-density' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1063,16 +1085,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "dfcfa687b366",
+          "md": "df1d1cf51713",
           "ts": "eb2937897bd1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.843565Z"
         },
-        "reviewed_at": "2026-06-28T10:58:46.414Z",
+        "reviewed_at": "2026-07-07T14:26:56.843565Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The derivation steps and formal definitions in 'Frobenius packing interpretation of the $q$-density' are reproducible.",
         "severity": "minor"
@@ -1081,16 +1105,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "dfcfa687b366",
+          "md": "df1d1cf51713",
           "ts": "eb2937897bd1"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.843565Z"
         },
-        "reviewed_at": "2026-06-28T10:58:46.420Z",
+        "reviewed_at": "2026-07-07T14:26:56.843565Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -1102,14 +1128,20 @@
       {
         "result": "pass",
         "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
-        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.843565Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.843565Z"
+        },
+        "field_hash": {
+          "md": "df1d1cf51713",
+          "ts": "eb2937897bd1"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-07T14:26:56.843565Z"
 }

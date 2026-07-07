@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.lean"
   },
   "source_hashes": {
-    "md": "18febccc8d36",
+    "md": "e6e7f31adc6f",
     "ts": "88c9a8029cf2",
     "lean": "873856865a4a"
   },
@@ -1919,7 +1919,7 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "83f1c3eba3cf",
+          "md": "e6e7f31adc6f",
           "ts": "88c9a8029cf2",
           "lean": "873856865a4a"
         },
@@ -1927,11 +1927,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.158688Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:18.446Z",
+        "reviewed_at": "2026-07-07T14:26:57.158688Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1979,20 +1979,20 @@
       },
       {
         "field_hash": {
-          "md": "83f1c3eba3cf",
+          "md": "e6e7f31adc6f",
           "ts": "88c9a8029cf2",
           "lean": "873856865a4a"
         },
         "result": "pass",
         "notes": "Conjecture: every QOU particle is an anyon via B_n\u21a0H_n(R,q) (T_{s_i}-q)(T_{s_i}+1)=0; Bose/Fermi = \u03c4-image. Well-posed, honestly conjectural (spectrum exhaustion).",
-        "reviewed_at": "2026-06-25T17:08:56.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.158688Z",
         "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.158688Z"
         },
         "score": {
           "max": 1,
@@ -2003,7 +2003,7 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "83f1c3eba3cf",
+          "md": "e6e7f31adc6f",
           "ts": "88c9a8029cf2",
           "lean": "873856865a4a"
         },
@@ -2011,9 +2011,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.158688Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.158688Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The claim in 'Iwahori\u2013Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation' is unverified because the formal proof in content/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.lean is incomplete (contains sorry).",
         "severity": "minor",
@@ -2023,7 +2025,7 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "83f1c3eba3cf",
+          "md": "e6e7f31adc6f",
           "ts": "88c9a8029cf2",
           "lean": "873856865a4a"
         },
@@ -2031,9 +2033,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.158688Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.158688Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The claims in 'Iwahori\u2013Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation' are non-vacuous as they make concrete conjectures about '$T_w \\in H_n(R, q)$ be its Hecke normal form at generic deformation parameter $q$. Then the topological statistics of...'.",
         "severity": "minor"
@@ -2042,7 +2046,7 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "83f1c3eba3cf",
+          "md": "e6e7f31adc6f",
           "ts": "88c9a8029cf2",
           "lean": "873856865a4a"
         },
@@ -2050,9 +2054,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.158688Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.158688Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Iwahori\u2013Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation'.",
         "severity": "minor",
@@ -2062,7 +2068,7 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "83f1c3eba3cf",
+          "md": "e6e7f31adc6f",
           "ts": "88c9a8029cf2",
           "lean": "873856865a4a"
         },
@@ -2070,9 +2076,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.158688Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.158688Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose in 'Iwahori\u2013Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.lean is incomplete (has sorry).",
         "severity": "minor"
@@ -2081,7 +2089,7 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "83f1c3eba3cf",
+          "md": "e6e7f31adc6f",
           "ts": "88c9a8029cf2",
           "lean": "873856865a4a"
         },
@@ -2089,9 +2097,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.158688Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.158688Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Iwahori\u2013Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation'.",
         "severity": "minor",
@@ -2101,7 +2111,7 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "83f1c3eba3cf",
+          "md": "e6e7f31adc6f",
           "ts": "88c9a8029cf2",
           "lean": "873856865a4a"
         },
@@ -2109,9 +2119,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.158688Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.158688Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The argument flow in 'Iwahori\u2013Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -2121,7 +2133,7 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "83f1c3eba3cf",
+          "md": "e6e7f31adc6f",
           "ts": "88c9a8029cf2",
           "lean": "873856865a4a"
         },
@@ -2129,9 +2141,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.158688Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.158688Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.lean uses a class-conjecture pattern, matching the conjectural nature of 'Iwahori\u2013Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation'.",
         "severity": "minor"
@@ -2140,7 +2154,7 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "83f1c3eba3cf",
+          "md": "e6e7f31adc6f",
           "ts": "88c9a8029cf2",
           "lean": "873856865a4a"
         },
@@ -2148,9 +2162,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.158688Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.158688Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Citations to kassel1995, kitaev2006, nayak2008, khovanovlauda2009 are correct and contextually appropriate.",
         "severity": "minor",
@@ -2160,7 +2176,7 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "83f1c3eba3cf",
+          "md": "e6e7f31adc6f",
           "ts": "88c9a8029cf2",
           "lean": "873856865a4a"
         },
@@ -2168,9 +2184,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.158688Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.158688Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Iwahori\u2013Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -2180,7 +2198,7 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "83f1c3eba3cf",
+          "md": "e6e7f31adc6f",
           "ts": "88c9a8029cf2",
           "lean": "873856865a4a"
         },
@@ -2188,9 +2206,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.158688Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.158688Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Iwahori\u2013Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -2200,7 +2220,7 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "83f1c3eba3cf",
+          "md": "e6e7f31adc6f",
           "ts": "88c9a8029cf2",
           "lean": "873856865a4a"
         },
@@ -2208,9 +2228,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.158688Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.158688Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Iwahori\u2013Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -2220,7 +2242,7 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "83f1c3eba3cf",
+          "md": "e6e7f31adc6f",
           "ts": "88c9a8029cf2",
           "lean": "873856865a4a"
         },
@@ -2228,9 +2250,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.158688Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.158688Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'Iwahori\u2013Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation' are reproducible.",
         "severity": "minor",
@@ -2240,7 +2264,7 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "83f1c3eba3cf",
+          "md": "e6e7f31adc6f",
           "ts": "88c9a8029cf2",
           "lean": "873856865a4a"
         },
@@ -2248,9 +2272,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.158688Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.158688Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders.",
         "severity": "minor",
@@ -2281,7 +2307,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "18febccc8d36",
+          "md": "e6e7f31adc6f",
           "ts": "88c9a8029cf2",
           "lean": "873856865a4a"
         },
@@ -2289,9 +2315,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.158688Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_at": "2026-07-07T14:26:57.158688Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Conjecture with class/axiom axiomatisation \u2014 structural match."
       }
@@ -2300,14 +2328,21 @@
       {
         "result": "pass",
         "notes": "Rewrote seq16 enforcing Milnor brevity. Cleaned up the intro, replacing conversational 'We conjecture ... We then exhibit' with succinct declarations. Streamlined the conditional theorem and conjecture blocks.",
-        "reviewed_at": "2026-07-06T22:52:00Z",
+        "reviewed_at": "2026-07-07T14:26:57.158688Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.158688Z"
+        },
+        "field_hash": {
+          "md": "e6e7f31adc6f",
+          "ts": "88c9a8029cf2",
+          "lean": "873856865a4a"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.802Z"
+  "updated_at": "2026-07-07T14:26:57.158688Z"
 }

@@ -7,23 +7,25 @@
     "md": "../qou/content/quantum-observable-universe/observations/algebraic-gns-embedding-interpretation.md"
   },
   "source_hashes": {
-    "md": "1421da5f9a1c",
+    "md": "3c74832f587e",
     "ts": "74bf7ecf05f7"
   },
   "criteria": {
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "1421da5f9a1c",
+          "md": "3c74832f587e",
           "ts": "74bf7ecf05f7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-21",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.511104Z"
         },
-        "reviewed_at": "2026-06-28T18:08:18.384Z",
+        "reviewed_at": "2026-07-07T14:26:56.511104Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "The identification of the GNS representation's double commutant as a type II_1 von Neumann algebra correctly reflects standard Jones subfactor theory."
       }
@@ -52,14 +54,20 @@
       {
         "result": "pass",
         "notes": "Applied Milnor exposition standard (H1-H8) and brevity rules. Shortened sentences, removed editorializing ('surprisingly', 'remarkably'), replaced 'this book' with 'this paper', and maintained Math, markdown, and cross-block consistency.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.511104Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.511104Z"
+        },
+        "field_hash": {
+          "md": "3c74832f587e",
+          "ts": "74bf7ecf05f7"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.226Z"
+  "updated_at": "2026-07-07T14:26:56.511104Z"
 }

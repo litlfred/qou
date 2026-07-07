@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/confinement-level-exists.lean"
   },
   "source_hashes": {
-    "md": "30c261e641aa",
+    "md": "7479bea2e3b6",
     "ts": "009b9fc85a42",
     "lean": "ef50d4fdefa5"
   },
@@ -2266,19 +2266,19 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "50769fe81a58",
+          "md": "7479bea2e3b6",
           "ts": "009b9fc85a42",
-          "lean": "7c11db6308a5"
+          "lean": "ef50d4fdefa5"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.378974Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:22.020Z",
+        "reviewed_at": "2026-07-07T14:26:57.378974Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
       }
@@ -2286,19 +2286,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "50769fe81a58",
+          "md": "7479bea2e3b6",
           "ts": "009b9fc85a42",
-          "lean": "7c11db6308a5"
+          "lean": "ef50d4fdefa5"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.378974Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:22.372Z",
+        "reviewed_at": "2026-07-07T14:26:57.378974Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -2306,19 +2306,19 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "50769fe81a58",
+          "md": "7479bea2e3b6",
           "ts": "009b9fc85a42",
-          "lean": "7c11db6308a5"
+          "lean": "ef50d4fdefa5"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.378974Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:22.786Z",
+        "reviewed_at": "2026-07-07T14:26:57.378974Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -2326,19 +2326,19 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "50769fe81a58",
+          "md": "7479bea2e3b6",
           "ts": "009b9fc85a42",
-          "lean": "7c11db6308a5"
+          "lean": "ef50d4fdefa5"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.378974Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:23.181Z",
+        "reviewed_at": "2026-07-07T14:26:57.378974Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
       }
@@ -2364,7 +2364,7 @@
       },
       {
         "field_hash": {
-          "md": "30c261e641aa",
+          "md": "7479bea2e3b6",
           "ts": "009b9fc85a42",
           "lean": "ef50d4fdefa5"
         },
@@ -2373,9 +2373,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.378974Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_at": "2026-07-07T14:26:57.378974Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Lean file may be empty or only contain comments."
       }
@@ -2383,9 +2385,9 @@
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "50769fe81a58",
+          "md": "7479bea2e3b6",
           "ts": "009b9fc85a42",
-          "lean": "7c11db6308a5"
+          "lean": "ef50d4fdefa5"
         },
         "result": "pass",
         "score": {
@@ -2395,11 +2397,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.378974Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:23.882Z",
+        "reviewed_at": "2026-07-07T14:26:57.378974Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
       }
@@ -2407,9 +2409,9 @@
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "50769fe81a58",
+          "md": "7479bea2e3b6",
           "ts": "009b9fc85a42",
-          "lean": "7c11db6308a5"
+          "lean": "ef50d4fdefa5"
         },
         "result": "pass",
         "score": {
@@ -2419,11 +2421,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.378974Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:24.195Z",
+        "reviewed_at": "2026-07-07T14:26:57.378974Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
       }
@@ -2431,9 +2433,9 @@
     "proof-rater-novelty": [
       {
         "field_hash": {
-          "md": "50769fe81a58",
+          "md": "7479bea2e3b6",
           "ts": "009b9fc85a42",
-          "lean": "7c11db6308a5"
+          "lean": "ef50d4fdefa5"
         },
         "result": "pass",
         "score": {
@@ -2443,11 +2445,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.378974Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:24.546Z",
+        "reviewed_at": "2026-07-07T14:26:57.378974Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
       }
@@ -2455,19 +2457,19 @@
     "proof-statement-integrity": [
       {
         "field_hash": {
-          "md": "50769fe81a58",
+          "md": "7479bea2e3b6",
           "ts": "009b9fc85a42",
-          "lean": "7c11db6308a5"
+          "lean": "ef50d4fdefa5"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.378974Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:24.846Z",
+        "reviewed_at": "2026-07-07T14:26:57.378974Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
       }
@@ -2475,19 +2477,19 @@
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "50769fe81a58",
+          "md": "7479bea2e3b6",
           "ts": "009b9fc85a42",
-          "lean": "7c11db6308a5"
+          "lean": "ef50d4fdefa5"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.378974Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:25.051Z",
+        "reviewed_at": "2026-07-07T14:26:57.378974Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
       }
@@ -2495,19 +2497,19 @@
     "proof-no-trivial-true": [
       {
         "field_hash": {
-          "md": "50769fe81a58",
+          "md": "7479bea2e3b6",
           "ts": "009b9fc85a42",
-          "lean": "7c11db6308a5"
+          "lean": "ef50d4fdefa5"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.378974Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:25.265Z",
+        "reviewed_at": "2026-07-07T14:26:57.378974Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
       }
@@ -2515,19 +2517,19 @@
     "proof-no-false-premise": [
       {
         "field_hash": {
-          "md": "50769fe81a58",
+          "md": "7479bea2e3b6",
           "ts": "009b9fc85a42",
-          "lean": "7c11db6308a5"
+          "lean": "ef50d4fdefa5"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.378974Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:25.462Z",
+        "reviewed_at": "2026-07-07T14:26:57.378974Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
       }
@@ -2535,19 +2537,19 @@
     "proof-no-unused-hypotheses": [
       {
         "field_hash": {
-          "md": "50769fe81a58",
+          "md": "7479bea2e3b6",
           "ts": "009b9fc85a42",
-          "lean": "7c11db6308a5"
+          "lean": "ef50d4fdefa5"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.378974Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:25.562Z",
+        "reviewed_at": "2026-07-07T14:26:57.378974Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
       }
@@ -2555,19 +2557,19 @@
     "proof-no-decide-masking": [
       {
         "field_hash": {
-          "md": "50769fe81a58",
+          "md": "7479bea2e3b6",
           "ts": "009b9fc85a42",
-          "lean": "7c11db6308a5"
+          "lean": "ef50d4fdefa5"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.378974Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:25.667Z",
+        "reviewed_at": "2026-07-07T14:26:57.378974Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
@@ -2575,17 +2577,19 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "50769fe81a58",
+          "md": "7479bea2e3b6",
           "ts": "009b9fc85a42",
-          "lean": "7c11db6308a5"
+          "lean": "ef50d4fdefa5"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.378974Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.378974Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The mathematical claims in 'Existence of the confinement level' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/particle-interactions/confinement-level-exists.lean:20:14: error: Function expected at.",
         "severity": "minor",
@@ -2595,17 +2599,19 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "50769fe81a58",
+          "md": "7479bea2e3b6",
           "ts": "009b9fc85a42",
-          "lean": "7c11db6308a5"
+          "lean": "ef50d4fdefa5"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.378974Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.378974Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/confinement-level-exists.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "minor",
@@ -2615,17 +2621,19 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "50769fe81a58",
+          "md": "7479bea2e3b6",
           "ts": "009b9fc85a42",
-          "lean": "7c11db6308a5"
+          "lean": "ef50d4fdefa5"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.378974Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.378974Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Existence of the confinement level'.",
         "severity": "minor",
@@ -2635,17 +2643,19 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "50769fe81a58",
+          "md": "7479bea2e3b6",
           "ts": "009b9fc85a42",
-          "lean": "7c11db6308a5"
+          "lean": "ef50d4fdefa5"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.378974Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.378974Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The remarks and narrative scope in 'Existence of the confinement level' are appropriately qualified.",
         "severity": "minor"
@@ -2654,17 +2664,19 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "50769fe81a58",
+          "md": "7479bea2e3b6",
           "ts": "009b9fc85a42",
-          "lean": "7c11db6308a5"
+          "lean": "ef50d4fdefa5"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.378974Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.378974Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Existence of the confinement level'.",
         "severity": "minor",
@@ -2674,17 +2686,19 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "50769fe81a58",
+          "md": "7479bea2e3b6",
           "ts": "009b9fc85a42",
-          "lean": "7c11db6308a5"
+          "lean": "ef50d4fdefa5"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.378974Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.378974Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/confinement-level-exists.lean.",
         "severity": "minor",
@@ -2694,17 +2708,19 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "50769fe81a58",
+          "md": "7479bea2e3b6",
           "ts": "009b9fc85a42",
-          "lean": "7c11db6308a5"
+          "lean": "ef50d4fdefa5"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.378974Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.378974Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/confinement-level-exists.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
@@ -2713,17 +2729,19 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "50769fe81a58",
+          "md": "7479bea2e3b6",
           "ts": "009b9fc85a42",
-          "lean": "7c11db6308a5"
+          "lean": "ef50d4fdefa5"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.378974Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.378974Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Existence of the confinement level', hence no citation misuse is possible.",
         "severity": "minor",
@@ -2733,17 +2751,19 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "50769fe81a58",
+          "md": "7479bea2e3b6",
           "ts": "009b9fc85a42",
-          "lean": "7c11db6308a5"
+          "lean": "ef50d4fdefa5"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.378974Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.378974Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Existence of the confinement level' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -2753,17 +2773,19 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "50769fe81a58",
+          "md": "7479bea2e3b6",
           "ts": "009b9fc85a42",
-          "lean": "7c11db6308a5"
+          "lean": "ef50d4fdefa5"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.378974Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.378974Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Existence of the confinement level' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -2773,17 +2795,19 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "50769fe81a58",
+          "md": "7479bea2e3b6",
           "ts": "009b9fc85a42",
-          "lean": "7c11db6308a5"
+          "lean": "ef50d4fdefa5"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.378974Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.378974Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Existence of the confinement level' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -2793,17 +2817,19 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "50769fe81a58",
+          "md": "7479bea2e3b6",
           "ts": "009b9fc85a42",
-          "lean": "7c11db6308a5"
+          "lean": "ef50d4fdefa5"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.378974Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.378974Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/confinement-level-exists.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
@@ -2813,17 +2839,19 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "50769fe81a58",
+          "md": "7479bea2e3b6",
           "ts": "009b9fc85a42",
-          "lean": "7c11db6308a5"
+          "lean": "ef50d4fdefa5"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.378974Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.378974Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/confinement-level-exists.lean fails compilation.",
         "severity": "major",
@@ -2835,14 +2863,21 @@
       {
         "result": "pass",
         "notes": "Rewrote seq15 to enforce Milnor brevity. Replaced verbose phrasing with concise declarative sentences, eliminating 'This section ... We then ...' patterns where possible. Simplified 'Conjectural status' blocks.",
-        "reviewed_at": "2026-07-06T22:50:00Z",
+        "reviewed_at": "2026-07-07T14:26:57.378974Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.378974Z"
+        },
+        "field_hash": {
+          "md": "7479bea2e3b6",
+          "ts": "009b9fc85a42",
+          "lean": "ef50d4fdefa5"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.802Z"
+  "updated_at": "2026-07-07T14:26:57.378974Z"
 }

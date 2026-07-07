@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/mass-theory/intro-plancherel-alpha-ribbon.md"
   },
   "source_hashes": {
-    "ts": "11247ca4dd4f",
-    "md": "212a29401f3d"
+    "md": "d77b1c35f997",
+    "ts": "11247ca4dd4f"
   },
   "criteria": {
     "q-usage-regime-detected": [
@@ -128,14 +128,20 @@
       {
         "result": "pass",
         "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
-        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.786906Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.786906Z"
+        },
+        "field_hash": {
+          "md": "d77b1c35f997",
+          "ts": "11247ca4dd4f"
         }
       }
     ]
   },
-  "updated_at": "2026-06-01T16:06:38.106Z"
+  "updated_at": "2026-07-07T14:26:56.786906Z"
 }

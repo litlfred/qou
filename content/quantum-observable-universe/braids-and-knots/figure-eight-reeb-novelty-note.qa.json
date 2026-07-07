@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/braids-and-knots/figure-eight-reeb-novelty-note.md"
   },
   "source_hashes": {
-    "md": "ffda4030d7c6",
+    "md": "fad0fb38cf5a",
     "ts": "10d1eeea3129"
   },
   "criteria": {
@@ -53,14 +53,20 @@
       {
         "result": "pass",
         "notes": "Applied Milnor brevity. Trimmed internal cross references and bloated narrative commentary. Tightened 'Mathematical Novelty' notes to single clear sentences. Retained all math.",
-        "reviewed_at": "2026-07-06T22:42:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.344293Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.344293Z"
+        },
+        "field_hash": {
+          "md": "fad0fb38cf5a",
+          "ts": "10d1eeea3129"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:55.297Z"
+  "updated_at": "2026-07-07T14:26:55.344293Z"
 }

@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/quantum-observable-universes/q-heat-equation-elaboration.md"
   },
   "source_hashes": {
-    "md": "68127ae5d1ba",
+    "md": "b160b1a939d0",
     "ts": "9851bb61d4e4"
   },
   "criteria": {
@@ -821,14 +821,20 @@
       {
         "result": "pass",
         "notes": "Removed strategy blocks and merged redundant properties into declarative sentences. Removed commutative diagrams. Removed conversational padding.",
-        "reviewed_at": "2026-07-06T22:46:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.963195Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.963195Z"
+        },
+        "field_hash": {
+          "md": "b160b1a939d0",
+          "ts": "9851bb61d4e4"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T04:39:43.766Z"
+  "updated_at": "2026-07-07T14:26:55.963195Z"
 }

@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/organic-chemistry/covalent-bond-types.lean"
   },
   "source_hashes": {
-    "md": "a59164b24049",
+    "md": "3ab8b338b9ed",
     "ts": "2483fbc7ba4c",
     "lean": "172e9e39b52f"
   },
@@ -877,7 +877,7 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "a59164b24049",
+          "md": "3ab8b338b9ed",
           "ts": "2483fbc7ba4c",
           "lean": "172e9e39b52f"
         },
@@ -885,11 +885,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.962740Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:19.658Z",
+        "reviewed_at": "2026-07-07T14:26:54.962740Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -897,7 +897,7 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "a59164b24049",
+          "md": "3ab8b338b9ed",
           "ts": "2483fbc7ba4c",
           "lean": "172e9e39b52f"
         },
@@ -905,11 +905,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.962740Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:20.026Z",
+        "reviewed_at": "2026-07-07T14:26:54.962740Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -917,7 +917,7 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "a59164b24049",
+          "md": "3ab8b338b9ed",
           "ts": "2483fbc7ba4c",
           "lean": "172e9e39b52f"
         },
@@ -925,9 +925,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.962740Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:54.962740Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No false claims identified in 'Covalent bond (shared Hopf links)': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -937,7 +939,7 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "a59164b24049",
+          "md": "3ab8b338b9ed",
           "ts": "2483fbc7ba4c",
           "lean": "172e9e39b52f"
         },
@@ -945,9 +947,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.962740Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:54.962740Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Covalent bond (shared Hopf links)' presents substantial mathematical content: Metallic bonding ([metallic character](#prop:metallic-character-knot)) arises wh...",
         "severity": "minor"
@@ -956,7 +960,7 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "a59164b24049",
+          "md": "3ab8b338b9ed",
           "ts": "2483fbc7ba4c",
           "lean": "172e9e39b52f"
         },
@@ -964,9 +968,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.962740Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:54.962740Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Covalent bond (shared Hopf links)'.",
         "severity": "minor",
@@ -976,7 +982,7 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "a59164b24049",
+          "md": "3ab8b338b9ed",
           "ts": "2483fbc7ba4c",
           "lean": "172e9e39b52f"
         },
@@ -984,9 +990,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.962740Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:54.962740Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No overclaims: the scope of 'Covalent bond (shared Hopf links)' is appropriately qualified.",
         "severity": "minor"
@@ -995,7 +1003,7 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "a59164b24049",
+          "md": "3ab8b338b9ed",
           "ts": "2483fbc7ba4c",
           "lean": "172e9e39b52f"
         },
@@ -1003,9 +1011,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.962740Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:54.962740Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Covalent bond (shared Hopf links)'.",
         "severity": "minor",
@@ -1015,7 +1025,7 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "a59164b24049",
+          "md": "3ab8b338b9ed",
           "ts": "2483fbc7ba4c",
           "lean": "172e9e39b52f"
         },
@@ -1023,9 +1033,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.962740Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:54.962740Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The argument flow in 'Covalent bond (shared Hopf links)' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -1035,7 +1047,7 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "a59164b24049",
+          "md": "3ab8b338b9ed",
           "ts": "2483fbc7ba4c",
           "lean": "172e9e39b52f"
         },
@@ -1043,9 +1055,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.962740Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:54.962740Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Lean formalization and narrative for 'Covalent bond (shared Hopf links)' are in complete agreement.",
         "severity": "minor"
@@ -1054,7 +1068,7 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "a59164b24049",
+          "md": "3ab8b338b9ed",
           "ts": "2483fbc7ba4c",
           "lean": "172e9e39b52f"
         },
@@ -1062,9 +1076,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.962740Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:54.962740Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No citations are present in 'Covalent bond (shared Hopf links)', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1074,7 +1090,7 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "a59164b24049",
+          "md": "3ab8b338b9ed",
           "ts": "2483fbc7ba4c",
           "lean": "172e9e39b52f"
         },
@@ -1082,9 +1098,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.962740Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:54.962740Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Key terms and symbols in 'Covalent bond (shared Hopf links)' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1094,7 +1112,7 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "a59164b24049",
+          "md": "3ab8b338b9ed",
           "ts": "2483fbc7ba4c",
           "lean": "172e9e39b52f"
         },
@@ -1102,9 +1120,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.962740Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:54.962740Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The algebraic and logical relations in 'Covalent bond (shared Hopf links)' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1114,7 +1134,7 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "a59164b24049",
+          "md": "3ab8b338b9ed",
           "ts": "2483fbc7ba4c",
           "lean": "172e9e39b52f"
         },
@@ -1122,9 +1142,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.962740Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:54.962740Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The physical concepts described in 'Covalent bond (shared Hopf links)' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1134,7 +1156,7 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "a59164b24049",
+          "md": "3ab8b338b9ed",
           "ts": "2483fbc7ba4c",
           "lean": "172e9e39b52f"
         },
@@ -1142,9 +1164,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.962740Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:54.962740Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The derivation steps and formal definitions in 'Covalent bond (shared Hopf links)' are reproducible.",
         "severity": "minor",
@@ -1154,7 +1178,7 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "a59164b24049",
+          "md": "3ab8b338b9ed",
           "ts": "2483fbc7ba4c",
           "lean": "172e9e39b52f"
         },
@@ -1162,9 +1186,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.962740Z"
         },
-        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_at": "2026-07-07T14:26:54.962740Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
@@ -1176,14 +1202,21 @@
       {
         "result": "pass",
         "notes": "Applied Milnor exposition standard (H1-H8) and brevity rules. Shortened sentences, removed editorializing ('surprisingly', 'remarkably'), replaced 'this book' with 'this paper', and maintained Math, markdown, and cross-block consistency.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:54.962740Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:54.962740Z"
+        },
+        "field_hash": {
+          "md": "3ab8b338b9ed",
+          "ts": "2483fbc7ba4c",
+          "lean": "172e9e39b52f"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T18:18:34.291Z"
+  "updated_at": "2026-07-07T14:26:54.962740Z"
 }

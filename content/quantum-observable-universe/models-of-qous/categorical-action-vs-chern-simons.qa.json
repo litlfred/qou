@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/models-of-qous/categorical-action-vs-chern-simons.md"
   },
   "source_hashes": {
-    "md": "3674a90f805a",
+    "md": "60ac0df4571a",
     "ts": "eb618a5f9075"
   },
   "criteria": {
@@ -820,18 +820,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "3674a90f805a",
+          "md": "60ac0df4571a",
           "ts": "eb618a5f9075"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.442317Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:23.029Z",
+        "reviewed_at": "2026-07-07T14:26:55.442317Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -839,16 +839,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "3674a90f805a",
+          "md": "60ac0df4571a",
           "ts": "eb618a5f9075"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.442317Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.027Z",
+        "reviewed_at": "2026-07-07T14:26:55.442317Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No false claims identified in 'Comparison with the classical Chern--Simons action': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -858,16 +860,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "3674a90f805a",
+          "md": "60ac0df4571a",
           "ts": "eb618a5f9075"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.442317Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.033Z",
+        "reviewed_at": "2026-07-07T14:26:55.442317Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The block 'Comparison with the classical Chern--Simons action' presents substantial mathematical content: The classical Chern--Simons action \\cite{witten1988}...",
         "severity": "minor"
@@ -876,16 +880,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "3674a90f805a",
+          "md": "60ac0df4571a",
           "ts": "eb618a5f9075"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.442317Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.040Z",
+        "reviewed_at": "2026-07-07T14:26:55.442317Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Comparison with the classical Chern--Simons action'.",
         "severity": "minor",
@@ -895,16 +901,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "3674a90f805a",
+          "md": "60ac0df4571a",
           "ts": "eb618a5f9075"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.442317Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.046Z",
+        "reviewed_at": "2026-07-07T14:26:55.442317Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No overclaims: the scope of 'Comparison with the classical Chern--Simons action' is appropriately qualified.",
         "severity": "minor"
@@ -913,16 +921,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "3674a90f805a",
+          "md": "60ac0df4571a",
           "ts": "eb618a5f9075"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.442317Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.052Z",
+        "reviewed_at": "2026-07-07T14:26:55.442317Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Comparison with the classical Chern--Simons action'.",
         "severity": "minor",
@@ -932,16 +942,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "3674a90f805a",
+          "md": "60ac0df4571a",
           "ts": "eb618a5f9075"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.442317Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.058Z",
+        "reviewed_at": "2026-07-07T14:26:55.442317Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The argument flow in 'Comparison with the classical Chern--Simons action' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -951,16 +963,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "3674a90f805a",
+          "md": "60ac0df4571a",
           "ts": "eb618a5f9075"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.442317Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.064Z",
+        "reviewed_at": "2026-07-07T14:26:55.442317Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
@@ -969,16 +983,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "3674a90f805a",
+          "md": "60ac0df4571a",
           "ts": "eb618a5f9075"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.442317Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.070Z",
+        "reviewed_at": "2026-07-07T14:26:55.442317Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Citations to witten1988 are correct and contextually appropriate.",
         "severity": "minor",
@@ -988,16 +1004,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "3674a90f805a",
+          "md": "60ac0df4571a",
           "ts": "eb618a5f9075"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.442317Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.076Z",
+        "reviewed_at": "2026-07-07T14:26:55.442317Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Key terms and symbols in 'Comparison with the classical Chern--Simons action' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1007,16 +1025,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "3674a90f805a",
+          "md": "60ac0df4571a",
           "ts": "eb618a5f9075"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.442317Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.083Z",
+        "reviewed_at": "2026-07-07T14:26:55.442317Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The algebraic and logical relations in 'Comparison with the classical Chern--Simons action' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1026,16 +1046,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "3674a90f805a",
+          "md": "60ac0df4571a",
           "ts": "eb618a5f9075"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.442317Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.089Z",
+        "reviewed_at": "2026-07-07T14:26:55.442317Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The physical concepts described in 'Comparison with the classical Chern--Simons action' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1045,16 +1067,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "3674a90f805a",
+          "md": "60ac0df4571a",
           "ts": "eb618a5f9075"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.442317Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.096Z",
+        "reviewed_at": "2026-07-07T14:26:55.442317Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The derivation steps and formal definitions in 'Comparison with the classical Chern--Simons action' are reproducible.",
         "severity": "minor",
@@ -1064,16 +1088,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "3674a90f805a",
+          "md": "60ac0df4571a",
           "ts": "eb618a5f9075"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.442317Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.103Z",
+        "reviewed_at": "2026-07-07T14:26:55.442317Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -1085,14 +1111,20 @@
       {
         "result": "pass",
         "notes": "Tightened paragraphs, used 'we' consistently, replaced references with direct, plain descriptions where necessary.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.442317Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.442317Z"
+        },
+        "field_hash": {
+          "md": "60ac0df4571a",
+          "ts": "eb618a5f9075"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T18:21:24.666Z"
+  "updated_at": "2026-07-07T14:26:55.442317Z"
 }

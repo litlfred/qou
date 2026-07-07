@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.lean"
   },
   "source_hashes": {
-    "md": "267c155c13d1",
+    "md": "f2c4a23dfb44",
     "ts": "d19de80eda35",
     "lean": "533a98210460"
   },
@@ -1047,19 +1047,19 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "267c155c13d1",
+          "md": "f2c4a23dfb44",
           "ts": "d19de80eda35",
-          "lean": "735d291e68e4"
+          "lean": "533a98210460"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.024729Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:38.427Z",
+        "reviewed_at": "2026-07-07T14:26:56.024729Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
       }
@@ -1067,19 +1067,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "267c155c13d1",
+          "md": "f2c4a23dfb44",
           "ts": "d19de80eda35",
-          "lean": "735d291e68e4"
+          "lean": "533a98210460"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.024729Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:38.853Z",
+        "reviewed_at": "2026-07-07T14:26:56.024729Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1087,19 +1087,19 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "267c155c13d1",
+          "md": "f2c4a23dfb44",
           "ts": "d19de80eda35",
-          "lean": "735d291e68e4"
+          "lean": "533a98210460"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.024729Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:39.205Z",
+        "reviewed_at": "2026-07-07T14:26:56.024729Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -1107,19 +1107,19 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "267c155c13d1",
+          "md": "f2c4a23dfb44",
           "ts": "d19de80eda35",
-          "lean": "735d291e68e4"
+          "lean": "533a98210460"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.024729Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:39.541Z",
+        "reviewed_at": "2026-07-07T14:26:56.024729Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
       }
@@ -1127,19 +1127,19 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "267c155c13d1",
+          "md": "f2c4a23dfb44",
           "ts": "d19de80eda35",
-          "lean": "735d291e68e4"
+          "lean": "533a98210460"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.024729Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:39.870Z",
+        "reviewed_at": "2026-07-07T14:26:56.024729Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
       }
@@ -1147,9 +1147,9 @@
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "267c155c13d1",
+          "md": "f2c4a23dfb44",
           "ts": "d19de80eda35",
-          "lean": "735d291e68e4"
+          "lean": "533a98210460"
         },
         "result": "pass",
         "score": {
@@ -1159,11 +1159,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.024729Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:40.264Z",
+        "reviewed_at": "2026-07-07T14:26:56.024729Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
       }
@@ -1171,9 +1171,9 @@
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "267c155c13d1",
+          "md": "f2c4a23dfb44",
           "ts": "d19de80eda35",
-          "lean": "735d291e68e4"
+          "lean": "533a98210460"
         },
         "result": "pass",
         "score": {
@@ -1183,11 +1183,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.024729Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:40.749Z",
+        "reviewed_at": "2026-07-07T14:26:56.024729Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
       }
@@ -1195,9 +1195,9 @@
     "proof-rater-novelty": [
       {
         "field_hash": {
-          "md": "267c155c13d1",
+          "md": "f2c4a23dfb44",
           "ts": "d19de80eda35",
-          "lean": "735d291e68e4"
+          "lean": "533a98210460"
         },
         "result": "pass",
         "score": {
@@ -1207,11 +1207,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.024729Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:41.126Z",
+        "reviewed_at": "2026-07-07T14:26:56.024729Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
       }
@@ -1219,19 +1219,19 @@
     "proof-statement-integrity": [
       {
         "field_hash": {
-          "md": "267c155c13d1",
+          "md": "f2c4a23dfb44",
           "ts": "d19de80eda35",
-          "lean": "735d291e68e4"
+          "lean": "533a98210460"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.024729Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:41.591Z",
+        "reviewed_at": "2026-07-07T14:26:56.024729Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
       }
@@ -1239,19 +1239,19 @@
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "267c155c13d1",
+          "md": "f2c4a23dfb44",
           "ts": "d19de80eda35",
-          "lean": "735d291e68e4"
+          "lean": "533a98210460"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.024729Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:41.932Z",
+        "reviewed_at": "2026-07-07T14:26:56.024729Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
       }
@@ -1259,19 +1259,19 @@
     "proof-no-trivial-true": [
       {
         "field_hash": {
-          "md": "267c155c13d1",
+          "md": "f2c4a23dfb44",
           "ts": "d19de80eda35",
-          "lean": "735d291e68e4"
+          "lean": "533a98210460"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.024729Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:42.369Z",
+        "reviewed_at": "2026-07-07T14:26:56.024729Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
       }
@@ -1279,19 +1279,19 @@
     "proof-no-false-premise": [
       {
         "field_hash": {
-          "md": "267c155c13d1",
+          "md": "f2c4a23dfb44",
           "ts": "d19de80eda35",
-          "lean": "735d291e68e4"
+          "lean": "533a98210460"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.024729Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:42.783Z",
+        "reviewed_at": "2026-07-07T14:26:56.024729Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
       }
@@ -1299,19 +1299,19 @@
     "proof-no-unused-hypotheses": [
       {
         "field_hash": {
-          "md": "267c155c13d1",
+          "md": "f2c4a23dfb44",
           "ts": "d19de80eda35",
-          "lean": "735d291e68e4"
+          "lean": "533a98210460"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.024729Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:43.201Z",
+        "reviewed_at": "2026-07-07T14:26:56.024729Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
       }
@@ -1319,19 +1319,19 @@
     "proof-no-decide-masking": [
       {
         "field_hash": {
-          "md": "267c155c13d1",
+          "md": "f2c4a23dfb44",
           "ts": "d19de80eda35",
-          "lean": "735d291e68e4"
+          "lean": "533a98210460"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.024729Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:43.597Z",
+        "reviewed_at": "2026-07-07T14:26:56.024729Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
@@ -1339,7 +1339,7 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "267c155c13d1",
+          "md": "f2c4a23dfb44",
           "ts": "d19de80eda35",
           "lean": "533a98210460"
         },
@@ -1347,9 +1347,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.024729Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.024729Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.ts:1",
@@ -1359,7 +1361,7 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "267c155c13d1",
+          "md": "f2c4a23dfb44",
           "ts": "d19de80eda35",
           "lean": "533a98210460"
         },
@@ -1367,9 +1369,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.024729Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.024729Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.ts:1",
@@ -1379,7 +1383,7 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "267c155c13d1",
+          "md": "f2c4a23dfb44",
           "ts": "d19de80eda35",
           "lean": "533a98210460"
         },
@@ -1387,9 +1391,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.024729Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.024729Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.ts:1",
@@ -1399,7 +1405,7 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "267c155c13d1",
+          "md": "f2c4a23dfb44",
           "ts": "d19de80eda35",
           "lean": "533a98210460"
         },
@@ -1407,9 +1413,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.024729Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.024729Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.ts:1",
@@ -1419,7 +1427,7 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "267c155c13d1",
+          "md": "f2c4a23dfb44",
           "ts": "d19de80eda35",
           "lean": "533a98210460"
         },
@@ -1427,9 +1435,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.024729Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.024729Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.ts:1",
@@ -1439,7 +1449,7 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "267c155c13d1",
+          "md": "f2c4a23dfb44",
           "ts": "d19de80eda35",
           "lean": "533a98210460"
         },
@@ -1447,9 +1457,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.024729Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.024729Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.ts:1",
@@ -1459,7 +1471,7 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "267c155c13d1",
+          "md": "f2c4a23dfb44",
           "ts": "d19de80eda35",
           "lean": "533a98210460"
         },
@@ -1467,9 +1479,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.024729Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.024729Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.lean:1",
@@ -1479,7 +1493,7 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "267c155c13d1",
+          "md": "f2c4a23dfb44",
           "ts": "d19de80eda35",
           "lean": "533a98210460"
         },
@@ -1487,9 +1501,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.024729Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.024729Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.ts:1",
@@ -1499,7 +1515,7 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "267c155c13d1",
+          "md": "f2c4a23dfb44",
           "ts": "d19de80eda35",
           "lean": "533a98210460"
         },
@@ -1507,9 +1523,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.024729Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.024729Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.ts:1",
@@ -1519,7 +1537,7 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "267c155c13d1",
+          "md": "f2c4a23dfb44",
           "ts": "d19de80eda35",
           "lean": "533a98210460"
         },
@@ -1527,9 +1545,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.024729Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.024729Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.ts:1",
@@ -1539,7 +1559,7 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "267c155c13d1",
+          "md": "f2c4a23dfb44",
           "ts": "d19de80eda35",
           "lean": "533a98210460"
         },
@@ -1547,9 +1567,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.024729Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.024729Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.ts:1",
@@ -1559,7 +1581,7 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "267c155c13d1",
+          "md": "f2c4a23dfb44",
           "ts": "d19de80eda35",
           "lean": "533a98210460"
         },
@@ -1567,9 +1589,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.024729Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.024729Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.ts:1",
@@ -1579,7 +1603,7 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "267c155c13d1",
+          "md": "f2c4a23dfb44",
           "ts": "d19de80eda35",
           "lean": "533a98210460"
         },
@@ -1587,9 +1611,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.024729Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_at": "2026-07-07T14:26:56.024729Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/stochastic-mechanics/macroscopic-stability-equivalence.md:1 \u2014 The stability of the macroscopic spacetime continuum is equivalent to",
@@ -1622,14 +1648,21 @@
       {
         "result": "pass",
         "notes": "Cleaned up the graded Baer-star and classical limit implications. Reduced clutter around the Riemann hypothesis statement and macroscopic stability.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.024729Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.024729Z"
+        },
+        "field_hash": {
+          "md": "f2c4a23dfb44",
+          "ts": "d19de80eda35",
+          "lean": "533a98210460"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T23:06:25.607Z"
+  "updated_at": "2026-07-07T14:26:56.024729Z"
 }

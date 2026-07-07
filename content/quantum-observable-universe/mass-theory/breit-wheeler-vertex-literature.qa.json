@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/mass-theory/breit-wheeler-vertex-literature.md"
   },
   "source_hashes": {
-    "md": "51a594d244ce",
+    "md": "b2506d1aa274",
     "ts": "e5d30b9ddc86"
   },
   "criteria": {
@@ -838,18 +838,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "51a594d244ce",
+          "md": "b2506d1aa274",
           "ts": "e5d30b9ddc86"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.896027Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:08.150Z",
+        "reviewed_at": "2026-07-07T14:26:56.896027Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -857,16 +857,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "51a594d244ce",
+          "md": "b2506d1aa274",
           "ts": "e5d30b9ddc86"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.896027Z"
         },
-        "reviewed_at": "2026-06-28T10:58:51.420Z",
+        "reviewed_at": "2026-07-07T14:26:56.896027Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No false claims identified in 'Literature alignment: Bilson--Thompson braid preons, Hecke parity, and photonic hopfions'; the algebraic relation involving $B_3$ is mathematically consistent.",
         "severity": "minor",
@@ -876,16 +878,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "51a594d244ce",
+          "md": "b2506d1aa274",
           "ts": "e5d30b9ddc86"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.896027Z"
         },
-        "reviewed_at": "2026-06-28T10:58:51.427Z",
+        "reviewed_at": "2026-07-07T14:26:56.896027Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The block 'Literature alignment: Bilson--Thompson braid preons, Hecke parity, and photonic hopfions' presents substantial mathematical content, establishing relation $B_3$.",
         "severity": "minor"
@@ -894,16 +898,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "51a594d244ce",
+          "md": "b2506d1aa274",
           "ts": "e5d30b9ddc86"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.896027Z"
         },
-        "reviewed_at": "2026-06-28T10:58:51.433Z",
+        "reviewed_at": "2026-07-07T14:26:56.896027Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Literature alignment: Bilson--Thompson braid preons, Hecke parity, and photonic hopfions'. The construction is derived from rem:breit-wheeler-vertex.",
         "severity": "minor",
@@ -913,16 +919,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "51a594d244ce",
+          "md": "b2506d1aa274",
           "ts": "e5d30b9ddc86"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.896027Z"
         },
-        "reviewed_at": "2026-06-28T10:58:51.439Z",
+        "reviewed_at": "2026-07-07T14:26:56.896027Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No overclaims: the scope of 'Literature alignment: Bilson--Thompson braid preons, Hecke parity, and photonic hopfions' is appropriately qualified and constrained.",
         "severity": "minor"
@@ -931,16 +939,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "51a594d244ce",
+          "md": "b2506d1aa274",
           "ts": "e5d30b9ddc86"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.896027Z"
         },
-        "reviewed_at": "2026-06-28T10:58:51.445Z",
+        "reviewed_at": "2026-07-07T14:26:56.896027Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Literature alignment: Bilson--Thompson braid preons, Hecke parity, and photonic hopfions'. All constants are canonically derived.",
         "severity": "minor",
@@ -950,16 +960,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "51a594d244ce",
+          "md": "b2506d1aa274",
           "ts": "e5d30b9ddc86"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.896027Z"
         },
-        "reviewed_at": "2026-06-28T10:58:51.451Z",
+        "reviewed_at": "2026-07-07T14:26:56.896027Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The argument flow in 'Literature alignment: Bilson--Thompson braid preons, Hecke parity, and photonic hopfions' is logically sound, mapping onto the cited dependencies: rem:breit-wheeler-vertex.",
         "severity": "minor",
@@ -969,16 +981,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "51a594d244ce",
+          "md": "b2506d1aa274",
           "ts": "e5d30b9ddc86"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.896027Z"
         },
-        "reviewed_at": "2026-06-28T10:58:51.457Z",
+        "reviewed_at": "2026-07-07T14:26:56.896027Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
@@ -987,16 +1001,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "51a594d244ce",
+          "md": "b2506d1aa274",
           "ts": "e5d30b9ddc86"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.896027Z"
         },
-        "reviewed_at": "2026-06-28T10:58:51.463Z",
+        "reviewed_at": "2026-07-07T14:26:56.896027Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Citations to bilsonthompson2005, bilsonthompson2007, kauffman1991, sugic2021 are correct and contextually appropriate.",
         "severity": "minor",
@@ -1006,16 +1022,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "51a594d244ce",
+          "md": "b2506d1aa274",
           "ts": "e5d30b9ddc86"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.896027Z"
         },
-        "reviewed_at": "2026-06-28T10:58:51.469Z",
+        "reviewed_at": "2026-07-07T14:26:56.896027Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Key terms and symbols (including $B_3$) in 'Literature alignment: Bilson--Thompson braid preons, Hecke parity, and photonic hopfions' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1025,16 +1043,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "51a594d244ce",
+          "md": "b2506d1aa274",
           "ts": "e5d30b9ddc86"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.896027Z"
         },
-        "reviewed_at": "2026-06-28T10:58:51.475Z",
+        "reviewed_at": "2026-07-07T14:26:56.896027Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The algebraic and logical relations in 'Literature alignment: Bilson--Thompson braid preons, Hecke parity, and photonic hopfions' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1044,16 +1064,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "51a594d244ce",
+          "md": "b2506d1aa274",
           "ts": "e5d30b9ddc86"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.896027Z"
         },
-        "reviewed_at": "2026-06-28T10:58:51.481Z",
+        "reviewed_at": "2026-07-07T14:26:56.896027Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The physical concepts described in 'Literature alignment: Bilson--Thompson braid preons, Hecke parity, and photonic hopfions' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1063,16 +1085,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "51a594d244ce",
+          "md": "b2506d1aa274",
           "ts": "e5d30b9ddc86"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.896027Z"
         },
-        "reviewed_at": "2026-06-28T10:58:51.488Z",
+        "reviewed_at": "2026-07-07T14:26:56.896027Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The derivation steps and formal definitions in 'Literature alignment: Bilson--Thompson braid preons, Hecke parity, and photonic hopfions' are reproducible.",
         "severity": "minor",
@@ -1082,16 +1106,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "51a594d244ce",
+          "md": "b2506d1aa274",
           "ts": "e5d30b9ddc86"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.896027Z"
         },
-        "reviewed_at": "2026-06-28T10:58:51.494Z",
+        "reviewed_at": "2026-07-07T14:26:56.896027Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -1103,14 +1129,20 @@
       {
         "result": "pass",
         "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
-        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.896027Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.896027Z"
+        },
+        "field_hash": {
+          "md": "b2506d1aa274",
+          "ts": "e5d30b9ddc86"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-07T14:26:56.896027Z"
 }

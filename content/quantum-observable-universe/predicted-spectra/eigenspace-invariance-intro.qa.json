@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/predicted-spectra/eigenspace-invariance-intro.md"
   },
   "source_hashes": {
-    "md": "72380a03067d",
+    "md": "c409e3e6b41a",
     "ts": "1c25e62da456"
   },
   "criteria": {
@@ -802,18 +802,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "72380a03067d",
+          "md": "c409e3e6b41a",
           "ts": "1c25e62da456"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.315872Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:50.729Z",
+        "reviewed_at": "2026-07-07T14:26:56.315872Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -821,16 +821,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "72380a03067d",
+          "md": "c409e3e6b41a",
           "ts": "1c25e62da456"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.315872Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.315872Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'Eigenspace invariance and observable spectra': mathematical reasoning is consistent in prose.",
         "severity": "minor",
@@ -840,16 +842,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "72380a03067d",
+          "md": "c409e3e6b41a",
           "ts": "1c25e62da456"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.315872Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.315872Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Eigenspace invariance and observable spectra' presents substantial mathematical content: 'Because this dense hydrogen envelope evaluates its transfer matrices $T_{\\gam...'.",
         "severity": "minor"
@@ -858,16 +862,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "72380a03067d",
+          "md": "c409e3e6b41a",
           "ts": "1c25e62da456"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.315872Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.315872Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Eigenspace invariance and observable spectra'.",
         "severity": "minor",
@@ -877,16 +883,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "72380a03067d",
+          "md": "c409e3e6b41a",
           "ts": "1c25e62da456"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.315872Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.315872Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The remarks and narrative scope in 'Eigenspace invariance and observable spectra' are appropriately qualified.",
         "severity": "minor"
@@ -895,16 +903,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "72380a03067d",
+          "md": "c409e3e6b41a",
           "ts": "1c25e62da456"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.315872Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.315872Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Eigenspace invariance and observable spectra'.",
         "severity": "minor",
@@ -914,16 +924,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "72380a03067d",
+          "md": "c409e3e6b41a",
           "ts": "1c25e62da456"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.315872Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.315872Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose arguments in 'Eigenspace invariance and observable spectra' proceed logically through the stated steps.",
         "severity": "minor",
@@ -933,16 +945,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "72380a03067d",
+          "md": "c409e3e6b41a",
           "ts": "1c25e62da456"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.315872Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.315872Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No Lean sibling required; narrative matches the expected configuration.",
         "severity": "minor"
@@ -951,16 +965,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "72380a03067d",
+          "md": "c409e3e6b41a",
           "ts": "1c25e62da456"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.315872Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.315872Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Eigenspace invariance and observable spectra', hence no citation misuse is possible.",
         "severity": "minor",
@@ -970,16 +986,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "72380a03067d",
+          "md": "c409e3e6b41a",
           "ts": "1c25e62da456"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.315872Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.315872Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Eigenspace invariance and observable spectra' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -989,16 +1007,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "72380a03067d",
+          "md": "c409e3e6b41a",
           "ts": "1c25e62da456"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.315872Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.315872Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Eigenspace invariance and observable spectra' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1008,16 +1028,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "72380a03067d",
+          "md": "c409e3e6b41a",
           "ts": "1c25e62da456"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.315872Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.315872Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Eigenspace invariance and observable spectra' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1027,16 +1049,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "72380a03067d",
+          "md": "c409e3e6b41a",
           "ts": "1c25e62da456"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.315872Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.315872Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'Eigenspace invariance and observable spectra' are reproducible.",
         "severity": "minor"
@@ -1045,16 +1069,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "72380a03067d",
+          "md": "c409e3e6b41a",
           "ts": "1c25e62da456"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.315872Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.315872Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -1066,14 +1092,20 @@
       {
         "result": "pass",
         "notes": "Rewrote prose blocks to adhere to Milnor standards. Improved economy, preserved all math.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.315872Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.315872Z"
+        },
+        "field_hash": {
+          "md": "c409e3e6b41a",
+          "ts": "1c25e62da456"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.812Z"
+  "updated_at": "2026-07-07T14:26:56.315872Z"
 }

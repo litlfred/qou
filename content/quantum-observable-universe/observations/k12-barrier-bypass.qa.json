@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/observations/k12-barrier-bypass.md"
   },
   "source_hashes": {
-    "md": "076a3bbb06e0",
+    "md": "fc9cddb1f487",
     "ts": "486e12056df0"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Rewrote observations_seq11.md. Pruned verbiage from k12-barrier bypass, ensuring exact technical statements remain while stripping meta-commentary.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.678808Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.678808Z"
+        },
+        "field_hash": {
+          "md": "fc9cddb1f487",
+          "ts": "486e12056df0"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.226Z"
+  "updated_at": "2026-07-07T14:26:56.678808Z"
 }

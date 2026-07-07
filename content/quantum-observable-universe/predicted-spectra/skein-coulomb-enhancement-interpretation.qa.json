@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/predicted-spectra/skein-coulomb-enhancement-interpretation.md"
   },
   "source_hashes": {
-    "md": "75c2c4538d02",
+    "md": "ce9ebd57f4e5",
     "ts": "8be2ec6757f2"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Rewrote prose blocks to adhere to Milnor standards. Improved economy, preserved all math.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.386349Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.386349Z"
+        },
+        "field_hash": {
+          "md": "ce9ebd57f4e5",
+          "ts": "8be2ec6757f2"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.812Z"
+  "updated_at": "2026-07-07T14:26:56.386349Z"
 }

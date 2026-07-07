@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.lean"
   },
   "source_hashes": {
-    "md": "eb47fbc03ef4",
+    "md": "d7e8b03db95b",
     "ts": "07a6e0fcb430",
     "lean": "843dae199cb2"
   },
@@ -897,7 +897,7 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "eb47fbc03ef4",
+          "md": "d7e8b03db95b",
           "ts": "07a6e0fcb430",
           "lean": "843dae199cb2"
         },
@@ -905,11 +905,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.274812Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:45.573Z",
+        "reviewed_at": "2026-07-07T14:26:56.274812Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -957,20 +957,20 @@
       },
       {
         "field_hash": {
-          "md": "eb47fbc03ef4",
+          "md": "d7e8b03db95b",
           "ts": "07a6e0fcb430",
           "lean": "843dae199cb2"
         },
         "result": "pass",
         "notes": "Conjecture: q-deformed Aubin-Lions compactness \u2014 {v_q} has subsequence converging to weak NS solution as q->1, energy ineq, singular set dim<=1; well-posed.",
-        "reviewed_at": "2026-06-25T16:54:47.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.274812Z",
         "reviewed_sha": "e74f0100cf2a4562666e3cb065fe57c06244520f",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.274812Z"
         },
         "score": {
           "max": 1,
@@ -981,16 +981,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "eb47fbc03ef4",
+          "md": "d7e8b03db95b",
           "ts": "07a6e0fcb430",
           "lean": "843dae199cb2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.274812Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.274812Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No false claims identified in 'q-deformed Aubin--Lions lemma: compactness of the solution family as $q \\\\to 1$': mathematical reasoning is consistent.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts:1",
@@ -1000,16 +1002,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "eb47fbc03ef4",
+          "md": "d7e8b03db95b",
           "ts": "07a6e0fcb430",
           "lean": "843dae199cb2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.274812Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.274812Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The claims in 'q-deformed Aubin--Lions lemma: compactness of the solution family as $q \\\\to 1$' are non-vacuous as they make concrete conjectures about '> **Summary.** A $q$-deformed Aubin\u2013Lions compactness lemma:...'.",
         "severity": "minor"
@@ -1018,16 +1022,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "eb47fbc03ef4",
+          "md": "d7e8b03db95b",
           "ts": "07a6e0fcb430",
           "lean": "843dae199cb2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.274812Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.274812Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No circular reasoning or self-assuming definitions detected in 'q-deformed Aubin--Lions lemma: compactness of the solution family as $q \\\\to 1$'.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts:1",
@@ -1037,16 +1043,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "eb47fbc03ef4",
+          "md": "d7e8b03db95b",
           "ts": "07a6e0fcb430",
           "lean": "843dae199cb2"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.274812Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.274812Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The prose in 'q-deformed Aubin--Lions lemma: compactness of the solution family as $q \\\\to 1$' presents the result as established, but the Lean formalization is incomplete (has sorry).",
         "severity": "minor"
@@ -1055,16 +1063,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "eb47fbc03ef4",
+          "md": "d7e8b03db95b",
           "ts": "07a6e0fcb430",
           "lean": "843dae199cb2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.274812Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.274812Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'q-deformed Aubin--Lions lemma: compactness of the solution family as $q \\\\to 1$'.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts:1",
@@ -1074,16 +1084,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "eb47fbc03ef4",
+          "md": "d7e8b03db95b",
           "ts": "07a6e0fcb430",
           "lean": "843dae199cb2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.274812Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.274812Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The argument flow in 'q-deformed Aubin--Lions lemma: compactness of the solution family as $q \\\\to 1$' is logically sound, mapping onto the cited dependencies.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts:1",
@@ -1093,16 +1105,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "eb47fbc03ef4",
+          "md": "d7e8b03db95b",
           "ts": "07a6e0fcb430",
           "lean": "843dae199cb2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.274812Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.274812Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The Lean sibling content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.lean uses a class-conjecture pattern, matching the conjectural nature of 'q-deformed Aubin--Lions lemma: compactness of the solution family as $q \\\\to 1$'.",
         "severity": "minor"
@@ -1111,16 +1125,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "eb47fbc03ef4",
+          "md": "d7e8b03db95b",
           "ts": "07a6e0fcb430",
           "lean": "843dae199cb2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.274812Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.274812Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No citations are present in 'q-deformed Aubin--Lions lemma: compactness of the solution family as $q \\\\to 1$', hence no citation misuse is possible.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts:1",
@@ -1130,16 +1146,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "eb47fbc03ef4",
+          "md": "d7e8b03db95b",
           "ts": "07a6e0fcb430",
           "lean": "843dae199cb2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.274812Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.274812Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Key terms and symbols in 'q-deformed Aubin--Lions lemma: compactness of the solution family as $q \\\\to 1$' are mathematically defined and unambiguous.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts:1",
@@ -1149,16 +1167,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "eb47fbc03ef4",
+          "md": "d7e8b03db95b",
           "ts": "07a6e0fcb430",
           "lean": "843dae199cb2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.274812Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.274812Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The algebraic and logical relations in 'q-deformed Aubin--Lions lemma: compactness of the solution family as $q \\\\to 1$' are independent of empirical tuning parameters.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts:1",
@@ -1168,16 +1188,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "eb47fbc03ef4",
+          "md": "d7e8b03db95b",
           "ts": "07a6e0fcb430",
           "lean": "843dae199cb2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.274812Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.274812Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The physical concepts described in 'q-deformed Aubin--Lions lemma: compactness of the solution family as $q \\\\to 1$' are consistent with quantum observable mechanics.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts:1",
@@ -1187,16 +1209,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "eb47fbc03ef4",
+          "md": "d7e8b03db95b",
           "ts": "07a6e0fcb430",
           "lean": "843dae199cb2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.274812Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.274812Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The derivation steps and formal definitions in 'q-deformed Aubin--Lions lemma: compactness of the solution family as $q \\\\to 1$' are reproducible.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts:1",
@@ -1206,16 +1230,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "eb47fbc03ef4",
+          "md": "d7e8b03db95b",
           "ts": "07a6e0fcb430",
           "lean": "843dae199cb2"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.274812Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.274812Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders.",
         "verdict": "survivable-objection",
@@ -1227,14 +1253,21 @@
       {
         "result": "pass",
         "notes": "Smoothed transitions, applied concrete-before-abstract, removed forward references.",
-        "reviewed_at": "2026-07-07T02:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.274812Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.274812Z"
+        },
+        "field_hash": {
+          "md": "d7e8b03db95b",
+          "ts": "07a6e0fcb430",
+          "lean": "843dae199cb2"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-07T14:26:56.274812Z"
 }

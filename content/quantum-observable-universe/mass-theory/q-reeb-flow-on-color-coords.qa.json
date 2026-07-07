@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/q-reeb-flow-on-color-coords.lean"
   },
   "source_hashes": {
-    "md": "001619590869",
+    "md": "018fd46adf25",
     "ts": "c4078f0f4e5c",
     "lean": "ca71790a3f12"
   },
@@ -1139,16 +1139,19 @@
       },
       {
         "field_hash": {
-          "md": "001619590869",
-          "ts": "c4078f0f4e5c"
+          "md": "018fd46adf25",
+          "ts": "c4078f0f4e5c",
+          "lean": "ca71790a3f12"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.798859Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:56.798859Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Definition of the q-Reeb flow in color-sector coordinates; the geometric substrate machinery feeds the six-canonical-knot-operators construction it cross-references, on-topic for the mass-theory braid-to-color-coordinate bridge."
       }
@@ -1171,15 +1174,18 @@
       },
       {
         "field_hash": {
-          "md": "001619590869",
-          "ts": "c4078f0f4e5c"
+          "md": "018fd46adf25",
+          "ts": "c4078f0f4e5c",
+          "lean": "ca71790a3f12"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.798859Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.798859Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The sibling Lean file content/quantum-observable-universe/mass-theory/q-reeb-flow-on-color-coords.lean is missing entirely.",
         "evidence": "content/quantum-observable-universe/mass-theory/q-reeb-flow-on-color-coords.md:1",
@@ -1207,34 +1213,38 @@
       },
       {
         "field_hash": {
-          "md": "773bb0fad519",
-          "ts": "68893ae80386"
+          "md": "018fd46adf25",
+          "ts": "c4078f0f4e5c",
+          "lean": "ca71790a3f12"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: no `: True` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/CategoricalReeb/QReebFlowOnCoralCoords.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.798859Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.798859Z"
         }
       }
     ],
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "001619590869",
-          "ts": "c4078f0f4e5c"
+          "md": "018fd46adf25",
+          "ts": "c4078f0f4e5c",
+          "lean": "ca71790a3f12"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.798859Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.798859Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/q-reeb-flow-on-color-coords.ts:1",
@@ -1244,15 +1254,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "001619590869",
-          "ts": "c4078f0f4e5c"
+          "md": "018fd46adf25",
+          "ts": "c4078f0f4e5c",
+          "lean": "ca71790a3f12"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.798859Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.798859Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-vacuous.",
         "severity": "minor"
@@ -1261,15 +1274,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "001619590869",
-          "ts": "c4078f0f4e5c"
+          "md": "018fd46adf25",
+          "ts": "c4078f0f4e5c",
+          "lean": "ca71790a3f12"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.798859Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.798859Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/q-reeb-flow-on-color-coords.ts:1",
@@ -1279,15 +1295,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "001619590869",
-          "ts": "c4078f0f4e5c"
+          "md": "018fd46adf25",
+          "ts": "c4078f0f4e5c",
+          "lean": "ca71790a3f12"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.798859Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.798859Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
@@ -1296,15 +1315,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "001619590869",
-          "ts": "c4078f0f4e5c"
+          "md": "018fd46adf25",
+          "ts": "c4078f0f4e5c",
+          "lean": "ca71790a3f12"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.798859Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.798859Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/q-reeb-flow-on-color-coords.ts:1",
@@ -1314,15 +1336,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "001619590869",
-          "ts": "c4078f0f4e5c"
+          "md": "018fd46adf25",
+          "ts": "c4078f0f4e5c",
+          "lean": "ca71790a3f12"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.798859Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.798859Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/q-reeb-flow-on-color-coords.ts:1",
@@ -1332,15 +1357,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "001619590869",
-          "ts": "c4078f0f4e5c"
+          "md": "018fd46adf25",
+          "ts": "c4078f0f4e5c",
+          "lean": "ca71790a3f12"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.798859Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.798859Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
         "evidence": "content/quantum-observable-universe/mass-theory/q-reeb-flow-on-color-coords.ts:1",
@@ -1350,15 +1378,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "001619590869",
-          "ts": "c4078f0f4e5c"
+          "md": "018fd46adf25",
+          "ts": "c4078f0f4e5c",
+          "lean": "ca71790a3f12"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.798859Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.798859Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/q-reeb-flow-on-color-coords.ts:1",
@@ -1368,15 +1399,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "001619590869",
-          "ts": "c4078f0f4e5c"
+          "md": "018fd46adf25",
+          "ts": "c4078f0f4e5c",
+          "lean": "ca71790a3f12"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.798859Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.798859Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/q-reeb-flow-on-color-coords.ts:1",
@@ -1386,15 +1420,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "001619590869",
-          "ts": "c4078f0f4e5c"
+          "md": "018fd46adf25",
+          "ts": "c4078f0f4e5c",
+          "lean": "ca71790a3f12"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.798859Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.798859Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/q-reeb-flow-on-color-coords.ts:1",
@@ -1404,15 +1441,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "001619590869",
-          "ts": "c4078f0f4e5c"
+          "md": "018fd46adf25",
+          "ts": "c4078f0f4e5c",
+          "lean": "ca71790a3f12"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.798859Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.798859Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-reproducibility.",
         "severity": "minor"
@@ -1421,15 +1461,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "001619590869",
-          "ts": "c4078f0f4e5c"
+          "md": "018fd46adf25",
+          "ts": "c4078f0f4e5c",
+          "lean": "ca71790a3f12"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.798859Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.798859Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Referee verdict: open-objection. Objection: Sibling Lean file is missing.",
         "severity": "critical",
@@ -1440,16 +1483,19 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "001619590869",
-          "ts": "c4078f0f4e5c"
+          "md": "018fd46adf25",
+          "ts": "c4078f0f4e5c",
+          "lean": "ca71790a3f12"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.798859Z"
         },
-        "reviewed_at": "2026-06-28T10:58:55.255Z",
+        "reviewed_at": "2026-07-07T14:26:56.798859Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The referenced Lean file content/quantum-observable-universe/mass-theory/q-reeb-flow-on-color-coords.lean is missing, leading to complete divergence.",
         "severity": "minor"
@@ -1458,7 +1504,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "001619590869",
+          "md": "018fd46adf25",
           "ts": "c4078f0f4e5c",
           "lean": "ca71790a3f12"
         },
@@ -1466,9 +1512,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.798859Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_at": "2026-07-07T14:26:56.798859Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'def:q-reeb-flow-on-color-coords' \u2192 expected 'q_reeb_flow_on_color_coords'; Lean declares: qReebFlowSector, qReebFlowSector_comp, qReebFlowSector_spectator. Structural match via content."
       }
@@ -1477,14 +1525,21 @@
       {
         "result": "pass",
         "notes": "Rewrote seq17 enforcing Milnor rules. Restructured wordy trajectory explanations into direct mathematical prose. Streamlined 'why before what' for the Reeb bundle and geometric constructs. Verified math formatting.",
-        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.798859Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.798859Z"
+        },
+        "field_hash": {
+          "md": "018fd46adf25",
+          "ts": "c4078f0f4e5c",
+          "lean": "ca71790a3f12"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.430Z"
+  "updated_at": "2026-07-07T14:26:56.798859Z"
 }

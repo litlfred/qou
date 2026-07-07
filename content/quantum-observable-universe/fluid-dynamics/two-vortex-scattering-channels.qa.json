@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/fluid-dynamics/two-vortex-scattering-channels.md"
   },
   "source_hashes": {
-    "md": "125a4b11496a",
+    "md": "fee048bed00e",
     "ts": "eeead421b4f1"
   },
   "criteria": {
@@ -821,14 +821,20 @@
       {
         "result": "pass",
         "notes": "Rewrote fluid-dynamics_seq0.md. Replaced passives with strong action verbs. Used present tense consistently. Emphasized linearity and succinctness.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.255768Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.255768Z"
+        },
+        "field_hash": {
+          "md": "fee048bed00e",
+          "ts": "eeead421b4f1"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T04:39:43.766Z"
+  "updated_at": "2026-07-07T14:26:56.255768Z"
 }

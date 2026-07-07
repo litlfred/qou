@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/torus-knot-delta-q-writhe.lean"
   },
   "source_hashes": {
-    "md": "dfc4374c7fb6",
+    "md": "5c65841d65c5",
     "ts": "6b6d1d8c2174",
     "lean": "e34b31e4db31"
   },
@@ -36,7 +36,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "dfc4374c7fb6",
+          "md": "5c65841d65c5",
           "ts": "6b6d1d8c2174",
           "lean": "e34b31e4db31"
         },
@@ -44,9 +44,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.866635Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_at": "2026-07-07T14:26:56.866635Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:torus-knot-delta-q-writhe' \u2192 expected 'torus_knot_delta_q_writhe'; Lean declares: deltaQ, qbracket, torusWrithe, torus_deltaQ_eq_h_qbracket. Structural match via content."
       }
@@ -55,14 +57,21 @@
       {
         "result": "pass",
         "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
-        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.866635Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.866635Z"
+        },
+        "field_hash": {
+          "md": "5c65841d65c5",
+          "ts": "6b6d1d8c2174",
+          "lean": "e34b31e4db31"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.430Z"
+  "updated_at": "2026-07-07T14:26:56.866635Z"
 }

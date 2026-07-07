@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean"
   },
   "source_hashes": {
-    "md": "7cbe950a3b3f",
+    "md": "71e2bbe5f0b5",
     "ts": "ca5be552846c",
     "lean": "64e8ce4ab085"
   },
@@ -1087,17 +1087,19 @@
       },
       {
         "field_hash": {
-          "md": "7cbe950a3b3f",
+          "md": "71e2bbe5f0b5",
           "ts": "ca5be552846c",
-          "lean": "1b96b846264b"
+          "lean": "64e8ce4ab085"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.327862Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:56.327862Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
@@ -1122,17 +1124,19 @@
       },
       {
         "field_hash": {
-          "md": "7cbe950a3b3f",
+          "md": "71e2bbe5f0b5",
           "ts": "ca5be552846c",
-          "lean": "1b96b846264b"
+          "lean": "64e8ce4ab085"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.327862Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:56.327862Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
@@ -1157,17 +1161,19 @@
       },
       {
         "field_hash": {
-          "md": "7cbe950a3b3f",
+          "md": "71e2bbe5f0b5",
           "ts": "ca5be552846c",
-          "lean": "1b96b846264b"
+          "lean": "64e8ce4ab085"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.327862Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:56.327862Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
@@ -1192,17 +1198,19 @@
       },
       {
         "field_hash": {
-          "md": "7cbe950a3b3f",
+          "md": "71e2bbe5f0b5",
           "ts": "ca5be552846c",
-          "lean": "1b96b846264b"
+          "lean": "64e8ce4ab085"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.327862Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:56.327862Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
@@ -1243,7 +1251,7 @@
       },
       {
         "field_hash": {
-          "md": "7cbe950a3b3f",
+          "md": "71e2bbe5f0b5",
           "ts": "ca5be552846c",
           "lean": "64e8ce4ab085"
         },
@@ -1251,9 +1259,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.327862Z"
         },
-        "reviewed_at": "2026-07-06T04:41:30.359Z",
+        "reviewed_at": "2026-07-07T14:26:56.327862Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:alpha-em-categorical-trace-ratio' aligns with Lean declaration. Sorry-free."
       }
@@ -1283,17 +1293,19 @@
       },
       {
         "field_hash": {
-          "md": "7cbe950a3b3f",
+          "md": "71e2bbe5f0b5",
           "ts": "ca5be552846c",
-          "lean": "1b96b846264b"
+          "lean": "64e8ce4ab085"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.327862Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:56.327862Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "score 0.9 \u2014 derivation states the plan up front (\u03b4_q(T_{2,k})=h\u00b7[k]_q, then substitute)."
       }
@@ -1323,17 +1335,19 @@
       },
       {
         "field_hash": {
-          "md": "7cbe950a3b3f",
+          "md": "71e2bbe5f0b5",
           "ts": "ca5be552846c",
-          "lean": "1b96b846264b"
+          "lean": "64e8ce4ab085"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.327862Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:56.327862Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "score 1.0 \u2014 sorry-free Lean proof (field_simp; ring)."
       }
@@ -1363,17 +1377,19 @@
       },
       {
         "field_hash": {
-          "md": "7cbe950a3b3f",
+          "md": "71e2bbe5f0b5",
           "ts": "ca5be552846c",
-          "lean": "1b96b846264b"
+          "lean": "64e8ce4ab085"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.327862Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:56.327862Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "score 0.6 \u2014 standard q-integer manipulation refactoring \u03b1_EM into a trace ratio; useful but not a novel argument."
       }
@@ -1399,17 +1415,19 @@
       },
       {
         "field_hash": {
-          "md": "7cbe950a3b3f",
+          "md": "71e2bbe5f0b5",
           "ts": "ca5be552846c",
-          "lean": "1b96b846264b"
+          "lean": "64e8ce4ab085"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.327862Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:56.327862Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Signature stable; real field_simp;ring proof, no sorryAx / injected axiom."
       }
@@ -1435,17 +1453,19 @@
       },
       {
         "field_hash": {
-          "md": "7cbe950a3b3f",
+          "md": "71e2bbe5f0b5",
           "ts": "ca5be552846c",
-          "lean": "1b96b846264b"
+          "lean": "64e8ce4ab085"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.327862Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:56.327862Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
@@ -1470,17 +1490,19 @@
       },
       {
         "field_hash": {
-          "md": "7cbe950a3b3f",
+          "md": "71e2bbe5f0b5",
           "ts": "ca5be552846c",
-          "lean": "1b96b846264b"
+          "lean": "64e8ce4ab085"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.327862Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:56.327862Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Conclusion is a genuine ring equality, not a tautology; ring discharges real content."
       }
@@ -1506,17 +1528,19 @@
       },
       {
         "field_hash": {
-          "md": "7cbe950a3b3f",
+          "md": "71e2bbe5f0b5",
           "ts": "ca5be552846c",
-          "lean": "1b96b846264b"
+          "lean": "64e8ce4ab085"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.327862Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:56.327862Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
@@ -1541,17 +1565,19 @@
       },
       {
         "field_hash": {
-          "md": "7cbe950a3b3f",
+          "md": "71e2bbe5f0b5",
           "ts": "ca5be552846c",
-          "lean": "1b96b846264b"
+          "lean": "64e8ce4ab085"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.327862Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:56.327862Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "All four \u22600 hypotheses consumed by field_simp to clear denominators."
       }
@@ -1577,34 +1603,38 @@
       },
       {
         "field_hash": {
-          "md": "7cbe950a3b3f",
+          "md": "71e2bbe5f0b5",
           "ts": "ca5be552846c",
-          "lean": "1b96b846264b"
+          "lean": "64e8ce4ab085"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.327862Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:56.327862Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "7cbe950a3b3f",
+          "md": "71e2bbe5f0b5",
           "ts": "ca5be552846c",
-          "lean": "1b96b846264b"
+          "lean": "64e8ce4ab085"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.327862Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.327862Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The mathematical claims in 'Algebraic identity: $\\\\alpha_{EM} = h^2 / [q \\\\cdot \\\\delta_q(T_{2,9}) \\\\cdot \\\\delta_q(T_{3,5})]$' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean:10:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/GroupPower/Basic.olean' of module Mathlib.Algebra.GroupPower.Basic does not exist.",
         "severity": "minor",
@@ -1614,17 +1644,19 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "7cbe950a3b3f",
+          "md": "71e2bbe5f0b5",
           "ts": "ca5be552846c",
-          "lean": "1b96b846264b"
+          "lean": "64e8ce4ab085"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.327862Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.327862Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No vacuous proofs detected. Sibling Lean file does not contain sorry, though it fails compilation on modules.",
         "severity": "minor",
@@ -1634,17 +1666,19 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "7cbe950a3b3f",
+          "md": "71e2bbe5f0b5",
           "ts": "ca5be552846c",
-          "lean": "1b96b846264b"
+          "lean": "64e8ce4ab085"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.327862Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.327862Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Algebraic identity: $\\\\alpha_{EM} = h^2 / [q \\\\cdot \\\\delta_q(T_{2,9}) \\\\cdot \\\\delta_q(T_{3,5})]$'.",
         "severity": "minor",
@@ -1654,17 +1688,19 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "7cbe950a3b3f",
+          "md": "71e2bbe5f0b5",
           "ts": "ca5be552846c",
-          "lean": "1b96b846264b"
+          "lean": "64e8ce4ab085"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.327862Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.327862Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose presents 'Algebraic identity: $\\\\alpha_{EM} = h^2 / [q \\\\cdot \\\\delta_q(T_{2,9}) \\\\cdot \\\\delta_q(T_{3,5})]$' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
@@ -1673,17 +1709,19 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "7cbe950a3b3f",
+          "md": "71e2bbe5f0b5",
           "ts": "ca5be552846c",
-          "lean": "1b96b846264b"
+          "lean": "64e8ce4ab085"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.327862Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.327862Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Algebraic identity: $\\\\alpha_{EM} = h^2 / [q \\\\cdot \\\\delta_q(T_{2,9}) \\\\cdot \\\\delta_q(T_{3,5})]$'.",
         "severity": "minor",
@@ -1693,17 +1731,19 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "7cbe950a3b3f",
+          "md": "71e2bbe5f0b5",
           "ts": "ca5be552846c",
-          "lean": "1b96b846264b"
+          "lean": "64e8ce4ab085"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.327862Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.327862Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean.",
         "severity": "minor",
@@ -1713,17 +1753,19 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "7cbe950a3b3f",
+          "md": "71e2bbe5f0b5",
           "ts": "ca5be552846c",
-          "lean": "1b96b846264b"
+          "lean": "64e8ce4ab085"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.327862Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.327862Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
@@ -1732,17 +1774,19 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "7cbe950a3b3f",
+          "md": "71e2bbe5f0b5",
           "ts": "ca5be552846c",
-          "lean": "1b96b846264b"
+          "lean": "64e8ce4ab085"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.327862Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.327862Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Algebraic identity: $\\\\alpha_{EM} = h^2 / [q \\\\cdot \\\\delta_q(T_{2,9}) \\\\cdot \\\\delta_q(T_{3,5})]$', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1752,17 +1796,19 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "7cbe950a3b3f",
+          "md": "71e2bbe5f0b5",
           "ts": "ca5be552846c",
-          "lean": "1b96b846264b"
+          "lean": "64e8ce4ab085"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.327862Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.327862Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Algebraic identity: $\\\\alpha_{EM} = h^2 / [q \\\\cdot \\\\delta_q(T_{2,9}) \\\\cdot \\\\delta_q(T_{3,5})]$' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1772,17 +1818,19 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "7cbe950a3b3f",
+          "md": "71e2bbe5f0b5",
           "ts": "ca5be552846c",
-          "lean": "1b96b846264b"
+          "lean": "64e8ce4ab085"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.327862Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.327862Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The empirical claims in 'Algebraic identity: $\\\\alpha_{EM} = h^2 / [q \\\\cdot \\\\delta_q(T_{2,9}) \\\\cdot \\\\delta_q(T_{3,5})]$' are structurally anchored to the QOU mass framework and are stable.",
         "severity": "minor",
@@ -1792,17 +1840,19 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "7cbe950a3b3f",
+          "md": "71e2bbe5f0b5",
           "ts": "ca5be552846c",
-          "lean": "1b96b846264b"
+          "lean": "64e8ce4ab085"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.327862Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.327862Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Algebraic identity: $\\\\alpha_{EM} = h^2 / [q \\\\cdot \\\\delta_q(T_{2,9}) \\\\cdot \\\\delta_q(T_{3,5})]$' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1812,17 +1862,19 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "7cbe950a3b3f",
+          "md": "71e2bbe5f0b5",
           "ts": "ca5be552846c",
-          "lean": "1b96b846264b"
+          "lean": "64e8ce4ab085"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.327862Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.327862Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
@@ -1832,17 +1884,19 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "7cbe950a3b3f",
+          "md": "71e2bbe5f0b5",
           "ts": "ca5be552846c",
-          "lean": "1b96b846264b"
+          "lean": "64e8ce4ab085"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.327862Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.327862Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean fails compilation: content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean:10:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/GroupPower/Basic.olean' of module Mathlib.Algebra.GroupPower.Basic does not exist",
         "severity": "critical",
@@ -1854,14 +1908,21 @@
       {
         "result": "pass",
         "notes": "Rewrote prose blocks to adhere to Milnor standards. Improved economy, preserved all math.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.327862Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.327862Z"
+        },
+        "field_hash": {
+          "md": "71e2bbe5f0b5",
+          "ts": "ca5be552846c",
+          "lean": "64e8ce4ab085"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:30.359Z"
+  "updated_at": "2026-07-07T14:26:56.327862Z"
 }

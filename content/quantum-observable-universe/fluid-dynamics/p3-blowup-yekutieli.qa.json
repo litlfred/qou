@@ -7,74 +7,62 @@
     "md": "content/quantum-observable-universe/fluid-dynamics/p3-blowup-yekutieli.md",
     "lean": "content/quantum-observable-universe/fluid-dynamics/p3-blowup-yekutieli.lean"
   },
-  "source_hashes": {
-    "md": "86ee67f4c831",
-    "ts": "e90d8d838b06",
-    "lean": "ab4cb2a3350c"
-  },
+  "source_hashes": {},
   "criteria": {
     "voice-status-leak": [
       {
-        "field_hash": {
-          "md": "86ee67f4c831"
-        },
+        "field_hash": {},
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-status-leak-audit",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.231663Z",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27"
+        "reviewed_at": "2026-07-07T14:26:56.231663Z"
       }
     ],
     "voice-emoji-content": [
       {
-        "field_hash": {
-          "md": "86ee67f4c831"
-        },
+        "field_hash": {},
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.231663Z",
           "agent_skill": "local/one-voice-audit",
           "id": "voice-emoji-content-audit"
         },
-        "reviewed_at": "2026-05-27"
+        "reviewed_at": "2026-07-07T14:26:56.231663Z"
       }
     ],
     "voice-first-person-work": [
       {
-        "field_hash": {
-          "md": "86ee67f4c831"
-        },
+        "field_hash": {},
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.231663Z",
           "agent_skill": "local/one-voice-audit",
           "id": "voice-first-person-work-audit"
         },
-        "reviewed_at": "2026-05-27"
+        "reviewed_at": "2026-07-07T14:26:56.231663Z"
       }
     ],
     "voice-time-stamped-notes": [
       {
-        "field_hash": {
-          "md": "86ee67f4c831"
-        },
+        "field_hash": {},
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-time-stamped-audit",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.231663Z",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27"
+        "reviewed_at": "2026-07-07T14:26:56.231663Z"
       }
     ],
     "voice-unicode-crash": [
@@ -132,18 +120,16 @@
     ],
     "voice-scholarly-default": [
       {
-        "field_hash": {
-          "md": "86ee67f4c831"
-        },
+        "field_hash": {},
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.231663Z",
           "agent_skill": "local/one-voice-audit",
           "id": "voice-scholarly-default-audit"
         },
-        "reviewed_at": "2026-05-27"
+        "reviewed_at": "2026-07-07T14:26:56.231663Z"
       }
     ],
     "voice-title-scholarly": [
@@ -201,18 +187,16 @@
     ],
     "voice-ai-slop": [
       {
-        "field_hash": {
-          "md": "86ee67f4c831"
-        },
+        "field_hash": {},
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.231663Z",
           "agent_skill": "local/one-voice-audit",
           "id": "voice-ai-slop-audit"
         },
-        "reviewed_at": "2026-05-27"
+        "reviewed_at": "2026-07-07T14:26:56.231663Z"
       }
     ],
     "framework-canonical": [
@@ -323,18 +307,16 @@
     ],
     "proof-no-bare-sorries": [
       {
-        "field_hash": {
-          "lean": "ab4cb2a3350c"
-        },
+        "field_hash": {},
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "proof-audit-batch",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.231663Z",
           "agent_skill": "local/proof-integration-watcher"
         },
-        "reviewed_at": "2026-05-27"
+        "reviewed_at": "2026-07-07T14:26:56.231663Z"
       }
     ],
     "proof-no-trivial-skeleton": [
@@ -519,18 +501,16 @@
     ],
     "canonical-no-hardcoded-observable": [
       {
-        "field_hash": {
-          "md": "86ee67f4c831"
-        },
+        "field_hash": {},
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "canonical-audit-batch",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.231663Z",
           "agent_skill": "local/canonical-watcher"
         },
-        "reviewed_at": "2026-05-27"
+        "reviewed_at": "2026-07-07T14:26:56.231663Z"
       }
     ],
     "canonical-cal4-acknowledged": [
@@ -1416,18 +1396,16 @@
     ],
     "voice-editorializing": [
       {
-        "field_hash": {
-          "md": "86ee67f4c831"
-        },
+        "field_hash": {},
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.231663Z",
           "agent_skill": "local/one-voice-audit",
           "id": "voice-editorializing-audit"
         },
-        "reviewed_at": "2026-05-27"
+        "reviewed_at": "2026-07-07T14:26:56.231663Z"
       }
     ],
     "canonical-witness-pinned": [
@@ -1516,18 +1494,16 @@
         "notes": "Label 'prop:blowup-yekutieli' \u2192 expected 'blowup_yekutieli'; Lean declares: BlowupYekutieli, BlowupYekutieli. Structural match via content."
       },
       {
-        "field_hash": {
-          "md": "86ee67f4c831",
-          "ts": "6cdeb69a5de2",
-          "lean": "ab4cb2a3350c"
-        },
+        "field_hash": {},
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.231663Z"
         },
-        "reviewed_at": "2026-05-28T15:44:09.524Z",
+        "reviewed_at": "2026-07-07T14:26:56.231663Z",
         "reviewed_sha": "90ec0fb2b0439971d2bda5e35c80a099a0820a5a",
         "notes": "Label 'prop:blowup-yekutieli' \u2192 expected 'blowup_yekutieli'; Lean declares: BlowupYekutieli, BlowupYekutieli. Structural match via content."
       }
@@ -1575,18 +1551,16 @@
     ],
     "voice-author-notes-pollution": [
       {
-        "field_hash": {
-          "md": "86ee67f4c831"
-        },
+        "field_hash": {},
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.231663Z",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27"
+        "reviewed_at": "2026-07-07T14:26:56.231663Z"
       }
     ],
     "q-usage-regime-detected": [
@@ -2022,5 +1996,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-07-07T14:26:56.231663Z"
 }

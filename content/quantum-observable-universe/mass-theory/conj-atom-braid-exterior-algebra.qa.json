@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/conj-atom-braid-exterior-algebra.lean"
   },
   "source_hashes": {
-    "md": "a73d58128485",
+    "md": "1a916cdf73fc",
     "ts": "fbcd041a9499",
     "lean": "4a57f12b7be9"
   },
@@ -36,7 +36,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "a73d58128485",
+          "md": "1a916cdf73fc",
           "ts": "fbcd041a9499",
           "lean": "4a57f12b7be9"
         },
@@ -44,9 +44,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.735547Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_at": "2026-07-07T14:26:56.735547Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'conj:atom-braid-exterior-algebra' \u2192 expected 'atom_braid_exterior_algebra'; Lean declares: AtomBraidExteriorAlgebraStructure, deuteron_total_dim_eq_32, tritium_total_dim_eq_256, helium3_total_dim_eq_128, helium4_total_dim_eq_1024.... Structural match via content."
       }
@@ -55,14 +57,21 @@
       {
         "result": "pass",
         "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
-        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.735547Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.735547Z"
+        },
+        "field_hash": {
+          "md": "1a916cdf73fc",
+          "ts": "fbcd041a9499",
+          "lean": "4a57f12b7be9"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.430Z"
+  "updated_at": "2026-07-07T14:26:56.735547Z"
 }

@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.lean"
   },
   "source_hashes": {
-    "md": "4a3415a2b718",
+    "md": "213cca561c1c",
     "ts": "0ef709563107",
     "lean": "cfa3901fc8d1"
   },
@@ -948,39 +948,39 @@
     "proof-no-decide-masking": [
       {
         "field_hash": {
-          "md": "4a3415a2b718",
+          "md": "213cca561c1c",
           "ts": "0ef709563107",
-          "lean": "492b59a00e50"
+          "lean": "cfa3901fc8d1"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: only plain `decide` (kernel-checked decision procedure on a decidable finite/arithmetic goal), no `native_decide`. Accepted corpus-wide (\u00a71a scopes the masking prohibition to `native_decide`; 19 PASS blocks use plain `decide`). 2026-06-22 fail reclassified.",
-        "reviewed_at": "2026-06-25T12:27:24.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.974451Z",
         "reviewed_sha": "1debdf1526f15021143bdde1776810ae6c406976",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.974451Z"
         }
       }
     ],
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "4a3415a2b718",
+          "md": "213cca561c1c",
           "ts": "0ef709563107",
-          "lean": "492b59a00e50"
+          "lean": "cfa3901fc8d1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.974451Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:05.758Z",
+        "reviewed_at": "2026-07-07T14:26:56.974451Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1028,20 +1028,20 @@
       },
       {
         "field_hash": {
-          "md": "4a3415a2b718",
+          "md": "213cca561c1c",
           "ts": "0ef709563107",
-          "lean": "492b59a00e50"
+          "lean": "cfa3901fc8d1"
         },
         "result": "pass",
         "notes": "Conjecture: mass=knot invariant (R-I/II/III via hyperbolic volume); binding=embedding invariant (R-II/III not R-I); shell transitions=R-I. Well-posed, physically motivated. (.md uses purged 'lambda_scale' - currency nit, not goal flaw.)",
-        "reviewed_at": "2026-06-25T17:09:58.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.974451Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.974451Z"
         },
         "score": {
           "max": 1,
@@ -1053,16 +1053,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "4a3415a2b718",
+          "md": "213cca561c1c",
           "ts": "0ef709563107",
-          "lean": "492b59a00e50"
+          "lean": "cfa3901fc8d1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.974451Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.974451Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.ts:1",
@@ -1072,16 +1074,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "4a3415a2b718",
+          "md": "213cca561c1c",
           "ts": "0ef709563107",
-          "lean": "492b59a00e50"
+          "lean": "cfa3901fc8d1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.974451Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.974451Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The claims are non-vacuous as they make concrete numerical or algebraic conjectures.",
         "severity": "minor"
@@ -1090,16 +1094,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "4a3415a2b718",
+          "md": "213cca561c1c",
           "ts": "0ef709563107",
-          "lean": "492b59a00e50"
+          "lean": "cfa3901fc8d1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.974451Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.974451Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.ts:1",
@@ -1109,16 +1115,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "4a3415a2b718",
+          "md": "213cca561c1c",
           "ts": "0ef709563107",
-          "lean": "492b59a00e50"
+          "lean": "cfa3901fc8d1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.974451Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.974451Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
@@ -1127,16 +1135,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "4a3415a2b718",
+          "md": "213cca561c1c",
           "ts": "0ef709563107",
-          "lean": "492b59a00e50"
+          "lean": "cfa3901fc8d1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.974451Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.974451Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.ts:1",
@@ -1146,16 +1156,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "4a3415a2b718",
+          "md": "213cca561c1c",
           "ts": "0ef709563107",
-          "lean": "492b59a00e50"
+          "lean": "cfa3901fc8d1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.974451Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.974451Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.ts:1",
@@ -1165,16 +1177,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "4a3415a2b718",
+          "md": "213cca561c1c",
           "ts": "0ef709563107",
-          "lean": "492b59a00e50"
+          "lean": "cfa3901fc8d1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.974451Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.974451Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean file uses the class-conjecture pattern with sorry, matching the conjectural nature of the markdown.",
         "severity": "minor"
@@ -1183,16 +1197,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "4a3415a2b718",
+          "md": "213cca561c1c",
           "ts": "0ef709563107",
-          "lean": "492b59a00e50"
+          "lean": "cfa3901fc8d1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.974451Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.974451Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
         "evidence": "content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.ts:1",
@@ -1202,16 +1218,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "4a3415a2b718",
+          "md": "213cca561c1c",
           "ts": "0ef709563107",
-          "lean": "492b59a00e50"
+          "lean": "cfa3901fc8d1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.974451Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.974451Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.ts:1",
@@ -1221,16 +1239,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "4a3415a2b718",
+          "md": "213cca561c1c",
           "ts": "0ef709563107",
-          "lean": "492b59a00e50"
+          "lean": "cfa3901fc8d1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.974451Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.974451Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.ts:1",
@@ -1240,16 +1260,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "4a3415a2b718",
+          "md": "213cca561c1c",
           "ts": "0ef709563107",
-          "lean": "492b59a00e50"
+          "lean": "cfa3901fc8d1"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.974451Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.974451Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.ts:1",
@@ -1259,16 +1281,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "4a3415a2b718",
+          "md": "213cca561c1c",
           "ts": "0ef709563107",
-          "lean": "492b59a00e50"
+          "lean": "cfa3901fc8d1"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.974451Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.974451Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
         "evidence": "content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.lean:1 \u2014 content/quantum-observable-universe/mass-theory/reidemeister-mass-invariance.lean:14:0: error: unexpected token '*'; expected command",
@@ -1278,16 +1302,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "4a3415a2b718",
+          "md": "213cca561c1c",
           "ts": "0ef709563107",
-          "lean": "492b59a00e50"
+          "lean": "cfa3901fc8d1"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.974451Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.974451Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders.",
         "severity": "minor",
@@ -1298,7 +1324,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "4a3415a2b718",
+          "md": "213cca561c1c",
           "ts": "0ef709563107",
           "lean": "cfa3901fc8d1"
         },
@@ -1306,9 +1332,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.974451Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_at": "2026-07-07T14:26:56.974451Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'conj:reidemeister-mass-invariance' \u2192 expected 'reidemeister_mass_invariance'; Lean declares: R_q, ReidemeisterMove, IsKnotInvariant, IsRegularInvariant, knot_invariant_is_regular.... Structural match via content."
       }
@@ -1317,14 +1345,21 @@
       {
         "result": "pass",
         "notes": "Rewrote mass-theory_seq5.md for Milnor standards: stripped unnecessary adjectives, improved flow.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.974451Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.974451Z"
+        },
+        "field_hash": {
+          "md": "213cca561c1c",
+          "ts": "0ef709563107",
+          "lean": "cfa3901fc8d1"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.430Z"
+  "updated_at": "2026-07-07T14:26:56.974451Z"
 }

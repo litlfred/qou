@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/brings-surface/brings-surface-example.md"
   },
   "source_hashes": {
-    "md": "882a620a8a9f",
+    "md": "1426d32e0e19",
     "ts": "e34a5eba3545"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Rewrote brings-surface_seq3.md. Reduced fluff. Consolidated narrative mapping to Milnor standard. Shortened sentences, clarified the physics meaning and geometric relationships.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.002273Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.002273Z"
+        },
+        "field_hash": {
+          "md": "1426d32e0e19",
+          "ts": "e34a5eba3545"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:55.404Z"
+  "updated_at": "2026-07-07T14:26:55.002273Z"
 }

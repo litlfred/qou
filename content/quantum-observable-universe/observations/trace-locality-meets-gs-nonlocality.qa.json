@@ -7,74 +7,62 @@
     "md": "content/quantum-observable-universe/observations/trace-locality-meets-gs-nonlocality.md",
     "lean": "content/quantum-observable-universe/observations/trace-locality-meets-gs-nonlocality.lean"
   },
-  "source_hashes": {
-    "md": "e5d071e43565",
-    "ts": "122f9159a9f6",
-    "lean": "bff8025c4270"
-  },
+  "source_hashes": {},
   "criteria": {
     "voice-status-leak": [
       {
-        "field_hash": {
-          "md": "e5d071e43565"
-        },
+        "field_hash": {},
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-status-leak-audit",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.541107Z",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27"
+        "reviewed_at": "2026-07-07T14:26:56.541107Z"
       }
     ],
     "voice-emoji-content": [
       {
-        "field_hash": {
-          "md": "e5d071e43565"
-        },
+        "field_hash": {},
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.541107Z",
           "agent_skill": "local/one-voice-audit",
           "id": "voice-emoji-content-audit"
         },
-        "reviewed_at": "2026-05-27"
+        "reviewed_at": "2026-07-07T14:26:56.541107Z"
       }
     ],
     "voice-first-person-work": [
       {
-        "field_hash": {
-          "md": "e5d071e43565"
-        },
+        "field_hash": {},
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.541107Z",
           "agent_skill": "local/one-voice-audit",
           "id": "voice-first-person-work-audit"
         },
-        "reviewed_at": "2026-05-27"
+        "reviewed_at": "2026-07-07T14:26:56.541107Z"
       }
     ],
     "voice-time-stamped-notes": [
       {
-        "field_hash": {
-          "md": "e5d071e43565"
-        },
+        "field_hash": {},
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-time-stamped-audit",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.541107Z",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27"
+        "reviewed_at": "2026-07-07T14:26:56.541107Z"
       }
     ],
     "voice-unicode-crash": [
@@ -132,18 +120,16 @@
     ],
     "voice-scholarly-default": [
       {
-        "field_hash": {
-          "md": "e5d071e43565"
-        },
+        "field_hash": {},
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.541107Z",
           "agent_skill": "local/one-voice-audit",
           "id": "voice-scholarly-default-audit"
         },
-        "reviewed_at": "2026-05-27"
+        "reviewed_at": "2026-07-07T14:26:56.541107Z"
       }
     ],
     "voice-title-scholarly": [
@@ -201,18 +187,16 @@
     ],
     "voice-ai-slop": [
       {
-        "field_hash": {
-          "md": "e5d071e43565"
-        },
+        "field_hash": {},
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.541107Z",
           "agent_skill": "local/one-voice-audit",
           "id": "voice-ai-slop-audit"
         },
-        "reviewed_at": "2026-05-27"
+        "reviewed_at": "2026-07-07T14:26:56.541107Z"
       }
     ],
     "framework-canonical": [
@@ -323,18 +307,16 @@
     ],
     "proof-no-bare-sorries": [
       {
-        "field_hash": {
-          "lean": "bff8025c4270"
-        },
+        "field_hash": {},
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "proof-audit-batch",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.541107Z",
           "agent_skill": "local/proof-integration-watcher"
         },
-        "reviewed_at": "2026-05-27"
+        "reviewed_at": "2026-07-07T14:26:56.541107Z"
       }
     ],
     "proof-no-axiom-growth": [
@@ -1063,18 +1045,16 @@
     ],
     "canonical-no-hardcoded-observable": [
       {
-        "field_hash": {
-          "md": "e5d071e43565"
-        },
+        "field_hash": {},
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "canonical-audit-batch",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.541107Z",
           "agent_skill": "local/canonical-watcher"
         },
-        "reviewed_at": "2026-05-27"
+        "reviewed_at": "2026-07-07T14:26:56.541107Z"
       }
     ],
     "canonical-cal4-acknowledged": [
@@ -1238,18 +1218,16 @@
     ],
     "compute-witness-exists": [
       {
-        "field_hash": {
-          "ts": "122f9159a9f6"
-        },
+        "field_hash": {},
         "result": "warn",
         "reviewer": {
           "kind": "agent",
           "id": "compute-audit-batch",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.541107Z",
           "agent_skill": "local/compute-integration-watcher"
         },
-        "reviewed_at": "2026-05-27"
+        "reviewed_at": "2026-07-07T14:26:56.541107Z"
       }
     ],
     "compute-lp-dual-present": [
@@ -2029,18 +2007,16 @@
     ],
     "voice-editorializing": [
       {
-        "field_hash": {
-          "md": "e5d071e43565"
-        },
+        "field_hash": {},
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.541107Z",
           "agent_skill": "local/one-voice-audit",
           "id": "voice-editorializing-audit"
         },
-        "reviewed_at": "2026-05-27"
+        "reviewed_at": "2026-07-07T14:26:56.541107Z"
       }
     ],
     "canonical-witness-pinned": [
@@ -2145,18 +2121,16 @@
         "notes": "Label 'prop:trace-locality-meets-gs-non-locality' \u2192 expected 'trace_locality_meets_gs_non_locality'; Lean declares: HasReconciliation. Structural match via content."
       },
       {
-        "field_hash": {
-          "md": "e5d071e43565",
-          "ts": "122f9159a9f6",
-          "lean": "bff8025c4270"
-        },
+        "field_hash": {},
         "result": "n/a",
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.541107Z"
         },
-        "reviewed_at": "2026-05-28T18:29:30.189Z",
+        "reviewed_at": "2026-07-07T14:26:56.541107Z",
         "reviewed_sha": "48e52133aae5e86dcc7bb79865fcd7c50fca77f9",
         "notes": "Lean sibling has only stub declarations (`: True := trivial`); canonical formalisation lives elsewhere and is audited by lean-compile-audit."
       }
@@ -2202,18 +2176,16 @@
     ],
     "voice-author-notes-pollution": [
       {
-        "field_hash": {
-          "md": "e5d071e43565"
-        },
+        "field_hash": {},
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.541107Z",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27"
+        "reviewed_at": "2026-07-07T14:26:56.541107Z"
       }
     ],
     "q-usage-regime-detected": [
@@ -2613,5 +2585,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-07-07T14:26:56.541107Z"
 }

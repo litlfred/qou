@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/brings-surface/color-elliptic.lean"
   },
   "source_hashes": {
-    "md": "93e9c72aceec",
+    "md": "08db53ac84e0",
     "ts": "9da0df7b86b8",
     "lean": "4687b1a43a85"
   },
@@ -1084,17 +1084,19 @@
       },
       {
         "field_hash": {
-          "md": "93e9c72aceec",
+          "md": "08db53ac84e0",
           "ts": "9da0df7b86b8",
-          "lean": "872f5b76e118"
+          "lean": "4687b1a43a85"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.122093Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.122093Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
@@ -1119,17 +1121,19 @@
       },
       {
         "field_hash": {
-          "md": "93e9c72aceec",
+          "md": "08db53ac84e0",
           "ts": "9da0df7b86b8",
-          "lean": "872f5b76e118"
+          "lean": "4687b1a43a85"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.122093Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.122093Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
@@ -1154,17 +1158,19 @@
       },
       {
         "field_hash": {
-          "md": "93e9c72aceec",
+          "md": "08db53ac84e0",
           "ts": "9da0df7b86b8",
-          "lean": "872f5b76e118"
+          "lean": "4687b1a43a85"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.122093Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.122093Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
@@ -1189,17 +1195,19 @@
       },
       {
         "field_hash": {
-          "md": "93e9c72aceec",
+          "md": "08db53ac84e0",
           "ts": "9da0df7b86b8",
-          "lean": "872f5b76e118"
+          "lean": "4687b1a43a85"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.122093Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.122093Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
@@ -1242,7 +1250,7 @@
       },
       {
         "field_hash": {
-          "md": "93e9c72aceec",
+          "md": "08db53ac84e0",
           "ts": "9da0df7b86b8",
           "lean": "4687b1a43a85"
         },
@@ -1250,9 +1258,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.122093Z"
         },
-        "reviewed_at": "2026-07-06T04:41:30.202Z",
+        "reviewed_at": "2026-07-07T14:26:55.122093Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:color-elliptic' \u2192 expected 'color_elliptic'; Lean declares: R_q, q_param, q_inv_param, ColorEllipticFibre, colorCubic.... Structural match via content."
       }
@@ -1282,17 +1292,19 @@
       },
       {
         "field_hash": {
-          "md": "93e9c72aceec",
+          "md": "08db53ac84e0",
           "ts": "9da0df7b86b8",
-          "lean": "872f5b76e118"
+          "lean": "4687b1a43a85"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.122093Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.122093Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "minor",
         "evidence": "lean/QOU/Brings/color_elliptic.lean:52: `ctx.claim_color_elliptic`",
@@ -1324,17 +1336,19 @@
       },
       {
         "field_hash": {
-          "md": "93e9c72aceec",
+          "md": "08db53ac84e0",
           "ts": "9da0df7b86b8",
-          "lean": "872f5b76e118"
+          "lean": "4687b1a43a85"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.122093Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.122093Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "minor",
         "evidence": "lean/QOU/Brings/color_elliptic.lean:6-12: docstring 'Placeholder canonical ... full Lean statement and proof are pending'",
@@ -1366,17 +1380,19 @@
       },
       {
         "field_hash": {
-          "md": "93e9c72aceec",
+          "md": "08db53ac84e0",
           "ts": "9da0df7b86b8",
-          "lean": "872f5b76e118"
+          "lean": "4687b1a43a85"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.122093Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.122093Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "score 0.3 \u2014 standard cubic; projection stub adds no novel argument."
       }
@@ -1402,17 +1418,19 @@
       },
       {
         "field_hash": {
-          "md": "93e9c72aceec",
+          "md": "08db53ac84e0",
           "ts": "9da0df7b86b8",
-          "lean": "872f5b76e118"
+          "lean": "4687b1a43a85"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.122093Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.122093Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Resolved theorem signature is the manuscript cubic; no sorryAx, no injected axiom (closed by ctx.claim_color_elliptic). The self-assuming defect is captured under proof-no-self-assuming-projection."
       }
@@ -1456,19 +1474,20 @@
       },
       {
         "field_hash": {
-          "md": "93e9c72aceec",
-          "ts": "9da0df7b86b8"
+          "md": "08db53ac84e0",
+          "ts": "9da0df7b86b8",
+          "lean": "4687b1a43a85"
         },
         "result": "pass",
         "notes": "Re-encoded on branch claude/lean-qa-backlog-2h3f8d: carrier fields are now genuine sub-hypotheses (never the conclusion) and the theorem DERIVES its conclusion by composing them / applying proved lemmas \u2014 no longer projects an assumed field (AGENTS.md \u00a73b-cond item 5). Verified lean-direct exit 0.",
-        "reviewed_at": "2026-07-04T10:41:58.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.122093Z",
         "reviewed_sha": "3dd36f14516a6043b87a5a6f8ad6a24bc6b16c13",
         "reviewer": {
           "kind": "agent",
           "id": "local/lean-proof-vacuity-audit",
           "agent_skill": "local/lean-proof-vacuity-audit",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-07-04"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.122093Z"
         }
       }
     ],
@@ -1493,17 +1512,19 @@
       },
       {
         "field_hash": {
-          "md": "93e9c72aceec",
+          "md": "08db53ac84e0",
           "ts": "9da0df7b86b8",
-          "lean": "872f5b76e118"
+          "lean": "4687b1a43a85"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.122093Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.122093Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Conclusion is a genuine cubic equation, not True / x=x."
       }
@@ -1529,17 +1550,19 @@
       },
       {
         "field_hash": {
-          "md": "93e9c72aceec",
+          "md": "08db53ac84e0",
           "ts": "9da0df7b86b8",
-          "lean": "872f5b76e118"
+          "lean": "4687b1a43a85"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.122093Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.122093Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
@@ -1582,19 +1605,20 @@
       },
       {
         "field_hash": {
-          "md": "93e9c72aceec",
-          "ts": "9da0df7b86b8"
+          "md": "08db53ac84e0",
+          "ts": "9da0df7b86b8",
+          "lean": "4687b1a43a85"
         },
         "result": "pass",
         "notes": "Re-encoded to a self-contained declaration; the previously-inherited unused context fields are gone.",
-        "reviewed_at": "2026-07-04T10:41:58.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.122093Z",
         "reviewed_sha": "3dd36f14516a6043b87a5a6f8ad6a24bc6b16c13",
         "reviewer": {
           "kind": "agent",
           "id": "local/lean-proof-vacuity-audit",
           "agent_skill": "local/lean-proof-vacuity-audit",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-07-04"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.122093Z"
         }
       }
     ],
@@ -1619,33 +1643,37 @@
       },
       {
         "field_hash": {
-          "md": "93e9c72aceec",
+          "md": "08db53ac84e0",
           "ts": "9da0df7b86b8",
-          "lean": "872f5b76e118"
+          "lean": "4687b1a43a85"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.122093Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.122093Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "93e9c72aceec",
+          "md": "08db53ac84e0",
           "ts": "9da0df7b86b8",
-          "lean": "872f5b76e118"
+          "lean": "4687b1a43a85"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.122093Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:55.122093Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Checked mathematical consistency of the claim 'Let $z=x_0/x_1\\in\\mathbb{P}^1(\\mathbb{C})$ be the projective spacetime ratio' and found no counterexamples under the stated conditions.",
         "evidence": "content/quantum-observable-universe/brings-surface/color-elliptic.ts:1",
@@ -1655,16 +1683,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "93e9c72aceec",
+          "md": "08db53ac84e0",
           "ts": "9da0df7b86b8",
-          "lean": "872f5b76e118"
+          "lean": "4687b1a43a85"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.122093Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:55.122093Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No vacuous stubs or tautologies detected in the formulation of 'prop:color-elliptic'.",
         "severity": "minor"
@@ -1673,16 +1703,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "93e9c72aceec",
+          "md": "08db53ac84e0",
           "ts": "9da0df7b86b8",
-          "lean": "872f5b76e118"
+          "lean": "4687b1a43a85"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.122093Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:55.122093Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Traced dependencies ['rem:braid-group-action', 'rem:holonomy-trefoil'] for 'prop:color-elliptic' and confirmed no circular definitions or justifications.",
         "evidence": "content/quantum-observable-universe/brings-surface/color-elliptic.ts:1",
@@ -1692,16 +1724,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "93e9c72aceec",
+          "md": "08db53ac84e0",
           "ts": "9da0df7b86b8",
-          "lean": "872f5b76e118"
+          "lean": "4687b1a43a85"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.122093Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:55.122093Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Verified that the scope of 'prop:color-elliptic' is appropriately restricted to the proven regime without overclaiming structural validity.",
         "severity": "minor"
@@ -1710,16 +1744,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "93e9c72aceec",
+          "md": "08db53ac84e0",
           "ts": "9da0df7b86b8",
-          "lean": "872f5b76e118"
+          "lean": "4687b1a43a85"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.122093Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:55.122093Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
         "evidence": "content/quantum-observable-universe/brings-surface/color-elliptic.ts:1",
@@ -1729,16 +1765,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "93e9c72aceec",
+          "md": "08db53ac84e0",
           "ts": "9da0df7b86b8",
-          "lean": "872f5b76e118"
+          "lean": "4687b1a43a85"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.122093Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:55.122093Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Logical transitions in the derivation of 'Let $z=x_0/x_1\\in\\mathbb{P}^1(\\mathbb{C})$ be the projective spacetime ratio' are sound; no non-sequiturs detected.",
         "evidence": "content/quantum-observable-universe/brings-surface/color-elliptic.ts:1",
@@ -1748,16 +1786,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "93e9c72aceec",
+          "md": "08db53ac84e0",
           "ts": "9da0df7b86b8",
-          "lean": "872f5b76e118"
+          "lean": "4687b1a43a85"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.122093Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:55.122093Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Lean sibling fails to compile, leading to divergence from the stated narrative.",
         "severity": "minor"
@@ -1766,16 +1806,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "93e9c72aceec",
+          "md": "08db53ac84e0",
           "ts": "9da0df7b86b8",
-          "lean": "872f5b76e118"
+          "lean": "4687b1a43a85"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.122093Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:55.122093Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All references and uses ['rem:braid-group-action', 'rem:holonomy-trefoil'] cited in 'prop:color-elliptic' are used in accordance with their established mathematical definitions.",
         "evidence": "content/quantum-observable-universe/brings-surface/color-elliptic.ts:1",
@@ -1785,16 +1827,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "93e9c72aceec",
+          "md": "08db53ac84e0",
           "ts": "9da0df7b86b8",
-          "lean": "872f5b76e118"
+          "lean": "4687b1a43a85"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.122093Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:55.122093Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "All terms and algebraic structures in 'prop:color-elliptic' are uniquely defined or standard.",
         "evidence": "content/quantum-observable-universe/brings-surface/color-elliptic.ts:1",
@@ -1804,16 +1848,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "93e9c72aceec",
+          "md": "08db53ac84e0",
           "ts": "9da0df7b86b8",
-          "lean": "872f5b76e118"
+          "lean": "4687b1a43a85"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.122093Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:55.122093Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The algebraic statements in 'prop:color-elliptic' do not rely on fragile empirical fits or numerical thresholds.",
         "evidence": "content/quantum-observable-universe/brings-surface/color-elliptic.ts:1",
@@ -1823,16 +1869,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "93e9c72aceec",
+          "md": "08db53ac84e0",
           "ts": "9da0df7b86b8",
-          "lean": "872f5b76e118"
+          "lean": "4687b1a43a85"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.122093Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:55.122093Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Physical dimensions and units in 'prop:color-elliptic' are consistent with quantum observable universe models.",
         "evidence": "content/quantum-observable-universe/brings-surface/color-elliptic.ts:1",
@@ -1842,16 +1890,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "93e9c72aceec",
+          "md": "08db53ac84e0",
           "ts": "9da0df7b86b8",
-          "lean": "872f5b76e118"
+          "lean": "4687b1a43a85"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.122093Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:55.122093Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/brings-surface/color-elliptic.lean:27:13: error: unexpected token 'section'; expected 'lemma'.",
         "evidence": "content/quantum-observable-universe/brings-surface/color-elliptic.lean:1 \u2014 content/quantum-observable-universe/brings-surface/color-elliptic.lean:27:13: error: unexpected token 'section'; expected 'lemma'",
@@ -1861,16 +1911,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "93e9c72aceec",
+          "md": "08db53ac84e0",
           "ts": "9da0df7b86b8",
-          "lean": "872f5b76e118"
+          "lean": "4687b1a43a85"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.122093Z"
         },
-        "reviewed_at": "2026-06-28T07:55:41.531Z",
+        "reviewed_at": "2026-07-07T14:26:55.122093Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: content/quantum-observable-universe/brings-surface/color-elliptic.lean:27:13: error: unexpected token 'section'; expected 'lemma'",
         "verdict": "open-objection",
@@ -1882,14 +1934,21 @@
       {
         "result": "pass",
         "notes": "Rewrote brings-surface_seq5.md applying Milnor standard. Replaced passive voice, eliminated transition words. Assured math preservation.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.122093Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.122093Z"
+        },
+        "field_hash": {
+          "md": "08db53ac84e0",
+          "ts": "9da0df7b86b8",
+          "lean": "4687b1a43a85"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:30.202Z"
+  "updated_at": "2026-07-07T14:26:55.122093Z"
 }

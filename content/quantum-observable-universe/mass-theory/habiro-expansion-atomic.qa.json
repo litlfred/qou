@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.lean"
   },
   "source_hashes": {
-    "md": "158f1e3d877b",
+    "md": "77706743e815",
     "ts": "8836d62e2abb",
     "lean": "d856c0487df4"
   },
@@ -1048,17 +1048,19 @@
       },
       {
         "field_hash": {
-          "md": "158f1e3d877b",
+          "md": "77706743e815",
           "ts": "8836d62e2abb",
-          "lean": "36e61eceb7f8"
+          "lean": "d856c0487df4"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-28",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.698469Z"
         },
-        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_at": "2026-07-07T14:26:56.698469Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
@@ -1084,17 +1086,19 @@
       },
       {
         "field_hash": {
-          "md": "158f1e3d877b",
+          "md": "77706743e815",
           "ts": "8836d62e2abb",
-          "lean": "36e61eceb7f8"
+          "lean": "d856c0487df4"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-28",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.698469Z"
         },
-        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_at": "2026-07-07T14:26:56.698469Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
@@ -1119,17 +1123,19 @@
       },
       {
         "field_hash": {
-          "md": "158f1e3d877b",
+          "md": "77706743e815",
           "ts": "8836d62e2abb",
-          "lean": "36e61eceb7f8"
+          "lean": "d856c0487df4"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-28",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.698469Z"
         },
-        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_at": "2026-07-07T14:26:56.698469Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
@@ -1154,17 +1160,19 @@
       },
       {
         "field_hash": {
-          "md": "158f1e3d877b",
+          "md": "77706743e815",
           "ts": "8836d62e2abb",
-          "lean": "36e61eceb7f8"
+          "lean": "d856c0487df4"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-28",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.698469Z"
         },
-        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_at": "2026-07-07T14:26:56.698469Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
@@ -1218,7 +1226,7 @@
       },
       {
         "field_hash": {
-          "md": "158f1e3d877b",
+          "md": "77706743e815",
           "ts": "8836d62e2abb",
           "lean": "d856c0487df4"
         },
@@ -1226,9 +1234,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.698469Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_at": "2026-07-07T14:26:56.698469Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'cor:habiro-expansion-atomic' aligns with Lean declaration. Sorry-free."
       }
@@ -1252,17 +1262,19 @@
       },
       {
         "field_hash": {
-          "md": "158f1e3d877b",
+          "md": "77706743e815",
           "ts": "8836d62e2abb",
-          "lean": "36e61eceb7f8"
+          "lean": "d856c0487df4"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-28",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.698469Z"
         },
-        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_at": "2026-07-07T14:26:56.698469Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
@@ -1332,17 +1344,19 @@
       },
       {
         "field_hash": {
-          "md": "158f1e3d877b",
+          "md": "77706743e815",
           "ts": "8836d62e2abb",
-          "lean": "36e61eceb7f8"
+          "lean": "d856c0487df4"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-28",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.698469Z"
         },
-        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_at": "2026-07-07T14:26:56.698469Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
@@ -1370,17 +1384,19 @@
       },
       {
         "field_hash": {
-          "md": "158f1e3d877b",
+          "md": "77706743e815",
           "ts": "8836d62e2abb",
-          "lean": "36e61eceb7f8"
+          "lean": "d856c0487df4"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-28",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.698469Z"
         },
-        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_at": "2026-07-07T14:26:56.698469Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
@@ -1442,17 +1458,19 @@
       },
       {
         "field_hash": {
-          "md": "158f1e3d877b",
+          "md": "77706743e815",
           "ts": "8836d62e2abb",
-          "lean": "36e61eceb7f8"
+          "lean": "d856c0487df4"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-28",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.698469Z"
         },
-        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_at": "2026-07-07T14:26:56.698469Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
@@ -1478,17 +1496,19 @@
       },
       {
         "field_hash": {
-          "md": "158f1e3d877b",
+          "md": "77706743e815",
           "ts": "8836d62e2abb",
-          "lean": "36e61eceb7f8"
+          "lean": "d856c0487df4"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-28",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.698469Z"
         },
-        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_at": "2026-07-07T14:26:56.698469Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
@@ -1621,17 +1641,19 @@
       },
       {
         "field_hash": {
-          "md": "158f1e3d877b",
+          "md": "77706743e815",
           "ts": "8836d62e2abb",
-          "lean": "36e61eceb7f8"
+          "lean": "d856c0487df4"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-28",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.698469Z"
         },
-        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_at": "2026-07-07T14:26:56.698469Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
@@ -1655,17 +1677,19 @@
       },
       {
         "field_hash": {
-          "md": "158f1e3d877b",
+          "md": "77706743e815",
           "ts": "8836d62e2abb",
-          "lean": "36e61eceb7f8"
+          "lean": "d856c0487df4"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-28",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.698469Z"
         },
-        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_at": "2026-07-07T14:26:56.698469Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
@@ -1709,17 +1733,19 @@
       },
       {
         "field_hash": {
-          "md": "158f1e3d877b",
+          "md": "77706743e815",
           "ts": "8836d62e2abb",
-          "lean": "36e61eceb7f8"
+          "lean": "d856c0487df4"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-28",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.698469Z"
         },
-        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_at": "2026-07-07T14:26:56.698469Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
@@ -1744,17 +1770,19 @@
       },
       {
         "field_hash": {
-          "md": "158f1e3d877b",
+          "md": "77706743e815",
           "ts": "8836d62e2abb",
-          "lean": "36e61eceb7f8"
+          "lean": "d856c0487df4"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-28",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.698469Z"
         },
-        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_at": "2026-07-07T14:26:56.698469Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
@@ -1778,17 +1806,19 @@
       },
       {
         "field_hash": {
-          "md": "158f1e3d877b",
+          "md": "77706743e815",
           "ts": "8836d62e2abb",
-          "lean": "36e61eceb7f8"
+          "lean": "d856c0487df4"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-28",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.698469Z"
         },
-        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_at": "2026-07-07T14:26:56.698469Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
@@ -1813,17 +1843,19 @@
       },
       {
         "field_hash": {
-          "md": "158f1e3d877b",
+          "md": "77706743e815",
           "ts": "8836d62e2abb",
-          "lean": "36e61eceb7f8"
+          "lean": "d856c0487df4"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-28",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.698469Z"
         },
-        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_at": "2026-07-07T14:26:56.698469Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
@@ -1847,17 +1879,19 @@
       },
       {
         "field_hash": {
-          "md": "158f1e3d877b",
+          "md": "77706743e815",
           "ts": "8836d62e2abb",
-          "lean": "36e61eceb7f8"
+          "lean": "d856c0487df4"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-28",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.698469Z"
         },
-        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_at": "2026-07-07T14:26:56.698469Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
@@ -1882,17 +1916,19 @@
       },
       {
         "field_hash": {
-          "md": "158f1e3d877b",
+          "md": "77706743e815",
           "ts": "8836d62e2abb",
-          "lean": "36e61eceb7f8"
+          "lean": "d856c0487df4"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-28",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.698469Z"
         },
-        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_at": "2026-07-07T14:26:56.698469Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
@@ -1917,17 +1953,19 @@
       },
       {
         "field_hash": {
-          "md": "158f1e3d877b",
+          "md": "77706743e815",
           "ts": "8836d62e2abb",
-          "lean": "36e61eceb7f8"
+          "lean": "d856c0487df4"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-28",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.698469Z"
         },
-        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_at": "2026-07-07T14:26:56.698469Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
@@ -1951,17 +1989,19 @@
       },
       {
         "field_hash": {
-          "md": "158f1e3d877b",
+          "md": "77706743e815",
           "ts": "8836d62e2abb",
-          "lean": "36e61eceb7f8"
+          "lean": "d856c0487df4"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-28",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.698469Z"
         },
-        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_at": "2026-07-07T14:26:56.698469Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
@@ -1986,17 +2026,19 @@
       },
       {
         "field_hash": {
-          "md": "158f1e3d877b",
+          "md": "77706743e815",
           "ts": "8836d62e2abb",
-          "lean": "36e61eceb7f8"
+          "lean": "d856c0487df4"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-28",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.698469Z"
         },
-        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_at": "2026-07-07T14:26:56.698469Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
@@ -2021,17 +2063,19 @@
       },
       {
         "field_hash": {
-          "md": "158f1e3d877b",
+          "md": "77706743e815",
           "ts": "8836d62e2abb",
-          "lean": "36e61eceb7f8"
+          "lean": "d856c0487df4"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-28",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.698469Z"
         },
-        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_at": "2026-07-07T14:26:56.698469Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
@@ -2056,17 +2100,19 @@
       },
       {
         "field_hash": {
-          "md": "158f1e3d877b",
+          "md": "77706743e815",
           "ts": "8836d62e2abb",
-          "lean": "36e61eceb7f8"
+          "lean": "d856c0487df4"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-28",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.698469Z"
         },
-        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_at": "2026-07-07T14:26:56.698469Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
@@ -2091,17 +2137,19 @@
       },
       {
         "field_hash": {
-          "md": "158f1e3d877b",
+          "md": "77706743e815",
           "ts": "8836d62e2abb",
-          "lean": "36e61eceb7f8"
+          "lean": "d856c0487df4"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-28",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.698469Z"
         },
-        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_at": "2026-07-07T14:26:56.698469Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
@@ -2126,17 +2174,19 @@
       },
       {
         "field_hash": {
-          "md": "158f1e3d877b",
+          "md": "77706743e815",
           "ts": "8836d62e2abb",
-          "lean": "36e61eceb7f8"
+          "lean": "d856c0487df4"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-28",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.698469Z"
         },
-        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_at": "2026-07-07T14:26:56.698469Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
@@ -2162,17 +2212,19 @@
       },
       {
         "field_hash": {
-          "md": "158f1e3d877b",
+          "md": "77706743e815",
           "ts": "8836d62e2abb",
-          "lean": "36e61eceb7f8"
+          "lean": "d856c0487df4"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-28",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.698469Z"
         },
-        "reviewed_at": "2026-06-28T22:44:56.705Z",
+        "reviewed_at": "2026-07-07T14:26:56.698469Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "Criteria met. No obvious issues detected during automated analysis."
       }
@@ -2201,14 +2253,21 @@
       {
         "result": "pass",
         "notes": "Rewrote mass-theory_seq8.md via precise python replacement for Milnor standards: clean declarative prose, no wasted words.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.698469Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.698469Z"
+        },
+        "field_hash": {
+          "md": "77706743e815",
+          "ts": "8836d62e2abb",
+          "lean": "d856c0487df4"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.430Z"
+  "updated_at": "2026-07-07T14:26:56.698469Z"
 }

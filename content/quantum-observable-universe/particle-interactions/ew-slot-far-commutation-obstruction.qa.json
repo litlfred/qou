@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/ew-slot-far-commutation-obstruction.lean"
   },
   "source_hashes": {
-    "md": "e071c24cda88",
+    "md": "b7504bb01135",
     "ts": "de987b258718",
     "lean": "9ee8b8a8aa87"
   },
@@ -16,7 +16,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "e071c24cda88",
+          "md": "b7504bb01135",
           "ts": "de987b258718",
           "lean": "9ee8b8a8aa87"
         },
@@ -24,9 +24,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.125812Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_at": "2026-07-07T14:26:57.125812Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:ew-slot-far-commutation-obstruction' \u2192 expected 'ew_slot_far_commutation_obstruction'; Lean declares: bracket, bracket_eq_zero_of_commute, nonabelian_bracket_forbids_commute, commute_of_mem_closure, farApart.... Structural match via content."
       }
@@ -38,5 +40,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.802Z"
+  "updated_at": "2026-07-07T14:26:57.125812Z"
 }

@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/confinement-sdp.lean"
   },
   "source_hashes": {
-    "md": "c21412bfa990",
+    "md": "37eebe873716",
     "ts": "e42c9aedd8b7",
     "lean": "937785e426a3"
   },
@@ -36,7 +36,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "c21412bfa990",
+          "md": "37eebe873716",
           "ts": "e42c9aedd8b7",
           "lean": "937785e426a3"
         },
@@ -44,9 +44,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.991285Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_at": "2026-07-07T14:26:56.991285Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:confinement-sdp' aligns with Lean declaration. Has sorry (cited)."
       }
@@ -55,14 +57,21 @@
       {
         "result": "pass",
         "notes": "Rewrote prose sections of mass-theory_seq37.md to enforce H1-H8 and milnor-brevity. Preserved all math blocks and original section markers. Ensured linear flow, minimal technical clutter, and short declarative sentences.",
-        "reviewed_at": "2026-07-06T22:49:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.991285Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.991285Z"
+        },
+        "field_hash": {
+          "md": "37eebe873716",
+          "ts": "e42c9aedd8b7",
+          "lean": "937785e426a3"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.430Z"
+  "updated_at": "2026-07-07T14:26:56.991285Z"
 }

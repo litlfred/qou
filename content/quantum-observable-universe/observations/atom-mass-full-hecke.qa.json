@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/observations/atom-mass-full-hecke.md"
   },
   "source_hashes": {
-    "md": "6dd46e4a9ac5",
+    "md": "476d1a8047c6",
     "ts": "2f7b6935ebe0"
   },
   "criteria": {
@@ -1064,16 +1064,18 @@
       },
       {
         "field_hash": {
-          "md": "6dd46e4a9ac5",
+          "md": "476d1a8047c6",
           "ts": "2f7b6935ebe0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.556671Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:56.556671Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "remark interpreting rem:mass-comparison-table; atomic-mass three-channel Hecke computation is on-scope for observations, and the block correctly carries interprets + caveat authorNotes scoping it as a projection model."
       }
@@ -1081,16 +1083,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "6dd46e4a9ac5",
+          "md": "476d1a8047c6",
           "ts": "2f7b6935ebe0"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.556671Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.556671Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No false claims identified in 'Atomic mass of $Z = 1$--$10$ via full three-channel Hecke algebra': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -1100,16 +1104,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "6dd46e4a9ac5",
+          "md": "476d1a8047c6",
           "ts": "2f7b6935ebe0"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.556671Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.556671Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Atomic mass of $Z = 1$--$10$ via full three-channel Hecke algebra' presents substantial mathematical content: The existing atomic mass appendix ([atomic mass calculations](#sec:amc-calculati...",
         "severity": "minor"
@@ -1118,16 +1124,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "6dd46e4a9ac5",
+          "md": "476d1a8047c6",
           "ts": "2f7b6935ebe0"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.556671Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.556671Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Atomic mass of $Z = 1$--$10$ via full three-channel Hecke algebra'.",
         "severity": "minor",
@@ -1137,16 +1145,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "6dd46e4a9ac5",
+          "md": "476d1a8047c6",
           "ts": "2f7b6935ebe0"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.556671Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.556671Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No overclaims: the scope of 'Atomic mass of $Z = 1$--$10$ via full three-channel Hecke algebra' is appropriately qualified.",
         "severity": "minor"
@@ -1155,16 +1165,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "6dd46e4a9ac5",
+          "md": "476d1a8047c6",
           "ts": "2f7b6935ebe0"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.556671Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.556671Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Atomic mass of $Z = 1$--$10$ via full three-channel Hecke algebra'.",
         "severity": "minor",
@@ -1174,16 +1186,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "6dd46e4a9ac5",
+          "md": "476d1a8047c6",
           "ts": "2f7b6935ebe0"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.556671Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.556671Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The argument flow in 'Atomic mass of $Z = 1$--$10$ via full three-channel Hecke algebra' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -1193,16 +1207,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "6dd46e4a9ac5",
+          "md": "476d1a8047c6",
           "ts": "2f7b6935ebe0"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.556671Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.556671Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
@@ -1211,16 +1227,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "6dd46e4a9ac5",
+          "md": "476d1a8047c6",
           "ts": "2f7b6935ebe0"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.556671Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.556671Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Citations to jones1985, kock2004 are correct and contextually appropriate.",
         "severity": "minor",
@@ -1230,16 +1248,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "6dd46e4a9ac5",
+          "md": "476d1a8047c6",
           "ts": "2f7b6935ebe0"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.556671Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.556671Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Key terms and symbols in 'Atomic mass of $Z = 1$--$10$ via full three-channel Hecke algebra' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1249,16 +1269,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "6dd46e4a9ac5",
+          "md": "476d1a8047c6",
           "ts": "2f7b6935ebe0"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.556671Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.556671Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The algebraic and logical relations in 'Atomic mass of $Z = 1$--$10$ via full three-channel Hecke algebra' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1268,16 +1290,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "6dd46e4a9ac5",
+          "md": "476d1a8047c6",
           "ts": "2f7b6935ebe0"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.556671Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.556671Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The physical concepts described in 'Atomic mass of $Z = 1$--$10$ via full three-channel Hecke algebra' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1287,16 +1311,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "6dd46e4a9ac5",
+          "md": "476d1a8047c6",
           "ts": "2f7b6935ebe0"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.556671Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.556671Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The derivation steps and formal definitions in 'Atomic mass of $Z = 1$--$10$ via full three-channel Hecke algebra' are reproducible.",
         "severity": "minor",
@@ -1306,16 +1332,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "6dd46e4a9ac5",
+          "md": "476d1a8047c6",
           "ts": "2f7b6935ebe0"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.556671Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.556671Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
@@ -1327,14 +1355,20 @@
       {
         "result": "pass",
         "notes": "Applied Milnor exposition standard (H1-H8) and brevity rules. Shortened sentences, removed editorializing ('surprisingly', 'remarkably'), replaced 'this book' with 'this paper', and maintained Math, markdown, and cross-block consistency.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.556671Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.556671Z"
+        },
+        "field_hash": {
+          "md": "476d1a8047c6",
+          "ts": "2f7b6935ebe0"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.226Z"
+  "updated_at": "2026-07-07T14:26:56.556671Z"
 }

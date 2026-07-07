@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/molecular-construction/aromaticity-as-symmetric-projection.md"
   },
   "source_hashes": {
-    "md": "d7411ad2a260",
+    "md": "3e729acfc7a7",
     "ts": "62738df0acbf"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Streamlined aromaticity discussion. Short declarative sentences. Retained math.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.493853Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.493853Z"
+        },
+        "field_hash": {
+          "md": "3e729acfc7a7",
+          "ts": "62738df0acbf"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.117Z"
+  "updated_at": "2026-07-07T14:26:55.493853Z"
 }

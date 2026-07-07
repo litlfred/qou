@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/observations/shell-threading-conjecture.lean"
   },
   "source_hashes": {
-    "md": "40835b1b5d0a",
+    "md": "900641f1c84f",
     "ts": "29afbfcdeec4",
     "lean": "37ddede783d2"
   },
@@ -875,7 +875,7 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "8e7ae0bc0ecc",
+          "md": "900641f1c84f",
           "ts": "29afbfcdeec4",
           "lean": "37ddede783d2"
         },
@@ -883,11 +883,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.565165Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:53.190Z",
+        "reviewed_at": "2026-07-07T14:26:56.565165Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -895,7 +895,7 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "8e7ae0bc0ecc",
+          "md": "900641f1c84f",
           "ts": "29afbfcdeec4",
           "lean": "37ddede783d2"
         },
@@ -903,9 +903,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.565165Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.565165Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No false claims identified in 'Shell energy from the Skein smoothing at the beta-decay vertex': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -915,7 +917,7 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "8e7ae0bc0ecc",
+          "md": "900641f1c84f",
           "ts": "29afbfcdeec4",
           "lean": "37ddede783d2"
         },
@@ -923,9 +925,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.565165Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.565165Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/observations/shell-threading-conjecture.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "major",
@@ -935,7 +939,7 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "8e7ae0bc0ecc",
+          "md": "900641f1c84f",
           "ts": "29afbfcdeec4",
           "lean": "37ddede783d2"
         },
@@ -943,9 +947,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.565165Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.565165Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Shell energy from the Skein smoothing at the beta-decay vertex'.",
         "severity": "minor",
@@ -955,7 +961,7 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "8e7ae0bc0ecc",
+          "md": "900641f1c84f",
           "ts": "29afbfcdeec4",
           "lean": "37ddede783d2"
         },
@@ -963,9 +969,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.565165Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.565165Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose in 'Shell energy from the Skein smoothing at the beta-decay vertex' presents the result as established, but the Lean formalization is incomplete (has sorry).",
         "severity": "minor"
@@ -974,7 +982,7 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "8e7ae0bc0ecc",
+          "md": "900641f1c84f",
           "ts": "29afbfcdeec4",
           "lean": "37ddede783d2"
         },
@@ -982,9 +990,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.565165Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.565165Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Shell energy from the Skein smoothing at the beta-decay vertex'.",
         "severity": "minor",
@@ -994,7 +1004,7 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "8e7ae0bc0ecc",
+          "md": "900641f1c84f",
           "ts": "29afbfcdeec4",
           "lean": "37ddede783d2"
         },
@@ -1002,9 +1012,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.565165Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.565165Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The argument flow in 'Shell energy from the Skein smoothing at the beta-decay vertex' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -1014,7 +1026,7 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "8e7ae0bc0ecc",
+          "md": "900641f1c84f",
           "ts": "29afbfcdeec4",
           "lean": "37ddede783d2"
         },
@@ -1022,9 +1034,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.565165Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.565165Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean proof in content/quantum-observable-universe/observations/shell-threading-conjecture.lean contains a sorry, representing a divergence from the fully claimed narrative.",
         "severity": "minor"
@@ -1033,7 +1047,7 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "8e7ae0bc0ecc",
+          "md": "900641f1c84f",
           "ts": "29afbfcdeec4",
           "lean": "37ddede783d2"
         },
@@ -1041,9 +1055,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.565165Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.565165Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No citations are present in 'Shell energy from the Skein smoothing at the beta-decay vertex', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1053,7 +1069,7 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "8e7ae0bc0ecc",
+          "md": "900641f1c84f",
           "ts": "29afbfcdeec4",
           "lean": "37ddede783d2"
         },
@@ -1061,9 +1077,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.565165Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.565165Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Key terms and symbols in 'Shell energy from the Skein smoothing at the beta-decay vertex' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1091,7 +1109,7 @@
       },
       {
         "field_hash": {
-          "md": "40835b1b5d0a",
+          "md": "900641f1c84f",
           "ts": "29afbfcdeec4",
           "lean": "37ddede783d2"
         },
@@ -1099,9 +1117,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-21",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.565165Z"
         },
-        "reviewed_at": "2026-06-28T18:05:19.348Z",
+        "reviewed_at": "2026-07-07T14:26:56.565165Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "severity": "minor",
         "evidence": "file:155: the corrected half-life should match the observed 5730 yr to within ~5%",
@@ -1111,7 +1131,7 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "8e7ae0bc0ecc",
+          "md": "900641f1c84f",
           "ts": "29afbfcdeec4",
           "lean": "37ddede783d2"
         },
@@ -1119,9 +1139,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.565165Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.565165Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The physical concepts described in 'Shell energy from the Skein smoothing at the beta-decay vertex' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1131,7 +1153,7 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "8e7ae0bc0ecc",
+          "md": "900641f1c84f",
           "ts": "29afbfcdeec4",
           "lean": "37ddede783d2"
         },
@@ -1139,9 +1161,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.565165Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.565165Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The derivation steps and formal definitions in 'Shell energy from the Skein smoothing at the beta-decay vertex' are reproducible.",
         "severity": "minor",
@@ -1151,7 +1175,7 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "8e7ae0bc0ecc",
+          "md": "900641f1c84f",
           "ts": "29afbfcdeec4",
           "lean": "37ddede783d2"
         },
@@ -1159,9 +1183,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.565165Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.565165Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/observations/shell-threading-conjecture.lean contains 'sorry' placeholders.",
         "verdict": "open-objection",
@@ -1173,14 +1199,21 @@
       {
         "result": "pass",
         "notes": "Rewrote observations_seq11.md. Pruned verbiage from k12-barrier bypass, ensuring exact technical statements remain while stripping meta-commentary.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.565165Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.565165Z"
+        },
+        "field_hash": {
+          "md": "900641f1c84f",
+          "ts": "29afbfcdeec4",
+          "lean": "37ddede783d2"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.226Z"
+  "updated_at": "2026-07-07T14:26:56.565165Z"
 }

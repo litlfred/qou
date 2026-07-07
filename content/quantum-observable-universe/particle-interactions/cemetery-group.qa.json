@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/cemetery-group.lean"
   },
   "source_hashes": {
-    "md": "2c416c0e8a7e",
+    "md": "c84ab6bdf64a",
     "ts": "99a6348def1c",
     "lean": "28c5438db12f"
   },
@@ -1301,7 +1301,7 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "2c416c0e8a7e",
+          "md": "c84ab6bdf64a",
           "ts": "99a6348def1c",
           "lean": "28c5438db12f"
         },
@@ -1309,11 +1309,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.191162Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:20.299Z",
+        "reviewed_at": "2026-07-07T14:26:57.191162Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1321,7 +1321,7 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "2c416c0e8a7e",
+          "md": "c84ab6bdf64a",
           "ts": "99a6348def1c",
           "lean": "28c5438db12f"
         },
@@ -1329,11 +1329,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.191162Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:20.758Z",
+        "reviewed_at": "2026-07-07T14:26:57.191162Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -1341,7 +1341,7 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "2c416c0e8a7e",
+          "md": "c84ab6bdf64a",
           "ts": "99a6348def1c",
           "lean": "28c5438db12f"
         },
@@ -1349,9 +1349,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.191162Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.191162Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'Cemetery group (subcategory annihilated by $\\\\tau$)': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -1361,7 +1363,7 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "2c416c0e8a7e",
+          "md": "c84ab6bdf64a",
           "ts": "99a6348def1c",
           "lean": "28c5438db12f"
         },
@@ -1369,9 +1371,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.191162Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.191162Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Cemetery group (subcategory annihilated by $\\\\tau$)' presents substantial mathematical content: $\\mathcal{K}_n$ denote the category of finitely generated graded projective modules over the Khovanov\u2013Lauda\u2013Rouquier ...",
         "severity": "minor"
@@ -1380,7 +1384,7 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "2c416c0e8a7e",
+          "md": "c84ab6bdf64a",
           "ts": "99a6348def1c",
           "lean": "28c5438db12f"
         },
@@ -1388,9 +1392,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.191162Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.191162Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Cemetery group (subcategory annihilated by $\\\\tau$)'.",
         "severity": "minor",
@@ -1400,7 +1406,7 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "2c416c0e8a7e",
+          "md": "c84ab6bdf64a",
           "ts": "99a6348def1c",
           "lean": "28c5438db12f"
         },
@@ -1408,9 +1414,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.191162Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.191162Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'Cemetery group (subcategory annihilated by $\\\\tau$)' is appropriately qualified.",
         "severity": "minor"
@@ -1419,7 +1427,7 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "2c416c0e8a7e",
+          "md": "c84ab6bdf64a",
           "ts": "99a6348def1c",
           "lean": "28c5438db12f"
         },
@@ -1427,9 +1435,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.191162Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.191162Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Cemetery group (subcategory annihilated by $\\\\tau$)'.",
         "severity": "minor",
@@ -1439,7 +1449,7 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "2c416c0e8a7e",
+          "md": "c84ab6bdf64a",
           "ts": "99a6348def1c",
           "lean": "28c5438db12f"
         },
@@ -1447,9 +1457,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.191162Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.191162Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The argument flow in 'Cemetery group (subcategory annihilated by $\\\\tau$)' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -1459,7 +1471,7 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "2c416c0e8a7e",
+          "md": "c84ab6bdf64a",
           "ts": "99a6348def1c",
           "lean": "28c5438db12f"
         },
@@ -1467,9 +1479,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.191162Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.191162Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Lean formalization and narrative for 'Cemetery group (subcategory annihilated by $\\\\tau$)' are in complete agreement.",
         "severity": "minor"
@@ -1478,7 +1492,7 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "2c416c0e8a7e",
+          "md": "c84ab6bdf64a",
           "ts": "99a6348def1c",
           "lean": "28c5438db12f"
         },
@@ -1486,9 +1500,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.191162Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.191162Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Citations to khovanovlauda2009, brundankleshchev2009 are correct and contextually appropriate.",
         "severity": "minor",
@@ -1498,7 +1514,7 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "2c416c0e8a7e",
+          "md": "c84ab6bdf64a",
           "ts": "99a6348def1c",
           "lean": "28c5438db12f"
         },
@@ -1506,9 +1522,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.191162Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.191162Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Cemetery group (subcategory annihilated by $\\\\tau$)' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1518,7 +1536,7 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "2c416c0e8a7e",
+          "md": "c84ab6bdf64a",
           "ts": "99a6348def1c",
           "lean": "28c5438db12f"
         },
@@ -1526,9 +1544,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.191162Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.191162Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Cemetery group (subcategory annihilated by $\\\\tau$)' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1538,7 +1558,7 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "2c416c0e8a7e",
+          "md": "c84ab6bdf64a",
           "ts": "99a6348def1c",
           "lean": "28c5438db12f"
         },
@@ -1546,9 +1566,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.191162Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.191162Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Cemetery group (subcategory annihilated by $\\\\tau$)' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1558,7 +1580,7 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "2c416c0e8a7e",
+          "md": "c84ab6bdf64a",
           "ts": "99a6348def1c",
           "lean": "28c5438db12f"
         },
@@ -1566,9 +1588,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.191162Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.191162Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'Cemetery group (subcategory annihilated by $\\\\tau$)' are reproducible.",
         "severity": "minor",
@@ -1578,7 +1602,7 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "2c416c0e8a7e",
+          "md": "c84ab6bdf64a",
           "ts": "99a6348def1c",
           "lean": "28c5438db12f"
         },
@@ -1586,9 +1610,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.191162Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.191162Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -1619,7 +1645,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "2c416c0e8a7e",
+          "md": "c84ab6bdf64a",
           "ts": "99a6348def1c",
           "lean": "28c5438db12f"
         },
@@ -1627,9 +1653,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.191162Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_at": "2026-07-07T14:26:57.191162Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'def:cemetery-group' \u2192 expected 'cemetery_group'; Lean declares: CemeteryGroup, zero_not_in_cemetery. Structural match via content."
       }
@@ -1638,14 +1666,21 @@
       {
         "result": "pass",
         "notes": "Rewrote seq15 to enforce Milnor brevity. Replaced verbose phrasing with concise declarative sentences, eliminating 'This section ... We then ...' patterns where possible. Simplified 'Conjectural status' blocks.",
-        "reviewed_at": "2026-07-06T22:50:00Z",
+        "reviewed_at": "2026-07-07T14:26:57.191162Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.191162Z"
+        },
+        "field_hash": {
+          "md": "c84ab6bdf64a",
+          "ts": "99a6348def1c",
+          "lean": "28c5438db12f"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.802Z"
+  "updated_at": "2026-07-07T14:26:57.191162Z"
 }

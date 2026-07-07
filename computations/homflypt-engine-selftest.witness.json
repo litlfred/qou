@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-24T00:43:25.295865+00:00",
-  "commitSha": "48494062b0b090c4484ee6c0920fb6fcd86199e0",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-07-07T13:42:07.414580+00:00",
+  "commitSha": "85da4f43133d9d70ca3582f4fa4f31771b5ec3f1",
   "assertions": [
     {
       "name": "unknot_is_1",
@@ -30,11 +30,25 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 26,
+  "durationMs": 13,
   "computation": "homflypt-engine-selftest",
   "scriptFile": "homflypt_engine.py",
-  "scriptHash": "75ea0070387a",
-  "scriptCommitSha": "cbaeb25c7d0a97fbfdd48510e40d124245e3933b",
+  "scriptHash": "ef6a6a6e3aad",
+  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
   "description": "HOMFLYPT engine self-test witness. Validates the Hecke-algebra Ocneanu-trace engine against known polynomial values (unknot, Hopf link, trefoil ±). Records SU(N) family evaluations and Gram-matrix entries for the 2-strand basis. CI gate: any regression in the known polynomial tests fails the assertion.",
   "contentBlock": "rem:archimedean-image-table",
   "data": {
@@ -44,13 +58,13 @@
     "trefoil_polynomial": "-v^-4 + 2*v^-2 + v^-2z^2",
     "hopf_polynomial": "v^-3z^-1 - v^-1z^-1 - v^-1z",
     "su_n_family_trefoil_q1_11": {
-      "2": "1.0",
-      "3": "0.8775937833538816",
-      "4": "0.7545220027617022",
-      "5": "0.6304496119816347",
-      "6": "0.5050388407462352"
+      "2": "0.8775937990887602",
+      "3": "0.7545220344639979",
+      "4": "0.6304496600014465",
+      "5": "0.5050389055527787",
+      "6": "0.3779483574123611"
     },
-    "gram_trefoil_trefoil_su2": "-1.0",
-    "gram_trefoil_mirror_su2": "-1.0"
+    "gram_trefoil_trefoil_su2": "-2.416265434648874",
+    "gram_trefoil_mirror_su2": "-2.002722363860533"
   }
 }

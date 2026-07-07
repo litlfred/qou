@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/exterior-square-borromean.lean"
   },
   "source_hashes": {
-    "md": "686fea742a40",
+    "md": "162898b16001",
     "ts": "098543b50fde",
     "lean": "51b02c6b7a1b"
   },
@@ -36,7 +36,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "686fea742a40",
+          "md": "162898b16001",
           "ts": "098543b50fde",
           "lean": "51b02c6b7a1b"
         },
@@ -44,9 +44,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.951137Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_at": "2026-07-07T14:26:56.951137Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:exterior-square-borromean' \u2192 expected 'exterior_square_borromean'; Lean declares: exterior_square_dim, exterior_square_C10, exterior_square_decomposition, borromean_strand_pair_count, lambda_2_C10_irreducibles.... Structural match via content."
       }
@@ -55,14 +57,21 @@
       {
         "result": "pass",
         "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
-        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.951137Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.951137Z"
+        },
+        "field_hash": {
+          "md": "162898b16001",
+          "ts": "098543b50fde",
+          "lean": "51b02c6b7a1b"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.430Z"
+  "updated_at": "2026-07-07T14:26:56.951137Z"
 }

@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/quantum-observable-universes/intro-q-resolvent-wick.md"
   },
   "source_hashes": {
-    "ts": "510b336e3a5d",
-    "md": "225feb9ee507"
+    "md": "f5f4e5f41b5a",
+    "ts": "510b336e3a5d"
   },
   "criteria": {
     "q-usage-regime-detected": [
@@ -128,14 +128,20 @@
       {
         "result": "pass",
         "notes": "Unified existence/uniqueness statements and omitted structural tables. Condensed properties.",
-        "reviewed_at": "2026-07-06T22:46:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.787039Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.787039Z"
+        },
+        "field_hash": {
+          "md": "f5f4e5f41b5a",
+          "ts": "510b336e3a5d"
         }
       }
     ]
   },
-  "updated_at": "2026-06-01T16:06:38.106Z"
+  "updated_at": "2026-07-07T14:26:55.787039Z"
 }

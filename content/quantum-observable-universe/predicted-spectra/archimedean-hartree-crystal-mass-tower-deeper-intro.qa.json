@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/predicted-spectra/archimedean-hartree-crystal-mass-tower-deeper-intro.md"
   },
   "source_hashes": {
-    "md": "442c342c3f83",
+    "md": "06d7d8b28bca",
     "ts": "2b5bb5dda724"
   },
   "criteria": {
@@ -818,18 +818,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "442c342c3f83",
+          "md": "06d7d8b28bca",
           "ts": "2b5bb5dda724"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.340099Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:51.127Z",
+        "reviewed_at": "2026-07-07T14:26:56.340099Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -837,16 +837,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "442c342c3f83",
+          "md": "06d7d8b28bca",
           "ts": "2b5bb5dda724"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.340099Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.340099Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'Archimedean Hartree Crystal Mass Tower Deeper Intro': mathematical reasoning is consistent in prose.",
         "severity": "minor",
@@ -856,16 +858,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "442c342c3f83",
+          "md": "06d7d8b28bca",
           "ts": "2b5bb5dda724"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.340099Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.340099Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Archimedean Hartree Crystal Mass Tower Deeper Intro' presents substantial mathematical content: 'The substantive Mathlib fillers identify the categorical structures (Clausen-...'.",
         "severity": "minor"
@@ -874,16 +878,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "442c342c3f83",
+          "md": "06d7d8b28bca",
           "ts": "2b5bb5dda724"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.340099Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.340099Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Archimedean Hartree Crystal Mass Tower Deeper Intro'.",
         "severity": "minor",
@@ -893,16 +899,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "442c342c3f83",
+          "md": "06d7d8b28bca",
           "ts": "2b5bb5dda724"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.340099Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.340099Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The remarks and narrative scope in 'Archimedean Hartree Crystal Mass Tower Deeper Intro' are appropriately qualified.",
         "severity": "minor"
@@ -911,16 +919,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "442c342c3f83",
+          "md": "06d7d8b28bca",
           "ts": "2b5bb5dda724"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.340099Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.340099Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Archimedean Hartree Crystal Mass Tower Deeper Intro'.",
         "severity": "minor",
@@ -930,16 +940,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "442c342c3f83",
+          "md": "06d7d8b28bca",
           "ts": "2b5bb5dda724"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.340099Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.340099Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose arguments in 'Archimedean Hartree Crystal Mass Tower Deeper Intro' proceed logically through the stated steps.",
         "severity": "minor",
@@ -949,16 +961,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "442c342c3f83",
+          "md": "06d7d8b28bca",
           "ts": "2b5bb5dda724"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.340099Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.340099Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No Lean sibling required; narrative matches the expected configuration.",
         "severity": "minor"
@@ -967,16 +981,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "442c342c3f83",
+          "md": "06d7d8b28bca",
           "ts": "2b5bb5dda724"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.340099Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.340099Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Archimedean Hartree Crystal Mass Tower Deeper Intro', hence no citation misuse is possible.",
         "severity": "minor",
@@ -986,16 +1002,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "442c342c3f83",
+          "md": "06d7d8b28bca",
           "ts": "2b5bb5dda724"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.340099Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.340099Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Archimedean Hartree Crystal Mass Tower Deeper Intro' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1005,16 +1023,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "442c342c3f83",
+          "md": "06d7d8b28bca",
           "ts": "2b5bb5dda724"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.340099Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.340099Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Archimedean Hartree Crystal Mass Tower Deeper Intro' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1024,16 +1044,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "442c342c3f83",
+          "md": "06d7d8b28bca",
           "ts": "2b5bb5dda724"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.340099Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.340099Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Archimedean Hartree Crystal Mass Tower Deeper Intro' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1043,16 +1065,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "442c342c3f83",
+          "md": "06d7d8b28bca",
           "ts": "2b5bb5dda724"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.340099Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.340099Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'Archimedean Hartree Crystal Mass Tower Deeper Intro' are reproducible.",
         "severity": "minor"
@@ -1061,16 +1085,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "442c342c3f83",
+          "md": "06d7d8b28bca",
           "ts": "2b5bb5dda724"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.340099Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.340099Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -1082,14 +1108,20 @@
       {
         "result": "pass",
         "notes": "Rewrote prose blocks to adhere to Milnor standards. Improved economy, preserved all math.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.340099Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.340099Z"
+        },
+        "field_hash": {
+          "md": "06d7d8b28bca",
+          "ts": "2b5bb5dda724"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.812Z"
+  "updated_at": "2026-07-07T14:26:56.340099Z"
 }

@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/fluid-dynamics/ns-obstruction-spectral-gap.md"
   },
   "source_hashes": {
-    "md": "efa15b8d5a81",
+    "md": "514c4ab372f2",
     "ts": "c2859e245156"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Rewrote fluid-dynamics_seq4.md to eliminate passive fluff and prioritize 'Why'. Kept '<!-- FILE_START: ... -->' bounds.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.297942Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.297942Z"
+        },
+        "field_hash": {
+          "md": "514c4ab372f2",
+          "ts": "c2859e245156"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:55.699Z"
+  "updated_at": "2026-07-07T14:26:56.297942Z"
 }

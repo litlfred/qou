@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/braids-and-knots/eigenbasis-structural-lemmas.md"
   },
   "source_hashes": {
-    "md": "971e242027a5",
+    "md": "79121b51d06f",
     "ts": "d0430cdd83af"
   },
   "criteria": {
@@ -53,14 +53,20 @@
       {
         "result": "pass",
         "notes": "Milnor brevity applied. Stripped bloated structural forward references from the intro block. Streamlined the structural lemmas block, keeping the Lean references brief but removing cluttered formalization syntax.",
-        "reviewed_at": "2026-07-06T22:38:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.347522Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.347522Z"
+        },
+        "field_hash": {
+          "md": "79121b51d06f",
+          "ts": "d0430cdd83af"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:55.297Z"
+  "updated_at": "2026-07-07T14:26:55.347522Z"
 }

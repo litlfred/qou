@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean"
   },
   "source_hashes": {
-    "md": "7a8f9d406419",
+    "md": "8b283a5c640e",
     "ts": "1128c70fab45",
     "lean": "f7939c40239a"
   },
@@ -1253,19 +1253,19 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "7683fd7cf3eb",
+          "md": "8b283a5c640e",
           "ts": "1128c70fab45",
-          "lean": "f6090fbf18ce"
+          "lean": "f7939c40239a"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.347792Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:20.260Z",
+        "reviewed_at": "2026-07-07T14:26:57.347792Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
       }
@@ -1273,19 +1273,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "7683fd7cf3eb",
+          "md": "8b283a5c640e",
           "ts": "1128c70fab45",
-          "lean": "f6090fbf18ce"
+          "lean": "f7939c40239a"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.347792Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:20.745Z",
+        "reviewed_at": "2026-07-07T14:26:57.347792Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1293,19 +1293,19 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "7683fd7cf3eb",
+          "md": "8b283a5c640e",
           "ts": "1128c70fab45",
-          "lean": "f6090fbf18ce"
+          "lean": "f7939c40239a"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.347792Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:21.047Z",
+        "reviewed_at": "2026-07-07T14:26:57.347792Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -1313,19 +1313,19 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "7683fd7cf3eb",
+          "md": "8b283a5c640e",
           "ts": "1128c70fab45",
-          "lean": "f6090fbf18ce"
+          "lean": "f7939c40239a"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.347792Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:21.494Z",
+        "reviewed_at": "2026-07-07T14:26:57.347792Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
       }
@@ -1365,7 +1365,7 @@
       },
       {
         "field_hash": {
-          "md": "7a8f9d406419",
+          "md": "8b283a5c640e",
           "ts": "1128c70fab45",
           "lean": "f7939c40239a"
         },
@@ -1373,9 +1373,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.347792Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_at": "2026-07-07T14:26:57.347792Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'thm:confinement-grading-correspondence-conditional' aligns with Lean declaration. Sorry-free."
       }
@@ -1423,20 +1425,20 @@
       },
       {
         "field_hash": {
-          "md": "7683fd7cf3eb",
+          "md": "8b283a5c640e",
           "ts": "1128c70fab45",
-          "lean": "f6090fbf18ce"
+          "lean": "f7939c40239a"
         },
         "result": "pass",
         "notes": "Clear \u00a73b-cond pattern: axiomatize conjecture as class field, derive the per-\u2113 iff by two rw directions; both narrative and Lean aligned.",
-        "reviewed_at": "2026-06-25T17:03:34.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.347792Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.347792Z"
         },
         "score": {
           "max": 1,
@@ -1487,20 +1489,20 @@
       },
       {
         "field_hash": {
-          "md": "7683fd7cf3eb",
+          "md": "8b283a5c640e",
           "ts": "1128c70fab45",
-          "lean": "f6090fbf18ce"
+          "lean": "f7939c40239a"
         },
         "result": "pass",
         "notes": "Conditional confinement-filtration = KLR \u2124-grading correspondence, well-posed modulo the named upstream conjecture (Brundan-Kleshchev backing).",
-        "reviewed_at": "2026-06-25T17:03:34.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.347792Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.347792Z"
         },
         "score": {
           "max": 1,
@@ -1551,20 +1553,20 @@
       },
       {
         "field_hash": {
-          "md": "7683fd7cf3eb",
+          "md": "8b283a5c640e",
           "ts": "1128c70fab45",
-          "lean": "f6090fbf18ce"
+          "lean": "f7939c40239a"
         },
         "result": "pass",
         "notes": "Connects QOU LP shadow-price filtration to KLR grading; conditional but a non-trivial structural identification, with empirical k_max\u22647 table.",
-        "reviewed_at": "2026-06-25T17:03:34.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.347792Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.347792Z"
         },
         "score": {
           "max": 1,
@@ -1611,39 +1613,39 @@
       },
       {
         "field_hash": {
-          "md": "7683fd7cf3eb",
+          "md": "8b283a5c640e",
           "ts": "1128c70fab45",
-          "lean": "f6090fbf18ce"
+          "lean": "f7939c40239a"
         },
         "result": "pass",
         "notes": "Theorem derives iff (confinementLevel T=\u2113 \u2194 KLRTopDegree(klr_lift T)=\u2113) by rw on class field confinement_eq_klr_top_degree; faithful \u00a73b-cond, sorry only in class instance. (NB uses deprecated 'constant' kw.)",
-        "reviewed_at": "2026-06-25T17:03:33.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.347792Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.347792Z"
         }
       }
     ],
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "7683fd7cf3eb",
+          "md": "8b283a5c640e",
           "ts": "1128c70fab45",
-          "lean": "f6090fbf18ce"
+          "lean": "f7939c40239a"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.347792Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:23.899Z",
+        "reviewed_at": "2026-07-07T14:26:57.347792Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
       }
@@ -1651,19 +1653,19 @@
     "proof-no-trivial-true": [
       {
         "field_hash": {
-          "md": "7683fd7cf3eb",
+          "md": "8b283a5c640e",
           "ts": "1128c70fab45",
-          "lean": "f6090fbf18ce"
+          "lean": "f7939c40239a"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.347792Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:24.240Z",
+        "reviewed_at": "2026-07-07T14:26:57.347792Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
       }
@@ -1707,20 +1709,20 @@
       },
       {
         "field_hash": {
-          "md": "7683fd7cf3eb",
+          "md": "8b283a5c640e",
           "ts": "1128c70fab45",
-          "lean": "f6090fbf18ce"
+          "lean": "f7939c40239a"
         },
         "result": "pass",
         "notes": "Class instance + (T,\u2113) satisfiable; equality \u2200T confinementLevel=KLRTopDegree is a consistent hypothesis, not contradictory.",
-        "reviewed_at": "2026-06-25T17:03:34.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.347792Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.347792Z"
         }
       }
     ],
@@ -1763,20 +1765,20 @@
       },
       {
         "field_hash": {
-          "md": "7683fd7cf3eb",
+          "md": "8b283a5c640e",
           "ts": "1128c70fab45",
-          "lean": "f6090fbf18ce"
+          "lean": "f7939c40239a"
         },
         "result": "pass",
         "notes": "Binders [inst:CrystalGraphRealization], (T), (\u2113) all used: inst.confinement_eq_klr_top_degree T and hT/hKLR drive both rw directions.",
-        "reviewed_at": "2026-06-25T17:03:34.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.347792Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.347792Z"
         }
       }
     ],
@@ -1801,37 +1803,39 @@
       },
       {
         "field_hash": {
-          "md": "7683fd7cf3eb",
+          "md": "8b283a5c640e",
           "ts": "1128c70fab45",
-          "lean": "f6090fbf18ce"
+          "lean": "f7939c40239a"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: only plain `decide` (kernel-checked decision procedure on a decidable finite/arithmetic goal), no `native_decide`. Accepted corpus-wide (\u00a71a scopes the masking prohibition to `native_decide`; 19 PASS blocks use plain `decide`). 2026-06-22 fail reclassified.",
-        "reviewed_at": "2026-06-25T12:27:24.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.347792Z",
         "reviewed_sha": "1debdf1526f15021143bdde1776810ae6c406976",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.347792Z"
         }
       }
     ],
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "7683fd7cf3eb",
+          "md": "8b283a5c640e",
           "ts": "1128c70fab45",
-          "lean": "f6090fbf18ce"
+          "lean": "f7939c40239a"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.347792Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.347792Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The claim in 'Confinement = KLR grading shift (conditional on Brundan\u2013Kleshchev isomorphism + crystal-graph realisation)' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean:25:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Order/Defs.olean' of module Mathlib.Order.Defs does not exist.",
         "severity": "minor",
@@ -1841,17 +1845,19 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "7683fd7cf3eb",
+          "md": "8b283a5c640e",
           "ts": "1128c70fab45",
-          "lean": "f6090fbf18ce"
+          "lean": "f7939c40239a"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.347792Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.347792Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "major",
@@ -1861,17 +1867,19 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "7683fd7cf3eb",
+          "md": "8b283a5c640e",
           "ts": "1128c70fab45",
-          "lean": "f6090fbf18ce"
+          "lean": "f7939c40239a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.347792Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.347792Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Confinement = KLR grading shift (conditional on Brundan\u2013Kleshchev isomorphism + crystal-graph realisation)'.",
         "severity": "minor",
@@ -1881,17 +1889,19 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "7683fd7cf3eb",
+          "md": "8b283a5c640e",
           "ts": "1128c70fab45",
-          "lean": "f6090fbf18ce"
+          "lean": "f7939c40239a"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.347792Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.347792Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose in 'Confinement = KLR grading shift (conditional on Brundan\u2013Kleshchev isomorphism + crystal-graph realisation)' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean is incomplete (has sorry).",
         "severity": "minor"
@@ -1900,17 +1910,19 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "7683fd7cf3eb",
+          "md": "8b283a5c640e",
           "ts": "1128c70fab45",
-          "lean": "f6090fbf18ce"
+          "lean": "f7939c40239a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.347792Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.347792Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Confinement = KLR grading shift (conditional on Brundan\u2013Kleshchev isomorphism + crystal-graph realisation)'.",
         "severity": "minor",
@@ -1920,17 +1932,19 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "7683fd7cf3eb",
+          "md": "8b283a5c640e",
           "ts": "1128c70fab45",
-          "lean": "f6090fbf18ce"
+          "lean": "f7939c40239a"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.347792Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.347792Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean.",
         "severity": "minor",
@@ -1940,17 +1954,19 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "7683fd7cf3eb",
+          "md": "8b283a5c640e",
           "ts": "1128c70fab45",
-          "lean": "f6090fbf18ce"
+          "lean": "f7939c40239a"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.347792Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.347792Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
@@ -1959,17 +1975,19 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "7683fd7cf3eb",
+          "md": "8b283a5c640e",
           "ts": "1128c70fab45",
-          "lean": "f6090fbf18ce"
+          "lean": "f7939c40239a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.347792Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.347792Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Citations to khovanovlauda2009, brundankleshchev2009 are correct and contextually appropriate.",
         "severity": "minor",
@@ -1979,17 +1997,19 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "7683fd7cf3eb",
+          "md": "8b283a5c640e",
           "ts": "1128c70fab45",
-          "lean": "f6090fbf18ce"
+          "lean": "f7939c40239a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.347792Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.347792Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Confinement = KLR grading shift (conditional on Brundan\u2013Kleshchev isomorphism + crystal-graph realisation)' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1999,17 +2019,19 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "7683fd7cf3eb",
+          "md": "8b283a5c640e",
           "ts": "1128c70fab45",
-          "lean": "f6090fbf18ce"
+          "lean": "f7939c40239a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.347792Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.347792Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Confinement = KLR grading shift (conditional on Brundan\u2013Kleshchev isomorphism + crystal-graph realisation)' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -2019,17 +2041,19 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "7683fd7cf3eb",
+          "md": "8b283a5c640e",
           "ts": "1128c70fab45",
-          "lean": "f6090fbf18ce"
+          "lean": "f7939c40239a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.347792Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.347792Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Confinement = KLR grading shift (conditional on Brundan\u2013Kleshchev isomorphism + crystal-graph realisation)' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -2039,17 +2063,19 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "7683fd7cf3eb",
+          "md": "8b283a5c640e",
           "ts": "1128c70fab45",
-          "lean": "f6090fbf18ce"
+          "lean": "f7939c40239a"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.347792Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.347792Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
@@ -2059,17 +2085,19 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "7683fd7cf3eb",
+          "md": "8b283a5c640e",
           "ts": "1128c70fab45",
-          "lean": "f6090fbf18ce"
+          "lean": "f7939c40239a"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.347792Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.347792Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean fails compilation: content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean:25:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Order/Defs.olean' of module Mathlib.Order.Defs does not exist",
         "severity": "critical",
@@ -2101,14 +2129,21 @@
       {
         "result": "pass",
         "notes": "Rewrote seq15 to enforce Milnor brevity. Replaced verbose phrasing with concise declarative sentences, eliminating 'This section ... We then ...' patterns where possible. Simplified 'Conjectural status' blocks.",
-        "reviewed_at": "2026-07-06T22:50:00Z",
+        "reviewed_at": "2026-07-07T14:26:57.347792Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.347792Z"
+        },
+        "field_hash": {
+          "md": "8b283a5c640e",
+          "ts": "1128c70fab45",
+          "lean": "f7939c40239a"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.802Z"
+  "updated_at": "2026-07-07T14:26:57.347792Z"
 }

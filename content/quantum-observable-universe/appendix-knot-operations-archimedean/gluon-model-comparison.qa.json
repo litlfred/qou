@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/appendix-knot-operations-archimedean/gluon-model-comparison.md"
   },
   "source_hashes": {
-    "md": "7969ee5956c6",
+    "md": "ed103c8c9462",
     "ts": "9178e64f4bc7"
   },
   "criteria": {
@@ -820,18 +820,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "7969ee5956c6",
+          "md": "ed103c8c9462",
           "ts": "9178e64f4bc7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.140643Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:20.909Z",
+        "reviewed_at": "2026-07-07T14:26:55.140643Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -839,15 +839,17 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "7969ee5956c6",
+          "md": "ed103c8c9462",
           "ts": "9178e64f4bc7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.140643Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:55.140643Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The algebraic calculations are correct.",
         "severity": "minor"
@@ -856,15 +858,17 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "7969ee5956c6",
+          "md": "ed103c8c9462",
           "ts": "9178e64f4bc7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.140643Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:55.140643Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The block defines five models and compares their predictions.",
         "severity": "minor"
@@ -873,15 +877,17 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "7969ee5956c6",
+          "md": "ed103c8c9462",
           "ts": "9178e64f4bc7"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.140643Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:55.140643Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The exact match of Model A to the CODATA value Q is circular, because the quark-level energy scale E0 is calibrated using that very same model result to match CODATA.",
         "severity": "minor"
@@ -890,15 +896,17 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "7969ee5956c6",
+          "md": "ed103c8c9462",
           "ts": "9178e64f4bc7"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.140643Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:55.140643Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The text claims Model A 'matches CODATA exactly' as if it were a predictive success, when it is actually an exact parameter calibration.",
         "severity": "minor"
@@ -907,15 +915,17 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "7969ee5956c6",
+          "md": "ed103c8c9462",
           "ts": "9178e64f4bc7"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.140643Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:55.140643Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The parameter E0 \u2248 4.155 MeV acts as a free calibration scale parameter adjusted to force the exact match with the target CODATA value.",
         "severity": "major"
@@ -924,15 +934,17 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "7969ee5956c6",
+          "md": "ed103c8c9462",
           "ts": "9178e64f4bc7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.140643Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:55.140643Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The logical comparison steps are sound.",
         "severity": "minor"
@@ -941,15 +953,17 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "7969ee5956c6",
+          "md": "ed103c8c9462",
           "ts": "9178e64f4bc7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.140643Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:55.140643Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No divergence is found.",
         "severity": "minor"
@@ -958,15 +972,17 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "7969ee5956c6",
+          "md": "ed103c8c9462",
           "ts": "9178e64f4bc7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.140643Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:55.140643Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The citations are correct.",
         "severity": "minor"
@@ -975,15 +991,17 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "7969ee5956c6",
+          "md": "ed103c8c9462",
           "ts": "9178e64f4bc7"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.140643Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:55.140643Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The definition of \\mathrm{cx}(q_0, q_1) and its crossing orientations is not fully specified, and terms like L+ and L- are undefined.",
         "severity": "minor"
@@ -992,15 +1010,17 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "7969ee5956c6",
+          "md": "ed103c8c9462",
           "ts": "9178e64f4bc7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.140643Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:55.140643Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The calculations are exact.",
         "severity": "minor"
@@ -1009,15 +1029,17 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "7969ee5956c6",
+          "md": "ed103c8c9462",
           "ts": "9178e64f4bc7"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.140643Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:55.140643Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Assigning physical meaning to individual coefficients in a Hecke algebra normal form as 'gluon content' and 'color neutrality' lacks any connection to physical quantum chromodynamics.",
         "severity": "minor"
@@ -1026,15 +1048,17 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "7969ee5956c6",
+          "md": "ed103c8c9462",
           "ts": "9178e64f4bc7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.140643Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:55.140643Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The calculations are verified by the nucleon-with-gluons-nf witness.",
         "severity": "minor"
@@ -1043,15 +1067,17 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "7969ee5956c6",
+          "md": "ed103c8c9462",
           "ts": "9178e64f4bc7"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.140643Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:55.140643Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "severity": "major",
         "verdict": "survivable-objection",
@@ -1062,14 +1088,20 @@
       {
         "result": "pass",
         "notes": "Smoothed transitions, enforced H1-H8 principles, simplified phrasing, preserved all math.",
-        "reviewed_at": "2026-07-06T22:37:29Z",
+        "reviewed_at": "2026-07-07T14:26:55.140643Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.140643Z"
+        },
+        "field_hash": {
+          "md": "ed103c8c9462",
+          "ts": "9178e64f4bc7"
         }
       }
     ]
   },
-  "updated_at": "2026-06-28T07:05:42.356Z"
+  "updated_at": "2026-07-07T14:26:55.140643Z"
 }

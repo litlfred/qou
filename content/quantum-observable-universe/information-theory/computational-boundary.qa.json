@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/information-theory/computational-boundary.lean"
   },
   "source_hashes": {
-    "md": "a186db888708",
+    "md": "dea85bbbeaa7",
     "ts": "f2f3c705101d",
     "lean": "d35b743542b2"
   },
@@ -878,14 +878,21 @@
       {
         "result": "pass",
         "notes": "Flattened complex tables/lists into dense, exact prose where appropriate. Aligned notation. Replaced 'we define' with direct declarative statements. Improved transitions between blocks while retaining original file markers.",
-        "reviewed_at": "2026-07-06T22:51:10Z",
+        "reviewed_at": "2026-07-07T14:26:55.538193Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.538193Z"
+        },
+        "field_hash": {
+          "md": "dea85bbbeaa7",
+          "ts": "f2f3c705101d",
+          "lean": "d35b743542b2"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T04:39:43.766Z"
+  "updated_at": "2026-07-07T14:26:55.538193Z"
 }

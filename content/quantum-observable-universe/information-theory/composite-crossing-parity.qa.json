@@ -8,8 +8,8 @@
     "lean": "../qou/content/quantum-observable-universe/information-theory/composite-crossing-parity.lean"
   },
   "source_hashes": {
-    "md": "a95d7d03618a",
-    "ts": "11160cd421fc",
+    "md": "aea2abba512a",
+    "ts": "0147cace2776",
     "lean": "1408db66ff45"
   },
   "criteria": {
@@ -1068,19 +1068,19 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "a95d7d03618a",
-          "ts": "11160cd421fc",
-          "lean": "846b178ebd21"
+          "md": "aea2abba512a",
+          "ts": "0147cace2776",
+          "lean": "1408db66ff45"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.605423Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:27.741Z",
+        "reviewed_at": "2026-07-07T14:26:55.605423Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
       }
@@ -1088,19 +1088,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "a95d7d03618a",
-          "ts": "11160cd421fc",
-          "lean": "846b178ebd21"
+          "md": "aea2abba512a",
+          "ts": "0147cace2776",
+          "lean": "1408db66ff45"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.605423Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:28.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.605423Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1108,19 +1108,19 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "a95d7d03618a",
-          "ts": "11160cd421fc",
-          "lean": "846b178ebd21"
+          "md": "aea2abba512a",
+          "ts": "0147cace2776",
+          "lean": "1408db66ff45"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.605423Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:28.513Z",
+        "reviewed_at": "2026-07-07T14:26:55.605423Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -1128,19 +1128,19 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "a95d7d03618a",
-          "ts": "11160cd421fc",
-          "lean": "846b178ebd21"
+          "md": "aea2abba512a",
+          "ts": "0147cace2776",
+          "lean": "1408db66ff45"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.605423Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:28.843Z",
+        "reviewed_at": "2026-07-07T14:26:55.605423Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
       }
@@ -1148,19 +1148,19 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "a95d7d03618a",
-          "ts": "11160cd421fc",
-          "lean": "846b178ebd21"
+          "md": "aea2abba512a",
+          "ts": "0147cace2776",
+          "lean": "1408db66ff45"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.605423Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:29.263Z",
+        "reviewed_at": "2026-07-07T14:26:55.605423Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
       }
@@ -1168,9 +1168,9 @@
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "a95d7d03618a",
-          "ts": "11160cd421fc",
-          "lean": "846b178ebd21"
+          "md": "aea2abba512a",
+          "ts": "0147cace2776",
+          "lean": "1408db66ff45"
         },
         "result": "pass",
         "score": {
@@ -1180,11 +1180,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.605423Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:29.693Z",
+        "reviewed_at": "2026-07-07T14:26:55.605423Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
       }
@@ -1192,9 +1192,9 @@
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "a95d7d03618a",
-          "ts": "11160cd421fc",
-          "lean": "846b178ebd21"
+          "md": "aea2abba512a",
+          "ts": "0147cace2776",
+          "lean": "1408db66ff45"
         },
         "result": "pass",
         "score": {
@@ -1204,11 +1204,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.605423Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:30.122Z",
+        "reviewed_at": "2026-07-07T14:26:55.605423Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
       }
@@ -1216,9 +1216,9 @@
     "proof-rater-novelty": [
       {
         "field_hash": {
-          "md": "a95d7d03618a",
-          "ts": "11160cd421fc",
-          "lean": "846b178ebd21"
+          "md": "aea2abba512a",
+          "ts": "0147cace2776",
+          "lean": "1408db66ff45"
         },
         "result": "pass",
         "score": {
@@ -1228,11 +1228,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.605423Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:30.516Z",
+        "reviewed_at": "2026-07-07T14:26:55.605423Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
       }
@@ -1240,19 +1240,19 @@
     "proof-statement-integrity": [
       {
         "field_hash": {
-          "md": "a95d7d03618a",
-          "ts": "11160cd421fc",
-          "lean": "846b178ebd21"
+          "md": "aea2abba512a",
+          "ts": "0147cace2776",
+          "lean": "1408db66ff45"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.605423Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:30.911Z",
+        "reviewed_at": "2026-07-07T14:26:55.605423Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
       }
@@ -1260,19 +1260,19 @@
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "a95d7d03618a",
-          "ts": "11160cd421fc",
-          "lean": "846b178ebd21"
+          "md": "aea2abba512a",
+          "ts": "0147cace2776",
+          "lean": "1408db66ff45"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.605423Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:31.305Z",
+        "reviewed_at": "2026-07-07T14:26:55.605423Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
       }
@@ -1316,18 +1316,19 @@
       },
       {
         "field_hash": {
-          "md": "a95d7d03618a",
-          "ts": "11160cd421fc",
+          "md": "aea2abba512a",
+          "ts": "0147cace2776",
           "lean": "1408db66ff45"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/lean-proof-vacuity-audit",
-          "agent_date": "2026-07-04",
-          "agent_skill": "local/lean-proof-vacuity-audit"
+          "agent_date": "2026-07-07T14:26:55.605423Z",
+          "agent_skill": "local/lean-proof-vacuity-audit",
+          "agent_model": "gemini-3.1-pro"
         },
-        "reviewed_at": "2026-07-04T00:15:23.700181Z",
+        "reviewed_at": "2026-07-07T14:26:55.605423Z",
         "reviewed_sha": "b3302691b06ff4207b2e72cda23501bf922042e8",
         "notes": "Resolved: flagged 'def ... : True := trivial' no longer present; scanner produces no candidate at current hash."
       }
@@ -1335,19 +1336,19 @@
     "proof-no-false-premise": [
       {
         "field_hash": {
-          "md": "a95d7d03618a",
-          "ts": "11160cd421fc",
-          "lean": "846b178ebd21"
+          "md": "aea2abba512a",
+          "ts": "0147cace2776",
+          "lean": "1408db66ff45"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.605423Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:32.007Z",
+        "reviewed_at": "2026-07-07T14:26:55.605423Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
       }
@@ -1355,19 +1356,19 @@
     "proof-no-unused-hypotheses": [
       {
         "field_hash": {
-          "md": "a95d7d03618a",
-          "ts": "11160cd421fc",
-          "lean": "846b178ebd21"
+          "md": "aea2abba512a",
+          "ts": "0147cace2776",
+          "lean": "1408db66ff45"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.605423Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:32.377Z",
+        "reviewed_at": "2026-07-07T14:26:55.605423Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
       }
@@ -1375,19 +1376,19 @@
     "proof-no-decide-masking": [
       {
         "field_hash": {
-          "md": "a95d7d03618a",
-          "ts": "11160cd421fc",
-          "lean": "846b178ebd21"
+          "md": "aea2abba512a",
+          "ts": "0147cace2776",
+          "lean": "1408db66ff45"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.605423Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:32.709Z",
+        "reviewed_at": "2026-07-07T14:26:55.605423Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
@@ -1395,16 +1396,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "a95d7d03618a",
-          "ts": "11160cd421fc",
-          "lean": "846b178ebd21"
+          "md": "aea2abba512a",
+          "ts": "0147cace2776",
+          "lean": "1408db66ff45"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.605423Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.605423Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The claim in 'Sublimation from shell-filling representation theory' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
@@ -1414,16 +1417,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "a95d7d03618a",
-          "ts": "11160cd421fc",
-          "lean": "846b178ebd21"
+          "md": "aea2abba512a",
+          "ts": "0147cace2776",
+          "lean": "1408db66ff45"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.605423Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.605423Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The block 'Sublimation from shell-filling representation theory' presents substantial mathematical content: Let $\\mathcal{A}(Z, N)$ be a stable atom with electron configuration occupying s...",
         "severity": "minor"
@@ -1432,16 +1437,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "a95d7d03618a",
-          "ts": "11160cd421fc",
-          "lean": "846b178ebd21"
+          "md": "aea2abba512a",
+          "ts": "0147cace2776",
+          "lean": "1408db66ff45"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.605423Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.605423Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Sublimation from shell-filling representation theory'.",
         "severity": "minor",
@@ -1451,16 +1458,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "a95d7d03618a",
-          "ts": "11160cd421fc",
-          "lean": "846b178ebd21"
+          "md": "aea2abba512a",
+          "ts": "0147cace2776",
+          "lean": "1408db66ff45"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.605423Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.605423Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The prose presents 'Sublimation from shell-filling representation theory' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
@@ -1469,16 +1478,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "a95d7d03618a",
-          "ts": "11160cd421fc",
-          "lean": "846b178ebd21"
+          "md": "aea2abba512a",
+          "ts": "0147cace2776",
+          "lean": "1408db66ff45"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.605423Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.605423Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Sublimation from shell-filling representation theory'.",
         "severity": "minor",
@@ -1488,16 +1499,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "a95d7d03618a",
-          "ts": "11160cd421fc",
-          "lean": "846b178ebd21"
+          "md": "aea2abba512a",
+          "ts": "0147cace2776",
+          "lean": "1408db66ff45"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.605423Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.605423Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/information-theory/composite-crossing-parity.lean.",
         "severity": "minor",
@@ -1507,16 +1520,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "a95d7d03618a",
-          "ts": "11160cd421fc",
-          "lean": "846b178ebd21"
+          "md": "aea2abba512a",
+          "ts": "0147cace2776",
+          "lean": "1408db66ff45"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.605423Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.605423Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/information-theory/composite-crossing-parity.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
@@ -1525,16 +1540,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "a95d7d03618a",
-          "ts": "11160cd421fc",
-          "lean": "846b178ebd21"
+          "md": "aea2abba512a",
+          "ts": "0147cace2776",
+          "lean": "1408db66ff45"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.605423Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.605423Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No citations are present in 'Sublimation from shell-filling representation theory', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1544,16 +1561,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "a95d7d03618a",
-          "ts": "11160cd421fc",
-          "lean": "846b178ebd21"
+          "md": "aea2abba512a",
+          "ts": "0147cace2776",
+          "lean": "1408db66ff45"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.605423Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.605423Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Key terms and symbols in 'Sublimation from shell-filling representation theory' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1563,16 +1582,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "a95d7d03618a",
-          "ts": "11160cd421fc",
-          "lean": "846b178ebd21"
+          "md": "aea2abba512a",
+          "ts": "0147cace2776",
+          "lean": "1408db66ff45"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.605423Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.605423Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The algebraic and logical relations in 'Sublimation from shell-filling representation theory' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1582,16 +1603,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "a95d7d03618a",
-          "ts": "11160cd421fc",
-          "lean": "846b178ebd21"
+          "md": "aea2abba512a",
+          "ts": "0147cace2776",
+          "lean": "1408db66ff45"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.605423Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.605423Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The physical concepts described in 'Sublimation from shell-filling representation theory' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1601,16 +1624,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "a95d7d03618a",
-          "ts": "11160cd421fc",
-          "lean": "846b178ebd21"
+          "md": "aea2abba512a",
+          "ts": "0147cace2776",
+          "lean": "1408db66ff45"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.605423Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.605423Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/information-theory/composite-crossing-parity.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
@@ -1620,16 +1645,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "a95d7d03618a",
-          "ts": "11160cd421fc",
-          "lean": "846b178ebd21"
+          "md": "aea2abba512a",
+          "ts": "0147cace2776",
+          "lean": "1408db66ff45"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.605423Z"
         },
-        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_at": "2026-07-07T14:26:55.605423Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/information-theory/composite-crossing-parity.lean fails compilation: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/composite-crossing-parity.lean:9:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Parity.olean' of module Mathlib.Data.Nat.Parity does not exist",
         "severity": "critical",
@@ -1641,14 +1668,21 @@
       {
         "result": "pass",
         "notes": "Flattened representation theoretic phase boundaries. Streamlined van der Waals isolation logic. Stripped explicit lean block annotations and reference IDs per brevity rules. Condensed bridging text in H-bond boiling sections. Maintained all file markers.",
-        "reviewed_at": "2026-07-06T22:56:32Z",
+        "reviewed_at": "2026-07-07T14:26:55.605423Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.605423Z"
+        },
+        "field_hash": {
+          "md": "aea2abba512a",
+          "ts": "0147cace2776",
+          "lean": "1408db66ff45"
         }
       }
     ]
   },
-  "updated_at": "2026-07-04T00:43:45.333802Z"
+  "updated_at": "2026-07-07T14:26:55.605423Z"
 }

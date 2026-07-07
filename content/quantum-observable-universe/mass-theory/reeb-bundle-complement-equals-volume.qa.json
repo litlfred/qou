@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/mass-theory/reeb-bundle-complement-equals-volume.md"
   },
   "source_hashes": {
-    "md": "9c1e43993070",
+    "md": "73ac724af971",
     "ts": "4862714006b5"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Rewrote seq17 enforcing Milnor rules. Restructured wordy trajectory explanations into direct mathematical prose. Streamlined 'why before what' for the Reeb bundle and geometric constructs. Verified math formatting.",
-        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.780883Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.780883Z"
+        },
+        "field_hash": {
+          "md": "73ac724af971",
+          "ts": "4862714006b5"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-07T14:26:56.780883Z"
 }

@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-04T23:13:21.880751+00:00",
-  "commitSha": "296ee5b49675082838110e2f78848bb29aa0fe2c",
+  "computedAt": "2026-07-07T13:47:20.008256+00:00",
+  "commitSha": "85da4f43133d9d70ca3582f4fa4f31771b5ec3f1",
   "assertions": [
     {
       "name": "gb_count_nonneg_S_2",
@@ -72,14 +72,27 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 349765,
+  "durationMs": 199863,
   "computation": "nh-basis-shift",
   "scriptFile": "nh_basis_shift.py",
-  "scriptHash": "46c3406cfd3a",
-  "scriptCommitSha": "051b6d13c38e11d145a91c4bb6dfee1d0ad8028a",
+  "scriptHash": "de4d5003c534",
+  "scriptCommitSha": "bd1bdfe0583787dcbaaaa0a6d7b40a50159cdfb6",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
   "description": "Per-NF-letter shift accounting for the NH_n basis of H_n(q). For each w ∈ S_n (n ≤ 5) we compute the seminormal pole order at q = 0 of T_w, the naive per-letter upper bound (= ℓ(w)), and the GB-reduction count = ℓ(w) − pole_order. Validates the cycle-additive DP probe upper bound and cross-checks the torus-knot Coxeter element against alpha_shift_torus.py.",
   "contentBlock": "prop:alpha-shift-torus-knot",
-  "auditOnly": "docs/audits/2026-05-04-nh-basis-shift.md",
   "data": {
     "per_S_n": {
       "S_2": {

@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/molecular-construction/covalent-bond-order-and-lp-selection.md"
   },
   "source_hashes": {
-    "md": "0bb5604889a6",
+    "md": "678554e1a0f3",
     "ts": "8ac032d26350"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Tightened paragraphs. Removed 'draft'. Kept LP definitions and tables clean.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.519752Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.519752Z"
+        },
+        "field_hash": {
+          "md": "678554e1a0f3",
+          "ts": "8ac032d26350"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.117Z"
+  "updated_at": "2026-07-07T14:26:55.519752Z"
 }

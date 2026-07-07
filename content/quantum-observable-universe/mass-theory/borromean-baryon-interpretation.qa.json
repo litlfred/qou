@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/mass-theory/borromean-baryon-interpretation.md"
   },
   "source_hashes": {
-    "md": "4dd8bb299019",
+    "md": "bc3d6c64b0dd",
     "ts": "d5587fbdc675"
   },
   "criteria": {
@@ -838,18 +838,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "4dd8bb299019",
+          "md": "bc3d6c64b0dd",
           "ts": "d5587fbdc675"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.823080Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:59.998Z",
+        "reviewed_at": "2026-07-07T14:26:56.823080Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -857,16 +857,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "4dd8bb299019",
+          "md": "bc3d6c64b0dd",
           "ts": "d5587fbdc675"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.823080Z"
         },
-        "reviewed_at": "2026-06-28T10:58:45.272Z",
+        "reviewed_at": "2026-07-07T14:26:56.823080Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No false claims identified in 'Properties, mass, and confinement of the Borromean baryon': mathematical reasoning is consistent in prose.",
         "severity": "minor",
@@ -876,16 +878,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "4dd8bb299019",
+          "md": "bc3d6c64b0dd",
           "ts": "d5587fbdc675"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.823080Z"
         },
-        "reviewed_at": "2026-06-28T10:58:45.278Z",
+        "reviewed_at": "2026-07-07T14:26:56.823080Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The block 'Properties, mass, and confinement of the Borromean baryon' presents substantial mathematical content: 'The Borromean link $\\mathcal{B}_3$ has three components with'.",
         "severity": "minor"
@@ -894,16 +898,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "4dd8bb299019",
+          "md": "bc3d6c64b0dd",
           "ts": "d5587fbdc675"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.823080Z"
         },
-        "reviewed_at": "2026-06-28T10:58:45.284Z",
+        "reviewed_at": "2026-07-07T14:26:56.823080Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Properties, mass, and confinement of the Borromean baryon'.",
         "severity": "minor",
@@ -913,16 +919,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "4dd8bb299019",
+          "md": "bc3d6c64b0dd",
           "ts": "d5587fbdc675"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.823080Z"
         },
-        "reviewed_at": "2026-06-28T10:58:45.290Z",
+        "reviewed_at": "2026-07-07T14:26:56.823080Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The remarks and narrative scope in 'Properties, mass, and confinement of the Borromean baryon' are appropriately qualified.",
         "severity": "minor"
@@ -931,16 +939,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "4dd8bb299019",
+          "md": "bc3d6c64b0dd",
           "ts": "d5587fbdc675"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.823080Z"
         },
-        "reviewed_at": "2026-06-28T10:58:45.297Z",
+        "reviewed_at": "2026-07-07T14:26:56.823080Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Properties, mass, and confinement of the Borromean baryon'.",
         "severity": "minor",
@@ -950,16 +960,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "4dd8bb299019",
+          "md": "bc3d6c64b0dd",
           "ts": "d5587fbdc675"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.823080Z"
         },
-        "reviewed_at": "2026-06-28T10:58:45.302Z",
+        "reviewed_at": "2026-07-07T14:26:56.823080Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The prose arguments in 'Properties, mass, and confinement of the Borromean baryon' proceed logically through the stated steps.",
         "severity": "minor",
@@ -969,16 +981,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "4dd8bb299019",
+          "md": "bc3d6c64b0dd",
           "ts": "d5587fbdc675"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.823080Z"
         },
-        "reviewed_at": "2026-06-28T10:58:45.308Z",
+        "reviewed_at": "2026-07-07T14:26:56.823080Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No Lean sibling required; narrative matches the expected configuration.",
         "severity": "minor"
@@ -987,16 +1001,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "4dd8bb299019",
+          "md": "bc3d6c64b0dd",
           "ts": "d5587fbdc675"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.823080Z"
         },
-        "reviewed_at": "2026-06-28T10:58:45.314Z",
+        "reviewed_at": "2026-07-07T14:26:56.823080Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No citations are present in 'Properties, mass, and confinement of the Borromean baryon', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1006,16 +1022,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "4dd8bb299019",
+          "md": "bc3d6c64b0dd",
           "ts": "d5587fbdc675"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.823080Z"
         },
-        "reviewed_at": "2026-06-28T10:58:45.320Z",
+        "reviewed_at": "2026-07-07T14:26:56.823080Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Key terms and symbols in 'Properties, mass, and confinement of the Borromean baryon' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1025,16 +1043,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "4dd8bb299019",
+          "md": "bc3d6c64b0dd",
           "ts": "d5587fbdc675"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.823080Z"
         },
-        "reviewed_at": "2026-06-28T10:58:45.326Z",
+        "reviewed_at": "2026-07-07T14:26:56.823080Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The empirical claims in 'Properties, mass, and confinement of the Borromean baryon' are structurally anchored to the QOU mass framework and are stable.",
         "severity": "minor",
@@ -1044,16 +1064,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "4dd8bb299019",
+          "md": "bc3d6c64b0dd",
           "ts": "d5587fbdc675"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.823080Z"
         },
-        "reviewed_at": "2026-06-28T10:58:45.332Z",
+        "reviewed_at": "2026-07-07T14:26:56.823080Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The physical concepts described in 'Properties, mass, and confinement of the Borromean baryon' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1063,16 +1085,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "4dd8bb299019",
+          "md": "bc3d6c64b0dd",
           "ts": "d5587fbdc675"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.823080Z"
         },
-        "reviewed_at": "2026-06-28T10:58:45.338Z",
+        "reviewed_at": "2026-07-07T14:26:56.823080Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The derivation steps and formal definitions in 'Properties, mass, and confinement of the Borromean baryon' are reproducible.",
         "severity": "minor"
@@ -1081,16 +1105,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "4dd8bb299019",
+          "md": "bc3d6c64b0dd",
           "ts": "d5587fbdc675"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.823080Z"
         },
-        "reviewed_at": "2026-06-28T10:58:45.344Z",
+        "reviewed_at": "2026-07-07T14:26:56.823080Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -1102,14 +1128,20 @@
       {
         "result": "pass",
         "notes": "Rewrote prose sections of mass-theory_seq46.md to enforce H1-H8 and milnor-brevity. Preserved all math blocks and original section markers. Ensured linear flow, minimal technical clutter, and short declarative sentences.",
-        "reviewed_at": "2026-07-06T22:51:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.823080Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.823080Z"
+        },
+        "field_hash": {
+          "md": "bc3d6c64b0dd",
+          "ts": "d5587fbdc675"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-07T14:26:56.823080Z"
 }

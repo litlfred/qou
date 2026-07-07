@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.lean"
   },
   "source_hashes": {
-    "md": "7d6348b8788e",
+    "md": "e4b1a5db3f0c",
     "ts": "2469a091c744",
     "lean": "497df1c0b6e2"
   },
@@ -1104,19 +1104,19 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "86d931e6f0ba",
+          "md": "e4b1a5db3f0c",
           "ts": "2469a091c744",
-          "lean": "fd32f78a9a90"
+          "lean": "497df1c0b6e2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.454763Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:22.785Z",
+        "reviewed_at": "2026-07-07T14:26:57.454763Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
       }
@@ -1124,19 +1124,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "86d931e6f0ba",
+          "md": "e4b1a5db3f0c",
           "ts": "2469a091c744",
-          "lean": "fd32f78a9a90"
+          "lean": "497df1c0b6e2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.454763Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:23.170Z",
+        "reviewed_at": "2026-07-07T14:26:57.454763Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1144,19 +1144,19 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "86d931e6f0ba",
+          "md": "e4b1a5db3f0c",
           "ts": "2469a091c744",
-          "lean": "fd32f78a9a90"
+          "lean": "497df1c0b6e2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.454763Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:23.714Z",
+        "reviewed_at": "2026-07-07T14:26:57.454763Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -1164,19 +1164,19 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "86d931e6f0ba",
+          "md": "e4b1a5db3f0c",
           "ts": "2469a091c744",
-          "lean": "fd32f78a9a90"
+          "lean": "497df1c0b6e2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.454763Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:24.028Z",
+        "reviewed_at": "2026-07-07T14:26:57.454763Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
       }
@@ -1202,7 +1202,7 @@
       },
       {
         "field_hash": {
-          "md": "7d6348b8788e",
+          "md": "e4b1a5db3f0c",
           "ts": "2469a091c744",
           "lean": "497df1c0b6e2"
         },
@@ -1210,9 +1210,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.454763Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_at": "2026-07-07T14:26:57.454763Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'thm:groebner-shirshov-energy' aligns with Lean declaration. Sorry-free."
       }
@@ -1220,9 +1222,9 @@
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "86d931e6f0ba",
+          "md": "e4b1a5db3f0c",
           "ts": "2469a091c744",
-          "lean": "fd32f78a9a90"
+          "lean": "497df1c0b6e2"
         },
         "result": "pass",
         "score": {
@@ -1232,11 +1234,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.454763Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:24.619Z",
+        "reviewed_at": "2026-07-07T14:26:57.454763Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
       }
@@ -1244,9 +1246,9 @@
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "86d931e6f0ba",
+          "md": "e4b1a5db3f0c",
           "ts": "2469a091c744",
-          "lean": "fd32f78a9a90"
+          "lean": "497df1c0b6e2"
         },
         "result": "pass",
         "score": {
@@ -1256,11 +1258,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.454763Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:24.924Z",
+        "reviewed_at": "2026-07-07T14:26:57.454763Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
       }
@@ -1268,9 +1270,9 @@
     "proof-rater-novelty": [
       {
         "field_hash": {
-          "md": "86d931e6f0ba",
+          "md": "e4b1a5db3f0c",
           "ts": "2469a091c744",
-          "lean": "fd32f78a9a90"
+          "lean": "497df1c0b6e2"
         },
         "result": "pass",
         "score": {
@@ -1280,11 +1282,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.454763Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:25.095Z",
+        "reviewed_at": "2026-07-07T14:26:57.454763Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
       }
@@ -1292,19 +1294,19 @@
     "proof-statement-integrity": [
       {
         "field_hash": {
-          "md": "86d931e6f0ba",
+          "md": "e4b1a5db3f0c",
           "ts": "2469a091c744",
-          "lean": "fd32f78a9a90"
+          "lean": "497df1c0b6e2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.454763Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:25.287Z",
+        "reviewed_at": "2026-07-07T14:26:57.454763Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
       }
@@ -1312,19 +1314,19 @@
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "86d931e6f0ba",
+          "md": "e4b1a5db3f0c",
           "ts": "2469a091c744",
-          "lean": "fd32f78a9a90"
+          "lean": "497df1c0b6e2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.454763Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:25.443Z",
+        "reviewed_at": "2026-07-07T14:26:57.454763Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
       }
@@ -1332,19 +1334,19 @@
     "proof-no-trivial-true": [
       {
         "field_hash": {
-          "md": "86d931e6f0ba",
+          "md": "e4b1a5db3f0c",
           "ts": "2469a091c744",
-          "lean": "fd32f78a9a90"
+          "lean": "497df1c0b6e2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.454763Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:25.529Z",
+        "reviewed_at": "2026-07-07T14:26:57.454763Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
       }
@@ -1352,19 +1354,19 @@
     "proof-no-false-premise": [
       {
         "field_hash": {
-          "md": "86d931e6f0ba",
+          "md": "e4b1a5db3f0c",
           "ts": "2469a091c744",
-          "lean": "fd32f78a9a90"
+          "lean": "497df1c0b6e2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.454763Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:25.650Z",
+        "reviewed_at": "2026-07-07T14:26:57.454763Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
       }
@@ -1372,19 +1374,19 @@
     "proof-no-unused-hypotheses": [
       {
         "field_hash": {
-          "md": "86d931e6f0ba",
+          "md": "e4b1a5db3f0c",
           "ts": "2469a091c744",
-          "lean": "fd32f78a9a90"
+          "lean": "497df1c0b6e2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.454763Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:25.706Z",
+        "reviewed_at": "2026-07-07T14:26:57.454763Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
       }
@@ -1392,19 +1394,19 @@
     "proof-no-decide-masking": [
       {
         "field_hash": {
-          "md": "86d931e6f0ba",
+          "md": "e4b1a5db3f0c",
           "ts": "2469a091c744",
-          "lean": "fd32f78a9a90"
+          "lean": "497df1c0b6e2"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.454763Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:25.759Z",
+        "reviewed_at": "2026-07-07T14:26:57.454763Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
@@ -1412,17 +1414,19 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "86d931e6f0ba",
+          "md": "e4b1a5db3f0c",
           "ts": "2469a091c744",
-          "lean": "fd32f78a9a90"
+          "lean": "497df1c0b6e2"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.454763Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.454763Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The mathematical claims in 'Energy as a Gr\u00f6bner--Shirshov invariant of the nuclear braid' are unverified due to compile errors in the Lean sibling file: content/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.lean:39:17: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern.",
         "severity": "minor",
@@ -1432,17 +1436,19 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "86d931e6f0ba",
+          "md": "e4b1a5db3f0c",
           "ts": "2469a091c744",
-          "lean": "fd32f78a9a90"
+          "lean": "497df1c0b6e2"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.454763Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.454763Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "minor",
@@ -1452,17 +1458,19 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "86d931e6f0ba",
+          "md": "e4b1a5db3f0c",
           "ts": "2469a091c744",
-          "lean": "fd32f78a9a90"
+          "lean": "497df1c0b6e2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.454763Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.454763Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Energy as a Gr\u00f6bner--Shirshov invariant of the nuclear braid'.",
         "severity": "minor",
@@ -1472,17 +1480,19 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "86d931e6f0ba",
+          "md": "e4b1a5db3f0c",
           "ts": "2469a091c744",
-          "lean": "fd32f78a9a90"
+          "lean": "497df1c0b6e2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.454763Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.454763Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The remarks and narrative scope in 'Energy as a Gr\u00f6bner--Shirshov invariant of the nuclear braid' are appropriately qualified.",
         "severity": "minor"
@@ -1491,17 +1501,19 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "86d931e6f0ba",
+          "md": "e4b1a5db3f0c",
           "ts": "2469a091c744",
-          "lean": "fd32f78a9a90"
+          "lean": "497df1c0b6e2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.454763Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.454763Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Energy as a Gr\u00f6bner--Shirshov invariant of the nuclear braid'.",
         "severity": "minor",
@@ -1511,17 +1523,19 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "86d931e6f0ba",
+          "md": "e4b1a5db3f0c",
           "ts": "2469a091c744",
-          "lean": "fd32f78a9a90"
+          "lean": "497df1c0b6e2"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.454763Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.454763Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.lean.",
         "severity": "minor",
@@ -1531,17 +1545,19 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "86d931e6f0ba",
+          "md": "e4b1a5db3f0c",
           "ts": "2469a091c744",
-          "lean": "fd32f78a9a90"
+          "lean": "497df1c0b6e2"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.454763Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.454763Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
@@ -1550,17 +1566,19 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "86d931e6f0ba",
+          "md": "e4b1a5db3f0c",
           "ts": "2469a091c744",
-          "lean": "fd32f78a9a90"
+          "lean": "497df1c0b6e2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.454763Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.454763Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Energy as a Gr\u00f6bner--Shirshov invariant of the nuclear braid', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1570,17 +1588,19 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "86d931e6f0ba",
+          "md": "e4b1a5db3f0c",
           "ts": "2469a091c744",
-          "lean": "fd32f78a9a90"
+          "lean": "497df1c0b6e2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.454763Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.454763Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Energy as a Gr\u00f6bner--Shirshov invariant of the nuclear braid' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1590,17 +1610,19 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "86d931e6f0ba",
+          "md": "e4b1a5db3f0c",
           "ts": "2469a091c744",
-          "lean": "fd32f78a9a90"
+          "lean": "497df1c0b6e2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.454763Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.454763Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Energy as a Gr\u00f6bner--Shirshov invariant of the nuclear braid' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1610,17 +1632,19 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "86d931e6f0ba",
+          "md": "e4b1a5db3f0c",
           "ts": "2469a091c744",
-          "lean": "fd32f78a9a90"
+          "lean": "497df1c0b6e2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.454763Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.454763Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Energy as a Gr\u00f6bner--Shirshov invariant of the nuclear braid' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1630,17 +1654,19 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "86d931e6f0ba",
+          "md": "e4b1a5db3f0c",
           "ts": "2469a091c744",
-          "lean": "fd32f78a9a90"
+          "lean": "497df1c0b6e2"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.454763Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.454763Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
@@ -1650,17 +1676,19 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "86d931e6f0ba",
+          "md": "e4b1a5db3f0c",
           "ts": "2469a091c744",
-          "lean": "fd32f78a9a90"
+          "lean": "497df1c0b6e2"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.454763Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:57.454763Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.lean fails compilation.",
         "severity": "major",
@@ -1672,14 +1700,21 @@
       {
         "result": "pass",
         "notes": "Applied Milnor exposition standard (H1-H8) and brevity rules. Shortened sentences, removed editorializing ('surprisingly', 'remarkably'), replaced 'this book' with 'this paper', and maintained Math, markdown, and cross-block consistency.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:57.454763Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.454763Z"
+        },
+        "field_hash": {
+          "md": "e4b1a5db3f0c",
+          "ts": "2469a091c744",
+          "lean": "497df1c0b6e2"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.802Z"
+  "updated_at": "2026-07-07T14:26:57.454763Z"
 }

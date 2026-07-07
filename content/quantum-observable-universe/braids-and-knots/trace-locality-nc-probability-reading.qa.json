@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/braids-and-knots/trace-locality-nc-probability-reading.md"
   },
   "source_hashes": {
-    "md": "0a7bf82b9a1a",
+    "md": "c74597a79e8f",
     "ts": "38d72e32205d"
   },
   "criteria": {
@@ -53,14 +53,20 @@
       {
         "result": "pass",
         "notes": "Applied Milnor brevity across all blocks in seq3. Removed verbose narrative framing. Clarified structural properties and eliminated speculative forward references.",
-        "reviewed_at": "2026-07-06T22:40:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.399075Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.399075Z"
+        },
+        "field_hash": {
+          "md": "c74597a79e8f",
+          "ts": "38d72e32205d"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:55.297Z"
+  "updated_at": "2026-07-07T14:26:55.399075Z"
 }

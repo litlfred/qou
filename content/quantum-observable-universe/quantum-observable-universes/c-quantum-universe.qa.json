@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/quantum-observable-universes/c-quantum-universe.lean"
   },
   "source_hashes": {
-    "md": "5aefd5183323",
+    "md": "e8a1dc857a39",
     "ts": "62f71e47d0e4",
     "lean": "547ae2140156"
   },
@@ -801,14 +801,21 @@
       {
         "result": "pass",
         "notes": "Streamlined definitions. Removed draft tags. Unified references and notation blocks into text flow.",
-        "reviewed_at": "2026-07-06T22:46:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.867836Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.867836Z"
+        },
+        "field_hash": {
+          "md": "e8a1dc857a39",
+          "ts": "62f71e47d0e4",
+          "lean": "547ae2140156"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-07T14:26:55.867836Z"
 }

@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/quantum-observable-universes/braiding-unit-circle-convention.md"
   },
   "source_hashes": {
-    "md": "c93ff86d5c65",
+    "md": "288d61242dbf",
     "ts": "bed4840da9ba"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Deleted 'Remark' framing and conversational fillers. Converted tables to bullet points.",
-        "reviewed_at": "2026-07-06T22:46:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.828158Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.828158Z"
+        },
+        "field_hash": {
+          "md": "288d61242dbf",
+          "ts": "bed4840da9ba"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:58.083Z"
+  "updated_at": "2026-07-07T14:26:55.828158Z"
 }

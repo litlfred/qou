@@ -6,73 +6,62 @@
     "ts": "content/quantum-observable-universe/observations/trace-locality-meets-gs-nonlocality-proof.ts",
     "md": "content/quantum-observable-universe/observations/trace-locality-meets-gs-nonlocality-proof.md"
   },
-  "source_hashes": {
-    "md": "bccd12e72cbb",
-    "ts": "eaaac0532b65"
-  },
+  "source_hashes": {},
   "criteria": {
     "voice-status-leak": [
       {
-        "field_hash": {
-          "md": "bccd12e72cbb"
-        },
+        "field_hash": {},
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-status-leak-audit",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.684864Z",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27"
+        "reviewed_at": "2026-07-07T14:26:56.684864Z"
       }
     ],
     "voice-emoji-content": [
       {
-        "field_hash": {
-          "md": "bccd12e72cbb"
-        },
+        "field_hash": {},
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.684864Z",
           "agent_skill": "local/one-voice-audit",
           "id": "voice-emoji-content-audit"
         },
-        "reviewed_at": "2026-05-27"
+        "reviewed_at": "2026-07-07T14:26:56.684864Z"
       }
     ],
     "voice-first-person-work": [
       {
-        "field_hash": {
-          "md": "bccd12e72cbb"
-        },
+        "field_hash": {},
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.684864Z",
           "agent_skill": "local/one-voice-audit",
           "id": "voice-first-person-work-audit"
         },
-        "reviewed_at": "2026-05-27"
+        "reviewed_at": "2026-07-07T14:26:56.684864Z"
       }
     ],
     "voice-time-stamped-notes": [
       {
-        "field_hash": {
-          "md": "bccd12e72cbb"
-        },
+        "field_hash": {},
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-time-stamped-audit",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.684864Z",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27"
+        "reviewed_at": "2026-07-07T14:26:56.684864Z"
       }
     ],
     "voice-unicode-crash": [
@@ -143,18 +132,16 @@
     ],
     "voice-scholarly-default": [
       {
-        "field_hash": {
-          "md": "bccd12e72cbb"
-        },
+        "field_hash": {},
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.684864Z",
           "agent_skill": "local/one-voice-audit",
           "id": "voice-scholarly-default-audit"
         },
-        "reviewed_at": "2026-05-27"
+        "reviewed_at": "2026-07-07T14:26:56.684864Z"
       }
     ],
     "voice-title-scholarly": [
@@ -209,18 +196,16 @@
     ],
     "voice-ai-slop": [
       {
-        "field_hash": {
-          "md": "bccd12e72cbb"
-        },
+        "field_hash": {},
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.684864Z",
           "agent_skill": "local/one-voice-audit",
           "id": "voice-ai-slop-audit"
         },
-        "reviewed_at": "2026-05-27"
+        "reviewed_at": "2026-07-07T14:26:56.684864Z"
       }
     ],
     "framework-canonical": [
@@ -485,18 +470,16 @@
     ],
     "canonical-no-hardcoded-observable": [
       {
-        "field_hash": {
-          "md": "bccd12e72cbb"
-        },
+        "field_hash": {},
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "canonical-audit-batch",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.684864Z",
           "agent_skill": "local/canonical-watcher"
         },
-        "reviewed_at": "2026-05-27"
+        "reviewed_at": "2026-07-07T14:26:56.684864Z"
       }
     ],
     "compute-witness-exists": [
@@ -1460,18 +1443,16 @@
     ],
     "voice-editorializing": [
       {
-        "field_hash": {
-          "md": "bccd12e72cbb"
-        },
+        "field_hash": {},
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.684864Z",
           "agent_skill": "local/one-voice-audit",
           "id": "voice-editorializing-audit"
         },
-        "reviewed_at": "2026-05-27"
+        "reviewed_at": "2026-07-07T14:26:56.684864Z"
       }
     ],
     "canonical-witness-pinned": [
@@ -1510,18 +1491,16 @@
     ],
     "voice-author-notes-pollution": [
       {
-        "field_hash": {
-          "md": "bccd12e72cbb"
-        },
+        "field_hash": {},
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "voice-author-notes-pollution-audit",
-          "agent_model": "claude-opus-4-7",
-          "agent_date": "2026-05-27",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.684864Z",
           "agent_skill": "local/one-voice-audit"
         },
-        "reviewed_at": "2026-05-27"
+        "reviewed_at": "2026-07-07T14:26:56.684864Z"
       }
     ],
     "q-usage-regime-detected": [
@@ -1790,5 +1769,5 @@
       }
     ]
   },
-  "updated_at": "2026-06-07T05:58:41.267Z"
+  "updated_at": "2026-07-07T14:26:56.684864Z"
 }

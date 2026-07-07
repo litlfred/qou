@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/fluid-dynamics/q-turbulence-prediction.md"
   },
   "source_hashes": {
-    "md": "753464eca81c",
+    "md": "48bc2d6ecfcd",
     "ts": "475645dd9f33"
   },
   "criteria": {
@@ -838,18 +838,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "753464eca81c",
+          "md": "48bc2d6ecfcd",
           "ts": "475645dd9f33"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.249570Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:45.973Z",
+        "reviewed_at": "2026-07-07T14:26:56.249570Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -857,15 +857,17 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "753464eca81c",
+          "md": "48bc2d6ecfcd",
           "ts": "475645dd9f33"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.249570Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.249570Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No false claims identified in 'Testable prediction: high-wavenumber deviations from Kolmogorov scaling': mathematical reasoning is consistent.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-turbulence-prediction.ts:1",
@@ -875,15 +877,17 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "753464eca81c",
+          "md": "48bc2d6ecfcd",
           "ts": "475645dd9f33"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.249570Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.249570Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The block 'Testable prediction: high-wavenumber deviations from Kolmogorov scaling' presents substantial mathematical content: The [q-Kolmogorov spectrum](#prop:q-turbulence-spectrum) reduces to the standard...",
         "severity": "minor"
@@ -892,15 +896,17 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "753464eca81c",
+          "md": "48bc2d6ecfcd",
           "ts": "475645dd9f33"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.249570Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.249570Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Testable prediction: high-wavenumber deviations from Kolmogorov scaling'.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-turbulence-prediction.ts:1",
@@ -910,15 +916,17 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "753464eca81c",
+          "md": "48bc2d6ecfcd",
           "ts": "475645dd9f33"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.249570Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.249570Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No overclaims: the scope of 'Testable prediction: high-wavenumber deviations from Kolmogorov scaling' is appropriately qualified.",
         "severity": "minor"
@@ -927,15 +935,17 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "753464eca81c",
+          "md": "48bc2d6ecfcd",
           "ts": "475645dd9f33"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.249570Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.249570Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Testable prediction: high-wavenumber deviations from Kolmogorov scaling'.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-turbulence-prediction.ts:1",
@@ -945,15 +955,17 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "753464eca81c",
+          "md": "48bc2d6ecfcd",
           "ts": "475645dd9f33"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.249570Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.249570Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The argument flow in 'Testable prediction: high-wavenumber deviations from Kolmogorov scaling' is logically sound, mapping onto the cited dependencies.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-turbulence-prediction.ts:1",
@@ -963,15 +975,17 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "753464eca81c",
+          "md": "48bc2d6ecfcd",
           "ts": "475645dd9f33"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.249570Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.249570Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
@@ -980,15 +994,17 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "753464eca81c",
+          "md": "48bc2d6ecfcd",
           "ts": "475645dd9f33"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.249570Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.249570Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No citations are present in 'Testable prediction: high-wavenumber deviations from Kolmogorov scaling', hence no citation misuse is possible.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-turbulence-prediction.ts:1",
@@ -998,15 +1014,17 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "753464eca81c",
+          "md": "48bc2d6ecfcd",
           "ts": "475645dd9f33"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.249570Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.249570Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Key terms and symbols in 'Testable prediction: high-wavenumber deviations from Kolmogorov scaling' are mathematically defined and unambiguous.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-turbulence-prediction.ts:1",
@@ -1016,15 +1034,17 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "753464eca81c",
+          "md": "48bc2d6ecfcd",
           "ts": "475645dd9f33"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.249570Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.249570Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The algebraic and logical relations in 'Testable prediction: high-wavenumber deviations from Kolmogorov scaling' are independent of empirical tuning parameters.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-turbulence-prediction.ts:1",
@@ -1034,15 +1054,17 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "753464eca81c",
+          "md": "48bc2d6ecfcd",
           "ts": "475645dd9f33"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.249570Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.249570Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The physical concepts described in 'Testable prediction: high-wavenumber deviations from Kolmogorov scaling' are consistent with quantum observable mechanics.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-turbulence-prediction.ts:1",
@@ -1052,15 +1074,17 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "753464eca81c",
+          "md": "48bc2d6ecfcd",
           "ts": "475645dd9f33"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.249570Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.249570Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The derivation steps and formal definitions in 'Testable prediction: high-wavenumber deviations from Kolmogorov scaling' are reproducible.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-turbulence-prediction.ts:1",
@@ -1070,15 +1094,17 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "753464eca81c",
+          "md": "48bc2d6ecfcd",
           "ts": "475645dd9f33"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.249570Z"
         },
-        "reviewed_at": "2026-06-28T07:55:42.658Z",
+        "reviewed_at": "2026-07-07T14:26:56.249570Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
@@ -1090,14 +1116,20 @@
       {
         "result": "pass",
         "notes": "Rewrote fluid-dynamics_seq2.md. Shortened exposition. Strengthened active voice. Maintained math precision and markers.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.249570Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.249570Z"
+        },
+        "field_hash": {
+          "md": "48bc2d6ecfcd",
+          "ts": "475645dd9f33"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:55.699Z"
+  "updated_at": "2026-07-07T14:26:56.249570Z"
 }

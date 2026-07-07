@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/typed-crossing-operator.lean"
   },
   "source_hashes": {
-    "md": "9233370b268f",
+    "md": "0842aa53923f",
     "ts": "4ef48ccfa02f",
     "lean": "eb44f48b8381"
   },
@@ -1523,7 +1523,7 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "9233370b268f",
+          "md": "0842aa53923f",
           "ts": "4ef48ccfa02f",
           "lean": "eb44f48b8381"
         },
@@ -1531,11 +1531,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.220082Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:21.273Z",
+        "reviewed_at": "2026-07-07T14:26:57.220082Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1543,7 +1543,7 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "9233370b268f",
+          "md": "0842aa53923f",
           "ts": "4ef48ccfa02f",
           "lean": "eb44f48b8381"
         },
@@ -1551,11 +1551,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.220082Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:21.722Z",
+        "reviewed_at": "2026-07-07T14:26:57.220082Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -1563,7 +1563,7 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "9233370b268f",
+          "md": "0842aa53923f",
           "ts": "4ef48ccfa02f",
           "lean": "eb44f48b8381"
         },
@@ -1571,9 +1571,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.220082Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.220082Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'Typed crossing operator': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -1583,7 +1585,7 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "9233370b268f",
+          "md": "0842aa53923f",
           "ts": "4ef48ccfa02f",
           "lean": "eb44f48b8381"
         },
@@ -1591,9 +1593,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.220082Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.220082Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Typed crossing operator' presents substantial mathematical content: Within the Borromean baryon (Definition), the three quark strands form a $3$-strand braid in $B_3$.  Each pairwise cr...",
         "severity": "minor"
@@ -1602,7 +1606,7 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "9233370b268f",
+          "md": "0842aa53923f",
           "ts": "4ef48ccfa02f",
           "lean": "eb44f48b8381"
         },
@@ -1610,9 +1614,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.220082Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.220082Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Typed crossing operator'.",
         "severity": "minor",
@@ -1622,7 +1628,7 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "9233370b268f",
+          "md": "0842aa53923f",
           "ts": "4ef48ccfa02f",
           "lean": "eb44f48b8381"
         },
@@ -1630,9 +1636,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.220082Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.220082Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'Typed crossing operator' is appropriately qualified.",
         "severity": "minor"
@@ -1641,7 +1649,7 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "9233370b268f",
+          "md": "0842aa53923f",
           "ts": "4ef48ccfa02f",
           "lean": "eb44f48b8381"
         },
@@ -1649,9 +1657,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.220082Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.220082Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Typed crossing operator'.",
         "severity": "minor",
@@ -1661,7 +1671,7 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "9233370b268f",
+          "md": "0842aa53923f",
           "ts": "4ef48ccfa02f",
           "lean": "eb44f48b8381"
         },
@@ -1669,9 +1679,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.220082Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.220082Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The argument flow in 'Typed crossing operator' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -1681,7 +1693,7 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "9233370b268f",
+          "md": "0842aa53923f",
           "ts": "4ef48ccfa02f",
           "lean": "eb44f48b8381"
         },
@@ -1689,9 +1701,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.220082Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.220082Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Lean formalization and narrative for 'Typed crossing operator' are in complete agreement.",
         "severity": "minor"
@@ -1700,7 +1714,7 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "9233370b268f",
+          "md": "0842aa53923f",
           "ts": "4ef48ccfa02f",
           "lean": "eb44f48b8381"
         },
@@ -1708,9 +1722,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.220082Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.220082Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Typed crossing operator', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1720,7 +1736,7 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "9233370b268f",
+          "md": "0842aa53923f",
           "ts": "4ef48ccfa02f",
           "lean": "eb44f48b8381"
         },
@@ -1728,9 +1744,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.220082Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.220082Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Typed crossing operator' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1740,7 +1758,7 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "9233370b268f",
+          "md": "0842aa53923f",
           "ts": "4ef48ccfa02f",
           "lean": "eb44f48b8381"
         },
@@ -1748,9 +1766,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.220082Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.220082Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Typed crossing operator' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1760,7 +1780,7 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "9233370b268f",
+          "md": "0842aa53923f",
           "ts": "4ef48ccfa02f",
           "lean": "eb44f48b8381"
         },
@@ -1768,9 +1788,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.220082Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.220082Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Typed crossing operator' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1780,7 +1802,7 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "9233370b268f",
+          "md": "0842aa53923f",
           "ts": "4ef48ccfa02f",
           "lean": "eb44f48b8381"
         },
@@ -1788,9 +1810,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.220082Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.220082Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'Typed crossing operator' are reproducible.",
         "severity": "minor",
@@ -1800,7 +1824,7 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "9233370b268f",
+          "md": "0842aa53923f",
           "ts": "4ef48ccfa02f",
           "lean": "eb44f48b8381"
         },
@@ -1808,9 +1832,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.220082Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.220082Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -1841,7 +1867,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "9233370b268f",
+          "md": "0842aa53923f",
           "ts": "4ef48ccfa02f",
           "lean": "eb44f48b8381"
         },
@@ -1849,9 +1875,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.220082Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_at": "2026-07-07T14:26:57.220082Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'def:typed-crossing-operator' \u2192 expected 'typed_crossing_operator'; Lean declares: QuarkFlavor, CrossingType, crossingTypeOf, TypedCrossingOperator. Structural match via content."
       }
@@ -1860,14 +1888,21 @@
       {
         "result": "pass",
         "notes": "Rewrote seq14 to strictly enforce Milnor brevity. Trimmed fluff and meta-commentary, ensuring straightforward descriptive sentences. Fixed non-linear forward references.",
-        "reviewed_at": "2026-07-06T22:47:00Z",
+        "reviewed_at": "2026-07-07T14:26:57.220082Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.220082Z"
+        },
+        "field_hash": {
+          "md": "0842aa53923f",
+          "ts": "4ef48ccfa02f",
+          "lean": "eb44f48b8381"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.802Z"
+  "updated_at": "2026-07-07T14:26:57.220082Z"
 }

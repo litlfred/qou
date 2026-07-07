@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/borromean-baryon.lean"
   },
   "source_hashes": {
-    "md": "42198fa35594",
+    "md": "e082bc919728",
     "ts": "e41f2b94872e",
     "lean": "561c7772855a"
   },
@@ -877,19 +877,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "c36760b978d5",
-          "ts": "290dc40636f2",
-          "lean": "6aee1340d7de"
+          "md": "e082bc919728",
+          "ts": "e41f2b94872e",
+          "lean": "561c7772855a"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.438038Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:19.806Z",
+        "reviewed_at": "2026-07-07T14:26:57.438038Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -897,19 +897,19 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "c36760b978d5",
-          "ts": "290dc40636f2",
-          "lean": "6aee1340d7de"
+          "md": "e082bc919728",
+          "ts": "e41f2b94872e",
+          "lean": "561c7772855a"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.438038Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:20.207Z",
+        "reviewed_at": "2026-07-07T14:26:57.438038Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -917,17 +917,19 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "c36760b978d5",
-          "ts": "290dc40636f2",
-          "lean": "6aee1340d7de"
+          "md": "e082bc919728",
+          "ts": "e41f2b94872e",
+          "lean": "561c7772855a"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.438038Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.438038Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The claim in 'Borromean baryon' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/borromean-baryon.lean:13:16: error: failed to synthesize.",
         "severity": "minor",
@@ -937,17 +939,19 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "c36760b978d5",
-          "ts": "290dc40636f2",
-          "lean": "6aee1340d7de"
+          "md": "e082bc919728",
+          "ts": "e41f2b94872e",
+          "lean": "561c7772855a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.438038Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.438038Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Borromean baryon' presents substantial mathematical content: A Borromean baryon is a hadron (hadron) whose three constituents are unknots $K_{0_1}$ joined by the Borromean link $...",
         "severity": "minor"
@@ -956,17 +960,19 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "c36760b978d5",
-          "ts": "290dc40636f2",
-          "lean": "6aee1340d7de"
+          "md": "e082bc919728",
+          "ts": "e41f2b94872e",
+          "lean": "561c7772855a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.438038Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.438038Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Borromean baryon'.",
         "severity": "minor",
@@ -976,17 +982,19 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "c36760b978d5",
-          "ts": "290dc40636f2",
-          "lean": "6aee1340d7de"
+          "md": "e082bc919728",
+          "ts": "e41f2b94872e",
+          "lean": "561c7772855a"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.438038Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.438038Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose presents 'Borromean baryon' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
@@ -995,17 +1003,19 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "c36760b978d5",
-          "ts": "290dc40636f2",
-          "lean": "6aee1340d7de"
+          "md": "e082bc919728",
+          "ts": "e41f2b94872e",
+          "lean": "561c7772855a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.438038Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.438038Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Borromean baryon'.",
         "severity": "minor",
@@ -1015,17 +1025,19 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "c36760b978d5",
-          "ts": "290dc40636f2",
-          "lean": "6aee1340d7de"
+          "md": "e082bc919728",
+          "ts": "e41f2b94872e",
+          "lean": "561c7772855a"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.438038Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.438038Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/borromean-baryon.lean.",
         "severity": "minor",
@@ -1035,17 +1047,19 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "c36760b978d5",
-          "ts": "290dc40636f2",
-          "lean": "6aee1340d7de"
+          "md": "e082bc919728",
+          "ts": "e41f2b94872e",
+          "lean": "561c7772855a"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.438038Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.438038Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/borromean-baryon.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
@@ -1054,17 +1068,19 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "c36760b978d5",
-          "ts": "290dc40636f2",
-          "lean": "6aee1340d7de"
+          "md": "e082bc919728",
+          "ts": "e41f2b94872e",
+          "lean": "561c7772855a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.438038Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.438038Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Borromean baryon', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1074,17 +1090,19 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "c36760b978d5",
-          "ts": "290dc40636f2",
-          "lean": "6aee1340d7de"
+          "md": "e082bc919728",
+          "ts": "e41f2b94872e",
+          "lean": "561c7772855a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.438038Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.438038Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Borromean baryon' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1094,17 +1112,19 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "c36760b978d5",
-          "ts": "290dc40636f2",
-          "lean": "6aee1340d7de"
+          "md": "e082bc919728",
+          "ts": "e41f2b94872e",
+          "lean": "561c7772855a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.438038Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.438038Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Borromean baryon' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1114,17 +1134,19 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "c36760b978d5",
-          "ts": "290dc40636f2",
-          "lean": "6aee1340d7de"
+          "md": "e082bc919728",
+          "ts": "e41f2b94872e",
+          "lean": "561c7772855a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.438038Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.438038Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Borromean baryon' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1134,17 +1156,19 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "c36760b978d5",
-          "ts": "290dc40636f2",
-          "lean": "6aee1340d7de"
+          "md": "e082bc919728",
+          "ts": "e41f2b94872e",
+          "lean": "561c7772855a"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.438038Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.438038Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/borromean-baryon.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
@@ -1154,17 +1178,19 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "c36760b978d5",
-          "ts": "290dc40636f2",
-          "lean": "6aee1340d7de"
+          "md": "e082bc919728",
+          "ts": "e41f2b94872e",
+          "lean": "561c7772855a"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.438038Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.438038Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/borromean-baryon.lean fails compilation: content/quantum-observable-universe/particle-interactions/borromean-baryon.lean:13:16: error: failed to synthesize",
         "severity": "critical",
@@ -1175,7 +1201,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "42198fa35594",
+          "md": "e082bc919728",
           "ts": "e41f2b94872e",
           "lean": "561c7772855a"
         },
@@ -1183,9 +1209,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.438038Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_at": "2026-07-07T14:26:57.438038Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'def:borromean-baryon' \u2192 expected 'borromean_baryon'; Lean declares: BorromeanBaryon, BorromeanBaryon.charge, borromean_volume_pos. Structural match via content."
       }
@@ -1194,14 +1222,21 @@
       {
         "result": "pass",
         "notes": "Rewrote seq14 to strictly enforce Milnor brevity. Trimmed fluff and meta-commentary, ensuring straightforward descriptive sentences. Fixed non-linear forward references.",
-        "reviewed_at": "2026-07-06T22:47:00Z",
+        "reviewed_at": "2026-07-07T14:26:57.438038Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.438038Z"
+        },
+        "field_hash": {
+          "md": "e082bc919728",
+          "ts": "e41f2b94872e",
+          "lean": "561c7772855a"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.802Z"
+  "updated_at": "2026-07-07T14:26:57.438038Z"
 }

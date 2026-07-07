@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/quantum-observable-universes/observation-energy.md"
   },
   "source_hashes": {
-    "md": "e4568adb528e",
+    "md": "e8e9b0f17eec",
     "ts": "1be9ce23b091"
   },
   "criteria": {
@@ -1031,16 +1031,18 @@
     "proof-no-placeholder-stub": [
       {
         "field_hash": {
-          "lean": "448ba73f2215"
+          "md": "e8e9b0f17eec",
+          "ts": "1be9ce23b091"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/lean-proof-vacuity-audit",
-          "agent_date": "2026-07-02",
-          "agent_skill": "local/lean-proof-vacuity-audit"
+          "agent_date": "2026-07-07T14:26:55.885939Z",
+          "agent_skill": "local/lean-proof-vacuity-audit",
+          "agent_model": "gemini-3.1-pro"
         },
-        "reviewed_at": "2026-07-02T17:07:15.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.885939Z",
         "reviewed_sha": "a9ce9ecfe24e6c7c9d0b9f25699b35ec666faa32",
         "notes": "4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): placeholder-stub marker no longer present \u2014 criterion pass. Residual self-assuming-projection / statement-scope issue tracked under proof-statement-integrity and bean qsb2; do not re-fail this criterion for it."
       }
@@ -1048,18 +1050,18 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "e4568adb528e",
+          "md": "e8e9b0f17eec",
           "ts": "1be9ce23b091"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.885939Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:34.560Z",
+        "reviewed_at": "2026-07-07T14:26:55.885939Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
       }
@@ -1067,18 +1069,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "e4568adb528e",
+          "md": "e8e9b0f17eec",
           "ts": "1be9ce23b091"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.885939Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:34.942Z",
+        "reviewed_at": "2026-07-07T14:26:55.885939Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1086,18 +1088,18 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "e4568adb528e",
+          "md": "e8e9b0f17eec",
           "ts": "1be9ce23b091"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.885939Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:35.355Z",
+        "reviewed_at": "2026-07-07T14:26:55.885939Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -1105,18 +1107,18 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "e4568adb528e",
+          "md": "e8e9b0f17eec",
           "ts": "1be9ce23b091"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.885939Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:35.779Z",
+        "reviewed_at": "2026-07-07T14:26:55.885939Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
       }
@@ -1195,19 +1197,19 @@
       },
       {
         "field_hash": {
-          "md": "e4568adb528e",
+          "md": "e8e9b0f17eec",
           "ts": "1be9ce23b091"
         },
         "result": "warn",
         "notes": "No real strategy: every conjunct assumed as a context-class field and projected. The derivation (hbar_diff from hbar_eq) is not performed in Lean.",
-        "reviewed_at": "2026-06-25T17:03:42.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.885939Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.885939Z"
         },
         "score": {
           "max": 1,
@@ -1256,19 +1258,19 @@
       },
       {
         "field_hash": {
-          "md": "e4568adb528e",
+          "md": "e8e9b0f17eec",
           "ts": "1be9ce23b091"
         },
         "result": "pass",
         "notes": "Goal substantive: hbar_q monotone increase under perturbation + action Taylor deform + classical sign-free. Math is correct/well-posed.",
-        "reviewed_at": "2026-06-25T17:03:42.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.885939Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.885939Z"
         },
         "score": {
           "max": 1,
@@ -1317,19 +1319,19 @@
       },
       {
         "field_hash": {
-          "md": "e4568adb528e",
+          "md": "e8e9b0f17eec",
           "ts": "1be9ce23b091"
         },
         "result": "warn",
         "notes": "Adds nothing beyond restating the claim as class fields; the hbar_diff identity is a 2-line calc left un-derived.",
-        "reviewed_at": "2026-06-25T17:03:42.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.885939Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.885939Z"
         },
         "score": {
           "max": 1,
@@ -1374,19 +1376,19 @@
       },
       {
         "field_hash": {
-          "md": "e4568adb528e",
+          "md": "e8e9b0f17eec",
           "ts": "1be9ce23b091"
         },
         "result": "fail",
         "notes": "def observation_energy projects ctx.hbar_diff/hbar_diff_pos/S_deform/E_inc/E_dec straight out; .md part(1) eq should be DERIVED from hbar x=1-x^-1, not axiomatised as a field. Self-assuming.",
-        "reviewed_at": "2026-06-25T17:03:42.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.885939Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.885939Z"
         }
       }
     ],
@@ -1427,19 +1429,19 @@
       },
       {
         "field_hash": {
-          "md": "e4568adb528e",
+          "md": "e8e9b0f17eec",
           "ts": "1be9ce23b091"
         },
         "result": "fail",
         "notes": "def observation_energy := \u27e8\u27e8ctx.hbar_diff,ctx.hbar_diff_pos\u27e9,ctx.S_deform,\u27e8ctx.E_inc,ctx.E_dec\u27e9\u27e9 \u2014 every conjunct projected directly from a context-class field that IS that conjunct. Textbook self-assuming projection.",
-        "reviewed_at": "2026-06-25T17:14:03.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.885939Z",
         "reviewed_sha": "01ea6d6e464aa77fc2df7fe6050675cff83b68a3",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.885939Z"
         }
       }
     ],
@@ -1463,19 +1465,19 @@
       },
       {
         "field_hash": {
-          "md": "e4568adb528e",
+          "md": "e8e9b0f17eec",
           "ts": "1be9ce23b091"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: no `: True` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse.lean, content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/observation_energy.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.885939Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.885939Z"
         }
       }
     ],
@@ -1516,19 +1518,19 @@
       },
       {
         "field_hash": {
-          "md": "e4568adb528e",
+          "md": "e8e9b0f17eec",
           "ts": "1be9ce23b091"
         },
         "result": "pass",
         "notes": "Fields consistent: hbar_eq=1-x^-1 makes hbar_diff hold (q^-1-(q+dq)^-1); hbar_diff_pos from q>1,dq>0; E_inc/E_dec at distinct q_inc,q_dec.",
-        "reviewed_at": "2026-06-25T17:03:42.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.885939Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.885939Z"
         }
       }
     ],
@@ -1569,19 +1571,19 @@
       },
       {
         "field_hash": {
-          "md": "e4568adb528e",
+          "md": "e8e9b0f17eec",
           "ts": "1be9ce23b091"
         },
         "result": "pass",
         "notes": "Sole binder [ctx:ObservationEnergyContext] is used (all 5 conjuncts read its fields). Unused class fields (hbar_eq,q_gt_one) are an integrity issue, not an unused binder.",
-        "reviewed_at": "2026-06-25T17:03:42.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.885939Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.885939Z"
         }
       }
     ],
@@ -1605,35 +1607,37 @@
       },
       {
         "field_hash": {
-          "md": "e4568adb528e",
+          "md": "e8e9b0f17eec",
           "ts": "1be9ce23b091"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse.lean, content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/observation_energy.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.885939Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.885939Z"
         }
       }
     ],
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "e4568adb528e",
+          "md": "e8e9b0f17eec",
           "ts": "1be9ce23b091"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.885939Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.885939Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "observation-energy.ts:1",
@@ -1643,16 +1647,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "e4568adb528e",
+          "md": "e8e9b0f17eec",
           "ts": "1be9ce23b091"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.885939Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.885939Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "observation-energy.ts:1",
@@ -1662,16 +1668,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "e4568adb528e",
+          "md": "e8e9b0f17eec",
           "ts": "1be9ce23b091"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.885939Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.885939Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "observation-energy.ts:1",
@@ -1681,16 +1689,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "e4568adb528e",
+          "md": "e8e9b0f17eec",
           "ts": "1be9ce23b091"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.885939Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.885939Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "observation-energy.ts:1",
@@ -1700,16 +1710,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "e4568adb528e",
+          "md": "e8e9b0f17eec",
           "ts": "1be9ce23b091"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.885939Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.885939Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "observation-energy.ts:1",
@@ -1719,16 +1731,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "e4568adb528e",
+          "md": "e8e9b0f17eec",
           "ts": "1be9ce23b091"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.885939Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.885939Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "observation-energy.ts:1",
@@ -1738,16 +1752,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "e4568adb528e",
+          "md": "e8e9b0f17eec",
           "ts": "1be9ce23b091"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.885939Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.885939Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "observation-energy.ts:1",
@@ -1757,16 +1773,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "e4568adb528e",
+          "md": "e8e9b0f17eec",
           "ts": "1be9ce23b091"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.885939Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.885939Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "observation-energy.ts:1",
@@ -1776,16 +1794,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "e4568adb528e",
+          "md": "e8e9b0f17eec",
           "ts": "1be9ce23b091"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.885939Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.885939Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "observation-energy.ts:1",
@@ -1795,16 +1815,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "e4568adb528e",
+          "md": "e8e9b0f17eec",
           "ts": "1be9ce23b091"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.885939Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.885939Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "observation-energy.ts:1",
@@ -1814,16 +1836,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "e4568adb528e",
+          "md": "e8e9b0f17eec",
           "ts": "1be9ce23b091"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.885939Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.885939Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "observation-energy.ts:1",
@@ -1833,16 +1857,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "e4568adb528e",
+          "md": "e8e9b0f17eec",
           "ts": "1be9ce23b091"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.885939Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.885939Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "observation-energy.ts:1",
@@ -1852,16 +1878,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "e4568adb528e",
+          "md": "e8e9b0f17eec",
           "ts": "1be9ce23b091"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.885939Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.885939Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "Referee verdict: clean.",
@@ -1873,14 +1901,20 @@
       {
         "result": "pass",
         "notes": "Unified definitions and their proofs of existence. Removed Lean diagnostics and internal architectural remarks ('Route 2a'). Stripped non-mathematical commentary.",
-        "reviewed_at": "2026-07-06T22:46:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.885939Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.885939Z"
+        },
+        "field_hash": {
+          "md": "e8e9b0f17eec",
+          "ts": "1be9ce23b091"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:58.083Z"
+  "updated_at": "2026-07-07T14:26:55.885939Z"
 }

@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/observations/s5-equivariant-torus-knots.lean"
   },
   "source_hashes": {
-    "md": "aa70b4117701",
+    "md": "4758f1dd4871",
     "ts": "f70bdae7353c",
     "lean": "aad058953823"
   },
@@ -1051,14 +1051,21 @@
       {
         "result": "pass",
         "notes": "Rewrote observations_seq1.md. Eliminated 'we establish' passivity where possible, replaced 'this chapter' with 'we', simplified structural signposting.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.553498Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.553498Z"
+        },
+        "field_hash": {
+          "md": "4758f1dd4871",
+          "ts": "f70bdae7353c",
+          "lean": "aad058953823"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-07T14:26:56.553498Z"
 }

@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/information-theory/p-vs-np-boundary-interpretation.md"
   },
   "source_hashes": {
-    "md": "1dfc366111ee",
+    "md": "5dc7b2268ffe",
     "ts": "0ed8b588def5"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Flattened complex tables/lists into dense, exact prose where appropriate. Aligned notation. Replaced 'we define' with direct declarative statements. Improved transitions between blocks while retaining original file markers.",
-        "reviewed_at": "2026-07-06T22:51:10Z",
+        "reviewed_at": "2026-07-07T14:26:55.580594Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.580594Z"
+        },
+        "field_hash": {
+          "md": "5dc7b2268ffe",
+          "ts": "0ed8b588def5"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.008Z"
+  "updated_at": "2026-07-07T14:26:55.580594Z"
 }

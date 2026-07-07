@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/quantum-observable-universes/rigid-dualizing-complex.lean"
   },
   "source_hashes": {
-    "md": "f29a368a4e01",
+    "md": "a43b9719ee06",
     "ts": "584b80145264",
     "lean": "3955de0a5865"
   },
@@ -857,17 +857,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "f29a368a4e01",
+          "md": "a43b9719ee06",
           "ts": "584b80145264",
-          "lean": "a2cd7c8698e7"
+          "lean": "3955de0a5865"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.898936Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.898936Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "rigid-dualizing-complex.ts:1",
@@ -877,17 +879,19 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "f29a368a4e01",
+          "md": "a43b9719ee06",
           "ts": "584b80145264",
-          "lean": "a2cd7c8698e7"
+          "lean": "3955de0a5865"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.898936Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.898936Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "rigid-dualizing-complex.lean:1",
@@ -897,17 +901,19 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "f29a368a4e01",
+          "md": "a43b9719ee06",
           "ts": "584b80145264",
-          "lean": "a2cd7c8698e7"
+          "lean": "3955de0a5865"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.898936Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.898936Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "rigid-dualizing-complex.lean:1",
@@ -917,17 +923,19 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "f29a368a4e01",
+          "md": "a43b9719ee06",
           "ts": "584b80145264",
-          "lean": "a2cd7c8698e7"
+          "lean": "3955de0a5865"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.898936Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.898936Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "rigid-dualizing-complex.ts:1",
@@ -937,17 +945,19 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "f29a368a4e01",
+          "md": "a43b9719ee06",
           "ts": "584b80145264",
-          "lean": "a2cd7c8698e7"
+          "lean": "3955de0a5865"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.898936Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.898936Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "rigid-dualizing-complex.ts:1",
@@ -957,17 +967,19 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "f29a368a4e01",
+          "md": "a43b9719ee06",
           "ts": "584b80145264",
-          "lean": "a2cd7c8698e7"
+          "lean": "3955de0a5865"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.898936Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.898936Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "rigid-dualizing-complex.ts:1",
@@ -977,17 +989,19 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "f29a368a4e01",
+          "md": "a43b9719ee06",
           "ts": "584b80145264",
-          "lean": "a2cd7c8698e7"
+          "lean": "3955de0a5865"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.898936Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.898936Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "rigid-dualizing-complex.ts:1",
@@ -997,17 +1011,19 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "f29a368a4e01",
+          "md": "a43b9719ee06",
           "ts": "584b80145264",
-          "lean": "a2cd7c8698e7"
+          "lean": "3955de0a5865"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.898936Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.898936Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "rigid-dualizing-complex.lean:1",
@@ -1017,17 +1033,19 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "f29a368a4e01",
+          "md": "a43b9719ee06",
           "ts": "584b80145264",
-          "lean": "a2cd7c8698e7"
+          "lean": "3955de0a5865"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.898936Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.898936Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "rigid-dualizing-complex.lean:1",
@@ -1037,17 +1055,19 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "f29a368a4e01",
+          "md": "a43b9719ee06",
           "ts": "584b80145264",
-          "lean": "a2cd7c8698e7"
+          "lean": "3955de0a5865"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.898936Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.898936Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "rigid-dualizing-complex.ts:1",
@@ -1057,17 +1077,19 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "f29a368a4e01",
+          "md": "a43b9719ee06",
           "ts": "584b80145264",
-          "lean": "a2cd7c8698e7"
+          "lean": "3955de0a5865"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.898936Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.898936Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "rigid-dualizing-complex.ts:1",
@@ -1077,17 +1099,19 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "f29a368a4e01",
+          "md": "a43b9719ee06",
           "ts": "584b80145264",
-          "lean": "a2cd7c8698e7"
+          "lean": "3955de0a5865"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.898936Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.898936Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "rigid-dualizing-complex.ts:1",
@@ -1097,17 +1121,19 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "f29a368a4e01",
+          "md": "a43b9719ee06",
           "ts": "584b80145264",
-          "lean": "a2cd7c8698e7"
+          "lean": "3955de0a5865"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.898936Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.898936Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "rigid-dualizing-complex.ts:1",
@@ -1117,17 +1143,19 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "f29a368a4e01",
+          "md": "a43b9719ee06",
           "ts": "584b80145264",
-          "lean": "a2cd7c8698e7"
+          "lean": "3955de0a5865"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.898936Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.898936Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "rigid-dualizing-complex.lean:1",
@@ -1137,17 +1165,19 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "f29a368a4e01",
+          "md": "a43b9719ee06",
           "ts": "584b80145264",
-          "lean": "a2cd7c8698e7"
+          "lean": "3955de0a5865"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.898936Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.246Z",
+        "reviewed_at": "2026-07-07T14:26:55.898936Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "critical",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/rigid-dualizing-complex.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/rigid-dualizing-complex.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/Homology/Complex.olean' of module Mathlib.Algebra.Homology.Complex does not exist",
@@ -1179,14 +1209,21 @@
       {
         "result": "pass",
         "notes": "Deleted conversational padding ('Continuing the...'). Repackaged conjectures as geometric properties of the model. Simplified block structure.",
-        "reviewed_at": "2026-07-06T22:46:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.898936Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.898936Z"
+        },
+        "field_hash": {
+          "md": "a43b9719ee06",
+          "ts": "584b80145264",
+          "lean": "3955de0a5865"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T05:14:58.271Z"
+  "updated_at": "2026-07-07T14:26:55.898936Z"
 }

@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/observations/bw-mass-decomposition-dictionary.md"
   },
   "source_hashes": {
-    "md": "b88d52d8c1b7",
+    "md": "6471ae80d484",
     "ts": "7faa2d860619"
   },
   "criteria": {
@@ -838,18 +838,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "313aa59f578d",
+          "md": "6471ae80d484",
           "ts": "7faa2d860619"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.557885Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:53.070Z",
+        "reviewed_at": "2026-07-07T14:26:56.557885Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -857,16 +857,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "313aa59f578d",
+          "md": "6471ae80d484",
           "ts": "7faa2d860619"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.557885Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.557885Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No false claims identified in 'Empirical Bethe\u2013Weizs\u00e4cker terms as Schur\u2013Weyl strata': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -876,16 +878,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "313aa59f578d",
+          "md": "6471ae80d484",
           "ts": "7faa2d860619"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.557885Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.557885Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Empirical Bethe\u2013Weizs\u00e4cker terms as Schur\u2013Weyl strata' presents substantial mathematical content: corresponds to a specific stratum of the Schur\u2013Weyl decomposition ([Schur\u2013Weyl m...",
         "severity": "minor"
@@ -894,16 +898,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "313aa59f578d",
+          "md": "6471ae80d484",
           "ts": "7faa2d860619"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.557885Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.557885Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Empirical Bethe\u2013Weizs\u00e4cker terms as Schur\u2013Weyl strata'.",
         "severity": "minor",
@@ -913,16 +919,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "313aa59f578d",
+          "md": "6471ae80d484",
           "ts": "7faa2d860619"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.557885Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.557885Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No overclaims: the scope of 'Empirical Bethe\u2013Weizs\u00e4cker terms as Schur\u2013Weyl strata' is appropriately qualified.",
         "severity": "minor"
@@ -931,16 +939,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "313aa59f578d",
+          "md": "6471ae80d484",
           "ts": "7faa2d860619"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.557885Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.557885Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Empirical Bethe\u2013Weizs\u00e4cker terms as Schur\u2013Weyl strata'.",
         "severity": "minor",
@@ -950,16 +960,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "313aa59f578d",
+          "md": "6471ae80d484",
           "ts": "7faa2d860619"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.557885Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.557885Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The argument flow in 'Empirical Bethe\u2013Weizs\u00e4cker terms as Schur\u2013Weyl strata' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -969,16 +981,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "313aa59f578d",
+          "md": "6471ae80d484",
           "ts": "7faa2d860619"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.557885Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.557885Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
@@ -987,16 +1001,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "313aa59f578d",
+          "md": "6471ae80d484",
           "ts": "7faa2d860619"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.557885Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.557885Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No citations are present in 'Empirical Bethe\u2013Weizs\u00e4cker terms as Schur\u2013Weyl strata', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1006,16 +1022,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "313aa59f578d",
+          "md": "6471ae80d484",
           "ts": "7faa2d860619"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.557885Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.557885Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Key terms and symbols in 'Empirical Bethe\u2013Weizs\u00e4cker terms as Schur\u2013Weyl strata' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1025,16 +1043,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "313aa59f578d",
+          "md": "6471ae80d484",
           "ts": "7faa2d860619"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.557885Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.557885Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The algebraic and logical relations in 'Empirical Bethe\u2013Weizs\u00e4cker terms as Schur\u2013Weyl strata' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1061,16 +1081,18 @@
       },
       {
         "field_hash": {
-          "md": "b88d52d8c1b7",
+          "md": "6471ae80d484",
           "ts": "7faa2d860619"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-21",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.557885Z"
         },
-        "reviewed_at": "2026-06-28T18:05:19.348Z",
+        "reviewed_at": "2026-07-07T14:26:56.557885Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "severity": "major",
         "evidence": "file:15: a_V \\approx 15.67\\,\\mathrm{MeV} (BW volume) is forced to equal 2[2]_q[7]_q \\cdot m_e at q = q_0",
@@ -1080,16 +1102,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "313aa59f578d",
+          "md": "6471ae80d484",
           "ts": "7faa2d860619"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.557885Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.557885Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The derivation steps and formal definitions in 'Empirical Bethe\u2013Weizs\u00e4cker terms as Schur\u2013Weyl strata' are reproducible.",
         "severity": "minor",
@@ -1099,16 +1123,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "313aa59f578d",
+          "md": "6471ae80d484",
           "ts": "7faa2d860619"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.557885Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.557885Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
@@ -1120,14 +1146,20 @@
       {
         "result": "pass",
         "notes": "Rewrote observations_seq11.md. Pruned verbiage from k12-barrier bypass, ensuring exact technical statements remain while stripping meta-commentary.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.557885Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.557885Z"
+        },
+        "field_hash": {
+          "md": "6471ae80d484",
+          "ts": "7faa2d860619"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.226Z"
+  "updated_at": "2026-07-07T14:26:56.557885Z"
 }

@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.lean"
   },
   "source_hashes": {
-    "md": "49be663b91bd",
+    "md": "37e7ec0e9648",
     "ts": "ea773e908ce2",
     "lean": "67894ace6ffa"
   },
@@ -37,14 +37,21 @@
       {
         "result": "pass",
         "notes": "Rewrote fluid-dynamics_seq5.md. Enforced Economy, Concrete before Abstract, Why precedes What. Preserved markers.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.240406Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.240406Z"
+        },
+        "field_hash": {
+          "md": "37e7ec0e9648",
+          "ts": "ea773e908ce2",
+          "lean": "67894ace6ffa"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:55.699Z"
+  "updated_at": "2026-07-07T14:26:56.240406Z"
 }

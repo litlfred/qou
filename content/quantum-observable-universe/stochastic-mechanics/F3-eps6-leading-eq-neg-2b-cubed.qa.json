@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/stochastic-mechanics/F3-eps6-leading-eq-neg-2b-cubed.md"
   },
   "source_hashes": {
-    "md": "7e6bd9d48fe8",
+    "md": "e02f0cb2b43c",
     "ts": "b26e86fe9bc6"
   },
   "criteria": {
@@ -821,14 +821,20 @@
       {
         "result": "pass",
         "notes": "Clarified the Markov closure map steps and removed forward references. Maintained the precision of the Q_beta derivation story.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.029301Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.029301Z"
+        },
+        "field_hash": {
+          "md": "e02f0cb2b43c",
+          "ts": "b26e86fe9bc6"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T23:04:20.088Z"
+  "updated_at": "2026-07-07T14:26:56.029301Z"
 }

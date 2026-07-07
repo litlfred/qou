@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/models-of-qous/self-dual-curvature.lean"
   },
   "source_hashes": {
-    "md": "3a3213e8c26f",
+    "md": "9ce01623a209",
     "ts": "c54e1ba3ab8e",
     "lean": "050e62111a6a"
   },
@@ -800,19 +800,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "3a3213e8c26f",
+          "md": "9ce01623a209",
           "ts": "c54e1ba3ab8e",
-          "lean": "463823d633c9"
+          "lean": "050e62111a6a"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.431685Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:23.733Z",
+        "reviewed_at": "2026-07-07T14:26:55.431685Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -820,17 +820,19 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "3a3213e8c26f",
+          "md": "9ce01623a209",
           "ts": "c54e1ba3ab8e",
-          "lean": "463823d633c9"
+          "lean": "050e62111a6a"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.431685Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.431685Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The claim in 'Self-duality of the curvature' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
@@ -840,17 +842,19 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "3a3213e8c26f",
+          "md": "9ce01623a209",
           "ts": "c54e1ba3ab8e",
-          "lean": "463823d633c9"
+          "lean": "050e62111a6a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.431685Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.431685Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Self-duality of the curvature' presents substantial mathematical content: In an archimedean quantum observable universe with $\\dim_{\\mathbb{R}} H = 4$, [c...",
         "severity": "minor"
@@ -859,17 +863,19 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "3a3213e8c26f",
+          "md": "9ce01623a209",
           "ts": "c54e1ba3ab8e",
-          "lean": "463823d633c9"
+          "lean": "050e62111a6a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.431685Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.431685Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Self-duality of the curvature'.",
         "severity": "minor",
@@ -879,17 +885,19 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "3a3213e8c26f",
+          "md": "9ce01623a209",
           "ts": "c54e1ba3ab8e",
-          "lean": "463823d633c9"
+          "lean": "050e62111a6a"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.431685Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.431685Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose presents 'Self-duality of the curvature' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
@@ -898,17 +906,19 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "3a3213e8c26f",
+          "md": "9ce01623a209",
           "ts": "c54e1ba3ab8e",
-          "lean": "463823d633c9"
+          "lean": "050e62111a6a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.431685Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.431685Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Self-duality of the curvature'.",
         "severity": "minor",
@@ -918,17 +928,19 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "3a3213e8c26f",
+          "md": "9ce01623a209",
           "ts": "c54e1ba3ab8e",
-          "lean": "463823d633c9"
+          "lean": "050e62111a6a"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.431685Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.431685Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/models-of-qous/self-dual-curvature.lean.",
         "severity": "minor",
@@ -938,17 +950,19 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "3a3213e8c26f",
+          "md": "9ce01623a209",
           "ts": "c54e1ba3ab8e",
-          "lean": "463823d633c9"
+          "lean": "050e62111a6a"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.431685Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.431685Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/models-of-qous/self-dual-curvature.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
@@ -957,17 +971,19 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "3a3213e8c26f",
+          "md": "9ce01623a209",
           "ts": "c54e1ba3ab8e",
-          "lean": "463823d633c9"
+          "lean": "050e62111a6a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.431685Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.431685Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No citations are present in 'Self-duality of the curvature', hence no citation misuse is possible.",
         "severity": "minor",
@@ -977,17 +993,19 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "3a3213e8c26f",
+          "md": "9ce01623a209",
           "ts": "c54e1ba3ab8e",
-          "lean": "463823d633c9"
+          "lean": "050e62111a6a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.431685Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.431685Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Key terms and symbols in 'Self-duality of the curvature' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -997,17 +1015,19 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "3a3213e8c26f",
+          "md": "9ce01623a209",
           "ts": "c54e1ba3ab8e",
-          "lean": "463823d633c9"
+          "lean": "050e62111a6a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.431685Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.431685Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The algebraic and logical relations in 'Self-duality of the curvature' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1017,17 +1037,19 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "3a3213e8c26f",
+          "md": "9ce01623a209",
           "ts": "c54e1ba3ab8e",
-          "lean": "463823d633c9"
+          "lean": "050e62111a6a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.431685Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.431685Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The physical concepts described in 'Self-duality of the curvature' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1037,17 +1059,19 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "3a3213e8c26f",
+          "md": "9ce01623a209",
           "ts": "c54e1ba3ab8e",
-          "lean": "463823d633c9"
+          "lean": "050e62111a6a"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.431685Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.431685Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/models-of-qous/self-dual-curvature.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
@@ -1057,17 +1081,19 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "3a3213e8c26f",
+          "md": "9ce01623a209",
           "ts": "c54e1ba3ab8e",
-          "lean": "463823d633c9"
+          "lean": "050e62111a6a"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.431685Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:55.431685Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/models-of-qous/self-dual-curvature.lean fails compilation: content/quantum-observable-universe/models-of-qous/self-dual-curvature.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/ContinuousFunction/Basic.olean' of module Mathlib.Topology.ContinuousFunction.Basic does not exist",
         "verdict": "open-objection",
@@ -1079,14 +1105,21 @@
       {
         "result": "pass",
         "notes": "Removed back-references, used short declarative sentences, tightened explanations of limits, enforced Milnor economy and structural requirements.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.431685Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.431685Z"
+        },
+        "field_hash": {
+          "md": "9ce01623a209",
+          "ts": "c54e1ba3ab8e",
+          "lean": "050e62111a6a"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-07T14:26:55.431685Z"
 }

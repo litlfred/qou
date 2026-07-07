@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-25T22:40:19.400218+00:00",
-  "commitSha": "07fce6d52588f3b0b28608b4bf0bf6b161febfb5",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-07-07T13:52:39.784637+00:00",
+  "commitSha": "85da4f43133d9d70ca3582f4fa4f31771b5ec3f1",
   "assertions": [
     {
       "name": "closed_form_search_completed",
@@ -10,136 +10,149 @@
       "expected": true,
       "passed": true,
       "tolerance": 0,
-      "source": "Catalog of 87 closed-form constants searched against c_implied at 50 dps. Found 0 match(es) within 1 ppm. (Sanity check: search completed without error.)"
+      "source": "Catalog of 87 closed-form constants searched against c_implied at 50 dps. Found 1 match(es) within 1 ppm. (Sanity check: search completed without error.)"
     }
   ],
   "allPassed": true,
-  "durationMs": 779,
+  "durationMs": 516,
   "computation": "implied-c2-closed-form-search-50dps",
   "scriptFile": "implied_c2_closed_form_search_50dps.py",
-  "scriptHash": "34cb94675938",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "bc17f9e1bf97",
+  "scriptCommitSha": "653d66e543fe6ba62d93eb249fcd7c0794fee2c7",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
+    "compute_dps": 70,
+    "output_dps": 60,
     "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Searches a curated catalogue of ~70 closed-form mathematical constants against the actual implied h² coefficient c_implied ≈ -0.91628 at q_0 (50 dps). Reports top-10 closest matches to identify any structural identity within 1 ppm precision.",
   "auditOnly": "docs/audits/2026-05-25-path-c-categorical-principle-hunt.md",
   "parameters": {
-    "c_implied": "-0.9162818761272748805078787",
+    "c_implied": "-0.91629388525163629653539",
     "num_candidates": 87
   },
   "data": {
     "top_15_closest": [
       {
         "rank": 1,
-        "name": "-91628/100000",
-        "value": "-0.91628",
-        "deviation": "0.000001876127274880507878726479",
-        "relative": "2.0475438004e-6"
+        "name": "-G - π²/(6·5000)",
+        "value": "-0.916294580990588660341898",
+        "deviation": "-0.0000006957389523638065080263125",
+        "relative": "7.59296731717e-7"
       },
       {
         "rank": 2,
-        "name": "-G·(1 + 1/3000)",
-        "value": "-0.9162709160419447547262884",
-        "deviation": "0.00001096008533012578159034371",
-        "relative": "1.19614778112e-5"
+        "name": "-9163/10000",
+        "value": "-0.9163",
+        "deviation": "-0.000006114748363703464610028347",
+        "relative": "6.67334843343e-6"
       },
       {
         "rank": 3,
-        "name": "-G - π²/(6·5000)",
-        "value": "-0.916294580990588660341898",
-        "deviation": "-0.00001270486331377983401927149",
-        "relative": "1.38656713014e-5"
+        "name": "-91628/100000",
+        "value": "-0.91628",
+        "deviation": "0.00001388525163629653538997165",
+        "relative": "1.51537098084e-5"
       },
       {
         "rank": 4,
-        "name": "-9163/10000",
-        "value": "-0.9163",
-        "deviation": "-0.00001812387272511949212127352",
-        "relative": "1.97798005148e-5"
+        "name": "-G·(1 + 1/3000)",
+        "value": "-0.9162709160419447547262884",
+        "deviation": "0.00002296920969154180910158888",
+        "relative": "2.50675138853e-5"
       },
       {
         "rank": 5,
         "name": "-G - G²/2900",
         "value": "-0.9162549020978108860466092",
-        "deviation": "0.00002697402946399446126949559",
-        "relative": "2.94385714339e-5"
+        "deviation": "0.00003898315382541048878074076",
+        "relative": "4.25443784498e-5"
       },
       {
         "rank": 6,
-        "name": "-G - 1/3500",
-        "value": "-0.9162513084629333007688892",
-        "deviation": "0.00003056766434157973898949726",
-        "relative": "3.33605467247e-5"
+        "name": "-23/25.1",
+        "value": "-0.9163346613545816214266982",
+        "deviation": "-0.00004077610294532489130826335",
+        "relative": "4.45011186931e-5"
       },
       {
         "rank": 7,
-        "name": "-23/25.1",
-        "value": "-0.9163346613545816214266982",
-        "deviation": "-0.00005278522730674091881950853",
-        "relative": "5.7608066559e-5"
+        "name": "-G - 1/3500",
+        "value": "-0.9162513084629333007688892",
+        "deviation": "0.00004257678870299576650074244",
+        "relative": "4.64663023385e-5"
       },
       {
         "rank": 8,
         "name": "-G - 1/π²·1e-3",
         "value": "-0.9160669153608613528260474",
-        "deviation": "0.0002149607664135276818313321",
-        "relative": "0.000234601133138"
+        "deviation": "0.0002269698907749437093425773",
+        "relative": "0.000247704251254"
       },
       {
         "rank": 9,
         "name": "-G",
         "value": "-0.9159655941772190150546035",
-        "deviation": "0.0003162819500558654532752115",
-        "relative": "0.000345179751227"
+        "deviation": "0.0003282910744172814807864567",
+        "relative": "0.000358281420079"
       },
       {
         "rank": 10,
         "name": "-Λ(π·1/4)·2",
         "value": "-0.9159655741772214150538035",
-        "deviation": "0.000316301950053465454075211",
-        "relative": "0.000345201578569"
+        "deviation": "0.0003283110744148814815864562",
+        "relative": "0.000358303247134"
       },
       {
         "rank": 11,
         "name": "-L(2,χ_4) = -G",
         "value": "-0.9159655741772214150538035",
-        "deviation": "0.000316301950053465454075211",
-        "relative": "0.000345201578569"
+        "deviation": "0.0003283110744148814815864562",
+        "relative": "0.000358303247134"
       },
       {
         "rank": 12,
         "name": "-11/12",
         "value": "-0.9166666666666666666666667",
-        "deviation": "-0.0003847905393917861587879402",
-        "relative": "0.000419947779627"
+        "deviation": "-0.000372781415030370131276695",
+        "relative": "0.000406836082867"
       },
       {
         "rank": 13,
         "name": "-22/24",
         "value": "-0.9166666666666666666666667",
-        "deviation": "-0.0003847905393917861587879402",
-        "relative": "0.000419947779627"
+        "deviation": "-0.000372781415030370131276695",
+        "relative": "0.000406836082867"
       },
       {
         "rank": 14,
         "name": "-44/48",
         "value": "-0.9166666666666666666666667",
-        "deviation": "-0.0003847905393917861587879402",
-        "relative": "0.000419947779627"
+        "deviation": "-0.000372781415030370131276695",
+        "relative": "0.000406836082867"
       },
       {
         "rank": 15,
         "name": "h²(q_0)·-21",
-        "value": "-0.9178305828407536329238777",
-        "deviation": "-0.001548706713478752415998927",
-        "relative": "0.00169020773392"
+        "value": "-0.917830379182961777442406",
+        "deviation": "-0.001536493931325480907016078",
+        "relative": "0.00167685712636"
       }
     ],
-    "matches_1ppm": [],
-    "conclusion": "Found 0 closed-form candidate(s) within 1 ppm of c_implied at 50 dps. Closest match overall: '-91628/100000' at Δ = 1.87613e-6 (relative 2.04754e-6). No structural identity found in the catalogue; c_implied is either a new constant or a sum of multiple contributions."
+    "matches_1ppm": [
+      {
+        "name": "-G - π²/(6·5000)",
+        "value": "-0.916294580990588660341898"
+      }
+    ],
+    "conclusion": "Found 1 closed-form candidate(s) within 1 ppm of c_implied at 50 dps. Closest match overall: '-G - π²/(6·5000)' at Δ = 6.95739e-7 (relative 7.59297e-7). This is a STRUCTURAL IDENTITY candidate — recommend categorical follow-up."
   }
 }

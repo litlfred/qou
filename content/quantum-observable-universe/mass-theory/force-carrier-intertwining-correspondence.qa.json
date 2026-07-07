@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/force-carrier-intertwining-correspondence.lean"
   },
   "source_hashes": {
-    "md": "021309e9b8e6",
+    "md": "4a83f2a23411",
     "ts": "bdfc6dfa9089",
     "lean": "d32bd3551968"
   },
@@ -1068,16 +1068,18 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "021309e9b8e6",
+          "md": "4a83f2a23411",
           "ts": "bdfc6dfa9089",
-          "lean": "6aa5cd41d2a4"
+          "lean": "d32bd3551968"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.014365Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:57.014365Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The statement is written in standard scholarly mathematical and physics voice.",
         "severity": "minor"
@@ -1086,17 +1088,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "021309e9b8e6",
+          "md": "4a83f2a23411",
           "ts": "bdfc6dfa9089",
-          "lean": "6aa5cd41d2a4"
+          "lean": "d32bd3551968"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.014365Z"
         },
-        "reviewed_at": "2026-06-28T10:58:53.984Z",
+        "reviewed_at": "2026-07-07T14:26:57.014365Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Block placement and kind 'proposition' match validated structurally for 'Force carrier $T_{p,q}$ acting on $n$-strand braid lands on Wedderburn channel $\\\\lambda = (p, 1^{n-p})$'.",
         "severity": "minor"
@@ -1105,16 +1109,18 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "021309e9b8e6",
+          "md": "4a83f2a23411",
           "ts": "bdfc6dfa9089",
-          "lean": "6aa5cd41d2a4"
+          "lean": "d32bd3551968"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.014365Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:57.014365Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
         "evidence": "content/quantum-observable-universe/mass-theory/force-carrier-intertwining-correspondence.lean:1 \u2014 Lean file exists",
@@ -1124,16 +1130,18 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "021309e9b8e6",
+          "md": "4a83f2a23411",
           "ts": "bdfc6dfa9089",
-          "lean": "6aa5cd41d2a4"
+          "lean": "d32bd3551968"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.014365Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:57.014365Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Lean proof contains compilation errors.",
         "evidence": "content/quantum-observable-universe/mass-theory/force-carrier-intertwining-correspondence.lean:1",
@@ -1173,7 +1181,7 @@
       },
       {
         "field_hash": {
-          "md": "021309e9b8e6",
+          "md": "4a83f2a23411",
           "ts": "bdfc6dfa9089",
           "lean": "d32bd3551968"
         },
@@ -1181,9 +1189,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.014365Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_at": "2026-07-07T14:26:57.014365Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:force-carrier-intertwining-correspondence' aligns with Lean declaration. Sorry-free."
       }
@@ -1191,16 +1201,18 @@
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "021309e9b8e6",
+          "md": "4a83f2a23411",
           "ts": "bdfc6dfa9089",
-          "lean": "6aa5cd41d2a4"
+          "lean": "d32bd3551968"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.014365Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:57.014365Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Lean code is broken and does not compile, hence strategy is opaque.",
         "severity": "minor"
@@ -1209,17 +1221,19 @@
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "021309e9b8e6",
+          "md": "4a83f2a23411",
           "ts": "bdfc6dfa9089",
-          "lean": "6aa5cd41d2a4"
+          "lean": "d32bd3551968"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.014365Z"
         },
-        "reviewed_at": "2026-06-28T10:58:53.991Z",
+        "reviewed_at": "2026-07-07T14:26:57.014365Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Lean code in content/quantum-observable-universe/mass-theory/force-carrier-intertwining-correspondence.lean is broken and does not compile, hence goal plausibility cannot be verified.",
         "severity": "minor"
@@ -1228,16 +1242,18 @@
     "proof-rater-novelty": [
       {
         "field_hash": {
-          "md": "021309e9b8e6",
+          "md": "4a83f2a23411",
           "ts": "bdfc6dfa9089",
-          "lean": "6aa5cd41d2a4"
+          "lean": "d32bd3551968"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.014365Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:57.014365Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The mathematical and physical connections explored in this block are highly novel.",
         "severity": "minor",
@@ -1250,17 +1266,19 @@
     "proof-statement-integrity": [
       {
         "field_hash": {
-          "md": "021309e9b8e6",
+          "md": "4a83f2a23411",
           "ts": "bdfc6dfa9089",
-          "lean": "6aa5cd41d2a4"
+          "lean": "d32bd3551968"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.014365Z"
         },
-        "reviewed_at": "2026-06-28T10:58:53.997Z",
+        "reviewed_at": "2026-07-07T14:26:57.014365Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "",
         "severity": "minor"
@@ -1269,17 +1287,19 @@
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "021309e9b8e6",
+          "md": "4a83f2a23411",
           "ts": "bdfc6dfa9089",
-          "lean": "6aa5cd41d2a4"
+          "lean": "d32bd3551968"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.014365Z"
         },
-        "reviewed_at": "2026-06-28T10:58:54.004Z",
+        "reviewed_at": "2026-07-07T14:26:57.014365Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "",
         "severity": "minor"
@@ -1306,16 +1326,18 @@
       },
       {
         "field_hash": {
-          "md": "021309e9b8e6",
+          "md": "4a83f2a23411",
           "ts": "bdfc6dfa9089",
-          "lean": "6aa5cd41d2a4"
+          "lean": "d32bd3551968"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.014365Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:57.014365Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The proof does not rely on trivial True stubs.",
         "severity": "minor"
@@ -1324,17 +1346,19 @@
     "proof-no-false-premise": [
       {
         "field_hash": {
-          "md": "021309e9b8e6",
+          "md": "4a83f2a23411",
           "ts": "bdfc6dfa9089",
-          "lean": "6aa5cd41d2a4"
+          "lean": "d32bd3551968"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.014365Z"
         },
-        "reviewed_at": "2026-06-28T10:58:54.010Z",
+        "reviewed_at": "2026-07-07T14:26:57.014365Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "",
         "severity": "minor"
@@ -1343,16 +1367,18 @@
     "proof-no-unused-hypotheses": [
       {
         "field_hash": {
-          "md": "021309e9b8e6",
+          "md": "4a83f2a23411",
           "ts": "bdfc6dfa9089",
-          "lean": "6aa5cd41d2a4"
+          "lean": "d32bd3551968"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.014365Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:57.014365Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Broken proof compilation.",
         "severity": "minor"
@@ -1361,17 +1387,19 @@
     "proof-no-decide-masking": [
       {
         "field_hash": {
-          "md": "021309e9b8e6",
+          "md": "4a83f2a23411",
           "ts": "bdfc6dfa9089",
-          "lean": "6aa5cd41d2a4"
+          "lean": "d32bd3551968"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.014365Z"
         },
-        "reviewed_at": "2026-06-28T10:58:54.017Z",
+        "reviewed_at": "2026-07-07T14:26:57.014365Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "",
         "severity": "minor"
@@ -1380,16 +1408,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "021309e9b8e6",
+          "md": "4a83f2a23411",
           "ts": "bdfc6dfa9089",
-          "lean": "6aa5cd41d2a4"
+          "lean": "d32bd3551968"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.014365Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:57.014365Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/force-carrier-intertwining-correspondence.ts:1",
@@ -1399,16 +1429,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "021309e9b8e6",
+          "md": "4a83f2a23411",
           "ts": "bdfc6dfa9089",
-          "lean": "6aa5cd41d2a4"
+          "lean": "d32bd3551968"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.014365Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:57.014365Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling contains 'sorry' placeholders, rendering the proof vacuous.",
         "severity": "major"
@@ -1417,16 +1449,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "021309e9b8e6",
+          "md": "4a83f2a23411",
           "ts": "bdfc6dfa9089",
-          "lean": "6aa5cd41d2a4"
+          "lean": "d32bd3551968"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.014365Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:57.014365Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/force-carrier-intertwining-correspondence.ts:1",
@@ -1436,16 +1470,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "021309e9b8e6",
+          "md": "4a83f2a23411",
           "ts": "bdfc6dfa9089",
-          "lean": "6aa5cd41d2a4"
+          "lean": "d32bd3551968"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.014365Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:57.014365Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
@@ -1454,16 +1490,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "021309e9b8e6",
+          "md": "4a83f2a23411",
           "ts": "bdfc6dfa9089",
-          "lean": "6aa5cd41d2a4"
+          "lean": "d32bd3551968"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.014365Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:57.014365Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/force-carrier-intertwining-correspondence.ts:1",
@@ -1473,16 +1511,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "021309e9b8e6",
+          "md": "4a83f2a23411",
           "ts": "bdfc6dfa9089",
-          "lean": "6aa5cd41d2a4"
+          "lean": "d32bd3551968"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.014365Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:57.014365Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/force-carrier-intertwining-correspondence.ts:1",
@@ -1492,16 +1532,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "021309e9b8e6",
+          "md": "4a83f2a23411",
           "ts": "bdfc6dfa9089",
-          "lean": "6aa5cd41d2a4"
+          "lean": "d32bd3551968"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.014365Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:57.014365Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, causing divergence from the narrative.",
         "severity": "minor"
@@ -1510,16 +1552,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "021309e9b8e6",
+          "md": "4a83f2a23411",
           "ts": "bdfc6dfa9089",
-          "lean": "6aa5cd41d2a4"
+          "lean": "d32bd3551968"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.014365Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:57.014365Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
         "evidence": "content/quantum-observable-universe/mass-theory/force-carrier-intertwining-correspondence.ts:1",
@@ -1529,16 +1573,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "021309e9b8e6",
+          "md": "4a83f2a23411",
           "ts": "bdfc6dfa9089",
-          "lean": "6aa5cd41d2a4"
+          "lean": "d32bd3551968"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.014365Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:57.014365Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/force-carrier-intertwining-correspondence.ts:1",
@@ -1548,16 +1594,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "021309e9b8e6",
+          "md": "4a83f2a23411",
           "ts": "bdfc6dfa9089",
-          "lean": "6aa5cd41d2a4"
+          "lean": "d32bd3551968"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.014365Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:57.014365Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/force-carrier-intertwining-correspondence.ts:1",
@@ -1567,16 +1615,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "021309e9b8e6",
+          "md": "4a83f2a23411",
           "ts": "bdfc6dfa9089",
-          "lean": "6aa5cd41d2a4"
+          "lean": "d32bd3551968"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.014365Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:57.014365Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/force-carrier-intertwining-correspondence.ts:1",
@@ -1586,16 +1636,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "021309e9b8e6",
+          "md": "4a83f2a23411",
           "ts": "bdfc6dfa9089",
-          "lean": "6aa5cd41d2a4"
+          "lean": "d32bd3551968"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.014365Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:57.014365Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
         "evidence": "content/quantum-observable-universe/mass-theory/force-carrier-intertwining-correspondence.lean:1 \u2014 content/quantum-observable-universe/mass-theory/force-carrier-intertwining-correspondence.lean:11:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Combinatorics/Composition.olean' of module Mathlib.Combinatorics.Composition does not exist",
@@ -1605,16 +1657,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "021309e9b8e6",
+          "md": "4a83f2a23411",
           "ts": "bdfc6dfa9089",
-          "lean": "6aa5cd41d2a4"
+          "lean": "d32bd3551968"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.014365Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:57.014365Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/force-carrier-intertwining-correspondence.lean:11:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Combinatorics/Composition.olean' of module Mathlib.Combinatorics.Composition does not exist",
         "severity": "critical",
@@ -1626,14 +1680,21 @@
       {
         "result": "pass",
         "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
-        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewed_at": "2026-07-07T14:26:57.014365Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.014365Z"
+        },
+        "field_hash": {
+          "md": "4a83f2a23411",
+          "ts": "bdfc6dfa9089",
+          "lean": "d32bd3551968"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.430Z"
+  "updated_at": "2026-07-07T14:26:57.014365Z"
 }

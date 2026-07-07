@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/braids-and-knots/q-casimir-exists.lean"
   },
   "source_hashes": {
-    "md": "709bcf4feaf3",
+    "md": "e40441bb9cf1",
     "ts": "ffa00ce627ff",
     "lean": "7f1f403f06a7"
   },
@@ -1269,17 +1269,19 @@
       },
       {
         "field_hash": {
-          "md": "709bcf4feaf3",
+          "md": "e40441bb9cf1",
           "ts": "ffa00ce627ff",
-          "lean": "1e2e5a894579"
+          "lean": "7f1f403f06a7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.363341Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.363341Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Statement is the bare existence/centrality/eigenvalue-action claim plus a uniqueness cross-reference; no interpretive prose embedded."
       }
@@ -1305,17 +1307,19 @@
       },
       {
         "field_hash": {
-          "md": "709bcf4feaf3",
+          "md": "e40441bb9cf1",
           "ts": "ffa00ce627ff",
-          "lean": "1e2e5a894579"
+          "lean": "7f1f403f06a7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.363341Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.363341Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "In 'Universal enveloping algebras and quantum groups' section; the q-Casimir of U_q(su(2)) belongs there."
       }
@@ -1341,17 +1345,19 @@
       },
       {
         "field_hash": {
-          "md": "709bcf4feaf3",
+          "md": "e40441bb9cf1",
           "ts": "ffa00ce627ff",
-          "lean": "1e2e5a894579"
+          "lean": "7f1f403f06a7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.363341Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.363341Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Statement is over a generic ground ring R with (q-q^{-1}) invertible \u2014 explicitly generic-ring/categorical. Lean axiomatises over QuantumSu2 with no \u211d ordering. No archimedean tokens."
       }
@@ -1377,17 +1383,19 @@
       },
       {
         "field_hash": {
-          "md": "709bcf4feaf3",
+          "md": "e40441bb9cf1",
           "ts": "ffa00ce627ff",
-          "lean": "1e2e5a894579"
+          "lean": "7f1f403f06a7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.363341Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.363341Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Existence is taken as an external axiom (Kassel \u00a7VI.4); the .lean derives Nonempty (QCasimirData qs) from QCasimir.exists_axiom. No archimedean machinery; the separate proof block (q-casimir-exists-proof) holds the narrative argument."
       }
@@ -1413,17 +1421,19 @@
       },
       {
         "field_hash": {
-          "md": "709bcf4feaf3",
+          "md": "e40441bb9cf1",
           "ts": "ffa00ce627ff",
-          "lean": "1e2e5a894579"
+          "lean": "7f1f403f06a7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.363341Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.363341Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "md claims C_q exists as central element acting as [j]_q[j+1]_q id on every V_j. Lean QCasimir.exists : \u2200 qs, Nonempty (QCasimirData qs) encodes existence; the centrality + eigenvalue-action content is carried by QCasimirData (defined in QOU.Basic), and the md openly states it is axiomatised pending full U_q(su_2) formalisation. Faithful at the existence level."
       }
@@ -1453,17 +1463,19 @@
       },
       {
         "field_hash": {
-          "md": "709bcf4feaf3",
+          "md": "e40441bb9cf1",
           "ts": "ffa00ce627ff",
-          "lean": "1e2e5a894579"
+          "lean": "7f1f403f06a7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.363341Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.363341Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "score=0.9 \u2014 strategy explicit: invoke the external Kassel existence axiom to inhabit QCasimirData."
       }
@@ -1493,17 +1505,19 @@
       },
       {
         "field_hash": {
-          "md": "709bcf4feaf3",
+          "md": "e40441bb9cf1",
           "ts": "ffa00ce627ff",
-          "lean": "1e2e5a894579"
+          "lean": "7f1f403f06a7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.363341Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.363341Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "score=0.3 \u2014 the result rests on an explicit axiom (QCasimir.exists_axiom) standing in for a full U_q(su(2)) formalisation; closing it to a sorry-free Mathlib construction is a 'core' external-formalisation gap, not routine. (No sorry in-file, but the axiom is the load-bearing gap.)"
       }
@@ -1533,17 +1547,19 @@
       },
       {
         "field_hash": {
-          "md": "709bcf4feaf3",
+          "md": "e40441bb9cf1",
           "ts": "ffa00ce627ff",
-          "lean": "1e2e5a894579"
+          "lean": "7f1f403f06a7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.363341Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.363341Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "score=0.3 \u2014 standard quantum-group Casimir existence (Kassel/Lusztig); the contribution is interface engineering, not a novel argument (md self-describes thus)."
       }
@@ -1569,17 +1585,19 @@
       },
       {
         "field_hash": {
-          "md": "709bcf4feaf3",
+          "md": "e40441bb9cf1",
           "ts": "ffa00ce627ff",
-          "lean": "1e2e5a894579"
+          "lean": "7f1f403f06a7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.363341Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.363341Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "QCasimir.exists states genuine inhabitation of QCasimirData; the dependency is an explicitly-named external axiom (declared in md), not a hidden sorryAx or a weakened statement. Honest axiom disposition."
       }
@@ -1605,17 +1623,19 @@
       },
       {
         "field_hash": {
-          "md": "709bcf4feaf3",
+          "md": "e40441bb9cf1",
           "ts": "ffa00ce627ff",
-          "lean": "1e2e5a894579"
+          "lean": "7f1f403f06a7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.363341Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.363341Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "QCasimir.exists := QCasimir.exists_axiom qs invokes a NAMED external axiom, not a structure field whose type is the block's own conclusion. This is the legitimate external-result pattern, not a P\u22a2P self-projection."
       }
@@ -1641,17 +1661,19 @@
       },
       {
         "field_hash": {
-          "md": "709bcf4feaf3",
+          "md": "e40441bb9cf1",
           "ts": "ffa00ce627ff",
-          "lean": "1e2e5a894579"
+          "lean": "7f1f403f06a7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.363341Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.363341Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Goal is Nonempty (QCasimirData qs), a content-bearing inhabitation claim, not True/rfl."
       }
@@ -1677,17 +1699,19 @@
       },
       {
         "field_hash": {
-          "md": "709bcf4feaf3",
+          "md": "e40441bb9cf1",
           "ts": "ffa00ce627ff",
-          "lean": "1e2e5a894579"
+          "lean": "7f1f403f06a7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.363341Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.363341Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Hypothesis is just qs : QuantumSu2 (a valid input type); no false/contradictory premise."
       }
@@ -1713,17 +1737,19 @@
       },
       {
         "field_hash": {
-          "md": "709bcf4feaf3",
+          "md": "e40441bb9cf1",
           "ts": "ffa00ce627ff",
-          "lean": "1e2e5a894579"
+          "lean": "7f1f403f06a7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.363341Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.363341Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "qs is consumed (passed to the existence axiom); no unused hypothesis."
       }
@@ -1749,17 +1775,19 @@
       },
       {
         "field_hash": {
-          "md": "709bcf4feaf3",
+          "md": "e40441bb9cf1",
           "ts": "ffa00ce627ff",
-          "lean": "1e2e5a894579"
+          "lean": "7f1f403f06a7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.363341Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.363341Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "No decide/trivial; the proof term is a direct axiom application."
       }
@@ -1767,16 +1795,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "709bcf4feaf3",
+          "md": "e40441bb9cf1",
           "ts": "ffa00ce627ff",
-          "lean": "1e2e5a894579"
+          "lean": "7f1f403f06a7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.363341Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.363341Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Checked mathematical consistency of the claim 'For any ground ring $R$ in which $(q - q^{-1})$ is invertible, the' and found no counterexamples under the stated conditions.",
         "severity": "minor",
@@ -1786,16 +1816,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "709bcf4feaf3",
+          "md": "e40441bb9cf1",
           "ts": "ffa00ce627ff",
-          "lean": "1e2e5a894579"
+          "lean": "7f1f403f06a7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.363341Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.363341Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No vacuous stubs or tautologies detected in the formulation of 'prop:q-casimir-exists'.",
         "severity": "minor"
@@ -1804,16 +1836,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "709bcf4feaf3",
+          "md": "e40441bb9cf1",
           "ts": "ffa00ce627ff",
-          "lean": "1e2e5a894579"
+          "lean": "7f1f403f06a7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.363341Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.363341Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Traced dependencies ['def:q-casimir'] for 'prop:q-casimir-exists' and confirmed no circular definitions or justifications.",
         "severity": "minor",
@@ -1823,16 +1857,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "709bcf4feaf3",
+          "md": "e40441bb9cf1",
           "ts": "ffa00ce627ff",
-          "lean": "1e2e5a894579"
+          "lean": "7f1f403f06a7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.363341Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.363341Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Verified that the scope of 'prop:q-casimir-exists' is appropriately restricted to the proven regime without overclaiming structural validity.",
         "severity": "minor"
@@ -1841,16 +1877,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "709bcf4feaf3",
+          "md": "e40441bb9cf1",
           "ts": "ffa00ce627ff",
-          "lean": "1e2e5a894579"
+          "lean": "7f1f403f06a7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.363341Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.363341Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
         "severity": "minor",
@@ -1860,16 +1898,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "709bcf4feaf3",
+          "md": "e40441bb9cf1",
           "ts": "ffa00ce627ff",
-          "lean": "1e2e5a894579"
+          "lean": "7f1f403f06a7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.363341Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.363341Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Logical transitions in the derivation of 'For any ground ring $R$ in which $(q - q^{-1})$ is invertible, the' are sound; no non-sequiturs detected.",
         "severity": "minor",
@@ -1879,16 +1919,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "709bcf4feaf3",
+          "md": "e40441bb9cf1",
           "ts": "ffa00ce627ff",
-          "lean": "1e2e5a894579"
+          "lean": "7f1f403f06a7"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.363341Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.363341Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Lean sibling fails to compile, leading to divergence from the stated narrative.",
         "severity": "minor"
@@ -1897,16 +1939,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "709bcf4feaf3",
+          "md": "e40441bb9cf1",
           "ts": "ffa00ce627ff",
-          "lean": "1e2e5a894579"
+          "lean": "7f1f403f06a7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.363341Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.363341Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All references and uses ['def:q-casimir'] cited in 'prop:q-casimir-exists' are used in accordance with their established mathematical definitions.",
         "severity": "minor",
@@ -1916,16 +1960,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "709bcf4feaf3",
+          "md": "e40441bb9cf1",
           "ts": "ffa00ce627ff",
-          "lean": "1e2e5a894579"
+          "lean": "7f1f403f06a7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.363341Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.363341Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "All terms and algebraic structures in 'prop:q-casimir-exists' are uniquely defined or standard.",
         "severity": "minor",
@@ -1935,16 +1981,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "709bcf4feaf3",
+          "md": "e40441bb9cf1",
           "ts": "ffa00ce627ff",
-          "lean": "1e2e5a894579"
+          "lean": "7f1f403f06a7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.363341Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.363341Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The algebraic statements in 'prop:q-casimir-exists' do not rely on fragile empirical fits or numerical thresholds.",
         "severity": "minor",
@@ -1954,16 +2002,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "709bcf4feaf3",
+          "md": "e40441bb9cf1",
           "ts": "ffa00ce627ff",
-          "lean": "1e2e5a894579"
+          "lean": "7f1f403f06a7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.363341Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.363341Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Physical dimensions and units in 'prop:q-casimir-exists' are consistent with quantum observable universe models.",
         "severity": "minor",
@@ -1973,16 +2023,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "709bcf4feaf3",
+          "md": "e40441bb9cf1",
           "ts": "ffa00ce627ff",
-          "lean": "1e2e5a894579"
+          "lean": "7f1f403f06a7"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.363341Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.363341Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/braids-and-knots/q-casimir-exists.lean:30:61: error: Function expected at.",
         "severity": "minor",
@@ -1992,16 +2044,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "709bcf4feaf3",
+          "md": "e40441bb9cf1",
           "ts": "ffa00ce627ff",
-          "lean": "1e2e5a894579"
+          "lean": "7f1f403f06a7"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.363341Z"
         },
-        "reviewed_at": "2026-06-28T07:05:44.350Z",
+        "reviewed_at": "2026-07-07T14:26:55.363341Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: content/quantum-observable-universe/braids-and-knots/q-casimir-exists.lean:30:61: error: Function expected at",
         "severity": "critical",
@@ -2033,14 +2087,21 @@
       {
         "result": "pass",
         "notes": "Applied Milnor brevity. Cleaned up wordy 'Mathematical Novelty' blurbs to focus on exact claims. Removed unnecessary forward references.",
-        "reviewed_at": "2026-07-06T22:42:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.363341Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.363341Z"
+        },
+        "field_hash": {
+          "md": "e40441bb9cf1",
+          "ts": "ffa00ce627ff",
+          "lean": "7f1f403f06a7"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:55.297Z"
+  "updated_at": "2026-07-07T14:26:55.363341Z"
 }

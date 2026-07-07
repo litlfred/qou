@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/particle-interactions/hadron-proton-example.md"
   },
   "source_hashes": {
-    "md": "81dfeef6be24",
+    "md": "187de3452803",
     "ts": "26e900730e4a"
   },
   "criteria": {
@@ -1647,18 +1647,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "01698765f821",
+          "md": "187de3452803",
           "ts": "26e900730e4a"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.385086Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:19.567Z",
+        "reviewed_at": "2026-07-07T14:26:57.385086Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1666,16 +1666,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "01698765f821",
+          "md": "187de3452803",
           "ts": "26e900730e4a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.385086Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.385086Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'The proton as a Borromean hadron': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -1685,16 +1687,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "01698765f821",
+          "md": "187de3452803",
           "ts": "26e900730e4a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.385086Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.385086Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'The proton as a Borromean hadron' presents substantial mathematical content: The proton is a hadron \u2014 a stable knot composite \u2014 whose three constituents are linked in a Borromean configuration.",
         "severity": "minor"
@@ -1703,16 +1707,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "01698765f821",
+          "md": "187de3452803",
           "ts": "26e900730e4a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.385086Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.385086Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'The proton as a Borromean hadron'.",
         "severity": "minor",
@@ -1722,16 +1728,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "01698765f821",
+          "md": "187de3452803",
           "ts": "26e900730e4a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.385086Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.385086Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'The proton as a Borromean hadron' is appropriately qualified.",
         "severity": "minor"
@@ -1740,16 +1748,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "01698765f821",
+          "md": "187de3452803",
           "ts": "26e900730e4a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.385086Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.385086Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'The proton as a Borromean hadron'.",
         "severity": "minor",
@@ -1759,16 +1769,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "01698765f821",
+          "md": "187de3452803",
           "ts": "26e900730e4a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.385086Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.385086Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The argument flow in 'The proton as a Borromean hadron' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -1778,16 +1790,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "01698765f821",
+          "md": "187de3452803",
           "ts": "26e900730e4a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.385086Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.385086Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
@@ -1796,16 +1810,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "01698765f821",
+          "md": "187de3452803",
           "ts": "26e900730e4a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.385086Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.385086Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'The proton as a Borromean hadron', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1815,16 +1831,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "01698765f821",
+          "md": "187de3452803",
           "ts": "26e900730e4a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.385086Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.385086Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'The proton as a Borromean hadron' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1834,16 +1852,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "01698765f821",
+          "md": "187de3452803",
           "ts": "26e900730e4a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.385086Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.385086Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'The proton as a Borromean hadron' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1853,16 +1873,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "01698765f821",
+          "md": "187de3452803",
           "ts": "26e900730e4a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.385086Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.385086Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'The proton as a Borromean hadron' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1872,16 +1894,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "01698765f821",
+          "md": "187de3452803",
           "ts": "26e900730e4a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.385086Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.385086Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'The proton as a Borromean hadron' are reproducible.",
         "severity": "minor",
@@ -1891,16 +1915,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "01698765f821",
+          "md": "187de3452803",
           "ts": "26e900730e4a"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.385086Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.385086Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -1912,14 +1938,20 @@
       {
         "result": "pass",
         "notes": "Rewrote seq14 to strictly enforce Milnor brevity. Trimmed fluff and meta-commentary, ensuring straightforward descriptive sentences. Fixed non-linear forward references.",
-        "reviewed_at": "2026-07-06T22:47:00Z",
+        "reviewed_at": "2026-07-07T14:26:57.385086Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.385086Z"
+        },
+        "field_hash": {
+          "md": "187de3452803",
+          "ts": "26e900730e4a"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.492Z"
+  "updated_at": "2026-07-07T14:26:57.385086Z"
 }

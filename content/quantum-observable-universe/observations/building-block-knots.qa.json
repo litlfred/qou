@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/observations/building-block-knots.lean"
   },
   "source_hashes": {
-    "md": "de178616ca81",
+    "md": "2b6e6016ff25",
     "ts": "71dac3474c9d",
     "lean": "b4ef5ac2f6ab"
   },
@@ -837,19 +837,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "8ca15f49c0f1",
-          "ts": "0893b1a6bb7b",
-          "lean": "ea49a119b19e"
+          "md": "2b6e6016ff25",
+          "ts": "71dac3474c9d",
+          "lean": "b4ef5ac2f6ab"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.554527Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:53.088Z",
+        "reviewed_at": "2026-07-07T14:26:56.554527Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -857,17 +857,19 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "8ca15f49c0f1",
-          "ts": "0893b1a6bb7b",
-          "lean": "ea49a119b19e"
+          "md": "2b6e6016ff25",
+          "ts": "71dac3474c9d",
+          "lean": "b4ef5ac2f6ab"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.554527Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.554527Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The claim in 'Building block knots: classification, polynomials, and volumes' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
@@ -877,17 +879,19 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "8ca15f49c0f1",
-          "ts": "0893b1a6bb7b",
-          "lean": "ea49a119b19e"
+          "md": "2b6e6016ff25",
+          "ts": "71dac3474c9d",
+          "lean": "b4ef5ac2f6ab"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.554527Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.554527Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Building block knots: classification, polynomials, and volumes' presents substantial mathematical content: Every particle in the Descartes universe is built from knots and links embeddabl...",
         "severity": "minor"
@@ -896,17 +900,19 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "8ca15f49c0f1",
-          "ts": "0893b1a6bb7b",
-          "lean": "ea49a119b19e"
+          "md": "2b6e6016ff25",
+          "ts": "71dac3474c9d",
+          "lean": "b4ef5ac2f6ab"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.554527Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.554527Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Building block knots: classification, polynomials, and volumes'.",
         "severity": "minor",
@@ -916,17 +922,19 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "8ca15f49c0f1",
-          "ts": "0893b1a6bb7b",
-          "lean": "ea49a119b19e"
+          "md": "2b6e6016ff25",
+          "ts": "71dac3474c9d",
+          "lean": "b4ef5ac2f6ab"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.554527Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.554527Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose presents 'Building block knots: classification, polynomials, and volumes' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
@@ -935,17 +943,19 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "8ca15f49c0f1",
-          "ts": "0893b1a6bb7b",
-          "lean": "ea49a119b19e"
+          "md": "2b6e6016ff25",
+          "ts": "71dac3474c9d",
+          "lean": "b4ef5ac2f6ab"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.554527Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.554527Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Building block knots: classification, polynomials, and volumes'.",
         "severity": "minor",
@@ -955,17 +965,19 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "8ca15f49c0f1",
-          "ts": "0893b1a6bb7b",
-          "lean": "ea49a119b19e"
+          "md": "2b6e6016ff25",
+          "ts": "71dac3474c9d",
+          "lean": "b4ef5ac2f6ab"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.554527Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.554527Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/observations/building-block-knots.lean.",
         "severity": "minor",
@@ -975,17 +987,19 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "8ca15f49c0f1",
-          "ts": "0893b1a6bb7b",
-          "lean": "ea49a119b19e"
+          "md": "2b6e6016ff25",
+          "ts": "71dac3474c9d",
+          "lean": "b4ef5ac2f6ab"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.554527Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.554527Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/observations/building-block-knots.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
@@ -994,17 +1008,19 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "8ca15f49c0f1",
-          "ts": "0893b1a6bb7b",
-          "lean": "ea49a119b19e"
+          "md": "2b6e6016ff25",
+          "ts": "71dac3474c9d",
+          "lean": "b4ef5ac2f6ab"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.554527Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.554527Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No citations are present in 'Building block knots: classification, polynomials, and volumes', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1014,17 +1030,19 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "8ca15f49c0f1",
-          "ts": "0893b1a6bb7b",
-          "lean": "ea49a119b19e"
+          "md": "2b6e6016ff25",
+          "ts": "71dac3474c9d",
+          "lean": "b4ef5ac2f6ab"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.554527Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.554527Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Key terms and symbols in 'Building block knots: classification, polynomials, and volumes' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1034,17 +1052,19 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "8ca15f49c0f1",
-          "ts": "0893b1a6bb7b",
-          "lean": "ea49a119b19e"
+          "md": "2b6e6016ff25",
+          "ts": "71dac3474c9d",
+          "lean": "b4ef5ac2f6ab"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.554527Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.554527Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The algebraic and logical relations in 'Building block knots: classification, polynomials, and volumes' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1054,17 +1074,19 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "8ca15f49c0f1",
-          "ts": "0893b1a6bb7b",
-          "lean": "ea49a119b19e"
+          "md": "2b6e6016ff25",
+          "ts": "71dac3474c9d",
+          "lean": "b4ef5ac2f6ab"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.554527Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.554527Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The physical concepts described in 'Building block knots: classification, polynomials, and volumes' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1074,17 +1096,19 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "8ca15f49c0f1",
-          "ts": "0893b1a6bb7b",
-          "lean": "ea49a119b19e"
+          "md": "2b6e6016ff25",
+          "ts": "71dac3474c9d",
+          "lean": "b4ef5ac2f6ab"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.554527Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.554527Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/observations/building-block-knots.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
@@ -1094,17 +1118,19 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "8ca15f49c0f1",
-          "ts": "0893b1a6bb7b",
-          "lean": "ea49a119b19e"
+          "md": "2b6e6016ff25",
+          "ts": "71dac3474c9d",
+          "lean": "b4ef5ac2f6ab"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.554527Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.980Z",
+        "reviewed_at": "2026-07-07T14:26:56.554527Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/observations/building-block-knots.lean fails compilation: content/quantum-observable-universe/observations/building-block-knots.lean:76:18: error: Tactic `rfl` failed: The left-hand side",
         "verdict": "open-objection",
@@ -1136,14 +1162,21 @@
       {
         "result": "pass",
         "notes": "Applied Milnor exposition standard (H1-H8) and brevity rules. Shortened sentences, removed editorializing ('surprisingly', 'remarkably'), replaced 'this book' with 'this paper', and maintained Math, markdown, and cross-block consistency.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.554527Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.554527Z"
+        },
+        "field_hash": {
+          "md": "2b6e6016ff25",
+          "ts": "71dac3474c9d",
+          "lean": "b4ef5ac2f6ab"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-07T14:26:56.554527Z"
 }

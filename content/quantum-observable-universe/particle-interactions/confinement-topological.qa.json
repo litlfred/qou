@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/particle-interactions/confinement-topological.md"
   },
   "source_hashes": {
-    "md": "1476cc946ad4",
+    "md": "971c0e06d789",
     "ts": "943149e87540"
   },
   "criteria": {
@@ -2264,19 +2264,18 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "62a034929c1a",
-          "ts": "943149e87540",
-          "lean": "9e52b34cf96f"
+          "md": "971c0e06d789",
+          "ts": "943149e87540"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.266789Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:21.095Z",
+        "reviewed_at": "2026-07-07T14:26:57.266789Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
       }
@@ -2284,19 +2283,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "62a034929c1a",
-          "ts": "943149e87540",
-          "lean": "9e52b34cf96f"
+          "md": "971c0e06d789",
+          "ts": "943149e87540"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.266789Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:21.443Z",
+        "reviewed_at": "2026-07-07T14:26:57.266789Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -2304,19 +2302,18 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "62a034929c1a",
-          "ts": "943149e87540",
-          "lean": "9e52b34cf96f"
+          "md": "971c0e06d789",
+          "ts": "943149e87540"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.266789Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:21.836Z",
+        "reviewed_at": "2026-07-07T14:26:57.266789Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -2324,19 +2321,18 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "62a034929c1a",
-          "ts": "943149e87540",
-          "lean": "9e52b34cf96f"
+          "md": "971c0e06d789",
+          "ts": "943149e87540"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.266789Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:22.270Z",
+        "reviewed_at": "2026-07-07T14:26:57.266789Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
       }
@@ -2344,19 +2340,18 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "62a034929c1a",
-          "ts": "943149e87540",
-          "lean": "9e52b34cf96f"
+          "md": "971c0e06d789",
+          "ts": "943149e87540"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.266789Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:22.629Z",
+        "reviewed_at": "2026-07-07T14:26:57.266789Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Narrative and formalization are equivalent."
       }
@@ -2364,9 +2359,8 @@
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "62a034929c1a",
-          "ts": "943149e87540",
-          "lean": "9e52b34cf96f"
+          "md": "971c0e06d789",
+          "ts": "943149e87540"
         },
         "result": "pass",
         "score": {
@@ -2376,11 +2370,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.266789Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:23.048Z",
+        "reviewed_at": "2026-07-07T14:26:57.266789Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
       }
@@ -2388,9 +2382,8 @@
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "62a034929c1a",
-          "ts": "943149e87540",
-          "lean": "9e52b34cf96f"
+          "md": "971c0e06d789",
+          "ts": "943149e87540"
         },
         "result": "pass",
         "score": {
@@ -2400,11 +2393,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.266789Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:23.363Z",
+        "reviewed_at": "2026-07-07T14:26:57.266789Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
       }
@@ -2412,9 +2405,8 @@
     "proof-rater-novelty": [
       {
         "field_hash": {
-          "md": "62a034929c1a",
-          "ts": "943149e87540",
-          "lean": "9e52b34cf96f"
+          "md": "971c0e06d789",
+          "ts": "943149e87540"
         },
         "result": "pass",
         "score": {
@@ -2424,11 +2416,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.266789Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:23.660Z",
+        "reviewed_at": "2026-07-07T14:26:57.266789Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
       }
@@ -2436,19 +2428,18 @@
     "proof-statement-integrity": [
       {
         "field_hash": {
-          "md": "62a034929c1a",
-          "ts": "943149e87540",
-          "lean": "9e52b34cf96f"
+          "md": "971c0e06d789",
+          "ts": "943149e87540"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.266789Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:24.001Z",
+        "reviewed_at": "2026-07-07T14:26:57.266789Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
       }
@@ -2456,19 +2447,18 @@
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "62a034929c1a",
-          "ts": "943149e87540",
-          "lean": "9e52b34cf96f"
+          "md": "971c0e06d789",
+          "ts": "943149e87540"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.266789Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:24.290Z",
+        "reviewed_at": "2026-07-07T14:26:57.266789Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
       }
@@ -2511,19 +2501,18 @@
     "proof-no-false-premise": [
       {
         "field_hash": {
-          "md": "62a034929c1a",
-          "ts": "943149e87540",
-          "lean": "9e52b34cf96f"
+          "md": "971c0e06d789",
+          "ts": "943149e87540"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.266789Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:24.850Z",
+        "reviewed_at": "2026-07-07T14:26:57.266789Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
       }
@@ -2531,19 +2520,18 @@
     "proof-no-unused-hypotheses": [
       {
         "field_hash": {
-          "md": "62a034929c1a",
-          "ts": "943149e87540",
-          "lean": "9e52b34cf96f"
+          "md": "971c0e06d789",
+          "ts": "943149e87540"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.266789Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:25.122Z",
+        "reviewed_at": "2026-07-07T14:26:57.266789Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
       }
@@ -2551,19 +2539,18 @@
     "proof-no-decide-masking": [
       {
         "field_hash": {
-          "md": "62a034929c1a",
-          "ts": "943149e87540",
-          "lean": "9e52b34cf96f"
+          "md": "971c0e06d789",
+          "ts": "943149e87540"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.266789Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:25.248Z",
+        "reviewed_at": "2026-07-07T14:26:57.266789Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
@@ -2588,18 +2575,17 @@
         ],
         "severity": "critical",
         "field_hash": {
-          "md": "62a034929c1a",
-          "ts": "943149e87540",
-          "lean": "9e52b34cf96f"
+          "md": "971c0e06d789",
+          "ts": "943149e87540"
         },
         "reviewer": {
           "kind": "agent",
           "id": "local/devils-advocate-watcher",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-24",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.266789Z",
           "agent_skill": "local/devils-advocate-watcher"
         },
-        "reviewed_at": "2026-06-24T12:29:19Z",
+        "reviewed_at": "2026-07-07T14:26:57.266789Z",
         "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
       }
     ],
@@ -2620,18 +2606,17 @@
         ],
         "severity": "critical",
         "field_hash": {
-          "md": "62a034929c1a",
-          "ts": "943149e87540",
-          "lean": "9e52b34cf96f"
+          "md": "971c0e06d789",
+          "ts": "943149e87540"
         },
         "reviewer": {
           "kind": "agent",
           "id": "local/devils-advocate-watcher",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-24",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.266789Z",
           "agent_skill": "local/devils-advocate-watcher"
         },
-        "reviewed_at": "2026-06-24T12:29:19Z",
+        "reviewed_at": "2026-07-07T14:26:57.266789Z",
         "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
       }
     ],
@@ -2652,18 +2637,17 @@
         ],
         "severity": "major",
         "field_hash": {
-          "md": "62a034929c1a",
-          "ts": "943149e87540",
-          "lean": "9e52b34cf96f"
+          "md": "971c0e06d789",
+          "ts": "943149e87540"
         },
         "reviewer": {
           "kind": "agent",
           "id": "local/devils-advocate-watcher",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-24",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.266789Z",
           "agent_skill": "local/devils-advocate-watcher"
         },
-        "reviewed_at": "2026-06-24T12:29:19Z",
+        "reviewed_at": "2026-07-07T14:26:57.266789Z",
         "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
       }
     ],
@@ -2684,18 +2668,17 @@
         ],
         "severity": "major",
         "field_hash": {
-          "md": "62a034929c1a",
-          "ts": "943149e87540",
-          "lean": "9e52b34cf96f"
+          "md": "971c0e06d789",
+          "ts": "943149e87540"
         },
         "reviewer": {
           "kind": "agent",
           "id": "local/devils-advocate-watcher",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-24",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.266789Z",
           "agent_skill": "local/devils-advocate-watcher"
         },
-        "reviewed_at": "2026-06-24T12:29:19Z",
+        "reviewed_at": "2026-07-07T14:26:57.266789Z",
         "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
       }
     ],
@@ -2716,18 +2699,17 @@
         ],
         "severity": "minor",
         "field_hash": {
-          "md": "62a034929c1a",
-          "ts": "943149e87540",
-          "lean": "9e52b34cf96f"
+          "md": "971c0e06d789",
+          "ts": "943149e87540"
         },
         "reviewer": {
           "kind": "agent",
           "id": "local/devils-advocate-watcher",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-24",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.266789Z",
           "agent_skill": "local/devils-advocate-watcher"
         },
-        "reviewed_at": "2026-06-24T12:29:19Z",
+        "reviewed_at": "2026-07-07T14:26:57.266789Z",
         "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
       }
     ],
@@ -2748,18 +2730,17 @@
         ],
         "severity": "minor",
         "field_hash": {
-          "md": "62a034929c1a",
-          "ts": "943149e87540",
-          "lean": "9e52b34cf96f"
+          "md": "971c0e06d789",
+          "ts": "943149e87540"
         },
         "reviewer": {
           "kind": "agent",
           "id": "local/devils-advocate-watcher",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-24",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.266789Z",
           "agent_skill": "local/devils-advocate-watcher"
         },
-        "reviewed_at": "2026-06-24T12:29:19Z",
+        "reviewed_at": "2026-07-07T14:26:57.266789Z",
         "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
       }
     ],
@@ -2769,35 +2750,35 @@
         "verdict": "open-objection",
         "referee_argument": "The resolved Lean (sibling-first per \u00a70a) is : True := trivial \u2014 a no-shadowing-stub violation over a real same-FQN library decl, and a Bucket-B 'proved'-over-vacuous flag. The shadow is not even the worst problem: the real library decl proves only a 2\u00d72 matrix non-equality, while the .md proposition claims a fully-proved LP-optimum / braid-image / uniqueness theorem for a physical confinement mechanism, and the downstream ConfinementLP backing discharges those sub-claims by logically-disconnected accessors (hopf_ne). corpus-grep finds the overclaim tracked, never closed, and the sibling caveat actively contradicts the selection claim. Multiple referee arguments survive. Downstream consumers (confined-particle, shell-closure-stability, nucleon-ordering-factorization) rely on it as a proved selection principle.",
         "field_hash": {
-          "md": "62a034929c1a",
-          "ts": "943149e87540",
-          "lean": "9e52b34cf96f"
+          "md": "971c0e06d789",
+          "ts": "943149e87540"
         },
         "reviewer": {
           "kind": "agent",
           "id": "local/devils-advocate-watcher",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-24",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.266789Z",
           "agent_skill": "local/devils-advocate-watcher"
         },
-        "reviewed_at": "2026-06-24T12:29:19Z",
+        "reviewed_at": "2026-07-07T14:26:57.266789Z",
         "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
       }
     ],
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "62a034929c1a",
-          "ts": "943149e87540",
-          "lean": "9e52b34cf96f"
+          "md": "971c0e06d789",
+          "ts": "943149e87540"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.266789Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.266789Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'Confinement is topological (LP proof)': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -2807,17 +2788,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "62a034929c1a",
-          "ts": "943149e87540",
-          "lean": "9e52b34cf96f"
+          "md": "971c0e06d789",
+          "ts": "943149e87540"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.266789Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.266789Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Confinement is topological (LP proof)'.",
         "severity": "minor",
@@ -2827,17 +2809,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "62a034929c1a",
-          "ts": "943149e87540",
-          "lean": "9e52b34cf96f"
+          "md": "971c0e06d789",
+          "ts": "943149e87540"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.266789Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.266789Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Confinement is topological (LP proof)'.",
         "severity": "minor",
@@ -2847,17 +2830,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "62a034929c1a",
-          "ts": "943149e87540",
-          "lean": "9e52b34cf96f"
+          "md": "971c0e06d789",
+          "ts": "943149e87540"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.266789Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.266789Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Confinement is topological (LP proof)', hence no citation misuse is possible.",
         "severity": "minor",
@@ -2867,17 +2851,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "62a034929c1a",
-          "ts": "943149e87540",
-          "lean": "9e52b34cf96f"
+          "md": "971c0e06d789",
+          "ts": "943149e87540"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.266789Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.266789Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Confinement is topological (LP proof)' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -2887,17 +2872,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "62a034929c1a",
-          "ts": "943149e87540",
-          "lean": "9e52b34cf96f"
+          "md": "971c0e06d789",
+          "ts": "943149e87540"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.266789Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.266789Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Confinement is topological (LP proof)' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -2911,5 +2897,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.492Z"
+  "updated_at": "2026-07-07T14:26:57.266789Z"
 }

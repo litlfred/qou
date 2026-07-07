@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/observations/substrate-consistency-window-interpretation.md"
   },
   "source_hashes": {
-    "md": "80e2eb9c7659",
+    "md": "f31cc661739b",
     "ts": "038386a559df"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Rewrote observations_seq0.md. Enforced concise, active prose. Replaced third person passive with 'we'. Ensured math integrity.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.626933Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.626933Z"
+        },
+        "field_hash": {
+          "md": "f31cc661739b",
+          "ts": "038386a559df"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.226Z"
+  "updated_at": "2026-07-07T14:26:56.626933Z"
 }

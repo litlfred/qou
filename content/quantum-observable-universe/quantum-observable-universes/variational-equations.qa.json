@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/quantum-observable-universes/variational-equations.lean"
   },
   "source_hashes": {
-    "md": "cbf214e23b90",
+    "md": "5725e5fff8dc",
     "ts": "3774a39bf209",
     "lean": "62287b2f98fd"
   },
@@ -37,14 +37,21 @@
       {
         "result": "pass",
         "notes": "Deleted LaTeX tikz diagrams representing redundant text. Shortened the intro and removed verbose cross-referencing.",
-        "reviewed_at": "2026-07-06T22:46:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.857311Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.857311Z"
+        },
+        "field_hash": {
+          "md": "5725e5fff8dc",
+          "ts": "3774a39bf209",
+          "lean": "62287b2f98fd"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:58.083Z"
+  "updated_at": "2026-07-07T14:26:55.857311Z"
 }

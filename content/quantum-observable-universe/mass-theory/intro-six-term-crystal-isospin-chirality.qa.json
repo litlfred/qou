@@ -7,22 +7,28 @@
     "md": "content/quantum-observable-universe/mass-theory/intro-six-term-crystal-isospin-chirality.md"
   },
   "source_hashes": {
-    "ts": "80cf13bb5ff2",
-    "md": "55171d51c6f2"
+    "md": "3ba6976e0b50",
+    "ts": "80cf13bb5ff2"
   },
   "criteria": {
     "milnor-amalgamated-flow": [
       {
         "result": "pass",
         "notes": "Rewrote prose sections of mass-theory_seq44.md to enforce H1-H8 and milnor-brevity. Preserved all math blocks and original section markers. Ensured linear flow, minimal technical clutter, and short declarative sentences.",
-        "reviewed_at": "2026-07-06T22:51:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.939118Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.939118Z"
+        },
+        "field_hash": {
+          "md": "3ba6976e0b50",
+          "ts": "80cf13bb5ff2"
         }
       }
     ]
   },
-  "updated_at": "2026-06-01T16:06:38.106Z"
+  "updated_at": "2026-07-07T14:26:56.939118Z"
 }

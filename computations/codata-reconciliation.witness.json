@@ -1,13 +1,13 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-09T17:13:23.435206+00:00",
-  "commitSha": "54299522a1121d5c865243068feadf6905cbbaf4",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-07-07T13:43:48.124536+00:00",
+  "commitSha": "85da4f43133d9d70ca3582f4fa4f31771b5ec3f1",
   "assertions": [
     {
       "name": "codata_m_e",
-      "computed": 0.51099895,
-      "expected": 0.51099895,
+      "computed": 0.51099895069,
+      "expected": 0.51099895069,
       "passed": true,
       "tolerance": 3e-10,
       "unit": "MeV",
@@ -33,8 +33,8 @@
     },
     {
       "name": "codata_Q_n__β-decay",
-      "computed": 0.7823334100000222,
-      "expected": 0.7823334100000222,
+      "computed": 0.7823334093100222,
+      "expected": 0.7823334093100222,
       "passed": true,
       "tolerance": 1.225887470365857e-06,
       "unit": "MeV",
@@ -69,11 +69,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 8,
   "computation": "codata-reconciliation",
   "scriptFile": "codata_reconciliation.py",
-  "scriptHash": "3315f45a19a1",
-  "scriptCommitSha": "569f15dd726f4cb74fc16b8b2b33bca49d7b4ba3",
+  "scriptHash": "69c41b1a3e5c",
+  "scriptCommitSha": "bd1bdfe0583787dcbaaaa0a6d7b40a50159cdfb6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -81,12 +81,12 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
-    "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Consolidated CODATA-2022 reconciliation table for QOU primary predictions.  Each row reports predicted value, CODATA central value, deviation in ppb, and CODATA uncertainty in ppb.  Passing assertion = QOU prediction within twice the CODATA uncertainty.",
   "auditOnly": "docs/audits/codata-reconciliation.md",
@@ -95,12 +95,12 @@
       {
         "quantity": "m_e",
         "unit": "MeV",
-        "predicted": 0.51099895,
+        "predicted": 0.51099895069,
         "codata": 1.5e-10,
-        "codata_value": 0.51099895,
+        "codata_value": 0.51099895069,
         "codata_err": 1.5e-10,
         "delta_ppb": 0.0,
-        "codata_unc_ppb": 0.2935426775338775,
+        "codata_unc_ppb": 0.2935426771375079,
         "predicted_source": "anchor scale (by definition)",
         "anchor": true
       },
@@ -129,11 +129,11 @@
       {
         "quantity": "Q_n (β-decay)",
         "unit": "MeV",
-        "predicted": 0.7823334100000222,
-        "codata_value": 0.7823334100000222,
+        "predicted": 0.7823334093100222,
+        "codata_value": 0.7823334093100222,
         "codata_err": 6.129437351829285e-07,
         "delta_ppb": 0.0,
-        "codata_unc_ppb": 783.4814765010626,
+        "codata_unc_ppb": 783.4814771920752,
         "predicted_source": "experimental_constants.py arithmetic",
         "anchor": false
       },

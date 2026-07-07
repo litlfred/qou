@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/predicted-spectra/categorical-neutron-unique.lean"
   },
   "source_hashes": {
-    "md": "698e9b97c513",
+    "md": "ad8384395570",
     "ts": "ba6b293f846b",
     "lean": "82267127a6e8"
   },
@@ -1030,7 +1030,7 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "698e9b97c513",
+          "md": "ad8384395570",
           "ts": "ba6b293f846b",
           "lean": "82267127a6e8"
         },
@@ -1038,11 +1038,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.362027Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:46.865Z",
+        "reviewed_at": "2026-07-07T14:26:56.362027Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
       }
@@ -1050,7 +1050,7 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "698e9b97c513",
+          "md": "ad8384395570",
           "ts": "ba6b293f846b",
           "lean": "82267127a6e8"
         },
@@ -1058,11 +1058,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.362027Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:47.291Z",
+        "reviewed_at": "2026-07-07T14:26:56.362027Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1070,7 +1070,7 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "698e9b97c513",
+          "md": "ad8384395570",
           "ts": "ba6b293f846b",
           "lean": "82267127a6e8"
         },
@@ -1078,11 +1078,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.362027Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:47.663Z",
+        "reviewed_at": "2026-07-07T14:26:56.362027Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is correctly placed in an archimedean chapter."
       }
@@ -1090,7 +1090,7 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "698e9b97c513",
+          "md": "ad8384395570",
           "ts": "ba6b293f846b",
           "lean": "82267127a6e8"
         },
@@ -1098,11 +1098,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.362027Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:48.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.362027Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof matches the archimedean regime."
       }
@@ -1128,7 +1128,7 @@
       },
       {
         "field_hash": {
-          "md": "698e9b97c513",
+          "md": "ad8384395570",
           "ts": "ba6b293f846b",
           "lean": "82267127a6e8"
         },
@@ -1136,9 +1136,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.362027Z"
         },
-        "reviewed_at": "2026-07-06T04:41:30.359Z",
+        "reviewed_at": "2026-07-07T14:26:56.362027Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:categorical-neutron-unique' \u2192 expected 'categorical_neutron_unique'; Lean declares: CategoricalNeutron, NeutronSameHeckeNF, CategoricalNeutron.unique_up_to_isotopy. Structural match via content."
       }
@@ -1146,7 +1148,7 @@
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "698e9b97c513",
+          "md": "ad8384395570",
           "ts": "ba6b293f846b",
           "lean": "82267127a6e8"
         },
@@ -1158,11 +1160,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.362027Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:48.763Z",
+        "reviewed_at": "2026-07-07T14:26:56.362027Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof strategy is clear and complete."
       }
@@ -1170,7 +1172,7 @@
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "698e9b97c513",
+          "md": "ad8384395570",
           "ts": "ba6b293f846b",
           "lean": "82267127a6e8"
         },
@@ -1182,11 +1184,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.362027Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:49.197Z",
+        "reviewed_at": "2026-07-07T14:26:56.362027Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
       }
@@ -1194,7 +1196,7 @@
     "proof-rater-novelty": [
       {
         "field_hash": {
-          "md": "698e9b97c513",
+          "md": "ad8384395570",
           "ts": "ba6b293f846b",
           "lean": "82267127a6e8"
         },
@@ -1206,11 +1208,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.362027Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:49.554Z",
+        "reviewed_at": "2026-07-07T14:26:56.362027Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Novel and complete argument."
       }
@@ -1218,7 +1220,7 @@
     "proof-statement-integrity": [
       {
         "field_hash": {
-          "md": "698e9b97c513",
+          "md": "ad8384395570",
           "ts": "ba6b293f846b",
           "lean": "82267127a6e8"
         },
@@ -1226,11 +1228,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.362027Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:49.924Z",
+        "reviewed_at": "2026-07-07T14:26:56.362027Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
       }
@@ -1238,7 +1240,7 @@
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "698e9b97c513",
+          "md": "ad8384395570",
           "ts": "ba6b293f846b",
           "lean": "82267127a6e8"
         },
@@ -1246,11 +1248,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.362027Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:50.257Z",
+        "reviewed_at": "2026-07-07T14:26:56.362027Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
       }
@@ -1258,7 +1260,7 @@
     "proof-no-trivial-true": [
       {
         "field_hash": {
-          "md": "698e9b97c513",
+          "md": "ad8384395570",
           "ts": "ba6b293f846b",
           "lean": "82267127a6e8"
         },
@@ -1266,11 +1268,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.362027Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:50.566Z",
+        "reviewed_at": "2026-07-07T14:26:56.362027Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
       }
@@ -1278,7 +1280,7 @@
     "proof-no-false-premise": [
       {
         "field_hash": {
-          "md": "698e9b97c513",
+          "md": "ad8384395570",
           "ts": "ba6b293f846b",
           "lean": "82267127a6e8"
         },
@@ -1286,11 +1288,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.362027Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:50.947Z",
+        "reviewed_at": "2026-07-07T14:26:56.362027Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
       }
@@ -1298,7 +1300,7 @@
     "proof-no-unused-hypotheses": [
       {
         "field_hash": {
-          "md": "698e9b97c513",
+          "md": "ad8384395570",
           "ts": "ba6b293f846b",
           "lean": "82267127a6e8"
         },
@@ -1306,11 +1308,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.362027Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:51.334Z",
+        "reviewed_at": "2026-07-07T14:26:56.362027Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unused hypotheses detected."
       }
@@ -1318,7 +1320,7 @@
     "proof-no-decide-masking": [
       {
         "field_hash": {
-          "md": "698e9b97c513",
+          "md": "ad8384395570",
           "ts": "ba6b293f846b",
           "lean": "82267127a6e8"
         },
@@ -1326,11 +1328,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.362027Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:51.681Z",
+        "reviewed_at": "2026-07-07T14:26:56.362027Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
@@ -1338,7 +1340,7 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "698e9b97c513",
+          "md": "ad8384395570",
           "ts": "ba6b293f846b",
           "lean": "82267127a6e8"
         },
@@ -1346,9 +1348,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.362027Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.362027Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'Uniqueness of the categorical neutron up to braid isotopy': the formalization compiles successfully without errors.",
         "severity": "minor",
@@ -1358,7 +1362,7 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "698e9b97c513",
+          "md": "ad8384395570",
           "ts": "ba6b293f846b",
           "lean": "82267127a6e8"
         },
@@ -1366,9 +1370,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.362027Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.362027Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Uniqueness of the categorical neutron up to braid isotopy' presents substantial mathematical content: '$\\mathfrak{n}$'.",
         "severity": "minor"
@@ -1377,7 +1383,7 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "698e9b97c513",
+          "md": "ad8384395570",
           "ts": "ba6b293f846b",
           "lean": "82267127a6e8"
         },
@@ -1385,9 +1391,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.362027Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.362027Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Uniqueness of the categorical neutron up to braid isotopy'.",
         "severity": "minor",
@@ -1397,7 +1405,7 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "698e9b97c513",
+          "md": "ad8384395570",
           "ts": "ba6b293f846b",
           "lean": "82267127a6e8"
         },
@@ -1405,9 +1413,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.362027Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.362027Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The remarks and narrative scope in 'Uniqueness of the categorical neutron up to braid isotopy' are appropriately qualified.",
         "severity": "minor"
@@ -1416,7 +1426,7 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "698e9b97c513",
+          "md": "ad8384395570",
           "ts": "ba6b293f846b",
           "lean": "82267127a6e8"
         },
@@ -1424,9 +1434,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.362027Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.362027Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Uniqueness of the categorical neutron up to braid isotopy'.",
         "severity": "minor",
@@ -1436,7 +1448,7 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "698e9b97c513",
+          "md": "ad8384395570",
           "ts": "ba6b293f846b",
           "lean": "82267127a6e8"
         },
@@ -1444,9 +1456,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.362027Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.362027Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose arguments in 'Uniqueness of the categorical neutron up to braid isotopy' proceed logically through the stated steps.",
         "severity": "minor",
@@ -1456,7 +1470,7 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "698e9b97c513",
+          "md": "ad8384395570",
           "ts": "ba6b293f846b",
           "lean": "82267127a6e8"
         },
@@ -1464,9 +1478,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.362027Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.362027Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Lean sibling corresponds directly to the narrative claim in 'Uniqueness of the categorical neutron up to braid isotopy'.",
         "severity": "minor"
@@ -1475,7 +1491,7 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "698e9b97c513",
+          "md": "ad8384395570",
           "ts": "ba6b293f846b",
           "lean": "82267127a6e8"
         },
@@ -1483,9 +1499,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.362027Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.362027Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Uniqueness of the categorical neutron up to braid isotopy', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1495,7 +1513,7 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "698e9b97c513",
+          "md": "ad8384395570",
           "ts": "ba6b293f846b",
           "lean": "82267127a6e8"
         },
@@ -1503,9 +1521,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.362027Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.362027Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Uniqueness of the categorical neutron up to braid isotopy' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1515,7 +1535,7 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "698e9b97c513",
+          "md": "ad8384395570",
           "ts": "ba6b293f846b",
           "lean": "82267127a6e8"
         },
@@ -1523,9 +1543,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.362027Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.362027Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Uniqueness of the categorical neutron up to braid isotopy' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1535,7 +1557,7 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "698e9b97c513",
+          "md": "ad8384395570",
           "ts": "ba6b293f846b",
           "lean": "82267127a6e8"
         },
@@ -1543,9 +1565,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.362027Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.362027Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Uniqueness of the categorical neutron up to braid isotopy' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1555,7 +1579,7 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "698e9b97c513",
+          "md": "ad8384395570",
           "ts": "ba6b293f846b",
           "lean": "82267127a6e8"
         },
@@ -1563,9 +1587,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.362027Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.362027Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Lean file compiles successfully, confirming reproducibility.",
         "severity": "minor"
@@ -1574,7 +1600,7 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "698e9b97c513",
+          "md": "ad8384395570",
           "ts": "ba6b293f846b",
           "lean": "82267127a6e8"
         },
@@ -1582,9 +1608,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.362027Z"
         },
-        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_at": "2026-07-07T14:26:56.362027Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -1616,14 +1644,21 @@
       {
         "result": "pass",
         "notes": "Rewrote prose blocks to adhere to Milnor standards. Improved economy, preserved all math.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.362027Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.362027Z"
+        },
+        "field_hash": {
+          "md": "ad8384395570",
+          "ts": "ba6b293f846b",
+          "lean": "82267127a6e8"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:30.359Z"
+  "updated_at": "2026-07-07T14:26:56.362027Z"
 }

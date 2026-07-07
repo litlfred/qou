@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/brings-surface/unit-particle-state.lean"
   },
   "source_hashes": {
-    "md": "a340355c796b",
+    "md": "8a9c8020eeef",
     "ts": "0ac4bc0925db",
     "lean": "9d7d37b28c69"
   },
@@ -895,16 +895,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "a340355c796b",
+          "md": "8a9c8020eeef",
           "ts": "0ac4bc0925db",
-          "lean": "e62602556e3c"
+          "lean": "9d7d37b28c69"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.030494Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.030494Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Block placement and kind match validated structurally.",
         "severity": "minor"
@@ -913,16 +915,18 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "a340355c796b",
+          "md": "8a9c8020eeef",
           "ts": "0ac4bc0925db",
-          "lean": "e62602556e3c"
+          "lean": "9d7d37b28c69"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.030494Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.030494Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Uses algebraic and categorical formulations.",
         "severity": "major"
@@ -931,16 +935,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "a340355c796b",
+          "md": "8a9c8020eeef",
           "ts": "0ac4bc0925db",
-          "lean": "e62602556e3c"
+          "lean": "9d7d37b28c69"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.030494Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.030494Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-false-claim evaluated: pass.",
         "severity": "minor"
@@ -949,16 +955,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "a340355c796b",
+          "md": "8a9c8020eeef",
           "ts": "0ac4bc0925db",
-          "lean": "e62602556e3c"
+          "lean": "9d7d37b28c69"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.030494Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.030494Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-vacuous evaluated: pass.",
         "severity": "minor"
@@ -967,16 +975,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "a340355c796b",
+          "md": "8a9c8020eeef",
           "ts": "0ac4bc0925db",
-          "lean": "e62602556e3c"
+          "lean": "9d7d37b28c69"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.030494Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.030494Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-circular evaluated: pass.",
         "severity": "minor"
@@ -985,16 +995,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "a340355c796b",
+          "md": "8a9c8020eeef",
           "ts": "0ac4bc0925db",
-          "lean": "e62602556e3c"
+          "lean": "9d7d37b28c69"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.030494Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.030494Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-overclaim evaluated: pass.",
         "severity": "minor"
@@ -1003,16 +1015,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "a340355c796b",
+          "md": "8a9c8020eeef",
           "ts": "0ac4bc0925db",
-          "lean": "e62602556e3c"
+          "lean": "9d7d37b28c69"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.030494Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.030494Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-hidden-dof evaluated: pass.",
         "severity": "minor"
@@ -1021,16 +1035,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "a340355c796b",
+          "md": "8a9c8020eeef",
           "ts": "0ac4bc0925db",
-          "lean": "e62602556e3c"
+          "lean": "9d7d37b28c69"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.030494Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.030494Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-non-sequitur evaluated: pass.",
         "severity": "minor"
@@ -1039,16 +1055,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "a340355c796b",
+          "md": "8a9c8020eeef",
           "ts": "0ac4bc0925db",
-          "lean": "e62602556e3c"
+          "lean": "9d7d37b28c69"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.030494Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.030494Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Lean sibling fails to compile: content/quantum-observable-universe/brings-surface/unit-particle-state.lean:53:18: error: type expected, got",
         "evidence": "content/quantum-observable-universe/brings-surface/unit-particle-state.lean:1",
@@ -1058,16 +1076,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "a340355c796b",
+          "md": "8a9c8020eeef",
           "ts": "0ac4bc0925db",
-          "lean": "e62602556e3c"
+          "lean": "9d7d37b28c69"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.030494Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.030494Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-citation-misuse evaluated: pass.",
         "severity": "minor"
@@ -1076,16 +1096,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "a340355c796b",
+          "md": "8a9c8020eeef",
           "ts": "0ac4bc0925db",
-          "lean": "e62602556e3c"
+          "lean": "9d7d37b28c69"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.030494Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.030494Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-definitional-ambiguity evaluated: pass.",
         "severity": "minor"
@@ -1094,16 +1116,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "a340355c796b",
+          "md": "8a9c8020eeef",
           "ts": "0ac4bc0925db",
-          "lean": "e62602556e3c"
+          "lean": "9d7d37b28c69"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.030494Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.030494Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-empirical-fragility evaluated: pass.",
         "severity": "minor"
@@ -1112,16 +1136,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "a340355c796b",
+          "md": "8a9c8020eeef",
           "ts": "0ac4bc0925db",
-          "lean": "e62602556e3c"
+          "lean": "9d7d37b28c69"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.030494Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.030494Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-physical-implausibility evaluated: pass.",
         "severity": "minor"
@@ -1130,16 +1156,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "a340355c796b",
+          "md": "8a9c8020eeef",
           "ts": "0ac4bc0925db",
-          "lean": "e62602556e3c"
+          "lean": "9d7d37b28c69"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.030494Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.030494Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Lean sibling fails to compile: content/quantum-observable-universe/brings-surface/unit-particle-state.lean:53:18: error: type expected, got",
         "evidence": "content/quantum-observable-universe/brings-surface/unit-particle-state.lean:1",
@@ -1149,16 +1177,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "a340355c796b",
+          "md": "8a9c8020eeef",
           "ts": "0ac4bc0925db",
-          "lean": "e62602556e3c"
+          "lean": "9d7d37b28c69"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.030494Z"
         },
-        "reviewed_at": "2026-06-28T07:55:40.081Z",
+        "reviewed_at": "2026-07-07T14:26:55.030494Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/unit-particle-state.lean:53:18: error: type expected, got",
         "verdict": "open-objection",
@@ -1169,7 +1199,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "a340355c796b",
+          "md": "8a9c8020eeef",
           "ts": "0ac4bc0925db",
           "lean": "9d7d37b28c69"
         },
@@ -1177,9 +1207,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.030494Z"
         },
-        "reviewed_at": "2026-07-06T04:41:30.202Z",
+        "reviewed_at": "2026-07-07T14:26:55.030494Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'def:unit-particle-state' \u2192 expected 'unit_particle_state'; Lean declares: UnitParticleState. Structural match via content."
       }
@@ -1188,14 +1220,21 @@
       {
         "result": "pass",
         "notes": "Applied Milnor brevity. Stripped forward references in intro. Streamlined technical definitions.",
-        "reviewed_at": "2026-07-06T22:42:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.030494Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.030494Z"
+        },
+        "field_hash": {
+          "md": "8a9c8020eeef",
+          "ts": "0ac4bc0925db",
+          "lean": "9d7d37b28c69"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:30.202Z"
+  "updated_at": "2026-07-07T14:26:55.030494Z"
 }

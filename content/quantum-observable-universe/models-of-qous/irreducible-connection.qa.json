@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/models-of-qous/irreducible-connection.lean"
   },
   "source_hashes": {
-    "md": "d63992874295",
+    "md": "82b4726cf187",
     "ts": "7d93c6888dc3",
     "lean": "079bd8f60c9f"
   },
@@ -800,19 +800,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "d63992874295",
+          "md": "82b4726cf187",
           "ts": "7d93c6888dc3",
-          "lean": "0a18edf9b01b"
+          "lean": "079bd8f60c9f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.399949Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:23.238Z",
+        "reviewed_at": "2026-07-07T14:26:55.399949Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -820,17 +820,19 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "d63992874295",
+          "md": "82b4726cf187",
           "ts": "7d93c6888dc3",
-          "lean": "0a18edf9b01b"
+          "lean": "079bd8f60c9f"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.399949Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.518Z",
+        "reviewed_at": "2026-07-07T14:26:55.399949Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The claim in 'Irreducibility of the connection' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
@@ -840,17 +842,19 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "d63992874295",
+          "md": "82b4726cf187",
           "ts": "7d93c6888dc3",
-          "lean": "0a18edf9b01b"
+          "lean": "079bd8f60c9f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.399949Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.524Z",
+        "reviewed_at": "2026-07-07T14:26:55.399949Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The block 'Irreducibility of the connection' presents substantial mathematical content: In an archimedean quantum observable universe, [categorical irreducible](#lem:ca...",
         "severity": "minor"
@@ -859,17 +863,19 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "d63992874295",
+          "md": "82b4726cf187",
           "ts": "7d93c6888dc3",
-          "lean": "0a18edf9b01b"
+          "lean": "079bd8f60c9f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.399949Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.530Z",
+        "reviewed_at": "2026-07-07T14:26:55.399949Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Irreducibility of the connection'.",
         "severity": "minor",
@@ -879,17 +885,19 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "d63992874295",
+          "md": "82b4726cf187",
           "ts": "7d93c6888dc3",
-          "lean": "0a18edf9b01b"
+          "lean": "079bd8f60c9f"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.399949Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.536Z",
+        "reviewed_at": "2026-07-07T14:26:55.399949Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The prose presents 'Irreducibility of the connection' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
@@ -898,17 +906,19 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "d63992874295",
+          "md": "82b4726cf187",
           "ts": "7d93c6888dc3",
-          "lean": "0a18edf9b01b"
+          "lean": "079bd8f60c9f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.399949Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.542Z",
+        "reviewed_at": "2026-07-07T14:26:55.399949Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Irreducibility of the connection'.",
         "severity": "minor",
@@ -918,17 +928,19 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "d63992874295",
+          "md": "82b4726cf187",
           "ts": "7d93c6888dc3",
-          "lean": "0a18edf9b01b"
+          "lean": "079bd8f60c9f"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.399949Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.548Z",
+        "reviewed_at": "2026-07-07T14:26:55.399949Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/models-of-qous/irreducible-connection.lean.",
         "severity": "minor",
@@ -938,17 +950,19 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "d63992874295",
+          "md": "82b4726cf187",
           "ts": "7d93c6888dc3",
-          "lean": "0a18edf9b01b"
+          "lean": "079bd8f60c9f"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.399949Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.553Z",
+        "reviewed_at": "2026-07-07T14:26:55.399949Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The Lean sibling content/quantum-observable-universe/models-of-qous/irreducible-connection.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
@@ -957,17 +971,19 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "d63992874295",
+          "md": "82b4726cf187",
           "ts": "7d93c6888dc3",
-          "lean": "0a18edf9b01b"
+          "lean": "079bd8f60c9f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.399949Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.559Z",
+        "reviewed_at": "2026-07-07T14:26:55.399949Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No citations are present in 'Irreducibility of the connection', hence no citation misuse is possible.",
         "severity": "minor",
@@ -977,17 +993,19 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "d63992874295",
+          "md": "82b4726cf187",
           "ts": "7d93c6888dc3",
-          "lean": "0a18edf9b01b"
+          "lean": "079bd8f60c9f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.399949Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.565Z",
+        "reviewed_at": "2026-07-07T14:26:55.399949Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Key terms and symbols in 'Irreducibility of the connection' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -997,17 +1015,19 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "d63992874295",
+          "md": "82b4726cf187",
           "ts": "7d93c6888dc3",
-          "lean": "0a18edf9b01b"
+          "lean": "079bd8f60c9f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.399949Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.571Z",
+        "reviewed_at": "2026-07-07T14:26:55.399949Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The algebraic and logical relations in 'Irreducibility of the connection' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1017,17 +1037,19 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "d63992874295",
+          "md": "82b4726cf187",
           "ts": "7d93c6888dc3",
-          "lean": "0a18edf9b01b"
+          "lean": "079bd8f60c9f"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.399949Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.577Z",
+        "reviewed_at": "2026-07-07T14:26:55.399949Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The physical concepts described in 'Irreducibility of the connection' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1037,17 +1059,19 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "d63992874295",
+          "md": "82b4726cf187",
           "ts": "7d93c6888dc3",
-          "lean": "0a18edf9b01b"
+          "lean": "079bd8f60c9f"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.399949Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.583Z",
+        "reviewed_at": "2026-07-07T14:26:55.399949Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The Lean sibling content/quantum-observable-universe/models-of-qous/irreducible-connection.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
@@ -1057,17 +1081,19 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "d63992874295",
+          "md": "82b4726cf187",
           "ts": "7d93c6888dc3",
-          "lean": "0a18edf9b01b"
+          "lean": "079bd8f60c9f"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.399949Z"
         },
-        "reviewed_at": "2026-06-28T10:58:59.589Z",
+        "reviewed_at": "2026-07-07T14:26:55.399949Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/models-of-qous/irreducible-connection.lean fails compilation: content/quantum-observable-universe/models-of-qous/irreducible-connection.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/ContinuousFunction/Basic.olean' of module Mathlib.Topology.ContinuousFunction.Basic does not exist",
         "severity": "critical",
@@ -1079,14 +1105,21 @@
       {
         "result": "pass",
         "notes": "Removed back-references, used short declarative sentences, tightened explanations of limits, enforced Milnor economy and structural requirements.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.399949Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.399949Z"
+        },
+        "field_hash": {
+          "md": "82b4726cf187",
+          "ts": "7d93c6888dc3",
+          "lean": "079bd8f60c9f"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-07T14:26:55.399949Z"
 }

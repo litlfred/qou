@@ -8,9 +8,9 @@
     "lean": "../qou/content/quantum-observable-universe/braids-and-knots/frobenius-lepton-meson-bridge.lean"
   },
   "source_hashes": {
-    "md": "78098c458900",
+    "md": "1022102d9831",
     "ts": "3010433f709f",
-    "lean": "c4291c669c30"
+    "lean": "4cca1edd54f7"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -37,14 +37,21 @@
       {
         "result": "pass",
         "notes": "Applied Milnor brevity. Trimmed internal cross references and bloated narrative commentary. Tightened 'Mathematical Novelty' notes to single clear sentences. Retained all math.",
-        "reviewed_at": "2026-07-06T22:42:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.332262Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.332262Z"
+        },
+        "field_hash": {
+          "md": "1022102d9831",
+          "ts": "3010433f709f",
+          "lean": "4cca1edd54f7"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:55.297Z"
+  "updated_at": "2026-07-07T14:26:55.332262Z"
 }

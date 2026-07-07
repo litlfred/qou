@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas-open-problems.md"
   },
   "source_hashes": {
-    "md": "f66d8789cd66",
+    "md": "a5093543c78e",
     "ts": "2784892c980f"
   },
   "criteria": {
@@ -821,14 +821,20 @@
       {
         "result": "pass",
         "notes": "Rewrote introductory prose, knot glossary, and methodology descriptions. Enforced brevity and eliminated conversational padding. Preserved all tables and data.",
-        "reviewed_at": "2026-07-06T22:39:58Z",
+        "reviewed_at": "2026-07-07T14:26:56.490474Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.490474Z"
+        },
+        "field_hash": {
+          "md": "a5093543c78e",
+          "ts": "2784892c980f"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T18:14:41.850Z"
+  "updated_at": "2026-07-07T14:26:56.490474Z"
 }

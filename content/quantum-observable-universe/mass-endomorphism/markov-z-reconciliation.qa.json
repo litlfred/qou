@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/mass-endomorphism/markov-z-reconciliation.md"
   },
   "source_hashes": {
-    "md": "2ae18bf98d40",
+    "md": "12400e43f89d",
     "ts": "c64b007aab50"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Rewrote mass-endomorphism_seq6.md for Milnor standards: improved economy, declarative voice, preserved structure.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.126994Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.126994Z"
+        },
+        "field_hash": {
+          "md": "12400e43f89d",
+          "ts": "c64b007aab50"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.364Z"
+  "updated_at": "2026-07-07T14:26:56.126994Z"
 }

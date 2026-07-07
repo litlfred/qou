@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-02T18:38:47.955204+00:00",
-  "commitSha": "da278e6294f9c7abf06f1737dd81e1ac7f905990",
+  "computedAt": "2026-07-07T13:41:17.260815+00:00",
+  "commitSha": "85da4f43133d9d70ca3582f4fa4f31771b5ec3f1",
   "assertions": [
     {
       "name": "at_least_one_categorical_weight_passes_1ppm",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 7,
   "computation": "m-p-linking-weight-operator-valued-probe",
   "scriptFile": "m_p_linking_weight_operator_valued_probe.py",
-  "scriptHash": "e36021f79dd3",
-  "scriptCommitSha": "da278e6294f9c7abf06f1737dd81e1ac7f905990",
+  "scriptHash": "3a7b0c339fb6",
+  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,13 +26,12 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "pyhecke_native": "0.9.0"
   },
   "description": "Topic 2 of PR #1712: tests operator-valued linking_weight at H_3/H_4/H_5 against the CODATA-implied target 2.461648. Weights tested are pre-existing canonical categorical objects (uniform, dim_q, dim_q², 1/dim_q, q-hook density, Wenzl y_λ, abs_content); no fits. Reports tiered (PROVED <1ppm / NEAR-MATCH <1000ppm / WEAK / REFUTED). Also runs a mixed-H_n sweep (6 categorically-motivated α values for α·Family_A(H_3) + (1−α)·Family_A(H_4)).",
   "data": {
@@ -56,6 +55,12 @@
     "L_n5_recip_dim_q": "2.30983058764163092346352539345",
     "L_n5_hook_q_inv": "4.08368369623022616994236471641",
     "L_n5_y_lambda": "5.16409644493214142070206875501",
-    "L_n5_abs_content": "3.26295274190599481420225623529"
+    "L_n5_abs_content": "3.26295274190599481420225623529",
+    "lean_uniqueness_ref": {
+      "nucleus": "proton",
+      "theorem": "qou:QOU.BraidKnot.NucleusEmptySDPUniqueness.nucleus_uniqueness_closed (parameterised by crossing count n)",
+      "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+      "note": "T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
+    }
   }
 }

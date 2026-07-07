@@ -7,23 +7,25 @@
     "md": "../qou/content/quantum-observable-universe/predicted-spectra/parity-violation-skein-interpretation.md"
   },
   "source_hashes": {
-    "md": "e3e4c0e41d7c",
+    "md": "9a35e5e1005a",
     "ts": "57eb0134c505"
   },
   "criteria": {
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "e3e4c0e41d7c",
+          "md": "9a35e5e1005a",
           "ts": "57eb0134c505"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.350815Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.350815Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Block placement and kind 'remark' match validated structurally.",
         "severity": "minor"
@@ -32,16 +34,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "e3e4c0e41d7c",
+          "md": "9a35e5e1005a",
           "ts": "57eb0134c505"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.350815Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.350815Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'Physical interpretation: maximal parity violation and CP': mathematical reasoning is consistent in prose.",
         "severity": "minor",
@@ -51,16 +55,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "e3e4c0e41d7c",
+          "md": "9a35e5e1005a",
           "ts": "57eb0134c505"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.350815Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.350815Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Physical interpretation: maximal parity violation and CP' presents substantial mathematical content: 'The Hecke relation $\\sigma^2 = (q - q^{-1})\\sigma + 1$ breaks'.",
         "severity": "minor"
@@ -69,16 +75,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "e3e4c0e41d7c",
+          "md": "9a35e5e1005a",
           "ts": "57eb0134c505"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.350815Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.350815Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Physical interpretation: maximal parity violation and CP'.",
         "severity": "minor",
@@ -88,16 +96,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "e3e4c0e41d7c",
+          "md": "9a35e5e1005a",
           "ts": "57eb0134c505"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.350815Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.350815Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The remarks and narrative scope in 'Physical interpretation: maximal parity violation and CP' are appropriately qualified.",
         "severity": "minor"
@@ -106,16 +116,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "e3e4c0e41d7c",
+          "md": "9a35e5e1005a",
           "ts": "57eb0134c505"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.350815Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.350815Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Physical interpretation: maximal parity violation and CP'.",
         "severity": "minor",
@@ -125,16 +137,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "e3e4c0e41d7c",
+          "md": "9a35e5e1005a",
           "ts": "57eb0134c505"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.350815Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.350815Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose arguments in 'Physical interpretation: maximal parity violation and CP' proceed logically through the stated steps.",
         "severity": "minor",
@@ -144,16 +158,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "e3e4c0e41d7c",
+          "md": "9a35e5e1005a",
           "ts": "57eb0134c505"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.350815Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.350815Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No Lean sibling required; narrative matches the expected configuration.",
         "severity": "minor"
@@ -162,16 +178,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "e3e4c0e41d7c",
+          "md": "9a35e5e1005a",
           "ts": "57eb0134c505"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.350815Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.350815Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Physical interpretation: maximal parity violation and CP', hence no citation misuse is possible.",
         "severity": "minor",
@@ -181,16 +199,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "e3e4c0e41d7c",
+          "md": "9a35e5e1005a",
           "ts": "57eb0134c505"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.350815Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.350815Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Physical interpretation: maximal parity violation and CP' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -200,16 +220,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "e3e4c0e41d7c",
+          "md": "9a35e5e1005a",
           "ts": "57eb0134c505"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.350815Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.350815Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The empirical claims in 'Physical interpretation: maximal parity violation and CP' are structurally anchored to the QOU mass framework and are stable.",
         "severity": "minor",
@@ -219,16 +241,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "e3e4c0e41d7c",
+          "md": "9a35e5e1005a",
           "ts": "57eb0134c505"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.350815Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.350815Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Physical interpretation: maximal parity violation and CP' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -238,16 +262,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "e3e4c0e41d7c",
+          "md": "9a35e5e1005a",
           "ts": "57eb0134c505"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.350815Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.350815Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'Physical interpretation: maximal parity violation and CP' are reproducible.",
         "severity": "minor"
@@ -256,16 +282,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "e3e4c0e41d7c",
+          "md": "9a35e5e1005a",
           "ts": "57eb0134c505"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.350815Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.350815Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -297,14 +325,20 @@
       {
         "result": "pass",
         "notes": "Rewrote prose blocks to adhere to Milnor standards. Improved economy, preserved all math.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.350815Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.350815Z"
+        },
+        "field_hash": {
+          "md": "9a35e5e1005a",
+          "ts": "57eb0134c505"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.812Z"
+  "updated_at": "2026-07-07T14:26:56.350815Z"
 }

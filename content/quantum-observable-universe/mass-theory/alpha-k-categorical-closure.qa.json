@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/alpha-k-categorical-closure.lean"
   },
   "source_hashes": {
-    "md": "3740280e5d59",
+    "md": "1c21f097d925",
     "ts": "2a5a733c1c81",
     "lean": "f7188a2c9573"
   },
@@ -36,7 +36,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "3740280e5d59",
+          "md": "1c21f097d925",
           "ts": "2a5a733c1c81",
           "lean": "f7188a2c9573"
         },
@@ -44,9 +44,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.812558Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_at": "2026-07-07T14:26:56.812558Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Conjecture with class/axiom axiomatisation \u2014 structural match."
       }
@@ -55,14 +57,21 @@
       {
         "result": "pass",
         "notes": "Rewrote prose sections of mass-theory_seq37.md to enforce H1-H8 and milnor-brevity. Preserved all math blocks and original section markers. Ensured linear flow, minimal technical clutter, and short declarative sentences.",
-        "reviewed_at": "2026-07-06T22:49:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.812558Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.812558Z"
+        },
+        "field_hash": {
+          "md": "1c21f097d925",
+          "ts": "2a5a733c1c81",
+          "lean": "f7188a2c9573"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.430Z"
+  "updated_at": "2026-07-07T14:26:56.812558Z"
 }

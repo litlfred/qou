@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.lean"
   },
   "source_hashes": {
-    "md": "acafff604d09",
+    "md": "e1862f65e4dc",
     "ts": "477db9b4fde8",
     "lean": "86f575746859"
   },
@@ -1068,16 +1068,18 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "7959b6443742",
+          "md": "e1862f65e4dc",
           "ts": "477db9b4fde8",
-          "lean": "bd777034f37c"
+          "lean": "86f575746859"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.791272Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.791272Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Statement contains only the bare claim without physical interpretation.",
         "severity": "minor"
@@ -1086,19 +1088,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "7959b6443742",
+          "md": "e1862f65e4dc",
           "ts": "477db9b4fde8",
-          "lean": "bd777034f37c"
+          "lean": "86f575746859"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.791272Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:04.631Z",
+        "reviewed_at": "2026-07-07T14:26:56.791272Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1106,16 +1108,18 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "7959b6443742",
+          "md": "e1862f65e4dc",
           "ts": "477db9b4fde8",
-          "lean": "bd777034f37c"
+          "lean": "86f575746859"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.791272Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.791272Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
         "evidence": "content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.lean:1 \u2014 Lean file exists",
@@ -1125,16 +1129,18 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "7959b6443742",
+          "md": "e1862f65e4dc",
           "ts": "477db9b4fde8",
-          "lean": "bd777034f37c"
+          "lean": "86f575746859"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.791272Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.791272Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Lean proof contains compilation errors.",
         "evidence": "content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.lean:1 \u2014 content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.lean:143:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern",
@@ -1174,7 +1180,7 @@
       },
       {
         "field_hash": {
-          "md": "acafff604d09",
+          "md": "e1862f65e4dc",
           "ts": "477db9b4fde8",
           "lean": "86f575746859"
         },
@@ -1182,9 +1188,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.791272Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_at": "2026-07-07T14:26:56.791272Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:meson-color-tube-uniqueness' \u2192 expected 'meson_color_tube_uniqueness'; Lean declares: alphaShift, alphaShift_T_2_3, alphaShift_T_2_4, QChar, MesonGMORFactorization.... Structural match via content."
       }
@@ -1192,16 +1200,18 @@
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "7959b6443742",
+          "md": "e1862f65e4dc",
           "ts": "477db9b4fde8",
-          "lean": "bd777034f37c"
+          "lean": "86f575746859"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.791272Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.791272Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Lean code is broken and does not compile, hence strategy is opaque.",
         "severity": "minor"
@@ -1250,20 +1260,20 @@
       },
       {
         "field_hash": {
-          "md": "7959b6443742",
+          "md": "e1862f65e4dc",
           "ts": "477db9b4fde8",
-          "lean": "bd777034f37c"
+          "lean": "86f575746859"
         },
         "result": "pass",
         "notes": "m_K^2/m_pi^2=[3]_q\u00b7[4]_q via alpha_shift(T(2,3)),alpha_shift(T(2,4)); dashboard 23.4 ppb. Structural index identification well-posed; q-char eval is the open piece.",
-        "reviewed_at": "2026-06-25T17:11:01.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.791272Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.791272Z"
         },
         "score": {
           "max": 1,
@@ -1274,16 +1284,18 @@
     "proof-rater-novelty": [
       {
         "field_hash": {
-          "md": "7959b6443742",
+          "md": "e1862f65e4dc",
           "ts": "477db9b4fde8",
-          "lean": "bd777034f37c"
+          "lean": "86f575746859"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.791272Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.791272Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The mathematical and physical connections explored in this block are highly novel.",
         "severity": "minor",
@@ -1332,39 +1344,39 @@
       },
       {
         "field_hash": {
-          "md": "7959b6443742",
+          "md": "e1862f65e4dc",
           "ts": "477db9b4fde8",
-          "lean": "bd777034f37c"
+          "lean": "86f575746859"
         },
         "result": "pass",
         "notes": "Clean \u00a73b-cond: alphaShift_T_2_3/_2_4 are genuine rfl theorems; meson_ratio_via_alpha_shift DERIVES the alpha_shift-indexed form by rw[proved lemmas]+hF.factors (non-degenerate, item5 ok).",
-        "reviewed_at": "2026-06-25T17:11:01.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.791272Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.791272Z"
         }
       }
     ],
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "7959b6443742",
+          "md": "e1862f65e4dc",
           "ts": "477db9b4fde8",
-          "lean": "bd777034f37c"
+          "lean": "86f575746859"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.791272Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:07.552Z",
+        "reviewed_at": "2026-07-07T14:26:56.791272Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
       }
@@ -1372,19 +1384,19 @@
     "proof-no-trivial-true": [
       {
         "field_hash": {
-          "md": "7959b6443742",
+          "md": "e1862f65e4dc",
           "ts": "477db9b4fde8",
-          "lean": "bd777034f37c"
+          "lean": "86f575746859"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.791272Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:07.939Z",
+        "reviewed_at": "2026-07-07T14:26:56.791272Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
       }
@@ -1428,36 +1440,38 @@
       },
       {
         "field_hash": {
-          "md": "7959b6443742",
+          "md": "e1862f65e4dc",
           "ts": "477db9b4fde8",
-          "lean": "bd777034f37c"
+          "lean": "86f575746859"
         },
         "result": "pass",
         "notes": "MesonGMORFactorization inhabitable; MesonForceCarrierPair has a proved default instance; alphaShift equalities hold. No contradiction.",
-        "reviewed_at": "2026-06-25T17:11:01.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.791272Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.791272Z"
         }
       }
     ],
     "proof-no-unused-hypotheses": [
       {
         "field_hash": {
-          "md": "7959b6443742",
+          "md": "e1862f65e4dc",
           "ts": "477db9b4fde8",
-          "lean": "bd777034f37c"
+          "lean": "86f575746859"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.791272Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.791272Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Broken proof compilation.",
         "severity": "minor"
@@ -1484,20 +1498,20 @@
       },
       {
         "field_hash": {
-          "md": "7959b6443742",
+          "md": "e1862f65e4dc",
           "ts": "477db9b4fde8",
-          "lean": "bd777034f37c"
+          "lean": "86f575746859"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.lean, content/quantum-observable-universe/lean/QOU/BraidKnot.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.791272Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.791272Z"
         }
       }
     ],
@@ -1524,18 +1538,18 @@
         "severity": "major",
         "result": "fail",
         "field_hash": {
-          "md": "7959b6443742",
+          "md": "e1862f65e4dc",
           "ts": "477db9b4fde8",
-          "lean": "bd777034f37c"
+          "lean": "86f575746859"
         },
         "reviewer": {
           "kind": "agent",
           "id": "local/devils-advocate-watcher",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-24",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.791272Z",
           "agent_skill": "local/devils-advocate-watcher"
         },
-        "reviewed_at": "2026-06-24T12:50:45Z",
+        "reviewed_at": "2026-07-07T14:26:56.791272Z",
         "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
       }
     ],
@@ -1559,18 +1573,18 @@
         "severity": "minor",
         "result": "warn",
         "field_hash": {
-          "md": "7959b6443742",
+          "md": "e1862f65e4dc",
           "ts": "477db9b4fde8",
-          "lean": "bd777034f37c"
+          "lean": "86f575746859"
         },
         "reviewer": {
           "kind": "agent",
           "id": "local/devils-advocate-watcher",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-24",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.791272Z",
           "agent_skill": "local/devils-advocate-watcher"
         },
-        "reviewed_at": "2026-06-24T12:50:45Z",
+        "reviewed_at": "2026-07-07T14:26:56.791272Z",
         "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
       }
     ],
@@ -1591,18 +1605,18 @@
         "severity": "minor",
         "result": "warn",
         "field_hash": {
-          "md": "7959b6443742",
+          "md": "e1862f65e4dc",
           "ts": "477db9b4fde8",
-          "lean": "bd777034f37c"
+          "lean": "86f575746859"
         },
         "reviewer": {
           "kind": "agent",
           "id": "local/devils-advocate-watcher",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-24",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.791272Z",
           "agent_skill": "local/devils-advocate-watcher"
         },
-        "reviewed_at": "2026-06-24T12:50:45Z",
+        "reviewed_at": "2026-07-07T14:26:56.791272Z",
         "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
       }
     ],
@@ -1623,18 +1637,18 @@
         "severity": "minor",
         "result": "pass",
         "field_hash": {
-          "md": "7959b6443742",
+          "md": "e1862f65e4dc",
           "ts": "477db9b4fde8",
-          "lean": "bd777034f37c"
+          "lean": "86f575746859"
         },
         "reviewer": {
           "kind": "agent",
           "id": "local/devils-advocate-watcher",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-24",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.791272Z",
           "agent_skill": "local/devils-advocate-watcher"
         },
-        "reviewed_at": "2026-06-24T12:50:45Z",
+        "reviewed_at": "2026-07-07T14:26:56.791272Z",
         "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
       }
     ],
@@ -1655,18 +1669,18 @@
         "severity": "minor",
         "result": "pass",
         "field_hash": {
-          "md": "7959b6443742",
+          "md": "e1862f65e4dc",
           "ts": "477db9b4fde8",
-          "lean": "bd777034f37c"
+          "lean": "86f575746859"
         },
         "reviewer": {
           "kind": "agent",
           "id": "local/devils-advocate-watcher",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-24",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.791272Z",
           "agent_skill": "local/devils-advocate-watcher"
         },
-        "reviewed_at": "2026-06-24T12:50:45Z",
+        "reviewed_at": "2026-07-07T14:26:56.791272Z",
         "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
       }
     ],
@@ -1687,18 +1701,18 @@
         "severity": "minor",
         "result": "pass",
         "field_hash": {
-          "md": "7959b6443742",
+          "md": "e1862f65e4dc",
           "ts": "477db9b4fde8",
-          "lean": "bd777034f37c"
+          "lean": "86f575746859"
         },
         "reviewer": {
           "kind": "agent",
           "id": "local/devils-advocate-watcher",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-24",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.791272Z",
           "agent_skill": "local/devils-advocate-watcher"
         },
-        "reviewed_at": "2026-06-24T12:50:45Z",
+        "reviewed_at": "2026-07-07T14:26:56.791272Z",
         "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
       }
     ],
@@ -1708,34 +1722,36 @@
         "referee_argument": "Strip the labels and the proposition titled 'meson color-tube UNIQUENESS' proves no uniqueness. Its load-bearing Lean theorem rewrites the numeric tautology 3 = 3\u00b7(2\u22121) into an unconstrained class hypothesis and hands it back; the abstract qChar imposes no q-integer value; and the actual 'why the indices are (3,4)' minimisation principle is conceded-open in the block's own .md and corpus-empty. Worse, the block's own structural-origin witness admits the spin/index assignment is 'post-hoc', and the audit it cites is literally titled 'meson m_K/m_\u03c0 is fitted, not a derived character ratio'. The C1 sorry-flag is a clean false positive (no sorry exists, 4th of 4), and the empirical value actually passes \u2014 but the title's strongest word, 'uniqueness\u2026 forced', is an overclaim its own materials refute.",
         "result": "fail",
         "field_hash": {
-          "md": "7959b6443742",
+          "md": "e1862f65e4dc",
           "ts": "477db9b4fde8",
-          "lean": "bd777034f37c"
+          "lean": "86f575746859"
         },
         "reviewer": {
           "kind": "agent",
           "id": "local/devils-advocate-watcher",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-24",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.791272Z",
           "agent_skill": "local/devils-advocate-watcher"
         },
-        "reviewed_at": "2026-06-24T12:50:45Z",
+        "reviewed_at": "2026-07-07T14:26:56.791272Z",
         "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
       }
     ],
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "7959b6443742",
+          "md": "e1862f65e4dc",
           "ts": "477db9b4fde8",
-          "lean": "bd777034f37c"
+          "lean": "86f575746859"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.791272Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.791272Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.ts:1",
@@ -1745,16 +1761,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "7959b6443742",
+          "md": "e1862f65e4dc",
           "ts": "477db9b4fde8",
-          "lean": "bd777034f37c"
+          "lean": "86f575746859"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.791272Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.791272Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.ts:1",
@@ -1764,16 +1782,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "7959b6443742",
+          "md": "e1862f65e4dc",
           "ts": "477db9b4fde8",
-          "lean": "bd777034f37c"
+          "lean": "86f575746859"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.791272Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.791272Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.ts:1",
@@ -1783,16 +1803,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "7959b6443742",
+          "md": "e1862f65e4dc",
           "ts": "477db9b4fde8",
-          "lean": "bd777034f37c"
+          "lean": "86f575746859"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.791272Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.791272Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.ts:1",
@@ -1802,16 +1824,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "7959b6443742",
+          "md": "e1862f65e4dc",
           "ts": "477db9b4fde8",
-          "lean": "bd777034f37c"
+          "lean": "86f575746859"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.791272Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.791272Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.ts:1",
@@ -1821,16 +1845,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "7959b6443742",
+          "md": "e1862f65e4dc",
           "ts": "477db9b4fde8",
-          "lean": "bd777034f37c"
+          "lean": "86f575746859"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.791272Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.791272Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
         "evidence": "content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.lean:1 \u2014 content/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.lean:143:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern",
@@ -1841,14 +1867,21 @@
       {
         "result": "pass",
         "notes": "Rewrote mass-theory_seq11.md to strictly follow H1-H8. Streamlined LP constraints and operator choices. Clarified the categorical reading vs empirical consequences. All formulas and code structures preserved.",
-        "reviewed_at": "2026-07-06T23:10:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.791272Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.791272Z"
+        },
+        "field_hash": {
+          "md": "e1862f65e4dc",
+          "ts": "477db9b4fde8",
+          "lean": "86f575746859"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.430Z"
+  "updated_at": "2026-07-07T14:26:56.791272Z"
 }

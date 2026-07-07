@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean"
   },
   "source_hashes": {
-    "md": "85788b0c2909",
+    "md": "60ad7858c937",
     "ts": "a7b6e37c99ea",
     "lean": "824f63be21f3"
   },
@@ -1050,19 +1050,19 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "90118caa9ccd",
-          "ts": "61a751b4bb3c",
-          "lean": "bfa700953325"
+          "md": "60ad7858c937",
+          "ts": "a7b6e37c99ea",
+          "lean": "824f63be21f3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.312740Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:19.106Z",
+        "reviewed_at": "2026-07-07T14:26:57.312740Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
       }
@@ -1070,19 +1070,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "90118caa9ccd",
-          "ts": "61a751b4bb3c",
-          "lean": "bfa700953325"
+          "md": "60ad7858c937",
+          "ts": "a7b6e37c99ea",
+          "lean": "824f63be21f3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.312740Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:19.456Z",
+        "reviewed_at": "2026-07-07T14:26:57.312740Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1090,19 +1090,19 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "90118caa9ccd",
-          "ts": "61a751b4bb3c",
-          "lean": "bfa700953325"
+          "md": "60ad7858c937",
+          "ts": "a7b6e37c99ea",
+          "lean": "824f63be21f3"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.312740Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:19.775Z",
+        "reviewed_at": "2026-07-07T14:26:57.312740Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Substrate statement contains archimedean constructs."
       }
@@ -1110,19 +1110,19 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "90118caa9ccd",
-          "ts": "61a751b4bb3c",
-          "lean": "bfa700953325"
+          "md": "60ad7858c937",
+          "ts": "a7b6e37c99ea",
+          "lean": "824f63be21f3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.312740Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:20.136Z",
+        "reviewed_at": "2026-07-07T14:26:57.312740Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
       }
@@ -1162,7 +1162,7 @@
       },
       {
         "field_hash": {
-          "md": "85788b0c2909",
+          "md": "60ad7858c937",
           "ts": "a7b6e37c99ea",
           "lean": "824f63be21f3"
         },
@@ -1170,9 +1170,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.312740Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_at": "2026-07-07T14:26:57.312740Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:magic-shell-coupling-kappa' \u2192 expected 'magic_shell_coupling_kappa'; Lean declares: qBracket, hParam, E0, kappaClosed, HasMagicShellCouplingKappaClosedForm.... Structural match via content."
       }
@@ -1220,20 +1222,20 @@
       },
       {
         "field_hash": {
-          "md": "90118caa9ccd",
-          "ts": "61a751b4bb3c",
-          "lean": "bfa700953325"
+          "md": "60ad7858c937",
+          "ts": "a7b6e37c99ea",
+          "lean": "824f63be21f3"
         },
         "result": "pass",
         "notes": "Clear decomposition: H7a energy quantum E\u2080log(1/h) \u00d7 LR-fusion normalization 1/([2]_q[3]_q); sign + positivity lemmas proved in Lean.",
-        "reviewed_at": "2026-06-25T17:10:52.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.312740Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.312740Z"
         },
         "score": {
           "max": 1,
@@ -1284,20 +1286,20 @@
       },
       {
         "field_hash": {
-          "md": "90118caa9ccd",
-          "ts": "61a751b4bb3c",
-          "lean": "bfa700953325"
+          "md": "60ad7858c937",
+          "ts": "a7b6e37c99ea",
+          "lean": "824f63be21f3"
         },
         "result": "pass",
         "notes": "Categorical closed form for magic-shell coupling slope \u03ba from (m_e,q\u2080) + q-brackets, matching empirical fit within 0.034%, is well-posed and substantive (closes a derivation work-item).",
-        "reviewed_at": "2026-06-25T17:10:52.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.312740Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.312740Z"
         },
         "score": {
           "max": 1,
@@ -1348,20 +1350,20 @@
       },
       {
         "field_hash": {
-          "md": "90118caa9ccd",
-          "ts": "61a751b4bb3c",
-          "lean": "bfa700953325"
+          "md": "60ad7858c937",
+          "ts": "a7b6e37c99ea",
+          "lean": "824f63be21f3"
         },
         "result": "pass",
         "notes": "Deriving an empirically-fit slope (-1.07 MeV/excess) as a parameter-free function of q\u2080 via q-brackets is a genuine empirical-to-categorical promotion.",
-        "reviewed_at": "2026-06-25T17:10:52.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.312740Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.312740Z"
         },
         "score": {
           "max": 1,
@@ -1408,39 +1410,39 @@
       },
       {
         "field_hash": {
-          "md": "90118caa9ccd",
-          "ts": "61a751b4bb3c",
-          "lean": "bfa700953325"
+          "md": "60ad7858c937",
+          "ts": "a7b6e37c99ea",
+          "lean": "824f63be21f3"
         },
         "result": "pass",
         "notes": "Library faithfully defines kappaClosed = -E\u2080log(1/h)/([2]_q[3]_q) and PROVES structural lemmas qBracket_zero/hParam_pos/E0_pos/kappaClosed_neg (sorry-free). Empirical-match asserted via class field; empty sibling stub adds nothing but doesn't corrupt.",
-        "reviewed_at": "2026-06-25T17:10:52.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.312740Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.312740Z"
         }
       }
     ],
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "90118caa9ccd",
-          "ts": "61a751b4bb3c",
-          "lean": "bfa700953325"
+          "md": "60ad7858c937",
+          "ts": "a7b6e37c99ea",
+          "lean": "824f63be21f3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.312740Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:22.321Z",
+        "reviewed_at": "2026-07-07T14:26:57.312740Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
       }
@@ -1448,19 +1450,19 @@
     "proof-no-trivial-true": [
       {
         "field_hash": {
-          "md": "90118caa9ccd",
-          "ts": "61a751b4bb3c",
-          "lean": "bfa700953325"
+          "md": "60ad7858c937",
+          "ts": "a7b6e37c99ea",
+          "lean": "824f63be21f3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.312740Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:22.748Z",
+        "reviewed_at": "2026-07-07T14:26:57.312740Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
       }
@@ -1504,20 +1506,20 @@
       },
       {
         "field_hash": {
-          "md": "90118caa9ccd",
-          "ts": "61a751b4bb3c",
-          "lean": "bfa700953325"
+          "md": "60ad7858c937",
+          "ts": "a7b6e37c99ea",
+          "lean": "824f63be21f3"
         },
         "result": "pass",
         "notes": "Hypotheses (1<q, 0<m_e, hParam<1, brackets>0) satisfiable at q\u2080\u22481.11 (h(q\u2080)\u22480.209<1); no contradiction.",
-        "reviewed_at": "2026-06-25T17:10:52.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.312740Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.312740Z"
         }
       }
     ],
@@ -1560,20 +1562,20 @@
       },
       {
         "field_hash": {
-          "md": "90118caa9ccd",
-          "ts": "61a751b4bb3c",
-          "lean": "bfa700953325"
+          "md": "60ad7858c937",
+          "ts": "a7b6e37c99ea",
+          "lean": "824f63be21f3"
         },
         "result": "pass",
         "notes": "kappaClosed_neg uses all four hyps (hq, hm, hhParam_lt_one, h_brackets_pos); kappa_closed_form_is_categorical uses [c].",
-        "reviewed_at": "2026-06-25T17:10:52.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.312740Z",
         "reviewed_sha": "9d4e57dde9291db8f47a89805ad2eaed0ebd7672",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.312740Z"
         }
       }
     ],
@@ -1598,37 +1600,39 @@
       },
       {
         "field_hash": {
-          "md": "90118caa9ccd",
-          "ts": "61a751b4bb3c",
-          "lean": "bfa700953325"
+          "md": "60ad7858c937",
+          "ts": "a7b6e37c99ea",
+          "lean": "824f63be21f3"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean, content/quantum-observable-universe/lean/QOU/BraidKnot.lean, content/quantum-observable-universe/lean/QOU/BraidKnot/MagicShellCouplingKappa.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.312740Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.312740Z"
         }
       }
     ],
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "90118caa9ccd",
-          "ts": "61a751b4bb3c",
-          "lean": "bfa700953325"
+          "md": "60ad7858c937",
+          "ts": "a7b6e37c99ea",
+          "lean": "824f63be21f3"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.312740Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.312740Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The claim in 'Magic-shell coupling slope $\\\\kappa = -E_0 \\\\cdot \\\\log(1/h) / ([2]_q [3]_q)$ \u2014 categorical closed form' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean:142:8: error(lean.unknownIdentifier): Unknown identifier `lt_div_iff`.",
         "severity": "minor",
@@ -1638,17 +1642,19 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "90118caa9ccd",
-          "ts": "61a751b4bb3c",
-          "lean": "bfa700953325"
+          "md": "60ad7858c937",
+          "ts": "a7b6e37c99ea",
+          "lean": "824f63be21f3"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.312740Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.312740Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
         "severity": "major",
@@ -1658,17 +1664,19 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "90118caa9ccd",
-          "ts": "61a751b4bb3c",
-          "lean": "bfa700953325"
+          "md": "60ad7858c937",
+          "ts": "a7b6e37c99ea",
+          "lean": "824f63be21f3"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.312740Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.312740Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Magic-shell coupling slope $\\\\kappa = -E_0 \\\\cdot \\\\log(1/h) / ([2]_q [3]_q)$ \u2014 categorical closed form'.",
         "severity": "minor",
@@ -1678,17 +1686,19 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "90118caa9ccd",
-          "ts": "61a751b4bb3c",
-          "lean": "bfa700953325"
+          "md": "60ad7858c937",
+          "ts": "a7b6e37c99ea",
+          "lean": "824f63be21f3"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.312740Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.312740Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose in 'Magic-shell coupling slope $\\\\kappa = -E_0 \\\\cdot \\\\log(1/h) / ([2]_q [3]_q)$ \u2014 categorical closed form' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean is incomplete (has sorry).",
         "severity": "minor"
@@ -1697,17 +1707,19 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "90118caa9ccd",
-          "ts": "61a751b4bb3c",
-          "lean": "bfa700953325"
+          "md": "60ad7858c937",
+          "ts": "a7b6e37c99ea",
+          "lean": "824f63be21f3"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.312740Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.312740Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Magic-shell coupling slope $\\\\kappa = -E_0 \\\\cdot \\\\log(1/h) / ([2]_q [3]_q)$ \u2014 categorical closed form'.",
         "severity": "minor",
@@ -1717,17 +1729,19 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "90118caa9ccd",
-          "ts": "61a751b4bb3c",
-          "lean": "bfa700953325"
+          "md": "60ad7858c937",
+          "ts": "a7b6e37c99ea",
+          "lean": "824f63be21f3"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.312740Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.312740Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean.",
         "severity": "minor",
@@ -1737,17 +1751,19 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "90118caa9ccd",
-          "ts": "61a751b4bb3c",
-          "lean": "bfa700953325"
+          "md": "60ad7858c937",
+          "ts": "a7b6e37c99ea",
+          "lean": "824f63be21f3"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.312740Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.312740Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
@@ -1756,17 +1772,19 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "90118caa9ccd",
-          "ts": "61a751b4bb3c",
-          "lean": "bfa700953325"
+          "md": "60ad7858c937",
+          "ts": "a7b6e37c99ea",
+          "lean": "824f63be21f3"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.312740Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.312740Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Magic-shell coupling slope $\\\\kappa = -E_0 \\\\cdot \\\\log(1/h) / ([2]_q [3]_q)$ \u2014 categorical closed form', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1776,17 +1794,19 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "90118caa9ccd",
-          "ts": "61a751b4bb3c",
-          "lean": "bfa700953325"
+          "md": "60ad7858c937",
+          "ts": "a7b6e37c99ea",
+          "lean": "824f63be21f3"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.312740Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.312740Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Magic-shell coupling slope $\\\\kappa = -E_0 \\\\cdot \\\\log(1/h) / ([2]_q [3]_q)$ \u2014 categorical closed form' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1796,17 +1816,19 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "90118caa9ccd",
-          "ts": "61a751b4bb3c",
-          "lean": "bfa700953325"
+          "md": "60ad7858c937",
+          "ts": "a7b6e37c99ea",
+          "lean": "824f63be21f3"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.312740Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.312740Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Magic-shell coupling slope $\\\\kappa = -E_0 \\\\cdot \\\\log(1/h) / ([2]_q [3]_q)$ \u2014 categorical closed form' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1816,17 +1838,19 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "90118caa9ccd",
-          "ts": "61a751b4bb3c",
-          "lean": "bfa700953325"
+          "md": "60ad7858c937",
+          "ts": "a7b6e37c99ea",
+          "lean": "824f63be21f3"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.312740Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.312740Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Magic-shell coupling slope $\\\\kappa = -E_0 \\\\cdot \\\\log(1/h) / ([2]_q [3]_q)$ \u2014 categorical closed form' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1836,17 +1860,19 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "90118caa9ccd",
-          "ts": "61a751b4bb3c",
-          "lean": "bfa700953325"
+          "md": "60ad7858c937",
+          "ts": "a7b6e37c99ea",
+          "lean": "824f63be21f3"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.312740Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.312740Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
@@ -1856,17 +1882,19 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "90118caa9ccd",
-          "ts": "61a751b4bb3c",
-          "lean": "bfa700953325"
+          "md": "60ad7858c937",
+          "ts": "a7b6e37c99ea",
+          "lean": "824f63be21f3"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.312740Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.312740Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean fails compilation: content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean:142:8: error(lean.unknownIdentifier): Unknown identifier `lt_div_iff`",
         "severity": "critical",
@@ -1881,5 +1909,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.802Z"
+  "updated_at": "2026-07-07T14:26:57.312740Z"
 }

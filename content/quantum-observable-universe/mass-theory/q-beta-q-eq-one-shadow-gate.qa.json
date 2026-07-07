@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/q-beta-q-eq-one-shadow-gate.lean"
   },
   "source_hashes": {
-    "md": "b5a9de64ecfe",
+    "md": "63eeeae222a6",
     "ts": "206ac0135c70",
     "lean": "43eb64fb0ba1"
   },
@@ -36,7 +36,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "b5a9de64ecfe",
+          "md": "63eeeae222a6",
           "ts": "206ac0135c70",
           "lean": "43eb64fb0ba1"
         },
@@ -44,9 +44,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.769177Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_at": "2026-07-07T14:26:56.769177Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:q-beta-q-eq-one-shadow-gate' \u2192 expected 'q_beta_q_eq_one_shadow_gate'; Lean declares: hopfJonesAtQOne, QOneShadowGateClass, qbeta_q_eq_one_shadow_anchors, q_eq_one_shadow_gate_reject_c2, q_eq_one_shadow_gate_reject_c3.... Structural match via content."
       }
@@ -55,14 +57,21 @@
       {
         "result": "pass",
         "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice. Grouped logical steps for clarity, removing repetitive transitional filler. Emphasized 'why before what'. Maintained mathematical and technical accuracy.",
-        "reviewed_at": "2026-07-06T22:45:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.769177Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.769177Z"
+        },
+        "field_hash": {
+          "md": "63eeeae222a6",
+          "ts": "206ac0135c70",
+          "lean": "43eb64fb0ba1"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.430Z"
+  "updated_at": "2026-07-07T14:26:56.769177Z"
 }

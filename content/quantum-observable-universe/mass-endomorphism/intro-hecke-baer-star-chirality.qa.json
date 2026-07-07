@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/mass-endomorphism/intro-hecke-baer-star-chirality.md"
   },
   "source_hashes": {
-    "ts": "21a4161b5b2a",
-    "md": "1b6659663ba8"
+    "md": "044198353a75",
+    "ts": "21a4161b5b2a"
   },
   "criteria": {
     "q-usage-regime-detected": [
@@ -128,14 +128,20 @@
       {
         "result": "pass",
         "notes": "Rewrote mass-endomorphism_seq10.md for Milnor standards: improved economy, declarative voice, preserved structure.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.136212Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.136212Z"
+        },
+        "field_hash": {
+          "md": "044198353a75",
+          "ts": "21a4161b5b2a"
         }
       }
     ]
   },
-  "updated_at": "2026-06-01T16:06:38.106Z"
+  "updated_at": "2026-07-07T14:26:56.136212Z"
 }

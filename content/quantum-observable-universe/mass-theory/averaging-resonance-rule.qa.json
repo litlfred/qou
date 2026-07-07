@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/averaging-resonance-rule.lean"
   },
   "source_hashes": {
-    "md": "9e0387e5f195",
+    "md": "8ebc180f5d0f",
     "ts": "9090da6593bd",
     "lean": "99a27cc6a19f"
   },
@@ -1102,16 +1102,18 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "9e0387e5f195",
+          "md": "8ebc180f5d0f",
           "ts": "9090da6593bd",
           "lean": "99a27cc6a19f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.961280Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.961280Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The statement is written in standard scholarly mathematical and physics voice.",
         "severity": "minor"
@@ -1120,7 +1122,7 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "9e0387e5f195",
+          "md": "8ebc180f5d0f",
           "ts": "9090da6593bd",
           "lean": "99a27cc6a19f"
         },
@@ -1128,9 +1130,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.961280Z"
         },
-        "reviewed_at": "2026-06-28T10:58:55.797Z",
+        "reviewed_at": "2026-07-07T14:26:56.961280Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Block placement and kind 'theorem' match validated structurally for 'Averaging-resonant rung selection: $k_{\\\\mathrm{res}}(n_{\\\\mathrm{total}}) = \\\\lfloor n_{\\\\mathrm{total}}/2 \\\\rfloor + \\\\mathbb{1}_{\\\\mathrm{wrap}}$'.",
         "severity": "minor"
@@ -1139,16 +1143,18 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "9e0387e5f195",
+          "md": "8ebc180f5d0f",
           "ts": "9090da6593bd",
           "lean": "99a27cc6a19f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.961280Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.961280Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
         "evidence": "content/quantum-observable-universe/mass-theory/averaging-resonance-rule.lean:1 \u2014 Lean file exists",
@@ -1158,16 +1164,18 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "9e0387e5f195",
+          "md": "8ebc180f5d0f",
           "ts": "9090da6593bd",
           "lean": "99a27cc6a19f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.961280Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.961280Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean file contains a fully verified, sorry-free proof.",
         "severity": "minor"
@@ -1193,7 +1201,7 @@
       },
       {
         "field_hash": {
-          "md": "9e0387e5f195",
+          "md": "8ebc180f5d0f",
           "ts": "9090da6593bd",
           "lean": "99a27cc6a19f"
         },
@@ -1201,9 +1209,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.961280Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_at": "2026-07-07T14:26:56.961280Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'thm:averaging-resonance-rule' \u2192 expected 'averaging_resonance_rule'; Lean declares: kRes, kRes_def, kRes_proton_recipe, kRes_deuteron_recipe, kRes_tritium_recipe.... Structural match via content."
       }
@@ -1211,16 +1221,18 @@
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "9e0387e5f195",
+          "md": "8ebc180f5d0f",
           "ts": "9090da6593bd",
           "lean": "99a27cc6a19f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.961280Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.961280Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Proof strategy is well-structured and easy to follow.",
         "severity": "minor"
@@ -1229,7 +1241,7 @@
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "9e0387e5f195",
+          "md": "8ebc180f5d0f",
           "ts": "9090da6593bd",
           "lean": "99a27cc6a19f"
         },
@@ -1237,9 +1249,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.961280Z"
         },
-        "reviewed_at": "2026-06-28T10:58:55.809Z",
+        "reviewed_at": "2026-07-07T14:26:56.961280Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Proof compiles successfully, confirming goal plausibility.",
         "severity": "minor"
@@ -1248,16 +1262,18 @@
     "proof-rater-novelty": [
       {
         "field_hash": {
-          "md": "9e0387e5f195",
+          "md": "8ebc180f5d0f",
           "ts": "9090da6593bd",
           "lean": "99a27cc6a19f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.961280Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.961280Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The mathematical and physical connections explored in this block are highly novel.",
         "severity": "minor",
@@ -1270,7 +1286,7 @@
     "proof-statement-integrity": [
       {
         "field_hash": {
-          "md": "9e0387e5f195",
+          "md": "8ebc180f5d0f",
           "ts": "9090da6593bd",
           "lean": "99a27cc6a19f"
         },
@@ -1278,9 +1294,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.961280Z"
         },
-        "reviewed_at": "2026-06-28T10:58:55.815Z",
+        "reviewed_at": "2026-07-07T14:26:56.961280Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "",
         "severity": "minor"
@@ -1289,7 +1307,7 @@
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "9e0387e5f195",
+          "md": "8ebc180f5d0f",
           "ts": "9090da6593bd",
           "lean": "99a27cc6a19f"
         },
@@ -1297,9 +1315,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.961280Z"
         },
-        "reviewed_at": "2026-06-28T10:58:55.821Z",
+        "reviewed_at": "2026-07-07T14:26:56.961280Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "",
         "severity": "minor"
@@ -1326,7 +1346,7 @@
       },
       {
         "field_hash": {
-          "md": "9e0387e5f195",
+          "md": "8ebc180f5d0f",
           "ts": "9090da6593bd",
           "lean": "99a27cc6a19f"
         },
@@ -1334,9 +1354,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.961280Z"
         },
-        "reviewed_at": "2026-06-28T10:58:55.828Z",
+        "reviewed_at": "2026-07-07T14:26:56.961280Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The proof does not rely on trivial True stubs.",
         "severity": "minor"
@@ -1345,7 +1367,7 @@
     "proof-no-false-premise": [
       {
         "field_hash": {
-          "md": "9e0387e5f195",
+          "md": "8ebc180f5d0f",
           "ts": "9090da6593bd",
           "lean": "99a27cc6a19f"
         },
@@ -1353,9 +1375,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.961280Z"
         },
-        "reviewed_at": "2026-06-28T10:58:55.834Z",
+        "reviewed_at": "2026-07-07T14:26:56.961280Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "",
         "severity": "minor"
@@ -1364,16 +1388,18 @@
     "proof-no-unused-hypotheses": [
       {
         "field_hash": {
-          "md": "9e0387e5f195",
+          "md": "8ebc180f5d0f",
           "ts": "9090da6593bd",
           "lean": "99a27cc6a19f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.961280Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.961280Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No unused hypotheses are present in the Lean proof.",
         "severity": "minor"
@@ -1382,7 +1408,7 @@
     "proof-no-decide-masking": [
       {
         "field_hash": {
-          "md": "9e0387e5f195",
+          "md": "8ebc180f5d0f",
           "ts": "9090da6593bd",
           "lean": "99a27cc6a19f"
         },
@@ -1390,9 +1416,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.961280Z"
         },
-        "reviewed_at": "2026-06-28T10:58:55.840Z",
+        "reviewed_at": "2026-07-07T14:26:56.961280Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "",
         "severity": "minor"
@@ -1401,16 +1429,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "9e0387e5f195",
+          "md": "8ebc180f5d0f",
           "ts": "9090da6593bd",
           "lean": "99a27cc6a19f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.961280Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.961280Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/averaging-resonance-rule.ts:1",
@@ -1420,16 +1450,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "9e0387e5f195",
+          "md": "8ebc180f5d0f",
           "ts": "9090da6593bd",
           "lean": "99a27cc6a19f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.961280Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.961280Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-vacuous.",
         "severity": "minor"
@@ -1438,16 +1470,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "9e0387e5f195",
+          "md": "8ebc180f5d0f",
           "ts": "9090da6593bd",
           "lean": "99a27cc6a19f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.961280Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.961280Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/averaging-resonance-rule.ts:1",
@@ -1457,16 +1491,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "9e0387e5f195",
+          "md": "8ebc180f5d0f",
           "ts": "9090da6593bd",
           "lean": "99a27cc6a19f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.961280Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.961280Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
@@ -1475,16 +1511,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "9e0387e5f195",
+          "md": "8ebc180f5d0f",
           "ts": "9090da6593bd",
           "lean": "99a27cc6a19f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.961280Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.961280Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/averaging-resonance-rule.ts:1",
@@ -1494,16 +1532,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "9e0387e5f195",
+          "md": "8ebc180f5d0f",
           "ts": "9090da6593bd",
           "lean": "99a27cc6a19f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.961280Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.961280Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/averaging-resonance-rule.ts:1",
@@ -1513,16 +1553,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "9e0387e5f195",
+          "md": "8ebc180f5d0f",
           "ts": "9090da6593bd",
           "lean": "99a27cc6a19f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.961280Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.961280Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-lean-narrative-divergence.",
         "severity": "minor"
@@ -1531,16 +1573,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "9e0387e5f195",
+          "md": "8ebc180f5d0f",
           "ts": "9090da6593bd",
           "lean": "99a27cc6a19f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.961280Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.961280Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
         "evidence": "content/quantum-observable-universe/mass-theory/averaging-resonance-rule.ts:1",
@@ -1550,16 +1594,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "9e0387e5f195",
+          "md": "8ebc180f5d0f",
           "ts": "9090da6593bd",
           "lean": "99a27cc6a19f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.961280Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.961280Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/averaging-resonance-rule.ts:1",
@@ -1569,16 +1615,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "9e0387e5f195",
+          "md": "8ebc180f5d0f",
           "ts": "9090da6593bd",
           "lean": "99a27cc6a19f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.961280Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.961280Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/averaging-resonance-rule.ts:1",
@@ -1588,16 +1636,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "9e0387e5f195",
+          "md": "8ebc180f5d0f",
           "ts": "9090da6593bd",
           "lean": "99a27cc6a19f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.961280Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.961280Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/averaging-resonance-rule.ts:1",
@@ -1607,16 +1657,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "9e0387e5f195",
+          "md": "8ebc180f5d0f",
           "ts": "9090da6593bd",
           "lean": "99a27cc6a19f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.961280Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.961280Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-reproducibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/averaging-resonance-rule.ts:1",
@@ -1626,16 +1678,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "9e0387e5f195",
+          "md": "8ebc180f5d0f",
           "ts": "9090da6593bd",
           "lean": "99a27cc6a19f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.961280Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.961280Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -1647,14 +1701,21 @@
       {
         "result": "pass",
         "notes": "Rewrote mass-theory_seq11.md to strictly follow H1-H8. Streamlined LP constraints and operator choices. Clarified the categorical reading vs empirical consequences. All formulas and code structures preserved.",
-        "reviewed_at": "2026-07-06T23:10:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.961280Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.961280Z"
+        },
+        "field_hash": {
+          "md": "8ebc180f5d0f",
+          "ts": "9090da6593bd",
+          "lean": "99a27cc6a19f"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.430Z"
+  "updated_at": "2026-07-07T14:26:56.961280Z"
 }

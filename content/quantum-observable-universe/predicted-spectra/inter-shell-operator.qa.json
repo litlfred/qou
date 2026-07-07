@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/predicted-spectra/inter-shell-operator.lean"
   },
   "source_hashes": {
-    "md": "ce67e38da319",
+    "md": "c2757e7490ee",
     "ts": "8aa8c185882d",
     "lean": "d621671cb715"
   },
@@ -877,7 +877,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "ce67e38da319",
+          "md": "c2757e7490ee",
           "ts": "8aa8c185882d",
           "lean": "d621671cb715"
         },
@@ -885,13 +885,15 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.433002Z"
         },
-        "reviewed_at": "2026-07-06T04:41:30.359Z",
+        "reviewed_at": "2026-07-07T14:26:56.433002Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'def:inter-shell-operator' → expected 'inter_shell_operator'; Lean declares: R_q, InterShellOperator. Structural match via content."
+        "notes": "Label 'def:inter-shell-operator' \u2192 expected 'inter_shell_operator'; Lean declares: R_q, InterShellOperator. Structural match via content."
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:30.359Z"
+  "updated_at": "2026-07-07T14:26:56.433002Z"
 }

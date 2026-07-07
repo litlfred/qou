@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/lifting-and-descent/categorical-q-reeb-flow.lean"
   },
   "source_hashes": {
-    "md": "9c952d02c50c",
+    "md": "7a8cf98f18ab",
     "ts": "a86f4c6e6cdd",
     "lean": "a4147eeedd5e"
   },
@@ -878,16 +878,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "9c952d02c50c",
+          "md": "7a8cf98f18ab",
           "ts": "a86f4c6e6cdd",
-          "lean": "79eedb02b275"
+          "lean": "a4147eeedd5e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.700612Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.700612Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Block placement and kind match validated structurally.",
         "severity": "minor"
@@ -896,16 +898,18 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "9c952d02c50c",
+          "md": "7a8cf98f18ab",
           "ts": "a86f4c6e6cdd",
-          "lean": "79eedb02b275"
+          "lean": "a4147eeedd5e"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.700612Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.700612Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The statement matches the formal definition, but the Lean sibling fails compilation.",
         "severity": "minor",
@@ -915,16 +919,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "9c952d02c50c",
+          "md": "7a8cf98f18ab",
           "ts": "a86f4c6e6cdd",
-          "lean": "79eedb02b275"
+          "lean": "a4147eeedd5e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.700612Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.700612Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No false claims identified in 'Let \\xi be the Reeb derivation of A': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -934,16 +940,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "9c952d02c50c",
+          "md": "7a8cf98f18ab",
           "ts": "a86f4c6e6cdd",
-          "lean": "79eedb02b275"
+          "lean": "a4147eeedd5e"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.700612Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.700612Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/lifting-and-descent/categorical-q-reeb-flow.lean fails compilation, rendering the verification vacuous.",
         "severity": "major",
@@ -953,16 +961,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "9c952d02c50c",
+          "md": "7a8cf98f18ab",
           "ts": "a86f4c6e6cdd",
-          "lean": "79eedb02b275"
+          "lean": "a4147eeedd5e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.700612Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.700612Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Let \\xi be the Reeb derivation of A'.",
         "severity": "minor",
@@ -972,16 +982,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "9c952d02c50c",
+          "md": "7a8cf98f18ab",
           "ts": "a86f4c6e6cdd",
-          "lean": "79eedb02b275"
+          "lean": "a4147eeedd5e"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.700612Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.700612Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The prose in 'Let \\xi be the Reeb derivation of A' presents the result as established, but the Lean formalization is incomplete (contains sorry / fails compilation).",
         "severity": "minor"
@@ -990,16 +1002,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "9c952d02c50c",
+          "md": "7a8cf98f18ab",
           "ts": "a86f4c6e6cdd",
-          "lean": "79eedb02b275"
+          "lean": "a4147eeedd5e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.700612Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.700612Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Let \\xi be the Reeb derivation of A'.",
         "severity": "minor",
@@ -1009,16 +1023,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "9c952d02c50c",
+          "md": "7a8cf98f18ab",
           "ts": "a86f4c6e6cdd",
-          "lean": "79eedb02b275"
+          "lean": "a4147eeedd5e"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.700612Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.700612Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The argument flow in 'Let \\xi be the Reeb derivation of A' has logical gaps due to compilation failure in its Lean sibling.",
         "severity": "minor",
@@ -1028,16 +1044,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "9c952d02c50c",
+          "md": "7a8cf98f18ab",
           "ts": "a86f4c6e6cdd",
-          "lean": "79eedb02b275"
+          "lean": "a4147eeedd5e"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.700612Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.700612Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/lifting-and-descent/categorical-q-reeb-flow.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor",
@@ -1047,16 +1065,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "9c952d02c50c",
+          "md": "7a8cf98f18ab",
           "ts": "a86f4c6e6cdd",
-          "lean": "79eedb02b275"
+          "lean": "a4147eeedd5e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.700612Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.700612Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No citations are present in 'Let \\xi be the Reeb derivation of A', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1066,16 +1086,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "9c952d02c50c",
+          "md": "7a8cf98f18ab",
           "ts": "a86f4c6e6cdd",
-          "lean": "79eedb02b275"
+          "lean": "a4147eeedd5e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.700612Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.700612Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Key terms and symbols in 'Let \\xi be the Reeb derivation of A' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1085,16 +1107,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "9c952d02c50c",
+          "md": "7a8cf98f18ab",
           "ts": "a86f4c6e6cdd",
-          "lean": "79eedb02b275"
+          "lean": "a4147eeedd5e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.700612Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.700612Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The algebraic and logical relations in 'Let \\xi be the Reeb derivation of A' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1104,16 +1128,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "9c952d02c50c",
+          "md": "7a8cf98f18ab",
           "ts": "a86f4c6e6cdd",
-          "lean": "79eedb02b275"
+          "lean": "a4147eeedd5e"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.700612Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.700612Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The physical concepts described in 'Let \\xi be the Reeb derivation of A' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1123,16 +1149,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "9c952d02c50c",
+          "md": "7a8cf98f18ab",
           "ts": "a86f4c6e6cdd",
-          "lean": "79eedb02b275"
+          "lean": "a4147eeedd5e"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.700612Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.700612Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/lifting-and-descent/categorical-q-reeb-flow.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
@@ -1142,16 +1170,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "9c952d02c50c",
+          "md": "7a8cf98f18ab",
           "ts": "a86f4c6e6cdd",
-          "lean": "79eedb02b275"
+          "lean": "a4147eeedd5e"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.700612Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.700612Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Referee verdict: open-objection. Sibling Lean file has issues: da-vacuous, da-lean-narrative-divergence, da-reproducibility.",
         "severity": "critical",
@@ -1163,14 +1193,21 @@
       {
         "result": "pass",
         "notes": "Rewrote blocks regarding categorical jet prolongation, Reeb flow, and primes as orbits. Compacted verbose descriptions into active statements. Standardized list formats. Checked file markers.",
-        "reviewed_at": "2026-07-06T23:01:02Z",
+        "reviewed_at": "2026-07-07T14:26:55.700612Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.700612Z"
+        },
+        "field_hash": {
+          "md": "7a8cf98f18ab",
+          "ts": "a86f4c6e6cdd",
+          "lean": "a4147eeedd5e"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-07T14:26:55.700612Z"
 }

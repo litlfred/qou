@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.lean"
   },
   "source_hashes": {
-    "md": "c1279456f803",
+    "md": "e8c9554cffaa",
     "ts": "4eaaf360a48d",
     "lean": "d0b93849dde0"
   },
@@ -1975,19 +1975,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "5c81290fc07d",
+          "md": "e8c9554cffaa",
           "ts": "4eaaf360a48d",
-          "lean": "c550806b5636"
+          "lean": "d0b93849dde0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.211954Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:20.656Z",
+        "reviewed_at": "2026-07-07T14:26:57.211954Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1995,9 +1995,9 @@
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "5c81290fc07d",
+          "md": "e8c9554cffaa",
           "ts": "4eaaf360a48d",
-          "lean": "c550806b5636"
+          "lean": "d0b93849dde0"
         },
         "result": "pass",
         "score": {
@@ -2007,11 +2007,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.211954Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:20.970Z",
+        "reviewed_at": "2026-07-07T14:26:57.211954Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
       }
@@ -2019,17 +2019,19 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "5c81290fc07d",
+          "md": "e8c9554cffaa",
           "ts": "4eaaf360a48d",
-          "lean": "c550806b5636"
+          "lean": "d0b93849dde0"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.211954Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.211954Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The claim in 'Weinberg angle $\\\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors' is unverified due to Lean compilation failures: content/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.lean:46:2: error(lean.unknownIdentifier): Unknown identifier `FarCommutes`.",
         "severity": "minor",
@@ -2039,17 +2041,19 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "5c81290fc07d",
+          "md": "e8c9554cffaa",
           "ts": "4eaaf360a48d",
-          "lean": "c550806b5636"
+          "lean": "d0b93849dde0"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.211954Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.211954Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The claims in 'Weinberg angle $\\\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors' are non-vacuous as they make concrete conjectures about 'generic (not a root of unity in $R$, $q \\neq 1$). Under the Hoefsmit cell-content identification of the EW triplet in...'.",
         "severity": "minor"
@@ -2058,17 +2062,19 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "5c81290fc07d",
+          "md": "e8c9554cffaa",
           "ts": "4eaaf360a48d",
-          "lean": "c550806b5636"
+          "lean": "d0b93849dde0"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.211954Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.211954Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Weinberg angle $\\\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors'.",
         "severity": "minor",
@@ -2078,17 +2084,19 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "5c81290fc07d",
+          "md": "e8c9554cffaa",
           "ts": "4eaaf360a48d",
-          "lean": "c550806b5636"
+          "lean": "d0b93849dde0"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.211954Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.211954Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose presents 'Weinberg angle $\\\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
@@ -2097,17 +2105,19 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "5c81290fc07d",
+          "md": "e8c9554cffaa",
           "ts": "4eaaf360a48d",
-          "lean": "c550806b5636"
+          "lean": "d0b93849dde0"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.211954Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.211954Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Weinberg angle $\\\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors'.",
         "severity": "minor",
@@ -2117,17 +2127,19 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "5c81290fc07d",
+          "md": "e8c9554cffaa",
           "ts": "4eaaf360a48d",
-          "lean": "c550806b5636"
+          "lean": "d0b93849dde0"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.211954Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.211954Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.lean.",
         "severity": "minor",
@@ -2137,17 +2149,19 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "5c81290fc07d",
+          "md": "e8c9554cffaa",
           "ts": "4eaaf360a48d",
-          "lean": "c550806b5636"
+          "lean": "d0b93849dde0"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.211954Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.211954Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Lean and narrative statements for 'Weinberg angle $\\\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors' are structurally aligned.",
         "severity": "minor"
@@ -2156,17 +2170,19 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "5c81290fc07d",
+          "md": "e8c9554cffaa",
           "ts": "4eaaf360a48d",
-          "lean": "c550806b5636"
+          "lean": "d0b93849dde0"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.211954Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.211954Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Weinberg angle $\\\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors', hence no citation misuse is possible.",
         "severity": "minor",
@@ -2176,17 +2192,19 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "5c81290fc07d",
+          "md": "e8c9554cffaa",
           "ts": "4eaaf360a48d",
-          "lean": "c550806b5636"
+          "lean": "d0b93849dde0"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.211954Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.211954Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Weinberg angle $\\\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -2196,17 +2214,19 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "5c81290fc07d",
+          "md": "e8c9554cffaa",
           "ts": "4eaaf360a48d",
-          "lean": "c550806b5636"
+          "lean": "d0b93849dde0"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.211954Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.211954Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Weinberg angle $\\\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -2216,17 +2236,19 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "5c81290fc07d",
+          "md": "e8c9554cffaa",
           "ts": "4eaaf360a48d",
-          "lean": "c550806b5636"
+          "lean": "d0b93849dde0"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.211954Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.211954Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Weinberg angle $\\\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -2236,17 +2258,19 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "5c81290fc07d",
+          "md": "e8c9554cffaa",
           "ts": "4eaaf360a48d",
-          "lean": "c550806b5636"
+          "lean": "d0b93849dde0"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.211954Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.211954Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
@@ -2256,17 +2280,19 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "5c81290fc07d",
+          "md": "e8c9554cffaa",
           "ts": "4eaaf360a48d",
-          "lean": "c550806b5636"
+          "lean": "d0b93849dde0"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.211954Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.211954Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Lean sibling content/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.lean contains compilation errors.",
         "severity": "critical",
@@ -2277,7 +2303,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "c1279456f803",
+          "md": "e8c9554cffaa",
           "ts": "4eaaf360a48d",
           "lean": "d0b93849dde0"
         },
@@ -2285,9 +2311,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.211954Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.802Z",
+        "reviewed_at": "2026-07-07T14:26:57.211954Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'conj:weinberg-angle-categorical' \u2192 expected 'weinberg_angle_categorical'; Lean declares: LkDischarged, HoefsmitDischarged, HiggsVEVAutomorphism, WeinbergAngleNumerical, WeinbergAngleCategorical.... Structural match via content."
       }
@@ -2299,5 +2327,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.802Z"
+  "updated_at": "2026-07-07T14:26:57.211954Z"
 }

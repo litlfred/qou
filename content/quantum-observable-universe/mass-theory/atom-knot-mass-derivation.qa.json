@@ -8,9 +8,9 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/atom-knot-mass-derivation.lean"
   },
   "source_hashes": {
-    "md": "edc2bfcf593d",
+    "md": "cb66ad4a9ccd",
     "ts": "13b56a346374",
-    "lean": "1bb45b0a1336"
+    "lean": "e1dc84b02962"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -36,17 +36,19 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "edc2bfcf593d",
+          "md": "cb66ad4a9ccd",
           "ts": "13b56a346374",
-          "lean": "1bb45b0a1336"
+          "lean": "e1dc84b02962"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.892463Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_at": "2026-07-07T14:26:56.892463Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:atom-knot-mass-derivation' aligns with Lean declaration. Sorry-free."
       }
@@ -55,14 +57,21 @@
       {
         "result": "pass",
         "notes": "Rewrote prose sections of mass-theory_seq37.md to enforce H1-H8 and milnor-brevity. Preserved all math blocks and original section markers. Ensured linear flow, minimal technical clutter, and short declarative sentences.",
-        "reviewed_at": "2026-07-06T22:49:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.892463Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.892463Z"
+        },
+        "field_hash": {
+          "md": "cb66ad4a9ccd",
+          "ts": "13b56a346374",
+          "lean": "e1dc84b02962"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.430Z"
+  "updated_at": "2026-07-07T14:26:56.892463Z"
 }

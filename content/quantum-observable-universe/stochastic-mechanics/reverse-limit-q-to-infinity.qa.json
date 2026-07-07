@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/stochastic-mechanics/reverse-limit-q-to-infinity.lean"
   },
   "source_hashes": {
-    "md": "feeed545e233",
+    "md": "122187c0ee67",
     "ts": "9835f45791a1",
     "lean": "847cda8cab7e"
   },
@@ -897,14 +897,21 @@
       {
         "result": "pass",
         "notes": "Connected the orphan stochastic mechanics blocks cleanly. Made the reverse crystal limits and AJ machinery arguments crisp.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.023715Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.023715Z"
+        },
+        "field_hash": {
+          "md": "122187c0ee67",
+          "ts": "9835f45791a1",
+          "lean": "847cda8cab7e"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T23:06:25.607Z"
+  "updated_at": "2026-07-07T14:26:56.023715Z"
 }

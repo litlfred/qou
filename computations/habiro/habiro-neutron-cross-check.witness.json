@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-28T04:41:24.988494+00:00",
-  "commitSha": "bc44957b45c651c81245f367871ed18da68f5d13",
+  "computedAt": "2026-07-07T13:52:39.023597+00:00",
+  "commitSha": "85da4f43133d9d70ca3582f4fa4f31771b5ec3f1",
   "assertions": [
     {
       "name": "proton_bridge_sub_10ppm",
@@ -30,52 +30,60 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 72,
+  "durationMs": 44,
   "computation": "habiro-neutron-cross-check",
   "scriptFile": "habiro_neutron_cross_check.py",
-  "scriptHash": "1b8cbb8c31fa",
-  "scriptCommitSha": "d87c455f425e4eff244af3f3a87165682d1c6da7",
+  "scriptHash": "c58ee59d4255",
+  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
   },
-  "description": "Neutron Habiro bridge cross-check. Neutron hab_A = 117.259384961304, tr_M = 0.923233297169584. Bridge = 127.009484299. Ladder: 3803 → -5956 → -5630.5 → -5638.28 ppm. Verdict: BRAID-SPECIFIC — correction factors differ between proton and neutron",
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Neutron Habiro bridge cross-check. Neutron hab_A = 117.259337913644, tr_M = 0.923233229911637. Bridge = 127.009442592. Ladder: 3802 → -5957 → -5631.2 → -5638.92 ppm. Verdict: BRAID-SPECIFIC — correction factors differ between proton and neutron",
   "auditOnly": "docs/audits/2026-05-28-habiro-product-correction-7ppm.md",
   "data": {
     "neutron": {
-      "hab_A_qq": "117.25938496130407787",
-      "hab_B_uu": "20.996080976192801434",
-      "tr_M": "0.92323329716958364246",
-      "bridge_ratio": "127.009484299141",
-      "c3_observed": "-0.573538547698554",
-      "c3_inv": "-1.74356197",
+      "hab_A_qq": "117.25933791364431974",
+      "hab_B_uu": "20.996077018562063771",
+      "tr_M": "0.92323322991163717797",
+      "bridge_ratio": "127.009442592168",
+      "c3_observed": "-0.573603765760134",
+      "c3_inv": "-1.743363729",
       "best_c3_candidate": "1/(n·p(n)²)",
-      "best_c3_residual_ppm": 5631.741215423026,
+      "best_c3_residual_ppm": 5632.380291233757,
       "ladder_ppm": {
-        "level_0_bare": 3802.784870054565,
-        "level_1_1plus_eps": -5955.933125160731,
-        "level_2_minus_eps_30": -5630.536042503481,
-        "level_3_plus_eps_1260": -5638.283531726621
+        "level_0_bare": 3802.1377524488826,
+        "level_1_1plus_eps": -5956.571924613956,
+        "level_2_minus_eps_30": -5631.175119341562,
+        "level_3_plus_eps_1260": -5638.922601960364
       }
     },
     "proton_reference": {
-      "hab_A_qq": "136.07120636348175767",
-      "tr_M": "1.0653062285923892552",
-      "bridge_ratio": "127.729663744927",
-      "c3_observed": "0.000796366545800564",
+      "hab_A_qq": "136.07115270338402974",
+      "tr_M": "1.0653061442544499757",
+      "bridge_ratio": "127.729623486414",
+      "c3_observed": "0.000732243559239025",
       "ladder_ppm": {
-        "level_0_bare": 9494.628571926676,
-        "level_1_1plus_eps": -319.4240949956751,
-        "level_2_minus_eps_30": 7.818080505951988,
-        "level_3_plus_eps_1260": 0.026660843084373016
+        "level_0_bare": 9493.991101756175,
+        "level_1_1plus_eps": -320.0533293097528,
+        "level_2_minus_eps_30": 7.188571550991526,
+        "level_3_plus_eps_1260": -0.6028415728711336
       }
     },
     "universality": {
       "factor_1_universal": true,
       "factor_2_minus_1_over_30": false,
-      "factor_3_c3_ratio_n_over_p": -720.1941753115608,
+      "factor_3_c3_ratio_n_over_p": -783.3510565203806,
       "c3_within_5pct": false,
       "verdict": "BRAID-SPECIFIC — correction factors differ between proton and neutron"
     }

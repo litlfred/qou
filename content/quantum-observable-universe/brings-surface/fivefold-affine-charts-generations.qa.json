@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/brings-surface/fivefold-affine-charts-generations.md"
   },
   "source_hashes": {
-    "md": "f42a8df62678",
+    "md": "7389b18d6b97",
     "ts": "4ec3740ff7f4"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Applied Milnor brevity. Reduced meta-text, fixed tone, preserved all tables and math.",
-        "reviewed_at": "2026-07-06T22:42:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.136172Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.136172Z"
+        },
+        "field_hash": {
+          "md": "7389b18d6b97",
+          "ts": "4ec3740ff7f4"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:55.404Z"
+  "updated_at": "2026-07-07T14:26:55.136172Z"
 }

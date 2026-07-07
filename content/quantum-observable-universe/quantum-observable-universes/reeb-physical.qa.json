@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/quantum-observable-universes/reeb-physical.md"
   },
   "source_hashes": {
-    "md": "6d7b5b2bb794",
+    "md": "2ee31731bc96",
     "ts": "c316a8c158e9"
   },
   "criteria": {
@@ -837,32 +837,36 @@
       },
       {
         "field_hash": {
-          "md": "6d7b5b2bb794",
+          "md": "2ee31731bc96",
           "ts": "c316a8c158e9"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.865375Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.865375Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "6d7b5b2bb794",
+          "md": "2ee31731bc96",
           "ts": "c316a8c158e9"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.865375Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:55.865375Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "reeb-physical.ts:1",
@@ -872,16 +876,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "6d7b5b2bb794",
+          "md": "2ee31731bc96",
           "ts": "c316a8c158e9"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.865375Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:55.865375Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "The block 'Physical interpretation of the weight decomposition' presents substantial mathematical content: 'The decomposition $\\alpha = \\alpha_H + \\alpha_V$ is the geometric origin of'."
@@ -890,16 +896,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "6d7b5b2bb794",
+          "md": "2ee31731bc96",
           "ts": "c316a8c158e9"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.865375Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:55.865375Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "reeb-physical.ts:1",
@@ -909,16 +917,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "6d7b5b2bb794",
+          "md": "2ee31731bc96",
           "ts": "c316a8c158e9"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.865375Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:55.865375Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "The remarks and narrative scope in 'Physical interpretation of the weight decomposition' are appropriately qualified."
@@ -927,16 +937,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "6d7b5b2bb794",
+          "md": "2ee31731bc96",
           "ts": "c316a8c158e9"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.865375Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:55.865375Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "reeb-physical.ts:1",
@@ -946,16 +958,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "6d7b5b2bb794",
+          "md": "2ee31731bc96",
           "ts": "c316a8c158e9"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.865375Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:55.865375Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "reeb-physical.ts:1",
@@ -965,16 +979,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "6d7b5b2bb794",
+          "md": "2ee31731bc96",
           "ts": "c316a8c158e9"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.865375Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:55.865375Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "No Lean sibling required; narrative matches the expected configuration."
@@ -983,16 +999,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "6d7b5b2bb794",
+          "md": "2ee31731bc96",
           "ts": "c316a8c158e9"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.865375Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:55.865375Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "reeb-physical.ts:1",
@@ -1002,16 +1020,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "6d7b5b2bb794",
+          "md": "2ee31731bc96",
           "ts": "c316a8c158e9"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.865375Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:55.865375Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "reeb-physical.ts:1",
@@ -1021,16 +1041,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "6d7b5b2bb794",
+          "md": "2ee31731bc96",
           "ts": "c316a8c158e9"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.865375Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:55.865375Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "reeb-physical.ts:1",
@@ -1040,16 +1062,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "6d7b5b2bb794",
+          "md": "2ee31731bc96",
           "ts": "c316a8c158e9"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.865375Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:55.865375Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "reeb-physical.ts:1",
@@ -1059,16 +1083,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "6d7b5b2bb794",
+          "md": "2ee31731bc96",
           "ts": "c316a8c158e9"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.865375Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:55.865375Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "The derivation steps and formal definitions in 'Physical interpretation of the weight decomposition' are reproducible."
@@ -1077,16 +1103,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "6d7b5b2bb794",
+          "md": "2ee31731bc96",
           "ts": "c316a8c158e9"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.865375Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:55.865375Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "Referee verdict: clean.",
@@ -1098,14 +1126,20 @@
       {
         "result": "pass",
         "notes": "Rewrote seq5 to Milnor rules. Cleared forward/back references and introductory chatter. Unified the exposition of torus, weight spaces, and the resulting projectors, linking horizontal/vertical directly to boson/fermion statistics smoothly.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.865375Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.865375Z"
+        },
+        "field_hash": {
+          "md": "2ee31731bc96",
+          "ts": "c316a8c158e9"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T11:55:26.473Z"
+  "updated_at": "2026-07-07T14:26:55.865375Z"
 }

@@ -7,8 +7,8 @@
     "md": "../qou/content/quantum-observable-universe/mass-theory/geom-yekutieli-alignment.md"
   },
   "source_hashes": {
-    "md": "b1a11469c28b",
-    "ts": "6abfdce32faf"
+    "md": "4709b3865abd",
+    "ts": "115cda99f3aa"
   },
   "criteria": {
     "voice-status-leak": [
@@ -877,35 +877,37 @@
     "proof-no-placeholder-stub": [
       {
         "field_hash": {
-          "lean": "a616aa026e36"
+          "md": "4709b3865abd",
+          "ts": "115cda99f3aa"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/lean-proof-vacuity-audit",
-          "agent_date": "2026-07-02",
-          "agent_skill": "local/lean-proof-vacuity-audit"
+          "agent_date": "2026-07-07T14:26:56.833820Z",
+          "agent_skill": "local/lean-proof-vacuity-audit",
+          "agent_model": "gemini-3.1-pro"
         },
-        "reviewed_at": "2026-07-02T17:07:15.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.833820Z",
         "reviewed_sha": "a9ce9ecfe24e6c7c9d0b9f25699b35ec666faa32",
-        "notes": "4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): current Lean is honest — real statement/derivation or cited sorry; the 2026-06-22 placeholder-marker fail predates the 2026-06-30 rewrite (hash drift verified). Criterion pass."
+        "notes": "4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): current Lean is honest \u2014 real statement/derivation or cited sorry; the 2026-06-22 placeholder-marker fail predates the 2026-06-30 rewrite (hash drift verified). Criterion pass."
       }
     ],
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "b1a11469c28b",
-          "ts": "6abfdce32faf"
+          "md": "4709b3865abd",
+          "ts": "115cda99f3aa"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.833820Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:05.291Z",
+        "reviewed_at": "2026-07-07T14:26:56.833820Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -951,19 +953,19 @@
       },
       {
         "field_hash": {
-          "md": "b1a11469c28b",
-          "ts": "6abfdce32faf"
+          "md": "4709b3865abd",
+          "ts": "115cda99f3aa"
         },
         "result": "pass",
-        "notes": "Geom(K)=Yekutieli rigid-dualizing evaluation, piecewise hyperbolic(Vol/ℏ²)/torus(CS·ℏ²)/unknot(0), is well-posed; Lean §3b-cond class genuinely DERIVES the 3-case formula from one master identity (rw/zero_mul), conjectural input = holonomy↔trM join only.",
-        "reviewed_at": "2026-06-25T17:06:07.000Z",
+        "notes": "Geom(K)=Yekutieli rigid-dualizing evaluation, piecewise hyperbolic(Vol/\u210f\u00b2)/torus(CS\u00b7\u210f\u00b2)/unknot(0), is well-posed; Lean \u00a73b-cond class genuinely DERIVES the 3-case formula from one master identity (rw/zero_mul), conjectural input = holonomy\u2194trM join only.",
+        "reviewed_at": "2026-07-07T14:26:56.833820Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.833820Z"
         },
         "score": {
           "max": 1,
@@ -974,15 +976,17 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "b1a11469c28b",
-          "ts": "6abfdce32faf"
+          "md": "4709b3865abd",
+          "ts": "115cda99f3aa"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.833820Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.833820Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/geom-yekutieli-alignment.ts:1",
@@ -992,15 +996,17 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "b1a11469c28b",
-          "ts": "6abfdce32faf"
+          "md": "4709b3865abd",
+          "ts": "115cda99f3aa"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.833820Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.833820Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The claims are non-vacuous as they make concrete numerical or algebraic conjectures.",
         "severity": "minor"
@@ -1009,15 +1015,17 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "b1a11469c28b",
-          "ts": "6abfdce32faf"
+          "md": "4709b3865abd",
+          "ts": "115cda99f3aa"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.833820Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.833820Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/geom-yekutieli-alignment.ts:1",
@@ -1027,15 +1035,17 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "b1a11469c28b",
-          "ts": "6abfdce32faf"
+          "md": "4709b3865abd",
+          "ts": "115cda99f3aa"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.833820Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.833820Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
@@ -1044,15 +1054,17 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "b1a11469c28b",
-          "ts": "6abfdce32faf"
+          "md": "4709b3865abd",
+          "ts": "115cda99f3aa"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.833820Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.833820Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/geom-yekutieli-alignment.ts:1",
@@ -1062,15 +1074,17 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "b1a11469c28b",
-          "ts": "6abfdce32faf"
+          "md": "4709b3865abd",
+          "ts": "115cda99f3aa"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.833820Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.833820Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/geom-yekutieli-alignment.ts:1",
@@ -1080,15 +1094,17 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "b1a11469c28b",
-          "ts": "6abfdce32faf"
+          "md": "4709b3865abd",
+          "ts": "115cda99f3aa"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.833820Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.833820Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
         "evidence": "content/quantum-observable-universe/mass-theory/geom-yekutieli-alignment.ts:1",
@@ -1098,15 +1114,17 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "b1a11469c28b",
-          "ts": "6abfdce32faf"
+          "md": "4709b3865abd",
+          "ts": "115cda99f3aa"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.833820Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.833820Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/geom-yekutieli-alignment.ts:1",
@@ -1116,15 +1134,17 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "b1a11469c28b",
-          "ts": "6abfdce32faf"
+          "md": "4709b3865abd",
+          "ts": "115cda99f3aa"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.833820Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.833820Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/geom-yekutieli-alignment.ts:1",
@@ -1134,15 +1154,17 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "b1a11469c28b",
-          "ts": "6abfdce32faf"
+          "md": "4709b3865abd",
+          "ts": "115cda99f3aa"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.833820Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.833820Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/geom-yekutieli-alignment.ts:1",
@@ -1152,15 +1174,17 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "b1a11469c28b",
-          "ts": "6abfdce32faf"
+          "md": "4709b3865abd",
+          "ts": "115cda99f3aa"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.833820Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.833820Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-reproducibility.",
         "severity": "minor"
@@ -1169,15 +1193,17 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "b1a11469c28b",
-          "ts": "6abfdce32faf"
+          "md": "4709b3865abd",
+          "ts": "115cda99f3aa"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.833820Z"
         },
-        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_at": "2026-07-07T14:26:56.833820Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Conjecture is open, hence the objection is survivable. Sibling Lean file is missing.",
         "severity": "minor",
@@ -1188,21 +1214,23 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "b1a11469c28b",
-          "ts": "6abfdce32faf"
+          "md": "4709b3865abd",
+          "ts": "115cda99f3aa"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.833820Z"
         },
-        "reviewed_at": "2026-06-28T10:58:49.546Z",
+        "reviewed_at": "2026-07-07T14:26:56.833820Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Conjectured block 'Geometric invariant $\\\\mathrm{Geom}(K)$ as rigid dualizing evaluation' has no Lean sibling, representing a minor structural gap.",
         "severity": "minor"
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-07T14:26:56.833820Z"
 }

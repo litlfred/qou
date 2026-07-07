@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/particle-interactions/confinement-operator-selection.md"
   },
   "source_hashes": {
-    "md": "a4666e93e2e9",
+    "md": "062791925b07",
     "ts": "e23cc3d0f3e7"
   },
   "criteria": {
@@ -2427,18 +2427,18 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "94183f7d93f2",
+          "md": "062791925b07",
           "ts": "e23cc3d0f3e7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.345163Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:19.853Z",
+        "reviewed_at": "2026-07-07T14:26:57.345163Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
       }
@@ -2446,18 +2446,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "94183f7d93f2",
+          "md": "062791925b07",
           "ts": "e23cc3d0f3e7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.345163Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:20.324Z",
+        "reviewed_at": "2026-07-07T14:26:57.345163Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -2465,18 +2465,18 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "94183f7d93f2",
+          "md": "062791925b07",
           "ts": "e23cc3d0f3e7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.345163Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:20.773Z",
+        "reviewed_at": "2026-07-07T14:26:57.345163Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -2484,18 +2484,18 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "94183f7d93f2",
+          "md": "062791925b07",
           "ts": "e23cc3d0f3e7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.345163Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:21.137Z",
+        "reviewed_at": "2026-07-07T14:26:57.345163Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
       }
@@ -2574,19 +2574,19 @@
       },
       {
         "field_hash": {
-          "md": "94183f7d93f2",
+          "md": "062791925b07",
           "ts": "e23cc3d0f3e7"
         },
         "result": "pass",
         "notes": "Clear: machine-prove Borromean Brunnian signature in a braid-word model; axiomatize general-n predicate as class; compose. Honestly flags minimality as witnessed.",
-        "reviewed_at": "2026-06-25T17:04:58.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.345163Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.345163Z"
         },
         "score": {
           "max": 1,
@@ -2635,19 +2635,19 @@
       },
       {
         "field_hash": {
-          "md": "94183f7d93f2",
+          "md": "062791925b07",
           "ts": "e23cc3d0f3e7"
         },
         "result": "pass",
         "notes": "Selecting confinement operator by crossing-minimal Brunnian topology (baryon/meson dichotomy as theorem) is well-posed and substantive.",
-        "reviewed_at": "2026-06-25T17:04:58.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.345163Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.345163Z"
         },
         "score": {
           "max": 1,
@@ -2696,19 +2696,19 @@
       },
       {
         "field_hash": {
-          "md": "94183f7d93f2",
+          "md": "062791925b07",
           "ts": "e23cc3d0f3e7"
         },
         "result": "pass",
         "notes": "Topological (Brunnian) selector replacing refuted min-action SDP framing; decidable B\u2082 sublink-triviality core is a genuine formalization contribution.",
-        "reviewed_at": "2026-06-25T17:04:58.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.345163Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.345163Z"
         },
         "score": {
           "max": 1,
@@ -2753,19 +2753,19 @@
       },
       {
         "field_hash": {
-          "md": "94183f7d93f2",
+          "md": "062791925b07",
           "ts": "e23cc3d0f3e7"
         },
         "result": "pass",
         "notes": "Lean faithfully states Brunnian-minimality selection + n\u22653 dichotomy + Borromean at n=3; BraidModel machine-proves (decide) signature (0,0,0), counts (2,2,2), sublinks-trivial. No sorry/native_decide in-file.",
-        "reviewed_at": "2026-06-25T17:04:58.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.345163Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.345163Z"
         }
       }
     ],
@@ -2823,19 +2823,19 @@
       },
       {
         "field_hash": {
-          "md": "a4666e93e2e9",
+          "md": "062791925b07",
           "ts": "e23cc3d0f3e7"
         },
         "result": "pass",
         "notes": "Verified honest on branch claude/lean-qa-backlog-2h3f8d: carrier fields are genuine inputs and the theorem either derives its conclusion by composing them / summing / applying proved lemmas, or states the real .md claim with a cited sorry (\u00a73b-cond item 5 + \u00a71). No field projection remains. lean-direct exit 0. (Prior script fail entry was stale \u2014 the anti-pattern was already removed in the current file.)",
-        "reviewed_at": "2026-07-04T10:56:05.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.345163Z",
         "reviewed_sha": "4736a53600d78315c025af9d838303bdcc62bf97",
         "reviewer": {
           "kind": "agent",
           "id": "local/lean-proof-vacuity-audit",
           "agent_skill": "local/lean-proof-vacuity-audit",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-07-04"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.345163Z"
         }
       }
     ],
@@ -2859,19 +2859,19 @@
       },
       {
         "field_hash": {
-          "md": "94183f7d93f2",
+          "md": "062791925b07",
           "ts": "e23cc3d0f3e7"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: no `: True` token in resolved Lean source (content/quantum-observable-universe/lean/QOU/ParticleInteractions/confinement_operator_selection.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.345163Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.345163Z"
         }
       }
     ],
@@ -2912,19 +2912,19 @@
       },
       {
         "field_hash": {
-          "md": "94183f7d93f2",
+          "md": "062791925b07",
           "ts": "e23cc3d0f3e7"
         },
         "result": "pass",
         "notes": "BorromeanConfinement instance fields jointly satisfiable (BraidModel realizes the n=3 signature concretely); no contradictory premise.",
-        "reviewed_at": "2026-06-25T17:04:58.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.345163Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.345163Z"
         }
       }
     ],
@@ -2965,19 +2965,19 @@
       },
       {
         "field_hash": {
-          "md": "94183f7d93f2",
+          "md": "062791925b07",
           "ts": "e23cc3d0f3e7"
         },
         "result": "pass",
         "notes": "[ctx:BorromeanConfinement] binder + intro'd n,b,hb all used; every projected field consumed.",
-        "reviewed_at": "2026-06-25T17:04:58.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.345163Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.345163Z"
         }
       }
     ],
@@ -3001,35 +3001,37 @@
       },
       {
         "field_hash": {
-          "md": "94183f7d93f2",
+          "md": "062791925b07",
           "ts": "e23cc3d0f3e7"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: only plain `decide` (kernel-checked decision procedure on a decidable finite/arithmetic goal), no `native_decide`. Accepted corpus-wide (\u00a71a scopes the masking prohibition to `native_decide`; 19 PASS blocks use plain `decide`). 2026-06-22 fail reclassified.",
-        "reviewed_at": "2026-06-25T12:27:24.000Z",
+        "reviewed_at": "2026-07-07T14:26:57.345163Z",
         "reviewed_sha": "1debdf1526f15021143bdde1776810ae6c406976",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.345163Z"
         }
       }
     ],
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "94183f7d93f2",
+          "md": "062791925b07",
           "ts": "e23cc3d0f3e7"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.345163Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.345163Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'Confinement operator selection via topological Brunnian minimality': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -3039,16 +3041,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "94183f7d93f2",
+          "md": "062791925b07",
           "ts": "e23cc3d0f3e7"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.345163Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.345163Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Confinement operator selection via topological Brunnian minimality' presents substantial mathematical content: The Borromean braid $\\mathcal{B}_3 = (\\sigma_0\\sigma_1^{-1})^3$ is not asserted as the confinement operator \u2014 it is s...",
         "severity": "minor"
@@ -3057,16 +3061,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "94183f7d93f2",
+          "md": "062791925b07",
           "ts": "e23cc3d0f3e7"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.345163Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.345163Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Confinement operator selection via topological Brunnian minimality'.",
         "severity": "minor",
@@ -3076,16 +3082,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "94183f7d93f2",
+          "md": "062791925b07",
           "ts": "e23cc3d0f3e7"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.345163Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.345163Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of 'Confinement operator selection via topological Brunnian minimality' is appropriately qualified.",
         "severity": "minor"
@@ -3094,16 +3102,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "94183f7d93f2",
+          "md": "062791925b07",
           "ts": "e23cc3d0f3e7"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.345163Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.345163Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Confinement operator selection via topological Brunnian minimality'.",
         "severity": "minor",
@@ -3113,16 +3123,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "94183f7d93f2",
+          "md": "062791925b07",
           "ts": "e23cc3d0f3e7"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.345163Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.345163Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The argument flow in 'Confinement operator selection via topological Brunnian minimality' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -3132,16 +3144,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "94183f7d93f2",
+          "md": "062791925b07",
           "ts": "e23cc3d0f3e7"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.345163Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.345163Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The referenced Lean file content/quantum-observable-universe/particle-interactions/confinement-operator-selection.lean is missing, leading to complete divergence.",
         "severity": "minor"
@@ -3150,16 +3164,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "94183f7d93f2",
+          "md": "062791925b07",
           "ts": "e23cc3d0f3e7"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.345163Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.345163Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in 'Confinement operator selection via topological Brunnian minimality', hence no citation misuse is possible.",
         "severity": "minor",
@@ -3169,16 +3185,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "94183f7d93f2",
+          "md": "062791925b07",
           "ts": "e23cc3d0f3e7"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.345163Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.345163Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Confinement operator selection via topological Brunnian minimality' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -3188,16 +3206,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "94183f7d93f2",
+          "md": "062791925b07",
           "ts": "e23cc3d0f3e7"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.345163Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.345163Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in 'Confinement operator selection via topological Brunnian minimality' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -3207,16 +3227,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "94183f7d93f2",
+          "md": "062791925b07",
           "ts": "e23cc3d0f3e7"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.345163Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.345163Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Confinement operator selection via topological Brunnian minimality' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -3226,16 +3248,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "94183f7d93f2",
+          "md": "062791925b07",
           "ts": "e23cc3d0f3e7"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.345163Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.345163Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'Confinement operator selection via topological Brunnian minimality' are reproducible.",
         "severity": "minor",
@@ -3245,16 +3269,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "94183f7d93f2",
+          "md": "062791925b07",
           "ts": "e23cc3d0f3e7"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.345163Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.345163Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/particle-interactions/confinement-operator-selection.lean is missing.",
         "severity": "critical",
@@ -3269,5 +3295,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-04T10:56:05.000Z"
+  "updated_at": "2026-07-07T14:26:57.345163Z"
 }

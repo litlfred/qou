@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/brings-surface/c-from-color-flavor-swap.lean"
   },
   "source_hashes": {
-    "md": "69bc1f4cbc82",
+    "md": "2646697cfdc5",
     "ts": "8469fe096c56",
     "lean": "90163d0b08f9"
   },
@@ -36,7 +36,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "69bc1f4cbc82",
+          "md": "2646697cfdc5",
           "ts": "8469fe096c56",
           "lean": "90163d0b08f9"
         },
@@ -44,9 +44,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.091915Z"
         },
-        "reviewed_at": "2026-07-06T04:41:30.202Z",
+        "reviewed_at": "2026-07-07T14:26:55.091915Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Conjecture with class/axiom axiomatisation \u2014 structural match."
       }
@@ -55,14 +57,21 @@
       {
         "result": "pass",
         "notes": "Rewrote brings-surface_seq15.md. Simplified convoluted passive constructions. Used strong declarative sentences. Removed conversational filler. Checked structural elements.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.091915Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.091915Z"
+        },
+        "field_hash": {
+          "md": "2646697cfdc5",
+          "ts": "8469fe096c56",
+          "lean": "90163d0b08f9"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:30.202Z"
+  "updated_at": "2026-07-07T14:26:55.091915Z"
 }

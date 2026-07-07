@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/transfer-matrix-operator.lean"
   },
   "source_hashes": {
-    "md": "1fa30a3539fb",
+    "md": "c1a96beb02ef",
     "ts": "7e97d20258ef",
     "lean": "8fcabdecf94c"
   },
@@ -895,17 +895,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "1fa30a3539fb",
+          "md": "c1a96beb02ef",
           "ts": "7e97d20258ef",
-          "lean": "46cb36655834"
+          "lean": "8fcabdecf94c"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.982015Z"
         },
-        "reviewed_at": "2026-06-28T11:04:36.634Z",
+        "reviewed_at": "2026-07-07T14:26:56.982015Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Block placement and kind 'definition' match validated structurally for 'Transfer Matrix Operator for Nuclear Braid Interactions' within chapter 'mass-theory'.",
         "severity": "minor"
@@ -914,16 +916,18 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "1fa30a3539fb",
+          "md": "c1a96beb02ef",
           "ts": "7e97d20258ef",
-          "lean": "46cb36655834"
+          "lean": "8fcabdecf94c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.982015Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.982015Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
         "evidence": "content/quantum-observable-universe/mass-theory/transfer-matrix-operator.lean:1 \u2014 Lean file exists",
@@ -933,16 +937,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "1fa30a3539fb",
+          "md": "c1a96beb02ef",
           "ts": "7e97d20258ef",
-          "lean": "46cb36655834"
+          "lean": "8fcabdecf94c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.982015Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.982015Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/transfer-matrix-operator.ts:1",
@@ -952,16 +958,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "1fa30a3539fb",
+          "md": "c1a96beb02ef",
           "ts": "7e97d20258ef",
-          "lean": "46cb36655834"
+          "lean": "8fcabdecf94c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.982015Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.982015Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-vacuous.",
         "severity": "minor"
@@ -970,16 +978,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "1fa30a3539fb",
+          "md": "c1a96beb02ef",
           "ts": "7e97d20258ef",
-          "lean": "46cb36655834"
+          "lean": "8fcabdecf94c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.982015Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.982015Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/transfer-matrix-operator.ts:1",
@@ -989,16 +999,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "1fa30a3539fb",
+          "md": "c1a96beb02ef",
           "ts": "7e97d20258ef",
-          "lean": "46cb36655834"
+          "lean": "8fcabdecf94c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.982015Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.982015Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
@@ -1007,16 +1019,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "1fa30a3539fb",
+          "md": "c1a96beb02ef",
           "ts": "7e97d20258ef",
-          "lean": "46cb36655834"
+          "lean": "8fcabdecf94c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.982015Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.982015Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/transfer-matrix-operator.ts:1",
@@ -1026,16 +1040,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "1fa30a3539fb",
+          "md": "c1a96beb02ef",
           "ts": "7e97d20258ef",
-          "lean": "46cb36655834"
+          "lean": "8fcabdecf94c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.982015Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.982015Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/transfer-matrix-operator.ts:1",
@@ -1045,16 +1061,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "1fa30a3539fb",
+          "md": "c1a96beb02ef",
           "ts": "7e97d20258ef",
-          "lean": "46cb36655834"
+          "lean": "8fcabdecf94c"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.982015Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.982015Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, causing divergence from the narrative.",
         "severity": "minor"
@@ -1063,16 +1081,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "1fa30a3539fb",
+          "md": "c1a96beb02ef",
           "ts": "7e97d20258ef",
-          "lean": "46cb36655834"
+          "lean": "8fcabdecf94c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.982015Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.982015Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
         "evidence": "content/quantum-observable-universe/mass-theory/transfer-matrix-operator.ts:1",
@@ -1082,16 +1102,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "1fa30a3539fb",
+          "md": "c1a96beb02ef",
           "ts": "7e97d20258ef",
-          "lean": "46cb36655834"
+          "lean": "8fcabdecf94c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.982015Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.982015Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/transfer-matrix-operator.ts:1",
@@ -1101,16 +1123,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "1fa30a3539fb",
+          "md": "c1a96beb02ef",
           "ts": "7e97d20258ef",
-          "lean": "46cb36655834"
+          "lean": "8fcabdecf94c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.982015Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.982015Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/transfer-matrix-operator.ts:1",
@@ -1120,16 +1144,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "1fa30a3539fb",
+          "md": "c1a96beb02ef",
           "ts": "7e97d20258ef",
-          "lean": "46cb36655834"
+          "lean": "8fcabdecf94c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.982015Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.982015Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/transfer-matrix-operator.ts:1",
@@ -1139,16 +1165,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "1fa30a3539fb",
+          "md": "c1a96beb02ef",
           "ts": "7e97d20258ef",
-          "lean": "46cb36655834"
+          "lean": "8fcabdecf94c"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.982015Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.982015Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
         "evidence": "content/quantum-observable-universe/mass-theory/transfer-matrix-operator.lean:1 \u2014 content/quantum-observable-universe/mass-theory/transfer-matrix-operator.lean:51:14: error(lean.unknownIdentifier): Unknown identifier `q_half`",
@@ -1158,16 +1186,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "1fa30a3539fb",
+          "md": "c1a96beb02ef",
           "ts": "7e97d20258ef",
-          "lean": "46cb36655834"
+          "lean": "8fcabdecf94c"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.982015Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.982015Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/transfer-matrix-operator.lean:51:14: error(lean.unknownIdentifier): Unknown identifier `q_half`",
         "severity": "critical",
@@ -1178,7 +1208,7 @@
     "proof-narrative-lean-equiv": [
       {
         "field_hash": {
-          "md": "1fa30a3539fb",
+          "md": "c1a96beb02ef",
           "ts": "7e97d20258ef",
           "lean": "8fcabdecf94c"
         },
@@ -1186,9 +1216,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.982015Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_at": "2026-07-07T14:26:56.982015Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'def:transfer-matrix-operator' \u2192 expected 'transfer_matrix_operator'; Lean declares: CrossingCoeffs, TransferMatrixOp, ppCoeffs, nnCoeffs, mixCoeffs.... Structural match via content."
       }
@@ -1197,14 +1229,21 @@
       {
         "result": "pass",
         "notes": "Rewrote mass-theory_seq4.md for Milnor standards: clean prose, declarative.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.982015Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.982015Z"
+        },
+        "field_hash": {
+          "md": "c1a96beb02ef",
+          "ts": "7e97d20258ef",
+          "lean": "8fcabdecf94c"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.430Z"
+  "updated_at": "2026-07-07T14:26:56.982015Z"
 }

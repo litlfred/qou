@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/appendix-knot-operations/knot-operator-basis-table-intro.md"
   },
   "source_hashes": {
-    "md": "842f40ebd123",
+    "md": "3fdf206bcac4",
     "ts": "e0716c954e8b"
   },
   "criteria": {
@@ -784,18 +784,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "842f40ebd123",
+          "md": "3fdf206bcac4",
           "ts": "e0716c954e8b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.532981Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:26.307Z",
+        "reviewed_at": "2026-07-07T14:26:55.532981Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -803,15 +803,17 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "842f40ebd123",
+          "md": "3fdf206bcac4",
           "ts": "e0716c954e8b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.532981Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:55.532981Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No claims are made in this one-line introduction.",
         "severity": "minor"
@@ -820,15 +822,17 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "842f40ebd123",
+          "md": "3fdf206bcac4",
           "ts": "e0716c954e8b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.532981Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:55.532981Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The block is a standard section introduction.",
         "severity": "minor"
@@ -837,15 +841,17 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "842f40ebd123",
+          "md": "3fdf206bcac4",
           "ts": "e0716c954e8b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.532981Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:55.532981Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No circularity is present.",
         "severity": "minor"
@@ -854,15 +860,17 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "842f40ebd123",
+          "md": "3fdf206bcac4",
           "ts": "e0716c954e8b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.532981Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:55.532981Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No overclaims are present.",
         "severity": "minor"
@@ -871,15 +879,17 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "842f40ebd123",
+          "md": "3fdf206bcac4",
           "ts": "e0716c954e8b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.532981Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:55.532981Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No hidden parameters.",
         "severity": "minor"
@@ -888,15 +898,17 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "842f40ebd123",
+          "md": "3fdf206bcac4",
           "ts": "e0716c954e8b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.532981Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:55.532981Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No logical gaps.",
         "severity": "minor"
@@ -905,15 +917,17 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "842f40ebd123",
+          "md": "3fdf206bcac4",
           "ts": "e0716c954e8b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.532981Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:55.532981Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No lean sibling exists.",
         "severity": "minor"
@@ -922,15 +936,17 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "842f40ebd123",
+          "md": "3fdf206bcac4",
           "ts": "e0716c954e8b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.532981Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:55.532981Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No citations are used.",
         "severity": "minor"
@@ -939,15 +955,17 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "842f40ebd123",
+          "md": "3fdf206bcac4",
           "ts": "e0716c954e8b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.532981Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:55.532981Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No ambiguous terms.",
         "severity": "minor"
@@ -956,15 +974,17 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "842f40ebd123",
+          "md": "3fdf206bcac4",
           "ts": "e0716c954e8b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.532981Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:55.532981Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Not applicable.",
         "severity": "minor"
@@ -973,15 +993,17 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "842f40ebd123",
+          "md": "3fdf206bcac4",
           "ts": "e0716c954e8b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.532981Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:55.532981Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No physical claims.",
         "severity": "minor"
@@ -990,15 +1012,17 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "842f40ebd123",
+          "md": "3fdf206bcac4",
           "ts": "e0716c954e8b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.532981Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:55.532981Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No calculations are performed.",
         "severity": "minor"
@@ -1007,21 +1031,23 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "842f40ebd123",
+          "md": "3fdf206bcac4",
           "ts": "e0716c954e8b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.532981Z"
         },
-        "reviewed_at": "2026-06-28T07:05:42.356Z",
+        "reviewed_at": "2026-07-07T14:26:55.532981Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "severity": "minor",
         "verdict": "clean",
-        "referee_argument": "none — one-line section intro contains no claims."
+        "referee_argument": "none \u2014 one-line section intro contains no claims."
       }
     ]
   },
-  "updated_at": "2026-07-05T16:25:39.114Z"
+  "updated_at": "2026-07-07T14:26:55.532981Z"
 }

@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/molecular-construction/ch4-tetrahedral-from-phi1.md"
   },
   "source_hashes": {
-    "md": "c0a709008e37",
+    "md": "c2beef6fb851",
     "ts": "06227b1b9e48"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Rewrote molecular-construction_seq6.md. Cleaned up prose for economy and clarity, preserved math, ensured 'we' and present tense.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.510116Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.510116Z"
+        },
+        "field_hash": {
+          "md": "c2beef6fb851",
+          "ts": "06227b1b9e48"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.117Z"
+  "updated_at": "2026-07-07T14:26:55.510116Z"
 }

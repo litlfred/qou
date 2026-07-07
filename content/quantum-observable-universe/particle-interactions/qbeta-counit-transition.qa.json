@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/particle-interactions/qbeta-counit-transition.md"
   },
   "source_hashes": {
-    "md": "b5c8404c147c",
+    "md": "17c4a0208b17",
     "ts": "533be71ff7b2"
   },
   "criteria": {
@@ -1745,16 +1745,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "b5c8404c147c",
+          "md": "17c4a0208b17",
           "ts": "533be71ff7b2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.275487Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.275487Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Block placement and kind 'remark' match validated structurally for '$\\\\mathfrak{Q}_\\\\beta$ as a counit transition observable' in chapter 'particle-interactions'.",
         "severity": "minor"
@@ -1763,16 +1765,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "b5c8404c147c",
+          "md": "17c4a0208b17",
           "ts": "533be71ff7b2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.275487Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.275487Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in '$\\\\mathfrak{Q}_\\\\beta$ as a counit transition observable': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -1782,16 +1786,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "b5c8404c147c",
+          "md": "17c4a0208b17",
           "ts": "533be71ff7b2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.275487Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.275487Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block '$\\\\mathfrak{Q}_\\\\beta$ as a counit transition observable' presents substantial mathematical content: The closed form prop:qbeta-counit-closed-form clarifies the standing of the free-neutron relation $\\mathfrak{Q}_\\beta...",
         "severity": "minor"
@@ -1800,16 +1806,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "b5c8404c147c",
+          "md": "17c4a0208b17",
           "ts": "533be71ff7b2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.275487Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.275487Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in '$\\\\mathfrak{Q}_\\\\beta$ as a counit transition observable'.",
         "severity": "minor",
@@ -1819,16 +1827,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "b5c8404c147c",
+          "md": "17c4a0208b17",
           "ts": "533be71ff7b2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.275487Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.275487Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No overclaims: the scope of '$\\\\mathfrak{Q}_\\\\beta$ as a counit transition observable' is appropriately qualified.",
         "severity": "minor"
@@ -1837,16 +1847,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "b5c8404c147c",
+          "md": "17c4a0208b17",
           "ts": "533be71ff7b2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.275487Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.275487Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in '$\\\\mathfrak{Q}_\\\\beta$ as a counit transition observable'.",
         "severity": "minor",
@@ -1856,16 +1868,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "b5c8404c147c",
+          "md": "17c4a0208b17",
           "ts": "533be71ff7b2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.275487Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.275487Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The argument flow in '$\\\\mathfrak{Q}_\\\\beta$ as a counit transition observable' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
@@ -1875,16 +1889,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "b5c8404c147c",
+          "md": "17c4a0208b17",
           "ts": "533be71ff7b2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.275487Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.275487Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
@@ -1893,16 +1909,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "b5c8404c147c",
+          "md": "17c4a0208b17",
           "ts": "533be71ff7b2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.275487Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.275487Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No citations are present in '$\\\\mathfrak{Q}_\\\\beta$ as a counit transition observable', hence no citation misuse is possible.",
         "severity": "minor",
@@ -1912,16 +1930,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "b5c8404c147c",
+          "md": "17c4a0208b17",
           "ts": "533be71ff7b2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.275487Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.275487Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in '$\\\\mathfrak{Q}_\\\\beta$ as a counit transition observable' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1931,16 +1951,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "b5c8404c147c",
+          "md": "17c4a0208b17",
           "ts": "533be71ff7b2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.275487Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.275487Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The algebraic and logical relations in '$\\\\mathfrak{Q}_\\\\beta$ as a counit transition observable' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -1950,16 +1972,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "b5c8404c147c",
+          "md": "17c4a0208b17",
           "ts": "533be71ff7b2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.275487Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.275487Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in '$\\\\mathfrak{Q}_\\\\beta$ as a counit transition observable' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1969,16 +1993,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "b5c8404c147c",
+          "md": "17c4a0208b17",
           "ts": "533be71ff7b2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.275487Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.275487Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in '$\\\\mathfrak{Q}_\\\\beta$ as a counit transition observable' are reproducible.",
         "severity": "minor",
@@ -1988,16 +2014,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "b5c8404c147c",
+          "md": "17c4a0208b17",
           "ts": "533be71ff7b2"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.275487Z"
         },
-        "reviewed_at": "2026-06-28T11:11:57.781Z",
+        "reviewed_at": "2026-07-07T14:26:57.275487Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -2012,5 +2040,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.492Z"
+  "updated_at": "2026-07-07T14:26:57.275487Z"
 }

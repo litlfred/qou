@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/brings-surface/descent-to-zero.md"
   },
   "source_hashes": {
-    "md": "d4c90f76d856",
+    "md": "571c7885a563",
     "ts": "44a3fbaac8b9"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Rewrote brings-surface_seq8.md. Clarified reasoning chains. Dropped filler language. Ensured tight transition phrasing. Kept math and references solid.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.044224Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.044224Z"
+        },
+        "field_hash": {
+          "md": "571c7885a563",
+          "ts": "44a3fbaac8b9"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:55.404Z"
+  "updated_at": "2026-07-07T14:26:55.044224Z"
 }

@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/lifting-and-descent/jet-as-descent.md"
   },
   "source_hashes": {
-    "md": "08ff6ec01339",
+    "md": "32585b2c331b",
     "ts": "f02e8a7488e8"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Rewrote blocks in lifting-and-descent_seq9.md using direct prose, short sentences, active voice per Milnor standard.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.689450Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.689450Z"
+        },
+        "field_hash": {
+          "md": "32585b2c331b",
+          "ts": "f02e8a7488e8"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.146Z"
+  "updated_at": "2026-07-07T14:26:55.689450Z"
 }

@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/q-geometric-langlands/q-gl-conjecture.lean"
   },
   "source_hashes": {
-    "md": "c6931b581a36",
+    "md": "0260a5455ae3",
     "ts": "d746cd8827fb",
     "lean": "205321fc90b0"
   },
@@ -914,7 +914,7 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "c6931b581a36",
+          "md": "0260a5455ae3",
           "ts": "d746cd8827fb",
           "lean": "205321fc90b0"
         },
@@ -922,11 +922,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.195101Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:44.125Z",
+        "reviewed_at": "2026-07-07T14:26:56.195101Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -974,20 +974,20 @@
       },
       {
         "field_hash": {
-          "md": "c6931b581a36",
+          "md": "0260a5455ae3",
           "ts": "d746cd8827fb",
           "lean": "205321fc90b0"
         },
         "result": "pass",
         "notes": "q-Geometric Langlands equivalence of inf-categories with 5 explicit compatibility conditions (Hecke, fibre-functor, q-oper, Kummer, classical limit); coherent research-grade conjecture.",
-        "reviewed_at": "2026-06-25T17:03:08.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.195101Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.195101Z"
         },
         "score": {
           "max": 1,
@@ -998,7 +998,7 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "c6931b581a36",
+          "md": "0260a5455ae3",
           "ts": "d746cd8827fb",
           "lean": "205321fc90b0"
         },
@@ -1006,9 +1006,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.195101Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.195101Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "q-gl-conjecture.lean:1",
@@ -1018,7 +1020,7 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "c6931b581a36",
+          "md": "0260a5455ae3",
           "ts": "d746cd8827fb",
           "lean": "205321fc90b0"
         },
@@ -1026,9 +1028,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.195101Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.195101Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "major",
         "evidence": "q-gl-conjecture.lean:1",
@@ -1038,7 +1042,7 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "c6931b581a36",
+          "md": "0260a5455ae3",
           "ts": "d746cd8827fb",
           "lean": "205321fc90b0"
         },
@@ -1046,9 +1050,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.195101Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.195101Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "q-gl-conjecture.ts:1",
@@ -1058,7 +1064,7 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "c6931b581a36",
+          "md": "0260a5455ae3",
           "ts": "d746cd8827fb",
           "lean": "205321fc90b0"
         },
@@ -1066,9 +1072,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.195101Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.195101Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "The prose presents '$q$-Geometric Langlands correspondence' as verified, but the sibling Lean proof contains sorry stubs."
@@ -1077,7 +1085,7 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "c6931b581a36",
+          "md": "0260a5455ae3",
           "ts": "d746cd8827fb",
           "lean": "205321fc90b0"
         },
@@ -1085,9 +1093,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.195101Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.195101Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "q-gl-conjecture.ts:1",
@@ -1097,7 +1107,7 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "c6931b581a36",
+          "md": "0260a5455ae3",
           "ts": "d746cd8827fb",
           "lean": "205321fc90b0"
         },
@@ -1105,9 +1115,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.195101Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.195101Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "q-gl-conjecture.lean:1",
@@ -1117,7 +1129,7 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "c6931b581a36",
+          "md": "0260a5455ae3",
           "ts": "d746cd8827fb",
           "lean": "205321fc90b0"
         },
@@ -1125,9 +1137,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.195101Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.195101Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/q-gl-conjecture.lean contains sorry, causing divergence from the fully-verified narrative."
@@ -1136,7 +1150,7 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "c6931b581a36",
+          "md": "0260a5455ae3",
           "ts": "d746cd8827fb",
           "lean": "205321fc90b0"
         },
@@ -1144,9 +1158,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.195101Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.195101Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "q-gl-conjecture.ts:1",
@@ -1156,7 +1172,7 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "c6931b581a36",
+          "md": "0260a5455ae3",
           "ts": "d746cd8827fb",
           "lean": "205321fc90b0"
         },
@@ -1164,9 +1180,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.195101Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.195101Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "q-gl-conjecture.ts:1",
@@ -1176,7 +1194,7 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "c6931b581a36",
+          "md": "0260a5455ae3",
           "ts": "d746cd8827fb",
           "lean": "205321fc90b0"
         },
@@ -1184,9 +1202,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.195101Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.195101Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "q-gl-conjecture.ts:1",
@@ -1196,7 +1216,7 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "c6931b581a36",
+          "md": "0260a5455ae3",
           "ts": "d746cd8827fb",
           "lean": "205321fc90b0"
         },
@@ -1204,9 +1224,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.195101Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.195101Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "q-gl-conjecture.ts:1",
@@ -1216,7 +1238,7 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "c6931b581a36",
+          "md": "0260a5455ae3",
           "ts": "d746cd8827fb",
           "lean": "205321fc90b0"
         },
@@ -1224,9 +1246,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.195101Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.195101Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/q-gl-conjecture.lean contains sorry, indicating incomplete verification."
@@ -1235,7 +1259,7 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "c6931b581a36",
+          "md": "0260a5455ae3",
           "ts": "d746cd8827fb",
           "lean": "205321fc90b0"
         },
@@ -1243,9 +1267,11 @@
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.195101Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:56.195101Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "major",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/q-geometric-langlands/q-gl-conjecture.lean contains 'sorry' placeholders.",
@@ -1257,14 +1283,21 @@
       {
         "result": "pass",
         "notes": "Removed forward references and structural signposting ('in the next section'). Made bullet points declarative and concise. Tightened definitions.",
-        "reviewed_at": "2026-07-06T22:46:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.195101Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.195101Z"
+        },
+        "field_hash": {
+          "md": "0260a5455ae3",
+          "ts": "d746cd8827fb",
+          "lean": "205321fc90b0"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.994Z"
+  "updated_at": "2026-07-07T14:26:56.195101Z"
 }

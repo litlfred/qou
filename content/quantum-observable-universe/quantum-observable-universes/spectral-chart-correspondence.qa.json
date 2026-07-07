@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/quantum-observable-universes/spectral-chart-correspondence.lean"
   },
   "source_hashes": {
-    "md": "e2d2977080e3",
+    "md": "da01705a6ad5",
     "ts": "d260aaa40433",
     "lean": "2ef5779fe3b7"
   },
@@ -1030,19 +1030,19 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "b6f76f3d13ad",
-          "ts": "1f84ecfc2633",
-          "lean": "cb3e0980427a"
+          "md": "da01705a6ad5",
+          "ts": "d260aaa40433",
+          "lean": "2ef5779fe3b7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.811086Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:31.445Z",
+        "reviewed_at": "2026-07-07T14:26:55.811086Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is a bare mathematical claim."
       }
@@ -1050,19 +1050,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "b6f76f3d13ad",
-          "ts": "1f84ecfc2633",
-          "lean": "cb3e0980427a"
+          "md": "da01705a6ad5",
+          "ts": "d260aaa40433",
+          "lean": "2ef5779fe3b7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.811086Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:31.836Z",
+        "reviewed_at": "2026-07-07T14:26:55.811086Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1070,19 +1070,19 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "b6f76f3d13ad",
-          "ts": "1f84ecfc2633",
-          "lean": "cb3e0980427a"
+          "md": "da01705a6ad5",
+          "ts": "d260aaa40433",
+          "lean": "2ef5779fe3b7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.811086Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:32.221Z",
+        "reviewed_at": "2026-07-07T14:26:55.811086Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement respects the chapter's base-ring regime."
       }
@@ -1090,19 +1090,19 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "b6f76f3d13ad",
-          "ts": "1f84ecfc2633",
-          "lean": "cb3e0980427a"
+          "md": "da01705a6ad5",
+          "ts": "d260aaa40433",
+          "lean": "2ef5779fe3b7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.811086Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:32.588Z",
+        "reviewed_at": "2026-07-07T14:26:55.811086Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof machinery matches the statement regime."
       }
@@ -1184,20 +1184,20 @@
       },
       {
         "field_hash": {
-          "md": "b6f76f3d13ad",
-          "ts": "1f84ecfc2633",
-          "lean": "cb3e0980427a"
+          "md": "da01705a6ad5",
+          "ts": "d260aaa40433",
+          "lean": "2ef5779fe3b7"
         },
         "result": "pass",
         "notes": "Clear: prove \u03bb_sym\u207b\u00b9=-\u03bb_anti algebraically, isolate the one missing-infra step as a named axiom, compose. Classical limit lemma included.",
-        "reviewed_at": "2026-06-25T17:05:26.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.811086Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.811086Z"
         },
         "score": {
           "max": 1,
@@ -1248,20 +1248,20 @@
       },
       {
         "field_hash": {
-          "md": "b6f76f3d13ad",
-          "ts": "1f84ecfc2633",
-          "lean": "cb3e0980427a"
+          "md": "da01705a6ad5",
+          "ts": "d260aaa40433",
+          "lean": "2ef5779fe3b7"
         },
         "result": "pass",
         "notes": "Substantive: Hecke braiding eigenvalues (q,-q\u207b\u00b9) fix the P_q(V) chart-glue \u03ba=q\u207b\u00b9; both readings well-posed.",
-        "reviewed_at": "2026-06-25T17:05:26.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.811086Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.811086Z"
         },
         "score": {
           "max": 1,
@@ -1312,20 +1312,20 @@
       },
       {
         "field_hash": {
-          "md": "b6f76f3d13ad",
-          "ts": "1f84ecfc2633",
-          "lean": "cb3e0980427a"
+          "md": "da01705a6ad5",
+          "ts": "d260aaa40433",
+          "lean": "2ef5779fe3b7"
         },
         "result": "pass",
         "notes": "Real algebraic content (anti_eq_neg_inv, glue_eq_inv_sym, glue_classical_limit proved); ties spectral data to geometric chart-glue.",
-        "reviewed_at": "2026-06-25T17:05:26.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.811086Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.811086Z"
         },
         "score": {
           "max": 1,
@@ -1372,39 +1372,39 @@
       },
       {
         "field_hash": {
-          "md": "b6f76f3d13ad",
-          "ts": "1f84ecfc2633",
-          "lean": "cb3e0980427a"
+          "md": "da01705a6ad5",
+          "ts": "d260aaa40433",
+          "lean": "2ef5779fe3b7"
         },
         "result": "pass",
         "notes": "Core identity \u03bb_sym\u207b\u00b9=-\u03bb_anti genuinely proved (field_simp/linear_combination from det_constraint=-1). Only axiom is the categorical chart-glue interpretation (flagged missing-infra wall), not the algebraic conclusion. Faithful to .md.",
-        "reviewed_at": "2026-06-25T17:05:26.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.811086Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.811086Z"
         }
       }
     ],
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "b6f76f3d13ad",
-          "ts": "1f84ecfc2633",
-          "lean": "cb3e0980427a"
+          "md": "da01705a6ad5",
+          "ts": "d260aaa40433",
+          "lean": "2ef5779fe3b7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.811086Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:34.904Z",
+        "reviewed_at": "2026-07-07T14:26:55.811086Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
       }
@@ -1412,19 +1412,19 @@
     "proof-no-trivial-true": [
       {
         "field_hash": {
-          "md": "b6f76f3d13ad",
-          "ts": "1f84ecfc2633",
-          "lean": "cb3e0980427a"
+          "md": "da01705a6ad5",
+          "ts": "d260aaa40433",
+          "lean": "2ef5779fe3b7"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.811086Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:35.279Z",
+        "reviewed_at": "2026-07-07T14:26:55.811086Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
       }
@@ -1468,20 +1468,20 @@
       },
       {
         "field_hash": {
-          "md": "b6f76f3d13ad",
-          "ts": "1f84ecfc2633",
-          "lean": "cb3e0980427a"
+          "md": "da01705a6ad5",
+          "ts": "d260aaa40433",
+          "lean": "2ef5779fe3b7"
         },
         "result": "pass",
         "notes": "det_constraint \u03bb_sym\u00b7\u03bb_anti=-1 with both \u22600 satisfiable (\u03bb_sym=q,\u03bb_anti=-q\u207b\u00b9). No contradictory premise.",
-        "reviewed_at": "2026-06-25T17:05:26.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.811086Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.811086Z"
         }
       }
     ],
@@ -1524,20 +1524,20 @@
       },
       {
         "field_hash": {
-          "md": "b6f76f3d13ad",
-          "ts": "1f84ecfc2633",
-          "lean": "cb3e0980427a"
+          "md": "da01705a6ad5",
+          "ts": "d260aaa40433",
+          "lean": "2ef5779fe3b7"
         },
         "result": "pass",
         "notes": "bed:SCBraidingEigenvalueData used in all 4 lemmas; K,[Field K] used. No unused binder.",
-        "reviewed_at": "2026-06-25T17:05:26.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.811086Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.811086Z"
         }
       }
     ],
@@ -1562,37 +1562,39 @@
       },
       {
         "field_hash": {
-          "md": "b6f76f3d13ad",
-          "ts": "1f84ecfc2633",
-          "lean": "cb3e0980427a"
+          "md": "da01705a6ad5",
+          "ts": "d260aaa40433",
+          "lean": "2ef5779fe3b7"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/quantum-observable-universes/spectral-chart-correspondence.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.811086Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.811086Z"
         }
       }
     ],
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "b6f76f3d13ad",
-          "ts": "1f84ecfc2633",
-          "lean": "cb3e0980427a"
+          "md": "da01705a6ad5",
+          "ts": "d260aaa40433",
+          "lean": "2ef5779fe3b7"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.811086Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:55.811086Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "spectral-chart-correspondence.lean:1",
@@ -1602,17 +1604,19 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "b6f76f3d13ad",
-          "ts": "1f84ecfc2633",
-          "lean": "cb3e0980427a"
+          "md": "da01705a6ad5",
+          "ts": "d260aaa40433",
+          "lean": "2ef5779fe3b7"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.811086Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:55.811086Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "major",
         "evidence": "spectral-chart-correspondence.lean:1",
@@ -1622,17 +1626,19 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "b6f76f3d13ad",
-          "ts": "1f84ecfc2633",
-          "lean": "cb3e0980427a"
+          "md": "da01705a6ad5",
+          "ts": "d260aaa40433",
+          "lean": "2ef5779fe3b7"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.811086Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:55.811086Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "spectral-chart-correspondence.ts:1",
@@ -1642,17 +1648,19 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "b6f76f3d13ad",
-          "ts": "1f84ecfc2633",
-          "lean": "cb3e0980427a"
+          "md": "da01705a6ad5",
+          "ts": "d260aaa40433",
+          "lean": "2ef5779fe3b7"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.811086Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:55.811086Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "The prose presents 'Spectral--chart correspondence: Hecke eigenspaces realise the chart-glue of $\\\\mathbb{P}_q(V)$' as verified, but the sibling Lean file fails to compile."
@@ -1661,17 +1669,19 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "b6f76f3d13ad",
-          "ts": "1f84ecfc2633",
-          "lean": "cb3e0980427a"
+          "md": "da01705a6ad5",
+          "ts": "d260aaa40433",
+          "lean": "2ef5779fe3b7"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.811086Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:55.811086Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "spectral-chart-correspondence.ts:1",
@@ -1681,17 +1691,19 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "b6f76f3d13ad",
-          "ts": "1f84ecfc2633",
-          "lean": "cb3e0980427a"
+          "md": "da01705a6ad5",
+          "ts": "d260aaa40433",
+          "lean": "2ef5779fe3b7"
         },
         "result": "warn",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.811086Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:55.811086Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "spectral-chart-correspondence.lean:1",
@@ -1701,17 +1713,19 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "b6f76f3d13ad",
-          "ts": "1f84ecfc2633",
-          "lean": "cb3e0980427a"
+          "md": "da01705a6ad5",
+          "ts": "d260aaa40433",
+          "lean": "2ef5779fe3b7"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.811086Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:55.811086Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/spectral-chart-correspondence.lean fails compilation, causing divergence from the narrative."
@@ -1720,17 +1734,19 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "b6f76f3d13ad",
-          "ts": "1f84ecfc2633",
-          "lean": "cb3e0980427a"
+          "md": "da01705a6ad5",
+          "ts": "d260aaa40433",
+          "lean": "2ef5779fe3b7"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.811086Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:55.811086Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "spectral-chart-correspondence.ts:1",
@@ -1740,17 +1756,19 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "b6f76f3d13ad",
-          "ts": "1f84ecfc2633",
-          "lean": "cb3e0980427a"
+          "md": "da01705a6ad5",
+          "ts": "d260aaa40433",
+          "lean": "2ef5779fe3b7"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.811086Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:55.811086Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "spectral-chart-correspondence.ts:1",
@@ -1760,17 +1778,19 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "b6f76f3d13ad",
-          "ts": "1f84ecfc2633",
-          "lean": "cb3e0980427a"
+          "md": "da01705a6ad5",
+          "ts": "d260aaa40433",
+          "lean": "2ef5779fe3b7"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.811086Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:55.811086Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "spectral-chart-correspondence.ts:1",
@@ -1780,17 +1800,19 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "b6f76f3d13ad",
-          "ts": "1f84ecfc2633",
-          "lean": "cb3e0980427a"
+          "md": "da01705a6ad5",
+          "ts": "d260aaa40433",
+          "lean": "2ef5779fe3b7"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.811086Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:55.811086Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "spectral-chart-correspondence.ts:1",
@@ -1800,17 +1822,19 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "b6f76f3d13ad",
-          "ts": "1f84ecfc2633",
-          "lean": "cb3e0980427a"
+          "md": "da01705a6ad5",
+          "ts": "d260aaa40433",
+          "lean": "2ef5779fe3b7"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.811086Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:55.811086Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "evidence": "spectral-chart-correspondence.lean:1 \u2014 content/quantum-observable-universe/quantum-observable-universes/spectral-chart-correspondence.lean:51:2: error: unexpected token '\u03bb'; expected command",
@@ -1820,17 +1844,19 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "b6f76f3d13ad",
-          "ts": "1f84ecfc2633",
-          "lean": "cb3e0980427a"
+          "md": "da01705a6ad5",
+          "ts": "d260aaa40433",
+          "lean": "2ef5779fe3b7"
         },
         "result": "fail",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.811086Z"
         },
-        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_at": "2026-07-07T14:26:55.811086Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "major",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/spectral-chart-correspondence.lean contains 'sorry' placeholders.",
@@ -1862,14 +1888,21 @@
       {
         "result": "pass",
         "notes": "Rewrote seq9 enforcing H1-H8. Stripped the pure-meta novelty block entirely. Streamlined the spectral chart derivation. Condensed the classical vs quantum planck limits into tight declarative statements.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.811086Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.811086Z"
+        },
+        "field_hash": {
+          "md": "da01705a6ad5",
+          "ts": "d260aaa40433",
+          "lean": "2ef5779fe3b7"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T04:39:43.766Z"
+  "updated_at": "2026-07-07T14:26:55.811086Z"
 }

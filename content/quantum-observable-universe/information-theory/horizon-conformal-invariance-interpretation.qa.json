@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/information-theory/horizon-conformal-invariance-interpretation.md"
   },
   "source_hashes": {
-    "md": "51ecca8fefe5",
+    "md": "408f0bb91412",
     "ts": "6171829f2e15"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Smoothed transitions, removed forward references, applied milnor brevity.",
-        "reviewed_at": "2026-07-07T02:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.549867Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.549867Z"
+        },
+        "field_hash": {
+          "md": "408f0bb91412",
+          "ts": "6171829f2e15"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.008Z"
+  "updated_at": "2026-07-07T14:26:55.549867Z"
 }

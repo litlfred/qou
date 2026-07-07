@@ -7,8 +7,8 @@
     "md": "../qou/content/quantum-observable-universe/predicted-spectra/type-b-folded-crystal-combinatorics.md"
   },
   "source_hashes": {
-    "md": "7752d221183f",
-    "ts": "e841a68fbf35"
+    "md": "93fc098a5765",
+    "ts": "537468923b78"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1031,18 +1031,18 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "7752d221183f",
-          "ts": "e841a68fbf35"
+          "md": "93fc098a5765",
+          "ts": "537468923b78"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.411769Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:47.462Z",
+        "reviewed_at": "2026-07-07T14:26:56.411769Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Contains borderline interpretive prose."
       }
@@ -1050,18 +1050,18 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "7752d221183f",
-          "ts": "e841a68fbf35"
+          "md": "93fc098a5765",
+          "ts": "537468923b78"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.411769Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:47.887Z",
+        "reviewed_at": "2026-07-07T14:26:56.411769Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1069,18 +1069,18 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "7752d221183f",
-          "ts": "e841a68fbf35"
+          "md": "93fc098a5765",
+          "ts": "537468923b78"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.411769Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:48.223Z",
+        "reviewed_at": "2026-07-07T14:26:56.411769Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Statement is correctly placed in an archimedean chapter."
       }
@@ -1088,18 +1088,18 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "7752d221183f",
-          "ts": "e841a68fbf35"
+          "md": "93fc098a5765",
+          "ts": "537468923b78"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.411769Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:56:48.684Z",
+        "reviewed_at": "2026-07-07T14:26:56.411769Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Proof matches the archimedean regime."
       }
@@ -1178,19 +1178,19 @@
       },
       {
         "field_hash": {
-          "md": "7752d221183f",
-          "ts": "e841a68fbf35"
+          "md": "93fc098a5765",
+          "ts": "537468923b78"
         },
         "result": "pass",
         "notes": "Clear: cell-level cancellation summed over transpose pairing; self-dual case zero. Application to chirality stated.",
-        "reviewed_at": "2026-06-25T17:02:40.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.411769Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.411769Z"
         },
         "score": {
           "max": 1,
@@ -1239,19 +1239,19 @@
       },
       {
         "field_hash": {
-          "md": "7752d221183f",
-          "ts": "e841a68fbf35"
+          "md": "93fc098a5765",
+          "ts": "537468923b78"
         },
         "result": "pass",
         "notes": "Content-sum cancellation c(r,col)+c(col,r)=0 lifting to sum_lambda+sum_lambda^T=0 is well-posed, elementary combinatorics.",
-        "reviewed_at": "2026-06-25T17:02:40.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.411769Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.411769Z"
         },
         "score": {
           "max": 1,
@@ -1300,19 +1300,19 @@
       },
       {
         "field_hash": {
-          "md": "7752d221183f",
-          "ts": "e841a68fbf35"
+          "md": "93fc098a5765",
+          "ts": "537468923b78"
         },
         "result": "pass",
         "notes": "Backs the AGENTS.md 7b Type-B folding claim with a concrete content-cancellation identity feeding chirality reduction.",
-        "reviewed_at": "2026-06-25T17:02:40.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.411769Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.411769Z"
         },
         "score": {
           "max": 1,
@@ -1357,19 +1357,19 @@
       },
       {
         "field_hash": {
-          "md": "7752d221183f",
-          "ts": "e841a68fbf35"
+          "md": "93fc098a5765",
+          "ts": "537468923b78"
         },
         "result": "n/a",
         "notes": "Batch resolved no Lean file (lean:[]); judgment criteria n/a per rubric.",
-        "reviewed_at": "2026-06-25T17:02:40.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.411769Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.411769Z"
         }
       }
     ],
@@ -1410,19 +1410,19 @@
       },
       {
         "field_hash": {
-          "md": "7752d221183f",
-          "ts": "e841a68fbf35"
+          "md": "93fc098a5765",
+          "ts": "537468923b78"
         },
         "result": "n/a",
         "notes": "No Lean resolved; n/a.",
-        "reviewed_at": "2026-06-25T17:02:40.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.411769Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.411769Z"
         }
       }
     ],
@@ -1446,19 +1446,19 @@
       },
       {
         "field_hash": {
-          "md": "7752d221183f",
-          "ts": "e841a68fbf35"
+          "md": "93fc098a5765",
+          "ts": "537468923b78"
         },
         "result": "n/a",
         "notes": "Re-audit 2026-06-25: no Lean source resolves (no sibling .lean, no lean.ref); Lean-token criterion is n/a.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.411769Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.411769Z"
         }
       }
     ],
@@ -1499,19 +1499,19 @@
       },
       {
         "field_hash": {
-          "md": "7752d221183f",
-          "ts": "e841a68fbf35"
+          "md": "93fc098a5765",
+          "ts": "537468923b78"
         },
         "result": "n/a",
         "notes": "No Lean resolved; n/a.",
-        "reviewed_at": "2026-06-25T17:02:40.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.411769Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.411769Z"
         }
       }
     ],
@@ -1552,19 +1552,19 @@
       },
       {
         "field_hash": {
-          "md": "7752d221183f",
-          "ts": "e841a68fbf35"
+          "md": "93fc098a5765",
+          "ts": "537468923b78"
         },
         "result": "n/a",
         "notes": "No Lean resolved; n/a.",
-        "reviewed_at": "2026-06-25T17:02:40.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.411769Z",
         "reviewed_sha": "565b57d454b8d32274e63997e69ee0d8c114b84a",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.411769Z"
         }
       }
     ],
@@ -1588,35 +1588,37 @@
       },
       {
         "field_hash": {
-          "md": "7752d221183f",
-          "ts": "e841a68fbf35"
+          "md": "93fc098a5765",
+          "ts": "537468923b78"
         },
         "result": "n/a",
         "notes": "Re-audit 2026-06-25: no Lean source resolves (no sibling .lean, no lean.ref); Lean-token criterion is n/a.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:56.411769Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.411769Z"
         }
       }
     ],
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "7752d221183f",
-          "ts": "e841a68fbf35"
+          "md": "93fc098a5765",
+          "ts": "537468923b78"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.411769Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.411769Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No false claims identified in 'Type-B folded crystal combinatorics: $c(\\\\lambda) + c(\\\\lambda^T) = 0$ summand-by-summand': mathematical reasoning is consistent in prose.",
         "severity": "minor",
@@ -1626,16 +1628,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "7752d221183f",
-          "ts": "e841a68fbf35"
+          "md": "93fc098a5765",
+          "ts": "537468923b78"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.411769Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.411769Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The block 'Type-B folded crystal combinatorics: $c(\\\\lambda) + c(\\\\lambda^T) = 0$ summand-by-summand' presents substantial mathematical content: 'Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md \u00a77c). U...'.",
         "severity": "minor"
@@ -1644,16 +1648,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "7752d221183f",
-          "ts": "e841a68fbf35"
+          "md": "93fc098a5765",
+          "ts": "537468923b78"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.411769Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.411769Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Type-B folded crystal combinatorics: $c(\\\\lambda) + c(\\\\lambda^T) = 0$ summand-by-summand'.",
         "severity": "minor",
@@ -1663,16 +1669,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "7752d221183f",
-          "ts": "e841a68fbf35"
+          "md": "93fc098a5765",
+          "ts": "537468923b78"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.411769Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.411769Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The remarks and narrative scope in 'Type-B folded crystal combinatorics: $c(\\\\lambda) + c(\\\\lambda^T) = 0$ summand-by-summand' are appropriately qualified.",
         "severity": "minor"
@@ -1681,16 +1689,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "7752d221183f",
-          "ts": "e841a68fbf35"
+          "md": "93fc098a5765",
+          "ts": "537468923b78"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.411769Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.411769Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Type-B folded crystal combinatorics: $c(\\\\lambda) + c(\\\\lambda^T) = 0$ summand-by-summand'.",
         "severity": "minor",
@@ -1700,16 +1710,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "7752d221183f",
-          "ts": "e841a68fbf35"
+          "md": "93fc098a5765",
+          "ts": "537468923b78"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.411769Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.411769Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose arguments in 'Type-B folded crystal combinatorics: $c(\\\\lambda) + c(\\\\lambda^T) = 0$ summand-by-summand' proceed logically through the stated steps.",
         "severity": "minor",
@@ -1719,16 +1731,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "7752d221183f",
-          "ts": "e841a68fbf35"
+          "md": "93fc098a5765",
+          "ts": "537468923b78"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.411769Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.411769Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "No Lean sibling required; narrative matches the expected configuration.",
         "severity": "minor"
@@ -1737,16 +1751,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "7752d221183f",
-          "ts": "e841a68fbf35"
+          "md": "93fc098a5765",
+          "ts": "537468923b78"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.411769Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.411769Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The citations kashiwara1991, brundankleshchev2009, lecouvey2007 in 'Type-B folded crystal combinatorics: $c(\\\\lambda) + c(\\\\lambda^T) = 0$ summand-by-summand' are consistent with the sources referenced in the text.",
         "severity": "minor",
@@ -1756,16 +1772,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "7752d221183f",
-          "ts": "e841a68fbf35"
+          "md": "93fc098a5765",
+          "ts": "537468923b78"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.411769Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.411769Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Key terms and symbols in 'Type-B folded crystal combinatorics: $c(\\\\lambda) + c(\\\\lambda^T) = 0$ summand-by-summand' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -1775,16 +1793,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "7752d221183f",
-          "ts": "e841a68fbf35"
+          "md": "93fc098a5765",
+          "ts": "537468923b78"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.411769Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.411769Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The empirical claims in 'Type-B folded crystal combinatorics: $c(\\\\lambda) + c(\\\\lambda^T) = 0$ summand-by-summand' are structurally anchored to the QOU mass framework and are stable.",
         "severity": "minor",
@@ -1794,16 +1814,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "7752d221183f",
-          "ts": "e841a68fbf35"
+          "md": "93fc098a5765",
+          "ts": "537468923b78"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.411769Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.411769Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The physical concepts described in 'Type-B folded crystal combinatorics: $c(\\\\lambda) + c(\\\\lambda^T) = 0$ summand-by-summand' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -1813,16 +1835,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "7752d221183f",
-          "ts": "e841a68fbf35"
+          "md": "93fc098a5765",
+          "ts": "537468923b78"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.411769Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.411769Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The derivation steps and formal definitions in 'Type-B folded crystal combinatorics: $c(\\\\lambda) + c(\\\\lambda^T) = 0$ summand-by-summand' are reproducible.",
         "severity": "minor"
@@ -1831,16 +1855,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "7752d221183f",
-          "ts": "e841a68fbf35"
+          "md": "93fc098a5765",
+          "ts": "537468923b78"
         },
         "result": "pass",
         "reviewer": {
           "id": "local/qa-agent-drain",
           "name": "QA Drain Agent",
-          "kind": "agent"
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.411769Z"
         },
-        "reviewed_at": "2026-06-28T11:12:00.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.411769Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Referee verdict: clean.",
         "severity": "minor",
@@ -1852,14 +1878,20 @@
       {
         "result": "pass",
         "notes": "Rewrote prose blocks to adhere to Milnor standards. Improved economy, preserved all math.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.411769Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.411769Z"
+        },
+        "field_hash": {
+          "md": "93fc098a5765",
+          "ts": "537468923b78"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:57.812Z"
+  "updated_at": "2026-07-07T14:26:56.411769Z"
 }

@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/predicted-spectra/intro-mesons-nucleons.md"
   },
   "source_hashes": {
-    "ts": "de6a7eda4354",
-    "md": "c14ae12ced6f"
+    "md": "c040a8efbc88",
+    "ts": "de6a7eda4354"
   },
   "criteria": {
     "q-usage-regime-detected": [
@@ -128,14 +128,20 @@
       {
         "result": "pass",
         "notes": "Rewrote prose blocks to adhere to Milnor standards. Improved economy, preserved all math.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.332512Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.332512Z"
+        },
+        "field_hash": {
+          "md": "c040a8efbc88",
+          "ts": "de6a7eda4354"
         }
       }
     ]
   },
-  "updated_at": "2026-06-01T16:06:38.106Z"
+  "updated_at": "2026-07-07T14:26:56.332512Z"
 }

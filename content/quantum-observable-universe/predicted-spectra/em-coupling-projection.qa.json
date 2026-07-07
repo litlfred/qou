@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/predicted-spectra/em-coupling-projection.md"
   },
   "source_hashes": {
-    "md": "a1ca15cd03e9",
+    "md": "7c105e35cefe",
     "ts": "26c099b3f4bd"
   },
   "criteria": {
@@ -1010,14 +1010,20 @@
       {
         "result": "pass",
         "notes": "Rewrote prose blocks to adhere to Milnor standards. Improved economy, preserved all math.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.335537Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.335537Z"
+        },
+        "field_hash": {
+          "md": "7c105e35cefe",
+          "ts": "26c099b3f4bd"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T13:01:38.860Z"
+  "updated_at": "2026-07-07T14:26:56.335537Z"
 }

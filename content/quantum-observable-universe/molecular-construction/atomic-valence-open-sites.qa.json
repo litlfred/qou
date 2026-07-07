@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/molecular-construction/atomic-valence-open-sites.lean"
   },
   "source_hashes": {
-    "md": "293036c7f1e7",
+    "md": "9e62eee6d0a7",
     "ts": "6b541eccd5ae",
     "lean": "9e544873e1e9"
   },
@@ -878,14 +878,21 @@
       {
         "result": "pass",
         "notes": "Rewrote molecular-construction_seq2.md. Stripped fluff, enforced 'we' and present tense. Converted definitions and conjectures to follow linear, clear style without editorialising.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:55.524862Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.524862Z"
+        },
+        "field_hash": {
+          "md": "9e62eee6d0a7",
+          "ts": "6b541eccd5ae",
+          "lean": "9e544873e1e9"
         }
       }
     ]
   },
-  "updated_at": "2026-07-05T04:39:43.766Z"
+  "updated_at": "2026-07-07T14:26:55.524862Z"
 }

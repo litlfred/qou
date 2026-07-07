@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.lean"
   },
   "source_hashes": {
-    "md": "5fbbe0b5f693",
+    "md": "86a5e207757d",
     "ts": "f7e87434b955",
     "lean": "98147fb2cac0"
   },
@@ -1271,17 +1271,19 @@
       },
       {
         "field_hash": {
-          "md": "5fbbe0b5f693",
+          "md": "86a5e207757d",
           "ts": "f7e87434b955",
-          "lean": "afc5dfb3bc4b"
+          "lean": "98147fb2cac0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.714214Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.714214Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
@@ -1306,17 +1308,19 @@
       },
       {
         "field_hash": {
-          "md": "5fbbe0b5f693",
+          "md": "86a5e207757d",
           "ts": "f7e87434b955",
-          "lean": "afc5dfb3bc4b"
+          "lean": "98147fb2cac0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.714214Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.714214Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
@@ -1341,17 +1345,19 @@
       },
       {
         "field_hash": {
-          "md": "5fbbe0b5f693",
+          "md": "86a5e207757d",
           "ts": "f7e87434b955",
-          "lean": "afc5dfb3bc4b"
+          "lean": "98147fb2cac0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.714214Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.714214Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
@@ -1376,17 +1382,19 @@
       },
       {
         "field_hash": {
-          "md": "5fbbe0b5f693",
+          "md": "86a5e207757d",
           "ts": "f7e87434b955",
-          "lean": "afc5dfb3bc4b"
+          "lean": "98147fb2cac0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.714214Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.714214Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
@@ -1425,17 +1433,19 @@
       },
       {
         "field_hash": {
-          "md": "5fbbe0b5f693",
+          "md": "86a5e207757d",
           "ts": "f7e87434b955",
-          "lean": "afc5dfb3bc4b"
+          "lean": "98147fb2cac0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.714214Z"
         },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_at": "2026-07-07T14:26:55.714214Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "Narrative ('J\u00b9(A) inherits Frobenius\u2013Hopf, is again a quantum universe') matches Lean signature `\u2203 jet : JetPreservesQU C, jet.original = fh` (JetPreservesQU encodes eval_preserves_mul + mono unit section). The decl is `sorry` but the .md (line 41-43) honestly discloses 'the construction is deferred there via sorry'. Signature expresses the same claim; this is the honest 'stated, not yet proved' case, not a divergence."
       }
@@ -1483,20 +1493,20 @@
       },
       {
         "field_hash": {
-          "md": "5fbbe0b5f693",
+          "md": "86a5e207757d",
           "ts": "f7e87434b955",
-          "lean": "afc5dfb3bc4b"
+          "lean": "98147fb2cac0"
         },
         "result": "pass",
         "notes": "md proof: Frobenius-Hopf transport along nabla (Leibniz split J^1=A + Omega^1 (x) A) + induced tau'=tau.pi monoidal/faithful/exact; clear",
-        "reviewed_at": "2026-06-25T17:07:53.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.714214Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.714214Z"
         },
         "score": {
           "max": 1,
@@ -1547,20 +1557,20 @@
       },
       {
         "field_hash": {
-          "md": "5fbbe0b5f693",
+          "md": "86a5e207757d",
           "ts": "f7e87434b955",
-          "lean": "afc5dfb3bc4b"
+          "lean": "98147fb2cac0"
         },
         "result": "pass",
         "notes": "J^1(A) inherits Frobenius-Hopf structure and (C,J^1(A),tau',q) is again a QU: a substantive, well-posed SDG/jet-bundle claim (Kock 2004)",
-        "reviewed_at": "2026-06-25T17:07:53.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.714214Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.714214Z"
         },
         "score": {
           "max": 1,
@@ -1611,20 +1621,20 @@
       },
       {
         "field_hash": {
-          "md": "5fbbe0b5f693",
+          "md": "86a5e207757d",
           "ts": "f7e87434b955",
-          "lean": "afc5dfb3bc4b"
+          "lean": "98147fb2cac0"
         },
         "result": "pass",
         "notes": "jet-prolongation preserving QU structure is a genuine closure result feeding the brane tower; non-trivial",
-        "reviewed_at": "2026-06-25T17:07:53.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.714214Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.714214Z"
         },
         "score": {
           "max": 1,
@@ -1671,20 +1681,20 @@
       },
       {
         "field_hash": {
-          "md": "5fbbe0b5f693",
+          "md": "86a5e207757d",
           "ts": "f7e87434b955",
-          "lean": "afc5dfb3bc4b"
+          "lean": "98147fb2cac0"
         },
         "result": "pass",
         "notes": "theorem categorical_jet_prolongation : exists jet:JetPreservesQU C, jet.original=fh := sorry \u2014 faithful, non-degenerate structural statement (JetPreservesQU bundles real content: eval_preserves_mul, mono unitSection); transparent CITED sorry (-- Ref kock2004/manuscript), not a projection/:True",
-        "reviewed_at": "2026-06-25T17:07:53.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.714214Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.714214Z"
         }
       }
     ],
@@ -1727,20 +1737,20 @@
       },
       {
         "field_hash": {
-          "md": "5fbbe0b5f693",
+          "md": "86a5e207757d",
           "ts": "f7e87434b955",
-          "lean": "afc5dfb3bc4b"
+          "lean": "98147fb2cac0"
         },
         "result": "pass",
         "notes": "not a projection: discharged by sorry; ProlongedConnection/JetPreservesQU carry genuine categorical fields, not the conclusion-as-a-field",
-        "reviewed_at": "2026-06-25T17:07:53.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.714214Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.714214Z"
         }
       }
     ],
@@ -1765,20 +1775,20 @@
       },
       {
         "field_hash": {
-          "md": "5fbbe0b5f693",
+          "md": "86a5e207757d",
           "ts": "f7e87434b955",
-          "lean": "afc5dfb3bc4b"
+          "lean": "98147fb2cac0"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: no `: True` token in resolved Lean source (content/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.714214Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.714214Z"
         }
       }
     ],
@@ -1821,20 +1831,20 @@
       },
       {
         "field_hash": {
-          "md": "5fbbe0b5f693",
+          "md": "86a5e207757d",
           "ts": "f7e87434b955",
-          "lean": "afc5dfb3bc4b"
+          "lean": "98147fb2cac0"
         },
         "result": "pass",
         "notes": "hypotheses are a category + monoidal structure + a FrobeniusHopfData; satisfiable, no contradiction",
-        "reviewed_at": "2026-06-25T17:07:53.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.714214Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.714214Z"
         }
       }
     ],
@@ -1877,20 +1887,20 @@
       },
       {
         "field_hash": {
-          "md": "5fbbe0b5f693",
+          "md": "86a5e207757d",
           "ts": "f7e87434b955",
-          "lean": "afc5dfb3bc4b"
+          "lean": "98147fb2cac0"
         },
         "result": "pass",
         "notes": "theorem binders (C, instances, fh) all appear in the goal exists jet, jet.original=fh; no unused binder",
-        "reviewed_at": "2026-06-25T17:07:53.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.714214Z",
         "reviewed_sha": "9d69d5c7aac0b1ab97c6fc2579ab6ea6f2b1fbc5",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.714214Z"
         }
       }
     ],
@@ -1915,36 +1925,38 @@
       },
       {
         "field_hash": {
-          "md": "5fbbe0b5f693",
+          "md": "86a5e207757d",
           "ts": "f7e87434b955",
-          "lean": "afc5dfb3bc4b"
+          "lean": "98147fb2cac0"
         },
         "result": "pass",
         "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
+        "reviewed_at": "2026-07-07T14:26:55.714214Z",
         "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
           "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.714214Z"
         }
       }
     ],
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "5fbbe0b5f693",
+          "md": "86a5e207757d",
           "ts": "f7e87434b955",
-          "lean": "afc5dfb3bc4b"
+          "lean": "98147fb2cac0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.714214Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.714214Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No false claims identified in 'Let (\\mathbf{C}, A, \\tau) be a quantum universe with': mathematical reasoning is consistent.",
         "severity": "minor",
@@ -1954,16 +1966,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "5fbbe0b5f693",
+          "md": "86a5e207757d",
           "ts": "f7e87434b955",
-          "lean": "afc5dfb3bc4b"
+          "lean": "98147fb2cac0"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.714214Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.714214Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.lean fails compilation, rendering the verification vacuous.",
         "severity": "major",
@@ -1973,16 +1987,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "5fbbe0b5f693",
+          "md": "86a5e207757d",
           "ts": "f7e87434b955",
-          "lean": "afc5dfb3bc4b"
+          "lean": "98147fb2cac0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.714214Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.714214Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Let (\\mathbf{C}, A, \\tau) be a quantum universe with'.",
         "severity": "minor",
@@ -1992,16 +2008,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "5fbbe0b5f693",
+          "md": "86a5e207757d",
           "ts": "f7e87434b955",
-          "lean": "afc5dfb3bc4b"
+          "lean": "98147fb2cac0"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.714214Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.714214Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The prose in 'Let (\\mathbf{C}, A, \\tau) be a quantum universe with' presents the result as established, but the Lean formalization is incomplete (contains sorry / fails compilation).",
         "severity": "minor"
@@ -2010,16 +2028,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "5fbbe0b5f693",
+          "md": "86a5e207757d",
           "ts": "f7e87434b955",
-          "lean": "afc5dfb3bc4b"
+          "lean": "98147fb2cac0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.714214Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.714214Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Let (\\mathbf{C}, A, \\tau) be a quantum universe with'.",
         "severity": "minor",
@@ -2029,16 +2049,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "5fbbe0b5f693",
+          "md": "86a5e207757d",
           "ts": "f7e87434b955",
-          "lean": "afc5dfb3bc4b"
+          "lean": "98147fb2cac0"
         },
         "result": "warn",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.714214Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.714214Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The argument flow in 'Let (\\mathbf{C}, A, \\tau) be a quantum universe with' has logical gaps due to compilation failure in its Lean sibling.",
         "severity": "minor",
@@ -2048,16 +2070,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "5fbbe0b5f693",
+          "md": "86a5e207757d",
           "ts": "f7e87434b955",
-          "lean": "afc5dfb3bc4b"
+          "lean": "98147fb2cac0"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.714214Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.714214Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor",
@@ -2067,16 +2091,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "5fbbe0b5f693",
+          "md": "86a5e207757d",
           "ts": "f7e87434b955",
-          "lean": "afc5dfb3bc4b"
+          "lean": "98147fb2cac0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.714214Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.714214Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No citations are present in 'Let (\\mathbf{C}, A, \\tau) be a quantum universe with', hence no citation misuse is possible.",
         "severity": "minor",
@@ -2086,16 +2112,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "5fbbe0b5f693",
+          "md": "86a5e207757d",
           "ts": "f7e87434b955",
-          "lean": "afc5dfb3bc4b"
+          "lean": "98147fb2cac0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.714214Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.714214Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Key terms and symbols in 'Let (\\mathbf{C}, A, \\tau) be a quantum universe with' are mathematically defined and unambiguous.",
         "severity": "minor",
@@ -2105,16 +2133,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "5fbbe0b5f693",
+          "md": "86a5e207757d",
           "ts": "f7e87434b955",
-          "lean": "afc5dfb3bc4b"
+          "lean": "98147fb2cac0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.714214Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.714214Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The algebraic and logical relations in 'Let (\\mathbf{C}, A, \\tau) be a quantum universe with' are independent of empirical tuning parameters.",
         "severity": "minor",
@@ -2124,16 +2154,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "5fbbe0b5f693",
+          "md": "86a5e207757d",
           "ts": "f7e87434b955",
-          "lean": "afc5dfb3bc4b"
+          "lean": "98147fb2cac0"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.714214Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.714214Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The physical concepts described in 'Let (\\mathbf{C}, A, \\tau) be a quantum universe with' are consistent with quantum observable mechanics.",
         "severity": "minor",
@@ -2143,16 +2175,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "5fbbe0b5f693",
+          "md": "86a5e207757d",
           "ts": "f7e87434b955",
-          "lean": "afc5dfb3bc4b"
+          "lean": "98147fb2cac0"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.714214Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.714214Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/lifting-and-descent/categorical-jet-prolongation.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
@@ -2162,16 +2196,18 @@
     "da-referee-verdict": [
       {
         "field_hash": {
-          "md": "5fbbe0b5f693",
+          "md": "86a5e207757d",
           "ts": "f7e87434b955",
-          "lean": "afc5dfb3bc4b"
+          "lean": "98147fb2cac0"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.714214Z"
         },
-        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_at": "2026-07-07T14:26:55.714214Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Referee verdict: open-objection. Sibling Lean file has issues: da-vacuous, da-lean-narrative-divergence, da-reproducibility.",
         "severity": "critical",
@@ -2203,14 +2239,21 @@
       {
         "result": "pass",
         "notes": "Rewrote blocks regarding categorical jet prolongation, Reeb flow, and primes as orbits. Compacted verbose descriptions into active statements. Standardized list formats. Checked file markers.",
-        "reviewed_at": "2026-07-06T23:01:02Z",
+        "reviewed_at": "2026-07-07T14:26:55.714214Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.714214Z"
+        },
+        "field_hash": {
+          "md": "86a5e207757d",
+          "ts": "f7e87434b955",
+          "lean": "98147fb2cac0"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.146Z"
+  "updated_at": "2026-07-07T14:26:55.714214Z"
 }

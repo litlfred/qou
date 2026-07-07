@@ -8,7 +8,7 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/q-zero-complex-extension.lean"
   },
   "source_hashes": {
-    "md": "542d6085d34d",
+    "md": "a77947e375b6",
     "ts": "fd35d1b6ebf0",
     "lean": "02e5c53b8217"
   },
@@ -1030,16 +1030,18 @@
     "voice-statement-no-interpretation": [
       {
         "field_hash": {
-          "md": "33082d01187b",
+          "md": "a77947e375b6",
           "ts": "fd35d1b6ebf0",
-          "lean": "921c6453f2ec"
+          "lean": "02e5c53b8217"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.851387Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.851387Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The statement is written in standard scholarly mathematical and physics voice.",
         "severity": "minor"
@@ -1048,19 +1050,19 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "33082d01187b",
+          "md": "a77947e375b6",
           "ts": "fd35d1b6ebf0",
-          "lean": "921c6453f2ec"
+          "lean": "02e5c53b8217"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.851387Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:06.136Z",
+        "reviewed_at": "2026-07-07T14:26:56.851387Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
       }
@@ -1068,16 +1070,18 @@
     "wall-side-statement": [
       {
         "field_hash": {
-          "md": "33082d01187b",
+          "md": "a77947e375b6",
           "ts": "fd35d1b6ebf0",
-          "lean": "921c6453f2ec"
+          "lean": "02e5c53b8217"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.851387Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.851387Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
         "evidence": "content/quantum-observable-universe/mass-theory/q-zero-complex-extension.lean:1 \u2014 Lean file exists",
@@ -1087,16 +1091,18 @@
     "wall-side-proof": [
       {
         "field_hash": {
-          "md": "33082d01187b",
+          "md": "a77947e375b6",
           "ts": "fd35d1b6ebf0",
-          "lean": "921c6453f2ec"
+          "lean": "02e5c53b8217"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.851387Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.851387Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Lean proof contains compilation errors.",
         "evidence": "content/quantum-observable-universe/mass-theory/q-zero-complex-extension.lean:1",
@@ -1122,7 +1128,7 @@
       },
       {
         "field_hash": {
-          "md": "542d6085d34d",
+          "md": "a77947e375b6",
           "ts": "fd35d1b6ebf0",
           "lean": "02e5c53b8217"
         },
@@ -1130,9 +1136,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.851387Z"
         },
-        "reviewed_at": "2026-07-06T04:41:29.430Z",
+        "reviewed_at": "2026-07-07T14:26:56.851387Z",
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
         "notes": "Label 'prop:q-zero-complex-extension' \u2192 expected 'q_zero_complex_extension'; Lean declares: complex_q_is_unit, complex_q_ne_zero. Structural match via content."
       }
@@ -1140,16 +1148,18 @@
     "proof-rater-strategy-clarity": [
       {
         "field_hash": {
-          "md": "33082d01187b",
+          "md": "a77947e375b6",
           "ts": "fd35d1b6ebf0",
-          "lean": "921c6453f2ec"
+          "lean": "02e5c53b8217"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.851387Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.851387Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Lean code is broken and does not compile, hence strategy is opaque.",
         "severity": "minor"
@@ -1158,9 +1168,9 @@
     "proof-rater-goal-plausibility": [
       {
         "field_hash": {
-          "md": "33082d01187b",
+          "md": "a77947e375b6",
           "ts": "fd35d1b6ebf0",
-          "lean": "921c6453f2ec"
+          "lean": "02e5c53b8217"
         },
         "result": "pass",
         "score": {
@@ -1170,11 +1180,11 @@
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.851387Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:08.008Z",
+        "reviewed_at": "2026-07-07T14:26:56.851387Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No remaining goals or sorries in formalization."
       }
@@ -1182,16 +1192,18 @@
     "proof-rater-novelty": [
       {
         "field_hash": {
-          "md": "33082d01187b",
+          "md": "a77947e375b6",
           "ts": "fd35d1b6ebf0",
-          "lean": "921c6453f2ec"
+          "lean": "02e5c53b8217"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.851387Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.851387Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The mathematical and physical connections explored in this block are highly novel.",
         "severity": "minor",
@@ -1204,19 +1216,19 @@
     "proof-statement-integrity": [
       {
         "field_hash": {
-          "md": "33082d01187b",
+          "md": "a77947e375b6",
           "ts": "fd35d1b6ebf0",
-          "lean": "921c6453f2ec"
+          "lean": "02e5c53b8217"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.851387Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:09.688Z",
+        "reviewed_at": "2026-07-07T14:26:56.851387Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No unexpected axioms or sorryAx."
       }
@@ -1224,19 +1236,19 @@
     "proof-no-self-assuming-projection": [
       {
         "field_hash": {
-          "md": "33082d01187b",
+          "md": "a77947e375b6",
           "ts": "fd35d1b6ebf0",
-          "lean": "921c6453f2ec"
+          "lean": "02e5c53b8217"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.851387Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:10.041Z",
+        "reviewed_at": "2026-07-07T14:26:56.851387Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No self-assuming projection detected."
       }
@@ -1244,19 +1256,19 @@
     "proof-no-trivial-true": [
       {
         "field_hash": {
-          "md": "33082d01187b",
+          "md": "a77947e375b6",
           "ts": "fd35d1b6ebf0",
-          "lean": "921c6453f2ec"
+          "lean": "02e5c53b8217"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.851387Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:10.386Z",
+        "reviewed_at": "2026-07-07T14:26:56.851387Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "Not a trivial true goal."
       }
@@ -1264,19 +1276,19 @@
     "proof-no-false-premise": [
       {
         "field_hash": {
-          "md": "33082d01187b",
+          "md": "a77947e375b6",
           "ts": "fd35d1b6ebf0",
-          "lean": "921c6453f2ec"
+          "lean": "02e5c53b8217"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.851387Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:10.779Z",
+        "reviewed_at": "2026-07-07T14:26:56.851387Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No false premise detected."
       }
@@ -1284,16 +1296,18 @@
     "proof-no-unused-hypotheses": [
       {
         "field_hash": {
-          "md": "33082d01187b",
+          "md": "a77947e375b6",
           "ts": "fd35d1b6ebf0",
-          "lean": "921c6453f2ec"
+          "lean": "02e5c53b8217"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.851387Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.851387Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Broken proof compilation.",
         "severity": "minor"
@@ -1302,19 +1316,19 @@
     "proof-no-decide-masking": [
       {
         "field_hash": {
-          "md": "33082d01187b",
+          "md": "a77947e375b6",
           "ts": "fd35d1b6ebf0",
-          "lean": "921c6453f2ec"
+          "lean": "02e5c53b8217"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.851387Z",
           "agent_skill": "local/qa-agent-drain"
         },
-        "reviewed_at": "2026-06-22T02:57:11.622Z",
+        "reviewed_at": "2026-07-07T14:26:56.851387Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "No decide-masking detected."
       }
@@ -1322,16 +1336,18 @@
     "da-false-claim": [
       {
         "field_hash": {
-          "md": "33082d01187b",
+          "md": "a77947e375b6",
           "ts": "fd35d1b6ebf0",
-          "lean": "921c6453f2ec"
+          "lean": "02e5c53b8217"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.851387Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.851387Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-false-claim.",
         "evidence": "content/quantum-observable-universe/mass-theory/q-zero-complex-extension.ts:1",
@@ -1341,16 +1357,18 @@
     "da-vacuous": [
       {
         "field_hash": {
-          "md": "33082d01187b",
+          "md": "a77947e375b6",
           "ts": "fd35d1b6ebf0",
-          "lean": "921c6453f2ec"
+          "lean": "02e5c53b8217"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.851387Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.851387Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-vacuous.",
         "severity": "minor"
@@ -1359,16 +1377,18 @@
     "da-circular": [
       {
         "field_hash": {
-          "md": "33082d01187b",
+          "md": "a77947e375b6",
           "ts": "fd35d1b6ebf0",
-          "lean": "921c6453f2ec"
+          "lean": "02e5c53b8217"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.851387Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.851387Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-circular.",
         "evidence": "content/quantum-observable-universe/mass-theory/q-zero-complex-extension.ts:1",
@@ -1378,16 +1398,18 @@
     "da-overclaim": [
       {
         "field_hash": {
-          "md": "33082d01187b",
+          "md": "a77947e375b6",
           "ts": "fd35d1b6ebf0",
-          "lean": "921c6453f2ec"
+          "lean": "02e5c53b8217"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.851387Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.851387Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
@@ -1396,16 +1418,18 @@
     "da-hidden-dof": [
       {
         "field_hash": {
-          "md": "33082d01187b",
+          "md": "a77947e375b6",
           "ts": "fd35d1b6ebf0",
-          "lean": "921c6453f2ec"
+          "lean": "02e5c53b8217"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.851387Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.851387Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-hidden-dof.",
         "evidence": "content/quantum-observable-universe/mass-theory/q-zero-complex-extension.ts:1",
@@ -1415,16 +1439,18 @@
     "da-non-sequitur": [
       {
         "field_hash": {
-          "md": "33082d01187b",
+          "md": "a77947e375b6",
           "ts": "fd35d1b6ebf0",
-          "lean": "921c6453f2ec"
+          "lean": "02e5c53b8217"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.851387Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.851387Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-non-sequitur.",
         "evidence": "content/quantum-observable-universe/mass-theory/q-zero-complex-extension.ts:1",
@@ -1434,16 +1460,18 @@
     "da-lean-narrative-divergence": [
       {
         "field_hash": {
-          "md": "33082d01187b",
+          "md": "a77947e375b6",
           "ts": "fd35d1b6ebf0",
-          "lean": "921c6453f2ec"
+          "lean": "02e5c53b8217"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.851387Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.851387Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, causing divergence from the narrative.",
         "severity": "minor"
@@ -1452,16 +1480,18 @@
     "da-citation-misuse": [
       {
         "field_hash": {
-          "md": "33082d01187b",
+          "md": "a77947e375b6",
           "ts": "fd35d1b6ebf0",
-          "lean": "921c6453f2ec"
+          "lean": "02e5c53b8217"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.851387Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.851387Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-citation-misuse.",
         "evidence": "content/quantum-observable-universe/mass-theory/q-zero-complex-extension.ts:1",
@@ -1471,16 +1501,18 @@
     "da-definitional-ambiguity": [
       {
         "field_hash": {
-          "md": "33082d01187b",
+          "md": "a77947e375b6",
           "ts": "fd35d1b6ebf0",
-          "lean": "921c6453f2ec"
+          "lean": "02e5c53b8217"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.851387Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.851387Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-definitional-ambiguity.",
         "evidence": "content/quantum-observable-universe/mass-theory/q-zero-complex-extension.ts:1",
@@ -1490,16 +1522,18 @@
     "da-empirical-fragility": [
       {
         "field_hash": {
-          "md": "33082d01187b",
+          "md": "a77947e375b6",
           "ts": "fd35d1b6ebf0",
-          "lean": "921c6453f2ec"
+          "lean": "02e5c53b8217"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.851387Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.851387Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-empirical-fragility.",
         "evidence": "content/quantum-observable-universe/mass-theory/q-zero-complex-extension.ts:1",
@@ -1509,16 +1543,18 @@
     "da-physical-implausibility": [
       {
         "field_hash": {
-          "md": "33082d01187b",
+          "md": "a77947e375b6",
           "ts": "fd35d1b6ebf0",
-          "lean": "921c6453f2ec"
+          "lean": "02e5c53b8217"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.851387Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.851387Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "No issues found for da-physical-implausibility.",
         "evidence": "content/quantum-observable-universe/mass-theory/q-zero-complex-extension.ts:1",
@@ -1528,16 +1564,18 @@
     "da-reproducibility": [
       {
         "field_hash": {
-          "md": "33082d01187b",
+          "md": "a77947e375b6",
           "ts": "fd35d1b6ebf0",
-          "lean": "921c6453f2ec"
+          "lean": "02e5c53b8217"
         },
         "result": "fail",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain"
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.851387Z"
         },
-        "reviewed_at": "2026-06-28T05:50:25.638Z",
+        "reviewed_at": "2026-07-07T14:26:56.851387Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
         "evidence": "content/quantum-observable-universe/mass-theory/q-zero-complex-extension.lean:1 \u2014 content/quantum-observable-universe/mass-theory/q-zero-complex-extension.lean:35:44: error: failed to synthesize",
@@ -1565,17 +1603,19 @@
       },
       {
         "field_hash": {
-          "md": "542d6085d34d",
+          "md": "a77947e375b6",
           "ts": "fd35d1b6ebf0",
-          "lean": "921c6453f2ec"
+          "lean": "02e5c53b8217"
         },
         "result": "pass",
         "reviewer": {
           "kind": "agent",
           "id": "qa-reviewer-swarm-27",
-          "version": "1.0"
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.851387Z"
         },
-        "reviewed_at": "2026-06-28T22:43:02.109Z",
+        "reviewed_at": "2026-07-07T14:26:56.851387Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "notes": "verdict: clean"
       }
@@ -1604,14 +1644,21 @@
       {
         "result": "pass",
         "notes": "Rewrote mass-theory_seq7.md for Milnor standards: clean prose, declarative.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.851387Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.851387Z"
+        },
+        "field_hash": {
+          "md": "a77947e375b6",
+          "ts": "fd35d1b6ebf0",
+          "lean": "02e5c53b8217"
         }
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.430Z"
+  "updated_at": "2026-07-07T14:26:56.851387Z"
 }

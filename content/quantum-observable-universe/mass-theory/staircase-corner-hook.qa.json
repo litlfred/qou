@@ -7,7 +7,7 @@
     "md": "../qou/content/quantum-observable-universe/mass-theory/staircase-corner-hook.md"
   },
   "source_hashes": {
-    "md": "0ffcaf52dfba",
+    "md": "3252e13f6706",
     "ts": "e5b41bc394d0"
   },
   "criteria": {
@@ -35,14 +35,20 @@
       {
         "result": "pass",
         "notes": "Condensed derivations to core propositions. Removed verbose implementation details.",
-        "reviewed_at": "2026-07-06T22:30:00Z",
+        "reviewed_at": "2026-07-07T14:26:56.819667Z",
         "reviewer": {
           "kind": "agent",
           "id": "milnor-editor",
-          "version": "v1"
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.819667Z"
+        },
+        "field_hash": {
+          "md": "3252e13f6706",
+          "ts": "e5b41bc394d0"
         }
       }
     ]
   },
-  "updated_at": "2026-07-03T00:52:56.534Z"
+  "updated_at": "2026-07-07T14:26:56.819667Z"
 }

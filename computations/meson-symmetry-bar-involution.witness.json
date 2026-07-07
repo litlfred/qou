@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-05T11:19:03.385458+00:00",
-  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-07-07T13:47:25.667124+00:00",
+  "commitSha": "85da4f43133d9d70ca3582f4fa4f31771b5ec3f1",
   "assertions": [
     {
       "name": "charge_conj_neq_bar",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 28,
+  "durationMs": 13,
   "computation": "meson-symmetry-bar-involution",
   "scriptFile": "meson_symmetry_and_bar_involution.py",
   "scriptHash": "ca8ae8cd65f3",
-  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,11 +26,12 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Explores meson bar involution and symmetry structure. Key findings: (1) charge conjugation C ≠ bar involution; (2) meson NF splits into bar-even (binding: L₊,L₋) and bar-odd (flavor: σ₁,e⁻) components; (3) the even/odd ratio predicts m(π⁰)/m(π±) structure.",
   "contentBlock": "prop:lepton-meson-torus-knot-dictionary",
