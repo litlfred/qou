@@ -1,8 +1,2 @@
 **Proposition.**
-*The [confinement level](#def:confinement-level) $\ell(K, q)$ is
-**locally constant** on $Q \setminus \mathcal{B}$: for any $q
-\notin \mathcal{B}$, there is an open $U \ni q$ such that
-$\ell(K, q') = \ell(K, q)$ for all $q' \in U$.  The level changes
-only at points of the [phase-boundary variety](#prop:phase-boundary-variety)
-$\mathcal{B}$ — these are exactly the **categorical phase
-boundaries**.*
+*The [confinement level](#def:confinement-level) $\ell(K, q)$ is **locally constant** on $Q \setminus \mathcal{B}$. For any $q \notin \mathcal{B}$, there exists an open $U \ni q$ such that $\ell(K, q') = \ell(K, q)$ for all $q' \in U$. The level changes only at points of the [phase-boundary variety](#prop:phase-boundary-variety) $\mathcal{B}$ — these correspond exactly to the **categorical phase boundaries**.*

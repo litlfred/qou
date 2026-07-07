@@ -1,7 +1,5 @@
 **Definition.**
-*For two partitions $\lambda_1, \lambda_2$ with shadow prices
-$y_{\lambda_1}(q), y_{\lambda_2}(q) \in R$, the **local shadow-price
-ordering** at $q$ is:*
+*For two partitions $\lambda_1, \lambda_2$ with shadow prices $y_{\lambda_1}(q), y_{\lambda_2}(q) \in R$, the **local shadow-price ordering** at $q$ is:*
 
 $$
   \lambda_1 \;\preceq_q\; \lambda_2
@@ -11,5 +9,4 @@ $$
   \;\;\forall q' \in U.
 $$
 
-*Read: "$\lambda_1$ has at most the energy of $\lambda_2$ on a
-neighborhood of $q$".*
+*We read this as: "$\lambda_1$ has at most the energy of $\lambda_2$ on a neighborhood of $q$".*

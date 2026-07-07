@@ -1,22 +1,10 @@
 **Proposition.**
-*The knot operator energy
-$E(\lambda, q) = |u_\lambda(q)|$
-([knot operator energy](#def:knot-operator-energy)) is **uniquely
-determined** by:*
+*The knot operator energy $E(\lambda, q) = |u_\lambda(q)|$ ([knot operator energy](#def:knot-operator-energy)) is **uniquely determined** by:*
 
-1. *the partition $\lambda \vdash k$ (a classical Young diagram —
-   $q$-independent indexing),*
+1. *the partition $\lambda \vdash k$ (a classical Young diagram — $q$-independent indexing),*
 2. *the substrate parameter $q$ in the generic locus,*
-3. *the choice of absolute value $|\cdot|_v$ on $R$ (archimedean
-   or non-archimedean).*
+3. *the choice of absolute value $|\cdot|_v$ on $R$ (archimedean or non-archimedean).*
 
-*The shadow price $u_\lambda(q)$ itself is unique in $R$ by LP
-duality (complementary slackness gives a unique dual variable per
-binding constraint).  The absolute value $|\cdot|_v$ is unique up
-to equivalence within each place by Ostrowski's theorem (over
-$\mathbb{Q}$) — for $R \in \{\mathbb{R}, \mathbb{Q}_p, \mathbb{F}_p\}$
-the canonical choice is fixed by the base ring itself.*
+*The shadow price $u_\lambda(q)$ is unique in $R$ by LP duality (complementary slackness dictates a unique dual variable per binding constraint). The absolute value $|\cdot|_v$ is unique up to equivalence within each place by Ostrowski's theorem (over $\mathbb{Q}$). For $R \in \{\mathbb{R}, \mathbb{Q}_p, \mathbb{F}_p\}$, the base ring itself fixes the canonical choice.*
 
-*Uniqueness is "up to base ring equivalence" — the same shadow
-price evaluated under equivalent absolute values gives equal
-energies.*
+*Uniqueness holds "up to base ring equivalence": the same shadow price evaluated under equivalent absolute values yields equal energies.*
