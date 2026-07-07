@@ -41,7 +41,6 @@ from pathlib import Path
 import mpmath as mp
 import sympy as sp
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 
@@ -52,9 +51,15 @@ DPS = set_compute_dps()
 
 # Structural θ choices (corpus-fixed, NOT fitted): π/3 = Vol(4₁) = 2Λ(π/3) angle;
 # π/2 = ζ₄; 2π/5 = ζ₅ Galois locus. All appear in the merged root-of-unity set.
-THETAS = [("pi/3", mp.pi / 3), ("pi/2", mp.pi / 2), ("2pi/5", 2 * mp.pi / 5)]
-# canonical c_k (decay-sdp extraction) for the sign/magnitude comparison.
-CK_CANONICAL = {2: -1.0171, 3: -2.0097, 4: -1.1435, 5: -1.2229, 6: 3.4976}
+# Evaluated inside an explicit precision context (unary + re-rounds).
+with mp.workdps(DPS):
+    THETAS = [("pi/3", +(mp.pi / 3)), ("pi/2", +(mp.pi / 2)), ("2pi/5", +(2 * mp.pi / 5))]
+# c_k values as SDP-EXTRACTED at the substrate (decay-sdp; extraction-biased,
+# NOT the proved structural targets). Used only for the G3 sign/magnitude
+# comparison. The G2 anchor is the PROVED structural target c_2 = −1 (exact),
+# which these extracted numbers (c_2 ≈ −1.0171) only approximate.
+CK_SDP_EXTRACTED = {2: -1.0171, 3: -2.0097, 4: -1.1435, 5: -1.2229, 6: 3.4976}
+C2_STRUCTURAL_TARGET = -1  # proved (factor convention); the real G2 anchor
 
 
 def main() -> int:
@@ -76,22 +81,23 @@ def main() -> int:
     )
     wb.set_content_block("prop:phi-b-unitary-bar-odd")
 
-    q = sp.symbols("q")
-    # G1: pole of κ_n at q=1. κ_n = 2 cos(nθ)/(1 - q^n). Residue at q=1.
-    n_sym = sp.symbols("n", positive=True, integer=True)
+    # G1: κ_n = 2cos(nθ)/(1−q^n) has a SIMPLE POLE at q=1 iff cos(nθ) ≠ 0
+    # (the residue is −2cos(nθ)/n). The gate genuinely checks cos(2θ) ≠ 0 at the
+    # c_2 anchor (n=2) for EVERY structural θ — i.e. no θ-loophole where q-Hermite
+    # would be finite. A θ with cos(2θ)=0 (e.g. π/4) would FAIL this gate.
     g1_rows = []
-    g1_all_pole = True
-    for name, theta in THETAS:
+    g1_pole_at_anchor = True   # cos(2θ) ≠ 0 for all structural θ (non-tautological)
+    for name, _theta in THETAS:
         th = sp.Rational(1, 3) * sp.pi if name == "pi/3" else (
             sp.pi / 2 if name == "pi/2" else sp.Rational(2, 5) * sp.pi)
-        for n in (1, 2, 3, 4):
-            c = sp.cos(n * th)
-            # κ_n = 2c/(1-q^n); (1-q^n) has a simple zero at q=1 ⇒ pole unless c=0.
-            has_pole = (c != 0)
-            g1_all_pole = g1_all_pole and (has_pole or c == 0)
-            if n <= 2:
-                g1_rows.append({"theta": name, "n": n, "cos_ntheta": str(c),
-                                "kappa_pole_at_q1": bool(has_pole)})
+        for n in (1, 2):
+            c = sp.simplify(sp.cos(n * th))
+            has_pole = bool(c != 0)          # simple pole at q=1 unless cos(nθ)=0
+            if n == 2:
+                g1_pole_at_anchor = g1_pole_at_anchor and has_pole
+            g1_rows.append({"theta": name, "n": n, "cos_ntheta": str(c),
+                            "residue_nonzero": has_pole})
+    g1_all_pole = g1_pole_at_anchor
     print("\n  G1 — cumulant pole at q=1:")
     print("     κ_n = 2cos(nθ)/(1−q^n); (1−q^n)→0 at q=1 ⇒ simple pole unless cos(nθ)=0.")
     print("     For θ=π/3, π/2, 2π/5 the n=2 cosines are −1/2, −1, −1+... ≠ 0 ⇒ pole.")
@@ -120,7 +126,7 @@ def main() -> int:
     # moments at q=1 are (2n-1)!! = 1,1,3,15,105 — strictly positive & growing.
     print("\n  G3 — moment route sign/magnitude:")
     moments_q1 = [1, 1, 3, 15, 105]  # μ_0,μ_2,μ_4,μ_6,μ_8 at q=1 (Gaussian)
-    ck_signs = [CK_CANONICAL[k] for k in sorted(CK_CANONICAL)]
+    ck_signs = [CK_SDP_EXTRACTED[k] for k in sorted(CK_SDP_EXTRACTED)]
     moments_positive_growing = all(
         moments_q1[i] <= moments_q1[i + 1] for i in range(len(moments_q1) - 1))
     ck_mixed_sign = (min(ck_signs) < 0 < max(ck_signs))
@@ -139,7 +145,8 @@ def main() -> int:
     wb.add_data("g1_cumulant_pole_rows", g1_rows)
     wb.add_data("g2_c2_anchor_rows", g2_rows)
     wb.add_data("g3_moments_q1", moments_q1)
-    wb.add_data("g3_ck_canonical", CK_CANONICAL)
+    wb.add_data("g3_ck_sdp_extracted", CK_SDP_EXTRACTED)
+    wb.add_data("g2_c2_structural_target", C2_STRUCTURAL_TARGET)
     wb.add_data("qhermite_face", "bar-even (gen func = product of compact Φ_q); "
                 "c_4 even-order ⇒ correct face")
     wb.add_data("verdict_scope", "(a) natural continuous-q-Hermite route excluded; "
