@@ -208,6 +208,23 @@ canonical candidates for clean parity. Decidable checks (exact, radicals):
   "a₁ exactly bar-odd" + "a₁ q=1-regular with shadow 2" jointly impossible —
   ruling needed (odd-part/swing reading of #1887 vs q=1-singular a₁);
   affects every parity gate in the program.
+- **T3-2 INVESTIGATED on the merits (2026-07-07; owner declined fiat ruling,
+  asked to investigate).** Verdict in
+  [`docs/audits/2026-07-07-a1-bar-odd-parity-shadow-investigation.md`](../audits/2026-07-07-a1-bar-odd-parity-shadow-investigation.md):
+  **no corpus source establishes exact bar-oddness of kernel `a₁ = −c₃`** —
+  #1887's Lean is component-level (`sinh` odd; bar-antisymmetric *part*);
+  #1866 is rung/phase parity (`c₃ = 0` on the even slice); `ck_a1_bar_odd`
+  is conditional; pointwise real η-parity of c₃ is ill-posed by the corpus's
+  own #1821 smooth-real refutation. Plus a **symbol-overloading finding**:
+  the heat-route `a₁ = κ_{(2,1)}·S` (exactly odd, vanishes at q=1, ~1e-3) and
+  the kernel `a₁ = −c₃` (shadow 2, ≈2.07) are distinct objects (Stage B's
+  2000× magnitude mismatch, ledger cont. 19). Evidence-based reading: **`a₁`
+  has a nonzero bar-odd part (swing channel); its bar-even part carries the
+  shadow** (`shadow_carried_by_even_part`, sorry-free, ZBarParity §5).
+  Docstring of `ck_a1_bar_odd` clarified (conditional scope; no math change;
+  file still compiles, lean-direct exit 0). The c4qz/T1 kills survive
+  re-examination. 🟡 Owner sign-off requested on making this the standing
+  reading (prose/gate re-scope only).
 - **T2 (`ciei`) scoped, not started:**
   [`docs/scope/2026-07-06-z-ck-fmap-ib-rebasing-scope.md`](../scope/2026-07-06-z-ck-fmap-ib-rebasing-scope.md)
   — I-B is now the load-bearing route (B1 induced recurrence → B2 re-based

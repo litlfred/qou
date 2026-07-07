@@ -166,4 +166,43 @@ theorem bar_even_ne_bar_odd_of_ne_zero {F : Type*} [Field F] (σF : F →+* F)
   have h := bar_even_and_odd_two_mul_eq_zero σF a heven hodd
   exact (mul_eq_zero.mp h).resolve_left h2
 
+/-! ## §5. Parity/shadow bookkeeping for the T3-2 tension (investigation infra)
+
+The T3-2 tension (ledger §4-ter): "a₁ exactly bar-odd" and "a₁ q=1-regular
+with nonzero shadow" are jointly impossible. The two lemmas below are the
+generic, reading-agnostic certificates of the impossibility direction: a
+bar-compatible ring homomorphism (e.g. the q=1 evaluation) annihilates
+bar-odd elements, hence any evaluation of a bar-decomposed `a = e + o`
+factors through the bar-even part. Which horn resolves the tension for the
+kernel coefficient `a₁ = −c₃` (odd-part reading vs q=1-singular reading vs
+symbol overloading between distinct `a₁` objects) is an open investigation
+item — see the 2026-07-07 investigation audit. -/
+
+/-- **A bar-compatible evaluation kills bar-odd elements.** If `φ` is a ring
+    hom with `φ ∘ σ = φ` (e.g. evaluation at the bar-fixed point `q = 1`) and
+    `σ o = −o`, then `2·φ(o) = 0` — division-free form; over a target of
+    characteristic ≠ 2 this is `φ(o) = 0`. This is the T3-2 tension made
+    precise: an exactly-bar-odd `a₁` cannot carry the nonzero q=1 shadow. -/
+theorem fixed_eval_two_mul_kills_bar_odd {S : Type*} [CommRing S]
+    (φ : R →+* S) (hcomm : φ.comp σ = φ) (o : R) (ho : σ o = -o) :
+    2 * φ o = 0 := by
+  have h1 : φ (σ o) = φ o := by
+    have := congrArg (fun f : R →+* S => f o) hcomm
+    simpa using this
+  rw [ho, map_neg] at h1
+  linear_combination -h1
+
+/-- **Shadow gates test the even part.** For the bar-decomposition
+    `a = e + o` (`σ e = e`, `σ o = −o`), every bar-compatible evaluation `φ`
+    into a target where `2` is regular satisfies `φ(a) = φ(e)`: the q=1
+    shadow of a kernel coefficient is carried entirely by its bar-even part.
+    (Stated over a `Field` target with `(2 : S) ≠ 0` for the cancellation.) -/
+theorem shadow_carried_by_even_part {S : Type*} [Field S]
+    (φ : R →+* S) (hcomm : φ.comp σ = φ) (a e o : R)
+    (hsplit : a = e + o) (_he : σ e = e) (ho : σ o = -o)
+    (h2 : (2 : S) ≠ 0) : φ a = φ e := by
+  have hkill := fixed_eval_two_mul_kills_bar_odd σ φ hcomm o ho
+  have hzero : φ o = 0 := (mul_eq_zero.mp hkill).resolve_left h2
+  rw [hsplit, map_add, hzero, add_zero]
+
 end QOU.QBeta
