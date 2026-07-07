@@ -1,10 +1,5 @@
-**Proposition (conditional on
-[`conj:hyperbolic-volume-transcendence`](#conj:hyperbolic-volume-transcendence)
-and
-`rem:baryon-period-ratio`).**
-*The mass of a nuclear state with braid word $\beta \in B_n$ is
-computed by the following pipeline, each stage of which is
-functorial:*
+**Proposition (conditional on [`conj:hyperbolic-volume-transcendence`](#conj:hyperbolic-volume-transcendence) and `rem:baryon-period-ratio`).**
+*The mass of a nuclear state with braid word $\beta \in B_n$ computes via the following functorial pipeline:*
 
 $$
   \beta
@@ -18,12 +13,7 @@ $$
   \mathfrak{m}
 $$
 
-*Stage 1 (Hoefsmit). Each crossing $\sigma_i$ in the braid word acts
-on the Wedderburn--Artin block $\rho_\lambda$ via the Hoefsmit
-seminormal matrix
-([Hoefsmit seminormal form](#prop:hoefsmit-seminormal-form)).
-The scattering amplitude from tableau state $T$ to state $T'$
-under crossing $\sigma_i$ is:*
+*Stage 1 (Hoefsmit). Each crossing $\sigma_i$ acts on the Wedderburn--Artin block $\rho_\lambda$ via the Hoefsmit seminormal matrix. The scattering amplitude from tableau state $T$ to state $T'$ under crossing $\sigma_i$ is:*
 
 $$
   W_{T \to T'} = \langle T' \mid \sigma_i \mid T \rangle
@@ -34,38 +24,20 @@ $$
   \end{cases}
 $$
 
-*where $a_\rho = h/(1 - q^{-2\rho})$ is the $q$-deformed axial
-distance and $b_\rho = \sqrt{a_\rho a_{-\rho} + 1}$ is the exchange
-amplitude. The matrix is maximally sparse: at most $2$ nonzeros per
-row.*
+*where $a_\rho = h/(1 - q^{-2\rho})$ is the $q$-deformed axial distance and $b_\rho = \sqrt{a_\rho a_{-\rho} + 1}$ is the exchange amplitude. The matrix is maximally sparse: at most $2$ nonzeros per row.*
 
-*Stage 2 (Markov trace). The product of Hoefsmit matrices over all
-crossings in $\beta$ gives the braid representation matrix
-$\rho_\lambda(\beta)$. The Markov trace sums over all
-Wedderburn--Artin blocks:*
+*Stage 2 (Markov trace). The product of Hoefsmit matrices over all crossings in $\beta$ gives the braid representation matrix $\rho_\lambda(\beta)$. The Markov trace sums over all Wedderburn--Artin blocks:*
 
 $$
   J_K(q) = \sum_{\lambda\,\vdash\,k}
   w_\lambda \cdot \frac{\chi_\lambda(\beta)}{\dim(\lambda)}
 $$
 
-*where $w_\lambda = \dim_q(\lambda)^2 / [k]_q!$ is the
-Wedderburn--Artin weight and $\chi_\lambda(\beta) =
-\mathrm{tr}(\rho_\lambda(\beta))$ is the Frobenius character
-([Wedderburn--Artin trace identity](#prop:wedderburn-trace-identity)).*
+*where $w_\lambda = \dim_q(\lambda)^2 / [k]_q!$ is the Wedderburn--Artin weight and $\chi_\lambda(\beta) = \mathrm{tr}(\rho_\lambda(\beta))$ is the Frobenius character.*
 
-*By the universal branching rule
-([universal braid branching](#prop:universal-braid-branching)),
-$\chi_\lambda(\beta)$ is determined by Young's lattice path counts
-$f^{\lambda/\mu}$ and the three base characters
-$\chi^{\mathrm{sym}}$, $\chi^{\mathrm{std}}$,
-$\chi^{\mathrm{alt}}$.*
+*By the universal branching rule, $\chi_\lambda(\beta)$ is determined by Young's lattice path counts $f^{\lambda/\mu}$ and the three base characters $\chi^{\mathrm{sym}}$, $\chi^{\mathrm{std}}$, $\chi^{\mathrm{alt}}$.*
 
-*Stage 3 (Observation frame). The fibre functor $\tau$ evaluates the
-abstract Jones polynomial $J_K(q)$ on the knot complement
-$S^3 \setminus K$. The evaluation is geometric, determined by
-Thurston's geometrization
-([Geom(K) alignment](#conj:geom-yekutieli-alignment)):*
+*Stage 3 (Observation frame). The fibre functor $\tau$ evaluates the abstract Jones polynomial $J_K(q)$ on the knot complement $S^3 \setminus K$. The evaluation is geometric, determined by Thurston's geometrization:*
 
 $$
   \tau(J_K)
@@ -74,14 +46,9 @@ $$
     \cdot \mathrm{Geom}(K)
 $$
 
-*The factor $\mathrm{Geom}(K)$ projects the algebraic trace into a
-measurable observable: $\mathrm{Vol}(K)/\hbar_q^2$ for hyperbolic $K$
-(mass/energy), $\mathrm{CS}(K) \cdot \hbar_q^2$ for torus $K$
-(coupling phase), or $0$ for the unknot (vacuum).*
+*The factor $\mathrm{Geom}(K)$ projects the algebraic trace into a measurable observable: $\mathrm{Vol}(K)/\hbar_q^2$ for hyperbolic $K$ (mass/energy), $\mathrm{CS}(K) \cdot \hbar_q^2$ for torus $K$ (coupling phase), or $0$ for the unknot (vacuum).*
 
-*Stage 4 (Physical mass). The mass is the norm of the evaluated
-trace, scaled by the electron mass $m_e$
-([topological mass formula](#prop:topological-mass-formula)):*
+*Stage 4 (Physical mass). The mass is the norm of the evaluated trace, scaled by the electron mass $m_e$:*
 
 $$
   \mathfrak{m}(K) = m_e \cdot \mathrm{Geom}(K)
@@ -89,67 +56,25 @@ $$
     \frac{\chi_\lambda(\beta)}{\dim(\lambda)}
 $$
 
-*At Hecke level $k$, this sum truncates to $p(k)$ partitions. The
-truncation error satisfies:*
+*At Hecke level $k$, this sum truncates to $p(k)$ partitions. The truncation error satisfies:*
 
 $$
   \mathrm{MAE}(k) \leq C_0 \times [2]_q^{-2(k-3)}
 $$
 
-*with convergence rate $[2]_q^2 \approx 4.04$ per level
-([universal braid branching](#prop:universal-braid-branching)).*
+*with convergence rate $[2]_q^2 \approx 4.04$ per level.*
 
 *Proof.*
-Each stage is proved separately:
+Each stage proves separately:
 
-**Stage 1** is [Hoefsmit seminormal form](#prop:hoefsmit-seminormal-form).
-The $q$-deformation of the classical axial distance $1/\rho$ to
-$h/(1 - q^{-2\rho})$ follows from the Hecke relation
-$\sigma_i^2 = h\sigma_i + 1$ and the requirement $\det = -1$ for each $2 \times 2$
-block. The eigenvalues are $q$ (symmetric) and $-q^{-1}$
-(antisymmetric), which are the eigenvalues of the universal
-$R$-matrix $\check{\mathcal{R}}$ of $U_q(\mathfrak{sl}_2)$ restricted
-to the isotypic component of type $\lambda$.
+**Stage 1** uses the Hoefsmit seminormal form. The $q$-deformation of the classical axial distance $1/\rho$ to $h/(1 - q^{-2\rho})$ follows from the Hecke relation $\sigma_i^2 = h\sigma_i + 1$ and the requirement $\det = -1$ for each $2 \times 2$ block. The eigenvalues are $q$ (symmetric) and $-q^{-1}$ (antisymmetric), which are the eigenvalues of the universal $R$-matrix $\check{\mathcal{R}}$ of $U_q(\mathfrak{sl}_2)$ restricted to the isotypic component of type $\lambda$.
 
-**Stage 2** is [Wedderburn--Artin trace identity](#prop:wedderburn-trace-identity).
-The Markov trace $\mathrm{tr}_M$ factors through the
-Wedderburn--Artin decomposition $H_k(R, q) \cong \bigoplus_\lambda
-M_{d_\lambda}(\mathbb{C})$. The weight $w_\lambda$ ensures that
-$\mathrm{tr}_M$ is the unique trace satisfying the Markov property
-$\mathrm{tr}_M(x\sigma_k) = z \cdot \mathrm{tr}_M(x)$ for
-$x \in H_k(R, q)$.
+**Stage 2** uses the Wedderburn--Artin trace identity. The Markov trace $\mathrm{tr}_M$ factors through the Wedderburn--Artin decomposition $H_k(R, q) \cong \bigoplus_\lambda M_{d_\lambda}(\mathbb{C})$. The weight $w_\lambda$ ensures that $\mathrm{tr}_M$ is the unique trace satisfying the Markov property $\mathrm{tr}_M(x\sigma_k) = z \cdot \mathrm{tr}_M(x)$ for $x \in H_k(R, q)$.
 
-**Stage 3** is [Geom(K) alignment](#conj:geom-yekutieli-alignment).
-The observation frame $\tau$ is the fibre functor of the
-Tannakian category $(\mathbf{C}, A, \tau)$. On the τ-image
-(geometric) side, its evaluation on the knot complement is determined
-by τ-image Thurston geometrization and the Yekutieli rigid
-dualizing complex: the UNIQUE non-degenerate pairing
-$\langle \omega_A^\bullet, S^3 \setminus K \rangle_{\mathrm{Frob}}$
-yields $\mathrm{Vol}(K)/\hbar_q^2$ for hyperbolic $K$ and
-$\mathrm{CS}(K) \cdot \hbar_q^2$ for torus $K$. On the algebraic
-side this is the [algebraic-quantum-volume](#def:algebraic-quantum-volume)
-pairing in $\mathbb{Z}[q^{\pm 1/2}]$; the geometric reading
-appears only after applying $\tau_{\mathrm{arch}}$. The universality
-follows from the rigidity of $\omega_A^\bullet$ (Yekutieli): the
-pairing is unique up to the scalar $\hbar_q^2$, and the scalar is
-fixed by requiring that $\mathrm{Geom}(\bigcirc) = 0$ (vacuum
-normalisation) and $\mathrm{Geom}(4_1) \cdot \hbar_q^2 =
-\mathrm{Vol}(4_1)$ (the figure-eight knot defines $q_0$).
+**Stage 3** uses the $\mathrm{Geom}(K)$ alignment. The observation frame $\tau$ is the fibre functor of the Tannakian category $(\mathbf{C}, A, \tau)$. On the $\tau$-image (geometric) side, its evaluation on the knot complement is determined by $\tau$-image Thurston geometrization and the Yekutieli rigid dualizing complex: the UNIQUE non-degenerate pairing $\langle \omega_A^\bullet, S^3 \setminus K \rangle_{\mathrm{Frob}}$ yields $\mathrm{Vol}(K)/\hbar_q^2$ for hyperbolic $K$ and $\mathrm{CS}(K) \cdot \hbar_q^2$ for torus $K$. On the algebraic side this is the algebraic-quantum-volume pairing in $\mathbb{Z}[q^{\pm 1/2}]$; the geometric reading appears only after applying $\tau_{\mathrm{arch}}$. The universality follows from the rigidity of $\omega_A^\bullet$ (Yekutieli): the pairing is unique up to the scalar $\hbar_q^2$, and the scalar is fixed by requiring that $\mathrm{Geom}(\bigcirc) = 0$ (vacuum normalisation) and $\mathrm{Geom}(4_1) \cdot \hbar_q^2 = \mathrm{Vol}(4_1)$ (the figure-eight knot defines $q_0$).
 
-**Stage 4** is [topological mass formula](#prop:topological-mass-formula).
-The convergence bound follows by induction on $k$ using the Pieri
-rule for skew tableaux counts
-([universal braid branching](#prop:universal-braid-branching)):
-each level $k$ introduces $p(k) - p(k-1)$ new partitions whose
-total Wedderburn--Artin weight is $O([2]_q^{-2})$ of the previous
-level's weight, by Plancherel concentration.
-$\square$
+**Stage 4** uses the topological mass formula. The convergence bound follows by induction on $k$ using the Pieri rule for skew tableaux counts: each level $k$ introduces $p(k) - p(k-1)$ new partitions whose total Wedderburn--Artin weight is $O([2]_q^{-2})$ of the previous level's weight, by Plancherel concentration. $\square$
 
-*Formal asymptotic content. The truncation
-$\mathrm{MAE}(k) \leq C_0 \cdot [2]_q^{-2(k-3)}$ has
-$\ordw\bigl(\mathrm{MAE}(k)\bigr) = -2(k-3)\,\ordw([2]_q)$;
-see [Big-O via $\ordw$](#rem:conway-normal-form) and the
-[body asymptotics catalog](#rem:body-asymptotics-catalog).*
+*Formal asymptotic content. The truncation $\mathrm{MAE}(k) \leq C_0 \cdot [2]_q^{-2(k-3)}$ has $\operatorname{ordw}\bigl(\mathrm{MAE}(k)\bigr) = -2(k-3)\,\operatorname{ordw}([2]_q)$; see Big-O via $\operatorname{ordw}$ and the body asymptotics catalog.*
 
-**Archimedean specialisation (§7c).** The scattering-amplitude vanishing test is stated over real inputs $v_1,v_2,v_3 : \mathbb{R}$ with real coefficients; these are the archimedean evaluations of the generic Hoefsmit pipeline over $[\mathrm{Field}\ R]$, acknowledged here.
+**Archimedean specialisation (§7c).** The scattering-amplitude vanishing test is stated over real inputs $v_1,v_2,v_3 : \mathbb{R}$ with real coefficients. These form the archimedean evaluations of the generic Hoefsmit pipeline over $[\mathrm{Field}\ R]$.
