@@ -1,31 +1,32 @@
 #!/usr/bin/env python3
-"""qbeta_fmap_modular_dual_missing_probe.py — the compact q-dilog omits Φ_b's modular dual.
+"""qbeta_fmap_modular_dual_missing_probe.py — WHERE the modular dual matters.
 
-Quantifies WHAT the corpus compact q-dilogarithm `phi_q(z) = ∏(1−q^{-k}z)^{-1}`
-is missing relative to the true Faddeev non-compact `Φ_b`, WITHOUT evaluating
-the transcendental Φ_b (which needs the state integral / quantum-Teichmüller
-machinery — deferred). It uses only the algebraic modular relation, so it is
-safe from summation/contour inaccuracy.
+Quantifies the Faddeev modular dual `q̃` relative to the compact q-dilog,
+WITHOUT evaluating the transcendental `Φ_b` (safe from summation/contour error).
+It locates WHERE the compact `phi_q` (which has no `q̃` dependence) diverges
+from `Φ_b`.
 
-Foundation (corrected 2026-07-07; the earlier 'modular double = bar involution'
-framing was retracted):
-  * Convention q = e^{2πi b²}.  The Faddeev Φ_b is a RATIO of two products at
-    reciprocal scales b and b^{-1}:  Φ_b = (b-product)/(b^{-1}-product), with
-    q̃ = e^{2πi b^{-2}} the modular DUAL of q (b↔b^{-1} ⇒ q↦q̃, NOT q↦q^{-1}).
-  * The compact phi_q depends on q ALONE — it has NO q̃ (b^{-1}) product. That
-    missing dual factor is the modular / quantum-Teichmüller (root-of-unity)
-    structure of the Faddeev saddle.
+Foundation (convention `q = e^{2πi b²}`; the 'modular double = bar involution'
+framing was retracted 2026-07-07):
+  * `Φ_b` is a ratio of products at reciprocal scales `b`, `b^{-1}`, with
+    `q̃ = e^{2πi b^{-2}}` the modular DUAL (b↔b^{-1} ⇒ q↦q̃, not q↦q^{-1}).
+  * The compact `phi_q` depends on `q` alone. Its accuracy vs `Φ_b` is therefore
+    governed by the SIZE of the missing `q̃` (dual) product: negligible when
+    `|q̃|≈0`, order-one when `|q̃|≈1`.
 
-This probe:
-  1. computes the modular dual q̃ at the substrate q₀ and shows |q̃| is a wildly
-     different scale from q₀ — so a q-only function cannot carry the dual;
-  2. computes the two modular periods (b, b^{-1}) and confirms they are distinct
-     ⇒ the Φ_b pole set c_b + ib·ℕ + ib^{-1}·ℕ is a genuine 2-generator lattice
-     of SIMPLE poles (literature: Faddeev–Kashaev; Andersen–Kashaev).
+KEY FINDING (corrected framing, 2026-07-07):
+  * On the REAL substrate `q₀>1` the dual is NEGLIGIBLE (`|q̃|≈10^{-165}`), so
+    `Φ_b ≈ phi_q` there — this is WHY the compact form is correct on the
+    mass / real-q / Rogers face.
+  * At a ROOT-OF-UNITY `q` (the decay / fibre saddle) the dual is ORDER ONE
+    (`|q̃|=1`), so `Φ_b ≠ phi_q` there — this is WHY the compact form fails on
+    the Q_β / decay / Faddeev face.
+  The modular dual is thus the FIBRE (root-of-unity) structure; it is absent
+  from the compact form and only matters where Q_β lives.
 
-Honest scope: this does NOT evaluate Φ_b, and does NOT claim to derive the
-observed simple pole at u_substrate (PR #1727) — the u↔x (f-map) map is open.
-It quantifies the missing structure; it fits nothing.
+Honest scope: `Φ_b` itself is not evaluated; the u↔x (f-map) link to the
+observed u_substrate pole (PR #1727) is open. Quantifies WHERE the missing
+structure bites; fits nothing.
 """
 from __future__ import annotations
 
@@ -33,49 +34,53 @@ import mpmath as mp
 
 mp.mp.dps = 50
 
-# Substrate q₀ (documented canonical value; real, > 1 — the Rogers/torus saddle).
-Q0 = mp.mpf("1.10997859555733471989976322048322502665620840878015")
+
+def q_tilde_from_q(q: mp.mpc) -> mp.mpc:
+    """Modular dual q̃ = e^{2πi b^{-2}} with q = e^{2πi b²} ⇒ b^{-2} = 2πi/ln q."""
+    lnq = mp.log(q)
+    binv2 = (2 * mp.pi * mp.mpc(0, 1)) / lnq
+    return mp.e ** (2 * mp.pi * mp.mpc(0, 1) * binv2)
+
+
+def report(label: str, q: mp.mpc) -> None:
+    qt = q_tilde_from_q(q)
+    aqt = mp.fabs(qt)
+    print(f"  {label}")
+    print(f"     q            = {mp.nstr(q, 14)}   |q| = {mp.nstr(mp.fabs(q), 6)}")
+    print(f"     q̃ (dual)     = {mp.nstr(qt, 10)}   |q̃| = {mp.nstr(aqt, 6)}")
 
 
 def main() -> int:
-    print("=" * 76)
-    print(" Q_β f-map — the compact q-dilog omits Φ_b's modular dual (convention q=e^{2πib²})")
-    print("=" * 76)
+    print("=" * 78)
+    print(" Q_β f-map — where the Faddeev modular dual q̃ bites (compact q-dilog has none)")
+    print("=" * 78)
 
-    lnq = mp.log(Q0)
-    # b² = ln q / (2πi);  b^{-2} = 2πi / ln q;  q̃ = e^{2πi b^{-2}} = e^{-4π²/ln q}.
-    b2 = lnq / (2 * mp.pi * mp.mpc(0, 1))
-    b = mp.sqrt(b2)
-    binv = 1 / b
-    q_tilde = mp.e ** (-4 * mp.pi ** 2 / lnq)
+    # (A) real substrate q₀ > 1 — the mass / real-q / Rogers saddle.
+    Q0 = mp.mpf("1.10997859555733471989976322048322502665620840878015")
+    print("\n(A) REAL SUBSTRATE (mass / real-q face):")
+    report("q₀ substrate", Q0)
+    aA = mp.fabs(q_tilde_from_q(Q0))
+    print(f"     => |q̃| ≈ {mp.nstr(aA, 4)} ≈ 0  ⇒ dual NEGLIGIBLE ⇒ Φ_b ≈ phi_q here.")
+    print("        (This is why the compact form is CORRECT on the mass face.)")
 
-    print(f"  q₀            = {mp.nstr(Q0, 20)}   (real, >1)")
-    print(f"  b²  = lnq/(2πi) = {mp.nstr(b2, 12)}   (purely imaginary)")
-    print(f"  b             = {mp.nstr(b, 12)}")
-    print(f"  b^{{-1}}         = {mp.nstr(binv, 12)}")
-    print()
-    print("  1. Modular dual q̃ = e^{2πi b^{-2}} = e^{-4π²/lnq}:")
-    print(f"     |q̃|          = {mp.nstr(mp.fabs(q_tilde), 6)}")
-    print(f"     log10|q̃|     = {mp.nstr(mp.log(mp.fabs(q_tilde), 10), 8)}")
-    print(f"     |q̃ − q₀|     = {mp.nstr(mp.fabs(q_tilde - Q0), 6)}  (≈ q₀ — utterly different scale)")
-    print("     => the compact phi_q(q₀,·) has NO q̃-dependence, so it omits the")
-    print("        ENTIRE modular-dual product of Φ_b (not a small correction).")
-    print()
-    print("  2. Two modular periods (pole lattice generators ib, ib^{-1}):")
-    p1, p2 = mp.mpc(0, 1) * b, mp.mpc(0, 1) * binv
-    print(f"     ib           = {mp.nstr(p1, 10)}")
-    print(f"     ib^{{-1}}       = {mp.nstr(p2, 10)}")
-    ratio = p2 / p1
-    print(f"     ib^{{-1}} / ib  = {mp.nstr(ratio, 10)}  (non-real ⇒ 2 independent generators)")
-    distinct = mp.fabs(mp.im(ratio)) > mp.mpf("1e-30")
-    print(f"     independent 2D lattice of SIMPLE poles? {distinct}")
-    print()
-    print("  HONEST SCOPE: Φ_b itself is NOT evaluated here (state-integral, deferred).")
-    print("  The u↔x (f-map) link to the observed u_substrate pole (PR #1727) is OPEN.")
-    print("  This quantifies the missing modular-double structure; it fits nothing.")
+    # (B) root-of-unity q — the decay / fibre / Faddeev saddle.
+    # b² = 2/5 ⇒ q = e^{4πi/5}; b^{-2} = 5/2 ⇒ q̃ = e^{5πi} = -1 (|q̃| = 1).
+    qB = mp.e ** (2 * mp.pi * mp.mpc(0, 1) * mp.mpf(2) / 5)
+    print("\n(B) ROOT OF UNITY q = e^{4πi/5} (decay / fibre face, b² = 2/5):")
+    report("q = ζ_5^2", qB)
+    aB = mp.fabs(q_tilde_from_q(qB))
+    print(f"     => |q̃| = {mp.nstr(aB, 4)} = O(1)  ⇒ dual ORDER-ONE ⇒ Φ_b ≠ phi_q here.")
+    print("        (This is why the compact form FAILS on the Q_β / decay face.)")
 
-    ok = mp.fabs(q_tilde) < mp.mpf("1e-50") and distinct
-    print(f"\n  structural check (dual scale ≪ q₀ AND 2D pole lattice): {ok}")
+    print("\n  CONCLUSION: the modular dual q̃ (the b^{-1} product the compact form")
+    print("  lacks) is the FIBRE / root-of-unity structure. It is ~0 on the real")
+    print("  substrate (compact ≈ Φ_b, mass face) and O(1) at root-of-unity q")
+    print("  (compact ≠ Φ_b, decay face) — quantitatively the mass/decay split.")
+    print("\n  HONEST SCOPE: Φ_b not evaluated (state-integral deferred); u↔x f-map")
+    print("  link to the observed u_substrate pole (PR #1727) is OPEN. Fits nothing.")
+
+    ok = aA < mp.mpf("1e-50") and abs(aB - 1) < mp.mpf("1e-30")
+    print(f"\n  check (|q̃|≈0 at substrate AND |q̃|=1 at root of unity): {ok}")
     return 0 if ok else 1
 
 
