@@ -313,3 +313,41 @@ with the framework's bar-odd ↔ decay-width assignment).
 - Sign/ceiling predecessor: [`2026-07-06 GAP-A-4 writhe design doc`](../design/2026-07-06-gap-a4-writhe-derivation-lit-review-and-framework.md), probe `b4_1four_complete_graph_writhe_signs.py` (PR #3426).
 - Option-E ledger entries 2026-07-06 ([`option-e.md`](../coordination/option-e.md)).
 - Norm-route disposition (this branch's theme): [`2026-07-03-qbar-norm-repitch-assessment.md`](2026-07-03-qbar-norm-repitch-assessment.md) §3–§3b (Gram-norm near-conservation / trace phase collapse).
+
+## 3h. Per-pair-type magnitude enumeration — z anywhere is unphysical (tranche 4)
+
+[`b4_1four_pairtype_magnitude_profile.py`](../../computations/probes/b4_1four_pairtype_magnitude_profile.py)
+(preregistered 4 options, type-aware Ursell inversion, no selection): the
+question was whether principled non-uniform per-pair-type magnitudes (the
+only two derived magnitudes: naive $z$ vs CWF $g$) flatten the uniform-g
+cumulant profile (pair 0.42×, triple 1.042×, quad 1.63×, total 0.940×).
+Answer: **no option survives** — pn=g/like=z, the control pn=z/like=g, and
+uniform z all give $\det(I+G) < 0$ at $A{=}4$ (unphysical); only uniform
+$g$ is physical. Scope-(a): the multi-body shell enforces the sub-ceiling
+magnitude on *every* bond type, so within the $\{z, g\}$ palette there is
+no non-uniformity available and the uniform-g profile stands as the det
+form's honest output.
+
+## 2f. E_unit constraint ledger (tranche 4 — predicted-first gate)
+
+For future attempts at the ²H unit anchor (the one genuine open of §2e).
+Targets, exact to the digits shown ($E_{\text{unit}} = B_{\text{AME}}/5g$):
+
+| ratio | value |
+|---|--:|
+| $E_{\text{unit}}$ | 0.995940 MeV |
+| $E_{\text{unit}}/m_e$ | 1.949005 |
+| $E_{\text{unit}}/2m_e$ | 0.974503 |
+| $E_{\text{unit}}/(m_e [2]_v)$ | 0.973178 |
+| $E_{\text{unit}}/E_0$ | 0.237921 |
+
+**Gate (STRICT):** any candidate must be stated *with its derivation*
+BEFORE numerical evaluation (predicted-first); a candidate matching to
+$\sim$0.4 % carries no evidence by itself (§2e entropy bound) and must
+additionally account for the +0.41 % AME residual's structure. Per the
+Anti-Laundering rule (`compute-author.md` / `formalizer.md`, 2026-07-06):
+no conditional class or axiom carrying $E_{\text{unit}}$ counts as a proof
+or unblocks production wiring. The §3d single-factor class (m_e × bond-
+algebra q-integers) is exhausted-negative; a successful bridge therefore
+needs either a genuinely new derived energy (e.g. counit/transition-sector)
+or the conclusion that the linear law is not fundamental.
