@@ -13,5 +13,4 @@ $$
 $$
 
 *where $\alpha = m_e \times 8G$ is the binding scale and $\Phi$
-is the quantum dilogarithm volume of the quark ground-state
-ordering.*
+is the quantum dilogarithm volume.*

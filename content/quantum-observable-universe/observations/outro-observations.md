@@ -1,3 +1,3 @@
-This closes the physical-observation chapter. We evaluated every categorical prediction from previous chapters at the substrate parameter $q_0 \approx 1.1097$. These include fundamental constants (speed of light $c_q$, Planck constant $\hbar_q$, Hausdorff dimension $d_H$), particle masses, atomic-mass ratios, hyperbolic volumes, and $\beta$-decay $Q$-values. We compared them against CODATA and NIST measurements to meet precision targets. Interactive simulators distributed with the paper expose this numerical machinery in a browser. A reader can perturb $q$ and watch the predictions track the substrate parameter live.
+We evaluated categorical predictions at the substrate parameter $q_0 \approx 1.1097$. These match CODATA and NIST measurements. Interactive simulators expose this numerical machinery.
 
-The next chapter restarts the building-up process at the molecular scale. We reuse the categorical mass predictions as energy inputs for the Hopf-chain construction of covalent bonds. The precision achieved here propagates into the chemistry chapters that follow.
+We subsequently reuse the categorical mass predictions as energy inputs for covalent bonds.
