@@ -193,13 +193,13 @@ or the conclusion that the linear law is not fundamental.
 | source | disposition |
 |---|---|
 | m_e × bond-algebra q-integers (single factor) | §3d exhausted-negative |
-| **counit / transition sector** | **excluded as a magnitude source** — [`rho_k_counit_defect_form.py`](../../computations/rho_k_counit_defect_form.py) (bean `p7l6`): the counit defect $\varepsilon(\beta_K)-\varepsilon(\beta_K^{\mathrm{vac}})$ supplies the binding *sign* robustly (durable, structural) but its *magnitude explodes with $A$* (deuteron defect $\approx -30.3$ vs target $-4.35$; ratio $7\to515$ across the light series). A per-pair $E_{\text{unit}}$ is $A$-independent, so an $A$-exploding functional cannot be its source. The counit's contribution is the sign, not the scale. |
+| **counit / transition sector** (the specific defect functional $\varepsilon(\beta_K)-\varepsilon(\beta_K^{\mathrm{vac}})$, as defined) | **scope-(a) negative** — [`rho_k_counit_defect_form.py`](../../computations/rho_k_counit_defect_form.py) (bean `p7l6`): this functional supplies the binding *sign* robustly but its *magnitude explodes with $A$* (deuteron defect $\approx -30.3$ vs target $-4.35$; ratio $7\to515$ across the light series). A per-pair $E_{\text{unit}}$ is $A$-independent, so this $A$-exploding functional cannot supply it. **This is a scope-(a) negative on the specific counit-defect functional as normalized, NOT a structural exclusion of the counit sector under all normalizations** — a different counit normalization (e.g. an $A$-flattened / per-interface variant) is not ruled out by this result, only the one tested. The functional's durable contribution is the sign, not the scale. |
 
-So the two natural "new derived energy" routes flagged above are now both
-constrained: the counit route is A-exploding (excluded), leaving the
-exchange sector's own $m_e$-scale bridge (still open) or the conclusion
-that the linear law is not fundamental. The two-sector split (§2g) sharpens
-which sector the scale must come from.
+So the counit-defect functional *as normalized* is a scope-(a) negative
+for the magnitude — an $A$-flattened counit variant remains a possible
+route, as does the exchange sector's own $m_e$-scale bridge (still open),
+or the conclusion that the linear law is not fundamental. The two-sector
+split (§2g) sharpens which sector the scale must come from.
 
 ## 2g. Two-sector split of the pn-pair binding — trace binding is decoherence (tranche 5)
 

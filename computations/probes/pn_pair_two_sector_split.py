@@ -6,7 +6,7 @@ EXPLORATORY (audit-only, no production rewire, no fit, no selection).
 Tranche 5 of the reeb-flow pn-magnitude program. The real deuteron binding
 b₂ = 2.2246 MeV sits BETWEEN the exchange-sector marginal value
 (−E₀·ln(1−g²) ≈ 0.93) and the trace-sector suppression
-(α·ln(tr_free/tr_atom) ≈ 3.1). This probe asks WHICH sector it lives in by
+(α·ln(tr_free/tr_atom) ≈ 3.9). This probe asks WHICH sector it lives in by
 splitting the trace suppression into its two physically-distinct parts,
 using the Frobenius/Markov Gram machinery of gram_norm_binding_probe.py.
 
