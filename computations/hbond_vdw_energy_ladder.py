@@ -55,7 +55,7 @@ import _path_bridge  # noqa: F401
 from witness_base import WitnessBuilder
 
 try:
-    from qou_substrate.constants import q_at
+    from q_parameter import q_at
     Q0 = float(q_at())
 except Exception:
     Q0 = 1.1099780333553254

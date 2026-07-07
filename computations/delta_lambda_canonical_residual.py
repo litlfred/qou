@@ -49,7 +49,7 @@ sys.path.insert(0, str(HERE / "substrate"))
 sys.path.insert(0, str(HERE.parent / "tools" / "qou-substrate" / "python"))
 
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
-from qou_substrate.constants import q_at  # noqa: E402
+from q_parameter import q_at  # noqa: E402
 
 SRC = HERE / "binding-canonical.witness.json"
 

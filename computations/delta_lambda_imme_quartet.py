@@ -44,7 +44,7 @@ import math
 import time
 
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
-from qou_substrate.constants import q_at  # noqa: E402
+from q_parameter import q_at  # noqa: E402
 
 # (name, Z, N, B_AME[MeV]) ordered T₃ = -3/2, -1/2, +1/2, +3/2.
 # B_AME: AME2020 total binding energies.
