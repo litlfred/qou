@@ -151,6 +151,15 @@
       "parity": "odd",
       "q1_shadow": "0",
       "source": "PR #3449 (T1 + B1 witnesses; correction audit)"
+    },
+    {
+      "id": "KC16",
+      "statement": "the one-sided Habiro basis (q;q)_k has INDEX-ALTERNATING bar-parity: bar((q;q)_k) = (-1)^k q^{-k(k+1)/2} (q;q)_k -- bar-even for even k, bar-odd for odd k, up to the Gauss-sum monomial twist. Parity re-mix is supplied by the BASIS; the x=1 shadow of the 4_1 cyclotomic basis is the Kashaev double (q;q)_k(q^-1;q^-1)_k. u-side transfer open.",
+      "tier": "proved-lean",
+      "lean": "QOU.QBeta.pochNum_bar_twist; QOU.QBeta.pochFactor_bar_twist",
+      "parity": "mixed",
+      "q1_shadow": null,
+      "source": "PR #3449 (B3 witness qbeta-b3-ladder-basis-parity.witness.json)"
     }
   ]
 }

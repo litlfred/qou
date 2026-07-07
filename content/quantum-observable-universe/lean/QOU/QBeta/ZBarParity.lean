@@ -42,6 +42,7 @@ class; it derives **no** c_k value, changes **no** registry tier, and wires
 
 Sorry-free.
 -/
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Algebra.Field.Basic
 import Mathlib.Tactic.LinearCombination
 import Mathlib.Tactic.FieldSimp
@@ -227,5 +228,47 @@ theorem cycFactor_bar_invariant (q qi x xi : R) (j : ℕ) :
     cycFactor qi q xi x j = cycFactor q qi x xi j := by
   unfold cycFactor
   ring
+
+/-! ## §7. The one-sided Habiro basis has index-alternating bar-parity
+
+`(q;q)_k = ∏_{j=1}^k (1 − q^j)` satisfies
+`(q⁻¹;q⁻¹)_k · q^{1+2+…+k} = (−1)^k · (q;q)_k`: bar-EVEN for even `k`,
+bar-ODD for odd `k`, up to a monomial twist. Hence a bar-even element
+expanded in the one-sided Habiro basis sources bar-odd content through the
+odd-index basis vectors — the parity re-mix lives in the **basis** (probe
+`qbeta_b3_ladder_basis_parity_probe.py`, B3-K2; the exponent
+`∑_{j<k}(j+1) = k(k+1)/2` is the Gauss sum). -/
+
+/-- `pochNum k q = ∏_{j=1}^k (1 − q^j)` — the one-sided q-Pochhammer
+    numerator `(q;q)_k` over a generic commutative ring. -/
+def pochNum (k : ℕ) (q : R) : R := ∏ j ∈ Finset.range k, (1 - q ^ (j + 1))
+
+/-- **Factor twist:** `(1 − q⁻ʲ)·qʲ = −(1 − qʲ)` (division-free: `q·qi = 1`). -/
+theorem pochFactor_bar_twist (q qi : R) (h : q * qi = 1) (j : ℕ) :
+    (1 - qi ^ j) * q ^ j = -(1 - q ^ j) := by
+  have hj : q ^ j * qi ^ j = 1 := by rw [← mul_pow, h, one_pow]
+  linear_combination -hj
+
+/-- **Index-alternating bar-parity of the Habiro basis (division-free).**
+    `pochNum k qi · q^{∑_{j<k}(j+1)} = (−1)^k · pochNum k q` — the basis
+    element `(q;q)_k` is bar-even for even `k`, bar-odd for odd `k`, up to
+    the Gauss-sum monomial twist. -/
+theorem pochNum_bar_twist (q qi : R) (h : q * qi = 1) (k : ℕ) :
+    pochNum k qi * q ^ (∑ j ∈ Finset.range k, (j + 1)) =
+      (-1) ^ k * pochNum k q := by
+  induction k with
+  | zero => simp [pochNum]
+  | succ n ih =>
+      have hf := pochFactor_bar_twist q qi h (n + 1)
+      calc pochNum (n + 1) qi * q ^ (∑ j ∈ Finset.range (n + 1), (j + 1))
+          = (pochNum n qi * q ^ (∑ j ∈ Finset.range n, (j + 1))) *
+              ((1 - qi ^ (n + 1)) * q ^ (n + 1)) := by
+            rw [pochNum, Finset.prod_range_succ, Finset.sum_range_succ, pow_add]
+            rw [pochNum]
+            ring
+        _ = ((-1) ^ n * pochNum n q) * (-(1 - q ^ (n + 1))) := by rw [ih, hf]
+        _ = (-1) ^ (n + 1) * pochNum (n + 1) q := by
+            simp only [pochNum, Finset.prod_range_succ]
+            ring
 
 end QOU.QBeta

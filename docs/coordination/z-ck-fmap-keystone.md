@@ -325,6 +325,27 @@ anchors, no c_k values:
 - Kill: either identity failing symbolically → the parity-re-mix-via-basis
   picture is wrong; record and fall back to carrier-side re-mix.
 
+### 4-sexies outcome (2026-07-07, run after pre-statement commit `d193553c`)
+
+**B3 slice PASS 2/2 + Lean.**
+[Probe](../../computations/qbeta/qbeta_b3_ladder_basis_parity_probe.py) →
+[witness](../../computations/qbeta/qbeta-b3-ladder-basis-parity.witness.json):
+
+- **B3-K1:** `ω_k(x=1) = (q;q)_k·(q⁻¹;q⁻¹)_k` exact (k ≤ 6) — the x=1
+  shadow of the 4₁ cyclotomic basis is the bar-symmetric **Kashaev double**.
+- **B3-K2:** `(q⁻¹;q⁻¹)_k = (−1)^k q^{−k(k+1)/2}(q;q)_k` exact — now
+  **proved sorry-free by induction over generic `CommRing`**
+  (`QOU.QBeta.pochNum_bar_twist` + `pochFactor_bar_twist`, ZBarParity §7,
+  `lean`-direct exit 0): the one-sided Habiro basis has
+  **index-alternating bar-parity** (even k ↔ bar-even, odd k ↔ bar-odd,
+  Gauss-sum monomial twist). Registry row **KC16**.
+- **Consequence:** the Stage-B "parity re-mix" is supplied by the **basis**
+  — a bar-even element (the 4₁ skeleton, `C_k ≡ 1`) sources bar-odd content
+  through odd-index basis vectors. Together with KC15 (`D(q)` exactly odd on
+  the golden pair) the odd channel now has two machine-certified fibre-level
+  entry points. **Open:** the u-side transfer (`u = b·ℏ_q²` is a real
+  composite, not a q-power) — the remaining f-map identification.
+
 ## 5. Session log
 
 | date | event |
