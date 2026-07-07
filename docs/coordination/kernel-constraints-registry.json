@@ -178,6 +178,15 @@
       "parity": "mixed",
       "q1_shadow": null,
       "source": "PR (eval-map); docs/audits/2026-07-07-z-ck-fmap-eval-map-bar-decomposition.md"
+    },
+    {
+      "id": "KC19",
+      "statement": "evaluation map E(w)=h^2/2-h*w is AFFINE in the crossing weight (dE/dw=-h), so the ladder factor L(w)=E(w)/E(w0) is Moebius; its bar-ODD (decay) part is EXACTLY 2h(w-w0)/(4w0^2-h^2) -- LINEAR in the crossing-weight departure (w-w0) times the FIXED anchor-free bar-odd kernel K(q)=2h/(4w0^2-h^2); the bar-EVEN (shadow) part is (4w*w0-h^2)/(4w0^2-h^2). Two consequences: (i) the c_k odd channel is the image of the single scalar (w-w0) under K(q) -- the keystone reduces to determining the scalar crossing-weight departure; (ii) K(q) is anchor-rigid, so the c_3 2.375% swing lives entirely in w(q)'s fibre structure. Sharpens KC18 (numerator split) to the ladder factor where the c_k live.",
+      "tier": "proved-lean",
+      "lean": "QOU.QBeta.CrossingWeightAffine.evalMap_affine; QOU.QBeta.CrossingWeightAffine.ladder_odd_part; QOU.QBeta.CrossingWeightAffine.ladder_even_part",
+      "parity": "mixed",
+      "q1_shadow": null,
+      "source": "PR #3473; docs/audits/2026-07-07-qbeta-crossing-weight-affine-narrowing.md"
     }
   ]
 }

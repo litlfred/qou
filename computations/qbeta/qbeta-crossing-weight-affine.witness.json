@@ -3,12 +3,12 @@
   "description": "Q_beta ladder-factor bar-parity split: the evaluation map is affine in the crossing weight, so the ladder factor is Moebius and its bar-odd part is linear in the crossing-weight departure (w - w0) times a fixed anchor-free bar-odd kernel 2h/(4w0^2 - h^2). Sharpens KC18.",
   "audit_only": true,
   "tier": "structural-exact (symbolic bar-parity; no fit, no anchors)",
-  "computedAt": "2026-07-07T14:29:44.697770+00:00",
-  "commitSha": "b702eebb39a9dd2b8ec88d3e8493a6c29b10488a",
+  "computedAt": "2026-07-07T14:33:30.446030+00:00",
+  "commitSha": "ebb092b18ab8c635886debd9f20c4b33a85a872c",
   "engine": "sympy",
   "engineVersion": "1.14.0",
   "scriptFile": "qbeta_crossing_weight_affine_probe.py",
-  "scriptHash": "0312d5f407f6",
+  "scriptHash": "32ec3f1270a2",
   "assertions": [
     {
       "name": "A_eval_affine_dEdw_eq_neg_h",
