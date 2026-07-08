@@ -48,7 +48,20 @@ lemma f_measurable (θ : ℝ) :
     (avoiding the roots of unity at 0 and 2π). -/
 lemma f_continuousAt (θ : ℝ) (h : 0 < θ ∧ θ < 2 * π) :
   ContinuousAt (fun t => Real.log |2 * Real.sin (t / 2)|) θ := by
-  sorry
+  have h_inside_pos : 0 < |2 * Real.sin (θ / 2)| := by
+    rw [abs_pos]
+    intro h_eq
+    have : Real.sin (θ / 2) = 0 := by linarith
+    have h_sin_pos : 0 < Real.sin (θ / 2) := by
+      apply Real.sin_pos_of_mem_Ioo
+      constructor
+      · linarith
+      · linarith
+    linarith
+  refine ContinuousAt.log ?_ (by linarith)
+  refine ContinuousAt.abs ?_
+  refine ContinuousAt.mul continuousAt_const ?_
+  exact Real.continuous_sin.continuousAt.comp (Continuous.continuousAt (continuous_id.div_const 2))
 
 /-- The fundamental derivative of the classical topological potential 
     forces the continuous saddle-point geometry. 
