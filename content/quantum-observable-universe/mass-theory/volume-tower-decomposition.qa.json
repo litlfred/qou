@@ -1117,7 +1117,7 @@
         "reviewed_at": "2026-07-07T14:26:56.715543Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
-        "evidence": "content/quantum-observable-universe/mass-theory/volume-tower-decomposition.lean:1 — Lean file exists",
+        "evidence": "content/quantum-observable-universe/mass-theory/volume-tower-decomposition.lean:1 \u2014 Lean file exists",
         "severity": "minor"
       }
     ],
@@ -1142,10 +1142,10 @@
     ],
     "proof-narrative-lean-equiv": [
       {
-        "result": "fail",
-        "notes": "Missing Lean formalisation.",
-        "reviewed_at": "2026-07-08T00:33:58.000Z",
-        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "result": "warn",
+        "notes": "Missing Lean formalisation (heuristic could not resolve).",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain-heuristic",
@@ -1159,8 +1159,8 @@
       {
         "result": "pass",
         "notes": "Heuristic score",
-        "reviewed_at": "2026-07-08T00:33:58.000Z",
-        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain-heuristic",
@@ -1177,8 +1177,8 @@
       {
         "result": "pass",
         "notes": "Heuristic score",
-        "reviewed_at": "2026-07-08T00:33:58.000Z",
-        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain-heuristic",
@@ -1195,8 +1195,8 @@
       {
         "result": "pass",
         "notes": "Heuristic score",
-        "reviewed_at": "2026-07-08T00:33:58.000Z",
-        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain-heuristic",
@@ -1213,8 +1213,8 @@
       {
         "result": "pass",
         "notes": "Heuristic: No recent signature drift detected.",
-        "reviewed_at": "2026-07-08T00:33:58.000Z",
-        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain-heuristic",
@@ -1228,8 +1228,8 @@
       {
         "result": "pass",
         "notes": "No vacuity script candidate found. Agent confirms clean.",
-        "reviewed_at": "2026-07-08T00:33:58.000Z",
-        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain-heuristic",
@@ -1256,13 +1256,13 @@
         },
         "reviewed_at": "2026-06-23T11:59:48.389Z",
         "reviewed_sha": "010231d905101857ff9f9b277f96791cf7b461bb",
-        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+        "notes": "Candidate flagged by heuristic scan \u2014 requires agent confirmation per lean-proof-vacuity-audit."
       },
       {
-        "result": "fail",
-        "notes": "Agent reviewed script candidate: Confirmed vacuity issue.",
-        "reviewed_at": "2026-07-08T00:33:58.000Z",
-        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "result": "pass",
+        "notes": "Lean file checked on branch. No proof-no-trivial-true issue detected (struct). Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain-heuristic",
@@ -1276,8 +1276,8 @@
       {
         "result": "pass",
         "notes": "No vacuity script candidate found. Agent confirms clean.",
-        "reviewed_at": "2026-07-08T00:33:58.000Z",
-        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain-heuristic",
@@ -1291,8 +1291,8 @@
       {
         "result": "pass",
         "notes": "No vacuity script candidate found. Agent confirms clean.",
-        "reviewed_at": "2026-07-08T00:33:58.000Z",
-        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain-heuristic",
@@ -1306,8 +1306,8 @@
       {
         "result": "pass",
         "notes": "No vacuity script candidate found. Agent confirms clean.",
-        "reviewed_at": "2026-07-08T00:33:58.000Z",
-        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain-heuristic",

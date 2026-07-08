@@ -1226,10 +1226,10 @@
     ],
     "proof-narrative-lean-equiv": [
       {
-        "result": "pass",
-        "notes": "Heuristic check: Both Lean and MD files exist and appear substantive.",
-        "reviewed_at": "2026-07-08T00:33:58.000Z",
-        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "result": "warn",
+        "notes": "Missing Lean formalisation (heuristic could not resolve).",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain-heuristic",
@@ -1243,8 +1243,8 @@
       {
         "result": "pass",
         "notes": "Heuristic: No recent signature drift detected.",
-        "reviewed_at": "2026-07-08T00:33:58.000Z",
-        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain-heuristic",
@@ -1258,8 +1258,8 @@
       {
         "result": "pass",
         "notes": "No vacuity script candidate found. Agent confirms clean.",
-        "reviewed_at": "2026-07-08T00:33:58.000Z",
-        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain-heuristic",
@@ -1273,8 +1273,8 @@
       {
         "result": "pass",
         "notes": "No vacuity script candidate found. Agent confirms clean.",
-        "reviewed_at": "2026-07-08T00:33:58.000Z",
-        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain-heuristic",
@@ -1288,8 +1288,8 @@
       {
         "result": "pass",
         "notes": "No vacuity script candidate found. Agent confirms clean.",
-        "reviewed_at": "2026-07-08T00:33:58.000Z",
-        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain-heuristic",
@@ -1303,8 +1303,8 @@
       {
         "result": "pass",
         "notes": "No vacuity script candidate found. Agent confirms clean.",
-        "reviewed_at": "2026-07-08T00:33:58.000Z",
-        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain-heuristic",
@@ -1318,8 +1318,8 @@
       {
         "result": "pass",
         "notes": "No vacuity script candidate found. Agent confirms clean.",
-        "reviewed_at": "2026-07-08T00:33:58.000Z",
-        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain-heuristic",
@@ -1333,8 +1333,8 @@
       {
         "result": "pass",
         "notes": "Heuristic score",
-        "reviewed_at": "2026-07-08T00:33:58.000Z",
-        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain-heuristic",
@@ -1351,8 +1351,8 @@
       {
         "result": "pass",
         "notes": "Heuristic score",
-        "reviewed_at": "2026-07-08T00:33:58.000Z",
-        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain-heuristic",
@@ -1369,8 +1369,8 @@
       {
         "result": "pass",
         "notes": "Heuristic score",
-        "reviewed_at": "2026-07-08T00:33:58.000Z",
-        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain-heuristic",
