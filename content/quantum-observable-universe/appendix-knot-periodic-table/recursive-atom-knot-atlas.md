@@ -251,15 +251,15 @@ For an atom with mass number $A$, we build the canonical braid word in $B_{3A}$ 
 
 <!-- AUTO:canonical-tr-m-table BEGIN -->
 
-| Atom | $A$ | $n$ | $\|\mathrm{tr}_M(\beta_{\text{atom}}, q_0)\|$ | Predicting | Prediction (MeV) | Reference (MeV) | Error |
+| Atom | $A$ | $N$ | Prediction (MeV) | Reference (MeV) | Error | Matom (MeV) | Matom Error |
 |---|---|---|---|---|---|---|---|
-| D | 2 | 6 | $0.3882864715593036$ | B (binding) | 2.2488 | 2.2246 | +1.09 % |
-| T | 3 | 9 | $0.1040710693020871$ | B (binding) | 8.4686 | 8.4818 | -0.16 % |
-| ${}^3$He | 3 | 9 | $0.2065784750874029$ | B (binding) | 7.4889 | 7.7180 | -2.97 % |
-| ${}^4$He | 4 | 12 | $0.0553584262667831$ | B (binding) | 29.9557 | 28.2957 | +5.87 % |
-| ${}^5$Li | 5 | 15 | $0.0294467557534109$ | B (binding) | — | 26.3280 | — |
-| ${}^6$Li | 6 | 18 | $0.0078910741135128$ | B (binding) | — | 31.9940 | — |
-| ${}^7$Li | 7 | 21 | $0.0021146319542430$ | B (binding) | — | 39.2452 | — |
+| D | 2 | 1 | 2.2488 | 2.2246 | +1.09 % | — | — |
+| T | 3 | 2 | 8.4686 | 8.4818 | -0.16 % | — | — |
+| ${}^3$He | 3 | 1 | 7.4889 | 7.7180 | -2.97 % | — | — |
+| ${}^4$He | 4 | 2 | 29.9557 | 28.2957 | +5.87 % | — | — |
+| ${}^5$Li | 5 | 2 | — | 26.3280 | — | — | — |
+| ${}^6$Li | 6 | 3 | — | 31.9940 | — | — | — |
+| ${}^7$Li | 7 | 4 | — | 39.2452 | — | — | — |
 
 _Computed via [`canonical_mass_table_extended.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/canonical_mass_table_extended.py) (method=`branching`). Witness: [`canonical-mass-table-extended.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/canonical-mass-table-extended.witness.json). Nucleon masses (m_p, m_n) via [`m-p-borromean-verification-50dps.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/m-p-borromean-verification-50dps.witness.json). Paper hard floor (CAL-2 propagation): ~780 ppb._
 

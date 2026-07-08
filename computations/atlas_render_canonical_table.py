@@ -87,21 +87,16 @@ def render_table(witness_data: dict) -> str:
     """
     lines = [
         "",
-        "| Atom | $A$ | $n$ | $\\|\\mathrm{tr}_M(\\beta_{\\text{atom}}, q_0)\\|$ "
-        "| Predicting | Prediction (MeV) | Reference (MeV) | Error |",
+        "| Atom | $A$ | $N$ | Prediction (MeV) | Reference (MeV) | Error | Matom (MeV) | Matom Error |",
         "|---|---|---|---|---|---|---|---|",
     ]
     for row in witness_data.get("rows", []):
-        Z = row["Z"]; N = row["N"]; A = row["A"]; n = row["n_strands"]
+        Z = row["Z"]; N = row["N"]; A = row["A"]
         label = ATOM_LABEL_BY_ZN.get((Z, N), f"(Z={Z}, N={N})")
-        tr_m_md = f"${_truncate_dps(row.get('tr_M_q0_canonical_50dps'))}$" \
-                  if row.get("tr_M_q0_canonical_50dps") else "—"
         ptype = row.get("prediction_type") or "binding_energy"
-        ptype_label = "mass" if ptype == "mass" else "B (binding)"
         pred_md = _fmt_number(row.get("prediction_MeV_50dps"))
         ref_md = _fmt_number(row.get("B_AME_MeV"))
-        # Error: ppm for mass, % for binding energy — the natural unit
-        # for the typical magnitude in each regime.
+        # Error: ppm for mass, % for binding energy
         if ptype == "mass":
             err_unit = "ppm"
             err_md = _fmt_number(row.get("err_ppm"), "{:+.3f}")
@@ -109,9 +104,19 @@ def render_table(witness_data: dict) -> str:
             err_unit = "%"
             err_md = _fmt_number(row.get("err_pct"), "{:+.2f}")
         err_cell = f"{err_md} {err_unit}" if err_md != "—" else "—"
+        
+        cm = row.get("composite_mass", {}) or {}
+        cm_pred = _fmt_number(cm.get("M_pred_MeV"), "{:.4f}")
+        cm_ppm_val = cm.get("err_ppm")
+        if cm_ppm_val is not None:
+            cm_ppb = _fmt_number(cm_ppm_val * 1000.0, "{:+.2f}")
+            cm_err_cell = f"{cm_ppb} ppb"
+        else:
+            cm_err_cell = "—"
+            
         lines.append(
-            f"| {label} | {A} | {n} | {tr_m_md} "
-            f"| {ptype_label} | {pred_md} | {ref_md} | {err_cell} |"
+            f"| {label} | {A} | {N} "
+            f"| {pred_md} | {ref_md} | {err_cell} | {cm_pred} | {cm_err_cell} |"
         )
     lines.append("")
     method = witness_data.get("parameters", {}).get("method", "?")
