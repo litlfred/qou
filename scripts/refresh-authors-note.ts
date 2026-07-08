@@ -87,7 +87,10 @@ function main() {
     if (m[0] !== want) {
       problems.push(`  ✗ ${rule.name}: note says "${m[0]}" but live is "${want}"`);
     }
-    after = after.replace(rule.re, want.replace(/\$/g, "$$$$"));
+    // Function replacer: returns `want` verbatim, with no `$`/`$&`/`$1`
+    // special-pattern expansion (a string replacement would treat `$` in a
+    // future rule's value specially and corrupt the note).
+    after = after.replace(rule.re, () => want);
   }
 
   // Witness: numeric snapshot for CI diffing (timestamp-free so it is stable).
