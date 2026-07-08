@@ -1165,6 +1165,216 @@
           "value": 0.85
         }
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Clearly derives truncation error bound, confirming sub-ppm precision at N=3 without overclaiming.",
+        "reviewed_at": "2026-07-08T08:57:46.000Z",
+        "reviewed_sha": "bf54edac562833d73da44097ed989c1a82a922b1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Clearly derives truncation error bound, confirming sub-ppm precision at N=3 without overclaiming.",
+        "reviewed_at": "2026-07-08T08:57:46.000Z",
+        "reviewed_sha": "bf54edac562833d73da44097ed989c1a82a922b1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Clearly derives truncation error bound, confirming sub-ppm precision at N=3 without overclaiming.",
+        "reviewed_at": "2026-07-08T08:57:46.000Z",
+        "reviewed_sha": "bf54edac562833d73da44097ed989c1a82a922b1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Clearly derives truncation error bound, confirming sub-ppm precision at N=3 without overclaiming.",
+        "reviewed_at": "2026-07-08T08:57:46.000Z",
+        "reviewed_sha": "bf54edac562833d73da44097ed989c1a82a922b1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Clearly derives truncation error bound, confirming sub-ppm precision at N=3 without overclaiming.",
+        "reviewed_at": "2026-07-08T08:57:46.000Z",
+        "reviewed_sha": "bf54edac562833d73da44097ed989c1a82a922b1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Clearly derives truncation error bound, confirming sub-ppm precision at N=3 without overclaiming.",
+        "reviewed_at": "2026-07-08T08:57:46.000Z",
+        "reviewed_sha": "bf54edac562833d73da44097ed989c1a82a922b1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Clearly derives truncation error bound, confirming sub-ppm precision at N=3 without overclaiming.",
+        "reviewed_at": "2026-07-08T08:57:46.000Z",
+        "reviewed_sha": "bf54edac562833d73da44097ed989c1a82a922b1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Clearly derives truncation error bound, confirming sub-ppm precision at N=3 without overclaiming.",
+        "reviewed_at": "2026-07-08T08:57:46.000Z",
+        "reviewed_sha": "bf54edac562833d73da44097ed989c1a82a922b1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Clearly derives truncation error bound, confirming sub-ppm precision at N=3 without overclaiming.",
+        "reviewed_at": "2026-07-08T08:57:46.000Z",
+        "reviewed_sha": "bf54edac562833d73da44097ed989c1a82a922b1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Clearly derives truncation error bound, confirming sub-ppm precision at N=3 without overclaiming.",
+        "reviewed_at": "2026-07-08T08:57:46.000Z",
+        "reviewed_sha": "bf54edac562833d73da44097ed989c1a82a922b1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Clearly derives truncation error bound, confirming sub-ppm precision at N=3 without overclaiming.",
+        "reviewed_at": "2026-07-08T08:57:46.000Z",
+        "reviewed_sha": "bf54edac562833d73da44097ed989c1a82a922b1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Clearly derives truncation error bound, confirming sub-ppm precision at N=3 without overclaiming.",
+        "reviewed_at": "2026-07-08T08:57:46.000Z",
+        "reviewed_sha": "bf54edac562833d73da44097ed989c1a82a922b1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Clearly derives truncation error bound, confirming sub-ppm precision at N=3 without overclaiming.",
+        "reviewed_at": "2026-07-08T08:57:46.000Z",
+        "reviewed_sha": "bf54edac562833d73da44097ed989c1a82a922b1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Clearly derives truncation error bound, confirming sub-ppm precision at N=3 without overclaiming.",
+        "reviewed_at": "2026-07-08T08:57:46.000Z",
+        "reviewed_sha": "bf54edac562833d73da44097ed989c1a82a922b1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-05T23:33:10.454Z"
