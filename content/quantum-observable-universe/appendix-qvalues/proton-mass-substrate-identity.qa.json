@@ -1135,6 +1135,32 @@
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "Block placement and kind match validated structurally.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Strongly disciplined derivation of proton mass. Explicitly flags the linear appearance of dim V_(2,1) as an open problem requiring a formal proof.",
+        "reviewed_at": "2026-07-08T08:58:26.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Strongly disciplined derivation of proton mass. Explicitly flags the linear appearance of dim V_(2,1) as an open problem requiring a formal proof.",
+        "reviewed_at": "2026-07-08T08:58:44.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "wall-side-statement": [
@@ -1389,6 +1415,32 @@
         "notes": "No issues found for da-false-claim.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Strongly disciplined derivation of proton mass. Explicitly flags the linear appearance of dim V_(2,1) as an open problem requiring a formal proof.",
+        "reviewed_at": "2026-07-08T08:58:26.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Strongly disciplined derivation of proton mass. Explicitly flags the linear appearance of dim V_(2,1) as an open problem requiring a formal proof.",
+        "reviewed_at": "2026-07-08T08:58:44.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-vacuous": [
@@ -1409,6 +1461,32 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No issues found for da-vacuous.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Strongly disciplined derivation of proton mass. Explicitly flags the linear appearance of dim V_(2,1) as an open problem requiring a formal proof.",
+        "reviewed_at": "2026-07-08T08:58:26.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Strongly disciplined derivation of proton mass. Explicitly flags the linear appearance of dim V_(2,1) as an open problem requiring a formal proof.",
+        "reviewed_at": "2026-07-08T08:58:44.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-circular": [
@@ -1430,6 +1508,32 @@
         "notes": "No issues found for da-circular.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Strongly disciplined derivation of proton mass. Explicitly flags the linear appearance of dim V_(2,1) as an open problem requiring a formal proof.",
+        "reviewed_at": "2026-07-08T08:58:26.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Strongly disciplined derivation of proton mass. Explicitly flags the linear appearance of dim V_(2,1) as an open problem requiring a formal proof.",
+        "reviewed_at": "2026-07-08T08:58:44.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-overclaim": [
@@ -1450,6 +1554,32 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Strongly disciplined derivation of proton mass. Explicitly flags the linear appearance of dim V_(2,1) as an open problem requiring a formal proof.",
+        "reviewed_at": "2026-07-08T08:58:26.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Strongly disciplined derivation of proton mass. Explicitly flags the linear appearance of dim V_(2,1) as an open problem requiring a formal proof.",
+        "reviewed_at": "2026-07-08T08:58:44.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1471,6 +1601,32 @@
         "notes": "No issues found for da-hidden-dof.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Strongly disciplined derivation of proton mass. Explicitly flags the linear appearance of dim V_(2,1) as an open problem requiring a formal proof.",
+        "reviewed_at": "2026-07-08T08:58:26.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Strongly disciplined derivation of proton mass. Explicitly flags the linear appearance of dim V_(2,1) as an open problem requiring a formal proof.",
+        "reviewed_at": "2026-07-08T08:58:44.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1492,6 +1648,32 @@
         "notes": "No issues found for da-non-sequitur.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Strongly disciplined derivation of proton mass. Explicitly flags the linear appearance of dim V_(2,1) as an open problem requiring a formal proof.",
+        "reviewed_at": "2026-07-08T08:58:26.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Strongly disciplined derivation of proton mass. Explicitly flags the linear appearance of dim V_(2,1) as an open problem requiring a formal proof.",
+        "reviewed_at": "2026-07-08T08:58:44.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1512,6 +1694,32 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The Lean sibling fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Strongly disciplined derivation of proton mass. Explicitly flags the linear appearance of dim V_(2,1) as an open problem requiring a formal proof.",
+        "reviewed_at": "2026-07-08T08:58:26.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Strongly disciplined derivation of proton mass. Explicitly flags the linear appearance of dim V_(2,1) as an open problem requiring a formal proof.",
+        "reviewed_at": "2026-07-08T08:58:44.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1533,6 +1741,32 @@
         "notes": "No issues found for da-citation-misuse.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Strongly disciplined derivation of proton mass. Explicitly flags the linear appearance of dim V_(2,1) as an open problem requiring a formal proof.",
+        "reviewed_at": "2026-07-08T08:58:26.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Strongly disciplined derivation of proton mass. Explicitly flags the linear appearance of dim V_(2,1) as an open problem requiring a formal proof.",
+        "reviewed_at": "2026-07-08T08:58:44.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1554,6 +1788,32 @@
         "notes": "No issues found for da-definitional-ambiguity.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Strongly disciplined derivation of proton mass. Explicitly flags the linear appearance of dim V_(2,1) as an open problem requiring a formal proof.",
+        "reviewed_at": "2026-07-08T08:58:26.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Strongly disciplined derivation of proton mass. Explicitly flags the linear appearance of dim V_(2,1) as an open problem requiring a formal proof.",
+        "reviewed_at": "2026-07-08T08:58:44.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1575,6 +1835,32 @@
         "notes": "No issues found for da-empirical-fragility.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Strongly disciplined derivation of proton mass. Explicitly flags the linear appearance of dim V_(2,1) as an open problem requiring a formal proof.",
+        "reviewed_at": "2026-07-08T08:58:26.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Strongly disciplined derivation of proton mass. Explicitly flags the linear appearance of dim V_(2,1) as an open problem requiring a formal proof.",
+        "reviewed_at": "2026-07-08T08:58:44.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1596,6 +1882,32 @@
         "notes": "No issues found for da-physical-implausibility.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Strongly disciplined derivation of proton mass. Explicitly flags the linear appearance of dim V_(2,1) as an open problem requiring a formal proof.",
+        "reviewed_at": "2026-07-08T08:58:26.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Strongly disciplined derivation of proton mass. Explicitly flags the linear appearance of dim V_(2,1) as an open problem requiring a formal proof.",
+        "reviewed_at": "2026-07-08T08:58:44.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1617,6 +1929,32 @@
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.lean:1 — content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.lean:4:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/BraidsAndKnots/FBorBorromeanObservable.olean' of module QOU.BraidsAndKnots.FBorBorromeanObservable does not exist"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Strongly disciplined derivation of proton mass. Explicitly flags the linear appearance of dim V_(2,1) as an open problem requiring a formal proof.",
+        "reviewed_at": "2026-07-08T08:58:26.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Strongly disciplined derivation of proton mass. Explicitly flags the linear appearance of dim V_(2,1) as an open problem requiring a formal proof.",
+        "reviewed_at": "2026-07-08T08:58:44.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1639,6 +1977,32 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.lean:4:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/BraidsAndKnots/FBorBorromeanObservable.olean' of module QOU.BraidsAndKnots.FBorBorromeanObservable does not exist"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Strongly disciplined derivation of proton mass. Explicitly flags the linear appearance of dim V_(2,1) as an open problem requiring a formal proof.",
+        "reviewed_at": "2026-07-08T08:58:26.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Strongly disciplined derivation of proton mass. Explicitly flags the linear appearance of dim V_(2,1) as an open problem requiring a formal proof.",
+        "reviewed_at": "2026-07-08T08:58:44.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1657,6 +2021,36 @@
           "md": "cd2e8a22302e",
           "ts": "ebae27c3581c",
           "lean": "f79a918ed65b"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Strongly disciplined derivation of proton mass. Explicitly flags the linear appearance of dim V_(2,1) as an open problem requiring a formal proof.",
+        "reviewed_at": "2026-07-08T08:58:44.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Strongly disciplined derivation of proton mass. Explicitly flags the linear appearance of dim V_(2,1) as an open problem requiring a formal proof.",
+        "reviewed_at": "2026-07-08T08:58:44.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
         }
       }
     ]

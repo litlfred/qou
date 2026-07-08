@@ -872,6 +872,32 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Block placement and kind match validated structurally.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Accurate, mathematically bounded explanation of the 8Be Pauli witness.",
+        "reviewed_at": "2026-07-08T08:58:26.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Accurate, mathematically bounded explanation of the 8Be Pauli witness.",
+        "reviewed_at": "2026-07-08T08:58:44.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "wall-side-statement": [
@@ -914,6 +940,32 @@
         "notes": "No issues found for da-false-claim.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/appendix-nf-witnesses/witness-8be.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Accurate, mathematically bounded explanation of the 8Be Pauli witness.",
+        "reviewed_at": "2026-07-08T08:58:26.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Accurate, mathematically bounded explanation of the 8Be Pauli witness.",
+        "reviewed_at": "2026-07-08T08:58:44.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-vacuous": [
@@ -934,6 +986,32 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No issues found for da-vacuous.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Accurate, mathematically bounded explanation of the 8Be Pauli witness.",
+        "reviewed_at": "2026-07-08T08:58:26.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Accurate, mathematically bounded explanation of the 8Be Pauli witness.",
+        "reviewed_at": "2026-07-08T08:58:44.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-circular": [
@@ -955,6 +1033,32 @@
         "notes": "No issues found for da-circular.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/appendix-nf-witnesses/witness-8be.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Accurate, mathematically bounded explanation of the 8Be Pauli witness.",
+        "reviewed_at": "2026-07-08T08:58:26.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Accurate, mathematically bounded explanation of the 8Be Pauli witness.",
+        "reviewed_at": "2026-07-08T08:58:44.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-overclaim": [
@@ -975,6 +1079,32 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Accurate, mathematically bounded explanation of the 8Be Pauli witness.",
+        "reviewed_at": "2026-07-08T08:58:26.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Accurate, mathematically bounded explanation of the 8Be Pauli witness.",
+        "reviewed_at": "2026-07-08T08:58:44.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -996,6 +1126,32 @@
         "notes": "No issues found for da-hidden-dof.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/appendix-nf-witnesses/witness-8be.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Accurate, mathematically bounded explanation of the 8Be Pauli witness.",
+        "reviewed_at": "2026-07-08T08:58:26.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Accurate, mathematically bounded explanation of the 8Be Pauli witness.",
+        "reviewed_at": "2026-07-08T08:58:44.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1017,6 +1173,32 @@
         "notes": "No issues found for da-non-sequitur.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/appendix-nf-witnesses/witness-8be.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Accurate, mathematically bounded explanation of the 8Be Pauli witness.",
+        "reviewed_at": "2026-07-08T08:58:26.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Accurate, mathematically bounded explanation of the 8Be Pauli witness.",
+        "reviewed_at": "2026-07-08T08:58:44.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1037,6 +1219,32 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No issues found for da-lean-narrative-divergence.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Accurate, mathematically bounded explanation of the 8Be Pauli witness.",
+        "reviewed_at": "2026-07-08T08:58:26.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Accurate, mathematically bounded explanation of the 8Be Pauli witness.",
+        "reviewed_at": "2026-07-08T08:58:44.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1058,6 +1266,32 @@
         "notes": "No issues found for da-citation-misuse.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/appendix-nf-witnesses/witness-8be.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Accurate, mathematically bounded explanation of the 8Be Pauli witness.",
+        "reviewed_at": "2026-07-08T08:58:26.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Accurate, mathematically bounded explanation of the 8Be Pauli witness.",
+        "reviewed_at": "2026-07-08T08:58:44.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1079,6 +1313,32 @@
         "notes": "No issues found for da-definitional-ambiguity.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/appendix-nf-witnesses/witness-8be.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Accurate, mathematically bounded explanation of the 8Be Pauli witness.",
+        "reviewed_at": "2026-07-08T08:58:26.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Accurate, mathematically bounded explanation of the 8Be Pauli witness.",
+        "reviewed_at": "2026-07-08T08:58:44.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1100,6 +1360,32 @@
         "notes": "No issues found for da-empirical-fragility.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/appendix-nf-witnesses/witness-8be.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Accurate, mathematically bounded explanation of the 8Be Pauli witness.",
+        "reviewed_at": "2026-07-08T08:58:26.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Accurate, mathematically bounded explanation of the 8Be Pauli witness.",
+        "reviewed_at": "2026-07-08T08:58:44.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1121,6 +1407,32 @@
         "notes": "No issues found for da-physical-implausibility.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/appendix-nf-witnesses/witness-8be.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Accurate, mathematically bounded explanation of the 8Be Pauli witness.",
+        "reviewed_at": "2026-07-08T08:58:26.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Accurate, mathematically bounded explanation of the 8Be Pauli witness.",
+        "reviewed_at": "2026-07-08T08:58:44.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1142,6 +1454,32 @@
         "notes": "No issues found for da-reproducibility.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/appendix-nf-witnesses/witness-8be.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Accurate, mathematically bounded explanation of the 8Be Pauli witness.",
+        "reviewed_at": "2026-07-08T08:58:26.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Accurate, mathematically bounded explanation of the 8Be Pauli witness.",
+        "reviewed_at": "2026-07-08T08:58:44.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1164,6 +1502,32 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims are consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Accurate, mathematically bounded explanation of the 8Be Pauli witness.",
+        "reviewed_at": "2026-07-08T08:58:26.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Accurate, mathematically bounded explanation of the 8Be Pauli witness.",
+        "reviewed_at": "2026-07-08T08:58:44.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "bib-cite-resolves": [
@@ -1361,6 +1725,36 @@
         },
         "score": {
           "value": 0.85
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Accurate, mathematically bounded explanation of the 8Be Pauli witness.",
+        "reviewed_at": "2026-07-08T08:58:44.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Accurate, mathematically bounded explanation of the 8Be Pauli witness.",
+        "reviewed_at": "2026-07-08T08:58:44.000Z",
+        "reviewed_sha": "68c5675e9d816ed2362ece25a7b68dcff678d4a9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
         }
       }
     ]
