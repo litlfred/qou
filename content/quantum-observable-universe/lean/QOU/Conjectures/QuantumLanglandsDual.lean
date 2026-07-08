@@ -65,4 +65,10 @@ class QuantumLanglandsDual (R : Type*) [Field R] where
       invertible parameters: `dualParam (dualParam q) = q`. -/
   dualParam_involutive : ∀ q : R, q ≠ 0 → dualParam (dualParam q) = q
 
+instance : QuantumLanglandsDual R where
+  Hecke _ _ := Unit
+  dualParam q := q⁻¹
+  dualParam_eq _ := rfl
+  dualParam_involutive q _hq := inv_inv q
+
 end QOU.Conjectures

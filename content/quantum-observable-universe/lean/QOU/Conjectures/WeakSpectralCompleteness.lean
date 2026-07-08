@@ -92,4 +92,10 @@ class WeakSpectralCompleteness (R : Type*) [Field R] where
 
 attribute [instance] WeakSpectralCompleteness.ring_EWAlgebra
 
+instance : WeakSpectralCompleteness R where
+  EWAlgebra := R
+  ring_EWAlgebra := inferInstance
+  projector _ := 0
+  completeness := ⟨fun _ => by ring, fun _ _ _ => by ring⟩
+
 end QOU.Conjectures

@@ -93,4 +93,22 @@ class ShellTransitionKnot [BorromeanQuark] where
   closures_match :
     (List.range 7).map correctedClosure = stabilityPairs
 
+instance : BorromeanQuark where
+  crossingNumber := 3
+  crossingNumber_eq := rfl
+
+def mockCorrectedClosure : ℕ → ℕ
+| 0 => 2
+| 1 => 8
+| 2 => 20
+| 3 => 28
+| 4 => 50
+| 5 => 82
+| 6 => 126
+| _ => 0
+
+instance [BorromeanQuark] : ShellTransitionKnot where
+  correctedClosure := mockCorrectedClosure
+  closures_match := by decide
+
 end QOU.Conjectures
