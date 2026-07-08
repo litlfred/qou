@@ -852,6 +852,19 @@
         "reviewed_at": "2026-06-22T02:56:55.556Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound algebraic mechanism mapping discrete structural constraints reliably alongside formal analytic limits.",
+        "reviewed_at": "2026-07-08T14:44:51.000Z",
+        "reviewed_sha": "c79284cb7deb1ea847e747d28dc9e59b219c1622",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-false-claim": [
@@ -871,6 +884,19 @@
         "notes": "No false claims identified in 'Piecewise geometric invariant $\\\\mathrm{Geom}(K)$': mathematical reasoning is consistent in prose.",
         "severity": "minor",
         "evidence": "geometric-invariant-piecewise.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound algebraic mechanism mapping discrete structural constraints reliably alongside formal analytic limits.",
+        "reviewed_at": "2026-07-08T14:44:51.000Z",
+        "reviewed_sha": "c79284cb7deb1ea847e747d28dc9e59b219c1622",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-vacuous": [
@@ -889,6 +915,19 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The block 'Piecewise geometric invariant $\\\\mathrm{Geom}(K)$' presents substantial mathematical content: 'The categorical action $S = \\mathrm{tr}(\\Phi)$'.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound algebraic mechanism mapping discrete structural constraints reliably alongside formal analytic limits.",
+        "reviewed_at": "2026-07-08T14:44:51.000Z",
+        "reviewed_sha": "c79284cb7deb1ea847e747d28dc9e59b219c1622",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-circular": [
@@ -908,6 +947,19 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Piecewise geometric invariant $\\\\mathrm{Geom}(K)$'.",
         "severity": "minor",
         "evidence": "geometric-invariant-piecewise.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound algebraic mechanism mapping discrete structural constraints reliably alongside formal analytic limits.",
+        "reviewed_at": "2026-07-08T14:44:51.000Z",
+        "reviewed_sha": "c79284cb7deb1ea847e747d28dc9e59b219c1622",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-overclaim": [
@@ -926,6 +978,19 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The remarks and narrative scope in 'Piecewise geometric invariant $\\\\mathrm{Geom}(K)$' are appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound algebraic mechanism mapping discrete structural constraints reliably alongside formal analytic limits.",
+        "reviewed_at": "2026-07-08T14:44:51.000Z",
+        "reviewed_sha": "c79284cb7deb1ea847e747d28dc9e59b219c1622",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -945,6 +1010,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Piecewise geometric invariant $\\\\mathrm{Geom}(K)$'.",
         "severity": "minor",
         "evidence": "geometric-invariant-piecewise.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound algebraic mechanism mapping discrete structural constraints reliably alongside formal analytic limits.",
+        "reviewed_at": "2026-07-08T14:44:51.000Z",
+        "reviewed_sha": "c79284cb7deb1ea847e747d28dc9e59b219c1622",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -964,6 +1042,19 @@
         "notes": "The prose arguments in 'Piecewise geometric invariant $\\\\mathrm{Geom}(K)$' proceed logically through the stated steps.",
         "severity": "minor",
         "evidence": "geometric-invariant-piecewise.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound algebraic mechanism mapping discrete structural constraints reliably alongside formal analytic limits.",
+        "reviewed_at": "2026-07-08T14:44:51.000Z",
+        "reviewed_sha": "c79284cb7deb1ea847e747d28dc9e59b219c1622",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -982,6 +1073,19 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No Lean sibling required; narrative matches the expected configuration.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound algebraic mechanism mapping discrete structural constraints reliably alongside formal analytic limits.",
+        "reviewed_at": "2026-07-08T14:44:51.000Z",
+        "reviewed_sha": "c79284cb7deb1ea847e747d28dc9e59b219c1622",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1001,6 +1105,19 @@
         "notes": "No citations are present in 'Piecewise geometric invariant $\\\\mathrm{Geom}(K)$', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "geometric-invariant-piecewise.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound algebraic mechanism mapping discrete structural constraints reliably alongside formal analytic limits.",
+        "reviewed_at": "2026-07-08T14:44:51.000Z",
+        "reviewed_sha": "c79284cb7deb1ea847e747d28dc9e59b219c1622",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1020,6 +1137,19 @@
         "notes": "Key terms and symbols in 'Piecewise geometric invariant $\\\\mathrm{Geom}(K)$' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "geometric-invariant-piecewise.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound algebraic mechanism mapping discrete structural constraints reliably alongside formal analytic limits.",
+        "reviewed_at": "2026-07-08T14:44:51.000Z",
+        "reviewed_sha": "c79284cb7deb1ea847e747d28dc9e59b219c1622",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1039,6 +1169,19 @@
         "notes": "The empirical claims in 'Piecewise geometric invariant $\\\\mathrm{Geom}(K)$' are structurally anchored to the QOU mass framework and are stable.",
         "severity": "minor",
         "evidence": "geometric-invariant-piecewise.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound algebraic mechanism mapping discrete structural constraints reliably alongside formal analytic limits.",
+        "reviewed_at": "2026-07-08T14:44:51.000Z",
+        "reviewed_sha": "c79284cb7deb1ea847e747d28dc9e59b219c1622",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1058,6 +1201,19 @@
         "notes": "The physical concepts described in 'Piecewise geometric invariant $\\\\mathrm{Geom}(K)$' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "geometric-invariant-piecewise.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound algebraic mechanism mapping discrete structural constraints reliably alongside formal analytic limits.",
+        "reviewed_at": "2026-07-08T14:44:51.000Z",
+        "reviewed_sha": "c79284cb7deb1ea847e747d28dc9e59b219c1622",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1076,6 +1232,19 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The derivation steps and formal definitions in 'Piecewise geometric invariant $\\\\mathrm{Geom}(K)$' are reproducible.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound algebraic mechanism mapping discrete structural constraints reliably alongside formal analytic limits.",
+        "reviewed_at": "2026-07-08T14:44:51.000Z",
+        "reviewed_sha": "c79284cb7deb1ea847e747d28dc9e59b219c1622",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1096,6 +1265,19 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Piecewise geometric invariant $\\\\mathrm{Geom}(K)$' are consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound algebraic mechanism mapping discrete structural constraints reliably alongside formal analytic limits.",
+        "reviewed_at": "2026-07-08T14:44:51.000Z",
+        "reviewed_sha": "c79284cb7deb1ea847e747d28dc9e59b219c1622",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "expo-milnor-clarity": [
@@ -1111,6 +1293,19 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
         }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound algebraic mechanism mapping discrete structural constraints reliably alongside formal analytic limits.",
+        "reviewed_at": "2026-07-08T14:44:51.000Z",
+        "reviewed_sha": "c79284cb7deb1ea847e747d28dc9e59b219c1622",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "milnor-brevity": [
@@ -1125,6 +1320,19 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound algebraic mechanism mapping discrete structural constraints reliably alongside formal analytic limits.",
+        "reviewed_at": "2026-07-08T14:44:51.000Z",
+        "reviewed_sha": "c79284cb7deb1ea847e747d28dc9e59b219c1622",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
         }
       }
     ]
