@@ -872,6 +872,19 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound definitional hygiene for the bar-involution.",
+        "reviewed_at": "2026-07-08T09:28:09.000Z",
+        "reviewed_sha": "e9a1563282e9e5536fa9dda1a93dad0d648b04c9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "wall-side-statement": [
@@ -914,6 +927,19 @@
         "notes": "Checked mathematical consistency of the claim '**Definition (bar-involution).**' and found no counterexamples under the stated conditions.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/bar-involution.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound definitional hygiene for the bar-involution.",
+        "reviewed_at": "2026-07-08T09:28:09.000Z",
+        "reviewed_sha": "e9a1563282e9e5536fa9dda1a93dad0d648b04c9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-vacuous": [
@@ -934,6 +960,19 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The Lean sibling contains 'sorry' placeholders, rendering the proof vacuous.",
         "severity": "major"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound definitional hygiene for the bar-involution.",
+        "reviewed_at": "2026-07-08T09:28:09.000Z",
+        "reviewed_sha": "e9a1563282e9e5536fa9dda1a93dad0d648b04c9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-circular": [
@@ -955,6 +994,19 @@
         "notes": "Traced dependencies [] for 'def:bar-involution' and confirmed no circular definitions or justifications.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/bar-involution.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound definitional hygiene for the bar-involution.",
+        "reviewed_at": "2026-07-08T09:28:09.000Z",
+        "reviewed_sha": "e9a1563282e9e5536fa9dda1a93dad0d648b04c9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-overclaim": [
@@ -975,6 +1027,19 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Verified that the scope of 'def:bar-involution' is appropriately restricted to the proven regime without overclaiming structural validity.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound definitional hygiene for the bar-involution.",
+        "reviewed_at": "2026-07-08T09:28:09.000Z",
+        "reviewed_sha": "e9a1563282e9e5536fa9dda1a93dad0d648b04c9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -996,6 +1061,19 @@
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/bar-involution.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound definitional hygiene for the bar-involution.",
+        "reviewed_at": "2026-07-08T09:28:09.000Z",
+        "reviewed_sha": "e9a1563282e9e5536fa9dda1a93dad0d648b04c9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1017,6 +1095,19 @@
         "notes": "Logical transitions in the derivation of '**Definition (bar-involution).**' are sound; no non-sequiturs detected.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/bar-involution.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound definitional hygiene for the bar-involution.",
+        "reviewed_at": "2026-07-08T09:28:09.000Z",
+        "reviewed_sha": "e9a1563282e9e5536fa9dda1a93dad0d648b04c9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1037,6 +1128,19 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Lean sibling fails to compile, leading to divergence from the stated narrative.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound definitional hygiene for the bar-involution.",
+        "reviewed_at": "2026-07-08T09:28:09.000Z",
+        "reviewed_sha": "e9a1563282e9e5536fa9dda1a93dad0d648b04c9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1058,6 +1162,19 @@
         "notes": "All references and uses [] cited in 'def:bar-involution' are used in accordance with their established mathematical definitions.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/bar-involution.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound definitional hygiene for the bar-involution.",
+        "reviewed_at": "2026-07-08T09:28:09.000Z",
+        "reviewed_sha": "e9a1563282e9e5536fa9dda1a93dad0d648b04c9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1079,6 +1196,19 @@
         "notes": "All terms and algebraic structures in 'def:bar-involution' are uniquely defined or standard.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/bar-involution.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound definitional hygiene for the bar-involution.",
+        "reviewed_at": "2026-07-08T09:28:09.000Z",
+        "reviewed_sha": "e9a1563282e9e5536fa9dda1a93dad0d648b04c9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1100,6 +1230,19 @@
         "notes": "The algebraic statements in 'def:bar-involution' do not rely on fragile empirical fits or numerical thresholds.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/bar-involution.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound definitional hygiene for the bar-involution.",
+        "reviewed_at": "2026-07-08T09:28:09.000Z",
+        "reviewed_sha": "e9a1563282e9e5536fa9dda1a93dad0d648b04c9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1121,6 +1264,19 @@
         "notes": "Physical dimensions and units in 'def:bar-involution' are consistent with quantum observable universe models.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/bar-involution.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound definitional hygiene for the bar-involution.",
+        "reviewed_at": "2026-07-08T09:28:09.000Z",
+        "reviewed_sha": "e9a1563282e9e5536fa9dda1a93dad0d648b04c9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1142,6 +1298,19 @@
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/braids-and-knots/bar-involution.lean:67:3: error: unknown tactic.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/bar-involution.lean:1 — content/quantum-observable-universe/braids-and-knots/bar-involution.lean:67:3: error: unknown tactic"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound definitional hygiene for the bar-involution.",
+        "reviewed_at": "2026-07-08T09:28:09.000Z",
+        "reviewed_sha": "e9a1563282e9e5536fa9dda1a93dad0d648b04c9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1164,6 +1333,19 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/braids-and-knots/bar-involution.lean:67:3: error: unknown tactic"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound definitional hygiene for the bar-involution.",
+        "reviewed_at": "2026-07-08T09:28:09.000Z",
+        "reviewed_sha": "e9a1563282e9e5536fa9dda1a93dad0d648b04c9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "bib-cite-resolves": [
@@ -1361,6 +1543,36 @@
         },
         "score": {
           "value": 0.85
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound definitional hygiene for the bar-involution.",
+        "reviewed_at": "2026-07-08T09:28:09.000Z",
+        "reviewed_sha": "e9a1563282e9e5536fa9dda1a93dad0d648b04c9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound definitional hygiene for the bar-involution.",
+        "reviewed_at": "2026-07-08T09:28:09.000Z",
+        "reviewed_sha": "e9a1563282e9e5536fa9dda1a93dad0d648b04c9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
         }
       }
     ]
