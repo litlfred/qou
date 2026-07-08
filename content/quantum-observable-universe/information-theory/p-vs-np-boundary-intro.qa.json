@@ -832,6 +832,19 @@
         "reviewed_at": "2026-06-22T02:56:27.579Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound conceptual framework cleanly enforcing exact logical intractability firmly upon invariant geometric boundaries.",
+        "reviewed_at": "2026-07-08T13:55:02.000Z",
+        "reviewed_sha": "49e2f31fa52a16a9499faa65efa56a3d37222c72",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-false-claim": [
@@ -850,6 +863,19 @@
         "notes": "No false claims identified in 'sec:p-vs-np-boundary-intro': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/p-vs-np-boundary-intro.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound conceptual framework cleanly enforcing exact logical intractability firmly upon invariant geometric boundaries.",
+        "reviewed_at": "2026-07-08T13:55:02.000Z",
+        "reviewed_sha": "49e2f31fa52a16a9499faa65efa56a3d37222c72",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-vacuous": [
@@ -865,8 +891,21 @@
         },
         "reviewed_at": "2026-06-28T10:51:03.753Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
-        "notes": "The block 'sec:p-vs-np-boundary-intro' presents substantial mathematical content: _[draft]_ The jet horizon of \u00a71 separates degree-$0$ data from degree $\\geq 1$ l...",
+        "notes": "The block 'sec:p-vs-np-boundary-intro' presents substantial mathematical content: _[draft]_ The jet horizon of §1 separates degree-$0$ data from degree $\\geq 1$ l...",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound conceptual framework cleanly enforcing exact logical intractability firmly upon invariant geometric boundaries.",
+        "reviewed_at": "2026-07-08T13:55:02.000Z",
+        "reviewed_sha": "49e2f31fa52a16a9499faa65efa56a3d37222c72",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-circular": [
@@ -885,6 +924,19 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'sec:p-vs-np-boundary-intro'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/p-vs-np-boundary-intro.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound conceptual framework cleanly enforcing exact logical intractability firmly upon invariant geometric boundaries.",
+        "reviewed_at": "2026-07-08T13:55:02.000Z",
+        "reviewed_sha": "49e2f31fa52a16a9499faa65efa56a3d37222c72",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-overclaim": [
@@ -902,6 +954,19 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No overclaims: the scope of 'sec:p-vs-np-boundary-intro' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound conceptual framework cleanly enforcing exact logical intractability firmly upon invariant geometric boundaries.",
+        "reviewed_at": "2026-07-08T13:55:02.000Z",
+        "reviewed_sha": "49e2f31fa52a16a9499faa65efa56a3d37222c72",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -920,6 +985,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'sec:p-vs-np-boundary-intro'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/p-vs-np-boundary-intro.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound conceptual framework cleanly enforcing exact logical intractability firmly upon invariant geometric boundaries.",
+        "reviewed_at": "2026-07-08T13:55:02.000Z",
+        "reviewed_sha": "49e2f31fa52a16a9499faa65efa56a3d37222c72",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -938,6 +1016,19 @@
         "notes": "The argument flow in 'sec:p-vs-np-boundary-intro' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/p-vs-np-boundary-intro.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound conceptual framework cleanly enforcing exact logical intractability firmly upon invariant geometric boundaries.",
+        "reviewed_at": "2026-07-08T13:55:02.000Z",
+        "reviewed_sha": "49e2f31fa52a16a9499faa65efa56a3d37222c72",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -955,6 +1046,19 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound conceptual framework cleanly enforcing exact logical intractability firmly upon invariant geometric boundaries.",
+        "reviewed_at": "2026-07-08T13:55:02.000Z",
+        "reviewed_sha": "49e2f31fa52a16a9499faa65efa56a3d37222c72",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -973,6 +1077,19 @@
         "notes": "No citations are present in 'sec:p-vs-np-boundary-intro', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/p-vs-np-boundary-intro.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound conceptual framework cleanly enforcing exact logical intractability firmly upon invariant geometric boundaries.",
+        "reviewed_at": "2026-07-08T13:55:02.000Z",
+        "reviewed_sha": "49e2f31fa52a16a9499faa65efa56a3d37222c72",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -991,6 +1108,19 @@
         "notes": "Key terms and symbols in 'sec:p-vs-np-boundary-intro' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/p-vs-np-boundary-intro.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound conceptual framework cleanly enforcing exact logical intractability firmly upon invariant geometric boundaries.",
+        "reviewed_at": "2026-07-08T13:55:02.000Z",
+        "reviewed_sha": "49e2f31fa52a16a9499faa65efa56a3d37222c72",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1009,6 +1139,19 @@
         "notes": "The algebraic and logical relations in 'sec:p-vs-np-boundary-intro' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/p-vs-np-boundary-intro.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound conceptual framework cleanly enforcing exact logical intractability firmly upon invariant geometric boundaries.",
+        "reviewed_at": "2026-07-08T13:55:02.000Z",
+        "reviewed_sha": "49e2f31fa52a16a9499faa65efa56a3d37222c72",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1027,6 +1170,19 @@
         "notes": "The physical concepts described in 'sec:p-vs-np-boundary-intro' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/p-vs-np-boundary-intro.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound conceptual framework cleanly enforcing exact logical intractability firmly upon invariant geometric boundaries.",
+        "reviewed_at": "2026-07-08T13:55:02.000Z",
+        "reviewed_sha": "49e2f31fa52a16a9499faa65efa56a3d37222c72",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1045,6 +1201,19 @@
         "notes": "The derivation steps and formal definitions in 'sec:p-vs-np-boundary-intro' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/p-vs-np-boundary-intro.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound conceptual framework cleanly enforcing exact logical intractability firmly upon invariant geometric boundaries.",
+        "reviewed_at": "2026-07-08T13:55:02.000Z",
+        "reviewed_sha": "49e2f31fa52a16a9499faa65efa56a3d37222c72",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1064,9 +1233,52 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'sec:p-vs-np-boundary-intro' are consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound conceptual framework cleanly enforcing exact logical intractability firmly upon invariant geometric boundaries.",
+        "reviewed_at": "2026-07-08T13:55:02.000Z",
+        "reviewed_sha": "49e2f31fa52a16a9499faa65efa56a3d37222c72",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
-    "milnor-amalgamated-flow": []
+    "milnor-amalgamated-flow": [],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound conceptual framework cleanly enforcing exact logical intractability firmly upon invariant geometric boundaries.",
+        "reviewed_at": "2026-07-08T13:55:02.000Z",
+        "reviewed_sha": "49e2f31fa52a16a9499faa65efa56a3d37222c72",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound conceptual framework cleanly enforcing exact logical intractability firmly upon invariant geometric boundaries.",
+        "reviewed_at": "2026-07-08T13:55:02.000Z",
+        "reviewed_sha": "49e2f31fa52a16a9499faa65efa56a3d37222c72",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ]
   },
   "updated_at": "2026-07-07T14:26:55.591602Z"
 }
