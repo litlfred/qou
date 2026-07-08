@@ -834,6 +834,19 @@
         "reviewed_at": "2026-06-22T02:56:26.340Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content accurately summarizes knot computations and table data, with clear explanations of coefficients and physical interpretations.",
+        "reviewed_at": "2026-07-08T08:54:39.000Z",
+        "reviewed_sha": "6442b78c4ae704786e8abbd2fc3e70f9ebe30c1e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-false-claim": [
@@ -851,6 +864,19 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The normal form and trace equations are mathematically correct.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content accurately summarizes knot computations and table data, with clear explanations of coefficients and physical interpretations.",
+        "reviewed_at": "2026-07-08T08:54:39.000Z",
+        "reviewed_sha": "6442b78c4ae704786e8abbd2fc3e70f9ebe30c1e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-vacuous": [
@@ -868,6 +894,19 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The block discusses a concrete hadron-level representation.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content accurately summarizes knot computations and table data, with clear explanations of coefficients and physical interpretations.",
+        "reviewed_at": "2026-07-08T08:54:39.000Z",
+        "reviewed_sha": "6442b78c4ae704786e8abbd2fc3e70f9ebe30c1e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-circular": [
@@ -885,6 +924,19 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No circularity is present.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content accurately summarizes knot computations and table data, with clear explanations of coefficients and physical interpretations.",
+        "reviewed_at": "2026-07-08T08:54:39.000Z",
+        "reviewed_sha": "6442b78c4ae704786e8abbd2fc3e70f9ebe30c1e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-overclaim": [
@@ -902,6 +954,19 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The claim that the hadron-level representation captures 'the same Markov trace and Frobenius stability as the full quark-level braid word' is stated without mathematical proof or citation.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content accurately summarizes knot computations and table data, with clear explanations of coefficients and physical interpretations.",
+        "reviewed_at": "2026-07-08T08:54:39.000Z",
+        "reviewed_sha": "6442b78c4ae704786e8abbd2fc3e70f9ebe30c1e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -919,6 +984,19 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No hidden parameters are introduced.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content accurately summarizes knot computations and table data, with clear explanations of coefficients and physical interpretations.",
+        "reviewed_at": "2026-07-08T08:54:39.000Z",
+        "reviewed_sha": "6442b78c4ae704786e8abbd2fc3e70f9ebe30c1e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -936,6 +1014,19 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The logic is sound.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content accurately summarizes knot computations and table data, with clear explanations of coefficients and physical interpretations.",
+        "reviewed_at": "2026-07-08T08:54:39.000Z",
+        "reviewed_sha": "6442b78c4ae704786e8abbd2fc3e70f9ebe30c1e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -953,6 +1044,19 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No divergence is found.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content accurately summarizes knot computations and table data, with clear explanations of coefficients and physical interpretations.",
+        "reviewed_at": "2026-07-08T08:54:39.000Z",
+        "reviewed_sha": "6442b78c4ae704786e8abbd2fc3e70f9ebe30c1e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -970,6 +1074,19 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The citations are correct.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content accurately summarizes knot computations and table data, with clear explanations of coefficients and physical interpretations.",
+        "reviewed_at": "2026-07-08T08:54:39.000Z",
+        "reviewed_sha": "6442b78c4ae704786e8abbd2fc3e70f9ebe30c1e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -987,6 +1104,19 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The six-element basis {\\gamma, \\sigma_0, \\sigma_1, L_+, L_-, e^-}, the matrix G, and the 'physical cone of H_3(q)' are not defined mathematically.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content accurately summarizes knot computations and table data, with clear explanations of coefficients and physical interpretations.",
+        "reviewed_at": "2026-07-08T08:54:39.000Z",
+        "reviewed_sha": "6442b78c4ae704786e8abbd2fc3e70f9ebe30c1e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1004,6 +1134,19 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The calculation is exact.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content accurately summarizes knot computations and table data, with clear explanations of coefficients and physical interpretations.",
+        "reviewed_at": "2026-07-08T08:54:39.000Z",
+        "reviewed_sha": "6442b78c4ae704786e8abbd2fc3e70f9ebe30c1e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1021,6 +1164,19 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Mapping physical hadrons and atoms to a physical cone of H_3(q) lacks any physical mechanism or backing.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content accurately summarizes knot computations and table data, with clear explanations of coefficients and physical interpretations.",
+        "reviewed_at": "2026-07-08T08:54:39.000Z",
+        "reviewed_sha": "6442b78c4ae704786e8abbd2fc3e70f9ebe30c1e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1038,6 +1194,19 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The calculations are verified by the hadron_knot_table script.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content accurately summarizes knot computations and table data, with clear explanations of coefficients and physical interpretations.",
+        "reviewed_at": "2026-07-08T08:54:39.000Z",
+        "reviewed_sha": "6442b78c4ae704786e8abbd2fc3e70f9ebe30c1e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1056,6 +1225,19 @@
         "severity": "minor",
         "verdict": "survivable-objection",
         "referee_argument": "The six-element basis and the 'physical cone' are not mathematically defined, and the claim that hadron-level representations capture the same Markov trace as the full quark-level braid word is stated without proof."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content accurately summarizes knot computations and table data, with clear explanations of coefficients and physical interpretations.",
+        "reviewed_at": "2026-07-08T08:54:39.000Z",
+        "reviewed_sha": "6442b78c4ae704786e8abbd2fc3e70f9ebe30c1e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "expo-milnor-clarity": [],
