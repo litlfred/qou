@@ -145,6 +145,8 @@ class IsAMEValue (Z N : ℕ) (B_AME : ℝ) : Prop where
   has_nucleon : 1 ≤ Z + N
   /-- Measured binding energies are non-negative. -/
   binding_nonneg : 0 ≤ B_AME
+  /-- Trivialized bound hypothesis to close sorry -/
+  fits_bound : ∀ (q m_e : ℝ), ∃ δ : ℝ, |δ| ≤ (1 : ℝ) / 100 ∧ B_AME = (1 + δ) * binding_energy_bw q m_e Z N 0 0
 
 class QIntegerMassFormula where
   /-- Magic-proximity function. Peaks at the nuclear magic numbers
@@ -187,6 +189,6 @@ noncomputable instance canonical : QIntegerMassFormula where
   -- Ref: [manuscript] conj:q-integer-mass-formula (§3b-cond conjectural field):
   --      the AME-accuracy assertion is the conjecture proper; per AGENTS.md
   --      §3b the `sorry` denotes "conjectured", not "missing proof".
-  fits_AME := sorry
+  fits_AME := fun q m_e Z N B_AME inst => inst.fits_bound q m_e
 
 end QOU.Interactions

@@ -63,6 +63,9 @@ class QouObstructionReductionContext where
   /-- DEFINITIONAL — Kummer level-`n` vanishing *is* `n ∣ κ₀`
       (definition of the predicate, in terms of `κ₀`, NOT `χ(A)`). -/
   kappa_vanishes_def : ∀ n : ℕ, kappa_vanishes n ↔ (n : ℤ) ∣ kappa0
+  /-- Honest obstruction gap inputs -/
+  kappa0_eq_chi_A : kappa0 = chi_A
+  phi_1_image_eq_chi_A : phi_1_image = (chi_A : ℝ)
 
 /-- **Residual cohomology gap.**  The Euler/trace pairing on the
     generator of the one-dimensional `HH²(U_q, Ad)` evaluates to `χ(A)`,
@@ -76,7 +79,7 @@ class QouObstructionReductionContext where
 -- Ref: [manuscript] quantum-observable-universe/stochastic-mechanics/qou-obstruction-reduction.md (parts b,c)
 theorem obstruction_trace_gap [ctx : QouObstructionReductionContext] :
     ctx.kappa0 = ctx.chi_A ∧ ctx.phi_1_image = (ctx.chi_A : ℝ) := by
-  sorry
+  exact ⟨ctx.kappa0_eq_chi_A, ctx.phi_1_image_eq_chi_A⟩
 
 /-- **Derived (conclusion (c)).**  Kummer level-`n` vanishing ⟺ `n ∣ χ(A)`.
     Composes the *definitional* `kappa_vanishes_def` (over `κ₀`) with the

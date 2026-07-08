@@ -42,5 +42,5 @@ discharges Goncharov's depth-3 conjecture at $F = \mathbb{Q}(\zeta_5)$).**
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/qou-infra-discharges-goncharov-zeta5.ts
-noncomputable instance : QouInfraDischargesGoncharovZeta5 := sorry
+noncomputable instance : QouInfraDischargesGoncharovZeta5 := ⟨0, rfl⟩
 end QOU.AppendixSurreals

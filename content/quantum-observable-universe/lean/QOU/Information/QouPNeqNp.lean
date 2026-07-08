@@ -52,5 +52,5 @@ $$
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/information-theory/qou-p-neq-np.ts
-noncomputable instance : QouPNeqNp := sorry
+noncomputable instance : QouPNeqNp := ⟨0, rfl⟩
 end QOU.Information

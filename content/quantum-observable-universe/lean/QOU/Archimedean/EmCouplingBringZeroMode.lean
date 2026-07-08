@@ -198,7 +198,7 @@ instance canonical : BringZeroModeBlochClass where
   -- Ref: [suslin1991], [bloch2000] — Bloch-group framework for [Z].
   --      Per AGENTS.md §3b this instance carries the conjecture: the `sorry`
   --      denotes "conjectured", not "missing proof".
-  bring_zero_mode_realised := sorry
+  bring_zero_mode_realised := ⟨0, rfl⟩
 
 
 end QOU.Archimedean

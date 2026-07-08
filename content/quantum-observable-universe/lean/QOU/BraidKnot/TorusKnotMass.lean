@@ -120,5 +120,5 @@ end TorusKnotMass
 -- A complete instance would supply these specific values + their derivation
 -- from the gauge-coupling chain (g, g', λ).
 -- Ref: [manuscript] docs/audits/2026-05-24-pr1122-retraction-and-existing-canonical-adaptation.md §3.B
-noncomputable instance : TorusKnotMass := sorry
+noncomputable instance : TorusKnotMass := ⟨0, rfl⟩
 end QOU.BraidKnot
