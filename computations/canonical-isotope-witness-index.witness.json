@@ -1,14 +1,14 @@
 {
   "engine": "python",
   "engineVersion": "python 3.13.12",
-  "computedAt": "2026-07-07T13:39:19.793142+00:00",
-  "commitSha": "85da4f43133d9d70ca3582f4fa4f31771b5ec3f1",
+  "computedAt": "2026-07-08T09:54:41.624456+00:00",
+  "commitSha": "53b9638d2669f901c14720e35fbc4e6a0c1d8457",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "canonical-isotope-witness-index",
   "scriptFile": "canonical_isotope_witness.py",
-  "scriptHash": "19d75785a6b2",
+  "scriptHash": "f34d572be32a",
   "scriptCommitSha": "a39f7e92689ee88f9d43107bfcb0048f4c5e604f",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -45,15 +45,15 @@
         "shard_filename": "canonical-isotope-witness-Z01.witness.json",
         "element": "H",
         "rows_total": 7,
-        "rows_with_prediction": 0,
-        "rows_with_composite_mass": 0
+        "rows_with_prediction": 2,
+        "rows_with_composite_mass": 2
       },
       "2": {
         "shard_filename": "canonical-isotope-witness-Z02.witness.json",
         "element": "He",
         "rows_total": 8,
-        "rows_with_prediction": 1,
-        "rows_with_composite_mass": 1
+        "rows_with_prediction": 2,
+        "rows_with_composite_mass": 2
       },
       "3": {
         "shard_filename": "canonical-isotope-witness-Z03.witness.json",

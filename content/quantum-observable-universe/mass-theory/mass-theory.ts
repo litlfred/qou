@@ -290,6 +290,7 @@ export default chapter({
             "binding-genfun-qdifference-proof",
             "binding-closure-conditional",
             "binding-closure-conditional-proof",
+            "universal-binding-architecture",
           ],
         }),
         section({

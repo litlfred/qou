@@ -271,6 +271,11 @@ def assemble_row(
     # Canonical candidates: the α-cluster recursion (canonical-recursive;
     # c_αα = m_e·Vol(7²₁) is canonical). Present in L2 and/or the L3 sweep.
     canonical_candidates: list[tuple[float, str, str]] = []
+    if l1 and _as_float(l1.get("prediction_MeV_50dps")) is not None:
+        canonical_candidates.append(
+            (_as_float(l1["prediction_MeV_50dps"]), "L1-canonical",
+             "canonical-recursive")
+        )
     if l2 and _as_float(l2.get("B_pred_MeV")) is not None:
         canonical_candidates.append(
             (_as_float(l2["B_pred_MeV"]), "L2-alpha-cluster", "canonical-recursive")
@@ -282,15 +287,9 @@ def assemble_row(
         )
 
     # Non-canonical candidates (recorded as excised, never shipped):
-    #   • L1 (knot, ρ_K) empirical-assignment
     #   • L3 census  B = ρ·Vol(census-knot), ρ hand-assigned
     #   • L3 partial-shell  linear interpolation between α anchors
     noncanonical_candidates: list[tuple[float, str, str]] = []
-    if l1 and _as_float(l1.get("prediction_MeV_50dps")) is not None:
-        noncanonical_candidates.append(
-            (_as_float(l1["prediction_MeV_50dps"]), "L1-canonical",
-             "canonical-with-empirical-assignment")
-        )
     if (l3 and not str(l3.get("strategy", "")).startswith("α-cluster")
             and _as_float(l3.get("B_pred_MeV")) is not None):
         noncanonical_candidates.append(
