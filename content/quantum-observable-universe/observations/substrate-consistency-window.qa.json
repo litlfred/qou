@@ -1083,6 +1083,19 @@
         "reviewed_at": "2026-07-07T14:26:56.662376Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:40:30.000Z",
+        "reviewed_sha": "e2cb5275d06ebef3e2df46fcfc68046d11ced79e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "wall-side-statement": [
@@ -1315,6 +1328,19 @@
         "notes": "No false claims identified in 'Overdetermination of the substrate parameter': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/substrate-consistency-window.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:40:30.000Z",
+        "reviewed_sha": "e2cb5275d06ebef3e2df46fcfc68046d11ced79e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-vacuous": [
@@ -1335,6 +1361,19 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Overdetermination of the substrate parameter' presents substantial mathematical content: The QOU framework has **one free parameter**: the substrate parameter $q$.  Ever...",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:40:30.000Z",
+        "reviewed_sha": "e2cb5275d06ebef3e2df46fcfc68046d11ced79e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-circular": [
@@ -1356,6 +1395,19 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Overdetermination of the substrate parameter'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/substrate-consistency-window.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:40:30.000Z",
+        "reviewed_sha": "e2cb5275d06ebef3e2df46fcfc68046d11ced79e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-overclaim": [
@@ -1376,6 +1428,19 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No overclaims: the scope of 'Overdetermination of the substrate parameter' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:40:30.000Z",
+        "reviewed_sha": "e2cb5275d06ebef3e2df46fcfc68046d11ced79e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1397,6 +1462,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Overdetermination of the substrate parameter'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/substrate-consistency-window.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:40:30.000Z",
+        "reviewed_sha": "e2cb5275d06ebef3e2df46fcfc68046d11ced79e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1418,6 +1496,19 @@
         "notes": "The argument flow in 'Overdetermination of the substrate parameter' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/substrate-consistency-window.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:40:30.000Z",
+        "reviewed_sha": "e2cb5275d06ebef3e2df46fcfc68046d11ced79e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1438,6 +1529,19 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The referenced Lean file content/quantum-observable-universe/observations/substrate-consistency-window.lean is missing, leading to complete divergence.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:40:30.000Z",
+        "reviewed_sha": "e2cb5275d06ebef3e2df46fcfc68046d11ced79e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1459,6 +1563,19 @@
         "notes": "No citations are present in 'Overdetermination of the substrate parameter', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/substrate-consistency-window.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:40:30.000Z",
+        "reviewed_sha": "e2cb5275d06ebef3e2df46fcfc68046d11ced79e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1480,6 +1597,19 @@
         "notes": "Key terms and symbols in 'Overdetermination of the substrate parameter' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/substrate-consistency-window.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:40:30.000Z",
+        "reviewed_sha": "e2cb5275d06ebef3e2df46fcfc68046d11ced79e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1501,6 +1631,19 @@
         "notes": "The algebraic and logical relations in 'Overdetermination of the substrate parameter' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/substrate-consistency-window.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:40:30.000Z",
+        "reviewed_sha": "e2cb5275d06ebef3e2df46fcfc68046d11ced79e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1522,6 +1665,19 @@
         "notes": "The physical concepts described in 'Overdetermination of the substrate parameter' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/substrate-consistency-window.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:40:30.000Z",
+        "reviewed_sha": "e2cb5275d06ebef3e2df46fcfc68046d11ced79e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1543,6 +1699,19 @@
         "notes": "The derivation steps and formal definitions in 'Overdetermination of the substrate parameter' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/substrate-consistency-window.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:40:30.000Z",
+        "reviewed_sha": "e2cb5275d06ebef3e2df46fcfc68046d11ced79e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1565,6 +1734,19 @@
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/observations/substrate-consistency-window.lean is missing, preventing formal verification of the claims in 'Overdetermination of the substrate parameter'.",
         "severity": "critical"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:40:30.000Z",
+        "reviewed_sha": "e2cb5275d06ebef3e2df46fcfc68046d11ced79e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1582,6 +1764,36 @@
         "field_hash": {
           "md": "5c3c88ac880c",
           "ts": "f04a44b16945"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:40:30.000Z",
+        "reviewed_sha": "e2cb5275d06ebef3e2df46fcfc68046d11ced79e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:40:30.000Z",
+        "reviewed_sha": "e2cb5275d06ebef3e2df46fcfc68046d11ced79e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
         }
       }
     ]
