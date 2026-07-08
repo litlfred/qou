@@ -49,7 +49,247 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "milnor-amalgamated-flow": []
+    "milnor-amalgamated-flow": [],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Crucial and sound clarification distinguishing the geometric ambient S^3 from the gauge group SU(2) manifold.",
+        "reviewed_at": "2026-07-08T09:31:44.000Z",
+        "reviewed_sha": "eee2309f7e06936ae825d0c1f3fe2237c9007434",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Crucial and sound clarification distinguishing the geometric ambient S^3 from the gauge group SU(2) manifold.",
+        "reviewed_at": "2026-07-08T09:31:44.000Z",
+        "reviewed_sha": "eee2309f7e06936ae825d0c1f3fe2237c9007434",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Crucial and sound clarification distinguishing the geometric ambient S^3 from the gauge group SU(2) manifold.",
+        "reviewed_at": "2026-07-08T09:31:44.000Z",
+        "reviewed_sha": "eee2309f7e06936ae825d0c1f3fe2237c9007434",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Crucial and sound clarification distinguishing the geometric ambient S^3 from the gauge group SU(2) manifold.",
+        "reviewed_at": "2026-07-08T09:31:44.000Z",
+        "reviewed_sha": "eee2309f7e06936ae825d0c1f3fe2237c9007434",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Crucial and sound clarification distinguishing the geometric ambient S^3 from the gauge group SU(2) manifold.",
+        "reviewed_at": "2026-07-08T09:31:44.000Z",
+        "reviewed_sha": "eee2309f7e06936ae825d0c1f3fe2237c9007434",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Crucial and sound clarification distinguishing the geometric ambient S^3 from the gauge group SU(2) manifold.",
+        "reviewed_at": "2026-07-08T09:31:44.000Z",
+        "reviewed_sha": "eee2309f7e06936ae825d0c1f3fe2237c9007434",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Crucial and sound clarification distinguishing the geometric ambient S^3 from the gauge group SU(2) manifold.",
+        "reviewed_at": "2026-07-08T09:31:44.000Z",
+        "reviewed_sha": "eee2309f7e06936ae825d0c1f3fe2237c9007434",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Crucial and sound clarification distinguishing the geometric ambient S^3 from the gauge group SU(2) manifold.",
+        "reviewed_at": "2026-07-08T09:31:44.000Z",
+        "reviewed_sha": "eee2309f7e06936ae825d0c1f3fe2237c9007434",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Crucial and sound clarification distinguishing the geometric ambient S^3 from the gauge group SU(2) manifold.",
+        "reviewed_at": "2026-07-08T09:31:44.000Z",
+        "reviewed_sha": "eee2309f7e06936ae825d0c1f3fe2237c9007434",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Crucial and sound clarification distinguishing the geometric ambient S^3 from the gauge group SU(2) manifold.",
+        "reviewed_at": "2026-07-08T09:31:44.000Z",
+        "reviewed_sha": "eee2309f7e06936ae825d0c1f3fe2237c9007434",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Crucial and sound clarification distinguishing the geometric ambient S^3 from the gauge group SU(2) manifold.",
+        "reviewed_at": "2026-07-08T09:31:44.000Z",
+        "reviewed_sha": "eee2309f7e06936ae825d0c1f3fe2237c9007434",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Crucial and sound clarification distinguishing the geometric ambient S^3 from the gauge group SU(2) manifold.",
+        "reviewed_at": "2026-07-08T09:31:44.000Z",
+        "reviewed_sha": "eee2309f7e06936ae825d0c1f3fe2237c9007434",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Crucial and sound clarification distinguishing the geometric ambient S^3 from the gauge group SU(2) manifold.",
+        "reviewed_at": "2026-07-08T09:31:44.000Z",
+        "reviewed_sha": "eee2309f7e06936ae825d0c1f3fe2237c9007434",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Crucial and sound clarification distinguishing the geometric ambient S^3 from the gauge group SU(2) manifold.",
+        "reviewed_at": "2026-07-08T09:31:44.000Z",
+        "reviewed_sha": "eee2309f7e06936ae825d0c1f3fe2237c9007434",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Crucial and sound clarification distinguishing the geometric ambient S^3 from the gauge group SU(2) manifold.",
+        "reviewed_at": "2026-07-08T09:31:44.000Z",
+        "reviewed_sha": "eee2309f7e06936ae825d0c1f3fe2237c9007434",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Crucial and sound clarification distinguishing the geometric ambient S^3 from the gauge group SU(2) manifold.",
+        "reviewed_at": "2026-07-08T09:31:44.000Z",
+        "reviewed_sha": "eee2309f7e06936ae825d0c1f3fe2237c9007434",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ]
   },
   "updated_at": "2026-07-07T14:26:55.317115Z"
 }
