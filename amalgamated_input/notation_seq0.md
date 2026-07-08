@@ -1,13 +1,9 @@
 <!-- FILE_START: notation-register-section-intro.md -->
-The per-chapter symbol register: every mathematical symbol used in the paper, its font family, and its collision-avoidance rules.
+This appendix contains the per-chapter symbol register. It lists every mathematical symbol used in the paper, its font family, and its collision-avoidance rules.
 <!-- FILE_END: notation-register-section-intro.md -->
 
 <!-- FILE_START: notation-register.md -->
-Every mathematical symbol used in this paper belongs to exactly one
-register. The tables below group symbols by the chapter where each is
-first introduced; within a chapter, entries are sorted alphabetically
-by concept name. This block is authoritative — `AGENTS.md` §7aa
-refers to it.
+Every mathematical symbol used in this paper belongs to exactly one register. The tables below group symbols by the chapter where we first introduce each. Within a chapter, we sort entries alphabetically by concept name. This block is authoritative. We refer to it in `AGENTS.md` §7aa.
 
 ### Quantum universes (Chapter 1)
 
@@ -43,8 +39,7 @@ See [Table 8](#tbl:notation-register-table8-data).
 
 ### Lean source convention (cross-chapter)
 
-Applies to every `.lean` file in the paper. Mirrors
-[`AGENTS.md` §7c](https://github.com/litlfred/qou/blob/main/AGENTS.md#7c-base-ring-convention-generic-r-vs-archimedean-r-strict).
+This convention applies to every `.lean` file in the paper. It mirrors [`AGENTS.md` §7c](https://github.com/litlfred/qou/blob/main/AGENTS.md#7c-base-ring-convention-generic-r-vs-archimedean-r-strict).
 
 See [Table 9](#tbl:notation-register-table9-data).
 <!-- FILE_END: notation-register.md -->

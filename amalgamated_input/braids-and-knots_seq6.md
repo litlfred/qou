@@ -1,11 +1,9 @@
 <!-- FILE_START: braid-symmetric-intro.md -->
-With the categorical origin established, we now give explicit presentations
-and representations of the braid group.
+Having established their categorical origin, we now provide explicit presentations and representations of the braid group.
 <!-- FILE_END: braid-symmetric-intro.md -->
 
 <!-- FILE_START: braid-group.md -->
-The **braid group on three strands** is the group
-
+The **braid group on three strands** has the presentation:
 ```tex
 \begin{equation}\label{eq:braid-presentation}
   B_3
@@ -13,48 +11,19 @@ The **braid group on three strands** is the group
      \big| \sigma_1\sigma_2\sigma_1=\sigma_2\sigma_1\sigma_2\bigr\rangle.
 \end{equation}
 ```
-
-This is the fundamental group of the configuration space of three
-unordered points in the plane, and is isomorphic to the fundamental group
-of the complement of the trefoil knot
-([trefoil knot group](#rem:trefoil-knot-group)).
+This is the fundamental group of the configuration space of three unordered points in the plane. It is isomorphic to the fundamental group of the trefoil knot complement.
 <!-- FILE_END: braid-group.md -->
 
 <!-- FILE_START: braid-group-su2.md -->
-The braid group $B_3$ acts accordingly on tensor products of the
-spin-$\tfrac{1}{2}$ representation $V = \mathbb{C}^2$ of
-$\mathcal{U}_q(\mathfrak{su}(2))$. We work out the action on
-$V \otimes V = \mathbb{C}^2 \otimes \mathbb{C}^2$ explicitly.
+The braid group $B_3$ acts on tensor products of the spin-$\tfrac{1}{2}$ representation $V = \mathbb{C}^2$ of $\mathcal{U}_q(\mathfrak{su}(2))$. We explicitly compute the action on $V \otimes V$.
 
-**Basis and $R$-matrix.**
-Choose the standard basis $\{e_1, e_2\}$ for $V$ (spin up, spin down).
-The ordered basis for $V \otimes V$ is
-
-$$
-  \{e_1 \otimes e_1, e_1 \otimes e_2,
-    e_2 \otimes e_1, e_2 \otimes e_2\}.
-$$
-
-The braiding $\sigma \colon V \otimes V \to V \otimes V$ is the
-$R$-matrix of $\mathcal{U}_q(\mathfrak{su}(2))$. Its action on
-basis vectors is
-
+Choose the standard basis $\{e_1, e_2\}$ for $V$. The ordered basis for $V \otimes V$ is $\{e_1 \otimes e_1, e_1 \otimes e_2, e_2 \otimes e_1, e_2 \otimes e_2\}$. The braiding $\sigma \colon V \otimes V \to V \otimes V$ is the $R$-matrix of $\mathcal{U}_q(\mathfrak{su}(2))$. It acts on basis vectors by:
 $$
   \sigma(e_i \otimes e_j)
   = q^{\delta_{ij}} e_j \otimes e_i
   + (q - q^{-1})\delta_{i < j} e_i \otimes e_j.
 $$
-
-**Explicit matrix.**
-Evaluating on each basis element:
-
-- $\sigma(e_1 \otimes e_1) = q e_1 \otimes e_1$,
-- $\sigma(e_1 \otimes e_2) = e_2 \otimes e_1 + (q - q^{-1}) e_1 \otimes e_2$,
-- $\sigma(e_2 \otimes e_1) = e_1 \otimes e_2$,
-- $\sigma(e_2 \otimes e_2) = q e_2 \otimes e_2$.
-
-In the ordered basis, the $4 \times 4$ matrix is
-
+In the ordered basis, the $4 \times 4$ matrix is:
 $$
   R = \begin{pmatrix}
     q & 0 & 0 & 0 \\
@@ -64,129 +33,37 @@ $$
   \end{pmatrix}.
 $$
 
-**Eigenspace decomposition.**
-The tensor product $V \otimes V$ decomposes into irreducible
-$\mathcal{U}_q(\mathfrak{su}(2))$-modules:
+The tensor product decomposes into irreducible modules $V \otimes V =  \mathrm{Sym}^2_q(V) \oplus \Lambda^2_q(V)$. The symmetric (spin-1) part has dimension 3, spanned by $e_1 \otimes e_1$, $q^{1/2} e_1 \otimes e_2 + q^{-1/2} e_2 \otimes e_1$, and $e_2 \otimes e_2$. The antisymmetric (spin-0) part has dimension 1, spanned by $q^{1/2} e_1 \otimes e_2 - q^{-1/2} e_2 \otimes e_1$.
 
-$$
-  V \otimes V =  \mathrm{Sym}^2_q(V)  \oplus  \Lambda^2_q(V),
-$$
+On each summand, the braiding $\sigma$ acts as a scalar. It acts as $q$ on the symmetric part (attractive/binding) and as $-q^{-1}$ on the antisymmetric part (repulsive). These are exactly the eigenvalues of the Iwahori--Hecke algebra generator $T = \sigma$, satisfying the Hecke relation $(T - q)(T + q^{-1}) = 0$.
 
-where $\mathrm{Sym}^2_q(V)$ is the $q$-symmetric (spin-1) part of
-dimension 3, spanned by
-
-$$
-  e_1 \otimes e_1, \qquad
-  q^{1/2} e_1 \otimes e_2 + q^{-1/2} e_2 \otimes e_1, \qquad
-  e_2 \otimes e_2,
-$$
-
-and $\Lambda^2_q(V)$ is the $q$-antisymmetric (spin-0) part of
-dimension 1, spanned by
-
-$$
-  q^{1/2} e_1 \otimes e_2 - q^{-1/2} e_2 \otimes e_1.
-$$
-
-On each summand the braiding $\sigma$ acts as a scalar:
-
-- **Symmetric part** ($\mathrm{Sym}^2_q$): $\sigma = q \cdot \mathrm{id}$,
-- **Antisymmetric part** ($\Lambda^2_q$): $\sigma = -q^{-1} \cdot \mathrm{id}$.
-
-These are exactly the two eigenvalues of the Iwahori--Hecke algebra generator
-$T = \sigma$, consistent with the Hecke relation
-$(T - q)(T + q^{-1}) = 0$. The symmetric channel corresponds to
-the positive eigenvalue $q$ (attractive/binding) and the antisymmetric
-channel to $-q^{-1}$ (repulsive).
-
-**Braid group action.**
-The braid group $B_3 = \langle \sigma_1, \sigma_2 \mid \sigma_1 \sigma_2 \sigma_1 = \sigma_2 \sigma_1 \sigma_2 \rangle$ acts
-on $V^{\otimes 3}$ by letting $\sigma_i$ braid the $i$-th and
-$(i+1)$-th tensor factors using the $R$-matrix above. On
-$V \otimes V$ itself, the representation factors through the Hecke
-algebra $H_2(R, q)$, which is generated by the single element $T$
-satisfying $T^2 = (q - q^{-1})T + 1$. Every braid word in $B_2$
-reduces to a polynomial in $T$.
+The braid group $B_3$ acts on $V^{\otimes 3}$ by letting $\sigma_i$ braid the $i$-th and $(i+1)$-th factors using $R$. On $V \otimes V$, this representation factors through the Hecke algebra $H_2(R, q)$, meaning every braid word in $B_2$ reduces to a polynomial in $T$.
 <!-- FILE_END: braid-group-su2.md -->
 
 <!-- FILE_START: knot-notation-convention.md -->
-Throughout this paper, particles **are** their knots.  We write
-
-$$
-  \mathfrak{K}_x^{\pm}
-$$
-
-where $x$ is the traditional physics symbol for the particle and
-$\pm$ is the chirality (orientation) of the knot.  The
-superscript distinguishes particle from antiparticle: mirror
-image = charge conjugation.
-
-**Fundamental particles.**
+Particles in this framework are identified with their knots. We write $\mathfrak{K}_x^{\pm}$, where $x$ designates the particle and $\pm$ designates the knot's chirality. The superscript distinguishes a particle from its antiparticle via mirror reflection (charge conjugation).
 
 See [Table 1](#tbl:knot-notation-convention-table1-data).
 
-The sign convention: $\mathfrak{K}_e^- = T_{2,3}$ (left trefoil =
-electron), $\mathfrak{K}_e^+ = T_{2,3}^{\sigma}$ (right trefoil =
-positron).  For amphichiral knots ($\mathfrak{K}_\mu$,
-$\mathfrak{K}_\gamma$), the sign is trivial: $K \cong K^{\sigma}$.
+The sign convention assigns $\mathfrak{K}_e^- = T_{2,3}$ to the electron and $\mathfrak{K}_e^+ = T_{2,3}^{\sigma}$ to the positron. For amphichiral knots like $\mathfrak{K}_\mu$ and $\mathfrak{K}_\gamma$, the sign is trivial since $K \cong K^{\sigma}$. 
 
-The unknot $\mathfrak{K}_\nu$ is amphichiral as an unoriented knot,
-but the neutrino $\nu$ and antineutrino $\nu^{\sigma}$ are
-distinguished by **framing** (a choice of normal vector along the
-knot), not by knot type.  This is the geometric origin of the
-neutrino's chirality: left-handed $\nu_L$ and right-handed
-$\nu_R^{\sigma}$ are the same unknot with opposite framings.
+While the unknot $\mathfrak{K}_\nu$ is amphichiral unoriented, the left-handed neutrino $\nu_L$ and right-handed antineutrino $\nu_R^{\sigma}$ are distinguished by framing rather than knot type.
 
-**Torus knots.**
-When the torus parameters are relevant, write $T_{m,n}$ for the
-$(m, n)$-torus knot.  The mirror image is $T_{m,n}^{\sigma} =
-T_{m,-n}$.
-
-**Links.**
+We denote torus knots by $T_{m,n}$, with mirror image $T_{m,n}^{\sigma} = T_{m,-n}$.
 
 See [Table 2](#tbl:knot-notation-convention-table2-data).
 
-**Composites.**
-The connected sum of knots is $\mathfrak{K}_1 \mathbin{\#} \mathfrak{K}_2$.  A hadron ([hadron](#def:hadron)) is written
-$[\mathfrak{K}_1, \mathfrak{K}_2, \mathfrak{K}_3]_p \oplus \mathcal{L}_H$, where the subscript $c$ indicates colour-tube
-coupling and $\oplus$ denotes the linking operation.  The proton:
-
+The connected sum is $\mathfrak{K}_1 \mathbin{\#} \mathfrak{K}_2$. A hadron is written $[\mathfrak{K}_1, \mathfrak{K}_2, \mathfrak{K}_3]_p \oplus \mathcal{L}_H$, where the subscript designates colour-tube coupling and $\oplus$ denotes linking. The proton is:
 $$
   \mathfrak{p} = [\mathfrak{K}_u, \mathfrak{K}_u, \mathfrak{K}_d]_p
-  \oplus \mathcal{L}_H
+  \oplus \mathcal{L}_H.
 $$
 
-**Hecke / Skein conventions for worked examples.**
-Per [AGENTS.md §7a Hecke-Skein
-convention](https://github.com/litlfred/qou/blob/main/AGENTS.md), the
-Hecke generator is **$\sigma_i$** (the same symbol serves both as
-braid generator in $B_n$ and its image in $H_n(R, q)$; context
-disambiguates), satisfying the Hecke relation
-$\sigma_i^{2} = (q - q^{-1})\sigma_i + 1$ and the Skein relation
-$\sigma_i - \sigma_i^{-1} = q - q^{-1}$.  The two eigenchannels on
-$V \otimes V$ are symmetric (eigenvalue $q$, projector $e_+$) and
-antisymmetric (eigenvalue $-q^{-1}$, projector $e_-$); see
-[Hecke–Markov interpretation](#rem:hecke-markov-interpretation)
-for the full eigenprojector decomposition.  The Jones polynomial
-is **$J_K(q)$** throughout (never $V_K(t)$ or the bracket variable
-$A$).  When a worked example evaluates a knot's mass, it uses the
-topological mass formula
-$\mathfrak{m}(K) = \mathrm{Vol}(K) / \hbar_q^{2}$
-([prop:topological-mass-formula](#prop:topological-mass-formula))
-with $\hbar_q = 1 - q^{-1}$ the quantum Planck constant.
+We use $\sigma_i$ for both the braid generator and its image in $H_n(R, q)$, which satisfies $\sigma_i^{2} = (q - q^{-1})\sigma_i + 1$. The Jones polynomial is always denoted $J_K(q)$. Topological masses are evaluated via $\mathfrak{m}(K) = \mathrm{Vol}(K) / \hbar_q^{2}$, where $\hbar_q = 1 - q^{-1}$.
 <!-- FILE_END: knot-notation-convention.md -->
 
 <!-- FILE_START: fundamental-knots-operator-basis.md -->
-**The fundamental knots and the operator basis.**
-
-The framework's particle catalogue and its algebra share a single
-six-element backbone.  On the knot side, each fundamental particle is a
-knot or link embedded on Bring's surface; on the operator side, the
-interactions form the six-dimensional Iwahori--Hecke algebra $H_3(q)$,
-the image of the three-strand braid group.  The two tables below collect
-the cast of characters that the rest of the paper computes with.
-
-**The fundamental knot--particle dictionary.**
+The framework's particle catalogue and operator algebra share a single six-element basis. Fundamentally, each particle is a knot or link on Bring's surface. Interaction operators form the six-dimensional Iwahori--Hecke algebra $H_3(q)$.
 
 | Particle | Knot / link | Type | Braid word | $q$-invariant |
 |---|---|---|---|---|
@@ -197,14 +74,9 @@ the cast of characters that the rest of the paper computes with.
 | nucleon $\mathfrak{p},\mathfrak{n}$ | Borromean rings $L6a4$ | hyperbolic | $(\sigma_1\sigma_2^{-1})^3$ | $\mathrm{Vol}\approx 7.328 = 8G$ |
 | photon $\gamma$ | — (not a knot) | Hecke element | $\mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1 + \varphi_{01}\sigma_0\sigma_1$ | $J=1$ (bare) |
 
-The torus knots carry zero hyperbolic volume — the massless,
-force-carrying sector — while the hyperbolic knots carry positive
-volume, which becomes mass through $\mathrm{Vol}(K)/\hbar_q^{2}$ (here
-$G$ is Catalan's constant).  The photon is not a knot at all but the
-four-term element of $H_3(q)$ whose two-photon products generate the
-rest of the spectrum.
+Torus knots carry zero hyperbolic volume, representing the massless, force-carrying sector. Hyperbolic knots carry positive volume, which translates to mass via $\mathrm{Vol}(K)/\hbar_q^{2}$. The photon is not a knot but a four-term element of $H_3(q)$ whose products generate the rest of the spectrum.
 
-**The six-dimensional operator basis $H_3(q)$.**
+The six Gröbner--Shirshov normal-form words span $H_3(q)$:
 
 | Operator | Braid word | Permutation | $\mathrm{tr}_M$ at $q_0$ |
 |---|---|---|---|
@@ -215,13 +87,6 @@ rest of the spectrum.
 | $L_-$ | $(1,0)$ | $(1\;3\;2)$ | $0.249$ |
 | $e^-$ | $(0,1,0)$ | $(1\;3)$ | $0.551$ |
 
-These six Gröbner--Shirshov normal-form words span $H_3(q)$
-($\dim = 3! = 6$), with the identity $\gamma$ among them — so the
-catalogue of interactions is six-dimensional, not seven.  Their Markov
-traces $\mathrm{tr}_M$ at the substrate value $q_0$ are the weights that
-every mass and binding computation reads off.  These are the basis
-*operators*; the particle assignments of the first table are a separate,
-geometric identification (the basis operator $e^- = \sigma_0\sigma_1\sigma_0$
-is the longest word, not the trefoil-electron of the dictionary above).
+These basis operators are algebraically distinct from the topological knots sharing their names. Their Markov traces at the substrate parameter $q_0$ provide the exact weights used for mass and binding computations.
 <!-- FILE_END: fundamental-knots-operator-basis.md -->
 

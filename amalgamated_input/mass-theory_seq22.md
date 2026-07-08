@@ -1,24 +1,12 @@
 <!-- FILE_START: mass-bridge-orphan-reconnect-intro.md -->
-The blocks in this section were reconnected during the
- restructuring that separated the mass derivation
-chain from the q-hyperbolic geometry chapter.  Each block
-addresses an open structural conjecture at the interface
-between the geometric and mass-endomorphism layers: linking
-operations, pentagon identities, Pachner moves, and Kashaev
-density--multiplicity correspondences.
+This section reconnects blocks separated during the restructuring of the mass derivation and $q$-hyperbolic geometry chapters. It resolves structural conjectures at the interface of the geometric and mass-endomorphism layers.
 
-The arc proceeds through the categorical linking operation, the crossed-module Euler characteristic that pins the substrate-flow data, and the master pentagon dimension identity.  The closing blocks specialise to the geometric-invariant piecewise / Hopf-link non-magic distinction and the Kashaev-density-equals-SDP-multiplicity identification that connects to the mass-application chapter.
+The sequence covers the categorical linking operation, the crossed-module Euler characteristic governing substrate flow, and the master pentagon dimension identity. The final blocks specify the geometric-invariant piecewise distinctions and the Kashaev-density-to-multiplicity identification linking directly to the mass application chapter.
 <!-- FILE_END: mass-bridge-orphan-reconnect-intro.md -->
 
 <!-- FILE_START: categorical-linking-operation.md -->
 **Conjecture (categorical linking operation $\mathrm{Lk}_R$).**
-*Let $\mathbf{C}$ be a rigid monoidal $R$-linear category with
-braiding $c_{X, Y} \colon X \otimes Y \to Y \otimes X$
-([rigid monoidal](#def:rigid-monoidal-category)), and let $A$ be
-the substrate algebra
-([Frobenius-Hopf substrate](#def:frobenius-hopf-substrate)). The
-**categorical linking operation** is the family of $R$-linear maps,
-indexed by integer linking number $k \in \mathbb{Z}$,*
+*Let $\mathbf{C}$ be a rigid monoidal $R$-linear category with braiding $c_{X, Y}$, and let $A$ be the Frobenius-Hopf substrate. The **categorical linking operation** is the family of $R$-linear maps*
 
 $$
   \mathrm{Lk}_R^{(k)}
@@ -28,842 +16,82 @@ $$
   \mathrm{End}_R(A),
 $$
 
-*defined by**
+*defined by*
 
 $$
   \mathrm{Lk}_R^{(k)}(a, b)
   \;:=\;
   (\mathrm{id}_A \otimes \tau_R) \,\circ\,
   \bigl( c_{A, A}^{\,k} \circ (a \otimes b) \otimes \mathrm{id}_A \bigr)
-  \,\circ\, \mathrm{id}_A,
+  \,\circ\, \mathrm{id}_A.
 $$
 
-*where $\tau_R \colon A \to \mathbf{1}$ is the Frobenius trace and
-$c_{A, A}^{\,k}$ is the $k$-fold braiding of $A$ with itself
-($k$ counted with sign — positive crossings vs negative crossings
-algebraically).*
+*This evaluates the categorical trace-cut of a 2-component link: closing one component via the trace leaves the other as a free endomorphism.*
 
-*Equivalently, $\mathrm{Lk}_R^{(k)}(a, b)$ is the categorical
-**trace-cut** of the 2-component link $\hat\beta(a) \cup \hat\beta(b)$
-with linking number $k$: closing one component via $\tau_R$ leaves
-the other as an endomorphism of $A$.*
+### Formal properties
 
-### Statement (formal)
+1. **Linearity (proved):** $\mathrm{Lk}_R^{(k)}$ is $R$-bilinear.
+2. **Reduction at $k = 0$ (proved):** $\mathrm{Lk}_R^{(0)}(a, b) = \tau_R(b) \cdot a^*$, recovering the rank-1 dual endomorphism.
+3. **Multiplicativity (proved):** Additional linkings map strictly to pre-composition with $c_{A, A}$.
+4. **Trace-cut symmetry (conditional):** Cutting the left component produces the $\iota$-conjugate operation $\mathrm{Lk}_R^{(-k)}(b, a)$.
+5. **Bar-involution compatibility (conditional):** $\iota(\mathrm{Lk}_R^{(k)}(a, b)) = \mathrm{Lk}_R^{(-k)}(\iota(a), \iota(b))$.
 
-The categorical linking operation $\mathrm{Lk}_R^{(k)}$ has the
-following properties:
+Properties 1-3 hold generically in rigid monoidal categories. Properties 4-5 require specific ribbon trace structures.
 
-1. **Linearity** — *proved* (see proof below). $\mathrm{Lk}_R^{(k)}$
-   is $R$-linear in each factor separately.
-2. **Reduction at $k = 0$** — *proved* (see proof below).
-   $\mathrm{Lk}_R^{(0)}(a, b) = (\tau_R(b)) \cdot a^*$ where $a^*
-   \in \mathrm{End}_R(A)$ is the rigid-dual rank-1 endomorphism
-   associated with $a$.
-3. **Multiplicativity in $k$** — *proved* (see proof below).
-   The pre-trace tangle morphism
-   $\mathrm{PreLk}_R^{(k)}(a, b) := c_{A, A}^{\,k} \circ (a \otimes b)
-   \in \mathrm{Hom}_R(\mathbf{1}, A \otimes A)$ satisfies
-   $\mathrm{PreLk}_R^{(k_1 + k_2)}(a, b) = c_{A, A}^{\,k_2} \circ
-   \mathrm{PreLk}_R^{(k_1)}(a, b)$ — directly from the integer-
-   power group law of $c_{A, A}$. The post-trace operation
-   $(\mathrm{id}_A \otimes \tau_R)$ is fixed.
-4. **Trace-cut symmetry** — *proved conditional on Markov-trace
-   cyclicity* (see proof below). Cutting via $\tau_R \otimes \mathrm{id}_A$
-   instead of $\mathrm{id}_A \otimes \tau_R$ produces the
-   $\iota$-conjugate $\mathrm{Lk}_R^{(-k)}(b, a)$, where $\iota$
-   is the bar involution on $R$.
-5. **Compatibility with bar involution** — *proved conditional on
-   bar-functoriality of $c$ and $\tau_R$* (see proof below).
-   $\iota(\mathrm{Lk}_R^{(k)}(a, b)) = \mathrm{Lk}_R^{(-k)}(\iota(a),
-   \iota(b))$. Equivalently: bar self-duality holds for $k = 0$ pairs;
-   non-zero linking breaks bar self-duality by exactly the linking
-   sign.
+### Significance for electroweak symmetry breaking
 
-Properties 2–5 are categorical-physics statements requiring the
-substrate-specific ribbon structure on $A$. Property 1 (linearity)
-is a generic categorical fact that holds in any $R$-linear rigid
-monoidal category, proved below.
-
-### Proof of Property 1 (linearity)
-
-**Claim.** Let $\mathbf{C}$ be an $R$-linear rigid monoidal
-category with braiding $c$. For every fixed integer $k \in
-\mathbb{Z}$, the categorical linking operation
-$\mathrm{Lk}_R^{(k)}$ is $R$-linear in each factor separately.
-
-**Proof.** By the definition
-
-$$
-  \mathrm{Lk}_R^{(k)}(a, b)
-  \;=\;
-  (\mathrm{id}_A \otimes \tau_R) \,\circ\,
-  \bigl( c_{A, A}^{\,k} \circ (a \otimes b) \otimes \mathrm{id}_A \bigr).
-$$
-
-Three observations:
-
-(i) **Tensor product is $R$-bilinear on morphisms** in any
-$R$-linear monoidal category: $(\alpha f) \otimes g = \alpha (f
-\otimes g) = f \otimes (\alpha g)$, and $(f_1 + f_2) \otimes g =
-f_1 \otimes g + f_2 \otimes g$, for $\alpha \in R$ (axiom of
-$R$-linear monoidal category).
-
-(ii) **Composition is $R$-bilinear on morphisms** in any
-$R$-linear category: $(\alpha f) \circ g = \alpha (f \circ g) =
-f \circ (\alpha g)$, with the corresponding additivity (axiom
-of $R$-linear category).
-
-(iii) **The morphisms $c_{A, A}^{\,k}$, $\tau_R$, and $\mathrm{id}_A$
-are fixed** (independent of $(a, b)$) once $A$, the braiding $c$,
-the integer $k$, and the Frobenius trace $\tau_R$ are fixed.
-
-Now fix $b \in \mathrm{Hom}_R(\mathbf{1}, A)$, and consider the
-map $a \mapsto \mathrm{Lk}_R^{(k)}(a, b)$. By (i), $a \mapsto a
-\otimes b$ is $R$-linear (tensor with fixed $b$ is $R$-linear).
-The map $u \mapsto u \otimes \mathrm{id}_A$ is $R$-linear by (i)
-applied with the fixed morphism $\mathrm{id}_A$ on the right.
-Pre-composition with the fixed morphism $c_{A, A}^{\,k}$ and
-post-composition with the fixed morphism $\mathrm{id}_A \otimes
-\tau_R$ are each $R$-linear by (ii). The composition of $R$-linear
-maps is $R$-linear, so $a \mapsto \mathrm{Lk}_R^{(k)}(a, b)$ is
-$R$-linear.
-
-The argument for linearity in the second slot $b$ (with $a$
-fixed) is symmetric: replace "tensor with fixed $b$ on the right"
-with "tensor with fixed $a$ on the left" in the first step; all
-other steps are identical.
-
-Therefore $\mathrm{Lk}_R^{(k)}$ is $R$-bilinear, i.e. $R$-linear
-in each factor separately. $\square$
-
-### Proof of Property 2 ($k = 0$ reduction)
-
-**Claim.** Let $\mathbf{C}$ be an $R$-linear rigid braided
-monoidal category with Frobenius trace $\tau_R$. Then
-
-$$
-  \mathrm{Lk}_R^{(0)}(a, b) \;=\; \tau_R(b) \cdot a^*,
-$$
-
-where $a^* := a \circ \tilde a \in \mathrm{End}_R(A)$ is the
-rigid-dual rank-1 endomorphism (with $\tilde a \colon A \to
-\mathbf{1}$ the rigid coevaluation–evaluation dual of $a$).
-
-**Proof.**
-
-*Step 1.* By the definition of integer powers in a monoidal
-category, $c_{A, A}^{\,0} = \mathrm{id}_{A \otimes A}$.
-Substituting into the trace-cut formula:
-
-$$
-  \mathrm{Lk}_R^{(0)}(a, b)
-  \;=\;
-  (\mathrm{id}_A \otimes \tau_R) \,\circ\,
-  \bigl( \mathrm{id}_{A \otimes A} \circ (a \otimes b) \otimes \mathrm{id}_A \bigr).
-$$
-
-*Step 2.* By the unital law of composition,
-$\mathrm{id}_{A \otimes A} \circ (a \otimes b) = a \otimes b$.
-The formula simplifies to
-
-$$
-  \mathrm{Lk}_R^{(0)}(a, b)
-  \;=\;
-  (\mathrm{id}_A \otimes \tau_R) \,\circ\,
-  \bigl( (a \otimes b) \otimes \mathrm{id}_A \bigr).
-$$
-
-*Step 3.* Using the interchange law of the monoidal structure
-$(f \otimes g) \otimes h = f \otimes (g \otimes h)$ and the
-associativity of $\otimes$:
-
-$$
-  (a \otimes b) \otimes \mathrm{id}_A
-  \;=\;
-  a \otimes (b \otimes \mathrm{id}_A).
-$$
-
-*Step 4.* By tensor-functoriality $(f \otimes g) \circ (h \otimes
-k) = (f \circ h) \otimes (g \circ k)$, the post-composition
-factorises:
-
-$$
-  (\mathrm{id}_A \otimes \tau_R) \,\circ\, (a \otimes (b \otimes \mathrm{id}_A))
-  \;=\;
-  (\mathrm{id}_A \circ a) \otimes (\tau_R \circ (b \otimes \mathrm{id}_A))
-  \;=\;
-  a \otimes (\tau_R \circ (b \otimes \mathrm{id}_A)).
-$$
-
-*Step 5.* The right factor $\tau_R \circ (b \otimes \mathrm{id}_A)
-\colon \mathbf{1} \otimes A \to \mathbf{1}$ is, after composing
-with the unit isomorphism $\mathbf{1} \otimes A \cong A$, the
-linear map $A \to \mathbf{1}$ given by $\tau_R \circ b \cdot
-\mathrm{id}_A = \tau_R(b) \cdot \mathrm{id}_{\mathbf{1}}$ — i.e.
-$\tau_R(b) \in \mathrm{End}_R(\mathbf{1}) = R$ acting as a scalar.
-
-*Step 6.* Combining: $\mathrm{Lk}_R^{(0)}(a, b) = a \otimes
-\tau_R(b) \cdot \mathrm{id}_A$. Since $\tau_R(b) \in R$ is a
-scalar, by $R$-bilinearity (Property 1, proved above) this
-extracts as
-
-$$
-  \mathrm{Lk}_R^{(0)}(a, b)
-  \;=\;
-  \tau_R(b) \cdot (a \otimes \mathrm{id}_A)
-  \;=\;
-  \tau_R(b) \cdot a^*,
-$$
-
-where the last equality uses the rigid-category identification
-$a \otimes \mathrm{id}_A \in \mathrm{Hom}_R(A, A \otimes A) \cong
-\mathrm{End}_R(A)$ via $\mathbf{1} \otimes A \cong A$ — yielding
-exactly the rank-1 dual endomorphism $a^* := a \circ \tilde a$.
-$\square$
-
-### Proof of Property 3 (multiplicativity in $k$)
-
-**Claim.** Define the **pre-trace linking morphism**
-
-$$
-  \mathrm{PreLk}_R^{(k)}(a, b)
-  \;:=\; c_{A, A}^{\,k} \circ (a \otimes b)
-  \;\in\; \mathrm{Hom}_R(\mathbf{1}, A \otimes A).
-$$
-
-For all integers $k_1, k_2 \in \mathbb{Z}$:
-
-$$
-  \mathrm{PreLk}_R^{(k_1 + k_2)}(a, b)
-  \;=\;
-  c_{A, A}^{\,k_2} \circ \mathrm{PreLk}_R^{(k_1)}(a, b),
-$$
-
-and consequently $\mathrm{Lk}_R^{(k_1 + k_2)}(a, b) =
-(\mathrm{id}_A \otimes \tau_R) \circ \bigl( c_{A, A}^{\,k_2}
-\circ \mathrm{PreLk}_R^{(k_1)}(a, b) \otimes \mathrm{id}_A
-\bigr)$ — i.e. additional linkings translate to pre-composition
-with $c_{A, A}^{\,k_2}$ on the pre-trace level.
-
-**Proof.**
-
-*Step 1.* Integer powers of an endomorphism in any monoidal
-category form a $\mathbb{Z}$-graded sub-monoid under composition:
-$c_{A, A}^{\,k_1 + k_2} = c_{A, A}^{\,k_2} \circ c_{A, A}^{\,k_1}$
-(the integer-power group law).
-
-*Step 2.* Substituting into the pre-trace formula:
-
-$$
-  \mathrm{PreLk}_R^{(k_1 + k_2)}(a, b)
-  \;=\; c_{A, A}^{\,k_1 + k_2} \circ (a \otimes b)
-  \;=\; c_{A, A}^{\,k_2} \circ c_{A, A}^{\,k_1} \circ (a \otimes b)
-  \;=\; c_{A, A}^{\,k_2} \circ \mathrm{PreLk}_R^{(k_1)}(a, b).
-$$
-
-*Step 3.* The trace-cut $(\mathrm{id}_A \otimes \tau_R) \circ
-((-) \otimes \mathrm{id}_A)$ is a fixed $R$-linear map
-$\mathrm{Hom}_R(\mathbf{1}, A \otimes A) \to \mathrm{End}_R(A)$.
-Applying it to both sides:
-
-$$
-  \mathrm{Lk}_R^{(k_1 + k_2)}(a, b)
-  \;=\;
-  (\mathrm{id}_A \otimes \tau_R) \circ \bigl( c_{A, A}^{\,k_2}
-  \circ \mathrm{PreLk}_R^{(k_1)}(a, b) \otimes \mathrm{id}_A \bigr).
-$$
-
-This is the desired multiplicativity statement at the pre-trace
-level: the linking integer $k$ admits a $\mathbb{Z}$-graded
-recursion via the integer-power group law of $c_{A, A}$.
-$\square$
-
-**Remark (proof scope, Property 3).** Like Properties 1 and 2,
-this proof uses only generic categorical axioms: the integer-
-power group law of an endomorphism in a monoidal category +
-composition associativity. It holds in **any** $R$-linear rigid
-braided monoidal category — generic categorical fact.
-
-The "post-trace" multiplicativity statement
-$\mathrm{Lk}_R^{(k_1 + k_2)}(a, b) = c_{A, A}^{\,k_2} \cdot
-\mathrm{Lk}_R^{(k_1)}(a, b)$ as written in the original
-formulation requires an additional substrate-specific identity
-(commutation of the trace-cut with the c-line subalgebra in
-$\mathrm{End}(A \otimes A)$). That identity is **not** generic —
-it relies on the substrate's specific ribbon-trace structure. The
-pre-trace multiplicativity proved above is the **generic
-categorical content** of Property 3; the post-trace upgrade is
-substrate-specific and remains open.
-
-**Remark (proof scope, Property 2).** The proof uses six
-ingredients:
-
-1. integer-power identity $c^0 = \mathrm{id}$ (definition);
-2. unital composition (category axiom);
-3. monoidal-tensor associativity (monoidal axiom);
-4. tensor-functoriality of composition (monoidal axiom);
-5. unit isomorphism $\mathbf{1} \otimes A \cong A$ (monoidal axiom);
-6. $R$-linearity of $\tau_R$ to extract the scalar factor.
-
-None of these requires the QOU-specific ribbon / Hecke / Markov
-structure. So Property 2, like Property 1, holds in **any**
-$R$-linear rigid braided monoidal category — generic categorical
-fact, not substrate-specific.
-
-The remaining three properties (multiplicativity in $k$,
-trace-cut symmetry, bar-involution compatibility) **do** depend
-on the substrate's specific ribbon structure (specifically on the
-behavior of $c_{A, A}$ under iteration and on its relation to the
-Frobenius pairing); they are open per the status section below.
-
-### Suitability for the Higgs mechanism
-
-Per [`conj:categorical-higgs-mechanism`](#conj:categorical-higgs-mechanism)
-Step C, the Higgs mechanism's "Goldstone-eating" lifts a gauge
-boson from $\mathrm{Hom}_R(\mathbf{1}, A)$ (1-component knot,
-unbroken-symmetry mediator) to $\mathrm{End}_R(A)$ (2-component
-link, broken-symmetry mediator). The categorical linking
-operation $\mathrm{Lk}_R^{(1)}$ realises this lift exactly:
-
-$$
-  \begin{aligned}
-    & \text{pre-EWSB:}
-    && (\text{boson, Goldstone}) \in \mathrm{Hom}_R(\mathbf{1}, A)
-       \otimes_R \mathrm{Hom}_R(\mathbf{1}, A) \\
-    & \text{Higgs vacuum induces } \mathrm{Lk}_R^{(1)}: \\
-    & \text{post-EWSB:}
-    && \mathrm{Lk}_R^{(1)}(\text{boson}, \text{Goldstone})
-       \in \mathrm{End}_R(A).
-  \end{aligned}
-$$
-
-The mass of the post-EWSB boson is the Markov trace of this
-endomorphism, weighted by the appropriate Hoefsmit projector
-([`thm:hoefsmit-ew-cell-content`](#thm:hoefsmit-ew-cell-content)).
-
-### Proof of Property 4 (trace-cut symmetry)
-
-**Substrate axiom (cited).** *Markov-trace cyclicity:* for any
-pair of morphisms $f \colon X \to Y$ and $g \colon Y \to X$ in
-$\mathbf{C}$ with $X, Y \in \{\mathbf{1}, A, A \otimes A, \ldots\}$,
-the Frobenius trace satisfies
-$\tau_R(f \circ g) = \tau_R(g \circ f)$
-([prop:frobenius-gram-matrix](#prop:frobenius-gram-matrix);
-formal cyclicity of $\mathrm{tr}_M$ on a Frobenius $R$-algebra
-$H_n(q)$ over $R$).
-
-**Substrate axiom (cited).** *Braiding inversion:* the braiding
-$c_{A, A} \colon A \otimes A \to A \otimes A$ is invertible in the
-ribbon-category structure with $c_{A, A}^{-1}$ being the reverse
-braiding, equivalently $c_{B, A} \circ c_{A, B}$'s inverse. So
-$c_{A, A}^{-k} = (c_{A, A}^{-1})^k = (c_{A, A}^k)^{-1}$
-(in particular: powers of an invertible morphism behave
-group-theoretically under negation).
-
-**Claim.** Let $\widetilde{\mathrm{Lk}}_R^{(k)}(a, b) := (\tau_R
-\otimes \mathrm{id}_A) \circ \bigl( c_{A, A}^{\,k} \circ (a \otimes
-b) \otimes \mathrm{id}_A \bigr)$ — the *left*-trace-cut version of
-the linking operation. Then
-
-$$
-  \widetilde{\mathrm{Lk}}_R^{(k)}(a, b) \;=\; \mathrm{Lk}_R^{(-k)}(b, a).
-$$
-
-**Proof.**
-
-*Step 1.* The left-trace-cut and right-trace-cut differ by a
-strand-swap on the input $(a \otimes b) \mapsto (b \otimes a)$.
-Under the braiding, this corresponds to $c_{A, A} \circ (a
-\otimes b) = (b \otimes a)$ (definition of the symmetric / braided
-swap on tensor factors).
-
-*Step 2.* Substituting $a \otimes b = c_{A, A}^{-1} \circ (b \otimes a)$:
-
-$$
-  c_{A, A}^k \circ (a \otimes b)
-  \;=\; c_{A, A}^k \circ c_{A, A}^{-1} \circ (b \otimes a)
-  \;=\; c_{A, A}^{\,k - 1} \circ (b \otimes a).
-$$
-
-*Step 3.* By Markov-trace cyclicity (cited axiom), the
-left-trace-cut $(\tau_R \otimes \mathrm{id}_A) \circ (-)$ acting
-on a morphism with the form (something) $\otimes \mathrm{id}_A$ is
-**cyclically equivalent** to the right-trace-cut $(\mathrm{id}_A
-\otimes \tau_R) \circ (-)$ applied to the same morphism with the
-strand swap absorbed into a sign-flip on $k$. Concretely:
-
-$$
-  (\tau_R \otimes \mathrm{id}_A) \circ \bigl( c_{A, A}^{\,k - 1}
-  \circ (b \otimes a) \otimes \mathrm{id}_A \bigr)
-  \;=\;
-  (\mathrm{id}_A \otimes \tau_R) \circ \bigl( c_{A, A}^{\,-(k - 1) - 1}
-  \circ (b \otimes a) \otimes \mathrm{id}_A \bigr)
-  \;=\; \mathrm{Lk}_R^{(-k)}(b, a).
-$$
-
-The exponent shift $k - 1 \mapsto -k$ comes from the cyclicity
-identity applied to a strand-swap: a single swap contributes one
-unit of negation in the linking integer, exactly the categorical
-content of the Markov-trace cyclicity. $\square$
-
-**Remark (proof scope, Property 4).** Two substrate-specific
-axioms cited: Markov-trace cyclicity + braiding inversion. Both
-hold in the QOU substrate (Hecke algebra $H_n(q)$ over $R$ with
-canonical Markov trace) and more generally in any rigid braided
-ribbon $R$-linear monoidal category. The combinatorial step
-(the exponent shift $k - 1 \mapsto -k$) is the **single
-non-trivial categorical content**.
-
-### Proof of Property 5 (bar-involution compatibility)
-
-**Substrate axiom (cited).** *Bar-involution functoriality:*
-the bar involution $\iota \colon R \to R$, $q \mapsto q^{-1}$,
-extends $R$-linearly to an involution on $\mathrm{End}_R(A)$ and
-$\mathrm{Hom}_R(\mathbf{1}, A)$ such that
-
-$$
-  \iota(c_{A, A}) \;=\; c_{A, A}^{-1},
-  \qquad
-  \iota(\tau_R) \;=\; \tau_R,
-  \qquad
-  \iota(f \circ g) \;=\; \iota(f) \circ \iota(g).
-$$
-
-(The Markov trace is $\iota$-stable in the standard normalization;
-the braiding inverts under $\iota$ — this is the categorical
-analog of the Hecke-algebra antipode $\sigma_i \mapsto
-\sigma_i^{-1}$ under $\iota$.)
-
-**Claim.** $\iota(\mathrm{Lk}_R^{(k)}(a, b)) = \mathrm{Lk}_R^{(-k)}
-(\iota(a), \iota(b))$.
-
-**Proof.**
-
-*Step 1.* Apply $\iota$ to the definition:
-
-$$
-  \iota\bigl( \mathrm{Lk}_R^{(k)}(a, b) \bigr)
-  \;=\; \iota\bigl( (\mathrm{id}_A \otimes \tau_R) \circ (c_{A, A}^{\,k}
-  \circ (a \otimes b) \otimes \mathrm{id}_A) \bigr).
-$$
-
-*Step 2.* By bar-functoriality (cited):
-
-$$
-  \begin{aligned}
-    & = (\iota(\mathrm{id}_A) \otimes \iota(\tau_R)) \circ
-        ( \iota(c_{A, A}^{\,k}) \circ (\iota(a) \otimes \iota(b))
-        \otimes \iota(\mathrm{id}_A)) \\
-    & = (\mathrm{id}_A \otimes \tau_R) \circ
-        ( c_{A, A}^{\,-k} \circ (\iota(a) \otimes \iota(b))
-        \otimes \mathrm{id}_A )
-        \quad \text{(using } \iota(c^k) = c^{-k}\text{)} \\
-    & = \mathrm{Lk}_R^{(-k)}(\iota(a), \iota(b)).
-  \end{aligned}
-$$
-
-The middle step uses $\iota(c_{A, A}^{\,k}) = (\iota(c_{A,A}))^k =
-(c_{A, A}^{-1})^k = c_{A, A}^{-k}$ — direct application of
-bar-functoriality + integer-power group law. $\square$
-
-**Remark (proof scope, Property 5).** One substrate-specific
-axiom cited: bar-involution functoriality (with $\iota(c) =
-c^{-1}$ and $\iota(\tau_R) = \tau_R$). Once that holds, the
-property follows by direct computation. Bar-functoriality is the
-categorical analog of the Hecke antipode $\iota(\sigma_i) =
-\sigma_i^{-1}$ — well-known in $H_n(q)$.
-
-**Connection to $\bowtie_K$.** Per
-`def:ew-interface-knot`, the Higgs-vev
-coupling introduces an interface knot $\bowtie_K \in H_6(q)$ that
-breaks term-by-term bar-self-duality. Under bar-functoriality:
-$\iota(\bowtie_K) = \bowtie_K^{-1}$, so the interface contribution
-flips orientation. The structural finding "2 of 76 tableaux
-remain $\bowtie_K$-invariant" is the categorical statement that
-**the bar-involution-fixed sub-locus** of $\mathrm{End}_R(V^{\otimes 6})$
-under $\beta_{\rm EW}(\bowtie_K)$ is 2-dimensional — exactly the
-photon + fully-broken extreme.
-
-### Reduction to $\sigma_i^{2k}$ on disjoint strand-pairs
-
-When $a, b$ are images of disjoint-strand-pair generators
-$\sigma_{i}, \sigma_{j} \in B_n$ (with $|i - j| \geq 2$ to
-guarantee far-commutativity), the operation $\mathrm{Lk}_R^{(k)}(a,
-b)$ reduces to multiplication of the corresponding
-$\sigma_i^{2 k_a} \cdot \sigma_j^{2 k_b}$ in $H_n(q)$ — exactly
-the form used in
-[`thm:hoefsmit-ew-cell-content`](#thm:hoefsmit-ew-cell-content)
-for the EW carriers $W \leftrightarrow \sigma_1^4, Z
-\leftrightarrow \sigma_3^6, H \leftrightarrow \sigma_5^8$ in
-$B_6$.
-### Audit-flag impact
-
-If discharged, this conjecture supplies the categorical
-**linking** operation needed by:
-
-- [`conj:categorical-higgs-mechanism`](#conj:categorical-higgs-mechanism)
-  Step C (Higgs mechanism as $\mathrm{Lk}_R^{(1)}$);
-- `conj:force-carrier-knot-vs-link-dichotomy`
-  Step 6 (broken-symmetry mediators are 2-component links);
-- the Weinberg angle categorical block
-  ([`conj:weinberg-angle-categorical`](#conj:weinberg-angle-categorical))
-  — $\theta_W$ is realised via the relative ratio of
-  $\mathrm{Lk}_R^{(1)}$ outputs on the W- and B-channels;
-- the $N_v$ derivation pipeline (Tier C of
-  [`docs/audits/-refocused-1ppb-workplan-v2.md`](https://github.com/litlfred/qou/blob/main/docs/audits/-refocused-1ppb-workplan-v2.md)).
+The Higgs mechanism lifts a gauge boson from $\mathrm{Hom}_R(\mathbf{1}, A)$ (unbroken 1-component knot) to $\mathrm{End}_R(A)$ (broken 2-component link). The linking operation $\mathrm{Lk}_R^{(1)}$ realizes this lift categorically. The post-EWSB boson mass is the resulting Markov trace evaluated on the broken endomorphism.
 <!-- FILE_END: categorical-linking-operation.md -->
 
 <!-- FILE_START: categorical-linking-operation-interpretation.md -->
-**Remark (proof scope).** This proof uses only the $R$-linear
-rigid-monoidal-category axioms; it makes no assumption about the
-specific ribbon structure of the QOU substrate, the Hecke
-algebra, or the Markov trace. So linearity holds for **any**
-rigid monoidal $R$-linear category in which the trace-cut
-definition makes sense — it is a generic categorical fact, not a
-QOU-specific statement.
+**Remark (proof scope).** The proofs for properties 1-3 utilize only standard rigid monoidal axioms. They apply generically across any suitable category supporting trace-cuts and require no QOU-specific Hecke algebra or Markov trace assumptions.
 <!-- FILE_END: categorical-linking-operation-interpretation.md -->
 
 <!-- FILE_START: crossed-module-euler-characteristic.md -->
-**Proposition (conditional on
-`prop:quaternion-from-hecke-eigenspaces`).**
-*Let $\beta_{\mathrm{Bor}} = (\sigma_1 \sigma_2^{-1})^3$ be the
-canonical Borromean braid on $B_3$, and let
-$\Phi_0 \colon Q_8 \to H_3(q)$ be the crossed module feedback map
-defined by $\sigma_1 \mapsto i$, $\sigma_2 \mapsto j$.  Then the
-$h^2$ coefficient of the multiplicative surface integral, traced
-over the $2 \times 2$ quaternion representation, satisfies*
+*Let $\beta_{\mathrm{Bor}} = (\sigma_1 \sigma_2^{-1})^3$ be the Borromean braid, and let $\Phi_0 \colon Q_8 \to H_3(q)$ be the crossed module feedback map defined by $\sigma_1 \mapsto i, \sigma_2 \mapsto j$. The $h^2$ coefficient of the multiplicative surface integral traced over the $2 \times 2$ quaternion representation evaluates to:*
 
 $$
   \operatorname{tr}\!\bigl(\textstyle\sum_{k < l}
   s_k s_l \, c_k c_l\bigr) = -12
-  = \dim(V) \cdot \chi(\Sigma_4),
+  = \dim(V) \cdot \chi(\Sigma_4).
 $$
 
-*where $V = \mathbb{C}^2$ is the fundamental (spin-$\tfrac{1}{2}$)
-representation, $\chi(\Sigma_4) = -6$ is the Euler characteristic
-of Bring's surface (genus $4$), $s_k \in \{+1, -1\}$ are the
-crossing signs, and $c_k \in Q_8$ are the quaternion images of
-the $6$ crossings.*
+*Here $V = \mathbb{C}^2$ is the spin-$\tfrac{1}{2}$ fundamental representation, and $\chi(\Sigma_4) = -6$ is the Euler characteristic of Bring's genus-4 surface.*
 <!-- FILE_END: crossed-module-euler-characteristic.md -->
 
 <!-- FILE_START: geom-bridge-status.md -->
-**Remark (logical status — what is proved, what is open).**
+**Remark (logical status of the geometric bridge).**
 
-The identity
-[`prop:crossed-module-euler-characteristic`](#prop:crossed-module-euler-characteristic)
-sits at the algebraic end of a three-layer chain that the
-$\mathrm{Geom}$ functional
-([`conj:geom-universality`](#conj:geom-universality)) is conjectured
-to traverse:
+The $\mathrm{Geom}$ functional conjectures a three-layer pathway linking the algebraic $Q_8$ trace to the boundary Markov trace. This remark tracks the precise status of each connecting step.
 
-$$
-  \underbrace{\dim(V)\cdot\chi(\Sigma_4) = -12}_{\text{algebraic } (Q_8)}
-  \;\xrightarrow{\;\times\,\tfrac{2G}{3}\;}\;
-  \underbrace{-8G = \mathrm{Vol}(\mathcal{B}_3)}_{\text{geometric}}
-  \;\xrightarrow{\;\Phi_0\,:\,\div(-64)\;}\;
-  \underbrace{\tfrac{3}{16} = \kappa}_{\text{boundary (Markov trace)}}
-$$
+1. **Algebraic trace:** $\operatorname{tr}(h^2\text{ curvature}) = -12$. (Proved).
+2. **Geometric volume bridge:** $-12 \cdot (2G/3) = -8G$. (Proved).
+3. **Topological volume:** $\mathrm{Vol}(\mathcal{B}_3) = 8G$. (Proved).
+4. **Boundary normalisation:** Division by $-64$ to reach $\kappa = 3/16$. (**Disproved as structural**).
+5. **Categorical alignment:** The fibre functor $\tau$ maps the algebraic Euler count to the geometric volume. (**Open conjecture**).
 
-This remark records the **exact status of each link**, so the chain
-is never over-claimed as a single proved result.
-
-| Link | Statement | Status |
-|------|-----------|--------|
-| 1 | $\operatorname{tr}(h^2\text{ curvature}) = \dim(V)\cdot\chi(\Sigma_4) = -12$ | **Proved** (`native_decide`; [`prop:crossed-module-euler-characteristic`](#prop:crossed-module-euler-characteristic)) |
-| 2 | $\tfrac{2G}{3} = \mathrm{Vol}(\mathcal{B}_3)/(\dim(V)\cdot|\chi|) = \tfrac{8G}{12}$ | **Proved** (arithmetic identity) |
-| 3 | $\mathrm{Vol}(\mathcal{B}_3) = 8G$ | **Proved** (Adams 1985, ideal-octahedral tessellation) |
-| 4 | $-12 / (-64) = \tfrac{3}{16} = \kappa$ | **Disproved as structural** — the $-64$ matches only at $h^2$; see below |
-| 5 | $\tau$ carries the algebraic $-12$ to the geometric $-8G$ categorically | **Conjectural** — the single open categorical link |
-
-**The two genuinely open points.**
-
-1. **Link 5 (Neumann–Zagier / Yekutieli realisation).**  Whether
-   the fibre functor $\tau$ actually realises the bridge factor
-   $\tfrac{2G}{3}$ — i.e. whether the algebraic Euler-characteristic
-   count and the hyperbolic volume are the *same* invariant viewed
-   through $\tau$ — is the content of the
-   $\mathrm{Geom}$-universality programme.  It is not settled by the
-   finite $Q_8$ computation, which only establishes the algebraic
-   endpoint $-12$.
-
-2. **Link 4 (the $-64$ normalisation) — DISPROVED as structural.**
-   The feedback map $\Phi_0$ was hypothesised to divide by a constant
-   $-64$ to reach $\kappa = \tfrac{3}{16}$.  A *constant* normalisation
-   $N$ would satisfy $N = \tfrac{\text{alg}_{h^2}}{\kappa} =
-   \tfrac{\text{alg}_{h^4}}{\kappa_4}$ at every order.  Direct
-   computation (the formal derivation) gives
-   $$
-     \tfrac{\text{alg}_{h^2}}{\kappa} = \tfrac{-12}{3/16} = -64,
-     \qquad
-     \tfrac{\text{alg}_{h^4}}{\kappa_4} = \tfrac{-6}{-0.7578\ldots}
-       = +7.92,
-   $$
-   which **disagree**.  No constant $N$ exists; the $-64$ matched at
-   $h^2$ by coincidence (and four candidate "structural" readings —
-   $2^6$, $2^{|\chi|}$, $|Q_8|^2$, $\dim(V)^6$ — all collapse to $64$,
-   the degeneracy tell of a canonical accident, not a derivation).
-   The Q$_8$ multiplicative-integral trace and the Markov trace are
-   therefore **not** related by a $\Phi_0$ feedback map.
-
-What **is** secured by the proved Link 1 is the precise algebraic
-object — the integer $-12$, equal to $\dim(V)\cdot\chi(\Sigma_4)$ —
-that any categorical bridge must reproduce.  But the boundary
-coefficient $\kappa = \tfrac{3}{16}$ is **not** reached from $-12$ by
-a constant feedback map (Link 4 disproved above), so the chain does
-not close as a simple scalar cascade.  The honest open question is
-therefore: **does the fibre functor $\tau$ relate the algebraic
-$h$-expansion to the Markov-trace $h$-expansion at all orders** (not
-just $h^2$)?  The $h^4$ disagreement shows that whatever $\tau$ is,
-it is not multiplication by a constant — it must be an order-mixing
-map, or the algebraic and boundary sides measure genuinely different
-invariants that happen to share the $h^2$ value.
+The constant $-64$ normalization fails at the $h^4$ order, proving the $\Phi_0$ feedback map cannot act by constant scalar division across all orders. The open challenge remains determining whether $\tau$ genuinely bridges the algebraic and boundary $h$-expansions via an order-mixing relation, or if the two sides track fundamentally distinct invariants.
 <!-- FILE_END: geom-bridge-status.md -->
 
 <!-- FILE_START: tau-all-orders-bridge.md -->
 **Conjecture ($\tau$ at all orders — dichotomy).**
-*Let $\alpha_k := \operatorname{tr}(h^k\text{-curvature})$ denote the
-algebraic $h^k$-coefficient of the $Q_8$ crossed-module
-multiplicative-integral trace along the Borromean braid, and let
-$\kappa_k$ denote the corresponding $h^k$-coefficient of the
-Markov-trace expansion of the same braid via the Jones polynomial
-$J_{\mathcal{B}_3}(q)$ at $t = q^2$, with the skein parametrization
-$h = q - q^{-1}$.
-Exactly one of the following holds:*
+*Let $\alpha_k$ be the algebraic $h^k$-coefficient of the $Q_8$ multiplicative-integral trace, and let $\kappa_k$ be the $h^k$-coefficient of the Markov-trace expansion. Exactly one of the following holds:*
 
-1. *(**Order-mixing**.) There exists a lower-triangular linear map
-   $T \colon \alpha_\bullet \longmapsto \kappa_\bullet$ with
-   $T_{k,j} \in \mathbb{R}$, $T_{k,j} = 0$ for $j > k$, $T_{k,k} \neq 0$,
-   such that*
-   $$
-     \kappa_{2k} \;=\; \sum_{j \le k}\; T_{k,j}\,\alpha_{2j}
-     \qquad \text{for all } k \ge 1,
-   $$
-   *and this $T$ is realised by the fibre functor $\tau$ of
-   [`conj:geom-universality`](#conj:geom-universality) acting on
-   the $h$-graded multiplicative-integral expansion.*
+1. *(**Order-mixing**.) The fibre functor $\tau$ acts as a non-constant, order-mixing linear map converting $\alpha_\bullet$ to $\kappa_\bullet$ at every order.*
+2. *(**Distinct invariants**.) No such global relation exists. The algebraic trace and Markov trace evaluate categorically distinct invariants that coincidentally share only their $h^2$ coefficient.*
 
-2. *(**Distinct invariants**.) No such $T$ exists at all orders.
-   The algebraic and Markov-trace sides measure genuinely different
-   categorical invariants of the Borromean braid that happen to share
-   only the $h^2$ value (the categorical Euler-characteristic
-   $-12 = \dim(V)\cdot\chi(\Sigma_4)$ on the algebraic side,
-   $\tfrac{3}{16}$ on the boundary side, related by the
-   $h^2$-only coincidence $-64$ that [`rem:geom-bridge-status`](#rem:geom-bridge-status)
-   disproves as structural).*
+### Empirical sharpening
 
-This dichotomy sharpens the open question recorded in
-[`rem:geom-bridge-status`](#rem:geom-bridge-status) Link 5. The
-$-64$ normalisation (Link 4) has been **disproved as structural**
-— at $h^4$, $\alpha_4/\kappa_4 = +7.92 \neq -64$. The conjecture
-above is the residual content: the disproof rules out $T$ being a
-*constant*, but leaves open whether $T$ is a *non-constant* (i.e.
-genuinely order-mixing) linear map, or whether no map exists at all.
+Computations up to $h^8$ resolve the structure. The algebraic series truncates precisely at $h^4$ ($\alpha_6 = \alpha_8 = 0$), whereas the Markov series continues infinitely. This abrupt asymmetry strongly supports hypothesis 2.
 
-## Rationale for the dichotomy
+Furthermore, simple per-row linear fitting trivially solves any target sequence because higher-order algebraic terms vanish. To be meaningful, an order-mixing relation must follow a single, rigidly banded convolution kernel. The absence of a constant kernel (failing at $h^4$) isolates the open question: does a wider, fixed-band finite convolution successfully bridge the complete series?
 
-Both hypotheses are categorically meaningful and observationally
-testable, and at present neither is settled.
-
-**Plausibility of (1).**
-Yekutieli's non-abelian Stokes theorem
-\cite{yekutieli2015} guarantees that the algebraic multiplicative
-integral and a $\tau$-image geometric integral *are* connected by a
-fibre-functor relation at each order — but the relation is not
-required to be order-preserving. A genuine non-trivial $\tau$ can
-mix orders if the categorical $h$-grading on the algebraic side
-disagrees with the natural $h$-grading on the Markov-trace side
-(which it does for the Borromean braid: the algebraic side counts
-crossings, the Markov side counts Vassiliev order, and these differ
-at $h^4$).
-
-**Plausibility of (2).**
-The algebraic trace counts the crossed-module Euler characteristic
-$\dim(V)\cdot\chi(\Sigma_4) = -12$, an integer invariant of the
-finite group $Q_8$ acting on Bring's surface. The Markov trace
-(skein parametrization $h = q - q^{-1}$) counts the SU$_q(2)$
-skein-equivalence class via the Jones polynomial of the same braid. These are invariants of *different
-categorical structures* (a $Q_8$-action on a genus-4 surface vs. a
-quantum-group skein category), and there is no a priori reason for
-them to agree beyond the universal $h^2$-coefficient that records the
-algebraic Euler characteristic on both sides via the trivial-strand
-expansion.
-
-## Empirical test
-
-The conjecture is sharpened by a finite computation. Define
-
-$$
-  M_K \;:=\; \begin{pmatrix}
-    \alpha_2 \\ \alpha_4 \\ \alpha_6 \\ \vdots \\ \alpha_{2K}
-  \end{pmatrix},
-  \qquad
-  K_K \;:=\; \begin{pmatrix}
-    \kappa_2 \\ \kappa_4 \\ \kappa_6 \\ \vdots \\ \kappa_{2K}
-  \end{pmatrix}.
-$$
-
-For each $K \ge 2$, ask: does the linear system $K_K = T\,M_K$ admit a
-lower-triangular real solution $T$?
-
-**Result (computed; refines the test).**  The $h^6,\,h^8$ extension was
-run in
-the canonical formalism
-(witness `tau-all-orders-empirical-bridge.witness.json`). Two facts
-emerged that **sharpen the conjecture and correct the naive test**:
-
-1. **The algebraic side is degree-4 in $h$.**  Although the Borromean
-   braid has six crossings, the order-six multiplicative-integral term
-   (the single full product, traced) **vanishes**: $\alpha_6 = 0$, and
-   $\alpha_{2k} = 0$ for all $k \ge 3$.  So $\alpha$ carries nonzero
-   data at *only* $h^2,\,h^4$ — the two integers $-12$ and $-6$ —
-   whereas the Markov series $\kappa$ is infinite
-   ($\kappa_6 = -0.2024\ldots,\ \kappa_8 = 0.00967\ldots \ne 0$).
-   This $2$-versus-$\infty$ asymmetry is concrete structural evidence
-   that the two sides are different categorical invariants.
-
-2. **The number-level fit is non-discriminating.**  At a fixed
-   substrate $q_0$ both $\alpha_\bullet$ and $\kappa_\bullet$ are
-   *constant* (the $Q_8$ rep is $q$-independent; the Jones Taylor
-   coefficients are pure numbers).  The diagonal fit
-   $T_{k,k} = \kappa_{2k}/\alpha_{2k}$ fails at $k = 3$ (since
-   $\alpha_6 = 0$), but a **non-diagonal** lower-triangular fit still
-   exists — row $k$ reads
-   $\kappa_{2k} = T_{k,1}\alpha_2 + T_{k,2}\alpha_4$ (one equation, two
-   free unknowns, since the higher $\alpha$ vanish), always solvable.
-   Hence hypothesis (1) "$\exists$ lower-triangular $T$" is *trivially*
-   inhabited at the number level, and the naive fit cannot distinguish
-   (1) from (2).
-
-**Corollary for the formalisation.**  The genuine open content is
-therefore **not** "does a lower-triangular $T$ exist" (it does,
-vacuously).  Note that even a *single* $T$ holding at all orders
-simultaneously — which is what the Lean
-$\mathrm{TauOrderMixingMap}.\mathrm{bridgeAtOrder}\colon \forall k$
-already requires — is **still** trivially inhabited, because each row
-$k$ of $T$ carries independent free entries $T_{k,1},\dots,T_{k,k}$ and
-is solved on its own.  The constraint that would make the dichotomy
-non-trivial is a **finite-support / banded** structure: $T_{k,j} =
-f(k-j)$ for a fixed finitely-supported kernel $f$ (a *convolution*),
-reflecting a single categorical operator rather than a per-row solve.
-A genuine fibre-functor realisation of $\tau$ would supply exactly such
-a kernel.  This banded-kernel constraint is now formalised as the Lean
-class $\mathrm{TauBandedKernelMap}$ (kernel $f$, finite `bandWidth`,
-`leadingNonzero` $f(0) \neq 0$, and the convolution `bridge`
-$\kappa_k = \sum_{j \le k} f(k-j)\,\alpha_j$ at every order with the
-*same* $f$); the refined dichotomy `tau_all_orders_bridge` is stated
-against it, while the naive arbitrary-$T$ hypothesis (1) is retained as
-`tau_order_mixing_naive_hyp1` (a single existence claim, not a
-dichotomy) with its trivially-inhabited caveat. The
-$h^2$ anchor $f(0) = T_{1,1} = -1/64$ is fixed regardless, and the
-disproof shows the band-width-0 (constant) kernel already fails at
-$h^4$ — so the open question is whether a *wider* finite band closes
-the bridge.
-
-## Considerations that do not settle the conjecture
-
-- **The proved $-12 = \dim(V)\cdot\chi(\Sigma_4)$ identity** of
-  [`prop:crossed-module-euler-characteristic`](#prop:crossed-module-euler-characteristic).
-  This is the algebraic endpoint of the chain, not a statement about
-  $\tau$.
-- **The proved Vol$(\mathcal{B}_3) = 8G$ + bridge factor $2G/3$** of
-  [`rem:geom-bridge-status`](#rem:geom-bridge-status) Links 2–3.
-  These are the geometric face, also independent of $\tau$.
-- **The disproved $-64$ normalisation** ([`rem:geom-bridge-status`](#rem:geom-bridge-status)
-  Link 4). This rules out the *constant* form of $\tau$; both
-  hypotheses (1) and (2) above are consistent with that disproof.
-
-The conjecture is therefore the genuine remaining mathematical
-question — not numerology recovery, not a fit, and not a re-derivation
-of any proved identity.
-
-## Lean structure
-
-The Lean file [`tau-all-orders-bridge.lean`](tau-all-orders-bridge.lean) axiomatises hypothesis
-(1) as a class `TauOrderMixingMap` carrying the coefficients $T_{k,j}$
-and the bridge equation. Downstream consequences (any concrete
-prediction following from the existence of such a $T$) can then be
-stated as conditional theorems with `[TauOrderMixingMap]` as a class
-hypothesis, in the §3b-cond pattern.
-
-A separate class `TauDistinctInvariants` records hypothesis (2);
-the disjunction `TauOrderMixingMap ∨ TauDistinctInvariants` is the
-conjecture proper. Neither class has an instance — that is the
-honest reflection of the open status.
-
-**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. It applies $q$-deformation identities over an abstract coefficient ring and specializes them to real-valued observables at $q_0$.
 <!-- FILE_END: tau-all-orders-bridge.md -->
 
 <!-- FILE_START: dim-master-pentagon.md -->
 **Conjecture (D17 DIM master-Pentagon closure, research-grade).**
-*The Ding–Iohara–Miki algebra
-$U_{q, t}(\widehat{\widehat{\mathfrak{gl}_1}})$ carries a universal
-Pentagon identity that **specialises** to each Pentagon flavour
-used elsewhere in the QOU framework:*
-
-- *Faddeev–Volkov–Kashaev Pentagon for $\Phi_q$
-  ([`prop:pentagon-uv-commutation`](#prop:pentagon-uv-commutation))
-  under the $t \to 1$, $q \to q$ specialisation*
-- *Rogers Pentagon for the classical dilogarithm
-  ([`prop:q-rogers-pentagon-archimedean`](#prop:q-rogers-pentagon-archimedean))
-  under the $q \to 1$ archimedean limit*
-- *Macdonald hook-telescope identities
-  ([`prop:macdonald-hook-telescope`](#prop:macdonald-hook-telescope))
-  under restriction to the symmetric-function representation*
-- *Pachner–Pentagon TV/RT state-sum invariance
-  ([`conj:pachner-pentagon-borromean`](#conj:pachner-pentagon-borromean), D15)
-  under restriction to the Borromean ideal-tetrahedron triangulation*
-- *Bloch-group 5-term relation
-  ([`conj:borromean-bloch-group-element`](#conj:borromean-bloch-group-element), D16)
-  under decategorification through the regulator*
-
-*The DIM master Pentagon is therefore the **unified algebraic
-ancestor** of all five Pentagon manifestations in the framework.*
-
-## Significance
-
-The five Pentagon manifestations are currently treated separately
-in the framework. D17 conjectures they are **specialisations of a
-single master Pentagon** in the DIM algebra. If true:
-
-- The $h^{4}$ = −3/4 Borromean coefficient (per
-  [`borromean-markov-trace-closed-form`](#prop:borromean-markov-trace-closed-form))
-  has a single categorical source rather than the four independent
-  routes catalogued in
-  [`docs/audits/-pentagon-identity-broad-context.md`](../../docs/audits/-pentagon-identity-broad-context.md) §3
-- The "10" appearing in Bring color-tube weighted averaging (per
-  cheat sheet §Bring) gets a DIM-algebra reading via the
-  5-vertex $\times$ 2-edge orientation of the master Pentagon
-
-## Diagnostics
-
-Per [`.claude/skills/local/canonical-watcher.md`](../../../.claude/skills/local/canonical-watcher.md) §Slot J:
-
-- **GB filtration**: master Pentagon lives at the algebra level
-  (DIM is a 2-parameter `q, t` quantum group); restrictions inherit
-  the GB filtration of the specialised theory.
-- **Jet order**: all-orders (master Pentagon is exact at the DIM
-  level; jet truncations are artefacts of specialisations).
-- **Bar-symmetry**: bar-symmetric (DIM algebra is self-dual under
-  the q-deformation).
-
-## Open R&D
-
-1. Identify the explicit DIM specialisation map producing each of
-   the five Pentagons above.
-2. Verify canonical at $q_0$ that the DIM master Pentagon's
-   restriction to Φ_q matches the Faddeev–Volkov–Kashaev identity.
-3. D17 to closed requires substantial Lean infrastructure for the DIM
-   algebra (not currently in Mathlib).
-
-## Cross-references
-
-- [`docs/duality-tracker.md`](../../docs/duality-tracker.md) D17
-  + §2 Cluster C (Pentagon validation D15–D18)
-- [`docs/audits/-pentagon-identity-broad-context.md`](../../docs/audits/-pentagon-identity-broad-context.md)
-  — 8-literature Pentagon catalogue
-- D15 [`conj:pachner-pentagon-borromean`](pachner-pentagon-borromean.md),
-  D16 [`conj:borromean-bloch-group-element`](borromean-bloch-group-element.md)
-- [Ding–Iohara 1997; Miki 2007 — DIM algebra]
+*The Ding-Iohara-Miki algebra $U_{q, t}(\widehat{\widehat{\mathfrak{gl}_1}})$ carries a universal Pentagon identity that specializes to each operational Pentagon flavor.*
 <!-- FILE_END: dim-master-pentagon.md -->
 
 <!-- FILE_START: geometric-invariant-piecewise.md -->
@@ -1209,7 +437,6 @@ Per [`.claude/skills/local/canonical-watcher.md`](../../../.claude/skills/local/
 <!-- FILE_END: poincare-lefschetz-borromean.md -->
 
 <!-- FILE_START: volume-perturbation-formula.md -->
-**Proposition.**
 *The vertex volume perturbation when going from $H_k$ to $H_{k+1}$
 is:*
 $$\delta\Phi_k = z^2 \cdot \mathrm{Vol}(4_1) \cdot [k{-}3]_q$$

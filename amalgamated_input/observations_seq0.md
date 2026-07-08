@@ -1,7 +1,7 @@
 <!-- FILE_START: observations-intro.md -->
-This chapter collects the physical predictions of the Descartes universe and compares them with experimental data. We assume the knot-to-particle mapping and Skein decomposition ([Chapter 9](#chap:brings-surface)), along with the Gröbner--Shirshov reduction engine and Wedderburn mass formula ([Chapter 10](#chap:particle-interactions)). This chapter is observational. We calibrate the substrate parameter $q_0$ from those constructions. The molecular extension ([Chapter 12](#chap:molecular-construction)) builds on this calibrated $q_0$.
+This chapter collects the physical predictions of the Descartes universe and compares them with experimental data. We assume the knot-to-particle mapping and Skein decomposition ([Chapter 9](#chap:brings-surface)), along with the Gröbner--Shirshov reduction engine and Wedderburn mass formula ([Chapter 10](#chap:particle-interactions)). We calibrate the substrate parameter $q_0$ from those constructions. The molecular extension ([Chapter 12](#chap:molecular-construction)) builds on this calibrated $q_0$.
 
-The central result is the substrate consistency window. Multiple independent physical observables (lepton mass ratios, the fine structure constant, proton-to-electron mass ratio, and nuclear binding energies) each determine the substrate parameter $q$. These determinations agree within a narrow interval $q_0 \approx 1.110$. We present particle identification conjectures, CODATA comparisons for fundamental masses, beta decay predictions, and nuclear stability patterns. We also propose experimental tests including crystal resonance, proton radius, and Breit--Wheeler pair creation.
+The central result is the substrate consistency window. Multiple independent physical observables (lepton mass ratios, the fine structure constant, proton-to-electron mass ratio, and nuclear binding energies) each determine the substrate parameter $q$. These determinations agree within a narrow interval $q_0 \approx 1.110$. We present particle identification conjectures, CODATA comparisons for fundamental masses, beta decay predictions, and nuclear stability patterns. We propose experimental tests including crystal resonance, proton radius, and Breit--Wheeler pair creation.
 
 Every numerical prediction uses $\approx$ (not $=$) to indicate that values are derived approximations at $q_0$, not exact identities. We tabulate error terms and percentage deviations from experimental data.
 
@@ -19,11 +19,11 @@ $$
 
 See [Table 1](#tbl:substrate-consistency-window-table1-data).
 
-Three independent sectors of physics—strong (mass ratios), electromagnetic (fine structure constant), and weak (beta decay)—all point to the same $q$. This is the central empirical result of the QOU: the entire Standard Model parameter space collapses to a single point in the consistency window.
+Three independent sectors of physics—strong (mass ratios), electromagnetic (fine structure constant), and weak (beta decay)—all point to the same $q$. This is the central empirical result of the QOU. The entire Standard Model parameter space collapses to a single point in the consistency window.
 
 **Derived quantities within the window.**
 
-All entries below are zero-parameter predictions once $q$ is fixed by any one of the preceding determinations.
+All entries below are zero-parameter predictions once we fix $q$ by any one of the preceding determinations.
 
 *Dimensionless ratios.*
 
@@ -44,8 +44,7 @@ The overdetermination of $q$ acts as the strongest test of the framework. Three 
 <!-- FILE_END: substrate-consistency-window-interpretation.md -->
 
 <!-- FILE_START: three-calibration-discipline.md -->
-**Proposition (Three-calibration discipline).**
-*The QOU framework admits categorically exactly three external calibration inputs. These are the three real degrees of freedom of the first cohomology of Bring's curve, $H^1 = 2W$:*
+*The QOU framework admits exactly three external calibration inputs. These are the three real degrees of freedom of the first cohomology of Bring's curve, $H^1 = 2W$:*
 
 | DOF of $H^1(\text{Bring}) = 2W$ | Canonical observable | What it fixes | Numerical proxy (source) |
 | ------------------------------- | -------------- | ------------- | ------ |
@@ -66,7 +65,7 @@ $$
   Q_X(q) \in \mathbb{Q}(q),
 $$
 
-*with non-negative integer exponents $a(X), c(X)$ determined by the (co)homological grading of the observable $X$. Concretely: $a$ counts mass-scale insertions ($H^0$ — the $W$-plane scale), $c$ counts meson-sector insertions (the orthogonal $m_\pi$ class; $c = 0$ in the baryon sector), and $q_0$ is fixed by the lepton ratio $m_\mu/m_e$ (the $H^1$ $W$-plane modulus, CAL-2 = $\mathfrak{D}_\beta$). The parameter $\mathfrak{Q}_\beta$ is the CAL-2 proxy. It is the bar-odd ($\sinh$) partner of the bar-even ($\cosh$) meson scale $m_\pi$ under the bar-involution $q \mapsto q^{-1}$ ([substrate cohomology calibration story](../mass-theory/substrate-cohomology-calibration-story.md)). It represents the experimental face of the modulus CAL-2 pins. It is not a separate dimensional mass-formula factor.*
+*with non-negative integer exponents $a(X), c(X)$ determined by the (co)homological grading of the observable $X$. Concretely: $a$ counts mass-scale insertions ($H^0$ — the $W$-plane scale), $c$ counts meson-sector insertions (the orthogonal $m_\pi$ class; $c = 0$ in the baryon sector), and $q_0$ is fixed by the lepton ratio $m_\mu/m_e$ (the $H^1$ $W$-plane modulus, CAL-2 = $\mathfrak{D}_\beta$). The parameter $\mathfrak{Q}_\beta$ is the CAL-2 proxy. It is the bar-odd ($\sinh$) partner of the bar-even ($\cosh$) meson scale $m_\pi$ under the bar-involution $q \mapsto q^{-1}$ ([substrate cohomology calibration story](../mass-theory/substrate-cohomology-calibration-story.md)). It represents the experimental face of the modulus that CAL-2 pins. It is not a separate dimensional mass-formula factor.*
 
 ## Discussion
 
@@ -82,7 +81,7 @@ This proposition formalizes the calibration discipline.
      \qquad \mathrm{Vol}(4_1) = 2\Lambda(\pi/3) \approx 2.0299.
    $$
 
-   Inverted for $q_0$, CAL-1 and CAL-2 coordinatize the single modulus $q_0$ one-to-one. The modulus is overdetermined. It can be fixed by $\alpha_{\mathrm{EM}}^{-1}$ or by tritium $t_{1/2}$, which agree on $q_0$ to within 0.3% ([substrate-consistency window](#prop:substrate-consistency-window)). In the Physical-Observations chapter, one may anchor $q_0$ on the proton ratio $m_p/m_e$ for higher precision. This is a substitution within the same overdetermined $H^1$ datum. It does not introduce a new calibration.
+   Inverted for $q_0$, CAL-1 and CAL-2 coordinatize the single modulus $q_0$ one-to-one. The modulus is overdetermined. It can be fixed by $\alpha_{\mathrm{EM}}^{-1}$ or by tritium $t_{1/2}$, which agree on $q_0$ to within 0.3% ([substrate-consistency window](#prop:substrate-consistency-window)). In the observations chapter, one may anchor $q_0$ on the proton ratio $m_p/m_e$ for higher precision. This is a substitution within the same overdetermined $H^1$ datum. It does not introduce a new calibration.
 4. **Audit consequence.** Any predicted mass, binding energy, or Q-value not of the form $m_e^a m_\pi^c \cdot \text{rational}(q_0)$ violates this discipline. It must either introduce a fourth calibration or report a $\tau$-image quantity from the Archimedean side.
 
 ## Audit hook

@@ -172,7 +172,6 @@ This bound is required for compatibility with the gamma-ray-burst time-of-flight
 <!-- FILE_END: dispersion-suppression-scale.md -->
 
 <!-- FILE_START: mass-energy-equivalence.md -->
-**Theorem (mass--energy equivalence).**
 *Let $(\mathbf{C}, \varTheta, G, \mathcal{S})$ be an archimedean quantum observable universe with substrate parameter $q$ and speed of light $c_q = 1/(q-1)$ ([speed of light](#def:information-speed-of-light)). Let $\mathfrak{H}$ be a knot composite in the Frobenius--Hopf object $A$. Then the crossing energy ([crossing energy](#def:crossing-energy)) and the categorical mass ([mass identity](#def:mass-identity)) satisfy*
 
 $$
@@ -246,7 +245,6 @@ The net crossing energy of the pair is $E_{e^-} + E_{e^+} = 3(q - q^{-1}) \appro
 <!-- FILE_END: mass-energy-pair-creation.md -->
 
 <!-- FILE_START: photon-threading-mass.md -->
-**Proposition (mass as photon threading cost).**
 *Let $\mathfrak{H}$ be a knot composite with braid word $\beta_{\mathfrak{H}} \in B_n$. The categorical mass $\mathfrak{m}_{\mathfrak{H}}$ ([mass identity](#def:mass-identity)) equals the total Gröbner--Shirshov reduction cost of threading the photon strand $\gamma$ through the hadron braid:*
 
 $$
@@ -527,132 +525,86 @@ The value $d_H(q_0) = 1.088$ is testable against high-precision transfer-operato
 <!-- FILE_END: julia-hausdorff-dimension-prediction.md -->
 
 <!-- FILE_START: hausdorff-dimension-recurrence.md -->
-The self-consistency condition $G_{\mathrm{Planck}} = 1$ ([gravitational constant](#def:gravitational-constant)), combined with the quadratic-suppression series and the $q$-deformed Lyapunov exponent $\chi_q = 1/(2q-1)$ ([operational entropy](#def:operational-entropy)), determines the **$q$-deformed Hausdorff dimension** as an algebraic function of $q$:
-
-$$
-  d_{H,q} = \frac{(2q - 1)^2}{q^3}.
-$$
-
-This is exact within the $q$-deformed framework. It is a rational function of $q$ defined over any field $k$ with $q \in k^\times$. It differs from the classical Hausdorff dimension $d_H$ of the Julia set $J(f_q)$ over $\mathbb{C}$, which relies on the transcendental topological entropy $\ln 2$. See [operational entropy](#def:operational-entropy) for the detailed comparison.
-
-The formula gives $d_{H,q}(1) = 1$ (unit circle), $d_{H,q} > 1$ for $1 < q < (3+\sqrt{5})/2$, and $d_{H,q} = 1$ again at the golden threshold $q = (3+\sqrt{5})/2 = \varphi^2 \approx 2.618$.
-
-**Derivative and discrete step.**
-The continuous derivative is
-
-$$
-  d_{H,q}'(q) = \frac{(2q-1)(3 - 4q)}{q^4},
-$$
-
-which is negative for $q > 3/4$. Thus, the $q$-deformed fractal dimension decreases as $q$ increases toward the Big Bang (for $q$ in the physical range $q > 1$).
-
-**Discrete recurrence.**
-Taking the natural step size $\delta q = \hbar_q = (q-1)/q$ (one Reeb phase advance in $q$-space), the discrete update per Planck step is
-
 $$
   d_{H,q}^{(n+1)} = d_{H,q}^{(n)} + \frac{(2q_n - 1)(3 - 4q_n)(q_n - 1)}{q_n^5}.
 $$
 
-This defines a contraction mapping for $q > 3/4$. The iteration $d_{H,q} \to d_{H,q} + \Delta d_{H,q}$ flows monotonically toward $d_{H,q} = 0$. The fractal complexity of the Reeb dynamics decreases with increasing $q$, vanishing at $q \to \infty$ (the Big Bang, where the Julia set collapses to a point). The direction of decreasing $d_{H,q}$ coincides with increasing $q$ — pointing from the classical regime ($q \to 1$, maximal $d_{H,q}$) toward the Big Bang ($q \to \infty$, $d_{H,q} = 0$).
+This defines a contraction mapping for $q > 3/4$. The iteration $d_{H,q} \to d_{H,q} + \Delta d_{H,q}$ flows monotonically toward $d_{H,q} = 0$. The fractal complexity of the Reeb dynamics decreases with increasing $q$, vanishing at $q \to \infty$ (the Big Bang, where the Julia set collapses to a point). The direction of decreasing $d_{H,q}$ coincides with increasing $q$ — pointing from the classical regime ($q \to 1$, maximal $d_{H,q}$) toward the Big Bang.
 
 **Regime table.**
-
 See [Table 1](#tbl:hausdorff-dimension-recurrence-table1-data).
 
 The $q$-deformed $d_{H,q}$ and the classical Hausdorff dimension $d_H$ of the Julia set over $\mathbb{C}$ are distinct quantities ([classical Hausdorff dimension comparison](#rem:hausdorff-dimension-classical-comparison)).
 
 **Convergence from local $q$.**
-The downward iteration $q_{n+1} = q_n - \hbar_{q_n} = (q_n^2 - q_n + 1)/q_n$ flows $q$ toward the classical limit $q = 1$. This is a superattracting fixed point (the derivative $|1 - 1/q^2|$ vanishes at $q = 1$). Starting from our local $q_0$:
+The downward iteration $q_{n+1} = q_n - \hbar_{q_n} = (q_n^2 - q_n + 1)/q_n$ flows $q$ toward the classical limit $q = 1$. This is a superattracting fixed point. Starting from our local $q_0$:
 
 See [Table 3](#tbl:hausdorff-dimension-recurrence-table3-data).
 
-It takes three Planck steps from our universe to reach the classical limit. The convergence is superlinear: each step squares the distance to $q = 1$. At the fixed point, $\eta_q = 1$ nat, meaning each Reeb operation carries exactly one natural unit of information.
+It takes three Planck steps from our universe to reach the classical limit. The convergence is superlinear. At the fixed point, $\eta_q = 1$ nat, meaning each Reeb operation carries exactly one natural unit of information.
 
 **Cosmological arrow of time.**
-The monotone decrease of $d_{H,q}$ with $q$ defines an information-theoretic arrow. The parameter $q$ flows from the classical limit (low $q$, maximal $d_{H,q}$, maximal fractal structure) toward the Big Bang (high $q$, $d_{H,q} = 0$, no structure). Reversing time reverses the discrete recurrence, flowing from lesser to greater fractal complexity. The second law of thermodynamics asserts that the $q$-deformed dimension increases as $q$ decreases. The universe gains information capacity as it ages.
+The monotone decrease of $d_{H,q}$ with $q$ defines an information-theoretic arrow. The parameter $q$ flows from the classical limit toward the Big Bang. Reversing time reverses the discrete recurrence. The second law of thermodynamics asserts that the $q$-deformed dimension increases as $q$ decreases.
 <!-- FILE_END: hausdorff-dimension-recurrence.md -->
 
 <!-- FILE_START: hausdorff-dimension-classical-comparison.md -->
-The $q$-deformed Hausdorff dimension $d_{H,q} = (2q-1)^2/q^3$ ([discrete recurrence](#rem:hausdorff-dimension-recurrence)) differs from the classical Hausdorff dimension $d_H$ of the Julia set $J(f_q)$ over $\mathbb{C}$. We quantify this gap.
+The $q$-deformed Hausdorff dimension $d_{H,q} = (2q-1)^2/q^3$ ([discrete recurrence](#rem:hausdorff-dimension-recurrence)) differs from the classical Hausdorff dimension $d_H$ of the Julia set $J(f_q)$ over $\mathbb{C}$.
 
 **$d_{H,q}$ vs. $d_H$: comparison with classical Hausdorff dimension.**
+For parameters $c(\varTheta)$ on the main cardioid of the Mandelbrot set, the Julia set is a quasicircle. The classical Hausdorff dimension $d_H$ satisfies:
 
-For parameters $c(\varTheta)$ on the main cardioid of the Mandelbrot set (rotation number $\varTheta$, multiplier $\lambda = e^{2\pi i \varTheta}$), the Julia set is a quasicircle. The classical Hausdorff dimension $d_H$ satisfies:
-
-1. **Ruelle perturbative** [ruelle1982] (valid for $|c| \ll 1$):
-
-   $$
-     d_H = 1 + \frac{|c(\varTheta)|^2}{4 \ln 2} + O(|c|^4).
-   $$
-
-   At $\varTheta = 0.1097$: $|c| = 0.346$, yielding $d_H \approx 1.043$.
-
+1. **Ruelle perturbative** (valid for $|c| \ll 1$): $d_H = 1 + \frac{|c(\varTheta)|^2}{4 \ln 2} + O(|c|^4)$. At $\varTheta = 0.1097$: $|c| = 0.346$, yielding $d_H \approx 1.043$.
 2. **Transfer operator** (numerical, Bowen--Ruelle): $d_H \approx 1.047$ at $N = 800$ grid points.
-
 3. **QOU $q$-deformed**: $d_{H,q} = 1.088$.
 
 The gap $d_{H,q} - d_H \approx 0.041$ arises from differing Manning--McCluskey inputs. See [Table 2](#tbl:hausdorff-dimension-recurrence-table2-data).
 
-The classical $d_H$ arises from conformal dynamics over $\mathbb{C}$. The $q$-deformed $d_{H,q}$ replaces the transcendental $\ln 2$ with the rational $\eta_q$, and the numerical $\chi(c)$ with the algebraic $\chi_q$. We propose that $d_{H,q}$ governs the physical regime, fixing the $q$-critical line, information bandwidth, and gravitational self-consistency.
+The classical $d_H$ arises from conformal dynamics over $\mathbb{C}$. The $q$-deformed $d_{H,q}$ replaces the transcendental $\ln 2$ with the rational $\eta_q$, and the numerical $\chi(c)$ with the algebraic $\chi_q$. We propose that $d_{H,q}$ governs the physical regime.
 
-No closed form exists for the classical $d_H(J_c)$ over the main cardioid parameter $c$. The dimension appears implicitly as the unique zero of the Bowen--Ruelle pressure function $P(-t\log|f_c'|) = 0$ [bowen1979], which requires an infinite-dimensional transfer operator. The function $c \mapsto d_H(J_c)$ is:
-
-- Real-analytic on the main cardioid interior [mcmullen1998].
-- Strictly $> 1$ for all $c \neq 0$ (the Julia set is a quasicircle, not a smooth curve).
-- Approaching $2$ at the cardioid boundary for specific parameter sequences [shishikura1998].
+No closed form exists for the classical $d_H(J_c)$ over the main cardioid parameter $c$. It appears implicitly as the unique zero of the Bowen--Ruelle pressure function $P(-t\log|f_c'|) = 0$.
 <!-- FILE_END: hausdorff-dimension-classical-comparison.md -->
 
 <!-- FILE_START: information-causality.md -->
-We place the quantum observable universe (QOU) within information-theoretic physics. The mass--energy equivalence $E = mc_q^2$ and the derived speed of light $c_q = 1/(q-1)$ connect the QOU to established information bounds. We detail these connections below.
+We place the quantum observable universe (QOU) within information-theoretic physics. The mass--energy equivalence $E = mc_q^2$ and the derived speed of light $c_q = 1/(q-1)$ connect the QOU to established information bounds.
 
 **1. The light cone is the Lieb--Robinson cone.**
-The causal boundary arises from the $q$-connection decomposition $A_q = q^{-1}A + \hbar_q\iota_\xi A\varTheta$. The boundary at $|Z| = c_q$ in the contact affine coordinate ([contact affine chart](#def:contact-affine-chart)) is the locus where horizontal spatial diffusion matches vertical Reeb advance. Outside this cone, the Lieb--Robinson bound ([speed of light](#def:information-speed-of-light)) enforces exponential suppression of correlations. Causality follows directly from the ratio of spatial to temporal information flow in the $q$-connection. This realises Jacobson's programme [jacobson1995], deriving spacetime geometry from information flow.
+The causal boundary arises from the $q$-connection decomposition $A_q = q^{-1}A + \hbar_q\iota_\xi A\varTheta$. The boundary at $|Z| = c_q$ in the contact affine coordinate ([contact affine chart](#def:contact-affine-chart)) is the locus where horizontal spatial diffusion matches vertical Reeb advance. Outside this cone, the Lieb--Robinson bound enforces exponential suppression of correlations. Causality follows directly from the ratio of spatial to temporal information flow.
 
 **2. The speed of light varies with $q$.**
-The speed of light $c_q = 1/(q-1)$ depends on the substrate parameter. At the Big Bang ($q \to \infty$), $c \to 0$: fibres isolate, preventing spatial signalling. As the universe classicalises ($q \to 1$), $c \to \infty$: spatial coupling dominates, yielding the Newtonian regime. At the present epoch $q = q_0$, $c \approx 9.12$ in Reeb units.
+The speed of light $c_q = 1/(q-1)$ depends on the substrate parameter. At the Big Bang ($q \to \infty$), $c \to 0$. As the universe classicalises ($q \to 1$), $c \to \infty$. At the present epoch $q = q_0$, $c \approx 9.12$ in Reeb units.
 
 **3. The Margolus--Levitin bound and $c_q$.**
-The Margolus--Levitin theorem [margolus1998] bounds the operation rate of a system with energy $E$ by $2E/\pi\hbar$ ops/sec. We have the crossing energy $E = mc_q^2 = m/(q-1)^2$ and the operation count $n_R(q) = 1/\hbar_q$. The bound is:
+The Margolus--Levitin theorem bounds the operation rate by $2E/\pi\hbar$. We have the crossing energy $E = mc_q^2 = m/(q-1)^2$ and the operation count $n_R(q) = 1/\hbar_q$. The bound is:
 
 $$
-  n_R(q)  \leq  \frac{2m \cdot c_q^2}{\pi\hbar_q}
-  =  \frac{2m}{\pi\hbar_q(q-1)^2}.
+  n_R(q)  \leq  \frac{2m}{\pi\hbar_q(q-1)^2}.
 $$
 
-The Reeb dynamics saturates this bound up to the factor $2/\pi$. Each Planck cell computes at the maximum rate allowed by its mass--energy content.
+The Reeb dynamics saturates this bound up to the factor $2/\pi$.
 
 **4. Bremermann's limit and information bandwidth.**
-Bremermann's limit [lloyd2000] states a system of mass $m$ processes at most $mc^2/h$ bits per second. With $c_q = 1/(q-1)$ and the operational entropy $\eta_q$ ([operational entropy](#def:operational-entropy)), we find the bandwidth:
+Bremermann's limit states a system processes at most $mc^2/h$ bits per second. The bandwidth is:
 
 $$
   \mathfrak{B}(q)
-  =  c_q \cdot n_R(q) \cdot \eta_q
   =  \frac{q\eta_q}{(q-1)^2}
   \quad \text{($q$-bits per Planck time)}.
 $$
 
-At $q = q_0$, $\mathcal{B} \approx q\eta_q/(q-1)^2 \approx 82$ $q$-bits per Planck time.
+At $q = q_0$, $\mathcal{B} \approx 82$ $q$-bits per Planck time.
 
 **5. Pawlowski's information causality.**
-Information causality [pawlowski2009] restricts the accessible information Bob gains from Alice to the classical bits transmitted. In the QOU, the Lieb--Robinson bound ensures exponential decay outside the $|Z| = c_q$ cone. The no-signaling condition holds because the comultiplication $\nabla_q$ acts only on adjacent fibres.
+Information causality restricts the accessible information Bob gains from Alice. In the QOU, the Lieb--Robinson bound ensures exponential decay outside the $|Z| = c_q$ cone.
 
 **6. The Bekenstein bound and fibre entropy.**
-The Bekenstein bound [bekenstein1981] limits the entropy of a region of radius $R$ and energy $E$ to $S \leq 2\pi RE / \hbar c$. Using $c = c_q$ and $E = mc_q^2$, we bound the QOU fibre entropy by $\eta_q$ per operation:
+The Bekenstein bound limits the entropy to $S \leq 2\pi RE / \hbar c$. We bound the QOU fibre entropy by $\eta_q$ per operation:
 
 $$
   S_{\mathrm{fibre}}  \leq  \eta_q
-  =  \frac{2q - 1}{q^3}
-  \quad \text{($q$-bits per operation)}.
+  =  \frac{2q - 1}{q^3}.
 $$
 
 **7. Summary.**
-
-| Quantity | Standard physics | Information-theoretic programme | QOU |
-|----------|-----------------|-------------------------------|-----|
-| $c$ | Postulated constant | Emergent (various) | $c_q = 1/(q-1)$: spatial/temporal coupling ratio |
-| $E = mc^2$ | Lorentz invariance | Lloyd: computational bound | $E = m/(q-1)^2$: ribbon trace $\times$ info speed${}^2$ |
-| Causal structure | Light-cone axiom | Jacobson: entropy $\Rightarrow$ Einstein eqs | $\lvert Z\rvert = c_q$ cone from $q$-connection |
-| Bekenstein bound | Semiclassical gravity | Holographic principle | Fibre entropy $\leq \eta_q$ per operation |
-| Margolus--Levitin | Energy--time uncertainty | Quantum speed limit | Saturated: $n_R(q) \sim mc_q^2/\hbar_q$ |
+See [Table](#tbl:information-causality-table-data).
 <!-- FILE_END: information-causality.md -->
 

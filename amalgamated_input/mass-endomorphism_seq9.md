@@ -1,7 +1,7 @@
 <!-- FILE_START: qbeta-per-block-delta-tau-intro.md -->
 The previous section evaluated the Markov trace block by block. We now read these characters through the $T_\beta$ endomorphism. 
 
-The per-block characters $\chi_\lambda(\Delta_{T_\beta})(q)$ over $H_3(q)$ are written in closed form and vanish at the classical point $q = 1$ ([`prop:qbeta-per-block-chi-closed-forms`](#prop:qbeta-per-block-chi-closed-forms)). Once the Markov weights take their canonical values, this vanishing forces the trace difference $\Delta\tau_M$ to carry an explicit $(q^2-1)$ factor ([`prop:qbeta-delta-tau-canonical-conditional-q2-minus-1-factor`](#prop:qbeta-delta-tau-canonical-conditional-q2-minus-1-factor)). This is a conditional statement formalised via a class hypothesis (§3b-cond), which we inhabit with an explicit $\sqrt{q}$-bearing instance ([`prop:qbeta-canonical-markov-weights-explicit-instance`](#prop:qbeta-canonical-markov-weights-explicit-instance)).
+The per-block characters $\chi_\lambda(\Delta_{T_\beta})(q)$ over $H_3(q)$ admit closed forms and vanish at the classical point $q = 1$ ([`prop:qbeta-per-block-chi-closed-forms`](#prop:qbeta-per-block-chi-closed-forms)). Once the Markov weights take their canonical values, this vanishing forces the trace difference $\Delta\tau_M$ to carry an explicit $(q^2-1)$ factor ([`prop:qbeta-delta-tau-canonical-conditional-q2-minus-1-factor`](#prop:qbeta-delta-tau-canonical-conditional-q2-minus-1-factor)). We formalise this conditional statement via a class hypothesis (§3b-cond), which we inhabit with an explicit $\sqrt{q}$-bearing instance ([`prop:qbeta-canonical-markov-weights-explicit-instance`](#prop:qbeta-canonical-markov-weights-explicit-instance)).
 
 The low-order Taylor data of the surrogate $\Delta\tau_M$ ([`prop:qbeta-delta-tau-surrogate-taylor-coefficients`](#prop:qbeta-delta-tau-surrogate-taylor-coefficients)) provides the exact per-block input required by the downstream decay-side $c_k$ recursion. In contrast, the downstream extraction itself relies on calibration anchoring.
 <!-- FILE_END: qbeta-per-block-delta-tau-intro.md -->
@@ -48,7 +48,7 @@ $$
   + y_{(1,1,1)}(q) \chi_{(1,1,1)}(q).
 $$
 
-Then for $q > 0$, the trace difference factors as:
+For $q > 0$, the trace difference factors as:
 
 $$
   \Delta\tau_M^{\text{can}}(q) = (q^2 - 1) P^{\text{can}}(q),
@@ -60,7 +60,7 @@ $$
   P^{\text{can}}(q) = y_{(3)}(q) P_{(3)}(q) + y_{(2,1)}(q) P_{(2,1)}(q) + y_{(1,1,1)}(q) P_{(1,1,1)}(q).
 $$
 
-Here $P_\lambda(q)$ are the per-block witnesses from `chi_blocks_have_q2_minus_1_factor`. In particular, $\Delta\tau_M^{\text{can}}(1) = 0$.
+Here $P_\lambda(q)$ form the per-block witnesses from `chi_blocks_have_q2_minus_1_factor`. In particular, $\Delta\tau_M^{\text{can}}(1) = 0$.
 
 ## Cross-references
 
@@ -90,7 +90,7 @@ $w = q - 1$, to order 7:*
 | 7 | $-3665/81$ | catalogued from witness; formal proof deferred |
 
 
-## Honest scope
+## Formal scope
 
 **This block establishes:**
 
@@ -99,17 +99,15 @@ $w = q - 1$, to order 7:*
 - Sorry-free reflexivity-level theorems
   `delta_tau_M_surrogate_taylor_witness_0 = 0` and
   `delta_tau_M_surrogate_taylor_witness_1 = -5/6` matching the
-  formally-proved Lean theorems on the actual derivative-at-1.
+  formally-proved Lean theorems on the exact derivative-at-1.
 
-**This block does NOT establish:**
+**This block defers:**
 
-- Sorry-free $n$-th derivative theorems for orders 2..7. Each would
-  require a quotient-rule chain $n+1$ levels deep — mechanical but
-  bulky (~30-50 Lean lines per order). Stated as Lean theorems with
+- Sorry-free $n$-th derivative theorems for orders 2..7. Each requires a quotient-rule chain $n+1$ levels deep. These remain stated as Lean theorems with
   `sorry` and `-- Ref:` citations to the witness JSON.
-- A closed-form recursion for the $c_n$ (the underlying rational
-  function is a degree-11/degree-7 quotient, so a finite-order
-  linear recursion on $c_n$ exists, but extracting it is open work).
+- A closed-form recursion for the $c_n$. The underlying rational
+  function forms a degree-11/degree-7 quotient, so a finite-order
+  linear recursion on $c_n$ exists, but extracting it remains open.
 
 
 $$

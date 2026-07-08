@@ -1,30 +1,11 @@
 <!-- FILE_START: color-tube-coords-intro.md -->
-The braid-group action on the resolvents leaves three
-$S_5$-invariants that the previous section already named in
-passing. We now make those invariants the working coordinate system.
-Definition: Color tube coordinates introduces the variables
-$c_r, c_g, c_b$ together with their aggregates, and Remark: Aggregate color quantities records the named combinations
-($\hat c$, total charge, etc.) used throughout the chapter.
-Remark: Constraint equations in color tube coordinates rewrites
-the Bring quadric and cubic as identities among these aggregates,
-which is what makes the change of coordinates useful.
+The braid-group action on the resolvents isolates three $S_5$-invariants. We now adopt those invariants as the coordinate system. We introduce the variables $c_r, c_g, c_b$ and their aggregates. We identify named combinations ($\hat c$, total charge) required for the subsequent analysis. We then reformulate the Bring quadric and cubic as identities among these aggregates. This change of coordinates clarifies the underlying structure.
 
-Remark: Interpretation of the color tube is the structural payoff:
-the three tubes correspond to the three color charges, and pure-color
-loci correspond to confinement. Remark: $C_5$ action in color tube coordinates records the residual cyclic symmetry that
-survives after the $S_5$ quotient, and Remark: Intrinsic color cubic: pairing structure extracts the pairing that the next section
-on color fibration and elliptic curves treats as the defining datum
-of the elliptic structure $\mathcal{E}_q$.
-
-_(draft.)_
+The structural payoff emerges through the color tube interpretation. The three tubes correspond to the three color charges. Pure-color loci correspond to confinement. We specify the residual $C_5$ symmetry that survives the $S_5$ quotient. We then extract the intrinsic color cubic pairing. This pairing furnishes the defining datum of the elliptic structure $\mathcal{E}_q$ constructed in the next section.
 <!-- FILE_END: color-tube-coords-intro.md -->
 
 <!-- FILE_START: color-tube-coordinates.md -->
-Let $z = x_0/x_1 \in \mathbb{P}^1(\mathbb{C})$ be the spacetime ratio
-([braid group action](#rem:braid-group-action)(i)) and let $w_k$,
-$k \in \{0,\dots,4\}$, be the Lagrange resolvents of Bring's surface
-([Lagrange resolvents](#rem:lagrange-resolvents)).  The **color tube coordinates**
-are the shifted spectral coordinates
+Let $z = x_0/x_1 \in \mathbb{P}^1(\mathbb{C})$ be the spacetime ratio ([braid group action](#rem:braid-group-action)(i)) and let $w_k$, $k \in \{0,\dots,4\}$, be the Lagrange resolvents of Bring's surface ([Lagrange resolvents](#rem:lagrange-resolvents)). The **color tube coordinates** are the shifted spectral coordinates
 
 ```tex
 \begin{equation}\label{eq:color-tube-coords}
@@ -32,13 +13,11 @@ are the shifted spectral coordinates
 \end{equation}
 ```
 
-together with the space-like shift $\sigma = w_1 - z$.  The
-*color vector* is $c = (c_r, c_g, c_b)$.
+together with the space-like shift $\sigma = w_1 - z$. The *color vector* is $c = (c_r, c_g, c_b)$.
 <!-- FILE_END: color-tube-coordinates.md -->
 
 <!-- FILE_START: aggregate-color-quantities.md -->
-Define the following $C_5$-equivariant quantities in color tube
-coordinates, with $\zeta = e^{2\pi i/5}$:
+Define the following $C_5$-equivariant quantities in color tube coordinates, with $\zeta = e^{2\pi i/5}$:
 
 ```tex
 \begin{align}
@@ -57,24 +36,17 @@ coordinates, with $\zeta = e^{2\pi i/5}$:
 \end{align}
 ```
 
-The subscript on $h_k$ denotes the degree of the $C_5$-equivariant
-invariant: $h_2$ pairs conjugate resolvents ($w_k$ with $w_{5-k}$)
-and $h_3$ pairs squared resolvents in the skip-one pattern.  The
-character $\chi_\zeta$ is the $\zeta$-weighted sum --- the Fourier
-dual of $p_1$.
+The subscript on $h_k$ denotes the degree of the $C_5$-equivariant invariant. $h_2$ pairs conjugate resolvents ($w_k$ with $w_{5-k}$). $h_3$ pairs squared resolvents in a skip-one pattern. The character $\chi_\zeta$ is the $\zeta$-weighted sum (the Fourier dual of $p_1$).
 
-These are related to the unshifted resolvent invariants
-$S = \sum_{k=1}^{4}w_k$ and $D = \sum_{k=1}^{4}\zeta^{-k}w_k$ by
+These relate to the unshifted resolvent invariants $S = \sum_{k=1}^{4}w_k$ and $D = \sum_{k=1}^{4}\zeta^{-k}w_k$ by
 
 ```tex
 \begin{equation}\label{eq:aggregate-shift}
-  S =  p_1(c) + 4z, \qquad D =  \chi_\zeta(c) - z,
+  S =  p_1(c) + 4z, \qquad D =  \chi_\zeta(c) - z.
 \end{equation}
 ```
 
-where the second identity uses $\sum_{k=1}^{4}\zeta^{-k} = -1$.
-The inverse Lagrange resolvent transform
-([Lagrange resolvents](#rem:lagrange-resolvents)) gives
+The second identity uses $\sum_{k=1}^{4}\zeta^{-k} = -1$. The inverse Lagrange resolvent transform ([Lagrange resolvents](#rem:lagrange-resolvents)) yields
 
 ```tex
 \begin{equation}\label{eq:z-from-SD}
@@ -87,9 +59,7 @@ The inverse Lagrange resolvent transform
 The Bring's surface constraints take the following form in color tube coordinates.
 
 **Spacetime recovery.**
-Substituting into $z = S/D$
-(equation [$z = S/D$](#eq:z-from-SD)) yields $z(\chi_\zeta(c) - z) = p_1(c) + 4z$,
-which rearranges to
+Substituting into $z = S/D$ (equation [$z = S/D$](#eq:z-from-SD)) yields $z(\chi_\zeta(c) - z) = p_1(c) + 4z$, which rearranges to
 
 ```tex
 \begin{equation}\label{eq:spacetime-recovery}
@@ -97,8 +67,7 @@ which rearranges to
 \end{equation}
 ```
 
-Thus the spacetime coordinate $z$ is determined implicitly by the
-shifted data $(p_1(c), \chi_\zeta(c))$.
+Thus the shifted data $(p_1(c), \chi_\zeta(c))$ determines the spacetime coordinate $z$ implicitly.
 
 **Shifted quadric.**
 Substituting $w_k = c_k + z$ into the quadric gives
@@ -121,8 +90,7 @@ Substituting $w_k = c_k + z$ into the cubic gives
 \end{equation}
 ```
 
-Eliminating $h_2(c)$ via the shifted quadric yields the
-*reduced cubic*:
+Eliminating $h_2(c)$ via the shifted quadric yields the *reduced cubic*:
 
 ```tex
 \begin{equation}\label{eq:reduced-cubic}
@@ -130,57 +98,27 @@ Eliminating $h_2(c)$ via the shifted quadric yields the
 \end{equation}
 ```
 
-All three equations are polynomial over $\mathbb{Z}$ in $z, r, g, b, \sigma$;
-they therefore define affine varieties over $\mathbb{Z}$ and descend
-to $\mathbb{F}_\mathfrak{p}$ for every prime $\mathfrak{p} \ne 5$.
+All three equations are polynomials over $\mathbb{Z}$ in $z, r, g, b, \sigma$. They define affine varieties over $\mathbb{Z}$ and descend to $\mathbb{F}_\mathfrak{p}$ for every prime $\mathfrak{p} \ne 5$.
 
-**Commutative-limit specialisation.**  Under the weight
-identification of
-[prop:x5-bring-weight-identification](#prop:x5-bring-weight-identification),
-the weight-$(-1)$ Lagrange resolvent $w_1$ on Bring's surface
-corresponds canonically to the affine coordinate $x$ on the
-hyperelliptic quintic $\mathcal{X}_5 \colon y^2 = x^5 - 1$.
-Restricting the full $S_5$-symmetric color-tube system above to
-its cyclic $\mathbb{Z}_5 \subset S_5$ residue selects this single
-weight channel: the three color coordinates $r, g, b$ and the
-shift $z$ collapse to observables on the single $\mathrm{U}(1)$
-phase tube of
-[rem:u1-phase-tube](#rem:u1-phase-tube).  The shifted quadric
-and cubic, evaluated along $w_2 = w_3 = w_4 = 0$, reduce to the
-single-variable identity $x^5 - 1 = y^2$ that defines
-$\mathcal{X}_5$.
+**Commutative-limit specialisation.**
+Under the weight identification of [prop:x5-bring-weight-identification](#prop:x5-bring-weight-identification), the weight-$(-1)$ Lagrange resolvent $w_1$ on Bring's surface corresponds canonically to the affine coordinate $x$ on the hyperelliptic quintic $\mathcal{X}_5 \colon y^2 = x^5 - 1$. Restricting the full $S_5$-symmetric color-tube system to its cyclic $\mathbb{Z}_5 \subset S_5$ residue isolates this single weight channel. The three color coordinates $r, g, b$ and the shift $z$ collapse to observables on the single $\mathrm{U}(1)$ phase tube of [rem:u1-phase-tube](#rem:u1-phase-tube). Evaluated along $w_2 = w_3 = w_4 = 0$, the shifted quadric and cubic reduce to the single-variable identity $x^5 - 1 = y^2$ that defines $\mathcal{X}_5$.
 <!-- FILE_END: color-tube-constraints.md -->
 
 <!-- FILE_START: color-tube-interpretation.md -->
-The terminology *color tube* reflects two features of the geometry.
+The terminology *color tube* reflects two geometric features.
 
 **Color.**
-The coordinates $r, g, b$ label the three color degrees of freedom
-that correspond, via the $S_3$ subgroups of $S_5$
-([braid group action](#rem:braid-group-action)(iii)), to the three
-colour charges of quantum chromodynamics.  The color coordinates
-$x_2, x_3, x_4$ of the QOU $4$-tuple
-([Bring's QOU 4-tuple](#rem:brings-qou-4tuple)) descend to $c_r = w_2 - z$,
-$c_g = w_3 - z$, $c_b = w_4 - z$ after shifting by the spacetime ratio $z$.
+The coordinates $r, g, b$ label the three color degrees of freedom. These correspond, via the $S_3$ subgroups of $S_5$ ([braid group action](#rem:braid-group-action)(iii)), to the three colour charges of quantum chromodynamics. The color coordinates $x_2, x_3, x_4$ of the QOU $4$-tuple ([Bring's QOU 4-tuple](#rem:brings-qou-4tuple)) descend to $c_r = w_2 - z$, $c_g = w_3 - z$, $c_b = w_4 - z$ upon shifting by the spacetime ratio $z$.
 
 **Tube.**
-For fixed $z \in \mathbb{P}^1(\mathbb{C})$, the color vector $c = (c_r, c_g, c_b)$
-is constrained by the shifted quadric and
-cubic to lie on a curve inside the
-three-dimensional color space $\mathbb{A}^3$.  As $z$ varies over the
-spacetime base, this curve sweeps out a tube --- the total space of
-the color fibration over $\mathbb{P}^1(\mathbb{C})$.
+For a fixed $z \in \mathbb{P}^1(\mathbb{C})$, the shifted quadric and cubic constrain the color vector $c = (c_r, c_g, c_b)$ to lie on a curve inside the three-dimensional color space $\mathbb{A}^3$. As $z$ varies over the spacetime base, this curve sweeps out a tube. This space constitutes the total space of the color fibration over $\mathbb{P}^1(\mathbb{C})$.
 
 **Space-like coordinate.**
-The shift $\sigma = w_1 - z$ is distinguished: it measures the deviation
-of the $C_5$-fundamental resolvent $w_1$ from the spacetime base,
-anchoring the $U(1)$ longitudinal backbone
-([spectral dynamics](#rem:spectral-dynamics)) in the shifted frame.
+The shift $\sigma = w_1 - z$ is distinguished. It measures the deviation of the $C_5$-fundamental resolvent $w_1$ from the spacetime base. It anchors the $U(1)$ longitudinal backbone ([spectral dynamics](#rem:spectral-dynamics)) in the shifted frame.
 <!-- FILE_END: color-tube-interpretation.md -->
 
 <!-- FILE_START: c5-color-tube.md -->
-The cyclic symmetry $w_k \mapsto \zeta^{-k} w_k$
-([Lagrange resolvents](#rem:lagrange-resolvents)) becomes, in color tube coordinates:
+The cyclic symmetry $w_k \mapsto \zeta^{-k} w_k$ ([Lagrange resolvents](#rem:lagrange-resolvents)) becomes, in color tube coordinates:
 
 ```tex
 \begin{align}
@@ -195,10 +133,7 @@ The cyclic symmetry $w_k \mapsto \zeta^{-k} w_k$
 \end{align}
 ```
 
-The $C_5$ action is no longer diagonal: each coordinate acquires an
-additive correction proportional to $z$, reflecting the cost of
-breaking projective homogeneity by subtracting the affine
-quantity $z$ from each resolvent.
+The $C_5$ action is no longer diagonal. Each coordinate acquires an additive correction proportional to $z$. This reflects the cost of breaking projective homogeneity by subtracting the affine quantity $z$ from each resolvent.
 <!-- FILE_END: c5-color-tube.md -->
 
 <!-- FILE_START: intrinsic-color-cubic-pairing.md -->
@@ -214,10 +149,6 @@ The intrinsic color cubic $h_3(c)$ admits a natural decomposition into space-lik
 \end{equation}
 ```
 
-The four terms pair the resolvent indices as $(1,3)$, $(2,1)$, $(4,2)$,
-$(3,4)$: each index is squared and contracted with the index two steps
-ahead in the cyclic order $1 \to 3 \to 4 \to 2 \to 1$.  This
-skip-one pairing respects the conjugation $w_k \leftrightarrow w_{5-k}$
-that pairs $(w_1, w_4)$ and $(w_2, w_3)$.
+The four terms pair the resolvent indices as $(1,3)$, $(2,1)$, $(4,2)$, and $(3,4)$. Each index is squared and contracted with the index two steps ahead in the cyclic order $1 \to 3 \to 4 \to 2 \to 1$. This skip-one pairing respects the conjugation $w_k \leftrightarrow w_{5-k}$ that pairs $(w_1, w_4)$ and $(w_2, w_3)$.
 <!-- FILE_END: intrinsic-color-cubic-pairing.md -->
 

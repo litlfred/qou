@@ -36,8 +36,6 @@ local monodromy, not searched canonical.
 <!-- FILE_END: qdifference-kernel-prolongation-symbol.md -->
 
 <!-- FILE_START: prolonged-periods-fixed-depth.md -->
-**Proposition (a fixed-depth recurrence for the prolonged periods exists).**
-
 The prolonged Seiberg--Witten periods $a_D^{(n)} = \varphi(M^n v_0)$ are orbits of
 the jet-prolongation operator $M$
 ([`prop:mi-sw-abelianisation`](#prop:mi-sw-abelianisation)) acting on the
@@ -75,8 +73,6 @@ linear functional $\varphi(\,\cdot\,v_0)$ to both sides.
 <!-- FILE_END: prolonged-periods-fixed-depth.md -->
 
 <!-- FILE_START: sl2-prolongation-recurrence.md -->
-**Proposition (symplectic prolongation $\Rightarrow$ one-parameter recurrence).**
-
 The recurrence on the prolonged Seiberg--Witten periods has depth $2$
 ([`prop:prolonged-periods-fixed-depth`](#prop:prolonged-periods-fixed-depth)
 together with the $S_5$-Hodge count $H^1 = 2W$): the $2\times 2$ prolongation
@@ -115,8 +111,6 @@ sorry-free.
 <!-- FILE_END: sl2-prolongation-recurrence.md -->
 
 <!-- FILE_START: sl2-period-conserved-quantity.md -->
-**Proposition (first integral of the depth-$2$ prolongation recurrence).**
-
 The one-parameter recurrence
 ([`prop:sl2-prolongation-recurrence`](#prop:sl2-prolongation-recurrence))
 

@@ -11,11 +11,11 @@ This provides the foundation for the next section, which designs crystal-resonan
 <!-- FILE_END: proton-gravity-tests-intro.md -->
 
 <!-- FILE_START: proton-radius-puzzle.md -->
-The proton charge radius differs when measured in muonic versus electronic hydrogen. We trace this discrepancy to generation-dependent substrate couplings. Lepton generations correspond to the vertical degree of the Reeb decomposition ([Descartes leptons](#rem:archimedean-leptons)). Each generation couples to the substrate parameter $q$ ([substrate parameter](#def:substrate-parameter)) through a distinct vertical harmonic form. This coupling modifies the effective electromagnetic interaction between the proton and the orbiting lepton. The $q$-correction depends on the lepton generation. Consequently, the measured charge radius differs by an amount of order $\hbar_q$ ([quantum planck constant](#def:quantum-planck-constant)). This difference provides a direct test of the Reeb decomposition.
+The proton charge radius differs when measured in muonic versus electronic hydrogen. We trace this discrepancy to generation-dependent substrate couplings. Lepton generations correspond to the vertical degree of the Reeb decomposition ([Descartes leptons](#rem:archimedean-leptons)). Each generation couples to the substrate parameter $q$ ([substrate parameter](#def:substrate-parameter)) through a distinct vertical harmonic form. This coupling modifies the effective electromagnetic interaction between the proton and the orbiting lepton. The $q$-correction depends on the lepton generation. The measured charge radius differs by an amount of order $\hbar_q$ ([quantum planck constant](#def:quantum-planck-constant)). This difference provides a direct test of the Reeb decomposition.
 <!-- FILE_END: proton-radius-puzzle.md -->
 
 <!-- FILE_START: entropic-gravity.md -->
-The substrate parameter $q$ ([substrate parameter](#def:substrate-parameter)) encodes the coupling between the Levi form and the gauge curvature. In the near-classical regime $q \to 1$, gravity emerges as a geometric back-reaction ([GR substrate geometry](#rem:gr-substrate-geometry)). Recent work on the quantum mechanics of entropic forces \cite{carney2025} provides a complementary perspective. The entropic interpretation may correspond to the thermodynamic limit of the $q$-deformed partition function on the brane tower.
+The substrate parameter $q$ ([substrate parameter](#def:substrate-parameter)) encodes the coupling between the Levi form and the gauge curvature. In the near-classical regime $q \to 1$, gravity emerges as a geometric back-reaction ([GR substrate geometry](#rem:gr-substrate-geometry)). Recent work on the quantum mechanics of entropic forces \cite{carney2025} provides a complementary perspective. The entropic interpretation corresponds to the thermodynamic limit of the $q$-deformed partition function on the brane tower.
 <!-- FILE_END: entropic-gravity.md -->
 
 <!-- FILE_START: local-substrate-q.md -->
@@ -25,13 +25,12 @@ $$
   q\big|_U =  1.1097 \pm 0.001.
 $$
 
-More precisely, $q|_U$ is the unique real root $q > 1$ of the equation:
+Specifically, $q|_U$ is the unique real root $q > 1$ of the equation:
 
 $$
   (1 - q^{-1})^{2} = \frac{\mathrm{Vol}(4_1)}{m_\mu / m_e}.
 $$
 
 Here $\mathrm{Vol}(4_1) = 3\mathrm{Cl}_2(\pi/3) \approx :val[Vol_4_1]{precision=6}$ is the hyperbolic volume of the figure-eight knot. The constant $m_\mu / m_e \approx :val[m_mu_over_e]{precision=6}$ is the CODATA 2022 muon--electron mass ratio.
-
 <!-- FILE_END: local-substrate-q.md -->
 

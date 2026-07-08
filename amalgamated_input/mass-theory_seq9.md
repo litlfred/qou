@@ -1,6 +1,4 @@
 <!-- FILE_START: hoefsmit-convergence-construction-per-partition-k-intro.md -->
-Continuation of the preceding sub-section.
-
-This sub-section pins the per-partition-$k$ Hoefsmit convergence: brane-tower $Z$-Habiro tables for partitions $k = 1, \dots, 8$ supply the substrate-level data the next sub-section consumes for magic-shell predictions.
+This subsection pins the per-partition $k$ Hoefsmit convergence. Brane-tower $z$-Habiro tables for partitions $k = 1, \dots, 8$ supply the substrate-level data that the next subsection consumes for magic-shell predictions.
 <!-- FILE_END: hoefsmit-convergence-construction-per-partition-k-intro.md -->
 

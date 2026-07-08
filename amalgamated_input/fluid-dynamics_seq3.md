@@ -1,43 +1,14 @@
 <!-- FILE_START: q-ns-regularity-intro.md -->
-The $q$-deformed hydrodynamics of the preceding sections
-delivers a closed evolution equation on $\Omega^1(A)$. We now prove
-that this evolution is globally regular whenever $q > 1$, using the
-spectral theory of the $q$-Laplacian and the quantum Peter--Weyl
-decomposition of the brane.
+The $q$-deformed hydrodynamics constructed in previous sections yields a closed evolution equation on $\Omega^1(A)$. Using the spectral theory of the $q$-Laplacian and the quantum Peter--Weyl decomposition of the brane, we now prove that this evolution remains globally regular for any $q > 1$.
 
-The main theorem is Theorem: Global regularity of the $q$-deformed Navier--Stokes equation: for every $q > 1$, smooth
-finite-energy initial data extends to a unique smooth solution for
-all time. We then outline the argument in Remark: Proof strategy: three mechanisms for $q$-deformed regularity, naming the UV
-damping, enstrophy bound, and uniqueness inputs. The first input
-is Proposition: Spectral theory and Sobolev embedding for the $q$-Laplacian on $\Omega^1(A)$, which establishes compact resolvent and the
-embedding chain on the categorical Hodge complex. The completeness
-of the resulting eigenbasis is Theorem: Quantum Peter--Weyl theorem: completeness of the $\mathrm{SU}_q(2)$ eigenbasis, proved
-on the categorical infrastructure already in place. The nonlinear
-step is Proposition: Nonlinear estimates and uniqueness for the $q$-Navier--Stokes system, and the calculations are
-collected in Remark: Proof details: nonlinear estimates, enstrophy evolution, and uniqueness. The next section, **The NS
-obstruction**, takes the regularity theorem as the $q > 1$ side of
-the categorical degeneration and asks what survives at $q = 1$.
-
-_(draft.)_
+The main result is Theorem: Global regularity of the $q$-deformed Navier--Stokes equation: for every $q > 1$, smooth finite-energy initial data uniquely extends to a smooth solution for all time. Remark: Proof strategy: three mechanisms for $q$-deformed regularity outlines the argument, identifying UV damping, the enstrophy bound, and uniqueness as the core inputs. The first input, Proposition: Spectral theory and Sobolev embedding for the $q$-Laplacian on $\Omega^1(A)$, establishes compact resolvent and the embedding chain over the categorical Hodge complex. Theorem: Quantum Peter--Weyl theorem: completeness of the $\mathrm{SU}_q(2)$ eigenbasis proves the completeness of the resulting eigenbasis using the existing categorical infrastructure. The nonlinear step follows in Proposition: Nonlinear estimates and uniqueness for the $q$-Navier--Stokes system, with the precise bounding mechanics detailed in Remark: Proof details: nonlinear estimates, enstrophy evolution, and uniqueness. The subsequent section, **The NS obstruction**, interprets this regularity theorem as the $q > 1$ side of the categorical degeneration and examines the remainder at $q = 1$.
 <!-- FILE_END: q-ns-regularity-intro.md -->
 
 <!-- FILE_START: q-ns-wellposedness.md -->
-Let $(\mathbf{C}, A, \tau)$ be a
-[QOU](#def:quantum-observable-universe) with
-[substrate parameter](#def:substrate-parameter)
-$q \in \mathrm{End}(\mathbf{1})$, $q > 1$.  Let
-$\Delta_q = d_q\delta_q + \delta_q d_q$ be the
-[$q$-Laplacian](#rem:q-laplacian-interpretation) on $\Omega^k(A)$
-and let $\nu_q = \frac{1}{2}(1 - q^{-1}) > 0$ be the kinematic
-viscosity.
+Let $(\mathbf{C}, A, \tau)$ describe a [QOU](#def:quantum-observable-universe) governed by [substrate parameter](#def:substrate-parameter) $q \in \mathrm{End}(\mathbf{1})$, with $q > 1$. Let $\Delta_q = d_q\delta_q + \delta_q d_q$ act as the [$q$-Laplacian](#rem:q-laplacian-interpretation) on $\Omega^k(A)$, and set the kinematic viscosity $\nu_q = \frac{1}{2}(1 - q^{-1}) > 0$.
 
 **Categorical statement.**
-Let $v_0 \in \ker(\delta_q|_{\Omega^1(A)})$ be a divergence-free
-initial velocity 1-form with finite
-[Frobenius norm](#def:frobenius-pairing)
-$\lVert v_0 \rVert_A^2 = \int_A v_0^\dagger \wedge v_0 < \infty$.
-Then the [q-deformed Navier--Stokes system](#def:q-navier-stokes)
-admits a **unique global solution**
+Let $v_0 \in \ker(\delta_q|_{\Omega^1(A)})$ be a divergence-free initial velocity 1-form carrying finite [Frobenius norm](#def:frobenius-pairing) $\lVert v_0 \rVert_A^2 = \int_A v_0^\dagger \wedge v_0 < \infty$. The [q-deformed Navier--Stokes system](#def:q-navier-stokes) then admits a **unique global solution**
 
 $$
   (v, p) \colon [0, \infty)
@@ -45,13 +16,10 @@ $$
   \ker(\delta_q|_{\Omega^1(A)}) \times A
 $$
 
-such that:
+satisfying:
 
-1. **Smoothness in $\mathbf{C}$**: the map
-   $t \mapsto v(t) \in \Omega^1(A)$ is smooth (infinitely
-   differentiable in the internal hom of $\mathbf{C}$).
-
-2. **Energy inequality**: for all $t \geq 0$,
+1. **Smoothness in $\mathbf{C}$**: The map $t \mapsto v(t) \in \Omega^1(A)$ is smooth (infinitely differentiable within the internal hom of $\mathbf{C}$).
+2. **Energy inequality**: For all $t \geq 0$,
 
    $$
      \lVert v(t) \rVert_A^2
@@ -61,21 +29,17 @@ such that:
      \lVert v_0 \rVert_A^2.
    $$
 
-3. **Spectral decay**: the $\Delta_q$-eigencomponents
-   $\hat{v}_k \in V_k \subset \Omega^1(A)$
-   (where $\Delta_q|_{V_k} = [k]_q^2\mathrm{id}$) satisfy
+3. **Spectral decay**: The $\Delta_q$-eigencomponents $\hat{v}_k \in V_k \subset \Omega^1(A)$ (where $\Delta_q|_{V_k} = [k]_q^2\mathrm{id}$) strictly obey
 
    $$
      |\hat{v}_k(t)|  \leq 
-     |\hat{v}_k(0)|e^{-\nu_q [k]_q^2 t}
+     |\hat{v}_k(0)|e^{-\nu_q [k]_q^2 t}.
    $$
 
-   so that modes decay at exponential-in-$k$ rate.
+   Modes decay at a rate exponential in $k$.
 
 **Archimedean realisation.**
-Under the fibre functor $\tau$, the categorical solution maps to
-a smooth vector field on the
-[state bundle](#ex:c-quantum-observable-universe) $\mathcal{S}$:
+Operating under the fibre functor $\tau$, the categorical solution maps directly to a smooth vector field on the [state bundle](#ex:c-quantum-observable-universe) $\mathcal{S}$:
 
 $$
   \tau(v) \in C^\infty(\mathcal{S} \times [0,\infty); T\mathcal{S}),
@@ -83,7 +47,7 @@ $$
   \nabla_A \cdot \tau(v) = 0,
 $$
 
-satisfying the coordinate form
+satisfying the coordinate equation
 
 $$
   \partial_t v + (v \cdot \nabla_A) v
@@ -95,7 +59,7 @@ $$
   v|_{t=0} = v_0,
 $$
 
-with energy inequality
+and bound by the continuous energy inequality
 
 $$
   \lVert v(\cdot, t)\rVert_{L^2}^2
@@ -106,34 +70,18 @@ $$
 $$
 
 for all $t \geq 0$.
-
 <!-- FILE_END: q-ns-wellposedness.md -->
 
 <!-- FILE_START: p1-spectral-sobolev.md -->
-Let $(\mathbf{C}, A, \tau)$ be a
-[QOU](#def:quantum-observable-universe) with
-[substrate parameter](#def:substrate-parameter) $q > 1$. Let
-$\Delta_q = d_q\delta_q + \delta_q d_q$ be the
-[$q$-Laplacian](#rem:q-laplacian-interpretation) acting on
-$\Omega^1(A)$, and let
-$\langle \cdot, \cdot \rangle_\varTheta$ be the
-[Webster inner product](#rem:hodge-laplacian-relation).
+Let $(\mathbf{C}, A, \tau)$ define a [QOU](#def:quantum-observable-universe) carrying [substrate parameter](#def:substrate-parameter) $q > 1$. Let $\Delta_q = d_q\delta_q + \delta_q d_q$ define the [$q$-Laplacian](#rem:q-laplacian-interpretation) operating on $\Omega^1(A)$, and let $\langle \cdot, \cdot \rangle_\varTheta$ supply the [Webster inner product](#rem:hodge-laplacian-relation).
 
-Then the following hold:
+Then:
 
 **(a) Compact resolvent and discrete spectrum.**
-The operator $\Delta_q$ on $\Omega^1(A)$ has compact resolvent:
-for any $\lambda \notin \mathrm{spec}(\Delta_q)$, the resolvent
-$(\lambda\mathrm{id} - \Delta_q)^{-1}$ is a compact operator
-on the Hilbert completion
-$\overline{\Omega^1(A)}^{\langle\cdot,\cdot\rangle_\varTheta}$.
-Consequently, the spectrum is discrete:
-$\mathrm{spec}(\Delta_q) = \{\mu_k^{(q)}\}_{k \geq 0}$
-with $0 \leq \mu_0^{(q)} \leq \mu_1^{(q)} \leq \cdots$ and
-$\mu_k^{(q)} \to \infty$.
+The operator $\Delta_q$ on $\Omega^1(A)$ guarantees compact resolvent: for any $\lambda \notin \mathrm{spec}(\Delta_q)$, the resolvent $(\lambda\mathrm{id} - \Delta_q)^{-1}$ functions as a compact operator across the Hilbert completion $\overline{\Omega^1(A)}^{\langle\cdot,\cdot\rangle_\varTheta}$. Consequently, the spectrum is fully discrete: $\mathrm{spec}(\Delta_q) = \{\mu_k^{(q)}\}_{k \geq 0}$, ordered as $0 \leq \mu_0^{(q)} \leq \mu_1^{(q)} \leq \cdots$, with $\mu_k^{(q)} \to \infty$.
 
 **(b) Exponential eigenvalue growth.**
-The eigenvalues satisfy
+The precise eigenvalues read
 
 $$
   \mu_k^{(q)} = [k]_q^2,
@@ -141,7 +89,7 @@ $$
   [k]_q = \frac{q^k - q^{-k}}{q - q^{-1}},
 $$
 
-with the growth bound
+bounded tightly by
 
 $$
   \frac{q^{2k}}{(q - q^{-1})^2}
@@ -152,15 +100,10 @@ $$
   \left(1 + q^{-4k}\right)
 $$
 
-for all $k \geq 1$. In particular,
-$\mu_k^{(q)} = \Theta(q^{2k})$ — exponential in $k$.
+for all $k \geq 1$. In particular, $\mu_k^{(q)} = \Theta(q^{2k})$, establishing strictly exponential growth in $k$.
 
 **(c) Categorical Sobolev embedding.**
-Define the $q$-Sobolev space
-$H^1_q(A) = \{v \in \Omega^1(A) :
-\lVert v \rVert_A^2 + \lVert d_q v \rVert_A^2 < \infty\}$.
-Then $H^1_q(A)$ embeds continuously into the space of bounded
-1-forms:
+Define the $q$-Sobolev space $H^1_q(A) = \{v \in \Omega^1(A) : \lVert v \rVert_A^2 + \lVert d_q v \rVert_A^2 < \infty\}$. $H^1_q(A)$ embeds continuously into the space of bounded 1-forms:
 
 $$
   \lVert v \rVert_{L^\infty}
@@ -170,23 +113,12 @@ $$
   C_q = \left(\sum_{k=1}^\infty [k]_q^{-2}\right)^{1/2}.
 $$
 
-The constant $C_q$ is finite for all $q > 1$ (the series
-converges because $[k]_q^{-2} = O(q^{-2k})$). As $q \to 1$,
-$[k]_q \to k$ and $C_q^2 \to \sum k^{-2} = \pi^2/6$ in the
-1-dimensional case. On the 3-dimensional state bundle
-$\mathcal{S}$, eigenvalue multiplicities $(2j+1)^2$ cause
-$C_q$ to diverge — the embedding fails in the classical limit.
+The constant $C_q$ converges for all $q > 1$ because $[k]_q^{-2} = O(q^{-2k})$. In the one-dimensional classical limit ($q \to 1$), $[k]_q \to k$ and $C_q^2 \to \sum k^{-2} = \pi^2/6$. However, across the 3-dimensional state bundle $\mathcal{S}$, the exploding eigenvalue multiplicities $(2j+1)^2$ force $C_q$ to diverge entirely. The embedding fails sharply in the classical 3D limit.
 <!-- FILE_END: p1-spectral-sobolev.md -->
 
 <!-- FILE_START: quantum-peter-weyl.md -->
 **Statement.**
-Let $(\mathbf{C}, A, \tau)$ be a
-[QOU](#def:quantum-observable-universe) with
-[substrate parameter](#def:substrate-parameter) $q > 1$.  Let
-$\{V_j\}_{j \in \frac{1}{2}\mathbb{Z}_{\geq 0}}$ be the simple
-objects of $\mathbf{C}$ indexed by spin $j$, with categorical
-dimension $\dim(V_j) = 2j + 1$.  For each $j, m, n$ with
-$-j \leq m, n \leq j$, define the **matrix coefficient**
+Let $(\mathbf{C}, A, \tau)$ define a [QOU](#def:quantum-observable-universe) with [substrate parameter](#def:substrate-parameter) $q > 1$. Let $\{V_j\}_{j \in \frac{1}{2}\mathbb{Z}_{\geq 0}}$ denote the simple objects of $\mathbf{C}$ indexed by spin $j$, with categorical dimension $\dim(V_j) = 2j + 1$. For indices $-j \leq m, n \leq j$, define the **matrix coefficient**
 
 $$
   D^j_{mn}
@@ -197,14 +129,12 @@ $$
    \in  A,
 $$
 
-where $\{e^j_m\}$ is an orthonormal basis of $\tau(V_j)$ and
-$\mathrm{ev}, \mathrm{coev}$ are the evaluation and coevaluation
-from the rigid structure.
+where $\{e^j_m\}$ forms an orthonormal basis of $\tau(V_j)$, and $\mathrm{ev}, \mathrm{coev}$ represent the rigid evaluation and coevaluation maps.
 
 Then:
 
-**(a) Orthogonality.**  With respect to the
-[Frobenius pairing](#def:frobenius-pairing):
+**(a) Orthogonality.**
+Under the [Frobenius pairing](#def:frobenius-pairing):
 
 $$
   \int_A (D^j_{mn})^\dagger \cdot D^{j'}_{m'n'}
@@ -214,10 +144,8 @@ $$
 
 where $[2j+1]_q$ is the quantum dimension.
 
-**(b) Completeness.**  The matrix coefficients
-$\{[2j+1]_q^{1/2}D^j_{mn}\}$ form a complete orthonormal
-system in the Hilbert completion
-$L^2(A) = \overline{A}^{\int_A}$:
+**(b) Completeness.**
+The set $\{[2j+1]_q^{1/2}D^j_{mn}\}$ constitutes a complete orthonormal system over the Hilbert completion $L^2(A) = \overline{A}^{\int_A}$:
 
 $$
   \sum_{j \geq 0} [2j+1]_q
@@ -225,51 +153,30 @@ $$
   =  \mathrm{id}_A.
 $$
 
-**(c) $\Delta_q$-eigendecomposition.**  Each matrix coefficient
-$D^j_{mn}$ is an eigenfunction of $\Delta_q$ with eigenvalue
-$[j]_q[j+1]_q$ (the $q$-Casimir):
+**(c) $\Delta_q$-eigendecomposition.**
+Each coefficient $D^j_{mn}$ functions as a strict eigenfunction of $\Delta_q$, taking eigenvalue $[j]_q[j+1]_q$ (the $q$-Casimir):
 
 $$
   \Delta_qD^j_{mn} = [j]_q[j+1]_qD^j_{mn}.
 $$
 
-The eigenspace of eigenvalue $[j]_q[j+1]_q$ has dimension
-$(2j+1)^2$.
+The dimension of the corresponding eigenspace evaluates exactly to $(2j+1)^2$.
 <!-- FILE_END: quantum-peter-weyl.md -->
 
 <!-- FILE_START: quantum-peter-weyl-interpretation.md -->
-The [spectral-Sobolev theory](#prop:q-spectral-sobolev) identifies
-a single gap: completeness of the $\Delta_q$-eigenbasis.  This
-theorem closes it by proving the quantum Peter--Weyl theorem for
-$\mathrm{SU}_q(2)$ using the categorical infrastructure already
-available.
+The [spectral-Sobolev theory](#prop:q-spectral-sobolev) identifies a structural gap: the completeness of the $\Delta_q$-eigenbasis. This theorem seals that gap by establishing the quantum Peter--Weyl theorem for $\mathrm{SU}_q(2)$ natively within the established categorical infrastructure.
 
 **Connection to the Kelvin dispersion.**
-The [Kelvin dispersion derivation](#prop:kelvin-dispersion-derivation)
-proved $\Delta_q(z^k) = -[k]_q^2z^k$ by explicit computation.
-The Peter--Weyl theorem provides the conceptual reason: $z^k$ is
-a matrix coefficient $D^{k/2}_{k/2, k/2}$ of the spin-$k/2$
-representation, and its eigenvalue $[k/2]_q[k/2+1]_q$ reduces to
-$[k]_q^2$ for the appropriate normalisation on the circle.
+The [Kelvin dispersion derivation](#prop:kelvin-dispersion-derivation) explicitly computed $\Delta_q(z^k) = -[k]_q^2z^k$. The Peter--Weyl theorem supplies the underlying structural reason: $z^k$ maps directly to the matrix coefficient $D^{k/2}_{k/2, k/2}$ of the spin-$k/2$ representation. Its corresponding eigenvalue $[k/2]_q[k/2+1]_q$ algebraically reduces to $[k]_q^2$ once correctly normalised over the circle.
 
-The quantum Peter--Weyl theorem is a consequence of the QOU
-axioms (specifically the existence of the faithful exact monoidal
-fibre functor $\tau$).  No external result (Woronowicz 1987) is
-needed — the categorical infrastructure is self-sufficient.
+The quantum Peter--Weyl theorem follows strictly from the core QOU axioms (specifically the availability of the faithful exact monoidal fibre functor $\tau$). It operates independently of external theorems (e.g. Woronowicz 1987); the built-in categorical infrastructure stands self-sufficient.
 <!-- FILE_END: quantum-peter-weyl-interpretation.md -->
 
 <!-- FILE_START: p1-nonlinear-uniqueness.md -->
-Let $(\mathbf{C}, A, \tau)$ be a
-[QOU](#def:quantum-observable-universe) with substrate parameter
-$q > 1$.  Let $v$ be a divergence-free solution of the
-[q-NS system](#def:q-navier-stokes) with initial energy
-$E_0 = \lVert v_0 \rVert_A^2$ and let
-$C_q = (\sum_k [k]_q^{-2})^{1/2}$ be the
-[Sobolev constant](#prop:q-spectral-sobolev).
+Let $(\mathbf{C}, A, \tau)$ define a [QOU](#def:quantum-observable-universe) anchored at substrate parameter $q > 1$. Let $v$ represent a divergence-free solution to the [q-NS system](#def:q-navier-stokes) spanning initial energy $E_0 = \lVert v_0 \rVert_A^2$, and set $C_q = (\sum_k [k]_q^{-2})^{1/2}$ as the categorical [Sobolev constant](#prop:q-spectral-sobolev).
 
 **(a) q-Ladyzhenskaya inequality.**
-The advection term $B(v) = \mu \circ (v \otimes \nabla_q v)$
-satisfies
+The advection operator $B(v) = \mu \circ (v \otimes \nabla_q v)$ obeys
 
 $$
   \lVert B(v) \rVert_A
@@ -288,15 +195,13 @@ $$
   \Lambda_q = \frac{C_q^2E_0}{\nu_q} - \nu_q  <  \infty.
 $$
 
-In particular, $\Omega(t) \leq \Omega(0)e^{\Lambda_q t}$ for
-all $t \geq 0$: the enstrophy never blows up in finite time.
+In particular, $\Omega(t) \leq \Omega(0)e^{\Lambda_q t}$ unconditionally for all $t \geq 0$. Enstrophy physically cannot blow up in finite time.
 
 **(c) Uniqueness.**
-If $v_1, v_2$ are two solutions with $v_1(0) = v_2(0)$, then
-$v_1(t) = v_2(t)$ for all $t \geq 0$.
+If $v_1, v_2$ represent two exact solutions with $v_1(0) = v_2(0)$, then $v_1(t) = v_2(t)$ uniformly for all $t \geq 0$.
 <!-- FILE_END: p1-nonlinear-uniqueness.md -->
 
 <!-- FILE_START: p1-nonlinear-uniqueness-novelty.md -->
-While these steps mirror the standard Ladyzhenskaya/enstrophy arguments for classical 2D fluid uniqueness, the mathematical novelty is demonstrating that this precise package of estimates lifts identically to the non-commutative algebraic $q$-deformed categorical setting without modification, anchoring the well-posedness natively in the quantum group Sobolev spaces rather than classical function spaces.
+While these bounds structurally trace classical 2D fluid Ladyzhenskaya/enstrophy methods, the mathematical novelty rests in demonstrating that this exact bounding logic lifts seamlessly into the non-commutative $q$-deformed categorical architecture. It avoids phenomenological patching and strictly grounds well-posedness natively within the quantum group Sobolev spaces, circumventing classical function-space pathology.
 <!-- FILE_END: p1-nonlinear-uniqueness-novelty.md -->
 

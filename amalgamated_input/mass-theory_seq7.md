@@ -1,5 +1,4 @@
 <!-- FILE_START: lusztig-vs-hermitian-bar.md -->
-**Proposition** (Lusztig bar vs Hermitian $\ast$).
 *On the complex Iwahori–Hecke algebra $H_n(\mathbb{C}, q)$ with
 $q \in \mathbb{C}^\times$, the two ring anti-involutions*
 
@@ -19,13 +18,7 @@ $\mathrm{Im}(q) = 0$, equivalently $q \in \mathbb{R}$.*
 The Lean formalization specialises to $\mathbb{R}$ for the archimedean evaluation at the substrate $q_0$.
 ## Significance
 
-The framework's existing bar-symmetric / bar-anti-symmetric
-decomposition ([`def:bar-involution`](#def:bar-involution),
-cheat-sheet §4) is built around $\beta_L$ alone. On the real axis
-this is the only available involution structure. On general
-complex $q$ with $\lvert q \rvert > 1$ and $\mathrm{Im}(q) \neq 0$,
-the algebra admits a *finer* decomposition by simultaneous
-$\beta_L$- and $\beta_H$-eigenvalues, with four channels:
+The framework's existing bar-symmetric / bar-anti-symmetric decomposition is built around $\beta_L$ alone. On the real axis this is the only available involution structure. On general complex $q$ with $\lvert q \rvert > 1$ and $\mathrm{Im}(q) \neq 0$, the algebra admits a finer decomposition by simultaneous $\beta_L$- and $\beta_H$-eigenvalues, producing four channels:
 
 | $\beta_L$-eigenvalue | $\beta_H$-eigenvalue | Existing name | Comment |
 |---|---|---|---|
@@ -34,84 +27,30 @@ $\beta_L$- and $\beta_H$-eigenvalues, with four channels:
 | $-1$ | $+1$ | bar-anti-symmetric, Hermitian | new (CP-even, parity-odd?) |
 | $-1$ | $-1$ | bar-anti-symmetric, anti-Hermitian | projected away |
 
-The interpretation of the two new channels (and whether either
-corresponds to physical structure) is **research-grade and open**.
-This proposition only records the structural existence of the
-decomposition; it does not claim either new channel corresponds to
-physical structure.
+The interpretation of the two new channels remains open. This proposition only records the structural existence of the decomposition; it does not claim either new channel corresponds to physical structure.
 
 ## Non-claims of this proposition (CAL-4 caveat)
 
-- It does **not** claim $\mathrm{Im}(q_0) \neq 0$.
-- It does **not** claim the two new channels carry physical content.
-- It does **not** introduce a further calibration input.
+- It does not claim $\mathrm{Im}(q_0) \neq 0$.
+- It does not claim the two new channels carry physical content.
+- It does not introduce a further calibration input.
 
-It claims only that on complex $q$ with $\mathrm{Im}(q) \neq 0$ the
-two anti-involutions split, and that the framework's current
-real-axis convention makes the split invisible.
+It claims only that on complex $q$ with $\mathrm{Im}(q) \neq 0$ the two anti-involutions split, and that the framework's current real-axis convention makes the split invisible.
 <!-- FILE_END: lusztig-vs-hermitian-bar.md -->
 
 <!-- FILE_START: q-zero-complex-extension.md -->
-**Proposition** (q-zero complex extension).
-*Let $R$ be a commutative ring and $q \in R^\times$ a unit. Every
-pre-Archimedean substrate identity — the Hecke quadratic
-$\sigma_i^2 = (q - q^{-1})\sigma_i + 1$ on the Iwahori–Hecke algebra
-$H_n(R, q)$, the [bar involution](#def:bar-involution)
-$q \leftrightarrow q^{-1}$, $\sigma_i \leftrightarrow \sigma_i^{-1}$,
-the Frobenius pairing $\langle\cdot,\cdot\rangle_F$ on the
-Hecke–Hopf substrate, and the Markov trace
-$\mathrm{tr}_M \colon H_n(R, q) \to R$ — is stated polymorphically
-in $R$. In particular the specialization*
+*Let $R$ be a commutative ring and $q \in R^\times$ a unit. Every pre-Archimedean substrate identity—the Hecke quadratic $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$, the bar involution $q \leftrightarrow q^{-1}$, $\sigma_i \leftrightarrow \sigma_i^{-1}$, the Frobenius pairing $\langle\cdot,\cdot\rangle_F$, and the Markov trace $\mathrm{tr}_M$—is stated polymorphically in $R$. The specialization $R = \mathbb{C}$ with $q_0 \in \mathbb{C}$ and $\lvert q_0 \rvert > 1$ is admissible. The substrate identities transfer verbatim, with $\lvert q \rvert > 1$ replacing the archimedean ordering $q > 1$ as the substrate-level non-degeneracy condition.*
 
-$$
-R \;=\; \mathbb{C}, \qquad q_0 \in \mathbb{C} \quad \text{with}
-   \quad \lvert q_0 \rvert > 1
-$$
-
-*is admissible: the substrate identities transfer verbatim, with
-$\lvert q \rvert > 1$ replacing the archimedean ordering $q > 1$ as
-the substrate-level non-degeneracy condition.*
 ## Significance
 
-The proposition makes explicit that the framework's pre-Archimedean
-content is *independent of the choice of $\mathrm{Im}(q)$*. The
-current convention $q_0 \in \mathbb{R}$, $q_0 > 1$ is one valid
-specialization: the one whose Archimedean realisation $\tau$ maps
-into $\mathbf{Vec}_\mathbb{R}$.
+The proposition makes explicit that the framework's pre-Archimedean content is independent of the choice of $\mathrm{Im}(q)$. The current convention $q_0 \in \mathbb{R}$, $q_0 > 1$ is one valid specialization.
 
-**CAL-4 caveat:** a complex $q_0$ with $\lvert q_0 \rvert > 1$ would require either:
+**CAL-4 caveat:** A complex $q_0$ with $\lvert q_0 \rvert > 1$ would require either a function expressing $\mathrm{Im}(q_0)$ in terms of the three existing calibrations, or a structural constraint fixing $\mathrm{Im}(q_0)$ from substrate data. Neither is currently supplied. The proposition provides infrastructure for the categorical lift without claiming the physical reality of $\mathrm{Im}(q_0)$.
 
-1. **A function** expressing $\mathrm{Im}(q_0)$ in terms of the
-   three existing calibrations $(m_e,\,m_\mu/m_e,\,\mathfrak{Q}_\beta)$ — *not*
-   a fourth calibration, which the
-   [three-input discipline](#rem:calibration-inputs) forbids; or
-2. **A structural constraint** fixing $\mathrm{Im}(q_0)$ from
-   substrate data (e.g. a self-consistency equation in the Hecke
-   algebra over $\mathbb{C}$).
-
-Neither is currently supplied. The proposition is *infrastructure*
-for the categorical lift; it is not a claim about physical reality
-of $\mathrm{Im}(q_0)$.
-
-## Relation to the unit-circle deformation
-
-The codebase already treats one complex-$q$ regime: the unit circle
-$q = e^{i\Theta}$, where the bar involution coincides with complex
-conjugation and the pair $(\Phi_q, \mathrm{Li}_2^q)$ becomes a
-Hermitian-conjugate pair (see
-[`commutative-chirality-vanishes`](#cor:commutative-chirality-vanishes)
-and cheat-sheet §4). This proposition extends the admissible regime
-to $\lvert q \rvert > 1$, where Lusztig bar and Hermitian $\ast$
-*split* (see [`lusztig-vs-hermitian-bar`](#prop:lusztig-vs-hermitian-bar)).
-The unit-circle case is the boundary; the real-axis case is the
-$\mathrm{Im}(q) = 0$ specialization; the general complex case is
-between them.
+The codebase evaluates one complex-$q$ regime: the unit circle $q = e^{i\Theta}$. Here the bar involution coincides with complex conjugation, and the pair $(\Phi_q, \mathrm{Li}_2^q)$ becomes a Hermitian-conjugate pair. This proposition extends the admissible regime to $\lvert q \rvert > 1$, where Lusztig bar and Hermitian $\ast$ split. The unit-circle case forms the boundary, the real-axis case forms the $\mathrm{Im}(q) = 0$ specialization, and the general complex case sits between them.
 <!-- FILE_END: q-zero-complex-extension.md -->
 
 <!-- FILE_START: two-filtration-bridge-general.md -->
-**Proposition (two-filtration bridge map in full generality —
-bar-class determines iterated-integral depth).**
-
 [`prop:two-filtration-bridge-small-cases`](#prop:two-filtration-bridge-small-cases)
 verified the bridge map $d_{\mathrm{II}}$ at all partitions of $n \leq 4$.
 *This proposition extends the verification to **all** partitions of
@@ -471,8 +410,7 @@ If discharged, the joint action gives:
 
 <!-- FILE_START: adelic-substrate.md -->
 **Definition.**
-*The **adelic substrate** of the QOU framework is the ring of adeles
-of $\mathbb{Q}$,*
+*The **adelic substrate** of the QOU framework is the ring of adeles of $\mathbb{Q}$,*
 
 $$
   \mathbb{A}
@@ -480,9 +418,7 @@ $$
   \mathbb{R} \;\times\; \prod_{p}{}^{\!\!\prime}\;\mathbb{Q}_p,
 $$
 
-*the restricted product of the archimedean completion $\mathbb{R}$
-with all $p$-adic completions $\mathbb{Q}_p$ (restriction: almost
-all components lie in the maximal compact subring $\mathbb{Z}_p$).*
+*the restricted product of the archimedean completion $\mathbb{R}$ with all $p$-adic completions $\mathbb{Q}_p$ (restriction: almost all components lie in the maximal compact subring $\mathbb{Z}_p$).*
 
 Each non-archimedean place $p$ corresponds to a localized quantum
 geometric state of the substrate: a specific $q$-deformation

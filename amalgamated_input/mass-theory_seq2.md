@@ -1,7 +1,5 @@
 <!-- FILE_START: mass-formula-derivation-commutative-chirality-vanishes-intro.md -->
-Continuation of the preceding sub-section.
-
-This sub-section derives the mass formula on the commutative substrate.  The arc proceeds through the Frobenius-S classification (a two-table substrate-level catalogue), pins the commutative-chirality-vanishes result, and exhibits the derived mass formula for light isotopes with table data.  The closing blocks specialise to the deuteron binding energy in the Frobenius codimension framework — the chapter's lightest non-trivial benchmark.
+This sub-section derives the mass formula on the commutative substrate. The arc proceeds through the Frobenius-S classification, establishes the vanishing commutative-chirality result, and exhibits the derived mass formula for light isotopes with table data. The closing blocks specialise to the deuteron binding energy in the Frobenius codimension framework.
 <!-- FILE_END: mass-formula-derivation-commutative-chirality-vanishes-intro.md -->
 
 <!-- FILE_START: commutative-chirality-vanishes.md -->
@@ -41,7 +39,6 @@ $\Phi_1$ (trace) and $\Phi_2$ (determinant).
 <!-- FILE_END: commutative-chirality-vanishes-interpretation.md -->
 
 <!-- FILE_START: derived-mass-formula-light-isotopes.md -->
-**Proposition.**
 *The strict derived mass formula*
 
 $$
@@ -80,19 +77,14 @@ matches CODATA exactly (preserved by inter-gen direct convention,
 since free nucleons have $\Phi = 0$).
 
 **Binding under-prediction.**
-*The same formula systematically under-predicts nuclear binding
-energies by $30\%$ to $76\%$ across light isotopes:*
+*The same formula systematically under-predicts nuclear binding energies by $30\%$ to $76\%$ across light isotopes:*
 
 See [Table 2](#tbl:derived-mass-formula-light-isotopes-table2-data).
 
-*The under-binding pattern is structural: the formula misses an
-intra-shell binding mechanism present in nature. Closing the gap
-universally requires a new derived term (not phenomenological
-patches), which remains an open research direction.*
+*The under-binding pattern reveals a structural omission: the formula misses an intra-shell binding mechanism present in nature. Closing the gap universally requires a new derived term rather than phenomenological patches.*
 <!-- FILE_END: derived-mass-formula-light-isotopes.md -->
 
 <!-- FILE_START: hoefsmit-seminormal-form.md -->
-**Proposition.**
 *For each partition $\lambda \vdash n$ and substrate parameter $q > 1$,
 the Hoefsmit seminormal form \cite{hoefsmit1974} gives an explicit
 matrix representation $\rho_\lambda\colon H_n(R, q) \to M_{d_\lambda}(\mathbb{C})$
@@ -132,7 +124,6 @@ and knot diagrams.*
 <!-- FILE_END: hoefsmit-seminormal-form.md -->
 
 <!-- FILE_START: figure-eight-branching-rule.md -->
-**Proposition.**
 *For any partition $\lambda \vdash k$ and substrate parameter $q > 1$,
 the Frobenius character of the figure-eight braid
 $4_1 = \sigma_0\sigma_1^{-1}\sigma_0^{-1}\sigma_1$ in the irreducible

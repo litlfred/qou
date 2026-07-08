@@ -27,10 +27,7 @@ deuteron:
 | crystal-graph naïve | KLR / Kashiwara level-0 | deuteron |
 | augmented Markov | Markov-extension ansatz | deuteron |
 
-The current direction is **Option E** (Kashiwara crystal, q-Reeb
-+ isospin mirror — `option_e_v9.py`), with PROBE 4 cheap-pass
-refutation and the full-order $\theta_\lambda$
-approach.
+The current direction is **Option E** (Kashiwara crystal, q-Reeb + isospin mirror — `option_e_v9.py`), with PROBE 4 cheap-pass refutation and the full-order $\theta_\lambda$ approach.
 
 ### Correctness conditions
 
@@ -61,16 +58,10 @@ production. Cross-PR coordination tracked in
 
 ### Notes
 
-*Per AGENTS.md "Δ_λ gate (Track A blocker)" rule: **do not
-propose a seventh fit-based ansatz**. The three-calibration
-discipline review will catch it. Productive directions: GAP-A-3,
-GAP-A-4 (categorical brane-tower level selection / ρ general
-rule) and Option E (Kashiwara crystal). Full context:
-[`docs/audits/2026-05-18-delta-lambda-gating-context.md`](../../../docs/audits/2026-05-18-delta-lambda-gating-context.md).*
+*Per AGENTS.md "$\Delta_\lambda$ gate (Track A blocker)" rule: **do not propose a seventh fit-based ansatz**. The three-calibration discipline review will reject it. Productive directions include GAP-A-3, GAP-A-4 (categorical brane-tower level selection / $\rho$ general rule) and Option E (Kashiwara crystal). Full context: [`docs/audits/2026-05-18-delta-lambda-gating-context.md`](../../../docs/audits/2026-05-18-delta-lambda-gating-context.md).*
 <!-- FILE_END: mba-sidecar-delta-lambda-closure.md -->
 
 <!-- FILE_START: mba-sidecar-mirror-cancellation.md -->
-**Proposition (mirror-pair cancellation of the bar-even baseline).**
 *Let $(Z, N)$ and $(N, Z)$ be a mirror pair at fixed mass number
 $A = Z + N$, with crossing statistics of the atom braid word*
 $$
@@ -101,14 +92,7 @@ additive form $\beta(A) + \zeta(Z-N)$ — that separation is the only hypothesis
 justified by the mirror-invariance of the bar-even statistics and supplied (not
 derived) as the additive-channel ansatz.
 
-This is why the observed mirror splits are clean numerical values
-($\zeta(+1) - \zeta(-1) \approx -1.34$ for ${}^{3}\mathrm{He}/{}^{3}\mathrm{H}$,
-$\approx -1.77$ for ${}^{7}\mathrm{Be}/{}^{7}\mathrm{Li}$) even where the absolute
-deviations are large and $A$-dependent, and even past the $A \le 4$ regime in
-which the leading $q_0^{10A-5}$ near-match holds: the difference isolates the
-bar-odd $Z$-correction from the $A$-dependent baseline. The sign of $\zeta$ is
-fixed by the per-nucleon intra-$\mathcal{B}_3$ writhe asymmetry (proton $+3 >$
-neutron $+1$); the magnitude is open and is not fitted.
+Thus, the observed mirror splits are clean numerical values ($\zeta(+1) - \zeta(-1) \approx -1.34$ for ${}^{3}\mathrm{He}/{}^{3}\mathrm{H}$, $\approx -1.77$ for ${}^{7}\mathrm{Be}/{}^{7}\mathrm{Li}$) even where absolute deviations are large and $A$-dependent. This holds even past the $A \le 4$ regime. The difference isolates the bar-odd $Z$-correction from the $A$-dependent baseline. The sign of $\zeta$ is fixed by the per-nucleon intra-$\mathcal{B}_3$ writhe asymmetry (proton $+3 >$ neutron $+1$); its magnitude is open and unfitted.
 <!-- FILE_END: mba-sidecar-mirror-cancellation.md -->
 
 <!-- FILE_START: mba-sidecar-isovector-chiral-residue.md -->
@@ -126,25 +110,9 @@ $$
 *independent of the mass number $A = Z+N$; equivalently the per-isospin
 coefficient $b = 4\kappa$ is fixed by the single keystone chiral weight $\kappa$.*
 
-The bar-odd writhe $\sigma - \sigma^{-1} = 4Z = 2A + 2(Z-N)$ splits into an
-isoscalar part $2A$ and an isovector part $2(Z-N)$ whose slope is
-$A$-independent ([`prop:mirror-baseline-cancellation`](#prop:mirror-baseline-cancellation)).
-The chiral residue is the Reeb-involution-odd ($\xi \mapsto -\xi$) content
-([`archimedean-chirality`](#rem:archimedean-chirality)), and the Bring surface
-supplies the chiral datum through the $A_5$ Galois twist
-$\sqrt{5} \mapsto -\sqrt{5}$ (the keystone five-fold chirality). The chiral weight
-$\kappa$ is therefore the chiral part of the $W_\lambda$ Plancherel measure, whose
-value is the content of the single open keystone conjecture
-$\mathtt{BWVacuumRowIsHecke}$ ($\mathtt{bwS0}\,\lambda = d_q(\lambda)/D$).
+The bar-odd writhe $\sigma - \sigma^{-1} = 4Z = 2A + 2(Z-N)$ splits into an isoscalar part $2A$ and an isovector part $2(Z-N)$ with an $A$-independent slope ([`prop:mirror-baseline-cancellation`](#prop:mirror-baseline-cancellation)). The chiral residue is the Reeb-involution-odd ($\xi \mapsto -\xi$) content ([`archimedean-chirality`](#rem:archimedean-chirality)). The Bring surface supplies the chiral datum via the $A_5$ Galois twist $\sqrt{5} \mapsto -\sqrt{5}$ (keystone five-fold chirality). Therefore, the chiral weight $\kappa$ is the chiral part of the $W_\lambda$ Plancherel measure. Its value corresponds to the open keystone conjecture $\mathtt{BWVacuumRowIsHecke}$ ($\mathtt{bwS0}\,\lambda = d_q(\lambda)/D$).
 
-**Consequence.** The binding-energy isovector closure is *not* a separate
-problem: it is downstream of the **same** open conjecture as the $W_\lambda$
-keystone. Once $\kappa$ is derived there, the binding coefficient $b = 4\kappa$
-follows, and the empirical test becomes the binding-side check that the isovector
-residual vanishes when the keystone chiral residue is supplied — a no-fit,
-pass/fail criterion. The value $\kappa$ is an output of the three calibrations and
-the gated keystone identification; it is never tuned to data (the measured
-$b \approx -1.75$ is the *current error*, not a target).
+**Consequence.** The binding-energy isovector closure is *not* an isolated problem. It derives from the **same** open conjecture as the $W_\lambda$ keystone. Once $\kappa$ is derived there, the binding coefficient $b = 4\kappa$ naturally follows. The empirical test then becomes the binding-side check that the isovector residual vanishes given the keystone chiral residue — a rigid, no-fit criterion. The value $\kappa$ emerges solely from the three calibrations and the keystone identification. It is never tuned to data (the measured $b \approx -1.75$ represents the *current error*, not a target).
 <!-- FILE_END: mba-sidecar-isovector-chiral-residue.md -->
 
 <!-- FILE_START: mba-sidecar-ck-truncation-ladder.md -->
@@ -173,7 +141,7 @@ and report each $c_k$ with its **tiered classification**.*
 | $\geq 4$ | $q_0$-dependent | **near-match** | N=4→N=5 non-monotonicity is the experimental signature |
 | any | empirical fit | **fitted** | flagged as discipline violation |
 
-*Per AGENTS.md "$\mathfrak{Q}_\beta$ c_k is a TRUNCATION ORDER, not a wire/un-wire
+*Per AGENTS.md "$\mathfrak{Q}_\beta$ c_k is a TRUNCATION ORDER, not an inclusion/exclusion
 gate", **never** report tiers as binary wired / dropped — always
 tiered.*
 
@@ -209,14 +177,14 @@ Higher-precision regenerations use
 [`q-beta-predicted.witness.json`](../../../computations/q-beta-predicted.witness.json).
 **Must** record each $c_k$ alongside its tier. The $\mathfrak{Q}_\beta$ subdir
 ledger ([`docs/coordination/1ppq-qbeta.md`](../../../docs/coordination/1ppq-qbeta.md))
-maintains the flip-flop history table; any wire/un-wire decision
+maintains the reversal-history table; any inclusion/exclusion decision
 must update both.*
 
 ### Notes
 
 *Permanent fix path is the $\mathfrak{Q}_\beta$ Habiro element parallel to
 $\alpha_{\mathrm{EM}}$'s $[2]_q \cdot (1 - h^2 \alpha)$
-(PR #1511). The $c_3$ flip-flop history (six entries as of
+(PR #1511). The $c_3$ reversal history (six entries as of
 2026-05-31) is the canonical example of why tiered classification
 is mandatory.*
 <!-- FILE_END: mba-sidecar-ck-truncation-ladder.md -->
@@ -264,13 +232,7 @@ present.
 
 ### Why this is mandatory
 
-*The dual variables **are** the binding-energy shadow prices.
-The active demand channels (`y_star[i] > 0`) name the most
-receptive sub-braids — they identify which Wedderburn blocks the
-bound state actually saturates. Solving only the primal loses
-this structural information, which has been the historical
-pattern (58 of 58 LP/SDP witnesses on `main` lacked the dual at
-the time this rule was added).*
+*The dual variables **are** the binding-energy shadow prices. Active demand channels (`y_star[i] > 0`) name the receptive sub-braids, identifying the Wedderburn blocks saturated by the bound state. Solving only the primal drops this structural information, a historical flaw (58 of 58 LP/SDP witnesses on `main` lacked the dual when this rule was introduced).*
 
 ### Correctness conditions
 

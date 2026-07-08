@@ -205,7 +205,6 @@ Given a Skein polynomial $P(q) = \prod_i \hat{V}_i(q)$ ([Skein polynomial](#prop
 <!-- FILE_END: shell-eigenvalue-properties.md -->
 
 <!-- FILE_START: quantum-dilogarithm-volume.md -->
-**Proposition.**
 The nuclear binding energy is the quantum dilogarithm volume of the Markov trace, normalized by $\hbar_q^2$:
 
 $$

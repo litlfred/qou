@@ -1,13 +1,13 @@
 <!-- FILE_START: information-theory-intro.md -->
-The categorical framework of the QOU determines the information-theoretic structure of the universe, in addition to its geometry and particle spectrum. This chapter derives the Planck scale, the speed of light, mass--energy equivalence, the gravitational constant, and the operational entropy from the substrate parameter $q$ and the Reeb derivation. We then develop the computational consequences: a categorical criterion for $P \neq NP$, a Turing-complete Skein machine, and a conformal cyclic cosmology where aeon boundaries are categorical horizons.
+The categorical framework of the QOU determines the information-theoretic structure of the universe. This chapter derives the Planck scale, the speed of light, mass--energy equivalence, the gravitational constant, and the operational entropy from the substrate parameter $q$ and the Reeb derivation. We then develop the computational consequences: a categorical criterion for $P \neq NP$, a Turing-complete Skein machine, and a conformal cyclic cosmology where aeon boundaries are categorical horizons.
 
-The first half (Sections~1--4) establishes the physical constants. Emergent gravity arises from the information geometry of the Frobenius--Hopf state space. The Planck time equals one Reeb operation. The speed of light $c_q = 1/(q-1)$ and the reduced Planck constant $\hbar_q = (q-1)/q$ follow strictly from the substrate parameter. 
+Emergent gravity arises from the information geometry of the Frobenius--Hopf state space. The Planck time equals one Reeb operation. The speed of light $c_q = 1/(q-1)$ and the reduced Planck constant $\hbar_q = (q-1)/q$ follow strictly from the substrate parameter. 
 
-The second half (Sections~5--8) develops the computational and cosmological implications. These include the $P$-bandwidth bound, statistical mechanics on the brane tower, and the horizon functor that implements Penrose's conformal cyclic cosmology within the QOU framework.
+The computational and cosmological implications include the $P$-bandwidth bound, statistical mechanics on the brane tower, and the horizon functor that implements Penrose's conformal cyclic cosmology within the QOU framework.
 <!-- FILE_END: information-theory-intro.md -->
 
 <!-- FILE_START: emergent-gravity-info.md -->
-We derive the gravitational constant $G_q$ from the $q$-Yang--Mills--Levi action ([$q$-YM-Levi](#def:q-yang-mills-levi)), not from semiclassical entropy-area relations. The coupling is determined by the **in-progress braid content** of a Planck cell. These are sections of the jet tower $A_0 \hookrightarrow A_1 \hookrightarrow \cdots$ that remain partially evaluated and not yet resolved to observable knots ([gravitational constant](#def:gravitational-constant)).
+We derive the gravitational constant $G_q$ from the $q$-Yang--Mills--Levi action ([$q$-YM-Levi](#def:q-yang-mills-levi)). The coupling is determined by the **in-progress braid content** of a Planck cell. These are sections of the jet tower $A_0 \hookrightarrow A_1 \hookrightarrow \cdots$ that remain partially evaluated and not yet resolved to observable knots ([gravitational constant](#def:gravitational-constant)).
 
 The central formula is:
 
@@ -15,9 +15,9 @@ $$
   G_q = \frac{c_q^3 \hbar_q}{S_{\mathrm{cell}}}.
 $$
 
-Here $S_{\mathrm{cell}}$ measures the total information content per fibre, counting all in-progress braids. To maintain self-consistency with Planck units, the cell entropy must evaluate to $S_{\mathrm{cell}} = (q-1)^2/q^3 \approx 0.009$ $q$-bits. This represents only $1.0\%$ of the single-operation entropy $\eta_q \approx 0.892$. The small ratio reflects the sparsity of partially-evaluated braids in the near-classical regime.
+Here $S_{\mathrm{cell}}$ measures the total information content per fibre, counting all in-progress braids. To maintain self-consistency with Planck units, the cell entropy must evaluate to $S_{\mathrm{cell}} = (q-1)^2/q^3 \approx 0.009$ $q$-bits. This represents $1.0\%$ of the single-operation entropy $\eta_q \approx 0.892$. The small ratio reflects the sparsity of partially-evaluated braids in the near-classical regime.
 
-This mechanism connects the QOU framework to Verlinde's entropic gravity programme. Gravity is extremely weak because most braiding at a typical fibre is **already resolved**. Fully resolved braids contribute to $T^{(q)}$ as matter. Only the unresolved, in-progress tails remain to establish the gravitational coupling.
+Gravity is weak because most braiding at a typical fibre is already resolved. Fully resolved braids contribute to $T^{(q)}$ as matter. Only the unresolved, in-progress tails establish the gravitational coupling.
 <!-- FILE_END: emergent-gravity-info.md -->
 
 <!-- FILE_START: planck-info-unit.md -->

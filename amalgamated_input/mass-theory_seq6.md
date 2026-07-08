@@ -1,8 +1,98 @@
 <!-- FILE_START: complex-volume-ladder-intro.md -->
-The $\beta$-decay $Q$-value is the imaginary part of the complex volume $\mathfrak{V}$ (introduced in [The complex volume $\mathfrak{V}$](#sec:complex-volume)): $\mathfrak{Q}_\beta = \operatorname{Im}\mathfrak{V}$, the bar-odd ($\sinh$) partner of the bar-even ($\cosh$) binding part $\mathfrak{E}_{\mathrm{bind}} = \operatorname{Re}\mathfrak{V}$. This subsection develops its precision ladder — the convergent series $\mathfrak{Q}_\beta = \mathfrak{Q}_{\mathrm{base}}\cdot\prod_k(1 + c_k u^k)$ with $u = b\,\hbar_q^2$ — as the $\operatorname{Im}$ leg of one complex-volume expansion whose $\operatorname{Re}$ leg is the binding ladder.
+The $\beta$-decay $Q$-value is the imaginary part of the complex volume $\mathfrak{V}$: $\mathfrak{Q}_\beta = \operatorname{Im}\mathfrak{V}$. It forms the bar-odd ($\sinh$) partner to the bar-even ($\cosh$) binding part $\mathfrak{E}_{\mathrm{bind}} = \operatorname{Re}\mathfrak{V}$. This subsection develops its precision ladder—the convergent series $\mathfrak{Q}_\beta = \mathfrak{Q}_{\mathrm{base}}\cdot\prod_k(1 + c_k u^k)$ with $u = b\,\hbar_q^2$—as the $\operatorname{Im}$ leg of a complex-volume expansion whose $\operatorname{Re}$ leg is the binding ladder.
 
-The blocks carry the ladder unchanged: the categorical precision ladder, the $c_3 = -2 = J_{\mathrm{Hopf}}(q=1)$ Hopf three-fold Markov near-match, the $c_k$ extraction from algebraic rules, the typed $B_3$ sub-braid extraction, and the $\mathrm{Cl}_3(\zeta_5)$ geometric realization of the depth-3 period. Throughout, the $c_k$ are read as Taylor coefficients of the *fibre-level* complex $\mathfrak{V}(q)$ — $c_2 = -1$ is proved Taylor-exact, while $c_k$ for $k \geq 3$ are $q_0$-dependent near-matches, exactly as one expects when a single complex-analytic coefficient is evaluated at real $q_0$ along its two parities (the bar-even net-route and the bar-odd $\mathrm{tr}_M$ brane-tower giving distinct real components).
+The blocks present the categorical precision ladder, the $c_3 = -2$ Hopf three-fold Markov near-match, the $c_k$ extraction from algebraic rules, the typed $B_3$ sub-braid extraction, and the geometric realization of the depth-3 period. The $c_k$ are Taylor coefficients of the fibre-level complex $\mathfrak{V}(q)$. The $c_2 = -1$ coefficient is Taylor-exact, while $c_k$ for $k \geq 3$ are structural near-matches arising from a single complex-analytic coefficient evaluated at real $q_0$ along its two parities.
 <!-- FILE_END: complex-volume-ladder-intro.md -->
+
+<!-- FILE_START: phi-b-bar-parity-decomposition.md -->
+# Bar-parity (sinh/cosh) decomposition under the bar involution
+
+**Proposition.** *Let $R$ be a commutative ring and $\sigma\colon R\to R$ a
+ring involution — the bar $q\mapsto q^{-1}$. For every $f\in R$,*
+
+$$
+2f \;=\; \underbrace{(f+\sigma f)}_{\text{bar-even}} \;+\; \underbrace{(f-\sigma f)}_{\text{bar-odd}},
+\qquad
+\sigma(f+\sigma f)=f+\sigma f,\qquad \sigma(f-\sigma f)=-(f-\sigma f).
+$$
+
+*The bar-even part is fixed by $\sigma$; the bar-odd part is negated. The
+decomposition is unique and holds over any commutative ring.*
+
+## Interpretation
+
+This is the algebraic core of the **sinh/cosh split** under the bar
+involution $\sigma$: any element — in particular $\log\Phi_b$ for the
+Faddeev quantum dilogarithm — decomposes into a bar-even ($\cosh$) and a
+bar-odd ($\sinh$) part. The Faddeev $\Phi_b$ *additionally* carries the
+**modular double** symmetry $\Phi_b=\Phi_{b^{-1}}$; this is a **distinct**
+involution ($b\mapsto b^{-1}$ maps $q=e^{2\pi i b^2}$ to its S-dual
+$\tilde q$, not to $q^{-1}$), and it is the structure the compact
+q-dilogarithm lacks — not the bar parity, which the compact form also has.
+
+Conditional on the complex-volume conjecture `conj:binding-qbeta-complex-volume`,
+the two parts are the two faces of the complex volume
+$\mathfrak V=\mathrm{Vol}+i\,\mathrm{CS}$:
+
+- **bar-even ($\cosh$)** $=\ \mathrm{Re}\,\mathfrak V$ — the hyperbolic
+  volume / **mass** face, evaluated on the real-$q$ (Rogers) saddle;
+- **bar-odd ($\sinh$)** $=\ \mathrm{Im}\,\mathfrak V$ — the Chern–Simons /
+  **decay** ($\mathfrak Q_\beta$) face, carried on the root-of-unity
+  (Faddeev) saddle.
+
+The mathematical statement above is **unconditional**; only this physical
+identification of the two parts invokes the conjecture.
+
+## Consequence for the $c_k$ ladder
+
+Because the two parts live on the two archimedean saddles, a coefficient's
+**bar-parity predicts its anchor-behaviour**: bar-even coefficients are
+real-$q$ and **anchor-stable**, bar-odd coefficients are root-of-unity and
+**anchor-dependent**. This is confirmed on both available rungs —
+$c_2=-1$ (bar-even) is Taylor-exact, $c_3$ (bar-odd) swings $\approx 2.375\%$
+between the proton and muon anchors — so the ladder element factors as
+$F(q)=F_{\text{even}}(q)\cdot F_{\text{odd}}(q)$ with $F_{\text{odd}}$ the
+modular-double ($\Phi_b$) factor. (Scan:
+`computations/qbeta/qbeta_fmap_parity_stability_probe.py`; accuracy audit:
+`docs/audits/2026-07-06-qbeta-faddeev-phi-b-modular-double-accuracy.md`.)
+<!-- FILE_END: phi-b-bar-parity-decomposition.md -->
+
+<!-- FILE_START: phi-b-unitary-bar-odd.md -->
+# Unitary phases are bar-odd: the fibre-saddle rigidity
+
+**Proposition.** *Let $R$ be a commutative ring with a ring involution
+$\sigma$, and call $u \in R$ **$\sigma$-unitary** when $\sigma(u)\,u = 1$
+(the ring-involution form of $|u| = 1$). Then:*
+
+1. *$1$ is $\sigma$-unitary, and $\sigma$-unitaries are closed under
+   multiplication;*
+2. *(**rigidity**) a bar-even $\sigma$-unitary is an involution:
+   $\sigma(u) = u$ and $\sigma(u)\,u = 1$ imply $u^2 = 1$;*
+3. *equivalently, a $\sigma$-unitary with $u^2 \neq 1$ satisfies
+   $\sigma(u) \neq u$ — every genuine phase carries a nontrivial bar-odd
+   part.*
+
+## Interpretation
+
+On the fibre saddle — real $b$, so $q = e^{2\pi i b^2}$ is a root of unity —
+the Faddeev quantum dilogarithm is **unimodular**: $|\Phi_b(z)| = 1$ for
+real $z$ (witnessed on the validated evaluator at the $\zeta_4$, $\zeta_5^2$,
+$\zeta_6$ and self-dual points; analytically this is the reflection
+$w \mapsto -\bar w$ of the Faddeev contour integral). So the fibre-saddle
+$\Phi_b$ is a $\sigma$-unitary in the sense above, with $\sigma$ the bar
+involution (archimedean instance: complex conjugation).
+
+The rigidity clause then forces the structure of the ladder factorisation
+$F(q) = F_{\text{even}}(q)\cdot F_{\text{odd}}(q)$: **a phase beyond
+$\pm 1$ cannot sit on the bar-even face.** The unimodular fibre-saddle
+$\Phi_b$ is therefore intrinsically a *bar-odd* carrier, and the phase
+reframe $\mathfrak{Q}_\beta/Q_A = \cos\Phi(u)$ is the natural bar-odd form
+for the decay channel. (The identification of the bar-odd face with the
+decay observable $\mathfrak{Q}_\beta = \mathrm{Im}\,\mathfrak{V}$ is
+conditional on the complex-volume conjecture
+`conj:binding-qbeta-complex-volume`; the proposition itself is
+unconditional algebra.)
+<!-- FILE_END: phi-b-unitary-bar-odd.md -->
 
 <!-- FILE_START: q-beta-categorical-precision-ladder.md -->
 > **SUPERSEDED by Habiro-ring identification .**
@@ -17,11 +107,8 @@ The blocks carry the ladder unchanged: the categorical precision ladder, the $c_
 > The content below is retained for HISTORICAL reference and for the
 > derivation narrative (it shows how the pattern was discovered).
 
-**$\mathfrak{Q}_\beta$ categorical-derivation precision ladder** — the closed-form
-prediction of free-neutron $\beta$-decay Q-value $\mathfrak{Q}_\beta$ at the
-substrate $q_0$ via a four-rung categorical recursion ending at $-0.0066$
-ppm residual against CODATA (well under the $0.0094$ ppm $N=3$ c(K)
-ceiling from `conj:archimedean-remainder-exponential-decay`).
+**$\mathfrak{Q}_\beta$ categorical-derivation precision ladder.**
+This derives the free-neutron $\beta$-decay Q-value $\mathfrak{Q}_\beta$ at the substrate $q_0$ via a four-rung categorical recursion. The series reaches a $-0.0066$ ppm residual against CODATA, below the $0.0094$ ppm $N=3$ c(K) ceiling from `conj:archimedean-remainder-exponential-decay`.
 
 ## The formula
 
@@ -180,10 +267,10 @@ sub-percent empirical match. The remaining open questions:
    a generating-function description rather than a per-rung
    tabulation.
 
-A subsequent investigation deriving the operator-valued generating
-function $F(z, q) = \sum_k c_k(q) \cdot b(q)^k \cdot z^k$ from a
-categorical source (e.g. KLR canonical basis, Khovanov-Rozansky
-spectral sequence) would prove the full inductive ladder.
+The full inductive ladder follows from a categorical source for the
+operator-valued generating function
+$F(z, q) = \sum_k c_k(q) \cdot b(q)^k \cdot z^k$ — for instance the KLR
+canonical basis or a Khovanov–Rozansky spectral sequence.
 <!-- FILE_END: q-beta-categorical-precision-ladder.md -->
 
 <!-- FILE_START: q-beta-c3-hopf-three-fold-markov.md -->
@@ -274,27 +361,10 @@ giving $c_3 = -2$ as a **structural prediction**, not an empirical fit.
 Per the canonical formalism,
 the prediction is empirically observable:
 
-- N=2 (Kashiwara $b^2$ alone): residual $+1.25$ ppm (above CODATA's
-  $0.4$ ppm floor)
-- N=3 (+ structural $c_3 = -2$): residual $+0.011$ ppm (within floor)
-- **112$\times$ tightening** at N=3 from the structural identification.
+The N=2 step (Kashiwara $b^2$ alone) gives a residual of $+1.25$ ppm, well above CODATA's $0.4$ ppm floor. The N=3 step (structural $c_3 = -2$) yields $+0.011$ ppm, inside the floor. This represents a 112$\times$ tightening at N=3, observable above CODATA noise, verifying the categorical-chain prediction empirically.
 
-This 112$\times$ residual reduction is **observable above CODATA noise**,
-empirically validating the categorical-chain prediction.
-
-**Near-match tier (not Taylor-exact).** The identification
-$c_3 = J_{\text{Hopf}}(q=1) = -2$ is a **classical-limit near-match**, not
-a Taylor-exact coefficient — only $c_2 = -1$ is proved exact (per the
-$c_k$ truncation-order framing). Measured against the empirical $c_3$
-extracted from the operator-valued $N=3$ tower
-([`q-beta-operator-valued-N3.witness.json`](../../computations/q-beta-operator-valued-N3.witness.json),
-$c_3^{\text{emp}} \approx -2.0216$), the best simple model
-$c_3 = J_{\text{Hopf}}(q=1) - \hbar_q^2$ now sits at a residual
-$\approx 0.58\%$ (witness
-[`c3-hopf-habiro-analysis.witness.json`](../../computations/c3-hopf-habiro-analysis.witness.json)).
-This residual was $\approx 0.004\%$ against the pre-drift upstream input;
-the $\approx 0.58\%$ value reflects the refreshed $N=3$ operator-valued
-$c_3$, and is the size of the near-match gap — not evidence of exactness.
+**Near-match tier (not Taylor-exact).**
+The identification $c_3 = J_{\text{Hopf}}(q=1) = -2$ forms a classical-limit near-match, not a Taylor-exact coefficient. Only $c_2 = -1$ is proved exact. Evaluated against the empirical $c_3$ extracted from the operator-valued $N=3$ tower ($c_3^{\text{emp}} \approx -2.0216$), the simple model $c_3 = J_{\text{Hopf}}(q=1) - \hbar_q^2$ has a residual of $\approx 0.58\%$. This residual measures the near-match gap.
 
 ## Open formalization steps
 

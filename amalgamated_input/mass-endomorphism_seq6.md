@@ -1,15 +1,14 @@
 <!-- FILE_START: categorical-mass-markov-trace-endomorphism-intro.md -->
-The preceding sub-section developed the categorical-mass eigenspace foundations (topological-mass decompositions, $\rho_K$ graded expansion, Hecke branching, and magnitude budget). This sub-section enriches these foundations with the Markov-trace machinery necessary to compute the mass spectrum.
+The preceding sub-section established the categorical-mass eigenspace foundations (topological-mass decompositions, $\rho_K$ graded expansion, Hecke branching, and magnitude budget). This sub-section enriches these foundations with the Markov-trace machinery required to compute the mass spectrum.
 
-The arc proceeds in three movements. First, it constructs the recomputed low-isotope mass table and extracts the substrate-flow behaviour of the Markov-trace antipode polynomial symmetry. Second, it establishes the Markov-trace axiomatic closed form and the recursive reducer, which converts substrate-level Hecke traces into explicit numerical evaluations. Third, it reconciles the Markov-Z spectrum with the mass-endomorphism conjecture, identifies the categorical-neutrality saturated shells required for the predicted-spectra chapter, and packages the mass functor as the global section $\phi_n$.
+The analysis proceeds in three stages. First, it constructs the recomputed low-isotope mass table and extracts the substrate-flow behaviour of the Markov-trace antipode polynomial symmetry. Second, it establishes the Markov-trace axiomatic closed form and the recursive reducer, which converts substrate-level Hecke traces into explicit numerical evaluations. Third, it reconciles the Markov-Z spectrum with the mass-endomorphism conjecture, identifies the categorical-neutrality saturated shells required for the predicted-spectra chapter, and packages the mass functor as the global section $\phi_n$.
 
-Ultimately, this section provides the closed-form Markov-trace evaluation of the categorical mass element at every Wedderburn block. This combinatorial engine underpins the subsequent algebraic mass formulas.
+This section provides the closed-form Markov-trace evaluation of the categorical mass element at every Wedderburn block. This combinatorial engine underpins the subsequent algebraic mass formulas.
 <!-- FILE_END: categorical-mass-markov-trace-endomorphism-intro.md -->
 
 <!-- FILE_START: markov-trace-antipode-polynomial-symmetry.md -->
 ## Statement
 
-**Proposition (antipode-induced polynomial symmetry).**
 *Let $\mathcal{B}_p$ denote the proton braid in $B_3$ used in [`prop:atomic-mass-gb-nf`](#prop:atomic-mass-gb-nf). Let*
 
 $$
@@ -36,11 +35,11 @@ $$
 
 ## Categorical interpretation
 
-The Iwahori-Hecke algebra $H_n(q)$ is a Hopf algebra with antipode $S(\sigma_i) = \sigma_i^{-1}$. The Hecke quadratic relation $\sigma_i^2 = (q - q^{-1}) \sigma_i + 1$ implies $\sigma_i^{-1} = \sigma_i - (q - q^{-1})$. The antipode acts linearly on the generators with a $q \leftrightarrow q^{-1}$ component.
+The Iwahori-Hecke algebra $H_n(q)$ forms a Hopf algebra with antipode $S(\sigma_i) = \sigma_i^{-1}$. The Hecke quadratic relation $\sigma_i^2 = (q - q^{-1}) \sigma_i + 1$ implies $\sigma_i^{-1} = \sigma_i - (q - q^{-1})$. The antipode acts linearly on the generators with a $q \leftrightarrow q^{-1}$ component.
 
-The Markov trace $\operatorname{tr}_M$ is the Frobenius integral on $H_n(q)$ ([`prop:categorical-mass-markov`](#prop:categorical-mass-markov)). For Frobenius algebras with non-trivial Nakayama automorphism, the trace satisfies $\operatorname{tr}(S^2(x)) = \operatorname{tr}(x)$. For the Hecke algebra, $S^2$ acts as $q \leftrightarrow q^{-1}$ on the structural variable $q$ while preserving the algebra structure.
+The Markov trace $\operatorname{tr}_M$ provides the Frobenius integral on $H_n(q)$ ([`prop:categorical-mass-markov`](#prop:categorical-mass-markov)). For Frobenius algebras with non-trivial Nakayama automorphism, the trace satisfies $\operatorname{tr}(S^2(x)) = \operatorname{tr}(x)$. For the Hecke algebra, $S^2$ acts as $q \leftrightarrow q^{-1}$ on the structural variable $q$ while preserving the algebra structure.
 
-The minus sign in $\operatorname{tr}_M(\mathcal{B}_p)(1/q) = -\operatorname{tr}_M(\mathcal{B}_p)(q)$ reflects the **odd parity** of the proton word $\mathcal{B}_p$ under the antipode-induced involution. Here $S(\mathcal{B}_p)$ is the reversed word with each $\sigma$ replaced by $\sigma^{-1}$. The $11$-crossing (odd) length contributes a parity sign. Specifically, the proton's word length $\ell(\mathcal{B}_p) = 11$ has odd parity.
+The minus sign in $\operatorname{tr}_M(\mathcal{B}_p)(1/q) = -\operatorname{tr}_M(\mathcal{B}_p)(q)$ reflects the odd parity of the proton word $\mathcal{B}_p$ under the antipode-induced involution. Here $S(\mathcal{B}_p)$ constructs the reversed word with each $\sigma$ replaced by $\sigma^{-1}$. The $11$-crossing (odd) length contributes a parity sign. Specifically, the proton's word length $\ell(\mathcal{B}_p) = 11$ has odd parity.
 
 ## Generalization conjecture
 
@@ -65,7 +64,7 @@ This conjecture is testable via the $A \geq 2$ extension and via the polynomial 
 <!-- FILE_START: markov-trace-axiomatic-closed-form.md -->
 ## Statement
 
-**Proposition (axiomatic Markov-trace closed form).** *Let $H_n(q)$ denote the Iwahori-Hecke algebra of type $A_{n-1}$ with Hecke quadratic relation:*
+*Let $H_n(q)$ denote the Iwahori-Hecke algebra of type $A_{n-1}$ with Hecke quadratic relation:*
 
 $$
   \sigma_i^2 \;=\; h\,\sigma_i + 1, \qquad h \;=\; q - q^{-1}.
@@ -110,15 +109,15 @@ The proof transcribes verbatim to any closed braid $K \in B_n$ whose word factor
 
 ## Categorical interpretation
 
-This proposition is the **direct categorical-mass anchor** for the proton. The formula $\operatorname{tr}_M(\sigma_1^7\sigma_2^4)(q)$ is the Frobenius integral on $H_3(q)$ evaluated on the canonical atomic-braid representative of the proton's GB-filtration normal form ([`prop:atomic-mass-gb-nf`](#prop:atomic-mass-gb-nf)). The axiomatic derivation makes the construction independent of any representation-theoretic parameterisation. It bypasses [``](https://github.com/litlfred/qou/pull/546)'s seminormal `IndexError` failure on $\sigma_2$ acting on shape $(3)$.
+This proposition provides the direct categorical-mass anchor for the proton. The formula $\operatorname{tr}_M(\sigma_1^7\sigma_2^4)(q)$ evaluates the Frobenius integral on $H_3(q)$ applied to the canonical atomic-braid representative of the proton's GB-filtration normal form ([`prop:atomic-mass-gb-nf`](#prop:atomic-mass-gb-nf)). The axiomatic derivation makes the construction independent of any representation-theoretic parameterisation. It bypasses [``](https://github.com/litlfred/qou/pull/546)'s seminormal `IndexError` failure on $\sigma_2$ acting on shape $(3)$.
 
-The contrast with the Plancherel-trace closed form is notable. The Plancherel trace was *anti-self-reciprocal* under $q \leftrightarrow 1/q$ ([`prop:markov-trace-antipode-polynomial-symmetry`](#prop:markov-trace-antipode-polynomial-symmetry)). This Markov-trace closed form is **not** anti-self-reciprocal. The two traces are genuinely different categorical objects. Both are finite linear combinations of irreducible characters, but they carry different weights ($w_\lambda$ Plancherel vs $y_\lambda$ Jones-Markov, [`prop:mass-coefficient-shadow-price`](#prop:mass-coefficient-shadow-price)).
+The contrast with the Plancherel-trace closed form is strict. The Plancherel trace behaves anti-self-reciprocally under $q \leftrightarrow 1/q$ ([`prop:markov-trace-antipode-polynomial-symmetry`](#prop:markov-trace-antipode-polynomial-symmetry)). This Markov-trace closed form does not. The two traces constitute genuinely different categorical objects. Both expand as finite linear combinations of irreducible characters, but they carry different weights ($w_\lambda$ Plancherel vs $y_\lambda$ Jones-Markov, [`prop:mass-coefficient-shadow-price`](#prop:mass-coefficient-shadow-price)).
 <!-- FILE_END: markov-trace-axiomatic-closed-form-interpretation.md -->
 
 <!-- FILE_START: markov-trace-recursive-reducer.md -->
 ## Statement
 
-**Proposition (recursive symbolic Markov-trace reducer).** *Let $\beta \in B_n$ be any braid word. There is a terminating algorithm that returns a closed-form symbolic expression for $\operatorname{tr}_M(\beta) \in \mathbb{Q}(q)$ using only:*
+*Let $\beta \in B_n$ be any braid word. There is a terminating algorithm that returns a closed-form symbolic expression for $\operatorname{tr}_M(\beta) \in \mathbb{Q}(q)$ using only:*
 - *the Hecke quadratic $\sigma_i^2 = h \sigma_i + 1$ (with $h = q - q^{-1}$);*
 - *the Markov axiom $\operatorname{tr}_M(\alpha \sigma_n) = z \operatorname{tr}_M(\alpha)$ for $\alpha \in H_n \subset H_{n+1}$ (with $z = 1/(q^{1/2}+q^{-1/2})$);*
 - *cyclicity $\operatorname{tr}_M(\alpha\beta) = \operatorname{tr}_M(\beta\alpha)$;*
@@ -206,7 +205,7 @@ Each $S_n$ has $n!$ basis elements. We memoise the recursive `tr_M` on $(w, n)$ 
 
 ## Categorical interpretation
 
-The recursive reducer forms the algorithmic content of the **Markov-trace existence theorem** for the Iwahori-Hecke algebra. The axioms uniquely determine the trace, and the algorithm constructs the unique value for any input word. This contrasts with seminormal/Hoefsmit ascent, which realises the trace via the explicit Wedderburn decomposition $H_n(q) \cong \bigoplus_\lambda M_{f^\lambda}$. Both routes agree on values. The axiomatic route avoids reliance on Hoefsmit matrix elements, which had a known [`IndexError`](https://github.com/litlfred/qou/pull/546) bug on $\sigma_2$ acting on shape $(3)$.
+The recursive reducer forms the algorithmic content of the Markov-trace existence theorem for the Iwahori-Hecke algebra. The axioms uniquely determine the trace. The algorithm constructs the unique value for any input word. This contrasts with seminormal/Hoefsmit ascent, which realises the trace via the explicit Wedderburn decomposition $H_n(q) \cong \bigoplus_\lambda M_{f^\lambda}$. Both routes agree on values. The axiomatic route avoids reliance on Hoefsmit matrix elements, which exhibited a known [`IndexError`](https://github.com/litlfred/qou/pull/546) bug on $\sigma_2$ acting on shape $(3)$.
 <!-- FILE_END: markov-trace-recursive-reducer-interpretation.md -->
 
 <!-- FILE_START: markov-z-reconciliation.md -->
@@ -228,7 +227,7 @@ $$
 $$
 giving $z_{\mathrm{m}} \approx 0.499$ at $q_0$.
 
-**Relation.** The two parameters are related by
+**Relation.** The two parameters satisfy
 $$
   z_{\mathrm{J}}
   \;=\;
@@ -236,7 +235,7 @@ $$
 $$
 since $z_{\mathrm{m}}^2 = 1/(q^{1/2}+q^{-1/2})^2$ by definition. Equivalently, $z_{\mathrm{m}} = z_{\mathrm{J}}^{1/2}\,(q - 1)^{-1/2}$.
 
-**Origin of the two conventions.** Convention 1 normalises the Jones polynomial as a *link invariant*. The factor $(q-1)$ absorbs the writhe correction and makes $J_L(q)$ independent of the braid representative. Convention 2 arises when we evaluate the trace on a *single generator* $\sigma_i$ without the writhe prefactor. We have $\mathrm{tr}_M(\sigma_i) = z_{\mathrm{m}}$ in Convention 2, whereas $\mathrm{tr}_M(\sigma_i) = z_{\mathrm{J}}$ in Convention 1.
+**Origin of the two conventions.** Convention 1 normalises the Jones polynomial as a link invariant. The factor $(q-1)$ absorbs the writhe correction and makes $J_L(q)$ independent of the braid representative. Convention 2 arises when we evaluate the trace on a single generator $\sigma_i$ without the writhe prefactor. We have $\mathrm{tr}_M(\sigma_i) = z_{\mathrm{m}}$ in Convention 2, whereas $\mathrm{tr}_M(\sigma_i) = z_{\mathrm{J}}$ in Convention 1.
 
 All mass tables, vertex volumes, and nuclear binding computations in this paper use $z = z_{\mathrm{m}} = 1/(q^{1/2} + q^{-1/2})$. The Jones–Markov trace theorem statement retains $z_{\mathrm{J}}$ to match the original reference.
 <!-- FILE_END: markov-z-reconciliation.md -->
@@ -300,7 +299,7 @@ full-twist action.*
 <!-- FILE_START: categorical-neutrality-saturated-shells-interpretation.md -->
 ## Structural constraint
 
-The full-twist $\Delta_n^2$ acts on each Wedderburn block $V_\lambda$ of $H_n(q)$ by the central scalar $q^{c(\lambda)}$, where $c(\lambda) = \sum_{x \in \lambda}(j_x - i_x)$ is the content sum of the partition $\lambda \vdash n$ \cite{geckpfeiffer2000, mathas1999}. Trivial action of the full-twist on $\Phi_n$ restricts the partitions in the Wedderburn decomposition of $\Phi_n$ to those with content sum zero. These are the self-conjugate partitions $\lambda = \lambda'$ on Young's lattice. At saturated $n$, $\Phi_n$ is supported strictly on self-conjugate partitions.
+The full-twist $\Delta_n^2$ acts on each Wedderburn block $V_\lambda$ of $H_n(q)$ by the central scalar $q^{c(\lambda)}$, where $c(\lambda) = \sum_{x \in \lambda}(j_x - i_x)$ provides the content sum of the partition $\lambda \vdash n$ \cite{geckpfeiffer2000, mathas1999}. Trivial action of the full-twist on $\Phi_n$ restricts the partitions in the Wedderburn decomposition of $\Phi_n$ to those with content sum zero. These form the self-conjugate partitions $\lambda = \lambda'$ on Young's lattice. At saturated $n$, $\Phi_n$ finds support strictly on self-conjugate partitions.
 
 For $n \notin \mathfrak{M}$, the constraint fails. Non-self-conjugate partitions enter $\Phi_n$, and the full-twist acts by a non-trivial scalar. This transition formalizes shell closure, replacing ad hoc selection rules with categorical constraints.
 
@@ -316,7 +315,7 @@ Earlier models ([atom-knot-mass-derivation](#prop:atom-knot-mass-derivation)) tr
 
 ## Operator-level support
 
-The claim that $\Phi_n$ is supported on self-conjugate partitions applies at the operator level. The categorical mass operator $\Phi_n$ has zero matrix entries on every non-self-conjugate isotypical component in $H_n(q) = \bigoplus_\lambda \mathrm{End}(V_\lambda)$.
+The claim that $\Phi_n$ receives support on self-conjugate partitions applies at the operator level. The categorical mass operator $\Phi_n$ exhibits zero matrix entries on every non-self-conjugate isotypical component in $H_n(q) = \bigoplus_\lambda \mathrm{End}(V_\lambda)$.
 
 This does not imply the Plancherel-weighted character sum:
 
@@ -328,50 +327,49 @@ The character sum vanishes identically at certain atomic-braid cycle types. The 
 
 ## Discussion
 
-**Status: conjectural** under AGENTS.md §3b. Numerical witnesses at $k = 3, \dots, 10$ support the saturation condition. The conjecture extends this to all $n \in \mathfrak{M}$, including the high-mass region $\{50, 82, 126\}$.
+Status: conjectural under AGENTS.md §3b. Numerical witnesses at $k = 3, \dots, 10$ support the saturation condition. The conjecture extends this to all $n \in \mathfrak{M}$, including the high-mass region $\{50, 82, 126\}$.
 
 The downstream cone ([conjecture-cones audit](../../../docs/audits/conjecture-cones.md)) includes [`prop:magic-numbers-from-q`](#prop:magic-numbers-from-q) and the shell-closure portion of the BW formula ([`thm:wedderburn-mass-formula`](#thm:wedderburn-mass-formula)). Proving these requires either a derivation of this conjecture or its retention as a class-axiomatised input.
 <!-- FILE_END: categorical-neutrality-saturated-shells-interpretation.md -->
 
 <!-- FILE_START: phi-n-global-section.md -->
 In the algebraic refactor of the magic-number / shell-closure
-framework, the categorical mass endomorphism $\Phi_n$ is *not* a
-local object built per-vortex and combined by tensor product.
-Instead $\Phi_n$ is the **global section** of the categorical mass
+framework, the categorical mass endomorphism $\Phi_n$ acts globally, not
+locally. It is not built per-vortex and combined by tensor product.
+Instead $\Phi_n$ forms the global section of the categorical mass
 functor over the rigid :refterm[braided monoidal category]{#braided-monoidal-category} $\mathbf{C}$, in
 the strict sense of monoidal-category global sections:
 $\Phi_n \in \mathrm{End}_{\mathbf{C}}(A^{\otimes n})$ is determined
 by its compatibility with the Frobenius-Hopf substrate axioms across
-*every* sub-tensor-factor of $A^{\otimes n}$, not by an additive
+every sub-tensor-factor of $A^{\otimes n}$, not by an additive
 combination of local pieces.
 
 ## Necessity of dropping locality
 
-Local trivialisation — "screening" — was the framework's earlier
+Local trivialisation—"screening"—provided the framework's earlier
 explanation of shell closure: that something local at each vortex
-trivialises the full-twist action. That picture has two flaws:
+trivialises the full-twist action. That picture carries two flaws:
 
 1. **Anomalous ribbon flux.** A non-trivial ribbon (= framing)
    action on $\Phi_n$ at a non-magic level $n$ would propagate
-   *unboundedly* up the brane tower
+   unboundedly up the brane tower
    ([recursive-brane-tower](#def:recursive-brane-tower)). Each
    brane level $A_{n+1} = A_n \otimes \Omega^1(A_n)$ inherits the
-   framing flux; without a global cancellation mechanism, the
+   framing flux. Without a global cancellation mechanism, the
    accumulated flux at the :refterm[descent]{#descent} limit diverges.
 2. **Finite observable mass.** The categorical mass identity
-   ([def:hecke-mass-element](#def:hecke-mass-element)) is finite —
+   ([def:hecke-mass-element](#def:hecke-mass-element)) is finite:
    $\mathfrak{m}(\varrho) \in \mathbb{R}$ for every observed
-   hadron. Finite observable mass is *incompatible* with
+   hadron. Finite observable mass remains incompatible with
    unbounded framing flux.
 
-The only consistent reconciliation is **global topological
-neutrality at saturation**: at $n \in \mathfrak{M}$, the ribbon
-action on $\Phi_n$ is globally zero (in the centre-of-the-braid-
-group sense), not locally trivialised by some spectator structure.
-This is precisely the
+The only consistent reconciliation requires global topological
+neutrality at saturation: at $n \in \mathfrak{M}$, the ribbon
+action on $\Phi_n$ evaluates globally to zero (in the centre-of-the-braid-group sense), not locally trivialised by some spectator structure.
+This forms precisely the
 `prop:categorical-neutrality-saturated-shells`
-statement, and it is the structural reason a non-trivial action
-*cannot* coexist with finite mass at saturated $n$.
+statement. It provides the structural reason a non-trivial action
+cannot coexist with finite mass at saturated $n$.
 
 ## The categorical-functor view
 
@@ -388,11 +386,11 @@ $$
 
 The functor $\mathcal{F}_{\text{mass}}$ takes a substrate object
 $X$ to its mass endomorphism. The global section $\Phi_n$ at level
-$n$ is the assignment of $\mathcal{F}_{\text{mass}}(A^{\otimes n})$
+$n$ provides the assignment of $\mathcal{F}_{\text{mass}}(A^{\otimes n})$
 that respects all the substrate's monoidal-functor structure
-simultaneously — including the central full-twist action on each
-$A^{\otimes n}$. Demanding that $\Phi_n$ be a *single* global
-section, rather than a colimit of local pieces, forces the
+simultaneously—including the central full-twist action on each
+$A^{\otimes n}$. Demanding that $\Phi_n$ form a single global
+section, rather than a colimit of local pieces, enforces the
 substrate-level constraint that the central action vanishes at
 saturated $n$.
 
@@ -401,13 +399,13 @@ saturated $n$.
 [`conj:mass-endomorphism`](#conj:mass-endomorphism) (the open
 problem of finding a closed-form NF for $\Phi_{\mathrm{mass}}$) is
 correspondingly reframed. The conjecture is no longer "find the
-local NF generators and combine"; it is "find the categorical
+local NF generators and combine". It becomes "find the categorical
 global section that satisfies the saturated-shell global-neutrality
-constraint". The reframing makes the magic-number ladder a
-**structural prediction** rather than a numerical phenomenon.
+constraint". The reframing constructs the magic-number ladder as a
+structural prediction rather than a numerical phenomenon.
 
-This remark interprets `conj:mass-endomorphism` only — it makes no
-new logical claim. The mathematical content is in the
+This remark interprets `conj:mass-endomorphism` only. It makes no
+new logical claim. The mathematical content resides in the
 saturated-shell
 and [shell-condensation](./homological-shell-condensation.md)
 conjectures, which are themselves conditional on the algebraic

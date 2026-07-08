@@ -1,13 +1,5 @@
 <!-- FILE_START: algebraic-core-survives.md -->
-The point of this survey is to license the appendix's central
-move: the substrate parameter $q$ may be taken in $\mathbf{No}$,
-in the infinitesimal neighbourhood of $1$, without disturbing
-any of the algebraic machinery of the main paper. A systematic
-survey of the QOU content objects finds that the bulk of the
-formal structure is **purely algebraic**: it depends only on the
-ground ring being a field (frequently a field of characteristic
-zero), not on any analytic or topological property of
-$\mathbb{R}$ or $\mathbb{C}$.
+We present this survey to justify our central move: we may take the substrate parameter $q \in \mathbf{No}$ in the infinitesimal neighbourhood of $1$, without disturbing any algebraic machinery of this paper. The bulk of the formal structure is **purely algebraic**. It depends only on the ground ring being a field (typically of characteristic zero), independent of any analytic or topological property of $\mathbb{R}$ or $\mathbb{C}$.
 
 ## Blocks that lift verbatim
 
@@ -158,10 +150,7 @@ obstructions genuinely bite and which are only apparent.
 
 ## 0. An audit, not an axiomatisation
 
-The obvious shortcut — "axiomatise a single integration operator
-on $\mathbf{No}$ and use it everywhere" — is closed off by a
-theorem. Costin, Ehrlich, and Friedman [@costin-ehrlich-friedman2015]
-prove a two-sided result on integration over the surreals:
+The shortcut of axiomatising a single integration operator on $\mathbf{No}$ is mathematically closed. Costin, Ehrlich, and Friedman [@costin-ehrlich-friedman2015] prove a two-sided result on integration over the surreals:
 
 - **Positive direction.** A robust algebraic integral exists for
   the class of semi-algebraic, analytic, and Écalle–Borel
@@ -179,23 +168,11 @@ prove a two-sided result on integration over the surreals:
   $C(\mathbf{No})$ can simultaneously be translation-invariant,
   $\sigma$-additive, and non-degenerate.
 
-The lesson for QOU is that we do **not** want a measure on all
-of $C(\mathbf{No})$ — that object does not exist, and trying to
-manufacture one via a categorical proxy (e.g.\ asserting the
-Frobenius pairing $\int_A : A \otimes A \to \mathbf{1}$ at $A =
-C(\mathbf{No})$) would just smuggle the obstruction into the
-axiom. What we want instead is an audit: for each genuine
-use of an analytic structure in the main paper, decide whether
-the use lifts to $\mathbf{No}$ on the CEF-positive side
-(algebraic / transserial) or whether it requires a
-custom workaround. The audit below is that exercise.
+We do **not** postulate a measure on all of $C(\mathbf{No})$. That object does not exist. Manufacturing one via a categorical proxy (e.g.\ asserting the Frobenius pairing $\int_A : A \otimes A \to \mathbf{1}$ at $A = C(\mathbf{No})$) smuggles the obstruction into the axiom. Instead, we audit each genuine use of an analytic structure in this paper to determine whether the use lifts to $\mathbf{No}$ on the CEF-positive side (algebraic / transserial) or requires a custom workaround. We perform this audit below.
 
 ## 1. Lebesgue measure: one genuine use, no others
 
-A text search for Lebesgue, Haar, and Hausdorff measures across
-the content objects returns only a handful of matches, almost
-all of which turn out to be *categorical* or *algebraic* by
-closer inspection:
+We evaluate Lebesgue, Haar, and Hausdorff measures across the content objects. Almost all instances are *categorical* or *algebraic* upon inspection:
 
 See [Table 1](#tbl:analytic-obstructions-table1-data).
 
@@ -298,15 +275,7 @@ obstructions after audit:
 
 See [Table 2](#tbl:analytic-obstructions-table2-data).
 
-**Conclusion.** The surreal lift is dramatically less lossy than a
-first-pass survey suggests. With two narrow exceptions — the
-Möbius energy integral and the hyperbolic-volume side of the
-Kashaev comparison — every load-bearing step of the QOU mass
-formula and the categorical axioms transfers to $\mathbf{No}$
-without modification. The appendix's remaining work is
-constructive, not defensive: building new structures
-(birthday grading, $\varepsilon$-relaxed axioms, standard-part
-functor) in the surreal ambient.
+**Conclusion.** The surreal lift preserves nearly all structure. With two narrow exceptions — the Möbius energy integral and the hyperbolic-volume side of the Kashaev comparison — every load-bearing step of the mass formula and categorical axioms transfers to $\mathbf{No}$ without modification. The remaining work constructs new structures (birthday grading, $\varepsilon$-relaxed axioms, standard-part functor) in the surreal ambient.
 <!-- FILE_END: analytic-obstructions.md -->
 
 <!-- FILE_START: standard-part-functor.md -->

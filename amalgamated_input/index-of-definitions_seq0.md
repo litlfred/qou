@@ -712,7 +712,7 @@
 | [lem:brings-riemann-hurwitz](#lem:brings-riemann-hurwitz) | Riemann--Hurwitz count for the canonical map $\Sigma_4 \to \mathbb{P}(V)$ | Ch 6 | `qou:QOU.ArchimedeanUniverse.brings_riemann_hurwitz` |
 | [lem:surreal-squeeze](#lem:surreal-squeeze) | Surreal squeeze: standard-scale cost dominates infinitesimal dissipation | Ch 22 | `qou:QOU.AlgebraicSubstrate.surreal_squeeze` |
 | [lem:topological-mass-cat-transient](#lem:topological-mass-cat-transient) | Transient terms localise to blow-up centres (categorical) | Ch 7 | `qou:QOU.TopologicalMass.cat_transient_localises_blowup` |
-| [lem:yekutieli-leading-coefficient](#lem:yekutieli-leading-coefficient) | Yekutieli obstruction equals the leading Chebyshev coefficient | Ch 6 | `qou:QOU.Archimedean.yekutieli_leading_coefficient` |
+| [lem:yekutieli-leading-coefficient](#lem:yekutieli-leading-coefficient) | Obstruction equals the leading Chebyshev coefficient | Ch 6 | `qou:QOU.Archimedean.yekutieli_leading_coefficient` |
 
 ## Corollarys
 
@@ -812,7 +812,7 @@
 | [conj:levi-degeneracy](#conj:levi-degeneracy) | Levi degeneracy conjecture: contact non-degeneracy at vortex collision determines NS regularity | Ch 16 | `qou:QOU.FluidDynamics.LeviDegeneracy` |
 | [conj:lifted-crossing-locality](#conj:lifted-crossing-locality) | Locality of lifted-crossing contributions in the mass expansion | Ch 10 | `qou:QOU.ParticleInteractions.LiftedCrossingLocality` |
 | [conj:lusztig-canonical-basis-q-eq-1](#conj:lusztig-canonical-basis-q-eq-1) | Lusztig canonical basis at $q = 1$ — decategorification of Kashiwara crystal via Kazhdan–Lusztig polynomials | Ch 17 | `qou:QOU.BraidsAndKnots.LusztigCanonicalBasisQEq1` |
-| [conj:magic-numbers-bring](#conj:magic-numbers-bring) | Magic numbers $\mathfrak{M} = \{2, 8, 20, 28, 50, 82, 126\}$ as ranks of $S_5$-stable Bring period sub-lattices | Ch 2 | `qou:QOU.AlgebraicSubstrate.MagicNumbersBring` |
+| [conj:magic-numbers-bring](#conj:magic-numbers-bring) | Magic numbers $\mathfrak{M} = \{2, 8, 20, 28, 50, 82, 126\}$ as ranks of $S_5$-stable Bring period sub-lattices | Ch 14 | `qou:QOU.AlgebraicSubstrate.MagicNumbersBring` |
 | [conj:mass-volume-factorization](#conj:mass-volume-factorization) | Mass-volume factorization of the categorical mass endomorphism | Ch 10 | `qou:QOU.ParticleInteractions.MassVolumeFactorization` |
 | [conj:modular-s-transform-q-q-tilde](#conj:modular-s-transform-q-q-tilde) | Modular $S$-transform $q \leftrightarrow \tilde q = \exp(2\pi i / \tau)$ for Hecke parameter analytic continuation | Ch 20 | `qou:QOU.BraidsAndKnots.ModularSTransformQQTilde` |
 | [conj:on-p-modular-hecke](#conj:on-p-modular-hecke) | Modular Hecke at $q = \zeta_p$ corresponds to nimber surreals $\mathbf{On}_p$ | Ch 23 | `qou:QOU.AppendixSurreals.OnPModularHecke` |
@@ -943,6 +943,5 @@
 | [ex:topological-mass-trefoil](#ex:topological-mass-trefoil) | Topological mass of the trefoil knot (electron) | Ch 10 | — |
 | [ex:trefoil-operator-algebra](#ex:trefoil-operator-algebra) | Trefoil braid relation and operator algebra | Ch 5 | — |
 | [ex:tritium-decay-knot-equation](#ex:tritium-decay-knot-equation) | Tritium decay as a Skein crossing change: ${}^3_1\mathrm{H} \to {}^3_2\mathrm{He} + e^- + \nu_e^{\sigma}$ | Ch 13 | — |
-
 <!-- FILE_END: definition-index.md -->
 
