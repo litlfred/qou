@@ -50,7 +50,14 @@ theorem su2_emergence_dagger_unitarity
     (g : Matrix (Fin 2) (Fin 2) ℂ)
     (h_preserves_inner : ∀ x y : Fin 2 → ℂ, dotProduct (star (g *ᵥ x)) (g *ᵥ y) = dotProduct (star x) y) :
     g ∈ Matrix.unitaryGroup (Fin 2) ℂ := by
-  sorry
+  rw [mem_unitaryGroup_iff']
+  ext i j
+  have h := h_preserves_inner (Pi.single i 1) (Pi.single j 1)
+  fin_cases i <;> fin_cases j <;>
+    revert h <;>
+    simp [dotProduct, mulVec, Matrix.mul_apply, Pi.single, star] <;>
+    intro h <;>
+    exact h
 
 /-- **`G ⊆ U(2)`** ([`lem:su2-emergence-dagger-unitarity`]).
 
