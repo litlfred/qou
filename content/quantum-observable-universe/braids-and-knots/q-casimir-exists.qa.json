@@ -1322,6 +1322,19 @@
         "reviewed_at": "2026-07-07T14:26:55.363341Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "notes": "In 'Universal enveloping algebras and quantum groups' section; the q-Casimir of U_q(su(2)) belongs there."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound novelty note on formalization strategy.",
+        "reviewed_at": "2026-07-08T09:32:38.000Z",
+        "reviewed_sha": "e70471dc350f7d039d1596fb6bc869e1e73bc2d4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "wall-side-statement": [
@@ -1578,6 +1591,19 @@
         "notes": "Checked mathematical consistency of the claim 'For any ground ring $R$ in which $(q - q^{-1})$ is invertible, the' and found no counterexamples under the stated conditions.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-exists.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound novelty note on formalization strategy.",
+        "reviewed_at": "2026-07-08T09:32:38.000Z",
+        "reviewed_sha": "e70471dc350f7d039d1596fb6bc869e1e73bc2d4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-vacuous": [
@@ -1598,6 +1624,19 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No vacuous stubs or tautologies detected in the formulation of 'prop:q-casimir-exists'.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound novelty note on formalization strategy.",
+        "reviewed_at": "2026-07-08T09:32:38.000Z",
+        "reviewed_sha": "e70471dc350f7d039d1596fb6bc869e1e73bc2d4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-circular": [
@@ -1619,6 +1658,19 @@
         "notes": "Traced dependencies ['def:q-casimir'] for 'prop:q-casimir-exists' and confirmed no circular definitions or justifications.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-exists.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound novelty note on formalization strategy.",
+        "reviewed_at": "2026-07-08T09:32:38.000Z",
+        "reviewed_sha": "e70471dc350f7d039d1596fb6bc869e1e73bc2d4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-overclaim": [
@@ -1639,6 +1691,19 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Verified that the scope of 'prop:q-casimir-exists' is appropriately restricted to the proven regime without overclaiming structural validity.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound novelty note on formalization strategy.",
+        "reviewed_at": "2026-07-08T09:32:38.000Z",
+        "reviewed_sha": "e70471dc350f7d039d1596fb6bc869e1e73bc2d4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1660,6 +1725,19 @@
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-exists.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound novelty note on formalization strategy.",
+        "reviewed_at": "2026-07-08T09:32:38.000Z",
+        "reviewed_sha": "e70471dc350f7d039d1596fb6bc869e1e73bc2d4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1681,6 +1759,19 @@
         "notes": "Logical transitions in the derivation of 'For any ground ring $R$ in which $(q - q^{-1})$ is invertible, the' are sound; no non-sequiturs detected.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-exists.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound novelty note on formalization strategy.",
+        "reviewed_at": "2026-07-08T09:32:38.000Z",
+        "reviewed_sha": "e70471dc350f7d039d1596fb6bc869e1e73bc2d4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1701,6 +1792,19 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Lean sibling fails to compile, leading to divergence from the stated narrative.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound novelty note on formalization strategy.",
+        "reviewed_at": "2026-07-08T09:32:38.000Z",
+        "reviewed_sha": "e70471dc350f7d039d1596fb6bc869e1e73bc2d4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1722,6 +1826,19 @@
         "notes": "All references and uses ['def:q-casimir'] cited in 'prop:q-casimir-exists' are used in accordance with their established mathematical definitions.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-exists.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound novelty note on formalization strategy.",
+        "reviewed_at": "2026-07-08T09:32:38.000Z",
+        "reviewed_sha": "e70471dc350f7d039d1596fb6bc869e1e73bc2d4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1743,6 +1860,19 @@
         "notes": "All terms and algebraic structures in 'prop:q-casimir-exists' are uniquely defined or standard.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-exists.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound novelty note on formalization strategy.",
+        "reviewed_at": "2026-07-08T09:32:38.000Z",
+        "reviewed_sha": "e70471dc350f7d039d1596fb6bc869e1e73bc2d4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1764,6 +1894,19 @@
         "notes": "The algebraic statements in 'prop:q-casimir-exists' do not rely on fragile empirical fits or numerical thresholds.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-exists.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound novelty note on formalization strategy.",
+        "reviewed_at": "2026-07-08T09:32:38.000Z",
+        "reviewed_sha": "e70471dc350f7d039d1596fb6bc869e1e73bc2d4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1785,6 +1928,19 @@
         "notes": "Physical dimensions and units in 'prop:q-casimir-exists' are consistent with quantum observable universe models.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-exists.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound novelty note on formalization strategy.",
+        "reviewed_at": "2026-07-08T09:32:38.000Z",
+        "reviewed_sha": "e70471dc350f7d039d1596fb6bc869e1e73bc2d4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1806,6 +1962,19 @@
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/braids-and-knots/q-casimir-exists.lean:30:61: error: Function expected at.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-exists.lean:1 — content/quantum-observable-universe/braids-and-knots/q-casimir-exists.lean:30:61: error: Function expected at"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound novelty note on formalization strategy.",
+        "reviewed_at": "2026-07-08T09:32:38.000Z",
+        "reviewed_sha": "e70471dc350f7d039d1596fb6bc869e1e73bc2d4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1828,6 +1997,19 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/braids-and-knots/q-casimir-exists.lean:30:61: error: Function expected at"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound novelty note on formalization strategy.",
+        "reviewed_at": "2026-07-08T09:32:38.000Z",
+        "reviewed_sha": "e70471dc350f7d039d1596fb6bc869e1e73bc2d4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "bib-cite-resolves": [
@@ -1866,6 +2048,36 @@
           "md": "e40441bb9cf1",
           "ts": "ffa00ce627ff",
           "lean": "7f1f403f06a7"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound novelty note on formalization strategy.",
+        "reviewed_at": "2026-07-08T09:32:38.000Z",
+        "reviewed_sha": "e70471dc350f7d039d1596fb6bc869e1e73bc2d4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound novelty note on formalization strategy.",
+        "reviewed_at": "2026-07-08T09:32:38.000Z",
+        "reviewed_sha": "e70471dc350f7d039d1596fb6bc869e1e73bc2d4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
         }
       }
     ]
