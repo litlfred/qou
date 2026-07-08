@@ -1065,6 +1065,19 @@
         "reviewed_at": "2026-07-07T14:26:55.496866Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:32:41.000Z",
+        "reviewed_sha": "78ea973bb0fc3d62fed84015054d2a5ba5c49c08",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "wall-side-statement": [
@@ -1286,6 +1299,19 @@
         "notes": "No false claims identified in 'Existence of the symmetric-block assembly projector': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/assembly-projector-exists.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:32:41.000Z",
+        "reviewed_sha": "78ea973bb0fc3d62fed84015054d2a5ba5c49c08",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-vacuous": [
@@ -1307,6 +1333,19 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Existence of the symmetric-block assembly projector' presents substantial mathematical content: of $N$ there exists a symmetric-block [assembly projector](#def:molecular-assemb...",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:32:41.000Z",
+        "reviewed_sha": "78ea973bb0fc3d62fed84015054d2a5ba5c49c08",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-circular": [
@@ -1329,6 +1368,19 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Existence of the symmetric-block assembly projector'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/assembly-projector-exists.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:32:41.000Z",
+        "reviewed_sha": "78ea973bb0fc3d62fed84015054d2a5ba5c49c08",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-overclaim": [
@@ -1350,6 +1402,19 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No overclaims: the scope of 'Existence of the symmetric-block assembly projector' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:32:41.000Z",
+        "reviewed_sha": "78ea973bb0fc3d62fed84015054d2a5ba5c49c08",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1372,6 +1437,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Existence of the symmetric-block assembly projector'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/assembly-projector-exists.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:32:41.000Z",
+        "reviewed_sha": "78ea973bb0fc3d62fed84015054d2a5ba5c49c08",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1394,6 +1472,19 @@
         "notes": "The argument flow in 'Existence of the symmetric-block assembly projector' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/assembly-projector-exists.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:32:41.000Z",
+        "reviewed_sha": "78ea973bb0fc3d62fed84015054d2a5ba5c49c08",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1415,6 +1506,19 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Lean formalization and narrative for 'Existence of the symmetric-block assembly projector' are in complete agreement.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:32:41.000Z",
+        "reviewed_sha": "78ea973bb0fc3d62fed84015054d2a5ba5c49c08",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1437,6 +1541,19 @@
         "notes": "Citations to wenzl1988, kassel1995 are correct and contextually appropriate.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/assembly-projector-exists.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:32:41.000Z",
+        "reviewed_sha": "78ea973bb0fc3d62fed84015054d2a5ba5c49c08",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1459,6 +1576,19 @@
         "notes": "Key terms and symbols in 'Existence of the symmetric-block assembly projector' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/assembly-projector-exists.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:32:41.000Z",
+        "reviewed_sha": "78ea973bb0fc3d62fed84015054d2a5ba5c49c08",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1481,6 +1611,19 @@
         "notes": "The algebraic and logical relations in 'Existence of the symmetric-block assembly projector' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/assembly-projector-exists.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:32:41.000Z",
+        "reviewed_sha": "78ea973bb0fc3d62fed84015054d2a5ba5c49c08",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1503,6 +1646,19 @@
         "notes": "The physical concepts described in 'Existence of the symmetric-block assembly projector' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/assembly-projector-exists.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:32:41.000Z",
+        "reviewed_sha": "78ea973bb0fc3d62fed84015054d2a5ba5c49c08",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1525,6 +1681,19 @@
         "notes": "The derivation steps and formal definitions in 'Existence of the symmetric-block assembly projector' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/assembly-projector-exists.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:32:41.000Z",
+        "reviewed_sha": "78ea973bb0fc3d62fed84015054d2a5ba5c49c08",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1548,6 +1717,19 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Existence of the symmetric-block assembly projector' are consistent.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:32:41.000Z",
+        "reviewed_sha": "78ea973bb0fc3d62fed84015054d2a5ba5c49c08",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "bib-cite-resolves": [
@@ -1586,6 +1768,36 @@
           "md": "1e873c8dfc5d",
           "ts": "4039595b2a38",
           "lean": "e3e24835fe2a"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:32:41.000Z",
+        "reviewed_sha": "78ea973bb0fc3d62fed84015054d2a5ba5c49c08",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:32:41.000Z",
+        "reviewed_sha": "78ea973bb0fc3d62fed84015054d2a5ba5c49c08",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
         }
       }
     ]
