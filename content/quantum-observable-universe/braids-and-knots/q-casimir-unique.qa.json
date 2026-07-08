@@ -1065,6 +1065,19 @@
         "reviewed_at": "2026-07-07T14:26:55.391224Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound hygiene note on the uniqueness of the q-deformed centre.",
+        "reviewed_at": "2026-07-08T09:26:30.000Z",
+        "reviewed_sha": "4e333ce71d9f1a46b944841403275e52fd58d447",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "wall-side-statement": [
@@ -1285,6 +1298,19 @@
         "notes": "Checked mathematical consistency of the claim 'The [$q$-Casimir element](#def:q-casimir) $C_q$ is the unique' and found no counterexamples under the stated conditions.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-unique.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound hygiene note on the uniqueness of the q-deformed centre.",
+        "reviewed_at": "2026-07-08T09:26:30.000Z",
+        "reviewed_sha": "4e333ce71d9f1a46b944841403275e52fd58d447",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-vacuous": [
@@ -1305,6 +1331,19 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No vacuous stubs or tautologies detected in the formulation of 'prop:q-casimir-unique'.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound hygiene note on the uniqueness of the q-deformed centre.",
+        "reviewed_at": "2026-07-08T09:26:30.000Z",
+        "reviewed_sha": "4e333ce71d9f1a46b944841403275e52fd58d447",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-circular": [
@@ -1326,6 +1365,19 @@
         "notes": "Traced dependencies ['prop:q-casimir-exists'] for 'prop:q-casimir-unique' and confirmed no circular definitions or justifications.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-unique.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound hygiene note on the uniqueness of the q-deformed centre.",
+        "reviewed_at": "2026-07-08T09:26:30.000Z",
+        "reviewed_sha": "4e333ce71d9f1a46b944841403275e52fd58d447",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-overclaim": [
@@ -1346,6 +1398,19 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Verified that the scope of 'prop:q-casimir-unique' is appropriately restricted to the proven regime without overclaiming structural validity.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound hygiene note on the uniqueness of the q-deformed centre.",
+        "reviewed_at": "2026-07-08T09:26:30.000Z",
+        "reviewed_sha": "4e333ce71d9f1a46b944841403275e52fd58d447",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1367,6 +1432,19 @@
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-unique.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound hygiene note on the uniqueness of the q-deformed centre.",
+        "reviewed_at": "2026-07-08T09:26:30.000Z",
+        "reviewed_sha": "4e333ce71d9f1a46b944841403275e52fd58d447",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1388,6 +1466,19 @@
         "notes": "Logical transitions in the derivation of 'The [$q$-Casimir element](#def:q-casimir) $C_q$ is the unique' are sound; no non-sequiturs detected.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-unique.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound hygiene note on the uniqueness of the q-deformed centre.",
+        "reviewed_at": "2026-07-08T09:26:30.000Z",
+        "reviewed_sha": "4e333ce71d9f1a46b944841403275e52fd58d447",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1408,6 +1499,19 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Lean sibling fails to compile, leading to divergence from the stated narrative.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound hygiene note on the uniqueness of the q-deformed centre.",
+        "reviewed_at": "2026-07-08T09:26:30.000Z",
+        "reviewed_sha": "4e333ce71d9f1a46b944841403275e52fd58d447",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1429,6 +1533,19 @@
         "notes": "All references and uses ['prop:q-casimir-exists'] cited in 'prop:q-casimir-unique' are used in accordance with their established mathematical definitions.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-unique.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound hygiene note on the uniqueness of the q-deformed centre.",
+        "reviewed_at": "2026-07-08T09:26:30.000Z",
+        "reviewed_sha": "4e333ce71d9f1a46b944841403275e52fd58d447",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1450,6 +1567,19 @@
         "notes": "All terms and algebraic structures in 'prop:q-casimir-unique' are uniquely defined or standard.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-unique.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound hygiene note on the uniqueness of the q-deformed centre.",
+        "reviewed_at": "2026-07-08T09:26:30.000Z",
+        "reviewed_sha": "4e333ce71d9f1a46b944841403275e52fd58d447",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1471,6 +1601,19 @@
         "notes": "The algebraic statements in 'prop:q-casimir-unique' do not rely on fragile empirical fits or numerical thresholds.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-unique.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound hygiene note on the uniqueness of the q-deformed centre.",
+        "reviewed_at": "2026-07-08T09:26:30.000Z",
+        "reviewed_sha": "4e333ce71d9f1a46b944841403275e52fd58d447",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1492,6 +1635,19 @@
         "notes": "Physical dimensions and units in 'prop:q-casimir-unique' are consistent with quantum observable universe models.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-unique.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound hygiene note on the uniqueness of the q-deformed centre.",
+        "reviewed_at": "2026-07-08T09:26:30.000Z",
+        "reviewed_sha": "4e333ce71d9f1a46b944841403275e52fd58d447",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1513,6 +1669,19 @@
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/braids-and-knots/q-casimir-unique.lean:50:11: error: Invalid field notation: Type is not of the form `C ...` where C is a constant.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-unique.lean:1 — content/quantum-observable-universe/braids-and-knots/q-casimir-unique.lean:50:11: error: Invalid field notation: Type is not of the form `C ...` where C is a constant"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound hygiene note on the uniqueness of the q-deformed centre.",
+        "reviewed_at": "2026-07-08T09:26:30.000Z",
+        "reviewed_sha": "4e333ce71d9f1a46b944841403275e52fd58d447",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1535,6 +1704,19 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/braids-and-knots/q-casimir-unique.lean:50:11: error: Invalid field notation: Type is not of the form `C ...` where C is a constant"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound hygiene note on the uniqueness of the q-deformed centre.",
+        "reviewed_at": "2026-07-08T09:26:30.000Z",
+        "reviewed_sha": "4e333ce71d9f1a46b944841403275e52fd58d447",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "bib-cite-resolves": [
@@ -1573,6 +1755,36 @@
           "md": "bdddf4b2c112",
           "ts": "ac04cbbb4422",
           "lean": "72ef19b39263"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound hygiene note on the uniqueness of the q-deformed centre.",
+        "reviewed_at": "2026-07-08T09:26:30.000Z",
+        "reviewed_sha": "4e333ce71d9f1a46b944841403275e52fd58d447",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound hygiene note on the uniqueness of the q-deformed centre.",
+        "reviewed_at": "2026-07-08T09:26:30.000Z",
+        "reviewed_sha": "4e333ce71d9f1a46b944841403275e52fd58d447",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
         }
       }
     ]
