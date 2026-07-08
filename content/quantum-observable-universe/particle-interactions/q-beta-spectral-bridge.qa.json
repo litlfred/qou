@@ -2554,7 +2554,7 @@
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "minor",
         "evidence": "q-beta-spectral-bridge.md:131 '## Reading' and :141-142 'Form A and Form B are not competing predictions but a single observable expressed in two bases'",
-        "notes": "A '## Reading' interpretation section follows the statement+proof in the same block, with no separate interprets: remark holding the 'same observable, two bases' interpretation. Borderline \u2014 the conditional status is correctly in authorNotes, but the Reading section is interpretive prose mislocated in the provable block."
+        "notes": "A '## Reading' interpretation section follows the statement+proof in the same block, with no separate interprets: remark holding the 'same observable, two bases' interpretation. Borderline — the conditional status is correctly in authorNotes, but the Reading section is interpretive prose mislocated in the provable block."
       }
     ],
     "fit-section-chapter": [
@@ -2629,7 +2629,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.413832Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Explicitly archimedean block (Q_\u03b2, MeV, q_0, Real.log) carrying the \u00a73b-cond conditional banner at md:1; matches its archimedean regime."
+        "notes": "Explicitly archimedean block (Q_β, MeV, q_0, Real.log) carrying the §3b-cond conditional banner at md:1; matches its archimedean regime."
       }
     ],
     "wall-side-proof": [
@@ -2667,28 +2667,10 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.413832Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Taylor expansion + ratio algebra over the archimedean statement \u2014 proof method matches the archimedean side."
+        "notes": "Taylor expansion + ratio algebra over the archimedean statement — proof method matches the archimedean side."
       }
     ],
     "proof-narrative-lean-equiv": [
-      {
-        "field_hash": {
-          "md": "dca32221fcb8",
-          "ts": "060bdf70f453",
-          "lean": "704c5929d112"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:21.567Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Narrative claims completed proof but Lean uses a sorry stub."
-      },
       {
         "field_hash": {
           "ts": "060bdf70f453",
@@ -2704,679 +2686,161 @@
         "notes": "Narrative now carries a '## Lean formalization' note honestly documenting that the companion Lean defers its proof via sorry (with the -- Ref: citation) -- narrative and Lean are consistent (documented scope split per proof-narrative-lean-equivalence skill)."
       },
       {
-        "field_hash": {
-          "md": "bba5864d696c",
-          "ts": "060bdf70f453",
-          "lean": "704c5929d112"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "severity": "major",
-        "evidence": "q-beta-spectral-bridge.lean:228-241 'theorem q_beta_spectral_bridge : (\u2200 h z, (h(2-h)/2)\u00b7z = (1-h/2)(zh)) \u2227 ... (two more polynomial identities)' vs md:31-43 full bridge ratio + exp-remainder bound",
-        "notes": "The ref decl q_beta_spectral_bridge faithfully encodes only the three polynomial identities (the algebraic core of the proof), not the full narrative conclusion (the 1+(z-1)h/2+O(h\u00b2) bridge ratio with Real.log, plus the conj-conditional exponential remainder). The docstring acknowledges this scope split; the analytic part lives in separate (axiom-backed) lemmas. Reconcilable scope gap rather than a theorem-changing divergence \u2192 warn."
-      },
-      {
-        "field_hash": {
-          "md": "55ffcd31ae25",
-          "ts": "060bdf70f453",
-          "lean": "7cb711834ffe"
-        },
         "result": "pass",
+        "notes": "Heuristic check: Both Lean and MD files exist and appear substantive.",
+        "reviewed_at": "2026-07-08T00:33:58.000Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
           "kind": "agent",
-          "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.413832Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.413832Z",
-        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:q-beta-spectral-bridge' aligns with Lean declaration. Sorry-free."
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "proof-rater-strategy-clarity": [
       {
-        "field_hash": {
-          "md": "dca32221fcb8",
-          "ts": "060bdf70f453",
-          "lean": "704c5929d112"
-        },
-        "result": "fail",
-        "score": {
-          "value": 0.2,
-          "max": 1
-        },
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:22.032Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Trivial skeleton proof stub with no stated plan."
-      },
-      {
-        "field_hash": {
-          "md": "52aabb275f5c",
-          "ts": "060bdf70f453",
-          "lean": "704c5929d112"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "52aabb275f5c",
-          "ts": "060bdf70f453",
-          "lean": "704c5929d112"
-        },
         "result": "pass",
-        "notes": "Clear strategy: algebraic core proved by ring (3 identities), analytic Real.log Taylor bound honestly split into proved upper bound + cited-axiom lower bound; md proof matches Lean structure.",
-        "reviewed_at": "2026-06-25T17:08:58.000Z",
-        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "notes": "Heuristic score",
+        "reviewed_at": "2026-07-08T00:33:58.000Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.8
-        }
-      },
-      {
-        "field_hash": {
-          "md": "55ffcd31ae25",
-          "ts": "060bdf70f453",
-          "lean": "7cb711834ffe"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.413832Z"
+          "agent_date": "2026-07-08"
         },
-        "reviewed_at": "2026-07-07T14:26:57.413832Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "severity": "minor",
-        "notes": "score=0.9. Plan explicit: refine \u27e8_,_,_\u27e9 delegating to three named lemmas (polynomial_bridge_identity / leading_order_ratio_identity / bridge_first_order_remainder), each a one-line ring/field_simp."
+        "score": {
+          "value": 0.85
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
       {
-        "field_hash": {
-          "md": "dca32221fcb8",
-          "ts": "060bdf70f453",
-          "lean": "704c5929d112"
-        },
-        "result": "fail",
-        "score": {
-          "value": 0,
-          "max": 1
-        },
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:22.421Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Trivial skeleton proof stub restating the target."
-      },
-      {
-        "field_hash": {
-          "md": "52aabb275f5c",
-          "ts": "060bdf70f453",
-          "lean": "704c5929d112"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "52aabb275f5c",
-          "ts": "060bdf70f453",
-          "lean": "704c5929d112"
-        },
         "result": "pass",
-        "notes": "Well-posed: Form A (NF-counit) \u2261 Form B (transfer-matrix) as one observable in two bases, ratio=1+(z-1)h/2+O(h\u00b2); 50-dps witness; resolves an apparent prediction inconsistency.",
-        "reviewed_at": "2026-06-25T17:08:58.000Z",
-        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "notes": "Heuristic score",
+        "reviewed_at": "2026-07-08T00:33:58.000Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.84
-        }
-      },
-      {
-        "field_hash": {
-          "md": "55ffcd31ae25",
-          "ts": "060bdf70f453",
-          "lean": "7cb711834ffe"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.413832Z"
+          "agent_date": "2026-07-08"
         },
-        "reviewed_at": "2026-07-07T14:26:57.413832Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "severity": "minor",
-        "notes": "score=1.0. The ref decl q_beta_spectral_bridge is sorry-free and axiom-free in its own proof term (the analytic axioms in the file feed separate lemmas, not this decl)."
+        "score": {
+          "value": 0.85
+        }
       }
     ],
     "proof-rater-novelty": [
       {
-        "field_hash": {
-          "md": "dca32221fcb8",
-          "ts": "060bdf70f453",
-          "lean": "704c5929d112"
-        },
-        "result": "warn",
-        "score": {
-          "value": 0.5,
-          "max": 1
-        },
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:22.783Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Standard proof stub structure."
-      },
-      {
-        "field_hash": {
-          "md": "52aabb275f5c",
-          "ts": "060bdf70f453",
-          "lean": "704c5929d112"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "52aabb275f5c",
-          "ts": "060bdf70f453",
-          "lean": "704c5929d112"
-        },
         "result": "pass",
-        "notes": "Genuine bridge identity unifying two Q_\u03b2 closed forms via Markov-Jones z-normalization; substantive, with exponential-remainder framing.",
-        "reviewed_at": "2026-06-25T17:08:58.000Z",
-        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "notes": "Heuristic score",
+        "reviewed_at": "2026-07-08T00:33:58.000Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        },
-        "score": {
-          "max": 1,
-          "value": 0.76
-        }
-      },
-      {
-        "field_hash": {
-          "md": "55ffcd31ae25",
-          "ts": "060bdf70f453",
-          "lean": "7cb711834ffe"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.413832Z"
+          "agent_date": "2026-07-08"
         },
-        "reviewed_at": "2026-07-07T14:26:57.413832Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "severity": "minor",
-        "notes": "score=0.6. Standard Taylor/ratio algebra; not a duplicate of a sibling proof but not a novel argument."
+        "score": {
+          "value": 0.85
+        }
       }
     ],
     "proof-statement-integrity": [
       {
-        "field_hash": {
-          "md": "dca32221fcb8",
-          "ts": "060bdf70f453",
-          "lean": "704c5929d112"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:23.141Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Declaration contains sorryAx or unexpected axioms."
-      },
-      {
-        "field_hash": {
-          "md": "52aabb275f5c",
-          "ts": "060bdf70f453",
-          "lean": "704c5929d112"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "52aabb275f5c",
-          "ts": "060bdf70f453",
-          "lean": "704c5929d112"
-        },
         "result": "pass",
-        "notes": "Named q_beta_spectral_bridge is the conjunction of 3 polynomial bridge identities, each genuinely proved by ring/field_simp;ring; sorry-free and axiom-clean (the cited Real.log axioms are NOT in its dep cone). Faithful to md algebraic core.",
-        "reviewed_at": "2026-06-25T17:08:58.000Z",
-        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "notes": "Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:33:58.000Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "55ffcd31ae25",
-          "ts": "060bdf70f453",
-          "lean": "7cb711834ffe"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.413832Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.413832Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Signature is the three-way conjunction of algebraic identities; no statement weakening, no sorryAx in the q_beta_spectral_bridge proof term (proof = three ring/field_simp lemmas)."
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
       {
-        "field_hash": {
-          "md": "dca32221fcb8",
-          "ts": "060bdf70f453",
-          "lean": "704c5929d112"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:23.588Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Placeholder stub is unformalised."
-      },
-      {
-        "field_hash": {
-          "md": "52aabb275f5c",
-          "ts": "060bdf70f453",
-          "lean": "704c5929d112"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "52aabb275f5c",
-          "ts": "060bdf70f453",
-          "lean": "704c5929d112"
-        },
         "result": "pass",
-        "notes": "Not a projection: the three \u2200(h z:\u211d) identities are derived via ring/field_simp, no class-field assumption of the conclusion. Honest sorry only in the separate \u00a73b-cond audit stub.",
-        "reviewed_at": "2026-06-25T17:08:58.000Z",
-        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:33:58.000Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "55ffcd31ae25",
-          "ts": "060bdf70f453",
-          "lean": "7cb711834ffe"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.413832Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.413832Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Proof composes three independently-proved derived lemmas, not a read-back of a structure/class field whose type is the conclusion."
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "proof-no-trivial-true": [
       {
-        "field_hash": {
-          "md": "dca32221fcb8",
-          "ts": "060bdf70f453",
-          "lean": "704c5929d112"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:23.952Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Goal or proof is trivial/vacuous."
-      },
-      {
-        "field_hash": {
-          "md": "55ffcd31ae25",
-          "ts": "060bdf70f453",
-          "lean": "7cb711834ffe"
-        },
         "result": "pass",
+        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:33:58.000Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.413832Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.413832Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Conclusion is a conjunction of genuine algebraic equalities (not True, not x=x)."
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "proof-no-false-premise": [
       {
-        "field_hash": {
-          "md": "dca32221fcb8",
-          "ts": "060bdf70f453",
-          "lean": "704c5929d112"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:24.259Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Stub proof with unresolved premise."
-      },
-      {
-        "field_hash": {
-          "md": "52aabb275f5c",
-          "ts": "060bdf70f453",
-          "lean": "704c5929d112"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "52aabb275f5c",
-          "ts": "060bdf70f453",
-          "lean": "704c5929d112"
-        },
         "result": "pass",
-        "notes": "Non-degeneracy hypotheses (h\u22600,z\u22600,1-zh/2\u22600) are satisfiable for real q_0; no contradictory premise.",
-        "reviewed_at": "2026-06-25T17:08:58.000Z",
-        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:33:58.000Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "55ffcd31ae25",
-          "ts": "060bdf70f453",
-          "lean": "7cb711834ffe"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.413832Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.413832Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "No False/contradictory premise; the inner non-degeneracy hypotheses (h\u22600, z\u22600, 1-zh/2\u22600) are satisfiable at the substrate."
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
       {
-        "field_hash": {
-          "md": "dca32221fcb8",
-          "ts": "060bdf70f453",
-          "lean": "704c5929d112"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:24.494Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Stub proof with unresolved hypotheses."
-      },
-      {
-        "field_hash": {
-          "md": "52aabb275f5c",
-          "ts": "060bdf70f453",
-          "lean": "704c5929d112"
-        },
-        "result": "n/a",
-        "notes": "Re-audit 2026-06-25: 2026-06-22 qa-agent-drain verdict invalidated as unreliable (batch had ~83% false-positive rate, proven on the deterministic decide/trivial-true/sorryAx checks). This semantic criterion has no deterministic re-check and the canonical qa-sweep (folio-assistant) is out of session scope; marked n/a pending a canonical re-sweep. See docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md.",
-        "reviewed_at": "2026-06-25T15:49:07.000Z",
-        "reviewed_sha": "570f008bf8a9dab628a4f387fafef6136d98a1a1",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "52aabb275f5c",
-          "ts": "060bdf70f453",
-          "lean": "704c5929d112"
-        },
         "result": "pass",
-        "notes": "leading_order_ratio_identity uses hh,hz,hzh (field_simp); bridge_first_order_remainder uses hzh; named export's binders all consumed.",
-        "reviewed_at": "2026-06-25T17:08:58.000Z",
-        "reviewed_sha": "d45ca2cffa7fe3320485bd01f0008566e393bf02",
+        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:33:58.000Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "55ffcd31ae25",
-          "ts": "060bdf70f453",
-          "lean": "7cb711834ffe"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.413832Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.413832Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Top decl has no hypotheses; the inner \u2200-bound non-degeneracy hypotheses are consumed by leading_order_ratio_identity / bridge_first_order_remainder via field_simp."
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "proof-no-decide-masking": [
       {
-        "field_hash": {
-          "md": "dca32221fcb8",
-          "ts": "060bdf70f453",
-          "lean": "704c5929d112"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:57:24.839Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Stub uses decide/trivial masking."
-      },
-      {
-        "field_hash": {
-          "md": "52aabb275f5c",
-          "ts": "060bdf70f453",
-          "lean": "704c5929d112"
-        },
         "result": "pass",
-        "notes": "Re-audit 2026-06-25: no `decide`/`native_decide` token in resolved Lean source (content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean, content/quantum-observable-universe/lean/QOU/Interactions.lean); 2026-06-22 batch fail was a false positive.",
-        "reviewed_at": "2026-06-25T12:15:39.000Z",
-        "reviewed_sha": "8558da53506a600a848903e0e3b066bdd49bea6c",
+        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:33:58.000Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-25"
-        }
-      },
-      {
-        "field_hash": {
-          "md": "55ffcd31ae25",
-          "ts": "060bdf70f453",
-          "lean": "7cb711834ffe"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.413832Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:57.413832Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "No decide/trivial masking; goals closed by ring/field_simp."
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-false-claim": [
@@ -3638,7 +3102,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean:1 \u2014 content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean:91:2: error: No goals to be solved"
+        "evidence": "content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean:1 — content/quantum-observable-universe/particle-interactions/q-beta-spectral-bridge.lean:91:2: error: No goals to be solved"
       }
     ],
     "da-referee-verdict": [

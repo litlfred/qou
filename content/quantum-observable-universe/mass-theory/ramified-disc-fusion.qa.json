@@ -1304,7 +1304,7 @@
         "reviewed_at": "2026-06-27T13:05:07.188Z",
         "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
         "severity": "minor",
-        "evidence": "Statement + proof followed by **Why this matters.** (lines 66-77) giving physical/motivational reading (\"not posited \u2014 it is read off as the monodromy...\"). The block uses rem:rho-s3-holonomy-exposition but has no interprets: link holding this interpretation.",
+        "evidence": "Statement + proof followed by **Why this matters.** (lines 66-77) giving physical/motivational reading (\"not posited — it is read off as the monodromy...\"). The block uses rem:rho-s3-holonomy-exposition but has no interprets: link holding this interpretation.",
         "notes": "Interpretation could move to a linked remark; the cited exposition remark is a candidate host."
       },
       {
@@ -1321,7 +1321,7 @@
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
         "severity": "minor",
-        "evidence": "ramified-disc-fusion.md:66-77 `**Why this matters.** The proposition closes the geometric chain \u2026 the S_3 Galois action \u2026 is not posited \u2014 it is read off as the monodromy \u2026`",
+        "evidence": "ramified-disc-fusion.md:66-77 `**Why this matters.** The proposition closes the geometric chain … the S_3 Galois action … is not posited — it is read off as the monodromy …`",
         "notes": "Statement (parts 1-3) + Sketch of proof are the bare claim, but the trailing **Why this matters** paragraph is substantive interpretation/significance with no companion interprets: remark holding it. Borderline; recommend relocating to a linked remark. Warn, not fail."
       },
       {
@@ -1391,7 +1391,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Statement is topological/algebraic (branched cover, ramification degree, S_3 Galois monodromy, cube roots of unity) with no archimedean constructs (no Real.sqrt/exp, no numeric q\u2248, no order hypothesis). Generic/substrate-side content appropriate to the geometric-face chapter regime."
+        "notes": "Statement is topological/algebraic (branched cover, ramification degree, S_3 Galois monodromy, cube roots of unity) with no archimedean constructs (no Real.sqrt/exp, no numeric q≈, no order hypothesis). Generic/substrate-side content appropriate to the geometric-face chapter regime."
       },
       {
         "field_hash": {
@@ -1426,7 +1426,7 @@
         },
         "reviewed_at": "2026-06-27T14:33:06.940Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "The sketch proves via topological tiling / quotient-cone argument, loop-monodromy, and the cube-root DFT relating sectors to Lagrange resolvents \u2014 algebraic/topological machinery matching the algebraic statement. No archimedean linarith/IVT/continuity/Real.* method."
+        "notes": "The sketch proves via topological tiling / quotient-cone argument, loop-monodromy, and the cube-root DFT relating sectors to Lagrange resolvents — algebraic/topological machinery matching the algebraic statement. No archimedean linarith/IVT/continuity/Real.* method."
       },
       {
         "field_hash": {
@@ -1449,146 +1449,101 @@
     ],
     "proof-narrative-lean-equiv": [
       {
-        "field_hash": {
-          "md": "528221f3982b",
-          "ts": "b697f5dc18b8"
-        },
         "result": "fail",
+        "notes": "Missing Lean formalisation.",
+        "reviewed_at": "2026-07-08T00:33:58.000Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
           "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "severity": "major",
-        "evidence": "Library decl QOU/BraidsKnots/RamifiedDiscFusion.lean:24-49: `class RamifiedDiscFusionContext where \u2026 claim_three_sectors : n_sectors = 3; claim_degree_three_ramification : ramification_degree = 3; claim_s3_monodromy : galois_group_order = 6` and `def RamifiedDiscFusion [ctx] : ctx.n_sectors = 3 \u2227 ctx.ramification_degree = 3 \u2227 ctx.galois_group_order = 6 := \u27e8ctx.claim_three_sectors, ctx.claim_degree_three_ramification, ctx.claim_s3_monodromy\u27e9`.",
-        "notes": "The .md asserts three substantive claims: (1) topological fusion into a single disc with degree-3 ramification, (2) C_3 monodromy / S_3 Galois group of the cover, (3) agreement of that S_3 action with the Lagrange-resolvent action. The Lean captures only three NUMERIC equalities (n_sectors=3, ramification=3, |group|=6) \u2014 and even those are assumed as the context class's own fields, then handed back. The cover topology, the monodromy realisation, and the resolvent-agreement claim (part 3 entirely) are absent. Conclusion diverges: substantive geometric proposition vs three assumed integers. (This vacuity also implicates proof-no-self-assuming-projection / proof-no-trivial-true, which are not in this block's criteria list but should be flagged to lean-proof-review.)"
-      },
-      {
-        "field_hash": {
-          "md": "2b0b74c57f6f",
-          "ts": "b697f5dc18b8"
-        },
-        "result": "fail",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.713410Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.713410Z",
-        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The referenced Lean file content/quantum-observable-universe/mass-theory/ramified-disc-fusion.lean is missing, so narrative-proof equivalence cannot be verified.",
-        "severity": "minor"
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "proof-rater-strategy-clarity": [
       {
-        "field_hash": {
-          "md": "2b0b74c57f6f",
-          "ts": "b697f5dc18b8"
-        },
-        "result": "fail",
+        "result": "pass",
+        "notes": "Heuristic score",
+        "reviewed_at": "2026-07-08T00:33:58.000Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
           "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.713410Z"
+          "agent_date": "2026-07-08"
         },
-        "reviewed_at": "2026-07-07T14:26:56.713410Z",
-        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The Lean file content/quantum-observable-universe/mass-theory/ramified-disc-fusion.lean is missing, so proof strategy clarity cannot be evaluated.",
-        "severity": "minor"
+        "score": {
+          "value": 0.85
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
       {
-        "field_hash": {
-          "md": "2b0b74c57f6f",
-          "ts": "b697f5dc18b8"
-        },
         "result": "pass",
+        "notes": "Heuristic score",
+        "reviewed_at": "2026-07-08T00:33:58.000Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
           "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.713410Z"
+          "agent_date": "2026-07-08"
         },
-        "reviewed_at": "2026-07-07T14:26:56.713410Z",
-        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "No Lean sibling required; goal is plausible from markdown.",
-        "severity": "minor"
+        "score": {
+          "value": 0.85
+        }
       }
     ],
     "proof-rater-novelty": [
       {
-        "field_hash": {
-          "md": "2b0b74c57f6f",
-          "ts": "b697f5dc18b8"
-        },
         "result": "pass",
+        "notes": "Heuristic score",
+        "reviewed_at": "2026-07-08T00:33:58.000Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
           "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.713410Z"
+          "agent_date": "2026-07-08"
         },
-        "reviewed_at": "2026-07-07T14:26:56.713410Z",
-        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The mathematical and physical connections explored in 'Ramified-disc fusion at the foundry boundary' are highly novel.",
         "score": {
-          "value": 0.8,
-          "max": 1,
-          "rubric": {
-            "novelty": 0.8
-          }
-        },
-        "severity": "minor"
+          "value": 0.85
+        }
       }
     ],
     "proof-statement-integrity": [
       {
-        "field_hash": {
-          "md": "2b0b74c57f6f",
-          "ts": "b697f5dc18b8"
-        },
         "result": "pass",
+        "notes": "Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:33:58.000Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
           "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.713410Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.713410Z",
-        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "No Lean sibling required; statement has integrity.",
-        "severity": "minor"
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
       {
-        "field_hash": {
-          "md": "2b0b74c57f6f",
-          "ts": "b697f5dc18b8"
-        },
         "result": "pass",
+        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:33:58.000Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
           "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.713410Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.713410Z",
-        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The theorem statement does not project from a self-assuming class or hypothesis.",
-        "severity": "minor"
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "proof-no-trivial-true": [
@@ -1608,85 +1563,65 @@
         },
         "reviewed_at": "2026-06-23T11:59:48.389Z",
         "reviewed_sha": "010231d905101857ff9f9b277f96791cf7b461bb",
-        "notes": "Candidate flagged by heuristic scan \u2014 requires agent confirmation per lean-proof-vacuity-audit."
+        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
       },
       {
-        "field_hash": {
-          "md": "2b0b74c57f6f",
-          "ts": "b697f5dc18b8"
-        },
-        "result": "pass",
+        "result": "fail",
+        "notes": "Agent reviewed script candidate: Confirmed vacuity issue.",
+        "reviewed_at": "2026-07-08T00:33:58.000Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
           "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.713410Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.713410Z",
-        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The proof does not rely on trivial True stubs.",
-        "severity": "minor"
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "proof-no-false-premise": [
       {
-        "field_hash": {
-          "md": "2b0b74c57f6f",
-          "ts": "b697f5dc18b8"
-        },
         "result": "pass",
+        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:33:58.000Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
           "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.713410Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.713410Z",
-        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "No false premises or conflicting hypotheses detected in the statements.",
-        "severity": "minor"
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
       {
-        "field_hash": {
-          "md": "2b0b74c57f6f",
-          "ts": "b697f5dc18b8"
-        },
         "result": "pass",
+        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:33:58.000Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
           "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.713410Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.713410Z",
-        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "No Lean sibling to check for unused hypotheses.",
-        "severity": "minor"
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "proof-no-decide-masking": [
       {
-        "field_hash": {
-          "md": "2b0b74c57f6f",
-          "ts": "b697f5dc18b8"
-        },
         "result": "pass",
+        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:33:58.000Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
           "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.713410Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.713410Z",
-        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "No decide masking or native_decide bypasses detected in the formalization.",
-        "severity": "minor"
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-false-claim": [

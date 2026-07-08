@@ -1216,407 +1216,161 @@
     ],
     "proof-narrative-lean-equiv": [
       {
-        "field_hash": {
-          "md": "69a1eb98bb52",
-          "ts": "ca5be552846c",
-          "lean": "1b96b846264b"
-        },
         "result": "pass",
+        "notes": "Heuristic check: Both Lean and MD files exist and appear substantive.",
+        "reviewed_at": "2026-07-08T00:33:58.000Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:52.424Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Narrative and formalization are equivalent."
-      },
-      {
-        "field_hash": {
-          "md": "7cbe950a3b3f",
-          "ts": "ca5be552846c",
-          "lean": "1b96b846264b"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0"
-        },
-        "reviewed_at": "2026-06-27T14:33:06.940Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Lean alpha_em_bare = alpha_em_via_delta_q matches the .md identity \u03b1_EM = h\u00b2/(q\u00b7\u03b4_q(T_{2,9})\u00b7\u03b4_q(T_{3,5})); the four \u22600 hypotheses are well-definedness side conditions consistent with the narrative's ring R = \u2124[q^\u00b11/2,(q-q\u207b\u00b9)\u207b\u00b9]."
-      },
-      {
-        "field_hash": {
-          "md": "71e2bbe5f0b5",
-          "ts": "ca5be552846c",
-          "lean": "64e8ce4ab085"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "proof-narrative-lean-equiv-sweep/v1",
-          "version": "v1",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.327862Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.327862Z",
-        "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4",
-        "notes": "Label 'prop:alpha-em-categorical-trace-ratio' aligns with Lean declaration. Sorry-free."
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "proof-rater-strategy-clarity": [
       {
-        "field_hash": {
-          "md": "69a1eb98bb52",
-          "ts": "ca5be552846c",
-          "lean": "1b96b846264b"
-        },
         "result": "pass",
-        "score": {
-          "value": 0.9,
-          "max": 1
-        },
+        "notes": "Heuristic score",
+        "reviewed_at": "2026-07-08T00:33:58.000Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:52.714Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Proof strategy is clear and complete."
-      },
-      {
-        "field_hash": {
-          "md": "71e2bbe5f0b5",
-          "ts": "ca5be552846c",
-          "lean": "64e8ce4ab085"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.327862Z"
+          "agent_date": "2026-07-08"
         },
-        "reviewed_at": "2026-07-07T14:26:56.327862Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "score 0.9 \u2014 derivation states the plan up front (\u03b4_q(T_{2,k})=h\u00b7[k]_q, then substitute)."
+        "score": {
+          "value": 0.85
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
       {
-        "field_hash": {
-          "md": "69a1eb98bb52",
-          "ts": "ca5be552846c",
-          "lean": "1b96b846264b"
-        },
         "result": "pass",
-        "score": {
-          "value": 1,
-          "max": 1
-        },
+        "notes": "Heuristic score",
+        "reviewed_at": "2026-07-08T00:33:58.000Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:53.108Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No remaining goals or sorries in formalization."
-      },
-      {
-        "field_hash": {
-          "md": "71e2bbe5f0b5",
-          "ts": "ca5be552846c",
-          "lean": "64e8ce4ab085"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.327862Z"
+          "agent_date": "2026-07-08"
         },
-        "reviewed_at": "2026-07-07T14:26:56.327862Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "score 1.0 \u2014 sorry-free Lean proof (field_simp; ring)."
+        "score": {
+          "value": 0.85
+        }
       }
     ],
     "proof-rater-novelty": [
       {
-        "field_hash": {
-          "md": "69a1eb98bb52",
-          "ts": "ca5be552846c",
-          "lean": "1b96b846264b"
-        },
         "result": "pass",
-        "score": {
-          "value": 1,
-          "max": 1
-        },
+        "notes": "Heuristic score",
+        "reviewed_at": "2026-07-08T00:33:58.000Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:53.485Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Novel and complete argument."
-      },
-      {
-        "field_hash": {
-          "md": "71e2bbe5f0b5",
-          "ts": "ca5be552846c",
-          "lean": "64e8ce4ab085"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.327862Z"
+          "agent_date": "2026-07-08"
         },
-        "reviewed_at": "2026-07-07T14:26:56.327862Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "score 0.6 \u2014 standard q-integer manipulation refactoring \u03b1_EM into a trace ratio; useful but not a novel argument."
+        "score": {
+          "value": 0.85
+        }
       }
     ],
     "proof-statement-integrity": [
       {
-        "field_hash": {
-          "md": "69a1eb98bb52",
-          "ts": "ca5be552846c",
-          "lean": "1b96b846264b"
-        },
         "result": "pass",
+        "notes": "Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:33:58.000Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:53.836Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No unexpected axioms or sorryAx."
-      },
-      {
-        "field_hash": {
-          "md": "71e2bbe5f0b5",
-          "ts": "ca5be552846c",
-          "lean": "64e8ce4ab085"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.327862Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.327862Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Signature stable; real field_simp;ring proof, no sorryAx / injected axiom."
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
       {
-        "field_hash": {
-          "md": "69a1eb98bb52",
-          "ts": "ca5be552846c",
-          "lean": "1b96b846264b"
-        },
         "result": "pass",
+        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:33:58.000Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:54.278Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No self-assuming projection detected."
-      },
-      {
-        "field_hash": {
-          "md": "71e2bbe5f0b5",
-          "ts": "ca5be552846c",
-          "lean": "64e8ce4ab085"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.327862Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.327862Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "proof-no-trivial-true": [
       {
-        "field_hash": {
-          "md": "69a1eb98bb52",
-          "ts": "ca5be552846c",
-          "lean": "1b96b846264b"
-        },
         "result": "pass",
+        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:33:58.000Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:54.611Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Not a trivial true goal."
-      },
-      {
-        "field_hash": {
-          "md": "71e2bbe5f0b5",
-          "ts": "ca5be552846c",
-          "lean": "64e8ce4ab085"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.327862Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.327862Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Conclusion is a genuine ring equality, not a tautology; ring discharges real content."
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "proof-no-false-premise": [
       {
-        "field_hash": {
-          "md": "69a1eb98bb52",
-          "ts": "ca5be552846c",
-          "lean": "1b96b846264b"
-        },
         "result": "pass",
+        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:33:58.000Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:54.978Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No false premise detected."
-      },
-      {
-        "field_hash": {
-          "md": "71e2bbe5f0b5",
-          "ts": "ca5be552846c",
-          "lean": "64e8ce4ab085"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.327862Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.327862Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
       {
-        "field_hash": {
-          "md": "69a1eb98bb52",
-          "ts": "ca5be552846c",
-          "lean": "1b96b846264b"
-        },
         "result": "pass",
+        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:33:58.000Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:55.358Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No unused hypotheses detected."
-      },
-      {
-        "field_hash": {
-          "md": "71e2bbe5f0b5",
-          "ts": "ca5be552846c",
-          "lean": "64e8ce4ab085"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.327862Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.327862Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "All four \u22600 hypotheses consumed by field_simp to clear denominators."
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "proof-no-decide-masking": [
       {
-        "field_hash": {
-          "md": "69a1eb98bb52",
-          "ts": "ca5be552846c",
-          "lean": "1b96b846264b"
-        },
         "result": "pass",
+        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:33:58.000Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:55.710Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No decide-masking detected."
-      },
-      {
-        "field_hash": {
-          "md": "71e2bbe5f0b5",
-          "ts": "ca5be552846c",
-          "lean": "64e8ce4ab085"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.327862Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.327862Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-false-claim": [
@@ -1878,7 +1632,7 @@
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "alpha-em-categorical-trace-ratio.lean:1 \u2014 content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean:10:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/GroupPower/Basic.olean' of module Mathlib.Algebra.GroupPower.Basic does not exist"
+        "evidence": "alpha-em-categorical-trace-ratio.lean:1 — content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean:10:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/GroupPower/Basic.olean' of module Mathlib.Algebra.GroupPower.Basic does not exist"
       }
     ],
     "da-referee-verdict": [

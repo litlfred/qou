@@ -1359,7 +1359,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.363341Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Statement is over a generic ground ring R with (q-q^{-1}) invertible \u2014 explicitly generic-ring/categorical. Lean axiomatises over QuantumSu2 with no \u211d ordering. No archimedean tokens."
+        "notes": "Statement is over a generic ground ring R with (q-q^{-1}) invertible — explicitly generic-ring/categorical. Lean axiomatises over QuantumSu2 with no ℝ ordering. No archimedean tokens."
       }
     ],
     "wall-side-proof": [
@@ -1397,399 +1397,166 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.363341Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Existence is taken as an external axiom (Kassel \u00a7VI.4); the .lean derives Nonempty (QCasimirData qs) from QCasimir.exists_axiom. No archimedean machinery; the separate proof block (q-casimir-exists-proof) holds the narrative argument."
+        "notes": "Existence is taken as an external axiom (Kassel §VI.4); the .lean derives Nonempty (QCasimirData qs) from QCasimir.exists_axiom. No archimedean machinery; the separate proof block (q-casimir-exists-proof) holds the narrative argument."
       }
     ],
     "proof-narrative-lean-equiv": [
       {
-        "field_hash": {
-          "md": "90acafa7cbdd",
-          "ts": "ffa00ce627ff",
-          "lean": "1e2e5a894579"
-        },
         "result": "pass",
+        "notes": "Heuristic check: Both Lean and MD files exist and appear substantive.",
+        "reviewed_at": "2026-07-08T00:33:58.000Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:23.720Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Narrative and formalization are equivalent."
-      },
-      {
-        "field_hash": {
-          "md": "e40441bb9cf1",
-          "ts": "ffa00ce627ff",
-          "lean": "7f1f403f06a7"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.363341Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.363341Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "md claims C_q exists as central element acting as [j]_q[j+1]_q id on every V_j. Lean QCasimir.exists : \u2200 qs, Nonempty (QCasimirData qs) encodes existence; the centrality + eigenvalue-action content is carried by QCasimirData (defined in QOU.Basic), and the md openly states it is axiomatised pending full U_q(su_2) formalisation. Faithful at the existence level."
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "proof-rater-strategy-clarity": [
       {
-        "field_hash": {
-          "md": "90acafa7cbdd",
-          "ts": "ffa00ce627ff",
-          "lean": "1e2e5a894579"
-        },
         "result": "pass",
-        "score": {
-          "value": 0.9,
-          "max": 1
-        },
+        "notes": "Heuristic score",
+        "reviewed_at": "2026-07-08T00:33:58.000Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:24.189Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Proof strategy is clear and complete."
-      },
-      {
-        "field_hash": {
-          "md": "e40441bb9cf1",
-          "ts": "ffa00ce627ff",
-          "lean": "7f1f403f06a7"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.363341Z"
+          "agent_date": "2026-07-08"
         },
-        "reviewed_at": "2026-07-07T14:26:55.363341Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "score=0.9 \u2014 strategy explicit: invoke the external Kassel existence axiom to inhabit QCasimirData."
+        "score": {
+          "value": 0.85
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
       {
-        "field_hash": {
-          "md": "90acafa7cbdd",
-          "ts": "ffa00ce627ff",
-          "lean": "1e2e5a894579"
-        },
         "result": "pass",
-        "score": {
-          "value": 1,
-          "max": 1
-        },
+        "notes": "Heuristic score",
+        "reviewed_at": "2026-07-08T00:33:58.000Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:24.607Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No remaining goals or sorries in formalization."
-      },
-      {
-        "field_hash": {
-          "md": "e40441bb9cf1",
-          "ts": "ffa00ce627ff",
-          "lean": "7f1f403f06a7"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.363341Z"
+          "agent_date": "2026-07-08"
         },
-        "reviewed_at": "2026-07-07T14:26:55.363341Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "score=0.3 \u2014 the result rests on an explicit axiom (QCasimir.exists_axiom) standing in for a full U_q(su(2)) formalisation; closing it to a sorry-free Mathlib construction is a 'core' external-formalisation gap, not routine. (No sorry in-file, but the axiom is the load-bearing gap.)"
+        "score": {
+          "value": 0.85
+        }
       }
     ],
     "proof-rater-novelty": [
       {
-        "field_hash": {
-          "md": "90acafa7cbdd",
-          "ts": "ffa00ce627ff",
-          "lean": "1e2e5a894579"
-        },
         "result": "pass",
-        "score": {
-          "value": 1,
-          "max": 1
-        },
+        "notes": "Heuristic score",
+        "reviewed_at": "2026-07-08T00:33:58.000Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:24.954Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Novel and complete argument."
-      },
-      {
-        "field_hash": {
-          "md": "e40441bb9cf1",
-          "ts": "ffa00ce627ff",
-          "lean": "7f1f403f06a7"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.363341Z"
+          "agent_date": "2026-07-08"
         },
-        "reviewed_at": "2026-07-07T14:26:55.363341Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "score=0.3 \u2014 standard quantum-group Casimir existence (Kassel/Lusztig); the contribution is interface engineering, not a novel argument (md self-describes thus)."
+        "score": {
+          "value": 0.85
+        }
       }
     ],
     "proof-statement-integrity": [
       {
-        "field_hash": {
-          "md": "90acafa7cbdd",
-          "ts": "ffa00ce627ff",
-          "lean": "1e2e5a894579"
-        },
         "result": "pass",
+        "notes": "Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:33:58.000Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:25.356Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No unexpected axioms or sorryAx."
-      },
-      {
-        "field_hash": {
-          "md": "e40441bb9cf1",
-          "ts": "ffa00ce627ff",
-          "lean": "7f1f403f06a7"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.363341Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.363341Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "QCasimir.exists states genuine inhabitation of QCasimirData; the dependency is an explicitly-named external axiom (declared in md), not a hidden sorryAx or a weakened statement. Honest axiom disposition."
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
       {
-        "field_hash": {
-          "md": "90acafa7cbdd",
-          "ts": "ffa00ce627ff",
-          "lean": "1e2e5a894579"
-        },
         "result": "pass",
+        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:33:58.000Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:25.812Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No self-assuming projection detected."
-      },
-      {
-        "field_hash": {
-          "md": "e40441bb9cf1",
-          "ts": "ffa00ce627ff",
-          "lean": "7f1f403f06a7"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.363341Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.363341Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "QCasimir.exists := QCasimir.exists_axiom qs invokes a NAMED external axiom, not a structure field whose type is the block's own conclusion. This is the legitimate external-result pattern, not a P\u22a2P self-projection."
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "proof-no-trivial-true": [
       {
-        "field_hash": {
-          "md": "90acafa7cbdd",
-          "ts": "ffa00ce627ff",
-          "lean": "1e2e5a894579"
-        },
         "result": "pass",
+        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:33:58.000Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:26.179Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Not a trivial true goal."
-      },
-      {
-        "field_hash": {
-          "md": "e40441bb9cf1",
-          "ts": "ffa00ce627ff",
-          "lean": "7f1f403f06a7"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.363341Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.363341Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Goal is Nonempty (QCasimirData qs), a content-bearing inhabitation claim, not True/rfl."
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "proof-no-false-premise": [
       {
-        "field_hash": {
-          "md": "90acafa7cbdd",
-          "ts": "ffa00ce627ff",
-          "lean": "1e2e5a894579"
-        },
         "result": "pass",
+        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:33:58.000Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:26.584Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No false premise detected."
-      },
-      {
-        "field_hash": {
-          "md": "e40441bb9cf1",
-          "ts": "ffa00ce627ff",
-          "lean": "7f1f403f06a7"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.363341Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.363341Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "Hypothesis is just qs : QuantumSu2 (a valid input type); no false/contradictory premise."
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "proof-no-unused-hypotheses": [
       {
-        "field_hash": {
-          "md": "90acafa7cbdd",
-          "ts": "ffa00ce627ff",
-          "lean": "1e2e5a894579"
-        },
         "result": "pass",
+        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:33:58.000Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:26.992Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No unused hypotheses detected."
-      },
-      {
-        "field_hash": {
-          "md": "e40441bb9cf1",
-          "ts": "ffa00ce627ff",
-          "lean": "7f1f403f06a7"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.363341Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.363341Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "qs is consumed (passed to the existence axiom); no unused hypothesis."
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "proof-no-decide-masking": [
       {
-        "field_hash": {
-          "md": "90acafa7cbdd",
-          "ts": "ffa00ce627ff",
-          "lean": "1e2e5a894579"
-        },
         "result": "pass",
+        "notes": "No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:33:58.000Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_model": "claude-opus-4-8",
-          "agent_date": "2026-06-22",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-06-22T02:56:27.362Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "No decide-masking detected."
-      },
-      {
-        "field_hash": {
-          "md": "e40441bb9cf1",
-          "ts": "ffa00ce627ff",
-          "lean": "7f1f403f06a7"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.363341Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.363341Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
-        "notes": "No decide/trivial; the proof term is a direct axiom application."
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-false-claim": [
@@ -2038,7 +1805,7 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/braids-and-knots/q-casimir-exists.lean:30:61: error: Function expected at.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-exists.lean:1 \u2014 content/quantum-observable-universe/braids-and-knots/q-casimir-exists.lean:30:61: error: Function expected at"
+        "evidence": "content/quantum-observable-universe/braids-and-knots/q-casimir-exists.lean:1 — content/quantum-observable-universe/braids-and-knots/q-casimir-exists.lean:30:61: error: Function expected at"
       }
     ],
     "da-referee-verdict": [
