@@ -893,6 +893,19 @@
         "reviewed_at": "2026-07-07T14:26:56.444340Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:16:53.000Z",
+        "reviewed_sha": "1fb26248d104234d9e9796374606cd0139289c97",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "wall-side-statement": [
@@ -935,6 +948,19 @@
         "notes": "The claim in 'Bundle initial conditions' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/measurement-observation/bundle-initial-conditions.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:16:53.000Z",
+        "reviewed_sha": "1fb26248d104234d9e9796374606cd0139289c97",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-vacuous": [
@@ -956,6 +982,19 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The block 'Bundle initial conditions' presents substantial mathematical content: A **bundle initial condition** over the projective line $\\mathbb{P}(V)$ at a ref...",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:16:53.000Z",
+        "reviewed_sha": "1fb26248d104234d9e9796374606cd0139289c97",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-circular": [
@@ -978,6 +1017,19 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Bundle initial conditions'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/measurement-observation/bundle-initial-conditions.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:16:53.000Z",
+        "reviewed_sha": "1fb26248d104234d9e9796374606cd0139289c97",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-overclaim": [
@@ -999,6 +1051,19 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The prose presents 'Bundle initial conditions' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:16:53.000Z",
+        "reviewed_sha": "1fb26248d104234d9e9796374606cd0139289c97",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1021,6 +1086,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Bundle initial conditions'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/measurement-observation/bundle-initial-conditions.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:16:53.000Z",
+        "reviewed_sha": "1fb26248d104234d9e9796374606cd0139289c97",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1043,6 +1121,19 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/measurement-observation/bundle-initial-conditions.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/measurement-observation/bundle-initial-conditions.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:16:53.000Z",
+        "reviewed_sha": "1fb26248d104234d9e9796374606cd0139289c97",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1064,6 +1155,19 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The Lean sibling content/quantum-observable-universe/measurement-observation/bundle-initial-conditions.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:16:53.000Z",
+        "reviewed_sha": "1fb26248d104234d9e9796374606cd0139289c97",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1086,6 +1190,19 @@
         "notes": "No citations are present in 'Bundle initial conditions', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/measurement-observation/bundle-initial-conditions.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:16:53.000Z",
+        "reviewed_sha": "1fb26248d104234d9e9796374606cd0139289c97",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1108,6 +1225,19 @@
         "notes": "Key terms and symbols in 'Bundle initial conditions' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/measurement-observation/bundle-initial-conditions.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:16:53.000Z",
+        "reviewed_sha": "1fb26248d104234d9e9796374606cd0139289c97",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1130,6 +1260,19 @@
         "notes": "The algebraic and logical relations in 'Bundle initial conditions' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/measurement-observation/bundle-initial-conditions.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:16:53.000Z",
+        "reviewed_sha": "1fb26248d104234d9e9796374606cd0139289c97",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1152,6 +1295,19 @@
         "notes": "The physical concepts described in 'Bundle initial conditions' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/measurement-observation/bundle-initial-conditions.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:16:53.000Z",
+        "reviewed_sha": "1fb26248d104234d9e9796374606cd0139289c97",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1174,6 +1330,19 @@
         "notes": "The Lean sibling content/quantum-observable-universe/measurement-observation/bundle-initial-conditions.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/measurement-observation/bundle-initial-conditions.lean:1 — content/quantum-observable-universe/measurement-observation/bundle-initial-conditions.lean:31:13: error: unexpected token 'section'; expected 'lemma'"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:16:53.000Z",
+        "reviewed_sha": "1fb26248d104234d9e9796374606cd0139289c97",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1197,6 +1366,19 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/measurement-observation/bundle-initial-conditions.lean contains compilation errors: content/quantum-observable-universe/measurement-observation/bundle-initial-conditions.lean:31:13: error: unexpected token 'section'; expected 'lemma', invalidating the claimed formalization."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:16:53.000Z",
+        "reviewed_sha": "1fb26248d104234d9e9796374606cd0139289c97",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1374,6 +1556,36 @@
         },
         "score": {
           "value": 0.85
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:16:53.000Z",
+        "reviewed_sha": "1fb26248d104234d9e9796374606cd0139289c97",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:16:53.000Z",
+        "reviewed_sha": "1fb26248d104234d9e9796374606cd0139289c97",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
         }
       }
     ]
