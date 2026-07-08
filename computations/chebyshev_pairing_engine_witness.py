@@ -14,11 +14,8 @@ q < 1 value, and confirms the sign-alternation c_Z<0 (even) / >0 (odd)
 for q>1. Uses the regular representation M_σ = [[0,1],[1,h]] of σ on
 the basis {1, σ}.
 """
-import json
 import os
-import subprocess
 import sys
-from datetime import datetime, timezone
 
 import mpmath as mp
 
@@ -49,25 +46,6 @@ def M_sigma(q):
 
 def mat_max_abs(M):
     return max(abs(M[i, j]) for i in range(M.rows) for j in range(M.cols))
-
-
-def git_sha_of(path):
-    try:
-        return subprocess.check_output(
-            ["git", "log", "-1", "--format=%H", "--", path],
-            cwd=os.path.dirname(os.path.abspath(__file__)),
-        ).decode().strip()
-    except Exception:
-        return None
-
-
-def file_hash(path):
-    import hashlib
-    try:
-        with open(path, "rb") as f:
-            return hashlib.sha256(f.read()).hexdigest()[:12]
-    except Exception:
-        return None
 
 
 def main():
@@ -101,7 +79,6 @@ def main():
             "c_Z_sample": {str(Z): mp.nstr(c_Z(q, Z), 8) for Z in range(0, 7)},
         })
 
-    script_path = os.path.abspath(__file__)
     witness = {
         "schema": "qou-witness/v1",
         "name": "chebyshev-pairing-engine",
@@ -113,16 +90,11 @@ def main():
             "for q>1. Underlies conj:palindromicity-orbital-type and "
             "conj:shell-closure-nf-term-count."
         ),
-        "computation": {
-            "engine": "python+mpmath",
+        "parameters": {
             "dps": mp.mp.dps,
             "Zmax": ZMAX,
             "tolerance": mp.nstr(TOL, 2),
-            "script": "computations/chebyshev_pairing_engine_witness.py",
         },
-        "scriptCommitSha": git_sha_of(script_path),
-        "scriptHash": file_hash(script_path),
-        "computedAt": datetime.now(timezone.utc).isoformat(),
         "result": {"all_ok": bool(all_ok), "per_q": per_q},
         "refs": [
             "docs/audits/2026-06-07-chebyshev-pairing-engine-proved.md",
@@ -130,11 +102,12 @@ def main():
             "content/quantum-observable-universe/molecular-construction/shell-closure-nf-term-count.md",
         ],
     }
-    out = os.path.join(
-        os.path.dirname(script_path), "chebyshev-pairing-engine.witness.json"
-    )
-    with open(out, "w") as f:
-        json.dump(witness, f, indent=2)
+    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "substrate"))
+    from witness_base import WitnessBuilder
+    out = WitnessBuilder.wrap_legacy(
+        "chebyshev-pairing-engine", witness,
+        script_path=__file__, engine="mpmath",
+    ).save()
     print(f"all_ok = {all_ok}")
     for r in per_q:
         print(f"  q={r['q']:>8}  max_resid={r['max_residual']}  "

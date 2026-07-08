@@ -1,4 +1,27 @@
 {
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-03T00:37:41.084749+00:00",
+  "commitSha": "338abede1b2cd79fbafe55497d5d6f8c896d6b55",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "borromean-binding-recompute",
+  "scriptFile": "borromean_binding_recompute.py",
+  "scriptHash": "0481b14cbcc5",
+  "scriptCommitSha": "f6ddd9350192668fe1fb6c2498f8d5b91bb70331",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
   "schema": "borromean-binding/v1",
   "tau": 0.9985621631974125,
   "E0_MeV": 4.185980827582892,
