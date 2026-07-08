@@ -4,7 +4,8 @@
   "kind": "proposition",
   "paths": {
     "ts": "../qou/content/quantum-observable-universe/mass-theory/three-calibration-inputs.ts",
-    "md": "../qou/content/quantum-observable-universe/mass-theory/three-calibration-inputs.md"
+    "md": "../qou/content/quantum-observable-universe/mass-theory/three-calibration-inputs.md",
+    "lean": "../qou/content/quantum-observable-universe/lean/QOU/BraidKnot/ThreeCalibrationInputs.lean"
   },
   "source_hashes": {
     "md": "d3f6e72a2522",
@@ -51,10 +52,10 @@
     ],
     "proof-narrative-lean-equiv": [
       {
-        "result": "warn",
-        "notes": "Missing Lean formalisation (heuristic could not resolve).",
-        "reviewed_at": "2026-07-08T00:35:07.000Z",
-        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "result": "fail",
+        "notes": "Class A: Lean stub-weakening detected.",
+        "reviewed_at": "2026-07-08T01:04:03.000Z",
+        "reviewed_sha": "6dcb2fffdc5070a45bda19a2044a693f4d93ace7",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain-heuristic",

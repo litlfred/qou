@@ -4,7 +4,8 @@
   "kind": "proposition",
   "paths": {
     "ts": "../qou/content/quantum-observable-universe/mass-theory/plancherel-weight-boundedness.ts",
-    "md": "../qou/content/quantum-observable-universe/mass-theory/plancherel-weight-boundedness.md"
+    "md": "../qou/content/quantum-observable-universe/mass-theory/plancherel-weight-boundedness.md",
+    "lean": "../qou/content/quantum-observable-universe/lean/QOU/BraidKnot/PlancherelWeightBoundedness.lean"
   },
   "source_hashes": {
     "md": "fa7f43239b12",
@@ -1183,10 +1184,10 @@
         "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/lean/QOU/BraidKnot/PlancherelWeightBoundedness.lean); stale agent flag refreshed (sorry discharged after prior review)."
       },
       {
-        "result": "warn",
-        "notes": "Missing Lean formalisation (heuristic could not resolve).",
-        "reviewed_at": "2026-07-08T00:35:07.000Z",
-        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "result": "pass",
+        "notes": "Heuristic check: Drifted Lean file found. Both Lean and MD files exist and appear substantive.",
+        "reviewed_at": "2026-07-08T01:04:03.000Z",
+        "reviewed_sha": "6dcb2fffdc5070a45bda19a2044a693f4d93ace7",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain-heuristic",

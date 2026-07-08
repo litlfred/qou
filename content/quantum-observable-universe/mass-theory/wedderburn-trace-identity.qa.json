@@ -4,7 +4,8 @@
   "kind": "proposition",
   "paths": {
     "ts": "../qou/content/quantum-observable-universe/mass-theory/wedderburn-trace-identity.ts",
-    "md": "../qou/content/quantum-observable-universe/mass-theory/wedderburn-trace-identity.md"
+    "md": "../qou/content/quantum-observable-universe/mass-theory/wedderburn-trace-identity.md",
+    "lean": "../qou/content/quantum-observable-universe/lean/QOU/BraidsAndKnots/PlancherelViaRecipe.lean"
   },
   "source_hashes": {
     "md": "ecc0c529dd8b",
@@ -1030,10 +1031,10 @@
     ],
     "proof-narrative-lean-equiv": [
       {
-        "result": "warn",
-        "notes": "Missing Lean formalisation (heuristic could not resolve).",
-        "reviewed_at": "2026-07-08T00:35:07.000Z",
-        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "result": "pass",
+        "notes": "Heuristic check: Drifted Lean file found. Both Lean and MD files exist and appear substantive.",
+        "reviewed_at": "2026-07-08T01:04:03.000Z",
+        "reviewed_sha": "6dcb2fffdc5070a45bda19a2044a693f4d93ace7",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain-heuristic",
