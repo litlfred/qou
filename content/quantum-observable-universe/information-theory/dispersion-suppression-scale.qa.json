@@ -4,7 +4,8 @@
   "kind": "conjecture",
   "paths": {
     "ts": "../qou/content/quantum-observable-universe/information-theory/dispersion-suppression-scale.ts",
-    "md": "../qou/content/quantum-observable-universe/information-theory/dispersion-suppression-scale.md"
+    "md": "../qou/content/quantum-observable-universe/information-theory/dispersion-suppression-scale.md",
+    "lean": "../qou/content/quantum-observable-universe/lean/QOU/Information/DispersionSuppressionScale.lean"
   },
   "source_hashes": {
     "md": "144e72a36763",
@@ -877,7 +878,7 @@
     "proof-narrative-lean-equiv": [
       {
         "result": "warn",
-        "notes": "Missing Lean formalisation (heuristic could not resolve).",
+        "notes": "Class B: Lean stub detected (proper Lean signature created, but proof is sorry).",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {

@@ -4,7 +4,8 @@
   "kind": "conjecture",
   "paths": {
     "ts": "../qou/content/quantum-observable-universe/quantum-observable-universes/archimedean-realisation-volume-compatibility.ts",
-    "md": "../qou/content/quantum-observable-universe/quantum-observable-universes/archimedean-realisation-volume-compatibility.md"
+    "md": "../qou/content/quantum-observable-universe/quantum-observable-universes/archimedean-realisation-volume-compatibility.md",
+    "lean": "../qou/content/quantum-observable-universe/lean/QOU/Archimedean/RealisationVolumeCompatibility.lean"
   },
   "source_hashes": {
     "md": "d407d97786e0",
@@ -118,7 +119,7 @@
         "reviewed_at": "2026-07-05T04:39:43.766Z",
         "reviewed_sha": "7415132ccce30885dcfd323600b8bcf311c431e4",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/quantum-observable-universes/archimedean-realisation-volume-compatibility.md:33: *naturally in $\\beta$ — i.e. $\\tau_\\infty \\circ (-\\mathrm{Li}_2^q \\circ (-V_0))$"
+        "evidence": "content/quantum-observable-universe/quantum-observable-universes/archimedean-realisation-volume-compatibility.md:33: *naturally in $\\beta$ \u2014 i.e. $\\tau_\\infty \\circ (-\\mathrm{Li}_2^q \\circ (-V_0))$"
       }
     ],
     "voice-scholarly-default": [
@@ -879,7 +880,7 @@
     "proof-narrative-lean-equiv": [
       {
         "result": "warn",
-        "notes": "Missing Lean formalisation (heuristic could not resolve).",
+        "notes": "Class B: Lean stub detected (proper Lean signature created, but proof is sorry).",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {

@@ -10,6 +10,9 @@ export default conjecture({
     "rem:dsr-planck-scale-phenomenology",
   ],
   cites: ["abdo2009"],
+  lean: {
+    ref: "qou:QOU.Information.DispersionSuppressionScale.dispersion_suppression_scale"
+  },
   tags: [
     "dispersion",
     "lorentz-invariance",

@@ -4,7 +4,8 @@
   "kind": "conjecture",
   "paths": {
     "ts": "../qou/content/quantum-observable-universe/molecular-construction/electron-shell-2n2-capacity.ts",
-    "md": "../qou/content/quantum-observable-universe/molecular-construction/electron-shell-2n2-capacity.md"
+    "md": "../qou/content/quantum-observable-universe/molecular-construction/electron-shell-2n2-capacity.md",
+    "lean": "../qou/content/quantum-observable-universe/lean/QOU/Molecular/ElectronShellCapacity.lean"
   },
   "source_hashes": {
     "md": "7ef6d430c6c8",
@@ -52,7 +53,7 @@
     "proof-narrative-lean-equiv": [
       {
         "result": "warn",
-        "notes": "Missing Lean formalisation (heuristic could not resolve).",
+        "notes": "Class B: Lean stub detected (proper Lean signature created, but proof is sorry).",
         "reviewed_at": "2026-07-08T00:35:07.000Z",
         "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
         "reviewer": {

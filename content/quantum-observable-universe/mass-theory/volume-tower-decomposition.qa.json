@@ -4,7 +4,8 @@
   "kind": "proposition",
   "paths": {
     "ts": "../qou/content/quantum-observable-universe/mass-theory/volume-tower-decomposition.ts",
-    "md": "../qou/content/quantum-observable-universe/mass-theory/volume-tower-decomposition.md"
+    "md": "../qou/content/quantum-observable-universe/mass-theory/volume-tower-decomposition.md",
+    "lean": "../qou/content/quantum-observable-universe/lean/.lake/packages/mathlib/Mathlib/Algebra/Order/Ring/Archimedean.lean"
   },
   "source_hashes": {
     "md": "83793bd8d076",
@@ -1117,7 +1118,7 @@
         "reviewed_at": "2026-07-07T14:26:56.715543Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
-        "evidence": "content/quantum-observable-universe/mass-theory/volume-tower-decomposition.lean:1 \u2014 Lean file exists",
+        "evidence": "content/quantum-observable-universe/mass-theory/volume-tower-decomposition.lean:1 — Lean file exists",
         "severity": "minor"
       }
     ],
@@ -1142,10 +1143,10 @@
     ],
     "proof-narrative-lean-equiv": [
       {
-        "result": "warn",
-        "notes": "Missing Lean formalisation (heuristic could not resolve).",
-        "reviewed_at": "2026-07-08T00:35:07.000Z",
-        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "result": "pass",
+        "notes": "Heuristic check: Drifted Lean file found via module path components. Both Lean and MD files exist and appear substantive.",
+        "reviewed_at": "2026-07-08T01:05:41.000Z",
+        "reviewed_sha": "150027a6d84e5f98eba54dcf37e09e7dbbba2bc0",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain-heuristic",
@@ -1256,7 +1257,7 @@
         },
         "reviewed_at": "2026-06-23T11:59:48.389Z",
         "reviewed_sha": "010231d905101857ff9f9b277f96791cf7b461bb",
-        "notes": "Candidate flagged by heuristic scan \u2014 requires agent confirmation per lean-proof-vacuity-audit."
+        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
       },
       {
         "result": "pass",

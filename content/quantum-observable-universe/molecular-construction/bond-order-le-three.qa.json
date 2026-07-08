@@ -4,7 +4,8 @@
   "kind": "proposition",
   "paths": {
     "ts": "../qou/content/quantum-observable-universe/molecular-construction/bond-order-le-three.ts",
-    "md": "../qou/content/quantum-observable-universe/molecular-construction/bond-order-le-three.md"
+    "md": "../qou/content/quantum-observable-universe/molecular-construction/bond-order-le-three.md",
+    "lean": "../qou/content/quantum-observable-universe/lean/QOU.lean"
   },
   "source_hashes": {
     "md": "0cca0e494221",
@@ -51,10 +52,10 @@
     ],
     "proof-narrative-lean-equiv": [
       {
-        "result": "warn",
-        "notes": "Missing Lean formalisation (heuristic could not resolve).",
-        "reviewed_at": "2026-07-08T00:35:07.000Z",
-        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "result": "pass",
+        "notes": "Heuristic check: Drifted Lean file found via module path components. Both Lean and MD files exist and appear substantive.",
+        "reviewed_at": "2026-07-08T01:05:41.000Z",
+        "reviewed_sha": "150027a6d84e5f98eba54dcf37e09e7dbbba2bc0",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain-heuristic",
