@@ -33,25 +33,7 @@
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Smoothed transitions, applied concrete-before-abstract, removed forward references.",
-        "reviewed_at": "2026-07-07T14:26:56.460496Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.460496Z"
-        },
-        "field_hash": {
-          "md": "d7701dd4e70b",
-          "ts": "b4e10f9532d7",
-          "lean": "22773c80d61c"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.460496Z"
 }

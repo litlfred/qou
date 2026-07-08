@@ -31,24 +31,7 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Ensured linear exposition. Removed conversational padding around Tannaka--Krein steps. Formatted explicit examples as natural continuations rather than cross-referenced callbacks.",
-        "reviewed_at": "2026-07-07T14:26:56.197600Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.197600Z"
-        },
-        "field_hash": {
-          "md": "421a68981e2f",
-          "ts": "b42c7c229a01"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.197600Z"
 }

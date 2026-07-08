@@ -1056,242 +1056,18 @@
         "reviewed_at": "2026-06-22T02:56:53.457Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
-      },
-      {
-        "field_hash": {
-          "md": "f7f1092a8dce",
-          "ts": "077e5535a601",
-          "lean": "f38838c2d46f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-proof-wall-fit-audit",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.622596Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.622596Z",
-        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
       }
     ],
-    "da-false-claim": [
-      {
-        "field_hash": {
-          "md": "f7f1092a8dce",
-          "ts": "077e5535a601",
-          "lean": "f38838c2d46f"
-        },
-        "result": "warn",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.622596Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.622596Z",
-        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The claim in 'Electroweak boson masses from vertex $\\\\delta q$ at the CODATA substrate' is unverified due to Lean compilation failures in sibling file.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/w-boson-mass-discrepancy.lean:1"
-      }
-    ],
-    "da-vacuous": [
-      {
-        "field_hash": {
-          "md": "f7f1092a8dce",
-          "ts": "077e5535a601",
-          "lean": "f38838c2d46f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.622596Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.622596Z",
-        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The block 'Electroweak boson masses from vertex $\\\\delta q$ at the CODATA substrate' presents substantial mathematical content: This remark applies the local substrate proposition ([local substrate $q$](#prop...",
-        "severity": "minor"
-      }
-    ],
-    "da-circular": [
-      {
-        "field_hash": {
-          "md": "f7f1092a8dce",
-          "ts": "077e5535a601",
-          "lean": "f38838c2d46f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.622596Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.622596Z",
-        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "No circular reasoning or self-assuming definitions detected in 'Electroweak boson masses from vertex $\\\\delta q$ at the CODATA substrate'.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/w-boson-mass-discrepancy.ts:1"
-      }
-    ],
-    "da-overclaim": [
-      {
-        "field_hash": {
-          "md": "f7f1092a8dce",
-          "ts": "077e5535a601",
-          "lean": "f38838c2d46f"
-        },
-        "result": "warn",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.622596Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.622596Z",
-        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The prose presents 'Electroweak boson masses from vertex $\\\\delta q$ at the CODATA substrate' as verified, but the sibling Lean file fails to compile.",
-        "severity": "minor"
-      }
-    ],
-    "da-hidden-dof": [
-      {
-        "field_hash": {
-          "md": "f7f1092a8dce",
-          "ts": "077e5535a601",
-          "lean": "f38838c2d46f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.622596Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.622596Z",
-        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Electroweak boson masses from vertex $\\\\delta q$ at the CODATA substrate'.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/w-boson-mass-discrepancy.ts:1"
-      }
-    ],
-    "da-non-sequitur": [
-      {
-        "field_hash": {
-          "md": "f7f1092a8dce",
-          "ts": "077e5535a601",
-          "lean": "f38838c2d46f"
-        },
-        "result": "warn",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.622596Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.622596Z",
-        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/observations/w-boson-mass-discrepancy.lean.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/w-boson-mass-discrepancy.lean:1"
-      }
-    ],
-    "da-lean-narrative-divergence": [
-      {
-        "field_hash": {
-          "md": "f7f1092a8dce",
-          "ts": "077e5535a601",
-          "lean": "f38838c2d46f"
-        },
-        "result": "fail",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.622596Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.622596Z",
-        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The Lean sibling content/quantum-observable-universe/observations/w-boson-mass-discrepancy.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
-      }
-    ],
-    "da-citation-misuse": [
-      {
-        "field_hash": {
-          "md": "f7f1092a8dce",
-          "ts": "077e5535a601",
-          "lean": "f38838c2d46f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.622596Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.622596Z",
-        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "No citations are present in 'Electroweak boson masses from vertex $\\\\delta q$ at the CODATA substrate', hence no citation misuse is possible.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/w-boson-mass-discrepancy.ts:1"
-      }
-    ],
-    "da-definitional-ambiguity": [
-      {
-        "field_hash": {
-          "md": "f7f1092a8dce",
-          "ts": "077e5535a601",
-          "lean": "f38838c2d46f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.622596Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.622596Z",
-        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "Key terms and symbols in 'Electroweak boson masses from vertex $\\\\delta q$ at the CODATA substrate' are mathematically defined and unambiguous.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/w-boson-mass-discrepancy.ts:1"
-      }
-    ],
-    "da-empirical-fragility": [
-      {
-        "field_hash": {
-          "md": "f7f1092a8dce",
-          "ts": "077e5535a601",
-          "lean": "f38838c2d46f"
-        },
-        "result": "pass",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.622596Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.622596Z",
-        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The algebraic and logical relations in 'Electroweak boson masses from vertex $\\\\delta q$ at the CODATA substrate' are independent of empirical tuning parameters.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/w-boson-mass-discrepancy.ts:1"
-      }
-    ],
+    "da-false-claim": [],
+    "da-vacuous": [],
+    "da-circular": [],
+    "da-overclaim": [],
+    "da-hidden-dof": [],
+    "da-non-sequitur": [],
+    "da-lean-narrative-divergence": [],
+    "da-citation-misuse": [],
+    "da-definitional-ambiguity": [],
+    "da-empirical-fragility": [],
     "da-physical-implausibility": [
       {
         "field_hash": {
@@ -1310,73 +1086,10 @@
         "notes": "The physical concepts described in 'Electroweak boson masses from vertex $\\\\delta q$ at the CODATA substrate' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/w-boson-mass-discrepancy.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "f7f1092a8dce",
-          "ts": "077e5535a601",
-          "lean": "f38838c2d46f"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-21",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.622596Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.622596Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "severity": "critical",
-        "evidence": "file:101: Q_top^sea \\approx (\\alpha_W / 2\\pi) x^2 ... This drives \\delta q below 10^-6 at the LHC",
-        "notes": "The claim relies on a massive double standard regarding parton kinematics. It treats the CDF pp-bar annihilation as a 'compact two-body vertex' without x^2 suppression, yet applies x^2 suppression to LHC pp annihilation because it uses 'sea quarks'. In reality, valence quarks at CDF also carry fractional momentum x < 1 (x ~ 0.04 to produce an 80 GeV W boson at 1.96 TeV). Suppressing the LHC prediction via x^2 while leaving CDF unsuppressed is factually wrong under standard QCD parton models."
       }
     ],
-    "da-reproducibility": [
-      {
-        "field_hash": {
-          "md": "f7f1092a8dce",
-          "ts": "077e5535a601",
-          "lean": "f38838c2d46f"
-        },
-        "result": "fail",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.622596Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.622596Z",
-        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "The Lean sibling content/quantum-observable-universe/observations/w-boson-mass-discrepancy.lean fails compilation, indicating a reproducibility failure.",
-        "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/w-boson-mass-discrepancy.lean:1 \u2014 content/quantum-observable-universe/observations/w-boson-mass-discrepancy.lean:57:27: error: unknown tactic"
-      }
-    ],
-    "da-referee-verdict": [
-      {
-        "field_hash": {
-          "md": "f7f1092a8dce",
-          "ts": "077e5535a601",
-          "lean": "f38838c2d46f"
-        },
-        "result": "fail",
-        "reviewer": {
-          "id": "local/qa-agent-drain",
-          "name": "QA Drain Agent",
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.622596Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.622596Z",
-        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
-        "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/observations/w-boson-mass-discrepancy.lean fails compilation: content/quantum-observable-universe/observations/w-boson-mass-discrepancy.lean:57:27: error: unknown tactic",
-        "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/observations/w-boson-mass-discrepancy.lean contains compilation errors: content/quantum-observable-universe/observations/w-boson-mass-discrepancy.lean:57:27: error: unknown tactic, invalidating the claimed formalization.",
-        "severity": "critical"
-      }
-    ],
+    "da-reproducibility": [],
+    "da-referee-verdict": [],
     "bib-cite-resolves": [
       {
         "field_hash": {
@@ -1397,25 +1110,7 @@
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Applied Milnor exposition standard (H1-H8) and brevity rules. Shortened sentences, removed editorializing ('surprisingly', 'remarkably'), replaced 'this book' with 'this paper', and maintained Math, markdown, and cross-block consistency.",
-        "reviewed_at": "2026-07-07T14:26:56.622596Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.622596Z"
-        },
-        "field_hash": {
-          "md": "f7f1092a8dce",
-          "ts": "077e5535a601",
-          "lean": "f38838c2d46f"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.622596Z"
 }

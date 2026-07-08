@@ -31,24 +31,7 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Applied Milnor brevity. Cleaned up excessive internal linking in intro. Simplified phrasing. Kept math and step structure.",
-        "reviewed_at": "2026-07-07T14:26:55.075062Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.075062Z"
-        },
-        "field_hash": {
-          "md": "e7c86bb4c94c",
-          "ts": "5c4ace5e511b"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:55.075062Z"
 }

@@ -31,24 +31,7 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Deleted 'Remark' framing and conversational fillers. Converted tables to bullet points.",
-        "reviewed_at": "2026-07-07T14:26:55.828158Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.828158Z"
-        },
-        "field_hash": {
-          "md": "288d61242dbf",
-          "ts": "bed4840da9ba"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:55.828158Z"
 }

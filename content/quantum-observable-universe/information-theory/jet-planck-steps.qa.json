@@ -817,24 +817,7 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Smoothed transitions, removed forward references, improved brevity.",
-        "reviewed_at": "2026-07-07T14:26:55.637401Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.637401Z"
-        },
-        "field_hash": {
-          "md": "16ede40ac4ca",
-          "ts": "d19c2c497ac6"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:55.637401Z"
 }

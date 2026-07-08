@@ -124,24 +124,7 @@
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote seq16 enforcing Milnor brevity. Cleaned up the intro, replacing conversational 'We conjecture ... We then exhibit' with succinct declarations. Streamlined the conditional theorem and conjecture blocks.",
-        "reviewed_at": "2026-07-07T14:26:57.391025Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.391025Z"
-        },
-        "field_hash": {
-          "md": "521a30ed3619",
-          "ts": "6754302b6b2c"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:57.391025Z"
 }

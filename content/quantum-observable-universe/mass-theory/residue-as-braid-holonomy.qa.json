@@ -852,22 +852,6 @@
         "reviewed_at": "2026-06-22T02:57:02.028Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
-      },
-      {
-        "field_hash": {
-          "md": "1b526704675c",
-          "ts": "e71242baef82"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-25",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.931234Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.931234Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-false-claim": [
@@ -887,22 +871,6 @@
         "notes": "No false claims identified in 'Each residue is the holonomy of a braid loop around a singular fibre'; the algebraic relation involving $T_w$ is mathematically consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-theory/residue-as-braid-holonomy.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "1b526704675c",
-          "ts": "e71242baef82"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-25",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.931234Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.931234Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-vacuous": [
@@ -921,22 +889,6 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The block 'Each residue is the holonomy of a braid loop around a singular fibre' presents substantial mathematical content, establishing relation $T_w$.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "1b526704675c",
-          "ts": "e71242baef82"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-25",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.931234Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.931234Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-circular": [
@@ -956,22 +908,6 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Each residue is the holonomy of a braid loop around a singular fibre'. The construction is derived from prop:gb-residue-spectral-sum.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-theory/residue-as-braid-holonomy.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "1b526704675c",
-          "ts": "e71242baef82"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-25",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.931234Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.931234Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-overclaim": [
@@ -990,22 +926,6 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No overclaims: the scope of 'Each residue is the holonomy of a braid loop around a singular fibre' is appropriately qualified and constrained.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "1b526704675c",
-          "ts": "e71242baef82"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-25",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.931234Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.931234Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-hidden-dof": [
@@ -1025,22 +945,6 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Each residue is the holonomy of a braid loop around a singular fibre'. All constants are canonically derived.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-theory/residue-as-braid-holonomy.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "1b526704675c",
-          "ts": "e71242baef82"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-25",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.931234Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.931234Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-non-sequitur": [
@@ -1060,22 +964,6 @@
         "notes": "The argument flow in 'Each residue is the holonomy of a braid loop around a singular fibre' is logically sound, mapping onto the cited dependencies: prop:gb-residue-spectral-sum.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-theory/residue-as-braid-holonomy.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "1b526704675c",
-          "ts": "e71242baef82"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-25",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.931234Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.931234Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1094,22 +982,6 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "1b526704675c",
-          "ts": "e71242baef82"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-25",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.931234Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.931234Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-citation-misuse": [
@@ -1129,22 +1001,6 @@
         "notes": "No citations are present in 'Each residue is the holonomy of a braid loop around a singular fibre', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-theory/residue-as-braid-holonomy.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "1b526704675c",
-          "ts": "e71242baef82"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-25",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.931234Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.931234Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1164,22 +1020,6 @@
         "notes": "Key terms and symbols (including $T_w$) in 'Each residue is the holonomy of a braid loop around a singular fibre' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-theory/residue-as-braid-holonomy.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "1b526704675c",
-          "ts": "e71242baef82"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-25",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.931234Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.931234Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-empirical-fragility": [
@@ -1199,22 +1039,6 @@
         "notes": "The algebraic and logical relations in 'Each residue is the holonomy of a braid loop around a singular fibre' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-theory/residue-as-braid-holonomy.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "1b526704675c",
-          "ts": "e71242baef82"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-25",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.931234Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.931234Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-physical-implausibility": [
@@ -1234,22 +1058,6 @@
         "notes": "The physical concepts described in 'Each residue is the holonomy of a braid loop around a singular fibre' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-theory/residue-as-braid-holonomy.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "1b526704675c",
-          "ts": "e71242baef82"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-25",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.931234Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.931234Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-reproducibility": [
@@ -1269,22 +1077,6 @@
         "notes": "The derivation steps and formal definitions in 'Each residue is the holonomy of a braid loop around a singular fibre' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-theory/residue-as-braid-holonomy.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "1b526704675c",
-          "ts": "e71242baef82"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-25",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.931234Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.931234Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-referee-verdict": [
@@ -1305,42 +1097,9 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Each residue is the holonomy of a braid loop around a singular fibre' are consistent."
-      },
-      {
-        "field_hash": {
-          "md": "1b526704675c",
-          "ts": "e71242baef82"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-25",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.931234Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.931234Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
-        "reviewed_at": "2026-07-07T14:26:56.931234Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.931234Z"
-        },
-        "field_hash": {
-          "md": "1b526704675c",
-          "ts": "e71242baef82"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.931234Z"
 }

@@ -124,24 +124,7 @@
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Stripped unnecessary parentheticals. Standardized 'quantum observable universe' case.",
-        "reviewed_at": "2026-07-07T14:26:55.438053Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.438053Z"
-        },
-        "field_hash": {
-          "md": "e9f2a8e6693d",
-          "ts": "e9daf016e556"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:55.438053Z"
 }

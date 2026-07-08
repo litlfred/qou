@@ -817,24 +817,7 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Streamlined the classical limit functor, making the transition from q-scale to macroscopic scale direct and declarative.",
-        "reviewed_at": "2026-07-07T14:26:56.041040Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.041040Z"
-        },
-        "field_hash": {
-          "md": "9b9bedb0f8e5",
-          "ts": "52c5e8370661"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.041040Z"
 }

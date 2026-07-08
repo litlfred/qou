@@ -797,25 +797,7 @@
         "reviewed_sha": "0b0e4afa8a8e77cc1597cec8b6d98586836c3cd4"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Streamlined definitions. Removed draft tags. Unified references and notation blocks into text flow.",
-        "reviewed_at": "2026-07-07T14:26:55.867836Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.867836Z"
-        },
-        "field_hash": {
-          "md": "e8a1dc857a39",
-          "ts": "62f71e47d0e4",
-          "lean": "547ae2140156"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:55.867836Z"
 }

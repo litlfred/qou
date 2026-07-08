@@ -31,24 +31,7 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Smoothed transitions, applied concrete-before-abstract, removed forward references.",
-        "reviewed_at": "2026-07-07T14:26:56.240619Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.240619Z"
-        },
-        "field_hash": {
-          "md": "adcc69b4cce3",
-          "ts": "9b2b391a1210"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.240619Z"
 }

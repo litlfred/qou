@@ -11,24 +11,7 @@
     "ts": "da134280c0f0"
   },
   "criteria": {
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote notation_seq1.md. Converted to first-person plural, present tense, declarative, concise style without altering the strict collision-avoidance rules and semantics.",
-        "reviewed_at": "2026-07-07T14:26:56.452359Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.452359Z"
-        },
-        "field_hash": {
-          "md": "95d55733b6ae",
-          "ts": "da134280c0f0"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.452359Z"
 }

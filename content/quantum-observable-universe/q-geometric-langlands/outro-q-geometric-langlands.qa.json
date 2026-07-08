@@ -124,24 +124,7 @@
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Flattened complex conjectures into direct geometric facts. Removed bold definitions and nested headers. Stripped Lean/diagnostics metadata that cluttered the math.",
-        "reviewed_at": "2026-07-07T14:26:56.179225Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.179225Z"
-        },
-        "field_hash": {
-          "md": "51e27556f3c5",
-          "ts": "e5fa01208fca"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.179225Z"
 }

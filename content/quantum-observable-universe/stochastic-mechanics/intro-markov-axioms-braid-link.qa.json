@@ -124,24 +124,7 @@
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Unified the Markov trace intro and properties. Eliminated wordy formulations and passive voice. Kept polynomial proofs focused and brief.",
-        "reviewed_at": "2026-07-07T14:26:56.062022Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.062022Z"
-        },
-        "field_hash": {
-          "md": "ccefe6891fe1",
-          "ts": "b6e8bbc9631c"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.062022Z"
 }

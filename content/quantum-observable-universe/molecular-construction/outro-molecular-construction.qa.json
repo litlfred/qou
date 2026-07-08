@@ -124,24 +124,7 @@
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote molecular-construction_seq8.md. Fixed first-person pronouns, improved sentence economy, retained equations and tables as is.",
-        "reviewed_at": "2026-07-07T14:26:55.515926Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.515926Z"
-        },
-        "field_hash": {
-          "md": "6d341ad9df43",
-          "ts": "27bb9b9c0a55"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:55.515926Z"
 }

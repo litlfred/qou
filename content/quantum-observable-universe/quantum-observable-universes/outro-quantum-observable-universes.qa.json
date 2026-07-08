@@ -124,24 +124,7 @@
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Deleted the conversational 'intro' blocks detailing file navigation. Kept factual claims and removed conversational cross-referencing.",
-        "reviewed_at": "2026-07-07T14:26:55.945298Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.945298Z"
-        },
-        "field_hash": {
-          "md": "446a1cf65959",
-          "ts": "13cbbd2474d3"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:55.945298Z"
 }

@@ -817,24 +817,7 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote climax-volume-mass_seq1.md. Eliminated passive voice where possible. Tightened transitions. Maintained the math and precise definitions.",
-        "reviewed_at": "2026-07-07T14:26:57.046919Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:57.046919Z"
-        },
-        "field_hash": {
-          "md": "9ebafc7a4184",
-          "ts": "cc2ec3d50f97"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:57.046919Z"
 }

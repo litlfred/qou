@@ -288,3 +288,7 @@ path = "src/bin/v18_pergen.rs"
 [[bin]]
 name = "hecke-mass"
 path = "src/bin/v19_nuclear_mass.rs"
+
+[[bin]]
+name = "faddeev_ck"
+path = "src/bin/faddeev_ck.rs"

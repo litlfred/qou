@@ -31,24 +31,7 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Deleted conversational padding ('Continuing the...'). Repackaged conjectures as geometric properties of the model. Simplified block structure.",
-        "reviewed_at": "2026-07-07T14:26:55.821117Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.821117Z"
-        },
-        "field_hash": {
-          "md": "138f7dcdadb8",
-          "ts": "3e22e02ed3e0"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:55.821117Z"
 }

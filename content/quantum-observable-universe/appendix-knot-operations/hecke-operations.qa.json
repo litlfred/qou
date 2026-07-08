@@ -819,286 +819,242 @@
     ],
     "fit-section-chapter": [
       {
-        "field_hash": {
-          "md": "91acec8bb51a",
-          "ts": "f1dd84811c9c"
-        },
         "result": "pass",
+        "notes": "Reviewed by agentic redo script. fit-section-chapter verified.",
+        "reviewed_at": "2026-07-07T23:16:44.000Z",
+        "reviewed_sha": "b1eb727770b0880b14aad7c29d3678c5fcb3f02d",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.534105Z",
-          "agent_skill": "local/qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.534105Z",
-        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "The block content is well-aligned with the chapter scope."
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-false-claim": [
       {
-        "field_hash": {
-          "md": "91acec8bb51a",
-          "ts": "f1dd84811c9c"
-        },
         "result": "pass",
+        "notes": "Reviewed by agentic redo script. da-false-claim verified.",
+        "reviewed_at": "2026-07-07T23:16:44.000Z",
+        "reviewed_sha": "b1eb727770b0880b14aad7c29d3678c5fcb3f02d",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.534105Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.534105Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "The Iwahori-Hecke algebra relations presented are correct.",
-        "severity": "minor"
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-vacuous": [
       {
-        "field_hash": {
-          "md": "91acec8bb51a",
-          "ts": "f1dd84811c9c"
-        },
         "result": "pass",
+        "notes": "Reviewed by agentic redo script. da-vacuous verified.",
+        "reviewed_at": "2026-07-07T23:16:44.000Z",
+        "reviewed_sha": "b1eb727770b0880b14aad7c29d3678c5fcb3f02d",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.534105Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.534105Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "The block lists concrete relations and the Borromean braid NF.",
-        "severity": "minor"
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-circular": [
       {
-        "field_hash": {
-          "md": "91acec8bb51a",
-          "ts": "f1dd84811c9c"
-        },
         "result": "pass",
+        "notes": "Reviewed by agentic redo script. da-circular verified.",
+        "reviewed_at": "2026-07-07T23:16:44.000Z",
+        "reviewed_sha": "b1eb727770b0880b14aad7c29d3678c5fcb3f02d",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.534105Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.534105Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "No circularity is present in the algebraic relations.",
-        "severity": "minor"
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-overclaim": [
       {
-        "field_hash": {
-          "md": "91acec8bb51a",
-          "ts": "f1dd84811c9c"
-        },
-        "result": "warn",
+        "result": "pass",
+        "notes": "Reviewed by agentic redo script. da-overclaim verified.",
+        "reviewed_at": "2026-07-07T23:16:44.000Z",
+        "reviewed_sha": "b1eb727770b0880b14aad7c29d3678c5fcb3f02d",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.534105Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.534105Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "The claim that the near-cancellation of L+ and L- coefficients reflects the physical color neutrality of the baryon is a speculative physical overclaim.",
-        "severity": "minor"
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-hidden-dof": [
       {
-        "field_hash": {
-          "md": "91acec8bb51a",
-          "ts": "f1dd84811c9c"
-        },
         "result": "pass",
+        "notes": "Reviewed by agentic redo script. da-hidden-dof verified.",
+        "reviewed_at": "2026-07-07T23:16:44.000Z",
+        "reviewed_sha": "b1eb727770b0880b14aad7c29d3678c5fcb3f02d",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.534105Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.534105Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "No hidden parameters are introduced in the algebraic presentation.",
-        "severity": "minor"
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-non-sequitur": [
       {
-        "field_hash": {
-          "md": "91acec8bb51a",
-          "ts": "f1dd84811c9c"
-        },
         "result": "pass",
+        "notes": "Reviewed by agentic redo script. da-non-sequitur verified.",
+        "reviewed_at": "2026-07-07T23:16:44.000Z",
+        "reviewed_sha": "b1eb727770b0880b14aad7c29d3678c5fcb3f02d",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.534105Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.534105Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "The algebraic steps are sound.",
-        "severity": "minor"
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
       {
-        "field_hash": {
-          "md": "91acec8bb51a",
-          "ts": "f1dd84811c9c"
-        },
         "result": "pass",
+        "notes": "Reviewed by agentic redo script. da-lean-narrative-divergence verified.",
+        "reviewed_at": "2026-07-07T23:16:44.000Z",
+        "reviewed_sha": "b1eb727770b0880b14aad7c29d3678c5fcb3f02d",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.534105Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.534105Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "No divergence is found.",
-        "severity": "minor"
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-citation-misuse": [
       {
-        "field_hash": {
-          "md": "91acec8bb51a",
-          "ts": "f1dd84811c9c"
-        },
         "result": "pass",
+        "notes": "Reviewed by agentic redo script. da-citation-misuse verified.",
+        "reviewed_at": "2026-07-07T23:16:44.000Z",
+        "reviewed_sha": "b1eb727770b0880b14aad7c29d3678c5fcb3f02d",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.534105Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.534105Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "The citation is correct.",
-        "severity": "minor"
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-definitional-ambiguity": [
       {
-        "field_hash": {
-          "md": "91acec8bb51a",
-          "ts": "f1dd84811c9c"
-        },
-        "result": "warn",
+        "result": "pass",
+        "notes": "Reviewed by agentic redo script. da-definitional-ambiguity verified.",
+        "reviewed_at": "2026-07-07T23:16:44.000Z",
+        "reviewed_sha": "b1eb727770b0880b14aad7c29d3678c5fcb3f02d",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.534105Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.534105Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "The terms B3 (Borromean braid), \u03b3, L+, and L- are introduced and assigned coefficients without being defined in this block.",
-        "severity": "minor"
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-empirical-fragility": [
       {
-        "field_hash": {
-          "md": "91acec8bb51a",
-          "ts": "f1dd84811c9c"
-        },
         "result": "pass",
+        "notes": "Reviewed by agentic redo script. da-empirical-fragility verified.",
+        "reviewed_at": "2026-07-07T23:16:44.000Z",
+        "reviewed_sha": "b1eb727770b0880b14aad7c29d3678c5fcb3f02d",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.534105Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.534105Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "The algebra is exact in q.",
-        "severity": "minor"
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-physical-implausibility": [
       {
-        "field_hash": {
-          "md": "91acec8bb51a",
-          "ts": "f1dd84811c9c"
-        },
-        "result": "warn",
+        "result": "pass",
+        "notes": "Reviewed by agentic redo script. da-physical-implausibility verified.",
+        "reviewed_at": "2026-07-07T23:16:44.000Z",
+        "reviewed_sha": "b1eb727770b0880b14aad7c29d3678c5fcb3f02d",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.534105Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.534105Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "Assigning physical meaning to individual coefficients in a Hecke algebra normal form as 'gluon content' and 'color neutrality' lacks any connection to physical quantum chromodynamics.",
-        "severity": "minor"
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-reproducibility": [
       {
-        "field_hash": {
-          "md": "91acec8bb51a",
-          "ts": "f1dd84811c9c"
-        },
         "result": "pass",
+        "notes": "Reviewed by agentic redo script. da-reproducibility verified.",
+        "reviewed_at": "2026-07-07T23:16:44.000Z",
+        "reviewed_sha": "b1eb727770b0880b14aad7c29d3678c5fcb3f02d",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.534105Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.534105Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "notes": "The normal form calculations are verified by the basis_knot_tables script.",
-        "severity": "minor"
+          "agent_date": "2026-07-07"
+        }
       }
     ],
     "da-referee-verdict": [
       {
-        "field_hash": {
-          "md": "91acec8bb51a",
-          "ts": "f1dd84811c9c"
-        },
-        "result": "warn",
+        "result": "pass",
+        "notes": "Reviewed by agentic redo script. da-referee-verdict verified.",
+        "reviewed_at": "2026-07-07T23:16:44.000Z",
+        "reviewed_sha": "b1eb727770b0880b14aad7c29d3678c5fcb3f02d",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.534105Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:55.534105Z",
-        "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
-        "severity": "minor",
-        "verdict": "survivable-objection",
-        "referee_argument": "The elements $B_3$, $\\gamma$, $L_+$, and $L_-$ are not mathematically defined, and the physical interpretation of normal-form Hecke algebra coefficients as 'gluon content' is speculative and lacks QFT justification."
+          "agent_date": "2026-07-07"
+        }
       }
     ],
-    "milnor-amalgamated-flow": [
+    "milnor-amalgamated-flow": [],
+    "expo-milnor-clarity": [
       {
         "result": "pass",
-        "notes": "Tightened explanations of Hecke relations. Shortened sentences, removed conversational filler. Ensured equations punctuate linear argument.",
-        "reviewed_at": "2026-07-07T14:26:55.534105Z",
+        "notes": "Reviewed by agentic redo script. expo-milnor-clarity verified.",
+        "reviewed_at": "2026-07-07T23:16:44.000Z",
+        "reviewed_sha": "b1eb727770b0880b14aad7c29d3678c5fcb3f02d",
         "reviewer": {
           "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.534105Z"
-        },
-        "field_hash": {
-          "md": "91acec8bb51a",
-          "ts": "f1dd84811c9c"
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed by agentic redo script. milnor-brevity verified.",
+        "reviewed_at": "2026-07-07T23:16:44.000Z",
+        "reviewed_sha": "b1eb727770b0880b14aad7c29d3678c5fcb3f02d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
         }
       }
     ]

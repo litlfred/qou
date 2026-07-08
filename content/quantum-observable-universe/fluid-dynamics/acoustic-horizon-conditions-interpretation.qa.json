@@ -31,24 +31,7 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote fluid-dynamics_seq2.md. Shortened exposition. Strengthened active voice. Maintained math precision and markers.",
-        "reviewed_at": "2026-07-07T14:26:56.226493Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.226493Z"
-        },
-        "field_hash": {
-          "md": "2f2325e1ecb2",
-          "ts": "d532433d5328"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.226493Z"
 }

@@ -31,24 +31,7 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Applied Milnor brevity. Removed bloated prose. Un-cluttered internal references. Restructured paragraphs to flow logically.",
-        "reviewed_at": "2026-07-07T14:26:55.075593Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:55.075593Z"
-        },
-        "field_hash": {
-          "md": "79f989297425",
-          "ts": "cdb308ad5ccf"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:55.075593Z"
 }

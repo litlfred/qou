@@ -852,22 +852,6 @@
         "reviewed_at": "2026-06-22T02:56:58.222Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
-      },
-      {
-        "field_hash": {
-          "md": "431bda2f0fce",
-          "ts": "82f59bbaa0c9"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.824196Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.824196Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-false-claim": [
@@ -887,22 +871,6 @@
         "notes": "No false claims identified in 'Confined Laurent polynomial $P_K(q)$ as mass-spectrum generating function: functorial equivalence to scalar mass via substrate evaluation': mathematical reasoning is consistent in prose.",
         "severity": "minor",
         "evidence": "mass-spectrum-generating-function.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "431bda2f0fce",
-          "ts": "82f59bbaa0c9"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.824196Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.824196Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-vacuous": [
@@ -921,22 +889,6 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The block 'Confined Laurent polynomial $P_K(q)$ as mass-spectrum generating function: functorial equivalence to scalar mass via substrate evaluation' presents substantial mathematical content: 'The relation \"confined Laurent polynomial $=$ mass\" is not a literal'.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "431bda2f0fce",
-          "ts": "82f59bbaa0c9"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.824196Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.824196Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-circular": [
@@ -956,22 +908,6 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Confined Laurent polynomial $P_K(q)$ as mass-spectrum generating function: functorial equivalence to scalar mass via substrate evaluation'.",
         "severity": "minor",
         "evidence": "mass-spectrum-generating-function.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "431bda2f0fce",
-          "ts": "82f59bbaa0c9"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.824196Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.824196Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-overclaim": [
@@ -990,24 +926,6 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The remarks and narrative scope in 'Confined Laurent polynomial $P_K(q)$ as mass-spectrum generating function: functorial equivalence to scalar mass via substrate evaluation' are appropriately qualified.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "431bda2f0fce",
-          "ts": "82f59bbaa0c9"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.824196Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.824196Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "severity": "major",
-        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules."
       }
     ],
     "da-hidden-dof": [
@@ -1027,24 +945,6 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Confined Laurent polynomial $P_K(q)$ as mass-spectrum generating function: functorial equivalence to scalar mass via substrate evaluation'.",
         "severity": "minor",
         "evidence": "mass-spectrum-generating-function.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "431bda2f0fce",
-          "ts": "82f59bbaa0c9"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.824196Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.824196Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "severity": "major",
-        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules."
       }
     ],
     "da-non-sequitur": [
@@ -1064,22 +964,6 @@
         "notes": "The prose arguments in 'Confined Laurent polynomial $P_K(q)$ as mass-spectrum generating function: functorial equivalence to scalar mass via substrate evaluation' proceed logically through the stated steps.",
         "severity": "minor",
         "evidence": "mass-spectrum-generating-function.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "431bda2f0fce",
-          "ts": "82f59bbaa0c9"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.824196Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.824196Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1098,22 +982,6 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No Lean sibling required; narrative matches the expected configuration.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "431bda2f0fce",
-          "ts": "82f59bbaa0c9"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.824196Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.824196Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-citation-misuse": [
@@ -1133,22 +1001,6 @@
         "notes": "The citations khovanovlauda2009, brundankleshchev2009,  in 'Confined Laurent polynomial $P_K(q)$ as mass-spectrum generating function: functorial equivalence to scalar mass via substrate evaluation' are consistent with the sources referenced in the text.",
         "severity": "minor",
         "evidence": "mass-spectrum-generating-function.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "431bda2f0fce",
-          "ts": "82f59bbaa0c9"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.824196Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.824196Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-definitional-ambiguity": [
@@ -1168,22 +1020,6 @@
         "notes": "Key terms and symbols in 'Confined Laurent polynomial $P_K(q)$ as mass-spectrum generating function: functorial equivalence to scalar mass via substrate evaluation' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "mass-spectrum-generating-function.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "431bda2f0fce",
-          "ts": "82f59bbaa0c9"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.824196Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.824196Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-empirical-fragility": [
@@ -1203,24 +1039,6 @@
         "notes": "The empirical claims in 'Confined Laurent polynomial $P_K(q)$ as mass-spectrum generating function: functorial equivalence to scalar mass via substrate evaluation' are structurally anchored to the QOU mass framework and are stable.",
         "severity": "minor",
         "evidence": "mass-spectrum-generating-function.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "431bda2f0fce",
-          "ts": "82f59bbaa0c9"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.824196Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.824196Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "severity": "major",
-        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules."
       }
     ],
     "da-physical-implausibility": [
@@ -1240,24 +1058,6 @@
         "notes": "The physical concepts described in 'Confined Laurent polynomial $P_K(q)$ as mass-spectrum generating function: functorial equivalence to scalar mass via substrate evaluation' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "mass-spectrum-generating-function.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "431bda2f0fce",
-          "ts": "82f59bbaa0c9"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.824196Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.824196Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "severity": "major",
-        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules."
       }
     ],
     "da-reproducibility": [
@@ -1276,22 +1076,6 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The derivation steps and formal definitions in 'Confined Laurent polynomial $P_K(q)$ as mass-spectrum generating function: functorial equivalence to scalar mass via substrate evaluation' are reproducible.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "431bda2f0fce",
-          "ts": "82f59bbaa0c9"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.824196Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.824196Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
       }
     ],
     "da-referee-verdict": [
@@ -1312,44 +1096,9 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Confined Laurent polynomial $P_K(q)$ as mass-spectrum generating function: functorial equivalence to scalar mass via substrate evaluation' are consistent."
-      },
-      {
-        "field_hash": {
-          "md": "431bda2f0fce",
-          "ts": "82f59bbaa0c9"
-        },
-        "result": "warn",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-24",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.824196Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.824196Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "severity": "major",
-        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules. Referee might reject due to suspected numerology."
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
-        "reviewed_at": "2026-07-07T14:26:56.824196Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.824196Z"
-        },
-        "field_hash": {
-          "md": "431bda2f0fce",
-          "ts": "82f59bbaa0c9"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.824196Z"
 }

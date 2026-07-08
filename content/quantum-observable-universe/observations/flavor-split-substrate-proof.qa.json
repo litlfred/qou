@@ -798,23 +798,6 @@
         "reviewed_at": "2026-06-22T02:56:54.058Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
-      },
-      {
-        "field_hash": {
-          "md": "d643df6266ec",
-          "ts": "01085ed457fb"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.562688Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.562688Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-false-claim": [
@@ -834,23 +817,6 @@
         "notes": "No false claims identified in 'Proof of the substrate-pure flavor split formula': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/flavor-split-substrate-proof.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "d643df6266ec",
-          "ts": "01085ed457fb"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.562688Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.562688Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-vacuous": [
@@ -869,23 +835,6 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Proof of the substrate-pure flavor split formula' presents substantial mathematical content: [`lem:pair-skein-mass-formula`](pair-skein-mass-formula.md) applied to the Borro...",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "d643df6266ec",
-          "ts": "01085ed457fb"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.562688Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.562688Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-circular": [
@@ -905,23 +854,6 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Proof of the substrate-pure flavor split formula'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/flavor-split-substrate-proof.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "d643df6266ec",
-          "ts": "01085ed457fb"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.562688Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.562688Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-overclaim": [
@@ -940,23 +872,6 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No overclaims: the scope of 'Proof of the substrate-pure flavor split formula' is appropriately qualified.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "d643df6266ec",
-          "ts": "01085ed457fb"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.562688Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.562688Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-hidden-dof": [
@@ -976,25 +891,6 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Proof of the substrate-pure flavor split formula'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/flavor-split-substrate-proof.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "d643df6266ec",
-          "ts": "01085ed457fb"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.562688Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.562688Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "severity": "critical",
-        "evidence": "h_q^2 * \\hbar_q / \\sqrt{q} ... matches CODATA to -0.10%",
-        "notes": "The 'substrate ansatz for the per-quark split' is highly contrived. Finding a combination of (q-1)^2 * (1-q^-4) / 3 that happens to match the empirical mass splitting within 0.67% and calling it the 'minimal substrate-atom combination' is classic post-hoc rationalization. It lacks rigorous theoretical derivation."
       }
     ],
     "da-non-sequitur": [
@@ -1014,23 +910,6 @@
         "notes": "The argument flow in 'Proof of the substrate-pure flavor split formula' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/flavor-split-substrate-proof.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "d643df6266ec",
-          "ts": "01085ed457fb"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.562688Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.562688Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1049,23 +928,6 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "d643df6266ec",
-          "ts": "01085ed457fb"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.562688Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.562688Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-citation-misuse": [
@@ -1085,23 +947,6 @@
         "notes": "No citations are present in 'Proof of the substrate-pure flavor split formula', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/flavor-split-substrate-proof.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "d643df6266ec",
-          "ts": "01085ed457fb"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.562688Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.562688Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-definitional-ambiguity": [
@@ -1121,23 +966,6 @@
         "notes": "Key terms and symbols in 'Proof of the substrate-pure flavor split formula' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/flavor-split-substrate-proof.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "d643df6266ec",
-          "ts": "01085ed457fb"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.562688Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.562688Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-empirical-fragility": [
@@ -1157,25 +985,6 @@
         "notes": "The algebraic and logical relations in 'Proof of the substrate-pure flavor split formula' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/flavor-split-substrate-proof.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "d643df6266ec",
-          "ts": "01085ed457fb"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.562688Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.562688Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "severity": "critical",
-        "evidence": "h_q^2 * \\hbar_q / \\sqrt{q} ... matches CODATA to -0.10%",
-        "notes": "The 'substrate ansatz for the per-quark split' is highly contrived. Finding a combination of (q-1)^2 * (1-q^-4) / 3 that happens to match the empirical mass splitting within 0.67% and calling it the 'minimal substrate-atom combination' is classic post-hoc rationalization. It lacks rigorous theoretical derivation."
       }
     ],
     "da-physical-implausibility": [
@@ -1195,23 +1004,6 @@
         "notes": "The physical concepts described in 'Proof of the substrate-pure flavor split formula' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/flavor-split-substrate-proof.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "d643df6266ec",
-          "ts": "01085ed457fb"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.562688Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.562688Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-reproducibility": [
@@ -1231,23 +1023,6 @@
         "notes": "The derivation steps and formal definitions in 'Proof of the substrate-pure flavor split formula' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/flavor-split-substrate-proof.ts:1"
-      },
-      {
-        "field_hash": {
-          "md": "d643df6266ec",
-          "ts": "01085ed457fb"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.562688Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.562688Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ],
     "da-referee-verdict": [
@@ -1268,23 +1043,6 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Proof of the substrate-pure flavor split formula' are consistent.",
         "severity": "minor"
-      },
-      {
-        "field_hash": {
-          "md": "d643df6266ec",
-          "ts": "01085ed457fb"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-reviewer-swarm-22",
-          "version": "1.0",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.562688Z"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.562688Z",
-        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Reviewed and passes basic QA."
       }
     ]
   },

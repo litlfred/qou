@@ -8,62 +8,10 @@
   },
   "source_hashes": {},
   "criteria": {
-    "voice-status-leak": [
-      {
-        "field_hash": {},
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "voice-status-leak-audit",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.517106Z",
-          "agent_skill": "local/one-voice-audit"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.517106Z"
-      }
-    ],
-    "voice-emoji-content": [
-      {
-        "field_hash": {},
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.517106Z",
-          "agent_skill": "local/one-voice-audit",
-          "id": "voice-emoji-content-audit"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.517106Z"
-      }
-    ],
-    "voice-first-person-work": [
-      {
-        "field_hash": {},
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.517106Z",
-          "agent_skill": "local/one-voice-audit",
-          "id": "voice-first-person-work-audit"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.517106Z"
-      }
-    ],
-    "voice-time-stamped-notes": [
-      {
-        "field_hash": {},
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "voice-time-stamped-audit",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.517106Z",
-          "agent_skill": "local/one-voice-audit"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.517106Z"
-      }
-    ],
+    "voice-status-leak": [],
+    "voice-emoji-content": [],
+    "voice-first-person-work": [],
+    "voice-time-stamped-notes": [],
     "voice-unicode-crash": [
       {
         "field_hash": {
@@ -130,20 +78,7 @@
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
     ],
-    "voice-scholarly-default": [
-      {
-        "field_hash": {},
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.517106Z",
-          "agent_skill": "local/one-voice-audit",
-          "id": "voice-scholarly-default-audit"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.517106Z"
-      }
-    ],
+    "voice-scholarly-default": [],
     "voice-title-scholarly": [
       {
         "field_hash": {
@@ -194,20 +129,7 @@
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
     ],
-    "voice-ai-slop": [
-      {
-        "field_hash": {},
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.517106Z",
-          "agent_skill": "local/one-voice-audit",
-          "id": "voice-ai-slop-audit"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.517106Z"
-      }
-    ],
+    "voice-ai-slop": [],
     "framework-canonical": [
       {
         "field_hash": {
@@ -468,20 +390,7 @@
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
     ],
-    "canonical-no-hardcoded-observable": [
-      {
-        "field_hash": {},
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "canonical-audit-batch",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.517106Z",
-          "agent_skill": "local/canonical-watcher"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.517106Z"
-      }
-    ],
+    "canonical-no-hardcoded-observable": [],
     "compute-witness-exists": [
       {
         "field_hash": {
@@ -1441,20 +1350,7 @@
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
     ],
-    "voice-editorializing": [
-      {
-        "field_hash": {},
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.517106Z",
-          "agent_skill": "local/one-voice-audit",
-          "id": "voice-editorializing-audit"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.517106Z"
-      }
-    ],
+    "voice-editorializing": [],
     "canonical-witness-pinned": [
       {
         "field_hash": {
@@ -1489,20 +1385,7 @@
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
     ],
-    "voice-author-notes-pollution": [
-      {
-        "field_hash": {},
-        "result": "pass",
-        "reviewer": {
-          "kind": "agent",
-          "id": "voice-author-notes-pollution-audit",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.517106Z",
-          "agent_skill": "local/one-voice-audit"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.517106Z"
-      }
-    ],
+    "voice-author-notes-pollution": [],
     "q-usage-regime-detected": [
       {
         "field_hash": {
@@ -1678,24 +1561,7 @@
         "reviewed_sha": "fd97f6e2e50e46578038ad596b858193002a1163"
       }
     ],
-    "fit-section-chapter": [
-      {
-        "field_hash": {},
-        "result": "pass",
-        "severity": "minor",
-        "evidence": "Proof follows its parent prop:hecke-satisfies-blitvic-hypothesis in the same observations section; placement consistent.",
-        "reviewer": {
-          "kind": "agent",
-          "id": "qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.517106Z",
-          "agent_skill": "qa-agent-drain"
-        },
-        "reviewed_at": "2026-07-07T14:26:56.517106Z",
-        "reviewed_sha": "5c77deac6711873195367f3ffc9546d8d4faded5",
-        "notes": "Proof block correctly co-located with its proposition in the observations chapter."
-      }
-    ],
+    "fit-section-chapter": [],
     "detangler-topic-coherence": [
       {
         "field_hash": {

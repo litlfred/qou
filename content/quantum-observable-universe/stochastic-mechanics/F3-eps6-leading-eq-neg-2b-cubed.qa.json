@@ -817,24 +817,7 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Clarified the Markov closure map steps and removed forward references. Maintained the precision of the Q_beta derivation story.",
-        "reviewed_at": "2026-07-07T14:26:56.029301Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.029301Z"
-        },
-        "field_hash": {
-          "md": "e02f0cb2b43c",
-          "ts": "b26e86fe9bc6"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.029301Z"
 }

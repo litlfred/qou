@@ -31,24 +31,7 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote fluid-dynamics_seq1.md. Pruned passive phrases. Maintained strict equivalence in Math equations.",
-        "reviewed_at": "2026-07-07T14:26:56.251534Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.251534Z"
-        },
-        "field_hash": {
-          "md": "92abfc0828bd",
-          "ts": "1f5c845439a5"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.251534Z"
 }

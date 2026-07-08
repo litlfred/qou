@@ -31,24 +31,7 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote fluid-dynamics_seq3.md. Reduced passive language. Kept mathematical exactitude and markers.",
-        "reviewed_at": "2026-07-07T14:26:56.227689Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.227689Z"
-        },
-        "field_hash": {
-          "md": "6e57d8168caf",
-          "ts": "4551e432a5bf"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.227689Z"
 }

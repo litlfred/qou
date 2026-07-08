@@ -31,24 +31,7 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "milnor-amalgamated-flow": [
-      {
-        "result": "pass",
-        "notes": "Rewrote observations_seq1.md. Eliminated 'we establish' passivity where possible, replaced 'this chapter' with 'we', simplified structural signposting.",
-        "reviewed_at": "2026-07-07T14:26:56.660894Z",
-        "reviewer": {
-          "kind": "agent",
-          "id": "milnor-editor",
-          "version": "v1",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07T14:26:56.660894Z"
-        },
-        "field_hash": {
-          "md": "5f053751d023",
-          "ts": "98f3b770abac"
-        }
-      }
-    ]
+    "milnor-amalgamated-flow": []
   },
   "updated_at": "2026-07-07T14:26:56.660894Z"
 }
