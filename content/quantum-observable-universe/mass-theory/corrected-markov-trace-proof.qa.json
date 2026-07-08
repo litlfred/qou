@@ -44,6 +44,19 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
         }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Fails da-false-claim. The proof relies on an invalid application of the Markov property (tr_M(x*sigma_n) = z*tr_M(x) where x is in H_n). Here, it incorrectly peels sigma_0 from sigma_0*sigma_1*sigma_0, falsely claiming sigma_0 has maximal index, but sigma_1 does. The correct value is hz^2 + z, not z^3. The file explicitly contradicts the fixed markov-trace-product-proof.md and gram-matrix-spectral-connection.md.",
+        "reviewed_at": "2026-07-08T19:06:34.000Z",
+        "reviewed_sha": "ed52c2b28907c5d9e98e08d99f4da3976639b5ff",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-false-claim": [
@@ -58,6 +71,19 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "fail",
+        "notes": "Reviewed interactively. Fails da-false-claim. The proof relies on an invalid application of the Markov property (tr_M(x*sigma_n) = z*tr_M(x) where x is in H_n). Here, it incorrectly peels sigma_0 from sigma_0*sigma_1*sigma_0, falsely claiming sigma_0 has maximal index, but sigma_1 does. The correct value is hz^2 + z, not z^3. The file explicitly contradicts the fixed markov-trace-product-proof.md and gram-matrix-spectral-connection.md.",
+        "reviewed_at": "2026-07-08T19:06:34.000Z",
+        "reviewed_sha": "ed52c2b28907c5d9e98e08d99f4da3976639b5ff",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
         }
       }
     ],
@@ -74,6 +100,19 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
         }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Fails da-false-claim. The proof relies on an invalid application of the Markov property (tr_M(x*sigma_n) = z*tr_M(x) where x is in H_n). Here, it incorrectly peels sigma_0 from sigma_0*sigma_1*sigma_0, falsely claiming sigma_0 has maximal index, but sigma_1 does. The correct value is hz^2 + z, not z^3. The file explicitly contradicts the fixed markov-trace-product-proof.md and gram-matrix-spectral-connection.md.",
+        "reviewed_at": "2026-07-08T19:06:34.000Z",
+        "reviewed_sha": "ed52c2b28907c5d9e98e08d99f4da3976639b5ff",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-circular": [
@@ -88,6 +127,19 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Fails da-false-claim. The proof relies on an invalid application of the Markov property (tr_M(x*sigma_n) = z*tr_M(x) where x is in H_n). Here, it incorrectly peels sigma_0 from sigma_0*sigma_1*sigma_0, falsely claiming sigma_0 has maximal index, but sigma_1 does. The correct value is hz^2 + z, not z^3. The file explicitly contradicts the fixed markov-trace-product-proof.md and gram-matrix-spectral-connection.md.",
+        "reviewed_at": "2026-07-08T19:06:34.000Z",
+        "reviewed_sha": "ed52c2b28907c5d9e98e08d99f4da3976639b5ff",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
         }
       }
     ],
@@ -104,6 +156,19 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
         }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Fails da-false-claim. The proof relies on an invalid application of the Markov property (tr_M(x*sigma_n) = z*tr_M(x) where x is in H_n). Here, it incorrectly peels sigma_0 from sigma_0*sigma_1*sigma_0, falsely claiming sigma_0 has maximal index, but sigma_1 does. The correct value is hz^2 + z, not z^3. The file explicitly contradicts the fixed markov-trace-product-proof.md and gram-matrix-spectral-connection.md.",
+        "reviewed_at": "2026-07-08T19:06:34.000Z",
+        "reviewed_sha": "ed52c2b28907c5d9e98e08d99f4da3976639b5ff",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -118,6 +183,19 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Fails da-false-claim. The proof relies on an invalid application of the Markov property (tr_M(x*sigma_n) = z*tr_M(x) where x is in H_n). Here, it incorrectly peels sigma_0 from sigma_0*sigma_1*sigma_0, falsely claiming sigma_0 has maximal index, but sigma_1 does. The correct value is hz^2 + z, not z^3. The file explicitly contradicts the fixed markov-trace-product-proof.md and gram-matrix-spectral-connection.md.",
+        "reviewed_at": "2026-07-08T19:06:34.000Z",
+        "reviewed_sha": "ed52c2b28907c5d9e98e08d99f4da3976639b5ff",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
         }
       }
     ],
@@ -134,6 +212,19 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
         }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Fails da-false-claim. The proof relies on an invalid application of the Markov property (tr_M(x*sigma_n) = z*tr_M(x) where x is in H_n). Here, it incorrectly peels sigma_0 from sigma_0*sigma_1*sigma_0, falsely claiming sigma_0 has maximal index, but sigma_1 does. The correct value is hz^2 + z, not z^3. The file explicitly contradicts the fixed markov-trace-product-proof.md and gram-matrix-spectral-connection.md.",
+        "reviewed_at": "2026-07-08T19:06:34.000Z",
+        "reviewed_sha": "ed52c2b28907c5d9e98e08d99f4da3976639b5ff",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -148,6 +239,19 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Fails da-false-claim. The proof relies on an invalid application of the Markov property (tr_M(x*sigma_n) = z*tr_M(x) where x is in H_n). Here, it incorrectly peels sigma_0 from sigma_0*sigma_1*sigma_0, falsely claiming sigma_0 has maximal index, but sigma_1 does. The correct value is hz^2 + z, not z^3. The file explicitly contradicts the fixed markov-trace-product-proof.md and gram-matrix-spectral-connection.md.",
+        "reviewed_at": "2026-07-08T19:06:34.000Z",
+        "reviewed_sha": "ed52c2b28907c5d9e98e08d99f4da3976639b5ff",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
         }
       }
     ],
@@ -164,6 +268,19 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
         }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Fails da-false-claim. The proof relies on an invalid application of the Markov property (tr_M(x*sigma_n) = z*tr_M(x) where x is in H_n). Here, it incorrectly peels sigma_0 from sigma_0*sigma_1*sigma_0, falsely claiming sigma_0 has maximal index, but sigma_1 does. The correct value is hz^2 + z, not z^3. The file explicitly contradicts the fixed markov-trace-product-proof.md and gram-matrix-spectral-connection.md.",
+        "reviewed_at": "2026-07-08T19:06:34.000Z",
+        "reviewed_sha": "ed52c2b28907c5d9e98e08d99f4da3976639b5ff",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -178,6 +295,19 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Fails da-false-claim. The proof relies on an invalid application of the Markov property (tr_M(x*sigma_n) = z*tr_M(x) where x is in H_n). Here, it incorrectly peels sigma_0 from sigma_0*sigma_1*sigma_0, falsely claiming sigma_0 has maximal index, but sigma_1 does. The correct value is hz^2 + z, not z^3. The file explicitly contradicts the fixed markov-trace-product-proof.md and gram-matrix-spectral-connection.md.",
+        "reviewed_at": "2026-07-08T19:06:34.000Z",
+        "reviewed_sha": "ed52c2b28907c5d9e98e08d99f4da3976639b5ff",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
         }
       }
     ],
@@ -194,6 +324,19 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
         }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Fails da-false-claim. The proof relies on an invalid application of the Markov property (tr_M(x*sigma_n) = z*tr_M(x) where x is in H_n). Here, it incorrectly peels sigma_0 from sigma_0*sigma_1*sigma_0, falsely claiming sigma_0 has maximal index, but sigma_1 does. The correct value is hz^2 + z, not z^3. The file explicitly contradicts the fixed markov-trace-product-proof.md and gram-matrix-spectral-connection.md.",
+        "reviewed_at": "2026-07-08T19:06:34.000Z",
+        "reviewed_sha": "ed52c2b28907c5d9e98e08d99f4da3976639b5ff",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -208,6 +351,19 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Fails da-false-claim. The proof relies on an invalid application of the Markov property (tr_M(x*sigma_n) = z*tr_M(x) where x is in H_n). Here, it incorrectly peels sigma_0 from sigma_0*sigma_1*sigma_0, falsely claiming sigma_0 has maximal index, but sigma_1 does. The correct value is hz^2 + z, not z^3. The file explicitly contradicts the fixed markov-trace-product-proof.md and gram-matrix-spectral-connection.md.",
+        "reviewed_at": "2026-07-08T19:06:34.000Z",
+        "reviewed_sha": "ed52c2b28907c5d9e98e08d99f4da3976639b5ff",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
         }
       }
     ],
@@ -224,6 +380,19 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
         }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Fails da-false-claim. The proof relies on an invalid application of the Markov property (tr_M(x*sigma_n) = z*tr_M(x) where x is in H_n). Here, it incorrectly peels sigma_0 from sigma_0*sigma_1*sigma_0, falsely claiming sigma_0 has maximal index, but sigma_1 does. The correct value is hz^2 + z, not z^3. The file explicitly contradicts the fixed markov-trace-product-proof.md and gram-matrix-spectral-connection.md.",
+        "reviewed_at": "2026-07-08T19:06:34.000Z",
+        "reviewed_sha": "ed52c2b28907c5d9e98e08d99f4da3976639b5ff",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -238,6 +407,49 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Fails da-false-claim. The proof relies on an invalid application of the Markov property (tr_M(x*sigma_n) = z*tr_M(x) where x is in H_n). Here, it incorrectly peels sigma_0 from sigma_0*sigma_1*sigma_0, falsely claiming sigma_0 has maximal index, but sigma_1 does. The correct value is hz^2 + z, not z^3. The file explicitly contradicts the fixed markov-trace-product-proof.md and gram-matrix-spectral-connection.md.",
+        "reviewed_at": "2026-07-08T19:06:34.000Z",
+        "reviewed_sha": "ed52c2b28907c5d9e98e08d99f4da3976639b5ff",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Fails da-false-claim. The proof relies on an invalid application of the Markov property (tr_M(x*sigma_n) = z*tr_M(x) where x is in H_n). Here, it incorrectly peels sigma_0 from sigma_0*sigma_1*sigma_0, falsely claiming sigma_0 has maximal index, but sigma_1 does. The correct value is hz^2 + z, not z^3. The file explicitly contradicts the fixed markov-trace-product-proof.md and gram-matrix-spectral-connection.md.",
+        "reviewed_at": "2026-07-08T19:06:34.000Z",
+        "reviewed_sha": "ed52c2b28907c5d9e98e08d99f4da3976639b5ff",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Fails da-false-claim. The proof relies on an invalid application of the Markov property (tr_M(x*sigma_n) = z*tr_M(x) where x is in H_n). Here, it incorrectly peels sigma_0 from sigma_0*sigma_1*sigma_0, falsely claiming sigma_0 has maximal index, but sigma_1 does. The correct value is hz^2 + z, not z^3. The file explicitly contradicts the fixed markov-trace-product-proof.md and gram-matrix-spectral-connection.md.",
+        "reviewed_at": "2026-07-08T19:06:34.000Z",
+        "reviewed_sha": "ed52c2b28907c5d9e98e08d99f4da3976639b5ff",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
         }
       }
     ]
