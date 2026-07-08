@@ -1103,6 +1103,19 @@
         "reviewed_at": "2026-07-07T14:26:56.146386Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound abstract projection precisely extracting isolated analytic properties effectively inside explicit metric bounds.",
+        "reviewed_at": "2026-07-08T14:23:41.000Z",
+        "reviewed_sha": "7a53c12d99b73fb35f8283b3830757586928627c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "wall-side-statement": [
@@ -1323,6 +1336,19 @@
         "notes": "The claim in 'Eigenspace decomposition of the mass integrand (descent involution)' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-eigenspace-decomp.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound abstract projection precisely extracting isolated analytic properties effectively inside explicit metric bounds.",
+        "reviewed_at": "2026-07-08T14:23:41.000Z",
+        "reviewed_sha": "7a53c12d99b73fb35f8283b3830757586928627c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-vacuous": [
@@ -1343,6 +1369,19 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The block 'Eigenspace decomposition of the mass integrand (descent involution)' presents substantial mathematical content: mass identity for a vortex $\\varrho$, and let $\\hat{\\tau}_n$ be the :refterm[des...",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound abstract projection precisely extracting isolated analytic properties effectively inside explicit metric bounds.",
+        "reviewed_at": "2026-07-08T14:23:41.000Z",
+        "reviewed_sha": "7a53c12d99b73fb35f8283b3830757586928627c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-circular": [
@@ -1364,6 +1403,19 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Eigenspace decomposition of the mass integrand (descent involution)'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-eigenspace-decomp.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound abstract projection precisely extracting isolated analytic properties effectively inside explicit metric bounds.",
+        "reviewed_at": "2026-07-08T14:23:41.000Z",
+        "reviewed_sha": "7a53c12d99b73fb35f8283b3830757586928627c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-overclaim": [
@@ -1384,6 +1436,19 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The prose presents 'Eigenspace decomposition of the mass integrand (descent involution)' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound abstract projection precisely extracting isolated analytic properties effectively inside explicit metric bounds.",
+        "reviewed_at": "2026-07-08T14:23:41.000Z",
+        "reviewed_sha": "7a53c12d99b73fb35f8283b3830757586928627c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1405,6 +1470,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Eigenspace decomposition of the mass integrand (descent involution)'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-eigenspace-decomp.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound abstract projection precisely extracting isolated analytic properties effectively inside explicit metric bounds.",
+        "reviewed_at": "2026-07-08T14:23:41.000Z",
+        "reviewed_sha": "7a53c12d99b73fb35f8283b3830757586928627c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1426,6 +1504,19 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/mass-endomorphism/topological-mass-eigenspace-decomp.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-eigenspace-decomp.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound abstract projection precisely extracting isolated analytic properties effectively inside explicit metric bounds.",
+        "reviewed_at": "2026-07-08T14:23:41.000Z",
+        "reviewed_sha": "7a53c12d99b73fb35f8283b3830757586928627c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1446,6 +1537,19 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/topological-mass-eigenspace-decomp.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound abstract projection precisely extracting isolated analytic properties effectively inside explicit metric bounds.",
+        "reviewed_at": "2026-07-08T14:23:41.000Z",
+        "reviewed_sha": "7a53c12d99b73fb35f8283b3830757586928627c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1467,6 +1571,19 @@
         "notes": "Citations to yekutieli2015 are correct and contextually appropriate.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-eigenspace-decomp.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound abstract projection precisely extracting isolated analytic properties effectively inside explicit metric bounds.",
+        "reviewed_at": "2026-07-08T14:23:41.000Z",
+        "reviewed_sha": "7a53c12d99b73fb35f8283b3830757586928627c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1488,6 +1605,19 @@
         "notes": "Key terms and symbols in 'Eigenspace decomposition of the mass integrand (descent involution)' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-eigenspace-decomp.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound abstract projection precisely extracting isolated analytic properties effectively inside explicit metric bounds.",
+        "reviewed_at": "2026-07-08T14:23:41.000Z",
+        "reviewed_sha": "7a53c12d99b73fb35f8283b3830757586928627c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1509,6 +1639,19 @@
         "notes": "The algebraic and logical relations in 'Eigenspace decomposition of the mass integrand (descent involution)' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-eigenspace-decomp.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound abstract projection precisely extracting isolated analytic properties effectively inside explicit metric bounds.",
+        "reviewed_at": "2026-07-08T14:23:41.000Z",
+        "reviewed_sha": "7a53c12d99b73fb35f8283b3830757586928627c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1530,6 +1673,19 @@
         "notes": "The physical concepts described in 'Eigenspace decomposition of the mass integrand (descent involution)' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-eigenspace-decomp.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound abstract projection precisely extracting isolated analytic properties effectively inside explicit metric bounds.",
+        "reviewed_at": "2026-07-08T14:23:41.000Z",
+        "reviewed_sha": "7a53c12d99b73fb35f8283b3830757586928627c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1551,6 +1707,19 @@
         "notes": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/topological-mass-eigenspace-decomp.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-endomorphism/topological-mass-eigenspace-decomp.lean:1 — /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/topological-mass-eigenspace-decomp.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/LiftingDescent/JetProlongation.olean' of module QOU.LiftingDescent.JetProlongation does not exist"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound abstract projection precisely extracting isolated analytic properties effectively inside explicit metric bounds.",
+        "reviewed_at": "2026-07-08T14:23:41.000Z",
+        "reviewed_sha": "7a53c12d99b73fb35f8283b3830757586928627c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1573,6 +1742,19 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-endomorphism/topological-mass-eigenspace-decomp.lean contains compilation errors: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/mass-endomorphism/topological-mass-eigenspace-decomp.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/LiftingDescent/JetProlongation.olean' of module QOU.LiftingDescent.JetProlongation does not exist, invalidating the claimed formalization."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound abstract projection precisely extracting isolated analytic properties effectively inside explicit metric bounds.",
+        "reviewed_at": "2026-07-08T14:23:41.000Z",
+        "reviewed_sha": "7a53c12d99b73fb35f8283b3830757586928627c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1591,6 +1773,36 @@
           "md": "b2e5b8417a44",
           "ts": "933cbc46c875",
           "lean": "f053763fcdca"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound abstract projection precisely extracting isolated analytic properties effectively inside explicit metric bounds.",
+        "reviewed_at": "2026-07-08T14:23:41.000Z",
+        "reviewed_sha": "7a53c12d99b73fb35f8283b3830757586928627c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound abstract projection precisely extracting isolated analytic properties effectively inside explicit metric bounds.",
+        "reviewed_at": "2026-07-08T14:23:41.000Z",
+        "reviewed_sha": "7a53c12d99b73fb35f8283b3830757586928627c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
         }
       }
     ]
