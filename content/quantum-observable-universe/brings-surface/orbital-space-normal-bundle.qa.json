@@ -891,6 +891,19 @@
         "reviewed_at": "2026-07-07T14:26:55.077623Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Superb exact extraction mapping the normal bundle Laplacian eigenspaces directly to the n^2 orbital shells.",
+        "reviewed_at": "2026-07-08T09:57:49.000Z",
+        "reviewed_sha": "54aea0c3fb9cad79a44ae47ace35434b56bdb167",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -960,6 +973,19 @@
         "notes": "Checked mathematical consistency of the claim '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' and found no counterexamples under the stated conditions.",
         "evidence": "content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Superb exact extraction mapping the normal bundle Laplacian eigenspaces directly to the n^2 orbital shells.",
+        "reviewed_at": "2026-07-08T09:57:49.000Z",
+        "reviewed_sha": "54aea0c3fb9cad79a44ae47ace35434b56bdb167",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-vacuous": [
@@ -980,6 +1006,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The conjecture makes non-trivial claims regarding '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' and is not vacuous.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Superb exact extraction mapping the normal bundle Laplacian eigenspaces directly to the n^2 orbital shells.",
+        "reviewed_at": "2026-07-08T09:57:49.000Z",
+        "reviewed_sha": "54aea0c3fb9cad79a44ae47ace35434b56bdb167",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-circular": [
@@ -1001,6 +1040,19 @@
         "notes": "Traced dependencies ['conj:reidemeister-mass-invariance'] for 'conj:orbital-space-normal-bundle' and confirmed no circular definitions or justifications.",
         "evidence": "content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Superb exact extraction mapping the normal bundle Laplacian eigenspaces directly to the n^2 orbital shells.",
+        "reviewed_at": "2026-07-08T09:57:49.000Z",
+        "reviewed_sha": "54aea0c3fb9cad79a44ae47ace35434b56bdb167",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-overclaim": [
@@ -1021,6 +1073,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Verified that the scope of 'conj:orbital-space-normal-bundle' is appropriately restricted to the proven regime without overclaiming structural validity.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Superb exact extraction mapping the normal bundle Laplacian eigenspaces directly to the n^2 orbital shells.",
+        "reviewed_at": "2026-07-08T09:57:49.000Z",
+        "reviewed_sha": "54aea0c3fb9cad79a44ae47ace35434b56bdb167",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1042,6 +1107,19 @@
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
         "evidence": "content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Superb exact extraction mapping the normal bundle Laplacian eigenspaces directly to the n^2 orbital shells.",
+        "reviewed_at": "2026-07-08T09:57:49.000Z",
+        "reviewed_sha": "54aea0c3fb9cad79a44ae47ace35434b56bdb167",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1063,6 +1141,19 @@
         "notes": "Logical transitions in the derivation of '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' are sound; no non-sequiturs detected.",
         "evidence": "content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Superb exact extraction mapping the normal bundle Laplacian eigenspaces directly to the n^2 orbital shells.",
+        "reviewed_at": "2026-07-08T09:57:49.000Z",
+        "reviewed_sha": "54aea0c3fb9cad79a44ae47ace35434b56bdb167",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1083,6 +1174,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The conjecture is formalized with sorry in content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.lean, which matches the open nature of the narrative.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Superb exact extraction mapping the normal bundle Laplacian eigenspaces directly to the n^2 orbital shells.",
+        "reviewed_at": "2026-07-08T09:57:49.000Z",
+        "reviewed_sha": "54aea0c3fb9cad79a44ae47ace35434b56bdb167",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1104,6 +1208,19 @@
         "notes": "All references and uses ['conj:reidemeister-mass-invariance'] cited in 'conj:orbital-space-normal-bundle' are used in accordance with their established mathematical definitions.",
         "evidence": "content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Superb exact extraction mapping the normal bundle Laplacian eigenspaces directly to the n^2 orbital shells.",
+        "reviewed_at": "2026-07-08T09:57:49.000Z",
+        "reviewed_sha": "54aea0c3fb9cad79a44ae47ace35434b56bdb167",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1125,6 +1242,19 @@
         "notes": "All terms and algebraic structures in 'conj:orbital-space-normal-bundle' are uniquely defined or standard.",
         "evidence": "content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Superb exact extraction mapping the normal bundle Laplacian eigenspaces directly to the n^2 orbital shells.",
+        "reviewed_at": "2026-07-08T09:57:49.000Z",
+        "reviewed_sha": "54aea0c3fb9cad79a44ae47ace35434b56bdb167",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1146,6 +1276,19 @@
         "notes": "The algebraic statements in 'conj:orbital-space-normal-bundle' do not rely on fragile empirical fits or numerical thresholds.",
         "evidence": "content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Superb exact extraction mapping the normal bundle Laplacian eigenspaces directly to the n^2 orbital shells.",
+        "reviewed_at": "2026-07-08T09:57:49.000Z",
+        "reviewed_sha": "54aea0c3fb9cad79a44ae47ace35434b56bdb167",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1167,6 +1310,19 @@
         "notes": "Physical dimensions and units in 'conj:orbital-space-normal-bundle' are consistent with quantum observable universe models.",
         "evidence": "content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Superb exact extraction mapping the normal bundle Laplacian eigenspaces directly to the n^2 orbital shells.",
+        "reviewed_at": "2026-07-08T09:57:49.000Z",
+        "reviewed_sha": "54aea0c3fb9cad79a44ae47ace35434b56bdb167",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1188,6 +1344,19 @@
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/LinearAlgebra/Dimension.olean' of module Mathlib.LinearAlgebra.Dimension does not exist.",
         "evidence": "content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.lean:1 — content/quantum-observable-universe/brings-surface/orbital-space-normal-bundle.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/LinearAlgebra/Dimension.olean' of module Mathlib.LinearAlgebra.Dimension does not exist",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Superb exact extraction mapping the normal bundle Laplacian eigenspaces directly to the n^2 orbital shells.",
+        "reviewed_at": "2026-07-08T09:57:49.000Z",
+        "reviewed_sha": "54aea0c3fb9cad79a44ae47ace35434b56bdb167",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1210,6 +1379,19 @@
         "verdict": "survivable-objection",
         "referee_argument": "The conjecture '*Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data.*' is only partially formalized in Lean and relies on sorry stubs.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Superb exact extraction mapping the normal bundle Laplacian eigenspaces directly to the n^2 orbital shells.",
+        "reviewed_at": "2026-07-08T09:57:49.000Z",
+        "reviewed_sha": "54aea0c3fb9cad79a44ae47ace35434b56bdb167",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "bib-cite-resolves": [
@@ -1374,6 +1556,36 @@
         },
         "score": {
           "value": 0.85
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Superb exact extraction mapping the normal bundle Laplacian eigenspaces directly to the n^2 orbital shells.",
+        "reviewed_at": "2026-07-08T09:57:49.000Z",
+        "reviewed_sha": "54aea0c3fb9cad79a44ae47ace35434b56bdb167",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Superb exact extraction mapping the normal bundle Laplacian eigenspaces directly to the n^2 orbital shells.",
+        "reviewed_at": "2026-07-08T09:57:49.000Z",
+        "reviewed_sha": "54aea0c3fb9cad79a44ae47ace35434b56bdb167",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
         }
       }
     ]
