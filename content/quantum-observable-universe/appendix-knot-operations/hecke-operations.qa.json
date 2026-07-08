@@ -817,20 +817,216 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "fit-section-chapter": [],
-    "da-false-claim": [],
-    "da-vacuous": [],
-    "da-circular": [],
-    "da-overclaim": [],
-    "da-hidden-dof": [],
-    "da-non-sequitur": [],
-    "da-lean-narrative-divergence": [],
-    "da-citation-misuse": [],
-    "da-definitional-ambiguity": [],
-    "da-empirical-fragility": [],
-    "da-physical-implausibility": [],
-    "da-reproducibility": [],
-    "da-referee-verdict": [],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "Perfect fit for an appendix on knot operations.",
+        "reviewed_at": "2026-07-08T08:50:31.000Z",
+        "reviewed_sha": "6a62a1dfe441bab39c639b4d5d2b640715fb97a4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "Standard Hecke algebra relations; mathematically correct.",
+        "reviewed_at": "2026-07-08T08:50:31.000Z",
+        "reviewed_sha": "6a62a1dfe441bab39c639b4d5d2b640715fb97a4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "Substantive exposition of rewriting rules.",
+        "reviewed_at": "2026-07-08T08:50:31.000Z",
+        "reviewed_sha": "6a62a1dfe441bab39c639b4d5d2b640715fb97a4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "No circular reasoning.",
+        "reviewed_at": "2026-07-08T08:50:31.000Z",
+        "reviewed_sha": "6a62a1dfe441bab39c639b4d5d2b640715fb97a4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "Claims are restricted to formal algebraic properties.",
+        "reviewed_at": "2026-07-08T08:50:31.000Z",
+        "reviewed_sha": "6a62a1dfe441bab39c639b4d5d2b640715fb97a4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "All parameters (q) and generators explicitly defined.",
+        "reviewed_at": "2026-07-08T08:50:31.000Z",
+        "reviewed_sha": "6a62a1dfe441bab39c639b4d5d2b640715fb97a4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "Logically flows from relations to basis definitions.",
+        "reviewed_at": "2026-07-08T08:50:31.000Z",
+        "reviewed_sha": "6a62a1dfe441bab39c639b4d5d2b640715fb97a4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "No Lean discrepancy; verified via computations script.",
+        "reviewed_at": "2026-07-08T08:50:31.000Z",
+        "reviewed_sha": "6a62a1dfe441bab39c639b4d5d2b640715fb97a4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "N/A - Standard background material.",
+        "reviewed_at": "2026-07-08T08:50:31.000Z",
+        "reviewed_sha": "6a62a1dfe441bab39c639b4d5d2b640715fb97a4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "Generators and inverses clearly specified.",
+        "reviewed_at": "2026-07-08T08:50:31.000Z",
+        "reviewed_sha": "6a62a1dfe441bab39c639b4d5d2b640715fb97a4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "N/A - abstract algebra.",
+        "reviewed_at": "2026-07-08T08:50:31.000Z",
+        "reviewed_sha": "6a62a1dfe441bab39c639b4d5d2b640715fb97a4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "N/A - abstract algebra.",
+        "reviewed_at": "2026-07-08T08:50:31.000Z",
+        "reviewed_sha": "6a62a1dfe441bab39c639b4d5d2b640715fb97a4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "Backed by python script for tables.",
+        "reviewed_at": "2026-07-08T08:50:31.000Z",
+        "reviewed_sha": "6a62a1dfe441bab39c639b4d5d2b640715fb97a4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "Clear, concise, and necessary background material.",
+        "reviewed_at": "2026-07-08T08:50:31.000Z",
+        "reviewed_sha": "6a62a1dfe441bab39c639b4d5d2b640715fb97a4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
     "milnor-amalgamated-flow": [],
     "expo-milnor-clarity": [],
     "milnor-brevity": []
