@@ -1,15 +1,15 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.13.12",
-  "computedAt": "2026-07-08T18:34:06.521984+00:00",
-  "commitSha": "a54b6ce0caa54caf1f4d77898f7bbbf4a31bb9dd",
+  "computedAt": "2026-07-08T18:58:45.079571+00:00",
+  "commitSha": "1c4cc7150ab14f2b55c2bc3bbd911e1fa19cb8ae",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 35,
+  "durationMs": 42,
   "computation": "canonical-isotope-witness-Z01",
   "scriptFile": "canonical_isotope_witness.py",
   "scriptHash": "8599f8ce5035",
-  "scriptCommitSha": "10a91ce6f0e277d8d1ee3cd377558ce01c8a5082",
+  "scriptCommitSha": "22f8e80b2bc5305ebf683c070192824ff7df7ba0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -286,9 +286,9 @@
       },
       {
         "path": "low-isotope-binding-sweep.witness.json",
-        "sha256": "7917dee289469c3747e4cd19f634c01891534ee0236b942b4acbf07a60cf9433",
-        "size_bytes": 7924,
-        "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811",
+        "sha256": "e57e2ecbae62eb2e013be587da26f70244e1afaafec934fe0b2e7e04b3ea0fed",
+        "size_bytes": 7875,
+        "commitSha": null,
         "scriptCommitSha": null,
         "computedAt": null
       },
