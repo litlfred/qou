@@ -28,6 +28,15 @@ import json
 import sys
 from pathlib import Path
 
+AME2020_DATA = {}
+try:
+    with open(Path(__file__).resolve().parent / "data" / "ame2020.json") as _f:
+        _d = json.load(_f)["entries"]
+        for _row in _d:
+            AME2020_DATA[(_row["Z"], _row["N"])] = _row
+except Exception as e:
+    print(f"Warning: could not load ame2020.json: {e}")
+
 HERE = Path(__file__).resolve().parent
 ATLAS_MD = (
     HERE.parent
@@ -118,12 +127,23 @@ def render_row(r: dict) -> str:
         err_cell = f"{err} %" if err != "—" else "—"
     cm = r.get("composite_mass", {}) or {}
     cm_pred = _fmt(cm.get("M_pred_MeV"), "{:.4f}")
-    cm_ppm = _fmt(cm.get("err_ppm"), "{:+.2f}")
+    cm_ppm = _fmt(cm.get("err_ppm"), "{:+.4f}")
     cm_cell_pred = f"{cm_pred}" if cm_pred != "—" else "—"
     cm_cell_err = f"{cm_ppm} ppm" if cm_pred != "—" else "—"
+    
+    # Calculate experimental ppm
+    cm_cell_err_exp = "—"
+    if (r["Z"], r["N"]) in AME2020_DATA:
+        ame = AME2020_DATA[(r["Z"], r["N"])]
+        unc = ame.get("atomic_mass_unc_micro_u")
+        val = ame.get("atomic_mass_micro_u")
+        if unc is not None and val is not None and val != 0:
+            exp_ppm = (unc / val) * 1e6
+            cm_cell_err_exp = f"{exp_ppm:.4f} ppm"
+            
     return (
         f"| {label} | {r['A']} | {r['N']} | {pred} | {ref} | {err_cell} "
-        f"| {cm_cell_pred} | {cm_cell_err} |"
+        f"| {cm_cell_pred} | {cm_cell_err} | {cm_cell_err_exp} |"
     )
 
 
@@ -147,8 +167,8 @@ def render_z_section(shard: dict) -> list[str]:
         "",
         coverage_note,
         "",
-        "| Atom | $A$ | $N$ | Prediction (MeV) | Reference (MeV) | Error | $M_{\\mathrm{atom}}$ (MeV) | $M_{\\mathrm{atom}}$ Error |",
-        "|---|---|---|---|---|---|---|---|",
+        "| Atom | $A$ | $N$ | Prediction (MeV) | Reference (MeV) | Error | $M_{\\mathrm{atom}}$ (MeV) | $M_{\\mathrm{atom}}$ Error (pred) | $M_{\\mathrm{atom}}$ Error (exp) |",
+        "|---|---|---|---|---|---|---|---|---|",
     ]
     for r in rows:
         lines.append(render_row(r))
