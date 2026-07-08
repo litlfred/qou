@@ -149,9 +149,23 @@ def render_row(r: dict) -> str:
             exp_ppb = (unc / val) * 1e9
             cm_cell_err_exp = f"{exp_ppb:.2f}"
             
+    # Calculate CAL-3 Propagated Error (ppb)
+    # The experimental uncertainty of Q_beta (CAL-3) is 0.61 eV (6.1e-7 MeV).
+    # Since each predicted neutron inherently carries this anchor uncertainty:
+    cal3_cell = "—"
+    if cm_ref != "—":
+        try:
+            cal3_err_mev = r["N"] * 6.1e-7
+            m_ref_val = float(cm.get("M_AME_MeV"))
+            if m_ref_val > 0:
+                cal3_ppb = (cal3_err_mev / m_ref_val) * 1e9
+                cal3_cell = f"±{cal3_ppb:.2f}"
+        except (TypeError, ValueError):
+            pass
+            
     return (
         f"| {label} | {r['A']} | {r['N']} | {pred} | {err_cell} "
-        f"| {cm_cell_pred} | {cm_cell_ref} | {cm_cell_err} | {cm_cell_err_exp} |"
+        f"| {cm_cell_pred} | {cm_cell_ref} | {cm_cell_err} | {cm_cell_err_exp} | {cal3_cell} |"
     )
 
 
@@ -175,8 +189,8 @@ def render_z_section(shard: dict) -> list[str]:
         "",
         coverage_note,
         "",
-        "| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (pred ppb) | Mass Error (exp ppb) |",
-        "|---|---|---|---|---|---|---|---|---|",
+        "| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (pred ppb) | Mass Error (exp ppb) | CAL-3 Bound (ppb) |",
+        "|---|---|---|---|---|---|---|---|---|---|",
     ]
     for r in rows:
         lines.append(render_row(r))
@@ -200,7 +214,14 @@ def render_all(shards: list[dict]) -> str:
         "For D and up, the prediction is the binding energy; "
         "the AME 2020 reference is the total binding energy. "
         "$M_{\\mathrm{atom}}$ is the composite atomic mass "
-        "$N \\cdot m_n + Z \\cdot m_p + Z \\cdot m_e - B$."
+        "$N \\cdot m_n + Z \\cdot m_p + Z \\cdot m_e - B$. "
+        "The **CAL-3 Bound (ppb)** column represents the theoretical error "
+        "floor propagated strictly from the empirical observation uncertainty "
+        "of the neutron beta-decay $Q_\\beta$ value (the CAL-3 anchor, "
+        "$\\pm 0.61$ eV). Because the theoretical neutron mass $m_n$ prediction "
+        "is conditionally anchored on $Q_\\beta$, each of the $N$ neutrons "
+        "adds an unavoidable $\\pm 0.61$ eV of experimental uncertainty to the "
+        "total atomic mass prediction."
     )
     for shard in shards:
         lines.extend(render_z_section(shard))
