@@ -892,6 +892,19 @@
         "reviewed_at": "2026-07-07T14:26:56.447100Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:15:53.000Z",
+        "reviewed_sha": "5b2dd1c81d69ad48d7f31eececf2da8c2f7ecdaf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "wall-side-statement": [
@@ -934,6 +947,19 @@
         "notes": "No false claims identified in 'Isotopy equivalence of bundle initial conditions': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/measurement-observation/bundle-isotopy-equivalence.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:15:53.000Z",
+        "reviewed_sha": "5b2dd1c81d69ad48d7f31eececf2da8c2f7ecdaf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-vacuous": [
@@ -955,6 +981,19 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The block 'Isotopy equivalence of bundle initial conditions' presents substantial mathematical content: Two bundle initial conditions ([Definition](#def:bundle-initial-conditions)) are...",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:15:53.000Z",
+        "reviewed_sha": "5b2dd1c81d69ad48d7f31eececf2da8c2f7ecdaf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-circular": [
@@ -977,6 +1016,19 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Isotopy equivalence of bundle initial conditions'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/measurement-observation/bundle-isotopy-equivalence.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:15:53.000Z",
+        "reviewed_sha": "5b2dd1c81d69ad48d7f31eececf2da8c2f7ecdaf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-overclaim": [
@@ -998,6 +1050,19 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No overclaims: the scope of 'Isotopy equivalence of bundle initial conditions' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:15:53.000Z",
+        "reviewed_sha": "5b2dd1c81d69ad48d7f31eececf2da8c2f7ecdaf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1020,6 +1085,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Isotopy equivalence of bundle initial conditions'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/measurement-observation/bundle-isotopy-equivalence.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:15:53.000Z",
+        "reviewed_sha": "5b2dd1c81d69ad48d7f31eececf2da8c2f7ecdaf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1042,6 +1120,19 @@
         "notes": "The argument flow in 'Isotopy equivalence of bundle initial conditions' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/measurement-observation/bundle-isotopy-equivalence.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:15:53.000Z",
+        "reviewed_sha": "5b2dd1c81d69ad48d7f31eececf2da8c2f7ecdaf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1063,6 +1154,19 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Lean formalization and narrative for 'Isotopy equivalence of bundle initial conditions' are in complete agreement.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:15:53.000Z",
+        "reviewed_sha": "5b2dd1c81d69ad48d7f31eececf2da8c2f7ecdaf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1085,6 +1189,19 @@
         "notes": "No citations are present in 'Isotopy equivalence of bundle initial conditions', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/measurement-observation/bundle-isotopy-equivalence.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:15:53.000Z",
+        "reviewed_sha": "5b2dd1c81d69ad48d7f31eececf2da8c2f7ecdaf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1107,6 +1224,19 @@
         "notes": "Key terms and symbols in 'Isotopy equivalence of bundle initial conditions' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/measurement-observation/bundle-isotopy-equivalence.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:15:53.000Z",
+        "reviewed_sha": "5b2dd1c81d69ad48d7f31eececf2da8c2f7ecdaf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1129,6 +1259,19 @@
         "notes": "The algebraic and logical relations in 'Isotopy equivalence of bundle initial conditions' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/measurement-observation/bundle-isotopy-equivalence.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:15:53.000Z",
+        "reviewed_sha": "5b2dd1c81d69ad48d7f31eececf2da8c2f7ecdaf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1151,6 +1294,19 @@
         "notes": "The physical concepts described in 'Isotopy equivalence of bundle initial conditions' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/measurement-observation/bundle-isotopy-equivalence.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:15:53.000Z",
+        "reviewed_sha": "5b2dd1c81d69ad48d7f31eececf2da8c2f7ecdaf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1173,6 +1329,19 @@
         "notes": "The derivation steps and formal definitions in 'Isotopy equivalence of bundle initial conditions' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/measurement-observation/bundle-isotopy-equivalence.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:15:53.000Z",
+        "reviewed_sha": "5b2dd1c81d69ad48d7f31eececf2da8c2f7ecdaf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1196,6 +1365,19 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Isotopy equivalence of bundle initial conditions' are consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:15:53.000Z",
+        "reviewed_sha": "5b2dd1c81d69ad48d7f31eececf2da8c2f7ecdaf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1373,6 +1555,36 @@
         },
         "score": {
           "value": 0.85
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:15:53.000Z",
+        "reviewed_sha": "5b2dd1c81d69ad48d7f31eececf2da8c2f7ecdaf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:15:53.000Z",
+        "reviewed_sha": "5b2dd1c81d69ad48d7f31eececf2da8c2f7ecdaf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
         }
       }
     ]
