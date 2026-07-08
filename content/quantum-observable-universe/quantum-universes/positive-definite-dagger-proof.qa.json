@@ -780,6 +780,19 @@
         "reviewed_at": "2026-06-22T02:57:17.609Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:09.045109+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:09.045109+00:00"
+        }
       }
     ],
     "da-false-claim": [
@@ -799,6 +812,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/positive-definite-dagger-proof.ts:1",
         "notes": "No false claims identified in 'Involutivity. The antipode of a Hopf algebra satisfies': mathematical reasoning is consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:09.062722+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:09.062722+00:00"
+        }
       }
     ],
     "da-vacuous": [
@@ -817,6 +843,19 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "The claims in 'Involutivity. The antipode of a Hopf algebra satisfies' are non-vacuous as they present substantial mathematical content."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:09.094384+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:09.094384+00:00"
+        }
       }
     ],
     "da-circular": [
@@ -836,6 +875,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/positive-definite-dagger-proof.ts:1",
         "notes": "No circular reasoning or self-assuming definitions detected in 'Involutivity. The antipode of a Hopf algebra satisfies'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:09.110824+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:09.110824+00:00"
+        }
       }
     ],
     "da-overclaim": [
@@ -854,6 +906,19 @@
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
         "notes": "No overclaims: the scope of 'Involutivity. The antipode of a Hopf algebra satisfies' is appropriately qualified."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:09.128257+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:09.128257+00:00"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -873,6 +938,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/positive-definite-dagger-proof.ts:1",
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Involutivity. The antipode of a Hopf algebra satisfies'."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:09.153551+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:09.153551+00:00"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -892,6 +970,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/positive-definite-dagger-proof.ts:1",
         "notes": "The argument flow in 'Involutivity. The antipode of a Hopf algebra satisfies' is logically sound, mapping onto the cited dependencies."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:09.181757+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:09.181757+00:00"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -911,6 +1002,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/positive-definite-dagger-proof.ts:1",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:09.196397+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:09.196397+00:00"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -930,6 +1034,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/positive-definite-dagger-proof.ts:1",
         "notes": "No citations are present in 'Involutivity. The antipode of a Hopf algebra satisfies', hence no citation misuse is possible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:09.213781+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:09.213781+00:00"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -949,6 +1066,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/positive-definite-dagger-proof.ts:1",
         "notes": "Key terms and symbols in 'Involutivity. The antipode of a Hopf algebra satisfies' are mathematically defined and unambiguous."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:09.228802+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:09.228802+00:00"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -968,6 +1098,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/positive-definite-dagger-proof.ts:1",
         "notes": "The algebraic and logical relations in 'Involutivity. The antipode of a Hopf algebra satisfies' are independent of empirical tuning parameters."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:09.244402+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:09.244402+00:00"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -987,6 +1130,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/positive-definite-dagger-proof.ts:1",
         "notes": "The physical concepts described in 'Involutivity. The antipode of a Hopf algebra satisfies' are consistent with quantum observable mechanics."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:09.259037+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:09.259037+00:00"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1006,6 +1162,19 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/quantum-universes/positive-definite-dagger-proof.ts:1",
         "notes": "The derivation steps and formal definitions in 'Involutivity. The antipode of a Hopf algebra satisfies' are reproducible."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:09.276201+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:09.276201+00:00"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1023,10 +1192,23 @@
         "reviewed_at": "2026-06-28T11:19:33.342Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/quantum-universes/positive-definite-dagger-proof.md:1 — Involutivity. The antipode of a Hopf algebra satisfies",
+        "evidence": "content/quantum-observable-universe/quantum-universes/positive-definite-dagger-proof.md:1 \u2014 Involutivity. The antipode of a Hopf algebra satisfies",
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Involutivity. The antipode of a Hopf algebra satisfies' are consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:09.295028+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:09.295028+00:00"
+        }
       }
     ]
   },
