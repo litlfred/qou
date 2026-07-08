@@ -40,6 +40,15 @@ WITNESS = _pb.witness_path("canonical-mass-table-extended.witness.json", HERE)
 BEGIN_MARKER = "<!-- AUTO:canonical-tr-m-table BEGIN -->"
 END_MARKER = "<!-- AUTO:canonical-tr-m-table END -->"
 
+AME2020_DATA = {}
+try:
+    with open(HERE / "data" / "ame2020.json") as _f:
+        _d = json.load(_f)["entries"]
+        for _row in _d:
+            AME2020_DATA[(_row["Z"], _row["N"])] = _row
+except Exception as e:
+    print(f"Warning: could not load ame2020.json: {e}")
+
 ATOM_LABEL_BY_ZN = {
     (1, 0): r"$\mathfrak{p}$",
     (0, 1): r"$\mathfrak{n}$",
@@ -102,19 +111,35 @@ def render_table(witness_data: dict) -> str:
         m_pred = "—"
         m_err = "—"
         
+        # Look up AME2020 experimental uncertainties
+        exp_m_ppb_str = ""
+        exp_b_pct_str = ""
+        if (Z, N) in AME2020_DATA:
+            ame = AME2020_DATA[(Z, N)]
+            m_unc = ame.get("atomic_mass_unc_micro_u")
+            m_val = ame.get("atomic_mass_micro_u")
+            if m_unc is not None and m_val is not None and m_val != 0:
+                exp_m_ppb_str = f" \\pm {(m_unc / m_val) * 1e9:.2f}"
+            
+            b_unc_per_a = ame.get("binding_energy_per_A_unc_keV")
+            b_total_ref = ame.get("binding_energy_total_keV")
+            if b_unc_per_a is not None and b_total_ref is not None and b_total_ref != 0:
+                b_unc_total = b_unc_per_a * A
+                exp_b_pct_str = f" \\pm {(b_unc_total / b_total_ref) * 100:.4f}"
+        
         if ptype == "mass":
             # For p and n, the prediction IS the mass. Binding is 0.
             m_pred = _fmt_number(row.get("prediction_MeV_50dps"))
             err_ppm = row.get("err_ppm")
             if err_ppm is not None:
-                m_err = f"{_fmt_number(err_ppm * 1000.0, '{:+.2f}')} ppb"
+                m_err = f"{_fmt_number(err_ppm * 1000.0, '{:+.2f}')}{exp_m_ppb_str} ppb"
         else:
             # For D and up, the prediction is binding energy.
             b_pred = _fmt_number(row.get("prediction_MeV_50dps"))
             b_ref = _fmt_number(row.get("B_AME_MeV"))
             err_pct = row.get("err_pct")
             if err_pct is not None:
-                b_err = f"{_fmt_number(err_pct, '{:+.2f}')} %"
+                b_err = f"{_fmt_number(err_pct, '{:+.2f}')}{exp_b_pct_str} %"
                 
             # And we have a composite mass derived from binding
             cm = row.get("composite_mass", {}) or {}
@@ -123,7 +148,7 @@ def render_table(witness_data: dict) -> str:
                 m_pred = _fmt_number(m_pred_val, "{:.4f}")
             cm_ppm_val = cm.get("err_ppm")
             if cm_ppm_val is not None:
-                m_err = f"{_fmt_number(cm_ppm_val * 1000.0, '{:+.2f}')} ppb"
+                m_err = f"{_fmt_number(cm_ppm_val * 1000.0, '{:+.2f}')}{exp_m_ppb_str} ppb"
                 
         lines.append(
             f"| {label} | {A} | {N} "

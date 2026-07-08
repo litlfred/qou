@@ -116,12 +116,23 @@ def render_row(r: dict) -> str:
     
     pred = _fmt(r.get("prediction_MeV_50dps"))
     
-    
     # Always ppm for binding
     err_val = r.get("err_ppm")
     if err_val is not None:
         err = _fmt(err_val, "{:+.2f}")
-        err_cell = f"{err}"
+        
+        # Calculate experimental ppm for binding
+        exp_bind_ppm_str = ""
+        if (r["Z"], r["N"]) in AME2020_DATA:
+            ame = AME2020_DATA[(r["Z"], r["N"])]
+            bind_unc_per_a = ame.get("binding_energy_per_A_unc_keV")
+            bind_total_ref = ame.get("binding_energy_total_keV")
+            if bind_unc_per_a is not None and bind_total_ref is not None and bind_total_ref != 0:
+                bind_unc_total = bind_unc_per_a * r["A"]
+                exp_bind_ppm = (bind_unc_total / bind_total_ref) * 1e6
+                exp_bind_ppm_str = f" \\pm {exp_bind_ppm:.4f}"
+                
+        err_cell = f"{err}{exp_bind_ppm_str}"
     else:
         err_cell = "—"
     
@@ -149,6 +160,15 @@ def render_row(r: dict) -> str:
             exp_ppb = (unc / val) * 1e9
             cm_cell_err_exp = f"{exp_ppb:.2f}"
             
+    # Combine pred and exp mass error
+    if cm_cell_err != "—":
+        if cm_cell_err_exp != "—":
+            combined_mass_error = f"{cm_cell_err} \\pm {cm_cell_err_exp}"
+        else:
+            combined_mass_error = cm_cell_err
+    else:
+        combined_mass_error = "—"
+            
     # Calculate CAL-3 Propagated Error (ppb)
     # The experimental uncertainty of Q_beta (CAL-3) is 0.61 eV (6.1e-7 MeV).
     # Since each predicted neutron inherently carries this anchor uncertainty:
@@ -165,7 +185,7 @@ def render_row(r: dict) -> str:
             
     return (
         f"| {label} | {r['A']} | {r['N']} | {pred} | {err_cell} "
-        f"| {cm_cell_pred} | {cm_cell_ref} | {cm_cell_err} | {cm_cell_err_exp} | {cal3_cell} |"
+        f"| {cm_cell_pred} | {cm_cell_ref} | {combined_mass_error} | {cal3_cell} |"
     )
 
 
@@ -189,8 +209,8 @@ def render_z_section(shard: dict) -> list[str]:
         "",
         coverage_note,
         "",
-        "| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (pred ppb) | Mass Error (exp ppb) | CAL-3 Bound (ppb) |",
-        "|---|---|---|---|---|---|---|---|---|---|",
+        "| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (ppb) | CAL-3 Bound (ppb) |",
+        "|---|---|---|---|---|---|---|---|---|",
     ]
     for r in rows:
         lines.append(render_row(r))
