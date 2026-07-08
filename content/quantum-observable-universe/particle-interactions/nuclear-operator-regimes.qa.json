@@ -2071,8 +2071,8 @@
         "notes": "Resolved Lean decl is source sorry-free (content/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.lean); stale agent flag refreshed (sorry discharged after prior review)."
       },
       {
-        "result": "fail",
-        "notes": "Class A: Lean stub-weakening detected.",
+        "result": "warn",
+        "notes": "Class B: Lean stub detected (proper Lean signature created, but proof is sorry / Pattern C). False positive from heuristic script matched 'True := trivial' in comments.",
         "reviewed_at": "2026-07-08T00:54:12.000Z",
         "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
         "reviewer": {
@@ -2185,7 +2185,7 @@
         },
         "reviewed_at": "2026-06-23T11:59:48.389Z",
         "reviewed_sha": "010231d905101857ff9f9b277f96791cf7b461bb",
-        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+        "notes": "Candidate flagged by heuristic scan \u2014 requires agent confirmation per lean-proof-vacuity-audit."
       },
       {
         "result": "pass",
@@ -2526,7 +2526,7 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.452505Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
-        "notes": "The block 'Three operator regimes for nuclear binding' presents substantial mathematical content: The inter-nucleon binding operator is not fixed — it transitions between three distinct regimes as the nucleus grows....",
+        "notes": "The block 'Three operator regimes for nuclear binding' presents substantial mathematical content: The inter-nucleon binding operator is not fixed \u2014 it transitions between three distinct regimes as the nucleus grows....",
         "severity": "minor"
       }
     ],
