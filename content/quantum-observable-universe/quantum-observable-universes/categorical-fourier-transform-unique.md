@@ -1,1 +1,3 @@
-The categorical Fourier transform is uniquely determined as the Wick rotation of the Laplace transform, coinciding with the Peter--Weyl decomposition in the Tannakian setting.
+The categorical Fourier transform $\mathcal{F}$, once it exists, is structurally unique up to a natural monoidal isomorphism.
+
+Because the transformation acts by intertwining the $q$-convolution over the algebra $\mathcal{A}$ with the pointwise product on the spectrum of irreducible representations, any two such functors $\mathcal{F}$ and $\mathcal{F}'$ that preserve the monoidal structure and the Peter–Weyl projections must be equivalent. Uniqueness guarantees that the harmonic decomposition of physical states in the quantum observable universe does not depend on the choice of basis or the specific representative of the functor, but is an intrinsic topological invariant of the category.
