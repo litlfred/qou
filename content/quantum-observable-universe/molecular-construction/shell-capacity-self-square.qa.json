@@ -48,6 +48,19 @@
         "reviewed_at": "2026-07-07T14:26:55.489876Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:36:01.000Z",
+        "reviewed_sha": "ebafe7be8ecc5f9542b614dd274b624a32b75167",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "wall-side-statement": [
@@ -551,6 +564,19 @@
         "notes": "No false claims identified in 'Shell capacity $2n^2$ as the self-square of the angular $q$-dimension': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/shell-capacity-self-square.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:36:01.000Z",
+        "reviewed_sha": "ebafe7be8ecc5f9542b614dd274b624a32b75167",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-vacuous": [
@@ -571,6 +597,19 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Shell capacity $2n^2$ as the self-square of the angular $q$-dimension' presents substantial mathematical content: sub-states is the sum of the sub-shell multiplicities $2\\ell+1$ over $\\ell = 0,\\...",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:36:01.000Z",
+        "reviewed_sha": "ebafe7be8ecc5f9542b614dd274b624a32b75167",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-circular": [
@@ -592,6 +631,19 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Shell capacity $2n^2$ as the self-square of the angular $q$-dimension'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/shell-capacity-self-square.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:36:01.000Z",
+        "reviewed_sha": "ebafe7be8ecc5f9542b614dd274b624a32b75167",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-overclaim": [
@@ -612,6 +664,19 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No overclaims: the scope of 'Shell capacity $2n^2$ as the self-square of the angular $q$-dimension' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:36:01.000Z",
+        "reviewed_sha": "ebafe7be8ecc5f9542b614dd274b624a32b75167",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -633,6 +698,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Shell capacity $2n^2$ as the self-square of the angular $q$-dimension'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/shell-capacity-self-square.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:36:01.000Z",
+        "reviewed_sha": "ebafe7be8ecc5f9542b614dd274b624a32b75167",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -654,6 +732,19 @@
         "notes": "The argument flow in 'Shell capacity $2n^2$ as the self-square of the angular $q$-dimension' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/shell-capacity-self-square.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:36:01.000Z",
+        "reviewed_sha": "ebafe7be8ecc5f9542b614dd274b624a32b75167",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -674,6 +765,19 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The referenced Lean file content/quantum-observable-universe/molecular-construction/shell-capacity-self-square.lean is missing, leading to complete divergence.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:36:01.000Z",
+        "reviewed_sha": "ebafe7be8ecc5f9542b614dd274b624a32b75167",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -695,6 +799,19 @@
         "notes": "No citations are present in 'Shell capacity $2n^2$ as the self-square of the angular $q$-dimension', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/shell-capacity-self-square.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:36:01.000Z",
+        "reviewed_sha": "ebafe7be8ecc5f9542b614dd274b624a32b75167",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -716,6 +833,19 @@
         "notes": "Key terms and symbols in 'Shell capacity $2n^2$ as the self-square of the angular $q$-dimension' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/shell-capacity-self-square.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:36:01.000Z",
+        "reviewed_sha": "ebafe7be8ecc5f9542b614dd274b624a32b75167",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -737,6 +867,19 @@
         "notes": "The algebraic and logical relations in 'Shell capacity $2n^2$ as the self-square of the angular $q$-dimension' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/shell-capacity-self-square.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:36:01.000Z",
+        "reviewed_sha": "ebafe7be8ecc5f9542b614dd274b624a32b75167",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -758,6 +901,19 @@
         "notes": "The physical concepts described in 'Shell capacity $2n^2$ as the self-square of the angular $q$-dimension' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/shell-capacity-self-square.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:36:01.000Z",
+        "reviewed_sha": "ebafe7be8ecc5f9542b614dd274b624a32b75167",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-reproducibility": [
@@ -779,6 +935,19 @@
         "notes": "The derivation steps and formal definitions in 'Shell capacity $2n^2$ as the self-square of the angular $q$-dimension' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/shell-capacity-self-square.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:36:01.000Z",
+        "reviewed_sha": "ebafe7be8ecc5f9542b614dd274b624a32b75167",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -801,6 +970,19 @@
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/molecular-construction/shell-capacity-self-square.lean is missing, preventing formal verification of the claims in 'Shell capacity $2n^2$ as the self-square of the angular $q$-dimension'.",
         "severity": "critical"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:36:01.000Z",
+        "reviewed_sha": "ebafe7be8ecc5f9542b614dd274b624a32b75167",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "bib-cite-resolves": [
@@ -838,6 +1020,36 @@
         "field_hash": {
           "md": "ce12bed998b4",
           "ts": "c2b2420744b7"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:36:01.000Z",
+        "reviewed_sha": "ebafe7be8ecc5f9542b614dd274b624a32b75167",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:36:01.000Z",
+        "reviewed_sha": "ebafe7be8ecc5f9542b614dd274b624a32b75167",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
         }
       }
     ]

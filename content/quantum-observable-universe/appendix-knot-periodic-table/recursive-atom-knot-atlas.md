@@ -251,7 +251,7 @@ For an atom with mass number $A$, we build the canonical braid word in $B_{3A}$ 
 
 <!-- AUTO:canonical-tr-m-table BEGIN -->
 
-| Atom | $A$ | $N$ | Prediction (MeV) | Reference (MeV) | Error | Matom (MeV) | Matom Error |
+| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding $B_{\text{AME}}$ (MeV) | Binding Error | $M_{\text{atom}}$ (MeV) | $M_{\text{atom}}$ Error |
 |---|---|---|---|---|---|---|---|
 | D | 2 | 1 | 2.2488 | 2.2246 | +1.09 % | — | — |
 | T | 3 | 2 | 8.4686 | 8.4818 | -0.16 % | — | — |

@@ -87,36 +87,47 @@ def render_table(witness_data: dict) -> str:
     """
     lines = [
         "",
-        "| Atom | $A$ | $N$ | Prediction (MeV) | Reference (MeV) | Error | Matom (MeV) | Matom Error |",
+        "| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding $B_{\\text{AME}}$ (MeV) | Binding Error | $M_{\\text{atom}}$ (MeV) | $M_{\\text{atom}}$ Error |",
         "|---|---|---|---|---|---|---|---|",
     ]
     for row in witness_data.get("rows", []):
         Z = row["Z"]; N = row["N"]; A = row["A"]
         label = ATOM_LABEL_BY_ZN.get((Z, N), f"(Z={Z}, N={N})")
         ptype = row.get("prediction_type") or "binding_energy"
-        pred_md = _fmt_number(row.get("prediction_MeV_50dps"))
-        ref_md = _fmt_number(row.get("B_AME_MeV"))
-        # Error: ppm for mass, % for binding energy
-        if ptype == "mass":
-            err_unit = "ppm"
-            err_md = _fmt_number(row.get("err_ppm"), "{:+.3f}")
-        else:
-            err_unit = "%"
-            err_md = _fmt_number(row.get("err_pct"), "{:+.2f}")
-        err_cell = f"{err_md} {err_unit}" if err_md != "—" else "—"
         
-        cm = row.get("composite_mass", {}) or {}
-        cm_pred = _fmt_number(cm.get("M_pred_MeV"), "{:.4f}")
-        cm_ppm_val = cm.get("err_ppm")
-        if cm_ppm_val is not None:
-            cm_ppb = _fmt_number(cm_ppm_val * 1000.0, "{:+.2f}")
-            cm_err_cell = f"{cm_ppb} ppb"
+        # Default initialization for columns
+        b_pred = "—"
+        b_ref = "—"
+        b_err = "—"
+        m_pred = "—"
+        m_err = "—"
+        
+        if ptype == "mass":
+            # For p and n, the prediction IS the mass. Binding is 0.
+            m_pred = _fmt_number(row.get("prediction_MeV_50dps"))
+            err_ppm = row.get("err_ppm")
+            if err_ppm is not None:
+                m_err = f"{_fmt_number(err_ppm * 1000.0, '{:+.2f}')} ppb"
         else:
-            cm_err_cell = "—"
-            
+            # For D and up, the prediction is binding energy.
+            b_pred = _fmt_number(row.get("prediction_MeV_50dps"))
+            b_ref = _fmt_number(row.get("B_AME_MeV"))
+            err_pct = row.get("err_pct")
+            if err_pct is not None:
+                b_err = f"{_fmt_number(err_pct, '{:+.2f}')} %"
+                
+            # And we have a composite mass derived from binding
+            cm = row.get("composite_mass", {}) or {}
+            m_pred_val = cm.get("M_pred_MeV")
+            if m_pred_val is not None:
+                m_pred = _fmt_number(m_pred_val, "{:.4f}")
+            cm_ppm_val = cm.get("err_ppm")
+            if cm_ppm_val is not None:
+                m_err = f"{_fmt_number(cm_ppm_val * 1000.0, '{:+.2f}')} ppb"
+                
         lines.append(
             f"| {label} | {A} | {N} "
-            f"| {pred_md} | {ref_md} | {err_cell} | {cm_pred} | {cm_err_cell} |"
+            f"| {b_pred} | {b_ref} | {b_err} | {m_pred} | {m_err} |"
         )
     lines.append("")
     method = witness_data.get("parameters", {}).get("method", "?")
