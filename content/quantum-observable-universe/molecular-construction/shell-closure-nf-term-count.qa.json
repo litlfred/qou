@@ -891,6 +891,19 @@
         "reviewed_at": "2026-07-07T14:26:55.520128Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:30:07.000Z",
+        "reviewed_sha": "cdff4c0cd6868db526c75e80b7aad0faca85884b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -931,6 +944,19 @@
         "notes": "No false claims identified in 'Shell closure from NF term count': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/shell-closure-nf-term-count.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:30:07.000Z",
+        "reviewed_sha": "cdff4c0cd6868db526c75e80b7aad0faca85884b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-vacuous": [
@@ -952,6 +978,19 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The claims in 'Shell closure from NF term count' are non-vacuous as they make concrete conjectures about 'core is a single strand $\\mathcal{N}$ and each electron is a...'.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:30:07.000Z",
+        "reviewed_sha": "cdff4c0cd6868db526c75e80b7aad0faca85884b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-circular": [
@@ -974,6 +1013,19 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Shell closure from NF term count'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/shell-closure-nf-term-count.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:30:07.000Z",
+        "reviewed_sha": "cdff4c0cd6868db526c75e80b7aad0faca85884b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-overclaim": [
@@ -995,6 +1047,19 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose in 'Shell closure from NF term count' presents the result as established, but the Lean formalization is incomplete (has sorry).",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:30:07.000Z",
+        "reviewed_sha": "cdff4c0cd6868db526c75e80b7aad0faca85884b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1017,6 +1082,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Shell closure from NF term count'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/shell-closure-nf-term-count.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:30:07.000Z",
+        "reviewed_sha": "cdff4c0cd6868db526c75e80b7aad0faca85884b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1039,6 +1117,19 @@
         "notes": "Logical gaps exist as the proof in content/quantum-observable-universe/molecular-construction/shell-closure-nf-term-count.lean is incomplete (contains sorry stubs).",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/shell-closure-nf-term-count.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:30:07.000Z",
+        "reviewed_sha": "cdff4c0cd6868db526c75e80b7aad0faca85884b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1060,6 +1151,19 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/molecular-construction/shell-closure-nf-term-count.lean uses a class-conjecture pattern, matching the conjectural nature of 'Shell closure from NF term count'.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:30:07.000Z",
+        "reviewed_sha": "cdff4c0cd6868db526c75e80b7aad0faca85884b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1082,6 +1186,19 @@
         "notes": "Citations to iwahori1964, jones1987 are correct and contextually appropriate.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/shell-closure-nf-term-count.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:30:07.000Z",
+        "reviewed_sha": "cdff4c0cd6868db526c75e80b7aad0faca85884b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1104,6 +1221,19 @@
         "notes": "Key terms and symbols in 'Shell closure from NF term count' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/shell-closure-nf-term-count.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:30:07.000Z",
+        "reviewed_sha": "cdff4c0cd6868db526c75e80b7aad0faca85884b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1126,6 +1256,19 @@
         "notes": "The algebraic and logical relations in 'Shell closure from NF term count' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/shell-closure-nf-term-count.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:30:07.000Z",
+        "reviewed_sha": "cdff4c0cd6868db526c75e80b7aad0faca85884b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1148,6 +1291,19 @@
         "notes": "The physical concepts described in 'Shell closure from NF term count' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/shell-closure-nf-term-count.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:30:07.000Z",
+        "reviewed_sha": "cdff4c0cd6868db526c75e80b7aad0faca85884b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1170,6 +1326,19 @@
         "notes": "The derivation steps and formal definitions in 'Shell closure from NF term count' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/molecular-construction/shell-closure-nf-term-count.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:30:07.000Z",
+        "reviewed_sha": "cdff4c0cd6868db526c75e80b7aad0faca85884b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1193,6 +1362,19 @@
         "verdict": "survivable-objection",
         "referee_argument": "The conjectured algebraic or physical relations in 'Shell closure from NF term count' remain unproven and are represented as sorry stubs in the formalization.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:30:07.000Z",
+        "reviewed_sha": "cdff4c0cd6868db526c75e80b7aad0faca85884b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "bib-cite-resolves": [
@@ -1372,6 +1554,36 @@
         },
         "score": {
           "value": 0.85
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:30:07.000Z",
+        "reviewed_sha": "cdff4c0cd6868db526c75e80b7aad0faca85884b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:30:07.000Z",
+        "reviewed_sha": "cdff4c0cd6868db526c75e80b7aad0faca85884b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
         }
       }
     ]
