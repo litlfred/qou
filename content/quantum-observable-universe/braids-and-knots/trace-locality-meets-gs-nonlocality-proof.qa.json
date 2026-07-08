@@ -1030,6 +1030,24 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims are consistent."
       }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "field_hash": {
+          "md": "bccd12e72cbb",
+          "ts": "eaaac0532b65"
+        },
+        "result": "pass",
+        "notes": "Thorough 3-part proof (Markov locality / GS non-locality / Wenzl factorisation) + reconciliation; detail is warranted, no framing bloat to cut.",
+        "reviewed_at": "2026-07-08T08:22:01.602436Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "agent_model": "claude-opus-4-8",
+          "version": "v1",
+          "agent_date": "2026-07-08T08:22:01.602436Z"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-03T00:52:55.297Z"
