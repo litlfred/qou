@@ -71,6 +71,7 @@ import QOU.Mass.SelectionRuleQuantumIntegerForm
 import QOU.Mass.JetFiltrationExtensive
 import QOU.Mass.LinearChainBondCount
 import QOU.Mass.KappaWritheAsymptote
+import QOU.Mass.LinearChainBondFactorization
 import QOU.Calculations
 import QOU.HadronicMass
 import QOU.AtomicMass
