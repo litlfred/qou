@@ -54,7 +54,7 @@ sys.path.insert(0, str(HERE))
 
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
-from codata_constants import U_MEV  # noqa: E402 — u→MeV factor (bean 46ke)
+from codata_constants import U_MEV, M_E_MEV  # noqa: E402 — u→MeV factor (bean 46ke)
 
 
 # ── Data loaders ──────────────────────────────────────────────────
@@ -96,17 +96,13 @@ def load_borromean() -> dict:
 # ── Borromean nucleon-mass extraction ─────────────────────────────
 
 def borromean_m_p_m_n(borromean: dict) -> tuple[float | None, float | None]:
-    """Return (m_p_pred_MeV, m_n_pred_MeV) from the Borromean witness."""
-    data = borromean.get("data", borromean)
+    """Return (m_p_pred_MeV, m_n_pred_MeV) from the exact muon-anchored formula."""
     try:
-        m_p = float(data.get("proton", {}).get("m_p_pred_MeV"))
-    except (TypeError, ValueError):
-        m_p = None
-    try:
-        m_n = float(data.get("neutron", {}).get("m_n_pred_MeV"))
-    except (TypeError, ValueError):
-        m_n = None
-    return m_p, m_n
+        from canonical_mass import proton_neutron_mass_mev
+        return proton_neutron_mass_mev()
+    except Exception as e:
+        print(f"Warning: could not load canonical_mass: {e}")
+        return None, None
 
 
 # ── L1 / L2 lookups ───────────────────────────────────────────────
@@ -195,44 +191,22 @@ def assemble_row(
         )
         m_err = m_pred - m_ref if (m_pred is not None and m_ref is not None) else None
         m_err_ppm = (m_err / m_ref * 1e6) if (m_err is not None and m_ref) else None
+        
+        m_composite_MeV = None
+        m_composite_ref_MeV = atomic_mass_u * float(U_MEV) if atomic_mass_u is not None else None
+        m_composite_err_MeV = None
+        m_composite_err_ppm = None
+        
+        if m_p_borr is not None and m_n_borr is not None:
+            m_composite_MeV = N * m_n_borr + Z * m_p_borr + Z * float(M_E_MEV)
+            if m_composite_ref_MeV is not None:
+                m_composite_err_MeV = m_composite_MeV - m_composite_ref_MeV
+                m_composite_err_ppm = (m_composite_err_MeV / m_composite_ref_MeV * 1e6) if m_composite_ref_MeV else None
+                
         return {
             "Z": Z, "N": N, "A": A, "element": element,
             "prediction_type": "mass",
             "layer": "L1-borromean-via-canonical",
-            # canonical_status taxonomy (added 2026-05-19 per user
-            # directive "L4 only use canonical; fix l1 empirical too";
-            # updated 2026-05-22 per CAL-4 audit — Borromean tower
-            # nucleons are NOT "canonical-substrate": their λ_p / λ_n
-            # are fitted from CODATA per
-            # `m_p_borromean_verification_50dps.py` CAL-4 banner):
-            #   canonical-substrate    — pure substrate derivation
-            #                            (NOT yet achieved for any
-            #                            nucleon mass; reserved for
-            #                            the eventual substrate-pure
-            #                            λ_p / λ_n derivation).
-            #   borromean-tower-via-fitted-lambda
-            #                          — Borromean tower formula
-            #                            consumed but λ_scale is
-            #                            FITTED FROM CODATA, so the
-            #                            ~1 ppb residual is
-            #                            tautological.  This is what
-            #                            L1-borromean currently is.
-            #   canonical-with-empirical-assignment — canonical |tr_M| /
-            #                            Vol(K) / m_e BUT the (knot, ρ_K)
-            #                            assignment per atom is from the
-            #                            framework hypothesis table, not
-            #                            from a substrate derivation.
-            #                            ρ_K(Z, N) substrate derivation
-            #                            is OPEN (ILP / confinement).
-            #   canonical-recursive    — derived from a lower canonical
-            #                            tier via structural recursion
-            #                            (L2 α-cluster: anchored on ⁴He
-            #                            + c_αα via Vol(7²₁)).
-            #   heuristic              — interpolation between canonical
-            #                            anchors (L3 partial-shell);
-            #                            NOT derivation, MUST NOT feed
-            #                            downstream "canonical" outputs.
-            #   pending                — no framework prediction.
             "canonical_status": "borromean-tower-via-fitted-lambda",
             "prediction_MeV_50dps": (
                 l1.get("prediction_MeV_50dps") if l1 else None
@@ -240,6 +214,16 @@ def assemble_row(
             "reference_MeV_50dps": m_ref,
             "err_MeV": m_err,
             "err_ppm": m_err_ppm,
+            "composite_mass": {
+                "M_pred_MeV": m_composite_MeV,
+                "M_AME_MeV": m_composite_ref_MeV,
+                "err_MeV": m_composite_err_MeV,
+                "err_ppm": m_composite_err_ppm,
+                "canonical_status": "borromean-tower-via-fitted-lambda",
+                "formula": "N·m_n + Z·m_p + Z·m_e − B(A,Z)",
+                "m_p_source": "borromean-tower (conj:borromean-baryon-mass-formula)" if m_p_borr is not None else None,
+                "B_source": "L1-borromean-via-canonical"
+            },
             "ame_reference": {
                 "B_AME_keV": b_ame_keV,  # 0 for free nucleons
                 "mass_excess_keV": me_keV,
@@ -271,11 +255,6 @@ def assemble_row(
     # Canonical candidates: the α-cluster recursion (canonical-recursive;
     # c_αα = m_e·Vol(7²₁) is canonical). Present in L2 and/or the L3 sweep.
     canonical_candidates: list[tuple[float, str, str]] = []
-    if l1 and _as_float(l1.get("prediction_MeV_50dps")) is not None:
-        canonical_candidates.append(
-            (_as_float(l1["prediction_MeV_50dps"]), "L1-canonical",
-             "canonical-recursive")
-        )
     if l2 and _as_float(l2.get("B_pred_MeV")) is not None:
         canonical_candidates.append(
             (_as_float(l2["B_pred_MeV"]), "L2-alpha-cluster", "canonical-recursive")
@@ -308,6 +287,11 @@ def assemble_row(
     #   • L3 census  B = ρ·Vol(census-knot), ρ hand-assigned
     #   • L3 partial-shell  linear interpolation between α anchors
     noncanonical_candidates: list[tuple[float, str, str]] = []
+    if l1 and _as_float(l1.get("prediction_MeV_50dps")) is not None:
+        noncanonical_candidates.append(
+            (_as_float(l1["prediction_MeV_50dps"]), "L1-canonical",
+             "canonical-with-empirical-assignment")
+        )
     if (l3 and not str(l3.get("strategy", "")).startswith("α-cluster")
             and _as_float(l3.get("B_pred_MeV")) is not None):
         noncanonical_candidates.append(
@@ -356,7 +340,7 @@ def assemble_row(
             "canonical-recursive",
         )
     ):
-        m_composite_MeV = N * m_n_borr + Z * m_p_borr - b_pred
+        m_composite_MeV = N * m_n_borr + Z * m_p_borr + Z * float(M_E_MEV) - b_pred
         composite_canonical_status = canonical_status
 
     # L4 reference: from AME atomic mass (× u→MeV, registry U_MEV ≈ 931.494).

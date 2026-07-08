@@ -117,14 +117,13 @@ def render_row(r: dict) -> str:
         err = _fmt(r.get("err_pct"), "{:+.2f}")
         err_cell = f"{err} %" if err != "—" else "—"
     cm = r.get("composite_mass", {}) or {}
-    cm_pred = _fmt(cm.get("M_pred_MeV"))
-    cm_ppm = _fmt(cm.get("err_ppm"), "{:+.1f}")
-    cm_cell = (
-        f"{cm_pred} MeV ({cm_ppm} ppm)" if cm_pred != "—" else "—"
-    )
+    cm_pred = _fmt(cm.get("M_pred_MeV"), "{:.4f}")
+    cm_ppm = _fmt(cm.get("err_ppm"), "{:+.2f}")
+    cm_cell_pred = f"{cm_pred}" if cm_pred != "—" else "—"
+    cm_cell_err = f"{cm_ppm} ppm" if cm_pred != "—" else "—"
     return (
-        f"| {label} | {r['A']} | {r['N']} | {layer} | {status} | {ptype} "
-        f"| {pred} | {ref} | {err_cell} | {cm_cell} |"
+        f"| {label} | {r['A']} | {r['N']} | {pred} | {ref} | {err_cell} "
+        f"| {cm_cell_pred} | {cm_cell_err} |"
     )
 
 
@@ -139,8 +138,8 @@ def render_z_section(shard: dict) -> list[str]:
     n_cm = shard.get("parameters", {}).get("rows_with_composite_mass", 0)
     coverage_note = (
         f"_{n_pred} of {n_total} isotopes with a framework "
-        f"prediction; {n_cm} of {n_total} with L4 composite mass "
-        f"$M = N \\cdot m_n + Z \\cdot m_p - B$._"
+        f"prediction; {n_cm} of {n_total} with $M_{{\\mathrm{{atom}}}}$ "
+        f"$M = N \\cdot m_n + Z \\cdot m_p + Z \\cdot m_e - B$._"
     )
     lines = [
         "",
@@ -148,8 +147,8 @@ def render_z_section(shard: dict) -> list[str]:
         "",
         coverage_note,
         "",
-        "| Atom | $A$ | $N$ | Layer | Status | Predicts | Prediction (MeV) | Reference (MeV) | Error | $M_{\\text{composite}}$ |",
-        "|---|---|---|---|---|---|---|---|---|---|",
+        "| Atom | $A$ | $N$ | Prediction (MeV) | Reference (MeV) | Error | $M_{\\mathrm{atom}}$ (MeV) | $M_{\\mathrm{atom}}$ Error |",
+        "|---|---|---|---|---|---|---|---|",
     ]
     for r in rows:
         lines.append(render_row(r))
@@ -167,18 +166,13 @@ def render_all(shards: list[dict]) -> str:
         "(emitted by [`canonical_isotope_witness.py`]"
         "(https://github.com/litlfred/qou/blob/main/folio-assistant/"
         "computations/canonical_isotope_witness.py)). Each row carries "
-        "the Layer used (L1 canonical |tr_M|, L2 α-cluster recursion, "
-        "L3 paper-six-term [pending], L4 composite mass), the framework "
-        "prediction, the AME 2020 reference, and the residual. "
-        "`Predicts = mass` for free nucleons (p, n) — value is the "
-        "Borromean tower nucleon mass conditional on "
-        "`conj:borromean-baryon-mass-formula`. `Predicts = "
-        "binding_energy` for D and up; AME 2020 reference is the "
-        "total binding energy. $M_{\\text{composite}}$ is the L4 "
-        "composite mass $N \\cdot m_n + Z \\cdot m_p - B$ when both "
-        "nucleon masses (Borromean) and a binding-energy prediction "
-        "are available; reference is the AME atomic mass converted "
-        "via 1 u = 931.49410242 MeV._"
+        "the framework prediction, the AME 2020 reference, and the residual. "
+        "For free nucleons (p, n) the prediction is the mass "
+        "conditional on `conj:borromean-baryon-mass-formula`. "
+        "For D and up, the prediction is the binding energy; "
+        "the AME 2020 reference is the total binding energy. "
+        "$M_{\\mathrm{atom}}$ is the composite atomic mass "
+        "$N \\cdot m_n + Z \\cdot m_p + Z \\cdot m_e - B$."
     )
     for shard in shards:
         lines.extend(render_z_section(shard))
