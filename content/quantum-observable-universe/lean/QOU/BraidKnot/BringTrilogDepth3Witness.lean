@@ -111,6 +111,6 @@ end BringTrilogDepth3Witness
 -- to these components.  The `sorry` represents the **open conjecture** per
 -- §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/mass-theory/bring-trilog-depth-3-witness.ts
-noncomputable instance : BringTrilogDepth3Witness := ⟨0, rfl⟩
+noncomputable instance : BringTrilogDepth3Witness := sorry
 
 end QOU.BraidKnot

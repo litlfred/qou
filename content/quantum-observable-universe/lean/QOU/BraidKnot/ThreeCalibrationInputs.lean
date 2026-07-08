@@ -62,10 +62,8 @@ witness.
 
 Ref: [manuscript] `prop:three-calibration-inputs`
 -/
-theorem three_calibration_inputs
+def three_calibration_inputs
     (cal : ThreeCalibrationInputs) (obs : ℝ) : Prop :=
-    ∃ f : ℝ → ℝ → ℝ → ℝ, obs = f cal.q_zero cal.m_e cal.Q_beta_n := by
-    use (fun _ _ _ => obs)
-    rfl
+  ∃ f : ℝ → ℝ → ℝ → ℝ, obs = f cal.q_zero cal.m_e cal.Q_beta_n
 
 end QOU.BraidKnot

@@ -365,11 +365,10 @@ residual -0.57 ppb but lacks a derived categorical source.
     state is the absence of a proof term).  This replaces the previous
     `(inst : …) → True := trivial`, which captured no categorical content. -/
 -- Ref: [manuscript] prop:q-beta-categorical-precision-ladder §"Open conjecture (N≥4)"
-theorem qbeta_inductive_categorical_closure_conjecture
+def qbeta_inductive_categorical_closure_conjecture
     (inst : QBetaPrecisionLadderCoefficients) : Prop :=
   ∀ k : ℕ, 4 ≤ k → ∀ q : ℝ, 0 < q →
-    inst.c_k_at_q k q⁻¹ = inst.c_k_at_q k q := by
-  sorry
+    inst.c_k_at_q k q⁻¹ = inst.c_k_at_q k q
 
 /-! ## §3b-cond N=3 structural-form class (mirrors PR #1508)
 
@@ -499,7 +498,7 @@ overall coordination context.
 
 /-- Abstract true categorical N=4 coefficient `c_4(q)`. -/
 -- Ref: [manuscript] prop:q-beta-categorical-precision-ladder
-def qBetaC4Categorical (q : ℝ) : ℝ := jonesHopfClassicalLimit * (hoefsmitB q)^4
+noncomputable def qBetaC4Categorical (q : ℝ) : ℝ := jonesHopfClassicalLimit * (hoefsmitB q)^4
 
 /-- **N=4 structural-form class for Q_β** (§3b-cond).
 
@@ -543,7 +542,7 @@ theorem q_beta_n4_structural_form
 
 /-- Abstract true categorical N=5 coefficient `c_5(q)`. -/
 -- Ref: [manuscript] prop:q-beta-categorical-precision-ladder
-def qBetaC5Categorical (q : ℝ) : ℝ := -(hoefsmitB q)^2 - 1/2
+noncomputable def qBetaC5Categorical (q : ℝ) : ℝ := -(hoefsmitB q)^2 - 1/2
 
 /-- **N=5 structural-form class for Q_β** (§3b-cond).
 
@@ -581,7 +580,7 @@ theorem q_beta_n5_structural_form
 
 /-- Abstract true categorical N=6 coefficient `c_6(q)`. -/
 -- Ref: [manuscript] prop:q-beta-categorical-precision-ladder
-def qBetaC6Categorical (q : ℝ) : ℝ := jonesHopfClassicalLimit^2 * (hoefsmitB q)^2
+noncomputable def qBetaC6Categorical (q : ℝ) : ℝ := jonesHopfClassicalLimit^2 * (hoefsmitB q)^2
 
 /-- **N=6 structural-form class for Q_β** (§3b-cond).
 

@@ -45,7 +45,7 @@ noncomputable def trefoilMatrix : TMatrix :=
 theorem trefoil_eq_hopfPlus_gen0 :
     trefoilMatrix = hopfPlus * stdRep3_gen0 := by
   unfold trefoilMatrix hopfPlus
-  exact (Matrix.mul_assoc _ _ _).symm
+  rw [Matrix.mul_assoc]
 
 /-- The trefoil also equals σ₀ · L₋ = σ₀ · σ₁σ₀ (by braid relation). -/
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
@@ -55,7 +55,7 @@ theorem trefoil_eq_hopfPlus_gen0 :
 theorem trefoil_eq_gen0_hopfMinus :
     trefoilMatrix = stdRep3_gen0 * hopfMinus := by
   unfold trefoilMatrix hopfMinus
-  exact Matrix.mul_assoc _ _ _
+  rw [Matrix.mul_assoc]
 
 /-! ## §3  L₊ and L₋ are distinct operators -/
 

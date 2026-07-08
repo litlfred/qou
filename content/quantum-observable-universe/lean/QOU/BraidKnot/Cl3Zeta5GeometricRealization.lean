@@ -96,6 +96,6 @@ end Cl3Zeta5GeometricRealization
 -- Residual: a closed Clausen `Cl₃(2π/5)` value (Mathlib gap).
 -- Ref: [manuscript] quantum-observable-universe/mass-theory/cl3-zeta5-geometric-realization.ts
 noncomputable instance [W : BringTrilogDepth3Witness] :
-    Cl3Zeta5GeometricRealization (W := W) := ⟨0, rfl⟩
+    Cl3Zeta5GeometricRealization (W := W) := sorry
 
 end QOU.BraidKnot

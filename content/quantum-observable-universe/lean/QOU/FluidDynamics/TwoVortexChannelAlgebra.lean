@@ -41,46 +41,46 @@ interaction; `e₊`/`e₋` the symmetric/antisymmetric channel projectors (parti
 unity, orthogonal); `q` and `−u` the two channel eigenvalues, with `u` a ring-level
 inverse witness for `q`. The intended model is the commutant of `σ₁` in `H_2(q)` with
 `e₊ = (σ + q⁻¹)/(q + q⁻¹)`, `e₋ = (q − σ)/(q + q⁻¹)`. -/
-class TwoVortexChannels (σ e₊ e₋ q u : R) : Prop where
-  /-- The two channels partition unity: `e₊ + e₋ = 1`. -/
-  partition : e₊ + e₋ = 1
-  /-- The channels are orthogonal: `e₊·e₋ = 0`. -/
-  orthogonal : e₊ * e₋ = 0
+class TwoVortexChannels (σ e_plus e_minus q u : R) : Prop where
+  /-- The two channels partition unity: `e_plus + e_minus = 1`. -/
+  partition : e_plus + e_minus = 1
+  /-- The channels are orthogonal: `e_plus·e_minus = 0`. -/
+  orthogonal : e_plus * e_minus = 0
   /-- `u` witnesses `q⁻¹` at ring level: `q·u = 1`. -/
   inverse : q * u = 1
-  /-- Spectral form of the braiding: `σ = q·e₊ − u·e₋` (eigenvalues `q`, `−q⁻¹`;
+  /-- Spectral form of the braiding: `σ = q·e_plus − u·e_minus` (eigenvalues `q`, `−q⁻¹`;
   AGENTS.md §7a). -/
-  eigen : σ = q * e₊ - u * e₋
+  eigen : σ = q * e_plus - u * e_minus
 
-variable (σ e₊ e₋ q u : R)
+variable (σ e_plus e_minus q u : R)
 
 /-- **Idempotency of the symmetric channel is derived**, not assumed:
-`e₊² = e₊` follows from partition + orthogonality. -/
-theorem idem_plus [inst : TwoVortexChannels σ e₊ e₋ q u] : e₊ * e₊ = e₊ := by
-  linear_combination e₊ * inst.partition - inst.orthogonal
+`e_plus² = e_plus` follows from partition + orthogonality. -/
+theorem idem_plus [inst : TwoVortexChannels σ e_plus e_minus q u] : e_plus * e_plus = e_plus := by
+  linear_combination e_plus * inst.partition - inst.orthogonal
 
-/-- **Idempotency of the antisymmetric channel is derived**: `e₋² = e₋`. -/
-theorem idem_minus [inst : TwoVortexChannels σ e₊ e₋ q u] : e₋ * e₋ = e₋ := by
-  linear_combination e₋ * inst.partition - inst.orthogonal
+/-- **Idempotency of the antisymmetric channel is derived**: `e_minus² = e_minus`. -/
+theorem idem_minus [inst : TwoVortexChannels σ e_plus e_minus q u] : e_minus * e_minus = e_minus := by
+  linear_combination e_minus * inst.partition - inst.orthogonal
 
 /-- **The Hopf-link interaction, spectrally.** The square of the braiding (two crossings
-— the closure is the Hopf link) decomposes as `σ² = q²·e₊ + u²·e₋`: the symmetric
+— the closure is the Hopf link) decomposes as `σ² = q²·e_plus + u²·e_minus`: the symmetric
 channel is weighted `q²`, the antisymmetric channel `u² = q⁻²`. Needs only partition +
 orthogonality, not invertibility. -/
-theorem braiding_sq [inst : TwoVortexChannels σ e₊ e₋ q u] :
-    σ ^ 2 = q ^ 2 * e₊ + u ^ 2 * e₋ := by
-  have hp := idem_plus σ e₊ e₋ q u
-  have hm := idem_minus σ e₊ e₋ q u
+theorem braiding_sq [inst : TwoVortexChannels σ e_plus e_minus q u] :
+    σ ^ 2 = q ^ 2 * e_plus + u ^ 2 * e_minus := by
+  have hp := idem_plus σ e_plus e_minus q u
+  have hm := idem_minus σ e_plus e_minus q u
   rw [inst.eigen]
   linear_combination q ^ 2 * hp + u ^ 2 * hm - 2 * q * u * inst.orthogonal
 
 /-- **The channel model satisfies the Hecke relation** `σ² = (q − u)·σ + 1` — the
 abstract two-channel data reproduces the skein/Hecke relation of AGENTS.md §7a with the
 inverse witness `u` in the `q⁻¹` slot. -/
-theorem hecke_relation [inst : TwoVortexChannels σ e₊ e₋ q u] :
+theorem hecke_relation [inst : TwoVortexChannels σ e_plus e_minus q u] :
     σ ^ 2 = (q - u) * σ + 1 := by
-  have hp := idem_plus σ e₊ e₋ q u
-  have hm := idem_minus σ e₊ e₋ q u
+  have hp := idem_plus σ e_plus e_minus q u
+  have hm := idem_minus σ e_plus e_minus q u
   rw [inst.eigen]
   linear_combination q ^ 2 * hp + u ^ 2 * hm - 2 * q * u * inst.orthogonal +
     q * u * inst.partition + inst.inverse
@@ -99,15 +99,15 @@ theorem eigenvalue_ratio {K : Type*} [Field K] (q : K) :
 orthogonality, inverse witness, spectral form), *all* ring-level conclusions follow —
 derived idempotency of both channels, the spectral square, and the Hecke relation.
 (The eigenvalue-ratio identity is the companion field-level lemma `eigenvalue_ratio`
-above, stated separately because it needs no channel data.) -/
-theorem channel_algebra [inst : TwoVortexChannels σ e₊ e₋ q u] :
-    e₊ * e₊ = e₊ ∧ e₋ * e₋ = e₋ ∧
-    σ ^ 2 = q ^ 2 * e₊ + u ^ 2 * e₋ ∧
+above, because it needs no channel data.) -/
+theorem channel_algebra [inst : TwoVortexChannels σ e_plus e_minus q u] :
+    e_plus * e_plus = e_plus ∧ e_minus * e_minus = e_minus ∧
+    σ ^ 2 = q ^ 2 * e_plus + u ^ 2 * e_minus ∧
     σ ^ 2 = (q - u) * σ + 1 :=
-  ⟨idem_plus σ e₊ e₋ q u, idem_minus σ e₊ e₋ q u,
-   braiding_sq σ e₊ e₋ q u, hecke_relation σ e₊ e₋ q u⟩
+  ⟨idem_plus σ e_plus e_minus q u, idem_minus σ e_plus e_minus q u,
+   braiding_sq σ e_plus e_minus q u, hecke_relation σ e_plus e_minus q u⟩
 
-/-- **Non-vacuity.** The one-channel degenerate model (`e₊ = 1`, `e₋ = 0`, `σ = q`)
+/-- **Non-vacuity.** The one-channel degenerate model (`e_plus = 1`, `e_minus = 0`, `σ = q`)
 inhabits the class for any invertible `q`, so the axiomatisation is consistent. The
 faithful two-channel model lives in the commutant of `σ₁` in `H_2(q)`. -/
 theorem trivial_model (q u : R) (h : q * u = 1) :

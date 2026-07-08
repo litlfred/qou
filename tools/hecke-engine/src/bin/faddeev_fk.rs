@@ -176,8 +176,8 @@ fn main() {
     let mut num_dnet = PSeries::zero(order);
     let mut q_pow = PSeries::from_const(QSqrt3::one(), order);
     for c in coeffs_dnet {
-        let c_q = PSeries::from_const(QSqrt3::new(Ratio::new(c, 1), Ratio::zero()), order);
-        num_dnet = num_dnet.add(&c_q.mul(&q_pow));
+        let f_q = PSeries::from_const(QSqrt3::new(Ratio::new(c, 1), Ratio::zero()), order);
+        num_dnet = num_dnet.add(&f_q.mul(&q_pow));
         q_pow = q_pow.mul(&q);
     }
     let den_dnet = PSeries::from_const(QSqrt3::new(Ratio::new(4, 1), Ratio::zero()), order).mul(&q_pow); // Wait, q_pow needs to be exactly q^7 for the denominator
@@ -265,16 +265,16 @@ fn main() {
     
     let ladder_departure = real_transformed.div(&cos_base);
     
-    // Convert raw t^(2k) coefficients to exact c_k (where u = b * t^2 / 2, at t=0 b = sqrt(3)/2, so u = sqrt(3)/4 * t^2)
-    // u^k = (sqrt(3)/4)^k * t^(2k). Thus c_k = raw_coeff / (sqrt(3)/4)^k
+    // Convert raw t^(2k) coefficients to exact f_k (where u = b * t^2 / 2, at t=0 b = sqrt(3)/2, so u = sqrt(3)/4 * t^2)
+    // u^k = (sqrt(3)/4)^k * t^(2k). Thus f_k = raw_coeff / (sqrt(3)/4)^k
     let u_scale = QSqrt3::new(Ratio::zero(), Ratio::new(1, 4)); // 0 + 1/4 sqrt(3)
     let mut u_pow = u_scale;
     
-    println!("--- Exact algebraic c_k witnesses ---");
+    println!("--- Exact algebraic f_k witnesses ---");
     for k in 1..=5 {
         let raw = ladder_departure.coeffs[2 * k];
-        let c_k = raw.div(u_pow);
-        println!("c_{} = {}", k, c_k);
+        let f_k = raw.div(u_pow);
+        println!("f_{} = {}", k, f_k);
         u_pow = u_pow.mul(u_scale);
     }
 }
