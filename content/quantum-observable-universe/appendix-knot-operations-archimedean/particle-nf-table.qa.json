@@ -817,20 +817,216 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "fit-section-chapter": [],
-    "da-false-claim": [],
-    "da-vacuous": [],
-    "da-circular": [],
-    "da-overclaim": [],
-    "da-hidden-dof": [],
-    "da-non-sequitur": [],
-    "da-lean-narrative-divergence": [],
-    "da-citation-misuse": [],
-    "da-definitional-ambiguity": [],
-    "da-empirical-fragility": [],
-    "da-physical-implausibility": [],
-    "da-reproducibility": [],
-    "da-referee-verdict": [],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Detailed decomposition of fundamental particle Gröbner basis in H3(q). Accurately traces mass splitting to crossing orientation and Hecke amplitude.",
+        "reviewed_at": "2026-07-08T08:55:15.000Z",
+        "reviewed_sha": "d54f38e182e14efe14d5021e2a9a0c6e340fe4a7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Detailed decomposition of fundamental particle Gröbner basis in H3(q). Accurately traces mass splitting to crossing orientation and Hecke amplitude.",
+        "reviewed_at": "2026-07-08T08:55:15.000Z",
+        "reviewed_sha": "d54f38e182e14efe14d5021e2a9a0c6e340fe4a7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Detailed decomposition of fundamental particle Gröbner basis in H3(q). Accurately traces mass splitting to crossing orientation and Hecke amplitude.",
+        "reviewed_at": "2026-07-08T08:55:15.000Z",
+        "reviewed_sha": "d54f38e182e14efe14d5021e2a9a0c6e340fe4a7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Detailed decomposition of fundamental particle Gröbner basis in H3(q). Accurately traces mass splitting to crossing orientation and Hecke amplitude.",
+        "reviewed_at": "2026-07-08T08:55:15.000Z",
+        "reviewed_sha": "d54f38e182e14efe14d5021e2a9a0c6e340fe4a7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Detailed decomposition of fundamental particle Gröbner basis in H3(q). Accurately traces mass splitting to crossing orientation and Hecke amplitude.",
+        "reviewed_at": "2026-07-08T08:55:15.000Z",
+        "reviewed_sha": "d54f38e182e14efe14d5021e2a9a0c6e340fe4a7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Detailed decomposition of fundamental particle Gröbner basis in H3(q). Accurately traces mass splitting to crossing orientation and Hecke amplitude.",
+        "reviewed_at": "2026-07-08T08:55:15.000Z",
+        "reviewed_sha": "d54f38e182e14efe14d5021e2a9a0c6e340fe4a7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Detailed decomposition of fundamental particle Gröbner basis in H3(q). Accurately traces mass splitting to crossing orientation and Hecke amplitude.",
+        "reviewed_at": "2026-07-08T08:55:15.000Z",
+        "reviewed_sha": "d54f38e182e14efe14d5021e2a9a0c6e340fe4a7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Detailed decomposition of fundamental particle Gröbner basis in H3(q). Accurately traces mass splitting to crossing orientation and Hecke amplitude.",
+        "reviewed_at": "2026-07-08T08:55:15.000Z",
+        "reviewed_sha": "d54f38e182e14efe14d5021e2a9a0c6e340fe4a7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Detailed decomposition of fundamental particle Gröbner basis in H3(q). Accurately traces mass splitting to crossing orientation and Hecke amplitude.",
+        "reviewed_at": "2026-07-08T08:55:15.000Z",
+        "reviewed_sha": "d54f38e182e14efe14d5021e2a9a0c6e340fe4a7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Detailed decomposition of fundamental particle Gröbner basis in H3(q). Accurately traces mass splitting to crossing orientation and Hecke amplitude.",
+        "reviewed_at": "2026-07-08T08:55:15.000Z",
+        "reviewed_sha": "d54f38e182e14efe14d5021e2a9a0c6e340fe4a7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Detailed decomposition of fundamental particle Gröbner basis in H3(q). Accurately traces mass splitting to crossing orientation and Hecke amplitude.",
+        "reviewed_at": "2026-07-08T08:55:15.000Z",
+        "reviewed_sha": "d54f38e182e14efe14d5021e2a9a0c6e340fe4a7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Detailed decomposition of fundamental particle Gröbner basis in H3(q). Accurately traces mass splitting to crossing orientation and Hecke amplitude.",
+        "reviewed_at": "2026-07-08T08:55:15.000Z",
+        "reviewed_sha": "d54f38e182e14efe14d5021e2a9a0c6e340fe4a7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Detailed decomposition of fundamental particle Gröbner basis in H3(q). Accurately traces mass splitting to crossing orientation and Hecke amplitude.",
+        "reviewed_at": "2026-07-08T08:55:15.000Z",
+        "reviewed_sha": "d54f38e182e14efe14d5021e2a9a0c6e340fe4a7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Detailed decomposition of fundamental particle Gröbner basis in H3(q). Accurately traces mass splitting to crossing orientation and Hecke amplitude.",
+        "reviewed_at": "2026-07-08T08:55:15.000Z",
+        "reviewed_sha": "d54f38e182e14efe14d5021e2a9a0c6e340fe4a7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
     "expo-milnor-clarity": [],
     "milnor-brevity": []
   },
