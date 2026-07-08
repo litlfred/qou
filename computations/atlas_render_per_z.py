@@ -117,16 +117,17 @@ def render_row(r: dict) -> str:
     pred = _fmt(r.get("prediction_MeV_50dps"))
     
     
-    # Always ppb for binding
+    # Always ppm for binding
     err_val = r.get("err_ppm")
     if err_val is not None:
-        err = _fmt(err_val * 1000.0, "{:+.2f}")
+        err = _fmt(err_val, "{:+.2f}")
         err_cell = f"{err}"
     else:
         err_cell = "—"
     
     cm = r.get("composite_mass", {}) or {}
     cm_pred = _fmt(cm.get("M_pred_MeV"), "{:.4f}")
+    cm_ref = _fmt(cm.get("M_AME_MeV"), "{:.4f}")
     
     cm_ppm_val = cm.get("err_ppm")
     if cm_ppm_val is not None:
@@ -136,6 +137,7 @@ def render_row(r: dict) -> str:
         cm_cell_err = "—"
         
     cm_cell_pred = f"{cm_pred}" if cm_pred != "—" else "—"
+    cm_cell_ref = f"{cm_ref}" if cm_ref != "—" else "—"
     
     # Calculate experimental ppb
     cm_cell_err_exp = "—"
@@ -149,7 +151,7 @@ def render_row(r: dict) -> str:
             
     return (
         f"| {label} | {r['A']} | {r['N']} | {pred} | {err_cell} "
-        f"| {cm_cell_pred} | {cm_cell_err} | {cm_cell_err_exp} |"
+        f"| {cm_cell_pred} | {cm_cell_ref} | {cm_cell_err} | {cm_cell_err_exp} |"
     )
 
 
@@ -173,8 +175,8 @@ def render_z_section(shard: dict) -> list[str]:
         "",
         coverage_note,
         "",
-        "| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppb) | Mass $M_{\\mathrm{atom}}$ (MeV) | Mass Error (pred ppb) | Mass Error (exp ppb) |",
-        "|---|---|---|---|---|---|---|---|",
+        "| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppm) | Mass $M_q$ (MeV) | Mass $M_o$ (MeV) | Mass Error (pred ppb) | Mass Error (exp ppb) |",
+        "|---|---|---|---|---|---|---|---|---|",
     ]
     for r in rows:
         lines.append(render_row(r))
