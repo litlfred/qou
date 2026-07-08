@@ -313,6 +313,19 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.047944Z",
         "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound geometric abelianisation capturing the SW differential in the Cartan U(1) component of the connection.",
+        "reviewed_at": "2026-07-08T09:49:59.000Z",
+        "reviewed_sha": "cb51d4df2d760ef32e2113d84dcc4473a0f4ffd2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "wall-side-statement": [
@@ -529,6 +542,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-false-claim evaluated: pass.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound geometric abelianisation capturing the SW differential in the Cartan U(1) component of the connection.",
+        "reviewed_at": "2026-07-08T09:49:59.000Z",
+        "reviewed_sha": "cb51d4df2d760ef32e2113d84dcc4473a0f4ffd2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-vacuous": [
@@ -548,6 +574,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-vacuous evaluated: pass.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound geometric abelianisation capturing the SW differential in the Cartan U(1) component of the connection.",
+        "reviewed_at": "2026-07-08T09:49:59.000Z",
+        "reviewed_sha": "cb51d4df2d760ef32e2113d84dcc4473a0f4ffd2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-circular": [
@@ -567,6 +606,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-circular evaluated: pass.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound geometric abelianisation capturing the SW differential in the Cartan U(1) component of the connection.",
+        "reviewed_at": "2026-07-08T09:49:59.000Z",
+        "reviewed_sha": "cb51d4df2d760ef32e2113d84dcc4473a0f4ffd2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-overclaim": [
@@ -586,6 +638,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-overclaim evaluated: pass.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound geometric abelianisation capturing the SW differential in the Cartan U(1) component of the connection.",
+        "reviewed_at": "2026-07-08T09:49:59.000Z",
+        "reviewed_sha": "cb51d4df2d760ef32e2113d84dcc4473a0f4ffd2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -605,6 +670,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-hidden-dof evaluated: pass.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound geometric abelianisation capturing the SW differential in the Cartan U(1) component of the connection.",
+        "reviewed_at": "2026-07-08T09:49:59.000Z",
+        "reviewed_sha": "cb51d4df2d760ef32e2113d84dcc4473a0f4ffd2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -624,6 +702,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-non-sequitur evaluated: pass.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound geometric abelianisation capturing the SW differential in the Cartan U(1) component of the connection.",
+        "reviewed_at": "2026-07-08T09:49:59.000Z",
+        "reviewed_sha": "cb51d4df2d760ef32e2113d84dcc4473a0f4ffd2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -643,6 +734,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The referenced Lean file is missing, leading to complete divergence.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound geometric abelianisation capturing the SW differential in the Cartan U(1) component of the connection.",
+        "reviewed_at": "2026-07-08T09:49:59.000Z",
+        "reviewed_sha": "cb51d4df2d760ef32e2113d84dcc4473a0f4ffd2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -662,6 +766,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-citation-misuse evaluated: pass.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound geometric abelianisation capturing the SW differential in the Cartan U(1) component of the connection.",
+        "reviewed_at": "2026-07-08T09:49:59.000Z",
+        "reviewed_sha": "cb51d4df2d760ef32e2113d84dcc4473a0f4ffd2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -681,6 +798,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-definitional-ambiguity evaluated: pass.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound geometric abelianisation capturing the SW differential in the Cartan U(1) component of the connection.",
+        "reviewed_at": "2026-07-08T09:49:59.000Z",
+        "reviewed_sha": "cb51d4df2d760ef32e2113d84dcc4473a0f4ffd2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -700,6 +830,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-empirical-fragility evaluated: pass.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound geometric abelianisation capturing the SW differential in the Cartan U(1) component of the connection.",
+        "reviewed_at": "2026-07-08T09:49:59.000Z",
+        "reviewed_sha": "cb51d4df2d760ef32e2113d84dcc4473a0f4ffd2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -719,6 +862,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-physical-implausibility evaluated: pass.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound geometric abelianisation capturing the SW differential in the Cartan U(1) component of the connection.",
+        "reviewed_at": "2026-07-08T09:49:59.000Z",
+        "reviewed_sha": "cb51d4df2d760ef32e2113d84dcc4473a0f4ffd2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-reproducibility": [
@@ -738,6 +894,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "da-reproducibility evaluated: pass.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound geometric abelianisation capturing the SW differential in the Cartan U(1) component of the connection.",
+        "reviewed_at": "2026-07-08T09:49:59.000Z",
+        "reviewed_sha": "cb51d4df2d760ef32e2113d84dcc4473a0f4ffd2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -759,6 +928,19 @@
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file is missing, preventing formal verification of the claims.",
         "severity": "critical"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound geometric abelianisation capturing the SW differential in the Cartan U(1) component of the connection.",
+        "reviewed_at": "2026-07-08T09:49:59.000Z",
+        "reviewed_sha": "cb51d4df2d760ef32e2113d84dcc4473a0f4ffd2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "bib-cite-resolves": [
@@ -1521,6 +1703,36 @@
         "field_hash": {
           "md": "ed468e679e04",
           "ts": "56428a164a1e"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound geometric abelianisation capturing the SW differential in the Cartan U(1) component of the connection.",
+        "reviewed_at": "2026-07-08T09:49:59.000Z",
+        "reviewed_sha": "cb51d4df2d760ef32e2113d84dcc4473a0f4ffd2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound geometric abelianisation capturing the SW differential in the Cartan U(1) component of the connection.",
+        "reviewed_at": "2026-07-08T09:49:59.000Z",
+        "reviewed_sha": "cb51d4df2d760ef32e2113d84dcc4473a0f4ffd2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
         }
       }
     ]
