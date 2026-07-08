@@ -44,7 +44,8 @@ noncomputable def trefoilMatrix : TMatrix :=
 --      published version.
 theorem trefoil_eq_hopfPlus_gen0 :
     trefoilMatrix = hopfPlus * stdRep3_gen0 := by
-  sorry
+  unfold trefoilMatrix hopfPlus
+  exact (Matrix.mul_assoc _ _ _).symm
 
 /-- The trefoil also equals σ₀ · L₋ = σ₀ · σ₁σ₀ (by braid relation). -/
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
@@ -53,7 +54,8 @@ theorem trefoil_eq_hopfPlus_gen0 :
 --      published version.
 theorem trefoil_eq_gen0_hopfMinus :
     trefoilMatrix = stdRep3_gen0 * hopfMinus := by
-  sorry
+  unfold trefoilMatrix hopfMinus
+  exact Matrix.mul_assoc _ _ _
 
 /-! ## §3  L₊ and L₋ are distinct operators -/
 
@@ -71,16 +73,17 @@ theorem hopf_links_distinct : hopfPlus ≠ hopfMinus :=
 
 /-! ## §4  L₊ and L₋ are related by the braid relation -/
 
-/-- L₊ · σ₀ = σ₁ · L₋  (the Yang-Baxter relation).
+/-- L₊ · σ₀ = L₋ · σ₁  (the Yang-Baxter relation).
 
-    σ₀σ₁ · σ₀ = σ₁ · σ₁σ₀  ←→  σ₀σ₁σ₀ = σ₁σ₀σ₁ (braid relation) -/
+    σ₀σ₁ · σ₀ = σ₁σ₀ · σ₁  ←→  σ₀σ₁σ₀ = σ₁σ₀σ₁ (braid relation) -/
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
 theorem yang_baxter_hopf :
-    hopfPlus * stdRep3_gen0 = stdRep3_gen1 * hopfMinus := by
-  sorry
+    hopfPlus * stdRep3_gen0 = hopfMinus * stdRep3_gen1 := by
+  unfold hopfPlus hopfMinus
+  exact stdRep3_braid
 
 /-! ## §5  B₃ is quark-level only (statement) -/
 
@@ -138,7 +141,7 @@ class He4DemandClosure (coeffs : List ℝ) : Prop where
   all_nonneg : ∀ c ∈ coeffs, 0 ≤ c
 
 /-- **Default instance for the empty list** — vacuously true. -/
-instance : He4DemandClosure [] := sorry
+instance : He4DemandClosure [] := ⟨fun x hx => by cases hx⟩
 
 /-- **Default instance for a singleton non-negative list**.
     `He4DemandClosure [c]` follows from `0 ≤ c` directly. -/
