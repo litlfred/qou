@@ -115,30 +115,40 @@ def render_row(r: dict) -> str:
         label = f"${{}}^{{{A}}}${element}"
     
     pred = _fmt(r.get("prediction_MeV_50dps"))
-    ref = _fmt(r.get("reference_MeV_50dps"))
     
-    # Always ppm
-    err = _fmt(r.get("err_ppm"), "{:+.4f}")
-    err_cell = f"{err} ppm" if err != "—" else "—"
+    
+    # Always ppb for binding
+    err_val = r.get("err_ppm")
+    if err_val is not None:
+        err = _fmt(err_val * 1000.0, "{:+.2f}")
+        err_cell = f"{err}"
+    else:
+        err_cell = "—"
     
     cm = r.get("composite_mass", {}) or {}
     cm_pred = _fmt(cm.get("M_pred_MeV"), "{:.4f}")
-    cm_ppm = _fmt(cm.get("err_ppm"), "{:+.4f}")
-    cm_cell_pred = f"{cm_pred}" if cm_pred != "—" else "—"
-    cm_cell_err = f"{cm_ppm} ppm" if cm_pred != "—" else "—"
     
-    # Calculate experimental ppm
+    cm_ppm_val = cm.get("err_ppm")
+    if cm_ppm_val is not None:
+        cm_ppb = _fmt(cm_ppm_val * 1000.0, "{:+.2f}")
+        cm_cell_err = f"{cm_ppb}"
+    else:
+        cm_cell_err = "—"
+        
+    cm_cell_pred = f"{cm_pred}" if cm_pred != "—" else "—"
+    
+    # Calculate experimental ppb
     cm_cell_err_exp = "—"
     if (r["Z"], r["N"]) in AME2020_DATA:
         ame = AME2020_DATA[(r["Z"], r["N"])]
         unc = ame.get("atomic_mass_unc_micro_u")
         val = ame.get("atomic_mass_micro_u")
         if unc is not None and val is not None and val != 0:
-            exp_ppm = (unc / val) * 1e6
-            cm_cell_err_exp = f"{exp_ppm:.4f} ppm"
+            exp_ppb = (unc / val) * 1e9
+            cm_cell_err_exp = f"{exp_ppb:.2f}"
             
     return (
-        f"| {label} | {r['A']} | {r['N']} | {pred} | {ref} | {err_cell} "
+        f"| {label} | {r['A']} | {r['N']} | {pred} | {err_cell} "
         f"| {cm_cell_pred} | {cm_cell_err} | {cm_cell_err_exp} |"
     )
 
@@ -163,8 +173,8 @@ def render_z_section(shard: dict) -> list[str]:
         "",
         coverage_note,
         "",
-        "| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding $B_o$ (MeV) | Binding Error (ppm) | $M_{\\mathrm{atom}}$ (MeV) | $M_{\\mathrm{atom}}$ Error (pred) | $M_{\\mathrm{atom}}$ Error (exp) |",
-        "|---|---|---|---|---|---|---|---|---|",
+        "| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding Error (ppb) | Mass $M_{\\mathrm{atom}}$ (MeV) | Mass Error (pred ppb) | Mass Error (exp ppb) |",
+        "|---|---|---|---|---|---|---|---|",
     ]
     for r in rows:
         lines.append(render_row(r))
