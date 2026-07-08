@@ -711,7 +711,7 @@
 | [lem:brings-riemann-hurwitz](#lem:brings-riemann-hurwitz) | Riemann--Hurwitz count for the canonical map $\Sigma_4 \to \mathbb{P}(V)$ | Ch 6 | `qou:QOU.ArchimedeanUniverse.brings_riemann_hurwitz` |
 | [lem:surreal-squeeze](#lem:surreal-squeeze) | Surreal squeeze: standard-scale cost dominates infinitesimal dissipation | Ch 22 | `qou:QOU.AlgebraicSubstrate.surreal_squeeze` |
 | [lem:topological-mass-cat-transient](#lem:topological-mass-cat-transient) | Transient terms localise to blow-up centres (categorical) | Ch 7 | `qou:QOU.TopologicalMass.cat_transient_localises_blowup` |
-| [lem:yekutieli-leading-coefficient](#lem:yekutieli-leading-coefficient) | obstruction equals the leading Chebyshev coefficient | Ch 6 | `qou:QOU.Archimedean.yekutieli_leading_coefficient` |
+| [lem:yekutieli-leading-coefficient](#lem:yekutieli-leading-coefficient) | Obstruction equals the leading Chebyshev coefficient | Ch 6 | `qou:QOU.Archimedean.yekutieli_leading_coefficient` |
 
 ## Corollarys
 
