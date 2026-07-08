@@ -82,13 +82,15 @@ def quantum_int(n: int, q: mpf) -> mpf:
     return (q ** n - q ** (-n)) / (q - q ** (-1))
 
 
-def c3_habiro(q: mpf) -> mpf:
-    """3-rung Habiro closure for c_3 (matches MmuR9V9Closure.qbetaC3Closure)."""
-    hbar = (q - 1) / q
-    base = -(q ** 2 + q ** (-2))
-    rung1 = hbar * quantum_int(3, q) / 25
-    rung2 = hbar ** 3 / quantum_int(2, q)
-    return base * (1 + rung1 + rung2)
+def c3_keystone(q: mpf) -> mpf:
+    """Exact topological keystone for c_3."""
+    # Volume of 4_1 (Figure Eight Knot) = 2 * Cl_2(pi/3)
+    vol_41 = mpf("2.029883212819307250042405108549")
+    hbar_q = (q - 1) / q
+    b = sqrt(3) / 2
+    u = b * hbar_q ** 2
+    # c_3 = -Vol(4_1) + u - (10/3)u^2
+    return -vol_41 + u - (mpf("10") / mpf("3")) * (u ** 2)
 
 
 def miss_factor(pred: mpf, codata: mpf, sigma: mpf) -> float:
