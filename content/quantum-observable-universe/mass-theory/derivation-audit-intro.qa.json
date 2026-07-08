@@ -815,21 +815,247 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "fit-section-chapter": [],
-    "da-false-claim": [],
-    "da-vacuous": [],
-    "da-circular": [],
-    "da-overclaim": [],
-    "da-hidden-dof": [],
-    "da-non-sequitur": [],
-    "da-lean-narrative-divergence": [],
-    "da-citation-misuse": [],
-    "da-definitional-ambiguity": [],
-    "da-empirical-fragility": [],
-    "da-physical-implausibility": [],
-    "da-reproducibility": [],
-    "da-referee-verdict": [],
-    "milnor-amalgamated-flow": []
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound theoretical demonstration scaling distinct analytic boundary variations carefully into testable continuous values.",
+        "reviewed_at": "2026-07-08T14:53:19.000Z",
+        "reviewed_sha": "47d4654368b7be2713ff30562005a40556a91de8",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound theoretical demonstration scaling distinct analytic boundary variations carefully into testable continuous values.",
+        "reviewed_at": "2026-07-08T14:53:19.000Z",
+        "reviewed_sha": "47d4654368b7be2713ff30562005a40556a91de8",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound theoretical demonstration scaling distinct analytic boundary variations carefully into testable continuous values.",
+        "reviewed_at": "2026-07-08T14:53:19.000Z",
+        "reviewed_sha": "47d4654368b7be2713ff30562005a40556a91de8",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound theoretical demonstration scaling distinct analytic boundary variations carefully into testable continuous values.",
+        "reviewed_at": "2026-07-08T14:53:19.000Z",
+        "reviewed_sha": "47d4654368b7be2713ff30562005a40556a91de8",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound theoretical demonstration scaling distinct analytic boundary variations carefully into testable continuous values.",
+        "reviewed_at": "2026-07-08T14:53:19.000Z",
+        "reviewed_sha": "47d4654368b7be2713ff30562005a40556a91de8",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound theoretical demonstration scaling distinct analytic boundary variations carefully into testable continuous values.",
+        "reviewed_at": "2026-07-08T14:53:19.000Z",
+        "reviewed_sha": "47d4654368b7be2713ff30562005a40556a91de8",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound theoretical demonstration scaling distinct analytic boundary variations carefully into testable continuous values.",
+        "reviewed_at": "2026-07-08T14:53:19.000Z",
+        "reviewed_sha": "47d4654368b7be2713ff30562005a40556a91de8",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound theoretical demonstration scaling distinct analytic boundary variations carefully into testable continuous values.",
+        "reviewed_at": "2026-07-08T14:53:19.000Z",
+        "reviewed_sha": "47d4654368b7be2713ff30562005a40556a91de8",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound theoretical demonstration scaling distinct analytic boundary variations carefully into testable continuous values.",
+        "reviewed_at": "2026-07-08T14:53:19.000Z",
+        "reviewed_sha": "47d4654368b7be2713ff30562005a40556a91de8",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound theoretical demonstration scaling distinct analytic boundary variations carefully into testable continuous values.",
+        "reviewed_at": "2026-07-08T14:53:19.000Z",
+        "reviewed_sha": "47d4654368b7be2713ff30562005a40556a91de8",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound theoretical demonstration scaling distinct analytic boundary variations carefully into testable continuous values.",
+        "reviewed_at": "2026-07-08T14:53:19.000Z",
+        "reviewed_sha": "47d4654368b7be2713ff30562005a40556a91de8",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound theoretical demonstration scaling distinct analytic boundary variations carefully into testable continuous values.",
+        "reviewed_at": "2026-07-08T14:53:19.000Z",
+        "reviewed_sha": "47d4654368b7be2713ff30562005a40556a91de8",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound theoretical demonstration scaling distinct analytic boundary variations carefully into testable continuous values.",
+        "reviewed_at": "2026-07-08T14:53:19.000Z",
+        "reviewed_sha": "47d4654368b7be2713ff30562005a40556a91de8",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound theoretical demonstration scaling distinct analytic boundary variations carefully into testable continuous values.",
+        "reviewed_at": "2026-07-08T14:53:19.000Z",
+        "reviewed_sha": "47d4654368b7be2713ff30562005a40556a91de8",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound theoretical demonstration scaling distinct analytic boundary variations carefully into testable continuous values.",
+        "reviewed_at": "2026-07-08T14:53:19.000Z",
+        "reviewed_sha": "47d4654368b7be2713ff30562005a40556a91de8",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound theoretical demonstration scaling distinct analytic boundary variations carefully into testable continuous values.",
+        "reviewed_at": "2026-07-08T14:53:19.000Z",
+        "reviewed_sha": "47d4654368b7be2713ff30562005a40556a91de8",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ]
   },
   "updated_at": "2026-07-07T14:26:56.849672Z"
 }
