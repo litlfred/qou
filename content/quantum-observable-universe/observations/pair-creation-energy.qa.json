@@ -834,6 +834,19 @@
         "reviewed_at": "2026-06-22T02:56:54.442Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T20:11:39.000Z",
+        "reviewed_sha": "a55eb7fdcaba6d315d0dddd0371362eedd17f2e1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-false-claim": [
@@ -853,6 +866,19 @@
         "notes": "No false claims identified in 'Energy cost of electron--positron conversion': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/pair-creation-energy.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T20:11:39.000Z",
+        "reviewed_sha": "a55eb7fdcaba6d315d0dddd0371362eedd17f2e1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-vacuous": [
@@ -871,6 +897,19 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Energy cost of electron--positron conversion' presents substantial mathematical content: How much energy does it cost to convert an electron into a positron? The answer ...",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T20:11:39.000Z",
+        "reviewed_sha": "a55eb7fdcaba6d315d0dddd0371362eedd17f2e1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-circular": [
@@ -890,6 +929,19 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Energy cost of electron--positron conversion'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/pair-creation-energy.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T20:11:39.000Z",
+        "reviewed_sha": "a55eb7fdcaba6d315d0dddd0371362eedd17f2e1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-overclaim": [
@@ -908,6 +960,19 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No overclaims: the scope of 'Energy cost of electron--positron conversion' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T20:11:39.000Z",
+        "reviewed_sha": "a55eb7fdcaba6d315d0dddd0371362eedd17f2e1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -927,6 +992,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Energy cost of electron--positron conversion'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/pair-creation-energy.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T20:11:39.000Z",
+        "reviewed_sha": "a55eb7fdcaba6d315d0dddd0371362eedd17f2e1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -946,6 +1024,19 @@
         "notes": "The argument flow in 'Energy cost of electron--positron conversion' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/pair-creation-energy.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T20:11:39.000Z",
+        "reviewed_sha": "a55eb7fdcaba6d315d0dddd0371362eedd17f2e1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -964,6 +1055,19 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T20:11:39.000Z",
+        "reviewed_sha": "a55eb7fdcaba6d315d0dddd0371362eedd17f2e1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -983,6 +1087,19 @@
         "notes": "No citations are present in 'Energy cost of electron--positron conversion', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/pair-creation-energy.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T20:11:39.000Z",
+        "reviewed_sha": "a55eb7fdcaba6d315d0dddd0371362eedd17f2e1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1002,6 +1119,19 @@
         "notes": "Key terms and symbols in 'Energy cost of electron--positron conversion' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/pair-creation-energy.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T20:11:39.000Z",
+        "reviewed_sha": "a55eb7fdcaba6d315d0dddd0371362eedd17f2e1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1021,6 +1151,19 @@
         "notes": "The algebraic and logical relations in 'Energy cost of electron--positron conversion' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/pair-creation-energy.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T20:11:39.000Z",
+        "reviewed_sha": "a55eb7fdcaba6d315d0dddd0371362eedd17f2e1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1040,6 +1183,19 @@
         "notes": "The physical concepts described in 'Energy cost of electron--positron conversion' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/pair-creation-energy.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T20:11:39.000Z",
+        "reviewed_sha": "a55eb7fdcaba6d315d0dddd0371362eedd17f2e1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1059,6 +1215,19 @@
         "notes": "The derivation steps and formal definitions in 'Energy cost of electron--positron conversion' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/pair-creation-energy.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T20:11:39.000Z",
+        "reviewed_sha": "a55eb7fdcaba6d315d0dddd0371362eedd17f2e1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1079,6 +1248,49 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Energy cost of electron--positron conversion' are consistent.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T20:11:39.000Z",
+        "reviewed_sha": "a55eb7fdcaba6d315d0dddd0371362eedd17f2e1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T20:11:39.000Z",
+        "reviewed_sha": "a55eb7fdcaba6d315d0dddd0371362eedd17f2e1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T20:11:39.000Z",
+        "reviewed_sha": "a55eb7fdcaba6d315d0dddd0371362eedd17f2e1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "voice-probe-narrative": [
