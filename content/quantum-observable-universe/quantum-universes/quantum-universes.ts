@@ -65,6 +65,8 @@ export default chapter({
         "higher-forms",
         "higher-forms-su2",
         "fundamental-object-explication",
+        "fundamental-object",
+        "tannaka-dual",
         "simple-objects-V",
         "unit-simplicity",
       ],
