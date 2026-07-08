@@ -113,18 +113,14 @@ def render_row(r: dict) -> str:
         label = "$\\mathfrak{p}$"
     else:
         label = f"${{}}^{{{A}}}${element}"
-    layer = r.get("layer", "—")
-    status_raw = r.get("canonical_status", "pending")
-    status = _STATUS_BADGES.get(status_raw, status_raw)
-    ptype = r.get("prediction_type", "—")
+    
     pred = _fmt(r.get("prediction_MeV_50dps"))
     ref = _fmt(r.get("reference_MeV_50dps"))
-    if ptype == "mass":
-        err = _fmt(r.get("err_ppm"), "{:+.3f}")
-        err_cell = f"{err} ppm" if err != "—" else "—"
-    else:
-        err = _fmt(r.get("err_pct"), "{:+.2f}")
-        err_cell = f"{err} %" if err != "—" else "—"
+    
+    # Always ppm
+    err = _fmt(r.get("err_ppm"), "{:+.4f}")
+    err_cell = f"{err} ppm" if err != "—" else "—"
+    
     cm = r.get("composite_mass", {}) or {}
     cm_pred = _fmt(cm.get("M_pred_MeV"), "{:.4f}")
     cm_ppm = _fmt(cm.get("err_ppm"), "{:+.4f}")
@@ -167,7 +163,7 @@ def render_z_section(shard: dict) -> list[str]:
         "",
         coverage_note,
         "",
-        "| Atom | $A$ | $N$ | Prediction (MeV) | Reference (MeV) | Error | $M_{\\mathrm{atom}}$ (MeV) | $M_{\\mathrm{atom}}$ Error (pred) | $M_{\\mathrm{atom}}$ Error (exp) |",
+        "| Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding $B_o$ (MeV) | Binding Error (ppm) | $M_{\\mathrm{atom}}$ (MeV) | $M_{\\mathrm{atom}}$ Error (pred) | $M_{\\mathrm{atom}}$ Error (exp) |",
         "|---|---|---|---|---|---|---|---|---|",
     ]
     for r in rows:
