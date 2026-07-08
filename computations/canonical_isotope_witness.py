@@ -77,13 +77,13 @@ def load_layer1() -> dict:
 
 def load_layer2() -> dict:
     """Load the L2 α-cluster recursion witness."""
-    path = _pb.witness_path("alpha-cluster-recursion.witness.json", HERE)
+    path = _pb.witness_path("alpha-cluster-recursion.witness.json", HERE / "alpha")
     return json.loads(path.read_text()) if path.exists() else {}
 
 
 def load_layer3() -> dict:
     """Load the L3 low-isotope binding sweep (partial-shell)."""
-    path = _pb.witness_path("low-isotope-binding-sweep.witness.json", HERE)
+    path = _pb.witness_path("low-isotope-binding-sweep.witness.json", HERE / "sweeps")
     return json.loads(path.read_text()) if path.exists() else {}
 
 
@@ -303,20 +303,17 @@ def assemble_row(
     excised: dict | None = None
     if canonical_candidates:
         b_pred, layer_used, canonical_status = canonical_candidates[0]
+    elif noncanonical_candidates:
+        b_pred, layer_used, canonical_status = noncanonical_candidates[0]
+        excised = {
+            "excised_layer": layer_used,
+            "excised_status": canonical_status,
+            "excised_prediction_MeV": b_pred,
+            "reason": "non-canonical (heuristic / empirical-assignment)",
+        }
     else:
         layer_used = "derivation-pending"
-        canonical_status = (
-            "derivation-pending" if noncanonical_candidates else "pending"
-        )
-        if noncanonical_candidates:
-            ev, el, es = noncanonical_candidates[0]
-            excised = {
-                "excised_layer": el,
-                "excised_status": es,
-                "excised_prediction_MeV": ev,
-                "reason": "non-canonical (heuristic / empirical-assignment) — "
-                          "excised from production per user directive 2026-06-02",
-            }
+        canonical_status = "pending"
 
     err_MeV = (b_pred - b_ame_mev) if (b_pred is not None and b_ame_mev is not None) else None
     err_pct = (err_MeV / b_ame_mev * 100.0) if (err_MeV is not None and b_ame_mev) else None
@@ -536,8 +533,8 @@ def main(argv: list[str] | None = None) -> int:
     shards_written: list[tuple[int, Path]] = []
     upstreams = [
         _pb.witness_path("canonical-mass-table-extended.witness.json", HERE),
-        _pb.witness_path("alpha-cluster-recursion.witness.json", HERE),
-        _pb.witness_path("low-isotope-binding-sweep.witness.json", HERE),
+        _pb.witness_path("alpha-cluster-recursion.witness.json", HERE / "alpha"),
+        _pb.witness_path("low-isotope-binding-sweep.witness.json", HERE / "sweeps"),
         _pb.witness_path("m-p-borromean-verification-50dps.witness.json", HERE),
         HERE / "data" / "ame2020.json",
     ]

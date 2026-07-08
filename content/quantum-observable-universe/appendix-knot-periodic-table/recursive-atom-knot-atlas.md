@@ -411,15 +411,15 @@ _2 of 8 isotopes with a framework prediction; 2 of 8 with L4 composite mass $M =
 
 ### Lithium (Z = 3)
 
-_0 of 11 isotopes with a framework prediction; 0 of 11 with L4 composite mass $M = N \cdot m_n + Z \cdot m_p - B$._
+_2 of 11 isotopes with a framework prediction; 0 of 11 with L4 composite mass $M = N \cdot m_n + Z \cdot m_p - B$._
 
 | Atom | $A$ | $N$ | Layer | Status | Predicts | Prediction (MeV) | Reference (MeV) | Error | $M_{\text{composite}}$ |
 |---|---|---|---|---|---|---|---|---|---|
 | ${}^{3}$Li | 3 | 0 | derivation-pending | ⚪ pending | binding_energy | — | -6.8010 | — | — |
 | ${}^{4}$Li | 4 | 1 | derivation-pending | ⚪ pending | binding_energy | — | 4.6150 | — | — |
 | ${}^{5}$Li | 5 | 2 | derivation-pending | ⚪ pending | binding_energy | — | 26.3307 | — | — |
-| ${}^{6}$Li | 6 | 3 | derivation-pending | derivation-pending | binding_energy | — | 31.9940 | — | — |
-| ${}^{7}$Li | 7 | 4 | derivation-pending | derivation-pending | binding_energy | — | 39.2451 | — | — |
+| ${}^{6}$Li | 6 | 3 | L3-partial-shell:f=0.500 from A=4→8 | 🟠 heuristic | binding_energy | 43.6570 | 31.9940 | +36.45 % | — |
+| ${}^{7}$Li | 7 | 4 | L3-partial-shell:f=0.750 from A=4→8 | 🟠 heuristic | binding_energy | 51.3377 | 39.2451 | +30.81 % | — |
 | ${}^{8}$Li | 8 | 5 | derivation-pending | ⚪ pending | binding_energy | — | 41.2777 | — | — |
 | ${}^{9}$Li | 9 | 6 | derivation-pending | ⚪ pending | binding_energy | — | 45.3399 | — | — |
 | ${}^{10}$Li | 10 | 7 | derivation-pending | ⚪ pending | binding_energy | — | 45.3135 | — | — |
@@ -429,7 +429,7 @@ _0 of 11 isotopes with a framework prediction; 0 of 11 with L4 composite mass $M
 
 ### Beryllium (Z = 4)
 
-_1 of 12 isotopes with a framework prediction; 1 of 12 with L4 composite mass $M = N \cdot m_n + Z \cdot m_p - B$._
+_3 of 12 isotopes with a framework prediction; 1 of 12 with L4 composite mass $M = N \cdot m_n + Z \cdot m_p - B$._
 
 | Atom | $A$ | $N$ | Layer | Status | Predicts | Prediction (MeV) | Reference (MeV) | Error | $M_{\text{composite}}$ |
 |---|---|---|---|---|---|---|---|---|---|
@@ -437,8 +437,8 @@ _1 of 12 isotopes with a framework prediction; 1 of 12 with L4 composite mass $M
 | ${}^{6}$Be | 6 | 2 | derivation-pending | ⚪ pending | binding_energy | — | 26.9235 | — | — |
 | ${}^{7}$Be | 7 | 3 | derivation-pending | ⚪ pending | binding_energy | — | 37.6008 | — | — |
 | ${}^{8}$Be | 8 | 4 | L2-alpha-cluster | 🟢 recursive | binding_energy | 62.3383 | 56.4995 | +10.33 % | 7666.0587 MeV (+28049.8 ppm) |
-| ${}^{9}$Be | 9 | 5 | derivation-pending | derivation-pending | binding_energy | — | 58.1640 | — | — |
-| ${}^{10}$Be | 10 | 6 | derivation-pending | derivation-pending | binding_energy | — | 64.9763 | — | — |
+| ${}^{9}$Be | 9 | 5 | L3-partial-shell:f=0.250 from A=8→12 | 🟠 heuristic | binding_energy | 67.3058 | 58.1640 | +15.72 % | — |
+| ${}^{10}$Be | 10 | 6 | L3-partial-shell:f=0.500 from A=8→12 | 🟠 heuristic | binding_energy | 75.5932 | 64.9763 | +16.34 % | — |
 | ${}^{11}$Be | 11 | 7 | derivation-pending | ⚪ pending | binding_energy | — | 65.4779 | — | — |
 | ${}^{12}$Be | 12 | 8 | derivation-pending | ⚪ pending | binding_energy | — | 68.6487 | — | — |
 | ${}^{13}$Be | 13 | 9 | derivation-pending | ⚪ pending | binding_energy | — | 68.1387 | — | — |
@@ -448,7 +448,7 @@ _1 of 12 isotopes with a framework prediction; 1 of 12 with L4 composite mass $M
 
 ### Boron (Z = 5)
 
-_0 of 16 isotopes with a framework prediction; 0 of 16 with L4 composite mass $M = N \cdot m_n + Z \cdot m_p - B$._
+_2 of 16 isotopes with a framework prediction; 0 of 16 with L4 composite mass $M = N \cdot m_n + Z \cdot m_p - B$._
 
 | Atom | $A$ | $N$ | Layer | Status | Predicts | Prediction (MeV) | Reference (MeV) | Error | $M_{\text{composite}}$ |
 |---|---|---|---|---|---|---|---|---|---|
@@ -456,8 +456,8 @@ _0 of 16 isotopes with a framework prediction; 0 of 16 with L4 composite mass $M
 | ${}^{7}$B | 7 | 2 | derivation-pending | ⚪ pending | binding_energy | — | 24.9109 | — | — |
 | ${}^{8}$B | 8 | 3 | derivation-pending | ⚪ pending | binding_energy | — | 37.7372 | — | — |
 | ${}^{9}$B | 9 | 4 | derivation-pending | ⚪ pending | binding_energy | — | 56.3136 | — | — |
-| ${}^{10}$B | 10 | 5 | derivation-pending | derivation-pending | binding_energy | — | 64.7508 | — | — |
-| ${}^{11}$B | 11 | 6 | derivation-pending | derivation-pending | binding_energy | — | 76.2051 | — | — |
+| ${}^{10}$B | 10 | 5 | L3-partial-shell:f=0.500 from A=8→12 | 🟠 heuristic | binding_energy | 75.5932 | 64.7508 | +16.74 % | — |
+| ${}^{11}$B | 11 | 6 | L3-partial-shell:f=0.750 from A=8→12 | 🟠 heuristic | binding_energy | 83.8806 | 76.2051 | +10.07 % | — |
 | ${}^{12}$B | 12 | 7 | derivation-pending | ⚪ pending | binding_energy | — | 79.5747 | — | — |
 | ${}^{13}$B | 13 | 8 | derivation-pending | ⚪ pending | binding_energy | — | 84.4535 | — | — |
 | ${}^{14}$B | 14 | 9 | derivation-pending | ⚪ pending | binding_energy | — | 85.4230 | — | — |
@@ -471,7 +471,7 @@ _0 of 16 isotopes with a framework prediction; 0 of 16 with L4 composite mass $M
 
 ### Carbon (Z = 6)
 
-_1 of 16 isotopes with a framework prediction; 1 of 16 with L4 composite mass $M = N \cdot m_n + Z \cdot m_p - B$._
+_2 of 16 isotopes with a framework prediction; 1 of 16 with L4 composite mass $M = N \cdot m_n + Z \cdot m_p - B$._
 
 | Atom | $A$ | $N$ | Layer | Status | Predicts | Prediction (MeV) | Reference (MeV) | Error | $M_{\text{composite}}$ |
 |---|---|---|---|---|---|---|---|---|---|
@@ -480,7 +480,7 @@ _1 of 16 isotopes with a framework prediction; 1 of 16 with L4 composite mass $M
 | ${}^{10}$C | 10 | 4 | derivation-pending | ⚪ pending | binding_energy | — | 60.3204 | — | — |
 | ${}^{11}$C | 11 | 5 | derivation-pending | ⚪ pending | binding_energy | — | 73.4410 | — | — |
 | ${}^{12}$C | 12 | 6 | L2-alpha-cluster | 🟢 recursive | binding_energy | 97.1480 | 92.1617 | +5.41 % | 11495.4475 MeV (+28405.8 ppm) |
-| ${}^{13}$C | 13 | 7 | derivation-pending | derivation-pending | binding_energy | — | 97.1080 | — | — |
+| ${}^{13}$C | 13 | 7 | L3-partial-shell:f=0.250 from A=12→16 | 🟠 heuristic | binding_energy | 101.0622 | 97.1080 | +4.07 % | — |
 | ${}^{14}$C | 14 | 8 | derivation-pending | ⚪ pending | binding_energy | — | 105.2845 | — | — |
 | ${}^{15}$C | 15 | 9 | derivation-pending | ⚪ pending | binding_energy | — | 106.5025 | — | — |
 | ${}^{16}$C | 16 | 10 | derivation-pending | ⚪ pending | binding_energy | — | 110.7529 | — | — |
@@ -494,7 +494,7 @@ _1 of 16 isotopes with a framework prediction; 1 of 16 with L4 composite mass $M
 
 ### Nitrogen (Z = 7)
 
-_0 of 16 isotopes with a framework prediction; 0 of 16 with L4 composite mass $M = N \cdot m_n + Z \cdot m_p - B$._
+_2 of 16 isotopes with a framework prediction; 0 of 16 with L4 composite mass $M = N \cdot m_n + Z \cdot m_p - B$._
 
 | Atom | $A$ | $N$ | Layer | Status | Predicts | Prediction (MeV) | Reference (MeV) | Error | $M_{\text{composite}}$ |
 |---|---|---|---|---|---|---|---|---|---|
@@ -502,8 +502,8 @@ _0 of 16 isotopes with a framework prediction; 0 of 16 with L4 composite mass $M
 | ${}^{11}$N | 11 | 4 | derivation-pending | ⚪ pending | binding_energy | — | 58.9424 | — | — |
 | ${}^{12}$N | 12 | 5 | derivation-pending | ⚪ pending | binding_energy | — | 74.0413 | — | — |
 | ${}^{13}$N | 13 | 6 | derivation-pending | ⚪ pending | binding_energy | — | 94.1052 | — | — |
-| ${}^{14}$N | 14 | 7 | derivation-pending | derivation-pending | binding_energy | — | 104.6586 | — | — |
-| ${}^{15}$N | 15 | 8 | derivation-pending | derivation-pending | binding_energy | — | 115.4919 | — | — |
+| ${}^{14}$N | 14 | 7 | L3-partial-shell:f=0.500 from A=12→16 | 🟠 heuristic | binding_energy | 109.9563 | 104.6586 | +5.06 % | — |
+| ${}^{15}$N | 15 | 8 | L3-partial-shell:f=0.750 from A=12→16 | 🟠 heuristic | binding_energy | 118.8505 | 115.4919 | +2.91 % | — |
 | ${}^{16}$N | 16 | 9 | derivation-pending | ⚪ pending | binding_energy | — | 117.9808 | — | — |
 | ${}^{17}$N | 17 | 10 | derivation-pending | ⚪ pending | binding_energy | — | 123.8659 | — | — |
 | ${}^{18}$N | 18 | 11 | derivation-pending | ⚪ pending | binding_energy | — | 126.6941 | — | — |
@@ -517,7 +517,7 @@ _0 of 16 isotopes with a framework prediction; 0 of 16 with L4 composite mass $M
 
 ### Oxygen (Z = 8)
 
-_1 of 18 isotopes with a framework prediction; 1 of 18 with L4 composite mass $M = N \cdot m_n + Z \cdot m_p - B$._
+_3 of 18 isotopes with a framework prediction; 1 of 18 with L4 composite mass $M = N \cdot m_n + Z \cdot m_p - B$._
 
 | Atom | $A$ | $N$ | Layer | Status | Predicts | Prediction (MeV) | Reference (MeV) | Error | $M_{\text{composite}}$ |
 |---|---|---|---|---|---|---|---|---|---|
@@ -527,8 +527,8 @@ _1 of 18 isotopes with a framework prediction; 1 of 18 with L4 composite mass $M
 | ${}^{14}$O | 14 | 6 | derivation-pending | ⚪ pending | binding_energy | — | 98.7319 | — | — |
 | ${}^{15}$O | 15 | 7 | derivation-pending | ⚪ pending | binding_energy | — | 111.9554 | — | — |
 | ${}^{16}$O | 16 | 8 | L2-alpha-cluster | 🟢 recursive | binding_energy | 134.3846 | 127.6193 | +5.30 % | 15322.4093 MeV (+28407.0 ppm) |
-| ${}^{17}$O | 17 | 9 | derivation-pending | derivation-pending | binding_energy | — | 131.7624 | — | — |
-| ${}^{18}$O | 18 | 10 | derivation-pending | derivation-pending | binding_energy | — | 139.8078 | — | — |
+| ${}^{17}$O | 17 | 9 | L3-partial-shell:f=0.250 from A=16→20 | 🟠 heuristic | binding_energy | 137.2455 | 131.7624 | +4.16 % | — |
+| ${}^{18}$O | 18 | 10 | L3-partial-shell:f=0.500 from A=16→20 | 🟠 heuristic | binding_energy | 146.7464 | 139.8078 | +4.96 % | — |
 | ${}^{19}$O | 19 | 11 | derivation-pending | ⚪ pending | binding_energy | — | 143.7634 | — | — |
 | ${}^{20}$O | 20 | 12 | derivation-pending | ⚪ pending | binding_energy | — | 151.3714 | — | — |
 | ${}^{21}$O | 21 | 13 | derivation-pending | ⚪ pending | binding_energy | — | 155.1769 | — | — |
@@ -542,7 +542,7 @@ _1 of 18 isotopes with a framework prediction; 1 of 18 with L4 composite mass $M
 
 ### Fluorine (Z = 9)
 
-_0 of 19 isotopes with a framework prediction; 0 of 19 with L4 composite mass $M = N \cdot m_n + Z \cdot m_p - B$._
+_1 of 19 isotopes with a framework prediction; 0 of 19 with L4 composite mass $M = N \cdot m_n + Z \cdot m_p - B$._
 
 | Atom | $A$ | $N$ | Layer | Status | Predicts | Prediction (MeV) | Reference (MeV) | Error | $M_{\text{composite}}$ |
 |---|---|---|---|---|---|---|---|---|---|
@@ -552,7 +552,7 @@ _0 of 19 isotopes with a framework prediction; 0 of 19 with L4 composite mass $M
 | ${}^{16}$F | 16 | 7 | derivation-pending | ⚪ pending | binding_energy | — | 111.4248 | — | — |
 | ${}^{17}$F | 17 | 8 | derivation-pending | ⚪ pending | binding_energy | — | 128.2196 | — | — |
 | ${}^{18}$F | 18 | 9 | derivation-pending | ⚪ pending | binding_energy | — | 137.3695 | — | — |
-| ${}^{19}$F | 19 | 10 | derivation-pending | derivation-pending | binding_energy | — | 147.8014 | — | — |
+| ${}^{19}$F | 19 | 10 | L3-partial-shell:f=0.750 from A=16→20 | 🟠 heuristic | binding_energy | 156.2474 | 147.8014 | +5.71 % | — |
 | ${}^{20}$F | 20 | 11 | derivation-pending | ⚪ pending | binding_energy | — | 154.4027 | — | — |
 | ${}^{21}$F | 21 | 12 | derivation-pending | ⚪ pending | binding_energy | — | 162.5042 | — | — |
 | ${}^{22}$F | 22 | 13 | derivation-pending | ⚪ pending | binding_energy | — | 167.7345 | — | — |
@@ -568,7 +568,7 @@ _0 of 19 isotopes with a framework prediction; 0 of 19 with L4 composite mass $M
 
 ### Neon (Z = 10)
 
-_1 of 20 isotopes with a framework prediction; 1 of 20 with L4 composite mass $M = N \cdot m_n + Z \cdot m_p - B$._
+_3 of 20 isotopes with a framework prediction; 1 of 20 with L4 composite mass $M = N \cdot m_n + Z \cdot m_p - B$._
 
 | Atom | $A$ | $N$ | Layer | Status | Predicts | Prediction (MeV) | Reference (MeV) | Error | $M_{\text{composite}}$ |
 |---|---|---|---|---|---|---|---|---|---|
@@ -578,8 +578,8 @@ _1 of 20 isotopes with a framework prediction; 1 of 20 with L4 composite mass $M
 | ${}^{18}$Ne | 18 | 8 | derivation-pending | ⚪ pending | binding_energy | — | 132.1426 | — | — |
 | ${}^{19}$Ne | 19 | 9 | derivation-pending | ⚪ pending | binding_energy | — | 143.7795 | — | — |
 | ${}^{20}$Ne | 20 | 10 | L2-alpha-cluster | 🟢 recursive | binding_energy | 174.0483 | 160.6448 | +8.34 % | 19146.9442 MeV (+28143.1 ppm) |
-| ${}^{21}$Ne | 21 | 11 | derivation-pending | derivation-pending | binding_energy | — | 167.4060 | — | — |
-| ${}^{22}$Ne | 22 | 12 | derivation-pending | derivation-pending | binding_energy | — | 177.7702 | — | — |
+| ${}^{21}$Ne | 21 | 11 | L3-partial-shell:f=0.250 from A=20→24 | 🟠 heuristic | binding_energy | 175.8559 | 167.4060 | +5.05 % | — |
+| ${}^{22}$Ne | 22 | 12 | L3-partial-shell:f=0.500 from A=20→24 | 🟠 heuristic | binding_energy | 185.9636 | 177.7702 | +4.61 % | — |
 | ${}^{23}$Ne | 23 | 13 | derivation-pending | ⚪ pending | binding_energy | — | 182.9709 | — | — |
 | ${}^{24}$Ne | 24 | 14 | derivation-pending | ⚪ pending | binding_energy | — | 191.8398 | — | — |
 | ${}^{25}$Ne | 25 | 15 | derivation-pending | ⚪ pending | binding_energy | — | 195.9950 | — | — |

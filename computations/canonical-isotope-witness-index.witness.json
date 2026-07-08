@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.13.12",
-  "computedAt": "2026-07-08T09:54:41.624456+00:00",
-  "commitSha": "53b9638d2669f901c14720e35fbc4e6a0c1d8457",
+  "computedAt": "2026-07-08T13:54:11.134374+00:00",
+  "commitSha": "03b809bbeb51a14f61ccd9ca1e009a852a205539",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "canonical-isotope-witness-index",
   "scriptFile": "canonical_isotope_witness.py",
-  "scriptHash": "f34d572be32a",
-  "scriptCommitSha": "a39f7e92689ee88f9d43107bfcb0048f4c5e604f",
+  "scriptHash": "4af407a55d21",
+  "scriptCommitSha": "e987c1f5a121c90b9ea69461504c815b4eaae8d9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -59,56 +59,56 @@
         "shard_filename": "canonical-isotope-witness-Z03.witness.json",
         "element": "Li",
         "rows_total": 11,
-        "rows_with_prediction": 0,
+        "rows_with_prediction": 2,
         "rows_with_composite_mass": 0
       },
       "4": {
         "shard_filename": "canonical-isotope-witness-Z04.witness.json",
         "element": "Be",
         "rows_total": 12,
-        "rows_with_prediction": 1,
+        "rows_with_prediction": 3,
         "rows_with_composite_mass": 1
       },
       "5": {
         "shard_filename": "canonical-isotope-witness-Z05.witness.json",
         "element": "B",
         "rows_total": 16,
-        "rows_with_prediction": 0,
+        "rows_with_prediction": 2,
         "rows_with_composite_mass": 0
       },
       "6": {
         "shard_filename": "canonical-isotope-witness-Z06.witness.json",
         "element": "C",
         "rows_total": 16,
-        "rows_with_prediction": 1,
+        "rows_with_prediction": 2,
         "rows_with_composite_mass": 1
       },
       "7": {
         "shard_filename": "canonical-isotope-witness-Z07.witness.json",
         "element": "N",
         "rows_total": 16,
-        "rows_with_prediction": 0,
+        "rows_with_prediction": 2,
         "rows_with_composite_mass": 0
       },
       "8": {
         "shard_filename": "canonical-isotope-witness-Z08.witness.json",
         "element": "O",
         "rows_total": 18,
-        "rows_with_prediction": 1,
+        "rows_with_prediction": 3,
         "rows_with_composite_mass": 1
       },
       "9": {
         "shard_filename": "canonical-isotope-witness-Z09.witness.json",
         "element": "F",
         "rows_total": 19,
-        "rows_with_prediction": 0,
+        "rows_with_prediction": 1,
         "rows_with_composite_mass": 0
       },
       "10": {
         "shard_filename": "canonical-isotope-witness-Z10.witness.json",
         "element": "Ne",
         "rows_total": 20,
-        "rows_with_prediction": 1,
+        "rows_with_prediction": 3,
         "rows_with_composite_mass": 1
       },
       "11": {
