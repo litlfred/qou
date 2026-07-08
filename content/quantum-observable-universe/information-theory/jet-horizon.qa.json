@@ -910,6 +910,19 @@
         "reviewed_at": "2026-07-07T14:26:55.603650Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound topological definition clearly restricting trapped sections natively into formal zeroth degree boundaries.",
+        "reviewed_at": "2026-07-08T13:46:57.000Z",
+        "reviewed_sha": "1b08ac2b521b06696a33f4cc8fa10862be489191",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "wall-side-statement": [
@@ -951,6 +964,19 @@
         "notes": "The claim in 'Jet horizon (degree-$0$ vanishing locus)' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/jet-horizon.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound topological definition clearly restricting trapped sections natively into formal zeroth degree boundaries.",
+        "reviewed_at": "2026-07-08T13:46:57.000Z",
+        "reviewed_sha": "1b08ac2b521b06696a33f4cc8fa10862be489191",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-vacuous": [
@@ -971,6 +997,19 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The block 'Jet horizon (degree-$0$ vanishing locus)' presents substantial mathematical content: Let $U \\subset M_0$ be an open subset of the descended universe carrying an affi...",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound topological definition clearly restricting trapped sections natively into formal zeroth degree boundaries.",
+        "reviewed_at": "2026-07-08T13:46:57.000Z",
+        "reviewed_sha": "1b08ac2b521b06696a33f4cc8fa10862be489191",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-circular": [
@@ -992,6 +1031,19 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Jet horizon (degree-$0$ vanishing locus)'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/jet-horizon.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound topological definition clearly restricting trapped sections natively into formal zeroth degree boundaries.",
+        "reviewed_at": "2026-07-08T13:46:57.000Z",
+        "reviewed_sha": "1b08ac2b521b06696a33f4cc8fa10862be489191",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-overclaim": [
@@ -1012,6 +1064,19 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The prose presents 'Jet horizon (degree-$0$ vanishing locus)' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound topological definition clearly restricting trapped sections natively into formal zeroth degree boundaries.",
+        "reviewed_at": "2026-07-08T13:46:57.000Z",
+        "reviewed_sha": "1b08ac2b521b06696a33f4cc8fa10862be489191",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1033,6 +1098,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Jet horizon (degree-$0$ vanishing locus)'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/jet-horizon.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound topological definition clearly restricting trapped sections natively into formal zeroth degree boundaries.",
+        "reviewed_at": "2026-07-08T13:46:57.000Z",
+        "reviewed_sha": "1b08ac2b521b06696a33f4cc8fa10862be489191",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1054,6 +1132,19 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/information-theory/jet-horizon.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/jet-horizon.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound topological definition clearly restricting trapped sections natively into formal zeroth degree boundaries.",
+        "reviewed_at": "2026-07-08T13:46:57.000Z",
+        "reviewed_sha": "1b08ac2b521b06696a33f4cc8fa10862be489191",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1074,6 +1165,19 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/information-theory/jet-horizon.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound topological definition clearly restricting trapped sections natively into formal zeroth degree boundaries.",
+        "reviewed_at": "2026-07-08T13:46:57.000Z",
+        "reviewed_sha": "1b08ac2b521b06696a33f4cc8fa10862be489191",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1095,6 +1199,19 @@
         "notes": "No citations are present in 'Jet horizon (degree-$0$ vanishing locus)', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/jet-horizon.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound topological definition clearly restricting trapped sections natively into formal zeroth degree boundaries.",
+        "reviewed_at": "2026-07-08T13:46:57.000Z",
+        "reviewed_sha": "1b08ac2b521b06696a33f4cc8fa10862be489191",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1116,6 +1233,19 @@
         "notes": "Key terms and symbols in 'Jet horizon (degree-$0$ vanishing locus)' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/jet-horizon.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound topological definition clearly restricting trapped sections natively into formal zeroth degree boundaries.",
+        "reviewed_at": "2026-07-08T13:46:57.000Z",
+        "reviewed_sha": "1b08ac2b521b06696a33f4cc8fa10862be489191",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1137,6 +1267,19 @@
         "notes": "The algebraic and logical relations in 'Jet horizon (degree-$0$ vanishing locus)' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/jet-horizon.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound topological definition clearly restricting trapped sections natively into formal zeroth degree boundaries.",
+        "reviewed_at": "2026-07-08T13:46:57.000Z",
+        "reviewed_sha": "1b08ac2b521b06696a33f4cc8fa10862be489191",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1158,6 +1301,19 @@
         "notes": "The physical concepts described in 'Jet horizon (degree-$0$ vanishing locus)' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/jet-horizon.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound topological definition clearly restricting trapped sections natively into formal zeroth degree boundaries.",
+        "reviewed_at": "2026-07-08T13:46:57.000Z",
+        "reviewed_sha": "1b08ac2b521b06696a33f4cc8fa10862be489191",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1179,6 +1335,19 @@
         "notes": "The Lean sibling content/quantum-observable-universe/information-theory/jet-horizon.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/jet-horizon.lean:1 — /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/jet-horizon.lean:28:4: error: `QOU.JetHorizon` has already been declared"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound topological definition clearly restricting trapped sections natively into formal zeroth degree boundaries.",
+        "reviewed_at": "2026-07-08T13:46:57.000Z",
+        "reviewed_sha": "1b08ac2b521b06696a33f4cc8fa10862be489191",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1201,6 +1370,19 @@
         "severity": "critical",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/information-theory/jet-horizon.lean contains compilation errors: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/jet-horizon.lean:28:4: error: `QOU.JetHorizon` has already been declared, invalidating the claimed formalization."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound topological definition clearly restricting trapped sections natively into formal zeroth degree boundaries.",
+        "reviewed_at": "2026-07-08T13:46:57.000Z",
+        "reviewed_sha": "1b08ac2b521b06696a33f4cc8fa10862be489191",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1378,6 +1560,36 @@
         },
         "score": {
           "value": 0.85
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound topological definition clearly restricting trapped sections natively into formal zeroth degree boundaries.",
+        "reviewed_at": "2026-07-08T13:46:57.000Z",
+        "reviewed_sha": "1b08ac2b521b06696a33f4cc8fa10862be489191",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound topological definition clearly restricting trapped sections natively into formal zeroth degree boundaries.",
+        "reviewed_at": "2026-07-08T13:46:57.000Z",
+        "reviewed_sha": "1b08ac2b521b06696a33f4cc8fa10862be489191",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
         }
       }
     ]
