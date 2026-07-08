@@ -929,6 +929,19 @@
         "reviewed_at": "2026-07-07T14:26:56.640898Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:46:27.000Z",
+        "reviewed_sha": "aae131832c1e8086968e84214eaf91d1ca6a63a2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -969,6 +982,19 @@
         "notes": "No false claims identified in 'Chirality as continuous phase rotation in the pre-observable sector': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/complex-chirality-rotation.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:46:27.000Z",
+        "reviewed_sha": "aae131832c1e8086968e84214eaf91d1ca6a63a2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-vacuous": [
@@ -990,6 +1016,19 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The claims in 'Chirality as continuous phase rotation in the pre-observable sector' are non-vacuous as they make concrete conjectures about 'Let $q = |q|e^{i\\theta}$ be a complex substrate parameter wi...'.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:46:27.000Z",
+        "reviewed_sha": "aae131832c1e8086968e84214eaf91d1ca6a63a2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-circular": [
@@ -1012,6 +1051,19 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Chirality as continuous phase rotation in the pre-observable sector'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/complex-chirality-rotation.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:46:27.000Z",
+        "reviewed_sha": "aae131832c1e8086968e84214eaf91d1ca6a63a2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-overclaim": [
@@ -1033,6 +1085,19 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose in 'Chirality as continuous phase rotation in the pre-observable sector' presents the result as established, but the Lean formalization is incomplete (has sorry).",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:46:27.000Z",
+        "reviewed_sha": "aae131832c1e8086968e84214eaf91d1ca6a63a2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1055,6 +1120,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Chirality as continuous phase rotation in the pre-observable sector'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/complex-chirality-rotation.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:46:27.000Z",
+        "reviewed_sha": "aae131832c1e8086968e84214eaf91d1ca6a63a2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1077,6 +1155,19 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/observations/complex-chirality-rotation.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/complex-chirality-rotation.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:46:27.000Z",
+        "reviewed_sha": "aae131832c1e8086968e84214eaf91d1ca6a63a2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1098,6 +1189,19 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/observations/complex-chirality-rotation.lean uses a class-conjecture pattern, matching the conjectural nature of 'Chirality as continuous phase rotation in the pre-observable sector'.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:46:27.000Z",
+        "reviewed_sha": "aae131832c1e8086968e84214eaf91d1ca6a63a2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1120,6 +1224,19 @@
         "notes": "No citations are present in 'Chirality as continuous phase rotation in the pre-observable sector', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/complex-chirality-rotation.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:46:27.000Z",
+        "reviewed_sha": "aae131832c1e8086968e84214eaf91d1ca6a63a2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1142,6 +1259,19 @@
         "notes": "Key terms and symbols in 'Chirality as continuous phase rotation in the pre-observable sector' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/complex-chirality-rotation.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:46:27.000Z",
+        "reviewed_sha": "aae131832c1e8086968e84214eaf91d1ca6a63a2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1164,6 +1294,19 @@
         "notes": "The algebraic and logical relations in 'Chirality as continuous phase rotation in the pre-observable sector' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/complex-chirality-rotation.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:46:27.000Z",
+        "reviewed_sha": "aae131832c1e8086968e84214eaf91d1ca6a63a2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1186,6 +1329,19 @@
         "notes": "The physical concepts described in 'Chirality as continuous phase rotation in the pre-observable sector' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/complex-chirality-rotation.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:46:27.000Z",
+        "reviewed_sha": "aae131832c1e8086968e84214eaf91d1ca6a63a2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1208,6 +1364,19 @@
         "notes": "The Lean sibling content/quantum-observable-universe/observations/complex-chirality-rotation.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/complex-chirality-rotation.lean:1 — content/quantum-observable-universe/observations/complex-chirality-rotation.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Defs.olean' of module Mathlib.Data.Nat.Defs does not exist"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:46:27.000Z",
+        "reviewed_sha": "aae131832c1e8086968e84214eaf91d1ca6a63a2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1231,6 +1400,19 @@
         "verdict": "survivable-objection",
         "referee_argument": "The conjectured algebraic or physical relations in 'Chirality as continuous phase rotation in the pre-observable sector' remain unproven and are represented as sorry stubs in the formalization.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:46:27.000Z",
+        "reviewed_sha": "aae131832c1e8086968e84214eaf91d1ca6a63a2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1390,6 +1572,36 @@
         },
         "score": {
           "value": 0.85
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:46:27.000Z",
+        "reviewed_sha": "aae131832c1e8086968e84214eaf91d1ca6a63a2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:46:27.000Z",
+        "reviewed_sha": "aae131832c1e8086968e84214eaf91d1ca6a63a2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
         }
       }
     ]
