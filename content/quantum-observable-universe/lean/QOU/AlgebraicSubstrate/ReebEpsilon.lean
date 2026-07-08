@@ -124,4 +124,10 @@ class ArchimedeanInfinitesimal {C : Type u} [Category.{v} C]
   archimedean_smallness :
     ∀ (lam : ℝ), 0 < lam → ∀ (_n : ℕ), ∃ b : ℝ, 0 ≤ b ∧ b ≤ lam
 
+instance {C : Type u} [Category.{v} C] [MonoidalCategory C] (R : ReebEpsilon C) : ReebPositive R where
+  pairing_pos nv hnv := ⟨nv, hnv, le_rfl⟩
+
+instance {C : Type u} [Category.{v} C] [MonoidalCategory C] (R : ReebEpsilon C) : ArchimedeanInfinitesimal R where
+  archimedean_smallness _lam hlam _n := ⟨0, le_rfl, le_of_lt hlam⟩
+
 end QOU.AlgebraicSubstrate
