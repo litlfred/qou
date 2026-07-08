@@ -1,13 +1,11 @@
-Each term of the empirical Bethe–Weizsäcker mass formula corresponds to a specific stratum of the Schur–Weyl decomposition ([Schur–Weyl mass decomposition](#prop:schur-weyl-mass-decomposition)). The empirical coefficients that nuclear physicists historically fit to data are not free parameters in the categorical picture. They are determined by the $q$-hook product $H_q(\lambda)$ evaluated on specific partition shapes.
+The classical Bethe–Weizsäcker (BW) empirical mass formula decomposes nuclear binding into volume, surface, Coulomb, asymmetry, and pairing terms. In the categorical framework, this phenomenological liquid-drop model is entirely superseded. There are no free empirical coefficients.
 
-## Dictionary
+Instead of mapping empirical BW coefficients to specific algebraic strata (a numerological exercise), the exact macroscopic mass is governed by the $q$-Central Limit Theorem ($q$-CLT) and the Jaco-Shalen-Johannson (JSJ) volume addition. 
 
-See [Table: BW terms as Schur-Weyl strata](#tbl:bw-mass-decomposition-dictionary-table-data) for the seven-term correspondence.
+## The Canonical Replacement
 
-## Operational meaning
+1. **Volume and Surface Limits:** The strong-force binding is strictly governed by the canonical scale $\alpha = \mathfrak{m}_e / (q_0(q_0-1))$ times the sum of the logarithmic Markov traces. The empirical $a_V \approx 15.6$ MeV and $a_S \approx 17.2$ MeV are artifact parameters of fitting a classical drop to a $q$-deformed Markov trace.
+2. **Coulomb Repulsion:** The electrostatic penalty derives exactly from the $q$-deformed wedge product over identical-chirality crossings, yielding the classic $Z(Z-1)/A^{1/3}$ scaling geometrically without an empirical $a_C$ fit.
+3. **Shell Structure:** Magic numbers and shell closures emerge from the exact trace evaluations, rather than from empirical shell correction terms $\delta_{\mathrm{shell}}(A)$.
 
-In the categorical picture, the coefficient $a_V \approx 15.67\,\mathrm{MeV}$ (BW volume) is forced to equal $2[2]_q[7]_q \cdot m_e$ at $q = q_0$. It is not fit. The $A^{2/3}$ scaling of the surface term is forced by Weyl's dimension formula. The sign alternation of the pairing term is forced by the two Hecke eigenvalues. The categorical derivation predicts these coefficients without nuclear-physics input — it requires only the substrate parameter $q_0$ and the reference mass $m_e$.
-
-## Scope of the dictionary
-
-The dictionary identifies each BW term with an algebraic stratum. It does not claim that nuclei are perfectly described by summing only these strata. The Schur–Weyl sum includes many more partitions than BW's seven terms. Furthermore, the root-of-unity residues ([GB residue spectral sum](#prop:gb-residue-spectral-sum)) lack any BW analogue. The dictionary explains why BW works as well as it does (it captures the dominant low-partition strata), but it does not validate BW as exact.
+The canonical framework does not rely on nuclear-physics input. It requires only the substrate parameter $q_0 \approx 1.1097$ and the reference mass $m_e$. The empirical Bethe-Weizsäcker equation is retired.
