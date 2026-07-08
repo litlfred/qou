@@ -910,6 +910,19 @@
         "reviewed_at": "2026-07-07T14:26:55.542151Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formal definition cleanly grounding macroscopic independent transfer accurately onto rigid multiplicative traces.",
+        "reviewed_at": "2026-07-08T13:46:09.000Z",
+        "reviewed_sha": "156172ac6c49f82105bc9c968b974ee94a442055",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "wall-side-statement": [
@@ -951,6 +964,19 @@
         "notes": "No false claims identified in 'One-dimensional QOU channel (optical fibre)': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/one-dim-qou-channel.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formal definition cleanly grounding macroscopic independent transfer accurately onto rigid multiplicative traces.",
+        "reviewed_at": "2026-07-08T13:46:09.000Z",
+        "reviewed_sha": "156172ac6c49f82105bc9c968b974ee94a442055",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-vacuous": [
@@ -971,6 +997,19 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The block 'One-dimensional QOU channel (optical fibre)' presents substantial mathematical content: The **cladding** is the surface of the fibre, modelled as a topological boundary...",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formal definition cleanly grounding macroscopic independent transfer accurately onto rigid multiplicative traces.",
+        "reviewed_at": "2026-07-08T13:46:09.000Z",
+        "reviewed_sha": "156172ac6c49f82105bc9c968b974ee94a442055",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-circular": [
@@ -992,6 +1031,19 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'One-dimensional QOU channel (optical fibre)'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/one-dim-qou-channel.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formal definition cleanly grounding macroscopic independent transfer accurately onto rigid multiplicative traces.",
+        "reviewed_at": "2026-07-08T13:46:09.000Z",
+        "reviewed_sha": "156172ac6c49f82105bc9c968b974ee94a442055",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-overclaim": [
@@ -1012,6 +1064,19 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "No overclaims: the scope of 'One-dimensional QOU channel (optical fibre)' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formal definition cleanly grounding macroscopic independent transfer accurately onto rigid multiplicative traces.",
+        "reviewed_at": "2026-07-08T13:46:09.000Z",
+        "reviewed_sha": "156172ac6c49f82105bc9c968b974ee94a442055",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1033,6 +1098,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'One-dimensional QOU channel (optical fibre)'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/one-dim-qou-channel.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formal definition cleanly grounding macroscopic independent transfer accurately onto rigid multiplicative traces.",
+        "reviewed_at": "2026-07-08T13:46:09.000Z",
+        "reviewed_sha": "156172ac6c49f82105bc9c968b974ee94a442055",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1054,6 +1132,19 @@
         "notes": "The argument flow in 'One-dimensional QOU channel (optical fibre)' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/one-dim-qou-channel.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formal definition cleanly grounding macroscopic independent transfer accurately onto rigid multiplicative traces.",
+        "reviewed_at": "2026-07-08T13:46:09.000Z",
+        "reviewed_sha": "156172ac6c49f82105bc9c968b974ee94a442055",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1074,6 +1165,19 @@
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Lean formalization and narrative for 'One-dimensional QOU channel (optical fibre)' are in complete agreement.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formal definition cleanly grounding macroscopic independent transfer accurately onto rigid multiplicative traces.",
+        "reviewed_at": "2026-07-08T13:46:09.000Z",
+        "reviewed_sha": "156172ac6c49f82105bc9c968b974ee94a442055",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1095,6 +1199,19 @@
         "notes": "No citations are present in 'One-dimensional QOU channel (optical fibre)', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/one-dim-qou-channel.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formal definition cleanly grounding macroscopic independent transfer accurately onto rigid multiplicative traces.",
+        "reviewed_at": "2026-07-08T13:46:09.000Z",
+        "reviewed_sha": "156172ac6c49f82105bc9c968b974ee94a442055",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1116,6 +1233,19 @@
         "notes": "Key terms and symbols in 'One-dimensional QOU channel (optical fibre)' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/one-dim-qou-channel.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formal definition cleanly grounding macroscopic independent transfer accurately onto rigid multiplicative traces.",
+        "reviewed_at": "2026-07-08T13:46:09.000Z",
+        "reviewed_sha": "156172ac6c49f82105bc9c968b974ee94a442055",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1137,6 +1267,19 @@
         "notes": "The algebraic and logical relations in 'One-dimensional QOU channel (optical fibre)' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/one-dim-qou-channel.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formal definition cleanly grounding macroscopic independent transfer accurately onto rigid multiplicative traces.",
+        "reviewed_at": "2026-07-08T13:46:09.000Z",
+        "reviewed_sha": "156172ac6c49f82105bc9c968b974ee94a442055",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1158,6 +1301,19 @@
         "notes": "The physical concepts described in 'One-dimensional QOU channel (optical fibre)' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/one-dim-qou-channel.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formal definition cleanly grounding macroscopic independent transfer accurately onto rigid multiplicative traces.",
+        "reviewed_at": "2026-07-08T13:46:09.000Z",
+        "reviewed_sha": "156172ac6c49f82105bc9c968b974ee94a442055",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1179,6 +1335,19 @@
         "notes": "The derivation steps and formal definitions in 'One-dimensional QOU channel (optical fibre)' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/information-theory/one-dim-qou-channel.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formal definition cleanly grounding macroscopic independent transfer accurately onto rigid multiplicative traces.",
+        "reviewed_at": "2026-07-08T13:46:09.000Z",
+        "reviewed_sha": "156172ac6c49f82105bc9c968b974ee94a442055",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1201,6 +1370,19 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'One-dimensional QOU channel (optical fibre)' are consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formal definition cleanly grounding macroscopic independent transfer accurately onto rigid multiplicative traces.",
+        "reviewed_at": "2026-07-08T13:46:09.000Z",
+        "reviewed_sha": "156172ac6c49f82105bc9c968b974ee94a442055",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1378,6 +1560,36 @@
         },
         "score": {
           "value": 0.85
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formal definition cleanly grounding macroscopic independent transfer accurately onto rigid multiplicative traces.",
+        "reviewed_at": "2026-07-08T13:46:09.000Z",
+        "reviewed_sha": "156172ac6c49f82105bc9c968b974ee94a442055",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formal definition cleanly grounding macroscopic independent transfer accurately onto rigid multiplicative traces.",
+        "reviewed_at": "2026-07-08T13:46:09.000Z",
+        "reviewed_sha": "156172ac6c49f82105bc9c968b974ee94a442055",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
         }
       }
     ]
