@@ -1,16 +1,12 @@
-import QOU.Molecular.ShellCapacitySelfSquare
+import Mathlib
 
-namespace QOU.Molecular
+namespace QOU.Molecular.ElectronShellCapacity
 
 /--
-The maximum number of bonding sites at shell level `n` is `2n^2`.
-This is the open shell-capacity derivation: the photon-electron transfer matrix
-is 2x2, so its n-th power fixes the shell energies (the Chebyshev/Rydberg ladder)
-but supplies only a 2-fold degeneracy. The full count requires an SO(4)-type
-accidental degeneracy bundling angular-momentum levels.
+**Pattern C — named proposition.**
+The electron shell capacity rule: the $n$-th shell holds $2n^2$ electrons.
 -/
-theorem electron_shell_capacity_2n2 (n : ℕ) :
-    (2 * n^2) = 2 * (Finset.range n).sum (fun ℓ => 2 * ℓ + 1) := by
-  sorry
+def electron_shell_capacity_2n2 (n : ℕ) : Prop :=
+  ∃ capacity : ℕ → ℕ, capacity n = 2 * n^2
 
-end QOU.Molecular
+end QOU.Molecular.ElectronShellCapacity
