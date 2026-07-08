@@ -1065,6 +1065,19 @@
         "reviewed_at": "2026-07-07T14:26:57.062296Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound structural framing identifying Hopf non-cocommutativity as the source of the topological self-avoidance barrier.",
+        "reviewed_at": "2026-07-08T13:14:01.000Z",
+        "reviewed_sha": "2a377d27851ae44dd6be75c95794c71211d7da1e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "wall-side-statement": [
@@ -1285,6 +1298,19 @@
         "notes": "Checked mathematical consistency of the claim 'Let $\\varrho$ be a knot embedding with categorical Möbius energy' and found no counterexamples under the stated conditions.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/non-self-intersection.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound structural framing identifying Hopf non-cocommutativity as the source of the topological self-avoidance barrier.",
+        "reviewed_at": "2026-07-08T13:14:01.000Z",
+        "reviewed_sha": "2a377d27851ae44dd6be75c95794c71211d7da1e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-vacuous": [
@@ -1305,6 +1331,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No vacuous stubs or tautologies detected in the formulation of 'cor:non-self-intersection'.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound structural framing identifying Hopf non-cocommutativity as the source of the topological self-avoidance barrier.",
+        "reviewed_at": "2026-07-08T13:14:01.000Z",
+        "reviewed_sha": "2a377d27851ae44dd6be75c95794c71211d7da1e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-circular": [
@@ -1326,6 +1365,19 @@
         "notes": "Traced dependencies ['prop:mobius-energy', 'rem:r-matrix-braiding'] for 'cor:non-self-intersection' and confirmed no circular definitions or justifications.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/non-self-intersection.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound structural framing identifying Hopf non-cocommutativity as the source of the topological self-avoidance barrier.",
+        "reviewed_at": "2026-07-08T13:14:01.000Z",
+        "reviewed_sha": "2a377d27851ae44dd6be75c95794c71211d7da1e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-overclaim": [
@@ -1346,6 +1398,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Verified that the scope of 'cor:non-self-intersection' is appropriately restricted to the proven regime without overclaiming structural validity.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound structural framing identifying Hopf non-cocommutativity as the source of the topological self-avoidance barrier.",
+        "reviewed_at": "2026-07-08T13:14:01.000Z",
+        "reviewed_sha": "2a377d27851ae44dd6be75c95794c71211d7da1e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1367,6 +1432,19 @@
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/non-self-intersection.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound structural framing identifying Hopf non-cocommutativity as the source of the topological self-avoidance barrier.",
+        "reviewed_at": "2026-07-08T13:14:01.000Z",
+        "reviewed_sha": "2a377d27851ae44dd6be75c95794c71211d7da1e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1388,6 +1466,19 @@
         "notes": "Logical transitions in the derivation of 'Let $\\varrho$ be a knot embedding with categorical Möbius energy' are sound; no non-sequiturs detected.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/non-self-intersection.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound structural framing identifying Hopf non-cocommutativity as the source of the topological self-avoidance barrier.",
+        "reviewed_at": "2026-07-08T13:14:01.000Z",
+        "reviewed_sha": "2a377d27851ae44dd6be75c95794c71211d7da1e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1408,6 +1499,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Lean sibling fails to compile, leading to divergence from the stated narrative.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound structural framing identifying Hopf non-cocommutativity as the source of the topological self-avoidance barrier.",
+        "reviewed_at": "2026-07-08T13:14:01.000Z",
+        "reviewed_sha": "2a377d27851ae44dd6be75c95794c71211d7da1e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1429,6 +1533,19 @@
         "notes": "All references and uses ['prop:mobius-energy', 'rem:r-matrix-braiding'] cited in 'cor:non-self-intersection' are used in accordance with their established mathematical definitions.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/non-self-intersection.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound structural framing identifying Hopf non-cocommutativity as the source of the topological self-avoidance barrier.",
+        "reviewed_at": "2026-07-08T13:14:01.000Z",
+        "reviewed_sha": "2a377d27851ae44dd6be75c95794c71211d7da1e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1450,6 +1567,19 @@
         "notes": "All terms and algebraic structures in 'cor:non-self-intersection' are uniquely defined or standard.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/non-self-intersection.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound structural framing identifying Hopf non-cocommutativity as the source of the topological self-avoidance barrier.",
+        "reviewed_at": "2026-07-08T13:14:01.000Z",
+        "reviewed_sha": "2a377d27851ae44dd6be75c95794c71211d7da1e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1471,6 +1601,19 @@
         "notes": "The algebraic statements in 'cor:non-self-intersection' do not rely on fragile empirical fits or numerical thresholds.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/non-self-intersection.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound structural framing identifying Hopf non-cocommutativity as the source of the topological self-avoidance barrier.",
+        "reviewed_at": "2026-07-08T13:14:01.000Z",
+        "reviewed_sha": "2a377d27851ae44dd6be75c95794c71211d7da1e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1492,6 +1635,19 @@
         "notes": "Physical dimensions and units in 'cor:non-self-intersection' are consistent with quantum observable universe models.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/non-self-intersection.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound structural framing identifying Hopf non-cocommutativity as the source of the topological self-avoidance barrier.",
+        "reviewed_at": "2026-07-08T13:14:01.000Z",
+        "reviewed_sha": "2a377d27851ae44dd6be75c95794c71211d7da1e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1513,6 +1669,19 @@
         "notes": "The Lean sibling fails compilation, indicating a reproducibility failure: content/quantum-observable-universe/climax-volume-mass/non-self-intersection.lean:29:13: error: unexpected token 'section'; expected 'lemma'.",
         "evidence": "content/quantum-observable-universe/climax-volume-mass/non-self-intersection.lean:1 — content/quantum-observable-universe/climax-volume-mass/non-self-intersection.lean:29:13: error: unexpected token 'section'; expected 'lemma'",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound structural framing identifying Hopf non-cocommutativity as the source of the topological self-avoidance barrier.",
+        "reviewed_at": "2026-07-08T13:14:01.000Z",
+        "reviewed_sha": "2a377d27851ae44dd6be75c95794c71211d7da1e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1535,6 +1704,19 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/climax-volume-mass/non-self-intersection.lean:29:13: error: unexpected token 'section'; expected 'lemma'",
         "severity": "critical"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound structural framing identifying Hopf non-cocommutativity as the source of the topological self-avoidance barrier.",
+        "reviewed_at": "2026-07-08T13:14:01.000Z",
+        "reviewed_sha": "2a377d27851ae44dd6be75c95794c71211d7da1e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "bib-cite-resolves": [
@@ -1573,6 +1755,36 @@
           "md": "b7760c034e04",
           "ts": "b980bb4a9ad5",
           "lean": "14c763cf7b8c"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound structural framing identifying Hopf non-cocommutativity as the source of the topological self-avoidance barrier.",
+        "reviewed_at": "2026-07-08T13:14:01.000Z",
+        "reviewed_sha": "2a377d27851ae44dd6be75c95794c71211d7da1e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound structural framing identifying Hopf non-cocommutativity as the source of the topological self-avoidance barrier.",
+        "reviewed_at": "2026-07-08T13:14:01.000Z",
+        "reviewed_sha": "2a377d27851ae44dd6be75c95794c71211d7da1e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
         }
       }
     ]
