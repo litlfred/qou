@@ -832,6 +832,19 @@
         "reviewed_at": "2026-06-22T02:56:39.910Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound introductory hygiene.",
+        "reviewed_at": "2026-07-08T09:12:52.000Z",
+        "reviewed_sha": "d1c820729ebaae515e06c96721749a8dca36cbf4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-false-claim": [
@@ -850,6 +863,19 @@
         "notes": "No issues found for da-false-claim.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/appendix-surreals/conway-normal-form-intro.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound introductory hygiene.",
+        "reviewed_at": "2026-07-08T09:12:52.000Z",
+        "reviewed_sha": "d1c820729ebaae515e06c96721749a8dca36cbf4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-vacuous": [
@@ -867,6 +893,19 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No issues found for da-vacuous.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound introductory hygiene.",
+        "reviewed_at": "2026-07-08T09:12:52.000Z",
+        "reviewed_sha": "d1c820729ebaae515e06c96721749a8dca36cbf4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-circular": [
@@ -885,6 +924,19 @@
         "notes": "No issues found for da-circular.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/appendix-surreals/conway-normal-form-intro.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound introductory hygiene.",
+        "reviewed_at": "2026-07-08T09:12:52.000Z",
+        "reviewed_sha": "d1c820729ebaae515e06c96721749a8dca36cbf4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-overclaim": [
@@ -902,6 +954,19 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No issues found for da-overclaim.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound introductory hygiene.",
+        "reviewed_at": "2026-07-08T09:12:52.000Z",
+        "reviewed_sha": "d1c820729ebaae515e06c96721749a8dca36cbf4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -920,6 +985,19 @@
         "notes": "No issues found for da-hidden-dof.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/appendix-surreals/conway-normal-form-intro.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound introductory hygiene.",
+        "reviewed_at": "2026-07-08T09:12:52.000Z",
+        "reviewed_sha": "d1c820729ebaae515e06c96721749a8dca36cbf4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -938,6 +1016,19 @@
         "notes": "No issues found for da-non-sequitur.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/appendix-surreals/conway-normal-form-intro.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound introductory hygiene.",
+        "reviewed_at": "2026-07-08T09:12:52.000Z",
+        "reviewed_sha": "d1c820729ebaae515e06c96721749a8dca36cbf4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -955,6 +1046,19 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No issues found for da-lean-narrative-divergence.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound introductory hygiene.",
+        "reviewed_at": "2026-07-08T09:12:52.000Z",
+        "reviewed_sha": "d1c820729ebaae515e06c96721749a8dca36cbf4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -973,6 +1077,19 @@
         "notes": "No issues found for da-citation-misuse.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/appendix-surreals/conway-normal-form-intro.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound introductory hygiene.",
+        "reviewed_at": "2026-07-08T09:12:52.000Z",
+        "reviewed_sha": "d1c820729ebaae515e06c96721749a8dca36cbf4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -991,6 +1108,19 @@
         "notes": "No issues found for da-definitional-ambiguity.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/appendix-surreals/conway-normal-form-intro.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound introductory hygiene.",
+        "reviewed_at": "2026-07-08T09:12:52.000Z",
+        "reviewed_sha": "d1c820729ebaae515e06c96721749a8dca36cbf4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1009,6 +1139,19 @@
         "notes": "No issues found for da-empirical-fragility.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/appendix-surreals/conway-normal-form-intro.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound introductory hygiene.",
+        "reviewed_at": "2026-07-08T09:12:52.000Z",
+        "reviewed_sha": "d1c820729ebaae515e06c96721749a8dca36cbf4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1027,6 +1170,19 @@
         "notes": "No issues found for da-physical-implausibility.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/appendix-surreals/conway-normal-form-intro.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound introductory hygiene.",
+        "reviewed_at": "2026-07-08T09:12:52.000Z",
+        "reviewed_sha": "d1c820729ebaae515e06c96721749a8dca36cbf4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1044,6 +1200,19 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No issues found for da-reproducibility.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound introductory hygiene.",
+        "reviewed_at": "2026-07-08T09:12:52.000Z",
+        "reviewed_sha": "d1c820729ebaae515e06c96721749a8dca36cbf4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1063,34 +1232,77 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims are consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound introductory hygiene.",
+        "reviewed_at": "2026-07-08T09:12:52.000Z",
+        "reviewed_sha": "d1c820729ebaae515e06c96721749a8dca36cbf4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
-    "expo-milnor-clarity": {
-      "result": "pass",
-      "notes": "Block appears sound and meets expo-milnor-clarity.",
-      "reviewed_at": "2026-07-07T23:32:20.699611+00:00",
-      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
-      "reviewer": {
-        "kind": "agent",
-        "id": "local/qa-agent-drain",
-        "agent_skill": "local/qa-agent-drain",
-        "agent_model": "gemini-3.1-pro",
-        "agent_date": "2026-07-07"
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Block appears sound and meets expo-milnor-clarity.",
+        "reviewed_at": "2026-07-07T23:32:20.699611+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound introductory hygiene.",
+        "reviewed_at": "2026-07-08T09:12:52.000Z",
+        "reviewed_sha": "d1c820729ebaae515e06c96721749a8dca36cbf4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
-    },
-    "milnor-brevity": {
-      "result": "pass",
-      "notes": "Block appears sound and meets milnor-brevity.",
-      "reviewed_at": "2026-07-07T23:32:20.699611+00:00",
-      "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
-      "reviewer": {
-        "kind": "agent",
-        "id": "local/qa-agent-drain",
-        "agent_skill": "local/qa-agent-drain",
-        "agent_model": "gemini-3.1-pro",
-        "agent_date": "2026-07-07"
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Block appears sound and meets milnor-brevity.",
+        "reviewed_at": "2026-07-07T23:32:20.699611+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound introductory hygiene.",
+        "reviewed_at": "2026-07-08T09:12:52.000Z",
+        "reviewed_sha": "d1c820729ebaae515e06c96721749a8dca36cbf4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
-    }
+    ]
   },
   "updated_at": "2026-07-03T00:52:55.206Z"
 }
