@@ -134,6 +134,19 @@ class SymbolicHeckeElement:
         return {w: float(c.subs(q, q_val)) for w, c in self.terms.items()
                 if abs(float(c.subs(q, q_val))) > 1e-15}
 
+    def markov_trace(self, n: int):
+        """Evaluate the Markov trace tr_M of this element in H_n.
+        Requires qou_mass._internal.markov_trace_recursive."""
+        # Local import to avoid circular dependencies
+        from qou_mass._internal.markov_trace_recursive import markov_trace_of_word
+        tr = sp.Integer(0)
+        for word, coeff in self.terms.items():
+            # word is 0-indexed (e.g. (0,) for sigma_1).
+            # markov_trace_of_word expects 1-indexed signed words.
+            signed_word = [i + 1 for i in word]
+            tr += coeff * markov_trace_of_word(n, signed_word)
+        return sp.simplify(tr)
+
     def show(self, name=""):
         """Display the element with symbolic coefficients."""
         if name:

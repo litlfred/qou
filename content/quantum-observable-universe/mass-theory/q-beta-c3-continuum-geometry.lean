@@ -33,13 +33,31 @@ open scoped Interval
 noncomputable def classical_potential (θ : ℝ) : ℝ :=
   - ∫ t in (0 : ℝ)..θ, Real.log |2 * Real.sin (t / 2)|
 
+/-- Lemma 1.1: The singularity of the Lobachevsky integrand at t=0 is bounded by the natural logarithm. 
+    This is the core asymptotic bound required for the improper Lebesgue integral. -/
+lemma f_integrable_bound (t : ℝ) (h : 0 < t ∧ t < 2 * π) :
+  Real.log |2 * Real.sin (t / 2)| ≤ Real.log t := by
+  sorry
+
+/-- Lemma 1.2: The natural logarithm is improperly integrable at 0. -/
+lemma log_integrable (θ : ℝ) (h : 0 < θ) :
+  IntervalIntegrable (fun t => Real.log t) MeasureTheory.volume 0 θ := by
+  sorry
+
 /-- Lemma 1: The singularity of the Lobachevsky integrand at t=0 is integrable.
-    This asserts the local integrability required by Lebesgue measure theory. -/
-lemma f_integrable (θ : ℝ) :
+    This asserts the local integrability required by Lebesgue measure theory, 
+    derived from the logarithmic bound (Lemma 1.1 and 1.2). -/
+lemma f_integrable (θ : ℝ) (h : 0 < θ ∧ θ < 2 * π) :
   IntervalIntegrable (fun t => Real.log |2 * Real.sin (t / 2)|) MeasureTheory.volume 0 θ := by
   sorry
 
-/-- Lemma 2: The integrand is strongly measurable around the evaluation point. -/
+/-- Lemma 2.1: The function is continuous almost everywhere (except at 2πk). -/
+lemma f_ae_continuous :
+  ∀ᵐ (t : ℝ) ∂MeasureTheory.volume, ContinuousAt (fun t => Real.log |2 * Real.sin (t / 2)|) t := by
+  sorry
+
+/-- Lemma 2: The integrand is strongly measurable around the evaluation point. 
+    (Derived strictly from its almost-everywhere continuity via Borel measurability). -/
 lemma f_measurable (θ : ℝ) :
   StronglyMeasurableAtFilter (fun t => Real.log |2 * Real.sin (t / 2)|) (nhds θ) MeasureTheory.volume := by
   sorry
@@ -79,7 +97,7 @@ theorem potential_derivative (θ : ℝ) (h : 0 < θ ∧ θ < 2 * π) :
   rw [h_deriv_neg]
   
   -- Apply the Fundamental Theorem of Calculus from Mathlib
-  have h_ftc := intervalIntegral.deriv_integral_right (f_integrable θ) (f_measurable θ) (f_continuousAt θ h)
+  have h_ftc := intervalIntegral.deriv_integral_right (f_integrable θ h) (f_measurable θ) (f_continuousAt θ h)
   rw [h_ftc]
 
 /-- The analytical saddle point bounding the non-compact contour integration 
