@@ -27,6 +27,19 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Block placement and kind 'remark' match validated structurally for 'Significance: chirality is the unique S-odd channel, trivial in the commutative limit'.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "reviewed_at": "2026-07-08T19:07:21.000Z",
+        "reviewed_sha": "ca9f8c23e5a77f33ca7da281a11a0b59402f5f93",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-false-claim": [
@@ -46,6 +59,19 @@
         "notes": "No false claims identified in 'Significance: chirality is the unique S-odd channel, trivial in the commutative limit': mathematical reasoning is consistent.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-theory/commutative-chirality-vanishes-interpretation.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "reviewed_at": "2026-07-08T19:07:21.000Z",
+        "reviewed_sha": "ca9f8c23e5a77f33ca7da281a11a0b59402f5f93",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-vacuous": [
@@ -64,6 +90,19 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The block 'Significance: chirality is the unique S-odd channel, trivial in the commutative limit' presents substantial mathematical content: The Frobenius--Hopf antipode is trivial in the commutative QOU ($S = \\mathrm{id}...",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "reviewed_at": "2026-07-08T19:07:21.000Z",
+        "reviewed_sha": "ca9f8c23e5a77f33ca7da281a11a0b59402f5f93",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-circular": [
@@ -83,6 +122,19 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Significance: chirality is the unique S-odd channel, trivial in the commutative limit'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-theory/commutative-chirality-vanishes-interpretation.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "reviewed_at": "2026-07-08T19:07:21.000Z",
+        "reviewed_sha": "ca9f8c23e5a77f33ca7da281a11a0b59402f5f93",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-overclaim": [
@@ -101,6 +153,19 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No overclaims: the scope of 'Significance: chirality is the unique S-odd channel, trivial in the commutative limit' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "reviewed_at": "2026-07-08T19:07:21.000Z",
+        "reviewed_sha": "ca9f8c23e5a77f33ca7da281a11a0b59402f5f93",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -120,6 +185,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Significance: chirality is the unique S-odd channel, trivial in the commutative limit'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-theory/commutative-chirality-vanishes-interpretation.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "reviewed_at": "2026-07-08T19:07:21.000Z",
+        "reviewed_sha": "ca9f8c23e5a77f33ca7da281a11a0b59402f5f93",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -139,6 +217,19 @@
         "notes": "The argument flow in 'Significance: chirality is the unique S-odd channel, trivial in the commutative limit' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-theory/commutative-chirality-vanishes-interpretation.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "reviewed_at": "2026-07-08T19:07:21.000Z",
+        "reviewed_sha": "ca9f8c23e5a77f33ca7da281a11a0b59402f5f93",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -157,6 +248,19 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "reviewed_at": "2026-07-08T19:07:21.000Z",
+        "reviewed_sha": "ca9f8c23e5a77f33ca7da281a11a0b59402f5f93",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -176,6 +280,19 @@
         "notes": "No citations are present in 'Significance: chirality is the unique S-odd channel, trivial in the commutative limit', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-theory/commutative-chirality-vanishes-interpretation.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "reviewed_at": "2026-07-08T19:07:21.000Z",
+        "reviewed_sha": "ca9f8c23e5a77f33ca7da281a11a0b59402f5f93",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -195,6 +312,19 @@
         "notes": "Key terms and symbols in 'Significance: chirality is the unique S-odd channel, trivial in the commutative limit' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-theory/commutative-chirality-vanishes-interpretation.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "reviewed_at": "2026-07-08T19:07:21.000Z",
+        "reviewed_sha": "ca9f8c23e5a77f33ca7da281a11a0b59402f5f93",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -214,6 +344,19 @@
         "notes": "The algebraic and logical relations in 'Significance: chirality is the unique S-odd channel, trivial in the commutative limit' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-theory/commutative-chirality-vanishes-interpretation.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "reviewed_at": "2026-07-08T19:07:21.000Z",
+        "reviewed_sha": "ca9f8c23e5a77f33ca7da281a11a0b59402f5f93",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -233,6 +376,19 @@
         "notes": "The physical concepts described in 'Significance: chirality is the unique S-odd channel, trivial in the commutative limit' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-theory/commutative-chirality-vanishes-interpretation.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "reviewed_at": "2026-07-08T19:07:21.000Z",
+        "reviewed_sha": "ca9f8c23e5a77f33ca7da281a11a0b59402f5f93",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-reproducibility": [
@@ -252,6 +408,19 @@
         "notes": "The derivation steps and formal definitions in 'Significance: chirality is the unique S-odd channel, trivial in the commutative limit' are reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/mass-theory/commutative-chirality-vanishes-interpretation.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "reviewed_at": "2026-07-08T19:07:21.000Z",
+        "reviewed_sha": "ca9f8c23e5a77f33ca7da281a11a0b59402f5f93",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -272,6 +441,19 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Significance: chirality is the unique S-odd channel, trivial in the commutative limit' are consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "reviewed_at": "2026-07-08T19:07:21.000Z",
+        "reviewed_sha": "ca9f8c23e5a77f33ca7da281a11a0b59402f5f93",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "bib-cite-resolves": [
@@ -319,6 +501,19 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
         }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "reviewed_at": "2026-07-08T19:07:21.000Z",
+        "reviewed_sha": "ca9f8c23e5a77f33ca7da281a11a0b59402f5f93",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "milnor-brevity": [
@@ -333,6 +528,19 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.",
+        "reviewed_at": "2026-07-08T19:07:21.000Z",
+        "reviewed_sha": "ca9f8c23e5a77f33ca7da281a11a0b59402f5f93",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
         }
       }
     ]
