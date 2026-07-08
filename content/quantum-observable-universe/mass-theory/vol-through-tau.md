@@ -15,6 +15,3 @@ On the algebraic quantum volume, $\tau_{\mathrm{arch}}$ coincides with $\mathcal
 
 **Sketch.**
 By Tannaka-Krein rigidity, any composite mapping $\mathbf{C}$ to $\mathbb{R}$ that preserves tensor products and dualities is uniquely isomorphic to the fibre functor $\tau$. Conversely, restricting the composite $\tau \circ \mathrm{Vol}_q$ via $\pi_\infty$ recovers exactly $\ln |\mathrm{Vol}_{q_0}(\beta)|$. Every physical computation of a knot volume (e.g., Kashaev limit, Bloch-Wigner dilogarithm) evaluates this identical composite.
-
-**Lean formalization.**
-The Lean theorem `vol_through_tau_factors` currently holds an existence stub pending a faithful formal statement.

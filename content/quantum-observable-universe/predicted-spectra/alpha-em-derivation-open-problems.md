@@ -7,7 +7,7 @@ $$
   \;\approx\; 136.823 \quad \text{at}\;\; q = q_0.
 $$
 
-This agrees with the CODATA value $137.035999084(21)$ to within $-0.155\%$. The bare formula reproduces the fine-structure constant to three significant figures with no free parameters. A relative gap of $1.55 \times 10^{-3}$ remains. Two prior attempts to close this gap are now conjectures pending derivation:
+This agrees with the CODATA value $137.035999084(21)$ to within $-0.155\%$. The bare formula reproduces the fine-structure constant to three significant figures with no free parameters. A relative gap of $1.55 \times 10^{-3}$ remains. Two prior attempts to close this gap are open conjectures:
 
 | Form | Statement | Residual at $q_0$ | Status |
 |------|-----------|-------------------|--------|
