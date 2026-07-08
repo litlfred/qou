@@ -48,6 +48,6 @@ class GradedBaerStarHq (Hq : Type*) [InvolutiveStar Hq] where
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/stochastic-mechanics/graded-baer-star-Hq.ts
 noncomputable instance (Hq : Type*) [InvolutiveStar Hq] :
-    GradedBaerStarHq Hq := ⟨0, rfl⟩
+    GradedBaerStarHq Hq := sorry
 
 end QOU.BraidKnot
