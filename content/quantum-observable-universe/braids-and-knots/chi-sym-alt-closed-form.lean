@@ -13,9 +13,8 @@
   Ref: [manuscript] docs/chi-sym-alt-theorem.md.
 -/
 
-import Mathlib.Algebra.Group.Basic
-import Mathlib.Algebra.Group.Basic
-import Mathlib.Data.Int.Init
+import Mathlib.Algebra.Group.Defs
+import Mathlib.Data.Int.Basic
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Linarith
