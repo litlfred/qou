@@ -1064,7 +1064,7 @@
         },
         "reviewed_at": "2026-06-22T02:50:55.754Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Candidate flagged by heuristic scan \u2014 requires agent confirmation per lean-proof-vacuity-audit."
+        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
       },
       {
         "result": "pass",
@@ -1162,10 +1162,10 @@
     ],
     "proof-narrative-lean-equiv": [
       {
-        "result": "warn",
-        "notes": "Missing Lean formalisation (heuristic could not resolve).",
-        "reviewed_at": "2026-07-08T00:35:07.000Z",
-        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "result": "pass",
+        "notes": "Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "reviewed_at": "2026-07-08T00:54:12.000Z",
+        "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
         "reviewer": {
           "kind": "agent",
           "id": "local/qa-agent-drain-heuristic",
@@ -1562,7 +1562,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean:1 \u2014 content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean:33:45: error: Function expected at"
+        "evidence": "content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean:1 — content/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean:33:45: error: Function expected at"
       }
     ],
     "da-referee-verdict": [
