@@ -48,6 +48,7 @@ theorem demand_stability [ctx : DemandStabilityContext] :
      ctx.trM ctx.Z ctx.N ≤ ctx.trM (ctx.Z - 1) ctx.N ∧
      ctx.trM ctx.Z ctx.N ≤ ctx.trM ctx.Z (ctx.N + 1) ∧
      ctx.trM ctx.Z ctx.N ≤ ctx.trM ctx.Z (ctx.N - 1)) := by
+  -- Ref: [manuscript] quantum-observable-universe/particle-interactions/demand-stability.ts
   sorry
 
 end QOU.ParticleInteractions

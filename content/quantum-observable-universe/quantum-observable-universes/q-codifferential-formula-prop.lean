@@ -139,6 +139,26 @@ theorem q_codifferential_formula (q : Rˣ) :
         websterInner R α (δ_q β)) ∧
       (∀ (β : DiffForm R), δ_q β = (↑q⁻¹ : R) • δ_classical R β +
         (1 - (↑q⁻¹ : R)) • (L_reeb_star R (ι_reeb R β))) := by
+  let δ_q_def : DiffForm R → DiffForm R := fun β =>
+    (↑q⁻¹ : R) • δ_classical R β + (1 - (↑q⁻¹ : R)) • L_reeb_star R (ι_reeb R β)
+  use δ_q_def
+  constructor
+  · intro α β
+    have h_d_q := d_q_decomposition' q α
+    rw [h_d_q]
+    have h_linear_left := websterInner_linear_left β β (↑q⁻¹ : R) (d_classical R α) ((1 - (↑q⁻¹ : R)) • θ_wedge R (L_reeb R α))
+    rw [h_linear_left]
+    have h_linear_right := websterInner_linear_right α α (↑q⁻¹ : R) (δ_classical R β) ((1 - (↑q⁻¹ : R)) • L_reeb_star R (ι_reeb R β))
+    rw [h_linear_right]
+    have h_delta := δ_is_adjoint_of_d' α β
+    have h_theta := ι_reeb_is_adjoint_of_θ_wedge' (L_reeb R α) β
+    have h_L := L_reeb_star_is_adjoint' α (ι_reeb R β)
+    -- wait, we need to rewrite `websterInner R ((1 - q⁻¹) • A) B`. 
+    -- Is there `websterInner_smul_left`? No. 
+    -- But we can just use `websterInner_linear_left` with `+ 0`? No, we don't have `0`.
+    -- Ref: [manuscript] Ch. 2, prop:q-codifferential-formula (closed form δ_q = q⁻¹δ + (1−q⁻¹)L_ξ*∘ι_ξ)
   sorry
+  · intro β
+    rfl
 
 end QOU.QuantumGeometry

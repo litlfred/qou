@@ -73,6 +73,7 @@ theorem parity_regime_selection [ctx : ParityRegimeSelectionContext] :
     (Odd ctx.A → 3 ≤ ctx.A → ctx.Q_value = |ctx.S_Delta| * ctx.m_e) ∧
     (Even ctx.A → ctx.Q_value = (ctx.Sigma_FP + 1) * ctx.m_e) ∧
     (ctx.A = 1 → ctx.Q_value = (ctx.S_Delta + 1) * ctx.m_e) := by
+  -- Ref: [manuscript] quantum-observable-universe/particle-interactions/parity-regime-selection.ts
   sorry
 
 end QOU.ParticleInteractions

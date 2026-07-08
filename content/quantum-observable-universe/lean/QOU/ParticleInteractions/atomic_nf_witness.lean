@@ -86,6 +86,7 @@ theorem atomic_nf_witness (ctx : AtomicNfWitnessContext) :
     (∀ k : ℕ, ctx.gb_converges k) ∧
     (∀ a : ℕ, a ≤ 9 → ctx.NF_no_strip a) ∧
     ctx.F_Pauli = |ctx.trAlt / ctx.net| := by
+  -- Ref: [manuscript] quantum-observable-universe/particle-interactions/atomic-nf-witness.ts
   sorry
 
 end QOU.ParticleInteractions
