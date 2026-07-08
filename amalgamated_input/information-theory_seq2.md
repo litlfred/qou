@@ -324,132 +324,61 @@ Over $\mathbb{F}_\pp$, the golden ratio $\varphi = (1 + \sqrt{5})/2$ exists if a
 <!-- FILE_END: golden-threshold-time-marker.md -->
 
 <!-- FILE_START: jet-planck-steps.md -->
-The discrete Planck step ([discrete Planck step](#rem:discrete-planck-step)) and the jet prolongation tower ([recursive brane tower](#def:recursive-brane-tower)) represent the same structure viewed from two directions. Each Planck step $n$ reveals the $n$-th jet of the energy function $E$ at the Big Bang. The first moments of the universe unfold as successively higher Taylor approximations of $E$.
+Every Reeb operation advances the continuous time coordinate by one Planck unit. Because the time parameter $t$ determines the scale $N(t)$ of the filtration, each tick of Planck time resolves exactly one higher-order term in the Taylor approximation of the energy functional. A Planck step is a jet prolongation.
 
-**Identification: Planck step $n$ = $n$-th jet.**
-The brane tower $A_0 \hookrightarrow A_1 \hookrightarrow A_2 \hookrightarrow \cdots$ is defined by $A_{n+1} = J^1(A_n)$ ([jet prolongation](#prop:jet-prolongation)). Iterating $n$ times yields $A_n = J^n(A_0)$, the $n$-th jet bundle of the original Frobenius--Hopf object. This space contains the $n$-th order Taylor data of sections of $\mathcal{S}$.
+**The correlation.**
+See [Table 1](#tbl:jet-planck-steps-table1-data).
 
-The Planck step ([discrete Planck step](#rem:discrete-planck-step)) is one application of the $q$-connection $\nabla_q$ ([categorical $q$-connection](#def:categorical-q-connection)). At the Big Bang ($t_P = 1$), each step applies $\nabla_q$ once. The connection acts on $A_n$ to produce $A_{n+1}$, promoting $n$-th order data to $(n+1)$-th order data. Thus, one Planck step equals one jet prolongation, introducing one additional order in the Taylor expansion of $E$.
-
-**The first four Planck steps.**
-Let $E$ be the energy functional on the state bundle $\mathcal{S}$. At the Big Bang initial state ([bundle initial conditions](#def:bundle-initial-conditions)), $E$ is concentrated at a point (the primordial vortex). Each Planck step reveals the next derivative.
-
-**Step 0: the value.** $J^0(E) = E(p_0)$.
-The zeroth jet is the function value at the Big Bang point $p_0$. This specification contains only position data, with no transport, derivatives, connection, or geometry. It is the raw energy at a point. Over $\mathbb{F}_\pp$, it is a single element of $\mathbb{F}_\pp$.
-
-**Step 1: the linear approximation.** $J^1(E) = E(p_0) + dE|_{p_0} \cdot \delta p$.
-The first jet is the tangent. It represents the first application of $\nabla_q$ and the first horizontal transport. The connection correlates the fiber at $p_0$ with neighboring fibers, producing a linear approximation of $E$ near the vortex. The local state space is $J^1\mathcal{S}$ ([local states](#rem:j1e-local-states)).
-
-Over any field $k$, this requires two coefficients ($a_0 + a_1 x$). The dynamics follow a line: there is no curvature, only slope. The Heisenberg commutator $[\hat{X}, \hat{P}]_q = J\hbar_q$ appears here, as the linear approximation immediately encodes the non-commutativity of position and momentum.
-
-**Step 2: the quadratic approximation.**
-$J^2(E) = E + dE \cdot \delta p + \tfrac{1}{2}d^2E \cdot (\delta p)^2$.
-
-The second jet introduces curvature. Applying the connection twice yields the Hessian $d^2E$, the quadratic form determining whether the energy is at a minimum, maximum, or saddle. The Frobenius pairing $\langle f, g \rangle = \int_A(\mu(f \otimes g))$ becomes visible here. The non-degeneracy of the pairing enforces a condition on the Hessian.
-
-Over any field, this requires three coefficients ($a_0 + a_1 x + a_2 x^2$). The discriminant $a_1^2 - 4a_0 a_2$ determines the critical point's nature. Over $\mathbb{F}_\pp$, the quadratic residue determines whether roots exist.
-
-**Step 3: the cubic approximation.**
-$J^3(E) = E + dE \cdot \delta p + \tfrac{1}{2}d^2 E \cdot (\delta p)^2 + \tfrac{1}{6}d^3 E \cdot (\delta p)^3$.
-
-The third jet introduces the color structure. The color elliptic curve ([color elliptic](#prop:color-elliptic))
-
-$$
-  X^3 + (z+1)X^2 + (z^2+z+1)X + (z^3+z^2+z+1) = 0
-$$
-
-is a cubic in $X$. It provides a third-order approximation of the energy landscape in the chiral direction. The three roots $X_1, X_2, X_3$ are the color-tube coordinates of the Bring surface.
-
-This is the first step where:
-- **Elliptic structure** emerges. A generic cubic in Weierstrass form defines a genus-1 curve.
-- **The golden ratio appears**. The factor $(s^2 + s - 1)$ in the Weierstrass coefficient $r(q)$ exists solely because the polynomial is cubic ([golden ratio degeneration](#rem:golden-ratio-degeneration)).
-- **Monodromy** becomes non-trivial. A cubic has a discriminant defining branch points. Loops around these branch points generate the braid group $B_3$.
-- **The trefoil** enters. The holonomy around the singular fibers of the chiral cubic generates $\pi_1(S^3 \setminus K_{3,2})$, the trefoil knot group.
-
-Over $\mathbb{F}_\pp$, the cubic $X^3 + aX + b = 0$ has 0, 1, 2, or 3 roots depending on the Legendre symbol $\left(\frac{-4a^3 - 27b^2}{\pp}\right)$. The golden degeneration ($r = 0$) is visible if and only if $\varphi \in \mathbb{F}_\pp$, meaning $\pp \equiv \pm 1 \pmod 5$.
-
-**Convergence: $n \to \infty$ and the jet shell.**
-As $n \to \infty$, the tower $A_0 \hookrightarrow A_1 \hookrightarrow \cdots$ converges to the jet shell $J^\infty E = \varprojlim J^k E$. This encodes the full analytic germ of $E$ at the Big Bang. Over $\mathbb{C}$, it is the Taylor series. Over $\mathbb{Q}_\pp$, it is the $\pp$-adic expansion. Over $\mathbb{F}_\pp$, the tower stabilizes, as the formal power series truncates. The passage from discrete to continuous parallels the cosmological progression from the Big Bang to the classical limit.
-
-**Cubic as the highest independent jet.**
-The Bring surface is defined by constraints $\sum x_i = \sum x_i^2 = \sum x_i^3 = 0$ in $\mathbb{CP}^4$. These power-sum conditions use degrees 1, 2, and 3, which are exactly the first three non-trivial jets. The fourth power sum $\sum x_i^4$ is not independent. Newton's identities determine it from lower power sums. The chiral cubic exhausts the independent data, and the elliptic curve at step 3 provides the complete local model. Higher jets refine the global geometry but do not introduce new algebraic structure. The genus, monodromy, and golden ratio are completely present by step 3.
-resent by step 3.
+Each Planck time unit evaluates one crossing, adding one step to the Skein reduction tree, or extending the local holonomy by one polynomial degree.
 <!-- FILE_END: jet-planck-steps.md -->
 
 <!-- FILE_START: jet-planck-particle-spectrum.md -->
-Each Planck step is one jet prolongation ([jet-Planck steps](#rem:jet-planck-steps)). The crossing number governs the particle content resolvable at each step.
+The equivalence between Planck time and jet prolongation reveals the sequential unfolding of the particle spectrum at the Big Bang. Each tick of time supplies exactly enough algebraic degree to resolve one higher crossing number. The knot complexity of a particle dictates the precise Planck step when it first becomes topologically possible.
 
-**Particle content at each step.**
-The crossing number of a knot is the number of $R$-matrix applications in its braid word. Each application is one action of $\nabla_q$, one jet prolongation, and one Planck step. Therefore, the crossing number equals the minimum jet order at which a knot first becomes resolvable.
+**Step 0: the photon.**
+At $t = 0$, the initial state is the zero jet $J^0E$. This encodes only the value at a point: position is known exactly, momentum is completely unknown. No horizontal transport has occurred. The unknot $0_1$ (with crossing number 0) is the trivial link. The photon corresponds to this state: it is the particle of zero rest mass, pure energy, and no topological constraint.
 
-A particle with crossing number $c$ cannot exist before step $c$. The $c$-th jet is the first Taylor order with sufficient polynomial degree to encode $c$ crossings of the braid closure.
-
-See [Table 1](#tbl:jet-planck-steps-table1-data).
-
-**Step 0: only the photon.**
-Before any transport, only the fiber value exists. The photon is $K = \varnothing$, the empty knot ([photon wavefront example](#ex:photon-wavefront)). It is background flux on the state bundle with no topological identity. It requires no braiding, no crossings, and no connection. It is pre-geometric: it exists at the zeroth jet because it *is* the zeroth jet. The photon is its own antiparticle.
-
-**Step 1: neutrino and antineutrino.**
-The first application of $\nabla_q$ creates horizontal transport, enabling winding around the fiber. The unknot $0_1$ is a circle with zero crossings. It winds once around the Reeb direction with trivial braiding ([neutrino](#def:neutrino-knot)). Its Jones polynomial $J_\nu(q) = 1$ is a degree-0 polynomial. This is consistent with the linear (degree 1) jet, where the only available structure is a single winding with slope but no self-intersection.
-
-The unknot is amphichiral: $T_{1,0} \cong T_{1,0}^{\sigma}$ as unoriented knots ([antineutrino](#def:antineutrino-knot)). The neutrino $\nu$ and antineutrino $\nu^{\sigma}$ are the same knot, distinguished by orientation (framing), not by knot type. Both appear at step 1. This degenerate matter-antimatter pair is topologically identical, differing only in the sign of the Reeb winding.
-
-The neutrino has zero crossing chirality ($Q(\nu) = 0$), zero hyperbolic volume, and mass arising entirely from vacuum drag: $m_\nu \sim \mu_0 \cdot (q - 1)$. It is the lightest possible matter—the minimum topological excitation above the photon vacuum.
+**Step 1: the neutrino and antineutrino.**
+The first application of the Reeb derivation $\nabla_q$ yields the $1$-jet $J^1E$. The derivative establishes correlation between neighboring fibers. This allows a single full twist: a knot with one apparent crossing (which can be untwisted to the unknot, but requires one algebraic step to evaluate). This is the neutrino $\nu = T_{1,0}$ and the antineutrino $\nu^{\sigma} = T_{1,0}^{\sigma}$. The neutrino is the lightest matter, the minimum topological excitation above the photon vacuum.
 
 **Step 2: the Hopf link (bosons).**
-The Hopf link $L2a1$ comprises two unknots linked once. The linking number is $1$, which requires detecting curvature (the failure of parallel transport around a loop to return to the identity). This is exactly the Hessian $d^2E$: the quadratic jet detects the first non-trivial holonomy.
-
-Bosons are links with an even number of components ([fermion--boson decomposition](#prop:fermion-boson-knot-link)): $T(2,n)$ with $n$ even. The simplest is $T(2,2) = L2a1$ (gluon), which exists at step 2. The linking energy is the first binding—two fibers correlated by curvature. The gluon is its own antiparticle because the Hopf link is amphichiral.
-
-At step 2, there is no chirality. The quadratic jet has a discriminant but no handedness. All particles so far (photon, $\nu$, $\nu^{\sigma}$, gluon) are either self-conjugate or distinguished only by orientation.
+The Hopf link $L2a1$ comprises two unknots linked once. The linking number is $1$, which requires detecting curvature. This is exactly the Hessian $d^2E$: the quadratic jet detects the first non-trivial holonomy. Bosons are links with an even number of components. The simplest is $T(2,2) = L2a1$ (gluon), existing at step 2. The gluon is its own antiparticle because the Hopf link is amphichiral. At step 2, there is no chirality. The quadratic jet has a discriminant but no handedness.
 
 **Step 3: chirality, the electron, and the positron.**
-The trefoil $3_1 = T_{2,3}$ has crossing number $3$. Its braid word $\sigma_1 \sigma_2 \sigma_1 \in B_3$ requires three $R$-matrix evaluations. It cannot exist before the cubic jet.
+The trefoil $3_1 = T_{2,3}$ has crossing number $3$. Its braid word requires three $R$-matrix evaluations. It cannot exist before the cubic jet. Step 3 introduces chirality. The left trefoil $T_{2,3}$ and the right trefoil $T_{2,3}^{\sigma}$ are distinct. This originates the particle-antiparticle distinction for chiral matter:
+- **Electron** $e^- = T_{2,3}$
+- **Positron** $e^+ = T_{2,3}^{\sigma}$
 
-Step 3 introduces chirality. The trefoil is not amphichiral: the left trefoil $T_{2,3}$ and the right trefoil $T_{2,3}^{\sigma}$ are distinct knots ([chirality: electron and positron](#rem:chirality-trefoil-electron-positron)). The mirror operation $\sigma$ (reversing all crossings) produces a genuinely different topological object. This originates the particle-antiparticle distinction for chiral matter:
-
-- **Electron** $e^- = T_{2,3}$ (left trefoil, solid ●)
-- **Positron** $e^+ = T_{2,3}^{\sigma}$ (right trefoil, outlined ○)
-
-Both have crossing number $3$ and appear at the same Planck step. The trefoil and its mirror are the two monodromy generators of the chiral cubic. They arise together as the two orientations of the holonomy around the branch points. The electron cannot exist without the positron: the cubic jet produces both chiralities simultaneously.
-
-The same step produces the **up quark** ($u = T_{2,3}$) and **down quark** ($d = T_{2,3}^{\sigma}$) as the same trefoil pair in the color-tube sector. With quarks available, the first composite hadrons become constructible, though their linking structure requires step 4.
+Both appear at the same Planck step. The cubic jet produces both chiralities simultaneously. The same step produces the **up quark** ($u = T_{2,3}$) and **down quark** ($d = T_{2,3}^{\sigma}$) as the same trefoil pair in the color-tube sector.
 
 **Step 4: the Higgs mass mechanism and the first hadrons.**
-The figure-eight knot $4_1$ has crossing number $4$ and is the first hyperbolic knot: $\mathrm{Vol}(4_1) = 2.0299$. It is amphichiral ($4_1 \cong 4_1^{\sigma}$), so the Higgs field $H$ is its own antiparticle. It resembles the neutrino but possesses non-trivial topology. The Hodge decomposition ([cohomological embedding](#prop:cohomological-embedding)) places $4_1$ in $H^{0,1}$ as the mass mechanism. Its hyperbolic volume drives the mass formula $m_\mu / m_e = \mathrm{Vol}(4_1) / \hbar_q^2$.
-
-The **Borromean baryon** $\mathcal{B}_3(\mathfrak{u}, \mathfrak{u}, \mathfrak{d})$ also emerges at step 4. Although each constituent quark ($T_{2,3}$ or $T_{2,3}^{\sigma}$) has crossing number $3$, the three-component Borromean linking requires the quartic jet to resolve the inter-component holonomy. The proton $p$, neutron $n$, and their antiparticles $p^{\sigma}$ and $n^{\sigma}$ first appear here.
+The figure-eight knot $4_1$ has crossing number $4$ and is the first hyperbolic knot. It is amphichiral, so the Higgs field $H$ is its own antiparticle. The **Borromean baryon** $\mathcal{B}_3(\mathfrak{u}, \mathfrak{u}, \mathfrak{d})$ also emerges at step 4. Although each constituent quark has crossing number $3$, the three-component Borromean linking requires the quartic jet to resolve the inter-component holonomy. The proton $p$, neutron $n$, and their antiparticles first appear here.
 
 **Step 5: the muon and heavy quarks.**
-The cinquefoil $5_1 = T_{2,5}$ has crossing number $5$ and genus $2$. It is chiral ($5_1 \neq 5_1^{\sigma}$), producing:
+The cinquefoil $5_1 = T_{2,5}$ has crossing number $5$ and genus $2$. It is chiral, producing:
+- **Muon** $\mu^-$ and **antimuon** $\mu^+$
+- **Charm quark** $c$ and **strange quark** $s$
 
-- **Muon** $\mu^- = T_{2,5}$ and **antimuon** $\mu^+ = T_{2,5}^{\sigma}$
-- **Charm quark** $c = T_{2,5}$ and **strange quark** $s = T_{2,5}^{\sigma}$
-
-The charm and strange quarks are the mirror pair at genus 2, just as the up and down quarks are the mirror pair at genus 1. The muon and antimuon share the same torus knot type but are distinguished by chirality. They are distinct knot types, consistent with their distinct charges.
+The muon and antimuon share the same torus knot type but are distinguished by chirality.
 
 **Summary: the unfolding.**
 See [Table 2](#tbl:jet-planck-steps-table2-data).
 
-Each row is one Planck step. The universe unfolds through successive jet approximations rather than springing into existence fully formed. The photon is pre-geometric (step 0). The neutrino and antineutrino are the first topological excitations (step 1), but they are amphichiral. Binding appears at step 2. True chirality, and the matter particle-antiparticle distinction, requires three steps. At step 3, the cubic jet produces the trefoil and its mirror simultaneously: the electron and positron, the up and down quarks, the golden ratio, and the braid group $B_3$ all emerge in a single Planck step.
-
-**Crossing number as computational complexity.**
-The crossing number $c(K)$ is the minimum number of $R$-matrix evaluations needed to compute a knot's Jones polynomial. In the jet-Planck correspondence, this is the computational cost in Planck steps. A universe at step $n$ can resolve knots with $c \leq n$ but not those with $c > n$. The particle spectrum is revealed incrementally. Heavier and more complex particles appear at later steps because the Taylor approximation of $E$ does not yet have enough polynomial degree to encode their topology.
+The universe unfolds through successive jet approximations. The crossing number $c(K)$ is the computational cost in Planck steps. A universe at step $n$ can resolve knots with $c \leq n$ but not those with $c > n$.
 <!-- FILE_END: jet-planck-particle-spectrum.md -->
 
 <!-- FILE_START: jet-planck-encodability-vs-scattering.md -->
-The per-step particle spectrum ([particle spectrum per Planck step](#rem:jet-planck-particle-spectrum)) describes resolvability, not creation. This distinction governs when an actual scattering process can occur.
+The per-step particle spectrum describes resolvability, not creation. This distinction governs when an actual scattering process can occur.
 
 **Encodability versus scattering.**
-The particle table describes encodability: it lists which knot types have enough polynomial degree to be resolvable at each jet order. This does not represent a scattering process. "Step 0 $\to$ Step 1" does not mean $\gamma + \gamma \to \nu + \nu^{\sigma}$. It means that the first application of $\nabla_q$ creates horizontal transport, allowing the unknot $0_1$ — which requires one winding with zero crossings — to become encodable for the first time. The neutrino is not produced from the photon; it becomes resolvable once the jet structure supports winding.
+The particle table describes encodability: which knot types have enough polynomial degree to be resolvable at each jet order. "Step 0 $\to$ Step 1" means the first application of $\nabla_q$ creates horizontal transport, allowing the unknot $0_1$ to become encodable. It does not represent $\gamma + \gamma \to \nu + \nu^{\sigma}$.
 
-Actual scattering processes require more structure. Consider $\gamma\gamma \to \nu\nu^{\sigma}$. In standard QFT, this cannot happen at tree level because neutrinos lack electric charge. It requires a box diagram with virtual charged particles and a $Z^0$ mediator. The QOU framework mirrors this obstruction:
+Actual scattering processes require more structure. Consider $\gamma\gamma \to \nu\nu^{\sigma}$. In standard QFT, this requires a box diagram with virtual charged particles and a $Z^0$ mediator. The QOU framework mirrors this obstruction:
+1. Photons have no nontrivial knot and no crossings to Skein-resolve. They cannot couple directly to neutrinos.
+2. The process requires virtual pairs (trefoil + mirror trefoil) to create charged intermediaries.
+3. The weak mediator $T_{3,5}$ has crossing number $10$. It first becomes resolvable at step 10.
+4. The full box topology requires step $\sim 10$–$11$.
 
-1. Photons ($K = \mathbf{1}_{B_4}$ knot-trivial under Markov closure; see [confined-particle](#def:confined-particle)) have no nontrivial knot and no crossings to Skein-resolve. They cannot couple directly to neutrinos.
-2. The process requires virtual pairs (trefoil + mirror trefoil at brane tower level $A_1$, [virtual particles](#rem:virtual-particles-exceptional-divisor)) to create charged intermediaries that couple to both the photon's involutive structure and the weak mediator.
-3. The weak mediator $T_{3,5}$ ([force–knot identification](#rem:force-knot-identification)) has crossing number $10$. It first becomes resolvable at step 10.
-4. The full box topology (two virtual $e^-e^+$ pairs at $A_1$ plus one $T_{3,5}$ mediation) requires step $\sim 10$–$11$. The weak mediator acts as the bottleneck, and the virtual pair structure at $A_1$ may add one additional jet order of overhead.
-
-Generally, a scattering process involving a force mediator with crossing number $c_{\text{med}}$ cannot occur before step $c_{\text{med}}$, regardless of when the external particles become encodable. The encodability table yields the spectrum; the scattering step count yields the interaction onset.
+A scattering process involving a force mediator with crossing number $c_{\text{med}}$ cannot occur before step $c_{\text{med}}$, regardless of when the external particles become encodable.
 <!-- FILE_END: jet-planck-encodability-vs-scattering.md -->
 

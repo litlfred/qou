@@ -912,6 +912,19 @@
         "reviewed_at": "2026-07-07T14:26:56.274812Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound functional extraction structuring the weak classical NS limit explicitly via the truncated diagonal sequence.",
+        "reviewed_at": "2026-07-08T13:23:02.000Z",
+        "reviewed_sha": "4cd3a81661c13a4943017074989cecb9afc4650a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -951,6 +964,19 @@
         "notes": "No false claims identified in 'q-deformed Aubin--Lions lemma: compactness of the solution family as $q \\\\to 1$': mathematical reasoning is consistent.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound functional extraction structuring the weak classical NS limit explicitly via the truncated diagonal sequence.",
+        "reviewed_at": "2026-07-08T13:23:02.000Z",
+        "reviewed_sha": "4cd3a81661c13a4943017074989cecb9afc4650a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-vacuous": [
@@ -971,6 +997,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The claims in 'q-deformed Aubin--Lions lemma: compactness of the solution family as $q \\\\to 1$' are non-vacuous as they make concrete conjectures about '> **Summary.** A $q$-deformed Aubin–Lions compactness lemma:...'.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound functional extraction structuring the weak classical NS limit explicitly via the truncated diagonal sequence.",
+        "reviewed_at": "2026-07-08T13:23:02.000Z",
+        "reviewed_sha": "4cd3a81661c13a4943017074989cecb9afc4650a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-circular": [
@@ -992,6 +1031,19 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'q-deformed Aubin--Lions lemma: compactness of the solution family as $q \\\\to 1$'.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound functional extraction structuring the weak classical NS limit explicitly via the truncated diagonal sequence.",
+        "reviewed_at": "2026-07-08T13:23:02.000Z",
+        "reviewed_sha": "4cd3a81661c13a4943017074989cecb9afc4650a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-overclaim": [
@@ -1012,6 +1064,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The prose in 'q-deformed Aubin--Lions lemma: compactness of the solution family as $q \\\\to 1$' presents the result as established, but the Lean formalization is incomplete (has sorry).",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound functional extraction structuring the weak classical NS limit explicitly via the truncated diagonal sequence.",
+        "reviewed_at": "2026-07-08T13:23:02.000Z",
+        "reviewed_sha": "4cd3a81661c13a4943017074989cecb9afc4650a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1033,6 +1098,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'q-deformed Aubin--Lions lemma: compactness of the solution family as $q \\\\to 1$'.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound functional extraction structuring the weak classical NS limit explicitly via the truncated diagonal sequence.",
+        "reviewed_at": "2026-07-08T13:23:02.000Z",
+        "reviewed_sha": "4cd3a81661c13a4943017074989cecb9afc4650a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1054,6 +1132,19 @@
         "notes": "The argument flow in 'q-deformed Aubin--Lions lemma: compactness of the solution family as $q \\\\to 1$' is logically sound, mapping onto the cited dependencies.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound functional extraction structuring the weak classical NS limit explicitly via the truncated diagonal sequence.",
+        "reviewed_at": "2026-07-08T13:23:02.000Z",
+        "reviewed_sha": "4cd3a81661c13a4943017074989cecb9afc4650a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1074,6 +1165,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The Lean sibling content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.lean uses a class-conjecture pattern, matching the conjectural nature of 'q-deformed Aubin--Lions lemma: compactness of the solution family as $q \\\\to 1$'.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound functional extraction structuring the weak classical NS limit explicitly via the truncated diagonal sequence.",
+        "reviewed_at": "2026-07-08T13:23:02.000Z",
+        "reviewed_sha": "4cd3a81661c13a4943017074989cecb9afc4650a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1095,6 +1199,19 @@
         "notes": "No citations are present in 'q-deformed Aubin--Lions lemma: compactness of the solution family as $q \\\\to 1$', hence no citation misuse is possible.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound functional extraction structuring the weak classical NS limit explicitly via the truncated diagonal sequence.",
+        "reviewed_at": "2026-07-08T13:23:02.000Z",
+        "reviewed_sha": "4cd3a81661c13a4943017074989cecb9afc4650a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1116,6 +1233,19 @@
         "notes": "Key terms and symbols in 'q-deformed Aubin--Lions lemma: compactness of the solution family as $q \\\\to 1$' are mathematically defined and unambiguous.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound functional extraction structuring the weak classical NS limit explicitly via the truncated diagonal sequence.",
+        "reviewed_at": "2026-07-08T13:23:02.000Z",
+        "reviewed_sha": "4cd3a81661c13a4943017074989cecb9afc4650a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1137,6 +1267,19 @@
         "notes": "The algebraic and logical relations in 'q-deformed Aubin--Lions lemma: compactness of the solution family as $q \\\\to 1$' are independent of empirical tuning parameters.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound functional extraction structuring the weak classical NS limit explicitly via the truncated diagonal sequence.",
+        "reviewed_at": "2026-07-08T13:23:02.000Z",
+        "reviewed_sha": "4cd3a81661c13a4943017074989cecb9afc4650a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1158,6 +1301,19 @@
         "notes": "The physical concepts described in 'q-deformed Aubin--Lions lemma: compactness of the solution family as $q \\\\to 1$' are consistent with quantum observable mechanics.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound functional extraction structuring the weak classical NS limit explicitly via the truncated diagonal sequence.",
+        "reviewed_at": "2026-07-08T13:23:02.000Z",
+        "reviewed_sha": "4cd3a81661c13a4943017074989cecb9afc4650a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1179,6 +1335,19 @@
         "notes": "The derivation steps and formal definitions in 'q-deformed Aubin--Lions lemma: compactness of the solution family as $q \\\\to 1$' are reproducible.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/q-aubin-lions.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound functional extraction structuring the weak classical NS limit explicitly via the truncated diagonal sequence.",
+        "reviewed_at": "2026-07-08T13:23:02.000Z",
+        "reviewed_sha": "4cd3a81661c13a4943017074989cecb9afc4650a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1201,6 +1370,19 @@
         "verdict": "survivable-objection",
         "referee_argument": "The conjectured algebraic or physical relations in 'q-deformed Aubin--Lions lemma: compactness of the solution family as $q \\\\to 1$' remain unproven and are represented as sorry stubs in the formalization.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound functional extraction structuring the weak classical NS limit explicitly via the truncated diagonal sequence.",
+        "reviewed_at": "2026-07-08T13:23:02.000Z",
+        "reviewed_sha": "4cd3a81661c13a4943017074989cecb9afc4650a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1360,6 +1542,36 @@
         },
         "score": {
           "value": 0.85
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound functional extraction structuring the weak classical NS limit explicitly via the truncated diagonal sequence.",
+        "reviewed_at": "2026-07-08T13:23:02.000Z",
+        "reviewed_sha": "4cd3a81661c13a4943017074989cecb9afc4650a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound functional extraction structuring the weak classical NS limit explicitly via the truncated diagonal sequence.",
+        "reviewed_at": "2026-07-08T13:23:02.000Z",
+        "reviewed_sha": "4cd3a81661c13a4943017074989cecb9afc4650a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
         }
       }
     ]

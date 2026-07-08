@@ -1,46 +1,30 @@
 <!-- FILE_START: skein-particle-generation-intro.md -->
-Hadrons factorise uniquely into knot constituents under the relation algebra. A single family of fundamental strands—the torus knots $T_{m,n}$—generates every hadron under the Skein-relation moves. The resulting dictionary identifies each torus generator with a physical particle, whose mass is read directly from the linking number and constituent volume.
+Hadrons factorise uniquely into knot constituents under the relation algebra. A single family of fundamental strands—the torus knots $T_{m,n}$—generates every hadron under the Skein-relation moves. The resulting dictionary identifies each torus generator with a physical particle. We read the mass directly from the linking number and constituent volume.
 
-This section presents the constructive hierarchy. [Proposition: Skein generation of hadrons](#prop:skein-generation) exhibits $T_{m,n}$ as the generating family for the hadron monoid under Skein moves. [Lemma: Mass functional on a Skein resolution](#lem:mass-functional) splits the resulting mass into a topological linking term and an additive constituent volume. The [knot-particle generation](#def:knot-particle) encapsulates this structure, assigning a physical colour-tube reading to the constituents. [Proposition: Knot--particle correspondence](#prop:knot-particle) identifies each generator with a physical particle via the $q$-Schur--Weyl functor, and the [dictionary](#rem:dictionary) tabulates the resulting matches: torus knots and Hopf links to fundamental fermions, Borromean composites to baryons. A [visual inventory](#rem:visual-inventory) collects the small-crossing knots with their braid words and assignments. The subsequent section uses this correspondence to lift the dictionary to a bundle of state spaces over the brane manifold.
+This section builds the constructive hierarchy. We exhibit $T_{m,n}$ as the generating family for the hadron monoid. The mass functional on a Skein resolution splits the mass into a topological linking term and an additive constituent volume. This structure assigns a physical colour-tube reading to the constituents. The $q$-Schur--Weyl functor identifies each generator with a physical particle. The resulting dictionary tabulates the matches: torus knots and Hopf links to fundamental fermions, Borromean composites to baryons. A visual inventory collects the small-crossing knots with their braid words and assignments. We then use this correspondence to lift the dictionary to a bundle of state spaces over the brane manifold.
 
 _(draft.)_
 <!-- FILE_END: skein-particle-generation-intro.md -->
 
 <!-- FILE_START: atomic-braid.md -->
 **Definition.**
-*The **atomic braid** of a neutral atom $(Z, N)$ is the element of
-$H_{A+Z}(q)$ obtained by assembling $Z$ protons, $N$ neutrons,
-and $Z$ electrons into a single Hecke algebra with $A + Z$ strands,
-where $A = Z + N$.  The crossing coefficients are:*
+*The **atomic braid** of a neutral atom $(Z, N)$ is the element of $H_{A+Z}(q)$ obtained by assembling $Z$ protons, $N$ neutrons, and $Z$ electrons into a single Hecke algebra with $A + Z$ strands, where $A = Z + N$. The crossing coefficients are:*
 
 See [Table 1](#tbl:atomic-braid-table1-data).
 
 *The **ground-state ordering** is determined by:*
 
-1. *Nuclear ordering: minimize $\Phi_1$ over all permutations of
-   $Z$ protons and $N$ neutrons (exact search for
-   $\binom{A}{Z} \leq 50000$, steepest :refterm[descent]{#descent} otherwise).*
-2. *Electron insertion: greedily insert each of $Z$ electrons at
-   the position minimizing $\Phi_1$.*
+1. *Nuclear ordering: minimize $\Phi_1$ over all permutations of $Z$ protons and $N$ neutrons.*
+2. *Electron insertion: greedily insert each of $Z$ electrons at the position minimizing $\Phi_1$.*
 
-*The greedy insertion produces **ep pairs**: each electron sits
-immediately before its proton.  The $\mathfrak{n}e = \mathrm{id}$
-crossing means electrons pass through neutrons without generating
-Hecke generators.*
+*The greedy insertion produces **ep pairs**: each electron sits immediately before its proton. The $\mathfrak{n}e = \mathrm{id}$ crossing means electrons pass through neutrons without generating Hecke generators.*
 
-*For hydrogen ($A = 1$): the bare $[e, \mathfrak{p}]$ braid is
-LP-unstable (Proposition \ref{prop:atomic-lp-stability}).  The
-$\mathfrak{p}e$ crossing uses the $\mathcal{B}_3$-dressed eigenvalues
-$(q^5, -q^{-5})$ instead of bare $(q^{-1}, -q)$.*
+*For hydrogen ($A = 1$): the bare $[e, \mathfrak{p}]$ braid is LP-unstable. The $\mathfrak{p}e$ crossing uses the $\mathcal{B}_3$-dressed eigenvalues $(q^5, -q^{-5})$ instead of the bare $(q^{-1}, -q)$.*
 <!-- FILE_END: atomic-braid.md -->
 
 <!-- FILE_START: knot-particle-generation.md -->
 **Definition.**
-*The particle spectrum is generated from a finite set of
-:defterm[torus knot generators]{#torus-knot-generators} $T_{m,n}$ (with $\gcd(m,n) = 1$)
-embedded in the standard torus $\mathbb{T}^2 \subset S^3$, together with
-two :defterm[linking operations]{#linking-operations} that act on the exceptional divisor and
-the color-tube fibration. The **torus knot generators** are the family*
+*The particle spectrum is generated from a finite set of torus knot generators $T_{m,n}$ (with $\gcd(m,n) = 1$) embedded in the standard torus $\mathbb{T}^2 \subset S^3$, together with two :defterm[linking operations]{#linking-operations} that act on the exceptional divisor and the color-tube fibration. The :defterm[torus knot generators]{#torus-knot-generators} are the family*
 
 $$
   \mathcal{G} =  \bigl\{ T_{m,n}  \big| 
@@ -48,22 +32,17 @@ $$
   m + n \leq N(\chi) \bigr\},
 $$
 
-*where $T_{m,n}$ winds $m$ times around the meridian and $n$ times around
-the longitude of $\mathbb{T}^2$, and $N(\chi)$ is a cutoff determined by
-the Euler characteristic of the Frobenius--Hopf object.* For the Descartes
-universe with $\chi(A) = -6$, the bound is $N(-6) = 9$, admitting:
+*where $T_{m,n}$ winds $m$ times around the meridian and $n$ times around the longitude of $\mathbb{T}^2$, and $N(\chi)$ is a cutoff determined by the Euler characteristic of the Frobenius--Hopf object.* For the Descartes universe with $\chi(A) = -6$, the bound is $N(-6) = 9$, admitting:
 
 See [Table](#tbl:knot-particle-generation-table-data).
 
-We reserve $q$ for the substrate parameter
-([substrate parameter](#def:substrate-parameter)) and $p$ for base
-points, so the winding indices are always $(m,n)$.
+We reserve $q$ for the substrate parameter and $p$ for base points. The winding indices are always $(m,n)$.
 <!-- FILE_END: knot-particle-generation.md -->
 
 <!-- FILE_START: knot-particle-generation-consequences.md -->
-The fermion--boson decomposition ([fermions are knots, bosons are links](#prop:fermion-boson-knot-link)) extends the generator set ([knot-particle generation](#def:knot-particle-generation)) to the even-$n$ torus links, which represent bosons. These include $T(2,2)$ (gluon), $T(2,4)$ ($W$ boson), $T(2,6)$ ($Z$ boson), and $T(2,8)$ (Higgs boson). These are two-component links with $\gcd(2,n) = 2$, carrying integer spin.
+The fermion--boson decomposition extends the generator set to the even-$n$ torus links, which represent bosons. These include the $T(2,2)$ gluon, the $T(2,4)$ $W$ boson, the $T(2,6)$ $Z$ boson, and the $T(2,8)$ Higgs boson. These are two-component links with $\gcd(2,n) = 2$, carrying integer spin.
 
-All torus knots have zero hyperbolic volume. They are satellite/torus knots, not hyperbolic. Consequently, their bare mass under the topological mass formula ([topological mass formula](#prop:topological-mass-formula)) vanishes:
+All torus knots have zero hyperbolic volume. They are satellite knots, not hyperbolic. Consequently, their bare mass under the topological mass formula vanishes:
 
 $$
   \mathcal{M}_{\mathrm{bare}}(T_{m,n}) = 
@@ -73,7 +52,7 @@ $$
 Mass arises entirely through the linking operations: Hopf linking on the exceptional divisor, color-tube threading, and Skein crossing changes.
 
 **Presentation of the particle Skein module.**
-The Skein module ([Skein generation](#prop:skein-generation)) admits the presentation
+The Skein module admits the presentation
 
 $$
   \mathrm{Sk}_q(\mathbf{C}) = 
@@ -88,13 +67,11 @@ $$
   \bigr),
 $$
 
-where $\mathcal{G}$ is the torus knot generator set and the quotient applies the HOMFLY-PT Skein relation at every crossing. Every particle in the knot--particle dictionary ([knot--particle dictionary](#rem:knot-particle-dictionary)) is a word in this presentation.
+where $\mathcal{G}$ is the torus knot generator set. The quotient applies the HOMFLY-PT Skein relation at every crossing. Every particle in the knot--particle dictionary is a word in this presentation.
 <!-- FILE_END: knot-particle-generation-consequences.md -->
 
 <!-- FILE_START: skein-particle-generation-knot-particle-generation-intro.md -->
-Continuation of the preceding sub-section.
-
-This sub-section formalises the categorical knot-particle correspondence. Every confined particle acts as a categorical knot, and every categorical knot generates a particle via the substrate-flow. The dictionary blocks tabulate this correspondence across the lepton, meson, and nucleon sectors. The closing visual inventory and binding-knot tables fix the substrate-level reference set used in subsequent chapters.
+This sub-section formalises the categorical knot-particle correspondence. Every confined particle acts as a categorical knot. Every categorical knot generates a particle via the substrate-flow. The dictionary tabulates this correspondence across the lepton, meson, and nucleon sectors. The closing visual inventory and binding-knot tables fix the substrate-level reference set used in subsequent chapters.
 <!-- FILE_END: skein-particle-generation-knot-particle-generation-intro.md -->
 
 <!-- FILE_START: knot-particle-generation-interpretation.md -->
@@ -117,7 +94,7 @@ producing a two-component link in $S^3$ fibered over $\mathcal{S}_c$. This is th
 Iterating Hopf linking builds the leptonic and mesonic sectors.
 
 **Operation 2: Color-tube threading.**
-The three color tubes $(r, g, b) = (w_2 - z, w_3 - z, w_4 - z)$ from Bring's surface ([color tube coordinates](#def:color-tube-coordinates)) provide a second linking operation. Given three generators $T_{m_1,n_1}$, $T_{m_2,n_2}$, $T_{m_3,n_3}$, their **color-tube linking** threads each knot through one of the three chiral fibers:
+The three color tubes $(r, g, b) = (w_2 - z, w_3 - z, w_4 - z)$ from Bring's surface provide a second linking operation. Given three generators $T_{m_1,n_1}$, $T_{m_2,n_2}$, $T_{m_3,n_3}$, their **color-tube linking** threads each knot through one of the three chiral fibers:
 
 $$
   \ell_c  \colon 
@@ -127,7 +104,7 @@ $$
   \mathbin{\cup_g} T_{m_3,n_3}.
 $$
 
-The $S_3 \subset S_5$ permutation symmetry of the color coordinates ([color tube interpretation](#rem:color-tube-interpretation)) ensures this linking is invariant under color permutations. This reproduces the $\mathrm{SU}(3)$ color confinement condition: only color-singlet combinations produce observable hadrons.
+The $S_3 \subset S_5$ permutation symmetry of the color coordinates ensures this linking is invariant under color permutations. This reproduces the $\mathrm{SU}(3)$ color confinement condition. Only color-singlet combinations produce observable hadrons.
 
 **Operation 3: Skein crossing change.**
 The $q$-deformed Skein relation at a crossing
@@ -137,7 +114,7 @@ $$
   =  (q^{1/2} - q^{-1/2}) L_0
 $$
 
-acts as a transmutation operation. Resolving or introducing crossings in a linked configuration converts torus topologies into hyperbolic ones. In particular, the figure-eight knot $4_1$ (muon) is not a generator. It arises from a crossing change on a linked trefoil pair:
+acts as a transmutation operation. Resolving or introducing crossings in a linked configuration converts torus topologies into hyperbolic ones. The figure-eight knot $4_1$ (muon) is not a generator. It arises from a crossing change on a linked trefoil pair:
 
 $$
   T_{2,3} \mathbin{\cup_{\mathrm{Hopf}}} T_{2,3}
@@ -145,41 +122,22 @@ $$
   4_1 +  \text{(Skein remainder)}.
 $$
 
-The muon is literally a Skein excitation of the electron.
+The muon is a Skein excitation of the electron.
 <!-- FILE_END: knot-particle-generation-interpretation.md -->
 
 <!-- FILE_START: knot-particle-correspondence.md -->
-**Proposition.**
-*Let $V = V_{1/2}$ be the fundamental representation of $\mathcal{U}_q(\mathfrak{su}(2))$. Let $B_n$ act faithfully on $V^{\otimes n}$ via the $R$-matrix braiding ([braid action on tensor products](#prop:braid-action-tensor)). By $q$-Schur--Weyl duality ([knot eigenbasis completeness](#prop:knot-eigenbasis-complete)), $V^{\otimes n}$ decomposes into irreducible summands labeled by partitions $\lambda \vdash n$.*
+*Let $V = V_{1/2}$ be the fundamental representation of $\mathcal{U}_q(\mathfrak{su}(2))$. Let $B_n$ act faithfully on $V^{\otimes n}$ via the $R$-matrix braiding. By $q$-Schur--Weyl duality, $V^{\otimes n}$ decomposes into irreducible summands labeled by partitions $\lambda \vdash n$.*
 
 *The Markov trace on $H_n(R, q)$ assigns a knot type $K_\lambda$ (the closure of any braid representative) to each irreducible summand. This establishes a bijection between irreducible summands of $V^{\otimes n}$ under the Iwahori--Hecke algebra $H_n(R, q)$ and knot/link types arising as closures of $n$-strand braids.*
 
-*In particular, each localized knot ([localized knot](#def:localized-knot)) $(p, K)$ in a bundle corresponds to a unique irreducible summand. Hadrons ([hadron](#def:hadron)) correspond to tensor products of such summands bound by Hopf links.*
+*In particular, each localized knot $(p, K)$ in a bundle corresponds to a unique irreducible summand. Hadrons correspond to tensor products of such summands bound by Hopf links.*
 <!-- FILE_END: knot-particle-correspondence.md -->
 
 <!-- FILE_START: knot-particle-dictionary.md -->
-The localized knot framework ([Definition](#def:localized-knot)) assigns
-a topological identity to each fundamental particle.  This dictionary is
-*derived* from the categorical braiding on $V = V_{1/2}$, not postulated:
-the $R$-matrix of $\mathcal{U}_q(\mathfrak{su}(2))$ endows
-$V^{\otimes n}$ with a faithful $B_n$-action
-([Proposition](#prop:braid-action-tensor)), and
-$q$-Schur--Weyl duality
-([Theorem](#prop:knot-eigenbasis-complete)) decomposes
-$V^{\otimes n}$ into irreducible summands labelled by partitions
-$\lambda \vdash n$. By Alexander's theorem, every oriented knot is the
-closure of a braid $\beta \in B_n$, so the Markov trace on the
-Iwahori--Hecke algebra $H_n(R, q)$ identifies each irreducible summand
-with a knot type.
+The localized knot framework assigns a topological identity to each fundamental particle. This dictionary is derived from the categorical braiding on $V = V_{1/2}$. The $R$-matrix of $\mathcal{U}_q(\mathfrak{su}(2))$ endows $V^{\otimes n}$ with a faithful $B_n$-action. The $q$-Schur--Weyl duality decomposes $V^{\otimes n}$ into irreducible summands labelled by partitions $\lambda \vdash n$. By Alexander's theorem, every oriented knot is the closure of a braid $\beta \in B_n$. The Markov trace on the Iwahori--Hecke algebra $H_n(R, q)$ identifies each irreducible summand with a knot type.
 
-**Fermion--boson principle**
-([fermions are knots, bosons are links](#prop:fermion-boson-knot-link)).
-In the $T(2,n)$ torus family on the Bring's surface, the number of
-connected components is $\gcd(2,n)$.  **Fermions** ($n$ odd) are knots
-(1 component, half-integer spin); **bosons** ($n$ even) are links (2
-components, integer spin).  Quarks are Borromean-linked unknots in the
-exceptional divisor
-([Borromean baryon](#def:borromean-baryon)).
+**Fermion--boson principle.**
+In the $T(2,n)$ torus family on the Bring's surface, the number of connected components is $\gcd(2,n)$. **Fermions** ($n$ odd) are knots (1 component, half-integer spin). **Bosons** ($n$ even) are links (2 components, integer spin). Quarks are Borromean-linked unknots in the exceptional divisor.
 
 **Table 1: Fermion sector** (knots, 1 component).
 
@@ -195,42 +153,26 @@ See [Table 3](#tbl:knot-particle-dictionary-table3-data).
 
 **Table 4: Quark sector** (on the exceptional divisor).
 
-Each quark is an **unknot** ($0_1$) within the Borromean braid
-$\mathcal{B}_3$ ([Borromean baryon](#def:borromean-baryon)).
-Up vs down flavour is encoded by crossing orientation ($\sigma$
-vs $\sigma^{-1}$), not knot type. The table below shows which
-lepton's torus knot each quark **descends from** on the exceptional
-divisor — this is a :refterm[descent]{#descent} relationship, not the quark's own
-knot type:
+Each quark is an **unknot** ($0_1$) within the Borromean braid $\mathcal{B}_3$. Up vs down flavour is encoded by crossing orientation ($\sigma$ vs $\sigma^{-1}$), not knot type. The table below shows which lepton's torus knot each quark descends from on the exceptional divisor. This is a descent relationship, not the quark's own knot type:
 
 See [Table 4](#tbl:knot-particle-dictionary-table4-data).
 
-**Precision data.** All torus knots have zero hyperbolic volume
-($\mathrm{Vol} = 0$), so their bare mass vanishes.  Mass arises
-entirely from crossing energy $\mathfrak{E}_{\times}(q) =
-\tfrac{1}{2}(q - q^{-1})$ at each self-crossing and from Hopf
-linking.  The figure-eight knot ($4_1$) is the unique amphichiral
-knot driving the mass mechanism, with
-$\mathrm{Vol}(4_1) = 2.0299$.  Jones polynomial values at
-$q = q_0 = 1.109978595554181\ldots$ (50 dps) are listed for the building-block knots
-([building-block knots](#rem:building-block-knots)).
+**Precision data.** All torus knots have zero hyperbolic volume ($\mathrm{Vol} = 0$), so their bare mass vanishes. Mass arises entirely from crossing energy $\mathfrak{E}_{\times}(q) = \tfrac{1}{2}(q - q^{-1})$ at each self-crossing and from Hopf linking. The figure-eight knot ($4_1$) is the unique amphichiral knot driving the mass mechanism, with $\mathrm{Vol}(4_1) = 2.0299$. Jones polynomial values at $q = q_0 = 1.109978595554181\ldots$ (50 dps) are listed for the building-block knots.
 
-In a bundle initial condition $\mathcal{S}_0$, each entry $(p_i, K_i)$
-is one row of this dictionary placed at a specific point on
-$\mathbb{P}(V)$.
+In a bundle initial condition $\mathcal{S}_0$, each entry $(p_i, K_i)$ is one row of this dictionary placed at a specific point on $\mathbb{P}(V)$.
 <!-- FILE_END: knot-particle-dictionary.md -->
 
 <!-- FILE_START: binding-knots-visual-inventory.md -->
 **Remark (visual inventory of binding knots).**
 
-This block collects diagrams for the knots and links that act as binding operators across the QOU framework. Each entry shows the standard diagram (TikZ), its braid word in $B_n$, and its entry point in the binding pipeline. For per-particle context, see [knot-particle-dictionary](#rem:knot-particle-dictionary).
+This block collects diagrams for the knots and links that act as binding operators across the QOU framework. Each entry shows the standard diagram (TikZ), its braid word in $B_n$, and its entry point in the binding pipeline. For per-particle context, see the knot-particle dictionary.
 
 ## Trivial: the unknot
 
 The unknot $0_1 = T_{1,0}$ is a single unknotted circle — the trivial element of every braid group. It carries zero crossings. Hence it has zero $q$-deformed crossing energy, $\mathfrak{E}_\times(q) = \frac{1}{2}(q - q^{-1}) \cdot 0 = 0$, and its bare mass vanishes. It plays two disjoint roles:
 
-1. **Neutrino $\nu$**: a single unknot in $H_1(q)$ ([`knot-particle-dictionary`](#rem:knot-particle-dictionary) Table 1, row 1). Its mass arises entirely from Reeb-divisor coupling, not from the knot itself.
-2. **Each quark inside the Borromean baryon**: the three strands of $\mathcal{B}_3$ are individually unknotted. Only their joint closure is non-trivial ([`def:borromean-baryon`](#def:borromean-baryon)).
+1. **Neutrino $\nu$**: a single unknot in $H_1(q)$. Its mass arises entirely from Reeb-divisor coupling, not from the knot itself.
+2. **Each quark inside the Borromean baryon**: the three strands of $\mathcal{B}_3$ are individually unknotted. Only their joint closure is non-trivial.
 
 ```tex
 \begin{tikzpicture}[scale=1, line width=1.2pt]
@@ -243,7 +185,7 @@ The unknot $0_1 = T_{1,0}$ is a single unknotted circle — the trivial element 
 
 ## Hopf link (the "bowtie")
 
-The Hopf link $L2a1 = T(2, 2)$ is the simplest non-trivial link: two circles linked once. Its braid word $\sigma_0 \sigma_1 \in B_3$ closes to two interlocked loops, giving a "bowtie" silhouette when drawn flat with a single crossing per loop. This is the categorical identity of the **gluon** (strong-force mediator), per [`knot-particle-dictionary`](#rem:knot-particle-dictionary) Table 2, row 1.
+The Hopf link $L2a1 = T(2, 2)$ is the simplest non-trivial link: two circles linked once. Its braid word $\sigma_0 \sigma_1 \in B_3$ closes to two interlocked loops, giving a "bowtie" silhouette when drawn flat with a single crossing per loop. This is the categorical identity of the **gluon** (strong-force mediator).
 
 ```tex
 \begin{tikzpicture}[scale=1, line width=1.2pt]
@@ -280,7 +222,7 @@ The torus-knot family $T(2, 2k+1)$ extends to the muon $T(2,5)$, tau $T(2,7)$, a
 
 ## Figure-eight $4_1$ — the mass mechanism
 
-The figure-eight $4_1$ is the smallest hyperbolic knot ($\mathrm{Vol}(4_1) \approx 2.0299$, the CAL-2 calibration anchor; see [`prop:three-calibration-inputs`](#prop:three-calibration-inputs)). Its braid word is $\sigma_0\sigma_1^{-1}\sigma_0\sigma_1^{-1} \in B_3$. The alternating positive/negative crossings give amphichirality $4_1 \cong 4_1^{\,\text{mirror}}$ (invariance under $q \mapsto q^{-1}$). This property selects $4_1$ as the **Higgs / mass mechanism** ([`figure-8-archimedean-illustration`](#rem:figure-8-archimedean-illustration)).
+The figure-eight $4_1$ is the smallest hyperbolic knot ($\mathrm{Vol}(4_1) \approx 2.0299$, the CAL-2 calibration anchor). Its braid word is $\sigma_0\sigma_1^{-1}\sigma_0\sigma_1^{-1} \in B_3$. The alternating positive/negative crossings give amphichirality $4_1 \cong 4_1^{\,\text{mirror}}$ (invariance under $q \mapsto q^{-1}$). This property selects $4_1$ as the **Higgs / mass mechanism**.
 
 ```tex
 \begin{tikzpicture}[scale=0.9, line width=1.2pt]
@@ -297,7 +239,7 @@ The figure-eight $4_1$ is the smallest hyperbolic knot ($\mathrm{Vol}(4_1) \appr
 
 ## Borromean rings $\mathcal{B}_3 = 6^3_2$
 
-The Borromean rings are three mutually linked circles such that removing any one frees the other two — no two are individually linked. The braid word is $\mathcal{B}_3 = \sigma_0\sigma_1\sigma_2\sigma_0\sigma_1\sigma_2 \in B_4$. The hyperbolic volume is $\mathrm{Vol}(\mathcal{B}_3) = 8G$ (twice the volume of a regular ideal octahedron, where $G$ is Catalan's constant). This provides the **three-quark confinement** identity for the proton, neutron, and $^4$He nucleus, and sets the binding-energy scale $\alpha = m_e \cdot 8G \approx 3.7445$ MeV ([`prop:binding-scale-catalan`](#prop:binding-scale-catalan)).
+The Borromean rings are three mutually linked circles such that removing any one frees the other two — no two are individually linked. The braid word is $\mathcal{B}_3 = \sigma_0\sigma_1\sigma_2\sigma_0\sigma_1\sigma_2 \in B_4$. The hyperbolic volume is $\mathrm{Vol}(\mathcal{B}_3) = 8G$ (twice the volume of a regular ideal octahedron, where $G$ is Catalan's constant). This provides the **three-quark confinement** identity for the proton, neutron, and $^4$He nucleus, and sets the binding-energy scale $\alpha = m_e \cdot 8G \approx 3.7445$ MeV.
 
 ```tex
 \begin{tikzpicture}[scale=0.85, line width=1.2pt]
@@ -321,10 +263,10 @@ See [Table 1](#tbl:binding-knots-visual-inventory-table1-data).
 
 ## Higher-order links (in mass-table-ppb pipeline)
 
-The zero-parameter Kashaev law $B = \rho_F \cdot \mathrm{Vol}_{\mathrm{hyp}}(K)$ in [`mass_table_ppb.py`](../../../computations/mass_table_ppb.py) uses additional hyperbolic knots and links that do not yet have visualizations here:
+The zero-parameter Kashaev law $B = \rho_F \cdot \mathrm{Vol}_{\mathrm{hyp}}(K)$ uses additional hyperbolic knots and links that do not yet have visualizations here:
 
 See [Table 2](#tbl:binding-knots-visual-inventory-table2-data).
 
-These are flagged `census-assigned` in [`mass-table-ppb.witness.json`](../../../computations/mass-table-ppb.witness.json). This indicates the assignment was selected via census search to match AME binding energies, rather than derived from first principles ([Workplan 0b §4 derivation status](../../../docs/audits/-workplan-0b-script-rewire-handoff.md)).
+These are flagged `census-assigned` in the pipeline. This indicates the assignment was selected via census search to match AME binding energies, rather than derived from first principles.
 <!-- FILE_END: binding-knots-visual-inventory.md -->
 

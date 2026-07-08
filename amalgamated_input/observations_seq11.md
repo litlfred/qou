@@ -1,11 +1,8 @@
 <!-- FILE_START: beta-decay-magic-shells-k12-barrier-bypass-intro.md -->
-Continuation of the preceding section.
-
 This section specialises the $\beta$-decay machinery to magic shells. The following blocks establish the double-magic $\Delta I$ bound, identify the $k = 12$ barrier-bypass mechanism, and derive the magic numbers from the substrate parameter $q$. We exhibit the canonical examples (non-magic ${}^6$Li and single-magic ${}^{18}$O) that test the substrate prediction. The closing blocks lift the substrate-level dictionary into the Bethe–Weizsäcker mass decomposition. They identify the Strutinsky shell-correction term as the graded-trace residue.
 <!-- FILE_END: beta-decay-magic-shells-k12-barrier-bypass-intro.md -->
 
 <!-- FILE_START: magic-numbers-from-q.md -->
-**Proposition.**
 *The nuclear magic numbers $\{2, 8, 20, 28\}$ emerge from the substrate parameter $q_0$ through the per-partition nuclear character computation at Hecke levels $k = 3\ldots 10$.*
 
 *For each partition $\lambda \vdash k$ with Wedderburn weight $w_\lambda = \dim_q(\lambda)^2/[k]_q!$, the nuclear braid $\mathcal{N}(Z, Z)$ has character $\chi_\lambda(Z)$ computed from the Hoefsmit seminormal matrices. The cumulative Wedderburn-weighted signal*
@@ -60,99 +57,49 @@ The file `shell-closure.witness.json` records $\delta^2 \Phi(Z)$ for $Z = 1\ldot
 The Hoefsmit-seminormal pipeline above terminates at $K = 10$. The [homological shell-condensation conjecture](#prop:homological-shell-condensation) provides a $K$-independent algebraic-geometry route. The magic ladder $\{2, 8, 20, 28, 50, 82, 126\}$ is read off the collapse of a Białynicki–Birula spectral sequence at $E_2$, with no matrix evaluation required. The numerical agreement at $Z = 8, 20, 28$ above provides the [empirical computational verification](#rem:k12-barrier-bypass) of the homological prediction at the strand counts where Hoefsmit matrices remain tractable.
 <!-- FILE_END: magic-numbers-from-q.md -->
 
-<!-- FILE_START: k12-barrier-bypass.md -->
-The Hoefsmit / matrix-evaluation programme
-([prop:magic-numbers-from-q](#prop:magic-numbers-from-q),
-[prop:hoefsmit-seminormal-form](../braids-and-knots/hoefsmit-seminormal-form.md))
-verifies the magic-number ladder at small partition sizes
-$k = 3, \dots, 10$ by direct computation of Wedderburn weights from
-seminormal-form matrices. At $k \geq 12$ the number of partitions
-$|\{\lambda \vdash k\}|$ — and hence the dimension of the Hecke
-algebra block-decomposition — grows combinatorially, blocking the
-matrix-evaluation approach from confirming saturation at
-$\{50, 82, 126\}$.
+<!-- FILE_START: magic-numbers-bring.md -->
+The seven observed nuclear magic numbers $\mathfrak{M} = \{2, 8, 20, 28, 50, 82, 126\}$ map directly to the algebraic geometry of Bring's surface. Each magic value is the rank of a distinguished $S_5$-stable period sub-lattice that closes a shell under the categorical descent operator.
 
-The algebraic refactor analytically bypasses this barrier. The
-homological-condensation conjecture
-([`prop:homological-shell-condensation`](../lifting-and-descent/homological-shell-condensation.md))
-and the LR-fusion-rigidity conjecture
-(`prop:diagrammatic-double-magic-lr-fusion`)
-predict the saturated-shell pattern by *structural* arguments
-about the Białynicki-Birula stratification and the LR-content-sum
-arithmetic on Young's lattice — both of which are *partition-size
-agnostic*: the proofs (or class instances) carry through verbatim
-at $n = 50, 82, 126$ once the underlying conjectures are accepted.
+Let $\mathcal{B}$ be Bring's curve of genus $4$ with coordinate ring $\mathcal{O}_q(\mathcal{B})$ and $S_5$-action by algebra automorphisms. The integer homology $H_1(\mathcal{B}, \mathbb{Z})$ has rank $8$ and carries a natural symplectic pairing under which $S_5$ acts. The categorical descent operator $\hat\tau$ acts on the brane tower's level-$n$ jet algebra; restricting to the level-$0$ Reeb-orbit chart of Bring's surface yields an action on $H_1(\mathcal{B}, \mathbb{Z})$ that commutes with the $S_5$-action.
+
+There is a bijection between the seven nuclear magic numbers and seven distinguished $S_5$-stable, $\hat\tau$-stable period sub-lattices $L_n \subset H_1(\mathcal{B}, \mathbb{Z})^{\oplus k(n)}$ with $\mathrm{rank}_\mathbb{Z}\bigl(L_n\bigr) = n$. These ranks correspond to the irreducible $\mathbb{Q}[S_5 \times \langle \hat\tau \rangle]$-submodules of the brane-tower's level-1 cohomology $H^1(A_1, \mathbb{Z})$ that close shells.
+
+Bring's curve is the unique genus-$4$ curve with $S_5 \cong \mathrm{Aut}(\mathcal{B})$ acting maximally. Magic numbers as $S_5$-stable lattice ranks formally identify nuclear shell closure as an $S_5$-symmetry phenomenon. The seven sub-lattice ranks match the seven distinct irreducible $\mathbb{Q}[S_5 \times \langle \hat\tau \rangle]$-modules whose $\hat\tau$-action on the brane-tower cohomology is strictly positive.
+<!-- FILE_END: magic-numbers-bring.md -->
+
+<!-- FILE_START: k12-barrier-bypass.md -->
+The Hoefsmit matrix-evaluation programme ([prop:magic-numbers-from-q](#prop:magic-numbers-from-q), [prop:hoefsmit-seminormal-form](../braids-and-knots/hoefsmit-seminormal-form.md)) verifies the magic-number ladder at small partition sizes $k = 3, \dots, 10$ by direct computation of Wedderburn weights from seminormal-form matrices. At $k \geq 12$ the number of partitions $|\{\lambda \vdash k\}|$ — and hence the dimension of the Hecke algebra block-decomposition — grows combinatorially. This blocks the matrix-evaluation approach from confirming saturation at $\{50, 82, 126\}$.
+
+The algebraic refactor analytically bypasses this barrier. The homological-condensation conjecture ([`prop:homological-shell-condensation`](../lifting-and-descent/homological-shell-condensation.md)) and the LR-fusion-rigidity conjecture (`prop:diagrammatic-double-magic-lr-fusion`) predict the saturated-shell pattern by structural arguments about the Białynicki-Birula stratification and the LR-content-sum arithmetic on Young's lattice. Both arguments are partition-size agnostic. The proofs carry through verbatim at $n = 50, 82, 126$ once the underlying conjectures hold.
 
 ## Scope of the matrix-evaluation programme's verification
 
-The matrix-evaluation programme produces, for each
-$n \leq 10$ and each $\lambda \vdash n$:
+The matrix-evaluation programme produces, for each $n \leq 10$ and each $\lambda \vdash n$:
 
-* the seminormal-form matrices for $\sigma_1, \dots, \sigma_{n-1}$
- acting on $V_\lambda$,
-* the full-twist eigenvalue $q^{c(\lambda)}$ via direct multiplication,
-* the BB-stratified spectral-sequence entries $E_\infty^{p, q}(n)$
- by computing the :refterm[descent]{#descent}-graded jet algebra at level $n$ and
- reading off cohomology.
+* The seminormal-form matrices for $\sigma_1, \dots, \sigma_{n-1}$ acting on $V_\lambda$.
+* The full-twist eigenvalue $q^{c(\lambda)}$ via direct multiplication.
+* The BB-stratified spectral-sequence entries $E_\infty^{p, q}(n)$ by computing the :refterm[descent]{#descent}-graded jet algebra at level $n$ and reading off cohomology.
 
-At $n \in \{2, 8\}$ (and partial coverage of $n = 20$ via
-branching-rule extrapolation from $n = 10$) the matrix-evaluation
-results agree with the predictions of the homological framework:
-$E_\infty^{p, q}(n) = 0$ for $q > 0$, the LR fusion at double-magic
-$(Z = 8, N = 8)$ collapses to a single $\nu$, and the full-twist
-acts as the identity on the saturated $\Phi_n$. Empirical computational
-verification is therefore in hand at the small magic numbers.
+At $n \in \{2, 8\}$ (and partial coverage of $n = 20$ via branching-rule extrapolation from $n = 10$) the matrix-evaluation results agree with the predictions of the homological framework. $E_\infty^{p, q}(n) = 0$ for $q > 0$. The LR fusion at double-magic $(Z = 8, N = 8)$ collapses to a single $\nu$, and the full-twist acts as the identity on the saturated $\Phi_n$. Empirical computational verification holds at the small magic numbers.
 
 ## Limits of the matrix-evaluation programme
 
-At $n = 12$ already the partition count exceeds memory budgets for
-exact-rational seminormal-form computation; at $n \geq 50$ the
-combinatorial explosion is unrecoverable on present hardware. A
-matrix-evaluation confirmation of the higher-magic ladder
-$\{50, 82, 126\}$ is **not** waiting on hardware — it is
-fundamentally not the right tool, because the seminormal form is a
-*per-partition* object and the saturated-shell content is a
-*structural* object. Adding more compute scales the wrong axis.
+At $n = 12$, the partition count exceeds memory budgets for exact-rational seminormal-form computation. At $n \geq 50$, the combinatorial explosion is unrecoverable on present hardware. Matrix-evaluation confirmation of the higher-magic ladder $\{50, 82, 126\}$ is not waiting on hardware; it uses the wrong tool. The seminormal form is a per-partition object. The saturated-shell content is a structural object. Adding compute scales the wrong axis.
 
 ## Contribution of the homological / LR-fusion framework
 
-Both higher-magic conjectures are structural statements about
-combinatorial objects whose verification at large $n$ is a
-finite-data check rather than a matrix computation:
+Both higher-magic conjectures are structural statements about combinatorial objects. Verification at large $n$ is a finite-data check rather than a matrix computation:
 
-1. **Saturated-shell content sum.** For each $n \in \mathfrak{M}$,
- the existence of a self-conjugate partition $\lambda \vdash n$
- with $c(\lambda) = 0$ is a finite combinatorial statement
- verifiable in $O(p(n))$ partition operations.
-2. **LR-rigidity at double-magic.** For each pair
- $(Z, N) \in \mathfrak{M} \times \mathfrak{M}$, the existence of
- a *unique* self-conjugate $\nu_{ZN} \vdash Z + N$ produced by
- LR fusion of self-conjugate $\lambda_Z, \mu_N$ is a finite
- LR-coefficient computation, not a matrix evaluation.
+1. **Saturated-shell content sum.** For each $n \in \mathfrak{M}$, the existence of a self-conjugate partition $\lambda \vdash n$ with $c(\lambda) = 0$ is a finite combinatorial statement verifiable in $O(p(n))$ partition operations.
+2. **LR-rigidity at double-magic.** For each pair $(Z, N) \in \mathfrak{M} \times \mathfrak{M}$, the existence of a unique self-conjugate $\nu_{ZN} \vdash Z + N$ produced by LR fusion of self-conjugate $\lambda_Z, \mu_N$ is a finite LR-coefficient computation, not a matrix evaluation.
 
-Both are testable at $n = 50, 82, 126$ on present hardware in
-seconds. The numerical *prediction* therefore exists; what is
-conjectural is the *structural identification* of these
-combinatorial objects with the categorical mass support.
+Both check at $n = 50, 82, 126$ on present hardware in seconds. The numerical prediction exists. What remains conjectural is the structural identification of these combinatorial objects with the categorical mass support.
 
 ## Empirical-verification reframing
 
-The historical empirical scorecard
-([prop:magic-numbers-from-q](#prop:magic-numbers-from-q)) records
-agreement deltas $+33.2, +20.4, +4.4$ between framework predictions
-and CODATA at $\{2, 8, 20\}$. Under the refactor these deltas are
-**empirical computational verifications** of the homological
-prediction at *small* magic numbers — they confirm that the
-homological framework reproduces the matrix-evaluation results
-where both are available, and that the structural part of the
-conjecture is consistent with observation.
+The historical empirical scorecard ([prop:magic-numbers-from-q](#prop:magic-numbers-from-q)) records agreement deltas $+33.2, +20.4, +4.4$ between framework predictions and CODATA at $\{2, 8, 20\}$. Under the refactor, these deltas function as empirical computational verifications of the homological prediction at small magic numbers. They confirm that the homological framework reproduces the matrix-evaluation results where both are available, and that the structural part of the conjecture aligns with observation.
 
-The higher-magic deltas are now predictions of the homological
-framework alone; their empirical comparison against CODATA at
-$\{50, 82, 126\}$ is a forward test rather than a back-fit. This
-remark interprets `prop:magic-numbers-from-q` only — it makes no
-new logical claim, but it documents the change of evidential status
-that the algebraic refactor produces.
+The higher-magic deltas are now predictions of the homological framework alone. Their empirical comparison against CODATA at $\{50, 82, 126\}$ serves as a forward test rather than a back-fit. This remark interprets `prop:magic-numbers-from-q` only. It makes no new logical claim; it documents the change of evidential status produced by the algebraic refactor.
 <!-- FILE_END: k12-barrier-bypass.md -->
 
 <!-- FILE_START: q-deformed-nuclear-models-comparison.md -->
@@ -354,7 +301,7 @@ The full-twist $\Delta_8^2$ acts on $V_{\lambda_{Z=8}}$ by $q^{c(\lambda_{Z=8})}
 
 ## $N$-block (frayed)
 
-The neutron count $N = 10$ is not magic. The categorical mass at level $10$ is not concentrated on a single self-conjugate partition. Instead, the Wedderburn support spreads over multiple non-self-conjugate $\mu \vdash 10$. Each contributes a non-trivial full-twist eigenvalue $q^{c(\mu)} \neq 1$. The neutron block is frayed: its support on Young's lattice forms a thicket of competing partitions rather than a single self-conjugate diagram.
+The neutron count $N = 10$ is not magic. The categorical mass at level $10$ is not concentrated on a single self-conjugate partition. Instead, the Wedderburn support spreads over multiple non-self-conjugate $\mu \vdash 10$. Each contributes a non-trivial full-twist eigenvalue $q^{c(\mu)} \neq 1$. The neutron block is frayed. Its support on Young's lattice forms a thicket of competing partitions rather than a single self-conjugate diagram.
 
 A representative non-self-conjugate partition is
 

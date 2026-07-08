@@ -1,1082 +1,121 @@
 <!-- FILE_START: intro-mutant-jones-bloch-group.md -->
-The Jones polynomial cannot distinguish mutant knot pairs — the
-Kinoshita–Terasaka and Conway knots are the canonical example —
-but the substrate-level Hecke construction *should* be able to:
-it tracks more refined invariants than the closure trace alone.
-This section uses the mutant pair as a falsifiability test and
-identifies the Bloch group closure as the categorical residue
-that resolves the mutant ambiguity.
+The Jones polynomial fails to distinguish mutant knots, notably the Conway and Kinoshita-Terasaka pair. However, the substrate-level Hecke framework tracks refined invariants beyond the closure trace. This section applies the mutant pair as a critical falsifiability test. We identify the Bloch-group closure as the exact categorical mechanism resolving mutant ambiguity.
 
-The arc structures around the falsifiability question.  The
-first blocks set up the bi-filtration grid that distinguishes
-mutant knots categorically; the middle blocks compute the
-substrate-level invariant on the canonical mutant pair and
-exhibit the separation; the closing blocks tie the separation
-to the Bloch-group quotient construction from the Descartes
-chapter, identifying the Bloch closure as the algebraic
-incarnation of the mutant resolution.
-
-The output is the categorical mutant-resolving invariant and
-its substrate-flow stability.  This is the strongest single
-falsifiability result in the chapter: the substrate-level
-construction makes a definite prediction on a case where the
-Jones polynomial is silent, and the experimental
-distinguishability of the mutant pair tests the prediction
-directly.
+The sequence maps the bi-filtration grid that categorically separates mutants, tests the substrate invariant against the canonical mutant pair, and connects this separation directly to the Bloch-group quotient. This yields the strongest falsifiability target in the chapter: a precise geometric divergence where the standard polynomial evaluates identically.
 <!-- FILE_END: intro-mutant-jones-bloch-group.md -->
 
 <!-- FILE_START: knot-indexed-convolution-grid.md -->
-**Proposition (placement of paper's existing knot-indexed
-convolutions in the bi-filtration grid; conditional on [`conj:joint-galois-braid-action`](#conj:joint-galois-braid-action)).**
+*Each operational non-tensor product linking two morphisms in the QOU occupies a specific $(n, K)$ stratum in the bi-filtration grid $\mathcal{H}_q^{(n, K)}$.*
 
-*Each existing "non-tensor product" operation in the QOU paper —
-where two morphisms are combined via a knot/braid/partition-shaped
-twist rather than a plain tensor product — sits at a specific
-$(n, K)$ stratum of the bi-filtration $\mathcal{H}_q^{(n, K)}$
-([`def:hq-bi-filtration`](#def:hq-bi-filtration)).*
+### The grid structure
 
-### The grid
+Most knot-indexed operations operate algebraically at depth $n=0$ without polylogarithms. They shift the knot-index axis strictly through structural translation. The archimedean image emerges at higher depths only post-realization via $\tau_{\mathrm{arch}}$.
 
-See [Table 1](#tbl:knot-indexed-convolution-grid-table1-data).
+The bi-filtration cleanly separates input shape (depth-0 knot index) from output transcendence depth (post-realization polylogarithm). The interface coupling $\bowtie_K$ exemplifies this as a strict depth-0 convolution in the Hecke algebra, manipulating elements algebraically without generating higher-order transcendental terms.
 
-### Two structural observations
-
-#### Observation 1: most "knot-indexed" operations sit at $n = 0$
-
-The paper's *operational* knot-indexed convolutions ($\mathrm{Lk}_R^{(k)}$,
-$\bowtie_K$, Hoefsmit pairing, Markov trace) live at depth $n = 0$
-on the algebraic side — they manipulate Hecke elements without
-introducing polylogarithms. Their *archimedean image* sits at
-higher depth depending on what is paired with: Markov trace + braid
-of a hyperbolic knot lands at depth 2 (volume); CS lands at depth 3.
-
-This is not accidental: the bi-filtration encodes a clear separation
-between **input shape** (the knot index $K$, depth-$0$ on the
-algebraic side) and **output transcendence depth** (achieved only
-after applying $\tau_{\mathrm{arch}}$, which involves the depth-$n$
-grouplike $\mathrm{Li}_n^q$).
-
-#### Observation 2: the $\bowtie_K$ "non-tensor product" pattern is a depth-0 knot index
-
-The original confusion in the first answer of this session — was
-$\bowtie_K$ a Mikusiński-style convolution? — reduces to: **$\bowtie_K$
-is a depth-0, knot-indexed Hecke element**. In the bi-filtration
-language:
-
-$$
-  \bowtie_K \;\in\; \mathcal{H}_q^{(0, \,\text{EW interface braid})}.
-$$
-
-The "convolution" structure the user identified is the bi-filtration
-itself: convolution by $\bowtie_K$ shifts the knot-index axis (via
-left/right multiplication in $H_6(q)$) without changing the depth
-axis. This is a *structural translation*, not a polylogarithmic
-operation.
-
-### Closure properties of the grid
-
-See [Table 2](#tbl:knot-indexed-convolution-grid-table2-data).
-
-### Significance for the paper's existing operations
-
-This proposition serves three purposes:
-
-1. **Names the pattern.** The "$\bowtie_K$-style" non-tensor products
-   are now collected under one definition: each is a knot-indexed
-   convolution at a specific $(n, K)$ stratum.
-
-2. **Predicts compatibility.** Operations at the same depth $n$ but
-   different $K$ should compose via convolution as the table predicts.
-   E.g., $\mathrm{Lk}_R^{(k_1)} *_q \mathrm{Lk}_R^{(k_2)}$ should
-   land in $\mathcal{H}_q^{(0, \text{double link})}$.
-
-3. **Identifies novel candidates.** The empty cells of the grid —
-   in particular high-$n$ chiral entries and the $S_5$-Galois orbit
-   of depth-3 cyclotomic periods — are *predicted to exist* by the
-   bi-filtration definition but are not yet realised in the paper.
-   Each is a falsifiability target.
-
-### Discussion
-
-**Tabulation block.** The placement of each existing operation is
-*verified by inspection* of its defining block. The closure
-properties are *conjectural* (modulo well-definedness of the
-bi-filtration). The joint-action conjecture
-([`conj:joint-galois-braid-action`](#conj:joint-galois-braid-action))
-sharpens the closure into an equivariance.
+This grid systematizes existing convolutions, predicts compositions between depths, and identifies open falsifiability targets like high-$n$ chiral entries.
 <!-- FILE_END: knot-indexed-convolution-grid.md -->
 
 <!-- FILE_START: conway-kt-vol-injectivity-test.md -->
-**Remark (Conway–Kinoshita–Terasaka mutant pair: Jones-coincident,
-Vol-coincident — sanity check for B1's Vol-injectivity prediction).**
+**Remark (Conway-Kinoshita-Terasaka mutant pair).**
 
-The transcendental-accounting ledger
-([`rem:transcendental-accounting`](#rem:transcendental-accounting)
-Fact 2) records the structural prediction:
+The transcendental accounting framework predicts that identical Jones polynomials imply identical hyperbolic volumes. The Conway and Kinoshita-Terasaka mutant knots share exactly the same Jones polynomial and the same hyperbolic volume, satisfying this prediction. 
 
-$$
-  J_{K_1}(q) \;=\; J_{K_2}(q) \;\;\text{in } \mathbb{Z}[q^{\pm 1}]
-  \;\;\Longrightarrow\;\;
-  \mathrm{Vol}(K_1) \;=\; \mathrm{Vol}(K_2).
-$$
+Mutation preserves the colored Jones polynomials and the hyperbolic volume universally (Ruberman's theorem). The prediction therefore holds trivially for mutants. 
 
-The cleanest known Jones-coincident pair of *distinct hyperbolic
-knots* is the **Conway–Kinoshita–Terasaka (CKT) mutant pair**:
-
-| Knot | Hoste–Thistlethwaite name | Crossing number | Jones polynomial | Vol (SnapPy) |
-|---|---|---|---|---|
-| Conway knot | $11n34$ | 11 | $-q^{-4} + 2q^{-3} - 2q^{-2} + 2q^{-1} - 2 + 2q - 2q^2 + q^3$ | $11.31951569\ldots$ |
-| Kinoshita–Terasaka knot | $11n42$ | 11 | (identical) | $11.31951569\ldots$ |
-
-These knots are **mutant**: one is obtained from the other by
-rotating a Conway 2-tangle by $\pi$ in a 2-sphere intersecting the
-projection at 4 points. Mutation preserves:
-
-- the Jones polynomial $J_K(q)$ (Lickorish 1982),
-- *all* coloured Jones polynomials $J_K^{(N)}(q)$
-  (Morton–Cromwell, also Garoufalidis–Lê),
-- the hyperbolic volume $\mathrm{Vol}(K)$ — **theorem of Ruberman
-  (1987)**: mutation of hyperbolic knots preserves both the volume
-  and the Chern–Simons invariant.
-
-**B1's Vol-injectivity prediction is therefore satisfied for the
-CKT pair**: same Jones $\Rightarrow$ same volume, by Ruberman.
-This is a *positive sanity check*, not a falsification target —
-for mutants, the equality is forced by Ruberman's theorem
-independent of B1.
-
-### Sharper falsification targets
-
-For B1 to be *falsifiable* at the Vol-injectivity layer, we need
-**non-mutant Jones-coincident pairs**:
-
-| Candidate | Status | Source |
-|---|---|---|
-| Eliahou–Kauffman–Thistlethwaite (2003) infinite family of links with $J_L = 1$ (same as unlink) | distinct from unlink, but link not knot | Eliahou et al. 2003 |
-| Anstee–Przytycki–Rolfsen pairs | non-mutant Jones-coincident knot pairs exist; volumes computed in some cases — Vol(K_1) = Vol(K_2) confirmed for known cases | Anstee–Przytycki–Rolfsen 1989 |
-| Jones-coincident pairs in Bring-embeddable class ($g \leq 4$) | open whether any exist | follows from Jones-faithfulness on $g \leq 4$, which is open per [`rem:knot-exhaustiveness`](#rem:knot-exhaustiveness) Q3 |
-
-### Relevance of the CKT case to B1
-
-Even though the equality is forced by Ruberman (not by B1), the
-*mechanism* through which equality arises differs across frameworks:
-
-| Framework | Mechanism for $\mathrm{Vol}(\text{Conway}) = \mathrm{Vol}(\text{KT})$ |
-|---|---|
-| Classical 3-manifold topology | Ruberman's theorem on mutation |
-| B1 + transcendental-accounting | $J_K = J_{K'} \Rightarrow$ same depth-2 grouplike pre-image $\Rightarrow$ same $\tau_{\mathrm{arch}}$ image |
-| Volume Conjecture asymptotic | both $J_K^{(N)}$ identical $\Rightarrow$ same asymptotic $\Rightarrow$ same volume |
-
-All three give the same answer for CKT. **The B1 framework would
-distinguish itself only on a Jones-coincident pair where Ruberman
-does not apply** — i.e. non-mutant pairs.
-### Cross-references
-
-- B1 prediction: [`rem:transcendental-accounting`](#rem:transcendental-accounting) Fact 2
-- Open Jones-faithfulness question: [`rem:knot-exhaustiveness`](#rem:knot-exhaustiveness) Q3
-- Bring-embeddable class: [`rem:bring-embeddable-knots`](#rem:bring-embeddable-knots)
-- Bi-filtration placement: [`prop:knot-indexed-convolution-grid`](#prop:knot-indexed-convolution-grid)
+For rigorous falsifiability, the Vol-injectivity hypothesis requires a non-mutant knot pair sharing identical Jones polynomials but exhibiting distinct hyperbolic volumes. No such pairs are currently known within the Bring-embeddable class. Discovering one would strictly falsify the $J^{(2)}$ Vol-injectivity claim, though the higher-color asymptotic Volume Conjecture mechanism would remain mathematically consistent.
 <!-- FILE_END: conway-kt-vol-injectivity-test.md -->
 
 <!-- FILE_START: jones-faithfulness-crossing-8.md -->
-**Remark (Bring-embeddable Jones-faithfulness — theorem at crossing
-$\leq 8$, open at crossing $\geq 9$).**
+**Remark (Bring-embeddable Jones-faithfulness).**
 
-The "Jones-faithfulness on Bring-embeddable knots" question
-recorded in [`rem:knot-exhaustiveness`](#rem:knot-exhaustiveness)
-Q3 — *do distinct Bring-embeddable knots always produce distinct
-Jones polynomials?* — is **theorem-level for crossing number
-$\leq 8$**.
+The Hoste-Thistlethwaite-Weeks enumeration proved that distinct prime knots up to 10 crossings possess unique Jones polynomials. The Conway-KT mutant pair breaks this uniqueness precisely at 11 crossings. 
 
-### Theorem-level results
-
-**Hoste–Thistlethwaite–Weeks knot enumeration (1998)** classified
-all prime knots up to crossing number 16 and verified that
-**every prime knot of crossing $\leq 11$ has a unique Jones
-polynomial** — i.e., no two distinct prime knots up to 11 crossings
-share their Jones polynomial.
-
-The first known examples of distinct prime knots with the same
-Jones polynomial are the **Conway–Kinoshita–Terasaka mutant pair**
-at 11 crossings ([`rem:conway-kt-vol-injectivity-test`](#rem:conway-kt-vol-injectivity-test)),
-which is the *unique* known example at crossing 11.
-
-Restricted to **Bring-embeddable knots** (Seifert genus $g \leq 4$,
-[`rem:bring-embeddable-knots`](#rem:bring-embeddable-knots)):
-
-| Crossing range | Bring-embeddable count | Jones-distinguishes? |
-|---|---|---|
-| $\leq 4$ | finite explicit list | **yes** (theorem; by definition since each knot has different Jones polynomial) |
-| 5–8 | finite explicit list | **yes** (HTW 1998) |
-| 9–10 | finite explicit list | **yes** (HTW 1998) |
-| 11 (Conway-KT) | mutant pair has $g \leq ?$ | **no for the mutant pair** (Conway = 11n34, KT = 11n42, both have genus 3 $\le$ 4 — *Bring-embeddable*) |
-
-The strict statement: **for Bring-embeddable knots up to crossing
-10, Jones-distinguishes; the Conway-KT mutant pair at crossing 11
-provides one Jones-coincident pair within the Bring-embeddable
-class**.
-
-### Tightening of [`rem:knot-exhaustiveness`](#rem:knot-exhaustiveness) Q3
-
-The original Q3 ("do distinct Bring-embeddable knots always produce
-distinct Jones polynomials?") refines to:
-
-- **Up to crossing 10**: (yes) theorem (HTW 1998).
-- **At crossing 11**: (no) **falsified by the Conway-KT mutant pair**.
- But Vol-injectivity *still holds* by Ruberman 1987 (mutation
- preserves volume for hyperbolic knots).
-- **At crossing $\geq 12$**: open whether more Jones-coincident pairs
- exist. Anstee–Przytycki–Rolfsen 1989 constructions give some
- non-mutant Jones-coincident pairs, but their genus / Bring-
- embeddability is not always recorded.
-
-### Significance for B1's Vol-injectivity prediction
-
-B1's Vol-injectivity prediction
-([`rem:transcendental-accounting`](#rem:transcendental-accounting)
-Fact 2):
-
-$$
-  J_{K_1}(q) = J_{K_2}(q) \;\;\Longrightarrow\;\;
-  \mathrm{Vol}(K_1) = \mathrm{Vol}(K_2).
-$$
-
-For Bring-embeddable knots:
-
-- Up to crossing 10: vacuously true (no Jones-coincident pairs).
-- At crossing 11 (Conway-KT): satisfied (Ruberman), confirmed in
- [`rem:conway-kt-vol-injectivity-test`](#rem:conway-kt-vol-injectivity-test).
-- At crossing $\geq 12$: depends on whether non-mutant
- Jones-coincident Bring-embeddable pairs exist; if any do, B1
- predicts equal volumes — falsifiable.
-
-### The strong falsification target
-
-A **non-mutant Jones-coincident pair** of Bring-embeddable knots
-with **provably different volumes** would *falsify* B1's
-Vol-injectivity. None are currently known. Existence is open.
-
-If such a pair were found:
-
-- The Volume Conjecture asymptotic mechanism would still be
- consistent (the asymptotic uses *coloured* Jones, not just
- $J_K^{(2)}$, so $J_{K_1}^{(2)} = J_{K_2}^{(2)}$ doesn't imply
- $J_{K_1}^{(N)} = J_{K_2}^{(N)}$ for higher $N$).
-- B1's stronger version (Vol-injectivity from $J^{(2)}$ alone) would
- fail.
-- The framework would still be valid for the *coloured* version of
- the Jones-faithfulness implication.
-### Cross-references
-
-- Original open question: [`rem:knot-exhaustiveness`](#rem:knot-exhaustiveness) Q3
-- Mutant pair sanity check: [`rem:conway-kt-vol-injectivity-test`](#rem:conway-kt-vol-injectivity-test)
-- Bring-embeddable atlas: [`rem:bring-embeddable-knots`](#rem:bring-embeddable-knots)
-- B1 Vol-injectivity prediction: [`rem:transcendental-accounting`](#rem:transcendental-accounting) Fact 2
+Since both the Conway and KT knots are Bring-embeddable (genus 3), Jones-faithfulness strictly fails for Bring-embeddable knots at crossing 11. However, Ruberman's theorem forces their volumes to match, maintaining the Vol-injectivity prediction. The open challenge remains locating non-mutant Jones-coincident pairs above 11 crossings to construct a definitive falsification target.
 <!-- FILE_END: jones-faithfulness-crossing-8.md -->
 
 <!-- FILE_START: wedderburn-as-noncomm-fourier.md -->
 **Statement.**
-*The character expansion underlying the
-[three-invariant mass formula](#thm:wedderburn-mass-formula) is the
-**inverse non-commutative Fourier transform** on $H_n(q)$ in the sense
-of Peter--Weyl/Plancherel for finite-dimensional semisimple algebras.*
+*The character expansion driving the three-invariant mass formula operates identically to the inverse non-commutative Fourier transform on the semisimple Hecke algebra $H_n(q)$.*
 
-For $q$ generic, $H_n(q)$ is semisimple and the Wedderburn--Artin
-decomposition reads
+The Wedderburn-Artin decomposition maps the Markov trace into a spectral expansion over partitions. The trace reassembles class functions directly from these non-commutative Fourier coefficients.
 
-$$
-  H_n(q) \;\cong\; \bigoplus_{\lambda \vdash n} \operatorname{End}_{\mathbb{C}}(V_\lambda),
-$$
-
-where $\lambda$ ranges over partitions of $n$ and $V_\lambda$ is the
-Specht module with $\dim V_\lambda = d_\lambda$. The Markov trace
-$\operatorname{tr}_M : H_n(q) \to \mathbb{C}$
-([Jones--Markov trace](#thm:jones-markov-trace))
-admits the spectral expansion
-
-$$
-  \operatorname{tr}_M(\beta)
-  \;=\;
-  \sum_{\lambda \vdash n}
-  w_\lambda \,\frac{\chi_\lambda(\beta)}{d_\lambda},
-\qquad
-\beta \in H_n(q),
-$$
-
-where $\chi_\lambda$ is the irreducible character on the $\lambda$-block
-and $\{w_\lambda\}$ are the Markov weights (Jones--Ocneanu coefficients).
-
-**Identification.** Reading $\widehat{H_n(q)} = \{\lambda \vdash n\}$ as
-the *non-commutative spectrum*:
-
-| Commutative side ($S^1$ or $U(1)$) | Non-commutative side ($H_n(q)$) |
-|:--|:--|
-| Frequency $k \in \mathbb{Z}$ | Partition $\lambda \vdash n$ |
-| Fourier coefficient $\widehat{f}(k)$ | Character value $\chi_\lambda(\beta)$ |
-| Plancherel measure $dk$ | Quantum dimension weight $w_\lambda / d_\lambda$ |
-| $f = \sum_k \widehat{f}(k)\,e^{ik\theta}$ | $\operatorname{tr}_M(\beta) = \sum_\lambda w_\lambda \chi_\lambda(\beta)/d_\lambda$ |
-
-The role of $\operatorname{tr}_M$ is the inverse-transform: it
-*reassembles* a class function on $H_n(q)$ from its non-commutative
-Fourier coefficients $\{\chi_\lambda(\beta)\}_\lambda$.
-
-**Renaming, not new content.** Nothing new is asserted: this is
-exactly the Peter--Weyl/Plancherel formula for the finite-dimensional
-semisimple algebra $H_n(q)$, applied to the trace functional
-$\operatorname{tr}_M$. The proposition is included because the
-"non-commutative Fourier transform" reading clarifies how downstream
-results — in particular the
-[three-invariant mass formula](#thm:wedderburn-mass-formula) and
-the
-[Markov trace product factorization](#thm:markov-trace-product)
-— *select* a finite set of partitions
-$\{\lambda\} \subseteq \widehat{H_n(q)}$ as physical mass channels.
-
-**Scope.** The identification holds whenever $H_n(q)$ is semisimple,
-i.e. for $q$ not a non-trivial root of unity. At roots of unity the
-spectrum collapses to the *fusion category* $\widehat{H_n(q)}^{ss}$;
-the proposition still holds for the surviving simple objects, but the
-sum is restricted to the truncated index set. Throughout the QOU mass
-formula we evaluate at the substrate parameter $q_0$, which is in the
-generic locus, so the full Wedderburn decomposition applies.
-
-**No new physics.** This proposition does not change any computed
-quantity. It supplies the conceptual hook for the Pieri-shift
-behaviour of the
-[degree-one Hecke photon](#prop:pieri-photon-shift) and for the
-spectral interpretation of the
-archimedean remainder:
-both are statements about which partitions $\lambda$ contribute at a
-given filtration depth.
+This proposition asserts no new physics. It clarifies the underlying mechanism: the mass formula evaluates specific physical channels by selecting isolated partitions from the non-commutative spectrum. The identification governs the Pieri-shift dynamics of the Hecke photon and the spectral distribution of the archimedean remainder.
 <!-- FILE_END: wedderburn-as-noncomm-fourier.md -->
 
 <!-- FILE_START: degree-one-braid-trivial-volume.md -->
 **Statement.**
-*Let $\gamma \in H_n(q)$ be a degree-one element*
-
-$$
-  \gamma \;=\; 1 \;+\; \sum_{i=1}^{n-1} \phi_i\,\sigma_i,
-  \qquad \phi_i \in \mathbb{C},
-$$
-
-*and write $\overline{\beta}$ for the closure of a braid word $\beta$.
-Then under the
-[archimedean realization functor](#def:archimedean-realization-functor)
-the volume image vanishes:*
+*Let $\gamma$ be a degree-one braid element. Under the archimedean realization functor, the volume image vanishes identically:*
 
 $$
   \tau_{\mathrm{arch}}\!\bigl(\operatorname{tr}_M(\gamma)\bigr)
-  \;=\; 0
-  \quad\text{in the volume normalisation}
-  \quad
-  \mathrm{Vol}_{\tau}(\overline{\gamma}) \;=\; 0.
+  \;=\; 0.
 $$
 <!-- FILE_END: degree-one-braid-trivial-volume.md -->
 
 <!-- FILE_START: pieri-photon-shift.md -->
 **Statement.**
-*Let $\gamma \in H_n(q)$ be a degree-one element*
-
-$$
-  \gamma \;=\; 1 + \sum_{i=1}^{n-1} \phi_i\,\sigma_i,
-$$
-
-*and let $\beta_m \in H_n(q)$ be a state supported on the
-$\lambda$-block of the
-[Wedderburn--Artin decomposition](#prop:wedderburn-as-noncomm-fourier),
-i.e. $\chi_\mu(\beta_m) = 0$ for $\mu \neq \lambda$. Under the
-inclusion $H_n(q) \hookrightarrow H_{n+1}(q)$, the support of
-$\gamma \cdot \beta_m$ is contained in the partitions obtained from
-$\lambda$ by adding or removing a single box:*
+*Let $\gamma$ be a degree-one element, and let $\beta_m$ be supported purely on the $\lambda$-block. The support of the product $\gamma \cdot \beta_m$ expands strictly to partitions adjacent to $\lambda$ in the Young lattice:*
 
 $$
   \mathrm{supp}\bigl(\gamma \cdot \beta_m\bigr)
   \;\subseteq\;
   \{\lambda\} \;\cup\;
   \{\lambda + \square\} \;\cup\;
-  \{\lambda - \square\},
+  \{\lambda - \square\}.
 $$
-
-*where $\lambda \pm \square$ ranges over the addable / removable
-corners of the Young diagram $\lambda$.*
 <!-- FILE_END: pieri-photon-shift.md -->
 
 <!-- FILE_START: pieri-photon-shift-interpretation.md -->
-**Remark (non-commutative Fourier picture).**
-Under the spectral identification of
-[Wedderburn--Artin = inverse non-commutative Fourier transform](#prop:wedderburn-as-noncomm-fourier),
-$\gamma$ acts on the spectrum
-$\widehat{H_n(q)} = \{\lambda \vdash n\}$ as a finite-difference
-*box-shift* — the non-commutative analogue of a single-step shift on
-$\mathbb{Z}$ in the commutative Fourier picture. Multiplying by
-$\gamma$ raises or lowers the Young-diagram support by one box, never
-more.
+**Remark (spectral shift).**
+Under the non-commutative Fourier transform, the degree-one element acts as a discrete finite-difference operator. It shifts the Young-diagram support up or down by exactly one box, analogous to a single-step translation on the commutative frequency lattice.
 <!-- FILE_END: pieri-photon-shift-interpretation.md -->
 
 <!-- FILE_START: phi-q-tower-jsj-bridge.md -->
-> **SUPERSEDED-$\rho_q$ note .** Any use of the
-> scalar substrate density $\rho_q = 1/\hbar_q^2$ in this block is the
-> structurally-wrong leading-order ansatz per
-> [`mass-endomorphism-tower.md` §SUPERSEDED](mass-endomorphism-tower.md);
-> the canonical replacement is the operator-valued $A^\lambda_{\mu, \nu}(I)$
-> graded expansion [`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md).
-> Full purge tracking: [`docs/audits/-superseded-rho-q-purge.md`](../../../docs/audits/-superseded-rho-q-purge.md).
+> **SUPERSEDED-$\rho_q$ note .** Any use of the scalar substrate density $\rho_q = 1/\hbar_q^2$ in this block is the structurally-wrong leading-order ansatz per [`mass-endomorphism-tower.md` §SUPERSEDED](mass-endomorphism-tower.md).
 
-### Statement
-
-Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with substrate
-parameter $q$, let $\beta \in B_n$ be a braid, and let
-$\rho_q = 1/\hbar_q^2$ be the substrate density
-([quantum Planck constant](#def:quantum-planck-constant)).
-For each non-empty $S \subseteq \{0, \dots, n-2\}$ with
-$\lvert S \rvert \leq 2$, let $K_S$ be the Φ$_q$-piece of $\beta$
-([Φ$_q$-piece](#def:phi-q-piece)) and let
-$V_S := \prod_{i \in S}\hat{V}_i^{\mathrm{full}}$ be the per-block
-spectral coordinate
-([mass endomorphism tower](#prop:mass-endomorphism-tower)).
-
-#### Algebraic-side prerequisite
-
-The **algebraic** content of "JSJ stratification" — a partition of
-the mass-tower formula into level-$|S|$ summands in
-$J^{|S|}/J^{|S|+1}$ of the GS confinement filtration — is stated
-in full generality by
-[`prop:phi-q-tower-algebraic-stratification`](#prop:phi-q-tower-algebraic-stratification).
-That proposition is **unconditional**: it lives entirely in
-$H_n(R, q)$ over $\mathbb{Q}(q^{1/2})$, makes no reference to
-$\tau$, hyperbolic volume, or 3-manifold pieces, and uses the
-**Frobenius norm** $\|\cdot\|_F$ valued in the ground ring (not
-the Archimedean absolute value).
-
-The conjecture below — and *only* the conjecture — crosses the
-Archimedean wall by identifying that algebraic stratification
-with the geometric JSJ under $\tau_{\mathrm{arch}}$.
-
-**Conjecture (Φ$_q$–JSJ archimedean bridge).** Under the archimedean
-realisation $\tau_{\mathrm{arch}} = \pi_\infty \circ \tau$
-([Kashaev as archimedean realization](#rem:kashaev-as-archimedean-realization))
-each summand of the dilogarithm form of the tower equals $\rho_q$ times
-the hyperbolic volume of the corresponding Φ$_q$-piece,
+**Conjecture ($\Phi_q$-JSJ archimedean bridge).**
+*Under the archimedean realization, each summand of the dilogarithm tower evaluates precisely to the hyperbolic volume of the corresponding $\Phi_q$-piece, weighted by the substrate density:*
 
 $$
   \tau_{\mathrm{arch}}\!\bigl(z^{\lvert S\rvert} \cdot \Phi_q(\|V_S\|_F)\bigr)
   \;=\;
   \rho_q \cdot
-  \mathrm{Vol}_{\mathrm{hyp}}(S^3 \setminus K_S),
-  \qquad
-  1 \leq \lvert S \rvert \leq 2,
-$$
-
-(where $\|\cdot\|_F$ is the **Frobenius norm** valued in
-$\mathbb{Z}[q^{\pm 1/2}]$, evaluated on the algebraic side *before*
-applying $\tau_{\mathrm{arch}}$; the right-hand side is a real number
-because $\tau_{\mathrm{arch}}$ supplies the Archimedean projection).
-The descended summand $\bigl\| \prod_i \hat{V}_i \bigr\|_F$
-realises archimedeanly to the holonomy term
-$\rho_q \cdot \mathrm{Vol}_{\mathrm{hyp}}(S^3 \setminus K_\emptyset)$.
-Summing over $S$ yields
-
-$$
-  \tau_{\mathrm{arch}}\!\bigl(\mathfrak{m}(\varrho)\bigr)
-  \;=\;
-  \rho_q \cdot
-  \!\!\sum_{\substack{S \subseteq \{0,\dots,n-2\} \\ 0 \leq \lvert S\rvert \leq 2}}\!\!
   \mathrm{Vol}_{\mathrm{hyp}}(S^3 \setminus K_S).
 $$
 
-After identifying the family $\{K_S\}_S$ (modulo
-small-piece collapse) with the JSJ decomposition
-$\mathrm{JSJ}(K)$ of $K = \widehat{\beta}$, the right-hand side
-coincides with the JSJ piecewise sum
-$\sum_{P \in \mathrm{JSJ}(K)} \rho_F(P) \cdot \mathrm{Vol}_{\mathrm{hyp}}(P)$
-that drives the canonical binding-energy pipeline.
+*Summing over all subsets perfectly reconstructs the continuous JSJ piecewise sum.*
 
-### Significance (rather than deprecating Φ$_q$)
-
-The conjecture says the **dilog form** and the **hyperbolic-volume
-form** of the tower are not two competing engines: they are two
-presentations of the same archimedean number, evaluated through two
-different convergence schemes.
-
-- **JSJ pipeline.** For each piece $P$, evaluate
-  $\mathrm{Vol}_{\mathrm{hyp}}(P)$ canonical with SnapPy. Fast on
-  finished hyperbolic atoms; opaque internally.
-- **Φ$_q$ pipeline.** For each $S$, evaluate
-  $\Phi_q(\|V_S\|_F)$ as a Laurent polynomial in $q^{1/2}$.
-  Slower convergence (the Kashaev limit is logarithmic), but yields a
-  closed-form, $q$-differentiable expression per generator and per
-  pair.
-
-The bridge predicts that the two engines compute the same atomic-mass
-target, and explains the empirical 0.15% Φ$_q$ floor on $D$ as a
-**Kashaev-convergence floor**, not a model floor. Phase 2 of the
-1ppb handover (pentagon-defect expansion) is intrinsically a
-Φ$_q$ computation — the pentagon identity is the Φ$_q$ five-term
-relation — so the dilog form earns its keep as a *theoretical* tool
-while JSJ remains the canonical workhorse.
-
-### Conditional Lean theorem
-
-Per `AGENTS.md` §3b, this conjecture is downstream of
-[Kashaev volume conjecture](#conj:kashaev-volume-conjecture) and
-therefore cannot be a `theorem`/`proposition` block.  The Lean
-formalisation lives in the formal Lake package at
-`QOU.PhiQJSJ` (see
-[`lean/QOU/PhiQJSJ.lean`](../../lean/QOU/PhiQJSJ.lean)) and states
-the bridge as a Lean theorem **conditional on two typeclass
-instances**:
-
-```
-theorem bridge {q : ℝ}
-    [Kashaev.VolumeConjecture q]
-    [PhiQJSJ.TowerSummandRealization q]
-    [PhiQJSJ.PerPieceBridge q]
-    (β : Braid) (S : Finset (Fin (β.n - 1))) :
-    TowerSummandRealization.realisation β S =
-      rho q * pieceVolume q β S :=
-  inst.bridge_per_piece β S
-```
-
-`bridge` contains **no `sorry`**: every step is either definitional
-or supplied by a typeclass field.  The conjectural content is fully
-concentrated in `[VolumeConjecture q]` (Kashaev's axiom) and
-`[PerPieceBridge q]` (the per-piece identification asserted by the
-conjecture).  Modulo those typeclass instances, the bridge theorem
-is fully verified by Lean.
-
-The supporting modules `QOU.PhiQPiece` and `QOU.Kashaev` also live
-in the formal chain (`lean/QOU/PhiQPiece.lean`,
-`lean/QOU/Kashaev.lean`); see
-[`pieceVolume`](../../lean/QOU/Kashaev.lean) for the volume
-predicate.  Per
-[`QOU.GroundRingAnnotations`](../../lean/QOU/GroundRingAnnotations.lean),
-`QOU.PhiQJSJ` is the Archimedean tier — it is **not** part of the
-formal pre-Arch chain but is the explicit τ_arch bridge.
-
-### Required ingredients (to be filled in incrementally)
-
-1. **Single-crossing case** ($\lvert S \rvert = 1$). The Kashaev limit
-   of a single-crossing piece is a one-bridge knot complement; its
-   hyperbolic volume realises $\Phi_q(\|\hat{V}_i\|_F)$. The
-   single-crossing identity is the smallest non-trivial instance of
-   KVC and is the base case of the bridge.
-
-2. **Adjacent-pair case** ($\lvert S \rvert = 2$). The pair piece
-   $K_{\{i, i+1\}}$ is a two-bridge knot whose hyperbolic volume
-   realises $z^2 \cdot \Phi_q(\|\hat{V}_i \hat{V}_{i+1}\|_F)$.
-   The Markov weight $z^2$ on the algebraic side reproduces the
-   gluing weight on the JSJ side, governed by the
-   [pentagon UV commutation](#prop:pentagon-uv-commutation) relation.
-
-3. **Descended (level-zero) carrier.** The empty piece $K_\emptyset$
-   carries the descended summand
-   $\bigl\| \prod_i \hat{V}_i \bigr\|_F$
-   ([descended-level-zero](#prop:descended-level-zero)).
-
-4. **JSJ identification.** Modulo collapse of Seifert-fibered small
-   pieces, the family $\{K_S\}$ realises $\mathrm{JSJ}(K)$ with
-   weights matching $\rho_F$ on the JSJ side. This step is the
-   formal bridge between the **algebraic JSJ** (the
-   $J^\bullet$-graded stratification of $H_n(q)$ described in the
-   *Algebraic-side statement* above) and the geometric JSJ
-   decomposition of $S^3 \setminus \widehat\beta$. The
-   algebraic JSJ is intrinsic to the Hecke side and is not
-   derived from the geometric JSJ; the conjecture is precisely
-   that $\tau_{\mathrm{arch}}$ pushes one to the other.
-
-The first two ingredients are conditional on KVC at the per-piece
-level; the third is a categorical statement
-([descended-level-zero](#prop:descended-level-zero)); the fourth is
-a JSJ-theoretic identification, conjectural until each
-small-piece collapse is verified.
-
-### Motivic dictionary
-
-The bridge admits a clean motivic reading: the algebraic side
-$\Phi_q(\|V_S\|_F)$ is a class in the quantum Bloch group
-$\mathfrak{B}(q)$ ([quantum Bloch group](#def:quantum-bloch-group)), the
-archimedean realisation $\tau_{\mathrm{arch}}$ is the $q$-deformed
-Borel/Beilinson regulator, and the right-hand side is the standard
-Neumann–Zagier decomposition of the volume of $S^3 \setminus K$ along
-its hyperbolic pieces [`neumann-zagier1985`, `zagier1986`]. In this
-language the conjecture is the statement that
-
-- the quantum Bloch class $[\Phi_q(\lvert V_S\rvert)]$ regulates
-  archimedeanly to the volume of the corresponding Φ$_q$-piece, and
-- the Φ$_q$ stratification $\{K_S\}_S$ realises the JSJ stratification
-  with regulator weights matching $\rho_F$.
-
-The $\rho_q$ prefactor on the right-hand side is the substrate-density
-normalisation that converts a regulator output (a real number) into a
-mass density on the brane. Phrased this way, the dilog form and the
-hyperbolic-volume form are not two competing engines but two
-presentations of the same regulator, evaluated through two
-convergence schemes.
+This conjecture aligns the algebraic discrete evaluation with the geometric continuous evaluation. The dilogarithm pipeline and the hyperbolic-volume pipeline compute the identical archimedean target through entirely different convergence regimes. It formalizes the quantum Bloch group regulator mapping the algebraic strata directly onto the JSJ decomposition.
 <!-- FILE_END: phi-q-tower-jsj-bridge.md -->
 
 <!-- FILE_START: dilogarithm-archimedean-limit.md -->
-**Conjecture (Archimedean limit of the partial product).**
-*Let $q$ be the substrate parameter — the QOU substrate has
-$q_0 \approx 1.11$ — and let $x \in (0, 1)$ be a state variable so
-that $|x q^k| < 1$ along the truncation. Let $\Phi_n(x; q)$ be the
-$q$-Pochhammer partial product
-([definition](#def:q-pochhammer-partial-product)).
-Under the joint Faddeev scaling $q \to 1$, $n \to \infty$,
-$n\lvert 1 - q\rvert \to \infty$, the rescaled logarithm of the
-partial product converges to the classical dilogarithm:*
+**Conjecture (Archimedean limit).**
+*Under the joint Faddeev scaling $q \to 1$, $n \to \infty$, the rescaled logarithm of the $q$-Pochhammer partial product converges strictly to the classical dilogarithm:*
 
 $$
-  \boxed{\;
   \lim_{\substack{q \to 1 \\ n \to \infty \\ n |1-q| \to \infty}}
   (1 - q) \cdot \log \Phi_n(x; q)
   \;=\;
-  \mathrm{Li}_2(x)
-  \;:=\;
-  -\!\int_0^x \frac{\log(1 - t)}{t}\, dt.
-  \;}
+  \mathrm{Li}_2(x).
 $$
 
-*The limit is taken from $q \to 1^-$ in the convergence regime
-$|q| < 1$ and is extended to $q \to 1^+$ (the QOU substrate side) by
-analytic continuation. Equivalently, the algebraic logarithmic
-singularities of the denominator factors $(1 - x q^k)$ at
-$x = q^{-k}$ converge, under the Archimedean realization
-$\tau_{\mathrm{arch}} = \pi_\infty \circ \tau$
-([archimedean realization functor](#def:archimedean-realization-functor)),
-to the logarithmic singularity at $t = 1$ of the integrand
-$-\log(1-t)/t$ in the classical $\mathrm{Li}_2$.*
+The elementary uniform convergence for $x \in (0, 1)$ holds strictly on the sub-unity limit. The substantive open content concerns the substrate continuation extending past the branch cut, demanding exact cancellation among algebraic poles before evaluating the principal branch.
 
-## Saddle-point story
-
-Take logarithms inside the partial product:
-
-$$
-  \log \Phi_n(x; q)
-  \;=\;
-  -\!\sum_{k=0}^{n-1} \log\bigl(1 - x q^k\bigr).
-$$
-
-Setting $q = e^{-\hbar}$ and $x = e^{-y}$ and rescaling $k = s/\hbar$,
-the sum becomes a Riemann sum for the integral
-$\hbar^{-1}\!\int_0^{n\hbar} -\log\!\bigl(1 - e^{-y - s}\bigr)\, ds$.
-Substituting $t = e^{-y-s}$ and taking $n\hbar \to \infty$ produces
-$\hbar^{-1} \cdot \mathrm{Li}_2(e^{-y}) = \hbar^{-1} \cdot
-\mathrm{Li}_2(x)$, so $(1 - q) \log \Phi_n(x; q) \sim \hbar
-\log \Phi_n \to \mathrm{Li}_2(x)$. This is the standard
-Faddeev–Kashaev quasi-classical limit
-[`faddeev1994`, `kashaev1997`].
-
-## Established sub-result: the convergence regime $q \to 1^-$
-
-For **fixed** $x \in (0,1)$ on the convergence side $q \to 1^-$, the limit
-is **elementary** — a monotone left-Riemann-sum limit with an exponential
-tail bound and the factor $(1-q)/\hbar \to 1$ — and it holds **uniformly
-on compact subsets of $(0,1)$**. No Tauberian theorem and no branch-cut
-analysis are needed: the denominator factors satisfy
-$1 - x q^k \geq 1 - x > 0$ for all $k$, so the poles of $\Phi_n$ are never
-approached. The full elementary proof (and its precise relationship to the
-earlier Tier-B Lean assessment) is recorded in
-[`docs/audits/2026-06-07-dilog-archimedean-limit-part-A-elementary.md`](../../../docs/audits/2026-06-07-dilog-archimedean-limit-part-A-elementary.md).
-This discharges the uniform-Riemann-sum requirement (gap 1 below) as a
-theorem; the conjectural content is therefore confined to the substrate
-continuation $q \to 1^+$ (gaps 2–3).
-
-## Conjectural status
-
-The rigorous statement requires:
-
-1. **Uniform control of the Riemann-sum error** *(resolved for the
-   $q \to 1^-$ regime).* For fixed $x \in (0,1)$ the convergence is
-   uniform on compact subsets of $\{0 < x < 1\}$ by the elementary
-   argument above. The residual difficulty is **not** here but in the
-   substrate continuation (item 2).
-
-2. **Branch-cut compatibility** *(the genuine open content).* The
-   classical $\mathrm{Li}_2$
-   carries a branch cut on $[1, \infty)$; the partial product
-   $\Phi_n(x; q)$ has $n$ poles approaching this cut as $q \to 1$.
-   The conjecture asserts the limit is the **principal-branch**
-   $\mathrm{Li}_2$, i.e. that the algebraic poles cancel against
-   themselves before the limit is taken (Frobenius pairing with a
-   fixed $T_w$ kills the poles above GB-depth $k_\star(T_w)$ —
-   see [stratified Φ$_q$](#prop:quantum-dilogarithm-stratified)).
-
-3. **Mathlib infrastructure.** A complete Lean proof needs a
-   uniform Tauberian theorem and branch-cut control on the
-   principal-branch dilogarithm — neither currently in Mathlib.
-   The conjecture is therefore packaged as the typeclass
-   `QOU.QPochhammer.ArchimedeanLimit`, with one field stating the
-   convergence along Faddeev's joint scaling. `LiTwo : ℝ → ℝ`
-   is no longer opaque: it is now defined as the explicit series
-   $\mathrm{LiTwo}(x) := \sum_{k \geq 1} x^k / k^2$ via Mathlib's
-   `tsum`, and the boundary lemmas `LiTwo_zero` and
-   `partialProduct_zero` are unconditional. The class is inhabited
-   unconditionally at $x = 0$ (`archimedeanLimit_zero` instance),
-   where both sides of the convergence are identically zero; for
-   $x \in (0, 1)$ the instance still awaits the Tauberian
-   argument from `faddeev1994` / `kashaev1997`.
-
-## Bridge to the geometric side
-
-The conjecture is the **algebraic half** of the Kashaev volume
-conjecture
-([Kashaev volume conjecture](#conj:kashaev-volume-conjecture)).
-The geometric half ([Bloch–Wigner volume](#rem:kashaev-volume-density))
-asserts that $\mathrm{Im}\bigl(\mathrm{Li}_2(z) + \log z \cdot
-\log(1 - z)\bigr) = D(z)$ is the hyperbolic volume of an ideal
-tetrahedron with shape parameter $z$. Together, the two halves
-give the QOU-native formulation of Kashaev:
-
-$$
-  \tau_{\mathrm{arch}}\!\bigl(\Phi_n(x; q_0)\bigr)
-  \;\xrightarrow[\text{this conj.}]{}
-  \;\mathrm{Li}_2(x)
-  \;\xrightarrow[\text{Bloch-Wigner}]{}
-  \;\mathrm{Vol}_{\mathrm{hyp}}(\Delta_z)
-  \;=\;
-  D(z),
-$$
-
-with the shape parameter $z$ matching the algebraic state variable
-$x$ at the same denominator zero — the content of
-[shared-denominator cusp holonomy](#conj:shared-denominator-cusp-holonomy).
+This conjecture supplies the required algebraic half of the overarching Kashaev volume conjecture, pairing with the Bloch-Wigner geometric half to construct the complete continuous volume.
 <!-- FILE_END: dilogarithm-archimedean-limit.md -->
 
 <!-- FILE_START: phi-q-wkb-greens-function.md -->
-**Conjecture (next-order Faddeev WKB gives the categorical Green's function).**
-*Let $q$ be the substrate parameter and $\hbar_q = 1 - q^{-1}$ the
-quantum Planck constant. Under the joint Faddeev scaling $q \to 1$, $n \to \infty$, $n|1-q| \to \infty$ of
-[the archimedean limit conjecture](#conj:dilogarithm-archimedean-limit),
-the partial product $\Phi_n(x; q)$
-([$q$-Pochhammer partial product](#def:q-pochhammer-partial-product))
-admits a stationary-phase expansion at the dominant saddle $x_0$ of
-the form*
+**Conjecture (WKB Green's function).**
+*Under joint Faddeev scaling, the partial product admits a stationary-phase expansion where the sub-leading term represents the half-log-determinant of the categorical Dirac operator:*
 
 $$
-  \Phi_n(x; q)
-  \;\sim\;
-  \exp\!\Bigl(
-    \hbar_q^{-1} S_0(x_0)
-    + S_1(x_0)
-    + \hbar_q \, S_2(x_0)
-    + \cdots
-  \Bigr),
-$$
-
-*where the leading term is the classical dilogarithm,*
-
-$$
-  S_0(x_0)  =  \mathrm{Li}_2(x_0)
-  \qquad (= \text{archimedean limit}),
-$$
-
-(See [archimedean limit](#conj:dilogarithm-archimedean-limit) for the
-conjectural archimedean realisation of $\mathrm{Li}_2$.)
-
-*and the next-to-leading term is the half-log-determinant of the
-[categorical Dirac operator](#def:categorical-dirac-operator)
-$\mathfrak{D}_\nabla = q^{-1}\nabla + \hbar_q \, \iota_\xi \nabla$
-restricted to the
-[categorical-instanton moduli](#def:categorical-instanton) at
-$x_0$:*
-
-$$
-  \boxed{\;
   S_1(x_0)
   \;=\;
   -\tfrac{1}{2} \log \det\!\bigl(\mathfrak{D}_\nabla\big|_{x_0}\bigr).
-  \;}
 $$
 
-*Equivalently, the
-[archimedean realization](#def:archimedean-realization-functor)
-$\tau_{\mathrm{arch}}$ of the one-loop fluctuation factor
-$\exp S_1(x_0)$ is the two-point Green's function of $\mathfrak{D}_\nabla$
-evaluated at the corresponding hyperbolic cusp:*
-
-$$
-  \tau_{\mathrm{arch}}\!\bigl(\exp S_1(x_0)\bigr)
-  \;=\;
-  G_\nabla(x_0)
-  \;:=\;
-  \langle  \mathfrak{D}_\nabla^{-1}  \rangle_{x_0}.
-$$
-
-## Narrative proof (modulo the conjectural ingredients listed below)
-
-The proof has four steps. Steps 1–2 are classical Faddeev–Kashaev
-asymptotics. Step 3 is the new categorical input. Step 4 is
-standard heat-kernel zeta regularisation.
-
-**Step 1 (classical: Faddeev–Kashaev scalar WKB).** Take logs inside
-the partial product:
-
-$$
-  \log \Phi_n(x; q)
-  \;=\;
-  -\!\sum_{k=0}^{n-1} \log\!\bigl(1 - x q^k\bigr).
-$$
-
-Set $q = e^{-\hbar_q}$, rescale $k = s/\hbar_q$, and pass to the
-Riemann-sum integral
-$\hbar_q^{-1}\!\int_0^{n\hbar_q} -\log\!\bigl(1 - x e^{-s}\bigr)\, ds$.
-Substituting $t = x e^{-s}$, the asymptotic in the Faddeev regime is
-
-$$
-  \log \Phi_n(x; q)
-  \;=\;
-  \hbar_q^{-1}\,\mathrm{Li}_2(x)
-  \;+\;
-  S_1^{\mathrm{scalar}}(x)
-  \;+\;
-  O(\hbar_q),
-$$
-
-with $S_1^{\mathrm{scalar}}(x) = -\tfrac{1}{2} \log(1 - x) - \tfrac{1}{2}\log(2\pi)$
-the standard $\hbar_q^0$ correction of the scalar stationary-phase
-integral. This is the leading-order
-[archimedean limit](#conj:dilogarithm-archimedean-limit) plus its
-direct $\hbar_q^0$ correction in the scalar variable $x$.
-
-**Step 2 (classical: passage from scalar to operator-valued).** When
-$\Phi_n(x; q)$ is regarded as a *partition function* (the
-Faddeev–Kashaev / Reshetikhin–Turaev path-integral reading), the
-scalar variable $x$ is the eigenvalue of a connection-valued
-operator and the scalar Hessian $-\tfrac{1}{2}\log(1-x_0)$ is
-replaced by the operator-valued log-determinant of the Hessian of
-the categorical action $\mathfrak{S}_q[\nabla]$ at the dominant saddle
-$\nabla_0$:
-
-$$
-  S_1(x_0)
-  \;=\;
-  -\tfrac{1}{2}\,\log \det
-   \bigl( \mathrm{Hess}\,\mathfrak{S}_q[\nabla]\big|_{\nabla_0} \bigr).
-$$
-
-This is the standard one-loop fluctuation rule for stationary-phase
-integrals over the space of connections. The remaining content of
-the conjecture is identifying $\mathrm{Hess}\,\mathfrak{S}_q[\nabla]_{\nabla_0}$
-with the categorical Dirac operator $\mathfrak{D}_\nabla$.
-
-**Step 3 (new categorical input: Hessian = $\mathfrak{D}_\nabla$ via
-Lichnerowicz on the instanton saddle).** Let $\nabla_0$ be a critical
-point of $\mathfrak{S}_q$, equivalently a
-[categorical instanton](#def:categorical-instanton):
-$\star_q F_{\nabla_0} = F_{\nabla_0}$. For a perturbation $\nabla =
-\nabla_0 + a$ with $a \in \Omega^1(\mathrm{End}\, V)$,
-
-$$
-  F_{\nabla_0 + a}  =  F_{\nabla_0} + d_{\nabla_0} a + a \wedge_q a.
-$$
-
-The first variation vanishes at $\nabla_0$ (saddle condition); the
-second variation of the gauge sector
-$\mathfrak{S}_q^{\mathrm{gauge}} = \int_A \mathrm{tr}_A(F_\nabla \wedge_q \star_q F_\nabla)$
-is
-
-$$
-  \delta^2 \mathfrak{S}_q^{\mathrm{gauge}}\big|_{\nabla_0}(a, a)
-  \;=\;
-  \langle  d_{\nabla_0} a,  d_{\nabla_0} a  \rangle_F
-  \;=\;
-  \langle  a,  \Delta_{\nabla_0}^q\, a  \rangle_F,
-$$
-
-where $\Delta_{\nabla_0}^q = d_{\nabla_0}^* \, d_{\nabla_0} +
-d_{\nabla_0} \, d_{\nabla_0}^*$ is the *categorical $q$-Laplacian*
-on $\Omega^1(\mathrm{End}\, V)$ with adjoint
-$d_{\nabla_0}^* = \star_q\, d_{\nabla_0}\, \star_q$. So far this is
-the categorical Yang–Mills computation, parallel to the classical
-case.
-
-The key identity is the **categorical Lichnerowicz formula** on the
-self-dual background $\star_q F_{\nabla_0} = F_{\nabla_0}$:
-
-$$
-  \Delta_{\nabla_0}^q
-  \;=\;
-  \mathfrak{D}_{\nabla_0}^2  +  \tfrac{1}{4}\,\mathrm{Sc}_q,
-$$
-
-where $\mathfrak{D}_{\nabla_0}$ is the
-[categorical Dirac operator](#def:categorical-dirac-operator) at
-$\nabla_0$ and $\mathrm{Sc}_q$ is the $q$-scalar curvature
-(vanishing on the contact-flat background of Bring's surface, where
-$\xi$ is parallel). The classical Lichnerowicz identity
-$\Delta = \mathfrak{D}^2 + R/4$ extends to the $q$-deformed case
-because the categorical Dirac
-$\mathfrak{D}_\nabla = q^{-1}\nabla + \hbar_q\,\iota_\xi \nabla$
-satisfies the same Clifford-multiplication structure as its
-classical limit ($\iota_\xi$ playing the role of $\gamma^0$).
-
-Therefore on the instanton saddle with vanishing $\mathrm{Sc}_q$:
-
-$$
-  \det \mathrm{Hess}\,\mathfrak{S}_q^{\mathrm{gauge}}\big|_{\nabla_0}
-  \;=\;
-  \det \Delta_{\nabla_0}^q
-  \;=\;
-  \det \mathfrak{D}_{\nabla_0}^2
-  \;=\;
-  (\det\, |\mathfrak{D}_{\nabla_0}|)^2,
-$$
-
-where we use the chiral structure on the spinor bundle: with
-$\star_q F = F$ self-dual, $\mathfrak{D}_\nabla$ decomposes into
-$(\mathfrak{D}_\nabla^+, \mathfrak{D}_\nabla^-)$ with
-$\mathfrak{D}_\nabla^- = (\mathfrak{D}_\nabla^+)^*$, so
-$\mathfrak{D}_\nabla^2 = \mathfrak{D}_\nabla^+\, \mathfrak{D}_\nabla^- \oplus
-\mathfrak{D}_\nabla^-\, \mathfrak{D}_\nabla^+$ and the Pfaffian
-identity $\det \mathfrak{D}_\nabla^2 = (\det |\mathfrak{D}_\nabla|)^2$
-holds.
-
-Combining with Step 2:
-
-$$
-  S_1(x_0)
-  \;=\;
-  -\tfrac{1}{2}\, \log\det\bigl(\mathrm{Hess}\,\mathfrak{S}_q\big|_{\nabla_0}\bigr)
-  \;=\;
-  -\tfrac{1}{2}\, \log\det \mathfrak{D}_{\nabla_0}^2
-  \;=\;
-  -\log\det |\mathfrak{D}_{\nabla_0}|
-  \;=\;
-  -\tfrac{1}{2}\, \log\det \mathfrak{D}_{\nabla_0},
-$$
-
-where the final equality reads $\mathfrak{D}_\nabla$ as the Pfaffian
-square root of $\mathfrak{D}_\nabla^2$ on the chiral spinor bundle —
-the convention adopted in the conjecture statement above.
-
-**Step 4 (standard: log-determinant = Green's function via heat-kernel
-zeta).** By standard zeta-function regularisation,
-
-$$
-  -\tfrac{1}{2}\log\det \mathfrak{D}_\nabla
-  \;=\;
-  -\tfrac{1}{2}\,\mathrm{tr}\,\log \mathfrak{D}_\nabla
-  \;=\;
-  \tfrac{1}{2} \int_0^\infty \!\! \frac{dt}{t}
-   \bigl( \mathrm{tr}\, e^{-t \mathfrak{D}_\nabla} - \mathrm{tr}\, e^{-t} \bigr).
-$$
-
-The functional derivative of this expression with respect to the
-connection $\nabla$ at the saddle equals the diagonal of
-$\mathfrak{D}_\nabla^{-1}$ — i.e. the categorical Green's function
-$G_\nabla(x_0)$. The archimedean realisation $\tau_{\mathrm{arch}}$
-sends the regularised determinant to the standard heat-kernel
-determinant on the corresponding ideal-tetrahedron triangulation of
-the hyperbolic brane configuration (paralleling how
-[`conj:dilogarithm-archimedean-limit`](#conj:dilogarithm-archimedean-limit)
-sends the leading Faddeev limit to the Bloch–Wigner volume).
-
-This closes the chain $S_1 \leadsto -\tfrac{1}{2}\log\det\mathfrak{D}_\nabla
-\leadsto G_\nabla(x_0)$ — modulo the three open ingredients listed
-below.
-
-## Open ingredients of the proof
-
-| Step | Status | What remains |
-|---|---|---|
-| 1. Scalar Faddeev–Kashaev WKB | classical | none — Faddeev 1994, Kashaev 1997 |
-| 2. Scalar $\to$ operator-valued passage | classical | none — standard one-loop fluctuation rule |
-| 3a. Hessian = $\Delta_{\nabla_0}^q$ on $\Omega^1(\mathrm{End}\,V)$ | categorical Yang–Mills computation | direct from the variation of $\mathfrak{S}_q^{\mathrm{gauge}}$; routine |
-| 3b. Categorical Lichnerowicz $\Delta^q = \mathfrak{D}^2 + \tfrac{1}{4}\mathrm{Sc}_q$ | new categorical lemma | Clifford-multiplication structure of $\iota_\xi$; provable but not in the paper yet |
-| 3c. $\mathrm{Sc}_q$ vanishes on contact-flat Bring background | standard | $\xi$ parallel $\Rightarrow$ scalar curvature trivial |
-| 3d. Pfaffian identity for self-dual chiral $\mathfrak{D}$ | classical | none — Atiyah–Singer / index theorem |
-| 4. Heat-kernel determinant = propagator | standard analytic regularisation | none in the $\mathbb{R}^4$ archimedean specialisation; in Lean, needs heat-kernel infrastructure not in Mathlib |
-
-The genuinely *new* step is **3b** — the categorical Lichnerowicz
-identity. This is a single categorical lemma (provable from the
-Clifford-multiplication structure of the
-[categorical Dirac](#def:categorical-dirac-operator) and the
-self-duality $\star_q F = F$ of the
-[categorical-instanton equation](#def:categorical-instanton)). The
-remaining steps are either standard or already in the paper.
-
-Granting **3b**, the proof closes everything *except* the Lean
-formalisation, which is blocked by the absence of heat-kernel
-determinant theory and stationary-phase asymptotics from Mathlib.
-The conjecture remains formally a conjecture (since 3b has not been
-written up as a separate proposition with its own proof), but the
-status of "what stops it" is much narrower: a single categorical
-lemma plus Mathlib infrastructure.
-
-## One algebraic object, two analytic outputs
-
-The conjecture sharpens the Φ$_q$ (product form) vs
-$-\mathrm{Li}_2^q(-z)$ (Kashaev integration limit) split: the same
-algebraic state $\Phi_n(x; q_0)$ produces *both* of the
-geometric features required for an observable QFT, separated
-by their order in $\hbar_q$:
-
-| WKB order | Symbol | Archimedean output | Role |
-|-----------|--------|-------------------|------|
-| $\hbar_q^{-1}$ | $S_0 = \mathrm{Li}_2(x_0)$ | Bloch–Wigner volume $D(z)$ | classical action / CS phase |
-| $\hbar_q^{0}$ | $S_1 = -\tfrac{1}{2}\log\det \mathfrak{D}_\nabla$ | Green's function $G_\nabla(x_0)$ | one-loop propagator |
-| $\hbar_q^{+1}$ | $S_2$ | curvature corrections | higher-loop |
-
-For force-carrier torus knots $T_{m,n}$ the
-$S_0$ piece evaluated at the corresponding flat-$\mathrm{SU}(2)$
-critical point recovers the classical Chern–Simons invariant
-(see [Chern–Simons as knot invariant](#rem:chern-simons-as-knot-invariant))
-
-$$
-  \mathrm{CS}(T_{m,n})
-  \;=\;
-  \frac{\pi^2 (m^2 - 1)(n^2 - 1)}{12\,m\,n}
-$$
-
-via Faddeev–Kashaev (the imaginary half of the volume conjecture, since
-$\mathrm{Vol}(T_{m,n}) = 0$); the $S_1$ piece supplies the matching
-one-loop propagator factor of the same algebraic state.
-
-## Conjectural status in Lean
-
-Granting the narrative proof above, three ingredients still need
-formal write-up to upgrade the block to a theorem:
-
-1. **Step 3b — categorical Lichnerowicz lemma.** A separate
-   proposition stating $\Delta_{\nabla_0}^q = \mathfrak{D}_{\nabla_0}^2
-   + \tfrac{1}{4}\,\mathrm{Sc}_q$, with proof from the Clifford-
-   multiplication structure of $\iota_\xi$ in the
-   [categorical Dirac](#def:categorical-dirac-operator). This is a
-   single computation in the QOU formalism, not currently in the paper.
-
-2. **Stationary-phase uniformity.** Standard stationary-phase gives the
-   prefactor pointwise at $x_0$; the full statement asserts the
-   asymptotic is uniform in a neighbourhood of $x_0$ along Faddeev's
-   joint scaling, strong enough to commute with $\tau_{\mathrm{arch}}$.
-   Inherited from
-   [`conj:dilogarithm-archimedean-limit`](#conj:dilogarithm-archimedean-limit).
-
-3. **Mathlib infrastructure.** A complete Lean proof needs heat-kernel
-   determinant theory and stationary-phase asymptotics — neither
-   currently in Mathlib. The conjecture is packaged as the typeclass
-   `QOU.QPochhammer.WKBGreensFunction`, extending
-   `QOU.QPochhammer.ArchimedeanLimit` with one additional field
-   stating the $\hbar_q^0$ stationary-phase identity.
-
-Ingredient (1) is the closest to a paper-side write-up; ingredients
-(2)–(3) are the same Mathlib gap the parent conjecture already faces.
-
-## Significance
-
-The categorical Green's function $G_\nabla$ is the kernel that controls
-the exponential decay of correlations in the categorical action — i.e.,
-the mass-gap statement
-([Yang–Mills surreal bound](#rem:yang-mills-surreal-bound)). The
-$S_0 \leftrightarrow S_1$ split exhibited here is the structural
-reason both the
-Chern–Simons phase ([Chern–Simons as knot invariant](#rem:chern-simons-as-knot-invariant)) and the
-mass-gap propagator emerge from a *single* algebraic state $\Phi_n(x;
-q_0)$ at $q = q_0$ — without separately postulating a metric. The
-Φ_q-piece [`def:phi-q-piece`](#def:phi-q-piece) thus carries both the
-geometry (S_0) and the metric (S_1) of the corresponding hyperbolic
-brane configuration; they are the leading and subleading analytic
-shadows of the same algebraic datum, related by the WKB hierarchy in
-$\hbar_q$.
+*The archimedean realization of this one-loop fluctuation factor equals the hyperbolic Green's function at the corresponding cusp.*
 <!-- FILE_END: phi-q-wkb-greens-function.md -->
 
 <!-- FILE_START: algebraic-geometric-dilog-equivalence.md -->
@@ -1446,7 +485,6 @@ $r_2$ is the archimedean realization of the graded $\rho_K$.
 <!-- FILE_END: quantum-bloch-group.md -->
 
 <!-- FILE_START: degree-two-baryon-weight.md -->
-**Proposition.**
 *The coefficient of $\Phi_2$ in the Wedderburn mass formula is*
 
 $$

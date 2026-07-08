@@ -7,14 +7,7 @@ $\mathbb{R}$, including the hyperreals $^{*}\mathbb{R}$, the ordinals
 $\mathrm{Ord}$, and all Hahn series $\mathbb{R}((t^{G}))$ [@conway1976;
 @ehrlich2012].
 
-**Nothing in this appendix alters the main paper.** The Quantum
-Observable Universe is developed and proved over $\mathbb{R}$; this
-appendix offers an *ambient* — a larger field into which the
-archimedean content can be embedded and from which it can be
-recovered by taking a standard-part. The appendix's claims are
-either **remarks** interpreting existing blocks, **conjectures**
-pending further development, or **definitions** of new auxiliary
-structures.
+**Nothing in this appendix alters this paper.** We develop and prove the Quantum Observable Universe over $\mathbb{R}$. This appendix offers an *ambient* field into which the archimedean content embeds and from which we recover it via standard-part. Our claims are either **remarks** interpreting existing blocks, **conjectures** pending further development, or **definitions** of new auxiliary structures.
 
 ## Motivation for the surreal lift
 
@@ -78,9 +71,7 @@ are *never actually used* in a load-bearing way (see
 
 The only obstructions that genuinely bite are the Möbius
 energy integral and the hyperbolic-volume side of the Kashaev
-comparison. The main paper's mass-formula pipeline — Hoefsmit
-$\to$ Markov trace $\to$ Jones polynomial $\to$ categorical
-mass — transfers to $\mathbf{No}$ unchanged.
+comparison. This paper's mass-formula pipeline — Hoefsmit $\to$ Markov trace $\to$ Jones polynomial $\to$ categorical mass — transfers to $\mathbf{No}$ unchanged.
 
 ## Non-goals
 
@@ -88,8 +79,7 @@ This appendix does **not**:
 
 - claim a physical interpretation of non-archimedean values (we
   work purely mathematically);
-- replace any main-text proof (the main paper's results stand on
-  their own over $\mathbb{R}$);
+- replace any main-text proof (this paper's results stand on their own over $\mathbb{R}$);
 - solve the Kashaev volume conjecture (though it offers a
   reformulation that separates the algebraic from the
   transcendental parts — see [Kashaev surreal

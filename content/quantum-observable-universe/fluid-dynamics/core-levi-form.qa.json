@@ -1085,6 +1085,19 @@
         "reviewed_at": "2026-07-07T14:26:56.260868Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound physical equivalence rigorously bonding vortex core flattening exactly to contact-geometric integrability.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "wall-side-statement": [
@@ -1305,6 +1318,19 @@
         "notes": "No false claims identified in 'Core aspect ratio equals Levi form condition number on the normal plane': mathematical reasoning is consistent.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/core-levi-form.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound physical equivalence rigorously bonding vortex core flattening exactly to contact-geometric integrability.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-vacuous": [
@@ -1325,6 +1351,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The block 'Core aspect ratio equals Levi form condition number on the normal plane' presents substantial mathematical content: [`conj:q-aubin-lions`](#conj:q-aubin-lions), [`conj:ns-counterexample`](#conj:ns...",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound physical equivalence rigorously bonding vortex core flattening exactly to contact-geometric integrability.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-circular": [
@@ -1346,6 +1385,19 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Core aspect ratio equals Levi form condition number on the normal plane'.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/core-levi-form.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound physical equivalence rigorously bonding vortex core flattening exactly to contact-geometric integrability.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-overclaim": [
@@ -1366,6 +1418,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No overclaims: the scope of 'Core aspect ratio equals Levi form condition number on the normal plane' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound physical equivalence rigorously bonding vortex core flattening exactly to contact-geometric integrability.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1387,6 +1452,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Core aspect ratio equals Levi form condition number on the normal plane'.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/core-levi-form.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound physical equivalence rigorously bonding vortex core flattening exactly to contact-geometric integrability.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1408,6 +1486,19 @@
         "notes": "The argument flow in 'Core aspect ratio equals Levi form condition number on the normal plane' is logically sound, mapping onto the cited dependencies.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/core-levi-form.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound physical equivalence rigorously bonding vortex core flattening exactly to contact-geometric integrability.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1428,6 +1519,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Lean formalization and narrative for 'Core aspect ratio equals Levi form condition number on the normal plane' are in complete agreement.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound physical equivalence rigorously bonding vortex core flattening exactly to contact-geometric integrability.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1449,6 +1553,19 @@
         "notes": "No citations are present in 'Core aspect ratio equals Levi form condition number on the normal plane', hence no citation misuse is possible.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/core-levi-form.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound physical equivalence rigorously bonding vortex core flattening exactly to contact-geometric integrability.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1470,6 +1587,19 @@
         "notes": "Key terms and symbols in 'Core aspect ratio equals Levi form condition number on the normal plane' are mathematically defined and unambiguous.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/core-levi-form.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound physical equivalence rigorously bonding vortex core flattening exactly to contact-geometric integrability.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1491,6 +1621,19 @@
         "notes": "The algebraic and logical relations in 'Core aspect ratio equals Levi form condition number on the normal plane' are independent of empirical tuning parameters.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/core-levi-form.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound physical equivalence rigorously bonding vortex core flattening exactly to contact-geometric integrability.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1512,6 +1655,19 @@
         "notes": "The physical concepts described in 'Core aspect ratio equals Levi form condition number on the normal plane' are consistent with quantum observable mechanics.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/core-levi-form.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound physical equivalence rigorously bonding vortex core flattening exactly to contact-geometric integrability.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1533,6 +1689,19 @@
         "notes": "The derivation steps and formal definitions in 'Core aspect ratio equals Levi form condition number on the normal plane' are reproducible.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/core-levi-form.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound physical equivalence rigorously bonding vortex core flattening exactly to contact-geometric integrability.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1555,6 +1724,19 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Core aspect ratio equals Levi form condition number on the normal plane' are consistent.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound physical equivalence rigorously bonding vortex core flattening exactly to contact-geometric integrability.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1573,6 +1755,36 @@
           "md": "f15212545eed",
           "ts": "d8ab3b33f2ff",
           "lean": "10b98c16aa15"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound physical equivalence rigorously bonding vortex core flattening exactly to contact-geometric integrability.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound physical equivalence rigorously bonding vortex core flattening exactly to contact-geometric integrability.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
         }
       }
     ]

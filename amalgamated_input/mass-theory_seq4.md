@@ -6,10 +6,7 @@ $$
   \Phi_q(v)\,\Phi_q(u) \;=\; \Phi_q(u)\,\Phi_q(uv)\,\Phi_q(v)
 $$
 
-requires the quantum-torus relation $uv = q\,vu$ on its operator
-arguments. This block locates where that relation lives in the
-brane-tower formalism and how it drives the jet-tower mass
-ascension.
+requires the quantum-torus relation $uv = q\,vu$ on its operator arguments. This block establishes where that relation lives in the brane-tower formalism and how it drives the jet-tower mass ascension.
 
 ## Within a single jet level — trivial commutation
 
@@ -108,12 +105,7 @@ controls $R_N$.
 <!-- FILE_END: pentagon-uv-commutation.md -->
 
 <!-- FILE_START: transfer-matrix-operator.md -->
-Every particle interaction in the Descartes universe is encoded by
-a **transfer matrix** $T_{K_1, K_2}(q) \in \mathrm{M}_2(\mathbb{Z}[q^{\pm 1/2}])$
-determined by the knot types $K_1, K_2$ of the two interacting
-strands.  The transfer matrix acts as an **operator** on the
-Gröbner--Shirshov ideal of the Iwahori--Hecke algebra, and its entries are
-polynomials in $q$.
+Every particle interaction in the Descartes universe encodes as a transfer matrix $T_{K_1, K_2}(q) \in \mathrm{M}_2(\mathbb{Z}[q^{\pm 1/2}])$ determined by the knot types $K_1, K_2$ of the two interacting strands. The transfer matrix acts as an operator on the Gröbner–Shirshov ideal of the Iwahori–Hecke algebra. Its entries are polynomials in $q$.
 
 ## Definition
 
@@ -425,9 +417,7 @@ At $q_0$: $[2]_q^2/4 \approx 1.011$.
 <!-- FILE_END: transfer-matrix-identities.md -->
 
 <!-- FILE_START: skein-polynomial-transfer-matrix.md -->
-The substrate parameter $q$ is the variable of the nuclear Skein
-polynomial.  The transfer matrix product computes this polynomial
-in factored form without expansion.
+The substrate parameter $q$ acts as the variable of the nuclear Skein polynomial. The transfer matrix product computes this polynomial in factored form without expansion.
 
 **Proposition.**
 *Let $\mathcal{N}(Z, N)$ be a nucleus with $A = Z + N$ nucleons.
@@ -462,12 +452,7 @@ multiplications — one per nucleon pair.*
 <!-- FILE_END: skein-polynomial-transfer-matrix.md -->
 
 <!-- FILE_START: beta-decay-transfer-matrix.md -->
-Beta decay is mediated by the $T_{3,5}$ torus knot with $10$
-crossings ([beta decay](#def:beta-decay-skein)).  The $T_{3,5}$
-insertion at the converting quark produces a **universal** 2$\times$2
-matrix-valued polynomial $\Delta_\beta(q)$ that governs every
-beta transition in every nucleus.  The transfer matrix captures
-the effect of the $10$-crossing weak vertex on each nucleon pair.
+Beta decay is mediated by the $T_{3,5}$ torus knot with $10$ crossings. The $T_{3,5}$ insertion at the converting quark produces a universal 2$\times$2 matrix-valued polynomial $\Delta_\beta(q)$ that governs every beta transition in every nucleus. The transfer matrix captures the effect of the $10$-crossing weak vertex on each nucleon pair.
 
 ## The three crossing transfer matrices
 
@@ -683,7 +668,6 @@ $\mathbb{Z}[q^{\pm 1}]$.
 <!-- FILE_END: skein-generation.md -->
 
 <!-- FILE_START: skein-mass-from-linking.md -->
-**Lemma.**
 *Evaluating the mass functional $\mathcal{M}$ on the terminal Skein
 resolution of a hadron $H$ gives*
 

@@ -187,18 +187,19 @@ theorem bring_zero_mode_additive_form
   rw [hθ, hodgeRatio_at_g4]
 
 
-/-- **Faithful instance.** Carries the explicit research-grade conjecture as a sorry.
-    Since `BlochWigner_unit_circle` is an unconstrained axiom, this cannot be mathematically
-    proven from first principles without additional axioms on the range of the Bloch-Wigner function. -/
-instance canonical_bloch : BringZeroModeBlochClass where
-  -- Ref: [manuscript] prop:em-coupling-bring-zero-mode — identifying the
-  --      explicit Bloch class [Z] ∈ B(ℂ) on the genus-4 force-carrier pair
-  --      {T(2,9), T(3,5)} whose τ_arch-image equals 2/(3π) is research-grade
-  --      and open (PR #952: PSLQ refutes the canonical unit-circle bases).
-  -- Ref: [suslin1991], [bloch2000] — Bloch-group framework for [Z].
-  --      Per AGENTS.md §3b this instance carries the conjecture: the `sorry`
-  --      denotes "conjectured", not "missing proof".
-  bring_zero_mode_realised := sorry
+-- /-- **Faithful instance.** Carries the explicit research-grade conjecture as a sorry.
+--     Since `BlochWigner_unit_circle` is an unconstrained axiom, this cannot be mathematically
+--     proven from first principles without additional axioms on the range of the Bloch-Wigner function. -/
+-- Per AGENTS.md §3b-cond we provide NO global instance.
+-- instance canonical_bloch : BringZeroModeBlochClass where
+--   -- Ref: [manuscript] prop:em-coupling-bring-zero-mode — identifying the
+--   --      explicit Bloch class [Z] ∈ B(ℂ) on the genus-4 force-carrier pair
+--   --      {T(2,9), T(3,5)} whose τ_arch-image equals 2/(3π) is research-grade
+--   --      and open (PR #952: PSLQ refutes the canonical unit-circle bases).
+--   -- Ref: [suslin1991], [bloch2000] — Bloch-group framework for [Z].
+--   --      Per AGENTS.md §3b this instance carries the conjecture: the `sorry`
+--   --      denotes "conjectured", not "missing proof".
+--   bring_zero_mode_realised := sorry
 
 
 end QOU.Archimedean

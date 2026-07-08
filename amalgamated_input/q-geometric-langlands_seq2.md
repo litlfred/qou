@@ -1,9 +1,5 @@
 <!-- FILE_START: q-hecke-correspondences-intro.md -->
-Building on the moduli of $q$-local systems, we introduce the algebraic operators that govern the automorphic side. We define the $q$-Hecke operator: a Hecke modification twisted by the Iwahori–Hecke generators $\sigma_i$ of $H_n(q)$. This operator acts on the moduli of $G_q$-bundles. A $q$-Hecke eigensheaf diagonalises this action, with eigenvalues landing in the representation ring of the dual group.
-
-Finally, we show that the rigid fibre functor $\tau$ extracts these eigenvalues as characters. This gives precise meaning to how the automorphic side matches the spectral side in the $q$-Geometric Langlands correspondence.
-
-<!-- draft -->
+Building on the moduli of $q$-local systems, we construct the $q$-Hecke operator: a Hecke modification twisted by the Iwahori–Hecke generators $\sigma_i$. This operator acts on the moduli of $G_q$-bundles. A $q$-Hecke eigensheaf diagonalises this action, with eigenvalues landing in the representation ring of the dual group. The rigid fibre functor $\tau$ extracts these eigenvalues as characters, matching the automorphic side to the spectral side in the $q$-Geometric Langlands correspondence.
 <!-- FILE_END: q-hecke-correspondences-intro.md -->
 
 <!-- FILE_START: q-hecke-operator.md -->
@@ -46,12 +42,11 @@ $$
   \mathcal{M} \otimes V_\lambda^{(q)}(\mathcal{L}_q)_x
 $$
 
-for every closed point $x \in X$ and every dominant coweight $\lambda$. Here, $V_\lambda^{(q)}$ is the irreducible representation of $\check{G}_q$ of highest weight $\lambda$. Its fibre at $x$ under the $q$-local system $\mathcal{L}_q$ ([q-local system](#def:q-local-system)) is $V_\lambda^{(q)}(\mathcal{L}_q)_x$.
+for every closed point $x \in X$ and every dominant coweight $\lambda$. Here, $V_\lambda^{(q)}$ is the irreducible representation of $\check{G}_q$ of highest weight $\lambda$, and $V_\lambda^{(q)}(\mathcal{L}_q)_x$ is its fibre at $x$ under the $q$-local system $\mathcal{L}_q$ ([q-local system](#def:q-local-system)).
 
 These isomorphisms must be compatible with:
 
 1. **Tensor products**: The isomorphism for $\lambda + \mu$ is the composition of the isomorphisms for $\lambda$ and $\mu$, twisted by the braiding $\sigma_q \colon V_\lambda^{(q)} \otimes V_\mu^{(q)} \to V_\mu^{(q)} \otimes V_\lambda^{(q)}$.
-
 2. **Factorisation**: For distinct points $x \neq y$, the Hecke operators commute up to a $(q-1)$-correction: $[\mathbf{T}_{x,\lambda}^{(q)}, \mathbf{T}_{y,\mu}^{(q)}] = O(q-1)$.
 <!-- FILE_END: q-hecke-eigensheaf.md -->
 

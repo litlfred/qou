@@ -5,11 +5,7 @@ The following blocks trace these consequences. Trace-ratio observables relate si
 <!-- FILE_END: beta-decay-magic-shells-intro.md -->
 
 <!-- FILE_START: nitrogen-14-threading.md -->
-Both ${}^{14}\mathrm{N}$ and ${}^{14}\mathrm{C}$ possess mass number
-$A = 14$ and share the braid word skeleton $(\sigma_1 \cdots \sigma_{13})^2$
-(26 crossings). They differ exclusively in crossing chirality assignment:
-which crossings are same-species (weight $q$ or $q^{-1}$) and which are
-mixed (weight $(q + q^{-1})/2$).
+Both ${}^{14}\mathrm{N}$ and ${}^{14}\mathrm{C}$ possess mass number $A = 14$ and share the braid word skeleton $(\sigma_1 \cdots \sigma_{13})^2$ (26 crossings). They differ exclusively in crossing chirality assignment: which crossings are same-species (weight $q$ or $q^{-1}$) and which are mixed (weight $(q + q^{-1})/2$).
 
 **Crossing comparison.**
 
@@ -21,60 +17,35 @@ mixed (weight $(q + q^{-1})/2$).
 | Pauli cost | 0 | $(n-p)^2/(4A)$ asymmetry |
 
 **Ground-state character of $\mathcal{N}(7,7)$.**
-For $p = n = 7$, every crossing is a $\mathfrak{p}$-$\mathfrak{n}$ mixed
-crossing. The mixed crossing weight $(q + q^{-1})/2 \approx 1.005$ averages
-the positive weight $q = q_0$ and the negative weight $q^{-1} = 0.901$.
-No crossing incurs the Coulomb penalty $(q - q^{-1})/2 \approx 0.105$, and
-none carries the attractive excess $-(q - q^{-1})/2$.
+For $p = n = 7$, every crossing is a $\mathfrak{p}$-$\mathfrak{n}$ mixed crossing. The mixed crossing weight $(q + q^{-1})/2 \approx 1.005$ averages the positive weight $q = q_0$ and the negative weight $q^{-1} = 0.901$. No crossing incurs the Coulomb penalty $(q - q^{-1})/2 \approx 0.105$, and none carries the attractive excess $-(q - q^{-1})/2$.
 
-This constitutes the maximal braid shortcut: all 26 crossings contribute
-identically. The alternation prevents any generator from appearing twice
-consecutively, so the Hecke reduction encounters no $\sigma_i^2$ terms,
-rendering the Gröbner--Shirshov normal form maximally efficient.
+This constitutes the maximal braid shortcut: all 26 crossings contribute identically. The alternation prevents any generator from appearing twice consecutively, so the Hecke reduction encounters no $\sigma_i^2$ terms. This renders the Gröbner--Shirshov normal form maximally efficient.
 
 **Instability of $\mathcal{N}(6,8)$.**
-For $p = 6$ and $n = 8$, the 8 neutrons generate 4 $\mathfrak{n}$-$\mathfrak{n}$
-crossings (e.g., between neutrons 7–8, 7–9) that break alternation. These
-same-species crossings carry weight $q^{-1}$ rather than $(q + q^{-1})/2$,
-introducing three penalties:
+For $p = 6$ and $n = 8$, the 8 neutrons generate 4 $\mathfrak{n}$-$\mathfrak{n}$ crossings (e.g., between neutrons 7–8, 7–9) that break alternation. These same-species crossings carry weight $q^{-1}$ rather than $(q + q^{-1})/2$, introducing three penalties:
 
-1. **Coulomb deficit**: The 4 same-species crossings lack the electromagnetic
-   contribution $(q - q^{-1})/2$, creating a net Coulomb excess of
-   $-2(q - q^{-1}) \approx -0.42$ in Skein weight.
-2. **Pauli asymmetry cost**: The $(n - p)^2 / (4A) = 4/56$ asymmetry penalty
-   from the Skein binding Lagrangian
-   ([Skein binding Lagrangian](#def:skein-binding-lagrangian)) contributes an
-   antisymmetric product cost in the categorical action's matter sector.
-3. **Hecke reduction cost**: The same-species crossings produce $\sigma_i^2$
-   terms. Resolving these via the Hecke relation
-   $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$ increases the total energy.
+1. **Coulomb deficit**: The 4 same-species crossings lack the electromagnetic contribution $(q - q^{-1})/2$, creating a net Coulomb excess of $-2(q - q^{-1}) \approx -0.42$ in Skein weight.
+2. **Pauli asymmetry cost**: The $(n - p)^2 / (4A) = 4/56$ asymmetry penalty from the Skein binding Lagrangian ([Skein binding Lagrangian](#def:skein-binding-lagrangian)) contributes an antisymmetric product cost in the categorical action's matter sector.
+3. **Hecke reduction cost**: The same-species crossings produce $\sigma_i^2$ terms. Resolving these via the Hecke relation $\sigma_i^2 = (q - q^{-1})\sigma_i + 1$ increases the total energy.
 
-The fractional ideal volume at the converting generator
-([generator volume decomposition](#prop:generator-volume-decomposition))
-evaluates to $e(I)/e(R) = 0.1563$. This matches the observed Q-value of
-$0.156$ MeV
-([hadron half-life verification](#ex:hadron-half-life-verification)).
+The fractional ideal volume at the converting generator ([generator volume decomposition](#prop:generator-volume-decomposition)) evaluates to $e(I)/e(R) = 0.1563$. This matches the observed Q-value of $0.156$ MeV ([hadron half-life verification](#ex:hadron-half-life-verification)).
 
 **The transition ${}^{14}\mathrm{C} \to {}^{14}\mathrm{N}$.**
-Beta decay converts one neutron to a proton, substituting 4 mixed crossings
-for 4 same-species crossings. The braid word transforms from a broken
-alternation into perfect alternation (the maximal shortcut).
+Beta decay converts one neutron to a proton, substituting 4 mixed crossings for 4 same-species crossings. The braid word transforms from a broken alternation into perfect alternation (the maximal shortcut).
 
 Within the Iwahori--Hecke algebra, this transition:
 - Eliminates 4 Hecke reduction steps ($\sigma_i^2$ resolutions).
 - Lowers the total energy by $\Delta E = -3.361$ Skein weight units.
 - Releases the Pauli asymmetry cost and Coulomb deficit as the decay $Q$-value.
 
-The half-life of 5730 years reflects the $n = 8$ shell structure stabilizing
-the broken-alternation configuration
-([shell-structure worked examples](#ex:half-life-shell-worked)).
+The half-life of 5730 years reflects the $n = 8$ shell structure stabilizing the broken-alternation configuration ([shell-structure worked examples](#ex:half-life-shell-worked)).
 <!-- FILE_END: nitrogen-14-threading.md -->
 
 <!-- FILE_START: trace-ratio-observable.md -->
 The Markov trace of the nuclear braid is a link invariant that grows exponentially with $A$ ([Markov trace factorization](#thm:markov-trace-factorization)). The physical observable — the transition matrix element $|\mathcal{M}_q|^2$ — is the ratio of parent and daughter traces, where the exponential growth cancels.
 
 **Proposition.**
-The beta-decay matrix element squared is proportional to the ratio of Markov-traced generator volumes at the affected generators:
+*The beta-decay matrix element squared is proportional to the ratio of Markov-traced generator volumes at the affected generators:*
 
 $$
   |\mathcal{M}_q|^2
@@ -85,7 +56,7 @@ $$
   \right|^2
 $$
 
-where $\hat{V}_i = z \cdot a_i + b_i$ is the Markov-traced generator volume at $\sigma_i$. The product runs only over generators $i \leq p$ (those affected by the conversion of nucleon $p$ from neutron to proton). Generators $i > p$ cancel exactly between parent and daughter.
+*where $\hat{V}_i = z \cdot a_i + b_i$ is the Markov-traced generator volume at $\sigma_i$. The product runs only over generators $i \leq p$ (those affected by the conversion of nucleon $p$ from neutron to proton). Generators $i > p$ cancel exactly between parent and daughter.*
 
 **Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realization is specialized here.
 <!-- FILE_END: trace-ratio-observable.md -->
@@ -120,7 +91,7 @@ Here $s = q^{1/2} - q^{-1/2}$ is the Skein amplitude, $\mathfrak{E}_{\times} = \
 <!-- FILE_END: trace-ratio-interpretation.md -->
 
 <!-- FILE_START: diagrammatic-double-magic-lr-fusion.md -->
-A nuclide is **double-magic** when its proton and neutron counts both fall in $\mathfrak{M} = \{2, 8, 20, 28, 50, 82, 126\}$. Canonical examples include $^4\mathrm{He}$, $^{16}\mathrm{O}$, $^{40}\mathrm{Ca}$, $^{48}\mathrm{Ca}$, $^{56}\mathrm{Ni}$, $^{132}\mathrm{Sn}$, and $^{208}\mathrm{Pb}$. The empirical signature is exceptional binding-energy stability: these nuclei occupy sharp local maxima on the binding-per-nucleon curve. This block identifies the algebraic mechanism of double-magicity directly. The Littlewood-Richardson (LR) fusion of the two saturated $Z$- and $N$-blocks is *rigid* (a single self-conjugate Specht module on the diagonal) and permits no off-diagonal flux.
+A nuclide is double-magic when its proton and neutron counts both fall in $\mathfrak{M} = \{2, 8, 20, 28, 50, 82, 126\}$. Canonical examples include $^4\mathrm{He}$, $^{16}\mathrm{O}$, $^{40}\mathrm{Ca}$, $^{48}\mathrm{Ca}$, $^{56}\mathrm{Ni}$, $^{132}\mathrm{Sn}$, and $^{208}\mathrm{Pb}$. The empirical signature is exceptional binding-energy stability: these nuclei occupy sharp local maxima on the binding-per-nucleon curve. This block identifies the algebraic mechanism of double-magicity directly. The Littlewood-Richardson (LR) fusion of the two saturated $Z$- and $N$-blocks is rigid (a single self-conjugate Specht module on the diagonal) and permits no off-diagonal flux.
 
 ## Setup
 
@@ -134,7 +105,7 @@ $$
 
 with LR coefficients $c^\nu_{\lambda, \mu} \in \mathbb{Z}_{\geq 0}$ \cite{ariki1996, ram1991}. The Wedderburn-decomposition support of the categorical mass at level $A$ is determined by the partitions $\nu$ entering the fusion with non-zero coefficients.
 
-The **content sum** is additive along the LR fusion: $c(\nu) = c(\lambda) + c(\mu)$. The full-twist eigenvalue at level $A$ is $q^{c(\lambda) + c(\mu)}$. When both $\lambda$ and $\mu$ are self-conjugate ($\lambda = \lambda'$, $\mu = \mu'$, carrying content sum zero), the full-twist eigenvalue at the fused level $A$ is $q^0 = 1$. The LR fusion is constrained to self-conjugate partitions $\nu = \nu'$.
+The content sum is additive along the LR fusion: $c(\nu) = c(\lambda) + c(\mu)$. The full-twist eigenvalue at level $A$ is $q^{c(\lambda) + c(\mu)}$. When both $\lambda$ and $\mu$ are self-conjugate ($\lambda = \lambda'$, $\mu = \mu'$, carrying content sum zero), the full-twist eigenvalue at the fused level $A$ is $q^0 = 1$. The LR fusion is constrained to self-conjugate partitions $\nu = \nu'$.
 
 ## Statement
 
@@ -155,7 +126,7 @@ $$
 
 The classical LR rule \cite{ariki1996} generally produces a sum over many $\nu$, with multiplicities counting LR tableaux. The conjecture dictates that at double-magic levels, the sum collapses to a single term with unit multiplicity. Self-conjugacy ($\lambda = \lambda'$, $\mu = \mu'$) constrains the LR product to $\nu = \nu'$. The saturated-shell content-sum-zero condition ($c(\lambda) = c(\mu) = 0$) constrains $c(\nu) = 0$. Rigidity asserts that these two constraints combined leave at most one admissible $\nu$.
 
-The physical meaning is concrete: there is **no Wedderburn block** at the double-magic level capable of absorbing further binding energy through Hecke channels. Exceptional double-magic stability is the algebraic absence of decomposition channels, not a fitted shell-correction term.
+The physical meaning is concrete: there is no Wedderburn block at the double-magic level capable of absorbing further binding energy through Hecke channels. Exceptional double-magic stability is the algebraic absence of decomposition channels, not a fitted shell-correction term.
 
 ## Examples
 
@@ -167,15 +138,15 @@ The illustration blocks [`ex:single-magic-O18-diagram`](single-magic-O18-diagram
 
 ## Predictions for the higher-magic ladder
 
-The combinatorial barrier at $k \geq 12$ prevents Hoefsmit matrix-evaluation for $\{50, 82, 126\}$. The LR-rigidity conjecture nonetheless predicts a uniquely determined $\nu_{ZN}$ at each double-magic candidate independent of matrix evaluations. Predicted targets in the higher-magic ladder include $^{132}\mathrm{Sn}$ ($Z = 50, N = 82$) and $^{208}\mathrm{Pb}$ ($Z = 82, N = 126$). At each target, the LR fusion is conjecturally rigid. The algebraic prediction of the binding-per-nucleon peak is a **zero-parameter** statement.
+The combinatorial barrier at $k \geq 12$ prevents Hoefsmit matrix-evaluation for $\{50, 82, 126\}$. The LR-rigidity conjecture nonetheless predicts a uniquely determined $\nu_{ZN}$ at each double-magic candidate independent of matrix evaluations. Predicted targets in the higher-magic ladder include $^{132}\mathrm{Sn}$ ($Z = 50, N = 82$) and $^{208}\mathrm{Pb}$ ($Z = 82, N = 126$). At each target, the LR fusion is conjecturally rigid. The algebraic prediction of the binding-per-nucleon peak is a zero-parameter statement.
 
-*The dominant component $V_{\lambda_A}$ in the LR decomposition need **not** be self-conjugate. Empirical Yamanouchi enumeration ([`lr_fusion_self_conj_test.py`](https://github.com/litlfred/qou/blob/claude/qou-algebraic-refactor-1qVFc/computations/lr_fusion_self_conj_test.py)) finds the dominant $\nu$ is non-self-conjugate at every tested $(Z, N)$. The criterion is **content additivity** on the LR-fusion, not self-conjugacy of the dominant component.*
+*The dominant component $V_{\lambda_A}$ in the LR decomposition need not be self-conjugate. Empirical Yamanouchi enumeration ([`lr_fusion_self_conj_test.py`](https://github.com/litlfred/qou/blob/claude/qou-algebraic-refactor-1qVFc/computations/lr_fusion_self_conj_test.py)) finds the dominant $\nu$ is non-self-conjugate at every tested $(Z, N)$. The criterion is content additivity on the LR-fusion, not self-conjugacy of the dominant component.*
 
 ## Discussion
 
-**Conjectural** under AGENTS.md §3b. This conjecture is conditional on [`prop:categorical-neutrality-saturated-shells`](../braids-and-knots/categorical-neutrality-saturated-shells.md) and [`prop:homological-shell-condensation`](../lifting-and-descent/homological-shell-condensation.md). A proof proceeds in two steps: (1) the upstream conjectures force self-conjugate support of $\Phi_Z$ and $\Phi_N$; (2) a self-conjugacy and content-sum LR rigidity lemma (provable Hecke fragment) collapses the LR product to a single $\nu$.
+This conjecture is conditional on [`prop:categorical-neutrality-saturated-shells`](../braids-and-knots/categorical-neutrality-saturated-shells.md) and [`prop:homological-shell-condensation`](../lifting-and-descent/homological-shell-condensation.md). A proof proceeds in two steps: (1) the upstream conjectures force self-conjugate support of $\Phi_Z$ and $\Phi_N$; (2) a self-conjugacy and content-sum LR rigidity lemma (provable Hecke fragment) collapses the LR product to a single $\nu$.
 
-Step 2 is plausibly provable in pure Hecke combinatorics. This is deferred to Phase 2 of the algebraic refactor (see workplan in the sibling branch).
+Step 2 is plausibly provable in pure Hecke combinatorics. This is deferred to Phase 2 of the algebraic refactor.
 
 The downstream consequence is the double-magic prediction set. Every binding-energy claim for $\{^{132}\mathrm{Sn}, ^{208}\mathrm{Pb}, \ldots\}$ remains conjectural until the upstream conjectures are closed.
 <!-- FILE_END: diagrammatic-double-magic-lr-fusion.md -->
@@ -203,7 +174,7 @@ This diagram is symmetric under transposition. Arms equal legs, yielding $\sum c
 
 ## Rigid LR fusion at $A = 40$
 
-The double-magic conjecture ([`prop:diagrammatic-double-magic-lr-fusion`](#prop:diagrammatic-double-magic-lr-fusion)) predicts the LR product collapses to a single self-conjugate $\nu_{20, 20} \vdash 40$ with multiplicity one:
+The double-magic conjecture predicts the LR product collapses to a single self-conjugate $\nu_{20, 20} \vdash 40$ with multiplicity one:
 
 $$
   V_{\lambda_{20}} \otimes V_{\mu_{20}}
@@ -237,7 +208,7 @@ All seven double-magic cases exhibit the same diagrammatic structure: twin self-
 <!-- FILE_START: double-magic-delta-i-bound.md -->
 ## Statement
 
-**Proposition 9 (LR-fusion adjacent-shell compatibility).**
+**Proposition (LR-fusion adjacent-shell compatibility).**
 *Let $(i_Z, i_N) \in \{1, \ldots, 7\} \times \{1, \ldots, 7\}$ be the Bring shell indices of an isotope's proton and neutron magic numbers. Define $\Delta i := i_N - i_Z$. Then every empirically observed doubly-magic isotope has*
 
 $$
@@ -299,7 +270,7 @@ The $\Delta i \leq 1$ constraint reduces the search space for double-magic LR-fu
 
 This restriction accelerates the algebraic-primality verifier ([`sdp-primality-verifier-spec.md`](https://github.com/litlfred/qou/blob/claude/qou-algebraic-refactor-1qVFc/computations/sdp-primality-verifier-spec.md)). The LR-coefficient computation per pair scales as $O(p(n))^2$.
 
-Empirical tests on small-$n$ pairs via [`optimised_magic_verifier.py`](https://github.com/litlfred/qou/blob/claude/qou-algebraic-refactor-1qVFc/computations/optimised_magic_verifier.py) measure an approximate $16\times$ speedup on the tractable subset.
+Empirical tests on small-$n$ pairs via `optimised_magic_verifier.py` measure an approximate $16\times$ speedup on the tractable subset.
 
 Coupled with the Bring 6-knot basis restriction, which cuts partition enumeration from $p(n)$ to $\leq 6$ for shell-binding analysis, these structural predictions enable significant compute savings beyond generic LP/SDP solvers.
 <!-- FILE_END: double-magic-delta-i-bound.md -->

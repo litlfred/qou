@@ -71,7 +71,7 @@ we do not need a limit, only an inequality inside $\mathbf{No}$.
 <!-- FILE_END: surreal-rate-calculus-interpretation.md -->
 
 <!-- FILE_START: surreal-squeeze.md -->
-**Lemma ("Surreal squeeze").** *Let $\varepsilon \in \mathrm{Der}(A)$ be the
+*Let $\varepsilon \in \mathrm{Der}(A)$ be the
 Reeb infinitesimal
 ([Reeb infinitesimal](#def:reeb-epsilon))
 and let $\delta > 0$ be a standard real number.  Then, inside the

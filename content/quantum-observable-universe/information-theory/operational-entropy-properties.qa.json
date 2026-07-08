@@ -11,20 +11,216 @@
     "ts": "f30f316a900e"
   },
   "criteria": {
-    "fit-section-chapter": [],
-    "da-false-claim": [],
-    "da-vacuous": [],
-    "da-circular": [],
-    "da-overclaim": [],
-    "da-hidden-dof": [],
-    "da-non-sequitur": [],
-    "da-lean-narrative-divergence": [],
-    "da-citation-misuse": [],
-    "da-definitional-ambiguity": [],
-    "da-empirical-fragility": [],
-    "da-physical-implausibility": [],
-    "da-reproducibility": [],
-    "da-referee-verdict": [],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formal deduction mapping metric self-consistency solidly across bounded crossover structures.",
+        "reviewed_at": "2026-07-08T13:45:17.000Z",
+        "reviewed_sha": "e9259428923bf598c38ddcfc546d4082569965c0",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formal deduction mapping metric self-consistency solidly across bounded crossover structures.",
+        "reviewed_at": "2026-07-08T13:45:17.000Z",
+        "reviewed_sha": "e9259428923bf598c38ddcfc546d4082569965c0",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formal deduction mapping metric self-consistency solidly across bounded crossover structures.",
+        "reviewed_at": "2026-07-08T13:45:17.000Z",
+        "reviewed_sha": "e9259428923bf598c38ddcfc546d4082569965c0",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formal deduction mapping metric self-consistency solidly across bounded crossover structures.",
+        "reviewed_at": "2026-07-08T13:45:17.000Z",
+        "reviewed_sha": "e9259428923bf598c38ddcfc546d4082569965c0",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formal deduction mapping metric self-consistency solidly across bounded crossover structures.",
+        "reviewed_at": "2026-07-08T13:45:17.000Z",
+        "reviewed_sha": "e9259428923bf598c38ddcfc546d4082569965c0",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formal deduction mapping metric self-consistency solidly across bounded crossover structures.",
+        "reviewed_at": "2026-07-08T13:45:17.000Z",
+        "reviewed_sha": "e9259428923bf598c38ddcfc546d4082569965c0",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formal deduction mapping metric self-consistency solidly across bounded crossover structures.",
+        "reviewed_at": "2026-07-08T13:45:17.000Z",
+        "reviewed_sha": "e9259428923bf598c38ddcfc546d4082569965c0",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formal deduction mapping metric self-consistency solidly across bounded crossover structures.",
+        "reviewed_at": "2026-07-08T13:45:17.000Z",
+        "reviewed_sha": "e9259428923bf598c38ddcfc546d4082569965c0",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formal deduction mapping metric self-consistency solidly across bounded crossover structures.",
+        "reviewed_at": "2026-07-08T13:45:17.000Z",
+        "reviewed_sha": "e9259428923bf598c38ddcfc546d4082569965c0",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formal deduction mapping metric self-consistency solidly across bounded crossover structures.",
+        "reviewed_at": "2026-07-08T13:45:17.000Z",
+        "reviewed_sha": "e9259428923bf598c38ddcfc546d4082569965c0",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formal deduction mapping metric self-consistency solidly across bounded crossover structures.",
+        "reviewed_at": "2026-07-08T13:45:17.000Z",
+        "reviewed_sha": "e9259428923bf598c38ddcfc546d4082569965c0",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formal deduction mapping metric self-consistency solidly across bounded crossover structures.",
+        "reviewed_at": "2026-07-08T13:45:17.000Z",
+        "reviewed_sha": "e9259428923bf598c38ddcfc546d4082569965c0",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formal deduction mapping metric self-consistency solidly across bounded crossover structures.",
+        "reviewed_at": "2026-07-08T13:45:17.000Z",
+        "reviewed_sha": "e9259428923bf598c38ddcfc546d4082569965c0",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formal deduction mapping metric self-consistency solidly across bounded crossover structures.",
+        "reviewed_at": "2026-07-08T13:45:17.000Z",
+        "reviewed_sha": "e9259428923bf598c38ddcfc546d4082569965c0",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {
@@ -43,6 +239,36 @@
         "reviewed_at": "2026-07-03T00:52:56.008Z",
         "reviewed_sha": "0b6e131053129e5e03078ad1cf7e64d3ed38ff89",
         "notes": "block has no .lean sibling"
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formal deduction mapping metric self-consistency solidly across bounded crossover structures.",
+        "reviewed_at": "2026-07-08T13:45:17.000Z",
+        "reviewed_sha": "e9259428923bf598c38ddcfc546d4082569965c0",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formal deduction mapping metric self-consistency solidly across bounded crossover structures.",
+        "reviewed_at": "2026-07-08T13:45:17.000Z",
+        "reviewed_sha": "e9259428923bf598c38ddcfc546d4082569965c0",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ]
   },

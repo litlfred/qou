@@ -7,7 +7,7 @@ The subsequent section uses the hadron-factorization result to establish the dic
 <!-- FILE_END: hadron-algebra-intro.md -->
 
 <!-- FILE_START: hadron.md -->
-A *hadron* is a stable composite of fundamental knots. Its crossing energy is strictly negative, ensuring that topological binding dominates repulsion.
+A *hadron* is a stable composite of fundamental knots. Its crossing energy is strictly negative, ensuring topological binding dominates repulsion.
 
 Let $K_1, \ldots, K_n$ be prime knot types in the representation category $\mathbf{C}$. Let $\mathcal{L}$ be a link encoding their internal entanglement. A **hadron** is a composite
 
@@ -21,108 +21,69 @@ $$
   \mathfrak{E}_{\mathrm{cross}}(\mathfrak{H}_p) < 0.
 $$
 
-Here, $\mathfrak{E}_{\mathrm{cross}}$ denotes the crossing energy ([crossing energy](#def:crossing-energy)). The subscript $p$ specifies the localization point. This point dictates the colour sector of the exceptional divisor $\mathcal{S}_p$ containing the coupled constituents. The colour-tube coupling descends directly from $p$ rather than forming independent data. The operator $\oplus$ denotes linking.
+The subscript $p$ specifies the localization point. The operator $\oplus$ denotes linking.
 
-**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. It invokes real-analytic bounds, transcendental constants, or numerical evaluation at the parameter $q_0$. Categorical identities hold over an abstract coefficient ring; only their archimedean realisation is specialised here.
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. Categorical identities hold over an abstract coefficient ring; only their archimedean realisation is specialised here.
 <!-- FILE_END: hadron.md -->
 
 <!-- FILE_START: hadron-exists.md -->
-**Proposition.**
-There exists a composite $\mathfrak{H}_p = [K_1, \ldots, K_n]_p \oplus \mathcal{L}$ satisfying the [hadron](#def:hadron) stability condition $\mathfrak{E}_{\mathrm{cross}}(\mathfrak{H}_p) < 0$.
+There exists a composite $\mathfrak{H}_p = [K_1, \ldots, K_n]_p \oplus \mathcal{L}$ satisfying the stability condition $\mathfrak{E}_{\mathrm{cross}}(\mathfrak{H}_p) < 0$.
 
-Uniqueness of the hadron at a given crossing partition is established in ([uniqueness of hadrons](#prop:hadron-unique)).
+Uniqueness of the hadron at a given crossing partition is established subsequently.
 <!-- FILE_END: hadron-exists.md -->
 
 <!-- FILE_START: hadron-unique.md -->
-**Theorem.**
-Two [hadrons](#def:hadron) sharing a crossing partition, localisation point $p$, and Hecke normal form coincide up to braid isotopy.
+Two hadrons sharing a crossing partition, localisation point $p$, and Hecke normal form coincide up to braid isotopy.
 
-The [Hecke normal form](#def:hecke-normal-form) furnishes a canonical representative. Thus, "uniqueness" denotes uniqueness of the Hecke class in the algebra $H_n(R, q)$.
+The Hecke normal form furnishes a canonical representative. Thus, uniqueness denotes uniqueness of the Hecke class in the algebra $H_n(R, q)$.
 <!-- FILE_END: hadron-unique.md -->
 
 <!-- FILE_START: hadron-interpretation.md -->
-Arbitrary knot composites are not stable. Only composites whose $R$-matrix braiding yields net binding (more negative crossings than positive) qualify as hadrons. The Coulomb charge $Q(\mathfrak{H})$ ([Coulomb charge](#def:coulomb-charge)) measures the electromagnetic character of this composite.
+Arbitrary knot composites are not stable. Only composites whose $R$-matrix braiding yields net binding qualify as hadrons. The Coulomb charge $Q(\mathfrak{H})$ measures the electromagnetic character of this composite.
 
 The integer $n$ counts the constituent knots and defines the *valence*. A valence of $3$ yields a **baryon**; a valence of $2$ yields a **meson**.
 
-This definition remains abstract. The hadron exists in the knot eigenbasis independently of any base point. We construct localization to a specific point separately ([localized hadron](#def:localized-hadron)). The Euler characteristic $\chi(A)$ in the Descartes universe dictates the specific torus knots serving as generators.
+This definition remains abstract. The Euler characteristic $\chi(A)$ in the Descartes universe dictates the specific torus knots serving as generators.
 <!-- FILE_END: hadron-interpretation.md -->
 
 <!-- FILE_START: hadron-operations-closure.md -->
-**Proposition.**
-Let $\mathbf{C}$ be a rigid :refterm[braided monoidal category]{#braided-monoidal-category} and let
-$\mathfrak{H} \in \mathrm{Sym}^n(K)$ be a hadron ([hadron](#def:hadron)) with
-constituent knots $K_1, \ldots, K_n$.
+Let $\mathbf{C}$ be a rigid braided monoidal category and let $\mathfrak{H} \in \mathrm{Sym}^n(K)$ be a hadron with constituent knots $K_1, \ldots, K_n$.
 
-1. **Braiding closure.** The braiding $\beta_{K_i, K_j}$ descends to an
-   involution on $\mathrm{Sym}^n(K)$.  For the antisymmetric (fermionic)
-   product, exchanging two identical constituents produces $-1$.
-
-2. **Hopf linking closure.** The linking operation
-   $\ell_{ij} \colon K_i \otimes K_j \to K_i \mathbin{\#_{\mathrm{Hopf}}} K_j$
-   is an endomorphism of $\mathrm{Sym}^n(K) \otimes \mathcal{L}_{\mathrm{Hopf}}$
-   with a two-sided inverse (unlinking) when the linking number is trivial.
-
-3. **Skein closure.** The $q$-deformed skein relation
-   $q \cdot L_+ - q^{-1} \cdot L_- = (q - q^{-1}) \cdot L_0$ resolves any
-   linked composite into a polynomial in $q$ times unlinked constituents,
-   yielding the mass formula
-   $\mathcal{M}(\mathfrak{H}) = Q(q) \cdot \mathcal{M}(\mathcal{L}_{\mathrm{Hopf}}) + \sum_i \mathcal{M}(K_i)$.
-
-4. **Fusion closure.** For hadrons $\mathfrak{H}_1 \in \mathrm{Sym}^{n_1}(K)$ and
-   $\mathfrak{H}_2 \in \mathrm{Sym}^{n_2}(K)$, the fusion
-   $\mathfrak{H}_1 \star \mathfrak{H}_2 \in \mathrm{Sym}^{n_1 + n_2}(K)$ is again a hadron.
+1. **Braiding closure.** The braiding $\beta_{K_i, K_j}$ descends to an involution on $\mathrm{Sym}^n(K)$. For the antisymmetric product, exchanging identical constituents produces $-1$.
+2. **Hopf linking closure.** The linking operation $\ell_{ij} \colon K_i \otimes K_j \to K_i \mathbin{\#_{\mathrm{Hopf}}} K_j$ is an endomorphism of $\mathrm{Sym}^n(K) \otimes \mathcal{L}_{\mathrm{Hopf}}$ with a two-sided inverse when the linking number is trivial.
+3. **Skein closure.** The $q$-deformed skein relation resolves any linked composite into a polynomial in $q$ times unlinked constituents, yielding the mass formula $\mathcal{M}(\mathfrak{H}) = Q(q) \cdot \mathcal{M}(\mathcal{L}_{\mathrm{Hopf}}) + \sum_i \mathcal{M}(K_i)$.
+4. **Fusion closure.** For hadrons $\mathfrak{H}_1 \in \mathrm{Sym}^{n_1}(K)$ and $\mathfrak{H}_2 \in \mathrm{Sym}^{n_2}(K)$, the fusion $\mathfrak{H}_1 \star \mathfrak{H}_2 \in \mathrm{Sym}^{n_1 + n_2}(K)$ is again a hadron.
 <!-- FILE_END: hadron-operations-closure.md -->
 
 <!-- FILE_START: hadron-operations.md -->
 The braiding and Hopf link structure of $\mathbf{C}$ induce natural operations on the symmetric product $\mathrm{Sym}^n(K)$.
 
-**Braiding.** The braiding $\beta_{K_i, K_j} \colon K_i \otimes K_j \xrightarrow{\sim} K_j \otimes K_i$ permutes constituent knots within a hadron. Because $\mathrm{Sym}^n$ quotients by the symmetric group action, this braiding descends to an involution on $\mathrm{Sym}^n(K)$. For the antisymmetric product (fermions), exchanging identical constituents yields $-1$.
+**Braiding.** The braiding $\beta_{K_i, K_j}$ permutes constituent knots within a hadron. Because $\mathrm{Sym}^n$ quotients by the symmetric group action, this descends to an involution.
 
-**Hopf linking.** Two knots $K_i, K_j$ in the same hadron link via the Hopf link $\mathcal{L}_{\mathrm{Hopf}}$. The linking operation
+**Hopf linking.** Two knots link via the Hopf link $\mathcal{L}_{\mathrm{Hopf}}$. The linking operation replaces two constituents with a linked pair. The inverse decomposes a linked pair when the linking number is trivial.
 
-$$
-  \ell_{ij} \colon K_i \otimes K_j \longrightarrow K_i \mathbin{\#_{\mathrm{Hopf}}} K_j
-$$
+**Skein action.** The $q$-deformed Skein relations act on $\mathrm{Sym}^n(K) \otimes \mathcal{L}_{\mathrm{Hopf}}$ by resolving link crossings. Iterating across all crossings resolves the composite into unlinked constituents scaled by a polynomial in $q$.
 
-replaces two constituents with a linked pair. The inverse operation (unlinking) decomposes a linked pair into separated constituents when the linking number is trivial.
-
-**Skein action.** The $q$-deformed Skein relations act on $\mathrm{Sym}^n(K) \otimes \mathcal{L}_{\mathrm{Hopf}}$ by resolving link crossings. At each crossing, the relation dictates the decomposition:
-
-$$
-  q \cdot L_+ - q^{-1} \cdot L_- = (q - q^{-1}) \cdot L_0,
-$$
-
-where $L_+$, $L_-$, and $L_0$ are the positive, negative, and smoothed configurations. Iterating across all crossings resolves the composite into unlinked constituents scaled by a polynomial in $q$. This yields the mass formula $\mathcal{M}(\mathfrak{H}) = Q(q) \cdot \mathcal{M}(\mathcal{L}_{\mathrm{Hopf}}) + \sum_i \mathcal{M}(K_i)$.
-
-**Fusion.** We fuse two hadrons $\mathfrak{H}_1 \in \mathrm{Sym}^{n_1}(K)$ and $\mathfrak{H}_2 \in \mathrm{Sym}^{n_2}(K)$ into a composite $\mathfrak{H}_1 \star \mathfrak{H}_2 \in \mathrm{Sym}^{n_1 + n_2}(K)$ by constructing the Hopf link between their binding structures. This provides a categorical model for hadron scattering.
+**Fusion.** We fuse two hadrons by constructing the Hopf link between their binding structures. This provides a categorical model for hadron scattering.
 <!-- FILE_END: hadron-operations.md -->
 
 <!-- FILE_START: knot-factorization.md -->
-The [tensor generation](#rem:simple-objects-V) property of the fundamental object $V$ has a concrete consequence for the hadron construction. Every constituent knot type $K_i$ in a [hadron](#def:hadron) factors through a tensor power of $V$.
+The tensor generation property of the fundamental object $V$ implies every constituent knot type $K_i$ factors through a tensor power of $V$.
 
-Specifically, if $K_i$ is a knot whose associated simple object is $V_{j_i}$, then $V_{j_i}$ appears as a direct summand of $V^{\otimes 2j_i}$. The [PawLei basis](#prop:pawlowski-leitner-basis) provides a canonical embedding
-
-$$
-  \iota_{j_i} \colon V_{j_i}
-   \hookrightarrow 
-  V_{1/2}^{\otimes 2j_i},
-$$
-
-so a hadron $\mathfrak{H} \in V_{j_1} \otimes \cdots \otimes V_{j_n}$ can be written in a universal tensor form:
+If $K_i$ has associated simple object $V_{j_i}$, then $V_{j_i}$ appears as a direct summand of $V^{\otimes 2j_i}$. The Pawlowski--Leitner basis provides a canonical embedding, so a hadron $\mathfrak{H}$ can be written in a universal tensor form:
 
 $$
   \mathfrak{H}  \hookrightarrow 
   V_{1/2}^{\otimes 2(j_1 + \cdots + j_n)}.
 $$
 
-This embedding is not unique. The choice of PawLei basis element for each factor corresponds to a choice of partial-wave channel. The physical hadron is obtained by summing over all channels weighted by the Skein polynomial. Thus, the [hadronic mass formula](#def:hadron) arises as a contraction of the universal tensor with the Hopf link invariant.
+This embedding corresponds to a choice of partial-wave channel. The physical hadron is obtained by summing over all channels weighted by the Skein polynomial.
 
-In the QOU framework, this factorization explains why all composite particles are ultimately built from the single two-dimensional object $V$. The categorical dimension $2$ of $V$ is the minimal non-trivial dimension compatible with the volume constraint. Tensor generation ensures no further building blocks are needed.
+In the QOU framework, this factorization explains why all composite particles are built from $V$. The categorical dimension $2$ of $V$ is the minimal non-trivial dimension compatible with the volume constraint.
 <!-- FILE_END: knot-factorization.md -->
 
 <!-- FILE_START: localized-hadron.md -->
-A localized hadron is a hadron ([Definition](#def:hadron)) that is placed at a categorical point $p$ of the projective line $\mathbb{P}(V)$ ([Definition](#def:projective-line-object)).
+A localized hadron is a hadron placed at a categorical point $p$ of the projective line $\mathbb{P}(V)$.
 
 Formally, a **localized hadron** at $p$ is a morphism in $\mathbf{C}$:
 
@@ -134,13 +95,13 @@ $$
   \mathcal{L}_{p}^{\mathrm{bind}}
 $$
 
-where $\mathcal{K}_p$ denotes the fibre of knot types at $p$ and $\mathcal{L}_{p}^{\mathrm{bind}}$ is the binding Hopf link at $p$. The morphism from $\mathbf{1}$ distinguishes a localized hadron from an abstract one. It selects a specific point in the base space where the composite knot is situated.
+where $\mathcal{K}_p$ denotes the fibre of knot types at $p$ and $\mathcal{L}_{p}^{\mathrm{bind}}$ is the binding Hopf link at $p$. The morphism distinguishes a localized hadron from an abstract one.
 <!-- FILE_END: localized-hadron.md -->
 
 <!-- FILE_START: hadron-fibre-embedding.md -->
 Abstract hadrons encode topological data algebraically. To represent a physical particle, this data must embed into the geometric fibre of the knot bundle over spacetime. 
 
-Let $\mathfrak{H} \in \mathrm{Sym}^n(K) \otimes \mathcal{L}_{\mathrm{Hopf}}$ be a hadron ([Definition](#def:hadron)). Let $\mathcal{S}_p$ denote the fibre over a point $p \in \mathbb{P}(V)$ ([Definition](#def:projective-line-object)). A **fibre-compatible hadron embedding** is a morphism
+Let $\mathfrak{H} \in \mathrm{Sym}^n(K) \otimes \mathcal{L}_{\mathrm{Hopf}}$ be a hadron. Let $\mathcal{S}_p$ denote the fibre over a point $p \in \mathbb{P}(V)$. A **fibre-compatible hadron embedding** is a morphism
 
 $$
   \iota_p \colon \mathrm{Sym}^n(K) \otimes \mathcal{L}_{\mathrm{Hopf}} \longrightarrow \mathcal{S}_p
@@ -148,35 +109,11 @@ $$
 
 satisfying four conditions.
 
-1. **Integrability.** The abstract Skein action ([operations on hadrons](#rem:hadron-operations)) intertwines with the geometric operations on knots in $\mathcal{S}_p$. The embedding realizes the abstract linking, braiding, and Skein decomposition geometrically.
-2. **Fibre confinement.** The image $\iota_p(\mathfrak{H})$ lies entirely in $\mathcal{S}_p$. No constituent knot extends to a neighbouring fibre $E_{p'}$ for $p' \neq p$. A finite Möbius energy bound enforces this:
+1. **Integrability.** The abstract Skein action intertwines with the geometric operations on knots in $\mathcal{S}_p$.
+2. **Fibre confinement.** The image $\iota_p(\mathfrak{H})$ lies entirely in $\mathcal{S}_p$. A finite Möbius energy bound enforces this, preventing the knot complement from developing cusps that reach the fibre boundary.
+3. **Hopf compatibility.** The embedding respects the Hopf structure.
+4. **Volume compatibility.** The embedding preserves hyperbolic volumes: $\mathrm{vol}(\iota_p(K_i)) = \mathrm{vol}(K_i)$.
 
-   $$
-     \mathcal{E}_{\mathrm{Mob}}(\iota_p) < \infty.
-   $$
-
-   This prevents the knot complement from developing cusps that reach the fibre boundary.
-3. **Hopf compatibility.** The embedding respects the Hopf structure. For every linking operation $\ell_{ij}$, the following diagram commutes:
-
-   ```tex
-   \[
-   \begin{tikzcd}[row sep=2.5em, column sep=3em]
-     \mathrm{Sym}^n(K) \otimes \mathcal{L}_{\mathrm{Hopf}}
-       \ar[r, "\iota_p"]
-       \ar[d, "\ell_{ij}"']
-     & \mathcal{S}_p
-       \ar[d, "\ell_{ij}"]
-     \\
-     \mathrm{Sym}^{n'}(K) \otimes \mathcal{L}_{\mathrm{Hopf}}'
-       \ar[r, "\iota_p'"']
-     & \mathcal{S}_p
-   \end{tikzcd}
-   \qquad\text{(Hopf compatibility)}
-   \]
-   ```
-
-4. **Volume compatibility.** The embedding preserves hyperbolic volumes: $\mathrm{vol}(\iota_p(K_i)) = \mathrm{vol}(K_i)$ for each constituent knot $K_i$. This ensures the geometric mass contribution faithfully matches the abstract volume.
-
-A localized hadron ([Definition](#def:localized-hadron)) with a fibre-compatible embedding is a **physically realized hadron**. The integrability condition ensures the abstract algebraic structure admits a strict geometric realization.
+A localized hadron with a fibre-compatible embedding is a **physically realized hadron**. The integrability condition ensures the algebraic structure admits a strict geometric realization.
 <!-- FILE_END: hadron-fibre-embedding.md -->
 

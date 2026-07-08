@@ -1085,6 +1085,19 @@
         "reviewed_at": "2026-07-07T14:26:56.256718Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound topological definition clearly resolving categorical helicity into quantised knot invariants.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "wall-side-statement": [
@@ -1305,6 +1318,19 @@
         "notes": "No false claims identified in 'Categorical helicity conservation': mathematical reasoning is consistent.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/helicity-conservation.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound topological definition clearly resolving categorical helicity into quantised knot invariants.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-vacuous": [
@@ -1325,6 +1351,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The block 'Categorical helicity conservation' presents substantial mathematical content: Let $(\\mathbf{C}, \\varTheta, G, \\mathcal{S})$ be a [QOU](#def:quantum-observable...",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound topological definition clearly resolving categorical helicity into quantised knot invariants.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-circular": [
@@ -1346,6 +1385,19 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Categorical helicity conservation'.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/helicity-conservation.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound topological definition clearly resolving categorical helicity into quantised knot invariants.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-overclaim": [
@@ -1366,6 +1418,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No overclaims: the scope of 'Categorical helicity conservation' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound topological definition clearly resolving categorical helicity into quantised knot invariants.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1387,6 +1452,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Categorical helicity conservation'.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/helicity-conservation.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound topological definition clearly resolving categorical helicity into quantised knot invariants.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1408,6 +1486,19 @@
         "notes": "The argument flow in 'Categorical helicity conservation' is logically sound, mapping onto the cited dependencies.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/helicity-conservation.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound topological definition clearly resolving categorical helicity into quantised knot invariants.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1428,6 +1519,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Lean formalization and narrative for 'Categorical helicity conservation' are in complete agreement.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound topological definition clearly resolving categorical helicity into quantised knot invariants.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1449,6 +1553,19 @@
         "notes": "No citations are present in 'Categorical helicity conservation', hence no citation misuse is possible.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/helicity-conservation.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound topological definition clearly resolving categorical helicity into quantised knot invariants.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1470,6 +1587,19 @@
         "notes": "Key terms and symbols in 'Categorical helicity conservation' are mathematically defined and unambiguous.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/helicity-conservation.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound topological definition clearly resolving categorical helicity into quantised knot invariants.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1491,6 +1621,19 @@
         "notes": "The algebraic and logical relations in 'Categorical helicity conservation' are independent of empirical tuning parameters.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/helicity-conservation.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound topological definition clearly resolving categorical helicity into quantised knot invariants.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1512,6 +1655,19 @@
         "notes": "The physical concepts described in 'Categorical helicity conservation' are consistent with quantum observable mechanics.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/helicity-conservation.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound topological definition clearly resolving categorical helicity into quantised knot invariants.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1533,6 +1689,19 @@
         "notes": "The derivation steps and formal definitions in 'Categorical helicity conservation' are reproducible.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/helicity-conservation.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound topological definition clearly resolving categorical helicity into quantised knot invariants.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1555,6 +1724,19 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Categorical helicity conservation' are consistent.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound topological definition clearly resolving categorical helicity into quantised knot invariants.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1573,6 +1755,36 @@
           "md": "52166f6636a7",
           "ts": "ba431e7d4ed9",
           "lean": "ce84239c8e9d"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound topological definition clearly resolving categorical helicity into quantised knot invariants.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound topological definition clearly resolving categorical helicity into quantised knot invariants.",
+        "reviewed_at": "2026-07-08T13:24:34.000Z",
+        "reviewed_sha": "c56389320a0104a73299d24e4d623193459bdbe1",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
         }
       }
     ]

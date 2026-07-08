@@ -1,15 +1,15 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.13.12",
-  "computedAt": "2026-07-08T09:54:38.003364+00:00",
-  "commitSha": "53b9638d2669f901c14720e35fbc4e6a0c1d8457",
+  "computedAt": "2026-07-08T14:34:29.623928+00:00",
+  "commitSha": "74f9a7f1211f61acb58bff82b99fc30754d8bcac",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 20,
+  "durationMs": 200,
   "computation": "canonical-isotope-witness-Z06",
   "scriptFile": "canonical_isotope_witness.py",
-  "scriptHash": "f34d572be32a",
-  "scriptCommitSha": "a39f7e92689ee88f9d43107bfcb0048f4c5e604f",
+  "scriptHash": "d0ed9b9d7472",
+  "scriptCommitSha": "a6de72f3a3782622f22975754bf898b8e8bbda3d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,7 +30,7 @@
     "element": "C",
     "q_0": "1.1099785827513808075916690956107688798744991218736",
     "rows_total": 16,
-    "rows_with_prediction": 1,
+    "rows_with_prediction": 2,
     "rows_with_composite_mass": 1
   },
   "data": {
@@ -201,18 +201,18 @@
         "A": 13,
         "element": "C",
         "prediction_type": "binding_energy",
-        "layer": "derivation-pending",
-        "canonical_status": "derivation-pending",
-        "prediction_MeV_50dps": null,
+        "layer": "L3-partial-shell:f=0.250 from A=12→16",
+        "canonical_status": "heuristic",
+        "prediction_MeV_50dps": 101.06215113911072,
         "reference_MeV_50dps": 97.1080435,
-        "err_MeV": null,
-        "err_pct": null,
-        "err_ppm": null,
+        "err_MeV": 3.954107639110731,
+        "err_pct": 4.07186417993349,
+        "err_ppm": 40718.641799334895,
         "excised": {
           "excised_layer": "L3-partial-shell:f=0.250 from A=12→16",
           "excised_status": "heuristic",
           "excised_prediction_MeV": 101.06215113911072,
-          "reason": "non-canonical (heuristic / empirical-assignment) — excised from production per user directive 2026-06-02"
+          "reason": "non-canonical (heuristic / empirical-assignment)"
         },
         "composite_mass": {
           "M_pred_MeV": null,
@@ -222,7 +222,7 @@
           "canonical_status": "pending",
           "formula": "N·m_n + Z·m_p − B(A,Z)",
           "m_p_source": "borromean-tower (conj:borromean-baryon-mass-formula)",
-          "B_source": "derivation-pending"
+          "B_source": "L3-partial-shell:f=0.250 from A=12→16"
         },
         "ame_reference": {
           "B_AME_keV": 97108.0435,

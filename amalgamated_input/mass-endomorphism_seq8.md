@@ -5,12 +5,7 @@ This sub-section assembles the $\chi$-character closed forms per Hecke irreducib
 <!-- FILE_START: chi-per-irrep-cyclotomic-closed-forms.md -->
 **All three $V_\lambda$ per-irrep character-difference closed forms — cyclotomic-factor pattern.**
 
-Per user direction "V_2,1 — write all with 4 in denom — pattern,
-where come from? check lit", "first prove formally V", "V_3 ε^k
-pattern", "add Hoefsmit 2x2 matrix expansion", "can you prove all
-generalizations": this block extends [`rem:chi-v3-closed-form-proof`](#rem:chi-v3-closed-form-proof)
-to all three Wedderburn blocks of $H_3(q)$, exposing the
-**unified cyclotomic-factor pattern**.
+This block extends [`rem:chi-v3-closed-form-proof`](#rem:chi-v3-closed-form-proof) to all three Wedderburn blocks of $H_3(q)$, exposing the unified cyclotomic-factor pattern.
 
 ## Three closed forms
 
@@ -44,9 +39,9 @@ $\Phi_8(q) = q^4+1$.
 
 1. **$V_{(3)}$ and $V_{(1,1,1)}$ share the identical numerator polynomial** — only the denominator differs ($q$ vs $q^5$). The denominator-power gap of $4$ exactly matches the factor by which the closed forms differ:
    $$\chi_{(1,1,1)}\text{-diff}(q) = \frac{\chi_{(3)}\text{-diff}(q)}{q^4}.$$
-   This is the **conjugate-partition symmetry**: $(1,1,1)$ is the conjugate (transpose) of $(3)$, and the corresponding sign-rep $\leftrightarrow$ trivial-rep duality $\sigma_i \mapsto q$ vs $\sigma_i \mapsto -q^{-1}$ produces the $q \leftrightarrow -q^{-1}$ substitution that maps the two characters into each other.
+   This manifests the conjugate-partition symmetry: $(1,1,1)$ forms the conjugate (transpose) of $(3)$. The corresponding sign-rep $\leftrightarrow$ trivial-rep duality ($\sigma_i \mapsto q$ vs $\sigma_i \mapsto -q^{-1}$) produces the $q \leftrightarrow -q^{-1}$ substitution that maps the two characters into each other.
 
-2. **$V_{(2,1)}$ involves 8th roots of unity** ($\Phi_8 = q^4 + 1$, whose roots are the primitive 8th roots), while $V_{(3)}, V_{(1,1,1)}$ involve **4th roots** ($\Phi_4 = q^2 + 1$). This is consistent with the **Clifford depth** of the H_3 representations: V_(2,1) is the 2-d Hoefsmit irrep (Cl(3) depth), while the 1-d irreps V_(3), V_(1,1,1) are Cl(2) depth.
+2. **$V_{(2,1)}$ involves 8th roots of unity** ($\Phi_8 = q^4 + 1$, whose roots form the primitive 8th roots). $V_{(3)}$ and $V_{(1,1,1)}$ involve 4th roots ($\Phi_4 = q^2 + 1$). This structure aligns with the Clifford depth of the $H_3$ representations: $V_{(2,1)}$ forms the 2-d Hoefsmit irrep (Cl(3) depth), while the 1-d irreps $V_{(3)}, V_{(1,1,1)}$ form Cl(2) depth.
 
 3. **Denominator power tracks the content sum**:
    - $c(\lambda) = \sum_{(i,j) \in \lambda} (j - i)$
@@ -54,7 +49,7 @@ $\Phi_8(q) = q^4+1$.
    - $c((2,1)) = 0+1-1 = 0$, denominator $q^3$
    - $c((1,1,1)) = 0-1-2 = -3$, denominator $q^5$
 
-   The denominator exponent is $p = 3 - \frac{2}{3} c(\lambda)$, mapping $c \in \{3, 0, -3\}$ to $p \in \{1, 3, 5\}$ exactly.
+   The denominator exponent obeys $p = 3 - \frac{2}{3} c(\lambda)$, mapping $c \in \{3, 0, -3\}$ to $p \in \{1, 3, 5\}$ exactly.
 
 ## Origin of the V_(2,1) closed form
 
@@ -79,7 +74,6 @@ The canonical values are rigorously evaluated via formal trace definitions.
 All proved by `field_simp + ring` after unfolding (sorry-free):
 
 See [Table 2](#tbl:chi-per-irrep-cyclotomic-closed-forms-table2-data).
-
 <!-- FILE_END: chi-per-irrep-cyclotomic-closed-forms.md -->
 
 <!-- FILE_START: per-block-hopf-jones-absorption-pattern.md -->
@@ -125,18 +119,17 @@ $$
 
 Evaluating at $q = 1$ yields $1 (-2) + 4 (-1/2) + 1 (-2) = -6$. 
 
-Under the Markov-bridge $y_\lambda$ weighting, $y_\lambda$ at $q=1$ satisfies $\mathrm{tr}_M(1)=1$, $\mathrm{tr}_M(\sigma)=z=1/2$, and $\mathrm{tr}_M(\sigma_1\sigma_2)=z^2=1/4$. This yields $y_{(3)}(1)=1/2$, $y_{(2,1)}(1)=1/4$, and $y_{(1,1,1)}(1)=0$. The sum is:
+Under the Markov-bridge $y_\lambda$ weighting, $y_\lambda$ at $q=1$ satisfies $\mathrm{tr}_M(1)=1$, $\mathrm{tr}_M(\sigma)=z=1/2$, and $\mathrm{tr}_M(\sigma_1\sigma_2)=z^2=1/4$. This yields $y_{(3)}(1)=1/2$, $y_{(2,1)}(1)=1/4$, and $y_{(1,1,1)}(1)=0$. The sum evaluates to:
 
 $$
 y_{(3)}(1) (-2) + y_{(2,1)}(1) (-1) + y_{(1,1,1)}(1) (-2) = -\tfrac{5}{4}.
 $$
 
-This is the Markov-trace leading-order coefficient $\tau_M(\mathcal{B}_n - \mathcal{B}_p) \approx -\tfrac{5}{4}\varepsilon + O(\varepsilon^2)$. At the substrate parameter $q_0$, the $y_\lambda$ values are $q$-dependent rational functions rather than a probability measure. A direct computation gives $\tau_M(\mathcal{B}_n - \mathcal{B}_p) \approx -0.142$, consistent with the $y_\lambda(q_0) \chi_\lambda(q_0)$ sum.
+This provides the Markov-trace leading-order coefficient $\tau_M(\mathcal{B}_n - \mathcal{B}_p) \approx -\tfrac{5}{4}\varepsilon + O(\varepsilon^2)$. At the substrate parameter $q_0$, the $y_\lambda$ values constitute $q$-dependent rational functions rather than a probability measure. A direct computation gives $\tau_M(\mathcal{B}_n - \mathcal{B}_p) \approx -0.142$, consistent with the $y_\lambda(q_0) \chi_\lambda(q_0)$ sum.
 
 ## Significance
 
-This per-block absorption pattern provides the foundation for extending the coefficient sequence beyond $c_3$. Higher precision-ladder coefficients $c_k$ for $k \geq 4$ arise from products of the per-block linear-in-$\hbar_q$ factors, producing $\hbar_q^k$ at order $k$. Each block's contribution carries the leading-order Hopf-Jones absorption, modulated by the block's cyclotomic-factor structure ($\Phi_4^2$ for one-dimensional representations; $\Phi_8$ for two-dimensional representations).
-
+This per-block absorption pattern establishes the foundation for extending the coefficient sequence beyond $c_3$. Higher precision-ladder coefficients $c_k$ for $k \geq 4$ arise from products of the per-block linear-in-$\hbar_q$ factors, producing $\hbar_q^k$ at order $k$. Each block's contribution carries the leading-order Hopf-Jones absorption, modulated by the block's cyclotomic-factor structure ($\Phi_4^2$ for one-dimensional representations; $\Phi_8$ for two-dimensional representations).
 <!-- FILE_END: per-block-hopf-jones-absorption-pattern.md -->
 
 <!-- FILE_START: conj-qbeta-c-k-closed-forms.md -->
@@ -188,10 +181,7 @@ The empirical $c_k$ from `binding_q_target_sweep` are not arbitrary fits. They a
 <!-- FILE_START: chi-v111-via-sign-substitution.md -->
 **V_(1,1,1) per-irrep character via sign-rep substitution.**
 
-Per the closure gap analysis (item 2 of ), V_(1,1,1) is the
-antisymmetric 1-d irrep of $H_3(q)$. The character can be derived
-**directly via scalar arithmetic** (analogous to V_(3)) using the
-sign-rep action:
+$V_{(1,1,1)}$ constitutes the antisymmetric 1-d irrep of $H_3(q)$. The character is derived directly via scalar arithmetic (analogous to $V_{(3)}$) using the sign-rep action:
 
   - $\sigma_i \mapsto -q^{-1}$
   - $\sigma_i^{-1} \mapsto -q$
@@ -241,10 +231,10 @@ All sorry-free, closed by `field_simp + ring` or `norm_num`.
 <!-- FILE_END: chi-v111-via-sign-substitution.md -->
 
 <!-- FILE_START: chi-v21-hoefsmit-matrix-derivation.md -->
-**V_(2,1) Hoefsmit 2$\times$2 matrix derivation — partial closure (item 1 of ).**
+**V_(2,1) Hoefsmit 2$\times$2 matrix derivation — partial closure.**
 
-V_(2,1) is the **2-dimensional Hoefsmit irrep** of $H_3(q)$. Unlike
-V_(3) and V_(1,1,1) (1-d, scalar arithmetic), V_(2,1) requires the
+$V_{(2,1)}$ provides the 2-dimensional Hoefsmit irrep of $H_3(q)$. Unlike
+$V_{(3)}$ and $V_{(1,1,1)}$ (1-d, scalar arithmetic), $V_{(2,1)}$ requires the
 full 2$\times$2 matrix representation:
 
 $$
@@ -377,9 +367,9 @@ The conjecture extrapolates to the five $H_4(q)$ irreps:
 
 ## Significance
 
-If the conjecture holds at all $n$, it provides a structural prediction for the per-irrep contribution to $\tau_M$ as a function of purely combinatorial partition data ($f_\lambda$, $H(\lambda)$, $c(\lambda)$). Combined with the Wenzl-bridge $y_\lambda$ weights and the precision-ladder $c_k$ extraction, this closes the categorical-chain derivation at every order for arbitrary multi-baryon typed braids. For example, $B_3 \to c_k$ for proton/neutron, $B_6 \to c_k$ for the deuteron, $B_9 \to c_k$ for tritium or ${}^3$He, and $B_{12} \to c_k$ for the $\alpha$-particle (${}^{4}$He).
+If the conjecture holds at all $n$, it provides a structural prediction for the per-irrep contribution to $\tau_M$ as a function of purely combinatorial partition data ($f_\lambda$, $H(\lambda)$, $c(\lambda)$). Combined with the Wenzl-bridge $y_\lambda$ weights and the precision-ladder $c_k$ extraction, this closes the categorical-chain derivation at every order for arbitrary multi-baryon typed braids. For example, $B_3 \to c_k$ for the proton/neutron, $B_6 \to c_k$ for the deuteron, $B_9 \to c_k$ for tritium or ${}^3$He, and $B_{12} \to c_k$ for the $\alpha$-particle (${}^{4}$He).
 
-This cyclotomic structure also opens a literature bridge to Ariki-Koike cyclotomic Hecke algebras, where Specht modules decompose along $\Phi_d(q)$ factors.
+This cyclotomic structure also provides a literature bridge to Ariki-Koike cyclotomic Hecke algebras, where Specht modules decompose along $\Phi_d(q)$ factors.
 
 ## Lean theorems exported
 
@@ -462,7 +452,7 @@ Both limits converge a formally-infinite Habiro-ring element to a finite-precisi
 ## Pre-archimedean home
 
 In the Habiro ring $\widehat{\mathbb{Z}[q]}_{\text{Hab}}$:
-- Each $F_k = 1 + c_k \cdot b^k \cdot \hbar_q^{2k}$ is a Pochhammer-graded element at depth $k$.
+- Each $F_k = 1 + c_k \cdot b^k \cdot \hbar_q^{2k}$ constructs a Pochhammer-graded element at depth $k$.
 - The infinite product $\prod_k F_k$ exists formally within the inverse limit $\varprojlim \mathbb{Z}[q]/((q;q)_n)$.
 - Per-knot evaluation projects to a Habiro residue at the substrate $q_0$, rendered finite by linking-number locality.
 - The archimedean realisation provides the numerical $\mathfrak{Q}_\beta^{\text{cat}}$.

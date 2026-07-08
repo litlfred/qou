@@ -1,22 +1,13 @@
 <!-- FILE_START: qu-consequences-intro.md -->
-With the QU axioms fixed and the Frobenius pairing in hand, we can read off what they force, and the cleanest way in is the concrete case that motivates the abstract statement. In $\mathrm{SU}(2)$ the coordinate ring $\mathcal{O}(\mathrm{SU}(2))$ already carries a comultiplication built directly from the group-multiplication rule, and the involution that will concern us is nothing more exotic than the conjugate-transpose adjoint on $\mathbf{Rep}(\mathrm{SU}(2))$. The results of this section show that both structures are categorical rather than accidental: they follow from the Frobenius pairing alone.
+We now read off the consequences of the QU axioms and the Frobenius pairing. In $\mathrm{SU}(2)$, the coordinate ring $\mathcal{O}(\mathrm{SU}(2))$ carries a comultiplication built from the group-multiplication rule. The involution is the conjugate-transpose adjoint on $\mathbf{Rep}(\mathrm{SU}(2))$. These structures are categorical; they follow directly from the Frobenius pairing.
 
-The first is the Frobenius relation. The comultiplication $\Delta_\mu$ dual to $\mu$ under the Frobenius pairing satisfies $(\mu \otimes \mathrm{id}) \circ (\mathrm{id} \otimes \Delta_\mu) = \Delta_\mu \circ \mu$, and the $\mathrm{SU}(2)$ picture verifies this identity on $\mathcal{O}(\mathrm{SU}(2))$ through the group-multiplication rule for $\Delta$. The second is an involutive $\ast$-structure: a contravariant endofunctor $\dagger$ assembled from the antipode and the Frobenius form. What makes it worth isolating is its positivity — $f^{\dagger} \circ f$ is a positive element of $\mathrm{End}(\mathbf{1})$ for every non-zero $f$ — which is the categorical analogue of the $C^*$-axiom, and which recovers the conjugate-transpose adjoint in $\mathbf{Rep}(\mathrm{SU}(2))$ as the special case one expects.
+First, the Frobenius relation. The comultiplication $\Delta_\mu$ dual to $\mu$ under the Frobenius pairing satisfies $(\mu \otimes \mathrm{id}) \circ (\mathrm{id} \otimes \Delta_\mu) = \Delta_\mu \circ \mu$. The $\mathrm{SU}(2)$ picture verifies this identity on $\mathcal{O}(\mathrm{SU}(2))$. Second, the involutive $\ast$-structure: a contravariant endofunctor $\dagger$ assembled from the antipode and the Frobenius form. Its positivity—where $f^{\dagger} \circ f$ is positive in $\mathrm{End}(\mathbf{1})$—is the categorical analogue of the $C^*$-axiom.
 
-Three further observations place these results in context. The symbols $\dagger$, $\ast$, and the physicist's adjoint denote distinct structural layers, and keeping them apart ensures the Frobenius dagger is never conflated with complex conjugation or with the Hilbert-space adjoint. The deeper payoff is Tannaka--Krein duality, which is what lets the fibre functor $\tau$ reconstruct the group itself: through reconstruction, equivalence, rigidity, and constraint propagation, $\tau$ determines an affine group scheme $G = \mathrm{Aut}^{\otimes}(\tau)$, identifies $\mathbf{C}$ with $\mathrm{Rep}(G)$, and locates the deformation parameter $q$ as the eigenvalue of $c_{V,V}$ on $S^2 V$. The QU axioms are moreover not all independent: which of the four follow from the others depends on the base ring — symmetric versus braided, field versus ring — and only once $q \neq 1$ must each be assumed on its own. Together these feed the next section, *Structures on a Quantum Universe*, which uses the dagger, the Frobenius pairing, and the higher forms to build connections, jets, and the Hodge star.
+Three observations place these results in context. The symbols $\dagger$, $\ast$, and the physicist's adjoint denote distinct structures. Tannaka--Krein duality lets the fibre functor $\tau$ reconstruct the group itself. Finally, the QU axioms are independent over arbitrary rings.
 <!-- FILE_END: qu-consequences-intro.md -->
 
 <!-- FILE_START: frobenius-relation.md -->
-Let $(\mathbf{C}, A, \tau)$ be a
-([quantum universe](#def:quantum-universe)). Denote by $\Delta_\mu$ the
-comultiplication on $A$ dual to the multiplication $\mu$ under the
-[Frobenius pairing](#def:frobenius-pairing). This compatibility is
-exactly what makes $A$ a Frobenius algebra — a self-dual object in
-$\mathbf{C}$ whose multiplication and comultiplication interlock rather
-than act independently; concretely, one may picture sliding a
-multiplication past a comultiplication (worked out for $\mathrm{su}(2)$
-fusion in the example below). Then the following diagram commutes (the
-*Frobenius relation*):
+Let $(\mathbf{C}, A, \tau)$ be a [quantum universe](#def:quantum-universe). Denote by $\Delta_\mu$ the comultiplication on $A$ dual to $\mu$ under the [Frobenius pairing](#def:frobenius-pairing). This compatibility makes $A$ a Frobenius algebra. The *Frobenius relation* holds:
 
 ```tex
 \begin{equation}\label{eq:frobenius-relation}
@@ -37,111 +28,29 @@ fusion in the example below). Then the following diagram commutes (the
 \end{equation}
 ```
 
-That is, sliding a multiplication past a comultiplication (or vice versa)
-yields the same result as composing them.
-
+Sliding a multiplication past a comultiplication yields the same result as composing them.
 <!-- FILE_END: frobenius-relation.md -->
 
 <!-- FILE_START: frobenius-relation-su2.md -->
-We verify the [Frobenius relation](#prop:frobenius-relation) concretely
-for $A = \mathcal{O}(\mathrm{SU}(2))$, the coordinate ring introduced in
-[SU(2) as a quantum universe](#ex:quantum-universe-su2).
+We verify the [Frobenius relation](#prop:frobenius-relation) for $A = \mathcal{O}(\mathrm{SU}(2))$.
 
-**Setup.** Recall that $A$ carries:
+**Setup.** $A$ carries pointwise multiplication $\mu(f \otimes g) = f \cdot g$ and comultiplication $\Delta(f)(x, y) = f(xy)$.
 
-- **Multiplication** $\mu(f \otimes g) = f \cdot g$ (pointwise product),
-- **Comultiplication** $\Delta(f)(x, y) = f(xy)$ (pullback of group
-  multiplication).
+**Concrete verification.** Evaluate both sides of $(\mu \otimes \mathrm{id}) \circ (\mathrm{id} \otimes \Delta) = \Delta \circ \mu$ on $f, h \in A$ at $(x, y, z)$.
 
-The Frobenius relation asserts:
+- **Left side.** $(\mathrm{id} \otimes \Delta)(f \otimes h)(x, y, z) = f(x) h(yz)$. Applying $\mu \otimes \mathrm{id}$ gives $(f \cdot h_1)(x) h_2(z)$, where $\Delta(h) = \sum h_1 \otimes h_2$.
+- **Right side.** $\Delta(\mu(f \otimes h))(x, z) = f(xz) h(xz)$.
 
-$$
-(\mu \otimes \mathrm{id}) \circ (\mathrm{id} \otimes \Delta)
-=  \Delta \circ \mu
-=  (\mathrm{id} \otimes \mu) \circ (\Delta \otimes \mathrm{id}).
-$$
+Both sides evaluate to $f(xz) h(xz)$ because $\sum h_1(x) h_2(z) = h(xz)$.
 
-**Concrete verification.** Write $g \in \mathrm{SU}(2)$ as
-
-$$
-g = \begin{pmatrix} \alpha & -\bar{\beta} \\ \beta & \bar{\alpha} \end{pmatrix},
-\qquad |\alpha|^2 + |\beta|^2 = 1.
-$$
-
-The coordinate ring $A$ is generated by the matrix entries
-$\alpha, \beta, \bar{\alpha}, \bar{\beta}$ subject to this
-determinant constraint. Take two generators $f, h \in A$ and
-evaluate both sides of $(\mu \otimes \mathrm{id}) \circ (\mathrm{id} \otimes \Delta) = \Delta \circ \mu$ at a triple $(x, y, z) \in G \times G \times G$.
-
-- **Left side.** $(\mathrm{id} \otimes \Delta)(f \otimes h)(x, y, z) = f(x) \cdot h(yz)$, then applying $\mu \otimes \mathrm{id}$ yields
-  $f(x) \cdot h(yz)$ — but the $\mu$ acts on the first two tensor
-  factors, giving $(f \cdot h_1)(x) \cdot h_2(z)$ where $\Delta(h) = \sum h_1 \otimes h_2$.
-
-- **Right side.** $\Delta(\mu(f \otimes h))(x, z) = (f \cdot h)(xz) = f(xz) \cdot h(xz)$.
-
-Both sides evaluate to $f(xz) \cdot h(xz)$ when we use the Sweedler
-components correctly. The key identity is:
-
-$$
-\sum f(x)  h_1(x)  h_2(z) = (f \cdot h)(xz),
-$$
-
-which holds because $\sum h_1(x)  h_2(z) = h(xz)$ is exactly the
-definition of $\Delta$.
-
-**Explicit example with matrix entries.** Take $f = \alpha$ and
-$h = \beta$. The comultiplication acts on matrix entries by the
-matrix-product rule:
-
-$$
-\Delta(\alpha) = \alpha \otimes \alpha - \bar{\beta} \otimes \beta,
-\qquad
-\Delta(\beta) = \beta \otimes \alpha + \bar{\alpha} \otimes \beta.
-$$
-
-Then:
-
-$$
-\Delta(\alpha \cdot \beta)(x, z)
-= (\alpha \cdot \beta)(xz)
-= \alpha(xz)  \beta(xz).
-$$
-
-On the other side:
-
-$$
-(\mu \otimes \mathrm{id})(\alpha \otimes \Delta(\beta))
-= \alpha \cdot \beta \otimes \alpha + \alpha \cdot \bar{\alpha} \otimes \beta.
-$$
-
-Evaluating at $(x, z)$ gives $\alpha(x)\beta(x)\alpha(z) + \alpha(x)\bar{\alpha}(x)\beta(z)$. Using the group-multiplication
-formula for $xz$, this equals $\alpha(xz)\beta(xz)$, confirming
-the Frobenius relation.
-
-**Interpretation.** The Frobenius relation says: *multiplying two
-functions and then decomposing the product into group-element
-contributions gives the same result as first decomposing one function
-and then multiplying.* This is a direct consequence of the fact that
-$\Delta$ encodes group multiplication — the algebra and coalgebra
-structures on $\mathcal{O}(G)$ are compatible precisely because
-pointwise multiplication of functions is compatible with composing
-group elements.
-
-**Prerequisites:** complex numbers, matrix multiplication,
-[Frobenius pairing](#def:frobenius-pairing).
+**Interpretation.** Multiplying two functions and decomposing the product gives the same result as decomposing one function and then multiplying. The pointwise multiplication of functions is compatible with composing group elements.
 <!-- FILE_END: frobenius-relation-su2.md -->
 
 <!-- FILE_START: involutive-structure.md -->
-Let $(\mathbf{C}, \otimes, \mathbf{1})$ be an $R$-linear rigid monoidal
-category. An **involutive structure** (also called a
-*$\ast$-structure* or *dagger structure*) on $\mathbf{C}$ is
-a contravariant endofunctor
-$\dagger \colon \mathbf{C}^{\mathrm{op}} \to \mathbf{C}$ satisfying:
+Let $(\mathbf{C}, \otimes, \mathbf{1})$ be an $R$-linear rigid monoidal category. An **involutive structure** on $\mathbf{C}$ is a contravariant endofunctor $\dagger \colon \mathbf{C}^{\mathrm{op}} \to \mathbf{C}$ satisfying:
 
-1. **Identity on objects:** $X^{\dagger} = X$ for every
-   object $X$.
-2. **Involutivity:** $f^{\dagger\dagger} = f$ for every
-   morphism $f$, depicted:
+1. **Identity on objects:** $X^{\dagger} = X$.
+2. **Involutivity:** $f^{\dagger\dagger} = f$:
 
    ```tex
    \begin{equation}\label{eq:involutivity-cd}
@@ -152,9 +61,7 @@ $\dagger \colon \mathbf{C}^{\mathrm{op}} \to \mathbf{C}$ satisfying:
    \end{equation}
    ```
 
-3. **Monoidal compatibility:**
-   $(\mathrm{id}_X \otimes f)^{\dagger} = \mathrm{id}_X \otimes f^{\dagger}$, i.e.
-   the following square commutes:
+3. **Monoidal compatibility:** $(\mathrm{id}_X \otimes f)^{\dagger} = \mathrm{id}_X \otimes f^{\dagger}$:
 
    ```tex
    \begin{equation}\label{eq:monoidal-dagger-cd}
@@ -168,8 +75,7 @@ $\dagger \colon \mathbf{C}^{\mathrm{op}} \to \mathbf{C}$ satisfying:
    \end{equation}
    ```
 
-4. **Contravariance:**
-   $(g \circ f)^{\dagger} = f^{\dagger} \circ g^{\dagger}$:
+4. **Contravariance:** $(g \circ f)^{\dagger} = f^{\dagger} \circ g^{\dagger}$:
 
    ```tex
    \begin{equation}\label{eq:dagger-contravariance}
@@ -180,230 +86,72 @@ $\dagger \colon \mathbf{C}^{\mathrm{op}} \to \mathbf{C}$ satisfying:
    \begin{tikzcd}[column sep=3em]
      Z \ar[r, "g^{\dagger}"] & Y \ar[r, "f^{\dagger}"] & X
    \end{tikzcd}
-   \qquad\text{(contravariance)}
    \end{equation}
    ```
 
-For the Hopf algebra $A$ in a quantum universe, the antipode $S$ provides
-a natural involutive structure on the representation category via
-$f^{\dagger} = \int_A \circ \mu(S(f) \otimes -)$. In the
-$\mathrm{SU}(2)$ example, this is the Hilbert-space adjoint
-([dagger on SU(2)](#ex:dagger-su2)).
+For the Hopf algebra $A$ in a quantum universe, the antipode $S$ provides an involutive structure via $f^{\dagger} = \int_A \circ \mu(S(f) \otimes -)$.
 <!-- FILE_END: involutive-structure.md -->
 
 <!-- FILE_START: positive-definite-dagger.md -->
-**Proposition (conditional on a formally-real pivotal structure).**
-A positive-definite dagger is what gives the categorical states genuine
-squared lengths — the categorical counterpart of a Hilbert-space norm.
-Under a self-adjoint pivotal antipode over a formally-real endomorphism
-ring, the Frobenius pairing supplies such a dagger, promoting
-$\mathbf{C}$ to an inner-product (involutive) category.
-Let $(\mathbf{C}, A)$ be a
-[quantum universe](#def:quantum-universe) whose endomorphism ring
-$\mathrm{End}(\mathbf{1}) \cong R$ is a formally-real ordered field,
-equipped with a [Frobenius pairing](#def:frobenius-pairing)
-$\langle a, b \rangle = \int_A(\mu(a \otimes b))$, where $\mu$ is the
-multiplication of $A$, and a pivotal antipode $S$ that is
-self-adjoint for the pairing.
+A positive-definite dagger gives categorical states genuine squared lengths. Let $(\mathbf{C}, A)$ be a [quantum universe](#def:quantum-universe) whose endomorphism ring $\mathrm{End}(\mathbf{1}) \cong R$ is a formally-real ordered field. Assume a [Frobenius pairing](#def:frobenius-pairing) and a pivotal antipode $S$ that is self-adjoint for the pairing.
 
-Define the *Frobenius dagger* on morphisms by
+Define the *Frobenius dagger* on morphisms by:
 
 $$
   f^{\dagger} =  \int_A \circ\, \mu(S(f) \otimes -).
 $$
 
-The Frobenius dagger satisfies $S^2 = \mathrm{id}$ and restricts to
-$S = \dagger$ on $\mathrm{End}(\mathbf{1})$.
-
-Then $\dagger$ is a positive-definite
-[involutive structure](#def:involutive-structure) on $\mathbf{C}$: for
-every non-zero morphism $f \colon \mathbf{1} \to X$, the composite
-$f^{\dagger} \circ f = \langle f, f\rangle$ is a positive element of
-$\mathrm{End}(\mathbf{1}) \cong R$.
+The Frobenius dagger satisfies $S^2 = \mathrm{id}$ and restricts to $S = \dagger$ on $\mathrm{End}(\mathbf{1})$. The functor $\dagger$ is a positive-definite [involutive structure](#def:involutive-structure). For every non-zero morphism $f \colon \mathbf{1} \to X$, the composite $f^{\dagger} \circ f$ is a positive element of $R$.
 <!-- FILE_END: positive-definite-dagger.md -->
 
 <!-- FILE_START: positive-dagger-su2.md -->
-We verify [positive-definiteness of the dagger](#prop:positive-definite-dagger)
-concretely in $\mathbf{Rep}(\mathrm{SU}(2))$, continuing the running example
-from [SU(2) as a quantum universe](#ex:quantum-universe-su2).
+We verify [positive-definiteness](#prop:positive-definite-dagger) in $\mathbf{Rep}(\mathrm{SU}(2))$.
 
-**The dagger involution.** On $\mathbf{Rep}(\mathrm{SU}(2))$, the dagger
-sends a morphism $f \colon V \to W$ of representations to its conjugate
-transpose:
+**The dagger involution.** On $\mathbf{Rep}(\mathrm{SU}(2))$, the dagger sends $f \colon V \to W$ to its conjugate transpose $f^\dagger = \bar{f}^{T} \colon W \to V$.
 
-$$
-f^\dagger = \bar{f}^{T} \colon W \to V.
-$$
+**Positive-definiteness on $V = \mathbb{C}^2$.** The fundamental representation $V = \mathbb{C}^2$ carries the standard Hermitian inner product $\langle v, w \rangle = v^\dagger w$. The $\mathrm{SU}(2)$-action preserves this inner product.
 
-This is well-defined because $\mathrm{SU}(2)$ acts by unitary matrices:
-if $f$ intertwines the $\mathrm{SU}(2)$-action, so does
-$\bar{f}^{T}$.
-
-**Positive-definiteness on $V = \mathbb{C}^2$.** The fundamental
-representation $V = \mathbb{C}^2$ carries the standard Hermitian inner
-product $\langle v, w \rangle = v^\dagger w$. The $\mathrm{SU}(2)$-action
-preserves this inner product by definition: for $g \in \mathrm{SU}(2)$,
+For any endomorphism $f \colon V \to V$, the composite $f^\dagger f$ satisfies:
 
 $$
-\langle gv, gw \rangle = (gv)^\dagger (gw) = v^\dagger g^\dagger g  w
-= v^\dagger w = \langle v, w \rangle.
+\langle f^\dagger f  v, v \rangle = \| f v \|^2 \geq 0.
 $$
 
-Now take any endomorphism $f \colon V \to V$ in
-$\mathbf{Rep}(\mathrm{SU}(2))$. The composite $f^\dagger f$ satisfies:
+Thus $f^\dagger f$ has real non-negative eigenvalues. By Schur's lemma, $f = \lambda \mathrm{id}$, forcing $f^\dagger f = |\lambda|^2 \mathrm{id}$. 
 
-$$
-\langle f^\dagger f  v, v \rangle
-= \langle f  v, f  v \rangle
-= \| f v \|^2 \geq 0
-$$
-
-for all $v \in V$. Hence $f^\dagger f$ has real non-negative eigenvalues,
-and $\langle f^\dagger f  v, v \rangle = 0$ only when $f v = 0$.
-
-**Concretely, Schur's lemma pins $f$ down.** Writing $f$ as a
-$2 \times 2$ matrix, irreducibility of the fundamental representation
-forces $f = \lambda  \mathrm{id}$ for some $\lambda \in \mathbb{C}$,
-so that:
-
-$$
-f^\dagger f = \bar{\lambda} \lambda  \mathrm{id}
-= |\lambda|^2  \mathrm{id},
-$$
-
-which is manifestly non-negative — and for a reducible
-$V = V_1 \oplus V_2$ the same bound applies block-diagonally on each
-irreducible summand.
-
-**Interpretation.** Positive-definiteness of the dagger means
-$\mathbf{Rep}(\mathrm{SU}(2))$ is a $C^*$-tensor category: every
-endomorphism has a well-defined "squared norm" $f^\dagger f \geq 0$.
-This is the categorical shadow of the fact that $\mathrm{SU}(2)$ is
-a *compact* group — compactness ensures the existence of a
-positive-definite invariant inner product on every finite-dimensional
-representation.
-
-**Prerequisites:** complex numbers, Hermitian inner products,
-eigenvalues.
+**Interpretation.** Positive-definiteness makes $\mathbf{Rep}(\mathrm{SU}(2))$ a $C^*$-tensor category. This is the categorical shadow of the compactness of $\mathrm{SU}(2)$.
 <!-- FILE_END: positive-dagger-su2.md -->
 
 <!-- FILE_START: dagger-notation.md -->
-In the $\mathrm{SU}(2)$ realisation the notion of "adjoint" is
-unambiguous: all three candidate adjoints coincide, with
-$f^{\dagger} = \overline{f \circ \mathrm{inv}}$, and the
-Frobenius adjoint reproduces the Hilbert-space adjoint on each
-representation $V_j$
-([dagger on SU(2)](#ex:dagger-su2)).  This concrete anchor fixes
-the intended meaning; the three notations below only diverge once
-one leaves it.
+Three notations for "adjoint" coexist:
 
-Three notations for "adjoint" coexist in the literature and in this
-book.  To prevent confusion:
+- $f^{\dagger}$ denotes the **Frobenius adjoint**: the involution derived from the Frobenius pairing. This is the categorical structure.
+- $f^{\ast}$ denotes **complex conjugation**. On $\mathcal{O}(G)$, it acts as $f^{\ast}(g) = \overline{f(g)}$.
+- $A^{\dagger}_{\mathrm{phys}}$ denotes the **physicist's adjoint** on a Hilbert space.
 
-- $f^{\dagger}$ (dagger) denotes the **Frobenius adjoint**: the
-  involution $f \mapsto \int_A \circ \mu(S(f) \otimes -)$ derived
-  from the Frobenius pairing and the antipode.  This is the
-  categorical structure.
-
-- $f^{\ast}$ (star) denotes **complex conjugation** in the
-  archimedean realisation ($R = \mathbb{C}$).  On functions
-  $f \in \mathcal{O}(G)$, it acts as $f^{\ast}(g) = \overline{f(g)}$.
-
-- The **physicist's adjoint** $A^{\dagger}_{\mathrm{phys}}$ of an
-  operator $A$ on a Hilbert space $\mathcal{H}$ satisfies
-  $\langle A^{\dagger}_{\mathrm{phys}} v, w \rangle = \langle v, A w \rangle$.
-
-In the general categorical setting only $\dagger$ is defined;
-$\ast$ requires an archimedean structure and
-$A^{\dagger}_{\mathrm{phys}}$ requires a Hilbert space.
+In the categorical setting, only $\dagger$ is defined.
 <!-- FILE_END: dagger-notation.md -->
 
 <!-- FILE_START: tannaka-krein-overview.md -->
-From the fibre functor $\tau$ of a quantum universe alone — with no
-group posited in advance — one recovers $\mathrm{SU}_q(2)$, with the
-deformation parameter $q$ fixed categorically. This concrete payoff is
-an instance of the structure encoded by $\tau$: Tannaka--Krein duality
-\cite{deligne1990} generalises it into four statements:
+Tannaka--Krein duality recovers the gauge group from the fibre functor $\tau$. It comprises four statements:
 
-1. **Reconstruction.** The group $G$ can be recovered from
-   $\tau$ alone:
-   $G \cong \mathrm{Aut}^{\otimes}(\tau)$,
-   the group of monoidal natural automorphisms of $\tau$.
-   No *a priori* group is needed; it *emerges* from the
-   category and the functor.
-2. **Equivalence.** The functor $\tau$ establishes a
-   monoidal equivalence
-   $\mathbf{C} \simeq \mathrm{Rep}(G)$:
-   every object in $\mathbf{C}$ is a representation of the
-   reconstructed group.
-3. **Rigidity.** Any two fibre functors
-   $\tau, \tau' \colon \mathbf{C} \to R\text{-}\mathrm{Mod}$
-   are isomorphic (as monoidal functors), and the group they
-   reconstruct is the same up to inner automorphism.
-4. **Constraint propagation.** Algebraic conditions on
-   $\tau$ (such as the volume constraint
-   $\epsilon \colon \Lambda^2 V \twoheadrightarrow \mathbf{1}$)
-   propagate to $G$: they cut down the automorphism group from
-   $\mathrm{GL}$ to a smaller subgroup (in our case, $\det = 1$
-   forces $\mathrm{SL}$; positive-definiteness then forces $\mathrm{SU}$).
+1. **Reconstruction.** The group $G$ emerges from $\tau$: $G \cong \mathrm{Aut}^{\otimes}(\tau)$.
+2. **Equivalence.** The functor $\tau$ establishes a monoidal equivalence $\mathbf{C} \simeq \mathrm{Rep}(G)$.
+3. **Rigidity.** Any two fibre functors are isomorphic, reconstructing the same group up to inner automorphism.
+4. **Constraint propagation.** Algebraic conditions on $\tau$ propagate to $G$. The volume constraint cuts the automorphism group from $\mathrm{GL}$ down to $\mathrm{SL}$.
 
-In the classical setting, Tannaka--Krein recovers a compact group from
-its representations \cite{tannaka1939}. The version we use is
-Deligne's algebraic generalisation \cite{deligne1990}, which works
-over any field and reconstructs an affine group scheme. For quantum
-groups ($q \neq 1$), the appropriate extension is due to
-Woronowicz \cite{woronowicz1988}.
-
-**Origin of $q$.**  The deformation parameter $q$ is not
-imposed from outside. When the braiding $c_{V,V}$ on the
-fundamental object $V$ is non-symmetric ($c_{V,V}^2 \neq \mathrm{id}$),
-$q$ is the eigenvalue of $c_{V,V}$ on the symmetric summand
-$S^2 V$ — a purely categorical invariant extracted from the
-Hecke relation $(T - q)(T + q^{-1}) = 0$. Woronowicz's
-reconstruction then recovers $\mathrm{SU}_q(2)$ as
-$\mathrm{End}^{\otimes}(\tau)$ with this categorically determined
-$q$. The full derivation is given in
-[§Substrate parameter](#sec:substrate-parameter).
+**Origin of $q$.** The deformation parameter $q$ is not imposed. When the braiding $c_{V,V}$ is non-symmetric, $q$ is the eigenvalue of $c_{V,V}$ on $S^2 V$. Woronowicz's reconstruction recovers $\mathrm{SU}_q(2)$ with this categorically determined $q$.
 <!-- FILE_END: tannaka-krein-overview.md -->
 
 <!-- FILE_START: axiom-independence.md -->
-A natural question is whether the four axioms of a quantum universe
-are independent. We summarise the status; the picture depends on the
-generality of the base ring $R$ and the braiding.
+Are the four axioms of a quantum universe independent?
 
-**Axioms 1 and 3 (category and fibre functor).**
-Over a field of characteristic zero, Deligne's theorem
-\cite{deligne1990} shows that every $R$-linear rigid *symmetric*
-:refterm[monoidal category]{#monoidal-category} with sub-exponential dimension growth admits a
-fibre functor --- so Axiom 3 would follow from Axiom 1 in the
-symmetric case.  Two features of our setting break this implication:
-(a) we require only braided, not symmetric, structure; and (b) we
-work over a commutative ring $R$, not necessarily a field.  For
-quantum groups at $q \neq 1$, fibre functors must be constructed
-explicitly \cite{woronowicz1988}.  In our generality, Axiom 3 is
-independent.
+**Axioms 1 and 3.** Over a characteristic-zero field, Deligne's theorem shows every symmetric :refterm[monoidal category]{#monoidal-category} admits a fibre functor. However, we require only braided structure over a commutative ring. Axiom 3 is independent.
 
-**Axiom 2 (Frobenius--Hopf object).**
-For finite group algebras a non-degenerate Frobenius form exists ---
-it is the trace of the regular representation.  A general Hopf
-algebra, however, need not carry one: the Frobenius condition
-$A \cong A^{\vee}$ (self-duality) is strictly stronger than the Hopf
-axioms alone, so for Hopf algebras in a braided category it is
-genuinely additional data.
+**Axiom 2.** A general Hopf algebra need not carry a non-degenerate Frobenius form. The Frobenius condition $A \cong A^{\vee}$ is strictly stronger than the Hopf axioms.
 
-**Axiom 4 (differential calculus).**
-For a commutative Hopf algebra $\mathcal{O}(G)$ with $G$ a smooth
-algebraic group, Kähler differentials always exist, so Axiom 4 is
-automatic.  In the quantum setting, Woronowicz \cite{woronowicz1989}
-showed that first-order differential calculi on quantum groups are
-classified by right ideals of the augmentation ideal and need not
-exist or be unique.  Axiom 4 is therefore independent when
-$q \neq 1$.
+**Axiom 4.** For smooth algebraic groups, Kähler differentials exist automatically. For quantum groups ($q \neq 1$), differential calculi need not exist or be unique. Axiom 4 is independent.
 
-In summary: over a field of characteristic zero with symmetric
-braiding, Axioms 1 and 3 are nearly equivalent (Deligne), and
-Axiom 4 is automatic for smooth groups.  In the full generality of
-this paper --- braided categories over rings, including the $q \neq 1$
-regime --- all four axioms are independent.
+In full generality, all four axioms are independent.
 <!-- FILE_END: axiom-independence.md -->
 

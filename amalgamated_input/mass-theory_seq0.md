@@ -1,9 +1,9 @@
 <!-- FILE_START: transfer-matrix-mass-intro.md -->
-The previous section identified the Feynman amplitude with the Markov trace through vertex factorisation. We now compile the same data into a single operator on the categorical state space and read mass off it. The construction is level-independent in a precise sense, and the mass formula it produces is the version every later section consumes.
+The previous section identified the Feynman amplitude with the Markov trace through vertex factorisation. We now compile this data into a single operator on the categorical state space and extract mass from it. The construction is level-independent. The resulting mass formula forms the basis for all subsequent sections.
 
-The section opens with Definition: Categorical mass operator, which assembles the vertex operators of the previous section into a single morphism on the brane-tower state space. Two structural results follow: Proposition: Operator level independence shows that the trace is invariant under brane-tower level shifts, with Lemma: Constituent and composite Markov-trace evaluations agree exactly supplying the underlying coincidence between the two factorisations of the trace, and the proof block discharging the equality. The interpretive Remark: Topological ansatz and field character records how the resulting mass behaves under change of knot ansatz.
+The section defines the Categorical mass operator, which assembles the vertex operators into a single morphism on the brane-tower state space. Two structural results follow: the Operator level independence proposition shows trace invariance under brane-tower level shifts. The Constituent and composite Markov-trace agreement lemma establishes the coincidence between the two factorisations of the trace. The Topological ansatz and field character remark records mass behaviour under change of knot ansatz.
 
-The mass machinery itself fills the rest of the section. Proposition: Mass formula (smooth case) is the smooth-case form of the categorical mass identity, with the Definition: Motivic mass measure $\mu$ on the brane arc space packaging the corresponding motivic substrate. The structural blocks Definition: Hecke mass element and Proposition: Hecke mass trace define the element of $H_n(q)$ whose Markov trace is the mass, Remark: Charge--mass duality via the Frobenius pairing records the resulting Frobenius duality between charge and mass, and Remark: Skein Decomposition and Mass Ratios reads the Skein-relation content of the mass formula directly. The next section uses the resulting mass-trace evaluation to filter braid-group representations through the spectral algebra.
+The Mass formula (smooth case) provides the smooth-case form of the categorical mass identity. The Motivic mass measure $\mu$ packages the corresponding motivic substrate. The Hecke mass element and Hecke mass trace blocks define the element of $H_n(q)$ whose Markov trace returns the mass. The Charge–mass duality via the Frobenius pairing remark records the resulting Frobenius duality. Finally, the Skein Decomposition and Mass Ratios remark reads the Skein-relation content of the mass formula directly. The next section filters braid-group representations through the spectral algebra using this mass-trace evaluation.
 <!-- FILE_END: transfer-matrix-mass-intro.md -->
 
 <!-- FILE_START: categorical-transfer-matrix.md -->
@@ -36,8 +36,8 @@ $$
 $$
 
 This is well-defined because the vertex volume $\hat{V}_i(q)$
-depends only on the Markov trace of the Hecke-reduced element
---- not on the specific braid representative, the
+depends only on the Markov trace of the Hecke-reduced element.
+It does not depend on the specific braid representative, the
 decomposition of $\mathfrak{H}$ into constituents, or the path of
 braiding operations within $\mathcal{S}_p$.
 <!-- FILE_END: categorical-transfer-matrix.md -->
@@ -199,7 +199,6 @@ Then:
 <!-- FILE_END: transfer-matrix-level-independence.md -->
 
 <!-- FILE_START: tmli-constituent-composite-agreement.md -->
-**Lemma.**
 *For a hadron $\mathfrak{H} \hookrightarrow V^{\otimes N}$ with
 $N = 2(j_1 + \cdots + j_n)$ and braid word
 $\beta_{\mathfrak{H}} \in B_N$, the constituent product
@@ -299,10 +298,7 @@ $$
   \;=\; \frac{\mathrm{Vol}(K)}{\hbar_q^{2}}.
 $$
 
-Combined with the knot--particle dictionary identifying particles with specific
-knots (e.g.\ the figure-eight knot $4_1$ with the Higgs field), this formula
-determines the substrate parameter $q$ from experimental mass
-ratios (see §6.10).
+Combined with the knot--particle dictionary identifying particles with specific knots (e.g. the figure-eight knot $4_1$ with the Higgs field), this formula determines the substrate parameter $q$ from experimental mass ratios (see §6.10).
 <!-- FILE_END: topological-mass-formula.md -->
 
 <!-- FILE_START: motivic-mass-measure.md -->
@@ -473,7 +469,6 @@ $$
 <!-- FILE_END: hecke-mass-trace.md -->
 
 <!-- FILE_START: hecke-generator-poly-reduction.md -->
-**Proposition (single-generator Hecke polynomial reduction).**
 *Let $\sigma_i$ be a Hecke generator, satisfying the quadratic relation
 $\sigma_i^2 = (q - q^{-1})\,\sigma_i + 1$. For any finite list of scalars
 $d_1, \dots, d_r \in R$, the product of single-generator factors collapses
@@ -610,11 +605,11 @@ Frobenius--comultiplication map that defines the categorical mass.
 <!-- FILE_END: hecke-charge-mass-duality.md -->
 
 <!-- FILE_START: skein-decomposition.md -->
-This remark formalizes the refinement of the particle-topology mapping by shifting from torus knots to a framework grounded in **hyperbolic volumes** and **Skein-deformed residues**. By treating mass as the geometric resistance of the 1-jet bundle prolongation, the $q$-deformed Skein relation provides a rigorous "Mass Sum Rule" for composite hadronic states.
+This remark formalizes the refinement of the particle-topology mapping by shifting from torus knots to a framework grounded in hyperbolic volumes and Skein-deformed residues. By treating mass as the geometric resistance of the 1-jet bundle prolongation, the $q$-deformed Skein relation provides a rigorous Mass Sum Rule for composite hadronic states.
 <!-- FILE_END: skein-decomposition.md -->
 
 <!-- FILE_START: topological-field-ansatz.md -->
-The following table summarizes the axiomatic assignments where particle identities are mapped to specific knot types ($K$) and their associated masses $\mathcal{M}(K)$ are governed by the local substrate field $q(p)$.
+The following table summarizes the axiomatic assignments where particle identities map to specific knot types ($K$) and their associated masses $\mathcal{M}(K)$ depend on the local substrate field $q(p)$.
 
 See [Table: Particle-to-knot axiomatic assignments](#tbl:topological-field-ansatz-table-data).
 <!-- FILE_END: topological-field-ansatz.md -->

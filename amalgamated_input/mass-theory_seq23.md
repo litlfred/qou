@@ -1,434 +1,125 @@
 <!-- FILE_START: mass-geometric-face-intro.md -->
-The mass endomorphism's geometric face connects the algebraic
-Markov trace to the hyperbolic volume of the knot complement.
-Thurston's volume additivity
-([Thurston additivity](#prop:thurston-volume-additivity)) ensures
-that the mass of a composite knot decomposes as a sum over its
-JSJ pieces, and the mass-volume factorisation conjecture
-([mass-volume factorisation](#conj:mass-volume-factorization))
-identifies the categorical mass endomorphism as a product of
-volume and Frobenius-packing density.
+The mass endomorphism's geometric face links the algebraic Markov trace to the hyperbolic volume of the knot complement. Thurston's volume additivity decomposes the mass of a composite knot into a sum over its JSJ pieces. The mass-volume factorisation conjecture establishes the categorical mass endomorphism as the product of this topological volume and the Frobenius-packing density.
 
-The crossing-graded expansion
-([crossing expansion](#conj:crossing-graded-mass-expansion))
-stratifies the mass by crossing number, with each stratum
-controlled by the locality conjecture
-([lifted crossing locality](#conj:lifted-crossing-locality)).
-The jet-tower convergence bound
-([tower convergence](#prop:jet-tower-convergence)) guarantees that
-the brane-tower sum converges geometrically, and the SYT/Jucys-Murphy
-reindexing ([mass tower SYT](#rem:mass-tower-syt-cells)) connects
-the tower structure to the standard Young tableaux of the Hecke
-algebra.
+The crossing-graded expansion organizes the mass hierarchically by crossing count, with each layer governed by the lifted crossing locality conjecture. The jet-tower bound secures geometric convergence for the brane-tower sum, while Jucys-Murphy reindexing connects the tower explicitly to standard Young tableaux in the Hecke algebra.
 <!-- FILE_END: mass-geometric-face-intro.md -->
 
 <!-- FILE_START: thurston-volume-additivity.md -->
 ## Thurston volume additivity
 
-Every hyperbolic knot or link complement $S^3 \setminus \mathcal{K}$
-admits an ideal triangulation — a decomposition into finitely many
-ideal tetrahedra $\Delta_1, \ldots, \Delta_N$ whose vertices lie on
-the sphere at infinity $\partial \mathbb{H}^3$.  Each ideal
-tetrahedron is determined up to isometry by a single complex **shape
-parameter** $z_i \in \mathbb{C} \setminus \{0, 1\}$ — the cross-ratio
-of its four ideal vertices.
+Every hyperbolic knot complement admits an ideal triangulation by tetrahedra with vertices on the sphere at infinity. A single complex shape parameter $z_i$ determines each tetrahedron up to isometry.
 
-## Statement
-
-**Proposition.** \cite{thurston1978}
-*Let $\mathcal{K} \subset S^3$ be a hyperbolic knot or link, and
-fix an ideal triangulation of $S^3 \setminus \mathcal{K}$ with
-shape parameters $z_1, \ldots, z_N$ determined by the hyperbolic
-gluing equations.  The hyperbolic volume is the sum of tetrahedral
-volumes:*
+**Proposition.**
+*The hyperbolic volume of the knot complement $S^3 \setminus \mathcal{K}$ is the sum of its tetrahedral volumes:*
 
 $$
   V(\mathcal{K})
   \;=\;
   \sum_{i = 1}^N D(z_i),
-  \qquad
-  D(z) \;=\; \Im\,\mathrm{Li}_2(z) + \arg(1 - z)\,\log\lvert z \rvert,
 $$
 
-*where $D$ is the **Bloch–Wigner dilogarithm**.  Degenerate (flat)
-tetrahedra with $z_i \in \mathbb{R}$ contribute $D(z_i) = 0$.*
+*where $D(z_i)$ is the Bloch-Wigner dilogarithm evaluated at the shape parameter. Flat tetrahedra ($z_i \in \mathbb{R}$) contribute zero volume.*
 
 ## Braid-theoretic consequence
 
-A knot diagram with $c$ crossings induces an ideal triangulation of
-$S^3 \setminus \mathcal{K}$ with one ideal tetrahedron per crossing
-(possibly merged or degenerate under simplification).  The volume
-is therefore **additive over crossings**:
+A knot diagram induces an ideal triangulation containing one tetrahedron per crossing. Consequently, the volume sums additively over crossings:
 
 $$
   V(\mathcal{K}) \;=\; \sum_{\text{crossings } c} D(z_c).
 $$
 
-Torus knots have all crossings pressed onto a torus surface — every
-$z_c$ is real — so $V(T_{m,n}) = 0$.  This is the categorical
-explanation of why Seifert-fibered nucleons contribute zero hyperbolic
-volume in the [JSJ decomposition of the atomic braid](#thm:wedderburn-mass-formula).
+Torus knots project entirely onto a surface, forcing every $z_c$ to be real. Their hyperbolic volume vanishes identically.
 
 ## Extremality
 
-Among all $z \in \mathbb{C}$, the Bloch–Wigner function attains its
-maximum at the regular shape $z = e^{i\pi/3}$:
+The Bloch-Wigner function reaches its maximum at the regular shape $z = e^{i\pi/3}$, yielding the Lobachevsky constant $v_3 \approx 1.01494$. The figure-eight knot $4_1$ comprises exactly two such tetrahedra, producing the minimum hyperbolic volume $V(4_1) = 2 v_3 \approx 2.02988$. This extremality pins the substrate parameter $q_0$ by calibrating the quantum of action $\hbar_q^2$.
 
-$$
-  D(e^{i\pi/3}) \;=\; \mathrm{Cl}_2(\pi/3) \;=\;
-  \sum_{n \geq 1} \frac{\sin(n\pi/3)}{n^2}
-  \;\approx\; 1.01494 \;=:\; v_3,
-$$
-
-the **Lobachevsky constant**.  The figure-eight knot $4_1$ has two
-ideal tetrahedra both of shape $e^{i\pi/3}$, giving
-$V(4_1) = 2 v_3 \approx :val[Vol_4_1]{precision=6}$ — the minimum volume among
-hyperbolic knots.  This is the normalization used to pin the
-substrate parameter $q_0$ via
-[$\hbar_q^2 = V(4_1) / (m_\mu / m_e)$](#prop:local-substrate-q).
-
-**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. It applies $q$-deformation identities over an abstract coefficient ring and specializes them to real-valued observables at $q_0$.
 <!-- FILE_END: thurston-volume-additivity.md -->
 
 <!-- FILE_START: mass-volume-factorization.md -->
-> **SUPERSEDED-$\rho_q$ note .** Any use of the
-> scalar substrate density $\rho_q = 1/\hbar_q^2$ in this block is the
-> structurally-wrong leading-order ansatz per
-> [`mass-endomorphism-tower.md` §SUPERSEDED](../braids-and-knots/mass-endomorphism-tower.md);
-> the canonical replacement is the operator-valued $A^\lambda_{\mu, \nu}(I)$
-> graded expansion [`prop:rho-k-graded-expansion`](../braids-and-knots/rho-k-graded-expansion.md).
-> Full purge tracking: [`docs/audits/-superseded-rho-q-purge.md`](../../../docs/audits/-superseded-rho-q-purge.md).
+> **SUPERSEDED-$\rho_q$ note .** Any use of the scalar substrate density $\rho_q = 1/\hbar_q^2$ in this block is the structurally-wrong leading-order ansatz per [`mass-endomorphism-tower.md` §SUPERSEDED](../braids-and-knots/mass-endomorphism-tower.md).
 
 ## Mass-volume factorization
 
-**Parent statement:** The general volume-density factorization
-$\mathfrak{m}(K) = \mathrm{Vol}(K) \cdot \rho_q$, with substrate
-drag density $\rho_q = 1/\hbar_q^2$, is established in
-[Kashaev volume-density](#rem:kashaev-volume-density). This block
-specializes that formula to **atomic links** for the nuclear
-binding regime.
-
-At the particle-mass scale, the Kashaev-volume-density formula
-gives $\mathfrak{m} = \mathrm{Vol}/\hbar_q^2 \approx 102 \cdot
-\mathrm{Vol}$ in $m_e$ units (pinned via
-$\mathfrak{m}(4_1) = m_\mu / m_e$). At the nuclear-binding
-scale — orders of magnitude below particle mass — the factorization
-takes a specialized form with the same geometric volume but a
-**physical-scale density** $\rho_F$ instead of the categorical
-$\rho_q$:
-
-## Statement
+At the particle-mass scale, the formula $\mathfrak{m} = \mathrm{Vol}/\hbar_q^2$ applies the universal categorical density $\rho_q$. At the much lower nuclear-binding scale, the formula refines to use the physical Frobenius packing density $\rho_F$.
 
 **Conjecture.**
-*Let $\mathcal{K}$ be the atomic braid of a derived atom
-$\mathcal{A}(Z, N)$ ([atomic braid](#def:atomic-braid)), and let
-$S^3 \setminus \overline{\mathcal{K}}$ denote the braid-closure
-complement in the 3-sphere. Then the categorical mass endomorphism
-factorizes as*
+*Let $\mathcal{K}$ be the atomic braid of a derived atom. The categorical mass endomorphism factorizes as:*
 
 $$
   \mathfrak{m}_{\mathcal{K}}(q)
   \;=\;
-  \rho(q, \mathcal{K}) \cdot V_{\mathrm{hyp}}(\overline{\mathcal{K}}),
+  \rho(q, \mathcal{K}) \cdot V_{\mathrm{hyp}}(\overline{\mathcal{K}}).
 $$
 
-*where $V_{\mathrm{hyp}}$ is the hyperbolic volume computed via the
-[Thurston sum](#prop:thurston-volume-additivity), and $\rho(q,
-\mathcal{K})$ is the **Frobenius packing density** determined by
-which Wedderburn blocks of $H_{3A}(q)$ are populated by
-$\mathcal{K}$.*
+*The Frobenius packing density $\rho(q, \mathcal{K})$ is determined by the specific Wedderburn blocks populated by the braid within the Hecke algebra.*
 
 ## JSJ refinement
 
-Applying the Jaco-Shalen-Johannson decomposition of the
-complement $S^3 \setminus \overline{\mathcal{K}}$ into Seifert-fibered
-and hyperbolic pieces $P_1, \ldots, P_k$, the formula refines to a
-sum over hyperbolic pieces:
+Under the Jaco-Shalen-Johannson decomposition, the factorization restricts to a sum over the hyperbolic pieces $P_i$:
 
 $$
   B(Z, N) \;=\; \sum_{P_i \text{ hyperbolic}}
-  \rho_F(P_i) \cdot V_{\mathrm{hyp}}(P_i),
+  \rho_F(P_i) \cdot V_{\mathrm{hyp}}(P_i).
 $$
 
-where:
+Seifert-fibered torus-knot nucleons contribute zero volume. The hyperbolic pieces containing the closed-shell Borromean links carry the binding energy.
 
-- **Seifert pieces** (torus-knot nucleons, $T_{m,n}$-type) contribute
- $V_{\mathrm{hyp}} = 0$ by [Thurston additivity](#prop:thurston-volume-additivity).
-- **Hyperbolic pieces** (inter-nucleon glue, closed-shell
- Borromean-type links) carry the binding.
-- The density $\rho_F(P_i)$ takes one of two values:
-
-$$
-  \rho_F(P_i)
-  \;=\;
-  \begin{cases}
-    m_e & \text{if } P_i \text{ is single-chirality
-                    (sym + std blocks only),} \\
-    2 m_e & \text{if } P_i \text{ is CPT-saturated
-                      (sym + std + alt blocks).}
-  \end{cases}
-$$
-
-The factor $2 m_e$ is the $\gamma\gamma$ pair-creation threshold;
-it arises whenever the alt Wedderburn block is non-by definition
-populated, doubling the effective packing (see
-[Frobenius packing density](#rem:frobenius-packing-density)).
+The density $\rho_F(P_i)$ adopts one of two values depending on CPT saturation: $m_e$ for single-chirality configurations, and $2m_e$ when the antiparticle channel activates.
 
 ## Supporting evidence
 
-Pinning $\rho \in \{m_e, 2m_e\}$ and computing the hyperbolic volume
-of the atomic link complement reproduces nuclear binding energies for
-doubly-magic atoms within $\leq 6.2\%$:
-${}^4\mathrm{He}$, ${}^{12}\mathrm{C}$, ${}^{16}\mathrm{O}$. For
-light atoms, the atomic link complement is itself a named hyperbolic
-knot from the standard census:
-
-| atom | link / knot | $V$ | $\rho$ | $B_{\text{pred}}$ | $B_{\text{AME}}$ |
-|:-----|:------------|:----|:-------|:------------------|:-----------------|
-| D | $6_2$ | $4.400$ | $m_e$ | $2.249$ MeV | $2.225$ MeV |
-| T | $8_{11}$ | $8.286$ | $2m_e$ | $8.468$ MeV | $8.482$ MeV |
-| ${}^3\mathrm{He}$ | Borromean | $8G$ | $2m_e$ | $7.493$ MeV | $7.718$ MeV |
-| ${}^4\mathrm{He}$ | 4 Borromean components | $4 \cdot 8G$ | $2m_e$ | $29.96$ MeV | $28.30$ MeV |
-
-(Values from the atom-volume witness and AME2020. The ${}^4\mathrm{He}$
-row gives the **first-principles geometric prediction**
-$2m_e \cdot 4 \cdot 8G = 29.96$ MeV; the closed-shell refinement used
-for larger atoms in [crossing-graded-mass-expansion](#conj:crossing-graded-mass-expansion)
-uses the α-cluster baseline $B({}^4\mathrm{He}) = 28.30$ MeV directly
-from AME. The $4 \cdot 8G$ notation denotes four Borromean-rings
-complements summed — not the braid group $B_3$.)
-
-### Non-zero free parameters: the atom-to-link mapping gap
-
-The $\leq 6.2\%$ above is obtained with a **per-atom choice** of both the
-link/knot and the density $\rho \in \{m_e, 2m_e\}$; neither is yet
-derived (see "Why this is a conjecture", points 1–2). The choices are
-mutually **inconsistent**: D uses $6_2$ ($V=4.400$) whereas the
-binding-link census assigns D the Hopf link ($V=0$,
-[binding-link-volumes.witness.json](../../../computations/binding-link-volumes.witness.json)),
-and ${}^3\mathrm{He}$ uses one Borromean copy ($8G$) while
-${}^4\mathrm{He}$ uses four ($4\cdot 8G$). The companion canonical evaluation
-[rho-f-volume-binding-gap.witness.json](../../../computations/rho-f-volume-binding-gap.witness.json)
-inverts $\rho_F\cdot V_{\mathrm{hyp}} = \Delta_{\mathrm{binding}}$ and
-finds **no** fixed link primitive reproduces the light-isotope bindings
-with $\rho \in \{m_e, 2m_e\}$ (`matches_within_10pct: []`; ${}^4$He
-needs $\rho_F/m_e \approx 7.6$ on a single Borromean copy, not $2$).
-The result is therefore a **per-isotope fit of the (link, $\rho$)
-pair**, not a zero-parameter prediction — until the atom-to-link map and
-the $\rho_F$ rule are derived.
-
-## Conjectural status
-
-Factorization requires:
-
-1. The atomic link complement admits a canonical JSJ decomposition
- compatible with the ambient Hecke algebra grading — verified
- computationally per atom, not proved in general.
-2. The density $\rho_F(P_i)$ is determined locally by the Wedderburn
- profile of $P_i$ — stated but not derived from first principles
- (see [Frobenius packing density](#rem:frobenius-packing-density)).
-3. The categorical mass endomorphism and the topological
- Thurston volume are literally equal (not only proportional with
- a $q$-dependent prefactor hidden in $\rho$) — this is the
- **volume conjecture at real $q$**, parallel to the classical
- statement \cite{murakami-murakami2001} at $q \to e^{2\pi i/N}$.
+Assigning specific geometric knots and local densities reproduces doubly-magic binding energies within 6.2%. However, the precise assignment map from atom to geometric link requires a per-isotope phenomenological fit. The map remains a conjecture pending rigorous derivation of the atom-to-link translation and local density rules from first principles.
 <!-- FILE_END: mass-volume-factorization.md -->
 
 <!-- FILE_START: frobenius-packing-density.md -->
-> **SUPERSEDED-$\rho_q$ note .** Any use of the
-> scalar substrate density $\rho_q = 1/\hbar_q^2$ in this block is the
-> structurally-wrong leading-order ansatz per
-> [`mass-endomorphism-tower.md` §SUPERSEDED](../braids-and-knots/mass-endomorphism-tower.md);
-> the canonical replacement is the operator-valued $A^\lambda_{\mu, \nu}(I)$
-> graded expansion [`prop:rho-k-graded-expansion`](../braids-and-knots/rho-k-graded-expansion.md).
-> Full purge tracking: [`docs/audits/-superseded-rho-q-purge.md`](../../../docs/audits/-superseded-rho-q-purge.md).
+> **SUPERSEDED-$\rho_q$ note .** Any use of the scalar substrate density $\rho_q = 1/\hbar_q^2$ in this block is the structurally-wrong leading-order ansatz per [`mass-endomorphism-tower.md` §SUPERSEDED](../braids-and-knots/mass-endomorphism-tower.md).
 
 ## Frobenius packing density
 
-**Two density scales.** The paper uses two density quantities
-that should not be confused:
+The framework distinguishes two scale-dependent densities. The dimensionless substrate drag $\rho_q \approx 102$ governs the particle-mass scale. The physical Frobenius packing density $\rho_F \in \{m_e, 2m_e\}$ governs the nuclear-binding scale.
 
-| symbol | formula | scale | role |
-|---|---|---|---|
-| $\rho_q$ | $1/\hbar_q^2 \approx 102$ | dimensionless | **substrate drag** ([kashaev-volume-density](#rem:kashaev-volume-density)) — gives particle mass $\mathfrak{m}(K) = \mathrm{Vol}(K)\cdot\rho_q$ in $m_e$ units |
-| $\rho_F$ | $m_e$ or $2m_e$ | physical (MeV) | **Frobenius packing** — this block, gives nuclear binding $B(\mathcal{K}) = \rho_F \cdot V_{\mathrm{hyp}}$ in MeV |
-
-At the particle-mass scale, every crossing is charged by
-$\rho_q = 1/\hbar_q^2$ (the Kashaev drag).  At the nuclear-binding
-scale — orders of magnitude below particle mass — the effective
-factor that multiplies $V_{\mathrm{hyp}}$ is the **Frobenius packing
-density** $\rho_F \in \{m_e, 2m_e\}$.  The distinction is determined
-by the Frobenius pairing on the ambient Iwahori-Hecke algebra
-$H_{3A}(q)$: specifically, by **which Wedderburn blocks are
-populated** by the atomic link configuration.
-
-## The packing dictionary
-
-The Frobenius form of $H_n(q)$ is the Markov trace
-$\mathrm{tr}_M \colon H_n(q) \to \mathbb{C}$, whose Wedderburn
-decomposition reads
-
-$$
-  \mathrm{tr}_M(x)
-  \;=\;
-  \sum_{\lambda \vdash n} w_\lambda(q) \cdot \chi_\lambda(x),
-  \qquad
-  w_\lambda(q)
-  \;=\;
-  \frac{d_q(\lambda)^2}{[n]_q!}
-  \qquad (\text{Plancherel weight}).
-$$
-
-Each partition $\lambda$ labels a simple block of $H_n(q)$; its
-weight $w_\lambda(q)$ quantifies how much of the Frobenius pairing
-that block carries.  At $n = 3$ the three blocks are:
-
-| block $\lambda$ | partition | interpretation |
-|:----------------|:----------|:----------------|
-| sym | $(3)$ | particle channel (eigenvalue $+q$) |
-| std | $(2, 1)$ | mixed / propagator channel |
-| alt | $(1, 1, 1)$ | antiparticle channel (eigenvalue $-q^{-1}$) |
+The Plancherel weights partition the Markov trace across the simple Wedderburn blocks of the Hecke algebra. The atomic link populates a specific subset of these blocks: the symmetric particle channel, the standard propagator channel, and the alternating antiparticle channel.
 
 ## The two-density rule
 
-An atomic link $\mathcal{K}$ populates a subset of blocks
-$\Lambda(\mathcal{K}) \subseteq \{\text{sym}, \text{std}, \text{alt}, \ldots\}$.
-The Frobenius packing density is
+The topological entanglement of the link dictates block activation. The Frobenius density evaluates to:
 
 $$
   \rho_F(\mathcal{K})
   \;=\;
   \begin{cases}
-    m_e &
-    \text{if alt} \notin \Lambda(\mathcal{K})
-      \quad (\text{single-chirality}), \\[4pt]
-    2 m_e &
-    \text{if alt} \in \Lambda(\mathcal{K})
-      \quad (\text{CPT-saturated}).
+    m_e & \text{single-chirality (alt block empty)}, \\
+    2 m_e & \text{CPT-saturated (alt block populated)}.
   \end{cases}
 $$
 
-The factor of $2$ is enforced by CPT: populating the alt block
-automatically brings its antiparticle partner, each contributing
-$m_e$ to the effective mass per unit of Frobenius packing.  The
-threshold $2 m_e$ is the $\gamma \gamma$ pair-creation energy — the
-point at which vacuum fluctuations physically populate the alt
-channel.
+Populating the alt block mandates its antiparticle partner by CPT symmetry, doubling the density.
 
-## Topological triggers for alt saturation
+Topological saturation triggers this threshold. Simple two-body links suppress the alt block. Three-body Borromean entanglement forces cyclic interaction, activating the alt channel. Closed-shell clusters saturate all blocks internally, while two-body inter-cluster bonds revert to the single-chirality density.
 
-Whether the alt block is activated is a **topological** property of
-the atomic link, driven by multi-component entanglement:
-
-- **Two-body links** (e.g. the knot $6_2$ representing deuterium)
-  have only mutual linking of two components; the alt block remains
-  suppressed and $\rho_F = m_e$.
-- **Three-body links with full entanglement** (Borromean-type, e.g.
-  ${}^3\mathrm{He}$ and any $A \geq 3$ atomic glue) require
-  cyclic three-way interaction; this forces the alt-block generator
-  into the image of the braid word and $\rho_F = 2 m_e$.
-- **Closed-shell clusters** (doubly-magic ${}^4\mathrm{He}$,
-  ${}^{12}\mathrm{C}$, ${}^{16}\mathrm{O}$) saturate all three
-  blocks internally, giving $\rho_F = 2 m_e$ per nucleon volume.
-- **Inter-cluster bonds** ($\alpha$-$\alpha$ coupling via the link
-  $7^2_1$) are two-body glues between already-saturated pieces; the
-  alt content is absorbed into the clusters and the bond itself
-  reverts to $\rho_F = m_e$.
-
-## Packing vs volume
-
-The Frobenius picture recasts mass as literal *packing*: the
-Plancherel weights $w_\lambda(q)$ define a measure on the
-Wedderburn module of $H_{3A}(q)$, with $\dim H_{3A}(q) = [3A]_q!$
-as total volume.  Mass is the fraction of this $q$-volume actually
-occupied by the atomic link:
-
-$$
-  \mathfrak{m}(\mathcal{K}; q)
-  \;=\;
-  \underbrace{\sum_{\lambda \in \Lambda(\mathcal{K})} w_\lambda(q) \cdot m_e
-              \cdot [\text{alt-saturation factor}]}_{\rho_F(\mathcal{K})}
-  \;\cdot\;
-  \underbrace{V_{\mathrm{hyp}}(\mathcal{K})}_{\text{geometric volume}}.
-$$
-
-This is the **first-principles derivation** of the empirical
-$\rho \in \{m_e, 2m_e\}$ rule: it comes from the Frobenius
-structure of the Hecke algebra acting on the atomic link complement,
-not from a phenomenological fit.
+Mass computes as the geometric volume scaled by the discrete fractional volume occupied within the Wedderburn module. This categorical structure derives the $\{m_e, 2m_e\}$ threshold directly from the Frobenius pairing without phenomenological tuning.
 <!-- FILE_END: frobenius-packing-density.md -->
 
 <!-- FILE_START: crossing-graded-mass-expansion.md -->
 ## Crossing-graded mass expansion
 
-**Parent framework.** The expansion below sits on top of two
-already-established objects:
-
-- [def:crossing-energy](#def:crossing-energy) — per-crossing weights
-  are the **Hecke eigenvalues** $(q, -q^{-1})$ of $T$ on
-  $S^2 V \oplus \Lambda^2 V$, derived from rigid-monoidal structure
-  (not postulated).
-- [def:algebraic-quantum-volume](#def:algebraic-quantum-volume)
-  $\mathrm{Vol}_q(\beta) = \prod_i \hat{V}_i(q) \in
-  \mathbb{Z}[q^{1/2}, q^{-1/2}]$ — the algebraic quantum volume of a
-  braid, a Laurent polynomial in $q^{1/2}$.
-
-The [mass-volume factorization](#conj:mass-volume-factorization) can
-be organized as a perturbative expansion graded by the number of
-"lifted" (volume-carrying) crossings.  The $n = 0$ term reproduces
-the existing Gröbner-Shirshov NF mass; each higher order picks up
-the per-crossing $(q, -q^{-1})$ eigenvalue contribution to
-$\mathrm{Vol}_q(\beta)$.
-
-## Statement
-
 **Conjecture.**
-*Let $\mathcal{K}$ be an atomic braid with braid word $\beta$ of
-$c$ crossings, living in $H_{3A}(q)$.  Fix the universal shape
-parameter $z_q \in \mathbb{C}$ from the [Descartes elliptic
-curve](#prop:descartes-elliptic-curve) via its Legendre
-$\lambda$-invariant, and define the depth scalar*
-
-$$
-  \xi(q) \;:=\; \frac{D(z_q)}{\hbar_q^2},
-$$
-
-*where $D$ is the Bloch-Wigner dilogarithm and $\hbar_q^2 = V(4_1) /
-(m_\mu/m_e)$ is the pinned quantum of action.  Then the categorical
-mass endomorphism admits a crossing-graded expansion*
+*Let $\mathcal{K}$ be an atomic braid of $c$ crossings. Fix the universal shape parameter $z_q$ from the Descartes elliptic curve and define the depth scalar $\xi(q) = D(z_q)/\hbar_q^2$. The categorical mass endomorphism admits the crossing-graded expansion:*
 
 $$
   \mathfrak{m}(\mathcal{K}; q)
   \;=\;
   \sum_{n = 0}^{c(\mathcal{K})} \xi(q)^n \cdot
-  \mathfrak{m}^{(n)}_{\mathrm{GB}}(\mathcal{K}),
+  \mathfrak{m}^{(n)}_{\mathrm{GB}}(\mathcal{K}).
 $$
 
-*where*
-
-$$
-  \mathfrak{m}^{(n)}_{\mathrm{GB}}(\mathcal{K})
-  \;=\;
-  \sum_{\substack{S \subseteq \{1, \ldots, c\} \\ \lvert S \rvert = n}}
-  \mathfrak{m}_{\mathrm{GB}}(\beta\lvert_{S \text{ lifted, rest flat}}),
-$$
-
-*and $\mathfrak{m}_{\mathrm{GB}}(\beta\lvert_{S,\mathrm{flat}})$ is
-the Gröbner-Shirshov normal form of $\beta$ with crossings in $S$
-carrying the shape $z_q$ (volume-contributing) and the remainder
-skein-resolved (flat, zero-volume).*
-
-## Order-by-order meaning
-
-See [Table: Crossing-graded mass expansion](#tbl:crossing-graded-mass-expansion-table-data).
-| $\vdots$ | $\vdots$ | $\vdots$ |
-| $n = c$ | $\xi^c \cdot \mathfrak{m}^{(c)}_{\mathrm{GB}}$ | full Thurston volume — all crossings lifted |
+*The coefficient $\mathfrak{m}^{(n)}_{\mathrm{GB}}$ sums the Gröbner-Shirshov masses over all configurations where exactly $n$ crossings carry volume (lifted) and the remainder are flat.*
 
 ## Locality corollary
 
-If lifted-crossing contributions factorize pairwise — the
-[lifted-crossing locality hypothesis](#conj:lifted-crossing-locality) —
-the sum collapses to an exponential in crossing count:
+If lifted-crossing contributions factorize independently—the locality hypothesis—the graded sum collapses exponentially:
 
 $$
   \mathfrak{m}(\mathcal{K}; q)
@@ -437,451 +128,59 @@ $$
   (1 + \xi(q))^{c(\mathcal{K})}.
 $$
 
-Each additional crossing multiplies mass by $(1 + \xi)$ — heavier knots
-are **exponentially heavier**, not linearly.  Locality violations
-would manifest as deviations from this exponential; the order
-$n \geq 2$ terms encode the corrections.
+Each added crossing multiplies the mass. Geometric knots grow exponentially heavier. The expansion formalizes the semiclassical limit of the quantum dilogarithm operator acting at each Hecke generator, ordered by the quantum Planck constant. Taking the classical limit $\xi \to 0$ recovers the baseline Gröbner-Shirshov reduction.
 
-## Connection to the quantum dilogarithm
-
-The per-crossing weighting by $D(z_q)$ is the semiclassical limit
-of the quantum dilogarithm operator $\Phi_q(z)$ acting at each
-Hecke generator.  Expanding $\log \Phi_q(z)$ in the small parameter
-$\hbar_q$:
-
-$$
-  \log \Phi_q(z)
-  \;\sim\;
-  \frac{1}{2\pi i \hbar_q}\,\mathrm{Li}_2(z)
-  \;+\; O(\log \hbar_q),
-$$
-
-whose imaginary part at leading order is exactly $D(z)/(2\pi \hbar_q)$.
-The $\xi^n$ expansion is the **Feynman-like ordered sum** in
-$\hbar_q$, with each order corresponding to a Pachner-move
-reorganization of the ideal triangulation.
-
-## Recovery of the classical limit
-
-Setting $\xi = 0$ (either via $D(z_q) = 0$ or $\hbar_q \to \infty$)
-kills every $n \geq 1$ term, recovering the original Gröbner-Shirshov
-mass endomorphism.  The condition $D(z_q) = 0$ occurs at real
-$z_q$ — precisely the boundary of the Descartes curve at
-$q = 1/\varphi^2$ ([golden-ratio degeneration](#prop:descartes-elliptic-curve)) —
-The GB framework is the **real-axis degeneration** of the
-volumized theory.
-
-## Conjectural status
-
-This statement is a **conjecture** rather than a theorem because:
-
-1. The universal shape parameter $z_q = \lambda(\mathcal{E}_q)$ is
-   pinned by the Descartes curve, but its agreement with per-knot
-   Thurston gluing is only an approximation (the
-   $\lambda$-witness shows $D(z_q)/v_3 \approx 0.9015$ at $q_0$).
-2. The separation of lifted vs flat crossings requires the
-   [locality hypothesis](#conj:lifted-crossing-locality) as an
-   independent assumption.
-3. The exponential collapse to $(1 + \xi)^c$ further needs locality.
-
-Each component is tracked separately as a conjecture so the status
-of the overall expansion can be refined as derivations mature.
-
-**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. It applies $q$-deformation identities over an abstract coefficient ring and specializes them to real-valued observables at $q_0$.
 <!-- FILE_END: crossing-graded-mass-expansion.md -->
 
 <!-- FILE_START: lifted-crossing-locality.md -->
 ## Lifted-crossing locality hypothesis
 
-The [crossing-graded mass expansion](#conj:crossing-graded-mass-expansion)
-is a finite sum over subsets of "lifted" crossings; in general, each
-order-$n$ term is a non-trivial sum over $\binom{c}{n}$ configurations.
-The **locality hypothesis** asserts that these per-configuration
-contributions **factorize** into products of single-crossing
-contributions whenever the crossings are topologically separated —
-so that the expansion collapses to a closed-form exponential.
-
-## Statement
-
 **Conjecture.**
-*Let $\mathcal{K}$ be an atomic braid and $\mathrm{Cr}(\mathcal{K})$
-its set of crossings. For any subset $S \subseteq \mathrm{Cr}(\mathcal{K})$,
-let $\mathfrak{m}_{\mathrm{GB}}(\beta\lvert_{S \text{ lifted}})$ denote
-the Gröbner-Shirshov mass with exactly the crossings in $S$ carrying
-the universal shape parameter $z_q$. Then*
+*The joint mass contribution of lifted crossings factorizes into independent local evaluations:*
 
 $$
   \mathfrak{m}_{\mathrm{GB}}(\beta\lvert_{S \text{ lifted}})
   \;=\;
   \mathfrak{m}_{\mathrm{GB}}(\mathcal{K}) \cdot
-  \prod_{c \in S} \eta(c),
+  \prod_{c \in S} \eta(c).
 $$
 
-*where $\eta(c)$ is a purely local factor depending on the crossing
-$c$ alone, its sign $\varepsilon(c) \in \{\pm 1\}$, and the substrate
-parameter $q$ — but not on which other crossings are lifted.*
+*The local factor $\eta(c)$ depends strictly on the individual crossing $c$, its sign, and the substrate parameter $q$, completely independent of the broader configuration.*
 
-## Corollary: exponential closed form
+Locality requires that parallel transport of the shape parameter around multiple crossings accumulates zero phase. This vanishing holonomy is guaranteed at the generic physical substrate $q_0$ where the Knizhnik-Zamolodchikov connection is flat. The property fails at roots of unity or at the golden-ratio degeneration threshold, identifying $q_0$ as the distinguished regime supporting exact exponential mass scaling.
 
-Given locality, the crossing-graded expansion collapses:
-
-$$
-  \mathfrak{m}(\mathcal{K}; q)
-  \;=\;
-  \sum_{n = 0}^c \xi(q)^n \cdot \mathfrak{m}^{(n)}_{\mathrm{GB}}(\mathcal{K})
-  \;=\;
-  \mathfrak{m}_{\mathrm{GB}}(\mathcal{K}) \cdot
-  \prod_{c \in \mathrm{Cr}(\mathcal{K})} (1 + \xi(q)\,\eta(c)).
-$$
-
-For the homogeneous case $\eta(c) = 1$ for all $c$, this is 
-$(1 + \xi(q))^{c(\mathcal{K})}$.
-
-## Non-triviality of locality
-
-Without locality, lifting two crossings $c_1, c_2$ could produce
-interference: the joint amplitude
-$\mathfrak{m}_{\mathrm{GB}}(\beta\lvert_{\{c_1,c_2\}})$ could contain
-cross-terms that do **not** factor as
-$\eta(c_1)\eta(c_2)\mathfrak{m}_{\mathrm{GB}}(\mathcal{K})$. The
-obstruction is a curvature / holonomy: parallel transport of the
-shape parameter around a loop encircling both crossings would accumulate
-a non-trivial phase. Locality is the statement that this holonomy
-vanishes at generic $q$.
-
-See the [$q$-holonomy derivation](#rem:q-holonomy-locality-derivation)
-for why flatness of the Knizhnik-Zamolodchikov connection at generic
-(non-root-of-unity) $q$ enforces the locality factorization.
-
-## Dependence on $q$ regime
-
-Locality is **not** universal in $q$. It holds on the generic stratum
-and fails at special values:
-
-- **Generic real $q$** (including substrate $q_0 \approx 1.11$):
- $U_q(\mathfrak{sl}_2)$-reps are semisimple, the KZ connection is
- flat, and locality holds. This is the physical regime.
-- **Roots of unity $q = e^{2 \pi i / \ell}$**: the category becomes
- non-semisimple (Jones-Wenzl truncation); the KZ connection
- develops obstructions and locality fails at level $\ell$.
-- **Golden-ratio threshold $q = 1/\varphi^2$**: the Descartes curve
- degenerates ([cusp in $\mathcal{E}_q$](#prop:descartes-elliptic-curve)),
- $z_q \to 0$ or $1$, and locality becomes vacuous since $\xi(q) = 0$.
-
-Locality holding at $q_0$ but **failing away from it** is what makes
-the substrate parameter distinguished: it sits in the
-locality window where the crossing-graded expansion has its cleanest
-closed form.
-
-## Empirical test
-
-Locality predicts $\mathfrak{m}(\mathcal{K}) = \mathfrak{m}_{\mathrm{GB}}
-\cdot \prod_c (1 + \xi \eta(c))$. Deviations from this scaling —
-residuals in binding energies not accounted for by the product formula —
-quantify locality violations. For doubly-magic atoms the product form
-is within $\leq 6\%$ (see the
-[JSJ/$\alpha$-clustering witness](#conj:mass-volume-factorization)),
-consistent with approximate locality at $q_0$.
-
-**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. It applies $q$-deformation identities over an abstract coefficient ring and specializes them to real-valued observables at $q_0$.
 <!-- FILE_END: lifted-crossing-locality.md -->
 
 <!-- FILE_START: mass-categorical-descent.md -->
-The QOU mass formula is the :refterm[descent]{#descent}
-decomposition of the mass endomorphism
-$\mathfrak{m} \colon A \to A$ under the brane tower blow-up.
-The empirical Bethe–Weizsäcker liquid-drop ansatz is recovered
-as one phenomenology of this descent decomposition; see
-[`conj:q-integer-mass-formula`](#conj:q-integer-mass-formula)
-for the recovered coefficients.
-
-**Proposition.**
-\*Let $\mathcal{A}(Z,N)$ be the atomic braid in $H_{A+Z}(q)$,
-and let $\hat{\tau}$ denote the :refterm[descent]{#descent} involution acting on
-$\operatorname{End}(A)$.  Then the mass identity
-\$\mathfrak{m}(\mathcal{A}) = Z m\_{\mathfrak{p}} + N m\_{\mathfrak{n}}
-
-* Z m\_e - B(Z,N)\$ decomposes as\*
+*The mass identity decomposes under the descent involution into a descended component and a transient component:*
 
 $$
-  B(Z,N) = \underbrace{B^{\mathrm{desc}}(Z,N)}_{\text{descended}}
-          + \underbrace{B^{\mathrm{trans}}(Z,N)}_{\text{transient}}
+  B(Z,N) = B^{\mathrm{desc}}(Z,N) + B^{\mathrm{trans}}(Z,N).
 $$
 
-*where the descended component lies in the centre of $H_n(q)$
-and the transient component localises to the exceptional divisors
-of the brane blow-up.*
+*The descended component resides in the center of the Hecke algebra. The transient component localizes to the exceptional divisors of the brane blow-up.*
 
-**Descended (central) terms.**
+**Descended terms.**
+The descended elements are Casimir operators corresponding to the volume, pairing, and Wigner terms of the liquid-drop model. They evaluate purely via quantum factorials scaled by Plancherel weights.
 
-The descended component consists of Casimir operators — elements
-of the centre $Z(H_n(q))$ that commute with all generators.  By
-the Wedderburn-Artin decomposition, these are indexed by partitions
-$\lambda \vdash n$:
-
-| BW term                              | Casimir level | Partition family                | Scaling    |
-| ------------------------------------ | ------------- | ------------------------------- | ---------- |
-| Volume ($\lambda_V \cdot A$)         | $k = 3$       | $[n], [1^n]$ (sym $\oplus$ alt) | $A$        |
-| Pairing ($\pm \lambda_P / \sqrt{A}$) | $k = 3$       | $[n-1,1]$ (standard)            | $A^{-1/2}$ |
-| Wigner ($\lambda_W \cdot T(T+1)/A$)  | $k = 5$       | $[n-2,2] + [n-2,1^2]$           | $T(T+1)/A$ |
-
-Their coefficients are the Hecke-level quantum factorials $[n]_q!$
-(evaluated directly as the $q$-factorial product); the
-[Markov-trace normalization](#prop:wedderburn-trace-identity)
-$\sum_\lambda d_\lambda\, y_\lambda(q) = 1$ partitions the total
-Markov weight among the irreducible representations.
-
-**Transient (exceptional divisor) terms.**
-
-The transient component localises to the exceptional divisors
-$E_i \subset \widetilde{X}$ of the blow-up
-$\pi \colon \widetilde{X} \to X$ at codimension-$\geq 2$ loci
-where crossings degenerate.  Each blow-up centre contributes a
-quantum dilogarithm correction:
-
-| BW term                                       | Divisor type            | Content $c$              | Coefficient                  |                              |    |
-| --------------------------------------------- | ----------------------- | ------------------------ | ---------------------------- | ---------------------------- | -- |
-| Surface ($-\lambda_S \cdot A^{2/3}$)          | Boundary $\partial A_n$ | $c = 0$                  | $\Phi_q(1)$                  |                              |    |
-| Coulomb ($-\lambda_C \cdot Z(Z{-}1)/A^{1/3}$) | Charge locus            | $c = \pm 1$              | $\Phi_q(q^{\pm 1})$          |                              |    |
-| Exchange ($\pm \lambda_{\mathrm{ex}} / A$)    | Parity locus            | $c = \pm 1$              | $\Phi_q(-q^{\pm 1})$         |                              |    |
-| Shell ($\delta_{\mathrm{sh}}$)                | Magic number loci       | $c = c_{\mathrm{shell}}$ | $\Phi_q(z_{\mathrm{magic}})$ |                              |    |
-| Hook ($\delta_{\mathrm{hook}} / A$)           | Hook locus              | $c = \pm 2$              | \$                           | \ln \lambda\_{\mathrm{hook}} | \$ |
-
-The content $c$ of each blow-up centre is the magnetic quantum
-number $m_j$ under the Schur-Weyl correspondence: the Young
-diagram content $c(i,j) = j - i$ equals the $m_j$ eigenvalue of
-the angular momentum projection.
-
-**Parallel with coupling.**
-
-The same :refterm[descent]{#descent} structure applies to the electromagnetic coupling
-endomorphism $\Phi = P_{\mathrm{anti}}$
-([CS-corrected coupling](#prop:em-coupling-projection)):
-
-| Component              | Mass (BW)                            | Coupling ($1/\alpha$)                                            |
-| ---------------------- | ------------------------------------ | ---------------------------------------------------------------- |
-| **Base holonomy**      | $\lambda_V \cdot A$ (volume)         | $q \cdot [9]_q \cdot [10]_q$ (bare coupling)                     |
-| **Divisor correction** | $-\lambda_S \cdot A^{2/3}$ (surface) | $(\mathrm{CS}_1 + \mathrm{CS}_2) \cdot \hbar_q^2$ (Chern-Simons) |
-| **Physical origin**    | Nuclear boundary nucleons            | Force-carrier crossing degeneracies                              |
-| **Sign**               | Negative (reduces binding)           | Positive (increases $1/\alpha$)                                  |
-
-The universality of the :refterm[descent]{#descent} decomposition — base holonomy plus
-exceptional divisor corrections — reflects the categorical origin
-of both mass and coupling as endomorphisms in $\mathbf{C}$,
-decomposed by the same involution $\hat{\tau}$.
+**Transient terms.**
+The transient elements isolate corrections from the surface boundary, the Coulomb charge locus, the exchange parity locus, and magic-number shell closures. Each corresponds to a specific geometric blow-up evaluated by a quantum dilogarithm correction based on its Schur-Weyl magnetic quantum number. The descent decomposition universally structures both the mass endomorphism and the electromagnetic coupling.
 <!-- FILE_END: mass-categorical-descent.md -->
 
 <!-- FILE_START: descended-level-zero.md -->
-The jet-tower decomposition
-([jet-tower remark](#rem:mass-endomorphism-jet-tower))
-asserts that the descended (holonomy) contribution to the mass
-appears **once only**, at jet level $0$, and that levels
-$n \ge 1$ carry only singleton and quadratic transient
-contributions. This proposition provides the derivation: the
-descended projector stabilises under composition, so iterated
-:refterm[descent]{#descent} collapses to the base-level holonomy regardless of the
-jet level at which it is read off.
-
-**Proposition.** Let $\hat\tau_n$ be the :refterm[descent]{#descent} involution at
-level $n$ ([:refterm[descent]{#descent} involution](#def:descent-involution)) and
-$\mathcal{A}^{\mathrm{desc}}_{n+1} = \mathrm{im}\,\hat\tau_n$
-the descended subalgebra. For every jet level $n \ge 0$, the
-descended component of the mass integrand $\alpha^{(n+1)}$
-equals the base-level descended contribution:
+*For every jet level $n \ge 0$, the descended component of the mass integrand equals the invariant base-level holonomy:*
 
 $$
-  \bigl\lVert
-    \mathrm{tr}\!\bigl(\hat\tau_n(\alpha^{(n+1)})\bigr)
-  \bigr\rVert
+  \bigl\lVert \mathrm{tr}\!\bigl(\hat\tau_n(\alpha^{(n+1)})\bigr) \bigr\rVert
   \;=\;
-  \mathfrak{m}(\varrho_0)
-  \;=\;
-  \Bigl\lvert \textstyle\prod_i \hat V_i^{(0)} \Bigr\rvert,
+  \mathfrak{m}(\varrho_0).
 $$
 
-independent of $n$. Consequently the descended term enters
-the tower sum **at level $0$ only**; levels $n \ge 1$
-contribute only through transient modes
-$\mathcal{A}^{\mathrm{trans}}_{n+1} = \ker\hat\tau_n$.
+*The descended term enters the tower sum exclusively at level 0. All higher levels contribute strictly transient divisor modes.*
 
-## Derivation
-
-*Step 1 — :refterm[Descent]{#descent} is idempotent.* By construction
-([:refterm[descent]{#descent} involution](#def:descent-involution)),
-$\hat\tau_n = \ell_n \circ \mathfrak{d}_{n+1}$ with
-$\mathfrak{d}_{n+1} \circ \ell_n = \mathrm{id}_{\mathrm{End}(A_n)}$,
-so
-
-$$
-  \hat\tau_n^2 = \ell_n \circ (\mathfrak{d}_{n+1} \circ \ell_n)
-    \circ \mathfrak{d}_{n+1}
-    = \ell_n \circ \mathfrak{d}_{n+1} = \hat\tau_n.
-$$
-
-The descended subalgebra is the fixed-point subspace:
-$\hat\tau_n|_{\mathcal{A}^{\mathrm{desc}}_{n+1}} = \mathrm{id}$.
-
-*Step 2 — :refterm[Descent]{#descent} factors through the base.* For any
-$\alpha \in \mathrm{End}(A_{n+1})$,
-
-$$
-  \hat\tau_n(\alpha)
-  = \ell_n\bigl(\mathfrak{d}_{n+1}(\alpha)\bigr)
-  \;\in\; \ell_n\bigl(\mathrm{End}(A_n)\bigr)
-  \cong \mathrm{End}(A_n).
-$$
-
-Writing $\alpha_n := \mathfrak{d}_{n+1}(\alpha)$ for the
-descended representative at level $n$, the compatibility of
-the categorical trace with $\ell_n$
-([topological mass proof](#prf:topological-mass), Step 2) gives
-
-$$
-  \mathrm{tr}\bigl(\hat\tau_n(\alpha)\bigr)
-  = \mathrm{tr}\bigl(\ell_n(\alpha_n)\bigr)
-  = \mathrm{tr}_n(\alpha_n).
-$$
-
-The descended trace at level $n+1$ therefore equals the level-$n$
-trace of the descended representative — a level-lowering step.
-
-*Step 3 — Recursion to the base.* Apply Step 2 iteratively.
-Let $\alpha^{(k)} := \mathfrak{d}_k(\alpha^{(k+1)})$ be the
-recursive :refterm[descent]{#descent} to level $k$. Then for all $0 \le k \le n$,
-
-$$
-  \mathrm{tr}\bigl(\hat\tau_n \circ \hat\tau_{n-1} \circ \cdots
-    \circ \hat\tau_k\,(\alpha^{(n+1)})\bigr)
-  \;=\;
-  \mathrm{tr}_k\bigl(\alpha^{(k)}\bigr).
-$$
-
-At the base level $k = 0$, $\alpha^{(0)}$ is the mass integrand
-$(\int_A \otimes \mathrm{id}) \circ \Delta \circ \varrho_0$ of
-the base-level cycle $\varrho_0$. The iterated descended trace
-therefore equals the base-level mass:
-
-$$
-  \lVert \mathrm{tr}(\hat\tau_n(\alpha^{(n+1)})) \rVert
-  \;=\; \lVert \mathrm{tr}_0(\alpha^{(0)}) \rVert
-  \;=\; \mathfrak{m}(\varrho_0).
-$$
-
-*Step 4 — Independence from $n$.* Step 3 holds for every
-$n \ge 0$. The descended norm is therefore a **single
-$n$-independent quantity**, namely the level-$0$ base-cycle
-mass. In the explicit formula
-([mass endomorphism tower](#prop:mass-endomorphism-tower)):
-
-$$
-  \mathfrak{m}(\varrho_0)
-  \;=\;
-  \Bigl\lvert \textstyle\prod_i \hat V_i^{(0)} \Bigr\rvert,
-$$
-
-the right-hand side of which involves only the level-$0$ Hecke
-traced volumes. The desc term entering at each jet level is
-therefore **the same object**, not a new per-level contribution.
-$\square$
-
-## Per-level summation as a double count
-
-If the tower sum were written as
-
-$$
-  \mathfrak{m}(\varrho)
-  \;\stackrel{?}{=}\;
-  \sum_{n=0}^{N}
-    \Bigl(
-      \bigl\lvert\textstyle\prod_i \hat V_i^{(n)}\bigr\rvert
-      + \sum_i \Phi_q(|\hat V_i^{(n)}|)
-      + z^2 \sum_{(i,j)} \Phi_q(|\hat V_i^{(n)}\hat V_j^{(n)}|)
-    \Bigr),
-$$
-
-every level would carry a separate descended product. By
-Step 4 each such product equals $\mathfrak{m}(\varrho_0)$ (up
-to the $\hbar_q^{2n}$ brane-tower weight), and the tower sum
-would overcount the base-level holonomy by
-
-$$
-  \sum_{n=1}^{N} \hbar_q^{2n} \cdot \mathfrak{m}(\varrho_0)
-  \;=\;
-  \mathfrak{m}(\varrho_0) \cdot
-  \frac{\hbar_q^{2}(1 - \hbar_q^{2N})}{1 - \hbar_q^{2}}.
-$$
-
-At $q_0 \approx 1.11$ and $N = 3$, this overcount is
-$\approx 0.00991 \cdot \mathfrak{m}(\varrho_0)$ — a **1%
-contamination** of every binding-energy prediction, much larger
-than the target ppm precision. The $\hbar_q^{2n}$ weights damp
-but do not eliminate the double count; only explicit restriction
-to level $0$ for the descended term eliminates it.
-
-## Correct formula
-
-Combining Step 4 with the transient decomposition of
-([topological mass proof](#prf:topological-mass)) and the
-quadratic closure of
-([jet-tower remark](#rem:mass-endomorphism-jet-tower)):
-
-$$
-  \mathfrak{m}(\varrho)
-  \;=\;
-  \underbrace{\Bigl\lvert \textstyle\prod_i \hat V_i^{(0)} \Bigr\rvert}_{\text{desc, level 0 only}}
-  \;+\;
-  \sum_{n=0}^{N} \hbar_q^{2n}
-    \Bigl(
-      \sum_i \Phi_q(|\hat V_i^{(n)}|)
-      + z^2 \sum_{(i,j) \in \mathcal{P}_n}
-        \Phi_q(|\hat V_i^{(n)} \hat V_j^{(n)}|)
-    \Bigr).
-$$
-
-The descended factor is pulled out of the level sum. Only
-the transient contributions (singletons and pairs) retain
-the per-level $\hbar_q^{2n}$ weights, and they vanish
-geometrically by the jet-tower tail bound
-([jet-tower convergence](#prop:jet-tower-convergence)).
-
-## Engineering consequence
-
-This proposition is the derivational justification for the
-HIGH-#1 fix in the infrastructure audit
-(`docs/infrastructure-audit-.md`):
-
-> Strip the desc term from `tower_mass_level` calls inside the
-> level loop; compute desc once at level 0 and treat levels 1+
-> as singleton + pair only.
-
-The fix is not a canonical trick or heuristic: it is the
-correct implementation of Step 4 above. The code's prior
-behaviour of re-adding the descended product at every jet
-level violated the idempotence of $\hat\tau_n$ and overcounted
-the level-$0$ holonomy by the geometric series displayed above.
-
-## Relation to the Nakayama triviality
-
-At the base level, the Nakayama automorphism
-$\Psi = S^2 = \mathrm{id}$ in $H_n(R, q)$
-([categorical mass as Markov trace](#prop:categorical-mass-markov)),
-The single-level mass is $\mathrm{tr}_M(\rho(\beta))$
-(signed at the categorical level; positive observable at $q_0$
-by Wenzl positivity for canonical $T_w$).
-The base-level descended term $\prod_i \hat V_i^{(0)}$ is
-exactly this Markov trace by the factorization theorem
-([Markov trace factorization](#thm:markov-trace-factorization)).
-The descended contribution is therefore the **Nakayama-trivial
-holonomy at the base**, and its $n$-independence in Step 4 is
-the jet-tower expression of Nakayama triviality: every :refterm[descent]{#descent}
-step undoes a jet prolongation without introducing new Nakayama
-twist.
-
-## Lean formalization
-
-The companion Lean `descended_level_zero` states the result conditional on a `DescendedLevelZeroContext` class instance and defers its proof via `sorry` (`-- Ref: [manuscript]`).
-
-**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+The descent involution is idempotent and factors recursively through lower levels. Iterating the trace reduction consistently recovers the base-level cycle mass. Summing the descended component at each subsequent jet level constitutes an invalid double-count of the foundational holonomy.
 <!-- FILE_END: descended-level-zero.md -->
 
 <!-- FILE_START: jet-tower-convergence.md -->

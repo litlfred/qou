@@ -1,97 +1,63 @@
 <!-- FILE_START: two-row-stratum.md -->
 ## Definition
 
-Let $H_n(q)$ be the Iwahori–Hecke algebra on $n$ strands with the
-canonical Wedderburn decomposition
+Let $H_n(q)$ be the Iwahori–Hecke algebra on $n$ strands. It admits the canonical Wedderburn decomposition
 $$
   H_n(q) \;\cong\; \bigoplus_{\lambda \vdash n} \mathrm{End}(V_\lambda)
 $$
-indexed by partitions $\lambda \vdash n$. The
-:defterm[two-row stratum]{#two-row-stratum}
-is the subset of partitions with at most two parts:
+indexed by partitions $\lambda \vdash n$. The :defterm[two-row stratum]{#two-row-stratum} contains the partitions with at most two parts:
 $$
   \Lambda^2(n) \;:=\; \{\, \lambda \vdash n : \ell(\lambda) \le 2 \,\}
   \;=\; \{\, (n-k, k) : 0 \le k \le \lfloor n/2 \rfloor \,\}.
 $$
 
-The corresponding
-:defterm[two-row projection]{#two-row-projection}
+The :defterm[two-row projection]{#two-row-projection} is the orthogonal projection onto the two-row Wedderburn subalgebra:
 $$
   \pi_{\mathrm{2-row}} \;\colon\; H_n(q) \;\to\;
-    \bigoplus_{\lambda \in \Lambda^2(n)} \mathrm{End}(V_\lambda)
+    \bigoplus_{\lambda \in \Lambda^2(n)} \mathrm{End}(V_\lambda).
 $$
-is the orthogonal projection onto the two-row Wedderburn subalgebra
-(idempotent: $\pi_{\mathrm{2-row}}^2 = \pi_{\mathrm{2-row}}$). The
-canonical Markov trace splits accordingly:
+The map is an idempotent ($\pi_{\mathrm{2-row}}^2 = \pi_{\mathrm{2-row}}$). The canonical Markov trace splits as:
 $$
   \mathrm{tr}_M(\beta)
   \;=\; \underbrace{\sum_{\lambda \in \Lambda^2(n)} y_\lambda(q) \cdot \chi^\lambda_q(\beta)}_{\mathrm{tr}_M(\pi_{\mathrm{2-row}}\,\beta)}
   \;+\; \underbrace{\sum_{\ell(\lambda) > 2} y_\lambda(q) \cdot \chi^\lambda_q(\beta)}_{\mathrm{tr}_M((1-\pi_{\mathrm{2-row}})\,\beta)}
 $$
-
-with $y_\lambda$ the Wenzl weight
-from [`prop:wedderburn-weight-canonical`](#prop:wedderburn-weight-canonical).
+where $y_\lambda$ is the Wenzl weight from [`prop:wedderburn-weight-canonical`](#prop:wedderburn-weight-canonical).
 
 ## Structural significance
 
-The two-row stratum carries the $\mathrm{SU}(2)$ Schur–Weyl image. Under
-the natural restriction
+The two-row stratum carries the $\mathrm{SU}(2)$ Schur–Weyl image. We restrict to the $\mathrm{SU}(2)$ action:
 $$
   H_n(q) \;\twoheadrightarrow\; \mathrm{End}_{\mathrm{SU}(2)}\!\bigl(V^{\otimes n}\bigr),
-\quad V = \mathbb{C}^2,
+\quad V = \mathbb{C}^2.
 $$
-partitions with $\ell(\lambda) > 2$ lie in the kernel — they correspond
-to higher-rank symmetry components absent from the $\mathrm{SU}(2)$
-spin-pairing observable. The two-row sector is where the
-$q$-deformed spin observables — including the
-magic-shell coupling of
-`conj:magic-shell-stabilization`
-— live.
+Partitions with $\ell(\lambda) > 2$ map to zero. They correspond to higher-rank symmetry components absent from the $\mathrm{SU}(2)$ spin-pairing observable. The $q$-deformed spin observables, including the magic-shell coupling of `conj:magic-shell-stabilization`, live strictly in the two-row sector.
 
 ## Indexing the stratum
 
-$|\Lambda^2(n)| = \lfloor n/2 \rfloor + 1$. For $n = 12$ (the
-$^4\mathrm{He}$ strand count) this gives **7** partitions:
-
+We have $|\Lambda^2(n)| = \lfloor n/2 \rfloor + 1$. For the $^4\mathrm{He}$ strand count ($n = 12$), we obtain **7** partitions:
 $$
 \Lambda^2(12) = \{(12), (11,1), (10,2), (9,3), (8,4), (7,5), (6,6)\}.
 $$
 
-Some of these are particularly distinguished:
+Distinguished partitions include:
+- $\lambda = (n)$: the trivial representation. It is one-dimensional, $V_{(n)} = \mathbb{C}$.
+- $\lambda = (n-1, 1)$: the standard representation. It has dimension $n - 1$.
+- Self-conjugate $\lambda \in \Lambda^2(n)$: this is only $(n/2, n/2)$ for even $n$, the **balanced two-row** partition. For $n = 12$, this is $(6, 6)$.
 
-- $\lambda = (n)$: trivial rep; one-dimensional, $V_{(n)} = \mathbb{C}$.
-- $\lambda = (n-1, 1)$: standard rep; dimension $n - 1$.
-- Self-conjugate $\lambda$ within $\Lambda^2(n)$: only $(n/2, n/2)$
-  when $n$ is even — the **balanced two-row** partition. For
-  $n = 12$, this is $(6, 6)$.
-
-The non-self-conjugate two-row partitions $(n-k, k)$ with $k < n/2$
-form mirror pairs under the bar involution $q \mapsto q^{-1}$ (each
-$(n-k, k)$ paired with itself under the involution, since the
-conjugate partition $(n-k, k)' = (2, 2, \dots, 2, 1, \dots)$
-generally exits $\Lambda^2$).
+The non-self-conjugate partitions $(n-k, k)$ with $k < n/2$ form mirror pairs under the bar involution $q \mapsto q^{-1}$. The conjugate partition $(n-k, k)'$ exits $\Lambda^2(n)$, so each $(n-k, k)$ pairs with itself under the involution.
 
 ## Empirical use
 
-The companion canonical evaluation
-the canonical formalism
-computes the per-partition decomposition
-$c_\lambda := y_\lambda(q_0) \cdot \chi^\lambda_q(\beta_{^4\mathrm{He}})$
-across all 77 partitions of 12 and finds the two-row stratum
-$\Lambda^2(12)$ carries $86.6\,\%$ of $\mathrm{tr}_M(\beta_{^4\mathrm{He}})$ — the
-content of [`prop:he4-two-row-dominance`](#prop:he4-two-row-dominance).
+We compute the per-partition decomposition $c_\lambda := y_\lambda(q_0) \cdot \chi^\lambda_q(\beta_{^4\mathrm{He}})$ across all 77 partitions of 12. The two-row stratum $\Lambda^2(12)$ carries $86.6\,\%$ of the total trace $\mathrm{tr}_M(\beta_{^4\mathrm{He}})$. We formalize this in [`prop:he4-two-row-dominance`](#prop:he4-two-row-dominance).
 
-The earlier
-the canonical formalism
-established the same pattern across $\{D, T, {}^3\mathrm{He}, {}^4\mathrm{He}\}$:
-the dominant block per atom always lies in $\Lambda^2(3A)$.
+We establish the identical pattern across the $\{D, T, {}^3\mathrm{He}, {}^4\mathrm{He}\}$ series. The dominant block for each atom always lies in $\Lambda^2(3A)$.
 <!-- FILE_END: two-row-stratum.md -->
 
 <!-- FILE_START: he4-channel-active-set.md -->
 ## Setup
 
-The $^4\mathrm{He}$ bound state admits three primary compositional
-channels (each summing to $A = 4$ nucleons):
+The $^4\mathrm{He}$ bound state admits three primary compositional channels summing to $A = 4$ nucleons:
 
 | channel | constituents | $\sum \Delta_\mathrm{cat}$ (MeV) | residual $t_i$ (MeV) |
 |---|---|---:|---:|
@@ -99,34 +65,24 @@ channels (each summing to $A = 4$ nucleons):
 | $\mathrm{T} \oplus p$             | $(1,2) + (1,0)$ | $7.83$ | $\mathbf{20.38}$ |
 | ${}^3\mathrm{He} \oplus n$        | $(2,1) + (0,1)$ | $7.04$ | $\mathbf{21.18}$ |
 
-The **channel binding residual** is
+We define the **channel binding residual**:
 $$
-  t_i \;:=\; \Delta_\mathrm{cat}({}^4\mathrm{He}) \;-\; \sum_{j \in \mathrm{channel}\, i} \Delta_\mathrm{cat}(j)
+  t_i \;:=\; \Delta_\mathrm{cat}({}^4\mathrm{He}) \;-\; \sum_{j \in \mathrm{channel}\, i} \Delta_\mathrm{cat}(j).
 $$
-— the binding that the magic-shell coupling
-must explain *beyond* the free-constituent sum. Empirical anchors
-loaded from
-[`magic-shell-empirical-instantiation.witness.json`](computations/magic-shell-empirical-instantiation.witness.json).
+This measures the binding that the magic-shell coupling must explain beyond the free constituents. We load the empirical anchors from [`magic-shell-empirical-instantiation.witness.json`](computations/magic-shell-empirical-instantiation.witness.json).
 
 ## LP formulation
 
-Apply the
-[`prop:operator-selection-lp`](#prop:operator-selection-lp)
-canonical form with $t \in \mathbb{R}^3$ the residual vector above,
-$G = I_3$ (channels orthogonal at leading order — corrections from
-shared sub-braids are sub-percent), and
+We apply the [`prop:operator-selection-lp`](#prop:operator-selection-lp) canonical form. The vector $t \in \mathbb{R}^3$ holds the residuals. The matrix $G = I_3$ because the channels are orthogonal at leading order. Sub-braid corrections are sub-percent. We set:
 $$
   n_\mathrm{target} \;=\; \Delta_\mathrm{coupling}(2, 2)
   \;=\; \Delta_\mathrm{cat}({}^4\mathrm{He}) - 2\,\Delta_\mathrm{cat}({}^3\mathrm{He})
-  \;=\; 13.197\,\mathrm{MeV}
+  \;=\; 13.197\,\mathrm{MeV}.
 $$
-(the doubly-magic anchor from ).
 
 ## Solution
 
-The LP solves uniquely (strong duality holds, duality gap $= 0$;
-$\mathrm{primal\_obj} = \mathrm{dual\_obj} = 268.949$). The primal
-weights $x^\star$ and dual shadow prices $y^\star$ are:
+The LP solves uniquely with a duality gap of $0$. We have $\mathrm{primal\_obj} = \mathrm{dual\_obj} = 268.949$. The primal weights $x^\star$ and dual shadow prices $y^\star$ are:
 
 | channel $i$ | $x^\star_i$ | $y^\star_i$ | status |
 |---|---:|---:|---|
@@ -134,80 +90,40 @@ weights $x^\star$ and dual shadow prices $y^\star$ are:
 | $\mathrm{T} \oplus p$             | $13.197$   | $0$              | primal-saturating |
 | ${}^3\mathrm{He} \oplus n$        | $0$        | $0.796$          | active |
 
-with $y_0^\star = 20.380$. The **active set** —
-constraints whose dual variable is positive — is therefore
+We have $y_0^\star = 20.380$. The **active set** contains the constraints with a positive dual variable:
 $$
   \mathcal{A}({}^4\mathrm{He}) \;=\; \{\,\mathrm{D} \oplus \mathrm{D},\; {}^3\mathrm{He} \oplus n\,\}.
 $$
 
 ## Proposition
 
-**(Conditional on
-[`he4-sdp-compositional-canonical evaluation.witness.json`](computations/he4-sdp-compositional-canonical evaluation.witness.json).)**
-For the $^4\mathrm{He}$ operator-selection LP defined above:
-
-1. **Unique primal optimum** at the $\mathrm{T} \oplus p$ channel:
-   $x^\star_{\mathrm{T} \oplus p} > 0$ and $x^\star_i = 0$ for all
-   $i \neq \mathrm{T} \oplus p$.
-2. **Active set** $\mathcal{A}({}^4\mathrm{He}) =
-   \{\,\mathrm{D} \oplus \mathrm{D},\; {}^3\mathrm{He} \oplus n\,\}$
-   (dual-tight constraints).
-3. **Dual ordering**
-   $y^\star_{\mathrm{D} \oplus \mathrm{D}} >
-    y^\star_{{}^3\mathrm{He} \oplus n} >
-    y^\star_{\mathrm{T} \oplus p} = 0$.
+**(Conditional on [`he4-sdp-compositional-canonical evaluation.witness.json`](computations/he4-sdp-compositional-canonical evaluation.witness.json).)**
+For the $^4\mathrm{He}$ operator-selection LP:
+1. **Unique primal optimum:** The system selects the $\mathrm{T} \oplus p$ channel with $x^\star_{\mathrm{T} \oplus p} > 0$ and $x^\star_i = 0$ for all $i \neq \mathrm{T} \oplus p$.
+2. **Active set:** The dual-tight constraints are $\mathcal{A}({}^4\mathrm{He}) = \{\,\mathrm{D} \oplus \mathrm{D},\; {}^3\mathrm{He} \oplus n\,\}$.
+3. **Dual ordering:** We have $y^\star_{\mathrm{D} \oplus \mathrm{D}} > y^\star_{{}^3\mathrm{He} \oplus n} > y^\star_{\mathrm{T} \oplus p} = 0$.
 
 ## Interpretation
 
-The LP "uses" the $\mathrm{T} \oplus p$ decomposition to satisfy
-the binding constraint (it has the smallest per-unit cost — the
-smallest residual after subtracting free constituents). But the
-**shadow prices identify $\mathrm{D} \oplus \mathrm{D}$ as the
-most binding-receptive sub-braid**: a unit perturbation of the
-deuteron-pairing channel would change the primal binding cost by
-$3.778$ MeV per MeV — five times more than the
-${}^3\mathrm{He} \oplus n$ channel and infinitely more than the
-$\mathrm{T} \oplus p$ channel (whose shadow price is zero, since
-it is the primal-saturating decomposition).
+The LP selects the $\mathrm{T} \oplus p$ decomposition to satisfy the binding constraint because it has the smallest residual. However, the shadow prices identify $\mathrm{D} \oplus \mathrm{D}$ as the most binding-receptive sub-braid. A unit perturbation of the deuteron-pairing channel changes the primal binding cost by $3.778$ MeV. This is five times the effect of the ${}^3\mathrm{He} \oplus n$ channel.
 
-This **two-tier structural fingerprint** is the channel-level
-analogue of the Wedderburn-block fingerprint
-[`prop:he4-two-row-dominance`](#prop:he4-two-row-dominance): both
-identify a $q$-symmetric deuteron-pairing structure as the
-load-bearing geometry of the doubly-magic
-magic-shell coupling, while
-$\mathrm{T} \oplus p$ provides the energetic accounting. The
-remark
-`rem:he4-magic-shell-fingerprint`
-makes this connection explicit.
+This two-tier fingerprint mirrors the Wedderburn-block fingerprint of [`prop:he4-two-row-dominance`](#prop:he4-two-row-dominance). Both identify a $q$-symmetric deuteron-pairing structure as the load-bearing geometry of the magic-shell coupling. The $\mathrm{T} \oplus p$ channel provides the energetic accounting. We make this connection explicit in `rem:he4-magic-shell-fingerprint`.
 <!-- FILE_END: he4-channel-active-set.md -->
 
 <!-- FILE_START: he4-two-row-dominance.md -->
 ## Statement
 
-Let $\beta_{{}^4\mathrm{He}}$ denote the canonical
-atomic braid word for $^4\mathrm{He}$ on
-$H_{12}(q)$ — 47 crossings on 12 strands with three operator-valued
-inter-nucleon interfaces (pp at gen 2, pn at gen 5, nn at gen 8), as
-emitted by
-the canonical formalism.
-Define the per-partition contribution
+Let $\beta_{{}^4\mathrm{He}}$ be the canonical atomic braid word for $^4\mathrm{He}$ on $H_{12}(q)$. It has 47 crossings on 12 strands with three operator-valued inter-nucleon interfaces (pp at gen 2, pn at gen 5, nn at gen 8). We define the per-partition contribution:
 $$
-  c_\lambda(q_0) \;:=\; y_\lambda(q_0) \cdot \chi^\lambda_q\!\bigl(\beta_{{}^4\mathrm{He}}\bigr)
+  c_\lambda(q_0) \;:=\; y_\lambda(q_0) \cdot \chi^\lambda_q\!\bigl(\beta_{{}^4\mathrm{He}}\bigr),
 $$
-with $y_\lambda$ the Wenzl weight
-from [`prop:wedderburn-weight-canonical`](#prop:wedderburn-weight-canonical)
-and $\chi^\lambda_q$ the Hoefsmit per-irrep character. Then
+where $y_\lambda$ is the Wenzl weight ([`prop:wedderburn-weight-canonical`](#prop:wedderburn-weight-canonical)) and $\chi^\lambda_q$ is the Hoefsmit character. We have:
 $$
   \sum_{\lambda \vdash 12} c_\lambda(q_0) \;=\; \mathrm{tr}_M\!\bigl(\beta_{{}^4\mathrm{He}}\bigr)(q_0).
 $$
 
-**Proposition (conditional on
-[`he4-canonical-tr-m-block-fingerprint.witness.json`](computations/he4-canonical-tr-m-block-fingerprint.witness.json)).**
-The two-row stratum
-$\Lambda^2(12) = \{(12), (11,1), (10,2), (9,3), (8,4), (7,5), (6,6)\}$
-of [`def:two-row-stratum`](#def:two-row-stratum) carries at least
-$80\,\%$ of the canonical Markov trace at the substrate parameter:
+**Proposition (conditional on [`he4-canonical-tr-m-block-fingerprint.witness.json`](computations/he4-canonical-tr-m-block-fingerprint.witness.json)).**
+The two-row stratum $\Lambda^2(12)$ ([`def:two-row-stratum`](#def:two-row-stratum)) carries at least $80\,\%$ of the canonical Markov trace at the substrate parameter:
 $$
   \frac{\bigl|\sum_{\lambda \in \Lambda^2(12)} c_\lambda(q_0)\bigr|}
        {\bigl|\mathrm{tr}_M(\beta_{{}^4\mathrm{He}})(q_0)\bigr|}
@@ -216,10 +132,7 @@ $$
 
 ## Empirical verification
 
-The witness reports $\mathrm{tr}_M(\beta_{{}^4\mathrm{He}})(q_0) = 0.05534835$
-(dimensionless raw trace). The two-row-stratum ratio is
-**$86.6\,\%$**. Top-5 binding-receptive Wedderburn blocks — all in
-$\Lambda^2(12)$:
+The trace is $\mathrm{tr}_M(\beta_{{}^4\mathrm{He}})(q_0) = 0.05534835$. The two-row-stratum ratio is **$86.6\,\%$**. The top five Wedderburn blocks lie entirely in $\Lambda^2(12)$:
 
 | rank | $\lambda \vdash 12$ | $\dim_\lambda$ | $y_\lambda(q_0)$ | $\chi^\lambda_q(\beta_{{}^4\mathrm{He}})$ | $c_\lambda$ | $\%$ of $\lvert$total$\rvert$ |
 |---:|---|---:|---:|---:|---:|---:|
@@ -230,590 +143,201 @@ $\Lambda^2(12)$:
 | 5 | $(11, 1)$ | 11  | $+7.67\,e{-4}$ | $+7.39$  | $+5.67\,e{-3}$  | $10.2$ |
 |   |           |     |                |          | top-5 cum         | $\mathbf{86.5}$ |
 
-The trivial rep $(12)$ contributes only $2.9\,\%$; the sign rep
-$(1^{12})$ contributes $4.7 \times 10^{-10}$ (sub-1e-9).
+The trivial representation $(12)$ contributes $2.9\,\%$. The sign representation $(1^{12})$ contributes $4.7 \times 10^{-10}$.
 
 ## Structural interpretation
 
-The two-row stratum carries the
-SU(2) Schur-Weyl image. Partitions
-with $\ell(\lambda) > 2$ correspond to higher-rank symmetry
-components absent from the spin-$\tfrac{1}{2}$ pairing observable.
-The dominance of $\Lambda^2(12)$ at $86.6\,\%$ is the algebraic
-fingerprint of $^4\mathrm{He}$ as a $q$-symmetric spin-pairing
-bound state — a substrate-derived characterisation of the
-magic-shell coupling.
+The two-row stratum carries the SU(2) Schur-Weyl image. Partitions with $\ell(\lambda) > 2$ correspond to higher-rank symmetry components absent from the spin-$\tfrac{1}{2}$ pairing observable. The dominance of $\Lambda^2(12)$ is the algebraic fingerprint of $^4\mathrm{He}$ as a $q$-symmetric spin-pairing bound state.
 
-The top block $\lambda^* = (9, 3)$ matches the prediction from
-the canonical formalism,
-which arrived at the same dominant-partition fingerprint via the
-$\Delta_\lambda$ empirical-tabulation route. The two derivations
-are independent: $\Delta_\lambda$ from per-partition mass-anchor
-residuals, this proposition from the canonical
-$\Sigma_\lambda y_\lambda \cdot \chi^\lambda_q$ Wedderburn sum.
+The canonical formalism predicts the top block $\lambda^* = (9, 3)$ via the $\Delta_\lambda$ empirical-tabulation route. This proposition derives the identical fingerprint from the $\Sigma_\lambda y_\lambda \cdot \chi^\lambda_q$ Wedderburn sum.
 <!-- FILE_END: he4-two-row-dominance.md -->
 
 <!-- FILE_START: markov-trace-frobenius-selection.md -->
-**Proposition (Markov trace uniqueness on H_n(R, q)).**
-*The Jones–Markov form* $\tau_M$ *is* **the unique** *non-degenerate
-Frobenius pairing on the Iwahori–Hecke algebra* $H_n(R, q)$ *at
-generic* $q$.  *Hence the QOU mass identity's Markov trace is fixed
-by the cat-action / fibre-functor choice in the QOU substrate plus
-the standard Markov-trace uniqueness theorem (Wenzl 1990, Jones 1987),
-with no remaining choice.*
+*The Jones–Markov form $\tau_M$ is the unique non-degenerate Frobenius pairing on the Iwahori–Hecke algebra $H_n(R, q)$ at generic $q$. The QOU mass identity's Markov trace is uniquely fixed by the categorical action, the fibre functor, and the Markov-trace uniqueness theorem (Jones 1987, Wenzl 1988).*
 
 | form | $\tau(1)$ | $\tau(\sigma_i)$ | $w_\lambda$ | non-degenerate? |
 |---|---:|---:|---|:---:|
 | Jones–Markov $\tau_M$ | $1$ | $z = 1/[q^{1/2}+q^{-1/2}]$ | Wenzl-bridge $y_\lambda$ | yes, on $H_n(q)$ |
 
-## The chain: cat-action $\to$ Markov trace
+## The chain: cat-action to Markov trace
 
-Starting from the QOU substrate and tracing each step:
+We trace each step from the QOU substrate:
 
 ### Step 1: Cat-action of $\mathbf{C}$ on the state bundle
 
-A quantum observable universe
-$\mathcal{U} = (\mathbf{C}, \varTheta, G, \mathcal{S})$ specifies a
-**rigid monoidal category** $\mathbf{C}$ with a **fibre functor**
-$\tau \colon \mathbf{C} \to \mathbf{Vect}$.  The choice of $\mathbf{C}$
-fixes which Frobenius–Hopf algebra $A$ acts: typically
-$A = H_n(R, q)$ (Iwahori–Hecke), but $A$ could be a quotient
-(e.g. Temperley–Lieb $\mathrm{TL}_n$) or a finer-grained algebra.
+A quantum observable universe specifies a rigid monoidal category $\mathbf{C}$ with a fibre functor $\tau \colon \mathbf{C} \to \mathbf{Vect}$. The category fixes the acting Frobenius–Hopf algebra $A$. We typically use $A = H_n(R, q)$.
 
 ### Step 2: Non-abelian Stokes at finite slice
 
-Yekutieli's non-abelian Stokes theorem at finite slice depth
-($= \mathrm{max\_grade}$ in the GB filtration) gives the multiplicative
-trace on the closed surface obtained by Markov closure of the braid
-word $T_w$:
-
+Yekutieli's non-abelian Stokes theorem at finite slice depth yields the multiplicative trace on the closed surface obtained by Markov closure of the braid word $T_w$:
 $$
   \int_{S^1} T_w
   \;=\;
   \mathrm{tr}\bigl(\rho(\sigma_{i_1}) \cdots \rho(\sigma_{i_\ell})\bigr).
 $$
+This trace is the categorical trace in $\mathbf{C}$. It depends on the fibre functor $\tau$.
 
-The trace here is the **categorical trace** in $\mathbf{C}$ — it
-depends on the fibre functor $\tau$.
+### Step 3: Frobenius pairing
 
-### Step 3: Frobenius pairing — non-degeneracy + Wenzl/Jones uniqueness
-
-The categorical trace descends under $\tau$ to a Frobenius integral
-$\int_A \colon A \to R$ on the algebra.  $A$ is a Frobenius algebra
-*relative to* this integral, which is equivalent to a non-degenerate
-bilinear form
-
+The categorical trace descends to a Frobenius integral $\int_A \colon A \to R$. The algebra $A$ is a Frobenius algebra relative to this integral. This defines a non-degenerate bilinear form:
 $$
   \langle x, y \rangle_\tau \;:=\; \tau(xy).
 $$
 
-The QOU mass identity uses the **Frobenius co-Casimir** trace identity
-(see [Frobenius co-Casimir universal](#thm:frobenius-codim-universal))
-
+The QOU mass identity uses the Frobenius co-Casimir trace identity ([Frobenius co-Casimir universal](#thm:frobenius-codim-universal)):
 $$
-  \tau(C_{\dim_q}) \;=\; \sum_\lambda \frac{1}{\dim_q(\lambda)},
+  \tau(C_{\dim_q}) \;=\; \sum_\lambda \frac{1}{\dim_q(\lambda)}.
 $$
+This identity requires $\tau(p_\lambda) \neq 0$ for every Wedderburn block. The trace $\tau$ must be non-degenerate.
 
-where the construction
-$C_{\dim_q} = \sum_\lambda [\dim_q(\lambda) \tau(p_\lambda)]^{-1} \cdot p_\lambda$
-is well-defined **only if** $\tau(p_\lambda) \neq 0$ for every
-Wedderburn block — i.e., only if $\tau$ is non-degenerate.
+The **Jones–Markov form** $\tau_M$ satisfies:
+- $\tau_M(1) = 1$.
+- $\tau_M(x \sigma_{n-1}) = z \cdot \tau_M(x)$ for $x \in H_{n-1}$ with $z = 1/(q^{1/2} + q^{-1/2})$.
 
-The **Jones–Markov form** $\tau_M$ is defined by:
-- $\tau_M(1) = 1$
-- $\tau_M(x \sigma_{n-1}) = z \cdot \tau_M(x)$ for $x \in H_{n-1}$ (Markov peel)
-- $z = 1/(q^{1/2} + q^{-1/2})$
-
-It is **non-degenerate** on $H_n(R, q)$: $\tau_M(p_\lambda)
-= \dim_q(\lambda) \cdot d_\lambda / [n]_q!$ (Plancherel-A weights),
-non-zero for every $\lambda \vdash n$ at generic $q$ (Jones
-\cite{jones1987} Theorem 6.1; Wenzl \cite{wenzl1988} Lemma 2.4).
-
-The **Markov-trace uniqueness theorem** of Jones / Wenzl then forces
-$\tau_M$ to be the **unique** non-degenerate Frobenius form on the
-Hecke algebra: any other trace satisfying the Markov-peel + cyclic
-axioms and non-degeneracy equals $\tau_M$ block-wise.
-
-### Historical note — the purged Schur–Weyl contrast
-
-Earlier versions of this
-proposition selected $\tau_M$ *by contrast* with a degenerate
-Schur–Weyl candidate $\tau_{\mathrm{SW}}$ (which vanishes for
-height-$> 2$ partitions, hence violates non-degeneracy).  Per
-owner decision A' the $\tau_{\mathrm{SW}}$ path is fully
-purged from the framework; the proposition is now a direct
-uniqueness statement (Wenzl / Jones), independent of any alternative
-to rule out.  See `docs/uniqueness-theorems-backlog.md` for the
-broader uniqueness programme.
+It is non-degenerate on $H_n(R, q)$. The trace on the primitive idempotents is $\tau_M(p_\lambda) = \dim_q(\lambda) \cdot d_\lambda / [n]_q!$. This is non-zero for every $\lambda \vdash n$ at generic $q$. The Markov-trace uniqueness theorem forces $\tau_M$ to be the unique non-degenerate Frobenius form on the Hecke algebra.
 
 ### Step 4: Wedderburn + Markov-trace formula
 
-$\tau_M$ admits the explicit form
-
+The trace $\tau_M$ admits the explicit form:
 $$
   \tau_M(x) \;=\; \sum_\lambda y_\lambda(q) \cdot \chi_\lambda(x),
 $$
-
-with $y_\lambda(q)$ the Wenzl-bridge weights, supported on every
-$\lambda \vdash n$.
+where $y_\lambda(q)$ are the Wenzl-bridge weights.
 
 ## Uniqueness theorem
 
-**Theorem (Markov-trace uniqueness on H_n(R, q)).**  *Any
-non-degenerate Frobenius form on the Iwahori–Hecke algebra
-* $H_n(R, q)$ *at generic* $q$ *equals the Jones–Markov form
-* $\tau_M$ *block-wise.  Therefore the QOU mass identity uniquely
-determines* $\tau_M$ *as the canonical Markov trace of the
-framework.*
+**Theorem (Markov-trace uniqueness on H_n(R, q)).** *Any non-degenerate Frobenius form on the Iwahori–Hecke algebra $H_n(R, q)$ at generic $q$ equals the Jones–Markov form $\tau_M$ block-wise. The QOU mass identity uniquely determines $\tau_M$ as the canonical Markov trace.*
+
 ## Discussion
 
-This proposition is **proved** — a structural theorem about the
-representation theory of the Hecke algebra, with no fitting and no
-empirical input.  Uniqueness of $\tau_M$ as the non-degenerate
-Frobenius form on $H_n(R, q)$ is axiomatised via the
-`MarkovTraceUniqueness` class in the Lean file (citing Jones 1987 /
-Wenzl 1988); downstream Lean results are sorry-free **conditional on
-the class instance** per AGENTS.md §3b-cond.
+This proposition is a structural theorem about the representation theory of the Hecke algebra. We introduce no fitting or empirical input. We formalize the uniqueness via the `MarkovTraceUniqueness` class in Lean. Downstream Lean results depend on this class instance.
 
 ## Computational consequence
 
-The QOU production stack computes $\tau_M$ on the
-**11-crossing canonical proton / neutron braid** via four
-independent paths — Hoefsmit seminormal matrices
-(the formal derivation), `markov_peel`, the $\chi$-cache
-combiner (the formal derivation), and the Habiro
-integer-$a_m$ expansion — which agree to $\leq 2 \times 10^{-15}$
-at the proton-pinned $q_0$:
+The QOU production stack computes $\tau_M$ on the canonical 11-crossing proton/neutron braid via four independent paths. They agree to $\leq 2 \times 10^{-15}$ at the proton-pinned $q_0$:
 
 | atom | $\tau_M(\beta_{\rm atom}, q_0)$ | error vs 4-way |
 |---|---:|---:|
 | proton | $1.0653061442544499$ | $\leq 2.57\times 10^{-16}$ |
 | neutron | $0.9232332299116371$ | $\leq 2.03\times 10^{-16}$ |
 | deuteron | $0.3882864240747888$ | $\leq 8.16\times 10^{-16}$ |
-
-> **Pedagogical alternative (deprecated for production).** The
-> `from_scratch/` pipeline computes $\tau_M$ via the Markov axioms on
-> a **different braid choice** (single-component free-proton braid,
-> not the 11-crossing canonical recipe), yielding $\tau_M(p_{\rm free},
-> q_0) \approx 1.7339$ — a legitimate Jones–Markov value on its
-> *own* braid, not a competing convention for the 11-crossing braid
-> above.  An earlier escalation framed this as a "$\tau_M$ /
-> $\tau_{\mathrm{SW}}$ conflation" but the audit doc itself records the
-> different-braid framing (line 248-251); decision A' purges
-> $\tau_{\mathrm{SW}}$ and reads the from-scratch as a different
-> braid's $\tau_M$, not a competing form.
 <!-- FILE_END: markov-trace-frobenius-selection.md -->
 
 <!-- FILE_START: t-beta-markov-frobenius-collapse.md -->
-**Proposition (Min-Frobenius-norm collapse for $T_\beta$).**
-*Let $H = H_n(R, q)$ be the Iwahori–Hecke algebra over a field $R$,
-equipped with the Jones–Markov trace $\tau_M : H \to R$ uniquely
-determined by the [Wenzl–Jones uniqueness theorem](#prop:markov-trace-frobenius-selection).
-Equip $H$ with the **Frobenius inner product**
-$\langle X, Y \rangle_\tau := \tau_M(X \cdot Y)$.
-The element of minimum Frobenius norm satisfying the linear
-constraint $\tau_M(T_\beta) = S$ for given $S \in R$ is*
-
+*Let $H = H_n(R, q)$ be the Iwahori–Hecke algebra over a field $R$, equipped with the unique Jones–Markov trace $\tau_M : H \to R$ ([Wenzl–Jones uniqueness theorem](#prop:markov-trace-frobenius-selection)). Equip $H$ with the Frobenius inner product $\langle X, Y \rangle_\tau := \tau_M(X \cdot Y)$. The element of minimum Frobenius norm satisfying the linear constraint $\tau_M(T_\beta) = S$ for a scalar $S \in R$ is:*
 $$
 \boxed{\; T_\beta = S \cdot 1_H \;}
 $$
-
 *with $\| T_\beta \|^2_\tau = S^2$.*
+
 ## Corollary — observable c_k invariance
 
-The $\mathfrak{Q}_\beta$ production rule extracts the c_k Taylor coefficients from
-$\tau_M(T_\beta)(q)$.  Under either norm choice — Euclidean L2 on
-coordinate-vector space $R^6$ (the SHAPE $\times$ S decomposition)
-or the canonical Markov–Frobenius norm above — the SDP **constraint**
-$\tau_M(T_\beta) = S = \mathfrak{Q}_\beta / E_0$ is satisfied identically.
-Therefore $\tau_M(T_\beta)(q) \equiv S(q)$ in both cases, and the
-c_k are **L2/Markov-invariant**:
-
+The $\mathfrak{Q}_\beta$ production rule extracts the Taylor coefficients $c_k$ from $\tau_M(T_\beta)(q)$. The constraint $\tau_M(T_\beta) = S = \mathfrak{Q}_\beta / E_0$ is satisfied identically under both the Euclidean $L^2$ coordinate norm and the canonical Markov–Frobenius norm. We have $\tau_M(T_\beta)(q) \equiv S(q)$. The coefficients $c_k$ are invariant:
 $$
 c_k^{\,L2} = c_k^{\,Markov} = c_k\!\!\left(S(q)\right)
 \quad\text{for all } k.
 $$
-
-The L2 picture and the Markov picture differ in which $T_\beta \in
-H_n(R, q)$ is the *canonical* primal-feasible operator (the SDP
-**objective** picks different points in the constraint level set),
-but they agree on every **observable** because observables are
-extracted from the constraint, not from the operator's coordinate
-expansion.  The cross-anchor c_3 swing recorded in the
-[canonical-framing audit](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md)
-is therefore a property of $S(q) = \mathfrak{Q}_\beta(q) / E_0(q)$ itself —
-upstream of the SDP norm choice.
+The observables are extracted from the constraint, not from the operator expansion. The norms only differ in selecting the primal-feasible operator $T_\beta \in H_n(R, q)$.
 
 ## Categorical reading
 
-Under the Markov–Frobenius norm $T_\beta = S \cdot 1_H$ is a
-**scalar multiple of the identity**.  All q-dependence of the
-canonical primal-feasible operator flows through the single
-q-rational scalar $S(q)$; there is no multi-channel SHAPE
-distributed across the NF basis $\{\gamma, \sigma_0, \sigma_1,
-L_+, L_-, e_-\}$.  The six-channel spread observed
-under the Euclidean coordinate norm is a **basis-dependence**
-of the inner product on $R^6$, not categorical structure of
-$T_\beta$.
-
-This is the natural categorical answer to "what is $T_\beta$ as
-an operator?": the Markov–Frobenius minimum-norm primal-feasible
-solution is the **least-Hecke-Frobenius-norm** operator hitting
-the target trace, which is the canonical choice from the
-Wenzl–Jones standpoint.
+Under the Markov–Frobenius norm, $T_\beta = S \cdot 1_H$ is a scalar multiple of the identity. The $q$-dependence flows entirely through $S(q)$. There is no multi-channel SHAPE distributed across the normal-form basis. The Euclidean norm's six-channel spread is an artifact of the coordinate basis. The Markov–Frobenius minimum-norm solution is the canonical choice.
 
 ## Lean formalisation
 
-The substrate-model proof (where $A = R$ and $\tau = \mathrm{id}$,
-reducing the algebra to its ground field) is sorry-free at
-[`t_beta_markov_min_frobenius_collapse_substrate`](markov-trace-frobenius-selection.lean).
-The full $H_n(R, q)$ proof — requiring the Mathlib `Algebra R A`
-typeclass infrastructure plus the positive-semi-definiteness of
-$\tau_M$ on squares as a class hypothesis — is queued for a
-follow-up Lean PR.  The substrate-model proof captures the
-essential algebraic content (the completing-the-square identity);
-the general lift is mechanical typeclass scaffolding.
-
-## References
-
-- [`docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md`](https://github.com/litlfred/qou/blob/claude/qbeta-markov-trace-2026-06-03/docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md)
-  — structural finding + canonical structural verification at $q_0$.
-- [`docs/coordination/1ppq-qbeta.md`](https://github.com/litlfred/qou/blob/claude/qbeta-markov-trace-2026-06-03/docs/coordination/1ppq-qbeta.md)
-  — 1ppQ master ledger.
-- Jones 1987 — Hecke algebra Markov trace existence + uniqueness.
-- Wenzl 1988 — non-degeneracy of the Markov trace.
+The substrate-model proof ($A = R$, $\tau = \mathrm{id}$) is sorry-free at [`t_beta_markov_min_frobenius_collapse_substrate`](markov-trace-frobenius-selection.lean). The general $H_n(R, q)$ proof lifts this algebraic content via Mathlib `Algebra R A` typeclasses.
 <!-- FILE_END: t-beta-markov-frobenius-collapse.md -->
 
 <!-- FILE_START: t-beta-markov-frobenius-collapse-general.md -->
-**Proposition (Min-Frobenius-norm collapse — general unital R-algebra).**
-*Let $R$ be a strict-ordered field (typeclass `[Field R] [LinearOrder R] [IsStrictOrderedRing R]`), $A$ a unital $R$-algebra, and
-$\tau : A \to R$ an $R$-linear normalised trace ($\tau(1) = 1$,
-$\tau(xy) = \tau(yx)$).  Assume $\tau$ is positive-semi-definite
-on squares: $0 \le \tau(X \cdot X)$ for every $X \in A$.  Then for
-any $S \in R$ and any $X \in A$ satisfying the linear constraint
-$\tau(X) = S$,*
-
+*Let $R$ be a strict-ordered field. Let $A$ be a unital $R$-algebra. Let $\tau : A \to R$ be an $R$-linear normalised trace ($\tau(1) = 1$, $\tau(xy) = \tau(yx)$). Assume $\tau$ is positive-semi-definite on squares: $0 \le \tau(X \cdot X)$ for all $X \in A$. For any $S \in R$ and $X \in A$ satisfying $\tau(X) = S$, we have:*
 $$
 S^2 \;\le\; \tau(X \cdot X).
 $$
+*If $\tau$ is non-degenerate on squares ($\tau(Y \cdot Y) = 0 \implies Y = 0$), the lower bound is attained if and only if $X = S \cdot 1_A$.*
 
-*If, additionally, $\tau$ is non-degenerate on squares ($\tau(Y \cdot Y) = 0
-\implies Y = 0$), the lower bound is attained iff $X = S \cdot 1_A$.*
 ## Relation to the substrate-model version
 
-This proposition **lifts** [`prop:t-beta-markov-frobenius-collapse`](t-beta-markov-frobenius-collapse.md) from the substrate model ($A = R$, $\tau = \mathrm{id}$, where the theorem reduces to the trivial $X = S \Rightarrow X^2 = S^2$) to the **general unital $R$-algebra setting** where $A$ may be non-commutative and infinite-dimensional.
+This proposition lifts [`prop:t-beta-markov-frobenius-collapse`](t-beta-markov-frobenius-collapse.md) from the substrate model ($A = R$, $\tau = \mathrm{id}$) to the general unital $R$-algebra setting, where $A$ may be non-commutative and infinite-dimensional.
 
-| Block | Setting | Used by |
-|-------|---------|---------|
-| `prop:t-beta-markov-frobenius-collapse` | substrate model ($A = R$, $\tau = \mathrm{id}$) | scalar $\mathfrak{Q}_\beta$ identities |
-| `prop:t-beta-markov-frobenius-collapse-general` (this block) | any unital $R$-algebra with normalised trace + PSD + non-deg | Hecke-algebra applications |
 ## Application to the Iwahori–Hecke algebra
 
-For $A = H_n(R, q)$ at generic $q > 0$ with $\tau = \tau_M$ (the Jones–Markov trace), this proposition gives the **canonical SDP-min-Frobenius-norm operator** for the constraint $\tau_M(T_\beta) = S$:
-
+For $A = H_n(R, q)$ at generic $q > 0$ with $\tau = \tau_M$, this proposition identifies the canonical SDP-min-Frobenius-norm operator for the constraint $\tau_M(T_\beta) = S$:
 $$
 T_\beta^{\mathrm{Markov}} \;=\; S \cdot 1_H.
 $$
-
-This is the Markov-trace collapse (substrate model) lifted to the genuine non-commutative Hecke algebra.
-
-The L2-Euclidean coordinate-norm picture (PR #1739: 6-channel $A_i x_i^{L2}$ SHAPE $\times$ S decomposition) and the Markov-Frobenius picture (this proposition: $T_\beta = S \cdot 1$) are **two different operators** inside $H_n(R, q)$ that **both reproduce the SDP constraint** $\tau_M(T_\beta) = S$. The observable $c_k$ Taylor coefficients of $\mathfrak{Q}_\beta(q)$ are L2/Markov-invariant: see [PR #1750](https://github.com/litlfred/qou/pull/1750) Step 4 diagnostic.
-
-## References
-
-- PR #1750 (merged) — substrate-model proof + paper proof + accuracy diagnostic + audit doc.
-- [PR #1761](https://github.com/litlfred/qou/pull/1761) (merged) — general-lift Lean infrastructure + this content block.
-- [`docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md`](../../../docs/audits/2026-06-03-qbeta-markov-trace-shape-collapse.md) — structural finding + canonical structural verification at $q_0$.
-- [`prop:markov-trace-frobenius-selection`](markov-trace-frobenius-selection.md) — Wenzl–Jones uniqueness theorem (the source of $\tau_M$'s non-degeneracy).
-- Jones 1987 — Markov-trace existence + uniqueness.
-- Wenzl 1988 — non-degeneracy of the Markov trace.
+The $L^2$-Euclidean coordinate-norm operator and the Markov-Frobenius operator both reproduce the SDP constraint. The observable $c_k$ Taylor coefficients remain invariant.
 <!-- FILE_END: t-beta-markov-frobenius-collapse-general.md -->
 
 <!-- FILE_START: pn-averaging-uniqueness.md -->
-**Proposition (canonical p-n averaging uniqueness).**  *Any two
-p-n interface averaging functionals* $\sigma_{pn}, \sigma_{pn}'$
-*on* $H_{3A}(R, q)$ *that both satisfy* (a) **bar-invariance**
-$\sigma_{pn}(q) = \sigma_{pn}(q^{-1})$, (b) **color-flavor
-compatibility** (Bring color-tube symmetry over quark
-composition), *and* (c) **standard normalisation**
-$\sigma_{pn} = z$ *with the same* $z$ *are equal block-wise.
-Hence the canonical p-n averaging is uniquely determined by
-these three structural hypotheses — closing the cheat-sheet
-open audit finding (Phase 5q, line 128).*
+*Let $\sigma_{pn}$ and $\sigma_{pn}'$ be two p-n interface averaging functionals on $H_{3A}(R, q)$. Assume both satisfy: (a) bar-invariance $\sigma_{pn}(q) = \sigma_{pn}(q^{-1})$, (b) color-flavor compatibility, and (c) standard normalisation $\sigma_{pn} = z$. Then they are equal block-wise. The canonical p-n averaging is uniquely determined.*
 
 ## Setting
 
-The QOU mass identity at $A \geq 2$ contracts a per-interface
-averaging functional $\sigma_{pn}$ across the p-n boundary slice
-in $H_{3A}(R, q)$.  Two production candidates have circulated:
-
-| candidate | form | status |
-|---|---|---|
-| uniform bar-invariant | $\sigma_{\rm avg} = (\sigma + \sigma^{-1})/2 = \sigma - h/2$ | current default ([`thm:averaging-resonance-rule`](#thm:averaging-resonance-rule)) |
-| Bring color-tube weighted | per-quark-composition weighted | "open audit finding" (Phase 5q); empirically reproduces $\Delta m_{n-p}$ to ${\approx}\,0.14\,\%$ of CODATA via Scheme 4 per-sheet PL integration |
-
-Both satisfy bar-invariance + standard normalisation; they differ
-on the per-sheet color weighting.  The uniqueness theorem here
-states that **once color-flavor compatibility is fixed**, the
-averaging is determined.  Closing the `ColorFlavorCompatible`
-class to the Bring weighted derivation refines the admissible
-normalisation $z$ to a unique canonical form.
+The QOU mass identity at $A \geq 2$ contracts a per-interface averaging functional $\sigma_{pn}$ across the p-n boundary slice. The two production candidates are the uniform bar-invariant form and the Bring color-tube weighted form. Both satisfy bar-invariance and standard normalisation. Once we fix color-flavor compatibility, the averaging is uniquely determined.
 
 ### Derivation chain for the closed-form weight
 
-The substrate evaluation $w(t, t', q) = 1/(1 - h_q \cdot q^{10})$ per
-the formal derivation is **not purely
-empirical**. The "10" exponent is derived:
-
-- Bring's surface has **genus $g = 4$** (per `prop:em-coupling-bring-zero-mode`).
-- The genus-4 force-carrier pair on Bring's surface is
-  $\{T(2,9), T(3,5)\}$ (named in `em-coupling-bring-zero-mode.lean`).
-- `prop:alpha-shift-torus-knot` proves
-  $\alpha_{\text{shift}}(T_{p,k}) = k \cdot (p-1)$ (Lean:
-  `alphaShift p k = k * (p - 1)`, sorry-free conditional on
-  `HasAlphaShiftTorus`). Specialising at $(p, k) = (3, 5)$ gives
-  $\alpha_{\text{shift}}(T(3,5)) = 5 \cdot 2 = \mathbf{10}$ — the
-  **pole order** of $\sigma$ on $T(3,5)$, verified computationally
-  in the formal derivation (line 318: `pole_t35 == 10`).
-- The Bring color-tube weight inherits this pole order: $q^{10}$
-  in $1/(1 - h_q \cdot q^{10})$ is the $\alpha_{\text{shift}}(T(3,5))$-th
-  power, **derived**.
-
-**Remaining open math (smaller scope):**
-
-- The resolvent form $1/(1 - h_q \cdot \cdot)$ from a residue
-  calculation at the pole; deriving it formally in Lean requires
-  the Schwarz / contour-integral machinery on Bring's surface
-  (related to the BlochGroup framework already in
-  `em-coupling-bring-zero-mode.lean`).
-- Per-pair weight degeneracy across the four quark-type pairs
-  (modulo the $h_q^4$ correction tracked in the refinement canonical evaluation).
+The substrate evaluation $w(t, t', q) = 1/(1 - h_q \cdot q^{10})$ derives from Bring's surface geometry:
+- Bring's surface has genus $g = 4$.
+- The genus-4 force-carrier pair is $\{T(2,9), T(3,5)\}$.
+- We prove $\alpha_{\text{shift}}(T_{p,k}) = k \cdot (p-1)$. For $T(3,5)$, $\alpha_{\text{shift}}(T(3,5)) = 10$. This specifies the pole order of $\sigma$.
+- The Bring color-tube weight inherits this derived pole order $q^{10}$.
 
 ## Lean structure
 
-The uniqueness is staged via the [§3b-cond conditional-class
-pattern](../../../AGENTS.md):
+We stage the uniqueness via the conditional-class pattern:
+- `BarInvariant R σ_pn`: the bar-involution axiom.
+- `ColorFlavorCompatible R σ_pn`: the open class for color-sheet mapping.
+- `StandardNorm R σ_pn z`: the pointwise normalisation.
 
-- `BarInvariant R σ_pn` — substrate axiom (bar-involution-respecting).
-- `ColorFlavorCompatible R σ_pn` — **open**: refines once the
-  categorical color-sheet $\leftrightarrow$ quark-flavor mapping lands (per
-  the formal derivation Scheme 4).  Currently carried as a
-  per-instance witness instantiated by `True`.
-- `StandardNorm R σ_pn z` — pointwise $\sigma_{pn} = z$.
-
-Conditional on the three classes, `theorem pn_averaging_unique`
-proves $\sigma_{pn} = \sigma_{pn}'$ sorry-free; the
-sub-singleton form `pn_averaging_subsingleton` packages the same
-content for downstream use.
-
-The open `ColorFlavorCompatible` class is the per-quark color
-weighting derivation; until that lands, the uniqueness theorem is
-proved *conditional on the class instance* per AGENTS.md §3b-cond.
-
-## Computational consequence
-
-The closed-form the formal derivation already exposes the
-opt-in `pn_convention="bring_color_weighted"` option that
-raises `NotImplementedError` with the queue context.  Implementing
-the Bring weighted convention requires (a) extending the closed
-form to accept quark-mass inputs, and (b) defining the canonical
-color-sheet $\leftrightarrow$ quark-flavor mapping.
-
-## Lean formalization
-
-This proposition is **proved conditional on the
-`ColorFlavorCompatible` class instance**.  No fitting, no
-empirical input: the uniqueness reduces to the pointwise
-normalisation hypothesis once the structural conditions are
-named.  Closing the open class is the genuine open math
-(per Phase 5q audit).
+Conditional on these classes, `theorem pn_averaging_unique` proves $\sigma_{pn} = \sigma_{pn}'$.
 <!-- FILE_END: pn-averaging-uniqueness.md -->
 
 <!-- FILE_START: averaging-resonance-rule.md -->
-**Theorem (averaging-resonant rung selection rule).**
-*Let $\sigma_{\mathrm{avg}} = \tfrac{1}{2}(\sigma + \sigma^{-1})$
-be the bar-symmetric averaged-crossing operator on
-$H_{n_{\mathrm{total}}}(R, q)$, and let $P_{\mathrm{avg}} = (1 +
-\overline{\,\cdot\,})/2$ be the bar-invariant averaging projection.
-For canonical typed-$\mathbf{B}_3$ braids of total strand count
-$n_{\mathrm{total}}$ admitting the half-fill cyclic structure
-(proton recipe: $n_{\mathrm{total}} = 9$, half-fill rung
-$k = \lfloor 9/2 \rfloor = 4$ ⊕ 1 wrap-around contribution = 5),
-the unique $\sigma_{\mathrm{avg}}$-resonant rung is*
-
+*Let $\sigma_{\mathrm{avg}} = \tfrac{1}{2}(\sigma + \sigma^{-1})$ be the bar-symmetric averaged-crossing operator on $H_{n_{\mathrm{total}}}(R, q)$. Let $P_{\mathrm{avg}} = (1 + \overline{\,\cdot\,})/2$ be the bar-invariant averaging projection. For canonical typed-$\mathbf{B}_3$ braids admitting the half-fill cyclic structure, the unique $\sigma_{\mathrm{avg}}$-resonant rung is:*
 $$
   k_{\mathrm{res}}
   \;=\;
   \left\lfloor \frac{n_{\mathrm{total}}}{2} \right\rfloor
-  \;+\; \mathbb{1}_{\mathrm{wrap}}(n_{\mathrm{total}}),
+  \;+\; \mathbb{1}_{\mathrm{wrap}}(n_{\mathrm{total}}).
 $$
-
-*where the wrap indicator $\mathbb{1}_{\mathrm{wrap}}$ adds one
-when the half-fill cycle closes through the proton recipe's
-inter-nucleon interface; otherwise zero.*
+*The wrap indicator $\mathbb{1}_{\mathrm{wrap}}$ adds one when the half-fill cycle closes through the proton recipe's inter-nucleon interface. It is zero otherwise.*
 
 ## Structural content
 
-Two layers compose:
+1. **Half-fill cyclicity.** The projection $P_{\mathrm{avg}}$ restricts to the typed-$\mathbf{B}_3$ braid to isolate the half-fill rung in the Markov-trace expansion. Rung positions above the floor see their bar-averaged amplitudes cancel by the crossing-cyclicity dual. This uniquely determines $k_{\mathrm{res}}$ from $n_{\mathrm{total}}$.
+2. **Bar-invariant magnitude.** At the selected rung, the $P_{\mathrm{avg}}$-fingerprint contributes magnitude $1/2$ to the resonant Markov-trace coefficient.
 
-1. **Half-fill cyclicity** — the bar-invariant projection
-   $P_{\mathrm{avg}}$ restricted to a typed-$\mathbf{B}_3$ braid
-   admits the canonical Markov-trace expansion at the half-fill
-   rung; rung positions above the floor see no $\sigma$-resonant
-   contribution (their bar-averaged amplitudes cancel by the
-   crossing-cyclicity dual). This supplies the **rung selection**:
-   $k_{\mathrm{res}}$ is uniquely determined by $n_{\mathrm{total}}$.
+## The $k = 5$ selection
 
-2. **Bar-invariant magnitude** — at the selected rung, the
-   $P_{\mathrm{avg}}$-fingerprint contributes magnitude $1/2$ to the
-   resonant Markov-trace coefficient (the involution channel of
-   $\sigma_{\mathrm{avg}}$ at $q_0$). This is the magnitude
-   layer interpreted by
-   [`prop:c5-involution-leibniz-decomposition`](../stochastic-mechanics/c5-involution-leibniz-decomposition.md),
-   which observes $c_5 = -b^2 - 1/2$ at the proton recipe.
+For the proton typed-$\mathbf{B}_3$ braid ($n_{\mathrm{total}} = 9$), the half-fill floor is $4$. The inter-nucleon interface contributes $+1$. We obtain $k_{\mathrm{res}} = 5$. This wrap-around contribution ensures the recipe is canonical.
 
-The two layers together yield $c_5 = -b^2 - 1/2$ at rung $k = 5$;
-this proposition is the rung-selection layer (which $k$), while
-$c5$-involution is the magnitude-and-sign layer (the
-$\pm 1/2$ contribution at that $k$).
+## Lean closure
 
-## The $k = 5$ selection (the proton recipe)
-
-For the proton typed-$\mathbf{B}_3$ braid with
-$n_{\mathrm{total}} = 9$ and a canonical
-[`prop:pn-averaging-uniqueness`](pn-averaging-uniqueness.md) inter-nucleon
-interface, the half-fill floor is $\lfloor 9/2 \rfloor = 4$ and
-the wrap-around contribution is $+1$, giving $k_{\mathrm{res}} = 5$.
-The wrap-around contribution is a structural consequence of the
-inter-nucleon interface closing the typed-$\mathbf{B}_3$ cycle —
-without it, the recipe would not be canonical.
-
-## Lean closure (Phase 1 Tier A)
-
-The structural content is captured by
-[`averaging_resonance_rule_structural`](averaging-resonance-rule.lean)
-as a sorry-free Lean theorem using only `Nat` arithmetic + `decide`:
-
-- `kRes_def : ∀ n w, kRes n w = n / 2 + w` (rfl).
-- `kRes_proton_recipe : kRes 9 1 = 5` (decide).
-- `kRes_deuteron_recipe : kRes 6 0 = 3`, `kRes_tritium_recipe :
-  kRes 9 0 = 4` (decide).
-
-A backward-compat `class AveragingResonanceRule` with default
-instance is retained, so downstream blocks that previously used it
-as a §3b-cond hypothesis continue to compile. The wrap indicator
-in the default instance is set to `1` at `n = 9` (proton recipe)
-and `0` elsewhere — a minimal witness; downstream consumers
-may override.
-
-The substantive layer this closure does **not** address is the
-**magnitude** of the resonant contribution (the $-1/2$ in
-$c_5 = -b^2 - 1/2$) — that is handled by
-[`prop:c5-involution-leibniz-decomposition`](../stochastic-mechanics/c5-involution-leibniz-decomposition.md).
-
-## Scope
-
-- The rule applies to typed-$\mathbf{B}_3$ braids admitting the
-  half-fill cyclic structure. It is not claimed for arbitrary
-  $H_n(R, q)$ elements.
-- The wrap indicator depends on the inter-nucleon interface
-  geometry (proton: $+1$; deuteron / tritium / $^3$He recipes
-  documented separately).
-- The conjecture is the **selection rule**, not the magnitude.
-  Magnitude is the bar-involution channel; see
-  [`prop:c5-involution-leibniz-decomposition`](../stochastic-mechanics/c5-involution-leibniz-decomposition.md).
-
-While the underlying formal verification relies on standard floor arithmetic and bar-symmetry properties, defining this explicit averaging resonance rule as the predictive mechanism for the typed-$B_3$ proton recipe forms a mathematically novel structural claim within the Quantum Observable Universe.
+The structural content is verified in [`averaging_resonance_rule_structural`](averaging-resonance-rule.lean) using arithmetic. We retain the backward-compatible `class AveragingResonanceRule`.
 <!-- FILE_END: averaging-resonance-rule.md -->
 
 <!-- FILE_START: meson-color-tube-uniqueness.md -->
-**Proposition (meson m_K/m_π ratio uniqueness via the α_shift universal chain).**
-*The substrate-evaluated ratio* $m_K^2 / m_\pi^2$ *factors uniquely
-through the two torus knots* $T(2, 3)$ *and* $T(2, 4)$ *as*
-$[\alpha_{\text{shift}}(T(2,3))]_q \cdot [\alpha_{\text{shift}}(T(2,4))]_q
-= [3]_q \cdot [4]_q$, *with the q-integer indices forced by the
-proved* $\alpha_{\text{shift}} = k \cdot (p - 1)$ *formula
-(`prop:alpha-shift-torus-knot`).*
+*The substrate-evaluated ratio $m_K^2 / m_\pi^2$ factors uniquely through the torus knots $T(2, 3)$ and $T(2, 4)$ as:*
+$$
+  [\alpha_{\text{shift}}(T(2,3))]_q \cdot [\alpha_{\text{shift}}(T(2,4))]_q
+  = [3]_q \cdot [4]_q.
+$$
+*The $q$-integer indices are forced by the $\alpha_{\text{shift}} = k \cdot (p - 1)$ formula (`prop:alpha-shift-torus-knot`).*
 
 ## The meson force-carrier pair $\{T(2, 3), T(2, 4)\}$
 
-The α_shift universal derivation chain
-([audit](../../../docs/audits/2026-05-30-alpha-shift-universal-derivation-chain.md))
-identifies the relevant torus knots:
-
-| q-integer | $\alpha_{\text{shift}}$ | torus knot | physical interpretation |
-|---|---:|---|---|
-| $[3]_q$ | $3 = 3 \cdot (2 - 1)$ | $T(2, 3)$ = trefoil | smallest non-trivial torus knot |
-| $[4]_q$ | $4 = 4 \cdot (2 - 1)$ | $T(2, 4)$ | second member of the meson pair (W$^\pm$ boson knot per electroweak triplet) |
-
-The pair $\{T(2, 3), T(2, 4)\}$ is the **smallest non-trivial
-torus-knot pair** on the substrate's Hecke-algebra surface — the
-meson analogue of:
-
-- the genus-4 Bring pair $\{T(2, 9), T(3, 5)\}$ carrying $1/\alpha_{\rm EM}$
-  (the α_EM closure of #1444) and the Bring color-tube p-n averaging
-  weight (#1445, with $\alpha_{\text{shift}}(T(3,5)) = 10$);
-- the $T(2, k)$ tower for lepton + electroweak masses
-  ($\mu / \tau / W^\pm / Z / H$).
+The pair $\{T(2, 3), T(2, 4)\}$ is the smallest non-trivial torus-knot pair on the substrate's Hecke-algebra surface. The knot $T(2,3)$ carries $[3]_q$ and $T(2,4)$ carries $[4]_q$. This forms the meson analogue of the genus-4 Bring pair $\{T(2, 9), T(3, 5)\}$ and the lepton tower $T(2, k)$.
 
 ## Lean structure
 
-The uniqueness is staged via the [§3b-cond conditional-class
-pattern](../../../AGENTS.md):
-
-- `MesonGMORFactorization R mK2_over_mpi2 qChar m n` — substrate
-  axiom that $m_K^2 / m_\pi^2 (q) = [m]_q \cdot [n]_q$ at the
-  substrate evaluation.  The specific indices `m, n` and the
-  per-character function `qChar` are carried by per-instance
-  witnesses.
-- `MesonForceCarrierPair` — derived (sorry-free) class asserting
-  the indices are `alphaShift 2 3 = 3` and `alphaShift 2 4 = 4`.
-  A default instance discharges via the proved α_shift
-  specialisations `alphaShift_T_2_3` and `alphaShift_T_2_4`.
-- `theorem meson_ratio_via_alpha_shift` — given the two classes,
-  the ratio factors as
-  $\text{qChar}(q, \alpha_{\text{shift}}(T(2,3))) \cdot \text{qChar}(q, \alpha_{\text{shift}}(T(2,4)))$.
-  Sorry-free, immediate from the factorisation + the index
-  equalities.
-- `theorem meson_ratio_subsingleton` — Subsingleton companion for
-  downstream use.
-
-## Remaining open math
-
-- Why specifically the **smallest non-trivial** torus-knot pair
-  carries the meson force-carrier role.  Mathematical content:
-  the meson's $H_n(q)$ Wedderburn block at the minimum-dimensional
-  non-trivial irrep + Halverson-Ram LR branching to the two-strand
-  factorisation.  Lean target: a theorem deriving the index pair
-  $(3, 4)$ from a minimisation principle on the Hecke trace.
-- The closed-form q-character evaluation
-  $[n]_q(q_0) = (q_0^n - q_0^{-n}) / (q_0 - q_0^{-1})$ at the
-  substrate value — **shared with the resolvent open math of #1444 +
-  #1445**: the residue / Schwarz integral on Bring's surface that
-  carries $\alpha_{\text{shift}}$ from a torus knot's pole order
-  to a substrate q-character evaluation.
-
-## Computational consequence
-
-The production dashboard is wired to the closed form
-$m_K^2 / m_\pi^2 = [3]_q \cdot [4]_q + (\alpha_{em}/\pi) \cdot (3q^2 - 1)/(2q^2)$
-with Lean refs
-`qou:QOU.BraidKnot.meson_qCG_3x4` (strong-fusion identity
-$[3]_q \cdot [4]_q = [2]_q + [4]_q + [6]_q$) and
-`qou:QOU.BraidKnot.meson_EM_closed_form` (EM correction).  Dashboard
-reports `m_K/m_pi err 23.44 ppb` vs target 263.6 ppb (beats $100\times$ at
-3/7 observables after #1451).
-
-This block is **complementary** to #1451: it does not provide a new
-closed form, it provides the **structural reason** for the two
-q-integer indices.  The α_shift identification embeds the meson
-into the same universal pole-order chain as 1/α_EM (#1444) and the
-Bring color-tube p-n averaging weight (merged #1445), per the
-audit doc above.
+We stage the uniqueness via the conditional-class pattern:
+- `MesonGMORFactorization R mK2_over_mpi2 qChar m n`: the substrate factorisation axiom.
+- `MesonForceCarrierPair`: the derived index assertion $\alpha_{\text{shift}}(T(2, 3)) = 3$ and $\alpha_{\text{shift}}(T(2, 4)) = 4$.
+- `theorem meson_ratio_via_alpha_shift`: proves the factorisation using the specific indices.
 <!-- FILE_END: meson-color-tube-uniqueness.md -->
 
 <!-- FILE_START: bring-residue-resolvent.md -->
-**Proposition (Bring residue $\to$ canonical resolvent form).**
 *The substrate evaluation of the residue / Schwarz integral on
 Bring's surface around the simple pole of order $n$ of $\sigma$
 on the torus knot $T(p, k)$ with $\alpha_{\text{shift}}(p, k) = n$
@@ -901,7 +425,6 @@ the class.  Closing the class is the Mathlib-import follow-up.
 <!-- FILE_END: bring-residue-resolvent.md -->
 
 <!-- FILE_START: binding-alpha-shift-extension.md -->
-**Proposition (binding $A\ge3$ via per-rep Reeb phase at a force-carrier torus knot).**
 *The light-atom binding energy* $B(A) = m_e \cdot \rho_0 \cdot \alpha_{\text{shift}}(T(p_A, k_A))$
 *is uniquely determined by* (i) *the substrate-universal per-rep
 Reeb coupling* $\rho_0$ *pinned by the deuteron, and* (ii) *the

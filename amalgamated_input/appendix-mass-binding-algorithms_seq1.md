@@ -1,10 +1,6 @@
 <!-- FILE_START: mba-chain-map.md -->
 **Chain map.**
-The table below lists the eleven canonical steps of the substrate
-$\to$ observable chain together with the propositions that justify
-each step and the Python entry point that realises it. Detailed
-per-step algorithm blocks appear in the sections that follow; this
-table is the high-level index.
+The following table outlines the eleven canonical steps of the substrate-to-observable chain, their justifying propositions, and Python entry points. Detailed per-step algorithm blocks follow.
 
 | # | Step | Required propositions | Python API entry point | Witness JSON | Status |
 |---|------|----------------------|-------------------------|---------------|:------:|
@@ -21,35 +17,15 @@ table is the high-level index.
 | 10 | Confinement SDP and canonical $T_w$ | operator-selection LP; LP–SDP duality | script `computations/confinement-operator-selection.py` (Python solver shim: `pyhecke.lp_dual_solver`) | `confinement-operator-selection.witness.json` | derived |
 | 11 | $\beta$-decay $\mathfrak{Q}_\beta = Q_{\mathrm{base}} \cdot \prod_k (1 + c_k\,u^k)$ | $\mathfrak{Q}_\beta$ derivation; $c_k$ truncation order | script `computations/q_beta_predicted.py` (CAL-3 pin: `build_cal_3_q_beta_witness.py`) | `cal-3-q-beta.witness.json` (CAL-3 pin), `q-beta-predicted.witness.json` (predictions) | derived |
 
-**Status legend.**
-*proved* (sorry-free Lean);
-*derived* (categorical, no fit);
-*conditional* (conjecture-conditional / partial);
-*open* (open gate).
-
 **Sidecar algorithms.**
-In addition to the chain steps, four standalone algorithms support
-the production pipeline and appear in their own sections:
+Four standalone algorithms support the production pipeline:
 
-1. **$\Delta_\lambda$ closure ansätze** (Option E and related
-   crystal-graph attempts). The per-partition density at each
-   isotope; currently open.
-2. **$c_k$ truncation ladder.** The convergent series whose
-   truncation order $N$ is chosen by target precision via
-   $N \geq \lceil \log_{10}(1/\varepsilon) / 2.07 \rceil - 1$.
-3. **LP/SDP dual emission contract.** Every operator-selection
-   compute must emit both primal and dual variables; the contract
-   is enforced by `lp_dual_witness_validator.py` in CI.
-4. **Witness-JSON pipeline.** Cross-language interchange schema
-   (`witness-schema`) and the `WitnessBuilder` pattern used by every
-   canonical script.
+1. **$\Delta_\lambda$ closure ansätze** (Option E). The per-partition density at each isotope; currently open.
+2. **$c_k$ truncation ladder.** The convergent series whose truncation order $N$ is fixed by precision $N \geq \lceil \log_{10}(1/\varepsilon) / 2.07 \rceil - 1$.
+3. **LP/SDP dual emission contract.** Every operator-selection compute must emit primal and dual variables, enforced by `lp_dual_witness_validator.py`.
+4. **Witness-JSON pipeline.** Cross-language interchange schema and the `WitnessBuilder` pattern.
 
 **Location of the algorithm statements.**
-The per-step blocks that follow each algorithm carry the precise
-input/output contract, the correctness conditions (referring to the
-propositions cited above), the complexity estimate, and the
-canonical Python signature. One should be able to reproduce
-every numerical prediction in the paper from this appendix alone,
-without recourse to the implementation source.
+The per-step blocks provide the precise input/output contract, correctness conditions, complexity estimate, and Python signature. These specifications alone suffice to reproduce every numerical prediction without referencing implementation source code.
 <!-- FILE_END: mba-chain-map.md -->
 

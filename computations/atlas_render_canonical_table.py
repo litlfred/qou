@@ -29,7 +29,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 ATLAS_MD = (
-    HERE.parent.parent
+    HERE.parent
     / "content"
     / "quantum-observable-universe"
     / "appendix-knot-periodic-table"

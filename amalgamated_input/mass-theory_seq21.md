@@ -1,27 +1,14 @@
 <!-- FILE_START: intro-archimedean-realization-kashaev.md -->
-The substrate-level knot category developed above takes value in
-a generic categorical setting.  Crossing into the archimedean
-realm requires a functor that lands in $\mathrm{Vec}_{\mathbb{C}}$;
-this section constructs the archimedean realisation functor and
-matches its output on knot complements to the Kashaev volume
-conjecture, identifying the hyperbolic-volume invariant as the
-archimedean shadow of the substrate-level Hecke-skein.
+The generic knot category requires a functor to the archimedean realm to yield real-valued physical observables. This section constructs the archimedean realisation functor and matches its output to the Kashaev volume conjecture, identifying hyperbolic volume as the archimedean shadow of the Hecke-skein.
 
-The arc splits in two.  The first half introduces the archimedean
-realisation functor, proves it preserves the Hecke-skein relation,
-and computes its value on torus knots (where the Kashaev volume
-vanishes).  The second half tracks the convergence of the
-substrate-level invariant to the hyperbolic volume as $q \to 1$,
-identifying the categorical $\mathrm{Vol}_{\mathrm{hyp}}$ as the
-limit of the Kashaev sum.
+We first define the functor and prove it preserves the Hecke-skein relation. We compute its value on torus knots, where the Kashaev volume vanishes. We then track the convergence of the substrate-level invariant to the hyperbolic volume as $q \to 1$, establishing categorical $\mathrm{Vol}_{\mathrm{hyp}}$ as the Kashaev sum limit.
 
-The arc closes with the archimedean-image table, the pre-tau vs post-tau distinction, and the volume-through-tau / volume-as-motivic-period identifications that pin the Kashaev volume conjecture's substrate-level interpretation.
+Finally, we clarify the pre-$\tau$ versus post-$\tau$ distinction and the period identifications that secure the volume conjecture's substrate-level interpretation.
 <!-- FILE_END: intro-archimedean-realization-kashaev.md -->
 
 <!-- FILE_START: archimedean-realization-functor.md -->
 **Definition.**
-*The **archimedean realization functor** of the QOU substrate is
-the composite*
+*The **archimedean realization functor** $\mathcal{R}_{\mathrm{top}}$ is the composite*
 
 $$
   \mathcal{R}_{\mathrm{top}}
@@ -33,52 +20,13 @@ $$
   \mathbb{R}
 $$
 
-*sending the motivic class $[X]$ to its topological Euler
-characteristic $\chi_{\mathrm{top}}(X)$ followed by the
-**archimedean projection** $\pi_\infty \colon \mathbb{A} \to \mathbb{R}$
-of the [adelic substrate](#def:adelic-substrate). The composite
-$\mathcal{R}_{\mathrm{top}}$ is the topological realization of the
-motivic measure: it maps motives to real-valued physical observables.*
+*sending the motivic class $[X]$ to its topological Euler characteristic $\chi_{\mathrm{top}}(X)$ followed by the **archimedean projection** $\pi_\infty \colon \mathbb{A} \to \mathbb{R}$. This functor evaluates motivic geometric shapes into real-valued physical observables.*
 
-**The two halves.**
+**Realization and projection.**
+A motivic integral $\int_{\mathcal{L}(X)} d\mu \in \widehat{\mathcal{M}}$ defines a geometric shape. The topological realization $\chi_{\mathrm{top}}$ maps this shape to an integer (Euler characteristic) or a refined Hodge-theoretic invariant like hyperbolic volume. The adelic projection $\pi_\infty$ discards non-archimedean components, returning the real-valued laboratory measurement.
 
-1. **Realization of motives.** A motivic integral
-   $\int_{\mathcal{L}(X)} d\mu \in \widehat{\mathcal{M}}$
-   ([motivic mass measure](#def:motivic-mass-measure))
-   is a class in the Grothendieck ring of varieties — a *geometric
-   shape*, not a number. The topological realization
-   $\chi_{\mathrm{top}}$ sends $[X]$ to $\chi(X) \in \mathbb{Z}$
-   (Euler characteristic), or more refinedly to a Hodge-theoretic
-   invariant such as a hyperbolic volume when $X$ has a hyperbolic
-   structure on its smooth part.
-
-2. **Adelic projection.** A laboratory measurement is an evaluation
-   of an adelic observable at the archimedean place $\infty$:
-   $\pi_\infty \colon \mathbb{A} \to \mathbb{R}$ discards the
-   non-archimedean coordinates $\mathbb{Q}_p$ and keeps only the
-   real component. Stability of the underlying state depends on
-   the full adelic ring; the *measured value* depends only on
-   $\pi_\infty$.
-
-The physical observable extracted from a state with motivic
-description $[X]$ is therefore
-
-$$
-  \mathrm{Obs}_{\mathbb{R}}(X)
-  \;=\;
-  \mathcal{R}_{\mathrm{top}}\!\left(
-    \int_{\mathcal{L}(X)} d\mu
-  \right)
-  \;\in\;\mathbb{R}.
-$$
-
-**Identification with the QOU fibre functor.** The QOU fibre
-functor $\tau \colon \mathbf{C} \to \mathbf{Arch}$
-([spatial realization functor](#def:spatial-realization-functor))
-realizes the categorical substrate in an archimedean target
-$\mathbf{Arch}$. *On every motive that arises from QOU braid /
-knot data, $\mathcal{R}_{\mathrm{top}}$ is exactly the
-archimedean component of $\tau$:*
+**Identification with the fibre functor.**
+The QOU fibre functor $\tau \colon \mathbf{C} \to \mathbf{Arch}$ is the exclusive exit from the categorical substrate to the real numbers. On motivic QOU inputs, $\mathcal{R}_{\mathrm{top}}$ coincides exactly with the archimedean component of $\tau$:
 
 $$
   \mathcal{R}_{\mathrm{top}}
@@ -90,458 +38,117 @@ $$
   \;\subseteq\; \widehat{\mathcal{M}}.
 $$
 
-The motivic measure $\mu$ in
-[motivic mass measure](#def:motivic-mass-measure) prepares the
-input — assembling local cyclotomic data into a class in
-$\widehat{\mathcal{M}}$ — and $\mathcal{R}_{\mathrm{top}}$ is the
-computation rule that $\tau$ uses to evaluate that class on the
-archimedean place. There is no second functor: the *only* exit
-from $\mathbf{C}$ to $\mathbb{R}$ is $\tau$, and
-$\mathcal{R}_{\mathrm{top}}$ is just $\tau$'s name when restricted
-to motivic inputs (see
-[$\mathrm{Vol}(K)$ factors through $\tau$](#prop:vol-through-tau)).
-
-Where $\tau$ also realizes objects (algebras, sheaves, connections)
-that are not motives, $\mathcal{R}_{\mathrm{top}}$ extends $\tau$
-to motivic inputs that lack a smooth realization (e.g. the
-exceptional divisors of singular blow-ups in
-[motivic mass measure](#def:motivic-mass-measure)) — but the two
-agree on their common domain.
-
-**Synthesis.** The QOU framework computes macroscopic observables
-from discrete quantum data along a single chain:
-
-$$
-  \begin{array}{c}
-   \text{local }q\text{-data at each prime }p
-   \;\xrightarrow{\;\text{adelic stitch}\;}\;
-   \mathbb{A}\text{-valued global state}
-   \\[0.5ex]
-   \;\xrightarrow{\;\int_{\mathcal{L}(X)} d\mu\;}\;
-   \text{motivic class in }\widehat{\mathcal{M}}
-   \\[0.5ex]
-   \;\xrightarrow{\;\mathcal{R}_{\mathrm{top}} = \pi_\infty \circ \chi_{\mathrm{top}}\;}\;
-   \mathrm{Obs}_\mathbb{R}\in\mathbb{R}.
-  \end{array}
-$$
-
-No continuous differential equations are integrated; no Lebesgue
-measure on a smooth manifold is assumed. Discrete categorical data
-on the [arc space](#def:arc-space) of the substrate is assembled
-adelically, integrated motivically, and projected archimedeanly
-into the laboratory continuum. The Kashaev limit of the
-[algebraic quantum volume](#def:algebraic-quantum-volume) is the
-canonical instance of $\mathcal{R}_{\mathrm{top}}$ in action; see
-[Kashaev limit as archimedean realization](#rem:kashaev-as-archimedean-realization).
+**Synthesis.**
+The framework processes discrete categorical data along a single chain: adelic stitching, motivic integration, and archimedean projection. It requires no continuous differential equations or Lebesgue measures. The Kashaev limit of the algebraic quantum volume exemplifies this mechanism.
 <!-- FILE_END: archimedean-realization-functor.md -->
 
 <!-- FILE_START: pre-tau-vs-post-tau.md -->
-> **SUPERSEDED-$\rho_q$ note .** Any use of the
-> scalar substrate density $\rho_q = 1/\hbar_q^2$ in this block is the
-> structurally-wrong leading-order ansatz per
-> [`mass-endomorphism-tower.md` §SUPERSEDED](mass-endomorphism-tower.md);
-> the canonical replacement is the operator-valued $A^\lambda_{\mu, \nu}(I)$
-> graded expansion [`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md).
-> Full purge tracking: [`docs/audits/-superseded-rho-q-purge.md`](../../../docs/audits/-superseded-rho-q-purge.md).
+> **SUPERSEDED-$\rho_q$ note .** Any use of the scalar substrate density $\rho_q = 1/\hbar_q^2$ in this block is the structurally-wrong leading-order ansatz per [`mass-endomorphism-tower.md` §SUPERSEDED](mass-endomorphism-tower.md).
 
-**Reading.** The encounter chapter is the place in the
-manuscript where the Archimedean wall is most crossed by
-accident. The hyperbolic-volume language and the
-$q$-Pochhammer language *coincide* under
-[$\tau_{\mathrm{arch}}$](#def:archimedean-realization-functor),
-which can lead an author to write a derivation step in one
-language while it logically belongs to the other. This remark
-states the discipline once.
-
-**The wall.** Every derivation step in the manuscript belongs
-to exactly one of two registers:
+**The Archimedean wall.**
+Every derivation step belongs to exactly one of two registers:
 
 | Register | Coefficient ring | Operative invariants | Examples |
-|---------------|-------------------------------------------------------------------|---------------------------------------|---------------------------------------|
-| **Pre-$\tau$** | $R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$ (or its $z$-Habiro completion) | Hecke spectra; Markov traces; LP/SDP feasibility | Confinement SDP; Gröbner--Shirshov reductions |
-| **Post-$\tau$** | $\mathbb{R}$ (or $\mathbb{C}$) via $\tau_{\mathrm{arch}}$ | Hyperbolic volumes; thimble depths; mass eigenvalues | Mostow rigidity; PL thimble flow; Bloch--Wigner $D(z)$ |
+|---|---|---|---|
+| **Pre-$\tau$** | $R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$ (or $z$-Habiro) | Hecke spectra, Markov traces | SDP feasibility, Gröbner--Shirshov reductions |
+| **Post-$\tau$** | $\mathbb{R}$ via $\tau_{\mathrm{arch}}$ | Hyperbolic volumes | PL thimble flow, Bloch--Wigner $D(z)$ |
 
-The functor $\tau_{\mathrm{arch}}$ is the **only** legal way to
-cross from the left column to the right. Specifically:
+The functor $\tau_{\mathrm{arch}}$ is the only legal bridge between these columns.
 
-* No derivation step on the left may use a value from the right
- (e.g. a hyperbolic volume) as input. Such values are *outputs*
- of $\tau_{\mathrm{arch}}$, not algebraic data.
+* Pre-$\tau$ derivation steps cannot use post-$\tau$ values (e.g., hyperbolic volume) as inputs.
+* Post-$\tau$ derivation steps cannot claim algebraic-side identities (e.g., Hecke relations) that only hold prior to realization.
+* Bridging equalities that cross the wall must use $\approx$ unless stating an explicit error term. They describe the functor, not algebraic derivation steps.
 
-* No derivation step on the right may claim algebraic-side
- identities (e.g. Hecke relations) — those hold in $R$ before
- $\tau_{\mathrm{arch}}$ is applied. After $\tau_{\mathrm{arch}}$
- one has only the realised real numbers.
-
-* When a canonical equality bridges the two sides — e.g. the
- mass formula
- $\tau_{\mathrm{arch}}(\mathfrak{m}^{\mathrm{trans}}(\varrho_K))
-  = \rho_q \cdot \mathrm{Vol}_{\mathrm{hyp}}(U \setminus K)$ — it
- is a statement *about the functor*, not a derivation step on
- either side alone. canonical comparisons of such bridges with
- experimental data must use $\approx$ unless an explicit error
- term is present.
-
-**Motivic shorthand.** The cleanest algebraic-side home for
-encounter data is the **$z$-Habiro completion**
-$\hat{\mathbb{Z}}[q^{\pm 1}][z]_z$: it allows one to treat the
-poles of the quantum dilogarithm $\Phi_q$ algebraically — as
-quotients of cyclotomic ideals — rather than as divergent
-analytic limits. Under $\tau_{\mathrm{arch}}$ these algebraic
-poles realise as the cusps of the hyperbolic triangulation
-([pole-to-cusp bijection](#conj:algebraic-geometric-dilog-equivalence)).
-
-**Self-check.** When writing or reviewing an encounter-side
-derivation, ask:
-
-1. *Which column does my coefficient ring live in?*
-2. *Have I used any data from the other column without going
- through $\tau_{\mathrm{arch}}$?*
-3. *Are bridging equalities written with $\approx$ (or with an
- explicit error term)?*
-
-If any answer is wrong, fix the derivation; do not hide the
-crossing in prose.
+**Motivic shorthand.**
+The $z$-Habiro completion cleanly houses algebraic encounter data, treating quantum dilogarithm poles as quotients of cyclotomic ideals. Under $\tau_{\mathrm{arch}}$, these algebraic poles realize as hyperbolic-triangulation cusps. Any violation of the wall boundary breaks the formal derivation.
 <!-- FILE_END: pre-tau-vs-post-tau.md -->
 
 <!-- FILE_START: vol-through-tau.md -->
-**Proposition.**
-*Let $(\mathbf{C}, A, \tau)$ be a QOU with fibre functor
-$\tau \colon \mathbf{C} \to \mathbf{Arch}$ to the category of
-archimedean realizations (smooth manifolds, real Hilbert spaces,
-or any chosen archimedean target). For every braid
-$\beta \in H_n(R, q)$, the real-valued knot volume $\mathrm{Vol}(K_\beta)$
-of its closure factors strictly through $\tau$:*
-
-$$
-  \begin{tikzcd}[row sep=2.4em, column sep=4em]
-    \mathrm{End}_{\mathbf{C}}(A^{\otimes n})
-      \arrow[r, "\mathrm{tr}_M"]
-      \arrow[d, "\tau_{\mathrm{arch}}"']
-    & \mathbb{Z}[q^{1/2}, q^{-1/2}]
-      \arrow[d, "\tau_{\mathrm{arch}}"]
-    \\
-    \tau(\mathrm{End}_{\mathbf{C}}(A^{\otimes n}))
-      \arrow[r, "\mathrm{tr}_M^{\mathrm{arch}}"']
-    & \mathbb{R}
-  \end{tikzcd}
-$$
-
-*and there is no other archimedean route. Equivalently, the
-diagram of QOU outputs commutes,*
+*Let $(\mathbf{C}, A, \tau)$ be a QOU with fibre functor $\tau$. For every braid $\beta \in H_n(R, q)$, the real-valued knot volume $\mathrm{Vol}(K_\beta)$ factors strictly through $\tau$:*
 
 $$
   \mathrm{Vol}(K_\beta)
   \;=\;
   \tau_{\mathrm{arch}}\bigl(\mathrm{Vol}_q(\beta)\bigr)
   \;=\;
-  (\pi_\infty \circ \tau)\bigl(\mathrm{Vol}_q(\beta)\bigr),
+  (\pi_\infty \circ \tau)\bigl(\mathrm{Vol}_q(\beta)\bigr).
 $$
 
-*where $\pi_\infty \colon \mathbb{A} \to \mathbb{R}$ is the
-[adelic archimedean projection](#def:adelic-substrate) and
-$\tau$ is the QOU fibre functor.*
+*There is no other archimedean route.*
 
 **Identification.**
-On the algebraic-quantum-volume part of $\mathrm{End}_{\mathbf{C}}(A^{\otimes n})$,
-$\tau_{\mathrm{arch}}$ coincides with the
-[archimedean realization functor](#def:archimedean-realization-functor)
-$\mathcal{R}_{\mathrm{top}} = \pi_\infty \circ \chi_{\mathrm{top}}$.
-Concretely:
-
-$$
-  \tau_{\mathrm{arch}}
-  \;=\;
-  \mathcal{R}_{\mathrm{top}}\big|_{\widehat{\mathcal{M}}_{\mathrm{Vol}}}
-  \;=\;
-  \mathcal{R}_{\mathrm{top}} \circ \mu,
-$$
-
-i.e. $\mathcal{R}_{\mathrm{top}}$ is just $\tau$'s archimedean
-restriction, and $\mu$ is the
-[motivic mass measure](#def:motivic-mass-measure) that prepares the
-input. The fibre functor $\tau$ is the *only* exit from $\mathbf{C}$
-to the laboratory continuum; the realization functor is its
-canonical computation rule on quantum-volume motives.
+On the algebraic quantum volume, $\tau_{\mathrm{arch}}$ coincides with $\mathcal{R}_{\mathrm{top}} = \pi_\infty \circ \chi_{\mathrm{top}}$. The fibre functor $\tau$ is the exclusive bridge to the laboratory continuum. The realization functor defines its canonical computation rule.
 
 **Sketch.**
-$(\Rightarrow)$ Any composite $\mathbf{C} \to \mathbb{R}$ that
-preserves tensor products and dualities of $\mathbf{C}$ and lands
-in archimedean spaces is, by Tannaka–Krein duality / rigidity, a
-fibre functor — hence $\tau$ up to natural isomorphism. The
-$\tau$-image of $\mathrm{Vol}_q(\beta)$ is therefore the unique
-archimedean output.
-
-$(\Leftarrow)$ Given $\tau$, the composite $\tau \circ \mathrm{Vol}_q$
-takes values in archimedean realizations of the trace of the
-braid representation. Restriction to $\mathbb{R}$ via $\pi_\infty$
-recovers exactly $\ln |\mathrm{Vol}_{q_0}(\beta)|$, the standard
-formula
-([algebraic quantum volume](#def:algebraic-quantum-volume)).
-
-**Corollary.**
-Any physical computation of a knot volume in QOU — Kashaev limit,
-Bloch–Wigner dilogarithm, hyperbolic-volume formula
-([$q$-Kashaev volume density](#rem:kashaev-volume-density),
-[Kashaev as archimedean realization](#rem:kashaev-as-archimedean-realization))
-— is the value of the same composite $\pi_\infty \circ \tau$.
-There is no archimedean side-channel: every real-valued QOU
-observable is the $\tau$-shadow of a categorical morphism.
-
-## Lean formalization
-
-The companion Lean `vol_through_tau_factors` currently encodes an existence stub (`∃ v, True`) pending a faithful statement; the sketch above is the intended content, deferred via `sorry` (`-- Ref: [kashaev1997]`, `[manuscript]`).
+By Tannaka-Krein rigidity, any composite mapping $\mathbf{C}$ to $\mathbb{R}$ that preserves tensor products and dualities is uniquely isomorphic to the fibre functor $\tau$. Conversely, restricting the composite $\tau \circ \mathrm{Vol}_q$ via $\pi_\infty$ recovers exactly $\ln |\mathrm{Vol}_{q_0}(\beta)|$. Every physical computation of a knot volume (e.g., Kashaev limit, Bloch-Wigner dilogarithm) evaluates this identical composite.
 <!-- FILE_END: vol-through-tau.md -->
 
 <!-- FILE_START: vol-as-motivic-period.md -->
-**Reading.**
-The hyperbolic volume $\mathrm{Vol}(S^3 \setminus K)$ of a hyperbolic
-knot complement is a *motivic period* — specifically, the value of a
-mixed-Tate motive under the **Bloch--Wigner regulator** $r_\infty$.
-Under this reading, the
-[archimedean realization functor](#def:archimedean-realization-functor)
-is the period-evaluation map: it takes a class in the (quantum) Bloch
-group and returns its archimedean image in $\mathbb{R}$.
-
 **Period interpretation.**
-A *period*, in the sense of Kontsevich--Zagier, is a complex number
-expressible as the integral of an algebraic differential form over a
-domain cut out by polynomial inequalities with rational coefficients.
-For a hyperbolic knot complement triangulated with shape parameters
-$z_1, \ldots, z_k \in \overline{\mathbb{Q}}$ satisfying Thurston's
-gluing equations, the volume is
+The hyperbolic volume $\mathrm{Vol}(S^3 \setminus K)$ is a motivic period: the value of a mixed-Tate motive under the Bloch-Wigner regulator $r_\infty$. For a hyperbolic knot complement with shape parameters $z_i$, the volume is:
 
 $$
   \mathrm{Vol}(S^3 \setminus K)
   \;=\;
   \sum_{i=1}^{k} D(z_i),
-\qquad
-D(z) := \operatorname{Im}\,\mathrm{Li}_2(z)
-       + \log|z|\cdot\arg(1-z),
 $$
 
-where $D$ is the **Bloch--Wigner dilogarithm**. Each summand $D(z_i)$
-is the period of an algebraic 1-form on $\mathbb{P}^1\setminus\{0,1,\infty\}$
-integrated over a cycle determined by $z_i$, hence a period in the
-Kontsevich--Zagier sense [`zagier1986`,`neumann-zagier1985`].
+where $D$ is the Bloch-Wigner dilogarithm. Each $D(z_i)$ is a Kontsevich-Zagier period.
 
 **Regulator interpretation.**
-Equivalently, the shape parameters define a class
-$[K] \in \mathcal{B}(\overline{\mathbb{Q}})$ in the (pre-)Bloch group,
-and
+The shape parameters define a class $[K] \in \mathcal{B}(\overline{\mathbb{Q}})$ in the pre-Bloch group, yielding:
 
 $$
   \mathrm{Vol}(S^3 \setminus K)
   \;=\;
-  r_\infty\bigl([K]\bigr),
+  r_\infty\bigl([K]\bigr).
 $$
 
-where $r_\infty : \mathcal{B}(\mathbb{C}) \to \mathbb{R}$ is the
-archimedean Beilinson regulator restricted to the Bloch group. Under
-this perspective, $\mathrm{Vol}(K)$ is exactly $K$-theoretic — the
-image of an algebraic $K$-theory class under a transcendental
-regulator.
+The volume $\mathrm{Vol}(K)$ is the $K$-theoretic image of an algebraic class under a transcendental regulator.
 
 **QOU placement.**
-The
-[archimedean realization functor](#def:archimedean-realization-functor)
-already factorises as $\tau_{\mathrm{arch}} = \pi_\infty \circ \tau$
-on motivic inputs and as $\pi_\infty \circ \chi_{\mathrm{top}}$ on
-arc-space inputs. The Bloch--Wigner reading is the third equivalent
-factorisation, restricted to inputs that come from
-$\mathrm{Vol}_q$:
-
-$$
-  \tau_{\mathrm{arch}}\!
-  \begin{pmatrix}
-    \text{algebraic quantum volume}\\
-    \mathrm{Vol}_q(\mathcal{B}_K) \in \mathbb{Z}[q^{\pm 1/2}]
-  \end{pmatrix}
-  \;=\;
-  r_\infty\!\bigl([K]\bigr)
-  \;=\;
-  \mathrm{Vol}(S^3 \setminus K).
-$$
-
-The three pictures — adelic projection, Euler-characteristic
-realization, Bloch--Wigner regulator — agree on this common domain.
-Each is useful for a different formal manipulation:
-
-* The **adelic** picture
- ([archimedean realization functor](#def:archimedean-realization-functor))
- is what controls the *categorical* compatibility ($\tau_{\mathrm{arch}}$
- factoring through the QOU fibre functor $\tau$).
-* The **Euler-characteristic** picture
- ([motivic mass measure](#def:motivic-mass-measure)) governs the
- blow-up calculus for arc-space integrals.
-* The **Bloch--Wigner / regulator** picture is the one that connects
- $\mathrm{Vol}_q$ to existing motivic-cohomology and quantum-topology
- literature (Kashaev, Murakami--Murakami, Garoufalidis--Zagier).
-
-**Scope.**
-This is an *interpretive remark*: it makes no new mathematical claim
-beyond what is in
-[$\mathrm{Vol}(K)$ factors through $\tau$](#prop:vol-through-tau).
-It names the existing factorisation in motivic-period
-language so that the
-[Kashaev volume conjecture](#conj:kashaev-volume-conjecture) and the
-archimedean remainder decay conjecture
-can be cross-referenced with the regulator literature.
+The archimedean realization functor factorizes identically across three pictures: adelic projection ($\pi_\infty \circ \tau$), Euler-characteristic integration ($\pi_\infty \circ \chi_{\mathrm{top}}$), and Bloch-Wigner regulation ($r_\infty$). These pictures agree entirely on the algebraic quantum volume domain. Each formalizes a distinct aspect: adelic ensures categorical compatibility, Euler-characteristic handles blow-up calculus, and Bloch-Wigner bridges to quantum topology literature.
 <!-- FILE_END: vol-as-motivic-period.md -->
 
 <!-- FILE_START: kashaev-volume-density.md -->
-> **SUPERSEDED-$\rho_q$ note .** Any use of the
-> scalar substrate density $\rho_q = 1/\hbar_q^2$ in this block is the
-> structurally-wrong leading-order ansatz per
-> [`mass-endomorphism-tower.md` §SUPERSEDED](mass-endomorphism-tower.md);
-> the canonical replacement is the operator-valued $A^\lambda_{\mu, \nu}(I)$
-> graded expansion [`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md).
-> Full purge tracking: [`docs/audits/-superseded-rho-q-purge.md`](../../../docs/audits/-superseded-rho-q-purge.md).
+> **SUPERSEDED-$\rho_q$ note .** Any use of the scalar substrate density $\rho_q = 1/\hbar_q^2$ in this block is the structurally-wrong leading-order ansatz per [`mass-endomorphism-tower.md` §SUPERSEDED](mass-endomorphism-tower.md).
 
-The topological mass formula
-([topological mass formula](#prop:topological-mass-formula))
-
-$$
-  \mathfrak{m}(K) = \frac{\mathrm{Vol}(K)}{\hbar_q^{2}}
-$$
-
-is most accordingly read as a **volume $\times$ density** product. This
-remark collects the three ingredients --- density $\rho_q$, topological
-volume $\mathrm{Vol}(K)$, and the algebraic bridge provided by the
-Kashaev limit --- into a single narrative that unifies the continuous
-hyperbolic geometry of the mass endomorphism with the discrete Markov
-trace over the Iwahori--Hecke algebra.
+The topological mass formula $\mathfrak{m}(K) = \mathrm{Vol}(K)/\hbar_q^2$ is exactly a volume $\times$ density product.
 
 ### Substrate density $\rho_q$
 
-*Define the **substrate density** to be the inverse squared quantum
-Planck constant*
-([quantum Planck constant](#def:quantum-planck-constant)):
+*Define the **substrate density** to be the inverse squared quantum Planck constant:*
 
 $$
   \rho_q
   \;:=\;
   \frac{1}{\hbar_q^{2}}
   \;=\;
-  \frac{1}{(1 - q^{-1})^{2}}
-  \;=\;
   \frac{q^{2}}{(q-1)^{2}}.
 $$
 
-Physically, $\rho_q$ is the **quantum drag density** imposed by the
-substrate: the categorical cost, per unit of topological volume, of
-transporting a closed vortex $\varrho \colon \mathbf{1} \to A$ through
-the Frobenius--Hopf structure. At the substrate value $q_0 \approx
-1.10998$ ([substrate parameter](#def:substrate-parameter)) the density
-is finite and greater than unity; in the classical
-limit $q \to 1$ one has $\hbar_q \to 0$ and $\rho_q \to \infty$,
-recovering the expected decoupling of mass from topology.
-
-Rewriting the topological mass formula with $\rho_q$ made explicit:
-
-$$
-  \mathfrak{m}(K)
-  \;=\;
-  \underbrace{\mathrm{Vol}(K)}_{\text{topological volume}}
-  \;\cdot\;
-  \underbrace{\rho_q}_{\text{substrate density}}.
-$$
-
-Mass is volume weighted by the drag density of the substrate. This
-rewriting is an exact algebraic restatement of the proposition; the
-$\approx$ sign only enters below, when the continuous $\mathrm{Vol}(K)$
-is replaced by the Kashaev limit of Markov traces.
+Physically, $\rho_q$ measures the categorical drag cost of transporting a closed vortex through the Frobenius-Hopf structure. Mass is topological volume weighted by substrate drag.
 
 ### The Kashaev bridge
 
-The symbol $\mathrm{Vol}(K)$ appears on both sides of a philosophical
-divide. Read archimedeanly, $\mathrm{Vol}(K)$ is the hyperbolic volume
-of the knot complement $S^{3} \setminus K$: a continuous real number
-extracted from a Riemannian metric of constant negative curvature. Read
-algebraically --- in the register native to the Frobenius--Hopf axioms
---- $\mathrm{Vol}(K)$ is a shadow of a finite sequence of Hecke crossing
-resolutions. The Kashaev Volume Conjecture
-\cite{kashaev1997, murakami-murakami2001} identifies the two:
+The Kashaev Volume Conjecture bridges the archimedean continuous volume and the algebraic discrete Markov trace:
 
 $$
   \mathrm{Vol}(K)
   \;=\;
   2\pi\,\lim_{N \to \infty}
-  \frac{\log\lvert J_{N}(K;\,e^{2\pi i/N})\rvert}{N},
+  \frac{\log\lvert J_{N}(K;\,e^{2\pi i/N})\rvert}{N}.
 $$
 
-where $J_{N}(K; q)$ is the **$N$-coloured** Jones polynomial at $q$:
-the Markov trace on the Hecke closure of $\beta_{K}$ with a
-Jones--Wenzl projector $p_{N-1}$ inserted, equivalently the quantum
-trace in the $N$-dimensional irreducible representation
-$V_{N-1}$ of $U_{q}(\mathfrak{sl}_{2})$. The standard Markov trace
-$\mathrm{tr}_M$ recovers only the $N = 2$ case
-([Jones--Markov trace](#thm:jones-markov-trace)); higher colourings
-replace $\mathrm{tr}_M$ by the trace $\mathrm{tr}_M^{(N)}$ on the
-$V_{N-1}$-coloured closure, and all three --- coloured trace,
-categorical $\int_{A}$ on the $N$-th symmetric power, and
-$J_{N}$ --- agree. In the QOU setting the left-hand side is the
-continuous holonomy term that appears in the archimedean proof of
-the mass formula; the right-hand side is a limit of **coloured
-Markov traces** in the Iwahori--Hecke algebra $H_{n}(q)$, each still
-a categorical $\int_{A}$ evaluation, but on the Hecke image
-$\rho(\beta_{K})$ composed with the projector $p_{N-1}$
-([Jones--Markov trace](#thm:jones-markov-trace);
-[Markov trace product](#thm:markov-trace-product)).
+The left-hand side is the continuous hyperbolic volume. The right-hand side is an asymptotic limit of colored Markov traces evaluated within the Hecke algebra.
 
 ### Inverting the ontology
 
-The Kashaev limit does more than relate two expressions for the same
-number: it reverses the usual direction of abstraction. In a
-classically hyperbolic account, the volume is fundamental and the Jones
-invariants are derivative asymptotic witnesses to it. In the
-non-archimedean, algebraically-native register of the QOU the roles
-swap:
-
-1. **The trace is fundamental.** The categorical Haar morphism
- $\int_{A} \colon A \to \mathbf{1}$ and the categorical trace of
- $(\int_{A} \otimes \mathrm{id}) \circ \Delta \circ \varrho$ are
- finite, exact, and defined without recourse to a continuous manifold.
- Through the representation $\rho \colon B_{n} \to H_{n}(q)$ the
- fundamental-colour ($N = 2$) case coincides with the standard
- Markov trace $\mathrm{tr}_M$
- ([Jones--Markov trace](#thm:jones-markov-trace)); higher colours
- use the projector-inserted trace $\mathrm{tr}_M^{(N)}$, still
- defined purely inside $H_{n}(q)$.
-2. **The coloured Jones polynomials are coloured Markov traces.**
- Each $J_{N}(K;\,e^{2\pi i/N})$ is a finite algebraic evaluation of
- $\mathrm{tr}_M^{(N)}$ on the Hecke image of the braid closure
- that represents $K$ --- equivalently, of the quantum trace in
- $V_{N-1}$. The algebraic quantum volume
- $\mathrm{Vol}_{q}(\beta) \in \mathbb{Z}[q^{1/2}, q^{-1/2}]$
- ([algebraic quantum volume](#def:algebraic-quantum-volume)) collects
- these evaluations (across colours and roots of unity) into a
- single object, which embeds into the Habiro ring
- ([Habiro ring](#def:habiro-ring)).
-3. **The hyperbolic volume is emergent.** By the Kashaev conjecture,
- $\mathrm{Vol}(K)$ is the asymptotic coefficient of the logarithm of
- these coloured Markov traces as the colour $N \to \infty$. It is
- the macroscopic shadow of an infinite family of finite algebraic
- measurements, not an input to them
- (algebraic volume specialisation).
-
-What the archimedean observer calls "the continuous hyperbolic volume
-of the knot complement" is, in the substrate, nothing more than the
-accumulated **algebraic drag** generated as the state's representation
-is transported by the comultiplication $\Delta$ and sorted by the
-$R$-matrix into symmetric and antisymmetric eigenspaces. Each crossing
-contributes a rigidly determined quantum crossing weight
-([crossing energy](#def:crossing-energy)) from the eigenvalues
-$q$ and $-q^{-1}$ of $T$; the sum of these crossing weights, resolved
-to Gröbner--Shirshov normal form
-([nuclear normal form](#prop:nuclear-groebner-reduction)), is the
-only physics in play.
+The QOU framework reverses the classical priority: the discrete trace is fundamental, while the continuous volume is emergent. The colored Jones polynomials are finite algebraic evaluations of Markov traces. The hyperbolic volume simply describes the asymptotic scaling of these exact categorical evaluations. The macroscopic continuum shadow emerges from the accumulated algebraic drag of discrete crossing resolutions.
 
 ### Consequences for the mass formula
 
-Combining density and emergent volume, the mass of a knot-particle $K$
-with braid representative $\beta_{K}$ admits the fully algebraic
-expression
+Substituting the Kashaev identity yields a fully algebraic derived mass:
 
 $$
   \mathfrak{m}(K)
@@ -550,319 +157,66 @@ $$
   \Bigl[
     2\pi\,\lim_{N \to \infty}
     \frac{\log\lvert J_{N}(K;\,e^{2\pi i/N})\rvert}{N}
-  \Bigr],
+  \Bigr].
 $$
 
-where each $J_{N}(K;\,e^{2\pi i/N})$ is the coloured Markov trace
-$\mathrm{tr}_M^{(N)}(\rho(\beta_{K}))$ at $q = e^{2\pi i/N}$ ---
-still an entirely algebraic evaluation inside $H_{n}(q)$.
-
-Three observations follow.
-
-1. *No continuous input.* Every quantity on the right-hand side is
- either a rational function of $q$ ($\rho_{q}$) or a coloured
- Markov trace in $H_{n}(q)$ evaluated at roots of unity
- ([Markov trace product](#thm:markov-trace-product)). The hyperbolic
- volume enters only as the asymptotic coefficient, not as a separately
- posited datum.
-2. *The substrate evaluation is finite.* At $q = q_{0}$
- ([substrate parameter](#def:substrate-parameter)) the mass is
- computed directly from $\ln\lvert\mathrm{Vol}_{q_{0}}(\beta_{K})\rvert$
- ([algebraic quantum volume](#def:algebraic-quantum-volume))
- without passing to the Kashaev limit; the Kashaev identity calibrates
- the overall energy scale (route 2 of
- algebraic volume specialisation)
- and fixes the coefficient relating $\rho_{q_{0}}$ to the dimensionful
- mass unit.
-3. *Physical prediction vs.\ exact identity.* The Volume--Density form
- is a derived approximation --- the $\approx$ is obligatory --- whose
- error term is controlled by the convergence rate of the Kashaev limit
- and by the higher-order corrections to the topological mass
- decomposition
- ([topological mass](#thm:topological-mass)). The underlying
- categorical identity
- $\mathfrak{m}(\varrho) = \bigl\lVert \mathrm{tr}_{\mathrm{desc}}(\varrho) \bigr\rVert + \sum_{i} \bigl\lVert \mathrm{tr}_{\mathrm{trans}}(\varrho, p_{i}) \bigr\rVert$
- is exact.
-
-In short: mass is volume times density; volume is the Kashaev shadow
-of an infinite family of coloured Markov traces (each a categorical
-$\int_{A}$ on the projector-inserted Hecke image); every step is
-algebraic, and the appearance of continuous hyperbolic geometry in
-the archimedean mass formula is an asymptotic artefact of the
-quantum group at roots of unity, not a prerequisite of the
-framework.
-
-*Formal asymptotic content. The Kashaev limit $N \to \infty$ is the
-[standard-part functor](#def:standard-part-functor) applied to the
-coloured Hecke trace at $q = e^{2\pi i/N}$; the surreal reframing
-of the volume conjecture is recorded in
-[Kashaev as standard-part](#conj:kashaev-surreal), and the
-asymptotic rate is catalogued in the
-[body asymptotics catalog](#rem:body-asymptotics-catalog).*
+No continuous inputs remain. Every constituent is a discrete Hecke trace evaluated at roots of unity. The finite categorical evaluation operates precisely at the non-asymptotic substrate value $q_0 \approx 1.11$, avoiding the $N \to \infty$ continuum idealization entirely.
 <!-- FILE_END: kashaev-volume-density.md -->
 
 <!-- FILE_START: kashaev-as-archimedean-realization.md -->
-The Kashaev volume conjecture is exactly the
-[archimedean realization functor](#def:archimedean-realization-functor)
-applied to the [algebraic quantum volume](#def:algebraic-quantum-volume)
-of a knot. This makes the conjecture's role inside QOU explicit: it
-is not an external coincidence between quantum invariants and
-hyperbolic geometry, it is the canonical instance of
-$\mathcal{R}_{\mathrm{top}}$ on the brane substrate.
+The Kashaev volume conjecture identifies the archimedean realization functor applied to the algebraic quantum volume. It is not an external mathematical coincidence, but the canonical action of $\mathcal{R}_{\mathrm{top}}$ on the brane substrate.
 
-**Algebraic side (non-archimedean).** For a hyperbolic knot $K$
-presented as the closure of a braid $\mathcal{B}_K$, the colored Jones
-polynomial evaluated at the $N$-th root of unity
-$q = \exp(2\pi i / N)$ is a discrete algebraic trace over the
-local Hecke algebra $H_n(R, q)$
-([Jones from Markov trace](#thm:jones-markov-trace)),
+**Algebraic side.**
+The colored Jones polynomial evaluated at roots of unity is a purely $p$-adic/cyclotomic discrete algebraic trace. The algebraic quantum volume $\mathrm{Vol}_q(\mathcal{B}_K)$ packages these local data into a global Habiro element.
 
-$$
-  J_N(K)
-  \;=\;
-  \mathrm{tr}_M\bigl(\rho(\mathcal{B}_K)\bigr)
-  \;\in\;\mathbb{Z}[q^{1/2}, q^{-1/2}]\big/\Phi_N(q),
-$$
-
-a purely $p$-adic / cyclotomic datum at the $N$-th place of the
-[adelic substrate](#def:adelic-substrate). The
-algebraic quantum volume $\mathrm{Vol}_q(\mathcal{B}_K)$ packages all
-these local data into the global Habiro element.
-
-**Archimedean realization via $\tau$.** Taking the asymptotic
-limit $N \to \infty$ is the action of the QOU fibre functor $\tau$
-restricted to its archimedean component
-$\tau_{\mathrm{arch}} = \pi_\infty \circ \tau$: it discards the
-cyclotomic / $p$-adic information and selects the $\mathbb{R}$
-component of the adelic ring. The Kashaev–Murakami–Murakami theorem
-states the resulting limit equals the hyperbolic volume of the
-knot complement,
-
-$$
-  \mathrm{Vol}(S^3 \setminus K)
-  \;=\;
-  2\pi \cdot \lim_{N \to \infty}
-  \frac{\log \lvert J_N(K)\rvert}{N}
-  \;\in\;\mathbb{R}.
-$$
-
-This is precisely $\tau_{\mathrm{arch}}$ on the algebraic
-quantum volume — equivalently $\mathcal{R}_{\mathrm{top}}$
-applied to the same input
-([Vol(K) factors through $\tau$](#prop:vol-through-tau)):
+**Archimedean realization.**
+The asymptotic limit $N \to \infty$ executes the action of $\tau_{\mathrm{arch}} = \pi_\infty \circ \tau$. It discards cyclotomic data and projects the adelic ring to $\mathbb{R}$. The Kashaev-Murakami-Murakami theorem confirms this limit equals the hyperbolic volume:
 
 $$
   \mathrm{Vol}(S^3 \setminus K)
   \;=\;
   \tau_{\mathrm{arch}}\bigl(\mathrm{Vol}_q(\mathcal{B}_K)\bigr)
   \;=\;
-  (\pi_\infty \circ \tau)\bigl(\mathrm{Vol}_q(\mathcal{B}_K)\bigr)
-  \;=\;
   \mathcal{R}_{\mathrm{top}}\bigl(\mathrm{Vol}_q(\mathcal{B}_K)\bigr).
 $$
 
-The fibre-functor step $\tau$ is the hyperbolic realization
-(Hodge realization at the cusp); $\pi_\infty$ is the
-$N \to \infty$ asymptotic projection. $\tau$ is the *only*
-archimedean route: there is no Kashaev limit independent of the
-fibre functor.
-
-**Physical interpretation.** Compare with
-[$q$-Kashaev volume density](#rem:kashaev-volume-density): the
-real-valued hyperbolic volume that emerges in the limit is the
-inertial mass $\mathfrak{m}$ of the corresponding hadronic state.
-The asymptotic limit and the laboratory measurement are the same
-operation — both are $\pi_\infty$ — and the Volume Conjecture is
-the consistency statement that QOU's archimedean realization of a
-braid's motivic data agrees with the hyperbolic geometry of its
-knot closure.
-
-The Kashaev limit thus *is* the realization functor of QOU: not an
-analogy, an identity.
+The fibre functor $\tau$ is the exclusive archimedean route. The Kashaev limit is the realization functor of the QOU.
 <!-- FILE_END: kashaev-as-archimedean-realization.md -->
 
 <!-- FILE_START: phi-q-piece.md -->
-Let $\beta \in B_n$ be a braid with closure
-$\widehat{\beta} = K \subset S^3$ and let
-$\{\sigma_0, \dots, \sigma_{n-2}\}$ enumerate its crossings (one
-per Hecke generator instance). For each subset
-$S \subseteq \{0, \dots, n-2\}$, the **Φ$_q$-piece $K_S \subseteq S^3$**
-is the link obtained from $\widehat{\beta}$ by replacing each crossing
-$\sigma_i$ with $i \notin S$ by its $L_0$-smoothing (Kauffman skein
-resolution [Kauffman bracket](#thm:jones-markov-trace)) while leaving
-the crossings $\{\sigma_i : i \in S\}$ intact.
+Let $\beta \in B_n$ be a braid. For each subset $S \subseteq \{0, \dots, n-2\}$, the **$\Phi_q$-piece $K_S \subseteq S^3$** is the link obtained from $\widehat{\beta}$ by $L_0$-smoothing every crossing not in $S$ while leaving crossings in $S$ intact.
 
-Concretely: let $\beta_S \in B_n$ denote the braid obtained from
-$\beta$ by deleting (i.e., replacing by the identity strand) every
-$\sigma_i$ with $i \notin S$ and keeping every $\sigma_i$ with $i \in S$.
-Then
+This construction satisfies three properties:
+1. **Functoriality:** $K_\emptyset$ is the unlink; $K_{\{0,\dots,n-2\}}$ is the original closure.
+2. **Subset compatibility:** $K_S = (K_T)_S$ for $S \subseteq T$.
+3. **Categorical interpretation:** The pieces $K_S$ constitute the geometric shadow of the Wedderburn-block stratification. The algebraic spectral coordinate $\prod_{i \in S} \hat{V}_i$ localizes geometrically to $K_S$.
 
-$$
-  K_S \;:=\; \widehat{\beta_S}
-  \;\subseteq\; S^3.
-$$
-
-The Φ$_q$ tower
-([mass endomorphism tower](#prop:mass-endomorphism-tower))
-indexes its summands by the *non-empty* subsets with
-$\lvert S \rvert \leq 2$ — singletons and pairs — but the
-construction above is well-defined for *every* $S$, including
-$S = \emptyset$ (the trivial unlink) and $S = \{0, \dots, n-2\}$
-(the original closure $K$). The full family $\{K_S\}_{S \subseteq
-\{0,\dots,n-2\}}$ is what enjoys the structural properties below;
-the truncation $\lvert S \rvert \leq 2$ is a property of the tower,
-not of the Φ$_q$-piece itself.
-
-The construction satisfies three structural properties:
-
-1. **Functoriality.** $K_\emptyset$ is the trivial $n$-component
-   unlink (no crossings remain); $K_{\{0,\dots,n-2\}} = K$ is the
-   original closure.
-
-2. **Subset compatibility.** For $S \subseteq T$ the link $K_S$ is
-   obtained from $K_T$ by smoothing every crossing in $T \setminus S$,
-   i.e., $K_S = (K_T)_S$.
-
-3. **Categorical interpretation.** The same family $\{K_S\}_S$ is
-   the geometric shadow of the Wedderburn-block stratification of the
-   transient mass element
-   ([categorical mass as Markov trace](#prop:categorical-mass-markov)):
-   the spectral coordinate $\prod_{i \in S} \hat{V}_i$ on the algebraic
-   side localises geometrically to the link $K_S$.
-
-The piece $K_S$ is the geometric carrier of the per-$S$ summand
-$\Phi_q\bigl(\bigl\lvert\prod_{i \in S} \hat{V}_i^{\mathrm{full}}\bigr\rvert\bigr)$
-of the Φ$_q$ tower
-([mass endomorphism tower](#prop:mass-endomorphism-tower)).
-The empty piece $K_\emptyset$ is the descended (level-zero) carrier;
-all other $K_S$ with $1 \leq \lvert S \rvert \leq 2$ are the transient
-carriers.
-
-The hyperbolic volume $\mathrm{Vol}_{\mathrm{hyp}}(S^3 \setminus K_S)$
-of the piece is well-defined whenever the complement is hyperbolic;
-when it is not (e.g., when $K_S$ is an unknot or torus link), the
-piece contributes zero hyperbolic volume by convention. The Φ$_q$-piece
-is the unit on which the archimedean realisation
-([archimedean realization functor](#def:archimedean-realization-functor))
-acts when restricted to the per-block summands of the tower.
+The piece $K_S$ acts as the geometric carrier of the per-$S$ summand $\Phi_q\bigl(\bigl\lvert\prod_{i \in S} \hat{V}_i^{\mathrm{full}}\bigr\rvert\bigr)$. The empty piece is the descended level-zero carrier. All others are transient carriers. The $\Phi_q$-piece serves as the discrete unit on which archimedean realization evaluates the tower.
 
 ### Motivic interpretation
 
-In motivic language, $\Phi_q$ is the **Faddeev–Kashaev quantum
-dilogarithm** [`faddeev1994`] — a $q$-deformation of the Bloch–Wigner
-dilogarithm $D_2$ whose pentagon five-term relation is the defining
-relation of the quantum Bloch group
-([quantum Bloch group](#def:quantum-bloch-group)). The per-piece
-summand $\Phi_q(\lvert V_S\rvert)$ is a class in the quantum Bloch
-group $\mathfrak{B}(q)$, and the family $\{K_S\}_S$ is the geometric
-stratification along which the regulator $\mathfrak{B}(q) \to \mathbb{R}$
-decomposes. Recasting the Φ$_q$-piece as a quantum-dilog class fixes
-its motivic type and makes the bridge to hyperbolic volume
-([Φ$_q$–JSJ bridge](#rem:phi-q-tower-jsj-bridge)) a regulator
-statement rather than a coincidence of two evaluation schemes.
+The quantum dilogarithm $\Phi_q$ is a $q$-deformation of the Bloch-Wigner dilogarithm. The per-piece summand $\Phi_q(\lvert V_S\rvert)$ represents a class in the quantum Bloch group. The family $\{K_S\}_S$ provides the geometric stratification along which the regulator decomposes, solidifying the bridge to hyperbolic volume as a strict regulator statement.
 <!-- FILE_END: phi-q-piece.md -->
 
 <!-- FILE_START: phi-q-tower-algebraic-stratification.md -->
-> **SUPERSEDED-$\rho_q$ note .** Any use of the
-> scalar substrate density $\rho_q = 1/\hbar_q^2$ in this block is the
-> structurally-wrong leading-order ansatz per
-> [`mass-endomorphism-tower.md` §SUPERSEDED](mass-endomorphism-tower.md);
-> the canonical replacement is the operator-valued $A^\lambda_{\mu, \nu}(I)$
-> graded expansion [`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md).
-> Full purge tracking: [`docs/audits/-superseded-rho-q-purge.md`](../../../docs/audits/-superseded-rho-q-purge.md).
+> **SUPERSEDED-$\rho_q$ note .** Any use of the scalar substrate density $\rho_q = 1/\hbar_q^2$ in this block is the structurally-wrong leading-order ansatz per [`mass-endomorphism-tower.md` §SUPERSEDED](mass-endomorphism-tower.md).
 
-**Proposition (algebraic stratification of the Φ$_q$ tower).**
-*Let $\beta \in B_n$ be a braid with crossings indexed by
-$\{0, \ldots, n-2\}$. Let $H_n(R, q)$ be the Iwahori-Hecke algebra
-with Markov trace $\mathrm{tr}_M$ and let $J^\bullet$ be the
-Gröbner-Shirshov filtration on $H_n(R, q)$
-([graded Markov trace](#prop:graded-markov-trace-from-gs-filtration)).
-For each subset $S \subseteq \{0, \ldots, n-2\}$, let
-$\beta_S \in B_n$ be the braid obtained from $\beta$ by smoothing
-every crossing $i \notin S$ to the identity strand
-([Φ$_q$-piece definition](#def:phi-q-piece)). The Φ$_q$-tower
-admits a purely algebraic stratification by $|S|$:*
+**Proposition (algebraic stratification of the $\Phi_q$ tower).**
+*Let $\beta \in B_n$ be a braid. The $\Phi_q$-tower admits a purely algebraic stratification by $|S|$ within the Gröbner-Shirshov filtration of the Hecke algebra:*
 
 $$
   \mathfrak{m}(\varrho)
   \;=\;
-  \underbrace{\bigl\| \mathrm{tr}_M(\rho(\beta_\emptyset))\bigr\|_F}_{\text{descended carrier}}
+  \bigl\| \mathrm{tr}_M(\rho(\beta_\emptyset))\bigr\|_F
   \;+\;
   \sum_{|S| = 1} \Phi_q\bigl(\|\hat V_S\|_F\bigr)
   \;+\;
-  \sum_{|S| = 2} z^{2} \Phi_q\bigl(\|\hat V_S\|_F\bigr)
+  \sum_{|S| = 2} z^{2} \Phi_q\bigl(\|\hat V_S\|_F\bigr).
 $$
 
-*where $\|\cdot\|_F$ denotes the **categorical Frobenius norm**
-valued in $\mathbb{Z}[q^{\pm 1/2}]$ — **not** the Archimedean
-absolute value — and each summand is an element of
-$\mathbb{Z}[q^{\pm 1/2}]$ computed entirely within the Hecke
-algebra. The stratification is
-indexed by Hecke-tower :refterm[descent]{#descent} levels — singletons (level 1),
-adjacent and non-adjacent pairs (level 2) — not by 3-manifold pieces.
-Pentagon ascension ([mass endomorphism jet tower](#rem:mass-endomorphism-jet-tower))
-guarantees that order-$\geq 3$ defects ascend to level-$(n+1)$
-singletons or pairs in the jet tower; no triple or higher term
-appears at any fixed level.*
+*The Frobenius norm $\|\cdot\|_F$ evaluates entirely within the ground ring $\mathbb{Z}[q^{\pm 1/2}]$. This unconditional stratification identifies exactly with the $J^{|S|}/J^{|S|+1}$ grading of the GS confinement filtration.*
 
-## Content of this block
-
-This is the **algebraic-side reformulation** that the audit's
-GAP 8a calls for: every object on the right-hand side lives in
-$\mathbb{Z}[q^{\pm 1/2}]$, and every step of the construction is a
-Hecke-algebra operation (skein smoothing of a braid word, Markov
-trace of an element of $H_n(R, q)$, Laurent expansion in $q^{1/2}$).
-The norm $\|\cdot\|_F$ in the formula is the **Frobenius norm**
-$\|x\|_F^2 := \langle x, x\rangle_F$, valued in the ground ring;
-it is **not** the Archimedean absolute value.  Substitutions like
-$q \mapsto q_0 \in \mathbb{R}$ are post-$\tau$ and not used in any
-step of this proof.
-Three-manifold language ($S^3$, knot complement, hyperbolic volume,
-JSJ decomposition) does **not** appear on the algebraic side; it
-enters only as the τ-image of the algebraic structure under
-$\tau_{\mathrm{arch}}$
-(Φ$_q$-tower JSJ archimedean bridge).
-
-## The four levels of the algebraic stratification
-
-|    Level | Index                    | Algebraic content                                                                          | $\mathbb{Z}[q^{\pm 1}]$-class                                                               |
-| -------: | ------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------- |
-|        0 | $S = \emptyset$          | $\beta_\emptyset$ = trivial $n$-strand identity; $\rho(\beta_\emptyset) = 1 \in H_n(R, q)$ | $\mathrm{tr}_M(1) = 1$                                                                      |
-|        1 | $\lvert S \rvert = 1$    | $\beta_{\{i\}} = \sigma_i$; $\rho(\beta_{\{i\}}) \in H_n(R, q)$                            | $\hat V_i = z \cdot a_i + b_i$ ([algebraic quantum volume](#def:algebraic-quantum-volume)) |
-|        2 | $\lvert S \rvert = 2$    | $\beta_{\{i, j\}} = \sigma_i \sigma_j$; $\rho(\beta_{\{i, j\}}) \in H_n(R, q)$             | $\hat V_i \hat V_j$ (commutative scalars in $\mathbb{Z}[q^{\pm 1}]$)                        |
-| $\geq 3$ | $\lvert S \rvert \geq 3$ | absorbed into level $(n+1)$ via pentagon ascension                                         | n/a (does not appear at level $n$)                                                          |
-
-Each level is a **GS-filtration piece** of $H_n(R, q)$: the
-singletons $\sigma_i$ are at GS-degree 1, the pairs $\sigma_i \sigma_j$
-at GS-degree 2, and so on. The descended (level-0) carrier is the
-identity component, GS-degree 0. The truncation $\lvert S \rvert
-\leq 2$ at any fixed jet level is the **categorical content** of
-the mass-endomorphism formula
-([mass endomorphism tower](#prop:mass-endomorphism-tower)), not a
-3-manifold property.
-
-## Significance
-
-* **Discharges audit GAP 8a (wall risk).** The audit's worry was
-  that the Φ$_q$-tower reformulation read as 3-manifold/topological.
-  This proposition states the same content in pure Hecke-tower /
-  GS-filtration language. The 3-manifold picture is the τ-image,
-  not the derivation.
-
-* **Decouples the algebraic engine from the JSJ identification.**
-  The mass formula computes via algebraic stratification
-  (Φ$_q(|\hat V_S|)$ as a Laurent polynomial); the JSJ
-  identification of the τ-image is a separate conjecture
-  (Φ$_q$-tower JSJ bridge)
-  that *interprets* this algebraic structure on the geometric
-  side. If the JSJ conjecture remains open, the algebraic mass
-  formula is unaffected.
-
-* **Provides the audit with a concrete Hecke-tower structure** for
-  every block currently citing "JSJ pieces": replace
-  `JSJ piece $P$` with `algebraic stratum $S \subseteq \{0, \ldots, n-2\}$`
-  in the algebraic-side narrative; reserve the JSJ language for
-  the τ-image discussion.
+The algebraic stratification operates strictly pre-$\tau$. It decomposes the mass endomorphism using only discrete categorical data, isolating the structural descent without invoking any hyperbolic or continuous geometry.
 <!-- FILE_END: phi-q-tower-algebraic-stratification.md -->
 
 <!-- FILE_START: kashaev-volume-conjecture.md -->

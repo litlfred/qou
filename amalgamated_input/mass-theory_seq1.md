@@ -1,11 +1,11 @@
 <!-- FILE_START: calibration-algebraic-mass-intro.md -->
-The previous section produced a categorical mass functor that is dimensionless and unfixed in scale. We now insert the minimum data needed to anchor it to physical units. The three inputs are aligned with the three Wedderburn channels of $H_3(R, q)$, so the calibration is structural rather than categorical: each channel takes one anchor, and the rest of the formula is forced. From the anchored mass we then derive the algebraic mass formula, the Hoefsmit seminormal $R$-matrix, the Habiro brane tower, and the quantum-dilogarithm $\Phi_q$ that compiles the whole chapter's canonical witnesses.
+The previous section produced a categorical mass functor that is dimensionless and unfixed in scale. We now anchor it to physical units. The three inputs align with the three Wedderburn channels of $H_3(R, q)$. The calibration is structural: each channel takes one anchor, forcing the rest of the formula. From the anchored mass we derive the algebraic mass formula, the Hoefsmit seminormal $R$-matrix, the Habiro brane tower, and the quantum-dilogarithm $\Phi_q$ that compiles the chapter's canonical witnesses.
 
-The opening blocks set the calibration discipline. Conjecture: Normal form of the Hecke mass element names the canonical element whose Markov trace will carry the mass, and Remark: Calibration inputs and predictive content lays out the no-fitting rule. The pivot is Proposition: Exactly three calibration inputs ($m_e$, $m_\mu/m_e$, $\mathfrak{Q}_\beta(n)$), aligned to the three Wedderburn channels of $H_3(R, q)$, which proves that exactly three anchors are needed, one per channel, with the supporting Remark: Two-tier scaling $(p, q)$ and Proposition: Three parameters aligned to Wedderburn channels tracking how the channels carry the scaling. Theorem: Three-invariant atomic mass formula then writes the resulting algebraic mass formula, with Proposition: Binding scale and Catalan's constant and Proposition: Derived-only mass formula reproduces light atomic masses to sub-percent checking it against the light isotopes.
+The Normal form of the Hecke mass element conjecture identifies the canonical element whose Markov trace carries the mass. The Calibration inputs and predictive content remark establishes the no-fitting rule. The Exactly three calibration inputs proposition ($m_e$, $m_\mu/m_e$, $\mathfrak{Q}_\beta(n)$) proves that exactly three anchors are needed—one per Wedderburn channel. The Two-tier scaling $(p, q)$ remark and Three parameters aligned to Wedderburn channels proposition track how the channels carry the scaling. The Three-invariant atomic mass formula theorem establishes the algebraic mass formula, and the Derived-only mass formula proposition verifies it against the light isotopes.
 
-The body of the section develops the seminormal and convergence machinery. Proposition: Hoefsmit seminormal matrices as $R$-matrix evaluations in $H_n(q)$, with the figure-eight branching rule, supplies the explicit seminormal forms. The convergence backbone runs through Proposition: Hecke convergence bound, Proposition: Markov-trace inductive limit, and the long $\mathfrak{Q}_\beta$ ladder culminating in Proposition: $\mathfrak{Q}_\beta$ categorical-derivation precision ladder. The Habiro / brane-tower layer is filled in by Definition: Habiro ring, Definition: $\widehat{Z}$ ring, Definition: Algebraic quantum volume and its specialisation, together with Definition: Quantum dilogarithm stratified and Definition: Q-Pochhammer partial product — the dilogarithm objects every canonical witness consumes. The realisation functor and its companion blocks package the bridge from the algebraic substrate to canonical evaluation.
+The remainder of the section develops the seminormal and convergence machinery. The Hoefsmit seminormal matrices proposition supplies the explicit seminormal forms via the figure-eight branching rule. The convergence sequence runs through the Hecke convergence bound, the Markov-trace inductive limit, and the $\mathfrak{Q}_\beta$ categorical-derivation precision ladder. The Habiro ring, $\widehat{Z}$ ring, Algebraic quantum volume, Quantum dilogarithm stratified, and Q-Pochhammer partial product definitions establish the brane-tower layer. The realisation functor packages the bridge from the algebraic substrate to canonical evaluation.
 
-The section closes with a long roster of structural witnesses that the rest of the chapter takes as given: the depth-2 and depth-3 base-surface witnesses, the Tate-rational and orbit-sum cyclotomic theorems, the Baer-* and central-idempotent foundations of the Hecke algebra, and the bi-filtration grid that places the chapter's knot-indexed convolutions inside the joint Galois/braid grading. Remark: Knots admitting the base-surface embedding: genus-bounded table and per-knot B1 witness targets lists the falsifiability targets, Remark: Conway--KT mutant pair: B1 Vol-injectivity sanity check and Remark: Jones-faithfulness theorem at crossing $\le$ 10 record the volume-injectivity probes, and Remark: Quantum Bloch group and the pentagon identity anchors the algebra in Bloch-group terms. The next section, **Atom, Isotope, and Confinement Levels**, takes the three-input calibration and the quantum dilogarithm as fixed and uses them to climb the confinement ladder.
+The section closes with structural witnesses: depth-2 and depth-3 base-surface witnesses, Tate-rational and orbit-sum cyclotomic theorems, Baer-* and central-idempotent foundations of the Hecke algebra, and the bi-filtration grid mapping knot convolutions to the joint Galois/braid grading. The falsifiability targets and volume-injectivity probes restrict the base-surface embedding. The Quantum Bloch group and pentagon identity anchors the algebra in Bloch-group terms. The next section uses the three-input calibration and the quantum dilogarithm to ascend the confinement ladder.
 
 **Calibration.**
 The internal symmetry and the rigid topology of the state space leave
@@ -121,23 +121,7 @@ at $q_0 = 1.109978595554181\ldots$ (50 dps).
 <!-- FILE_END: mass-element-nf.md -->
 
 <!-- FILE_START: calibration-inputs.md -->
-The QOU framework requires exactly **three** calibration inputs
-from experiment — three **weak-sector observables**: the leptonic
-mass scale $m_e$ (CAL-1), the neutron $\beta$-decay width
-$\mathfrak{D}_\beta$ (CAL-2), and the pion decay width
-$\mathfrak{D}_\pi$ (CAL-3). Their numerical proxies are the masses
-$m_e$, the ratio $m_\mu/m_e$ (which pins $q_0$), and $m_\pi$. These
-are the three real degrees of freedom of the single Bring Hodge
-structure $H^1(\mathrm{Bring}) = 2W$ ($W$-plane scale + modulus + one
-orthogonal $\mathrm{Vol}(\mathrm{Hopf})=0$ meson class). All other
-masses, binding energies, Q-values, and coupling constants — including
-the $\beta$-decay Q-value $\mathfrak{Q}_\beta = \hbar/\mathfrak{D}_\beta$
-itself — are predictions or cross-checks. ($\mathfrak{Q}_\beta$ is the
-**CAL-2 proxy / cross-check**, *not* a separate input; the hadronic
-energy scale
-$\mathfrak{E}_0$ is framework-derived from $(m_e, q_0)$ and
-$\mathfrak{Q}_\beta$ validates it. See the three-calibration discipline
-in [`epistemic-status-of-calibrations`](#rem:epistemic-status-of-calibrations).)
+The QOU framework requires exactly three calibration inputs from experiment: the leptonic mass scale $m_e$ (CAL-1), the neutron $\beta$-decay width $\mathfrak{D}_\beta$ (CAL-2), and the pion decay width $\mathfrak{D}_\pi$ (CAL-3). Their numerical proxies are $m_e$, the ratio $m_\mu/m_e$ (which pins $q_0$), and $m_\pi$. These inputs match the three real degrees of freedom of the first cohomology $H^1(\mathrm{Bring}) = 2W$. All other masses, binding energies, Q-values, and coupling constants are predictions. $\mathfrak{Q}_\beta = \hbar/\mathfrak{D}_\beta$ serves as the CAL-2 proxy, validating the framework-derived hadronic energy scale $\mathfrak{E}_0$.
 
 ## The three inputs
 
@@ -170,31 +154,10 @@ $\hbar_q = (q-1)/q$.  No units are involved.  The precision
 is limited by the muon mass ($2.2 \times 10^{-8}$), not
 the electron ($2.9 \times 10^{-10}$).
 
-> **SUPERSEDED-$\rho_q$ caveat.**
-> The dimensional factor $1/\hbar_q^2$ in the formula above is the
-> SUPERSEDED scalar substrate density (see
-> [`mass-endomorphism-tower.md` §SUPERSEDED](mass-endomorphism-tower.md)
-> and [`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md)).
+> **Substrate density refinement.**
+> The dimensional factor $1/\hbar_q^2$ forms the leading-order scalar substrate density.
 > The canonical operator-valued form replaces it with the
-> Wedderburn-graded expansion (LO + single-gen + pair-gen + ...).
-> The Skein form closes $m_\mu/m_e = 206.77$ **not** because the
-> operator corrections are small at $q_0$ — the direct Markov-trace
-> ratio $|\mathrm{tr}_M((\sigma_1\sigma_2^{-1})^2)| /
-> |\mathrm{tr}_M(\sigma_1^3)| \approx 0.27$ is three orders of
-> magnitude below CODATA — but because it is a **Kashaev $q \to 1$-limit
-> identity**: it evaluates the hyperbolic volume $\mathrm{Vol}(4_1)$
-> (the $q \to 1$ limit of $|\mathrm{tr}_M|$), dressed by the SUPERSEDED
-> scalar $1/\hbar_q^2$, rather than the operator-level ratio at the
-> substrate $q_0$ (see
-> [`conj:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md)
-> §"Phase 3 finding"). The lepton-sector factor $\xi_\ell(q)$ that
-> should replace $1/\hbar_q^2$ — bar-symmetric, with its Kashaev
-> $q \to 1$ limit recovering the scalar — is **OPEN** (Path A of
-> [`docs/audits/-superseded-rho-q-purge.md`](../../../docs/audits/-superseded-rho-q-purge.md)).
-> The separate $+0.17\%$ $\mathfrak{Q}_\beta$ residual flagged in
-> [`-q-beta-net-ansatz-fitting-finding.md`](../../../docs/audits/-q-beta-net-ansatz-fitting-finding.md)
-> is the hadronic-correction question, distinct from the lepton
-> $\xi_\ell$ derivation.
+> Wedderburn-graded expansion. The Skein form closes $m_\mu/m_e = 206.77$ because it evaluates the Kashaev $q \to 1$ limit (the hyperbolic volume $\mathrm{Vol}(4_1)$), dressed by the scalar $1/\hbar_q^2$. The lepton-sector factor $\xi_\ell(q)$ that replaces $1/\hbar_q^2$ remains open.
 
 The second input sets the **leptonic mass scale** — the
 conversion from dimensionless natural units to MeV.  The
@@ -243,41 +206,11 @@ difference between neutron and proton
 The free neutron is the simplest hadronic decay — one
 crossing change ($\mathfrak{d} \to \mathfrak{u}$) inside
 one nucleon, no nuclear environment. Once $\mathfrak{E}_0$ is fixed,
-**all other Q-values are predictions**.
+**$\mathfrak{Q}_\beta$ cross-check gap.**
+With the tower form $\mathfrak{E}_0^{\text{full}}$ active, the framework-derived value overshoots the calibrated value by $+1.75\%$. The geometric series direction does not close the $\mathfrak{Q}_\beta$ residual; it widens it. This leaves an explicit residual requiring categorical-derivation review.
 
-**$\mathfrak{Q}_\beta$ cross-check gap — explicit tower-correction direction.**
-With the tower form $\mathfrak{E}_0^{\text{full}}$ now wired into
-production compute (the canonical formalism),
-the framework-derived value overshoots the calibrated value by
-**$+1.75\%$** (was $+0.75\%$ with the single-tick form). The
-geometric series direction therefore does *not* close the
-$\mathfrak{Q}_\beta$ residual — it widens it. This is recorded as an open
-finding in the [tower-MeV calibration audit](https://github.com/litlfred/qou/blob/main/docs/audits/-tower-mev-calibration-finding.md)
-(which independently flags $\Phi_q$ $\to$ $\mathrm{Li}_2^q$ as the
-likely correct tower function). The $\mathfrak{Q}_\beta$ cross-check thereby ceases to be a
-silent absorber of the tower correction; the residual is
-explicit and the direction puzzle is on the books for the
-categorical-derivation review (Workplan 2 Phase 2).
-
-**Deeper fitting concern.** Above the
-tower-direction puzzle sits a more fundamental gap: the relation
-$\mathfrak{Q}_\beta = |\Delta(\mathrm{net})| \cdot \mathfrak{E}_0$ used to
-derive the framework's $\mathfrak{Q}_\beta$ prediction is itself an **ansatz**,
-not derived from the canonical per-braid mass formula
-[`prop:per-braid-mass-tower`](#prop:per-braid-mass-tower).
-The unweighted $\mathrm{net}$ sum is structurally different
-from the Markov-trace weighted sums of the mass tower. The +0.17%
-match (single-tick form) could be (a) genuine truncation residual
-or (b) an artefact of $q_0 \approx 1.110$ arising from a
-wrong leading-order operator. Until this is resolved by direct
-per-braid computation or a theoretical derivation, the
-$\mathfrak{Q}_\beta$-from-$q_0$ reproduction remains an **unclosed
-cross-check** (not yet a parameter-free derivation), and claims of
-"$\mathfrak{Q}_\beta$ derivable from CAL-1 + CAL-2" are conditional on
-the unproved ansatz. (This does not add a fourth calibration: CAL-2 is
-pinned by $m_\mu/m_e$ at $q_0$, and $\mathfrak{Q}_\beta$ is its proxy
-cross-check.) Full audit:
-[`docs/audits/-q-beta-net-ansatz-fitting-finding.md`](https://github.com/litlfred/qou/blob/main/docs/audits/-q-beta-net-ansatz-fitting-finding.md).
+**Fitting constraint.**
+The relation $\mathfrak{Q}_\beta = |\Delta(\mathrm{net})| \cdot \mathfrak{E}_0$ constitutes an ansatz. The unweighted $\mathrm{net}$ sum differs structurally from the Markov-trace weighted sums of the mass tower. Until resolved by direct per-braid computation, the $\mathfrak{Q}_\beta$-from-$q_0$ reproduction remains an unclosed cross-check.
 
 ## Necessity of exactly three inputs
 
@@ -394,19 +327,8 @@ The reduction from 19 to 3 is possible because:
 <!-- FILE_END: calibration-inputs.md -->
 
 <!-- FILE_START: two-tier-scaling-pq.md -->
-> **SUPERSEDED-$\rho_q$ note .** Any use of the
-> scalar substrate density $\rho_q = 1/\hbar_q^2$ in this block is the
-> structurally-wrong leading-order ansatz per
-> [`mass-endomorphism-tower.md` §SUPERSEDED](mass-endomorphism-tower.md);
-> the canonical replacement is the operator-valued $A^\lambda_{\mu, \nu}(I)$
-> graded expansion [`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md).
-> Full purge tracking: [`docs/audits/-superseded-rho-q-purge.md`](../../../docs/audits/-superseded-rho-q-purge.md).
-
 **Remark (two-tier scaling of the confined Laurent polynomial $P_K(q)$).**
-*The map from a braid word to a physical mass passes through two
-logically separate scaling factors. Conflating them obscures which
-constants are topological (intrinsic to the Hecke trace) and which are
-dimensional (set by the choice of physical anchor).*
+*The map from a braid word to a physical mass passes through two logically separate scaling factors. We separate topological constants (intrinsic to the Hecke trace) from dimensional constants (set by the choice of physical anchor).*
 
 ## Tier 1: topological scaling — quantum dimension $[N]_q$
 
@@ -497,7 +419,6 @@ through the electroweak or gravitational sector respectively.
 <!-- FILE_END: two-tier-scaling-pq.md -->
 
 <!-- FILE_START: three-calibration-inputs.md -->
-**Proposition (three calibration inputs, aligned to (co)homology).**
 *The QOU framework admits exactly three external calibration inputs.
 Beyond these three, no further empirical, fitting, or numerological
 input is permitted — every other mass, Q-value, binding energy,
@@ -654,10 +575,7 @@ VEV, QCD theta angle). The QOU framework replaces all 19 with these
 - mixing angles are Clebsch-Gordan coefficients of the knot eigenbasis
   decomposition.
 
-The 19 $\to$ 3 reduction is the testable framework-level claim: any
-prediction of the paper that *would* require a 4th calibration to
-match data is a falsification of the framework, not a free-parameter
-adjustment.
+The 19 $\to$ 3 reduction forms a testable claim. Any prediction requiring a fourth calibration falsifies the framework.
 <!-- FILE_END: three-calibration-inputs.md -->
 
 <!-- FILE_START: three-parameters-wedderburn.md -->
@@ -768,14 +686,10 @@ factorizes through these three crossing types.
 For $H_2(R, q)$ (two strands, leptonic physics):
 - Partitions of $2$: $(2)$ and $(1{,}1)$
 - $H_2(R, q) \cong k \oplus k$, $\dim = 1^2 + 1^2 = 2$
-- Two irreps $\to$ two parameters ($q$ and $m_e$)
+- Two irreps $\to$ two parameters ($q_0$ and $m_e$)
 - No standard representation $\to$ no interaction scale needed
 
-This is consistent: leptonic physics (electron, muon, tau)
-requires only two inputs.  The third input ($\mathfrak{Q}_\beta$) is
-needed only when the alternating sector participates — i.e.,
-when matter and antimatter crossings coexist within a
-composite (hadrons).
+Leptonic physics requires only two inputs. The third input ($\mathfrak{Q}_\beta$) is needed only when matter and antimatter crossings coexist within a composite (hadrons).
 <!-- FILE_END: three-parameters-wedderburn.md -->
 
 <!-- FILE_START: wedderburn-trace-identity.md -->
@@ -830,7 +744,6 @@ normalization above.
 <!-- FILE_END: wedderburn-trace-identity.md -->
 
 <!-- FILE_START: binding-scale-catalan.md -->
-**Proposition.**
 *The binding energy scale in the atomic mass formula is
 the archimedean evaluation of the algebraic binding scale:*
 
@@ -861,7 +774,6 @@ the Borromean rings complement.*
 <!-- FILE_END: binding-scale-catalan.md -->
 
 <!-- FILE_START: binding-error-amplification.md -->
-**Proposition (Binding-energy error amplification).**
 *Write the binding energy as the mass defect*
 
 $$
@@ -893,8 +805,105 @@ $\mathcal{A} = M_{\mathrm{atom}}/B$.*
 **Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
 <!-- FILE_END: binding-error-amplification.md -->
 
+<!-- FILE_START: deuteron-fusion-frame.md -->
+*Let $v = \sqrt{q_0}$ and write the symmetric $q$-integers
+$[2]_v = v + v^{-1}$, $[3]_v = v^2 + 1 + v^{-2}$. The dimensionless content
+of the deuteron binding magnitude is fixed by three exact identities:*
+
+1. *(**fusion**) $[2]_v^2 = [3]_v + 1$ — the quantum-dimension form of the
+   spin coupling $\tfrac12 \otimes \tfrac12 = 1 \oplus 0$;*
+2. *(**the classical $5$**) $1 + [2]_v^2 = 5 + (v - v^{-1})^2$, so the total
+   quantum dimension of the two-nucleon channel decomposition is $5$ at
+   $v = 1$;*
+3. *(**criticality**) for the exchange rate $g$ with
+   $g^2 = z^2/(1 + z^2)$ and $z = [2]_v^{-1}$, one has
+   $g^2\,(1 + [2]_v^2) = 1$: the bond magnitude sits exactly at the
+   marginal-stability point $\det(1 + g\,M) = 0$.*
+
+## Why the integer $5$ is not free
+
+The bond factor $z = 1/[2]_v$ is the Ocneanu–Markov normalization of the
+Hecke trace $\mathrm{tr}_M$ (the same $z$ that
+[`prop:three-strand-color-winding-rigidity`](../braids-and-knots/three-strand-color-winding-rigidity.md)
+and the reeb-flow magnitude use), not a modeling parameter. The quantity
+$1 + [2]_v^2$ is the total quantum dimension of the two-nucleon channels
+$\{V_0\ (\text{direct}),\ V_0 \oplus V_1\ (\text{fused})\}$; by the fusion
+identity it equals $2 + [3]_v$, whose classical value is $5$. So the "5" in
+the near-match law $B(^2\mathrm{H}) \approx 5g\,E_{\text{unit}}$ is a
+counting datum — a total quantum dimension — not an adjustable integer.
+
+## The exchange rate is a linking rate
+
+The rate $g = z/\sqrt{1+z^2}$ is the linking number per unit arc length,
+in exchange-cycle units, of a slope-$z$ geodesic pair on the shared torus
+(the geometry-independent identity $|\mathrm{Lk}|\cdot 2\pi r / L = g$,
+verified symbolically and by Gauss integration). Composing the two facts,
+the deuteron magnitude reads *canonical Markov parameter $\to$ channel slope
+$\to$ linking rate*: the counting weight (rigid) times the geometric rate
+(deformed). Because the weight is topological, the trace-natural deformation
+of the classical $5$ is $5g$ itself (the fully-deformed alternative
+$(1 + [2]_v^2)\,g = 1/g$ splits from $5g$ by the exact factor
+$1 + (v-v^{-1})^2/5$).
+
+The Lean sibling proves the fusion identity, the classical-$5$ identity, the
+geometry-independent linking-rate square, the criticality reciprocal, and
+the $1/g$ deformation identity, all over a generic field. The archimedean
+evaluation at $q_0$ and the MeV unit $E_{\text{unit}}$ are downstream and
+remain the open inputs of the linear law.
+<!-- FILE_END: deuteron-fusion-frame.md -->
+
+<!-- FILE_START: frakD-energy-decomposition.md -->
+*Let $\sigma$ be the bar involution (the substrate $q \mapsto q^{-1}$, an
+order-2 ring endomorphism) on a field $F$ of characteristic $\neq 2$. Every
+energy $E \in F$ splits canonically as*
+
+$$
+E \;=\; \underbrace{\tfrac{1}{2}(E + \sigma E)}_{\text{retained } (\cosh)}
+\;+\; \underbrace{\tfrac{1}{2}(E - \sigma E)}_{\text{emitted } (\sinh)},
+$$
+
+*with the retained part bar-even ($\sigma$-fixed) and the emitted part
+bar-odd ($\sigma$-negated). The emitted (bar-odd, $\sinh$) channel is the
+decay-width $\mathfrak{D}$ sector; it vanishes iff $E$ is purely retained.*
+
+## The $\mathfrak{D}$ reinterpretation of $E_{\text{unit}}$
+
+This is the energy-level form of the complex-volume split
+$\mathfrak{V} = \mathrm{Vol} + i\,\mathrm{CS}$: the retained part is the
+binding-proper (cosh) channel, the emitted part is the radiated
+$\gamma\bar\gamma$ / decay-width (sinh) channel. Reading the deuteron law
+$B({}^2\mathrm{H}) = 5g \cdot E_{\text{unit}}$ through this split makes the
+"$E_{\text{unit}} = \hbar/\mathfrak{D}$" reinterpretation precise: *if* the
+unit is a decay-width energy (bar-odd), then it is its own emitted part with
+zero retained part — a purely decay-channel energy
+(`frakD_is_pure_emitted`). This keeps $E_{\text{unit}}$ inside the three
+calibrations (the width $\mathfrak{D}$ is the CAL-2 datum), rather than a
+fourth calibration.
+
+The narrative caveat recorded in
+[`docs/coordination/e-unit-deuteron-scale.md`](../../../docs/coordination/e-unit-deuteron-scale.md)
+stands: whether the deuteron binding actually carries this bar-odd character
+is empirically open (the landed §2h data weakly favour a bar-even unit). The
+proposition formalizes the *decomposition itself*, which holds regardless;
+the parity assignment of the physical $E_{\text{unit}}$ is the open input.
+
+## Already tabulated
+
+The mass-binding dashboard's **Entanglement** table computes this split for
+every light nucleus — its `retained E` column is
+$E_0 \cdot (\cosh\text{-channel})$ and its `emitted E` column is
+$E_0 \cdot |\sinh\text{-channel}|$. The
+`emitted/retained` ratio rises from $0.96$ at the deuteron — the least
+saturated, most decay-like light binding, matching its $\beta$-threshold
+character — toward $1.00$ by ${}^6\mathrm{Li}$. The Lean sibling
+(`QOU.MassTheory.FrakD`) proves the projection is well-defined and
+parity-correct over a generic field: `evenPart_barEven`, `oddPart_barOdd`,
+`even_add_odd` (reconstruction), and `oddPart_eq_zero_iff_barEven` (a
+nucleus carries no $\mathfrak{D}$ channel exactly when its binding is purely
+retained).
+<!-- FILE_END: frakD-energy-decomposition.md -->
+
 <!-- FILE_START: wedderburn-mass-formula.md -->
-**Theorem.**
 *Let $(Z, N)$ be a neutral atom with atomic braid
 $\mathcal{A} \in H_{A+Z}(q)$
 ([atomic braid](#def:atomic-braid)).
@@ -964,7 +973,6 @@ zero fitted parameters.*
 <!-- FILE_END: wedderburn-mass-formula.md -->
 
 <!-- FILE_START: frobenius-s-classification.md -->
-**Proposition.**
 *Under the Frobenius--Hopf antipode $S \colon \sigma \leftrightarrow
 \sigma^{-1}$ on the Hecke algebra $H_n(R, q)$, the three log-functionals
 in the Wedderburn mass formula

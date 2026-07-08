@@ -1,9 +1,9 @@
 <!-- FILE_START: intro-hecke-chi-closed-forms.md -->
 The Hecke algebra carries two natural coordinate systems. The Markov $u$-coordinate adapts to braid-trace identities. The $\chi$-character coordinate adapts to representation-theoretic decomposition. This section derives the closed-form transformation between the two. We identify the substrate parameter as the deformation knob that interpolates the two coordinate charts. Finally, we tabulate the explicit closed forms for the characters required by the binding-energy computations.
 
-The arc proceeds in three movements. First, we reduce the $u$-coordinate identities to a small set of generating discharge moves (the $u$-coordinate discharges). We then express the $\chi$-character as a polynomial in $u$ and the substrate parameter. The middle blocks establish the closed-form $\chi$ values at the small partitions ($\lambda = (1)$, $(2)$, $(1,1)$, $(2,1)$, $\dots$) that drive the early-shell binding-energy formulas. The closing blocks tie the $\chi$-closed forms to the Markov-axiom recursive ascent used downstream by the Plancherel sum.
+The analysis proceeds in three stages. First, we reduce the $u$-coordinate identities to a small set of generating discharge moves (the $u$-coordinate discharges). We then express the $\chi$-character as a polynomial in $u$ and the substrate parameter. The middle blocks establish the closed-form $\chi$ values at the small partitions ($\lambda = (1)$, $(2)$, $(1,1)$, $(2,1)$, $\dots$) that drive the early-shell binding-energy formulas. The closing blocks tie the $\chi$-closed forms to the Markov-axiom recursive ascent used downstream by the Plancherel sum.
 
-The output is the $\chi$-character table indexed by partitions. The subsequent section's Markov-axioms-braid-link enumeration consumes this table as its primary input. Readers focused on the binding-energy applications can take the closed forms on faith. The substrate-parameter dependence is uniform across partitions and does not interact with the enumeration.
+The output provides the $\chi$-character table indexed by partitions. The subsequent section's Markov-axioms-braid-link enumeration consumes this table as its primary input. Readers focused on the binding-energy applications can take the closed forms on faith. The substrate-parameter dependence remains uniform across partitions and does not interact with the enumeration.
 <!-- FILE_END: intro-hecke-chi-closed-forms.md -->
 
 <!-- FILE_START: u-coordinate-discharges.md -->
@@ -21,7 +21,7 @@ We export each scalar identity as a Lean theorem. Because the substitution remov
 
 Previously, explicit-residual discharges at the class level (such as `⟨0, rfl⟩`) appeared abstractly trivial: the residual evaluates to $0$, but no concrete computation connects this to the underlying substrate arithmetic. The $u$-coordinate identities express the underlying scalars as rational functions in a single variable $u$. This enables `ring` and `field_simp` to verify the equalities mechanically.
 
-For example, the abstract class field `HeckeQuadraticAllGenerators 3 q .hecke_quad_residual_eq_zero` mandates that the residual vanishes. The substantive reason for this vanishing lies in the identity `hecke_root_sum_times_q`: the relation $q \cdot (q - q^{-1}) = u - 1$ is a non-trivial rational identity closed by `field_simp + ring`.
+For example, the abstract class field `HeckeQuadraticAllGenerators 3 q .hecke_quad_residual_eq_zero` mandates that the residual vanishes. The substantive reason for this vanishing lies in the identity `hecke_root_sum_times_q`: the relation $q \cdot (q - q^{-1}) = u - 1$ constitutes a non-trivial rational identity closed by `field_simp + ring`.
 
 ## Downstream dependencies
 
@@ -65,7 +65,7 @@ We posit three structural hypotheses for the 50–3000$\times$ mismatch:
 2. **Sum-over-Wedderburn-blocks**: multi-link contributions enter via a non-trivial sum over $\lambda \vdash n$ rather than as a direct scalar multiple of a single Jones value. The $y_\lambda$ normalisation in the Wenzl bridge could redistribute weight in a way that magnifies single-Jones values into the empirical $c_5, c_6$ scale.
 3. **New categorical input at $k \geq 5$**: a higher-rank irrep coupling, a Mostow rigidity gap correction, or a non-trivial Habiro residue contribution may enter only at orders $k \geq 5$.
 
-We must test whether the **per-Wedderburn-block contribution at $k = 5, 6$** matches the empirical values when properly weighted by the $q$-deformed dimensions $\dim_q(V_\lambda)$. This requires extending the Wenzl-bridge $y_\lambda$ infrastructure to $\varepsilon^{10}, \varepsilon^{12}$ evaluations of the $\tau_M$ expansion on $V_{(2,1)}, V_{(3)}, V_{(1,1,1)}$ separately.
+We must test whether the per-Wedderburn-block contribution at $k = 5, 6$ matches the empirical values when properly weighted by the $q$-deformed dimensions $\dim_q(V_\lambda)$. This requires extending the Wenzl-bridge $y_\lambda$ infrastructure to $\varepsilon^{10}, \varepsilon^{12}$ evaluations of the $\tau_M$ expansion on $V_{(2,1)}, V_{(3)}, V_{(1,1,1)}$ separately.
 <!-- FILE_END: multi-link-jones-q1-extension.md -->
 
 <!-- FILE_START: hecke-algebra-type-scaffold.md -->
@@ -77,7 +77,7 @@ The Lean class scaffold (`HeckeGen n`, `HeckeWord n`, `HeckeRelations n q`, `Hec
 <!-- FILE_END: hecke-algebra-type-scaffold.md -->
 
 <!-- FILE_START: markov-trace-operator-construction.md -->
-The Jones–Wenzl Markov trace $\tau_M : \mathbf{B}_\infty \to \mathbb{R}$ on the inductive limit of braid groups is uniquely characterised by the M1–M4 axioms (Jones 1985 / Wenzl 1988). We realise it as a single operator on the von Neumann inductive-limit hyperfinite $\mathrm{II}_1$ factor in five stages: a per-$n$ Hilbert representation, an inductive embedding $\iota_n : V_n \hookrightarrow V_{n+1}$, the inductive limit $V_\infty = \varinjlim V_n$, the trace state on $\bigcup_n H_n$, and the bicommutant closure $\mathcal{M} := (\bigcup_n H_n)''$. On $\mathcal{M}$, the trace $\tau_M$ is the unique faithful normal trace up to scaling.
+The Jones–Wenzl Markov trace $\tau_M : \mathbf{B}_\infty \to \mathbb{R}$ on the inductive limit of braid groups is uniquely characterised by the M1–M4 axioms (Jones 1985 / Wenzl 1988). We realise it as a single operator on the von Neumann inductive-limit hyperfinite $\mathrm{II}_1$ factor in five stages: a per-$n$ Hilbert representation, an inductive embedding $\iota_n : V_n \hookrightarrow V_{n+1}$, the inductive limit $V_\infty = \varinjlim V_n$, the trace state on $\bigcup_n H_n$, and the bicommutant closure $\mathcal{M} := (\bigcup_n H_n)''$. On $\mathcal{M}$, the trace $\tau_M$ provides the unique faithful normal trace up to scaling.
 
 The Lean classes `HnHilbertRep n q`, `HnInductiveEmbedding n q`, and `MarkovTraceVNFactor q` encode the per-$n$ representation, the inductive embedding, and the GNS bicommutant factor hosting $\tau_M$. Downstream files import these classes as hypotheses. The operator-algebra steps—the GNS state and the bicommutant closure—supply the per-$n$ instances.
 

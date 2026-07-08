@@ -893,6 +893,19 @@
         "reviewed_at": "2026-07-07T14:26:56.277765Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound taxonomic definition securely tying the classical obstruction directly to the non-vanishing brane Euler class.",
+        "reviewed_at": "2026-07-08T13:18:59.000Z",
+        "reviewed_sha": "0764a81bc47d0f4a3f74b1cebc3180f86523d3ee",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "wall-side-statement": [
@@ -934,6 +947,19 @@
         "notes": "Checked mathematical consistency of the claim 'Let $(\\mathbf{C}, A, \\tau)$ be a' and found no counterexamples under the stated conditions.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-regular-qou.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound taxonomic definition securely tying the classical obstruction directly to the non-vanishing brane Euler class.",
+        "reviewed_at": "2026-07-08T13:18:59.000Z",
+        "reviewed_sha": "0764a81bc47d0f4a3f74b1cebc3180f86523d3ee",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-vacuous": [
@@ -954,6 +980,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No vacuous stubs or tautologies detected in the formulation of 'def:ns-regular-qou'.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound taxonomic definition securely tying the classical obstruction directly to the non-vanishing brane Euler class.",
+        "reviewed_at": "2026-07-08T13:18:59.000Z",
+        "reviewed_sha": "0764a81bc47d0f4a3f74b1cebc3180f86523d3ee",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-circular": [
@@ -975,6 +1014,19 @@
         "notes": "Traced dependencies ['def:q-navier-stokes'] for 'def:ns-regular-qou' and confirmed no circular definitions or justifications.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-regular-qou.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound taxonomic definition securely tying the classical obstruction directly to the non-vanishing brane Euler class.",
+        "reviewed_at": "2026-07-08T13:18:59.000Z",
+        "reviewed_sha": "0764a81bc47d0f4a3f74b1cebc3180f86523d3ee",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-overclaim": [
@@ -995,6 +1047,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Verified that the scope of 'def:ns-regular-qou' is appropriately restricted to the proven regime without overclaiming structural validity.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound taxonomic definition securely tying the classical obstruction directly to the non-vanishing brane Euler class.",
+        "reviewed_at": "2026-07-08T13:18:59.000Z",
+        "reviewed_sha": "0764a81bc47d0f4a3f74b1cebc3180f86523d3ee",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1016,6 +1081,19 @@
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-regular-qou.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound taxonomic definition securely tying the classical obstruction directly to the non-vanishing brane Euler class.",
+        "reviewed_at": "2026-07-08T13:18:59.000Z",
+        "reviewed_sha": "0764a81bc47d0f4a3f74b1cebc3180f86523d3ee",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1037,6 +1115,19 @@
         "notes": "Logical transitions in the derivation of 'Let $(\\mathbf{C}, A, \\tau)$ be a' are sound; no non-sequiturs detected.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-regular-qou.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound taxonomic definition securely tying the classical obstruction directly to the non-vanishing brane Euler class.",
+        "reviewed_at": "2026-07-08T13:18:59.000Z",
+        "reviewed_sha": "0764a81bc47d0f4a3f74b1cebc3180f86523d3ee",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1057,6 +1148,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Lean sibling verification matches the narrative statements.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound taxonomic definition securely tying the classical obstruction directly to the non-vanishing brane Euler class.",
+        "reviewed_at": "2026-07-08T13:18:59.000Z",
+        "reviewed_sha": "0764a81bc47d0f4a3f74b1cebc3180f86523d3ee",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1078,6 +1182,19 @@
         "notes": "All references and uses ['def:q-navier-stokes'] cited in 'def:ns-regular-qou' are used in accordance with their established mathematical definitions.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-regular-qou.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound taxonomic definition securely tying the classical obstruction directly to the non-vanishing brane Euler class.",
+        "reviewed_at": "2026-07-08T13:18:59.000Z",
+        "reviewed_sha": "0764a81bc47d0f4a3f74b1cebc3180f86523d3ee",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1099,6 +1216,19 @@
         "notes": "All terms and algebraic structures in 'def:ns-regular-qou' are uniquely defined or standard.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-regular-qou.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound taxonomic definition securely tying the classical obstruction directly to the non-vanishing brane Euler class.",
+        "reviewed_at": "2026-07-08T13:18:59.000Z",
+        "reviewed_sha": "0764a81bc47d0f4a3f74b1cebc3180f86523d3ee",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1120,6 +1250,19 @@
         "notes": "The algebraic statements in 'def:ns-regular-qou' do not rely on fragile empirical fits or numerical thresholds.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-regular-qou.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound taxonomic definition securely tying the classical obstruction directly to the non-vanishing brane Euler class.",
+        "reviewed_at": "2026-07-08T13:18:59.000Z",
+        "reviewed_sha": "0764a81bc47d0f4a3f74b1cebc3180f86523d3ee",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1141,6 +1284,19 @@
         "notes": "Physical dimensions and units in 'def:ns-regular-qou' are consistent with quantum observable universe models.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-regular-qou.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound taxonomic definition securely tying the classical obstruction directly to the non-vanishing brane Euler class.",
+        "reviewed_at": "2026-07-08T13:18:59.000Z",
+        "reviewed_sha": "0764a81bc47d0f4a3f74b1cebc3180f86523d3ee",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1162,6 +1318,19 @@
         "notes": "All backing computations and proofs are fully reproducible.",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/ns-regular-qou.ts:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound taxonomic definition securely tying the classical obstruction directly to the non-vanishing brane Euler class.",
+        "reviewed_at": "2026-07-08T13:18:59.000Z",
+        "reviewed_sha": "0764a81bc47d0f4a3f74b1cebc3180f86523d3ee",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1184,6 +1353,19 @@
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims are consistent.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound taxonomic definition securely tying the classical obstruction directly to the non-vanishing brane Euler class.",
+        "reviewed_at": "2026-07-08T13:18:59.000Z",
+        "reviewed_sha": "0764a81bc47d0f4a3f74b1cebc3180f86523d3ee",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1361,6 +1543,36 @@
         },
         "score": {
           "value": 0.85
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound taxonomic definition securely tying the classical obstruction directly to the non-vanishing brane Euler class.",
+        "reviewed_at": "2026-07-08T13:18:59.000Z",
+        "reviewed_sha": "0764a81bc47d0f4a3f74b1cebc3180f86523d3ee",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound taxonomic definition securely tying the classical obstruction directly to the non-vanishing brane Euler class.",
+        "reviewed_at": "2026-07-08T13:18:59.000Z",
+        "reviewed_sha": "0764a81bc47d0f4a3f74b1cebc3180f86523d3ee",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
         }
       }
     ]

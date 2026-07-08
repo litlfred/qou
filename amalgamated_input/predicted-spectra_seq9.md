@@ -1,10 +1,9 @@
 <!-- FILE_START: archimedean-hartree-crystal-alpha-em-categorical-intro.md -->
-The upstream Mathlib additions catalogue the categorical structures underlying the substrate-flow construction. The $\alpha_{\mathrm{EM}}$ categorical-trace ratio identifies the substrate-flow value via the trace ratio identity. The multiplicative-chain shift and the $q$-chromaticity blocks specify the substrate-flow behaviour of $\alpha_{\mathrm{EM}}$ at the substrate parameter $q_0$.
+The upstream Mathlib additions catalogue the categorical structures underlying the substrate-flow construction. The trace ratio identity determines the substrate-flow value from the $\alpha_{\mathrm{EM}}$ categorical-trace ratio. The multiplicative-chain shift and $q$-chromaticity blocks specify the substrate-flow behaviour of $\alpha_{\mathrm{EM}}$ at the substrate parameter $q_0$.
 <!-- FILE_END: archimedean-hartree-crystal-alpha-em-categorical-intro.md -->
 
 <!-- FILE_START: alpha-em-categorical-trace-ratio.md -->
-**Proposition (algebraic identity).**
-*The bare electromagnetic fine-structure constant $1/\alpha_{EM} = q\,[9]_q\,[10]_q$ ([`prop:em-coupling-projection`](#prop:em-coupling-projection)) admits the categorical-trace-ratio decomposition:*
+*Let $R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$ be the base ring. Let $h = q - q^{-1}$ denote the skein parameter. Let $T_{2,9}$ and $T_{3,5}$ be the two genus-$4$-saturating torus knots ([`prop:force-carrier-bring-uniqueness`](#prop:force-carrier-bring-uniqueness)). Let $\delta_q$ denote the $q$-dimension decoration ([`def:delta-q-decoration`](#def:delta-q-decoration)). The bare electromagnetic fine-structure constant $1/\alpha_{EM} = q\,[9]_q\,[10]_q$ ([`prop:em-coupling-projection`](#prop:em-coupling-projection)) admits the categorical-trace-ratio decomposition:*
 
 $$
   \boxed{\;\;
@@ -14,26 +13,23 @@ $$
   \;\;}
 $$
 
-*where $h = q - q^{-1}$ is the skein parameter, $\delta_q$ is the $q$-dimension decoration ([`def:delta-q-decoration`](#def:delta-q-decoration)), and $T_{2,9}, T_{3,5}$ are the two genus-$4$-saturating torus knots ([`prop:force-carrier-bring-uniqueness`](#prop:force-carrier-bring-uniqueness)). The identity holds in $R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$.*
-
 ### Derivation
 
-The categorical trace of a torus-knot $T_{p,q}$ in the natural $2$-strand representation (taking $p = 2$) sums the contributions from the two irreducible Hecke representations $V_{(2)}$ (eigenvalue $q$) and $V_{(1,1)}$ (eigenvalue $-q^{-1}$):
+In the natural $2$-strand representation, the categorical trace of a torus knot $T_{2,k}$ sums the contributions from the irreducible Hecke representations $V_{(2)}$ (eigenvalue $q$) and $V_{(1,1)}$ (eigenvalue $-q^{-1}$). For odd $k$, this yields:
 
 $$
   \delta_q(T_{2,k})
   \;=\;
   q^{k} \cdot 1 + (-q^{-1})^{k} \cdot 1
   \;=\;
-  q^{k} - q^{-k}
-  \quad (k\text{ odd}).
+  q^{k} - q^{-k}.
 $$
 
-For $k = 9$, $\delta_q(T_{2,9}) = q^{9} - q^{-9} = h\,[9]_q$.
+Evaluating at $k = 9$ gives $\delta_q(T_{2,9}) = q^{9} - q^{-9} = h\,[9]_q$.
 
-For $T_{3,5}$ (a 3-strand torus knot), the analogous categorical trace in $H_3(q)$ yields $\delta_q(T_{3,5}) = q^{10} - q^{-10} = h\,[10]_q$. We compute this via the Rosso-Jones torus-knot formula, combining contributions from $V_{(3)}$, $V_{(2,1)}$, and $V_{(1,1,1)}$ with their respective eigenvalue powers.
+For the $3$-strand torus knot $T_{3,5}$, the Rosso-Jones formula computes the categorical trace in $H_3(q)$. Summing the contributions from $V_{(3)}$, $V_{(2,1)}$, and $V_{(1,1,1)}$ with their respective eigenvalue powers yields $\delta_q(T_{3,5}) = q^{10} - q^{-10} = h\,[10]_q$.
 
-Substituting $\delta_q(T_{2,9}) = h\,[9]_q$ and $\delta_q(T_{3,5}) = h\,[10]_q$:
+Substitution produces the result:
 
 $$
   \frac{h^{2}}{q \cdot \delta_q(T_{2,9}) \cdot \delta_q(T_{3,5})}
@@ -49,22 +45,25 @@ $\square$
 
 ### Numerical verification
 
-At $q_0 \approx 1.1099786$, we obtain an exact match (within $10^{-12}$). See [Table: Numerical verification of $\alpha_{EM}$ trace-ratio](#tbl:alpha-em-categorical-trace-ratio-table-data).
+Evaluation at $q_0 \approx 1.1099786$ yields an exact match to within $10^{-12}$. See [Table: Numerical verification of $\alpha_{EM}$ trace-ratio](#tbl:alpha-em-categorical-trace-ratio-table-data).
 
-We confirm the witness assertion: [`delta-q-decoration.witness.json`](computations/delta-q-decoration.witness.json).
+The witness assertion validates this match: [`delta-q-decoration.witness.json`](computations/delta-q-decoration.witness.json).
 
-Expressing the relationship as a trace ratio on the $q$-dimension layer reformulates existing projection identities and closes the categorical framework. The empirical electromagnetic coupling reduces to a structural trace-algebraic constraint.
+Expressing the relationship as a trace ratio on the $q$-dimension layer reformulates existing projection identities. This closes the categorical framework. The empirical electromagnetic coupling reduces to a structural trace-algebraic constraint.
 <!-- FILE_END: alpha-em-categorical-trace-ratio.md -->
 
 <!-- FILE_START: alpha-em-categorical-trace-ratio-interpretation.md -->
-**Interpretation.** The trace-ratio identity ([$\alpha_{EM}$ categorical trace-ratio](#prop:alpha-em-categorical-trace-ratio)) refactors $\alpha_{EM}$ from the inverse Bring complex complexity into the ratio of $h^{2}$ over the product of force-carrier categorical traces. This shifts the $\alpha_{EM}$ formula from the operator-selection-LP-cost interpretation to the q-dimension / $\delta_q$-decoration layer.
+**Interpretation.** The trace-ratio identity ([$\alpha_{EM}$ categorical trace-ratio](#prop:alpha-em-categorical-trace-ratio)) refactors $\alpha_{EM}$ from the inverse Bring complex complexity into the ratio of $h^{2}$ over the product of force-carrier categorical traces. This shifts the $\alpha_{EM}$ formula from an operator-selection-LP-cost interpretation to the $q$-dimension layer.
 
-The structural picture:
-- The $\delta_q$-decoration yields a pure categorical trace $\delta_q(T_{p,q}) = q^{q} - q^{-q}$ for each force carrier (in the appropriate $p$-strand realisation).
-- $\alpha_{EM}$ is the inverse product of these two traces, rescaled by $h^{2}/q$.
-- The $h^{2}$ numerator arises from the two factors of $(q - q^{-1})$ in the denominators of $[9]_q$ and $[10]_q$.
+The structural picture requires two components:
+- For each force carrier, the $\delta_q$-decoration evaluates to a pure categorical trace $\delta_q(T_{p,q}) = q^{q} - q^{-q}$ in the appropriate $p$-strand realisation.
+- The inverse product of these two traces, rescaled by $h^{2}/q$, yields $\alpha_{EM}$.
 
-**Significance for the Hartree-energy conjecture.** This identity supplies the algebraic mechanism by which $\alpha_{EM}^{2}$ enters the binding energy. We combine it with [`prop:force-carrier-intertwining-correspondence`](#prop:force-carrier-intertwining-correspondence), which identifies the Wedderburn channels $(3, 1)$ and $(2, 1, 1)$ on which the molecular bound state projects with non-trivial $\delta_q$ weight:
+The $h^{2}$ numerator originates from the two $(q - q^{-1})$ factors in the denominators of $[9]_q$ and $[10]_q$.
+
+**Significance for the Hartree-energy conjecture.** This identity supplies the algebraic mechanism introducing $\alpha_{EM}^{2}$ into the binding energy. The molecular bound state projects onto the Wedderburn channels $(3, 1)$ and $(2, 1, 1)$ with non-trivial $\delta_q$ weight ([`prop:force-carrier-intertwining-correspondence`](#prop:force-carrier-intertwining-correspondence)).
+
+Squaring the trace-ratio identity yields:
 
 $$
   \alpha_{EM}^{2}
@@ -72,17 +71,16 @@ $$
   \frac{h^{4}}{q^{2} \cdot \delta_q(T_{2,9})^{2} \cdot \delta_q(T_{3,5})^{2}}.
 $$
 
-The bound-state Markov trace contribution is bilinear in $\chi_{(3,1)}$ and $\chi_{(2,1,1)}$. Conjecturally, these characters are proportional to $\delta_q(T_{3,5})^{-1}$ and $\delta_q(T_{2,9})^{-1}$ respectively. This forms the categorical analogue of the Coulomb potential in the bound state. Their product introduces the $\alpha_{EM}^{2}$ factor.
+The bound-state Markov trace contribution is bilinear in the characters $\chi_{(3,1)}$ and $\chi_{(2,1,1)}$. Conjecturally, these characters are proportional to $\delta_q(T_{3,5})^{-1}$ and $\delta_q(T_{2,9})^{-1}$. This bilinearity provides the categorical analogue of the Coulomb potential. Their product supplies the $\alpha_{EM}^{2}$ factor.
 
-Closing this final algebraic identity remains the next step for [`conj:e-hartree-categorical-derivation`](#conj:e-hartree-categorical-derivation).
+Closing this algebraic identity constitutes the next step for [`conj:e-hartree-categorical-derivation`](#conj:e-hartree-categorical-derivation).
 <!-- FILE_END: alpha-em-categorical-trace-ratio-interpretation.md -->
 
 <!-- FILE_START: alpha-em-shift-multiplicative-chain.md -->
 <!-- Theorem (proved by composition of two named identities). -->
 
 **Proposition (multiplicative-chain form of $\alpha_{EM}^{-1}$).**
-*Working over $R = \mathbb{Z}[q^{\pm 1/2}, (q - q^{-1})^{-1}]$ with
-the canonical substrate parameter $q$,*
+*Let $R = \mathbb{Z}[q^{\pm 1/2}, (q - q^{-1})^{-1}]$ be the base ring. Let $q$ be the canonical substrate parameter. The inverse fine-structure constant admits the decomposition:*
 
 $$
   \boxed{\;\;
@@ -96,7 +94,7 @@ $$
 <!-- FILE_END: alpha-em-shift-multiplicative-chain.md -->
 
 <!-- FILE_START: alpha-em-shift-multiplicative-chain-significance.md -->
-**Significance: bridge to the w3-w4 atomic-shift framework.** Both ingredients of the multiplicative chain ([$\alpha_{EM}$ shift multiplicative chain](#prop:alpha-em-shift-multiplicative-chain)) expose the same combinatorial primitive: the pole order at $q = 0$ of a seminormal Hecke trace.
+**Significance: bridge to the w3-w4 atomic-shift framework.** Both factors in the multiplicative chain ([$\alpha_{EM}$ shift multiplicative chain](#prop:alpha-em-shift-multiplicative-chain)) expose the identical combinatorial primitive: the pole order at $q = 0$ of a seminormal Hecke trace.
 
 | Object                          | Shift role                                                                                            |
 |---------------------------------|--------------------------------------------------------------------------------------------------------|
@@ -104,43 +102,21 @@ $$
 | Torus knot $T_{p,k}$ on $V_{(1^p)}$ | $\alpha_{\mathrm{shift}}(T_{p,k}) = k(p-1)$ ([`prop:alpha-shift-torus-knot`](#prop:alpha-shift-torus-knot))            |
 | Inverse fine-structure constant | $\alpha_{EM}^{-1} = q \cdot [\alpha_{\mathrm{shift}}(T_{2,9})]_q \cdot [\alpha_{\mathrm{shift}}(T_{3,5})]_q$           |
 
-The torus-braid case constitutes the clean limit of the atomic-braid shift framework. It features no inter-nucleon terms and only $\sigma_i$ generators (no averaged or inverse generators). It lacks within-partition Hecke $\sigma^2$-cancellation, as the standard Young tableau path through the single column visits distinct axial distances at every step. It also lacks cross-partition Ocneanu cancellation, since the maximum occurs on a unique irreducible representation.
+The torus-braid case provides the clean limit of the atomic-braid shift framework. It restricts generators to $\sigma_i$ alone, avoiding averaged or inverse generators. It eliminates inter-nucleon terms. It prevents within-partition Hecke $\sigma^2$-cancellation, because the standard Young tableau path through the single column occupies distinct axial distances at every step. It precludes cross-partition Ocneanu cancellation, because the maximum localises on a unique irreducible representation.
 <!-- FILE_END: alpha-em-shift-multiplicative-chain-significance.md -->
 
 <!-- FILE_START: q-chromaticity.md -->
-The three color tubes of the Bring's surface
-([color tube interpretation](#rem:color-tube-interpretation)) and
-the three $S_3$ subgroups of its automorphism group
-([chirality of the trefoil](#rem:chirality-trefoil)) provide a
-categorical basis for the color space.  The structure of this
-basis — specifically, its failure to span all "colors" with
-positive coefficients — is the topological origin of color
-confinement.
+The three color tubes of the Bring's surface ([color tube interpretation](#rem:color-tube-interpretation)) and the three $S_3$ subgroups of its automorphism group ([chirality of the trefoil](#rem:chirality-trefoil)) form a categorical basis for the color space. This basis fails to span all colors with positive coefficients. This geometric restriction constitutes the topological origin of color confinement.
 
 **The chromaticity problem.**
 
-In classical color theory \cite{feynman1963}, any choice of three
-primary colors $(r, g, b)$ defines a coordinate system for the
-space of perceived colors.  A central fact is that **no three
-primaries suffice with only positive coefficients**: some spectral
-colors require negative amounts of at least one primary.  The
-visible gamut is the convex hull of the spectral locus — an
-irregularly curved region — while any three primaries span only a
-triangle.  The triangle always leaves part of the gamut outside,
-accessible only via negative coefficients.
+Classical color theory \cite{feynman1963} defines a coordinate system from any three primary colors $(r, g, b)$. No three primaries span the entire space of perceived colors with strictly positive coefficients. The spectral locus forms an irregularly curved region, but three primaries span only a flat triangle. This triangle necessarily excludes parts of the gamut, requiring negative coefficients for complete coverage.
 
-This is not a deficiency of a particular choice of primaries; it
-is a theorem about the geometry of the color space: the spectral
-locus is not contained in any triangular cone.
+This reflects the intrinsic geometry of the color space rather than a deficient choice of primaries. The spectral locus lies outside any triangular cone.
 
 **The $q$-deformed color space.**
 
-In the Descartes universe, the "color space" is the Skein module
-$\mathrm{Sk}_q(\mathbf{C})$.  The three color tubes
-$(r, g, b) = (w_2 - z, w_3 - z, w_4 - z)$ provide three
-distinguished directions — the "primaries" of the categorical
-color space.  An arbitrary element of $\mathrm{Sk}_q$ is a formal
-linear combination of knot types with $q$-polynomial coefficients.
+In the Descartes universe, the Skein module $\mathrm{Sk}_q(\mathbf{C})$ constitutes the color space. The three color tubes $(r, g, b) = (w_2 - z, w_3 - z, w_4 - z)$ supply the primary directions. Every element of $\mathrm{Sk}_q$ expands as a formal linear combination of knot types with $q$-polynomial coefficients.
 
 The Skein relation
 
@@ -149,20 +125,11 @@ $$
   = (q^{1/2} - q^{-1/2}) [L_0]
 $$
 
-forces **negative coefficients** into the expansion: the term
-$-q^{-1}[L_-]$ is unavoidable.  This is the $q$-deformed analogue
-of the chromaticity negativity.  At $q = 1$, the relation becomes
-$[L_+] - [L_-] = 0$ and the negativity vanishes — but at $q \neq 1$
-(the physical Descartes universe), negative Skein coefficients are
-mandatory.
+enforces **negative coefficients** into the expansion. The term $-q^{-1}[L_-]$ introduces unavoidable negativity. This provides the $q$-deformed analogue of chromaticity negativity. At $q = 1$, the relation evaluates to $[L_+] - [L_-] = 0$ and the negativity vanishes. For physical values $q \neq 1$, negative Skein coefficients remain mandatory.
 
 **Three primaries, three trefoils, three $S_3$ subgroups.**
 
-The automorphism group $S_5$ of Bring's surface contains exactly three
-copies of $S_3$, each the quotient of the trefoil knot group
-$\langle x, y \mid x^2 = y^3 \rangle$ restricted to one color
-sector.  These three $S_3$ subgroups are the "primaries" of the
-categorical color space:
+The automorphism group $S_5$ of Bring's surface contains exactly three copies of $S_3$. Each $S_3$ arises as the quotient of the trefoil knot group $\langle x, y \mid x^2 = y^3 \rangle$ restricted to a single color sector. These three $S_3$ subgroups serve as the primaries of the categorical color space:
 
 | Color | $S_3$ subgroup | Trefoil copy | Color coordinate |
 |-------|---------------|-------------|-----------------|
@@ -170,124 +137,79 @@ categorical color space:
 | Green | $S_3^{(g)} \leq S_5$ | $T_{2,3}^{(g)}$ | $c_g = w_3 - z$ |
 | Blue | $S_3^{(b)} \leq S_5$ | $T_{2,3}^{(b)}$ | $c_b = w_4 - z$ |
 
-Each $S_3$ acts on one color fiber.  The elements of $S_5$ that
-lie *outside* all three $S_3$ subgroups act by **conjugation**,
-permuting the three color sectors among themselves — this is the
-$S_5$-theoretic origin of the color permutation symmetry of QCD.
+Each $S_3$ acts on one color fiber. Elements of $S_5$ outside all three $S_3$ subgroups conjugate the subgroups, permuting the three color sectors. This $S_5$ permutation action yields the color permutation symmetry of QCD.
 
 **Necessity of confinement.**
 
-In Feynman's language: some spectral colors lie outside the triangle
-of primaries, requiring negative coefficients.  In QOU language:
-some Skein elements have negative coefficients in the color-tube
-basis.
+Just as spectral colors require negative primary coefficients, some Skein elements carry negative coefficients in the color-tube basis.
 
-An individual quark — a trefoil $T_{2,3}$ in a single color tube —
-is a "primary color."  It does not span the full Skein module with
-positive coefficients.  The Skein resolution of a physical process
-generically produces terms with $-q^{-1}$ factors, which are
-interpretable only when the full Skein sum is evaluated.  A single
-color component, evaluated in isolation, can yield a negative
-"probability" — physically meaningless.
+An individual quark forms a trefoil $T_{2,3}$ within a single color tube. This primary color fails to span the full Skein module with positive coefficients. Generic physical processes resolve into Skein sums containing $-q^{-1}$ factors. These terms hold physical meaning only upon evaluation of the complete Skein sum. Isolated evaluation of a single color component yields a meaningless negative probability.
 
-The resolution is **confinement**: only **color-neutral**
-combinations — those invariant under all three $S_3$ subgroups,
-hence under the full $S_5$ color permutation — yield positive
-evaluations under the fibre functor $\tau$.  The fibre functor
-maps the Skein module to non-negative reals:
+Confinement resolves this negativity. Combinations invariant under all three $S_3$ subgroups remain invariant under the full $S_5$ color permutation. Only these color-neutral combinations guarantee positive evaluations under the fibre functor:
 
 $$
-  \tau \colon \mathrm{Sk}_q(\mathbf{C}) \to \mathbb{R}_{\geq 0}
+  \tau \colon \mathrm{Sk}_q(\mathbf{C}) \to \mathbb{R}_{\geq 0}.
 $$
 
-but this map is positive only on the **$S_5$-invariant** submodule.
-On individual color components, $\tau$ can produce negative values
-— exactly as a chromaticity coefficient can be negative for a
-spectral color outside the primary triangle.
+The map $\tau$ ensures positivity exclusively on the $S_5$-invariant submodule. Individual color components risk negative values, exactly as chromaticity coefficients become negative for spectral colors outside the primary triangle.
 
 **The role of $T_{2,9}$.**
 
-The three-fold cover $T_{2,9}$
-([force identification](#rem:force-knot-identification)) is the
-topological agent that enforces positivity.  By interpolating all
-three color tubes in a single closed curve, $T_{2,9}$ provides
-the binding that makes the full Skein sum $S_5$-invariant.  Without
-$T_{2,9}$, the three trefoil copies could be evaluated separately
-(in which case negative coefficients are possible); with $T_{2,9}$,
-they are bound into a single $S_5$-invariant configuration whose
-$\tau$-evaluation is guaranteed non-negative.
+The three-fold cover $T_{2,9}$ ([force identification](#rem:force-knot-identification)) enforces this positivity. By interpolating all three color tubes along a single closed curve, $T_{2,9}$ binds the components into an $S_5$-invariant whole. Unbound trefoils permit isolated, potentially negative evaluations. The $T_{2,9}$ binding yields an unconditionally positive $S_5$-invariant configuration.
 
-This is the precise sense in which confinement follows from the
-torus knot architecture: $T_{2,9}$ wraps the three primaries into a
-closed system, just as a physical color-mixing apparatus must
-combine all three primaries to produce a visible (positive-intensity)
-result.
+Confinement emerges structurally from this torus knot architecture. A physical color-mixing apparatus requires all three primaries to synthesize a visible result. Similarly, $T_{2,9}$ wraps the three primary quarks into a closed, observable system.
 
 **$q$-chromaticity coordinates.**
 
-By analogy with the CIE chromaticity diagram, define the
-$q$-chromaticity coordinates of a Skein element
-$\psi \in \mathrm{Sk}_q$:
+Following the CIE chromaticity diagram, the $q$-chromaticity coordinates of a Skein element $\psi \in \mathrm{Sk}_q$ normalize the $q$-coefficients $a_r, a_g, a_b$:
 
 $$
   (\hat{c}_r, \hat{c}_g, \hat{c}_b)
   = 
-  \frac{(a_r, a_g, a_b)}{a_r + a_g + a_b}
+  \frac{(a_r, a_g, a_b)}{a_r + a_g + a_b}.
 $$
 
-where $a_r, a_g, a_b$ are the $q$-coefficients of $\psi$ in the
-three color tubes.  These satisfy $\hat{c}_r + \hat{c}_g + \hat{c}_b = 1$,
-The $q$-chromaticity diagram is a triangle (the $q$-simplex).
+These coordinates sum to unity, spanning the $q$-simplex chromaticity triangle.
 
-For color-neutral states (hadrons): $\hat{c}_r = \hat{c}_g = \hat{c}_b = 1/3$
-— the white point at the centroid.  For individual quarks, some
-coordinates exceed $1$ and others are negative — these points lie
-outside the physical triangle, just as spectral colors lie outside
-the gamut of any three primaries.
+Color-neutral hadron states sit at the centroid $\hat{c}_r = \hat{c}_g = \hat{c}_b = 1/3$. Individual quarks push some coordinates above $1$ and drive others negative. These states fall outside the physical triangle, mirroring spectral colors outside a primary gamut.
 
-The **physical gamut** — the set of states with all-positive
-$\tau$-evaluation — is a $q$-deformed convex region inscribed in
-the triangle.  Its boundary is the **$q$-spectral locus**, the
-image of the pure knot types under the $q$-chromaticity projection.
-At $q = 1$, this region fills the entire triangle (no confinement
-needed); at the substrate parameter $q$, it shrinks, excluding individual colors
-and admitting only near-centroid (confined) combinations.
+The physical gamut containing all strictly positive $\tau$-evaluations forms a $q$-deformed convex region inscribed within the triangle. The $q$-spectral locus bounds this region, formed by the $q$-chromaticity projection of pure knot types. At $q = 1$, the gamut fills the entire triangle, rendering confinement unnecessary. At the physical substrate parameter $q$, the gamut shrinks. It excludes individual colors and admits only confined, near-centroid combinations.
 <!-- FILE_END: q-chromaticity.md -->
 
 <!-- FILE_START: schrodinger-color-falsifiability.md -->
-The categorical [$q$-chromaticity construction](#rem:q-chromaticity) makes a falsifiable prediction about human color perception. This directly addresses the century-old paradigm of Riemann \cite{schrodinger1920color} and the modern psychophysical results of \cite{bujack2022}.
+The categorical [$q$-chromaticity construction](#rem:q-chromaticity) yields a falsifiable prediction regarding human color perception. This challenges the Riemannian paradigm \cite{schrodinger1920color} and aligns with the modern psychophysical results of Bujack et al. \cite{bujack2022}.
 
 **The empirical result (Bujack et al., 2022).**
 
-Bujack et al. \cite{bujack2022} demonstrate that perceived color differences obey the strict inequality
+Bujack et al. \cite{bujack2022} proved that perceived color differences violate Riemannian additivity along geodesics. The observed differences satisfy the strict inequality:
 
 $$
-  \Delta E(A, B) + \Delta E(B, C) > \Delta E(A, C)
+  \Delta E(A, B) + \Delta E(B, C) > \Delta E(A, C).
 $$
 
-along geodesics. This "principle of diminishing returns" contradicts the Riemannian additivity assumed since Riemann, Helmholtz, and Schrödinger \cite{schrodinger1920color}. A regression on a crowdsourced color-triad experiment yields a significantly negative average-difference coefficient ($\beta_{\bar d} = -0.005$, $t(60) = -5.566$, $p < 0.001$). The qualitative shape of the recovered scaling function matches a concave, sub-linear curve. The authors explicitly suggest a second-order Weber–Fechner law (logarithmic in the large-difference regime). They note that earlier psychophysical work fits perceived color difference to a power law with exponent $\approx 0.5$.
+This diminishing-returns principle contradicts the assumptions of Riemann, Helmholtz, and Schrödinger \cite{schrodinger1920color}. A crowdsourced color-triad experiment yielded a negative average-difference coefficient ($\beta_{\bar d} = -0.005$, $t(60) = -5.566$, $p < 0.001$). The observed scaling function exhibits concave, sub-linear curvature. Bujack et al. suggested a second-order Weber–Fechner law, which applies logarithmic scaling at large differences. Prior psychophysical studies fit perceived color differences to a power law with an exponent near $0.5$.
 
 **The categorical prediction.**
 
-The Skein relation $q[L_+] - q^{-1}[L_-] = (q^{1/2} - q^{-1/2})[L_0]$ forces the distance on the $q$-chromaticity simplex to inherit a $q$-deformed non-Riemannian correction. The categorically natural functional form is the quantum-integer arc-length:
+The Skein relation $q[L_+] - q^{-1}[L_-] = (q^{1/2} - q^{-1/2})[L_0]$ deforms the distance on the $q$-chromaticity simplex. The distance inherits a non-Riemannian correction matching the quantum-integer arc-length:
 
 $$
   \Delta E_{\mathrm{perc}}(d)
   \;=\;
   \frac{1}{\eta}\,\operatorname{arsinh}\!\bigl(\eta\,d\bigr),
   \qquad
-  \eta := \frac{q - q^{-1}}{2},
+  \eta := \frac{q - q^{-1}}{2}.
 $$
 
-where $d$ is the Riemannian (CIELAB-style) chord length and $\Delta E_{\mathrm{perc}}$ is the perceived difference along the geodesic. This provides the unique one-parameter analytic completion of $[n]_q = (q^n - q^{-n})/(q - q^{-1})$ to a metric on the projective chromaticity 2-simplex. The limit $\eta \to 0$ recovers the Riemannian metric $\Delta E_{\mathrm{perc}} = d$.
+Here $d$ denotes the Riemannian chord length, and $\Delta E_{\mathrm{perc}}$ denotes the perceived geodesic difference. This function constitutes the unique analytic one-parameter extension of $[n]_q = (q^n - q^{-n})/(q - q^{-1})$ to a projective chromaticity 2-simplex metric. The limit $\eta \to 0$ recovers the purely Riemannian metric $\Delta E_{\mathrm{perc}} = d$.
 
 See [Table 1](#tbl:schrodinger-color-falsifiability-table1-data).
 
-The large-$d$ logarithmic asymptote matches exactly the second-order Weber–Fechner law suggested by \cite{bujack2022}. The empirical power-law exponent $\approx 0.5$ corresponds to the intermediate-$d$ behavior of $\operatorname{arsinh}(\eta d)/\eta$, capturing the transition between the linear and logarithmic regimes.
+The large-$d$ logarithmic asymptote precisely matches the second-order Weber–Fechner law suggested by \cite{bujack2022}. The empirical power-law exponent of $\approx 0.5$ captures the intermediate-$d$ behavior of $\operatorname{arsinh}(\eta d)/\eta$, mapping the transition between the linear and logarithmic regimes.
 
 **Numerical prediction from the substrate parameter.**
 
-Substituting the substrate value $q_0 \approx 1.109978595554181$ gives:
+Evaluation at the substrate value $q_0 \approx 1.109978595554181$ determines $\eta$ and the crossover scale $d^{\,*}$:
 
 $$
   \eta = \frac{q_0 - q_0^{-1}}{2} \approx 0.1043,
@@ -295,26 +217,26 @@ $$
   d^{\,*} := 1/\eta \approx 9.59.
 $$
 
-We predict the crossover from the Riemannian regime to the Weber–Fechner regime sits at $\Delta E \approx 9.6$ on a normalized $L^{*}$-style scale (where unit $\Delta E$ is the typical small-difference just-noticeable threshold). This strongly agrees with \cite{bujack2022} Table 1: the diminishing-returns effect is barely significant at $\Delta d = 5$ ($\beta_{\Delta d = 5} = 0.048$, $p = 0.010$) but strongly significant at $\Delta d = 10$ ($\beta_{\Delta d = 10} = 0.119$, $p < 0.001$). The perceptual crossover empirically lies in $[5, 10]$, which brackets the predicted $d^{\,*} \approx 9.6$.
+The transition from Riemannian to Weber–Fechner scaling occurs at $\Delta E \approx 9.6$ on a normalized $L^{*}$-style scale. This closely matches the empirical crossover. Bujack et al. \cite{bujack2022} found the diminishing-returns effect barely significant at $\Delta d = 5$ ($\beta_{\Delta d = 5} = 0.048$, $p = 0.010$) and strongly significant at $\Delta d = 10$ ($\beta_{\Delta d = 10} = 0.119$, $p < 0.001$). The perceptual crossover empirically lies in $[5, 10]$, bracketing the predicted $d^{\,*} \approx 9.6$.
 
 **Falsifiability protocol.**
 
-The categorical prediction forms a one-parameter family $\Delta E_{\mathrm{perc}}(d) = \operatorname{arsinh}(\eta d)/\eta$. A sufficiently precise color-perception experiment can fit a single $\eta$ to yield a confidence interval $[\eta_-, \eta_+]$. This admits three distinct outcomes:
+The categorical prediction forms a one-parameter family $\Delta E_{\mathrm{perc}}(d) = \operatorname{arsinh}(\eta d)/\eta$. A high-precision color-perception experiment can fit $\eta$ to a confidence interval $[\eta_-, \eta_+]$. This forces three possible outcomes:
 
 See [Table 2](#tbl:schrodinger-color-falsifiability-table2-data).
 
-The third outcome would falsify the direct identification that retinal $\Delta E$ measures the Skein metric on the Bring-surface chromaticity simplex. It would not falsify the broader framework, as color perception sits several decoherence layers above the substrate.
+An inconsistent measurement falsifies the hypothesis that retinal $\Delta E$ directly measures the Skein metric on the Bring-surface chromaticity simplex. It leaves the broader framework intact, because color perception operates several decoherence layers above the substrate.
 
 **Sign and functional-form predictions.**
 
-Independently of any numerical fit, the framework predicts three qualitative features already confirmed by \cite{bujack2022}:
+The framework makes three qualitative predictions already confirmed by \cite{bujack2022}, independent of numerical fitting:
 
 See [Table 3](#tbl:schrodinger-color-falsifiability-table3-data).
 
-The remaining empirical lever is the magnitude of $\eta$, constrained by the single-number test above.
+The final empirical test lies in measuring the magnitude of $\eta$.
 
 **Connection to confinement.**
 
-The same deformation parameter $q - q^{-1} = 2\eta$ governs the magnitude of the forced negative coefficient that drives [color confinement](#rem:q-chromaticity). Measuring $\eta \approx 0.10$ in macroscopic color perception serves as an independent measurement of the underlying substrate deformation governing quark confinement.
+The deformation parameter $q - q^{-1} = 2\eta$ determines the magnitude of the forced negative coefficients driving [color confinement](#rem:q-chromaticity). Measuring $\eta \approx 0.10$ via macroscopic color perception provides an independent measurement of the substrate deformation governing quark confinement.
 <!-- FILE_END: schrodinger-color-falsifiability.md -->
 

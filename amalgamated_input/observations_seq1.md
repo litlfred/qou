@@ -1,15 +1,15 @@
 <!-- FILE_START: particle-conjectures-intro.md -->
 We establish the dictionary between knots and particles using the substrate consistency window. The following four blocks constrain the assignments:
-- Quarks as Borromean-linked unknots in the exceptional divisor proposes the quark identification.
-- The Higgs boson as $T(2,8)$: the link spanning three exceptional divisors places the Higgs as a torus link.
-- $S_5$-equivariant torus-knot embeddings: only $T_{2,3}$ and $T_{2,5}$ constrains the embeddings permitted by Bring-surface symmetry.
-- Symmetry-preserving versus symmetry-broken lepton generators sorts the lepton sector by which generators commute with the residual symmetry.
+- The quark identification models quarks as Borromean-linked unknots in the exceptional divisor.
+- The Higgs boson emerges as the torus link $T(2,8)$, spanning three exceptional divisors.
+- The symmetry of Bring's surface restricts $S_5$-equivariant torus-knot embeddings to $T_{2,3}$ and $T_{2,5}$.
+- The lepton sector sorts into symmetry-preserving versus symmetry-broken generators depending on whether they commute with the residual symmetry.
 
 These topological assignments provide the necessary input for distinguishing photon propagation from massive-particle propagation in the subsequent double-slit analysis.
 <!-- FILE_END: particle-conjectures-intro.md -->
 
 <!-- FILE_START: borromean-quark.md -->
-Quarks are not fundamental knots. A quark is a neutrino (an unknot) trapped in a color tube of Bring's surface. It is Borromean-linked with two other unknots in the exceptional divisor.
+Quarks are not fundamental knots. A quark is a neutrino (an unknot) trapped in a color tube of Bring's surface. It links Borromean-style with two other unknots in the exceptional divisor.
 
 **Conjecture.**
 *The baryon is the Borromean link $\mathcal{B}_3$ of three unknots threaded through the color tubes $(r, g, b)$ of the Bring's surface ([color tube coordinates](#def:color-tube-coordinates)), bound by the Hopf link $\mathcal{L}_H$:*
@@ -97,23 +97,23 @@ The torus links $T(2, 2k)$ on the Bring's surface have genus $k - 1$ and interac
 | $T(2,6)$ | 2 | 2 ($D_r \cup D_g$ etc.) | $Z$ boson |
 | $T(2,8)$ | 3 | **all 3** ($D_r \cup D_g \cup D_b$) | **Higgs** |
 
-The torus link $T(2,8)$ is the **first and only** link with a Seifert surface genus large enough to span all three exceptional divisors. Its genus ($3$) exactly matches the number of color tubes.
+The torus link $T(2,8)$ is the first and only link with a Seifert surface genus large enough to span all three exceptional divisors. Its genus ($3$) exactly matches the number of color tubes.
 
 **Scalar (spin $0$) character of $T(2,8)$.**
 
 The two components of $T(2,8)$ each wind $4$ times around the torus longitude and $1$ time around the meridian. The fermion--boson correspondence ([fermion--boson knot--link](#prop:fermion-boson-knot-link)) identifies even-$n$ links as bosons, with components related by the fiber adjoint involution.
 
-For $T(2,8)$, the linking number is $4$ — the two components cross each other $8$ times, contributing $4$ crossings each. The **net Reeb winding** of the two components cancels exactly: one winds $+4$ and the other $-4$ around the Reeb direction. The total angular momentum vanishes:
+For $T(2,8)$, the linking number is $4$. The two components cross each other $8$ times, contributing $4$ crossings each. The Reeb winding of the two components cancels exactly: one winds $+4$ and the other $-4$ around the Reeb direction. The total angular momentum vanishes:
 
 $$
   J =  J_1 + J_2 =  +4 + (-4) =  0.
 $$
 
-The torus link $T(2,8)$ is therefore a **scalar** (spin-$0$) boson. It is the only member of the $T(2,n)$ family where Reeb windings cancel exactly due to genus-$3$ symmetry.
+The torus link $T(2,8)$ is therefore a scalar (spin-$0$) boson. It is the only member of the $T(2,n)$ family where Reeb windings cancel exactly due to genus-$3$ symmetry.
 
 **The Higgs mechanism as linking with $T(2,8)$.**
 
-A particle (knot or link) acquires mass by **crossing** with $T(2,8)$. The crossing energy ([crossing energy](#def:crossing-energy)) of the interaction is proportional to the number of crossings between the particle and the Higgs link:
+A particle (knot or link) acquires mass by crossing with $T(2,8)$. The crossing energy ([crossing energy](#def:crossing-energy)) of the interaction is proportional to the number of crossings between the particle and the Higgs link:
 
 $$
   m_{\mathrm{Higgs}}  \propto 
@@ -140,22 +140,21 @@ The Higgs mass stems from the genus-$3$ Seifert surface volume, determined by th
 
 **Uniqueness of the Higgs.**
 
-On the genus-$4$ Bring's surface, the Seifert surface of $T(2,8)$ has genus $3$, filling $3$ of the $4$ available handles. Up to isotopy, there is exactly **one** way to embed a genus-$3$ surface into a genus-$4$ surface leaving one handle free. The next link $T(2,10)$ would require genus $4$ (all handles), saturating the surface and precluding the coexistence of Borromean and knot structures. Therefore, $T(2,8)$ is the unique Higgs candidate.
+On the genus-$4$ Bring's surface, the Seifert surface of $T(2,8)$ has genus $3$, filling $3$ of the $4$ available handles. Up to isotopy, there is exactly one way to embed a genus-$3$ surface into a genus-$4$ surface leaving one handle free. The next link $T(2,10)$ would require genus $4$ (all handles), saturating the surface and precluding the coexistence of Borromean and knot structures. Therefore, $T(2,8)$ is the unique Higgs candidate.
 <!-- FILE_END: higgs-t28.md -->
 
 <!-- FILE_START: s5-equivariant-torus-knots.md -->
-**Proposition.**
-Let $\Sigma$ be a Riemann surface with automorphism group $\mathrm{Aut}(\Sigma) = S_5$ ([Bring's surface](#def:brings-surface)). A torus knot $T_{2, s}$ with $s \geq 3$ coprime to $2$ admits an equivariant embedding into $\Sigma$ if and only if
+*Let $\Sigma$ be a Riemann surface with automorphism group $\mathrm{Aut}(\Sigma) = S_5$ ([Bring's surface](#def:brings-surface)). A torus knot $T_{2, s}$ with $s \geq 3$ coprime to $2$ admits an equivariant embedding into $\Sigma$ if and only if*
 
 $$
   s  \in  \{3,\, 5\}.
 $$
 
-An equivariant embedding preserves the intrinsic cyclic symmetry $\mathbb{Z}_s$ of the knot.
+*An equivariant embedding preserves the intrinsic cyclic symmetry $\mathbb{Z}_s$ of the knot.*
 <!-- FILE_END: s5-equivariant-torus-knots.md -->
 
 <!-- FILE_START: symmetry-preserving-leptons.md -->
-**Remark (interpretation).**
+**Remark.**
 The classification of [prop:s5-equivariant-torus-knots](#prop:s5-equivariant-torus-knots) admits a sharp physical reading. The three charged lepton generations map to torus knots:
 
 $$
@@ -183,6 +182,6 @@ The electron and muon are the only leptons whose cyclic rotational symmetry is r
 If lepton-generation structure derives from the cyclic symmetry of a $\Sigma_4$-embedded torus knot, the equivariant criterion predicts exactly two generations of charged leptons. Three generations are observed, matching the topological-embedding criterion. The equivariant proposition sharpens this: tau carries its mass because the symmetry-broken embedding still admits a Seifert surface, not because an $S_5$-compatible cyclic structure exists. This aligns with the weight-identification picture ([rem:weight-identification-consequences](#rem:weight-identification-consequences)), where the electron and muon representations fit into the $\mathbb{Z}_5$-graded structure of the $\mathcal{X}_5$ substrate.
 
 **Scope.**
-The proposition does not prohibit the tau; it dictates that the tau requires a different mechanism (symmetry-broken embedding) than the electron and muon (symmetry-preserving embedding). The genus saturation at $T_{2,9}$ excludes fourth and higher generations. The three-generation structure is $2 + 1$, not $3 + 0$.
+The proposition does not prohibit the tau. It dictates that the tau requires a different mechanism (symmetry-broken embedding) than the electron and muon (symmetry-preserving embedding). The genus saturation at $T_{2,9}$ excludes fourth and higher generations. The three-generation structure is $2 + 1$, not $3 + 0$.
 <!-- FILE_END: symmetry-preserving-leptons.md -->
 

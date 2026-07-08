@@ -1,13 +1,5 @@
 <!-- FILE_START: wenzl-positivity-implies-substrate-positivity.md -->
-The companion conjecture
-[`conj:os-reflection-positivity-from-reeb`](#conj:os-reflection-positivity-from-reeb)
-reduces the Wightman-axiom portion of the Yang–Mills millennium
-statement to a single substrate axiom — $C^*$-Frobenius positivity
-of the QOU Frobenius–Hopf substrate at $q = q_0$. This conjecture
-makes the natural follow-up step: the axiom should be **derivable**
-from Wenzl's positivity criterion for
-$\mathrm{Rep}(U_q(\mathfrak{sl}_2))$ at $q_0 \in \mathbb{R}_{>1}$ —
-not an independent posit but a consequence of existing unitarity.
+The companion conjecture [`conj:os-reflection-positivity-from-reeb`](#conj:os-reflection-positivity-from-reeb) reduces the Wightman-axiom portion of the Yang–Mills millennium statement to a single substrate axiom: $C^*$-Frobenius positivity of the QOU Frobenius–Hopf substrate at $q = q_0$. This conjecture takes the natural next step. The axiom should be **derivable** from Wenzl's positivity criterion for $\mathrm{Rep}(U_q(\mathfrak{sl}_2))$ at $q_0 \in \mathbb{R}_{>1}$. It is not an independent posit, but a consequence of existing unitarity.
 
 **Conjecture (Wenzl positivity at $q_0$ implies substrate
 $C^*$-Frobenius positivity).** *Wenzl's positivity criterion for the
@@ -29,10 +21,7 @@ and $\langle\cdot,\cdot\rangle_F$ the Frobenius form of $A$.
 
 ## The natural follow-up
 
-The OS-reflection-positivity conjecture
-[`conj:os-reflection-positivity-from-reeb`](#conj:os-reflection-positivity-from-reeb)
-left the substrate $C^*$-Frobenius positivity axiom as the sole
-genuinely new input needed. That axiom has three free parameters:
+The OS-reflection-positivity conjecture [`conj:os-reflection-positivity-from-reeb`](#conj:os-reflection-positivity-from-reeb) leaves the substrate $C^*$-Frobenius positivity axiom as the sole genuinely new input. That axiom has three free parameters:
 
 1. **Choice of $C^*$-norm** on $A$ at $q_0$. The substrate algebra
    $A$ at $q_0 \in \mathbb{R}_{>1}$ admits several candidate
@@ -121,13 +110,7 @@ requirement that makes the Wightman QFT reconstruction possible.
 <!-- FILE_END: wenzl-positivity-implies-substrate-positivity.md -->
 
 <!-- FILE_START: collatz-hausdorff-comparison.md -->
-The Hausdorff dimension recurrence
-([Hausdorff recurrence](#rem:hausdorff-dimension-recurrence))
-is the paper's only universal convergence proof: the map
-$q_{n+1} = (q_n^2 - q_n + 1)/q_n$ contracts for all
-$q > 3/4$, with $q = 1$ as a superattracting fixed point
-($F'(1) = 0$).  The $q$-Collatz conjecture has a parallel
-structure — with one critical difference.
+The Hausdorff dimension recurrence ([Hausdorff recurrence](#rem:hausdorff-dimension-recurrence)) provides the only universal convergence proof in this paper. The map $q_{n+1} = (q_n^2 - q_n + 1)/q_n$ contracts for all $q > 3/4$, with $q = 1$ as a superattracting fixed point ($F'(1) = 0$). The $q$-Collatz conjecture shares a parallel structure, but with one critical difference.
 
 ### The Lyapunov function $\Phi = \log_q |P|$
 
