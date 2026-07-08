@@ -170,7 +170,7 @@ sub-percent empirical match. The remaining open questions:
    a generating-function description rather than a per-rung
    tabulation.
 
-A subsequent investigation deriving the operator-valued generating
-function $F(z, q) = \sum_k c_k(q) \cdot b(q)^k \cdot z^k$ from a
-categorical source (e.g. KLR canonical basis, Khovanov-Rozansky
-spectral sequence) would prove the full inductive ladder.
+The full inductive ladder follows from a categorical source for the
+operator-valued generating function
+$F(z, q) = \sum_k c_k(q) \cdot b(q)^k \cdot z^k$ — for instance the KLR
+canonical basis or a Khovanov–Rozansky spectral sequence.

@@ -18,7 +18,7 @@ The electron mass is an input. It fixes $\mu_{\mathfrak{u}}$ through the pair Sk
 
 *Hadrons (from pair Skein masses).*
 
-The proton and neutron rows derive from the LO $\rho_K$ assembly (witness: [`atomic-mass-via-rho-k.witness.json`](../../../computations/atomic-mass-via-rho-k.witness.json)). This assembly consumes $m_p$ and $m_n$ as CODATA inputs. It is tautological by construction. The $|\mathrm{tr}_M|$ factor cancels in $\rho_K^{\mathrm{LO}} \cdot m_e \cdot |\mathrm{tr}_M|$, reducing the output to $Z m_p + N m_n$. The FULL framework prediction requires the unified knot mass formula $M(\mathfrak{H}) = \rho \cdot [|\mathrm{tr}_M(T_w)| + \mathrm{tower}(T_w) + \mathrm{tr}_M(C_{\dim_q})]$. This formula is not yet wired at the nucleon scale (see [handoff](../../../docs/audits/-workplan-0b-script-rewire-handoff.md)). The $n$–$p$ splitting emerges as a consequence of the FULL $\mathfrak{Q}_\beta$ chain ($\mathfrak{Q}_\beta + m_e \approx 1.293$ MeV).
+The proton and neutron rows derive from the LO $\rho_K$ assembly (witness: [`atomic-mass-via-rho-k.witness.json`](../../../computations/atomic-mass-via-rho-k.witness.json)). This assembly consumes $m_p$ and $m_n$ as CODATA inputs. It is tautological by construction. The $|\mathrm{tr}_M|$ factor cancels in $\rho_K^{\mathrm{LO}} \cdot m_e \cdot |\mathrm{tr}_M|$, reducing the output to $Z m_p + N m_n$. The FULL framework prediction requires the unified knot mass formula $M(\mathfrak{H}) = \rho \cdot [|\mathrm{tr}_M(T_w)| + \mathrm{tower}(T_w) + \mathrm{tr}_M(C_{\dim_q})]$. This formula does not yet extend to the nucleon scale (see [handoff](../../../docs/audits/-workplan-0b-script-rewire-handoff.md)). The $n$–$p$ splitting emerges as a consequence of the FULL $\mathfrak{Q}_\beta$ chain ($\mathfrak{Q}_\beta + m_e \approx 1.293$ MeV).
 
 See [Table 2](#tbl:mass-comparison-table-table2-data).
 
@@ -46,7 +46,7 @@ All rows below come from the LO $\rho_K$ assembly using CODATA $m_p, m_n$ inputs
 
 See [Table 3](#tbl:mass-comparison-table-table3-data).
 
-† **LO output is constituent sum only.** The FULL prediction is not yet wired. Witness: [`atomic-mass-via-rho-k.witness.json`](../../../computations/atomic-mass-via-rho-k.witness.json).
+† **LO output is constituent sum only.** The full prediction (beyond the constituent sum) is not yet available. Witness: [`atomic-mass-via-rho-k.witness.json`](../../../computations/atomic-mass-via-rho-k.witness.json).
 
 **Notes.** The muon--electron mass ratio fixes the substrate parameter $q$. Hadronic masses follow from the pair Skein formula ([terminal resolution](#prop:terminal-resolution)). Nuclear binding follows from the Hopf-junction Skein change $\Delta E = \Delta\mathcal{S}$. We evaluate the multi-body Skein polynomials up to ${}^4\mathrm{He}$. Polynomials beyond $A = 4$ are computable in principle ([embeddability closure](#thm:embeddability-closure)) but remain unevaluated.
 
