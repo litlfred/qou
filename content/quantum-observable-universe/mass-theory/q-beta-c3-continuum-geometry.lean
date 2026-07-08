@@ -1,3 +1,6 @@
+import Mathlib.Analysis.SpecialFunctions.Log.Basic
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.Bounds
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 import Mathlib.Tactic
@@ -37,7 +40,20 @@ noncomputable def classical_potential (θ : ℝ) : ℝ :=
     This is the core asymptotic bound required for the improper Lebesgue integral. -/
 lemma f_integrable_bound (t : ℝ) (h : 0 < t ∧ t < 2 * π) :
   Real.log |2 * Real.sin (t / 2)| ≤ Real.log t := by
-  sorry
+  have h_sin_pos : 0 < Real.sin (t / 2) := by
+    apply Real.sin_pos_of_mem_Ioo
+    constructor
+    · linarith
+    · linarith
+  have h_abs : |2 * Real.sin (t / 2)| = 2 * Real.sin (t / 2) := by
+    apply abs_of_pos
+    linarith
+  rw [h_abs]
+  have h_inside_pos : 0 < 2 * Real.sin (t / 2) := by linarith
+  have h_t_pos : 0 < t := h.1
+  apply (Real.log_le_log_iff h_inside_pos h_t_pos).mpr
+  have h_sin_le : Real.sin (t / 2) ≤ t / 2 := Real.sin_le (by linarith)
+  linarith
 
 /-- Lemma 1.2: The natural logarithm is improperly integrable at 0. -/
 lemma log_integrable (θ : ℝ) (h : 0 < θ) :
@@ -51,16 +67,16 @@ lemma f_integrable (θ : ℝ) (h : 0 < θ ∧ θ < 2 * π) :
   IntervalIntegrable (fun t => Real.log |2 * Real.sin (t / 2)|) MeasureTheory.volume 0 θ := by
   sorry
 
-/-- Lemma 2.1: The function is continuous almost everywhere (except at 2πk). -/
-lemma f_ae_continuous :
-  ∀ᵐ (t : ℝ) ∂MeasureTheory.volume, ContinuousAt (fun t => Real.log |2 * Real.sin (t / 2)|) t := by
-  sorry
+lemma f_measurable_global :
+  Measurable (fun t : ℝ => Real.log |2 * Real.sin (t / 2)|) := by
+  measurability
 
 /-- Lemma 2: The integrand is strongly measurable around the evaluation point. 
-    (Derived strictly from its almost-everywhere continuity via Borel measurability). -/
+    (Derived strictly from its global measurability). -/
 lemma f_measurable (θ : ℝ) :
   StronglyMeasurableAtFilter (fun t => Real.log |2 * Real.sin (t / 2)|) (nhds θ) MeasureTheory.volume := by
-  sorry
+  apply MeasureTheory.StronglyMeasurable.stronglyMeasurableAtFilter
+  exact f_measurable_global.stronglyMeasurable
 
 /-- Lemma 3: The integrand is continuous strictly inside the topological domain 
     (avoiding the roots of unity at 0 and 2π). -/
