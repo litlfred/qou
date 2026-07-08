@@ -2,4 +2,4 @@ The gauge group emerges from the pair $(\mathbf{C}, \tau)$. Let $\tau \colon \ma
 $$
   G \;=\; \mathrm{Aut}^{\otimes}(\tau)
 $$
-collects these families. By Tannaka–Krein duality, $G$ is an affine group scheme over $R$ and $\mathbf{C} \simeq \mathrm{Rep}(G)$ \cite{deligne1990}.
+collects these families. When $(\mathbf{C}, \tau)$ is neutral Tannakian in the sense of Deligne, $G$ is an affine group scheme over $R$ and the reconstruction $\mathbf{C} \simeq \mathrm{Rep}(G)$ holds \cite{deligne1990}.

@@ -1,7 +1,7 @@
-Let $\mathbf{C}$ be an $R$-linear rigid :refterm[monoidal category]{#monoidal-category}. A **fundamental object** is a simple object $V \in \mathbf{C}$ equipped with a non-degenerate volume form
+Let $\mathbf{C}$ be an $R$-linear rigid :refterm[monoidal category]{#monoidal-category}. A **fundamental object** is an object $V \in \mathbf{C}$ equipped with a volume form
 $$
-  \epsilon \colon \Lambda^2 V \longrightarrow \mathbf{1}.
+  \epsilon \colon V \otimes V \longrightarrow \mathbf{1}
 $$
-The volume constraint forces $\mathrm{rank}(V) = 2$: in $\mathrm{SU}(2)$ it singles out $V = V_{1/2} \cong \mathbb{C}^2$, and abstractly $V$ is the unique simple object of categorical dimension $2$. Every other simple object is an exterior or symmetric power of $V$, so $V$ generates $\mathbf{C}$ as a tensor category.
+— the categorical determinant $\Lambda^2 V \to \mathbf{1}$ — together with an adjoint coform $\eta \colon \mathbf{1} \to V \otimes V$ satisfying the two snake identities. Thus $\epsilon$ exhibits $V$ as its own dual: a *symplectic self-dual object*, the datum that distinguishes $\mathrm{SL}_2 / \mathrm{SU}(2)$ from $\mathrm{GL}_2$ \cite{deligne1990}.
 
-Equivalently, $\epsilon$ makes $V$ a *symplectic self-dual object*: paired with its adjoint coform $\eta \colon \mathbf{1} \to V \otimes V$ it satisfies the two snake identities, so $V$ is its own dual. Self-duality through an antisymmetric form is exactly what distinguishes $\mathrm{SL}_2 / \mathrm{SU}(2)$ from $\mathrm{GL}_2$ \cite{deligne1990}.
+Under a fibre functor the volume constraint forces $\mathrm{rank}(V) = 2$, so $V$ is simple of categorical dimension $2$: in $\mathrm{SU}(2)$ it is $V = V_{1/2} \cong \mathbb{C}^2$, every other simple object is an exterior or symmetric power of $V$, and $V$ tensor-generates $\mathbf{C}$ (see the [role of $V$](#rem:simple-objects-V)).
