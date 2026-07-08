@@ -781,20 +781,216 @@
         "notes": "block has no .lean sibling"
       }
     ],
-    "fit-section-chapter": [],
-    "da-false-claim": [],
-    "da-vacuous": [],
-    "da-circular": [],
-    "da-overclaim": [],
-    "da-hidden-dof": [],
-    "da-non-sequitur": [],
-    "da-lean-narrative-divergence": [],
-    "da-citation-misuse": [],
-    "da-definitional-ambiguity": [],
-    "da-empirical-fragility": [],
-    "da-physical-implausibility": [],
-    "da-reproducibility": [],
-    "da-referee-verdict": [],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "Fits perfectly as table documentation in the knot operations appendix.",
+        "reviewed_at": "2026-07-08T08:51:18.000Z",
+        "reviewed_sha": "5dfac8493b3f4124f364bbcd2e8ab3dc5fd2ea52",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "No claims made, just documentation.",
+        "reviewed_at": "2026-07-08T08:51:18.000Z",
+        "reviewed_sha": "5dfac8493b3f4124f364bbcd2e8ab3dc5fd2ea52",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "Sufficient to explain the tables.",
+        "reviewed_at": "2026-07-08T08:51:18.000Z",
+        "reviewed_sha": "5dfac8493b3f4124f364bbcd2e8ab3dc5fd2ea52",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "No circular reasoning.",
+        "reviewed_at": "2026-07-08T08:51:18.000Z",
+        "reviewed_sha": "5dfac8493b3f4124f364bbcd2e8ab3dc5fd2ea52",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "No claims made.",
+        "reviewed_at": "2026-07-08T08:51:18.000Z",
+        "reviewed_sha": "5dfac8493b3f4124f364bbcd2e8ab3dc5fd2ea52",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "Parameters (b_i, b_j, h) clearly specified.",
+        "reviewed_at": "2026-07-08T08:51:18.000Z",
+        "reviewed_sha": "5dfac8493b3f4124f364bbcd2e8ab3dc5fd2ea52",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "Flows logically.",
+        "reviewed_at": "2026-07-08T08:51:18.000Z",
+        "reviewed_sha": "5dfac8493b3f4124f364bbcd2e8ab3dc5fd2ea52",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "N/A - table documentation.",
+        "reviewed_at": "2026-07-08T08:51:18.000Z",
+        "reviewed_sha": "5dfac8493b3f4124f364bbcd2e8ab3dc5fd2ea52",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "N/A",
+        "reviewed_at": "2026-07-08T08:51:18.000Z",
+        "reviewed_sha": "5dfac8493b3f4124f364bbcd2e8ab3dc5fd2ea52",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "Terms like normal-form (NF) and Hecke amplitude are clearly defined.",
+        "reviewed_at": "2026-07-08T08:51:18.000Z",
+        "reviewed_sha": "5dfac8493b3f4124f364bbcd2e8ab3dc5fd2ea52",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "N/A",
+        "reviewed_at": "2026-07-08T08:51:18.000Z",
+        "reviewed_sha": "5dfac8493b3f4124f364bbcd2e8ab3dc5fd2ea52",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "N/A",
+        "reviewed_at": "2026-07-08T08:51:18.000Z",
+        "reviewed_sha": "5dfac8493b3f4124f364bbcd2e8ab3dc5fd2ea52",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "N/A - explanatory text.",
+        "reviewed_at": "2026-07-08T08:51:18.000Z",
+        "reviewed_sha": "5dfac8493b3f4124f364bbcd2e8ab3dc5fd2ea52",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "Clear documentation for the tables.",
+        "reviewed_at": "2026-07-08T08:51:18.000Z",
+        "reviewed_sha": "5dfac8493b3f4124f364bbcd2e8ab3dc5fd2ea52",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
     "expo-milnor-clarity": [],
     "milnor-brevity": []
   },
