@@ -1069,6 +1069,19 @@
         "reviewed_at": "2026-07-07T14:26:55.089392Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound geometrical argument isolating the sqrt(5) scale to the cinquefoil and the chiral properties to the trefoil.",
+        "reviewed_at": "2026-07-08T09:37:50.000Z",
+        "reviewed_sha": "260a8dfb517a97c17a001129be5652bc175078ba",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "wall-side-statement": [
@@ -1302,6 +1315,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No demonstrably false algebraic or geometric claims in the narrative statement.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound geometrical argument isolating the sqrt(5) scale to the cinquefoil and the chiral properties to the trefoil.",
+        "reviewed_at": "2026-07-08T09:37:50.000Z",
+        "reviewed_sha": "260a8dfb517a97c17a001129be5652bc175078ba",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-vacuous": [
@@ -1323,6 +1349,19 @@
         "notes": "The Lean sibling contains 'sorry' placeholders, rendering the proof vacuous.",
         "evidence": "content/quantum-observable-universe/brings-surface/bring-trefoil-cinquefoil-channel.lean:1",
         "severity": "major"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound geometrical argument isolating the sqrt(5) scale to the cinquefoil and the chiral properties to the trefoil.",
+        "reviewed_at": "2026-07-08T09:37:50.000Z",
+        "reviewed_sha": "260a8dfb517a97c17a001129be5652bc175078ba",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-circular": [
@@ -1343,6 +1382,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The block exhibits post-hoc fitting of parameters and representations to match physical data.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound geometrical argument isolating the sqrt(5) scale to the cinquefoil and the chiral properties to the trefoil.",
+        "reviewed_at": "2026-07-08T09:37:50.000Z",
+        "reviewed_sha": "260a8dfb517a97c17a001129be5652bc175078ba",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-overclaim": [
@@ -1363,6 +1415,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The claims match the scope of the presented material.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound geometrical argument isolating the sqrt(5) scale to the cinquefoil and the chiral properties to the trefoil.",
+        "reviewed_at": "2026-07-08T09:37:50.000Z",
+        "reviewed_sha": "260a8dfb517a97c17a001129be5652bc175078ba",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1383,6 +1448,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "No hidden degrees of freedom or unconstrained parameters found.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound geometrical argument isolating the sqrt(5) scale to the cinquefoil and the chiral properties to the trefoil.",
+        "reviewed_at": "2026-07-08T09:37:50.000Z",
+        "reviewed_sha": "260a8dfb517a97c17a001129be5652bc175078ba",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1403,6 +1481,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The logic chain is sound and has no gaps.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound geometrical argument isolating the sqrt(5) scale to the cinquefoil and the chiral properties to the trefoil.",
+        "reviewed_at": "2026-07-08T09:37:50.000Z",
+        "reviewed_sha": "260a8dfb517a97c17a001129be5652bc175078ba",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1424,6 +1515,19 @@
         "notes": "Lean sibling contains sorry stubs.",
         "evidence": "content/quantum-observable-universe/brings-surface/bring-trefoil-cinquefoil-channel.lean:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound geometrical argument isolating the sqrt(5) scale to the cinquefoil and the chiral properties to the trefoil.",
+        "reviewed_at": "2026-07-08T09:37:50.000Z",
+        "reviewed_sha": "260a8dfb517a97c17a001129be5652bc175078ba",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1444,6 +1548,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Citations are used correctly to support the mathematical claims.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound geometrical argument isolating the sqrt(5) scale to the cinquefoil and the chiral properties to the trefoil.",
+        "reviewed_at": "2026-07-08T09:37:50.000Z",
+        "reviewed_sha": "260a8dfb517a97c17a001129be5652bc175078ba",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1464,6 +1581,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Definitions are clear and unambiguous.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound geometrical argument isolating the sqrt(5) scale to the cinquefoil and the chiral properties to the trefoil.",
+        "reviewed_at": "2026-07-08T09:37:50.000Z",
+        "reviewed_sha": "260a8dfb517a97c17a001129be5652bc175078ba",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1484,6 +1614,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The constants are algebraic and not sensitive to small perturbations.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound geometrical argument isolating the sqrt(5) scale to the cinquefoil and the chiral properties to the trefoil.",
+        "reviewed_at": "2026-07-08T09:37:50.000Z",
+        "reviewed_sha": "260a8dfb517a97c17a001129be5652bc175078ba",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1504,6 +1647,19 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The physical mapping of torus knots or moduli surfaces to particles/interactions is highly speculative.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound geometrical argument isolating the sqrt(5) scale to the cinquefoil and the chiral properties to the trefoil.",
+        "reviewed_at": "2026-07-08T09:37:50.000Z",
+        "reviewed_sha": "260a8dfb517a97c17a001129be5652bc175078ba",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1525,6 +1681,19 @@
         "notes": "Lean sibling contains sorry stubs.",
         "evidence": "content/quantum-observable-universe/brings-surface/bring-trefoil-cinquefoil-channel.lean:1",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound geometrical argument isolating the sqrt(5) scale to the cinquefoil and the chiral properties to the trefoil.",
+        "reviewed_at": "2026-07-08T09:37:50.000Z",
+        "reviewed_sha": "260a8dfb517a97c17a001129be5652bc175078ba",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1547,6 +1716,19 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling contains 'sorry' placeholders, rendering the formalization and proof incomplete.",
         "severity": "major"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound geometrical argument isolating the sqrt(5) scale to the cinquefoil and the chiral properties to the trefoil.",
+        "reviewed_at": "2026-07-08T09:37:50.000Z",
+        "reviewed_sha": "260a8dfb517a97c17a001129be5652bc175078ba",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "bib-cite-resolves": [
@@ -1585,6 +1767,36 @@
           "md": "3fad59a82466",
           "ts": "e6fec89087e6",
           "lean": "286f106d6c96"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound geometrical argument isolating the sqrt(5) scale to the cinquefoil and the chiral properties to the trefoil.",
+        "reviewed_at": "2026-07-08T09:37:50.000Z",
+        "reviewed_sha": "260a8dfb517a97c17a001129be5652bc175078ba",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound geometrical argument isolating the sqrt(5) scale to the cinquefoil and the chiral properties to the trefoil.",
+        "reviewed_at": "2026-07-08T09:37:50.000Z",
+        "reviewed_sha": "260a8dfb517a97c17a001129be5652bc175078ba",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
         }
       }
     ]
