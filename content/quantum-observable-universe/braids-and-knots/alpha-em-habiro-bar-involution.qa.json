@@ -1101,6 +1101,19 @@
         "reviewed_at": "2026-07-07T14:26:55.320638Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound exposition of the Habiro element's bar-involution symmetry.",
+        "reviewed_at": "2026-07-08T09:22:18.000Z",
+        "reviewed_sha": "0b6f2767c611eb5ff850b4a0d84961dc0fdb8813",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "wall-side-statement": [
@@ -1321,6 +1334,19 @@
         "notes": "Checked mathematical consistency of the claim 'Significance' and found no counterexamples under the stated conditions.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/alpha-em-habiro-bar-involution.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound exposition of the Habiro element's bar-involution symmetry.",
+        "reviewed_at": "2026-07-08T09:22:18.000Z",
+        "reviewed_sha": "0b6f2767c611eb5ff850b4a0d84961dc0fdb8813",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-vacuous": [
@@ -1341,6 +1367,19 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No vacuous stubs or tautologies detected in the formulation of 'prop:alpha-em-habiro-bar-involution'.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound exposition of the Habiro element's bar-involution symmetry.",
+        "reviewed_at": "2026-07-08T09:22:18.000Z",
+        "reviewed_sha": "0b6f2767c611eb5ff850b4a0d84961dc0fdb8813",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-circular": [
@@ -1362,6 +1401,19 @@
         "notes": "Traced dependencies [] for 'prop:alpha-em-habiro-bar-involution' and confirmed no circular definitions or justifications.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/alpha-em-habiro-bar-involution.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound exposition of the Habiro element's bar-involution symmetry.",
+        "reviewed_at": "2026-07-08T09:22:18.000Z",
+        "reviewed_sha": "0b6f2767c611eb5ff850b4a0d84961dc0fdb8813",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-overclaim": [
@@ -1382,6 +1434,19 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Verified that the scope of 'prop:alpha-em-habiro-bar-involution' is appropriately restricted to the proven regime without overclaiming structural validity.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound exposition of the Habiro element's bar-involution symmetry.",
+        "reviewed_at": "2026-07-08T09:22:18.000Z",
+        "reviewed_sha": "0b6f2767c611eb5ff850b4a0d84961dc0fdb8813",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1403,6 +1468,19 @@
         "notes": "All constants and parameters used in the statement are explicitly defined; no hidden degrees of freedom detected.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/alpha-em-habiro-bar-involution.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound exposition of the Habiro element's bar-involution symmetry.",
+        "reviewed_at": "2026-07-08T09:22:18.000Z",
+        "reviewed_sha": "0b6f2767c611eb5ff850b4a0d84961dc0fdb8813",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1424,6 +1502,19 @@
         "notes": "Logical transitions in the derivation of 'Significance' are sound; no non-sequiturs detected.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/alpha-em-habiro-bar-involution.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound exposition of the Habiro element's bar-involution symmetry.",
+        "reviewed_at": "2026-07-08T09:22:18.000Z",
+        "reviewed_sha": "0b6f2767c611eb5ff850b4a0d84961dc0fdb8813",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1444,6 +1535,19 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Lean sibling verification matches the narrative statements.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound exposition of the Habiro element's bar-involution symmetry.",
+        "reviewed_at": "2026-07-08T09:22:18.000Z",
+        "reviewed_sha": "0b6f2767c611eb5ff850b4a0d84961dc0fdb8813",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1465,6 +1569,19 @@
         "notes": "All references and uses [] cited in 'prop:alpha-em-habiro-bar-involution' are used in accordance with their established mathematical definitions.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/alpha-em-habiro-bar-involution.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound exposition of the Habiro element's bar-involution symmetry.",
+        "reviewed_at": "2026-07-08T09:22:18.000Z",
+        "reviewed_sha": "0b6f2767c611eb5ff850b4a0d84961dc0fdb8813",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1486,6 +1603,19 @@
         "notes": "All terms and algebraic structures in 'prop:alpha-em-habiro-bar-involution' are uniquely defined or standard.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/alpha-em-habiro-bar-involution.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound exposition of the Habiro element's bar-involution symmetry.",
+        "reviewed_at": "2026-07-08T09:22:18.000Z",
+        "reviewed_sha": "0b6f2767c611eb5ff850b4a0d84961dc0fdb8813",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1507,6 +1637,19 @@
         "notes": "The algebraic statements in 'prop:alpha-em-habiro-bar-involution' do not rely on fragile empirical fits or numerical thresholds.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/alpha-em-habiro-bar-involution.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound exposition of the Habiro element's bar-involution symmetry.",
+        "reviewed_at": "2026-07-08T09:22:18.000Z",
+        "reviewed_sha": "0b6f2767c611eb5ff850b4a0d84961dc0fdb8813",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1528,6 +1671,19 @@
         "notes": "Physical dimensions and units in 'prop:alpha-em-habiro-bar-involution' are consistent with quantum observable universe models.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/alpha-em-habiro-bar-involution.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound exposition of the Habiro element's bar-involution symmetry.",
+        "reviewed_at": "2026-07-08T09:22:18.000Z",
+        "reviewed_sha": "0b6f2767c611eb5ff850b4a0d84961dc0fdb8813",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1549,6 +1705,19 @@
         "notes": "All backing computations and proofs are fully reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/alpha-em-habiro-bar-involution.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound exposition of the Habiro element's bar-involution symmetry.",
+        "reviewed_at": "2026-07-08T09:22:18.000Z",
+        "reviewed_sha": "0b6f2767c611eb5ff850b4a0d84961dc0fdb8813",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1571,6 +1740,19 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims are consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound exposition of the Habiro element's bar-involution symmetry.",
+        "reviewed_at": "2026-07-08T09:22:18.000Z",
+        "reviewed_sha": "0b6f2767c611eb5ff850b4a0d84961dc0fdb8813",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "bib-cite-resolves": [
@@ -1609,6 +1791,36 @@
           "md": "e2bc8047b994",
           "ts": "10b187e6901b",
           "lean": "2e7819a7b9a7"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound exposition of the Habiro element's bar-involution symmetry.",
+        "reviewed_at": "2026-07-08T09:22:18.000Z",
+        "reviewed_sha": "0b6f2767c611eb5ff850b4a0d84961dc0fdb8813",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound exposition of the Habiro element's bar-involution symmetry.",
+        "reviewed_at": "2026-07-08T09:22:18.000Z",
+        "reviewed_sha": "0b6f2767c611eb5ff850b4a0d84961dc0fdb8813",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
         }
       }
     ]
