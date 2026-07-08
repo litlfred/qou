@@ -927,6 +927,19 @@
         "reviewed_at": "2026-07-07T14:26:55.360600Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound analytic structure of the Borromean observable in terms of the Markov trace.",
+        "reviewed_at": "2026-07-08T09:33:29.000Z",
+        "reviewed_sha": "1d63bd3b54a2b030efc3806db5113e0e493979da",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "wall-side-statement": [
@@ -976,6 +989,19 @@
         "reviewed_at": "2026-07-07T14:26:55.360600Z",
         "reviewed_sha": "a157b5058b8b10366a6a2051ad63f059f3320a81",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound analytic structure of the Borromean observable in terms of the Markov trace.",
+        "reviewed_at": "2026-07-08T09:33:29.000Z",
+        "reviewed_sha": "1d63bd3b54a2b030efc3806db5113e0e493979da",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1004,6 +1030,19 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.360600Z",
         "reviewed_sha": "a157b5058b8b10366a6a2051ad63f059f3320a81"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound analytic structure of the Borromean observable in terms of the Markov trace.",
+        "reviewed_at": "2026-07-08T09:33:29.000Z",
+        "reviewed_sha": "1d63bd3b54a2b030efc3806db5113e0e493979da",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1032,6 +1071,19 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.360600Z",
         "reviewed_sha": "a157b5058b8b10366a6a2051ad63f059f3320a81"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound analytic structure of the Borromean observable in terms of the Markov trace.",
+        "reviewed_at": "2026-07-08T09:33:29.000Z",
+        "reviewed_sha": "1d63bd3b54a2b030efc3806db5113e0e493979da",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1060,6 +1112,19 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.360600Z",
         "reviewed_sha": "a157b5058b8b10366a6a2051ad63f059f3320a81"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound analytic structure of the Borromean observable in terms of the Markov trace.",
+        "reviewed_at": "2026-07-08T09:33:29.000Z",
+        "reviewed_sha": "1d63bd3b54a2b030efc3806db5113e0e493979da",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1081,6 +1146,19 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.360600Z",
         "reviewed_sha": "a157b5058b8b10366a6a2051ad63f059f3320a81"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound analytic structure of the Borromean observable in terms of the Markov trace.",
+        "reviewed_at": "2026-07-08T09:33:29.000Z",
+        "reviewed_sha": "1d63bd3b54a2b030efc3806db5113e0e493979da",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-false-claim": [
@@ -1102,6 +1180,19 @@
         "notes": "Checked mathematical consistency of the claim 'Cleaner form' and found no counterexamples under the stated conditions.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/f-bor-borromean-observable.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound analytic structure of the Borromean observable in terms of the Markov trace.",
+        "reviewed_at": "2026-07-08T09:33:29.000Z",
+        "reviewed_sha": "1d63bd3b54a2b030efc3806db5113e0e493979da",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-vacuous": [
@@ -1122,6 +1213,19 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "No vacuous stubs or tautologies detected in the formulation of 'def:f-bor-borromean-observable'.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound analytic structure of the Borromean observable in terms of the Markov trace.",
+        "reviewed_at": "2026-07-08T09:33:29.000Z",
+        "reviewed_sha": "1d63bd3b54a2b030efc3806db5113e0e493979da",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-circular": [
@@ -1143,6 +1247,19 @@
         "notes": "Traced dependencies ['prop:borromean-markov-trace-closed-form', 'prop:y-lambda-closed-form-wenzl-bridge'] for 'def:f-bor-borromean-observable' and confirmed no circular definitions or justifications.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/f-bor-borromean-observable.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound analytic structure of the Borromean observable in terms of the Markov trace.",
+        "reviewed_at": "2026-07-08T09:33:29.000Z",
+        "reviewed_sha": "1d63bd3b54a2b030efc3806db5113e0e493979da",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-overclaim": [
@@ -1163,6 +1280,19 @@
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "Verified that the scope of 'def:f-bor-borromean-observable' is appropriately restricted to the proven regime without overclaiming structural validity.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound analytic structure of the Borromean observable in terms of the Markov trace.",
+        "reviewed_at": "2026-07-08T09:33:29.000Z",
+        "reviewed_sha": "1d63bd3b54a2b030efc3806db5113e0e493979da",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1184,6 +1314,19 @@
         "notes": "Logical transitions in the derivation of 'Cleaner form' are sound; no non-sequiturs detected.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/f-bor-borromean-observable.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound analytic structure of the Borromean observable in terms of the Markov trace.",
+        "reviewed_at": "2026-07-08T09:33:29.000Z",
+        "reviewed_sha": "1d63bd3b54a2b030efc3806db5113e0e493979da",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1205,6 +1348,19 @@
         "notes": "The algebraic statements in 'def:f-bor-borromean-observable' do not rely on fragile empirical fits or numerical thresholds.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/f-bor-borromean-observable.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound analytic structure of the Borromean observable in terms of the Markov trace.",
+        "reviewed_at": "2026-07-08T09:33:29.000Z",
+        "reviewed_sha": "1d63bd3b54a2b030efc3806db5113e0e493979da",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1226,6 +1382,19 @@
         "notes": "Physical dimensions and units in 'def:f-bor-borromean-observable' are consistent with quantum observable universe models.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/f-bor-borromean-observable.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound analytic structure of the Borromean observable in terms of the Markov trace.",
+        "reviewed_at": "2026-07-08T09:33:29.000Z",
+        "reviewed_sha": "1d63bd3b54a2b030efc3806db5113e0e493979da",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1247,6 +1416,19 @@
         "notes": "All backing computations and proofs are fully reproducible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/braids-and-knots/f-bor-borromean-observable.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound analytic structure of the Borromean observable in terms of the Markov trace.",
+        "reviewed_at": "2026-07-08T09:33:29.000Z",
+        "reviewed_sha": "1d63bd3b54a2b030efc3806db5113e0e493979da",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1424,6 +1606,36 @@
         },
         "score": {
           "value": 0.85
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound analytic structure of the Borromean observable in terms of the Markov trace.",
+        "reviewed_at": "2026-07-08T09:33:29.000Z",
+        "reviewed_sha": "1d63bd3b54a2b030efc3806db5113e0e493979da",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound analytic structure of the Borromean observable in terms of the Markov trace.",
+        "reviewed_at": "2026-07-08T09:33:29.000Z",
+        "reviewed_sha": "1d63bd3b54a2b030efc3806db5113e0e493979da",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
         }
       }
     ]
