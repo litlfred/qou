@@ -571,7 +571,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/mass-theory/hook-weight-derivation.ts:1: no `probe:` field or `computation:` block declared — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B"
+        "evidence": "quantum-observable-universe/mass-theory/hook-weight-derivation.ts:1: no `probe:` field or `computation:` block declared \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B"
       }
     ],
     "compute-prop-has-consumer": [
@@ -591,7 +591,7 @@
         "reviewed_at": "2026-06-21T19:13:04.696Z",
         "reviewed_sha": "98d8189172bbefa1a632d4b31137d7289cc48c93",
         "severity": "major",
-        "evidence": "quantum-observable-universe/mass-theory/hook-weight-derivation.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
+        "evidence": "quantum-observable-universe/mass-theory/hook-weight-derivation.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1045,7 +1045,7 @@
         },
         "reviewed_at": "2026-06-22T02:50:55.754Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
+        "notes": "Candidate flagged by heuristic scan \u2014 requires agent confirmation per lean-proof-vacuity-audit."
       },
       {
         "result": "pass",
@@ -1075,7 +1075,7 @@
         },
         "reviewed_at": "2026-07-02T17:07:15.000Z",
         "reviewed_sha": "a9ce9ecfe24e6c7c9d0b9f25699b35ec666faa32",
-        "notes": "4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): current Lean is honest — real statement/derivation or cited sorry; the 2026-06-22 placeholder-marker fail predates the 2026-06-30 rewrite (hash drift verified). Criterion pass."
+        "notes": "4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): current Lean is honest \u2014 real statement/derivation or cited sorry; the 2026-06-22 placeholder-marker fail predates the 2026-06-30 rewrite (hash drift verified). Criterion pass."
       }
     ],
     "voice-statement-no-interpretation": [
@@ -1787,6 +1787,36 @@
         },
         "reviewed_at": "2026-06-28T22:34:58.468Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:33:54.919Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:33:54.919Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
       }
     ]
   },
