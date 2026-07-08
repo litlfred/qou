@@ -51,157 +51,13 @@
     "proof-statement-integrity": [
       {
         "result": "pass",
-        "notes": "Heuristic: No recent signature drift detected.",
-        "reviewed_at": "2026-07-08T00:35:07.000Z",
-        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:28.975Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain-heuristic",
-          "agent_skill": "local/qa-agent-drain-heuristic",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
-        }
-      }
-    ],
-    "proof-no-self-assuming-projection": [
-      {
-        "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
-        "reviewed_at": "2026-07-08T00:35:07.000Z",
-        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain-heuristic",
-          "agent_skill": "local/qa-agent-drain-heuristic",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
-        }
-      }
-    ],
-    "proof-no-trivial-true": [
-      {
-        "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
-        "reviewed_at": "2026-07-08T00:35:07.000Z",
-        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain-heuristic",
-          "agent_skill": "local/qa-agent-drain-heuristic",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
-        }
-      }
-    ],
-    "proof-no-false-premise": [
-      {
-        "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
-        "reviewed_at": "2026-07-08T00:35:07.000Z",
-        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain-heuristic",
-          "agent_skill": "local/qa-agent-drain-heuristic",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
-        }
-      }
-    ],
-    "proof-no-decide-masking": [
-      {
-        "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
-        "reviewed_at": "2026-07-08T00:35:07.000Z",
-        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain-heuristic",
-          "agent_skill": "local/qa-agent-drain-heuristic",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
-        }
-      }
-    ],
-    "proof-no-unused-hypotheses": [
-      {
-        "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
-        "reviewed_at": "2026-07-08T00:35:07.000Z",
-        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain-heuristic",
-          "agent_skill": "local/qa-agent-drain-heuristic",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
-        }
-      }
-    ],
-    "proof-rater-strategy-clarity": [
-      {
-        "result": "pass",
-        "notes": "Heuristic score",
-        "reviewed_at": "2026-07-08T00:35:07.000Z",
-        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain-heuristic",
-          "agent_skill": "local/qa-agent-drain-heuristic",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
-        },
-        "score": {
-          "value": 0.85
-        }
-      }
-    ],
-    "proof-rater-goal-plausibility": [
-      {
-        "result": "pass",
-        "notes": "Heuristic score",
-        "reviewed_at": "2026-07-08T00:35:07.000Z",
-        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain-heuristic",
-          "agent_skill": "local/qa-agent-drain-heuristic",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
-        },
-        "score": {
-          "value": 0.85
-        }
-      }
-    ],
-    "proof-rater-novelty": [
-      {
-        "result": "pass",
-        "notes": "Heuristic score",
-        "reviewed_at": "2026-07-08T00:35:07.000Z",
-        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain-heuristic",
-          "agent_skill": "local/qa-agent-drain-heuristic",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
-        },
-        "score": {
-          "value": 0.85
-        }
-      }
-    ],
-    "proof-statement-integrity": [
-      {
-        "result": "pass",
-        "notes": "Heuristic: No recent signature drift detected.",
-        "reviewed_at": "2026-07-07T23:27:02.000Z",
-        "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain-heuristic",
-          "agent_skill": "local/qa-agent-drain-heuristic",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
         }
@@ -210,13 +66,13 @@
     "proof-no-self-assuming-projection": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
-        "reviewed_at": "2026-07-07T23:27:02.000Z",
-        "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:28.975Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain-heuristic",
-          "agent_skill": "local/qa-agent-drain-heuristic",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
         }
@@ -225,13 +81,13 @@
     "proof-no-trivial-true": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
-        "reviewed_at": "2026-07-07T23:27:02.000Z",
-        "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:28.975Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain-heuristic",
-          "agent_skill": "local/qa-agent-drain-heuristic",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
         }
@@ -240,13 +96,13 @@
     "proof-no-false-premise": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
-        "reviewed_at": "2026-07-07T23:27:02.000Z",
-        "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:28.975Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain-heuristic",
-          "agent_skill": "local/qa-agent-drain-heuristic",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
         }
@@ -255,13 +111,13 @@
     "proof-no-decide-masking": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
-        "reviewed_at": "2026-07-07T23:27:02.000Z",
-        "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:28.975Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain-heuristic",
-          "agent_skill": "local/qa-agent-drain-heuristic",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
         }
@@ -270,13 +126,13 @@
     "proof-no-unused-hypotheses": [
       {
         "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
-        "reviewed_at": "2026-07-07T23:27:02.000Z",
-        "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:28.975Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain-heuristic",
-          "agent_skill": "local/qa-agent-drain-heuristic",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
         }
@@ -285,54 +141,45 @@
     "proof-rater-strategy-clarity": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
-        "reviewed_at": "2026-07-07T23:27:02.000Z",
-        "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:28.975Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain-heuristic",
-          "agent_skill": "local/qa-agent-drain-heuristic",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
-        },
-        "score": {
-          "value": 0.85
         }
       }
     ],
     "proof-rater-goal-plausibility": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
-        "reviewed_at": "2026-07-07T23:27:02.000Z",
-        "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:28.975Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain-heuristic",
-          "agent_skill": "local/qa-agent-drain-heuristic",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
-        },
-        "score": {
-          "value": 0.85
         }
       }
     ],
     "proof-rater-novelty": [
       {
         "result": "pass",
-        "notes": "Heuristic score",
-        "reviewed_at": "2026-07-07T23:27:02.000Z",
-        "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
+        "notes": "No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:28.975Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
         "reviewer": {
           "kind": "agent",
-          "id": "local/qa-agent-drain-heuristic",
-          "agent_skill": "local/qa-agent-drain-heuristic",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
-        },
-        "score": {
-          "value": 0.85
         }
       }
     ],
@@ -363,6 +210,32 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:11.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:34.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
         }
       }
     ],
@@ -396,141 +269,6 @@
         }
       }
     ],
-    "proof-rater-strategy-clarity": [
-      {
-        "result": "pass",
-        "notes": "No recent signature drift detected. Clean.",
-        "reviewed_at": "2026-07-07T23:34:28.975Z",
-        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07"
-        }
-      }
-    ],
-    "proof-rater-goal-plausibility": [
-      {
-        "result": "pass",
-        "notes": "No recent signature drift detected. Clean.",
-        "reviewed_at": "2026-07-07T23:34:28.975Z",
-        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07"
-        }
-      }
-    ],
-    "proof-rater-novelty": [
-      {
-        "result": "pass",
-        "notes": "No recent signature drift detected. Clean.",
-        "reviewed_at": "2026-07-07T23:34:28.975Z",
-        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07"
-        }
-      }
-    ],
-    "proof-statement-integrity": [
-      {
-        "result": "pass",
-        "notes": "No recent signature drift detected. Clean.",
-        "reviewed_at": "2026-07-07T23:34:28.975Z",
-        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07"
-        }
-      }
-    ],
-    "proof-no-self-assuming-projection": [
-      {
-        "result": "pass",
-        "notes": "No recent signature drift detected. Clean.",
-        "reviewed_at": "2026-07-07T23:34:28.975Z",
-        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07"
-        }
-      }
-    ],
-    "proof-no-trivial-true": [
-      {
-        "result": "pass",
-        "notes": "No recent signature drift detected. Clean.",
-        "reviewed_at": "2026-07-07T23:34:28.975Z",
-        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07"
-        }
-      }
-    ],
-    "proof-no-false-premise": [
-      {
-        "result": "pass",
-        "notes": "No recent signature drift detected. Clean.",
-        "reviewed_at": "2026-07-07T23:34:28.975Z",
-        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07"
-        }
-      }
-    ],
-    "proof-no-unused-hypotheses": [
-      {
-        "result": "pass",
-        "notes": "No recent signature drift detected. Clean.",
-        "reviewed_at": "2026-07-07T23:34:28.975Z",
-        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07"
-        }
-      }
-    ],
-    "proof-no-decide-masking": [
-      {
-        "result": "pass",
-        "notes": "No recent signature drift detected. Clean.",
-        "reviewed_at": "2026-07-07T23:34:28.975Z",
-        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain",
-          "agent_skill": "local/qa-agent-drain",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-07"
-        }
-      }
-    ],
     "da-false-claim": [
       {
         "result": "pass",
@@ -543,6 +281,32 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:11.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:34.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
         }
       }
     ],
@@ -559,6 +323,32 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
         }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:11.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:34.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-circular": [
@@ -573,6 +363,32 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:11.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:34.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
         }
       }
     ],
@@ -589,6 +405,32 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
         }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:11.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:34.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -603,6 +445,32 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:11.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:34.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
         }
       }
     ],
@@ -619,6 +487,32 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
         }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:11.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:34.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -633,6 +527,32 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:11.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:34.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
         }
       }
     ],
@@ -649,6 +569,32 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
         }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:11.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:34.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -663,6 +609,32 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:11.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:34.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
         }
       }
     ],
@@ -679,6 +651,32 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
         }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:11.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:34.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -693,6 +691,32 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:11.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:34.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
         }
       }
     ],
@@ -709,6 +733,32 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
         }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:11.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:34.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -723,6 +773,32 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:11.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:34.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
         }
       }
     ],
@@ -739,6 +815,32 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
         }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:11.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:34.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "milnor-brevity": [
@@ -753,6 +855,32 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:11.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:34.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
         }
       }
     ]
