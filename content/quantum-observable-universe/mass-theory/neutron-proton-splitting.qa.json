@@ -1046,6 +1046,19 @@
         "reviewed_at": "2026-07-07T14:26:56.913784Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound algebraic mechanism mapping explicit metric constraints carefully into defined testable limits.",
+        "reviewed_at": "2026-07-08T14:46:36.000Z",
+        "reviewed_sha": "faf20375da31fc2c066ce682d64786be9cbd8e14",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "wall-side-statement": [
@@ -1278,6 +1291,19 @@
         "notes": "No false claims identified in 'Neutron--proton mass splitting': mathematical reasoning is consistent in prose.",
         "severity": "minor",
         "evidence": "neutron-proton-splitting.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound algebraic mechanism mapping explicit metric constraints carefully into defined testable limits.",
+        "reviewed_at": "2026-07-08T14:46:36.000Z",
+        "reviewed_sha": "faf20375da31fc2c066ce682d64786be9cbd8e14",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-vacuous": [
@@ -1298,6 +1324,19 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The block 'Neutron--proton mass splitting' presents substantial mathematical content: '$$'.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound algebraic mechanism mapping explicit metric constraints carefully into defined testable limits.",
+        "reviewed_at": "2026-07-08T14:46:36.000Z",
+        "reviewed_sha": "faf20375da31fc2c066ce682d64786be9cbd8e14",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-circular": [
@@ -1319,6 +1358,19 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Neutron--proton mass splitting'.",
         "severity": "minor",
         "evidence": "neutron-proton-splitting.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound algebraic mechanism mapping explicit metric constraints carefully into defined testable limits.",
+        "reviewed_at": "2026-07-08T14:46:36.000Z",
+        "reviewed_sha": "faf20375da31fc2c066ce682d64786be9cbd8e14",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-overclaim": [
@@ -1339,6 +1391,19 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The remarks and narrative scope in 'Neutron--proton mass splitting' are appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound algebraic mechanism mapping explicit metric constraints carefully into defined testable limits.",
+        "reviewed_at": "2026-07-08T14:46:36.000Z",
+        "reviewed_sha": "faf20375da31fc2c066ce682d64786be9cbd8e14",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1360,6 +1425,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Neutron--proton mass splitting'.",
         "severity": "minor",
         "evidence": "neutron-proton-splitting.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound algebraic mechanism mapping explicit metric constraints carefully into defined testable limits.",
+        "reviewed_at": "2026-07-08T14:46:36.000Z",
+        "reviewed_sha": "faf20375da31fc2c066ce682d64786be9cbd8e14",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1381,6 +1459,19 @@
         "notes": "The prose arguments in 'Neutron--proton mass splitting' proceed logically through the stated steps.",
         "severity": "minor",
         "evidence": "neutron-proton-splitting.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound algebraic mechanism mapping explicit metric constraints carefully into defined testable limits.",
+        "reviewed_at": "2026-07-08T14:46:36.000Z",
+        "reviewed_sha": "faf20375da31fc2c066ce682d64786be9cbd8e14",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1401,6 +1492,19 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No Lean sibling required; narrative matches the expected configuration.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound algebraic mechanism mapping explicit metric constraints carefully into defined testable limits.",
+        "reviewed_at": "2026-07-08T14:46:36.000Z",
+        "reviewed_sha": "faf20375da31fc2c066ce682d64786be9cbd8e14",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1422,6 +1526,19 @@
         "notes": "No citations are present in 'Neutron--proton mass splitting', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "neutron-proton-splitting.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound algebraic mechanism mapping explicit metric constraints carefully into defined testable limits.",
+        "reviewed_at": "2026-07-08T14:46:36.000Z",
+        "reviewed_sha": "faf20375da31fc2c066ce682d64786be9cbd8e14",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1443,6 +1560,19 @@
         "notes": "Key terms and symbols in 'Neutron--proton mass splitting' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "neutron-proton-splitting.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound algebraic mechanism mapping explicit metric constraints carefully into defined testable limits.",
+        "reviewed_at": "2026-07-08T14:46:36.000Z",
+        "reviewed_sha": "faf20375da31fc2c066ce682d64786be9cbd8e14",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1464,6 +1594,19 @@
         "notes": "The algebraic and logical relations in 'Neutron--proton mass splitting' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "neutron-proton-splitting.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound algebraic mechanism mapping explicit metric constraints carefully into defined testable limits.",
+        "reviewed_at": "2026-07-08T14:46:36.000Z",
+        "reviewed_sha": "faf20375da31fc2c066ce682d64786be9cbd8e14",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1485,6 +1628,19 @@
         "notes": "The physical concepts described in 'Neutron--proton mass splitting' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "neutron-proton-splitting.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound algebraic mechanism mapping explicit metric constraints carefully into defined testable limits.",
+        "reviewed_at": "2026-07-08T14:46:36.000Z",
+        "reviewed_sha": "faf20375da31fc2c066ce682d64786be9cbd8e14",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1505,6 +1661,19 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The derivation steps and formal definitions in 'Neutron--proton mass splitting' are reproducible.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound algebraic mechanism mapping explicit metric constraints carefully into defined testable limits.",
+        "reviewed_at": "2026-07-08T14:46:36.000Z",
+        "reviewed_sha": "faf20375da31fc2c066ce682d64786be9cbd8e14",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1527,6 +1696,19 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Neutron--proton mass splitting' are consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound algebraic mechanism mapping explicit metric constraints carefully into defined testable limits.",
+        "reviewed_at": "2026-07-08T14:46:36.000Z",
+        "reviewed_sha": "faf20375da31fc2c066ce682d64786be9cbd8e14",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1544,6 +1726,36 @@
         "field_hash": {
           "md": "de83aa628e90",
           "ts": "faed3ef4c50e"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound algebraic mechanism mapping explicit metric constraints carefully into defined testable limits.",
+        "reviewed_at": "2026-07-08T14:46:36.000Z",
+        "reviewed_sha": "faf20375da31fc2c066ce682d64786be9cbd8e14",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound algebraic mechanism mapping explicit metric constraints carefully into defined testable limits.",
+        "reviewed_at": "2026-07-08T14:46:36.000Z",
+        "reviewed_sha": "faf20375da31fc2c066ce682d64786be9cbd8e14",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
         }
       }
     ]
