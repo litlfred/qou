@@ -1,7 +1,5 @@
-import Mathlib.Analysis.SpecialFunctions.Log.Basic
-import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
-import Mathlib.Analysis.Complex.Basic
-import Mathlib.Topology.Basic
+import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
+import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 import Mathlib.Tactic
 
 /-!
@@ -27,17 +25,20 @@ in favor of continuous Archimedean geometry.
 namespace QOU.MassTheory.ContinuumGeometry
 
 open Complex Real
+open scoped Interval
 
 /-- The Lobachevsky function (the imaginary part of the quantum dilogarithm), 
-    representing the continuous classical potential of the Faddeev integral. -/
+    representing the continuous classical potential of the Faddeev integral.
+    Defined formally via Mathlib interval integrals. -/
 noncomputable def classical_potential (θ : ℝ) : ℝ :=
-  -- Representing Im(Li_2(e^{iθ})) abstractly until Complex.Li2 is in Mathlib
-  sorry
+  - ∫ t in (0 : ℝ)..θ, Real.log |2 * Real.sin (t / 2)|
 
-/-- AXIOM: The fundamental derivative of the classical topological potential 
-    forces the continuous saddle-point geometry. -/
-axiom potential_derivative (θ : ℝ) (h : 0 < θ ∧ θ < 2 * π) :
-  deriv classical_potential θ = - Real.log |2 * Real.sin (θ / 2)|
+/-- The fundamental derivative of the classical topological potential 
+    forces the continuous saddle-point geometry. 
+    (Follows from the Fundamental Theorem of Calculus). -/
+theorem potential_derivative (θ : ℝ) (h : 0 < θ ∧ θ < 2 * π) :
+  deriv classical_potential θ = - Real.log |2 * Real.sin (θ / 2)| := by
+  sorry
 
 /-- The analytical saddle point bounding the non-compact contour integration 
     is rigorously pinned to the $\pi/3$ root. -/
