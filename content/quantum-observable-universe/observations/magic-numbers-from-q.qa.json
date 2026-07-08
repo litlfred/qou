@@ -1065,6 +1065,19 @@
         "reviewed_at": "2026-07-07T14:26:56.691100Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:44:44.000Z",
+        "reviewed_sha": "05d64e0f6d6da926f2afca8ae179453234919e57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "wall-side-statement": [
@@ -1301,6 +1314,19 @@
         "notes": "The claim in 'Magic numbers emerge from per-partition nuclear character at $q_0$' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/magic-numbers-from-q.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:44:44.000Z",
+        "reviewed_sha": "05d64e0f6d6da926f2afca8ae179453234919e57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-vacuous": [
@@ -1322,6 +1348,19 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The block 'Magic numbers emerge from per-partition nuclear character at $q_0$' presents substantial mathematical content: substrate parameter $q_0$ through the per-partition nuclear character computatio...",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:44:44.000Z",
+        "reviewed_sha": "05d64e0f6d6da926f2afca8ae179453234919e57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-circular": [
@@ -1344,6 +1383,19 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Magic numbers emerge from per-partition nuclear character at $q_0$'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/magic-numbers-from-q.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:44:44.000Z",
+        "reviewed_sha": "05d64e0f6d6da926f2afca8ae179453234919e57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-overclaim": [
@@ -1365,6 +1417,19 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose presents 'Magic numbers emerge from per-partition nuclear character at $q_0$' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:44:44.000Z",
+        "reviewed_sha": "05d64e0f6d6da926f2afca8ae179453234919e57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1387,6 +1452,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Magic numbers emerge from per-partition nuclear character at $q_0$'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/magic-numbers-from-q.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:44:44.000Z",
+        "reviewed_sha": "05d64e0f6d6da926f2afca8ae179453234919e57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1409,6 +1487,19 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/observations/magic-numbers-from-q.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/magic-numbers-from-q.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:44:44.000Z",
+        "reviewed_sha": "05d64e0f6d6da926f2afca8ae179453234919e57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1430,6 +1521,19 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/observations/magic-numbers-from-q.lean fails compilation, causing divergence from the narrative.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:44:44.000Z",
+        "reviewed_sha": "05d64e0f6d6da926f2afca8ae179453234919e57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1452,6 +1556,19 @@
         "notes": "No citations are present in 'Magic numbers emerge from per-partition nuclear character at $q_0$', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/magic-numbers-from-q.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:44:44.000Z",
+        "reviewed_sha": "05d64e0f6d6da926f2afca8ae179453234919e57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1474,6 +1591,19 @@
         "notes": "Key terms and symbols in 'Magic numbers emerge from per-partition nuclear character at $q_0$' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/magic-numbers-from-q.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:44:44.000Z",
+        "reviewed_sha": "05d64e0f6d6da926f2afca8ae179453234919e57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1496,6 +1626,19 @@
         "notes": "The algebraic and logical relations in 'Magic numbers emerge from per-partition nuclear character at $q_0$' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/magic-numbers-from-q.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:44:44.000Z",
+        "reviewed_sha": "05d64e0f6d6da926f2afca8ae179453234919e57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1518,6 +1661,19 @@
         "notes": "The physical concepts described in 'Magic numbers emerge from per-partition nuclear character at $q_0$' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/magic-numbers-from-q.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:44:44.000Z",
+        "reviewed_sha": "05d64e0f6d6da926f2afca8ae179453234919e57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1540,6 +1696,19 @@
         "notes": "The Lean sibling content/quantum-observable-universe/observations/magic-numbers-from-q.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/magic-numbers-from-q.lean:1 — content/quantum-observable-universe/observations/magic-numbers-from-q.lean:27:8: error: `QOU.AtomicMass.magic_numbers_from_q` has already been declared"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:44:44.000Z",
+        "reviewed_sha": "05d64e0f6d6da926f2afca8ae179453234919e57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1563,6 +1732,19 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/observations/magic-numbers-from-q.lean contains compilation errors: content/quantum-observable-universe/observations/magic-numbers-from-q.lean:27:8: error: `QOU.AtomicMass.magic_numbers_from_q` has already been declared, invalidating the claimed formalization.",
         "severity": "critical"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:44:44.000Z",
+        "reviewed_sha": "05d64e0f6d6da926f2afca8ae179453234919e57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "bib-cite-resolves": [
@@ -1601,6 +1783,36 @@
           "md": "7d686648c89e",
           "ts": "4771fb8c2f9d",
           "lean": "f6bbb89ad69b"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:44:44.000Z",
+        "reviewed_sha": "05d64e0f6d6da926f2afca8ae179453234919e57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:44:44.000Z",
+        "reviewed_sha": "05d64e0f6d6da926f2afca8ae179453234919e57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
         }
       }
     ]

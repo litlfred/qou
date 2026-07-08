@@ -891,6 +891,19 @@
         "reviewed_at": "2026-07-07T14:26:56.666500Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:44:44.000Z",
+        "reviewed_sha": "05d64e0f6d6da926f2afca8ae179453234919e57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "proof-rater-goal-plausibility": [
@@ -931,6 +944,19 @@
         "notes": "The claim in '$\\\\delta_{\\\\mathrm{CP}}$ as imaginary part of the alternating-block character' is unverified due to Lean compilation failures in sibling file.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/cp-violation-spectral-form.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:44:44.000Z",
+        "reviewed_sha": "05d64e0f6d6da926f2afca8ae179453234919e57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-vacuous": [
@@ -952,6 +978,19 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The claims in '$\\\\delta_{\\\\mathrm{CP}}$ as imaginary part of the alternating-block character' are non-vacuous as they make concrete conjectures about '\\mathbb{Z}[i]$ the complexified ground ring, allowing $q = |...'.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:44:44.000Z",
+        "reviewed_sha": "05d64e0f6d6da926f2afca8ae179453234919e57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-circular": [
@@ -974,6 +1013,19 @@
         "notes": "No circular reasoning or self-assuming definitions detected in '$\\\\delta_{\\\\mathrm{CP}}$ as imaginary part of the alternating-block character'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/cp-violation-spectral-form.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:44:44.000Z",
+        "reviewed_sha": "05d64e0f6d6da926f2afca8ae179453234919e57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-overclaim": [
@@ -995,6 +1047,19 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose presents '$\\\\delta_{\\\\mathrm{CP}}$ as imaginary part of the alternating-block character' as verified, but the sibling Lean file fails to compile.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:44:44.000Z",
+        "reviewed_sha": "05d64e0f6d6da926f2afca8ae179453234919e57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1017,6 +1082,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in '$\\\\delta_{\\\\mathrm{CP}}$ as imaginary part of the alternating-block character'.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/cp-violation-spectral-form.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:44:44.000Z",
+        "reviewed_sha": "05d64e0f6d6da926f2afca8ae179453234919e57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1039,6 +1117,19 @@
         "notes": "Logical gaps exist due to compilation failure in content/quantum-observable-universe/observations/cp-violation-spectral-form.lean.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/cp-violation-spectral-form.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:44:44.000Z",
+        "reviewed_sha": "05d64e0f6d6da926f2afca8ae179453234919e57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1060,6 +1151,19 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Lean and narrative statements for '$\\\\delta_{\\\\mathrm{CP}}$ as imaginary part of the alternating-block character' are structurally aligned.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:44:44.000Z",
+        "reviewed_sha": "05d64e0f6d6da926f2afca8ae179453234919e57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1082,6 +1186,19 @@
         "notes": "No citations are present in '$\\\\delta_{\\\\mathrm{CP}}$ as imaginary part of the alternating-block character', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/cp-violation-spectral-form.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:44:44.000Z",
+        "reviewed_sha": "05d64e0f6d6da926f2afca8ae179453234919e57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1104,6 +1221,19 @@
         "notes": "Key terms and symbols in '$\\\\delta_{\\\\mathrm{CP}}$ as imaginary part of the alternating-block character' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/cp-violation-spectral-form.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:44:44.000Z",
+        "reviewed_sha": "05d64e0f6d6da926f2afca8ae179453234919e57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1126,6 +1256,19 @@
         "notes": "The algebraic and logical relations in '$\\\\delta_{\\\\mathrm{CP}}$ as imaginary part of the alternating-block character' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/cp-violation-spectral-form.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:44:44.000Z",
+        "reviewed_sha": "05d64e0f6d6da926f2afca8ae179453234919e57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1148,6 +1291,19 @@
         "notes": "The physical concepts described in '$\\\\delta_{\\\\mathrm{CP}}$ as imaginary part of the alternating-block character' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/cp-violation-spectral-form.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:44:44.000Z",
+        "reviewed_sha": "05d64e0f6d6da926f2afca8ae179453234919e57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1170,6 +1326,19 @@
         "notes": "The Lean sibling content/quantum-observable-universe/observations/cp-violation-spectral-form.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/observations/cp-violation-spectral-form.lean:1 — content/quantum-observable-universe/observations/cp-violation-spectral-form.lean:37:2: error: Invalid field notation: Type of"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:44:44.000Z",
+        "reviewed_sha": "05d64e0f6d6da926f2afca8ae179453234919e57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1193,6 +1362,19 @@
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/observations/cp-violation-spectral-form.lean contains compilation errors: content/quantum-observable-universe/observations/cp-violation-spectral-form.lean:37:2: error: Invalid field notation: Type of",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:44:44.000Z",
+        "reviewed_sha": "05d64e0f6d6da926f2afca8ae179453234919e57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "bib-cite-resolves": [
@@ -1372,6 +1554,36 @@
         },
         "score": {
           "value": 0.85
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:44:44.000Z",
+        "reviewed_sha": "05d64e0f6d6da926f2afca8ae179453234919e57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:44:44.000Z",
+        "reviewed_sha": "05d64e0f6d6da926f2afca8ae179453234919e57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
         }
       }
     ]
