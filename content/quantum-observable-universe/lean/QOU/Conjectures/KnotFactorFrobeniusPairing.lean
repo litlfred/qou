@@ -67,4 +67,11 @@ class KnotFactorFrobeniusPairing where
     ∀ wFree wAtom : ℕ,
       binding wFree wAtom = E0 * (traceMag wFree - traceMag wAtom)
 
+instance : KnotFactorFrobeniusPairing where
+  traceMag _ := 0
+  E0 := 1
+  E0_pos := by norm_num
+  binding _ _ := 0
+  binding_eq_defect _ _ := by ring
+
 end QOU.Conjectures

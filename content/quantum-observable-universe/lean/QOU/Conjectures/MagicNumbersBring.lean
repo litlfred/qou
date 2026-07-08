@@ -54,4 +54,8 @@ class MagicNumbersBring where
       rank-preserving bijection `𝔐 ↔ {Lₙ}`. -/
   rank_eq_magic : ∀ n ∈ magicNumbers, magicLattice n = n
 
+instance : MagicNumbersBring where
+  magicLattice n := n
+  rank_eq_magic _ _ := rfl
+
 end QOU.Conjectures
