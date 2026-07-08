@@ -1,11 +1,4 @@
-This remark is the $\mathbb{Z}/2\mathbb{Z}$ bar-grading Lean $\leftrightarrow$
-paper bridge for the [bar-involution](#def:bar-involution): the bar-grading
-subring/module structure and the sorry-free Lean theorems with their
-narrative proofs.
-
-## Proofs (Lean $\leftrightarrow$ paper bridge)
-
-Every Lean theorem in [`bar-involution.lean`](bar-involution.lean) has both a narrative proof here and a `sorry`-free formal proof. Theorems split into three sections by structural prerequisite (`CommRing` / `Field`).
+Narrative proofs for the $\mathbb{Z}/2\mathbb{Z}$ bar-grading theorems of the [bar-involution](#def:bar-involution), each mirroring a `sorry`-free proof in [`bar-involution.lean`](bar-involution.lean). They split by structural prerequisite (`CommRing` / `Field`).
 
 ### Bar-grading over `CommRing R`
 
@@ -25,7 +18,7 @@ Every Lean theorem in [`bar-involution.lean`](bar-involution.lean) has both a na
 *Proof.* $\overline{x+y} = \overline x + \overline y = -x + (-y) = -(x+y)$. $\square$
 
 **Theorem (Lean: `IsBarSymmetric.of_mul_antisym`).** $x, y$ bar-anti-symmetric $\Rightarrow$ $x \cdot y$ bar-symmetric.
-*Proof.* $\overline{x \cdot y} = \overline x \cdot \overline y = (-x)(-y) = x \cdot y$. **This is the "anti $\times$ anti = sym" identity that generates the bar-symmetric content from bar-anti-symmetric kernels** (e.g., $h^2$ bar-sym from $h$ bar-anti-sym). $\square$
+*Proof.* $\overline{x \cdot y} = \overline x \cdot \overline y = (-x)(-y) = x \cdot y$ (the "anti $\times$ anti $=$ sym" identity — e.g. $h^2$ bar-symmetric from $h$ bar-anti-symmetric). $\square$
 
 **Theorem (Lean: `IsBarAntiSymmetric.of_sym_mul`).** $x$ bar-symmetric, $y$ bar-anti-symmetric $\Rightarrow$ $x \cdot y$ bar-anti-symmetric.
 *Proof.* $\overline{x \cdot y} = \overline x \cdot \overline y = x \cdot (-y) = -(x \cdot y)$. $\square$
@@ -80,7 +73,7 @@ Every Lean theorem in [`bar-involution.lean`](bar-involution.lean) has both a na
 *Proof.* $x^{2n}$ is bar-symmetric by `pow_two_mul`; apply `of_sym`. $\square$
 
 **Theorem (Lean: `barSymmetricProjection_pow_odd_of_antisym x n`).** For bar-anti-sym $x$: $P_{\mathrm{avg}}(x^{2n+1}) = 0$.
-*Proof.* $x^{2n+1}$ is bar-anti-sym by `pow_two_mul_add_one`; apply `of_antisym`. **This is "the framework projects away odd-power components" at the formal level.** $\square$
+*Proof.* $x^{2n+1}$ is bar-anti-sym by `pow_two_mul_add_one`; apply `of_antisym`. $\square$
 
 **Theorem (Lean: `barSymmetricProjection_isBarSymmetric x`).** $P_{\mathrm{avg}}(x)$ is bar-symmetric for every $x$.
 *Proof.* $\overline{P_{\mathrm{avg}}(x)} = \overline{(x + \overline x)/2} = \overline{x + \overline x} \cdot \overline{1/2} = (\overline x + x) \cdot (1/2) = P_{\mathrm{avg}}(x)$ via `bar_half`. $\square$
