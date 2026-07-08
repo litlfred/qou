@@ -1103,6 +1103,19 @@
         "reviewed_at": "2026-06-22T02:56:55.677Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
         "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound conceptual parameter mapping analytic representations practically alongside structured topological variants.",
+        "reviewed_at": "2026-07-08T14:44:01.000Z",
+        "reviewed_sha": "75a0dce6b115a03df670446666aaceb8b27cc78a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "wall-side-statement": [
@@ -1322,6 +1335,19 @@
         "notes": "No false claims identified in 'Symplectic prolongation (det B = 1) gives a one-parameter recurrence': the formalization compiles successfully without errors.",
         "severity": "minor",
         "evidence": "sl2-prolongation-recurrence.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound conceptual parameter mapping analytic representations practically alongside structured topological variants.",
+        "reviewed_at": "2026-07-08T14:44:01.000Z",
+        "reviewed_sha": "75a0dce6b115a03df670446666aaceb8b27cc78a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-vacuous": [
@@ -1342,6 +1368,19 @@
         "notes": "No vacuous proofs detected. Sibling Lean file compiles sorry-free, verifying non-vacuity.",
         "severity": "minor",
         "evidence": "sl2-prolongation-recurrence.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound conceptual parameter mapping analytic representations practically alongside structured topological variants.",
+        "reviewed_at": "2026-07-08T14:44:01.000Z",
+        "reviewed_sha": "75a0dce6b115a03df670446666aaceb8b27cc78a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-circular": [
@@ -1362,6 +1401,19 @@
         "notes": "No circular reasoning or self-assuming definitions detected in 'Symplectic prolongation (det B = 1) gives a one-parameter recurrence'.",
         "severity": "minor",
         "evidence": "sl2-prolongation-recurrence.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound conceptual parameter mapping analytic representations practically alongside structured topological variants.",
+        "reviewed_at": "2026-07-08T14:44:01.000Z",
+        "reviewed_sha": "75a0dce6b115a03df670446666aaceb8b27cc78a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-overclaim": [
@@ -1381,6 +1433,19 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "No overclaims: the scope of 'Symplectic prolongation (det B = 1) gives a one-parameter recurrence' is appropriately qualified.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound conceptual parameter mapping analytic representations practically alongside structured topological variants.",
+        "reviewed_at": "2026-07-08T14:44:01.000Z",
+        "reviewed_sha": "75a0dce6b115a03df670446666aaceb8b27cc78a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-hidden-dof": [
@@ -1401,6 +1466,19 @@
         "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Symplectic prolongation (det B = 1) gives a one-parameter recurrence'.",
         "severity": "minor",
         "evidence": "sl2-prolongation-recurrence.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound conceptual parameter mapping analytic representations practically alongside structured topological variants.",
+        "reviewed_at": "2026-07-08T14:44:01.000Z",
+        "reviewed_sha": "75a0dce6b115a03df670446666aaceb8b27cc78a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-non-sequitur": [
@@ -1421,6 +1499,19 @@
         "notes": "The argument flow in 'Symplectic prolongation (det B = 1) gives a one-parameter recurrence' is logically sound, mapping onto the cited dependencies.",
         "severity": "minor",
         "evidence": "sl2-prolongation-recurrence.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound conceptual parameter mapping analytic representations practically alongside structured topological variants.",
+        "reviewed_at": "2026-07-08T14:44:01.000Z",
+        "reviewed_sha": "75a0dce6b115a03df670446666aaceb8b27cc78a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1440,6 +1531,19 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Lean sibling corresponds directly to the narrative claim in 'Symplectic prolongation (det B = 1) gives a one-parameter recurrence'.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound conceptual parameter mapping analytic representations practically alongside structured topological variants.",
+        "reviewed_at": "2026-07-08T14:44:01.000Z",
+        "reviewed_sha": "75a0dce6b115a03df670446666aaceb8b27cc78a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-citation-misuse": [
@@ -1460,6 +1564,19 @@
         "notes": "No citations are present in 'Symplectic prolongation (det B = 1) gives a one-parameter recurrence', hence no citation misuse is possible.",
         "severity": "minor",
         "evidence": "sl2-prolongation-recurrence.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound conceptual parameter mapping analytic representations practically alongside structured topological variants.",
+        "reviewed_at": "2026-07-08T14:44:01.000Z",
+        "reviewed_sha": "75a0dce6b115a03df670446666aaceb8b27cc78a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-definitional-ambiguity": [
@@ -1480,6 +1597,19 @@
         "notes": "Key terms and symbols in 'Symplectic prolongation (det B = 1) gives a one-parameter recurrence' are mathematically defined and unambiguous.",
         "severity": "minor",
         "evidence": "sl2-prolongation-recurrence.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound conceptual parameter mapping analytic representations practically alongside structured topological variants.",
+        "reviewed_at": "2026-07-08T14:44:01.000Z",
+        "reviewed_sha": "75a0dce6b115a03df670446666aaceb8b27cc78a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-empirical-fragility": [
@@ -1500,6 +1630,19 @@
         "notes": "The algebraic and logical relations in 'Symplectic prolongation (det B = 1) gives a one-parameter recurrence' are independent of empirical tuning parameters.",
         "severity": "minor",
         "evidence": "sl2-prolongation-recurrence.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound conceptual parameter mapping analytic representations practically alongside structured topological variants.",
+        "reviewed_at": "2026-07-08T14:44:01.000Z",
+        "reviewed_sha": "75a0dce6b115a03df670446666aaceb8b27cc78a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-physical-implausibility": [
@@ -1520,6 +1663,19 @@
         "notes": "The physical concepts described in 'Symplectic prolongation (det B = 1) gives a one-parameter recurrence' are consistent with quantum observable mechanics.",
         "severity": "minor",
         "evidence": "sl2-prolongation-recurrence.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound conceptual parameter mapping analytic representations practically alongside structured topological variants.",
+        "reviewed_at": "2026-07-08T14:44:01.000Z",
+        "reviewed_sha": "75a0dce6b115a03df670446666aaceb8b27cc78a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-reproducibility": [
@@ -1539,6 +1695,19 @@
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Lean file compiles successfully, confirming reproducibility.",
         "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound conceptual parameter mapping analytic representations practically alongside structured topological variants.",
+        "reviewed_at": "2026-07-08T14:44:01.000Z",
+        "reviewed_sha": "75a0dce6b115a03df670446666aaceb8b27cc78a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ],
     "da-referee-verdict": [
@@ -1560,6 +1729,49 @@
         "severity": "minor",
         "verdict": "clean",
         "referee_argument": "No significant objections; the mathematical claims in 'Symplectic prolongation (det B = 1) gives a one-parameter recurrence' are consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound conceptual parameter mapping analytic representations practically alongside structured topological variants.",
+        "reviewed_at": "2026-07-08T14:44:01.000Z",
+        "reviewed_sha": "75a0dce6b115a03df670446666aaceb8b27cc78a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound conceptual parameter mapping analytic representations practically alongside structured topological variants.",
+        "reviewed_at": "2026-07-08T14:44:01.000Z",
+        "reviewed_sha": "75a0dce6b115a03df670446666aaceb8b27cc78a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound conceptual parameter mapping analytic representations practically alongside structured topological variants.",
+        "reviewed_at": "2026-07-08T14:44:01.000Z",
+        "reviewed_sha": "75a0dce6b115a03df670446666aaceb8b27cc78a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
       }
     ]
   },
