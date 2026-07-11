@@ -30,15 +30,7 @@ universe u
     determined by their sign pattern, locally constant off `ℬ`); that
     justification needs the confinement-level definition over the
     base-ring topology and is not yet formalised.  Given `hℓ`, the
-    theorem produces the explicit open neighborhood at any `q ∉ B`.
-
-    Note: the previous encoding quantified over an *arbitrary*
-    `ℓ : R → ℤ` with no local-constancy hypothesis and carried a
-    `sorry`; that goal is **false** (a step function has no constant
-    neighborhood at its jump), so the `sorry` sat on an unprovable
-    statement.  The hypothesis `hℓ` — exactly the manuscript's
-    "locally constant off `ℬ`" claim — makes the statement a true
-    conditional, derived below. -/
+    theorem produces the explicit open neighborhood at any `q ∉ B`. -/
 -- Ref: [manuscript] climax-volume-mass/local-shadow-ordering
 theorem ConfinementLocalConstancy
     (R : Type u) [TopologicalSpace R]
