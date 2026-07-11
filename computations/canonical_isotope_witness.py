@@ -58,7 +58,8 @@ from codata_constants import U_MEV, M_E_MEV  # noqa: E402 — u→MeV factor (be
 
 # Zero-parameter magic-A binding B = 2·m_e·A·(8G)·ρ_F (Catalan's G; NO fit, NO
 # AME) — used to DERIVE the ⁴He α-cluster anchor rather than feed AME back.
-sys.path.insert(0, str(HERE / "alpha"))
+# magic_A_formula lives in computations/ (already on sys.path via HERE above +
+# the _path_bridge); no extra path mutation needed.
 from magic_A_formula import magic_A_binding  # noqa: E402
 
 
@@ -287,7 +288,10 @@ def assemble_row(
         _is_anchor_identity = ("n_α=1" in _strat and "pairs=0" in _strat)
         if _is_anchor_identity:
             _magic = magic_A_binding(Z, N)  # dict, or None if inapplicable
-            _b_derived = _as_float(_magic.get("B_pred_MeV")) if _magic else None
+            # Gate the derived path on applicable==True (Copilot): only tag
+            # magic-A-derived when magic-A actually applies AND yields a value.
+            _applicable = bool(_magic and _magic.get("applicable"))
+            _b_derived = _as_float(_magic.get("B_pred_MeV")) if _applicable else None
             if _b_derived is not None:
                 _b_val = _b_derived
                 _layer_tag = "L3-α-cluster:n_α=1,pairs=0(magic-A-derived)"
