@@ -257,6 +257,66 @@ seeding *alone*; does not exclude per-block data inside a non-linear or
 derived-non-uniform closure. C13 row extends to: linear, bar-even, AND
 exponentiated-uniform Δtr_M-seeded f all refuted.
 
+### PROBE 1 — Habiro-integrality kill-test (§3.A): NEGATIVE (scope-a)
+
+**Probe:** `computations/probes/qbeta_habiro_integrality_kill_test.py`
+(witness `qbeta-habiro-integrality-kill-test.witness.json`, 6 assertions
+pass). Re-expanded the ladder in `h = q−1` (symbolic, exact `b(q)` Hoefsmit
+form; `h ↔ ℏ_q` verified basis-invariant) and tested the induced
+coefficients for integer / O_K-integer values, per anchor, under two
+tolerance modes (σ_exp-propagated and anchor-spread).
+
+**Result: NEGATIVE across all normalizations × anchors × modes** (bare
+ladder `L`; `Q_base`-dressed `P·L`; primary and extended-c_k sensitivity):
+resolvable orders fail the integrality window (bare ladder fails at order 4
+in every mode; the dressed form fails at orders 2–5). **The ladder is not
+the q=1 Taylor expansion of a Habiro-ring element under the natural
+normalizations.** Scope (a): a different structurally-motivated
+normalization, or a **non-Habiro analytic object (state integral /
+median resummation, §3.B)**, remains open — the growth-class tension (§3.B:
+simple pole, not Gevrey-1) already pointed the same way. **Downstream:
+GSWZ Galois descent (Appendix A) is gated on this result and dies with it
+under these normalizations.**
+
+### PROBE 3 — Borromean forced-candidate shadow (§3.C): NEGATIVE → new refuted row C15
+
+**Probe:** `computations/probes/qbeta_borromean_cyclotomic_probe.py`
+(witness `qbeta-borromean-cyclotomic.witness.json`, 3 assertions pass;
+wall 19.8 s). Canonical machinery cross-checked against the literature
+Jones polynomial at generic q before proceeding.
+
+**Result: NEGATIVE.** No canonical framework normalization of the
+Borromean invariant (τ_D Lean closed form; τ_C canonical z-trace;
+`F_Bor/6`; literature `J_B/4`) reproduces `c_2 = −1` AND the c_3 shadow
+`−2` parameter-free: the raw ℏ-shadow of τ_D **vanishes to order ℏ³**
+(Brunnian (q−1)-adic vanishing ⇒ a_2 = a_3 = 0); the other normalizations
+give (29/6, −14/3), (1, 1); the C13 bridge-peel gives c_3 =
+−23/(6b) ≈ −4.42, −83/(12b) ≈ −7.97, −191/(55b) ≈ −4.00, −225/(43b) ≈ −6.03
+— none within 0.1% of −2 at either anchor. **New refuted row (C15:
+forced-link Borromean cyclotomic/q=1 shadow).** Scope (a): the Borromean
+shadow *alone* does not carry the ladder shadows; not an exclusion of
+Borromean data from a multi-term closure. No scan, no fit.
+
+### PROBE 5 — q-holonomic recurrence test (§3.E): NEGATIVE (scope-a; sharpens P-C15)
+
+**Probe:** `computations/probes/qbeta_ck_qholonomic_recurrence_test.py`
+(witness `qbeta-ck-qholonomic-recurrence-test.witness.json`). The 4₁
+order-2 qZeilberger operator, instantiated as the recursion kernel via the
+corpus I-A color↔rung dictionary (`x = q₀^k`), homogeneous AND
+inhomogeneous variants, both anchors.
+
+**Result: NEGATIVE.** Relative residuals are O(1) (100–280% of the largest
+term) at every rung k = 2..5, both anchors, both variants — >40× the 2.4%
+c_3 uncertainty scale, and anchor-stable (not a one-anchor noise fluke).
+The inhomogeneous c_4 prediction (+7.42…+7.50, anchor-stable ~1%) has the
+**wrong sign** vs every recorded empirical/candidate c_4. Scope (a): kills
+the RAW `q^N ↦ q^k` instantiation only — P-C15's bar-parity survivor
+status is untouched; the surviving kernel needs a conjugation / cyclotomic
+re-basing / twist (the I-B re-basing or the KC15 pair-difference channel).
+**Caveat (Y2, matches P4):** the AME extraction floor σ(c_k) = σ_R/u^k
+exceeds |c_k| for k ≥ 4 — a noise-floor-proof retest needs genuine
+canonical rungs (the H₄ Hoefsmit c₄^even build, bean 8we6).
+
 ## Appendix A — P6c executed: Galois-descent / GSWZ Frobenius-gluing scoping (U3)
 
 **Status:** SCOPING ONLY (owner-selected 2026-07-11; no numerics, no Lean, no
