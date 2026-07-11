@@ -3,12 +3,12 @@
   "description": "Cross-anchor scan of Faddeev Phi_b readouts at substrate-canonical arguments vs the c3 bar-odd S-leak (S and un-levered r = S*u^3). Exploratory measurement; no wiring.",
   "auditOnly": true,
   "tier": "exploratory-scan (registry untouched; flip-flop guard section 8 respected)",
-  "computedAt": "2026-07-11T17:02:32.135366+00:00",
-  "commitSha": "bab1a899fbe13cfaa1b9d681956ab6ee0edf62d5",
+  "computedAt": "2026-07-11T17:56:29.640194+00:00",
+  "commitSha": "0090da76ace9e7065128239008360f688f3327ea",
   "engine": "mpmath",
   "engineVersion": "1.3.0",
   "scriptFile": "qbeta_c3_phib_argument_scan.py",
-  "scriptHash": "7d6a70591365",
+  "scriptHash": "7bc7492b3b4c",
   "precision_dps": 50,
   "assertions": [
     {
