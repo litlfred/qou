@@ -91,6 +91,8 @@ def qbr3 (q : R) : R := q ^ 2 + 1 + (q⁻¹) ^ 2
 
 /-! ## Binding-period closed forms `S(n) = Σ_{λ⊢n} dim_q(λ)` (symbolic compute) -/
 
+/-- `S(0) = 1` (empty partition). -/
+def S0 : R := 1
 /-- `S(1) = 1`. -/
 def S1 : R := 1
 /-- `S(2) = 2` (q-independent). -/
@@ -102,8 +104,12 @@ def S4 (q : R) : R := 2 + 2 * qbr3 q + (q ^ 2 + (q⁻¹) ^ 2)
 
 /-! ## Tier 1 — the seed is the symmetric q-integer -/
 
-/-- `c₂ = S(2) − S(1) = 1 = [1]_q` (near-trivial). -/
+/-- `c₂ = (S(2) − S(1))/S(0) = 1 = [1]_q` (near-trivial; `S(0)=1`). -/
 theorem c2_seed : (S2 : R) - S1 = 1 := by simp only [S2, S1]; norm_num
+
+/-- Recurrence exact at `n = 2`: `D(2) = S(2) − (S(1) + [1]_q·S(0)) = 0`,
+with `[1]_q = 1`. -/
+theorem D2_zero : (S2 : R) - (S1 + 1 * S0) = 0 := by simp only [S2, S1, S0]; norm_num
 
 /-- **`c₃ = [2]_q` exactly** — the single nontrivial seed coincidence.
 `c₃ = (S(3) − S(2)) / S(1) = S(3) − S(2)` since `S(1) = 1`. -/
@@ -116,7 +122,7 @@ theorem D3_zero (q : R) : S3 q - (S2 + qbr2 q * S1) = 0 := by
 
 /-- At `q = 1`, `[2]_q = 2` — the classical involution recurrence coefficient
 `I(3) = I(2) + 2·I(1)` (the `n−1 = 2` weight). Ties Tier 1 to A000085. -/
-theorem qbr2_classical_limit : qbr2 (1 : R) = 2 := by simp [qbr2]
+theorem qbr2_classical_limit : qbr2 (1 : R) = 2 := by norm_num [qbr2]
 
 /-! ## Tier 2 — the Habiro `(q−1)²·Φ₃` deviation at `n = 4` -/
 

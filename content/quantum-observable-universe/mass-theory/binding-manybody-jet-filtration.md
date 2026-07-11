@@ -40,3 +40,21 @@ This is an open conjecture: the residue-sum form of each term and the two
 anchors are established, but the equality of the full binding to the complete
 jet-order filtration — and the $q$-difference origin of the scale rule — are
 not yet proved.
+
+**Scope note on the weight $w_n(K)$ (2026-07-11).** A derive-or-refute of the
+weight kernel establishes two constraints. First, $w_n$ **cannot** be a pure
+body-order quantity $w_n$ independent of the knot $K$: $^{3}\mathrm{H}$ and
+$^{3}\mathrm{He}$ share the identical body-order structure ($A=3$) yet differ in
+binding by $0.76\ \text{MeV}$ ($9.9\%$), so a $K$-independent weight would force
+$B(^{3}\mathrm{H})=B(^{3}\mathrm{He})$ — excluded by the invariant that binding
+is not a function of $A$ alone. Hence $w_n(K)$ is genuinely $K$-dependent, as
+written. Second, with $K$-dependent weights the anchors are underdetermined
+($A-1$ unknowns against one equation per isotope), so extracting $w_n$ from the
+binding data is a per-isotope fit and cannot close the kernel; closure requires
+the *derived* $R(q,x)$. The eigenfunction relation of the na-Stokes period
+$a_D^{(n)}=S(n)/n$ (the seed $c_3=[2]_q$ exact, and the Habiro
+$(q-1)^2\Phi_3$ deviation, formalized in
+[`QOU.Mass.BindingEigenfunctionTwoTier`](lean/QOU/Mass/BindingEigenfunctionTwoTier.lean))
+supplies a *derived target* for $R(q,x)$ but does not determine it — the binding
+deviation and the $Q_\beta$ $c_k$ ladder share the Habiro *ring*, not the same
+element. See [`docs/audits/2026-07-11-eigenfunction-weight-kernel-link-and-wn-derive-or-refute.md`](../../../docs/audits/2026-07-11-eigenfunction-weight-kernel-link-and-wn-derive-or-refute.md).
