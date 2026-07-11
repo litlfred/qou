@@ -11,7 +11,7 @@ The figure-eight weight satisfies the exact field identity
 $$
   J_{4_1}(q) = 1 + \tfrac{3}{4}h^{2} + \frac{h^{4}}{4(h^{2} + 8 + 4(q + q^{-1}))}.
 $$
-The coefficient $3/4$ is forced by the identity. The expansion is proved in `FigureEightCasimirWeight.lean`.
+The coefficient $3/4$ is forced by the identity.
 
 The substrate parameter $q_0$ is fixed through $\mathrm{Vol}(4_1)$. The knot defining the one calibrated deformation parameter also carries the vacuum's first substrate correction.
 
