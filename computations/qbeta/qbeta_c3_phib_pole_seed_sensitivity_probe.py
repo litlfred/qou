@@ -100,8 +100,10 @@ def main() -> int:
     delta = {}
     for a, q in anchors.items():
         b = b_substrate(q, +1)
-        delta[a] = min(mp.im(mp.mpc(0, 1) * mp.pi / b),
-                       mp.im(mp.mpc(0, 1) * mp.pi * b)) / 2
+        # magnitudes: the geometric meaning is a positive half-distance to the
+        # first sinh pole, regardless of the b branch chosen
+        delta[a] = min(mp.fabs(mp.im(mp.mpc(0, 1) * mp.pi / b)),
+                       mp.fabs(mp.im(mp.mpc(0, 1) * mp.pi * b))) / 2
     print(f"  canonical iδ (contour shift): proton {mp.nstr(delta['proton'], 8)}")
 
     # ---- P1: basin fates ----
