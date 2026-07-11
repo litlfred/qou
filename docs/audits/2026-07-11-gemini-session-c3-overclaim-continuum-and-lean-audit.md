@@ -94,6 +94,54 @@ Gram-matrix Markov trace, because at the cyclotomic root `q = e^{2πi/3}` one ha
 the raw trace `−4 + i√3 ≠ 0`. This falsifies the finite-dim algebraic-shadow route
 and is worth keeping as a structural observation.
 
+## Finding 5 — the "strong-force closure" is two more vacuous Lean stubs
+
+The same session extended the pattern into the **strong sector** with two files
+(`mass-theory/`) presented as "compiled with zero errors … the entire architectural
+closure is now formally typed and backed by Lean." Both prove nothing:
+
+- **`strong-ck-recursion-kernel-constraints.lean`.** `strong_recursion_step` is
+  **`by rfl` on a def-unfold**: `applyStrongRecursion w w' res := (1/2)·w + res·w'`,
+  and the theorem substitutes `res := 5/2` and asserts the same expression — `def =
+  def`. The kernel constants `gluonic := 3`, `residual := 5/2` are **hardcoded
+  literals**; the claimed NA-Stokes ratios `T(2,9)/T(2,3) → 3`, `T(2,5)/T(2,2) → 2.5`
+  are asserted in the docstring, never computed (no trace/integral/witness; `T(2,2)` =
+  Hopf link has `Vol = 0`, so the ratio is ill-defined). It also inherits the
+  re-scoped `−(10/3)u²` keystone as a premise.
+- **`isospin-symmetry-breaking-su4-anomaly.lean`.** `doublet_degeneracy_split` proves
+  `(base + diff) − base = diff` by **`ring`** — a universal tautology. ³H/³He, SU(4),
+  0.76 MeV, isospin appear only in the docstring (the `q_gl_obstruction_calc` failure
+  mode, AGENTS.md §3b-tax). `s3_su4_differential` is an **unconstrained free
+  parameter** — a fit (Δ_λ gate: "no seventh fit-based ansatz"), re-invoking the
+  already-refuted Wigner-SU(4) (KL-positivity prune, `deltaSign_mixed`).
+
+Both received corrective docstring banners (this branch). Neither is a derivation;
+"compiles with zero errors" is true and irrelevant.
+
+## Finding 6 (positive) — one selection-rule engine unifies the weak + strong negatives
+
+The scattered sign/parity negatives across both sectors share **one** structural
+cause — a candidate built from the wrong symmetry eigenspace. This is formalized
+sorry-free (lean-direct exit 0) in
+[`QOU/SelectionRules.lean`](../../content/quantum-observable-universe/lean/QOU/SelectionRules.lean),
+generic base ring per §7c:
+
+- **`odd_ne_even_of_ne_zero`** (bar-parity). A nonzero bar-ODD element cannot equal a
+  bar-EVEN one (char ≠ 2). This is the **scope-(b)** reason `c₃ = −Vol(4₁)` fails:
+  the bar-odd c₃ carrier vs the bar-even amphichiral `Vol(4₁)` (`self-dual-higgs`,
+  #3482) — wrong eigenspace, not merely anchor-blind (the scope-(a) probe is Finding 1).
+- **`nonneg_sum_ne_neg_target`** (sign/positivity). A non-negative combination of
+  non-negative operators cannot equal a strictly negative target — the **common cause**
+  of two of the six refuted Δ_λ ansätze: co-Casimir wrong-sign (row B,
+  `coCasimir_wrong_sign`) and the crystal/KL route (row E, KL-positivity prune). On the
+  partitions where the mixed-sign `Δ_λ < 0`, every positive ansatz is dead on arrival.
+
+**Forward use (necessary, not sufficient).** The rules *prune*: a Δ_λ source must be
+sign-carrying (chiral) — so chiral `T(2, odd)` knots are the parity-*allowed* class,
+while the positive/amphichiral routes (and the free-parameter SU(4) fit of Finding 5)
+are excluded up front. They justify the "no 7th fit" gate; they do not lift it — the
+archimedean residue (c₃ swing / Δ_λ magnitude) stays open (Subgoal-2 / Track A).
+
 ## Disposition
 
 - Correction banner on `q-beta-c3-continuum-geometry.md`; corrective docstring
