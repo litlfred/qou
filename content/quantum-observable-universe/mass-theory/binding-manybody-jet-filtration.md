@@ -59,4 +59,15 @@ $(q-1)^2\Phi_3$ deviation, formalized in
 [`QOU.Mass.BindingEigenfunctionTwoTier`](lean/QOU/Mass/BindingEigenfunctionTwoTier.lean))
 supplies a *derived target* for $R(q,x)$ but does not determine it — the binding
 deviation and the $Q_\beta$ $c_k$ ladder share the Habiro *ring*, not the same
-element. See [`docs/audits/2026-07-11-eigenfunction-weight-kernel-link-and-wn-derive-or-refute.md`](../../../docs/audits/2026-07-11-eigenfunction-weight-kernel-link-and-wn-derive-or-refute.md).
+element.
+
+A multi-anchor test (D$\to{}^{12}$C, Coulomb-corrected) further shows that the
+full-tower reading — summing $B(K)=\sum_{n=2}^{A} m_e\,a_D^{(n)}\,w_n$ to the
+nucleon count $A$ — is **refuted for $A\geq 5$**: the na-Stokes period $a_D^{(n)}$
+grows super-exponentially while $B/A\to\mathrm{const}$, so any bounded or
+amplifying body-order weight overshoots ($\sim{+}920\%$ at ${}^{6}$Li,
+$\sim{+}2\times10^{6}\%$ at ${}^{12}$C). The series must therefore be a **few-body
+truncation** (fixed small $n_{\max}$, a $2$–$3$-body cluster count $\times$
+A-multiplicity, matching nuclear $2$-/$3$-body force dominance), not a sum to $A$;
+the na-Stokes period remains the correct *light*-nucleus ($A\leq 4$) kernel. See
+[`docs/audits/2026-07-11-eigenfunction-weight-kernel-link-and-wn-derive-or-refute.md`](../../../docs/audits/2026-07-11-eigenfunction-weight-kernel-link-and-wn-derive-or-refute.md).
