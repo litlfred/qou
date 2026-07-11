@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-07-11T18:54:28.660001+00:00",
-  "commitSha": "fdf57ae808beb41095075e7befc6552293ca165f",
+  "computedAt": "2026-07-11T19:01:32.213108+00:00",
+  "commitSha": "fc276a5db39cea056580e6e1b54efc95f69bf2a2",
   "assertions": [
     {
       "name": "charge_symm_plus_coulomb_fixes_mirror_split",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 10,
   "computation": "charge-symmetric-coulomb-binding",
   "scriptFile": "charge_symmetric_coulomb_binding.py",
   "scriptHash": "324e8b3906e5",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "15f0ff7b6e18a87387cecdcab8faac2f2db6d4ac",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
