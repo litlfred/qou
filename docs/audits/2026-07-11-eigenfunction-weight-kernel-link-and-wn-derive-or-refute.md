@@ -363,6 +363,38 @@ geometric input" of Part 9 into a concrete, tractable compute target: the deuter
 (H₆) ghost cross-term is the first bond; the coordination is the graph of
 significant `⟨g_i, g_j⟩_G`.
 
+## Part 11 — deriving the bond-extensive hypothesis from bond translation-invariance
+
+Siblings #3549/#3551 (`bk_coordination_contact_binding.py`) read the binding
+multiplicity as the coordination number `z(A)=A−1` (nucleon) / contact-graph edges
+(α-cluster), but flag *"single-link multiplier = coordination number"* as the
+**bond-extensive hypothesis — conditional, not derived**. The Part-10 Gram-quadratic
+binding form supplies the missing derivation
+([`binding_bond_extensive_derivation.py`](../../computations/binding_bond_extensive_derivation.py),
+witness `binding-bond-extensive-derivation.witness.json`):
+
+`B(K) ~ ⟨Σ_i g_i⟩²_G = Σ_i ⟨g_i⟩²_G + 2·Σ_{i<j} ⟨g_i, g_j⟩_G`, `g_i = ½(L₊−L₋)_i`.
+
+1. **Unbonded cross-term vanishes.** Two nucleon ghosts on disjoint strands form a
+   *split link*; the Markov trace factorizes, `tr_M(g_i⊗g_j)=tr_M(g_i)·tr_M(g_j)`,
+   and each ghost is **traceless** (`tr_M(g)=0`). So `⟨g_i,g_j⟩_G = 0` with no bond.
+2. **Bonded cross-term is bond-universal.** A single inter-nucleon generator couples
+   the pair: `⟨g_i,σ_bond,g_j⟩_G = b* ≠ 0`. For identical nucleons joined by
+   identical bonds, every bond is the *same* local ghost-σ-ghost coupling
+   (translation-invariant), so every bond contributes the **same** `b*`.
+
+⇒ `B(K) ~ Σ_i⟨g_i⟩²_G + (#bonds)·b* = self + coordination·b*`. **The bond-extensive
+form is derived** — the multiplier is constant *because the bonds are structurally
+identical couplings*, not by assumption. This upgrades the siblings' conditional
+hypothesis to a structural result.
+
+**Boundary (honest).** What remains is the *value* `b*` (one universal per-bond
+number) = the H₆ seminormal-Gram build (`markov_trace_combo` is H₃-only;
+`gram_matrix_seminormal_h6.py` is the per-block route), overlapping #3548's W_λ
+connected transfer matrix (the `tr_M` lens of the same object) — coordinate before
+solo. The homogeneity (identical-bond) assumption is the mean-field reading; a
+compact non-chain geometry with inequivalent bonds would split `b*` by environment.
+
 ## Consequence for `conj:binding-manybody-eq-jet-filtration`
 
 **Not provable now** (recorded answer). The conjecture's three deep inputs remain
