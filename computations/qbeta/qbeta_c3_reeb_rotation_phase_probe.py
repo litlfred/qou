@@ -59,7 +59,9 @@ import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder  # noqa: E402
 
-mp.mp.dps = 50
+# dps 70 aligns the actual compute precision with the witness precisionMetadata
+# (compute_dps=70) so reruns reproduce the recorded values (Copilot review).
+mp.mp.dps = 70
 Q = {"muon": mp.mpf("1.10997859555733471"),
      "proton": mp.mpf("1.1099785827513808075916690956107688798744991218736")}
 # required arg(u) from the non-fitting branch-structure inversion (this session):
@@ -91,10 +93,18 @@ def fig8_operator(q):
 
 
 def theta_of(q):
-    """q-Reeb rotation angle: arg of the M_{4₁} eigenvalue (|λ|=1 at real q₀)."""
+    """q-Reeb rotation angle: arg of the M_{4₁} eigenvalue (|λ|=1 at real q₀).
+
+    At real q the trace is real; guard against roundoff pushing tr/2 a hair
+    outside [-1, 1] (or a spurious tiny imaginary part) before acos (Copilot
+    review): verify |Im tr| is negligible, take the real part, clamp to [-1, 1].
+    """
     M = fig8_operator(q)
     tr = M[0, 0] + M[1, 1]
-    return mp.acos(tr / 2)          # 2 cos θ = tr, eigenvalues e^{±iθ}
+    assert abs(mp.im(tr)) < mp.mpf("1e-40"), "trace unexpectedly complex at real q"
+    x = mp.re(tr) / 2
+    x = mp.mpf(-1) if x < -1 else (mp.mpf(1) if x > 1 else x)
+    return mp.acos(x)               # 2 cos θ = tr, eigenvalues e^{±iθ}
 
 
 def main() -> int:
@@ -118,7 +128,11 @@ def main() -> int:
     print(f"    Hecke eig(σ₁)={{q,−1/q}}: {'OK' if hecke_ok else 'FAIL'}")
     print(f"    det M_{{4₁}} = {mp.nstr(mp.re(detM),12)}  (=1 ⇒ eigenvalues λ,1/λ)")
     print(f"    tr  M_{{4₁}} = {mp.nstr(mp.re(trM),12)}   (|tr|<2 ⇒ |λ|=1, a rotation)")
-    unit_circle = abs(mp.re(detM) - 1) < mp.mpf("1e-40") and abs(mp.re(trM)) < 2
+    # |tr|<2 as the genuine (complex) magnitude: bound Im(tr)~0 then use Re(tr)
+    # so a spurious imaginary component cannot make the check pass (Copilot review).
+    trM_im_ok = abs(mp.im(trM)) < mp.mpf("1e-40")
+    unit_circle = (abs(mp.re(detM) - 1) < mp.mpf("1e-40") and trM_im_ok
+                   and abs(mp.re(trM)) < 2)
 
     # ---- 2. θ at anchors + classical q=1 anchor + closed form ----
     print("\n[2] q-Reeb rotation angle θ = arg λ_{4₁}:")
@@ -183,7 +197,7 @@ def main() -> int:
         "contribution: Δθ=θ(q₀)−120°=−2.913° is the derived amphichirality-breaking "
         "seed of S. Scope-(a); C14; no c_k wired; no fit; arg(u)=θ negative."
     )
-    wb.set_content_block("prop:phi-b-unitary-bar-odd")
+    wb.set_content_block("prop:figure-eight-reeb-rotation")
     wb.add_data("rep_verification", {
         "braid_ok": bool(braid_ok), "hecke_ok": bool(hecke_ok),
         "det_M": mp.nstr(mp.re(detM), 12), "tr_M_q0": mp.nstr(mp.re(trM), 12),
