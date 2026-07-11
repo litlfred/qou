@@ -31,7 +31,8 @@ The full pair-partition enumeration with the crossing-weighted kernel
 `W(π;q)` (Blitvić Thm 1.1) requires the non-commutative-probability
 pair-partition infrastructure that is not yet in Mathlib.  Rather than a
 bare `sorry`, its **structural face** — the first-element pairing (Wick)
-recursion — is carried as an explicit hypothesis (§3b-cond), and the
+recursion — is carried as a §3b-cond conditional-class hypothesis
+(`HeckeBlitvicWickRecursion`), and the
 odd-length vanishing is then **derived sorry-free** by strong induction on
 the word length.  It is **not** a self-assuming projection: the conclusion
 is about the concretely-defined `centredMoment`, the recursion is strictly
@@ -99,6 +100,29 @@ noncomputable def centredMoment (w : List ℕ) : ℝ :=
 
 end HeckeSatisfiesBlitvicHypothesisContext
 
+/-- **Blitvić's first-element pairing (Wick) recursion** — the §3b-cond
+    conditional-class hypothesis carrying the deep, not-in-Mathlib input.
+
+    Over a fixed base context, this class records the crossing-weighted
+    pairing kernel `pairWeight` (`= W(π;q)` contribution) and the recursion
+    (`wick`) that expands a centred moment by pairing the first letter with
+    each later letter and dropping both.  It is the structural face of
+    Blitvić Thm 1.1; a full formalisation would *derive* it from the
+    Markov-peeling / pair-partition machinery once that lands in Mathlib.
+    Modelled as a class (not a bare theorem argument) so the downstream
+    theorem is a genuine §3b-cond conditional result. -/
+-- Ref: [blitvic2012] https://doi.org/10.1016/j.jfa.2012.08.006
+class HeckeBlitvicWickRecursion
+    [ctx : HeckeSatisfiesBlitvicHypothesisContext] where
+  /-- The crossing-weighted pairing kernel `W(π;q)` contribution. -/
+  pairWeight : ℕ → List ℕ → ℕ → ℝ
+  /-- The first-element pairing recursion for the centred moment. -/
+  wick : ∀ (a : ℕ) (rest : List ℕ),
+    HeckeSatisfiesBlitvicHypothesisContext.centredMoment (a :: rest)
+      = ∑ i ∈ Finset.range rest.length,
+          pairWeight a rest i *
+            HeckeSatisfiesBlitvicHypothesisContext.centredMoment (rest.eraseIdx i)
+
 /-- **Proposition** ([`prop:hecke-satisfies-blitvic-hypothesis`]):
     odd-length centred moments vanish — *conditional on Blitvić's
     first-element pairing (Wick) recursion*.
@@ -108,8 +132,9 @@ end HeckeSatisfiesBlitvicHypothesisContext
     pairs the first letter of the word with each later letter and drops
     both, reducing the length by two (`wick`, with `pairWeight` the
     crossing-kernel `W(π;q)` contribution) — is the genuinely deep,
-    not-in-Mathlib input, carried here as an explicit hypothesis
-    (§3b-cond).  From it the odd-length vanishing is **derived sorry-free**
+    not-in-Mathlib input, carried by the §3b-cond conditional class
+    `HeckeBlitvicWickRecursion`.  From it the odd-length vanishing is
+    **derived sorry-free**
     by strong induction on the word length: a length-`1` word has no later
     letter to pair with, so its expansion is the empty sum `0`; each pairing
     term drops the length by two, preserving oddness, and vanishes by the
@@ -125,12 +150,7 @@ end HeckeSatisfiesBlitvicHypothesisContext
 -- Ref: [blitvic2012] https://doi.org/10.1016/j.jfa.2012.08.006
 theorem hecke_satisfies_blitvic_hypothesis
     [ctx : HeckeSatisfiesBlitvicHypothesisContext]
-    (pairWeight : ℕ → List ℕ → ℕ → ℝ)
-    (wick : ∀ (a : ℕ) (rest : List ℕ),
-      HeckeSatisfiesBlitvicHypothesisContext.centredMoment (a :: rest)
-        = ∑ i ∈ Finset.range rest.length,
-            pairWeight a rest i *
-              HeckeSatisfiesBlitvicHypothesisContext.centredMoment (rest.eraseIdx i)) :
+    [wc : HeckeBlitvicWickRecursion] :
     ∀ (w : List ℕ), w.length % 2 = 1 →
       HeckeSatisfiesBlitvicHypothesisContext.centredMoment w = 0 := by
   -- Ref: [blitvic2012] https://doi.org/10.1016/j.jfa.2012.08.006
@@ -144,7 +164,7 @@ theorem hecke_satisfies_blitvic_hypothesis
     intro w hlen hodd
     obtain _ | ⟨a, rest⟩ := w
     · simp only [List.length_nil] at hlen; omega
-    · rw [wick a rest]
+    · rw [wc.wick a rest]
       apply Finset.sum_eq_zero
       intro i hi
       have hi' : i < rest.length := Finset.mem_range.mp hi
