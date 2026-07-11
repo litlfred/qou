@@ -137,14 +137,13 @@ noncomputable def crossingGradedYMG (q : ℝ) (hq : 1 < q) (hq2 : q ≤ 2)
     instantiates it on the substrate window.  (First in-framework
     instance; MODEL caveat per the module docstring.)
 
-    The class's `mass_gap_holds : Prop` field carries the **genuine**
-    mass-gap proposition for the model transfer matrix,
+    The class's `mass_gap_holds : Prop` field carries the mass-gap
+    proposition for the model transfer matrix,
     `(crossingGradedTM …).hasMassGap`, and `gap_present` is discharged by
-    the model's **proved** `crossingGradedYMG.gap_positive` (not the
-    tautology `True`/`trivial`): the crossing-graded gap is positive by
-    `minCrossingEnergy_pos`.  MODEL CAVEAT (as above): this is the
-    crossing-graded model spectrum, not the physical `End(Aₙ)` transfer
-    matrix — the physical Yang–Mills mass gap remains open. -/
+    the model's `crossingGradedYMG.gap_positive` (the crossing-graded gap
+    is positive by `minCrossingEnergy_pos`).  MODEL CAVEAT (as above): this
+    is the crossing-graded model spectrum, not the physical `End(Aₙ)`
+    transfer matrix — the physical Yang–Mills mass gap remains open. -/
 noncomputable instance instHasYangMillsMassGapCrossingGraded
     (q : ℝ) (hq : 1 < q) (hq2 : q ≤ 2)
     (dla : DirectLimitAlgebra) (vac : VacuumState dla) :
