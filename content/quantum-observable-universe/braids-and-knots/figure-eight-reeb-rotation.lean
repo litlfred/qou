@@ -135,10 +135,10 @@ theorem figure_eight_classical_reeb (lam : ℂ)
     have hr : lam ^ 2 - ((-1 : ℝ) : ℂ) * lam + 1 = 0 := by
       rw [hcast]; linear_combination hroot
     exact unit_modulus_of_det_one_small_trace (-1) ht lam hr
-  · -- `λ³ = 1` from `x³ − 1 = (x − 1)(x² + x + 1)`
+  · -- `λ³ = 1` from `x³ − 1 = (x − 1)(x² + x + 1)`; `sub_eq_zero.mp` closes it
     have key : lam ^ 3 - 1 = (lam - 1) * (lam ^ 2 + lam + 1) := by ring
     rw [hroot, mul_zero] at key
-    linear_combination key
+    exact sub_eq_zero.mp key
   · -- `λ ≠ 1`: else `1 + 1 + 1 = 3 = 0`, impossible in characteristic 0
     intro h
     rw [h] at hroot
