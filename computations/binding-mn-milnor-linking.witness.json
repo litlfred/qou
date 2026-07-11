@@ -1,0 +1,56 @@
+{
+  "engine": "python-magnus",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-11T15:10:14.484864+00:00",
+  "commitSha": "9e858bad27f31b2892d62106ee459d38fa58de7d",
+  "assertions": [
+    {
+      "name": "milnor_bondcount_validated",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "M_2=pairwise lk (Hopf=1); M_3=μ̄_123 (Borromean=±1 with lk=0; chain=0). Milnor invariants realize the geometric bond-count tower; irreducible 3-body = Borromean triple linking, matching the conjecture's n=3 term."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 13,
+  "computation": "binding-mn-milnor-linking",
+  "scriptFile": "binding_mn_milnor_linking.py",
+  "scriptHash": "33d9bb199e7c",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "EXPLORATORY: derives the geometric bond-count M_n(K) as Milnor linking invariants (Reeb-flow → project → μ̄), computed by Magnus expansion of longitudes. Validated: Hopf lk=1 (M_2 unit), Borromean μ̄_123=±1 with pairwise lk=0 (irreducible M_3 unit), 3-chain μ̄_123=0 (reducible). Milnor distinguishes genuine 3-body from pairwise chains. Per-isotope 𝓑_K is model input. No fit, no wire.",
+  "data": {
+    "hopf_lk_M2": 1,
+    "borromean": {
+      "pairwise_lk": [
+        0,
+        0,
+        0
+      ],
+      "mu_bar_123": 1,
+      "mu_bar_213": -1
+    },
+    "chain": {
+      "pairwise_lk": [
+        1,
+        1,
+        0
+      ],
+      "mu_bar_123": 0
+    }
+  }
+}

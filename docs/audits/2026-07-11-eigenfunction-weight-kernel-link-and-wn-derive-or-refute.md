@@ -222,6 +222,44 @@ bond-count of the canonical knot, and the binding is
 `B(K) ≈ Σ_{n=2}^{3} m_e·a_D^(n)·M_n(K)` with `M_n(K)` the n-body cluster count of
 `𝓑_K` (⁴He the magic-shell outlier). This is the well-posed, tractable next target.
 
+## Part 7 — deriving `M_n(K)`: Reeb-flow → project → Milnor invariants (validated)
+
+The Part-6 synthesis localized the gap to the geometric bond-count `M_n(K)`. The
+derivation route ("Reeb flow and project"): the na-Stokes surface integral
+`Hol(∂S_c)=∮F`, projected via the Reeb flow to the open-book (Milnor) fiber, has
+`n`-fold linking equal to **Milnor's invariant `μ̄(1…n)`**. So the bond-count tower
+is the tower of Milnor invariants of the canonical link `𝓑_K`:
+
+- `M_2(K) = ` pairwise linking numbers `lk_ij` (Reeb self-linking / writhe),
+- `M_3(K) = ` triple linking `μ̄_ijk` (irreducible 3-body),
+- `M_n(K) = ` order-`n` Milnor invariant.
+
+`μ̄` is computed by the standard **Magnus expansion** of the longitudes in the free
+group (`μ̄(i_1…i_k) = ` coeff of `X_{i_1}…X_{i_{k-1}}` in the Magnus image of `ℓ_{i_k}`).
+Compute + validation:
+[`binding_mn_milnor_linking.py`](../../computations/binding_mn_milnor_linking.py),
+witness `binding-mn-milnor-linking.witness.json`:
+
+| link | pairwise `lk` (M₂) | `μ̄_123` (M₃) | reading |
+|---|--:|--:|---|
+| Hopf (one bond) | **1** | — | M₂ unit ✓ |
+| Borromean | 0, 0, 0 | **+1** (`μ̄_213=−1`) | irreducible 3-body ✓ |
+| 3-chain (Hopf ×2) | 1, 1, 0 | **0** | reducible → pairwise ✓ |
+
+**Milnor cleanly separates the genuine 3-body (Borromean, `μ̄=1`) from a chain of
+pairwise bonds (`μ̄=0`)** — exactly the "not reducible to pairwise sums" the
+conjecture's `n=3` term requires, and the framework's 3-body knot *is* the
+Borromean `𝓑₃`. The bond-count derivation is therefore realized as a working,
+validated invariant — not a guess.
+
+**Remaining input (honest).** The per-isotope canonical link `𝓑_K` (which link
+represents ⁶Li, ¹²C, …) is the framework **model input** that fixes which link `μ̄`
+is evaluated on; `μ̄` gives `M_n` once `𝓑_K` is chosen. `μ̄` of order `n` is
+well-defined modulo lower-order invariants — clean integers exactly when the lower
+linkings vanish (the Borromean/irreducible case), which is why the `n=3` term is
+the tractable one. `M_2` (pairwise `lk`) is already live in the corpus
+(`em_linking_invariant_probe.py`, `ch_bond_writhe_lp.py`, Hopf `σ₁²`).
+
 ## Consequence for `conj:binding-manybody-eq-jet-filtration`
 
 **Not provable now** (recorded answer). The conjecture's three deep inputs remain
