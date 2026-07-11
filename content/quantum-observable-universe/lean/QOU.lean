@@ -65,6 +65,7 @@ import QOU.Mass.BindingHyperbolicRecurrence
 import QOU.Mass.BindingQBesselKernel
 import QOU.Mass.BindingJacobiAngerBridge
 import QOU.Mass.BindingQHermiteOscillator
+import QOU.Mass.BindingEigenfunctionTwoTier
 import QOU.Mass.QWeberInterpolation
 import QOU.Mass.PaddedShapeLevelRational
 import QOU.Mass.AdditiveCorrectionConfinement
