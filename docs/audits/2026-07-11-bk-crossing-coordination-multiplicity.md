@@ -70,6 +70,42 @@ nucleon-level building-block link 𝓑_K, testing whether a topological integer 
    the natural non-vanishing replacement for the volume exactly where the volume wall
    sits.
 
+## Extension — α-cluster coordination for A>4 magic nuclei
+
+¹⁶O and ⁴⁰Ca have **no canonical single hyperbolic link** in the corpus — they are
+α-conjugate cluster nuclei. So the "test the `a_D` activation rule at the next magic
+shell" question resolves by lifting the coordination principle **one level up**: treat
+each ⁴He as a single node and count α–α coordination bonds,
+
+> `B(n_α) ≈ n_α · B(⁴He) + N_bonds · b_αα`.
+
+For a **simplex** cluster (`n_α ≤ 4`: ⁴He, ⁸Be, ¹²C, ¹⁶O) every α-pair is a nearest
+neighbour, so `N_bonds = C(n_α,2)` (complete graph, 3D-realisable up to the tetrahedron):
+
+| iso | n_α | C(n_α,2) | B_AME | resid = B − n_α·B(⁴He) | per-bond | simplex |
+|---|--:|--:|--:|--:|--:|:--:|
+| ⁸Be | 2 | 1 | 56.50 | −0.09 | −0.09 | yes |
+| ¹²C | 3 | 3 | 92.16 | 7.27 | **2.425** | yes |
+| ¹⁶O | 4 | 6 | 127.62 | 14.44 | **2.406** | yes |
+| ²⁰Ne | 5 | 10 | 160.64 | 19.17 | 1.917 | no |
+| ²⁴Mg | 6 | 15 | 198.26 | 28.48 | 1.899 | no |
+| ⁴⁰Ca | 10 | 45 | 342.05 | 59.10 | 1.313 | no |
+
+- **Simplex clusters (`n_α ≤ 4`): the per-bond residual is a near-constant
+  `b_αα ≈ 2.41 MeV`** (¹²C 2.425, ¹⁶O 2.406). ⁸Be gives ≈0 — the isolated α–α pair is
+  unbound (the reason for the triple-α process), so a lone bond carries ~0 and the bond
+  energy switches on only inside a 3+ cluster. This is the classical **Hafstad–Teller
+  α-bond model**; the QOU content is reading `N_bonds` as the **α-cluster coordination
+  number** — the same principle as `z=A−1`, one level up. `b_αα` is a **single empirical
+  residual constant, NOT derived** from the 13 categorical drivers (exploratory only).
+- **`n_α ≥ 5` (²⁰Ne, ²⁴Mg, ⁴⁰Ca): `C(n_α,2)` overcounts** — not all pairs can be
+  nearest neighbours in 3D, so the per-bond value drops (1.92 → 1.31). Coordination
+  **saturates** to a geometric close-packing count beyond the tetrahedron; **⁴⁰Ca needs
+  the packing coordination, not `C(10,2)=45`** — this is the honest open item.
+- **The `a_D`-activation question resolves negatively for A>4:** there is no per-isotope
+  `a_D` factor beyond ⁴He. ⁴He is itself the `n_α=1` base; the extra binding of larger
+  α-nuclei is carried entirely by the α–α **coordination count**, not a super-exp period.
+
 ## Verdict (critical-distance, scope-limited)
 
 **Scope-limited (a)** per the "refuted"/"ruled out" discipline — candidates were tested
@@ -87,8 +123,12 @@ What remains **open**:
 - Why the coordination number `z=A−1` (a whole-cluster count) equals the *per-isotope*
   multiplier read off the *single-link* volume — a categorical derivation of
   `M(open shell) = z` from the branching/`T_w` structure, not just the numerical match.
-- The activation rule for the magic `a_D^(A)` factor (closed-shell selection), and
-  whether it extends to the next magic nuclei (¹⁶O, ⁴⁰Ca).
+- The activation rule for the magic `a_D^(A)` factor (closed-shell selection). For A>4
+  the extension (above) shows it does **not** recur as a per-isotope period; the extra
+  binding becomes the α-cluster coordination count instead.
+- A **derivation** of `b_αα ≈ 2.41 MeV` (currently a single empirical residual constant,
+  not from the 13 drivers) and the **geometric close-packing coordination count** for
+  `n_α ≥ 5` that replaces `C(n_α,2)` beyond the tetrahedron (needed for ⁴⁰Ca).
 - The deuteron: an explicit crossing/coordination weight (not `vol_eff` substitution)
   reproducing `B(D)`.
 

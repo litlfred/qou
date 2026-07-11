@@ -1,9 +1,17 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-07-11T15:12:21.753764+00:00",
-  "commitSha": "cfe961d619bf8428c4b33d0b8f86dcac575e8597",
+  "computedAt": "2026-07-11T15:21:45.641355+00:00",
+  "commitSha": "ded801a635c1842c3b67eb0e6b604117f092adbf",
   "assertions": [
+    {
+      "name": "alpha_cluster_coordination_constant_for_simplex_nuclei",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "per-bond residual is ≈constant b_αα≈2.42 MeV for the simplex α-clusters ¹²C (2.425) and ¹⁶O (2.406) using complete-graph C(n_α,2) bonds; n_α≥5 saturates (⁴⁰Ca 1.31). b_αα is a single empirical residual constant, NOT derived."
+    },
     {
       "name": "per_nucleon_coordination_matches_A3_multiplicity",
       "computed": "1",
@@ -17,8 +25,8 @@
   "durationMs": 3,
   "computation": "bk-crossing-coordination",
   "scriptFile": "bk_crossing_coordination.py",
-  "scriptHash": "85dbd78175ec",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "b2a862543a6d",
+  "scriptCommitSha": "c0ea719adab3f8ac1b3e3f0b79331d073fb94daf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,7 +37,7 @@
     "python": "3.11.15",
     "mpmath": "1.4.1"
   },
-  "description": "Crossing/coordination structure of the building-block link 𝓑_K tested as the open body-order multiplicity M_n(A) of the θ_λ weight. The per-nucleon coordination number z=A-1 supplies M for the non-magic A=3 pair (M_need ≈ 2.00/2.06 vs z=2, no fit); doubly-magic ⁴He needs an extra super-exp a_D^(4)≈2.53 factor (z·a_D^A closes it to a few %). z·a_D^A closes ⁴He but overshoots A=3 by ~30%, so a_D is a magic-shell enhancement, not universal. Crossing number c(𝓑_K) is the Vol=0 deuteron survivor, not the A≥3 multiplier. Scope-limited (a): tested alone, not a structural exclusion.",
+  "description": "Crossing/coordination structure of the building-block link 𝓑_K tested as the open body-order multiplicity M_n(A) of the θ_λ weight. The per-nucleon coordination number z=A-1 supplies M for the non-magic A=3 pair (M_need ≈ 2.00/2.06 vs z=2, no fit); doubly-magic ⁴He needs an extra super-exp a_D^(4)≈2.53 factor (z·a_D^A closes it to a few %). z·a_D^A closes ⁴He but overshoots A=3 by ~30%, so a_D is a magic-shell enhancement, not universal. Crossing number c(𝓑_K) is the Vol=0 deuteron survivor, not the A≥3 multiplier. EXTENSION: for A>4 α-cluster nuclei (no single hyperbolic link), the principle lifts one level — B ≈ n_α·B(⁴He) + C(n_α,2)·b_αα with b_αα≈2.41 MeV constant for simplex clusters ⁸Be/¹²C/¹⁶O (n_α≤4), saturating for ⁴⁰Ca (n_α=10). b_αα is a single empirical constant, not derived. Scope-limited (a): tested alone, not a structural exclusion.",
   "data": {
     "q0": 1.1099785827513808,
     "bk_structure": {
@@ -80,6 +88,57 @@
     "strand_crossings_Tw": {
       "D": 18,
       "4He": 38
-    }
+    },
+    "alpha_cluster_coordination": {
+      "8Be": {
+        "n_alpha": 2,
+        "bonds": 1,
+        "B": 56.4994848,
+        "resid": -0.09184,
+        "per_bond": -0.09184,
+        "simplex": true
+      },
+      "12C": {
+        "n_alpha": 3,
+        "bonds": 3,
+        "B": 92.1617352,
+        "resid": 7.274748,
+        "per_bond": 2.424916,
+        "simplex": true
+      },
+      "16O": {
+        "n_alpha": 4,
+        "bonds": 6,
+        "B": 127.6193152,
+        "resid": 14.4366656,
+        "per_bond": 2.4061109333333333,
+        "simplex": true
+      },
+      "20Ne": {
+        "n_alpha": 5,
+        "bonds": 10,
+        "B": 160.64482400000003,
+        "resid": 19.16651200000002,
+        "per_bond": 1.916651200000002,
+        "simplex": false
+      },
+      "24Mg": {
+        "n_alpha": 6,
+        "bonds": 15,
+        "B": 198.25704720000002,
+        "resid": 28.48307280000003,
+        "per_bond": 1.898871520000002,
+        "simplex": false
+      },
+      "40Ca": {
+        "n_alpha": 10,
+        "bonds": 45,
+        "B": 342.052184,
+        "resid": 59.09556,
+        "per_bond": 1.3132346666666668,
+        "simplex": false
+      }
+    },
+    "b_alpha_alpha_MeV_empirical": 2.415513466666667
   }
 }
