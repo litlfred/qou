@@ -91,9 +91,13 @@ establishes** (the ×5.10 ⁴He-local ≥4-body gap, the b₃/b₄ cumulant defi
 gate + measured locality). Its contribution is narrow: it confirms **from the #3569 `Δ_λ` side**
 that the #3569 residual is that same missing term — a *term*, not a coefficient — so the
 `Δ_λ = sgn·dim` result is complete as a per-partition object and needs no O(1) fudge. The genuine
-open problem is unchanged and **research-level**: the connected `[1⁴]` PROBE 2 magnitude leg (its
-witness `verdict` is still `None`) or the geometric `W_λ` build. No new probe is warranted here —
-that would re-walk anchored ground.
+open problem is unchanged and **research-level**: the connected `[1⁴]` PROBE 2 magnitude leg
+concludes **PARTIAL** — its A>4 vanishing is clean (SU(4) gate `C(4,6)=0`), but the ⁴He magnitude
+"6% agreement" is **units-mismatched** (a dimensionless Mayer sum vs a binding-ratio, with a
+Σg-normalization hidden DOF, Rule 14) — *not* a derivation. The crux is the **Slater↔trace
+dictionary** that would make the `[1⁴]` Mayer magnitude commensurable with the binding-ratio
+excess, or the geometric `W_λ` build. No new probe is warranted here — that would re-walk
+anchored ground.
 
 ## Cross-references
 
