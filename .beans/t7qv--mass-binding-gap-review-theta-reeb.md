@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: high
 created_at: 2026-07-03T19:40:00Z
-updated_at: 2026-07-03T20:10:00Z
+updated_at: 2026-07-11T22:05:00Z
 ---
 
 Branch `claude/mass-binding-gap-review-2026-07-03`. Owner: "lots new on main +
