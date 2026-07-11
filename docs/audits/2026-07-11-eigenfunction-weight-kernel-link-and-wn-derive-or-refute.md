@@ -296,6 +296,38 @@ SDP-active-set bond graph is the concrete 9b-closure target: compute
 `M_n(K) = μ̄`-tower of the SDP-derived link, evaluate `B(K)` against AME.
 Compute: [`binding_production_link_milnor.py`](../../computations/binding_production_link_milnor.py).
 
+## Part 9 — can the SDP derive the bond graph? No — it is degenerate
+
+The Part-8 critique said the linear chain should be replaced by an SDP-derived bond
+graph (the dual active set = "most receptive sub-braids"). Tested — and it is
+**degenerate**, live-confirmed
+([`binding_sdp_bondgraph_degenerate.py`](../../computations/binding_sdp_bondgraph_degenerate.py),
+witness `binding-sdp-bondgraph-degenerate.witness.json`). The canonical H₃
+operator-selection LP-dual (NF basis `{γ,σ₀,σ₁,L₊,L₋,e⁻}`, Frobenius Gram, costs
+`t_i=tr_M(b_i)`) returns, at *every* demand:
+
+| n_target | `y0*` | active_set | |
+|---|--:|---|---|
+| \|tr_M(proton)\|≈0.66 | 0 | {γ} | degenerate |
+| identity 1.0 | 0 | {γ} | degenerate |
+| Σ t_i | 0 | {γ} | degenerate |
+
+Structural reason (corpus-established — `he3_pairknot_composite_lp_probe.py`, audit
+2026-06-18): **a free / single nucleon has `W_free = W_atom`**, so there is no
+binding constraint to select against; the active set collapses to the identity, and
+the pair (H₆) LP is intractable / also degenerate. So a direct operator-selection
+LP-dual does **not** isolate a bond graph at any tractable level.
+
+**Net — both routes fail.** The ad-hoc chain (`k<A−1`, Part 8) undercounts
+coordination; the SDP-active-set (this part) is degenerate. Therefore the bond
+graph `M_n(K)` — *which* pairs bond, the coordination/topology — is a genuine **open
+geometric input**, not derivable from either the chain hack or an LP. It needs a
+categorical / geometric coordination construction (the owner-gated s5-so3 keystone
+territory). What *is* derivable: the per-bond-**type** strength
+`L_pp/L_pn/L_nn = log(tr_M^full/tr_M^atom)` (bond traces, corpus-live) and the
+Milnor `M_n` of a **given** graph (Part 7) — not the graph itself. That is the
+honest, sharp boundary of the binding-derivation program as it stands.
+
 ## Consequence for `conj:binding-manybody-eq-jet-filtration`
 
 **Not provable now** (recorded answer). The conjecture's three deep inputs remain
