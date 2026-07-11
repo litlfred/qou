@@ -393,3 +393,23 @@ theorem rowInsert_findIdx_lt {r : List ℕ} {x y : ℕ}
     (h : (rowInsert r x).2 = some y) : r.findIdx (x < ·) < r.length :=
   List.findIdx_lt_length_of_exists
     ⟨y, rowInsert_bumped_mem h, by simpa using rowInsert_bumped_gt h⟩
+
+/-- **The bumped value is exactly the old entry at the bump index.**  Completing
+the positional picture: a bump reads off `r[findIdx]` (as `y`) and writes `x`
+there.  Stated with `getElem?` to avoid threading the `< length` proof. -/
+theorem rowInsert_bump_getElem? {r : List ℕ} {x y : ℕ}
+    (h : (rowInsert r x).2 = some y) :
+    r[r.findIdx (x < ·)]? = some y := by
+  induction r with
+  | nil => simp [rowInsert] at h
+  | cons a r ih =>
+    rw [rowInsert_cons] at h
+    by_cases hx : x < a
+    · rw [if_pos hx] at h
+      simp only [Option.some.injEq] at h
+      have hd : decide (x < a) = true := by simp [hx]
+      rw [List.findIdx_cons, hd, cond_true, List.getElem?_cons_zero, h]
+    · rw [if_neg hx] at h
+      have hd : decide (x < a) = false := by simp [hx]
+      rw [List.findIdx_cons, hd, cond_false, List.getElem?_cons_succ]
+      exact ih h
