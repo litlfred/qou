@@ -226,3 +226,26 @@ probe `delta_lambda_z_coefficient_and_slope.py`). Audit
   bar-even baseline cancels exactly in a mirror difference given the additive
   `baseline(A)+zCorr(Z-N)` form (the only ansatz). Paper:
   `prop:mirror-baseline-cancellation` (mba sidecar). Not wired (near-match tier).
+
+## 2026-07-11 — 𝓑_K coordination-number reading of M_n(A) (PR #3549)
+
+- **Open multiplicity `M_n(A)` in `w_n(K)=M_n(A)·Vol_n(K)` = the coordination
+  number of 𝓑_K (scope-(a), fit-free for A=3).** Reading `M_need=B_AME/(m_e·Vol)`
+  off AME: non-magic A=3 pair gives `M_need(³H)=2.003`, `M_need(³He)=2.061` =
+  the per-nucleon coordination number `z=A−1=2` (<3%, no fit). Doubly-magic ⁴He
+  needs an extra `a_D^(4)≈2.53` (magic-shell only: `z·a_D^A` closes ⁴He +0.6%
+  but overshoots A=3 +30%). Crossing number is the `Vol=0` deuteron (Hopf) survivor.
+- **α-cluster extension (A>4):** ¹⁶O/⁴⁰Ca have no single hyperbolic link →
+  `B(n_α)≈n_α·B(⁴He)+C(n_α,2)·b_αα`; per-bond `b_αα≈2.41 MeV` constant for
+  simplex clusters ⁸Be/¹²C/¹⁶O, saturates n_α≥5 (⁴⁰Ca needs geometric packing).
+  `b_αα` empirical (Hafstad–Teller), NOT derived — open.
+- **Coordinated with #3534** (same `w_n` object, q-Hermite basis route): the
+  single-term `M·Vol` `a_D`-magic-only finding vs their summed `Σa_D^(n)·w_n`
+  extraction are different decompositions, not contradictory — logged so neither
+  restates the other as refuted.
+- **Coordinated with #3548** (W_λ connected multi-bond transfer matrix): my
+  coordination bond-count `C(n_α,2)` and per-bond `b_αα≈2.41 MeV` are the fit-free
+  empirical target their connected braid `tr_M` (PROBE 2) must reproduce; their
+  deuteron connected gap 0.193 is the 2-body instance.
+- Paper: `rem:bk-coordination-multiplicity` (interprets
+  `conj:binding-manybody-eq-jet-filtration`). Not wired (exploratory tier).
