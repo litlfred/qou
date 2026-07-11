@@ -124,6 +124,29 @@ keystone is to identify the `FaddeevPhi` argument whose archimedean evaluation a
 each anchor reproduces `S` — i.e. to realize the chiral Hopf sector's
 anchor-dependent leak through the `Φ_b` axioms above. That argument-identification
 is **not** done here.
+
+### Reconciliation with the landed algebraic/Gram results (2026-07-11)
+
+A parallel line pins the same bar-odd carrier at the `H₃(q)` algebra level and
+sharpens "chiral operators" to a **single algebraic mode**
+(`docs/audits/2026-07-11-qbeta-c3-barodd-nz-deformation-gap.md`):
+
+* The `σ`-parity (mass/decay) split of `e_k` is proved sorry-free in
+  `QOU.QBeta.EkParitySplit` (`massProj` / `decayProj`); `S` is the `decayProj`
+  (bar-odd) half.
+* The Frobenius/Gram form `G_{ij} = tr_M(b_i b_j)` is **indefinite** (signature
+  `5+, 1−`); the bar-odd `decayProj` lands **exactly** on the unique
+  negative-norm **ghost mode `(L₊ − L₋)/√2`** (`|cos| = 1`), while the mass
+  (bar-even) part sits in the positive/unitary cone.  So **decay ⊥ mass ⇒ decay
+  = binding** (`Gram`-norm sign is the mass/binding split): this `Φ_b`/bar-odd
+  face is the **binding** channel, an LP/SDP dual shadow-price mode, not a mass
+  contribution.
+
+So this analytic `Φ_b` axiomatization and the `H₃` Gram-ghost picture are two
+faces of one object: `Φ_b` is the modular-double *analytic* carrier (with a
+numerical evaluator validated vs Hikami), and `(L₊ − L₋)` is its `H₃`-algebraic
+shadow.  The open link remains the same `z(q₀) → c_k` evaluation map that would
+make either face reproduce the anchor-dependent `S`.
 -/
 
 end QOU.MathlibExt.FaddeevQuantumDilogarithm
