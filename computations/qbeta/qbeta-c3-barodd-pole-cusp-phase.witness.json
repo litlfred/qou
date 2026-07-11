@@ -1,0 +1,86 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-11T18:41:28.487556+00:00",
+  "commitSha": "ad932ab82634df4b3dda0ee8c72fa56a34e978a7",
+  "assertions": [
+    {
+      "name": "cusp_barEven_eq_one",
+      "computed": 2.566880151958614e-41,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-20,
+      "source": "ω=e^{iπ/3}: barEven ω = 1 (Lean CuspShapeBarParity)"
+    },
+    {
+      "name": "cusp_barOdd_sq_eq_neg3",
+      "computed": 9.39632416291369e-41,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-20,
+      "source": "ω=e^{iπ/3}: (barOdd ω)² = −3 (Lean CuspShapeBarParity)"
+    },
+    {
+      "name": "gluing_newton_vol_and_extremal",
+      "computed": 4.1282603944519646e-18,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-09,
+      "source": "Newton at m=1 recovers Vol(4₁); Vol extremal at complete"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 23,
+  "computation": "qbeta-c3-barodd-pole-cusp-phase",
+  "scriptFile": "qbeta_c3_barodd_pole_cusp_phase_probe.py",
+  "scriptHash": "9deeea4189ff",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Explicit-coordinate analysis of the pole->cusp map's phase phi(q0) for the c3 bar-odd S, tied to 𝔙=Vol+i·CS (categorical trace, binding-qbeta-complex-volume). Coords: pole x=q^{-k}; cusp ω=e^{iπ/3} (barEven=1, barOdd²=−3, PROVED QOU.QBeta.CuspShapeBarParity); deformation u=2logm; ED z=√q−1/√q. Magnitude + base phase tractable/exact; phase FUNCTION phi(q0) near-singular (Φ_q-pole-seeded Newton, conj:algebraic-geometric-dilog-equivalence). Scope-(a); C14; m(q0) NOT fitted; no c_k wired.",
+  "contentBlock": "conj:algebraic-geometric-dilog-equivalence",
+  "data": {
+    "cusp_shape_coord": {
+      "omega": "(0.5 + 0.86602540378443864676j)",
+      "barEven": "(1.0 - 1.1479437019748901445e-41j)",
+      "barOdd_sq": "(-3.0 - 1.9882968160492150748e-41j)",
+      "lean": "QOU.QBeta.CuspShapeBarParity (barEven=1, barOdd²=−3, PROVED)"
+    },
+    "ed_coord_magnitude": {
+      "z_ED": "0.104388058259",
+      "HA": "0.209060298796",
+      "scale_z_ED_sq": "0.00943696339002",
+      "scale_HA_sq": "0.0378506868923",
+      "S_muon": "0.00968298",
+      "S_proton": "-0.03945936"
+    },
+    "phase_requirement": [
+      {
+        "u": "z_ED",
+        "sin2phi_muon": "1.0260695",
+        "sin2phi_proton": "-4.181362"
+      },
+      {
+        "u": "HA",
+        "sin2phi_muon": "0.25582046",
+        "sin2phi_proton": "-1.0425005"
+      }
+    ],
+    "verdict": {
+      "exact": "base phase pi/3, cusp modulus sqrt(-3) (Lean CuspShapeBarParity)",
+      "tractable": "magnitude (sqrt3/2)|u|^2 parameter-free, ~4% leading NZ",
+      "open_near_singular": "phase function phi(q0) = Phi_q-pole-seeded Newton",
+      "geometric_condition": "q* with real meridian (S=0) is well-posed",
+      "next": "seed gluing Newton with substrate pole q0^{-k}; not a fit"
+    }
+  }
+}
