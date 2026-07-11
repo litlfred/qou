@@ -1,4 +1,5 @@
 import Mathlib.Analysis.SpecialFunctions.Exp
+import Mathlib.Analysis.SpecificLimits.Normed
 
 
 /-!
@@ -64,17 +65,48 @@ noncomputable def qExpSeries (q : ℝ) (x : ℝ) : ℕ → ℝ :=
     (`q₀ ≈ 1.11`), where the "convergent for all `x`" claim of the
     manuscript genuinely holds. The convergence proof itself (ratio test
     via the Jackson-integer divergence `[n]_q → ∞`) awaits the
-    `q`-analysis API and is an honest `sorry`. -/
+    `q`-analysis API.  Proved below directly: the Jackson-integer
+    divergence `[n+1]_q = (q^{n+1}−1)/(q−1) → ∞` (from `q^n → ∞` for
+    `q > 1`) drives the ratio test. -/
 -- Ref: [manuscript] §9-information-theory/q-exponential-taylor
 theorem qExponentialTaylor (q : ℝ) (x : ℝ) (hq : 1 < q) :
     Summable (qExpSeries q x) := by
-  -- Ratio test: the term ratio `qExpSeries q x (n+1) / qExpSeries q x n`
-  -- equals `x / [n+1]_q`, and `[n+1]_q = (q^{n+1}−1)/(q−1) → ∞` for q > 1,
-  -- so the ratio → 0 < 1 and `summable_of_ratio_norm_eventually_le` applies.
-  -- Needs: Jackson-integer divergence lemma `Tendsto (jacksonInt q) atTop atTop`
-  -- for q > 1 (not yet in the q-analysis API).
+  -- Ratio test: `qExpSeries q x (n+1) = (x / [n+1]_q) · qExpSeries q x n`,
+  -- and `[n+1]_q = (q^{n+1}−1)/(q−1) → ∞` for `q > 1`, so the term ratio
+  -- `|x|/[n+1]_q ≤ 1/2` eventually and `summable_of_ratio_norm_eventually_le`
+  -- applies.
   -- Ref: [manuscript] §9-information-theory/q-exponential-taylor
-  sorry
+  -- Jackson-integer divergence: `[n+1]_q → ∞`.
+  have hji : Filter.Tendsto (fun n : ℕ => jacksonInt q (n + 1))
+      Filter.atTop Filter.atTop := by
+    have hform : ∀ n : ℕ, jacksonInt q (n + 1) = (q ^ (n + 1) - 1) / (q - 1) := by
+      intro n
+      rw [jacksonInt, if_neg hq.ne',
+        show (1 : ℝ) - q ^ (n + 1) = -(q ^ (n + 1) - 1) by ring,
+        show (1 : ℝ) - q = -(q - 1) by ring, neg_div_neg_eq]
+    rw [Filter.tendsto_congr hform]
+    have hpow : Filter.Tendsto (fun n : ℕ => q ^ (n + 1)) Filter.atTop Filter.atTop := by
+      have := (tendsto_pow_atTop_atTop_of_one_lt hq).comp (Filter.tendsto_add_atTop_nat 1)
+      simpa using this
+    have hsub : Filter.Tendsto (fun n : ℕ => q ^ (n + 1) - 1) Filter.atTop Filter.atTop := by
+      simpa [sub_eq_add_neg] using
+        Filter.tendsto_atTop_add_const_right Filter.atTop (-1 : ℝ) hpow
+    exact hsub.atTop_div_const (by linarith : (0 : ℝ) < q - 1)
+  refine summable_of_ratio_norm_eventually_le (r := 1 / 2) (by norm_num) ?_
+  filter_upwards [hji.eventually_ge_atTop (2 * |x| + 1)] with n hn
+  -- `hn : 2·|x| + 1 ≤ [n+1]_q`
+  have hJpos : 0 < jacksonInt q (n + 1) := by
+    have : (0 : ℝ) ≤ |x| := abs_nonneg x
+    linarith
+  have hstep : qExpSeries q x (n + 1)
+      = (x / jacksonInt q (n + 1)) * qExpSeries q x n := by
+    simp only [qExpSeries, jacksonFactorial]
+    ring
+  rw [hstep, norm_mul]
+  refine mul_le_mul_of_nonneg_right ?_ (norm_nonneg _)
+  rw [norm_div, Real.norm_eq_abs, Real.norm_eq_abs, abs_of_pos hJpos, div_le_iff₀ hJpos]
+  have : (0 : ℝ) ≤ |x| := abs_nonneg x
+  linarith
 
 /-- At q = 1, the q-exponential Taylor series recovers the ordinary
     exponential. -/
