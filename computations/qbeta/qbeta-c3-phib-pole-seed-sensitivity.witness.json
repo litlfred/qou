@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-11T22:27:17.156880+00:00",
-  "commitSha": "30c0b48cb27b280a2513f822af40daa238e5fa68",
+  "computedAt": "2026-07-11T22:56:57.111838+00:00",
+  "commitSha": "4e32d7757488de281b1d4884134a315d4d313dfd",
   "assertions": [
     {
       "name": "p1_fates_anchor_identical",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1548,
+  "durationMs": 1617,
   "computation": "qbeta-c3-phib-pole-seed-sensitivity",
   "scriptFile": "qbeta_c3_phib_pole_seed_sensitivity_probe.py",
-  "scriptHash": "611a6cd86fb6",
-  "scriptCommitSha": "30c0b48cb27b280a2513f822af40daa238e5fa68",
+  "scriptHash": "df5023c91cdb",
+  "scriptCommitSha": "4e32d7757488de281b1d4884134a315d4d313dfd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
