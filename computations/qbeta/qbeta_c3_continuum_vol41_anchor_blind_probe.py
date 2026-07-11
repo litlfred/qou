@@ -118,7 +118,8 @@ def main():
     )
 
     now = datetime.datetime.now(datetime.timezone.utc).isoformat()
-    src = open(__file__, "rb").read()
+    with open(__file__, "rb") as _f:
+        src = _f.read()
     witness = {
         "computation": "qbeta-c3-continuum-vol41-anchor-blind",
         "description": "Re-scope: c_3 does not converge to -Vol(4_1). -Vol(4_1)=-2.02988 is "
