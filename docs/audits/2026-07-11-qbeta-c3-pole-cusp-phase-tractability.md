@@ -79,6 +79,41 @@ smooth closed form.
   with the actual substrate pole `q₀^{-k}` and read the emergent complex shape's
   phase. This probe sets that up and quantifies its sensitivity.
 
+## Follow-up (pole-seed Newton) — the phase is a BRANCH SELECTOR
+
+**Probe:** [`qbeta_c3_barodd_pole_seed_newton_probe.py`](../../computations/qbeta/qbeta_c3_barodd_pole_seed_newton_probe.py).
+**Lean:** the golden-branch contrast added to `CuspShapeBarParity.lean`
+(`goldenShape_barOdd = 1`, `goldenShape_barEven_sq = 5`).
+
+Seeding Thurston's figure-8 gluing Newton with the **actual** real substrate pole
+`q₀^{-k}` gives a decisive, tightly-structured answer:
+
+1. **The complete gluing `(z(z−1))² = 1` has exactly two branches** `z(z−1) = ±1`:
+   - `z²−z+1 = 0` → **cusp** `e^{iπ/3}` (complex; hyperbolic; disc `−3`; `barOdd² = −3` = √−3 = CS);
+   - `z²−z−1 = 0` → **golden ratio** `φ = (1+√5)/2` (real; **degenerate**, Vol = 0; disc `+5`; `barEven² = +5` = √5, no CS).
+2. **The literal real pole `q₀^{-1} = 0.90092` seeds the Newton onto the golden branch**
+   (`z = 1.6180339887 = φ`, real, Vol = 0) — **never the hyperbolic cusp.** A real pole
+   cannot reach the cusp.
+3. **The bar-parity roles swap between the branches**, and the swap is exactly the
+   discriminant sign flip `−3 ↦ +5` (both proved in `CuspShapeBarParity`): the special
+   coordinate is **imaginary** (`√−3` = CS) on the cusp and **real** (`√5`) on the golden
+   branch. So CS = bar-odd `S` turns on **only off the real (golden) axis** — i.e. only
+   under complexification.
+
+**Consequence.** The phase `φ(q₀)` is precisely the **branch selector**: it complexifies
+the real pole seed to move the special coordinate from the real `√5` (golden, no CS) to
+the imaginary `√−3` (cusp, CS). No real datum can supply it — that *is* the open
+`conj:algebraic-geometric-dilog-equivalence`.
+
+**Additional (independent confirmation of the landed geometry-side negative).** The full
+Rogers-dilog complex-volume CS at the substrate meridian scale (`|u| ~ HA`, any phase) is
+`~1.7×10⁻⁵` — **~2350× below** the measured `|S| ~ 0.01–0.04`. So the leading-NZ
+`(√3/2)|u|²` magnitude "match" (~4%) is a leading-order artifact; the *actual* figure-8
+complex-volume deformation is orders too small. **`S` is not the leading CS deformation of
+`4₁` alone** — reproducing, via an independent computation, the parallel-landed
+geometry-side clean negative (`main 1a4894b8`, "magnitude-only"; `827b43e4` Kashaev
+grounding, `CS(4₁)=0`).
+
 ## Cross-references
 - NZ gap: [`2026-07-11-qbeta-c3-barodd-nz-deformation-gap.md`](2026-07-11-qbeta-c3-barodd-nz-deformation-gap.md).
 - Target: [`2026-07-11-qbeta-c3-barodd-sleak-phib-target.md`](2026-07-11-qbeta-c3-barodd-sleak-phib-target.md).
