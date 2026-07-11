@@ -443,6 +443,23 @@ theorem findIdx_le_of_getElem {α : Type*} (p : α → Bool) (l : List α) :
         have := ih c hc' hp
         omega
 
+/-- **Entries strictly before the bump index are `≤ x`.**  `findIdx` is the
+*leftmost* entry `> x`, so everything to its left is `≤ x`.  This is what makes
+the new-bottom-row cell (column `0`) sit strictly below a smaller entry when the
+bump came from a later column. -/
+theorem getD_le_of_lt_findIdx (x : ℕ) (l : List ℕ) (j : ℕ)
+    (hj : j < l.findIdx (x < ·)) : l.getD j 0 ≤ x := by
+  induction l generalizing j with
+  | nil => rw [List.findIdx_nil] at hj; omega
+  | cons a l ih =>
+    rw [List.findIdx_cons] at hj
+    by_cases hx : x < a
+    · rw [show decide (x < a) = true from by simp [hx], cond_true] at hj; omega
+    · rw [show decide (x < a) = false from by simp [hx], cond_false] at hj
+      cases j with
+      | zero => simpa using le_of_not_gt hx
+      | succ j => rw [List.getD_cons_succ]; exact ih j (by omega)
+
 /-- **Bump-column monotonicity** — the bumping lemma's heart.  If the value `y`
 bumped from `upper` (at `upper.findIdx (x < ·)`) sits at every column strictly
 below a larger entry of `lower` (column-strictness, `upper[j] < lower[j]`), then
