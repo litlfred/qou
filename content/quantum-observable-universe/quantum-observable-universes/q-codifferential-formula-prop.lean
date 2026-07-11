@@ -28,12 +28,15 @@ numerical evaluation.
 
 namespace QOU.QuantumGeometry
 
+noncomputable section
+
 /-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
     See `QOU.Archimedean.GroundRing` for the compiled definition. -/
-noncomputable section
 abbrev R_q := LaurentPolynomial ℤ
 def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
+
+end
 
 universe u
 
@@ -50,8 +53,14 @@ axioms (left and right), eliminating 2 more. -/
 
 -- Ref: [manuscript] Ch. 2 — DiffForm is an R-module
 axiom DiffForm (R : Type u) [CommRing R] : Type u
-noncomputable instance : AddCommMonoid (DiffForm R) := Classical.arbitrary _
-noncomputable instance : Module R (DiffForm R) := Classical.arbitrary _
+-- The R-module structure on `DiffForm R` is axiomatised directly (the
+-- geometric content is not built here).  `Classical.arbitrary _` cannot be
+-- used: `Nonempty (AddCommMonoid (DiffForm R))` is not derivable for the
+-- abstract `DiffForm`.
+axiom instAddCommMonoidDiffForm : AddCommMonoid (DiffForm R)
+attribute [instance] instAddCommMonoidDiffForm
+axiom instModuleDiffForm : Module R (DiffForm R)
+attribute [instance] instModuleDiffForm
 
 /-- The Webster inner product ⟨·,·⟩_θ valued in R.
     Bilinear by construction: left-linear and right-linear. -/
