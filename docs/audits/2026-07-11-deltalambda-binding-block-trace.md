@@ -45,26 +45,42 @@ Two findings:
   tr g_ρ over the regular-rep λ-block` (not the bare irrep). It reaches ~91–101%, a **5×
   improvement** over the irrep trace — the right *direction* for the magnitude.
 
+## Q-deformation resolution (by the trace convention, not the 100% match)
+
+The classical-vs-quantum question (`dim²` 91% vs `dim_q²` 101%) is **resolved on
+structural grounds**, independent of the target:
+
+- The binding `Δ_λ` is defined as a **quantum Markov trace** — the co-Casimir selector is
+  `Δ_λ = tr_M(C_dim_q·1_λ) = 1/dim_q(λ)`, and `dim_q` is manifestly quantum (non-integer:
+  5.22, 9.67, …). The weights `y_λ(q₀)`, `χ^λ(q₀)` are also q₀-evaluated. So the **whole
+  formula `B = Σ_λ y_λ χ^λ Δ_λ` is a quantum trace.**
+- Therefore the block magnitude must be the **quantum** block dimension `dim_q(λ)²`, not
+  the classical integer count `dim(λ)²`. Classical `dim²` mixes a classical integer into a
+  quantum trace — **convention-inconsistent**. So the trace convention **selects `dim_q²`**
+  (101.4%) — *not* because it lands nearest 100% (that would be the gated 7th fit), but
+  because it is the only q-consistent block trace.
+- **This revises #3537:** its "magnitude is classical (q=1), not q₀" conclusion described
+  the **refuted** irrep-trace; the **working** block trace is **quantum**.
+
 ## Discipline (STRICT — Δ_λ gate, "Axiomatization is NOT a Proof")
 
-- This test **scans** magnitude candidates. `dim_q²` lands at 101.4%, but **selecting it
-  because it is nearest 100% would be the gated 7th fit-based ansatz** — so we do **not**.
-  `dim²` is structurally motivated (block trace); the **classical-vs-quantum choice**
-  (91% vs 101%) and the **residual few-%** are **unresolved** and must be **derived**
-  (correct q-deformation of the block trace, higher-body corrections), not fitted.
-- **Tension with #3537** flagged, not decided: the magnitude reduction pruned `dim_q` for
-  the *irrep* magnitude; the *block* trace may q-deform differently.
-- **Nothing wired.** No production Δ_λ value proposed. The scan reaching ~100% is a
-  **lead**, not a derivation of the binding.
+- The q-deformation is resolved by **convention** (quantum `tr_M`), not by fitting to 100%.
+  What remains **open** is the **1.45% residual** (higher-body corrections, or the exact
+  block-trace form beyond `dim_q²`) — to be **derived, not fitted**.
+- **Single-isotope caveat:** this is the deuteron only; `dim_q²` at ~101% could be
+  coincidental until cross-checked on ³H / ⁴He (whose binding witnesses would be needed).
+- **Nothing wired.** No production `Δ_λ` value proposed. Per "Axiomatization is NOT a
+  Proof", a structural argument reaching ~101% is a **lead**, not a completed derivation.
 
 ## Net
 
 - **Refuted:** `Δ_λ = sgn·dim` (irrep trace) closes the deuteron — it reaches only 17%.
 - **Derived/validated:** the **sign** holds up in the binding formula (right sign, where
   the six ansätze failed).
-- **Localized (open):** the magnitude is the **regular-rep block dimension** `~dim²`
-  (~91–101%) — the closure direction. Deriving the exact block magnitude (classical vs
-  quantum, residual) — not fitting it — is the remaining Track-A step.
+- **Localized + q-resolved:** the magnitude is the **quantum regular-rep block dimension**
+  `dim_q(λ)²` (≈101%) — selected by the quantum `tr_M` trace convention, not by fitting.
+  The remaining Track-A step is deriving the **1.45% residual** (higher-body / exact
+  block-trace form) and cross-checking beyond the deuteron — not fitting it.
 
 ## Cross-references
 
