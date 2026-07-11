@@ -1926,6 +1926,31 @@ theorem labelAt_eq_of_colContent_eq (u v : Specht.Tableau μ)
   simp only [hcc]
 
 omit [CharZero k] in
+/-- **Equal cell labels ⇒ equal column content (sorry-free).** Converse of
+`labelAt_eq_of_colContent_eq`: two column-word-minimal tableaux whose column-`c` cell labels
+agree at every row have the *same* column-`c` content — the two increasing enumerations
+coincide, so (via `range_orderEmbOfFin`) their ranges, hence the finsets, coincide. Supplies
+the `f ≠ g` (strictness) input from `colContent (π•t) j ≠ colContent t j`. -/
+theorem colContent_eq_of_labelAt_eq (u v : Specht.Tableau μ)
+    (hmaxu : ∀ σ : Specht.colStab u,
+      colWordNum u ≤ colWordNum ((σ : Equiv.Perm (Fin (Specht.nOf μ))) • u))
+    (hmaxv : ∀ σ : Specht.colStab v,
+      colWordNum v ≤ colWordNum ((σ : Equiv.Perm (Fin (Specht.nOf μ))) • v))
+    (c : ℕ)
+    (h : ∀ r : Fin (μ.colLen c),
+      labelAt u (YoungDiagram.mem_iff_lt_colLen.mpr r.isLt)
+        = labelAt v (YoungDiagram.mem_iff_lt_colLen.mpr r.isLt)) :
+    colContent u c = colContent v c := by
+  have hfun : ⇑((colContent u c).orderEmbOfFin (colContent_card u c))
+      = ⇑((colContent v c).orderEmbOfFin (colContent_card v c)) := by
+    funext r
+    rw [← labelAt_eq_orderStat u hmaxu c r, ← labelAt_eq_orderStat v hmaxv c r]
+    exact h r
+  apply Finset.coe_injective
+  rw [← Finset.range_orderEmbOfFin (colContent u c) (colContent_card u c),
+      ← Finset.range_orderEmbOfFin (colContent v c) (colContent_card v c), hfun]
+
+omit [CharZero k] in
 /-- The labels in column `c` of `t` with row index `< m` number exactly `m`, provided
 `m ≤ μ.colLen c` (they biject with rows `0, …, m-1`, all of which occur in column `c`). -/
 theorem card_col_labels_row_lt_of_le (t : Specht.Tableau μ) (c m : ℕ)
@@ -2652,6 +2677,84 @@ theorem fibre_colContent_j_ne {π : Equiv.Perm (Fin (Specht.nOf μ))}
           Finset.card_image_of_injective _ Fin.val_injective,
           Finset.card_image_of_injective _ π.injective]
   exact Finset.image_injective Fin.val_injective hSA
+
+omit [CharZero k] in
+/-- **Fibre-decrease capstone (sorry-free).** For a column-word-minimal `t` at a row descent
+`(i,j)/(i,j+1)` and a genuine Garnir fibre `π ∈ garnirG \ garnirH`, the column-sorted image
+`ρ•(π•t)` (from `exists_colWordMin_form`) is strictly `colWordNum`-smaller than `t`. Column
+`j` decreases pointwise (count-domination `fibre_colContent_j_count_dom` →
+`orderEmbOfFin_le_of_count` → `labelAt_eq_orderStat`), strictly at the top-most changed row
+(`fibre_colContent_j_ne` → `exists_first_lt_of_le_of_ne`), columns `< j` are untouched
+(`colContent_garnirG_eq_of_lt`), and `colWordNum_lt_of_first_diff_col` closes it. This is the
+`hgood` the straightening assembly needs. -/
+theorem fibre_colWordNum_decrease {π : Equiv.Perm (Fin (Specht.nOf μ))}
+    (t : Specht.Tableau μ) {i j : ℕ} (hij : (i, j) ∈ μ) (hij1 : (i, j + 1) ∈ μ)
+    (hmax : ∀ σ : Specht.colStab t,
+      colWordNum t ≤ colWordNum ((σ : Equiv.Perm (Fin (Specht.nOf μ))) • t))
+    (hdesc : labelAt t hij1 ≤ labelAt t hij)
+    (hπG : π ∈ garnirG t i j) (hπH : π ∉ garnirH t i j) :
+    ∃ ρ : Equiv.Perm (Fin (Specht.nOf μ)), ρ ∈ Specht.colStab (π • t) ∧
+      colWordNum (ρ • (π • t)) < colWordNum t := by
+  classical
+  obtain ⟨ρ, hρmem, -, hρmin⟩ := exists_colWordMin_form (π • t)
+  refine ⟨ρ, hρmem, ?_⟩
+  have hmaxs : ∀ σ : Specht.colStab (ρ • (π • t)),
+      colWordNum (ρ • (π • t))
+        ≤ colWordNum ((σ : Equiv.Perm (Fin (Specht.nOf μ))) • (ρ • (π • t))) :=
+    fun σ => hρmin (σ : Equiv.Perm (Fin (Specht.nOf μ))) σ.2
+  have hCeq : ∀ c, colContent (ρ • (π • t)) c = colContent (π • t) c :=
+    fun c => colContent_colStab_eq (π • t) hρmem c
+  have hle : ∀ r : Fin (μ.colLen j),
+      labelAt (ρ • (π • t)) (YoungDiagram.mem_iff_lt_colLen.mpr r.isLt)
+        ≤ labelAt t (YoungDiagram.mem_iff_lt_colLen.mpr r.isLt) := by
+    intro r
+    rw [labelAt_eq_orderStat (ρ • (π • t)) hmaxs j r, labelAt_eq_orderStat t hmax j r]
+    refine orderEmbOfFin_le_of_count (colContent_card (ρ • (π • t)) j) (colContent_card t j)
+      (fun w => ?_) r
+    rw [hCeq j]
+    exact fibre_colContent_j_count_dom t hij hij1 hmax hdesc hπG w
+  have hne : (fun r : Fin (μ.colLen j) =>
+        labelAt (ρ • (π • t)) (YoungDiagram.mem_iff_lt_colLen.mpr r.isLt))
+      ≠ (fun r => labelAt t (YoungDiagram.mem_iff_lt_colLen.mpr r.isLt)) := by
+    intro hfg
+    apply fibre_colContent_j_ne t i j hπG hπH
+    rw [← hCeq j]
+    exact colContent_eq_of_labelAt_eq (ρ • (π • t)) t hmaxs hmax j (fun r => congrFun hfg r)
+  obtain ⟨r₀, hr₀lt, hr₀below⟩ := exists_first_lt_of_le_of_ne _ _ hle hne
+  refine colWordNum_lt_of_first_diff_col t (ρ • (π • t))
+    ⟨((r₀ : ℕ), j), (YoungDiagram.mem_cells _).mpr
+      (YoungDiagram.mem_iff_lt_colLen.mpr r₀.isLt)⟩ ?_ ?_ ?_
+  · intro c hc2
+    have hc2' : (c : ℕ × ℕ).2 < j := hc2
+    have hcmem : ((c : ℕ × ℕ).1, (c : ℕ × ℕ).2) ∈ μ := by
+      rw [Prod.mk.eta]; exact (YoungDiagram.mem_cells _).mp c.2
+    have hr : (c : ℕ × ℕ).1 < μ.colLen (c : ℕ × ℕ).2 :=
+      YoungDiagram.mem_iff_lt_colLen.mp hcmem
+    have hcc : colContent t (c : ℕ × ℕ).2 = colContent (ρ • (π • t)) (c : ℕ × ℕ).2 := by
+      rw [hCeq, colContent_garnirG_eq_of_lt t i j hπG hc2']
+    have hkey := labelAt_eq_of_colContent_eq t (ρ • (π • t)) hmax hmaxs
+      (c : ℕ × ℕ).2 hcc ⟨(c : ℕ × ℕ).1, hr⟩
+    show labelAt t hcmem = labelAt (ρ • (π • t)) hcmem
+    exact hkey
+  · intro c hc2 hc1
+    have hcj : (c : ℕ × ℕ).2 = j := hc2
+    have hr : (c : ℕ × ℕ).1 < μ.colLen j := by
+      rw [← hcj]
+      exact YoungDiagram.mem_iff_lt_colLen.mp (by rw [Prod.mk.eta]; exact (YoungDiagram.mem_cells _).mp c.2)
+    have hlt₀ : (⟨(c : ℕ × ℕ).1, hr⟩ : Fin (μ.colLen j)) < r₀ := hc1
+    have hkey := hr₀below ⟨(c : ℕ × ℕ).1, hr⟩ hlt₀
+    have hcval : (c : μ.cells) = ⟨((c : ℕ × ℕ).1, j),
+        (YoungDiagram.mem_cells _).mpr (YoungDiagram.mem_iff_lt_colLen.mpr hr)⟩ := by
+      apply Subtype.ext
+      show (c : ℕ × ℕ) = ((c : ℕ × ℕ).1, j)
+      rw [← hcj]
+    show ((t.symm c : Fin (Specht.nOf μ)) : ℕ)
+      = (((ρ • (π • t)).symm c : Fin (Specht.nOf μ)) : ℕ)
+    rw [hcval]
+    exact hkey.symm
+  · show labelAt (ρ • (π • t)) (YoungDiagram.mem_iff_lt_colLen.mpr r₀.isLt)
+      < labelAt t (YoungDiagram.mem_iff_lt_colLen.mpr r₀.isLt)
+    exact hr₀lt
 
 /-! #### The single residual straightening core + the induction skeleton -/
 
