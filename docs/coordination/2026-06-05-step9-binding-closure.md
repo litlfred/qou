@@ -431,3 +431,20 @@ graph **M_n(K)** — *which pairs bond*. Cross-recognition (§6 convergence, not
 - **qou-v0yw REFRAMED (still open):** from "which single graph" to a per-order sub-link
   COUNTING problem (how many Borromean triples in ⁶Li/¹²C…) + M_n→w_n weights. Bean set
   back to todo with the sharper framing.
+
+## 2026-07-11 (cont.10) — per-order count M_n=C(A,n): deuteron-pinned pairwise backbone (PR #3583)
+
+- **Sharpened qou-v0yw's per-order count.** Tested `M_n(K)=C(A,n)` (all n-subsets)
+  parameter-lean: the n=2 term is pinned by the SINGLE deuteron datum (a_D^(2)=1,
+  M_2(D)=C(2,2)=1 ⇒ w_2=B(D)/m_e≈4.353), so the pairwise backbone `B_2(A)=B(D)·C(A,2)`
+  carries NO new parameter.
+- **Result (scope-(a)):** the C(A,2) backbone reproduces A=3 binding to a small ~1–2 MeV
+  M_3 residual (³H 1.81, ³He 1.04); ⁴He residual 14.95 MeV (doubly-magic 4-body).
+- **Cross-check recovered:** the ³H−³He residual difference = +0.764 MeV == the AME
+  mirror split == the Coulomb term (cont.4/cont.5). The per-order count inherits this
+  session's charge-structure result for free — the pairwise backbone is charge-symmetric.
+- **Localises the open work:** the 2-body count is FIXED; what remains open is the
+  M_3/M_4 weights (a_D^(n)·w_n, the deuteron pins only w_2) and the large-A geometric
+  saturation of C(A,n). qou-v0yw stays open with a fixed 2-body anchor to build on.
+  Compute [`computations/mnk_per_order_counting.py`](../../computations/mnk_per_order_counting.py),
+  audit [docs/audits/2026-07-11-mnk-per-order-counting.md](../audits/2026-07-11-mnk-per-order-counting.md).
