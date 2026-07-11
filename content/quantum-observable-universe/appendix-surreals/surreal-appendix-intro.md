@@ -96,9 +96,3 @@ the birthday and sign-sequence gradings and the standard-part
 functor. Section 6 relaxes the strict QOU axioms. Section 7 gives
 two speculative reformulations: the substrate as a Hahn series,
 and Kashaev's conjecture as a standard-part identity.
-
-All Lean files in this appendix axiomatise the ambient field
-$\mathbf{No}$ as a real-closed field; no attempt is made to
-construct $\mathbf{No}$ inside Lean (that would require
-mathlib's `SurrealNumber` development, which is not yet
-exhaustive).

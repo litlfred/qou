@@ -143,6 +143,5 @@ lift is strictly richer than the archimedean, and the extra
 information is physical.
 
 **Provability assessment**: mathematical layer provable once
-`QOU.AppendixSurreals.ValuationRing` is developed (currently
-pending). Physical layer speculative — depends on
-interpretation.
+the finite-surreal valuation-ring foundations are developed.
+Physical layer speculative — depends on interpretation.
