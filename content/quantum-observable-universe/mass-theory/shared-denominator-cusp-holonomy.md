@@ -140,8 +140,14 @@ Stated conditional on
 and
 ([Archimedean limit](#conj:dilogarithm-archimedean-limit)). The Lean
 formulation
-`QOU.QPochhammer.shared_denominator_cusp_holonomy` is therefore a
-class instance, not a closed theorem.
+`QOU.QPochhammer.shared_denominator_cusp_holonomy` is a conditional
+theorem over the class `SharedDenominatorCuspHolonomy`, which
+deliberately has **no instance**: the conjecture's open state is
+visible in the type system. (A previous revision fabricated a
+"skeleton" instance with the constant real shape $z = 2$; it is
+removed, and the cusp-completeness predicate now requires a genuinely
+geometric shape, $\mathrm{Im}\, z > 0$, so no real-constant
+witness can discharge it.)
 
 ### Empirical scope of the seeding pipeline
 
