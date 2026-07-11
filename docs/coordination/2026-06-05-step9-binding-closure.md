@@ -470,7 +470,7 @@ graph **M_n(K)** — *which pairs bond*. Cross-recognition (§6 convergence, not
   (A>4 vanishing clean; ⁴He magnitude units-mismatched). Open = Slater↔trace
   dictionary / geometric `W_λ` — research-level, gated. No fit; nothing wired.
 
-## 2026-07-11 (cont.11) — 🟧 OWNER RULING: Subgoal-2 opened for ALL agents (gate lifted)
+## 2026-07-11 (cont.12) — 🟧 OWNER RULING: Subgoal-2 opened for ALL agents (gate lifted)
 
 - **The M₃/M₄ binding-weight closure is no longer owner-gated.** The owner reversed the
   2026-05-08 Subgoal-2 decline **generally**: the geometric / substrate-derivation routes —
