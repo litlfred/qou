@@ -4,6 +4,9 @@ export default proposition({
   label: "prop:meson-scale-independence",
   title:
     "The meson mass scale $m_\\pi$ is independent of $(m_\\mathfrak{e}, q_0)$",
+  lean: {
+    ref: "qou:QOU.ParticleInteractions.meson_scale_independence",
+  },
   uses: [
     "def:categorical-meson",
     "prop:frobenius-lepton-meson-bridge",
