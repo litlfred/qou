@@ -125,4 +125,40 @@ theorem pole_cusp_bijection_proved (q : ℝ) (hq : q ≠ 0) (n : ℕ) :
   ⟨fun k => q ^ (-(k : ℤ)), fun _ => rfl,
     fun k => denomPolyLocal_eq_zero_at_pole q hq n k k.isLt⟩
 
+/-! ## The `[Volume Conjecture] ⟹ §2 asymptotic` conditional (§3b-cond)
+
+The §2 asymptotic (`(1−q)·log Φ_n(x;q) → D(z)`, the Bloch–Wigner volume) follows
+from the **volume conjecture** together with the **pole-to-cusp matched volume**.
+The theorem below makes that conditional structure explicit and honest: the two
+mathematical hypotheses carry ALL the content and are cited — **not** laundered:
+
+* `h_vc_asymptotic` — the q-Pochhammer/Kashaev **saddle asymptotic** converges to
+  the hyperbolic volume `V`. This is the volume conjecture's analytic core; for
+  the figure-eight `4₁` it is the **theorem** of Ohtsuki (2016) / Andersen–Hansen,
+  and `⟨4₁⟩_N` is literally this q-Pochhammer sum
+  (`computations/qbeta/qbeta_c3_kashaev_invariant_grounding.py`).
+* `h_pole_cusp_matched` — the matched cusp volume equals `D(z(x))`; the algebraic
+  pole side is proved above (`pole_cusp_bijection_proved`); the geometric cusp
+  match is `conj:shared-denominator-cusp-holonomy`.
+
+The composition (below) is the trivial limit-point substitution — precisely
+because the two hypotheses hold the mathematics. This is the **rigorous-
+conditional** wiring of the bar-EVEN mass part (`Re 𝔙 = Vol`); the bar-ODD
+`S = Im 𝔙` needs the *deformed complex* volume conjecture + the open `u(q₀)` map
+(`conj:binding-qbeta-complex-volume`), and is NOT touched here (anti-laundering). -/
+
+/-- **Conditional (VC + pole-cusp match ⟹ §2 asymptotic).** If the q-Pochhammer
+    rescaled log converges to a volume `V` (the volume-conjecture saddle
+    asymptotic; a theorem for `4₁`) and `V = D(z(x))` (the pole-cusp matched cusp
+    volume), then the §2 Bloch–Wigner asymptotic holds. The content is the two
+    hypotheses; the composition is a limit-point substitution. -/
+-- Ref: [murakami-murakami2001] volume conjecture; Ohtsuki asymptotic expansion for 4₁
+theorem asymptotic_volume_of_vc (q x V : ℝ)
+    (h_vc_asymptotic : ∀ ε > (0 : ℝ), ∃ N : ℕ, ∀ m, N ≤ m →
+      ‖(1 - q) * Real.log (partialProductLocal q x m) - V‖ < ε)
+    (h_pole_cusp_matched : V = BlochWignerD x) :
+    ∀ ε > (0 : ℝ), ∃ N : ℕ, ∀ m, N ≤ m →
+      ‖(1 - q) * Real.log (partialProductLocal q x m) - BlochWignerD x‖ < ε := by
+  rw [← h_pole_cusp_matched]; exact h_vc_asymptotic
+
 end QOU.QPochhammer
