@@ -21,8 +21,20 @@ Following the exact analytical evaluation of the Faddeev non-compact integration
    regular ideal tetrahedron.
 4. The continuum mass gap identically limits to $-\text{Vol}(4_1)$.
 
-This completely rejects the prior algebraic shadow hallucination ($c_3 = -2$) 
+This completely rejects the prior algebraic shadow hallucination ($c_3 = -2$)
 in favor of continuous Archimedean geometry.
+
+**⚠ CORRECTION (2026-07-11).** The *geometry* below (Lobachevsky derivative,
+saddle at $\pi/3$, $\mathrm{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3)$) is correct.
+But (a) the physical identification "$c_3$ limits to $-\mathrm{Vol}(4_1)$" is
+**over-scoped**: $-\mathrm{Vol}(4_1) = -2.02988$ is anchor-blind and misses both
+substrate anchors (muon +0.48%, proton −1.91%) while $c_3$ swings 2.43% — it is
+NOT $c_3$'s limit (see the audit). (b) $c_3 = -2 = J_{\mathrm{Hopf}}(1)$ is the
+**canonical** $q=1$ shadow (registry KC10 / KC20), NOT a "hallucination." (c) The
+integrability facts `log_integrable` / `f_integrable` below are `axiom`s (they
+were changed `lemma → axiom` to make the file compile), so this file is NOT a
+completed proof of the FTC step — they are Mathlib-provable and should be proved.
+Ref: `docs/audits/2026-07-11-gemini-session-c3-overclaim-continuum-and-lean-audit.md`.
 -/
 
 namespace QOU.MassTheory.ContinuumGeometry

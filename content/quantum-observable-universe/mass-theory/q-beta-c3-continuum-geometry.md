@@ -6,6 +6,21 @@ tags: ["mass-theory", "q-beta", "continuum-limit", "hyperbolic-volume", "faddeev
 
 # The Geometric Origin of the c_3 Mass Gap
 
+> **⚠ CORRECTION (2026-07-11) — the `c_3 → −Vol(4₁)` identification is over-scoped.**
+> `−Vol(4₁) = −2.02988` is **anchor-blind** and misses **both** substrate anchors
+> (muon **+0.479%**, proton **−1.907%**) while the actual $c_3$ **swings 2.43%**
+> (muon −2.0202, proton −2.0693); at the muon (CAL-2) pin it is **6.9× worse**
+> than the keystone's own `−Vol(4₁)+u−(10/3)u²` near-match. So the "continuum
+> limit is exactly −Vol(4₁), rigorously banishing all algebraic truncations"
+> claim is **not** supported — it makes the muon fit worse and fails cross-anchor
+> (§8 guard). Moreover, `c_3 → −2 = J_Hopf(q=1)` is the **canonical** q=1 shadow
+> (registry **KC10 / KC20** `C_Hopf(2)=−2`), **not** a "hallucination." The
+> hyperbolic geometry below is real and kept (`Vol(4₁)=2·Cl₂(π/3)`, Lobachevsky
+> saddle at `π/3`); only the $c_3$ **identification** and the "exact/rigorous"
+> tier are corrected. Re-scope + measurement:
+> [`2026-07-11-gemini-session-c3-overclaim-continuum-and-lean-audit.md`](../../../../docs/audits/2026-07-11-gemini-session-c3-overclaim-continuum-and-lean-audit.md);
+> companion keystone re-scope: `#3501`/`#3503`.
+
 The third topological mass gap observable $c_3$ was initially measured via empirical extrapolation of the $N=3$ operator-valued calculations across the $Q_\beta$ manifold, resulting in a near-match physical measurement of:
 $$ c_3^{\text{emp}} \approx -2.02162 $$
 
