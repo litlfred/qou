@@ -34,23 +34,93 @@ def degLex : MonomialBasis → MonomialBasis → Prop :=
     w.length < w'.length ∨
     (w.length = w'.length ∧ w < w')
 
-/- The degree-lexicographic ordering is well-founded.
+/-! ### Well-foundedness of `degLex`
 
-   Proof sketch: degree is bounded below by 0, and within each fixed
-   degree the words form the finite-tuple lexicographic order on `ℕ`,
-   which is well-founded.  Concretely it embeds into the lexicographic
-   product `(length, word)`; the length component is `Nat.lt` (well-
-   founded), and within equal length the second component is the
-   finite-tuple lex order (well-founded).  The full Lex order on
-   `List ℕ` is *not* well-founded (e.g. `[1] > [0,n]` for every `n`),
-   so the embedding must respect the equal-length restriction — the
-   detailed construction is deferred. -/
+`degLex` is well-founded.  Degree (= length) is bounded below by `0`, so the
+length component is `Nat.lt` (well-founded); within a fixed length the words
+form the finite lexicographic order on `ℕ`, which is well-founded.  The full
+`List.Lex` order on `List ℕ` is *not* well-founded (`[1] > [0,1] > [0,0,1] >
+…`), so the argument is factored through the equal-length restriction rather
+than the (ill-founded) unrestricted lex order. -/
+
+/-- Equal-length lexicographic order, packaged on the length-`n` subtype. -/
+private def degLexRLen (n : ℕ) :
+    {l : List ℕ // l.length = n} → {l : List ℕ // l.length = n} → Prop :=
+  fun a b => List.Lex (· < ·) a.1 b.1
+
+/-- Head/tail projection of a length-`(n+1)` word into `ℕ × (length-n word)`. -/
+private def degLexFLen (n : ℕ) (w : {l : List ℕ // l.length = n + 1}) :
+    ℕ × {l : List ℕ // l.length = n} :=
+  (w.1.headI, ⟨w.1.tail, by simp [List.length_tail, w.2]⟩)
+
+/-- Equal-length lex is well-founded, by induction on the common length: the
+    base is the empty relation on `[]`; the step transports `Prod.Lex` on
+    `ℕ × (length-n words)` along the head/tail projection. -/
+private theorem degLexRLen_wf : ∀ n, WellFounded (degLexRLen n) := by
+  intro n
+  induction n with
+  | zero =>
+    refine ⟨fun a => Acc.intro a ?_⟩
+    rintro b hrel
+    have ha : a.1 = [] := List.length_eq_zero_iff.mp a.2
+    have hb : b.1 = [] := List.length_eq_zero_iff.mp b.2
+    simp only [degLexRLen, ha, hb] at hrel
+    cases hrel
+  | succ n ih =>
+    have key : WellFounded (Prod.Lex (· < · : ℕ → ℕ → Prop) (degLexRLen n)) :=
+      WellFounded.prod_lex (Nat.lt_wfRel.wf) ih
+    have hsub : Subrelation (degLexRLen (n + 1))
+        (InvImage (Prod.Lex (· < ·) (degLexRLen n)) (degLexFLen n)) := by
+      rintro ⟨la, ha⟩ ⟨lb, hb⟩ hrel
+      rcases la with _ | ⟨x, xs⟩
+      · simp at ha
+      rcases lb with _ | ⟨y, ys⟩
+      · simp at hb
+      simp only [degLexRLen] at hrel
+      show Prod.Lex (· < ·) (degLexRLen n)
+        (degLexFLen n ⟨x :: xs, ha⟩) (degLexFLen n ⟨y :: ys, hb⟩)
+      simp only [degLexFLen, List.headI, List.tail_cons]
+      cases hrel with
+      | cons h => exact Prod.Lex.right _ h
+      | rel h => exact Prod.Lex.left _ _ h
+    exact Subrelation.wf hsub (InvImage.wf (degLexFLen n) key)
+
+/-- Equal-length lex on all of `List ℕ` (carrying the length constraint as a
+    conjunct, so it is globally well-founded — chains stay within one length). -/
+private def degLexRList : List ℕ → List ℕ → Prop :=
+  fun a b => a.length = b.length ∧ List.Lex (· < ·) a b
+
+private theorem degLex_acc_rList_of_rLen : ∀ (n : ℕ) (p : {l : List ℕ // l.length = n}),
+    Acc (degLexRLen n) p → Acc degLexRList p.1 := by
+  intro n p hp
+  induction hp with
+  | intro p _ ih =>
+    refine Acc.intro p.1 ?_
+    rintro b ⟨hlen, hlex⟩
+    exact ih ⟨b, hlen.trans p.2⟩ (by simpa [degLexRLen] using hlex)
+
+private theorem degLexRList_wf : WellFounded degLexRList :=
+  ⟨fun w => degLex_acc_rList_of_rLen w.length ⟨w, rfl⟩ ((degLexRLen_wf w.length).apply _)⟩
+
+/-- **`degLex` is well-founded.**  Factored through the length-first embedding
+    `w ↦ (w.length, w)` into `Prod.Lex Nat.lt degLexRList`; the length component
+    is `Nat.lt` (well-founded) and the equal-length lex `degLexRList` is
+    well-founded by `degLexRList_wf`. -/
 -- Ref: [manuscript] §2/quantum-observable-universe (axiom 5)
 -- Ref: [manuscript] §3/ordering-jet-compatibility
 private theorem degLex_wf_unrestricted :
     WellFounded (fun (w w' : MonomialBasis) => degLex w w') := by
-  -- Ref: [manuscript] §3/ordering-jet-compatibility
-  sorry
+  have key : WellFounded (Prod.Lex (· < · : ℕ → ℕ → Prop) degLexRList) :=
+    WellFounded.prod_lex (Nat.lt_wfRel.wf) degLexRList_wf
+  have hsub : Subrelation (fun w w' : MonomialBasis => degLex w w')
+      (InvImage (Prod.Lex (· < ·) degLexRList) (fun w : MonomialBasis => (w.length, w))) := by
+    rintro a b (h | ⟨hlen, hlt⟩)
+    · show Prod.Lex (· < ·) degLexRList (a.length, a) (b.length, b)
+      exact Prod.Lex.left _ _ h
+    · show Prod.Lex (· < ·) degLexRList (a.length, a) (b.length, b)
+      rw [← hlen]
+      exact Prod.Lex.right _ ⟨hlen, (List.lt_iff_lex_lt a b).mp hlt⟩
+  exact Subrelation.wf hsub (InvImage.wf _ key)
 
 theorem degLex_wellFounded (n : ℕ) (hn : 0 < n) :
     WellFounded (fun (w w' : MonomialBasis) =>
