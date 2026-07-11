@@ -3,8 +3,10 @@ import Mathlib.Tactic
 /-!
 # Neutron–proton splitting: the sign of the missing L2 term (formalize-first prune)
 
-The leading traced-volume prediction `Δm = α·|ΔΦ|` (see
-`QOU.NeutronProtonSplitting`, `docs/audits/2026-07-11-quark-volume-provenance.md`)
+The leading traced-volume prediction `Δm = α·|ΔΦ|` (namespace
+`QOU.NeutronProtonSplitting` in
+`content/quantum-observable-universe/observations/neutron-proton-mass-splitting.lean`;
+`docs/audits/2026-07-11-quark-volume-provenance.md`)
 **over**-predicts the neutron–proton mass difference by `+0.63%`
 (`docs/audits/2026-07-11-np-splitting-residual-not-q0-knob.md`).  Before
 scanning candidate closures for that residual, this file **formalizes the
@@ -23,11 +25,12 @@ does **not** derive the EM coupling from the 13 categorical drivers, so nothing
 here is wired into production (anti-laundering rule).  Everything is over `ℚ`
 (charges are rational; no archimedean structure — §7c).
 
+The EM self-energy sign of `m_p − m_n` is the standard PDG result.
+
 -- Ref: [manuscript] prop:neutron-proton-mass-splitting
--- Ref: [wgm2022] Workman et al. (PDG) — the EM self-energy sign of m_p − m_n.
 -/
 
-namespace QOU.NeutronProtonEMSign
+namespace QOU.MassTheory.NeutronProtonEMSign
 
 /-- Electric charge of the up quark (units of `e`). -/
 def qUp : ℚ := 2 / 3
@@ -73,4 +76,4 @@ theorem em_correction_neg {k : ℚ} (hk : 0 < k) :
     mul_pos hk em_gap_pos
   linarith
 
-end QOU.NeutronProtonEMSign
+end QOU.MassTheory.NeutronProtonEMSign
