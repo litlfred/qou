@@ -44,24 +44,20 @@ Run: python3 -u computations/qbeta/qbeta_c3_phib_mplane_inversion_probe.py \\
 """
 from __future__ import annotations
 
-import os
 import sys
 from pathlib import Path
 
 import mpmath as mp
 
-_HERE = os.path.dirname(os.path.abspath(__file__))
-_ROOT = os.path.abspath(os.path.join(_HERE, "..", ".."))
-for _p in (_HERE, os.path.join(_ROOT, "computations"),
-           os.path.join(_ROOT, "tools", "qou-substrate", "python")):
-    if _p not in sys.path:
-        sys.path.insert(0, _p)
-
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
+
 from witness_base import WitnessBuilder  # noqa: E402
+from qou_substrate.precision import set_compute_dps  # noqa: E402
 from qbeta_c3_barodd_gluing_newton_solve import vol_of_m, VOL_4_1  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()  # mp.mp.dps <- COMPUTE_DPS (70 default; QOU_COMPUTE_DPS honored)
 
 SQRT3_HALF = mp.sqrt(3) / 2
 
