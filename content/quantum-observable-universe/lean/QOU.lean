@@ -16,6 +16,7 @@ import QOU.MathlibExt
 import QOU.MathlibExt.MarkovTrace
 import QOU.MathlibExt.QuantumDilogarithm
 import QOU.MathlibExt.QuantumDilogarithmInfinite
+import QOU.MathlibExt.FaddeevQuantumDilogarithm
 import QOU.MathlibExt.YekutieliIntegration
 import QOU.MathlibExt.SDP
 import QOU.MathlibExt.SDPEmptyConstraints
