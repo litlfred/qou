@@ -752,3 +752,15 @@ is that `tr_M` is the *wrong* functional for the transition:
 counit strand-append (contaminates c₂/c₃, proven full+linear), or tr_M recalibration
 (derived-wrong; N=0 analog already Lean-proved). Redirected to the keystone.
 Audit: [`2026-07-04-8we6-h4-route-a-explicit-strand-gate-scan.md`](../audits/2026-07-04-8we6-h4-route-a-explicit-strand-gate-scan.md).
+
+**2026-07-11 (#3509) — selection-rule engine + Δ_λ ζ₄ locus + strong-sector vacuity.**
+Re-scoped the Gemini-session c₃ over-claims (c₃=−Vol(4₁) → scope-(b) bar-parity
+exclusion; three vacuous "closure" Lean stubs bannered). Landed
+`QOU/SelectionRules.lean` (sorry-free): `odd_ne_even_of_ne_zero` (bar-parity) +
+`nonneg_sum_ne_neg_target` (sign-positivity) unify the weak (c₃) and strong (Δ_λ)
+sign/parity exclusions. Δ_λ probes: raw T(2,5) character + real-q re-framing pruned;
+the Δ_λ chirality sign located at **q=i (ζ₄, non-semisimple H₅)**:
+`sgn(Δ_λ)=(−1)^{n(λ)}=q^{2n(λ)}|_{q=i}` — the SAME ζ₄ fibre point #3429 formalizes for
+the Q_β f-map (Arm 2). Coordinated on #3429 (intent comment); no file overlap.
+Open: exact chiral operator realizing `q^{2n(λ)}`; magnitude `|Δ_λ|=dim` (Track A).
+Audit: [`2026-07-11-gemini-session-c3-overclaim-continuum-and-lean-audit.md`](../audits/2026-07-11-gemini-session-c3-overclaim-continuum-and-lean-audit.md).
