@@ -13,11 +13,15 @@ triple pole at w = 0, below the first sinh poles):
 Regimes:
   * NATIVE (implemented + validated here): Re b > 0 with b real or |b| = 1,
     i.e. |q| = 1 (q = e^{2πib²}) — the fibre / root-of-unity / DECAY regime.
-  * SUBSTRATE (flagged OPEN, not implemented): real q₀ > 1 needs arg b = −π/4
-    (b² purely imaginary). There the modular dual is negligible
-    (|q̃| ≈ 1e-165, see qbeta_fmap_modular_dual_missing_probe.py) and Φ_b
-    degenerates toward the compact form — consistent with the compact form
-    being correct on the mass face.
+  * SUBSTRATE (pinned + validated by phi_b_substrate_regime.py, this dir):
+    real q₀ > 1 uses arg b = +π/4 — b = √(ln q₀ / 2π)·e^{+iπ/4}, so
+    q = e^{2πib²} = 1/q₀ and the modular dual q̃ = e^{−4π²/ln q₀} is
+    negligible (|q̃| ≈ 1e-165, see qbeta_fmap_modular_dual_missing_probe.py):
+    Φ_b degenerates toward the compact form on the mass face. The earlier
+    arg b = −π/4 guess is a DISTINCT object (measured:
+    log Φ_{b_−}(z) = −conj(log Φ_{b_+}(z)) for real z — same phase, inverted
+    modulus) and does not support the product form. See
+    phi-b-substrate-regime.witness.json (10/10 battery).
 
 SELF-VALIDATION BATTERY (run as __main__; convention errors surface here
 mechanically instead of by memory — the anti-self-deception design):
@@ -214,10 +218,11 @@ def main() -> int:
 
     print()
     print("  REGIME NOTE: real b ⇔ |q| = 1 (fibre/decay face — Φ_b's native")
-    print("  domain, validated above). The real-substrate case q₀ > 1 needs")
-    print("  arg b = −π/4 (b² ∈ iℝ) — an analytic continuation NOT implemented")
-    print("  here (open); there the modular dual is ~1e-165-suppressed and Φ_b")
-    print("  degenerates toward the compact form (the mass face).")
+    print("  domain, validated above). The real-substrate case q₀ > 1 uses")
+    print("  arg b = +π/4 (b² ∈ iℝ) — pinned + validated in")
+    print("  phi_b_substrate_regime.py (10/10 battery); the modular dual is")
+    print("  ~1e-165-suppressed there and Φ_b degenerates toward the compact")
+    print("  form (the mass face).")
     print(f"\n  BATTERY: {'ALL OK' if ok_all else 'FAILURES PRESENT'}")
     return 0 if ok_all else 1
 
