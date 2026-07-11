@@ -159,9 +159,10 @@ theorem character_conj_word (ρ : HeckeRep n d) (i : Fin (n - 1))
     (w : BraidWord n) :
     ρ.character ((i, true) :: (w ++ [(i, false)])) = ρ.character w := by
   unfold HeckeRep.character
+  -- Definitional: `List.append` recurses on its first argument, so both
+  -- sides normalise to `(i, true) :: (w ++ [(i, false)])`.
   have hsplit : (i, true) :: (w ++ [(i, false)])
-      = ([(i, true)] ++ w) ++ [(i, false)] := by
-    simp [List.cons_append]
+      = ([(i, true)] ++ w) ++ [(i, false)] := rfl
   rw [hsplit, HeckeRep.eval_append, HeckeRep.eval_append]
   -- `eval [(i,true)] = σ_i`, `eval [(i,false)] = σ_i⁻¹`
   simp only [HeckeRep.eval, Matrix.mul_one]
