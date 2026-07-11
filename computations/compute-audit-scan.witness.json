@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-07T13:49:01.485027+00:00",
-  "commitSha": "b57f5d39ed22142573c29a4e31d59f094b6537f8",
+  "computedAt": "2026-07-11T10:46:06.507457+00:00",
+  "commitSha": "12ced16e216ecb23303f752a101e171d44195e88",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 11,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "8a602c238718",
-  "scriptCommitSha": "aec64367773a026bc57afe4c46143434bbbb1f98",
+  "scriptCommitSha": "909e4e3c58d7423994256f68f268a7075fa94b8d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -25,7 +25,7 @@
   "description": "Static scan of computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 1055,
+    "files_scanned": 1058,
     "patterns": [
       "P15",
       "P16",
@@ -36,10 +36,10 @@
   },
   "data": {
     "by_pattern_count": {
-      "P15": 187,
-      "P16": 357,
+      "P15": 199,
+      "P16": 359,
       "P21": 25,
-      "P30": 152,
+      "P30": 150,
       "P31": 26
     },
     "top_files": [
@@ -1146,13 +1146,6 @@
       },
       {
         "pattern": "P30",
-        "file": "borromean_binding_recompute.py",
-        "line": 1,
-        "snippet": "json.dump → .witness.json without WitnessBuilder",
-        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
-      },
-      {
-        "pattern": "P30",
         "file": "borromean_diagonal_recurrence_hunt.py",
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
@@ -1203,23 +1196,72 @@
       {
         "pattern": "P16",
         "file": "borromean_h3_2_1_irrep_derivation.py",
-        "line": 222,
+        "line": 220,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "borromean_h3_2_1_irrep_derivation.py",
-        "line": 223,
+        "line": 221,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
-        "pattern": "P30",
-        "file": "borromean_h3_2_1_irrep_derivation.py",
-        "line": 1,
-        "snippet": "json.dump → .witness.json without WitnessBuilder",
-        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+        "pattern": "P15",
+        "file": "borromean_operator_reconstruct_laptop.py",
+        "line": 438,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "borromean_operator_reconstruct_laptop.py",
+        "line": 439,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "borromean_operator_reconstruct_laptop.py",
+        "line": 445,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "borromean_operator_reconstruct_laptop.py",
+        "line": 466,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "borromean_operator_reconstruct_laptop.py",
+        "line": 489,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "borromean_operator_reconstruct_laptop.py",
+        "line": 491,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P16",
+        "file": "borromean_operator_reconstruct_laptop.py",
+        "line": 493,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "borromean_operator_reconstruct_laptop.py",
+        "line": 497,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P15",
@@ -1405,6 +1447,27 @@
       },
       {
         "pattern": "P15",
+        "file": "borromean_qzeil_multiq.py",
+        "line": 52,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "borromean_qzeil_multiq.py",
+        "line": 178,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P30",
+        "file": "borromean_qzeil_multiq.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P15",
         "file": "borromean_qzeil_ratios.py",
         "line": 93,
         "snippet": "sp.cancel(...)",
@@ -1523,13 +1586,6 @@
         "note": "syt_prefix_cache.BlockCache caches block values by content distance ρ; precomputed SYT→index dict eliminates O(d_λ²) swap-partner search. Numerical-q callers can wire it directly. Ref: ocneanu_weights.py wiring."
       },
       {
-        "pattern": "P30",
-        "file": "canonical_tr_m_three_path_comparison.py",
-        "line": 1,
-        "snippet": "json.dump → .witness.json without WitnessBuilder",
-        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
-      },
-      {
         "pattern": "P16",
         "file": "channel_binding.py",
         "line": 150,
@@ -1584,13 +1640,6 @@
         "line": 294,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
-      },
-      {
-        "pattern": "P30",
-        "file": "chebyshev_pairing_engine_witness.py",
-        "line": 1,
-        "snippet": "json.dump → .witness.json without WitnessBuilder",
-        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
       },
       {
         "pattern": "P30",
@@ -2708,6 +2757,41 @@
       {
         "pattern": "P30",
         "file": "habiro_borromean_colored_jones.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P15",
+        "file": "habiro_borromean_cyclotomic_coefficients.py",
+        "line": 93,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "habiro_borromean_cyclotomic_coefficients.py",
+        "line": 102,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "habiro_borromean_cyclotomic_coefficients.py",
+        "line": 128,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "habiro_borromean_cyclotomic_coefficients.py",
+        "line": 134,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P30",
+        "file": "habiro_borromean_cyclotomic_coefficients.py",
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."

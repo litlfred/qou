@@ -1,15 +1,15 @@
 {
   "engine": "python+mpmath",
-  "engineVersion": "python 3.13.12",
-  "computedAt": "2026-07-08T18:32:30.048520+00:00",
-  "commitSha": "60a120a7b8cb70cd47659509ead9e80b3847ede5",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-11T05:33:13.815842+00:00",
+  "commitSha": "6f9c59c652ee63efde763d7a6c7366c15ad0cf61",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 43,
+  "durationMs": 26,
   "computation": "canonical-isotope-witness-Z118",
   "scriptFile": "canonical_isotope_witness.py",
-  "scriptHash": "ba08534bc96f",
-  "scriptCommitSha": "10a91ce6f0e277d8d1ee3cd377558ce01c8a5082",
+  "scriptHash": "46eb131fcd57",
+  "scriptCommitSha": "242bd2515ed6eb591bc763c9d09b464a2f18a755",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -17,12 +17,10 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.12",
-    "numpy": "2.5.0",
-    "scipy": "1.18.0",
+    "python": "3.11.15",
+    "numpy": "2.4.6",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.3.0"
   },
   "description": "Per-Z=118 shard of the recursive atom-knot atlas. Element: Og. Covers every (Z=118, N) in AME 2020. Each row carries: prediction_type ∈ {mass, binding_energy}; the prediction value (from L1 canonical |tr_M| via markov_peel+mpmath, OR L2 α-cluster recursion); the AME 2020 reference; err in MeV / % / ppm; L4 composite mass M = N·m_n + Z·m_p − B (when nucleon masses + B are available). L1 source: canonical-mass-table-extended.witness.json; L2 source: alpha-cluster-recursion.witness.json; nucleon masses: m-p-borromean-verification-50dps.witness.json.",
   "parameters": {
@@ -42,7 +40,7 @@
         "element": "Og",
         "prediction_type": "binding_energy",
         "layer": "L4-qclt-colour-weighted",
-        "canonical_status": "canonical-recursive",
+        "canonical_status": "asymptotic-approximation",
         "prediction_MeV_50dps": -273.0903678399004,
         "reference_MeV_50dps": 2073.854,
         "err_MeV": -2346.9443678399,
@@ -54,7 +52,7 @@
           "M_AME_MeV": 273126.5746560582,
           "err_MeV": 2346.869124180579,
           "err_ppm": 8592.606293019768,
-          "canonical_status": "canonical-recursive",
+          "canonical_status": "asymptotic-approximation",
           "formula": "N·m_n + Z·m_p − B(A,Z)",
           "m_p_source": "borromean-tower (conj:borromean-baryon-mass-formula)",
           "B_source": "L4-qclt-colour-weighted"
@@ -74,7 +72,7 @@
         "element": "Og",
         "prediction_type": "binding_energy",
         "layer": "L4-qclt-colour-weighted",
-        "canonical_status": "canonical-recursive",
+        "canonical_status": "asymptotic-approximation",
         "prediction_MeV_50dps": -266.265963847625,
         "reference_MeV_50dps": 2081.226,
         "err_MeV": -2347.491963847625,
@@ -86,7 +84,7 @@
           "M_AME_MeV": 274058.5866704999,
           "err_MeV": 2347.598128511163,
           "err_ppm": 8566.044790027601,
-          "canonical_status": "canonical-recursive",
+          "canonical_status": "asymptotic-approximation",
           "formula": "N·m_n + Z·m_p − B(A,Z)",
           "m_p_source": "borromean-tower (conj:borromean-baryon-mass-formula)",
           "B_source": "L4-qclt-colour-weighted"
@@ -106,7 +104,7 @@
         "element": "Og",
         "prediction_type": "binding_energy",
         "layer": "L4-qclt-colour-weighted",
-        "canonical_status": "canonical-recursive",
+        "canonical_status": "asymptotic-approximation",
         "prediction_MeV_50dps": -259.44889190469985,
         "reference_MeV_50dps": 2087.42,
         "err_MeV": -2346.8688919047,
@@ -118,7 +116,7 @@
           "M_AME_MeV": 274992.129129754,
           "err_MeV": 2346.804020078678,
           "err_ppm": 8534.077057061324,
-          "canonical_status": "canonical-recursive",
+          "canonical_status": "asymptotic-approximation",
           "formula": "N·m_n + Z·m_p − B(A,Z)",
           "m_p_source": "borromean-tower (conj:borromean-baryon-mass-formula)",
           "B_source": "L4-qclt-colour-weighted"

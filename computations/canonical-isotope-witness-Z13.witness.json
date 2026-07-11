@@ -1,15 +1,15 @@
 {
   "engine": "python+mpmath",
-  "engineVersion": "python 3.13.12",
-  "computedAt": "2026-07-08T18:58:46.600157+00:00",
-  "commitSha": "1c4cc7150ab14f2b55c2bc3bbd911e1fa19cb8ae",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-11T05:33:04.378386+00:00",
+  "commitSha": "6f9c59c652ee63efde763d7a6c7366c15ad0cf61",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 25,
+  "durationMs": 29,
   "computation": "canonical-isotope-witness-Z13",
   "scriptFile": "canonical_isotope_witness.py",
-  "scriptHash": "8599f8ce5035",
-  "scriptCommitSha": "22f8e80b2bc5305ebf683c070192824ff7df7ba0",
+  "scriptHash": "46eb131fcd57",
+  "scriptCommitSha": "242bd2515ed6eb591bc763c9d09b464a2f18a755",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -17,12 +17,10 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.12",
-    "numpy": "2.5.0",
-    "scipy": "1.18.0",
+    "python": "3.11.15",
+    "numpy": "2.4.6",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.3.0"
   },
   "description": "Per-Z=13 shard of the recursive atom-knot atlas. Element: Al. Covers every (Z=13, N) in AME 2020. Each row carries: prediction_type ∈ {mass, binding_energy}; the prediction value (from L1 canonical |tr_M| via markov_peel+mpmath, OR L2 α-cluster recursion); the AME 2020 reference; err in MeV / % / ppm; L4 composite mass M = N·m_n + Z·m_p − B (when nucleon masses + B are available). L1 source: canonical-mass-table-extended.witness.json; L2 source: alpha-cluster-recursion.witness.json; nucleon masses: m-p-borromean-verification-50dps.witness.json.",
   "parameters": {
@@ -682,7 +680,7 @@
         "element": "Al",
         "prediction_type": "binding_energy",
         "layer": "L4-qclt-colour-weighted",
-        "canonical_status": "canonical-recursive",
+        "canonical_status": "asymptotic-approximation",
         "prediction_MeV_50dps": 143.04502865186714,
         "reference_MeV_50dps": 286.18,
         "err_MeV": -143.13497134813286,
@@ -694,7 +692,7 @@
           "M_AME_MeV": 38225.84835456754,
           "err_MeV": 143.11860310168413,
           "err_ppm": 3744.026863031887,
-          "canonical_status": "canonical-recursive",
+          "canonical_status": "asymptotic-approximation",
           "formula": "N·m_n + Z·m_p − B(A,Z)",
           "m_p_source": "borromean-tower (conj:borromean-baryon-mass-formula)",
           "B_source": "L4-qclt-colour-weighted"
@@ -714,7 +712,7 @@
         "element": "Al",
         "prediction_type": "binding_energy",
         "layer": "L4-qclt-colour-weighted",
-        "canonical_status": "canonical-recursive",
+        "canonical_status": "asymptotic-approximation",
         "prediction_MeV_50dps": 148.43658380422727,
         "reference_MeV_50dps": 286.818,
         "err_MeV": -138.38141619577272,
@@ -726,7 +724,7 @@
           "M_AME_MeV": 39164.74224744749,
           "err_MeV": 138.398577833912,
           "err_ppm": 3533.75433851941,
-          "canonical_status": "canonical-recursive",
+          "canonical_status": "asymptotic-approximation",
           "formula": "N·m_n + Z·m_p − B(A,Z)",
           "m_p_source": "borromean-tower (conj:borromean-baryon-mass-formula)",
           "B_source": "L4-qclt-colour-weighted"
@@ -746,7 +744,7 @@
         "element": "Al",
         "prediction_type": "binding_energy",
         "layer": "L4-qclt-colour-weighted",
-        "canonical_status": "canonical-recursive",
+        "canonical_status": "asymptotic-approximation",
         "prediction_MeV_50dps": 153.8221810834367,
         "reference_MeV_50dps": 288.616,
         "err_MeV": -134.79381891656328,
@@ -758,7 +756,7 @@
           "M_AME_MeV": 40102.51648441477,
           "err_MeV": 134.80416635195434,
           "err_ppm": 3361.4889580394265,
-          "canonical_status": "canonical-recursive",
+          "canonical_status": "asymptotic-approximation",
           "formula": "N·m_n + Z·m_p − B(A,Z)",
           "m_p_source": "borromean-tower (conj:borromean-baryon-mass-formula)",
           "B_source": "L4-qclt-colour-weighted"
@@ -791,9 +789,9 @@
       },
       {
         "path": "low-isotope-binding-sweep.witness.json",
-        "sha256": "e57e2ecbae62eb2e013be587da26f70244e1afaafec934fe0b2e7e04b3ea0fed",
-        "size_bytes": 7875,
-        "commitSha": null,
+        "sha256": "7917dee289469c3747e4cd19f634c01891534ee0236b942b4acbf07a60cf9433",
+        "size_bytes": 7924,
+        "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811",
         "scriptCommitSha": null,
         "computedAt": null
       },
