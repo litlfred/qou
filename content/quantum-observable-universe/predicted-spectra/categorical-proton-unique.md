@@ -4,8 +4,4 @@ The triple $(\mathfrak{u}, \mathfrak{u}, \mathfrak{d})$ and the Borromean braidi
 
 The Hecke normal form is unique. Permuting the colored valence tubes via the $S_3$ group action acts through inner automorphisms. This groups the three configurations into a single equivalence class. Minimizing $|\mathrm{tr}_M|$ uniquely fixes the stabilizer selection.
 
-#### Formalization
-
-Standard Hecke normal form and $S_3$-symmetry arguments from knot representation theory establish this uniqueness constraint. Formalization validates the deterministic spectral predictions within the Quantum Observable Universe.
-
 **Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. It invokes real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. The categorical identities hold over an abstract coefficient ring. Only the archimedean realization requires specialization.

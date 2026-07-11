@@ -14,9 +14,3 @@ Covalent molecules define the lowest threshold of stability. The $H_2$ molecular
 Nucleons occupy a higher topological hierarchy. The proton and neutron rely strictly on the $(2,1)$ partition of the $H_3(q)$ algebra. This partition drops rank and acquires negative eigenvalues at exactly the Supergolden Ratio $q = \psi \approx 1.4655$. The positive-definite Gram matrix requirement of the observable spectrahedron fails at this boundary. This causes structural annihilation. Hadronic matter cannot embed as a stable, unitary state beyond this threshold.
 
 Gauge bosons and leptons evade this structural collapse. The electron manifests as a topologically unknotted abelian braid. It projects purely into the 1-dimensional Wedderburn channels. These traces scale strictly as $q^n$. Their Gram matrices remain unconditionally positive-definite. These structures survive indefinitely across the entire $q > 0$ regime. Heated past the Supergolden threshold, the universe melts into a pure continuum of leptons and gauge connections.
-
-### Formalization Tracker
-
-- [x] **Nucleon SDP Rank Drop**: Formalize the explicit evaluation of the $(2,1)$ self-conjugate block for the proton and neutron $H_3(q)$ braid words. Prove the regime change occurs exactly at the Supergolden Ratio $q = \psi$ ($u = 1/\psi$).
-- [x] **Cross-Coupling Non-Vanishing**: Prove the cross-channel coherence between the conjugate YSN sectors $(3) \leftrightarrow (1,1,1)$ for the nucleon remains strictly non-vanishing over the physical $q$-regime due to the algebraic $q^6$ character ratio.
-- [x] **Continuous Substrate Evolution**: Provide Lean proofs that the Wedderburn $w_\lambda(q)$ and $q$-Laplacian weights evolve dynamically alongside the generators during $q$-sweeps to correctly isolate the molecular binding ($H_2$) rank drop algebraically at $q \approx 1.17$.
