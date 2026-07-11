@@ -395,6 +395,35 @@ connected transfer matrix (the `tr_M` lens of the same object) — coordinate be
 solo. The homogeneity (identical-bond) assumption is the mean-field reading; a
 compact non-chain geometry with inequivalent bonds would split `b*` by environment.
 
+## Part 12 — the `b*` bridge: connected `tr_M` == centered Gram-quadratic (exact)
+
+The per-bond `b*` was deferred to an H₆ build (Part 11). It does **not** need a
+separate build — #3548's *connected* `tr_M` part and this session's *centered/ghost
+Gram-quadratic* norm are the **same object**, proved by an exact identity
+([`binding_bstar_bridge.py`](../../computations/binding_bstar_bridge.py),
+witness `binding-bstar-bridge.witness.json`). Using the Markov normalization
+`tr_M(1)=1`, for any mode `w`:
+
+    C(w)  = tr_M(w²) − tr_M(w)²                      (#3548 connected part)
+    ⟨δw⟩²_G = tr_M((w − ⟨w⟩·1)²)
+            = tr_M(w²) − 2⟨w⟩tr_M(w) + ⟨w⟩²·tr_M(1)
+            = tr_M(w²) − tr_M(w)²  =  C(w).           (#3545 centered Gram norm)
+
+The **connected part IS the Gram-quadratic norm of the centered (traceless) mode** —
+the "ghost" `δw = w − ⟨w⟩` is exactly the fluctuation whose connected 2-point #3548
+computes. Verified bit-identical on the H₂ `(2,k)` torus bond (#3548's Check 3):
+`tr_M(σ)=0.499320`, `tr_M(σ²)=1.104388`, both give `0.8550672621` (`|Δ|=0`).
+
+**Consequences.**
+- **`b*` is pinned by whichever lens computes the connected part** — #3548's
+  deuteron connected `0.193` **is** this session's per-bond `b* = ⟨g_A,σ_bond,g_B⟩_G`.
+  The H₆ seminormal build is #3548's PROBE 2, not a separate #3545 task.
+- **Unifies three findings as one object:** main `a44296db` (decay=binding-quadratic),
+  #3548 (connected transfer matrix), #3545 (negative-norm ghost Gram-quadratic) —
+  binding = quadratic = connected = centered Gram norm.
+- **Sign is mode-dependent** (centered modes have indefinite Markov-Gram norm): the
+  `σ` mode gives `+0.855`, the bar-odd `L₊−L₋` ghost gives `−0.4275` (binding).
+
 ## Consequence for `conj:binding-manybody-eq-jet-filtration`
 
 **Not provable now** (recorded answer). The conjecture's three deep inputs remain
