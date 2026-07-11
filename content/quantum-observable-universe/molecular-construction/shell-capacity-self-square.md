@@ -1,5 +1,3 @@
-*Lean sibling resolves to [`QOU.Molecular.shell_capacity_self_square`](lean/QOU/Molecular/ShellCapacitySelfSquare.lean).*
-
 **Proposition.**
 *For every principal shell level $n \in \mathbb{N}$, the number of orbital sub-states is the sum of the sub-shell multiplicities $2\ell+1$ over $\ell = 0,\ldots,n-1$,*
 

@@ -12,7 +12,7 @@
 - *VSEPR predicts: linear, 180$^\circ$ bond angle*
 - *LP dual confirms: placing $O_1$ and $O_2$ on opposite sides of $C$ in the strand ordering minimises the $O$-$O$ proton repulsion crossings*
 
-*For $H_2O$ (future computation):*
+*For $H_2O$:*
 - *2 bond pairs (single bonds), 2 lone pairs on O*
 - *VSEPR predicts: bent, $\approx 104.5^\circ$*
 - *LP dual should show: lone pairs force the two H's into a non-symmetric strand arrangement*
