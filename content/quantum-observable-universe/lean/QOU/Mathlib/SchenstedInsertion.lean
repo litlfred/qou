@@ -872,3 +872,133 @@ theorem insertWordRec_shape_eq_P (w : List ℕ) :
     tableauShape (insertWordRec w).2 = tableauShape (insertWord w) := by
   rw [insertWordRec, ← insertWordRec_fst, insertWordRec]
   exact insertWordRecAux_shape w 0 [] [] rfl
+
+/-! ## Brick 6b — the recording tableau `Q(w)` is standard
+
+`Q(w)` is a *standard* tableau: its rows and columns strictly increase.  The
+whole result rests on one monotone invariant — at step `s`, **every entry of `Q`
+is `< s`** (`tableauAllLt`), because prior insertions used step indices `0…s−1`.
+The step-`s` cell is written at a row end (`insertRec`'s none / new-row branches)
+and, being larger than every existing entry, exceeds both its left neighbour
+(row strictness) and its upper neighbour (column strictness).  Everything below
+is bookkeeping around that single fact. -/
+
+/-- Every entry of the tableau `Q` is strictly `< s`. -/
+def tableauAllLt (Q : List (List ℕ)) (s : ℕ) : Prop :=
+  ∀ row ∈ Q, ∀ e ∈ row, e < s
+
+/-- Every row of `Q` strictly increases (left to right). -/
+def RowsStrict (Q : List (List ℕ)) : Prop := ∀ row ∈ Q, row.Sorted (· < ·)
+
+/-- The Q-component of a no-bump `insertRec` appends the step index to the head
+    Q-row. -/
+theorem insertRec_snd_none {prow : List ℕ} {prest Q : List (List ℕ)} {x s : ℕ}
+    (hb : (rowInsert prow x).2 = none) :
+    (insertRec (prow :: prest) Q x s).2 = (Q.headD [] ++ [s]) :: Q.tail := by
+  rw [insertRec]; simp only [hb]
+
+/-- The Q-component of a bumping `insertRec` keeps the head Q-row and cascades
+    into the tail. -/
+theorem insertRec_snd_some {prow : List ℕ} {prest Q : List (List ℕ)} {x s y : ℕ}
+    (hb : (rowInsert prow x).2 = some y) :
+    (insertRec (prow :: prest) Q x s).2
+      = Q.headD [] :: (insertRec prest Q.tail y s).2 := by
+  rw [insertRec]; simp only [hb]
+
+/-- If an entry lies in the head row `Q.headD []`, that row is genuinely in `Q`
+    (it is nonempty, so `Q ≠ []`). -/
+theorem headD_mem_of_mem {Q : List (List ℕ)} {e : ℕ} (he : e ∈ Q.headD []) :
+    Q.headD [] ∈ Q := by
+  cases Q with
+  | nil => simp at he
+  | cons qh qt => exact List.mem_cons_self
+
+/-- **The monotone invariant.**  If every entry of `Q` is `< s`, then after
+    writing step `s` every entry of the new `Q` is `< s + 1`: the old entries are
+    `< s < s + 1`, and the single new cell holds `s < s + 1`. -/
+theorem insertRec_snd_allLt :
+    ∀ (P Q : List (List ℕ)) (x s : ℕ), tableauAllLt Q s →
+      tableauAllLt (insertRec P Q x s).2 (s + 1)
+  | [], Q, x, s => by
+      intro _ row hrow e he
+      simp only [insertRec, List.mem_singleton] at hrow
+      subst hrow
+      simp only [List.mem_singleton] at he
+      omega
+  | prow :: prest, Q, x, s => by
+      intro h
+      cases hb : (rowInsert prow x).2 with
+      | none =>
+        rw [insertRec_snd_none hb]
+        intro row hrow e he
+        rcases List.mem_cons.mp hrow with hr | hr
+        · subst hr
+          rcases List.mem_append.mp he with he1 | he2
+          · exact Nat.lt_succ_of_lt (h _ (headD_mem_of_mem he1) e he1)
+          · simp only [List.mem_singleton] at he2; omega
+        · exact Nat.lt_succ_of_lt (h row (List.tail_subset Q hr) e he)
+      | some y =>
+        rw [insertRec_snd_some hb]
+        intro row hrow e he
+        rcases List.mem_cons.mp hrow with hr | hr
+        · subst hr
+          exact Nat.lt_succ_of_lt (h _ (headD_mem_of_mem he) e he)
+        · have htail : tableauAllLt Q.tail s :=
+            fun r hr' e' he' => h r (List.tail_subset Q hr') e' he'
+          exact insertRec_snd_allLt prest Q.tail y s htail row hr e he
+
+/-- Appending a strictly-larger element to a strictly-sorted list keeps it
+    strictly sorted. -/
+theorem sorted_lt_append_singleton :
+    ∀ {l : List ℕ} {s : ℕ}, l.Sorted (· < ·) → (∀ a ∈ l, a < s) →
+      (l ++ [s]).Sorted (· < ·)
+  | [], s, _, _ => List.sorted_singleton s
+  | a :: t, s, hl, hs => by
+      rw [List.sorted_cons] at hl
+      rw [List.cons_append, List.sorted_cons]
+      refine ⟨fun b hb => ?_,
+        sorted_lt_append_singleton hl.2 (fun c hc => hs c (List.mem_cons_of_mem a hc))⟩
+      rcases List.mem_append.mp hb with hbt | hbs
+      · exact hl.1 b hbt
+      · simp only [List.mem_singleton] at hbs; subst hbs; exact hs a List.mem_cons_self
+
+/-- **`insertRec` preserves row-strictness of `Q`.**  A no-bump appends the step
+    index `s` to the head row; since `s` exceeds every entry (the monotone
+    invariant), the row stays strictly increasing.  A bump leaves the head row
+    untouched and cascades. -/
+theorem insertRec_snd_rowsStrict :
+    ∀ (P Q : List (List ℕ)) (x s : ℕ), RowsStrict Q → tableauAllLt Q s →
+      RowsStrict (insertRec P Q x s).2
+  | [], Q, x, s => by
+      intro _ _ row hrow
+      simp only [insertRec, List.mem_singleton] at hrow
+      subst hrow
+      exact List.sorted_singleton s
+  | prow :: prest, Q, x, s => by
+      intro hrs hlt
+      cases hb : (rowInsert prow x).2 with
+      | none =>
+        rw [insertRec_snd_none hb]
+        intro row hrow
+        rcases List.mem_cons.mp hrow with hr | hr
+        · subst hr
+          refine sorted_lt_append_singleton ?_ ?_
+          · rcases Q with _ | ⟨qh, qt⟩
+            · simp
+            · exact hrs qh List.mem_cons_self
+          · intro a ha
+            exact hlt _ (headD_mem_of_mem ha) a ha
+        · exact hrs row (List.tail_subset Q hr)
+      | some y =>
+        rw [insertRec_snd_some hb]
+        intro row hrow
+        rcases List.mem_cons.mp hrow with hr | hr
+        · subst hr
+          rcases Q with _ | ⟨qh, qt⟩
+          · simp
+          · exact hrs qh List.mem_cons_self
+        · have hrs' : RowsStrict Q.tail :=
+            fun r hr' => hrs r (List.tail_subset Q hr')
+          have hlt' : tableauAllLt Q.tail s :=
+            fun r hr' e' he' => hlt r (List.tail_subset Q hr') e' he'
+          exact insertRec_snd_rowsStrict prest Q.tail y s hrs' hlt' row hr
