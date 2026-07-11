@@ -437,9 +437,7 @@ def n6_cohort : List (WenzlPartitionData 6) :=
 /-- `Σ d_λ² = 6! = 720` at `n = 6`. -/
 theorem n6_squares_sum_eq :
     (n6_cohort.map (fun p => p.syt_count ^ 2)).sum = 720 := by
-  show (1 ^ 2 + (5 ^ 2 + (9 ^ 2 + (10 ^ 2 + (5 ^ 2 + (16 ^ 2 + (10 ^ 2 +
-    (5 ^ 2 + (9 ^ 2 + (5 ^ 2 + (1 ^ 2 + 0))))))))))) = 720
-  norm_num
+  decide
 
 theorem n6_cohort_length : n6_cohort.length = 11 := rfl
 
@@ -474,10 +472,7 @@ def n7_cohort : List (WenzlPartitionData 7) :=
 /-- `Σ d_λ² = 7! = 5040` at `n = 7`. -/
 theorem n7_squares_sum_eq :
     (n7_cohort.map (fun p => p.syt_count ^ 2)).sum = 5040 := by
-  show (1 ^ 2 + (6 ^ 2 + (14 ^ 2 + (15 ^ 2 + (14 ^ 2 + (35 ^ 2 + (20 ^ 2 +
-    (21 ^ 2 + (21 ^ 2 + (35 ^ 2 + (15 ^ 2 + (14 ^ 2 + (14 ^ 2 +
-    (6 ^ 2 + (1 ^ 2 + 0))))))))))))))) = 5040
-  norm_num
+  decide
 
 theorem n7_cohort_length : n7_cohort.length = 15 := rfl
 
@@ -494,9 +489,8 @@ theorem n7_cohort_length : n7_cohort.length = 15 := rfl
      8100+1225+1764+3136+4900+4096+441+196+784+400+49+1
      = 40320 = 8!` ✓ -/
 
-/-- The 22 partitions of `n = 8` with SYT data (hooks elided to a
-    placeholder list of length 8 for compactness; expand on demand
-    via the canonical hook-walk algorithm). -/
+/-- The 22 partitions of `n = 8` with their full hook-length lists and
+    SYT counts (`d_λ`). -/
 def n8_cohort : List (WenzlPartitionData 8) :=
   [{ name := "[8]",                       hooks := [8,7,6,5,4,3,2,1], syt_count := 1 },
    { name := "[7,1]",                     hooks := [8,6,5,4,3,2,1,1], syt_count := 7 },
