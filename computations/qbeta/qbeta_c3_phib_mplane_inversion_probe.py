@@ -200,7 +200,7 @@ def main() -> int:
                             "laws cannot carry the anchor swing; the "
                             "u_ladder^3-lever class can (one-sided lower bound)")
 
-    ok = wb.all_assertions_passed() if hasattr(wb, "all_assertions_passed") else True
+    ok = all(a.passed for a in wb.assertions)
     wb.add_data("verdict", (
         "m-plane inversion (NZ-leading tier): each anchor's S is reachable only "
         "above |u|_min = sqrt(2|S|/sqrt3) (proton floor ~2x t kills anchor-blind "
@@ -213,7 +213,7 @@ def main() -> int:
         "r = S*u^3 lever identification. Scope-(a); no fit; nothing wired."))
     wb.save()
     print("\nwitness -> computations/qbeta/qbeta-c3-phib-mplane-inversion.witness.json")
-    return 0
+    return 0 if ok else 1
 
 
 if __name__ == "__main__":
