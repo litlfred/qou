@@ -4,7 +4,8 @@ volume of the $n$-body sub-link of the building-block link $\mathcal{B}_K$ and
 $M_n(A)$ is a body-order multiplicity. The volume factor is the isospin ($T_3$)
 carrier — the ${}^3\mathrm{H}$/${}^3\mathrm{He}$ mirror split is supplied by
 $\mathrm{Vol}({}^3\mathrm{H}) > \mathrm{Vol}({}^3\mathrm{He})$ with no fit — while the
-multiplicity $M_n(A)$ was left open. We record a topological reading of $M_n(A)$.
+multiplicity $M_n(A)$ was left open. The crossing/coordination structure of
+$\mathcal{B}_K$ supplies a topological reading of $M_n(A)$.
 
 ## The multiplicity read off the crossing/coordination structure
 
