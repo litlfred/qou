@@ -45,11 +45,11 @@ except ImportError:
 
 set_compute_dps()
 q = mp.mpf(Q_50_DIGIT_STR)
-M_E = mp.mpf(str(M_E_MEV))
+M_E = M_E_MEV                       # already an mp.mpf at high precision (codata_constants)
 
 
 def B_ame(Z, A):
-    return mp.mpf(str(_cc._ame_binding_mev(Z, A)))
+    return _cc._ame_binding_mev(Z, A)   # already an mp.mpf under workdps(≥50)
 
 
 # ── PART 1 — nucleon coordination number z = A−1 (A ≤ 4) ───────────────────────
