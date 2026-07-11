@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-07T12:17:53.329190+00:00",
-  "commitSha": "42108d1b0bc4cb87f8db6ae39bd86d8ba419a8c6",
+  "computedAt": "2026-07-11T10:46:08.232369+00:00",
+  "commitSha": "12ced16e216ecb23303f752a101e171d44195e88",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,11 +559,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "ff40fb7a9d7d",
-  "scriptCommitSha": "aec64367773a026bc57afe4c46143434bbbb1f98",
+  "scriptCommitSha": "909e4e3c58d7423994256f68f268a7075fa94b8d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -2050,7 +2050,6 @@
         "active-set-lr-scaling-profile.witness.json",
         "active-set-truncation-prototype.witness.json",
         "adjacent-vs-full-probe.witness.json",
-        "affine-light-cone-figure.witness.json",
         "aj-borromean-colored-jones-tower.witness.json",
         "aj-figure-eight-certificate.witness.json",
         "aj-figure-eight-operator-construct-verify.witness.json",
@@ -2177,8 +2176,12 @@
         "borromean-binding-recompute.witness.json",
         "borromean-chi-independent-crosscheck.witness.json",
         "borromean-diagonal-recurrence-hunt.witness.json",
+        "borromean-diagonal-recurrence-reconstruct.witness.json",
         "borromean-h3-2-1-irrep-derivation.witness.json",
         "borromean-markov-trace-h-expansion-50dps.witness.json",
+        "borromean-qzeil-fixedq.witness.json",
+        "borromean-qzeil-minimal-telescoper.witness.json",
+        "borromean-qzeil-multiq.witness.json",
         "borromean-volume-100dps.witness.json",
         "borromean-volume-propagation-to-m-p.witness.json",
         "bowtie-q-channel-projection-probe.witness.json",
@@ -2579,6 +2582,7 @@
         "habiro-a0-universal-law.witness.json",
         "habiro-binding-linking-weight.witness.json",
         "habiro-borromean-colored-jones.witness.json",
+        "habiro-borromean-cyclotomic-coefficients.witness.json",
         "habiro-coefficients-beryllium-10.witness.json",
         "habiro-coefficients-beryllium-6.witness.json",
         "habiro-coefficients-beryllium-7.witness.json",
