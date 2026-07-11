@@ -194,6 +194,39 @@ in the registry's anchor-stability gate; angles A–C above are structural
 (hypothesis-class tests), not value matches, which is the right side of that
 history.
 
+## 6. Execution-wave results (2026-07-11, owner-selected: all of A–G)
+
+The owner selected all avenues (priority 1, 3, 5, 6, 4, 2 = §3.A, C, E, G, D,
+B). Results land here per probe as they complete.
+
+### PROBE 4 — basis-constrained PSLQ (§3.D): ENTROPY-BLOCKED (formalize-first kill)
+
+**Stage 1 (entropy audit) killed Stage 2; PSLQ was NOT run.**
+
+- Extraction chain: `c_3 = (Q_CODATA/Q_N2 − 1)/u³` amplifies relative σ(Q_β)
+  by `1/u³ ≈ 1.62e6` (c_4: `1/u⁴ ≈ 1.90e8`). Chain reproduced exactly vs
+  `qbeta-ck-cache` (delta 1.6e-30).
+- Effective per-anchor digits of empirical c_3: actual σ(Q_β) = 0.78 ppm ⇒
+  **0.2 digits** (both anchors); optimistic 7.8-ppb reading ⇒ **2.21 digits**
+  (proton), **1.25** (muon — the q₀-pin channel 22 ppb × dc₃/dq ≈ 4.66e6
+  dominates); corroborated by the 0.0105 inter-producer spread (~2.3 stable
+  digits).
+- **c_4: ZERO digits — and identically 0 by construction under exact c_3
+  extraction; the quoted −0.972 is a rounding artifact of c_3** (confirms the
+  registry rung-4 artifact tier mechanically).
+- PSLQ entropy bound (PR #1805): minimal n=4, H≤100 needs 9.2 digits (12.2
+  with margin); the full {1, √3, π², Vol(4₁), ζ(3)} basis at H≤10 needs 7.8.
+  Best-case supply 2.21 ⇒ **deficit ≥ 7 digits**; max supportable basis = 1
+  term. Passing even the minimal budget needs σ(Q_β) ≈ 8e-16 relative (~1
+  ppq) or a canonical non-extracted c_3 producer — i.e. the open keystone
+  F(q) itself.
+
+**Conclusion:** coefficients remain empirical under the arithmetic basis. No
+relation claimed, no value proposed, nothing wired (§8 guard intact). Scope:
+**(a)-type** — blocks *PSLQ recognition of the extracted values*; does not
+exclude any basis element from a future F(q) construction.
+Witness: `computations/probes/qbeta-ck-basis-constrained-pslq.witness.json`.
+
 ## Appendix A — P6c executed: Galois-descent / GSWZ Frobenius-gluing scoping (U3)
 
 **Status:** SCOPING ONLY (owner-selected 2026-07-11; no numerics, no Lean, no
