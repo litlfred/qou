@@ -43,14 +43,9 @@ cardinality consequence; the repo builds it brick by brick.
 | 4 | `bumpMs`, `content`, `rowInsert_content`, `insert_content`, `insertWord_content` (`content(P(w)) = ↑w`) | ✅ proved |
 | 5 | **bumping lemma** — `StrictBelow`/`ColStrict`, `bump_findIdx_mono`, `strictBelow_bump_step`, `insert_colStrict`, `insertWord_colStrict` (`P(w)` columns strictly increase ⇒ `P(w)` is semistandard) | ✅ proved (building blocks PR #3535; cascade PR #3565) |
 | 6a | **recording tableau `Q` — shape** — `insertRec`, `tableauShape`, `insertRec_fst_eq_insert`, `insertRec_shape`, `insertWordRec_shape_eq_P` (`Q(w)` has the same shape as `P(w)`) | ✅ proved (seed, PR #3565) |
+| 6b | **recording tableau `Q` — standardness** — `tableauAllLt` monotone invariant, `RowsStrict`+`insertWordRec_rowsStrict`, `ColStrict` decomposition (`colStrict_iff` = shape-Young ∧ value-strict), `insertWordRec_colStrict`, capstone `insertWordRec_standard` (`Q(w)` rows+columns strict, entries `0…n−1`) | ✅ proved (PR #3587) |
 
 ## Remaining bricks (each a dedicated multi-hour PR)
-
-6b. **Recording tableau `Q` — standardness** — prove `Q(w)` is *standard*:
-   entries `1…n` (each step index used once, in cell-creation order) strictly
-   increasing along rows and columns. Builds on the shape match (`6a`) plus
-   `insertWord_colStrict`. The step index only ever appends at a row end and is
-   monotone increasing, so rows/columns of `Q` inherit strictness structurally.
 7. **RSK map** — `w ↦ (P(w), Q(w))` as a function `Sym n → Σ_λ SYT(λ)²`
    (restricting to permutation words / two-line arrays for the `Sₙ` count).
 8. **Inverse (reverse bumping)** — reconstruct `w` from `(P, Q)`; prove it is a
@@ -76,17 +71,18 @@ cardinality consequence; the repo builds it brick by brick.
 
 ## Recommended next action
 
-**Brick 6b (recording-tableau standardness).** The shape foundation (6a) is in
-place: `insertRec` threads `Q` alongside `P`, `insertRec_fst_eq_insert` shows
-the P-component is untouched, and `insertWordRec_shape_eq_P` gives `Q(w)` the
-same shape as `P(w)`. What remains is proving `Q(w)` **standard**: the step
-index `s` is strictly increasing and each new cell (an append at a row end, per
-the `insertRec` none/new-row branches) receives the current `s`, so rows and
-columns of `Q` are strictly increasing by construction. Reuse
-`insertWord_totalCells` (each step adds one cell ⇒ entries are exactly `0…n−1`)
-and mirror the `insertRec_shape` induction to track the per-row `Q` monotonicity.
+**Brick 7 (the RSK map `w ↦ (P(w), Q(w))`).** Both tableaux are now built and
+verified: `insertWordRec w = (P(w), Q(w))` with `P(w)` semistandard
+(`insertWord_rowsSorted` + `insertWord_colStrict`), `Q(w)` standard
+(`insertWordRec_standard`), and the two sharing a shape
+(`insertWordRec_shape_eq_P`). Brick 7 packages this as a function into
+`Σ_λ SYT(λ) × SYT(λ)` — restricting to permutation words / two-line arrays for
+the `Sₙ` count, and bundling each tableau with its `YoungDiagram`-shape proof so
+the target matches Mathlib's `numStandardYoungTableaux`. Brick 8 (reverse
+bumping / inverse) then makes it a bijection.
 
 _Reconnaissance + scope authored 2026-07-11. Bricks 1–5 sorry-free
 (Brick 5 completed 2026-07-11, PRs #3535 + #3565); Brick 6a (Q shape) seeded
-2026-07-11 (PR #3565). This doc maps the remaining chain so any session can
-resume at Brick 6b without re-deriving the state._
+2026-07-11 (PR #3565); Brick 6b (Q standardness) completed 2026-07-11 (PR #3587).
+This doc maps the remaining chain so any session can resume at Brick 7 without
+re-deriving the state._
