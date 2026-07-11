@@ -1,3 +1,5 @@
+**Proposition (conditional on [`conj:proton-borromean-assembly`](proton-borromean-assembly.md)).**
+
 *Let $q_0 \approx 1.10978$ be the substrate parameter, $m_e$ the
 electron mass (CAL-1), $m_\mu$ the muon mass (derived from CAL-2
 $\mathfrak{D}_\beta$), and let $F_{\mathrm{Bor}}$ denote the
