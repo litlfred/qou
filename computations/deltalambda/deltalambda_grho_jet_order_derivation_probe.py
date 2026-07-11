@@ -136,7 +136,7 @@ def main():
             "verdict": verdict,
         },
         "context": {
-            "reduces": "computations/deltalambda/deltalambda-magnitude-graded-trace.witness.json (#3537)",
+            "reduces": "PR #3537 (deltalambda-magnitude-graded-trace: Δ_λ = tr(g_ρ) magnitude reduction)",
             "mechanism": "GS/jet-order (word-length) filtration of the Hecke normal-form basis (owner lead: Gram inverse / knot-operator basis on the GB filtration)",
             "still_open": "magnitude assembly Δ_λ=tr(g_ρ) into B=m_e Σ y_λ χ^λ Δ_λ + wiring (full binding closure)",
             "gate": "Track-A (owner-reversed); derives the SIGN carrier; no fit; nothing wired",

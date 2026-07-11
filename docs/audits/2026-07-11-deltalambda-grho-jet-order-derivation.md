@@ -1,7 +1,7 @@
 # Deriving g_ρ: the principal grading IS the GS/jet-order filtration grading (fake-degree valuation)
 
 **Date:** 2026-07-11 · **Axis:** Δ_λ closure (strong sector), g_ρ construction ·
-**Follows:** the magnitude reduction [`2026-07-11-deltalambda-magnitude-graded-trace.md`](2026-07-11-deltalambda-magnitude-graded-trace.md) (#3537) ·
+**Follows:** the magnitude reduction (`deltalambda-magnitude-graded-trace`, [PR #3537](https://github.com/litlfred/qou/pull/3537)) ·
 **Gate:** Track-A (owner-reversed) · **Tier:** symbolic-exact (parameter-free) ·
 **No fit; nothing wired.**
 
@@ -56,16 +56,24 @@ is **driver-level** — the Gröbner–Shirshov word-length grading — not an a
 
 ## Lean
 
-[`QOU/BraidKnot/PrincipalGradingJetOrder.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/PrincipalGradingJetOrder.lean):
-defines the principal grading `n(λ)` and the jet-order (major-index) valuation, states
-the fake-degree valuation as the cited classical theorem (`-- Ref: [macdonald]`), and
-proves the **sign-parity consequence** (`Δ_λ` sign = parity of the bottom jet-order)
-sorry-free from it. The classical theorem is a *published* result cited per the
-`-- Ref:` convention — **not** a QOU conjecture and **not** axiom-laundering; the QOU
-consequence is genuinely proved from it.
+[`QOU/BraidKnot/PrincipalGradingJetOrder.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/PrincipalGradingJetOrder.lean)
+carries only the **genuinely-provable algebraic core** (sorry-free, generic `CommRing`
+per §7c):
+
+- `principalGrading (λ)` — the principal/co-content grading `Σ_box row(box)`;
+- `zeta4_eval_principalGrading` — `i^{2·n(λ)} = (−1)^{n(λ)}` over any `CommRing` with
+  `i² = −1` (the ζ₄ evaluation giving the sign);
+- `deltaSign` + `deltaSign_sq` — the sign lands in `{+1, −1}` (a genuine `ℤ/2` value).
+
+The Lean **does not** define SYT / the major index / the fake-degree valuation and does
+**not** re-prove `n(λ) = min maj(SYT(λ))`. That valuation is a **published classical
+theorem** (Steinberg / Lusztig; Macdonald I.5), cited via `-- Ref: [macdonald1995]` and
+verified computationally (λ⊢3..8) in the probe/witness — not stubbed as a self-assuming
+Lean lemma. So the ζ₄/parity facts are Lean-proved; the SYT-level valuation is cited +
+compute-verified, per the honest scope above.
 
 ## Cross-references
 
-- Magnitude reduction: [`2026-07-11-deltalambda-magnitude-graded-trace.md`](2026-07-11-deltalambda-magnitude-graded-trace.md) (#3537)
+- Magnitude reduction: `deltalambda-magnitude-graded-trace` — [PR #3537](https://github.com/litlfred/qou/pull/3537)
 - Sign capstone: [`2026-07-11-deltalambda-sign-pivotal-grading-capstone.md`](2026-07-11-deltalambda-sign-pivotal-grading-capstone.md) (#3529)
 - Selection-rule engine (on main): `QOU/SelectionRules.lean`
