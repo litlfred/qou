@@ -23,8 +23,9 @@ its rounded evaluations at `q₀`.  Provenance + symbolic derivation:
 
 namespace QOU.NeutronProtonSplitting
 
-/-- Substrate modulus `q₀` (engine rational pin, `Q_RAT_NUM/Q_RAT_DEN`). -/
-noncomputable def q0 : ℝ := 1.1099785955541805
+/-- Substrate modulus `q₀`, the canonical pin (`q_parameter.Q` /
+`Q_50_DIGIT_STR`). -/
+noncomputable def q0 : ℝ := 1.1099785827513808
 
 /-- **Closed-form quark-ordering volume** `Φ(K) = log|∏ᵢ V̂ᵢ(K)|`, the exact
     Hecke traced-volume (NF-basis constant `z = 4993/10000` already folded into
