@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+combinatorial",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-11T13:53:53.913100+00:00",
-  "commitSha": "5e752f70f073b7e2cb00a3504dbe5a86385090e5",
+  "computedAt": "2026-07-11T14:00:13.386705+00:00",
+  "commitSha": "dcfe6353c681468f64ccf6ed93080713037ecd5d",
   "assertions": [
     {
       "name": "frobenius_distinct_odd_eq_self_conjugate",
@@ -10,15 +10,15 @@
       "expected": 1.0,
       "passed": true,
       "tolerance": 0.5,
-      "source": "classical Frobenius bijection (distinct odd parts ↔ self-conjugate λ)"
+      "source": "classical Frobenius bijection (distinct odd parts ↔ self-conjugate λ); the modular self-duality"
     },
     {
-      "name": "compact_face_is_bar_even",
+      "name": "compact_e_k_bar_odd_sinh_nonzero",
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
       "tolerance": 0.5,
-      "source": "self-conjugate support ⇒ transpose-fixed ⇒ zero bar-odd on the mass face"
+      "source": "½[e_k(q,q³,…)−e_k(q⁻¹,q⁻³,…)] ≠ 0 (all k) — the bar-odd S carrier lives on the compact e_k, NOT the modular dual"
     },
     {
       "name": "fibre_saddle_unimodular",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 642,
+  "durationMs": 1664,
   "computation": "qbeta-c3-barodd-tetraplectic-reduction",
   "scriptFile": "qbeta_c3_barodd_tetraplectic_reduction_probe.py",
-  "scriptHash": "4fee0d4422ef",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "c96da3239bbc",
+  "scriptCommitSha": "dcfe6353c681468f64ccf6ed93080713037ecd5d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -105,13 +105,31 @@
         "frobenius_lands_self_conj": true
       }
     ],
-    "compact_face_bar_even": {
-      "claim": "e_k(q,q^3,...) supported on self-conjugate partitions ⇒ bar-even",
-      "term_by_term_transpose_fixed": true
+    "two_involutions": {
+      "transpose_lambda_lambda_prime": "self-conjugate fixed pts; realizes modular self-duality Phi_b=Phi_{1/b}",
+      "bar_sigma_q_to_q_inv": "sinh/cosh split; e_k transpose-symmetric but NOT sigma-even",
+      "e_k_transpose_fixed": true,
+      "sigma_parity_split": [
+        {
+          "k": 1,
+          "bar_odd_sinh_is_zero": false
+        },
+        {
+          "k": 2,
+          "bar_odd_sinh_is_zero": false
+        },
+        {
+          "k": 3,
+          "bar_odd_sinh_is_zero": false
+        }
+      ],
+      "bar_odd_sinh_nonzero_all_k": true,
+      "conclusion": "S = sigma-antisymmetric (sinh) part of the SAME compact e_k; no modular-dual factor needed"
     },
-    "bar_odd_phase_zeta6": {
+    "fibre_saddle_phase_zeta6": {
       "point": "b^2=1/6, q=zeta_6=e^{i pi/3} (Vol(4_1)=2Lambda(pi/3) angle)",
-      "rows": [
+      "Im_e3_zeta6": "-1.6432123e-39",
+      "arg_phi_b_rows": [
         {
           "z": "0.1",
           "abs_minus_1": "0.000e+00",
