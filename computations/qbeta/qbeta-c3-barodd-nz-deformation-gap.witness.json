@@ -1,0 +1,79 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-11T14:15:34.661491+00:00",
+  "commitSha": "f1bc9ff51b1818e8a9cfb0d008d132c726aadde7",
+  "assertions": [
+    {
+      "name": "vol_4_1_eq_2_lambda_pi3",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-30,
+      "source": "Bloch-Wigner D(e^{iπ/3})=Λ(π/3)"
+    },
+    {
+      "name": "cs_4_1_complete_zero",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-30,
+      "source": "4₁ amphichiral: CS=0 at complete structure"
+    },
+    {
+      "name": "smooth_deformation_ratio_is_unity_not_minus4",
+      "computed": 2.2114311648944016e-07,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-06,
+      "source": "smooth real u(q0)∝log q0 gives ratio~1; measured is -4.08 -> phase channel"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "qbeta-c3-barodd-nz-deformation-gap",
+  "scriptFile": "qbeta_c3_barodd_nz_deformation_probe.py",
+  "scriptHash": "80f276fece34",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Sharpens the z(q₀) gap for the c₃ bar-ODD S via the Neumann–Zagier complex-volume deformation of 4₁. Computes Vol(4₁)=2Λ(π/3), notes CS(4₁)=0 (amphichiral ⇒ S is a deformation phase, not the knot's own CS), and shows a SMOOTH real-scaling deformation u(q₀) cannot produce the measured S(proton)/S(muon)=−4.08 (anchors differ at ~1e-8) — so u(q₀) is a phase-channel / root-of-unity-accumulation quantity, the open z→c_k evaluation map. Scope-(a); C14 anti-fitting; no c_k wired.",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "vol_4_1": {
+      "value": "2.02988321281930725",
+      "eq_2_lambda_pi3": true,
+      "role": "bar-EVEN part = −Vol(4₁), SOLVED"
+    },
+    "cs_4_1_complete": {
+      "value": "0.0",
+      "is_zero": true,
+      "note": "amphichiral ⇒ S is a deformation phase"
+    },
+    "nz_leading": {
+      "form": "CVol(u)=CVol(0)−(τ/4)u²+O(u³)",
+      "cusp_modulus_factor": "sqrt(-3)",
+      "pi3_link": true
+    },
+    "smooth_deformation_ruled_out": {
+      "ratio_smooth_u_log_q": "0.9999997789",
+      "ratio_measured": "-4.0751256",
+      "conclusion": "smooth real u(q0) gives ratio~1, not -4.08 -> phase channel / RoU accumulation"
+    },
+    "sharpened_gap": {
+      "algebra": "closed (EkParitySplit decay projection, Lean sorry-free)",
+      "object": "Faddeev Phi_b (validated evaluator)",
+      "geometry": "S = bar-odd projection of 4_1 NZ deformation phase",
+      "open_single_link": "u(q0) complex meridian deformation = z->c_k evaluation map (PR #3458)"
+    }
+  }
+}
