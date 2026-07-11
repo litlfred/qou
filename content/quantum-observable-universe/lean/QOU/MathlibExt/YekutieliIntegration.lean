@@ -110,4 +110,34 @@ theorem isFlatPlaquette_pureGauge [Group G] (h₀ h₁ h₂ h₃ : G) :
     IsFlatPlaquette (loopHolonomyPureGauge h₀ h₁ h₂ h₃) :=
   loopHolonomyPureGauge_eq_one h₀ h₁ h₂ h₃
 
+/-- The trivial (constant) loop is flat. -/
+@[simp] theorem isFlatPlaquette_one [Group G] : IsFlatPlaquette (1 : G) := rfl
+
+/-- **Flatness is closed under composition.**  Concatenating two flat loops
+    multiplies their holonomies (`holonomy_append`); the composite is flat.
+    A surface tiled by flat plaquettes therefore has flat boundary. -/
+theorem isFlatPlaquette_mul [Group G] {a b : G}
+    (ha : IsFlatPlaquette a) (hb : IsFlatPlaquette b) :
+    IsFlatPlaquette (a * b) := by
+  simp only [IsFlatPlaquette] at *
+  rw [ha, hb, mul_one]
+
+/-- **Gauge invariance of flatness.**  A gauge transformation acts on a
+    based-loop holonomy by conjugation `b ↦ u * b * u⁻¹`; the curvature
+    defect is gauge-*covariant*, so its vanishing (flatness) is
+    gauge-*invariant*. -/
+theorem isFlatPlaquette_conj [Group G] (u : G) {b : G}
+    (hb : IsFlatPlaquette b) : IsFlatPlaquette (u * b * u⁻¹) := by
+  simp only [IsFlatPlaquette] at *
+  rw [hb]; group
+
+/-- **Abelian degeneration** (`CommMonoid`): the path-ordering of the
+    holonomy collapses — reordering the segments (deforming the path in the
+    commutative limit) leaves the holonomy unchanged.  This is the classical
+    limit where Yekutieli's non-abelian Stokes reduces to ordinary
+    (abelian) Stokes and the surface-ordering is irrelevant. -/
+theorem holonomy_perm [CommMonoid G] {p q : List G} (h : p.Perm q) :
+    holonomy p = holonomy q := by
+  simp only [holonomy]; exact h.prod_eq
+
 end QOU.MathlibExt.YekutieliIntegration
