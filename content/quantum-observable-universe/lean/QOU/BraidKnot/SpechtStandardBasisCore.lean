@@ -2609,6 +2609,50 @@ theorem colStab_of_garnirA_image_eq {π : Equiv.Perm (Fin (Specht.nOf μ))}
       rw [Finset.mem_union]; push_neg; exact ⟨hlA, hlB⟩
     rw [hsymmfix l hlnot]
 
+omit [CharZero k] in
+/-- **A genuine Garnir fibre changes column `j`'s content (sorry-free).** For `π ∈ garnirG`
+with `π ∉ garnirH` (a non-column-preserving coset element), `colContent (π•t) j ≠ colContent
+t j`. Contrapositive of `colStab_of_garnirA_image_eq`: equal column-`j` content forces
+`garnirA.image π = garnirA` (cancel the common above-descent part `P`), hence `π ∈ colStab t`,
+hence `π ∈ garnirH` — excluded. Supplies the strict row for `exists_first_lt_of_le_of_ne`. -/
+theorem fibre_colContent_j_ne {π : Equiv.Perm (Fin (Specht.nOf μ))}
+    (t : Specht.Tableau μ) (i j : ℕ) (hπG : π ∈ garnirG t i j) (hπH : π ∉ garnirH t i j) :
+    colContent (π • t) j ≠ colContent t j := by
+  classical
+  intro heq
+  apply hπH
+  rw [garnirH, Finset.mem_inter, Finset.mem_filter]
+  refine ⟨hπG, Finset.mem_univ _, colStab_of_garnirA_image_eq t i j hπG ?_⟩
+  rw [colContent_smul_j_split t i j hπG, colContent_j_split t i j] at heq
+  set Pv := (Finset.univ.filter
+    (fun l => Specht.colPattern t l = j ∧ Specht.rowPattern t l < i)).image Fin.val with hPv
+  -- `P` labels lie outside `A∪B`; `garnirA.image π ⊆ A∪B`
+  have hPdisjAB : ∀ l ∈ Finset.univ.filter
+      (fun l => Specht.colPattern t l = j ∧ Specht.rowPattern t l < i),
+      l ∉ garnirA t i j ∪ garnirB t i j := by
+    intro l hlP
+    simp only [Finset.mem_filter, Finset.mem_univ, true_and] at hlP
+    rw [Finset.mem_union, garnirA, garnirB, Finset.mem_filter, Finset.mem_filter]
+    rintro (⟨_, _, hr⟩ | ⟨_, hc, _⟩) <;> omega
+  have hSAB : (garnirA t i j).image π ⊆ garnirA t i j ∪ garnirB t i j := by
+    rw [← garnirG_image_AB t i j hπG]
+    exact Finset.image_subset_image Finset.subset_union_left
+  -- cancel `Pv`: the changed value set equals the original
+  have hSA : ((garnirA t i j).image π).image Fin.val = (garnirA t i j).image Fin.val := by
+    apply Finset.eq_of_subset_of_card_le
+    · intro v hv
+      have hvU := heq ▸ Finset.mem_union_right Pv hv
+      have hvnP : v ∉ Pv := by
+        rw [hPv, Finset.mem_image]; rintro ⟨p, hp, hpv⟩
+        rw [Finset.mem_image] at hv; obtain ⟨x, hx, hxv⟩ := hv
+        have hpx : p = x := Fin.val_injective (hpv.trans hxv.symm)
+        exact hPdisjAB p hp (hpx ▸ hSAB hx)
+      exact (Finset.mem_union.mp hvU).resolve_left hvnP
+    · rw [Finset.card_image_of_injective _ Fin.val_injective,
+          Finset.card_image_of_injective _ Fin.val_injective,
+          Finset.card_image_of_injective _ π.injective]
+  exact Finset.image_injective Fin.val_injective hSA
+
 /-! #### The single residual straightening core + the induction skeleton -/
 
 omit [CharZero k] in
