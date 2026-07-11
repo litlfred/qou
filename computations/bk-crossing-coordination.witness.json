@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-07-11T15:21:45.641355+00:00",
-  "commitSha": "ded801a635c1842c3b67eb0e6b604117f092adbf",
+  "computedAt": "2026-07-11T16:18:59.692805+00:00",
+  "commitSha": "91899042fe57fa463ae21ef25945cb19847b6d95",
   "assertions": [
     {
       "name": "alpha_cluster_coordination_constant_for_simplex_nuclei",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 7,
   "computation": "bk-crossing-coordination",
   "scriptFile": "bk_crossing_coordination.py",
-  "scriptHash": "b2a862543a6d",
-  "scriptCommitSha": "c0ea719adab3f8ac1b3e3f0b79331d073fb94daf",
+  "scriptHash": "7d26a7109093",
+  "scriptCommitSha": "52ef7103acecbbf4171a7271391049443e93cd26",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
