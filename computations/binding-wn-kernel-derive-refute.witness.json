@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-11T12:10:13.015993+00:00",
-  "commitSha": "c0ab2729d7dff6cb6671298109bfa511eb2ffea5",
+  "computedAt": "2026-07-11T12:19:08.478882+00:00",
+  "commitSha": "0d01ece671f896d1c9ab57a8438f6a742767fd0a",
   "assertions": [
     {
       "name": "wn_kernel_derives_or_refutes",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 11,
   "computation": "binding-wn-kernel-derive-refute",
   "scriptFile": "binding_wn_kernel_derive_refute.py",
-  "scriptHash": "e6cab3ee2e9c",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "0d1dc756f9e9",
+  "scriptCommitSha": "0d01ece671f896d1c9ab57a8438f6a742767fd0a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,32 +30,55 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
-  "description": "EXPLORATORY: derive-or-refute the jet-filtration residue-weight q-difference kernel R(q,x). Coulomb-corrects AME binding, checks ³H/³He A=3 universality, extracts universal w_2,w_3,w_4, and tests them against parameter-free derived recursion candidates. Refutes if none closes zero-tuning (confirming w_n IS the Δ_λ gate). No fit.",
+  "description": "EXPLORATORY: derive-or-refute the jet-filtration residue-weight q-difference kernel R(q,x). Coulomb-corrects AME binding, checks ³H/³He A=3 universality, extracts universal w_2,w_3,w_4, tests them against ad-hoc parameter-free kernels (all refuted), and derives the na-Stokes kernel a_D^(n)'s OWN eigenfunction relation: the q-involution S(n)=Σ dim_q obeys a q-Hermite / Rogers–Szegő three-term recurrence (c_3=[2]_q exact), identifying the correct orthogonal basis for w_n. No fit.",
   "parameters": {
-    "q0_50dps": "1.1099785827513808"
+    "q0_50dps": "1.109978582751380807591669095610768879874499121873578736072814240181799",
+    "compute_dps": 70
   },
   "data": {
     "a_D_periods": {
-      "2": 1.0,
-      "3": 1.3369656222357074,
-      "4": 2.5327796563993914
+      "2": "1.0",
+      "3": "1.336965622235707433250830659363954271963080249494710972254644141968207",
+      "4": "2.532779656399391492051514501758041232326160470535129581776963097641468"
     },
     "B_strong_coulomb_corrected": {
-      "D": 2.2245662,
-      "T": 8.4817962,
-      "3He": 8.71645382061394,
-      "4He": 29.20278035750331
+      "D": "2.224566199999999999999999999999999999999999999999997340954056611765576",
+      "T": "8.481796200000000000000000000000000000000000000000009585209925309324894",
+      "3He": "8.716453820613939999999999999999999999999999999999995711041411183331376",
+      "4He": "29.2027803575033107999999999999999999999999999999999915823563342238137"
     },
-    "csb_A3_mirror_residual": 0.02728854625705264,
+    "csb_A3_mirror_residual": "0.02728854625705263877254327198994777630256194299801074922690148469977233",
     "w_universal": {
-      "2": 4.3533674521174195,
-      "3": 9.330606699365086,
-      "4": 15.919406001632415
+      "2": "4.353367452117419141544186719629289186319835806784550482323907313301673",
+      "3": "9.330606699365086519749447811437026096689226107993968330442355278944704",
+      "4": "15.9194060016324157715334807922993331833932899063647336736708054563695"
     },
     "w_ratios": {
-      "w3_over_w2": 2.1433078650015647,
-      "w4_over_w3": 1.7061490763205862
+      "w3_over_w2": "2.14330786500156457506772861753956223753752125884726712686269602517698",
+      "w4_over_w3": "1.70614907632058618647021625599950390861844668305103734099621000365547"
     },
-    "verdict": "REFUTED (scope-(a)): the extracted universal residue weights w_2,w_3,w_4 = 4.353,9.331,15.919 (ratios 2.143,1.706) satisfy NO parameter-free derived q-difference kernel R(q,n) to 5% — geometric/[n]_q/a_D-self/linear all miss. A recursion tuned to reproduce them is a fit, banned as a seventh Δ_λ ansatz. This CONFIRMS the corpus finding (2026-07-06 §2j): the residue weight w_n(K) IS the Δ_λ / W_λ gate in disguise — free per-body-order data carrying the same irreducible content, not a parameter-free recursion output. The na-Stokes extensive KERNEL a_D^(n) stays a permanent correct contribution; only the multiplier is gated. The un-refuted route is option #1 (w_n = hyperbolic link-volume of the n-body sub-link, a topological invariant — needs SnapPy volumes of the inter-nucleon sub-links, the separate gap #2), NOT any recursion fit. Owner-gated closure = the geometric W_λ knot-ideal projector (s5-so3). No production touch; no value wired; no tier change."
+    "qinvolution_recurrence": {
+      "S_n": {
+        "1": "1.0",
+        "2": "2.0",
+        "3": "4.010896866707122299752491978091862815889240748484132916763932425904622",
+        "4": "10.13111862559756596820605800703216492930464188214051832710785239056587",
+        "5": "26.88068864839657705840243733717436484042600106384221805624949519883663",
+        "6": "81.35896275073707913105501551000172082253830593582642565480605064399586",
+        "7": "261.5746516582212375588369584156021153497885926948706926506653387664573",
+        "8": "926.609793591428659712352483212855549376691472218805804924460638400524"
+      },
+      "c_n": {
+        "3": "2.010896866707122299752491978091862815889240748484132916763932425904622",
+        "4": "3.060110879445221834226783014470151056707700566828192705171959982330624",
+        "5": "4.176016132907980127178612980763163122798609889873390449688761261663895",
+        "6": "5.377320720013501787443853270783806583301868610178067709685009567316321",
+        "7": "6.704280952944780911133732212002089952766238287140445925760909635797975",
+        "8": "8.174085797660718998001318775495516058964189140932330220456729076712761"
+      },
+      "c3_eq_2q_exact": true,
+      "basis": "q-Hermite / Rogers–Szegő (q-oscillator; QOU.Mass.RogersSzegoInhabited)"
+    },
+    "verdict": "TWO-PART. (i) REFUTED (scope-(a)) — the extracted universal residue weights w_2,w_3,w_4 = 4.353,9.331,15.92 (ratios 2.143,1.706) satisfy NO CONSTANT-RATIO / ad-hoc parameter-free kernel to 5% (geometric/[n]_q/a_D-self/linear all miss; [n]_q² is the lone 6.9% near-miss, echoing the √C_λ near-miss of PR #3518). A recursion tuned to reproduce them is a fit, banned as a seventh Δ_λ ansatz. (ii) POSITIVE LEAD (owner steer 2026-07-11) — the na-Stokes kernel a_D^(n)=S(n)/n has a DERIVED eigenfunction relation: S(n)=Σ_{λ⊢n} dim_q V_λ (the q-involution number) obeys a THREE-TERM recurrence S(n)=S(n-1)+c_n·S(n-2) with c_3=[2]_q EXACT and c_n/[n-1]_q rising monotonically — the q-Hermite / Rogers–Szegő recurrence, i.e. the orthogonal basis of the q-oscillator / q-hyperbolic categorical action (corpus QOU.Mass.RogersSzegoInhabited). So the correct search for w_n is its EXPANSION IN THE q-HERMITE BASIS (a derive, not a fit), NOT a constant-ratio kernel — that is why the ad-hoc candidates miss. The extensive kernel a_D^(n) stays a permanent correct contribution; the gated multiplier is the geometric W_λ projector (s5-so3). Next: expand w_n in the Rogers–Szegő basis / test the hyperbolic-link-volume route (option #1). No production touch; no value wired; no tier change."
   }
 }
