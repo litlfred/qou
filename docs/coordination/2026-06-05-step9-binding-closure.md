@@ -281,3 +281,18 @@ probe `delta_lambda_z_coefficient_and_slope.py`). Audit
   tr_M (PROBE 2) and #3534's linked-cluster w_n. My coordination-number angle only
   adds the graph handshake bookkeeping (Σ deg = 2|E|, in bean qou-4tj9's Lean).
   Coordinated on #3548 rather than building a parallel compute.
+
+## 2026-07-11 (cont.3) — bond-extensivity: multiplier=coordination is the equal-weight limit (PR #3557)
+
+- **"Why multiplier=coordination number" ANSWERED (scope-(a)):** bond-extensivity
+  B=E₀·Σ log(1/f_bond) is DERIVED (#2089 log-trace); the coordination-number
+  multiplier is its EQUAL-WEIGHT limit (equal bonds ⇒ B=(coordination)·const).
+  EXACT for identical α–α bonds (α-cluster contact counting derived); FAILS at the
+  nucleon level (derived ε_pp:ε_pn:ε_nn = 0.69:0.93:1.24, spread 1.78×) ⇒ nucleon
+  z=A−1 is a composition coincidence (symmetric A=3 mirror only).
+- **w_n=M·Vol decomposed:** M = equal-weight coordination skeleton; Vol = the
+  isospin bond-energy asymmetry ε_nn−ε_pp=0.542 that equal-weight drops (the T₃
+  carrier). Both grounded in the one derived log-trace.
+- **Open → #3548/#3534:** the ε magnitudes (f_αα, E₀) + α-geometry remain open;
+  ε-magnitude derivation is #3548 connected-tr_M / #3534 linked-cluster — not
+  attempted here (uses #2089 f_bond, no new fit).
