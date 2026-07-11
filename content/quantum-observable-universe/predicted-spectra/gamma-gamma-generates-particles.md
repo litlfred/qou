@@ -13,7 +13,7 @@ $$
 We reduce $\gamma_1\cdot\gamma_2$ with the Hecke relation $\sigma_i^2 = (q-q^{-1})\sigma_i + \mathbf{1}$. This places five of the six basis operators in the three-term product (where $\varphi_{01}=\psi_{01}=0$):
 
 $$
-  \operatorname{NF}(\gamma_1\gamma_2)
+  \mathrm{NF}(\gamma_1\gamma_2)
   = \underbrace{(1+\varphi_0\psi_0+\varphi_1\psi_1)}_{\mathbf{1}}
   + \underbrace{(\varphi_0+\psi_0+\varphi_0\psi_0\,h)}_{\sigma_0}\sigma_0
   + \underbrace{(\varphi_1+\psi_1+\varphi_1\psi_1\,h)}_{\sigma_1}\sigma_1
