@@ -195,6 +195,33 @@ parity engine transfers (chiral ⇒ mixed sign possible), the naive `T(2,5) = Δ
 identification and its real-q re-framing both fail against the Lean target, and the
 sign is relocated to the fibre — a concrete, non-fit next direction.
 
+## Finding 8 (structural) — the Δ_λ sign is a cyclotomic (q=i, non-semisimple) fibre signature
+
+Chasing the fibre lead from Finding 7 to ground:
+[`deltalambda_sign_cyclotomic_locus_probe.py`](../../computations/deltalambda/deltalambda_sign_cyclotomic_locus_probe.py)
+→ [witness](../../computations/deltalambda/deltalambda-sign-cyclotomic-locus.witness.json) (5/5).
+
+The target sign has an exact closed form and an exact locus:
+
+- **Closed form:** `sgn(Δ_λ) = sgn(w₀^{S_{λ'}}) = (−1)^{n(λ)} = q^{2n(λ)}|_{q=i}` (verified
+  all λ⊢{3,5,6}), where `n(λ) = Σ_i (i−1)λ_i`.
+- **Locus:** `q = i` is a **primitive 4th root of unity** and a **non-semisimple point
+  of H₅(q)** — `[2]_q = q + q⁻¹ = 0` at `q=i`, and the seminormal `1/[d]` entries have a
+  genuine pole at axial distance `d=2` (which occurs in λ⊢5). H_n is non-semisimple at a
+  primitive ℓ-th root for `2 ≤ ℓ ≤ n`; `ℓ=4 ≤ 5`.
+- **Archimedean-invisible:** at real `q₀ > 0` the *same* object `q^{2n(λ)}` is strictly
+  **positive** (no sign). The mixed sign exists **only** at the cyclotomic degeneration.
+
+**Why this matters.** It **unifies every real-q Δ_λ failure** under one cause: the
+chirality sign is a residue of the **non-semisimple cyclotomic limit** (the fibre /
+`Im(q)≠0` level), so any real-q₀ construction is blind to it by construction — positive
+combinations (`SelectionRules.nonneg_sum_ne_neg_target`) and re-framed traces (`θ_λ>0`,
+Finding 7) alike. This is the **same fibre-vs-archimedean split** the c₃ story lives in
+(AGENTS.md Im(q) banner): both the weak (c₃) and strong (Δ_λ) chirality obstructions sit
+at the fibre, not the substrate. **Open (not claimed):** the exact chiral operator whose
+per-λ character realizes `q^{2n(λ)}`, and the magnitude `|Δ_λ| = dim`. This **locates**
+the sign; it does not derive Δ_λ (Track A / Subgoal-2 remain gated).
+
 ## Disposition
 
 - Correction banner on `q-beta-c3-continuum-geometry.md`; corrective docstring
