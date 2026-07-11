@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-07-11T22:18:22.417279+00:00",
-  "commitSha": "9322d96213b7f813427bcf11a455605b1e84f655",
+  "computedAt": "2026-07-11T22:28:16.917249+00:00",
+  "commitSha": "ccaaf71f9961d2d892468775785d15093f0c2314",
   "assertions": [
     {
       "name": "pairwise_backbone_recovers_coulomb_mirror_split",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 4,
   "computation": "mnk-per-order-counting",
   "scriptFile": "mnk_per_order_counting.py",
   "scriptHash": "61bdd86c56b0",
-  "scriptCommitSha": "9322d96213b7f813427bcf11a455605b1e84f655",
+  "scriptCommitSha": "bb071a5805303cf16e533947e3d65b1d362d15b9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
