@@ -11,7 +11,8 @@ updated_at: 2026-07-11T18:45:00Z
 ## What
 
 Discharge the one open input of `QOU/Mass/LevelSelectionLogarithmic.lean`
-(merged as the conditional GAP-A-3 result, PR #3568): the §3b conjecture class
+(formalized as the conditional GAP-A-3 result in PR #3568, open at time of
+seeding): the §3b conjecture class
 `TowerGeometricLowerBound` — a super-exponential (a fortiori geometric)
 **lower bound** on the branched tower weight
 
@@ -60,7 +61,7 @@ substrate.
 
 ## Files / anchors
 
-- Lean (conditional, merged): `content/quantum-observable-universe/lean/QOU/Mass/LevelSelectionLogarithmic.lean`
+- Lean (conditional, PR #3568 — open at seeding, not yet on `main`): `content/quantum-observable-universe/lean/QOU/Mass/LevelSelectionLogarithmic.lean`
 - Structural note: `docs/audits/2026-07-11-wlambda-level-selection-log-structural.md`
 - Keystone cross-link (C8 gate): `docs/audits/2026-07-11-keystone-wlambda-superexp-necessary-condition.md`
 - Probe + witness: `computations/deltalambda/wlambda_wstd_growth_bound_probe.py`
