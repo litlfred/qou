@@ -1,5 +1,6 @@
 import Mathlib.Topology.Algebra.InfiniteSum.NatInt
 import Mathlib.Topology.Algebra.InfiniteSum.Constructions
+import Mathlib.Analysis.SpecialFunctions.Log.Summable
 import QOU.MathlibExt.FaddeevQuantumDilogarithm
 
 /-!
@@ -316,5 +317,94 @@ theorem substrateB_sq_im_pos {t : ℝ} (ht : 0 < t) :
   simp only [Complex.mul_im, Complex.ofReal_re, Complex.I_im, Complex.ofReal_im,
     Complex.I_re, mul_zero, mul_one, add_zero]
   positivity
+
+/-! ## Discharging the `Multipliable` hypotheses (`Im b² > 0`)
+
+Both factor families are `1 + (geometric)`: the exponents step by `2πi·b²`
+(numerator) and `−2πi/b²` (denominator), whose real parts decrease strictly
+when `Im b² > 0`.  `multipliable_one_add_of_summable` (complete normed ring)
+then discharges both hypotheses of `faddeevPhi_phiBProd` — making the
+instance unconditional on the product-supported branch, in particular at the
+substrate b-map. -/
+
+private lemma summable_norm_exp_arith (E₀ c : ℂ) (hc : c.re < 0) :
+    Summable fun k : ℕ => ‖Complex.exp (E₀ + (k : ℂ) * c)‖ := by
+  have hnorm : (fun k : ℕ => ‖Complex.exp (E₀ + (k : ℂ) * c)‖)
+      = fun k => Real.exp E₀.re * Real.exp c.re ^ k := by
+    funext k
+    rw [Complex.norm_exp]
+    have hre : (E₀ + (k : ℂ) * c).re = E₀.re + k * c.re := by
+      simp [Complex.add_re, Complex.mul_re]
+    rw [hre, Real.exp_add, ← Real.exp_nat_mul, mul_comm (k : ℝ) c.re]
+  rw [hnorm]
+  exact (summable_geometric_of_lt_one (Real.exp_pos _).le
+    (Real.exp_lt_one_iff.mpr hc)).mul_left _
+
+/-- The numerator family is multipliable whenever `Im b² > 0`. -/
+theorem multipliable_numFactor (b z : ℂ) (hβ : 0 < (b ^ 2).im) :
+    Multipliable (numFactor b z) := by
+  have hE : ∀ k : ℕ, (Real.pi : ℂ) * I * b ^ 2 * (2 * (k : ℂ) + 1)
+      + 2 * (Real.pi : ℂ) * b * z
+      = ((Real.pi : ℂ) * I * b ^ 2 + 2 * (Real.pi : ℂ) * b * z)
+        + (k : ℂ) * (2 * (Real.pi : ℂ) * I * b ^ 2) := by
+    intro k; ring
+  have hc : (2 * (Real.pi : ℂ) * I * b ^ 2).re < 0 := by
+    have : (2 * (Real.pi : ℂ) * I * b ^ 2).re
+        = -(2 * Real.pi * (b ^ 2).im) := by
+      simp [Complex.mul_re, Complex.mul_im]
+    rw [this]
+    have hπ : (0 : ℝ) < 2 * Real.pi * (b ^ 2).im := by positivity
+    linarith
+  have hsum := summable_norm_exp_arith
+    ((Real.pi : ℂ) * I * b ^ 2 + 2 * (Real.pi : ℂ) * b * z)
+    (2 * (Real.pi : ℂ) * I * b ^ 2) hc
+  have : Multipliable fun k : ℕ => 1 + Complex.exp
+      (((Real.pi : ℂ) * I * b ^ 2 + 2 * (Real.pi : ℂ) * b * z)
+        + (k : ℂ) * (2 * (Real.pi : ℂ) * I * b ^ 2)) :=
+    multipliable_one_add_of_summable hsum
+  refine this.congr fun k => ?_
+  unfold numFactor
+  rw [hE k]
+
+/-- The denominator (modular-dual) family is multipliable whenever
+`Im b² > 0` (there `Re(−2πi/b²) < 0` as well — the `q̃` suppression). -/
+theorem multipliable_denFactor (b z : ℂ) (hβ : 0 < (b ^ 2).im) :
+    Multipliable (denFactor b z) := by
+  have hE : ∀ k : ℕ, -((Real.pi : ℂ) * I) / b ^ 2 * (2 * (k : ℂ) + 1)
+      + 2 * (Real.pi : ℂ) * z / b
+      = (-((Real.pi : ℂ) * I) / b ^ 2 + 2 * (Real.pi : ℂ) * z / b)
+        + (k : ℂ) * (-(2 * (Real.pi : ℂ) * I) / b ^ 2) := by
+    intro k; ring
+  have hc : (-(2 * (Real.pi : ℂ) * I) / b ^ 2).re < 0 := by
+    have h1 : (-(2 * (Real.pi : ℂ) * I) / b ^ 2).re
+        = -(2 * Real.pi * (b ^ 2).im) / Complex.normSq (b ^ 2) := by
+      simp [Complex.div_re, Complex.mul_re, Complex.mul_im, neg_div]
+    have hns : 0 < Complex.normSq (b ^ 2) :=
+      Complex.normSq_pos.mpr (fun h => by simp [h] at hβ)
+    rw [h1]
+    have hnum : (0 : ℝ) < 2 * Real.pi * (b ^ 2).im := by positivity
+    exact div_neg_of_neg_of_pos (by linarith) hns
+  have hsum := summable_norm_exp_arith
+    (-((Real.pi : ℂ) * I) / b ^ 2 + 2 * (Real.pi : ℂ) * z / b)
+    (-(2 * (Real.pi : ℂ) * I) / b ^ 2) hc
+  have : Multipliable fun k : ℕ => 1 + Complex.exp
+      ((-((Real.pi : ℂ) * I) / b ^ 2 + 2 * (Real.pi : ℂ) * z / b)
+        + (k : ℂ) * (-(2 * (Real.pi : ℂ) * I) / b ^ 2)) :=
+    multipliable_one_add_of_summable hsum
+  refine this.congr fun k => ?_
+  unfold denFactor
+  rw [hE k]
+
+/-- **The unconditional physical instance.**  At the substrate b-map
+`substrateB t` (`t = ln q₀ > 0`), `phiBProd` satisfies every `FaddeevPhi`
+axiom with no remaining hypotheses — the conjecture-class is a theorem-class
+on the physical branch.  What stays open is only the `|q| = 1` fibre regime
+(real `b`), where the product diverges and the contour integral is the sole
+definition. -/
+theorem faddeevPhi_phiBProd_substrate {t : ℝ} (ht : 0 < t) :
+    FaddeevPhi (substrateB t) (phiBProd (substrateB t)) :=
+  faddeevPhi_phiBProd _ (substrateB_re_pos ht)
+    (fun w => multipliable_numFactor _ w (substrateB_sq_im_pos ht))
+    (fun w => multipliable_denFactor _ w (substrateB_sq_im_pos ht))
 
 end QOU.MathlibExt.PhiBProd
