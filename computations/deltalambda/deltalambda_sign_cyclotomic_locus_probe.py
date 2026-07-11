@@ -109,14 +109,21 @@ def main():
           "content multiset determines λ (no collision, n≤8) => q^{2n(λ)} is a central "
           "character realizable by JM symmetric functions, not just the abstract projector")
 
-    # 6) the carrier is NOT the full twist θ_λ = q^{2(n(λ')-n(λ))}: they differ, so the
-    #    operator is a distinct (half-twist-class) central element, not a framing power.
+    # 6) the carrier is NOT a framing power: neither the full twist θ_λ=q^{2(n(λ')-n(λ))}
+    #    nor the framing/half-twist sqrt θ_λ^{1/2}=q^{n(λ')-n(λ)} reproduces the sign at q=i.
+    #    (θ|_{q=i}=i^{2cs} misses λ=[3,1,1],[2,1,1,1]; θ^{1/2}|_{q=i}=i^{cs} is often ±i, not ±1.)
+    #    So the sign carrier is a genuine JM-symmetric central element, not any framing power.
     def cont_sum(lam):
         return n_lambda(conjugate(lam)) - n_lambda(lam)
-    differs = any(n_lambda(lam) != cont_sum(lam) for lam in partitions(5))
-    check("carrier_is_not_the_full_twist", differs,
-          "q^{2n(λ)} ≠ θ_λ=q^{2(n(λ')-n(λ))} for some λ⊢5 => not a full-twist framing power "
-          "(a distinct half-twist-class central element; exact braid form + |Δ_λ|=dim open)")
+    ft_fail = any(int(sp.re(sp.I ** (2 * cont_sum(lam)))) != target_sign(lam)
+                  for lam in partitions(5))
+    ht_fail = any((sp.im(sp.I ** cont_sum(lam)) != 0)
+                  or (int(sp.re(sp.I ** cont_sum(lam))) != target_sign(lam))
+                  for lam in partitions(5))
+    check("carrier_is_not_a_framing_power", ft_fail and ht_fail,
+          "sign ≠ full twist θ_λ (fails λ=[3,1,1],[2,1,1,1]) AND ≠ framing sqrt θ_λ^{1/2} "
+          "(i^{cs} often ±i) => a genuine JM-symmetric central element, not a framing power; "
+          "exact braid form + |Δ_λ|=dim open")
 
     all_passed = all(a["passed"] for a in assertions)
     verdict = (

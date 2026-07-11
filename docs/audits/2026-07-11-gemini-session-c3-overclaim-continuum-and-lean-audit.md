@@ -223,10 +223,13 @@ at the fibre, not the substrate.
 **Narrowing the carrier (formalize-first, keeps it honest).** `q^{2n(λ)}` is a genuine
 **central character** of H_n(q) — the JM content multiset `{q^{2c(box)}}` determines λ
 (no collision, verified n≤10), so it is realizable by a Jucys–Murphy symmetric-function
-element, not merely the abstract central idempotent. It is **not the full twist**
-(`θ_λ = q^{2(n(λ')−n(λ))} ≠ q^{2n(λ)}`), so the operator is a distinct **half-twist-class**
-central element. **Still open (not claimed):** the exact canonical braid form of that
-element, and the **magnitude** `|Δ_λ| = dim`. This **locates and narrows** the sign
+element, not merely the abstract central idempotent. It is **not a framing power**:
+neither the full twist (`θ_λ = q^{2(n(λ')−n(λ))}`, which misses the sign at λ=[3,1,1],
+[2,1,1,1]) nor the framing/half-twist sqrt (`θ_λ^{1/2} = q^{n(λ')−n(λ)}`, whose value
+`i^{n(λ')−n(λ)}` at q=i is often `±i`, not `±1`) reproduces `q^{2n(λ)}`. So it is a
+genuine **JM-symmetric central element**, not any twist/half-twist power. **Still open
+(not claimed):** the exact canonical braid form of that element, and the **magnitude**
+`|Δ_λ| = dim`. This **locates and narrows** the sign
 carrier; it does not derive Δ_λ (Track A / Subgoal-2 remain gated). The exact-form +
 magnitude hunt is genuinely hard and is left as gated Track-A work, not fished here.
 

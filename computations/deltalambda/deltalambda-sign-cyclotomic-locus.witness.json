@@ -3,12 +3,12 @@
   "description": "The \u0394_\u03bb chirality sign sgn(w_0^{S_{\u03bb'}})=(-1)^{n(\u03bb)}=q^{2n(\u03bb)}|_{q=i} is a cyclotomic (q=i, non-semisimple H_5) fibre signature -- absent at real q_0 (q^{2n(\u03bb)}>0). Locates the sign; does not derive \u0394_\u03bb.",
   "auditOnly": "docs/audits/2026-07-11-gemini-session-c3-overclaim-continuum-and-lean-audit.md",
   "tier": "symbolic-exact (sympy; algebraic identities at q=i and real q_0)",
-  "computedAt": "2026-07-11T11:04:13.283695+00:00",
-  "commitSha": "be9fe8039043536acc68774d98dd8438fa6d6074",
+  "computedAt": "2026-07-11T11:15:38.403873+00:00",
+  "commitSha": "2c4a7065ee80536765bcef70f4a7b3924216f165",
   "engine": "sympy",
   "engineVersion": "1.14.0",
   "scriptFile": "deltalambda_sign_cyclotomic_locus_probe.py",
-  "scriptHash": "9af4beafd064",
+  "scriptHash": "34f0f1de1417",
   "assertions": [
     {
       "name": "target_equals_q2n_at_qi",
@@ -41,9 +41,9 @@
       "detail": "content multiset determines \u03bb (no collision, n\u22648) => q^{2n(\u03bb)} is a central character realizable by JM symmetric functions, not just the abstract projector"
     },
     {
-      "name": "carrier_is_not_the_full_twist",
+      "name": "carrier_is_not_a_framing_power",
       "passed": true,
-      "detail": "q^{2n(\u03bb)} \u2260 \u03b8_\u03bb=q^{2(n(\u03bb')-n(\u03bb))} for some \u03bb\u22a25 => not a full-twist framing power (a distinct half-twist-class central element; exact braid form + |\u0394_\u03bb|=dim open)"
+      "detail": "sign \u2260 full twist \u03b8_\u03bb (fails \u03bb=[3,1,1],[2,1,1,1]) AND \u2260 framing sqrt \u03b8_\u03bb^{1/2} (i^{cs} often \u00b1i) => a genuine JM-symmetric central element, not a framing power; exact braid form + |\u0394_\u03bb|=dim open"
     }
   ],
   "allPassed": true,

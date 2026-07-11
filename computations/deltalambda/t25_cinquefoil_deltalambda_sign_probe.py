@@ -42,7 +42,7 @@ import sys
 import sympy as sp
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
-_ROOT = os.path.abspath(os.path.join(_HERE, ".."))
+_ROOT = os.path.abspath(os.path.join(_HERE, "..", ".."))   # computations/deltalambda -> repo root
 for _p in (os.path.join(_ROOT, "tools", "qou-substrate", "python"),
            os.path.join(_ROOT, "tools", "pyhecke", "python")):
     if _p not in sys.path:
