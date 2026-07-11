@@ -24,4 +24,4 @@ $$
   \mathfrak{E}\Bigl(\textstyle\bigcup_i K_i\Bigr) = \sum_i \mathfrak{E}_0(K_i)\, w_i .
 $$
 
-*An order-$k$ bond is one axial $\sigma$ channel and $k-1$ transverse $\pi$ channels, with total binding $\mathfrak{E}_0\,\bigl(1 + (k-1)\,w_\perp\bigr)$ (Lean: `multipleBond_binding`).*
+*An order-$k$ bond is one axial $\sigma$ channel and $k-1$ transverse $\pi$ channels, with total binding $\mathfrak{E}_0\,\bigl(1 + (k-1)\,w_\perp\bigr)$.*
