@@ -1,0 +1,141 @@
+{
+  "engine": "mpmath+combinatorial",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-11T13:53:53.913100+00:00",
+  "commitSha": "5e752f70f073b7e2cb00a3504dbe5a86385090e5",
+  "assertions": [
+    {
+      "name": "frobenius_distinct_odd_eq_self_conjugate",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "classical Frobenius bijection (distinct odd parts ↔ self-conjugate λ)"
+    },
+    {
+      "name": "compact_face_is_bar_even",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "self-conjugate support ⇒ transpose-fixed ⇒ zero bar-odd on the mass face"
+    },
+    {
+      "name": "fibre_saddle_unimodular",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-20,
+      "source": "|Φ_b|=1 at real b (pure-phase bar-odd carrier; prop:phi-b-unitary-bar-odd)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 642,
+  "computation": "qbeta-c3-barodd-tetraplectic-reduction",
+  "scriptFile": "qbeta_c3_barodd_tetraplectic_reduction_probe.py",
+  "scriptHash": "4fee0d4422ef",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Combinatorial reduction of Faddeev Φ_b for the c₃ bar-ODD part S. Rigorous structural result: the compact q-Pochhammer factor's [x^k] = e_k(q,q³,…) is supported EXACTLY on self-conjugate partitions (Frobenius distinct-odd↔self-conjugate), which are transpose-fixed (bar-EVEN) ⇒ the mass face carries zero bar-odd content, so S lives on the modular-dual (non-self-conjugate) lattice = the phase channel. Characterization (not fit): arg Φ_b at the corpus-natural ζ₆ point; the two S-values are the stated target. Scope-(a); C14 anti-fitting; no c_k wired; registry untouched.",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "frobenius_bijection": [
+      {
+        "n": 1,
+        "distinct_odd": 1,
+        "self_conjugate": 1,
+        "frobenius_lands_self_conj": true
+      },
+      {
+        "n": 3,
+        "distinct_odd": 1,
+        "self_conjugate": 1,
+        "frobenius_lands_self_conj": true
+      },
+      {
+        "n": 5,
+        "distinct_odd": 1,
+        "self_conjugate": 1,
+        "frobenius_lands_self_conj": true
+      },
+      {
+        "n": 7,
+        "distinct_odd": 1,
+        "self_conjugate": 1,
+        "frobenius_lands_self_conj": true
+      },
+      {
+        "n": 9,
+        "distinct_odd": 2,
+        "self_conjugate": 2,
+        "frobenius_lands_self_conj": true
+      },
+      {
+        "n": 12,
+        "distinct_odd": 3,
+        "self_conjugate": 3,
+        "frobenius_lands_self_conj": true
+      },
+      {
+        "n": 16,
+        "distinct_odd": 5,
+        "self_conjugate": 5,
+        "frobenius_lands_self_conj": true
+      },
+      {
+        "n": 20,
+        "distinct_odd": 7,
+        "self_conjugate": 7,
+        "frobenius_lands_self_conj": true
+      },
+      {
+        "n": 25,
+        "distinct_odd": 12,
+        "self_conjugate": 12,
+        "frobenius_lands_self_conj": true
+      }
+    ],
+    "compact_face_bar_even": {
+      "claim": "e_k(q,q^3,...) supported on self-conjugate partitions ⇒ bar-even",
+      "term_by_term_transpose_fixed": true
+    },
+    "bar_odd_phase_zeta6": {
+      "point": "b^2=1/6, q=zeta_6=e^{i pi/3} (Vol(4_1)=2Lambda(pi/3) angle)",
+      "rows": [
+        {
+          "z": "0.1",
+          "abs_minus_1": "0.000e+00",
+          "arg_phi_b": "0.99612016900782725195"
+        },
+        {
+          "z": "0.2",
+          "abs_minus_1": "0.000e+00",
+          "arg_phi_b": "1.2203538681716946088"
+        },
+        {
+          "z": "0.3",
+          "abs_minus_1": "0.000e+00",
+          "arg_phi_b": "1.4837111557888726909"
+        }
+      ],
+      "note": "corpus-natural point, NOT S-matched"
+    },
+    "open_target_S": {
+      "muon": "0.00968298",
+      "proton": "-0.03945936",
+      "Vol_4_1": "2.02988321282",
+      "sign_flips": true,
+      "handoff": "derived argument z(q0) via z->c_k evaluation map (PR #3458)"
+    }
+  }
+}
