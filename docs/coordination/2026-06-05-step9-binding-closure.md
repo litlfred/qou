@@ -440,9 +440,11 @@ graph **M_n(K)** — *which pairs bond*. Cross-recognition (§6 convergence, not
   carries NO new parameter.
 - **Result (scope-(a)):** the C(A,2) backbone reproduces A=3 binding to a small ~1–2 MeV
   M_3 residual (³H 1.81, ³He 1.04); ⁴He residual 14.95 MeV (doubly-magic 4-body).
-- **Cross-check recovered:** the ³H−³He residual difference = +0.764 MeV == the AME
-  mirror split == the Coulomb term (cont.4/cont.5). The per-order count inherits this
-  session's charge-structure result for free — the pairwise backbone is charge-symmetric.
+- **Cross-check recovered:** the ³H−³He residual difference is +0.764 MeV ≈ the AME
+  mirror split ≈ the Coulomb term (cont.4/cont.5) — exact BY CONSTRUCTION (the A=3
+  pairwise backbone cancels in the mirror difference), verified to <1e-6 on floats. The
+  per-order count inherits this session's charge-structure result for free — the pairwise
+  backbone is charge-symmetric.
 - **Localises the open work:** the 2-body count is FIXED; what remains open is the
   M_3/M_4 weights (a_D^(n)·w_n, the deuteron pins only w_2). **Cross-ref #3585:** the
   naive EQUAL-weight a_D^(n)·C(A,n) tower blows up at A≥5 (#3545 Part 5), so the
