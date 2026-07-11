@@ -194,6 +194,47 @@ in the registry's anchor-stability gate; angles A–C above are structural
 (hypothesis-class tests), not value matches, which is the right side of that
 history.
 
+## Appendix A — P6c executed: Galois-descent / GSWZ Frobenius-gluing scoping (U3)
+
+**Status:** SCOPING ONLY (owner-selected 2026-07-11; no numerics, no Lean, no
+c_k value). Dependency-gated on P1 (§3.A) — see kill criterion below.
+
+Per GSWZ, "The Habiro ring of a number field" (arXiv:2412.04241): elements of
+the Habiro-ring module attached to a number field K are collections of formal
+power series, one at each root of unity, glued by a **Frobenius endomorphism**
+after division by a gluing series determined by an element of the **Bloch
+group** B(K). Applied to the Q_β element F(q):
+
+1. **The field is forced, not chosen.** The framework's CAL-2 anchor is
+   Vol(4₁) = 2Λ(π/3); the 4₁ trace field is ℚ(√−3) and its Bloch-group
+   element is the class of the 4₁ shape parameter [ζ₆] ∈ B(ℚ(√−3)). If F
+   lives in the GSWZ module for ℚ(√−3), its expansions at *all* roots of
+   unity are determined by (i) the single q=1 series — i.e. the c_k data —
+   and (ii) that forced Bloch-group element. Zero free choices, so this
+   passes the C14 anti-fitting discipline.
+2. **Compatibility with the KC registry (checked on paper):**
+   - **KC6** (a₁ = −c₃ has a nonzero bar-odd part with nonzero q=1 shadow):
+     the Bloch–Wigner function is odd (D(z̄) = −D(z)) while the Rogers
+     L-side is even — the bar-odd/bar-even split of the c_k data mirrors
+     the imaginary(volume)/real(CS) split of the dilogarithm at the
+     Bloch-group element. Consistent, and independently suggestive.
+   - **KC20** (bar-odd carrier is not a root-of-unity object; cyclotomic
+     content exactly q²−1): consistent — Frobenius gluing constrains
+     expansions *at* roots of unity; it does not force the carrier to *be*
+     a root-of-unity evaluation.
+3. **Formalize-first target** (before any numeric sweep): a §3b-cond
+   conditional class `QBetaGSWZDescentClass` carrying (a) the q=1 series
+   with c₂ = −1, (b) the Frobenius-congruence family on the integer
+   coefficient sequence (exact congruence shape to be transcribed from
+   arXiv:2412.04241 §-level statements before formalizing — not from this
+   summary), no instance (open). The descent datum is then a *checkable
+   arithmetic constraint* on the same integer coefficients P1 tests.
+4. **Kill criterion / gate:** GSWZ descent **presupposes** Habiro
+   integrality of the q=1 series. If P1 (§3.A) returns NEGATIVE on all
+   natural normalizations, this route dies with it — record and stop. If
+   P1 passes, the first executable descent test is the small-prime
+   (p = 2, 3) Frobenius congruence on the integer coefficients.
+
 ## 5. Cross-references
 
 - Refuted-class map: [`2026-06-04-qbeta-ck-refuted-class-map-and-open-axis.md`](2026-06-04-qbeta-ck-refuted-class-map-and-open-axis.md)
