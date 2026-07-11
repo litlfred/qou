@@ -40,10 +40,12 @@ structure CategoricalLaplace (A : Type*) where
   monoidal_mul :
     ∀ (f g : A → A) (s : R_q) (q_conv : (A → A) → (A → A) → (A → A)),
       (transform (q_conv f g) s) = fun x => transform f s (transform g s x)
-  /-- Unit preservation: L[1] = 1. -/
+  /-- Unit preservation: L[𝟙] = 𝟙, with the monoidal unit of `A → A`
+      under composition pinned to `id` (quantifying `one` over all
+      functions makes the structure uninhabitable for |A| ≥ 2). -/
   monoidal_unit :
-    ∀ (one : A → A) (s : R_q),
-      transform one s = one
+    ∀ (s : R_q),
+      transform id s = id
 
 /-- **Laplace-Fourier Wick rotation**: Fourier at ξ equals Laplace
     at s = iξ (in any base ring containing √(-1)). -/
