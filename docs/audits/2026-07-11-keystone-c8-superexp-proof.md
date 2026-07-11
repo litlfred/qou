@@ -64,6 +64,31 @@ needs ([`s5-so3-keystone.md`](../coordination/s5-so3-keystone.md) line 40 / #263
 Building that in Mathlib would discharge (A)/(C) too; that is the open fill (shared
 with Identity I, so it is *one* infra fill serving both).
 
+## Tier-1 fix: the `StandardYoungTableau` type Mathlib lacks now exists in-tree
+
+[`QOU/BraidKnot/YoungTableauStandard.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/YoungTableauStandard.lean)
+supplies the missing infrastructure (bean `08a2`, Tier 1), turning the two
+**carried `f g : ℝ` hypotheses** above into **stated propositions about real SYT
+counts** — the honest §1a "queue it" disposition, not opaque parameters:
+
+| Declaration | Status |
+|---|---|
+| `StandardYoungTableau μ` / `SkewStandardYoungTableau outer inner` | **new structures** — fillings by `{0,…,\|μ\|−1}`, row/col-strict (the type Mathlib has for SSYT but not SYT) |
+| `fDim μ = Nat.card (StandardYoungTableau μ)` = `f^μ`; `fDimSkew` = `f^{λ/μ}` | **defined** |
+| `entry_lt_card` (every entry `< \|μ\|`) | **proved** — genuine non-vacuity, from the `content` field |
+| `involutionNumber_pos` (`I(n) ≥ 1`) | **proved** (two-step induction + `omega`) |
+| `c8_superexp` (unconditional `k!/(9·I(k)) ≤ (Σ (f^λ)² f^{λ/(2,1)})/k!`, `k ≥ 3`) | **proved** — all arithmetic/casts real; gaps only via the 3 RSK sorries it invokes |
+| (A) `branching_two_one` (`3·Σ f^λ f^{λ/(2,1)} = k!`) | **`sorry` + `-- Ref:[sagan2001]`** (branching rule, Thm 3.10.2) |
+| (C) `skew_le_straight` (`Σ f^{λ/(2,1)} ≤ Σ f^λ`) | **`sorry` + `-- Ref:[sagan2001]`** (§4) |
+| `sum_fDim_eq_involution` (`Σ f^λ = I(k)`) | **`sorry` + `-- Ref:[sagan2001]`** (RSK for involutions, §3.1) |
+
+lean-direct `EXIT=0`; the **only** three `sorry`s are the deep RSK-family
+identities Mathlib cannot yet prove (no hook-length, no RSK). This is **not** a
+closure: it builds the type + isolates and cites the remaining classical fill
+(shared with Identity I). Restating (A) as `3·Σ = k!` avoids a lossy ℕ-division
+cast; the `k ≥ 3` guard keeps the branching statement honest (`(2,1) ⊄ λ` for
+`k < 3`).
+
 ## The μ/e ↔ binding cross-link (why the keystone carries it)
 
 `I(k) = Σ_λ f^λ` is exactly the `q=1` value of the QOU na-Stokes **binding** period
