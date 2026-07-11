@@ -88,6 +88,7 @@ section({
         "hausdorff-dimension-recurrence-table2-data",
         "hausdorff-dimension-recurrence-table1-data",
         "information-causality",
+        "information-causality-table-data",
       ],
     }),
     section({
