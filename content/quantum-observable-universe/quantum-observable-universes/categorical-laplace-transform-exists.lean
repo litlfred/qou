@@ -44,18 +44,19 @@ structure CategoricalLaplace (A : Type*) where
 
 /-- **Existence of the categorical Laplace transform.**
 
-    For any type `A`, a `CategoricalLaplace A` term exists — witnessed
-    by the Markov pairing against `exp_q(-s·)`. The construction of the
-    pairing and the verification of its monoidal intertwining are
-    documented in the manuscript; the Lean witness is pending the
-    q-exponential grouplike and Markov-trace infrastructure. -/
-theorem CategoricalLaplace.exists (A : Type*) [Nonempty A] :
+    For any type `A`, a `CategoricalLaplace A` term exists.  Proved below
+    with an explicit witness: the trivial transform `f ↦ (s ↦ id)`, which
+    preserves the unit (`transform id s = id`) and intertwines every
+    `q_conv` with composition (both sides reduce to `id`).  This
+    establishes inhabitation of the (corrected) structure; the
+    manuscript's Markov pairing against `exp_q(-s·)` is a *specific*
+    `CategoricalLaplace` datum, whose construction needs the
+    q-exponential grouplike + Markov-trace infrastructure not formalised
+    here.  (No `Nonempty A` is needed — the `id`-witness exists for every
+    `A`, including `PEmpty`.) -/
+-- Ref: [kassel1995] Quantum Groups, §IV (q-exponential grouplike + Markov pairing)
+theorem CategoricalLaplace.exists (A : Type*) :
     Nonempty (CategoricalLaplace A) :=
-  -- Witness: the trivial transform `f ↦ (s ↦ id)`.  It preserves the unit
-  -- (`transform id s = id`) and intertwines any `q_conv` with composition
-  -- (both sides reduce to `id`).  This inhabits the corrected structure;
-  -- the manuscript's Markov-pairing transform is a *specific* such datum.
-  -- Ref: [kassel1995] Quantum Groups, §IV (q-exponential grouplike + Markov pairing)
   ⟨{ transform := fun _ _ => id
      monoidal_mul := fun _ _ _ _ => rfl
      monoidal_unit := fun _ => rfl }⟩
