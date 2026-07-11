@@ -84,4 +84,45 @@ noncomputable def algebraic_geometric_equivalence
         - BlochWignerD x‖ < ε) :=
   ⟨h.pole_cusp_bijection, h.asymptotic_volume⟩
 
+/-! ## The pole side is a THEOREM (not just the conjecture-class field)
+
+The class field `pole_cusp_bijection` above asserts only
+`∃ z, z k = q^{-k}` — vacuously true (it names the candidate zeros but never
+asserts they *are* zeros of the denominator). The genuine §1 content — that each
+`x = q^{-k}` is an actual **root** of `(x;q)_n` — is unconditional algebra and is
+proved here sorry-free (mirroring the generic `QOU.QBeta.qPochDenom_eq_zero_at_pole`,
+merged separately). Only the *cusp correspondence* (that these poles match the
+ideal-tetrahedron cusps) and the §2 asymptotic remain the (open) volume
+conjecture. -/
+
+/-- Structural unfold of the `n+1` step (definitional). -/
+theorem denomPolyLocal_succ (q x : ℝ) (n : ℕ) :
+    denomPolyLocal q x (n + 1) = (1 - x * q ^ n) * denomPolyLocal q x n := rfl
+
+/-- **Pole vanishing (theorem).** `(x; q)_n` vanishes at each pole `x = q^{-j}`,
+    `j < n` (`q ≠ 0`) — the unconditional algebraic half of
+    `conj:algebraic-geometric-dilog-equivalence §1`. -/
+-- Ref: [manuscript] conj:algebraic-geometric-dilog-equivalence §1
+theorem denomPolyLocal_eq_zero_at_pole (q : ℝ) (hq : q ≠ 0)
+    (n j : ℕ) (hj : j < n) : denomPolyLocal q (q ^ (-(j : ℤ))) n = 0 := by
+  induction n with
+  | zero => exact absurd hj (Nat.not_lt_zero j)
+  | succ m ih =>
+    rw [denomPolyLocal_succ]
+    rcases (Nat.lt_succ_iff.mp hj).lt_or_eq with h | h
+    · rw [ih h, mul_zero]
+    · have key : q ^ (-(j : ℤ)) * q ^ (m : ℕ) = 1 := by
+        rw [h, ← zpow_natCast q m, ← zpow_add₀ hq, neg_add_cancel, zpow_zero]
+      rw [key, sub_self, zero_mul]
+
+/-- **Theorem-backed pole side.** The strengthened §1 statement the class field
+    omits: the explicit root function `k ↦ q^{-k}` together with the proof that
+    each value is a genuine zero of `(x; q)_n`. Unconditional for `q ≠ 0`. -/
+-- Ref: [manuscript] conj:algebraic-geometric-dilog-equivalence §1
+theorem pole_cusp_bijection_proved (q : ℝ) (hq : q ≠ 0) (n : ℕ) :
+    ∃ z : Fin n → ℝ, (∀ k : Fin n, z k = q ^ (-(k : ℤ)))
+      ∧ (∀ k : Fin n, denomPolyLocal q (z k) n = 0) :=
+  ⟨fun k => q ^ (-(k : ℤ)), fun _ => rfl,
+    fun k => denomPolyLocal_eq_zero_at_pole q hq n k k.isLt⟩
+
 end QOU.QPochhammer
