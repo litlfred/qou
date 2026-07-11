@@ -188,6 +188,40 @@ dominance), or a weight decaying faster than `1/a_D^(n)` (i.e. *cancelling* the
 period, not "informed by" it). The na-Stokes period remains the correct **light**-
 nucleus (A≤4) kernel; it is the wrong object to sum to `A`.
 
+## Part 6 — synthesis: the missing piece is the geometric bond-count, not a weight kernel
+
+Few-body truncation (`n_max=3`, cluster counts `M_n(K)`) tames the Part-5 overshoot
+from `~2×10⁶ %` to `~50 %` (chain model, worst-case), confirming the redirect.
+The **residual** is a pure **normalization** — the bond-count `M_n(K)`. Anchoring
+the per-bond energy on the deuteron (one inter-nucleon bond `= B_strong(D) =
+2.22` MeV `= m_e·a_D^(2)·w₂·1`), the *implied* bond count each nucleus needs is:
+
+| iso | A | #bonds needed | #bonds/A (coordination) |
+|---|--:|--:|--:|
+| D | 2 | 1.00 | 0.50 |
+| T / ³He | 3 | ~3.9 | ~1.3 |
+| ⁴He | 4 | 13.1 | 3.28 (magic α; needs the n=3 term) |
+| ⁶Li | 6 | 15.5 | 2.58 |
+| ⁷Li | 7 | 18.7 | 2.67 |
+| ⁹Be | 9 | 28.0 | 3.11 |
+| ¹²C | 12 | 45.7 | 3.81 |
+
+`#bonds/A` rises from 0.5 (deuteron) and **plateaus at ~2.6–3.8** for A≥6 — the
+nuclear **coordination number / saturation curve**. The chain model undershoots
+precisely because `M₂=A−1` undercounts bonds in a compact 3-D packing.
+
+**Synthesis (the culmination of Parts 1–5).** Every refutation funnels to one
+conclusion: the na-Stokes period `a_D^(n)` supplies the **per-cluster energy**
+(deuteron-anchored, `= 2.22` MeV per bond), and the **knot topology** supplies
+the **cluster count** `M_n(K)` (the crossing / coordination structure of `𝓑_K`).
+The missing piece is **geometric** (a bond-count = the hyperbolic-link / crossing
+structure the 2026-07-03 audit Option 1 named), **not** an algebraic weight kernel
+`R(q,x)`. The "eigenfunction relation informs the weight kernel" program resolves
+as: there is no algebraic weight kernel to derive — the weight is the topological
+bond-count of the canonical knot, and the binding is
+`B(K) ≈ Σ_{n=2}^{3} m_e·a_D^(n)·M_n(K)` with `M_n(K)` the n-body cluster count of
+`𝓑_K` (⁴He the magic-shell outlier). This is the well-posed, tractable next target.
+
 ## Consequence for `conj:binding-manybody-eq-jet-filtration`
 
 **Not provable now** (recorded answer). The conjecture's three deep inputs remain
