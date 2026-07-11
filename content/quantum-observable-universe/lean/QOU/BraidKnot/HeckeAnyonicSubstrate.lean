@@ -78,14 +78,20 @@ theorem normal_form_inhabited_of_action
     Nonempty H.NormalForm :=
   ⟨T⟩
 
-/-- **Faithful instance.** Carries the explicit research-grade conjecture as a sorry. -/
-instance canonical (R : Type u) [CommRing R] (q : R) :
-    HeckeAnyonicSubstrate R q where
-  NormalForm := PUnit
-  braidAction _ T := T
-  heckeQuadratic := True
-  -- Ref: [manuscript] conj:hecke-anyonic-substrate (§3b-cond conjectural-class instance; sorry = the conjecture)
-  anyonic_holds T := ⟨0, T, rfl⟩
+/-! **No canonical instance is provided — `conj:hecke-anyonic-substrate` is open.**
+An earlier `instance canonical` over `NormalForm := PUnit` (with
+`braidAction := id`, `heckeQuadratic := True`, and `anyonic_holds` discharged by
+`⟨0, T, rfl⟩`) was a **fabricated trivial instance**: over `PUnit` with the
+identity braid action the conjecture `∀ T, ∃ i T₀, T = braidAction i T₀` holds
+vacuously and `heckeQuadratic` was the tautology `True`, so it satisfied the
+conjectural class while asserting nothing — and its docstring ("Faithful
+instance… conjecture as a sorry") did not match that trivial reality. Per
+AGENTS.md §3b-tax an unproved primary conjecture is honestly represented by a
+content-bearing class with **no** instance (the open state); a genuine instance
+over a real Hecke `NormalForm` arrives when the substrate realisation is
+established. Removing it does not affect the downstream conditional theorems
+(`KazhdanLusztigClassicalLimit`, `RootOfUnityMTCTruncation`, …), which take
+`[HeckeAnyonicSubstrate R q]` as an explicit hypothesis, not by synthesis. -/
 
 end HeckeAnyonicSubstrate
 
