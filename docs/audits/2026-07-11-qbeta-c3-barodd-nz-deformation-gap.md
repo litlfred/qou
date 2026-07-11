@@ -125,6 +125,27 @@ The `decay = binding` Gram-signature identity stands; `S` is the SDP negative-no
 binding form on the ghost, and its **value still needs `z(q₀)`** to realize the
 quadratic form (no SDP was tuned to `S` — C14).
 
+## Direct gluing-equation Newton solve — `S = Im 𝔙` validated at complete
+
+Probe [`qbeta_c3_barodd_gluing_newton_solve.py`](../../computations/qbeta/qbeta_c3_barodd_gluing_newton_solve.py)
+solves Thurston's figure-eight gluing equation `z(z−1)·w(w−1)=1` (meridian
+`w=m²z`) directly by Newton iteration:
+
+- **complete structure** (`m=1`): `z=e^{iπ/3}`, `z(z−1)=−1`, and
+  `Vol = D(z)+D(w) = 2.029883213` = **Vol(4₁) to `4×10⁻¹⁸`** — the bar-even
+  `−Vol(4₁)` recovered, `CS=0` (amphichiral). The `𝔙` solver is validated.
+- **deformation** `𝔙(m)=Vol(m)+i·CS(m)` computable for any `m`; the leading
+  `Im 𝔙 = (√3/2)|u|²sin(2 arg u)` (cusp shape `√−3`) is the bar-odd `S`
+  (owner: **`S = Im 𝔙`**, [`conj:binding-qbeta-complex-volume`]).
+
+So the `𝔙` machinery works end-to-end; the **single open link** is the map
+`q₀ → m` (the meridian holonomy the substrate assigns to `4₁`) = the
+**Φ_q-pole-seeded Newton** of [`thurston-relaxation.md`] =
+`conj:algebraic-geometric-dilog-equivalence` (pole↔cusp). The anchor-sensitivity
+`dc₃/dq≈4.66×10⁶` shows this map is **near-singular** at `q₀` (a smooth `m(q₀)`
+is excluded), so the phase `φ(q₀)` accumulates like a root of unity. `m(q₀)` is
+not fitted.
+
 ## Disposition
 
 The derivation gap is **sharpened, not closed**: closing `S` ⟺ deriving the
