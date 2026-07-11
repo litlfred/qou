@@ -1,15 +1,15 @@
 {
   "engine": "python+mpmath",
-  "engineVersion": "python 3.13.12",
-  "computedAt": "2026-07-08T18:58:45.285257+00:00",
-  "commitSha": "1c4cc7150ab14f2b55c2bc3bbd911e1fa19cb8ae",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-11T05:33:03.690401+00:00",
+  "commitSha": "6f9c59c652ee63efde763d7a6c7366c15ad0cf61",
   "assertions": [],
   "allPassed": true,
   "durationMs": 27,
   "computation": "canonical-isotope-witness-Z03",
   "scriptFile": "canonical_isotope_witness.py",
-  "scriptHash": "8599f8ce5035",
-  "scriptCommitSha": "22f8e80b2bc5305ebf683c070192824ff7df7ba0",
+  "scriptHash": "46eb131fcd57",
+  "scriptCommitSha": "242bd2515ed6eb591bc763c9d09b464a2f18a755",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -17,12 +17,10 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.12",
-    "numpy": "2.5.0",
-    "scipy": "1.18.0",
+    "python": "3.11.15",
+    "numpy": "2.4.6",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.3.0"
   },
   "description": "Per-Z=3 shard of the recursive atom-knot atlas. Element: Li. Covers every (Z=3, N) in AME 2020. Each row carries: prediction_type ∈ {mass, binding_energy}; the prediction value (from L1 canonical |tr_M| via markov_peel+mpmath, OR L2 α-cluster recursion); the AME 2020 reference; err in MeV / % / ppm; L4 composite mass M = N·m_n + Z·m_p − B (when nucleon masses + B are available). L1 source: canonical-mass-table-extended.witness.json; L2 source: alpha-cluster-recursion.witness.json; nucleon masses: m-p-borromean-verification-50dps.witness.json.",
   "parameters": {
@@ -139,15 +137,15 @@
         "prediction_type": "binding_energy",
         "layer": "L3-partial-shell:f=0.500 from A=4→8",
         "canonical_status": "heuristic",
-        "prediction_MeV_50dps": 43.65698475352001,
+        "prediction_MeV_50dps": 43.65700575188143,
         "reference_MeV_50dps": 31.993987199999996,
-        "err_MeV": 11.662997553520011,
-        "err_pct": 36.45371700817587,
-        "err_ppm": 364537.17008175876,
+        "err_MeV": 11.663018551881432,
+        "err_pct": 36.45378264038761,
+        "err_ppm": 364537.8264038761,
         "excised": {
           "excised_layer": "L3-partial-shell:f=0.500 from A=4→8",
           "excised_status": "heuristic",
-          "excised_prediction_MeV": 43.65698475352001,
+          "excised_prediction_MeV": 43.65700575188143,
           "reason": "non-canonical (heuristic / empirical-assignment)"
         },
         "composite_mass": {
@@ -176,15 +174,15 @@
         "prediction_type": "binding_energy",
         "layer": "L3-partial-shell:f=0.750 from A=4→8",
         "canonical_status": "heuristic",
-        "prediction_MeV_50dps": 51.33764713028001,
+        "prediction_MeV_50dps": 51.33767162782215,
         "reference_MeV_50dps": 39.245080699999995,
-        "err_MeV": 12.092566430280016,
-        "err_pct": 30.812948309926696,
-        "err_ppm": 308129.48309926694,
+        "err_MeV": 12.092590927822151,
+        "err_pct": 30.813010731870282,
+        "err_ppm": 308130.10731870285,
         "excised": {
           "excised_layer": "L3-partial-shell:f=0.750 from A=4→8",
           "excised_status": "heuristic",
-          "excised_prediction_MeV": 51.33764713028001,
+          "excised_prediction_MeV": 51.33767162782215,
           "reason": "non-canonical (heuristic / empirical-assignment)"
         },
         "composite_mass": {
@@ -417,9 +415,9 @@
       },
       {
         "path": "low-isotope-binding-sweep.witness.json",
-        "sha256": "e57e2ecbae62eb2e013be587da26f70244e1afaafec934fe0b2e7e04b3ea0fed",
-        "size_bytes": 7875,
-        "commitSha": null,
+        "sha256": "7917dee289469c3747e4cd19f634c01891534ee0236b942b4acbf07a60cf9433",
+        "size_bytes": 7924,
+        "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811",
         "scriptCommitSha": null,
         "computedAt": null
       },
