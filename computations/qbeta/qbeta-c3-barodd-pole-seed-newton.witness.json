@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-11T22:20:30.999859+00:00",
-  "commitSha": "d55672e1001879bcab589090a6350c78ea843d53",
+  "computedAt": "2026-07-11T23:05:08.112493+00:00",
+  "commitSha": "a7a0cc4dd3adeea25889856bb4d85591ef093b5a",
   "assertions": [
     {
       "name": "complete_convention_vol_cs",
@@ -18,7 +18,7 @@
       "expected": 1.0,
       "passed": true,
       "tolerance": 0.5,
-      "source": "real pole q0^{-1} seeds golden φ=(1+√5)/2, not the cusp"
+      "source": "≥1 real pole seed q0^{-k} reaches golden φ=(1+√5)/2, not the cusp"
     },
     {
       "name": "branch_bar_parity_swap",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 46,
+  "durationMs": 43,
   "computation": "qbeta-c3-barodd-pole-seed-newton",
   "scriptFile": "qbeta_c3_barodd_pole_seed_newton_probe.py",
-  "scriptHash": "cf6a2438a3d9",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "29c1f08cb134",
+  "scriptCommitSha": "a7a0cc4dd3adeea25889856bb4d85591ef093b5a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
