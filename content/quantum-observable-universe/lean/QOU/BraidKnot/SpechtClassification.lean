@@ -396,7 +396,62 @@ noncomputable def spechtRepOn {μ ν : YoungDiagram} (h : Specht.nOf μ = Specht
     Representation k (Perm (Fin (Specht.nOf μ))) (SpechtSubmodule (k := k) ν) :=
   (spechtRep (k := k) ν).comp (transportPermHom h)
 
-/-! ## 4. The classification theorems (stated, `sorry` + `-- Ref:`) -/
+/-! ## 3.5  Dominance (majorization) order on Young diagrams
+
+The reduction ingredient for §4's pairwise non-isomorphism: the majorization
+order `partitionDom` and its **antisymmetry** (proved sorry-free).  Antisymmetry
+is what turns "dominance both ways" into "equal shapes", factoring
+`specht_pairwise_noniso` into the single James cross-shape core
+`spechtIso_imp_dom_both` + this proved reduction.  Mathlib packages the
+containment order on `YoungDiagram` but not the dominance order. -/
+
+open scoped BigOperators in
+/-- **Dominance (majorization) order on Young diagrams**: `μ` dominates `ν`
+(`partitionDom μ ν`) iff every partial row-length sum of `μ` is at least the
+corresponding partial sum of `ν`. -/
+def partitionDom (μ ν : YoungDiagram) : Prop :=
+  ∀ i, (∑ r ∈ Finset.range i, ν.rowLen r) ≤ (∑ r ∈ Finset.range i, μ.rowLen r)
+
+/-- Dominance is reflexive. -/
+theorem partitionDom_refl (μ : YoungDiagram) : partitionDom μ μ := fun _ => le_refl _
+
+open scoped BigOperators in
+/-- **Antisymmetry of dominance (sorry-free).** If `μ` dominates `ν` and `ν`
+dominates `μ`, then `μ = ν`: equal partial sums for every `i` force equal
+row lengths (`Finset.sum_range_succ` + `omega`), and equal row lengths force
+equal cell sets (`YoungDiagram.ext` via `mem_iff_lt_rowLen`). -/
+theorem partitionDom_antisymm (μ ν : YoungDiagram)
+    (hμν : partitionDom μ ν) (hνμ : partitionDom ν μ) : μ = ν := by
+  have heq : ∀ i, (∑ r ∈ Finset.range i, μ.rowLen r) = (∑ r ∈ Finset.range i, ν.rowLen r) :=
+    fun i => le_antisymm (hνμ i) (hμν i)
+  apply YoungDiagram.ext
+  ext ⟨i, j⟩
+  have hrow : μ.rowLen i = ν.rowLen i := by
+    have h1 := heq (i + 1); have h2 := heq i
+    rw [Finset.sum_range_succ, Finset.sum_range_succ] at h1
+    omega
+  simp only [YoungDiagram.mem_cells, YoungDiagram.mem_iff_lt_rowLen, hrow]
+
+/-! ## 4. The classification theorems -/
+
+/-- **James cross-shape dominance core** (the genuine `S_n`-rep-theory gap for
+pairwise non-isomorphism).  A representation isomorphism `S^μ ≅ S^ν` (over the
+shared group via `h`) forces dominance both ways:
+`partitionDom μ ν ∧ partitionDom ν μ`.
+
+This is James's submodule / multiplicity theorem: a nonzero `S_n`-homomorphism
+`S^μ → M^ν` forces `μ ⊵ ν`, and an isomorphism supplies nonzero homs in both
+directions.  Mathlib does not package the cross-shape version (the within-shape
+bilinear-form / `κ_t` apparatus of `SpechtIrreducible` gives the *dichotomy*, not
+the cross-shape dominance bound), so it remains the single cited `sorry` here —
+but the antisymmetry reduction to `specht_pairwise_noniso` below is now
+sorry-free. `-- Ref: [james1984representation]`. -/
+theorem spechtIso_imp_dom_both {μ ν : YoungDiagram} (h : Specht.nOf μ = Specht.nOf ν)
+    (_hiso : IsRepIso (k := k) (spechtRep (k := k) μ) (spechtRepOn (k := k) h)) :
+    partitionDom μ ν ∧ partitionDom ν μ := by
+  -- Ref: [james1984representation] §II — the cross-shape dominance / multiplicity
+  -- theorem (Hom(S^μ, M^ν) ≠ 0 ⟹ μ ⊵ ν; an iso gives it both ways). Not in Mathlib.
+  sorry
 
 /-- **Pairwise non-isomorphism.**  Distinct shapes give non-isomorphic Specht
 modules: if `μ ≠ ν` (with the same number of cells, so they index the *same*
@@ -404,14 +459,17 @@ symmetric group), then `S^μ` and `S^ν` are not isomorphic as `S_n`-representat
 
 We state it via the intertwiner predicate over the shared carrier index `nOf μ`,
 using the hypothesis `h : nOf μ = nOf ν` to view `spechtRep ν` as a representation
-of `Perm (Fin (nOf μ))` (by transporting along `h`). -/
+of `Perm (Fin (nOf μ))` (by transporting along `h`).
+
+**Now sorry-free modulo the single James core** `spechtIso_imp_dom_both`: an
+isomorphism gives dominance both ways, and the proved `partitionDom_antisymm`
+turns that into `μ = ν`, contradicting `μ ≠ ν`. -/
 theorem specht_pairwise_noniso {μ ν : YoungDiagram} (h : Specht.nOf μ = Specht.nOf ν)
     (hμν : μ ≠ ν) :
     ¬ IsRepIso (k := k) (spechtRep (k := k) μ) (spechtRepOn (k := k) h) := by
-  -- Ref: [james1984representation] (Specht modules of distinct shapes are
-  -- pairwise non-isomorphic — via the James bilinear form / submodule theorem);
-  -- brick-3 target.
-  sorry
+  intro hiso
+  obtain ⟨hd1, hd2⟩ := spechtIso_imp_dom_both (k := k) h hiso
+  exact hμν (partitionDom_antisymm μ ν hd1 hd2)
 
 /-- **Completeness.**  Every simple `k[S_n]`-module is isomorphic to some Specht
 module.  Phrased: for any representation `ρ : Representation k (Perm (Fin n)) W`
