@@ -121,6 +121,35 @@ Habiro-dressed basis, not clean q-Hermite) and (ii) Option-1 of the
 `wₙ(K) =` hyperbolic link-volume of the n-body sub-cluster (a topological
 invariant) — both untested, both non-fit.
 
+## Part 4 — Frobenius-dual + na-Stokes as `R(q,x)`: refuted (scope-a), with a reason
+
+Owner steer: "the one path that could wire binding is a derived `R(q,x)` — use
+Frobenius dual, na-Stokes." The na-Stokes residues are the per-block quantum
+dimensions `dim_q(λ)`; the Frobenius pairing is `tr_M(β)=Σ_λ y_λ χ_λ(β)`, `y_λ`
+the Jones–Markov weights. Tested (no fit) against the `B_strong` weights
+`w=4.353,9.331,15.919` (ratios **2.144, 1.706**, decelerating). Compute:
+[`binding_wn_frobenius_dual_probe.py`](../../computations/binding_wn_frobenius_dual_probe.py),
+witness `binding-wn-frobenius-dual-refute.witness.json`.
+
+| construction | ratio 3/2 | ratio 4/3 | |
+|---|--:|--:|---|
+| `a_D` (na-Stokes mean) | 1.337 | 1.894 | accelerating |
+| `Σ dim_q²` (self-pairing) | 3.022 | 4.088 | accelerating (~`n!`) |
+| `Σ y_λ dim_q = tr_M(𝟙)` | 1.003 | 1.009 | ≡ 1 (Markov normalization) |
+| `Σ y_λ dim_q²` (Frobenius self-dual) | 1.574 | 1.573 | constant ratio |
+| `Σ y_λ` (total weight) | 0.719 | 0.706 | decreasing < 1 |
+
+**Refuted (scope-a), structural reason.** The canonical `y_λ` are *exactly* the
+weights that normalize `tr_M` into a trace, so `Σ y_λ dim_q = tr_M(𝟙) ≡ 1`
+identically and self-pairings give **constant** ratios. The Frobenius dual
+collapses the block structure into a normalized trace and **cannot** supply the
+extensive, *decelerating* weight the anchors need. The na-Stokes residues are the
+kernel `a_D`; their Frobenius dual is `tr_M`-normalization, not the weight.
+⇒ the weight must be **geometric** (hyperbolic link-volume; volumes grow
+sub-exponentially — the decelerating direction), not algebraic-dual. This is the
+forward (formalize-first) prune of the steered class; it does not exclude a
+geometric `R(q,x)`.
+
 ## Consequence for `conj:binding-manybody-eq-jet-filtration`
 
 **Not provable now** (recorded answer). The conjecture's three deep inputs remain
