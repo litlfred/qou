@@ -21,7 +21,9 @@ sum `Z(n) = Σ_λ W_λ`.
 The `W_λ` transfer-matrix / binding thread (sibling PR #3548) surfaced a quantity the
 existing gates do **not** constrain: the **multiplicity-weighted branched sum**
 
-$$w_{\mathrm{std}}(k) \;=\; \sum_{\lambda\vdash k}\; W_\lambda\;\cdot\;\operatorname{mult}_{(2,1)}(\lambda\!\downarrow\! H_3)\;=\;\mathbb{E}_{W}\!\big[f^{\lambda/(2,1)}\big],$$
+$$
+w_{\mathrm{std}}(k) \;=\; \sum_{\lambda\vdash k}\; W_\lambda\;\cdot\;\mathrm{mult}_{(2,1)}(\lambda\!\downarrow\! H_3)\;=\;\mathbb{E}_{W}\!\big[f^{\lambda/(2,1)}\big],
+$$
 
 the `W`-expected multiplicity of the standard `(2,1)` rep in the restriction
 `H_k ↓ H_3` (the connected binding channel). At `q=1` (`Σ W_λ = 1`) this is exactly the
