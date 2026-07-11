@@ -91,18 +91,22 @@ Per `AGENTS.md §3b-cond`, the conjecture is encoded as
 * a `class StaircaseEWResidual` whose single field bundles the family
   `∀ k ≥ 2, StaircaseEWSpectralContent k`.
 
-A canonical instance is provided **with `sorry`** as the formal record
-that the conjecture is open:
+Per AGENTS.md §3b-tax an open primary conjecture is represented by a
+content-bearing class with **no** instance.  This file therefore provides
+**no global instance** (see the "Open conjecture — hypothesis-only" section
+below); the illustrative snippet
 
   ```
-  instance : StaircaseEWResidual := ⟨fun _ _ => sorry⟩
+  instance : StaircaseEWResidual := ⟨fun _ _ => sorry⟩   -- illustrative only; NOT provided
   ```
 
-The single `sorry` IS the conjecture.  Downstream theorems may take
-`[StaircaseEWResidual]` as an instance hypothesis and carry the §3b-cond
-"conditional on `conj:staircase-ew-residual`" banner; once a real proof
-lands, the `sorry` is discharged here and every downstream conditional
-becomes unconditional automatically.
+shows what a `sorry`-record instance *would* look like, but a fabricated
+`sorry`/trivial instance is exactly what §3b-tax forbids on an open carrier.
+Downstream theorems instead take `[StaircaseEWResidual]` as an explicit
+instance hypothesis and carry the §3b-cond "conditional on
+`conj:staircase-ew-residual`" banner; once a real proof lands, a genuine
+instance is added here and every downstream conditional becomes
+unconditional automatically.
 
 Ref: [manuscript] §EW-residual, observed at q_0 to relative error
 1.30e-3 (k=3, top-two ratio against cot θ_W) and 1.42e-3 (k=4,
