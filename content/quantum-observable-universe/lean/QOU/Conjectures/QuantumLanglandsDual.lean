@@ -65,10 +65,10 @@ class QuantumLanglandsDual (R : Type*) [Field R] where
       invertible parameters: `dualParam (dualParam q) = q`. -/
   dualParam_involutive : ∀ q : R, q ≠ 0 → dualParam (dualParam q) = q
 
-instance : QuantumLanglandsDual R where
-  Hecke _ _ := Unit
-  dualParam q := q⁻¹
-  dualParam_eq _ := rfl
-  dualParam_involutive q _hq := inv_inv q
+-- No instance: this is an OPEN primary conjecture (AGENTS.md §3b-tax).
+-- The `Hecke ≡ Unit` model discharges `dualParam_eq`/`dualParam_involutive`
+-- (the latter is just `inv_inv`), but it carries neither the actual
+-- Iwahori–Hecke algebra nor the Langlands-dual functor — the research-
+-- grade content of the conjecture.  Honest open state ⇒ no instance.
 
 end QOU.Conjectures
