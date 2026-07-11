@@ -9,6 +9,14 @@
 [2026-06-26 q-involution/q-Hermite id](2026-06-26-binding-period-qinvolution-qhermite-identification.md),
 [2026-07-03 θ_λ Reeb/na-Stokes jet filtration](2026-07-03-theta-lambda-via-reeb-nastokes-jet-filtration.md)
 
+> **Division of labor with [#3534](https://github.com/litlfred/qou/pull/3534)
+> (parallel PR, same steer; owner directive "keep both, trim overlap").** #3534
+> owns the **numerical wₙ derive-or-refute** (constant-ratio kernel refutation +
+> Coulomb-corrected `B_strong` + witness). This PR (#3545) owns the **Lean
+> formalization** of the eigenfunction relation + the **adversarial scoping**
+> (the fork, the ring-vs-element distinction). Part 3 below is the *corrected
+> cross-check* that reconciles the two — not a competing full derivation.
+
 ## The question
 
 Does the na-Stokes binding period's **eigenfunction relation** inform the open
