@@ -213,6 +213,12 @@ export default chapter({
         // Keystone: 4₁ (Higgs) amphichiral ⇒ CS=0 ⇒ real complex volume;
         // the bare Higgs gives only the mass face, Q_β is the binding defect.
         "self-dual-higgs-real-volume",
+        // Cusp-shape bar-parity: Φ₆ modulus splits Vol⊕i·CS (barEven ω=1,
+        // barOdd ω²=−3); meridian holonomy is a boost (rapidity ln q₀); the
+        // per-operation tick is the Compton time, not the Planck time.
+        "cusp-shape-bar-parity",
+        "meridian-holonomy-boost",
+        "meridian-exceptional-divisor-note",
         "meson-em-sinh-closed-form",
         "meson-em-sinh-closed-form-proof",
         "meson-qcg-fusion-identity",
