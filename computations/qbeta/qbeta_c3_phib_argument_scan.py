@@ -56,7 +56,6 @@ for _p in (os.path.join(_ROOT, "computations"),
     if _p not in sys.path:
         sys.path.insert(0, _p)
 
-from phi_b_evaluator import phi_b_double_product  # noqa: E402
 from phi_b_substrate_regime import b_substrate  # noqa: E402
 
 
@@ -72,13 +71,17 @@ def log_phi_product(z, b, kmax):
     z = mp.mpmathify(z)
     two_pi_i = 2 * mp.pi * mp.mpc(0, 1)
     qq_abs = mp.fabs(mp.e ** (two_pi_i * b ** 2))
+    qt_abs = mp.fabs(mp.e ** (-two_pi_i / b ** 2))
     total = mp.mpc(0)
+    tol = mp.mpf(10) ** (-mp.mp.dps - 5)
     for k in range(kmax):
         kk = k + mp.mpf(1) / 2
         n = 1 + mp.e ** (two_pi_i * b ** 2 * kk + 2 * mp.pi * b * z)
         d = 1 + mp.e ** (-two_pi_i / b ** 2 * kk + 2 * mp.pi * z / b)
         total += mp.log(n) - mp.log(d)
-        if qq_abs ** (k + 1) < mp.mpf(10) ** (-mp.mp.dps - 5):
+        # BOTH tails must be spent (mirrors phi_b_double_product): for general
+        # b/z the q̃-half can be the limiting tail, not just the q-half.
+        if qq_abs ** (k + 1) < tol and qt_abs ** (k + 1) < tol:
             break
     return total
 
