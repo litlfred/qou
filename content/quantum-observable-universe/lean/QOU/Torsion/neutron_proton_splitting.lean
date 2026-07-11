@@ -25,6 +25,16 @@ the proton/neutron braid words at `q₀` — not yet in Lean.  The real
 proposition (framework formula + CODATA agreement) is stated faithfully and
 discharged by `sorry`.
 
+The **algebraic backbone** for `Φ_q` (finite `q`-Pochhammer product, cocycle
+identity, `q`-difference equation) now lives in
+`QOU.MathlibExt.QuantumDilogarithm`.  It does **not** yet supply the two
+`Φ` volumes below: those (`Φ(uud) ≈ -0.8785`, `Φ(udd) ≈ -1.2261`) are
+evaluations of the *analytic* `N → ∞` limit on specific braid words, and a
+corpus-grep (2026-07-11) found **no closed form** for them anywhere in the
+repository — so they stay honest opaque `NeutronProtonSplittingContext`
+fields (§3b-cond) rather than being wired to an un-derived formula
+(AGENTS.md anti-laundering rule).
+
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/neutron-proton-splitting.md
 -/
 
