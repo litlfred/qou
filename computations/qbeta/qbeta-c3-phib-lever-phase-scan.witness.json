@@ -1,0 +1,162 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-11T22:18:42.516984+00:00",
+  "commitSha": "8c43141ed1858e9d982b80e22b1f0aa300a86424",
+  "assertions": [
+    {
+      "name": "d1_direct_gate_scan_completed",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "scope-(a) if 0: this finite lever-class menu, as-is, does not reproduce S at both anchors"
+    },
+    {
+      "name": "d2_stability_measured",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 100.0,
+      "source": "measurement (informational): count of |U| laws with anchor-stable principal-branch kappa_req"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 26,
+  "computation": "qbeta-c3-phib-lever-phase-scan",
+  "scriptFile": "qbeta_c3_phib_lever_phase_scan.py",
+  "scriptHash": "eefd579d4962",
+  "scriptCommitSha": "8c43141ed1858e9d982b80e22b1f0aa300a86424",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Round-2 m-plane scan over the u_ladder^3-lever phase-law class (S_cand = (sqrt3/2)|U|^2 sin(2 kappa/u^3)): direct cross-anchor gate over canonical (|U|, kappa) pairs + required-kappa stability measurement per |U| law. NZ-leading tier; exploratory; no fit; no c_k wired.",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "D1_direct_gate": {
+      "gate": 0.0001,
+      "n_candidates": 84,
+      "n_pass": 0,
+      "top8": [
+        {
+          "U": "2t",
+          "kappa": "-hbar_q^2",
+          "err_muon": 0.46525045110704405,
+          "err_proton": 1.37136538320924,
+          "max_err": 1.37136538320924
+        },
+        {
+          "U": "h",
+          "kappa": "-hbar_q^2",
+          "err_muon": 0.4705755640089625,
+          "err_proton": 1.3727150242580506,
+          "max_err": 1.3727150242580506
+        },
+        {
+          "U": "2t",
+          "kappa": "+1",
+          "err_muon": 1.5400644052840993,
+          "err_proton": 1.3637614301495489,
+          "max_err": 1.5400644052840993
+        },
+        {
+          "U": "h",
+          "kappa": "+1",
+          "err_muon": 1.5492956802010003,
+          "err_proton": 1.365083436400808,
+          "max_err": 1.5492956802010003
+        },
+        {
+          "U": "2t",
+          "kappa": "+u^2",
+          "err_muon": 1.798043288069589,
+          "err_proton": 1.6865820292243234,
+          "max_err": 1.798043288069589
+        },
+        {
+          "U": "h",
+          "kappa": "+u^2",
+          "err_muon": 1.8082121273981613,
+          "err_proton": 1.6890772518054078,
+          "max_err": 1.8082121273981613
+        },
+        {
+          "U": "2t",
+          "kappa": "-u",
+          "err_muon": 2.0060525218783694,
+          "err_proton": 1.7305670219755975,
+          "max_err": 2.0060525218783694
+        },
+        {
+          "U": "h",
+          "kappa": "-u",
+          "err_muon": 2.016977322519792,
+          "err_proton": 1.7332220977751907,
+          "max_err": 2.016977322519792
+        }
+      ]
+    },
+    "D2_required_kappa": [
+      {
+        "U": "h",
+        "feasible": false
+      },
+      {
+        "U": "2t",
+        "feasible": false
+      },
+      {
+        "U": "3t",
+        "feasible": true,
+        "kappa_req_muon": "3.53298006446e-8",
+        "kappa_req_proton": "-1.49417316816e-7",
+        "rel_spread": 5.229214829672788,
+        "branch_spacing_pi_u3": "1.9410901e-6"
+      },
+      {
+        "U": "sqrt(t)",
+        "feasible": true,
+        "kappa_req_muon": "3.31684519115e-8",
+        "kappa_req_proton": "-1.39609625679e-7",
+        "rel_spread": 5.209108886104475,
+        "branch_spacing_pi_u3": "1.9410901e-6"
+      },
+      {
+        "U": "z_markov",
+        "feasible": true,
+        "kappa_req_muon": "1.38589898567e-8",
+        "kappa_req_proton": "-5.6777252169e-8",
+        "rel_spread": 5.096781421735942,
+        "branch_spacing_pi_u3": "1.9410901e-6"
+      },
+      {
+        "U": "1/2",
+        "feasible": true,
+        "kappa_req_muon": "1.38213123547e-8",
+        "kappa_req_proton": "-5.66212456549e-8",
+        "rel_spread": 5.096662039149299,
+        "branch_spacing_pi_u3": "1.9410901e-6"
+      },
+      {
+        "U": "2h",
+        "feasible": true,
+        "kappa_req_muon": "1.97714121824e-8",
+        "kappa_req_proton": "-8.14565505701e-8",
+        "rel_spread": 5.119915654906533,
+        "branch_spacing_pi_u3": "1.9410901e-6"
+      }
+    ],
+    "D2_note": "kappa_req is principal-branch only; the arcsin family is kappa_0 + k*pi*u^3. A stable kappa_req (spread < 1e-3) would be a candidate lead, not a derivation.",
+    "verdict": "Round-2 lever-class scan (NZ-leading tier): 84 zero-parameter (|U|, kappa/u^3) candidates -> 0 pass the 1e-4 cross-anchor gate. 2 canonical |U| laws are INFEASIBLE below the proton floor (notably h and 2t, each ~2% under it). Required-kappa inversion per feasible |U| law recorded; 0 law(s) show principal-branch kappa_req stable across anchors at 1e-3. Scope-(a): the lever CLASS remains the only rate-compatible family (round 1); this finite menu does not identify the member. No fit; nothing wired."
+  }
+}
