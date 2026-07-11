@@ -27,10 +27,19 @@ rule out the simple/canonical candidates and pin its structural home:
   transient "half-twist-class" label from the #3509 branch, already fixed there.)
 - **(B) Not a low-degree JM central element.** The centre of H_n(q) is the symmetric
   functions of the Jucys–Murphy elements, whose eigenvalue on `V_λ` is a symmetric
-  function of the content multiset `{q^{2c(box)}}`. Exact rational linear algebra
-  (pooled over λ⊢4..7) shows `n(λ)` is **not** an exact polynomial in the content
-  power sums `p_k = Σ_box c^k` (+ `|λ|`) up to degree 4. So `q^{2n(λ)}` is not a
-  canonical low-degree JM/framing central element.
+  function of the content multiset `{q^{2c(box)}}`. Exact rational linear algebra against
+  the **complete** symmetric-polynomial basis up to **weighted degree 6** — every monomial
+  `∏_k p_{μ_k}` for `μ ⊢ d`, `d ≤ 6` (so it includes `p_1³`, `p_1⁴`, `p_1²p_2`, …), pooled
+  over λ⊢4..8 (60 partitions ≫ #features) — shows `n(λ)` is **not** an exact polynomial in
+  the content power sums (+ `|λ|`). Existence of a solution is decided by the rank
+  criterion `rank(A) = rank([A|b])` (Rouché–Capelli). So `q^{2n(λ)}` is not a canonical
+  low-degree JM/framing central element.
+
+  > *Verification note (post-review, PR #3523).* An earlier version of this probe spanned
+  > only pairwise products `p_i·p_j` (i+j≤4), which omitted higher monomials (`p_1³`, `p_1⁴`,
+  > …) and so was a false-negative risk. Reviewers (Gemini + Copilot) flagged it; the check
+  > now uses the complete degree-≤6 basis and the conclusion is unchanged (still no exact
+  > polynomial).
 - **(C) It is the co-content / principal-specialization (pivotal) grading.** The
   statistic is `n(λ) = Σ_box row(box)` — the exponent in the principal specialization
   `s_λ(1,q,q²,…) = q^{n(λ)}·∏…`, a `q^{2ρ}`-type **pivotal grading** of the ribbon

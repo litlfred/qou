@@ -18,8 +18,9 @@ candidates and identifies the structural home:
   B. NOT a low-degree JM central element. The centre of H_n(q) is the symmetric
      functions of the Jucys-Murphy elements, whose eigenvalue on V_λ is a symmetric
      function of the content multiset {q^{2c(box)}}. Testing whether n(λ) is an EXACT
-     polynomial in the content power sums p_k = Σ_box c^k (+ |λ|, degree ≤ 4, pooled
-     over λ⊢4..7): it is NOT. So q^{2n(λ)} is not a canonical low-degree JM/framing
+     polynomial in the content power sums p_k = Σ_box c^k (+ |λ|) — against the COMPLETE
+     symmetric basis up to weighted degree 6 (every monomial Π_k p_{μ_k}, μ⊢d, d≤6),
+     pooled over λ⊢4..8: it is NOT. So q^{2n(λ)} is not a canonical low-degree JM/framing
      central element.
 
   C. It IS realizable (the content multiset determines λ, #3509), but the statistic
@@ -76,27 +77,26 @@ def main():
           "sign ≠ full twist q^{2(n(λ')-n(λ))} AND ≠ framing sqrt q^{n(λ')-n(λ)} at q=i")
 
     # B. NOT a low-degree JM content-symmetric central element: n(λ) is not an exact
-    #    polynomial in content power sums p_1..p_4 (+|λ|), pooled over λ⊢4..7.
-    lams = [l for N in (4, 5, 6, 7) for l in partitions(N)]
+    #    polynomial in the content power sums, tested against the COMPLETE symmetric basis
+    #    up to weighted degree 6 (every monomial Π_k p_{μ_k}, μ⊢d, d≤D — includes p_1^3,
+    #    p_1^4, p_1^2 p_2, …), pooled over λ⊢4..8 (60 partitions ≫ #features).
+    #    Existence of an exact solution ⇔ rank(A)=rank([A|b]) (Rouché–Capelli).
+    lams = [l for N in (4, 5, 6, 7, 8) for l in partitions(N)]
     found_D = None
-    for D in (1, 2, 3, 4):
-        feats = [lambda l: 1, lambda l: sum(l)]
-        for k in range(1, D + 1):
-            feats.append(lambda l, k=k: psum(l, k))
-        for i in range(1, D + 1):
-            for j in range(i, D + 1):
-                if i + j <= D:
-                    feats.append(lambda l, i=i, j=j: psum(l, i) * psum(l, j))
+    for D in range(1, 7):
+        feats = [lambda l: 1, lambda l: sum(l)]        # constant + |λ| (= p_0)
+        for d in range(1, D + 1):
+            for mu in partitions(d):                    # complete degree-d monomial basis
+                feats.append(lambda l, mu=mu: sp.Mul(*[psum(l, k) for k in mu]))
         A = sp.Matrix([[sp.Integer(f(l)) for f in feats] for l in lams])
         b = sp.Matrix([sp.Integer(n_lambda(l)) for l in lams])
-        if A.rank() == A.row_join(b).rank():
-            sol = A.solve_least_squares(b)
-            if all(r == 0 for r in (A * sol - b)):
-                found_D = D
-                break
+        if A.rank() == A.row_join(b).rank():            # exact solution exists
+            found_D = D
+            break
     check("not_a_low_degree_JM_central_element", found_D is None,
-          "n(λ) is NOT an exact polynomial in content power sums p_1..p_4 (+|λ|) over "
-          "λ⊢4..7 => q^{2n(λ)} is not a canonical low-degree JM/framing central element")
+          "n(λ) is NOT an exact polynomial in the content power sums (COMPLETE symmetric "
+          "basis, weighted degree ≤ 6, λ⊢4..8) => q^{2n(λ)} is not a canonical low-degree "
+          "JM/framing central element")
 
     # C. It IS realizable (content multiset determines λ) but via the CO-CONTENT
     #    statistic n(λ)=Σ row(box), the principal-specialization (pivotal) grading —
@@ -115,8 +115,9 @@ def main():
         "NARROWED (structural; nothing derived): the Δ_λ sign carrier q^{2n(λ)} (=(-1)^{n(λ)} "
         "at q=i, ζ₄) is a central character but (A) NOT a framing power — full twist and "
         "framing sqrt are graded by the content sum n(λ')-n(λ), not n(λ); (B) NOT a low-degree "
-        "JM content-symmetric central element — n(λ) is not an exact polynomial in content power "
-        "sums p_1..p_4; (C) it is the CO-CONTENT / principal-specialization grading n(λ)=Σ row "
+        "JM content-symmetric central element — n(λ) is not an exact polynomial in the content "
+        "power sums (complete symmetric basis, weighted degree ≤ 6, λ⊢4..8); (C) it is the "
+        "CO-CONTENT / principal-specialization grading n(λ)=Σ row "
         "(s_λ(1,q,q²,…)=q^{n(λ)}·…), a q^{2ρ}-type PIVOTAL grading of the ribbon category, "
         "distinct from the JM contents c=col-row. So the Δ_λ chirality sign lives in the ribbon "
         "PIVOTAL structure at ζ₄, not a braid central element. OPEN (not claimed): the exact "
