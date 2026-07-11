@@ -48,13 +48,15 @@ namespace QOU.BraidKnot.QZeroStokesRegionIdentification
 
     Made abstract here to keep the file lightweight; an actual instance
     can be supplied by importing Mathlib's LaurentPolynomial. -/
-class UniversalBase (R : Type*) [Mul R] [One R] where
+class UniversalBase (R : Type*) [CommRing R] where
   /-- Generator q as an element of R. -/
   q : R
   /-- Generator q⁻¹ as an element of R. -/
   q_inv : R
-  /-- The defining relation `q · q⁻¹ = 1` (`q_inv` is a right inverse of
-      `q`), witnessing that `q` is a unit in `R`. -/
+  /-- The defining relation `q · q⁻¹ = 1`.  Since `R` is commutative,
+      this genuinely witnesses that `q` is a unit
+      (`isUnit_of_mul_eq_one q q_inv q_inv_property : IsUnit q`), matching
+      the `ℤ[q, q⁻¹]` intent above. -/
   q_inv_property : q * q_inv = 1
 
 /-- An abstract knot complement as a Lean type. The Borromean rings
@@ -89,8 +91,9 @@ def borromean : KnotComplement where
     Mostow–Prasad uniqueness-up-to-conjugation claim. -/
 class MostowPrasadDistinguished (K : KnotComplement) where
   /-- The representation variety of `π₁(K)` into `PSL₂(ℂ)` (abstract:
-      the concrete construction is not in Mathlib). -/
-  Rep : Type
+      the concrete construction is not in Mathlib).  Universe-polymorphic
+      so a later concrete `Rep` in any universe fits. -/
+  Rep : Type*
   /-- Conjugacy equivalence on representations. -/
   Conjugate : Rep → Rep → Prop
   /-- The discrete-faithful predicate: `r` is the holonomy of a complete
@@ -135,7 +138,7 @@ class ReidTraceField (K : KnotComplement) [MostowPrasadDistinguished K] where
     `traceInvariant` is abstract). Instance inhabitation — exhibiting
     the invariant and proving the identity — is the OPEN WORK. -/
 class QZeroStokesIdentification (K : KnotComplement) (R : Type*)
-    [Mul R] [One R] [UniversalBase R] [MPD : MostowPrasadDistinguished K]
+    [CommRing R] [UniversalBase R] [MPD : MostowPrasadDistinguished K]
     [ReidTraceField K] where
   /-- The substrate parameter, as an element of R. For our universe,
       R = R (real) and q_0 ≈ 1.1097; categorically R could be C, F_p,
@@ -160,7 +163,7 @@ class QZeroStokesIdentification (K : KnotComplement) (R : Type*)
     This is FULLY VERIFIED BY LEAN — no sorrys at the conditional-result
     level. The conjectural content is contained in the class hypotheses. -/
 theorem q_0_well_defined
-    (K : KnotComplement) (R : Type*) [Mul R] [One R]
+    (K : KnotComplement) (R : Type*) [CommRing R]
     [UniversalBase R] [MostowPrasadDistinguished K] [ReidTraceField K]
     [inst : QZeroStokesIdentification K R] :
     ∃ q : R, q = inst.q_0 := by
@@ -170,7 +173,7 @@ theorem q_0_well_defined
     sufficient base ring. Demonstrates the Z[q, q⁻¹]-universal framing
     works through the class structure. -/
 theorem q_0_exists_in_universal_base
-    (K : KnotComplement) (R : Type*) [Mul R] [One R]
+    (K : KnotComplement) (R : Type*) [CommRing R]
     [UniversalBase R] [MostowPrasadDistinguished K] [ReidTraceField K]
     [QZeroStokesIdentification K R] :
     Nonempty R := by
@@ -197,7 +200,7 @@ identification (the OPEN GAP).
 --     rho_DF_isDF := …, rigid := … }   -- literature (Mostow–Prasad)
 -- instance : ReidTraceField borromean :=
 --   { trace_field_degree := 4, finite_positive := by omega }   -- SnapPy
--- instance (R) [Mul R] [One R] [UniversalBase R] :
+-- instance (R) [CommRing R] [UniversalBase R] :
 --     QZeroStokesIdentification borromean R :=
 --   { q_0 := …, traceInvariant := …, identification_witness := … }  -- OPEN GAP
 
