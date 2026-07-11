@@ -57,7 +57,7 @@
         "anchor_stable": false,
         "wired": false,
         "producer": "computations/qbeta/qbeta_1ppq_achieved.py",
-        "note": "CODATA-residual fit; separately flagged as a normalisation artifact (2026-06-04)."
+        "note": "CODATA-residual fit; separately flagged as a normalisation artifact (2026-06-04). Mechanically confirmed 2026-07-11 (P4 entropy audit, PR #3536, computations/probes/qbeta-ck-basis-constrained-pslq.witness.json): with c_3 extracted exactly against the same Q reference, c_4 reproduces as identically 0 — the quoted -0.972 is the truncation residual of a rounded c_3, zero independent empirical content. The extraction chain sigma_R/u^k leaves ZERO reliable digits at k>=4; kernel tests at k>=4 need canonical rungs (H_4 Hoefsmit c_4^even build, bean 8we6), never extracted ones."
       },
       {
         "rung": "5",
@@ -136,7 +136,9 @@
   },
   "production": {
     "verified_date": "2026-06-04",
-    "qbeta_wired_rungs": ["2"],
+    "qbeta_wired_rungs": [
+      "2"
+    ],
     "qbeta_note": "c_2 only (Q_N2-level); q_beta_predicted.py wires no c_3+; ~0.17% c_2-level truncation residual.",
     "mp_wired_rungs": [],
     "mp_note": "bare; ~2.89% categorical VolDensity gap.",

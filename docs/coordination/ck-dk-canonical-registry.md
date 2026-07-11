@@ -67,7 +67,7 @@ cross-referenced so they are never conflated again.
 |---|---|---|---|---|---|
 | **c_2** | **CANONICAL** (proved, Taylor-exact) | `−1` (Kashiwara f̃₁², bar-even) | exact | yes | `q-beta-c-2-eq-neg-one-structural.lean` (PR #1602) |
 | **c_3** | **EMPIRICAL — near-match, REFUTED as real-q fibre element** | candidates `J−ℏ²`, `[3]_q/25` 3-rung | ~2.6–3% (J−ℏ²); 2.65 ppm (`[3]_q/25` at proton **only**) | **NO** — swings −2.88% to muon; `dc_3/dq ≈ 4.6×10⁶` | falsification: [`2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md`](../audits/2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md) |
-| **c_4** | **EMPIRICAL — CODATA fit / artifact** | `−0.97157` (CODATA residual); conjecture `c_3·b⁴` | fit (0 by construction) | n/a | `qbeta_1ppq_achieved.py` (flagged normalisation artifact, commit `c108fa38`) |
+| **c_4** | **EMPIRICAL — CODATA fit / artifact (mechanically confirmed 2026-07-11)** | `−0.97157` (CODATA residual); conjecture `c_3·b⁴` | fit (0 by construction) | n/a | `qbeta_1ppq_achieved.py` (flagged normalisation artifact, commit `c108fa38`); P4 entropy audit `computations/probes/qbeta-ck-basis-constrained-pslq.witness.json` (PR #3536) |
 | **c_5** | **EMPIRICAL — outlier** | `−(b² + ½)` (averaging-resonance ½ fingerprint) | proton-anchor only | NO | `qbeta_decay_sdp_extended_ck.py` (Pell-Lucas NON-clean — structural outlier per the §averaging-resonance-rule) |
 | **c_6, c_7** | **EMPIRICAL — APPLIED in extraction (self-consistent)** | `c_3²·b² = 4·b²`, `c_3³ = −8` (Pell-Lucas-clean) | bias-corrected q₀ recovers them: **0.005% / 0.26%** | **cross-anchor tested 2026-06-04: recovered by #1824 bias-correction — but these forms are IMPOSED in the extraction, so this is self-consistency, not independent validation** | applied in `qbeta_decay_sdp_extended_ck.py`; probe `qbeta_c6_c10_crossanchor_falsification.py` (PR #1842) |
 | **c_8, c_9, c_10** | **EMPIRICAL — silver-anchored, PROVED at q = 1+√2; pattern BREAKS at c_8** | `4·b⁴ = 49/16`, `−8·b² = −7`, `4·b⁶ = 343/128` (Pell-Lucas-clean σ-action) | c_8 first FREE rung: closed +2.27 vs **bias-corrected −0.215 (wrong sign)**; c_9 −297, c_10 1.05×10⁸ | **cross-anchor tested 2026-06-04 (#1842, vs #1824 bias-corrected): anchor-stable (swing 2.4×10⁻⁷%) but the Pell-Lucas pattern does NOT survive into the free rungs → stays empirical** | sibling triple `qbeta-c8-c10-silver-rationals.{ts,md,lean}` (PR #1793), Lake mirror `QBetaCnAtSilver.lean`; probe `qbeta_c6_c10_crossanchor_falsification.py` |
@@ -109,7 +109,18 @@ cross-referenced so they are never conflated again.
   the "categorical derivation of `Q_A·cos α_eff`'s zero" direction
   (`RationalCoeffRecurrence`); it does **not** change any rung's empirical tier.
 - c_4 in the 1ppQ-achieved witness is a **CODATA-residual fit**, and separately
-  flagged as a **normalisation artifact**.
+  flagged as a **normalisation artifact**. **Mechanically confirmed 2026-07-11
+  (P4 entropy audit, PR #3536):** when c_3 is extracted exactly against the
+  same Q reference, c_4 reproduces as *identically 0* — the quoted `−0.972` is
+  purely the truncation residual of a *rounded* c_3, carrying zero independent
+  empirical content. More broadly, the extraction chain
+  `c_k = (Q_CODATA/Q_ladder − 1)/u^k` amplifies σ(Q_β) by `1/u^k`, leaving
+  empirical c_3 with ≤ ~2.2 reliable digits per anchor and **zero** digits at
+  k ≥ 4 — any "empirical c_k≥4" quoted from this chain is noise
+  (`qbeta-ck-basis-constrained-pslq.witness.json`; corroborated by the P5
+  q-holonomic probe's Y2 caveat). Kernel/recursion tests at k ≥ 4 need
+  canonical rungs (the H₄ Hoefsmit c₄^even build, bean `8we6`), never
+  extracted ones.
 - The `[3]_q/25` building block is **shared** with the m_μ V9 closure (a real,
   clean proton-anchor structural coincidence) but is **NOT** a universal real-q
   element (same falsification).
