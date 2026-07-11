@@ -161,9 +161,12 @@ theorem yekutieli_leading_coefficient (d : YekutieliObstructionData R)
   exact ⟨h_eq_c, h_eq_c.trans nrm.chebyshev_top_eq_one⟩
 
 /-- **Non-vanishing at `q ≠ 1`.**  Derived from the **sorry-free**
-    `yekutieliObstructionData_kappaRaw_ne_zero` via the Stokes identity —
-    it uses only `stokes_identity`, *not* the axiomatised normalisation to
-    `1`, so the non-vanishing rests on genuinely proved content. -/
+    `yekutieliObstructionData_kappaRaw_ne_zero` via `stokes_identity`.
+    Among the `YekutieliStokesNormalisation` fields the *proof* consumes
+    only `stokes_identity` — not the normalisation-to-`1`
+    (`raw_eq_chebyshev`, `chebyshev_top_eq_one`) — so the non-vanishing
+    rests on genuinely proved content; a full instance is still required
+    by the *signature* only to name the obstruction value `nrm.obstruction`. -/
 -- Ref: [manuscript] quantum-observable-universe/brings-surface/yekutieli-leading-coefficient.md
 theorem yekutieli_obstruction_ne_zero (d : YekutieliObstructionData R)
     (p : ℕ) (_hp_odd : Odd p) (hq_ne : d.q ≠ 1)
