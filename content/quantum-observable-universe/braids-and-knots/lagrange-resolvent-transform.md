@@ -7,4 +7,4 @@ The cyclic permutation $\sigma \colon x_j \mapsto x_{j+1}$ acts diagonally: $\si
 
 For $n = 5$, the three power-sum constraints transform into a linear projection $w_0 = 0$, a Hermitian quadric $w_1 w_4 + w_2 w_3 = 0$, and a symmetric cubic $w_1^2 w_3 + w_4^2 w_2 + w_2^2 w_1 + w_3^2 w_4 = 0$.
 
-**Mathematical Novelty:** Using a Discrete Fourier Transform to diagonalize a cyclic action is standard. However, explicitly formalizing the $n=5$ Bring-surface case with modular zeta-power reduction constitutes a non-trivial mathematical contribution.
+Using a discrete Fourier transform to diagonalise a cyclic action is standard; the framework-specific content is the $n=5$ Bring-surface case above.

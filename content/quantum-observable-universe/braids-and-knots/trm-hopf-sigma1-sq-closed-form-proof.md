@@ -42,7 +42,7 @@ are:
 
 See [Table 1](#tbl:trm-hopf-sigma1-sq-closed-form-table1-data).
 
-verified numerically via
+The coefficients are verified numerically via
 [`probe_F_n_categorical_derivation.py`](computations/probe_F_n_categorical_derivation.py)
 ([witness](computations/F-n-categorical-derivation-probe.witness.json),
 2/2 assertions pass).

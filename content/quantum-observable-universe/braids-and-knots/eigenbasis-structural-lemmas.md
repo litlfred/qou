@@ -4,4 +4,4 @@ The categorical-confinement proposition expresses every physical observable as a
 2. **Conjugation duality.** The bar involution $q \mapsto q^{-1}$ swaps the seminormal eigenvalues $q \leftrightarrow -q^{-1}$ and intertwines $V_\lambda$ with the conjugate channel $V_{\lambda'}$. Thus, $\chi_\lambda(q^{-1}) = \varepsilon_\lambda\,\chi_{\lambda'}(q)$ for some $\varepsilon_\lambda \in \{\pm 1\}$. This conjugation duality represents the matter/antimatter symmetry of the channel weights.
 3. **Framing rational.** Framing $\beta$ by $m$ full twists scales $\chi_\lambda$ by $\theta_\lambda^m$. The framing tower is given by the single-pole rational function $\chi_\lambda(\beta)/(1 - t\,\theta_\lambda)$, with its sole pole at $t = q^{-2c(\lambda)}$. This rational form determines how reframing redistributes weight across the tower.
 
-These structural properties strictly derive from categorical inputs, namely the ribbon eigenvalue and the seminormal bar–conjugate relation. They are fully formalised in Lean.
+These structural properties strictly derive from categorical inputs, namely the ribbon eigenvalue and the seminormal bar–conjugate relation.

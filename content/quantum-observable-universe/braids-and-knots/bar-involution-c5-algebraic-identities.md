@@ -6,4 +6,4 @@ c_5(q) \;=\; -\tfrac{3}{2} + \frac{1}{[2]_q^2} \;=\; -\tfrac{3}{2} + \frac{1}{h^
 $$
 Both terms are strictly even functions of $h$. The constant $-3/2$ corresponds to half the dimension of the non-sign Wedderburn blocks of the symmetric group $S_3$. This identifies the $-1/2$ fingerprint in the empirical decomposition as the bar-symmetric contribution from the non-sign sector at the classical limit.
 
-Testing the sequence $c_k(q)$ reveals that the $c_5$ outlier only appears at the silver ratio, not at the golden ratio, confirming it is an inert-prime fingerprint tied to the $\beta$-decay null. These bar-grading algebraic structures are fully verified in Lean.
+Testing the sequence $c_k(q)$ reveals that the $c_5$ outlier only appears at the silver ratio, not at the golden ratio, confirming it is an inert-prime fingerprint tied to the $\beta$-decay null.
