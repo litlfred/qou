@@ -1,0 +1,72 @@
+{
+  "schema": "witness/v1",
+  "computation": "wlambda-transfer-matrix-connected",
+  "engine": "python+mpmath",
+  "engineVersion": "3.11.15",
+  "scriptFile": "wlambda_transfer_matrix_connected_probe.py",
+  "commitSha": "cfe961d619bf8428c4b33d0b8f86dcac575e8597",
+  "scriptHash": "07e82fc3ab48",
+  "description": "W_lambda transfer-matrix reformulation of binding: validates the defect-cubic gate (n=7 Z-crossing), the deuteron single-bond bracket (#2528), and the connected-part mechanism (diagonal/disjoint=0, braided!=0). Fit-free; NOT a binding closure.",
+  "generated": "2026-07-11T00:00:00+00:00",
+  "assertions": [
+    {
+      "name": "defect_cubic_sign_flip_at_n7",
+      "passed": true,
+      "detail": "1-Z>0 for n=2..6 (True); 1-Z<0 appears by n=7..9 (True) -> matches Lean 144C(n)=-n(n-1)(2n-13)"
+    },
+    {
+      "name": "deuteron_fpn_bracketed_by_single_bond_Wlambda",
+      "passed": true,
+      "detail": "bare 0.395 < f_pn 0.588 < W_(2,1)=0.660674 (single bond UNDER-binds; gap 0.193 = connected term)"
+    },
+    {
+      "name": "disjoint_bonds_connected_zero",
+      "passed": true,
+      "detail": "tr(2 disjoint bonds) - tr(b)^2 = 0.0 (diagonal/commuting W_lambda transfer matrix cannot be extensive)"
+    },
+    {
+      "name": "braided_crossings_connected_nonzero",
+      "passed": true,
+      "detail": "tr(sigma^2) - tr(sigma)^2 = 0.855067 != 0 (the topological/extensive channel lives in the NON-commuting braid)"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "q0": "1.10997859555733471",
+    "Z_by_n": {
+      "2": 0.9945810900168891,
+      "3": 0.9874402270271896,
+      "4": 0.9821653199589623,
+      "5": 0.9822241444316945,
+      "6": 0.9910795216965164,
+      "7": 1.0124260905925089,
+      "8": 1.0505601587174787,
+      "9": 1.1109231599360003
+    },
+    "one_minus_Z_by_n": {
+      "2": 0.0054189099831108735,
+      "3": 0.012559772972810357,
+      "4": 0.017834680041037672,
+      "5": 0.017775855568305562,
+      "6": 0.008920478303483617,
+      "7": -0.012426090592508824,
+      "8": -0.050560158717478654,
+      "9": -0.11092315993600024
+    },
+    "W_21_n3": 0.6606737723480263,
+    "deuteron_bracket": [
+      0.395,
+      0.588,
+      0.6606737723480263
+    ],
+    "disjoint_connected": 0.0,
+    "braided_connected": 0.8550672738326165,
+    "verdict": "MECHANISM PINNED (no closure): the W_lambda transfer matrix's trace carries the Lean-proved defect-cubic (n=7 Z-crossing); the deuteron single-bond W_(2,1) brackets f_pn from above (gap = connected term); and the connected part is ZERO for diagonal/disjoint bonds but NONZERO for braided/repeated crossings -> extensivity must come from the non-commuting braid transfer matrix with W_lambda injected per block, NOT from the scalar weighted trace. Not a binding closure."
+  },
+  "context": {
+    "design_note": "docs/audits/2026-07-11-wlambda-transfer-matrix-connected-part.md",
+    "gates": "144C(n)=-n(n-1)(2n-13) (WLambdaDefectClosedForm.lean); f_pn in (0.395,0.661) (#2528)",
+    "walls": "single-trace W_lambda surface EXHAUSTED (#2584); W_lambda != production weight y_lambda",
+    "scope": "mechanism validation only; NOT a binding closure; no fit; nothing wired"
+  }
+}
