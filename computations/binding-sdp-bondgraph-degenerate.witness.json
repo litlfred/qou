@@ -1,0 +1,36 @@
+{
+  "engine": "scipy-lp",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-11T17:02:36.854519+00:00",
+  "commitSha": "6f806cbb630e6359a7c315bf94461c20f3c0f655",
+  "assertions": [
+    {
+      "name": "sdp_bondgraph_degenerate",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "H₃ operator-selection LP-dual degenerate (y0*=0, active={γ}) at every target; free nucleon W_free=W_atom. Bond graph not SDP-derivable."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 22,
+  "computation": "binding-sdp-bondgraph-degenerate",
+  "scriptFile": "binding_sdp_bondgraph_degenerate.py",
+  "scriptHash": "98b66acfb25b",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "EXPLORATORY: the SDP-active-set route to the nuclear bond graph is degenerate (H₃ operator-selection LP-dual: y0*=0, only identity active, at every demand). A free nucleon has W_free=W_atom (no binding constraint). Neither the ad-hoc chain (k<A−1) nor the SDP derives the bond graph; coordination M_n(K) is an open geometric input (s5-so3). Corpus: he3_pairknot_composite_lp_probe + 2026-06-18 audit."
+}
