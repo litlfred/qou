@@ -764,3 +764,19 @@ the Δ_λ chirality sign located at **q=i (ζ₄, non-semisimple H₅)**:
 the Q_β f-map (Arm 2). Coordinated on #3429 (intent comment); no file overlap.
 Open: exact chiral operator realizing `q^{2n(λ)}`; magnitude `|Δ_λ|=dim` (Track A).
 Audit: [`2026-07-11-gemini-session-c3-overclaim-continuum-and-lean-audit.md`](../audits/2026-07-11-gemini-session-c3-overclaim-continuum-and-lean-audit.md).
+
+**2026-07-11 (#3556 merged, #3563) — KC17 parity-descent dichotomy + ζ₄ ↔ odd-carrier bridge (Lean).**
+Formalized *why* the bar-odd c_k channel is archimedean, as sorry-free Lean
+(lean-direct EXIT 0). #3556 (merged): `uside_parity_descent_iff_zeta4` — the
+u-side cyclotomic re-basing transports the fibre bar-parity to the c_k rungs iff
+`q²=−1` (q-side `(−1)^k` vs u-side `(q²)^k` twists agree only there); over ℝ,
+`uside_parity_never_descends_real` (never, `q²≥0`). #3563: `descent_iff_order_four`
+— that descent point **is a primitive 4th root ζ₄** (`q²=−1 ↔ q⁴=1 ∧ q²≠1`), plus
+the formal composed bridge `uside_parity_descent_iff_order_four`. This is the SAME
+ζ₄ fibre point the #3509 entry above located for Δ_λ (`q^{2n(λ)}|_{q=i}`) and #3429
+formalizes for the f-map — now the Q_β-side parity descent is pinned to it too.
+Net (with merged #3534, `S=Q_β/E₀` irreducible archimedean): the odd channel
+connects to the c_k parity only at ζ₄, never on the real substrate axis → S is
+irreducibly archimedean, corroborating the Φ_b-at-real-q₀ route (#3544/#3562/#3536).
+Coordinated: intent on #3560 (ζ₄ swap sibling), support note on #3562 (Φ_b).
+No c_k value; wires nothing; no tier change.
