@@ -833,3 +833,14 @@ m-deformed gluing system (the m(q₀) assignment), scope-(a) throughout.
 Coordinated: intent+results on #3573, #3600; earlier on #3543 (merged).
 Open: Multipliable discharge (LogBounds cone building); m(q₀) law itself.
 No c_k value; wires nothing; no tier change.
+
+- **C19 (#3573, pole-seed Newton — the phase is a BRANCH SELECTOR).** Seeding
+  Thurston's figure-8 gluing Newton with the *real* substrate pole `q₀^{-k}`
+  flows to the **degenerate golden branch** `z²−z−1=0` (`φ=1.618`, Vol=0), never
+  the hyperbolic cusp `z²−z+1=0`. The two branches swap bar-parity roles via the
+  discriminant flip `−3 ↔ +5` (`goldenShape_barEven_sq=5`, Lean-proved), so
+  CS = bar-odd `S` turns on only under complexification — the phase `φ(q₀)` *is*
+  the branch selector (= open `conj:agde`). Independent quantitative confirm of
+  the geometry-side negative (#`1a4894b8`): full Rogers-dilog CS at substrate
+  scale `~1.7e-5`, **~2350× below** `|S|` — the naive 4₁ CS deformation is orders
+  too small, so `Φ_b` (not pure-4₁ geometry) is the live `S` carrier. No c_k wired.
