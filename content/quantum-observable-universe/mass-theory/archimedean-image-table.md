@@ -1,5 +1,5 @@
 The fibre functor $\tau \colon \mathbf{C} \to \mathbf{Arch}$, followed by
-the archimedean evaluation $\pi_\infty \colon \mathbf{Arch} \to \mathbb{R}$
+the archimedean evaluation $\pi_\infty \colon \mathrm{Obj}(\mathbf{Arch}) \to \mathbb{R}$
 ([def:archimedean-realization-functor](#def:archimedean-realization-functor)),
 maps each algebraic structure on the categorical side to a concrete
 real-valued object at the substrate parameter $q_0$. (Per the notation
