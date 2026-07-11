@@ -12,9 +12,7 @@ for all $x \in H_n(R, q)$, $n \geq 1$, $z = 1/(q^{1/2} + q^{-1/2})$.
 The Markov property *is* the locality statement. $\square$ for (1).
 
 **(2) GS non-locality.** Part (2) is a structural observation about
-the Gröbner–Shirshov reduction algorithm on the Hecke algebra
-(established QOU infrastructure, e.g.
-`QOU.Hecke.MarkovTrace`, `QOU.Archimedean.HeckeRep`). The algorithm
+the Gröbner–Shirshov reduction algorithm on the Hecke algebra. The algorithm
 applies three rewriting rules:
 
 - *Hecke quadratic relation:*

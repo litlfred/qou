@@ -19,4 +19,4 @@ given on the Artin generators by
 
 The braid relation $\rho_n(\sigma_i)\rho_n(\sigma_{i+1})\rho_n(\sigma_i) = \rho_n(\sigma_{i+1})\rho_n(\sigma_i)\rho_n(\sigma_{i+1})$ is mathematically equivalent to the Yang--Baxter equation for the braiding $c_{V,V}$.
 
-**Mathematical Novelty:** The braid-group action is standard (e.g., Kassel Thm XIII.1.3). However, its complete categorical Lean formalization in a generic braided monoidal category, achieved via an explicit hexagon and naturality chase, represents a non-trivial engineering contribution to formal verification.
+The braid-group action itself is standard (e.g., Kassel, Theorem XIII.1.3).

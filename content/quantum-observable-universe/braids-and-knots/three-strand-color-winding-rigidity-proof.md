@@ -35,8 +35,4 @@ $$
 Neither the trace nor the determinant identity involves $q$ beyond the
 nonvanishing conditions, so the conclusion holds for every $q$ with
 $q^4 \neq 1$: the eigenvalues of $M$ are the primitive cube roots of unity
-at every $q$ — the color winding is rigid. The Lean formalization
-(`threeStrand_cubes_to_one`, via `M2.cube_of_trace_det`) carries the
-argument over a generic field with $\beta$ a constrained variable, the
-Cayley–Hamilton steps discharged by `linear_combination` with the
-trace/determinant hypotheses as the combination generators.
+at every $q$ — the color winding is rigid.

@@ -4,8 +4,6 @@ $$
   \qquad
   1 - b^2 = \frac{1}{[2]_q^2}.
 $$
-**Mathematical Novelty:** Reinterpreting the rational relation $1-b^2 = 1/[2]_q^2$ as a discrete geometric de-entanglement fraction for the pion mass.
-
 The pion decay $\pi \to \mu + \nu$ de-entangles the meson into $V_{(2)} \oplus V_{(1,1)}$. It releases a fraction $1 - b^2 = 1/[2]_q^2$ of the pion's rest energy:
 $$
   E_{\mathrm{bind}} = \frac{m_\pi}{[2]_q^2}.

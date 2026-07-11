@@ -10,4 +10,4 @@ $$
 $$
 The bare Higgs knot contributes only the real volume (mass) face. Its imaginary (decay) face vanishes, proving that $\mathfrak{Q}_\beta$ is not a property of the lone Higgs knot.
 
-For the amphichiral $4_1$, both archimedean saddles (hyperbolic and torus) collapse onto the real axis. This self-duality is an algebraic identity over any commutative ring with a bar-involution and is formalized sorry-free.
+For the amphichiral $4_1$, both archimedean saddles (hyperbolic and torus) collapse onto the real axis. This self-duality is an algebraic identity over any commutative ring with a bar-involution.

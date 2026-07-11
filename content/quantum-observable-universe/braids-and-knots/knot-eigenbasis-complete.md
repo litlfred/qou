@@ -15,4 +15,4 @@ Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with $\mathbf{C} = 
 
 3. **Algebraic spanning.** The physical state space is the algebraic direct limit $V_{\mathrm{phys}} := \varinjlim V^{\otimes n}$ under inclusions induced by the unit $\eta \colon \mathbf{1} \to V$. Because each $V^{\otimes n}$ is completely decomposed, the set of irreducible summands—labelled by knot types—spans $V_{\mathrm{phys}}$ without requiring metric completion.
 
-**Mathematical Novelty:** The synthesis that knot types form a complete eigenbasis for $\varinjlim V^{\otimes n}$ conceptually replaces Feynman's continuum integral. The accompanying Lean formalization achieves a rigorous conditional proof over bundled standard results.
+The synthesis that knot types form a complete eigenbasis for $\varinjlim V^{\otimes n}$ conceptually replaces Feynman's continuum integral.

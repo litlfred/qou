@@ -27,21 +27,3 @@ The proof splits into two short verifiable observations:
 Composing (1) and (2): $\widehat{S_n^{\mathrm{ab}}} \cong
 \widehat{\mathbb{Z}/2} \cong \mathbb{Z}/2 \cong S_n^{\mathrm{ab}}$,
 canonically. ∎
-
-## Lean closure
-
-The structural content is captured by
-[`pontryagin_dual_coxeter_character_structural`](pontryagin-dual-coxeter-character.lean)
-as a sorry-free Mathlib theorem, conjoining:
-
-- `zmodTwo_pontryagin_self_dual_via_value_at_one` — every character
-  $\mathbb{Z}/2 \to \mathbb{Z}/2$ is determined by its value at 1
-  (proven by `fin_cases`).
-- `signHom_surjective_witness` — `Equiv.swap 0 1 ∈ Equiv.Perm (Fin n)`
-  has sign $-1$ for `n ≥ 2`.
-
-A backward-compatible `class PontryaginDualCoxeterCharacter` is
-retained with a default instance backed by the structural theorem,
-so downstream blocks that previously used it as a §3b-cond
-hypothesis continue to compile. New downstream code should cite
-`pontryagin_dual_coxeter_character_structural` directly.

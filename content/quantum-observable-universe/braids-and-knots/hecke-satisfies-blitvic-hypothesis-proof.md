@@ -13,7 +13,7 @@ $\tilde\sigma_{i_1} \tilde\sigma_{i_2} \cdots \tilde\sigma_{i_k}$
 via the Hecke relation leaves at least one unmatched single
 $\tilde\sigma_i$ factor; by Markov property applied at that factor,
 $\mathrm{tr}_M(x \cdot \tilde\sigma_i) = \mathrm{tr}_M(x \cdot \sigma_i)
-- z \mathrm{tr}_M(x) = z \mathrm{tr}_M(x) - z \mathrm{tr}_M(x) = 0$,
+- z \mathrm{tr}_M(x) = z \mathrm{tr}_M(x) - z \mathrm{tr}_M(x) = 0$.
 The entire word vanishes under $\mathrm{tr}_M$.
 
 **Even length reduces to pair-partitions.** For $k$ even, proceed
