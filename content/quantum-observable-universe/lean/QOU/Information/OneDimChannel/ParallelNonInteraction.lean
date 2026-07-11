@@ -15,9 +15,9 @@ class SplitLinkTrace (M : Type*) (R : Type*) [CommRing R] where
 /-- **Parallel fibres are non-interacting.**
     The Markov trace is multiplicative over split links, so the
     transmitted datum of the joint channel factorizes. -/
-theorem parallel_noninteraction [SplitLinkTrace M R] (F_A F_B : M) :
-    SplitLinkTrace.tr_M (SplitLinkTrace.parallel F_A F_B) =
-    SplitLinkTrace.tr_M F_A * SplitLinkTrace.tr_M F_B := by
-  exact SplitLinkTrace.multiplicative F_A F_B
+theorem parallel_noninteraction [inst : SplitLinkTrace M R] (F_A F_B : M) :
+    inst.tr_M (inst.parallel F_A F_B) =
+    inst.tr_M F_A * inst.tr_M F_B :=
+  inst.multiplicative F_A F_B
 
 end QOU.Information.OneDimChannel
