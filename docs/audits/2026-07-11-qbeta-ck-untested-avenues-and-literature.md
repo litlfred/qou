@@ -334,8 +334,15 @@ the **substrate regime** (real q₀ > 1 ⇒ arg b = −π/4, b² ∈ iℝ) as OP
 implements the |q| = 1 native regime and the Im b² > 0 double-product regime,
 noting the modular dual is negligible (|q̃| ≈ 1e-165) at substrate q₀. The
 state-integral comparison of §3.B therefore proceeds by **extending the
-sibling's module** (coordinate on the `qou-9lot` thread), not by a parallel
-implementation. No files were written by this probe.
+sibling's module**, not by a parallel implementation. No files were written
+by this probe.
+
+> **Update (same day):** the gap is already being closed by the sibling's
+> [PR #3540](https://github.com/litlfred/qou/pull/3540)
+> (`phi_b_substrate_regime.py`, 10/10 validation battery; b-map pinned
+> `b = √(ln q₀/2π)·e^{+iπ/4}` ⇒ `q = 1/q₀`; 60-readout argument scan
+> scope-(a) negative; well-posed un-levered target `r = S·u³`,
+> `dr/dq ≈ 2.37`). §3.B coordination continues on that PR.
 
 ## Appendix A — P6c executed: Galois-descent / GSWZ Frobenius-gluing scoping (U3)
 
