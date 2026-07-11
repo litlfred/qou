@@ -62,10 +62,20 @@ the crude "one O(1) per nucleus" resolution instead of the b₃/b₄ cumulant re
 peaks at the 4-body α) and adds nothing the cumulant line hasn't already quantified — its only
 value is to confirm, from the #3569 Δ_λ side, that the gap is a *term*, not a *power/coefficient*.
 
-Deriving the residual is therefore the **Subgoal-1 closure path already named** in
-[`docs/precision-goals.md`](../precision-goals.md) ("operator-valued branching combiner"),
-concretely the **[1⁴] Slater↔trace dictionary** of the b₄ deficit — not a new free parameter.
-Fitting `[3–9]` to four nuclei would be the **seventh ansatz** the Δ_λ gate forbids.
+The definitive statement is already in
+[`docs/audits/2026-07-05-delta-lambda-gate-status.md`](2026-07-05-delta-lambda-gate-status.md):
+the **×5.10 ⁴He magnitude gap is a missing ≥4-body, ⁴He-LOCAL term — "not a weight, not
+sign-fixable."** Two points from that audit that this residual must respect:
+
+- The ⁴He peak is **not** `∝ C(4,A)` (which peaks at A=2). The **Wigner SU(4) `[1^A]`
+  supermultiplet gate** (`QOU.MassTheory.SU4SupermultipletGate`, **sorry-free**: `dim[1^A]=C(4,A)`,
+  `=0` iff `A>4`) supplies the **A>4 *cutoff*** — it turns the term *off* above the closed α
+  shell — while the peak *at* ⁴He is the α being maximally bound (measured super-pairwise excess
+  2.093× at ⁴He, 0.944× at ⁶Li). My residual's ⁴He maximum is the per-isotope echo of that
+  measured locality, **not** an independent claim that the enhancement scales as `C(4,A)`.
+- The gap is closed only by the **connected `[1⁴]` ≥4-body magnitude term** (Option-E PROBE 2)
+  or the geometric `W_λ` build — both **research-level and gated**, not a fit. Fitting `[3–9]`
+  to four nuclei would be the **seventh ansatz** the Δ_λ gate forbids.
 
 ## Updated picture
 
@@ -73,6 +83,17 @@ Fitting `[3–9]` to four nuclei would be the **seventh ansatz** the Δ_λ gate 
 power A-selected). The per-isotope binding formula `B(K) = m_e·Σ_λ y_λ χ^λ Δ_λ` is a
 **single-trace (≈2-body)** object; closing the binding requires the **many-body combiner**, not
 an O(1) rescaling of `Δ_λ`. **Nothing wired.**
+
+## Honest status of this thread
+
+This residual analysis **re-derives, at coarse per-isotope resolution, what the corpus already
+establishes** (the ×5.10 ⁴He-local ≥4-body gap, the b₃/b₄ cumulant deficit, the SU(4) `[1⁴]`
+gate + measured locality). Its contribution is narrow: it confirms **from the #3569 `Δ_λ` side**
+that the #3569 residual is that same missing term — a *term*, not a coefficient — so the
+`Δ_λ = sgn·dim` result is complete as a per-partition object and needs no O(1) fudge. The genuine
+open problem is unchanged and **research-level**: the connected `[1⁴]` PROBE 2 magnitude leg (its
+witness `verdict` is still `None`) or the geometric `W_λ` build. No new probe is warranted here —
+that would re-walk anchored ground.
 
 ## Cross-references
 
