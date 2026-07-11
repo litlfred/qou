@@ -862,3 +862,9 @@ field ℚ(√−3)): same 4₁ ℚ(√−3) home, cusp-shape side ⊕ saddle-exp
 wired. Coordinated on #3573 (intent) + #3579 (link). Owner ruling #3607
 (Subgoal-2 open-for-all) relaxes the deferred observable closure to in-scope
 (anti-fit still binds). No c_k value; wires nothing; no tier change.
+**Currency (Copilot #3606):** the two fields are now certified **distinct** —
+the 4₁ *trace* field ℚ(√−3) is imaginary quadratic (cusp/CS side, #3573/#3579),
+the *saddle* data field ℚ(√3) is totally real (even-Laplace side, this PR); both
+embed in ℚ(ζ₁₂) and √−3 = i·√3 relates the generators, but they are not equal.
+The earlier "same ℚ(√−3) home" phrasing is refined accordingly — the two channels
+share the *ambient* ℚ(ζ₁₂), each realising its own real/imaginary quadratic subfield.
