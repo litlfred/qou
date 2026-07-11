@@ -1,0 +1,75 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-11T18:48:53.048367+00:00",
+  "commitSha": "5d644a9ed7f509ec3e49de6dd2ab0d66b8674900",
+  "assertions": [
+    {
+      "name": "kashaev_converges_to_vol_4_1",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "(2π/N)ln⟨4₁⟩_N − N^{3/2} corr → Vol(4₁)=2.0298832 (volume conjecture, Andersen–Hansen)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "qbeta-c3-kashaev-invariant-grounding",
+  "scriptFile": "qbeta_c3_kashaev_invariant_grounding.py",
+  "scriptHash": "d5dca5d4f0d0",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Grounds S=Im 𝔙 in the Kashaev invariant ⟨4₁⟩_N (Habiro sum, q=e^{2πi/N}). Volume conjecture for 4₁: (2π/N)ln⟨4₁⟩_N → Vol(4₁)=2.0298832 with the N^{3/2} correction. ⟨4₁⟩_N is REAL ⇒ CS(4₁)=0 (amphichiral) ⇒ the c₃ bar-odd S is the substrate-deformation phase, NOT the knot's own CS (matches Im 𝔙=0 at the complete structure). Scope-(a); C14; no c_k wired; no fit. Confirms the wall: closing S needs the q₀→m map (open volume conj).",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "volume_conjecture_4_1": [
+      {
+        "N": 40,
+        "raw": "2.85816821563",
+        "corrected": "1.98899647116",
+        "err_vs_Vol": "-0.0408867"
+      },
+      {
+        "N": 80,
+        "raw": "2.52511086864",
+        "corrected": "2.00886551802",
+        "err_vs_Vol": "-0.0210177"
+      },
+      {
+        "N": 160,
+        "raw": "2.31818719932",
+        "corrected": "2.01923478482",
+        "err_vs_Vol": "-0.0106484"
+      },
+      {
+        "N": 320,
+        "raw": "2.1944156373",
+        "corrected": "2.02452456045",
+        "err_vs_Vol": "-0.00535865"
+      },
+      {
+        "N": 640,
+        "raw": "2.12234830501",
+        "corrected": "2.02719533179",
+        "err_vs_Vol": "-0.00268788"
+      }
+    ],
+    "cs_4_1_zero": {
+      "reason": "Kashaev invariant is a real sum of |.|^2",
+      "consequence": "S is substrate-deformation phase, not knot CS"
+    }
+  }
+}
