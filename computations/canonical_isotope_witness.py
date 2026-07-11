@@ -278,9 +278,16 @@ def assemble_row(
         e_coulomb = coulomb_energy_mev(Z, A)
         
         l4_pred = b_strong - e_coulomb
-        
+
+        # HONEST SCOPE (re-scoped 2026-07-11): this is an A→∞ statistical
+        # EXTRAPOLATION (q-CLT colour-weighted − Coulomb), NOT a canonical
+        # closed-form derivation.  On the AME range it under-binds heavy
+        # nuclei by ~72–89% (e.g. the Fe isotopes capture only ~11–28% of
+        # the actual binding).  It therefore ships as an ASYMPTOTIC
+        # APPROXIMATION, not "canonical-recursive".  The categorical
+        # closed form for A>40 is OPEN — do not relabel this canonical.
         canonical_candidates.append(
-            (l4_pred, "L4-qclt-colour-weighted", "canonical-recursive")
+            (l4_pred, "L4-qclt-colour-weighted", "asymptotic-approximation")
         )
 
     # Non-canonical candidates (recorded as excised, never shipped):
@@ -338,6 +345,7 @@ def assemble_row(
             "canonical-substrate",
             "canonical-with-empirical-assignment",
             "canonical-recursive",
+            "asymptotic-approximation",  # L4 A>40 q-CLT extrapolation (approx, not canonical)
         )
     ):
         m_composite_MeV = N * m_n_borr + Z * m_p_borr + Z * float(M_E_MEV) - b_pred

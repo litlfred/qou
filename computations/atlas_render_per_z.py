@@ -98,6 +98,7 @@ _STATUS_BADGES = {
     "canonical-substrate": "🟢 substrate",
     "canonical-with-empirical-assignment": "🟡 +empirical-(K,ρ)",
     "canonical-recursive": "🟢 recursive",
+    "asymptotic-approximation": "🟡 asymptotic (approx, A>40)",
     "heuristic": "🟠 heuristic",
     "pending": "⚪ pending",
 }
