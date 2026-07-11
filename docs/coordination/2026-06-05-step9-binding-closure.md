@@ -296,3 +296,17 @@ probe `delta_lambda_z_coefficient_and_slope.py`). Audit
 - **Open → #3548/#3534:** the ε magnitudes (f_αα, E₀) + α-geometry remain open;
   ε-magnitude derivation is #3548 connected-tr_M / #3534 linked-cluster — not
   attempted here (uses #2089 f_bond, no new fit).
+
+## 2026-07-11 (cont.4) — mirror split is Coulomb; #2089 kernel over-breaks charge symmetry 3× (PR #3564)
+
+- **A=3 mirror split diagnosed as COULOMB (scope-(a)):** AME B(³H)−B(³He)=0.764 MeV
+  = pp Coulomb displacement e²/(4πε₀r) at r≈1.9 fm (0.758 MeV); strong CSB residual
+  ≈+0.006 MeV (charge symmetry holds ~1%; consistent with #3534's 2.73% Coulomb-
+  corrected agreement). The #2089 log-trace kernel's pure-strong split
+  E₀(ε_nn−ε_pp)=2.27 MeV is 3.0× the total / ~386× the strong residual — it
+  OVER-BREAKS charge symmetry (f_pp=0.499 vs f_nn=0.290).
+- **Fix direction:** charge-symmetric strong bond (f_pp≈f_nn) + separate Coulomb
+  (Z(Z−1)/2 pairs). BONUS: collapses the 1.78× nucleon ε-spread ⇒ restores the
+  equal-weight limit ⇒ coordination-number counting valid at nucleon level (#3557).
+- **Two framings (owner call):** (A) spurious strong CSB vs (B) categorical EM
+  overshoots Coulomb 3×. Not decided. Kernel re-derivation = #3548/#3534 scope.
