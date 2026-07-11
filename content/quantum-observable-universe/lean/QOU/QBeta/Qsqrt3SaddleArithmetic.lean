@@ -33,20 +33,29 @@ This file certifies that arithmetic, sorry-free:
   `2G`), i.e. `(g₂, g₃, g₄) = (−2√3π, −8π², −16√3π³)`, equals
   **`√3·π/54 ∈ ℚ(√3)·π`** — an exact arithmetic object, replacing the
   entropy-blocked numerical PSLQ of #3571.
+* `ohtsukiKappa1` / `ohtsukiKappa1_eq_eleven_halves_b1` — the observable leading
+  coefficient `κ₁ = 11·√3·π/108 = (11/2)·b₁` (numerically identified; Lean proves
+  the `(11/2)` algebra), also in `ℚ(√3)·π` (`ohtsukiKappa1_mem_qsqrt3`).
 
 ## Honest scope (anti-laundering): arithmetic *home*, NOT a closed action value
 
 `b₁` is the **naive integral-Laplace** coefficient. It does **not** equal the
 *observable* action coefficient `c₁ ≈ 0.554` (numerically fitted in #3571):
 `b₁ = √3π/54 ≈ 0.101` (`laplaceB1_at_saddle`), a rational multiple of `√3·π`
-(`laplaceB1_saddle_mem_qsqrt3`). The observable needs the full state-integral
-normalisation (the `N^{3/2}` power, Euler–Maclaurin sum-vs-integral and boundary
-terms) absent from this naive saddle — that is the research-grade part, and the
-observable's *exact* form is unknown, so no `b₁ = c₁` claim is made. (A numeric
-`b₁ < ½ < c₁` inequality would need π-bounds from `…Trigonometric.Bounds`, which
-is outside this file's cached dependency surface; the value-gap is recorded here
-rather than lemma-ised.) This file proves the `ℚ(√3)` arithmetic home of the even
-channel; it launders **no** action value.
+(`laplaceB1_saddle_mem_qsqrt3`). The observable adds the Euler–Maclaurin
+sum-vs-integral correction of the discrete Kashaev *sum*: the leading observable
+coefficient `κ₁ = [1/N] log J_N(4₁)` is (numerically, `qbeta_ohtsuki_kappa1_extract.py`,
+≈23-digit + 33-digit PSLQ) the **exact** element `κ₁ = 11·√3·π/108 = (11/2)·b₁`
+(`ohtsukiKappa1`, `ohtsukiKappa1_eq_eleven_halves_b1`) — the sum-correction is
+exactly the factor `11/2` (Ohtsuki's figure-eight 2-loop numerator `11`,
+`κ_1^Oht = (11/72)/√−3`). So both `b₁` and `κ₁` live in `ℚ(√3)·π`
+(`…_mem_qsqrt3`); the observable's leading coefficient is now known exactly, and
+`κ₁ ≠ b₁`. Higher-order `[1/N^k]` coefficients (the full ladder) remain
+entropy-blocked (#3571). **Epistemic honesty:** the `κ₁ = 11√3π/108` *value* is
+the numerical Ohtsuki identification, not proved here from the sum; Lean certifies
+only the algebra `κ₁ = (11/2)·b₁` and the field membership. This file proves the
+`ℚ(√3)` arithmetic of the even channel; it launders **no** Q_β action value — the
+4₁-Kashaev ↔ Q_β bridge is the open keystone, nothing is wired.
 
 Even-channel counterpart of the odd-channel `HopfCubicOddCarrier` (KC20, the
 bar-odd carrier over the prime-19 cubic field). Companion audit
@@ -122,5 +131,50 @@ theorem laplaceB1_saddle_mem_qsqrt3 :
   rw [laplaceB1_at_saddle]
   push_cast
   ring
+
+/-! ## The observable leading coefficient `κ₁ = 11·√3·π/108`
+
+The naive saddle `b₁ = √3π/54` above is the **integral**-Laplace coefficient; it
+omits the Euler–Maclaurin sum-vs-integral correction of the discrete Kashaev
+*sum*. The **observable** even-channel leading coefficient — the `[1/N]`
+coefficient of `log J_N(4₁)`, numerically `≈ 0.5542164724…` (matching the value
+#3571 could only fit) — is identified (audit script
+`qbeta_ohtsuki_kappa1_extract.py`, 10-point Vandermonde to ≈23 digits + 2-term
+PSLQ to 33-digit agreement) as the **exact** element
+
+  `κ₁ = 11·√3·π/108 ∈ ℚ(√3)·π`,
+
+equivalently Ohtsuki's imaginary-coefficient form `κ_1^Oht = A/√−3` with the
+rational `A = 11/72` — the classical figure-eight **2-loop numerator `11`**.
+
+**Epistemic status.** The identification `κ₁ = 11√3π/108` is the *numerical*
+Ohtsuki result (the audit script's PSLQ), NOT proved here from the sum. What
+Lean certifies below is (i) the **exact algebraic relation** `κ₁ = (11/2)·b₁`
+between the named observable value and the naive saddle (the sum-correction is
+exactly the factor `11/2`), and (ii) the `ℚ(√3)·π` membership of `κ₁`. The
+bridge from this 4₁-Kashaev fact to the physical Q_β observable action is the
+open keystone; nothing here is wired to production, and no `c_k` value changes. -/
+
+/-- The observable even-channel leading coefficient `κ₁ = 11·√3·π/108` (the exact
+    value of the `[1/N]` coefficient of `log J_N(4₁)`; numerical Ohtsuki
+    identification — see the section docstring). -/
+noncomputable def ohtsukiKappa1 : ℝ := 11 * Real.sqrt 3 * π / 108
+
+/-- **`κ₁ = (11/2)·b₁`.** The Euler–Maclaurin sum-vs-integral correction multiplies
+    the naive integral-Laplace saddle `b₁ = √3π/54` by exactly `11/2`. Pure algebra
+    over the certified `laplaceB1_at_saddle` value. -/
+theorem ohtsukiKappa1_eq_eleven_halves_b1 :
+    ohtsukiKappa1
+      = (11 / 2) * laplaceB1 (-2 * Real.sqrt 3 * π) (-8 * π ^ 2)
+          (-16 * Real.sqrt 3 * π ^ 3) := by
+  rw [ohtsukiKappa1, laplaceB1_at_saddle]; ring
+
+/-- **`κ₁ ∈ ℚ(√3)·π`** (`κ₁ = (11/108)·√3π`) — the exact even-channel observable
+    leading coefficient lives in the same real quadratic field `ℚ(√3)` as the naive
+    saddle `b₁`, not merely near it. -/
+theorem ohtsukiKappa1_mem_qsqrt3 :
+    ∃ r : ℚ, ohtsukiKappa1 = (r : ℝ) * (Real.sqrt 3 * π) := by
+  refine ⟨11 / 108, ?_⟩
+  rw [ohtsukiKappa1]; push_cast; ring
 
 end QOU.QBeta.Qsqrt3Saddle

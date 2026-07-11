@@ -868,3 +868,20 @@ the *saddle* data field ℚ(√3) is totally real (even-Laplace side, this PR); 
 embed in ℚ(ζ₁₂) and √−3 = i·√3 relates the generators, but they are not equal.
 The earlier "same ℚ(√−3) home" phrasing is refined accordingly — the two channels
 share the *ambient* ℚ(ζ₁₂), each realising its own real/imaginary quadratic subfield.
+
+**2026-07-11 (#3606, Ohtsuki κ₁) — even-channel OBSERVABLE leading coefficient is
+EXACT: `κ₁ = 11√3π/108 = (11/2)·b₁`.** The naive saddle `b₁=√3π/54` (#3606) is the
+integral-Laplace value; the *observable* leading coefficient `κ₁ = [1/N] log J_N(4₁)
+≈ 0.55421647` (the value #3571 could only fit; naive saddle missed it, κ₁/b₁=5.5) is
+identified exactly by a targeted 10-point Vandermonde extraction (N≤786432, ≈23
+confident digits) + 2-term PSLQ (33-digit agreement):
+`κ₁ = 11·√3·π/108 ∈ ℚ(√3)·π` — the Ohtsuki figure-eight **2-loop** coefficient
+(imaginary form `κ_1^Oht = (11/72)/√−3`, the classical numerator **11**). #3571's
+entropy-block was on the *full ladder*, never the best-conditioned leading rung;
+its PSLQ miss was a basis-size artifact (10 elements @ 15 digits). Lean
+(`ohtsukiKappa1_eq_eleven_halves_b1`, `_mem_qsqrt3`, sorry-free) certifies the
+algebra κ₁=(11/2)·b₁ + field membership; the *value* is the numerical Ohtsuki
+identification. Probe [`qbeta_ohtsuki_kappa1_extract.py`](../audits/scripts/qbeta_ohtsuki_kappa1_extract.py).
+**Anti-laundering:** κ₁ is a 4₁-Kashaev/Ohtsuki topological fact, NOT a Q_β
+production c_k — the 4₁↔Q_β action bridge is the open keystone; nothing wired, no
+tier change. Higher [1/N^k] rungs remain entropy-blocked (#3571).
