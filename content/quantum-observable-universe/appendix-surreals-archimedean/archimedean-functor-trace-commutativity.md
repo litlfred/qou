@@ -1,6 +1,6 @@
 ## Archimedean Functor & Trace Commutativity
 
-Two independently defined binding traces — the exact active-partition factorization $B_{\mathrm{sym}}$ and the Q-CLT statistical limit $B_{\mathrm{qCLT}}$ — must land on the *same* macroscopic observable, and the standard-part functor is what guarantees it. Acting as the **Archimedean Functor** $\mathcal{F}_{Arch}$, it transforms algebraic traces into physical macroscopic observables, so that the evaluation of nuclear binding traces rigorously commutes as the scale $A \to \infty$. The payoff is already concrete in the tritium / helium-3 splitting: both routes agree that the $n$–$n$ bond of tritium binds more tightly than the $p$–$p$ bond of helium-3.
+Two independently defined binding traces — the exact active-partition factorization $B_{\mathrm{sym}}$ and the Q-CLT statistical limit $B_{\mathrm{qCLT}}$ — must land on the *same* macroscopic observable, and the standard-part map is what guarantees it. Here $\mathcal{F}_{Arch}$ denotes the **object-level standard-part map** $\mathrm{st} \colon \mathbf{No}_{\mathrm{fin}} \to \mathbb{R}$ — a surjective ring homomorphism — applied to the real-valued binding traces; it is the underlying evaluation of the categorical standard-part *functor* $\mathrm{St}$ ([def:standard-part-functor](#def:standard-part-functor)), not a functor in its own right. It transforms algebraic traces into physical macroscopic observables, so that the evaluation of nuclear binding traces rigorously commutes as the scale $A \to \infty$. The payoff is already concrete in the tritium / helium-3 splitting: both routes agree that the $n$–$n$ bond of tritium binds more tightly than the $p$–$p$ bond of helium-3.
 
 ```mermaid
 flowchart TD
@@ -23,7 +23,7 @@ flowchart TD
     
     B_sym -.->|"Q-CLT Limit (A → ∞)"| B_qCLT
     
-    B_sym == "Archimedean Functor F_Arch (Standard-Part)" ==> M_sym
+    B_sym == "Standard-part map st (ring hom)" ==> M_sym
     B_qCLT == "Asymptotic Convergence" ==> M_qclt
     
     M_sym -.->|"Perfect mapping in algebraic limit"| M_obs
