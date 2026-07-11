@@ -23,8 +23,17 @@ Euler formula `χ = 2 − 2g`, and the value `χ(A) = −6` is **derived** by
 The .md's central claim is that this Euler characteristic *is* the
 categorical trace of the identity, `χ(A) = tr(id_A)`, "recovered as the
 quantum dimension specialised at the Descartes substrate parameter
-`q₀`".  We compute that trace **from the `q`-family of `Rep(SU_q(2))`
-itself**, rather than assuming the value:
+`q₀`".  We compute that trace as an **algebraic super-trace**, rather
+than assuming the value.
+
+**Scope of what is formalised.** This file does *not* construct the
+category `Rep(SU_q(2))` or its objects; it models the single `q`-datum
+the recovery needs — the quantum dimension of the monoidal unit,
+`dim_q 𝟙 = tr_q(id_𝟙) = 1` (`qdimUnit`, the constant function `1`) —
+and computes the super-trace from it and the (integer) Betti numbers.
+The categorical reading below (cohomology `H^i` as trivial
+`Rep(SU_q(2))`-modules) is the *motivation* for `qdimUnit = 1`, not
+something proved in Lean.
 
 `tr(id_A)` is the **super-trace** (categorical Euler characteristic) of
 the identity over the cohomology of the surface,
@@ -181,12 +190,12 @@ theorem categorical_trace_q_independent
   rw [categorical_trace_eq_euler, categorical_trace_eq_euler]
 
 /-- **Trace of the identity = −6** ([`lem:brings-euler-characteristic`]):
-    the categorical trace `tr(id_A) = ev_A ∘ coev_A` of `A = 𝒪_q(SU(2))`
-    over `Σ₄` equals `χ(Σ₄) = −6`.
+    the categorical trace `tr(id_A)` (the super-trace `categoricalTrace`)
+    of `A = 𝒪_q(SU(2))` over `Σ₄` equals `χ(Σ₄) = −6`.
 
-    Derived from the `q`-family super-trace (`categorical_trace_eq_euler`)
-    plus the genus fact `g = 4` — never read back from a class field
-    asserting `−6`. -/
+    Derived from the super-trace over the cohomology
+    (`categorical_trace_eq_euler`) plus the genus fact `g = 4` — never
+    read back from a class field asserting `−6`. -/
 -- Ref: [manuscript] quantum-observable-universe/brings-surface/brings-euler-characteristic.md
 theorem categorical_trace_eq_neg_six
     [ctx : BringsEulerCharacteristicContext R] (q : R) :
