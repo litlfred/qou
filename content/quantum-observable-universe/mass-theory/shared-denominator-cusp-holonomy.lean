@@ -9,8 +9,15 @@ import Mathlib.Tactic
 The conjecture: zeros of the q-Pochhammer denominator `(x; q)_n`
 enforce the Thurston cusp-completeness conditions
 `Hol_μ(z) = Hol_λ(z) = 1` on the corresponding ideal tetrahedron.
-Conditional on the upstream `AlgebraicGeometricEquivalence` and
-`ArchimedeanLimit` instances.
+
+Dependency note: this block sits downstream of
+`conj:algebraic-geometric-dilog-equivalence` §1 at the **manifest**
+level (`uses[]`); the sibling `.lean` files are built self-contained
+(no cross-sibling imports), so the dependency is NOT a type-level
+`[AlgebraicGeometricEquivalence]` binder here. Conversely, the
+alg-geom class's `pole_cusp_matched` hypothesis is exactly what an
+instance of THIS class would supply — this conjecture is the
+geometric input, not a consequence.
 
 -- Ref: [manuscript] conj:shared-denominator-cusp-holonomy
 -- Ref: [thurston1978] manuscript: The geometry and topology of 3-manifolds
@@ -19,15 +26,20 @@ Conditional on the upstream `AlgebraicGeometricEquivalence` and
 
 namespace QOU.QPochhammer
 
-/-- A cusp-completeness predicate over `ℂ`: meridian and longitude
-    holonomies both evaluate to 1 at the chosen shape parameter `z`.
-    A genuine formalisation would carry the ideal triangulation and
-    the Neumann-Zagier potential; this stub records the boolean
-    statement only. -/
+/-- A cusp-completeness predicate over `ℂ` at the shape parameter `z`:
+    the shape is a **geometric** ideal-tetrahedron shape — non-degenerate
+    (`z ≠ 0`, `z ≠ 1`) and of positive imaginary part (upper half-plane,
+    positively oriented). A genuine formalisation would additionally carry
+    the ideal triangulation and the Neumann-Zagier potential with
+    `Hol_μ(z) = Hol_λ(z) = 1`; those gluing equations remain open here,
+    but `im_pos` already excludes every real (flattened) shape, so the
+    predicate is not dischargeable by a constant real witness. -/
 -- Ref: [thurston1978] §4.5 (gluing equations)
 structure CuspComplete (z : ℂ) : Prop where
   meridian_holonomy : z ≠ 0
   longitude_holonomy : z ≠ 1
+  /-- Geometric (positively oriented) shape: `Im z > 0`. -/
+  im_pos : 0 < z.im
 
 /-- The shared-denominator conjecture, packaged as a typeclass over a
     state variable `x`, substrate parameter `q`, and depth `n`.
@@ -68,16 +80,18 @@ theorem newton_seed_completeness
       ∃ z : ℂ, CuspComplete z :=
   shared_denominator_cusp_holonomy q x n
 
-/-- **Skeleton instance.**  Witnesses cusp-completeness with the
-    constant shape parameter `z = 2`, which trivially satisfies
-    `meridian_holonomy : z ≠ 0` and `longitude_holonomy : z ≠ 1`.
-    Encodes none of the Thurston gluing-equation content (the actual
-    `z_k` for the `k`-th cusp must come from the Newton–Raphson
-    pipeline) but discharges the §3b-cond hypothesis. -/
--- Ref: [manuscript] conj:shared-denominator-cusp-holonomy §"Skeleton"
-instance canonical (q x : ℝ) (n : ℕ) :
-    SharedDenominatorCuspHolonomy q x n where
-  cusp_complete_of_root := fun _ _ =>
-    ⟨2, { meridian_holonomy := by norm_num, longitude_holonomy := by norm_num }⟩
+/-! ## No instance — this is an open primary conjecture
+
+A previous revision carried a "skeleton" `instance canonical` witnessing
+cusp-completeness with the constant real shape `z = 2`. That instance
+encoded none of the Thurston gluing-equation content yet *discharged* the
+§3b-cond hypothesis for every downstream consumer — precisely the
+"fabricated trivial instance" pattern forbidden by AGENTS.md §3b-tax
+("an unproved primary is honestly represented by a content-bearing class
+with no instance"). It is removed: the open state of the conjecture is now
+visible in the type system, and the strengthened `im_pos` field makes any
+real-constant witness impossible. The actual `z_k` for the `k`-th cusp
+must come from the Newton–Raphson gluing pipeline
+(`computations/q-pochhammer-seed.witness.json` records the trefoil case). -/
 
 end QOU.QPochhammer
