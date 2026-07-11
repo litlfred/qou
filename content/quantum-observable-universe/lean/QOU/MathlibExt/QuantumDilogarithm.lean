@@ -136,13 +136,14 @@ its reciprocal, is a plausible Mathlib contribution.
 -- Ref: [faddeev1994] https://doi.org/10.1007/BF02101594 — Faddeev, "Discrete
 --       Heisenberg–Weyl group and modular group" (the quantum dilogarithm).
 
-The physical **quark-ordering volumes** `Φ(uud) ≈ -0.8785`, `Φ(udd) ≈
--1.2261` consumed by `QOU.Torsion.neutron_proton_splitting` are evaluations
-of this *analytic* `Φ_q` on the proton/neutron braid words at `q₀` — they
-are **not** derivable from the finite algebra above, and (corpus-grep,
-2026-07-11) no closed form for them exists in the corpus yet.  They remain
-honest opaque inputs (`NeutronProtonSplittingContext` class fields) until
-the braid-word argument identification lands.
+Note: the physical **quark-ordering volumes** `Φ(uud) ≈ -0.8785`,
+`Φ(udd) ≈ -1.2261` consumed by `QOU.Torsion.neutron_proton_splitting` are a
+**different object** from this `Φ_q` q-Pochhammer.  They are the Hecke
+**traced-volume** `Φ(K) = Σᵢ log|V̂ᵢ(K)|` of the quark orderings
+(`computations/level1-qvalues.py`), which **does** have an exact closed form —
+`log` of a rational function of `q` (e.g.
+`Φ(udd) = log|(q²+1)²(10000q² − 4993q − 10000)/(40000 q³)|`).  Provenance +
+symbolic derivation: `docs/audits/2026-07-11-quark-volume-provenance.md`.
 -/
 
 end QOU.MathlibExt.QuantumDilogarithm
