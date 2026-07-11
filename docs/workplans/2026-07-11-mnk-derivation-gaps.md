@@ -9,8 +9,10 @@ checkpoint** that separates a derivation (wireable) from a fit (bookkeeping only
 
 ## The setting (established, not open)
 
-Binding is the body-order tower `B(K) = Σ_{n} m_e·a_D^(n)·wₙ(K)`, and the corpus has already
-fixed everything **except** the coordination geometry:
+Binding is the body-order tower `B(K) = Σ_{n} m_e·a_D^(n)·wₙ·Mₙ(K)` — a **per-order energy**
+`m_e·a_D^(n)·wₙ` (na-Stokes period × a per-order scale weight; the `w₂` scale is deuteron-pinned,
+#3588) times the **topological bond-count** `Mₙ(K)`. The corpus has already fixed everything
+**except** the coordination geometry (the count `Mₙ(K)` for A≥5):
 
 | Piece | Status | Source |
 |---|---|---|
@@ -23,11 +25,12 @@ fixed everything **except** the coordination geometry:
 | **which link `𝓑_K` per isotope (A≥5)** | **OPEN** — the gaps below | #3545 Parts 8–9, #3585 |
 
 **The fit vs derivation line (the discipline this whole doc serves).**
-Inverting AME binding for per-isotope `wₙ` (#3534: `4.353, 9.331, 15.919`) is a **fit** —
+Inverting AME binding for the per-order weights (#3534: `4.353, 9.331, 15.919`) is a **fit** —
 `A−1` unknowns vs 1 equation per isotope, no predictive content, **never canonical**. A
-**derivation** fixes `wₙ = a_D^(n)·Mₙ(K)` from topology/geometry with **only the deuteron
-anchor**, then **predicts** `B(K)` for isotopes it never touched (⁶Li, ⁷Li, ⁹Be, ¹²C) and is
-tested against AME. #3585 showed the naive equal-weight / all-subsets `C(A,n)` version
+**derivation** fixes the bond-count `Mₙ(K)` from topology/geometry (Milnor + max-contact) and
+the per-order energy `m_e·a_D^(n)·wₙ` from the na-Stokes period with **only the deuteron anchor**
+(the `w₂` pin, #3588) — never inverting either from AME — then **predicts** `B(K)` for isotopes
+it never touched (⁶Li, ⁷Li, ⁹Be, ¹²C) and is tested against AME. #3585 showed the naive equal-weight / all-subsets `C(A,n)` version
 **fails** that test (+920% at ⁶Li) — informative, not fatal: it says the edge-set must
 *restrict* which subsets bond. That restriction is GAP-1.
 
@@ -68,10 +71,12 @@ expansion, machinery validated #3545 Part 7). Given the link, `M₃` is not free
 **First compute.** Once GAP-1 fixes the A≥5 contact graph, promote it to a link (assign
 crossings/framing per the canonical braid convention) and run the validated
 `binding_mn_milnor_linking.py` `μ̄`-tower on it; count nonzero triples. Test `⁴He`: does the
-`M₃` term reproduce the 14.95 MeV residual with `w₃ = a_D^(3)` (fixed), no tuning?
+`M₃` term reproduce the 14.95 MeV residual with the per-order energy `m_e·a_D^(3)·w₃` fixed
+(na-Stokes + deuteron anchor), no tuning?
 
-**Anti-fit checkpoint.** `w₃` is `a_D^(3)` (na-Stokes, deuteron-anchored) — **not** solved from
-⁴He's residual. If `a_D^(3)·M₃(⁴He)` misses 14.95 MeV, report the miss; do not back out `w₃`.
+**Anti-fit checkpoint.** The per-order energy `m_e·a_D^(3)·w₃` is fixed by the na-Stokes period
++ the deuteron anchor — **not** solved from ⁴He's residual. If `m_e·a_D^(3)·w₃·M₃(⁴He)` misses
+14.95 MeV, report the miss; do not back out `w₃`.
 
 ---
 
