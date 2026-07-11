@@ -9,9 +9,7 @@
 -/
 
 import Mathlib.Analysis.Complex.Norm
-import Mathlib.Tactic.Linarith
-import Mathlib.Tactic.FieldSimp
-import Mathlib.Tactic.LinearCombination
+import Mathlib.Tactic
 
 namespace QOU.BraidsAndKnots
 
@@ -92,5 +90,58 @@ theorem figure_eight_unitary_on_standard
     (hroot : lam ^ 2 - (t : ℂ) * lam + 1 = 0) :
     ‖lam‖ = 1 :=
   unit_modulus_of_det_one_small_trace t ht lam hroot
+
+/-! ## Closed-form trace and the classical anchor `θ(1) = 2π/3`
+
+The `q`-Reeb rotation angle `θ(q)` is `arg λ_{4₁}` where `2 cos θ = tr M_{4₁}`.
+Building the `2×2` Hoefsmit seminormal block of `σ₁, σ₂` on `V_(2,1)` explicitly
+(`σ₁ = diag(q, −q⁻¹)`; `σ₂` from braid + Hecke; only the *trace* is used, which is
+gauge-invariant) gives the closed Laurent form below.  Derived and numerically
+validated (`θ(q₀) ≈ 117.087°`, `dθ/dq ≈ −51°` per unit `q` — smooth) in
+`computations/qbeta/qbeta_c3_reeb_rotation_phase_probe.py`.  Here we formalise the
+**algebraically exact** facts: the closed form's value at the classical point
+`q = 1` is `−1`, and the resulting eigenvalue is a *primitive cube root of unity*
+(`θ = ±2π/3`) of unit modulus. -/
+
+/-- Closed-form trace of `M_{4₁} = (σ₁σ₂⁻¹)²` on `V_(2,1)` as a Laurent polynomial
+    in `q` (from the explicit seminormal block). -/
+-- Ref: [manuscript] prop:figure-eight-reeb-rotation
+noncomputable def figureEightTrace (q : ℝ) : ℝ :=
+  q ^ 4 - 2 * q ^ 2 + 1 - 2 * q ^ (-2 : ℤ) + q ^ (-4 : ℤ)
+
+/-- **Classical trace value.** `tr M_{4₁}|_{q=1} = −1`: at `q = 1` the seminormal
+    block is the `S₃` representation and `(σ₁σ₂)²` is a 3-cycle. -/
+-- Ref: [manuscript] prop:figure-eight-reeb-rotation
+theorem figureEightTrace_one : figureEightTrace 1 = -1 := by
+  simp only [figureEightTrace, one_pow, one_zpow]; norm_num
+
+/-- **Classical q-Reeb angle `θ(1) = 2π/3` (proved).** At `q = 1` the trace is
+    `t = −1` with `t² = 1 < 4`, so every eigenvalue `λ` (root of the characteristic
+    polynomial `x² + x + 1`) has unit modulus (via
+    `unit_modulus_of_det_one_small_trace`) *and* is a primitive cube root of unity
+    (`λ³ = 1`, `λ ≠ 1`).  A primitive cube root has argument `±2π/3`, so the
+    classical q-Reeb rotation angle is exactly `2π/3` — the amphichiral anchor from
+    which the `q`-deformation `θ(q₀) ≈ 117.087°` departs (`Δθ ≈ −2.913°`, the
+    derived symmetry-breaking seed of the `c₃` bar-odd `S`). -/
+-- Ref: [jones1987] Jones, Hecke algebra representations of braid groups (1987)
+-- Ref: [manuscript] prop:figure-eight-reeb-rotation
+theorem figure_eight_classical_reeb (lam : ℂ)
+    (hroot : lam ^ 2 + lam + 1 = 0) :
+    ‖lam‖ = 1 ∧ lam ^ 3 = 1 ∧ lam ≠ 1 := by
+  refine ⟨?_, ?_, ?_⟩
+  · -- unit modulus: the existing theorem with real trace `t = −1`, `t² = 1 < 4`
+    have ht : ((-1 : ℝ)) ^ 2 < 4 := by norm_num
+    have hcast : ((-1 : ℝ) : ℂ) = -1 := by norm_num
+    have hr : lam ^ 2 - ((-1 : ℝ) : ℂ) * lam + 1 = 0 := by
+      rw [hcast]; linear_combination hroot
+    exact unit_modulus_of_det_one_small_trace (-1) ht lam hr
+  · -- `λ³ = 1` from `x³ − 1 = (x − 1)(x² + x + 1)`
+    have key : lam ^ 3 - 1 = (lam - 1) * (lam ^ 2 + lam + 1) := by ring
+    rw [hroot, mul_zero] at key
+    linear_combination key
+  · -- `λ ≠ 1`: else `1 + 1 + 1 = 3 = 0`, impossible in characteristic 0
+    intro h
+    rw [h] at hroot
+    norm_num at hroot
 
 end QOU.BraidsAndKnots
