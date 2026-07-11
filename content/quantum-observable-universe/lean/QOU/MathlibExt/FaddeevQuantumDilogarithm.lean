@@ -75,6 +75,25 @@ theorem phi_b_ratio [h : FaddeevPhi b Φ] (z : ℂ) (hne : Φ (z + I * (b / 2)) 
     Φ (z - I * (b / 2)) / Φ (z + I * (b / 2)) = 1 + Complex.exp (2 * (Real.pi : ℂ) * b * z) := by
   rw [h.shift_b z, mul_div_assoc, div_self hne, mul_one]
 
+/-- **Quasi-periodicity under the full `ib`-shift** (the `b`-shift applied at
+`z + ib/2`):
+$$\Phi_b(z) = \bigl(1 + q_b\,e^{2\pi b z}\bigr)\,\Phi_b(z + ib),
+\qquad q_b := e^{i\pi b^2}.$$
+This **surfaces the modular-double parameter `q_b = e^{iπ b²}`** — the T3↔T1
+bridge datum: `q_b` is the `q` of the compact `Φ_q` (whose functional equation
+`Φ_q(q²x) = (1+qx)Φ_q(x)` is the multiplicative shadow of this additive relation
+under `x = e^{2πbz}`, `q² = q_b`). -/
+theorem phi_b_quasiperiod [h : FaddeevPhi b Φ] (z : ℂ) :
+    Φ z = (1 + Complex.exp (I * (Real.pi : ℂ) * (b : ℂ) ^ 2)
+              * Complex.exp (2 * (Real.pi : ℂ) * b * z)) * Φ (z + I * b) := by
+  have key := h.shift_b (z + I * (b / 2))
+  have e1 : (z + I * ((b : ℂ) / 2)) - I * ((b : ℂ) / 2) = z := by ring
+  have e2 : (z + I * ((b : ℂ) / 2)) + I * ((b : ℂ) / 2) = z + I * b := by ring
+  have e3 : 2 * (Real.pi : ℂ) * b * (z + I * ((b : ℂ) / 2))
+      = 2 * (Real.pi : ℂ) * b * z + I * (Real.pi : ℂ) * (b : ℂ) ^ 2 := by ring
+  rw [e1, e2, e3, Complex.exp_add] at key
+  rw [key]; ring
+
 /-!
 ## The bar-odd source: chiral knot operators (Hopf-led) — argument-identification target
 
