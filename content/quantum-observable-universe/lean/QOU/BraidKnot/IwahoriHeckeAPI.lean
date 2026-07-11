@@ -387,7 +387,7 @@ theorem not_in_failure_locus_iff_generic
 
 /-! ## Summary: API surface ready for downstream blocks -/
 
-/-- This file provides a Mathlib-style API for `H_n(q)`:
+/-! ## This file provides a Mathlib-style API for `H_n(q)`
 
     - `IwahoriHeckeAlgebra n R q h_unit` — the abstract structure
     - `HeckeQuadratic`, `HeckeBraid`, `HeckeFarCommute`, `HeckeBar`,
@@ -411,7 +411,6 @@ theorem not_in_failure_locus_iff_generic
     seminormal-form / Markov-trace infrastructure. The QOU
     content blocks remain unchanged.
 -/
-example : True := trivial
 
 end IwahoriHeckeAlgebra
 end QOU.BraidKnot.IwahoriHeckeAPI
