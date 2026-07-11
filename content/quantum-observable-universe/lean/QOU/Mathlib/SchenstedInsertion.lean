@@ -288,3 +288,28 @@ theorem insertWord_content (w : List ℕ) : content (insertWord w) = (↑w : Mul
       rw [List.foldl_cons, ih (insert T a), insert_content]
       simp only [← Multiset.cons_coe, ← Multiset.singleton_add]; abel
   simpa using key w []
+
+/-! ## Brick 5 — bumping monotonicity (toward column-strictness)
+
+The column-strictness of the insertion tableau (columns strictly increasing —
+the invariant making `P(w)` a genuine semistandard tableau) rests on the
+**bumping lemma**.  Its atomic seed is proved here: a `rowInsert` bump ejects
+an entry *strictly greater* than the inserted value.  So the value cascading
+into the next row is always `> x`, which is what forces each new cell to sit
+strictly below a smaller entry.  (The full cascade column-strictness is the
+next sub-brick.) -/
+
+/-- **The bumped entry is strictly greater than the inserted value.**  `rowInsert`
+bumps the *leftmost entry `> x`*, so whenever it returns `some y`, `x < y`. -/
+theorem rowInsert_bumped_gt {r : List ℕ} {x y : ℕ}
+    (h : (rowInsert r x).2 = some y) : x < y := by
+  induction r with
+  | nil => simp [rowInsert] at h
+  | cons a r ih =>
+    rw [rowInsert_cons] at h
+    by_cases hx : x < a
+    · rw [if_pos hx] at h
+      simp only [Option.some.injEq] at h
+      exact h ▸ hx
+    · rw [if_neg hx] at h
+      exact ih h
