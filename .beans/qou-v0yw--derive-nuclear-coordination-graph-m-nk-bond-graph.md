@@ -4,8 +4,10 @@ title: Derive nuclear coordination graph M_n(K) (bond graph) — the open geomet
 status: todo
 type: task
 priority: normal
+tags:
+    - ungated
 created_at: 2026-07-11T17:06:19Z
-updated_at: 2026-07-11T19:36:27Z
+updated_at: 2026-07-11T22:44:48Z
 ---
 
 
@@ -104,3 +106,18 @@ geometry) + cluster/halo deviations below max-contact (⁶Li α+d, ⁹Be). = s5-
 α-level = #3551 Brink deltahedra (the α instance of this max-contact principle).
 The PRINCIPLE (variational selection) is derived; the specific compact geometry per
 isotope is the residual nuclear-structure input.
+
+## Update 2026-07-11 (🟧 OWNER RULING — gate LIFTED) — the residual is now UNGATED
+
+The residual above ("= s5-so3 gated") is **no longer gated**. Owner ruling (step-9 ledger
+cont.11, audit `docs/audits/2026-07-11-subgoal2-owner-reversal-open-for-all.md`): Subgoal-2
+opened for ALL agents — the geometric `M_n(K)` edge-set / A≥5 max-contact geometry / s5-so3
+keystone / derived `R(q,x)` routes are in scope, no per-item sign-off.
+
+- **Done (non-gated, fit-free):** the 2-body backbone `M_2=C(A,2)` (#3588, deuteron-pinned
+  w_2), converging with the Part-13 max-contact simplex.
+- **Open + now ungated:** the M₃/M₄ geometric weights (A≥5 max-contact packing numbers,
+  cluster/halo deviations, the derived `R(q,x)` / Milnor bond-count). Work directly, not
+  deferred.
+- **Anti-fit rule STILL STANDS (orthogonal to the gate):** anchor-inverted `wₙ(K)` is a fit,
+  not canonical; only a *derived* bond-count may wire to production.
