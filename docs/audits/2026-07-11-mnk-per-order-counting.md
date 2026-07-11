@@ -55,6 +55,11 @@ asymmetry lands in the residual as the Coulomb term. Witness assertion
 > closure.
 
 **Open (qou-v0yw, next):** the `M_3`, `M_4` weights that convert `C(A,3)`, `C(A,4)` into
-the 3-/4-body residuals (the deuteron pins only `w_2`), and the geometric saturation of
-`C(A,n)` at large A (the α-cluster deltahedra of #3549/#3555). The reframe now has a
-fixed 2-body anchor to build the higher orders on.
+the 3-/4-body residuals (the deuteron pins only `w_2`). Note the higher-order weights
+must **suppress** the raw `C(A,n)` growth, not merely saturate it: sibling PR #3585
+(the `w_n(K)` frontier note, reusing #3545 Part 5) records that the naive **equal-weight**
+`a_D^(n)·C(A,n)` tower **blows up at A≥5** (⁶Li +920% … ¹²C +2.3×10⁶%). So this probe's
+`C(A,n)` count is the correct *combinatorial* backbone at the 2-body order (fit-free), but
+the `a_D^(n)` per-order coefficients cannot stay constant — the α-cluster deltahedra of
+#3549/#3555 (max-contact, not all-subsets) are the large-A edge-set restriction. The
+reframe now has a fixed 2-body anchor to build the suppressed higher orders on.
