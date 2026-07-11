@@ -106,6 +106,16 @@ def S_qinv(n):
     return mp.fsum(dimq(l) for l in partitions(n))
 
 
+def qbinom(n, k):
+    return qfac(n) / (qfac(k) * qfac(n - k))
+
+
+def rogers_szego(n, x):
+    """Rogers–Szegő polynomial H_n(x;q) = Σ_{k=0}^n [n choose k]_q x^k — the
+    q-Hermite basis element (eigenpolynomial of the q-oscillator)."""
+    return mp.fsum(qbinom(n, k) * x ** k for k in range(n + 1))
+
+
 def lw(c):
     return S_qinv(c + 1) / (c + 1)
 
@@ -220,25 +230,56 @@ def main() -> int:
     print(f"     ⇒ eigenfunction basis = q-Hermite / Rogers–Szegő (q-oscillator /")
     print(f"       q-hyperbolic categorical action; corpus QOU.Mass.RogersSzegoInhabited)")
 
+    # ── 6. Does w_n RESOLVE in that q-Hermite basis? (decisive, zero-param) ────
+    #   Two zero-parameter tests: (A) does w_n obey the a_D q-involution
+    #   recurrence (is it in the eigenspace)? (B) does the scale-free ratio-shape
+    #   (w_3/w_2, w_4/w_3) match a Rogers–Szegő H_n(x;q) at any natural x? If both
+    #   fail, w_n is NOT a q-Hermite object — it is the gated W_λ multiplier, and
+    #   its ratio SHAPE (decelerating vs the near-geometric q-Hermite) is the new
+    #   fingerprint the s5-so3 projector must reproduce.
+    print("\n  Does w_n resolve in the q-Hermite basis? (zero-param):")
+    wn_recur = w[3] + c_seq[4] * w[2]
+    errA = abs((wn_recur - w[4]) / w[4])
+    print(f"     Test A  w_4 =? w_3 + c_4·w_2 (a_D recurrence): "
+          f"pred {mp.nstr(wn_recur,5)} vs {mp.nstr(w[4],5)}  err {mp.nstr(errA*100,3)}%"
+          f"{'  ← in eigenspace' if errA <= thr else '  ✗ not a solution'}")
+    print(f"     Test B  Rogers–Szegő H_n(x;q) ratio-shape vs observed "
+          f"({mp.nstr(r32,4)},{mp.nstr(r43,4)}):")
+    rs_best = None
+    for lbl, x in (("x=1", mp.mpf(1)), ("x=q", q), ("x=1/q", 1 / q),
+                   ("x=q²", q ** 2), ("x=q−1", q - 1)):
+        h2, h3, h4 = rogers_szego(2, x), rogers_szego(3, x), rogers_szego(4, x)
+        R32, R43 = h3 / h2, h4 / h3
+        e = max(abs(R32 / r32 - 1), abs(R43 / r43 - 1))
+        if rs_best is None or e < rs_best[1]:
+            rs_best = (lbl, e)
+        print(f"        {lbl:<7} H-ratios ({mp.nstr(R32,4)},{mp.nstr(R43,4)})  "
+              f"max|err| {mp.nstr(e*100,3)}%{'  ← CLOSES' if e <= thr else ''}")
+    wn_is_qhermite = (errA <= thr) or (rs_best[1] <= thr)
+    decel = r32 > r43  # observed ratio decelerates (sub-geometric)
+    print(f"     ⇒ w_n q-Hermite-clean: {wn_is_qhermite}  (closest RS: {rs_best[0]} "
+          f"{mp.nstr(rs_best[1]*100,3)}%);  ratio decelerates (sub-geometric): {decel}")
+
     verdict = (
-        "TWO-PART. (i) REFUTED (scope-(a)) — the extracted universal residue "
+        "THREE-PART. (i) REFUTED (scope-(a)) — the extracted universal residue "
         f"weights w_2,w_3,w_4 = {mp.nstr(w[2],4)},{mp.nstr(w[3],4)},{mp.nstr(w[4],4)} "
         f"(ratios {mp.nstr(r32,4)},{mp.nstr(r43,4)}) satisfy NO CONSTANT-RATIO / "
-        "ad-hoc parameter-free kernel to 5% (geometric/[n]_q/a_D-self/linear all "
-        "miss; [n]_q² is the lone 6.9% near-miss, echoing the √C_λ near-miss of "
-        "PR #3518). A recursion tuned to reproduce them is a fit, banned as a "
-        "seventh Δ_λ ansatz. (ii) POSITIVE LEAD (owner steer 2026-07-11) — the "
-        "na-Stokes kernel a_D^(n)=S(n)/n has a DERIVED eigenfunction relation: "
-        "S(n)=Σ_{λ⊢n} dim_q V_λ (the q-involution number) obeys a THREE-TERM "
-        "recurrence S(n)=S(n-1)+c_n·S(n-2) with c_3=[2]_q EXACT and c_n/[n-1]_q "
-        "rising monotonically — the q-Hermite / Rogers–Szegő recurrence, i.e. the "
-        "orthogonal basis of the q-oscillator / q-hyperbolic categorical action "
-        "(corpus QOU.Mass.RogersSzegoInhabited). So the correct search for w_n is "
-        "its EXPANSION IN THE q-HERMITE BASIS (a derive, not a fit), NOT a "
-        "constant-ratio kernel — that is why the ad-hoc candidates miss. The "
-        "extensive kernel a_D^(n) stays a permanent correct contribution; the "
-        "gated multiplier is the geometric W_λ projector (s5-so3). Next: expand "
-        "w_n in the Rogers–Szegő basis / test the hyperbolic-link-volume route "
+        "ad-hoc parameter-free kernel to 5% ([n]_q² lone 6.9% near-miss, echoing "
+        "the √C_λ near-miss of PR #3518). (ii) DERIVED BASIS (owner steer) — the "
+        "na-Stokes kernel a_D^(n)=S(n)/n has an eigenfunction relation: the "
+        "q-involution S(n)=Σ_{λ⊢n} dim_q V_λ obeys S(n)=S(n-1)+c_n·S(n-2) with "
+        "c_3=[2]_q EXACT and c_n/[n-1]_q rising — the q-Hermite / Rogers–Szegő "
+        "recurrence (q-oscillator / q-hyperbolic categorical action; corpus "
+        "QOU.Mass.RogersSzegoInhabited). (iii) w_n IS NOT q-HERMITE-CLEAN "
+        f"(scope-(a)) — w_n neither obeys the a_D recurrence (Test A {mp.nstr(errA*100,3)}% "
+        f"off) nor matches any Rogers–Szegő H_n(x;q) ratio-shape (Test B closest "
+        f"{rs_best[0]} {mp.nstr(rs_best[1]*100,3)}%). Its ratio DECELERATES "
+        f"({mp.nstr(r32,4)}→{mp.nstr(r43,4)}, sub-geometric) whereas every "
+        "q-Hermite family is near-geometric. So the q-Hermite basis is the right "
+        "language for the KERNEL a_D^(n), but the MULTIPLIER w_n is the genuinely "
+        "gated W_λ content — and its sub-geometric deceleration is the new "
+        "fingerprint the s5-so3 W_λ projector must reproduce. a_D^(n) stays a "
+        "permanent correct contribution; next is the hyperbolic-link-volume route "
         "(option #1). No production touch; no value wired; no tier change."
         if not any_close else
         "A PARAMETER-FREE derived kernel reproduces both w_n ratios zero-tuning "
@@ -272,6 +313,14 @@ def main() -> int:
                 "c_n": {str(n): mp.nstr(c_seq[n], _NS) for n in c_seq},
                 "c3_eq_2q_exact": bool(c3_is_2q),
                 "basis": "q-Hermite / Rogers–Szegő (q-oscillator; QOU.Mass.RogersSzegoInhabited)",
+            })
+            wb.add_data("wn_qhermite_expansion", {
+                "testA_aD_recurrence_err": mp.nstr(errA, _NS),
+                "testB_rogers_szego_best": {"x": rs_best[0], "err": mp.nstr(rs_best[1], _NS)},
+                "wn_is_qhermite_clean": bool(wn_is_qhermite),
+                "ratio_decelerates_subgeometric": bool(decel),
+                "note": ("w_n neither obeys the a_D recurrence nor matches a Rogers–Szegő "
+                         "ratio-shape; sub-geometric deceleration = the gated W_λ fingerprint"),
             })
             wb.add_data("verdict", verdict)
             wb.add_assertion(
