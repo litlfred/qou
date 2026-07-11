@@ -69,9 +69,11 @@ scale-free `k(A)` probe's finding (`k∝A` R²=0.67, `k∝`bonds R²=0.49 vs log
 
 ## Honest scope — what is proved vs open
 
-- **Proved / verified (the core):** `w_std(k)` grows super-exponentially (combinatorial;
-  the remaining Lean target is a *lower bound* on `E_Planch[f^{λ/(2,1)}]` — needs
-  SYT/skew/Plancherel Mathlib infrastructure, a multi-session build).
+- **Numerically verified (NOT formally proved) — the core:** `w_std(k)` grows
+  super-exponentially — verified in exact integer arithmetic for `k ≤ 10`
+  (strictly increasing ratios), **not** yet a formal proof. The remaining Lean
+  target is a *lower bound* on `E_Planch[f^{λ/(2,1)}]`, which needs SYT/skew/Plancherel
+  Mathlib infrastructure (a multi-session build) — it stays the open §3b conjecture.
 - **Rigorous given the core:** the log-form of `k(A)` — *conditional on H1+H2* — is now
   **Lean-formalized** in
   [`QOU/Mass/LevelSelectionLogarithmic.lean`](../../content/quantum-observable-universe/lean/QOU/Mass/LevelSelectionLogarithmic.lean):
