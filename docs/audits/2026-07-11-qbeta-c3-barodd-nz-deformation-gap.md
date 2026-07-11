@@ -108,13 +108,22 @@ the binding shadow prices** (AGENTS.md §LP/SDP), and `gram-matrix-dual.py` read
 `½(L₊−L₋)` is precisely where a negative coefficient (`−½·L₋`) first appears.
 
 **Consequence for the open gap.** If the bar-odd `S` **is** a binding energy,
-then `z(q₀)` is derivable not only via the hyperbolic Newton solve but via the
-**binding/SDP-dual** machinery already in the corpus (operator-selection dual,
-Δ_λ shadow prices). `S` = a binding shadow price on the ghost channel. New route
-(bean `qou-...`): compute `S` as the dual variable on the negative-signature
-demand channel of `β(4₁)`. (Q_β is itself a mass-defect/binding energy — the
-`n`–`p` splitting that drives β-decay — so "decay = binding" is physically the
-statement that the CAL-2 leak is a binding energy, not a kinematic mass.)
+then `z(q₀)` routes through the binding machinery. Q_β is itself a
+mass-defect/binding energy (the `n`–`p` splitting driving β-decay), so
+"decay = binding" is physically the statement that the CAL-2 leak is a binding
+energy, not a kinematic mass.
+
+**Sharpening (probe [`qbeta_c3_barodd_binding_sdp_dual_probe.py`](../../computations/qbeta/qbeta_c3_barodd_binding_sdp_dual_probe.py)):**
+the canonical operator-selection **LP** on `β(4₁)` (`t=TR_M`, `n_target=|tr_M|`)
+returns a **trivial** dual — active set `{γ}`, zero shadow price on the binding
+channels — because the ghost `½(L₊−L₋)` is **traceless** (`tr_M(L₊)=tr_M(L₋)`),
+hence invisible to a *linear* trace-target LP. But it has **negative Gram norm**
+(`−0.4275`). So **binding is a QUADRATIC (Gram/SDP) quantity, not a linear
+(trace/LP) shadow price**: `mass = linear tr_M` (rest energy),
+`binding = quadratic Gram` (the mass defect, second order — physically correct).
+The `decay = binding` Gram-signature identity stands; `S` is the SDP negative-norm
+binding form on the ghost, and its **value still needs `z(q₀)`** to realize the
+quadratic form (no SDP was tuned to `S` — C14).
 
 ## Disposition
 
