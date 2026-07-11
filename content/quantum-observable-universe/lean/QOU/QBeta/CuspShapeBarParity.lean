@@ -106,4 +106,59 @@ coordinates reconstruct `2ω`: `barEven ω + barOdd ω = 2ω`.  With
 theorem cuspShape_reconstruct (ω : R) : barEven ω + barOdd ω = 2 * ω := by
   unfold barEven barOdd; ring
 
+/-! ## The degenerate (golden-ratio) branch — why a real pole cannot reach the cusp
+
+The complete figure-eight gluing equation `(z(z−1))² = 1` factors into **two**
+branches, `z(z−1) = ±1`:
+
+* `z² − z + 1 = 0` — the **cusp** shape `e^{iπ/3}` (`IsCuspShape`), complex,
+  discriminant `−3`: the hyperbolic structure, `barOdd² = −3` (`√−3` = CS).
+* `z² − z − 1 = 0` — the **golden ratio** `φ = (1+√5)/2` (`IsGoldenShape`), real,
+  discriminant `+5`: the **degenerate** structure (`Vol = 0`, no hyperbolic geometry).
+
+The two branches **swap bar-parity roles**, and the swap is exactly a **sign flip
+in the discriminant** `−3 ↦ +5`:
+
+| branch | poly | `barEven` | `barOdd` | special coord |
+|---|---|---|---|---|
+| cusp (hyperbolic) | `z²−z+1` | `= 1` (rational) | `² = −3` | `barOdd = √−3` (imaginary ⇒ **CS**) |
+| golden (degenerate) | `z²−z−1` | `² = +5` | `= 1` (rational) | `barEven = √5` (**real** ⇒ **no CS**) |
+
+This is the algebraic shadow of the pole→cusp phase obstruction: seeding
+Thurston's Newton with the **real** substrate pole `q₀^{-k}` flows to the golden
+(real, `√5`) branch — `Vol = 0`, `CS = 0` — never the cusp. Only **complexifying**
+the seed (the phase `φ(q₀)`) moves the special coordinate from the real `√5` to the
+imaginary `√−3`, i.e. turns on the CS = bar-odd `S`. The phase is precisely the
+branch selector, and no real datum can supply it.
+
+-- Ref: [manuscript] docs/audits/2026-07-11-qbeta-c3-pole-cusp-phase-tractability.md
+-/
+
+/-- The degenerate (golden-ratio) branch: `ω² − ω − 1 = 0`, real root `φ=(1+√5)/2`. -/
+def IsGoldenShape (ω : R) : Prop := ω ^ 2 - ω - 1 = 0
+
+/-- `ω² = ω + 1` (golden minimal-polynomial rewrite). -/
+theorem goldenShape_sq {ω : R} (hω : IsGoldenShape ω) : ω ^ 2 = ω + 1 := by
+  have hp : ω ^ 2 - ω - 1 = 0 := hω
+  linear_combination hp
+
+/-- Golden inverse in shape coordinates: `ω⁻¹ = ω − 1`. -/
+theorem goldenShape_inv {ω : R} (hω : IsGoldenShape ω) : ω⁻¹ = ω - 1 := by
+  refine inv_eq_of_mul_eq_one_right ?_
+  have h2 := goldenShape_sq hω
+  linear_combination h2
+
+/-- **Golden bar-odd `= 1`** (rational): on the degenerate branch the bar-ODD
+coordinate is rational — the roles are swapped vs the cusp (where bar-EVEN = 1). -/
+theorem goldenShape_barOdd {ω : R} (hω : IsGoldenShape ω) : barOdd ω = 1 := by
+  unfold barOdd; rw [goldenShape_inv hω]; ring
+
+/-- **Golden bar-even `= √5`** (`(barEven ω)² = 5`, REAL): the degenerate branch's
+special coordinate is the **real** `√5`, not the cusp's imaginary `√−3`. A real
+pole seeds this branch — real coordinate, hence **no CS / no bar-odd `S`**. -/
+theorem goldenShape_barEven_sq {ω : R} (hω : IsGoldenShape ω) : (barEven ω) ^ 2 = 5 := by
+  unfold barEven; rw [goldenShape_inv hω]
+  have h2 := goldenShape_sq hω
+  linear_combination 4 * h2
+
 end QOU.QBeta.CuspShapeBarParity
