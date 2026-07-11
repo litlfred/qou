@@ -72,12 +72,23 @@ def baryon_mass (q : ℝ) (_hq : q > 1) : ℝ :=
     configurations with hyperbolic volume `borromean_volume ≈
     7.32772` (the topological mass scale).
 
-    Two conjectural fields:
-    * `is_baryon_realisation` — every observed baryon arises as a
-      Borromean configuration with appropriate orientation/color;
+    The single conjectural field is the **mass calibration**:
     * `volume_calibrates_mass` — the bare baryon mass is
       `borromean_volume / (1 − 1/q)²`, calibrating the
       topological-mass formula at q = q₀.
+
+    **On the baryon-realisation claim.** The physical content of
+    `conj:borromean-quark` — that every observed baryon *is* a
+    Borromean three-quark configuration — is **not** encoded as a Lean
+    field. It cannot be: any `is_baryon_realisation : Prop` field is a
+    self-assuming projection (the instance picks the `Prop` and proves
+    its own choice), which passes the type checker while asserting
+    nothing (AGENTS.md §3b-tax / §3b-cond item 5). The explicit
+    `proton_partition` / `neutron_partition` data above record the
+    color/orientation assignments, but *exhibiting a `BorromeanBaryon`
+    value* is trivially possible and does not establish that the
+    physical nucleon is one. That identification stays an **open**
+    conjectural interpretation in the narrative.
 
     `sorry` in any concrete instance is understood as **conjecture**,
     not missing proof. Downstream blocks may take `[BorromeanQuark]`
@@ -92,12 +103,6 @@ class BorromeanQuark where
       at every q > 1. -/
   volume_calibrates_mass :
     ∀ q : ℝ, q > 1 → bare_mass q = borromean_volume / (1 - 1/q)^2
-  /-- Every observed baryon (proton, neutron) is realised as some
-      Borromean partition (the predicate is conjectural; the witness
-      is the explicit `proton_partition` / `neutron_partition`
-      structures defined above). -/
-  is_baryon_realisation : Prop
-  is_baryon_realisation_holds : is_baryon_realisation
 
 /-- **Downstream conditional theorem (AGENTS.md §3b-cond).**
     Conditional on `[BorromeanQuark]`, baryon mass at every q > 1
@@ -110,23 +115,15 @@ theorem baryon_mass_from_volume [inst : BorromeanQuark]
 
 /-- **Faithful instance.**  Defines `bare_mass` literally as the
     topological-volume formula `borromean_volume / (1 - 1/q)²`, so
-    `volume_calibrates_mass` closes by `rfl`.
-
-    The `is_baryon_realisation` predicate is now the **canonical
-    existence statement**: the proton and neutron partitions both
-    inhabit `BorromeanBaryon` and have the expected charge sums.
-    Discharged by exhibiting `proton_partition` and `neutron_partition`
-    as the canonical witnesses. -/
+    `volume_calibrates_mass` closes by `rfl`.  This is genuine content
+    — the mass-calibration identity holds definitionally — not a
+    vacuous discharge.  (The former `is_baryon_realisation` field was
+    removed: it was a self-assuming projection carrying no content;
+    see the class docstring.) -/
 -- Ref: [manuscript] Ch. 6 §3, conj:borromean-quark
 instance canonical : BorromeanQuark where
   bare_mass := fun q => borromean_volume / (1 - 1/q)^2
   volume_calibrates_mass := fun _ _ => rfl
-  is_baryon_realisation :=
-    ∃ p n : BorromeanBaryon,
-      p.color = ![0, 1, 2] ∧ p.orientation = ![1, 1, -1] ∧
-      n.color = ![0, 1, 2] ∧ n.orientation = ![1, -1, -1]
-  is_baryon_realisation_holds :=
-    ⟨proton_partition, neutron_partition, rfl, rfl, rfl, rfl⟩
 
 end QOU.Archimedean
 
