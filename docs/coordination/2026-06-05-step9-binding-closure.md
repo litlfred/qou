@@ -444,7 +444,10 @@ graph **M_n(K)** — *which pairs bond*. Cross-recognition (§6 convergence, not
   mirror split == the Coulomb term (cont.4/cont.5). The per-order count inherits this
   session's charge-structure result for free — the pairwise backbone is charge-symmetric.
 - **Localises the open work:** the 2-body count is FIXED; what remains open is the
-  M_3/M_4 weights (a_D^(n)·w_n, the deuteron pins only w_2) and the large-A geometric
-  saturation of C(A,n). qou-v0yw stays open with a fixed 2-body anchor to build on.
+  M_3/M_4 weights (a_D^(n)·w_n, the deuteron pins only w_2). **Cross-ref #3585:** the
+  naive EQUAL-weight a_D^(n)·C(A,n) tower blows up at A≥5 (#3545 Part 5), so the
+  higher-order weights must SUPPRESS the raw C(A,n) growth, and the large-A edge set is
+  the max-contact α-cluster deltahedra (#3549/#3555), not all-subsets. qou-v0yw stays
+  open with a fixed 2-body anchor to build the suppressed higher orders on.
   Compute [`computations/mnk_per_order_counting.py`](../../computations/mnk_per_order_counting.py),
   audit [docs/audits/2026-07-11-mnk-per-order-counting.md](../audits/2026-07-11-mnk-per-order-counting.md).
