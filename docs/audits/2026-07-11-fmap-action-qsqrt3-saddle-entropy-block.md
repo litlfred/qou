@@ -21,9 +21,10 @@ on the numerical Kashaev-ladder coefficients?**
 
 Method: high-precision (dps 200–220) `log J_N(4₁)` on `N = 300…1180`, QR
 least-squares fit of `log J_N − (3/2)log N` against `{N, 1, 1/N, …, 1/N^K}` (Vol
-recovered to `~7×10⁻²⁵`), giving the 1/N^n ladder coefficients `c_n`. Each `c_n`
-(and the Ohtsuki-convention rescalings `c_n·n!·(2π)^n`) was PSLQ-tested for
-rationality under torsion normalizations `3^{a·n}`, `a ∈ {0, ¼, ½, 1, −½}`.
+recovered to `~2×10⁻²³`), giving the 1/N^m ladder coefficients `c_m` (the
+coefficient of `1/N^m`, `m = 1…K`). Each `c_m` (and the Ohtsuki-convention
+rescalings `c_m·m!·(2π)^m`) was PSLQ-tested for rationality under torsion
+normalizations `3^{a·m}`, `a ∈ {0, ¼, ½, 1, −½}`.
 
 ## Result — REFUTED (scope-(a)): the numerical route does not reach the arithmetic
 
