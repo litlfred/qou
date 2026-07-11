@@ -34,7 +34,14 @@ NOT $c_3$'s limit (see the audit). (b) $c_3 = -2 = J_{\mathrm{Hopf}}(1)$ is the
 integrability facts `log_integrable` / `f_integrable` below are `axiom`s (they
 were changed `lemma → axiom` to make the file compile), so this file is NOT a
 completed proof of the FTC step — they are Mathlib-provable and should be proved.
-Ref: `docs/audits/2026-07-11-gemini-session-c3-overclaim-continuum-and-lean-audit.md`.
+(d) MOST IMPORTANT: the capstone `theorem c3_continuum_limit_is_hyperbolic_volume`
+below is **`: True := by trivial`** — it proves NOTHING about $c_3$ or
+$-\mathrm{Vol}(4_1)$; the physical claim lives only in its name/docstring while
+the proposition is `True`. It is a vacuous `placeholder-true` stub, NOT a
+formalization of the $c_3 = -\mathrm{Vol}(4_1)$ identification (which is false per
+(a)). The real content here is only the two geometry lemmas (`potential_derivative`,
+`saddle_point_root`). Ref:
+`docs/audits/2026-07-11-gemini-session-c3-overclaim-continuum-and-lean-audit.md`.
 -/
 
 namespace QOU.MassTheory.ContinuumGeometry
