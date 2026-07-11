@@ -93,8 +93,10 @@ def main():
         q0 = mp.mpf(str(q_at(30)))
         q0src = "qou_substrate.q_at(30)"
     except Exception:                                # noqa: BLE001 (substrate optional in sandbox)
-        q0 = mp.mpf("1.10997859555733471")
-        q0src = "q-pinning-50-digit.witness (muon q_0)"
+        # matches the primary q_at (proton pin) for cross-environment consistency; the
+        # magnitude≠q-dim result is q₀-insensitive (4.41% gap ≫ the 11.5 ppb μ–p diff).
+        q0 = mp.mpf("1.1099785827513808076")
+        q0src = "fallback (q_at proton pin, hardcoded high-precision)"
 
     assertions = []
 
