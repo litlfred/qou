@@ -68,12 +68,13 @@ def main() -> None:
     p_uud, p_udd = _engine_phi_product([1, 1, 0]), _engine_phi_product([1, 0, 0])
     dphi_engine = abs(_logabs(p_udd) - _logabs(p_uud))
     qrat = sp.Rational(Q_RAT_NUM, Q_RAT_DEN)
-    cf_val = {o: sp.nsimplify(cf.subs(q, qrat)) for o, cf in (("uud", cf_uud), ("udd", cf_udd))}
+    cf_val = {o: cf.subs(q, qrat) for o, cf in (("uud", cf_uud), ("udd", cf_udd))}
     to_fr = lambda e: Fraction(int(sp.fraction(e)[0]), int(sp.fraction(e)[1]))
     dphi_cf = abs(_logabs(to_fr(cf_val["udd"])) - _logabs(to_fr(cf_val["uud"])))
     q0 = mp.mpf(Q_50_DIGIT_STR)
-    cf_mp = lambda e: sp.lambdify(q, e, "mpmath")(q0)
-    dphi_q0 = abs(mp.log(abs(cf_mp(cf_udd))) - mp.log(abs(cf_mp(cf_uud))))
+    cf_udd_mp = sp.lambdify(q, cf_udd, "mpmath")
+    cf_uud_mp = sp.lambdify(q, cf_uud, "mpmath")
+    dphi_q0 = abs(mp.log(abs(cf_udd_mp(q0))) - mp.log(abs(cf_uud_mp(q0))))
     print(f"  engine (exact Fraction) = {mp.nstr(dphi_engine, 40)}")
     print(f"  closed form (same q)    = {mp.nstr(dphi_cf, 40)}")
     print(f"  engine vs closed diff   = {mp.nstr(abs(dphi_engine - dphi_cf), 3)}  (exact)")
@@ -86,8 +87,14 @@ def main() -> None:
     rel = (dm_pred - CODATA_NP_MEV) / CODATA_NP_MEV
     r = CODATA_NP_MEV / dm_pred
     hbar2 = (1 - 1 / q0) ** 2
-    slope = float(sp.lambdify(q, sp.diff(sp.log(sp.Abs(cf_udd)) - sp.log(sp.Abs(cf_uud)), q), "mpmath")(q0))
-    dq = float(CODATA_NP_MEV / alpha - dphi_q0) / slope
+    # `slope_signed = d/dq (log|udd| − log|uud|)` — `d/dq log(f) = f'/f` is real
+    # even where f < 0 (the closed forms are negative), so Abs is unnecessary in
+    # the derivative.  But `|ΔΦ|` uses the magnitude and the signed ΔΦ is < 0 at
+    # q₀, so `d|ΔΦ|/dq = sign(ΔΦ)·slope_signed`.
+    signed = mp.log(abs(cf_udd_mp(q0))) - mp.log(abs(cf_uud_mp(q0)))
+    slope_signed = float(sp.lambdify(q, sp.diff(sp.log(cf_udd) - sp.log(cf_uud), q), "mpmath")(q0))
+    slope = mp.sign(signed) * slope_signed  # = d|ΔΦ|/dq
+    dq = float((CODATA_NP_MEV / alpha - dphi_q0) / slope)
     print(f"  α = m_e·8G = {mp.nstr(alpha, 12)},  Δm_pred = {mp.nstr(dm_pred, 12)}")
     print(f"  rel error = {mp.nstr(rel * 100, 4)} %,  correction r−1 = {mp.nstr(r - 1, 6)}")
     print(f"  (r−1)/ℏ_q² = {mp.nstr((r - 1) / hbar2, 5)}  (near −2/3 but not clean)")
