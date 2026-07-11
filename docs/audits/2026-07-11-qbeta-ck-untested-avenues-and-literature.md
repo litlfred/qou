@@ -5,7 +5,7 @@
 avenues **not yet tested** (checked against the refuted-class map C1–C14 and
 the kernel-constraint registry KC1–KC20) and what the external literature
 offers for each. Every proposed avenue below carries a formalize-first
-invariant + kill criterion per AGENTS.md §"Formalize-first probe discipline".
+invariant + kill criterion per [AGENTS.md](../../AGENTS.md) §"Formalize-first probe discipline".
 No c_k value is proposed anywhere in this doc (flip-flop guard).
 
 **Authoritative companions (read first):**
@@ -26,7 +26,7 @@ these remain **proposed-never-run** as of 2026-07-11:
 |---|---|---|---|
 | U1 | **Exponentiated per-block** decomposition (`F = exp(Σ per-block)` instead of product) | untested | #1585 queue item 2; never picked up |
 | U2 | **Modular bootstrap** | untested, **blocked on missing infra** | #1585 queue item 4; the 2026-07-06 accuracy audit found the corpus "Φ_q" is the compact q-dilog — the **Faddeev Φ_b / modular double is entirely absent**, so every prior Φ-probe on the decay face used the wrong object |
-| U3 | **Galois descent on the Habiro ring** | untested | #1585 queue item 5 / #1713 Phase B menu; see §3.1 — GSWZ 2024 now supplies the actual descent structure (Frobenius gluing) |
+| U3 | **Galois descent on the Habiro ring** | untested | #1585 queue item 5 / #1713 Phase B menu; see §2 item 1 and §3.F — GSWZ 2024 now supplies the actual descent structure (Frobenius gluing) |
 | U4 | **Exotic-signed Lusztig** (Whittaker / Yun–Zhu / twisted `T_i`) | narrowed (N1–N3, PR #1930) but formally open | research-grade; specifying the convention IS the task |
 | U5 | **KC15 odd-channel candidate `D(q)`** (bar-odd 4₁-operator pair difference) | gate-passed, not driven to a value | with P-C15 (4₁ qZeilberger kernel, Casoratian bar-self-reciprocal) the only surviving fibre-kernel objects |
 | U6 | **Exact chiral operator realizing `q^{2n(λ)}` at `q = i`** | open (#3509) | the Δ_λ/Q_β shared ζ₄ fibre locus |
@@ -200,5 +200,5 @@ history.
 - Registry (tiers + KC1–KC20): [`../coordination/ck-dk-canonical-registry.md`](../coordination/ck-dk-canonical-registry.md)
 - Master ledger: [`../coordination/1ppq-qbeta.md`](../coordination/1ppq-qbeta.md)
 - Keystone (merged F(q) axis): [`../coordination/s5-so3-keystone.md`](../coordination/s5-so3-keystone.md)
-- Missing modular double: `2026-07-06-qbeta-faddeev-phi-b-modular-double-accuracy.md`
+- Missing modular double: [`2026-07-06-qbeta-faddeev-phi-b-modular-double-accuracy.md`](2026-07-06-qbeta-faddeev-phi-b-modular-double-accuracy.md)
 - Growth/pole data (KC8): PR #1727, #2445, #2611
