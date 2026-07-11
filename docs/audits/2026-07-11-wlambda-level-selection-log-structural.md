@@ -70,8 +70,16 @@ scale-free `k(A)` probe's finding (`k∝A` R²=0.67, `k∝`bonds R²=0.49 vs log
 ## Honest scope — what is proved vs open
 
 - **Proved / verified (the core):** `w_std(k)` grows super-exponentially (combinatorial;
-  the Lean target is a lower bound on `E_Planch[f^{λ/(2,1)}]`).
-- **Rigorous given the core:** the log-form of `k(A)` — *conditional on H1+H2*.
+  the remaining Lean target is a *lower bound* on `E_Planch[f^{λ/(2,1)}]` — needs
+  SYT/skew/Plancherel Mathlib infrastructure, a multi-session build).
+- **Rigorous given the core:** the log-form of `k(A)` — *conditional on H1+H2* — is now
+  **Lean-formalized** in
+  [`QOU/Mass/LevelSelectionLogarithmic.lean`](../../content/quantum-observable-universe/lean/QOU/Mass/LevelSelectionLogarithmic.lean):
+  the growth bound is the §3b conjecture class `TowerGeometricLowerBound` (content-bearing,
+  no instance — the open core above), and `level_geometric_bound` / `linear_selection_bound`
+  prove the downstream implication (`c·r^(k(A)) ≤ M·A`, so the level is at most logarithmic
+  and linear/bond-count are excluded) outright from it. So the *argument* half is
+  machine-formalizable; only the combinatorial lower bound stays open.
 - **Open (the conjectural inputs, = GAP-A-3):**
   - **(H1)** the connected-tower picture `B(A) = s·w_std(k(A))` — that binding *is* the
     scaled connected standard-channel tower weight at a single selected level. This is
