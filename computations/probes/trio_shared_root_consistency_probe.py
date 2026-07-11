@@ -21,15 +21,18 @@ Values from computations/per-observable-100x-status.witness.json (Path C rows).
 """
 from __future__ import annotations
 
-# (pred_MeV, codata_MeV, err_ppb) from per-observable-100x-status.witness.json
+# (pred_MeV, codata_MeV, err_ppb) — the COMMITTED snapshot of the Path-C rows of
+# per-observable-100x-status.witness.json.  Pinned here on purpose: this probe
+# checks that witness's *internal* shared-root consistency, so it must compare
+# the witness's own pred/codata pair, not live codata_constants (which could
+# drift from the snapshot the witness was computed against).
+# m_e is exact (CAL-1, residual ≈ 0), so it drops out of the residual identities.
 ROWS = {
     "m_p":    (938.272089427, 938.272088160, 1.351),
-    "m_mu":   (105.658397811, 105.658375649, 209.8),
     "Q_beta": (0.782334386518, 0.782333410, 1248.0),
     "m_n":    (939.565422765, 939.565420520, 2.389),
     "Delta_pn": (1.29333333721, 1.29333236, 755.6),
 }
-M_E_MEV = 0.51099895069  # exact CAL-1 (residual ≈ 0)
 
 
 def residual(obs: str) -> float:
