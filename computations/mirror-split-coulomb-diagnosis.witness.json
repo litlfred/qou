@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-07-11T18:16:10.216926+00:00",
-  "commitSha": "0b02689690cae442cd8c51120657398ac4e3edb0",
+  "computedAt": "2026-07-11T18:24:58.919195+00:00",
+  "commitSha": "a91079e60baf2ce1c0ba5cd9d64ffa36bf15cbb3",
   "assertions": [
     {
       "name": "mirror_split_is_coulomb_kernel_strong_csb_overshoots_3x",
@@ -17,8 +17,8 @@
   "durationMs": 5,
   "computation": "mirror-split-coulomb-diagnosis",
   "scriptFile": "mirror_split_coulomb_diagnosis.py",
-  "scriptHash": "9222091bead8",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "879817f377cb",
+  "scriptCommitSha": "bc5c5d9ecd123cf25634b017dd7f4fcfa141d8c0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,7 +29,7 @@
     "python": "3.11.15",
     "mpmath": "1.4.1"
   },
-  "description": "The A=3 mirror binding split B(³H)−B(³He)=0.764 MeV is reproduced by the pp Coulomb displacement energy (e²/4πε₀r at r≈1.9 fm = 0.758 MeV), so strong CSB is ~0. The #2089 log-trace kernel assigns a STRONG mirror split E₀(ε_nn−ε_pp)=2.27 MeV — 3× the total split, ~100× the strong residual — over-breaking charge symmetry. Fix direction: charge-symmetric strong bond (f_pp≈f_nn) + separate Coulomb; this also collapses the 1.78× nucleon ε-spread, restoring equal-weight coordination counting (#3557). Scope-(a) diagnosis, no re-derivation, no wiring.",
+  "description": "The A=3 mirror binding split B(³H)−B(³He)=0.764 MeV is reproduced by the pp Coulomb displacement energy (e²/4πε₀r at r≈1.9 fm = 0.758 MeV), so strong CSB is ~0 (model-independent strong residual = the ~0.07 MeV Nolen–Schiffer anomaly). The #2089 log-trace kernel assigns a STRONG mirror split E₀(ε_nn−ε_pp)=2.27 MeV — 3× the total split, ~32× the Nolen–Schiffer residual (~400× the point-charge residual) — over-breaking charge symmetry. Fix direction: charge-symmetric strong bond (f_pp≈f_nn) + separate Coulomb; this also collapses the 1.78× nucleon ε-spread, restoring equal-weight coordination counting (#3557). Scope-(a) diagnosis, no re-derivation, no wiring.",
   "data": {
     "q0": 1.1099785827513808,
     "E0_MeV": 4.185981363294476,
@@ -40,8 +40,10 @@
       "2.0": 0.71998,
       "2.2": 0.6545272727272727
     },
-    "strong_residual_MeV": 0.005881195789473659,
+    "point_charge_residual_MeV": 0.005881195789473659,
+    "nolen_schiffer_residual_MeV": 0.07,
     "kernel_strong_split_MeV": 2.2707720188930245,
-    "overshoot_vs_total": 2.9731685889758563
+    "overshoot_vs_total": 2.9731685889758563,
+    "overshoot_vs_nolen_schiffer": 32.439600269900346
   }
 }
