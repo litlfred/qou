@@ -39,6 +39,7 @@ import QOU.MathlibExt.MonoidalCalcVar
 import QOU.MathlibExt.QGaussianBinomialPascal
 import QOU.HeckeAlgebra
 import QOU.Glossary
+import QOU.Knot.CuspShapeBarParity
 import QOU.Knot.FigureEightSelfDuality
 import QOU.Knot.FigureEightVolume
 import QOU.Knot.PerNeutronLadder
