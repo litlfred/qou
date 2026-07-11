@@ -21,11 +21,24 @@ The merged result: the single-link weight `B = M(A)·m_e·Vol_n(K)` has multipli
 **What is derivable (exact).** `z(A) = A−1` is the **vertex degree of the complete
 graph `K_A`** — the fully-coordinated A-body cluster in which every nucleon is
 bonded to every other. Equivalently the total bond count is `|E(K_A)| = C(A,2) =
-A(A−1)/2`, and the average/uniform degree is `2·C(A,2)/A = A−1`. This is an exact
-graph-theoretic fact, provable in Lean (Mathlib `SimpleGraph`, `⊤`/`completeGraph`).
+A(A−1)/2`, and the handshake identity ties the two: `Σ_v deg(v) = A·(A−1) =
+2·C(A,2)`. These are exact graph facts, already **verified in Mathlib**:
+
+- `SimpleGraph.complete_graph_degree` : `(completeGraph V).degree v = Fintype.card V − 1`
+  (⇒ degree `A−1` for `V = Fin A`);
+- `SimpleGraph.card_edgeFinset_top_eq_card_choose_two` : `#(⊤).edgeFinset = (card V).choose 2`;
+- `SimpleGraph.sum_degrees_eq_twice_card_edges` : `Σ_v deg(v) = 2·#edgeFinset`.
+
 The complete graph is **3D-realizable iff A ≤ 4** (a tetrahedron is the largest
 all-mutually-adjacent point set in ℝ³), which is exactly the regime where the
 single-link volume picture applies.
+
+*Follow-up (not in this PR):* wrapping these Mathlib lemmas into a `QOU.Mass`
+library file plus a conditional `BondExtensiveBinding` class (the §3b-cond pattern
+below) requires a full Lean build — the drafted file could not be machine-verified
+in this sandbox because ProofWidgets JS assets (`widgetJsAll`) are network-blocked
+and the SimpleGraph olean cone will not build without them. Filed as a follow-up
+rather than shipped unverified.
 
 **What is NOT derived (conditional / empirical).** The identification
 "single-link volume multiplier = coordination number `z`" is the **bond-extensive
