@@ -104,13 +104,19 @@ theorem qPochProd_q_zero (x : R) (N : ℕ) : qPochProd (0 : R) x N = 1 := by
   | succ n ih => rw [qPochProd_succ, ih]; simp
 
 /-!
-## Infinite limit — deferred (analytic layer)
+## Infinite limit — realized in `QuantumDilogarithmInfinite` (bi-formal `R[[q]][[x]]`)
 
 The genuine compact quantum dilogarithm is the reciprocal of the `N → ∞`
 limit,
 $$\Phi_q(x) \;=\; \Bigl(\lim_{N\to\infty} P_N(q, x)\Bigr)^{-1},$$
-which is **not** formalised here.  Two honest obstacles, per the
-plan that scoped this file to the algebra first:
+which is **not** formalised *here* (this file is the finite-truncation
+algebra).  It **is** now formalised in the sibling module
+`QOU.MathlibExt.QuantumDilogarithmInfinite` via the **bi-formal `R[[q]][[x]]`**
+route (target T1): both `q` and `x` are treated as formal variables, so the
+object is defined by its `q`-difference coefficient recurrence and the
+functional equation `Φ_q(q²x)⁻¹ = (1 + q x)·Φ_q(x)⁻¹` is proved sorry-free —
+sidestepping the analytic obstacles noted below (which is why the *analytic*
+route was deferred):
 
 1. **Convergence is genuinely analytic.** The coefficient of `x^k` in
    `P_N` is the elementary symmetric polynomial `e_k(q, q^3, …, q^{2N-1})`,
