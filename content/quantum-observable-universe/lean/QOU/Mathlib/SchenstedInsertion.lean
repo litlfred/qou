@@ -598,7 +598,7 @@ theorem strictBelow_bump_step {row lower : List ℕ} {x y : ℕ}
     (hsb : StrictBelow row lower) (hb : (rowInsert row x).2 = some y) :
     StrictBelow (rowInsert row x).1 (rowInsert lower y).1 := by
   obtain ⟨hlen, hlt⟩ := hsb
-  set k := row.findIdx (x < ·) with hkdef
+  set k := row.findIdx (x < ·)
   have hk : k < row.length := rowInsert_findIdx_lt hb
   have hxy : x < y := rowInsert_bumped_gt hb
   have hup : (rowInsert row x).1 = row.set k x := rowInsert_bump_eq_set hb
@@ -606,7 +606,7 @@ theorem strictBelow_bump_step {row lower : List ℕ} {x y : ℕ}
     rw [List.getD_eq_getElem?_getD, rowInsert_bump_getElem? hb]; rfl
   have hxk : x < row.getD k 0 := hrowk ▸ hxy
   have hsb2 : StrictBelow (row.set k x) lower := strictBelow_set_smaller ⟨hlen, hlt⟩ hxk
-  obtain ⟨hlen2, hlt2⟩ := hsb2
+  obtain ⟨_, hlt2⟩ := hsb2
   rw [hup]
   cases hbl : (rowInsert lower y).2 with
   | none =>
@@ -646,7 +646,7 @@ theorem strictBelow_bump_step {row lower : List ℕ} {x y : ℕ}
         · rw [hek, getD_set_self hk]; exact hxy
   | some z =>
     have hk' : lower.findIdx (y < ·) < lower.length := rowInsert_findIdx_lt hbl
-    set k' := lower.findIdx (y < ·) with hk'def
+    set k' := lower.findIdx (y < ·)
     have hmono : k' ≤ k := by
       apply bump_findIdx_mono row lower x y (rowInsert_bump_getElem? hb)
       intro j hjl hju
