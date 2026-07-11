@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-11T14:42:49.323505+00:00",
-  "commitSha": "7f8aedec6cc724d8ba0cedb98b857a24c03d31ca",
+  "computedAt": "2026-07-11T18:46:31.752627+00:00",
+  "commitSha": "faa944dd542b03b5538cf64ad1e5840edfaeaa24",
   "assertions": [
     {
       "name": "frobenius_dual_refuted_scope_a",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 34,
+  "durationMs": 31,
   "computation": "binding-wn-frobenius-dual-refute",
   "scriptFile": "binding_wn_frobenius_dual_probe.py",
-  "scriptHash": "c430713b3241",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "4e82685cd967",
+  "scriptCommitSha": "6bd662454c3c9446a5e4b4657529c10fe32e2d40",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

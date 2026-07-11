@@ -48,14 +48,13 @@ from math import comb
 from pathlib import Path
 import mpmath as mp
 
-mp.mp.dps = 30
 sys.path.insert(0, str(Path(__file__).resolve().parent / "substrate"))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 try:
-    from q_parameter import Q as Q0
-    q = mp.mpf(str(Q0))
+    from _precision import set_compute_dps
+    set_compute_dps()  # canonical COMPUTE_DPS (=70) — matches WitnessBuilder precisionMetadata
 except Exception:
-    q = mp.mpf("1.10997859555733471")
+    mp.mp.dps = 50
 
 ISO = {"D": (2.224566, 1, 2), "T": (8.481821, 1, 3),
        "3He": (7.718058, 2, 3), "4He": (28.295661, 2, 4)}

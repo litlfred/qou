@@ -35,11 +35,15 @@ import sys
 from pathlib import Path
 import mpmath as mp
 
-mp.mp.dps = 40
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE / "substrate"))
 sys.path.insert(0, str(HERE.parent / "tools" / "pyhecke" / "python"))
+try:
+    from _precision import set_compute_dps
+    set_compute_dps()  # canonical COMPUTE_DPS (=70) — matches WitnessBuilder precisionMetadata
+except Exception:
+    mp.mp.dps = 50
 
 try:
     from q_parameter import Q as Q0

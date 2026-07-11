@@ -36,9 +36,13 @@ import sys
 from pathlib import Path
 import mpmath as mp
 
-mp.mp.dps = 40
 sys.path.insert(0, str(Path(__file__).resolve().parent / "substrate"))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+try:
+    from _precision import set_compute_dps
+    set_compute_dps()  # canonical COMPUTE_DPS (=70) — matches WitnessBuilder precisionMetadata
+except Exception:
+    mp.mp.dps = 50
 try:
     from q_parameter import Q as Q0
     Q0 = mp.mpf(str(Q0))
