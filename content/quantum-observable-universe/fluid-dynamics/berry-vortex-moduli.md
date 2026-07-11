@@ -21,10 +21,10 @@ The $q$-Schrödinger equation evaluated near the vortex ground state constructs 
 $$
   \mathcal{A}_{\mathrm{Berry}}
   = 
-  i\langle\psi_\varrho|d|\psi_\varrho\rangle,
+  i\langle v_\varrho, d\, v_\varrho\rangle_F,
 $$
 
-where $|\psi_\varrho\rangle$ denotes the ground state at configuration $\varrho$ and $d$ acts as the exterior derivative on $\mathcal{M}_{j,K}$.
+where $v_\varrho$ denotes the ground state at configuration $\varrho$ and $d$ acts as the exterior derivative on $\mathcal{M}_{j,K}$.
 
 **Berry curvature.**
 The curvature $\mathcal{F} = d\mathcal{A}_{\mathrm{Berry}}$ maps the local geometric phase per unit area across the moduli space. For a vortex configuration sustaining $n$ well-separated filaments $\{\varrho_1, \ldots, \varrho_n\}$, the Berry curvature splits as
