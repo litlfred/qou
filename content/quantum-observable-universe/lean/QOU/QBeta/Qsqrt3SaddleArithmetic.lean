@@ -97,8 +97,15 @@ theorem hessian_eq :
   rw [cot_saddle]; ring
 
 /-- The leading saddle-Laplace `1/N` coefficient as a function of the first three
-    saddle Taylor data `(g₂, g₃, g₄)` (with `g₂ < 0`, so `|g₂| = −g₂`):
-    `b₁ = g₄/(8 g₂²) + 5 g₃²/(24 (−g₂)³)`. -/
+    saddle Taylor data `(g₂, g₃, g₄)`:
+    `b₁ = g₄/(8 g₂²) + 5 g₃²/(24 |g₂|³)`.
+
+    **Domain: `g₂ < 0`.** A Laplace `1/N` expansion exists only at a *maximum* of
+    the exponent, where the second derivative `g₂ = 2·G''(x*)` is strictly negative;
+    there `|g₂| = −g₂`, which is what the `(−g2)^3` denominator encodes. This is the
+    natural (non-misuse-prone) domain — the coefficient is meaningless at `g₂ ≥ 0`.
+    The sole call site (`laplaceB1_at_saddle`) instantiates `g₂ = −2√3π < 0`
+    concretely, so no separate hypothesis is threaded. -/
 noncomputable def laplaceB1 (g2 g3 g4 : ℝ) : ℝ :=
   g4 / (8 * g2 ^ 2) + 5 * g3 ^ 2 / (24 * (-g2) ^ 3)
 
@@ -108,9 +115,9 @@ noncomputable def laplaceB1 (g2 g3 g4 : ℝ) : ℝ :=
 theorem laplaceB1_at_saddle :
     laplaceB1 (-2 * Real.sqrt 3 * π) (-8 * π ^ 2) (-16 * Real.sqrt 3 * π ^ 3)
       = Real.sqrt 3 * π / 54 := by
-  have hπ : π ≠ 0 := Real.pi_ne_zero
+  -- `field_simp` discharges the `π ≠ 0` / `√3 ≠ 0` denominator side-conditions
+  -- itself, so no explicit nonzero hypotheses are needed.
   have h3 : Real.sqrt 3 ^ 2 = 3 := Real.sq_sqrt (by norm_num)
-  have hr' : Real.sqrt 3 ≠ 0 := by positivity
   have e2 : (-2 * Real.sqrt 3 * π) ^ 2 = 12 * π ^ 2 := by
     linear_combination 4 * π ^ 2 * h3
   have e3 : (-(-2 * Real.sqrt 3 * π)) ^ 3 = 24 * Real.sqrt 3 * π ^ 3 := by
