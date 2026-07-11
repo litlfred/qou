@@ -1,0 +1,72 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-07-11T18:54:28.660001+00:00",
+  "commitSha": "fdf57ae808beb41095075e7befc6552293ca165f",
+  "assertions": [
+    {
+      "name": "charge_symm_plus_coulomb_fixes_mirror_split",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "charge-symm+Coulomb split +0.998 MeV is >2× closer to AME +0.764 than the broken kernel +2.271; the residual ~30% is the uniform-sphere Coulomb over-estimate. Absolute binding open (edge-set/connected magnitude → charge-symmetric #3548)."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "charge-symmetric-coulomb-binding",
+  "scriptFile": "charge_symmetric_coulomb_binding.py",
+  "scriptHash": "324e8b3906e5",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "Benchmarks the charge-symmetric strong bond + separate Coulomb light-nuclei binding vs AME (the #3564/#3570 diagnosis payoff). Charge-symm (all bonds = isoscalar f_pn) minus canonical Coulomb FIXES the ³H/³He mirror split — collapses to 1.00 MeV (Coulomb) from the broken kernel's 2.27–3.27 MeV vs AME 0.76 (~3× gain), exactly as predicted. Absolute binding NOT closed (D over-, ⁴He under-bound) — the edge-set/E₀/connected magnitude (#3548's connected-(2,1)/SU(4) mechanism, still on the charge-breaking kernel) must be re-run charge-symmetric. Verified split win, not a closure. Scope-(a), no wiring.",
+  "data": {
+    "E0_MeV": 4.185981363294476,
+    "nuclei": {
+      "D": {
+        "ame": 2.2245662,
+        "ec": 0.0,
+        "broken": 3.890454565814218,
+        "broken_c": 3.890454565814218,
+        "symm_c": 3.890454565814218
+      },
+      "T": {
+        "ame": 8.4817962,
+        "ec": 0.0,
+        "broken": 12.958876338145966,
+        "broken_c": 12.958876338145966,
+        "symm_c": 11.671363697442654
+      },
+      "3He": {
+        "ame": 7.71804132,
+        "ec": 0.99841250061394,
+        "broken": 10.688104319252941,
+        "broken_c": 9.689691818639002,
+        "symm_c": 10.672951196828715
+      },
+      "4He": {
+        "ame": 28.2956624,
+        "ec": 0.9071179575033108,
+        "broken": 23.646980657398906,
+        "broken_c": 22.739862699895596,
+        "symm_c": 22.435609437382
+      }
+    },
+    "mirror_split": {
+      "AME": 0.7637548799999996,
+      "broken": 2.270772018893025,
+      "broken_plus_coulomb": 3.2691845195069646,
+      "charge_symm_plus_coulomb": 0.9984125006139397
+    }
+  }
+}
