@@ -1,0 +1,74 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-11T22:15:38.698001+00:00",
+  "commitSha": "372cc8ad22e3ff682a7fa67bbe79ca90909fa540",
+  "assertions": [
+    {
+      "name": "fig8_eigenvalue_unit_modulus",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "det M_{4₁}=1 and |tr M_{4₁}|<2 at q₀ (seminormal V_{(2,1)} block)"
+    },
+    {
+      "name": "theta_classical_2pi_over_3",
+      "computed": 120.0,
+      "expected": 120.0,
+      "passed": true,
+      "tolerance": 1e-06,
+      "source": "θ(q=1)=120°: (σ₀σ₁)² is an S₃ 3-cycle, eigenvalue e^{2πi/3}"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "qbeta-c3-reeb-rotation-phase",
+  "scriptFile": "qbeta_c3_reeb_rotation_phase_probe.py",
+  "scriptHash": "c696eca45ac7",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "q-Reeb rotation angle θ of the figure-eight operator M_{4₁}=(σ₀σ₁⁻¹)² on V_{(2,1)} of H₃(q), built from the 2×2 Hoefsmit seminormal block (gauge-invariant eigenvalues). Verified: braid+Hecke hold, det M=1, |tr M|<2 ⇒ |λ_{4₁}|=1 (confirms the content block's Reeb claim). θ(q₀)=117.087° at both anchors; θ(1)=120°=2π/3 exact (S₃ 3-cycle); closed form tr=q⁴−2q²+1−2q⁻²+q⁻⁴. θ is SMOOTH (dθ/dq≈−51°/unit q) ⇒ NOT the dc₃/dq≈4.66e6 sign-flip source (the open q₀→u map is). Reeb's real contribution: Δθ=θ(q₀)−120°=−2.913° is the derived amphichirality-breaking seed of S. Scope-(a); C14; no c_k wired; no fit; arg(u)=θ negative.",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "rep_verification": {
+      "braid_ok": true,
+      "hecke_ok": true,
+      "det_M": "1.0",
+      "tr_M_q0": "-0.910677330022",
+      "unit_circle": true,
+      "closed_form_ok": true
+    },
+    "theta_deg": {
+      "q_eq_1": "120.0",
+      "muon": "117.086726647",
+      "proton": "117.086727299",
+      "required_arg_u": {
+        "muon": "82.6",
+        "proton": "135.0"
+      }
+    },
+    "smoothness": {
+      "dtheta_dq_deg": "-50.878278",
+      "anchor_split_deg": "-6.51545e-7"
+    },
+    "amphichirality_seed": {
+      "delta_theta_deg": "-2.9132734",
+      "classical_theta_deg": "120",
+      "cs_at_q1": "0"
+    },
+    "verdict": "arg_u_eq_theta_scope_a_negative"
+  }
+}
