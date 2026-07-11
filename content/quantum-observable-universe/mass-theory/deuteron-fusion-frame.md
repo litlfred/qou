@@ -12,7 +12,7 @@ of the deuteron binding magnitude is fixed by three exact identities:*
    $g^2\,(1 + [2]_v^2) = 1$: the bond magnitude sits exactly at the
    marginal-stability point $\det(1 + g\,M) = 0$.*
 
-## Why the integer $5$ is not free
+## Rigidity of the integer $5$
 
 The bond factor $z = 1/[2]_v$ is the Ocneanu–Markov normalization of the
 Hecke trace $\mathrm{tr}_M$ (the same $z$ that

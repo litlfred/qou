@@ -32,7 +32,7 @@ $g^2\,(1 + [2]_v^2) = 1$, equivalently $g^2\,(5 + (v - v^{-1})^2) = 1$
 (`amplitude_bond_criticality` in the Lean sibling, sorry-free modulo the
 class).
 
-## What this conjecture does not claim
+## Scope of the conjecture
 
 It does not supply the MeV unit for the deuteron binding law: the linear
 $B(^2\mathrm{H}) = 5g$ rule remains a near-match with its unit anchor open

@@ -5,7 +5,7 @@ In the Descartes universe, this geometric constraint transplants to the Skein al
 **Analogy.**
 See [Table](#tbl:color-confinement-observation-table-data).
 
-**Why exactly three colors.**
+**Three-color canonicity.**
 The automorphism group $S_5$ of Bring's surface contains exactly three conjugate $S_3$ subgroups. Each subgroup is the quotient of the trefoil knot group restricted to one color fiber. The number three arises from geometric structure:
 1. The degree of the Bring curve is $5$ (quintic in $\mathbb{P}^4$).
 2. The resolvent structure factors as $5 = 1 + 1 + 3$ (one spacetime base, one longitudinal backbone, three chiral fibers).
