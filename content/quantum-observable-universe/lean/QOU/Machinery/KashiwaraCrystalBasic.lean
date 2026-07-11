@@ -60,45 +60,62 @@ def trivialCrystal : CrystalGraph where
 theorem trivialCrystal_unique_vertex (v : trivialCrystal.V) :
     v = () := rfl
 
+/-! ## Crystal morphisms -/
+
+/-- A **morphism of crystal graphs**: a vertex map `toFun` commuting with
+both the lowering (`f`) and raising (`e`) operators.  Bundling the two
+morphism laws as separate fields keeps downstream rewriting smooth. -/
+structure CrystalHom (G G' : CrystalGraph) where
+  /-- The underlying vertex map. -/
+  toFun : G.V → G'.V
+  /-- `toFun` commutes with lowering: `f i` then map = map then `f i`. -/
+  map_f : ∀ (i : ℕ) (v : G.V), (G.f i v).map toFun = G'.f i (toFun v)
+  /-- `toFun` commutes with raising: `e i` then map = map then `e i`. -/
+  map_e : ∀ (i : ℕ) (v : G.V), (G.e i v).map toFun = G'.e i (toFun v)
+
 /-! ## Conditional classes for the Stembridge axioms + type-A specialisation -/
 
-/-- Conditional class axiomatising the Stembridge crystal axioms.
+/-- Conditional class carrying the foundational crystal axiom.
 NEAR-MATCH tier; instance not constructed (requires upstream
-Mathlib crystal-graph machinery). -/
+Mathlib crystal-graph machinery).
+
+The single field encodes the Kashiwara **reversibility** law, *not* the
+full Stembridge S1–S8 (whose additional string-length / interplay
+conditions would further constrain an instance) — hence the field is
+named `reversibility` rather than `stembridge_axioms`. -/
 class StembridgeCrystal (G : CrystalGraph) : Prop where
   /-- The foundational Kashiwara crystal axiom presupposed by the full
       Stembridge S1–S8: for every simple-root label `i`, the raising and
       lowering operators `e i`, `f i` are mutually inverse partial maps —
-      `f i v = some w ↔ e i w = some v`.  (The additional S1–S8
-      string-length / interplay conditions further constrain an instance;
-      this field encodes the defining reversibility, no longer `True`.) -/
-  stembridge_axioms :
+      `f i v = some w ↔ e i w = some v`.  (No longer `True`.) -/
+  reversibility :
     ∀ (i : ℕ) (v w : G.V), G.f i v = some w ↔ G.e i w = some v
 
 /-- Conditional class for type-A specialisation: the crystal `G` embeds
 into a tensor-power crystal of the standard `sl_n` representation.  The
 target crystal is abstract (the concrete standard-`sl_n` tensor-power
 construction is substantial and not in Mathlib); the class carries it as
-a datum and `sl_n_embedding` states that `embed` is a genuine crystal
-morphism. -/
+a datum, `embed` as a genuine crystal morphism (`CrystalHom`, so the two
+morphism laws are separate fields), and `embed_injective` making it a
+true *embedding*. -/
 class TypeACrystal (G : CrystalGraph) (n : ℕ) where
   /-- The target crystal — a tensor power of the standard `sl_n` crystal
       (abstract datum). -/
   target : CrystalGraph
-  /-- The embedding on vertices. -/
-  embed : G.V → target.V
-  /-- `embed` is a crystal morphism: it commutes with both the lowering
-      (`f`) and raising (`e`) operators.  (Was `True`.) -/
-  sl_n_embedding :
-    (∀ i v, (G.f i v).map embed = target.f i (embed v)) ∧
-    (∀ i v, (G.e i v).map embed = target.e i (embed v))
+  /-- The embedding as a crystal morphism (commutes with `f` and `e`).
+      (Was the `True` field `sl_n_embedding`.) -/
+  embed : CrystalHom G target
+  /-- The embedding is injective — a genuine embedding, not just a
+      morphism. -/
+  embed_injective : Function.Injective embed.toFun
 
 /-- Conditional class for Demazure module identification: a Demazure
 sub-crystal at level `level` corresponds to a Weyl-group word.  The
 sub-crystal is carried as a predicate `member` with a distinguished
-highest-weight generator; `demazure_correspondence` states the defining
-Demazure closure property (closed under the first `level` lowering
-operators — the Weyl-word support). -/
+highest-weight generator (`highest`, pinned by `highest_isHighest` as an
+actual highest-weight vertex — annihilated by every raising operator);
+`demazure_closure` states the defining Demazure property (closed under the
+first `level` lowering operators — the Weyl-word support). -/
 class DemazureSubcrystal (G : CrystalGraph) (level : ℕ) where
   /-- Membership predicate cutting out the Demazure sub-crystal. -/
   member : G.V → Prop
@@ -106,11 +123,15 @@ class DemazureSubcrystal (G : CrystalGraph) (level : ℕ) where
   highest : G.V
   /-- The generator lies in the sub-crystal. -/
   highest_mem : member highest
+  /-- `highest` really is highest-weight: every raising operator
+      annihilates it (`e i highest = none`). -/
+  highest_isHighest : ∀ (i : ℕ), G.e i highest = none
   /-- **Demazure closure** (was `True`): the sub-crystal is closed under
       lowering by the first `level` simple roots — exactly the operators
       in the support of the length-`level` Weyl word. -/
-  demazure_correspondence :
-    ∀ (i : ℕ), i < level → ∀ v w, member v → G.f i v = some w → member w
+  demazure_closure :
+    ∀ (i : ℕ), i < level → ∀ (v w : G.V),
+      member v → G.f i v = some w → member w
 
 /-! ## Conditional theorem: residue-A composite identification
 
