@@ -1,0 +1,58 @@
+{
+  "engine": "python-magnus",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-11T19:33:49.691410+00:00",
+  "commitSha": "9c3484b89c8c3f40e68d90ce4ec23568d6ab590c",
+  "assertions": [
+    {
+      "name": "coordination_is_body_order_tower_not_single_graph",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "chain and Borromean are COMPLEMENTARY at different orders — chain M_2=1>0 Borromean (pairwise), Borromean M_3=1>0 chain (triple) — with equal tower rank (1=1). ⇒ max-binding does NOT select a single 'richest-tower' graph (refuted); the coordination is the body-order tower B=Σ_n B_n, each M_n from its own Brunnian-n sub-link. Chain undercount = missing M_3."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "mnk-coordination-graph-selection",
+  "scriptFile": "mnk_coordination_graph_selection.py",
+  "scriptHash": "2b20feeaf1c0",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "Coordination graph M_n(K) (qou-v0yw): tests a max-binding 'richest Milnor tower' selection principle and REFUTES it — the reducible chain (M_2=1, M_3=0) and the Brunnian Borromean (M_2=0, M_3=1) have EQUAL tower rank; the Borromean trades pairwise for the irreducible triple. Correct reading: the coordination is a body-order TOWER (ledger §0), not one graph — M_2 from pairwise links, M_3 from Borromean triples, each order using its own Brunnian-n sub-link. Explains #3545 Part 8's chain undercount (a pure chain is missing M_3). Reframes qou-v0yw as a per-order sub-link COUNTING problem (not single-graph selection); the counts + M_n→w_n weights stay OPEN. Scope-(a), reuses #3545 machinery, no fit, no wiring.",
+  "data": {
+    "candidate_towers": {
+      "chain (Hopf×2, reducible)": {
+        "M2_max_pairwise": 1,
+        "M2_pairwise": [
+          1,
+          0,
+          1
+        ],
+        "M3_triple": 0,
+        "tower_rank": 1
+      },
+      "Borromean (Brunnian, L6a4)": {
+        "M2_max_pairwise": 0,
+        "M2_pairwise": [
+          0,
+          0,
+          0
+        ],
+        "M3_triple": 1,
+        "tower_rank": 1
+      }
+    },
+    "hopf_M2_unit": 1
+  }
+}
