@@ -38,9 +38,9 @@ charge-dependent: `f_pp = 0.499`, `f_nn = 0.290`, giving
 
 $$ E_0\,(\varepsilon_{nn} - \varepsilon_{pp}) = E_0\,\log(f_{pp}/f_{nn}) = 2.27\ \text{MeV}, $$
 
-which is **3.0× the total observed split** and **~386× the strong (Coulomb-removed)
-residual**. The kernel assigns a large *strong* charge-symmetry-breaking that the data
-does not support.
+which is **3.0× the total observed split**, **~32× the physical (Nolen–Schiffer) strong
+residual** (and ~386× the tighter point-charge residual). The kernel assigns a large
+*strong* charge-symmetry-breaking that the data does not support.
 
 ## Two framings (not decided — a framework question for the owner)
 

@@ -14,10 +14,11 @@ The mirror split from the #2089 log-trace kernel is purely STRONG/categorical
 But the OBSERVED mirror split is essentially all COULOMB: ³He (Z=2) has one pp pair
 that ³H (Z=1) lacks, and the pp Coulomb energy e²/(4πε₀·r) at the A=3 proton
 separation r≈1.9 fm reproduces the whole 0.76 MeV (the textbook ³He–³H Coulomb
-displacement energy; the ~0.07 MeV Nolen–Schiffer anomaly is the only residual).
-So the STRONG charge-symmetry-breaking is ~0 (charge symmetry of the nuclear force),
-and #2089's 2.27 MeV strong split is a 3× (vs total) / ~100× (vs strong residual)
-overshoot.
+displacement energy). The model-independent strong-CSB residual is the ~0.07 MeV
+Nolen–Schiffer anomaly (a realistic Coulomb subtraction leaves ~0.07; this script's
+r≈1.9 fm point-charge estimate happens to leave a smaller +0.006). Either scale is
+tiny: #2089's 2.27 MeV strong split overshoots by 3× (vs the total split), ~32× (vs
+the physical Nolen–Schiffer residual), and ~400× (vs the point-charge residual).
 
 Two readings (NOT decided here — a framework question):
   (A) the kernel's f_pp≠f_nn is spurious strong CSB; the strong bond should be
@@ -44,6 +45,7 @@ sys.path.insert(0, str(HERE))
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from codata_constants import M_E_MEV, _ame_binding_mev  # noqa: E402
+from coulomb_energy import ALPHA_HBAR_C_MEV_FM  # noqa: E402 — shared e²/(4πε₀)=α·ħc source
 try:
     from witness_base import WitnessBuilder  # noqa: E402
     _HAVE_WB = True
@@ -54,8 +56,11 @@ except ImportError:
 set_compute_dps()
 q = mp.mpf(Q_50_DIGIT_STR)
 
-# e²/(4πε₀) = α·ħc = 1.4400 MeV·fm (CODATA-derived electromagnetic coupling length).
-E2_OVER_4PIEPS0_MEV_FM = mp.mpf("1.43996")
+# e²/(4πε₀) = α·ħc, the shared repo constant (computations/coulomb_energy.py).
+E2_OVER_4PIEPS0_MEV_FM = mp.mpf(str(ALPHA_HBAR_C_MEV_FM))
+# physical strong-CSB scale: the ³He–³H Nolen–Schiffer anomaly ≈ 0.07 MeV — the
+# model-independent residual after a realistic (not point-charge) Coulomb subtraction.
+NOLEN_SCHIFFER_MEV = mp.mpf("0.07")
 
 
 def main() -> int:
@@ -84,17 +89,19 @@ def main() -> int:
     coul_best = coul["1.9"]
     strong_residual = float(split_ame) - coul_best
     print(f"  ⇒ Coulomb at r≈1.9 fm ({coul_best:.3f}) reproduces the whole split "
-          f"({float(split_ame):.3f}); strong residual ≈ {strong_residual:+.3f} MeV")
-    print("    (the ~0.07 MeV Nolen–Schiffer anomaly is the known residual — strong")
-    print("     charge symmetry holds to ~1%).\n")
+          f"({float(split_ame):.3f}); point-charge residual ≈ {strong_residual:+.3f} MeV")
+    print(f"    (model-independent strong-CSB = the ~{float(NOLEN_SCHIFFER_MEV):.2f} MeV "
+          "Nolen–Schiffer anomaly; charge symmetry holds to ~1%).\n")
 
     # ── the overshoot ─────────────────────────────────────────────────────────
     over_total = float(strong_split / split_ame)
-    over_resid = abs(float(strong_split) / strong_residual) if strong_residual else float("inf")
+    over_ns = float(strong_split / NOLEN_SCHIFFER_MEV)             # vs physical NS residual
+    over_pc = abs(float(strong_split) / strong_residual) if strong_residual else float("inf")
     print("### The #2089 kernel STRONG mirror split overshoots")
     print(f"  E₀·(ε_nn−ε_pp) = {float(strong_split):.3f} MeV  (pure strong/categorical)")
-    print(f"  ⇒ {over_total:.1f}× the TOTAL observed split, and ~{over_resid:.0f}× the")
-    print(f"    (Coulomb-removed) STRONG residual — the kernel over-breaks charge symmetry.")
+    print(f"  ⇒ {over_total:.1f}× the TOTAL observed split;  ~{over_ns:.0f}× the physical "
+          f"(Nolen–Schiffer) strong residual;  ~{over_pc:.0f}× the point-charge residual.")
+    print("    Either way the kernel over-breaks charge symmetry.")
 
     print("\n### Reading — two framings (not decided; framework question)")
     print("  (A) f_pp≠f_nn is spurious strong CSB ⇒ charge-symmetrise (f_pp≈f_nn) and add")
@@ -112,18 +119,22 @@ def main() -> int:
             wb.set_description(
                 "The A=3 mirror binding split B(³H)−B(³He)=0.764 MeV is reproduced by the pp "
                 "Coulomb displacement energy (e²/4πε₀r at r≈1.9 fm = 0.758 MeV), so strong CSB "
-                "is ~0. The #2089 log-trace kernel assigns a STRONG mirror split E₀(ε_nn−ε_pp)="
-                "2.27 MeV — 3× the total split, ~100× the strong residual — over-breaking charge "
-                "symmetry. Fix direction: charge-symmetric strong bond (f_pp≈f_nn) + separate "
-                "Coulomb; this also collapses the 1.78× nucleon ε-spread, restoring equal-weight "
-                "coordination counting (#3557). Scope-(a) diagnosis, no re-derivation, no wiring.")
+                "is ~0 (model-independent strong residual = the ~0.07 MeV Nolen–Schiffer "
+                "anomaly). The #2089 log-trace kernel assigns a STRONG mirror split "
+                "E₀(ε_nn−ε_pp)=2.27 MeV — 3× the total split, ~32× the Nolen–Schiffer residual "
+                "(~400× the point-charge residual) — over-breaking charge symmetry. Fix "
+                "direction: charge-symmetric strong bond (f_pp≈f_nn) + separate Coulomb; this "
+                "also collapses the 1.78× nucleon ε-spread, restoring equal-weight coordination "
+                "counting (#3557). Scope-(a) diagnosis, no re-derivation, no wiring.")
             wb.add_data("q0", float(q))
             wb.add_data("E0_MeV", float(E0))
             wb.add_data("ame_mirror_split_MeV", float(split_ame))
             wb.add_data("coulomb_pp_MeV_by_r", coul)
-            wb.add_data("strong_residual_MeV", strong_residual)
+            wb.add_data("point_charge_residual_MeV", strong_residual)
+            wb.add_data("nolen_schiffer_residual_MeV", float(NOLEN_SCHIFFER_MEV))
             wb.add_data("kernel_strong_split_MeV", float(strong_split))
             wb.add_data("overshoot_vs_total", over_total)
+            wb.add_data("overshoot_vs_nolen_schiffer", over_ns)
             wb.add_assertion(
                 name="mirror_split_is_coulomb_kernel_strong_csb_overshoots_3x",
                 computed=str(int(2.5 < over_total < 3.5)), expected="1", tolerance=0,
