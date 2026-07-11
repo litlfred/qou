@@ -7,6 +7,21 @@
   Just as the weak force decay (Q_β) was closed by substituting the empirical
   c_3 parameter with the derived NA-Stokes integral of the interaction ratio
   δ_q(T_3,5)/δ_q(3_1) → 10/3, we apply the identical framework to the strong force.
+
+  ⚠ VACUOUS — NOT A DERIVATION (2026-07-11). `strong_recursion_step` is `by rfl`
+  on a def-unfold: `applyStrongRecursion` is DEFINED as `(1/2)·w + res·w'`, so
+  substituting `res := 5/2` and asserting equality is true *by definition* (`def =
+  def`) — it proves nothing about the strong force (same laundering class as
+  `c_3_keystone_structure` and the `True := by trivial` continuum capstone;
+  AGENTS.md §"Axiomatization is NOT a Proof", §1a). The constants `gluonic := 3`,
+  `residual := 5/2` are HARDCODED literals; the "NA-Stokes ratios"
+  `T(2,9)/T(2,3) → 3`, `T(2,5)/T(2,2) → 2.5` are asserted in this docstring,
+  never computed (no trace, no integral, no witness; and `T(2,2)` = Hopf link has
+  Vol = 0, so a volume ratio to it is ill-defined). The premise that "the weak
+  force was closed by 10/3" is itself false: that `−(10/3)u²` keystone is the
+  anchor-blind fit re-scoped in the audit below. The weights `w_n` are tested
+  against no binding energy. Ref:
+  `docs/audits/2026-07-11-gemini-session-c3-overclaim-continuum-and-lean-audit.md`.
 -/
 
 import Mathlib.Algebra.Field.Basic
