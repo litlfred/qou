@@ -111,8 +111,35 @@ the light-nuclei method breakdown. This says the H₃-level connected part is th
 *channel* but the *A-scaling* needs the jet-tower / higher-Hₙ content (the `W_λ`
 geometric realization), not a fixed-n braid.
 
-**Next (compute):** lift the bond operator `T_b` to the `W_λ`-weighted interface
-generator across the **jet tower** (higher `Hₙ`, not fixed H₃), where the A-scaling
-lives, and test whether the per-bond connected part stabilises. The A-operator
-`A^λ_{μν}(I)` (`wenzl-A-operator.md`) is the operator-valued bond datum; its universal
-(unfitted) form remains the open piece (Track-A, `s5-so3-keystone`).
+## Jet-tower lift: the extensive content IS in the tower (positive redirect)
+
+[`wlambda_jet_tower_connected_probe.py`](../../computations/deltalambda/wlambda_jet_tower_connected_probe.py)
+→ witness (exact branching, no fit) lifts the connected standard channel over the
+**jet tower** `H_k → H_3` (`k = 3..9`), using the universal weight
+`w_std(k) = Σ_{λ⊢k} W_λ · mult_{(2,1)}(λ↓H_3)`. The naive expectation (bounded/
+convergent tower) was **overturned by the data**:
+
+| k | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
+|---|---|---|---|---|---|---|---|
+| `w_std(k)` | 0.66 | 0.90 | 1.68 | 3.84 | 8.95 | 22.4 | 62.2 |
+| std share | 0.67 | 0.53 | 0.52 | 0.53 | 0.51 | 0.51 | 0.51 |
+
+`w_std(k)` **grows geometrically (~2.5×/level, unbounded)** — even though the
+*normalised* per-level invariant `a_k` **converges** (the ratio cancels the growth;
+`jet_knot_invariants.py`). The connected `(2,1)` channel holds a **stable ~51% share**
+at every level. So the jet tower **does** supply the unbounded, extensive-capable
+growth the fixed-H₃ braid lacked — it lives in the raw (un-normalised) connected
+weight, hidden by the `a_k` normalisation.
+
+**This sharpens the open problem to a single named object:** the **level-selection
+rule `k(A)`** — which jet level a nucleus of mass `A` occupies. If `k(A)` grows with
+`A` / bond-count, then `w_std(k(A))` supplies the extensive binding. `k(A)` is exactly
+**GAP-A-3 "categorical brane-tower level selection"** (gate-status productive
+direction). The probe does **not** set `k(A)` or land magnitudes — it establishes that
+the extensivity is *available* and pins where the remaining derivation must happen.
+
+**Next (compute):** derive/constrain `k(A)` from the drivers (the categorical
+brane-tower level selection, GAP-A-3) — e.g. test whether `k ∝ A` or `k ∝` bond-count
+reproduces the AME `B(A)` scaling, gated by the defect cubic + `f_pn` bracket, no fit.
+The A-operator `A^λ_{μν}(I)` (`wenzl-A-operator.md`) is the operator-valued bond datum;
+its universal (unfitted) form remains the open piece (Track-A, `s5-so3-keystone`).
