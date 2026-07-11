@@ -41,11 +41,14 @@ a precisely-named structural core, with all the surrounding plumbing proved.
 
 ## The one named core (the genuine `S_n`-rep-theory gap)
 
-* `sn_rational_specht_split` — over a characteristic-zero field `R`, the **rational, OV-labelled**
-  Wedderburn decomposition of `R[S_n]`:
+* `sn_isotypic_specht_split` — over a characteristic-zero field `R`, the **isotypic, rational,
+  OV-labelled** Wedderburn decomposition of `R[S_n]`:
   `R[S_n] ≃ₐ[R] ∏_{i:PartitionIndex n} Matrix(Fin (dim S^{λ_i})) R`,
-  with block `i` the `S^{λ_i}`-isotypic component (matrix size `= dim_R S^{λ_i}`). This single
-  statement folds in the three pieces of content absent from the pinned Mathlib:
+  with block `i` the `S^{λ_i}`-isotypic component (matrix size `= dim_R S^{λ_i}`), carrying the
+  central `C₂ = ∑ₖ Xₖ²` to the block-scalar family `fun i => contentSqSum λᵢ • 1`.  The plain
+  rational split `sn_rational_specht_split` is now a **corollary** of it (forget the `C₂` clause),
+  so the file has a **single** core, not two.  This statement folds in the pieces of content absent
+  from the pinned Mathlib:
   - **(a) ℚ-rationality / absolute irreducibility.** The division rings collapse to `R` itself —
     `S_n`-representations are defined over `ℚ`, so no genuine division-ring factors appear. Mathlib
     has the matrix-product form only for an **algebraically closed** base
@@ -201,35 +204,66 @@ end Field
 
 end Mechanical
 
-/-! ## 2. The single `S_n`-rep-theory core -/
+/-! ## 2. The single `S_n`-rep-theory core (isotypic split) + its rational corollary
+
+The genuine gap is the **isotypic** core `sn_isotypic_specht_split` below; the plain rational
+Wedderburn split `sn_rational_specht_split` is now a **corollary** of it (forget the carried-`C₂`
+clause).  The two cited cores of the previous shape thus collapse to **one**. -/
 
 variable {R : Type} [Field R] [CharZero R]
 
-/-- **Named core (the genuine `S_n`-rep-theory gap).** Over a characteristic-zero field `R`, the
-**rational, OV-labelled** Wedderburn decomposition of `R[S_n]`, indexed by the partitions of `n`,
-with block `i` of matrix size exactly `dim_R S^{λ_i}`:
+/-- **Named core (the genuine isotypic-aligned `S_n`-rep-theory gap).** Over a characteristic-zero
+field `R`, a *rational, OV-labelled* Wedderburn algebra isomorphism
+`R[S_n] ≃ₐ[R] ∏_{i:PartitionIndex n} Matrix(Fin (dim S^{λ_i})) R` with block `i` the
+`S^{λ_i}`-**isotypic** component, **carrying** the central Jucys–Murphy element `C₂ = ∑_k X_k²` to the
+block-scalar family `fun i => contentSqSum λ_i • 1`.
+
+The carried-`C₂` clause *is* the isotypic alignment, made operational: by
+`JucysMurphy.centralC2_acts_by_contentSqSum`, `C₂` acts on the `S^{λ_i}`-isotypic block by
+`contentSqSum λ_i` (Schur per isotypic component), so an `e` whose block `i` *is* that component sends
+`C₂` to `contentSqSum λ_i • 1` there.  Conversely the clause **forces** the alignment (a size-aligned
+split need not be isotypic; `freeProjClaim_false` shows an unconstrained `proj` cannot satisfy the
+decomposition), so bundling it into the existential is the honest, non-over-general disposition.
+This is the **single** named core of the file: the plain rational split
+`sn_rational_specht_split` is derived from it, and §5's `snBlocks_c2_aligned` consumes it directly.
+Mathlib (pinned v4.24.0) lacks every piece this folds in: ℚ-rationality (collapsing division rings
+to `R`; it has the matrix product only over an algebraically closed base), the partition labelling,
+the OV identification block `i` ↔ `S^{λ_i}` of size `dim_R S^{λ_i}`, and the isotypic /
+`C₂`-eigenvalue alignment.
+`-- Ref: [vershik-kerov1977], [sagan2001], [james1984representation]`. -/
+theorem sn_isotypic_specht_split (n : ℕ) :
+    ∃ e : MonoidAlgebra R (Equiv.Perm (Fin n)) ≃ₐ[R]
+      (∀ i : SpechtClassification.PartitionIndex n,
+        Matrix (Fin (Module.finrank R (Specht.SpechtSubmodule (k := R) i.diagram)))
+               (Fin (Module.finrank R (Specht.SpechtSubmodule (k := R) i.diagram))) R),
+      e (RegularRepTrace.centralC2 n)
+        = fun i : SpechtClassification.PartitionIndex n =>
+            ((JucysMurphy.contentSqSum i.diagram : ℤ) : R) •
+            (1 : Matrix (Fin (Module.finrank R (Specht.SpechtSubmodule (k := R) i.diagram)))
+                        (Fin (Module.finrank R (Specht.SpechtSubmodule (k := R) i.diagram))) R) := by
+  -- Ref: [vershik-kerov1977] (the central JM element C₂ = ∑_k X_k² acts on the S^{λ}-isotypic block
+  --   by contentSqSum λ = ∑_{c∈λ} c² — Schur on each isotypic component, eigenvalue from
+  --   JucysMurphy.centralC2_acts_by_contentSqSum) + [sagan2001] §2.4 / [james1984representation]
+  --   (the char-0 rational, OV-labelled Wedderburn split of R[S_n] indexed by partitions, block i the
+  --   S^{λ_i}-ISOTYPIC component of dimension (dim S^{λ_i})² — Mathlib does not package this; the
+  --   isotypic alignment is precisely what makes e send C₂ to the block-scalar family).
+  sorry
+
+/-- **Rational Wedderburn split — a corollary of the isotypic core.** Over a characteristic-zero
+field `R`, the rational, OV-labelled Wedderburn decomposition of `R[S_n]`, indexed by the partitions
+of `n`, with block `i` of matrix size exactly `dim_R S^{λ_i}`:
 `R[S_n] ≃ₐ[R] ∏_{i:PartitionIndex n} Matrix(Fin (dim S^{λ_i})) R`.
 
-This one existential folds in the three pieces of content absent from the pinned Mathlib:
-(a) the division rings collapse to `R` — `S_n` is split over `ℚ` (absolute irreducibility), so no
-genuine division-ring factors appear (Mathlib has the matrix product only for an algebraically
-closed base, `WedderburnSn.sn_wedderburnArtin_algClosed`); (b) the block set is the partitions of
-`n`; (c) block `i` is the `S^{λ_i}`-isotypic component, whose matrix size is `dim_R S^{λ_i}` (the
-Okounkov–Vershik labelling). It is stated as the *aligned* split (sizes `= dim S^{λ_i}` pointwise),
-not "some split with abstract sizes `d`", precisely so that no over-general `∀`-over-splits
-side-claim is needed (see the file header). -/
+**Sorry-free modulo the single core** `sn_isotypic_specht_split`: forgetting that theorem's
+carried-`C₂` clause yields exactly this algebra iso (same `e`).  The isotypic split is strictly
+stronger, so the previous shape's two independent cited cores collapse to one.
+`-- Ref: [james1984representation], [sagan2001]`. -/
 theorem sn_rational_specht_split (n : ℕ) :
     Nonempty (MonoidAlgebra R (Equiv.Perm (Fin n)) ≃ₐ[R]
       (∀ i : SpechtClassification.PartitionIndex n,
         Matrix (Fin (Module.finrank R (Specht.SpechtSubmodule (k := R) i.diagram)))
-               (Fin (Module.finrank R (Specht.SpechtSubmodule (k := R) i.diagram))) R)) := by
-  -- Ref: [james1984representation] (the irreducible representations of S_n are defined over ℚ, hence
-  --   absolutely irreducible: ℚ[S_n] — and a fortiori R[S_n] for any char-0 R — splits as a product
-  --   of full matrix algebras ∏ Matrix(Fin dᵢ) R, with NO non-commutative division-ring factors;
-  --   Mathlib gives the matrix product only over an algebraically closed field) +
-  --   [sagan2001] §2.4 (the blocks are indexed by partitions of n, and block λ is the S^λ-isotypic
-  --   component of matrix size dim_R S^λ = #SYT(λ) — the Okounkov–Vershik labelling).
-  sorry
+               (Fin (Module.finrank R (Specht.SpechtSubmodule (k := R) i.diagram))) R)) :=
+  ⟨(sn_isotypic_specht_split (R := R) n).choose⟩
 
 /-! ## 3. The mechanical payoff: `snBlocks` from any partition-indexed algebra split -/
 
@@ -390,41 +424,9 @@ theorem mulLeft_eq_sum_transProj
 
 end C2DecompField
 
-/-- **Named core (the genuine isotypic-aligned `S_n`-rep-theory gap).** Over a characteristic-zero
-field `R`, a *rational, OV-labelled* Wedderburn algebra isomorphism
-`R[S_n] ≃ₐ[R] ∏_{i:PartitionIndex n} Matrix(Fin (dim S^{λ_i})) R` with block `i` the
-`S^{λ_i}`-**isotypic** component, **carrying** the central Jucys–Murphy element `C₂ = ∑_k X_k²` to the
-block-scalar family `fun i => contentSqSum λ_i • 1`.
-
-The carried-`C₂` clause *is* the isotypic alignment, made operational: by
-`JucysMurphy.centralC2_acts_by_contentSqSum`, `C₂` acts on the `S^{λ_i}`-isotypic block by
-`contentSqSum λ_i` (Schur per isotypic component), so an `e` whose block `i` *is* that component sends
-`C₂` to `contentSqSum λ_i • 1` there.  Conversely the clause **forces** the alignment (a size-aligned
-split need not be isotypic; `freeProjClaim_false` shows an unconstrained `proj` cannot satisfy the
-decomposition), so bundling it into the existential is the honest, non-over-general disposition — the
-isotypic strengthening of `sn_rational_specht_split`.  Mathlib (pinned v4.24.0) lacks every piece this
-folds in: ℚ-rationality (collapsing division rings to `R`; it has the matrix product only over an
-algebraically closed base), the partition labelling, the OV identification block `i` ↔ `S^{λ_i}` of
-size `dim_R S^{λ_i}`, and the isotypic / `C₂`-eigenvalue alignment.
-`-- Ref: [vershik-kerov1977], [sagan2001], [james1984representation]`. -/
-theorem sn_isotypic_specht_split (n : ℕ) :
-    ∃ e : MonoidAlgebra R (Equiv.Perm (Fin n)) ≃ₐ[R]
-      (∀ i : SpechtClassification.PartitionIndex n,
-        Matrix (Fin (Module.finrank R (Specht.SpechtSubmodule (k := R) i.diagram)))
-               (Fin (Module.finrank R (Specht.SpechtSubmodule (k := R) i.diagram))) R),
-      e (RegularRepTrace.centralC2 n)
-        = fun i : SpechtClassification.PartitionIndex n =>
-            ((JucysMurphy.contentSqSum i.diagram : ℤ) : R) •
-            (1 : Matrix (Fin (Module.finrank R (Specht.SpechtSubmodule (k := R) i.diagram)))
-                        (Fin (Module.finrank R (Specht.SpechtSubmodule (k := R) i.diagram))) R) := by
-  -- Ref: [vershik-kerov1977] (the central JM element C₂ = ∑_k X_k² acts on the S^{λ}-isotypic block
-  --   by contentSqSum λ = ∑_{c∈λ} c² — Schur on each isotypic component, eigenvalue from
-  --   JucysMurphy.centralC2_acts_by_contentSqSum) + [sagan2001] §2.4 / [james1984representation]
-  --   (the char-0 rational, OV-labelled Wedderburn split of R[S_n] indexed by partitions, block i the
-  --   S^{λ_i}-ISOTYPIC component of dimension (dim S^{λ_i})² — the isotypic strengthening of
-  --   sn_rational_specht_split, which Mathlib does not package; the isotypic alignment is precisely
-  --   what makes e send C₂ to the block-scalar family).
-  sorry
+/-! The single named core `sn_isotypic_specht_split` is stated in §2 above (with the rational
+Wedderburn split `sn_rational_specht_split` derived from it as a corollary).  §5 here consumes it
+through the sorry-free `C₂`-decomposition machinery. -/
 
 /-- **The aligned isotypic projection family + `C₂` eigen-decomposition (the capstone core), now
 sorry-free modulo the single isotypic split `sn_isotypic_specht_split`.** Over a characteristic-zero
