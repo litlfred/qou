@@ -21,8 +21,11 @@ Following the exact analytical evaluation of the Faddeev non-compact integration
    regular ideal tetrahedron.
 4. The continuum mass gap identically limits to $-\text{Vol}(4_1)$.
 
-This completely rejects the prior algebraic shadow hallucination ($c_3 = -2$)
-in favor of continuous Archimedean geometry.
+The continuum geometry below is real and kept. (The earlier framing that this
+"rejects the $c_3 = -2$ shadow as a hallucination" is **withdrawn** — see the
+CORRECTION note below: $c_3 = -2 = J_{\mathrm{Hopf}}(1)$ is the *canonical* $q=1$
+shadow (registry KC10/KC20), and the $c_3 = -\mathrm{Vol}(4_1)$ identification is
+over-scoped/anchor-blind. Only the hyperbolic geometry is retained.)
 
 **⚠ CORRECTION (2026-07-11).** The *geometry* below (Lobachevsky derivative,
 saddle at $\pi/3$, $\mathrm{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3)$) is correct.

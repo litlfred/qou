@@ -18,7 +18,7 @@ tags: ["mass-theory", "q-beta", "continuum-limit", "hyperbolic-volume", "faddeev
 > hyperbolic geometry below is real and kept (`Vol(4₁)=2·Cl₂(π/3)`, Lobachevsky
 > saddle at `π/3`); only the $c_3$ **identification** and the "exact/rigorous"
 > tier are corrected. Re-scope + measurement:
-> [`2026-07-11-gemini-session-c3-overclaim-continuum-and-lean-audit.md`](../../../../docs/audits/2026-07-11-gemini-session-c3-overclaim-continuum-and-lean-audit.md);
+> [`2026-07-11-gemini-session-c3-overclaim-continuum-and-lean-audit.md`](../../../docs/audits/2026-07-11-gemini-session-c3-overclaim-continuum-and-lean-audit.md);
 > companion keystone re-scope: `#3501`/`#3503`.
 
 The third topological mass gap observable $c_3$ was initially measured via empirical extrapolation of the $N=3$ operator-valued calculations across the $Q_\beta$ manifold, resulting in a near-match physical measurement of:
