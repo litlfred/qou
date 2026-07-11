@@ -1757,6 +1757,37 @@ theorem garnir_assembly_gen (t : Specht.Tableau μ) (P : Specht.Tableau μ → P
     refine Finset.sum_congr rfl (fun π hπ => ?_)
     rw [(Finset.mem_filter.mp hπ).2]
 
+omit [CharZero k] in
+/-- **Reindex a polytabloid combination through per-term reductions (sorry-free).** If
+`e_t = ∑_{t'∈s} c_{t'} e_{t'}` and each `e_{t'}` equals a scalar multiple of some `e_u` with
+`colWordNum u < colWordNum t`, then `e_t` is a combination of *strictly `colWordNum`-smaller*
+polytabloids. This is the raw→sorted bookkeeping that upgrades `garnir_assembly_gen`'s output
+(terms `e_{π•t}` on the raw fibre) into the `straightening_step_colMax` conclusion (terms on
+the column-sorted images `e_{ρ•(π•t)}`, each strictly smaller by `fibre_colWordNum_decrease`).
+Same fiberwise regrouping as `garnir_assembly_gen`. -/
+theorem poly_combo_reindex (t : Specht.Tableau μ) (s : Finset (Specht.Tableau μ))
+    (c : Specht.Tableau μ → k)
+    (heq : Specht.polytabloid (k := k) t = ∑ t' ∈ s, c t' • Specht.polytabloid (k := k) t')
+    (hsmall : ∀ t' ∈ s, ∃ u : Specht.Tableau μ, colWordNum u < colWordNum t ∧
+        ∃ ε : k, Specht.polytabloid (k := k) t' = ε • Specht.polytabloid (k := k) u) :
+    ∃ (s2 : Finset (Specht.Tableau μ)) (c2 : Specht.Tableau μ → k),
+      (∀ t2 ∈ s2, colWordNum t2 < colWordNum t) ∧
+      Specht.polytabloid (k := k) t = ∑ t2 ∈ s2, c2 t2 • Specht.polytabloid (k := k) t2 := by
+  classical
+  choose! u hu ε hε using hsmall
+  refine ⟨s.image u, fun t2 => ∑ t' ∈ s.filter (fun t' => u t' = t2), c t' * ε t', ?_, ?_⟩
+  · intro t2 ht2
+    rw [Finset.mem_image] at ht2
+    obtain ⟨t', ht', rfl⟩ := ht2
+    exact hu t' ht'
+  · rw [heq, ← Finset.sum_fiberwise_of_maps_to (g := u) (t := s.image u)
+      (fun t' ht' => Finset.mem_image_of_mem _ ht')]
+    refine Finset.sum_congr rfl (fun t2 _ => ?_)
+    rw [Finset.sum_smul]
+    refine Finset.sum_congr rfl (fun t' ht' => ?_)
+    rw [Finset.mem_filter] at ht'
+    rw [hε t' ht'.1, ← ht'.2, mul_smul]
+
 /-! #### Garnir set — column label counts (sorry-free)
 
 Foundational cardinalities for the Garnir pigeonhole: the labels sitting in a fixed
@@ -2350,6 +2381,55 @@ theorem garnir_transversal_exists (t : Specht.Tableau μ) (i j : ℕ) :
     have e3 : Nat.card (garnirGSub t i j) = (garnirG t i j).card := by
       rw [← SetLike.coe_sort_coe, Nat.card_coe_set_eq, garnirGSub_coe, Set.ncard_coe_finset]
     rw [← e3, ← hScard, e1, e2]
+
+omit [CharZero k] in
+/-- **Garnir transversal with a distinguished `H`-pivot (sorry-free).** Strengthens
+`garnir_transversal_exists`: since `T` is a *transversal* of the subgroup `H = garnirH`, it
+contains exactly one element of `H` — the pivot `π₀` (the `H`-coset representative,
+extracted by factoring `1 ∈ garnirG` through the product bijection). Every *other* `T`-element
+is `∉ garnirH`, so it is a genuine Garnir fibre and `fibre_colWordNum_decrease` applies. `π₀`
+serves as `garnir_assembly_gen`'s `π₀` (its `hfix` holds because `π₀ ∈ garnirH ⊆ colStab`). -/
+theorem garnir_transversal_with_pivot (t : Specht.Tableau μ) (i j : ℕ) :
+    ∃ (T : Finset (Equiv.Perm (Fin (Specht.nOf μ)))) (π₀ : Equiv.Perm (Fin (Specht.nOf μ))),
+      π₀ ∈ T ∧ π₀ ∈ garnirH t i j ∧
+      (∀ π ∈ T, π ≠ π₀ → π ∉ garnirH t i j) ∧
+      garnirG t i j ⊆ (T ×ˢ garnirH t i j).image (fun p => p.1 * p.2) ∧
+      (T ×ˢ garnirH t i j).image (fun p => p.1 * p.2) ⊆ garnirG t i j ∧
+      (garnirG t i j).card = (T ×ˢ garnirH t i j).card := by
+  classical
+  obtain ⟨T, hcover, hclosed, hcard⟩ := garnir_transversal_exists t i j
+  have himg : garnirG t i j = (T ×ˢ garnirH t i j).image (fun p => p.1 * p.2) :=
+    Finset.Subset.antisymm hcover hclosed
+  have hinj := Finset.injOn_of_card_image_eq (f := fun p => p.1 * p.2)
+    (s := T ×ˢ garnirH t i j) (by rw [← himg]; exact hcard)
+  have hHmem : ∀ π, π ∈ garnirH t i j ↔ π ∈ garnirHSub t i j := fun π => by
+    rw [← Finset.mem_coe, ← garnirHSub_coe, SetLike.mem_coe]
+  have h1H : (1 : Equiv.Perm (Fin (Specht.nOf μ))) ∈ garnirH t i j := (hHmem 1).mpr (Subgroup.one_mem _)
+  -- factor `1 ∈ garnirG` through the bijection to find the pivot
+  have h1G : (1 : Equiv.Perm (Fin (Specht.nOf μ))) ∈ garnirG t i j := by
+    rw [garnirG, Finset.mem_filter]; exact ⟨Finset.mem_univ _, fun l _ => rfl⟩
+  rw [himg, Finset.mem_image] at h1G
+  obtain ⟨⟨π₀, ρ₀⟩, hp₀mem, hp₀⟩ := h1G
+  rw [Finset.mem_product] at hp₀mem
+  have hπ₀T : π₀ ∈ T := hp₀mem.1
+  have hρ₀H : ρ₀ ∈ garnirH t i j := hp₀mem.2
+  have hp₀' : π₀ * ρ₀ = 1 := hp₀
+  have hπ₀H : π₀ ∈ garnirH t i j := by
+    have hinv : π₀ = ρ₀⁻¹ := mul_eq_one_iff_eq_inv.mp hp₀'
+    rw [hHmem, hinv]
+    exact Subgroup.inv_mem _ ((hHmem ρ₀).mp hρ₀H)
+  refine ⟨T, π₀, hπ₀T, hπ₀H, ?_, hcover, hclosed, hcard⟩
+  intro π hπT hπne hπH
+  apply hπne
+  have hfactor : π₀⁻¹ * π ∈ garnirH t i j := by
+    rw [hHmem]
+    exact Subgroup.mul_mem _ (Subgroup.inv_mem _ ((hHmem π₀).mp hπ₀H)) ((hHmem π).mp hπH)
+  have hmap : (fun p : Equiv.Perm (Fin (Specht.nOf μ)) × Equiv.Perm (Fin (Specht.nOf μ)) =>
+      p.1 * p.2) (π, 1) = (fun p => p.1 * p.2) (π₀, π₀⁻¹ * π) := by
+    show π * 1 = π₀ * (π₀⁻¹ * π); rw [mul_one, mul_inv_cancel_left]
+  have hpair := hinj (Finset.mem_coe.mpr (Finset.mem_product.mpr ⟨hπT, h1H⟩))
+    (Finset.mem_coe.mpr (Finset.mem_product.mpr ⟨hπ₀T, hfactor⟩)) hmap
+  exact (Prod.ext_iff.mp hpair).1
 
 omit [CharZero k] in
 /-- **Coset reindexing (sorry-free) — Garnir bridge, reindex step.** For any transversal
