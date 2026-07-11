@@ -168,8 +168,13 @@ class BorromeanQuark : Prop where
     physical regime `q > 1`.  This derives a genuine conclusion from the
     class hypothesis (positivity of `V / (1 − 1/q)²` for `V > 0`, `q > 1`),
     rather than asserting `True` — so it is a non-degenerate conditional
-    result, not a self-assuming projection. -/
-theorem reidemeister_mass_invariance_conditional_on_borromean_quark
+    result, not a self-assuming projection.
+
+    Named in the Mathlib `_of_` conditional-lemma style (§3b-cond): the
+    conclusion (calibrated mass positive) `_of_` the hypothesis
+    (`BorromeanQuark`, carried as the load-bearing `[·]` instance binder
+    the §3b-cond banner audit keys on). -/
+theorem calibrated_mass_pos_of_borromeanQuark
     [inst : BorromeanQuark] :
     ∃ m : ℝ → ℝ, ∀ q : ℝ, q > 1 → 0 < m q := by
   obtain ⟨V, m, hV, hcal⟩ := inst.volume_calibrates_mass
