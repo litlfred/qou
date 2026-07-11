@@ -317,6 +317,26 @@ re-basing / twist (the I-B re-basing or the KC15 pair-difference channel).
 exceeds |c_k| for k ≥ 4 — a noise-floor-proof retest needs genuine
 canonical rungs (the H₄ Hoefsmit c₄^even build, bean 8we6).
 
+### PROBE 2 — Faddeev Φ_b modular-double infra (§3.B): COLLISION — sibling landed it (no duplicate built)
+
+The Step-0 collision check found a full numeric Φ_b already on main:
+[`computations/qbeta/phi_b_evaluator.py`](../../computations/qbeta/phi_b_evaluator.py)
+(2026-07-11, commit `d35f5b32`, sibling milestone `qou-9lot`) — integral form
++ modular-double product form, self-validation battery V1–V6 (both shift
+equations matching the Lean scaffold, b ↔ 1/b invariance, inversion constant,
+double-product cross-check at ~1e-37), literature-verified vs Hikami
+arXiv:math/0604094 / Faddeev–Kashaev / Andersen–Kashaev. Related sibling
+probes: `qbeta_fmap_phi_b_channel_separation_probe.py`,
+`qbeta_fmap_phi_b_root_of_unity_reference.py`.
+
+**Surviving gap (the actual §3.B remainder):** the module's docstring flags
+the **substrate regime** (real q₀ > 1 ⇒ arg b = −π/4, b² ∈ iℝ) as OPEN — it
+implements the |q| = 1 native regime and the Im b² > 0 double-product regime,
+noting the modular dual is negligible (|q̃| ≈ 1e-165) at substrate q₀. The
+state-integral comparison of §3.B therefore proceeds by **extending the
+sibling's module** (coordinate on the `qou-9lot` thread), not by a parallel
+implementation. No files were written by this probe.
+
 ## Appendix A — P6c executed: Galois-descent / GSWZ Frobenius-gluing scoping (U3)
 
 **Status:** SCOPING ONLY (owner-selected 2026-07-11; no numerics, no Lean, no
