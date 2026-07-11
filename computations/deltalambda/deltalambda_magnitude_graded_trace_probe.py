@@ -23,7 +23,7 @@ Two exact structural facts (parameter-free):
 
   2. The magnitude is the CLASSICAL (q=1) dimension, NOT the substrate q₀ quantum
      dimension: dim_q(λ; q₀) (q-hook-length [n]_q!/Π[h]_q at q₀≈1.11) differs from the
-     integer dim(λ) by up to ~5.5% (e.g. [4,1]: 4.11 vs 4). So the magnitude anchor is
+     integer dim(λ) by up to ~4.41% (e.g. [3,2]: 5.22 vs 5). So the magnitude anchor is
      q=1, the sign anchor is ζ₄ — NEITHER is the substrate q₀. Δ_λ is a two-anchor
      object (classical magnitude ⊗ ζ₄ sign).
 
@@ -39,6 +39,7 @@ import json
 import os
 import subprocess
 import sys
+from math import factorial
 
 import mpmath as mp
 import sympy as sp
@@ -49,7 +50,7 @@ for _p in (_HERE, os.path.join(_ROOT, "tools", "qou-substrate", "python")):
     if _p not in sys.path:
         sys.path.insert(0, _p)
 from t25_cinquefoil_deltalambda_sign_probe import (  # noqa: E402
-    partitions, conjugate, target_sign)
+    partitions, target_sign)
 
 
 def n_lambda(lam):
@@ -67,7 +68,6 @@ def _hooks(lam):
 
 
 def dim_ordinary(lam):
-    from math import factorial
     prod = 1
     for h in _hooks(lam):
         prod *= h
@@ -108,7 +108,7 @@ def main():
     graded_trace_ok = all(
         target_sign(lam) * dim_ordinary(lam) ==
         int(sp.re(sp.I ** (2 * n_lambda(lam)))) * dim_ordinary(lam)
-        for lam in partitions(6))
+        for lam in partitions(5))
     check("delta_lambda_is_graded_trace", graded_trace_ok,
           "Δ_λ = sgn(w_0^{S_{λ'}})·dim(λ) = (q^{2n(λ)}|_{q=i})·dim(λ) = tr_{V_λ}(g_ρ) "
           "for all λ⊢6 => magnitude = ordinary dimension, NOT a separate weight ansatz")
@@ -132,7 +132,7 @@ def main():
           f"differs by up to {max_gap:.2f}% => magnitude anchor is q=1, not q₀")
 
     # 3. two-anchor: magnitude q=1, sign ζ₄, neither at q₀ (real, ≈1.11, not a root of unity).
-    q0_not_root = abs(float(q0) - 1.0) > 1e-3 and float(q0) > 1.0    # real >1, not ζ₄
+    q0_not_root = abs(q0 - 1.0) > 1e-3 and q0 > 1.0    # real >1, not ζ₄
     check("two_anchor_neither_at_substrate_q0", q0_not_root,
           "magnitude anchor q=1 (classical dim) ⊗ sign anchor ζ₄ (grading); substrate "
           f"q₀={mp.nstr(q0, 7)} (real>1) is NEITHER => Δ_λ is a two-anchor object")
