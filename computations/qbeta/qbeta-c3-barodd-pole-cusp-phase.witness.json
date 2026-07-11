@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-11T18:41:28.487556+00:00",
-  "commitSha": "ad932ab82634df4b3dda0ee8c72fa56a34e978a7",
+  "computedAt": "2026-07-11T23:05:08.306457+00:00",
+  "commitSha": "a7a0cc4dd3adeea25889856bb4d85591ef093b5a",
   "assertions": [
     {
       "name": "cusp_barEven_eq_one",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 23,
+  "durationMs": 28,
   "computation": "qbeta-c3-barodd-pole-cusp-phase",
   "scriptFile": "qbeta_c3_barodd_pole_cusp_phase_probe.py",
   "scriptHash": "9deeea4189ff",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "f49924aee122fc53d3977e9334189e7028fcf5f0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -43,6 +43,7 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
