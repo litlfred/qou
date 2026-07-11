@@ -1,4 +1,11 @@
-# Keystone C8: the super-exponential growth is PROVED (from an exact identity + Cauchy–Schwarz)
+# Keystone C8: the super-exponential growth is PROVED modulo two SYT identities (exact identity + Cauchy–Schwarz)
+
+> **Scope up front.** "PROVED" here means the *arithmetic core* — Cauchy–Schwarz,
+> the involution-number bound, and the reduction (A)+(B)+(C) ⇒ super-exp — is
+> Lean-proved sorry-free. Two Standard-Young-Tableau-dependent inputs remain
+> **carried hypotheses**: (A) the branching identity `Σ f^λ f^{λ/(2,1)} = k!/3`
+> and (C) the skew↪straight bound `Σ f^{λ/(2,1)} ≤ I(k)`. See the "proved vs
+> carried" table below; both need `StandardYoungTableau`, which Mathlib lacks.
 
 **Date:** 2026-07-11 · **Axis:** s5-so3-keystone (geometric `W_λ`) + GAP-A-3 ·
 **Owner steer:** "open s5-so3 gate" (the gate is owner-reversed for the geometric
