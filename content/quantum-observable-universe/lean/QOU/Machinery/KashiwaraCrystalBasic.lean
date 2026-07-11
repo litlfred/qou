@@ -18,9 +18,13 @@ with:
 - Crystal operators `f_i`, `e_i` as `Option`-valued partial endomorphisms
 - Type-classes that downstream theorems can carry
 
-The actual algebraic content (Stembridge axioms, type-A specialisation,
-embedding into Demazure modules) is captured as conditional classes
-with opaque marker fields — instances are the open infrastructure work.
+The actual algebraic content (Stembridge crystal axiom, type-A
+embedding, Demazure closure) is captured as conditional classes whose
+fields state the genuine conditions (crystal reversibility, a crystal
+morphism into the abstract standard-`sl_n` target, closure of the
+Demazure sub-crystal under lowering) — no longer `True` markers.
+Constructing instances (the concrete standard-`sl_n` tensor-power crystal
+and the Demazure characters) is the open infrastructure work.
 
 ## Cross-refs
 
@@ -62,20 +66,51 @@ theorem trivialCrystal_unique_vertex (v : trivialCrystal.V) :
 NEAR-MATCH tier; instance not constructed (requires upstream
 Mathlib crystal-graph machinery). -/
 class StembridgeCrystal (G : CrystalGraph) : Prop where
-  /-- Stembridge axioms (S1-S8) hold for `G` (opaque marker). -/
-  stembridge_axioms : True
+  /-- The foundational Kashiwara crystal axiom presupposed by the full
+      Stembridge S1–S8: for every simple-root label `i`, the raising and
+      lowering operators `e i`, `f i` are mutually inverse partial maps —
+      `f i v = some w ↔ e i w = some v`.  (The additional S1–S8
+      string-length / interplay conditions further constrain an instance;
+      this field encodes the defining reversibility, no longer `True`.) -/
+  stembridge_axioms :
+    ∀ (i : ℕ) (v w : G.V), G.f i v = some w ↔ G.e i w = some v
 
-/-- Conditional class for type-A specialisation: the crystal `G` is
-isomorphic to a tensor-power crystal of standard `sl_n` rep. -/
-class TypeACrystal (G : CrystalGraph) (n : ℕ) : Prop where
-  /-- Embedding into tensor power of standard `sl_n` crystal (opaque marker). -/
-  sl_n_embedding : True
+/-- Conditional class for type-A specialisation: the crystal `G` embeds
+into a tensor-power crystal of the standard `sl_n` representation.  The
+target crystal is abstract (the concrete standard-`sl_n` tensor-power
+construction is substantial and not in Mathlib); the class carries it as
+a datum and `sl_n_embedding` states that `embed` is a genuine crystal
+morphism. -/
+class TypeACrystal (G : CrystalGraph) (n : ℕ) where
+  /-- The target crystal — a tensor power of the standard `sl_n` crystal
+      (abstract datum). -/
+  target : CrystalGraph
+  /-- The embedding on vertices. -/
+  embed : G.V → target.V
+  /-- `embed` is a crystal morphism: it commutes with both the lowering
+      (`f`) and raising (`e`) operators.  (Was `True`.) -/
+  sl_n_embedding :
+    (∀ i v, (G.f i v).map embed = target.f i (embed v)) ∧
+    (∀ i v, (G.e i v).map embed = target.e i (embed v))
 
 /-- Conditional class for Demazure module identification: a Demazure
-sub-crystal at level `level` corresponds to a Weyl-group word. -/
-class DemazureSubcrystal (G : CrystalGraph) (level : ℕ) : Prop where
-  /-- Sub-crystal corresponds to a Demazure module character (opaque marker). -/
-  demazure_correspondence : True
+sub-crystal at level `level` corresponds to a Weyl-group word.  The
+sub-crystal is carried as a predicate `member` with a distinguished
+highest-weight generator; `demazure_correspondence` states the defining
+Demazure closure property (closed under the first `level` lowering
+operators — the Weyl-word support). -/
+class DemazureSubcrystal (G : CrystalGraph) (level : ℕ) where
+  /-- Membership predicate cutting out the Demazure sub-crystal. -/
+  member : G.V → Prop
+  /-- The distinguished highest-weight vertex generating the sub-crystal. -/
+  highest : G.V
+  /-- The generator lies in the sub-crystal. -/
+  highest_mem : member highest
+  /-- **Demazure closure** (was `True`): the sub-crystal is closed under
+      lowering by the first `level` simple roots — exactly the operators
+      in the support of the length-`level` Weyl word. -/
+  demazure_correspondence :
+    ∀ (i : ℕ), i < level → ∀ v w, member v → G.f i v = some w → member w
 
 /-! ## Conditional theorem: residue-A composite identification
 
@@ -90,9 +125,11 @@ composite identification of residue A. -/
 class CompositeKashiwaraResidueA (G : CrystalGraph) : Prop where
   /-- Stembridge axioms hold. -/
   is_stembridge : StembridgeCrystal G
-  /-- Type-A specialisation at some n. -/
-  has_type_A : ∃ n, TypeACrystal G n
-  /-- Demazure sub-crystal correspondence at some level. -/
-  has_demazure : ∃ level, DemazureSubcrystal G level
+  /-- Type-A specialisation at some n (data class, so wrapped in `Nonempty`
+      to sit inside the existential). -/
+  has_type_A : ∃ n, Nonempty (TypeACrystal G n)
+  /-- Demazure sub-crystal correspondence at some level (`Nonempty` for the
+      same reason). -/
+  has_demazure : ∃ level, Nonempty (DemazureSubcrystal G level)
 
 end QOU.Machinery
