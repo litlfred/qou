@@ -42,7 +42,6 @@ Base ring `ℝ`: the statement uses `Real.sqrt` (Cauchy–Schwarz) and division/
 -- Ref: [manuscript] docs/audits/2026-07-11-keystone-c8-superexp-proof.md
 -/
 import Mathlib.Algebra.Order.BigOperators.Ring.Finset
-import Mathlib.Analysis.SpecialFunctions.Pow.NNRpow
 import Mathlib.Data.Real.Sqrt
 import Mathlib.Tactic
 
@@ -87,7 +86,7 @@ theorem c8_lower_bound {ι : Type*} (s : Finset ι) (f g : ι → ℝ) (kfac Ik 
   have h2 : (kfac / 3) ^ 2 ≤ W * Ik :=
     le_trans hcs (mul_le_mul_of_nonneg_left hC hWnn)
   have key : kfac ^ 2 ≤ 9 * Ik * W := by nlinarith [h2]
-  rw [div_le_div_iff (by positivity) hkfac]
+  rw [div_le_div_iff₀ (by positivity) hkfac]
   nlinarith [key]
 
 /-! ## Involution numbers (concrete; `I(k) = Σ_{λ⊢k} f^λ` at q=1) -/
@@ -106,9 +105,9 @@ exponential class of `k!/I(k)` is grounded on a concrete sequence). -/
 theorem involution_le_factorial : ∀ n, involutionNumber n ≤ n.factorial := by
   intro n
   induction n using Nat.twoStepInduction with
-  | H1 => decide
-  | H2 => decide
-  | H3 n ih1 ih2 =>
+  | zero => decide
+  | one => decide
+  | more n ih1 ih2 =>
     -- I(n+2) = I(n+1) + (n+1)·I(n) ≤ (n+1)! + (n+1)·n! = 2·(n+1)! ≤ (n+2)!
     have e : (n + 2).factorial = (n + 2) * (n + 1).factorial := Nat.factorial_succ _
     have e2 : (n + 1).factorial = (n + 1) * n.factorial := Nat.factorial_succ _
@@ -117,7 +116,7 @@ theorem involution_le_factorial : ∀ n, involutionNumber n ≤ n.factorial := b
     calc involutionNumber (n + 2)
         = involutionNumber (n + 1) + (n + 1) * involutionNumber n := hstep
       _ ≤ (n + 1).factorial + (n + 1) * n.factorial :=
-          Nat.add_le_add ih1 (Nat.mul_le_mul_left _ ih2)
+          Nat.add_le_add ih2 (Nat.mul_le_mul_left _ ih1)
       _ = 2 * (n + 1).factorial := by rw [e2]; ring
       _ ≤ (n + 2) * (n + 1).factorial := by
           exact Nat.mul_le_mul_right _ (by omega)

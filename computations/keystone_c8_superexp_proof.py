@@ -37,6 +37,7 @@ Audit: docs/audits/2026-07-11-keystone-c8-superexp-proof.md
 """
 from __future__ import annotations
 import sys
+from fractions import Fraction
 from math import factorial
 from pathlib import Path
 
@@ -109,24 +110,27 @@ def main() -> int:
     rows = {}
     for k in range(3, 13):
         P = list(parts(k))
-        wstd = sum(fdim(l) ** 2 * skew(l, MU) for l in P) / factorial(k)
+        # Exact rational arithmetic for the pass/fail checks (Copilot #3580): every
+        # ingredient is integer-exact, so wstd and lb are Fractions and the
+        # inequality wstd ≥ lb is decided exactly, not with a float tolerance.
+        wstd = Fraction(sum(fdim(l) ** 2 * skew(l, MU) for l in P), factorial(k))
         S1 = sum(fdim(l) * skew(l, MU) for l in P)
         Sg = sum(skew(l, MU) for l in P)
         Ik = involution(k)
         kfact3 = factorial(k) // 3
-        lb = factorial(k) / (9 * Ik)
-        ok = (S1 == kfact3) and (Sg <= Ik) and (wstd >= lb - 1e-9)
+        lb = Fraction(factorial(k), 9 * Ik)
+        ok = (S1 == kfact3) and (Sg <= Ik) and (wstd >= lb)  # exact ≥, no tolerance
         all_ok &= ok
-        rr = f"{lb / prev:.3f}" if prev else "—"
+        rr = f"{float(lb) / float(prev):.3f}" if prev else "—"
         rows[k] = {"w_std": wstd, "S1": S1, "Sg": Sg, "I": Ik, "lb": lb}
-        print(f"{k:>3}{wstd:>11.2f}{S1:>12}{kfact3:>12}{Sg:>9}{Ik:>8}{lb:>11.2f}"
+        print(f"{k:>3}{float(wstd):>11.2f}{S1:>12}{kfact3:>12}{Sg:>9}{Ik:>8}{float(lb):>11.2f}"
               f"{'✓' if wstd >= lb else '✗':>6}{rr:>8}")
         prev = lb
 
     print(f"\n  (A) S1 = k!/3 exact: {all(rows[k]['S1'] == factorial(k)//3 for k in rows)}")
     print(f"  (C) Σf^(λ/(2,1)) ≤ I(k): {all(rows[k]['Sg'] <= rows[k]['I'] for k in rows)}")
-    print(f"  ⇒ w_std ≥ k!/(9 I(k)); LB ratios rise ({rows[3]['lb']:.2f}→{rows[12]['lb']:.1f}, "
-          f"ratio {rows[12]['lb']/rows[11]['lb']:.2f}) → super-exponential.")
+    print(f"  ⇒ w_std ≥ k!/(9 I(k)); LB ratios rise ({float(rows[3]['lb']):.2f}→{float(rows[12]['lb']):.1f}, "
+          f"ratio {float(rows[12]['lb'])/float(rows[11]['lb']):.2f}) → super-exponential.")
     print(f"\nVERDICT: {'C8 PROVED (super-exp lower bound)' if all_ok else 'FAIL'}. "
           "The bound uses only the exact identity S1=k!/3, Cauchy–Schwarz, and Σf≤I(k).")
 
