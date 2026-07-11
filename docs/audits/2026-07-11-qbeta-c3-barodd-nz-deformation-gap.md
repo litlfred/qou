@@ -89,6 +89,33 @@ sign-flip) remains the open `z(q₀)`. The slight `>1` for proton shows `|u|=HA`
 is leading-order (higher NZ terms / exact branch tracking pending). **This is a
 lead, not a closure — no `c_k` wired.**
 
+## decay ⊥ mass ⇒ decay = binding (the Gram-norm sign is the mass/binding split)
+
+`massProj_barOrth_decayProj` (Lean, generic) says the decay (bar-odd) channel is
+the **Gram-orthogonal complement of the mass (bar-even) channel**. Numerically
+the split is by **signature**:
+
+| channel | projection | Gram-norm² | physics |
+|---|---|---|---|
+| **mass** (bar-even, unitary cone) | `½(L₊+L₋)+HA·e⁻` | **+1.11** | rest energy (positive) |
+| **binding** (bar-odd, ghost) | `½(L₊−L₋)` | **−0.43** | binding energy (negative — bound states) |
+
+So **the sign of the Gram norm is the mass/binding distinction**: positive-norm
+modes carry rest mass, the unique negative-norm (ghost) mode carries **binding**.
+This is consistent with the existing framework — the LP/SDP **dual variables are
+the binding shadow prices** (AGENTS.md §LP/SDP), and `gram-matrix-dual.py` reads
+**demand (= binding) from negative NF coefficients**; the decay projection
+`½(L₊−L₋)` is precisely where a negative coefficient (`−½·L₋`) first appears.
+
+**Consequence for the open gap.** If the bar-odd `S` **is** a binding energy,
+then `z(q₀)` is derivable not only via the hyperbolic Newton solve but via the
+**binding/SDP-dual** machinery already in the corpus (operator-selection dual,
+Δ_λ shadow prices). `S` = a binding shadow price on the ghost channel. New route
+(bean `qou-...`): compute `S` as the dual variable on the negative-signature
+demand channel of `β(4₁)`. (Q_β is itself a mass-defect/binding energy — the
+`n`–`p` splitting that drives β-decay — so "decay = binding" is physically the
+statement that the CAL-2 leak is a binding energy, not a kinematic mass.)
+
 ## Disposition
 
 The derivation gap is **sharpened, not closed**: closing `S` ⟺ deriving the
