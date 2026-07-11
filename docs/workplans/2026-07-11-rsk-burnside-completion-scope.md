@@ -41,14 +41,10 @@ cardinality consequence; the repo builds it brick by brick.
 | 2 | `insert` (bumping cascade), `insertWord` (P-tableau), `RowsSorted`, `insert_rowsSorted`, `insertWord_rowsSorted` | ✅ proved |
 | 3 | `totalCells`, `insert_totalCells`, `insertWord_totalCells` (`|P(w)| = |w|`) | ✅ proved |
 | 4 | `bumpMs`, `content`, `rowInsert_content`, `insert_content`, `insertWord_content` (`content(P(w)) = ↑w`) | ✅ proved |
+| 5 | **bumping lemma** — `StrictBelow`/`ColStrict`, `bump_findIdx_mono`, `strictBelow_bump_step`, `insert_colStrict`, `insertWord_colStrict` (`P(w)` columns strictly increase ⇒ `P(w)` is semistandard) | ✅ proved (building blocks PR #3535; cascade PR #3565) |
 
 ## Remaining bricks (each a dedicated multi-hour PR)
 
-5. **Column-strictness / shape validity** — the *bumping lemma*: a bumped
-   entry lands **strictly below** where it was, so columns of `P(w)` strictly
-   increase and the row lengths form a Young-diagram shape. This is the
-   hardest structural brick (the crux of RSK correctness). Deliverables:
-   `ColsStrict`/`IsTableau` predicate, `insert_colsStrict`, shape-is-partition.
 6. **Recording tableau `Q`** — track the *insertion step number* per new cell;
    prove `Q(w)` has the same shape as `P(w)` and is standard (entries `1…n`
    increasing along rows and columns).
@@ -70,18 +66,23 @@ cardinality consequence; the repo builds it brick by brick.
 - **`Nat.Partition n` Fintype API** is upstream-dependent (noted in
   `RSKBridge`); the cohort/`List` route (`CohortRSKWitness`) is the fallback if
   the sigma-over-`Nat.Partition` count fights Mathlib.
-- **Brick 5 is the bottleneck.** The bumping lemma is where most RSK
-  formalisations spend their effort; budget it as its own multi-session sub-goal.
+- **Brick 5 (the bottleneck) is now closed.** The bumping lemma
+  (`strictBelow_bump_step` + `insert_colStrict`) is where most RSK
+  formalisations spend their effort; it is proved sorry-free. The next
+  bottleneck is Brick 8 (reverse bumping / inverse), the second-hardest.
 
 ## Recommended next action
 
-**Brick 5 (column-strictness).** Build on the proven `rowInsert`/`insert` +
-`insert_content`. Start with the single-row bumping monotonicity
-(`rowInsert` on a sorted row bumps an entry `≥` the inserted `x`, and the
-bumped entry re-inserts into the next row at a strictly-earlier-or-equal
-column), then lift to the cascade. This is a dedicated coding session, not a
-tail-of-session task.
+**Brick 6 (recording tableau `Q`).** Build on the now-complete
+`insert_colStrict` + `insertWord_colStrict`. Track the insertion step number
+per new cell: extend `insert`/`insertWord` to also return, for each cell, the
+step at which it was added (or thread a parallel `Q`-tableau of the same
+shape). Prove `Q(w)` has the same shape as `P(w)` and is standard (entries
+`1…n`, strictly increasing along rows and columns — the shape match reuses
+`insertWord_totalCells` for the cell count and `insertWord_colStrict` for the
+column order). This is a dedicated coding session.
 
-_Reconnaissance + scope authored 2026-07-11. Bricks 1–4 pre-existing and
-sorry-free; this doc maps the remaining chain so any session can resume at
-Brick 5 without re-deriving the state._
+_Reconnaissance + scope authored 2026-07-11. Bricks 1–5 sorry-free
+(Brick 5 completed 2026-07-11, PRs #3535 + #3565); this doc maps the
+remaining chain so any session can resume at Brick 6 without re-deriving the
+state._
