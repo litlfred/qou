@@ -81,6 +81,17 @@ Convention: $\mathfrak{D}_K = \hbar / (\text{lifetime of } K)$. Subscripts: $\ma
 
 The category $\mathbf{Arch}$ is the target of $\tau$, not the name of a functor. When authoring, we say which one: "$\tau$ specialised to $\mathbf{Arch}$" or "the $R \mapsto \mathbb{R}$ realisation". We never write "the archimedean functor" without context.
 
+**Pinning $\tau$'s codomain — one functor, several de-enriched levels.** The canonical fibre functor is $\tau \colon \mathbf{C} \to \mathbf{Arch}$. Where the corpus writes $\tau$ into a *different* target, it means a **composite** with $\tau$, not a rival functor:
+
+| Written as | Means | Level |
+|---|---|---|
+| $\tau \colon \mathbf{C} \to \mathbf{Arch}$ | the fibre functor itself | enriched (canonical) |
+| $\tau \colon \mathbf{C} \to \mathbf{Vec}_{\mathbb{R}}$ | $U \circ \tau$ | forget archimedean enrichment |
+| $\tau \colon \mathbf{C} \to \mathbf{Type}$ (Lean `C ⥤ Type*`) | underlying set-valued functor (Tannakian $\omega$) | forget linear structure |
+| $\tau \colon \mathbf{C} \to \mathbf{D}$ (spatial realisation) | $\tau$ into a chosen geometric model $\mathbf{D}$ | model-specific |
+
+These are genuine functors (they act on morphisms). What is **not** a functor is the archimedean **evaluation** $\pi_\infty \colon \mathrm{Obj}(\mathbf{Arch}) \to \mathbb{R}$ (an object-level map / place), and the *ring-level* realisations it induces: the motivic measure $\mathcal{R}_{\mathrm{top}} \colon K_0(\mathrm{Var}) \to \mathbb{R}$ (a ring homomorphism) and the standard-part map $\mathrm{st} \colon \mathbf{No}_{\mathrm{fin}} \to \mathbb{R}$ (a ring homomorphism). Reserve "functor" for $\tau$, $U$, and $\mathrm{St}$; call the maps into $\mathbb{R}$ *realisations / evaluations*. Taxonomy audit: [`docs/audits/2026-07-11-archimedean-functor-taxonomy.md`](../../../docs/audits/2026-07-11-archimedean-functor-taxonomy.md).
+
 **Binding-energy notions $B_\bullet$.** The framework accumulates many distinct "binding energy" objects, almost all written as a bare $B$ or $B(K)$. We keep binding as plain $B$ with systematic subscripts. The kept canonical symbols (see [`2026-06-15-binding-energy-notation-catalog.md`](../../../docs/audits/2026-06-15-binding-energy-notation-catalog.md)):
 
 | Symbol | Definition | Role | Status |
