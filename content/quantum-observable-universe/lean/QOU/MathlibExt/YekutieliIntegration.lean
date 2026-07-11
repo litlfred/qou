@@ -140,4 +140,50 @@ theorem holonomy_perm [CommMonoid G] {p q : List G} (h : p.Perm q) :
     holonomy p = holonomy q := by
   simp only [holonomy]; exact h.prod_eq
 
+/-! ### Discrete non-abelian Stokes for a plaquette strip
+
+Model a strip of plaquettes by the parallel transport `g : ℕ → G` from a
+common basepoint to each successive rung of the strip.  The *based*
+curvature of plaquette `i` is the increment `Fᵢ = g_{i+1} · gᵢ⁻¹` (discrete
+Stokes: curvature = increment of transport).  The theorem below shows the
+ordered product of these curvatures over the strip equals the boundary
+holonomy — the internal transports cancel pairwise.  This is the
+one-dimensional non-abelian Stokes theorem, of which
+`loopHolonomyPureGauge_eq_one` is the closed-loop special case. -/
+
+/-- **Based curvature of plaquette `i`** in a strip: the increment of the
+    parallel transport `g` between consecutive rungs, `Fᵢ = g_{i+1} · gᵢ⁻¹`. -/
+def basedCurvature [Group G] (g : ℕ → G) (i : ℕ) : G := g (i + 1) * (g i)⁻¹
+
+/-- **Strip holonomy**: the ordered product of the based plaquette
+    curvatures `F_{n-1} · … · F₁ · F₀` over a strip of `n` plaquettes
+    (later plaquettes on the left, path order). -/
+def stripHolonomy [Group G] (g : ℕ → G) : ℕ → G
+  | 0 => 1
+  | (n + 1) => basedCurvature g n * stripHolonomy g n
+
+/-- **Discrete non-abelian Stokes for a strip.**  The ordered product of
+    the based plaquette curvatures telescopes to the boundary holonomy
+    `g_n · g_0⁻¹`: the internal transports `gᵢ` (`0 < i < n`) cancel
+    pairwise, leaving only the outer boundary.  A non-abelian discrete
+    fundamental theorem of calculus. -/
+theorem stripHolonomy_telescope [Group G] (g : ℕ → G) (n : ℕ) :
+    stripHolonomy g n = g n * (g 0)⁻¹ := by
+  induction n with
+  | zero => simp [stripHolonomy]
+  | succ k ih => rw [stripHolonomy, basedCurvature, ih]; group
+
+/-- A **flat** strip — constant parallel transport `g ≡ g 0`, i.e. every
+    based curvature is trivial — has trivial boundary holonomy.  Recovers
+    `loopHolonomyPureGauge_eq_one` (the closed loop) as the flat closed
+    strip. -/
+theorem stripHolonomy_flat [Group G] (g : ℕ → G) (n : ℕ)
+    (hflat : ∀ i, g i = g 0) : stripHolonomy g n = 1 := by
+  rw [stripHolonomy_telescope, hflat n]; group
+
+/-- The boundary of a flat strip is a flat plaquette. -/
+theorem isFlatPlaquette_strip_flat [Group G] (g : ℕ → G) (n : ℕ)
+    (hflat : ∀ i, g i = g 0) : IsFlatPlaquette (stripHolonomy g n) :=
+  stripHolonomy_flat g n hflat
+
 end QOU.MathlibExt.YekutieliIntegration
