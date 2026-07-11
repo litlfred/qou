@@ -43,57 +43,56 @@ noncomputable def partialProductLocal (q x : ℝ) (n : ℕ) : ℝ :=
 -- Ref: [manuscript] rem:kashaev-volume-density
 opaque BlochWignerD : ℝ → ℝ
 
-/-- The algebraic-geometric equivalence, as a typeclass over a state
-    variable `x` and depth `n`.  An instance asserts:
+/-- The algebraic-geometric equivalence, as a §3b-cond
+    hypothesis-carrying class over a state variable `x`.  Per
+    AGENTS.md §3b-cond rule 5, the fields axiomatise the conjecture's
+    *inputs* — NOT its conclusion:
 
-    * (`pole_cusp_bijection`) Each denominator zero `x = q^{-k}` of
-      `(x; q)_n` is matched with a unique cusp index of the
-      Φ_q-piece's ideal-tetrahedron triangulation.
+    * (`vc_asymptotic`) the volume-conjecture **saddle asymptotic**:
+      the rescaled log partial product converges to some limit
+      `volume` under Faddeev's scaling.  This is the analytic core of
+      Kashaev-Murakami-Murakami; for the figure-eight `4₁` it is the
+      theorem of Ohtsuki (2016) / Andersen-Hansen.
 
-    * (`asymptotic_volume`) Under Faddeev's scaling, the rescaled
-      log of the partial product converges to the Bloch-Wigner
-      volume at the matched shape parameter.
+    * (`pole_cusp_matched`) the matched-cusp volume identification
+      `volume = D(z(x))` — the geometric content supplied by
+      `conj:shared-denominator-cusp-holonomy` (the pole side of the
+      matching is the unconditional theorem
+      `pole_cusp_bijection_proved` below).
 
-    The two fields are the algebraic and asymptotic halves of the
-    Kashaev-Murakami-Murakami theorem in the QOU-native form. -/
+    The §2 Bloch-Wigner asymptotic is then **derived**
+    (`AlgebraicGeometricEquivalence.asymptotic_volume`), not assumed.
+    A previous revision carried the conclusion itself as a field plus
+    a vacuous `∃ z, z k = q^{-k}` pole field; both are gone — the
+    class now asserts exactly the two open hypotheses and nothing
+    provable-outright. -/
 -- Ref: [manuscript] conj:algebraic-geometric-dilog-equivalence
-class AlgebraicGeometricEquivalence
-    (q x : ℝ) (n : ℕ) : Prop where
-  /-- Algebraic side: a function from cusp indices `k < n` to the
-      matching denominator zero `q^{-k}`. -/
-  -- Ref: [manuscript] conj:algebraic-geometric-dilog-equivalence §1
-  pole_cusp_bijection :
-    ∃ z : Fin n → ℝ, ∀ k : Fin n, z k = q ^ (-(k : ℤ))
-  /-- Asymptotic side: the rescaled log partial product converges to
-      the Bloch-Wigner volume of the matched ideal tetrahedron. The
-      hypothesis `(q, n)` ranges over Faddeev's joint scaling. -/
-  -- Ref: [manuscript] conj:algebraic-geometric-dilog-equivalence §2
-  asymptotic_volume :
+class AlgebraicGeometricEquivalence (q x : ℝ) where
+  /-- The limit of the rescaled log partial product (the saddle
+      volume). -/
+  volume : ℝ
+  /-- Hypothesis (i): the volume-conjecture saddle asymptotic. -/
+  -- Ref: [murakami-murakami2001] volume conjecture; Ohtsuki asymptotic for 4₁
+  vc_asymptotic :
     ∀ ε > (0 : ℝ),
       ∃ N : ℕ, ∀ m, N ≤ m →
-        ‖(1 - q) * Real.log (partialProductLocal q x m)
-          - BlochWignerD x‖ < ε
+        ‖(1 - q) * Real.log (partialProductLocal q x m) - volume‖ < ε
+  /-- Hypothesis (ii): the saddle volume is the Bloch-Wigner volume at
+      the matched shape parameter. -/
+  -- Ref: [manuscript] conj:shared-denominator-cusp-holonomy
+  pole_cusp_matched : volume = BlochWignerD x
 
-/-- Stated equivalence theorem (conjecture instance form). -/
--- Ref: [manuscript] conj:algebraic-geometric-dilog-equivalence
-noncomputable def algebraic_geometric_equivalence
-    (q x : ℝ) (n : ℕ) [h : AlgebraicGeometricEquivalence q x n] :
-    (∃ z : Fin n → ℝ, ∀ k : Fin n, z k = q ^ (-(k : ℤ))) ∧
-    (∀ ε > (0 : ℝ), ∃ N : ℕ, ∀ m, N ≤ m →
-      ‖(1 - q) * Real.log (partialProductLocal q x m)
-        - BlochWignerD x‖ < ε) :=
-  ⟨h.pole_cusp_bijection, h.asymptotic_volume⟩
+/-! ## The pole side is a THEOREM (unconditional)
 
-/-! ## The pole side is a THEOREM (not just the conjecture-class field)
-
-The class field `pole_cusp_bijection` above asserts only
-`∃ z, z k = q^{-k}` — vacuously true (it names the candidate zeros but never
-asserts they *are* zeros of the denominator). The genuine §1 content — that each
-`x = q^{-k}` is an actual **root** of `(x;q)_n` — is unconditional algebra and is
-proved here sorry-free (mirroring the generic `QOU.QBeta.qPochDenom_eq_zero_at_pole`,
-merged separately). Only the *cusp correspondence* (that these poles match the
-ideal-tetrahedron cusps) and the §2 asymptotic remain the (open) volume
-conjecture. -/
+The genuine §1 algebraic content — that each `x = q^{-k}` is an actual
+**root** of `(x;q)_n` — is unconditional algebra and is proved here
+sorry-free (mirroring the generic `QOU.QBeta.qPochDenom_eq_zero_at_pole`,
+merged separately). A previous class revision carried a vacuous
+`∃ z, z k = q^{-k}` pole field alongside this theorem; the field is gone
+(see the class docstring). Only the *cusp correspondence* (that these
+poles match the ideal-tetrahedron cusps — the class's
+`pole_cusp_matched` hypothesis, i.e. `conj:shared-denominator-cusp-holonomy`)
+and the VC saddle asymptotic remain the open volume conjecture. -/
 
 /-- Structural unfold of the `n+1` step (definitional). -/
 theorem denomPolyLocal_succ (q x : ℝ) (n : ℕ) :
@@ -160,5 +159,33 @@ theorem asymptotic_volume_of_vc (q x V : ℝ)
     ∀ ε > (0 : ℝ), ∃ N : ℕ, ∀ m, N ≤ m →
       ‖(1 - q) * Real.log (partialProductLocal q x m) - BlochWignerD x‖ < ε := by
   rw [← h_pole_cusp_matched]; exact h_vc_asymptotic
+
+/-- **§2 asymptotic, DERIVED from the class hypotheses.**  Given the two
+    axiomatised inputs (`vc_asymptotic`, `pole_cusp_matched`), the rescaled
+    log partial product converges to the Bloch-Wigner volume — the
+    conclusion the previous class revision carried as a field, now a
+    theorem via `asymptotic_volume_of_vc`. -/
+-- Ref: [manuscript] conj:algebraic-geometric-dilog-equivalence §2
+theorem AlgebraicGeometricEquivalence.asymptotic_volume (q x : ℝ)
+    [h : AlgebraicGeometricEquivalence q x] :
+    ∀ ε > (0 : ℝ), ∃ N : ℕ, ∀ m, N ≤ m →
+      ‖(1 - q) * Real.log (partialProductLocal q x m) - BlochWignerD x‖ < ε :=
+  asymptotic_volume_of_vc q x h.volume h.vc_asymptotic h.pole_cusp_matched
+
+/-- **Stated equivalence (conjecture bundle, both halves).**  §1 is the
+    unconditional strengthened pole side (`pole_cusp_bijection_proved`,
+    needing only `q ≠ 0`); §2 is derived from the class hypotheses.  The
+    only conjectural inputs are the two class fields — the composition
+    contains no `sorry` and assumes nothing provable-outright. -/
+-- Ref: [manuscript] conj:algebraic-geometric-dilog-equivalence
+theorem algebraic_geometric_equivalence
+    (q x : ℝ) (hq : q ≠ 0) (n : ℕ) [AlgebraicGeometricEquivalence q x] :
+    (∃ z : Fin n → ℝ, (∀ k : Fin n, z k = q ^ (-(k : ℤ)))
+      ∧ (∀ k : Fin n, denomPolyLocal q (z k) n = 0)) ∧
+    (∀ ε > (0 : ℝ), ∃ N : ℕ, ∀ m, N ≤ m →
+      ‖(1 - q) * Real.log (partialProductLocal q x m)
+        - BlochWignerD x‖ < ε) :=
+  ⟨pole_cusp_bijection_proved q hq n,
+    AlgebraicGeometricEquivalence.asymptotic_volume q x⟩
 
 end QOU.QPochhammer
