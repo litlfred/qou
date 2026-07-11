@@ -413,3 +413,52 @@ theorem rowInsert_bump_getElem? {r : List ℕ} {x y : ℕ}
       have hd : decide (x < a) = false := by simp [hx]
       rw [List.findIdx_cons, hd, cond_false, List.getElem?_cons_succ]
       exact ih h
+
+/-! ### Bump-column monotonicity (the bumping-lemma heart)
+
+The insertion tableau is column-strict because **bump columns weakly decrease
+down the rows**: if `x` bumps `y` from an upper row, `y` re-inserts into the
+lower row at a column no further right.  The proof rests on a general
+`List.findIdx` fact — if the predicate already holds at position `c`, the first
+witness is `≤ c` — plus column-strictness of the input (`upper[j] < lower[j]`). -/
+
+/-- **`findIdx` upper bound.**  If the predicate holds at index `c`, the first
+index where it holds is `≤ c`.  (General `List` fact; the monotonicity engine.) -/
+theorem findIdx_le_of_getElem {α : Type*} (p : α → Bool) (l : List α) :
+    ∀ (c : ℕ) (hc : c < l.length), p l[c] = true → l.findIdx p ≤ c := by
+  induction l with
+  | nil => intro c hc _; simp at hc
+  | cons a l ih =>
+    intro c hc hp
+    rw [List.findIdx_cons]
+    by_cases hpa : p a = true
+    · rw [hpa]; simp
+    · rw [Bool.not_eq_true] at hpa
+      rw [hpa, cond_false]
+      cases c with
+      | zero => simp only [List.getElem_cons_zero] at hp; rw [hp] at hpa; simp at hpa
+      | succ c =>
+        simp only [List.getElem_cons_succ] at hp
+        have hc' : c < l.length := by simpa using hc
+        have := ih c hc' hp
+        omega
+
+/-- **Bump-column monotonicity** — the bumping lemma's heart.  If the value `y`
+bumped from `upper` (at `upper.findIdx (x < ·)`) sits at every column strictly
+below a larger entry of `lower` (column-strictness, `upper[j] < lower[j]`), then
+`y` re-inserts into `lower` at a column no further right:
+`lower.findIdx (y < ·) ≤ upper.findIdx (x < ·)`.  This is exactly why columns of
+the insertion tableau stay strictly increasing. -/
+theorem bump_findIdx_mono (upper lower : List ℕ) (x y : ℕ)
+    (hy : upper[upper.findIdx (x < ·)]? = some y)
+    (hcol : ∀ (j : ℕ) (_hj : j < lower.length) (_hu : j < upper.length),
+              upper[j] < lower[j]) :
+    lower.findIdx (y < ·) ≤ upper.findIdx (x < ·) := by
+  set c := upper.findIdx (x < ·) with hc
+  by_cases hcl : c < lower.length
+  · rw [List.getElem?_eq_some_iff] at hy
+    obtain ⟨hcu, hyc⟩ := hy
+    have hlt : y < lower[c] := hyc ▸ hcol c hcl hcu
+    exact findIdx_le_of_getElem _ lower c hcl (by simpa using hlt)
+  · push_neg at hcl
+    exact le_trans List.findIdx_le_length hcl
