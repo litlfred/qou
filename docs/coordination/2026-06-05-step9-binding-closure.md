@@ -390,3 +390,18 @@ relation").
   edge-set → #3548, unchanged by charge symmetry, still open). Absolute binding needs
   both; neither is the other. Clean structural separation of the remaining closure
   problem — the two can be closed independently.
+
+## 2026-07-11 (cont.9) — qou-v0yw REFRAMED: M_n(K) is a body-order TOWER, not one graph (PR #3582)
+
+- **Took on qou-v0yw** (derive the coordination graph). Tested a max-binding "richest
+  Milnor tower" single-graph selection rule using #3545's validated Milnor machinery —
+  and **REFUTED it (scope-(a))**: the reducible chain (M_2=1, M_3=0) and the Brunnian
+  Borromean (M_2=0, M_3=1) have EQUAL tower rank; the Borromean trades pairwise for the
+  irreducible triple, so neither carries both orders and the choice is weight-dependent.
+- **Correct reading:** the coordination is NOT one graph but the body-order TOWER
+  B=Σ_n B_n (§0) — M_2 from pairwise links, M_3 from Borromean triples, each order using
+  its own Brunnian-n sub-link. "chain vs Borromean" is a false dichotomy. Explains #3545
+  Part 8's chain undercount (pure chain = only M_2, missing M_3).
+- **qou-v0yw REFRAMED (still open):** from "which single graph" to a per-order sub-link
+  COUNTING problem (how many Borromean triples in ⁶Li/¹²C…) + M_n→w_n weights. Bean set
+  back to todo with the sharper framing.

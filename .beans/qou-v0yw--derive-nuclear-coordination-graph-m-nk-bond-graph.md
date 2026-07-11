@@ -3,8 +3,9 @@
 title: Derive nuclear coordination graph M_n(K) (bond graph) — the open geometric keystone for jet-filtration binding
 status: todo
 type: task
+priority: normal
 created_at: 2026-07-11T17:06:19Z
-updated_at: 2026-07-11T17:06:19Z
+updated_at: 2026-07-11T19:36:27Z
 ---
 
 
