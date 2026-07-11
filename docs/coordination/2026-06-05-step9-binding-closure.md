@@ -377,3 +377,16 @@ relation").
   charge-BREAKING kernel (f_pp=z, f_nn=z−h). ⇒ re-run #3548's connected magnitude probe
   on the CHARGE-SYMMETRIC kernel (f_pp=f_nn=f_pn) + separate Coulomb. That is the path to
   absolute binding: charge structure (this PR) × connected magnitude (#3548 re-run).
+
+## 2026-07-11 (cont.7) — charge symmetry ⊥ connected magnitude: the two levers DECOUPLE (PR #3577)
+
+- **Re-ran #3548's connected magnitude on the charge-symmetric kernel (answers #3575's
+  open step, scope-(a)):** the connected Ursell/Mayer |b_Ac| is charge-symmetry-
+  INVARIANT — ⁴He 1.9614 (broken) → 1.9719 (symm), +0.5%; D +0.00%, ⁶Li +1.35%. Needed
+  super-pairwise 2.093→2.120 (ceiling shift only); ~74% magnitude gap PERSISTS; SU(4)
+  A=6 vanishing unchanged.
+- **⇒ The two open binding levers are ORTHOGONAL:** charge structure (mirror split →
+  fixed by charge-symm+Coulomb, #3564/#3570/#3575) vs connected magnitude (×2.09 /
+  edge-set → #3548, unchanged by charge symmetry, still open). Absolute binding needs
+  both; neither is the other. Clean structural separation of the remaining closure
+  problem — the two can be closed independently.
