@@ -1,7 +1,21 @@
 # Q_beta Keystone Interaction Derivation
 
+> **⚠ CORRECTION (2026-07-11) — the "PROVEN / exact theorem" framing is
+> over-scoped.** The formula `c₃ = −Vol(4₁) + u − (10/3)u²` is **anchor-blind**
+> (≈ −2.0216 at every anchor), while the actual `c₃` **swings 2.43%** between the
+> proton and muon anchors. So it is a **muon-anchor near-match** (0.07% muon,
+> **2.3% proton**), **not** an exact derivation of `c₃`; it fails the registry §8
+> cross-anchor guard and contradicts the authoritative registry §3 (`c₃`
+> EMPIRICAL/REFUTED as real-q). The structural pieces are real and kept
+> (`−Vol(4₁)` = solved bar-even part; `10/3 = lim[10]_q/[3]_q` writhe ratio), but
+> the anchor-swinging remainder (CAL-2 S-leak) is **Subgoal-2**. The Lean
+> `QBetaKeystoneInteraction.lean` *defines* `c_3_keystone` and unfolds it (an
+> axiomatized definition, not a derivation — AGENTS.md §"Axiomatization is NOT a
+> Proof"). Re-scope audit + measurement:
+> [`2026-07-11-qbeta-c3-keystone-rescope-anchor-blind.md`](2026-07-11-qbeta-c3-keystone-rescope-anchor-blind.md).
+
 **Date:** 2026-07-08
-**Status:** PROVEN, LEAN-CERTIFIED
+**Status:** ~~PROVEN, LEAN-CERTIFIED~~ → **RE-SCOPED (2026-07-11): muon-anchor near-match (scope-(a)); see correction banner above**
 **Subject:** First-principles topological derivation of the $Q_\beta$ interaction keystone ($c_3$).
 
 ## 1. The Open Keystone Problem

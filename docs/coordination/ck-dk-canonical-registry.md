@@ -113,6 +113,14 @@ cross-referenced so they are never conflated again.
 - The `[3]_q/25` building block is **shared** with the m_μ V9 closure (a real,
   clean proton-anchor structural coincidence) but is **NOT** a universal real-q
   element (same falsification).
+- **`c_3 = −Vol(4₁) + u − (10/3)u²`** ([`2026-07-08-qbeta-keystone-derivation.md`](../audits/2026-07-08-qbeta-keystone-derivation.md),
+  landed with an over-scoped "PROVEN/exact" tier) is a **muon-anchor near-match**,
+  **re-scoped 2026-07-11**: it is anchor-blind (≈ −2.0216 at both anchors) while
+  c_3 swings 2.43%, so it matches muon (0.07%) but misses proton (2.3%) and fails
+  the §8 guard. The `−Vol(4₁)` piece is the solved bar-even part and `10/3 =
+  lim[10]_q/[3]_q` is an exact writhe-ratio identity — both real; only the tier is
+  corrected. c_3's status stays **EMPIRICAL/REFUTED as real-q** (this row). See
+  [`2026-07-11-qbeta-c3-keystone-rescope-anchor-blind.md`](../audits/2026-07-11-qbeta-c3-keystone-rescope-anchor-blind.md).
 
 ---
 
