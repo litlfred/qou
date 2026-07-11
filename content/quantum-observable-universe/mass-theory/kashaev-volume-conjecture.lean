@@ -95,24 +95,56 @@ theorem pieceVolume_nonneg (q : ℝ) [inst : VolumeConjecture q]
 
 end QOU.Kashaev
 
-/-! ## Conditional theorems (downstream of the Volume Conjecture) -/
+/-! ## Conditional theorems (downstream of the Volume Conjecture)
 
-/-- **CONDITIONAL.** If the Volume Conjecture holds, then the
-    figure-eight knot 4₁ has hyperbolic volume Vol(4₁) = 2·Λ(π/3)
-    ≈ 2.029883. This is the depth-2 instance connecting to the
-    muon mass formula m_μ/m_e = Vol(4₁)/ℏ_q². -/
+These previously concluded `: True := trivial` — vacuous (they asserted
+nothing, despite docstrings claiming `Vol(4₁)=2Λ(π/3)` etc.). They are now
+**real conditional theorems**: given `[VolumeConjecture q]`, the specific
+braid's hyperbolic volume equals its Kashaev limit — a direct, honest instance
+of the universal `kvc_holds` field.
+
+**Design note (why no per-knot instance).** `VolumeConjecture.kvc_holds` is
+universal (`∀ β, hypVolume β = kashaevLimit β`), so a per-knot instance for the
+figure-eight (where the volume conjecture *is* a theorem — Andersen–Hansen 2006)
+cannot be constructed without discharging *all* braids. The specific numeric
+values `Vol(4₁)=2Λ(π/3)`, `Vol(B₃)=8G` are literature theorems, **not** derivable
+from the abstract class, so they are cited, not asserted here. -/
+
+namespace QOU.Kashaev
+
+open QOU.PhiQPiece
+
+/-- Figure-eight braid `4₁` = closure of `(σ₀σ₁⁻¹)²` on 3 strands
+    (`Bool = true` marks a negative crossing). -/
+def fourOneBraid : Braid :=
+  { n := 3, word := [((0 : Fin 2), false), ((1 : Fin 2), true),
+                     ((0 : Fin 2), false), ((1 : Fin 2), true)] }
+
+/-- Borromean braid `B₃` = closure of `(σ₀σ₁⁻¹)³` on 3 strands. -/
+def borromeanBraid : Braid :=
+  { n := 3, word := [((0 : Fin 2), false), ((1 : Fin 2), true),
+                     ((0 : Fin 2), false), ((1 : Fin 2), true),
+                     ((0 : Fin 2), false), ((1 : Fin 2), true)] }
+
+/-- **CONDITIONAL** (from `kvc_holds`). If the Volume Conjecture holds, the
+    figure-eight braid's hyperbolic volume equals its Kashaev limit. (The value
+    `Vol(4₁)=2·Λ(π/3)≈2.029883` — connecting to `m_μ/m_e = Vol(4₁)/ℏ_q²` — is the
+    Andersen–Hansen theorem, cited, not derived from the abstract class.) -/
 -- Ref: [thurston1978] Thurston's geometry and topology of three-manifolds — hyperbolic structure on figure-eight complement
 -- Ref: [kashaev1997] — original volume conjecture
-def figure_eight_volume_from_vc (q : ℝ) [VolumeConjecture q] :
-    True :=
-  trivial
+theorem figure_eight_volume_from_vc (q : ℝ) [inst : VolumeConjecture q] :
+    inst.hypVolume fourOneBraid = inst.kashaevLimit fourOneBraid :=
+  inst.kvc_holds fourOneBraid
 
-/-- **CONDITIONAL.** If VC holds, then the Borromean link B₃ has
-    volume Vol(B₃) = 8·G (where G = Catalan's constant). This
-    enters the proton mass formula via the Borromean Markov trace. -/
+/-- **CONDITIONAL** (from `kvc_holds`). If VC holds, the Borromean braid's
+    hyperbolic volume equals its Kashaev limit. (The value `Vol(B₃)=8·G`,
+    `G` = Catalan's constant — entering the proton mass formula via the
+    Borromean Markov trace — is cited, not derived.) -/
 -- Ref: [adams1985hyperbolic] — hyperbolic volume of Borromean rings
 -- Ref: [manuscript] lean/QOU/Archimedean/BorromeanVolumeCatalan.lean
-def borromean_volume_from_vc (q : ℝ) [VolumeConjecture q] :
-    True :=
-  trivial
+theorem borromean_volume_from_vc (q : ℝ) [inst : VolumeConjecture q] :
+    inst.hypVolume borromeanBraid = inst.kashaevLimit borromeanBraid :=
+  inst.kvc_holds borromeanBraid
+
+end QOU.Kashaev
 
