@@ -90,7 +90,7 @@ def main():
 
     # 5. CAPSTONE: Δ_λ = (ρ-graded sign at ζ₄)·dim(λ) — sign is an external grading.
     def dim_lambda(lam):  # ordinary dimension = # standard Young tableaux (hook length)
-        from math import comb, factorial
+        from math import factorial
         n = sum(lam)
         hl = []
         for r, rowlen in enumerate(lam):
