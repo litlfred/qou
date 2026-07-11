@@ -75,7 +75,7 @@ theorem qPochProd_functional (q x : R) (N : ℕ) :
   simp only [qPochProd]
   rw [Finset.prod_range_succ', mul_comm]
   refine congr_arg₂ (· * ·) ?_ (Finset.prod_congr rfl fun i _ => ?_)
-  · norm_num
+  · ring
   · rw [show 2 * (i + 1) + 1 = 2 * i + 1 + 2 from by ring, pow_add]
     ring
 
@@ -85,10 +85,12 @@ theorem qPochProd_functional (q x : R) (N : ℕ) :
 theorem qPochProd_zero_arg (q : R) (N : ℕ) : qPochProd q 0 N = 1 := by
   simp [qPochProd]
 
-/-- `q = 0` collapses every factor past the first to `1`, so
-$P_{N+1}(0, x) = 1$ (the classical, undeformed limit is trivial at this
-truncation). -/
-theorem qPochProd_q_zero (x : R) (N : ℕ) : qPochProd (0 : R) x (N + 1) = 1 := by
+/-- At `q = 0` every factor collapses to `1` — since `2n+1 ≥ 1` we have
+`0 ^ (2n+1) = 0`, so `1 + 0 ^ (2n+1) * x = 1` for *every* `n` (the first
+factor included) — hence $P_N(0, x) = 1$ for all `N` (the classical,
+undeformed truncation is trivial). -/
+@[simp]
+theorem qPochProd_q_zero (x : R) (N : ℕ) : qPochProd (0 : R) x N = 1 := by
   induction N with
   | zero => simp
   | succ n ih => rw [qPochProd_succ, ih]; simp
