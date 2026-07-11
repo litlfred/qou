@@ -73,9 +73,11 @@ Refs:
 
 namespace QOU.IwahoriHecke.Tw
 
+open QOU.IwahoriHecke.Quotient
+
 universe u v
 
-variable {W : Type u} (R : Type v) [CommRing R] (q : R) (S : Set W) [DecidableEq W]
+variable {W : Type u} (R : Type v) [CommRing R] (q : R) (S : Set W) [DecidableEq W] [Group W]
 
 /-! ## Anyonic-substrate class (§3b-cond)
 
@@ -137,7 +139,6 @@ Matsumoto's theorem. We provide here the **finite-word product**
 machinery that the basis construction will use once the
 CoxeterSystem reduced-expression API stabilises in Mathlib. -/
 
-variable [Group W]
 
 /-- **Word product** in `IwahoriHeckeQuot R q S` for an explicit
     finite list of simple reflections. This is the input to
@@ -163,7 +164,6 @@ theorem wordProduct_cons (s : S) (rest : List S) :
 /-- **Singleton word**: the word product of `[s]` is `T_s`. -/
 theorem wordProduct_singleton (s : S) :
     wordProduct R q S [s] = QOU.IwahoriHecke.Quotient.T R q S s := by
-  unfold wordProduct
-  rw [mul_one]
+  rw [wordProduct_cons, wordProduct_nil, mul_one]
 
 end QOU.IwahoriHecke.Tw
