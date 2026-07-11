@@ -40,11 +40,15 @@ def main() -> None:
     for a in ("muon", "proton"):
         print(f"  {a:7s}: c₃ = {c3[a]:+.8f}   S = {S[a]:+.8f}   (claim odd part {claimS[a]:+.8f})")
 
-    print(f"\n  S sign-flips: S(muon) {S['muon']:+.6f} > 0 > {S['proton']:+.6f} = S(proton)")
-    # linear zero-crossing fraction from muon toward proton
+    print(f"\n  S sign-flips (HARD, two measured values): "
+          f"S(muon) {S['muon']:+.6f} > 0 > {S['proton']:+.6f} = S(proton)")
+    # Zero-crossing is an INFERENCE: IF S(q₀) is continuous (IVT), a zero exists
+    # between the anchors; the fraction below is a LINEAR-interpolation estimate
+    # of its location, not a computed q*.
     frac = S["muon"] / (S["muon"] - S["proton"])
-    print(f"  ⇒ S crosses zero ~{frac*100:.1f}% of the way from muon→proton anchor")
-    print(f"    (a substrate q* where c₃ = −Vol(4₁) exactly — purely bar-even)")
+    print(f"  ⇒ if S(q₀) is continuous, S has a zero between the anchors")
+    print(f"    (~{frac*100:.1f}% along muon→proton under LINEAR S-interpolation) — a q*")
+    print(f"     where c₃ = −Vol(4₁) exactly (purely bar-even)")
     print(f"  S(proton)/S(muon) = {S['proton']/S['muon']:+.4f}")
     print(f"  claim odd part is fixed (+{claimS['muon']:.5f}) — anchor-blind, CANNOT sign-flip.")
 

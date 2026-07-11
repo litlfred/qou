@@ -26,9 +26,12 @@ numbers** (this is the concrete Subgoal-2 target).
 ## New observation — S sign-flips ⇒ a zero-crossing between the anchors
 
 `S(muon) > 0 > S(proton)` across two anchors that are both `q₀ > 1` and differ
-only at ~10⁻⁸. So **S passes through zero** at a substrate value `q*` roughly
-20% of the way from the muon to the proton anchor — a `q*` where `c₃ = −Vol(4₁)`
-**exactly** (purely bar-even, S vanishes). `S(proton)/S(muon) ≈ −4.08`.
+only at ~10⁻⁸. The sign flip itself is a **hard fact** (two measured values).
+*Assuming* `S(q₀)` varies continuously, the intermediate-value theorem then
+gives a zero of `S` between the anchors — a substrate `q*` where `c₃ = −Vol(4₁)`
+**exactly** (purely bar-even). Under a **linear** `S`-interpolation that `q*`
+sits ~20% of the way along the muon→proton anchor segment; this is a
+location *estimate*, not a computed `q*`. `S(proton)/S(muon) ≈ −4.08`.
 
 The anchor-blind claim formula's odd part `u − (10/3)u²` is a **fixed** `+0.00828`
 at both anchors, so it **structurally cannot** produce the sign flip — which is
