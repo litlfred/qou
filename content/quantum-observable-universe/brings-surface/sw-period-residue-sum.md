@@ -3,7 +3,7 @@ Let $\mathcal{S}_c \cong \mathbb{P}^1(\mathbb{C})$ be the exceptional divisor at
 $$
 \oint_{\mathcal{S}_c}\lambda_{\mathrm{SW}}^{(n)}
 \;=\;
-2\pi i \sum_{p\,\in\,\mathcal{S}_c}\operatorname{Res}_p\,\lambda_{\mathrm{SW}}^{(n)}.
+2\pi i \sum_{p\,\in\,\mathcal{S}_c}\mathrm{Res}_p\,\lambda_{\mathrm{SW}}^{(n)}.
 $$
 
 In particular, the prolonged Seiberg--Witten period $a_D^{(n)} = \oint_{\mathcal{S}_c}\lambda_{\mathrm{SW}}^{(n)}$ functions as an **algebraic residue sum**. We evaluate it by collecting the local residues at the branch-point poles; no contour integration is required.
