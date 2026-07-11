@@ -62,9 +62,11 @@ the proton). The honest de-fitted m_p is the **1.35 ppb** above.
 
 ### 1b — Q_β is anchor-insensitive (the refresh moves it ≈ 28 ppb)
 
-The committed canonical Q_β = 0.782334 MeV (1248 ppb) is **muon-anchored**
-(its witnesses carry q₀ = 1.10997859556…). Evaluating the production
-Form-A closed form at both pins:
+The committed Q_β **prediction** is 0.782334387 MeV — 1248 ppb above the
+CODATA reference 0.782333409 — and is read from the **proton-pinned**
+`m-p-substrate-identity-50dps.witness.json` (q₀ = 1.10997858275…). It is
+essentially **anchor-independent**: evaluating the production Form-A closed
+form at both pins gives
 
 | anchor | q₀ | Q_β (Form A, N=1) |
 |---|---|---|
@@ -89,6 +91,14 @@ former was a dropped fit, the latter a stale-anchor near-match.
 `content/pipeline/lean-vacuity-axiom-audit.ts` was run across the QOU Lean tree
 (1956 `.lean` files). Result: **42 non-exempt candidates across 107 files** (92
 entries already exempt), by criterion:
+
+> **Note on figures.** These counts are from a fresh 2026-07-11 run. The
+> committed snapshot [`2026-06-17-lean-vacuity-axiom-audit.json`](2026-06-17-lean-vacuity-axiom-audit.json)
+> (generated 2026-07-04) records different headline numbers — 1821 scanned /
+> 46 flagged / 27 defects / 35 exempt — because the corpus grew and the
+> checker's exempt set changed since. The fresh run's JSON is intentionally
+> **not** committed here, to preserve that dated snapshot; re-run the audit
+> locally to reproduce the figures below.
 
 | criterion | count | severity |
 |---|---|---|
