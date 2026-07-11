@@ -345,3 +345,19 @@ theorem rowInsert_none_forall_le {r : List ℕ} {x : ℕ}
       rcases List.mem_cons.mp ha with rfl | ha'
       · exact not_lt.mp hx
       · exact ih h a ha'
+
+/-- Row insertion changes the length by `0` (a bump) or `+1` (an append) — never
+more.  A structural bound the later Young-diagram *shape* reasoning consumes. -/
+theorem rowInsert_length_le {r : List ℕ} {x : ℕ} :
+    r.length ≤ (rowInsert r x).1.length ∧ (rowInsert r x).1.length ≤ r.length + 1 := by
+  cases h : (rowInsert r x).2 with
+  | none => rw [rowInsert_length_none h]; omega
+  | some y => rw [rowInsert_length_some h]; omega
+
+/-- An inserted row is never empty (it always contains at least `x`). -/
+theorem rowInsert_ne_nil {r : List ℕ} {x : ℕ} : (rowInsert r x).1 ≠ [] := by
+  cases r with
+  | nil => simp [rowInsert]
+  | cons a r =>
+    rw [rowInsert_cons]
+    by_cases hx : x < a <;> simp [hx]
