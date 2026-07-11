@@ -1,0 +1,107 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-07-11T17:09:04.093571+00:00",
+  "commitSha": "6f5e46360490f81f9087dd19525ade7ad2104da1",
+  "assertions": [
+    {
+      "name": "nucleon_coordination_z_matches_A3_multiplier",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "M_need(³H)/³He ≈ 2 = z=A−1 (vertex degree of K_A) to <3%, no fit."
+    },
+    {
+      "name": "alpha_contact_coordination_predicts_binding_under_half_percent",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "one b_αα=2.416 MeV (fixed from ¹²C/¹⁶O) predicts ²⁰Ne/²⁴Mg/⁴⁰Ca from standard α-cluster contact geometries; worst |err|=0.33% (<0.5%). b_αα empirical, geometry standard."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "bk-coordination-contact-binding",
+  "scriptFile": "bk_coordination_contact_binding.py",
+  "scriptHash": "92c76255b144",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "The binding multiplicity is the coordination number of 𝓑_K at two levels: the nucleon coordination z=A−1 (single-link multiplier, A≤4) and the α-cluster CONTACT-graph coordination number (A>4). Forward test: one b_αα fixed from ¹²C/¹⁶O predicts ²⁰Ne/²⁴Mg/⁴⁰Ca binding to <0.5% from standard Brink deltahedral contact counts (tetrahedron 6, octahedron 12, …). z=A−1 exact graph fact; 'multiplier=coordination' is bond-extensive (conditional); b_αα empirical. Scope-limited (a), no production wiring.",
+  "data": {
+    "q0": 1.1099785827513808,
+    "part1_nucleon_coordination": {
+      "T": {
+        "M_need": 2.003116879892434,
+        "z": 2,
+        "err": -0.0015560149902991232
+      },
+      "3He": {
+        "M_need": 2.0611896030201464,
+        "z": 2,
+        "err": -0.029686547482331887
+      }
+    },
+    "part2_alpha_contact_coordination": {
+      "8Be": {
+        "n_alpha": 2,
+        "N_contacts": 1,
+        "geometry": "dumbbell (2 spheres)",
+        "B_pred": 59.00683826666667,
+        "B_ame": 56.4994848,
+        "err": 0.044378342130770486
+      },
+      "12C": {
+        "n_alpha": 3,
+        "N_contacts": 3,
+        "geometry": "equilateral triangle (K3)",
+        "B_pred": 92.1335276,
+        "B_ame": 92.1617352,
+        "err": -0.00030606628595682085
+      },
+      "16O": {
+        "n_alpha": 4,
+        "N_contacts": 6,
+        "geometry": "regular tetrahedron (K4)",
+        "B_pred": 127.6757304,
+        "B_ame": 127.6193152,
+        "err": 0.0004420584761138101
+      },
+      "20Ne": {
+        "n_alpha": 5,
+        "N_contacts": 8,
+        "geometry": "square pyramid",
+        "B_pred": 160.80241973333332,
+        "B_ame": 160.64482400000003,
+        "err": 0.0009810196768824206
+      },
+      "24Mg": {
+        "n_alpha": 6,
+        "N_contacts": 12,
+        "geometry": "octahedron",
+        "B_pred": 198.760136,
+        "B_ame": 198.25704720000002,
+        "err": 0.002537558221032407
+      },
+      "40Ca": {
+        "n_alpha": 10,
+        "N_contacts": 24,
+        "geometry": "fcc close-packed 10-cluster",
+        "B_pred": 340.9289472,
+        "B_ame": 342.052184,
+        "err": -0.003283817068099761
+      }
+    },
+    "b_alpha_alpha_MeV": 2.415513466666667
+  }
+}
