@@ -142,23 +142,46 @@ theorem q_codifferential_formula (q : Rˣ) :
   let δ_q_def : DiffForm R → DiffForm R := fun β =>
     (↑q⁻¹ : R) • δ_classical R β + (1 - (↑q⁻¹ : R)) • L_reeb_star R (ι_reeb R β)
   use δ_q_def
-  constructor
-  · intro α β
-    have h_d_q := d_q_decomposition' q α
-    rw [h_d_q]
-    have h_linear_left := websterInner_linear_left β β (↑q⁻¹ : R) (d_classical R α) ((1 - (↑q⁻¹ : R)) • θ_wedge R (L_reeb R α))
-    rw [h_linear_left]
-    have h_linear_right := websterInner_linear_right α α (↑q⁻¹ : R) (δ_classical R β) ((1 - (↑q⁻¹ : R)) • L_reeb_star R (ι_reeb R β))
-    rw [h_linear_right]
-    have h_delta := δ_is_adjoint_of_d' α β
-    have h_theta := ι_reeb_is_adjoint_of_θ_wedge' (L_reeb R α) β
-    have h_L := L_reeb_star_is_adjoint' α (ι_reeb R β)
-    -- wait, we need to rewrite `websterInner R ((1 - q⁻¹) • A) B`. 
-    -- Is there `websterInner_smul_left`? No. 
-    -- But we can just use `websterInner_linear_left` with `+ 0`? No, we don't have `0`.
-    -- Ref: [manuscript] Ch. 2, prop:q-codifferential-formula (closed form δ_q = q⁻¹δ + (1−q⁻¹)L_ξ*∘ι_ξ)
-  sorry
-  · intro β
-    rfl
+  -- Pure scalar-linearity of the (bilinear) Webster inner product, derived
+  -- from the `r • α + β` axioms with the second slot set to `0`.  First the
+  -- vanishing on `0` (from left/right additivity), then the scalar pull-out.
+  have hzl : ∀ f : DiffForm R, websterInner R (0 : DiffForm R) f = 0 := by
+    intro f
+    have h := websterInner_linear_left f f (1 : R) (0 : DiffForm R) (0 : DiffForm R)
+    simp only [one_smul, add_zero, one_mul, left_eq_add] at h
+    exact h
+  have hzr : ∀ f : DiffForm R, websterInner R f (0 : DiffForm R) = 0 := by
+    intro f
+    have h := websterInner_linear_right f (1 : R) (0 : DiffForm R) (0 : DiffForm R)
+    simp only [one_smul, add_zero, one_mul, left_eq_add] at h
+    exact h
+  have hsl : ∀ (r : R) (X f : DiffForm R),
+      websterInner R (r • X) f = r * websterInner R X f := by
+    intro r X f
+    have h := websterInner_linear_left f f r X (0 : DiffForm R)
+    simp only [add_zero, hzl] at h
+    exact h
+  have hsr : ∀ (f : DiffForm R) (r : R) (X : DiffForm R),
+      websterInner R f (r • X) = r * websterInner R f X := by
+    intro f r X
+    have h := websterInner_linear_right f r X (0 : DiffForm R)
+    simp only [add_zero, hzr] at h
+    exact h
+  refine ⟨fun α β => ?_, fun β => rfl⟩
+  -- Expand `d_q`, split the inner product on both slots (bilinearity + the
+  -- scalar pull-outs above), then match term-by-term via the three adjoint
+  -- axioms: δ↔d, ι_ξ↔θ∧, L_ξ*↔L_ξ.
+  show websterInner R (d_q R q α) β
+      = websterInner R α ((↑q⁻¹ : R) • δ_classical R β
+          + (1 - (↑q⁻¹ : R)) • L_reeb_star R (ι_reeb R β))
+  rw [d_q_decomposition' q α,
+    websterInner_linear_left β β (↑q⁻¹ : R) (d_classical R α)
+      ((1 - (↑q⁻¹ : R)) • θ_wedge R (L_reeb R α)),
+    websterInner_linear_right α (↑q⁻¹ : R) (δ_classical R β)
+      ((1 - (↑q⁻¹ : R)) • L_reeb_star R (ι_reeb R β)),
+    hsl, hsr,
+    δ_is_adjoint_of_d' α β,
+    ι_reeb_is_adjoint_of_θ_wedge' (L_reeb R α) β,
+    L_reeb_star_is_adjoint' α (ι_reeb R β)]
 
 end QOU.QuantumGeometry
