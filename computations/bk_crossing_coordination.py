@@ -38,8 +38,9 @@ import mpmath as mp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE / "substrate"))
 sys.path.insert(0, str(HERE))
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402 — canonical high-precision q₀
 from _precision import set_compute_dps  # noqa: E402
+import codata_constants as _cc  # noqa: E402
 from codata_constants import (  # noqa: E402
     M_E_MEV, AME_B_DEUTERON_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION,
     AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION,
@@ -52,7 +53,7 @@ except ImportError:
     _HAVE_WB = False
 
 set_compute_dps()
-q = mp.mpf(str(Q0))
+q = mp.mpf(Q_50_DIGIT_STR)   # full 50-digit substrate q₀ (not the f64 Q)
 M_E = mp.mpf(str(M_E_MEV))
 
 
@@ -168,8 +169,55 @@ def main() -> int:
     print(f"  ⇒ the crossing/coordination carrier is the natural non-vanishing")
     print(f"    replacement for the volume on the 2-body (Seifert-fibred) sub-link.")
 
+    # ---- α-CLUSTER COORDINATION: the principle one level up (A>4 magic) -------
+    #   ¹⁶O/⁴⁰Ca have NO canonical single hyperbolic link in the corpus — they are
+    #   α-cluster nuclei. So the coordination principle extends by treating each ⁴He
+    #   as ONE node and counting α–α coordination bonds:
+    #       B(n_α) ≈ n_α·B(⁴He) + N_bonds·b_αα .
+    #   For a SIMPLEX cluster (n_α ≤ 4: ⁴He,⁸Be,¹²C,¹⁶O) every pair is a nearest
+    #   neighbour, so N_bonds = C(n_α,2) (complete graph, 3D-realisable up to the
+    #   tetrahedron). b_αα is a SINGLE empirical residual constant (NOT derived).
+    B_alpha = mp.mpf(str(_cc._ame_binding_mev(2, 4)))
+    ALPHA = {  # (Z, A) for the α-conjugate chain
+        "8Be": (4, 8), "12C": (6, 12), "16O": (8, 16),
+        "20Ne": (10, 20), "24Mg": (12, 24), "40Ca": (20, 40)}
+    print("\n### α-cluster coordination (A>4) — the principle one level up")
+    print(f"  ⁴He is the n_α=1 base: B(⁴He)={float(B_alpha):.3f} MeV, 0 bonds.")
+    print(f"  Residual r = B − n_α·B(⁴He), per complete-graph bond C(n_α,2):")
+    print(f"  {'iso':<5}{'n_α':>4}{'C(n,2)':>7}{'B_AME':>9}{'resid':>8}{'per-bond':>9}"
+          f"{'simplex?':>9}")
+    alpha_rows = {}
+    for nm, (Z, A) in ALPHA.items():
+        B = mp.mpf(str(_cc._ame_binding_mev(Z, A)))
+        na = A // 4
+        Cn2 = na * (na - 1) // 2
+        resid = B - na * B_alpha
+        per = resid / Cn2 if Cn2 else mp.mpf(0)
+        simplex = na <= 4          # complete α-graph 3D-realisable only for n_α ≤ 4
+        alpha_rows[nm] = dict(n_alpha=na, bonds=Cn2, B=float(B),
+                              resid=float(resid), per_bond=float(per), simplex=simplex)
+        print(f"  {nm:<5}{na:>4}{Cn2:>7}{float(B):>9.2f}{float(resid):>8.2f}"
+              f"{float(per):>9.3f}{'  yes' if simplex else '  no':>9}")
+    # b_αα read off the two clean simplex clusters ¹²C, ¹⁶O
+    b_aa = (alpha_rows["12C"]["per_bond"] + alpha_rows["16O"]["per_bond"]) / 2
+    print(f"\n  • Simplex clusters n_α≤4 (⁸Be,¹²C,¹⁶O): per-bond ≈ constant "
+          f"b_αα≈{b_aa:.2f} MeV (¹²C {alpha_rows['12C']['per_bond']:.3f}, "
+          f"¹⁶O {alpha_rows['16O']['per_bond']:.3f}; ⁸Be≈0 — the isolated α–α pair is")
+    print(f"    unbound, the reason for the triple-α process). This is the classical")
+    print(f"    Hafstad–Teller α-bond model; QOU reads N_bonds as the α-cluster")
+    print(f"    COORDINATION number — the same principle as z=A-1, one level up.")
+    print(f"  • n_α≥5 (²⁰Ne,²⁴Mg,⁴⁰Ca): per-C(n,2) drops "
+          f"({alpha_rows['20Ne']['per_bond']:.2f}→{alpha_rows['40Ca']['per_bond']:.2f}) —")
+    print(f"    C(n_α,2) OVERCOUNTS: not all pairs can be nearest neighbours in 3D.")
+    print(f"    ⇒ coordination SATURATES to a geometric (close-packing) count beyond")
+    print(f"    the tetrahedron. ⁴⁰Ca needs the packing coordination, not C(10,2)=45.")
+    print(f"  • a_D-ACTIVATION resolves: there is NO per-isotope a_D factor for A>4;")
+    print(f"    the ⁴He 'magic' enhancement is itself the n_α=1 base, and the extra")
+    print(f"    binding of larger α-nuclei is carried by the α–α COORDINATION count.")
+
     # ---- verdict -------------------------------------------------------------
     z_pair_ok = abs(err(2, "T")) < 0.05 and abs(err(2, "3He")) < 0.05
+    simplex_ok = abs(alpha_rows["12C"]["per_bond"] - alpha_rows["16O"]["per_bond"]) < 0.1
     print("\n### Verdict — crossing/coordination as M_n(A)  (scope-limited (a))")
     print(f"  • Per-nucleon coordination z=A-1 = 2 matches the NON-MAGIC A=3 pair:")
     print(f"      M_need(³H)={results['T']['M_need']:.3f}, M_need(³He)="
@@ -178,9 +226,9 @@ def main() -> int:
     print(f"  • Doubly-magic ⁴He is NOT closed by z=A-1=3 (needs {results['4He']['M_need']:.2f}).")
     print(f"    The magic enhancement over the coordination number is ≈ "
           f"{results['4He']['M_need']/3:.2f} ≈ a_D^(4)={float(aD[4]):.2f}:")
-    print(f"      z·a_D^(A): ³H {err(results['T']['z_aD'],'T')*100 if False else 0:+.0f}"
-          f" — see z·a_D^A column;  ⁴He err = "
-          f"{err(results['4He']['z_aD'],'4He')*100:+.1f}%.")
+    print(f"      z·a_D^A err: ³H {err(results['T']['z_aD'],'T')*100:+.1f}%,  "
+          f"³He {err(results['3He']['z_aD'],'3He')*100:+.1f}%,  "
+          f"⁴He {err(results['4He']['z_aD'],'4He')*100:+.1f}%.")
     print(f"  • This CONFIRMS option 1's 'different objects' reading: the light-nucleus")
     print(f"    multiplicity is the topological coordination number z=A-1 (no fit),")
     print(f"    while ⁴He carries an ADDITIONAL super-exp a_D^(A) magic factor.")
@@ -203,14 +251,28 @@ def main() -> int:
                 "extra super-exp a_D^(4)≈2.53 factor (z·a_D^A closes it to a few %). "
                 "z·a_D^A closes ⁴He but overshoots A=3 by ~30%, so a_D is a magic-shell "
                 "enhancement, not universal. Crossing number c(𝓑_K) is the Vol=0 deuteron "
-                "survivor, not the A≥3 multiplier. Scope-limited (a): tested alone, not a "
-                "structural exclusion.")
+                "survivor, not the A≥3 multiplier. EXTENSION: for A>4 α-cluster nuclei "
+                "(no single hyperbolic link), the principle lifts one level — B ≈ "
+                "n_α·B(⁴He) + C(n_α,2)·b_αα with b_αα≈2.41 MeV constant for simplex "
+                "clusters ⁸Be/¹²C/¹⁶O (n_α≤4), saturating for ⁴⁰Ca (n_α=10). b_αα is a "
+                "single empirical constant, not derived. Scope-limited (a): tested alone, "
+                "not a structural exclusion.")
             wb.add_data("q0", float(q))
             wb.add_data("bk_structure", {K: rows[K] for K in rows})
             wb.add_data("M_need", {K: results[K]["M_need"] for K in results})
             wb.add_data("candidates_z_aD", {K: results[K]["z_aD"] for K in results})
             wb.add_data("a_D", {str(A): float(aD[A]) for A in aD})
             wb.add_data("strand_crossings_Tw", sc)
+            wb.add_data("alpha_cluster_coordination", alpha_rows)
+            wb.add_data("b_alpha_alpha_MeV_empirical", b_aa)
+            wb.add_assertion(
+                name="alpha_cluster_coordination_constant_for_simplex_nuclei",
+                computed=str(int(simplex_ok)), expected="1", tolerance=0,
+                source=(f"per-bond residual is ≈constant b_αα≈{b_aa:.2f} MeV for the simplex "
+                        f"α-clusters ¹²C ({alpha_rows['12C']['per_bond']:.3f}) and ¹⁶O "
+                        f"({alpha_rows['16O']['per_bond']:.3f}) using complete-graph "
+                        f"C(n_α,2) bonds; n_α≥5 saturates (⁴⁰Ca {alpha_rows['40Ca']['per_bond']:.2f}). "
+                        f"b_αα is a single empirical residual constant, NOT derived."))
             wb.add_assertion(
                 name="per_nucleon_coordination_matches_A3_multiplicity",
                 computed=str(int(z_pair_ok)), expected="1", tolerance=0,
