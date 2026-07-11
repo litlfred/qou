@@ -89,10 +89,11 @@ theorem q_coord_isUnit : IsUnit (q_coord R) := by
   -- T 1 in LaurentPolynomial R is a unit (with inverse T (-1)).
   exact (LaurentPolynomial.isUnit_T 1).map _
 
-/-! ## Part 3: Universal property (sketch)
+/-! ## Part 3: Universal property
 
 Any `R`-algebra `S` with a chosen `q ∈ S^×` and `i ∈ S` with `i^2 = -1`
-admits a unique `R`-algebra map `R[i, q^±¹] → S`. -/
+admits a unique `R`-algebra map `R[i, q^±¹] → S`.  Proved sorry-free in
+`categorical_coordinate_ring_universal` below. -/
 
 /-- Universal property of `R[i, q^±¹]`: for any commutative `R`-algebra
     `S` equipped with a unit `qS : S^×` and an element `iS : S` with
