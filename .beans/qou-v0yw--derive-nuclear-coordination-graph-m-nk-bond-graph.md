@@ -38,3 +38,22 @@ Borromean triples for the magic shells) — NOT a linear chain, NOT an LP.
   derivation without owner sign-off.
 - **Non-fit checkpoint:** once a candidate `𝓑_K` per isotope exists, compute its
   Milnor `M_n` (machinery live) and test `B(K)` vs AME across D→¹²C.
+
+## Update 2026-07-11 (sharpened by main `a44296db` decay=binding-quadratic)
+
+The coordination graph is NO LONGER a vague "open geometric input" — main landed the
+decay=binding-quadratic finding (`qbeta_c3_barodd_binding_sdp_dual_probe.py`), which
+this session reproduced (`binding_ghost_gram_quadratic.py`, audit Part 10):
+
+- ghost `g=½(L₊−L₋)` is TRACELESS (LP-invisible ⇒ explains the Part-9 SDP degeneracy)
+  with NEGATIVE Gram norm `⟨g⟩²_G=−0.4275` ⇒ **binding is a QUADRATIC Gram form**, not
+  a linear LP shadow price; binding ⊥ mass.
+
+**Concrete route (tractable, non-fit):** the bond graph is the cross-term structure
+of the multi-nucleon binding quadratic form
+`B ~ ⟨Σ_i g_i⟩²_G = Σ_i⟨g_i⟩²_G + 2Σ_{i<j}⟨g_i,g_j⟩_G`; pairwise `⟨g_i,g_j⟩_G` = bonds
+(M₂), jointly-nonzero triples = μ̄_123 (M₃). Compute on the H₆⁺ Gram (Gram eval, not
+LP). Infra exists: `gram_matrix_seminormal_h6.py`, `chi-deuteron-h6*` witnesses.
+
+**Next step:** compute the deuteron (H₆) ghost cross-term = the first pairwise bond
+as a Gram quadratic; then the coordination = graph of significant `⟨g_i,g_j⟩_G`.
