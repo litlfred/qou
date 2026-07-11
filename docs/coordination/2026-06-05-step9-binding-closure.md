@@ -347,3 +347,19 @@ relation").
   ([n]_q² 6.9% lone near-miss); tuned recursion = banned 7th ansatz. Non-fit
   routes: q-Hermite-basis expansion (Habiro-dressed) / hyperbolic link-volume.
 - **conj:binding-manybody-eq-jet-filtration: not provable now** (3 open inputs).
+
+## 2026-07-11 (cont.) — #3545 ↔ #3548 connected-binding convergence (two lenses)
+
+- **#3545 Part 10–11 ↔ #3548 same object.** Both compute the connected/cross-term
+  (extensive) binding. #3548: connected `tr_M`(W_λ per block) = 0 for disjoint
+  bonds, 0.855 for braided σ². #3545: negative-norm ghost Gram-quadratic
+  `⟨g_i,g_j⟩_G` = 0 for split (traceless) ghosts, ≠0 when bonded. Independent
+  convergence on "disjoint→0, bonded→nonzero"; ties to main `a44296db`
+  (decay=binding-quadratic: mass=linear tr_M, binding=quadratic Gram).
+- **#3545 derives bond-extensivity** (`B ~ self + (#bonds)·b*`, constant `b*`) from
+  bond translation-invariance — upgrades #3549's conditional coordination-number
+  hypothesis to structural. Justifies #3548 PROBE-2's constant multi-bond term.
+- **Open bridge:** is #3548's deuteron connected 0.193 == #3545's
+  `⟨g_A,σ_bond,g_B⟩_G`? If yes the two lenses unify + `b*` pinned (no duplicate H₆
+  build). #3548 owns connected-`tr_M`/PROBE-2; #3545 owns the Gram-quadratic +
+  bond-extensive derivation. Posted #3548#issuecomment-4948202747.
