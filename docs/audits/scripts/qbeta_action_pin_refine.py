@@ -63,7 +63,7 @@ def log_kashaev_4_1(N):
         logP += 2 * mp.log(2 * mp.sin(pi * k / N))
         logterms.append(logP)
     m = max(logterms)
-    return m + mp.log(mp.fsum(mp.e ** (t - m) for t in logterms))
+    return m + mp.log(mp.fsum(mp.exp(t - m) for t in logterms))
 
 
 def aitken(seq):
@@ -86,7 +86,7 @@ def main():
         assertions.append({"name": name, "passed": bool(passed)})
         print(f"  [{'PASS' if passed else 'FAIL'}] {name}")
 
-    Vol41 = 2 * mp.im(mp.polylog(2, mp.exp(1j * mp.pi / 3)))
+    Vol41 = 2 * mp.im(mp.polylog(2, mp.exp(mp.j * mp.pi / 3)))
 
     # --- Part A: higher-order ladder + Aitken ------------------------------
     K = 13
@@ -98,7 +98,9 @@ def main():
         return [mp.mpf(N), mp.mpf(1)] + [1 / mp.mpf(N) ** k for k in range(1, K + 1)]
     A_mat = mp.matrix([basis(N) for N, _ in rows])
     y = mp.matrix([g for _, g in rows])
-    coef = mp.lu_solve(A_mat.T * A_mat, A_mat.T * y)
+    # QR-based least squares (Copilot): avoids squaring the condition number of the
+    # ill-conditioned 1/N^k Vandermonde that normal equations (AᵀA) would incur.
+    coef = mp.qr_solve(A_mat, y)[0]
     a = coef[0]
     kappa = [coef[2 + k] for k in range(K)]
     V_rec = 2 * mp.pi * a
@@ -125,7 +127,6 @@ def main():
         "Vol/π":        Vol41 / mp.pi,
         "2/e":          2 / mp.e,
         "Vol/e":        Vol41 / mp.e,
-        "2Vol/2π":      Vol41 / mp.pi,
     }
     print("  A vs candidates:")
     best = None
@@ -146,10 +147,13 @@ def main():
     yc = [r for r in roots if abs(mp.im(r)) > mp.mpf("1e-20")][0]
     w = (yc + mp.sqrt(yc ** 2 - 4)) / 2
     q = mp.sqrt(w)
-    arg_q = mp.arg(q)
-    arg_deg = abs(arg_q) * 180 / mp.pi  # magnitude (branch sign is immaterial)
+    # Fold arg into [0, π/2] (Copilot): branch- and q→−q-robust — reduce mod π,
+    # then reflect. |arg| alone is NOT invariant under q→−q (shifts by π).
+    a = abs(mp.arg(q)) % mp.pi
+    a = min(a, mp.pi - a)
+    arg_deg = a * 180 / mp.pi
     hexagonal = mp.pi / 6  # 30°, the ζ₃ / hexagonal angle
-    rel_to_hex = abs(abs(arg_q) / hexagonal - 1)
+    rel_to_hex = abs(a / hexagonal - 1)
     print(f"\n=== Part B: complex-q hexagonal prune ===")
     print(f"  Hopf complex root y_c = {mp.nstr(yc,8)} → q = {mp.nstr(q,8)}")
     print(f"  |arg(q)| = {mp.nstr(arg_deg,7)}°   vs hexagonal π/6 = 30°   rel {mp.nstr(rel_to_hex,3)}")

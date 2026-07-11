@@ -10,9 +10,10 @@ Probe [`qbeta_action_pin_refine.py`](scripts/qbeta_action_pin_refine.py) (5/5).
 ## Part A — the resurgence action A is real ≈ 0.69, but not a clean constant
 
 Extending the 4₁ Ohtsuki ladder to **order 13** (dps 260, Vol recovered to
-`2×10⁻³¹`), the large-order ratios `A_k = k·κ_{k-1}/κ_k` decrease smoothly through
-the reliable window (`0.826, 0.811, 0.774, 0.750, 0.735, 0.725, 0.717, 0.711,
-0.696`), and Aitken-Δ² acceleration gives **A ≈ 0.688**.
+`2×10⁻³¹`), the large-order ratios `A_k = k·κ_{k-1}/κ_k` decrease smoothly
+(`A₃..A₁₁ = 0.826, 0.811, 0.774, 0.750, 0.735, 0.725, 0.717, 0.711, 0.696`).
+Aitken-Δ² acceleration over the **reliable window `k = 5..11`** (`A₅..A₁₁ = 0.774
+… 0.696`; low-order `A₃,A₄` and the noisy top orders excluded) gives **A ≈ 0.688**.
 
 | candidate | value | rel to A |
 |---|---|---|
