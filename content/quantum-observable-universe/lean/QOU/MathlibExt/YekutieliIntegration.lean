@@ -186,4 +186,41 @@ theorem isFlatPlaquette_strip_flat [Group G] (g : ℕ → G) (n : ℕ)
     (hflat : ∀ i, g i = g 0) : IsFlatPlaquette (stripHolonomy g n) :=
   stripHolonomy_flat g n hflat
 
+/-! ### Gluing law — subdivision additivity of discrete Stokes
+
+The strip theorem above is the boundary of the segment `0..n`.  For a *tiled*
+region built from many segments, the discrete Stokes theorem is additive
+under gluing: adjacent tiles sharing a cut compose, so the boundary of a
+subdivided region is the ordered product of the tile boundaries.  This is
+the algebraic principle that lets a 2D tiling be assembled from plaquettes;
+combined with `stripHolonomy_telescope` it expresses any tiled boundary as
+an ordered product of based curvatures. -/
+
+/-- Boundary holonomy of the strip segment spanning rungs `a..b`,
+    `g b · g a⁻¹`. -/
+def segmentBoundary [Group G] (g : ℕ → G) (a b : ℕ) : G := g b * (g a)⁻¹
+
+/-- A degenerate segment (`a = a`) has trivial boundary. -/
+@[simp] theorem segmentBoundary_self [Group G] (g : ℕ → G) (a : ℕ) :
+    segmentBoundary g a a = 1 := by simp [segmentBoundary]
+
+/-- The strip holonomy is the boundary of the segment `0..n`. -/
+theorem stripHolonomy_eq_segmentBoundary [Group G] (g : ℕ → G) (n : ℕ) :
+    stripHolonomy g n = segmentBoundary g 0 n :=
+  stripHolonomy_telescope g n
+
+/-- **Gluing law (subdivision additivity of Stokes).**  Two adjacent
+    segments sharing the middle rung `b` compose: the boundary of `a..c` is
+    the ordered product of the boundaries `b..c` and `a..b` (the shared
+    internal transport `g b` cancels).  Iterating this glues a whole tiling
+    from its plaquettes. -/
+theorem segmentBoundary_glue [Group G] (g : ℕ → G) (a b c : ℕ) :
+    segmentBoundary g b c * segmentBoundary g a b = segmentBoundary g a c := by
+  unfold segmentBoundary; group
+
+/-- **Reverse orientation** flips the boundary to its inverse. -/
+theorem segmentBoundary_swap [Group G] (g : ℕ → G) (a b : ℕ) :
+    segmentBoundary g b a = (segmentBoundary g a b)⁻¹ := by
+  unfold segmentBoundary; group
+
 end QOU.MathlibExt.YekutieliIntegration
