@@ -99,6 +99,7 @@ _STATUS_BADGES = {
     "canonical-with-empirical-assignment": "🟡 +empirical-(K,ρ)",
     "canonical-recursive": "🟢 recursive",
     "asymptotic-approximation": "🟡 asymptotic (approx, A>40)",
+    "anchored-to-AME": "🟡 anchor (=AME, ⁴He identity)",
     "heuristic": "🟠 heuristic",
     "pending": "⚪ pending",
 }

@@ -238,10 +238,13 @@ def assemble_row(
     # all non-canonical"): production emits a binding prediction ONLY
     # from a genuinely canonical layer (the α-cluster recursion). We do
     # NOT fall through layer order L1→L2→L3 — that previously let L1's
-    # empirical (knot, ρ_K) assignment mask ⁴He's canonical α-cluster
-    # result (29.96 MeV empirical shadowing the 28.296 MeV / 0.41 ppb
-    # α-cluster value). Any non-canonical value is recorded under
-    # `excised` for the audit trail, never shipped as a prediction.
+    # empirical (knot, ρ_K) assignment mask ⁴He's α-cluster row. Any
+    # non-canonical value is recorded under `excised` for the audit
+    # trail, never shipped as a prediction.
+    #   NB (2026-07-11): the ⁴He α-cluster row (n_α=1,pairs=0) ships the
+    #   AME anchor (28.296 MeV) reflected through the trivial identity — its
+    #   ~0.08 ppm agreement is an anchor tautology, NOT a prediction. It is
+    #   labelled `anchored-to-AME` below, not `canonical-recursive`.
     l1 = l1_lookup(Z, N, layer1)
     l2 = l2_lookup(Z, N, layer2)
     l3 = l3_lookup(Z, N, layer3)
@@ -261,8 +264,22 @@ def assemble_row(
         )
     if (l3 and str(l3.get("strategy", "")).startswith("α-cluster")
             and _as_float(l3.get("B_pred_MeV")) is not None):
+        # HONEST SCOPE (re-scoped 2026-07-11, mirrors the A>40 fix in
+        # PR #3511): the α-cluster ANCHOR cell — n_α=1, pairs=0 — is the
+        # trivial identity B_pred = 1·B(⁴He) + 0·c_αα = B(⁴He) itself. Since
+        # the L3 sweep sources that ⁴He value from AME (28.29566), the row is
+        # the AME anchor reflected through the identity, NOT a recursive
+        # prediction: its ~0.08 ppm "accuracy" is an anchor tautology, not a
+        # derivation. It ships as `anchored-to-AME`, not `canonical-recursive`.
+        # Genuine recursion (n_α≥2: ⁸Be, ¹²C, … at 5–19% off) stays canonical-
+        # recursive. The zero-parameter magic-A ⁴He value (29.96, 5.9% off) is
+        # the honest derived anchor; the categorical closed form that would let
+        # ⁴He itself be *predicted* (not anchored) is OPEN.
+        _strat = str(l3["strategy"])
+        _is_anchor_identity = ("n_α=1" in _strat and "pairs=0" in _strat)
+        _status = "anchored-to-AME" if _is_anchor_identity else "canonical-recursive"
         canonical_candidates.append(
-            (_as_float(l3["B_pred_MeV"]), f"L3-{l3['strategy']}", "canonical-recursive")
+            (_as_float(l3["B_pred_MeV"]), f"L3-{l3['strategy']}", _status)
         )
 
     # Layer 4 — heavy nuclei (A > 40) | Brane-tower asymptotic (q-CLT)
@@ -346,6 +363,7 @@ def assemble_row(
             "canonical-with-empirical-assignment",
             "canonical-recursive",
             "asymptotic-approximation",  # L4 A>40 q-CLT extrapolation (approx, not canonical)
+            "anchored-to-AME",  # ⁴He α-cluster anchor identity (B=AME, not a prediction)
         )
     ):
         m_composite_MeV = N * m_n_borr + Z * m_p_borr + Z * float(M_E_MEV) - b_pred
