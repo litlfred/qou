@@ -287,9 +287,64 @@ theorem burnside (n : ℕ) (partitions : List (Partition n))
     (hcomplete : ∀ μ : Partition n, μ.parts ∈ partitions.map Partition.parts)
     (hnodup : (partitions.map Partition.parts).Nodup) :
     (partitions.map fun Λ => Λ.dimIrrep ^ 2).sum = Nat.factorial n := by
+  -- The general `∀ n` case is the RSK correspondence (bijection
+  -- `S_n ≃ Σ_λ SYT(λ) × SYT(λ)`), equivalently the Artin–Wedderburn
+  -- `Σ_λ (dim V_λ)² = |S_n|`; neither RSK nor the S_n irrep classification
+  -- is in Mathlib, so this is a genuine formalisation target (the Identity-I
+  -- program), NOT dischargeable from the hook-length definition alone. It is
+  -- concretely verified for `n ≤ 5` by the `burnside_check_*` cross-checks
+  -- below.
   -- Ref: [sagan2001] Sagan, The Symmetric Group, §1.10–§3.10; Identity-I program
   -- axiom (i), docs/scope/2026-06-24-identity-i-plancherel-snrep-infra-program.md.
   sorry
+
+/-! ### Finite `decide`-verified cross-checks of `burnside`
+
+The general `burnside` identity `Σ_λ (f^λ)² = n!` is verified concretely for
+each `n ≤ 5` against the complete, explicitly-enumerated partition list —
+`f^λ = dimIrrep` evaluated from the hook-length definition, squared, summed.
+These are honest finite evidence (regression cross-checks); they do **not**
+prove the `∀ n` case, which needs RSK / the Identity-I program. -/
+
+/-- Burnside `Σ (f^λ)² = 1! = 1` at `n = 1`. -/
+theorem burnside_check_1 :
+    (([⟨[1], by decide, by decide, by decide⟩] : List (Partition 1)).map
+      fun Λ => Λ.dimIrrep ^ 2).sum = Nat.factorial 1 := by decide
+
+/-- Burnside `Σ (f^λ)² = 2! = 2` at `n = 2` (`f = 1, 1`). -/
+theorem burnside_check_2 :
+    (([⟨[2], by decide, by decide, by decide⟩,
+       ⟨[1, 1], by decide, by decide, by decide⟩] : List (Partition 2)).map
+      fun Λ => Λ.dimIrrep ^ 2).sum = Nat.factorial 2 := by decide
+
+/-- Burnside `Σ (f^λ)² = 3! = 6` at `n = 3` (`f = 1, 2, 1`). -/
+theorem burnside_check_3 :
+    (([⟨[3], by decide, by decide, by decide⟩,
+       ⟨[2, 1], by decide, by decide, by decide⟩,
+       ⟨[1, 1, 1], by decide, by decide, by decide⟩] : List (Partition 3)).map
+      fun Λ => Λ.dimIrrep ^ 2).sum = Nat.factorial 3 := by decide
+
+/-- Burnside `Σ (f^λ)² = 4! = 24` at `n = 4` (`f = 1, 3, 2, 3, 1`). -/
+theorem burnside_check_4 :
+    (([⟨[4], by decide, by decide, by decide⟩,
+       ⟨[3, 1], by decide, by decide, by decide⟩,
+       ⟨[2, 2], by decide, by decide, by decide⟩,
+       ⟨[2, 1, 1], by decide, by decide, by decide⟩,
+       ⟨[1, 1, 1, 1], by decide, by decide, by decide⟩] :
+        List (Partition 4)).map fun Λ => Λ.dimIrrep ^ 2).sum
+      = Nat.factorial 4 := by decide
+
+/-- Burnside `Σ (f^λ)² = 5! = 120` at `n = 5` (`f = 1, 4, 5, 6, 5, 4, 1`). -/
+theorem burnside_check_5 :
+    (([⟨[5], by decide, by decide, by decide⟩,
+       ⟨[4, 1], by decide, by decide, by decide⟩,
+       ⟨[3, 2], by decide, by decide, by decide⟩,
+       ⟨[3, 1, 1], by decide, by decide, by decide⟩,
+       ⟨[2, 2, 1], by decide, by decide, by decide⟩,
+       ⟨[2, 1, 1, 1], by decide, by decide, by decide⟩,
+       ⟨[1, 1, 1, 1, 1], by decide, by decide, by decide⟩] :
+        List (Partition 5)).map fun Λ => Λ.dimIrrep ^ 2).sum
+      = Nat.factorial 5 := by decide
 
 -- ═══════════════════════════════════════════════════════════════
 --  PER-PARTITION BINDING WEIGHT Δ_λ
