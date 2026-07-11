@@ -1,0 +1,76 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-07-11T22:08:18.765928+00:00",
+  "commitSha": "568e439d65896b08aeb2849262b8d78c48c4c4a2",
+  "assertions": [
+    {
+      "name": "pairwise_backbone_recovers_coulomb_mirror_split",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "deuteron-pinned pairwise backbone B_2=B(D)·C(A,2): the ³H−³He residual difference 0.7638 MeV == AME mirror split 0.7638 (exact) ⇒ M_n=C(A,n) inherits the Coulomb charge structure; the pairwise 2-body count holds with zero extra parameters. M_3/M_4 weights open."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "mnk-per-order-counting",
+  "scriptFile": "mnk_per_order_counting.py",
+  "scriptHash": "1c9324ba850b",
+  "scriptCommitSha": "568e439d65896b08aeb2849262b8d78c48c4c4a2",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "Per-order sub-link count M_n(K)=C(A,n) for the body-order coordination tower (qou-v0yw, sharpened by #3582). The n=2 pairwise backbone B_2=B(D)·C(A,2) is pinned by the SINGLE deuteron datum (a_D^(2)=1, C(2,2)=1) and reproduces A=3 binding to a small ~1–2 MeV M_3 residual; the ³H−³He residual difference EQUALS the Coulomb mirror split (recovering #3564/#3570); ⁴He residual is the magic 4-body. So M_n=C(A,n) fits the 2-body backbone with zero extra parameters; the M_3/M_4 weights + large-A saturation stay open. Scope-(a), no per-isotope fit.",
+  "data": {
+    "w2_from_deuteron": 4.3533674521174195,
+    "per_nucleus": {
+      "D": {
+        "A": 2,
+        "C_A2": 1,
+        "C_A3": 0,
+        "C_A4": 0,
+        "B_backbone": 2.2245662,
+        "B_ame": 2.2245662,
+        "residual": 0.0
+      },
+      "T": {
+        "A": 3,
+        "C_A2": 3,
+        "C_A3": 1,
+        "C_A4": 0,
+        "B_backbone": 6.6736986,
+        "B_ame": 8.4817962,
+        "residual": 1.8080976
+      },
+      "3He": {
+        "A": 3,
+        "C_A2": 3,
+        "C_A3": 1,
+        "C_A4": 0,
+        "B_backbone": 6.6736986,
+        "B_ame": 7.71804132,
+        "residual": 1.04434272
+      },
+      "4He": {
+        "A": 4,
+        "C_A2": 6,
+        "C_A3": 4,
+        "C_A4": 1,
+        "B_backbone": 13.3473972,
+        "B_ame": 28.2956624,
+        "residual": 14.9482652
+      }
+    },
+    "mirror_residual_diff": 0.76375488,
+    "ame_mirror_split": 0.76375488
+  }
+}
