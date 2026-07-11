@@ -1,0 +1,102 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-07-11T17:46:35.988816+00:00",
+  "commitSha": "d0ad0b5f74ecf43dfd0b702abc17028d9371146d",
+  "assertions": [
+    {
+      "name": "contact_maximisation_selects_geometry_except_ne20",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "C_max matches N_need to <0.6 contact for the exact-deltahedron compact nuclei (²⁴Mg octahedron 12) and ⁴⁰Ca; ²⁰Ne deviates by +1.1 (binds as ~8, not maximal 9) — documented exception, its prolate α+¹⁶O structure."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "bk-alpha-geometry-selection",
+  "scriptFile": "bk_alpha_geometry_selection.py",
+  "scriptHash": "af2cb46ade0e",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "Tests whether the α-cluster contact geometry is selected by contact-maximisation. N_need=(B_AME−n_α·B(⁴He))/b_αα matches the maximal-contact hard-sphere cluster C_max for ¹²C/¹⁶O/²⁴Mg (exact deltahedra) and ⁴⁰Ca (|Δ|<0.6), but ²⁰Ne binds as ~8 contacts not the maximal 9 (its prolate α+¹⁶O structure). Caveats merged PR #3551's hand-assigned ²⁰Ne geometry (one-bond DOF). Scope-(a); b_αα empirical.",
+  "data": {
+    "b_alpha_alpha_MeV": 2.415513466666667,
+    "geometry_selection": {
+      "12C": {
+        "n_alpha": 3,
+        "N_need": 3.0116776827739757,
+        "C_max": 3,
+        "delta": -0.01167768277397574,
+        "geometry": "triangle",
+        "cmax_exact": true
+      },
+      "16O": {
+        "n_alpha": 4,
+        "N_need": 5.9766446344520485,
+        "C_max": 6,
+        "delta": 0.02335536554795148,
+        "geometry": "tetrahedron",
+        "cmax_exact": true
+      },
+      "20Ne": {
+        "n_alpha": 5,
+        "N_need": 7.93475683927741,
+        "C_max": 9,
+        "delta": 1.0652431607225896,
+        "geometry": "triangular bipyramid",
+        "cmax_exact": true
+      },
+      "24Mg": {
+        "n_alpha": 6,
+        "N_need": 11.791725938628602,
+        "C_max": 12,
+        "delta": 0.20827406137139803,
+        "geometry": "octahedron",
+        "cmax_exact": true
+      },
+      "28Si": {
+        "n_alpha": 7,
+        "N_need": 15.925065097270425,
+        "C_max": 16,
+        "delta": 0.07493490272957537,
+        "geometry": "pentagonal bipyramid+",
+        "cmax_exact": false
+      },
+      "32S": {
+        "n_alpha": 8,
+        "N_need": 18.801329252231866,
+        "C_max": 18,
+        "delta": -0.8013292522318665,
+        "geometry": "",
+        "cmax_exact": false
+      },
+      "36Ar": {
+        "n_alpha": 9,
+        "N_need": 21.550608066712773,
+        "C_max": 21,
+        "delta": -0.5506080667127726,
+        "geometry": "",
+        "cmax_exact": false
+      },
+      "40Ca": {
+        "n_alpha": 10,
+        "N_need": 24.46500953751669,
+        "C_max": 25,
+        "delta": 0.5349904624833108,
+        "geometry": "tricapped trigonal prism+",
+        "cmax_exact": false
+      }
+    }
+  }
+}
