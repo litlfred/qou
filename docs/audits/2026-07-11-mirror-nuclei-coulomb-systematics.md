@@ -9,51 +9,55 @@
 ## Result
 
 The A=3 finding (#3564: the ³H/³He mirror split is Coulomb) is not an accident — it
-holds across the whole mirror-nuclei chain. A one-parameter Coulomb law
+holds across the whole mirror-nuclei chain. Using the repo's **canonical uniform-sphere
+Coulomb** with the correct discrete-proton self-energy and standard radius
+(`coulomb_energy.mirror_displacement_mev`, `Z(Z−1)`, `r₀=1.2 fm` — **no free
+parameter**):
 
-$$ \Delta E_C = \tfrac{3}{5}\,(\alpha\hbar c)\,\frac{Z_2^2 - Z_1^2}{r_0\,A^{1/3}} $$
+$$ \Delta E_C = \tfrac{3}{5}\,(\alpha\hbar c)\,\frac{Z_{\rm hi}(Z_{\rm hi}-1) - Z_{\rm lo}(Z_{\rm lo}-1)}{r_0\,A^{1/3}}, $$
 
-with a single **physical** charge-radius `r₀ = 1.44 fm` fits all eight T_z mirror pairs
-³H/³He … ³⁹K/³⁹Ca to an **RMS residual of 0.33 MeV** (against splits up to 7.3 MeV):
+the observed split is **proportional to `ΔE_C`** across all eight T_z mirror pairs:
 
-| pair | A | split_AME | ΔE_C | residual |
+| pair | A | split_AME | ΔE_C (canonical) | split/ΔE_C |
 |---|--:|--:|--:|--:|
-| ³H/³He | 3 | 0.764 | 1.247 | −0.484 |
-| ⁷Li/⁷Be | 7 | 1.644 | 2.194 | −0.550 |
-| ¹¹B/¹¹C | 11 | 2.764 | 2.966 | −0.202 |
-| ¹³C/¹³N | 13 | 3.003 | 3.315 | −0.312 |
-| ¹⁵N/¹⁵O | 15 | 3.537 | 3.647 | −0.111 |
-| ²³Na/²³Mg | 23 | 4.839 | 4.850 | −0.011 |
-| ²⁷Al/²⁷Si | 27 | 5.595 | 5.397 | +0.198 |
-| ³⁹K/³⁹Ca | 39 | 7.307 | 6.896 | +0.411 |
+| ³H/³He | 3 | 0.764 | 0.998 | 0.765 |
+| ⁷Li/⁷Be | 7 | 1.644 | 2.258 | 0.728 |
+| ¹¹B/¹¹C | 11 | 2.764 | 3.237 | 0.854 |
+| ¹³C/¹³N | 13 | 3.003 | 3.674 | 0.817 |
+| ¹⁵N/¹⁵O | 15 | 3.537 | 4.087 | 0.865 |
+| ²³Na/²³Mg | 23 | 4.839 | 5.570 | 0.869 |
+| ²⁷Al/²⁷Si | 27 | 5.595 | 6.240 | 0.897 |
+| ³⁹K/³⁹Ca | 39 | 7.307 | 8.068 | 0.906 |
 
-## Honest reading of the residual
+**`split/ΔE_C = 0.838 ± 0.059` (7% scatter)** — the split is proportional to Coulomb.
 
-The 0.33 MeV RMS residual has a clear **A-trend** (negative for light, positive for
-heavy), so it is **not** the pure Nolen–Schiffer anomaly (~0.07 MeV) — it is dominated
-by the crude uniform-sphere model (`R ∝ A^{1/3}` mis-describes the light-nucleus radii).
-So the residual **upper-bounds** the strong charge-symmetry-breaking at **≲0.5 MeV**;
-the genuine strong CSB is smaller. The point is not a precise CSB measurement but the
-*systematics*: the mirror split tracks `(Z₂²−Z₁²)/R` with one physical radius, i.e. it
-is Coulomb.
+## Honest reading
+
+The ~0.84 proportionality factor is the **known uniform-sphere over-estimate** of the
+Coulomb displacement energy (the model over-counts; `coulomb_energy.py` documents the
+~20–40% over-estimate). The residual **7% ratio scatter** (with a mild A-trend, since
+`R ∝ A^{1/3}` mis-describes the light-nucleus radii) plus the ~0.07 MeV Nolen–Schiffer
+anomaly bound the strong charge-symmetry-breaking. The point is not a precise CSB
+measurement but the *systematics*: the mirror split is proportional to `Coulomb` with
+one standard radius, i.e. it **is** Coulomb.
 
 ## QOU consequence
 
 Any strong/categorical binding kernel — #2089's log-trace `f_bond`, #3548's connected
-`tr_M` — must be **charge-symmetric to within ≲0.5 MeV** across the chart, with the
-mirror split sourced from Coulomb separately. The #2089 kernel's pure-strong A=3 mirror
-split (2.27 MeV, #3564) violates this by **~7×**, and the Coulomb systematics shows the
-violation is **systematic (all A)**, not an A=3 quirk. This is a concrete constraint on
-the kernel derivation (→ #3548): the charge-dependence `f_pp ≠ f_nn` must be removed
-(or reinterpreted as the categorical EM, framing (B) of #3564) — it cannot be a strong
-contribution.
+`tr_M` — must be **charge-symmetric**, with the mirror split sourced from Coulomb
+separately. The #2089 kernel's pure-strong A=3 mirror split (2.27 MeV, #3564) is
+**3.0× the whole observed A=3 split** (0.764 MeV), and the Coulomb systematics shows
+charge symmetry is required **at all A**, not an A=3 quirk. This is a concrete
+constraint on the kernel derivation (→ #3548): the charge-dependence `f_pp ≠ f_nn` must
+be removed (or reinterpreted as the categorical EM, framing (B) of #3564) — it cannot
+be a strong contribution.
 
 ## Verdict (scope-limited (a))
 
-> The mirror binding split is Coulomb across A=3–39 (one physical `r₀=1.44 fm`, RMS
-> 0.33 MeV), so the QOU strong kernel must be charge-symmetric to ≲0.5 MeV systematically.
-> A constraint on the kernel derivation, **not** a binding fit. `r₀` is the physical
-> charge radius, not a free QOU parameter.
+> The mirror binding split is Coulomb across A=3–39: `split/ΔE_C = 0.838 ± 0.059` (7%)
+> against the canonical uniform-sphere Coulomb (`Z(Z−1)`, `r₀=1.2 fm`, **no free
+> parameter**). So the QOU strong kernel must be charge-symmetric systematically.
+> A constraint on the kernel derivation, **not** a binding fit.
 
 **Open (→ #3548 / #3534):** the charge-symmetric re-derivation of the strong kernel and
 the explicit separate Coulomb term. The residual's A-trend also flags that a realistic
