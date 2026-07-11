@@ -17,7 +17,7 @@ precision ladder is now derived from first principles." The formula is evaluated
 
 Probe [`qbeta_c3_keystone_anchor_blind_probe.py`](../../computations/qbeta/qbeta_c3_keystone_anchor_blind_probe.py)
 → [witness](../../computations/qbeta/qbeta-c3-keystone-anchor-blind.witness.json)
-(6/6; anchors from `qou_substrate.q_at`/`q_muon_at`, 50 dps):
+(6/6; anchors from `qou_substrate.constants.q_at`/`q_muon_at`, 50 dps):
 
 | anchor | claim `−Vol(4₁)+u−(10/3)u²` | actual c₃ (`c3_target_at`) | miss |
 |---|---|---|---|
