@@ -731,3 +731,144 @@ theorem insertWord_colStrict (w : List ℕ) : ColStrict (insertWord w) := by
     intro T hT
     rw [List.foldl_cons]
     exact ih _ (insert_colStrict hT a)
+
+/-! ## Brick 6 — recording tableau `Q` (insertion-step bookkeeping)
+
+`P(w)` records WHICH values sit where; the **recording tableau** `Q(w)` records
+WHEN each cell was added — the step index of the insertion that created it.
+`insertRec P Q x s` performs one Schensted insertion of `x` into `P` while, in
+lockstep, writing the step index `s` into the matching new cell of `Q`: the
+single new cell of `insert P x` (Brick 3) gets value `s` in `Q`.
+
+This brick's **seed** (this section) establishes the bookkeeping foundation
+sorry-free: the P-component of `insertRec` is exactly `insert`
+(`insertRec_fst_eq_insert`), and `P`/`Q` stay shape-aligned (`insertRec_shape`),
+so `Q(w)` has the same shape as `P(w)` (`insertWordRec_shape_eq_P`).  The
+remaining Brick 6 content — that `Q(w)` is *standard* (entries `1…n` increasing
+along rows and columns) — is the follow-on sub-brick, built on this shape match
+plus `insertWord_colStrict`. -/
+
+/-- Row-length profile (shape) of a tableau. -/
+def tableauShape (T : List (List ℕ)) : List ℕ := T.map List.length
+
+@[simp] theorem tableauShape_nil : tableauShape [] = [] := rfl
+
+@[simp] theorem tableauShape_cons (r : List ℕ) (T : List (List ℕ)) :
+    tableauShape (r :: T) = r.length :: tableauShape T := rfl
+
+/-- **Combined P/Q insertion.**  Insert `x` into `P` by the Schensted cascade,
+    writing the step index `s` into the matching new cell of `Q`.  A bump leaves
+    the current row's Q-length unchanged and cascades to the next row; an append
+    writes `s` at the end of the Q-row; falling off the bottom starts a new `[s]`
+    Q-row (mirroring the new `[x]` P-row).  `Q` is read via `headD`/`tail`; when
+    `P` and `Q` are shape-aligned (the maintained invariant) these are the true
+    head row and tail. -/
+def insertRec : List (List ℕ) → List (List ℕ) → ℕ → ℕ →
+    List (List ℕ) × List (List ℕ)
+  | [], _, x, s => ([[x]], [[s]])
+  | prow :: prest, Q, x, s =>
+      match (rowInsert prow x).2 with
+      | none => ((rowInsert prow x).1 :: prest, (Q.headD [] ++ [s]) :: Q.tail)
+      | some y =>
+          ((rowInsert prow x).1 :: (insertRec prest Q.tail y s).1,
+           Q.headD [] :: (insertRec prest Q.tail y s).2)
+
+/-- **The P-component of `insertRec` is exactly Schensted insertion.**  The
+    recording bookkeeping never perturbs the insertion tableau: `Q` and `s` only
+    fill the Q-component. -/
+theorem insertRec_fst_eq_insert :
+    ∀ (P Q : List (List ℕ)) (x s : ℕ), (insertRec P Q x s).1 = insert P x
+  | [], _, x, s => by simp [insertRec, insert]
+  | prow :: prest, Q, x, s => by
+      rw [insert, insertRec]
+      cases hb : (rowInsert prow x).2 with
+      | none => simp
+      | some y =>
+        show (rowInsert prow x).1 :: (insertRec prest Q.tail y s).1
+            = (rowInsert prow x).1 :: insert prest y
+        rw [insertRec_fst_eq_insert prest Q.tail y s]
+
+/-- **`insertRec` keeps `P` and `Q` shape-aligned.**  Given a shape-aligned
+    input (`tableauShape P = tableauShape Q`), the output tableaux still share a
+    shape — a bump preserves every row length, an append/new-row grows both `P`
+    and `Q` by one cell in the same row.  So `Q` tracks `P`'s Young-diagram shape
+    exactly. -/
+theorem insertRec_shape :
+    ∀ (P Q : List (List ℕ)) (x s : ℕ), tableauShape P = tableauShape Q →
+      tableauShape (insertRec P Q x s).2 = tableauShape (insertRec P Q x s).1
+  | [], Q, x, s => by
+      intro h
+      simp only [tableauShape_nil] at h
+      -- shape Q = [] ⇒ Q = []
+      have : Q = [] := by
+        cases Q with
+        | nil => rfl
+        | cons q qs => simp [tableauShape] at h
+      subst this
+      simp [insertRec, tableauShape]
+  | prow :: prest, Q, x, s => by
+      intro h
+      -- shape agreement forces Q = qrow :: qrest with qrow.length = prow.length
+      cases Q with
+      | nil => simp [tableauShape] at h
+      | cons qrow qrest =>
+        simp only [tableauShape_cons] at h
+        obtain ⟨hql, hqs⟩ := List.cons.injEq .. ▸ h
+        rw [insertRec]
+        cases hb : (rowInsert prow x).2 with
+        | none =>
+          have h1 : (rowInsert prow x).1.length = prow.length + 1 :=
+            rowInsert_length_none hb
+          simp only [List.headD_cons, List.tail_cons, tableauShape_cons,
+            List.length_append, List.length_singleton, h1, hql, hqs]
+        | some y =>
+          simp only [List.headD_cons, List.tail_cons, tableauShape_cons,
+            rowInsert_length_some hb]
+          rw [insertRec_shape prest qrest y s hqs, hql]
+
+/-- Recording-aware word insertion: fold the letters of `w` left to right,
+    threading the P/Q tableaux and the step counter `s`. -/
+def insertWordRecAux : List ℕ → ℕ → List (List ℕ) → List (List ℕ) →
+    List (List ℕ) × List (List ℕ)
+  | [], _, P, Q => (P, Q)
+  | x :: rest, s, P, Q =>
+      insertWordRecAux rest (s + 1) (insertRec P Q x s).1 (insertRec P Q x s).2
+
+/-- The `P`/`Q` tableaux of a word: `P(w)` is the insertion tableau, `Q(w)` the
+    recording tableau (0-based step indices). -/
+def insertWordRec (w : List ℕ) : List (List ℕ) × List (List ℕ) :=
+  insertWordRecAux w 0 [] []
+
+/-- The P-component of the recording fold is exactly `insertWord`'s fold. -/
+theorem insertWordRecAux_fst :
+    ∀ (w : List ℕ) (s : ℕ) (P Q : List (List ℕ)),
+      (insertWordRecAux w s P Q).1 = w.foldl insert P
+  | [], s, P, Q => by simp [insertWordRecAux]
+  | x :: rest, s, P, Q => by
+      rw [insertWordRecAux, List.foldl_cons, insertWordRecAux_fst rest (s + 1),
+        insertRec_fst_eq_insert]
+
+/-- The recording fold keeps `P` and `Q` shape-aligned throughout. -/
+theorem insertWordRecAux_shape :
+    ∀ (w : List ℕ) (s : ℕ) (P Q : List (List ℕ)),
+      tableauShape P = tableauShape Q →
+      tableauShape (insertWordRecAux w s P Q).2
+        = tableauShape (insertWordRecAux w s P Q).1
+  | [], s, P, Q => by intro h; simpa [insertWordRecAux] using h.symm
+  | x :: rest, s, P, Q => by
+      intro h
+      rw [insertWordRecAux]
+      exact insertWordRecAux_shape rest (s + 1) _ _ (insertRec_shape P Q x s h).symm
+
+/-- `(insertWordRec w).1 = insertWord w`: the recording tableau's P-component is
+    the insertion tableau. -/
+theorem insertWordRec_fst (w : List ℕ) : (insertWordRec w).1 = insertWord w := by
+  rw [insertWordRec, insertWordRecAux_fst]; rfl
+
+/-- **`Q(w)` has the same shape as `P(w)`.**  The recording tableau matches the
+    insertion tableau cell-for-cell — the shape agreement the RSK bijection's
+    `(P, Q)` pairing rests on. -/
+theorem insertWordRec_shape_eq_P (w : List ℕ) :
+    tableauShape (insertWordRec w).2 = tableauShape (insertWord w) := by
+  rw [insertWordRec, ← insertWordRec_fst, insertWordRec]
+  exact insertWordRecAux_shape w 0 [] [] rfl
