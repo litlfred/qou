@@ -789,16 +789,17 @@ one probe per commit, pre-registered kill criteria, nothing wired:
 
 - **C15** Borromean forced-link shadow REFUTED (τ_D Brunnian ℏ³-vanishing;
   4 canonical normalisations all miss −2).
-- **C16** Habiro-ring membership of the ladder in `q` REFUTED (scope-a) at
+- **C16** Habiro-ring membership of the ladder in `q` REFUTED (scope-(a)) at
   natural normalisations — the ladder is not a Habiro element's q=1 expansion;
   gates off GSWZ Galois descent; converges with KC8 (simple pole ≠ Gevrey-1).
-- **C17** raw `q^N↦q^k` 4₁-operator kernel REFUTED (scope-a); P-C15 bar-parity
+- **C17** raw `q^N↦q^k` 4₁-operator kernel REFUTED (scope-(a)); P-C15 bar-parity
   survivor intact (needs re-basing/twist, canonical rungs).
 - **C18** PSLQ recognition of *extracted* rungs ENTROPY-BLOCKED: empirical c₃
   carries ≤ ~2.2 digits/anchor; **"empirical c₄ = −0.972" is a rounding
-  artifact of c₃** (identically 0 under exact extraction — registry rung-4 row
-  + JSON twin updated). Extracted k ≥ 4 is noise; kernel tests need canonical
-  rungs.
+  artifact of c₃** (identically 0 under exact extraction — updated in the
+  registry rung-4 row, [`ck-dk-canonical-registry.md` §3](ck-dk-canonical-registry.md)
+  + JSON twin [`ck-dk-registry.json`](ck-dk-registry.json)). Extracted k ≥ 4 is
+  noise; kernel tests need canonical rungs.
 - **C13 extended**: exponentiated-uniform per-block seeding refuted
   (exp ≡ linear at c₃, symbolic).
 - P2 (Φ_b infra) resolved as collision → deferred to the `qou-9lot` line
