@@ -10,7 +10,7 @@ The claim: c_3 = -Vol(4_1) + u - (10/3)·u²  is an "exact topological derivatio
 The verdict (scope-(a), per the refuted-discipline): this is a MUON-ANCHORED
 numerical NEAR-MATCH, not a derivation — it matches the muon anchor to ~0.07% and
 MISSES the proton anchor by the entire ~2.4% cross-anchor swing. The formula's
-only q-dependence is u=b·ℏ_q², which is anchor-invariant to ~1e-8, so it returns
+only q-dependence is u=b·ℏ_q², which is anchor-invariant to ~2×10⁻⁷, so it returns
 ONE value while c_3 swings 2.4%. The numerical observation is real and worth
 recording; the "PROVEN / exact derivation" scope is wrong.
 """
@@ -40,13 +40,21 @@ _REPO_ROOT = _find_repo_root()
 
 
 def _repo_head_sha():
+    # CI env vars first (minimal containers without a full clone still carry these).
+    for env_var in ("GITHUB_SHA", "GIT_COMMIT_SHA"):
+        v = os.environ.get(env_var)
+        if v and v.strip():
+            return v.strip()
     try:
         sha = subprocess.check_output(
             ["git", "rev-parse", "HEAD"], cwd=_REPO_ROOT, text=True).strip()
     except (subprocess.SubprocessError, OSError) as e:
-        raise RuntimeError(f"cannot resolve commitSha ({e})") from e
+        raise RuntimeError(f"cannot resolve commitSha ({e}) — refusing to emit witness") from e
     if not sha:
-        raise RuntimeError("empty commitSha")
+        raise RuntimeError("empty commitSha — refusing to emit witness without provenance")
+    # NOTE: deliberately RAISE rather than return "unknown" (Gemini's suggested
+    # fallback). Per I14 PROV_MISSING, a witness must never carry fake provenance —
+    # a loud failure is better than laundering an empty commitSha.
     return sha
 
 
@@ -62,7 +70,7 @@ def main():
     # Substrate u = b·ℏ_q², ℏ_q = 1 − 1/q0, at BOTH documented anchors. The claim
     # hardcodes u = 0.008505403136757 (muon-anchored, single value). We derive b
     # from that + the muon ℏ_q, then evaluate u at BOTH anchors to show it is
-    # anchor-invariant to ~1e-8 (so the formula returns one value).
+    # anchor-invariant to ~2×10⁻⁷ (so the formula returns one value).
     q_muon = mp.mpf("1.10997859555733471")
     q_proton = mp.mpf("1.10997858275138")
     u_claim = mp.mpf("0.008505403136757")
@@ -132,7 +140,7 @@ def main():
         f"near-match (miss {mp.nstr(miss_muon,3)}), NOT a derivation: it MISSES the "
         f"proton anchor by {mp.nstr(miss_proton,3)} — the entire {mp.nstr(c3_swing,3)} "
         "cross-anchor swing — because its only q-dependence is u (anchor-invariant "
-        "to ~1e-8), so it returns one fixed value while c_3 swings. Its OWN 'residual "
+        "to ~2×10⁻⁷), so it returns one fixed value while c_3 swings. Its OWN 'residual "
         f"zero within O(u³)' claim is false: the muon residual is {mp.nstr(miss_muon/u3_bound_rel,3)}× "
         "the claimed bound. It conflates sectors (-Vol(4_1)=-2.030 is the EVEN/"
         "amphichiral CS=0 face; the c_3 near-match -2 = J_Hopf(1) is the ODD/chiral "

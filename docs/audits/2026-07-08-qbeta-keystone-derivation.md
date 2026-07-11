@@ -4,7 +4,7 @@
 **Status (CORRECTED 2026-07-11):** ~~PROVEN, LEAN-CERTIFIED~~ → **MUON-ANCHORED
 NUMERICAL NEAR-MATCH — NOT a derivation.** The formula below matches the *muon*
 anchor to ~0.07 % but MISSES the *proton* anchor by the entire ~2.4 % cross-anchor
-swing (its only q-dependence, `u`, is anchor-invariant to ~1e-8, so it returns one
+swing (its only q-dependence, `u`, is anchor-invariant to ~2×10⁻⁷, so it returns one
 fixed value while c_3 swings). It also (a) exceeds its own claimed `O(u³)` residual
 bound by ~2325×, (b) conflates the even/amphichiral `−Vol(4₁)` face with the
 odd/chiral `−2 = J_Hopf(1)` face, and (c) is "Lean-certified" only by a `rfl` on
