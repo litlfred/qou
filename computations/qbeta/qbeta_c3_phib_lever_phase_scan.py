@@ -61,7 +61,7 @@ def main() -> int:
         sub[a] = substrate_ladder_quantities(q)
         S[a] = c3_target_at(q, Qcod, me) + Vol41
         t[a] = mp.log(q)
-    floor_p = mp.sqrt(mp.fabs(S["proton"]) / SQRT3_HALF)
+    floor_p = mp.sqrt(mp.fabs(S["proton"]) / SQRT3_HALF)  # |u|_min(proton), recorded below
 
     wb = WitnessBuilder("qbeta-c3-phib-lever-phase-scan", engine="mpmath")
     wb.set_description(
@@ -154,7 +154,8 @@ def main() -> int:
             row.update({"kappa_req_muon": mp.nstr(kreq["muon"], 12),
                         "kappa_req_proton": mp.nstr(kreq["proton"], 12),
                         "rel_spread": spread,
-                        "branch_spacing_pi_u3": mp.nstr(mp.pi * sub["proton"]["u"] ** 3, 8)})
+                        "branch_spacing_pi_u3_muon": mp.nstr(mp.pi * sub["muon"]["u"] ** 3, 8),
+                        "branch_spacing_pi_u3_proton": mp.nstr(mp.pi * sub["proton"]["u"] ** 3, 8)})
             print(f"    |U|={Uname:9s}: κ_req(μ) = {mp.nstr(kreq['muon'], 8):>14s}"
                   f"  κ_req(p) = {mp.nstr(kreq['proton'], 8):>14s}"
                   f"  spread {spread:.2e}")
@@ -162,6 +163,7 @@ def main() -> int:
             print(f"    |U|={Uname:9s}: INFEASIBLE (below the |S(proton)| floor)")
         d2.append(row)
     stable = [r for r in d2 if r.get("feasible") and r.get("rel_spread", 1) < 1e-3]
+    wb.add_data("feasibility_floor_proton_u_min", mp.nstr(floor_p, 20))
     wb.add_data("D2_required_kappa", d2)
     wb.add_data("D2_note",
                 "kappa_req is principal-branch only; the arcsin family is "
