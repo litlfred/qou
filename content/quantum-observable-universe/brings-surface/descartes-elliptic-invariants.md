@@ -1,5 +1,3 @@
-**Remark (interpretation).**
-
 **Invariants.**
 
 | Quantity | Formula | Value at the substrate parameter $q$ |

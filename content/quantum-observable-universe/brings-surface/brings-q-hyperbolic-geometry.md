@@ -1,4 +1,4 @@
-**Remark.** The classical hyperbolic geometry of Bring's curve (genus $g=4$) admits a canonical $q$-deformation governed by the quantum hyperbolic plane $SU_q(1,1)$.
+The classical hyperbolic geometry of Bring's curve (genus $g=4$) admits a canonical $q$-deformation governed by the quantum hyperbolic plane $SU_q(1,1)$.
 
 While the Euclidean sector ($E_q(2)$) of the theory is governed by the Hahn–Exton $q$-Bessel function (the third kind, $J_\nu^{(3)}(x;q)$) as seen in the ladder coefficients, the $q$-hyperbolic geometry on the Bring's surface fibre is intrinsically described by **Jackson's $q$-Bessel functions of the first and second kinds** ($J_\nu^{(1)}(x;q)$ and $J_\nu^{(2)}(x;q)$). These functions appear as matrix elements of the representations of $SU_q(1,1)$ and encode the "radial" components of the deformed hyperbolic structures.
 
