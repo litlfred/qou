@@ -69,7 +69,8 @@ theorem barOdd_bar (x : R) : barOdd x⁻¹ = -barOdd x := by
 
 /-- The inverse of a primitive fourth root of unity is its negative: `ζ⁻¹ = -ζ`. -/
 theorem inv_eq_neg_of_sq_eq_neg_one {ζ : R} (hζ : ζ ^ 2 = -1) : ζ⁻¹ = -ζ := by
-  have h1 : ζ * (-ζ) = 1 := by rw [show ζ * (-ζ) = -ζ ^ 2 by ring, hζ]; ring
+  -- `ζ * (-ζ) = -(ζ * ζ) = -(ζ ^ 2) = -(-1) = 1`, spelled with `mul_neg`/`pow_two`.
+  have h1 : ζ * (-ζ) = 1 := by rw [mul_neg, ← pow_two, hζ, neg_neg]
   exact inv_eq_of_mul_eq_one_right h1
 
 /-- **ζ₄ swap, even → odd.** With `ζ² = -1`, the quarter-turn `x ↦ ζx` carries the
@@ -92,8 +93,7 @@ theorem barOdd_zeta_mul {ζ : R} (hζ : ζ ^ 2 = -1) (x : R) :
 rotation `even → ζ·odd → -even → -ζ·odd → even`. -/
 theorem barEven_zeta_sq_mul {ζ : R} (hζ : ζ ^ 2 = -1) (x : R) :
     barEven (ζ * (ζ * x)) = -barEven x := by
-  rw [barEven_zeta_mul hζ, barOdd_zeta_mul hζ, ← mul_assoc,
-      show ζ * ζ = ζ ^ 2 by ring, hζ]
+  rw [barEven_zeta_mul hζ, barOdd_zeta_mul hζ, ← mul_assoc, ← pow_two, hζ]
   ring
 
 end QOU.QBeta.BarParityZeta4Swap
