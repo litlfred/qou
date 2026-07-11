@@ -42,16 +42,18 @@ jet-order filtration — and the $q$-difference origin of the scale rule — are
 not yet proved.
 
 **Scope note on the weight $w_n(K)$ (2026-07-11).** A derive-or-refute of the
-weight kernel establishes two constraints. First, $w_n$ **cannot** be a pure
-body-order quantity $w_n$ independent of the knot $K$: $^{3}\mathrm{H}$ and
-$^{3}\mathrm{He}$ share the identical body-order structure ($A=3$) yet differ in
-binding by $0.76\ \text{MeV}$ ($9.9\%$), so a $K$-independent weight would force
-$B(^{3}\mathrm{H})=B(^{3}\mathrm{He})$ — excluded by the invariant that binding
-is not a function of $A$ alone. Hence $w_n(K)$ is genuinely $K$-dependent, as
-written. Second, with $K$-dependent weights the anchors are underdetermined
-($A-1$ unknowns against one equation per isotope), so extracting $w_n$ from the
-binding data is a per-isotope fit and cannot close the kernel; closure requires
-the *derived* $R(q,x)$. The eigenfunction relation of the na-Stokes period
+weight kernel (coordinated with PR #3534) establishes what does *not* close.
+Body-order weights $w_n$ (shared across knots $K$) are **admissible**: the raw
+$^{3}\mathrm{H}$/$^{3}\mathrm{He}$ binding split ($0.76\ \text{MeV}$, $9.9\%$) is
+almost entirely **Coulomb** — on the Coulomb-corrected strong binding
+$B_{\mathrm{strong}}$ the mirror pair agrees to $\sim 2.7\%$ (charge-symmetry
+breaking), so a $K$-independent $w_n$ is *not* excluded. But no parameter-free
+*constant-ratio* kernel $R(q,n)$ reproduces the extracted $w_2,w_3,w_4$ to $5\%$
+(geometric $22.7\%$, $[n]_q$ $29.4\%$, $[n]_q^2$ $6.9\%$ the lone near-miss), and
+a tuned recursion is the banned seventh $\Delta_\lambda$ ansatz. A fully
+$K$-dependent kernel is underdetermined by the anchors ($A-1$ unknowns against
+one equation per isotope) — extraction is a fit. Closure therefore requires the
+*derived* $R(q,x)$. The eigenfunction relation of the na-Stokes period
 $a_D^{(n)}=S(n)/n$ (the seed $c_3=[2]_q$ exact, and the Habiro
 $(q-1)^2\Phi_3$ deviation, formalized in
 [`QOU.Mass.BindingEigenfunctionTwoTier`](lean/QOU/Mass/BindingEigenfunctionTwoTier.lean))
