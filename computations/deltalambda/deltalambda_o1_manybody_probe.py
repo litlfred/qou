@@ -196,8 +196,11 @@ def main():
         "context": {
             "follows": "deltalambda-binding-a-scaling.witness.json (#3569)",
             "prunes": "the 'single O(1) constant' and 'topological O(1)' hypotheses for the residual",
-            "reidentifies": "the residual as the known-open Subgoal-1 many-body term "
-                            "(operator-valued branching combiner, docs/precision-goals.md)",
+            "reidentifies": "the residual as the coarse per-isotope shadow of the ALREADY-quantified "
+                            "connected-cumulant deficit (probes/b4-framework-connected-cumulant-deficit "
+                            "b4=6.3%, b3 wrong-signed; probes/pairwise_magnitude_gap_probe ~40% at A=3)",
+            "concrete_open": "the [1^4] Slater↔trace dictionary (Λ^A(4) nucleon-flavor) closing the b4 "
+                             "deficit — the operator-valued branching combiner (Subgoal-1)",
             "gate": "Δ_λ gate — formalize-first NEGATIVE; no seventh fit-based ansatz; nothing wired",
         },
     }
