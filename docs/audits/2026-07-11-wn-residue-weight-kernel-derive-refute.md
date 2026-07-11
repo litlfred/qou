@@ -52,9 +52,55 @@ This **confirms** the corpus finding
 disguise** — free per-body-order data carrying the same irreducible content, not
 a recursion output.
 
-**Scope-(a), not (b).** This is "*this parameter-free recursion, alone,* does not
-fix `w_n`" — **not** a structural exclusion of the mechanism. Two permanence
-points stand:
+## The na-Stokes kernel's eigenfunction relation → the q-Hermite basis (owner steer)
+
+Owner steer (2026-07-11): *"how does `a_D^(n)` inform the kernel? look at the
+relations defining the eigenfunction → the appropriate orthogonal basis for
+q-hyperbolic and categorical action."* Followed, and it is the productive lead:
+
+`a_D^(n) = S(n)/n`, `S(n) = Σ_{λ⊢n} dim_q V_λ` = the **q-involution number**
+(→ 1, 2, 4, 10, 26, … at q=1). `S` obeys a **three-term recurrence**
+`S(n) = S(n−1) + c_n·S(n−2)`:
+
+| n | c_n | [n−1]_q | c_n/[n−1]_q |
+|---|---|---|---|
+| 3 | 2.01090 | 2.01090 | **1.0000000** |
+| 4 | 3.06011 | 3.04371 | 1.0053897 |
+| 5 | 4.17602 | 4.10968 | 1.0161408 |
+| 6 | 5.37732 | 5.22044 | 1.0300510 |
+| 7 | 6.70428 | 6.38809 | 1.0494975 |
+| 8 | 8.17409 | 7.62534 | 1.0719632 |
+
+**`c_3 = [2]_q` exactly** (to compute precision); `c_n/[n−1]_q` rises
+monotonically — the **q-Hermite / Rogers–Szegő** recurrence, i.e. the orthogonal
+basis of the q-oscillator / q-hyperbolic categorical action (corpus
+[`QOU.Mass.RogersSzegoInhabited`](../../content/quantum-observable-universe/lean/QOU/Mass/RogersSzegoInhabited.lean)).
+This is *why* the ad-hoc constant-ratio kernels miss: they are the wrong basis.
+
+### Does `w_n` resolve in that q-Hermite basis? — No (scope-(a))
+
+Two zero-parameter tests, both fail:
+
+- **Test A** — `w_n` does **not** obey the `a_D` q-involution recurrence:
+  `w_4 = w_3 + c_4·w_2` predicts 22.65 vs actual 15.92 (**42.3 %** off). `w_n` is
+  not in the eigenspace.
+- **Test B** — no Rogers–Szegő `H_n(x;q)` reproduces the ratio-shape (2.143,
+  1.706) at any natural x: closest `x=1/q` at **13.2 %** (x=1 19.1 %, x=q 25.7 %,
+  x=q² 32.9 %, x=q−1 48.1 %).
+
+The signature: the observed `w_n` ratios **decelerate** (2.143 → 1.706,
+sub-geometric), whereas every Rogers–Szegő family is **near-geometric** (its two
+successive ratios are nearly equal). So the q-Hermite basis is the correct
+**language for the KERNEL** `a_D^(n)`, but the **MULTIPLIER `w_n` is the
+genuinely gated `W_λ` content** — and its sub-geometric deceleration is a new,
+sharp fingerprint the s5-so3 `W_λ` projector must reproduce (a testable
+constraint on the gated construction, not another fit).
+
+## Two permanence points (scope-(a), not (b))
+
+The refutations above are "*this parameter-free recursion / this q-Hermite
+expansion, alone,* does not fix `w_n`" — **not** a structural exclusion. Two
+permanence points stand:
 
 - The na-Stokes extensive kernel `a_D^(n)=lw(n−1)` is a **permanent, correct
   contribution** (Lean-proved extensive) — refuting the *recursion form of the
