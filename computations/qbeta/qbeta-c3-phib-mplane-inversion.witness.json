@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-11T18:09:29.089594+00:00",
-  "commitSha": "f2f18d603d537f2e3c9b4ffed1a3837324ab906e",
+  "computedAt": "2026-07-11T18:28:27.554410+00:00",
+  "commitSha": "b1d74d9bb966261a2868bf09338cb434a6c95018",
   "assertions": [
     {
       "name": "newton_solver_recovers_vol41",
@@ -46,11 +46,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 21,
+  "durationMs": 35,
   "computation": "qbeta-c3-phib-mplane-inversion",
   "scriptFile": "qbeta_c3_phib_mplane_inversion_probe.py",
-  "scriptHash": "393c152aecfa",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "737817c8423b",
+  "scriptCommitSha": "b1d74d9bb966261a2868bf09338cb434a6c95018",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
