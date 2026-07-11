@@ -1,8 +1,8 @@
 {
   "engine": "python-magnus",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-11T19:33:49.691410+00:00",
-  "commitSha": "9c3484b89c8c3f40e68d90ce4ec23568d6ab590c",
+  "computedAt": "2026-07-11T19:38:46.937481+00:00",
+  "commitSha": "852308f8878ed9bf89818c767382f5289fc5242a",
   "assertions": [
     {
       "name": "coordination_is_body_order_tower_not_single_graph",
@@ -17,8 +17,8 @@
   "durationMs": 5,
   "computation": "mnk-coordination-graph-selection",
   "scriptFile": "mnk_coordination_graph_selection.py",
-  "scriptHash": "2b20feeaf1c0",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "f03f4962678e",
+  "scriptCommitSha": "30bc8561fe0f4f541e66b9b5bdf8827e89101132",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
