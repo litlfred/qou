@@ -113,7 +113,8 @@ def strand_crossings(recipe_stem):
     p = HERE / f"{recipe_stem}.derivation.json"
     if not p.exists():
         return None
-    tv = json.load(open(p))["target_value"]
+    with p.open(encoding="utf-8") as fh:
+        tv = json.load(fh)["target_value"]
     return sum(1 for _, typ in tv if typ in ("sigma", "sigma_inv"))
 
 
