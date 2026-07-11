@@ -1,7 +1,11 @@
-The archimedean functor $\tau \colon \mathbf{C} \to \mathbf{Arch}$
-([def:archimedean-realization-functor](#def:archimedean-realization-functor))
+The fibre functor $\tau \colon \mathbf{C} \to \mathbf{Arch}$, followed by
+the archimedean evaluation $\pi_\infty \colon \mathbf{Arch} \to \mathbb{R}$
+([def:archimedean-realization-functor](#def:archimedean-realization-functor)),
 maps each algebraic structure on the categorical side to a concrete
-real-valued object at the substrate parameter $q_0$. The table below
+real-valued object at the substrate parameter $q_0$. (Per the notation
+register, $\tau$ is the functor; the archimedean realization
+$\pi_\infty \circ \tau$ is an evaluation into $\mathbb{R}$, not itself a
+functor between QOU categories.) The table below
 catalogues these images systematically, distinguishing structures
 that are **implemented** in the current pipeline from those that
 remain open infrastructure targets.
