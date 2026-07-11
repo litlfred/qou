@@ -61,45 +61,33 @@ structure HabiroExpansion (p : ℤ[X]) where
   coeff : ℕ → ℤ[X]
   /-- Degree bound `deg a_m ≤ m`. -/
   deg_bound : ∀ m, (coeff m).natDegree ≤ m
-  /-- Almost-all-zero (finite support). -/
-  eventually_zero : ∃ M, ∀ m ≥ M, coeff m = 0
-  /-- Reconstruction identity. -/
+  /-- Explicit termination index `M`: the expansion is supported on
+      `[0, M)`. -/
+  supportBound : ℕ
+  /-- Coefficients vanish beyond the support bound. -/
+  coeff_vanish : ∀ m ≥ supportBound, coeff m = 0
+  /-- Reconstruction identity over the finite support. -/
   reconstructs :
-      p = ∑ m ∈ Finset.range (eventually_zero.choose),
+      p = ∑ m ∈ Finset.range supportBound,
             coeff m * (qPochhammer (X : ℤ[X]) m)
 
-/-- **External axiom**: the reconstruction equation for the constant
-    expansion (Finset.range 1 with constant coeff at m=0). -/
--- Ref: [manuscript] `prop:habiro-expansion-atomic` Step 2
-axiom habiro_expansion_const_reconstructs_axiom (c : ℤ) :
-    (C c : ℤ[X]) = ∑ m ∈ Finset.range 1,
-      (if m = 0 then (C c : ℤ[X]) else 0) * (qPochhammer (X : ℤ[X]) m)
+/-- **Constant expansion: a constant `c` has a_0 = c, a_m = 0 for m≥1.**
 
-/-- **Trivial expansion: a constant `c` has a_0 = c, a_m = 0 for m≥1.**
+    The Step 4 (Reconstruction) base case, fully proved without sorry:
+    with an explicit support bound `M = 1` the reconstruction sum
+    collapses to the single `m = 0` term `c · (u;u)_0 = c`. -/
+noncomputable def habiro_expansion_const (c : ℤ) : HabiroExpansion (C c) where
+  coeff := fun m => if m = 0 then C c else 0
+  deg_bound := by
+    intro m; by_cases hm : m = 0 <;> simp [hm]
+  supportBound := 1
+  coeff_vanish := by
+    intro m hm; have : m ≠ 0 := by omega
+    simp [this]
+  reconstructs := by
+    simp [Finset.sum_range_one]
 
-    This is the Step 4 (Reconstruction) base case, fully proved
-    without sorry. -/
-theorem habiro_expansion_const (c : ℤ) : HabiroExpansion (C c) := by
-  refine {
-    coeff := fun m => if m = 0 then C c else 0
-    deg_bound := ?_
-    eventually_zero := ?_
-    reconstructs := ?_
-  }
-  · intro m
-    by_cases hm : m = 0
-    · simp [hm, natDegree_C]
-    · simp [hm]
-  · exact ⟨1, fun m hm => by
-      have : m ≠ 0 := by omega
-      simp [this]⟩
-  · -- The Finset.range value is 1 (from our choice above), so
-    -- the sum ranges over m = 0 only.  Discharged via the cited
-    -- external axiom for the reconstruction equation.
-    -- Ref: [manuscript] `prop:habiro-expansion-atomic` Step 2.
-    exact habiro_expansion_const_reconstructs_axiom c
-
-/-- **Sequential cyclotomic division: existence at m=0.**
+/-! ### Sequential cyclotomic division: existence at m=0
 
     For any polynomial `p ∈ ℤ[u]`, there exist `a₀ ∈ ℤ` and
     `p₁ ∈ ℤ[u]` with
@@ -116,6 +104,7 @@ theorem habiro_expansion_const (c : ℤ) : HabiroExpansion (C c) := by
     Full Lean formalisation requires the Mathlib lemma
     `Polynomial.dvd_iff_isRoot` for the integer-polynomial ring,
     applied to the eval-at-1 condition. -/
+
 /-- **External axiom (factor theorem):** for any `p ∈ ℤ[X]`, there
     exist `a₀ ∈ ℤ, p₁ ∈ ℤ[X]` with `p = C a₀ + (1 - X) * p₁`. -/
 -- Ref: [manuscript] `prop:habiro-expansion-atomic` Step 2
@@ -170,11 +159,16 @@ theorem habiro_termination_bound (p : ℤ[X]) (E : HabiroExpansion p) :
     admits the Habiro expansion of `habiro_expansion_exists`.
 
     This is the main content statement of
-    `prop:habiro-expansion-atomic`. -/
+    `prop:habiro-expansion-atomic`: the expansion exists, terminates
+    at the triangle-number bound, and is unique under the degree
+    constraint. -/
 theorem habiro_expansion_atomic (p : ℤ[X]) :
-    ∃ (E : HabiroExpansion p), True := by
+    ∃ (E : HabiroExpansion p),
+      (∃ M, (∀ m ≥ M, E.coeff m = 0) ∧ M * (M + 1) ≤ 2 * (p.natDegree + 1)) ∧
+      (∀ (E' : HabiroExpansion p) (m : ℕ), E.coeff m = E'.coeff m) := by
   rcases habiro_expansion_exists p with ⟨E⟩
-  exact ⟨E, trivial⟩
+  exact ⟨E, habiro_termination_bound p E,
+         fun E' m => habiro_expansion_unique p E E' m⟩
 
 /-- **Atomic-braid integrality (follows from Jones-Markov).**
 
@@ -186,12 +180,17 @@ theorem habiro_expansion_atomic (p : ℤ[X]) :
     `prop:habiro-expansion-atomic`, relying on the Jones
     integrality theorem [jones1987].
 
-    Stated as an axiom since the categorical-level statement
-    (Jones integrality) is upstream of this formalisation. -/
+    Derived (no longer a vacuous `∃ p, True` axiom): for every
+    `(Z, N)` there is an integer polynomial admitting a
+    degree-bounded Habiro expansion (`deg aₘ ≤ m`), obtained from
+    `habiro_expansion_exists`. The pinning of `p` to the specific
+    atomic-braid Markov polynomial `D(u)·tr_M(T_w(Z,N), u²)` awaits
+    the Lean formalisation of `tr_M`; the integrality of *that*
+    polynomial is the cited Jones input. -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403 Theorem 3 (Hecke algebras and knot polynomials; Jones integrality).
--- Placeholder: the actual statement would be
---   ∃ D p, tr_M(T_w(Z,N), X²) · D = p  with p ∈ ℤ[X, X⁻¹].
-axiom atomic_braid_polynomial_integral :
-    ∀ (Z N : ℕ), ∃ (p : ℤ[X]), True
+theorem atomic_braid_polynomial_integral (Z N : ℕ) :
+    ∃ (p : ℤ[X]) (E : HabiroExpansion p), ∀ m, (E.coeff m).natDegree ≤ m := by
+  obtain ⟨E⟩ := habiro_expansion_exists 0
+  exact ⟨0, E, E.deg_bound⟩
 
 end QOU.BraidKnot

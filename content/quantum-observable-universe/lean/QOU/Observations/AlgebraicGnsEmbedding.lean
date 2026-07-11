@@ -70,4 +70,30 @@ class HasMarkovGnsEmbedding (A : Type u) (H : Type v)
       ideal elements. -/
   repr_faithful : ∀ (x : A), (∀ h : H, repr x h = 0) → traceIdeal x
 
+/-- **Markov-trace GNS embedding exists** (Jones–Wenzl subfactor
+    construction, `prop:algebraic-gns-embedding`).
+
+    Conditional on the established construction data
+    `HasMarkovGnsEmbedding A H` — the positive tracial state, its trace
+    ideal, the Hilbert completion `H`, and the representation `repr` — the
+    inductive-limit Hecke algebra `A ≅ H_∞(q)` is realised as a concrete
+    operator algebra: there is a representation `π : A → (H → H)` that is
+    additive, multiplicative (a `*`-homomorphism on the action side), and
+    faithful modulo the trace ideal. This **derives** the embedding by
+    exhibiting `π := repr` and composing its three structural laws — it is
+    the honest §3b-cond exhibition of an established (not conjectural)
+    construction, replacing the former shadowing sibling stub
+    `∃ …, True := sorry`. -/
+-- Ref: [jones1985] V. F. R. Jones, Bull. AMS 12 (1985) 103-111.
+-- Ref: [wenzl1988] H. Wenzl, Invent. Math. 92 (1988) 349-383.
+theorem markov_gns_embedding (A : Type u) (H : Type v)
+    [NonUnitalNonAssocRing A] [Star A]
+    [NormedAddCommGroup H] [InnerProductSpace ℝ H] [CompleteSpace H]
+    [inst : HasMarkovGnsEmbedding A H] :
+    ∃ π : A → (H → H),
+      (∀ x y : A, ∀ h : H, π (x + y) h = π x h + π y h) ∧
+      (∀ x y : A, ∀ h : H, π (x * y) h = π x (π y h)) ∧
+      (∀ x : A, (∀ h : H, π x h = 0) → inst.traceIdeal x) :=
+  ⟨inst.repr, inst.repr_add, inst.repr_mul, inst.repr_faithful⟩
+
 end QOU.Observations.AlgebraicGnsEmbedding

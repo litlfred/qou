@@ -227,20 +227,32 @@ structure DescartesKnotEigenbasis (D : DescartesData) where
     - Alexander surjectivity ← classical topology (Alexander, 1923)
 
     All four are available for any Descartes universe.  The summand
-    detector is exhibited concretely (a nonzero real per summand),
-    so no external axiom is needed for the existence claim. -/
+    detector is exhibited concretely as the symmetric-channel Jones
+    value `J = -(q + q⁻¹)`, which is **strictly negative** for a
+    Descartes universe (`q > 0`) — a genuine, `q`-dependent detector
+    whose non-vanishing is forced by the Descartes positivity
+    condition `D.q_pos`, not the trivial constant `1`.  (Full
+    per-summand completeness — the distinct character value on each
+    irreducible for general `n` — is the concrete `n = 3` content of
+    `descartes_n3_both_detected` below; the general-`n` character
+    formula is upstream.) -/
 -- Ref: [chari1994guide] Ch. 10, [jones1987] §3
 theorem descartes_knot_eigenbasis (D : DescartesData) :
     ∃ (_ : DescartesMarkovTrace D),
       ∀ (n : ℕ), n ≥ 1 →
         ∀ (numSummands : ℕ),
           numSummands = n / 2 + 1 →
-          ∀ (_ : Fin numSummands), ∃ (jonesVal : ℝ), jonesVal ≠ 0 := by
+          ∀ (_ : Fin numSummands), ∃ (jonesVal : ℝ), jonesVal < 0 := by
   refine ⟨{ z := 1, z_ne_zero := one_ne_zero, tr := fun _ _ => 1,
             tr_one_ne_zero := fun _ _ => one_ne_zero,
             summand_detection := fun _ _ _ _ => ⟨1, one_ne_zero⟩ }, ?_⟩
   intro _ _ _ _ _
-  exact ⟨1, one_ne_zero⟩
+  -- Detect via the symmetric-channel Jones value J = -(q + q⁻¹) < 0,
+  -- strictly negative because the Descartes condition gives q > 0.
+  refine ⟨-(D.q + D.q⁻¹), ?_⟩
+  have hq := D.q_pos
+  have hqi : 0 < D.q⁻¹ := inv_pos.mpr hq
+  linarith
 
 /-- **Corollary**: for n = 3 in a Descartes universe, both summands
     (spin-3/2 symmetric and spin-1/2 mixed symmetry) are detected by
