@@ -28,8 +28,8 @@ Since `Δ_λ = sgn(w₀^{S_{λ'}})·dim(λ)`:
   graded-trace form says the closure is "construct `g_ρ`, take its trace."
 - **(2) The magnitude is the classical q=1 dimension, not the substrate q₀
   quantum-dimension.** The q-hook-length quantum dimension `dim_q(λ; q₀) = [n]_q!/∏[h]_q`
-  at `q₀ ≈ 1.11` differs from the integer `dim(λ)` by up to **4.41%** (e.g. [4,1]:
-  `4.11` vs `4`). `|Δ_λ|` is exactly the integer — so the magnitude anchor is **q=1**,
+  at `q₀ ≈ 1.11` differs from the integer `dim(λ)` by up to **4.41%** (e.g. [3,2]:
+  `5.22` vs `5`). `|Δ_λ|` is exactly the integer — so the magnitude anchor is **q=1**,
   not q₀. This **prunes** the substrate q-dimension as the magnitude source.
 - **(3) Δ_λ is a two-anchor object.** Magnitude at **q=1** (classical dimension) ⊗ sign at
   **ζ₄** (grading). The substrate `q₀ ≈ 1.11` (real, > 1) is **neither** anchor —
