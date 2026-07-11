@@ -25,14 +25,19 @@ the proton/neutron braid words at `q₀` — not yet in Lean.  The real
 proposition (framework formula + CODATA agreement) is stated faithfully and
 discharged by `sorry`.
 
-The **algebraic backbone** for `Φ_q` (finite `q`-Pochhammer product, cocycle
-identity, `q`-difference equation) now lives in
-`QOU.MathlibExt.QuantumDilogarithm`.  It does **not** yet supply the two
-`Φ` volumes below: those (`Φ(uud) ≈ -0.8785`, `Φ(udd) ≈ -1.2261`) are
-evaluations of the *analytic* `N → ∞` limit on specific braid words, and a
-corpus-grep (2026-07-11) found **no closed form** for them anywhere in the
-repository — so they stay honest opaque `NeutronProtonSplittingContext`
-fields (§3b-cond) rather than being wired to an un-derived formula
+The two `Φ` volumes (`Φ(uud) ≈ -0.8785`, `Φ(udd) ≈ -1.2261`) **are derived**:
+they are the canonical Hecke **traced-volume** of the quark orderings
+(uud = `[1,1,0]`, udd = `[1,0,0]`), `Φ(K) = Σᵢ log|V̂ᵢ(K)|` with
+`V̂ᵢ = z·M₁₀ + M₁₁` the transfer-matrix product over the quark crossings
+(`computations/level1-qvalues.py`, `HeckeRational.traced_volume`).  This has an
+exact closed form — `log` of a rational function of `q` — e.g.
+`Φ(udd) = log|(q²+1)²(10000q² − 4993q − 10000) / (40000 q³)|` (with the
+NF-basis constant `z = 4993/10000`).  Provenance + symbolic derivation:
+`docs/audits/2026-07-11-quark-volume-provenance.md`.  (This transfer-matrix
+`V̂ᵢ` is a *different* object from the `Φ_q` q-Pochhammer of
+`QOU.MathlibExt.QuantumDilogarithm`.)  They remain opaque
+`NeutronProtonSplittingContext` fields (§3b-cond) here only because the
+`traced_volume` construction is not yet ported to Lean
 (AGENTS.md anti-laundering rule).
 
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/neutron-proton-splitting.md
