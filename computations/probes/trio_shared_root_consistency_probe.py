@@ -21,18 +21,25 @@ Values from computations/per-observable-100x-status.witness.json (Path C rows).
 """
 from __future__ import annotations
 
-# (pred_MeV, codata_MeV, err_ppb) — the COMMITTED snapshot of the Path-C rows of
-# per-observable-100x-status.witness.json.  Pinned here on purpose: this probe
-# checks that witness's *internal* shared-root consistency, so it must compare
-# the witness's own pred/codata pair, not live codata_constants (which could
-# drift from the snapshot the witness was computed against).
+import json
+from pathlib import Path
+
+# Load the Path-C rows straight from the committed witness (source of truth), so
+# the probe never drifts from the dashboard.  It reads each observable's OWN
+# pred/codata pair from the same witness, so it still tests that witness's
+# *internal* shared-root consistency (not live codata_constants).
 # m_e is exact (CAL-1, residual ≈ 0), so it drops out of the residual identities.
-ROWS = {
-    "m_p":    (938.272089427, 938.272088160, 1.351),
-    "Q_beta": (0.782334386518, 0.782333410, 1248.0),
-    "m_n":    (939.565422765, 939.565420520, 2.389),
-    "Delta_pn": (1.29333333721, 1.29333236, 755.6),
-}
+_WITNESS = (Path(__file__).resolve().parent.parent
+            / "per-observable-100x-status.witness.json")
+
+
+def _load_rows() -> dict:
+    rows = json.loads(_WITNESS.read_text())["data"]["rows"]
+    return {r["obs"]: (float(r["pred_MeV"]), float(r["codata_MeV"]), float(r["err_ppb"]))
+            for r in rows}
+
+
+ROWS = _load_rows()
 
 
 def residual(obs: str) -> float:
@@ -41,6 +48,7 @@ def residual(obs: str) -> float:
 
 
 def main() -> None:
+    print(f"witness: {_WITNESS.name}")
     print("residual = pred − codata  (MeV):")
     for o in ("m_p", "Q_beta", "m_n", "Delta_pn"):
         print(f"  {o:9s} {residual(o):+.4e}   ({ROWS[o][2]:.0f} ppb)")
