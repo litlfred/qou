@@ -34,12 +34,18 @@ elan_dir_name="$(printf '%s:%s' "$toolchain_name" "$toolchain_ver" | tr '/' '-' 
 dest_root="$HOME/.elan/toolchains"
 echo "lean-toolchain-cache-restore: slug=$slug branch=$branch toolchain=$toolchain_name:$toolchain_ver"
 
-# Already present? (any toolchain dir carrying a runnable `bin/lean`.)
+# Already present AND matching the pinned version? Only then skip — a
+# different preinstalled toolchain must NOT satisfy this (it would leave the
+# wrong compiler and defeat the pin). `lean --version` prints e.g.
+# "Lean (version 4.24.0, ...)"; match the numeric part of the pinned version.
+vernum="${toolchain_ver#v}"                        # v4.24.0 -> 4.24.0
 existing="$(find "$dest_root" -maxdepth 2 -type f -name lean -path '*/bin/lean' 2>/dev/null | head -1)"
-if [ -n "${existing:-}" ]; then
-  echo "lean-toolchain-cache-restore: lean binary already present at $existing — skipping."
-  "$existing" --version 2>/dev/null || true
+if [ -n "${existing:-}" ] && "$existing" --version 2>/dev/null | grep -qF "version $vernum"; then
+  echo "lean-toolchain-cache-restore: matching lean $vernum already present at $existing — skipping."
   exit 0
+fi
+if [ -n "${existing:-}" ]; then
+  echo "lean-toolchain-cache-restore: found a lean at $existing but it does not match pinned $vernum — restoring the pinned toolchain."
 fi
 
 if ! git -C "$REPO_ROOT" fetch --depth=1 origin "$branch" 2>/dev/null; then
@@ -78,10 +84,11 @@ if [ -z "${lean_bin:-}" ]; then
   exit 1
 fi
 chmod +x "$lean_bin" 2>/dev/null || true
-# Point elan's default at this toolchain if elan is present (so the
-# `lean`/`lake` wrappers resolve); harmless if elan is absent — use the
-# binary directly / via scripts/lean-verify.sh which sets LEAN_PATH.
 elan_toolchain_dir="$(dirname "$(dirname "$lean_bin")")"
+# The binary is now runnable directly (and via scripts/lean-verify.sh, which
+# sets LEAN_PATH for lean-direct). This does NOT modify elan's default
+# toolchain; if you want the `lean`/`lake` elan wrappers to resolve to it,
+# register it yourself with:  elan toolchain link qou-cached "$elan_toolchain_dir"
 echo "lean-toolchain-cache-restore: restored toolchain at $elan_toolchain_dir"
 "$lean_bin" --version 2>/dev/null || {
   echo "lean-toolchain-cache-restore: WARNING '$lean_bin --version' failed (arch/glibc mismatch?)." >&2

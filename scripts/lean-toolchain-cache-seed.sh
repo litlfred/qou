@@ -15,7 +15,7 @@
 #
 # Usage:  scripts/lean-toolchain-cache-seed.sh [--force]
 # Exit:   0 on push; non-zero if the toolchain dir is missing.
-set -uo pipefail
+set -euo pipefail
 source "$(dirname "$0")/lib/lean-env.sh"
 
 FORCE=0
@@ -30,9 +30,11 @@ dest_root="$HOME/.elan/toolchains"
 # has varied ('--' vs '-'); match by "has bin/lean and dir name mentions
 # the version" rather than guessing the exact string.
 ver="$(printf '%s' "$toolchain_line" | cut -d: -f2)"    # v4.24.0
-tdir="$(find "$dest_root" -maxdepth 1 -type d -name "*${ver//./?}*" 2>/dev/null | head -1)"
-[ -z "$tdir" ] && tdir="$(find "$dest_root" -maxdepth 2 -type f -name lean -path '*/bin/lean' \
-                            -printf '%h\n' 2>/dev/null | sed 's#/bin$##' | head -1)"
+tdir="$(find "$dest_root" -maxdepth 1 -type d -name "*${ver//./?}*" 2>/dev/null | head -1 || true)"
+if [ -z "$tdir" ]; then
+  tdir="$(find "$dest_root" -maxdepth 2 -type f -name lean -path '*/bin/lean' \
+            -printf '%h\n' 2>/dev/null | sed 's#/bin$##' | head -1 || true)"
+fi
 if [ -z "${tdir:-}" ] || [ ! -x "$tdir/bin/lean" ]; then
   echo "lean-toolchain-cache-seed: no installed toolchain for '$toolchain_line' under $dest_root." >&2
   echo "  Install it first (non-firewalled machine):  elan toolchain install $toolchain_line" >&2
@@ -42,8 +44,14 @@ tname="$(basename "$tdir")"
 echo "lean-toolchain-cache-seed: packing $tdir  ->  branch $branch"
 "$tdir/bin/lean" --version || true
 
-work="$(mktemp -d)"
-trap 'rm -rf "$work"' EXIT
+# Temp dirs + a single cleanup trap covering BOTH the tarball scratch and
+# the seed worktree (git worktree remove first; rm -rf as a fallback if it
+# fails, so nothing is ever left behind).
+work="$(mktemp -d)"            # tarball + split parts
+wtparent="$(mktemp -d)"        # parent dir for the seed worktree
+seedwt="$wtparent/wt"          # created by `git worktree add` below
+trap 'git -C "$REPO_ROOT" worktree remove --force "$seedwt" 2>/dev/null || true; rm -rf "$wtparent" "$work"' EXIT
+
 # Tar rooted at the toolchain dir NAME (so restore extracts into
 # ~/.elan/toolchains/<name>/), then split into 90 MB parts (< GitHub's
 # 100 MB blob hard-limit).
@@ -55,10 +63,8 @@ echo "lean-toolchain-cache-seed: $size in $nparts part(s)."
 
 # Build the orphan branch payload in a temp worktree to avoid disturbing
 # the working tree.
-seedwt="$(mktemp -d)"
 git -C "$REPO_ROOT" worktree add --detach "$seedwt" >/dev/null 2>&1 || {
   echo "lean-toolchain-cache-seed: could not create worktree." >&2; exit 1; }
-trap 'git -C "$REPO_ROOT" worktree remove --force "$seedwt" 2>/dev/null; rm -rf "$work"' EXIT
 (
   cd "$seedwt"
   git checkout --orphan "seed-$slug" >/dev/null 2>&1
