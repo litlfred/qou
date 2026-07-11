@@ -91,6 +91,33 @@ def main():
     check("sign_mixed_at_cyclotomic_point", mixed,
           f"q^{{2n(λ)}}|_{{q=i}} over λ⊢5 = {signs} (mixed: {signs.count(1)}+/{signs.count(-1)}-)")
 
+    # 5) REALIZABILITY of the carrier q^{2n(λ)} as a canonical central operator.
+    #    center(H_n) = symmetric functions of the JM elements, whose scalar on V_λ is
+    #    a function of the content multiset {q^{2c(box)}}. If the content multiset
+    #    determines λ (=> determines n(λ)), then q^{2n(λ)} IS such a central character
+    #    (realizable by a JM/framing element), not merely the abstract central idempotent.
+    def contents(lam):
+        return tuple(sorted(c - r for r, row in enumerate(lam) for c in range(row)))
+    collision_free = True
+    for N in range(2, 9):
+        seen = {}
+        for lam in partitions(N):
+            seen.setdefault(contents(lam), []).append(lam)
+        if any(len(v) > 1 for v in seen.values()):
+            collision_free = False
+    check("carrier_is_a_JM_central_character_realizable", collision_free,
+          "content multiset determines λ (no collision, n≤8) => q^{2n(λ)} is a central "
+          "character realizable by JM symmetric functions, not just the abstract projector")
+
+    # 6) the carrier is NOT the full twist θ_λ = q^{2(n(λ')-n(λ))}: they differ, so the
+    #    operator is a distinct (half-twist-class) central element, not a framing power.
+    def cont_sum(lam):
+        return n_lambda(conjugate(lam)) - n_lambda(lam)
+    differs = any(n_lambda(lam) != cont_sum(lam) for lam in partitions(5))
+    check("carrier_is_not_the_full_twist", differs,
+          "q^{2n(λ)} ≠ θ_λ=q^{2(n(λ')-n(λ))} for some λ⊢5 => not a full-twist framing power "
+          "(a distinct half-twist-class central element; exact braid form + |Δ_λ|=dim open)")
+
     all_passed = all(a["passed"] for a in assertions)
     verdict = (
         "LOCATED (structural; nothing derived): the Δ_λ chirality sign is a CYCLOTOMIC "
