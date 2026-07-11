@@ -1070,6 +1070,29 @@ theorem orderStat_le_of_count_ge {X Y : Finset ℕ} (h : X.card = Y.card)
       _ = (r : ℕ) := card_fin_lt X.card r (le_of_lt r.2)
   omega
 
+/-- **`orderEmbOfFin` value is independent of the cardinality proof / index type
+(sorry-free).** For a fixed finset `s`, `s.orderEmbOfFin` at two indices with the same
+`ℕ`-value agrees — the increasing enumeration only depends on `s` and the position, not on
+which `s.card = k` proof presents the domain `Fin k`. Bridges `orderStat_le_of_count_ge`'s
+`Fin X.card` indexing to `labelAt_eq_orderStat`'s `Fin (colLen j)` indexing. -/
+theorem orderEmbOfFin_congr {s : Finset ℕ} {k k' : ℕ} (hk : s.card = k) (hk' : s.card = k')
+    (i : Fin k) (i' : Fin k') (hii : (i : ℕ) = (i' : ℕ)) :
+    s.orderEmbOfFin hk i = s.orderEmbOfFin hk' i' := by
+  subst hk; subst hk'
+  exact congrArg (⇑(s.orderEmbOfFin rfl)) (Fin.ext hii)
+
+/-- **Order-statistic domination, common-`k` form (sorry-free).** `orderStat_le_of_count_ge`
+restated with both finsets carrying a card proof to the *same* `k`, so the index `r : Fin k`
+matches on both sides — the shape `labelAt_eq_orderStat` produces (`Fin (μ.colLen j)`). -/
+theorem orderEmbOfFin_le_of_count {X Y : Finset ℕ} {k : ℕ} (hX : X.card = k) (hY : Y.card = k)
+    (hcount : ∀ w, (Y.filter (· ≤ w)).card ≤ (X.filter (· ≤ w)).card) (r : Fin k) :
+    X.orderEmbOfFin hX r ≤ Y.orderEmbOfFin hY r := by
+  have hXY : X.card = Y.card := by rw [hX, hY]
+  have key := orderStat_le_of_count_ge hXY hcount (Fin.cast hX.symm r)
+  rw [orderEmbOfFin_congr rfl hX (Fin.cast hX.symm r) r (by simp),
+      orderEmbOfFin_congr hXY.symm hY (Fin.cast hX.symm r) r (by simp)] at key
+  exact key
+
 /-- **Count-domination from the top-`|A|` structure (sorry-free).** If `A` is "above" `B`
 (every `b ∈ B` is below every `a ∈ A`) and `S ⊆ A ∪ B` has `|S| = |A|`, then for every
 threshold `w` the top set `A` has no more elements `≤ w` than `S`. Feeds
@@ -1137,7 +1160,7 @@ theorem exists_first_lt_of_le_of_ne {N : ℕ} (f g : Fin N → ℕ)
     by_contra h
     push_neg at h
     exact hne (funext fun r => le_antisymm (hle r) (h r))
-  set S := Finset.univ.filter (fun r : Fin N => f r < g r) with hSdef
+  set S := Finset.univ.filter (fun r : Fin N => f r < g r)
   have hSne : S.Nonempty := by
     obtain ⟨r, hr⟩ := hne'
     exact ⟨r, Finset.mem_filter.mpr ⟨Finset.mem_univ _, hr⟩⟩
