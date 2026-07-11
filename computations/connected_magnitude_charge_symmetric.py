@@ -40,19 +40,18 @@ from mpmath import mp, mpf, log, fabs  # noqa: E402
 from closed_form_tau_M import markov_z, hecke_h  # noqa: E402
 from _li_2_q_util import flavor_split_leading  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
-from coulomb_energy import coulomb_energy_mev  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 # reuse #3548's exact connected-cluster machinery
 from su4_connected_1111_magnitude_probe import (  # noqa: E402
     connected_spanning_subgraphs, nodes)
 try:
-    sys.path.insert(0, str(HERE))
     from witness_base import WitnessBuilder  # noqa: E402
     _HAVE_WB = True
 except ImportError:
     WitnessBuilder = None
     _HAVE_WB = False
 
-mp.dps = 50
+set_compute_dps()   # repo-canonical precision (matches the witness precisionMetadata)
 
 
 def bond_factor(a, b, z, h, fpn, symmetric):
