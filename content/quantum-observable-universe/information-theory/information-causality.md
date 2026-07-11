@@ -38,4 +38,4 @@ $$
 $$
 
 **7. Summary.**
-See [Table](#tbl:information-causality-table-data).
+Every classical information bound above descends from two substrate quantities: the causal cone $|Z| = c_q$ with $c_q = 1/(q-1)$, and the per-operation fibre-entropy ceiling $\eta_q = (2q - 1)/q^3$. The cone fixes the Lieb--Robinson / information-causality light cone and the $q$-dependent speed of light; the entropy ceiling caps the Margolus--Levitin operation rate, the Bremermann bandwidth $\mathfrak{B}(q)$, and the Bekenstein entropy. Causality, processing rate, and entropy are thus one $q$-parametrised family.
