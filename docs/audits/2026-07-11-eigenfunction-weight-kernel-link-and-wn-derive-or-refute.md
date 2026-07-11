@@ -150,6 +150,44 @@ sub-exponentially — the decelerating direction), not algebraic-dual. This is t
 forward (formalize-first) prune of the steered class; it does not exclude a
 geometric `R(q,x)`.
 
+## Part 5 — multi-anchor: the full na-Stokes jet tower summed to A is refuted (scope-a)
+
+Testing the weight *shape* against more anchors (D→¹²C, Coulomb-corrected
+`B_strong`; single global scale fit to ⁴He). The low-`n` weights are **quadratic**:
+`wₙ/n² = 1.088, 1.037, 0.995` and `wₙ/[n]_q² = 1.077, 1.007, 0.943` (both ~±8 %,
+decelerating) — so a *linear* hyperbolic link-volume (ratios ∝n = 1.5, 1.33)
+**undershoots** the extracted ratios (2.14, 1.71); the shape is quadratic
+(Casimir-class), not linear-volume.
+
+But extrapolated to A≥5 the full-tower form
+`B = Σ_{n=2}^{A} mₑ·a_D^(n)·wₙ` **overshoots catastrophically** for *every*
+amplifying/quadratic weight
+([`binding_wn_multianchor_tower_refute.py`](../../computations/binding_wn_multianchor_tower_refute.py),
+witness `binding-wn-multianchor-tower-refute.witness.json`):
+
+| iso | A | `B_strong` | `B_pred` (wₙ=n²) | err |
+|---|--:|--:|--:|--:|
+| ⁴He | 4 | 29.20 | 29.20 | 0 % (scale anchor) |
+| ⁶Li | 6 | 34.37 | 350.65 | **+920 %** |
+| ⁷Li | 7 | 41.50 | 1296 | +3023 % |
+| ⁹Be | 9 | 62.32 | 21389 | +34222 % |
+| ¹²C | 12 | 101.6 | 2.3×10⁶ | +2.3×10⁶ % |
+
+**Refuted (scope-a), precision-independent structural reason.** `a_D^(n)` grows
+**super-exponentially** (involution-number growth: `a_D^(12)≈2.5×10⁴`) while
+nuclear `B/A → const` (extensive). A bounded-or-amplifying body-order weight
+summed to `A` therefore *cannot* be linear in `A`. The light-nucleus amplification
+(`wₙ~n²`, needed to lift the 2026-07-03 undershoot 4.87×→12.72×) and the
+heavy-nucleus saturation are **incompatible** for one body-order weight × the
+super-exp period summed to `A`.
+
+**Redirect.** The binding is **not** the full na-Stokes jet tower summed to the
+nucleon count. It must be a **few-body truncation** (fixed small `n_max`, ~2–3
+body clusters × an A-multiplicity — matching real nuclear 2-/3-body force
+dominance), or a weight decaying faster than `1/a_D^(n)` (i.e. *cancelling* the
+period, not "informed by" it). The na-Stokes period remains the correct **light**-
+nucleus (A≤4) kernel; it is the wrong object to sum to `A`.
+
 ## Consequence for `conj:binding-manybody-eq-jet-filtration`
 
 **Not provable now** (recorded answer). The conjecture's three deep inputs remain
