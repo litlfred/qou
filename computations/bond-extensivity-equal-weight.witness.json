@@ -1,0 +1,53 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-07-11T17:58:41.888319+00:00",
+  "commitSha": "00e8a66b22a0b6abe4d5fc2dfe28c687b68de4c3",
+  "assertions": [
+    {
+      "name": "coordination_multiplier_is_equal_weight_limit_exact_alpha_coincidence_nucleon",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "nucleon bond energies have a derived 1.78× spread ⇒ equal-weight (coordination counting) fails there; it is exact only for identical α–α bonds. The mirror split ε_nn−ε_pp=0.542 that equal-weight drops is the isospin carrier Vol, giving w_n=M·Vol."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "bond-extensivity-equal-weight",
+  "scriptFile": "bond_extensivity_equal_weight.py",
+  "scriptHash": "d06aca383524",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "The coordination-number binding multiplier is the EQUAL-WEIGHT limit of the derived log-trace bond-extensivity B=E₀·Σ log(1/f_bond) (#2089). Equal-weight is exact for identical α–α bonds (α-cluster contact counting derived) but fails at the nucleon level (derived ε_pp:ε_pn:ε_nn spread 1.78×); the nucleon z=A−1 is a composition coincidence. The split ε_nn−ε_pp equal-weight drops is the isospin carrier Vol, so w_n=M·Vol = (equal-weight coordination)·(isospin bond asymmetry). Answers 'why multiplier=coordination'; not a closure. Scope-(a).",
+  "data": {
+    "q0": 1.1099785827513808,
+    "f_bond": {
+      "pp": 0.4993203341836944,
+      "pn": 0.3947901847858748,
+      "nn": 0.2902600353880551
+    },
+    "eps_bond": {
+      "pp": 0.6945074369219043,
+      "pn": 0.9294008329631762,
+      "nn": 1.2369780840214575
+    },
+    "nucleon_spread": 1.7810868800826862,
+    "A3_mirror": {
+      "B_3H": 3.09577974994781,
+      "B_3He": 2.5533091028482566,
+      "equal_weight": 2.860886353906538,
+      "mirror_split_eps_nn_minus_pp": 0.5424706470995533
+    }
+  }
+}
