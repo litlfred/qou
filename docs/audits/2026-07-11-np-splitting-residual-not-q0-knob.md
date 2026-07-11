@@ -28,11 +28,13 @@ not an L2 (accuracy) change.**
 ### Side finding — a q₀-pin inconsistency (fixed)
 
 Methods diverge at `~7×10⁻⁸` purely because of the `q₀` pin used
-(`d|ΔΦ|/dq ≈ −4.19`, so `10⁻⁸` in `q` → `10⁻⁷` in `Φ`). Two pins differ at
-`10⁻⁸` in the corpus: `q_parameter.Q = 1.10997858275…` (canonical) vs
+(`d|ΔΦ|/dq ≈ +4.19`, so `10⁻⁸` in `q` → `10⁻⁷` in `Φ`). Two pins differ at
+`10⁻⁸` in the corpus: the canonical `q_parameter.Q_50_DIGIT_STR =
+1.10997858275…` (`q_parameter.Q` is its f64 view) vs
 `two_quark_volume…Q0 = 1.10997859555…`. The `q0` constant in
 `neutron-proton-mass-splitting.lean` had been set to the *latter*; corrected to
-the canonical `1.1099785827513808` in this change.
+the canonical full-precision `Q_50_DIGIT_STR` value (matching
+`QOU.LiftingDescent.H3BraneTowerScaffold.q0`) in this change.
 
 ## (b) L2 (accuracy) — the 0.63% residual is structural
 

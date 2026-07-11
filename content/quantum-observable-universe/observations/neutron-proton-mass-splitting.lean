@@ -23,9 +23,11 @@ its rounded evaluations at `q₀`.  Provenance + symbolic derivation:
 
 namespace QOU.NeutronProtonSplitting
 
-/-- Substrate modulus `q₀`, the canonical pin (`q_parameter.Q` /
-`Q_50_DIGIT_STR`). -/
-noncomputable def q0 : ℝ := 1.1099785827513808
+/-- Substrate modulus `q₀`, the canonical 50-dps pin
+(`q_parameter.Q_50_DIGIT_STR`; `q_parameter.Q` is its f64 view).  Full
+precision matches `QOU.LiftingDescent.H3BraneTowerScaffold.q0`. -/
+noncomputable def q0 : ℝ :=
+  1.10997858275138080759166909561076887987449912187357763605672
 
 /-- **Closed-form quark-ordering volume** `Φ(K) = log|∏ᵢ V̂ᵢ(K)|`, the exact
     Hecke traced-volume (NF-basis constant `z = 4993/10000` already folded into
