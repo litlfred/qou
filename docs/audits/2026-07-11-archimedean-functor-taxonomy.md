@@ -29,10 +29,11 @@ claimed. Analyze and resolve issues."*
   codomain is stated five incompatible ways** across the corpus
   (`Type*` / `Vec_ℝ` / `Arch` / `D` / `ℝ`), and it is even once called the
   "forgetful functor."
-- **The target category `Arch` is asserted but never constructed as a
-  category** — its only formal encoding (`ArchimedeanCategory`) is
+- **The target category `Arch` was asserted but not constructed as a
+  category** — its only formal encoding (`ArchimedeanCategory`) was
   `{ Obj : Type*, archProj : Obj → ℝ }`: objects and a real evaluation, but
-  **no Hom, no composition, no identities**.
+  **no Hom, no composition, no identities**. *(Fixed in this PR — T3 bundles
+  `[Category Obj]`.)*
 - **The paper's own notation register already states the correct
   taxonomy** (`notation/notation-collisions.md` §"Archimedean / fibre /
   forgetful functors"): τ : **C → Arch** is the fibre functor; U : **Arch →
@@ -62,9 +63,16 @@ Legend — **Yes** = genuine `CategoryTheory.Functor` (or `MonoidalFunctor`);
 **No** = object/ring/set map with no morphism action; **Partial** = bundles a
 genuine functor field but the named thing is not itself the functor.
 
-| # | Name (label) | Claimed src → tgt | Actual Lean type | Functor? |
+> **This catalog and the Diagnosis below record the state *as found* (pre-fix).**
+> The Resolution section (T1–T4) records what this PR changed — in particular
+> T3 rebuilds `Arch` as a genuine category and upgrades
+> `MotivesArchimedean.FibreFunctor` to a real functor, so rows/items flagged
+> below as "not a functor / no category structure" carry an inline "(fixed by
+> T3)" where this PR closes them.
+
+| # | Name (label) | Claimed src → tgt | Actual Lean type (as found) | Functor? |
 |---|---|---|---|---|
-| 1 | **Fibre functor τ** (`rem:fibre-functor-rigidity`, `def:fibre-functor-atlas`) | inconsistent: **C** → `Type*`/`Vec_ℝ`/`Arch`/`D`/`ℝ`; once "forgetful" | genuine `C ⥤ Type*` in `CategoricalFoundations`; genuine `C ⥤ D` field in `spatial-realization`; **but** `MotivesArchimedean.FibreFunctor` = `obj : C → Arch.Obj` (object map only) | **Yes** (in 2 files) / **No** (in `MotivesArchimedean`) |
+| 1 | **Fibre functor τ** (`rem:fibre-functor-rigidity`, `def:fibre-functor-atlas`) | inconsistent: **C** → `Type*`/`Vec_ℝ`/`Arch`/`D`/`ℝ`; once "forgetful" | genuine `C ⥤ Type*` in `CategoricalFoundations`; genuine `C ⥤ D` field in `spatial-realization`; **but** `MotivesArchimedean.FibreFunctor` = `obj : C → Arch.Obj` (object map only) | **Yes** (in 2 files) / **No** (in `MotivesArchimedean`) — *T3 fixes the last case to `functor : C ⥤ Arch.Obj`* |
 | 2 | **Archimedean realization functor R_top** (`def:archimedean-realization-functor`) | `M̂` (Grothendieck-ring completion) → **ℝ** | `structure ArchimedeanRealizationFunctor` = `{ Motive, eulerChar : Motive→Int, archPostProc : ℝ→ℝ, realize : Motive→ℝ }` | **No** — motivic measure / ring hom into ℝ |
 | 3 | **Standard-part functor St / 𝓕_Arch** (`def:standard-part-functor`; `archimedean-functor-trace-commutativity.md`) | prose: `C_fin → C_ℝ`; realized as **ℝ-valued** | `standardPartRingHom : finiteSubring →+* ℝ` ("surjective ring homomorphism"); sibling theorem is `subst; rfl` | **No** — ring homomorphism |
 | 4 | **Spatial realization functor** (`def:spatial-realization-functor`) | `A ↦ Spec(A) = M` (contact manifold) | `structure SpatialRealizationFunctor` bundling data **plus** genuine `fibreFunctor : C ⥤ D` | **Partial** — carries a real `C ⥤ D`; "spatial realization" itself is `Spec` + data |
@@ -81,7 +89,7 @@ genuine functor field but the named thing is not itself the functor.
 | Object | Encoding | A genuine category? |
 |---|---|---|
 | **C** (substrate rigid monoidal cat) | Mathlib `[Category C] [MonoidalCategory C] [BraidedCategory C]` throughout | **Yes** (via Mathlib typeclasses) |
-| **Arch** (target of τ) | `structure ArchimedeanCategory where Obj : Type*; archProj : Obj → ℝ` | **No** — no Hom/composition/identities |
+| **Arch** (target of τ) | `structure ArchimedeanCategory where Obj : Type*; archProj : Obj → ℝ` (as found) | **No** — no Hom/composition/identities *(T3 adds `[Category Obj]` → now yes)* |
 
 ## Diagnosis
 
@@ -107,8 +115,10 @@ genuine functor field but the named thing is not itself the functor.
    Vec_ℝ, then the evaluation π_∞ : Arch → ℝ (**not** a functor) — is
    correct and should be made the single convention.
 
-4. **`Arch` is never built as a category**, so "τ : C → Arch" cannot
+4. **`Arch` was never built as a category**, so "τ : C → Arch" could not
    literally typecheck as a functor even where τ is otherwise genuine.
+   *(Fixed in this PR — T3 bundles `[Category Obj]` into `ArchimedeanCategory`
+   and gives `FibreFunctor` a genuine `functor : C ⥤ Arch.Obj`.)*
 
 ## Recommended resolution (tiered)
 
