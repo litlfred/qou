@@ -142,6 +142,48 @@ while the positive/amphichiral routes (and the free-parameter SU(4) fit of Findi
 are excluded up front. They justify the "no 7th fit" gate; they do not lift it — the
 archimedean residue (c₃ swing / Δ_λ magnitude) stays open (Subgoal-2 / Track A).
 
+## Finding 7 (forward probe) — the chiral T(2,5) test: selection rule confirmed, raw identification pruned
+
+The Gemini transcript's *instinct* — replace the falsified positive Wigner-SU(4) Δ_λ
+route with a chiral knot operator (cinquefoil T(2,5)) — is the parity-correct
+direction, and it is now **tested** parameter-free (formalize-first, no fit):
+[`t25_cinquefoil_deltalambda_sign_probe.py`](../../computations/deltalambda/t25_cinquefoil_deltalambda_sign_probe.py)
+→ [witness](../../computations/deltalambda/t25-cinquefoil-deltalambda-sign.witness.json).
+
+The Hoefsmit seminormal irreps `ρ_λ` of `H_5(q)` are built and **self-validated**
+(Hecke relation, braid relation, `Σ dim² = 120`), so the per-partition Hecke
+characters `χ_λ^q(T(2,5)) = tr ρ_λ((σ₁σ₂σ₃σ₄)²)` at `q₀` are trustworthy. Compared
+to the Lean-proved sign target `sgn(Δ_λ) = sgn(w₀^{S_{λ'}}) = (−1)^{Σ C(λ'ᵢ,2)}`
+(which the probe first re-derives to reproduce the `deltaSign_mixed` n=3 pattern
+1+/2−):
+
+| λ⊢5 | dim | `χ_λ^q(T(2,5))` @ q₀ | sgn | target | |
+|---|---|---|---|---|---|
+| [5] | 1 | +2.304 | + | + | ✓ |
+| [4,1] | 4 | −1.518 | **−** | − | ✓ |
+| [3,2] | 5 | 0 | 0 | + | ✗ (degenerate) |
+| [3,1,1] | 6 | +1.000 | + | − | ✗ |
+| [2,2,1] | 5 | 0 | 0 | + | ✗ (degenerate) |
+| [2,1,1,1] | 4 | −0.659 | **−** | + | ✗ |
+| [1⁵] | 1 | +0.434 | + | + | ✓ |
+
+- **(+) Selection rule confirmed.** The chiral T(2,5) character **produces negative
+  signs** (`[4,1]`, `[2,1,1,1]`) — exactly what every positive/KL ansatz structurally
+  **cannot** (`SelectionRules.nonneg_sum_ne_neg_target`). The parity-allowed
+  `T(2, odd)` class is genuinely capable of the mixed sign; the chirality selection
+  rule (Finding 6) is vindicated on a live case.
+- **(−) Raw identification pruned (scope-(a)).** The bare T(2,5) character is **not**
+  the exact Δ_λ sign map (4/7 mismatch, incl. two degenerate zeros at the [3,2]/[2,2,1]
+  conjugate pair). The exact chiral combiner is elsewhere (a framing/writhe-corrected
+  trace or a signed sub-braid). Choosing a framing to fix the signs would be a **fit**
+  (Δ_λ gate), so it is **not** done — the honest result is: chirality is the right
+  *class*, this specific trace is not the *map*. Magnitude `|Δ_λ| = dim` untouched
+  (Track A open).
+
+This is the disciplined version of "try the same analysis on the strong force":
+the parity engine transfers (chiral ⇒ mixed sign possible), the naive
+`T(2,5) = Δ_λ` identification does not survive contact with the Lean target.
+
 ## Disposition
 
 - Correction banner on `q-beta-c3-continuum-geometry.md`; corrective docstring
