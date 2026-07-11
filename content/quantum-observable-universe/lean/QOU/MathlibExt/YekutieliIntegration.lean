@@ -83,12 +83,13 @@ theorem holonomy_reverse_map_inv [Group G] (segs : List G) :
 
     Assign group elements `h₀, h₁, h₂, h₃` to the four vertices of a square
     and take the connection to be *exact / pure gauge*: the transport along
-    the edge from vertex `i` to vertex `j` is `hⱼ * hᵢ⁻¹` (a discrete
+    the edge from vertex `i` to vertex `j` is `hᵢ * hⱼ⁻¹` (a discrete
     gradient).  The boundary holonomy of the square loop
     `v₀ → v₁ → v₂ → v₃ → v₀` is the ordered product of the four edge
-    transports. -/
+    transports, listed in path order (the first edge `v₀ → v₁` leftmost, per
+    the `holonomy` convention). -/
 def loopHolonomyPureGauge [Group G] (h₀ h₁ h₂ h₃ : G) : G :=
-  holonomy [h₀ * h₃⁻¹, h₃ * h₂⁻¹, h₂ * h₁⁻¹, h₁ * h₀⁻¹]
+  holonomy [h₀ * h₁⁻¹, h₁ * h₂⁻¹, h₂ * h₃⁻¹, h₃ * h₀⁻¹]
 
 /-- **Flatness of a pure-gauge connection** — the discrete non-abelian
     `d² = 0` / Stokes flatness: an exact (pure-gauge) connection has trivial
