@@ -59,7 +59,7 @@ equation, not an assumption. -/
 theorem phi_b_zero [h : FaddeevPhi b Φ] {z : ℂ}
     (hz : Complex.exp (2 * (Real.pi : ℂ) * b * z) = -1) :
     Φ (z - I * (b / 2)) = 0 := by
-  rw [h.shift_b z, hz]; ring
+  rw [h.shift_b z, hz]; simp
 
 /-- **Derived zero locus (`1/b`-lattice).** The modular-dual companion of
 `phi_b_zero`, from the `1/b`-shift axiom. The two lattices together are the
@@ -67,7 +67,7 @@ theorem phi_b_zero [h : FaddeevPhi b Φ] {z : ℂ}
 theorem phi_binv_zero [h : FaddeevPhi b Φ] {z : ℂ}
     (hz : Complex.exp (2 * (Real.pi : ℂ) * z / b) = -1) :
     Φ (z - I / (2 * b)) = 0 := by
-  rw [h.shift_binv z, hz]; ring
+  rw [h.shift_binv z, hz]; simp
 
 /-- **Ratio form of the `b`-shift** (where `Φ` does not vanish): the defining
 quotient `Φ_b(z - ib/2) / Φ_b(z + ib/2) = 1 + e^{2π b z}`. -/
