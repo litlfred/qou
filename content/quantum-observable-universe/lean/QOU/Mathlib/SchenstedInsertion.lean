@@ -497,3 +497,22 @@ theorem strictBelow_append_upper {upper lower : List ℕ} {x : ℕ}
   have heq : (upper ++ [x]).getD j 0 = upper.getD j 0 := by
     simp [List.getD_eq_getElem?_getD, List.getElem?_append_left hju]
   rw [heq]; exact hlt j hj
+
+/-- **Lowering an upper entry preserves `StrictBelow`**: replacing `upper[k]` by
+a strictly smaller `x` keeps every column comparison (the changed column only
+gets smaller above).  This is the bump case's effect on the upper row
+(`rowInsert` writes `x < y` at the bump index). -/
+theorem strictBelow_set_smaller {upper lower : List ℕ} {k x : ℕ}
+    (h : StrictBelow upper lower) (hk : x < upper.getD k 0) :
+    StrictBelow (upper.set k x) lower := by
+  obtain ⟨hlen, hlt⟩ := h
+  refine ⟨by simpa using hlen, fun j hj => ?_⟩
+  by_cases hjk : k = j
+  · subst hjk
+    have hju : k < upper.length := lt_of_lt_of_le hj hlen
+    have hset : (upper.set k x).getD k 0 = x := by
+      simp [List.getD_eq_getElem?_getD, hju]
+    rw [hset]; exact lt_trans hk (hlt k hj)
+  · have hset : (upper.set k x).getD j 0 = upper.getD j 0 := by
+      simp [List.getD_eq_getElem?_getD, List.getElem?_set_ne hjk]
+    rw [hset]; exact hlt j hj
