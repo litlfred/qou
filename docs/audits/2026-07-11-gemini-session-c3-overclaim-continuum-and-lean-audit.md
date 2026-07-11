@@ -218,9 +218,17 @@ chirality sign is a residue of the **non-semisimple cyclotomic limit** (the fibr
 combinations (`SelectionRules.nonneg_sum_ne_neg_target`) and re-framed traces (`θ_λ>0`,
 Finding 7) alike. This is the **same fibre-vs-archimedean split** the c₃ story lives in
 (AGENTS.md Im(q) banner): both the weak (c₃) and strong (Δ_λ) chirality obstructions sit
-at the fibre, not the substrate. **Open (not claimed):** the exact chiral operator whose
-per-λ character realizes `q^{2n(λ)}`, and the magnitude `|Δ_λ| = dim`. This **locates**
-the sign; it does not derive Δ_λ (Track A / Subgoal-2 remain gated).
+at the fibre, not the substrate.
+
+**Narrowing the carrier (formalize-first, keeps it honest).** `q^{2n(λ)}` is a genuine
+**central character** of H_n(q) — the JM content multiset `{q^{2c(box)}}` determines λ
+(no collision, verified n≤10), so it is realizable by a Jucys–Murphy symmetric-function
+element, not merely the abstract central idempotent. It is **not the full twist**
+(`θ_λ = q^{2(n(λ')−n(λ))} ≠ q^{2n(λ)}`), so the operator is a distinct **half-twist-class**
+central element. **Still open (not claimed):** the exact canonical braid form of that
+element, and the **magnitude** `|Δ_λ| = dim`. This **locates and narrows** the sign
+carrier; it does not derive Δ_λ (Track A / Subgoal-2 remain gated). The exact-form +
+magnitude hunt is genuinely hard and is left as gated Track-A work, not fished here.
 
 ## Disposition
 
