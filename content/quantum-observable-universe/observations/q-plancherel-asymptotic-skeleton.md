@@ -13,5 +13,5 @@ $$
 2. *(Variance bound at generic $q$.) Character fluctuations have variance $O(1/\sqrt{n - 3})$* [`feray2010`].
 3. *(Limit identification, conjectural.) For $q \neq 1$, $\{\mu_n^{(q)}\}$ converges weakly to $\mu_\infty^{(q)}$. We identify $\mu_\infty^{(q)}$ with a measure on $\pi_{\mathrm{GNS}}(H_\infty(q))$.*
 
-**Established results.** Parts (1) and (2) hold. We formalized the Féray–Méliot CLT in `QPlancherel.lean`.
+**Established results.** Parts (1) and (2) hold.
 **Conjectural results.** Part (3) isolates two open problems: q-deformed Kerov–Vershik convergence and operator-algebra realisation.

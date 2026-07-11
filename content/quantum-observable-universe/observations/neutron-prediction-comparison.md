@@ -10,6 +10,3 @@ We compare this against observed isotopes across 103 elements:
 See [Table](#tbl:neutron-prediction-comparison-table-data).
 
 The mean discrepancy is $\overline{|\Delta n|} = 1.7$. The maximum discrepancy $|\Delta n| = 8$ occurs at $p = 102$ and $p = 103$.
-
-**Formal witness.**
-The Lean theorem `stable_neutron_max_error` verifies $|\Delta n| \leq 8$.

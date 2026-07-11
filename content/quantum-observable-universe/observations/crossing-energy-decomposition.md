@@ -44,5 +44,3 @@ $$
 $$
 
 This Archimedean evaluation of the Hecke datum seeds the Kashaev volume realization ([Kashaev as Archimedean realisation](#rem:kashaev-as-archimedean-realization)). The limit $N \to \infty$ of the colored Jones polynomial integrates these lengths into the knot volume. The symmetric $\cosh$ and antisymmetric $\sinh$ channels denote the real and rotational parts.
-
-We formalized these identities in Lean (`q_pow_eq_cosh_add_sinh`, `two_sinh_nat_log`, `qbracket_eq_sinh_ratio`) for $q > 0$.
