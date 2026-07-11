@@ -1,0 +1,264 @@
+import Mathlib.Topology.Algebra.InfiniteSum.NatInt
+import Mathlib.Topology.Algebra.InfiniteSum.Constructions
+import QOU.MathlibExt.FaddeevQuantumDilogarithm
+
+/-!
+# The modular-double product `phiBProd` — a `FaddeevPhi` inhabitant (Im b² > 0)
+
+Discharges the `FaddeevPhi` conjecture-class on the **product-supported
+substrate branch**: for `Im b² > 0` (in particular the substrate b-map
+`b = √(ln q₀ / 2π)·e^{iπ/4}`, PR #3540) the Faddeev `Φ_b` equals the
+modular-double product
+
+$$\Phi_b(z) \;=\; \frac{\prod_{k\ge 0}\bigl(1 + e^{i\pi b^2(2k+1)}e^{2\pi bz}\bigr)}
+                       {\prod_{k\ge 0}\bigl(1 + e^{-i\pi b^{-2}(2k+1)}e^{2\pi z/b}\bigr)},$$
+
+verified against the contour integral to `1e-39` at both anchors
+(`computations/qbeta/phi-b-substrate-regime.witness.json`, battery S5).  Here
+the product is formalized as a `tprod` and **both modular-double shift
+equations are proved by index re-shifting** — the infinite-product limit of the
+`qPochProd_add` cocycle argument of the finite backbone (PR #3500) — yielding
+`FaddeevPhi b (phiBProd b)` under explicit `Multipliable` hypotheses.
+
+**Hypothesis discipline (§3b-cond style).** The two `Multipliable` inputs are
+the *analytic* convergence facts (geometric bounds `|q|^k`, `|q̃|^k` for
+`Im b² > 0`).  Their Mathlib discharge needs the norm→`Multipliable` bridge
+(`Mathlib.Analysis.SpecialFunctions.Complex.LogBounds` cone), which is outside
+the current sandbox olean cone — they are therefore carried as **explicit named
+hypotheses** on `faddeevPhi_phiBProd`, not axiomatized and not `sorry`'d.  The
+algebraic content (factor shift identities + telescoping + the guarded dual
+shift) is proved unconditionally.  Route decision + follow-up:
+`docs/audits/2026-07-11-phib-lean-route-memo.md`.
+
+-- Ref: [faddeev1995] Faddeev, Lett. Math. Phys. 34 (1995) 249.
+--        https://doi.org/10.1007/BF01872779
+-- Ref: [manuscript] docs/audits/2026-07-11-phib-lean-route-memo.md
+-/
+
+namespace QOU.MathlibExt.PhiBProd
+
+open Complex
+open QOU.MathlibExt.FaddeevQuantumDilogarithm
+
+noncomputable section
+
+/-- Numerator (compact-half) factor `1 + q^{2k+1}·e^{2πbz}`, `q = e^{iπb²}`,
+written additively in the exponent. -/
+def numFactor (b z : ℂ) (k : ℕ) : ℂ :=
+  1 + Complex.exp ((Real.pi : ℂ) * I * b ^ 2 * (2 * (k : ℂ) + 1)
+        + 2 * (Real.pi : ℂ) * b * z)
+
+/-- Even-exponent variant `1 + q^{2k}·e^{2πbz}` — the numerator family after a
+`−ib/2` shift of `z`; its `k = 0` term is the shift prefactor `1 + e^{2πbz}`. -/
+def numEven (b z : ℂ) (k : ℕ) : ℂ :=
+  1 + Complex.exp ((Real.pi : ℂ) * I * b ^ 2 * (2 * (k : ℂ))
+        + 2 * (Real.pi : ℂ) * b * z)
+
+/-- Denominator (modular-dual-half) factor `1 + q̃^{2k+1}·e^{2πz/b}`,
+`q̃ = e^{-iπ/b²}`. -/
+def denFactor (b z : ℂ) (k : ℕ) : ℂ :=
+  1 + Complex.exp (-((Real.pi : ℂ) * I) / b ^ 2 * (2 * (k : ℂ) + 1)
+        + 2 * (Real.pi : ℂ) * z / b)
+
+/-- Even-exponent dual variant `1 + q̃^{2k}·e^{2πz/b}`; its `k = 0` term is the
+dual shift prefactor `1 + e^{2πz/b}`. -/
+def denEven (b z : ℂ) (k : ℕ) : ℂ :=
+  1 + Complex.exp (-((Real.pi : ℂ) * I) / b ^ 2 * (2 * (k : ℂ))
+        + 2 * (Real.pi : ℂ) * z / b)
+
+/-- **The modular-double product.**  On `Im b² > 0` both halves converge
+geometrically and this equals the Faddeev contour integral (battery S5). -/
+def phiBProd (b z : ℂ) : ℂ :=
+  (∏' k, numFactor b z k) / (∏' k, denFactor b z k)
+
+end
+
+/-! ## Index shift: `∏' f = f 0 · ∏' f ∘ succ` at monoid level
+
+Mathlib's `Multipliable.tprod_eq_zero_mul` needs `CommGroup`; `ℂ` under `·` is
+only a monoid (zero).  The split-off-one-factor identity is rebuilt here from
+the `CommMonoid`-level pieces (`tprod_mul_tprod_compl`, `tprod_singleton`,
+`Equiv.tprod_eq`). -/
+
+/-- `ℕ ≃ ({0}ᶜ : Set ℕ)` by `k ↦ k + 1`. -/
+def succEquivCompl : ℕ ≃ ({0}ᶜ : Set ℕ) where
+  toFun k := ⟨k + 1, by simp⟩
+  invFun x := x.1 - 1
+  left_inv k := by simp
+  right_inv x := by
+    obtain ⟨n, hn⟩ := x
+    have hn0 : n ≠ 0 := by simpa using hn
+    exact Subtype.ext (Nat.succ_pred_eq_of_ne_zero hn0)
+
+/-- Split off the `k = 0` factor of a `tprod` over `ℕ`, assuming the shifted
+tail is multipliable (monoid-level replacement for `tprod_eq_zero_mul`). -/
+theorem tprod_eq_zero_mul_succ {f : ℕ → ℂ} (hf : Multipliable fun k => f (k + 1)) :
+    ∏' k, f k = f 0 * ∏' k, f (k + 1) := by
+  classical
+  have hshift : (fun k : ℕ => f ((succEquivCompl k : ℕ))) = fun k => f (k + 1) := rfl
+  have hg : Multipliable fun x : ({0}ᶜ : Set ℕ) => f x := by
+    rw [← succEquivCompl.multipliable_iff]
+    exact hf
+  have hs : Multipliable fun x : ({0} : Set ℕ) => f x :=
+    (hasProd_unique _).multipliable
+  have key := hs.tprod_mul_tprod_compl hg
+  have hsingle : (∏' x : ({0} : Set ℕ), f x) = f 0 := tprod_singleton 0 f
+  have hcompl : (∏' x : ({0}ᶜ : Set ℕ), f x) = ∏' k, f (k + 1) := by
+    rw [← succEquivCompl.tprod_eq (fun x : ({0}ᶜ : Set ℕ) => f x), hshift]
+  rw [hsingle, hcompl] at key
+  exact key.symm
+
+/-! ## Factor shift identities (pure exponent algebra) -/
+
+variable {b z : ℂ}
+
+lemma numFactor_shift_down (b z : ℂ) (k : ℕ) :
+    numFactor b (z - I * (b / 2)) k = numEven b z k := by
+  unfold numFactor numEven
+  exact congrArg (fun E => 1 + Complex.exp E) (by ring)
+
+lemma numFactor_shift_up (b z : ℂ) (k : ℕ) :
+    numFactor b (z + I * (b / 2)) k = numEven b z (k + 1) := by
+  unfold numFactor numEven
+  refine congrArg (fun E => 1 + Complex.exp E) ?_
+  push_cast
+  ring
+
+lemma numEven_zero (b z : ℂ) :
+    numEven b z 0 = 1 + Complex.exp (2 * (Real.pi : ℂ) * b * z) := by
+  unfold numEven
+  refine congrArg (fun E => 1 + Complex.exp E) ?_
+  push_cast
+  ring
+
+lemma denFactor_shift_b_invariant (hb0 : b ≠ 0) (z : ℂ) (k : ℕ) :
+    denFactor b (z - I * (b / 2)) k = denFactor b (z + I * (b / 2)) k := by
+  unfold denFactor
+  have hminus : -((Real.pi : ℂ) * I) / b ^ 2 * (2 * (k : ℂ) + 1)
+      + 2 * (Real.pi : ℂ) * (z - I * (b / 2)) / b
+      = (-((Real.pi : ℂ) * I) / b ^ 2 * (2 * (k : ℂ) + 1)
+          + 2 * (Real.pi : ℂ) * z / b) + -((Real.pi : ℂ) * I) := by
+    field_simp
+    ring
+  have hplus : -((Real.pi : ℂ) * I) / b ^ 2 * (2 * (k : ℂ) + 1)
+      + 2 * (Real.pi : ℂ) * (z + I * (b / 2)) / b
+      = (-((Real.pi : ℂ) * I) / b ^ 2 * (2 * (k : ℂ) + 1)
+          + 2 * (Real.pi : ℂ) * z / b) + (Real.pi : ℂ) * I := by
+    field_simp
+    ring
+  rw [hminus, hplus]
+  simp [Complex.exp_add, Complex.exp_neg, Complex.exp_pi_mul_I]
+
+lemma numFactor_shift_binv_invariant (hb0 : b ≠ 0) (z : ℂ) (k : ℕ) :
+    numFactor b (z - I / (2 * b)) k = numFactor b (z + I / (2 * b)) k := by
+  unfold numFactor
+  have hminus : (Real.pi : ℂ) * I * b ^ 2 * (2 * (k : ℂ) + 1)
+      + 2 * (Real.pi : ℂ) * b * (z - I / (2 * b))
+      = ((Real.pi : ℂ) * I * b ^ 2 * (2 * (k : ℂ) + 1)
+          + 2 * (Real.pi : ℂ) * b * z) + -((Real.pi : ℂ) * I) := by
+    field_simp
+    ring
+  have hplus : (Real.pi : ℂ) * I * b ^ 2 * (2 * (k : ℂ) + 1)
+      + 2 * (Real.pi : ℂ) * b * (z + I / (2 * b))
+      = ((Real.pi : ℂ) * I * b ^ 2 * (2 * (k : ℂ) + 1)
+          + 2 * (Real.pi : ℂ) * b * z) + (Real.pi : ℂ) * I := by
+    field_simp
+    ring
+  rw [hminus, hplus]
+  simp [Complex.exp_add, Complex.exp_neg, Complex.exp_pi_mul_I]
+
+lemma denFactor_shift_down (hb0 : b ≠ 0) (z : ℂ) (k : ℕ) :
+    denFactor b (z - I / (2 * b)) k = denEven b z (k + 1) := by
+  unfold denFactor denEven
+  refine congrArg (fun E => 1 + Complex.exp E) ?_
+  push_cast
+  field_simp
+  ring
+
+lemma denFactor_shift_up (hb0 : b ≠ 0) (z : ℂ) (k : ℕ) :
+    denFactor b (z + I / (2 * b)) k = denEven b z k := by
+  unfold denFactor denEven
+  refine congrArg (fun E => 1 + Complex.exp E) ?_
+  field_simp
+  ring
+
+lemma denEven_zero (b z : ℂ) :
+    denEven b z 0 = 1 + Complex.exp (2 * (Real.pi : ℂ) * z / b) := by
+  unfold denEven
+  refine congrArg (fun E => 1 + Complex.exp E) ?_
+  push_cast
+  ring
+
+/-! ## Telescoped product identities -/
+
+/-- Numerator telescoping under the `b`-shift: the `−ib/2` product carries one
+extra factor — exactly the shift prefactor. -/
+theorem tprod_num_shift (b z : ℂ)
+    (hmul : Multipliable (numFactor b (z + I * (b / 2)))) :
+    (∏' k, numFactor b (z - I * (b / 2)) k)
+      = (1 + Complex.exp (2 * (Real.pi : ℂ) * b * z))
+        * ∏' k, numFactor b (z + I * (b / 2)) k := by
+  have hdown : (fun k => numFactor b (z - I * (b / 2)) k) = numEven b z :=
+    funext (numFactor_shift_down b z)
+  have hup : (fun k => numFactor b (z + I * (b / 2)) k)
+      = fun k => numEven b z (k + 1) := funext (numFactor_shift_up b z)
+  have hmul' : Multipliable fun k => numEven b z (k + 1) := hup ▸ hmul
+  calc (∏' k, numFactor b (z - I * (b / 2)) k)
+      = ∏' k, numEven b z k := by rw [hdown]
+    _ = numEven b z 0 * ∏' k, numEven b z (k + 1) := tprod_eq_zero_mul_succ hmul'
+    _ = (1 + Complex.exp (2 * (Real.pi : ℂ) * b * z))
+        * ∏' k, numFactor b (z + I * (b / 2)) k := by rw [numEven_zero, hup]
+
+/-- Denominator telescoping under the `1/b`-shift: the `+i/(2b)` product
+carries the extra dual prefactor. -/
+theorem tprod_den_shift (hb0 : b ≠ 0) (z : ℂ)
+    (hmul : Multipliable (denFactor b (z - I / (2 * b)))) :
+    (∏' k, denFactor b (z + I / (2 * b)) k)
+      = (1 + Complex.exp (2 * (Real.pi : ℂ) * z / b))
+        * ∏' k, denFactor b (z - I / (2 * b)) k := by
+  have hdown : (fun k => denFactor b (z - I / (2 * b)) k)
+      = fun k => denEven b z (k + 1) := funext (denFactor_shift_down hb0 z)
+  have hup : (fun k => denFactor b (z + I / (2 * b)) k) = denEven b z :=
+    funext (denFactor_shift_up hb0 z)
+  have hmul' : Multipliable fun k => denEven b z (k + 1) := hdown ▸ hmul
+  calc (∏' k, denFactor b (z + I / (2 * b)) k)
+      = ∏' k, denEven b z k := by rw [hup]
+    _ = denEven b z 0 * ∏' k, denEven b z (k + 1) := tprod_eq_zero_mul_succ hmul'
+    _ = (1 + Complex.exp (2 * (Real.pi : ℂ) * z / b))
+        * ∏' k, denFactor b (z - I / (2 * b)) k := by rw [denEven_zero, hdown]
+
+/-! ## The class instance -/
+
+/-- **`phiBProd` inhabits `FaddeevPhi`** (given the two analytic convergence
+facts as explicit hypotheses — see the module docstring).  This turns the
+conjecture-class into a theorem-class on the product-supported branch: the
+open content that remains is (a) the `Multipliable` discharge (geometric
+bounds, `Im b² > 0`) and (b) the `|q| = 1` fibre regime, where the product
+diverges and only the contour integral defines `Φ_b`. -/
+theorem faddeevPhi_phiBProd (b : ℂ) (hb : 0 < b.re)
+    (hnum : ∀ w : ℂ, Multipliable (numFactor b w))
+    (hden : ∀ w : ℂ, Multipliable (denFactor b w)) :
+    FaddeevPhi b (phiBProd b) := by
+  have hb0 : b ≠ 0 := by
+    intro h
+    rw [h] at hb
+    simp at hb
+  refine ⟨hb, ?_, ?_⟩
+  · -- b-shift: numerator telescopes, denominator invariant.
+    intro z
+    have hden_eq : (fun k => denFactor b (z - I * (b / 2)) k)
+        = fun k => denFactor b (z + I * (b / 2)) k :=
+      funext (denFactor_shift_b_invariant hb0 z)
+    unfold phiBProd
+    rw [hden_eq, tprod_num_shift b z (hnum _), mul_div_assoc]
+  · -- 1/b-shift (guarded): numerator invariant, denominator telescopes.
+    intro z hpre
+    have hnum_eq : (fun k => numFactor b (z - I / (2 * b)) k)
+        = fun k => numFactor b (z + I / (2 * b)) k :=
+      funext (numFactor_shift_binv_invariant hb0 z)
+    unfold phiBProd
+    rw [hnum_eq, tprod_den_shift hb0 z (hden _)]
+    rw [eq_comm, mul_div_assoc']
+    exact (mul_div_mul_left _ _ hpre).symm ▸ rfl
+
+end QOU.MathlibExt.PhiBProd
