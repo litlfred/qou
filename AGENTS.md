@@ -814,10 +814,25 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
     geometric-realization construction** — the differential-geometry /
     WRT(S³/2I) build of the `W_λ` index (see
     [`docs/coordination/s5-so3-keystone.md`](docs/coordination/s5-so3-keystone.md)).
-    That specific geometric `W_λ` build is **in scope**. The reversal is
-    narrow: it does **not** reopen fit-based q_0 derivation, and the `Δ_λ`
-    "no seventh fit-based ansatz" rule below **still stands**; any other
-    Subgoal-2 work still needs explicit owner sign-off.
+    That specific geometric `W_λ` build was the first item brought in scope.
+    *(Superseded in breadth by the 2026-07-11 general reversal below.)*
+  - **🟧 GENERAL owner reversal — Subgoal-2 open for all (2026-07-11).** The
+    owner reversed the 2026-05-08 decline **generally**: the geometric /
+    substrate-derivation routes to the Subgoal-2 targets (absolute
+    m_p / m_n / m_⁴He; substrate-derivation of q_0; the per-isotope binding
+    `M_n(K)` edge-set / coordination-graph closure; the s5-so3 keystone) are
+    now **in scope for all agents** — no longer owner-gated, no per-item
+    sign-off required. Context: the qou-v0yw binding-weight closure (the
+    M₃/M₄ weights of `conj:binding-manybody-eq-jet-filtration`) was blocked
+    *only* by this gate plus the anti-fit rule; the gate is now lifted.
+    **The anti-fit / anti-laundering honesty discipline is ORTHOGONAL to this
+    scope gate and STILL STANDS:** the `Δ_λ` "no seventh fit-based ansatz"
+    rule (below), the §"Axiomatization is NOT a Proof" anti-laundering rule,
+    and "sorry-free ≠ derived" all remain in force. "Open for all" grants
+    permission to *pursue and derive*, not to pass a fit off as a derivation
+    or wire an anchor-inverted `wₙ(K)` to production as canonical. Full
+    ruling: [`docs/audits/2026-07-11-subgoal2-owner-reversal-open-for-all.md`](docs/audits/2026-07-11-subgoal2-owner-reversal-open-for-all.md);
+    [`docs/precision-goals.md`](docs/precision-goals.md).
 
 **Δ_λ gate (Track A blocker).** The per-isotope binding-energy
 formula `B(K) = m_e · Σ_λ y_λ χ^λ Δ_λ` requires per-partition Δ_λ
