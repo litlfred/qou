@@ -38,8 +38,11 @@ import mpmath as mp
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
 _ROOT = os.path.abspath(os.path.join(_HERE, "..", ".."))
-for _p in (_ROOT, os.path.join(_ROOT, "tools", "qou-substrate", "python"),
-           os.path.join(_ROOT, "computations", "qbeta")):
+# Add `computations` (for `substrate.codata_constants`) and the tools path (for
+# `qou_substrate`). The script's own dir (`computations/qbeta`, for `qbeta_utils`)
+# is auto-added by Python on direct execution, so it is not inserted here.
+for _p in (os.path.join(_ROOT, "computations"),
+           os.path.join(_ROOT, "tools", "qou-substrate", "python")):
     if _p not in sys.path:
         sys.path.insert(0, _p)
 
@@ -55,7 +58,7 @@ def main():
     mp.mp.dps = 50
     from qou_substrate.constants import q_at, q_muon_at
     from qbeta_utils import substrate_ladder_quantities, c3_target_at
-    from computations.substrate import codata_constants as C
+    from substrate import codata_constants as C
 
     me = mp.mpf(str(C.M_E_MEV))
     Qcod = mp.mpf(str(C.Q_BETA_MEV))
@@ -79,8 +82,6 @@ def main():
     swing = float((c3_p / c3_m - 1) * 100)
 
     # 10/3 writhe-ratio identity is REAL (structural piece kept).
-    q = mp.mpf('1.3')  # any q != 1; the limit is 10/3 but check the ratio -> 10/3 as q->1
-    ratio_near1 = float((mp.mpf('1') ** 0))  # placeholder; symbolic check below
     from sympy import symbols, limit, Rational, simplify
     qs = symbols('q', positive=True)
     r = (qs ** 10 - qs ** -10) / (qs ** 3 - qs ** -3)

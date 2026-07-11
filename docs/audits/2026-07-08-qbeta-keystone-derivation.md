@@ -7,7 +7,7 @@
 > **2.3% proton**), **not** an exact derivation of `c₃`; it fails the registry §8
 > cross-anchor guard and contradicts the authoritative registry §3 (`c₃`
 > EMPIRICAL/REFUTED as real-q). The structural pieces are real and kept
-> (`−Vol(4₁)` = solved bar-even part; `10/3 = lim[10]_q/[3]_q` writhe ratio), but
+> (`−Vol(4₁)` = solved bar-even part; `10/3 = lim_{q→1}[10]_q/[3]_q` writhe ratio), but
 > the anchor-swinging remainder (CAL-2 S-leak) is **Subgoal-2**. The Lean
 > `QBetaKeystoneInteraction.lean` *defines* `c_3_keystone` and unfolds it (an
 > axiomatized definition, not a derivation — AGENTS.md §"Axiomatization is NOT a
