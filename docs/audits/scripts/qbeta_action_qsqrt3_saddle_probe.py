@@ -94,20 +94,23 @@ def main():
     c = [coef[2 + k] for k in range(K)]
 
     tp = 2 * mp.pi
-    torsions = [(mp.mpf(0), ""), (mp.mpf(1) / 4, "3^(n/4)"),
-                (mp.mpf(1) / 2, "3^(n/2)"), (mp.mpf(1), "3^n"),
-                (-mp.mpf(1) / 2, "3^(-n/2)")]
+    torsions = [(mp.mpf(0), ""), (mp.mpf(1) / 4, "3^(m/4)"),
+                (mp.mpf(1) / 2, "3^(m/2)"), (mp.mpf(1), "3^m"),
+                (-mp.mpf(1) / 2, "3^(-m/2)")]
     any_rational = False
     ratios = []
-    print("  PSLQ ℚ(√−3) test of ladder coeff c_n (raw and Ohtsuki-rescaled):")
-    for n in range(1, K):
-        if n >= 2:
-            ratios.append(float(c[n] / c[n - 1]))
+    # c[k] is the coefficient of 1/N^(k+1); label it c_m with the physical index
+    # m = k+1 so the 1/N^1 coefficient (c_1) is tested and labels are honest.
+    print("  PSLQ ℚ(√−3) test of ladder coeff c_m = [1/N^m] (raw and Ohtsuki-rescaled):")
+    for k in range(K):
+        m = k + 1
+        if k >= 1:
+            ratios.append(float(c[k] / c[k - 1]))
         hit = None
-        for form, val in (("c_n", c[n]),
-                          ("c_n·n!·(2π)^n", c[n] * mp.factorial(n) * tp ** n)):
+        for form, val in (("c_m", c[k]),
+                          ("c_m·m!·(2π)^m", c[k] * mp.factorial(m) * tp ** m)):
             for a, tag in torsions:
-                q = is_rational(val * mp.mpf(3) ** (a * n))
+                q = is_rational(val * mp.mpf(3) ** (a * m))
                 if q is not None:
                     hit = (form, tag, q)
                     break
@@ -115,22 +118,22 @@ def main():
                 break
         if hit:
             any_rational = True
-            print(f"    n={n}: {hit[0]}·{hit[1]} = {hit[2]}  RATIONAL")
+            print(f"    c_{m}: {hit[0]}·{hit[1]} = {hit[2]}  RATIONAL")
         else:
-            print(f"    n={n}: c_n = {mp.nstr(c[n], 12)}  — no clean ℚ(√−3) rational")
+            print(f"    c_{m}: {mp.nstr(c[k], 12)}  — no clean ℚ(√−3) rational")
 
     # Confirm the divergent/factorial growth signature (Borel singularity).
-    print(f"  c_n/c_(n-1) ratios (rising ⇒ factorial growth): "
+    print(f"  c_(m)/c_(m-1) ratios (rising ⇒ factorial growth): "
           f"{[round(r, 2) for r in ratios]}")
 
     verdict = (
-        "REFUTED (scope-(a)): the ℚ(√−3) saddle arithmetic of the 4₁ resurgence "
-        "action is NOT recoverable by PSLQ on the numerical Kashaev-ladder "
-        "coefficients. No c_n (n=1..8) is a clean rational under any tested "
-        "torsion normalization 3^{a·n}. Two structural reasons: (1) c_n is a "
-        "divergent resurgent series with factorial growth c_n ~ n!/A^n (A ≈ 0.688, "
-        "the Borel singularity of #3508) — the rescaled c_n·n!·(2π)^n explodes past "
-        "PSLQ's reach; (2) high-n fit coefficients are precision-contaminated. Same "
+        f"REFUTED (scope-(a)): the ℚ(√−3) saddle arithmetic of the 4₁ resurgence "
+        f"action is NOT recoverable by PSLQ on the numerical Kashaev-ladder "
+        f"coefficients. No c_m (m=1..{K}) is a clean rational under any tested "
+        "torsion normalization 3^{a·m}. Two structural reasons: (1) c_m is a "
+        "divergent resurgent series with factorial growth c_m ~ m!/A^m (A ≈ 0.688, "
+        "the Borel singularity of #3508) — the rescaled c_m·m!·(2π)^m explodes past "
+        "PSLQ's reach; (2) high-m fit coefficients are precision-contaminated. Same "
         "entropy-block class as the c_k PSLQ (#3536 P4). ℚ(√−3) IS the 4₁ invariant "
         "trace field (arithmetic home; classical, not in doubt), but the exact "
         "coefficients need the Ohtsuki state-integral saddle recursion, NOT a "
@@ -140,6 +143,12 @@ def main():
         "the exact saddle-recursion cross-check (do NOT wire)."
     )
     print("\nVERDICT:", verdict)
+
+    assertions = [
+        {"name": "vol41_recovered", "passed": bool(vol_rel < mp.mpf(10) ** (-15))},
+        {"name": "no_qsqrt3_rational_identified", "passed": bool(not any_rational)},
+    ]
+    all_passed = all(a["passed"] for a in assertions)
 
     with open(__file__, "rb") as f:
         src = f.read()
@@ -156,6 +165,8 @@ def main():
         "engineVersion": mp.__version__,
         "scriptFile": os.path.basename(__file__),
         "scriptHash": hashlib.sha256(src).hexdigest()[:12],
+        "assertions": assertions,
+        "allPassed": all_passed,
         "result": {
             "vol41_recovered_rel": mp.nstr(vol_rel, 3),
             "c_n": [mp.nstr(x, 12) for x in c],
