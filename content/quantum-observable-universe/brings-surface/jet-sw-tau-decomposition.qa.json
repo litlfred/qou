@@ -8,9 +8,9 @@
     "lean": "../qou/content/quantum-observable-universe/brings-surface/jet-sw-tau-decomposition.lean"
   },
   "source_hashes": {
-    "md": "9b13f24c0745",
+    "md": "b171f53b71fd",
     "ts": "8f26b1dacf49",
-    "lean": "e946e6d57ca4"
+    "lean": "130325ae7f2f"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1254,6 +1254,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "b171f53b71fd",
+          "ts": "8f26b1dacf49"
+        },
+        "result": "pass",
+        "notes": "Salvage re-verify: tau_eq projection split into two hypothesis fields; theorem derives. lean-direct exit 0.",
+        "reviewed_at": "2026-07-11T22:28:43.000Z",
+        "reviewed_sha": "c2dcc5fc700dfff0c6e3cecdcc197bf6c27d3c74",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/lean-proof-vacuity-audit",
+          "agent_skill": "local/lean-proof-vacuity-audit",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-07-11"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1821,5 +1838,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-07T14:26:55.068465Z"
+  "updated_at": "2026-07-11T22:28:43.000Z"
 }

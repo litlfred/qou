@@ -8,8 +8,8 @@
     "lean": "../qou/content/quantum-observable-universe/observations/algebraic-gns-embedding.lean"
   },
   "source_hashes": {
-    "md": "3eacbf46f1e1",
-    "ts": "d12f63286529",
+    "md": "093e754ac8cc",
+    "ts": "1b4bf929c1cd",
     "lean": "28906e4d2699"
   },
   "criteria": {
@@ -1227,6 +1227,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "093e754ac8cc",
+          "ts": "1b4bf929c1cd"
+        },
+        "result": "pass",
+        "notes": "Salvage re-verify (§0a): deleted ∃…,True:=sorry shadow sibling; library gains proved markov_gns_embedding; .ts repointed. lean-direct exit 0.",
+        "reviewed_at": "2026-07-11T22:28:43.000Z",
+        "reviewed_sha": "c2dcc5fc700dfff0c6e3cecdcc197bf6c27d3c74",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/lean-proof-vacuity-audit",
+          "agent_skill": "local/lean-proof-vacuity-audit",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-07-11"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1609,5 +1626,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-07T14:26:56.548903Z"
+  "updated_at": "2026-07-11T22:28:43.000Z"
 }
