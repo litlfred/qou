@@ -1,6 +1,7 @@
 import Mathlib.Data.Complex.Basic
 import Mathlib.Tactic
 import QOU.QBeta.HopfCubicOddCarrier
+import QOU.QBeta.FMapDirectCyclotomic
 
 /-!
 # QOU.QBeta.Zeta4DescentCarrier
@@ -76,5 +77,15 @@ theorem cTotal_at_descent_image : cTotal (-2 : ℂ) = -32 := by
     channel at `ζ₄`). -/
 theorem cTotal_at_descent_image_ne_zero : cTotal (-2 : ℂ) ≠ 0 := by
   rw [cTotal_at_descent_image]; norm_num
+
+/-- **The formal bridge (composed).** Chaining KC17's
+    `uside_parity_descent_iff_zeta4` (`FMapDirectCyclotomic`; descent ⟺ `q²=−1`)
+    with `descent_iff_order_four` (`q²=−1` ⟺ ζ₄): over `ℂ`, the u-side cyclotomic
+    re-basing transports the fibre bar-parity to the `c_k` rungs **iff `q` is a
+    primitive 4th root of unity**. Importing this one file yields the combined
+    statement directly (not just the narrative link). -/
+theorem uside_parity_descent_iff_order_four (q : ℂ) :
+    (∀ k : ℕ, (q ^ 2) ^ k = (-1 : ℂ) ^ k) ↔ (q ^ 4 = 1 ∧ q ^ 2 ≠ 1) := by
+  rw [uside_parity_descent_iff_zeta4, descent_iff_order_four]
 
 end QOU.QBeta
