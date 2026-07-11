@@ -1,8 +1,8 @@
 {
   "engine": "python-exact",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-11T19:12:02.976592+00:00",
-  "commitSha": "441b748642d271946abaa24651605a636e70c716",
+  "computedAt": "2026-07-11T19:29:03.082668+00:00",
+  "commitSha": "d2afbf0c25fe194857122f84e424546f5bd9dc6b",
   "assertions": [
     {
       "name": "c8_superexp_lower_bound_proved",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 10,
   "computation": "keystone-c8-superexp-proof",
   "scriptFile": "keystone_c8_superexp_proof.py",
-  "scriptHash": "cc4afd41f4d8",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "a0b7601840c1",
+  "scriptCommitSha": "d2afbf0c25fe194857122f84e424546f5bd9dc6b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
