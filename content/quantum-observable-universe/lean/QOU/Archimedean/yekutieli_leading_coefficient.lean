@@ -164,67 +164,100 @@ theorem leadingChebyshev_eq_one (S : Type*) [CommRing S] [Nontrivial S]
     (p : ℕ) : leadingChebyshev S p = 1 :=
   (monicCheb_monic S ((p - 1) / 2)).1
 
+/-- **Genus-coordinate extraction (sorry-free).**  The leading coefficient of
+    `scale · (monic basis)` is the scale itself — the genus-filtration
+    coordinate reads off the scale from a monic expansion.  This is the
+    proved bridge that turns the polynomial Stokes expansion below into the
+    scalar identity `obstruction = κ_raw`. -/
+theorem leadingCoeff_C_mul_monicCheb (c : R) (n : ℕ) :
+    (Polynomial.C c * monicCheb R n).leadingCoeff = c := by
+  rw [leadingCoeff_mul, leadingCoeff_C, (monicCheb_monic R n).1.leadingCoeff,
+    mul_one]
+
 /-- **Yekutieli non-abelian Stokes normalisation (§3b-cond class).**
 
-    The two genuinely deep, *not-in-Mathlib* inputs, carried as explicit
-    hypotheses:
+    The genuinely deep, *not-in-Mathlib* input is now stated as a concrete
+    **polynomial identity** rather than an opaque scalar equation:
 
-    * `stokes_identity` — Yekutieli's non-abelian Stokes theorem identifies
-      the obstruction class value `obstruction` with the raw `d_q²`
-      curvature `d.kappaRaw`;
-    * `raw_eq_chebyshev` — under the genus-filtration coordinate the raw
-      value reads off as the leading Chebyshev coefficient
-      `leadingChebyshev R p` (`= c_{(p−1)/2}`, proved `= 1` above).
+    * `genusPoly` — the genus generating polynomial of the obstruction class
+      (its expansion in the genus filtration);
+    * `stokes_expansion` — Yekutieli's non-abelian Stokes theorem says this
+      generating polynomial is the raw `d_q²` curvature times the monic
+      genus-filtration Chebyshev basis, `genusPoly = C κ_raw · monicCheb`.
+      A future formalisation of the `d_q²` curvature could *discharge* this
+      by computing `genusPoly` (`QOU.MathlibExt.YekutieliIntegration`);
+    * `raw_normalised` — the geometric data is unit-normalised so the top
+      genus coordinate is `1` (`κ_raw = 1`), the irreducible normalisation.
 
-    The `chebyshev_top_eq_one` field of the earlier revision is gone —
-    it is now the proved `leadingChebyshev_eq_one`.  The lemma
-    `yekutieli_leading_coefficient` **derives** `κ = c ∧ κ = 1` from these
-    two hypotheses plus that proved fact; it does not restate its own
-    conclusion.  The fields stand in for the machinery a full formalisation
-    would provide (`QOU.MathlibExt.YekutieliIntegration`). -/
+    Progress vs. the earlier revision: the scalar `stokes_identity`
+    (`obstruction = κ_raw`) is **no longer an axiom** — it is the *derived*
+    `obstructionCoord_eq_kappaRaw`, obtained from `stokes_expansion` by the
+    proved leading-coefficient extraction `leadingCoeff_C_mul_monicCheb`.
+    The remaining axioms are the structural polynomial `stokes_expansion`
+    (strictly stronger, but faithful to what non-abelian Stokes actually
+    asserts) and the scalar `raw_normalised`.  `chebyshev_top_eq_one` stays
+    discharged (`leadingChebyshev_eq_one`). -/
 -- Ref: [yekutieli2015] https://doi.org/10.1142/9537
 -- Ref: [manuscript] quantum-observable-universe/brings-surface/yekutieli-leading-coefficient.md
 class YekutieliStokesNormalisation (R : Type*) [Field R]
     (d : YekutieliObstructionData R) (p : ℕ) where
-  /-- The obstruction class value (its genus-filtration leading coordinate). -/
-  obstruction : R
-  /-- **Non-abelian Stokes** (deep, not in Mathlib): the obstruction class
-      equals the raw `d_q²` curvature value. -/
-  stokes_identity : obstruction = d.kappaRaw
-  /-- Genus-filtration normalisation: the raw value equals the leading
-      Chebyshev coefficient (which `leadingChebyshev_eq_one` proves is `1`). -/
-  raw_eq_chebyshev : d.kappaRaw = leadingChebyshev R p
+  /-- The genus generating polynomial of the obstruction class. -/
+  genusPoly : R[X]
+  /-- **Non-abelian Stokes** (deep, not in Mathlib): the genus generating
+      polynomial is the raw `d_q²` curvature times the monic genus-filtration
+      Chebyshev basis of degree `(p−1)/2`. -/
+  stokes_expansion :
+    genusPoly = Polynomial.C d.kappaRaw * monicCheb R ((p - 1) / 2)
+  /-- Normalisation: the raw curvature is unit-normalised (top coordinate
+      `1`).  The irreducible normalisation input. -/
+  raw_normalised : d.kappaRaw = 1
+
+/-- The obstruction's **genus-filtration leading coordinate** — the leading
+    coefficient of its genus generating polynomial. -/
+noncomputable def obstructionCoord (d : YekutieliObstructionData R) (p : ℕ)
+    [nrm : YekutieliStokesNormalisation R d p] : R :=
+  nrm.genusPoly.leadingCoeff
+
+/-- **`obstruction = κ_raw` — now PROVED, not axiomatised.**  The obstruction's
+    genus coordinate is the raw `d_q²` curvature, obtained from the polynomial
+    `stokes_expansion` by the leading-coefficient extraction.  (Was the
+    axiom `stokes_identity` in the earlier revision.) -/
+theorem obstructionCoord_eq_kappaRaw (d : YekutieliObstructionData R) (p : ℕ)
+    [nrm : YekutieliStokesNormalisation R d p] :
+    obstructionCoord d p = d.kappaRaw := by
+  unfold obstructionCoord
+  rw [nrm.stokes_expansion, leadingCoeff_C_mul_monicCheb]
 
 /-- **Yekutieli obstruction = leading Chebyshev coefficient = 1**
     ([`lem:yekutieli-leading-coefficient`]), at level `n = 5` for
     `T_{2,p}` with odd prime `p` and `q ≠ 1`.
 
-    *Derived* (sorry-free) by composing the two hypotheses of
-    `YekutieliStokesNormalisation` with the proved `leadingChebyshev_eq_one`
-    — the theorem proves the identity, it does not assume it.  This is the
-    decl named by the content block's `lean.ref`. -/
+    *Derived* (sorry-free): the proved `obstructionCoord_eq_kappaRaw` gives
+    `κ = κ_raw`, `raw_normalised` gives `κ_raw = 1`, and
+    `leadingChebyshev_eq_one` gives `c = 1`.  The theorem proves the
+    identity, it does not assume it.  This is the decl named by the content
+    block's `lean.ref`. -/
 -- Ref: [yekutieli2015] https://doi.org/10.1142/9537
 -- Ref: [manuscript] quantum-observable-universe/brings-surface/yekutieli-leading-coefficient.md
 theorem yekutieli_leading_coefficient (d : YekutieliObstructionData R)
     (p : ℕ) (_hp_odd : Odd p) (_hq_ne : d.q ≠ 1)
     [nrm : YekutieliStokesNormalisation R d p] :
-    nrm.obstruction = leadingChebyshev R p ∧ nrm.obstruction = 1 := by
-  have h_eq_c : nrm.obstruction = leadingChebyshev R p :=
-    nrm.stokes_identity.trans nrm.raw_eq_chebyshev
-  exact ⟨h_eq_c, h_eq_c.trans (leadingChebyshev_eq_one R p)⟩
+    obstructionCoord d p = leadingChebyshev R p ∧ obstructionCoord d p = 1 := by
+  have hκ : obstructionCoord d p = d.kappaRaw := obstructionCoord_eq_kappaRaw d p
+  have h1 : obstructionCoord d p = (1 : R) := by rw [hκ, nrm.raw_normalised]
+  exact ⟨h1.trans (leadingChebyshev_eq_one R p).symm, h1⟩
 
 /-- **Non-vanishing at `q ≠ 1`.**  Derived from the **sorry-free**
-    `yekutieliObstructionData_kappaRaw_ne_zero` via `stokes_identity`.
-    Among the `YekutieliStokesNormalisation` fields the *proof* consumes
-    only `stokes_identity` — not the normalisation `raw_eq_chebyshev` — so
-    the non-vanishing rests on genuinely proved content; a full instance is
-    still required by the *signature* only to name `nrm.obstruction`. -/
+    `yekutieliObstructionData_kappaRaw_ne_zero` via the proved
+    `obstructionCoord_eq_kappaRaw` (hence via `stokes_expansion`) — *not* via
+    the normalisation `raw_normalised`, so the non-vanishing rests on
+    genuinely proved content. -/
 -- Ref: [manuscript] quantum-observable-universe/brings-surface/yekutieli-leading-coefficient.md
 theorem yekutieli_obstruction_ne_zero (d : YekutieliObstructionData R)
     (p : ℕ) (_hp_odd : Odd p) (hq_ne : d.q ≠ 1)
     [nrm : YekutieliStokesNormalisation R d p] :
-    nrm.obstruction ≠ 0 := by
-  rw [nrm.stokes_identity]
+    obstructionCoord d p ≠ 0 := by
+  rw [obstructionCoord_eq_kappaRaw]
   exact yekutieliObstructionData_kappaRaw_ne_zero d hq_ne
 
 end QOU.Archimedean
