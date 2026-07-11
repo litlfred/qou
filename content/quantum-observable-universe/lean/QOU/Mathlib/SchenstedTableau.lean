@@ -36,10 +36,6 @@ namespace QOU.Mathlib.Schensted
 
 open YoungDiagram List
 
-/-- The shape list has the same length as the tableau (one entry per row). -/
-theorem shape_length (T : List (List ℕ)) : (tableauShape T).length = T.length := by
-  simp [tableauShape]
-
 /-- Row-length lookup of the shape is the length of that row (out-of-range rows
     are empty on both sides, so this holds unconditionally). -/
 theorem shape_getD (T : List (List ℕ)) (i : ℕ) :
@@ -48,20 +44,23 @@ theorem shape_getD (T : List (List ℕ)) (i : ℕ) :
   rw [List.getD_eq_getElem?_getD, List.getD_eq_getElem?_getD, List.getElem?_map]
   cases T[i]? <;> simp
 
-/-- Membership in the row-length Young diagram, expressed via `getD` on `T`. -/
+/-- Membership in the row-length Young diagram, expressed via `getD` on `T`.
+    Routed through the unconditional `shape_getD` and Mathlib's own `getElem?`
+    lemmas, so it does not depend on the `getD_row_*` case split. -/
 theorem mem_shape_iff {T : List (List ℕ)}
     {hw : (tableauShape T).Sorted (· ≥ ·)} {i j : ℕ} :
     (i, j) ∈ ofRowLens (tableauShape T) hw ↔ j < (T.getD i []).length := by
   rw [mem_ofRowLens]
-  simp only [tableauShape, List.length_map, List.getElem_map]
-  constructor
-  · rintro ⟨hi, hj⟩
-    rwa [getD_row_eq hi]
-  · intro hj
-    have hi : i < T.length := by
-      by_contra hge; push_neg at hge
-      rw [getD_row_past hge] at hj; simp at hj
-    exact ⟨hi, by rwa [← getD_row_eq hi]⟩
+  dsimp only
+  rw [← shape_getD, List.getD_eq_getElem?_getD]
+  refine ⟨fun ⟨hi, hj⟩ => ?_, fun hj => ?_⟩
+  · rwa [List.getElem?_eq_getElem hi, Option.getD_some]
+  · have hi : i < (tableauShape T).length := by
+      rcases Nat.lt_or_ge i (tableauShape T).length with h | h
+      · exact h
+      · rw [List.getElem?_eq_none h, Option.getD_none] at hj
+        exact absurd hj (Nat.not_lt_zero j)
+    exact ⟨hi, by rwa [List.getElem?_eq_getElem hi, Option.getD_some] at hj⟩
 
 /-- The shape list of a column-strict tableau is weakly decreasing, hence a valid
     `ofRowLens` argument. -/
