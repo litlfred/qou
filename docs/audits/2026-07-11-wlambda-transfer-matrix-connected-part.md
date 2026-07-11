@@ -138,8 +138,40 @@ rule `k(A)`** — which jet level a nucleus of mass `A` occupies. If `k(A)` grow
 direction). The probe does **not** set `k(A)` or land magnitudes — it establishes that
 the extensivity is *available* and pins where the remaining derivation must happen.
 
-**Next (compute):** derive/constrain `k(A)` from the drivers (the categorical
-brane-tower level selection, GAP-A-3) — e.g. test whether `k ∝ A` or `k ∝` bond-count
-reproduces the AME `B(A)` scaling, gated by the defect cubic + `f_pn` bracket, no fit.
-The A-operator `A^λ_{μν}(I)` (`wenzl-A-operator.md`) is the operator-valued bond datum;
-its universal (unfitted) form remains the open piece (Track-A, `s5-so3-keystone`).
+## Level-selection `k(A)`: the form is logarithmic (scale-free; naive candidates falsified)
+
+[`wlambda_level_selection_kA_probe.py`](../../computations/deltalambda/wlambda_level_selection_kA_probe.py)
+→ witness tests which **named** structural form `k(A)` the AME binding demands —
+**scale-free** (the overall scale cancels in ratios against ²H; sets no absolute
+magnitude) and with **no ansatz search** (only the four named candidates). Inverting
+the monotonic tower weight `w_std(k)` (extended to `k=10`, exact branching) against the
+AME `B(A)` ratios gives the implied level per nucleus:
+
+| nucleus | ²H | ³H | ³He | ⁴He | ⁶Li | ⁷Li | ⁹Be | ¹²C | ¹⁶O |
+|---|---|---|---|---|---|---|---|---|---|
+| A | 2 | 3 | 3 | 4 | 6 | 7 | 9 | 12 | 16 |
+| `k_implied` | 3.00 | 5.49 | 5.38 | 6.93 | 7.07 | 7.29 | 7.72 | 8.20 | 8.52 |
+
+`A` spans ×8 while `k_implied` spans only ×2.8 — **strongly sub-linear**. Correlations:
+
+| form | `k~log(bonds)` | `k~log A` | `k~A` | `k~bond-count` |
+|---|---|---|---|---|
+| R² | **0.89** | **0.86** | 0.67 | 0.49 |
+
+**The naive `k∝A` and `k∝`bond-count candidates are falsified (a-scope); the demanded
+form is logarithmic** — the arithmetic consequence of `w_std(k)` growing
+super-geometrically (measured ratios `1.37→3.12`, increasing) against ~extensive
+`B∝A`: for `r^k ∝ A` the level must grow `~log A`. (Honest caveat: `log A` and
+`log(bond-count)` are statistically **indistinguishable** here (0.86 vs 0.89,
+near-collinear for these nuclei) — the robust claim is *log-type*, not which log;
+`R²~0.88` not `~1` because the light nuclei sit below the `B/A` saturation.)
+
+So **GAP-A-3 is constrained to a log-type `k(A)`** — a genuine, fit-free narrowing of
+the open object. The probe sets no scale, wires nothing, lands no magnitude.
+
+**Next (derivation, not compute):** the open piece is now sharp — *why* `k(A) ~ log`
+of the mass/bond-count **from the drivers** (the categorical brane-tower level
+selection). That is a structural/formalize-first question (GAP-A-3, Track-A,
+`s5-so3-keystone`), not another numerical probe — a log-depth-vs-size law is the kind
+of statement to prove, not fit. The A-operator `A^λ_{μν}(I)` (`wenzl-A-operator.md`)
+is the operator-valued bond datum whose universal (unfitted) form remains open.
