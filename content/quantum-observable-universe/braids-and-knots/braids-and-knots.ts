@@ -227,6 +227,7 @@ export default chapter({
         "alpha-em-habiro-bar-involution",
         "figure-eight-reeb-rotation",
         "figure-eight-reeb-rotation-proof",
+        "figure-eight-reeb-theta-value",
         "figure-eight-reeb-novelty-note",
         "pion-half-figure-eight",
         "pion-half-figure-eight-proof",
