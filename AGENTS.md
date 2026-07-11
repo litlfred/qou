@@ -805,10 +805,14 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
 - **Subgoal-1 (achievable):** 100× targets ≥ ~780 ppb CAL-2 floor.
   Closure path: per-isotope Borromean-tower extension + operator-
   valued branching combiner.
-- **Subgoal-2 (research-grade, out of scope):** 100× targets <
-  CAL-2 floor (absolute m_p / m_n / m_⁴He). Requires substrate-
-  derivation of q_0, which the coordination ledger explicitly
-  declined on 2026-05-08. Do **not** attempt without owner reversal.
+- **Subgoal-2 (research-grade, now OPEN for all — 2026-07-11):** 100×
+  targets < CAL-2 floor (absolute m_p / m_n / m_⁴He). Requires
+  substrate-derivation of q_0, which the coordination ledger declined
+  on 2026-05-08 — a decline the owner **generally reversed on
+  2026-07-11** (see the general-reversal bullet below). The
+  geometric / substrate-derivation routes are now in scope for all
+  agents; the anti-fit / anti-laundering discipline still gates *how*
+  (a fit is not a derivation), not *whether*.
   - **Narrow owner reversal (2026-06-19, recorded 2026-06-22; PRs #2503 /
     #2524).** The owner reversed this decline **only for the s5-so3 keystone
     geometric-realization construction** — the differential-geometry /
