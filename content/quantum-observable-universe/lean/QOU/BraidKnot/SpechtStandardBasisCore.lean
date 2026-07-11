@@ -1399,8 +1399,9 @@ theorem colStab_swap_mem (t : Specht.Tableau μ) {a b : Fin (Specht.nOf μ)}
   · rw [Equiv.swap_apply_of_ne_of_ne hla hlb]
 
 /-- The row index of any cell of a Young diagram is `< ν.card` (the `i+1` cells
-`(0,0), …, (i,0)` lie in `ν` by down-closure). Local copy — the identical
-`SpechtDominanceCore.row_lt_card` sits *above* this file in the import graph. -/
+`(0,0), …, (i,0)` lie in `ν` by down-closure). Single copy — downstream
+`SpechtDominanceCore` resolves to this declaration through its
+`open QOU.BraidKnot.SpechtStandardBasis`. -/
 theorem row_lt_card (ν : YoungDiagram) (i j : ℕ) (h : (i, j) ∈ ν) : i < ν.card := by
   classical
   have hsub : (Finset.range (i + 1)).image (fun i' => (i', 0)) ⊆ ν.cells := by
@@ -1419,7 +1420,8 @@ theorem row_lt_card (ν : YoungDiagram) (i j : ℕ) (h : (i, j) ∈ ν) : i < ν
     rw [← hcard]; exact Finset.card_le_card hsub
   omega
 
-/-- The row pattern of a tableau is bounded by `nOf μ`. Local copy (see `row_lt_card`). -/
+/-- The row pattern of a tableau is bounded by `nOf μ`. Single copy (see
+`row_lt_card`); serves `SpechtDominanceCore` through its `open`. -/
 theorem rowPattern_lt_nOf (t : Specht.Tableau μ) (l : Fin (Specht.nOf μ)) :
     Specht.rowPattern t l < Specht.nOf μ :=
   row_lt_card μ _ _ (t l).2
