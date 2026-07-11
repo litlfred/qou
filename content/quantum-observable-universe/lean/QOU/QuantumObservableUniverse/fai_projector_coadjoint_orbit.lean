@@ -188,11 +188,7 @@ theorem fai_projector_sigma_det {R : Type*} [Field R] [CharZero R]
     `μ₀ μ₁ = −¼`; hence `{μ₀, μ₁} = {½, −½}`.  In the case `μ = (½, −½)`,
     `diagonal μ = σ₀` and `u = U`; in the case `μ = (−½, ½)`,
     `diagonal μ = P σ₀ P` for the swap permutation `P = !![0,1;1,0]`
-    (unitary), and `u = U · P`.  Either way `σ(ρ) = u · σ₀ · star u`.
-
-    This replaces the previous encoding, which assumed the conclusion via a
-    hypothesis `ρ − ½·id = σ₀` (so `u = 1` worked trivially) — a
-    self-assuming projection forbidden by AGENTS.md §3b-cond. -/
+    (unitary), and `u = U · P`.  Either way `σ(ρ) = u · σ₀ · star u`. -/
 -- Formalised via Mathlib `Matrix.IsHermitian.spectral_theorem` (no `sorry`).
 theorem fai_projector_coadjoint_orbit_orbit
     (ρ : Matrix (Fin 2) (Fin 2) ℂ) (hidem : ρ * ρ = ρ)
