@@ -1,0 +1,136 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-11T11:04:36.453843+00:00",
+  "commitSha": "6f9c59c652ee63efde763d7a6c7366c15ad0cf61",
+  "assertions": [
+    {
+      "name": "derived_qhyperbolic_weight_closes_or_refutes_A3plus",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "worst |err| over ['D', 'T', '3He', '4He'] at 1 global scale; growth vs 12.72. 1=refuted (no zero-fit closure), 0=closes → promote."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "binding-qhyperbolic-weight-probe",
+  "scriptFile": "binding_qhyperbolic_weight_probe.py",
+  "scriptHash": "495bbadab229",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "EXPLORATORY: DERIVED non-compact / q-hyperbolic binding weights (C_λ at √q₀ half-monodromy, √C amplitude, Casimir/q-dim) vs the compact C_λ that refuted. Seeks the AME A-growth 12.72 zero-fit; asserts refutation if none closes to 5%. Full p(3A) sum; no τ/AME fit; no production touch.",
+  "parameters": {
+    "q0_50dps": "1.1099785827513808",
+    "sqrt_q0_50dps": "1.053555211059857460567587228427841614099",
+    "A_growth_target": 12.719631539848084
+  },
+  "data": {
+    "weights": {
+      "C_q0": {
+        "global_scale": 0.004544049625235866,
+        "worst_err": 0.6133943846375032,
+        "S_4He_over_S_D": 34.14968273622174,
+        "per_isotope": {
+          "D": {
+            "B_pred": 0.8600297846656112,
+            "err": -0.6133943846375032
+          },
+          "T": {
+            "B_pred": 4.9226453066736005,
+            "err": -0.41962230751623103
+          },
+          "3He": {
+            "B_pred": 5.287408185162423,
+            "err": -0.3149250861411734
+          },
+          "4He": {
+            "B_pred": 29.369744290031726,
+            "err": 0.03795924176815616
+          }
+        }
+      },
+      "C_sqrtq0": {
+        "global_scale": 0.005157599789434901,
+        "worst_err": 0.5742132347282282,
+        "S_4He_over_S_D": 30.956895520018556,
+        "per_isotope": {
+          "D": {
+            "B_pred": 0.9471908464309176,
+            "err": -0.5742132347282282
+          },
+          "T": {
+            "B_pred": 5.208213864889422,
+            "err": -0.3859539014991398
+          },
+          "3He": {
+            "B_pred": 5.606676240132997,
+            "err": -0.27355840371430457
+          },
+          "4He": {
+            "B_pred": 29.322088070479857,
+            "err": 0.03627501826851936
+          }
+        }
+      },
+      "sqrt_C": {
+        "global_scale": 0.06866797419527326,
+        "worst_err": 0.14232601380454835,
+        "S_4He_over_S_D": 11.136919819246629,
+        "per_isotope": {
+          "D": {
+            "B_pred": 2.5411798396903316,
+            "err": 0.14232601380454835
+          },
+          "T": {
+            "B_pred": 7.631960115646517,
+            "err": -0.10019529641062151
+          },
+          "3He": {
+            "B_pred": 8.3783515892736,
+            "err": 0.08555993641793197
+          },
+          "4He": {
+            "B_pred": 28.300916120917226,
+            "err": 0.00018567230704684266
+          }
+        }
+      },
+      "C_over_dim": {
+        "global_scale": 3.108332588012163,
+        "worst_err": 0.9995199462570723,
+        "S_4He_over_S_D": 0.0035780403111595805,
+        "per_isotope": {
+          "D": {
+            "B_pred": 3.796334714668859,
+            "err": 0.706550569126178
+          },
+          "T": {
+            "B_pred": 0.3388573228066219,
+            "err": -0.9600488723359538
+          },
+          "3He": {
+            "B_pred": 0.3850420301431694,
+            "err": -0.9501111647909861
+          },
+          "4He": {
+            "B_pred": 0.013583438643739683,
+            "err": -0.9995199462570723
+          }
+        }
+      }
+    },
+    "verdict": "REFUTED (scope-(a)): no DERIVED non-compact / q-hyperbolic weight closes the A≥3 binding zero-fit to 5%. The compact C_λ over-grows (S(⁴He)/S(D)=34.15 vs target 12.72); the half-monodromy √q₀ scale gives 30.96; √C gives 11.14; Casimir/q-dim gives 0.00. Structural reason: the binding sum runs over Young-diagram partitions (compact SU_q(2)/S_n objects); a true non-compact Faddeev weight has no partition labelling, and the modular dual q̃ of q₀≈1.11 is non-perturbative (e^{±O(400)}) — explode/collapse, never the moderate 12.72 regime. The Δ_λ / A≥3 binding closure stays OPEN; no 7th fit introduced. Touches no production."
+  }
+}
