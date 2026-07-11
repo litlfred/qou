@@ -74,31 +74,47 @@ theorem double_slit_massive_pattern_classical_envelope
     = Real.pi * a_slit * Real.sin theta / lambda_ := by
   simp [envelope_param, inv_one]
 
-/- For q ≠ 1 the envelope is wider than Fraunhofer by a factor
-    involving (1 − q⁻¹)². This is the main proposition content:
-    the excess width is of order (1 − q⁻¹)², consistent with
-    precision diffraction experiments. -/
+/-- **Massive-particle interference: the envelope is wider than Fraunhofer**
+    in the physical substrate regime `q > 1`.
+
+    The classical (`q = 1`) fringe spacing `λL/a` is strictly smaller than
+    the `q`-corrected envelope half-width
+    `w_q = q²·(λL/a)·(1 + (1 − q⁻¹)²·⟨Δ_ξ⟩/⟨Δ⟩)`, because `q² > 1` and the
+    Reeb-broadening factor `1 + (1 − q⁻¹)²·ratio ≥ 1`. This is the excess
+    width of order `(1 − q⁻¹)²` observed in precision electron/molecular
+    diffraction. Proved directly (no axiom): the previous
+    `double_slit_massive_pattern_axiom` asserted the claim for the wrong
+    regime (`q ≠ 0, q ≠ 1`), where it is in fact false for `q ∈ (0,1)`
+    with small `ratio`. The physical substrate has `q > 1`. -/
 -- Ref: [bach2013] Controlled double-slit electron diffraction — see content/schema/references.ts
-/-- **External axiom (§3b-cond pattern): double_slit_massive_pattern.**
-
-    Auto-extracted from the single-sorry theorem body in this file.
-    Encodes the categorical content pending Mathlib infrastructure
-    or a structure-tightening refactor.
-
-    See the theorem docstring below for the cited reference. -/
-axiom double_slit_massive_pattern_axiom (q : ℝ) (hq : q ≠ 0) (hq1 : q ≠ 1)
+-- Ref: [manuscript] Ch. 7, §double-slit-massive-pattern
+theorem double_slit_massive_pattern (q : ℝ) (hq : q ≠ 0) (hq1 : 1 < q)
     (lambda_ L a_slit : ℝ) (ha : a_slit ≠ 0)
     (hpos : 0 < lambda_ * L / a_slit)
     (ratio_Reeb_spatial : ℝ) (hr : 0 < ratio_Reeb_spatial) :
     fringe_spacing 1 lambda_ L a_slit <
-    envelope_width q hq lambda_ L a_slit ratio_Reeb_spatial
-
-theorem double_slit_massive_pattern (q : ℝ) (hq : q ≠ 0) (hq1 : q ≠ 1)
-    (lambda_ L a_slit : ℝ) (ha : a_slit ≠ 0)
-    (hpos : 0 < lambda_ * L / a_slit)
-    (ratio_Reeb_spatial : ℝ) (hr : 0 < ratio_Reeb_spatial) :
-    fringe_spacing 1 lambda_ L a_slit <
-    envelope_width q hq lambda_ L a_slit ratio_Reeb_spatial :=
-  double_slit_massive_pattern_axiom q hq hq1 lambda_ L a_slit ha hpos ratio_Reeb_spatial hr
+    envelope_width q hq lambda_ L a_slit ratio_Reeb_spatial := by
+  unfold fringe_spacing envelope_width
+  have hq0 : 0 < q := by linarith
+  -- The classical LHS `1·λL/a` and the RHS `q²·λL/a·K` share the factor `λL/a > 0`.
+  have hlhs : (1 : ℝ) * lambda_ * L / a_slit = lambda_ * L / a_slit := by ring
+  have hrhs : q ^ 2 * lambda_ * L / a_slit
+        * (1 + (1 - q⁻¹) ^ 2 * ratio_Reeb_spatial)
+      = (lambda_ * L / a_slit)
+        * (q ^ 2 * (1 + (1 - q⁻¹) ^ 2 * ratio_Reeb_spatial)) := by ring
+  rw [hlhs, hrhs]
+  -- It remains to show `X < X · (q²·K)` with `X > 0` and `q²·K > 1`.
+  have hq2 : 1 < q ^ 2 := by nlinarith
+  have hK0 : 0 ≤ (1 - q⁻¹) ^ 2 * ratio_Reeb_spatial :=
+    mul_nonneg (sq_nonneg _) (le_of_lt hr)
+  have hfac : 1 < q ^ 2 * (1 + (1 - q⁻¹) ^ 2 * ratio_Reeb_spatial) := by
+    have hprod : 0 ≤ q ^ 2 * ((1 - q⁻¹) ^ 2 * ratio_Reeb_spatial) :=
+      mul_nonneg (le_of_lt (by positivity : (0 : ℝ) < q ^ 2)) hK0
+    nlinarith [hq2, hprod]
+  calc lambda_ * L / a_slit
+      = (lambda_ * L / a_slit) * 1 := by ring
+    _ < (lambda_ * L / a_slit)
+          * (q ^ 2 * (1 + (1 - q⁻¹) ^ 2 * ratio_Reeb_spatial)) :=
+        mul_lt_mul_of_pos_left hfac hpos
 
 end QOU.Experimental
