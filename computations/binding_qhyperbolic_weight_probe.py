@@ -42,8 +42,11 @@ from codata_constants import (  # noqa: E402
 
 mp.mp.dps = 40
 HERE = Path(__file__).resolve().parent
-q0 = mpf(str(Q0))
-sqrt_q0 = sqrt(q0)
+# dps is already 40 globally here; the workdps + unary `+` force re-rounding
+# so import-time arithmetic is precision-safe regardless of caller context.
+with mp.workdps(40):
+    q0 = +mpf(str(Q0))
+    sqrt_q0 = +sqrt(q0)
 
 AME_B = {"D": AME_B_DEUTERON_MEV_VALIDATION, "T": AME_B_TRITIUM_MEV_VALIDATION,
          "3He": mpf("7.7180"), "4He": AME_B_HE4_MEV_VALIDATION}
@@ -82,7 +85,7 @@ def dim_q(lam, q):
     prod = mpf(1)
     for h in hooks(lam):
         prod *= q_int(h, q)
-    return mp.factorial(sum(lam)) * mpf(1) / prod if False else prod  # Π[h]_q proxy
+    return prod  # Π[h]_q proxy
 
 
 def content_casimir(lam, q):
@@ -95,12 +98,6 @@ def content_casimir(lam, q):
     return total
 
 
-def load_y(n):
-    d = json.load(open(HERE / "y-lambda-at-q0.witness.json"))
-    byn = d.get("data", d)["by_n"][str(n)]
-    return {tuple(el["partition"]): mpf(el["y_at_q0_50dps"]) for el in byn}
-
-
 def main() -> int:
     weights = ["C_q0", "C_sqrtq0", "sqrt_C", "C_over_dim"]
     S = {w: {} for w in weights}
@@ -109,7 +106,8 @@ def main() -> int:
         path = HERE / fname
         if not path.exists():
             print(f"⚠ missing chi witness {fname}"); continue
-        raw = json.load(open(path))
+        with open(path) as f:
+            raw = json.load(f)
         d = raw["data"] if "data" in raw else raw
         atom = {tuple(el["partition"]): mpf(str(el["chi_lambda"]))
                 for el in d["atom"]["by_partition"]}
@@ -138,8 +136,8 @@ def main() -> int:
     isos = [k for k in CHI if k in S["C_q0"]]
     results = {}
     for w in weights:
-        num = sum(S[w][k] * AME_B[k] for k in isos)
-        den = sum(S[w][k] ** 2 for k in isos)
+        num = mp.fsum(S[w][k] * AME_B[k] for k in isos)
+        den = mp.fsum(S[w][k] ** 2 for k in isos)
         scale = num / den if den else mpf(0)
         worst, per = mpf(0), {}
         for k in isos:
