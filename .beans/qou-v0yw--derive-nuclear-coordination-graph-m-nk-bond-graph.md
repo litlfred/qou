@@ -57,3 +57,23 @@ LP). Infra exists: `gram_matrix_seminormal_h6.py`, `chi-deuteron-h6*` witnesses.
 
 **Next step:** compute the deuteron (H₆) ghost cross-term = the first pairwise bond
 as a Gram quadratic; then the coordination = graph of significant `⟨g_i,g_j⟩_G`.
+
+## Update 2026-07-11 (post-rebase) — position vs active coordination siblings
+
+The coordination graph is actively worked on main: `bk_coordination_contact_binding.py`
+(#3549/#3551) reads M(A)=z(A)=A−1 (nucleon coordination) + α-cluster contact-graph
+edges (predicts Ne/Mg/Ca <0.5%); #3548 does the W_λ connected multi-bond transfer
+matrix (tr_M side). BUT they COUNT bonds and ASSUME each contributes equally — the
+"single-link multiplier = coordination number" bond-extensive hypothesis is flagged
+**conditional, not derived from the 13 drivers**.
+
+**This bean's distinct value-add:** the Gram-quadratic cross-term ⟨g_i,g_j⟩_G
+(Part 10) is the DERIVATION of the per-bond weight the siblings assume. H₆ deuteron
+cross-term = the single pairwise bond as a negative-norm Gram quadratic; if constant
+across bonds ⇒ upgrades the bond-extensive hypothesis conditional→derived; if not ⇒
+reveals bond-strength structure. Complementary to the count (#3549) and the tr_M
+transfer matrix (#3548), not a duplicate.
+
+**Next compute (coordinate with #3548 first):** H₆ deuteron ghost cross-term via the
+per-block seminormal infra (`gram_matrix_seminormal_h6.py`). Do NOT launch solo before
+checking #3548's connected-tr_M overlap — same object, two lenses (Gram-norm vs trace).
