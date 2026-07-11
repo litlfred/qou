@@ -3,13 +3,13 @@ Let $\varrho: S^1 \hookrightarrow \Sigma_4$ be the trefoil $T_{2,3}$ embedded in
 At each point of the trefoil, $N_p \cong \mathbb{R}^2$. Let $\varTheta \in [0, 2\pi)$ parametrise the trefoil. A section decomposes into orthogonal modes:
 $$
   \sigma(\varTheta)
-  = \sum_{\ell=0}^{\infty} \bigl(a_\ell \cos(\ell\varTheta) + b_\ell \sin(\ell\varTheta)\bigr) \hat{n}_1(\varTheta)
-  + \sum_{\ell=0}^{\infty} \bigl(c_\ell \cos(\ell\varTheta) + d_\ell \sin(\ell\varTheta)\bigr) \hat{n}_2(\varTheta)
+  = \sum_{\ell=0}^{\infty} \bigl(a_\ell \cos(\ell\varTheta) + b_\ell \sin(\ell\varTheta)\bigr) \hat{n}_1(\varTheta) +
+  \sum_{\ell=0}^{\infty} \bigl(c_\ell \cos(\ell\varTheta) + d_\ell \sin(\ell\varTheta)\bigr) \hat{n}_2(\varTheta)
 $$
 where $\hat{n}_1, \hat{n}_2$ form an orthonormal frame for $N$.
 
 **(1) Principal quantum number $n$.**
-The total twist $k = 2(n-1)$ constraints the total energy $E_n = -E_{\mathrm{ion}}/n^2$. The twist equates to the $L^2$ norm-squared of $\sigma$. At fixed $k$, only finitely many Fourier modes can be nonzero.
+The total twist $k = 2(n-1)$ constrains the total energy $E_n = -E_{\mathrm{ion}}/n^2$. The twist equates to the $L^2$ norm-squared of $\sigma$. At fixed $k$, only finitely many Fourier modes can be nonzero.
 
 **(2) Angular momentum quantum number $\ell$.**
 The $\ell$-th Fourier mode acts as a resonance frequency of the trefoil's transverse vibration, carrying eigenvalue $\lambda_\ell = [\ell]_q [\ell + 1]_q$ under the $q$-Laplacian. The $q$-deformation shifts the eigenvalues by order $\alpha^2$, producing fine-structure splitting between sub-shells at the same $n$.

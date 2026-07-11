@@ -1,5 +1,3 @@
-**Remark (interpretation).**
-
 This identifies the **sub-classical regime** $q < 1$. Here, the substrate parameter reverses its role; the quantum deformation acts in the opposite direction. The golden ratio threshold $q = 1/\varphi^2$ marks the boundary beyond which the Descartes universe cannot support stable color structure.
 
 **$q$-Dependence of the stability structure.**

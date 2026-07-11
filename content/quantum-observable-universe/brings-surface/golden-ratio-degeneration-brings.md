@@ -1,4 +1,2 @@
-**Remark (interpretation).**
-
 **Golden ratio degeneration.**
 The second Weierstrass coefficient $r(q)$ contains the factor $(s^2 + s - 1)$ in its numerator. This vanishes at $s = (\sqrt{5} - 1)/2 = 1/\varphi$, the reciprocal of the golden ratio $\varphi = (1 + \sqrt{5})/2$. At this value $q = 1/\varphi^2 = (3 - \sqrt{5})/2 \approx 0.382$, the curve $\mathcal{E}_q$ acquires a cusp. The elliptic fiber degenerates and the color fibration becomes singular.
