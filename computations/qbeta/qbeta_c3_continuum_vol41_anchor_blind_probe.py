@@ -126,7 +126,7 @@ def main():
                        "anchor-blind, misses both anchors, and is ~7x worse at the muon (CAL-2) "
                        "anchor than the keystone near-match; c_3=-2=J_Hopf(1) is the canonical "
                        "shadow, not a hallucination. Vol(4_1) geometry kept; identification/tier corrected.",
-        "auditOnly": True,
+        "auditOnly": "docs/audits/2026-07-11-gemini-session-c3-overclaim-continuum-and-lean-audit.md",
         "tier": "measurement-exact (high-precision anchor comparison; measures existing claims)",
         "computedAt": now,
         "commitSha": _repo_head_sha(),

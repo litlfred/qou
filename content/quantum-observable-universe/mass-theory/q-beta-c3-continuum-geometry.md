@@ -7,7 +7,7 @@ tags: ["mass-theory", "q-beta", "continuum-limit", "hyperbolic-volume", "faddeev
 # The Geometric Origin of the c_3 Mass Gap
 
 > **⚠ CORRECTION (2026-07-11) — the `c_3 → −Vol(4₁)` identification is over-scoped.**
-> `−Vol(4₁) = −2.02988` is **anchor-blind** and misses **both** substrate anchors
+> `−Vol(4₁) ≈ −2.02988` is **anchor-blind** and misses **both** substrate anchors
 > (muon **+0.479%**, proton **−1.907%**) while the actual $c_3$ **swings 2.43%**
 > (muon −2.0202, proton −2.0693); at the muon (CAL-2) pin it is **6.9× worse**
 > than the keystone's own `−Vol(4₁)+u−(10/3)u²` near-match. So the "continuum
