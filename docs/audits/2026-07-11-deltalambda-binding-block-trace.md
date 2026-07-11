@@ -6,6 +6,21 @@ magnitude reduction ([PR #3537](https://github.com/litlfred/qou/pull/3537)) ·
 **Gate:** Track-A (owner-reversed) · **Tier:** measurement (reuses previous work) ·
 **No fit selected; nothing wired.**
 
+> **⚠ UPDATE (cross-isotope check overturns the block-trace lead).** The block-trace
+> magnitude below (`dim²`/`dim_q²`, ~91–101% on the deuteron) is **REFUTED** by the
+> cross-isotope check
+> [`deltalambda_binding_cross_isotope_probe.py`](../../computations/deltalambda/deltalambda_binding_cross_isotope_probe.py)
+> → [witness](../../computations/deltalambda/deltalambda-binding-cross-isotope.witness.json)
+> (3/3): with the same formula, validated `y_λ = y_lambda_at(n,q₀)`, and the precomputed
+> `atom-chi-rust-{d,t,3he,4he}` characters, `Δ_λ = sgn·dim_q²` blows up **40–450×** for
+> T/³He/⁴He (D 1.01, T 39.4, ³He 59.5, ⁴He 449.6) — the deuteron ~101% was **coincidental**
+> (the single-isotope caveat was right). **So the block trace is NOT the binding magnitude;
+> the "block is the direction / convention selects dim_q²" conclusion below is superseded.**
+> **What survives — cross-isotope:** the **derived sign** `(−1)^{n(λ)}` (#3542) gives the
+> **right sign for all four** isotopes (all B same sign as target<0), where the counit had
+> the wrong sign for all four. So the jet-order sign holds up cross-isotope; only the
+> magnitude fails. The binding magnitude returns to **open**; nothing wired.
+
 ## Scope
 
 The owner authorised working the Track-A binding closure. This is a **decisive test**
@@ -77,10 +92,13 @@ structural grounds**, independent of the target:
 - **Refuted:** `Δ_λ = sgn·dim` (irrep trace) closes the deuteron — it reaches only 17%.
 - **Derived/validated:** the **sign** holds up in the binding formula (right sign, where
   the six ansätze failed).
-- **Localized + q-resolved:** the magnitude is the **quantum regular-rep block dimension**
-  `dim_q(λ)²` (≈101%) — selected by the quantum `tr_M` trace convention, not by fitting.
-  The remaining Track-A step is deriving the **1.45% residual** (higher-body / exact
-  block-trace form) and cross-checking beyond the deuteron — not fitting it.
+- **Block magnitude REFUTED (cross-isotope, see banner):** `dim²`/`dim_q²` matches the
+  deuteron by coincidence and blows up 40–450× for T/³He/⁴He. The binding magnitude is
+  **not** the block dimension — back to open.
+- **The derived SIGN survives — and is now cross-isotope-validated** (right sign for
+  D/T/³He/⁴He, where the counit had the wrong sign for all four). This is the durable
+  result: the jet-order sign (#3542) is correct in the binding formula across isotopes;
+  the magnitude is what remains open.
 
 ## Cross-references
 
