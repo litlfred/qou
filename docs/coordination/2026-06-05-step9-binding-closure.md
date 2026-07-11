@@ -268,3 +268,16 @@ probe `delta_lambda_z_coefficient_and_slope.py`). Audit
 - **#3548 coordination:** the forward contact-graph result is the concrete A=12–40
   target their connected two-α braid tr_M (PROBE 2) should reproduce; b_αα derivation
   remains their scope, not duplicated here.
+
+## 2026-07-11 (cont.2) — α-geometry selection + bond-extensivity coordination (PR #3555)
+
+- **α-geometry selection = contact-maximisation, PARTIALLY (scope-(a)):** N_need
+  vs C_max(n_α) — ²⁴Mg (octahedron 12, exact) Δ+0.2, ²⁸Si +0.1, ⁴⁰Ca +0.5 MATCH
+  the maximal-contact geometry (derived, not fit); ²⁰Ne DEVIATES (binds as 8, not
+  max 9 — its prolate α+¹⁶O structure). CAVEAT: merged PR #3551 Part-2 ²⁰Ne
+  geometry (sq-pyramid 8) was hand-assigned → one-bond DOF (recorded, not hidden).
+- **Bond-extensivity (Task 2) is #3548/#3534 scope, NOT duplicated here:** the
+  derivation of "binding = Σ_edges ε" (extensive) is #3548's connected multi-bond
+  tr_M (PROBE 2) and #3534's linked-cluster w_n. My coordination-number angle only
+  adds the graph handshake bookkeeping (Σ deg = 2|E|, in bean qou-4tj9's Lean).
+  Coordinated on #3548 rather than building a parallel compute.
