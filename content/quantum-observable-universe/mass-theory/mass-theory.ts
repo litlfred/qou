@@ -624,6 +624,7 @@ export default chapter({
             "three-halves-structural-factor",
             "rem-im-q-vs-p-skew",
             "conj-im-q-physical-role",
+            "rem-c3-s-imq-decay-projection",
           ],
         }),
         section({
