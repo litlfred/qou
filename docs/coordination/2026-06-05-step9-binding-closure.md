@@ -323,3 +323,27 @@ probe `delta_lambda_z_coefficient_and_slope.py`). Audit
   A=3 strong split is 3× the whole observed A=3 split, at all A, not an A=3 accident.
   f_pp≠f_nn must be removed (or reinterpreted as categorical EM, framing (B)). Not a
   binding fit.
+## 2026-07-11 — na-Stokes eigenfunction two-tier + wₙ derive-or-refute (#3545, #3534)
+
+Branch `claude/q-stokes-kernel-eigenfunction-y0pso2` (#3545) + parallel
+`claude/binding-wn-kernel-derive-refute-2026-07-11` (#3534, bean t7qv) — same
+owner steer ("na-Stokes kernel informs the weight kernel via its eigenfunction
+relation").
+
+- **Two-tier eigenfunction, Lean sorry-free (#3545):** `a_D^(n)=S(n)/n`,
+  `S(n)=Σ_λ dim_q` (q-involution #). `c₃=[2]_q` exact; deviation
+  `q²·D(4)=(q−1)²Φ₃` (Habiro cyclotomic leading factor). File
+  `QOU.Mass.BindingEigenfunctionTwoTier` (lean-direct exit 0). Cherry-pickable by
+  #3534 (which states the same numerically, no Lean).
+- **Adversarial (#3545):** `[n−1]_q` is 2 points not a pattern; "Habiro"=leading
+  factor only (D(6..8) non-cyclotomic cofactors); `S(n)` **forks** from clean
+  Rogers–Szegő / crossing moment `μ_q` (+0.3%→+7.9%) — clean q-Hermite/q-Fourier
+  basis is μ_q's, not S(n)'s. So "eigenfunction informs kernel" = shared Habiro
+  **ring**, not shared element (kehn c_k is a different ζ₄ localization).
+- **wₙ(K) derive-or-refute (#3534 + #3545 correction):** raw T/³He split (9.9%) is
+  **Coulomb** (= the ledger's writhe/Z-correction channel above) — on `B_strong`
+  the mirror agrees ~2.7% (CSB), so body-order wₙ **admissible** (corrects my
+  #3545 over-claimed (b) exclusion → (a)). No constant-ratio kernel closes to 5%
+  ([n]_q² 6.9% lone near-miss); tuned recursion = banned 7th ansatz. Non-fit
+  routes: q-Hermite-basis expansion (Habiro-dressed) / hyperbolic link-volume.
+- **conj:binding-manybody-eq-jet-filtration: not provable now** (3 open inputs).
