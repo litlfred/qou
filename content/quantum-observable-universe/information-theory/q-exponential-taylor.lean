@@ -86,8 +86,7 @@ theorem qExponentialTaylor (q : ℝ) (x : ℝ) (hq : 1 < q) :
         show (1 : ℝ) - q = -(q - 1) by ring, neg_div_neg_eq]
     rw [Filter.tendsto_congr hform]
     have hpow : Filter.Tendsto (fun n : ℕ => q ^ (n + 1)) Filter.atTop Filter.atTop := by
-      have := (tendsto_pow_atTop_atTop_of_one_lt hq).comp (Filter.tendsto_add_atTop_nat 1)
-      simpa using this
+      simpa using (tendsto_pow_atTop_atTop_of_one_lt hq).comp (Filter.tendsto_add_atTop_nat 1)
     have hsub : Filter.Tendsto (fun n : ℕ => q ^ (n + 1) - 1) Filter.atTop Filter.atTop := by
       simpa [sub_eq_add_neg] using
         Filter.tendsto_atTop_add_const_right Filter.atTop (-1 : ℝ) hpow
@@ -96,8 +95,7 @@ theorem qExponentialTaylor (q : ℝ) (x : ℝ) (hq : 1 < q) :
   filter_upwards [hji.eventually_ge_atTop (2 * |x| + 1)] with n hn
   -- `hn : 2·|x| + 1 ≤ [n+1]_q`
   have hJpos : 0 < jacksonInt q (n + 1) := by
-    have : (0 : ℝ) ≤ |x| := abs_nonneg x
-    linarith
+    linarith [abs_nonneg x]
   have hstep : qExpSeries q x (n + 1)
       = (x / jacksonInt q (n + 1)) * qExpSeries q x n := by
     simp only [qExpSeries, jacksonFactorial]
@@ -105,8 +103,7 @@ theorem qExponentialTaylor (q : ℝ) (x : ℝ) (hq : 1 < q) :
   rw [hstep, norm_mul]
   refine mul_le_mul_of_nonneg_right ?_ (norm_nonneg _)
   rw [norm_div, Real.norm_eq_abs, Real.norm_eq_abs, abs_of_pos hJpos, div_le_iff₀ hJpos]
-  have : (0 : ℝ) ≤ |x| := abs_nonneg x
-  linarith
+  linarith [abs_nonneg x]
 
 /-- At q = 1, the q-exponential Taylor series recovers the ordinary
     exponential. -/
