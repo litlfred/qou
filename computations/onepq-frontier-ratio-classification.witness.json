@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-11T22:50:00.853552+00:00",
-  "commitSha": "664ab364c7508c98715b6427dd04242b90a57498",
+  "computedAt": "2026-07-11T23:02:59.941173+00:00",
+  "commitSha": "b7e07e40eeabd6a8e354c885bb50d3188e517570",
   "assertions": [
     {
       "name": "alpha_em_is_1ppq_capable",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 14,
   "computation": "onepq-frontier-ratio-classification",
   "scriptFile": "onepq_frontier_ratio_classification_probe.py",
   "scriptHash": "450591408998",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "b7e07e40eeabd6a8e354c885bb50d3188e517570",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
