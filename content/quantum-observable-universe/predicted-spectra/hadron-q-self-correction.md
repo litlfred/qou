@@ -72,7 +72,3 @@ For ${}^{3}\mathrm{H}$ ($A = 3$), the shift $\Delta q_{\mathrm{eff}} = (2/9) \ti
 **Universality.**
 
 The self-deformation applies whenever $q$ acts on a specific hadron configuration. This extends beyond half-lives. The beta-stability line ([beta-stability](#prop:beta-stability)) and the topological mass formula receive identical structural corrections when $q_{\mathrm{eff}}$ replaces $q_0$.
-
-**Formalization goal plausibility.**
-
-The intended Lean theorems establish `deltaQ <= 0` for neutron-rich nuclei, `differentialShift >= 0`, and `qEff > 1`. They possess mathematically sound proof bodies relying on basic arithmetic, `omega`, and `positivity` tactics. The Lean file structure is technically broken because theorem headers were commented out. Their Archimedean nature conflicts with the generic `R_q` Laurent polynomial ring. Closing this gap is highly plausible. We separate generic definitions from Archimedean instantiations using a ring homomorphism to $\mathbb{R}$. We restore the theorem headers over the reals. The underlying inequalities are elementary, making the formalization gap purely structural.
