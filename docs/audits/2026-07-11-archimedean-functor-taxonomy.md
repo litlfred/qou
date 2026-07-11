@@ -112,32 +112,41 @@ genuine functor field but the named thing is not itself the functor.
 
 ## Recommended resolution (tiered)
 
-**T1 — enforce the existing register (mechanical, pre-authorized).**
-Fix the prose that violates `notation-collisions.md` §"Archimedean / fibre /
-forgetful functors":
-- `mass-theory/archimedean-image-table.md:1` — "The **archimedean functor**
-  τ : C → Arch" → "The **fibre functor** τ : C → Arch" (the register
-  forbids "the archimedean functor"; τ *is* the fibre functor). *(Applied
-  in this PR.)*
+**T1 — enforce the existing register (mechanical). ✅ APPLIED.**
+`mass-theory/archimedean-image-table.md` opened with "The **archimedean
+functor** τ : C → Arch"; corrected to "The **fibre functor** τ … followed
+by the archimedean evaluation π_∞" (the register forbids "the archimedean
+functor"; τ *is* the fibre functor).
 
-**T2 — naming honesty for the non-functors (needs owner ratification of
-depth).** In the `R_top`, standard-part, and `𝓕_Arch` blocks, either (a)
-add one sentence stating the object is a **ring homomorphism / motivic
-measure / evaluation, not a functor between categories** ("functor" retained
-only as the historical block label), or (b) rename in prose to "archimedean
-**realization / motivic measure**" and "standard-part **map**." The Lean
-already agrees (`standardPartRingHom`, `realize : … → ℝ`).
+**T2 — naming honesty for the non-functors. ✅ APPLIED.**
+- `archimedean-realization-functor.md` — added a "Level of the construction"
+  note: `R_top` is a **motivic measure / ring homomorphism** out of
+  `K₀(Var)` + a place, a functor only if lifted to `DM(k)`.
+- `archimedean-functor-trace-commutativity.md` — `𝓕_Arch` relabeled the
+  **object-level standard-part map `st`** (a ring hom, the underlying
+  evaluation of the categorical functor `St`), not a functor itself;
+  diagram edge relabeled.
+- `standard-part-functor.lean` docstring — same clarification.
+- `standard-part-functor.md` left as-is: it already calls `st` "a
+  surjective ring homomorphism" and defines `St` with both an object-map
+  and a morphism-map (a genuine functor claim).
 
-**T3 — Lean structural (optional, larger).** Make `ArchimedeanCategory` a
-genuine `Category` (add Hom/comp/id) and upgrade
-`MotivesArchimedean.FibreFunctor` from `obj : C → Arch.Obj` to a real
-`C ⥤ Arch`, so τ's genuine functoriality is uniform and `π_∞ : Arch → ℝ`
-is the (non-functor) evaluation on objects.
+**T3 — Lean structural. ✅ APPLIED (verified sorry-free).**
+`MotivesArchimedean.lean`: `ArchimedeanCategory` now bundles
+`[cat : Category Obj]`, and `FibreFunctor` carries a genuine
+`functor : C ⥤ Arch.Obj` (morphism action + functor laws), requiring
+`[Category C]`. `archRestriction` (`π_∞ ∘ τ : C → ℝ`) is documented as the
+object-level evaluation, not a functor. `ArchimedeanRealizationFunctor`
+docstring relabeled a motivic measure. Verified via lean-direct on restored
+`v4-24-0` oleans (exit 0).
 
-**T4 — pin τ's codomain (register + sweep).** Choose one canonical target
-(recommend **Arch**), state τ : C ⥤ Arch, U : Arch → Vec_ℝ, π_∞ : Arch → ℝ
-(evaluation, not a functor), and reconcile the `Type*`/`Vec_ℝ`/`D`/`ℝ`
-sites to it.
+**T4 — pin τ's codomain (register). ✅ APPLIED.**
+`notation-collisions.md` now states τ : C ⥤ Arch is canonical and the other
+targets (`Vec_ℝ`, `Type*`, `D`) are **composites** with τ (`U ∘ τ`, the
+underlying set-valued functor, τ into a geometric model) — genuine functors
+at de-enriched levels, not rival functors. The maps into ℝ (`π_∞`, `R_top`,
+`st`) are evaluations/ring homs, not functors. No corpus-wide rename needed;
+the composite-tower framing reconciles the five stated codomains.
 
 ## Note on prior QA sidecars
 
