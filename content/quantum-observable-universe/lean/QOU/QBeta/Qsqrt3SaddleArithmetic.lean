@@ -15,9 +15,13 @@ in the `N → ∞` volume-conjecture limit, at the saddle `x* = 5/6` (the maximu
 `G(x) = ∫₀ˣ log(2 sin πs) ds`, where `G'(x*) = log(2 sin(5π/6)) = log 1 = 0`). The
 perturbative expansion around that saddle is built from the Taylor derivatives of
 `log(2 sin πx)` at `x*`, and **those derivatives are exact elements of
-`ℚ(√3)·π^k`** — the arithmetic reflection of the classical fact that the invariant
-trace field of 4₁ is `ℚ(√−3)` (`ℚ(√3) = ℚ(√−3)` up to `i`; the Eisenstein /
-hexagonal field).
+`ℚ(√3)·π^k`** — real quadratic data. The invariant trace field of 4₁ is the
+*imaginary* quadratic field `ℚ(√−3)` (Eisenstein / hexagonal); it is a **distinct**
+number field from the totally real `ℚ(√3)` that carries the certified saddle data.
+Both sit inside the cyclotomic field `ℚ(ζ₁₂)`, and `√−3 = i·√3` relates the two
+generators, but the fields themselves are not equal (one totally real, one
+imaginary quadratic). This file certifies the real `ℚ(√3)` saddle arithmetic; the
+`ℚ(√−3)` trace field is the ambient classical fact it refracts.
 
 This file certifies that arithmetic, sorry-free:
 
@@ -92,12 +96,12 @@ noncomputable def laplaceB1 (g2 g3 g4 : ℝ) : ℝ :=
 /-- **`b₁ = √3·π/54 ∈ ℚ(√3)·π`** at the exact 4₁ exponent (`2G`) saddle data
     `(g₂, g₃, g₄) = (−2√3π, −8π², −16√3π³)`. Exact arithmetic object (the numerical
     PSLQ of #3571 was entropy-blocked; this is the exact value). -/
-theorem laplaceB1_at_saddle (hπ : π ≠ 0) :
+theorem laplaceB1_at_saddle :
     laplaceB1 (-2 * Real.sqrt 3 * π) (-8 * π ^ 2) (-16 * Real.sqrt 3 * π ^ 3)
       = Real.sqrt 3 * π / 54 := by
+  have hπ : π ≠ 0 := Real.pi_ne_zero
   have h3 : Real.sqrt 3 ^ 2 = 3 := Real.sq_sqrt (by norm_num)
-  have hr : (0 : ℝ) < Real.sqrt 3 := by positivity
-  have hr' : Real.sqrt 3 ≠ 0 := ne_of_gt hr
+  have hr' : Real.sqrt 3 ≠ 0 := by positivity
   have e2 : (-2 * Real.sqrt 3 * π) ^ 2 = 12 * π ^ 2 := by
     linear_combination 4 * π ^ 2 * h3
   have e3 : (-(-2 * Real.sqrt 3 * π)) ^ 3 = 24 * Real.sqrt 3 * π ^ 3 := by
@@ -111,11 +115,11 @@ theorem laplaceB1_at_saddle (hπ : π ≠ 0) :
     `ℚ(√3)·π`** (`b₁ = (1/54)·√3π`). This is the exact arithmetic *home* of the
     even channel; it is NOT the observable action coefficient `c₁` (see the module
     docstring's honest-scope note). -/
-theorem laplaceB1_saddle_mem_qsqrt3 (hπ : π ≠ 0) :
+theorem laplaceB1_saddle_mem_qsqrt3 :
     ∃ r : ℚ, laplaceB1 (-2 * Real.sqrt 3 * π) (-8 * π ^ 2) (-16 * Real.sqrt 3 * π ^ 3)
       = (r : ℝ) * (Real.sqrt 3 * π) := by
   refine ⟨1 / 54, ?_⟩
-  rw [laplaceB1_at_saddle hπ]
+  rw [laplaceB1_at_saddle]
   push_cast
   ring
 

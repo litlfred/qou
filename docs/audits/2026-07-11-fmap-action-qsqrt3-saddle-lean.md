@@ -8,11 +8,16 @@ claimed, no wiring, no tier change. Follow-up to
 
 ## What #3571 left, and what this closes
 
-#3571 established that ℚ(√−3) (the 4₁ invariant trace field) is the arithmetic
-*home* of the even-channel resurgence expansion, but that PSLQ on the numerical
-Kashaev-ladder coefficients cannot reach the exact arithmetic (divergent series +
-fit contamination). The exact route is the saddle recursion — and its leading
-data are now computed **exactly and Lean-certified**.
+#3571 established that ℚ(√−3) — the *imaginary* quadratic invariant trace field of
+4₁ — is the ambient arithmetic of the even-channel resurgence, but that PSLQ on the
+numerical Kashaev-ladder coefficients cannot reach the exact arithmetic (divergent
+series + fit contamination). The exact route is the saddle recursion — and its
+leading data are now computed **exactly and Lean-certified**. Those real saddle data
+live in the totally real quadratic field **ℚ(√3)**, a field *distinct* from the
+imaginary quadratic trace field ℚ(√−3): both embed in the cyclotomic field ℚ(ζ₁₂),
+and `√−3 = i·√3` relates their generators, but the two number fields are not equal
+(one totally real, one imaginary). The certified content below is the ℚ(√3) real
+saddle arithmetic that the ℚ(√−3) trace field refracts.
 
 The 4₁ Kashaev sum localises at the saddle `x* = 5/6` (where `2 sin(5π/6)=1`, so
 `G'(x*)=log 1 = 0`). The Taylor derivatives of `log(2 sin πx)` there are exact
