@@ -50,9 +50,18 @@ set_compute_dps()
 def main() -> int:
     from qou_substrate.constants import q_at, q_muon_at
 
+    from qbeta_utils import c3_target_at
+    from substrate import codata_constants as C
+
     anchors = {"proton": q_at(50), "muon": q_muon_at(50)}
     t_p = mp.log(anchors["proton"])
-    dq = float(anchors["proton"] - anchors["muon"])
+    dq = float(mp.fabs(anchors["proton"] - anchors["muon"]))  # separation magnitude
+    # proton feasibility floor computed from current inputs (not hard-coded)
+    me = mp.mpf(str(C.M_E_MEV))
+    Qcod = mp.mpf(str(C.Q_BETA_MEV))
+    Vol41 = 2 * mp.clsin(2, mp.pi / 3)
+    S_p = c3_target_at(anchors["proton"], Qcod, me) + Vol41
+    u_min_p = mp.sqrt(mp.fabs(S_p) / (mp.sqrt(3) / 2))
 
     wb = WitnessBuilder("qbeta-c3-phib-gluing-discriminant", engine="mpmath+sympy")
     wb.set_description(
@@ -115,7 +124,7 @@ def main() -> int:
         "m = e^{t e^{i pi/4}/2} (b-aligned near-match)":
             mp.e ** (t_p * mp.e ** (mp.mpc(0, 1) * mp.pi / 4) / 2),
         "m = e^{u_min(p) i /2} (floor, imaginary dir)":
-            mp.e ** (mp.mpc(0, 1) * mp.mpf("0.2134566682") / 2),
+            mp.e ** (mp.mpc(0, 1) * u_min_p / 2),
     }
     print("\n[3] distances:")
     print(f"    locus → m=1 (complete): {mp.nstr(d_complete, 8)}")
