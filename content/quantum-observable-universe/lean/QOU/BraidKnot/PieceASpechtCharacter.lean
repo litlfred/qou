@@ -25,20 +25,45 @@ open scoped BigOperators
 open QOU.BraidKnot.JucysMurphy
 open QOU.BraidKnot.Specht
 
-variable {k : Type*} [Field k] [CharZero k]
+variable {k : Type} [Field k] [CharZero k]
+
+/-- The endomorphism `ρ(C₂) = (Mtab.rep μ).asAlgebraHom (centralC2 …)` maps the
+Specht submodule `S^μ` into itself: on `S^μ` it acts by the scalar `contentSqSum μ`
+(`centralC2_acts_by_contentSqSum`), and `S^μ` is closed under that scalar. This is
+the invariance hypothesis needed to `LinearMap.restrict` `ρ(C₂)` to `S^μ`. -/
+theorem centralC2_mapsTo_specht (μ : YoungDiagram) :
+    ∀ x ∈ Specht.SpechtSubmodule (k := k) μ,
+      (Specht.Mtab.rep μ).asAlgebraHom (centralC2 (k := k) (Specht.nOf μ)) x
+        ∈ Specht.SpechtSubmodule (k := k) μ := by
+  intro x hx
+  rw [centralC2_acts_by_contentSqSum (k := k) μ x hx, ← Int.cast_smul_eq_zsmul k]
+  exact Submodule.smul_mem _ _ hx
 
 /-- The trace of `centralC2` on the Specht module `S^μ`.
-Since `centralC2` acts by the scalar `contentSqSum μ` on the Specht module, 
-the trace evaluates to `dim(S^μ) * contentSqSum μ`. -/
+Since `centralC2` acts by the scalar `contentSqSum μ` on the Specht module,
+the restricted operator is `(contentSqSum μ) • id`, so its trace evaluates to
+`contentSqSum μ * dim(S^μ)`. -/
 theorem trace_centralC2_specht_module (μ : YoungDiagram) :
     LinearMap.trace k _ (LinearMap.restrict
-      (Specht.SpechtSubmodule (k := k) μ)
-      ((Specht.Mtab.rep μ).asAlgebraHom (centralC2 (k := k) (Specht.nOf μ)))) =
+      ((Specht.Mtab.rep μ).asAlgebraHom (centralC2 (k := k) (Specht.nOf μ)))
+      (centralC2_mapsTo_specht (k := k) μ)) =
     (contentSqSum μ : k) * Module.finrank k (Specht.SpechtSubmodule (k := k) μ) := by
   -- Ref: [macdonald1995] Symmetric Functions and Hall Polynomials
-  -- Proof proceeds by pulling the scalar action `centralC2_acts_by_contentSqSum`
-  -- out of the trace.
-  sorry
+  -- The restricted operator equals the scalar `(contentSqSum μ : k) • id` on `S^μ`
+  -- (`centralC2_acts_by_contentSqSum`); the trace of a scalar multiple of the identity
+  -- is that scalar times the dimension (`LinearMap.trace_id`).
+  have hg :
+      LinearMap.restrict
+        ((Specht.Mtab.rep μ).asAlgebraHom (centralC2 (k := k) (Specht.nOf μ)))
+        (centralC2_mapsTo_specht (k := k) μ)
+        = (contentSqSum μ : k) • LinearMap.id := by
+    refine LinearMap.ext fun x => ?_
+    apply Subtype.ext
+    rw [LinearMap.restrict_coe_apply, LinearMap.smul_apply, LinearMap.id_apply,
+        Submodule.coe_smul,
+        centralC2_acts_by_contentSqSum (k := k) μ (x : Specht.Mtab (k := k) μ) x.2,
+        ← Int.cast_smul_eq_zsmul k]
+  rw [hg, map_smul, LinearMap.trace_id, smul_eq_mul]
 
 /-- The central element `C_2` evaluated on the full group algebra is given by 
 a sum of dimensions and squared contents, bridging representation theory to hooks. -/
@@ -56,11 +81,9 @@ Here we state the equivalence between the representation-theoretic evaluation
 and the combinatorial formula `sumSqHooks_eq_sumSqContents_add_sq`. 
 The list `l` corresponds to the row lengths of the partition. -/
 lemma pieceA_hook_sq_eq_content_sq_add_n_sq (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
-    IdentityI.sumSqHooks l = IdentityI.sumSqContents l + (IdentityI.sz l : ℤ) ^ 2 := by
-  -- Ref: [macdonald1995] Symmetric Functions and Hall Polynomials
-  -- This proof would proceed by taking the trace of centralC2 on the regular
-  -- representation, evaluating it via the decomposition into Specht modules,
-  -- and equating it with the class-function evaluation on cycles.
-  sorry
+    IdentityI.sumSqHooks l = IdentityI.sumSqContents l + (IdentityI.sz l : ℤ) ^ 2 :=
+  -- The combinatorial route already proves this outright (the representation-theoretic
+  -- trace route and the combinatorial route converge on the same identity).
+  IdentityI.sumSqHooks_eq_sumSqContents_add_sq l hl
 
 end QOU.BraidKnot.PieceA
