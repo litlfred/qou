@@ -453,3 +453,19 @@ graph **M_n(K)** — *which pairs bond*. Cross-recognition (§6 convergence, not
   open with a fixed 2-body anchor to build the suppressed higher orders on.
   Compute [`computations/mnk_per_order_counting.py`](../../computations/mnk_per_order_counting.py),
   audit [docs/audits/2026-07-11-mnk-per-order-counting.md](../audits/2026-07-11-mnk-per-order-counting.md).
+
+### cont.11 — Δ_λ magnitude side (#3569, 2026-07-11)
+
+- **A-stability selects `Δ_λ = sgn·dim` (classical q=1 dim, #3542).** Cross-isotope
+  spread of `B(dim)/target` is minimized at `p=1` (2.8x) and grows monotonically
+  away (p=1.5 8.7x, p=2 block-dim² 119x). Structural selection, not a fit. The
+  #3558 block-dim²≈101% deuteron match is doubly refuted (blows up + wrong power).
+- **The residual O(1) is the missing ≥4-body term, NOT a coefficient.** `target/B(dim)`
+  = D 5.9 / T 4.4 / ³He 3.3 / ⁴He 9.3; not topological (T/³He share braid topology,
+  differ 35%), maximal at doubly-magic ⁴He (α-saturation). Same open term as the
+  #3588 `M_n(K)` residual (⁴He 14.95 MeV) and the #3585 geometric max-contact frontier.
+- **Tied to the already-decomposed line:** b₄ connected-cumulant deficit +
+  sorry-free SU(4) `[1⁴]` gate + measured 2.093x locality
+  (`2026-07-05-delta-lambda-gate-status.md`). PROBE 2 magnitude leg = PARTIAL
+  (A>4 vanishing clean; ⁴He magnitude units-mismatched). Open = Slater↔trace
+  dictionary / geometric `W_λ` — research-level, gated. No fit; nothing wired.
