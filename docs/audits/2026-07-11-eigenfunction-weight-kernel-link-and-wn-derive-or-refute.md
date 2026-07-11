@@ -260,6 +260,42 @@ linkings vanish (the Borromean/irreducible case), which is why the `n=3` term is
 the tractable one. `M_2` (pairwise `lk`) is already live in the corpus
 (`em_linking_invariant_probe.py`, `ch_bond_writhe_lp.py`, Hopf `σ₁²`).
 
+## Part 8 — which link is ⁶Li / ¹²C? production says "chain"; and that is the ad-hoc gap
+
+The production canonical braid `mass_at_3A_proper.atom_braid_word_3A` answers
+"which link" directly — and it is a **linear chain**. It places one inter-nucleon
+generator at gen `3k+2` for `k < A−1` (source), i.e. exactly `A−1` bonds between
+consecutive nucleons (verified by run):
+
+| iso | A | production bonds (M₂) | A−1 | M₃ = μ̄₁₂₃ |
+|---|--:|--:|--:|--:|
+| ⁴He | 4 | 3 | 3 | 0 |
+| ⁶Li | 6 | 5 | 5 | 0 |
+| ⁷Li | 7 | 6 | 6 | 0 |
+| ¹²C | 12 | 11 | 11 | 0 |
+
+Milnor reading (Part 7): a linear chain has `M₂(K)=A−1` (the chain bonds) and
+`M₃(K)=μ̄₁₂₃=0` (a chain is reducible to pairwise — no irreducible 3-body). So the
+production link *is* the Part-6 chain model, which undershoots (~20–36 %): the
+chain undercounts the compact-nucleus coordination (`#bonds/A ≈ 3` vs chain `≈ 1`)
+and carries no 3-body term (⁴He's magic binding needs exactly `μ̄₁₂₃≠0`). This is
+the already-flagged **open 9b gap** (`binding_canonical.py`: `10A−5 = 5(2A−1)` =
+"A nucleons + A−1 bonds", categorical derivation OPEN).
+
+**Critique (owner): `if include_inter and k < A−1` "should not be case by case."**
+Correct — the linear chain is an **ad-hoc placeholder**, not a derivation: it
+hard-codes a consecutive-neighbour bond rather than letting the bond graph emerge.
+The principled derivation is the **confinement / operator-selection SDP**: its dual
+active set (`y_star[i] > 0`, the "most receptive sub-braids" of the AGENTS.md
+LP/SDP-dual contract) identifies *which* nucleon-pairs actually bond, giving the
+compact coordination and the jointly-active triples (the `μ̄₁₂₃` Borromean 3-body
+terms) with no hand-coded chain. This is the **right role for the Frobenius/SDP
+dual** — it fixes the *link topology* (bond graph), **not** the weight magnitude
+(which the Part-4 probe correctly refuted it for). Replacing `k < A−1` with the
+SDP-active-set bond graph is the concrete 9b-closure target: compute
+`M_n(K) = μ̄`-tower of the SDP-derived link, evaluate `B(K)` against AME.
+Compute: [`binding_production_link_milnor.py`](../../computations/binding_production_link_milnor.py).
+
 ## Consequence for `conj:binding-manybody-eq-jet-filtration`
 
 **Not provable now** (recorded answer). The conjecture's three deep inputs remain
