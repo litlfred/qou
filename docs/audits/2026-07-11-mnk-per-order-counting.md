@@ -37,12 +37,16 @@ The `n=2` term is pinned by the **single deuteron datum**: `a_D^(2)=1`, `M_2(D)=
 
 ## Cross-check — the residual difference IS the Coulomb mirror split
 
-The `³H − ³He` residual difference is `+0.764` MeV, **exactly** the AME mirror split
+The `³H − ³He` residual difference is `+0.764` MeV, matching the AME mirror split
 (`+0.764` MeV), which #3564/#3570 established as the Coulomb (proton-displacement)
-energy. So the per-order count `M_n=C(A,n)` **inherits this session's charge-structure
-result for free**: the pairwise backbone is charge-symmetric, and the entire ³H/³He
-asymmetry lands in the residual as the Coulomb term. Witness assertion
-`pairwise_backbone_recovers_coulomb_mirror_split` (exact, tolerance 0).
+energy. This equality is **exact by construction**: the pairwise backbone
+`B_2 = B(D)·C(3,2)` is identical for ³H and ³He (both A=3), so it cancels in the residual
+*difference*, leaving `(B_T − B_2) − (B_He3 − B_2) = B_T − B_He3` = the AME split
+identically — verified numerically to `<1e-6` (float). So the per-order count
+`M_n=C(A,n)` **inherits this session's charge-structure result for free**: the pairwise
+backbone is charge-symmetric, and the entire ³H/³He asymmetry lands in the residual as the
+Coulomb term. Witness assertion `pairwise_backbone_recovers_coulomb_mirror_split`
+(tolerance `1e-6`).
 
 ## Verdict (scope-limited (a))
 
