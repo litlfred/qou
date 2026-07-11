@@ -3,12 +3,12 @@
   "description": "Formalize-first parameter-free test: does the chiral cinquefoil T(2,5)=(\u03c31\u03c32\u03c33\u03c34)^2 Hecke character reproduce the mixed-sign \u0394_\u03bb chirality target sgn(w_0^{S_{\u03bb'}}) over \u03bb\u22a25? Seminormal reps self-validated via Hecke+braid relations. No fit; nothing wired.",
   "auditOnly": "docs/audits/2026-07-11-gemini-session-c3-overclaim-continuum-and-lean-audit.md",
   "tier": "symbolic-exact reps (sympy, self-validated) + q_0 sign eval",
-  "computedAt": "2026-07-11T05:39:48.232420+00:00",
-  "commitSha": "4d05aa4ed7e4ad50662c0628509d004d06581958",
+  "computedAt": "2026-07-11T10:43:27.110407+00:00",
+  "commitSha": "a28b50c79beb11ceb50fe6b34af5fd12f032fac3",
   "engine": "sympy",
   "engineVersion": "1.14.0",
   "scriptFile": "t25_cinquefoil_deltalambda_sign_probe.py",
-  "scriptHash": "2fd3447664bf",
+  "scriptHash": "a770734cdb50",
   "q0_source": "q-pinning-50-digit.witness (muon q_0)",
   "q0": "1.10997859555733471",
   "assertions": [
@@ -36,6 +36,21 @@
       "name": "t25_character_sign_matches_deltaLambda_target",
       "passed": false,
       "detail": "sgn(\u03c7_\u03bb^q(T(2,5))) vs sgn(w_0^{S_{\u03bb'}}) over all \u03bb\u22a25"
+    },
+    {
+      "name": "target_sign_equals_neg1_pow_n_lambda",
+      "passed": true,
+      "detail": "sgn(w_0^{S_{\u03bb'}}) = (-1)^{n(\u03bb)} for all \u03bb\u22a25"
+    },
+    {
+      "name": "full_twist_is_scalar_theta_centrality",
+      "passed": true,
+      "detail": "\u03c1_\u03bb((\u03c31\u03c32\u03c33\u03c34)^5) = \u03b8_\u03bb\u00b7I  (extra self-validation of the reps)"
+    },
+    {
+      "name": "twist_positive_at_real_q0_framing_cannot_flip_sign",
+      "passed": true,
+      "detail": "\u03b8_\u03bb = q^{2(n(\u03bb')-n(\u03bb))} > 0 at q_0>0 => every framing power is positive => canonical-framed sign = raw sign (option-1 \u03c7\u00b7\u03b8^{-w} pruned)"
     }
   ],
   "allPassed": false,
@@ -161,12 +176,17 @@
     ],
     "sign_match_all": false,
     "reps_validated": true,
-    "verdict": "SCOPE-(a) NEGATIVE with a POSITIVE facet. Seminormal reps validated (Hecke+braid+\u03a3dim\u00b2=120). (+) The chiral T(2,5) character DOES produce negative signs (\u03bb\u2208[[4, 1], [2, 1, 1, 1]]) -- something every positive/KL ansatz structurally CANNOT (SelectionRules.nonneg_sum_ne_neg_target). So the chirality selection rule is confirmed: the parity-allowed T(2,odd) class is genuinely capable of the mixed sign. (\u2212) But the RAW T(2,5) character is not the exact \u0394_\u03bb sign map (4/7 mismatch, incl. two degenerate zeros at the [3,2]/[2,2,1] conjugate pair). The exact chiral combiner is elsewhere (framing/writhe-corrected trace or a signed sub-braid); choosing a framing to fix the signs would be a fit, so it is NOT done here. Prunes the bare-cinquefoil identification; keeps the selection rule. NOTHING wired."
+    "target_is_neg1_pow_n_lambda": true,
+    "real_q_framing_pruned": true,
+    "sign_lives_at_root_of_unity": true,
+    "verdict": "SCOPE-(a) NEGATIVE with a POSITIVE facet. Seminormal reps validated (Hecke+braid+\u03a3dim\u00b2=120). (+) The chiral T(2,5) character DOES produce negative signs (\u03bb\u2208[[4, 1], [2, 1, 1, 1]]) -- something every positive/KL ansatz structurally CANNOT (SelectionRules.nonneg_sum_ne_neg_target). So the chirality selection rule is confirmed: the parity-allowed T(2,odd) class is genuinely capable of the mixed sign. (\u2212) But the RAW T(2,5) character is not the exact \u0394_\u03bb sign map (4/7 mismatch, incl. two degenerate zeros at the [3,2]/[2,2,1] conjugate pair). The exact chiral combiner is elsewhere. FRAMING PRUNE (formalize-first): re-framing does NOT help -- the ribbon twist \u03b8_\u03bb=q^{2(n(\u03bb')-n(\u03bb))} is >0 at real q_0, so every writhe/framing power \u03b8_\u03bb^{-w} is a positive scalar and preserves the sign; the 4/7 mismatch is framing-invariant at real q_0. The target sgn(\u0394_\u03bb)=sgn(w_0^{S_{\u03bb'}})=(-1)^{n(\u03bb)} is exactly the sign of \u03b8_\u03bb at a ROOT OF UNITY (where the twist can be negative) -- a FIBRE / Im(q)\u22600 signature, NOT an archimedean real-q>0 quantity. So the chirality lives at the fibre level (mirroring the c_3 fibre-vs-archimedean split, AGENTS.md Im(q) banner): the genuine next probe is the chiral character at q=root of unity, not a real-q re-framing. Prunes bare-cinquefoil AND the real-q re-framing; keeps the selection rule + relocates the sign to the fibre. NOTHING wired."
   },
   "context": {
-    "target": "sgn(\u0394_\u03bb)=sgn(w_0^{S_{\u03bb'}}) (Lean deltaSign_mixed, S5SO3FiberAction)",
+    "target": "sgn(\u0394_\u03bb)=sgn(w_0^{S_{\u03bb'}})=(-1)^{n(\u03bb)} (Lean deltaSign_mixed, S5SO3FiberAction)",
     "selection_rule": "QOU.SelectionRules.nonneg_sum_ne_neg_target (why positive ans\u00e4tze fail)",
-    "braid_word": "T(2,5)=(\u03c31\u03c32\u03c33\u03c34)^2 in B_5",
+    "braid_word": "T(2,5)=(\u03c31\u03c32\u03c33\u03c34)^2 in B_5; full twist (\u03c31\u03c32\u03c33\u03c34)^5 central",
+    "framing_prune": "\u03b8_\u03bb=q^{2(n(\u03bb')-n(\u03bb))}>0 at real q_0 => framing power positive => sign-preserving; canonical-framed sign = raw sign",
+    "next_lead": "chiral character at q=root of unity (fibre level, Im(q)\u22600), not real-q re-framing",
     "gate": "\u0394_\u03bb gate -- parameter-free probe, not a fit; nothing wired"
   }
 }
