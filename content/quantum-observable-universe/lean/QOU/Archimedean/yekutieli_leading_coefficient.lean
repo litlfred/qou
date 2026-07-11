@@ -30,14 +30,17 @@ sorry-free** and progressively fewer inputs are axiomatised:
    previously the axiomatised `chebyshev_top_eq_one` class field.
 
 3. **§3b-cond conditional class (cf. [`q_bkm_criterion.lean`](../../FluidDynamics/q_bkm_criterion.lean)).**
-   The remaining genuinely-deep, *not-in-Mathlib* inputs — Yekutieli's
-   non-abelian Stokes theorem on surfaces ([yekutieli2015]) identifying the
-   obstruction class with the raw curvature (`stokes_identity`), and the
-   genus-filtration normalisation identifying the raw value with the leading
-   Chebyshev coefficient (`raw_eq_chebyshev`) — are the **two** remaining
-   hypotheses of `YekutieliStokesNormalisation` (down from three).  The main
-   lemma **derives** `κ = c ∧ κ = 1` from them plus the proved
-   `leadingChebyshev_eq_one`; it does not assume the identity.
+   The remaining genuinely-deep, *not-in-Mathlib* input is stated as a
+   concrete **polynomial identity**: Yekutieli's non-abelian Stokes theorem
+   on surfaces ([yekutieli2015]) says the obstruction's genus generating
+   polynomial is the raw `d_q²` curvature times the monic genus-filtration
+   basis (`YekutieliStokesNormalisation.stokes_expansion`), with the
+   geometric data unit-normalised (`raw_normalised`, `κ_raw = 1`).  The
+   scalar `obstruction = κ_raw` is then **proved**
+   (`obstructionCoord_eq_kappaRaw`) from `stokes_expansion` via the
+   leading-coefficient extraction `leadingCoeff_C_mul_monicCheb` — it is no
+   longer an axiom.  The main lemma **derives** `κ = c ∧ κ = 1` from these
+   plus the proved `leadingChebyshev_eq_one`; it does not assume the identity.
 
 This is a *rigorous conditional result*: verified by Lean modulo the named
 class instance standing in for the non-abelian Stokes machinery (which a
@@ -45,9 +48,10 @@ full formalisation would build in
 [`QOU.MathlibExt.YekutieliIntegration`](../../MathlibExt/YekutieliIntegration.lean),
 whose discrete holonomy / Stokes layer is already sorry-free).  It is **not**
 a claim that the categorical `H²`-class identity is derived (AGENTS.md
-"Axiomatization is NOT a Proof"); the raw `d_q²` non-vanishing (1) and the
-Chebyshev normalisation (2) are unconditional, the Stokes identification (3)
-is not.
+"Axiomatization is NOT a Proof"); the raw `d_q²` non-vanishing (1), the
+Chebyshev normalisation (2), and the obstruction↔curvature extraction (3) are
+all proved.  The **two** remaining axioms are the polynomial `stokes_expansion`
+and the scalar `raw_normalised`.
 
 ## Base ring (§7c)
 
@@ -118,8 +122,8 @@ polynomial of degree `(p−1)/2`.  We exhibit that basis concretely (the monic
 three-term recurrence) and prove it monic, so its leading coefficient is `1`
 outright — discharging the former `chebyshev_top_eq_one` axiom.  Only the
 *normalisation* (the basis is monic) is proved here; the identification of
-the obstruction's genus coordinate with this basis is the axiomatised
-`raw_eq_chebyshev` below. -/
+the obstruction's genus generating polynomial with this basis is the
+axiomatised `YekutieliStokesNormalisation.stokes_expansion` below. -/
 
 /-- **Monic Chebyshev-type basis**: `p₀ = 1`, `p₁ = X`,
     `p_{n+2} = X·p_{n+1} − p_n`.  Monic of degree `n` by construction — the
