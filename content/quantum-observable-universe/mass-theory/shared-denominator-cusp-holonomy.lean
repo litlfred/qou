@@ -26,7 +26,9 @@ geometric input, not a consequence.
 
 namespace QOU.QPochhammer
 
-/-- A cusp-completeness predicate over `ℂ` at the shape parameter `z`:
+/-- The geometric-shape predicate over `ℂ` at the shape parameter `z` —
+    the *necessary* conditions for cusp completeness (the name says what
+    it asserts; the full holonomy content remains open, see below):
     the shape is a **geometric** ideal-tetrahedron shape — non-degenerate
     (`z ≠ 0`, `z ≠ 1`) and of positive imaginary part (upper half-plane,
     positively oriented). A genuine formalisation would additionally carry
@@ -35,7 +37,7 @@ namespace QOU.QPochhammer
     but `im_pos` already excludes every real (flattened) shape, so the
     predicate is not dischargeable by a constant real witness. -/
 -- Ref: [thurston1978] §4.5 (gluing equations)
-structure CuspComplete (z : ℂ) : Prop where
+structure GeometricShape (z : ℂ) : Prop where
   /-- Shape nondegeneracy: `z ≠ 0` (the degenerate collapsed vertex; the
       meridian holonomy equation `Hol_μ(z) = 1` itself remains open). -/
   shape_ne_zero : z ≠ 0
@@ -56,11 +58,11 @@ class SharedDenominatorCuspHolonomy
     (q x : ℝ) (n : ℕ) : Prop where
   /-- For each algebraic denominator zero `x = q^{-k}` (i.e. each
       `k < n` with `1 - x q^k = 0`), the matched complex cusp shape
-      parameter is `CuspComplete`. -/
+      parameter is `GeometricShape`. -/
   -- Ref: [manuscript] conj:shared-denominator-cusp-holonomy §proof sketch
   cusp_complete_of_root :
     ∀ (k : Fin n), 1 - x * q ^ (k : ℕ) = 0 →
-      ∃ z : ℂ, CuspComplete z
+      ∃ z : ℂ, GeometricShape z
 
 /-- Stated conjecture form: the algebraic denominator zeros are the
     Thurston cusp-completeness solutions. Inhabited only by an
@@ -69,7 +71,7 @@ class SharedDenominatorCuspHolonomy
 theorem shared_denominator_cusp_holonomy
     (q x : ℝ) (n : ℕ) [h : SharedDenominatorCuspHolonomy q x n] :
     ∀ (k : Fin n), 1 - x * q ^ (k : ℕ) = 0 →
-      ∃ z : ℂ, CuspComplete z :=
+      ∃ z : ℂ, GeometricShape z :=
   h.cusp_complete_of_root
 
 /-- **Solver-pipeline corollary.** The algebraic denominator zeros
@@ -81,7 +83,7 @@ theorem shared_denominator_cusp_holonomy
 theorem newton_seed_completeness
     (q x : ℝ) (n : ℕ) [h : SharedDenominatorCuspHolonomy q x n] :
     ∀ (k : Fin n), 1 - x * q ^ (k : ℕ) = 0 →
-      ∃ z : ℂ, CuspComplete z :=
+      ∃ z : ℂ, GeometricShape z :=
   shared_denominator_cusp_holonomy q x n
 
 /-! ## No instance — this is an open primary conjecture

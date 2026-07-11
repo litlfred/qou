@@ -44,7 +44,8 @@ noncomputable def partialProductLocal (q x : ℝ) (n : ℕ) : ℝ :=
 opaque BlochWignerD : ℝ → ℝ
 
 /-- The algebraic-geometric equivalence, as a §3b-cond
-    hypothesis-carrying class over a state variable `x`.  Per
+    hypothesis-carrying class over the substrate parameter `q` and the
+    state variable `x` (both real; each instance pins one `(q, x)` pair).  Per
     AGENTS.md §3b-cond rule 5, the fields axiomatise the conjecture's
     *inputs* — NOT its conclusion:
 
