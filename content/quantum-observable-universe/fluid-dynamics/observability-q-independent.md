@@ -12,4 +12,4 @@ $$
 
 If $(\mathbf{C}, A, \tau)$ sustains the observability axiom over one section $q > 1$, it sustains the axiom over **every** section, unconditionally including $q = 1$.
 
-**Mathematical Novelty.** While categorising Hom-spaces as independent of the differential layer $d_q$ holds as a triviality, deploying this exact independence mechanically bridges the structural gap. It provides the strict mathematical conduit permitting structural properties to safely survive the transition from the regular deformed phase space ($q > 1$) directly to the unphysical singular substrate ($q = 1$).
+**Mathematical novelty.** That the Hom-spaces are independent of the differential layer $d_q$ is a triviality; the point is that this independence carries the observability property across the transition from the regular deformed phase ($q > 1$) to the singular substrate ($q = 1$).
