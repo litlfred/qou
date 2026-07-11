@@ -1,0 +1,54 @@
+{
+  "computation": "qbeta-c3-keystone-overclaim-verification",
+  "description": "Cross-anchor + O(u\u00b3)-bound + sector verification re-scoping the 2026-07-08 'exact topological derivation' of c_3 from PROVEN to muon-anchored fit (fails proton cross-anchor).",
+  "audit_only": true,
+  "tier": "structural-exact (cross-anchor test; refutes the 'exact' scope, keeps the near-match)",
+  "computedAt": "2026-07-11T04:20:08.328292+00:00",
+  "commitSha": "98f41d1dcfe63e198ffdd08cd2e3db6f383d237b",
+  "engine": "mpmath",
+  "engineVersion": "1.3.0",
+  "scriptFile": "qbeta_c3_keystone_overclaim_verification.py",
+  "scriptHash": "3553e6ac5feb",
+  "assertions": [
+    {
+      "name": "u_is_anchor_invariant_to_1e6",
+      "passed": true
+    },
+    {
+      "name": "muon_is_a_near_match_lt_0p1pct",
+      "passed": true
+    },
+    {
+      "name": "proton_missed_by_full_swing_gt_2pct",
+      "passed": true
+    },
+    {
+      "name": "muon_residual_exceeds_claimed_u3_bound_by_100x",
+      "passed": true
+    },
+    {
+      "name": "formula_cannot_reproduce_swing",
+      "passed": true
+    },
+    {
+      "name": "vol41_and_hopf_shadow_are_distinct_sectors",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "formula_value": "-2.021618949",
+    "miss_muon": "0.0007083",
+    "miss_proton": "0.02306",
+    "c3_cross_anchor_swing": "0.02433",
+    "muon_residual_vs_claimed_u3_bound_ratio": "2325.0",
+    "verdict": "SCOPE-(a) re-scope of the 2026-07-08 'exact topological derivation' of c_3. The formula c_3 = -Vol(4_1)+u-(10/3)u\u00b2 is a MUON-ANCHORED numerical near-match (miss 0.000708), NOT a derivation: it MISSES the proton anchor by 0.0231 \u2014 the entire 0.0243 cross-anchor swing \u2014 because its only q-dependence is u (anchor-invariant to ~1e-8), so it returns one fixed value while c_3 swings. Its OWN 'residual zero within O(u\u00b3)' claim is false: the muon residual is 2.33e+3\u00d7 the claimed bound. It conflates sectors (-Vol(4_1)=-2.030 is the EVEN/amphichiral CS=0 face; the c_3 near-match -2 = J_Hopf(1) is the ODD/chiral face \u2014 #3487). And its Lean 'certification' proves def=def by rfl on hardcoded decimal literals (Vol_4_1, u, 10/3) \u2014 zero content (anti-laundering \u00a7'Axiomatization is NOT a Proof'). The numerical near-match is real and worth recording; the 'PROVEN / exact derivation' scope violates the registry \u00a78 flip-flop guard (mandatory proton+muon cross-anchor test). c_3 stays tier empirical. No fit; no c_k value; no wiring; no tier change."
+  },
+  "context": {
+    "axis": "z->c_k f-map keystone: c_3 over-claim re-scope",
+    "target": "docs/audits/2026-07-08-qbeta-keystone-derivation.md (commit e21a942632)",
+    "discipline": "registry \u00a78 flip-flop guard (proton+muon cross-anchor); anti-laundering 'Axiomatization is NOT a Proof'",
+    "correct_sector_split": "#3487 parity\u2194chirality: -Vol=even/amphichiral, -2=J_Hopf odd/chiral",
+    "production_safe": "grep clean \u2014 canonical_mass/registry/dashboards NOT wired"
+  }
+}

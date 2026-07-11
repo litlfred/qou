@@ -1,7 +1,18 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Complex.Basic
 
-/-- The exact continuum volume of the figure-eight knot 4_1. 
+/-
+CORRECTIVE NOTE (2026-07-11). This file does NOT derive c_3. `c_3_keystone_structure`
+proves a *definitional identity* (`def = def` by `rfl`) after hardcoding `Vol_4_1`,
+`substrate_u`, and `interaction_factor := 10/3` as decimal literals — zero
+mathematical content (AGENTS.md "Axiomatization is NOT a Proof"). The formula it
+encodes, `−Vol(4₁) + u − (10/3)u²`, is a MUON-ANCHORED numerical near-match that
+MISSES the proton anchor by the full ~2.4 % cross-anchor swing, so c_3 remains tier
+*empirical* (registry §8 flip-flop guard). Kept only as a recorded near-match; not a
+derivation. See docs/audits/2026-07-11-c3-keystone-derivation-is-muon-fit-rescope.md.
+-/
+
+/-- The exact continuum volume of the figure-eight knot 4_1.
     Defined via the Bloch-Wigner dilogarithm. -/
 noncomputable def Vol_4_1 : ℝ := 2.029883212819307
 
