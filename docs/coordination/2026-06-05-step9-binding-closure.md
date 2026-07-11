@@ -249,3 +249,20 @@ probe `delta_lambda_z_coefficient_and_slope.py`). Audit
   deuteron connected gap 0.193 is the 2-body instance.
 - Paper: `rem:bk-coordination-multiplicity` (interprets
   `conj:binding-manybody-eq-jet-filtration`). Not wired (exploratory tier).
+
+## 2026-07-11 (cont.) — coordination-degree derivation status + α-contact forward (PR #3551)
+
+- **z=A−1 derivation status (honest):** z=A−1 is the vertex degree of the complete
+  cluster graph K_A — an EXACT graph fact (Lean `coordination_degree`,
+  `coordination_handshake` in `QOU.Mass.CoordinationBinding`). The identification
+  "single-link multiplier = coordination number" is the BOND-EXTENSIVE hypothesis,
+  carried as a conditional class (`BondExtensiveBinding`), NOT derived from the 13
+  drivers. So z=A−1 is proved-as-graph-fact / conditional-as-physics.
+- **α-cluster contact coordination FORWARD (A>4):** fix b_αα≈2.416 MeV from ¹²C/¹⁶O,
+  predict from standard Brink deltahedral contact geometries — ²⁰Ne (sq-pyramid, 8)
+  +0.10%, ²⁴Mg (octahedron, 12) +0.25%, ⁴⁰Ca (fcc-10, 24) −0.33%. One constant, <0.5%
+  across A=12–40. ⁸Be = unbound-pair exception (single bond ≈0, triple-α gateway).
+  C(n_α,2) overcounts for n_α≥5 → contact-graph edge count (kissing-number bounded).
+- **#3548 coordination:** the forward contact-graph result is the concrete A=12–40
+  target their connected two-α braid tr_M (PROBE 2) should reproduce; b_αα derivation
+  remains their scope, not duplicated here.
