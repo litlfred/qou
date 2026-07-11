@@ -88,6 +88,10 @@ else
   LINK_NAME="lean-$VERSION"
 fi
 EXTRACT_DIR="/tmp/lean-$VERSION"
+# elan's canonical name for the pinned spec `leanprover/lean4:vX.Y.Z`
+# (`/`→`--`, `:`→`---`) — what the Lean LSP server resolves, distinct from
+# the `lean-<version>` LINK_NAME this script overrides to. See step 3a.
+CANONICAL_NAME="leanprover--lean4---$VERSION"
 ZIP_URL="https://github.com/leanprover/lean4/releases/download/$VERSION/lean-${VERSION#v}-linux.zip"
 ZIP_PATH="/tmp/lean-$VERSION-linux.zip"
 
@@ -110,9 +114,14 @@ lake_ok() {
   [ "$v" = "Lean version ${VERSION#v}" ]
 }
 
-# 1. Fully-ready short-circuit: linked + override + lake works.
+# 1. Fully-ready short-circuit: linked + override + lake works, AND (on
+#    Linux) the canonical-name symlink the LSP needs is present. Including
+#    the canonical check here means a warm session missing only that
+#    symlink does NOT short-circuit — it falls through to step 3a, which
+#    (re)creates it. macOS uses the native toolchain (no symlink needed).
 if elan toolchain list 2>/dev/null | grep -qF "$LINK_NAME" \
-   && override_ok && lake_ok
+   && override_ok && lake_ok \
+   && { [ "$OS_NAME" = "Darwin" ] || [ -e "$ELAN_HOME/toolchains/$CANONICAL_NAME" ]; }
 then
   exit 0
 fi
@@ -170,6 +179,28 @@ fi
 
 # 3. Register with elan (idempotent; harmless if already linked).
 elan toolchain link "$LINK_NAME" "$EXTRACT_DIR" 2>/dev/null || true
+
+# 3a. Also register under elan's CANONICAL toolchain name for the pinned
+#     spec (`leanprover/lean4:vX.Y.Z` → `leanprover--lean4---vX.Y.Z`), so
+#     tools that resolve the *spec* directly rather than the per-repo
+#     override's `LINK_NAME` find the toolchain locally. The Lean LSP
+#     server (lean-lsp-mcp) does exactly this: it reads `lean-toolchain`
+#     and looks up the canonical name, NOT the `lean-<version>` link this
+#     script overrides to. Without this symlink the LSP fails to
+#     initialize — it tries to fetch the toolchain from the firewalled
+#     `release.lean-lang.org` and times out — even though `lake`/`lean`
+#     work fine via the override. `elan toolchain link` cannot be used
+#     (its names may not contain `/` or `:`), so we create the canonical
+#     symlink directly, mirroring how `elan toolchain link` registers.
+if [ -d "$ELAN_HOME/toolchains" ] \
+   && [ "$CANONICAL_NAME" != "$LINK_NAME" ] \
+   && [ ! -e "$ELAN_HOME/toolchains/$CANONICAL_NAME" ]; then
+  if ln -sfn "$EXTRACT_DIR" "$ELAN_HOME/toolchains/$CANONICAL_NAME" 2>/dev/null; then
+    echo "setup-lean-toolchain: linked canonical name $CANONICAL_NAME (LSP toolchain resolution)" >&2
+  else
+    echo "setup-lean-toolchain: could not link canonical name $CANONICAL_NAME (best-effort; LSP may not start)" >&2
+  fi
+fi
 
 # 4. Set repo-level override (always — survives container restarts where
 #    the elan settings file resets but /tmp survives).
