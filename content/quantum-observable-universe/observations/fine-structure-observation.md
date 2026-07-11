@@ -19,7 +19,7 @@ $$
   = \frac{2g}{4\pi(g-1)}\Big|_{g=4}.
 $$
 
-The genus-$4$ topology fixes $b_1 = 2g = 8$ and the Gauss–Bonnet area. The corrected value is $137.0354$. This leaves a $-4.2\;\mathrm{ppm}$ residual against the CODATA value of $137.035999$. This additive correction improves the bare form by a factor of $370$. Both the tree term and the additive zero-mode are Lean-formalised.
+The genus-$4$ topology fixes $b_1 = 2g = 8$ and the Gauss–Bonnet area. The corrected value is $137.0354$. This leaves a $-4.2\;\mathrm{ppm}$ residual against the CODATA value of $137.035999$. This additive correction improves the bare form by a factor of $370$.
 
 **Order of validity.**
 The remaining $-4.2\;\mathrm{ppm}$ represents a next-order Schwinger-type effect $\sim \alpha/(4\pi)$. The denominator $8\pi = \pi\,b_1$ is derived. The exact coefficient is an $O(\alpha^2)$ Bloch-group normalisation in $B_3(\mathbb{C})$ over the ideal hyperbolic tetrahedra of Bring's surface. This coefficient is not yet closed ([α_EM derivation open problems](#rem:alpha-em-derivation-open-problems)). The parameter-free prediction holds to $\approx 4\;\mathrm{ppm}$ via the additive correction. The $O(\alpha)$ self-energy coefficient remains open.

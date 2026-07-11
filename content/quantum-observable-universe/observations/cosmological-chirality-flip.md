@@ -1,7 +1,5 @@
 The [time reversal barrier](#rem:time-reversal-energy-barrier) dictates infinite energy for chirality reversal in the observable sector. The [cosmological limits](#ex:cosmological-limits) specify two regimes lacking this topological protection.
 
-**Formalization status.** These claims are conjectural. We lack Lean formalization for the Frobenius degeneration at $q \to \infty$.
-
 **At the Big Bang ($q \to \infty$).**
 
 The Frobenius form degenerates: $\int_A(f^\dagger f) \sim q^{-1} \to 0$. The [Heisenberg commutator](#rem:heisenberg-commutator) $[\hat{X}, \hat{P}]_q \to J$ is maximal. Observables become maximally non-commutative. The positive-definiteness axiom vanishes.

@@ -7,7 +7,3 @@ Part (2): The crossing energy formula gives the binding energies. In the Borrome
 Part (3): Direct evaluation at $q = q_0$.
 
 Part (4): The compression energy is the standard Fermi gas kinetic energy utilizing the $q$-deformed Planck constant $\hbar_q = (q-1)/q$. The Borromean volume $V_B$ enters the mass denominator of the kinetic energy, thereby creating a volume-dependent feedback. The diquark phase contributes zero volume, rendering its kinetic energy independent of $V_B$. $\square$
-
-## Lean formalization
-
-The companion Lean `borromean_hopf_energy_crossover` states the crossover and defers its proof via `sorry` (`-- Ref: [manuscript]`).

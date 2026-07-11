@@ -34,7 +34,7 @@ $$
   1
 $$
 
-This holds identically in $\mathbb{Q}(q)$ for every $q \neq 0, 1$. The algebraic identity is verified in Lean as `gravitational_planck_eq_one` (file [gravitational-constant.lean](#def:gravitational-constant)).
+This holds identically in $\mathbb{Q}(q)$ for every $q \neq 0, 1$.
 
 **Consequence for the spectral prefactor.**
 

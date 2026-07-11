@@ -1,3 +1,1 @@
 Crystal-resonance experiments probe the substrate at lattice scales. We now turn to the high-energy probe of pair creation. Two blocks anchor this section: Remark: Breit--Wheeler process: first direct observation and QOU prediction compares the first direct observation of the Breit–Wheeler process against the QOU prediction for the $\gamma\gamma \to e^+ e^-$ cross-section, and Remark: Energy cost of electron--positron conversion computes the energy cost of the conversion in terms of crossing energy. Together, these blocks set up the categorical reading of pair creation. This reading is necessary for the complexity-and-interpretation section, which treats virtual pairs as excitations of the exceptional divisor.
-
-_(draft.)_
