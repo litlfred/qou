@@ -1,0 +1,87 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-11T18:34:18.052913+00:00",
+  "commitSha": "9037233e724850703888e190563fdca7703d2c64",
+  "assertions": [
+    {
+      "name": "geometry_side_scored",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "Im 𝔙 via gluing solver scored vs S at both anchors (scope-(a))"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "qbeta-c3-geometry-derived-argument",
+  "scriptFile": "qbeta_c3_geometry_derived_argument_probe.py",
+  "scriptHash": "2d487ba93c8b",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Geometry-side one-shot for c₃ bar-odd S: Im 𝔙 (figure-eight complex volume, gluing Newton solver) at a small named set of principled complex substrate meridian holonomies m (substrate quantity × b-map phase e^{iπ/4}), scored vs S at both anchors. The geometry-native readout the merged 60-argument Φ_b analysis scan lacked. Scope-(a); C14; no c_k wired; no fit. Expected/observed: clean negative (same q₀→m open map).",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "targets": {
+      "S": {
+        "muon": "0.00968298",
+        "proton": "-0.03945936"
+      },
+      "r_S_u3": {
+        "muon": "1.0999442e-5",
+        "proton": "-4.4824095e-5"
+      }
+    },
+    "geometry_readouts": [
+      {
+        "argument": "u=t·e^{iπ/4}",
+        "ImV_muon": "0.00942840846",
+        "ImV_proton": "0.009428406375",
+        "relerr_S_max": 1.2389396679162794,
+        "candidate": false
+      },
+      {
+        "argument": "u=2t·e^{iπ/4}",
+        "ImV_muon": "0.03771363384",
+        "ImV_proton": "0.0377136255",
+        "relerr_S_max": 2.894837523000791,
+        "candidate": false
+      },
+      {
+        "argument": "u=ℏ_q²·e^{iπ/4}",
+        "ImV_muon": "8.346509516e-5",
+        "ImV_proton": "8.346506014e-5",
+        "relerr_S_max": 1.002115215759675,
+        "candidate": false
+      },
+      {
+        "argument": "u=b² (=i·t/2π)",
+        "ImV_muon": "9.873153086e-47",
+        "ImV_proton": "9.873150903e-47",
+        "relerr_S_max": 1.0,
+        "candidate": false
+      },
+      {
+        "argument": "u=2πb²·e^{iπ/4}",
+        "ImV_muon": "-0.00942840846",
+        "ImV_proton": "-0.009428406375",
+        "relerr_S_max": 1.9737093807501978,
+        "candidate": false
+      }
+    ],
+    "verdict": "clean negative"
+  }
+}
