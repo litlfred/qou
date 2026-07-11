@@ -99,7 +99,7 @@ theorem dim_q_squares_sum_two (q : ℝ) :
     SYT counts.  Mirrors `syt3_squares_sum_eq_six`. -/
 theorem syt_squares_sum_three : 1 ^ 2 + 2 ^ 2 + 1 ^ 2 = 6 := by norm_num
 
-/-- The **q-deformed RSK identity** at `n = 3`: `Σ_λ dim_q(λ)
+/-! The **q-deformed RSK identity** at `n = 3`: `Σ_λ dim_q(λ)
     · d_λ² = [3]_q!` — checked at our three concrete partitions.
 
     LHS = `1·1² + (q+q⁻¹)·2² + 1·1² = 2 + 4(q+q⁻¹) = 2 + 4q + 4q⁻¹`.
@@ -244,13 +244,13 @@ def dimqPartition111 (_q : ℝ) : ℝ :=
     - `y_[1,1,1] = 1 / [3]_q!`. -/
 
 /-- `y_[3] = 1 / [3]_q!`. -/
-noncomputable def yLambda_row3 (q : ℝ) : ℝ := 1 / QOU.qFactorial q 3
+noncomputable def yLambda_row3 (q : ℝ) : ℝ := 1 / QOU.GaugeFieldFluidDynamics.qFactorial q 3
 
 /-- `y_[2,1] = 2 / [3]_q`. -/
-noncomputable def yLambda_lshape21 (q : ℝ) : ℝ := 2 / QOU.qInteger q 3
+noncomputable def yLambda_lshape21 (q : ℝ) : ℝ := 2 / QOU.GaugeFieldFluidDynamics.qInteger q 3
 
 /-- `y_[1,1,1] = 1 / [3]_q!`. -/
-noncomputable def yLambda_col3 (q : ℝ) : ℝ := 1 / QOU.qFactorial q 3
+noncomputable def yLambda_col3 (q : ℝ) : ℝ := 1 / QOU.GaugeFieldFluidDynamics.qFactorial q 3
 
 /-- Symmetry: `y_[3] = y_[1,1,1]` (column-row duality at `n = 3`). -/
 theorem yLambda_row3_eq_col3 (q : ℝ) :
@@ -268,16 +268,15 @@ theorem yLambda_row3_eq_col3 (q : ℝ) :
     Caller-supplied `h3 : [3]_q ≠ 0`.  At substrate `q > 1`,
     `qInteger_pos q 3 hq_one (le_refl 3)` discharges. -/
 theorem dimqPartition21_via_hook_formula (q : ℝ) (hq : q - q⁻¹ ≠ 0)
-    (h3 : QOU.qInteger q 3 ≠ 0) :
-    QOU.qFactorial q 3 / QOU.qHookProduct q [3, 1, 1]
+    (h3 : QOU.GaugeFieldFluidDynamics.qInteger q 3 ≠ 0) :
+    QOU.GaugeFieldFluidDynamics.qFactorial q 3 / QOU.GaugeFieldFluidDynamics.qHookProduct q [3, 1, 1]
       = dimqPartition21 q := by
   unfold dimqPartition21
-  show QOU.qInteger q 3 * (QOU.qInteger q 2 * (QOU.qInteger q 1 * 1))
-    / (QOU.qInteger q 3 * (QOU.qInteger q 1 * (QOU.qInteger q 1 * 1)))
+  show QOU.GaugeFieldFluidDynamics.qInteger q 3 * (QOU.GaugeFieldFluidDynamics.qInteger q 2 * (QOU.GaugeFieldFluidDynamics.qInteger q 1 * 1))
+    / (QOU.GaugeFieldFluidDynamics.qInteger q 3 * (QOU.GaugeFieldFluidDynamics.qInteger q 1 * (QOU.GaugeFieldFluidDynamics.qInteger q 1 * 1)))
     = q + q⁻¹
-  rw [QOU.qInteger_two q hq, QOU.qInteger_one q hq]
+  rw [QOU.GaugeFieldFluidDynamics.qInteger_two q hq, QOU.GaugeFieldFluidDynamics.qInteger_one q hq]
   field_simp
-  ring
 
 /-! ### n=4 dim_q values
 
@@ -298,15 +297,15 @@ def dimqPartition4 (_q : ℝ) : ℝ :=
   1
 
 /-- `dim_q([3,1]) = [3]_q`. -/
-noncomputable def dimqPartition31 (q : ℝ) : ℝ := QOU.qInteger q 3
+noncomputable def dimqPartition31 (q : ℝ) : ℝ := QOU.GaugeFieldFluidDynamics.qInteger q 3
 
 /-- `dim_q([2,2]) = [4]_q / [2]_q`. -/
 noncomputable def dimqPartition22 (q : ℝ) : ℝ :=
-  QOU.qInteger q 4 / QOU.qInteger q 2
+  QOU.GaugeFieldFluidDynamics.qInteger q 4 / QOU.GaugeFieldFluidDynamics.qInteger q 2
 
 /-- `dim_q([2,1,1]) = [3]_q`.  Equal to `dim_q([3,1])` (column-row
     duality). -/
-noncomputable def dimqPartition211 (q : ℝ) : ℝ := QOU.qInteger q 3
+noncomputable def dimqPartition211 (q : ℝ) : ℝ := QOU.GaugeFieldFluidDynamics.qInteger q 3
 
 /-- `dim_q([1,1,1,1]) = 1`. -/
 def dimqPartition1111 (_q : ℝ) : ℝ :=
@@ -331,23 +330,23 @@ theorem dimqPartition4_eq_dimqPartition1111 (q : ℝ) :
     - `y_[1,1,1,1] = 1 / [4]_q!`. -/
 
 /-- `y_[4] = 1 / [4]_q!`. -/
-noncomputable def yLambda_row4 (q : ℝ) : ℝ := 1 / QOU.qFactorial q 4
+noncomputable def yLambda_row4 (q : ℝ) : ℝ := 1 / QOU.GaugeFieldFluidDynamics.qFactorial q 4
 
 /-- `y_[3,1] = 3 / ([4]_q · [2]_q)`. -/
 noncomputable def yLambda_31 (q : ℝ) : ℝ :=
-  3 / (QOU.qInteger q 4 * QOU.qInteger q 2)
+  3 / (QOU.GaugeFieldFluidDynamics.qInteger q 4 * QOU.GaugeFieldFluidDynamics.qInteger q 2)
 
 /-- `y_[2,2] = 2 / ([3]_q · [2]_q²)`. -/
 noncomputable def yLambda_22 (q : ℝ) : ℝ :=
-  2 / (QOU.qInteger q 3 * QOU.qInteger q 2 ^ 2)
+  2 / (QOU.GaugeFieldFluidDynamics.qInteger q 3 * QOU.GaugeFieldFluidDynamics.qInteger q 2 ^ 2)
 
 /-- `y_[2,1,1] = 3 / ([4]_q · [2]_q)`.  Equal to `y_[3,1]`
     (column-row duality at n = 4). -/
 noncomputable def yLambda_211 (q : ℝ) : ℝ :=
-  3 / (QOU.qInteger q 4 * QOU.qInteger q 2)
+  3 / (QOU.GaugeFieldFluidDynamics.qInteger q 4 * QOU.GaugeFieldFluidDynamics.qInteger q 2)
 
 /-- `y_[1,1,1,1] = 1 / [4]_q!`. -/
-noncomputable def yLambda_col4 (q : ℝ) : ℝ := 1 / QOU.qFactorial q 4
+noncomputable def yLambda_col4 (q : ℝ) : ℝ := 1 / QOU.GaugeFieldFluidDynamics.qFactorial q 4
 
 /-- Column-row duality at `n = 4` for `y_λ`. -/
 theorem yLambda_31_eq_yLambda_211 (q : ℝ) :
@@ -367,20 +366,167 @@ theorem yLambda_row4_eq_yLambda_col4 (q : ℝ) :
 
     Caller-supplied hypotheses `h2 : [2]_q ≠ 0` and `h4 :
     [4]_q ≠ 0`.  At substrate `q > 1` these follow from
-    `QOU.qInteger_pos q k (hq_one : q > 1) (hk : k ≥ 1)`. -/
+    `QOU.GaugeFieldFluidDynamics.qInteger_pos q k (hq_one : q > 1) (hk : k ≥ 1)`. -/
 theorem dimqPartition31_via_hook_formula (q : ℝ) (hq : q - q⁻¹ ≠ 0)
-    (h2 : QOU.qInteger q 2 ≠ 0) (h4 : QOU.qInteger q 4 ≠ 0) :
-    QOU.qFactorial q 4 / QOU.qHookProduct q [4, 2, 1, 1]
+    (h2 : QOU.GaugeFieldFluidDynamics.qInteger q 2 ≠ 0) (h4 : QOU.GaugeFieldFluidDynamics.qInteger q 4 ≠ 0) :
+    QOU.GaugeFieldFluidDynamics.qFactorial q 4 / QOU.GaugeFieldFluidDynamics.qHookProduct q [4, 2, 1, 1]
       = dimqPartition31 q := by
   unfold dimqPartition31
-  show QOU.qInteger q 4 * (QOU.qInteger q 3 * (QOU.qInteger q 2 *
-      (QOU.qInteger q 1 * 1)))
-    / (QOU.qInteger q 4 * (QOU.qInteger q 2 *
-      (QOU.qInteger q 1 * (QOU.qInteger q 1 * 1))))
-    = QOU.qInteger q 3
-  rw [QOU.qInteger_one q hq]
+  show QOU.GaugeFieldFluidDynamics.qInteger q 4 * (QOU.GaugeFieldFluidDynamics.qInteger q 3 * (QOU.GaugeFieldFluidDynamics.qInteger q 2 *
+      (QOU.GaugeFieldFluidDynamics.qInteger q 1 * 1)))
+    / (QOU.GaugeFieldFluidDynamics.qInteger q 4 * (QOU.GaugeFieldFluidDynamics.qInteger q 2 *
+      (QOU.GaugeFieldFluidDynamics.qInteger q 1 * (QOU.GaugeFieldFluidDynamics.qInteger q 1 * 1))))
+    = QOU.GaugeFieldFluidDynamics.qInteger q 3
+  rw [QOU.GaugeFieldFluidDynamics.qInteger_one q hq]
   field_simp
-  ring
+
+/-! ### Cohort: `n = 5` (7 partitions)
+
+    Partition data:
+    - `[5]`           : hooks `(5, 4, 3, 2, 1)`,        `d = 1`
+    - `[4, 1]`        : hooks `(5, 3, 2, 1, 1)`,        `d = 4`
+    - `[3, 2]`        : hooks `(4, 3, 2, 1, 1)`,        `d = 5`
+    - `[3, 1, 1]`     : hooks `(5, 2, 1, 2, 1)`,        `d = 6`
+    - `[2, 2, 1]`     : hooks `(4, 2, 3, 1, 1)`,        `d = 5`
+    - `[2, 1, 1, 1]`  : hooks `(5, 1, 3, 2, 1)`,        `d = 4`
+    - `[1, 1, 1, 1, 1]` : hooks `(5, 4, 3, 2, 1)`,      `d = 1`
+
+    Sum of squares: `1² + 4² + 5² + 6² + 5² + 4² + 1²
+    = 1 + 16 + 25 + 36 + 25 + 16 + 1 = 120 = 5!` ✓ -/
+
+/-- The seven partitions of `n = 5` with hook + SYT data. -/
+def n5_cohort : List (WenzlPartitionData 5) :=
+  [{ name := "[5]",            hooks := [5, 4, 3, 2, 1], syt_count := 1 },
+   { name := "[4,1]",          hooks := [5, 3, 2, 1, 1], syt_count := 4 },
+   { name := "[3,2]",          hooks := [4, 3, 2, 1, 1], syt_count := 5 },
+   { name := "[3,1,1]",        hooks := [5, 2, 1, 2, 1], syt_count := 6 },
+   { name := "[2,2,1]",        hooks := [4, 2, 3, 1, 1], syt_count := 5 },
+   { name := "[2,1,1,1]",      hooks := [5, 1, 3, 2, 1], syt_count := 4 },
+   { name := "[1,1,1,1,1]",    hooks := [5, 4, 3, 2, 1], syt_count := 1 }]
+
+/-- `Σ d_λ² = 5! = 120` at `n = 5` (Burnside / RSK). -/
+theorem n5_squares_sum_eq :
+    (n5_cohort.map (fun p => p.syt_count ^ 2)).sum = 120 := by
+  decide
+
+theorem n5_cohort_length : n5_cohort.length = 7 := rfl
+
+/-! ### Cohort: `n = 6` (11 partitions)
+
+    SYT counts (Frame–Robinson–Thrall):
+    - `[6]:1, [5,1]:5, [4,2]:9, [4,1,1]:10, [3,3]:5,
+       [3,2,1]:16, [3,1,1,1]:10, [2,2,2]:5, [2,2,1,1]:9,
+       [2,1,1,1,1]:5, [1,1,1,1,1,1]:1`.
+    Sum of squares: `1 + 25 + 81 + 100 + 25 + 256 + 100 + 25
+       + 81 + 25 + 1 = 720 = 6!` ✓ -/
+
+/-- The 11 partitions of `n = 6` with hook + SYT data. -/
+def n6_cohort : List (WenzlPartitionData 6) :=
+  [{ name := "[6]",            hooks := [6, 5, 4, 3, 2, 1], syt_count := 1 },
+   { name := "[5,1]",          hooks := [6, 4, 3, 2, 1, 1], syt_count := 5 },
+   { name := "[4,2]",          hooks := [5, 4, 2, 1, 2, 1], syt_count := 9 },
+   { name := "[4,1,1]",        hooks := [6, 3, 2, 1, 2, 1], syt_count := 10 },
+   { name := "[3,3]",          hooks := [4, 3, 2, 3, 2, 1], syt_count := 5 },
+   { name := "[3,2,1]",        hooks := [5, 3, 1, 3, 1, 1], syt_count := 16 },
+   { name := "[3,1,1,1]",      hooks := [6, 2, 1, 3, 2, 1], syt_count := 10 },
+   { name := "[2,2,2]",        hooks := [4, 3, 3, 2, 2, 1], syt_count := 5 },
+   { name := "[2,2,1,1]",      hooks := [5, 2, 3, 1, 2, 1], syt_count := 9 },
+   { name := "[2,1,1,1,1]",    hooks := [6, 1, 4, 3, 2, 1], syt_count := 5 },
+   { name := "[1,1,1,1,1,1]",  hooks := [6, 5, 4, 3, 2, 1], syt_count := 1 }]
+
+/-- `Σ d_λ² = 6! = 720` at `n = 6`. -/
+theorem n6_squares_sum_eq :
+    (n6_cohort.map (fun p => p.syt_count ^ 2)).sum = 720 := by
+  show (1 ^ 2 + (5 ^ 2 + (9 ^ 2 + (10 ^ 2 + (5 ^ 2 + (16 ^ 2 + (10 ^ 2 +
+    (5 ^ 2 + (9 ^ 2 + (5 ^ 2 + (1 ^ 2 + 0))))))))))) = 720
+  norm_num
+
+theorem n6_cohort_length : n6_cohort.length = 11 := rfl
+
+/-! ### Cohort: `n = 7` (15 partitions)
+
+    SYT counts:
+    `[7]:1, [6,1]:6, [5,2]:14, [5,1,1]:15, [4,3]:14, [4,2,1]:35,
+     [4,1,1,1]:20, [3,3,1]:21, [3,2,2]:21, [3,2,1,1]:35,
+     [3,1,1,1,1]:15, [2,2,2,1]:14, [2,2,1,1,1]:14,
+     [2,1,1,1,1,1]:6, [1,1,1,1,1,1,1]:1`.
+    Sum of squares: `1+36+196+225+196+1225+400+441+441+1225+225
+     +196+196+36+1 = 5040 = 7!` ✓ -/
+
+/-- The 15 partitions of `n = 7` with hook + SYT data. -/
+def n7_cohort : List (WenzlPartitionData 7) :=
+  [{ name := "[7]",                 hooks := [7, 6, 5, 4, 3, 2, 1], syt_count := 1 },
+   { name := "[6,1]",               hooks := [7, 5, 4, 3, 2, 1, 1], syt_count := 6 },
+   { name := "[5,2]",               hooks := [6, 5, 3, 2, 1, 2, 1], syt_count := 14 },
+   { name := "[5,1,1]",             hooks := [7, 4, 3, 2, 1, 2, 1], syt_count := 15 },
+   { name := "[4,3]",               hooks := [5, 4, 3, 2, 3, 2, 1], syt_count := 14 },
+   { name := "[4,2,1]",             hooks := [6, 4, 2, 1, 3, 1, 1], syt_count := 35 },
+   { name := "[4,1,1,1]",           hooks := [7, 3, 2, 1, 3, 2, 1], syt_count := 20 },
+   { name := "[3,3,1]",             hooks := [5, 3, 2, 4, 2, 1, 1], syt_count := 21 },
+   { name := "[3,2,2]",             hooks := [5, 3, 2, 3, 2, 1, 1], syt_count := 21 },
+   { name := "[3,2,1,1]",           hooks := [6, 3, 1, 4, 1, 2, 1], syt_count := 35 },
+   { name := "[3,1,1,1,1]",         hooks := [7, 2, 1, 4, 3, 2, 1], syt_count := 15 },
+   { name := "[2,2,2,1]",           hooks := [5, 2, 4, 1, 3, 2, 1], syt_count := 14 },
+   { name := "[2,2,1,1,1]",         hooks := [6, 2, 4, 3, 1, 2, 1], syt_count := 14 },
+   { name := "[2,1,1,1,1,1]",       hooks := [7, 1, 5, 4, 3, 2, 1], syt_count := 6 },
+   { name := "[1,1,1,1,1,1,1]",     hooks := [7, 6, 5, 4, 3, 2, 1], syt_count := 1 }]
+
+/-- `Σ d_λ² = 7! = 5040` at `n = 7`. -/
+theorem n7_squares_sum_eq :
+    (n7_cohort.map (fun p => p.syt_count ^ 2)).sum = 5040 := by
+  show (1 ^ 2 + (6 ^ 2 + (14 ^ 2 + (15 ^ 2 + (14 ^ 2 + (35 ^ 2 + (20 ^ 2 +
+    (21 ^ 2 + (21 ^ 2 + (35 ^ 2 + (15 ^ 2 + (14 ^ 2 + (14 ^ 2 +
+    (6 ^ 2 + (1 ^ 2 + 0))))))))))))))) = 5040
+  norm_num
+
+theorem n7_cohort_length : n7_cohort.length = 15 := rfl
+
+/-! ### Cohort: `n = 8` (22 partitions)
+
+    SYT counts:
+    `[8]:1, [7,1]:7, [6,2]:20, [6,1,1]:21, [5,3]:28, [5,2,1]:64,
+     [5,1,1,1]:35, [4,4]:14, [4,3,1]:70, [4,2,2]:56, [4,2,1,1]:90,
+     [4,1,1,1,1]:35, [3,3,2]:42, [3,3,1,1]:56, [3,2,2,1]:70,
+     [3,2,1,1,1]:64, [3,1,1,1,1,1]:21, [2,2,2,2]:14,
+     [2,2,2,1,1]:28, [2,2,1,1,1,1]:20, [2,1,1,1,1,1,1]:7,
+     [1,1,1,1,1,1,1,1]:1`.
+    Sum of squares: `1+49+400+441+784+4096+1225+196+4900+3136+
+     8100+1225+1764+3136+4900+4096+441+196+784+400+49+1
+     = 40320 = 8!` ✓ -/
+
+/-- The 22 partitions of `n = 8` with SYT data (hooks elided to a
+    placeholder list of length 8 for compactness; expand on demand
+    via the canonical hook-walk algorithm). -/
+def n8_cohort : List (WenzlPartitionData 8) :=
+  [{ name := "[8]",                       hooks := [8,7,6,5,4,3,2,1], syt_count := 1 },
+   { name := "[7,1]",                     hooks := [8,6,5,4,3,2,1,1], syt_count := 7 },
+   { name := "[6,2]",                     hooks := [7,6,4,3,2,1,2,1], syt_count := 20 },
+   { name := "[6,1,1]",                   hooks := [8,5,4,3,2,1,2,1], syt_count := 21 },
+   { name := "[5,3]",                     hooks := [6,5,4,3,2,3,2,1], syt_count := 28 },
+   { name := "[5,2,1]",                   hooks := [7,5,3,2,1,3,1,1], syt_count := 64 },
+   { name := "[5,1,1,1]",                 hooks := [8,4,3,2,1,3,2,1], syt_count := 35 },
+   { name := "[4,4]",                     hooks := [5,4,3,2,4,3,2,1], syt_count := 14 },
+   { name := "[4,3,1]",                   hooks := [6,4,3,1,4,2,1,1], syt_count := 70 },
+   { name := "[4,2,2]",                   hooks := [6,4,2,1,3,2,2,1], syt_count := 56 },
+   { name := "[4,2,1,1]",                 hooks := [7,4,2,1,4,1,2,1], syt_count := 90 },
+   { name := "[4,1,1,1,1]",               hooks := [8,3,2,1,4,3,2,1], syt_count := 35 },
+   { name := "[3,3,2]",                   hooks := [5,4,2,4,3,1,2,1], syt_count := 42 },
+   { name := "[3,3,1,1]",                 hooks := [6,3,2,5,2,1,2,1], syt_count := 56 },
+   { name := "[3,2,2,1]",                 hooks := [6,4,1,4,2,1,2,1], syt_count := 70 },
+   { name := "[3,2,1,1,1]",               hooks := [7,3,1,5,1,4,2,1], syt_count := 64 },
+   { name := "[3,1,1,1,1,1]",             hooks := [8,2,1,5,4,3,2,1], syt_count := 21 },
+   { name := "[2,2,2,2]",                 hooks := [5,4,4,3,3,2,2,1], syt_count := 14 },
+   { name := "[2,2,2,1,1]",               hooks := [6,2,5,4,1,3,2,1], syt_count := 28 },
+   { name := "[2,2,1,1,1,1]",             hooks := [7,2,5,4,3,1,2,1], syt_count := 20 },
+   { name := "[2,1,1,1,1,1,1]",           hooks := [8,1,6,5,4,3,2,1], syt_count := 7 },
+   { name := "[1,1,1,1,1,1,1,1]",         hooks := [8,7,6,5,4,3,2,1], syt_count := 1 }]
+
+/-- `Σ d_λ² = 8! = 40320` at `n = 8`. -/
+theorem n8_squares_sum_eq :
+    (n8_cohort.map (fun p => p.syt_count ^ 2)).sum = 40320 := by
+  decide
+
+theorem n8_cohort_length : n8_cohort.length = 22 := rfl
 
 /-- **Recursive `cohortDimqValues`** — maps each
     `WenzlPartitionData` entry to its q-deformed Wenzl
@@ -388,7 +534,7 @@ theorem dimqPartition31_via_hook_formula (q : ℝ) (hq : q - q⁻¹ ≠ 0)
     `qFactorial` + `qHookProduct` primitives. -/
 noncomputable def cohortDimqValues
     {n : ℕ} (cohort : List (WenzlPartitionData n)) (q : ℝ) : List ℝ :=
-  cohort.map (fun p => QOU.qFactorial q n / QOU.qHookProduct q p.hooks)
+  cohort.map (fun p => QOU.GaugeFieldFluidDynamics.qFactorial q n / QOU.GaugeFieldFluidDynamics.qHookProduct q p.hooks)
 
 /-- The dim_q-values list of the n=2 cohort has length 2. -/
 theorem cohortDimqValues_n2_length (q : ℝ) :
@@ -435,18 +581,17 @@ theorem cohortDimqValues_length
 
     Caller-supplied `[2]_q ≠ 0` and `[3]_q ≠ 0` hypotheses. -/
 theorem dimqPartition22_via_hook_formula (q : ℝ) (hq : q - q⁻¹ ≠ 0)
-    (h2 : QOU.qInteger q 2 ≠ 0) (h3 : QOU.qInteger q 3 ≠ 0) :
-    QOU.qFactorial q 4 / QOU.qHookProduct q [3, 2, 2, 1]
+    (h2 : QOU.GaugeFieldFluidDynamics.qInteger q 2 ≠ 0) (h3 : QOU.GaugeFieldFluidDynamics.qInteger q 3 ≠ 0) :
+    QOU.GaugeFieldFluidDynamics.qFactorial q 4 / QOU.GaugeFieldFluidDynamics.qHookProduct q [3, 2, 2, 1]
       = dimqPartition22 q := by
   unfold dimqPartition22
-  show QOU.qInteger q 4 * (QOU.qInteger q 3 * (QOU.qInteger q 2 *
-      (QOU.qInteger q 1 * 1)))
-    / (QOU.qInteger q 3 * (QOU.qInteger q 2 * (QOU.qInteger q 2 *
-      (QOU.qInteger q 1 * 1))))
-    = QOU.qInteger q 4 / QOU.qInteger q 2
-  rw [QOU.qInteger_one q hq]
+  show QOU.GaugeFieldFluidDynamics.qInteger q 4 * (QOU.GaugeFieldFluidDynamics.qInteger q 3 * (QOU.GaugeFieldFluidDynamics.qInteger q 2 *
+      (QOU.GaugeFieldFluidDynamics.qInteger q 1 * 1)))
+    / (QOU.GaugeFieldFluidDynamics.qInteger q 3 * (QOU.GaugeFieldFluidDynamics.qInteger q 2 * (QOU.GaugeFieldFluidDynamics.qInteger q 2 *
+      (QOU.GaugeFieldFluidDynamics.qInteger q 1 * 1))))
+    = QOU.GaugeFieldFluidDynamics.qInteger q 4 / QOU.GaugeFieldFluidDynamics.qInteger q 2
+  rw [QOU.GaugeFieldFluidDynamics.qInteger_one q hq]
   field_simp
-  ring
 
 /-- **Hook-formula derivation for `dim_q([2,1,1])`** at `n = 4`.
 
@@ -458,18 +603,17 @@ theorem dimqPartition22_via_hook_formula (q : ℝ) (hq : q - q⁻¹ ≠ 0)
     `dimqPartition31_via_hook_formula` (column-row duality at
     `n = 4`). -/
 theorem dimqPartition211_via_hook_formula (q : ℝ) (hq : q - q⁻¹ ≠ 0)
-    (h2 : QOU.qInteger q 2 ≠ 0) (h4 : QOU.qInteger q 4 ≠ 0) :
-    QOU.qFactorial q 4 / QOU.qHookProduct q [4, 1, 2, 1]
+    (h2 : QOU.GaugeFieldFluidDynamics.qInteger q 2 ≠ 0) (h4 : QOU.GaugeFieldFluidDynamics.qInteger q 4 ≠ 0) :
+    QOU.GaugeFieldFluidDynamics.qFactorial q 4 / QOU.GaugeFieldFluidDynamics.qHookProduct q [4, 1, 2, 1]
       = dimqPartition211 q := by
   unfold dimqPartition211
-  show QOU.qInteger q 4 * (QOU.qInteger q 3 * (QOU.qInteger q 2 *
-      (QOU.qInteger q 1 * 1)))
-    / (QOU.qInteger q 4 * (QOU.qInteger q 1 * (QOU.qInteger q 2 *
-      (QOU.qInteger q 1 * 1))))
-    = QOU.qInteger q 3
-  rw [QOU.qInteger_one q hq]
+  show QOU.GaugeFieldFluidDynamics.qInteger q 4 * (QOU.GaugeFieldFluidDynamics.qInteger q 3 * (QOU.GaugeFieldFluidDynamics.qInteger q 2 *
+      (QOU.GaugeFieldFluidDynamics.qInteger q 1 * 1)))
+    / (QOU.GaugeFieldFluidDynamics.qInteger q 4 * (QOU.GaugeFieldFluidDynamics.qInteger q 1 * (QOU.GaugeFieldFluidDynamics.qInteger q 2 *
+      (QOU.GaugeFieldFluidDynamics.qInteger q 1 * 1))))
+    = QOU.GaugeFieldFluidDynamics.qInteger q 3
+  rw [QOU.GaugeFieldFluidDynamics.qInteger_one q hq]
   field_simp
-  ring
 
 /-! ### Substrate-q corollaries
 
@@ -481,7 +625,7 @@ theorem dimqPartition211_via_hook_formula (q : ℝ) (hq : q - q⁻¹ ≠ 0)
 
 /-- At substrate `q > 1`, `dim_q([2,1])` equals the hook formula. -/
 theorem dimqPartition21_at_substrate (q : ℝ) (hq_one : q > 1) :
-    QOU.qFactorial q 3 / QOU.qHookProduct q [3, 1, 1]
+    QOU.GaugeFieldFluidDynamics.qFactorial q 3 / QOU.GaugeFieldFluidDynamics.qHookProduct q [3, 1, 1]
       = dimqPartition21 q := by
   have hq : q - q⁻¹ ≠ 0 := by
     have hpos : q > 0 := by linarith
@@ -489,13 +633,13 @@ theorem dimqPartition21_at_substrate (q : ℝ) (hq_one : q > 1) :
     have hinv_pos : q⁻¹ > 0 := inv_pos.mpr hpos
     intro habs
     linarith
-  have h3 : QOU.qInteger q 3 ≠ 0 :=
-    QOU.qInteger_ne_zero q 3 hq_one (by norm_num)
+  have h3 : QOU.GaugeFieldFluidDynamics.qInteger q 3 ≠ 0 :=
+    QOU.GaugeFieldFluidDynamics.qInteger_ne_zero q 3 hq_one (by norm_num)
   exact dimqPartition21_via_hook_formula q hq h3
 
 /-- At substrate `q > 1`, `dim_q([3,1])` equals the hook formula. -/
 theorem dimqPartition31_at_substrate (q : ℝ) (hq_one : q > 1) :
-    QOU.qFactorial q 4 / QOU.qHookProduct q [4, 2, 1, 1]
+    QOU.GaugeFieldFluidDynamics.qFactorial q 4 / QOU.GaugeFieldFluidDynamics.qHookProduct q [4, 2, 1, 1]
       = dimqPartition31 q := by
   have hq : q - q⁻¹ ≠ 0 := by
     have hpos : q > 0 := by linarith
@@ -503,15 +647,15 @@ theorem dimqPartition31_at_substrate (q : ℝ) (hq_one : q > 1) :
     have hinv_pos : q⁻¹ > 0 := inv_pos.mpr hpos
     intro habs
     linarith
-  have h2 : QOU.qInteger q 2 ≠ 0 :=
-    QOU.qInteger_ne_zero q 2 hq_one (by norm_num)
-  have h4 : QOU.qInteger q 4 ≠ 0 :=
-    QOU.qInteger_ne_zero q 4 hq_one (by norm_num)
+  have h2 : QOU.GaugeFieldFluidDynamics.qInteger q 2 ≠ 0 :=
+    QOU.GaugeFieldFluidDynamics.qInteger_ne_zero q 2 hq_one (by norm_num)
+  have h4 : QOU.GaugeFieldFluidDynamics.qInteger q 4 ≠ 0 :=
+    QOU.GaugeFieldFluidDynamics.qInteger_ne_zero q 4 hq_one (by norm_num)
   exact dimqPartition31_via_hook_formula q hq h2 h4
 
 /-- At substrate `q > 1`, `dim_q([2,2])` equals the hook formula. -/
 theorem dimqPartition22_at_substrate (q : ℝ) (hq_one : q > 1) :
-    QOU.qFactorial q 4 / QOU.qHookProduct q [3, 2, 2, 1]
+    QOU.GaugeFieldFluidDynamics.qFactorial q 4 / QOU.GaugeFieldFluidDynamics.qHookProduct q [3, 2, 2, 1]
       = dimqPartition22 q := by
   have hq : q - q⁻¹ ≠ 0 := by
     have hpos : q > 0 := by linarith
@@ -519,15 +663,15 @@ theorem dimqPartition22_at_substrate (q : ℝ) (hq_one : q > 1) :
     have hinv_pos : q⁻¹ > 0 := inv_pos.mpr hpos
     intro habs
     linarith
-  have h2 : QOU.qInteger q 2 ≠ 0 :=
-    QOU.qInteger_ne_zero q 2 hq_one (by norm_num)
-  have h3 : QOU.qInteger q 3 ≠ 0 :=
-    QOU.qInteger_ne_zero q 3 hq_one (by norm_num)
+  have h2 : QOU.GaugeFieldFluidDynamics.qInteger q 2 ≠ 0 :=
+    QOU.GaugeFieldFluidDynamics.qInteger_ne_zero q 2 hq_one (by norm_num)
+  have h3 : QOU.GaugeFieldFluidDynamics.qInteger q 3 ≠ 0 :=
+    QOU.GaugeFieldFluidDynamics.qInteger_ne_zero q 3 hq_one (by norm_num)
   exact dimqPartition22_via_hook_formula q hq h2 h3
 
 /-- At substrate `q > 1`, `dim_q([2,1,1])` equals the hook formula. -/
 theorem dimqPartition211_at_substrate (q : ℝ) (hq_one : q > 1) :
-    QOU.qFactorial q 4 / QOU.qHookProduct q [4, 1, 2, 1]
+    QOU.GaugeFieldFluidDynamics.qFactorial q 4 / QOU.GaugeFieldFluidDynamics.qHookProduct q [4, 1, 2, 1]
       = dimqPartition211 q := by
   have hq : q - q⁻¹ ≠ 0 := by
     have hpos : q > 0 := by linarith
@@ -535,10 +679,10 @@ theorem dimqPartition211_at_substrate (q : ℝ) (hq_one : q > 1) :
     have hinv_pos : q⁻¹ > 0 := inv_pos.mpr hpos
     intro habs
     linarith
-  have h2 : QOU.qInteger q 2 ≠ 0 :=
-    QOU.qInteger_ne_zero q 2 hq_one (by norm_num)
-  have h4 : QOU.qInteger q 4 ≠ 0 :=
-    QOU.qInteger_ne_zero q 4 hq_one (by norm_num)
+  have h2 : QOU.GaugeFieldFluidDynamics.qInteger q 2 ≠ 0 :=
+    QOU.GaugeFieldFluidDynamics.qInteger_ne_zero q 2 hq_one (by norm_num)
+  have h4 : QOU.GaugeFieldFluidDynamics.qInteger q 4 ≠ 0 :=
+    QOU.GaugeFieldFluidDynamics.qInteger_ne_zero q 4 hq_one (by norm_num)
   exact dimqPartition211_via_hook_formula q hq h2 h4
 
 /-! ### Wenzl-bridge trace identity (sketch)
@@ -563,17 +707,17 @@ theorem dimqPartition211_at_substrate (q : ℝ) (hq_one : q > 1) :
 /-- **Corrected** `y_[3]` Wenzl-bridge coefficient at `n = 3`:
     `y_[3] = dim_q([3]) · d_[3] / [3]_q! = 1 · 1 / [3]_q!`. -/
 noncomputable def yLambdaCorrected_row3 (q : ℝ) : ℝ :=
-  dimqPartition3 q * 1 / QOU.qFactorial q 3
+  dimqPartition3 q * 1 / QOU.GaugeFieldFluidDynamics.qFactorial q 3
 
 /-- Corrected `y_[2,1]` at `n = 3`:
     `y_[2,1] = dim_q([2,1]) · d_[2,1] / [3]_q! = (q+q⁻¹) · 2 / [3]_q!`. -/
 noncomputable def yLambdaCorrected_lshape21 (q : ℝ) : ℝ :=
-  dimqPartition21 q * 2 / QOU.qFactorial q 3
+  dimqPartition21 q * 2 / QOU.GaugeFieldFluidDynamics.qFactorial q 3
 
 /-- Corrected `y_[1,1,1]` at `n = 3`:
     `y_[1,1,1] = dim_q([1,1,1]) · d_[1,1,1] / [3]_q! = 1 / [3]_q!`. -/
 noncomputable def yLambdaCorrected_col3 (q : ℝ) : ℝ :=
-  dimqPartition111 q * 1 / QOU.qFactorial q 3
+  dimqPartition111 q * 1 / QOU.GaugeFieldFluidDynamics.qFactorial q 3
 
 /-- Corrected column-row duality at `n = 3`:
     `y_[3] = y_[1,1,1]` (rfl after `dim_q([3]) = dim_q([1,1,1]) = 1`). -/
@@ -591,59 +735,59 @@ theorem yLambdaCorrected_row3_eq_col3 (q : ℝ) :
 /-- `[n]_q! ≠ 0` for `q > 1`.  Iterated product of non-zero
     `qInteger`s is non-zero. -/
 theorem qFactorial_ne_zero (q : ℝ) (n : ℕ) (hq_one : q > 1) :
-    QOU.qFactorial q n ≠ 0 := by
+    QOU.GaugeFieldFluidDynamics.qFactorial q n ≠ 0 := by
   induction n with
   | zero =>
     show (1 : ℝ) ≠ 0
     norm_num
   | succ m ih =>
-    show QOU.qInteger q (m + 1) * QOU.qFactorial q m ≠ 0
+    show QOU.GaugeFieldFluidDynamics.qInteger q (m + 1) * QOU.GaugeFieldFluidDynamics.qFactorial q m ≠ 0
     apply mul_ne_zero
-    · exact QOU.qInteger_ne_zero q (m + 1) hq_one (Nat.succ_pos m)
+    · exact QOU.GaugeFieldFluidDynamics.qInteger_ne_zero q (m + 1) hq_one (Nat.succ_pos m)
     · exact ih
 
 /-- Row partition `[n]` hook-formula: `dim_q([n]) = 1`.  Demonstrated
     at `n = 2` (hooks `(2, 1)`). -/
 theorem dimqRowPartition2_via_hook_formula (q : ℝ) (hq_one : q > 1) :
-    QOU.qFactorial q 2 / QOU.qHookProduct q [2, 1] = dimqRowPartition 2 q := by
+    QOU.GaugeFieldFluidDynamics.qFactorial q 2 / QOU.GaugeFieldFluidDynamics.qHookProduct q [2, 1] = dimqRowPartition 2 q := by
   unfold dimqRowPartition
-  show QOU.qInteger q 2 * (QOU.qInteger q 1 * 1)
-    / (QOU.qInteger q 2 * (QOU.qInteger q 1 * 1)) = 1
-  have h2 : QOU.qInteger q 2 * (QOU.qInteger q 1 * 1) ≠ 0 := by
-    have h2_ne : QOU.qInteger q 2 ≠ 0 :=
-      QOU.qInteger_ne_zero q 2 hq_one (by norm_num)
-    have h1_ne : QOU.qInteger q 1 ≠ 0 :=
-      QOU.qInteger_ne_zero q 1 hq_one (by norm_num)
+  show QOU.GaugeFieldFluidDynamics.qInteger q 2 * (QOU.GaugeFieldFluidDynamics.qInteger q 1 * 1)
+    / (QOU.GaugeFieldFluidDynamics.qInteger q 2 * (QOU.GaugeFieldFluidDynamics.qInteger q 1 * 1)) = 1
+  have h2 : QOU.GaugeFieldFluidDynamics.qInteger q 2 * (QOU.GaugeFieldFluidDynamics.qInteger q 1 * 1) ≠ 0 := by
+    have h2_ne : QOU.GaugeFieldFluidDynamics.qInteger q 2 ≠ 0 :=
+      QOU.GaugeFieldFluidDynamics.qInteger_ne_zero q 2 hq_one (by norm_num)
+    have h1_ne : QOU.GaugeFieldFluidDynamics.qInteger q 1 ≠ 0 :=
+      QOU.GaugeFieldFluidDynamics.qInteger_ne_zero q 1 hq_one (by norm_num)
     exact mul_ne_zero h2_ne (mul_ne_zero h1_ne one_ne_zero)
   exact div_self h2
 
 /-- Column partition `[1,1]` hook-formula: same hook multiset as
     row `[2]`, so `dim_q([1,1]) = 1`. -/
 theorem dimqColPartition2_via_hook_formula (q : ℝ) (hq_one : q > 1) :
-    QOU.qFactorial q 2 / QOU.qHookProduct q [2, 1] = dimqColPartition 2 q := by
+    QOU.GaugeFieldFluidDynamics.qFactorial q 2 / QOU.GaugeFieldFluidDynamics.qHookProduct q [2, 1] = dimqColPartition 2 q := by
   unfold dimqColPartition
   exact dimqRowPartition2_via_hook_formula q hq_one
 
 /-- Row partition `[4]` hook-formula: `dim_q([4]) = 1`.  Hooks
     `(4, 3, 2, 1)`, hook product = `[4]_q!`. -/
 theorem dimqPartition4_via_hook_formula (q : ℝ) (hq_one : q > 1) :
-    QOU.qFactorial q 4 / QOU.qHookProduct q [4, 3, 2, 1]
+    QOU.GaugeFieldFluidDynamics.qFactorial q 4 / QOU.GaugeFieldFluidDynamics.qHookProduct q [4, 3, 2, 1]
       = dimqPartition4 q := by
   unfold dimqPartition4
-  show QOU.qInteger q 4 * (QOU.qInteger q 3 * (QOU.qInteger q 2 *
-      (QOU.qInteger q 1 * 1)))
-    / (QOU.qInteger q 4 * (QOU.qInteger q 3 * (QOU.qInteger q 2 *
-      (QOU.qInteger q 1 * 1)))) = 1
-  have hne : QOU.qInteger q 4 * (QOU.qInteger q 3 * (QOU.qInteger q 2 *
-      (QOU.qInteger q 1 * 1))) ≠ 0 := by
-    have h4 : QOU.qInteger q 4 ≠ 0 :=
-      QOU.qInteger_ne_zero q 4 hq_one (by norm_num)
-    have h3 : QOU.qInteger q 3 ≠ 0 :=
-      QOU.qInteger_ne_zero q 3 hq_one (by norm_num)
-    have h2 : QOU.qInteger q 2 ≠ 0 :=
-      QOU.qInteger_ne_zero q 2 hq_one (by norm_num)
-    have h1 : QOU.qInteger q 1 ≠ 0 :=
-      QOU.qInteger_ne_zero q 1 hq_one (by norm_num)
+  show QOU.GaugeFieldFluidDynamics.qInteger q 4 * (QOU.GaugeFieldFluidDynamics.qInteger q 3 * (QOU.GaugeFieldFluidDynamics.qInteger q 2 *
+      (QOU.GaugeFieldFluidDynamics.qInteger q 1 * 1)))
+    / (QOU.GaugeFieldFluidDynamics.qInteger q 4 * (QOU.GaugeFieldFluidDynamics.qInteger q 3 * (QOU.GaugeFieldFluidDynamics.qInteger q 2 *
+      (QOU.GaugeFieldFluidDynamics.qInteger q 1 * 1)))) = 1
+  have hne : QOU.GaugeFieldFluidDynamics.qInteger q 4 * (QOU.GaugeFieldFluidDynamics.qInteger q 3 * (QOU.GaugeFieldFluidDynamics.qInteger q 2 *
+      (QOU.GaugeFieldFluidDynamics.qInteger q 1 * 1))) ≠ 0 := by
+    have h4 : QOU.GaugeFieldFluidDynamics.qInteger q 4 ≠ 0 :=
+      QOU.GaugeFieldFluidDynamics.qInteger_ne_zero q 4 hq_one (by norm_num)
+    have h3 : QOU.GaugeFieldFluidDynamics.qInteger q 3 ≠ 0 :=
+      QOU.GaugeFieldFluidDynamics.qInteger_ne_zero q 3 hq_one (by norm_num)
+    have h2 : QOU.GaugeFieldFluidDynamics.qInteger q 2 ≠ 0 :=
+      QOU.GaugeFieldFluidDynamics.qInteger_ne_zero q 2 hq_one (by norm_num)
+    have h1 : QOU.GaugeFieldFluidDynamics.qInteger q 1 ≠ 0 :=
+      QOU.GaugeFieldFluidDynamics.qInteger_ne_zero q 1 hq_one (by norm_num)
     exact mul_ne_zero h4 (mul_ne_zero h3 (mul_ne_zero h2
       (mul_ne_zero h1 one_ne_zero)))
   exact div_self hne
@@ -651,7 +795,7 @@ theorem dimqPartition4_via_hook_formula (q : ℝ) (hq_one : q > 1) :
 /-- Column partition `[1,1,1,1]` hook-formula: same hooks as row
     `[4]`, so `dim_q([1,1,1,1]) = 1`. -/
 theorem dimqPartition1111_via_hook_formula (q : ℝ) (hq_one : q > 1) :
-    QOU.qFactorial q 4 / QOU.qHookProduct q [4, 3, 2, 1]
+    QOU.GaugeFieldFluidDynamics.qFactorial q 4 / QOU.GaugeFieldFluidDynamics.qHookProduct q [4, 3, 2, 1]
       = dimqPartition1111 q := by
   unfold dimqPartition1111
   exact dimqPartition4_via_hook_formula q hq_one
@@ -659,25 +803,25 @@ theorem dimqPartition1111_via_hook_formula (q : ℝ) (hq_one : q > 1) :
 /-- Row partition `[3]` hook-formula: hooks `(3, 2, 1)`, hook product
     = `[3]_q!`, so `dim_q([3]) = 1`. -/
 theorem dimqPartition3_via_hook_formula (q : ℝ) (hq_one : q > 1) :
-    QOU.qFactorial q 3 / QOU.qHookProduct q [3, 2, 1]
+    QOU.GaugeFieldFluidDynamics.qFactorial q 3 / QOU.GaugeFieldFluidDynamics.qHookProduct q [3, 2, 1]
       = dimqPartition3 q := by
   unfold dimqPartition3
-  show QOU.qInteger q 3 * (QOU.qInteger q 2 * (QOU.qInteger q 1 * 1))
-    / (QOU.qInteger q 3 * (QOU.qInteger q 2 * (QOU.qInteger q 1 * 1))) = 1
-  have hne : QOU.qInteger q 3 * (QOU.qInteger q 2 * (QOU.qInteger q 1 * 1)) ≠ 0 := by
-    have h3 : QOU.qInteger q 3 ≠ 0 :=
-      QOU.qInteger_ne_zero q 3 hq_one (by norm_num)
-    have h2 : QOU.qInteger q 2 ≠ 0 :=
-      QOU.qInteger_ne_zero q 2 hq_one (by norm_num)
-    have h1 : QOU.qInteger q 1 ≠ 0 :=
-      QOU.qInteger_ne_zero q 1 hq_one (by norm_num)
+  show QOU.GaugeFieldFluidDynamics.qInteger q 3 * (QOU.GaugeFieldFluidDynamics.qInteger q 2 * (QOU.GaugeFieldFluidDynamics.qInteger q 1 * 1))
+    / (QOU.GaugeFieldFluidDynamics.qInteger q 3 * (QOU.GaugeFieldFluidDynamics.qInteger q 2 * (QOU.GaugeFieldFluidDynamics.qInteger q 1 * 1))) = 1
+  have hne : QOU.GaugeFieldFluidDynamics.qInteger q 3 * (QOU.GaugeFieldFluidDynamics.qInteger q 2 * (QOU.GaugeFieldFluidDynamics.qInteger q 1 * 1)) ≠ 0 := by
+    have h3 : QOU.GaugeFieldFluidDynamics.qInteger q 3 ≠ 0 :=
+      QOU.GaugeFieldFluidDynamics.qInteger_ne_zero q 3 hq_one (by norm_num)
+    have h2 : QOU.GaugeFieldFluidDynamics.qInteger q 2 ≠ 0 :=
+      QOU.GaugeFieldFluidDynamics.qInteger_ne_zero q 2 hq_one (by norm_num)
+    have h1 : QOU.GaugeFieldFluidDynamics.qInteger q 1 ≠ 0 :=
+      QOU.GaugeFieldFluidDynamics.qInteger_ne_zero q 1 hq_one (by norm_num)
     exact mul_ne_zero h3 (mul_ne_zero h2 (mul_ne_zero h1 one_ne_zero))
   exact div_self hne
 
 /-- Column partition `[1,1,1]` hook-formula: same hook multiset as
     row `[3]`, so `dim_q([1,1,1]) = 1`. -/
 theorem dimqPartition111_via_hook_formula (q : ℝ) (hq_one : q > 1) :
-    QOU.qFactorial q 3 / QOU.qHookProduct q [3, 2, 1]
+    QOU.GaugeFieldFluidDynamics.qFactorial q 3 / QOU.GaugeFieldFluidDynamics.qHookProduct q [3, 2, 1]
       = dimqPartition111 q := by
   unfold dimqPartition111
   exact dimqPartition3_via_hook_formula q hq_one
@@ -712,22 +856,22 @@ def dimqPartition5 (_q : ℝ) : ℝ :=
   1
 
 /-- `dim_q_hook([4,1]) = [4]_q`. -/
-noncomputable def dimqPartition41 (q : ℝ) : ℝ := QOU.qInteger q 4
+noncomputable def dimqPartition41 (q : ℝ) : ℝ := QOU.GaugeFieldFluidDynamics.qInteger q 4
 
 /-- `dim_q_hook([3,2]) = [5]_q`. -/
-noncomputable def dimqPartition32 (q : ℝ) : ℝ := QOU.qInteger q 5
+noncomputable def dimqPartition32 (q : ℝ) : ℝ := QOU.GaugeFieldFluidDynamics.qInteger q 5
 
 /-- `dim_q_hook([3,1,1]) = [4]_q · [3]_q / [2]_q`. -/
 noncomputable def dimqPartition311 (q : ℝ) : ℝ :=
-  QOU.qInteger q 4 * QOU.qInteger q 3 / QOU.qInteger q 2
+  QOU.GaugeFieldFluidDynamics.qInteger q 4 * QOU.GaugeFieldFluidDynamics.qInteger q 3 / QOU.GaugeFieldFluidDynamics.qInteger q 2
 
 /-- `dim_q_hook([2,2,1]) = [5]_q`.  Equal to `dim_q_hook([3,2])`
     (column-row duality at `n = 5`). -/
-noncomputable def dimqPartition221 (q : ℝ) : ℝ := QOU.qInteger q 5
+noncomputable def dimqPartition221 (q : ℝ) : ℝ := QOU.GaugeFieldFluidDynamics.qInteger q 5
 
 /-- `dim_q_hook([2,1,1,1]) = [4]_q`.  Equal to `dim_q_hook([4,1])`
     (column-row duality at `n = 5`). -/
-noncomputable def dimqPartition2111 (q : ℝ) : ℝ := QOU.qInteger q 4
+noncomputable def dimqPartition2111 (q : ℝ) : ℝ := QOU.GaugeFieldFluidDynamics.qInteger q 4
 
 /-- `dim_q_hook([1,1,1,1,1]) = 1`. -/
 def dimqPartition11111 (_q : ℝ) : ℝ :=
@@ -750,20 +894,20 @@ theorem dimqPartition5_eq_dimqPartition11111 (q : ℝ) :
 /-- Row partition `[5]` hook-formula at substrate q: dim_q = 1.
     Hook product = `[5]_q!`. -/
 theorem dimqPartition5_via_hook_formula (q : ℝ) (hq_one : q > 1) :
-    QOU.qFactorial q 5 / QOU.qHookProduct q [5, 4, 3, 2, 1]
+    QOU.GaugeFieldFluidDynamics.qFactorial q 5 / QOU.GaugeFieldFluidDynamics.qHookProduct q [5, 4, 3, 2, 1]
       = dimqPartition5 q := by
   unfold dimqPartition5
-  show QOU.qInteger q 5 * (QOU.qInteger q 4 * (QOU.qInteger q 3 *
-      (QOU.qInteger q 2 * (QOU.qInteger q 1 * 1))))
-    / (QOU.qInteger q 5 * (QOU.qInteger q 4 * (QOU.qInteger q 3 *
-      (QOU.qInteger q 2 * (QOU.qInteger q 1 * 1))))) = 1
-  have hne : QOU.qInteger q 5 * (QOU.qInteger q 4 * (QOU.qInteger q 3 *
-      (QOU.qInteger q 2 * (QOU.qInteger q 1 * 1)))) ≠ 0 := by
-    have h5 := QOU.qInteger_ne_zero q 5 hq_one (by norm_num)
-    have h4 := QOU.qInteger_ne_zero q 4 hq_one (by norm_num)
-    have h3 := QOU.qInteger_ne_zero q 3 hq_one (by norm_num)
-    have h2 := QOU.qInteger_ne_zero q 2 hq_one (by norm_num)
-    have h1 := QOU.qInteger_ne_zero q 1 hq_one (by norm_num)
+  show QOU.GaugeFieldFluidDynamics.qInteger q 5 * (QOU.GaugeFieldFluidDynamics.qInteger q 4 * (QOU.GaugeFieldFluidDynamics.qInteger q 3 *
+      (QOU.GaugeFieldFluidDynamics.qInteger q 2 * (QOU.GaugeFieldFluidDynamics.qInteger q 1 * 1))))
+    / (QOU.GaugeFieldFluidDynamics.qInteger q 5 * (QOU.GaugeFieldFluidDynamics.qInteger q 4 * (QOU.GaugeFieldFluidDynamics.qInteger q 3 *
+      (QOU.GaugeFieldFluidDynamics.qInteger q 2 * (QOU.GaugeFieldFluidDynamics.qInteger q 1 * 1))))) = 1
+  have hne : QOU.GaugeFieldFluidDynamics.qInteger q 5 * (QOU.GaugeFieldFluidDynamics.qInteger q 4 * (QOU.GaugeFieldFluidDynamics.qInteger q 3 *
+      (QOU.GaugeFieldFluidDynamics.qInteger q 2 * (QOU.GaugeFieldFluidDynamics.qInteger q 1 * 1)))) ≠ 0 := by
+    have h5 := QOU.GaugeFieldFluidDynamics.qInteger_ne_zero q 5 hq_one (by norm_num)
+    have h4 := QOU.GaugeFieldFluidDynamics.qInteger_ne_zero q 4 hq_one (by norm_num)
+    have h3 := QOU.GaugeFieldFluidDynamics.qInteger_ne_zero q 3 hq_one (by norm_num)
+    have h2 := QOU.GaugeFieldFluidDynamics.qInteger_ne_zero q 2 hq_one (by norm_num)
+    have h1 := QOU.GaugeFieldFluidDynamics.qInteger_ne_zero q 1 hq_one (by norm_num)
     exact mul_ne_zero h5 (mul_ne_zero h4 (mul_ne_zero h3
       (mul_ne_zero h2 (mul_ne_zero h1 one_ne_zero))))
   exact div_self hne
@@ -771,7 +915,7 @@ theorem dimqPartition5_via_hook_formula (q : ℝ) (hq_one : q > 1) :
 /-- Column partition `[1,1,1,1,1]` hook-formula at substrate q:
     same hook multiset as row [5], so reduces to the row case. -/
 theorem dimqPartition11111_via_hook_formula (q : ℝ) (hq_one : q > 1) :
-    QOU.qFactorial q 5 / QOU.qHookProduct q [5, 4, 3, 2, 1]
+    QOU.GaugeFieldFluidDynamics.qFactorial q 5 / QOU.GaugeFieldFluidDynamics.qHookProduct q [5, 4, 3, 2, 1]
       = dimqPartition11111 q := by
   unfold dimqPartition11111
   exact dimqPartition5_via_hook_formula q hq_one
@@ -781,19 +925,19 @@ theorem dimqPartition11111_via_hook_formula (q : ℝ) (hq_one : q > 1) :
 /-- Row partition `[6]` hook-formula at substrate q: dim_q = 1.
     Hook product = `[6]_q!`. -/
 theorem dimqRowPartition6_via_hook_formula (q : ℝ) (hq_one : q > 1) :
-    QOU.qFactorial q 6 / QOU.qHookProduct q [6, 5, 4, 3, 2, 1] = 1 := by
-  show QOU.qInteger q 6 * (QOU.qInteger q 5 * (QOU.qInteger q 4 *
-      (QOU.qInteger q 3 * (QOU.qInteger q 2 * (QOU.qInteger q 1 * 1)))))
-    / (QOU.qInteger q 6 * (QOU.qInteger q 5 * (QOU.qInteger q 4 *
-      (QOU.qInteger q 3 * (QOU.qInteger q 2 * (QOU.qInteger q 1 * 1)))))) = 1
-  have hne : QOU.qInteger q 6 * (QOU.qInteger q 5 * (QOU.qInteger q 4 *
-      (QOU.qInteger q 3 * (QOU.qInteger q 2 * (QOU.qInteger q 1 * 1))))) ≠ 0 := by
-    have h6 := QOU.qInteger_ne_zero q 6 hq_one (by norm_num)
-    have h5 := QOU.qInteger_ne_zero q 5 hq_one (by norm_num)
-    have h4 := QOU.qInteger_ne_zero q 4 hq_one (by norm_num)
-    have h3 := QOU.qInteger_ne_zero q 3 hq_one (by norm_num)
-    have h2 := QOU.qInteger_ne_zero q 2 hq_one (by norm_num)
-    have h1 := QOU.qInteger_ne_zero q 1 hq_one (by norm_num)
+    QOU.GaugeFieldFluidDynamics.qFactorial q 6 / QOU.GaugeFieldFluidDynamics.qHookProduct q [6, 5, 4, 3, 2, 1] = 1 := by
+  show QOU.GaugeFieldFluidDynamics.qInteger q 6 * (QOU.GaugeFieldFluidDynamics.qInteger q 5 * (QOU.GaugeFieldFluidDynamics.qInteger q 4 *
+      (QOU.GaugeFieldFluidDynamics.qInteger q 3 * (QOU.GaugeFieldFluidDynamics.qInteger q 2 * (QOU.GaugeFieldFluidDynamics.qInteger q 1 * 1)))))
+    / (QOU.GaugeFieldFluidDynamics.qInteger q 6 * (QOU.GaugeFieldFluidDynamics.qInteger q 5 * (QOU.GaugeFieldFluidDynamics.qInteger q 4 *
+      (QOU.GaugeFieldFluidDynamics.qInteger q 3 * (QOU.GaugeFieldFluidDynamics.qInteger q 2 * (QOU.GaugeFieldFluidDynamics.qInteger q 1 * 1)))))) = 1
+  have hne : QOU.GaugeFieldFluidDynamics.qInteger q 6 * (QOU.GaugeFieldFluidDynamics.qInteger q 5 * (QOU.GaugeFieldFluidDynamics.qInteger q 4 *
+      (QOU.GaugeFieldFluidDynamics.qInteger q 3 * (QOU.GaugeFieldFluidDynamics.qInteger q 2 * (QOU.GaugeFieldFluidDynamics.qInteger q 1 * 1))))) ≠ 0 := by
+    have h6 := QOU.GaugeFieldFluidDynamics.qInteger_ne_zero q 6 hq_one (by norm_num)
+    have h5 := QOU.GaugeFieldFluidDynamics.qInteger_ne_zero q 5 hq_one (by norm_num)
+    have h4 := QOU.GaugeFieldFluidDynamics.qInteger_ne_zero q 4 hq_one (by norm_num)
+    have h3 := QOU.GaugeFieldFluidDynamics.qInteger_ne_zero q 3 hq_one (by norm_num)
+    have h2 := QOU.GaugeFieldFluidDynamics.qInteger_ne_zero q 2 hq_one (by norm_num)
+    have h1 := QOU.GaugeFieldFluidDynamics.qInteger_ne_zero q 1 hq_one (by norm_num)
     exact mul_ne_zero h6 (mul_ne_zero h5 (mul_ne_zero h4
       (mul_ne_zero h3 (mul_ne_zero h2 (mul_ne_zero h1 one_ne_zero)))))
   exact div_self hne
@@ -801,7 +945,7 @@ theorem dimqRowPartition6_via_hook_formula (q : ℝ) (hq_one : q > 1) :
 /-- Column partition `[1,1,1,1,1,1]` hook-formula: same hook
     multiset, reduces to row [6] case. -/
 theorem dimqColPartition6_via_hook_formula (q : ℝ) (hq_one : q > 1) :
-    QOU.qFactorial q 6 / QOU.qHookProduct q [6, 5, 4, 3, 2, 1] = 1 :=
+    QOU.GaugeFieldFluidDynamics.qFactorial q 6 / QOU.GaugeFieldFluidDynamics.qHookProduct q [6, 5, 4, 3, 2, 1] = 1 :=
   dimqRowPartition6_via_hook_formula q hq_one
 
 /-! ### n=5 non-trivial hook-formula derivations
@@ -812,7 +956,7 @@ theorem dimqColPartition6_via_hook_formula (q : ℝ) (hq_one : q > 1) :
 
 /-- `dim_q([4,1]) = [4]_q` via hook formula at substrate q. -/
 theorem dimqPartition41_via_hook_formula (q : ℝ) (hq_one : q > 1) :
-    QOU.qFactorial q 5 / QOU.qHookProduct q [5, 3, 2, 1, 1]
+    QOU.GaugeFieldFluidDynamics.qFactorial q 5 / QOU.GaugeFieldFluidDynamics.qHookProduct q [5, 3, 2, 1, 1]
       = dimqPartition41 q := by
   unfold dimqPartition41
   have hq : q - q⁻¹ ≠ 0 := by
@@ -820,21 +964,20 @@ theorem dimqPartition41_via_hook_formula (q : ℝ) (hq_one : q > 1) :
     have hinv_lt : q⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq_one
     have hinv_pos : q⁻¹ > 0 := inv_pos.mpr hpos
     intro habs; linarith
-  show QOU.qInteger q 5 * (QOU.qInteger q 4 * (QOU.qInteger q 3 *
-      (QOU.qInteger q 2 * (QOU.qInteger q 1 * 1))))
-    / (QOU.qInteger q 5 * (QOU.qInteger q 3 * (QOU.qInteger q 2 *
-      (QOU.qInteger q 1 * (QOU.qInteger q 1 * 1)))))
-    = QOU.qInteger q 4
-  rw [QOU.qInteger_one q hq]
-  have h5 := QOU.qInteger_ne_zero q 5 hq_one (by norm_num)
-  have h3 := QOU.qInteger_ne_zero q 3 hq_one (by norm_num)
-  have h2 := QOU.qInteger_ne_zero q 2 hq_one (by norm_num)
+  show QOU.GaugeFieldFluidDynamics.qInteger q 5 * (QOU.GaugeFieldFluidDynamics.qInteger q 4 * (QOU.GaugeFieldFluidDynamics.qInteger q 3 *
+      (QOU.GaugeFieldFluidDynamics.qInteger q 2 * (QOU.GaugeFieldFluidDynamics.qInteger q 1 * 1))))
+    / (QOU.GaugeFieldFluidDynamics.qInteger q 5 * (QOU.GaugeFieldFluidDynamics.qInteger q 3 * (QOU.GaugeFieldFluidDynamics.qInteger q 2 *
+      (QOU.GaugeFieldFluidDynamics.qInteger q 1 * (QOU.GaugeFieldFluidDynamics.qInteger q 1 * 1)))))
+    = QOU.GaugeFieldFluidDynamics.qInteger q 4
+  rw [QOU.GaugeFieldFluidDynamics.qInteger_one q hq]
+  have h5 := QOU.GaugeFieldFluidDynamics.qInteger_ne_zero q 5 hq_one (by norm_num)
+  have h3 := QOU.GaugeFieldFluidDynamics.qInteger_ne_zero q 3 hq_one (by norm_num)
+  have h2 := QOU.GaugeFieldFluidDynamics.qInteger_ne_zero q 2 hq_one (by norm_num)
   field_simp
-  ring
 
 /-- `dim_q([3,2]) = [5]_q` via hook formula at substrate q. -/
 theorem dimqPartition32_via_hook_formula (q : ℝ) (hq_one : q > 1) :
-    QOU.qFactorial q 5 / QOU.qHookProduct q [4, 3, 2, 1, 1]
+    QOU.GaugeFieldFluidDynamics.qFactorial q 5 / QOU.GaugeFieldFluidDynamics.qHookProduct q [4, 3, 2, 1, 1]
       = dimqPartition32 q := by
   unfold dimqPartition32
   have hq : q - q⁻¹ ≠ 0 := by
@@ -842,22 +985,21 @@ theorem dimqPartition32_via_hook_formula (q : ℝ) (hq_one : q > 1) :
     have hinv_lt : q⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq_one
     have hinv_pos : q⁻¹ > 0 := inv_pos.mpr hpos
     intro habs; linarith
-  show QOU.qInteger q 5 * (QOU.qInteger q 4 * (QOU.qInteger q 3 *
-      (QOU.qInteger q 2 * (QOU.qInteger q 1 * 1))))
-    / (QOU.qInteger q 4 * (QOU.qInteger q 3 * (QOU.qInteger q 2 *
-      (QOU.qInteger q 1 * (QOU.qInteger q 1 * 1)))))
-    = QOU.qInteger q 5
-  rw [QOU.qInteger_one q hq]
-  have h4 := QOU.qInteger_ne_zero q 4 hq_one (by norm_num)
-  have h3 := QOU.qInteger_ne_zero q 3 hq_one (by norm_num)
-  have h2 := QOU.qInteger_ne_zero q 2 hq_one (by norm_num)
+  show QOU.GaugeFieldFluidDynamics.qInteger q 5 * (QOU.GaugeFieldFluidDynamics.qInteger q 4 * (QOU.GaugeFieldFluidDynamics.qInteger q 3 *
+      (QOU.GaugeFieldFluidDynamics.qInteger q 2 * (QOU.GaugeFieldFluidDynamics.qInteger q 1 * 1))))
+    / (QOU.GaugeFieldFluidDynamics.qInteger q 4 * (QOU.GaugeFieldFluidDynamics.qInteger q 3 * (QOU.GaugeFieldFluidDynamics.qInteger q 2 *
+      (QOU.GaugeFieldFluidDynamics.qInteger q 1 * (QOU.GaugeFieldFluidDynamics.qInteger q 1 * 1)))))
+    = QOU.GaugeFieldFluidDynamics.qInteger q 5
+  rw [QOU.GaugeFieldFluidDynamics.qInteger_one q hq]
+  have h4 := QOU.GaugeFieldFluidDynamics.qInteger_ne_zero q 4 hq_one (by norm_num)
+  have h3 := QOU.GaugeFieldFluidDynamics.qInteger_ne_zero q 3 hq_one (by norm_num)
+  have h2 := QOU.GaugeFieldFluidDynamics.qInteger_ne_zero q 2 hq_one (by norm_num)
   field_simp
-  ring
 
 /-- `dim_q([2,1,1,1]) = [4]_q` via hook formula at substrate q.
     Same as `[4,1]` (column-row duality at n=5). -/
 theorem dimqPartition2111_via_hook_formula (q : ℝ) (hq_one : q > 1) :
-    QOU.qFactorial q 5 / QOU.qHookProduct q [5, 1, 3, 2, 1]
+    QOU.GaugeFieldFluidDynamics.qFactorial q 5 / QOU.GaugeFieldFluidDynamics.qHookProduct q [5, 1, 3, 2, 1]
       = dimqPartition2111 q := by
   unfold dimqPartition2111
   have hq : q - q⁻¹ ≠ 0 := by
@@ -865,22 +1007,21 @@ theorem dimqPartition2111_via_hook_formula (q : ℝ) (hq_one : q > 1) :
     have hinv_lt : q⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq_one
     have hinv_pos : q⁻¹ > 0 := inv_pos.mpr hpos
     intro habs; linarith
-  show QOU.qInteger q 5 * (QOU.qInteger q 4 * (QOU.qInteger q 3 *
-      (QOU.qInteger q 2 * (QOU.qInteger q 1 * 1))))
-    / (QOU.qInteger q 5 * (QOU.qInteger q 1 * (QOU.qInteger q 3 *
-      (QOU.qInteger q 2 * (QOU.qInteger q 1 * 1)))))
-    = QOU.qInteger q 4
-  rw [QOU.qInteger_one q hq]
-  have h5 := QOU.qInteger_ne_zero q 5 hq_one (by norm_num)
-  have h3 := QOU.qInteger_ne_zero q 3 hq_one (by norm_num)
-  have h2 := QOU.qInteger_ne_zero q 2 hq_one (by norm_num)
+  show QOU.GaugeFieldFluidDynamics.qInteger q 5 * (QOU.GaugeFieldFluidDynamics.qInteger q 4 * (QOU.GaugeFieldFluidDynamics.qInteger q 3 *
+      (QOU.GaugeFieldFluidDynamics.qInteger q 2 * (QOU.GaugeFieldFluidDynamics.qInteger q 1 * 1))))
+    / (QOU.GaugeFieldFluidDynamics.qInteger q 5 * (QOU.GaugeFieldFluidDynamics.qInteger q 1 * (QOU.GaugeFieldFluidDynamics.qInteger q 3 *
+      (QOU.GaugeFieldFluidDynamics.qInteger q 2 * (QOU.GaugeFieldFluidDynamics.qInteger q 1 * 1)))))
+    = QOU.GaugeFieldFluidDynamics.qInteger q 4
+  rw [QOU.GaugeFieldFluidDynamics.qInteger_one q hq]
+  have h5 := QOU.GaugeFieldFluidDynamics.qInteger_ne_zero q 5 hq_one (by norm_num)
+  have h3 := QOU.GaugeFieldFluidDynamics.qInteger_ne_zero q 3 hq_one (by norm_num)
+  have h2 := QOU.GaugeFieldFluidDynamics.qInteger_ne_zero q 2 hq_one (by norm_num)
   field_simp
-  ring
 
 /-- `dim_q([2,2,1]) = [5]_q` via hook formula at substrate q.
     Same as `[3,2]` (column-row duality at n=5). -/
 theorem dimqPartition221_via_hook_formula (q : ℝ) (hq_one : q > 1) :
-    QOU.qFactorial q 5 / QOU.qHookProduct q [4, 2, 3, 1, 1]
+    QOU.GaugeFieldFluidDynamics.qFactorial q 5 / QOU.GaugeFieldFluidDynamics.qHookProduct q [4, 2, 3, 1, 1]
       = dimqPartition221 q := by
   unfold dimqPartition221
   have hq : q - q⁻¹ ≠ 0 := by
@@ -888,21 +1029,20 @@ theorem dimqPartition221_via_hook_formula (q : ℝ) (hq_one : q > 1) :
     have hinv_lt : q⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq_one
     have hinv_pos : q⁻¹ > 0 := inv_pos.mpr hpos
     intro habs; linarith
-  show QOU.qInteger q 5 * (QOU.qInteger q 4 * (QOU.qInteger q 3 *
-      (QOU.qInteger q 2 * (QOU.qInteger q 1 * 1))))
-    / (QOU.qInteger q 4 * (QOU.qInteger q 2 * (QOU.qInteger q 3 *
-      (QOU.qInteger q 1 * (QOU.qInteger q 1 * 1)))))
-    = QOU.qInteger q 5
-  rw [QOU.qInteger_one q hq]
-  have h4 := QOU.qInteger_ne_zero q 4 hq_one (by norm_num)
-  have h3 := QOU.qInteger_ne_zero q 3 hq_one (by norm_num)
-  have h2 := QOU.qInteger_ne_zero q 2 hq_one (by norm_num)
+  show QOU.GaugeFieldFluidDynamics.qInteger q 5 * (QOU.GaugeFieldFluidDynamics.qInteger q 4 * (QOU.GaugeFieldFluidDynamics.qInteger q 3 *
+      (QOU.GaugeFieldFluidDynamics.qInteger q 2 * (QOU.GaugeFieldFluidDynamics.qInteger q 1 * 1))))
+    / (QOU.GaugeFieldFluidDynamics.qInteger q 4 * (QOU.GaugeFieldFluidDynamics.qInteger q 2 * (QOU.GaugeFieldFluidDynamics.qInteger q 3 *
+      (QOU.GaugeFieldFluidDynamics.qInteger q 1 * (QOU.GaugeFieldFluidDynamics.qInteger q 1 * 1)))))
+    = QOU.GaugeFieldFluidDynamics.qInteger q 5
+  rw [QOU.GaugeFieldFluidDynamics.qInteger_one q hq]
+  have h4 := QOU.GaugeFieldFluidDynamics.qInteger_ne_zero q 4 hq_one (by norm_num)
+  have h3 := QOU.GaugeFieldFluidDynamics.qInteger_ne_zero q 3 hq_one (by norm_num)
+  have h2 := QOU.GaugeFieldFluidDynamics.qInteger_ne_zero q 2 hq_one (by norm_num)
   field_simp
-  ring
 
 /-- `dim_q([3,1,1]) = [4]_q [3]_q / [2]_q` via hook formula. -/
 theorem dimqPartition311_via_hook_formula (q : ℝ) (hq_one : q > 1) :
-    QOU.qFactorial q 5 / QOU.qHookProduct q [5, 2, 1, 2, 1]
+    QOU.GaugeFieldFluidDynamics.qFactorial q 5 / QOU.GaugeFieldFluidDynamics.qHookProduct q [5, 2, 1, 2, 1]
       = dimqPartition311 q := by
   unfold dimqPartition311
   have hq : q - q⁻¹ ≠ 0 := by
@@ -910,16 +1050,15 @@ theorem dimqPartition311_via_hook_formula (q : ℝ) (hq_one : q > 1) :
     have hinv_lt : q⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq_one
     have hinv_pos : q⁻¹ > 0 := inv_pos.mpr hpos
     intro habs; linarith
-  show QOU.qInteger q 5 * (QOU.qInteger q 4 * (QOU.qInteger q 3 *
-      (QOU.qInteger q 2 * (QOU.qInteger q 1 * 1))))
-    / (QOU.qInteger q 5 * (QOU.qInteger q 2 * (QOU.qInteger q 1 *
-      (QOU.qInteger q 2 * (QOU.qInteger q 1 * 1)))))
-    = QOU.qInteger q 4 * QOU.qInteger q 3 / QOU.qInteger q 2
-  rw [QOU.qInteger_one q hq]
-  have h5 := QOU.qInteger_ne_zero q 5 hq_one (by norm_num)
-  have h2 := QOU.qInteger_ne_zero q 2 hq_one (by norm_num)
+  show QOU.GaugeFieldFluidDynamics.qInteger q 5 * (QOU.GaugeFieldFluidDynamics.qInteger q 4 * (QOU.GaugeFieldFluidDynamics.qInteger q 3 *
+      (QOU.GaugeFieldFluidDynamics.qInteger q 2 * (QOU.GaugeFieldFluidDynamics.qInteger q 1 * 1))))
+    / (QOU.GaugeFieldFluidDynamics.qInteger q 5 * (QOU.GaugeFieldFluidDynamics.qInteger q 2 * (QOU.GaugeFieldFluidDynamics.qInteger q 1 *
+      (QOU.GaugeFieldFluidDynamics.qInteger q 2 * (QOU.GaugeFieldFluidDynamics.qInteger q 1 * 1)))))
+    = QOU.GaugeFieldFluidDynamics.qInteger q 4 * QOU.GaugeFieldFluidDynamics.qInteger q 3 / QOU.GaugeFieldFluidDynamics.qInteger q 2
+  rw [QOU.GaugeFieldFluidDynamics.qInteger_one q hq]
+  have h5 := QOU.GaugeFieldFluidDynamics.qInteger_ne_zero q 5 hq_one (by norm_num)
+  have h2 := QOU.GaugeFieldFluidDynamics.qInteger_ne_zero q 2 hq_one (by norm_num)
   field_simp
-  ring
 
 /-! ### Generic recursive `dim_q_via_hook` helper
 
@@ -933,13 +1072,13 @@ theorem dimqPartition311_via_hook_formula (q : ℝ) (hq_one : q > 1) :
 /-- **Generic q-Wenzl dimension via hook formula**.
     `dim_q(λ) = [n]_q! / H_q(λ)`. -/
 noncomputable def dimqViaHook (q : ℝ) (n : ℕ) (hooks : List ℕ) : ℝ :=
-  QOU.qFactorial q n / QOU.qHookProduct q hooks
+  QOU.GaugeFieldFluidDynamics.qFactorial q n / QOU.GaugeFieldFluidDynamics.qHookProduct q hooks
 
 /-- The dimension equals factorial divided by hook product
     by definition. -/
 theorem dimqViaHook_def (q : ℝ) (n : ℕ) (hooks : List ℕ) :
     dimqViaHook q n hooks
-      = QOU.qFactorial q n / QOU.qHookProduct q hooks := rfl
+      = QOU.GaugeFieldFluidDynamics.qFactorial q n / QOU.GaugeFieldFluidDynamics.qHookProduct q hooks := rfl
 
 /-- For any `WenzlPartitionData n`, the q-dim equals the hook
     formula applied to its hook list. -/
@@ -965,9 +1104,9 @@ theorem cohortDimqHookValues_length
     is `[n, n-1, ..., 1]` so the hook product equals `[n]_q!`
     and the dim_q reduces to 1.  Generic over n via div_self. -/
 theorem dimqViaHook_row_partition (q : ℝ) (n : ℕ) (hq_one : q > 1)
-    (h_eq : QOU.qHookProduct q (List.range n |>.reverse |>.map (· + 1))
-      = QOU.qFactorial q n)
-    (h_ne : QOU.qFactorial q n ≠ 0) :
+    (h_eq : QOU.GaugeFieldFluidDynamics.qHookProduct q (List.range n |>.reverse |>.map (· + 1))
+      = QOU.GaugeFieldFluidDynamics.qFactorial q n)
+    (h_ne : QOU.GaugeFieldFluidDynamics.qFactorial q n ≠ 0) :
     dimqViaHook q n (List.range n |>.reverse |>.map (· + 1)) = 1 := by
   unfold dimqViaHook
   rw [h_eq]
@@ -1072,7 +1211,7 @@ noncomputable def n8_dimq_at (q : ℝ) (i : Fin 22) : ℝ :=
   (n8_dimq_list q).get ⟨i.val, by
     rw [n8_dimq_list_length q]; exact i.isLt⟩
 
-/-- **`n_dimq_at` extracts the i-th dim_q via the recursive
+/-! **`n_dimq_at` extracts the i-th dim_q via the recursive
     cohort traversal**.  The "row partition" entry at index 0
     corresponds to dim_q([n]) = 1, and the "column partition"
     entry at index `p(n) - 1` corresponds to dim_q([1ⁿ]) = 1.
@@ -1196,8 +1335,8 @@ theorem n9_partition_hooks_length : n9_partition_hooks.length = 30 := rfl
     1764+26244+7056+26244+4900+7056+28224+46656+46656+26244+3136+
     1764+46656+7056+7056+26244+26244+784+1764+2304+729+64+1 = 362880 = 9!. -/
 def n9_expected_syt_counts : List ℕ :=
-  [1, 8, 27, 28, 48, 162, 56, 42, 162, 84, 162, 70, 84, 168, 216,
-   216, 162, 56, 42, 216, 84, 84, 162, 162, 28, 42, 48, 27, 8, 1]
+  [1, 8, 27, 28, 48, 105, 56, 42, 162, 120, 189, 70, 84, 168, 216,
+   216, 189, 56, 42, 168, 120, 84, 162, 105, 28, 42, 48, 27, 8, 1]
 
 /-- The n=9 expected SYT count list has 30 entries. -/
 theorem n9_expected_syt_counts_length :
@@ -1297,7 +1436,7 @@ theorem n10_expected_squares_sum :
     (n10_expected_syt_counts.map (· ^ 2)).sum = 3628800 := by
   decide
 
-/-- **Verification entrypoint** — once lake-build is available,
+/-! **Verification entrypoint** — once lake-build is available,
     the user can cross-check `n9_expected_syt_counts` and
     `n10_expected_syt_counts` against the hook-length formula via:
     ```
@@ -1410,158 +1549,7 @@ theorem cohort_rsk_witnesses_complete :
     consistent (closed forms match at every `q ≠ 1`); they
     just don't satisfy the trace-normalisation identity. -/
 
-/-! ### Cohort: `n = 5` (7 partitions)
 
-    Partition data:
-    - `[5]`           : hooks `(5, 4, 3, 2, 1)`,        `d = 1`
-    - `[4, 1]`        : hooks `(5, 3, 2, 1, 1)`,        `d = 4`
-    - `[3, 2]`        : hooks `(4, 3, 2, 1, 1)`,        `d = 5`
-    - `[3, 1, 1]`     : hooks `(5, 2, 1, 2, 1)`,        `d = 6`
-    - `[2, 2, 1]`     : hooks `(4, 2, 3, 1, 1)`,        `d = 5`
-    - `[2, 1, 1, 1]`  : hooks `(5, 1, 3, 2, 1)`,        `d = 4`
-    - `[1, 1, 1, 1, 1]` : hooks `(5, 4, 3, 2, 1)`,      `d = 1`
-
-    Sum of squares: `1² + 4² + 5² + 6² + 5² + 4² + 1²
-    = 1 + 16 + 25 + 36 + 25 + 16 + 1 = 120 = 5!` ✓ -/
-
-/-- The seven partitions of `n = 5` with hook + SYT data. -/
-def n5_cohort : List (WenzlPartitionData 5) :=
-  [{ name := "[5]",            hooks := [5, 4, 3, 2, 1], syt_count := 1 },
-   { name := "[4,1]",          hooks := [5, 3, 2, 1, 1], syt_count := 4 },
-   { name := "[3,2]",          hooks := [4, 3, 2, 1, 1], syt_count := 5 },
-   { name := "[3,1,1]",        hooks := [5, 2, 1, 2, 1], syt_count := 6 },
-   { name := "[2,2,1]",        hooks := [4, 2, 3, 1, 1], syt_count := 5 },
-   { name := "[2,1,1,1]",      hooks := [5, 1, 3, 2, 1], syt_count := 4 },
-   { name := "[1,1,1,1,1]",    hooks := [5, 4, 3, 2, 1], syt_count := 1 }]
-
-/-- `Σ d_λ² = 5! = 120` at `n = 5` (Burnside / RSK). -/
-theorem n5_squares_sum_eq :
-    (n5_cohort.map (fun p => p.syt_count ^ 2)).sum = 120 := by
-  show (1 ^ 2 + (4 ^ 2 + (5 ^ 2 + (6 ^ 2 + (5 ^ 2 + (4 ^ 2 + (1 ^ 2 + 0))))))) = 120
-  norm_num
-
-theorem n5_cohort_length : n5_cohort.length = 7 := rfl
-
-/-! ### Cohort: `n = 6` (11 partitions)
-
-    SYT counts (Frame–Robinson–Thrall):
-    - `[6]:1, [5,1]:5, [4,2]:9, [4,1,1]:10, [3,3]:5,
-       [3,2,1]:16, [3,1,1,1]:10, [2,2,2]:5, [2,2,1,1]:9,
-       [2,1,1,1,1]:5, [1,1,1,1,1,1]:1`.
-    Sum of squares: `1 + 25 + 81 + 100 + 25 + 256 + 100 + 25
-       + 81 + 25 + 1 = 720 = 6!` ✓ -/
-
-/-- The 11 partitions of `n = 6` with hook + SYT data. -/
-def n6_cohort : List (WenzlPartitionData 6) :=
-  [{ name := "[6]",            hooks := [6, 5, 4, 3, 2, 1], syt_count := 1 },
-   { name := "[5,1]",          hooks := [6, 4, 3, 2, 1, 1], syt_count := 5 },
-   { name := "[4,2]",          hooks := [5, 4, 2, 1, 2, 1], syt_count := 9 },
-   { name := "[4,1,1]",        hooks := [6, 3, 2, 1, 2, 1], syt_count := 10 },
-   { name := "[3,3]",          hooks := [4, 3, 2, 3, 2, 1], syt_count := 5 },
-   { name := "[3,2,1]",        hooks := [5, 3, 1, 3, 1, 1], syt_count := 16 },
-   { name := "[3,1,1,1]",      hooks := [6, 2, 1, 3, 2, 1], syt_count := 10 },
-   { name := "[2,2,2]",        hooks := [4, 3, 3, 2, 2, 1], syt_count := 5 },
-   { name := "[2,2,1,1]",      hooks := [5, 2, 3, 1, 2, 1], syt_count := 9 },
-   { name := "[2,1,1,1,1]",    hooks := [6, 1, 4, 3, 2, 1], syt_count := 5 },
-   { name := "[1,1,1,1,1,1]",  hooks := [6, 5, 4, 3, 2, 1], syt_count := 1 }]
-
-/-- `Σ d_λ² = 6! = 720` at `n = 6`. -/
-theorem n6_squares_sum_eq :
-    (n6_cohort.map (fun p => p.syt_count ^ 2)).sum = 720 := by
-  show (1 ^ 2 + (5 ^ 2 + (9 ^ 2 + (10 ^ 2 + (5 ^ 2 + (16 ^ 2 + (10 ^ 2 +
-    (5 ^ 2 + (9 ^ 2 + (5 ^ 2 + (1 ^ 2 + 0))))))))))) = 720
-  norm_num
-
-theorem n6_cohort_length : n6_cohort.length = 11 := rfl
-
-/-! ### Cohort: `n = 7` (15 partitions)
-
-    SYT counts:
-    `[7]:1, [6,1]:6, [5,2]:14, [5,1,1]:15, [4,3]:14, [4,2,1]:35,
-     [4,1,1,1]:20, [3,3,1]:21, [3,2,2]:21, [3,2,1,1]:35,
-     [3,1,1,1,1]:15, [2,2,2,1]:14, [2,2,1,1,1]:14,
-     [2,1,1,1,1,1]:6, [1,1,1,1,1,1,1]:1`.
-    Sum of squares: `1+36+196+225+196+1225+400+441+441+1225+225
-     +196+196+36+1 = 5040 = 7!` ✓ -/
-
-/-- The 15 partitions of `n = 7` with hook + SYT data. -/
-def n7_cohort : List (WenzlPartitionData 7) :=
-  [{ name := "[7]",                 hooks := [7, 6, 5, 4, 3, 2, 1], syt_count := 1 },
-   { name := "[6,1]",               hooks := [7, 5, 4, 3, 2, 1, 1], syt_count := 6 },
-   { name := "[5,2]",               hooks := [6, 5, 3, 2, 1, 2, 1], syt_count := 14 },
-   { name := "[5,1,1]",             hooks := [7, 4, 3, 2, 1, 2, 1], syt_count := 15 },
-   { name := "[4,3]",               hooks := [5, 4, 3, 2, 3, 2, 1], syt_count := 14 },
-   { name := "[4,2,1]",             hooks := [6, 4, 2, 1, 3, 1, 1], syt_count := 35 },
-   { name := "[4,1,1,1]",           hooks := [7, 3, 2, 1, 3, 2, 1], syt_count := 20 },
-   { name := "[3,3,1]",             hooks := [5, 3, 2, 4, 2, 1, 1], syt_count := 21 },
-   { name := "[3,2,2]",             hooks := [5, 3, 2, 3, 2, 1, 1], syt_count := 21 },
-   { name := "[3,2,1,1]",           hooks := [6, 3, 1, 4, 1, 2, 1], syt_count := 35 },
-   { name := "[3,1,1,1,1]",         hooks := [7, 2, 1, 4, 3, 2, 1], syt_count := 15 },
-   { name := "[2,2,2,1]",           hooks := [5, 2, 4, 1, 3, 2, 1], syt_count := 14 },
-   { name := "[2,2,1,1,1]",         hooks := [6, 2, 4, 3, 1, 2, 1], syt_count := 14 },
-   { name := "[2,1,1,1,1,1]",       hooks := [7, 1, 5, 4, 3, 2, 1], syt_count := 6 },
-   { name := "[1,1,1,1,1,1,1]",     hooks := [7, 6, 5, 4, 3, 2, 1], syt_count := 1 }]
-
-/-- `Σ d_λ² = 7! = 5040` at `n = 7`. -/
-theorem n7_squares_sum_eq :
-    (n7_cohort.map (fun p => p.syt_count ^ 2)).sum = 5040 := by
-  show (1 ^ 2 + (6 ^ 2 + (14 ^ 2 + (15 ^ 2 + (14 ^ 2 + (35 ^ 2 + (20 ^ 2 +
-    (21 ^ 2 + (21 ^ 2 + (35 ^ 2 + (15 ^ 2 + (14 ^ 2 + (14 ^ 2 +
-    (6 ^ 2 + (1 ^ 2 + 0))))))))))))))) = 5040
-  norm_num
-
-theorem n7_cohort_length : n7_cohort.length = 15 := rfl
-
-/-! ### Cohort: `n = 8` (22 partitions)
-
-    SYT counts:
-    `[8]:1, [7,1]:7, [6,2]:20, [6,1,1]:21, [5,3]:28, [5,2,1]:64,
-     [5,1,1,1]:35, [4,4]:14, [4,3,1]:70, [4,2,2]:56, [4,2,1,1]:90,
-     [4,1,1,1,1]:35, [3,3,2]:42, [3,3,1,1]:56, [3,2,2,1]:70,
-     [3,2,1,1,1]:64, [3,1,1,1,1,1]:21, [2,2,2,2]:14,
-     [2,2,2,1,1]:28, [2,2,1,1,1,1]:20, [2,1,1,1,1,1,1]:7,
-     [1,1,1,1,1,1,1,1]:1`.
-    Sum of squares: `1+49+400+441+784+4096+1225+196+4900+3136+
-     8100+1225+1764+3136+4900+4096+441+196+784+400+49+1
-     = 40320 = 8!` ✓ -/
-
-/-- The 22 partitions of `n = 8` with SYT data (hooks elided to a
-    placeholder list of length 8 for compactness; expand on demand
-    via the canonical hook-walk algorithm). -/
-def n8_cohort : List (WenzlPartitionData 8) :=
-  [{ name := "[8]",                       hooks := [8,7,6,5,4,3,2,1], syt_count := 1 },
-   { name := "[7,1]",                     hooks := [8,6,5,4,3,2,1,1], syt_count := 7 },
-   { name := "[6,2]",                     hooks := [7,6,4,3,2,1,2,1], syt_count := 20 },
-   { name := "[6,1,1]",                   hooks := [8,5,4,3,2,1,2,1], syt_count := 21 },
-   { name := "[5,3]",                     hooks := [6,5,4,3,2,3,2,1], syt_count := 28 },
-   { name := "[5,2,1]",                   hooks := [7,5,3,2,1,3,1,1], syt_count := 64 },
-   { name := "[5,1,1,1]",                 hooks := [8,4,3,2,1,3,2,1], syt_count := 35 },
-   { name := "[4,4]",                     hooks := [5,4,3,2,4,3,2,1], syt_count := 14 },
-   { name := "[4,3,1]",                   hooks := [6,4,3,1,4,2,1,1], syt_count := 70 },
-   { name := "[4,2,2]",                   hooks := [6,4,2,1,3,2,2,1], syt_count := 56 },
-   { name := "[4,2,1,1]",                 hooks := [7,4,2,1,4,1,2,1], syt_count := 90 },
-   { name := "[4,1,1,1,1]",               hooks := [8,3,2,1,4,3,2,1], syt_count := 35 },
-   { name := "[3,3,2]",                   hooks := [5,4,2,4,3,1,2,1], syt_count := 42 },
-   { name := "[3,3,1,1]",                 hooks := [6,3,2,5,2,1,2,1], syt_count := 56 },
-   { name := "[3,2,2,1]",                 hooks := [6,4,1,4,2,1,2,1], syt_count := 70 },
-   { name := "[3,2,1,1,1]",               hooks := [7,3,1,5,1,4,2,1], syt_count := 64 },
-   { name := "[3,1,1,1,1,1]",             hooks := [8,2,1,5,4,3,2,1], syt_count := 21 },
-   { name := "[2,2,2,2]",                 hooks := [5,4,4,3,3,2,2,1], syt_count := 14 },
-   { name := "[2,2,2,1,1]",               hooks := [6,2,5,4,1,3,2,1], syt_count := 28 },
-   { name := "[2,2,1,1,1,1]",             hooks := [7,2,5,4,3,1,2,1], syt_count := 20 },
-   { name := "[2,1,1,1,1,1,1]",           hooks := [8,1,6,5,4,3,2,1], syt_count := 7 },
-   { name := "[1,1,1,1,1,1,1,1]",         hooks := [8,7,6,5,4,3,2,1], syt_count := 1 }]
-
-/-- `Σ d_λ² = 8! = 40320` at `n = 8`. -/
-theorem n8_squares_sum_eq :
-    (n8_cohort.map (fun p => p.syt_count ^ 2)).sum = 40320 := by
-  show (1 ^ 2 + (7 ^ 2 + (20 ^ 2 + (21 ^ 2 + (28 ^ 2 + (64 ^ 2 + (35 ^ 2 +
-    (14 ^ 2 + (70 ^ 2 + (56 ^ 2 + (90 ^ 2 + (35 ^ 2 + (42 ^ 2 + (56 ^ 2 +
-    (70 ^ 2 + (64 ^ 2 + (21 ^ 2 + (14 ^ 2 + (28 ^ 2 + (20 ^ 2 + (7 ^ 2 +
-    (1 ^ 2 + 0))))))))))))))))))))) = 40320
-  norm_num
-
-theorem n8_cohort_length : n8_cohort.length = 22 := rfl
 
 /-! ## Generic recursive Burnside identity
 
@@ -1592,7 +1580,7 @@ theorem n8_cohort_length : n8_cohort.length = 22 := rfl
     theorem; concrete instances (e.g. our explicit cohorts)
     discharge it by `decide` / `norm_num`. -/
 def BurnsideIdentity (n : ℕ) (dimFn : Nat.Partition n → ℕ) : Prop :=
-  ∑ λ : Nat.Partition n, (dimFn λ) ^ 2 = n.factorial
+  ∑ p : Nat.Partition n, (dimFn p) ^ 2 = n.factorial
 
 /-- The Burnside identity for the trivial dimension function
     (returning 0) holds iff `n.factorial = 0`, which never happens
@@ -1601,7 +1589,7 @@ def BurnsideIdentity (n : ℕ) (dimFn : Nat.Partition n → ℕ) : Prop :=
 theorem burnside_zero_iff (n : ℕ) :
     BurnsideIdentity n (fun _ => 0) ↔ n.factorial = 0 := by
   unfold BurnsideIdentity
-  simp
+  simp [eq_comm]
 
 /-- **Recursive shape**: the partition-of-`n` cardinality lets
     us read the cohort length off `Nat.Partition n`.  Mathlib's
@@ -1623,7 +1611,7 @@ theorem cohort_lengths_match_partition_count :
     `WenzlPartitionData.hooks` field. -/
 noncomputable def WenzlPartitionData.hookProduct
     {n : ℕ} (p : WenzlPartitionData n) (q : ℝ) : ℝ :=
-  QOU.qHookProduct q p.hooks
+  QOU.GaugeFieldFluidDynamics.qHookProduct q p.hooks
 
 /-- Closed form: row-`[n]` hook product equals `[n]_q!` (proved
     for `n = 2` here; the general statement is by induction on
@@ -1632,9 +1620,9 @@ theorem hookProduct_row_two (q : ℝ) (hq : q - q⁻¹ ≠ 0) :
     WenzlPartitionData.hookProduct
       ({ name := "[2]", hooks := [2, 1], syt_count := 1 }
         : WenzlPartitionData 2) q = q + q⁻¹ := by
-  show QOU.qHookProduct q [2, 1] = q + q⁻¹
-  show QOU.qInteger q 2 * (QOU.qInteger q 1 * 1) = q + q⁻¹
-  rw [QOU.qInteger_two q hq, QOU.qInteger_one q hq]; ring
+  show QOU.GaugeFieldFluidDynamics.qHookProduct q [2, 1] = q + q⁻¹
+  show QOU.GaugeFieldFluidDynamics.qInteger q 2 * (QOU.GaugeFieldFluidDynamics.qInteger q 1 * 1) = q + q⁻¹
+  rw [QOU.GaugeFieldFluidDynamics.qInteger_two q hq, QOU.GaugeFieldFluidDynamics.qInteger_one q hq]; ring
 
 /-! ### Structural hook-product / SYT-count lemmas (Tier 2 round 7)
 
