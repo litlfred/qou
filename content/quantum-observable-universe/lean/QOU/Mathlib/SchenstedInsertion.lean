@@ -1002,3 +1002,48 @@ theorem insertRec_snd_rowsStrict :
           have hlt' : tableauAllLt Q.tail s :=
             fun r hr' e' he' => hlt r (List.tail_subset Q hr') e' he'
           exact insertRec_snd_rowsStrict prest Q.tail y s hrs' hlt' row hr
+
+/-- The recording fold advances the entry bound by the word length: after
+    inserting `w` starting at step `s`, every `Q` entry is `< s + |w|`. -/
+theorem insertWordRecAux_allLt :
+    ∀ (w : List ℕ) (s : ℕ) (P Q : List (List ℕ)), tableauAllLt Q s →
+      tableauAllLt (insertWordRecAux w s P Q).2 (s + w.length)
+  | [], s, P, Q => by intro h; simpa [insertWordRecAux] using h
+  | x :: rest, s, P, Q => by
+      intro h
+      rw [insertWordRecAux]
+      have := insertWordRecAux_allLt rest (s + 1) (insertRec P Q x s).1
+        (insertRec P Q x s).2 (insertRec_snd_allLt P Q x s h)
+      simpa [List.length_cons, Nat.add_right_comm, Nat.add_assoc] using this
+
+/-- The recording fold preserves row-strictness of `Q`, threading the monotone
+    invariant through each step. -/
+theorem insertWordRecAux_rowsStrict :
+    ∀ (w : List ℕ) (s : ℕ) (P Q : List (List ℕ)),
+      RowsStrict Q → tableauAllLt Q s → RowsStrict (insertWordRecAux w s P Q).2
+  | [], s, P, Q => by intro hrs _; simpa [insertWordRecAux] using hrs
+  | x :: rest, s, P, Q => by
+      intro hrs hlt
+      rw [insertWordRecAux]
+      exact insertWordRecAux_rowsStrict rest (s + 1) (insertRec P Q x s).1
+        (insertRec P Q x s).2
+        (insertRec_snd_rowsStrict P Q x s hrs hlt)
+        (insertRec_snd_allLt P Q x s hlt)
+
+/-- **`Q(w)` has strictly increasing rows.**  Half of standardness: reading any
+    row of the recording tableau left to right gives a strictly increasing
+    sequence of step indices, because each cell records the (strictly larger)
+    step at which it was appended. -/
+theorem insertWordRec_rowsStrict (w : List ℕ) : RowsStrict (insertWordRec w).2 := by
+  rw [insertWordRec]
+  exact insertWordRecAux_rowsStrict w 0 [] []
+    (by intro r hr; simp at hr) (by intro r hr; simp at hr)
+
+/-- **Every entry of `Q(w)` is `< |w|`.**  Combined with the cell count
+    `|Q(w)| = |w|` (`insertWordRec_shape_eq_P` + `insertWord_totalCells`), the
+    recording tableau's entries are the step indices `0 … |w| − 1`. -/
+theorem insertWordRec_entries_lt (w : List ℕ) :
+    tableauAllLt (insertWordRec w).2 w.length := by
+  rw [insertWordRec]
+  have := insertWordRecAux_allLt w 0 [] [] (by intro r hr; simp at hr)
+  simpa using this
