@@ -469,3 +469,24 @@ graph **M_n(K)** — *which pairs bond*. Cross-recognition (§6 convergence, not
   (`2026-07-05-delta-lambda-gate-status.md`). PROBE 2 magnitude leg = PARTIAL
   (A>4 vanishing clean; ⁴He magnitude units-mismatched). Open = Slater↔trace
   dictionary / geometric `W_λ` — research-level, gated. No fit; nothing wired.
+
+## 2026-07-11 (cont.11) — 🟧 OWNER RULING: Subgoal-2 opened for ALL agents (gate lifted)
+
+- **The M₃/M₄ binding-weight closure is no longer owner-gated.** The owner reversed the
+  2026-05-08 Subgoal-2 decline **generally**: the geometric / substrate-derivation routes —
+  absolute m_p/m_n/m_⁴He, substrate q_0, the per-isotope `M_n(K)` edge-set / coordination-
+  graph closure (the M₃/M₄ weights of `conj:binding-manybody-eq-jet-filtration`), and the
+  s5-so3 keystone — are now **in scope for all agents**, no per-item sign-off. Broadens the
+  narrow 2026-06-19 s5-so3-only reversal.
+- **What this unblocks for this thread:** the geometric bond-count / derived `R(q,x)` route
+  that #3545 Part 3/13 + #3534 identified as the only honest closure path (every constant-
+  ratio kernel misses ≥6.9%; anchor-inversion is a fit) is now open to work directly, rather
+  than deferred behind the gate. The #3588 fit-free 2-body backbone (`M_2=C(A,2)`) stands as
+  the anchor; the M₃/M₄ geometric weights are the open, now-ungated target.
+- **Anti-fit discipline UNCHANGED (orthogonal to the gate):** the Δ_λ "no seventh fit-based
+  ansatz", anti-laundering, and "sorry-free ≠ derived" rules all stand. A `wₙ(K)` from
+  anchor inversion is still a fit and must not be wired to production as canonical; only a
+  *derived* bond-count / `R(q,x)` / substrate q_0 may be. Ruling recorded in AGENTS.md
+  §Precision-goals, [`docs/precision-goals.md`](../precision-goals.md),
+  [`s5-so3-keystone.md`](s5-so3-keystone.md), audit
+  [2026-07-11-subgoal2-owner-reversal-open-for-all.md](../audits/2026-07-11-subgoal2-owner-reversal-open-for-all.md).
