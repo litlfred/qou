@@ -93,9 +93,13 @@ theorem fai_projector_coadjoint_orbit_matrix
     `ρ₀₀ + ρ₁₁ = 1`; then `det ρ = ρ₀₀ρ₁₁ − ρ₀₁ρ₁₀ = 0` by
     `linear_combination`.  (This is the archimedean shadow of "a rank-1
     projector is singular"; it fixes one of the two char-poly invariants
-    that pin the coadjoint orbit.) -/
-theorem fai_projector_det_eq_zero
-    (ρ : Matrix (Fin 2) (Fin 2) ℂ) (hidem : ρ * ρ = ρ) (htr : ρ.trace = 1) :
+    that pin the coadjoint orbit.)
+
+    Purely algebraic (no archimedean structure), so per AGENTS.md §7c it
+    is stated over a generic `[CommRing R]`; the `ℂ` orbit lives in the
+    `_orbit` corollary below. -/
+theorem fai_projector_det_eq_zero {R : Type*} [CommRing R]
+    (ρ : Matrix (Fin 2) (Fin 2) R) (hidem : ρ * ρ = ρ) (htr : ρ.trace = 1) :
     ρ.det = 0 := by
   have h00 : ρ 0 0 * ρ 0 0 + ρ 0 1 * ρ 1 0 = ρ 0 0 := by
     have h := congrFun (congrFun hidem 0) 0
@@ -115,10 +119,14 @@ noncomputable def sigmaBasePoint : Matrix (Fin 2) (Fin 2) ℂ :=
     rank-1 projector `ρ` (`tr ρ = 1`), the traceless component
     `σ(ρ) = ρ − ½·id` has `tr σ(ρ) = 0` — it lands in `Ad(A) = 𝔰𝔲(2)`
     (the traceless Hermitian matrices), as the manuscript's `σ` requires.
-    Matches `tr σ₀ = 0`. -/
-theorem fai_projector_sigma_trace
-    (ρ : Matrix (Fin 2) (Fin 2) ℂ) (htr : ρ.trace = 1) :
-    (ρ - (2 : ℂ)⁻¹ • (1 : Matrix (Fin 2) (Fin 2) ℂ)).trace = 0 := by
+    Matches `tr σ₀ = 0`.
+
+    The `½` needs `2` invertible, so per §7c this is stated over a generic
+    characteristic-zero field `[Field R] [CharZero R]` (the natural setting
+    for `σ(ρ) ∈ 𝔰𝔲(2)`); `_orbit` specialises it to `ℂ`. -/
+theorem fai_projector_sigma_trace {R : Type*} [Field R] [CharZero R]
+    (ρ : Matrix (Fin 2) (Fin 2) R) (htr : ρ.trace = 1) :
+    (ρ - (2 : R)⁻¹ • (1 : Matrix (Fin 2) (Fin 2) R)).trace = 0 := by
   rw [Matrix.trace_sub, Matrix.trace_smul, Matrix.trace_one, htr]
   simp only [Fintype.card_fin, Nat.cast_ofNat, smul_eq_mul]
   norm_num
@@ -131,10 +139,13 @@ theorem fai_projector_sigma_trace
     Hermitian matrix is unitarily diagonalisable and its char poly
     determines its spectrum, this is exactly the statement that the
     `σ`-image of `ℙ(V)` is a *single* `U(2)`-adjoint orbit — the
-    conjugacy step below. -/
-theorem fai_projector_sigma_det
-    (ρ : Matrix (Fin 2) (Fin 2) ℂ) (hidem : ρ * ρ = ρ) (htr : ρ.trace = 1) :
-    (ρ - (2 : ℂ)⁻¹ • (1 : Matrix (Fin 2) (Fin 2) ℂ)).det = -(4 : ℂ)⁻¹ := by
+    conjugacy step below.
+
+    Stated over a generic characteristic-zero field per §7c (the `½`, `¼`
+    need `2` invertible); `_orbit` specialises it to `ℂ`. -/
+theorem fai_projector_sigma_det {R : Type*} [Field R] [CharZero R]
+    (ρ : Matrix (Fin 2) (Fin 2) R) (hidem : ρ * ρ = ρ) (htr : ρ.trace = 1) :
+    (ρ - (2 : R)⁻¹ • (1 : Matrix (Fin 2) (Fin 2) R)).det = -(4 : R)⁻¹ := by
   have hdet0 : ρ.det = 0 := fai_projector_det_eq_zero ρ hidem htr
   have htr' : ρ 0 0 + ρ 1 1 = 1 := by
     simpa [Matrix.trace, Matrix.diag, Fin.sum_univ_two] using htr
@@ -144,7 +155,7 @@ theorem fai_projector_sigma_det
   simp only [Matrix.sub_apply, Matrix.smul_apply, Matrix.one_apply,
     smul_eq_mul]
   norm_num
-  linear_combination hdet' - (2 : ℂ)⁻¹ * htr'
+  linear_combination hdet' - (2 : R)⁻¹ * htr'
 
 /-- **Lemma** ([`lem:fai-projector-coadjoint-orbit`], coadjoint-orbit
     half) — **stated, not yet proved**.
