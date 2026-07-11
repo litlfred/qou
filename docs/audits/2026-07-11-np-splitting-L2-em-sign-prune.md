@@ -6,6 +6,14 @@
 (the 0.63% residual is structural, not a q₀ knob).
 **Lean:** [`QOU.MassTheory.NeutronProtonEMSign`](../../content/quantum-observable-universe/lean/QOU/MassTheory/NeutronProtonEMSign.lean) (sorry-free, over ℚ).
 
+> **Scope note (2026-07-11).** This prune addresses the **observations-level**
+> `Δm = α·|ΔΦ|` traced-volume formula (0.63% error). The **production** Δ_pn
+> (dashboard Path C, `Q_β + m_e`) is far more accurate (0.76 ppm) and its L2 gap
+> is **Q_β-driven**, not this EM residual — see
+> [`2026-07-11-trio-shared-root-qbeta-bottleneck.md`](2026-07-11-trio-shared-root-qbeta-bottleneck.md).
+> The EM-sign result below is correct for the `α·|ΔΦ|` object; it is *not* the
+> production trio gap.
+
 Per the **formalize-first** discipline (AGENTS.md), before scanning candidate
 closures for the Δ_pn residual, prove the invariant the missing term must
 satisfy. Result: the correction is the **electromagnetic self-energy**, and its
