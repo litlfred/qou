@@ -1,0 +1,53 @@
+{
+  "computation": "deltalambda-sign-cyclotomic-locus",
+  "description": "The \u0394_\u03bb chirality sign sgn(w_0^{S_{\u03bb'}})=(-1)^{n(\u03bb)}=q^{2n(\u03bb)}|_{q=i} is a cyclotomic (q=i, non-semisimple H_5) fibre signature -- absent at real q_0 (q^{2n(\u03bb)}>0). Locates the sign; does not derive \u0394_\u03bb.",
+  "auditOnly": "docs/audits/2026-07-11-gemini-session-c3-overclaim-continuum-and-lean-audit.md",
+  "tier": "symbolic-exact (sympy; algebraic identities at q=i and real q_0)",
+  "computedAt": "2026-07-11T10:48:21.832032+00:00",
+  "commitSha": "8c6a6a64cd291573e6ef3200e35375b08ba54f6e",
+  "engine": "sympy",
+  "engineVersion": "1.14.0",
+  "scriptFile": "deltalambda_sign_cyclotomic_locus_probe.py",
+  "scriptHash": "71f4143e5293",
+  "assertions": [
+    {
+      "name": "target_equals_q2n_at_qi",
+      "passed": true,
+      "detail": "sgn(w_0^{S_{\u03bb'}}) = (-1)^{n(\u03bb)} = q^{2n(\u03bb)}|_{q=i}, all \u03bb\u22a2{3,5,6}"
+    },
+    {
+      "name": "bracket2_vanishes_at_qi",
+      "passed": true,
+      "detail": "[2]_q = q + q^{-1} = 0 at q=i  =>  H_n non-semisimple for n\u22652\u00b7(via [2]) "
+    },
+    {
+      "name": "seminormal_denominator_vanishes_d2_qi",
+      "passed": true,
+      "detail": "1 - q^{-2\u00b72} = 0 at q=i  =>  seminormal M_tt pole (H_5 non-semisimple, \u2113=4\u22645)"
+    },
+    {
+      "name": "q2n_positive_at_real_q0_no_sign",
+      "passed": true,
+      "detail": "q^{2n(\u03bb)} > 0 for all \u03bb\u22a25 at real q_0>0  =>  sign is invisible archimedean"
+    },
+    {
+      "name": "sign_mixed_at_cyclotomic_point",
+      "passed": true,
+      "detail": "q^{2n(\u03bb)}|_{q=i} over \u03bb\u22a25 = [1, -1, 1, -1, 1, 1, 1] (mixed: 5+/2-)"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "target_closed_form": "(-1)^{n(\u03bb)} = q^{2n(\u03bb)}|_{q=i}",
+    "cyclotomic_point": "q = i (primitive 4th root); [2]_i = 0; non-semisimple H_n, n\u22654",
+    "real_q_sign": "q^{2n(\u03bb)} > 0 (no sign) -- archimedean-invisible",
+    "verdict": "LOCATED (structural; nothing derived): the \u0394_\u03bb chirality sign is a CYCLOTOMIC fibre signature. sgn(\u0394_\u03bb)=sgn(w_0^{S_{\u03bb'}})=(-1)^{n(\u03bb)}=q^{2n(\u03bb)}|_{q=i}, and q=i is a NON-SEMISIMPLE point of H_5 ([2]_i=0; the seminormal 1/[d] poles hit at d=2). At real q_0>0 the same object q^{2n(\u03bb)} is strictly positive -- no sign. So the chirality lives precisely at the non-semisimple cyclotomic degeneration (the fibre / Im(q)\u22600 level), invisible to every real-q_0 construction. This UNIFIES the \u0394_\u03bb real-q failures (positive combos: nonneg_sum_ne_neg_target; re-framed traces: \u03b8_\u03bb>0) and mirrors the c_3 fibre-vs-archimedean split (Im(q) banner). OPEN, NOT claimed: the exact chiral operator realizing q^{2n(\u03bb)}, and the magnitude |\u0394_\u03bb|=dim. Locates the sign; does not derive \u0394_\u03bb. NOTHING wired."
+  },
+  "context": {
+    "follows": "t25_cinquefoil_deltalambda_sign_probe.py (framing prune)",
+    "selection_rule": "QOU.SelectionRules.nonneg_sum_ne_neg_target",
+    "target_source": "Lean deltaSign_mixed (QOU.BraidsAndKnots.S5SO3FiberAction.PartitionOf5)",
+    "open": "exact chiral operator realizing q^{2n(\u03bb)}; magnitude |\u0394_\u03bb|=dim (Track A)",
+    "gate": "\u0394_\u03bb gate -- structural locating result, no fit, nothing wired"
+  }
+}
