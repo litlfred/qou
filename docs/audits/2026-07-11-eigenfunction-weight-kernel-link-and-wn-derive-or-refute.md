@@ -424,6 +424,42 @@ computes. Verified bit-identical on the H₂ `(2,k)` torus bond (#3548's Check 3
 - **Sign is mode-dependent** (centered modes have indefinite Markov-Gram norm): the
   `σ` mode gives `+0.855`, the bar-odd `L₊−L₋` ghost gives `−0.4275` (binding).
 
+## Part 13 — the edge set: variationally selected (binding-max ⇒ max-contact packing)
+
+The last open piece is the *edge set* — which nucleon pairs bond. It is **not
+free**: with `b*` a fixed per-bond constant (Parts 11–12), the physical ground
+state **maximizes** binding `B ~ Σ_bonds b*`, hence maximizes the **number of
+bonds** subject to 3-D hard-core realizability (unit spheres cannot overlap). ⇒ the
+edge set is the **maximum-contact sphere packing** — a pure geometry problem, no fit
+([`binding_edge_set_selection.py`](../../computations/binding_edge_set_selection.py),
+witness `binding-edge-set-selection.witness.json`).
+
+This **resolves the #2089 open dichotomy** ("chain under-binds, complete
+over-binds"): the answer is **neither** — the max-contact graph lies between the
+chain (`A−1` edges) and the complete graph (`C(A,2)` edges). For `A≤4` all spheres
+mutually touch (simplex) so max-contact `= C(A,2)`; for `A≥5` not all can touch, so
+max-contact `< C(A,2)` — exactly the saturation the linear-in-`A` binding requires.
+
+| iso | A | #bonds implied | chain `A−1` | simplex `C(A,2)` |
+|---|--:|--:|--:|--:|
+| D | 2 | 1.00 | 1 | 1 |
+| T/³He | 3 | ~3.8 | 2 | 3 |
+| ⁴He | 4 | ~13.1 | 3 | 6 |
+
+The **pairwise** edge set is ≈ the max-contact (simplex) graph; the ⁴He magic
+surplus (`~13` vs simplex `6`) is the irreducible **3-body Milnor term `M₃`**
+(Part 7), *not* additional pairwise bonds. So max-contact fixes the pairwise edges;
+the `μ̄₁₂₃` 3-body term rides on top.
+
+**Boundary (honest).** Max-contact packings for `A≥5` are specific sphere-packing
+contact numbers (triangular bipyramid 9, octahedron 12, …) — a known but
+case-by-case geometry; and **cluster/halo** nuclei (⁶Li = α+d, ⁹Be) sit *below*
+max-contact (loosely bound) — a genuine nuclear-structure deviation the principle
+alone does not fix. The principle narrows the edge set to "max-contact modulo
+cluster structure"; the residual cluster geometry is the owner-gated s5-so3 input,
+and the α-cluster contact-graph level is #3551's scope (Brink deltahedra — the
+α-level instance of this same max-contact principle).
+
 ## Consequence for `conj:binding-manybody-eq-jet-filtration`
 
 **Not provable now** (recorded answer). The conjecture's three deep inputs remain
