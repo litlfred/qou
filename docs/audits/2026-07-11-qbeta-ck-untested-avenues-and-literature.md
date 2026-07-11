@@ -1,12 +1,14 @@
 # Q_β c_k closure — untested avenues × literature survey
 
 **Date:** 2026-07-11
-**Status:** SURVEY — no derivation, no wiring, no probe run. This doc maps
-avenues **not yet tested** (checked against the refuted-class map C1–C14 and
-the kernel-constraint registry KC1–KC20) and what the external literature
-offers for each. Every proposed avenue below carries a formalize-first
-invariant + kill criterion per [AGENTS.md](../../AGENTS.md) §"Formalize-first probe discipline".
-No c_k value is proposed anywhere in this doc (flip-flop guard).
+**Status:** SURVEY (§1–§5) **+ EXECUTION-WAVE RESULTS (§6, owner-selected
+same day)** — no derivation, no wiring, no c_k value proposed anywhere
+(flip-flop guard). §1–§5 map avenues **not yet tested at time of writing**
+(checked against the refuted-class map C1–C14 and the kernel-constraint
+registry KC1–KC20) and what the external literature offers for each; every
+proposed avenue carries a formalize-first invariant + kill criterion per
+[AGENTS.md](../../AGENTS.md) §"Formalize-first probe discipline". §6 records
+the probe verdicts after the owner selected all avenues for execution.
 
 **Authoritative companions (read first):**
 [`2026-06-04-qbeta-ck-refuted-class-map-and-open-axis.md`](2026-06-04-qbeta-ck-refuted-class-map-and-open-axis.md)

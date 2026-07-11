@@ -59,6 +59,7 @@ qbeta_root_of_unity_probe.py pattern.
 
 import json
 import os
+import subprocess
 from datetime import datetime, timezone
 
 import mpmath as mp
@@ -260,6 +261,9 @@ def main():
         "computedAt": datetime.now(timezone.utc).isoformat(),
         "computation": "qbeta-exponentiated-per-block",
         "scriptFile": "qbeta_exponentiated_per_block_probe.py",
+        "commitSha": subprocess.run(
+            ["git", "rev-parse", "HEAD"], capture_output=True, text=True,
+            check=True).stdout.strip(),
         "description": (
             "PROBE 6a (U1, PR #1585 queue item 2, never previously run): seeds the "
             "Q_beta scaling map as F = exp(N*Sum_lambda g_lambda(u_L)) with the "
@@ -340,9 +344,9 @@ def main():
                 "source": "c_2 = -1 is the one proved rung (Lean N2_factor); the single scale d.o.f.",
             },
             {
-                "name": "exponentiated_seed_reproduces_c3_within_1pct_both_anchors",
-                "computed": 1.0 if within_1pct_both else 0.0,
-                "expected": 0.0,  # honest expectation: NEGATIVE (kill criterion)
+                "name": "kill_criterion_hit_exponentiated_seed_misses_c3_gate",
+                "computed": 0.0 if within_1pct_both else 1.0,
+                "expected": 1.0,  # kill criterion fires => probe verdict NEGATIVE
                 "passed": bool(not within_1pct_both),
                 "tolerance": 0.0,
                 "source": ("Pre-stated kill criterion: anchor-constant and far from "

@@ -55,6 +55,7 @@ the arithmetic basis". Both are full successes of the discipline.
 import json
 import math
 import os
+import subprocess
 from datetime import datetime, timezone
 
 import mpmath as mp
@@ -66,8 +67,8 @@ mp.mp.dps = 60  # ≥ 50 dps discipline
 # ---------------------------------------------------------------------------
 # canonical (muon-family) q₀ — qbeta-ck-cache.witness.json / Q0_MP_PIN
 Q0_CANONICAL = mp.mpf("1.1099785955573347198997632204832250266562084087802")
-# proton-pinned q₀ — qbeta_c3_complex_habiro_cross_anchor_probe.py line 12
-Q0_PROTON = mp.mpf("1.10997858275")
+# proton-pinned q₀ — full 50-dps pin (qou_substrate.constants.Q_50_DIGIT_STR)
+Q0_PROTON = mp.mpf("1.1099785827513808075916690956107688798744991218736")
 M_E_MEV = mp.mpf("0.51099895069")
 # Q_β reference used by the cache extraction (qbeta-ck-cache Q_codata)
 Q_BETA_CODATA_MEV = mp.mpf("0.78233341")
@@ -256,6 +257,9 @@ def main():
         "computedAt": datetime.now(timezone.utc).isoformat(),
         "computation": "qbeta-ck-basis-constrained-pslq",
         "scriptFile": "qbeta_ck_basis_constrained_pslq.py",
+        "commitSha": subprocess.run(
+            ["git", "rev-parse", "HEAD"], capture_output=True, text=True,
+            check=True).stdout.strip(),
         "description": (
             "PROBE 4 (2026-07-11 avenues audit §3.D): basis-constrained PSLQ for the "
             "empirical Q_β ladder coefficients c_3/c_4 against the arithmetic-dictated "
@@ -271,7 +275,7 @@ def main():
         "precisionMetadata": {"compute_dps": 60},
         "data": {
             "q0_canonical": mp.nstr(Q0_CANONICAL, 50),
-            "q0_proton": mp.nstr(Q0_PROTON, 15),
+            "q0_proton": mp.nstr(Q0_PROTON, 50),
             "Q_beta_codata_MeV": mp.nstr(Q_BETA_CODATA_MEV, 12),
             "u_substrate": mp.nstr(u, 30),
             "u_cubed": mp.nstr(u ** 3, 10),
