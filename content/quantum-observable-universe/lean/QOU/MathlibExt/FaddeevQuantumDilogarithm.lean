@@ -35,22 +35,43 @@ at modular parameter `b > 0`:
 $$\Phi_b(z - \tfrac{ib}{2}) = \bigl(1 + e^{2\pi b z}\bigr)\,\Phi_b(z + \tfrac{ib}{2}),
 \qquad
 \Phi_b(z - \tfrac{i}{2b}) = \bigl(1 + e^{2\pi z/b}\bigr)\,\Phi_b(z + \tfrac{i}{2b}).$$
-The two relations are exchanged by `b ↔ 1/b`, encoding the **self-duality**
-`Φ_b = Φ_{1/b}` — the structural feature the compact `Φ_q` (single relation)
-lacks.  The `sorry`-free consequences below hold for *any* `Φ` in this class;
-the open conjecture is that the integral `Φ_b` **is** such a `Φ`. -/
-class FaddeevPhi (b : ℝ) (Φ : ℂ → ℂ) : Prop where
-  /-- `b > 0`. -/
-  hb : 0 < b
+The two relations are exchanged by `b ↔ 1/b` (with `Re (1/b) > 0` following
+from `Re b > 0`), encoding the **self-duality** `Φ_b = Φ_{1/b}` — the
+structural feature the compact `Φ_q` (single relation) lacks.
+
+**Total-function encoding caveat (why `shift_binv` carries a guard).** The
+true `Φ_b` is meromorphic with *poles* on the `1/b`-side (dual) lattice.  At a
+dual-lattice point (`e^{2πz/b} = −1`) an unguarded relation would force
+`Φ(z − i/(2b)) = 0 · Φ(z + i/(2b)) = 0` for ANY total `Φ`, while the intended
+object's value there is finite and non-zero — the meromorphic identity holds as
+`0 · ∞` (measured at the proton-anchor substrate `b` via the validated
+evaluator `computations/qbeta/phi_b_evaluator.py`:
+`|Φ_b(z − i/(2b))| ≈ 1.11e−6 ≠ 0` while the `k = 0` dual product factor at
+`z + i/(2b)` vanishes to `3e−34`).  An unguarded `∀ z` axiom is therefore
+unsatisfiable by any total-function encoding of `Φ_b`; the guard excludes
+exactly the dual pole lattice.  `shift_b` needs no guard: its prefactor-zero
+points are genuine *zeros* of `Φ_b` (numerator/compact half), where
+`0 = 0 · Φ(·)` holds.
+
+The `sorry`-free consequences below hold for *any* `Φ` in this class; the open
+conjecture is that the integral `Φ_b` **is** such a `Φ` (on the `Im b² > 0`
+substrate branch this is discharged by the modular-double product — see
+`QOU.MathlibExt.PhiBProd`; the `|q| = 1` fibre regime, real `b`, remains open). -/
+class FaddeevPhi (b : ℂ) (Φ : ℂ → ℂ) : Prop where
+  /-- `Re b > 0` (covers real `b > 0` — the `|q| = 1` fibre regime — and the
+  product-supported substrate branch `arg b = π/4`). -/
+  hb : 0 < b.re
   /-- `b`-shift relation (the "compact half", same shape as `Φ_q`'s
-  `q`-difference equation). -/
+  `q`-difference equation).  Unguarded: its prefactor zeros are genuine zeros. -/
   shift_b : ∀ z : ℂ,
     Φ (z - I * (b / 2)) = (1 + Complex.exp (2 * (Real.pi : ℂ) * b * z)) * Φ (z + I * (b / 2))
-  /-- `1/b`-shift relation (the **modular-dual** half, absent from compact `Φ_q`). -/
+  /-- `1/b`-shift relation (the **modular-dual** half, absent from compact
+  `Φ_q`), guarded away from the dual pole lattice (see class docstring). -/
   shift_binv : ∀ z : ℂ,
-    Φ (z - I / (2 * b)) = (1 + Complex.exp (2 * (Real.pi : ℂ) * z / b)) * Φ (z + I / (2 * b))
+    1 + Complex.exp (2 * (Real.pi : ℂ) * z / b) ≠ 0 →
+      Φ (z - I / (2 * b)) = (1 + Complex.exp (2 * (Real.pi : ℂ) * z / b)) * Φ (z + I / (2 * b))
 
-variable {b : ℝ} {Φ : ℂ → ℂ}
+variable {b : ℂ} {Φ : ℂ → ℂ}
 
 /-- **Derived zero locus (`b`-lattice).** From the `b`-shift axiom alone: wherever
 the prefactor `1 + e^{2π b z}` vanishes, `Φ_b` has a zero.  This is the top edge
@@ -61,13 +82,25 @@ theorem phi_b_zero [h : FaddeevPhi b Φ] {z : ℂ}
     Φ (z - I * (b / 2)) = 0 := by
   rw [h.shift_b z, hz]; simp
 
-/-- **Derived zero locus (`1/b`-lattice).** The modular-dual companion of
-`phi_b_zero`, from the `1/b`-shift axiom. The two lattices together are the
-`(mb + n/b)`-zero structure the compact `Φ_q` cannot reproduce. -/
-theorem phi_binv_zero [h : FaddeevPhi b Φ] {z : ℂ}
-    (hz : Complex.exp (2 * (Real.pi : ℂ) * z / b) = -1) :
-    Φ (z - I / (2 * b)) = 0 := by
-  rw [h.shift_binv z, hz]; simp
+/-- **Ratio form of the `1/b`-shift** (the modular-dual companion of
+`phi_b_ratio`), valid off the dual pole lattice.
+
+**Removed lemma note (2026-07-11).** The earlier `phi_binv_zero` — "wherever
+`e^{2πz/b} = −1`, `Φ(z − i/(2b)) = 0`" — was derived from the *unguarded*
+`shift_binv` and states a **false** property of the intended `Φ_b`: at those
+points the true `Φ_b(z − i/(2b))` is finite and non-zero, and the singular
+behavior is a **pole** of `Φ_b` at `z + i/(2b)` (dual lattice), not a zero at
+`z − i/(2b)`.  Measured at the substrate anchor: `|Φ_b(z − i/(2b))| ≈ 1.11e−6`
+with the `k = 0` dual product factor at `z + i/(2b)` vanishing (see the class
+docstring).  The asymmetry with `phi_b_zero` is structural: zeros of `Φ_b`
+come from the compact (numerator) half, poles from the dual (denominator)
+half; only the zero side is expressible for total functions. -/
+theorem phi_binv_ratio [h : FaddeevPhi b Φ] (z : ℂ)
+    (hpre : 1 + Complex.exp (2 * (Real.pi : ℂ) * z / b) ≠ 0)
+    (hne : Φ (z + I / (2 * b)) ≠ 0) :
+    Φ (z - I / (2 * b)) / Φ (z + I / (2 * b))
+      = 1 + Complex.exp (2 * (Real.pi : ℂ) * z / b) := by
+  rw [h.shift_binv z hpre, mul_div_assoc, div_self hne, mul_one]
 
 /-- **Ratio form of the `b`-shift** (where `Φ` does not vanish): the defining
 quotient `Φ_b(z - ib/2) / Φ_b(z + ib/2) = 1 + e^{2π b z}`. -/
