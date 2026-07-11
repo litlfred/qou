@@ -14,7 +14,7 @@ in `QOU.QGeometricLanglands`:
   proved `kummer_divisibility_criterion` with the geometric bridge
   (`κ₀ mod n = 0 ↔ χ(A) ≡ 0 (mod n)`, the Kummer exact-sequence
   computation), which is now carried as the **explicit conditional-class
-  hypothesis** `QGlObstructionCalcContext.kappa_kummer_bridge`
+  hypothesis** `QOU.QGlObstructionCalcContext.kappa_kummer_bridge`
   (AGENTS.md §3b-cond) rather than an internal `sorry` — the geometric
   input is thereby visible in the theorem's signature and part 3 is a
   genuine conditional derivation;
