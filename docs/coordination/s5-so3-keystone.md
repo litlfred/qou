@@ -5,6 +5,15 @@ fibre map `S₅ ⊃ A₅ ≅ I ⊂ SO(3)` tying the partition-wise Wedderburn ac
 to icosahedral rotations on Bring's quintic surface (geometric). It is the single open object for
 m_τ (lepton tower), GAP-A-3 binding Δ_λ, and GAP-A-4 mass λ(K).
 
+> **🟧 GENERAL owner reversal — Subgoal-2 open for all (2026-07-11).** The 2026-06-19 reversal that
+> first brought *this* keystone in scope has been **broadened generally**: all Subgoal-2 geometric /
+> substrate-derivation routes (absolute m_p/m_n/m_⁴He, substrate q_0, the binding `M_n(K)` edge-set /
+> coordination-graph closure, and this s5-so3 keystone) are now **in scope for all agents** — no
+> per-item owner sign-off required. The anti-fit / anti-laundering honesty discipline is orthogonal
+> and unchanged (a fit is still a fit; only derivations wire to production). Ruling:
+> [`docs/audits/2026-07-11-subgoal2-owner-reversal-open-for-all.md`](../audits/2026-07-11-subgoal2-owner-reversal-open-for-all.md),
+> [`docs/precision-goals.md`](../precision-goals.md).
+
 **Status (2026-06-16).** Reduced — by formalize-first pruning — to **one differential-geometry
 problem**. Everything combinatorial / representation-theoretic / algebraic is done or refuted; no fit
 was introduced anywhere.

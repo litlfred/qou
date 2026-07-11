@@ -280,8 +280,9 @@ declined on 2026-05-08:
 >
 > By extension, q_0 (CAL-2) substrate-derivation is also declined.
 
-Subgoal-2 is **out of scope** unless and until the ledger decision is
-reverted by the repo owner.
+Subgoal-2 was **out of scope** unless and until the ledger decision is
+reverted by the repo owner. **That reversal has now happened — see the
+2026-07-11 general reversal below.**
 
 > **Narrow owner reversal (2026-06-19, recorded 2026-06-22; PRs
 > [#2503](https://github.com/litlfred/qou/pull/2503) /
@@ -289,10 +290,33 @@ reverted by the repo owner.
 > the decline **only for the s5-so3 keystone geometric-realization
 > construction** — the DG / WRT(S³/2I) build of the `W_λ` index (see
 > [`docs/coordination/s5-so3-keystone.md`](coordination/s5-so3-keystone.md)).
-> That geometric `W_λ` build is now **in scope**. The reversal is narrow: it
-> does **not** reopen fit-based q_0 derivation, and the Δ_λ "no seventh
-> fit-based ansatz" rule still holds. All other Subgoal-2 items remain out of
-> scope without explicit owner sign-off.
+> That geometric `W_λ` build was the first item brought in scope. *(Superseded
+> in breadth by the 2026-07-11 general reversal below; still valid as the
+> first-opened item.)*
+
+> **🟧 GENERAL owner reversal — Subgoal-2 open for all (2026-07-11).** The owner
+> reversed the 2026-05-08 decline **generally**: the geometric / substrate-
+> derivation routes to the Subgoal-2 targets (absolute m_p / m_n / m_⁴He;
+> substrate-derivation of q_0; the per-isotope binding `M_n(K)` edge-set /
+> coordination-graph closure; the s5-so3 keystone) are now **in scope for all
+> agents** — no longer owner-gated, no per-item sign-off required. The
+> [step-9 binding-closure ledger](coordination/2026-06-05-step9-binding-closure.md)
+> and [`s5-so3-keystone.md`](coordination/s5-so3-keystone.md) carry the working
+> threads. Context: the qou-v0yw binding-weight closure (the M₃/M₄ weights of
+> `conj:binding-manybody-eq-jet-filtration`) was blocked *only* by this gate plus
+> the anti-fit rule; the gate is now lifted.
+>
+> **What the reversal does NOT change — the anti-fit / anti-laundering honesty
+> discipline still stands.** "Open for all" grants permission to *pursue and
+> derive*; it does **not** license passing a fit off as a derivation. The Δ_λ
+> "no seventh fit-based ansatz" rule, the §"Axiomatization is NOT a Proof"
+> anti-laundering rule, and the "sorry-free ≠ derived" / "conditional-proved ≠
+> premise-established" rules are **orthogonal to the scope gate** and remain in
+> force: a `wₙ(K)` obtained by inverting the AME anchors is still a fit and must
+> be labelled one, not wired to production as canonical. Only a *derived*
+> `R(q,x)` / geometric bond-count / substrate q_0 may be wired as canonical. If
+> the owner later wants fit-based results themselves wired as canonical, that is
+> a separate ruling not granted here.
 
 ## Where measured
 
