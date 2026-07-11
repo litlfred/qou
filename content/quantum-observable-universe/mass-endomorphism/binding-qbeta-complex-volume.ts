@@ -5,11 +5,11 @@ export default conjecture({
   title:
     "Complex-volume unification: binding $\\mathfrak{E}_{\\mathrm{bind}}$ and $\\beta$-decay $\\mathfrak{Q}_\\beta$ are $\\operatorname{Re}$/$\\operatorname{Im}$ of one $\\mathfrak{V}=E_0\\,\\mathrm{tr}_M((\\Pi_{\\text{free}}-\\mathbf{1})\\circ\\mathcal{M})$",
   lean: {
-    ref: [
-      "qou:QOU.MassEndomorphism.ComplexVolumeMatch",
-      "qou:QOU.Mass.ComplexVolumeZeta4Partner.SingleFrakVAssembly",
-      "qou:QOU.QBeta.StageC.StageCSigma3Lift"
-    ],
+    // Primary Lean ref (schema `LeanRefSchema.ref` is a single string).
+    // The two secondary formalisation artifacts —
+    // `QOU.Mass.ComplexVolumeZeta4Partner.SingleFrakVAssembly` and
+    // `QOU.QBeta.StageC.StageCSigma3Lift` — are named in the authorNotes below.
+    ref: "qou:QOU.MassEndomorphism.ComplexVolumeMatch",
     validation: "not_checked",
   },
   uses: [
