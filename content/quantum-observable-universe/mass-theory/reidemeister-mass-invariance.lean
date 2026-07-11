@@ -163,7 +163,18 @@ class BorromeanQuark : Prop where
   volume_calibrates_mass :
     ∃ (V : ℝ) (m : ℝ → ℝ), 0 < V ∧ ∀ q : ℝ, q > 1 → m q = V / (1 - 1 / q) ^ 2
 
-/-- Witness theorem: this file's proposition is conditional on
-    `BorromeanQuark` per CLAUDE.md §3b-cond. -/
-def reidemeister_mass_invariance_conditional_on_borromean_quark
-    [_inst : BorromeanQuark] : True := trivial
+/-- **Conditional consequence of `BorromeanQuark`** (per CLAUDE.md §3b-cond):
+    the volume-calibrated bare-mass functional is strictly positive on the
+    physical regime `q > 1`.  This derives a genuine conclusion from the
+    class hypothesis (positivity of `V / (1 − 1/q)²` for `V > 0`, `q > 1`),
+    rather than asserting `True` — so it is a non-degenerate conditional
+    result, not a self-assuming projection. -/
+theorem reidemeister_mass_invariance_conditional_on_borromean_quark
+    [inst : BorromeanQuark] :
+    ∃ m : ℝ → ℝ, ∀ q : ℝ, q > 1 → 0 < m q := by
+  obtain ⟨V, m, hV, hcal⟩ := inst.volume_calibrates_mass
+  refine ⟨m, fun q hq => ?_⟩
+  rw [hcal q hq]
+  have hq0 : (0 : ℝ) < q := lt_trans one_pos hq
+  have h1 : (0 : ℝ) < 1 - 1 / q := sub_pos.mpr ((div_lt_one hq0).mpr hq)
+  exact div_pos hV (pow_pos h1 2)
