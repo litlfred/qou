@@ -780,3 +780,35 @@ connects to the c_k parity only at ζ₄, never on the real substrate axis → S
 irreducibly archimedean, corroborating the Φ_b-at-real-q₀ route (#3544/#3562/#3536).
 Coordinated: intent on #3560 (ζ₄ swap sibling), support note on #3562 (Φ_b).
 No c_k value; wires nothing; no tier change.
+
+**2026-07-11 (#3536 + #3567, merged) — untested-avenues execution wave: every
+discrete/formal c_k identification route closed; C15–C18 land on the map.**
+Owner-directed survey + same-day execution of all ranked avenues
+([`2026-07-11-qbeta-ck-untested-avenues-and-literature.md`](../audits/2026-07-11-qbeta-ck-untested-avenues-and-literature.md) §6),
+one probe per commit, pre-registered kill criteria, nothing wired:
+
+- **C15** Borromean forced-link shadow REFUTED (τ_D Brunnian ℏ³-vanishing;
+  4 canonical normalisations all miss −2).
+- **C16** Habiro-ring membership of the ladder in `q` REFUTED (scope-a) at
+  natural normalisations — the ladder is not a Habiro element's q=1 expansion;
+  gates off GSWZ Galois descent; converges with KC8 (simple pole ≠ Gevrey-1).
+- **C17** raw `q^N↦q^k` 4₁-operator kernel REFUTED (scope-a); P-C15 bar-parity
+  survivor intact (needs re-basing/twist, canonical rungs).
+- **C18** PSLQ recognition of *extracted* rungs ENTROPY-BLOCKED: empirical c₃
+  carries ≤ ~2.2 digits/anchor; **"empirical c₄ = −0.972" is a rounding
+  artifact of c₃** (identically 0 under exact extraction — registry rung-4 row
+  + JSON twin updated). Extracted k ≥ 4 is noise; kernel tests need canonical
+  rungs.
+- **C13 extended**: exponentiated-uniform per-block seeding refuted
+  (exp ≡ linear at c₃, symbolic).
+- P2 (Φ_b infra) resolved as collision → deferred to the `qou-9lot` line
+  (merged #3540; open #3562/#3544).
+
+Net: with C16+C18+KC8+KC17, the surviving c₃ bar-odd object is the **analytic
+Φ_b state-integral face at real q₀** — active on #3562 (m-plane inversion +
+`FaddeevPhi` class repair) and #3544 (real-integral route). Map rows:
+[`2026-06-04-qbeta-ck-refuted-class-map-and-open-axis.md`](../audits/2026-06-04-qbeta-ck-refuted-class-map-and-open-axis.md) §2.
+Coordination this cycle: duplicate `CuspShapeBarParity.lean` flagged on
+#3573 ↔ #3579 (QBeta/ vs Knot/, same theorems); parallel Lean Φ_b carrier
+flagged on #3544 ↔ #3562 (instantiate the repaired class, don't fork).
+No c_k value; wires nothing; no tier change.
