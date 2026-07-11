@@ -3,12 +3,12 @@
   "description": "KC19 (eval-map affine kernel) and KC20 (degree-3 carrier cubic) both live in y=q\u00b2+q\u207b\u00b2; consistent (disjoint singularities), jointly sharpen the real-q/quadratic c\u2083 exclusion, and the C(3)=\u22122 flag is a wrong-anchor coincidence (c\u2083 q=1 shadow at y=2 gives C(2)=\u22124). No c_k value; nothing wired.",
   "auditOnly": "docs/audits/2026-07-11-qbeta-c3-kc19-kc20-consistency.md",
   "tier": "symbolic-exact (sympy; consistency cross-check of two proved-lean constraints)",
-  "computedAt": "2026-07-11T23:09:22.375029+00:00",
-  "commitSha": "51dde2994fd890b6024cc0ba3e9fc878f49260ed",
+  "computedAt": "2026-07-11T23:14:42.365076+00:00",
+  "commitSha": "2ffe41a96d105174b713379c0fa8e63f2cf69050",
   "engine": "sympy",
   "engineVersion": "1.14.0",
   "scriptFile": "qbeta_c3_kc19_kc20_consistency_probe.py",
-  "scriptHash": "98fb7a21dece",
+  "scriptHash": "02608343d351",
   "assertions": [
     {
       "name": "kc19_kc20_same_trace_variable",
@@ -28,7 +28,7 @@
     {
       "name": "joint_degree3_exclusion",
       "passed": true,
-      "detail": "C irreducible (rational-root candidates {\u00b11,\u00b12} all nonzero: [-2, -10, -4, -32]), disc=-152 \u21d2 via KC19 (swing\u2208w) + KC18 (affine bridge), c\u2083=[u\u00b3]w inherits the degree-3 field \u21d2 no quadratic/RoU c\u2083 closure (unified KC19+KC20)"
+      "detail": "C irreducible over \u211a (Poly.is_irreducible=True; rational-root candidates {\u00b11,\u00b12} all nonzero: [-2, -10, -4, -32]), disc=-152 \u21d2 via KC19 (swing\u2208w) + KC18 (affine bridge), c\u2083=[u\u00b3]w inherits the degree-3 field \u21d2 no quadratic/RoU c\u2083 closure (unified KC19+KC20)"
     },
     {
       "name": "C3_minus2_is_wrong_anchor_coincidence",
