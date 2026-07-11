@@ -149,6 +149,20 @@ def main() -> int:
     print(f"    Δθ = θ(q₀) − 120° = {mp.nstr(mp.degrees(dtheta),8)}°  "
           "(q-deformation breaks 4₁ amphichirality ⇒ seeds S≠0)")
 
+    # ---- 5. degeneration loci = figure-eight geometric special points ----
+    print("\n[5] Reeb degeneration loci (tr M=±2, θ=0/π) = fig-8 special points:")
+    phi = (1 + mp.sqrt(5)) / 2
+    tr_phi = phi ** 4 - 2 * phi ** 2 + 1 - 2 / phi ** 2 + 1 / phi ** 4
+    omega = mp.e ** (mp.mpc(0, 1) * mp.pi / 3)          # cusp shape, root of Φ₆
+    q_cusp = mp.sqrt(omega)
+    tr_cusp = q_cusp ** 4 - 2 * q_cusp ** 2 + 1 - 2 / q_cusp ** 2 + 1 / q_cusp ** 4
+    golden_ok = abs(tr_phi - 2) < mp.mpf("1e-30")
+    cusp_ok = abs(tr_cusp + 2) < mp.mpf("1e-30")
+    print(f"    θ=0 (tr=+2) at q=φ={mp.nstr(phi,8)} (golden ratio): tr(φ)={mp.nstr(tr_phi,8)}  {'OK' if golden_ok else 'FAIL'}")
+    print(f"    θ=π (tr=−2) at q²=ω=e^(iπ/3) (cusp shape): tr(√ω)={mp.nstr(mp.re(tr_cusp),6)}  {'OK' if cusp_ok else 'FAIL'}")
+    print("    exact identities: tr+2=(q²−1+q⁻²)² (⇒tr≥−2 real); tr−2=(q²−q−1)(q²+q−1)(q²−q+1)(q²+q+1)/q⁴")
+    print("    ⇒ operator-θ shares degeneration loci with the A-poly/cusp geometry (#3573/#3579).")
+
     # honest gate: arg(u)=θ requires match at BOTH anchors AND sign-flip capacity
     match = all(abs(mp.degrees(thetas[a]) - ARG_U_REQ_DEG[a]) < 5 for a in ("muon", "proton"))
     print("\n VERDICT:", "arg(u)=θ CANDIDATE" if match else
@@ -191,6 +205,16 @@ def main() -> int:
     wb.add_assertion("theta_classical_2pi_over_3",
                      computed=float(mp.degrees(th1)), expected=120.0, tolerance=1e-6,
                      source="θ(q=1)=120°: (σ₀σ₁)² is an S₃ 3-cycle, eigenvalue e^{2πi/3}")
+    wb.add_data("degeneration_loci", {
+        "theta_0_at_golden": {"q": mp.nstr(phi, 12), "tr": mp.nstr(tr_phi, 12), "ok": bool(golden_ok)},
+        "theta_pi_at_cusp": {"q_sq": "e^{i pi/3} (Phi_6 root)", "tr": mp.nstr(mp.re(tr_cusp), 8), "ok": bool(cusp_ok)},
+        "identities": ["tr+2=(q^2-1+q^-2)^2", "tr-2=(q^2-q-1)(q^2+q-1)(q^2-q+1)(q^2+q+1)/q^4"]})
+    wb.add_assertion("reeb_degenerates_at_golden_ratio",
+                     computed=1.0 if golden_ok else 0.0, expected=1.0, tolerance=0.5,
+                     source="tr M_{4_1}(phi)=2 (theta=0): the Reeb rotation degenerates at the golden ratio = A-poly branch point u=2 ln phi")
+    wb.add_assertion("reeb_degenerates_at_cusp_shape",
+                     computed=1.0 if cusp_ok else 0.0, expected=1.0, tolerance=0.5,
+                     source="tr M_{4_1}(sqrt(omega))=-2 (theta=pi) at q^2=omega=e^{i pi/3}, the figure-8 cusp shape (Phi_6 root, barEven=1/barOdd^2=-3)")
     wb.save()
 
     print("\n  RESULT: Reeb θ derived (117.087°, θ(1)=120° exact); arg(u)=θ negative (smooth);")
