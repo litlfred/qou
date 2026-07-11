@@ -157,9 +157,13 @@ def main() -> int:
     wb.add_assertion("complete_convention_vol_cs", computed=float(mp.fabs(cs1)),
                      expected=0.0, tolerance=1e-25,
                      source="Σ rogers at m=1: Im=Vol(4₁), Re−π²/6=CS=0 (amphichiral)")
-    wb.add_assertion("real_pole_hits_golden_branch", computed=float(gold_hits),
+    # Boolean encoding (Copilot review): the claim is "at least one real pole seed
+    # reaches the golden branch, not the cusp" — stable regardless of how many of
+    # the k=1..3 seeds converge (gold_hits is a count; a bare count vs expected=1.0
+    # would fail for 0 or ≥2 hits and doesn't encode the intended existential).
+    wb.add_assertion("real_pole_hits_golden_branch", computed=float(gold_hits >= 1),
                      expected=1.0, tolerance=0.5,
-                     source="real pole q0^{-1} seeds golden φ=(1+√5)/2, not the cusp")
+                     source="≥1 real pole seed q0^{-k} reaches golden φ=(1+√5)/2, not the cusp")
     wb.add_assertion("branch_bar_parity_swap", computed=float(mp.fabs(cusp_bo2 + 3) + mp.fabs(gold_be2 - 5)),
                      expected=0.0, tolerance=1e-20,
                      source="cusp barOdd²=−3 (√−3=CS), golden barEven²=+5 (√5, no CS); Lean-proved")
