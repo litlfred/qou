@@ -82,8 +82,11 @@ def main() -> int:
         N_need = float((B_ame(Z, A) - na * B_alpha) / b_aa)
         cmax, geom, exact = C_MAX[na]
         delta = cmax - N_need
+        # NOTE: `cmax_geometry` is the MAX-CONTACT cluster geometry (from C_MAX),
+        # NOT the geometry implied by N_need. For ²⁰Ne these differ: cmax_geometry
+        # is the 9-contact tri-bipyramid, while N_need≈8 implies a square pyramid.
         rows[nm] = dict(n_alpha=na, N_need=N_need, C_max=cmax, delta=delta,
-                        geometry=geom, cmax_exact=exact)
+                        cmax_geometry=geom, cmax_exact=exact)
         flag = "" if abs(delta) < 0.6 else "  ← deviates"
         star = "" if exact else " (lit.)"
         print(f"  {nm:<6}{na:>4}{N_need:>8.1f}{cmax:>7}{delta:>+7.1f}  {geom}{star}{flag}")
