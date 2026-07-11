@@ -1,0 +1,97 @@
+{
+  "engine": "pyhecke+numpy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-11T14:37:01.838975+00:00",
+  "commitSha": "a7abad30240a59c7f91ac4ff4e72cb36f3809bb8",
+  "assertions": [
+    {
+      "name": "gram_indefinite_one_ghost",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "tr_M Gram form has signature (5+,1-)"
+    },
+    {
+      "name": "decay_proj_is_ghost_mode",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-06,
+      "source": "½(L₊−L₋) aligns with the negative-norm eigenvector"
+    },
+    {
+      "name": "decay_negative_norm",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "decay projection has negative Gram norm (ghost/bar-odd)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "qbeta-c3-barodd-knot-operator-gram",
+  "scriptFile": "qbeta_c3_barodd_knot_operator_gram_probe.py",
+  "scriptHash": "4e2dd0a2a761",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Algebraic (knot-operator / inverse-Gram) shadow of the c₃ bar-odd S carrier. β(4₁)=L₊+HA·e⁻ in H₃(q); the FLIP bar's decay projection ½(L₊−L₋) lands exactly on the UNIQUE negative-norm (ghost) direction of the indefinite Frobenius/Gram form (signature 5+,1−) — the algebraic realization of EkParitySplit.decayProj. Observable value still needs the archimedean z(q₀) (thurston-relaxation Newton map). Scope-(a); C14; no c_k wired.",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "figure_eight_operator": {
+      "braid": "sigma0 sigma1^-1 sigma0 sigma1^-1",
+      "nf": {
+        "L₊": 1.0,
+        "e⁻": 0.20906029879563937
+      },
+      "tr_M": 0.36460572109562034
+    },
+    "flip_bar_projections": {
+      "decay_half_Lplus_minus_Lminus": {
+        "L₊": 0.5,
+        "L₋": -0.5
+      },
+      "mass": {
+        "L₊": 0.5,
+        "L₋": 0.5,
+        "e⁻": 0.20906029879563937
+      }
+    },
+    "gram_signature": {
+      "det": -0.18920521914403668,
+      "n_pos": 5,
+      "n_neg": 1,
+      "eigenvalues": [
+        -0.8550672621298652,
+        0.10179667084987301,
+        0.855067262129865,
+        0.8550672621298651,
+        0.8550672621298654,
+        3.476949805470146
+      ],
+      "ghost_direction": {
+        "L₊": 0.7071067811865479,
+        "L₋": -0.7071067811865476
+      }
+    },
+    "carrier_is_ghost_mode": {
+      "decay_gram_norm2": -0.42753363106493264,
+      "mass_gram_norm2": 1.1136226999254653,
+      "cos_decay_ghost": 1.0,
+      "conclusion": "figure-eight bar-odd carrier = unique negative-signature Gram mode (L+ - L-)",
+      "open": "observable S value needs z(q0) = Newton on gluing equations (thurston-relaxation)"
+    }
+  }
+}
