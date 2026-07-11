@@ -7,7 +7,9 @@ prediction.
 **Verdict:** **DERIVED, with an exact closed form.** These are the canonical
 **Hecke traced-volume** of the quark orderings — `Φ(K) = Σᵢ log|V̂ᵢ(K)|` —
 computed by [`computations/level1-qvalues.py`](../../computations/level1-qvalues.py)
-via `HeckeRational.traced_volume`. Each `V̂ᵢ` is a rational function of `q`, so
+via `HeckeRational.traced_volume` (defined in
+[`computations/hecke_engine.py`](../../computations/hecke_engine.py)). Each `V̂ᵢ`
+is a rational function of `q`, so
 `Φ` is `log` of a rational function of `q`. They are **not** fitted placeholders.
 
 > **Correction.** An earlier draft of this audit concluded (wrongly) that no
@@ -65,15 +67,15 @@ At `q₀`, `Σᵢ log|V̂ᵢ|` gives:
 
 The 5–6×10⁻⁵ residual is `q₀`/`z` rounding (the 8-digit rational
 `q = 1.1099786` and `z = 0.4993` used by the engine vs the canonical 50-digit
-`q₀`); the construction is unambiguous. `|ΔΦ| = |Φ(udd) − Φ(uud)| = 0.3476`
+`q₀`); the construction is unambiguous. `|ΔΦ| = |Φ(udd) − Φ(uud)| ≈ 0.3476`
 feeds `Δm = α·|ΔΦ|`.
 
 Reproduce: [`computations/probes/quark_volume_provenance_probe.py`](../../computations/probes/quark_volume_provenance_probe.py).
 
 ## On the ratio (numerology note)
 
-`Φ(udd)/Φ(uud) = 1.395655` has no *simpler* closed form than the ratio of the
-two `log`-expressions above; `e^{1/3} = 1.395612` is a precision-floor
+`Φ(udd)/Φ(uud) ≈ 1.395655` has no *simpler* closed form than the ratio of the
+two `log`-expressions above; `e^{1/3} ≈ 1.395612` is a precision-floor
 coincidence (excluded by the 6-digit rounding window of the literals). This is
 expected — a ratio of two `log|rational(q)|` values is not itself elementary.
 

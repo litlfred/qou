@@ -46,8 +46,23 @@ def phi(ordering, q):
                for i in range(len(ordering) - 1))
 
 
+def _canonical_q0() -> float:
+    """Canonical engine q₀ = Q_RAT_NUM/Q_RAT_DEN, so this probe stays synced
+    with the pin if it changes. Falls back to the documented literal when run
+    outside the repo (e.g. no `computations/` on path)."""
+    import os
+    import sys
+    sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+    try:
+        import _path_bridge  # noqa: F401
+        from q_parameter import Q_RAT_DEN, Q_RAT_NUM
+        return Q_RAT_NUM / Q_RAT_DEN
+    except Exception:
+        return 1.1099786  # documented fallback (engine rational pin)
+
+
 def main() -> None:
-    q0 = 1.1099786  # engine rational q₀ (matches level1-qvalues.py)
+    q0 = _canonical_q0()
     uud, udd = [1, 1, 0], [1, 0, 0]
     print(f"q₀ = {q0},  z = {Z},  h = q−1/q = {q0 - 1/q0:.6f}\n")
     for name, ordv, lit in [("uud (proton)", uud, -0.878526),
