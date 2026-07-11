@@ -1047,3 +1047,251 @@ theorem insertWordRec_entries_lt (w : List ℕ) :
   rw [insertWordRec]
   have := insertWordRecAux_allLt w 0 [] [] (by intro r hr; simp at hr)
   simpa using this
+
+/-! ### Sub-brick 6c — column-strictness of `Q`
+
+`ColStrict` bundles two independent facts about consecutive rows `(u, l)`: the
+**shape** half `l.length ≤ u.length` (the tableau is a Young diagram) and the
+**value** half `∀ j < l.length, u.getD j < l.getD j` (columns strictly increase).
+For `Q` these decouple cleanly:
+
+* the shape half transfers from `P` — `Q(w)` has the same shape as `P(w)`
+  (`insertWordRec_shape_eq_P`) and `P(w)` is column-strict (`insertWord_colStrict`),
+  so its shape is a Young diagram;
+* the value half follows from the monotone `AllLt` invariant — given the shape is
+  Young, the cell directly above a freshly-written step-`s` cell already exists
+  and holds an older (hence smaller) step index.
+-/
+
+/-- Shape half of `StrictBelow`: consecutive rows have weakly-decreasing lengths
+    (the tableau shape is a Young diagram). -/
+def ColShapeYoung (T : List (List ℕ)) : Prop :=
+  T.IsChain (fun u l => l.length ≤ u.length)
+
+/-- Value half of `StrictBelow`: over the in-range positions, each column entry
+    strictly exceeds the one directly above it. -/
+def ColValStrict (T : List (List ℕ)) : Prop :=
+  T.IsChain (fun u l => ∀ j < l.length, u.getD j 0 < l.getD j 0)
+
+/-- `IsChain` of a pointwise conjunction splits into a conjunction of `IsChain`s. -/
+theorem isChain_and {α : Type*} (A B : α → α → Prop) :
+    ∀ l : List α, l.IsChain (fun a b => A a b ∧ B a b) ↔ l.IsChain A ∧ l.IsChain B
+  | [] => by simp
+  | [_] => by simp
+  | a :: b :: t => by
+      rw [List.isChain_cons_cons, List.isChain_cons_cons, List.isChain_cons_cons,
+        isChain_and A B (b :: t)]
+      tauto
+
+/-- **`ColStrict` decomposes** into the shape (Young) and value (strict) halves. -/
+theorem colStrict_iff (T : List (List ℕ)) :
+    ColStrict T ↔ ColShapeYoung T ∧ ColValStrict T := by
+  unfold ColStrict ColShapeYoung ColValStrict StrictBelow
+  exact isChain_and _ _ T
+
+/-- `ColShapeYoung` reads only row lengths, so it is exactly a chain condition on
+    the shape list. -/
+theorem colShapeYoung_iff_shape (T : List (List ℕ)) :
+    ColShapeYoung T ↔ (tableauShape T).IsChain (fun u l => l ≤ u) := by
+  unfold ColShapeYoung tableauShape
+  rw [List.isChain_map]
+
+/-- `ColShapeYoung` transfers across equal shapes. -/
+theorem colShapeYoung_of_shape_eq {T1 T2 : List (List ℕ)}
+    (hsh : tableauShape T1 = tableauShape T2) (h : ColShapeYoung T1) :
+    ColShapeYoung T2 := by
+  rw [colShapeYoung_iff_shape] at h ⊢; rwa [← hsh]
+
+/-- `ColStrict` implies its shape half. -/
+theorem colStrict_shapeYoung {T : List (List ℕ)} (h : ColStrict T) :
+    ColShapeYoung T := ((colStrict_iff T).mp h).1
+
+/-- `ColShapeYoung` passes to the tail. -/
+theorem colShapeYoung_tail {r : List ℕ} {T : List (List ℕ)}
+    (h : ColShapeYoung (r :: T)) : ColShapeYoung T := by
+  cases T with
+  | nil => simp [ColShapeYoung]
+  | cons r2 T2 => rw [ColShapeYoung, List.isChain_cons_cons] at h; exact h.2
+
+/-- `ColValStrict` passes to the tail. -/
+theorem colValStrict_tail {r : List ℕ} {T : List (List ℕ)}
+    (h : ColValStrict (r :: T)) : ColValStrict T := by
+  cases T with
+  | nil => simp [ColValStrict]
+  | cons r2 T2 => rw [ColValStrict, List.isChain_cons_cons] at h; exact h.2
+
+/-- `getD` in the left part of an append. -/
+theorem getD_append_lt {l1 l2 : List ℕ} {j : ℕ} (hj : j < l1.length) :
+    (l1 ++ l2).getD j 0 = l1.getD j 0 := by
+  simp [List.getD_eq_getElem?_getD, List.getElem?_append_left hj]
+
+/-- `getD` at the join index of `l1 ++ [s]` reads the appended `s`. -/
+theorem getD_append_end {l1 : List ℕ} {s : ℕ} :
+    (l1 ++ [s]).getD l1.length 0 = s := by
+  rw [List.getD_eq_getElem?_getD, List.getElem?_append_right (Nat.le_refl _)]
+  simp
+
+/-- The Q-component of `insertRec` is never empty. -/
+theorem insertRec_snd_ne_nil (P Q : List (List ℕ)) (x s : ℕ) :
+    (insertRec P Q x s).2 ≠ [] := by
+  cases P with
+  | nil => simp [insertRec]
+  | cons prow prest =>
+    cases hb : (rowInsert prow x).2 with
+    | none => rw [insertRec_snd_none hb]; simp
+    | some y => rw [insertRec_snd_some hb]; simp
+
+/-- The head Q-row after `insertRec` is either the old head row or that row with
+    the step index appended. -/
+theorem insertRec_snd_headD (P Q : List (List ℕ)) (x s : ℕ)
+    (hsh : tableauShape P = tableauShape Q) :
+    (insertRec P Q x s).2.headD [] = Q.headD []
+    ∨ (insertRec P Q x s).2.headD [] = Q.headD [] ++ [s] := by
+  cases P with
+  | nil =>
+    have hQ : Q = [] := by
+      cases Q with | nil => rfl | cons a b => simp [tableauShape] at hsh
+    subst hQ; right; simp [insertRec]
+  | cons prow prest =>
+    cases hb : (rowInsert prow x).2 with
+    | none => rw [insertRec_snd_none hb]; right; simp
+    | some y => rw [insertRec_snd_some hb]; left; simp
+
+/-- **`insertRec` preserves column value-strictness of `Q`.**  Given the result
+    shape is a Young diagram (`ColShapeYoung`, supplied from the `P` side), each
+    freshly-written step-`s` cell sits below an older (smaller) entry, so columns
+    strictly increase.  The append and cascade cases mirror the `rowsStrict`
+    proof, with the Young shape supplying `q1.length < qh.length` at the new
+    cell. -/
+theorem insertRec_snd_colValStrict :
+    ∀ (P Q : List (List ℕ)) (x s : ℕ), ColStrict Q → tableauAllLt Q s →
+      tableauShape P = tableauShape Q → ColShapeYoung (insertRec P Q x s).2 →
+      ColValStrict (insertRec P Q x s).2
+  | [], Q, x, s => by
+      intro _ _ hsh _
+      have hQ : Q = [] := by
+        cases Q with | nil => rfl | cons a b => simp [tableauShape] at hsh
+      subst hQ; simp [insertRec, ColValStrict]
+  | prow :: prest, Q, x, s => by
+      intro hcs hlt hsh hyoung
+      obtain ⟨qh, qt, rfl⟩ : ∃ qh qt, Q = qh :: qt := by
+        cases Q with
+        | nil => simp [tableauShape] at hsh
+        | cons a b => exact ⟨a, b, rfl⟩
+      cases hb : (rowInsert prow x).2 with
+      | none =>
+        rw [insertRec_snd_none hb] at hyoung ⊢
+        simp only [List.headD_cons, List.tail_cons] at hyoung ⊢
+        cases qt with
+        | nil => simp [ColValStrict]
+        | cons q1 rest =>
+          rw [ColValStrict, List.isChain_cons_cons]
+          rw [ColStrict, List.isChain_cons_cons] at hcs
+          obtain ⟨hlen, hval⟩ := hcs.1
+          refine ⟨fun j hj => ?_, ?_⟩
+          · have hjqh : j < qh.length := lt_of_lt_of_le hj hlen
+            rw [getD_append_lt hjqh]
+            exact hval j hj
+          · exact ((colStrict_iff _).mp hcs.2).2
+      | some y =>
+        rw [insertRec_snd_some hb] at hyoung ⊢
+        simp only [List.headD_cons, List.tail_cons] at hyoung ⊢
+        have hcsqt : ColStrict qt := colStrict_tail hcs
+        have hltqt : tableauAllLt qt s :=
+          fun r hr e he => hlt r (List.mem_cons_of_mem qh hr) e he
+        have hshqt : tableauShape prest = tableauShape qt := by
+          have h := hsh; simp only [tableauShape_cons, List.cons.injEq] at h; exact h.2
+        have hyoungR : ColShapeYoung (insertRec prest qt y s).2 :=
+          colShapeYoung_tail hyoung
+        have hvalR : ColValStrict (insertRec prest qt y s).2 :=
+          insertRec_snd_colValStrict prest qt y s hcsqt hltqt hshqt hyoungR
+        obtain ⟨rh, rt, hRcons⟩ :
+            ∃ rh rt, (insertRec prest qt y s).2 = rh :: rt := by
+          cases hR : (insertRec prest qt y s).2 with
+          | nil => exact absurd hR (insertRec_snd_ne_nil prest qt y s)
+          | cons a b => exact ⟨a, b, rfl⟩
+        rw [hRcons] at hvalR hyoung ⊢
+        rw [ColValStrict, List.isChain_cons_cons]
+        refine ⟨fun j hj => ?_, hvalR⟩
+        -- head-row characterization: rh = qt.headD [] or qt.headD [] ++ [s]
+        have hhead := insertRec_snd_headD prest qt y s hshqt
+        rw [hRcons, List.headD_cons] at hhead
+        -- shape: rh.length ≤ qh.length (from result Young)
+        rw [ColShapeYoung, List.isChain_cons_cons] at hyoung
+        have hrhlen : rh.length ≤ qh.length := hyoung.1
+        rcases hhead with hh | hh
+        · -- rh = qt.headD []
+          rw [hh] at hj ⊢
+          rcases qt with _ | ⟨q1, qrest⟩
+          · simp at hj
+          · simp only [List.headD_cons] at hj ⊢
+            rw [ColStrict, List.isChain_cons_cons] at hcs
+            exact hcs.1.2 j hj
+        · -- rh = qt.headD [] ++ [s]
+          rw [hh] at hj hrhlen ⊢
+          by_cases hjlt : j < (qt.headD []).length
+          · rw [getD_append_lt hjlt]
+            rcases qt with _ | ⟨q1, qrest⟩
+            · simp at hjlt
+            · simp only [List.headD_cons] at hjlt ⊢
+              rw [ColStrict, List.isChain_cons_cons] at hcs
+              exact hcs.1.2 j hjlt
+          · have hjeq : j = (qt.headD []).length := by
+              simp only [List.length_append, List.length_singleton] at hj; omega
+            subst hjeq
+            rw [getD_append_end]
+            simp only [List.length_append, List.length_singleton] at hrhlen
+            have hlt' : (qt.headD []).length < qh.length := by omega
+            rw [getD_eq_getElem_mem hlt']
+            exact hlt qh List.mem_cons_self _ (List.getElem_mem hlt')
+
+/-- **`insertRec` preserves column-strictness of `Q`.**  Combines the two halves:
+    the shape (Young) half transfers from `insert P x` (`insert_colStrict`) via
+    the `P`/`Q` shape agreement, and the value half is `insertRec_snd_colValStrict`. -/
+theorem insertRec_snd_colStrict (P Q : List (List ℕ)) (x s : ℕ)
+    (hcsP : ColStrict P) (hcs : ColStrict Q) (hlt : tableauAllLt Q s)
+    (hsh : tableauShape P = tableauShape Q) :
+    ColStrict (insertRec P Q x s).2 := by
+  have hyoung : ColShapeYoung (insertRec P Q x s).2 := by
+    refine colShapeYoung_of_shape_eq (T1 := (insertRec P Q x s).1)
+      (insertRec_shape P Q x s hsh).symm ?_
+    rw [insertRec_fst_eq_insert]
+    exact colStrict_shapeYoung (insert_colStrict hcsP x)
+  exact (colStrict_iff _).mpr
+    ⟨hyoung, insertRec_snd_colValStrict P Q x s hcs hlt hsh hyoung⟩
+
+/-- The recording fold preserves `Q` column-strictness, threading `ColStrict`
+    on both `P` and `Q` plus the monotone invariant. -/
+theorem insertWordRecAux_colStrict :
+    ∀ (w : List ℕ) (s : ℕ) (P Q : List (List ℕ)),
+      ColStrict P → ColStrict Q → tableauAllLt Q s → tableauShape P = tableauShape Q →
+      ColStrict (insertWordRecAux w s P Q).2
+  | [], s, P, Q => by intro _ hcs _ _; simpa [insertWordRecAux] using hcs
+  | x :: rest, s, P, Q => by
+      intro hcsP hcs hlt hsh
+      rw [insertWordRecAux]
+      refine insertWordRecAux_colStrict rest (s + 1) (insertRec P Q x s).1
+        (insertRec P Q x s).2 ?_ ?_ ?_ ?_
+      · rw [insertRec_fst_eq_insert]; exact insert_colStrict hcsP x
+      · exact insertRec_snd_colStrict P Q x s hcsP hcs hlt hsh
+      · exact insertRec_snd_allLt P Q x s hlt
+      · exact insertRec_shape P Q x s hsh |>.symm
+
+/-- **`Q(w)` has strictly increasing columns.**  The remaining half of
+    standardness: reading any column of the recording tableau top to bottom gives
+    a strictly increasing sequence of step indices. -/
+theorem insertWordRec_colStrict (w : List ℕ) : ColStrict (insertWordRec w).2 := by
+  rw [insertWordRec]
+  exact insertWordRecAux_colStrict w 0 [] [] colStrict_nil colStrict_nil
+    (by intro r hr; simp at hr) rfl
+
+/-- **`Q(w)` is a standard tableau.**  Rows and columns strictly increase, and
+    the entries are exactly the step indices `0 … |w| − 1` (bounded by
+    `insertWordRec_entries_lt`; the cell count `|Q(w)| = |w|` follows from
+    `insertWordRec_shape_eq_P` + `insertWord_totalCells`).  Together with
+    `insertWord_rowsSorted` + `insertWord_colStrict` making `P(w)` semistandard,
+    this completes the `(P, Q)` pair the RSK bijection is built from. -/
+theorem insertWordRec_standard (w : List ℕ) :
+    RowsStrict (insertWordRec w).2 ∧ ColStrict (insertWordRec w).2
+      ∧ tableauAllLt (insertWordRec w).2 w.length :=
+  ⟨insertWordRec_rowsStrict w, insertWordRec_colStrict w, insertWordRec_entries_lt w⟩
