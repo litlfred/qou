@@ -391,6 +391,32 @@ relation").
   both; neither is the other. Clean structural separation of the remaining closure
   problem — the two can be closed independently.
 
+## 2026-07-11 (cont.8) — CONVERGENCE: coordination-number thread ↔ #3545; shared keystone = qou-v0yw
+
+The coordination-number binding thread (merged #3549/#3551/#3555/#3557/#3564/#3570/
+#3575/#3577) and the na-Stokes/ghost-Gram thread (#3545, bean **qou-v0yw**) have
+independently arrived at the **same single open keystone**: the nuclear coordination
+graph **M_n(K)** — *which pairs bond*. Cross-recognition (§6 convergence, not conflict):
+
+- **bond-extensivity — #3545 UPGRADES my conditional to derived.** My #3557 framed
+  "multiplier = coordination number" as the equal-weight limit of the log-trace, carried
+  as a CONDITIONAL hypothesis. #3545 (`86ea593e`) DERIVES it from bond
+  translation-invariance. ⇒ use #3545's derivation as authoritative; my #3557 is the
+  equal-weight / isospin decomposition on top (`w_n = M·Vol` = coordination skeleton ×
+  isospin bond asymmetry `ε_nn−ε_pp`).
+- **selection principle — converged.** My #3555 contact-maximisation (²⁴Mg octahedron,
+  ²⁰Ne exception) == #3545's (`dbe5246a`) "binding-max ⇒ max-contact packing."
+- **per-bond strength — same object.** My `ε_bond = log(1/f_bond)` == #3545's
+  `L_pp/L_pn/L_nn = log(tr_M ratios)`.
+- **NEW sharpening (#3577):** the coordination/connected magnitude is CHARGE-SYMMETRY-
+  INVARIANT (⁴He |b_Ac| 1.9614→1.9719, +0.5%). ⇒ **M_n(K) can be derived without
+  resolving charge structure** — the two are orthogonal levers. The charge structure is
+  resolved at the OBSERVABLE level (mirror split is Coulomb-dominated, #3564/#3570/#3575);
+  the KERNEL-level (A)/(B) framing (cont.4) + uniform-sphere residual (cont.6) remain
+  open on the charge side. Regardless, **the graph M_n(K) is the remaining open lever
+  independent of charge structure** (qou-v0yw). Live routes: Milnor M_n(K) (μ̄-tower,
+  validated) + max-contact selection.
+
 ## 2026-07-11 (cont.9) — qou-v0yw REFRAMED: M_n(K) is a body-order TOWER, not one graph (PR #3582)
 
 - **Took on qou-v0yw** (derive the coordination graph). Tested a max-binding "richest
