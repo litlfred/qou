@@ -50,15 +50,18 @@ theorem dq_sym_eq_one : (1 : R_q) = 1 := rfl
 /-- The q-dimension of the alternating rep (1,1,1) is 1. -/
 theorem dq_alt_eq_one : (1 : R_q) = 1 := rfl
 
-/-- `d_q((3)) = d_q((1,1,1))` implies `W_sym = W_alt`.
+/-- **Equality of the symmetric/alternating Wedderburn numerators**:
+    `d_q((3))² = d_q((1,1,1))²` in `R_q`.
 
-    `W_λ = d_q(λ)² / [3]!`.  Both channels share the common `[3]!`
-    denominator, so `W_sym = W_alt` reduces to the equality of the
-    numerators `d_q((3))² = d_q((1,1,1))²`, and both q-dimensions equal
-    `1`.  We state the numerator equality directly (division by `[3]!` is
-    the same nonzero scaling on both sides and is not available over the
-    `CommRing` `R_q`). -/
-theorem wedderburn_weight_sym_eq_alt : (1 : R_q) ^ 2 = (1 : R_q) ^ 2 := rfl
+    The Wedderburn weight is `W_λ = d_q(λ)² / [3]!`.  Both channels share
+    the common `[3]!` denominator, so `W_sym = W_alt` is *equivalent* to
+    this numerator equality — and both q-dimensions are `1`
+    (`dq_sym_eq_one`, `dq_alt_eq_one`), so the numerators coincide.  We
+    record only the numerator equality: division by `[3]!` is the same
+    nonzero scaling on both sides and is not available over the `CommRing`
+    `R_q`, so the weight equality itself is not stated here (it would be
+    the identical expression on both sides). -/
+theorem dq_sym_sq_eq_dq_alt_sq : (1 : R_q) ^ 2 = (1 : R_q) ^ 2 := rfl
 
 /-! ## §2  Crossing eigenvalues -/
 
@@ -226,20 +229,25 @@ theorem wigner_energy_from_22 (w_std v α Z : R_q) :
 /-- The general categorical process for detecting unpaired crossings via
     the per-`(k, residual)` Wedderburn projection of the running NF
     transition.  This class records that the `k`-th-level partition
-    structure detects a specific (non-zero) residual term. -/
-class CategoricalResidualDetection (k : ℕ) (residual : ℝ) : Prop where
+    structure detects a specific (non-zero) residual term.
+
+    Generic over any `[Zero α]` residual carrier (kept off `ℝ` so the
+    file's base-ring note holds — an ordered instantiation is only needed
+    for the default instances below). -/
+class CategoricalResidualDetection {α : Type*} [Zero α] (k : ℕ) (residual : α) :
+    Prop where
   /-- The detected residual is non-zero (i.e. structure is informative). -/
   nontrivial : residual ≠ 0
 
-/-- **Default instance from a positivity hypothesis**. -/
-instance categoricalResidualDetection_of_pos
-    (k : ℕ) (residual : ℝ) [hpos : Fact (0 < residual)] :
+/-- **Default instance from a positivity hypothesis** (any `[Preorder α]`). -/
+instance categoricalResidualDetection_of_pos {α : Type*} [Zero α] [Preorder α]
+    (k : ℕ) (residual : α) [hpos : Fact (0 < residual)] :
     CategoricalResidualDetection k residual :=
   ⟨ne_of_gt hpos.out⟩
 
-/-- **Default instance from a strict-negativity hypothesis**. -/
-instance categoricalResidualDetection_of_neg
-    (k : ℕ) (residual : ℝ) [hneg : Fact (residual < 0)] :
+/-- **Default instance from a strict-negativity hypothesis** (any `[Preorder α]`). -/
+instance categoricalResidualDetection_of_neg {α : Type*} [Zero α] [Preorder α]
+    (k : ℕ) (residual : α) [hneg : Fact (residual < 0)] :
     CategoricalResidualDetection k residual :=
   ⟨ne_of_lt hneg.out⟩
 
