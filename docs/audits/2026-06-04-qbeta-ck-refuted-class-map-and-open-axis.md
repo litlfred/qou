@@ -76,6 +76,21 @@ member of a `REFUTED` class, do not re-run it.**
 | C13 | **#1622 mode→ladder bridge with a `Δtr_M`-seeded *linear/bar-even* `f`** (change of variable `u=√q ↦ u_L=b·ℏ_q²`, seed `1+N·Σ_{k≥2}(a_{2k}/b^k)u_L^k`, scale `N` fixing `c_2=−1`) | **REFUTED** — both seeds give a *constant* (anchor-stable) `c_3` far from `−2`: raw even-in-ℏ `c_3=−100/(77b)≈−1.497` (25% off), #1602 bar-even `c_3=−175/(144b)≈−1.401` (30% off); `c_4` off 65–87%. `c_2=−1` only as a scale-fix, not independently derived. The bridge IS now executed; the surviving `f` is **non-linear** in `Δtr_M`. | PR #2465 — `habiro_mode_to_ladder_bridge.py` + `habiro-mode-to-ladder-bridge.witness.json`; formalize-first gate (the bridge had to be formal/anchor-independent, and is) |
 | C14 | **Root-of-unity / Ohtsuki–Habiro invariant of a framework-FORCED knot** (figure-eight 4₁ — `q₀` fixed by `Vol(4₁)=2Λ(π/3)` — via Habiro cyclotomic colored Jones + the published 4₁ Ohtsuki loop series `11/12, 697/288, 724351/51840`; Hopf link via the `c_3=−2=J_Hopf(q=1)` hint; trefoil 3₁ control) | **REFUTED (forced candidates)** — no forced candidate reproduces `c_2` AND `c_3` parameter-free. The 4₁ Ohtsuki rationals bear no relation to `c_3=−2.069` (`\|err\|=1.44, 2.17, 7.75`); the only near-`c_3` value, `V_Hopf(q=1)=−2`, misses by **3.35 %** and is the `q→1` *classical* limit (no quantum deformation ⇒ **no** Ohtsuki series), not a root-of-unity structure; the 4₁ colored-Jones values at `q₀` (`1.033, 1.093, 1.190, 1.343` for `N=2..5`) land nowhere near `c_3` under any natural normalisation. **No knot/root-of-unity scan was run** — only the two zero-free-choice forced candidates, per the anti-fitting discipline (a scan to find a match would *be* a fit). All five formulas literature-verified first (Habiro unknot norm; `V_{4₁}` Jones at `N=2`; Kashaev growth → `Vol(4₁)` to 0.11 %; `V_Hopf(1)=−2`; `V_K(1)=1`). | [`computations/probes/qbeta_root_of_unity_probe.py`](../../computations/probes/qbeta_root_of_unity_probe.py) → [`qbeta-root-of-unity.witness.json`](../../computations/probes/qbeta-root-of-unity.witness.json) (`dps=60`, exit 0, VERDICT NEGATIVE) |
 
+| C15 | **Forced-link Borromean cyclotomic/q=1 shadow** (the one forced candidate C14 did not test — the framework's own nucleon braid β_Bor; τ_D Lean closed form, τ_C canonical z-trace, `F_Bor/6`, literature `J_B/4`) | **REFUTED** — no canonical framework normalisation reproduces `c_2 = −1` AND the c_3 shadow `−2` parameter-free: the raw ℏ-shadow of τ_D **vanishes to order ℏ³** (Brunnian (q−1)-adic vanishing ⇒ a_2 = a_3 = 0); the C13 bridge-peel gives `c_3 ∈ {−23/(6b), −83/(12b), −191/(55b), −225/(43b)}` ≈ {−4.42, −7.97, −4.00, −6.03} — none within 0.1% of −2 at either anchor. Scope (a): the Borromean shadow *alone*; no exclusion from a multi-term closure. No scan, no fit. | PR #3536 — [`qbeta_borromean_cyclotomic_probe.py`](../../computations/probes/qbeta_borromean_cyclotomic_probe.py) → `qbeta-borromean-cyclotomic.witness.json` (canonical Hecke machinery cross-checked vs literature Jones at generic q) |
+| C16 | **Habiro-ring membership of the ladder in `q` under natural normalisations** (re-expansion in `h = q−1` with exact `b(q)`; integer / O_K-integer coefficient test; bare `L` and `Q_base`-dressed `P·L`; `h ↔ ℏ_q` basis-invariance verified) | **REFUTED (scope-a)** — resolvable orders fail the integrality window in every normalisation × anchor × tolerance mode (bare ladder at order 4; dressed at orders 2–5). The ladder is **not** the q=1 Taylor expansion of a Habiro-ring element under these normalisations; consistent with KC8 (simple pole ⇒ geometric growth, not Gevrey-1). Surviving §3.B object is the **analytic** Φ_b state-integral face, NOT a formal Habiro element. Also gates off the GSWZ Galois-descent route (presupposes integrality). | PR #3536 — [`qbeta_habiro_integrality_kill_test.py`](../../computations/probes/qbeta_habiro_integrality_kill_test.py) → `qbeta-habiro-integrality-kill-test.witness.json` (6 assertions) |
+| C17 | **Raw `q^N ↦ q^k` instantiation of the 4₁ qZeilberger operator as the rung kernel** (corpus I-A dictionary; homogeneous + inhomogeneous variants) | **REFUTED (scope-a)** — O(1) relative residuals (100–280%) at every rung k=2..5, both anchors, both variants; inhomogeneous c_4 prediction (+7.4…+7.5) wrong-signed vs every recorded candidate. P-C15's bar-parity survivor status is untouched: the surviving kernel needs a conjugation / cyclotomic re-basing (I-B) / KC15 pair-difference twist, not raw instantiation. Caveat: AME extraction floor makes k ≥ 4 rungs uninformative (see C18) — a floor-proof retest needs canonical rungs (bean `8we6`). | PR #3536 — [`qbeta_ck_qholonomic_recurrence_test.py`](../../computations/probes/qbeta_ck_qholonomic_recurrence_test.py) → `qbeta-ck-qholonomic-recurrence-test.witness.json` |
+| C18 | **PSLQ / integer-relation recognition of the EXTRACTED empirical c_k** (arithmetic-dictated basis {1, √3, π², Vol(4₁), ζ(3)}) | **ENTROPY-BLOCKED (formalize-first kill; PSLQ not run)** — the extraction `c_k = (Q/Q_ladder − 1)/u^k` amplifies σ(Q_β) by `1/u^k`, leaving c_3 with ≤ ~2.2 reliable digits per anchor and c_4 with **zero** ("c_4 = −0.972" is a rounding artifact of c_3, identically 0 under exact extraction — registry rung-4 row updated). Minimal PSLQ budget needs ~9.2 digits. Scope (a): blocks recognition of *extracted* values; excludes no basis ingredient from a future F(q) construction. Route to reopen: a canonical (non-extracted) c_3 producer, i.e. F(q) itself. | PR #3536 — [`qbeta_ck_basis_constrained_pslq.py`](../../computations/probes/qbeta_ck_basis_constrained_pslq.py) → `qbeta-ck-basis-constrained-pslq.witness.json` |
+
+**C13 extension (2026-07-11, PR #3536).** The **exponentiated-uniform per-block**
+seeding (`F = exp(N·Σ_λ g_λ(u_L))`, the never-run #1585 U1 candidate) is also
+refuted: `c_3 = −265/(94b) ≈ −3.25` anchor-constant (swing 3.9e-10), 57–62%
+off. Structural reasons it could never differ: uniform weights collapse
+`exp(Σ_λ)` to `exp(g_total)`, and with the seed starting at `u_L²` the
+exponentiated and linear seedings share `c_3` identically (exp first acts at
+`c_4`, `+½c_2²`). C13 now covers: linear, bar-even, AND exponentiated-uniform
+`Δtr_M`-seeded `f`. Probe: `qbeta_exponentiated_per_block_probe.py` →
+`qbeta-exponentiated-per-block.witness.json`.
+
 **Reading.** The real-q axis (C1–C4), the constant-kernel axis (C5), the
 Pell-Lucas-into-free-rungs axis (C6), the SDP-extraction axis (C7), the
 algebra-tower box-adding axis (C8), and **the trace-level Markov-stabilization
@@ -157,6 +172,23 @@ bar-even, integer `q=1` shadow) stand unchanged.
 > this ledger: the Q_β decay-side `F(q)` axis is no longer an independent open
 > probe — it has merged into the keystone `W_λ` axis.** Do not open a separate
 > Q_β root-of-unity probe; coordinate on the keystone `s5bb` thread.
+
+> **Update 2026-07-11 (post-C15–C18, PR #3536) — the open object is analytic,
+> not a formal Habiro element.** The execution wave of the untested-avenues
+> audit ([`2026-07-11-qbeta-ck-untested-avenues-and-literature.md`](2026-07-11-qbeta-ck-untested-avenues-and-literature.md))
+> closes the remaining discrete/formal identification routes: the ladder is
+> **not** Habiro-integral in `q` under natural normalisations (C16), the last
+> forced link (Borromean) fails the shadow test (C15), the raw 4₁-operator
+> kernel instantiation fails (C17), and PSLQ recognition of the extracted
+> rungs is entropy-blocked, with "empirical c_4" shown to be a rounding
+> artifact (C18). Combined with KC8 (simple pole ⇒ geometric, not Gevrey-1,
+> growth), the surviving decay-side object is the **analytic Φ_b
+> state-integral / resummation face at real q₀** — the same T3 face the
+> `qou-9lot` sibling independently diagnosed and is driving in
+> [PR #3540](https://github.com/litlfred/qou/pull/3540) (substrate-regime
+> Φ_b + the well-posed un-levered target `r = S·u³`). Coordinate there; do
+> not reopen a formal-Habiro-element probe in `q` without a new
+> normalisation argument that escapes C16.
 
 > **New forward constraint (2026-06-18, PR #2465 / C13).** The #1622 bridge
 > is now **executed**, yielding the **exact, anchor-independent ℏ_q-Taylor
