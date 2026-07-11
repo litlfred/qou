@@ -97,14 +97,16 @@ def main():
           f"K(q)=2h/(6−y) pole at y=6 (silver anchor); carrier regular there "
           f"C(6)={C.subs(Y, 6)}≠0 ⇒ eval-map singularity ⊥ carrier degree-3 root")
 
-    # 3. joint exclusion: C irreducible over Q (no rational root => no quad anchor)
-    rrt = [r for r in (1, -1, 2, -2) if C.subs(Y, r) == 0]
-    joint_excl = (len(rrt) == 0) and (sp.discriminant(C, Y) == -152)
+    # 3. joint exclusion: C irreducible over Q (degree-3 => no quadratic anchor).
+    #    Direct sympy irreducibility over QQ (clearer than RRT+disc; the RRT
+    #    values are retained in the detail as the informative computational content).
+    C_irreducible = sp.Poly(C, Y, domain='QQ').is_irreducible
+    joint_excl = C_irreducible and (sp.discriminant(C, Y) == -152)
     check("joint_degree3_exclusion", joint_excl,
-          f"C irreducible (rational-root candidates {{±1,±2}} all nonzero: "
-          f"{[int(C.subs(Y, r)) for r in (1, -1, 2, -2)]}), disc={sp.discriminant(C, Y)} "
-          "⇒ via KC19 (swing∈w) + KC18 (affine bridge), c₃=[u³]w inherits the "
-          "degree-3 field ⇒ no quadratic/RoU c₃ closure (unified KC19+KC20)")
+          f"C irreducible over ℚ (Poly.is_irreducible={C_irreducible}; rational-root "
+          f"candidates {{±1,±2}} all nonzero: {[int(C.subs(Y, r)) for r in (1, -1, 2, -2)]}), "
+          f"disc={sp.discriminant(C, Y)} ⇒ via KC19 (swing∈w) + KC18 (affine bridge), "
+          "c₃=[u³]w inherits the degree-3 field ⇒ no quadratic/RoU c₃ closure (unified KC19+KC20)")
 
     # 4. C(3)=-2 is a wrong-anchor coincidence: q=1 shadow lives at y=2, C(2)=-4
     y_at_q1 = sp.limit(y, q, 1)          # = 2
