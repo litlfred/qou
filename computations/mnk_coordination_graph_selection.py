@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-mnk_coordination_graph_selection.py — a max-binding SELECTION PRINCIPLE for the nuclear
-coordination graph M_n(K) (bean qou-v0yw), grounding the framework's Brunnian
-(Borromean) link assignment and explaining why the ad-hoc chain is NOT selected.
+mnk_coordination_graph_selection.py — tests a candidate max-binding selection rule for
+the nuclear coordination graph M_n(K) (bean qou-v0yw), REFUTES it, and reframes the
+coordination as a body-order tower (chain and Borromean are complementary, not rivals).
 
 The open keystone (qou-v0yw, from #3545): the Milnor M_n machinery is built and
 validated (binding_mn_milnor_linking.py: Hopf lk=1, Borromean μ̄_123=±1, chain μ̄=0),
@@ -60,9 +60,9 @@ def milnor_tower(link):
 
 
 def main() -> int:
-    print("=== Max-binding selection principle for the coordination graph M_n(K) ===")
-    print("  B(K) = m_e·Σ a_D^(n)·w_n·M_n(K), all terms ≥0 ⇒ max-binding picks the link")
-    print("  with the RICHEST Milnor tower (every k-body sub-cluster irreducibly linked).\n")
+    print("=== Coordination graph M_n(K): testing a max-binding selection rule ===")
+    print("  CANDIDATE rule (tested, then refuted below): B(K)=m_e·Σ a_D^(n)·w_n·M_n(K),")
+    print("  all terms ≥0, so max-binding would pick the link with the RICHEST Milnor tower.\n")
 
     # candidate A=3 coordination links (the qou-v0yw decision: which link is ³He/³H?)
     cand = {"chain (Hopf×2, reducible)": CHAIN,
