@@ -1,24 +1,24 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-11T18:34:18.052913+00:00",
-  "commitSha": "9037233e724850703888e190563fdca7703d2c64",
+  "computedAt": "2026-07-11T18:41:36.249676+00:00",
+  "commitSha": "32cf5b72ec6707b031db88a830fbec279cab174a",
   "assertions": [
     {
-      "name": "geometry_side_scored",
+      "name": "no_candidate_found",
       "computed": 1.0,
       "expected": 1.0,
       "passed": true,
       "tolerance": 0.5,
-      "source": "Im 𝔙 via gluing solver scored vs S at both anchors (scope-(a))"
+      "source": "geometry-side gate (magnitude+sign at both anchors) yields no candidate"
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 12,
   "computation": "qbeta-c3-geometry-derived-argument",
   "scriptFile": "qbeta_c3_geometry_derived_argument_probe.py",
-  "scriptHash": "2d487ba93c8b",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "9f1134b59920",
+  "scriptCommitSha": "32cf5b72ec6707b031db88a830fbec279cab174a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,7 +32,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
-  "description": "Geometry-side one-shot for c₃ bar-odd S: Im 𝔙 (figure-eight complex volume, gluing Newton solver) at a small named set of principled complex substrate meridian holonomies m (substrate quantity × b-map phase e^{iπ/4}), scored vs S at both anchors. The geometry-native readout the merged 60-argument Φ_b analysis scan lacked. Scope-(a); C14; no c_k wired; no fit. Expected/observed: clean negative (same q₀→m open map).",
+  "description": "Geometry-side one-shot for c₃ bar-odd S. Vol_exact from the validated gluing Newton solver (vol_of_m); Im 𝔙 candidate = LEADING NZ form (√3/2)|u|²sin(2 arg u) (exact CS via Neumann flattening not implemented — noted extension). Scored vs S at both anchors over a small named set of principled complex meridian holonomies (substrate qty × b-map phase e^{iπ/4}). Gate requires magnitude AND sign at both anchors. Clean negative: magnitude reproducible, sign-flip needs the open q₀→m map. Scope-(a); C14; no c_k wired; no fit; dps=70 matches witness metadata.",
   "contentBlock": "prop:phi-b-unitary-bar-odd",
   "data": {
     "targets": {
@@ -40,48 +40,58 @@
         "muon": "0.00968298",
         "proton": "-0.03945936"
       },
-      "r_S_u3": {
+      "r_S_u3_u_is_ln_q0": {
         "muon": "1.0999442e-5",
         "proton": "-4.4824095e-5"
       }
     },
-    "geometry_readouts": [
+    "readouts": [
       {
         "argument": "u=t·e^{iπ/4}",
-        "ImV_muon": "0.00942840846",
-        "ImV_proton": "0.009428406375",
+        "ImV_leading_muon": "0.00942840845962",
+        "ImV_leading_proton": "0.00942840637459",
+        "Vol_exact_muon": "2.02752372029",
+        "Vol_exact_proton": "2.02752372081",
         "relerr_S_max": 1.2389396679162794,
         "candidate": false
       },
       {
         "argument": "u=2t·e^{iπ/4}",
-        "ImV_muon": "0.03771363384",
-        "ImV_proton": "0.0377136255",
+        "ImV_leading_muon": "0.0377136338385",
+        "ImV_leading_proton": "0.0377136254984",
+        "Vol_exact_muon": "2.02041637275",
+        "Vol_exact_proton": "2.02041637485",
         "relerr_S_max": 2.894837523000791,
         "candidate": false
       },
       {
         "argument": "u=ℏ_q²·e^{iπ/4}",
-        "ImV_muon": "8.346509516e-5",
-        "ImV_proton": "8.346506014e-5",
+        "ImV_leading_muon": "8.34650951617e-5",
+        "ImV_leading_proton": "8.34650601387e-5",
+        "Vol_exact_muon": "2.02986234636",
+        "Vol_exact_proton": "2.02986234637",
         "relerr_S_max": 1.002115215759675,
         "candidate": false
       },
       {
         "argument": "u=b² (=i·t/2π)",
-        "ImV_muon": "9.873153086e-47",
-        "ImV_proton": "9.873150903e-47",
+        "ImV_leading_muon": "1.94968517973e-75",
+        "ImV_leading_proton": "1.94968474857e-75",
+        "Vol_exact_muon": "2.02982350638",
+        "Vol_exact_proton": "2.0298235064",
         "relerr_S_max": 1.0,
         "candidate": false
       },
       {
         "argument": "u=2πb²·e^{iπ/4}",
-        "ImV_muon": "-0.00942840846",
-        "ImV_proton": "-0.009428406375",
+        "ImV_leading_muon": "-0.00942840845962",
+        "ImV_leading_proton": "-0.00942840637459",
+        "Vol_exact_muon": "2.02752742761",
+        "Vol_exact_proton": "2.02752742813",
         "relerr_S_max": 1.9737093807501978,
         "candidate": false
       }
     ],
-    "verdict": "clean negative"
+    "verdict": "clean_negative"
   }
 }
