@@ -2018,6 +2018,21 @@ export const references: CSLData[] = [
   }),
 
   ref({
+    id: "negadi1992",
+    type: "article-journal",
+    title: "A q-deformed Aufbau Prinzip",
+    author: [
+      { family: "Négadi", given: "T." },
+      { family: "Kibler", given: "M." },
+    ],
+    "container-title": "Journal of Physics A: Mathematical and General",
+    volume: "25",
+    page: "L157-L160",
+    issued: { "date-parts": [[1992]] },
+    URL: "https://arxiv.org/abs/quant-ph/0409177",
+  }),
+
+  ref({
     id: "raychev1998",
     type: "article-journal",
     title:
