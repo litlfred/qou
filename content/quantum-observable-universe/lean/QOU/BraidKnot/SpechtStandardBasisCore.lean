@@ -2478,6 +2478,74 @@ theorem fibre_colContent_j_count_dom {π : Equiv.Perm (Fin (Specht.nOf μ))}
   exact filter_le_card_union_mono hPAval hPSval
     (fun w => count_dom_of_top hBA hSvalsub hScard w) w
 
+omit [CharZero k] in
+/-- Column `j`'s labels split into the above-descent part (rows `< i`) and `garnirA`
+(rows `≥ i`). -/
+theorem colj_labelset_split (t : Specht.Tableau μ) (i j : ℕ) :
+    Finset.univ.filter (fun l => Specht.colPattern t l = j)
+      = Finset.univ.filter (fun l => Specht.colPattern t l = j ∧ Specht.rowPattern t l < i)
+        ∪ garnirA t i j := by
+  ext l
+  simp only [garnirA, Finset.mem_union, Finset.mem_filter, Finset.mem_univ, true_and]
+  constructor
+  · intro h; rcases lt_or_ge (Specht.rowPattern t l) i with hr | hr
+    · exact Or.inl ⟨h, hr⟩
+    · exact Or.inr ⟨h, hr⟩
+  · rintro (⟨h, _⟩ | ⟨h, _⟩) <;> exact h
+
+omit [CharZero k] in
+/-- **Column-`j` content decomposition (sorry-free).** `colContent t j` is the (disjoint)
+union of the above-descent value set `P` and the `garnirA` value set. -/
+theorem colContent_j_split (t : Specht.Tableau μ) (i j : ℕ) :
+    colContent t j
+      = (Finset.univ.filter
+          (fun l => Specht.colPattern t l = j ∧ Specht.rowPattern t l < i)).image Fin.val
+        ∪ (garnirA t i j).image Fin.val := by
+  classical
+  unfold colContent
+  rw [← Finset.image_union, ← colj_labelset_split]
+
+omit [CharZero k] in
+/-- **Fibre column-`j` content decomposition (sorry-free).** For `π ∈ garnirG`, `colContent
+(π•t) j` is `P` (unchanged — `π` fixes it) union the `π`-image of `garnirA`'s value set. -/
+theorem colContent_smul_j_split {π : Equiv.Perm (Fin (Specht.nOf μ))}
+    (t : Specht.Tableau μ) (i j : ℕ) (hπG : π ∈ garnirG t i j) :
+    colContent (π • t) j
+      = (Finset.univ.filter
+          (fun l => Specht.colPattern t l = j ∧ Specht.rowPattern t l < i)).image Fin.val
+        ∪ ((garnirA t i j).image π).image Fin.val := by
+  classical
+  rw [colContent_smul, colj_labelset_split t i j, Finset.image_union]
+  simp only [garnirG, Finset.mem_filter, Finset.mem_univ, true_and] at hπG
+  congr 1
+  · apply Finset.image_congr
+    intro l hl
+    obtain ⟨-, hlc, hlr⟩ := Finset.mem_filter.mp (Finset.mem_coe.mp hl)
+    have hnotAB : l ∉ garnirA t i j ∪ garnirB t i j := by
+      rw [Finset.mem_union, garnirA, garnirB, Finset.mem_filter, Finset.mem_filter]
+      rintro (⟨_, _, hr⟩ | ⟨_, hc, _⟩) <;> omega
+    show ((π l : Fin (Specht.nOf μ)) : ℕ) = ((l : Fin (Specht.nOf μ)) : ℕ)
+    rw [hπG l hnotAB]
+  · rw [Finset.image_image]; rfl
+
+omit [CharZero k] in
+/-- **A Garnir element maps `A∪B` onto itself (sorry-free).** `π ∈ garnirG` fixes every label
+outside `A∪B` and is a bijection, so it permutes `A∪B`. -/
+theorem garnirG_image_AB {π : Equiv.Perm (Fin (Specht.nOf μ))}
+    (t : Specht.Tableau μ) (i j : ℕ) (hπG : π ∈ garnirG t i j) :
+    (garnirA t i j ∪ garnirB t i j).image π = garnirA t i j ∪ garnirB t i j := by
+  classical
+  apply Finset.eq_of_subset_of_card_le
+  · intro x hx
+    rw [Finset.mem_image] at hx
+    obtain ⟨l, hl, rfl⟩ := hx
+    by_contra hnot
+    simp only [garnirG, Finset.mem_filter, Finset.mem_univ, true_and] at hπG
+    have hfix := hπG (π l) hnot
+    rw [π.injective hfix] at hnot
+    exact hnot hl
+  · exact le_of_eq (Finset.card_image_of_injective _ π.injective).symm
+
 /-! #### The single residual straightening core + the induction skeleton -/
 
 omit [CharZero k] in
