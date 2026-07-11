@@ -45,7 +45,7 @@ a precisely-named structural core, with all the surrounding plumbing proved.
   OV-labelled** Wedderburn decomposition of `R[S_n]`:
   `R[S_n] ≃ₐ[R] ∏_{i:PartitionIndex n} Matrix(Fin (dim S^{λ_i})) R`,
   with block `i` the `S^{λ_i}`-isotypic component (matrix size `= dim_R S^{λ_i}`), carrying the
-  central `C₂ = ∑ₖ Xₖ²` to the block-scalar family `fun i => contentSqSum λᵢ • 1`.  The plain
+  central `C₂ = Σₖ Xₖ²` to the block-scalar family `fun i => contentSqSum λᵢ • 1`.  The plain
   rational split `sn_rational_specht_split` is now a **corollary** of it (forget the `C₂` clause),
   so the file has a **single** core, not two.  This statement folds in the pieces of content absent
   from the pinned Mathlib:
@@ -65,10 +65,10 @@ a precisely-named structural core, with all the surrounding plumbing proved.
 > the index→block assignment of an arbitrary partition-indexed split is fixed only up to a
 > permutation (Wedderburn determines the *multiset* of block sizes, not the labelling), so a
 > relabeled split can have `d i ≠ dim S^{λ_i}` (e.g. at `n = 6`, swap the size-1 and size-5 blocks).
-> Folding the alignment into the single existential `sn_rational_specht_split` — which asserts the
-> *aligned* split exists, a true statement — is the honest disposition; it avoids planting an
-> over-general cited `sorry` (cf. the `DominanceData.dom_colStab` / `seminormalVectors_span`
-> over-generality fixes).
+> Folding the alignment into the single existential core `sn_isotypic_specht_split` (from which the
+> plain `sn_rational_specht_split` is derived) — which asserts the *aligned* split exists, a true
+> statement — is the honest disposition; it avoids planting an over-general cited `sorry` (cf. the
+> `DominanceData.dom_colStab` / `seminormalVectors_span` over-generality fixes).
 
 ## Whether Mathlib offers any `S_n`-rationality support
 
@@ -215,7 +215,7 @@ variable {R : Type} [Field R] [CharZero R]
 /-- **Named core (the genuine isotypic-aligned `S_n`-rep-theory gap).** Over a characteristic-zero
 field `R`, a *rational, OV-labelled* Wedderburn algebra isomorphism
 `R[S_n] ≃ₐ[R] ∏_{i:PartitionIndex n} Matrix(Fin (dim S^{λ_i})) R` with block `i` the
-`S^{λ_i}`-**isotypic** component, **carrying** the central Jucys–Murphy element `C₂ = ∑_k X_k²` to the
+`S^{λ_i}`-**isotypic** component, **carrying** the central Jucys–Murphy element `C₂ = Σ_k X_k²` to the
 block-scalar family `fun i => contentSqSum λ_i • 1`.
 
 The carried-`C₂` clause *is* the isotypic alignment, made operational: by
@@ -241,8 +241,8 @@ theorem sn_isotypic_specht_split (n : ℕ) :
             ((JucysMurphy.contentSqSum i.diagram : ℤ) : R) •
             (1 : Matrix (Fin (Module.finrank R (Specht.SpechtSubmodule (k := R) i.diagram)))
                         (Fin (Module.finrank R (Specht.SpechtSubmodule (k := R) i.diagram))) R) := by
-  -- Ref: [vershik-kerov1977] (the central JM element C₂ = ∑_k X_k² acts on the S^{λ}-isotypic block
-  --   by contentSqSum λ = ∑_{c∈λ} c² — Schur on each isotypic component, eigenvalue from
+  -- Ref: [vershik-kerov1977] (the central JM element C₂ = Σ_k X_k² acts on the S^{λ}-isotypic block
+  --   by contentSqSum λ = Σ_{c∈λ} c² — Schur on each isotypic component, eigenvalue from
   --   JucysMurphy.centralC2_acts_by_contentSqSum) + [sagan2001] §2.4 / [james1984representation]
   --   (the char-0 rational, OV-labelled Wedderburn split of R[S_n] indexed by partitions, block i the
   --   S^{λ_i}-ISOTYPIC component of dimension (dim S^{λ_i})² — Mathlib does not package this; the
@@ -326,7 +326,7 @@ theorem snBridge (n : ℕ) :
 
 `snBridge` above gives the `snBlocks` bundle from a **size-aligned** split (block `i` has the right
 dimension `(dim S^{λ_i})²`).  The capstone's `decomp` field needs strictly more: the central
-Jucys–Murphy element `C₂ = ∑_k X_k²` must be **block-diagonal** with eigenvalues `contentSqSum λ_i`,
+Jucys–Murphy element `C₂ = Σ_k X_k²` must be **block-diagonal** with eigenvalues `contentSqSum λ_i`,
 
   `mulLeft C₂ = ∑ i, contentSqSum λ_i • proj i`,
 
