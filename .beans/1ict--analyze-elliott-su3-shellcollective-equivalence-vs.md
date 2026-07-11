@@ -13,7 +13,7 @@ parent: 4lss
 
 Corpus-grep first (per the anti-guessing/corpus-grep discipline): the Elliott
 literature anchor **already existed** in `observations/q-deformed-nuclear-models-comparison.md`
-§"Elliott SU(3)" — it sites Elliott 1958 via `\cite{elliott1958}` (the correct
+§"Elliott SU(3)" — it cites Elliott 1958 via `\cite{elliott1958}` (the correct
 CSL ref, DOI 10.1098/rspa.1958.0072, already in `references.ts`) and gives the
 answer to the "q->1 shadow?" question: **NO** — Elliott is the undeformed (q=1)
 organizing symmetry; the magic-number signal of `prop:magic-numbers-from-q` is a
