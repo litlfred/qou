@@ -36,8 +36,12 @@ namespace QOU.QPochhammer
     predicate is not dischargeable by a constant real witness. -/
 -- Ref: [thurston1978] §4.5 (gluing equations)
 structure CuspComplete (z : ℂ) : Prop where
-  meridian_holonomy : z ≠ 0
-  longitude_holonomy : z ≠ 1
+  /-- Shape nondegeneracy: `z ≠ 0` (the degenerate collapsed vertex; the
+      meridian holonomy equation `Hol_μ(z) = 1` itself remains open). -/
+  shape_ne_zero : z ≠ 0
+  /-- Shape nondegeneracy: `z ≠ 1` (the degenerate flat vertex; the
+      longitude holonomy equation `Hol_λ(z) = 1` itself remains open). -/
+  shape_ne_one : z ≠ 1
   /-- Geometric (positively oriented) shape: `Im z > 0`. -/
   im_pos : 0 < z.im
 

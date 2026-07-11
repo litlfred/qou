@@ -55,7 +55,9 @@ opaque BlochWignerD : ℝ → ℝ
       theorem of Ohtsuki (2016) / Andersen-Hansen.
 
     * (`pole_cusp_matched`) the matched-cusp volume identification
-      `volume = D(z(x))` — the geometric content supplied by
+      `volume = D(x)` — here `x` is already the matched shape
+      parameter (the narrative's `z(x)` composed away), and the
+      geometric content is supplied by
       `conj:shared-denominator-cusp-holonomy` (the pole side of the
       matching is the unconditional theorem
       `pole_cusp_bijection_proved` below).
