@@ -361,3 +361,35 @@ theorem rowInsert_ne_nil {r : List ℕ} {x : ℕ} : (rowInsert r x).1 ≠ [] := 
   | cons a r =>
     rw [rowInsert_cons]
     by_cases hx : x < a <;> simp [hx]
+
+/-! ### Positional characterization of a bump (column-reasoning foundation)
+
+To reason about *columns*, the bump must be located: a `rowInsert` bump replaces
+the **leftmost entry `> x`** — at `List.findIdx (x < ·)` — by `x`.  These two
+lemmas pin that index (`< row length`) and the `List.set` form of the new row;
+they are the positional bridge Brick 5's column-strictness argument indexes
+against. -/
+
+/-- **Positional characterization of a bump.**  When `rowInsert` bumps, the new
+row is the old row with its leftmost entry `> x` (at `findIdx`) replaced by `x`. -/
+theorem rowInsert_bump_eq_set {r : List ℕ} {x y : ℕ}
+    (h : (rowInsert r x).2 = some y) :
+    (rowInsert r x).1 = r.set (r.findIdx (x < ·)) x := by
+  induction r with
+  | nil => simp [rowInsert] at h
+  | cons a r ih =>
+    rw [rowInsert_cons] at h ⊢
+    by_cases hx : x < a
+    · rw [if_pos hx] at h ⊢
+      have hd : decide (x < a) = true := by simp [hx]
+      rw [List.findIdx_cons, hd, cond_true, List.set_cons_zero]
+    · rw [if_neg hx] at h ⊢
+      have hd : decide (x < a) = false := by simp [hx]
+      rw [List.findIdx_cons, hd, cond_false, List.set_cons_succ, ih h]
+
+/-- **The bump position is valid** (`< row length`): there is an entry `> x`
+(the bumped one, `∈ r` and `> x`), so `findIdx` lands inside the row. -/
+theorem rowInsert_findIdx_lt {r : List ℕ} {x y : ℕ}
+    (h : (rowInsert r x).2 = some y) : r.findIdx (x < ·) < r.length :=
+  List.findIdx_lt_length_of_exists
+    ⟨y, rowInsert_bumped_mem h, by simpa using rowInsert_bumped_gt h⟩
