@@ -885,3 +885,22 @@ identification. Probe [`qbeta_ohtsuki_kappa1_extract.py`](../audits/scripts/qbet
 **Anti-laundering:** κ₁ is a 4₁-Kashaev/Ohtsuki topological fact, NOT a Q_β
 production c_k — the 4₁↔Q_β action bridge is the open keystone; nothing wired, no
 tier change. Higher [1/N^k] rungs remain entropy-blocked (#3571).
+**2026-07-11 (#3600) — q-Reeb rotation angle θ(q₀) for the S wall (probe + Lean + paper).**
+"Keep pushing on arg(u(q₀)) using reeb." Built the 2×2 Hoefsmit seminormal
+block of σ₁,σ₂ on V_{(2,1)} and read the figure-eight operator
+M_{4₁}=(σ₁σ₂⁻¹)² eigenvalue phase (gauge-invariant). Verified from the actual
+rep: braid+Hecke hold, det M=1, |tr M|<2 ⇒ |λ_{4₁}|=1 (confirms the content
+block's Reeb claim). Derived: θ(q₀)≈117.087° at both anchors; θ(1)=2π/3 EXACT
+(S₃ 3-cycle, amphichiral, CS=0); closed form tr=q⁴−2q²+1−2q⁻²+q⁻⁴. θ is SMOOTH
+(dθ/dq≈−51°/unit q) ⇒ arg(u)=θ is a scope-(a) NEGATIVE — θ cannot supply the
+dc₃/dq≈4.66e6 sign-flip; the open q₀→u map (conj:algebraic-geometric-dilog-
+equivalence) still owns it. Third independent confirmation of the "smooth
+geometric quantity ≠ the hypersensitive phase" pattern (with #3596 pole-seed
+amplification 1.4e−4 and #3573 near-singular φ). Reeb's real contribution:
+Δθ=θ(q₀)−120°≈−2.91° is the parameter-free amphichirality-breaking seed of S.
+Lean (hand-audited, toolchain behind egress): figureEightTrace + tr(1)=−1 +
+figure_eight_classical_reeb (θ(1)=2π/3 proved via existing unit-modulus thm +
+primitive-cube-root). Paper: rem:figure-eight-reeb-theta-value. Coordinated:
+intent on #3596/#3573/#3579; flagged the #3573↔#3579 CuspShapeBarParity.lean
+duplication and the θ(braid-operator) vs boost(meridian-holonomy) phase
+distinction. No c_k value; wires nothing; no tier change.
