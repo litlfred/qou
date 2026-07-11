@@ -363,3 +363,17 @@ relation").
   `⟨g_A,σ_bond,g_B⟩_G`? If yes the two lenses unify + `b*` pinned (no duplicate H₆
   build). #3548 owns connected-`tr_M`/PROBE-2; #3545 owns the Gram-quadratic +
   bond-extensive derivation. Posted #3548#issuecomment-4948202747.
+
+## 2026-07-11 (cont.6) — charge-symm + Coulomb benchmark FIXES the mirror split (PR #3575)
+
+- **Diagnosis payoff realized (scope-(a)):** built charge-symmetric strong (all bonds =
+  isoscalar f_pn) + separate Coulomb on D/T/³He/⁴He. FIXES the ³H/³He mirror split →
+  0.998 MeV (Coulomb, uniform-sphere) vs AME 0.764 (1.3×), from the broken #2089 kernel's
+  2.27 (no C) / 3.27 (double-count) MeV (3×). ~3× accuracy gain + removes EM double-count.
+- **Absolute binding NOT closed:** D +75%, T/³He +38%, ⁴He −21% — the edge-set/E₀/
+  connected magnitude (#2089 form bug), unchanged by charge symmetry.
+- **ACTIONABLE OPEN STEP (ε-magnitude answer):** #3548 (merged 9c62f785) pinned the
+  connected-(2,1)/SU(4) magnitude MECHANISM but is no-fit/no-closure AND still on the
+  charge-BREAKING kernel (f_pp=z, f_nn=z−h). ⇒ re-run #3548's connected magnitude probe
+  on the CHARGE-SYMMETRIC kernel (f_pp=f_nn=f_pn) + separate Coulomb. That is the path to
+  absolute binding: charge structure (this PR) × connected magnitude (#3548 re-run).
