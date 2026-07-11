@@ -313,3 +313,35 @@ theorem rowInsert_bumped_gt {r : List ℕ} {x y : ℕ}
       exact h ▸ hx
     · rw [if_neg hx] at h
       exact ih h
+
+/-- **The bumped entry is a genuine entry of the original row.**  Together with
+`rowInsert_bumped_gt`, the value cascading downward is an old entry `> x`. -/
+theorem rowInsert_bumped_mem {r : List ℕ} {x y : ℕ}
+    (h : (rowInsert r x).2 = some y) : y ∈ r := by
+  induction r with
+  | nil => simp [rowInsert] at h
+  | cons a r ih =>
+    rw [rowInsert_cons] at h
+    by_cases hx : x < a
+    · rw [if_pos hx] at h
+      simp only [Option.some.injEq] at h
+      exact h ▸ List.mem_cons_self
+    · rw [if_neg hx] at h
+      exact List.mem_cons_of_mem a (ih h)
+
+/-- **No bump ⟺ every entry is `≤ x`.**  When `rowInsert` appends (no bump), the
+inserted `x` is `≥` every entry of the row — so the append lands `x` as the new
+row-maximum, the base case of the column-strictness cascade. -/
+theorem rowInsert_none_forall_le {r : List ℕ} {x : ℕ}
+    (h : (rowInsert r x).2 = none) : ∀ a ∈ r, a ≤ x := by
+  induction r with
+  | nil => intro a ha; simp at ha
+  | cons b r ih =>
+    rw [rowInsert_cons] at h
+    by_cases hx : x < b
+    · rw [if_pos hx] at h; simp at h
+    · rw [if_neg hx] at h
+      intro a ha
+      rcases List.mem_cons.mp ha with rfl | ha'
+      · exact not_lt.mp hx
+      · exact ih h a ha'
