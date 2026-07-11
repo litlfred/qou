@@ -2546,6 +2546,69 @@ theorem garnirG_image_AB {π : Equiv.Perm (Fin (Specht.nOf μ))}
     exact hnot hl
   · exact le_of_eq (Finset.card_image_of_injective _ π.injective).symm
 
+omit [CharZero k] in
+/-- **`garnirA` fixed setwise ⇒ column stabiliser (sorry-free).** If `π ∈ garnirG` maps
+`garnirA` onto itself, then it maps `garnirB` onto itself (card argument on `A∪B`) and fixes
+the complement of `A∪B`, so it preserves the whole column pattern: `π ∈ C_t`. This is the
+converse used for the fibre strictness — a fibre that leaves column `j`'s content unchanged
+is a column permutation, hence lies in `garnirH` (excluded for a genuine Garnir term). -/
+theorem colStab_of_garnirA_image_eq {π : Equiv.Perm (Fin (Specht.nOf μ))}
+    (t : Specht.Tableau μ) (i j : ℕ) (hπG : π ∈ garnirG t i j)
+    (hAeq : (garnirA t i j).image π = garnirA t i j) : π ∈ Specht.colStab t := by
+  classical
+  have hfix : ∀ l, l ∉ garnirA t i j ∪ garnirB t i j → π l = l := by
+    simpa only [garnirG, Finset.mem_filter, Finset.mem_univ, true_and] using hπG
+  have hdisjAB : Disjoint (garnirA t i j) (garnirB t i j) := by
+    rw [Finset.disjoint_left]; intro l hlA hlB
+    simp only [garnirA, garnirB, Finset.mem_filter, Finset.mem_univ, true_and] at hlA hlB
+    omega
+  -- π maps B onto B
+  have hcardX : ((garnirB t i j).image π).card = (garnirB t i j).card :=
+    Finset.card_image_of_injective _ π.injective
+  have hunion : garnirA t i j ∪ (garnirB t i j).image π = garnirA t i j ∪ garnirB t i j := by
+    conv_lhs => rw [← hAeq]
+    rw [← Finset.image_union]; exact garnirG_image_AB t i j hπG
+  have hdisjAX : Disjoint (garnirA t i j) ((garnirB t i j).image π) := by
+    rw [Finset.disjoint_iff_inter_eq_empty, ← Finset.card_eq_zero]
+    have hci := Finset.card_union_add_card_inter (garnirA t i j) ((garnirB t i j).image π)
+    rw [hunion, Finset.card_union_of_disjoint hdisjAB, hcardX] at hci
+    omega
+  have hBeq : (garnirB t i j).image π = garnirB t i j := by
+    have hXsub : (garnirB t i j).image π ⊆ garnirB t i j := by
+      intro x hx
+      have hxAB : x ∈ garnirA t i j ∪ garnirB t i j := by
+        rw [← garnirG_image_AB t i j hπG]
+        exact Finset.image_subset_image Finset.subset_union_right hx
+      have hxnA : x ∉ garnirA t i j := fun hxa => (Finset.disjoint_left.mp hdisjAX hxa) hx
+      exact (Finset.mem_union.mp hxAB).resolve_left hxnA
+    exact Finset.eq_of_subset_of_card_le hXsub (le_of_eq hcardX.symm)
+  -- π.symm maps A→A, B→B, fixes the complement
+  have hsymmA : ∀ a ∈ garnirA t i j, π.symm a ∈ garnirA t i j := by
+    intro a ha; rw [← hAeq, Finset.mem_image] at ha
+    obtain ⟨a', ha', rfl⟩ := ha; rw [Equiv.symm_apply_apply]; exact ha'
+  have hsymmB : ∀ b ∈ garnirB t i j, π.symm b ∈ garnirB t i j := by
+    intro b hb; rw [← hBeq, Finset.mem_image] at hb
+    obtain ⟨b', hb', rfl⟩ := hb; rw [Equiv.symm_apply_apply]; exact hb'
+  have hsymmfix : ∀ l, l ∉ garnirA t i j ∪ garnirB t i j → π.symm l = l := by
+    intro l hl
+    have hl' := hfix l hl
+    calc π.symm l = π.symm (π l) := by rw [hl']
+      _ = l := Equiv.symm_apply_apply π l
+  rw [Specht.mem_colStab]
+  funext l
+  rw [Specht.arrow_smul_apply]
+  by_cases hlA : l ∈ garnirA t i j
+  · have hsa := hsymmA l hlA
+    simp only [garnirA, Finset.mem_filter, Finset.mem_univ, true_and] at hlA hsa
+    rw [hsa.1, hlA.1]
+  by_cases hlB : l ∈ garnirB t i j
+  · have hsb := hsymmB l hlB
+    simp only [garnirB, Finset.mem_filter, Finset.mem_univ, true_and] at hlB hsb
+    rw [hsb.1, hlB.1]
+  · have hlnot : l ∉ garnirA t i j ∪ garnirB t i j := by
+      rw [Finset.mem_union]; push_neg; exact ⟨hlA, hlB⟩
+    rw [hsymmfix l hlnot]
+
 /-! #### The single residual straightening core + the induction skeleton -/
 
 omit [CharZero k] in
