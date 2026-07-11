@@ -1,0 +1,61 @@
+{
+  "computation": "qbeta-action-pin-refine",
+  "description": "Refined f-map action A (Aitken on order-13 4_1 ladder; real, not cleanly identified) + complex-q hexagonal-angle prune.",
+  "audit_only": true,
+  "tier": "structural-exact (Vol recovery, prune) + numerical (action, order-limited)",
+  "computedAt": "2026-07-11T04:44:16.048239+00:00",
+  "commitSha": "e64a555e77d08f8cf38b78a603e448ba07266c88",
+  "engine": "mpmath",
+  "engineVersion": "1.3.0",
+  "scriptFile": "qbeta_action_pin_refine.py",
+  "scriptHash": "d0cee8beb0b5",
+  "assertions": [
+    {
+      "name": "vol41_recovered",
+      "passed": true
+    },
+    {
+      "name": "action_real_positive_0p6_to_0p8",
+      "passed": true
+    },
+    {
+      "name": "action_not_cleanly_identified_within_1pct",
+      "passed": true
+    },
+    {
+      "name": "complex_q_arg_not_exactly_hexagonal",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "vol41_recovered_rel": "2.21e-31",
+    "kappa": [
+      "0.5542164724",
+      "0.7310818075",
+      "2.654527057",
+      "13.09477493",
+      "84.64216561",
+      "676.9466788",
+      "6443.568964",
+      "71120.57825",
+      "893220.7277",
+      "12570553.2",
+      "198635513.3",
+      "3004500554.0",
+      "9.757915773e+10"
+    ],
+    "action_A_aitken": "0.6877273011",
+    "closest_candidate": "Vol/\u03c0",
+    "closest_rel": "0.064376",
+    "complex_q_arg_deg": "29.102878",
+    "arg_vs_hexagonal_rel": "0.0299041",
+    "verdict": "(A) f-map resurgence action of 4_1 (real, amphichiral): order-13 ladder (dps 260, Vol rec rel 2.21e-31), large-order ratios A_k=k\u00b7\u03ba_{k-1}/\u03ba_k Aitken-accelerate to A\u22480.687727. Real-positive, O(0.7); closest candidate Vol/\u03c0 (rel 0.0644) \u2014 NOT cleanly identified (no framework constant within 1%). The action is a genuine categorical invariant of the even/amphichiral sector but does not reduce to a simple Vol-ratio at this order; an exact saddle expansion (rationals over \u211a(\u221a-3)) is the route to a closed form. (B) The Hopf-cubic complex root maps to a complex substrate q with |arg|=29.1\u00b0, ~3% off the hexagonal \u03c0/6=30\u00b0 (rel 0.03) and NOT equal to it \u2014 pruned as numerology: |arg| is a generic algebraic angle of the prime-19 cubic field (disc -76), distinct from the even channel's \u211a(\u221a3)/\u03b6\u2083. No fit; no c_k value; no wiring; no tier change."
+  },
+  "context": {
+    "axis": "z->c_k f-map keystone: action pin + hexagonal prune",
+    "prior": "#3482 (action real, amphichiral), #3487 (Hopf cubic complex roots)",
+    "action_open": "exact saddle expansion (\u211a(\u221a-3)) for a closed-form A",
+    "odd_field": "prime-19 cubic (disc -76), NOT \u211a(\u221a3)/\u03b6\u2083"
+  }
+}
