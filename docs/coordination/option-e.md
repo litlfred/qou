@@ -335,3 +335,33 @@ a sub-`1/√5` per-pair magnitude. Posted the exact spec on **#3407**
 ([comment](https://github.com/litlfred/qou/pull/3407#issuecomment-4892386760)):
 their `Lk_R^{(k)}` must land the pn linking amplitude below `1/√5`, mixed-sign,
 in the bar-odd A₋ sector — supplying both open inputs at once.
+
+### 2026-07-11 — binding w_n = the Δ_λ/W_λ gate; kernel basis = q-Hermite (#3534)
+
+The jet-filtration residue-weight kernel derive-or-refute (#3534, bean t7qv)
+lands the **binding-side** view of the same Δ_λ/W_λ gate the sign capstone
+(`164153f40d`, merged) and the magnitude reduction (#3537) work from the
+partition side. Three-part result:
+
+1. **Ad-hoc constant-ratio kernels REFUTED (scope-(a)).** Coulomb-corrected AME
+   → universal `w_2,w_3,w_4 = 4.353, 9.331, 15.919` (ratios 2.143, 1.706); no
+   parameter-free geometric/[n]_q/a_D-self/linear kernel closes to 5% (`[n]_q²`
+   lone 6.9% near-miss, echoing the √C_λ near-miss of merged #3518).
+2. **Kernel basis DERIVED = q-Hermite / Rogers–Szegő.** The na-Stokes kernel
+   `a_D^(n)=S(n)/n`, `S(n)=Σ_{λ⊢n} dim_q V_λ` (q-involution number), obeys a
+   three-term recurrence `S(n)=S(n−1)+c_n·S(n−2)` with **`c_3=[2]_q` exact** and
+   `c_n/[n−1]_q` rising — the q-oscillator / q-hyperbolic orthogonal basis
+   (`QOU.Mass.RogersSzegoInhabited`). Owner steer 2026-07-11.
+3. **w_n is NOT q-Hermite-clean → the gated W_λ content.** w_n neither obeys the
+   `a_D` recurrence (42% off) nor matches any Rogers–Szegő ratio-shape (closest
+   13.2%); it **decelerates** (2.14→1.71, sub-geometric) vs the near-geometric
+   q-Hermite. So the q-dim structure lives in the **kernel**, the magnitude in
+   the **multiplier** — the exact split #3537 finds ("magnitude = classical q=1
+   `dim(λ)`, not substrate q-dim"). Complementary, no §6 escalation.
+
+**New falsifiable constraint on the gated W_λ:** the trace `tr(g_ρ)` (or any
+W_λ realisation) must, summed per body-order, reproduce w_n's **sub-geometric
+deceleration** (2.14→1.71). Posted as the one ask on
+[#3537](https://github.com/litlfred/qou/pull/3537#issuecomment-4945856508).
+Un-refuted forward route stays option #1 (hyperbolic link-volume `w_n`).
+Cherry-pick pointer: [`binding_wn_kernel_derive_refute.py`](../../computations/binding_wn_kernel_derive_refute.py) §5–6.
