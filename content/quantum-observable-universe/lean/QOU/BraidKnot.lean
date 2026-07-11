@@ -136,6 +136,10 @@ import QOU.BraidKnot.RegularRepBlockTrace
 import QOU.BraidKnot.DeltaLambdaRefutation
 import QOU.BraidKnot.DeltaLambdaExponentKeystone
 import QOU.BraidKnot.DeltaLambdaSignRule
+-- g_ρ = GS/jet-order (fake-degree) grading: the Δ_λ sign carrier (#3542) +
+-- assembly identity Δ_λ = tr(g_ρ) = (−1)^{n(λ)}·dim(λ) + bar-parity selection
+-- rule. Pulls the file into the CI build set (was previously un-imported).
+import QOU.BraidKnot.PrincipalGradingJetOrder
 -- Tier-3 (bean 60iz): Jones value of the Hopf link via the Markov trace +
 -- proved stabilisation-invariance (the q-deformed H_n(q) side of the knot
 -- invariant; complementary to the q=1 k[S_n] Wedderburn build).
