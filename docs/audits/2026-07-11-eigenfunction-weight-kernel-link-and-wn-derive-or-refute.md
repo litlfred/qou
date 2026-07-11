@@ -328,6 +328,41 @@ territory). What *is* derivable: the per-bond-**type** strength
 Milnor `M_n` of a **given** graph (Part 7) — not the graph itself. That is the
 honest, sharp boundary of the binding-derivation program as it stands.
 
+## Part 10 — the SDP degeneracy is not a dead end: binding is a QUADRATIC Gram form (coordination = cross-terms)
+
+A parallel finding landed on `main` (commit `a44296db`,
+`qbeta_c3_barodd_binding_sdp_dual_probe.py`, audit
+`2026-07-11-qbeta-c3-barodd-nz-deformation-gap.md`) that **independently reproduces
+Part 9's LP degeneracy** and explains it — sharpening the coordination route.
+Reproduced here ([`binding_ghost_gram_quadratic.py`](../../computations/binding_ghost_gram_quadratic.py),
+witness `binding-ghost-gram-quadratic.witness.json`):
+
+The binding / ghost mode `g = ½(L₊−L₋)` (H₃ NF basis) satisfies
+
+- `tr_M(g) = 0` — **traceless**, hence invisible to any linear trace-target LP (⇒ the
+  Part-9 degeneracy is structural, not incidental);
+- `⟨g⟩²_G = g·G·g = −0.4275 < 0` — **negative Gram norm**;
+- `⟨g, mass⟩_G = 0` — binding ⊥ mass (the Gram-signature split).
+
+So **mass is the linear `tr_M` (rest energy); binding is the QUADRATIC Gram/SDP
+form** (the mass defect, second order). The LP being blind to binding is *correct* —
+binding does not live in the linear/trace layer.
+
+**Coordination-graph consequence (the qou-v0yw keystone, re-sharpened).** The bond
+graph `M_n(K)` is neither the ad-hoc chain (Part 8) nor an LP active set (Part 9,
+degenerate) — it is the **cross-term structure of the multi-nucleon binding
+quadratic form**:
+
+    B(K) ~ ⟨Σ_i g_i⟩²_G = Σ_i ⟨g_i⟩²_G + 2·Σ_{i<j} ⟨g_i, g_j⟩_G
+
+with `g_i` nucleon `i`'s ghost mode. The **pairwise cross-terms `⟨g_i, g_j⟩_G` are
+the bonds (M₂)**; jointly-nonzero triples are the irreducible 3-body (M₃, the Milnor
+`μ̄₁₂₃` of Part 7). Computing them is a **Gram evaluation on the multi-nucleon
+(H₆⁺) basis — not the degenerate LP**, and not a fit. This converts the "open
+geometric input" of Part 9 into a concrete, tractable compute target: the deuteron
+(H₆) ghost cross-term is the first bond; the coordination is the graph of
+significant `⟨g_i, g_j⟩_G`.
+
 ## Consequence for `conj:binding-manybody-eq-jet-filtration`
 
 **Not provable now** (recorded answer). The conjecture's three deep inputs remain
