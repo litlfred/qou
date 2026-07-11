@@ -1,7 +1,7 @@
 **Definition.**
 A **quantum universe** is a tuple $(\mathbf{C}, A, \tau)$ consisting of:
-1. an $R$-linear rigid [monoidal category](#monoidal-category) $\mathbf{C}$,
-2. a distinguished object $A \in \mathrm{Ob}(\mathbf{C})$ equipped with a [Frobenius–Hopf algebra](#frobenius-hopf-algebra) structure,
+1. an $R$-linear rigid [monoidal category](#def:rigid-monoidal-category) $\mathbf{C}$,
+2. a distinguished object $A \in \mathrm{Ob}(\mathbf{C})$ equipped with a [Frobenius–Hopf algebra](#def:frobenius-hopf-substrate) structure,
 3. an $R$-linear faithful fibre functor $\tau \colon \mathbf{C} \to \mathbf{Vect}_R$,
 
 satisfying the following five axioms:
