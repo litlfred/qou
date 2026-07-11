@@ -28,7 +28,7 @@ $$
 
 *and its inverse yields CODATA-consistency: $\lvert \alpha^{-1} - 137.035999084\rvert < 10^{-3}$.*
 
-## What is proved vs. what is assumed
+## Proved results and assumptions
 
 The fine-structure constant emerges as the symbolic root of a self-consistent fixed-point equation. This path is additive and self-consistent. The formulation avoids the refuted multiplicative Chern–Simons or gluon-octet forms.
 

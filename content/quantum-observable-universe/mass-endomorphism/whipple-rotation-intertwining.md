@@ -5,7 +5,7 @@ $P^{\mu}_{\nu - 1/2}(\cosh\eta)\, e^{i\mu\theta} e^{i\nu\varphi}$ as the
 Whipple degree–order exchange: it swaps the two winding gradings
 $(\mu, \nu) \mapsto (\nu, \mu)$ and is involutive on the ladder data.*
 
-## What is established and what is open
+## Established results and open questions
 
 The following supporting facts are verified (witness
 `computations/substrate/whipple-rotation-involution-probe.witness.json`):

@@ -11,7 +11,7 @@ The obstruction is the incompatibility of two facts:
 
 If both $J_1, J_2 \in \mathcal{A}_{\mathrm{slot}}$, then $\lbrack J_1, J_2 \rbrack = 0$ by (1), contradicting $J_3 \ne 0$ by (2). At least one $\mathfrak{su}(2)_L$ generator must escape the slot subalgebra.
 
-### What this forces
+### Forced constraints
 
 This result is a structural exclusion. It proves an impossibility, not a numerical near-miss. It establishes where the missing structure must reside.
 

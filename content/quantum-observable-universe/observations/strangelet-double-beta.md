@@ -18,5 +18,5 @@ $$
 
 The interaction is suppressed by four powers of the Skein amplitude.
 
-**Consequence.**
+**Observational signature.**
 A strangelet passing through ordinary matter produces no electromagnetic ionization track. Its only interaction channel is double weak. It releases a pair of electrons (or positrons) and neutrinos. The interaction rate is exceptionally low, mimicking dark matter.

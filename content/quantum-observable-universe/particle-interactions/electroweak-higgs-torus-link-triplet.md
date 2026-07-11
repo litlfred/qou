@@ -53,6 +53,6 @@ Spin fixes each carrier's sector (scalar $H 	o A_+$; vectors $W, Z 	o A_-$). It 
 
 PSD-feasibility is necessary but not sufficient. It holds for every even-twist $T(2, 2k)$ at any $k \geq 1$.
 
-**What the conjecture closes.**
+**Scope of the closure.**
 
 If true, the identification supplies the categorical structure for the weak-scale crossing count $N_v$ in the Fermi-constant decomposition $G_F = 1/(\sqrt{2}\,v^2)$, $v = N_v\,E_	imes\,\mu_0$. The residual to close is C1 (selection) and C$_{	ext{sector}}$ (sector assignment).
