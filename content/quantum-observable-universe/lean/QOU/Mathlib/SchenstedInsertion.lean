@@ -462,3 +462,38 @@ theorem bump_findIdx_mono (upper lower : List ℕ) (x y : ℕ)
     exact findIdx_le_of_getElem _ lower c hcl (by simpa using hlt)
   · push_neg at hcl
     exact le_trans List.findIdx_le_length hcl
+
+/-! ### Column-strictness invariant
+
+`StrictBelow upper lower` — `lower` is no longer than `upper` and each of its
+entries strictly exceeds the one directly above (`getD _ 0` reads in-range
+entries, dodging dependent-index proofs).  `ColStrict T` — consecutive rows of
+the tableau satisfy `StrictBelow`, i.e. columns strictly increase downward.
+Two entry-level preservation lemmas (append a cell to the upper row; lower an
+upper entry) feed the cascade preservation. -/
+
+/-- `lower` sits strictly below `upper`: no longer, each entry strictly exceeds
+the one directly above. -/
+def StrictBelow (upper lower : List ℕ) : Prop :=
+  lower.length ≤ upper.length ∧ ∀ j < lower.length, upper.getD j 0 < lower.getD j 0
+
+/-- A tableau has strictly-increasing columns iff consecutive rows are
+`StrictBelow`. -/
+def ColStrict (T : List (List ℕ)) : Prop := T.IsChain StrictBelow
+
+@[simp] theorem colStrict_nil : ColStrict [] := List.isChain_nil
+
+@[simp] theorem colStrict_singleton (r : List ℕ) : ColStrict [r] := by
+  simp [ColStrict]
+
+/-- **Appending a cell to the upper row preserves `StrictBelow`**: the new column
+sits beyond `lower`, so existing comparisons are untouched.  (The no-bump /
+append case of the cascade.) -/
+theorem strictBelow_append_upper {upper lower : List ℕ} {x : ℕ}
+    (h : StrictBelow upper lower) : StrictBelow (upper ++ [x]) lower := by
+  obtain ⟨hlen, hlt⟩ := h
+  refine ⟨by simp; omega, fun j hj => ?_⟩
+  have hju : j < upper.length := lt_of_lt_of_le hj hlen
+  have heq : (upper ++ [x]).getD j 0 = upper.getD j 0 := by
+    simp [List.getD_eq_getElem?_getD, List.getElem?_append_left hju]
+  rw [heq]; exact hlt j hj
