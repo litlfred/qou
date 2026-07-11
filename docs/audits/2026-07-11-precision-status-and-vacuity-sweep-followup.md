@@ -14,72 +14,72 @@ vacuity sweep across the Lean tree.
 ## Part 1 — ppb-level precision status (the "1 ppb" masses)
 
 Source: `computations/per-observable-100x-status.witness.json` (compute 70 dps,
-output 60 dps). Ranked by the framework's L2 goal ($\sigma_\mathrm{pred} \le \sigma_\mathrm{exp}/100$).
+output 60 dps). Ranked by the framework's L2 goal (σ_pred ≤ σ_exp/100).
 
 | Observable | predicted (MeV) | err vs CODATA (ppb) | 100× target (ppb) | meets L2? |
 |---|---|---|---|---|
-| $m_e$ | 0.510998951 | 0 (anchor) | 0.0029 | yes |
-| $m_K/m_\pi$ | 3.53711852 | 23.4 | 263.6 | yes |
-| $m_p$ | 938.272089 | 1.35 | 0.0031 | no ($\approx 437\times$) |
-| $m_n$ | 939.565423 | 2.39 | 0.0057 | no ($\approx 416\times$) |
-| $\Delta_{pn}$ | 1.293333 | 755.6 | 4.74 | no |
-| $m_\mu$ | 105.658398 | 209.8 | 0.218 | no ($\approx 964\times$) |
-| $Q_\beta$ | 0.782334 | 1248 | 7.80 | no ($\approx 160\times$) |
+| m_e | 0.510998951 | 0 (anchor) | 0.0029 | yes |
+| m_K/m_π | 3.53711852 | 23.4 | 263.6 | yes |
+| m_p | 938.272089 | 1.35 | 0.0031 | no (≈ 437×) |
+| m_n | 939.565423 | 2.39 | 0.0057 | no (≈ 416×) |
+| Δ_pn | 1.293333 | 755.6 | 4.74 | no |
+| m_μ | 105.658398 | 209.8 | 0.218 | no (≈ 964×) |
+| Q_β | 0.782334 | 1248 | 7.80 | no (≈ 160×) |
 
-**Canonical L2 count = 2/7** ($m_e$, $m_K/m_\pi$), per `beats_100x_count`. The
-"1 ppb masses" seen in built LaTeX are $m_p$ (1.35 ppb) and $m_n$ (2.39 ppb) —
+**Canonical L2 count = 2/7** (m_e, m_K/m_π), per `beats_100x_count`. The
+"1 ppb masses" seen in built LaTeX are m_p (1.35 ppb) and m_n (2.39 ppb) —
 genuinely at the 1–2 ppb level in absolute accuracy, from the muon-anchored
 Borromean Hecke energy (`canonical_mass.py`), unchanged by the recent binding
 commits — but they do **not** meet the framework's own 100× goal.
 
-### 1a — The sub-ppb $m_p$ was a fit (dropped 2026-07-04)
+### 1a — The sub-ppb m_p was a fit (dropped 2026-07-04)
 
-Through 2026-07-04 the built tables showed $m_p$ on CODATA to 0.0004 ppb. That
+Through 2026-07-04 the built tables showed m_p on CODATA to 0.0004 ppb. That
 came from a multiplicative **Habiro precision tower** bolted onto the
-parameter-free base $m_p = 2 m_\mu F_\mathrm{Bor} - 12 m_e$:
+parameter-free base m_p = 2·m_μ·F_Bor − 12·m_e:
 
 $$
 \text{tower}(q) = (1 + c_4 u^4)(1 + 4 u^5)(1 - 29 u^6), \quad u = b\,\hbar_q^2 \approx 0.00852, \quad c_4 = 4143/90 \approx 46.033.
 $$
 
-The three integers ($c_4 \approx 46$, $+4$, $-29$) are the fitted part. Three
+The three integers (c₄ ≈ 46, +4, −29) are the fitted part. Three
 facts show it is a fit, not a derivation (see
 [`2026-07-04-c4-mu-p-tension-pin-dependence.md`](2026-07-04-c4-mu-p-tension-pin-dependence.md)):
 
-1. **$c_4$ is the $q_0$ pin offset, not a constant.** The exact $c_4$ that lands
-   $m_p$ on CODATA runs linearly from $0$ at the proton pin to $46.04$ at the
+1. **c₄ is the q₀ pin offset, not a constant.** The exact c₄ that lands
+   m_p on CODATA runs linearly from 0 at the proton pin to 46.04 at the
    muon pin across the 11.5 ppb window between the two legitimate calibrations
-   (affine fit matched to $< 9\times 10^{-6}$). "46" just encodes "calibrate on
-   the muon" — it *is* the $\mu$–$p$ tension rewritten at order $u^4$.
+   (affine fit matched to < 9×10⁻⁶). "46" just encodes "calibrate on
+   the muon" — it *is* the μ–p tension rewritten at order u⁴.
 2. **No derivation trail.** `4143` appears on one line in the corpus; `git log -S`
    finds nothing computing it; the cited "s5bb colour Reeb index" route was
    independently refuted.
-3. **Entropy bound.** $c_4$ is a 2–3 significant-figure quantity, so `46`,
+3. **Entropy bound.** c₄ is a 2–3 significant-figure quantity, so `46`,
    `4143/90`, `45.74` are all equally consistent and equally content-free.
 
-The tower was dropped (it was also a live $+242$ ppb bug once $q_0$ re-pinned to
-the proton). The honest de-fitted $m_p$ is the **1.35 ppb** above.
+The tower was dropped (it was also a live +242 ppb bug once q₀ re-pinned to
+the proton). The honest de-fitted m_p is the **1.35 ppb** above.
 
-### 1b — Q_β is anchor-insensitive (the refresh moves it $\approx 28$ ppb)
+### 1b — Q_β is anchor-insensitive (the refresh moves it ≈ 28 ppb)
 
-The committed canonical $Q_\beta = 0.782334$ MeV (1248 ppb) is **muon-anchored**
-(its witnesses carry $q_0 = 1.10997859556\ldots$). Evaluating the production
+The committed canonical Q_β = 0.782334 MeV (1248 ppb) is **muon-anchored**
+(its witnesses carry q₀ = 1.10997859556…). Evaluating the production
 Form-A closed form at both pins:
 
-| anchor | $q_0$ | $Q_\beta$ (Form A, N=1) |
+| anchor | q₀ | Q_β (Form A, N=1) |
 |---|---|---|
 | proton | 1.10997858275 | 0.79133902 |
 | muon | 1.10997859556 | 0.79133900 |
 
-The proton-vs-muon shift is only **$\approx 28$ ppb** (from the 11.5 ppb $q_0$
-change). So refreshing the anchor leaves $Q_\beta$ at $\approx 1250$ ppb — the
-anchor was never the lever. The historical "5.7 ppb Habiro-exact" $Q_\beta$ came
-from a fuller $c_k$ / Habiro tower against the muon pin, which is a **tiered
-near-match** per the $c_k$ truncation-order framing
+The proton-vs-muon shift is only **≈ 28 ppb** (from the 11.5 ppb q₀
+change). So refreshing the anchor leaves Q_β at ≈ 1250 ppb — the
+anchor was never the lever. The historical "5.7 ppb Habiro-exact" Q_β came
+from a fuller c_k / Habiro tower against the muon pin, which is a **tiered
+near-match** per the c_k truncation-order framing
 ([`2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`](2026-05-31-qbeta-ck-truncation-order-canonical-framing.md)),
 not a robust proton-anchored prediction.
 
-**Do not re-claim** a sub-ppb $m_p$ or a sub-10-ppb $Q_\beta$ as "met": the
+**Do not re-claim** a sub-ppb m_p or a sub-10-ppb Q_β as "met": the
 former was a dropped fit, the latter a stale-anchor near-match.
 
 ---
