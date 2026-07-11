@@ -96,6 +96,32 @@ genuinely gated `W_λ` content** — and its sub-geometric deceleration is a new
 sharp fingerprint the s5-so3 `W_λ` projector must reproduce (a testable
 constraint on the gated construction, not another fit).
 
+## Option #1 — the hyperbolic-link-volume route (also refuted)
+
+The audit's un-refuted forward route was `w_n = hyperbolic volume of the n-body
+inter-nucleon sub-link` (the literal "hyperbolic volumes via non-abelian
+Stokes"). Tested in
+[`binding_wn_link_volume_probe.py`](../../computations/binding_wn_link_volume_probe.py)
+against the corpus-witnessed link volumes:
+
+- **Refuted at n=2 — scope-(b) structural exclusion.** The 2-body sub-link of the
+  Borromean atom `𝓑_K` is **non-hyperbolic** (Vol=0): the Borromean rings are
+  **Brunnian**, so removing any one component leaves the 2-component unlink, and
+  the SDP binding-link registry (`binding_link_volumes.py`) independently assigns
+  the deuteron bond to the **Hopf** link (Seifert-fibred, Vol=0). Either way the
+  n=2 volume vanishes, but the extracted `w_2 = 4.353 > 0`. Cited invariant:
+  Brunnian / Seifert-fibred non-hyperbolicity.
+- **The Whitehead:Borromean 1:2 near-miss is a coincidence.** Re-choosing the
+  links (Whitehead L5a1 for n=2, Borromean L6a4 for n=3) gives the exact
+  parameter-free ratio `Vol(Borromean)/Vol(Whitehead) = 2` (both ∝ Catalan `G`)
+  vs observed `w_3/w_2 = 2.143` — a **7.2 % near-miss**, *not* a closure, and it
+  contradicts the registry's Hopf assignment for the deuteron bond. So the 1:2 is
+  a numerical coincidence of Catalan multiples, not a derivation.
+
+Net: neither the q-Hermite expansion nor the literal link-volume supplies `w_n`;
+both point back to the gated `W_λ` multiplier (the volume route excluded at n=2
+by a proved invariant, the q-Hermite route by the sub-geometric deceleration).
+
 ## Two permanence points (scope-(a), not (b))
 
 The refutations above are "*this parameter-free recursion / this q-Hermite
