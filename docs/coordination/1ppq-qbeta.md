@@ -812,4 +812,24 @@ Net: with C16+C18+KC8+KC17, the surviving c₃ bar-odd object is the **analytic
 Coordination this cycle: duplicate `CuspShapeBarParity.lean` flagged on
 #3573 ↔ #3579 (QBeta/ vs Knot/, same theorems); parallel Lean Φ_b carrier
 flagged on #3544 ↔ #3562 (instantiate the repaired class, don't fork).
+
+**2026-07-11 (#3540/#3562 merged, #3596) — Φ_b constructed + S-flip source localized to the m-deformation stage.**
+Three merged/landed tranches on `claude/faddeev-phi-b-construction-wwblhu`:
+(1) #3540: substrate b-map pinned `b = √(t/2π)e^{+iπ/4}` (q = 1/q₀, dual
+q̃ ≈ 5e−165); contour == modular-double product to 1e−39 at both anchors;
+the documented −π/4 branch is the inverse-conjugate object. (2) #3562:
+`FaddeevPhi` class repaired (unguarded `shift_binv` unsatisfiable by any
+total-function encoding — the dual lattice carries POLES; false
+`phi_binv_zero` removed); `phiBProd` tprod instantiation with CommMonoid-level
+telescoping, sorry-free; m-plane inversion: S smoothness-killed
+(|dS/dq| ≈ 3.8e6, lever = CODATA ÷u³), un-levered r = S·u³ smooth
+(r_μ ≈ +5.98e−9, r_p ≈ −2.44e−8, slope ≈ −2.4) = the well-posed target.
+(3) #3596: 84 lever-class (|U|, κ/u³) candidates all fail cross-anchor
+(h and 2t sit 2% below the proton feasibility floor |u|_min = √(2|S|/√3));
+pole-seed sensitivity probe: the Φ_q-pole-seeded Newton stage is
+ANCHOR-BLIND (amplification 1.4e−4, Jacobian O(1)) ⇒ with #3600's θ-smooth
+negative and the rate exclusion, the S sign-flip source is localized to the
+m-deformed gluing system (the m(q₀) assignment), scope-(a) throughout.
+Coordinated: intent+results on #3573, #3600; earlier on #3543 (merged).
+Open: Multipliable discharge (LogBounds cone building); m(q₀) law itself.
 No c_k value; wires nothing; no tier change.
