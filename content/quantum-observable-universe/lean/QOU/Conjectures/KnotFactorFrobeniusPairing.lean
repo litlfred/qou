@@ -67,11 +67,11 @@ class KnotFactorFrobeniusPairing where
     ∀ wFree wAtom : ℕ,
       binding wFree wAtom = E0 * (traceMag wFree - traceMag wAtom)
 
-instance : KnotFactorFrobeniusPairing where
-  traceMag _ := 0
-  E0 := 1
-  E0_pos := by norm_num
-  binding _ _ := 0
-  binding_eq_defect _ _ := by ring
+-- No instance: this is an OPEN primary conjecture (AGENTS.md §3b-tax:
+-- "An unproved primary is honestly represented by a content-bearing
+-- class with no instance; do not fabricate a trivial instance to
+-- 'close' it").  A trivial model (`traceMag ≡ 0`, `binding ≡ 0`)
+-- satisfies `binding_eq_defect` by `ring` but establishes nothing about
+-- the Markov-trace defect — it proves consistency, not the conjecture.
 
 end QOU.Conjectures

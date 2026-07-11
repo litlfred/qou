@@ -92,10 +92,12 @@ class WeakSpectralCompleteness (R : Type*) [Field R] where
 
 attribute [instance] WeakSpectralCompleteness.ring_EWAlgebra
 
-instance : WeakSpectralCompleteness R where
-  EWAlgebra := R
-  ring_EWAlgebra := inferInstance
-  projector _ := 0
-  completeness := ⟨fun _ => by ring, fun _ _ _ => by ring⟩
+-- No instance: this is an OPEN primary conjecture (AGENTS.md §3b-tax).
+-- The `projector ≡ 0` model discharges `completeness` (0 is trivially
+-- idempotent and self-orthogonal) but the zero decomposition does NOT
+-- exhaust the EW Wedderburn content — it is the empty decomposition,
+-- carrying none of the categorical-completeness claim.  The genuine
+-- substrate content above (`cellTrace`, `cellTrace_bar_self_dual`,
+-- `cellMultiplicities_sum`) is proved; completeness itself is open.
 
 end QOU.Conjectures
