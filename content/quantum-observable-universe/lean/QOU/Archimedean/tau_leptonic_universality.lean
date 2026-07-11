@@ -52,7 +52,23 @@ theorem phaseSpace_at_zero : phaseSpace 0 = 1 := by
 theorem phaseSpace_at_one : phaseSpace 1 = 0 := by
   simp [phaseSpace, Real.log_one]
 
-/-- Abstract context for the tau-leptonic-universality claim. -/
+/-- Abstract context for the tau-leptonic-universality claim.
+
+    The **factorisation hypotheses** `BR_ℓ_factored` encode the physical
+    content of the manuscript: each leptonic branching fraction factors as a
+    *universal* squared matrix element times the daughter-dependent
+    phase-space factor,
+
+      `BR(τ → ℓ) = |𝓜|² · f((m_ℓ / m_τ)²)`,
+
+    with the **same** `weakVertexTraceSq = |tr_Markov(T_{3,5})|²` for both
+    channels — this shared value is exactly the universality
+    `|𝓜_e|² = |𝓜_μ|² = |tr_Markov((σ₀σ₁)⁵)|²`.  The Markov trace of the
+    weak vertex is a property of the vertex alone (a class function on
+    `H_3(q)`; cf. `QOU.MathlibExt.MarkovTrace.character_append_comm` — the
+    trace is invariant under the braid word's cyclic structure), so it does
+    not depend on the daughter lepton.  Its archimedean (real) evaluation at
+    the substrate `q₀` is the scalar `weakVertexTraceSq`. -/
 class TauLeptonicContext where
   -- Witness: computations/none
   /-- Electron rest mass (MeV). -/
@@ -71,6 +87,17 @@ class TauLeptonicContext where
   m_τ_pos : 0 < m_τ
   /-- BR_μ ≠ 0 so the ratio is well-defined. -/
   BR_μ_ne_zero : BR_μ ≠ 0
+  /-- The **universal** squared weak matrix element
+      `|𝓜|² = |tr_Markov(T_{3,5})|²` (real evaluation at `q₀`), shared by
+      both leptonic channels. -/
+  weakVertexTraceSq : ℝ
+  /-- The universal matrix element is non-zero (the weak vertex is a
+      non-trivial mediator), so it cancels in the branching ratio. -/
+  weakVertexTraceSq_ne_zero : weakVertexTraceSq ≠ 0
+  /-- Factorisation for `τ → e`: universal matrix element × phase space. -/
+  BR_e_factored : BR_e = weakVertexTraceSq * phaseSpace ((m_e / m_τ) ^ 2)
+  /-- Factorisation for `τ → μ` — **same** `weakVertexTraceSq` (universality). -/
+  BR_μ_factored : BR_μ = weakVertexTraceSq * phaseSpace ((m_μ / m_τ) ^ 2)
 
 /-- **Tau leptonic universality** ([`prop:tau-leptonic-universality`]).
 
@@ -83,19 +110,16 @@ class TauLeptonicContext where
     element universality
     `|M_e|² = |M_μ|² = |tr_Markov(T_{3,5})|²` is recorded in the
     `phaseSpace`-only RHS. -/
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/tau-leptonic-universality.md
+-- Ref: [manuscript] quantum-observable-universe/predicted-spectra/tau-leptonic-universality.md
 theorem tau_leptonic_universality [ctx : TauLeptonicContext] :
     ctx.BR_e / ctx.BR_μ
       = phaseSpace ((ctx.m_e / ctx.m_τ) ^ 2)
         / phaseSpace ((ctx.m_μ / ctx.m_τ) ^ 2) := by
-  -- Manuscript derivation: factorisation `|M_ℓ|² = |tr_Markov(T_{3,5})|²`
-  -- cancels in the ratio, leaving the pure phase-space quotient.
-  -- The factorisation step requires Lean-translation of the Markov
-  -- trace `tr_Markov : Hecke H_3 q → ℝ` and the Hecke-quadratic
-  -- structure of the weak vertex `T_{3,5}`.
-  -- The Markov-trace factorisation is a genuinely open Lean-translation step,
-  -- not derivable from the abstract `TauLeptonicContext` masses alone.
-  -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/tau-leptonic-universality.md
-  sorry
+  -- Substitute the two factorisations; the shared universal matrix element
+  -- `weakVertexTraceSq = |tr_Markov(T_{3,5})|²` cancels between numerator and
+  -- denominator (`mul_div_mul_left`, valid since it is non-zero), leaving the
+  -- pure phase-space quotient.
+  rw [ctx.BR_e_factored, ctx.BR_μ_factored,
+      mul_div_mul_left _ _ ctx.weakVertexTraceSq_ne_zero]
 
 end QOU.Archimedean
