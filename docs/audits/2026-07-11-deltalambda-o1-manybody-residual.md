@@ -42,14 +42,30 @@ This is a **scope-(a)** finding (the single-trace magnitude undershoots), **not*
 (nothing is excluded). The derived sign (#3542/#3558) and the A-selected power (#3569) stand;
 what is missing is a *term*, not a *correction to the power*.
 
-## The residual is a known-open problem, not a fudge factor
+## This is already decomposed in the corpus — not a fresh open direction
 
-Deriving the residual = deriving the **operator-valued branching combiner** — the
-**Subgoal-1 closure path already named** in
-[`docs/precision-goals.md`](../precision-goals.md) ("per-isotope Borromean-tower extension +
-operator-valued branching combiner"). So the O(1) is not a new free parameter to fit; it is the
-already-identified many-body term. Fitting `[3–9]` to four nuclei would be the **seventh
-ansatz** the Δ_λ gate forbids.
+A corpus-grep (per the STRICT "before declaring open" checklist) shows the many-body deficit
+is **already quantified**, far more finely than this per-isotope residual:
+
+- [`pairwise_magnitude_gap_probe.py`](../../computations/probes/pairwise_magnitude_gap_probe.py)
+  (PR #2630): the **leading/pairwise trace** — the same single-trace object as `B(dim)` here —
+  **underbinds ~40% at A=3**, decomposed per-bond.
+- [`b4-framework-connected-cumulant-deficit.witness.json`](../../computations/probes/b4-framework-connected-cumulant-deficit.witness.json):
+  the connected (Ursell/Mayer) cumulants are measured — **b₄ = 0.58 MeV = 6.3%** of the
+  9.24 MeV four-body target, with **b₃ wrong-signed** — and the missing piece is named: the
+  **[1⁴] Slater term** (`Λ^A(4)` nucleon-flavor), pending the **Slater↔trace dictionary**.
+
+So the residual found here (`target/B(dim)`, maximal at ⁴He) is the **coarse per-isotope shadow
+of this already-decomposed connected-cumulant deficit** — the same missing higher term, seen at
+the crude "one O(1) per nucleus" resolution instead of the b₃/b₄ cumulant resolution. It is
+**consistent** (single trace ≈ leading/pairwise, undershoots; deficit grows with body-order and
+peaks at the 4-body α) and adds nothing the cumulant line hasn't already quantified — its only
+value is to confirm, from the #3569 Δ_λ side, that the gap is a *term*, not a *power/coefficient*.
+
+Deriving the residual is therefore the **Subgoal-1 closure path already named** in
+[`docs/precision-goals.md`](../precision-goals.md) ("operator-valued branching combiner"),
+concretely the **[1⁴] Slater↔trace dictionary** of the b₄ deficit — not a new free parameter.
+Fitting `[3–9]` to four nuclei would be the **seventh ansatz** the Δ_λ gate forbids.
 
 ## Updated picture
 
@@ -62,5 +78,10 @@ an O(1) rescaling of `Δ_λ`. **Nothing wired.**
 
 - A-scaling selection: [PR #3569](https://github.com/litlfred/qou/pull/3569)
 - Sign derivation + cross-isotope validation: [PR #3542](https://github.com/litlfred/qou/pull/3542), [PR #3558](https://github.com/litlfred/qou/pull/3558)
-- Subgoal-1 many-body closure path: [`docs/precision-goals.md`](../precision-goals.md)
+- **Already-quantified connected-cumulant deficit** (this residual's fine-grained form):
+  [`pairwise_magnitude_gap_probe.py`](../../computations/probes/pairwise_magnitude_gap_probe.py) (PR #2630),
+  [`b4-framework-connected-cumulant-deficit.witness.json`](../../computations/probes/b4-framework-connected-cumulant-deficit.witness.json)
+- Subgoal-1 many-body closure path: [`docs/precision-goals.md`](../precision-goals.md);
+  combiner: [`canonical_tr_m_via_branching.py`](../../computations/canonical_tr_m_via_branching.py),
+  [`operator-valued-combiner-convergence.md`](../../content/quantum-observable-universe/mass-theory/operator-valued-combiner-convergence.md)
 - Reused: `atom-chi-rust-{d,t,3he,4he}.witness.json`, `wedderburn_jones_markov.y_lambda_at`
