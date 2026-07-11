@@ -130,4 +130,43 @@ theorem decayProj_ne_zero_iff [Invertible (2 : R)] (σ : R →+* R) (f : R) :
     decayProj σ f ≠ 0 ↔ σ f ≠ f :=
   not_congr (decayProj_eq_zero_iff σ f)
 
+/-! ## Mass ⊥ decay under any `σ`-invariant form — the Gram signature splits
+
+The algebraic reason the bar-odd carrier sits in its **own** block of the
+Frobenius/Gram form (numerically the unique negative-norm *ghost* direction of
+the indefinite `G_{ij}=tr_M(b_i b_j)` in `H₃(q)`, witnessed by
+`qbeta_c3_barodd_knot_operator_gram_probe.py`): a **bar-even** vector and a
+**bar-odd** vector are **orthogonal** under *any* `σ`-invariant bilinear form.
+Hence the mass (`σ`-even) and decay (`σ`-odd) projections never mix under the
+Gram pairing, and the signature splits cleanly along the parity — the ghost
+mode is Gram-orthogonal to the mass cone. Generic (no `ℝ`/`ℂ`, §7c): `B` is an
+abstract pairing, additive in its second argument and `σ`-invariant. -/
+
+/-- **Bar-even ⊥ bar-odd.** For a pairing `B` additive in its second slot and
+    invariant under the involution `σ`, a `σ`-fixed vector `e` and a
+    `σ`-negated vector `o` are `B`-orthogonal. -/
+theorem barEven_barOdd_orthogonal [Invertible (2 : R)] (σ : R →+* R)
+    (B : R → R → R) (hBneg : ∀ x y, B x (-y) = -(B x y))
+    (hBinv : ∀ x y, B (σ x) (σ y) = B x y)
+    {e o : R} (he : σ e = e) (ho : σ o = -o) : B e o = 0 := by
+  have h : B e o = -(B e o) := by
+    have hi := hBinv e o
+    rw [he, ho, hBneg] at hi
+    exact hi.symm
+  apply cancel_two
+  rw [mul_zero, two_mul]
+  nth_rewrite 1 [h]; ring
+
+/-- **Mass ⊥ decay under the Gram form.** The mass (bar-even) and decay
+    (bar-odd) projections of any elements are orthogonal under every
+    `σ`-invariant pairing `B` — the structural reason the Frobenius/Gram
+    signature splits along the bar parity (the decay ghost mode occupies its
+    own block). -/
+theorem massProj_barOrth_decayProj [Invertible (2 : R)] (σ : R →+* R)
+    (hσ : Function.Involutive σ) (B : R → R → R)
+    (hBneg : ∀ x y, B x (-y) = -(B x y)) (hBinv : ∀ x y, B (σ x) (σ y) = B x y)
+    (f g : R) : B (massProj σ f) (decayProj σ g) = 0 :=
+  barEven_barOdd_orthogonal σ B hBneg hBinv (sigma_massProj σ hσ f)
+    (sigma_decayProj σ hσ g)
+
 end QOU.QBeta
