@@ -1295,3 +1295,105 @@ theorem insertWordRec_standard (w : List ℕ) :
     RowsStrict (insertWordRec w).2 ∧ ColStrict (insertWordRec w).2
       ∧ tableauAllLt (insertWordRec w).2 w.length :=
   ⟨insertWordRec_rowsStrict w, insertWordRec_colStrict w, insertWordRec_entries_lt w⟩
+
+/-! ## Brick 7 foundation — general-index (semi)standardness in list form
+
+Mathlib's `SemistandardYoungTableau` fields quantify over *all* `i1 < i2` and
+`j1 < j2` (not just adjacent), reading entries at `(i, j)`.  These lemmas cast
+the adjacent invariants (`RowsSorted`, `ColStrict`) into that general
+`getD`-indexed form — the exact shape the `row_weak'` / `col_strict'` obligations
+take when a `List (List ℕ)` tableau is realised as a Mathlib SSYT over
+`YoungDiagram.ofRowLens (tableauShape T)`. -/
+
+/-- Row lookup as an indexed entry (in range). -/
+theorem getD_row_eq {T : List (List ℕ)} {i : ℕ} (hi : i < T.length) :
+    T.getD i [] = T[i] := by
+  rw [List.getD_eq_getElem?_getD, List.getElem?_eq_getElem hi, Option.getD_some]
+
+/-- Row lookup past the end is the empty row. -/
+theorem getD_row_past {T : List (List ℕ)} {i : ℕ} (hi : T.length ≤ i) :
+    T.getD i [] = [] := by
+  rw [List.getD_eq_getElem?_getD, List.getElem?_eq_none hi, Option.getD_none]
+
+/-- **Adjacent `StrictBelow` in `getD` form.**  Consecutive rows of a
+    column-strict tableau satisfy `StrictBelow`. -/
+theorem colStrict_adjacent {T : List (List ℕ)} (h : ColStrict T) {i : ℕ}
+    (hi : i + 1 < T.length) : StrictBelow (T.getD i []) (T.getD (i + 1) []) := by
+  induction i generalizing T with
+  | zero =>
+    obtain _ | ⟨a, _ | ⟨b, rest⟩⟩ := T
+    · simp at hi
+    · simp at hi
+    · rw [ColStrict, List.isChain_cons_cons] at h; simpa using h.1
+  | succ i ih =>
+    obtain _ | ⟨a, T'⟩ := T
+    · simp at hi
+    · have hrec := ih (colStrict_tail h) (by simpa using hi)
+      simpa using hrec
+
+/-- **Row lengths weakly decrease down a column-strict tableau.** -/
+theorem colStrict_len_le {T : List (List ℕ)} (h : ColStrict T) (i1 : ℕ) :
+    ∀ d, (T.getD (i1 + d) []).length ≤ (T.getD i1 []).length
+  | 0 => by simp
+  | d + 1 => by
+      have step : (T.getD (i1 + (d + 1)) []).length ≤ (T.getD (i1 + d) []).length := by
+        by_cases hlen : i1 + d + 1 < T.length
+        · obtain ⟨hl, _⟩ := colStrict_adjacent h (i := i1 + d) (by omega)
+          simpa [show i1 + (d + 1) = (i1 + d) + 1 by omega] using hl
+        · push_neg at hlen
+          rw [getD_row_past (by omega : T.length ≤ i1 + (d + 1))]; simp
+      exact le_trans step (colStrict_len_le h i1 d)
+
+/-- Auxiliary: strictness across a gap `d + 1`, by induction on `d`. -/
+theorem colStrict_getD_lt_aux {T : List (List ℕ)} (h : ColStrict T) :
+    ∀ (d i1 j : ℕ), j < (T.getD (i1 + d + 1) []).length →
+      (T.getD i1 []).getD j 0 < (T.getD (i1 + d + 1) []).getD j 0
+  | 0, i1, j, hj => by
+      have hlen : i1 + 1 < T.length := by
+        by_contra hge; push_neg at hge
+        rw [getD_row_past hge] at hj; simp at hj
+      obtain ⟨_, hval⟩ := colStrict_adjacent h hlen
+      simpa using hval j hj
+  | d + 1, i1, j, hj => by
+      have hlen2 : (T.getD (i1 + (d + 1) + 1) []).length ≤ (T.getD (i1 + 1) []).length := by
+        have := colStrict_len_le h (i1 + 1) (d + 1)
+        simpa [show i1 + 1 + (d + 1) = i1 + (d + 1) + 1 by omega] using this
+      have hjmid : j < (T.getD (i1 + 1) []).length := lt_of_lt_of_le hj hlen2
+      have hlen1 : i1 + 1 < T.length := by
+        by_contra hge; push_neg at hge
+        rw [getD_row_past hge] at hjmid; simp at hjmid
+      obtain ⟨_, hval⟩ := colStrict_adjacent h hlen1
+      have step1 : (T.getD i1 []).getD j 0 < (T.getD (i1 + 1) []).getD j 0 := hval j hjmid
+      have step2 : (T.getD (i1 + 1) []).getD j 0 < (T.getD (i1 + (d + 1) + 1) []).getD j 0 := by
+        have := colStrict_getD_lt_aux h d (i1 + 1) j
+          (by rw [show i1 + 1 + d + 1 = i1 + (d + 1) + 1 by omega]; exact hj)
+        rwa [show i1 + 1 + d + 1 = i1 + (d + 1) + 1 by omega] at this
+      exact lt_trans step1 step2
+
+/-- **General column strictness (`getD` form).**  For any `i1 < i2`, the entry
+    above is strictly smaller — the `col_strict'` obligation of a Mathlib SSYT. -/
+theorem colStrict_getD_lt {T : List (List ℕ)} (h : ColStrict T) {i1 i2 j : ℕ}
+    (hi : i1 < i2) (hj : j < (T.getD i2 []).length) :
+    (T.getD i1 []).getD j 0 < (T.getD i2 []).getD j 0 := by
+  obtain ⟨d, rfl⟩ : ∃ d, i2 = i1 + d + 1 := ⟨i2 - i1 - 1, by omega⟩
+  exact colStrict_getD_lt_aux h d i1 j hj
+
+/-- **General weak-row monotonicity (`getD` form).**  Within a row, entries
+    weakly increase — the `row_weak'` obligation of a Mathlib SSYT. -/
+theorem rowsSorted_getD_le {T : List (List ℕ)} (h : RowsSorted T) {i j1 j2 : ℕ}
+    (hj : j1 ≤ j2) (hj2 : j2 < (T.getD i []).length) :
+    (T.getD i []).getD j1 0 ≤ (T.getD i []).getD j2 0 := by
+  have hi : i < T.length := by
+    by_contra hge; push_neg at hge
+    rw [getD_row_past hge] at hj2; simp at hj2
+  have hj1 : j1 < (T.getD i []).length := lt_of_le_of_lt hj hj2
+  have hsorted : (T.getD i []).Sorted (· ≤ ·) :=
+    h _ (by rw [getD_row_eq hi]; exact List.getElem_mem hi)
+  have e1 : (T.getD i []).getD j1 0 = (T.getD i [])[j1] := by
+    rw [List.getD_eq_getElem?_getD, List.getElem?_eq_getElem hj1, Option.getD_some]
+  have e2 : (T.getD i []).getD j2 0 = (T.getD i [])[j2] := by
+    rw [List.getD_eq_getElem?_getD, List.getElem?_eq_getElem hj2, Option.getD_some]
+  rw [e1, e2]
+  have key : (T.getD i []).get ⟨j1, hj1⟩ ≤ (T.getD i []).get ⟨j2, hj2⟩ :=
+    hsorted.rel_get_of_le (by simpa using hj)
+  simpa [List.get_eq_getElem] using key
