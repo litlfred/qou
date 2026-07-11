@@ -844,3 +844,21 @@ No c_k value; wires nothing; no tier change.
   the geometry-side negative (#`1a4894b8`): full Rogers-dilog CS at substrate
   scale `~1.7e-5`, **~2350× below** `|S|` — the naive 4₁ CS deformation is orders
   too small, so `Φ_b` (not pure-4₁ geometry) is the live `S` carrier. No c_k wired.
+
+**2026-07-11 (#3571 merged, #3606) — even-channel action arithmetic home = ℚ(√3), both numerical-block and exact-saddle.**
+Completes the even-channel arithmetic mapping, complementing the odd-channel
+#3556/#3563 (KC17 ζ₄ + Hopf-cubic prime-19). #3571 (merged): the *numerical* PSLQ
+of the 4₁ resurgence-action coefficients over ℚ(√−3) is **entropy-blocked**
+(divergent series c_m~m!/A^m + fit contamination) — ℚ(√−3) is the arithmetic home
+(4₁ trace field) but unreachable by fit. #3606: the **exact-saddle** complement,
+sorry-free Lean (`QOU/QBeta/Qsqrt3SaddleArithmetic.lean`): the 4₁ Kashaev saddle
+at x*=5/6 has Taylor data ∈ ℚ(√3)·π^k (Hessian −√3π, then −4π², −8√3π³, …) and
+leading coefficient `b₁ = √3π/54 ∈ ℚ(√3)·π` — computed exactly where PSLQ failed.
+Even-channel counterpart of `HopfCubicOddCarrier` (KC20). **Consistent with the
+cusp-shape siblings** #3573/#3579 (`barEven ω=1`=Vol, `barOdd ω²=−3`=CS, trace
+field ℚ(√−3)): same 4₁ ℚ(√−3) home, cusp-shape side ⊕ saddle-expansion side; no
+§6 escalation. Anti-laundering: `b₁≈0.101` is the naive saddle value, explicitly
+≠ observable c₁≈0.554 (needs full state-integral normalisation); no action value
+wired. Coordinated on #3573 (intent) + #3579 (link). Owner ruling #3607
+(Subgoal-2 open-for-all) relaxes the deferred observable closure to in-scope
+(anti-fit still binds). No c_k value; wires nothing; no tier change.
