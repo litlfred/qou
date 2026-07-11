@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "1dd242bc43c4",
     "ts": "42b5583d4d8a",
-    "lean": "8093e2d56f81"
+    "lean": "931cf6455a6e"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1218,6 +1218,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "1dd242bc43c4",
+          "ts": "42b5583d4d8a"
+        },
+        "result": "pass",
+        "notes": "Salvage re-verify: trivial ∃jonesVal≠0 (witness 1) → jonesVal<0 via -(q+q⁻¹), negativity forced by D.q_pos. lean-direct exit 0.",
+        "reviewed_at": "2026-07-11T22:28:43.000Z",
+        "reviewed_sha": "c2dcc5fc700dfff0c6e3cecdcc197bf6c27d3c74",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/lean-proof-vacuity-audit",
+          "agent_skill": "local/lean-proof-vacuity-audit",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-07-11"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1805,5 +1822,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-07T14:26:55.137947Z"
+  "updated_at": "2026-07-11T22:28:43.000Z"
 }

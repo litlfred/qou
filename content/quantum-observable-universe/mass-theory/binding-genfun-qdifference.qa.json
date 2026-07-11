@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "85dcd4fae4b7",
     "ts": "fd641b09e49a",
-    "lean": "94e6ef3b8fac"
+    "lean": "055594e72b13"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1250,6 +1250,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "85dcd4fae4b7",
+          "ts": "fd641b09e49a"
+        },
+        "result": "pass",
+        "notes": "Salvage re-verify: recurrence-field projection → q-difference annihilating operator + DERIVED solved recurrence. lean-direct exit 0.",
+        "reviewed_at": "2026-07-11T22:28:43.000Z",
+        "reviewed_sha": "c2dcc5fc700dfff0c6e3cecdcc197bf6c27d3c74",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/lean-proof-vacuity-audit",
+          "agent_skill": "local/lean-proof-vacuity-audit",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-07-11"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1772,5 +1789,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-06T04:41:29.430Z"
+  "updated_at": "2026-07-11T22:28:43.000Z"
 }

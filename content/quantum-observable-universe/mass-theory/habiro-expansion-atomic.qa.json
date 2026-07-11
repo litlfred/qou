@@ -8,9 +8,9 @@
     "lean": "../qou/content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.lean"
   },
   "source_hashes": {
-    "md": "77706743e815",
+    "md": "c0201d60037f",
     "ts": "8836d62e2abb",
-    "lean": "d856c0487df4"
+    "lean": "1e07bfaf5a27"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1347,6 +1347,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "c0201d60037f",
+          "ts": "8836d62e2abb"
+        },
+        "result": "pass",
+        "notes": "Salvage re-verify vs current main: theorem→noncomputable def, explicit supportBound (reconstruction PROVED, axiom deleted), ∃E,True→termination+uniqueness, ∃p,True axiom→derived theorem. lean-direct exit 0, sorry-free.",
+        "reviewed_at": "2026-07-11T22:28:43.000Z",
+        "reviewed_sha": "c2dcc5fc700dfff0c6e3cecdcc197bf6c27d3c74",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/lean-proof-vacuity-audit",
+          "agent_skill": "local/lean-proof-vacuity-audit",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-07-11"
+        }
       }
     ],
     "proof-no-false-premise": [
@@ -2307,5 +2324,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-07T14:26:56.698469Z"
+  "updated_at": "2026-07-11T22:28:43.000Z"
 }

@@ -10,7 +10,7 @@
   "source_hashes": {
     "md": "c7499e7c93e0",
     "ts": "a38602a38e0e",
-    "lean": "0d19252dd01d"
+    "lean": "3f87e72de535"
   },
   "criteria": {
     "voice-status-leak": [
@@ -1203,6 +1203,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "c7499e7c93e0",
+          "ts": "a38602a38e0e"
+        },
+        "result": "pass",
+        "notes": "Salvage re-verify: deleted a FALSE axiom + projecting theorem; proved directly under 1<q. lean-direct exit 0.",
+        "reviewed_at": "2026-07-11T22:28:43.000Z",
+        "reviewed_sha": "c2dcc5fc700dfff0c6e3cecdcc197bf6c27d3c74",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/lean-proof-vacuity-audit",
+          "agent_skill": "local/lean-proof-vacuity-audit",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-07-11"
+        }
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -1605,5 +1622,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-07T14:26:56.531881Z"
+  "updated_at": "2026-07-11T22:28:43.000Z"
 }
