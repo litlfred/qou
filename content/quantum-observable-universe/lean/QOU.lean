@@ -196,6 +196,7 @@ import QOU.QBeta.BarParityZeta4Swap
 import QOU.QBeta.CAL3AnchorStructure
 import QOU.QBeta.SRigidityPrune
 import QOU.QBeta.HopfCubicOddCarrier
+import QOU.QBeta.Zeta4DescentCarrier
 import QOU.QBeta.H4RouteBBranchingPrune
 import QOU.QBeta.QLommelOrderRecurrence
 import QOU.QBeta.HoefsmitBBarParity
