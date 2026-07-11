@@ -310,3 +310,16 @@ probe `delta_lambda_z_coefficient_and_slope.py`). Audit
   equal-weight limit ⇒ coordination-number counting valid at nucleon level (#3557).
 - **Two framings (owner call):** (A) spurious strong CSB vs (B) categorical EM
   overshoots Coulomb 3×. Not decided. Kernel re-derivation = #3548/#3534 scope.
+
+## 2026-07-11 (cont.5) — mirror split is Coulomb across the chain; charge-symmetry constraint (PR #3570)
+
+- **Generalises #3564 (scope-(a)):** the mirror binding split is Coulomb across A=3–39.
+  Using the canonical shared Coulomb (Z(Z−1) discrete-proton self-energy, r₀=1.2 fm,
+  coulomb_energy.mirror_displacement_mev — NO free parameter), split/ΔE_C=0.838±0.059
+  (7% scatter) across 8 mirror pairs ³H/³He…³⁹K/³⁹Ca ⇒ split PROPORTIONAL to Coulomb
+  (the ~0.84 factor is the known uniform-sphere over-estimate).
+- **Constraint on the kernel (→ #3548/#3534):** any strong kernel (#2089 f_bond, #3548
+  connected tr_M) must be charge-symmetric SYSTEMATICALLY; the #2089 kernel's 2.27 MeV
+  A=3 strong split is 3× the whole observed A=3 split, at all A, not an A=3 accident.
+  f_pp≠f_nn must be removed (or reinterpreted as categorical EM, framing (B)). Not a
+  binding fit.
