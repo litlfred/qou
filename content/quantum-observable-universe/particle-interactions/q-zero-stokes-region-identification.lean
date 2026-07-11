@@ -48,13 +48,14 @@ namespace QOU.BraidKnot.QZeroStokesRegionIdentification
 
     Made abstract here to keep the file lightweight; an actual instance
     can be supplied by importing Mathlib's LaurentPolynomial. -/
-class UniversalBase (R : Type*) where
+class UniversalBase (R : Type*) [Mul R] [One R] where
   /-- Generator q as an element of R. -/
   q : R
   /-- Generator q⁻¹ as an element of R. -/
   q_inv : R
-  /-- The defining relation q · q⁻¹ = 1. -/
-  q_inv_property : True := trivial
+  /-- The defining relation `q · q⁻¹ = 1` (`q_inv` is a right inverse of
+      `q`), witnessing that `q` is a unit in `R`. -/
+  q_inv_property : q * q_inv = 1
 
 /-- An abstract knot complement as a Lean type. The Borromean rings
     B_3 is the canonical instance. -/
@@ -79,13 +80,30 @@ def borromean : KnotComplement where
     conjugation. The class instance asserts existence + uniqueness.
 
     Status: literature-proved; Lean instance carries the conjectural
-    "this knot complement is hyperbolic of finite volume" hypothesis. -/
+    "this knot complement is hyperbolic of finite volume" hypothesis.
+
+    The class abstracts the representation variety (`Rep`), the
+    conjugation equivalence (`Conjugate`), and the discrete-faithful
+    predicate (`IsDiscreteFaithful`) rather than the concrete
+    `PSL₂(ℂ)`-machinery (not in Mathlib); `rigid` then states the actual
+    Mostow–Prasad uniqueness-up-to-conjugation claim. -/
 class MostowPrasadDistinguished (K : KnotComplement) where
-  /-- A symbol naming the unique geometric-component point. -/
-  rho_DF_class : String := "[rho_DF]"
-  /-- Existence + uniqueness property (placeholder; the literature
-      statement provides this). -/
-  rigid : True := trivial
+  /-- The representation variety of `π₁(K)` into `PSL₂(ℂ)` (abstract:
+      the concrete construction is not in Mathlib). -/
+  Rep : Type
+  /-- Conjugacy equivalence on representations. -/
+  Conjugate : Rep → Rep → Prop
+  /-- The discrete-faithful predicate: `r` is the holonomy of a complete
+      finite-volume hyperbolic structure on `K`. -/
+  IsDiscreteFaithful : Rep → Prop
+  /-- The distinguished discrete-faithful representation `ρ_DF`. -/
+  rho_DF : Rep
+  /-- `ρ_DF` is discrete-faithful. -/
+  rho_DF_isDF : IsDiscreteFaithful rho_DF
+  /-- **Mostow–Prasad rigidity** (Mostow 1968, Prasad 1973): the
+      discrete-faithful representation is unique up to conjugation —
+      every discrete-faithful `r` is conjugate to `ρ_DF`. -/
+  rigid : ∀ r : Rep, IsDiscreteFaithful r → Conjugate r rho_DF
 
 /-- **Class axiomatization of Reid's trace-field theorem** (Reid 1990):
     the trace field Q(tr ρ_DF) is a number field of finite degree
@@ -113,18 +131,25 @@ class ReidTraceField (K : KnotComplement) [MostowPrasadDistinguished K] where
       (c) Markov-trace parameterization
 
     The class axiomatizes that SOME such identification exists,
-    without committing to a specific form. Instance inhabitation
-    is the OPEN WORK. -/
+    without committing to a specific form (the invariant map
+    `traceInvariant` is abstract). Instance inhabitation — exhibiting
+    the invariant and proving the identity — is the OPEN WORK. -/
 class QZeroStokesIdentification (K : KnotComplement) (R : Type*)
-    [UniversalBase R] [MostowPrasadDistinguished K]
+    [Mul R] [One R] [UniversalBase R] [MPD : MostowPrasadDistinguished K]
     [ReidTraceField K] where
   /-- The substrate parameter, as an element of R. For our universe,
       R = R (real) and q_0 ≈ 1.1097; categorically R could be C, F_p,
       etc. -/
   q_0 : R
-  /-- The identification: q_0 equals SOME specific algebraic invariant
-      of [ρ_DF]. Currently a placeholder (the open gap). -/
-  identification_witness : True := trivial
+  /-- An algebraic invariant of a representation, valued in the
+      substrate ring `R` (e.g. a trace-field / cusp-shape coordinate;
+      finite over `ℚ` by Reid's theorem, hence `R`-valued). -/
+  traceInvariant : MPD.Rep → R
+  /-- **The identification**: `q_0` equals the invariant of the
+      distinguished discrete-faithful representation `ρ_DF`.  This is
+      the open conjectural content (`q_0 = traceInvariant [ρ_DF]`),
+      now a genuine equation rather than a `True` placeholder. -/
+  identification_witness : q_0 = traceInvariant MPD.rho_DF
 
 /-! ## §3. CONDITIONAL THEOREM CHAIN (verified under class hypotheses) -/
 
@@ -135,7 +160,7 @@ class QZeroStokesIdentification (K : KnotComplement) (R : Type*)
     This is FULLY VERIFIED BY LEAN — no sorrys at the conditional-result
     level. The conjectural content is contained in the class hypotheses. -/
 theorem q_0_well_defined
-    (K : KnotComplement) (R : Type*)
+    (K : KnotComplement) (R : Type*) [Mul R] [One R]
     [UniversalBase R] [MostowPrasadDistinguished K] [ReidTraceField K]
     [inst : QZeroStokesIdentification K R] :
     ∃ q : R, q = inst.q_0 := by
@@ -145,7 +170,7 @@ theorem q_0_well_defined
     sufficient base ring. Demonstrates the Z[q, q⁻¹]-universal framing
     works through the class structure. -/
 theorem q_0_exists_in_universal_base
-    (K : KnotComplement) (R : Type*)
+    (K : KnotComplement) (R : Type*) [Mul R] [One R]
     [UniversalBase R] [MostowPrasadDistinguished K] [ReidTraceField K]
     [QZeroStokesIdentification K R] :
     Nonempty R := by
@@ -165,9 +190,15 @@ specific trace-field degree (SnapPy verifiable); inhabit
 identification (the OPEN GAP).
 -/
 
--- INSTANCES (uninstantiated; would carry sorrys per AGENTS.md §3b-cond):
--- instance : MostowPrasadDistinguished borromean := { }  -- literature
--- instance : ReidTraceField borromean := { trace_field_degree := 4, finite_positive := by omega }  -- SnapPy
--- instance (R : Type*) [UniversalBase R] : QZeroStokesIdentification borromean R := sorry  -- OPEN GAP
+-- INSTANCES (uninstantiated; would carry sorrys per AGENTS.md §3b-cond).
+-- Each field below is now a genuine obligation, not `True`:
+-- instance : MostowPrasadDistinguished borromean :=
+--   { Rep := …, Conjugate := …, IsDiscreteFaithful := …, rho_DF := …,
+--     rho_DF_isDF := …, rigid := … }   -- literature (Mostow–Prasad)
+-- instance : ReidTraceField borromean :=
+--   { trace_field_degree := 4, finite_positive := by omega }   -- SnapPy
+-- instance (R) [Mul R] [One R] [UniversalBase R] :
+--     QZeroStokesIdentification borromean R :=
+--   { q_0 := …, traceInvariant := …, identification_witness := … }  -- OPEN GAP
 
 end QOU.BraidKnot.QZeroStokesRegionIdentification
