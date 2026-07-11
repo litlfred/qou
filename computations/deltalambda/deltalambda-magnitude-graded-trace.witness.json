@@ -1,0 +1,122 @@
+{
+  "computation": "deltalambda-magnitude-graded-trace",
+  "description": "The \u0394_\u03bb magnitude is the trace of the sign-grading g_\u03c1 (= ordinary dimension), a classical q=1 dimension, NOT the substrate q\u2080 quantum dimension. Reduces the closure to constructing g_\u03c1; does not derive it.",
+  "auditOnly": "docs/audits/2026-07-11-deltalambda-magnitude-graded-trace.md",
+  "tier": "symbolic-exact + mpmath (parameter-free; exact identities + q\u2080 q-dimension)",
+  "computedAt": "2026-07-11T12:13:52.539286+00:00",
+  "commitSha": "e63b3238f3ad6d1c068f274bf3641d18c7445cc7",
+  "engine": "sympy+mpmath",
+  "engineVersion": "1.14.0",
+  "scriptFile": "deltalambda_magnitude_graded_trace_probe.py",
+  "scriptHash": "243edc3f3be0",
+  "q0_source": "qou_substrate.q_at(30)",
+  "q0": "1.1099785827513808076",
+  "assertions": [
+    {
+      "name": "delta_lambda_is_graded_trace",
+      "passed": true,
+      "detail": "\u0394_\u03bb = sgn(w_0^{S_{\u03bb'}})\u00b7dim(\u03bb) = (q^{2n(\u03bb)}|_{q=i})\u00b7dim(\u03bb) = tr_{V_\u03bb}(g_\u03c1) for all \u03bb\u22a26 => magnitude = ordinary dimension, NOT a separate weight ansatz"
+    },
+    {
+      "name": "magnitude_is_classical_not_substrate_q0",
+      "passed": true,
+      "detail": "|\u0394_\u03bb|=dim(\u03bb) is the q=1 ordinary dim; the substrate q-dimension dim_q(q\u2080) differs by up to 4.41% => magnitude anchor is q=1, not q\u2080"
+    },
+    {
+      "name": "two_anchor_neither_at_substrate_q0",
+      "passed": true,
+      "detail": "magnitude anchor q=1 (classical dim) \u2297 sign anchor \u03b6\u2084 (grading); substrate q\u2080=1.109979 (real>1) is NEITHER => \u0394_\u03bb is a two-anchor object"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "per_partition": [
+      {
+        "lambda": [
+          5
+        ],
+        "dim_q1": 1,
+        "Delta_lambda": 1,
+        "dim_q_q0": 1.0,
+        "gap_pct": 0.0
+      },
+      {
+        "lambda": [
+          4,
+          1
+        ],
+        "dim_q1": 4,
+        "Delta_lambda": -4,
+        "dim_q_q0": 4.109682411207941,
+        "gap_pct": 2.7420602801985217
+      },
+      {
+        "lambda": [
+          3,
+          2
+        ],
+        "dim_q1": 5,
+        "Delta_lambda": 5,
+        "dim_q_q0": 5.220441275326898,
+        "gap_pct": 4.408825506537966
+      },
+      {
+        "lambda": [
+          3,
+          1,
+          1
+        ],
+        "dim_q1": 6,
+        "Delta_lambda": -6,
+        "dim_q_q0": 6.220441275326898,
+        "gap_pct": 3.6740212554483045
+      },
+      {
+        "lambda": [
+          2,
+          2,
+          1
+        ],
+        "dim_q1": 5,
+        "Delta_lambda": 5,
+        "dim_q_q0": 5.220441275326898,
+        "gap_pct": 4.408825506537966
+      },
+      {
+        "lambda": [
+          2,
+          1,
+          1,
+          1
+        ],
+        "dim_q1": 4,
+        "Delta_lambda": 4,
+        "dim_q_q0": 4.109682411207941,
+        "gap_pct": 2.7420602801985217
+      },
+      {
+        "lambda": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "dim_q1": 1,
+        "Delta_lambda": 1,
+        "dim_q_q0": 1.0,
+        "gap_pct": 0.0
+      }
+    ],
+    "max_q0_gap_pct": 4.408825506537966,
+    "delta_lambda_form": "tr_{V_\u03bb}(g_\u03c1) = (q^{2n(\u03bb)}|_{q=i})\u00b7dim(\u03bb)",
+    "magnitude_anchor": "q=1 (classical dim)",
+    "sign_anchor": "\u03b6\u2084 (grading)",
+    "verdict": "MAGNITUDE REDUCED (structural; g_\u03c1 NOT derived): \u0394_\u03bb = tr_{V_\u03bb}(g_\u03c1) = (-1)^{n(\u03bb)}\u00b7dim(\u03bb), so the magnitude |\u0394_\u03bb|=dim(\u03bb) is not a seventh weight-ansatz \u2014 it is the ordinary dimension carried by the SAME object whose trace gives the sign (the \u03c1-grading g_\u03c1). The magnitude is the CLASSICAL q=1 dimension, NOT the substrate q\u2080 quantum dimension (dim_q(q\u2080) differs by up to 4.41%). So \u0394_\u03bb is a two-anchor object: magnitude at q=1, sign at \u03b6\u2084, NEITHER at the substrate q\u2080. This REDUCES the whole \u0394_\u03bb closure to constructing the single object g_\u03c1 (the principal \u03c1-grading) and pruning the substrate q-dimension. It does NOT derive g_\u03c1 from the 13 drivers \u2014 per 'Axiomatization is NOT a Proof' the binding compute stays blocked until a driver-level construction of g_\u03c1 exists. NOTHING wired."
+  },
+  "context": {
+    "closes_sign": "computations/deltalambda/deltalambda-sign-pivotal-grading-capstone.witness.json (#3529)",
+    "reduced_open_problem": "construct g_\u03c1 (principal \u03c1-grading) from the 13 drivers \u2014 categorical, formalize-first, NOT done",
+    "gate": "Track-A/Subgoal-2 (owner-reversed for this reduction); no fit; nothing wired"
+  }
+}
