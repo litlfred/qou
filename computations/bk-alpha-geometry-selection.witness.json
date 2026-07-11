@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-07-11T17:46:35.988816+00:00",
-  "commitSha": "d0ad0b5f74ecf43dfd0b702abc17028d9371146d",
+  "computedAt": "2026-07-11T17:51:34.151323+00:00",
+  "commitSha": "a3bdb1701e0ead60d1a74d5a76ef20dd1e581a98",
   "assertions": [
     {
       "name": "contact_maximisation_selects_geometry_except_ne20",
@@ -17,8 +17,8 @@
   "durationMs": 5,
   "computation": "bk-alpha-geometry-selection",
   "scriptFile": "bk_alpha_geometry_selection.py",
-  "scriptHash": "af2cb46ade0e",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "08792e655679",
+  "scriptCommitSha": "a3c1f16b12d642076b139da6a059edcf2f2aed60",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,7 +38,7 @@
         "N_need": 3.0116776827739757,
         "C_max": 3,
         "delta": -0.01167768277397574,
-        "geometry": "triangle",
+        "cmax_geometry": "triangle",
         "cmax_exact": true
       },
       "16O": {
@@ -46,7 +46,7 @@
         "N_need": 5.9766446344520485,
         "C_max": 6,
         "delta": 0.02335536554795148,
-        "geometry": "tetrahedron",
+        "cmax_geometry": "tetrahedron",
         "cmax_exact": true
       },
       "20Ne": {
@@ -54,7 +54,7 @@
         "N_need": 7.93475683927741,
         "C_max": 9,
         "delta": 1.0652431607225896,
-        "geometry": "triangular bipyramid",
+        "cmax_geometry": "triangular bipyramid",
         "cmax_exact": true
       },
       "24Mg": {
@@ -62,7 +62,7 @@
         "N_need": 11.791725938628602,
         "C_max": 12,
         "delta": 0.20827406137139803,
-        "geometry": "octahedron",
+        "cmax_geometry": "octahedron",
         "cmax_exact": true
       },
       "28Si": {
@@ -70,7 +70,7 @@
         "N_need": 15.925065097270425,
         "C_max": 16,
         "delta": 0.07493490272957537,
-        "geometry": "pentagonal bipyramid+",
+        "cmax_geometry": "pentagonal bipyramid+",
         "cmax_exact": false
       },
       "32S": {
@@ -78,7 +78,7 @@
         "N_need": 18.801329252231866,
         "C_max": 18,
         "delta": -0.8013292522318665,
-        "geometry": "",
+        "cmax_geometry": "",
         "cmax_exact": false
       },
       "36Ar": {
@@ -86,7 +86,7 @@
         "N_need": 21.550608066712773,
         "C_max": 21,
         "delta": -0.5506080667127726,
-        "geometry": "",
+        "cmax_geometry": "",
         "cmax_exact": false
       },
       "40Ca": {
@@ -94,7 +94,7 @@
         "N_need": 24.46500953751669,
         "C_max": 25,
         "delta": 0.5349904624833108,
-        "geometry": "tricapped trigonal prism+",
+        "cmax_geometry": "tricapped trigonal prism+",
         "cmax_exact": false
       }
     }
