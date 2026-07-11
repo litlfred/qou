@@ -35,6 +35,7 @@ import Mathlib.Algebra.Ring.Defs
 import Mathlib.Algebra.Ring.Basic
 import Mathlib.Data.List.Basic
 import Mathlib.Tactic.Ring
+import Mathlib.Tactic.NormNum
 
 namespace QOU.BraidKnot.PrincipalGradingJetOrder
 
