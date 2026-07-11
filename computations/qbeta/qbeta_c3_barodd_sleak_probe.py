@@ -28,7 +28,7 @@ _WITNESS = (Path(__file__).resolve().parent
 
 
 def main() -> None:
-    r = json.loads(_WITNESS.read_text())["result"]
+    r = json.loads(_WITNESS.read_text(encoding="utf-8"))["result"]
     vol = float(r["Vol_4_1"])
     c3 = {"muon": float(r["c3_muon"]), "proton": float(r["c3_proton"])}
     claim = {"muon": float(r["claim_muon"]), "proton": float(r["claim_proton"])}
