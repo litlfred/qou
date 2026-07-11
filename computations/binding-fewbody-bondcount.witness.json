@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-11T15:01:18.830417+00:00",
-  "commitSha": "4e8dbb8815f669fc3f14941596b07816b8ebcd62",
+  "computedAt": "2026-07-11T18:46:31.998542+00:00",
+  "commitSha": "faa944dd542b03b5538cf64ad1e5840edfaeaa24",
   "assertions": [
     {
       "name": "fewbody_truncation_tames_overshoot",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 12,
   "computation": "binding-fewbody-bondcount",
   "scriptFile": "binding_fewbody_bondcount.py",
-  "scriptHash": "f016578423aa",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "ed5eb90593be",
+  "scriptCommitSha": "aa516278c4ee44b4bb1633fa4cb763b9be0b7a67",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

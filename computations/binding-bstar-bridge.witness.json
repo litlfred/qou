@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-11T18:11:13.052079+00:00",
-  "commitSha": "fa9a7b0b622f9b8cb4f3ebf1a0a616f115cc4798",
+  "computedAt": "2026-07-11T18:46:32.289935+00:00",
+  "commitSha": "faa944dd542b03b5538cf64ad1e5840edfaeaa24",
   "assertions": [
     {
       "name": "connected_equals_centered_gram_norm",
@@ -17,8 +17,8 @@
   "durationMs": 10,
   "computation": "binding-bstar-bridge",
   "scriptFile": "binding_bstar_bridge.py",
-  "scriptHash": "77099a0cec27",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "b73611c3e7ea",
+  "scriptCommitSha": "50f21210281b89e32ee3a60480aa054332f89626",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

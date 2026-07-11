@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-11T18:19:22.423866+00:00",
-  "commitSha": "9b8756bce05fc7e0d2ef1acba84d0d2e2c1add96",
+  "computedAt": "2026-07-11T18:46:32.142495+00:00",
+  "commitSha": "faa944dd542b03b5538cf64ad1e5840edfaeaa24",
   "assertions": [
     {
       "name": "edge_set_is_max_contact_packing",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 10,
   "computation": "binding-edge-set-selection",
   "scriptFile": "binding_edge_set_selection.py",
-  "scriptHash": "4e06d371586a",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "77de5b2aa745",
+  "scriptCommitSha": "1b5924873b227fe493c63a039d5d7e5d80323460",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

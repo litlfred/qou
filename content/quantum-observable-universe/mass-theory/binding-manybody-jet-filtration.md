@@ -56,7 +56,7 @@ one equation per isotope) — extraction is a fit. Closure therefore requires th
 *derived* $R(q,x)$. The eigenfunction relation of the na-Stokes period
 $a_D^{(n)}=S(n)/n$ (the seed $c_3=[2]_q$ exact, and the Habiro
 $(q-1)^2\Phi_3$ deviation, formalized in
-[`QOU.Mass.BindingEigenfunctionTwoTier`](lean/QOU/Mass/BindingEigenfunctionTwoTier.lean))
+[`QOU.Mass.BindingEigenfunctionTwoTier`](../lean/QOU/Mass/BindingEigenfunctionTwoTier.lean))
 supplies a *derived target* for $R(q,x)$ but does not determine it — the binding
 deviation and the $Q_\beta$ $c_k$ ladder share the Habiro *ring*, not the same
 element.
