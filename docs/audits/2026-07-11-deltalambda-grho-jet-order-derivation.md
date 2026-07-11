@@ -63,7 +63,14 @@ per §7c):
 - `principalGrading (λ)` — the principal/co-content grading `Σ_box row(box)`;
 - `zeta4_eval_principalGrading` — `i^{2·n(λ)} = (−1)^{n(λ)}` over any `CommRing` with
   `i² = −1` (the ζ₄ evaluation giving the sign);
-- `deltaSign` + `deltaSign_sq` — the sign lands in `{+1, −1}` (a genuine `ℤ/2` value).
+- `deltaSign` + `deltaSign_sq` — the sign lands in `{+1, −1}` (a genuine `ℤ/2` value);
+- **assembly identity** `deltaValueRing` / `deltaValueRing_zeta4` — `i^{2·n(λ)}·d =
+  (−1)^{n(λ)}·d`, the ring-level `Δ_λ = tr(g_ρ) = (−1)^{n(λ)}·dim(λ)` (#3537 magnitude ×
+  #3542 sign), with `deltaValue_natAbs` proving `|Δ_λ| = dim(λ) = d`. The magnitude
+  `d = dim(λ)` is the **cited #3537 input**, not re-derived (re-assuming it in Lean would
+  be a self-assuming projection);
+- **bar-parity selection rule** `deltaSign_eq_one_iff_even` / `deltaSign_eq_neg_one_iff_odd`
+  — `V_λ` is bar-even (`+`) iff `n(λ)` even, bar-odd (`−`) iff `n(λ)` odd.
 
 The Lean **does not** define SYT / the major index / the fake-degree valuation and does
 **not** re-prove `n(λ) = min maj(SYT(λ))`. That valuation is a **published classical
