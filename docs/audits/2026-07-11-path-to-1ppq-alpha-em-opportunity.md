@@ -50,12 +50,43 @@ is derivation-incompleteness — not a calibration floor.**
 | calibration floor (via q₀) | ~0.06 ppb — **below** σ_α ⇒ 1 ppq-capable |
 
 Because α_EM's floor (q₀ at ~0.06 ppb) sits *below* its experimental σ (0.15 ppb),
-the 80 ppb residual is a **missing-higher-order-terms** problem (the Rogers–Turaev
-/ Schwinger / Bring-measure program, `alpha_em_rt_phase2/3/4`), **closable in
-principle** — unlike absolute masses, which hit a hard calibration wall. Closing
-α_EM to ≤ 0.15 ppb would be a **structural derivation of the fine-structure
-constant** — arguably the single highest-value 1-ppq target in the framework, and
-one the mass-focused L2 dashboard does not even track.
+the residual is a **missing-higher-order-terms** problem (the Rogers–Turaev /
+Schwinger / Bring-measure program, `alpha_em_rt_phase2/3/4`) — **a derivation gap,
+not a calibration wall**, unlike absolute masses. Closing α_EM to ≤ 0.15 ppb would
+be a **structural derivation of the fine-structure constant** — the single
+highest-*value* 1-ppq target, one the mass-focused L2 dashboard does not track.
+
+### Follow-up caveats (form-ladder probe — corrects the optimism above)
+
+A standalone reconstruction of the form
+([`alpha_em_form_ladder_probe.py`](../../computations/alpha_em_form_ladder_probe.py);
+the committed `alpha_em_4pi_fixed_point_solve.py` has a stale `_precision` import
+post-miga) shows the "closable" framing must be qualified by **three honest
+caveats**:
+
+- **The integers are NOT free fits** (fair to the framework): `g=4` is Bring's
+  genus; `[9]`, `[10]` are the crossing numbers of the two genus-4 torus knots
+  `T_{2,9}`, `T_{3,5}` (`prop:force-carrier-bring-uniqueness`); the zero-mode
+  `2g/(4π(g−1)) = dim H¹/Area = 2/(3π)`. So `q·[9]_q·[10]_q + 2/(3π)` is
+  structurally motivated, not tuned.
+- **(A) It is CONJECTURAL.** The form is conditional on *three* unproved Lean
+  classes (`ArchimedeanLimit`, `BlochSuslinUniqueness`, `BringZeroModeBlochClass`).
+  Conditional-class ≠ established (anti-laundering rule) — it is not a proved
+  derivation.
+- **(B) It is ANCHOR-DEPENDENT.** The best (fixed-point `α²H+αT=1`) residual is
+  **+1.7 ppb at the proton pin** but **+80 ppb at the muon pin** (the committed
+  witness — and the "80 ppb" headline above — is the *muon* value). The residual
+  ladder at each anchor: tree `−4180 ppb` → `+O(α)` `+57 ppb` → fixed-point
+  `+80 ppb` (muon); `−4259 → −21 → +1.7 ppb` (proton).
+- **(C) It is NOT at target.** Even the best form is ~80 ppb (muon) = **~537× σ_α**
+  (11× at proton); the content block's "approaches σ_α" for the `+O(α)` (57 ppb)
+  form is a ~380× overstatement.
+
+**Revised status:** α_EM remains the highest-*value* 1-ppq target and *is* a
+derivation gap (not a calibration wall), but closing it is **long-horizon and
+conjectural** — it needs the three upstream classes *proved* plus the `O(α)` tower
+nailed to sub-0.15 ppb — **not a near-term win**. The earlier "closable in
+principle" wording over-stated near-term tractability.
 
 ## The two active levers, ranked
 
@@ -64,8 +95,11 @@ one the mass-focused L2 dashboard does not even track.
    **This session proved the geometry-side (`4₁`) is magnitude-negative (~2350×
    short) — so `Φ_b` is the only route**, with a concrete target (O(10⁻²),
    off-real-axis, near-singular; #3573).
-2. **α_EM (fundamental, 1-for-∞).** ~80 ppb → 0.15 ppb via the RT derivation
-   program. A *derivation* gap, not a calibration wall. Highest scientific value.
+2. **α_EM (fundamental, 1-for-∞).** ~80 ppb (muon) / ~1.7 ppb (proton) → 0.15 ppb
+   via the RT derivation program. A *derivation* gap, not a calibration wall, with
+   structurally-derived integers — but **long-horizon and conjectural** (3 unproved
+   upstream classes + the O(α) tower; see the caveats above). Highest scientific
+   value; not near-term.
 
 Absolute m_p / m_n / m_μ are **not** near-term 1-ppq targets: m_p/m_n are
 CAL-2-floor-limited (Subgoal-2, needs s5-so3); m_μ is the μ–p calibration
@@ -87,8 +121,9 @@ off-real-axis `c_b`-lattice, not more canonical readouts.
 ## Bottom line
 
 - **Reachable now:** 5/7 via `Φ_b` (the c₃ trio).
-- **Highest value:** α_EM to 0.15 ppb (a closable derivation gap — the real 1-ppq
-  prize, currently untracked by the L2 dashboard).
+- **Highest value:** α_EM to 0.15 ppb — the real 1-ppq prize (untracked by the L2
+  dashboard), a derivation gap with structurally-derived integers, but a
+  **long-horizon conjectural** close (3 unproved classes + O(α) tower), not near-term.
 - **Walled off:** absolute-mass 1 ppq (calibration floor; needs s5-so3 / owner
   reversal).
 
