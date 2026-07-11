@@ -83,7 +83,7 @@ theorem denomPoly_root_iff (q x : ℝ) (n : ℕ) (k : ℕ) (hk : k < n) :
     and shape `x` when the denominator polynomial `(x; q)_n` vanishes.
     The geometric reading (parallel transport around the matched
     ideal-tetrahedron cusp yields holonomy 1) is recorded as a
-    separate complex-valued `CuspComplete` structure in
+    separate complex-valued `GeometricShape` structure in
     `shared-denominator-cusp-holonomy.lean`; the present predicate is
     the purely algebraic shadow. -/
 -- Ref: [manuscript] conj:shared-denominator-cusp-holonomy

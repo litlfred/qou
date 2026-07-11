@@ -56,11 +56,16 @@ theorem coeff_comp_neg_X (p : R[X]) (n : ℕ) :
 theorem coeff_odd_eq_zero_of_comp_neg_eq (p : R[X])
     (heven : p.comp (-X) = p) (h2 : ∀ r : R, 2 * r = 0 → r = 0)
     {n : ℕ} (hn : Odd n) : p.coeff n = 0 := by
-  have h := congrArg (fun q => Polynomial.coeff q n) heven
-  simp only at h
+  have h : (p.comp (-X)).coeff n = p.coeff n := by rw [heven]
   rw [coeff_comp_neg_X, hn.neg_one_pow] at h
   have : (2 : R) * p.coeff n = 0 := by linear_combination -h
   exact h2 _ this
+
+/-- Two-torsion-freeness from the standard typeclasses: in a ring with no
+    zero divisors where `2 ≠ 0`, `2·r = 0` forces `r = 0`. -/
+theorem two_torsion_free_of_noZeroDivisors [NoZeroDivisors R] [NeZero (2 : R)]
+    (r : R) (h : 2 * r = 0) : r = 0 :=
+  (mul_eq_zero.mp h).resolve_left (NeZero.ne (2 : R))
 
 /-- **Neumann–Zagier even-potential data (§3b-cond hypothesis class).**
 
@@ -78,17 +83,17 @@ class NeumannZagierEvenPotential (R : Type*) [CommRing R] where
 /-- **No cubic rung (derived).**  The geometric NZ series has no `u³` term:
     parity kills every odd order.  This is the proved invariant behind the
     scope-(b) exclusion of "S·u³ as a geometric NZ coefficient". -/
-theorem no_cubic_rung (R : Type*) [CommRing R]
-    [nz : NeumannZagierEvenPotential R]
-    (h2 : ∀ r : R, 2 * r = 0 → r = 0) :
+theorem no_cubic_rung (R : Type*) [CommRing R] [NoZeroDivisors R] [NeZero (2 : R)]
+    [nz : NeumannZagierEvenPotential R] :
     nz.potential.coeff 3 = 0 :=
-  coeff_odd_eq_zero_of_comp_neg_eq nz.potential nz.even_potential h2 (by norm_num)
+  coeff_odd_eq_zero_of_comp_neg_eq nz.potential nz.even_potential
+    two_torsion_free_of_noZeroDivisors (by norm_num)
 
 /-- Every odd order vanishes, not just the cubic. -/
-theorem no_odd_rung (R : Type*) [CommRing R]
-    [nz : NeumannZagierEvenPotential R]
-    (h2 : ∀ r : R, 2 * r = 0 → r = 0) {n : ℕ} (hn : Odd n) :
+theorem no_odd_rung (R : Type*) [CommRing R] [NoZeroDivisors R] [NeZero (2 : R)]
+    [nz : NeumannZagierEvenPotential R] {n : ℕ} (hn : Odd n) :
     nz.potential.coeff n = 0 :=
-  coeff_odd_eq_zero_of_comp_neg_eq nz.potential nz.even_potential h2 hn
+  coeff_odd_eq_zero_of_comp_neg_eq nz.potential nz.even_potential
+    two_torsion_free_of_noZeroDivisors hn
 
 end QOU.Knot.NeumannZagierParity
