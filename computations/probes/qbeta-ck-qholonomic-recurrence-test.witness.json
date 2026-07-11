@@ -1,0 +1,328 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-11T17:18:57.811174+00:00",
+  "computation": "qbeta-ck-qholonomic-recurrence-test",
+  "scriptFile": "qbeta_ck_qholonomic_recurrence_test.py",
+  "scriptHash": "bede44e14e28",
+  "commitSha": "8012d26ccfe57a867be4c9948a49bbbbf040453c",
+  "audit_only": true,
+  "tier": "structural test (known operator vs empirical data; no fit, no wiring)",
+  "description": "PROBE 5 (2026-07-11 untested-avenues audit Sec. 3.E): drive the P-C15/KC15 q-holonomic survivor to a verdict. Tests whether the machine-verified 4_1 order-2 qZeilberger operator (aj_figure_eight_certificate.py; Garoufalidis-Le arXiv:math/0309214), instantiated as the c_k recursion kernel via the corpus I-A color<->rung dictionary with x = q0^k, annihilates the empirical rung sequence c_2..c_7 (sequential ladder extraction, both anchors), in homogeneous (D1) and inhomogeneous (D2) form. Kill criterion pre-stated. Hopf-link operator: ABSENT from corpus -> untested (no literature hunt per pre-statement). No parameter tuned; a clean negative sharpens P-C15 (scope-(a): raw instantiation excluded, operator survives as fibre object).",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 50,
+    "sigma_R": "6e-7 (AME neutron Q-value; precision-floor witness)"
+  },
+  "dictionaries_tested": {
+    "I-A_direct_x_eq_q0_pow_k": {
+      "source": "docs/coordination/z-ck-fmap-keystone.md Sec. 4-bis (the only corpus-named color<->rung identification); q^N -> q^k per 2026-07-11 audit Sec. 3.E",
+      "variants": [
+        "D1 homogeneous",
+        "D2 inhomogeneous (P-C15 operator form)"
+      ]
+    },
+    "I-B_cyclotomic_rebasing": "NOT tested (corpus-flagged 'genuinely hard; NOT attempted'; out of scope here)",
+    "hopf_link_operator": "UNTESTED \u2014 no Hopf-link annihilator exists in the corpus; pre-statement forbids a literature hunt"
+  },
+  "data": {
+    "q0_proton_50dps": "1.1099785827513808075916690956107688798744991218736",
+    "q0_muon_50dps": "1.1099785955573347198997632204832250266562084087802",
+    "Q_AME_MeV": "0.78233340931",
+    "anchors": {
+      "proton": {
+        "u": "0.0085172345501561421892555736033092029691942216116301",
+        "b_hoefsmit": "0.86758406696525115565116289153605239570497937739431",
+        "Q_A": "0.78364582737462121307493975134139689052573644103026",
+        "c_emp": {
+          "c_2": "-1.0176359545555767093278322671713513702481721232761",
+          "c_3": "-2.0707700268905350699700042393177455941068078631599",
+          "c_4": "-8.3090484272784869882400973287583210087382136179405",
+          "c_5": "-842.51848240455242025253576475490386668761567406107",
+          "c_6": "-98772.174863156029343298010600904613549723347964853",
+          "c_7": "-11597095.875407670689599468417946751307642927334825"
+        },
+        "sigma_ck": {
+          "c_2": "0.0082709241125259477360725931358016417785270154688005",
+          "c_3": "0.97108093757665990688668054213799632104749266430169",
+          "c_4": "114.01364279193856028024311086602477492877435001494",
+          "c_5": "13386.227903028501821590693937425490563623465839771",
+          "c_6": "1571663.6455412747579203960592810366240659306245912",
+          "c_7": "184527458.56487681633263334836406414164448977375377"
+        },
+        "residuals": [
+          {
+            "k": 2,
+            "x": "1.232052454166763931269804513535636184849681422917",
+            "a2": "0.10142376955455035456566657908256838011619458269527",
+            "a1": "0.15589431024075729326357512635521392621437293795161",
+            "a0": "0.071379699032466870563259101101445866270905680453581",
+            "b": "0.36472759266351246400022960075187331418594369821201",
+            "res_hom": "-1.2381948260760209104249356864172177667982117990557",
+            "res_inh": "-1.6029224187395333744251652871690910809841554972677",
+            "rel_res_hom": 1.4692576042456293,
+            "rel_res_inh": 1.9020479678569266,
+            "res_over_sigma_hom": 0.1070668934606666,
+            "res_over_sigma_inh": 0.1386049434375223,
+            "c_next_emp": "-8.3090484272784869882400973287583210087382136179405",
+            "c_next_pred_hom": "3.8990841585456175801033500489445424210795192605125",
+            "c_next_pred_inh": "7.4951602486513519981072660916138794804027973209433",
+            "pred_err_rel_hom": 1.4692576042456293,
+            "pred_err_rel_inh": 1.9020479678569266
+          },
+          {
+            "k": 3,
+            "x": "1.3675518369513851879667240299093610007110975207728",
+            "a2": "0.11264847749747336514699421317790179091702828351629",
+            "a1": "0.1496825436245113902229203899009414421572220597516",
+            "a0": "0.087520487988000622520426790533384654092216329522841",
+            "b": "0.42495616538376753615545190191925083963059267568383",
+            "res_hom": "-96.333378613313307335463724942951610187538940523913",
+            "res_inh": "-96.758334778697074871619176844870861027169533199597",
+            "rel_res_hom": 1.0150139918281549,
+            "rel_res_inh": 1.0194915307662376,
+            "res_over_sigma_hom": 0.06388007825633975,
+            "res_over_sigma_inh": 0.06416187293115538,
+            "c_next_emp": "-842.51848240455242025253576475490386668761567406107",
+            "c_next_pred_hom": "12.649565609891492056478310331580752386368160058012",
+            "c_next_pred_inh": "16.421974920912131789496274977686290278969106597621",
+            "pred_err_rel_hom": 1.0150139918281549,
+            "pred_err_rel_inh": 1.0194915307662376
+          },
+          {
+            "k": 4,
+            "x": "1.5179532498183459375471101827762736396207805095133",
+            "a2": "0.11079537521866404311948363553211688262822892462983",
+            "a1": "0.11305701075453178926065725430263649491938805994289",
+            "a0": "0.091074846311408021425086208650561140775352362326",
+            "b": "0.43643161999865272687045837427509723726538636610008",
+            "res_hom": "-11039.509541561480777652161120196274428029589841666",
+            "res_inh": "-11039.945973181479430379031578570549525266855228032",
+            "rel_res_hom": 1.008773186357033,
+            "rel_res_inh": 1.0088130667986663,
+            "res_over_sigma_hom": 0.06339458112887518,
+            "res_over_sigma_inh": 0.06339708734526432,
+            "c_next_emp": "-98772.174863156029343298010600904613549723347964853",
+            "c_next_pred_hom": "866.54669696392214438699674854257470257834243962385",
+            "c_next_pred_inh": "870.48577491855082825713595282613005631132595797497",
+            "pred_err_rel_hom": 1.008773186357033,
+            "pred_err_rel_inh": 1.0088130667986663
+          },
+          {
+            "k": 5,
+            "x": "1.6848955969162203200789093193345365487614390431036",
+            "a2": "0.10115422469856528839404799147569781299151138529691",
+            "a1": "0.060061874799127044144362643159513125122620742196055",
+            "a0": "0.086283255188826282300680559861035194132781193560968",
+            "b": "0.41589593600801738734110678034561272790465938523578",
+            "res_hom": "-1179100.3792692792124528640699956826974619159223996",
+            "res_inh": "-1179100.795165215220470251411102463043074643827059",
+            "rel_res_hom": 1.0051190534428271,
+            "rel_res_inh": 1.0051194079715313,
+            "res_over_sigma_hom": 0.06316844679535062,
+            "res_over_sigma_inh": 0.06316846907632073,
+            "c_next_emp": "-11597095.875407670689599468417946751307642927334825",
+            "c_next_pred_hom": "59366.153567801985939451293811251040682893477939526",
+            "c_next_pred_inh": "59370.265071174656405966646263206064488014491211707",
+            "pred_err_rel_hom": 1.0051190534428271,
+            "pred_err_rel_inh": 1.0051194079715313
+          }
+        ]
+      },
+      "muon": {
+        "u": "0.008517236340484921439933112902299396082389042230275",
+        "b_hoefsmit": "0.86758406730714238749179779530277068827007617830461",
+        "Q_A": "0.78364580389732154959887648170674779109806708258264",
+        "c_emp": {
+          "c_2": "-1.0172173285667249513240662532242009198014962651869",
+          "c_3": "-2.0216155770600061205300249700296445660947408834059",
+          "c_4": "-2.5378659117940255569454500193524358506536548507375",
+          "c_5": "-164.9296696299712031518950611722434179366681117466",
+          "c_6": "-19217.145207925212509908947239063591863338382397016",
+          "c_7": "-2256618.8430159516520727812660641237219778024166901"
+        },
+        "sigma_ck": {
+          "c_2": "0.0082709206354187450212833853847077851858491136150625",
+          "c_3": "0.97108032521119959337552618838662475094184353686578",
+          "c_4": "114.01354692899269483307980019153948459399150673308",
+          "c_5": "13386.2138340640941690028157170253252192200507838",
+          "c_6": "1571661.6633538152743242548406182953050541863700117",
+          "c_7": "184527187.05048098795306280478723179040461995157149"
+        },
+        "residuals": [
+          {
+            "k": 2,
+            "x": "1.2320524825954332439887374306150381974320718970347",
+            "a2": "0.10142378362322153602395474004865334105777664398821",
+            "a1": "0.15589432570702900813703329710834689405358834993477",
+            "a0": "0.07137970901763478434886544323111094413681561560413",
+            "b": "0.36472764542876866804775811985435286569189422232743",
+            "res_hom": "-0.64516703724793169782795993598529649591380510036008",
+            "res_inh": "-1.0098946826767003658757180558396493616056993226875",
+            "rel_res_hom": 1.7689008369230756,
+            "rel_res_inh": 2.7689008369230756,
+            "res_over_sigma_hom": 0.05578773023622122,
+            "res_over_sigma_inh": 0.08732580691736604,
+            "c_next_emp": "-2.5378659117940255569454500193524358506536548507375",
+            "c_next_pred_hom": "3.8232361315359487507446530724954268843537885666484",
+            "c_next_pred_inh": "7.4193122430690453831099756452914127133499150432934",
+            "pred_err_rel_hom": 2.5064768054799598,
+            "pred_err_rel_inh": 3.923445328056875
+          },
+          {
+            "k": 3,
+            "x": "1.3675518842842065708680446563241310659639760933997",
+            "a2": "0.11264848764334436104373290784933921945300254585524",
+            "a1": "0.14968254371070903160072125677952710769123164629024",
+            "a0": "0.087520496005553107238526422951077518743507009190205",
+            "b": "0.42495620801755411548483072368512920695493901367076",
+            "res_hom": "-19.135884874643550681478906913800748256356021588012",
+            "res_inh": "-19.560841082661104796963737637485877463310960601683",
+            "rel_res_hom": 1.029969572643291,
+            "rel_res_inh": 1.052842409035818,
+            "res_over_sigma_hom": 0.01268929851236607,
+            "res_over_sigma_inh": 0.012971093486235461,
+            "c_next_emp": "-164.9296696299712031518950611722434179366681117466",
+            "c_next_pred_hom": "4.9428717150093922023706826849109323433220923903345",
+            "c_next_pred_inh": "8.7152810647292498050201081923867533518423682127283",
+            "pred_err_rel_hom": 1.029969572643291,
+            "pred_err_rel_inh": 1.052842409035818
+          },
+          {
+            "k": 4,
+            "x": "1.5179533198695703365978118109180725148927814779191",
+            "a2": "0.1107953799138747211153003131494173047568482374329",
+            "a1": "0.11305699282589213806256510643142412495961392987786",
+            "a0": "0.091074850342465531148481410219762798379263631760102",
+            "b": "0.43643164532334179598942833914183618084436134404664",
+            "res_hom": "-2148.0484924064092416773712387660575927551777042787",
+            "res_inh": "-2148.4849240517325834733606671051994289360220656227",
+            "rel_res_hom": 1.008866168609221,
+            "rel_res_inh": 1.0090711458820498,
+            "res_over_sigma_hom": 0.012335221948153608,
+            "res_over_sigma_inh": 0.012337728167742828,
+            "c_next_emp": "-19217.145207925212509908947239063591863338382397016",
+            "c_next_pred_hom": "170.3824496013510351294376095457620872256676216467",
+            "c_next_pred_inh": "174.32152761762387961708246154200612401393775611471",
+            "pred_err_rel_hom": 1.008866168609221,
+            "pred_err_rel_inh": 1.0090711458820498
+          },
+          {
+            "k": 5,
+            "x": "1.6848956941104193538209389017847722713722954127032",
+            "a2": "0.10115422425508595275615624702125824736773611174945",
+            "a1": "0.060061841361773054500590508963583132674110801049269",
+            "a0": "0.086283255000344835240226057305203432179143852818239",
+            "b": "0.41589594336620803982870176570111247363811092702234",
+            "res_hom": "-229434.97630033454337399950490581329400143629917709",
+            "res_inh": "-229435.39219627790958203933360757899511390993728802",
+            "rel_res_hom": 1.0051187872497145,
+            "rel_res_inh": 1.0051206092248681,
+            "res_over_sigma_hom": 0.012291635841242245,
+            "res_over_sigma_inh": 0.01229165812224563,
+            "c_next_emp": "-2256618.8430159516520727812660641237219778024166901",
+            "c_next_pred_hom": "11551.151761095317744025790896137700382211904513934",
+            "c_next_pred_inh": "11555.263264558756119684698501309843974718401673647",
+            "pred_err_rel_hom": 1.0051187872497145,
+            "pred_err_rel_inh": 1.0051206092248681
+          }
+        ]
+      }
+    },
+    "cross_anchor_swing_pct": {
+      "c_2": 0.041137106740158455,
+      "c_3": 2.3737280911072096,
+      "c_4": 69.45659982601319,
+      "c_5": 80.42420753082342,
+      "c_6": 80.54396874975203,
+      "c_7": 80.54151774496195
+    },
+    "uninformative_rungs_sigma_exceeds_ck": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "operator_transcription_worst_rel_residual": 7.538852833123238e-69
+  },
+  "assertions": [
+    {
+      "name": "operator_annihilates_colored_jones_q1p3_N1_6",
+      "passed": true,
+      "computed": 7.538852833123238e-69,
+      "expected": 0.0,
+      "tolerance": 1e-45,
+      "source": "a2 J_{N+2}+a1 J_{N+1}+a0 J_N = b at q=1.3, N=1..6, vs Habiro cyclotomic sum; 70-dps compute (guards the 2026-07-07 a1 incident)"
+    },
+    {
+      "name": "muon_c3_matches_N3_witness",
+      "passed": true,
+      "computed": "-2.0216156",
+      "expected": "-2.0216156",
+      "tolerance": 1e-12,
+      "source": "q-beta-operator-valued-N3.witness.json c_3_empirical_additive"
+    },
+    {
+      "name": "muon_c2_c7_match_extended_ck_witness_2026_07_07",
+      "passed": true,
+      "computed": 5.5321366698869444e-42,
+      "expected": 0.0,
+      "tolerance": 1e-09,
+      "source": "qbeta-decay-sdp-extended-ck.witness.json c_k_extracted_50dps (authoritative current extraction, computed at the pinning-witness q0 = the computations-layer muon value)"
+    },
+    {
+      "name": "c3_cross_anchor_swing_near_2p4pct",
+      "passed": true,
+      "computed": 2.3737280911072096,
+      "expected": 2.4,
+      "tolerance": 1.1,
+      "source": "registry: c_3 swings ~2.4-2.9% proton<->muon"
+    },
+    {
+      "name": "kill_rel_residual_exceeds_ck_uncertainty_both_anchors_all_dicts",
+      "passed": true,
+      "computed": {
+        "proton": 1.0051190534428271,
+        "muon": 1.0051187872497145
+      },
+      "expected": "> 0.24 (10x the 2.4% c_3 cross-anchor scale) at both anchors",
+      "tolerance": null,
+      "source": "pre-stated kill criterion (Y1): residual >> empirical c_k uncertainty at BOTH anchors for every named dictionary variant"
+    },
+    {
+      "name": "caveat_residuals_below_AME_extraction_noise_floor",
+      "passed": true,
+      "computed": true,
+      "expected": true,
+      "tolerance": null,
+      "source": "Y2: sigma(c_k)=sigma_R/u^k floor \u2014 residuals are within the (enormous) AME noise band; the floor makes rungs k>=4 individually unfalsifiable (sigma > |c_k|), so Y2-consistency is vacuous, not a pass"
+    }
+  ],
+  "verdict": {
+    "overall": "NEGATIVE (scope-(a))",
+    "min_rel_residual_per_anchor": {
+      "proton": 1.0051190534428271,
+      "muon": 1.0051187872497145
+    },
+    "c3_uncertainty_scale": 0.024,
+    "within_AME_noise_floor": true,
+    "operator_c4_prediction_inh": {
+      "proton": "7.4951602486513519981072660916138794804027973209433",
+      "muon": "7.4193122430690453831099756452914127133499150432934"
+    },
+    "operator_c4_prediction_cross_anchor_swing_pct": 1.0119597589118177,
+    "summary": "The 4_1 order-2 qZeilberger operator, instantiated as the recursion kernel via the corpus I-A color<->rung dictionary (x = q0^k), does NOT annihilate the empirical rung sequence as-is: relative residuals are O(1) (100-280% of the largest term) at EVERY rung k=2..5, at BOTH anchors, for BOTH the homogeneous and the inhomogeneous variant \u2014 >40x the 2.4% c_3 cross-anchor uncertainty scale, and anchor-stable (so not a noise fluke of one anchor). Its inhomogeneous c_4 prediction (+7.4 to +7.5, anchor-stable to ~1%) has the WRONG SIGN vs every recorded empirical/candidate c_4 (raw -2.54/-8.31; fit -0.97; form -2b^4 = -1.13). Scope-limited (a): this excludes the RAW q^N -> q^k instantiation only \u2014 it sharpens P-C15 (the surviving kernel candidate needs a conjugation / basis change / twist, e.g. the I-B cyclotomic re-basing or the KC15 pair-difference channel), and it does NOT retest or disturb P-C15's bar-parity survivor status. CAVEAT (Y2): the AME extraction floor sigma(c_k)=sigma_R/u^k exceeds |c_k| for k>=4, so the kill is at the level of the recorded empirical sequence; a noise-floor-proof retest needs genuine canonical rungs (the H_4 Hoefsmit c_4^even build, bean 8we6 \u2014 exactly the gated next step P-C15 already named).",
+    "scope": "(a) scope-limited \u2014 raw q^N -> q^k instantiation only; not a structural exclusion of the 4_1 operator as fibre kernel (P-C15 bar-parity survivor status unchanged)"
+  },
+  "context": {
+    "task": "docs/audits/2026-07-11-qbeta-ck-untested-avenues-and-literature.md Sec. 3.E (PROBE 5)",
+    "pc15": "docs/audits/2026-07-03-qbeta-pc15-casoratian-bar-parity.md",
+    "a1_correction": "docs/audits/2026-07-07-pc15-a1-transcription-error-correction.md",
+    "registry": "docs/coordination/ck-dk-canonical-registry.md Sec. 9 (KC11, KC15)",
+    "operator_source": "computations/aj_figure_eight_certificate.py",
+    "extraction_source": "computations/qbeta/qbeta_decay_sdp_extended_ck.py",
+    "precision_floor": "computations/qbeta/qbeta-ck-extraction-precision-floor.witness.json"
+  },
+  "durationMs": 11,
+  "allPassed": true
+}
