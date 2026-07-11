@@ -140,6 +140,11 @@ import QOU.BraidKnot.DeltaLambdaSignRule
 -- proved stabilisation-invariance (the q-deformed H_n(q) side of the knot
 -- invariant; complementary to the q=1 k[S_n] Wedderburn build).
 import QOU.BraidKnot.JonesViaMarkovTrace
+-- Nuclear quotient braid Jones value (RHS of the open jet-filtered-knot-factor
+-- Part-4 conjecture): the (2,k) torus-link Markov-trace values unknot/Hopf/
+-- trefoil + the shell-structure Z,N ↦ k∈{1,2,3} classifier. Infra only — builds
+-- jonesQuotient, does NOT prove a(Z,N)=J_β̄(q).
+import QOU.BraidKnot.JonesNuclearQuotient
 -- Tier-3 (bean 60iz) general-H_n(q) completion: the arbitrary-braid-word Jones
 -- value + Markov move II (conjugation invariance), on the sibling-landed
 -- IwahoriHeckeAPI element algebra. Move I = IwahoriHeckeAPI.markovTrace_stab_comm;
