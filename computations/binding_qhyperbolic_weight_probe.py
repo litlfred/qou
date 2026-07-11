@@ -16,8 +16,12 @@ growing objects with a structural pedigree, seeking the ~12.72 growth:
   (half)     C_sqrtq0    = C_λ(√q₀)                       [half-monodromy / PION scale
                                                            z=√q; #3487 pion=half-4₁]
   (amp)      sqrt_C      = √C_λ(q₀)                       [amplitude, halves the exponent]
-  (modular)  C_recip     = C_λ(q₀) via the reciprocal-tame branch [Faddeev b↔1/b shadow]
-  (intensive) C_over_dim = C_λ(q₀)/dim_q(λ)               [Casimir per q-dimension]
+  (intensive) C_over_dim = C_λ(q₀)/Π[h]_q(λ)             [Casimir per q-hook-product]
+
+The genuine modular-dual / reciprocal-tame branch (Faddeev b↔1/b shadow) is NOT
+evaluated: the modular dual q̃ of q₀≈1.11 is non-perturbative (e^{±O(400)}), so a
+"C_recip via the b↔1/b branch" weight explodes/collapses by construction — the
+structural refutation below, not an omission.
 
 DISCIPLINE: every candidate is parameter-free (fixed by q₀); NONE is tuned to AME
 (that would be the forbidden 7th Δ_λ ansatz). The probe ASSERTS the refutation
@@ -36,20 +40,21 @@ from mpmath import mpf, fabs, acos, sqrt
 
 sys.path.insert(0, str(Path(__file__).resolve().parent / "substrate"))
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402  (50-digit substrate q₀; NOT the f64 Q)
 from codata_constants import (  # noqa: E402
-    AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION)
+    AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION)
 
-mp.mp.dps = 40
+mp.mp.dps = 50
 HERE = Path(__file__).resolve().parent
-# dps is already 40 globally here; the workdps + unary `+` force re-rounding
-# so import-time arithmetic is precision-safe regardless of caller context.
-with mp.workdps(40):
-    q0 = +mpf(str(Q0))
+# q₀ from the 50-digit string (not the f64 Q) so the q0_50dps label is honest.
+# workdps + unary `+` force re-rounding at full precision.
+with mp.workdps(50):
+    q0 = +mpf(Q_50_DIGIT_STR)
     sqrt_q0 = +sqrt(q0)
 
 AME_B = {"D": AME_B_DEUTERON_MEV_VALIDATION, "T": AME_B_TRITIUM_MEV_VALIDATION,
-         "3He": mpf("7.7180"), "4He": AME_B_HE4_MEV_VALIDATION}
+         "3He": AME_B_HE3_MEV_VALIDATION, "4He": AME_B_HE4_MEV_VALIDATION}
 CHI = {"D": "atom-chi-rust-d.witness.json", "T": "atom-chi-rust-t.witness.json",
        "3He": "atom-chi-rust-3he.witness.json", "4He": "atom-chi-rust-4he.witness.json"}
 A_GROWTH_TARGET = float(AME_B["4He"] / AME_B["D"])  # ≈ 12.72
@@ -80,12 +85,14 @@ def dim_classical(lam):
     return mp.factorial(sum(lam)) / den
 
 
-def dim_q(lam, q):
-    """q-dimension = Σ_□ hook → Π [hook]_q; here the product of q-hooks."""
+def qhook_prod(lam, q):
+    """q-hook product Π_□ [hook]_q (a hook-content proxy for the q-dimension
+    scale — NOT the exact Weyl q-dimension). Used only as the intensive
+    denominator of the C_over_dim candidate, which collapses regardless."""
     prod = mpf(1)
     for h in hooks(lam):
         prod *= q_int(h, q)
-    return prod  # Π[h]_q proxy
+    return prod
 
 
 def content_casimir(lam, q):
@@ -121,12 +128,12 @@ def main() -> int:
             a = fabs(dth)
             C = content_casimir(ll, q0)
             C_half = content_casimir(ll, sqrt_q0)
-            dq = dim_q(ll, q0)
+            hp = qhook_prod(ll, q0)
             wv = {
                 "C_q0": C,                                    # compact baseline (≈34)
                 "C_sqrtq0": C_half,                           # half-monodromy / pion scale
                 "sqrt_C": sqrt(C) if C >= 0 else mpf(0),      # amplitude (half exponent)
-                "C_over_dim": C / dq if dq != 0 else mpf(0),  # intensive (Casimir/q-dim)
+                "C_over_dim": C / hp if hp != 0 else mpf(0),  # intensive (Casimir/q-hook-prod)
             }
             for w in weights:
                 acc[w] += wv[w] * a
@@ -186,8 +193,8 @@ def main() -> int:
         "√q₀ half-monodromy, √C amplitude, Casimir/q-dim) vs the compact C_λ that "
         "refuted. Seeks the AME A-growth 12.72 zero-fit; asserts refutation if none "
         "closes to 5%. Full p(3A) sum; no τ/AME fit; no production touch.")
-    wb.add_parameter("q0_50dps", mp.nstr(q0, 40))
-    wb.add_parameter("sqrt_q0_50dps", mp.nstr(sqrt_q0, 40))
+    wb.add_parameter("q0_50dps", mp.nstr(q0, 50))
+    wb.add_parameter("sqrt_q0_50dps", mp.nstr(sqrt_q0, 50))
     wb.add_parameter("A_growth_target", A_GROWTH_TARGET)
     wb.add_data("weights", results)
     wb.add_data("verdict", verdict)
