@@ -77,3 +77,16 @@ transfer matrix (#3548), not a duplicate.
 **Next compute (coordinate with #3548 first):** H₆ deuteron ghost cross-term via the
 per-block seminormal infra (`gram_matrix_seminormal_h6.py`). Do NOT launch solo before
 checking #3548's connected-tr_M overlap — same object, two lenses (Gram-norm vs trace).
+
+## Update 2026-07-11 (b* bridge PROVED) — two lenses unified
+
+The per-bond b* is NOT a separate build: #3548's connected tr_M part == this
+session's centered/ghost Gram-quadratic norm, EXACT identity (binding_bstar_bridge.py,
+audit Part 12): C(w)=tr(w²)−tr(w)² = tr_M((w−⟨w⟩)²)=⟨δw⟩²_G, via tr_M(1)=1. Verified
+bit-identical on H_2 (both 0.8550672621). So #3548 deuteron connected 0.193 = b*;
+one build (their PROBE 2) serves both lenses. Ties main a44296db (binding=quadratic).
+
+**Remaining open (the actual keystone):** NOT b* (pinned), NOT bond-extensivity
+(derived, Part 11) — only the EDGE SET / coordination graph (which pairs bond in a
+compact nucleus; chain under-binds, complete over-binds). = #2089's "open edge set".
+Owner-gated geometric construction (s5-so3). b* value = #3548 PROBE 2 (coordinate).
