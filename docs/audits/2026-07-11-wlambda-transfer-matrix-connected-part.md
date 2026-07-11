@@ -9,7 +9,9 @@ the single-trace refutations cited are (a)-scoped re-statements, not new claims.
 
 The scalar per-partition form
 
-$$B(K) \;=\; m_e \sum_{\lambda} y_\lambda\,\chi^\lambda\,\Delta_\lambda$$
+$$
+B(K) \;=\; m_e \sum_{\lambda} y_\lambda\,\chi^\lambda\,\Delta_\lambda
+$$
 
 is a **single Markov trace** — hence **intensive** (it saturates at ~3–4 MeV;
 gate-status 2026-07-05 §0). No scalar per-block reweighting can turn an intensive
@@ -17,12 +19,16 @@ quantity extensive — the *proved reason* the six Δ_λ ansätze failed. The pr
 is to lift the scalar weights to a **transfer matrix built from the q-Plancherel
 measure** `W_λ = d_q(λ)²/[n]_q!`:
 
-$$T \;=\; \bigoplus_{\lambda \vdash n} W_\lambda\, P_\lambda, \qquad P_\lambda = \text{Jones–Wenzl block projector},$$
+$$
+T \;=\; \bigoplus_{\lambda \vdash n} W_\lambda\, P_\lambda, \qquad P_\lambda = \text{Jones–Wenzl block projector},
+$$
 
 and read binding off the **connected part** of a multi-bond product over the
 inter-nucleon bond graph `⋈_K`:
 
-$$B(K) \;\sim\; \operatorname{tr}\!\Big(\prod_{b\in\bowtie_K} T_b\Big) \;-\; (\text{factorized}).$$
+$$
+B(K) \;\sim\; \mathrm{tr}\!\Big(\prod_{b\in\bowtie_K} T_b\Big) \;-\; (\text{factorized}).
+$$
 
 `tr(∏T)` is genuinely many-body (cross-terms) → **extensive** (∝A), realising the
 "additive many-body series over bonds `B = Σ_b B_b + Σ_{b,b'} B_{bb'} + …`" that the

@@ -30,7 +30,9 @@ super-exponential function evaluated at an *extensive* (linear) target.
 multiplicity of the standard `(2,1)` rep in the restriction `H_k ↓ H_3`. At `q=1`,
 `Σ_λ W_λ = 1` **exactly**, so
 
-$$w_{\mathrm{std}}(k)\big|_{q=1} \;=\; \mathbb{E}_{\text{Planch}}\!\big[f^{\lambda/(2,1)}\big],$$
+$$
+w_{\mathrm{std}}(k)\big|_{q=1} \;=\; \mathbb{E}_{\text{Planch}}\!\big[f^{\lambda/(2,1)}\big],
+$$
 
 the Plancherel expectation of the number of standard skew tableaux of shape
 `λ/(2,1)`. [`wlambda_wstd_growth_bound_probe.py`](../../computations/deltalambda/wlambda_wstd_growth_bound_probe.py)
@@ -56,7 +58,9 @@ Given the core, the theorem is one line. Write `w_std(k) ≍ k!^{c}` (factorial 
 `c>0`; the super-exponential growth). (H1)+(H2) give `s · w_std(k(A)) = Θ(A)`, so
 `w_std(k(A)) = Θ(A)`, hence `k(A)!^{c} ≍ A`, hence by Stirling
 
-$$k(A) \;=\; \Theta\!\Big(\frac{\log A}{\log\log A}\Big)\;=\;O(\log A).$$
+$$
+k(A) \;=\; \Theta\!\Big(\frac{\log A}{\log\log A}\Big)\;=\;O(\log A).
+$$
 
 A linear `k ∝ A` would make `B(A) = s·w_std(A) ≍ A!^{c}` — **super-factorial**, wildly
 non-extensive; `k ∝` bond-count `= A(A-1)/2` is worse. Both are excluded *because the
