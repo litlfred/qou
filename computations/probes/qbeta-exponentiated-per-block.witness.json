@@ -1,9 +1,10 @@
 {
   "engine": "mpmath+sympy",
   "engineVersion": "mpmath 1.3.0; sympy 1.14.0",
-  "computedAt": "2026-07-11T17:12:43.523524+00:00",
+  "computedAt": "2026-07-11T18:12:34.440670+00:00",
   "computation": "qbeta-exponentiated-per-block",
   "scriptFile": "qbeta_exponentiated_per_block_probe.py",
+  "commitSha": "e6abd349877d7ecdd0c890ca00231ef26432aebe",
   "description": "PROBE 6a (U1, PR #1585 queue item 2, never previously run): seeds the Q_beta scaling map as F = exp(N*Sum_lambda g_lambda(u_L)) with the per-Wedderburn-block Delta tr_M closed forms (paper closed forms, PR #1764; leading eps-coefficients -2/-1/-2), even-in-hbar projection onto the integer u_L = b*hbar_q^2 ladder (C13 bridge change of variable), UNIFORM weights, scale fixed ONLY by the proved c_2 = -1. Reads off c_3, c_4 symbolically (constants over b) and numerically at both q0 anchors (proton-pinned from qou_substrate.constants; muon canonical). Records the anchor-stability diagnostic and two structural collapses: uniform-weight exp(Sum per-block) = exp(total), and exp-vs-linear seeding share c_3 when the seed starts at u_L^2. NOT a fit; no scan; no wiring.",
   "precisionMetadata": {
     "compute_dps": 60
@@ -146,9 +147,9 @@
       "source": "c_2 = -1 is the one proved rung (Lean N2_factor); the single scale d.o.f."
     },
     {
-      "name": "exponentiated_seed_reproduces_c3_within_1pct_both_anchors",
-      "computed": 0.0,
-      "expected": 0.0,
+      "name": "kill_criterion_hit_exponentiated_seed_misses_c3_gate",
+      "computed": 1.0,
+      "expected": 1.0,
       "passed": true,
       "tolerance": 0.0,
       "source": "Pre-stated kill criterion: anchor-constant and far from empirical (C13 failure mode) => NEGATIVE, extend C13 scope-limited (a)."

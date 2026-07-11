@@ -1,16 +1,17 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-11T17:08:38.531057+00:00",
+  "computedAt": "2026-07-11T18:12:30.165934+00:00",
   "computation": "qbeta-ck-basis-constrained-pslq",
   "scriptFile": "qbeta_ck_basis_constrained_pslq.py",
+  "commitSha": "e6abd349877d7ecdd0c890ca00231ef26432aebe",
   "description": "PROBE 4 (2026-07-11 avenues audit \u00a73.D): basis-constrained PSLQ for the empirical Q_\u03b2 ladder coefficients c_3/c_4 against the arithmetic-dictated basis {1, \u221a3, \u03c0\u00b2, Vol(4\u2081), \u03b6(3)} (4\u2081 trace field \u211a(\u221a\u22123)). Two-stage formalize-first: STAGE 1 is a mandatory entropy audit of the ACTUAL effective precision of the empirical coefficients, traced through the extraction chain c_3 = (Q_CODATA/Q_N2 \u2212 1)/u\u00b3, which amplifies the relative Q_\u03b2 error by 1/u\u00b3 \u2248 1.6e6 (c_4: 1/u\u2074 \u2248 1.9e8). STAGE 2 (PSLQ) runs only if the effective digits exceed the PSLQ entropy bound D > n\u00b7log10(2H) + margin (PR #1805 discipline). No c_k value proposed; nothing wired.",
   "precisionMetadata": {
     "compute_dps": 60
   },
   "data": {
     "q0_canonical": "1.1099785955573347198997632204832250266562084087802",
-    "q0_proton": "1.10997858275",
+    "q0_proton": "1.1099785827513808075916690956107688798744991218736",
     "Q_beta_codata_MeV": "0.78233341",
     "u_substrate": "0.0085172363404849214399331129023",
     "u_cubed": "6.178685578e-7",
@@ -23,7 +24,7 @@
     "c4_artifact_note": "c_4 is exactly 0 by construction when c_3 is extracted exactly against the same Q_beta reference (Q_N3 = Q_CODATA identically); the quoted empirical c_4 = -0.972 is the truncation residual of a rounded c_3 \u2014 no independent empirical content exists for PSLQ. Confirms registry rung-4 tier 'empirical_fit / artifact'.",
     "amplifier_dc3_dQrel": "1618465.2",
     "amplifier_dc4_dQrel": "1.9002258e+8",
-    "anchor_slope_dc3_dq": "4.65691e+6",
+    "anchor_slope_dc3_dq": "4.65741e+6",
     "sigma_Q_rel_actual": "7.8e-7",
     "sigma_Q_rel_optimistic_reading": "7.8e-9",
     "error_scenarios": [
@@ -31,7 +32,7 @@
         "scenario": "actual sigma(Q)=0.78ppm",
         "anchor": "proton",
         "err_c3_from_Q": "1.262",
-        "err_c3_from_pin": "0.0003101",
+        "err_c3_from_pin": "0.0003102",
         "err_c3_total": "1.262",
         "eff_digits_c3": 0.21,
         "err_c4_from_Q": "148.2",
@@ -51,7 +52,7 @@
         "scenario": "optimistic sigma(Q)=7.8ppb",
         "anchor": "proton",
         "err_c3_from_Q": "0.01262",
-        "err_c3_from_pin": "0.0003101",
+        "err_c3_from_pin": "0.0003102",
         "err_c3_total": "0.01263",
         "eff_digits_c3": 2.21,
         "err_c4_from_Q": "1.482",
