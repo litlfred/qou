@@ -12,7 +12,7 @@ claimed. Analyze and resolve issues."*
   Every candidate for that name reduces to a **real-valued map or a ring
   homomorphism**, carrying *no action on morphisms* and *no functor laws*:
   - `R_top` ("archimedean realization functor"): a map **out of the
-    Grothendieck ring** `K_0(Var)` — i.e. a *motivic measure / ring
+    Grothendieck ring** `K₀(Var)` — i.e. a *motivic measure / ring
     homomorphism* (`χ_top` is literally a ring hom; `π_∞` is a place).
     Decategorified; there are no morphisms to act on.
   - `τ_arch = π_∞ ∘ τ`: Lean-typed as `τ_arch : ℝ → ℝ`. The **archimedean
@@ -26,7 +26,7 @@ claimed. Analyze and resolve issues."*
   `CategoricalFoundations` (`fibreFunctor : C ⥤ Type*`), in
   `spatial-realization-functor.lean` (`fibreFunctor : C ⥤ D`), and the
   classical-limit functor is a genuine `MonoidalFunctor`. But **τ's
-  codomain is stated four incompatible ways** across the corpus
+  codomain is stated five incompatible ways** across the corpus
   (`Type*` / `Vec_ℝ` / `Arch` / `D` / `ℝ`), and it is even once called the
   "forgetful functor."
 - **The target category `Arch` is asserted but never constructed as a
@@ -36,7 +36,7 @@ claimed. Analyze and resolve issues."*
 - **The paper's own notation register already states the correct
   taxonomy** (`notation/notation-collisions.md` §"Archimedean / fibre /
   forgetful functors"): τ : **C → Arch** is the fibre functor; U : **Arch →
-  Vec_ℝ** the forgetful functor; the "archimedean realisation" `R ↦ ℝ` is
+  Vec_ℝ** the forgetful functor; the "archimedean realization" `R ↦ ℝ` is
   "**not** a functor between QOU categories"; and "**Arch** is the target of
   τ, not the name of a functor … we never write 'the archimedean functor'
   without context." **The issues below are violations of this existing
@@ -64,7 +64,7 @@ genuine functor field but the named thing is not itself the functor.
 
 | # | Name (label) | Claimed src → tgt | Actual Lean type | Functor? |
 |---|---|---|---|---|
-| 1 | **Fibre functor τ** (`rem:fibre-functor-rigidity`, `def:fibre-functor-atlas`) | inconsistent: **C → Type\*/Vec_ℝ/Arch/D/ℝ**; once "forgetful" | genuine `C ⥤ Type*` in `CategoricalFoundations`; genuine `C ⥤ D` field in `spatial-realization`; **but** `MotivesArchimedean.FibreFunctor` = `obj : C → Arch.Obj` (object map only) | **Yes** (in 2 files) / **No** (in `MotivesArchimedean`) |
+| 1 | **Fibre functor τ** (`rem:fibre-functor-rigidity`, `def:fibre-functor-atlas`) | inconsistent: **C** → `Type*`/`Vec_ℝ`/`Arch`/`D`/`ℝ`; once "forgetful" | genuine `C ⥤ Type*` in `CategoricalFoundations`; genuine `C ⥤ D` field in `spatial-realization`; **but** `MotivesArchimedean.FibreFunctor` = `obj : C → Arch.Obj` (object map only) | **Yes** (in 2 files) / **No** (in `MotivesArchimedean`) |
 | 2 | **Archimedean realization functor R_top** (`def:archimedean-realization-functor`) | `M̂` (Grothendieck-ring completion) → **ℝ** | `structure ArchimedeanRealizationFunctor` = `{ Motive, eulerChar : Motive→Int, archPostProc : ℝ→ℝ, realize : Motive→ℝ }` | **No** — motivic measure / ring hom into ℝ |
 | 3 | **Standard-part functor St / 𝓕_Arch** (`def:standard-part-functor`; `archimedean-functor-trace-commutativity.md`) | prose: `C_fin → C_ℝ`; realized as **ℝ-valued** | `standardPartRingHom : finiteSubring →+* ℝ` ("surjective ring homomorphism"); sibling theorem is `subst; rfl` | **No** — ring homomorphism |
 | 4 | **Spatial realization functor** (`def:spatial-realization-functor`) | `A ↦ Spec(A) = M` (contact manifold) | `structure SpatialRealizationFunctor` bundling data **plus** genuine `fibreFunctor : C ⥤ D` | **Partial** — carries a real `C ⥤ D`; "spatial realization" itself is `Spec` + data |
@@ -86,9 +86,9 @@ genuine functor field but the named thing is not itself the functor.
 ## Diagnosis
 
 1. **Level confusion (functor vs. ring hom / motivic measure).** `R_top`
-   is defined *out of the Grothendieck ring* `K_0(Var)`. Passing to `K_0`
+   is defined *out of the Grothendieck ring* `K₀(Var)`. Passing to `K_0`
    **decategorifies** — morphisms are gone, so "functor" no longer applies;
-   the Euler-characteristic realization out of `K_0(Var)` is the textbook
+   the Euler-characteristic realization out of `K₀(Var)` is the textbook
    **motivic measure** (a ring homomorphism; Denef–Loeser). A realization
    *functor* proper lives one level up, on the category of motives `DM(k)`
    (which has morphisms). As written, `R_top` is a ring hom, not a functor.
