@@ -227,6 +227,36 @@ relation claimed, no value proposed, nothing wired (§8 guard intact). Scope:
 exclude any basis element from a future F(q) construction.
 Witness: `computations/probes/qbeta-ck-basis-constrained-pslq.witness.json`.
 
+### PROBE 6a — U1 exponentiated per-block seeding (§3.G): NEGATIVE (extends C13)
+
+**Probe:** `computations/probes/qbeta_exponentiated_per_block_probe.py`
+(witness `qbeta-exponentiated-per-block.witness.json`). Seed
+`F = exp(N·Σ_λ g_λ(u_L))`, λ ∈ {(3),(2,1),(1,1,1)} (paper closed forms, PR
+#1764; leading ε-coeffs −2/−1/−2), even-in-ℏ projection onto `u_L = b·ℏ_q²`
+(C13 change of variable), UNIFORM weights, scale fixed only by the proved
+`c_2 = −1`.
+
+**Result:** `c_3 = −265/(94·b) ≈ −3.2494` at BOTH anchors — anchor-constant
+(swing 3.9e-10 vs empirical 2.88%), 57.0% (proton −2.0693) / 61.7% (muon
+−2.0097) off. `c_4 = ½ − 292/(47b²) ≈ −7.75`. Kill criterion hit (C13
+failure mode) ⇒ **NEGATIVE**.
+
+**Structural findings (why U1 could never differ at c_3):**
+1. Uniform weights collapse `exp(Σ_λ g_λ)` to `exp(g_total)` — the
+   per-block structure is invisible without a (forbidden, fitted) per-block
+   weight rule.
+2. With the seed starting at `u_L²` (no c_1 rung), exponentiated and linear
+   seedings share `c_3` identically (verified symbolically); exponentiation
+   first acts at `c_4` (+½·c_2²).
+3. The per-block (y_λ-surrogate) sum is NOT ∝ the atomic Δtr_M
+   (q-dependent ratio, 4 only at q=1) — different seed data, and it lands
+   farther from empirical (−3.25) than C13's atomic seed (−1.50).
+
+**Scope (a), not (b):** refutes the exponentiated-uniform per-block Δtr_M
+seeding *alone*; does not exclude per-block data inside a non-linear or
+derived-non-uniform closure. C13 row extends to: linear, bar-even, AND
+exponentiated-uniform Δtr_M-seeded f all refuted.
+
 ## Appendix A — P6c executed: Galois-descent / GSWZ Frobenius-gluing scoping (U3)
 
 **Status:** SCOPING ONLY (owner-selected 2026-07-11; no numerics, no Lean, no
