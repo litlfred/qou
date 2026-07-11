@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-11T17:06:31.801541+00:00",
-  "commitSha": "59fb44d450fc05095ee2b33561d72362ce51a78e",
+  "computedAt": "2026-07-11T17:08:33.340944+00:00",
+  "commitSha": "78466383000c933c9fc02a42181d5f2c1522e9a2",
   "assertions": [
     {
       "name": "wn_link_volume_refuted_or_closes",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 20,
+  "durationMs": 12,
   "computation": "binding-wn-link-volume-probe",
   "scriptFile": "binding_wn_link_volume_probe.py",
   "scriptHash": "7529a2b00607",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "78466383000c933c9fc02a42181d5f2c1522e9a2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
