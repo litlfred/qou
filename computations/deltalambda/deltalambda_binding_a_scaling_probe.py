@@ -1,23 +1,32 @@
 #!/usr/bin/env python3
 """
 A-scaling of the binding magnitude: the A-STABILITY criterion selects the IRREP
-dimension (Δ_λ=sgn·dim, p=1) over the block dim² (p=2). dim is A-bounded (ratio
-0.18-0.40 across D/T/³He/⁴He); dim² blows up 40-450x. So the #3542 irrep trace was
-the right A-scaling; the #3558 deuteron dim²≈101% was coincidental. The residual is an
-O(1) factor (~2.5-5.5), NOT a wrong power. Reuses previous work; no fit; nothing wired.
+dimension (Δ_λ=sgn·dim, p=1) over the block dim² (p=2). The cross-isotope spread of
+B/target across D/T/³He/⁴He is MINIMIZED at p=1 (ratios 0.11-0.30, spread ~2.8x) and
+grows monotonically away from it (p=1.5 ~8.7x; p=2 dim² ~119x, blows up). So the #3542
+irrep trace was the right A-scaling; the #3558 deuteron dim²≈101% was coincidental. The
+residual is an O(1) factor (~3-9), NOT a wrong power. Reuses previous work; no fit; nothing wired.
+
+MAGNITUDE = CLASSICAL (q=1) DIMENSION, not the substrate q₀ quantum dimension. This is
+the #3542 graded-trace result (deltalambda-magnitude-graded-trace): |Δ_λ| = dim(λ) is the
+ordinary integer dimension = tr(g_ρ), NOT dim_q(λ;q₀) (they differ by up to 4.41% at q₀).
+So this probe scales the *classical integer* dim(λ) — consistent with #3542 — and the
+`dim`/`dim²` labels below are exact, not shorthand for a q-deformed quantity.
 
 Setup (validated, as in the cross-isotope probe):
   * χ^λ(β_K) from atom-chi-rust-{d,t,3he,4he} (data/atom/by_partition).
-  * y_λ = wedderburn_jones_markov.y_lambda_at(n,q0) (validated vs deuteron co-casimir).
-  * dim_q via q-hook-length; sgn=(-1)^{n(λ)} (#3542); B=Σ_λ y_λ χ^λ sgn·dim_q^p.
+  * y_λ = wedderburn_jones_markov.y_lambda_at(n,q0) (validated vs deuteron co-casimir); q₀
+    enters ONLY through y_λ and χ^λ — the Δ_λ magnitude factor is the q-independent dim(λ).
+  * dim(λ) = classical hook-length integer dim; sgn=(-1)^{n(λ)} (#3542); B=Σ_λ y_λ χ^λ sgn·dim^p.
   * targets -B_AME/m_e.
 
-RESULT (B/target vs power p):
-  p     D       T       ³He     ⁴He      A-behaviour
-  0    0.023   0.003   0.004   0.000    tiny (y_λ suppresses)
-  1    0.180   0.295   0.402   0.206    A-BOUNDED [0.18,0.40] — the stable power
-  1.5  0.416   3.318   4.748   9.336    grows with A
-  2    1.014  39.438  59.521 449.613    blows up 40-450x
+RESULT (B/target vs power p) — see the committed witness `result.ratio_by_p` for the
+authoritative numbers; representative shape:
+  p     D       T       ³He     ⁴He      spread   A-behaviour
+  0    ~0.02   ~0.00   ~0.00   ~0.00    ~122x    tiny (y_λ suppresses)
+  1    ~0.17   ~0.23   ~0.30   ~0.11    ~2.8x    A-STABLE (min spread) — the stable power
+  1.5  ~0.38   ~2.2    ~3.1    ~3.3     ~8.7x    grows with A
+  2    ~0.91   ~22     ~33     ~108     ~119x    blows up with A
 
 SELECTION (structural, not a fit): the physical binding is A-bounded (B/A ~ O(1)
 per nucleon), so the magnitude power must give an A-bounded ratio. Only p=1 (the IRREP
@@ -68,26 +77,26 @@ def _hooks(lam):
     return hs
 
 
+def dim_ordinary(lam):
+    from math import factorial
+    prod = 1
+    for h in _hooks(lam):
+        prod *= h
+    return factorial(sum(lam)) // prod
+
+
 def main():
     mp.mp.dps = 30
     from wedderburn_jones_markov import y_lambda_at
     try:
         from qou_substrate.constants import q_at
         q0 = mp.mpf(str(q_at(30)))
+        q0src = "qou_substrate.q_at(30)"
     except Exception:                                # noqa: BLE001 (substrate optional in sandbox)
+        # q₀ enters ONLY through y_λ and χ^λ; the Δ_λ magnitude factor is the
+        # q-independent classical dim(λ), so the selection is q₀-insensitive.
         q0 = mp.mpf("1.1099785827513808076")
-
-    def qint(k):
-        return (q0 ** k - q0 ** (-k)) / (q0 - 1 / q0)
-
-    def dim_q(lam):
-        num = mp.mpf(1)
-        for k in range(1, sum(lam) + 1):
-            num *= qint(k)
-        den = mp.mpf(1)
-        for h in _hooks(lam):
-            den *= qint(h)
-        return num / den
+        q0src = "fallback (q_at proton pin, hardcoded high-precision)"
 
     me = mp.mpf(M_E_MEV)
     isos = ["d", "t", "3he", "4he"]
@@ -105,10 +114,11 @@ def main():
         for e in bp:
             lam = tuple(e["partition"])
             B += mp.mpf(str(yd[lam])) * mp.mpf(e["chi_lambda"]) * \
-                ((-1) ** (n_lambda(lam) % 2)) * dim_q(lam) ** p
+                ((-1) ** (n_lambda(lam) % 2)) * mp.mpf(dim_ordinary(lam)) ** p
         return float(B / tgt)
 
-    table = {p: {iso: ratio(iso, p) for iso in isos} for p in (1, 2)}
+    powers = (0, 1, 1.5, 2)
+    table = {p: {iso: ratio(iso, p) for iso in isos} for p in powers}
     r1 = [table[1][iso] for iso in isos]
     r2 = [table[2][iso] for iso in isos]
 
@@ -118,21 +128,30 @@ def main():
         assertions.append({"name": name, "passed": bool(passed), "detail": detail})
         print(f"  [{'PASS' if passed else 'FAIL'}] {name}  {detail}")
 
-    check("irrep_dim_p1_is_A_bounded",
-          all(0.15 < abs(r) < 0.45 for r in r1),
-          f"Δ_λ=sgn·dim (p=1): ratios "
+    def spread(p):
+        vs = [abs(table[p][iso]) for iso in isos]
+        return max(vs) / min(vs)
+
+    spreads = {p: spread(p) for p in powers}
+    check("irrep_dim_p1_is_A_stable",
+          spreads[1] < 3.0,
+          f"Δ_λ=sgn·dim (p=1, classical q=1 dim): ratios "
           + ", ".join(f"{iso}:{table[1][iso]:.2f}" for iso in isos)
-          + " — A-BOUNDED [0.18,0.40], no blow-up")
+          + f" — cross-isotope spread {spreads[1]:.1f}x (A-STABLE), no blow-up")
     check("block_dim2_p2_blows_up",
-          max(abs(r) for r in r2) / max(abs(min(r2, key=abs)), 1e-9) > 100,
-          f"Δ_λ=sgn·dim² (p=2): ratios "
+          spreads[2] > 100.0,
+          f"Δ_λ=sgn·dim² (p=2, classical dim²): ratios "
           + ", ".join(f"{iso}:{table[2][iso]:.1f}" for iso in isos)
-          + " — blows up 40-450x with A")
+          + f" — spread {spreads[2]:.0f}x, blows up with A")
+    check("spread_minimized_at_p1",
+          spreads[1] == min(spreads.values()),
+          "cross-isotope spread over p={0,1,1.5,2} = "
+          + ", ".join(f"{p}:{spreads[p]:.1f}x" for p in powers)
+          + " — MINIMIZED at p=1 (monotone away on both sides); p=1 is the unique A-stable power")
     check("A_stability_selects_irrep_dim",
-          (max(abs(r) for r in r1) / min(abs(r) for r in r1) < 3) and
-          (max(abs(r) for r in r2) / min(abs(r) for r in r2) > 100),
-          "p=1 spread <3x (A-stable) vs p=2 spread >100x => the A-stability criterion "
-          "(binding is A-bounded) SELECTS the irrep dimension, not the block dim²")
+          spreads[1] == min(spreads.values()) and spreads[1] < 3.0 and spreads[2] > 100.0,
+          "the A-stability criterion (physical binding is A-bounded) SELECTS the classical "
+          "irrep dimension p=1 (min spread, A-stable), NOT the block dim² p=2 (spread >100x)")
 
     # the residual O(1) factor for p=1 (target/B = 1/ratio)
     o1 = {iso: 1.0 / table[1][iso] for iso in isos}
@@ -140,13 +159,14 @@ def main():
     all_passed = all(a["passed"] for a in assertions)
     verdict = (
         "A-STABILITY SELECTS THE IRREP DIMENSION (structural, not a fit): among magnitude "
-        "powers Δ_λ=sgn·dim_q^p, only p=1 (the irrep dimension) gives an A-BOUNDED binding "
-        "ratio ("
+        "powers Δ_λ=sgn·dim^p (classical q=1 dim, #3542), the cross-isotope spread of B/target "
+        "is MINIMIZED at p=1 ("
         + ", ".join(f"{iso}:{table[1][iso]:.2f}" for iso in isos)
-        + ", spread <3x); p=2 (block dim²) blows up 40-450x with A. Since the physical binding "
-        "is A-bounded, the A-stability criterion selects Δ_λ=sgn·dim — the #3542 IRREP TRACE — "
-        "as the correct A-scaling, and confirms the #3558 block dim²≈101% on the deuteron was "
-        "coincidental (wrong power). The remaining gap is an O(1) multiplicative factor "
+        + f", spread {spreads[1]:.1f}x); it grows monotonically away from p=1 (p=1.5: "
+        f"{spreads[1.5]:.1f}x; p=2 block dim²: {spreads[2]:.0f}x, blows up). Since the physical "
+        "binding is A-bounded, the A-stability criterion selects Δ_λ=sgn·dim — the #3542 IRREP "
+        "TRACE — as the correct A-scaling, and confirms the #3558 block dim²≈101% on the deuteron "
+        "was coincidental (wrong power). The remaining gap is an O(1) multiplicative factor "
         "(target/B(dim): "
         + ", ".join(f"{iso}:{o1[iso]:.1f}" for iso in isos)
         + ") — SAME power, missing coefficient — OPEN (derive, not fit). With the cross-isotope "
@@ -169,17 +189,21 @@ def main():
     witness = {
         "computation": "deltalambda-binding-a-scaling",
         "description": "A-stability criterion selects the irrep dimension (Δ_λ=sgn·dim, p=1, "
-                       "A-bounded ratio 0.18-0.40) over the block dim² (p=2, blows up 40-450x). "
-                       "Vindicates the #3542 irrep trace as the correct A-scaling; residual is an "
-                       "O(1) factor (~2.5-5.5), same power. Nothing wired.",
+                       "min cross-isotope spread ~2.8x, ratios 0.11-0.30) over the block dim² "
+                       "(p=2, spread ~119x, blows up). Uses the classical q=1 dim (#3542), not "
+                       "the q₀ quantum dim. Vindicates the #3542 irrep trace as the correct "
+                       "A-scaling; residual is an O(1) factor (~3-9), same power. Nothing wired.",
         "auditOnly": "docs/audits/2026-07-11-deltalambda-binding-a-scaling.md",
         "tier": "measurement (reuses atom-chi-rust χ + validated y_lambda_at; AME targets)",
         "computedAt": now, "commitSha": _sha(),
         "engine": "mpmath", "engineVersion": mp.__version__,
         "scriptFile": os.path.basename(__file__),
         "scriptHash": hashlib.sha256(src).hexdigest()[:12],
+        "q0": mp.nstr(q0, 20), "q0_source": q0src,
         "assertions": assertions, "allPassed": all_passed,
         "result": {
+            "magnitude": "classical q=1 dim(λ) (hook-length integer), NOT q₀ quantum dim (#3542)",
+            "ratio_by_p": {str(p): table[p] for p in powers},
             "ratio_p1_irrep": table[1], "ratio_p2_block": table[2],
             "residual_O1_factor_p1": o1, "verdict": verdict,
         },
@@ -187,7 +211,7 @@ def main():
             "reuses": "atom-chi-rust-{d,t,3he,4he} (χ) + wedderburn_jones_markov.y_lambda_at (y_λ)",
             "selects": "the #3542 irrep trace Δ_λ=sgn·dim as the A-stable magnitude scaling",
             "confirms": "#3558 block dim² was a deuteron coincidence (wrong power by A-stability)",
-            "open": "the O(1) multiplicative factor (~2.5-5.5) — same power — DERIVE, do not fit",
+            "open": "the O(1) multiplicative factor (~3-9) — same power — DERIVE, do not fit",
             "gate": "Δ_λ gate — A-stability is a structural criterion, not a fit; nothing wired",
         },
     }

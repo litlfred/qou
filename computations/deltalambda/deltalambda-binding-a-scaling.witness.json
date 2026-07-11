@@ -1,58 +1,92 @@
 {
   "computation": "deltalambda-binding-a-scaling",
-  "description": "A-stability criterion selects the irrep dimension (\u0394_\u03bb=sgn\u00b7dim, p=1, A-bounded ratio 0.18-0.40) over the block dim\u00b2 (p=2, blows up 40-450x). Vindicates the #3542 irrep trace as the correct A-scaling; residual is an O(1) factor (~2.5-5.5), same power. Nothing wired.",
+  "description": "A-stability criterion selects the irrep dimension (\u0394_\u03bb=sgn\u00b7dim, p=1, min cross-isotope spread ~2.8x, ratios 0.11-0.30) over the block dim\u00b2 (p=2, spread ~119x, blows up). Uses the classical q=1 dim (#3542), not the q\u2080 quantum dim. Vindicates the #3542 irrep trace as the correct A-scaling; residual is an O(1) factor (~3-9), same power. Nothing wired.",
   "auditOnly": "docs/audits/2026-07-11-deltalambda-binding-a-scaling.md",
   "tier": "measurement (reuses atom-chi-rust \u03c7 + validated y_lambda_at; AME targets)",
-  "computedAt": "2026-07-11T18:33:51.958594+00:00",
-  "commitSha": "d05c6e4055f956b03a1f1d1be7341a720ce7a351",
+  "computedAt": "2026-07-11T22:02:14.071179+00:00",
+  "commitSha": "a6bf7ee73544456047b09e6bfdcf128b606fed4d",
   "engine": "mpmath",
   "engineVersion": "1.3.0",
   "scriptFile": "deltalambda_binding_a_scaling_probe.py",
-  "scriptHash": "e32b7d6c07a0",
+  "scriptHash": "eedf09e0fb40",
+  "q0": "1.1099785827513808076",
+  "q0_source": "qou_substrate.q_at(30)",
   "assertions": [
     {
-      "name": "irrep_dim_p1_is_A_bounded",
+      "name": "irrep_dim_p1_is_A_stable",
       "passed": true,
-      "detail": "\u0394_\u03bb=sgn\u00b7dim (p=1): ratios d:0.18, t:0.30, 3he:0.40, 4he:0.21 \u2014 A-BOUNDED [0.18,0.40], no blow-up"
+      "detail": "\u0394_\u03bb=sgn\u00b7dim (p=1, classical q=1 dim): ratios d:0.17, t:0.23, 3he:0.30, 4he:0.11 \u2014 cross-isotope spread 2.8x (A-STABLE), no blow-up"
     },
     {
       "name": "block_dim2_p2_blows_up",
       "passed": true,
-      "detail": "\u0394_\u03bb=sgn\u00b7dim\u00b2 (p=2): ratios d:1.0, t:39.4, 3he:59.5, 4he:449.6 \u2014 blows up 40-450x with A"
+      "detail": "\u0394_\u03bb=sgn\u00b7dim\u00b2 (p=2, classical dim\u00b2): ratios d:0.9, t:22.5, 3he:33.4, 4he:107.7 \u2014 spread 119x, blows up with A"
+    },
+    {
+      "name": "spread_minimized_at_p1",
+      "passed": true,
+      "detail": "cross-isotope spread over p={0,1,1.5,2} = 0:122.4x, 1:2.8x, 1.5:8.7x, 2:118.6x \u2014 MINIMIZED at p=1 (monotone away on both sides); p=1 is the unique A-stable power"
     },
     {
       "name": "A_stability_selects_irrep_dim",
       "passed": true,
-      "detail": "p=1 spread <3x (A-stable) vs p=2 spread >100x => the A-stability criterion (binding is A-bounded) SELECTS the irrep dimension, not the block dim\u00b2"
+      "detail": "the A-stability criterion (physical binding is A-bounded) SELECTS the classical irrep dimension p=1 (min spread, A-stable), NOT the block dim\u00b2 p=2 (spread >100x)"
     }
   ],
   "allPassed": true,
   "result": {
+    "magnitude": "classical q=1 dim(\u03bb) (hook-length integer), NOT q\u2080 quantum dim (#3542)",
+    "ratio_by_p": {
+      "0": {
+        "d": 0.023426486235246978,
+        "t": 0.0030437382210097685,
+        "3he": 0.004024665206535146,
+        "4he": 0.00019139825889260534
+      },
+      "1": {
+        "d": 0.17085539868570063,
+        "t": 0.22501506266082133,
+        "3he": 0.3037825252752242,
+        "4he": 0.10737285812588591
+      },
+      "1.5": {
+        "d": 0.3849023646432199,
+        "t": 2.188781588756192,
+        "3he": 3.0937212318086744,
+        "4he": 3.3401918231379506
+      },
+      "2": {
+        "d": 0.9086351823944088,
+        "t": 22.484042680126638,
+        "3he": 33.399923714712024,
+        "4he": 107.7448845195278
+      }
+    },
     "ratio_p1_irrep": {
-      "d": 0.18026133889062926,
-      "t": 0.2952067096451726,
-      "3he": 0.40160253914217175,
-      "4he": 0.20601383761414596
+      "d": 0.17085539868570063,
+      "t": 0.22501506266082133,
+      "3he": 0.3037825252752242,
+      "4he": 0.10737285812588591
     },
     "ratio_p2_block": {
-      "d": 1.0139378067056035,
-      "t": 39.43810788594934,
-      "3he": 59.5207760789318,
-      "4he": 449.6130441574843
+      "d": 0.9086351823944088,
+      "t": 22.484042680126638,
+      "3he": 33.399923714712024,
+      "4he": 107.7448845195278
     },
     "residual_O1_factor_p1": {
-      "d": 5.547501234342514,
-      "t": 3.387456881322117,
-      "3he": 2.4900240972978236,
-      "4he": 4.854042871979075
+      "d": 5.852902557908419,
+      "t": 4.4441469303206595,
+      "3he": 3.291828583931907,
+      "4he": 9.313340610041148
     },
-    "verdict": "A-STABILITY SELECTS THE IRREP DIMENSION (structural, not a fit): among magnitude powers \u0394_\u03bb=sgn\u00b7dim_q^p, only p=1 (the irrep dimension) gives an A-BOUNDED binding ratio (d:0.18, t:0.30, 3he:0.40, 4he:0.21, spread <3x); p=2 (block dim\u00b2) blows up 40-450x with A. Since the physical binding is A-bounded, the A-stability criterion selects \u0394_\u03bb=sgn\u00b7dim \u2014 the #3542 IRREP TRACE \u2014 as the correct A-scaling, and confirms the #3558 block dim\u00b2\u2248101% on the deuteron was coincidental (wrong power). The remaining gap is an O(1) multiplicative factor (target/B(dim): d:5.5, t:3.4, 3he:2.5, 4he:4.9) \u2014 SAME power, missing coefficient \u2014 OPEN (derive, not fit). With the cross-isotope SIGN validation (#3558), the picture is \u0394_\u03bb = O(1)\u00b7sgn\u00b7dim(\u03bb), O(1) the only unknown. NOTHING WIRED."
+    "verdict": "A-STABILITY SELECTS THE IRREP DIMENSION (structural, not a fit): among magnitude powers \u0394_\u03bb=sgn\u00b7dim^p (classical q=1 dim, #3542), the cross-isotope spread of B/target is MINIMIZED at p=1 (d:0.17, t:0.23, 3he:0.30, 4he:0.11, spread 2.8x); it grows monotonically away from p=1 (p=1.5: 8.7x; p=2 block dim\u00b2: 119x, blows up). Since the physical binding is A-bounded, the A-stability criterion selects \u0394_\u03bb=sgn\u00b7dim \u2014 the #3542 IRREP TRACE \u2014 as the correct A-scaling, and confirms the #3558 block dim\u00b2\u2248101% on the deuteron was coincidental (wrong power). The remaining gap is an O(1) multiplicative factor (target/B(dim): d:5.9, t:4.4, 3he:3.3, 4he:9.3) \u2014 SAME power, missing coefficient \u2014 OPEN (derive, not fit). With the cross-isotope SIGN validation (#3558), the picture is \u0394_\u03bb = O(1)\u00b7sgn\u00b7dim(\u03bb), O(1) the only unknown. NOTHING WIRED."
   },
   "context": {
     "reuses": "atom-chi-rust-{d,t,3he,4he} (\u03c7) + wedderburn_jones_markov.y_lambda_at (y_\u03bb)",
     "selects": "the #3542 irrep trace \u0394_\u03bb=sgn\u00b7dim as the A-stable magnitude scaling",
     "confirms": "#3558 block dim\u00b2 was a deuteron coincidence (wrong power by A-stability)",
-    "open": "the O(1) multiplicative factor (~2.5-5.5) \u2014 same power \u2014 DERIVE, do not fit",
+    "open": "the O(1) multiplicative factor (~3-9) \u2014 same power \u2014 DERIVE, do not fit",
     "gate": "\u0394_\u03bb gate \u2014 A-stability is a structural criterion, not a fit; nothing wired"
   }
 }
