@@ -4,10 +4,10 @@
   "engine": "python",
   "engineVersion": "3.11.15",
   "scriptFile": "wlambda_wstd_growth_bound_probe.py",
-  "commitSha": "00e8a66b22a0b6abe4d5fc2dfe28c687b68de4c3",
+  "commitSha": "06079c596131af15e8fb0de69e0eee33ce4450b3",
   "scriptHash": "34f9d3b08d90",
   "description": "Provable core of the log-type k(A): w_std(k)=E_Planch[f^{lambda/(2,1)}] grows SUPER-EXPONENTIALLY (strictly increasing ratios + w_std/2^k increasing tail, factorial class; q0 preserves the class). Inverting it against extensive B~A forces k~log A (at most log A/log log A), excluding k~A and k~bond-count. No scale, no closure; conditional on the connected-tower picture.",
-  "generated": "2026-07-11T18:00:15.844797+00:00",
+  "generated": "2026-07-11T18:14:28.112711+00:00",
   "assertions": [
     {
       "name": "wstd_ratios_strictly_increasing_super_geometric",
