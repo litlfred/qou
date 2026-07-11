@@ -1,0 +1,42 @@
+{
+  "computation": "deltalambda-sign-operator-narrowing",
+  "description": "The \u0394_\u03bb sign carrier q^{2n(\u03bb)} is a central character but not a framing power and not a low-degree JM content-symmetric central element; it is the co-content / principal-specialization (pivotal) grading at \u03b6\u2084. Narrows the operator; does not derive \u0394_\u03bb.",
+  "auditOnly": "docs/audits/2026-07-11-deltalambda-sign-operator-narrowing.md",
+  "tier": "symbolic-exact (sympy; rational linear algebra + q=i identities)",
+  "computedAt": "2026-07-11T11:30:29.298725+00:00",
+  "commitSha": "ad01b354f2d2a36bc76a8d02194e9894f17f7f6b",
+  "engine": "sympy",
+  "engineVersion": "1.14.0",
+  "scriptFile": "deltalambda_sign_operator_narrowing_probe.py",
+  "scriptHash": "5c87e3e92ed6",
+  "assertions": [
+    {
+      "name": "not_a_framing_power",
+      "passed": true,
+      "detail": "sign \u2260 full twist q^{2(n(\u03bb')-n(\u03bb))} AND \u2260 framing sqrt q^{n(\u03bb')-n(\u03bb)} at q=i"
+    },
+    {
+      "name": "not_a_low_degree_JM_central_element",
+      "passed": true,
+      "detail": "n(\u03bb) is NOT an exact polynomial in content power sums p_1..p_4 (+|\u03bb|) over \u03bb\u22a24..7 => q^{2n(\u03bb)} is not a canonical low-degree JM/framing central element"
+    },
+    {
+      "name": "carrier_is_cocontent_principal_specialization_grading",
+      "passed": true,
+      "detail": "n(\u03bb) = \u03a3_box row(box) (co-content / principal-spec exponent, s_\u03bb(1,q,..)=q^{n(\u03bb)}\u00b7\u2026), distinct from the content sum n(\u03bb')-n(\u03bb) framings grade by => pivotal/\u03c1-grading, not JM"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "not_framing_power": true,
+    "min_JM_poly_degree_found": null,
+    "carrier_statistic": "n(\u03bb)=\u03a3 row(box) \u2014 co-content / principal-specialization (pivotal) grading",
+    "verdict": "NARROWED (structural; nothing derived): the \u0394_\u03bb sign carrier q^{2n(\u03bb)} (=(-1)^{n(\u03bb)} at q=i, \u03b6\u2084) is a central character but (A) NOT a framing power \u2014 full twist and framing sqrt are graded by the content sum n(\u03bb')-n(\u03bb), not n(\u03bb); (B) NOT a low-degree JM content-symmetric central element \u2014 n(\u03bb) is not an exact polynomial in content power sums p_1..p_4; (C) it is the CO-CONTENT / principal-specialization grading n(\u03bb)=\u03a3 row (s_\u03bb(1,q,q\u00b2,\u2026)=q^{n(\u03bb)}\u00b7\u2026), a q^{2\u03c1}-type PIVOTAL grading of the ribbon category, distinct from the JM contents c=col-row. So the \u0394_\u03bb chirality sign lives in the ribbon PIVOTAL structure at \u03b6\u2084, not a braid central element. OPEN (not claimed): the exact pivotal element and the magnitude |\u0394_\u03bb|=dim (Track A). Records the narrowing; does not derive \u0394_\u03bb. NOTHING wired."
+  },
+  "context": {
+    "prior": "computations/deltalambda/deltalambda-sign-cyclotomic-locus.witness.json (#3509)",
+    "selection_rule": "QOU.SelectionRules (bar-parity + sign-positivity)",
+    "open": "exact pivotal element realizing q^{2n(\u03bb)}; magnitude |\u0394_\u03bb|=dim (Track A)",
+    "gate": "\u0394_\u03bb gate \u2014 structural narrowing, no fit, nothing wired"
+  }
+}
