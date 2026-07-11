@@ -1,0 +1,83 @@
+{
+  "computation": "deltalambda-o1-manybody-residual",
+  "description": "The O(1) residual in \u0394_\u03bb=O(1)\u00b7sgn\u00b7dim is the missing many-body (\u03b1-saturation) term, NOT a categorical constant: n_strands=3A (color already in braid), T/\u00b3He share topology but differ (not topological), residual max at doubly-magic \u2074He (\u03b1-saturation). Deriving it = the known-open operator-valued branching combiner, not a fit. Nothing wired.",
+  "auditOnly": "docs/audits/2026-07-11-deltalambda-o1-manybody-residual.md",
+  "tier": "measurement (reuses atom-chi-rust \u03c7 + validated y_lambda_at; AME targets)",
+  "computedAt": "2026-07-11T22:10:21.514661+00:00",
+  "commitSha": "b5de756d66dd1d1e9873c811fa18fc3067527a8e",
+  "engine": "mpmath",
+  "engineVersion": "1.3.0",
+  "scriptFile": "deltalambda_o1_manybody_probe.py",
+  "scriptHash": "843b245dc8cb",
+  "q0": "1.1099785827513808076",
+  "q0_source": "qou_substrate.q_at(30)",
+  "assertions": [
+    {
+      "name": "n_strands_is_3A_color_triplet",
+      "passed": true,
+      "detail": "n_strands = 3A for all four (d:6=3\u00b72, t:9=3\u00b73, 3he:9=3\u00b73, 4he:12=3\u00b74) \u2014 the color triplet is already in the braid, NOT a free residual factor"
+    },
+    {
+      "name": "residual_not_topological_TvsHe3",
+      "passed": true,
+      "detail": "T and \u00b3He share braid topology (n_strands=9, n_partitions=30) but residuals differ 4.44 vs 3.29 (35%) => residual is NOT a topological O(1) constant"
+    },
+    {
+      "name": "residual_max_at_alpha_manybody",
+      "passed": true,
+      "detail": "residual max at 4he (\u2074He, 9.3); B_AME/A max at 4he (\u03b1-saturation) but B_dim/A max at 3he (NOT \u2074He) => the residual is the missing many-body \u03b1-saturation term, not a constant"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "per_isotope": {
+      "d": {
+        "A": 2,
+        "n_strands": 6,
+        "n_partitions": 11,
+        "B_dim_MeV": -0.38007125148431475,
+        "B_AME_MeV": 2.22452,
+        "residual": 5.852902557908419,
+        "B_AME_per_A": 1.11226,
+        "B_dim_per_A": 0.19003562574215738
+      },
+      "t": {
+        "A": 3,
+        "n_strands": 9,
+        "n_partitions": 30,
+        "B_dim_MeV": -1.9085327584765543,
+        "B_AME_MeV": 8.4818,
+        "residual": 4.4441469303206595,
+        "B_AME_per_A": 2.8272666666666666,
+        "B_dim_per_A": 0.6361775861588514
+      },
+      "3he": {
+        "A": 3,
+        "n_strands": 9,
+        "n_partitions": 30,
+        "B_dim_MeV": -2.3446056813751914,
+        "B_AME_MeV": 7.71804,
+        "residual": 3.2918285839319066,
+        "B_AME_per_A": 2.57268,
+        "B_dim_per_A": 0.7815352271250638
+      },
+      "4he": {
+        "A": 4,
+        "n_strands": 12,
+        "n_partitions": 77,
+        "B_dim_MeV": -3.0381869604868865,
+        "B_AME_MeV": 28.29567,
+        "residual": 9.313340610041148,
+        "B_AME_per_A": 7.0739175,
+        "B_dim_per_A": 0.7595467401217216
+      }
+    },
+    "verdict": "THE O(1) RESIDUAL IS THE MISSING MANY-BODY TERM, NOT A CONSTANT (formalize-first NEGATIVE, no fit): (A1) n_strands=3A exactly \u2014 color \u00d73 is already in the braid, not a free factor; (A2) T and \u00b3He share braid topology but differ in residual (4.4 vs 3.3) \u2014 the residual is NOT topological, so a single constant cannot close it (leaves the 2.8x spread); (A3) B(dim) is sub-linear while B_AME is super-linear, and the residual is MAXIMAL at the doubly-magic \u2074He (\u03b1-saturation) where B_AME/A peaks but B_dim/A does not. So the residual is the SIZE of the missing many-body binding term \u2014 a single Jones\u2013Markov trace tr_M(\u03b2_K) is a 2-body-like object; the \u03b1 enhancement is 4-body saturation. Deriving it = deriving the operator-valued branching combiner (the KNOWN-OPEN Subgoal-1 closure path), NOT fitting a seventh O(1) ansatz. Scope-(a) magnitude-limited. NOTHING WIRED."
+  },
+  "context": {
+    "follows": "deltalambda-binding-a-scaling.witness.json (#3569)",
+    "prunes": "the 'single O(1) constant' and 'topological O(1)' hypotheses for the residual",
+    "reidentifies": "the residual as the known-open Subgoal-1 many-body term (operator-valued branching combiner, docs/precision-goals.md)",
+    "gate": "\u0394_\u03bb gate \u2014 formalize-first NEGATIVE; no seventh fit-based ansatz; nothing wired"
+  }
+}
