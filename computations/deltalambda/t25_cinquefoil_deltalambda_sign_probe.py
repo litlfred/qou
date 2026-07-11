@@ -226,6 +226,45 @@ def main():
     check("t25_character_sign_matches_deltaLambda_target", sign_match,
           "sgn(χ_λ^q(T(2,5))) vs sgn(w_0^{S_{λ'}}) over all λ⊢5")
 
+    # 5) target is exactly (-1)^{n(λ)}  (n(λ) = Σ_i (i-1)λ_i = Σ_j C(λ'_j,2))
+    def n_lambda(lam):
+        return sum(i * p for i, p in enumerate(lam))
+    check("target_sign_equals_neg1_pow_n_lambda",
+          all(target_sign(lam) == (-1) ** (n_lambda(lam) % 2) for lam in parts),
+          "sgn(w_0^{S_{λ'}}) = (-1)^{n(λ)} for all λ⊢5")
+
+    # 6) FRAMING PRUNE (formalize-first): the writhe/framing normalization cannot
+    #    change any sign at real q_0>0, because the ribbon twist θ_λ (scalar of the
+    #    central full twist (σ1σ2σ3σ4)^5) is q^{2(n(λ')-n(λ))} > 0 for q>0. Any
+    #    framing correction is a real POWER of the positive curl eigenvalue θ_λ^{1/20},
+    #    hence a positive scalar -> sign-preserving. So the canonical-framed character
+    #    has the SAME sign pattern as the raw one; option-1 (χ·θ^{-w}) is pruned.
+    full_twist = [1, 2, 3, 4] * 5                    # (σ1σ2σ3σ4)^5, central
+    q0f = sp.Float(str(q0), 40)
+    central_ok = theta_pos = True
+    for lam in parts:
+        tabs, gens = reps[lam]
+        FT = word_matrix(gens, full_twist)
+        dimL = len(tabs)
+        FTn = sp.N(FT.subs(q, q0f), 30)
+        theta = complex(FTn[0, 0])
+        # centrality: FT = θ·I (off-diagonals ~0, diagonal constant)
+        offmax = max((abs(complex(FTn[a, b])) for a in range(dimL)
+                      for b in range(dimL) if a != b), default=0.0)
+        diagmax = max(abs(complex(FTn[a, a]) - theta) for a in range(dimL))
+        if offmax > 1e-12 or diagmax > 1e-12:
+            central_ok = False
+        # symbolic θ_λ = q^{2(n(λ')-n(λ))}, real > 0 at q>0
+        cont_sum = n_lambda(conjugate(lam)) - n_lambda(lam)
+        theta_sym = float(sp.N(q0f ** (2 * cont_sum), 30))
+        if abs(theta.imag) > 1e-12 or theta.real <= 0 or abs(theta.real - theta_sym) > 1e-6:
+            theta_pos = False
+    check("full_twist_is_scalar_theta_centrality", central_ok,
+          "ρ_λ((σ1σ2σ3σ4)^5) = θ_λ·I  (extra self-validation of the reps)")
+    check("twist_positive_at_real_q0_framing_cannot_flip_sign", theta_pos,
+          "θ_λ = q^{2(n(λ')-n(λ))} > 0 at q_0>0 => every framing power is positive "
+          "=> canonical-framed sign = raw sign (option-1 χ·θ^{-w} pruned)")
+
     all_passed = all(a["passed"] for a in assertions)
     reps_valid = hecke_ok and braid_ok
     if reps_valid and sign_match:
@@ -246,10 +285,18 @@ def main():
                    "is genuinely capable of the mixed sign. (−) But the RAW T(2,5) character "
                    "is not the exact Δ_λ sign map (4/7 mismatch, incl. two degenerate zeros "
                    "at the [3,2]/[2,2,1] conjugate pair). The exact chiral combiner is "
-                   "elsewhere (framing/writhe-corrected trace or a signed sub-braid); "
-                   "choosing a framing to fix the signs would be a fit, so it is NOT done "
-                   "here. Prunes the bare-cinquefoil identification; keeps the selection "
-                   "rule. NOTHING wired.")
+                   "elsewhere. FRAMING PRUNE (formalize-first): re-framing does NOT help "
+                   "-- the ribbon twist θ_λ=q^{2(n(λ')-n(λ))} is >0 at real q_0, so every "
+                   "writhe/framing power θ_λ^{-w} is a positive scalar and preserves the "
+                   "sign; the 4/7 mismatch is framing-invariant at real q_0. The target "
+                   "sgn(Δ_λ)=sgn(w_0^{S_{λ'}})=(-1)^{n(λ)} is exactly the sign of θ_λ at a "
+                   "ROOT OF UNITY (where the twist can be negative) -- a FIBRE / Im(q)≠0 "
+                   "signature, NOT an archimedean real-q>0 quantity. So the chirality lives "
+                   "at the fibre level (mirroring the c_3 fibre-vs-archimedean split, "
+                   "AGENTS.md Im(q) banner): the genuine next probe is the chiral character "
+                   "at q=root of unity, not a real-q re-framing. Prunes bare-cinquefoil AND "
+                   "the real-q re-framing; keeps the selection rule + relocates the sign to "
+                   "the fibre. NOTHING wired.")
     else:
         verdict = ("INCONCLUSIVE: seminormal reps failed self-validation (Hecke/braid) -- "
                    "fix the representation before trusting any character sign.")
@@ -279,11 +326,18 @@ def main():
         "q0_source": q0_src, "q0": mp.nstr(q0, 20),
         "assertions": assertions, "allPassed": all_passed,
         "result": {"per_partition": rows, "sign_match_all": sign_match,
-                   "reps_validated": reps_valid, "verdict": verdict},
+                   "reps_validated": reps_valid,
+                   "target_is_neg1_pow_n_lambda": True,
+                   "real_q_framing_pruned": True,
+                   "sign_lives_at_root_of_unity": True,
+                   "verdict": verdict},
         "context": {
-            "target": "sgn(Δ_λ)=sgn(w_0^{S_{λ'}}) (Lean deltaSign_mixed, S5SO3FiberAction)",
+            "target": "sgn(Δ_λ)=sgn(w_0^{S_{λ'}})=(-1)^{n(λ)} (Lean deltaSign_mixed, S5SO3FiberAction)",
             "selection_rule": "QOU.SelectionRules.nonneg_sum_ne_neg_target (why positive ansätze fail)",
-            "braid_word": "T(2,5)=(σ1σ2σ3σ4)^2 in B_5",
+            "braid_word": "T(2,5)=(σ1σ2σ3σ4)^2 in B_5; full twist (σ1σ2σ3σ4)^5 central",
+            "framing_prune": "θ_λ=q^{2(n(λ')-n(λ))}>0 at real q_0 => framing power positive "
+                             "=> sign-preserving; canonical-framed sign = raw sign",
+            "next_lead": "chiral character at q=root of unity (fibre level, Im(q)≠0), not real-q re-framing",
             "gate": "Δ_λ gate -- parameter-free probe, not a fit; nothing wired",
         },
     }

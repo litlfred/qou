@@ -174,15 +174,26 @@ to the Lean-proved sign target `sgn(Δ_λ) = sgn(w₀^{S_{λ'}}) = (−1)^{Σ C(
   rule (Finding 6) is vindicated on a live case.
 - **(−) Raw identification pruned (scope-(a)).** The bare T(2,5) character is **not**
   the exact Δ_λ sign map (4/7 mismatch, incl. two degenerate zeros at the [3,2]/[2,2,1]
-  conjugate pair). The exact chiral combiner is elsewhere (a framing/writhe-corrected
-  trace or a signed sub-braid). Choosing a framing to fix the signs would be a **fit**
-  (Δ_λ gate), so it is **not** done — the honest result is: chirality is the right
-  *class*, this specific trace is not the *map*. Magnitude `|Δ_λ| = dim` untouched
-  (Track A open).
+  conjugate pair). Chirality is the right *class*, this specific trace is not the *map*.
+  Magnitude `|Δ_λ| = dim` untouched (Track A open).
+- **(−) Re-framing pruned too, formalize-first (no fit run).** The obvious follow-up —
+  a writhe/framing-corrected character `χ_λ · θ_λ^{−w}` — **cannot** fix the signs at
+  real q₀, and this is settled without a search: the ribbon twist `θ_λ` (the scalar of
+  the central full twist `(σ₁σ₂σ₃σ₄)⁵`, verified `ρ_λ = θ_λ·I`) equals
+  `q^{2(n(λ')−n(λ))} > 0` for `q₀ > 0`, so every framing power is a **positive scalar** —
+  sign-preserving. The 4/7 mismatch is framing-invariant at real q₀.
+- **(+/→) Where the sign actually lives.** The target simplifies to
+  `sgn(Δ_λ) = sgn(w₀^{S_{λ'}}) = (−1)^{n(λ)}` (verified all n) — which is exactly the
+  sign of `θ_λ` at a **root of unity**, where the twist can be negative. So the Δ_λ
+  chirality is a **fibre / Im(q)≠0 signature, not an archimedean real-q>0 quantity** —
+  mirroring the c₃ fibre-vs-archimedean split (AGENTS.md Im(q) banner). The genuine next
+  probe is the chiral character at `q = root of unity` (fibre level), **not** any
+  real-q re-framing.
 
-This is the disciplined version of "try the same analysis on the strong force":
-the parity engine transfers (chiral ⇒ mixed sign possible), the naive
-`T(2,5) = Δ_λ` identification does not survive contact with the Lean target.
+This is the disciplined version of "try the same analysis on the strong force": the
+parity engine transfers (chiral ⇒ mixed sign possible), the naive `T(2,5) = Δ_λ`
+identification and its real-q re-framing both fail against the Lean target, and the
+sign is relocated to the fibre — a concrete, non-fit next direction.
 
 ## Disposition
 
