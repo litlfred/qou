@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-11T22:15:38.698001+00:00",
-  "commitSha": "372cc8ad22e3ff682a7fa67bbe79ca90909fa540",
+  "computedAt": "2026-07-11T22:40:55.811561+00:00",
+  "commitSha": "bb470400873e335287ad9d287d545dde49136395",
   "assertions": [
     {
       "name": "fig8_eigenvalue_unit_modulus",
@@ -19,14 +19,30 @@
       "passed": true,
       "tolerance": 1e-06,
       "source": "θ(q=1)=120°: (σ₀σ₁)² is an S₃ 3-cycle, eigenvalue e^{2πi/3}"
+    },
+    {
+      "name": "reeb_degenerates_at_golden_ratio",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "tr M_{4_1}(phi)=2 (theta=0): the Reeb rotation degenerates at the golden ratio = A-poly branch point u=2 ln phi"
+    },
+    {
+      "name": "reeb_degenerates_at_cusp_shape",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "tr M_{4_1}(sqrt(omega))=-2 (theta=pi) at q^2=omega=e^{i pi/3}, the figure-8 cusp shape (Phi_6 root, barEven=1/barOdd^2=-3)"
     }
   ],
   "allPassed": true,
   "durationMs": 14,
   "computation": "qbeta-c3-reeb-rotation-phase",
   "scriptFile": "qbeta_c3_reeb_rotation_phase_probe.py",
-  "scriptHash": "c696eca45ac7",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "ac0da8df19e6",
+  "scriptCommitSha": "15a39a678ac12f7d50dcdeb96242f02bd6788a32",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -69,6 +85,22 @@
       "classical_theta_deg": "120",
       "cs_at_q1": "0"
     },
-    "verdict": "arg_u_eq_theta_scope_a_negative"
+    "verdict": "arg_u_eq_theta_scope_a_negative",
+    "degeneration_loci": {
+      "theta_0_at_golden": {
+        "q": "1.61803398875",
+        "tr": "2.0",
+        "ok": true
+      },
+      "theta_pi_at_cusp": {
+        "q_sq": "e^{i pi/3} (Phi_6 root)",
+        "tr": "-2.0",
+        "ok": true
+      },
+      "identities": [
+        "tr+2=(q^2-1+q^-2)^2",
+        "tr-2=(q^2-q-1)(q^2+q-1)(q^2-q+1)(q^2+q+1)/q^4"
+      ]
+    }
   }
 }
