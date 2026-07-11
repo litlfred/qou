@@ -47,17 +47,25 @@ The honest current deuteron figure (canonical, no per-block fit) is ~1% off AME,
 **not** sub-ppb. **Nothing regressed** — the accuracy was never derivational; the
 discipline simply stopped the corpus from *claiming* it was.
 
-## 3. ⁴He `canonical-recursive` still carries a residual anchor over-claim
+## 3. ⁴He `canonical-recursive` anchor over-claim — re-scoped (this PR)
 
-`canonical_isotope_witness.py` computes ⁴He at `layer = L3-α-cluster` with
-`n_α = 1, pairs = 0`, so `B_pred(⁴He) = B(⁴He)_anchor = AME` — i.e. ⁴He's
-binding is the AME value fed in as the α-cluster anchor, not a zero-parameter
-prediction. (The zero-parameter magic-A route,
-`alpha_cluster_recursion.py::B_4He = 29.9557 MeV`, is 5.9% off AME.) This is the
-same class of over-claim PR #3511 fixed for `A>40`, still live for the ⁴He
-α-anchor cell. **Recommended follow-up:** re-scope the ⁴He `canonical-recursive`
-cell to `asymptotic-approximation` / `anchored-to-AME`, matching #3511. (Queued;
-not done in this doc's PR — flagged for owner pick.)
+`canonical_isotope_witness.py` shipped ⁴He at `layer = L3-α-cluster:n_α=1,pairs=0`,
+the trivial identity `B_pred = 1·B(⁴He) + 0·c_αα = B(⁴He)` itself. The L3 sweep
+sources that ⁴He value from AME (28.29566), so the row is the AME anchor
+reflected through the identity — its ~0.08 ppm agreement is an anchor tautology,
+not a prediction — yet it shipped labelled `canonical-recursive`. (The
+zero-parameter magic-A route, `alpha_cluster_recursion.py::B_4He = 29.9557 MeV`,
+is 5.9% off AME and is the honest derived anchor; the downstream ⁸Be/¹²C
+recursions at n_α≥2 correctly use *that* value, at 5–19% off.)
+
+**Re-scoped on this PR** (mirroring PR #3511's A>40 fix): the n_α=1,pairs=0
+anchor identity is now labelled **`anchored-to-AME`** (badge `🟡 anchor
+(=AME, ⁴He identity)`), not `canonical-recursive`. Genuine recursion (n_α≥2)
+keeps `canonical-recursive`. The status was added to the composite-mass gate so
+⁴He still emits `M = N·m_n + Z·m_p − B`. The categorical closed form that would
+let ⁴He itself be *predicted* (not anchored) is **OPEN**. (Only the Z=02 shard
+was regenerated; other shards + the index carry the old label and are a separate
+gated atlas regen, as #3511 also deferred its ~90 A>40 shards.)
 
 ## 4. The honest question that stays open: a *derived* per-block weight
 
