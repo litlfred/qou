@@ -3,12 +3,12 @@
   "description": "Refined f-map action A (Aitken on order-13 4_1 ladder; real, not cleanly identified) + complex-q hexagonal-angle prune.",
   "audit_only": true,
   "tier": "structural-exact (Vol recovery, prune) + numerical (action, order-limited)",
-  "computedAt": "2026-07-11T04:44:16.048239+00:00",
-  "commitSha": "e64a555e77d08f8cf38b78a603e448ba07266c88",
+  "computedAt": "2026-07-11T04:54:09.964595+00:00",
+  "commitSha": "db92c208d7899154512b21406463a8b8f02d5d4a",
   "engine": "mpmath",
   "engineVersion": "1.3.0",
   "scriptFile": "qbeta_action_pin_refine.py",
-  "scriptHash": "d0cee8beb0b5",
+  "scriptHash": "09a184ae68a2",
   "assertions": [
     {
       "name": "vol41_recovered",
