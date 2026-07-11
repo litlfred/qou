@@ -47,25 +47,32 @@ The honest current deuteron figure (canonical, no per-block fit) is ~1% off AME,
 **not** sub-ppb. **Nothing regressed** — the accuracy was never derivational; the
 discipline simply stopped the corpus from *claiming* it was.
 
-## 3. ⁴He `canonical-recursive` anchor over-claim — re-scoped (this PR)
+## 3. ⁴He anchor over-claim — fixed by DERIVING it, not relabelling (this PR)
 
 `canonical_isotope_witness.py` shipped ⁴He at `layer = L3-α-cluster:n_α=1,pairs=0`,
 the trivial identity `B_pred = 1·B(⁴He) + 0·c_αα = B(⁴He)` itself. The L3 sweep
-sources that ⁴He value from AME (28.29566), so the row is the AME anchor
-reflected through the identity — its ~0.08 ppm agreement is an anchor tautology,
-not a prediction — yet it shipped labelled `canonical-recursive`. (The
-zero-parameter magic-A route, `alpha_cluster_recursion.py::B_4He = 29.9557 MeV`,
-is 5.9% off AME and is the honest derived anchor; the downstream ⁸Be/¹²C
-recursions at n_α≥2 correctly use *that* value, at 5–19% off.)
+fed that ⁴He value from AME (28.29566), so the row was the AME anchor reflected
+through the identity — its ~0.08 ppm agreement was an anchor tautology, not a
+prediction — yet it shipped labelled `canonical-recursive`. Worse, it
+**disagreed** with the ⁴He anchor the heavier α-nuclei actually use: the L2 layer
+(⁸Be…⁴⁰Ca) builds its recursion on the **magic-A** ⁴He value (29.9557), while the
+⁴He row itself shipped the contradictory **AME** value.
 
-**Re-scoped on this PR** (mirroring PR #3511's A>40 fix): the n_α=1,pairs=0
-anchor identity is now labelled **`anchored-to-AME`** (badge `🟡 anchor
-(=AME, ⁴He identity)`), not `canonical-recursive`. Genuine recursion (n_α≥2)
-keeps `canonical-recursive`. The status was added to the composite-mass gate so
-⁴He still emits `M = N·m_n + Z·m_p − B`. The categorical closed form that would
-let ⁴He itself be *predicted* (not anchored) is **OPEN**. (Only the Z=02 shard
-was regenerated; other shards + the index carry the old label and are a separate
-gated atlas regen, as #3511 also deferred its ~90 A>40 shards.)
+**Fixed by DERIVING ⁴He** (owner ruling 2026-07-11, "derive, don't anchor" —
+strictly better than the `anchored-to-AME` relabel first proposed). The
+n_α=1,pairs=0 cell now ships the genuine **zero-parameter magic-A derivation**
+
+```
+B(⁴He) = 2·m_e·A·(8G)·ρ_F ≈ 29.9557 MeV     (Catalan's G; no fit, no AME)
+```
+
+at **5.87 %** off AME — a *real* prediction with a *real* error, and now
+self-consistent with the recursion anchor the heavier α-nuclei use. It keeps
+`canonical-recursive` (honestly — it is a derivation) and still emits the
+composite mass `M = N·m_n + Z·m_p − B`. The **high-accuracy (sub-%)** derivation
+of B(⁴He) stays **OPEN** (the Δ_λ closed form — the same gate everything else
+hits). (Only the Z=02 shard regenerated; heavier α-nuclei already ship the
+magic-A anchor via L2, so no other shard changes; index untouched.)
 
 ## 4. The honest question that stays open: a *derived* per-block weight
 
