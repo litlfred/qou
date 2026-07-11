@@ -21,12 +21,15 @@ the ordinary matrix trace, on the concrete `HeckeRep` framework:
    character is a *class function* / cyclic-word invariant.
 2. **Conjugation invariance for the standard generators**
    `tr_ρ(σ_i · A · σ_i⁻¹) = tr_ρ(A)` and the `σ_i⁻¹`-conjugate
-   (`character_conj_gen` / `character_conj_genInv`).
+   (`trace_conj_gen` / `trace_conj_genInv`), together with the word-level
+   form `character_conj_word`.
 
 The enabling lemma is `HeckeRep.eval_append`: braid-word evaluation is a
 monoid homomorphism from list concatenation to matrix multiplication.  It
-was previously missing from `HeckeRep.lean` and is the structural bridge
-that lets the ordinary-matrix `trace_mul_comm` speak about braid words.
+extends the `HeckeRep` API (it is declared here under `QOU.Archimedean`, its
+proper namespace, so `ρ.eval_append` dot-notation resolves) and is the
+structural bridge that lets the ordinary-matrix `trace_mul_comm` speak about
+braid words.
 
 ## Scope / honesty note
 
@@ -47,11 +50,41 @@ and live in those files.
   groups and associated Hecke algebras.
 -/
 
+open Matrix
+
+/-! ## §1  Braid-word evaluation is a homomorphism
+
+Declared under `QOU.Archimedean` so it extends the `HeckeRep` API alongside
+`HeckeRep.eval` / `HeckeRep.character` (fully-qualified
+`QOU.Archimedean.HeckeRep.eval_append`, supporting `ρ.eval_append`
+dot-notation). -/
+
+namespace QOU.Archimedean
+
+variable {n d : ℕ}
+
+/-- **Evaluation is a monoid homomorphism.**  Evaluating the concatenation
+    of two braid words is the product of their evaluations:
+    `ρ.eval (v ++ w) = ρ.eval v * ρ.eval w`.
+
+    This is the structural fact that makes `HeckeRep.character` behave like a
+    trace on the braid monoid.  Proved by induction on the first word. -/
+theorem HeckeRep.eval_append (ρ : HeckeRep n d) (v w : BraidWord n) :
+    ρ.eval (v ++ w) = ρ.eval v * ρ.eval w := by
+  induction v with
+  | nil => simp [HeckeRep.eval]
+  | cons hd tl ih =>
+    obtain ⟨i, b⟩ := hd
+    cases b <;>
+      simp only [List.cons_append, HeckeRep.eval, ih, Matrix.mul_assoc]
+
+end QOU.Archimedean
+
 namespace QOU.MathlibExt.MarkovTrace
 
-open QOU.Archimedean Matrix
+open QOU.Archimedean
 
-/-! ## §1  Conjugation invariance of the matrix trace (QOU-free)
+/-! ## §2  Conjugation invariance of the matrix trace (QOU-free)
 
 A one-line consequence of cyclicity that Mathlib does not package under a
 convenient name.  It is the algebraic core of the Markov trace's
@@ -72,24 +105,7 @@ theorem trace_conj_of_mul_eq_one {R : Type*} [CommRing R] {m : Type*}
     (M * A * N).trace = A.trace := by
   rw [Matrix.trace_mul_comm, ← Matrix.mul_assoc, h, Matrix.one_mul]
 
-/-! ## §2  Braid-word evaluation is a homomorphism -/
-
 variable {n d : ℕ}
-
-/-- **Evaluation is a monoid homomorphism.**  Evaluating the concatenation
-    of two braid words is the product of their evaluations:
-    `ρ.eval (v ++ w) = ρ.eval v * ρ.eval w`.
-
-    This is the structural fact that makes `HeckeRep.character` behave like a
-    trace on the braid monoid.  Proved by induction on the first word. -/
-theorem HeckeRep.eval_append (ρ : HeckeRep n d) (v w : BraidWord n) :
-    ρ.eval (v ++ w) = ρ.eval v * ρ.eval w := by
-  induction v with
-  | nil => simp [HeckeRep.eval]
-  | cons hd tl ih =>
-    obtain ⟨i, b⟩ := hd
-    cases b <;>
-      simp only [List.cons_append, HeckeRep.eval, ih, Matrix.mul_assoc]
 
 /-! ## §3  The Markov trace and its trace property -/
 
@@ -118,7 +134,7 @@ theorem trace_mul_comm (A B : Matrix (Fin d) (Fin d) R_t) :
 theorem character_append_comm (ρ : HeckeRep n d) (v w : BraidWord n) :
     ρ.character (v ++ w) = ρ.character (w ++ v) := by
   unfold HeckeRep.character
-  rw [HeckeRep.eval_append, HeckeRep.eval_append, Matrix.trace_mul_comm]
+  rw [ρ.eval_append, ρ.eval_append, Matrix.trace_mul_comm]
 
 /-- `markovTrace` form of `character_append_comm`. -/
 theorem markovTrace_append_comm (ρ : HeckeRep n d) (v w : BraidWord n) :
@@ -163,7 +179,7 @@ theorem character_conj_word (ρ : HeckeRep n d) (i : Fin (n - 1))
   -- sides normalise to `(i, true) :: (w ++ [(i, false)])`.
   have hsplit : (i, true) :: (w ++ [(i, false)])
       = ([(i, true)] ++ w) ++ [(i, false)] := rfl
-  rw [hsplit, HeckeRep.eval_append, HeckeRep.eval_append]
+  rw [hsplit, ρ.eval_append, ρ.eval_append]
   -- `eval [(i,true)] = σ_i`, `eval [(i,false)] = σ_i⁻¹`
   simp only [HeckeRep.eval, Matrix.mul_one]
   exact trace_conj_gen ρ i (ρ.eval w)
