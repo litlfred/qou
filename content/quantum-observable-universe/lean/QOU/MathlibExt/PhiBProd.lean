@@ -261,4 +261,60 @@ theorem faddeevPhi_phiBProd (b : ℂ) (hb : 0 < b.re)
     rw [eq_comm, mul_div_assoc']
     exact (mul_div_mul_left _ _ hpre).symm ▸ rfl
 
+/-! ## The substrate b-map lands in the product-supported branch
+
+The physical b-map pinned by the numerical battery (PR #3540,
+`computations/qbeta/phi-b-substrate-regime.witness.json`) is
+`b(t) = √(t/2π)·e^{iπ/4}` with `t = ln q₀ > 0`.  Here we prove the two facts
+that place it in scope: `Re b > 0` (the `FaddeevPhi.hb` precondition) and
+`Im b² > 0` (the branch on which the modular-double product converges — the
+regime of `faddeevPhi_phiBProd`).  With the pending `Multipliable` discharge,
+`faddeevPhi_phiBProd (substrateB t) …` becomes the physical instance. -/
+
+/-- The substrate b-map `b(t) = √(t/2π)·e^{iπ/4}` (`t = ln q₀`). -/
+noncomputable def substrateB (t : ℝ) : ℂ :=
+  (Real.sqrt (t / (2 * Real.pi)) : ℂ) * Complex.exp ((Real.pi / 4 : ℝ) * I)
+
+/-- `Re (substrateB t) > 0` for `t > 0` — the `FaddeevPhi.hb` precondition
+holds at the physical map. -/
+theorem substrateB_re_pos {t : ℝ} (ht : 0 < t) : 0 < (substrateB t).re := by
+  unfold substrateB
+  rw [Complex.re_ofReal_mul, Complex.exp_ofReal_mul_I_re, Real.cos_pi_div_four]
+  have hr : 0 < Real.sqrt (t / (2 * Real.pi)) :=
+    Real.sqrt_pos.mpr (div_pos ht (by positivity))
+  positivity
+
+/-- `(substrateB t)² = (t/2π)·i` — the square is purely imaginary with
+positive imaginary part (for `t > 0`), i.e. `q = e^{2πib²} = e^{-t} = 1/q₀`
+and the product-branch condition `Im b² > 0` holds. -/
+theorem substrateB_sq {t : ℝ} (ht : 0 ≤ t) :
+    (substrateB t) ^ 2 = ((t / (2 * Real.pi) : ℝ) : ℂ) * I := by
+  unfold substrateB
+  rw [mul_pow, ← Complex.exp_nat_mul]
+  have h1 : ((Real.sqrt (t / (2 * Real.pi)) : ℂ)) ^ 2
+      = ((t / (2 * Real.pi) : ℝ) : ℂ) := by
+    rw [← Complex.ofReal_pow]
+    norm_cast
+    exact Real.sq_sqrt (div_nonneg ht (by positivity))
+  have h2 : ((2 : ℕ) : ℂ) * (((Real.pi / 4 : ℝ) : ℂ) * I)
+      = ((Real.pi / 2 : ℝ) : ℂ) * I := by
+    push_cast
+    ring
+  rw [h1, h2, Complex.exp_mul_I]
+  have hc : Complex.cos ((Real.pi / 2 : ℝ) : ℂ) = 0 := by
+    rw [← Complex.ofReal_cos, Real.cos_pi_div_two, Complex.ofReal_zero]
+  have hs : Complex.sin ((Real.pi / 2 : ℝ) : ℂ) = 1 := by
+    rw [← Complex.ofReal_sin, Real.sin_pi_div_two, Complex.ofReal_one]
+  rw [hc, hs]
+  ring
+
+/-- `Im (substrateB t)² > 0` for `t > 0` — the physical b-map sits on the
+product-supported (`Im b² > 0`) branch, where `phiBProd` realizes `Φ_b`. -/
+theorem substrateB_sq_im_pos {t : ℝ} (ht : 0 < t) :
+    0 < ((substrateB t) ^ 2).im := by
+  rw [substrateB_sq ht.le]
+  simp only [Complex.mul_im, Complex.ofReal_re, Complex.I_im, Complex.ofReal_im,
+    Complex.I_re, mul_zero, mul_one, add_zero]
+  positivity
+
 end QOU.MathlibExt.PhiBProd
