@@ -33,7 +33,7 @@ bijection `Sym n ≃ Σ_{λ⊢n} SYT(λ) × SYT(λ)` and its cardinality count.*
 Pinned Mathlib has `Mathlib.Combinatorics.RSK` (partial) but not the
 cardinality consequence; the repo builds it brick by brick.
 
-## Brick status — `QOU/Mathlib/SchenstedInsertion.lean` (290 lines, **0 sorry**)
+## Brick status — `QOU/Mathlib/SchenstedInsertion.lean` (**0 sorry**)
 
 | Brick | Content | Status |
 |---|---|---|
