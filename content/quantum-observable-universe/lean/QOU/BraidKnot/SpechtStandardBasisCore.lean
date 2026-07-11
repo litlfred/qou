@@ -2838,8 +2838,7 @@ theorem fibre_colWordNum_decrease {π : Equiv.Perm (Fin (Specht.nOf μ))}
 
 /-! #### The single residual straightening core + the induction skeleton -/
 
-omit [CharZero k] in
-/-- **STUB — the residual straightening core, on the CORRECT `colWordNum` measure
+/-- **The residual straightening core, on the CORRECT `colWordNum` measure
 (Sagan §2.6 Garnir relations).**
 A polytabloid `e_t` that is *not itself* a standard polytabloid **and** whose tableau
 `t` is already **column-word-minimal** — no column permutation `σ ∈ C_t` *lowers* the
@@ -2877,58 +2876,61 @@ theorem straightening_step_colMax (t : Specht.Tableau μ)
       (∀ t' ∈ s, colWordNum t' < colWordNum t) ∧
       Specht.polytabloid (k := k) t = ∑ t' ∈ s, c t' • Specht.polytabloid (k := k) t' := by
   -- Ref: [sagan2001] §2.6 (Garnir relations / straightening algorithm); also
-  -- [james1984representation] §8. Restated (2026-07-07) on the CORRECT `colWordNum`
-  -- measure (the earlier `domWeight` goal was FALSE — audit §3.5). With the column-sort
-  -- exhausted (`hmax`: `t` is column-word-minimal ⇒ columns sorted), the residual is a
-  -- pure Garnir coset-sum identity at a row descent, whose non-identity terms are
-  -- polytabloids of strictly `colWordNum`-SMALLER tableaux.
-  --
-  -- REDUCTION ROADMAP. The algebraic (annihilation + coset-reindex) half is proved
-  -- sorry-free; the remaining obligations are the Garnir-set construction and the NEW
-  -- column-word-decrease bound. The proved pieces compose as
-  --   Garnir set → hfam → `sum_sign_rep_polytabloid_eq_zero_of_family`
-  --              → `transversal_sum_eq_zero` → (colWordNum analogue of `garnir_assembly`)
-  --              → e_t = Σ (non-id terms).
-  --   NB `garnir_assembly` itself is `domWeight`-typed (now orphaned); its measure-agnostic
-  --   reindexing transcribes to a `colWordNum` version whose `hdom` reads
-  --   `colWordNum (π•t) < colWordNum t`.
-  --
-  -- 1. Obtain the row descent. `exists_row_descent_of_colMax` is stated with a
-  --    `domWeight`-maximality hypothesis, so it does NOT accept the new `colWordNum`
-  --    `hmax` as-is — it needs a colWordNum-adapted restatement (or route via the shared
-  --    fact: `hmax` ⇒ `t` column-standard ⇒ a row descent (i,j),(i,j+1) ∈ μ with
-  --    `labelAt t hij1 ≤ labelAt t hij` exists; the column-standardness argument is
-  --    measure-agnostic — cf. `colStandard_of_colMax`, likewise `domWeight`-typed).
-  -- 2. Garnir label-sets (as `Finset (Fin (nOf μ))`, via `colPattern`/`rowPattern`):
-  --      A := univ.filter (fun l => colPattern t l = j     ∧ i ≤ rowPattern t l)
-  --      B := univ.filter (fun l => colPattern t l = j + 1 ∧ rowPattern t l ≤ i)
-  --    Disjoint; |A| + |B| = colLen j + 1 (rows 0..i all in col j+1 since (i,j+1)∈μ).
-  -- 3. `H := (S_A × S_B)`, `T` a left transversal of H in `S_{A∪B}` (the SHUFFLE
-  --    transversal — reps increasing on A and on B). Feeds `garnir_assembly` /
-  --    `transversal_sum_eq_zero` (both `⊆ colStab t`; `1 ∈ T`; `0 < H.card`). For a
-  --    column-standard t the identity coset contributes coefficient 1, so
-  --    e_t = −Σ_{non-id π∈T} c_π · e_{π•t} directly (no CharZero division).
-  -- 4. hfam (the pigeonhole crux, worked out): for every ρ ∈ colStab t,
-  --    φ l := rowPattern t (ρ⁻¹ l) is injective on A and on B and maps into
-  --    {0..colLen j − 1}; |A|+|B| = colLen j + 1 forces a collision a∈A,b∈B in the
-  --    same row, so `Equiv.swap a b ∈ rowStab (ρ•t) ∩ S_{A∪B}` and
-  --    `mtab_sum_sign_smul_of_eq_zero` at ρ•t gives hfam ρ.
-  -- 5. **column-word decrease (the genuine remaining core).** For the shuffle
-  --    transversal, every non-identity rep's column-sorted image `t'` satisfies
-  --    `colWordNum t' < colWordNum t`. VALIDATED exhaustively (all col-standard
-  --    tableaux, all row descents, shapes to (3,3,2)/(4,3,1); audit §4.5) — this is a
-  --    TRUE statement, unlike the old `domWeight` claim. The Lean proof needs: the
-  --    column word of the sorted A-column is lex-smaller after the shuffle moves a
-  --    smaller B-label into an earlier column-major cell. This is the one open piece.
-  -- STATUS: the coset-sum machinery (steps 1–4) is proved sorry-free and REUSABLE
-  --   (`garnir_full_annihilation`, `sum_over_garnirG_reindex`, `transversal_sum_eq_zero`,
-  --   `garnir_transversal_exists`, `sum_sign_rep_polytabloid_eq_zero_of_family`).
-  --   Everything DOWNSTREAM of this theorem is now sorry-free on `colWordNum` — the
-  --   spanning chain is SOUND. Only the step-5 column-word-decrease bound + the Garnir-
-  --   set wiring remain. Ref: [sagan2001] §2.6; [james1984representation] §8.
-  sorry
+  -- [james1984representation] §8. On the CORRECT `colWordNum` measure (the earlier
+  -- `domWeight` goal was FALSE — audit §3.5). Assembly: a row descent + the Garnir
+  -- coset-sum annihilation express `e_t` as a combination of raw fibre polytabloids
+  -- `e_{π•t}`; each non-pivot fibre's column-sorted image is strictly `colWordNum`-smaller
+  -- (`fibre_colWordNum_decrease`), and `poly_combo_reindex` reindexes onto those sorted
+  -- images to give the strictly-smaller conclusion.
+  classical
+  -- 1. row descent from column-word-minimality
+  obtain ⟨i, j, hij, hij1, hdesc⟩ := exists_row_descent_of_colWordMin t h hmax
+  -- 2. transversal `T` of `H = garnirH` in `garnirG`, with its distinguished `H`-pivot `π₀`
+  obtain ⟨T, π₀, hπ₀T, hπ₀H, hother, hcover, hclosed, hcard⟩ :=
+    garnir_transversal_with_pivot t i j
+  have h1H : (1 : Equiv.Perm (Fin (Specht.nOf μ))) ∈ garnirH t i j := by
+    rw [garnirH, Finset.mem_inter]
+    exact ⟨by rw [garnirG, Finset.mem_filter]; exact ⟨Finset.mem_univ _, fun l _ => rfl⟩,
+      by rw [Finset.mem_filter]; exact ⟨Finset.mem_univ _, Subgroup.one_mem _⟩⟩
+  -- 3. the full-Garnir annihilation reindexes to a vanishing transversal sum
+  have hann : ∑ π ∈ T, (Equiv.Perm.sign π : ℤ) •
+      Specht.Mtab.rep μ π (Specht.polytabloid (k := k) t) = 0 := by
+    apply transversal_sum_eq_zero t T (garnirH t i j)
+      (garnirH_subset_colStab t i j) (garnirH_card_pos t i j)
+    rw [← sum_over_garnirG_reindex t i j T hcover hclosed hcard
+      (fun σ => (Equiv.Perm.sign σ : ℤ) • Specht.Mtab.rep μ σ (Specht.polytabloid (k := k) t))]
+    exact garnir_full_annihilation t hij hij1
+  -- 4. `hfix`: the pivot acts by its sign (`π₀ ∈ garnirH ⊆ colStab`)
+  have hfix : Specht.Mtab.rep μ π₀ (Specht.polytabloid (k := k) t)
+      = (Equiv.Perm.sign π₀ : ℤ) • Specht.polytabloid (k := k) t :=
+    rep_polytabloid_of_mem_colStab t (garnirH_subset_colStab t i j π₀ hπ₀H)
+  -- 5. `hgood`: every non-pivot fibre reduces to a strictly `colWordNum`-smaller polytabloid
+  have hgood : ∀ π ∈ T, π ≠ π₀ →
+      ∃ u : Specht.Tableau μ, colWordNum u < colWordNum t ∧
+        ∃ ε : k, Specht.polytabloid (k := k) ((π : Equiv.Perm (Fin (Specht.nOf μ))) • t)
+          = ε • Specht.polytabloid (k := k) u := by
+    intro π hπT hπne
+    have hπnotH : π ∉ garnirH t i j := hother π hπT hπne
+    have hπG : π ∈ garnirG t i j := by
+      apply hclosed
+      rw [Finset.mem_image]
+      exact ⟨(π, 1), Finset.mem_product.mpr ⟨hπT, h1H⟩, mul_one π⟩
+    obtain ⟨ρ, hρmem, hlt⟩ := fibre_colWordNum_decrease t hij hij1 hmax hdesc hπG hπnotH
+    refine ⟨ρ • (π • t), hlt, ((Equiv.Perm.sign ρ : ℤ) : k), ?_⟩
+    have hpoly : Specht.polytabloid (k := k) (π • t)
+        = (Equiv.Perm.sign ρ : ℤ) • Specht.polytabloid (k := k) (ρ • (π • t)) := by
+      rw [polytabloid_colStab_smul (π • t) hρmem, smul_smul]
+      have hs2 : (Equiv.Perm.sign ρ : ℤ) * (Equiv.Perm.sign ρ : ℤ) = 1 := by
+        rcases Int.units_eq_one_or (Equiv.Perm.sign ρ) with hh | hh <;> rw [hh] <;> decide
+      rw [hs2, one_smul]
+    rw [hpoly, ← Int.cast_smul_eq_zsmul k]
+  -- 6. assemble `e_t = Σ c_{π•t} e_{π•t}` then reindex onto the sorted images
+  obtain ⟨s, c, hsP, hseq⟩ := garnir_assembly_gen t
+    (fun t' => ∃ u : Specht.Tableau μ, colWordNum u < colWordNum t ∧
+      ∃ ε : k, Specht.polytabloid (k := k) t' = ε • Specht.polytabloid (k := k) u)
+    T π₀ hπ₀T hfix hgood hann
+  exact poly_combo_reindex t s c hseq hsP
 
-omit [CharZero k] in
 /-- **Straightening step (Sagan §2.6) — reduced sorry-free to the column-maximal core.**
 A polytabloid `e_t` that is *not itself* a standard polytabloid is a `k`-linear
 combination of polytabloids of **strictly `colWordNum`-smaller** tableaux (the
@@ -2975,9 +2977,8 @@ theorem straightening_step (t : Specht.Tableau μ)
     push_neg at hraise
     exact straightening_step_colMax (k := k) t h hraise
 
-omit [CharZero k] in
-/-- **Spanning half — now proved sorry-free MODULO the single core
-`straightening_step`.** Every polytabloid `e_t` (arbitrary tableau `t`) lies in the
+/-- **Spanning half — proved sorry-free.** Every polytabloid `e_t` (arbitrary tableau `t`)
+lies in the
 span of the *standard* polytabloids, by well-founded (strong) induction on the
 **column-word measure** `colWordNum t` (DESCENDING): if `e_t` is already a standard
 polytabloid it is in the spanning set; otherwise `straightening_step` rewrites it
@@ -3003,10 +3004,9 @@ theorem standardPolytabloid_straightening :
       have hlt : colWordNum t' < colWordNum t := hgt t' ht'
       exact IH (colWordNum t') (by omega) t' rfl
 
-omit [CharZero k] in
 /-- **M^μ-level span identity.** The standard polytabloids span exactly `S^μ`
 inside `M^μ`. (≤): each standard polytabloid is a polytabloid (`standardPolytabloid_mem`);
-(≥): the straightening core. Sorry-free modulo `standardPolytabloid_straightening`. -/
+(≥): the straightening core. Sorry-free. -/
 theorem standardPolytabloid_span_eq_specht :
     Submodule.span k (Set.range (standardPolytabloid (k := k) (μ := μ)))
       = Specht.SpechtSubmodule (k := k) μ := by
@@ -3017,10 +3017,9 @@ theorem standardPolytabloid_span_eq_specht :
   · rw [Specht.SpechtSubmodule, Submodule.span_le, Set.range_subset_iff]
     exact standardPolytabloid_straightening (k := k) (μ := μ)
 
-omit [CharZero k] in
-/-- **Content obligation 2/2 — spanning**, now derived **sorry-free modulo the single
-core** `standardPolytabloid_straightening` (the M^μ span identity + the corestriction
-to `⊤` in `S^μ` are discharged here). Keeps the original name/signature for `Basis.mk`. -/
+/-- **Content obligation 2/2 — spanning**, now derived **sorry-free** (the M^μ span
+identity + the corestriction to `⊤` in `S^μ` are discharged here). Keeps the original
+name/signature for `Basis.mk`. -/
 theorem standardPolytabloid_span :
     Submodule.span k (Set.range (standardPolytabloidS (k := k) (μ := μ))) = ⊤ := by
   apply Submodule.map_injective_of_injective
