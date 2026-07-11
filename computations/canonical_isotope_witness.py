@@ -286,9 +286,15 @@ def assemble_row(
         _strat = str(l3["strategy"])
         _is_anchor_identity = ("n_α=1" in _strat and "pairs=0" in _strat)
         if _is_anchor_identity:
-            _b_derived = _as_float(magic_A_binding(Z, N).get("B_pred_MeV"))
-            _b_val = _b_derived if _b_derived is not None else _as_float(l3["B_pred_MeV"])
-            _layer_tag = f"L3-α-cluster:n_α=1,pairs=0(magic-A-derived)"
+            _magic = magic_A_binding(Z, N)  # dict, or None if inapplicable
+            _b_derived = _as_float(_magic.get("B_pred_MeV")) if _magic else None
+            if _b_derived is not None:
+                _b_val = _b_derived
+                _layer_tag = "L3-α-cluster:n_α=1,pairs=0(magic-A-derived)"
+            else:
+                # magic-A inapplicable — fall back to the L3 value; tag honestly.
+                _b_val = _as_float(l3["B_pred_MeV"])
+                _layer_tag = "L3-α-cluster:n_α=1,pairs=0(L3-fallback)"
         else:
             _b_val = _as_float(l3["B_pred_MeV"])
             _layer_tag = f"L3-{l3['strategy']}"

@@ -113,7 +113,7 @@ def main() -> int:
         path = HERE / fname
         if not path.exists():
             print(f"⚠ missing chi witness {fname}"); continue
-        with open(path) as f:
+        with open(path, encoding="utf-8") as f:
             raw = json.load(f)
         d = raw["data"] if "data" in raw else raw
         atom = {tuple(el["partition"]): mpf(str(el["chi_lambda"]))
