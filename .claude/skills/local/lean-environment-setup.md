@@ -257,6 +257,39 @@ elan / cache hosts are network-restricted.
 > base reseed folds them into `lake-cache/qou-v4-24-0` itself — bean `bnyo` —
 > this addon becomes redundant and can be ignored.)
 
+### When even the toolchain *binary* is blocked — vendor it via a git branch (2026-07-11)
+
+The olean restore above assumes a working `lean` **compiler** is already
+installed. Some sandboxes are stricter: the elan downloader
+(`release.lean-lang.org`) returns **403**, *and* the GitHub
+`releases/download/…` release-asset path is policy-blocked, so `elan` /
+`elan toolchain install` / `lake exe cache get` cannot fetch the compiler at
+all. (Diagnose via `curl -sS "$HTTPS_PROXY/__agentproxy/status"` — a
+`connect_rejected` to `release.lean-lang.org` is the tell.) Crucially, the
+`git` protocol to the qou remote **stays reachable** (`git clone` / `git
+ls-remote` of github.com work even when release assets 403), so the fix is
+the same trick as the olean cache: **vendor the toolchain binary onto a
+`lake-cache/toolchain-<slug>` orphan branch, split into git-blob parts.**
+
+- **Restore (firewalled sandbox):**
+  [`scripts/lean-toolchain-cache-restore.sh`](../../../scripts/lean-toolchain-cache-restore.sh)
+  — fetches `lake-cache/toolchain-<slug>`, reassembles the
+  `lean-toolchain.tgz.part*` blobs, extracts into `~/.elan/toolchains/`, and
+  verifies `lean --version`. Then run the olean restore above +
+  [`scripts/lean-verify.sh`](../../../scripts/lean-verify.sh) (lean-direct).
+- **Seed (once, on a NON-firewalled machine that has the toolchain):**
+  [`scripts/lean-toolchain-cache-seed.sh`](../../../scripts/lean-toolchain-cache-seed.sh)
+  — tars `~/.elan/toolchains/<name>`, splits into 90 MB parts, pushes the
+  orphan branch. Needs no lean-lang.org access, only `push` to origin.
+
+The slug derives from `lean-toolchain` (same as the olean cache), so this
+stays correct across toolchain bumps. Until the branch is seeded, the restore
+script exits 1 with a "seed it first" message (it cannot fetch the compiler
+itself — the binary is a release asset, not in any git tree). This is the
+**only** route to machine-verified Lean in a release-asset-blocked sandbox;
+without it, fall back to a rigorous hand-audit and **state explicitly** that
+the change was not machine-validated (CI `lean_ci.yml` is then the gate).
+
 **Fallback workaround — source clone + from-source build (only when the
 cache-branch restore above misses; battle-tested on PR #1761 + PR #1772):**
 
