@@ -75,4 +75,36 @@ theorem phi_b_ratio [h : FaddeevPhi b Φ] (z : ℂ) (hne : Φ (z + I * (b / 2)) 
     Φ (z - I * (b / 2)) / Φ (z + I * (b / 2)) = 1 + Complex.exp (2 * (Real.pi : ℂ) * b * z) := by
   rw [h.shift_b z, mul_div_assoc, div_self hne, mul_one]
 
+/-!
+## The bar-odd source: chiral knot operators (Hopf-led) — argument-identification target
+
+The bar involution `q ↦ q⁻¹` is the mirror/chirality operation
+(`J_K(q⁻¹) = J_{mirror K}(q)`), so an operator's bar-ODD part is non-zero **iff it
+is chiral** (parity ↔ chirality dictionary,
+`docs/audits/2026-07-07-parity-chirality-dictionary-closed.md`):
+
+* **amphichiral** operators (mirror-invariant, `CS = 0`) — e.g. the figure-8 `4₁`
+  — have **zero** bar-odd part; they are the compact `Φ_q` **mass/bar-even** face
+  (T1, the `−Vol(4₁)` datum).
+* **chiral** operators — led by the **Hopf link** (2-crossing), and the torus
+  knots `T(2,3) = 3₁` (electron), `T_{3,5}` (writhe mediator) — carry the bar-ODD
+  part; they are the `Φ_b` **decay/bar-odd** face formalized here (T3).
+
+The Hopf sector is the concrete carrier: the bar-odd datum collapses (in
+`y = q² + q⁻²`) to `C_Hopf(y) = y³ − 6y² + 10y − 6`, discriminant `−76 < 0`
+(complex-conjugate root pair), with `C_Hopf(2) = −2 = J_Hopf(q=1)` = the empirical
+`c₃` near-match (`QOU.QBeta.HopfCubicOddCarrier`,
+`content/.../mass-theory/qbeta-odd-carrier-hopf-cubic.md`).
+
+**Caveat (Subgoal-2 boundary).** The Hopf **fibre** cubic is *anchor-invariant*
+(cross-anchor swing `~10⁻⁸`), so the chiral operators supply the bar-odd
+**carrier** but **not** the anchor-dependent `c₃` **S-leak**
+(`S(muon) ≈ +0.00968`, `S(proton) ≈ −0.03946`;
+`docs/audits/2026-07-11-qbeta-c3-barodd-sleak-phib-target.md`). The remaining
+keystone is to identify the `FaddeevPhi` argument whose archimedean evaluation at
+each anchor reproduces `S` — i.e. to realize the chiral Hopf sector's
+anchor-dependent leak through the `Φ_b` axioms above. That argument-identification
+is **not** done here.
+-/
+
 end QOU.MathlibExt.FaddeevQuantumDilogarithm
