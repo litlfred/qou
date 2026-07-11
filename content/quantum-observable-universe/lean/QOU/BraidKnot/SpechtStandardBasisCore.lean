@@ -1125,6 +1125,30 @@ theorem filter_le_card_union_mono {P X Y : Finset ℕ}
       (hPY.mono (Finset.filter_subset _ _) (Finset.filter_subset _ _))]
   rw [hX, hY]; exact Nat.add_le_add_left (hXY w) _
 
+/-- **First strict index of a pointwise-`≤`, unequal pair (sorry-free).** If `f ≤ g`
+pointwise on `Fin N` and `f ≠ g`, there is a *least* index `r₀` with `f r₀ < g r₀`, below
+which `f` and `g` agree. Supplies `colWordNum_lt_of_first_diff_col`'s cell `c₀` (the
+top-most changed row of the Garnir column) together with its `habove` (agreement above). -/
+theorem exists_first_lt_of_le_of_ne {N : ℕ} (f g : Fin N → ℕ)
+    (hle : ∀ r, f r ≤ g r) (hne : f ≠ g) :
+    ∃ r₀ : Fin N, f r₀ < g r₀ ∧ ∀ r : Fin N, r < r₀ → f r = g r := by
+  classical
+  have hne' : ∃ r, f r < g r := by
+    by_contra h
+    push_neg at h
+    exact hne (funext fun r => le_antisymm (hle r) (h r))
+  set S := Finset.univ.filter (fun r : Fin N => f r < g r) with hSdef
+  have hSne : S.Nonempty := by
+    obtain ⟨r, hr⟩ := hne'
+    exact ⟨r, Finset.mem_filter.mpr ⟨Finset.mem_univ _, hr⟩⟩
+  refine ⟨S.min' hSne, ?_, ?_⟩
+  · exact (Finset.mem_filter.mp (S.min'_mem hSne)).2
+  · intro r hr
+    have hrnot : r ∉ S := fun hrS => absurd (S.min'_le r hrS) (not_le.mpr hr)
+    have hnlt : ¬ (f r < g r) :=
+      fun hlt => hrnot (Finset.mem_filter.mpr ⟨Finset.mem_univ _, hlt⟩)
+    exact le_antisymm (hle r) (not_lt.mp hnlt)
+
 /-- **First-difference comparison for `colWordNum` (sorry-free).** If `u` and `v` agree
 (as labels) on every cell column-major-*earlier* than a cell `c₀` (i.e. `cmajSig` strictly
 larger), and `v` has a strictly smaller label at `c₀`, then `colWordNum v < colWordNum u`.
