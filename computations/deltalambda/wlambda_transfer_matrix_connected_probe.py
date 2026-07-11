@@ -47,8 +47,8 @@ import mpmath as mp
 mp.mp.dps = 40
 _HERE = os.path.dirname(os.path.abspath(__file__))
 
-# Canonical substrate q0 (muon-anchored computations-layer value; the same
-# constant keystone_wlambda_rt_plancherel.py uses).
+# Canonical substrate q0 — the muon-anchored computations-layer value carried by
+# computations/q-pinning-50-digit.witness.json (AGENTS.md "q0 anchor convention").
 Q0 = mp.mpf("1.10997859555733471")
 
 
@@ -202,9 +202,9 @@ def main() -> int:
     try:
         commit_sha = subprocess.run(
             ["git", "rev-parse", "HEAD"], cwd=_HERE,
-            capture_output=True, text=True, check=True).stdout.strip()
+            capture_output=True, text=True, check=True).stdout.strip() or "unknown"
     except Exception:
-        commit_sha = None
+        commit_sha = "unknown"     # keep truthy for the provenance audit
     witness = {
         "schema": "witness/v1",
         "computation": "wlambda-transfer-matrix-connected",
@@ -219,7 +219,7 @@ def main() -> int:
             "(#2528), and the connected-part mechanism (diagonal/disjoint=0, "
             "braided!=0). Fit-free; NOT a binding closure."
         ),
-        "generated": datetime.datetime(2026, 7, 11, tzinfo=datetime.timezone.utc).isoformat(),
+        "generated": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "assertions": assertions,
         "allPassed": all_ok,
         "result": {

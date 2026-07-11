@@ -84,10 +84,35 @@ trace (#2584-exhausted). The falsifiable gates it must hit are already in place:
 defect cubic (n=7 crossing, Check 1 ✓) and the deuteron bracket `f_pn ∈ (0.395, 0.661)`
 (Check 2 ✓).
 
-**Next (compute):** build `T_b =` the `W_λ`-weighted interface generator (the Hecke
-`σ_{i_b}`, non-commuting across overlapping bonds) and compute the **connected
-`tr_M`** of the multi-bond nuclear braid for ³He/⁴He (= PROBE 2, A=4 interface
-operator, Track-A owner-authorised via `s5-so3-keystone`), testing whether the
-connected part fills the deuteron bracket gap and respects the n=7 defect sign —
-**without fitting any entry**. The A-operator `A^λ_{μν}(I)` (`wenzl-A-operator.md`) is
-the operator-valued bond datum; its universal (unfitted) form remains the open piece.
+## Follow-on: the ³He/⁴He nuclear-braid probe (PROBE 2 direction)
+
+[`wlambda_nuclear_braid_connected_probe.py`](../../computations/deltalambda/wlambda_nuclear_braid_connected_probe.py)
+→ witness (fit-free) runs the connected part on the **actual multi-bond nuclear
+braid** (the corpus `internuc_characters` chain of `A(A−1)/2` crossings) for
+²H/³He/³H/⁴He/⁶Li/¹²C. It exposes a clean, rigorous structure:
+
+- The **1-dim reps** (`(3)` sym, `(1,1,1)` alt) evaluate the braid as a literal
+  **product over bonds** — they **factorise** → disconnected → intensive.
+- The **standard `(2,1)` rep** evaluates via a **2×2 transfer-matrix product** over
+  the chain — it does **not** factorise. The connected part
+  `C_std(K) = V_std_full − ∏_bonds(z·c_b + d_b)` is the genuine many-body term, and
+  `(2,1)` is exactly the deuteron `f_pn` channel (#2528).
+
+Results: `C_std = 0` for A=2 (one bond, ✓ sanity); `C_std ≠ 0` for **all** A≥3
+(the extensive channel is **non-empty**, and lives entirely in the non-abelian
+`(2,1)` rep — `W_{(2,1)}·C_std(⁴He) = 0.673` vs the 1-dim factorised parts `0.334`).
+
+**Honest caveat (the useful negative).** `C_std` is **non-monotone** in bond count
+(`3He 0.43, 4He 1.02, 6Li 0.41, 12C 1.22`) and its **per-bond** value **shrinks** for
+heavy nuclei (`0.142 → 0.170 → 0.027 → 0.018`). So the **fixed-H₃** braid localizes
+the extensive channel but does **not by itself sustain extensivity** past the light
+nuclei — consistent (a-scope) with the known r18k det-direction non-monotonicity and
+the light-nuclei method breakdown. This says the H₃-level connected part is the right
+*channel* but the *A-scaling* needs the jet-tower / higher-Hₙ content (the `W_λ`
+geometric realization), not a fixed-n braid.
+
+**Next (compute):** lift the bond operator `T_b` to the `W_λ`-weighted interface
+generator across the **jet tower** (higher `Hₙ`, not fixed H₃), where the A-scaling
+lives, and test whether the per-bond connected part stabilises. The A-operator
+`A^λ_{μν}(I)` (`wenzl-A-operator.md`) is the operator-valued bond datum; its universal
+(unfitted) form remains the open piece (Track-A, `s5-so3-keystone`).
