@@ -153,6 +153,10 @@ import QOU.substrate_radial_coordinate
 -- sign-positivity (Δ_λ rows B/E). Generic base ring §7c, sorry-free. Wired so
 -- CI type-checks it (not an orphan).
 import QOU.SelectionRules
+-- Principal (ρ) grading g_ρ = the GS/jet-order filtration grading; n(λ) is its bottom
+-- degree on V_λ (fake-degree valuation). ζ₄ evaluation gives the Δ_λ sign. sorry-free,
+-- generic base ring §7c. Wired so CI type-checks it (not an orphan).
+import QOU.BraidKnot.PrincipalGradingJetOrder
 import QOU.Braiding.non_self_intersection
 -- Keystone geometric-angle fingerprint: the ℓ=1 icosahedral character on the
 -- 5-fold rotation is the golden ratio (parameter-free; validates irrepToRotation).
