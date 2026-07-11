@@ -75,35 +75,52 @@ borrowed to close the binding weight by fitting.
 
 AME2020 anchors D/T/³He/⁴He, `a_D^(n)=S(n)/n`, `mₑ=0.51099895` MeV.
 
-**(b) STRUCTURAL EXCLUSION of K-independent (pure body-order) weights.** T and
-³He have *identical* body-order structure (both A=3: terms n=2,3) but different
-binding: `B(T)=8.4818` vs `B(³He)=7.7181` MeV (Δ=0.76 MeV, 9.9 %). A
-K-independent `wₙ` forces `B(T)=B(³He)`. The `w₃` implied by T (9.159) vs ³He
-(8.041) **disagree by 13.9 %**.
-⇒ **body-order-only `wₙ` is excluded (b)** — invariant cited: **binding is not a
-function of A alone** (the T/³He isospin–Coulomb split). `wₙ(K)` *must* be
-K-dependent (as the conjecture already writes it).
+> **CORRECTION (2026-07-11, after coordination with [#3534](https://github.com/litlfred/qou/pull/3534)).**
+> An earlier version of this section declared K-independent (body-order) weights
+> **structurally excluded (b)** from the *raw* AME split `B(T)=8.48 ≠ B(³He)=7.72`
+> (9.9 %). **That was an over-claim** (the exact refuted-discipline trap): the raw
+> split is almost entirely **Coulomb**, a separable known effect. #3534
+> Coulomb-corrects to the strong binding `B_strong` and finds ³H/³He agree to
+> **2.73 %** (charge-symmetry breaking); an independent estimate here
+> (`E_C(³He) = ⅗·Z(Z−1)·e²/(4πε₀R) ≈ 0.8–1.0 MeV`) restores the mirror pair to
+> within ~1–3 %. **So a K-independent body-order `wₙ` IS admissible.** The (b)
+> claim is **re-scoped to (a)** below; the raw numbers stand, only the scope was
+> wrong.
 
-**Underdetermination of the K-dependent class.** With `wₙ(K)` K-dependent, each
-isotope contributes `A−1` unknowns (`w₂..w_A`) against **1** equation `B(K)`.
-Only D (A=2) is determined; T/³He each carry 1 free DOF, ⁴He carries 2. Inverting
-the anchors for `wₙ` is a **per-isotope fit** — the forbidden move (Δ_λ gate,
-"no seventh fit-based ansatz").
+**(a) Ad-hoc constant-ratio kernels do not close (scope-a).** On the
+Coulomb-corrected `B_strong`, body-order weights `w₂,w₃,w₄` are admissible and
+extractable (#3534: `4.353, 9.331, 15.919`, ratios 2.143/1.706, no fit). But no
+parameter-free *constant-ratio* kernel `R(q,n)` reproduces them to 5 %: geometric
+22.7 %, `[n]_q` 29.4 %, `a_D` self-ratio 37.6 %, `∝n` 30.0 %, `[n]_q²` 6.9 %
+(lone near-miss) — #3534 Part (i). A tuned recursion is the banned 7th Δ_λ ansatz.
 
-**Verdict.** `wₙ(K)` does **not** close now. Closure needs a *derived* `R(q,x)`
-(the open q-difference kernel / owner-gated s5-so3 keystone); none exists, so any
-`wₙ` from the anchors is a fit and cannot honestly improve binding. The **non-fit**
-route is Option-1 of the [2026-07-03 audit](2026-07-03-theta-lambda-via-reeb-nastokes-jet-filtration.md):
+**Underdetermination of a general K-dependent kernel.** With `wₙ(K)` fully
+K-dependent, each isotope contributes `A−1` unknowns (`w₂..w_A`) against **1**
+equation `B(K)`. Inverting the anchors for a per-isotope `wₙ` is a **fit** — the
+forbidden move (Δ_λ gate, "no seventh fit-based ansatz"). Body-order admissibility
+(above) is the *constrained* case (`wₙ` shared across K); even there the closed
+form is open.
+
+**Verdict.** `wₙ(K)` does **not** close now. Body-order weights are admissible on
+`B_strong`, but no derived constant-ratio kernel reaches 5 % and a tuned one is
+banned; closure needs a *derived* `R(q,x)` (the open q-difference kernel /
+owner-gated s5-so3 keystone), so any `wₙ` from the anchors is a fit and cannot
+honestly improve binding. The **non-fit** routes are (i) expansion in the
+**q-Hermite basis** the eigenfunction relation identifies (#3534 Part ii — but see
+the fork caveat in Part 1: `S(n)` is not the clean RS moment, so this is the
+Habiro-dressed basis, not clean q-Hermite) and (ii) Option-1 of the
+[2026-07-03 audit](2026-07-03-theta-lambda-via-reeb-nastokes-jet-filtration.md):
 `wₙ(K) =` hyperbolic link-volume of the n-body sub-cluster (a topological
-invariant, K-dependent by construction) — untested, and the recommended next step.
+invariant) — both untested, both non-fit.
 
 ## Consequence for `conj:binding-manybody-eq-jet-filtration`
 
 **Not provable now** (recorded answer). The conjecture's three deep inputs remain
 open: (1) the super-exponential `a_D^(n)` magnitude, (2) the na-Stokes identity
 `a_D^(n)=lw(n−1)` (owner-gated keystone #1765), and (3) the weight `wₙ(K)`. This
-work sharpens (3): the K-independent sub-class is now *excluded* (b), and the
-K-dependent class needs the derived `R(q,x)` — a fit is ruled out by discipline.
+work sharpens (3): body-order weights are *admissible* on the Coulomb-corrected
+`B_strong` (#3534), but no derived constant-ratio kernel reaches 5 % and a tuned
+one is a banned ansatz — closure needs the derived `R(q,x)`.
 `prop:jet-filtration-binding-extensive` (the *qualitative* extensivity) stays the
 proved core; the *quantitative* closure is unchanged (open).
 
