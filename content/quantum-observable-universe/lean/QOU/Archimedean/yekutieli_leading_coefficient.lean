@@ -153,7 +153,7 @@ class YekutieliStokesNormalisation (R : Type*) [Field R]
 -- Ref: [yekutieli2015] https://doi.org/10.1142/9537
 -- Ref: [manuscript] quantum-observable-universe/brings-surface/yekutieli-leading-coefficient.md
 theorem yekutieli_leading_coefficient (d : YekutieliObstructionData R)
-    (p : ℕ) (hp_odd : Odd p) (hq_ne : d.q ≠ 1)
+    (p : ℕ) (_hp_odd : Odd p) (_hq_ne : d.q ≠ 1)
     [nrm : YekutieliStokesNormalisation R d p] :
     nrm.obstruction = nrm.leadingChebyshev ∧ nrm.obstruction = 1 := by
   have h_eq_c : nrm.obstruction = nrm.leadingChebyshev :=
@@ -166,7 +166,7 @@ theorem yekutieli_leading_coefficient (d : YekutieliObstructionData R)
     `1`, so the non-vanishing rests on genuinely proved content. -/
 -- Ref: [manuscript] quantum-observable-universe/brings-surface/yekutieli-leading-coefficient.md
 theorem yekutieli_obstruction_ne_zero (d : YekutieliObstructionData R)
-    (p : ℕ) (hp_odd : Odd p) (hq_ne : d.q ≠ 1)
+    (p : ℕ) (_hp_odd : Odd p) (hq_ne : d.q ≠ 1)
     [nrm : YekutieliStokesNormalisation R d p] :
     nrm.obstruction ≠ 0 := by
   rw [nrm.stokes_identity]
