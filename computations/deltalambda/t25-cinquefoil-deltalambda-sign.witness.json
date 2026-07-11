@@ -3,14 +3,14 @@
   "description": "Formalize-first parameter-free test: does the chiral cinquefoil T(2,5)=(\u03c31\u03c32\u03c33\u03c34)^2 Hecke character reproduce the mixed-sign \u0394_\u03bb chirality target sgn(w_0^{S_{\u03bb'}}) over \u03bb\u22a25? Seminormal reps self-validated via Hecke+braid relations. No fit; nothing wired.",
   "auditOnly": "docs/audits/2026-07-11-gemini-session-c3-overclaim-continuum-and-lean-audit.md",
   "tier": "symbolic-exact reps (sympy, self-validated) + q_0 sign eval",
-  "computedAt": "2026-07-11T10:43:27.110407+00:00",
-  "commitSha": "a28b50c79beb11ceb50fe6b34af5fd12f032fac3",
+  "computedAt": "2026-07-11T11:15:37.823883+00:00",
+  "commitSha": "2c4a7065ee80536765bcef70f4a7b3924216f165",
   "engine": "sympy",
   "engineVersion": "1.14.0",
   "scriptFile": "t25_cinquefoil_deltalambda_sign_probe.py",
-  "scriptHash": "a770734cdb50",
-  "q0_source": "q-pinning-50-digit.witness (muon q_0)",
-  "q0": "1.10997859555733471",
+  "scriptHash": "9ca0c9116c28",
+  "q0_source": "qou_substrate.q_at(40)",
+  "q0": "1.1099785827513808076",
   "assertions": [
     {
       "name": "target_sign_reproduces_n3_deltaSign_mixed",
@@ -68,7 +68,7 @@
           1
         ],
         "dim": 1,
-        "chi_q0": 2.30418228130305,
+        "chi_q0": 2.304182068634078,
         "sgn_chi": 1,
         "sgn_target": 1,
         "match": true
@@ -85,7 +85,7 @@
           1
         ],
         "dim": 4,
-        "chi_q0": -1.5179533198695703,
+        "chi_q0": -1.517953249818346,
         "sgn_chi": -1,
         "sgn_target": -1,
         "match": true
@@ -101,7 +101,7 @@
           1
         ],
         "dim": 5,
-        "chi_q0": 1.1479437019748901e-41,
+        "chi_q0": -4.591774807899561e-41,
         "sgn_chi": 0,
         "sgn_target": 1,
         "match": false
@@ -134,7 +134,7 @@
           2
         ],
         "dim": 5,
-        "chi_q0": 0.0,
+        "chi_q0": -5.739718509874451e-42,
         "sgn_chi": 0,
         "sgn_target": 1,
         "match": false
@@ -151,7 +151,7 @@
           1
         ],
         "dim": 4,
-        "chi_q0": -0.6587817865742569,
+        "chi_q0": -0.6587818169760303,
         "sgn_chi": -1,
         "sgn_target": 1,
         "match": false
@@ -168,7 +168,7 @@
           5
         ],
         "dim": 1,
-        "chi_q0": 0.4339934423219698,
+        "chi_q0": 0.4339934823782399,
         "sgn_chi": 1,
         "sgn_target": 1,
         "match": true
