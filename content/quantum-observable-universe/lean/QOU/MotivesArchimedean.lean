@@ -69,9 +69,10 @@ structure MotivicMassMeasure (X : Type*) where
 
 /-- An abstract **archimedean target category** `Arch`.
 
-    The codomain of the QOU fibre functor `τ : C ⥤ Arch`. `Arch` is a
-    genuine category (objects **and** morphisms, via the bundled
-    `Category` instance), and each object exposes a real-valued
+    The codomain of the QOU fibre functor. `Arch` is a *bundle*: it
+    carries a genuine category on its object type `Arch.Obj` (via the
+    `[Category Obj]` instance below), so the fibre functor is concretely
+    `τ : C ⥤ Arch.Obj`. Each object also exposes a real-valued
     archimedean evaluation `archProj : Obj → ℝ`.
 
     Note `archProj` is an **object-level evaluation** (`π_∞`, a place),
@@ -81,7 +82,7 @@ structure ArchimedeanCategory where
   /-- Carrier type of objects in `Arch`. -/
   Obj : Type*
   /-- The category structure on `Arch` — morphisms, composition,
-      identities. This is what makes `τ : C ⥤ Arch` a genuine functor. -/
+      identities. This is what makes `τ : C ⥤ Arch.Obj` a genuine functor. -/
   [cat : Category Obj]
   /-- Real-valued evaluation `π_∞ : Obj → ℝ` on the archimedean place
       (object-level; not functorial). -/
@@ -89,7 +90,7 @@ structure ArchimedeanCategory where
 
 attribute [instance] ArchimedeanCategory.cat
 
-/-- The QOU **fibre functor** `τ : C ⥤ Arch`.
+/-- The QOU **fibre functor** `τ`, a genuine `C ⥤ Arch.Obj`.
 
     This is a genuine `CategoryTheory.Functor`: it carries an action on
     objects (`τ.functor.obj`) **and** on morphisms (`τ.functor.map`),
