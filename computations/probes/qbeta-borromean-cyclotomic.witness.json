@@ -1,0 +1,194 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-07-11T17:22:21.287600+00:00",
+  "commitSha": "8012d26ccfe57a867be4c9948a49bbbbf040453c",
+  "assertions": [
+    {
+      "name": "two_way_cross_check_exact",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "G1: GL2011 transcription == Knot Atlas L6a4 closed form (t=s², exact); G2: J_B(s) == [2]²·τ_D(q=s) (exact, sympy cancel over ℚ(s)); classical limits τ_D(1)=1, J_B(1)=4, F_Bor(1)=6."
+    },
+    {
+      "name": "documented_D_neq_C_split_reproduced",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "Convention D (Lean closed form) ≠ convention C (canonical z-trace) exactly, per the 2026-06-09 audit — reproduced here."
+    },
+    {
+      "name": "forced_borromean_reproduces_c2_and_c3_shadow_param_free",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "Kill criterion (pre-stated): PASS only if a canonical normalisation reproduces a_2=−1 ∧ a_3=−2 raw, or the C13 bridge-peel c_3 = −2 within 0.1% at both anchors, with zero free choices."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 19714,
+  "computation": "qbeta-borromean-cyclotomic",
+  "scriptFile": "qbeta_borromean_cyclotomic_probe.py",
+  "scriptHash": "a128bed08bbf",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 60,
+    "output_dps": 50,
+    "guard_digits": 10,
+    "truncation_bound": "1e-50"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "PROBE 3 (2026-07-11 avenues audit §3.C): q=1 Taylor shadow of the framework-normalised Borromean-rings invariant — the forced candidate C14 missed — tested parameter-free against the ladder shadows c_2=−1 and c_3→−2 (registry KC10). Invariant obtained two ways and cross-checked exactly: framework Hecke (Lean BorromeanMarkovTrace closed form τ_D used by canonical_mass F_Bor; canonical recursive z-trace τ_C of the signed word (1,−2,1,−2,1,−2)) vs literature (GL2011/Habiro colored Jones n=2 == Knot Atlas L6a4 closed form; exact identity J_B(s)=[2]²·τ_D at framework q=s). Shadow expansions in ℏ=1−1/q (C13 bridge convention) for the four corpus-canonical normalisations only; secondary gate via the canonical C13 bridge peel with the single c_2=−1 scale d.o.f. Zero free choices: no link/root/normalisation scan. Audit-only.",
+  "auditOnly": "docs/audits/2026-07-11-qbeta-ck-untested-avenues-and-literature.md",
+  "parameters": {
+    "compute_dps": 60,
+    "q0_proton": "1.1099785827513808075916690956107688798744991218736",
+    "q0_muon": "1.1099785955573347198997632204832250266562084087802",
+    "beta_borromean_word": [
+      1,
+      -2,
+      1,
+      -2,
+      1,
+      -2
+    ],
+    "hbar_series_order": 10
+  },
+  "data": {
+    "cross_check_gate": {
+      "G1_transcription_eq_literature_L6a4": true,
+      "G2_framework_tauD_eq_literature_jones": true,
+      "recorded_D_eq_C_split_expected_False": false,
+      "tauD_at_q1_eq_1": true,
+      "JB2_at_q1_eq_4": true,
+      "FBor_at_q1_eq_6": true
+    },
+    "D_minus_C_split_at_anchors": {
+      "proton": "0.0001955412511",
+      "muon": "0.0001955413591"
+    },
+    "shadow_series_exact": {
+      "N1_tau_D": [
+        "1",
+        "0",
+        "0",
+        "0",
+        "-12",
+        "-24",
+        "-46",
+        "-78",
+        "-479/4",
+        "-171"
+      ],
+      "N2_tau_C": [
+        "1",
+        "0",
+        "0",
+        "0",
+        "-12",
+        "-40",
+        "-83",
+        "-147",
+        "-236",
+        "-2835/8"
+      ],
+      "N3_F_Bor_over_6": [
+        "1",
+        "-3",
+        "29/6",
+        "-14/3",
+        "-55/6",
+        "11",
+        "-191/6",
+        "0",
+        "-361/12",
+        "-361/12"
+      ],
+      "N4_J_B_over_4": [
+        "1",
+        "0",
+        "1",
+        "1",
+        "-43/4",
+        "-45/2",
+        "-225/4",
+        "-112",
+        "-405/2",
+        "-681/2"
+      ]
+    },
+    "raw_shadow_gate": {
+      "targets": {
+        "a_2": "-1",
+        "a_3": "-2"
+      },
+      "hits": {
+        "N1_tau_D": false,
+        "N2_tau_C": false,
+        "N3_F_Bor_over_6": false,
+        "N4_J_B_over_4": false
+      }
+    },
+    "bridge_peel": {
+      "N1_tau_D": {
+        "solvable": true,
+        "c_3_symbolic": "-23/(6*b)",
+        "c_4_symbolic": "-479/(48*b**2)",
+        "c_3_at_proton_b": "-4.41839987534818066555471741451",
+        "c_3_at_muon_b": "-4.41839987360700971386121450439"
+      },
+      "N2_tau_C": {
+        "solvable": true,
+        "c_3_symbolic": "-83/(12*b)",
+        "c_4_symbolic": "-59/(3*b**2)",
+        "c_3_at_proton_b": "-7.97233020986736946176177272619",
+        "c_3_at_muon_b": "-7.97233020672569144022784356227"
+      },
+      "N3_F_Bor_over_6": {
+        "solvable": true,
+        "c_3_symbolic": "-191/(55*b)",
+        "c_4_symbolic": "-361/(110*b**2)",
+        "c_3_at_proton_b": "-4.00275593450515023140372028224",
+        "c_3_at_muon_b": "-4.00275593292777322694462594627"
+      },
+      "N4_J_B_over_4": {
+        "solvable": true,
+        "c_3_symbolic": "-225/(43*b)",
+        "c_4_symbolic": "-810/(43*b**2)",
+        "c_3_at_proton_b": "-6.03118284299296653033252629888",
+        "c_3_at_muon_b": "-6.03118284061624177321803799892"
+      }
+    },
+    "bridge_peel_gate": {
+      "N1_tau_D": false,
+      "N2_tau_C": false,
+      "N3_F_Bor_over_6": false,
+      "N4_J_B_over_4": false
+    },
+    "hoefsmit_b_at_anchors": {
+      "proton": "0.867584066965251155651162891536052395705",
+      "muon": "0.8675840673071423874917977953027706882701"
+    },
+    "empirical_c3_reference": {
+      "proton_quoted": "-2.06934257711516783787971951725",
+      "muon_quoted": "-2.0097",
+      "cache_computations_q0": "-2.02018812814143945582016855395"
+    },
+    "verdict": {
+      "overall": "NEGATIVE",
+      "summary": "No canonical framework normalisation of the Borromean invariant (τ_D Lean closed form; τ_C canonical z-trace; F_Bor/6; literature Jones/4) reproduces c_2 = −1 AND the c_3 q=1 shadow −2 parameter-free, in the raw ℏ-shadow (τ_D vanishes to order ℏ³ — Brunnian (q−1)-adic vanishing — so a_2 = a_3 = 0; F_Bor/6 gives 29/6, −14/3; J_B/4 gives 1, 1) or through the canonical C13 bridge peel (c_3 = −23/(6b) ≈ −4.42 (τ_D), −83/(12b) ≈ −7.97 (τ_C), −191/(55b) ≈ −4.00 (F_Bor/6), −225/(43b) ≈ −6.03 (J_B/4) — none −2 within 0.1%).  Scope-limited (a): the Borromean q=1 shadow ALONE, under the corpus's canonical normalisations, does not carry the ladder shadows.  New refuted row (C15 candidate: forced-link Borromean cyclotomic/q=1 shadow). NOT a structural exclusion of the Borromean data from any multi-term closure.  No scan was run; no fit was made."
+    }
+  },
+  "caveats": [
+    "τ_C ≠ τ_D is the documented corpus trace-convention split (docs/audits/2026-06-09-binding-trace-convention-split.md, PR #3261 probe); both are reported. τ_D is the production F_Bor convention and equals the literature Jones exactly (G2).",
+    "Scope-limited (a) refutation only: constrains the Borromean q=1 shadow AS SOLE MECHANISM under canonical normalisations; does not exclude Borromean data from a multi-term closure."
+  ]
+}
