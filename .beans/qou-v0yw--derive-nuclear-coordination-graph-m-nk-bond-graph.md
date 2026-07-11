@@ -90,3 +90,16 @@ one build (their PROBE 2) serves both lenses. Ties main a44296db (binding=quadra
 (derived, Part 11) — only the EDGE SET / coordination graph (which pairs bond in a
 compact nucleus; chain under-binds, complete over-binds). = #2089's "open edge set".
 Owner-gated geometric construction (s5-so3). b* value = #3548 PROBE 2 (coordinate).
+
+## Update 2026-07-11 (edge-set SELECTION PRINCIPLE) — narrows the last open piece
+
+Edge set is not free: binding-max (B~Σ_bonds b*, b* const) ⇒ MAX-CONTACT 3D packing
+(binding_edge_set_selection.py, audit Part 13). Between chain (A−1) and complete
+(C(A,2)); = simplex C(A,2) for A≤4. Resolves #2089 chain-vs-complete: NEITHER, max-
+contact. ⁴He surplus = 3-body M_3 (Part 7), not edges.
+
+**Now-open residual (narrowed):** max-contact packing numbers for A≥5 (case-by-case
+geometry) + cluster/halo deviations below max-contact (⁶Li α+d, ⁹Be). = s5-so3 gated;
+α-level = #3551 Brink deltahedra (the α instance of this max-contact principle).
+The PRINCIPLE (variational selection) is derived; the specific compact geometry per
+isotope is the residual nuclear-structure input.
