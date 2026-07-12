@@ -62,6 +62,8 @@ namespace Cplx
 def I : Cplx := ⟨0, 1⟩
 /-- Cayley–Dickson conjugation `(a, b) ↦ (a, −b)`. -/
 def conj (x : Cplx) : Cplx := ⟨x.re, -x.im⟩
+/-- The squared norm `|x|² = a² + b²` (the base of the composition-algebra norm). -/
+def normSq (x : Cplx) : ℝ := x.re ^ 2 + x.im ^ 2
 
 instance : Zero Cplx := ⟨⟨0, 0⟩⟩
 instance : One Cplx := ⟨⟨1, 0⟩⟩
@@ -126,6 +128,8 @@ def qi : Quat := ⟨Cplx.I, 0⟩
 def qj : Quat := ⟨0, 1⟩
 /-- Cayley–Dickson conjugation `(x, y) ↦ (conj x, −y)`. -/
 def conj (p : Quat) : Quat := ⟨Cplx.conj p.fst, -p.snd⟩
+/-- The squared norm `|p|² = |x|² + |y|²` of a quaternion `⟨x, y⟩`. -/
+def normSq (p : Quat) : ℝ := Cplx.normSq p.fst + Cplx.normSq p.snd
 
 instance : Zero Quat := ⟨⟨0, 0⟩⟩
 instance : One Quat := ⟨⟨1, 0⟩⟩
@@ -247,6 +251,57 @@ theorem oct_nonassoc : (ei * ej) * el ≠ ei * (ej * el) := by
   intro h
   have hc := congrArg (fun a => a.snd.snd.im) h
   simp [ei, ej, el, Quat.qi, Quat.qj] at hc
+  norm_num at hc
+
+/-! ### Tier 2 — norm, imaginary part, and the unit imaginary sphere `S⁶` -/
+
+/-- The squared norm `|a|² = |p|² + |q|²` of an octonion `⟨p, q⟩` — the sum of the
+squares of all eight real coordinates. -/
+def normSq (a : Oct) : ℝ := Quat.normSq a.fst + Quat.normSq a.snd
+
+/-- The real part `Re(a)` of an octonion — its coefficient of `1` (the first of the
+eight coordinates). -/
+def re (a : Oct) : ℝ := a.fst.fst.re
+
+/-- **The squared norm is non-negative** (a sum of eight real squares). Positivity
+of `|·|²` is what makes `S⁶` a genuine sphere. -/
+theorem normSq_nonneg (a : Oct) : 0 ≤ normSq a := by
+  simp only [normSq, Quat.normSq, Cplx.normSq]
+  positivity
+
+/-- **An octonion is imaginary iff `conj a = −a`** — the structural (basis-free)
+characterization of `Im 𝕆`, the `7`-dimensional orthogonal complement of `1`.
+Equivalently `Re(a) = 0`. -/
+def IsImaginary (a : Oct) : Prop := conj a = -a
+
+/-- The **unit imaginary sphere** `S⁶ = {x ∈ Im 𝕆 : |x|² = 1}` — the round
+`6`-sphere of unit imaginary octonions. `G₂ = Aut(𝕆)` acts on it (Tier 3/4:
+transitively, with stabilizer `SU(3)`, so `S⁶ = G₂/SU(3)`). -/
+def S6 (a : Oct) : Prop := IsImaginary a ∧ normSq a = 1
+
+/-- `e_i` is a unit imaginary octonion (`conj e_i = −e_i`, `|e_i|² = 1`): it lies on
+`S⁶`. -/
+theorem ei_mem_S6 : S6 ei := by
+  refine ⟨?_, ?_⟩
+  · show conj ei = -ei
+    ext <;> simp [conj, ei, Quat.conj, Quat.qi, Cplx.conj, Cplx.I]
+  · simp [normSq, ei, Quat.normSq, Quat.qi, Cplx.normSq, Cplx.I]
+
+/-- `e_ℓ`, the Cayley–Dickson doubling generator, is a unit imaginary octonion: it
+too lies on `S⁶`. -/
+theorem el_mem_S6 : S6 el := by
+  refine ⟨?_, ?_⟩
+  · show conj el = -el
+    ext <;> simp [conj, el, Quat.conj, Cplx.conj]
+  · simp [normSq, el, Quat.normSq, Cplx.normSq]
+
+/-- **`1` is not imaginary** — `Re(1) = 1 ≠ 0`, so the multiplicative unit is not
+on `S⁶`. (A sanity check that `IsImaginary` really cuts out the complement of the
+real line.) -/
+theorem one_not_imaginary : ¬ IsImaginary (1 : Oct) := by
+  intro h
+  have hc := congrArg (fun a => a.fst.fst.re) h
+  simp [conj, Quat.conj, Cplx.conj] at hc
   norm_num at hc
 
 end Oct
