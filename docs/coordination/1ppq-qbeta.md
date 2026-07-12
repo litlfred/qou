@@ -929,3 +929,31 @@ selects the real-u geometric embedding and leaves the ~2.4%/3.4% residual
 to the odd/archimedean channel (KC17). Audit:
 [`2026-07-12-nz-parity-prune-and-fourone-even-series.md`](../audits/2026-07-12-nz-parity-prune-and-fourone-even-series.md).
 No c_k; nothing wired.
+
+
+**2026-07-12 (#3628) — even-channel Ohtsuki rungs exact through κ₄; growth-class
+obstruction makes the 4₁↔Q_β bridge = Borel/Φ_b resummation (scope-(b)).**
+Extends merged #3606 (κ₁=11√3π/108). Targeted Vandermonde extraction (13 pts,
+N≤6.29M) + strict 2-term parity PSLQ identifies **all four rungs exactly**:
+κ₁=(11/108)√3π [36d], κ₂=(2/27)π² [30d], κ₃=(1081/21870)√3π³ [25d],
+κ₄=(98/729)π⁴ [19d] — the √3-parity alternation (odd→√3, even→pure rational)
+confirmed by construction; denominators 3-power-dominated (ℚ(√−3) torsion-3).
+⇒ #3571's entropy-block is a divergent-TAIL effect, not a low-rung wall. Lean:
+`ohtsukiKappa2/3/4` + parity-membership lemmas (sorry-free, lean-direct EXIT 0)
+extend the merged κ₁ pattern. **Bridge consequence (scope-(b), cited invariant):**
+the exact κ_n ratios rise without bound (1.32→3.63→4.93, Gevrey-1 divergent,
+finite Borel singularity A≈0.7) while the Q_β ladder is convergent
+(c_{k+1}/c_k→1/u=117.41, KC8) — a divergent and a convergent series cannot be
+equated term-by-term under any ℏ↔u reparametrisation, so the naive bridge is a
+PROVED dead end and the true bridge is the Borel-median / Faddeev-Φ_b state
+integral = analytic continuation off |q|=1 (Kashaev root-of-unity) to real q₀>1
+(fibre-vs-observable rule; a b·A²=u_substrate "necessary condition" was drafted
+then RETRACTED as laundering-risk — the map is a continuation, not algebraic).
+Skeleton already proved: even [2]_q=2cosh η ⊥ odd h=2sinh η of one η=log q
+(`reeb_growth_hyperbola`). Borel-singularity probe
+(`qbeta_even_borel_singularity.py`) quantifies A. Coordinated: complementary-
+scope note on #3544 (Φ_b construction; we characterise the divergence their
+resummation resums — no overlap). Audits:
+`2026-07-12-ohtsuki-higher-rungs-exact.md`,
+`2026-07-12-fmap-4one-qbeta-bridge-growth-obstruction.md`. No fit; no c_k value;
+wires nothing; no tier change.
