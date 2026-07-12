@@ -98,9 +98,16 @@ consumers, but the object here is the **compact q-Pochhammer `Φ_q`**
 `∏(1−q^{-k}z)^{-1}` — **not** Faddeev's non-compact modular-double `Φ_b`
 (see `QOU.QBeta.FaddeevModularDouble` and the 2026-07-06 terminology
 ruling in `docs/audits/2026-07-06-qbeta-faddeev-phi-b-modular-double-accuracy.md`). -/
-class FaddeevQuantumDilogContext (q : ℝ) : Prop where
-  /-- The compact-q-dilog `Φ_q` infinite product has a well-defined functional
-  equation at q (opaque marker for the open derivation). -/
-  faddeev_functional_equation : True
+class FaddeevQuantumDilogContext (q : ℝ) where
+  /-- The compact q-dilogarithm `Φ_q(z) = ∏_{k≥0} (1 - q^{-k} z)^{-1}`
+      carried as an abstract real function of `z` (the concrete infinite
+      product / its convergence is the open derivation). -/
+  Phi : ℝ → ℝ
+  /-- The `Φ_q` **functional equation** `(1 - z)·Φ_q(z) = Φ_q(q⁻¹ z)`
+      (was `True`).  Derivation for the `k ≥ 0` product convention: the
+      `k = 0` factor of `P(z) := ∏_{k≥0}(1 - q^{-k}z)` peels off as
+      `P(z) = (1 - z)·P(q⁻¹ z)`, and `Φ_q = P⁻¹` inverts this to the
+      stated relation. -/
+  faddeev_functional_equation : ∀ z : ℝ, (1 - z) * Phi z = Phi (q⁻¹ * z)
 
 end QOU.Machinery
