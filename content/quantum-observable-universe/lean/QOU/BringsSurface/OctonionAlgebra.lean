@@ -171,6 +171,8 @@ instance : Mul Quat :=
     (p * q).fst = p.fst * q.fst - Cplx.conj q.snd * p.snd := rfl
 @[simp] theorem mul_snd (p q : Quat) :
     (p * q).snd = q.snd * p.fst + p.snd * Cplx.conj q.fst := rfl
+@[simp] theorem conj_fst (p : Quat) : (conj p).fst = Cplx.conj p.fst := rfl
+@[simp] theorem conj_snd (p : Quat) : (conj p).snd = -p.snd := rfl
 
 /-- `Quat` is a (non-commutative) ring: the Cayley–Dickson double of a commutative
 ring is associative but no longer commutative. -/
@@ -259,6 +261,8 @@ instance : Mul Oct :=
     (a * b).fst = a.fst * b.fst - Quat.conj b.snd * a.snd := rfl
 @[simp] theorem mul_snd (a b : Oct) :
     (a * b).snd = b.snd * a.fst + a.snd * Quat.conj b.fst := rfl
+@[simp] theorem conj_fst (a : Oct) : (conj a).fst = Quat.conj a.fst := rfl
+@[simp] theorem conj_snd (a : Oct) : (conj a).snd = -a.snd := rfl
 
 /-- `𝕆` is an additive commutative group. This is the `ℝ`-vector-space structure
 (`𝕆 ≅ ℝ⁸`) that the Tier-3 `Der(𝕆)` linear algebra will use. `𝕆` is **not** a
@@ -351,6 +355,19 @@ instance : Module ℝ Oct where
   smul_add r a b := by ext <;> simp <;> ring
   add_smul r s a := by ext <;> simp <;> ring
   zero_smul a := by ext <;> simp
+
+/-! ### Bilinearity of the octonion product
+
+`𝕆`'s multiplication is `ℝ`-bilinear (it distributes over `+` and commutes with
+the scalar action on either side) — even though it is not associative. These are
+the facts the Tier-3 `Der(𝕆)` submodule-closure proofs need. -/
+
+theorem mul_add (a b c : Oct) : a * (b + c) = a * b + a * c := by ext <;> simp <;> ring
+theorem add_mul (a b c : Oct) : (a + b) * c = a * c + b * c := by ext <;> simp <;> ring
+theorem zero_mul (a : Oct) : 0 * a = 0 := by ext <;> simp
+theorem mul_zero (a : Oct) : a * 0 = 0 := by ext <;> simp
+theorem smul_mul (r : ℝ) (a b : Oct) : (r • a) * b = r • (a * b) := by ext <;> simp <;> ring
+theorem mul_smul (r : ℝ) (a b : Oct) : a * (r • b) = r • (a * b) := by ext <;> simp <;> ring
 
 end Oct
 
