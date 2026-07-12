@@ -53,3 +53,34 @@ is sharp and now explicit.
 **Discipline note.** This is the **binding recurrence** `D(n)` (the na-Stokes period deviation),
 **not** the Q_β precision-ladder `c_k` — the two are distinct objects and this result does not
 touch the c_k flip-flop discipline. Exact symbolic (sympy); no fit, no wiring. Scope-(a).
+
+## Cofactor roots — NOT Salem/Lehmer (mpmath cross-check of Stage 9, 2026-06-28)
+
+> **Anti-duplication note.** This section **reproduces** the 2026-06-28 Stage-9 result
+> ([`docs/audits/2026-06-28-lever1-binding-core-root-distribution.md`](2026-06-28-lever1-binding-core-root-distribution.md)),
+> which already did the exact on/off-unit-circle root split and concluded the cores are
+> "NOT cyclotomic-type, NOT Salem, generic bar-even residues" (m=6..11, via Dickson reduction +
+> Sturm). It stands only as an independent mpmath **cross-check** of Stage 9 (different method:
+> numerical root isolation vs. Dickson/Sturm), not a new finding. The genuinely-new lever-1 content
+> of this session is the cyclotomic-boundary↔keystone alignment + McKay mechanism
+> ([`2026-07-12-lever1-cyclotomic-boundary-keystone-conjecture.md`](2026-07-12-lever1-cyclotomic-boundary-keystone-conjecture.md)).
+
+A natural hypothesis: the first non-cyclotomic factor (n=6) is a distinguished arithmetic object
+(a **Salem** / **Lehmer** number, as at the smallest Mahler measures). Tested by classifying the
+cofactor roots (bar-evenness ⇒ reciprocal pairs `{r, 1/r}`; a Salem polynomial has exactly **one**
+off-circle pair):
+
+| n | deg | on-circle | off-circle pairs | max\|root\| | Salem? |
+|---|--:|--:|--:|--:|:--:|
+| 6 | 8  | 4  | 2 | 2.271 | no |
+| 7 | 10 | 6  | 2 | 1.407 | no |
+| 8 | 14 | 6  | 4 | 1.206 | no |
+| 9 | 28 | 14 | 7 | 2.523 | no |
+
+**Refuted (scope-(a)):** the cofactors are **not Salem** — each has **≥2** off-circle reciprocal
+pairs, not one. They are **generic bar-even non-cyclotomic** polynomials (mixed on/off-circle
+reciprocal roots) — cross-check agreeing with Stage 9. So the n=6 boundary is the onset of
+**non-q-holonomic content**, not a distinguished number-theoretic class. The specific magnitudes are
+**not** interpreted (numerology guard); the derived structural invariants (universal `(q−1)²` double
+root, bar-evenness, cyclotomic→non-cyclotomic boundary) are unchanged. Compute:
+[`computations/lever1_habiro_cofactor_root_classification.py`](../../computations/lever1_habiro_cofactor_root_classification.py).

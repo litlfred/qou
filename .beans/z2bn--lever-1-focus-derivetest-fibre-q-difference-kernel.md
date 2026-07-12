@@ -362,3 +362,29 @@ under RSK insertion ⇒ the kernel is an INSERTION RECURSION at statistic level,
 q-difference operator — explains the (re-verified) non-q-holonomicity + the Habiro tail
 combinatorially. Next: statistic-level transfer operator (descent-set refinement under
 insertion); promote identity to content block + Lean. No fit; nothing wired.
+
+## Update 2026-07-12 (e) — Habiro cofactors NOT Salem/Lehmer (mpmath cross-check of Stage 9)
+
+Independent mpmath cross-check of Stage 9 (2026-06-28): the n≥6 non-cyclotomic cofactors of the
+Habiro tail D(n) are NOT Salem/Lehmer numbers — each has ≥2 off-circle reciprocal pairs (off-pairs
+2,2,4,7), not the single pair a Salem polynomial requires. Generic bar-even non-cyclotomic; the n=6
+boundary is the onset of non-q-holonomic content, not a distinguished arithmetic class. REPRODUCES
+Stage 9 (Dickson/Sturm) via a different method (numerical root isolation), agrees. Magnitudes not
+interpreted (numerology guard). Probe `lever1_habiro_cofactor_root_classification.py`; audit
+`docs/audits/2026-07-12-lever1-habiro-tail-closed-form.md` (cofactor-roots section).
+
+## Update 2026-07-12 (f) — conj:cyclotomic-boundary-at-keystone (NEW, non-duplicate) + McKay mechanism
+
+Beyond the Stage 7-9 arithmetic (cross-checked by (e)): the NEW content is that the cyclotomic-pure
+regime of the Habiro tail is EXACTLY n≤5 = the framework's {calibration orders c=1,2,3 → n=2,3,4} ∪
+{S₅ keystone n=5}; first non-cyclotomic content at n=6 = first order beyond cal+keystone.
+MECHANISM (ties to merged #3685): at the keystone n=5 the four bwS0 classes of S₅ carry dim_q = the
+E₈ McKay marks [1]_q,[4]_q,[5]_q,[5]_q+1 (McKay 2I↔Ê₈, exact no-fit); A₅ = icosahedral = the LAST
+McKay-ADE alternating group (A₄↔Ê₆, A₅↔Ê₈, A₆ not binary polyhedral). At n=6 the McKay-mark
+structure exits (4/11 single-[m]_q vs 7/7 at n=5) and D(6) leaves the cyclotomic ring. Conjecture
+(correlation, causation OPEN): D(n) cyclotomic ⟺ n≤5=keystone order. Two dovetailing candidate
+causes: (a) A₅ = last McKay-ADE alt. group (keystone dims = E₈ marks); (b) n=6 = the UNIQUE S_n with
+a nontrivial outer automorphism (S₆). Ties binding arithmetic to s5-so3 keystone + Identity-I
+(S(n)=Σdim_q=ΣW_λ). Probe `lever1_cyclotomic_boundary_keystone_conjecture.py`; audit
+`docs/audits/2026-07-12-lever1-cyclotomic-boundary-keystone-conjecture.md`. Content block:
+`conj:cyclotomic-boundary-at-keystone` (mass-theory).
