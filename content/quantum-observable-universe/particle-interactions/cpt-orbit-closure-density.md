@@ -1,4 +1,4 @@
-**Proposition (conditional).**
+**Conjecture (CPT-saturation as fold-orbit closure).**
 Let $\sigma \colon \mathrm{Part}(n) \to \mathrm{Part}(n)$ be the transpose involution. Define $\mathrm{CPTSat}(\mathcal{K})$ to mean $\Lambda(\mathcal{K})$ is closed under the fold.
 
 Then the Frobenius packing-density rule is a derived consequence of crystal structure:
@@ -16,7 +16,7 @@ $$
 
 ## Elimination of the Boolean flag
 
-The proposition replaces the manual Boolean flag with the structural predicate $\mathrm{CPTSat}$, derived from the Type-B fold. CPT enforcement is now structural rather than post-hoc. The semantic equivalence holds for finite $\Lambda$.
+The conjecture replaces the manual Boolean flag with the structural predicate $\mathrm{CPTSat}$, derived from the Type-B fold. CPT enforcement is now structural rather than post-hoc. The semantic equivalence holds for finite $\Lambda$.
 
 ## Example: $n = 3$ Wedderburn
 
