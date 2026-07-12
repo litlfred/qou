@@ -9,8 +9,16 @@
     * the Borel transform COEFFICIENT a_n/n! and the partial Borel transform —
       with the defining MECHANISM proved sorry-free: Borel division tames
       factorial divergence (B[Σ n! z^n] has unit coefficients → geometric);
-    * the full Borel SUM and its summability/uniqueness theorems carried as a
-      conditional class (`BorelSummable`), the genuine Mathlib gap.
+    * NEW (el8w tranche 2, PR #3683 pickup): the Nevanlinna–Sokal hypothesis
+      half (i) proved sorry-free — every Gevrey-1 sequence (|a_n| ≤ C·A^n·n!)
+      has an absolutely convergent Borel transform on the disc A·|z| < 1, with
+      the quantitative bound C/(1 − A|z|); `BorelTransformConverges` is now
+      inhabited on its whole natural hypothesis class (`Gevrey1`,
+      `borelTransformConverges_of_gevrey1`, `abs_borelTransformValue_le_of_gevrey1`);
+    * the full Borel SUM (Laplace ∫₀^∞ e^{−t} φ(zt) dt) and the Watson /
+      Nevanlinna–Sokal UNIQUENESS half carried as the remaining genuine
+      Mathlib gap — blocked in-sandbox on the Gamma/measure-theory olean cone
+      (∫₀^∞ tⁿ e^{−t} dt = n!), next el8w tranche.
 
   Why QOU needs it: Ohtsuki's PROOF of the volume conjecture for the figure-
   eight (the Vol(4_1) saddle, QOU/Knot/FigureEightVolume.VolumeConjecture41)
@@ -177,5 +185,130 @@ theorem borelTransformValue_smul (c : ℝ) (a : ℕ → ℝ) (z : ℝ)
     borelTransformValue (fun k => c * a k) z = c * borelTransformValue a z := by
   refine tendsto_nhds_unique (borelTransform_tendsto _ z) ?_
   simpa only [partialBorel_smul] using (borelTransform_tendsto a z).const_mul c
+
+/-! ### Gevrey-1 sequences — the hypothesis half of Nevanlinna–Sokal (bean el8w)
+
+    Nevanlinna–Sokal Borel summability has two halves:
+
+    * **(i) Gevrey-1 ⇒ Borel-disc convergence.** A factorial-type bound
+      `|aₙ| ≤ C·Aⁿ·n!` forces the Borel-transformed series `Σ (aₙ/n!) zⁿ` to
+      converge absolutely on the disc `A·|z| < 1`, with the quantitative bound
+      `C/(1 − A·|z|)`. Proved sorry-free below: every Gevrey-1 sequence yields
+      a `BorelTransformConverges` instance — the class is inhabited on its
+      whole natural hypothesis class, not just the single factorial example.
+      This is the growth class the bridge growth-obstruction audit assigns to
+      the 4₁ even-channel Ohtsuki ladder ("Gevrey-1 divergent").
+    * **(ii) Laplace resummation + uniqueness.** `∫₀^∞ e^{−t} φ(zt) dt`
+      recovers the function, uniquely (Watson / Nevanlinna). The term-wise
+      engine is `∫₀^∞ tⁿ e^{−t} dt = n!` — the Gamma/measure-theory cone,
+      which is NOT in the current olean cache (`Mathlib.Analysis.
+      SpecialFunctions.Gamma.Basic`, `Mathlib.MeasureTheory.Integral.
+      ExpDecay` unavailable). It stays the documented gap; next el8w tranche
+      after the cache cone is extended. NEVER `sorry`-faked here.
+
+    -- Ref: [sokal1980] https://doi.org/10.1063/1.524408 -/
+
+/-- Gevrey-1 (factorial-type) bound: `|aₙ| ≤ C·Aⁿ·n!` — the hypothesis class
+    of the Nevanlinna–Sokal theorem. -/
+def Gevrey1 (a : ℕ → ℝ) (C A : ℝ) : Prop :=
+  ∀ n, |a n| ≤ C * A ^ n * (n ! : ℝ)
+
+/-- The factorial series is Gevrey-1 with `C = A = 1`. -/
+theorem gevrey1_factorial : Gevrey1 (fun k => (k ! : ℝ)) 1 1 := by
+  intro n
+  simp [abs_of_nonneg (by positivity : (0 : ℝ) ≤ (n ! : ℝ))]
+
+/-- **Borel division turns a Gevrey-1 bound into a geometric one**: the Borel
+    coefficients of a Gevrey-1 sequence are bounded by `C·Aⁿ`. This is the
+    general form of `borel_tames_factorial`. -/
+theorem abs_borelCoeff_le_of_gevrey1 {a : ℕ → ℝ} {C A : ℝ}
+    (h : Gevrey1 a C A) (n : ℕ) : |borelCoeff a n| ≤ C * A ^ n := by
+  have hn : (0 : ℝ) < (n ! : ℝ) := by positivity
+  unfold borelCoeff
+  rw [abs_div, abs_of_pos hn, div_le_iff₀ hn]
+  exact h n
+
+/-- Term-wise geometric domination of the Borel-transformed series on the
+    disc: `|(aₙ/n!)·zⁿ| ≤ C·(A·|z|)ⁿ`. -/
+theorem abs_borelCoeff_mul_pow_le_of_gevrey1 {a : ℕ → ℝ} {C A : ℝ}
+    (h : Gevrey1 a C A) (z : ℝ) (n : ℕ) :
+    |borelCoeff a n * z ^ n| ≤ C * (A * |z|) ^ n := by
+  calc |borelCoeff a n * z ^ n| = |borelCoeff a n| * |z| ^ n := by
+        rw [abs_mul, abs_pow]
+    _ ≤ C * A ^ n * |z| ^ n :=
+        mul_le_mul_of_nonneg_right (abs_borelCoeff_le_of_gevrey1 h n)
+          (pow_nonneg (abs_nonneg z) n)
+    _ = C * (A * |z|) ^ n := by rw [mul_pow]; ring
+
+/-- **Gevrey-1 ⇒ absolute summability** of the Borel-transformed series on the
+    disc `A·|z| < 1`. -/
+theorem summable_abs_borel_of_gevrey1 {a : ℕ → ℝ} {C A z : ℝ}
+    (h : Gevrey1 a C A) (hA : 0 ≤ A) (hz : A * |z| < 1) :
+    Summable (fun n => |borelCoeff a n * z ^ n|) := by
+  have hr : 0 ≤ A * |z| := mul_nonneg hA (abs_nonneg z)
+  refine Summable.of_nonneg_of_le (fun n => abs_nonneg _)
+    (fun n => abs_borelCoeff_mul_pow_le_of_gevrey1 h z n) ?_
+  exact (summable_geometric_of_lt_one hr hz).mul_left C
+
+/-- Gevrey-1 ⇒ summability of the Borel-transformed series itself. -/
+theorem summable_borel_of_gevrey1 {a : ℕ → ℝ} {C A z : ℝ}
+    (h : Gevrey1 a C A) (hA : 0 ≤ A) (hz : A * |z| < 1) :
+    Summable (fun n => borelCoeff a n * z ^ n) :=
+  (summable_abs_borel_of_gevrey1 h hA hz).of_abs
+
+/-- The partial Borel transforms of a Gevrey-1 sequence converge on the disc,
+    to the sum of the Borel-transformed series. -/
+theorem borelTransform_tendsto_tsum_of_gevrey1 {a : ℕ → ℝ} {C A z : ℝ}
+    (h : Gevrey1 a C A) (hA : 0 ≤ A) (hz : A * |z| < 1) :
+    Filter.Tendsto (fun N => partialBorel a N z) Filter.atTop
+      (nhds (∑' n, borelCoeff a n * z ^ n)) := by
+  have hs := summable_borel_of_gevrey1 h hA hz
+  have h1 := hs.hasSum.tendsto_sum_nat.comp (tendsto_add_atTop_nat 1)
+  simpa only [partialBorel] using h1
+
+/-- **Every Gevrey-1 sequence has a convergent Borel transform on its disc**
+    (`A·|z| < 1`) — hypothesis half (i) of Nevanlinna–Sokal, sorry-free, as a
+    producer of `BorelTransformConverges` instances. -/
+theorem borelTransformConverges_of_gevrey1 {a : ℕ → ℝ} {C A z : ℝ}
+    (h : Gevrey1 a C A) (hA : 0 ≤ A) (hz : A * |z| < 1) :
+    BorelTransformConverges a z :=
+  ⟨⟨_, borelTransform_tendsto_tsum_of_gevrey1 h hA hz⟩⟩
+
+/-- Under summability, the class-chosen Borel value IS the sum of the
+    Borel-transformed series. -/
+theorem borelTransformValue_eq_tsum (a : ℕ → ℝ) (z : ℝ)
+    [BorelTransformConverges a z]
+    (hs : Summable (fun n => borelCoeff a n * z ^ n)) :
+    borelTransformValue a z = ∑' n, borelCoeff a n * z ^ n :=
+  tendsto_nhds_unique (borelTransform_tendsto a z)
+    (by simpa only [partialBorel] using
+      hs.hasSum.tendsto_sum_nat.comp (tendsto_add_atTop_nat 1))
+
+/-- **Quantitative disc bound**: the Borel value of a Gevrey-1 sequence is
+    bounded by `C/(1 − A·|z|)` on the disc. (The exponential-type control that
+    feeds the Laplace-integrability step of the resummation half.) -/
+theorem abs_borelTransformValue_le_of_gevrey1 {a : ℕ → ℝ} {C A z : ℝ}
+    [BorelTransformConverges a z]
+    (h : Gevrey1 a C A) (hA : 0 ≤ A) (hz : A * |z| < 1) :
+    |borelTransformValue a z| ≤ C / (1 - A * |z|) := by
+  have hr : 0 ≤ A * |z| := mul_nonneg hA (abs_nonneg z)
+  have habs := summable_abs_borel_of_gevrey1 h hA hz
+  rw [borelTransformValue_eq_tsum a z habs.of_abs]
+  have h1 : |∑' n, borelCoeff a n * z ^ n| ≤ ∑' n, |borelCoeff a n * z ^ n| := by
+    simpa only [Real.norm_eq_abs] using
+      norm_tsum_le_tsum_norm (f := fun n => borelCoeff a n * z ^ n)
+        (by simpa only [Real.norm_eq_abs] using habs)
+  refine h1.trans ?_
+  have hgeo : Summable (fun n : ℕ => C * (A * |z|) ^ n) :=
+    (summable_geometric_of_lt_one hr hz).mul_left C
+  have h2 : ∑' n, |borelCoeff a n * z ^ n| ≤ ∑' n : ℕ, C * (A * |z|) ^ n :=
+    habs.tsum_le_tsum (fun n => abs_borelCoeff_mul_pow_le_of_gevrey1 h z n) hgeo
+  refine h2.trans ?_
+  rw [tsum_mul_left, tsum_geometric_of_lt_one hr hz, div_eq_mul_inv]
+
+/-- The original factorial example is subsumed: `Σ n! zⁿ` gets its
+    `BorelTransformConverges` instance from the general Gevrey-1 theorem. -/
+example {z : ℝ} (hz : |z| < 1) : BorelTransformConverges (fun k => (k ! : ℝ)) z :=
+  borelTransformConverges_of_gevrey1 gevrey1_factorial zero_le_one (by simpa using hz)
 
 end QOU.Mathlib.Borel

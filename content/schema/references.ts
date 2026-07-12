@@ -4290,6 +4290,27 @@ export const references: CSLData[] = [
       "the alien calculus used in the resurgence-utilization audit.",
   }),
 
+  // ── Sokal 1980 (Nevanlinna–Sokal Borel-summability criterion) ──
+  ref({
+    id: "sokal1980",
+    type: "article-journal",
+    title: "An improvement of Watson's theorem on Borel summability",
+    author: [{ family: "Sokal", given: "Alan D." }],
+    issued: { "date-parts": [[1980]] },
+    "container-title": "Journal of Mathematical Physics",
+    volume: "21",
+    page: "261-263",
+    DOI: "10.1063/1.524408",
+    note:
+      "The Nevanlinna–Sokal theorem: a function analytic on a disc " +
+      "tangent to the imaginary axis with Gevrey-1 remainder bounds " +
+      "is uniquely recovered by Borel resummation. Cited as the " +
+      "target theorem of the QOU/Mathlib/BorelResummation gap-infra " +
+      "programme (bean el8w): hypothesis half (i) — Gevrey-1 implies " +
+      "Borel-disc convergence — is formalized sorry-free; the Laplace " +
+      "resummation + uniqueness half remains the documented gap.",
+  }),
+
   // ── Andersen–Hansen 2006 (quantum-invariant asymptotics, figure-eight) ──
   ref({
     id: "andersen-hansen2006",
