@@ -341,6 +341,7 @@ function prose(md: string): string {
     .replace(/```[\s\S]*?```/g, " ") // fenced code/tex
     .replace(/\$\$[\s\S]*?\$\$/g, " ") // display math
     .replace(/\\begin\{[\s\S]*?\\end\{[a-zA-Z*]+\}/g, " ") // latex envs
+    .replace(/^[ \t]*\|.*$/gm, " ") // markdown table rows — tabular data, not prose
     .replace(/\$[^$]*\$/g, " M ") // inline math -> placeholder
     .replace(/:def?term\[[^\]]*\]\{[^}]*\}/g, (x) => x) // keep directives
     .replace(/[*_>#`]/g, " ");
@@ -371,6 +372,25 @@ function boldHeaders(md: string): string[] {
   let m: RegExpExecArray | null;
   while ((m = re.exec(md))) out.push(m[2].trim());
   return out;
+}
+
+/** bold section-headers that signal a `definition` block is RAMBLING (padded
+ *  with discursive exposition), excluding two header shapes that are part of a
+ *  *tight* definition rather than padding:
+ *   - the standing "Archimedean specialisation (§7c)" boilerplate footer every
+ *     archimedean block carries (does not make a 2-section block rambling);
+ *   - component / part labels of a tuple or structure definition, which end in
+ *     ":" (`Objects:`, `Morphisms:`, `Composition:`, `The state space:`) — these
+ *     ARE the definition's data, not discursive sections.
+ *  This is the sub-section count for `clarity-defn-tight`; the genuine signal is
+ *  trailing interpretive/consequence prose sections, not tuple components. */
+function defnRamblingHeaders(md: string): string[] {
+  return boldHeaders(md).filter((h) => {
+    const t = h.trim();
+    if (/archimedean\s+special/i.test(t)) return false; // §7c boilerplate footer
+    if (/[:：]$/.test(t)) return false; // tuple/structure component label
+    return true;
+  });
 }
 
 /** ATX markdown headers (`## …`, `### …`, …) — used alongside boldHeaders so
@@ -550,6 +570,15 @@ function firstDisplayIdx(md: string): number {
 const DEFN_BOLD_RX = /(?:\*\*|__)Definition\b/i;
 const DEFN_HEADER_RX = /^#{2,4}\s+Definition\b/im;
 const FENCED_CODE_RX = /```[a-zA-Z]/;
+/** first `**bold**` span — in a `definition` block this is (almost always) the
+ *  defined term itself (`**Frobenius–Hopf substrate**`, `**Yekutieli triple**`,
+ *  `**$\Phi_q$-piece**`, or an algorithm's leading `**Input:**`). The
+ *  title-token `firstMarkedTermIdx` misses it whenever the term carries math /
+ *  special chars (stripped to nothing by `tokens`) or differs from the title, so
+ *  the whole block is miscounted as preamble. The first bold marks where the
+ *  definition starts regardless of the term's characters. Excludes `** ` /
+ *  `**\n` (a stray/empty bold). */
+const FIRST_BOLD_RX = /\*\*(?=[^*\s])/;
 
 function firstDefnAnchorIdx(md: string): number {
   const idxs = [
@@ -557,6 +586,7 @@ function firstDefnAnchorIdx(md: string): number {
     md.search(DEFN_HEADER_RX),
     md.indexOf(":defterm["),
     md.search(FENCED_CODE_RX),
+    md.search(FIRST_BOLD_RX),
   ].filter((i) => i >= 0);
   return idxs.length ? Math.min(...idxs) : -1;
 }
@@ -679,7 +709,7 @@ function checkDefnSingle(b: Block): Finding {
 function checkDefnTight(b: Block): Finding {
   const p = prose(b.md);
   const words = wordCount(p);
-  const headers = boldHeaders(b.md).length;
+  const headers = defnRamblingHeaders(b.md).length;
   const pt = principalTokens(b.title);
   const dispIdx = firstDisplayIdx(b.md);
   const termIdx = firstMarkedTermIdx(b.md, pt);
@@ -689,6 +719,18 @@ function checkDefnTight(b: Block): Finding {
   const preamble = anchor < 0 ? words : wordCount(prose(b.md.slice(0, anchor)));
   const base = mkFinding(b, "clarity-defn-tight");
   base.metrics = { words, boldHeaders: headers, preambleWords: preamble };
+  // Algorithm-specification blocks (Input / Output / Algorithm sections + numbered
+  // steps) are intrinsically procedural — their length and section count ARE the
+  // algorithm, not discursive rambling. Exempt them (agent-confirmed FP class:
+  // universal-ilp-algorithm, jet-stratified-reduction, division-algorithm).
+  if (
+    /(^|\n)#{2,4}\s+(Algorithm|Input|Output)\b/i.test(b.md) ||
+    /(^|\n)[ \t]*\*\*(Input|Output|Algorithm)\b[:.]/i.test(b.md)
+  ) {
+    base.result = "n/a";
+    base.evidence = "algorithm specification (Input/Output/steps) — procedural, not rambling prose";
+    return base;
+  }
   const rambling =
     words > T.defnWords ||
     headers >= T.defnHeaders ||
