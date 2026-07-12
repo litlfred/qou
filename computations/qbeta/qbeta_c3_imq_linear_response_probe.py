@@ -65,10 +65,12 @@ def coeff_geometric(q0):
 
 
 def coeff_operator(q0):
-    """∂S/∂ε via the operator route: Im[T(q0+iε)]/ε → T'(q0)."""
-    h = mp.mpf("1e-30")
-    # T real-analytic ⇒ Im T(q0+iε) = ε T'(q0)+O(ε³); T'(q0) by central difference
-    return (fig8_trace(q0 + h) - fig8_trace(q0 - h)) / (2 * h)
+    """∂S/∂ε via the operator route: Im[T(q0+iε)]/ε → T'(q0).
+
+    T(q) = q⁴−2q²+1−2q⁻²+q⁻⁴ is a Laurent polynomial; T'(q₀) is exact (Gemini
+    review — analytic is more robust than a finite-difference step size).
+    """
+    return 4 * q0 ** 3 - 4 * q0 + 4 / q0 ** 3 - 4 / q0 ** 5
 
 
 def imag_of_perturbed_trace(q0, eps):
