@@ -40,9 +40,4 @@ $E_0 \cdot (\cosh\text{-channel})$ and its `emitted E` column is
 $E_0 \cdot |\sinh\text{-channel}|$. The
 `emitted/retained` ratio rises from $0.96$ at the deuteron — the least
 saturated, most decay-like light binding, matching its $\beta$-threshold
-character — toward $1.00$ by ${}^6\mathrm{Li}$. The Lean sibling
-(`QOU.MassTheory.FrakD`) proves the projection is well-defined and
-parity-correct over a generic field: `evenPart_barEven`, `oddPart_barOdd`,
-`even_add_odd` (reconstruction), and `oddPart_eq_zero_iff_barEven` (a
-nucleus carries no $\mathfrak{D}$ channel exactly when its binding is purely
-retained).
+character — toward $1.00$ by ${}^6\mathrm{Li}$.

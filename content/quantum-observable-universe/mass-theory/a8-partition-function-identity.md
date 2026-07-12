@@ -49,16 +49,8 @@ algebraic-expansion shape, so this finding is expected to survive
 the Phase 5q convention switch (cf. Track 1 of the $\mathfrak{Q}_\beta$ Habiro
 follow-up coordination ledger).
 
-## Mathlib bridge
-
-The Lean file
-[`a8-partition-function-identity.lean`](https://github.com/litlfred/qou/blob/claude/qbeta-habiro-followup-2026-06-01/content/quantum-observable-universe/braids-and-knots/a8-partition-function-identity.lean)
-defines a local `partitionCount : ℕ → ℕ` value table for
-$n = 1, \dots, 5$ and proves the identity directly. The semantic
-bridge to Mathlib's `Fintype.card (Nat.Partition n)` (from
-`Mathlib.Combinatorics.Enumerative.Partition`) is recorded as a
-documentation note — the genuine Hardy–Ramanujan values
-$(1, 2, 3, 5, 7)$ are uncontested and standard (OEIS A000041
+The Hardy–Ramanujan values
+$(1, 2, 3, 5, 7)$ are standard (OEIS A000041
 Table 1; Andrews, *The Theory of Partitions*, §1.1).
 
 ## Cross-references
@@ -71,4 +63,4 @@ Table 1; Andrews, *The Theory of Partitions*, §1.1).
 - This tranche's coordination ledger:
   [`docs/coordination/2026-06-01-qbeta-habiro-followup.md`](https://github.com/litlfred/qou/blob/claude/qbeta-habiro-followup-2026-06-01/docs/coordination/2026-06-01-qbeta-habiro-followup.md)
 
-**Mathematical Novelty:** This result records the canonical coincidence that the $a_8$ coefficients $(1,2,3,5,7)$ match the partition numbers $p(1..5)$. It is an categorical Habiro-shell observation rather than a new deductive argument, utilizing standard partition values, with the identity proved formally via ring equivalences.
+This result records the canonical coincidence that the $a_8$ coefficients $(1,2,3,5,7)$ match the partition numbers $p(1..5)$: a categorical Habiro-shell observation rather than a new deductive argument.

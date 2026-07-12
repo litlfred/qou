@@ -37,8 +37,6 @@ of the classical $5$ is $5g$ itself (the fully-deformed alternative
 $(1 + [2]_v^2)\,g = 1/g$ splits from $5g$ by the exact factor
 $1 + (v-v^{-1})^2/5$).
 
-The Lean sibling proves the fusion identity, the classical-$5$ identity, the
-geometry-independent linking-rate square, the criticality reciprocal, and
-the $1/g$ deformation identity, all over a generic field. The archimedean
+The archimedean
 evaluation at $q_0$ and the MeV unit $E_{\text{unit}}$ are downstream and
 remain the open inputs of the linear law.

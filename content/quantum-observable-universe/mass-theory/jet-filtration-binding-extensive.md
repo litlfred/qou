@@ -1,4 +1,4 @@
-*Lean sibling resolves to [`QOU.Mass.jetBinding_mono`](lean/QOU/Mass/JetFiltrationExtensive.lean) — sorry-free. Stated over $\mathbb{R}$ (archimedean regime); the combinatorial content is a finite non-negative sum.*
+*Stated over $\mathbb{R}$ (archimedean regime); the combinatorial content is a finite non-negative sum.*
 
 **Proposition (extensivity of the body-order binding).**
 *Write the jet-filtration binding of [`conj:binding-manybody-eq-jet-filtration`](#conj:binding-manybody-eq-jet-filtration) as*
@@ -27,8 +27,7 @@ supplies it, because each term $\mathfrak{m}_e a_D^{(n)} w_n$ is a non-negative
 contribution and the number of terms grows with $A$.
 
 The proof is elementary — monotonicity of a finite sum of non-negative terms over
-the nested index sets $\{2,\ldots,A\} \subseteq \{2,\ldots,A'\}$ — and is
-formalised sorry-free in the Lean sibling (`jetBinding_mono`, `jetBinding_lt_succ`).
+the nested index sets $\{2,\ldots,A\} \subseteq \{2,\ldots,A'\}$.
 
 **Scope (what is *not* asserted here).** The three deeper inputs are carried as
 non-negativity/positivity *hypotheses* on $a_D^{(n)}$ and $w_n$, **not** derived in
@@ -38,7 +37,7 @@ this proposition:
    $a_D^{(n)} = \oint_{\mathcal{S}_c}\lambda_{\mathrm{SW}}^{(n)}$ (the $\surd$-branch
    falling-factorial growth) — the *quantitative* extensive channel;
 2. the **non-abelian-Stokes identity** $a_D^{(n)} = \mathrm{lw}(n-1)$ (the mean
-   quantum dimension; the owner-gated keystone conjecture #1765, whose residue-sum
+   quantum dimension; the keystone conjecture, whose residue-sum
    form is `prop:sw-period-residue-sum`);
 3. the per-atom **residue weight** $w_n(K)$ (the open $\rho\cdot A$ scale rule, a
    $q$-difference recursion output).
