@@ -28,7 +28,7 @@ $$
 
 Applied to the 8-fold ideal-octahedral tessellation of
 $S^3 \setminus \mathcal{B}_3$ (Adams 1985 \cite{adams1985hyperbolic}:
-$\operatorname{Vol}(\mathcal{B}_3) = 8G$ where
+$\mathrm{Vol}(\mathcal{B}_3) = 8G$ where
 $G = \Lambda(\pi/4) = \tfrac{1}{2} V_{\text{oct}}$ is Catalan's
 constant):
 

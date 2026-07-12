@@ -3,7 +3,7 @@ The one-parameter recurrence
 
 $$
 a_D^{(n+2)} = \tau\,a_D^{(n+1)} - a_D^{(n)},
-\qquad \tau = \operatorname{tr} B,\ \det B = 1,
+\qquad \tau = \mathrm{tr}\, B,\ \det B = 1,
 $$
 
 on the prolonged Seiberg--Witten periods admits a **conserved first integral** —

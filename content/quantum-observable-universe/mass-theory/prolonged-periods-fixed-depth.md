@@ -5,7 +5,7 @@ Gauss--Manin period space $V$ of the SW family over Bring's surface. Since $V$
 is **finite-rank** — it is the de Rham cohomology of the family, $\dim V \leq 2g
 = 8$ for the genus-$4$ Bring curve — the operator $M$ satisfies its
 characteristic polynomial (Cayley--Hamilton):
-$M^d = \sum_{j<d} c_j\,M^j$ with $d \leq \operatorname{rank} V$ and $c_j$ the
+$M^d = \sum_{j<d} c_j\,M^j$ with $d \leq \mathrm{rank}\, V$ and $c_j$ the
 characteristic-polynomial coefficients. Therefore the operator powers — and
 hence the periods — satisfy the depth-$d$ linear recurrence
 
