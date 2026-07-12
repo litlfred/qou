@@ -84,7 +84,9 @@ structure HeckeAlgebraData where
 
     **Three key properties:**
     1. **Existence & uniqueness**: a trace satisfying normalisation,
-       cyclicity, and the Markov property tr(x T_n^{±1}) = z^{±1} tr(x).
+       cyclicity, and the Markov property tr(x T_n) = z tr(x); the
+       negative stabilisation tr(x T_n⁻¹) = z₋ tr(x),
+       z₋ = z − (q − q⁻¹), is forced by the Hecke quadratic relation.
     2. **Non-degeneracy**: the trace is nonzero on every irreducible
        H_n(q)-module S_λ.
     3. **Link invariance**: the trace value depends only on the isotopy
@@ -105,8 +107,11 @@ structure JonesMarkovTrace (H : HeckeAlgebraData) where
   /-- Trace property (cyclicity): tr(ab) = tr(ba). -/
   tr_comm : ∀ (a b : H.carrier), tr (H.mul a b) = tr (H.mul b a)
 
-  /-- Markov parameter z, determined by q:
-      z = (q - 1) / (q^{1/2} + q^{-1/2})². -/
+  /-- Markov-trace loop value z, determined by q. Numerically (after
+      specialisation ι : R_q → ℝ, q ↦ q₀) this is
+      z = 1 / (q^{1/2} + q^{-1/2}) = tr_M(σ_i). Carried as an
+      abstract field since neither square roots nor division exist
+      in R_q. -/
   z : R_q
 
   /-- The Markov parameter is nonzero. -/
@@ -135,31 +140,33 @@ structure JonesMarkovTrace (H : HeckeAlgebraData) where
 
   -- ### Property 3: Link invariance
 
-  /-- Formal inverse of the Markov parameter `z` in `R_q`.
+  /-- Negative-crossing loop value `z₋ = z − (q − q⁻¹)`.
 
-      `R_q = ℤ[q, q⁻¹]` is only a `CommRing` (no `Inv`), so the
-      multiplicative inverse `z⁻¹` appearing in Markov II is carried as
-      an explicit field together with its witnessing identity `z_inv`
-      below, rather than via a `(·)⁻¹` operation that `R_q` does not
-      provide. -/
-  z_inv : R_q
+      Forced by linearity and the Hecke quadratic relation
+      σ⁻¹ = σ − (q − q⁻¹): substituting into `markov_pos` gives
+      tr(x·T⁻¹) = (z − (q − q⁻¹))·tr(x). Note z₋ ≠ z for q ≠ ±1,
+      and z₋ is NOT z⁻¹ — the two stabilisations do not scale by
+      mutually inverse factors for any non-degenerate trace
+      parameter (z·z₋ = 1 forces z ∈ {q, −q⁻¹}, the two
+      one-dimensional characters). Link invariance is restored by
+      the writhe prefactor outside the trace (Jones 1987 §5), not
+      by ±-symmetry of the trace. -/
+  z_neg : R_q
 
-  /-- `z_inv` is a two-sided inverse of `z`. -/
-  z_inv_spec : z * z_inv = 1
+  /-- `z_neg` is pinned to its Hecke-forced value z − (q − q⁻¹). -/
+  z_neg_spec : z_neg = z - (q_param - q_inv_param)
 
-  /-- **Link invariance (Markov II)**: inverse stabilisation.
-      tr(x · T_{n-1}⁻¹) = z⁻¹ · tr(x).
-      Combined with tr_comm (Markov I) and markov_pos, this ensures the
-      trace value depends only on the isotopy class of the braid closure,
-      yielding the Jones polynomial J_L(q).
-
-      Here `z_inv` is the formal inverse of `z` (field `z_inv` above),
-      since `R_q` carries no `Inv` instance. -/
-  -- Ref: [jones1987] Theorem 5.1
+  /-- **Negative stabilisation (Markov II input)**:
+      tr(x · T_{n-1}⁻¹) = z₋ · tr(x) with z₋ = z − (q − q⁻¹).
+      Combined with tr_comm (Markov I), markov_pos, and the
+      writhe-normalisation prefactor of Jones 1987 §5, this ensures
+      the normalised invariant depends only on the isotopy class of
+      the braid closure, yielding the Jones polynomial J_L(q). -/
+  -- Ref: [jones1987] Theorem 5.1 + §5 (writhe normalisation)
   markov_neg : H.n ≥ 2 →
     ∀ (x : H.carrier) (T_inv : H.carrier),
       -- T_inv is the Hecke-algebra inverse of the last generator
-      tr (H.mul x T_inv) = z_inv * tr x
+      tr (H.mul x T_inv) = z_neg * tr x
 
 /-! ## Existence Axiom -/
 
