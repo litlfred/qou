@@ -1,0 +1,81 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-12T15:38:49.194973+00:00",
+  "commitSha": "9bf3c62b920603aa4500fb584d92fcdd9f4ed7ad",
+  "assertions": [
+    {
+      "name": "binding_period_gevrey_half_at_q1_qgevrey_deformed_at_q0",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "integer sandwich n!≤4^n I(n)^2 ≤ 8^n n! holds to n=60 (Lean-proved core); ln I matches the order-1/2 asymptote to +0.0353 at n=60; level-1 Borel root test decays as sqrt(e/n) (scaled 1.002≈1 ⇒ B1 entire, level-1 plane singularity-free); q0 dressing grows 0.017→0.361 under the exact q^(n(n−1)/2) envelope ⇒ class deforms toward q-Gevrey at q0."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "lever1-gevrey-order-pin",
+  "scriptFile": "lever1_gevrey_order_pin.py",
+  "scriptHash": "eeacb94a651f",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Lever-1 (z2bn): Gevrey-order pin for the binding period a_D^(n)=S(n)/n. q=1 exact: a_D=I(n)/n (telephone numbers) satisfies the two-sided integer sandwich n! ≤ 4^n·I(n)^2 and I(n)^2 ≤ 2^n·n! (Lean-proved in QOU/Mass/BindingGevreyHalf.lean; asserted here to n=60) and matches the (n/e)^(n/2)e^(sqrt n-1/4)/sqrt2 asymptote ⇒ Gevrey-1/2, NOT Gevrey-1. The level-1 Borel coefficients a_D/n! decay like sqrt(e/n) ⇒ B₁ entire ⇒ no alien derivatives in the level-1 plane (refutes the external dialog's Gevrey-1/standard-Borel framing, scope-(a)). At q₀ the dressing ln(S_q/I)/n GROWS (0.017→0.36, n≤28) under the exact envelope S_q ≤ p(n)q^(n(n−1)/2) ⇒ the deformation CHANGES the class toward q-Gevrey (Jackson q-Borel territory) — an Écalle acceleration chain, not one Borel plane. Anti-fit: exact integers + categorical q-hook dim_q; nothing tuned; no wiring.",
+  "data": {
+    "sandwich_holds_to_n": 60,
+    "gevrey_slope_s_n": {
+      "10": 0.2977540705946535,
+      "20": 0.34875414294951296,
+      "30": 0.36796817207234356,
+      "40": 0.37856523490111377,
+      "50": 0.3854856959255191,
+      "60": 0.3904599709499514
+    },
+    "asymptote_residual_ln": {
+      "10": 0.07999640143086886,
+      "20": 0.058328004684833915,
+      "30": 0.04855617358206848,
+      "40": 0.04256932451981307,
+      "50": 0.03839918434448283,
+      "60": 0.03527412288419005
+    },
+    "level1_borel_root_test": {
+      "10": 0.4383063547734044,
+      "20": 0.34232086449787474,
+      "30": 0.29023176227808356,
+      "40": 0.2562672392166948,
+      "50": 0.2318820531208124,
+      "60": 0.2132851595149505
+    },
+    "level1_root_test_scaled_sqrt_n_over_e": {
+      "10": 0.8406796337510641,
+      "20": 0.9285410902822809,
+      "30": 0.9641804586937751,
+      "40": 0.9830505374190379,
+      "50": 0.9945002536878651,
+      "60": 1.0020491461771635
+    },
+    "q0_dressing_ln_ratio_per_n": {
+      "7": 0.017140335127275065,
+      "14": 0.08843659254264506,
+      "21": 0.20642683563523007,
+      "28": 0.36143058879174195
+    },
+    "q0_exponent_ratio_vs_qgevrey_envelope": {
+      "7": 0.046935066125633466,
+      "14": 0.12108215178096787,
+      "21": 0.18841827593027302,
+      "28": 0.24742469238207815
+    }
+  }
+}
