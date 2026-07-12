@@ -8,7 +8,14 @@ export default proposition({
   },
   title:
     "$\\mathfrak{Q}_\\beta$ cos-resummation: $\\mathfrak{Q}_\\beta^{A,\\cos} = \\mathfrak{Q}_\\beta^A \\cdot \\cos((z-1)h/2)$ tightens the CODATA residual by $5.49\\times$ via classical-cos eigenphase symmetrization (conditional on the transfer-matrix eigenphase identification)",
-  uses: ["prop:q-beta-spectral-bridge"],
+  uses: [
+    "prop:q-beta-spectral-bridge",
+    // NOTE: the Φ_q/AJ hub (prop:phi-q-aj-machinery-identification) is
+    // linked narratively in the .md only — a uses[] edge would pull the
+    // hub's conj:quantum-langlands-dual cone into this proposition's
+    // transitive uses[] without a matching §3b-cond class hypothesis in
+    // its Lean (which axiomatises only the eigenphase identification).
+  ],
   cites: [
     "jones1985",
     "wenzl1988",

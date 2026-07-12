@@ -8,7 +8,7 @@ export default conjecture({
     ref: "qou:QOU.BraidKnot.QZeroStokesRegionIdentification.QZeroStokesIdentification",
     validation: "not_checked",
   },
-  uses: ["prop:phi-q-aj-machinery-identification"],
+  uses: ["prop:phi-q-aj-machinery-identification", "rem:dilog-saddle-regime"],
   cites: [
     "mostow1968",
     "prasad1973",

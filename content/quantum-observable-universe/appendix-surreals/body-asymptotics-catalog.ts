@@ -12,6 +12,7 @@ export default remark({
     "prop:unified-iterative-correction",
     "prop:feynman-classical-limit",
     "prf:mobius-energy",
+    "def:surreal-blowup-calculus",
   ],
   tags: [
     "surreal-numbers",

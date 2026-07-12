@@ -35,14 +35,7 @@ $$ V(\theta) = \text{Im}(\text{Li}_2(e^{i\theta})) $$
 
 ## The Saddle Point Construction
 
-The critical saddle point of the continuous action strictly evaluates to the roots of unity bounding the topological domain:
-$$ \frac{d}{d\theta} \text{Im}(\text{Li}_2(e^{i\theta})) = -\log|2\sin(\theta/2)| = 0 \implies \theta = \frac{\pi}{3} $$
-
-Evaluating the continuum potential at this exact analytical root yields identically the spatial volume of a **regular ideal tetrahedron**:
-$$ V(\pi/3) \approx 1.01494\dots $$
-
-Since the $4_1$ knot complement is built exactly from two such regular ideal tetrahedra, the total macroscopic physical action is:
-$$ \text{Vol}(4_1) \approx 2.02988\dots $$
+The critical saddle point of the continuous action sits at $\theta = \pi/3$, where the potential evaluates to the volume of a regular ideal tetrahedron ($V(\pi/3) \approx 1.01494$) and the two-tetrahedron gluing of the $4_1$ complement gives the total macroscopic physical action $\text{Vol}(4_1) \approx 2.02988$; the saddle derivation is carried out once in [the dilog saddle regime](#rem:dilog-saddle-regime).
 
 ## Resolution of the Asymptotic Bound
 

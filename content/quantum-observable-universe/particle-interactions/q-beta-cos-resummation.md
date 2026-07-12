@@ -24,3 +24,5 @@ Two structural constraints enforce this form:
 
 1. **Markov cyclicity.** The trace is cyclic. It is invariant under the bar involution $q \mapsto q^{-1}$, which maps $\alpha \mapsto -\alpha$. The resummation must be even in $\alpha$. The minimal even-power resummation that matches the linear bridge at the perturbative level is the cosine.
 2. **Classical decategorification.** The mass observable lives in the classical limit, not in the q-deformed quantum group. The classical cosine is more accurate by $\approx 7$ ppm than the q-deformed cosine.
+
+The resummation lives in the real-$q$ (archimedean) regime of the framework's dilogarithm context-sorting, fixed once by the [$\Phi_q$/AJ machinery identification](#prop:phi-q-aj-machinery-identification).
