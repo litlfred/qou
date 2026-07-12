@@ -11,8 +11,9 @@ obstructions genuinely bite and which are only apparent.
 The shortcut of axiomatising a single integration operator on $\mathbf{No}$ is mathematically closed. Costin, Ehrlich, and Friedman [@costin-ehrlich-friedman2015] prove a two-sided result on integration over the surreals:
 
 - **Positive direction.** A robust algebraic integral exists for
-  the class of semi-algebraic, analytic, and Écalle–Borel
-  transserial functions, obtained by routing through Hardy-
+  the class of semi-algebraic, analytic, and
+  [Écalle–Borel transserial functions](#def:ecalle-borel-resummation),
+  obtained by routing through Hardy-
   field germs and the surreal–transseries correspondence
   [@berarducci-mantova2018]. On this class the integral satisfies
   the standard properties (linearity, FTC, translation

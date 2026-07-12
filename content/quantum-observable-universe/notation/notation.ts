@@ -27,6 +27,7 @@ export default chapter({
         "notation-register-table7-data",
         "notation-register-table8-data",
         "notation-register-table9-data",
+        "notation-register-table10-data",
       ],
     }),
     section({
