@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-12T11:47:06.051634+00:00",
-  "commitSha": "dbf48c4e6ff1a31abbeefc3565dbebf8a7df5044",
+  "computedAt": "2026-07-12T20:47:30.301201+00:00",
+  "commitSha": "857d6fc4644dfaabc2a53e2a93a65dbb6a0227d3",
   "assertions": [
     {
       "name": "kappa_tower_tightens_scale_stays_anchor_blind",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 11,
   "computation": "qbeta-c3-phib-kappa-tower-scale",
   "scriptFile": "qbeta_c3_phib_kappa_tower_scale_probe.py",
-  "scriptHash": "a58ec922dbea",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "a15a2864ef42",
+  "scriptCommitSha": "857d6fc4644dfaabc2a53e2a93a65dbb6a0227d3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
