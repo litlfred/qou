@@ -1,5 +1,5 @@
 **Item (1).**
-The $q$-flatness equation is $\nabla_q^2 = (q-1)\mathcal{F}_q$ ([q-flat connection](#def:q-flat-connection)). The $q$-curvature $\mathcal{F}_q$ is a class in $\mathrm{End}(\mathcal{V}) \otimes \Omega^2_q$. The Hochschild--Kostant--Rosenberg comparison identifies this space with $HH^2(\mathcal{U}_q, \mathrm{Ad})$. The image under $\mathrm{HKR}$ is the gerbe-theoretic Yekutieli class $\kappa_0 = e(\xi)$ ([Kummer filtration](#rem:kummer-filtration-obstruction)).
+The $q$-flatness equation is $\nabla_q^2 = (q-1)\mathcal{F}_q$ ([q-flat connection](#def:q-flat-connection)). The $q$-curvature $\mathcal{F}_q$ is a class in $\mathrm{End}(\mathcal{V}) \otimes \Omega^2_q$. The Hochschild--Kostant--Rosenberg comparison identifies this space with $HH^2(\mathcal{U}_q, \mathrm{Ad})$. The image under $\mathrm{HKR}$ is the gerbe-theoretic obstruction class $\kappa_0 = e(\xi)$ ([Kummer filtration](#rem:kummer-filtration-obstruction)).
 
 **Item (2).**
 If $\kappa_0 = 0$ in $H^2(\mathcal{S}, \mathbb{G}_m)$, then $\mathcal{F}_q = \mathrm{HKR}^{-1}(0) = 0$. Thus, $\nabla_q$ is $q$-flat. Conversely, $\mathcal{F}_q = 0$ implies $\mathrm{HKR}(\mathcal{F}_q) = \kappa_0 = 0$.
