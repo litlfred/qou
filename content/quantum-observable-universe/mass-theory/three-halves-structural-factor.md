@@ -30,9 +30,9 @@ All five identities are proved in
 [`three-halves-structural-factor.lean`](three-halves-structural-factor.lean)
 over generic `[Field R]` per AGENTS.md §7c, using
 `field_simp; ring`. Generic-ring proofs apply at the substrate
-$q_0 \approx 1.110$ by specialisation; canonical cross-checks at
-exact representation exact algebraic structures verify each identity to $\leq 10^{-40}$ in the
-[`tau-amphichiral-sdp-canonical evaluation.witness.json`](../../../computations/canonical evaluations/tau-amphichiral-sdp-canonical evaluation.witness.json)
+$q_0 \approx 1.110$ by specialisation; numerical cross-checks at
+50-dps mpmath verify each identity to $\leq 10^{-40}$ in the
+[`tau-amphichiral-sdp-probe.witness.json`](../../../computations/probes/tau-amphichiral-sdp-probe.witness.json)
 witness (assertions `lean_three_plus_h_sq_eq_bracket3`,
 `lean_two_plus_h_sq_times_bracket2_eq_bracket4`,
 `lean_bracket6_eq_bracket2_bracket3_times_one_plus_h_sq`).
