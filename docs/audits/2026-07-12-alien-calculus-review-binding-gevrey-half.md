@@ -171,6 +171,39 @@ there is no equational Stokes phenomenon; the resurgence is **co-equational**
 (coefficient-plane), and the literal one-parameter-ODE Bridge form `Δ_ω f = A_ω·df/dz`
 does not apply verbatim — A_ω above is the co-equational Stokes constant.
 
+## Addendum 3 — kernel hunt: the binding period IS an involution statistic (exact)
+
+Owner steer: *"try find kernel — corpus grep and lit search based on knowns."* Corpus grep:
+the kernel object is `R(q,x)` of
+[`prop:binding-genfun-qdifference`](../../content/quantum-observable-universe/mass-theory/binding-genfun-qdifference.md)
+(open, must be derived not fitted); the q-Hermite **crossing**-statistic identification was
+already pruned (2026-06-26). Web literature backends returned **empty in this container**
+(noted); the classical anchors used instead are textbook-solid and are **verified exactly
+in-container**: Stanley's q-hook-maj formula (shape-refined, n ≤ 8) and RSK/Schützenberger
+descent preservation for involutions.
+
+**The identification (exact, verified n ≤ 8 — 764 involutions at n = 8,**
+[`lever1_kernel_maj_involution_identification.py`](../../computations/lever1_kernel_maj_involution_identification.py)**):**
+
+    S^bal(n; q) · q^{n(n−1)/2}  =  Σ_{w ∈ Inv(Sₙ)} q^{2·maj(w) + content(λ(w))}
+
+where `λ(w)` is the RSK shape of the involution and `content(λ) = n(λ′) − n(λ)`. Derivation:
+`dim_q^bal(λ) = q^{content(λ) − n(n−1)/2}·f̃^λ(q²)` with `f̃^λ` the fake degree, composed with
+`Σ_w q^{maj(w)} = Σ_λ f̃^λ(q)` (the sum of fake degrees). So the binding period is exactly the
+generating function of involutions by the mixed statistic **2·maj + content∘RSK** — a
+*different* statistic from the pruned crossing/q-Hermite one.
+
+**Kernel consequence (measured, scope-(a)):** splitting `Inv(n)` by the fate of the letter
+`n` (fixed point vs 2-cycle), the fixed-point-insertion weight ratio `W_fix(n)/W(n−1)` is
+**non-monomial with growing spread** (num terms 2, 4, 6, 10, 15, 22 for n = 3…8) — maj is
+not Markovian under RSK insertion. This is the combinatorial face of the Habiro tail `D(n)`
+and the structural explanation of the measured non-q-holonomicity: **the kernel is an
+insertion recursion at the statistic level, not a finite q-difference operator.** The
+productive continuation is therefore a transfer/statistic-level operator (e.g. tracking the
+descent-set refinement under insertion), not a larger nullspace search. Follow-up flagged:
+promote the identification to a content block (proposition + Lean via a finite `decide`
+verification or the classical proofs) once this PR lands.
+
 ## Discipline
 
 Formalize-first: the Gevrey sandwich was proved (Lean, sorry-free, lean-direct exit 0)
