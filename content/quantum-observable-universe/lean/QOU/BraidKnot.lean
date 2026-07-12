@@ -16,6 +16,7 @@ import QOU.BraidKnot.KeystoneG2LadderGate
 import QOU.BraidKnot.KeystoneFpnBracket
 import QOU.BraidKnot.KeystoneStandardRepQDim
 import QOU.BraidKnot.BWVacuumRowConcrete
+import QOU.BraidKnot.BWVacuumRowFibre
 import QOU.BraidKnot.KeystoneModularTwist
 import QOU.BraidKnot.BringWPlaneMonodromy
 import QOU.BraidKnot.BringWPlaneMonodromyTower
