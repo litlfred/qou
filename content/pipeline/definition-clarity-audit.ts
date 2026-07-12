@@ -586,13 +586,34 @@ function checkDeftermBold(b: Block): Finding {
   if (best >= T.termOverlap) {
     base.result = "pass";
     base.evidence = `term marked via "${bestSpan.slice(0, 60)}"`;
-  } else {
-    base.result = "fail";
-    base.severity = "minor";
-    base.evidence = spans.length
-      ? `term "${pt.join(" ")}" never bolded/defterm'd (${spans.length} bold spans, none match)`
-      : `term "${pt.join(" ")}" never bolded/defterm'd (no bold spans at all)`;
+    return base;
   }
+  // Would-be fail: the term source is the TITLE (not defines[]), so two title
+  // shapes produce a degenerate token set the checker cannot reliably match —
+  // downgrade to n/a rather than emit a false positive. (Applied only here, so a
+  // block that DID mark its term still passes above.)
+  //   (a) math-fragment titles — `principalTokens` splits at the first "(", so a
+  //       group name like "SU(2) basis" / "SO(3) generators" collapses to a
+  //       2-letter fragment ("su" / "so") with no plain-text presence to match
+  //       (the body writes it as `$\mathfrak{su}(2)$`).
+  //   (b) descriptive titles — > 4 principal tokens is a phrase, not one crisp
+  //       defined term; a bold span of the real term overlaps the over-specified
+  //       token set below threshold by construction.
+  if (pt.every((t) => t.length <= 2)) {
+    base.result = "n/a";
+    base.evidence = `title term is a math fragment ("${pt.join(" ")}") — no reliable plain-text term to match`;
+    return base;
+  }
+  if (pt.length > 4) {
+    base.result = "n/a";
+    base.evidence = `title is descriptive (${pt.length} principal tokens) — principal defined term ambiguous`;
+    return base;
+  }
+  base.result = "fail";
+  base.severity = "minor";
+  base.evidence = spans.length
+    ? `term "${pt.join(" ")}" never bolded/defterm'd (${spans.length} bold spans, none match)`
+    : `term "${pt.join(" ")}" never bolded/defterm'd (no bold spans at all)`;
   return base;
 }
 
