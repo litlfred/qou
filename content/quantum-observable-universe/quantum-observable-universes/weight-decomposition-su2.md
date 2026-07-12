@@ -4,7 +4,7 @@ For any integer weight $m \in \mathbb{Z}$, the isotypic projector is the Fourier
 
 $$
   e_m(f) = \frac{1}{2\pi}\int_0^{2\pi}
-    e^{-im\varTheta}\,(t_\varTheta \cdot f)\,d\varTheta.
+    e^{-im\theta_q}\,(t_{\theta_q} \cdot f)\,d\theta_q.
 $$
 
 The horizontal projector is $\pi_H = e_0$, while the vertical projector is $\pi_V = \sum_{m \neq 0} e_m$. The decomposition extends to the differential forms $\Omega^k(A)$ via the Leibniz rule. Complementarity $\pi_H + \pi_V = \mathrm{id}$ follows from Fourier completeness, and idempotency from the orthogonality of characters.
