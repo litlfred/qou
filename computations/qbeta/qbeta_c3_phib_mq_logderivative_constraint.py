@@ -112,12 +112,16 @@ def main() -> int:
             "identity_closure_rel": float(closure),
             "static_term_fraction": float(frac_main)})
 
-    # exact quotient-rule identity must close to machine precision
+    # finite-difference closure check of the (exact-in-calculus) identity:
+    # the NUMERICAL residual is small (step h = 1e-20 at 70 dps), not exact
     worst_closure = max(float(r["closure"]) for r in results.values())
     wb.add_assertion("quotient_rule_identity_closes",
                      computed=worst_closure, expected=0.0, tolerance=1e-8,
-                     source="dS/dq = A'/u^3 - 3(u'/u)(S - Vol41) exactly (calculus; "
-                           "machine-checked in Lean as QOU.QBeta.LeverLogDerivative)")
+                     source="finite-difference closure of dS/dq = A'/u^3 - "
+                           "3(u'/u)(S - Vol41); the identity itself is exact "
+                           "calculus, machine-checked in Lean "
+                           "(QOU.QBeta.LeverLogDerivative); this numeric check "
+                           "verifies the implementation at step h=1e-20/70 dps")
     # the static-amplification term dominates (the corrected law)
     worst_dom = min(float(r["frac_main"]) for r in results.values())
     wb.add_assertion("static_amplification_dominates",
