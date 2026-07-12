@@ -32,6 +32,10 @@ See [Table 7](#tbl:notation-register-table7-data).
 
 See [Table 8](#tbl:notation-register-table8-data).
 
+### Surreal-number appendices (resurgence vocabulary)
+
+See [Table 10](#tbl:notation-register-table10-data).
+
 ### Lean source convention (cross-chapter)
 
 This convention applies to every `.lean` file in the paper. It mirrors [`AGENTS.md` §7c](https://github.com/litlfred/qou/blob/main/AGENTS.md#7c-base-ring-convention-generic-r-vs-archimedean-r-strict).
