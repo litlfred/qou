@@ -3,5 +3,3 @@ The bundle and observation data make the knot--particle dictionary measurable. W
 This section defines the Borromean baryon as the structural model of a baryon. The baryon mass formula writes the mass as a product of the algebraic categorical volume and a common scale factor $\lambda_{\mathrm{scale}}$. The substrate decomposition proposes the form $5/2 - h^2 \cdot G + O(h^4)$ for this scale. A Skein substrate identity anchors the conjecture to a structural cross-check at the figure-eight knot. On the operator side, the typed crossing operator decomposes a crossing by quark flavour, and the Borromean Hecke element builds the Markov-stabilised element of $H_4(q)$.
 
 We prove the mass is a knot invariant under the three Reidemeister moves. The shell-transition geometry produces stability pairs. The proton and the fermion/boson statistics distinction map onto the Borromean carrier. The subsequent section lifts the typed crossing operator and the Reidemeister invariance to a categorical definition of mass that decomposes by Wedderburn block.
-
-_(draft.)_

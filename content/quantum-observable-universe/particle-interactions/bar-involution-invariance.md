@@ -5,9 +5,9 @@ Let $\bar\cdot$ be the bar-involution sending $q \mapsto q^{-1}$. Then:
 2. (**Transpose-pair equality**) $w_\lambda(q) = w_{\lambda^T}(q)$.
 3. (**Type-B-folded normal forms**) Any Hecke normal form produced by the pair-production engine is bar-invariant: $\overline{T_w} = T_w$.
 
-## Significance: a witness against hand-rolled CPT violations
+## Significance
 
-These conditions are necessary consequences of Type-B folding. Any normal form, mass formula, or LP cost vector must satisfy them. Failure signals a chirality bias incompatible with the symmetric-crystal substrate. This block packages the invariance lemmas as a regression-test witness.
+These conditions are necessary consequences of Type-B folding. Any normal form, mass formula, or LP cost vector must satisfy them. Failure signals a chirality bias incompatible with the symmetric-crystal substrate.
 
 ## Proofs
 
@@ -20,9 +20,5 @@ These conditions are necessary consequences of Type-B folding. Any normal form, 
 ## Worked example: $n = 3$
 
 Transpose pairing yields identical hook products, matching part 2. Bar-invariance follows from $[k]_{q^{-1}} = [k]_q$ on every factor.
-
-## Lean formalisation
-
-The Lean formalisation defines the bar-involution, $q$-integer, and Plancherel weight, and proves the relevant invariance lemmas.
 
 **Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall.
