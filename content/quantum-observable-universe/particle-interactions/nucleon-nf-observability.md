@@ -4,7 +4,7 @@ The Gröbner--Shirshov normal form of each nucleon in $H_3(q)$ has exactly six t
 
 With typed crossings, the sign patterns are:
 
-- **Neutron**: four terms negative ($\gamma, L_+, e^-$).
+- **Neutron**: three terms negative ($\gamma, L_+, e^-$).
 - **Proton**: two terms negative ($\gamma, e^-$).
 
 The neutron's $L_+$ sign flip represents the key effect of typed crossings: the $d$-$d$ crossing shifts the $\sigma_0\sigma_1$ coefficient below zero.
