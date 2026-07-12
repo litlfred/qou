@@ -1,6 +1,4 @@
-Every particle interaction in the Descartes universe encodes as a transfer matrix $T_{K_1, K_2}(q) \in \mathrm{M}_2(\mathbb{Z}[q^{\pm 1/2}])$ determined by the knot types $K_1, K_2$ of the two interacting strands. The transfer matrix acts as an operator on the Gröbner–Shirshov ideal of the Iwahori–Hecke algebra. Its entries are polynomials in $q$.
-
-## Definition
+Every particle interaction in the Descartes universe encodes as a transfer matrix $T_{K_1, K_2}(q) \in \mathrm{M}_2(\mathbb{Z}[q^{\pm 1/2}])$ acting on the Gröbner–Shirshov ideal of the Iwahori–Hecke algebra, with entries polynomial in $q$.
 
 **Definition.**
 Let $K_1, K_2$ be two building block knots
