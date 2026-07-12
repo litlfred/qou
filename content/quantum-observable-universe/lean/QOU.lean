@@ -206,6 +206,9 @@ import QOU.QBeta.CAL3AnchorStructure
 import QOU.QBeta.SRigidityPrune
 import QOU.QBeta.HopfCubicOddCarrier
 import QOU.QBeta.Zeta4DescentCarrier
+-- Bar-parity selection rule of the Ohtsuki κ-tower at the imaginary substrate
+-- 2πb²=i·t: even rungs → Re 𝔙 (Vol/mass), odd rungs → Im 𝔙 (bar-odd S / CS).
+import QOU.QBeta.OhtsukiTowerBarParity
 -- Even-channel arithmetic home: the 4₁ Kashaev saddle Taylor data ∈ ℚ(√3)·π^k
 -- (Hessian −√3π; b₁=√3π/54). Counterpart to the odd HopfCubicOddCarrier (KC20).
 import QOU.QBeta.Qsqrt3SaddleArithmetic
