@@ -109,9 +109,9 @@ def branch_points():
     for i, zn in enumerate(nodes):
         for j in range(7):
             V[i, j] = zn ** j
-        rhs[i] = disc(zn)
+        rhs[i, 0] = disc(zn)
     coef = mp.lu_solve(V, rhs)
-    return mp.polyroots([coef[6 - k] for k in range(7)])
+    return mp.polyroots([coef[6 - k, 0] for k in range(7)])
 
 
 def main() -> int:
@@ -137,7 +137,10 @@ def main() -> int:
         st = float((n - mp.mpf('0.5')) / R)
         rd = float(aD[n] / aD[n - 1]) if n > 2 else float('nan')
         if n > 2:
-            lw_ratios.append(rl); d2_ratios.append(rd); naive.append(st); sqrtn.append(sqrt(n))
+            lw_ratios.append(rl)
+            d2_ratios.append(rd)
+            naive.append(st)
+            sqrtn.append(sqrt(n))
         print(f"  {n:>2} {float(l):>10.4f} {rl:>9.3f} {st:>9.3f} {sqrt(n):>6.3f} {rd:>13.3f}")
         prev = l
 
