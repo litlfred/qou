@@ -39,6 +39,10 @@ export default chapter({
         "statistical-mechanical-time-table-data",
         "big-bang-info",
         "planck-computation",
+        // Ledger §5 orphan integration (2026-07-12): interpretive remark
+        // on computational time, categorical dynamics, and the proposed
+        // four-domain Planck-step dictionary.
+        "computational-spacetime-observer",
       ],
     }),
     section({
