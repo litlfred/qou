@@ -28,7 +28,7 @@ At a generic point, $\deg_p(\xi) = 0$ (the Reeb vector field avoids vanishing). 
 
 **(b) The jet correction term.**
 
-The formal jet correction $\delta_n$ at level $n$ inside the Yekutieli tower isolates the $n$-th iterated jet prolongation. Due to [Euler characteristic stability](#prop:euler-char-stability), $\chi(E_n) = \chi(A) = -6$ holds uniformly across all $n$. The topological baseline therefore ignores the level completely.
+The formal jet correction $\delta_n$ at level $n$ inside the brane tower isolates the $n$-th iterated jet prolongation. Due to [Euler characteristic stability](#prop:euler-char-stability), $\chi(E_n) = \chi(A) = -6$ holds uniformly across all $n$. The topological baseline therefore ignores the level completely.
 
 The specific analytic correction $\delta_n|_\Sigma$ feeds directly off the $(n+1)$-jet of the associated velocity field impinging on $\Sigma$. The anti-parallel pair enforces the Biot--Savart structure $v \sim \Gamma/(2\pi d)$ approaching the collision. The resulting jets strictly diverge as $d \to 0$:
 

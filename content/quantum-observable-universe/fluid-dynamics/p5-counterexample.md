@@ -1,4 +1,4 @@
-Consider the $q \to 1$ limit of solutions to the q-NS equation, using the Yekutieli tower to identify the homological stratum where blowup occurs.
+Consider the $q \to 1$ limit of solutions to the q-NS equation, using the brane tower to identify the homological stratum where blowup occurs.
 
 **The initial data.**
 We set up an anti-parallel vortex pair: two counter-rotating vortex tubes that approach each other by mutual induction. In the q-deformed setting, the circulation $\Gamma$ is quantised: $\Gamma_q = [j]_q[j+1]_q$ with $j = 1/2$. The separation $d$ is measured in units of the Planck length $\ell_q = (q-1)/q$.

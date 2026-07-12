@@ -1,1 +1,1 @@
-The remaining sections elaborate the categorical, algebraic, and analytic context of the QOU axioms. They establish the TQFT setting, record the $q$-jacobiator identity, give the physical reading of the categorical action, and assemble the categorical lifting for the Yekutieli brane tower.
+The remaining sections elaborate the categorical, algebraic, and analytic context of the QOU axioms. They establish the TQFT setting, record the $q$-jacobiator identity, give the physical reading of the categorical action, and assemble the categorical lifting for the brane tower.

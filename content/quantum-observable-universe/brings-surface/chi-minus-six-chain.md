@@ -10,7 +10,7 @@ $$
   \chi(V) = d + r(1 - g) = 0 + 2(1 - g) = 2 - 2g
 $$
 
-**Step 4: Obstructions require $g \geq 1$.** The Yekutieli lifting obstructions require $\kappa_n \neq 0$ at every level of the brane tower. The obstruction classes lie in $H^2(M_0, B)$. For these to be non-trivial, we need $H^2(M_0, \mathbb{C}^*) \neq 0$, which requires $g \geq 1$.
+**Step 4: Obstructions require $g \geq 1$.** The lifting obstructions require $\kappa_n \neq 0$ at every level of the brane tower. The obstruction classes lie in $H^2(M_0, B)$. For these to be non-trivial, we need $H^2(M_0, \mathbb{C}^*) \neq 0$, which requires $g \geq 1$.
 
 **Step 5: The Frobenius--Hopf structure fixes 6 branch points.** The Frobenius--Hopf structure forces the algebra to have exactly 6 branch points in its geometric :refterm[descent]{#descent} (from the $S_3 \subset S_5$ orbits on the 6 Weierstrass points of Bring's surface). This fixes $|\chi(A)| = 6$.
 
@@ -18,4 +18,4 @@ $$
 
 **Step 7: Therefore $g = 4$.** From $\chi(V) = 2 - 2g = -6$, we obtain $g = 4$. The unique maximally symmetric genus-4 curve is Bring's surface $\Sigma_4$, with automorphism group $S_5$ of order 120.
 
-**Step 8 (motivic-Galois reading).** *Steps 4 and 5 lift to a single algebraic statement at the level of the [motivic substrate](#def:motivic-substrate). The condition $\chi(A) = -6$ controls the value of the substrate's motivic $L$-function at the boundary of analytic continuation. The Yekutieli non-vanishing $\kappa_n \neq 0$ at every level becomes the non-vanishing of the Frobenius character at every finite place $p \nmid 6$. This is the content of [motivic perpetual obstruction](#conj:motivic-perpetual-obstruction) applied with $\chi(A) = -6$ ([Kummer tower](#rem:kummer-tower) §motivic-Galois). The "$g \geq 1$" condition (Step 4) is the cyclotomic-place criterion $H^1_{\mathrm{Gal}}(\mathrm{Gal}(\bar{\mathbb{Q}}_p/\mathbb{Q}_p), \mu_n(1)) \neq 0$, realised at every $p$. The Riemann–Roch derivation is the archimedean shadow ($v = \infty$ realization) of this stronger adelic statement.*
+**Step 8 (motivic-Galois reading).** *Steps 4 and 5 lift to a single algebraic statement at the level of the [motivic substrate](#def:motivic-substrate). The condition $\chi(A) = -6$ controls the value of the substrate's motivic $L$-function at the boundary of analytic continuation. The non-vanishing $\kappa_n \neq 0$ at every level becomes the non-vanishing of the Frobenius character at every finite place $p \nmid 6$. This is the content of [motivic perpetual obstruction](#conj:motivic-perpetual-obstruction) applied with $\chi(A) = -6$ ([Kummer tower](#rem:kummer-tower) §motivic-Galois). The "$g \geq 1$" condition (Step 4) is the cyclotomic-place criterion $H^1_{\mathrm{Gal}}(\mathrm{Gal}(\bar{\mathbb{Q}}_p/\mathbb{Q}_p), \mu_n(1)) \neq 0$, realised at every $p$. The Riemann–Roch derivation is the archimedean shadow ($v = \infty$ realization) of this stronger adelic statement.*

@@ -292,7 +292,7 @@
 | [prop:h2o-bond-angle-shift](#prop:h2o-bond-angle-shift) | Bent angle as a quadratic-well shift | Ch 14 | `qou:QOU.Molecular.bond_angle_shift` |
 | [prop:beta-stability](#prop:beta-stability) | Beta-stability line from the Skein binding Lagrangian | Ch 8 | `qou:QOU.Braiding.beta_stability` |
 | [prop:binding-scale-catalan](#prop:binding-scale-catalan) | Binding energy scale $\alpha = m_e \times 8G$ | Ch 10 | `qou:QOU.BindingScale.bindingScale_value` |
-| [prop:blowup-yekutieli](#prop:blowup-yekutieli) | Blowup mechanism as Yekutieli lifting obstruction in the brane tower | Ch 4 | `qou:QOU.FluidDynamics.BlowupYekutieli` |
+| [prop:blowup-yekutieli](#prop:blowup-yekutieli) | Blowup mechanism as lifting obstruction in the brane tower | Ch 4 | `qou:QOU.FluidDynamics.BlowupYekutieli` |
 | [prop:boltzmann-constant](#prop:boltzmann-constant) | Boltzmann constant is unity in QOU natural units | Ch 18 | `qou:QOU.Information.thermalEnergy` |
 | [prop:lambda-scale-substrate-form](#prop:lambda-scale-substrate-form) | Borromean baryon $\lambda_{\text{scale}}$ empirical form $5/2 - h^2 \cdot G$ (acknowledged-CAL-4) | Ch 10 | `qou:QOU.BraidKnot.lambdaA_qForm_eq_hForm` |
 | [prop:q-gaussian-obstruction-at-q0](#prop:q-gaussian-obstruction-at-q0) | Bożejko–Speicher $q$-Gaussian obstruction at the substrate $q_0 > 1$ | Ch 10 | `qou:QOU.MassTheory.qGaussianObstructionAtQ0` |
@@ -602,7 +602,7 @@
 | [prop:figure-eight-reeb-rotation](#prop:figure-eight-reeb-rotation) | The figure-eight knot operator acts unitarily on $V_{(2,1)}$ | Ch 5 | `qou:QOU.BraidsAndKnots.figure_eight_unitary_on_standard` |
 | [prop:tetrahedral-hbond-directions](#prop:tetrahedral-hbond-directions) | The four H-bond directions are tetrahedral ($\cos\theta_0 = -1/3$) | Ch 14 | `qou:QOU.Molecular.tetrahedral_cos` |
 | [prop:toffoli-transfer-matrix](#prop:toffoli-transfer-matrix) | The massive Toffoli transfer matrix $M(q)$ and the q-AND polynomial $P_{7,6}(q)$ | Ch 18 | `qou:QOU.Information.toffoli_transfer_matrix` |
-| [prop:ns-obstruction-tower](#prop:ns-obstruction-tower) | The NS obstruction class in the Yekutieli tower | Ch 16 | `qou:QOU.FluidDynamics.ns_obstruction_tower` |
+| [prop:ns-obstruction-tower](#prop:ns-obstruction-tower) | The NS obstruction class in the brane tower | Ch 16 | `qou:QOU.FluidDynamics.ns_obstruction_tower` |
 | [prop:bar-self-dual-confinement-band](#prop:bar-self-dual-confinement-band) | The open interval $(1/\varphi^2,\,\varphi^2)$ is the maximal bar-self-dual confinement band | Ch 12 | `qou:QOU.Archimedean.BarSelfDualConfBand.bar_self_dual_confinement_band` |
 | [prop:trace-ratio-observable](#prop:trace-ratio-observable) | The physical observable: ratio of Markov-traced generator volumes | Ch 13 | `qou:QOU.Archimedean.trace_ratio_observable` |
 | [prop:pion-half-figure-eight](#prop:pion-half-figure-eight) | The pion braid and $\sigma_1\sigma_2^{-1}$ have identical eigenvalue phases on $V_{(2,1)}$ | Ch 5 | `qou:QOU.BraidsAndKnots.pion_eq_half_figure_eight_phase` |

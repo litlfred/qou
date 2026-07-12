@@ -9,7 +9,7 @@ Associate to $T_{2,p}$ the form $\alpha_p = a_p(u) \cdot \omega_T \in \Omega^1(A
      = q^{-1}(1-q^{-1})(g+1) c_{g+1} u^{g+1} \omega_V \wedge_q \omega_T
    $$
    is a nonzero class in $\Omega^2(A)$ that does not pair to zero against $H_2(\Sigma_g)$.
-3. **The obstruction class.** The $d_q^2$-obstruction descends to the Yekutieli class:
+3. **The obstruction class.** The $d_q^2$-obstruction descends to the obstruction class:
    $$
      \kappa(T_{2,p})
      = (g+1) \cdot q^{-1}(1-q^{-1}) \cdot [\omega_V \wedge_q \omega_T] \in H^2(\Sigma_g, \mathbb{Z})

@@ -14,4 +14,4 @@ The classical statement and the $\ordw$-statement are logically equivalent:
 - $f \sim g$ translates to $\ordw(f) = \ordw(g)$ with matching leading coefficients ($f \simeq g$).
 - $\lim_{x \to x_0} f(x) = L$ translates to $\mathrm{st}\bigl(f(x_0 + \varepsilon)\bigr) = L$ for an infinitesimal $\varepsilon$.
 
-The recursive jet structures (mass endomorphism brane tower, Yekutieli jet prolongation, NS jet correction $\delta_n$) admit a common surreal interpretation. Each level adds one factor of the relevant infinitesimal ($\hbar_q$ or $d$). The $\ordw$ of the level-$n$ correction is linear in $n$. This realizes the surreal blow-up calculus and matches the geometric-series tail bounds exactly.
+The recursive jet structures (mass endomorphism brane tower, jet prolongation, NS jet correction $\delta_n$) admit a common surreal interpretation. Each level adds one factor of the relevant infinitesimal ($\hbar_q$ or $d$). The $\ordw$ of the level-$n$ correction is linear in $n$. This realizes the surreal blow-up calculus and matches the geometric-series tail bounds exactly.
