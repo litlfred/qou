@@ -9,7 +9,7 @@ Bring's surface $\Sigma_4$ ([Bring's surface](#def:brings-surface)) determines a
    $$
      M_S \xrightarrow{ \mathrm{Reeb}} \Sigma_4
      \xrightarrow{\pi} \mathbb{P}(V)
-     \xrightarrow{ \mathrm{branch}} \{6 \text{points}\}.
+     \xrightarrow{ \mathrm{branch}} \{6 \text{ points}\}.
    $$
 
    The degree-$4$ covering $\pi$ has $6$ branch points with total ramification $R_{\mathrm{tot}} = 14$ (Riemann–Hurwitz). The ramification profile is determined by the $S_5$-symmetry.
