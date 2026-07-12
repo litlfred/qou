@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-07-12T00:37:13.738517+00:00",
-  "commitSha": "cd3c67d845aa598a82d1b9e786bc72b80f6ebb21",
+  "computedAt": "2026-07-12T00:44:51.564624+00:00",
+  "commitSha": "86b0f236225fa372df62c0f7f1e572794753f050",
   "assertions": [
     {
       "name": "three_clique_overshoots_irreducible_needed",
@@ -10,15 +10,15 @@
       "expected": "1",
       "passed": true,
       "tolerance": 0,
-      "source": "with eₙ pinned on D/T/⁴He and Mₙ = k-clique counts, the bonded-triple (3-clique) count overshoots A≥5 binding (ratios 1.132, 1.197, 1.240, all >1, growing) and the 4-clique reading is worse — so not every bonded triple is a 3-body term; only the Milnor-irreducible (Borromean μ̄≠0) subset counts (reducible triples are carried by the 2-body edges). The overshoot measures the reducible over-count."
+      "source": "with eₙ pinned on D/T/⁴He and Mₙ = k-clique counts, the bonded-triple (3-clique) count overshoots A≥5 binding (ratios 1.132, 1.197, 1.240, all >1, monotonically growing) and — only where a tetrahedron exists (M₄>0, ⁵Li) — the 4-clique reading is strictly worse (for M₄=0 isotopes +4body ≡ 3body). So not every bonded triple is a 3-body term; only the Milnor-irreducible (Borromean μ̄≠0) subset counts (reducible triples are carried by the 2-body edges). The overshoot measures the reducible over-count."
     }
   ],
   "allPassed": true,
   "durationMs": 3,
   "computation": "gap2-borromean-triple-count",
   "scriptFile": "gap2_borromean_triple_count.py",
-  "scriptHash": "40b44d144195",
-  "scriptCommitSha": "cd3c67d845aa598a82d1b9e786bc72b80f6ebb21",
+  "scriptHash": "ca1a3be0cd8c",
+  "scriptCommitSha": "86b0f236225fa372df62c0f7f1e572794753f050",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -66,7 +66,7 @@
     "per_order_energies_MeV": {
       "e2": 2.2245662,
       "e3": 1.8080976,
-      "e4": 8.62301795592431
+      "e4": 8.622992757503312
     },
     "predictions": {
       "5Li": {
@@ -74,33 +74,33 @@
         "m2": 9,
         "m3": 7,
         "m4": 2,
-        "B_strong": 28.857013825815915,
+        "B_strong": 28.8569436493902,
         "B_2plus3": 32.677779,
-        "ratio_2plus3": 1.1324033455868525,
-        "B_plus4": 49.923814911848616,
-        "ratio_plus4": 1.7300409256894775
+        "ratio_2plus3": 1.1324060994481147,
+        "B_plus4": 49.923764515006624,
+        "ratio_plus4": 1.7300433864922353
       },
       "6Li": {
         "A": 6,
         "m2": 12,
         "m3": 8,
         "m4": 0,
-        "B_strong": 34.37137481920413,
+        "B_strong": 34.37130878065915,
         "B_2plus3": 41.1595752,
-        "ratio_2plus3": 1.1974957480316772,
+        "ratio_2plus3": 1.1974980488133355,
         "B_plus4": 41.1595752,
-        "ratio_plus4": 1.1974957480316772
+        "ratio_plus4": 1.1974980488133355
       },
       "7Li": {
         "A": 7,
         "m2": 15,
         "m3": 10,
         "m4": 0,
-        "B_strong": 41.50339508104275,
+        "B_strong": 41.50333235008772,
         "B_2plus3": 51.449469,
-        "ratio_2plus3": 1.239644826634924,
+        "ratio_2plus3": 1.2396467003183,
         "B_plus4": 51.449469,
-        "ratio_plus4": 1.239644826634924
+        "ratio_plus4": 1.2396467003183
       }
     }
   }
