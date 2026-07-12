@@ -1,0 +1,64 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-07-12T11:33:16.394964+00:00",
+  "commitSha": "5e420678409a7c21a3b0a907866f62be20ffa4f7",
+  "assertions": [
+    {
+      "name": "classical_kernel_derived_variable_coeff",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "q→1: S(n)=I(n) (telephone) exactly; a_D(n)=I(n)/n satisfies the exact variable-coefficient kernel a_D(n)=((n−1)/n)a_D(n−1)+((n−1)(n−2)/n)a_D(n−2) (Lean-proved from the telephone recurrence); c_3=[2]_q exact (D=0). So τ is an exact q-rational of derived anchors (not a fit); the fixed-τ depth-2 is the n≤4 shadow of this derived super-exp kernel."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 52,
+  "computation": "lever1-binding-classical-kernel-derive",
+  "scriptFile": "lever1_binding_classical_kernel_derive.py",
+  "scriptHash": "f2d1ec8db5de",
+  "scriptCommitSha": "5e420678409a7c21a3b0a907866f62be20ffa4f7",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "DERIVES the exact classical (q=1) binding kernel (lever-1/z2bn). q→1: S(n)=Σ_{λ⊢n}f^λ=I(n) (RSK/Burnside=Identity I, telephone/A000085). a_D^(n)=I(n)/n then satisfies the EXACT variable-coefficient kernel a_D(n)=((n−1)/n)a_D(n−1)+((n−1)(n−2)/n)a_D(n−2) (from the proved telephone recurrence; Lean-proved sorry-free in BindingClassicalKernel.aDClassical_variable_coeff) — super-exponential, the fixed-τ depth-2 being its n≤4 shadow. So τ is NOT a fit (exact q-rational of derived anchors); the fixed-τ MODEL is n≤4-effective. q-deformation: S(n)=S(n−1)+[n−1]_q S(n−2)+D(n), c_3=[2]_q exact, Habiro tail D(n) growing (q→1⇒D→0). Closes the classical-kernel gap modulo Identity I (keystone P1–P5). Scope-(a), no wiring.",
+  "data": {
+    "S_q1_equals_telephone": [
+      1.0,
+      2.0,
+      4.0,
+      10.0,
+      26.0,
+      76.0,
+      232.0,
+      764.0
+    ],
+    "telephone_reference": [
+      1,
+      2,
+      4,
+      10,
+      26,
+      76,
+      232,
+      764
+    ],
+    "habiro_D": [
+      0.0,
+      0.0,
+      0.03280934182539969,
+      0.2660577165237085,
+      1.5893642640378522,
+      8.49952216421911,
+      44.645223172515
+    ]
+  }
+}
