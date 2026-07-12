@@ -11,8 +11,10 @@ two-rowed.
 *Part (2).*  Alexander's theorem guarantees surjectivity of the
 braid closure map $\beta \mapsto \hat{\beta}$.  The Markov trace on
 $H_n(R, q)$ is the unique trace satisfying the Markov property
-$\mathrm{tr}_M(x \sigma_n^{\pm 1}) = z^{\pm 1}\mathrm{tr}_M(x)$ for
-$x \in H_n(R, q)$ and a parameter $z$ determined by $q$.  On each
+$\mathrm{tr}_M(x \sigma_n) = z\,\mathrm{tr}_M(x)$ for
+$x \in H_n(R, q)$ and a parameter $z$ determined by $q$ (the
+$\sigma_n^{-1}$ stabilisation then carries the derived loop value
+$z_{-} = z - (q - q^{-1})$).  On each
 irreducible summand $S_\lambda$, the trace restricts to a non-zero
 scalar multiple of the character, so every summand is detected by
 some braid closure.
