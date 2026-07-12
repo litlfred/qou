@@ -98,6 +98,7 @@ import QOU.BringsSurface.OctonionInvariantObstruction
 import QOU.BringsSurface.ColourComplexStructure
 import QOU.BringsSurface.PentagonTwistAssociator
 import QOU.BringsSurface.OctonionCocycle
+import QOU.BringsSurface.OctonionAlgebra
 import QOU.BringCone
 import QOU.QuaternionicElectroweak
 import QOU.ArchimedeanUniverse
