@@ -75,12 +75,11 @@ theorem dq_sym_eq_one : qHookProd hooksSym = qFactorial3 := by
     List.prod_cons, List.prod_nil, mul_one]
   ring
 
-/-- **The q-dimension of the alternating rep `(1,1,1)` is `1`** — same hook
-    multiset `{3,2,1}`, same identity. -/
-theorem dq_alt_eq_one : qHookProd hooksAlt = qFactorial3 := by
-  simp only [qHookProd, hooksAlt, qFactorial3, List.map_cons, List.map_nil,
-    List.prod_cons, List.prod_nil, mul_one]
-  ring
+/-- **The q-dimension of the alternating rep `(1,1,1)` is `1`** — `(1,1,1)`
+    is the transpose of `(3)`, so its hook multiset `{3,2,1}` is identical;
+    `hooksAlt` is definitionally `hooksSym`, so this is exactly
+    `dq_sym_eq_one` (Gemini review). -/
+theorem dq_alt_eq_one : qHookProd hooksAlt = qFactorial3 := dq_sym_eq_one
 
 /-- **Equality of the symmetric/alternating Wedderburn numerators**:
     `d_q((3))² = d_q((1,1,1))²` in `R_q`.
