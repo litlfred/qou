@@ -1,0 +1,72 @@
+{
+  "engine": "mpmath+sympy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-07-12T16:07:25.788070+00:00",
+  "commitSha": "28ef1495366ad0ff1ab8f728675d0d77ff1968c0",
+  "assertions": [
+    {
+      "name": "saddle_actions_computed_and_jet_exactness_exclusion",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "3 reciprocal pairs; quadrature converged; n=0 residues reproduce Step-1 {0, ±5i/16}; jets n=1..4 have identically zero residues on every sheet — the exactness (b)-invariant: d(X^(n−1)) has no periods/residues, so the classical-jet rule cannot yield the nonzero lw tower."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 16,
+  "computation": "lever1-saddle-action-jet-residue",
+  "scriptFile": "lever1_saddle_action_jet_residue_probe.py",
+  "scriptHash": "d11a38488847",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Lever-1 (z2bn): (A) the three reciprocal-pair saddle actions of the q-free color cubic, continuity-tracked quadrature (conv <1e-3): the exact-WKB dictionary puts Borel singularities at ACTIONS between branch points, not at branch positions (corrects the external dialog's conflation); values reported against the measured level-1/2 datum 1/sqrt2 with NO identification asserted (numerology guard). (B) exact sympy: sheet expansions at infinity reproduce the Step-1 n=0 residues {0, +-5i/16} (sheet-sum 0), and the 1/z coefficient of X^(n) vanishes identically for n=1..4 on every sheet — the finite face of the EXACTNESS (b)-exclusion: lambda_SW^(n)=X^(n)dz=d(X^(n-1)) is exact for n>=1, so all residues and all closed-cycle periods vanish; the classical-jet rule cannot carry a_D^(n)=lw(n-1)!=0 (invariant: Stokes/exactness; independent of #2768's q-freeness exclusion; q-difference route and prop:sw-period-residue-sum untouched). No fit; no wiring.",
+  "data": {
+    "branch_pairs": [
+      [
+        "(-0.974815532978038603071239093942 + 0.223012727584643770942226560641j)",
+        "(-0.974815532978038603071239093942 - 0.223012727584643770942226560641j)"
+      ],
+      [
+        "(0.105829586188268020990938731157 - 0.937138937838903436914878115252j)",
+        "(0.118985946789770582080300362785 + 1.05364074271210914502945935065j)"
+      ],
+      [
+        "(0.105829586188268020990938731157 + 0.937138937838903436914878115252j)",
+        "(0.118985946789770582080300362785 - 1.05364074271210914502945935065j)"
+      ]
+    ],
+    "pair_actions": [
+      "(-0.42812785827472457164915290511 - 0.0326155252169251934210129476222j)",
+      "(-1.76033343458208224251704083567 - 1.77284151731080988024770922457j)",
+      "(-1.76033343458208224251704083567 + 1.77284151731080988024770922457j)"
+    ],
+    "pair_action_abs": [
+      0.42936841466982467,
+      2.498347623211879,
+      2.498347623211879
+    ],
+    "abs_over_inv_sqrt2": [
+      0.6072186352807011,
+      3.5331970922688263,
+      3.5331970922688263
+    ],
+    "colliding_pair_same_both_ends": false,
+    "res_infinity_n0": [
+      "-5*I/16",
+      "0",
+      "5*I/16"
+    ],
+    "jet_residues_n1_4_zero": true
+  }
+}
