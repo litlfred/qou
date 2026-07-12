@@ -1,7 +1,6 @@
-The standard-part map bridges the surreal substrate to its
-archimedean limit: it realizes the quotient $\mathbf{No}_{\mathrm{fin}}
+The standard-part map realizes the quotient $\mathbf{No}_{\mathrm{fin}}
 / \mathbf{No}_{\mathrm{inf}} \cong \mathbb{R}$ and underlies the
-classical limit at $q = 1 + \varepsilon$. Its construction begins with
+classical limit at $q = 1 + \varepsilon$; its construction begins with
 the finite and infinitesimal surreals.
 
 An element $x \in \mathbf{No}$ is **finite** if there exists
