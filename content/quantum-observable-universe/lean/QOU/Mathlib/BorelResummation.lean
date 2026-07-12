@@ -15,10 +15,15 @@
       the quantitative bound C/(1 − A|z|); `BorelTransformConverges` is now
       inhabited on its whole natural hypothesis class (`Gevrey1`,
       `borelTransformConverges_of_gevrey1`, `abs_borelTransformValue_le_of_gevrey1`);
-    * the full Borel SUM (Laplace ∫₀^∞ e^{−t} φ(zt) dt) and the Watson /
-      Nevanlinna–Sokal UNIQUENESS half carried as the remaining genuine
-      Mathlib gap — blocked in-sandbox on the Gamma/measure-theory olean cone
-      (∫₀^∞ tⁿ e^{−t} dt = n!), next el8w tranche.
+    * NEW (el8w tranche 3, `QOU/Mathlib/BorelLaplace.lean`): the Laplace
+      TERM-WISE engine proved sorry-free — `∫₀^∞ e^{−t} tⁿ dt = n!`
+      (`laplace_pow_eq_factorial`) and the per-term Borel recovery
+      `∫₀^∞ e^{−t} (aₙ/n!)(z t)ⁿ dt = aₙ zⁿ` (`laplace_borel_term`): the Borel
+      division by `n!` and the Laplace multiplication by `n!` cancel exactly,
+      term by term;
+    * the ∑↔∫ interchange under a Gevrey-1 dominating bound (dominated
+      convergence) and the Watson / Nevanlinna–Sokal UNIQUENESS half remain
+      the genuine Mathlib gap — next el8w tranche. NEVER `sorry`-faked.
 
   Why QOU needs it: Ohtsuki's PROOF of the volume conjecture for the figure-
   eight (the Vol(4_1) saddle, QOU/Knot/FigureEightVolume.VolumeConjecture41)
