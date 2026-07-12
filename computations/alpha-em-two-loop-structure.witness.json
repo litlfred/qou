@@ -1,0 +1,63 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-12T10:42:38.663085+00:00",
+  "commitSha": "8d7dcdb545c85931a1f417e93deb4472ebb27f43",
+  "assertions": [
+    {
+      "name": "two_loop_not_resummation",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "exp/linear Schwinger resid differ by <0.01 ppb (h4a2~1e-7 negligible)"
+    },
+    {
+      "name": "c2_entropy_blocked",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "c2 known to ~1 sig fig (residual pin+sigma limited) => PSLQ hopeless"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 17,
+  "computation": "alpha-em-two-loop-structure",
+  "scriptFile": "alpha_em_two_loop_structure_probe.py",
+  "scriptHash": "aa9306e51645",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Structural prune of the alpha_EM 2-loop term. (1) The 2-loop is NOT a resummation of the Schwinger factor: f=exp(-h2 a) and f=1/(1+h2 a) leave the residual unchanged at +0.314 ppb (h2 a ~3e-4 => h4 a2 term ~1e-7 << 0.31 ppb). (2) c2 = resid/a2 ~ 8e-4 is entropy-blocked (~1 sig fig; PSLQ hopeless). So the 2-loop needs the structural EmFermionLoop derivation; the coupling mechanism is the heat-kernel/conformal-anomaly (a1 Seeley-DeWitt ~ Gauss-Bonnet) — both research-frontier, not session-closable. No coefficient fitted; scope-(a).",
+  "contentBlock": "prop:em-coupling-bring-zero-mode",
+  "data": {
+    "resummation_test": {
+      "f=1 (no Schwinger)": 1.6723270482102428,
+      "f=1-h2*a (linear, derived)": 0.31342795361624903,
+      "f=exp(-h2*a) (resummed)": 0.3136446339559317,
+      "f=1/(1+h2*a) (resummed)": 0.3138612221822922
+    },
+    "resummation_shift_ppb": 0.00021668033968264,
+    "c2": {
+      "value": "0.000806569",
+      "sig_figs_known": 0.1739184324334386,
+      "pslq": "entropy-blocked (~1 sig fig)"
+    },
+    "remaining_conjecture": {
+      "two_loop": "structural EmFermionLoop (RT phase-2), not a fit",
+      "coupling": "heat-kernel/conformal-anomaly a1 ~ Gauss-Bonnet 4pi(g-1) => dim H1/Area",
+      "status": "research-frontier; value + anchor settled, coupling + 2-loop open"
+    }
+  }
+}
