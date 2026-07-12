@@ -16,7 +16,3 @@ The observables are extracted from the constraint, not from the operator expansi
 ## Categorical reading
 
 Under the Markov–Frobenius norm, $T_\beta = S \cdot 1_H$ is a scalar multiple of the identity. The $q$-dependence flows entirely through $S(q)$. There is no multi-channel SHAPE distributed across the normal-form basis. The Euclidean norm's six-channel spread is an artifact of the coordinate basis. The Markov–Frobenius minimum-norm solution is the canonical choice.
-
-## Lean formalisation
-
-The substrate-model proof ($A = R$, $\tau = \mathrm{id}$) is sorry-free at [`t_beta_markov_min_frobenius_collapse_substrate`](markov-trace-frobenius-selection.lean). The general $H_n(R, q)$ proof lifts this algebraic content via Mathlib `Algebra R A` typeclasses.

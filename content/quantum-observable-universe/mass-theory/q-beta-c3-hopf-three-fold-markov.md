@@ -89,19 +89,3 @@ The N=2 step (Kashiwara $b^2$ alone) gives a residual of $+1.25$ ppm, well above
 
 **Near-match tier (not Taylor-exact).**
 The identification $c_3 = J_{\text{Hopf}}(q=1) = -2$ forms a classical-limit near-match, not a Taylor-exact coefficient. Only $c_2 = -1$ is proved exact. Evaluated against the empirical $c_3$ extracted from the operator-valued $N=3$ tower ($c_3^{\text{emp}} \approx -2.0216$), the simple model $c_3 = J_{\text{Hopf}}(q=1) - \hbar_q^2$ has a residual of $\approx 0.58\%$. This residual measures the near-match gap.
-
-## Open formalization steps
-
-The Lean stub
-[`q-beta-c3-hopf-three-fold-markov.lean`](q-beta-c3-hopf-three-fold-markov.lean)
-encodes the chain at three levels:
-
-1. **Axiomatic input class** `ThreeFoldMarkovHopfExtraction` capturing
-   Fact 3 (2-strand sub-braid extraction at order 3). This is the
-   substantive combinatorial input requiring further development.
-2. **Classical-limit identity** $J_{\text{Hopf}}(1) = -2$ as a
-   pure-arithmetic theorem (closed by `ring` / `norm_num`).
-3. **Top-level export** $c_3 = -2$ conditional on (1) and (2).
-
-The class-axiomatization pattern follows AGENTS.md §3b's conditional-
-class rule for results downstream of an unproved structural input.
