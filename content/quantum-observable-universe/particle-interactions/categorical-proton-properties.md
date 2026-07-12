@@ -13,13 +13,18 @@ The bare 9-crossing element $\mathcal{B}_3 \times \Delta_3(\mathfrak{u}\mathfrak
 Applying typed crossings and Hopf link stabilisation yields $\mathrm{net}(\mathfrak{p}) = +1.0065$. The dominant term is $e^- \approx +1.022$. The Hopf gluon link actively redistributes normal-form weight from $\sigma_1$ into the trefoil channel.
 
 **Mass.**
-The proton mass derives from the hyperbolic volume of the Borromean link:
+The proton mass derives from the muon-anchored Hecke energy of the Borromean braid:
 
 $$
   \mathfrak{m}_{\mathfrak{p}} =
-  \frac{\mathrm{Vol}(S^3 \setminus \mathcal{B}_3)}{\hbar_q^2}
-  \cdot \lambda_{\mathrm{scale}}
-  + \text{Skein corrections}
+  2\,\bigl(\mathfrak{m}_\mu F_{\mathrm{Bor}} - 6\, m_e\bigr)
+  + \text{Skein corrections},
+  \qquad
+  \mathfrak{m}_\mu = m_e\,\frac{\mathrm{Vol}(4_1)}{\hbar_q^2},
+  \quad
+  F_{\mathrm{Bor}} = \lvert\mathrm{tr}_M(\beta_{\mathrm{Bor}})\rvert\,\frac{[3]_q!}{q^3}.
 $$
+
+The hyperbolic-volume dependence enters through the muon anchor $\mathrm{Vol}(4_1)$, dressed by the dimensionless Borromean factor $F_{\mathrm{Bor}}$ ([`computations/canonical_mass.py`](computations/canonical_mass.py)).
 
 The Skein corrections isolate the crossing asymmetry between the $\mathfrak{u}$ and $\mathfrak{d}$ components. The pair Skein formula dictates $\mathfrak{m}_{\mathfrak{p}} = \mathcal{S}_{\mathfrak{u}\mathfrak{u}}(q) + 2\mathcal{S}_{\mathfrak{u}\mathfrak{d}}(q)$.
