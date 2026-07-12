@@ -81,6 +81,8 @@ export default chapter({
       label: "sec:tm-inductive-construction",
       blocks: [
         "tm-inductive-construction",
+        "tm-gs-normal-form",
+        "tm-gs-normal-form-proof",
       ],
     }),
     section({
