@@ -1,0 +1,104 @@
+{
+  "computation": "qbeta-phib-saddle-fluctuation-transseries",
+  "description": "C6: exact saddle-fluctuation transseries of the 4_1 Kashaev saddle (potential + Euler-Maclaurin + Stirling layers, Wick engine); derives kappa_1..kappa_7 arithmetically; Stirling control; kappa_6 adjudication.",
+  "audit_only": true,
+  "tier": "symbolic-exact (derivation, sympy)",
+  "computedAt": "2026-07-12T23:05:12.204381+00:00",
+  "commitSha": "268a574fbb6e87d362b56dc8c5c8bb7371a4239e",
+  "engine": "sympy+mpmath",
+  "engineVersion": "sympy 1.14.0, mpmath 1.3.0",
+  "scriptFile": "qbeta_phib_saddle_fluctuation_transseries_probe.py",
+  "scriptHash": "b6efc03a16c9",
+  "assertions": [
+    {
+      "name": "wick_engine_stirling_control_exact",
+      "passed": true
+    },
+    {
+      "name": "prefactor_amplitude_is_3_pow_minus_quarter",
+      "passed": true
+    },
+    {
+      "name": "kappa_1_to_5_reproduced_exactly",
+      "passed": true
+    },
+    {
+      "name": "kappa_5_matches_40digit_extraction",
+      "passed": false
+    },
+    {
+      "name": "kappa_6_matches_33digit_extraction",
+      "passed": true
+    }
+  ],
+  "allPassed": false,
+  "result": {
+    "stirling_control": [
+      "1",
+      "1/12",
+      "1/288",
+      "-139/51840",
+      "-571/2488320"
+    ],
+    "a0": "-log(3)/4",
+    "rungs": {
+      "1": {
+        "exact": "11*sqrt(3)*pi/108",
+        "rational_over_parity_generator": "11/108",
+        "parity_form_ok": true,
+        "matches_prior_exact": true,
+        "numeric_50d": "0.5542164724048998987926350231684364737535"
+      },
+      "2": {
+        "exact": "2*pi**2/27",
+        "rational_over_parity_generator": "2/27",
+        "parity_form_ok": true,
+        "matches_prior_exact": true,
+        "numeric_50d": "0.7310818074881006384321845185093445285418"
+      },
+      "3": {
+        "exact": "1081*sqrt(3)*pi**3/21870",
+        "rational_over_parity_generator": "1081/21870",
+        "parity_form_ok": true,
+        "matches_prior_exact": true,
+        "numeric_50d": "2.654527056949545347609015578159899344932"
+      },
+      "4": {
+        "exact": "98*pi**4/729",
+        "rational_over_parity_generator": "98/729",
+        "parity_form_ok": true,
+        "matches_prior_exact": true,
+        "numeric_50d": "13.09477492638167194673683484704129067555"
+      },
+      "5": {
+        "exact": "110011*sqrt(3)*pi**5/688905",
+        "rational_over_parity_generator": "110011/688905",
+        "parity_form_ok": true,
+        "matches_prior_exact": true,
+        "numeric_50d": "84.64216560503844352752831302924747161669"
+      },
+      "6": {
+        "exact": "207892*pi**6/295245",
+        "rational_over_parity_generator": "207892/295245",
+        "parity_form_ok": true,
+        "matches_prior_exact": null,
+        "numeric_50d": "676.9466789641050314927818610976947200302"
+      },
+      "7": {
+        "exact": "32729683*sqrt(3)*pi**7/26572050",
+        "rational_over_parity_generator": "32729683/26572050",
+        "parity_form_ok": true,
+        "matches_prior_exact": null,
+        "numeric_50d": "6443.56886354998649540440923771527205728"
+      }
+    },
+    "kappa6_height_over_pi6": 295245,
+    "kappa6_explains_pslq_miss": false,
+    "verdict": "DERIVED: the saddle-fluctuation transseries generator (potential + Euler-Maclaurin + Stirling layers, Wick-expanded) reproduces kappa_1..kappa_5 EXACTLY (the PSLQ identifications are now computed theorems) and emits exact kappa_6, kappa_7. kappa_6 = (207892/295245)*pi^6, height 295245 (within today's budget \u2014 investigate). This is C6 of the Borel/alien-calculus audit built at the root-of-unity face (the checkable face of the Phi_b saddle; rung 1 is the i*t*kappa_1 finite-b correction already in use). Complex-meridian wiring is follow-up. NO fit; NO c_k wired; NO tier change."
+  },
+  "context": {
+    "axis": "C6 state-integral saddle-fluctuation transseries (PR #3683 pickup item 3; audit 2026-07-12 Borel/alien)",
+    "ground_truth": "kappa_1..4 #3606/#3628; kappa_5 today (qbeta-ohtsuki-kappa5-exact, 40 digits)",
+    "phib_face": "leading finite-b correction i*t*kappa_1 in qbeta_c3_phib_saddle_state_integral_probe.py"
+  }
+}
