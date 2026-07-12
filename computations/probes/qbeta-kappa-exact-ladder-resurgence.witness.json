@@ -1,0 +1,89 @@
+{
+  "computation": "qbeta-kappa-exact-ladder-resurgence",
+  "description": "Re-anchor the G2+C3 one-instanton large-order test on the exact ladder kappa_1..kappa_7; five consecutive-triple (A,beta) inversions + Richardson A_inf vs C1.",
+  "audit_only": true,
+  "tier": "numerical (exact-ladder resurgent self-consistency)",
+  "computedAt": "2026-07-12T23:23:40.462218+00:00",
+  "commitSha": "c2a7f45be3841c63fff245ffae51365b1bb37a48",
+  "engine": "mpmath",
+  "engineVersion": "1.3.0",
+  "scriptFile": "qbeta_kappa_exact_ladder_resurgence_probe.py",
+  "scriptHash": "8c1130907cdf",
+  "assertions": [
+    {
+      "name": "exact_ladder_matches_prior_numerics",
+      "passed": true,
+      "source": "kappa_5 (40-digit ID) and kappa_6 (33-digit) vs the #3628/extraction reference strings"
+    },
+    {
+      "name": "asymptotic_A_cluster_consistent_with_C1",
+      "passed": true,
+      "computed": {
+        "A_asy": [
+          "0.6532468726",
+          "0.6519179149",
+          "0.6575361018"
+        ],
+        "mean": "0.654233629774",
+        "spread": "0.00561819"
+      },
+      "expected": "cluster mean in [0.633771, 0.68334]",
+      "source": "one-instanton inversions on the asymptotic exact rungs (anchor>=3) cluster inside C1's independent Borel-plane action range"
+    },
+    {
+      "name": "asymptotic_A_cluster_tight",
+      "passed": true,
+      "computed": "0.00561819",
+      "source": "the three asymptotic triples agree to < 0.02 \u2014 the one-instanton form is stable once past the pre-asymptotic bottom rungs"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "kappa_exact_forms": {
+      "1": "(11/108)*sqrt3*pi^1",
+      "2": "(2/27)*pi^2",
+      "3": "(1081/21870)*sqrt3*pi^3",
+      "4": "(98/729)*pi^4",
+      "5": "(110011/688905)*sqrt3*pi^5",
+      "6": "(207892/295245)*pi^6",
+      "7": "(32729683/26572050)*sqrt3*pi^7"
+    },
+    "A_per_triple": {
+      "1": "0.43255760649920020791",
+      "2": "0.76802571935671116765",
+      "3": "0.65324687257991209212",
+      "4": "0.65191791491805476519",
+      "5": "0.65753610182478791751"
+    },
+    "beta_per_triple": {
+      "1": "-0.42940166424514595166",
+      "2": "0.78866883512035872556",
+      "3": "0.2224650886123042281",
+      "4": "0.21387495589682009371",
+      "5": "0.258807796888381798"
+    },
+    "asymptotic_onset_anchor": 3,
+    "A_asymptotic_cluster": [
+      "0.65324687257991209212",
+      "0.65191791491805476519",
+      "0.65753610182478791751"
+    ],
+    "A_cluster_mean": "0.654233629774251591605628982731",
+    "A_cluster_spread": "0.0056181869067331523183",
+    "A_cluster_in_C1_range": true,
+    "A_inf_tail_richardson": "0.680008849451720526780979888325",
+    "A_inf_in_C1_range": true,
+    "beta_asymptotic_cluster_mean": "0.231715947132502039936273029589",
+    "vol41_over_pi": "0.64613189443890101226",
+    "C1_A_range": [
+      "0.633771388865",
+      "0.68333979378"
+    ],
+    "verdict": "Exact kappa_1..7 re-anchoring: the one-instanton inversion is pre-asymptotic at the bottom (anchor 1,2: A=0.4326,0.768) and STABILIZES on the asymptotic rungs (anchor>=3): A = ['0.653247', '0.651918', '0.657536'], mean 0.6542336 +/- 0.00562, INSIDE C1's independent Borel-plane range [0.63377, 0.68334] and 1.25% from Vol(4_1)/pi = 0.646132. One-step tail Richardson A_inf = 0.680009 (in C1 range); beta cluster mean 0.23172. CONSISTENT: the exact top-of-ladder rungs (replacing the predecessor's 14/10-digit numerics) confirm the one-instanton resurgent picture \u2014 the action extracted from the large-order growth of the EXACT Ohtsuki ladder agrees with C1's conformal-Borel singularity location, self-consistently, at the ~1% level. This is a sharper corroboration than the predecessor's within-band test. Anti-laundering: 4_1 topological facts; 4_1<->Q_beta bridge open; NO fit; NO c_k wired; NO tier change."
+  },
+  "context": {
+    "axis": "G2+C3 re-anchoring on exact ladder (PR #3683 pickup item 3-followup)",
+    "exact_ladder_sources": "kappa_1..4 #3606/#3628; kappa_5 qbeta-ohtsuki-kappa5-exact (40d); kappa_6,7 C6 transseries derivation",
+    "predecessor": "qbeta_kappa_large_order_bridge_probe.py (kappa_5/6 as 14/10-digit numerics)"
+  }
+}
