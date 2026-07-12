@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-12T00:22:01.081537+00:00",
-  "commitSha": "356b7824c82d98c8c2f69bf80a47781b084ec8f2",
+  "computedAt": "2026-07-12T11:07:04.853221+00:00",
+  "commitSha": "8fabb54497f162569c0561272437d1826891a323",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,7 +559,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "ff40fb7a9d7d",
@@ -2438,6 +2438,7 @@
         "complex-volume-unification.witness.json",
         "compound-binding-via-differences.witness.json",
         "compound-shift-nf.witness.json",
+        "compute-audit-scan.witness.json",
         "confined-knot-binding.witness.json",
         "confinement-operator-selection.witness.json",
         "connected-magnitude-charge-symmetric.witness.json",
@@ -2567,6 +2568,9 @@
         "gap-a3-deuteron-A-D-overshoot.witness.json",
         "gap-a3-deuteron-plambda-flat-baseline.witness.json",
         "gap-a3-overshoot-robustness.witness.json",
+        "gap1-max-contact-a5plus.witness.json",
+        "gap2-borromean-triple-count.witness.json",
+        "gap2b-irreducible-demand.witness.json",
         "garside-irrep-qvalues.witness.json",
         "gb-depth-period-bring-fig8.witness.json",
         "gb-filtration-jet-order-reader.witness.json",
