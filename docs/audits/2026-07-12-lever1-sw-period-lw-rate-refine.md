@@ -53,8 +53,39 @@ kernel** — the q-Bessel-class / multi-branch residue sum whose q→1 limit is 
 with the τ-recurrence being only its n≤4 shadow. This refines the `z2bn` "τ = tr B derivation"
 framing: τ is settled (n≤4 fit); the live object is the super-exp kernel.
 
+## Derivation — the exact classical (q=1) kernel (answering "τ is a fit?")
+
+τ is **not** a fit: `τ = (a_D²+a_D⁴)/a_D³` is an exact q-rational combination of the *derived*
+categorical anchors `a_D^(n)=lw(n−1)` (Lean `tauAnchor_closed_form`). What is only n≤4-effective
+is the *fixed-τ depth-2 recurrence as a model of all-n growth*. The **exact** kernel is derivable
+at the classical limit, and it is derived — not fitted:
+
+- **q→1:** `S(n) = Σ_{λ⊢n} dim_q(λ) → Σ_{λ⊢n} f^λ = I(n)` (RSK/Burnside = the keystone **Identity
+  I**; `I` = involution/telephone numbers, A000085). Verified exact: `S(n)|_{q=1} = 1,2,4,10,26,76,
+  232,764`.
+- **Exact classical kernel (derived + Lean-proved sorry-free):** `a_D^(n)=I(n)/n` satisfies the
+  **variable-coefficient** depth-2 recurrence
+  `a_D^(n) = ((n−1)/n)·a_D^(n−1) + ((n−1)(n−2)/n)·a_D^(n−2)` (matches to 1e-12 for all n). Its
+  coefficients grow with n ⇒ super-exponential; the fixed-τ (constant-coefficient) depth-2 is its
+  **n≤4 shadow**. Lean:
+  [`QOU/Mass/BindingClassicalKernel.lean`](../../content/quantum-observable-universe/lean/QOU/Mass/BindingClassicalKernel.lean)
+  (`aDClassical_variable_coeff`, `aDClassical_coeff_unbounded`) — lean-direct exit 0, sorry-free,
+  proved from the corpus `involutionNumber` telephone recurrence.
+- **q-deformation (measured):** `S(n)=S(n−1)+[n−1]_q·S(n−2)+D(n)` — `c_2=[1]_q`, `c_3=[2]_q`
+  **exact** (D=0), cyclotomic Habiro tail `D(n)` growing from n≥4 (q→1 ⇒ `[n−1]_q→(n−1)`, `D→0`,
+  recovering the exact telephone recurrence).
+
+So the exact kernel is **derived**: the q-deformed telephone recurrence, whose q=1 limit is the
+*proved* involution recurrence. This closes the classical-kernel gap **modulo the same Identity I**
+(`Σ f^λ = I(n)`, `YoungTableauStandard.sum_dimSYT_eq_involution`) the keystone P1–P5 program
+discharges — so the classical binding kernel and the keystone share **one** open input; everything
+else is proved. Compute:
+[`computations/lever1_binding_classical_kernel_derive.py`](../../computations/lever1_binding_classical_kernel_derive.py).
+
 ## Discipline
 
-mpmath-only (reproducible where sympy is firewalled). `lw` categorical (q-hook dim_q, no fit);
-branch points are the cubic's geometry; τ is the wired closed form. The overshoot is a **reported
-quantitative mismatch**, not a tuned match. No production wiring. Scope-(a).
+mpmath-only (reproducible where sympy is firewalled); the classical-kernel Lean is verified
+lean-direct exit 0, sorry-free. `lw` categorical (q-hook dim_q, no fit); branch points are the
+cubic's geometry; τ is the wired closed form; the classical kernel is derived from a proved
+theorem. The overshoot is a **reported quantitative mismatch**, not a tuned match. No production
+wiring. Scope-(a).
