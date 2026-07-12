@@ -17,6 +17,8 @@ import QOU.BraidKnot.KeystoneFpnBracket
 import QOU.BraidKnot.KeystoneStandardRepQDim
 import QOU.BraidKnot.BWVacuumRowConcrete
 import QOU.BraidKnot.KeystoneModularTwist
+import QOU.BraidKnot.BWVacuumRowHabiroRigidity
+import QOU.BraidKnot.BWVacuumRowStokesMonodromy
 import QOU.BraidKnot.BringWPlaneMonodromy
 import QOU.BraidKnot.BringWPlaneMonodromyTower
 import QOU.BraidKnot.CyclotomicLValueDecomposition
