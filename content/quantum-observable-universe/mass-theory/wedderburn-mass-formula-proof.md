@@ -1,7 +1,7 @@
 *Proof.*
 Work over $R = \mathbb{Z}[q^{\pm 1/2}]$ at generic $q$, passing to
 the fraction field where inverses are required; write
-$H_A = q - q^{-1}$ for the Hecke parameter and
+$h_{\mathrm{A}} = q - q^{-1}$ for the Hecke parameter and
 $z = 1/(q^{1/2} + q^{-1/2})$ for the Markov weight, so that the
 Markov trace $\mathrm{tr}_M$ is the linear functional normalised by
 $\mathrm{tr}_M(1) = 1$ and $\mathrm{tr}_M(\sigma_i) = z$ (positive
@@ -35,23 +35,23 @@ $$
 crossing algebra.** A single crossing generates the two-dimensional
 commutative algebra
 $R[\sigma] = R[x] / \bigl((x - q)(x + q^{-1})\bigr)$, in which
-$\sigma^2 = H_A \sigma + 1$. In the ordered basis $(\sigma, 1)$,
+$\sigma^2 = h_{\mathrm{A}} \sigma + 1$. In the ordered basis $(\sigma, 1)$,
 multiplication by $X = c\sigma + d$ has matrix exactly the crossing
 (transfer) matrix of the statement,
 
 $$
 T(X) =
 \begin{pmatrix}
-  c H_A + d & c \\
+  c h_{\mathrm{A}} + d & c \\
   c & d
 \end{pmatrix},
 $$
 
-since $X \cdot \sigma = c\sigma^2 + d\sigma = (cH_A + d)\,\sigma + c$
+since $X \cdot \sigma = c\sigma^2 + d\sigma = (ch_{\mathrm{A}} + d)\,\sigma + c$
 and $X \cdot 1 = c\sigma + d$. As a matrix of left multiplication,
 $T$ is an algebra homomorphism: $T(X)\,T(X') = T(XX')$, which one
 verifies directly — $XX' = c''\sigma + d''$ with
-$c'' = cc'H_A + cd' + c'd$ and $d'' = cc' + dd'$, matching the entries
+$c'' = cc'h_{\mathrm{A}} + cd' + c'd$ and $d'' = cc' + dd'$, matching the entries
 of the matrix product. Consequently, for the chained element
 $X_i := \prod_{j > i} X_j$ of the crossings of all strands $j > i$,
 the transfer-matrix chain satisfies
@@ -78,7 +78,7 @@ readouts.**
    attached to the standard (dim $n{-}1$) block in the
    correspondence table.
 2. *Determinant $=$ sym $\times$ alt.* Directly,
-   $\det T(X) = (cH_A + d)\,d - c^2 = cdH_A + d^2 - c^2
+   $\det T(X) = (ch_{\mathrm{A}} + d)\,d - c^2 = cdh_{\mathrm{A}} + d^2 - c^2
    = (cq + d)(-cq^{-1} + d)
    = \lambda^{\mathrm{sym}}\lambda^{\mathrm{alt}}$; equivalently this
    is the product of the two eigenvalues exhibited in Step 2. By
@@ -119,19 +119,19 @@ weight $\beta_2 = -2[3]_q$ is the degree-two baryon weight
 channels give the pair count $\binom{3}{2} = 3$, $q$-deformed to
 $[3]_q$, with the sign fixed by the determinant sign accumulation and
 the factor $2$ by the $\mathfrak{p}\mathfrak{n}$ crossing-doubling
-convention established there. The chirality weight $H_A^2$ is the
+convention established there. The chirality weight $h_{\mathrm{A}}^2$ is the
 minimal even power of the Hecke parameter compatible with the
 $S$-parity classification of the three terms
 ([$S$-classification](#prop:frobenius-s-classification)) and with the
 vanishing of the chirality contribution in the commutative limit
 ([commutative chirality](#cor:commutative-chirality-vanishes)):
-$H_A \to 0$ as $q \to 1$, so $H_A^2 \Phi_3 \to 0$ and the classical
+$h_{\mathrm{A}} \to 0$ as $q \to 1$, so $h_{\mathrm{A}}^2 \Phi_3 \to 0$ and the classical
 mass formula retains no chirality term. All three weights are
 functions of $q$ alone, evaluated at $q_0$, and the scale is fixed by
 $m_e$: no fitted parameter enters.
 
 Assembling: the binding functional
-$\alpha\,(\Phi_1 - 2[3]_q\,\Phi_2 + H_A^2\,\Phi_3)$ is the weighted
+$\alpha\,(\Phi_1 - 2[3]_q\,\Phi_2 + h_{\mathrm{A}}^2\,\Phi_3)$ is the weighted
 sum of the three extremal-block invariants of the atomic braid
 established in Steps 1–3, with the weights of Step 4, added to the
 free constituent masses $Z \cdot m_{\mathfrak{p}} + N \cdot

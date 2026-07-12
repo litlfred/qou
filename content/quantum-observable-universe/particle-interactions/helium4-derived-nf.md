@@ -3,7 +3,7 @@ Helium-4 $\mathcal{A}(2,2)$ contains two protons, two neutrons, and two electron
 
 ## Derivation
 
-Twelve $\gamma\gamma$ pair productions generate four nucleons. Each is confined by $\mathcal{B}_3$ and stabilized by LP-derived gluon crossings. Inter-nucleon typed crossings link them: $+\sigma$ for $p$-$p$, mixed for $p$-$n$, and shifted $-H_A$ for $n$-$n$.
+Twelve $\gamma\gamma$ pair productions generate four nucleons. Each is confined by $\mathcal{B}_3$ and stabilized by LP-derived gluon crossings. Inter-nucleon typed crossings link them: $+\sigma$ for $p$-$p$, mixed for $p$-$n$, and shifted $-h_{\mathrm{A}}$ for $n$-$n$.
 
 ## Nucleus NF ($\alpha$ particle)
 

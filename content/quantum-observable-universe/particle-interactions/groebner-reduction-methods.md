@@ -6,9 +6,9 @@ We compute the Hecke algebra normal form by iterative Gröbner–Shirshov reduct
 
 The reduction is confluent. The final normal form is independent of the order in which rules are applied. The intermediate word count, however, depends critically on the reduction strategy.
 
-## The $H_A$-power factorization
+## The $h_{\mathrm{A}}$-power factorization
 
-For the $\mathfrak{p}\mathfrak{p}\cdots\mathfrak{n}\mathfrak{n}$ ordering, every normal form coefficient factors as $\pm 2^a \times H_A^k$. This factorization enables a compressed representation. For atoms with mixed orderings, the factorization breaks.
+For the $\mathfrak{p}\mathfrak{p}\cdots\mathfrak{n}\mathfrak{n}$ ordering, every normal form coefficient factors as $\pm 2^a \times h_{\mathrm{A}}^k$. This factorization enables a compressed representation. For atoms with mixed orderings, the factorization breaks.
 
 ## Computational engines
 

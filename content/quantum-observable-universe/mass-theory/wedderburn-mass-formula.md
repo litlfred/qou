@@ -14,7 +14,7 @@ $$
   + \alpha\bigl(
       \Phi_1
       - 2[3]_q \cdot \Phi_2
-      + H_A^2 \cdot \Phi_3
+      + h_{\mathrm{A}}^2 \cdot \Phi_3
     \bigr)
 $$
 
@@ -60,7 +60,7 @@ the full partition sum gives the exact Markov trace.*
   ([binding scale](#prop:binding-scale-catalan)),*
 - *$[3]_q = (q^3 - q^{-3})/(q - q^{-1})$, the quantum 3-integer
   ([degree-2 weight](#prop:degree-two-baryon-weight)),*
-- *$H_A = q - q^{-1}$, the Hecke parameter.*
+- *$h_{\mathrm{A}} = q - q^{-1}$, the Hecke parameter.*
 
 *All quantities are derived from $q_0$ and $m_e$.  The formula has
 zero fitted parameters.*

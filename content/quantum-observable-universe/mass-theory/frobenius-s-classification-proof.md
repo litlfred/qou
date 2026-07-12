@@ -11,8 +11,8 @@ underlying field of fractions and acts on each coefficient:
   $(q^2+1)^2 \to (q^{-2}+1)^2 = q^{-4}(1+q^2)^2$, so
   $W_{\mathrm{std}} \to q^{-4}(1+q^2)^2 / (q^{-4} D) = W_{\mathrm{std}}$.
 - $[3]_q = q^2 + 1 + q^{-2}$: invariant under $q \to q^{-1}$.
-- $H_A = q - q^{-1} \to q^{-1} - q = -H_A$, so $H_A$ has eigenvalue
-  $-1$ and $H_A^2$ has eigenvalue $+1$.
+- $h_{\mathrm{A}} = q - q^{-1} \to q^{-1} - q = -h_{\mathrm{A}}$, so $h_{\mathrm{A}}$ has eigenvalue
+  $-1$ and $h_{\mathrm{A}}^2$ has eigenvalue $+1$.
 - $z = 1/(q^{1/2} + q^{-1/2})$: the denominator is symmetric under
   $q \to q^{-1}$, so $z$ is invariant.
 - Catalan's constant $G$, Borromean volume $8G$, electron mass
@@ -20,9 +20,9 @@ underlying field of fractions and acts on each coefficient:
   unaffected by the algebraic action.
 
 **Functional $\Phi_2$.** The transfer matrix is
-$T(c, d) = \begin{pmatrix} cH_A + d & c \\ c & d \end{pmatrix}$
-with $\det T = d(cH_A + d) - c^2$.  The Frobenius antipode
-maps the primitive factor $(c, d)$ to $(c, d - cH_A)$ (this swaps
+$T(c, d) = \begin{pmatrix} ch_{\mathrm{A}} + d & c \\ c & d \end{pmatrix}$
+with $\det T = d(ch_{\mathrm{A}} + d) - c^2$.  The Frobenius antipode
+maps the primitive factor $(c, d)$ to $(c, d - ch_{\mathrm{A}})$ (this swaps
 $\sigma \leftrightarrow \sigma^{-1}$).  Direct computation:
 
 See [Table 3](#tbl:frobenius-s-classification-table3-data).
@@ -36,9 +36,9 @@ shows
 $\chi^{\mathrm{sym}}(S(c, d)) = -\chi^{\mathrm{alt}}(c, d)$ and
 $\chi^{\mathrm{alt}}(S(c, d)) = -\chi^{\mathrm{sym}}(c, d)$
 (verify: for $(1, 0)$ with $\chi^{\mathrm{sym}} = q$,
-$\chi^{\mathrm{alt}} = -1/q$, and $S(1, 0) = (1, -H_A)$ giving
-$\chi^{\mathrm{sym}} = q + (-H_A) = q^{-1}$ and
-$\chi^{\mathrm{alt}} = -1/q + (-H_A) = -q$, matching the swap with
+$\chi^{\mathrm{alt}} = -1/q$, and $S(1, 0) = (1, -h_{\mathrm{A}})$ giving
+$\chi^{\mathrm{sym}} = q + (-h_{\mathrm{A}}) = q^{-1}$ and
+$\chi^{\mathrm{alt}} = -1/q + (-h_{\mathrm{A}}) = -q$, matching the swap with
 sign).  For a chain product
 
 $$
@@ -61,7 +61,7 @@ projection onto the $S$-even subspace.  $\square$
 
 $$
   \mathfrak{m}(S(\beta)) - \mathfrak{m}(\beta)
-  = -2 \alpha H_A^2 \Phi_3(\beta)
+  = -2 \alpha h_{\mathrm{A}}^2 \Phi_3(\beta)
 $$
 
 isolates the chirality channel as the unique source of $S$-odd

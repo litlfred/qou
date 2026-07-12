@@ -7,11 +7,11 @@ For two photons with polarisation mixing parameters $\phi_1,\phi_2\in[0,1]$, the
 $$
   E_0(\phi_1,\phi_2)
   = 
-  \frac{2m_e}{\mathrm{net}(e^+) - S \cdot H_A}
+  \frac{2m_e}{\mathrm{net}(e^+) - S \cdot h_{\mathrm{A}}}
    \in [2.27,4.22] \text{MeV},
 $$
 
-where $H_A = q - q^{-1} \approx 0.209$ at $q_0$ and $\mathrm{net}(e^+) \approx 0.451$ (the Gröbner--Shirshov NF coefficient at $q_0$).
+where $h_{\mathrm{A}} = q - q^{-1} \approx 0.209$ at $q_0$ and $\mathrm{net}(e^+) \approx 0.451$ (the Gröbner--Shirshov NF coefficient at $q_0$).
 
 We evaluate the limits:
 

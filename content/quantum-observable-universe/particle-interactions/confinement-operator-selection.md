@@ -9,7 +9,7 @@ This selection occurs on braid space, not on the Frobenius Gram matrix. A minimu
 In $H_3(q)$, the unconfined proton quarks $(\mathfrak{u}, \mathfrak{u}, \mathfrak{d})$ yield the product of typed crossing elements:
 
 $$
-  \mathrm{NF}(\sigma_0 \cdot (\sigma_0 - \tfrac{1}{2}H_A) \cdot (\sigma_1 - \tfrac{1}{2}H_A))
+  \mathrm{NF}(\sigma_0 \cdot (\sigma_0 - \tfrac{1}{2}h_{\mathrm{A}}) \cdot (\sigma_1 - \tfrac{1}{2}h_{\mathrm{A}}))
   =
   -0.105\gamma - 0.011\sigma_0 + 1.000\sigma_1 + 0.105 L_+.
 $$
@@ -24,7 +24,7 @@ $$
   -0.211\gamma + 1.011\sigma_1,
 $$
 
-with demand $\{\gamma = -0.211\}$. This larger vacuum deficit reflects the extra down quark's $-H_A$ shift.
+with demand $\{\gamma = -0.211\}$. This larger vacuum deficit reflects the extra down quark's $-h_{\mathrm{A}}$ shift.
 
 ## Candidate operator comparison
 

@@ -1,6 +1,6 @@
 All predictions use $\approx$ (derived from $q$).
 Experimental values from NNDC/ENSDF with stated uncertainties.
-Crossing convention: $(1, -\mathrm{HA})$ throughout (unimodular, $\det T = -1$).
+Crossing convention: $(1, -h_{\mathrm{A}})$ throughout (unimodular, $\det T = -1$).
 
 **Table 1 --- $q$-weighted Q-values: $2 \times 2$ block with $6 \times 6$ shell factors, zero fitting.**
 

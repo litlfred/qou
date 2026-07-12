@@ -18,7 +18,7 @@ exponential form**.  The connection to our framework:
    equation $\sigma_i\sigma_{i+1}\sigma_i =
    \sigma_{i+1}\sigma_i\sigma_{i+1}$.
 
-2. The Hecke relation $\sigma_i^2 = H_A\sigma_i + 1$ is
+2. The Hecke relation $\sigma_i^2 = h_{\mathrm{A}}\sigma_i + 1$ is
    the **linearisation** of the quantum pentagon identity.
 
 3. The traced volumes $\hat{V}_i(q)$ satisfy the Hecke

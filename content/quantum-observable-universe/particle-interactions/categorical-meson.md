@@ -15,7 +15,7 @@ where:
 The full braid word is $(\sigma_0\sigma_1)^2 \cdot \sigma_1\sigma_0$, containing 6 crossings on 3 strands.
 
 **Normal form (step-by-step Hecke reduction).**
-We write $h = H_A = q - q^{-1}$ and apply the Hecke relation $\sigma_i^2 = h\sigma_i + \mathbf{1}$ and the braid relation $\sigma_0\sigma_1\sigma_0 = \sigma_1\sigma_0\sigma_1$.
+We write $h = h_{\mathrm{A}} = q - q^{-1}$ and apply the Hecke relation $\sigma_i^2 = h\sigma_i + \mathbf{1}$ and the braid relation $\sigma_0\sigma_1\sigma_0 = \sigma_1\sigma_0\sigma_1$.
 
 *Step 1.* For the bound pair $T_{01} \cdot \mathcal{L}_H = (\sigma_0\sigma_1)^2 = \sigma_0\sigma_1\sigma_0\sigma_1$, we apply the braid relation to the rightmost three generators to yield $\sigma_0 \cdot \sigma_0\sigma_1\sigma_0 = \sigma_0^2 \cdot L_-$. The Hecke relation reduces this to:
 

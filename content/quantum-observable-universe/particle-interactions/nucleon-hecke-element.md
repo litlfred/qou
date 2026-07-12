@@ -27,12 +27,12 @@ $$
    \cdot 
   \underbrace{C(\mathfrak{u}, \mathfrak{u}; \sigma_0)}_{\sigma_0}
    \cdot 
-  \underbrace{C(\mathfrak{u}, \mathfrak{d}; \sigma_0)}_{\sigma_0 - \tfrac{1}{2}\mathrm{HA}\cdot\mathbf{1}}
+  \underbrace{C(\mathfrak{u}, \mathfrak{d}; \sigma_0)}_{\sigma_0 - \tfrac{1}{2}h_{\mathrm{A}}\cdot\mathbf{1}}
    \cdot 
-  \underbrace{C(\mathfrak{u}, \mathfrak{d}; \sigma_1)}_{\sigma_1 - \tfrac{1}{2}\mathrm{HA}\cdot\mathbf{1}}
+  \underbrace{C(\mathfrak{u}, \mathfrak{d}; \sigma_1)}_{\sigma_1 - \tfrac{1}{2}h_{\mathrm{A}}\cdot\mathbf{1}}
 $$
 
-where $\mathrm{HA} = q - q^{-1}$.
+where $h_{\mathrm{A}} = q - q^{-1}$.
 
 **Neutron.** For $\mathfrak{n} = [\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]$:
 
@@ -41,11 +41,11 @@ $$
   = 
   \mathcal{B}_3
    \cdot 
-  \underbrace{C(\mathfrak{u}, \mathfrak{d}; \sigma_0)}_{\sigma_0 - \tfrac{1}{2}\mathrm{HA}\cdot\mathbf{1}}
+  \underbrace{C(\mathfrak{u}, \mathfrak{d}; \sigma_0)}_{\sigma_0 - \tfrac{1}{2}h_{\mathrm{A}}\cdot\mathbf{1}}
    \cdot 
-  \underbrace{C(\mathfrak{u}, \mathfrak{d}; \sigma_0)}_{\sigma_0 - \tfrac{1}{2}\mathrm{HA}\cdot\mathbf{1}}
+  \underbrace{C(\mathfrak{u}, \mathfrak{d}; \sigma_0)}_{\sigma_0 - \tfrac{1}{2}h_{\mathrm{A}}\cdot\mathbf{1}}
    \cdot 
-  \underbrace{C(\mathfrak{d}, \mathfrak{d}; \sigma_1)}_{\sigma_1 - \mathrm{HA}\cdot\mathbf{1}}
+  \underbrace{C(\mathfrak{d}, \mathfrak{d}; \sigma_1)}_{\sigma_1 - h_{\mathrm{A}}\cdot\mathbf{1}}
 $$
 
 **Normal form.** After Gröbner--Shirshov reduction, each nucleon reduces to exactly six terms, one for each basis element of $H_3(R, q)$:

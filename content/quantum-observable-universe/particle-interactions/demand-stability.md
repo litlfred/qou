@@ -32,9 +32,9 @@ At $q_0$, both conditions hold. Thus, the free neutron beta-decays.
 For nuclei with $A > 4$, the NF computation scales polynomially via inductive Gröbner--Shirshov reduction. The key identity is the transfer matrix factorization: the product of two inter-nucleon crossings reduces via the Hecke relation before the next nucleon is appended. For same-type nucleon pairs:
 
 $$
-  C_{pp} \cdot C_{pp} = H_A \cdot C_{pp} + \mathbf{1},
+  C_{pp} \cdot C_{pp} = h_{\mathrm{A}} \cdot C_{pp} + \mathbf{1},
   \qquad
-  C_{nn} \cdot C_{nn} = \mathbf{1} - H_A \cdot C_{nn}.
+  C_{nn} \cdot C_{nn} = \mathbf{1} - h_{\mathrm{A}} \cdot C_{nn}.
 $$
 
-These are instances of the Hecke relation $\sigma_i^2 = H_A \sigma_i + \mathbf{1}$ applied to typed crossings. They ensure that iterated same-type nucleon pairs do not increase the NF complexity beyond linear growth in the number of nucleons.
+These are instances of the Hecke relation $\sigma_i^2 = h_{\mathrm{A}} \sigma_i + \mathbf{1}$ applied to typed crossings. They ensure that iterated same-type nucleon pairs do not increase the NF complexity beyond linear growth in the number of nucleons.

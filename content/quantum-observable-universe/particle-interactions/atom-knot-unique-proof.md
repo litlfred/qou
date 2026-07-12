@@ -4,7 +4,7 @@
 that realize the same NF differ only by a sequence of:*
 
 - *Reidemeister II moves (the Hecke relation $\sigma_i^2 \sim
-  H_A \sigma_i + 1$ rewritten in NF).*
+  h_{\mathrm{A}} \sigma_i + 1$ rewritten in NF).*
 - *Reidemeister III moves (the Yang–Baxter equation
   $\sigma_i \sigma_{i+1} \sigma_i = \sigma_{i+1} \sigma_i
   \sigma_{i+1}$).*
