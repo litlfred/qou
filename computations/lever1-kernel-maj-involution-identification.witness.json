@@ -1,0 +1,47 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-07-12T21:01:40.910009+00:00",
+  "commitSha": "46e7076dd0ba0d84a73b159aed26f6103c260760",
+  "assertions": [
+    {
+      "name": "binding_period_is_maj_content_involution_statistic",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "S^bal(n)*q^(n(n-1)/2) = Sigma_{w in Inv} q^(2 maj + content(RSK)) verified exactly n<=8; insertion weights non-monomial (kernel is an insertion recursion, not a finite q-difference operator)."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 15,
+  "computation": "lever1-kernel-maj-involution-identification",
+  "scriptFile": "lever1_kernel_maj_involution_identification.py",
+  "scriptHash": "eb629e9fbb52",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Lever-1 (z2bn) kernel hunt: EXACT identification of the binding period as an involution statistic — S^bal(n)*q^(n(n-1)/2) = sum over involutions of q^(2*maj(w)+content(RSK shape)), verified exactly n<=8 (764 involutions at n=8) via Stanley's q-hook-maj formula (shape-refined, PASS) + RSK/Schuetzenberger descent preservation (PASS) + the balanced-convention twist dim_q^bal = q^(content - n(n-1)/2) * fakedeg(q^2) (PASS). Consequence measured: the fixed-point-insertion weight ratio is NON-monomial and its spread grows — maj is not Markovian under RSK insertion, the combinatorial face of the Habiro tail D(n) and the structural explanation of non-q-holonomicity. The kernel object is an insertion recursion on involutions (statistic-level), not a finite q-difference operator. Classical anchors: Stanley EC2 (q-hook-maj), Schuetzenberger (Des(w)=Des(P) for involutions), Littlewood identity family; q-Hermite CROSSING statistic remains pruned (2026-06-26) — maj/content is a DIFFERENT statistic. Web lit-search backends returned empty in this container (noted). Exact symbolic; no fit; no wiring. Scope: (C) exact; (D) scope-(a).",
+  "data": {
+    "identity_A_stanley_shape_refined": true,
+    "identity_B_fake_degree_sum": true,
+    "identity_C_balanced_maj_content": true,
+    "fixed_point_ratio_monomial_by_n": {
+      "3": false,
+      "4": false,
+      "5": false,
+      "6": false,
+      "7": false,
+      "8": false
+    }
+  }
+}

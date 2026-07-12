@@ -347,3 +347,18 @@ construction (already pruned). Probes: lever1_gevrey_order_pin.py,
 lever1_borel_half_singularity_probe.py, lever1_habiro_tail_habiro_basis_expansion.py (+3
 witnesses). Audit: docs/audits/2026-07-12-alien-calculus-review-binding-gevrey-half.md.
 No fit; nothing wired; scope-(a) + Lean-proved core. Owner closes (§4a).
+
+## Update 2026-07-12 (d) — KERNEL IDENTIFIED at the statistic level: S^bal is the involution
+## statistic 2·maj + content∘RSK (exact, n≤8); kernel = insertion recursion, not q-difference
+
+Owner steer "try find kernel". EXACT identification (PR #3694, probe
+lever1_kernel_maj_involution_identification.py, all n≤8 bit-exact):
+S^bal(n)·q^{n(n−1)/2} = Σ_{w∈Inv(Sₙ)} q^{2·maj(w)+content(λ(w))} — derived from Stanley's
+q-hook-maj + RSK/Schützenberger (both verified shape-refined in-container) + the balanced
+twist dim_q^bal = q^{content−n(n−1)/2}·fakedeg(q²). DIFFERENT statistic from the pruned
+q-Hermite crossing id (2026-06-26). Kernel consequence: fixed-point-insertion weight ratio
+is NON-monomial with growing spread (2,4,6,10,15,22 terms, n=3..8) ⇒ maj not Markovian
+under RSK insertion ⇒ the kernel is an INSERTION RECURSION at statistic level, not a finite
+q-difference operator — explains the (re-verified) non-q-holonomicity + the Habiro tail
+combinatorially. Next: statistic-level transfer operator (descent-set refinement under
+insertion); promote identity to content block + Lean. No fit; nothing wired.
