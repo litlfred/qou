@@ -342,6 +342,7 @@ export default chapter({
       blocks: [
         "intro-confinement-level",
         "confinement-level",
+        "confinement-level-properties",
         "confinement-level-exists",
         "confinement-level-exists-proof",
         "confinement-level-unique",
@@ -397,8 +398,11 @@ export default chapter({
       blocks: [
         "intro-confined-particles-shells",
         "confined-particle",
+        "confined-particle-examples",
         "confinement-category",
         "dressed-particle",
+        "dressed-particle-examples",
+        "dressed-particle-properties",
         "shell-closure-stability",
         "shell-closure-stability-proof",
         "shell-closure-stability-interprets",
