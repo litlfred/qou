@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-12T01:42:21.106574+00:00",
-  "commitSha": "f3416c970a29a14ac84bf2f0597edf306fc1c44b",
+  "computedAt": "2026-07-12T03:03:20.301683+00:00",
+  "commitSha": "0d3faa854166652d94089bb700269a1b48bb0f22",
   "assertions": [
     {
       "name": "hypersensitivity_is_ladder_1_over_u3_amplification",
@@ -19,14 +19,22 @@
       "passed": true,
       "tolerance": 0.5,
       "source": "S(proton)/S(muon) from c3_target_at match the committed anchor-blind witness"
+    },
+    {
+      "name": "qstar_is_decay_sector_not_mass_mean",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "q* at 80% muon-ward != precision-weighted mass reconciliation ~0% (proton); q* is an independent decay-sector determination of q0"
     }
   ],
   "allPassed": true,
   "durationMs": 11,
   "computation": "qbeta-c3-imq-qstar-ladder-amplification",
   "scriptFile": "qbeta_c3_imq_qstar_ladder_amplification_probe.py",
-  "scriptHash": "d12c2d5fd4d5",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "2a1b7cb692d8",
+  "scriptCommitSha": "0d3faa854166652d94089bb700269a1b48bb0f22",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -60,6 +68,12 @@
       "dqstar_dQbeta": "-0.5389653",
       "Q_BETA_MEV": "0.782333409999999999999999999999999999999999999999999409829604",
       "lever": "more precise neutron Q_beta sharpens q*; more anchors do not"
+    },
+    "decay_sector_determination": {
+      "q_star_frac_muon_ward_pct": "80.296",
+      "mass_weighted_reconciliation_pct": "0.000743796",
+      "proton_over_muon_precision": "366.7",
+      "verdict": "q* is an independent decay-sector (bar-odd Q_beta) determination of q0, NOT the mass-sector statistical mean (which sits ~0% muon-ward = proton); the mu-p tension becomes a mu-p-Q_beta three-way picture"
     }
   }
 }

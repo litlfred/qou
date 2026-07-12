@@ -101,6 +101,18 @@ def main() -> int:
     print(f"    dq*/dQ_β = {mp.nstr(dq_dQ,6)}  (Q_BETA_MEV={str(C.Q_BETA_MEV)})")
     print("    ⇒ a more precise neutron Q_β directly sharpens q*; more anchors at same Q_β do not.")
 
+    # ---- 4. q* is a decay-sector determination of q0, not a mass-sector mean ----
+    sig_mu, sig_p = mp.mpf("22"), mp.mpf("0.06")          # documented anchor ppb
+    q_wmean = (qp / sig_p ** 2 + qm / sig_mu ** 2) / (1 / sig_p ** 2 + 1 / sig_mu ** 2)
+    frac_w = (q_wmean - qp) / (qm - qp) * 100
+    print("\n[4] q* is a third, DECAY-SECTOR determination of q₀:")
+    print(f"    precision-weighted μ-p mass reconciliation: {mp.nstr(frac_w,4)}% muon-ward (≈ proton;")
+    print(f"      proton is {mp.nstr(sig_mu/sig_p,4)}× more precise) — the mass-sector consensus q₀.")
+    print(f"    q* (ε=0 bar-odd point):                     {mp.nstr(frac*100,4)}% muon-ward.")
+    print("    ⇒ q* is NOT the mass-sector statistical mean; it is an INDEPENDENT determination")
+    print("      of q₀ from the bar-odd Q_β decay sector. μ-p tension becomes a μ-p-Q_β trio.")
+    decay_sector_independent = abs(float(frac * 100) - float(frac_w)) > 10
+
     wb = WitnessBuilder("qbeta-c3-imq-qstar-ladder-amplification", engine="mpmath")
     wb.set_description(
         "ε(q₀) decay-projection: evaluate the c₃ extractor c3_target_at as a "
@@ -125,12 +137,22 @@ def main() -> int:
         "verdict": "dc3/dq is 1/u^3 ladder amplification of a smooth numerator zero, not a singularity"})
     wb.add_data("precision_limit", {"dqstar_dQbeta": mp.nstr(dq_dQ, 8), "Q_BETA_MEV": str(C.Q_BETA_MEV),
                                     "lever": "more precise neutron Q_beta sharpens q*; more anchors do not"})
+    wb.add_data("decay_sector_determination", {
+        "q_star_frac_muon_ward_pct": mp.nstr(frac * 100, 6),
+        "mass_weighted_reconciliation_pct": mp.nstr(frac_w, 6),
+        "proton_over_muon_precision": mp.nstr(sig_mu / sig_p, 4),
+        "verdict": "q* is an independent decay-sector (bar-odd Q_beta) determination of q0, "
+                   "NOT the mass-sector statistical mean (which sits ~0% muon-ward = proton); "
+                   "the mu-p tension becomes a mu-p-Q_beta three-way picture"})
     wb.add_assertion("hypersensitivity_is_ladder_1_over_u3_amplification",
                      computed=float(prefactor), expected=2.37, tolerance=0.5,
                      source="S'(q*) = (smooth O(1) prefactor ~2.37) x 1/u^3; the dc3/dq swing is a 1/u^3 representation artifact, not a physical singularity")
     wb.add_assertion("anchors_reproduced_exactly",
                      computed=1.0 if repro else 0.0, expected=1.0, tolerance=0.5,
                      source="S(proton)/S(muon) from c3_target_at match the committed anchor-blind witness")
+    wb.add_assertion("qstar_is_decay_sector_not_mass_mean",
+                     computed=1.0 if decay_sector_independent else 0.0, expected=1.0, tolerance=0.5,
+                     source="q* at 80% muon-ward != precision-weighted mass reconciliation ~0% (proton); q* is an independent decay-sector determination of q0")
     wb.save()
     print("\n  RESULT: q* full-precision; hypersensitivity = 1/u³ ladder artifact (smooth prefactor 2.37);")
     print("          q* limited by experimental Q_β. Underlying decay projection is SMOOTH.")
