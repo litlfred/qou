@@ -1,0 +1,195 @@
+{
+  "computation": "qbeta-ohtsuki-deformed-meridian-rungs",
+  "description": "u-dependence of the 4\u2081 Ohtsuki rungs at the substrate meridian u=2 ln q\u2080 from the exact deformed Habiro sum (2cosh u \u2212 2cosh(\u03bej/N) term; Murakami-theorem regime): Re/Im \u03ba\u0303\u2081(u), template \u03b2=1/2, geometry cross-check vs the gluing Newton Vol(u), anchor-blindness, and the finite-b bar-odd S lead t\u00b7Re \u03ba\u0303\u2081(u_sub). Route 2 of the bar-odd-S program (#3654 open item).",
+  "audit_only": true,
+  "tier": "numerical (deformed-rung extraction + structural checks)",
+  "computedAt": "2026-07-12T16:10:51.722994+00:00",
+  "commitSha": "1a8fe552d02e1607e4f6bfa39573bceaec16a21b",
+  "engine": "mpmath",
+  "engineVersion": "1.3.0",
+  "scriptFile": "qbeta_ohtsuki_deformed_meridian_rungs.py",
+  "scriptHash": "71b1217d72ae",
+  "assertions": [
+    {
+      "name": "V1_u0_reproduces_kappa1_exact",
+      "passed": true
+    },
+    {
+      "name": "V2_deformed_template_beta_half",
+      "passed": true
+    },
+    {
+      "name": "V3_kappa1_selfconsistent_6_digits",
+      "passed": true
+    },
+    {
+      "name": "V4_geometry_residual_half_u_plus_quadratic",
+      "passed": true
+    },
+    {
+      "name": "V5_anchor_blind_kappa1",
+      "passed": true
+    },
+    {
+      "name": "V6_precision_headroom_30_digits",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "u_proton": "0.2086814406390390246318126",
+    "u_muon": "0.2086814637075916846646277",
+    "murakami_u_crit": "0.962423650119207",
+    "kappa1_u0_extracted": "0.5542164724048998988003308",
+    "kappa1_u0_exact": "11*sqrt(3)*pi/108",
+    "runs": {
+      "0.05": {
+        "u": "0.05",
+        "max_loss_digits": 11.182717132095888,
+        "alpha_re": "0.3483886094797370231852821",
+        "gamma_re": "2.721376829110543005162951",
+        "beta_free": "0.5000000000000000350646581",
+        "kappa1_re": "0.5559874172479182636856911",
+        "kappa1_conf_digits": 10,
+        "kappa2_re": "0.7402427161997711715014371",
+        "kappa1_im": "-0.004424407288027116762419795",
+        "kappa2_im": "-0.01178206961338629435899506",
+        "T_const": "5.020808042499756635690329e-18"
+      },
+      "0.12": {
+        "u": "0.12",
+        "max_loss_digits": 76.04495391633542,
+        "alpha_re": "0.3849151121801948586628459",
+        "gamma_re": "1.847351357400750755325396",
+        "beta_free": "0.499999999999999999998241",
+        "kappa1_re": "0.5646273597573372045251785",
+        "kappa1_conf_digits": 13,
+        "kappa2_re": "0.785786929401643899580517",
+        "kappa1_im": "-0.0107835882372367197741575",
+        "kappa2_im": "-0.03002580186690739882770286",
+        "T_const": "-1.651692648945978714599386e-22"
+      },
+      "0.208681440639": {
+        "u": "0.2086814406390390246318126",
+        "max_loss_digits": 234.94972023190962,
+        "alpha_re": "0.4329754299397956576630619",
+        "gamma_re": "1.29776048392852556868889",
+        "beta_free": "0.4999999999999999999953641",
+        "kappa1_re": "0.587343387311212428911841",
+        "kappa1_conf_digits": 12,
+        "kappa2_re": "0.9121367216059797601082336",
+        "kappa1_im": "-0.01950724962287241147450518",
+        "kappa2_im": "-0.06065592370332713623198756",
+        "T_const": "-7.675476815118714633615214e-22"
+      },
+      "0.3": {
+        "u": "0.3",
+        "max_loss_digits": 242.72058318588975,
+        "alpha_re": "0.4845567402446099044318502",
+        "gamma_re": "0.9413225232047073483353846",
+        "beta_free": "0.5000000000000000334110332",
+        "kappa1_re": "0.6286701388328940021745741",
+        "kappa1_conf_digits": 9,
+        "kappa2_re": "1.16568609426879464379738",
+        "kappa1_im": "-0.03001678805115335910948083",
+        "kappa2_im": "-0.1115691678143219734001454",
+        "T_const": "6.895383794103562097097128e-18"
+      },
+      "u_muon": {
+        "u": "0.2086814637075916846646277",
+        "max_loss_digits": 234.9497727030842,
+        "alpha_re": "0.4329754427010387640384015",
+        "gamma_re": "1.29776037466115768356288",
+        "beta_free": "0.4999999999999999999953641",
+        "kappa1_re": "0.587343395198888432466206",
+        "kappa1_conf_digits": 12,
+        "kappa2_re": "0.9121367671118643875071611",
+        "kappa1_im": "-0.01950725204125940636713343",
+        "kappa2_im": "-0.06065593344938876771305125",
+        "T_const": "-7.675479938470013136494902e-22"
+      }
+    },
+    "geometry_rows": [
+      {
+        "u": "0.05",
+        "Vol_u": "2.0293420315577757735",
+        "alpha_re": "0.34838860947973702319",
+        "alpha_pred_vol_only": "0.32295936390593199336",
+        "resid": "0.0254292455738",
+        "resid_over_u2": "10.171698"
+      },
+      {
+        "u": "0.12",
+        "Vol_u": "2.0267683354867284705",
+        "alpha_re": "0.38491511218019485866",
+        "alpha_pred_vol_only": "0.32245258249646824907",
+        "resid": "0.0624625296837",
+        "resid_over_u2": "4.3376757"
+      },
+      {
+        "u": "0.208681440639",
+        "Vol_u": "2.0204806931396358415",
+        "alpha_re": "0.43297542993979565766",
+        "alpha_pred_vol_only": "0.32121516297434019902",
+        "resid": "0.111760266965",
+        "resid_over_u2": "2.566373"
+      },
+      {
+        "u": "0.3",
+        "Vol_u": "2.0105092080114007731",
+        "alpha_re": "0.48455674024460990443",
+        "alpha_pred_vol_only": "0.31925466522409956083",
+        "resid": "0.165302075021",
+        "resid_over_u2": "1.8366897"
+      },
+      {
+        "u": "0.208681463708",
+        "Vol_u": "2.0204806910666174136",
+        "alpha_re": "0.43297544270103876404",
+        "alpha_pred_vol_only": "0.32121516256652128509",
+        "resid": "0.111760280135",
+        "resid_over_u2": "2.5663727"
+      }
+    ],
+    "geometry_resid_model": {
+      "form": "resid = a*u + b*u^2 + c*u^3 + d*u^4",
+      "a_linear": "0.499998470420543",
+      "a_structural": "1/2 (<=> Im S(u) contains pi*u, framing/meridian term, bar-odd)",
+      "b_quadratic": "0.17234381412",
+      "b_status": "unidentified (mixes Im-S u^2 with Re-S u terms); no fit"
+    },
+    "max_loss_digits": 242.72058318588975,
+    "physics": {
+      "t_ln_q0": "0.1043407203195195123159063",
+      "kappa1_sub_re": "0.587343387311212428911841",
+      "kappa1_sub_im": "-0.01950724962287241147450518",
+      "finite_b_S_lead_t_Re_kappa1": "0.06128383210695844158126136",
+      "intrinsic_odd_Im_kappa1": "-0.01950724962287241147450518",
+      "S_targets": {
+        "proton": "-0.03945936",
+        "muon": "0.00968298"
+      },
+      "lead_over_S": {
+        "proton": "-1.553087331",
+        "muon": "6.329025993"
+      }
+    },
+    "dkappa1_du_grid": [
+      "0.123427750135",
+      "0.256153118287",
+      "0.452555885801"
+    ],
+    "verdict": "Deformed Ohtsuki 2-loop rung at the substrate meridian extracted from the exact Habiro sum (Murakami-theorem regime, no deformed-volume-conjecture assumption): \u03ba\u0303\u2081(u_sub) = 0.587343387311 + i\u00b7-0.01950725 vs \u03ba\u2081(0) = 11\u221a3\u03c0/108 = 0.554216472405. Finite-b S-lead t\u00b7Re \u03ba\u0303\u2081 = 0.061283832 (vs |S| targets 0.0097/0.0395); intrinsic odd channel Im \u03ba\u0303\u2081 = -0.01950725. \u03ba\u0303\u2081 is anchor-blind to 7.9e-09 and smooth in u \u2014 the sign-flip stays representational (capstone-consistent). 4\u2081 facts only; no c_k wired; no fit; no tier change."
+  },
+  "context": {
+    "axis": "bar-odd S route 2: \u03ba_k(u) at the substrate meridian (state-integral side)",
+    "builds_on": [
+      "#3606 \u03ba\u2081 exact",
+      "#3628 \u03ba\u2082..\u03ba\u2084 exact (u=0)",
+      "#3654 finite-b i\u00b7t\u00b7\u03ba\u2081 scale",
+      "#3636 1/u\u00b3 ladder artifact"
+    ],
+    "theorem_basis": "H. Murakami, J. Topology 6 (2013) \u2014 4\u2081 asymptotic expansion for 0<u<log((3+\u221a5)/2) is proved (not the volume conjecture)",
+    "no_deformed_volume_conjecture": true
+  }
+}
