@@ -1,9 +1,8 @@
 /-
 Copyright (c) 2026 Frederick Carl Leitner. All rights reserved.
 -/
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic.FieldSimp
-import Mathlib.Tactic.Ring
+import Mathlib.Algebra.Field.Basic
+import Mathlib.Algebra.Order.Field.Basic
 
 /-!
 # QOU.BraidsAndKnots.FBorBorromeanObservable
@@ -47,15 +46,24 @@ namespace QOU.BraidsAndKnots
 
     Mirror of the proved `trM_borromean` in
     `BorromeanMarkovTrace.lean` (restated here for self-contained
-    use in the F_Bor observable). -/
-noncomputable def trM_borromean_abs (h : ℝ) : ℝ :=
+    use in the F_Bor observable).
+
+    The `|·|` is the only post-archimedean construct (it requires an
+    order), so the base ring is the generic linearly ordered field
+    `[Field R] [LinearOrder R] [IsStrictOrderedRing R]` rather than
+    `ℝ` — the archimedean evaluation at `q_0 : ℝ` happens downstream
+    (§7c). -/
+noncomputable def trM_borromean_abs {R : Type*} [Field R] [LinearOrder R]
+    [IsStrictOrderedRing R] (h : R) : R :=
   |(4 + h^2 - 3 * h^4 - h^6) / (h^2 + 4)|
 
 /-- The q-factorial `[3]_q! = (q² + 1 + q⁻²)(q + q⁻¹)`.
 
     Mirror of the proved `qFactorial_three` from `YLambdaQSchur.lean`
-    (restated here for self-contained use). -/
-noncomputable def qFact_three (q : ℝ) : ℝ :=
+    (restated here for self-contained use). Purely categorical
+    (field inverse + integer powers, no order), so the base ring is
+    the weakest that admits the construction, `[Field R]` (§7c). -/
+noncomputable def qFact_three {R : Type*} [Field R] (q : R) : R :=
   (q^2 + 1 + q^(-2 : ℤ)) * (q + q⁻¹)
 
 /-- The natural categorical observable
@@ -63,8 +71,14 @@ noncomputable def qFact_three (q : ℝ) : ℝ :=
 
     Combines the Lean-proved Borromean Markov trace with the
     q-factorial normalisation, shifted by content q^3 (the content
-    sum of the partition (3) ⊢ 3). -/
-noncomputable def F_Bor (q : ℝ) : ℝ :=
+    sum of the partition (3) ⊢ 3).
+
+    Inherits the linearly ordered field structure from
+    `trM_borromean_abs`'s `|·|`; `qFact_three` (only `[Field R]`)
+    composes on the shared `Field R`. The archimedean evaluation
+    `F_Bor (q_0 : ℝ)` resolves with `R := ℝ` downstream. -/
+noncomputable def F_Bor {R : Type*} [Field R] [LinearOrder R]
+    [IsStrictOrderedRing R] (q : R) : R :=
   trM_borromean_abs (q - q⁻¹) * qFact_three q / q^3
 
 /-- **Bar-pair partition count (categorical).**
