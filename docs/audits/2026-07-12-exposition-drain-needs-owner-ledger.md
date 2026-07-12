@@ -33,6 +33,23 @@ unless prefixed otherwise.
 | `braids-and-knots/` (corpus-wide) | Residual $\tau_M$ occurrences: #3626 normalized $\tau_M \to \mathrm{tr}_M$ in `markov-axioms-primitive.md` only; a corpus sweep for remaining $\tau_M$ remnants was not performed. | [#3615](https://github.com/litlfred/qou/pull/3615), [#3626](https://github.com/litlfred/qou/pull/3626) |
 | `appendix-transfer-matrices/tm-heavy-atom-examples.md` | Heavy, conjecture-dependent numbers ("conjectures C1–C3 need verification"); Q-value algorithm and worked numbers are derivation content the swarm could not restructure. | [#3307](https://github.com/litlfred/qou/pull/3307) |
 
+### §1 disposition (2026-07-12, owner-directed drain)
+
+All four §1 rows were resolved by [#3661](https://github.com/litlfred/qou/pull/3661) (axiom 4 → derived $z_- = z - (q - q^{-1})$; Φ embedding; corpus τ_M sweep, 47 files; C1–C3 linked + conditional framing). §2 was resolved in the same PR (all three display ghosts + four consumer blocks).
+
+### §1 additions from the §3 proof-sketch drain (2026-07-12)
+
+| Item | Status / defect | Source |
+|---|---|---|
+| Wenzl block weights of the canonical trace | **RESOLVED.** Both corpus closed forms ($\dim_q \cdot d_\lambda/[n]_q!$ in the selection proof; $\dim_q^2/[n]_q!$ in the trace-locality proof) were wrong (fail at $n=2$ against $\mathrm{tr}_M(e_+) = (z+q^{-1})/(q+q^{-1})$). Correct form, verified exactly for all $\lambda \vdash n \leq 5$ at three rational $s = q^{1/2}$ samples: $w_\lambda = \prod_{x\in\lambda} (z\,q^{c(x)} - z_-\,q^{-c(x)})/(q^{h(x)} - q^{-h(x)})$ — the Ocneanu weight formula at framing ratio $a^2 = z/z_-$. Producer `computations/markov_trace_weights_wenzl.py` + witness. | Gemini review on #3670; resolution this ledger's follow-up PR |
+| `particle-interactions/confinement-frobenius-reciprocity.md` | Sketch contradicts the LP it cites: Part 2 needs $(Gx^*)_i = y_i^*$ on the active set, but complementary slackness of `prop:operator-selection-lp` forces $(Gx^*)_i = 0$ exactly where $y_i^* > 0$. Owner call: the boxed formula's $u^*$ is the primal $x^*$ (clean identity, no active-set restriction), or the formula is a definition, not a derived identity (restructure the block). | [#3672](https://github.com/litlfred/qou/pull/3672) |
+| `mass-theory/mass-categorical-descent-proof.md` | Still open: the decomposition $B = B^{\mathrm{desc}} + B^{\mathrm{trans}}$ (descended↔centre identification + exceptional-divisor localisation of the transient part) has no in-corpus derivation. Owner call: pursue the derivation or demote the parent to conditional form. | [#3670](https://github.com/litlfred/qou/pull/3670) |
+| `mass-theory/residue-at-root-proof.md` | Still open: the crux (Habiro-ring membership of $\Phi_q \cdot \mathrm{tr}_{M,\ell}(T_w)$) is exactly `conj:gs-residue-at-root-existence`. Owner call: condition `prop:residue-at-root` explicitly on that conjecture (§3b-cond). | [#3670](https://github.com/litlfred/qou/pull/3670) |
+| `mass-theory/vol-through-tau.md` | Still open: the proposition unconditionally asserts Kashaev-volume-conjecture content (`conj:kashaev-volume-conjecture`, open in general). Owner call: demote to conjecture, or §3b-cond banner (needs `.ts` edit). | [#3673](https://github.com/litlfred/qou/pull/3673) |
+| `computations/atom-mass-complete-wedderburn.witness.json` | Phantom witness: cited by the Wedderburn mass proof but exists nowhere in repo history; citation rescoped honestly in #3673. Owner call: regenerate the nuclide-table certification or drop the cross-check claim. | Gemini review on #3673 |
+| Direction-gate criterion (Lean sibling) | The parent's "order of magnitude" criterion is multiplicative; the formalisation's additive-only field cannot reject undershooting candidates. Follow-up tightening of the Lean sibling. | [#3673](https://github.com/litlfred/qou/pull/3673) |
+| `appendix-transfer-matrices/tm-inductive-construction.md` | Now carries a complete GS inductive proof inside a `prose` block; candidate promotion to `proposition` + `proof` pair (`.ts` restructure). | [#3672](https://github.com/litlfred/qou/pull/3672) |
+
 ## 2. Purged-symbol ghosts (λ_scale in display math)
 
 The factor `λ_scale` was absorbed 2026-05-23 (standing purge, AGENTS.md).
