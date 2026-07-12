@@ -32,7 +32,9 @@ export default chapter({
       blocks: [
         "molecular-chains-rings-intro",
         "molecular-hopf-chain",
+        "molecular-hopf-chain-crossing-energy",
         "threading-link",
+        "threading-link-alexander",
         "threading-link-weight",
         "molecular-hopf-ring",
         "hopf-ring-rigidity",

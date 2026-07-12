@@ -33,6 +33,7 @@ export default chapter({
         "recursive-brane-tower-su2",
         "brane-tower-levels",
         "arc-space",
+        "arc-space-brane-tower",
       ],
     }),
 
@@ -107,6 +108,7 @@ export default chapter({
         // qou-motivic-galois-instance (its consumers). Detangler
         // P34 (2026-05-22).
         "motivic-substrate",
+        "motivic-substrate-canonicity",
         "motivic-galois-character",
         "motivic-perpetual-obstruction",
       ],
