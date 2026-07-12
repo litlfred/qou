@@ -10,7 +10,7 @@ $$
   \qquad
   r_\ell(T_w; q_0)
     \;=\;
-    \frac{\operatorname*{Res}_{q = \zeta_\ell}\!
+    \frac{\mathrm{Res}_{q = \zeta_\ell}\!
       \bigl[\Phi_q \cdot \mathrm{tr}_{M,\ell}(T_w)\bigr]}
     {q_0 - \zeta_\ell}.
 $$

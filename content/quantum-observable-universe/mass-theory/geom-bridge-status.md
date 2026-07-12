@@ -2,7 +2,7 @@
 
 The $\mathrm{Geom}$ functional conjectures a three-layer pathway linking the algebraic $Q_8$ trace to the boundary Markov trace. This remark tracks the precise status of each connecting step.
 
-1. **Algebraic trace:** $\operatorname{tr}(h^2\text{ curvature}) = -12$. (Proved).
+1. **Algebraic trace:** $\mathrm{tr}(h^2\text{ curvature}) = -12$. (Proved).
 2. **Geometric volume bridge:** $-12 \cdot (2G/3) = -8G$. (Proved).
 3. **Topological volume:** $\mathrm{Vol}(\mathcal{B}_3) = 8G$. (Proved).
 4. **Boundary normalisation:** Division by $-64$ to reach $\kappa = 3/16$. (**Disproved as structural**).
