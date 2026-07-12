@@ -102,6 +102,43 @@ first-nonzero depth k = 2 instead of 1.
   resurgence for a non-q-holonomic series), no orthogonal-polynomial spectral-network
   construction (already pruned), no wiring, no fit, no tier change.
 
+## Addendum (same day) — Stage 3–6 re-verified with a positive control; saddle actions; the exactness (b)-exclusion
+
+**Owner flagged the Stage 3–6 probes may be inaccurate.** Legitimate (Stage 7's first
+classifier had a silently-caught bug; Stages 3–6 shipped no positive control), so the
+question was re-run independently:
+[`lever1_qholonomic_reverify.py`](../../computations/lever1_qholonomic_reverify.py)
+(exit 0) — own Laurent-exact `dim_q`/`S(m)` (m ≤ 13, `S(m)|_{q=1}=I(m)` checked), exact
+integer nullspaces (no numeric rank), **positive control** (`(q;q)_m`: the engine finds
+the known order-1 relation and it survives held-out), sweep widened to **order 4**
+(Stages 3–4 stopped at 3): **zero held-out survivors at every configuration** ⇒ the
+Stage 3–6 (a)-verdict is **confirmed and strengthened**. Stage-7's D(6…9) invariants
+((q−1)² root, published Φ_d lists, cofactor degrees 8/10/14/28, palindromy) also
+reproduce bit-for-bit from the independent data.
+
+**Owner-picked follow-ups**
+([`lever1_saddle_action_jet_residue_probe.py`](../../computations/lever1_saddle_action_jet_residue_probe.py), exit 0):
+
+- **(A) Per-pair saddle actions.** The exact-WKB dictionary puts Borel singularities at
+  saddle **actions** `ω = ∫(X_a−X_b)dz` between branch points — not at branch-point
+  *positions* (the dialog conflated the two). The three reciprocal-pair actions of the
+  q-free color cubic: `|A| = 0.4294` (unit-modulus pair; colliding sheet-pair differs at
+  the two ends — a genuine spectral-network subtlety) and `|A| = 2.4983` (twice, the
+  bar-conjugate pair, equal moduli as forced by bar symmetry). Report-only vs the
+  measured level-1/2 datum: `|A|/(1/√2) = 0.607, 3.533, 3.533` — **no naive match**;
+  any identification would need the correct acceleration-chain normalization (open).
+- **(B) The exactness (b)-exclusion.** The classical jet rule makes
+  `λ_SW^(n) = X^(n)dz = d(X^(n−1))` an **exact** meromorphic differential for n ≥ 1, so
+  **all residues and all closed-cycle periods vanish identically** (invariant:
+  Stokes/exactness) — verified exactly at z=∞ (sheet expansions reproduce the Step-1
+  n=0 residues `{0, ±5i/16}`, sheet-sum 0; jets n=1…4 have identically zero
+  1/z-coefficients on every sheet). Hence the classical-jet reading of
+  `a_D^(n) = ∮λ_SW^(n) = lw(n−1) ≠ 0` is excluded on **any** cycle — a second,
+  independent (b)-invariant alongside PR #2768's q-freeness exclusion. The q-difference
+  prolongation (the live route) and the algebraic `prop:sw-period-residue-sum` identity
+  are untouched. Lean target (follow-up, small): `coeff₋₁(f') = 0` for Laurent series —
+  the residue-of-exact-form lemma.
+
 ## Discipline
 
 Formalize-first: the Gevrey sandwich was proved (Lean, sorry-free, lean-direct exit 0)
