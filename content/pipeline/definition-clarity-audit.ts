@@ -385,12 +385,26 @@ function boldHeaders(md: string): string[] {
  *  This is the sub-section count for `clarity-defn-tight`; the genuine signal is
  *  trailing interpretive/consequence prose sections, not tuple components. */
 function defnRamblingHeaders(md: string): string[] {
-  return boldHeaders(md).filter((h) => {
-    const t = h.trim();
-    if (/archimedean\s+special/i.test(t)) return false; // §7c boilerplate footer
-    if (/[:：]$/.test(t)) return false; // tuple/structure component label
-    return true;
-  });
+  const out: string[] = [];
+  // Bold span at line start, capturing the char(s) that follow the closing `**`
+  // so an inline defined-term that merely *wrapped* onto a line start can be
+  // told apart from a genuine sub-section label.
+  const re = /(^|\n)[ \t]*\*\*([^*\n]{2,80}?)\*\*(.{0,2})/g;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(md))) {
+    const t = m[2].trim();
+    const after = m[3] ?? "";
+    if (/archimedean\s+special/i.test(t)) continue; // §7c boilerplate footer
+    if (/[:：]$/.test(t)) continue; // tuple/structure component label
+    // Inline bolded defined-term that wrapped onto a line start ("The
+    // **topological mass** of the reduced state …"): it flows into a lowercase
+    // sentence continuation. Genuine sub-section labels are followed by a
+    // capitalized new sentence or a line break ("**Definition.** *Let …",
+    // "**Mass from blow-ups.** When …"). Exclude the former.
+    if (/^\s+[a-z]/.test(after)) continue;
+    out.push(t);
+  }
+  return out;
 }
 
 /** ATX markdown headers (`## …`, `### …`, …) — used alongside boldHeaders so
