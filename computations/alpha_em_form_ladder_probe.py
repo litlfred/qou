@@ -26,9 +26,14 @@ THREE HONEST CAVEATS (this probe quantifies each):
       (57 ppb) is a ~380× overstatement.
 
 Net: α_EM stays the highest-VALUE 1-ppq target (a fundamental constant, structural
-integers, a derivation gap not a calibration wall), but it is a LONG-HORIZON
-CONJECTURAL close (needs the 3 upstream proofs + the O(α) tower), not a near-term
-win. No c_k / no coefficient fitted here; scope-(a).
+integers, a derivation gap not a calibration wall). No c_k / no coefficient fitted
+here; scope-(a).
+
+CORRECTION (2026-07-12, #3625): this probe uses the QUADRATIC fixed-point form and
+so reports proton +1.7 ppb / muon +80 ppb. Adding the RT-phase-3-DERIVED Schwinger
+(1-h^2 alpha) cubic term brings the PROTON residual to +0.313 ppb = ~2x sigma_a (the
+closest not-yet-met observable to 1 ppq). See alpha_em_schwinger_ladder_probe.py +
+alpha_em_anchor_preference_probe.py (#3625) for the corrected best number.
 
 Companion: docs/audits/2026-07-11-path-to-1ppq-alpha-em-opportunity.md.
 """

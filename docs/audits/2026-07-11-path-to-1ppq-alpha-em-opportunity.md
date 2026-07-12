@@ -37,24 +37,36 @@ Consequences:
 
 ## The headline opportunity: α_EM (a derivation gap, not a wall)
 
-**α_EM is a pure-q₀ dimensionless prediction, currently ~80 ppb off, and the gap
-is derivation-incompleteness — not a calibration floor.**
+**α_EM is a pure-q₀ dimensionless prediction. At the correct (proton) anchor, with
+the derived Schwinger `(1−h²α)` term, it lands at `+0.313 ppb = ~2× σ_α` — the
+*closest any not-yet-met observable sits to its 1-ppq target* — and the remaining
+gap is derivation-incompleteness, not a calibration floor.**
+
+> **Corrected (2026-07-12, #3625).** An earlier version of this table reported the
+> residual as `~80 ppb (527× σ)`. That was the **muon anchor + quadratic form** —
+> an understatement. The honest best number, at the proton anchor (which α_EM
+> independently prefers to 0.245 ppb) with the RT-phase-3-*derived* Schwinger term,
+> is **+0.313 ppb ≈ 2× σ_α**. See `alpha_em_schwinger_ladder_probe.py` +
+> `alpha_em_anchor_preference_probe.py` (#3625).
 
 | quantity | value |
 |---|---|
-| predicted α⁻¹ (`alpha_em_4pi_fixed_point_solve`) | 137.036010… |
 | CODATA α⁻¹ | 137.035999084 |
-| residual | **~80 ppb** |
+| best α⁻¹ (proton pin + derived Schwinger) | 137.035999127 |
+| **residual** | **+0.313 ppb** |
 | experimental σ_α | 0.15 ppb |
-| miss factor | **~527×** |
+| **miss factor** | **~2.1×** |
+| (muon anchor + quadratic form, for reference) | +80 ppb (537×) |
 | calibration floor (via q₀) | ~0.06 ppb — **below** σ_α ⇒ 1 ppq-capable |
+| remaining 2-loop c₂ = resid/α² | ≈ 8.1e-4 (uncomputed; ≠ Ohtsuki κ₁) |
 
 Because α_EM's floor (q₀ at ~0.06 ppb) sits *below* its experimental σ (0.15 ppb),
 the residual is a **missing-higher-order-terms** problem (the Rogers–Turaev /
 Schwinger / Bring-measure program, `alpha_em_rt_phase2/3/4`) — **a derivation gap,
 not a calibration wall**, unlike absolute masses. Closing α_EM to ≤ 0.15 ppb would
 be a **structural derivation of the fine-structure constant** — the single
-highest-*value* 1-ppq target, one the mass-focused L2 dashboard does not track.
+highest-*value* 1-ppq target, one the mass-focused L2 dashboard does not track,
+already at **2× σ** with the derived terms.
 
 ### Follow-up caveats (form-ladder probe — corrects the optimism above)
 
@@ -73,20 +85,25 @@ caveats**:
   classes (`ArchimedeanLimit`, `BlochSuslinUniqueness`, `BringZeroModeBlochClass`).
   Conditional-class ≠ established (anti-laundering rule) — it is not a proved
   derivation.
-- **(B) It is ANCHOR-DEPENDENT.** The best (fixed-point `α²H+αT=1`) residual is
-  **+1.7 ppb at the proton pin** but **+80 ppb at the muon pin** (the committed
-  witness — and the "80 ppb" headline above — is the *muon* value). The residual
-  ladder at each anchor: tree `−4180 ppb` → `+O(α)` `+57 ppb` → fixed-point
-  `+80 ppb` (muon); `−4259 → −21 → +1.7 ppb` (proton).
-- **(C) It is NOT at target.** Even the best form is ~80 ppb (muon) = **~537× σ_α**
-  (11× at proton); the content block's "approaches σ_α" for the `+O(α)` (57 ppb)
-  form is a ~380× overstatement.
+- **(B) It is ANCHOR-DEPENDENT — and α_EM picks the proton anchor.** The residual
+  differs by the μ–p tension: at the proton pin `+0.313 ppb` (with Schwinger), at
+  the muon pin `+80 ppb`. This is not a free choice — inverting the pure-q₀ form for
+  the CODATA-exact q₀ gives `q_α` **0.245 ppb from the proton pin vs 11.78 ppb from
+  the muon pin** (`alpha_em_anchor_preference_probe.py`, #3625). So α_EM *itself*
+  selects the proton anchor (a third EM-sector cross-check, with m_p).
+- **(C) At the correct anchor it is close, not far.** Ladder at the proton pin:
+  tree `−4259 ppb` → `+zero-mode` `−21 ppb` → `+O(α)` `−21 ppb` → quadratic
+  fixed-point `+1.7 ppb` → **`+`derived Schwinger `(1−h²α)` → `+0.313 ppb ≈ 2× σ_α`**
+  (`alpha_em_schwinger_ladder_probe.py`, #3625). The remaining `c₂ ≈ 8.1e-4` is a
+  small **uncomputed** 2-loop coefficient (RT phase-2), *not* Ohtsuki `κ₁ ≈ 0.554`.
 
-**Revised status:** α_EM remains the highest-*value* 1-ppq target and *is* a
-derivation gap (not a calibration wall), but closing it is **long-horizon and
-conjectural** — it needs the three upstream classes *proved* plus the `O(α)` tower
-nailed to sub-0.15 ppb — **not a near-term win**. The earlier "closable in
-principle" wording over-stated near-term tractability.
+**Revised status:** α_EM is the highest-*value* 1-ppq target, *is* a derivation gap
+(not a calibration wall), and — at the correct anchor with the derived terms — is
+already at **~2× σ_α**, the closest not-yet-met observable to 1 ppq. The *value*
+(zero-mode, proved genus-determined, #3625) and *anchor* (proton) are settled; what
+remains is the small uncomputed 2-loop `c₂` plus the still-conjectural physical
+coupling claim + upstream classes. The earlier "~80 ppb / long-horizon" framing
+conflated the muon anchor + quadratic form with the true best; corrected here.
 
 ## The two active levers, ranked
 
@@ -95,11 +112,12 @@ principle" wording over-stated near-term tractability.
    **This session proved the geometry-side (`4₁`) is magnitude-negative (~2350×
    short) — so `Φ_b` is the only route**, with a concrete target (O(10⁻²),
    off-real-axis, near-singular; #3573).
-2. **α_EM (fundamental, 1-for-∞).** ~80 ppb (muon) / ~1.7 ppb (proton) → 0.15 ppb
-   via the RT derivation program. A *derivation* gap, not a calibration wall, with
-   structurally-derived integers — but **long-horizon and conjectural** (3 unproved
-   upstream classes + the O(α) tower; see the caveats above). Highest scientific
-   value; not near-term.
+2. **α_EM (fundamental, 1-for-∞).** Already at **+0.313 ppb ≈ 2× σ_α** (proton pin
+   + derived Schwinger) → 0.15 ppb. A *derivation* gap, not a calibration wall, with
+   structurally-derived integers, a proved genus-determined zero-mode value, and a
+   settled (proton) anchor. What remains is a **small uncomputed 2-loop `c₂`** plus
+   the still-conjectural coupling claim + upstream classes. Highest scientific value;
+   the closest not-yet-met observable to 1 ppq.
 
 Absolute m_p / m_n / m_μ are **not** near-term 1-ppq targets: m_p/m_n are
 CAL-2-floor-limited (Subgoal-2, needs s5-so3); m_μ is the μ–p calibration
@@ -121,9 +139,10 @@ off-real-axis `c_b`-lattice, not more canonical readouts.
 ## Bottom line
 
 - **Reachable now:** 5/7 via `Φ_b` (the c₃ trio).
-- **Highest value:** α_EM to 0.15 ppb — the real 1-ppq prize (untracked by the L2
-  dashboard), a derivation gap with structurally-derived integers, but a
-  **long-horizon conjectural** close (3 unproved classes + O(α) tower), not near-term.
+- **Highest value & closest:** α_EM — the real 1-ppq prize (untracked by the L2
+  dashboard) and **already at ~2× σ_α** (proton pin + derived Schwinger, #3625);
+  value proved genus-determined, anchor settled. What remains is a small uncomputed
+  2-loop `c₂` + the conjectural coupling claim + upstream classes.
 - **Walled off:** absolute-mass 1 ppq (calibration floor; needs s5-so3 / owner
   reversal).
 
