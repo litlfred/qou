@@ -27,17 +27,17 @@ deeply-developed bean `z2bn` ("Lever 1 [FOCUS]: derive/test fibre q-difference k
 The corpus is well ahead of this bean's original "no kernel reaches 5%, derive from scratch" framing:
 
 - **R(q,x) is already derived + formalized:** the lever-1 binding kernel is the depth-2, det=1
-  recurrence `R(q,x) = x² − τx + 1`, with τ(q₀) = 2.6424 (selection-rule anchors, #2612) and
-  characteristic roots λ₊=2.1846 (the extensive-growth eigenvalue that sources the A-scaling
-  binding) / λ₋=0.4577. Formalized sorry-free: `QOU/Mass/BindingRecurrenceSpectral.lean`
-  (`lambdaPlus_gt_one`: τ>2 ⇒ λ₊>1). Probe: `binding_recurrence_spectral_bridge_probe.py`.
+  recurrence `R(q,x) = x² − τx + 1`, with `τ(q₀) = 2.6424` (selection-rule anchors, #2612) and
+  characteristic roots `λ₊ = 2.1846` (the extensive-growth eigenvalue that sources the A-scaling
+  binding) / `λ₋ = 0.4577`. Formalized sorry-free: `QOU/Mass/BindingRecurrenceSpectral.lean`
+  (`lambdaPlus_gt_one`: `τ > 2 ⇒ λ₊ > 1`). Probe: `binding_recurrence_spectral_bridge_probe.py`.
 - **The frontier is reduced to ONE number: `τ = tr B`** — its geometric monodromy derivation is
   the owner-gated DG (sibling `lever1-trB`), now UNGATED (#3607). This connects directly to the
   s5-so3 keystone (τ is the fibre-trace the keystone's `W_λ` index must reproduce).
 - **Kill-switch:** magic-A ⁴He +5.87% (finite-truncation residual, not yet closed).
 
-**So GAP-3 = z2bn. Do NOT open a parallel probe.** The genuine open work is τ = tr B's geometric
-derivation (the s5-so3 / Beasley–Witten localization route, #2524/#2503), a multi-session
-formalize-first effort best done with the Lean env online. This bean (qou-6poy) is now a pointer
-to z2bn; the two-scale substrate targets (per-bond b*, per-α-bond b_αα) from the GAP-1..4 arc are
-the binding-side inputs that τ = tr B must reproduce.
+**So GAP-3 = z2bn. Do NOT open a parallel probe.** The genuine open work is the geometric
+derivation of `τ = tr B` (the s5-so3 / Beasley–Witten localization route, #2524/#2503), a
+multi-session formalize-first effort best done with the Lean env online. This bean (qou-6poy) is
+now a pointer to z2bn; the two-scale substrate targets (per-bond `b*`, per-α-bond `b_αα`) from the
+GAP-1..4 arc are the binding-side inputs that `τ = tr B` must reproduce.

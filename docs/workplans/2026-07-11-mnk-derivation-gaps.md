@@ -98,11 +98,11 @@ research-grade leg; couple to the s5-so3 keystone (`W_λ` / Identity I).
 
 > **⚠ Currency correction (2026-07-12) — this GAP-3 statement was under-informed; the corpus is
 > well ahead of it.** GAP-3 is **not greenfield**: it IS the mature, active bean `z2bn`
-> ("Lever 1 [FOCUS]: derive/test fibre q-difference kernel R(q,x)"). `R(q,x)` is **already derived
-> and formalized sorry-free** as the depth-2, det=1 recurrence `R = x² − τx + 1` with τ(q₀)=2.6424
-> (#2612) and extensive-growth root λ₊=2.1846 (`QOU/Mass/BindingRecurrenceSpectral.lean`,
+> ("Lever 1 [FOCUS]: derive/test fibre q-difference kernel `R(q,x)`"). `R(q,x)` is **already derived
+> and formalized sorry-free** as the depth-2, det=1 recurrence `R = x² − τx + 1` with `τ(q₀)=2.6424`
+> (#2612) and extensive-growth root `λ₊=2.1846` (`QOU/Mass/BindingRecurrenceSpectral.lean`,
 > `lambdaPlus_gt_one`). The "no constant-ratio kernel reaches 5%" result was about *constant-ratio*
-> kernels; the actual kernel is the τ-recurrence, which is *not* constant-ratio. The frontier is
+> kernels; the actual kernel is the `τ`-recurrence, which is *not* constant-ratio. The frontier is
 > reduced to a **single number `τ = tr B`** and its geometric monodromy derivation (sibling
 > `lever1-trB`, the DG route #3607 ungated; s5-so3 / Beasley–Witten localization #2524/#2503).
 > **Do not open a parallel GAP-3 probe — join `z2bn`.** The GAP-1..4 arc's two-scale substrate
