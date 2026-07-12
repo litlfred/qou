@@ -1,0 +1,107 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-07-12T00:37:13.738517+00:00",
+  "commitSha": "cd3c67d845aa598a82d1b9e786bc72b80f6ebb21",
+  "assertions": [
+    {
+      "name": "three_clique_overshoots_irreducible_needed",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "with eₙ pinned on D/T/⁴He and Mₙ = k-clique counts, the bonded-triple (3-clique) count overshoots A≥5 binding (ratios 1.132, 1.197, 1.240, all >1, growing) and the 4-clique reading is worse — so not every bonded triple is a 3-body term; only the Milnor-irreducible (Borromean μ̄≠0) subset counts (reducible triples are carried by the 2-body edges). The overshoot measures the reducible over-count."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "gap2-borromean-triple-count",
+  "scriptFile": "gap2_borromean_triple_count.py",
+  "scriptHash": "40b44d144195",
+  "scriptCommitSha": "cd3c67d845aa598a82d1b9e786bc72b80f6ebb21",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "GAP-2 (qou-ooqh): tests the 3-body term of the body-order tower with per-order energies pinned on D/T/⁴He and Mₙ = k-clique counts of the max-contact deltahedra (tri-bipyramid/octahedron/pentagonal-bipyramid). The bonded-triple (3-clique) count OVERSHOOTS A≥5 binding +13→24% (growing); the 4-clique×e₄(⁴He) reading is worse (non-transferable ⁴He magic). REFUTES 'every bonded triple is a 3-body term' and confirms corpus Part 7: only Milnor-IRREDUCIBLE (Borromean μ̄₁₂₃≠0) triples count — a bonded triple is reducible (μ̄=0), already carried by the 2-body edges. Overshoot measures the reducible-triple double-count. OPEN: the μ̄-irreducible count (needs graph→framed-link promotion). Scope-(a), per-order pinning, no fit, no wiring.",
+  "data": {
+    "clique_counts": {
+      "D": {
+        "M2": 1,
+        "M3": 0,
+        "M4": 0
+      },
+      "T": {
+        "M2": 3,
+        "M3": 1,
+        "M4": 0
+      },
+      "4He": {
+        "M2": 6,
+        "M3": 4,
+        "M4": 1
+      },
+      "5Li": {
+        "M2": 9,
+        "M3": 7,
+        "M4": 2
+      },
+      "6Li": {
+        "M2": 12,
+        "M3": 8,
+        "M4": 0
+      },
+      "7Li": {
+        "M2": 15,
+        "M3": 10,
+        "M4": 0
+      }
+    },
+    "per_order_energies_MeV": {
+      "e2": 2.2245662,
+      "e3": 1.8080976,
+      "e4": 8.62301795592431
+    },
+    "predictions": {
+      "5Li": {
+        "A": 5,
+        "m2": 9,
+        "m3": 7,
+        "m4": 2,
+        "B_strong": 28.857013825815915,
+        "B_2plus3": 32.677779,
+        "ratio_2plus3": 1.1324033455868525,
+        "B_plus4": 49.923814911848616,
+        "ratio_plus4": 1.7300409256894775
+      },
+      "6Li": {
+        "A": 6,
+        "m2": 12,
+        "m3": 8,
+        "m4": 0,
+        "B_strong": 34.37137481920413,
+        "B_2plus3": 41.1595752,
+        "ratio_2plus3": 1.1974957480316772,
+        "B_plus4": 41.1595752,
+        "ratio_plus4": 1.1974957480316772
+      },
+      "7Li": {
+        "A": 7,
+        "m2": 15,
+        "m3": 10,
+        "m4": 0,
+        "B_strong": 41.50339508104275,
+        "B_2plus3": 51.449469,
+        "ratio_2plus3": 1.239644826634924,
+        "B_plus4": 51.449469,
+        "ratio_plus4": 1.239644826634924
+      }
+    }
+  }
+}
