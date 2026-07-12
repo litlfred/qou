@@ -1,0 +1,95 @@
+{
+  "computation": "qbeta-ohtsuki-kappa5-exact",
+  "description": "Richardson-grade >=17-digit extraction of kappa_5 (and kappa_6) of the 4_1 Kashaev log-asymptotic with exact kappa_1..kappa_4 stripped; strict parity PSLQ under the C2 entropy budget.",
+  "audit_only": true,
+  "tier": "numerical (targeted leading-residual extraction)",
+  "computedAt": "2026-07-12T22:49:05.979232+00:00",
+  "commitSha": "72f48f25294688d7048d2753c807f23d6bcb8aac",
+  "engine": "mpmath",
+  "engineVersion": "1.4.1",
+  "scriptFile": "qbeta_ohtsuki_kappa5_exact.py",
+  "scriptHash": "f050e468aef6",
+  "assertions": [
+    {
+      "name": "fast_evaluator_matches_reference",
+      "passed": true
+    },
+    {
+      "name": "a0_strip_validated_by_side_fit",
+      "passed": true
+    },
+    {
+      "name": "kappa5_matches_3628_witness_14d",
+      "passed": true
+    },
+    {
+      "name": "kappa6_matches_3628_witness_10d",
+      "passed": true
+    },
+    {
+      "name": "kappa5_17digit_gate_met",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "Ns": [
+      3072,
+      6144,
+      12288,
+      24576,
+      49152,
+      98304,
+      196608,
+      393216,
+      786432,
+      1572864,
+      3145728,
+      6291456,
+      12582912
+    ],
+    "dps": 220,
+    "stripped_exact_rungs": {
+      "1": "11/108 * sqrt3 * pi",
+      "2": "2/27 * pi^2",
+      "3": "1081/21870 * sqrt3 * pi^3",
+      "4": "98/729 * pi^4"
+    },
+    "stripped_amplitude_a0": "-(1/4)*log(3)  (Andersen-Hansen amplitude omega_0 = 3^{-1/4})",
+    "a0_side_fit_residual_constant": "3.04888e-82",
+    "rungs": {
+      "5": {
+        "kappa": "84.64216560503844352752831302924747161669",
+        "confident_digits": 40,
+        "agreement_drop_largest": "7.909e-41",
+        "agreement_drop_smallest": "1.863e-47",
+        "parity_generator": "\u221a3\u00b7\u03c0^5",
+        "budget_maxcoeff": 1581138830084189665,
+        "identified": true,
+        "rational": "110011/688905",
+        "height": 688905,
+        "candidate_reproduces_extraction": true
+      },
+      "6": {
+        "kappa": "676.9466789641050314927818610976947200302",
+        "confident_digits": 33,
+        "agreement_drop_largest": "4.973e-34",
+        "agreement_drop_smallest": "4.685e-40",
+        "parity_generator": "\u03c0^6",
+        "budget_maxcoeff": 500000000000000,
+        "identified": false,
+        "rational": null,
+        "height": null,
+        "candidate_reproduces_extraction": false
+      }
+    },
+    "gate_digits": 17,
+    "verdict": "Exact-rung stripping + transcendental-free ladder (13 pts, N\u226412582912) extracts \u03ba\u2085 to 40 confident digits (gate \u226517: MET) and \u03ba\u2086 to 33. \u03ba\u2085 IDENTIFIED = (110011/688905)\u00b7\u221a3\u03c0\u2075 within the entropy budget (height 688905 \u2264 1581138830084189665), candidate reproduces the extraction to full confidence. \u03ba\u2086 not identified within budget. Feeds the C2 entropy-budget PSLQ (this closes the #3683 G2+C3 ~2.9-digit gap route). Anti-laundering: 4\u2081-Kashaev/Ohtsuki topological facts; NO fit to QOU data; NO Q_\u03b2 c_k wired; NO tier change."
+  },
+  "context": {
+    "axis": "z->c_k f-map keystone: even-channel exact kappa_5 (PR #3683 pickup item 1)",
+    "exact_priors": "kappa_1..kappa_4 (#3606/#3628, Lean-certified parity)",
+    "gap_being_closed": "#3683 G2+C3: 'PSLQ gate not met (~2.9-digit gap) \u2014 exact kappa_5 still needs bridge arithmetic or >=17-digit extraction'",
+    "entropy_budget_rule": "PR #1805 via the C2 probe machinery"
+  }
+}
