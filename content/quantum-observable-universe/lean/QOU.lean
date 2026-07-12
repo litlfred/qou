@@ -259,6 +259,7 @@ import QOU.Mathlib.SchenstedRecordingShift
 import QOU.Mathlib.SchenstedCellsBridge
 import QOU.Mathlib.SchenstedStandardTableau
 import QOU.Mathlib.SchenstedStandardGeneric
+import QOU.Mathlib.SchenstedPairingMap
 import QOU.Mathlib.SYTEnumeration
 import QOU.Mathlib.SYTEnumerationBridge
 import QOU.Mathlib.SYTEnumerationFintype

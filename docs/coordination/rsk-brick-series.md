@@ -17,7 +17,8 @@ files (namespace `QOU.Mathlib.Schensted`), disjoint from the `RSKBurnsideTarget`
 | 8 | `content (insertWordRec w).2 = range n` (Q timestamps `0..n-1`, `Nodup`) | #3647 | ✅ merged |
 | 9a | `shiftT` (0→1 relabel) + shift-invariance + `recordingSSYT` | #3655 | ✅ merged |
 | 9b | cells↔content bridge (`content_eq_cells_map`) + `insertWordSYT : StandardYoungTableau` | #3680 | ✅ merged |
-| 10 | generic `listStandardYT` + `insertWordPSYT` (P(w) standard for permutation words) | #3688 | open |
+| 10 | generic `listStandardYT` + `insertWordPSYT` (P(w) standard for permutation words) | #3688 | ✅ merged |
+| 11 | `pShape` + `recordingShape_eq_pShape` (P,Q share a `YoungDiagram`) + `rskPairWord`/`rskPair` (`Sym n → Σ_λ SYT(λ)²`) | this branch | open |
 
 ## Convergence with #3243 (`rsk-substrate-instances`)
 
@@ -32,7 +33,12 @@ file is `QOU.lean` only. Intent posted on #3243 (2026-07-12).
 
 ## Next
 
-1. Package `w ↦ (P(w), Q(w))` as a map into `Σ_λ (SYT(λ) × SYT(λ))` using the
-   shape-equality `insertWordRec_shape_eq_P` (P and Q share a shape).
-2. The RSK inverse (bumping-reversal) → bijection `Sym n ≃ Σ_λ SYT(λ)²`.
+1. ✅ **Done (Brick 11, this branch).** `w ↦ (P(w), Q(w))` packaged as
+   `rskPairWord`/`rskPair : Sym n → Σ_λ (SYT(λ) × SYT(λ))`. The shape-equality
+   `insertWordRec_shape_eq_P` is lifted through `shiftT_shape` to the
+   `YoungDiagram`-level `recordingShape_eq_pShape`, so `Q̃(w)` casts onto `P(w)`'s
+   diagram and the pair is well-typed. `wordOfPerm_content` discharges the
+   permutation-word content obligation (`Sym n` entry point), sorry-free.
+2. The RSK inverse (bumping-reversal) → the pair is *injective*, then bijective
+   → `Sym n ≃ Σ_λ SYT(λ)²`.
 3. Cardinality: `n! = Σ_λ (f^λ)²` → `RSKBurnsideHolds n` for general `n`.
