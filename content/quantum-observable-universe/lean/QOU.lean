@@ -101,6 +101,7 @@ import QOU.BringsSurface.OctonionCocycle
 import QOU.BringsSurface.OctonionAlgebra
 import QOU.BringsSurface.OctonionFinDim
 import QOU.BringsSurface.OctonionDerivation
+import QOU.BringsSurface.OctonionLeibnizMap
 import QOU.BringCone
 import QOU.QuaternionicElectroweak
 import QOU.ArchimedeanUniverse
