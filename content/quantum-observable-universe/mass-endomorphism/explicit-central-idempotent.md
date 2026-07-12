@@ -59,7 +59,3 @@ This is numerically verified in [`conj:bring-figure-eight-depth-2-witness`](#con
 ## Provenance
 
 The Murphy-element diagonalization of $Z(H_n(q))$ originates with Murphy (1981, symmetric group) and Dipper–James (1986, Hecke algebra). The Lagrange-interpolation form offers the cleanest computable expression. It is standard in implementations like SageMath's `IwahoriHeckeAlgebra` and the local `pyhecke-native` module.
-
-## Lean formalization
-
-The declaration `explicit_central_idempotent_via_murphy` defines the Murphy-element construction of the central idempotent. Its proof remains deferred (`sorry`) awaiting formalization of Dipper–James.
