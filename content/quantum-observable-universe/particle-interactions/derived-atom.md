@@ -1,5 +1,5 @@
 **Definition.**
-*Let $q$ be the braiding eigenvalue of $(\mathbf{C}, A, \tau)$. The **derived atom** $\mathcal{A}(Z, N)$ is the element of $H_A(q)$ obtained by the following five steps:*
+*Let $q$ be the braiding eigenvalue of $(\mathbf{C}, A, \tau)$. The **derived atom** $\mathcal{A}(Z, N)$ is the element of $H_A(q)$ obtained by the following six steps:*
 
 1. ***Pair production.** Three independent 4-term photon collisions produce three quark--antiquark pairs per nucleon via the Hecke relation.*
 2. ***Quark selection.** Select one quark from each pair. The remaining antiquarks either annihilate or form antinucleons.*
