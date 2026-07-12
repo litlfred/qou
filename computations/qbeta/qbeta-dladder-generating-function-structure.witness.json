@@ -1,0 +1,157 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-07-12T23:04:55.215457+00:00",
+  "commitSha": "e71b32cd7f729d631f61b72eaf9af625fd89f90e",
+  "assertions": [
+    {
+      "name": "valid_orders_over_determined",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "parity_structure_holds",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "smooth_denominators_le7",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "convergent_positive_radius",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "no_low_order_p_recurrence",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "d5_reproduces_ai81_witness",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 19,
+  "computation": "qbeta-dladder-generating-function-structure",
+  "scriptFile": "qbeta_dladder_generating_function_structure_probe.py",
+  "scriptHash": "c1697195fe32",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Route 2: structure hunt of the exact D-ladder generating function D(ũ)=Σ d_k ũ^k (d_k ∈ ℚ(√3), O/h via the route-3 ser_div). Findings: (1) exact parity structure (odd k → √3-part carries the small denominator, even k → rational part); (2) 3-smooth simple-denominators (Ohtsuki/Habiro factorial normalization); (3) CONVERGENT, Domb–Sykes radius ρ≈0.1438, weak branch-point exponent α≈0.156 — the sharp contrast with the DIVERGENT Gevrey-1 κ-tower of routes 1; (4) no P-finite recurrence (order≤3 deg≤4; ORD-43 rules out order≤4 deg≤5); (5) singularity is a complex point of log R(q(ũ)), not a simple real special value; ρ within ~1% of √3/12 and 1/7 but not identified (anti-fit). No elementary closed form at 15–21 terms. Scope-(a); no wiring.",
+  "data": {
+    "ORD": 31,
+    "n_terms": 15,
+    "d_k_exact": {
+      "1": "1/8 - sqrt(3)",
+      "2": "-97/6 + 5*sqrt(3)/288",
+      "3": "373/34560 - 676*sqrt(3)/27",
+      "4": "-59195/162 + 15055*sqrt(3)/1741824",
+      "5": "-252241*sqrt(3)/243 - 836891/139345920",
+      "6": "-48305749/4374 + 9142316411*sqrt(3)/827714764800",
+      "7": "-1287465032*sqrt(3)/32805 - 1350254778511/51649401323520",
+      "8": "-40374973312/98415 + 93501718487449*sqrt(3)/3286780084224000",
+      "9": "-4019762699807*sqrt(3)/2657205 - 3544466523791040269/40849114203684864000",
+      "10": "-1832144393628847/111602610 + 2266185144170540855701*sqrt(3)/24215354899944387379200",
+      "11": "-10199731407673592*sqrt(3)/167403915 - 93157155433076776666451707/305113471739299280977920000",
+      "12": "-2045407964754019399/3013270470 + 72384615283131212011594417541*sqrt(3)/213767192353964450088222720000",
+      "13": "-11486897375649131512*sqrt(3)/4519905705 - 345590592191476741494434438376971/303160745520167765579661312000000",
+      "14": "-55623507784289532287/1937102445 + 80765125035221041718170841662391441*sqrt(3)/62426860717512946288163857367040000",
+      "15": "-13248166827580991437814*sqrt(3)/122037454035 - 11266477750889952098998893087143499014329/2534530545131025619299452609101824000000"
+    },
+    "a_k_rational": {
+      "1": "1/8",
+      "2": "-97/6",
+      "3": "373/34560",
+      "4": "-59195/162",
+      "5": "-836891/139345920",
+      "6": "-48305749/4374",
+      "7": "-1350254778511/51649401323520",
+      "8": "-40374973312/98415",
+      "9": "-3544466523791040269/40849114203684864000",
+      "10": "-1832144393628847/111602610",
+      "11": "-93157155433076776666451707/305113471739299280977920000",
+      "12": "-2045407964754019399/3013270470",
+      "13": "-345590592191476741494434438376971/303160745520167765579661312000000",
+      "14": "-55623507784289532287/1937102445",
+      "15": "-11266477750889952098998893087143499014329/2534530545131025619299452609101824000000"
+    },
+    "b_k_sqrt3_coeff": {
+      "1": "-1",
+      "2": "5/288",
+      "3": "-676/27",
+      "4": "15055/1741824",
+      "5": "-252241/243",
+      "6": "9142316411/827714764800",
+      "7": "-1287465032/32805",
+      "8": "93501718487449/3286780084224000",
+      "9": "-4019762699807/2657205",
+      "10": "2266185144170540855701/24215354899944387379200",
+      "11": "-10199731407673592/167403915",
+      "12": "72384615283131212011594417541/213767192353964450088222720000",
+      "13": "-11486897375649131512/4519905705",
+      "14": "80765125035221041718170841662391441/62426860717512946288163857367040000",
+      "15": "-13248166827580991437814/122037454035"
+    },
+    "parity_structure_holds": true,
+    "simple_denominator_primes": [
+      2,
+      3,
+      5,
+      7
+    ],
+    "simple_denominator_3adic_valuations": [
+      0,
+      1,
+      3,
+      4,
+      5,
+      7,
+      8,
+      9,
+      12,
+      13,
+      14,
+      16,
+      17,
+      18,
+      20
+    ],
+    "smooth_denominators_le7": true,
+    "domb_sykes_radius_rho": "0.143796",
+    "domb_sykes_exponent_alpha": "0.155712",
+    "convergent_positive_radius": true,
+    "contrast_kappa_tower": "κ-tower is divergent Gevrey-1 (radius 0); D-ladder is convergent",
+    "no_low_order_p_recurrence": true,
+    "nearest_real_special_value_u_QAplus": "0.77492262",
+    "rho_over_sqrt3_over_12": "0.996248",
+    "rho_over_one_seventh": "1.00657",
+    "verdict": "D-ladder generating function D(ũ)=Σd_k ũ^k (d₁…d_15 exact ℚ(√3)): [1] exact parity structure (odd k → √3-part small-denominator, even k → rational part); [2] simple-denominator sequence is 3-smooth (Ohtsuki/Habiro factorial normalization; primes [2, 3, 5, 7]); [3] CONVERGENT with radius ρ≈0.1438 and weak branch-point exponent α≈0.156 — structurally distinct from the DIVERGENT Gevrey-1 κ-tower (routes 1); [4] no P-finite recurrence (order≤3, deg≤4); [5] the branch point is a complex singularity of log R(q(ũ)), not a simple real special value; ρ is within ~1% of √3/12 and 1/7 but NOT identified (anti-fit). No closed form emerges at 15 terms. Scope-(a); no c_k wired; no fit.",
+    "scope": "(a) — exact ℚ(√3) ladder + numerical singularity analysis; no wiring",
+    "caveats": [
+      "radius/exponent are Domb–Sykes extrapolations; small exponent (~0.1) converges slowly — ρ known to ~1%, α to a factor.",
+      "ρ within ~1% of √3/12 and 1/7 is reported as data, NOT an identification.",
+      "no c_k wired; no fit; no tier change."
+    ]
+  }
+}
