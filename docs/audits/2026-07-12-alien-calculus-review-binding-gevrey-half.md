@@ -234,6 +234,33 @@ The three owner-queued follow-ups of Addenda 2–3 are executed on
   and the char-0 converse `exists_antideriv_iff_fresidue_eq_zero`: the residue
   is the *complete* obstruction to exactness in the formal model.
 
+## Addendum 5 — spectral reading of the operator + the general balanced-twist lemma (PR #3715)
+
+Two further owner-picked follow-ups on the same PR:
+
+- **W9 — spectral reading of the transfer operator at q_0**
+  ([`lever1_transfer_operator_spectral_qgevrey.py`](../../computations/lever1_transfer_operator_spectral_qgevrey.py), exit 0).
+  Evaluating W6's `T_k = A_k + q^{2k}·B_k` numerically at the muon-canonical q_0
+  (50 dps) gives the **structural explanation of §3's measured class change**:
+  at q=1 the per-level multiplier `m_n = log(Z_n/Z_{n-1})` grows like `(1/2)ln n`
+  (Gevrey-1/2); at q_0 it is **linear in n**, tail slope `0.180 → 2·ln q_0 =
+  0.209` (13.7 % below at n=30, converging from below) ⇒ `log Z_n` quadratic ⇒
+  **q-Gevrey**. **Decomposition (honest, scope-(a), NOT sole-cause):** disabling
+  only the `q^{2k}` descent scalar drops the slope to `0.056`, so the descent
+  block is the **dominant** driver (~69 % of the rate) — but the content
+  monomials `q^{j−i}` are themselves quadratic-log (`max content = n(n−1)/2`) and
+  supply the residual 31 %. The naive "block B is *the* cause" reading is over-
+  narrowed and is explicitly avoided. Operator capped at n=30 (state space
+  `~p(n)·#corners`, millions by n=60).
+- **W10 — the general balanced-twist lemma in Lean**
+  ([`QOU/Common/BalancedQuantumTwist.lean`](../../content/quantum-observable-universe/lean/QOU/Common/BalancedQuantumTwist.lean), sorry-free).
+  The Step-1 algebra of `prop:binding-period-involution-statistic`, fully general
+  over a `Field`: `balancedNum_factor` (`q^k − q^{−k} = q^{−k}(q²−1)[k]_{q²}`, a
+  monomial identity), `prod_balancedNum_factor` (the product-level twist), and the
+  division-free `balanced_quantum_twist` assembly. The one partition-combinatorics
+  input (the hook-sum identity `Σ h(c) = b(λ)+b(λ')+n`) is exposed as the caller's
+  named hypothesis — honestly, not faked; no RSK needed.
+
 ## Discipline
 
 Formalize-first: the Gevrey sandwich was proved (Lean, sorry-free, lean-direct exit 0)
