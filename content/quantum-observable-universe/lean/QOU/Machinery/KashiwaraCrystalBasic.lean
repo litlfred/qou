@@ -209,4 +209,23 @@ class CompositeKashiwaraResidueA (G : CrystalGraph) : Prop where
       same reason). -/
   has_demazure : ∃ level, Nonempty (DemazureSubcrystal G level)
 
+/-! ## The standard `sl₂` crystal inhabits the full composite class
+
+Assembling the three base instances above (`StembridgeCrystal`,
+`TypeACrystal` at `n = 2`, `DemazureSubcrystal` at `level = 1`) shows the
+composite residue-A class is inhabitable by a real crystal — not just a
+conditional scaffold. -/
+
+/-- **`B(Λ₁)` inhabits `CompositeKashiwaraResidueA`**: it is a Stembridge
+crystal, carries a type-A embedding (`n = 2`) and a Demazure sub-crystal
+(`level = 1`).  The explicit `.{0,0}` universe annotation pins the two
+universe metavariables introduced by the universe-carrying `TypeACrystal`/
+`DemazureSubcrystal` target fields (§7d — `standardSl2Crystal.V = Bool`
+and each abstract `target.V` live in `Type 0`), so the three base instances
+unify at a single rigid universe. -/
+instance : CompositeKashiwaraResidueA.{0, 0} standardSl2Crystal where
+  is_stembridge := inferInstance
+  has_type_A := ⟨2, ⟨instSl2TypeACrystal⟩⟩
+  has_demazure := ⟨1, ⟨instSl2DemazureSubcrystal⟩⟩
+
 end QOU.Machinery
