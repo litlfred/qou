@@ -9,7 +9,7 @@ See [Table 1](#tbl:p-vs-np-boundary-table1-data).
 **The three equivalent criteria for $\mathcal{H}_c \neq \varnothing$.**
 
 1. **Ideal-theoretic.** The horizon ideal is non-trivial: $\mathfrak{h}_c \neq (0)$. Polynomial-time algorithms evaluate to $0$ on the boundary.
-2. **Cohomological.** The Skein resolution obstruction class does not vanish: $\kappa_c^{\mathrm{comp}}(L, q) \neq 0$. This obstruction class obstructs the lift from polynomial depth to full resolution.
+2. **Cohomological.** The Skein resolution obstruction class does not vanish: $\kappa_c^{\mathrm{comp}}(L, q) \neq 0$. This class obstructs the lift from polynomial depth to full resolution.
 3. **Information-theoretic.** The effective tree size, after interference, strictly exceeds the polynomial bandwidth budget: $I(\mathrm{poly}(c)) < c \cdot \log 3$ $q$-bits.
 
 **Connection to quantum computation.**
