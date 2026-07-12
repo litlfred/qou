@@ -44,6 +44,7 @@ import QOU.Archimedean.DilogarithmArchimedeanLimit
 import QOU.Archimedean.TypeBFoldedCrystalCombinatorics
 import QOU.Archimedean.HyperbolicVolumeIndependence
 import QOU.Archimedean.JetOrderIndependence
+import QOU.Archimedean.RealisationVolumeCompatibility
 
 /-!
 # Descartes Universe — Module Index
