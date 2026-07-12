@@ -155,3 +155,4 @@ anchor-blind κ̃₁ forbids any single-term identification.
 - finite-b mechanism `2πb² = i·t`: `qbeta_c3_phib_finite_b_volume_correction_probe.py` (#3654)
 - `1/u³` artifact + `dq*/dQ_β`: [`2026-07-12-c3-hypersensitivity-is-ladder-1-over-u3.md`](2026-07-12-c3-hypersensitivity-is-ladder-1-over-u3.md) (#3636)
 - Growth-class obstruction (why the bridge is resummation, not term-matching): [`2026-07-12-fmap-4one-qbeta-bridge-growth-obstruction.md`](2026-07-12-fmap-4one-qbeta-bridge-growth-obstruction.md)
+- Adjacent (merged during this PR's flight): the deformed DG **1-loop** `τ(u) = e^u·τ_even(u)` (`cbd5de37`, geometric sinh carrier at one loop) — complementary to this PR's **2-loop-and-up** rungs `κ̃₁/κ̃₃(u)`; both find the odd meridian content in a simple exponential/linear factor. The κ-tower bar-parity Lean + Borel–Padé resummation sibling (#3692, merged) can rerun on these deformed rungs.
