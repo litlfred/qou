@@ -27,6 +27,22 @@ divergent).  It is NOT u/(1-u) (whose ordinary coefficients are all
 1/k).  An earlier draft of this docstring mislabeled the pattern as
 u/(1-u); that was wrong and is corrected here.
 
+CHANNEL-ATTRIBUTION NOTE (2026-07-12, resurgence-utilization audit):
+the growth-class question this docstring raises was settled as a
+CHANNEL DICHOTOMY by the bridge growth-obstruction audit
+(docs/audits/2026-07-12-fmap-4one-qbeta-bridge-growth-obstruction.md,
+scope-(b) with cited invariant): the ODD-channel Q_beta ladder c_k is
+CONVERGENT with a simple pole at u_substrate (KC8; c_{k+1}/c_k ->
+1/u = 117.41 plateau), while the factorially-divergent Gevrey-1
+object is the EVEN channel (the 4_1/Ohtsuki kappa_n rungs, ratios
+rising without bound). A "-(k-1)! divergent Borel-summable" reading
+of the c_k therefore cannot describe the odd-channel ladder viewed
+alone; if the k=2,3 match means anything, it attributes to the
+even-channel resummation INPUT of the bridge map (which is
+necessarily a Borel/median resummation per that audit), not to the
+ladder itself. This note re-scopes the docstring's framing; the
+numerical results below stand unchanged.
+
 The c_2, c_3 EXACT match to -(k-1)! is striking; either:
   (a) The full pattern c_k_alg = -(k-1)! holds, and higher-k bias
       corrections (beyond the leading c_{k+1}·u of probe 6.a) bring
