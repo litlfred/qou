@@ -152,6 +152,62 @@ that motion is the non-associative part colour alone does not see.
 (Mathlib has `Quaternion` but no octonions, so the `𝕆` rung is stated, not built;
 the two associative rungs `ℂ, ℍ` are formalised sorry-free.)
 
+## The categorical route: non-associativity as a pentagon (3-cocycle) deformation
+
+The owner's framing — *"the non-associative doubling deforms the pentagon, like
+deforming commutative to non-commutative; a categorical deformation"* — is exactly
+right, and it names the mathematically-correct route to octonion multiplication.
+
+A monoidal category has **two** independent coherence constraints; deforming each
+is a different physics:
+
+| deform | constraint | coherence law | deformation datum | algebraic home |
+|---|---|---|---|---|
+| commutative → non-commutative | braiding `c_{V,W}` | **hexagon** (Yang–Baxter) | R-matrix / quasitriangular `R` | quantum groups — **QOU's Hecke engine** |
+| associative → **non-associative** | associator `α_{V,W,X}` | **pentagon** (Mac Lane) | 3-cocycle / Drinfeld associator `Φ` | **quasi-Hopf algebras** |
+
+**The pentagon identity *is* the 3-cocycle condition.** A non-trivial but
+pentagon-coherent associator is a class in `H³`. This is precisely the octonions:
+
+- **Albuquerque & Majid, "Quasialgebra structure of the octonions," J. Algebra
+  220 (1999) 188–224** ([arXiv:math/9802116](https://arxiv.org/abs/math/9802116);
+  `albuquerque-majid1999`). The octonions are the **twisted group algebra**
+  `𝕆 = ℝ_F[(ℤ/2)³]`: the group algebra of `(ℤ/2)³` (its `8` elements index the
+  units `e₀,…,e₇`), made non-associative by a 2-cochain `F` whose associator is a
+  **nontrivial 3-cocycle** in `H³((ℤ/2)³; ℤ/2)`. Octonion non-associativity **is**
+  a pentagon deformation.
+- **Drinfeld, "Quasi-Hopf algebras," Leningrad Math. J. 1 (1990) 1419–1457**
+  (`drinfeld1985` in the corpus flags the 1985 quantum-groups note; this is the
+  distinct 1989/90 quasi-Hopf paper). A quasi-Hopf algebra carries an associator
+  `Φ ∈ H^{⊗3}` satisfying the **pentagon**; its representation category is monoidal
+  with that `Φ`. This is the general "deform the associator" framework —
+  the associativity-side twin of the quasitriangular `R` (which QOU already uses).
+- **Majid, Foundations of Quantum Group Theory, CUP 1995** (`majid1995`, already
+  cited) — cochain twists, monoidal categories, the `Vect_G^ω` (pointed) picture.
+- Context: **Baez, "The Octonions," Bull. AMS 39 (2002) 145–205** (the `(ℤ/2)³`
+  grading); **Etingof–Gelaki** on pointed fusion categories `Vect_G^ω`,
+  `ω ∈ H³(G, k^×)` — the octonion category is `Vect_{(ℤ/2)³}^ω`.
+
+**Where QOU already stands.** QOU carries pentagon structure —
+`QOU.BraidsAndKnots.PachnerPentagonBorromean`,
+`QOU.BraidKnot.QRogersPentagonArchimedean`,
+`QOU.QuantumBloch.PentagonUvCommutation` — but as pentagon *coherence* (a trivial /
+strict associator), **not** a deformed one. QOU deformed the **braiding** (hexagon
+→ the Hecke/quantum-group engine); the octonions need deforming the **orthogonal**
+constraint, the **associator** (pentagon → the `(ℤ/2)³` 3-cocycle). So the
+categorical route to `𝕆` is: **put a `(ℤ/2)³` grading on QOU's substrate and turn
+on the Albuquerque–Majid 3-cocycle associator.** This is the categorical
+counterpart of the lattice `A₅ → E₈ → integral-octonion` (McKay) route above.
+
+**Mechanism, formalised.** For any 2-cochain twist `e_a·e_b = F(a,b)·e_{a+b}`, the
+associator `α = dF` **automatically satisfies the pentagon** because `d² = 0` —
+this is why a graded twist breaks strict associativity while keeping coherence.
+Proved sorry-free: `assoc_pentagon`
+([`PentagonTwistAssociator.lean`](../../content/quantum-observable-universe/lean/QOU/BringsSurface/PentagonTwistAssociator.lean)),
+generic additive grading + phase group (§7c). The remaining, octonion-specific
+datum is the concrete `(ℤ/2)³` cochain `F` whose class is nontrivial — a finite
+object, the natural next `decide`-target.
+
 ## Formalisation
 
 - [`OctonionInvariantObstruction.lean`](../../content/quantum-observable-universe/lean/QOU/BringsSurface/OctonionInvariantObstruction.lean)
@@ -160,3 +216,6 @@ the two associative rungs `ℂ, ℍ` are formalised sorry-free.)
 - [`ColourComplexStructure.lean`](../../content/quantum-observable-universe/lean/QOU/BringsSurface/ColourComplexStructure.lean)
   — `complex_mul_from_sqrt_neg_one` (colour atom, `ℂ`) + `rotate_ijk_sq` (the
   `i, j, k` rotation, `ℍ`, proof uses associativity). Sorry-free, generic (§7c).
+- [`PentagonTwistAssociator.lean`](../../content/quantum-observable-universe/lean/QOU/BringsSurface/PentagonTwistAssociator.lean)
+  — `assoc_pentagon`: the twist associator `dF` satisfies the pentagon (`d²=0`),
+  the mechanism of the categorical route. Sorry-free, generic (§7c).

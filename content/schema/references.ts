@@ -6070,6 +6070,25 @@ export const references: CSLData[] = [
     note: "Verified 2026-06-23 (doth): Majid, Foundations of Quantum Group Theory, CUP 1995, ISBN 0521460328 (978-0-521-46032-7) — confirmed via ISBN registries. Cited in QuaternionFromHecke.lean. See docs/audits/2026-06-23-bibliography-doi-verification-doth.md §D.",
   }),
 
+  // ── Albuquerque & Majid 1999 — octonions as a (ℤ/2)³ 3-cocycle twist ──
+  ref({
+    id: "albuquerque-majid1999",
+    type: "article-journal",
+    title: "Quasialgebra structure of the octonions",
+    author: [
+      { family: "Albuquerque", given: "Helena" },
+      { family: "Majid", given: "Shahn" },
+    ],
+    "container-title": "Journal of Algebra",
+    volume: "220",
+    issue: "1",
+    page: "188-224",
+    issued: { "date-parts": [[1999]] },
+    DOI: "10.1006/jabr.1999.7916",
+    URL: "https://arxiv.org/abs/math/9802116",
+    note: "The octonions 𝕆 = ℝ_F[(ℤ/2)³] realised as the group algebra of (ℤ/2)³ twisted by a 2-cochain F whose associator is a nontrivial 3-cocycle — i.e. octonion non-associativity as a pentagon (3-cocycle) deformation, the associativity-side analogue of the braiding/hexagon (quantum-group) deformation. Cited in the genus-4 octonion-recovery audit (docs/audits/2026-07-12-octonion-recovery-from-genus4-analysis.md).",
+  }),
+
   // ── Murasugi 1996 — Knot Theory and Its Applications ──────────
   ref({
     id: "murasugi1996",
