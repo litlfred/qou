@@ -34,10 +34,12 @@ downstream.
   `mul_inv_cancel₀ h.pole_nonzero`).
 - Three specialisations:
   - `bring_residue_at_T_3_5` — pole order 10, used by p-n averaging
-    (merged #1445);
-  - `bring_residue_at_T_2_9` — pole order 9, used by 1/α_EM (#1444);
+    ([p-n averaging uniqueness](#prop:pn-averaging-uniqueness));
+  - `bring_residue_at_T_2_9` — pole order 9, used by 1/α_EM
+    ([fine-structure observation](#rem:fine-structure-observation));
   - `bring_residue_meson_pair` — pole orders 3 and 4, used by
-    $m_K^2/m_\pi^2$ (#1455).
+    $m_K^2/m_\pi^2$
+    ([meson color-tube uniqueness](#prop:meson-color-tube-uniqueness)).
 - `bring_residue_subsingleton` — Subsingleton companion.
 
 ## Closing the class instance
@@ -66,14 +68,14 @@ Each specialisation collapses an "open audit finding" or
 "residue normalisation" gap into a **single shared open class
 instance**:
 
-| PR | downstream form | resolvent specialisation |
+| consumer block | downstream form | resolvent specialisation |
 |---|---|---|
-| #1444 | $1/\alpha_{\rm EM} = q \cdot [9]_q \cdot [10]_q + 2/(3\pi)$ | `BringResidueAtOrder 9` + `10` (genus-4 pair) |
-| merged #1445 | $\sigma_{pn}(q)$ Bring color-tube weight $1/(1 - h_q \cdot q^{10})$ | `BringResidueAtOrder 10` |
-| #1455 | $m_K^2 / m_\pi^2 = [3]_q \cdot [4]_q$ | `BringResidueAtOrder 3` + `4` (meson pair) |
+| [fine-structure observation](#rem:fine-structure-observation) | $1/\alpha_{\rm EM} = q \cdot [9]_q \cdot [10]_q + 2/(3\pi)$ | `BringResidueAtOrder 9` + `10` (genus-4 pair) |
+| [p-n averaging uniqueness](#prop:pn-averaging-uniqueness) | $\sigma_{pn}(q)$ Bring color-tube weight $1/(1 - h_q \cdot q^{10})$ | `BringResidueAtOrder 10` |
+| [meson color-tube uniqueness](#prop:meson-color-tube-uniqueness) | $m_K^2 / m_\pi^2 = [3]_q \cdot [4]_q$ | `BringResidueAtOrder 3` + `4` (meson pair) |
 
 Closing the class once therefore discharges the residue open math
-across all three PRs.
+across all three consumers.
 
 ## Lean formalization
 
