@@ -48,6 +48,14 @@ data to the observable c_k **is** a Borel/median resummation. What still
 does not exist: a conformal-map-of-the-Borel-plane and a transseries
 reconstruction.
 
+**Currency note (rebase sync, 2026-07-12 evening):** main subsequently
+landed a Borel–Padé **resummation-to-value** probe (`1f2e5c76`, exact
+smooth Im 𝔙 of the κ-tower) and the bar-parity selection rule
+`rem:ohtsuki-tower-bar-parity` (`de1b0c62`, even→Vol / odd→S, with Lean
+`98c51949`). These are complementary to this branch's C1/G2+C3
+(singularity-location and large-order tests, vs value resummation and
+parity selection); no duplication.
+
 ## 1. Compute axis — speed / accuracy opportunities (ranked)
 
 ### C1. Stabilize the 4₁ action extraction: conformal-mapped Borel plane (highest ROI)
