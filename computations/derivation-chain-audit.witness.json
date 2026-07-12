@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-12T12:06:49.048335+00:00",
-  "commitSha": "e88e35a81f87964bb8ec207cc58ff6fefed40a86",
+  "computedAt": "2026-07-12T20:51:06.070922+00:00",
+  "commitSha": "6d5345635341c686dd413035d7f01278e2267a6c",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,11 +559,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "ff40fb7a9d7d",
-  "scriptCommitSha": "bb8ccd91cb65a6da269547ea6aff5e519b4d97a3",
+  "scriptCommitSha": "1604d3386fb63d70ac6bed7bb3648839b2205ded",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -2731,6 +2731,9 @@
         "lepton-t2n-torus-tower.witness.json",
         "lepton-tower-probe-1-cinquefoil-muon.witness.json",
         "level1-qvalues.witness.json",
+        "lever1-binding-classical-kernel-derive.witness.json",
+        "lever1-habiro-tail-closed-form.witness.json",
+        "lever1-sw-period-lw-rate-refine.witness.json",
         "li2q-fbor-expansion-probe.witness.json",
         "li2q-phiq-bar-symmetry.witness.json",
         "linking-weight-canonical-object-lwfix.witness.json",
