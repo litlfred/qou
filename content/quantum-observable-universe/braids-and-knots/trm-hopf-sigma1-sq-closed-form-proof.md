@@ -17,15 +17,15 @@ $\frac{q^{5/2} - q^{1/2} + q^2 + q}{q^2 + q}$. Algebraically this
 equals $1 + (q-1)/q^{1/2}$, as can be verified by clearing
 denominators.
 
-Markov invariance under stabilisation ([`rem:markov-axioms-primitive`](#rem:markov-axioms-primitive)
-axioms 3–4): for $\beta \in H_n(q)$,
-$\mathrm{tr}_M(\beta \cdot \sigma_n) = z\, \mathrm{tr}_M(\beta)$ and
-$\mathrm{tr}_M(\beta \cdot \sigma_n^{-1}) = z\, \mathrm{tr}_M(\beta)$
-when the new generator $\sigma_n$ is disjoint from $\beta$. Since
-$\sigma_1^2$ involves only the first generator, its trace in $H_n$
-for any $n \geq 2$ coincides with the trace in $H_2$: no
-stabilisation factor enters because the new strand is unlinked from
-the closure of $\sigma_1^2$. ∎
+Stabilisation ([`rem:markov-axioms-primitive`](#rem:markov-axioms-primitive)
+axiom 3 and its $\sigma_n^{-1}$ consequence) scales the trace by
+$z$ for an adjoined positive crossing and by
+$z_{-} = z - (q - q^{-1})$ for a negative one. Neither case arises
+here: $\sigma_1^2$ involves only the first generator, and the Markov
+trace is compatible with the tower inclusions
+$H_2(q) \subset H_n(q)$, so its trace in $H_n$ for any $n \geq 2$
+coincides with the trace in $H_2$ — no stabilisation factor enters
+because no new crossing is adjoined. ∎
 
 ## Taylor expansion at $q = 1 + \varepsilon$
 
