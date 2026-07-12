@@ -26,9 +26,3 @@ Picard--Fuchs operator (so the kernel is the prolongation symbol, not a generic 
 at the branch points and matching it against the residue weights $a_D^{(n)}$
 (the consistency test of the keystone workplan, gated on the per-knot weights at
 $n = 2, 3$).
-
-The operator recurrence is verified sorry-free
-([`QOU.Mass.prolongation_fixed_depth_recurrence`](#prop:prolonged-periods-fixed-depth));
-the finite-rank premise (Gauss--Manin / Cayley--Hamilton) is the cited
-structural input, and the scalar period recurrence follows by applying the
-linear functional $\varphi(\,\cdot\,v_0)$ to both sides.

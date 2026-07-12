@@ -18,10 +18,7 @@ M^{n+d} = M^n\!\cdot\!\Big(\sum_{j<d} c_j M^j\Big)
         = \sum_{j<d} c_j\,M^{n+j},
 $$
 where the middle step is `mul_smul_comm` (scalars commute past the operator
-product) and the last is $M^n\!\cdot M^j = M^{n+j}$. This is the Lean theorem
-[`QOU.Mass.prolongation_fixed_depth_recurrence`](#prop:prolonged-periods-fixed-depth),
-verified sorry-free; the finite-rank premise (Cayley--Hamilton) is its
-hypothesis.
+product) and the last is $M^n\!\cdot M^j = M^{n+j}$.
 
 *Period recurrence.* Applying the linear functional $T \mapsto \varphi(T v_0)$
 to both sides and using its additivity and $R$-homogeneity (`map_sum`,

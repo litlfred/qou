@@ -1,5 +1,3 @@
-*Lean sibling resolves to [`QOU.Mass.linear_chain_cluster_measure`](lean/QOU/Mass/LinearChainBondCount.lean) — sorry-free (combinatorial content over $\mathbb{N}$).*
-
 **Proposition (bond-count multiplicity).**
 *The canonical atomic braid is a **linear chain** of $A$ nucleon blocks
 (consecutive blocks joined by a single inter-nucleon crossing). Consequently, in
@@ -17,9 +15,8 @@ $$
   \;=\; \frac{(A-1)\,A\,(A+1)}{6}.
 $$
 
-Reindexed by $k = n-1$ this is $\sum_{k=0}^{A-1}(A-k)\,k$; the Lean sibling proves
-the equivalent integer form $6\sum_{k<A}(A-k)\,k = (A-1)A(A+1)$ (`×6` to stay in
-$\mathbb{N}$), by induction.
+Reindexed by $k = n-1$ this is $\sum_{k=0}^{A-1}(A-k)\,k$, and the identity
+follows by induction on $A$.
 
 The multiplicity $M_n = n-1$ fixes the per-body-order weight of the θ_λ residue
 $w_n(K) = M_n\,\mathrm{Vol}_n(K)$ with **no fitted constant** — the count is the

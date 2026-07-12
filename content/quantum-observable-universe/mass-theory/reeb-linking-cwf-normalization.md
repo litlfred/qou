@@ -28,9 +28,7 @@ direction*.
 Given the class, the pn-bond magnitude satisfies the deformed-criticality
 equation of
 [the criticality proposition](reeb-pn-magnitude-criticality.md):
-$g^2\,(1 + [2]_v^2) = 1$, equivalently $g^2\,(5 + (v - v^{-1})^2) = 1$
-(`amplitude_bond_criticality` in the Lean sibling, sorry-free modulo the
-class).
+$g^2\,(1 + [2]_v^2) = 1$, equivalently $g^2\,(5 + (v - v^{-1})^2) = 1$.
 
 ## Scope of the conjecture
 

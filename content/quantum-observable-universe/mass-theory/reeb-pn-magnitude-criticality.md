@@ -35,14 +35,6 @@ $z/\sqrt{1+z^2}$ evaluated at the Markov bond factor $z = 1/[2]_v$ whenever
 square roots are available, and satisfies
 $g^2\,(5 + (v-v^{-1})^2) = 1$ by item 1.*
 
-## Lean formalization
-
-All four items are proved sorry-free over generic base rings in
-`QOU.MassTheory.ReebPnMagnitude`: `deformation_eq_ceiling` (item 1),
-`ss_matrix_sq` (item 2), `ss_det_marginal` and
-`ss_det_zero_at_criticality` (item 3), `pn_sign_conjugation`,
-`pn_sign_det_invariant` and `pn_sign_trace_blind` (item 4).
-
 ## Scope
 
 The proposition is pure exchange-matrix algebra; it carries no physical

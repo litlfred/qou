@@ -36,9 +36,3 @@ not the period recurrence. The exact prolongation kernel is the q-Bessel-class
 $q$-difference operator of the super-exponential residue sum
 ([`prop:binding-genfun-qdifference`](#prop:binding-genfun-qdifference)), not a
 $2\times 2$ Cayley--Hamilton relation.
-
-The Lean witnesses
-[`QOU.Mass.sl2Invariant_succ`](#prop:sl2-period-conserved-quantity) and
-[`QOU.Mass.sl2Invariant_eq_zeroth`](#prop:sl2-period-conserved-quantity) prove
-$H_{n+1} = H_n$ and $H_n = H_0$ over a generic commutative ring, sorry-free; the
-single-step identity is closed by `ring` after substituting the recurrence.
