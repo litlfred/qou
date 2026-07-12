@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-07-12T00:58:06.663048+00:00",
-  "commitSha": "29e986b31a4e70968895fc6f5e7196b61bfcc6e6",
+  "computedAt": "2026-07-12T01:34:50.156046+00:00",
+  "commitSha": "2715fcd523e91c950d5a11434ac3b9d159a35794",
   "assertions": [
     {
       "name": "manybody_residual_decouples_from_nucleon_count",
@@ -18,7 +18,7 @@
   "computation": "gap2b-irreducible-demand",
   "scriptFile": "gap2b_irreducible_demand.py",
   "scriptHash": "9cd8afb12bcb",
-  "scriptCommitSha": "29e986b31a4e70968895fc6f5e7196b61bfcc6e6",
+  "scriptCommitSha": "4958f1d3f097f98390881fff300be81fcf9dc7a3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
