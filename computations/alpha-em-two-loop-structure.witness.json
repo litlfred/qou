@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-12T10:42:38.663085+00:00",
-  "commitSha": "8d7dcdb545c85931a1f417e93deb4472ebb27f43",
+  "computedAt": "2026-07-12T11:47:33.529376+00:00",
+  "commitSha": "47fe861498b74f4133215b3ffedb6c2bce131754",
   "assertions": [
     {
       "name": "two_loop_not_resummation",
@@ -25,8 +25,8 @@
   "durationMs": 17,
   "computation": "alpha-em-two-loop-structure",
   "scriptFile": "alpha_em_two_loop_structure_probe.py",
-  "scriptHash": "aa9306e51645",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "ff9bb3f59276",
+  "scriptCommitSha": "47fe861498b74f4133215b3ffedb6c2bce131754",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

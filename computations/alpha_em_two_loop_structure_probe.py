@@ -28,13 +28,16 @@ TWO STRUCTURAL FINDINGS (scope-(a); no coefficient fitted):
 WHAT THE REMAINING α_EM CONJECTURE ACTUALLY IS (after the value + anchor are settled):
    (a) the 2-loop c₂ = a structural EmFermionLoop (categorical 2-loop diagram) —
        a genuine QFT-analog computation, not a fit (RT phase-2);
-   (b) the COUPLING MECHANISM = why the IR zero-mode enters 1/α as dim H¹/Area. This
-       is the heat-kernel / conformal-anomaly structure: the a₁ Seeley–DeWitt
-       coefficient of a gauge field on a genus-g surface is ∝ ∫R = −2πχ = 4π(g−1)
-       (Gauss–Bonnet), so a vacuum-polarization contribution ∝ b₁/Area = 2g/(4π(g−1))
-       is exactly the zero-mode value proved genus-determined
-       (QOU/Archimedean/EmCouplingBringZeroMode.lean, this PR). The physics claim
-       that this a₁-coefficient IS the α_EM IR shift remains the conjecture.
+   (b) the COUPLING MECHANISM = why the IR zero-mode enters 1/α as dim H¹/Area.
+       CANDIDATE framing (re-scoped 2026-07-12 after the deep-research literature
+       check, docs/audits/2026-07-12-alpha-em-heat-kernel-coupling-outside-view.md):
+       a heat-kernel / conformal-anomaly (a₁ Seeley–DeWitt) origin. The literature
+       sweep found NO precedent for a b₁/Area coupling term (mainstream U(1)-on-
+       2-surface topology enters via the Chern index, area-independent), and the
+       specific a₁ ∝ Gauss–Bonnet decomposition claim was adversarially REFUTED —
+       so this is an unprecedented candidate, not an identified mechanism. The
+       zero-mode VALUE stays proved genus-determined (Lean, this PR); the coupling
+       identification is the open, Wyler-shaped referee pivot.
 
 Neither (a) nor (b) is session-closable; both are research-frontier. This probe
 documents the honest frontier and prunes the resummation hypothesis. No c_k / no
