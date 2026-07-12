@@ -29,6 +29,7 @@ export default chapter({
         "madelung-divisor-topology",
         "hamilton-jacobi-phase",
         "q-navier-stokes",
+        "q-navier-stokes-archimedean",
         "q-ns-properties",
         "q-metric-contact-deformation",
         "geodesic-vortices",
