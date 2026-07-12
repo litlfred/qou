@@ -287,6 +287,7 @@ export default chapter({
             "bond-order-eq-jet-degree",
             "bond-order-eq-jet-degree-proof",
             "binding-manybody-jet-filtration",
+            "cyclotomic-boundary-at-keystone",
             "bk-coordination-multiplicity",
             "jet-filtration-binding-extensive",
             "linear-chain-bond-count",
