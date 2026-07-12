@@ -85,12 +85,25 @@ manifestations of the analytic continuation from `|q|=1` to real `q₀>1` — an
 continuation **is** the state integral (Faddeev `Φ_b` / Borel-median resummation),
 not an algebraic relation between `A` and `u`. So the honest deliverable is `A`
 itself (the even-channel divergence rate, a new datum characterising what the
-resummation must resum) and its *arithmetic* (relation to `Vol(4₁)/2π` and the
-sub-dominant saddle) — **not** a naive `b·A²` test. Extracting `κ₅, κ₆` sharpens `A`
-(the 4 exact rungs give `A ≈ 0.7`, consistent with the documented `0.688`); the
-Borel-singularity probe [`qbeta_even_borel_singularity.py`](scripts/qbeta_even_borel_singularity.py)
-reports it. This is the concrete complement to the Φ_b construction — *not* a
-closure of the bridge.
+resummation must resum) and its *arithmetic* — **not** a naive `b·A²` test.
+
+**Measured (probe [`qbeta_even_borel_singularity.py`](scripts/qbeta_even_borel_singularity.py),
+witness committed):** with `κ₅ ≈ 84.642166 [14d]` and `κ₆ ≈ 676.94668 [10d]`
+extracted on top of the four exact rungs, the ratios `r_n = κ_{n+1}/κ_n =
+1.319, 3.631, 4.933, 6.464, 7.998` rise **linearly** in `n` (the Gevrey-1
+signature), giving the Borel singularity
+
+  `A = 0.6177` (fit `r_n = n/A + β/A`, `β ≈ 0.007`),
+
+and suggestively `A ≈ 2·Vol(4₁)/2π = Vol/π` to **4.4%** (`A/(Vol/π) = 0.956`) —
+consistent with the standard resurgence picture (Borel singularities of a
+hyperbolic-knot asymptotic at multiples of the volume unit). A 5-ratio low-order
+fit is biased, so `Vol/π` is reported as *suggestive*, not identified. κ₅/κ₆
+themselves are **not** exactly identified: κ₅'s height outgrew its 14 attained
+digits, and κ₆'s only PSLQ hit (height 58033 at 10 digits) is an entropy-bound
+false positive of exactly the #3571 class and is rejected — the exact-ID frontier
+after κ₄ is **precision-limited, not structural**. This is the concrete
+complement to the Φ_b construction — *not* a closure of the bridge.
 
 ## Honest scope (anti-laundering)
 
