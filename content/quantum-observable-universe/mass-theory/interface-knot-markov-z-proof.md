@@ -3,16 +3,16 @@
 For a positive interface generator $\sigma_g$, the **Markov axiom**
 ([`thm:jones-markov-trace`](#thm:jones-markov-trace)) gives
 $$
-  \tau_M(\alpha \cdot \sigma_g) \;=\; z \cdot \tau_M(\alpha)
+  \mathrm{tr}_M(\alpha \cdot \sigma_g) \;=\; z \cdot \mathrm{tr}_M(\alpha)
   \qquad \forall\, \alpha \in H_{n}(q).
 $$
 For a negative interface generator $\sigma_g^{-1}$, the **Hecke skein
 relation** $\sigma_g^{-1} = \sigma_g - h \cdot \mathbf{1}$ combined
-with linearity of $\tau_M$ gives
+with linearity of $\mathrm{tr}_M$ gives
 $$
-  \tau_M(\alpha \cdot \sigma_g^{-1})
-  \;=\; \tau_M(\alpha \cdot \sigma_g) - h \cdot \tau_M(\alpha)
-  \;=\; (z - h) \cdot \tau_M(\alpha).
+  \mathrm{tr}_M(\alpha \cdot \sigma_g^{-1})
+  \;=\; \mathrm{tr}_M(\alpha \cdot \sigma_g) - h \cdot \mathrm{tr}_M(\alpha)
+  \;=\; (z - h) \cdot \mathrm{tr}_M(\alpha).
 $$
 Iterating over the $p_+(K) + p_-(K)$ interface generators of
 $\bowtie_K$ — each one is "topmost" relative to the constituent
@@ -30,18 +30,18 @@ $$
   \;=\; \sigma_g - \tfrac{h}{2}\cdot\mathbf{1},
 $$
 the last equality again from the Hecke skein $\sigma_g^{-1} = \sigma_g - h$.
-Linearity of $\tau_M$ then gives
+Linearity of $\mathrm{tr}_M$ then gives
 $$
-  \tau_M(\alpha\cdot\sigma_{\mathrm{bar}})
-  \;=\; \tau_M(\alpha\cdot\sigma_g) - \tfrac{h}{2}\,\tau_M(\alpha)
-  \;=\; \Bigl(z - \tfrac{h}{2}\Bigr)\cdot\tau_M(\alpha).
+  \mathrm{tr}_M(\alpha\cdot\sigma_{\mathrm{bar}})
+  \;=\; \mathrm{tr}_M(\alpha\cdot\sigma_g) - \tfrac{h}{2}\,\mathrm{tr}_M(\alpha)
+  \;=\; \Bigl(z - \tfrac{h}{2}\Bigr)\cdot\mathrm{tr}_M(\alpha).
 $$
 Thus **all three** per-interface factors — $z$ (positive), $z-h$
 (negative), $z-\tfrac{h}{2}$ (bar-invariant p-n) — follow by
-trace-linearity from the *single* Markov axiom $\tau_M(\alpha\sigma_g) =
-z\,\tau_M(\alpha)$ plus the skein $\sigma_g^{-1}=\sigma_g-h$; none is an
+trace-linearity from the *single* Markov axiom $\mathrm{tr}_M(\alpha\sigma_g) =
+z\,\mathrm{tr}_M(\alpha)$ plus the skein $\sigma_g^{-1}=\sigma_g-h$; none is an
 independent input or a fit. The division-free form
-$\tau_M(\alpha(\sigma_g+\sigma_g^{-1})) = (2z-h)\,\tau_M(\alpha)$ is
+$\mathrm{tr}_M(\alpha(\sigma_g+\sigma_g^{-1})) = (2z-h)\,\mathrm{tr}_M(\alpha)$ is
 formalised over a generic commutative ring as
 `interface_knot_markov_z_bar_symmetric` (the $\tfrac12$ normalisation is
 deferred to the archimedean realisation, per the base-ring convention).
@@ -49,9 +49,9 @@ deferred to the archimedean realisation, per the base-ring convention).
 ### categorical verification (4 atoms, exact representation Rust kernel)
 
 Computed via the canonical formalism
-using `pyhecke_native` for full $\tau_M$ at $H_n$ for $n \in \{6, 9, 12\}$:
+using `pyhecke_native` for full $\mathrm{tr}_M$ at $H_n$ for $n \in \{6, 9, 12\}$:
 
-| atom | $A$ | $p_+$ | $p_-$ | $\tau_M^{\mathrm{FULL}}/\tau_M^{\mathrm{CONSTIT}}$ | predicted $z^{p_+}(z-h)^{p_-}$ | rel. err. |
+| atom | $A$ | $p_+$ | $p_-$ | $\mathrm{tr}_M^{\mathrm{FULL}}/\mathrm{tr}_M^{\mathrm{CONSTIT}}$ | predicted $z^{p_+}(z-h)^{p_-}$ | rel. err. |
 |---|:-:|:-:|:-:|---:|---:|---:|
 | D    | 2 | 1 | 0 | 0.49932033 | 0.49932033 | $5\times10^{-16}$ |
 | T    | 3 | 1 | 1 | 0.14493273 | 0.14493273 | $9\times10^{-16}$ |
@@ -87,26 +87,26 @@ This locks 's interface-knot factorisation as
 *derivation-grade*: each interface in the canonical atomic braid
 contributes a Markov-trace factor that is either $z$ or $z - h$,
 determined by the crossing sign. No empirical-fit parameter remains
-at the $\tau_M$ level.
+at the $\mathrm{tr}_M$ level.
 
 ### Constit-side companion identity (Phase 5g, conjectural)
 
 The factorisation $(\star)$ isolates the **interface** contribution
-to the $\tau_M$ ratio.  The complementary **constit** factor —
-$\tau_M(\mathcal{B}_K^{\mathrm{vac}})$ at varying $Z$ — admits its own
+to the $\mathrm{tr}_M$ ratio.  The complementary **constit** factor —
+$\mathrm{tr}_M(\mathcal{B}_K^{\mathrm{vac}})$ at varying $Z$ — admits its own
 clean categorical form at the substrate point:
 $$
-  \frac{\tau_M\!\bigl(\beta_{(Z+1, N)}^{\mathrm{constit}}\bigr)}
-       {\tau_M\!\bigl(\beta_{(Z, N)}^{\mathrm{constit}}\bigr)}
+  \frac{\mathrm{tr}_M\!\bigl(\beta_{(Z+1, N)}^{\mathrm{constit}}\bigr)}
+       {\mathrm{tr}_M\!\bigl(\beta_{(Z, N)}^{\mathrm{constit}}\bigr)}
   \;=\; (2q - 1) \,+\, O(h^4)
   \quad\text{at }q_0.
 $$
 This is the content of
 `conj:constit-factor-2q-minus-1`
 (Phase 5g, $0.033\%$ rel. err.).  Combining $(\star)$ with the
-constit-side conjecture yields the **full per-Z $\tau_M$ step**
+constit-side conjecture yields the **full per-Z $\mathrm{tr}_M$ step**
 $$
-  \frac{\tau_M(\mathcal{B}_K^{Z+1, N})}{\tau_M(\mathcal{B}_K^{Z, N})}
+  \frac{\mathrm{tr}_M(\mathcal{B}_K^{Z+1, N})}{\mathrm{tr}_M(\mathcal{B}_K^{Z, N})}
   \;=\; z \cdot (2q - 1) \,+\, O(h^4)
   \;=\; \frac{2q - 1}{q^{1/2} + q^{-1/2}} \,+\, O(h^4).
 $$

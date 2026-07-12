@@ -49,7 +49,7 @@ shapes differ). However:
    coefficients in $\xi$, then the resulting `CKRecursion ℝ` instance
    would inherit its kernel from $F$ — **not** from the $z$-recursion.
 2. The $z$-recursion's role in this picture is **upstream auxiliary
-   data**: the Markov parameter $z(q)$ enters $\Delta\tau_M(q)$
+   data**: the Markov parameter $z(q)$ enters $\Delta\mathrm{tr}_M(q)$
    through the canonical Wenzl weights $y_\lambda(q)$
    (see [`prop:qbeta-per-block-chi-closed-forms`](qbeta-per-block-chi-closed-forms.md)
    §Extension #4), and the $z$-Taylor expansion is what one would

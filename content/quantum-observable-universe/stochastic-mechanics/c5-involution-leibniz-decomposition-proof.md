@@ -50,7 +50,7 @@ precision-ladder corrections. The $h/2$ contributions from averaged
 positions propagate via the **Leibniz product expansion**:
 
 $$
-\tau_M(\mathcal{B}_n - \mathcal{B}_p) \;=\; \mathrm{net}(n) - \mathrm{net}(p)
+\mathrm{tr}_M(\mathcal{B}_n - \mathcal{B}_p) \;=\; \mathrm{net}(n) - \mathrm{net}(p)
 \;=\; \frac{h^2}{2} - h
 \;=\; \frac{h(h-2)}{2}.
 $$
@@ -60,7 +60,7 @@ contributions (the neutron has two such positions). The $h/2$
 generates the $1/2$ in $\Delta(\mathrm{net})$.
 
 For higher rungs $N = k \geq 4$ of the precision ladder, the
-expansion of $\tau_M(T_\beta)$ in $b \cdot \hbar_q^2$ produces
+expansion of $\mathrm{tr}_M(T_\beta)$ in $b \cdot \hbar_q^2$ produces
 coefficients with two distinct categorical origins:
 
 - **Pure-$\sigma$ contributions**: from non-averaged positions in

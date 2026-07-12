@@ -22,13 +22,13 @@ $$
   \alpha \;=\; \frac{(z - 1) \, h}{2}, \qquad z = \tfrac{1}{\sqrt q + 1/\sqrt q}, \quad h = q - q^{-1}.
 $$
 
-The symmetrized character evaluates to $\chi^{(2,1),\mathrm{symm}}_q = \mathrm{tr}\,\rho_{(2,1)}(\beta) \cdot \cos\alpha$. This cos-resummation arises from the cyclic constraint $\tau_M(xy) = \tau_M(yx)$ combined with the bar involution.
+The symmetrized character evaluates to $\chi^{(2,1),\mathrm{symm}}_q = \mathrm{tr}\,\rho_{(2,1)}(\beta) \cdot \cos\alpha$. This cos-resummation arises from the cyclic constraint $\mathrm{tr}_M(xy) = \mathrm{tr}_M(yx)$ combined with the bar involution.
 
 At single wrap, for any $\beta \in B_n$ with writhe $w$ and averaged-count $m$, the full Markov trace decomposes as:
 
 $$
 \boxed{
-  \tau_M(\beta) \;=\; y_{(n)} \cdot \chi^{(n)}_q(\beta) \;+\; \sum_{\substack{\lambda \vdash n \\ \dim V_\lambda \geq 2}} y_\lambda \cdot \chi^{\lambda,\mathrm{symm}}_q(\beta) \;+\; y_{(1^n)} \cdot \chi^{(1^n)}_q(\beta).
+  \mathrm{tr}_M(\beta) \;=\; y_{(n)} \cdot \chi^{(n)}_q(\beta) \;+\; \sum_{\substack{\lambda \vdash n \\ \dim V_\lambda \geq 2}} y_\lambda \cdot \chi^{\lambda,\mathrm{symm}}_q(\beta) \;+\; y_{(1^n)} \cdot \chi^{(1^n)}_q(\beta).
 }
 $$
 

@@ -11,5 +11,5 @@ satisfying the following five axioms:
 4. **(Spherical)** The left and right categorical traces coincide for every endomorphism.
 5. **(Mass identity)** The Frobenius codimensional trace identity ([Frobenius co-Casimir universal](#thm:frobenius-codim-universal)) holds in $A$:
 $$
-  \tau_M(C_{\dim_q}) \;=\; \sum_\lambda \frac{1}{\dim_q(\lambda)}.
+  \mathrm{tr}_M(C_{\dim_q}) \;=\; \sum_\lambda \frac{1}{\dim_q(\lambda)}.
 $$

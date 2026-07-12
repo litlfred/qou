@@ -11,4 +11,4 @@
 | Volume forms $\alpha \wedge d\alpha$ | contact volume | Reeb dynamics |
 | Unsigned linking $\lvert\mathrm{lk}\rvert$ | absolute linking | knot multiplicity |
 | Markov parameter $z = 1/(q^{1/2}+q^{-1/2})$ | Markov-axiom factor | interface knot $\bowtie_K = z$ |
-| All $c_k(q)$ in the precision ladder | classical rationals in $q$ | $\tau_M$ expansion about $q=1$ |
+| All $c_k(q)$ in the precision ladder | classical rationals in $q$ | $\mathrm{tr}_M$ expansion about $q=1$ |

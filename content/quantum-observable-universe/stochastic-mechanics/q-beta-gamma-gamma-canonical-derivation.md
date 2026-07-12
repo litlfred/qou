@@ -9,7 +9,7 @@ The canonical $c_k$ values are determined by tracing through:
 $$
 \text{cat-action} \;\to\; \text{Frobenius pairing} \;\to\;
 \text{Wedderburn} \;\to\; \text{Wenzl bridge} \;\to\;
-\tau_M(\text{typed }\beta) \;\to\; \mathfrak{Q}_\beta^{\text{cat}}
+\mathrm{tr}_M(\text{typed }\beta) \;\to\; \mathfrak{Q}_\beta^{\text{cat}}
 $$
 
 ### Step 1 — Cat action (Hoefsmit seminormal)
@@ -18,11 +18,11 @@ $H_3(q)$ acts on the three irreps $V_{(3)}, V_{(2,1)}, V_{(1,1,1)}$ via the Hoef
 
 ### Step 2 — Frobenius pairing
 
-Per [`prop:markov-trace-frobenius-selection`](#prop:markov-trace-frobenius-selection), the unique non-degenerate Markov trace on $H_n(R, q)$ is the Jones-Markov $\tau_M$. The non-degeneracy is forced by the Frobenius co-Casimir construction.
+Per [`prop:markov-trace-frobenius-selection`](#prop:markov-trace-frobenius-selection), the unique non-degenerate Markov trace on $H_n(R, q)$ is the Jones-Markov $\mathrm{tr}_M$. The non-degeneracy is forced by the Frobenius co-Casimir construction.
 
 ### Step 3 — Wedderburn decomposition
 
-$H_3(q) \cong V_{(3)} \oplus V_{(2,1)} \oplus V_{(1,1,1)}$. So $\tau_M(\beta) = y_{(3)} \chi_{(3)}(\beta) + y_{(2,1)} \chi_{(2,1)}(\beta) + y_{(1,1,1)} \chi_{(1,1,1)}(\beta)$.
+$H_3(q) \cong V_{(3)} \oplus V_{(2,1)} \oplus V_{(1,1,1)}$. So $\mathrm{tr}_M(\beta) = y_{(3)} \chi_{(3)}(\beta) + y_{(2,1)} \chi_{(2,1)}(\beta) + y_{(1,1,1)} \chi_{(1,1,1)}(\beta)$.
 
 ### Step 4 — Wenzl bridge
 
@@ -32,9 +32,9 @@ The $y_\lambda$ weights solve the Markov-axiom system on $H_3$.
 
 From [`def:categorical-proton`](#def:categorical-proton) and [`def:categorical-neutron`](#def:categorical-neutron), $\mathcal{B}_p$ and $\mathcal{B}_n$ have 11 typed crossings each.
 
-### Step 6 — $\tau_M$ values
+### Step 6 — $\mathrm{tr}_M$ values
 
-At $q_0$, $\Delta\tau_M(n{-}p) = +0.0445860283$.
+At $q_0$, $\Delta\mathrm{tr}_M(n{-}p) = +0.0445860283$.
 
 ### Step 7-9 — Precision-ladder identifications
 

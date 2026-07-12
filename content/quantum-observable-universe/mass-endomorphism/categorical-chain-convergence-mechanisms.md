@@ -17,7 +17,7 @@ where $\hbar_q = (q-1)/q$. At the substrate $q_0 \approx 1.110$, $\hbar_q^2 \app
 For the **full base-space sum** over all atomic knots, unlinked knot pairs contribute negligibly. If $K_1, K_2$ have linking number $\mathrm{lk}(K_1, K_2) = 0$, their joint Markov trace factorises:
 
 $$
-  \tau_M(K_1 \sqcup K_2) \;=\; \tau_M(K_1) \cdot \tau_M(K_2) \quad (\text{linking-trivial limit}).
+  \mathrm{tr}_M(K_1 \sqcup K_2) \;=\; \mathrm{tr}_M(K_1) \cdot \mathrm{tr}_M(K_2) \quad (\text{linking-trivial limit}).
 $$
 
 Their categorical-chain contributions are additive in $\log \mathfrak{Q}_\beta^{\text{cat}}$:

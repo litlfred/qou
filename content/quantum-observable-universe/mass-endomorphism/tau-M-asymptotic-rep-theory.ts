@@ -7,7 +7,7 @@ export default proposition({
     validation: "not_checked",
   },
   title:
-    "$\\tau_M^{V_\\lambda}(\\beta) = \\mathrm{Tr}\\,\\rho_\\lambda(\\beta) \\cdot \\cos(\\alpha_\\lambda - b_\\lambda\\hbar_q^2/2) \\cdot \\prod_k(1 + c_k^{(\\lambda)} u_\\lambda^k)$: canonical $u$-ladder of the Markov-traced character",
+    "$\\mathrm{tr}_M^{V_\\lambda}(\\beta) = \\mathrm{Tr}\\,\\rho_\\lambda(\\beta) \\cdot \\cos(\\alpha_\\lambda - b_\\lambda\\hbar_q^2/2) \\cdot \\prod_k(1 + c_k^{(\\lambda)} u_\\lambda^k)$: canonical $u$-ladder of the Markov-traced character",
   uses: [
     "prop:hoefsmit-V21-cos-symmetrization",
     "prop:habiro-residue-sum-equivalence",

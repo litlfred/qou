@@ -10,7 +10,7 @@ This proposition lifts [`prop:t-beta-markov-frobenius-collapse`](t-beta-markov-f
 
 ## Application to the Iwahori–Hecke algebra
 
-For $A = H_n(R, q)$ at generic $q > 0$ with $\tau = \tau_M$, this proposition identifies the canonical SDP-min-Frobenius-norm operator for the constraint $\tau_M(T_\beta) = S$:
+For $A = H_n(R, q)$ at generic $q > 0$ with $\tau = \mathrm{tr}_M$, this proposition identifies the canonical SDP-min-Frobenius-norm operator for the constraint $\mathrm{tr}_M(T_\beta) = S$:
 $$
 T_\beta^{\mathrm{Markov}} \;=\; S \cdot 1_H.
 $$

@@ -49,7 +49,7 @@ The conjecture extrapolates to the five $H_4(q)$ irreps:
 
 ## Significance
 
-If the conjecture holds at all $n$, it provides a structural prediction for the per-irrep contribution to $\tau_M$ as a function of purely combinatorial partition data ($f_\lambda$, $H(\lambda)$, $c(\lambda)$). Combined with the Wenzl-bridge $y_\lambda$ weights and the precision-ladder $c_k$ extraction, this closes the categorical-chain derivation at every order for arbitrary multi-baryon typed braids. For example, $B_3 \to c_k$ for the proton/neutron, $B_6 \to c_k$ for the deuteron, $B_9 \to c_k$ for tritium or ${}^3$He, and $B_{12} \to c_k$ for the $\alpha$-particle (${}^{4}$He).
+If the conjecture holds at all $n$, it provides a structural prediction for the per-irrep contribution to $\mathrm{tr}_M$ as a function of purely combinatorial partition data ($f_\lambda$, $H(\lambda)$, $c(\lambda)$). Combined with the Wenzl-bridge $y_\lambda$ weights and the precision-ladder $c_k$ extraction, this closes the categorical-chain derivation at every order for arbitrary multi-baryon typed braids. For example, $B_3 \to c_k$ for the proton/neutron, $B_6 \to c_k$ for the deuteron, $B_9 \to c_k$ for tritium or ${}^3$He, and $B_{12} \to c_k$ for the $\alpha$-particle (${}^{4}$He).
 
 This cyclotomic structure also provides a literature bridge to Ariki-Koike cyclotomic Hecke algebras, where Specht modules decompose along $\Phi_d(q)$ factors.
 

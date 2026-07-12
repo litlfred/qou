@@ -1,4 +1,4 @@
-*Let $H = H_n(R, q)$ be the Iwahori–Hecke algebra over a field $R$, equipped with the unique Jones–Markov trace $\tau_M : H \to R$ ([Wenzl–Jones uniqueness theorem](#prop:markov-trace-frobenius-selection)). Equip $H$ with the Frobenius inner product $\langle X, Y \rangle_\tau := \tau_M(X \cdot Y)$. The element of minimum Frobenius norm satisfying the linear constraint $\tau_M(T_\beta) = S$ for a scalar $S \in R$ is:*
+*Let $H = H_n(R, q)$ be the Iwahori–Hecke algebra over a field $R$, equipped with the unique Jones–Markov trace $\mathrm{tr}_M : H \to R$ ([Wenzl–Jones uniqueness theorem](#prop:markov-trace-frobenius-selection)). Equip $H$ with the Frobenius inner product $\langle X, Y \rangle_\tau := \mathrm{tr}_M(X \cdot Y)$. The element of minimum Frobenius norm satisfying the linear constraint $\mathrm{tr}_M(T_\beta) = S$ for a scalar $S \in R$ is:*
 $$
 \boxed{\; T_\beta = S \cdot 1_H \;}
 $$
@@ -6,7 +6,7 @@ $$
 
 ## Corollary — observable c_k invariance
 
-The $\mathfrak{Q}_\beta$ production rule extracts the Taylor coefficients $c_k$ from $\tau_M(T_\beta)(q)$. The constraint $\tau_M(T_\beta) = S = \mathfrak{Q}_\beta / E_0$ is satisfied identically under both the Euclidean $L^2$ coordinate norm and the canonical Markov–Frobenius norm. We have $\tau_M(T_\beta)(q) \equiv S(q)$. The coefficients $c_k$ are invariant:
+The $\mathfrak{Q}_\beta$ production rule extracts the Taylor coefficients $c_k$ from $\mathrm{tr}_M(T_\beta)(q)$. The constraint $\mathrm{tr}_M(T_\beta) = S = \mathfrak{Q}_\beta / E_0$ is satisfied identically under both the Euclidean $L^2$ coordinate norm and the canonical Markov–Frobenius norm. We have $\mathrm{tr}_M(T_\beta)(q) \equiv S(q)$. The coefficients $c_k$ are invariant:
 $$
 c_k^{\,L2} = c_k^{\,Markov} = c_k\!\!\left(S(q)\right)
 \quad\text{for all } k.

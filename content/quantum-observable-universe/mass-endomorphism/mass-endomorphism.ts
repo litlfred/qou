@@ -193,7 +193,7 @@ export default chapter({
     }),
     section({
       title:
-        "Per-block $\\chi$ closed forms, $\\Delta\\tau_M$ machinery, and canonical Markov weights",
+        "Per-block $\\chi$ closed forms, $\\Delta\\mathrm{tr}_M$ machinery, and canonical Markov weights",
       label: "sec:hecke-chi-per-block-delta-tau-canonical-weights",
       blocks: [
         "qbeta-per-block-delta-tau-intro",

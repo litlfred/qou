@@ -1,4 +1,4 @@
-**$\tau_M$ ladder — representation-theoretic structure.**
+**$\mathrm{tr}_M$ ladder — representation-theoretic structure.**
 
 **Proposition (conditional on the open recursion kernel of [`prop:q-beta-c-k-recursion-from-habiro-q-difference`](#prop:q-beta-c-k-recursion-from-habiro-q-difference)).** We prove unconditionally the low-order data ($c_0 = 0$, one-dimensional triviality, the $N=1$ coupling $b$, and the bar-even seed $c_2 = -1$) together with the $\hbar_q$-parity. The full ladder $\prod_{k \geq 2}\bigl(1 + c_k^{(\lambda)} u_\lambda^k\bigr)$ is rigorous modulo the substrate derivation of the kernel $R(q,\xi)$ that fixes $c_k$ for $k \geq 3$. This kernel is the open $s5$–$so_3$ keystone. The higher rungs remain conjectural pending that kernel; only the $N \leq 2$ truncation enters the calibrated mass evaluation.
 
@@ -6,7 +6,7 @@ For a typed braid $\beta$ and a Hecke irreducible representation $V_\lambda$ of 
 
 $$
 \boxed{
-  \tau_M^{V_\lambda}(\beta)
+  \mathrm{tr}_M^{V_\lambda}(\beta)
    \;=\;
    \mathrm{Tr}\,\rho_\lambda(\beta) \cdot
    \cos\!\Bigl(\alpha_\lambda - \tfrac{b_\lambda \hbar_q^2}{2}\Bigr) \cdot
@@ -21,7 +21,7 @@ This matches the canonical $\mathfrak{Q}_\beta$ precision ladder ([`prop:q-beta-
 - $\alpha_\lambda$ is the single-wrap eigenphase on $V_\lambda$. The $\cos(\alpha_\lambda - b_\lambda\hbar_q^2/2)$ envelope carries the $N=1$ coupling $b_\lambda$.
 - $c_k^{(\lambda)}$ are the rung coefficients of the ladder, representing the higher Ohtsuki invariants of the correction factor.
 
-The factorisation defines the correction factor $F_\lambda := \tau_M^{V_\lambda}(\beta) / \mathrm{Tr}\,\rho_\lambda(\beta)$, which is valid wherever $\mathrm{Tr}\,\rho_\lambda(\beta) \neq 0$. This block establishes the $\hbar_q$-parity and the determination of the rung coefficients. The ladder is even in $\hbar_q$ because only even powers survive Markov-cyclicity invariance under the bar involution $q \leftrightarrow q^{-1}$ ([`prop:q-beta-cos-resummation`](#prop:q-beta-cos-resummation)).
+The factorisation defines the correction factor $F_\lambda := \mathrm{tr}_M^{V_\lambda}(\beta) / \mathrm{Tr}\,\rho_\lambda(\beta)$, which is valid wherever $\mathrm{Tr}\,\rho_\lambda(\beta) \neq 0$. This block establishes the $\hbar_q$-parity and the determination of the rung coefficients. The ladder is even in $\hbar_q$ because only even powers survive Markov-cyclicity invariance under the bar involution $q \leftrightarrow q^{-1}$ ([`prop:q-beta-cos-resummation`](#prop:q-beta-cos-resummation)).
 
 The rung coefficients are not free. They are determined by the proved second-order $q$-difference (Hahn–Exton $q$-Bessel) recursion of [`prop:q-beta-c-k-recursion-from-habiro-q-difference`](#prop:q-beta-c-k-recursion-from-habiro-q-difference). The entire product forms the Taylor expansion of the exact finite Habiro sum, which the production system evaluates without truncation ([`prop:habiro-precision-ladder-equivalence`](#prop:habiro-precision-ladder-equivalence)).
 
