@@ -547,12 +547,16 @@ function firstDisplayIdx(md: string): number {
  *  the title-token `firstMarkedTermIdx`) yields anchor = -1 ⇒ the whole block is
  *  counted as preamble (false positive). Only ADDS earlier anchors, so a
  *  genuinely rambling block (definition after a long preamble) still fails. */
+const DEFN_BOLD_RX = /(?:\*\*|__)Definition\b/i;
+const DEFN_HEADER_RX = /^#{2,4}\s+Definition\b/im;
+const FENCED_CODE_RX = /```[a-zA-Z]/;
+
 function firstDefnAnchorIdx(md: string): number {
   const idxs = [
-    md.search(/\*\*Definition\b/),
-    md.search(/^#{2,4}\s+Definition\b/im),
+    md.search(DEFN_BOLD_RX),
+    md.search(DEFN_HEADER_RX),
     md.indexOf(":defterm["),
-    md.search(/```[a-zA-Z]/),
+    md.search(FENCED_CODE_RX),
   ].filter((i) => i >= 0);
   return idxs.length ? Math.min(...idxs) : -1;
 }
