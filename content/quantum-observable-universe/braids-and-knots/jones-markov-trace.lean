@@ -163,9 +163,14 @@ structure JonesMarkovTrace (H : HeckeAlgebraData) where
       the normalised invariant depends only on the isotopy class of
       the braid closure, yielding the Jones polynomial J_L(q). -/
   -- Ref: [jones1987] Theorem 5.1 + §5 (writhe normalisation)
-  markov_neg : H.n ≥ 2 →
-    ∀ (x : H.carrier) (T_inv : H.carrier),
-      -- T_inv is the Hecke-algebra inverse of the last generator
+  markov_neg : ∀ (hn : H.n ≥ 2) (x T_inv : H.carrier),
+      let last : Fin (H.n - 1) := ⟨H.n - 2, by omega⟩
+      -- T_inv must be the two-sided Hecke-algebra inverse of the last
+      -- generator; without this constraint the field would assert the
+      -- scaling for EVERY element (T_inv = 0 would force tr ≡ 0,
+      -- contradicting nondeg).
+      H.mul (H.T last) T_inv = H.one →
+      H.mul T_inv (H.T last) = H.one →
       tr (H.mul x T_inv) = z_neg * tr x
 
 /-! ## Existence Axiom -/
