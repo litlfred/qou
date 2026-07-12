@@ -2,7 +2,8 @@ The two components of an observation correspond to its two
 physical roles:
 
 - **Receiving**: the $J^1$ (jet) component reads the field
-  $E$ and its first derivative --- position and linear
+  --- a local section of the state bundle $\mathcal{S}$ ---
+  and its first derivative: position and linear
   approximation.  This is the inflow of information from the
   state bundle, through the affine chart
   ([fibre functor atlas](#prop:fibre-functor-atlas)) centred
