@@ -71,8 +71,33 @@ tranche's net structural content is sharp and proved:
 > as-is. The owner-gated open object (`bwS0_eq_hecke`) is untouched; these results **narrow**
 > what it must be — a framing-cancelling full-Hecke index.
 
+## Follow-up (#3662) — the gate `bwS0_eq_hecke` de-opaqued
+
+[`BWVacuumRowConcrete.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/BWVacuumRowConcrete.lean)
+(sorry-free, axioms `[propext, Classical.choice, Quot.sound]`). The gate's field `bwS0` was an
+**opaque free field** — fiat-dischargeable by `bwS0 := d_q/D`, capturing no content. This file
+**replaces it with the concrete RT/Seifert vacuum row** `bwS0Concrete = S0·θ^f` (the compact modular
+datum × the ribbon twist `θ_λ=q^{c(λ)}` from vector 3, raised to the forced Seifert framing `f`),
+converting an un-provable physics-fiat into a genuine, refutable math claim, and proves:
+
+- `bwS0Concrete_f_zero` — `f=0` (zero Σ(2,3,5) data) collapses to `S0` (the tautology).
+- `bwS0Concrete_eq_S0_iff` — the de-opaqued gate holds **iff `θ^f=1`** (symbolic-exact).
+- `bwS0Concrete_conj_mul` / `bwS0Concrete_breaks_symmetry` — the concrete row **breaks the conjugation
+  symmetry `d_q` has** (`S0` transpose-invariant via `qDim_conj`, `θ` transpose-inverting via
+  `theta_conjugate`) — a scope-(b) invariant, not a magnitude probe.
+- `bwS0Concrete_eq_hecke_forces_trivial_twist` (capstone) — if the concrete Hecke row equals
+  `d_q/√Σd_q²` on all of `P`, then `∀ l∈P, (θ_λ)^f=1`.
+
+**Honest disposition:** at the observable real `q₀>1`, `θ_λ=q₀^{c(λ)}` is no root of unity for
+`c(λ)≠0`, so for the forced framing `f≠0` the gate is **REFUTED** off self-conjugate blocks — a
+scope-(a) negative for *this construction at real q₀*, sharpened by the scope-(b) transpose-symmetry
+invariant. The surviving residue is the **fibre root-of-unity form** (`|q|=1`, `|θ|=1`) archimedean-
+continued to `q₀` (AGENTS.md fibre-vs-observable-`q`). De-opaquing **exposes and sharpens** the gate;
+it does not close it. No fit; no fabricated `BWVacuumRowIsHecke` instance is presented as a closure.
+
 ## Scope (STRICT)
 
 No fit, no free constants, no production wiring, no physics claim. Vectors 1–2 are
 falsifiable probes (negatives = pruning); vector 3 is a formalize-first modular-data
-extension. The geometric `W_λ` index itself remains owner-gated.
+extension; the #3662 follow-up de-opaques the gate into a refutable-at-`q₀` claim. The
+geometric `W_λ` index itself remains owner-gated (the fibre/archimedean-continuation residue).
