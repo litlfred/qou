@@ -165,12 +165,23 @@ inherit it. -/
 /-- A cell is LR-factorised-derived when its χ^λ was computed via the
 parabolic restriction + LR-multi-coefficient + bridge-factor `ω`
 formula. NEAR-MATCH tier; instance gated on Phase 1.1 of the Tier 1
-roadmap. -/
-class IsLRFactorisedDerived (cell : KnotPartitionAtomCell) : Prop where
-  /-- Opaque marker; instance not constructed until the bridge factor
-  table `ω_{μ_p, μ_n, λ}(q)` is rigorously derived for the deuteron
-  base case. -/
-  lrEquivalence : True
+roadmap.
+
+Mirrors the non-vacuous `IsRMatrixDerived` shape: the fields carry real
+`R → R` data (generic field `R`, §7c) and a real equality `Prop` — no
+longer an opaque `True` marker. -/
+class IsLRFactorisedDerived (R : Type*) [CommRing R]
+    (cell : KnotPartitionAtomCell) where
+  /-- A genuine `R → R` evaluation of the cell's stored `χ^λ` Laurent. -/
+  storedChi : R → R
+  /-- The LR-factorised character: parabolic restriction × LR
+  multi-coefficients × bridge factor `ω_{μ_p, μ_n, λ}(q)`, assembled into
+  a `q`-rational `R → R` function. -/
+  lrFactorisedChi : R → R
+  /-- The stored Laurent agrees with the LR-factorised character at every
+  nonzero `q` (the LR-derivation certificate; was `True`). The instance is
+  gated on the rigorous bridge-factor table for the deuteron base case. -/
+  lrEquivalence : ∀ q : R, q ≠ 0 → storedChi q = lrFactorisedChi q
 
 /-! ## First instance — Borromean (2,1) baryon (T17 cross-validated)
 
