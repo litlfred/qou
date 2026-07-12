@@ -957,3 +957,15 @@ resummation resums — no overlap). Audits:
 `2026-07-12-ohtsuki-higher-rungs-exact.md`,
 `2026-07-12-fmap-4one-qbeta-bridge-growth-obstruction.md`. No fit; no c_k value;
 wires nothing; no tier change.
+
+**2026-07-12 (follow-up to #3622) — the deformed 1-loop of 4₁ is e^u × even:
+a geometric sinh carrier at one loop.** The DG 1-loop invariant along the
+4₁ Dehn-surgery branch satisfies **τ(u) = e^u·τ_even(u)** (κ = e^{−u}τ even
+to 9e-62; flattening-irreducible, class ±M^{4ℤ}), so its odd part is exactly
+**sinh(u)·τ_even(u)** — the first geometric object with the bar-odd sinh
+structure (classical NZ series has no odd rung, #3622). Even core rungs
+exact: 1 − u²/3 − u⁴/4 − 121u⁶/1080. τ(0) = ±√−3/2; A-polynomial
+cross-check ≤ 3e-61. Plugs into the cosh/sinh bridge skeleton
+(`3336314582` audit). Audit:
+[`2026-07-12-deformed-one-loop-sinh-carrier.md`](../audits/2026-07-12-deformed-one-loop-sinh-carrier.md).
+No c_k; nothing wired.
