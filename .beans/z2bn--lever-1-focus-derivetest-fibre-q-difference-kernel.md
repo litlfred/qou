@@ -309,3 +309,19 @@ tracks the involution-class ~√n (q→1 telephone limit).
 **Live open object (sharpened):** the exact super-exponential `a_D^(n)` kernel — the q-Bessel-class /
 multi-branch residue sum — NOT the τ derivation (τ is its n≤4 shadow). Coordinated with active keystone
 sibling #3662 (W_λ side).
+
+## Update 2026-07-12 (b) — EXACT classical kernel DERIVED + Lean-proved (τ is NOT a fit)
+
+Answering "τ is settled — n≤4 is a fit?": τ is NOT a fit — it is an exact q-rational of the DERIVED
+anchors a_D^(n)=lw(n−1) (Lean tauAnchor_closed_form). Only the FIXED-τ depth-2 as an all-n model is
+n≤4-effective. The EXACT kernel is now derived at q=1:
+- q→1: S(n)=Σf^λ=I(n) (RSK/Burnside = Identity I; telephone A000085), verified exact.
+- a_D^(n)=I(n)/n satisfies the EXACT variable-coefficient kernel a_D(n)=((n−1)/n)a_D(n−1)+
+  ((n−1)(n−2)/n)a_D(n−2) — Lean-proved sorry-free from the telephone recurrence
+  (`QOU/Mass/BindingClassicalKernel.lean`, `aDClassical_variable_coeff`, lean-direct exit 0).
+  Super-exp; the fixed-τ depth-2 is its n≤4 shadow.
+- q-deformation: S(n)=S(n−1)+[n−1]_q S(n−2)+D(n), c_3=[2]_q exact, Habiro tail grows.
+
+Closes the classical-kernel gap MODULO Identity I (Σf^λ=I(n)) — the SAME keystone P1–P5 RSK input.
+So binding + keystone share ONE open input; classical binding kernel otherwise proved. Probe
+`lever1_binding_classical_kernel_derive.py`; audit `docs/audits/2026-07-12-lever1-sw-period-lw-rate-refine.md`.
