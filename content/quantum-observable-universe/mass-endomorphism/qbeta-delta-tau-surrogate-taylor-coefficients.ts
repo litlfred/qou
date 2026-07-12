@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:qbeta-delta-tau-surrogate-taylor-coefficients",
   title:
-    "Catalogue: Taylor coefficients of $\\Delta\\tau_M^{\\text{surr}}$ at $q = 1$, orders 0..7",
+    "Catalogue: Taylor coefficients of $\\Delta\\mathrm{tr}_M^{\\text{surr}}$ at $q = 1$, orders 0..7",
   uses: [
     "prop:qbeta-per-block-chi-closed-forms",
   ],

@@ -2,10 +2,10 @@
 
 Assume a concrete instance of the canonical Wenzl–Markov weights class `CanonicalMarkovWeightsH3` exists. This instance supplies weights $y_{(3)}(q)$, $y_{(2,1)}(q)$, and $y_{(1,1,1)}(q)$ satisfying the dimension-normalisation axiom $y_{(3)}(q) + 2 \, y_{(2,1)}(q) + y_{(1,1,1)}(q) = 1$ for $q > 0$. 
 
-Define the canonical trace difference $\Delta\tau_M^{\text{can}}(q)$ as the weighted sum:
+Define the canonical trace difference $\Delta\mathrm{tr}_M^{\text{can}}(q)$ as the weighted sum:
 
 $$
-  \Delta\tau_M^{\text{can}}(q) =
+  \Delta\mathrm{tr}_M^{\text{can}}(q) =
   y_{(3)}(q) \chi_{(3)}(q)
   + y_{(2,1)}(q) \chi_{(2,1)}(q)
   + y_{(1,1,1)}(q) \chi_{(1,1,1)}(q).
@@ -14,7 +14,7 @@ $$
 For $q > 0$, the trace difference factors as:
 
 $$
-  \Delta\tau_M^{\text{can}}(q) = (q^2 - 1) P^{\text{can}}(q),
+  \Delta\mathrm{tr}_M^{\text{can}}(q) = (q^2 - 1) P^{\text{can}}(q),
 $$
 
 where
@@ -23,7 +23,7 @@ $$
   P^{\text{can}}(q) = y_{(3)}(q) P_{(3)}(q) + y_{(2,1)}(q) P_{(2,1)}(q) + y_{(1,1,1)}(q) P_{(1,1,1)}(q).
 $$
 
-Here $P_\lambda(q)$ form the per-block witnesses from `chi_blocks_have_q2_minus_1_factor`. In particular, $\Delta\tau_M^{\text{can}}(1) = 0$.
+Here $P_\lambda(q)$ form the per-block witnesses from `chi_blocks_have_q2_minus_1_factor`. In particular, $\Delta\mathrm{tr}_M^{\text{can}}(1) = 0$.
 
 ## Cross-references
 

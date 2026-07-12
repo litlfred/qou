@@ -1,8 +1,8 @@
-*The Jones–Markov form $\tau_M$ is the unique non-degenerate Frobenius pairing on the Iwahori–Hecke algebra $H_n(R, q)$ at generic $q$. The QOU mass identity's Markov trace is uniquely fixed by the categorical action, the fibre functor, and the Markov-trace uniqueness theorem (Jones 1987, Wenzl 1988).*
+*The Jones–Markov form $\mathrm{tr}_M$ is the unique non-degenerate Frobenius pairing on the Iwahori–Hecke algebra $H_n(R, q)$ at generic $q$. The QOU mass identity's Markov trace is uniquely fixed by the categorical action, the fibre functor, and the Markov-trace uniqueness theorem (Jones 1987, Wenzl 1988).*
 
 | form | $\tau(1)$ | $\tau(\sigma_i)$ | $w_\lambda$ | non-degenerate? |
 |---|---:|---:|---|:---:|
-| Jones–Markov $\tau_M$ | $1$ | $z = 1/[q^{1/2}+q^{-1/2}]$ | Wenzl-bridge $y_\lambda$ | yes, on $H_n(q)$ |
+| Jones–Markov $\mathrm{tr}_M$ | $1$ | $z = 1/[q^{1/2}+q^{-1/2}]$ | Wenzl-bridge $y_\lambda$ | yes, on $H_n(q)$ |
 
 ## The chain: cat-action to Markov trace
 
@@ -35,23 +35,23 @@ $$
 $$
 This identity requires $\tau(p_\lambda) \neq 0$ for every Wedderburn block. The trace $\tau$ must be non-degenerate.
 
-The **Jones–Markov form** $\tau_M$ satisfies:
-- $\tau_M(1) = 1$.
-- $\tau_M(x \sigma_{n-1}) = z \cdot \tau_M(x)$ for $x \in H_{n-1}$ with $z = 1/(q^{1/2} + q^{-1/2})$.
+The **Jones–Markov form** $\mathrm{tr}_M$ satisfies:
+- $\mathrm{tr}_M(1) = 1$.
+- $\mathrm{tr}_M(x \sigma_{n-1}) = z \cdot \mathrm{tr}_M(x)$ for $x \in H_{n-1}$ with $z = 1/(q^{1/2} + q^{-1/2})$.
 
-It is non-degenerate on $H_n(R, q)$. The trace on the primitive idempotents is $\tau_M(p_\lambda) = \dim_q(\lambda) \cdot d_\lambda / [n]_q!$. This is non-zero for every $\lambda \vdash n$ at generic $q$. The Markov-trace uniqueness theorem forces $\tau_M$ to be the unique non-degenerate Frobenius form on the Hecke algebra.
+It is non-degenerate on $H_n(R, q)$. The trace on the primitive idempotents is $\mathrm{tr}_M(p_\lambda) = \dim_q(\lambda) \cdot d_\lambda / [n]_q!$. This is non-zero for every $\lambda \vdash n$ at generic $q$. The Markov-trace uniqueness theorem forces $\mathrm{tr}_M$ to be the unique non-degenerate Frobenius form on the Hecke algebra.
 
 ### Step 4: Wedderburn + Markov-trace formula
 
-The trace $\tau_M$ admits the explicit form:
+The trace $\mathrm{tr}_M$ admits the explicit form:
 $$
-  \tau_M(x) \;=\; \sum_\lambda y_\lambda(q) \cdot \chi_\lambda(x),
+  \mathrm{tr}_M(x) \;=\; \sum_\lambda y_\lambda(q) \cdot \chi_\lambda(x),
 $$
 where $y_\lambda(q)$ are the Wenzl-bridge weights.
 
 ## Uniqueness theorem
 
-**Theorem (Markov-trace uniqueness on H_n(R, q)).** *Any non-degenerate Frobenius form on the Iwahori–Hecke algebra $H_n(R, q)$ at generic $q$ equals the Jones–Markov form $\tau_M$ block-wise. The QOU mass identity uniquely determines $\tau_M$ as the canonical Markov trace.*
+**Theorem (Markov-trace uniqueness on H_n(R, q)).** *Any non-degenerate Frobenius form on the Iwahori–Hecke algebra $H_n(R, q)$ at generic $q$ equals the Jones–Markov form $\mathrm{tr}_M$ block-wise. The QOU mass identity uniquely determines $\mathrm{tr}_M$ as the canonical Markov trace.*
 
 ## Discussion
 
@@ -59,9 +59,9 @@ This proposition is a structural theorem about the representation theory of the 
 
 ## Computational consequence
 
-The QOU production stack computes $\tau_M$ on the canonical 11-crossing proton/neutron braid via four independent paths. They agree to $\leq 2 \times 10^{-15}$ at the proton-pinned $q_0$:
+The QOU production stack computes $\mathrm{tr}_M$ on the canonical 11-crossing proton/neutron braid via four independent paths. They agree to $\leq 2 \times 10^{-15}$ at the proton-pinned $q_0$:
 
-| atom | $\tau_M(\beta_{\rm atom}, q_0)$ | error vs 4-way |
+| atom | $\mathrm{tr}_M(\beta_{\rm atom}, q_0)$ | error vs 4-way |
 |---|---:|---:|
 | proton | $1.0653061442544499$ | $\leq 2.57\times 10^{-16}$ |
 | neutron | $0.9232332299116371$ | $\leq 2.03\times 10^{-16}$ |

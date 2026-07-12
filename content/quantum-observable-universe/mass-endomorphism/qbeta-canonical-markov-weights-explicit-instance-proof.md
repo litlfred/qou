@@ -18,8 +18,8 @@ This explicitly constructs an instance of `CanonicalMarkovWeightsH3`. It establi
 
 It does not establish:
 
-- That this instance is the canonical Wenzl–Markov weights. The canonical weights from $H_3(q)$ have a specific closed form derived from the Hecke algebra's Bratteli diagram and quantum dimensions. They are tied to the Markov property $\tau_M(x \cdot \sigma_{n-1}) = z \cdot \tau_M(x)$ for $x \in H_{n-1}(q)$. Identifying the canonical inhabitant remains open (see the 1ppQ-Q$_\beta$ ledger).
-- A formula for $\Delta\tau_M^{\text{can}}(q)$ at this instance, though it is computable via `delta_tau_M_canonical_has_q2_minus_1_factor`.
+- That this instance is the canonical Wenzl–Markov weights. The canonical weights from $H_3(q)$ have a specific closed form derived from the Hecke algebra's Bratteli diagram and quantum dimensions. They are tied to the Markov property $\mathrm{tr}_M(x \cdot \sigma_{n-1}) = z \cdot \mathrm{tr}_M(x)$ for $x \in H_{n-1}(q)$. Identifying the canonical inhabitant remains open (see the 1ppQ-Q$_\beta$ ledger).
+- A formula for $\Delta\mathrm{tr}_M^{\text{can}}(q)$ at this instance, though it is computable via `delta_tau_M_canonical_has_q2_minus_1_factor`.
 - Any bearing on the $c_k$ ladder closure.
 
 ## Numerical sanity check

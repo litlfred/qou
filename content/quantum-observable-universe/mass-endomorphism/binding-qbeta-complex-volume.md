@@ -25,7 +25,7 @@ Categorically — **no braid words**. For a confined knot $K$:
 - $\mathrm{tr}_M : \mathrm{End}_{\mathbf{C}}(X_K) \to k$ provides the
   categorical Markov trace (the closed/categorical trace; AGENTS.md
   §7a — the fibre functor $\tau$ is a *different* object, never
-  $\tau_M$).
+  $\mathrm{tr}_M$).
 - $\Pi_{\text{free}} \in \mathrm{End}_{\mathbf{C}}(X_K)$ provides the
   idempotent projector ($\Pi_{\text{free}}^2 = \Pi_{\text{free}}$)
   onto the factorized sub-object

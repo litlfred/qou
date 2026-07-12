@@ -20,7 +20,7 @@ $$
 
 The reason is **not** that the Markov closure of the full typed braid
 is the Hopf link — it isn't. Rather, the third-order coefficient
-in the perturbative expansion of $\tau_M$ around $q = 1$ (in powers
+in the perturbative expansion of $\mathrm{tr}_M$ around $q = 1$ (in powers
 of $\hbar_q^2$) **factors** through the contribution of **2-strand
 sub-braid windings**, whose Markov closure is the Hopf link.
 
@@ -38,8 +38,8 @@ $h \sim \hbar_q$.
 ### Fact 2 — Markov cyclicity at $k$-fold closure
 
 The Markov closure $\widehat{\beta} \in S^3$ of a braid $\beta \in B_n$
-respects cyclicity: $\tau_M(xy) = \tau_M(yx)$. At the $k$-th order
-in the perturbative expansion of $\tau_M(\beta)$ around $q = 1$, the
+respects cyclicity: $\mathrm{tr}_M(xy) = \mathrm{tr}_M(yx)$. At the $k$-th order
+in the perturbative expansion of $\mathrm{tr}_M(\beta)$ around $q = 1$, the
 combinatorial contribution gathers cyclic permutations of $k$
 crossings — equivalently, $k$-fold cyclic substructures of the
 underlying braid graph.
@@ -47,7 +47,7 @@ underlying braid graph.
 ### Fact 3 — 2-strand sub-braid extraction at order 3
 
 At order $\hbar_q^6$ (the third perturbative order), the dominant
-contribution to $\tau_M(\mathcal{B}_p) - \tau_M(\mathcal{B}_n)$ comes from
+contribution to $\mathrm{tr}_M(\mathcal{B}_p) - \mathrm{tr}_M(\mathcal{B}_n)$ comes from
 **all $\binom{n}{2}$ choices of 2-strand sub-braids** of $\beta$.
 For each such 2-strand sub-braid, the Markov closure is the **Hopf
 link** (or the unknot, for trivial sub-braids).
@@ -68,7 +68,7 @@ $$
 $$
 
 Combining Facts 1–4: the third-order $\hbar_q^6$ coefficient in
-$\tau_M(\mathcal{B}_p) - \tau_M(\mathcal{B}_n)$ factors as
+$\mathrm{tr}_M(\mathcal{B}_p) - \mathrm{tr}_M(\mathcal{B}_n)$ factors as
 
 $$
   c_3 \cdot b^3 \cdot \hbar_q^6

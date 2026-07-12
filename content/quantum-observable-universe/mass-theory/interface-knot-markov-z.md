@@ -4,7 +4,7 @@
 
 $$
   \boxed{\;
-    \frac{\tau_M(\mathcal{B}_K)}{\tau_M(\mathcal{B}_K^{\mathrm{vac}})}
+    \frac{\mathrm{tr}_M(\mathcal{B}_K)}{\mathrm{tr}_M(\mathcal{B}_K^{\mathrm{vac}})}
     \;=\; z(q)^{p_+(K)} \cdot \bigl(z(q) - h(q)\bigr)^{p_-(K)}
   \;}
 $$

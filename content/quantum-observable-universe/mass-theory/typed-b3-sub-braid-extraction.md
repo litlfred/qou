@@ -36,7 +36,7 @@ The single open axiom is:
 
 > `DominantSubBraidAtEps6.dominant_subbraid_is_2_strand_2_crossings`:
 > the dominant sub-braid in the order-$\varepsilon^6$ expansion of
-> $\tau_M(\mathcal{B}_n) - \tau_M(\mathcal{B}_p)$ extracts the 2-strand 2-crossing
+> $\mathrm{tr}_M(\mathcal{B}_n) - \mathrm{tr}_M(\mathcal{B}_p)$ extracts the 2-strand 2-crossing
 > case.
 
 This is **categorically verified** via two canonical evaluation runs:
@@ -46,7 +46,7 @@ This is **categorically verified** via two canonical evaluation runs:
 The Lean discharge of this axiom requires:
 
 1. **`BraidGroup n` perturbative-expansion infrastructure**: define
-   $\tau_M(\beta; q)$ as a formal series at $q = 1+\varepsilon$.
+   $\mathrm{tr}_M(\beta; q)$ as a formal series at $q = 1+\varepsilon$.
 2. **Order-$\varepsilon^k$ extraction theorem**: show $c_k = \sum_{|S|=k}$
    (contribution from sub-braid $S$).
 3. **Dominant subset identification**: prove the order-$\varepsilon^6$

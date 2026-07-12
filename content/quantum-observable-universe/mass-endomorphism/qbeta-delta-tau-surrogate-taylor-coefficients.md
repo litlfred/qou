@@ -1,4 +1,4 @@
-**Catalogue (Taylor coefficients of the surrogate $\Delta\tau_M$).**
+**Catalogue (Taylor coefficients of the surrogate $\Delta\mathrm{tr}_M$).**
 *The Taylor coefficients $c_n$ of*
 [`delta_tau_M_surrogate`](qbeta-per-block-chi-closed-forms.md)
 *expanded around the classical point $q = 1$ in the variable
@@ -37,7 +37,7 @@ $w = q - 1$, to order 7:*
 
 
 $$
-  \Delta\tau_M^{\text{surr}}(q) = \frac{-q^{11} + q^{10} - 2q^9 + q^8 + q^6 - q^5 - q^3 + 2q^2 - q + 1}{4 q^5 (q^2 + q + 1)}
+  \Delta\mathrm{tr}_M^{\text{surr}}(q) = \frac{-q^{11} + q^{10} - 2q^9 + q^8 + q^6 - q^5 - q^3 + 2q^2 - q + 1}{4 q^5 (q^2 + q + 1)}
 $$
 
 substituting $q = 1 + w$ and extracting coefficients of $w^n$. The

@@ -11,9 +11,9 @@ $$
 $$
 *This refinement tightens the CODATA residual from $+1677.5$ ppm to $+305.7$ ppm.*
 
-The transfer-matrix $M_\beta$ has spectrum $\{e^{+i\alpha},\, e^{-i\alpha}\}$ on the $2$-dimensional irreducible representation $V_{(2,1)}$ of $H_3(q)$. The eigenphase is $\alpha = (z-1) h / 2$ at the single-wrap order. The Markov trace $\tau_M$ symmetrizes the two eigenphases:
+The transfer-matrix $M_\beta$ has spectrum $\{e^{+i\alpha},\, e^{-i\alpha}\}$ on the $2$-dimensional irreducible representation $V_{(2,1)}$ of $H_3(q)$. The eigenphase is $\alpha = (z-1) h / 2$ at the single-wrap order. The Markov trace $\mathrm{tr}_M$ symmetrizes the two eigenphases:
 $$
-  \tau_M(M_\beta)
+  \mathrm{tr}_M(M_\beta)
   \;=\;
   \cos\alpha
   \;=\;

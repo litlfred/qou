@@ -69,7 +69,7 @@ data. An observable such as $\mathfrak{Q}_\beta$ is
 $m_e \cdot f(\mathrm{tr}_M(\beta_n), \mathrm{tr}_M(\beta_p),
 q_0)$, and the exact Habiro evaluation of that map lands at the
 substrate's *intrinsic* accuracy (improving once the derived low-order
-$\tau_M$ corrections of `prop:tau-M-asymptotic-rep-theory` are
+$\mathrm{tr}_M$ corrections of `prop:tau-M-asymptotic-rep-theory` are
 included; specific intrinsic-accuracy and ladder-correction figures
 live in the archimedean witness ledger, not here).
 Reaching experiment-grade precision requires higher-order
