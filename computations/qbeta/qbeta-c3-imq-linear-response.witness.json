@@ -1,0 +1,71 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-07-12T00:42:48.590171+00:00",
+  "commitSha": "6bcdc989b40bd9d57d96df97a314dde026d3be24",
+  "assertions": [
+    {
+      "name": "sign_flip_structural_and_robust",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "S odd in eps (bar-odd parity) + small sign-flipped eps in both derived proxies"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 20,
+  "computation": "qbeta-c3-imq-linear-response",
+  "scriptFile": "qbeta_c3_imq_linear_response_probe.py",
+  "scriptHash": "6cceb3969335",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Candidate-(iii) linear-response structure for the c₃ bar-odd S decay projection (follow-up to merged #3600). Formalize-first: (1) S is bar-odd under σ:q↦q⁻¹, and q=q₀+iε sends ε↦−ε/q₀² so S(−ε)=−S(ε)+O(ε²) — S∝ε with sign S = sign ε, making the muon>0>proton sign-flip STRUCTURAL, not a fit (numeric witness: Im T(q0+iε) odd + ≈ε·T'(q0)). (2) The linear coefficient ∂S/∂ε is derived up to proxy: geometric (u=2log q, 4√3 log q0/q0) and operator (fig-8 trace T'(q0), #3600) both give small sign-flipped ε at both anchors; |ε| is proxy-dependent. Residue: ε(q₀) itself (=arg(u(q₀))), one open real function, in scope under the opened Subgoal-2 but not fit/wired. Scope-(a); C14; no c_k wired; no fit.",
+  "contentBlock": "conj:im-q-physical-role",
+  "data": {
+    "sign_flip_structural": {
+      "S_bar_odd": true,
+      "Im_T_odd_in_eps": true,
+      "Im_T_linear_in_eps": true,
+      "argument": "sigma:q->1/q sends eps->-eps/q0^2 (leading); bar-odd => S(-eps)=-S(eps) => sign S = sign eps"
+    },
+    "coefficient_cross_check": [
+      {
+        "anchor": "muon",
+        "coeff_geom": "0.6512682302",
+        "coeff_op": "1.581193685",
+        "eps_geom": "0.014867883",
+        "eps_op": "0.0061238418",
+        "eps_geom_pct": "1.33947",
+        "eps_op_pct": "0.551708"
+      },
+      {
+        "anchor": "proton",
+        "coeff_geom": "0.6512681657",
+        "coeff_op": "1.581193511",
+        "eps_geom": "-0.060588498",
+        "eps_op": "-0.024955427",
+        "eps_geom_pct": "-5.45853",
+        "eps_op_pct": "-2.24828"
+      }
+    ],
+    "robustness": {
+      "sign_flip_geom": true,
+      "sign_flip_op": true,
+      "both_small": true,
+      "residue": "eps(q0) itself = arg(u(q0)); one open real function; Subgoal-2 open"
+    }
+  }
+}
