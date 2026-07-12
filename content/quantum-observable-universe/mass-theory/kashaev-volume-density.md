@@ -18,16 +18,7 @@ Physically, $\rho_q$ measures the categorical drag cost of transporting a closed
 
 ### The Kashaev bridge
 
-The Kashaev Volume Conjecture bridges the archimedean continuous volume and the algebraic discrete Markov trace:
-
-$$
-  \mathrm{Vol}(K)
-  \;=\;
-  2\pi\,\lim_{N \to \infty}
-  \frac{\log\lvert J_{N}(K;\,e^{2\pi i/N})\rvert}{N}.
-$$
-
-The left-hand side is the continuous hyperbolic volume. The right-hand side is an asymptotic limit of colored Markov traces evaluated within the Hecke algebra.
+The [Kashaev volume conjecture](#conj:kashaev-volume-conjecture) bridges the archimedean continuous volume and the algebraic discrete Markov trace: it identifies the continuous hyperbolic volume $\mathrm{Vol}(K)$ with the Kashaev limit $2\pi \lim_{N \to \infty} \log\lvert J_{N}(K;\,e^{2\pi i/N})\rvert / N$, an asymptotic limit of colored Markov traces evaluated within the Hecke algebra.
 
 ### Inverting the ontology
 
