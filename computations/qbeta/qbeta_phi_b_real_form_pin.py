@@ -38,7 +38,8 @@ PIN BATTERY (pre-stated gates; run as __main__):
   P4  z-parity of J     : |J(−z,b) + J(z,b)| ≤ 1e-30 (integrand odd in z)
 
 P3/P4 are the numerical twins of the sorry-free Lean theorems
-(PhiB_selfDual / phaseIntegral parity) in FaddeevPhiBRealIntegral.lean.
+(phiB_self_dual / J_odd) in QOU.MathlibExt.FaddeevPhiBRealIntegral — the
+merged construction that cites this pin as its numerical backing.
 
 C14 anti-fitting: nothing here is compared to c_k, S, Φ₁, the residue A, or
 any physical constant; the (z,b) grid is a generic mathematical test grid.
@@ -188,8 +189,8 @@ def main() -> int:
     wb.add_data("grid", rows)
     wb.add_data("evaluator", "computations/qbeta/phi_b_evaluator.py (battery-gated)")
     wb.add_data("lean_construction",
-                "QOU.MathlibExt.FaddeevPhiBRealIntegral (PhiB; sorry-free "
-                "self-duality/unitarity/inversion/zero-argument theorems)")
+                "QOU.MathlibExt.FaddeevPhiBRealIntegral (phiB; sorry-free "
+                "phiB_self_dual / norm_phiB / phiB_inversion / phiB_zero)")
     wb.add_assertion("P1_real_form_identity", computed=float(p1), expected=0.0,
                      tolerance=1e-25,
                      source="Im log Φ_b = −J/2 + πz²/2 + π(b²+b⁻²)/24 on grid")
