@@ -74,6 +74,27 @@ lever that more *anchors* at the same `Q_β` would not provide. This refines the
 earlier "2-anchor entropy block": the function `S(q₀)` is fully computable; the
 block is experimental, on identifying `q*`.
 
+## Finding 4 — `q*` is a third, decay-sector determination of `q₀`
+
+`q*` is not the muon pin (where `m_μ/m_e =` CODATA) nor the proton pin (where
+`m_p/m_e =` CODATA): at `q*`, `m_μ/m_e` deviates `42.7` ppb from CODATA, versus
+`1.4` ppb at the muon pin and `211` ppb at the proton pin (the `9.5σ` μ-p
+tension). Decisively, `q*` is **not** the mass-sector statistical reconciliation
+of that tension either: the precision-weighted mean sits `~0.0007 %` muon-ward
+(essentially at the proton pin, which is `~367×` more precise than the muon),
+while `q*` sits `80.3 %` muon-ward.
+
+So `q*` is an **independent, decay-sector (bar-odd `Q_β`) determination of `q₀`**,
+distinct from — and not a statistical average of — the two mass-sector pins. The
+μ-p substrate tension thereby becomes a **μ-p-`Q_β` three-way picture**: three
+determinations of one substrate modulus (proton mass, muon mass, neutron-decay
+`Q_β`), pulling apart at the `10⁻⁸` level. `q*` is the modulus the *decay* sector
+prefers; that it differs from the mass pins is the same physics as `ε ≠ 0` at
+those pins. (Whether `q*` coincides with a specific physical pin — e.g. the
+neutron's — is not cleanly testable here: the neutron facade is not
+`q`-parametrized and carries its own theory error, and `q*`'s `~7`-figure
+precision is `Q_β`-limited per Finding 3.)
+
 ## Disposition
 
 - **Derived / exact:** `q*` (given inputs); `S'(q*) = 2.37/u³`; `dq*/dQ_β`.
