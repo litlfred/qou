@@ -1,11 +1,11 @@
 ---
 # qou-ooqh
 title: 'GAP-2: M_3 Borromean-triple count per isotope (⁴He magic surplus)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-07-11T23:11:26Z
-updated_at: 2026-07-11T23:11:57Z
+updated_at: 2026-07-12T00:37:13Z
 blocked_by:
     - qou-lzoh
 ---
