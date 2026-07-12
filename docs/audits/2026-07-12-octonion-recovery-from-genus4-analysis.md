@@ -123,8 +123,40 @@ the golden-ratio degeneration) — at the **lattice** level, not as a product on
    (the missing `3 ⊕ 3̄` mixing) is realised anywhere in the genus-4 / Bring-cone
    data. If so, colour `SU(3)` promotes to full `G₂ = Aut(𝕆)`.
 
+## Colour, and what octonion multiplication actually needs (the `ℂ → ℍ → 𝕆` ladder)
+
+The colour triplet `ℂ³` on which `SU(3)` acts is built from a **single complex
+structure**: fixing an imaginary unit `e` (`e² = -1`), left-multiplication `L_e`
+is a complex structure (`L_e² = -1`) on the orthogonal `6`-space, making it `ℂ³`.
+So — as the owner put it — "you just need complex multiplication." Precisely:
+
+1. **`ℂ` (the colour atom):** one complex structure `j` (`j² = -1`) gives ordinary
+   *commutative* complex multiplication `(a + bj)(c + dj) = (ac − bd) + (ad + bc)j`.
+   Proved: `complex_mul_from_sqrt_neg_one` (any `CommRing`; §7c).
+2. **`ℍ` (the "rotate across `i, j, k`" step):** two *anti-commuting* complex
+   structures `i, j` produce `k = ij` with `k² = -1`. Proved: `rotate_ijk_sq` (any
+   `Ring`) — and the proof **uses associativity**, which is exactly why this rung
+   is `ℍ` (associative), electroweak `SU(2)`.
+
+**Where the intuition stops.** `𝕆` is one more Cayley–Dickson doubling
+`(a,b)(c,d) = (ac − d̄b, da + bc̄)`, and it is **non-associative** — the associator
+`(x,y,z) := (xy)z − x(yz)` is nonzero. "Rotation" is associative reassociation
+(`rotate_ijk_sq` literally re-brackets `i(ji)j = (ij)(ij)`), so it can *never*
+produce a nonzero associator. It reaches `ℍ` (SU(2)), not `𝕆` (colour
+`SU(3) ⊂ G₂`). **The missing ingredient for octonion multiplication is the
+non-associative doubling itself — not a further rotation.** Colour `SU(3)` is the
+subgroup of `G₂` that fixes the preferred imaginary unit; the `6`-dim coset
+`G₂/SU(3) = S⁶` is precisely the freedom to *rotate which unit is preferred*, and
+that motion is the non-associative part colour alone does not see.
+
+(Mathlib has `Quaternion` but no octonions, so the `𝕆` rung is stated, not built;
+the two associative rungs `ℂ, ℍ` are formalised sorry-free.)
+
 ## Formalisation
 
 - [`OctonionInvariantObstruction.lean`](../../content/quantum-observable-universe/lean/QOU/BringsSurface/OctonionInvariantObstruction.lean)
   — `no_fixed_unit` (the Task-1 obstruction kernel) + `exists_nonzero_invariant`
   (associative-case illustration). Sorry-free, generic (§7c).
+- [`ColourComplexStructure.lean`](../../content/quantum-observable-universe/lean/QOU/BringsSurface/ColourComplexStructure.lean)
+  — `complex_mul_from_sqrt_neg_one` (colour atom, `ℂ`) + `rotate_ijk_sq` (the
+  `i, j, k` rotation, `ℍ`, proof uses associativity). Sorry-free, generic (§7c).
