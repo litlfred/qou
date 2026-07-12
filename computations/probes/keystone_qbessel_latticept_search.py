@@ -77,8 +77,8 @@ import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-ROOT = HERE.parent
-sys.path.insert(0, str(ROOT))
+COMPUTATIONS_DIR = HERE.parent
+sys.path.insert(0, str(COMPUTATIONS_DIR))
 sys.path.insert(0, str(HERE))
 
 import _path_bridge as _bridge  # noqa: E402, F401
@@ -98,6 +98,11 @@ TOL = mp.mpf("1e-9")   # relative match tolerance for (†)
 
 # ── q-integer (screen convention: unbalanced-symmetric (q^n−q^-n)/(q−q^-1)) ──
 def qi(m, q):
+    # Guard the q→1 removable singularity (Copilot/Gemini #3652): the closed
+    # form suffers catastrophic cancellation / division-by-zero as q→1, where
+    # [m]_q → m. Tolerance tied to the active precision (mp.eps), not hardcoded.
+    if abs(q - 1) < mp.eps:
+        return mp.mpf(m)
     return (q ** m - q ** (-m)) / (q - q ** (-1))
 
 
