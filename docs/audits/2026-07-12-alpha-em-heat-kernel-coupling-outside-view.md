@@ -65,6 +65,30 @@ they answer Wyler's normalization objection — but they do not answer the ident
 objection. The +0.313 ppb agreement, by itself, carries near-zero evidential weight
 (finding 5). Publishability of the α claim rests entirely on deriving the coupling.
 
+### Owner clarification (2026-07-12): comparison-only posture — issue relocates, not dissolves
+
+The owner's standing epistemic posture is **comparison to observed, no ontological
+claims**: the framework reports a parameter-free structural value and compares it to
+`1/α`; no mechanism is asserted. This is cleaner than Wyler (who claimed a derivation)
+and reframes the outside-view issue honestly:
+
+- **What dissolves:** the burden to prove a coupling mechanism. A `near-match`-tier
+  observation claim carries no such burden, and the corpus tier discipline states it
+  correctly.
+- **What relocates:** the referee question becomes **assembly-selection** — *why this
+  combination* of Bring invariants (`q[9]_q[10]_q + b₁/Area + Schwinger`) rather than
+  any other — Wyler's radius=1 was also a selection, not an ontology. The defense is
+  the **documented attempt ledger** (failed alternatives, PSLQ refutations), which
+  converts "picked the winner" into "reported the survivor of a recorded search."
+  This is a statistics (look-elsewhere) question, answerable, not metaphysics.
+- **The stated cost:** without a mechanism the `O(α²)` coefficient is **permanently
+  observational** — it can never be computed, only read off the residual (and the
+  entropy rule forbids fitting it). So under this posture **+0.313 ppb (2× σ) is a
+  floor, not a waypoint**; closing to 1× σ would require exactly the mechanism the
+  posture declines to claim.
+- **The payoff:** falsifiability — the match sharpens or breaks with improved σ_α and
+  q₀, and the 48× proton-anchor preference was not free to vary.
+
 ## Action taken
 
 - Re-scoped the coupling framing in `alpha_em_two_loop_structure_probe.py`: the

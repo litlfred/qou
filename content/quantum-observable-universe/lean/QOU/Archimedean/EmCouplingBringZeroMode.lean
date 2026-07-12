@@ -152,10 +152,18 @@ characteristic, the genus, and the first Betti number are all **forced**:
 
 Together with `bringSurfaceArea_eq_gaussBonnet` (the tiling area = `12π`), **every
 ingredient of the ratio `b₁/Area = 2/(3π)` is now derived from the tiling** —
-numerator and denominator both. Per the outside-view audit
-(`docs/audits/2026-07-12-alpha-em-heat-kernel-coupling-outside-view.md`) the only
-remaining unforced step is the *physical identification* of this ratio with the
-`1/α_EM` shift (the Wyler-shaped referee pivot); the mathematics is closed. -/
+numerator and denominator both; the mathematics is closed.
+
+**Epistemic posture (owner, 2026-07-12): comparison to observed, no ontological
+claim.** The framework does not assert a *mechanism* by which this ratio enters
+`1/α_EM`; it reports a parameter-free structural value whose assembly with the
+tree term matches observed `1/α` (near-match tier). Under that posture the
+remaining outside-view question (per
+`docs/audits/2026-07-12-alpha-em-heat-kernel-coupling-outside-view.md`) is
+*assembly-selection* — why this combination of Bring invariants, answered by the
+documented attempt ledger — and the stated cost is that the `O(α²)` coefficient is
+permanently observational (never computable without a mechanism), so the
+`+0.313 ppb` residual is a floor, not a waypoint. -/
 
 /-- Number of triangles in the `(2,4,5)` tiling of Bring's curve. -/
 def bringTilingFaces : ℕ := 240
