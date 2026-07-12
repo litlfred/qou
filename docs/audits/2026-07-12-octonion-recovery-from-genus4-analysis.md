@@ -204,9 +204,24 @@ associator `α = dF` **automatically satisfies the pentagon** because `d² = 0` 
 this is why a graded twist breaks strict associativity while keeping coherence.
 Proved sorry-free: `assoc_pentagon`
 ([`PentagonTwistAssociator.lean`](../../content/quantum-observable-universe/lean/QOU/BringsSurface/PentagonTwistAssociator.lean)),
-generic additive grading + phase group (§7c). The remaining, octonion-specific
-datum is the concrete `(ℤ/2)³` cochain `F` whose class is nontrivial — a finite
-object, the natural next `decide`-target.
+generic additive grading + phase group (§7c).
+
+**The concrete octonion cocycle, machine-verified.** The octonion associator on
+`(ℤ/2)³` is the `𝔽₂` **determinant** (trilinear alternating form) `φ(a,b,c) =
+det₂[a b c]` — the sign rule "`−` on `𝔽₂`-independent triples." Sorry-free in
+[`OctonionCocycle.lean`](../../content/quantum-observable-universe/lean/QOU/BringsSurface/OctonionCocycle.lean):
+* `det3_is_3cocycle` — `φ` satisfies the pentagon, verified exhaustively over all
+  `8⁴ = 4096` tuples (kernel `decide`, ~38 s). The octonion sign rule **is** a
+  genuine group 3-cocycle.
+* `det3_nonzero` — the deformation genuinely fires: on `e₁, e₂, e₄` the associator
+  is `1 ≠ 0`, i.e. `(e₁e₂)e₄ = −e₁(e₂e₄)` (non-associativity).
+
+**Remaining honest gap:** `φ` is *cohomologically* nontrivial (`[φ] ≠ 0` in
+`H³((ℤ/2)³; ℤ/2)`) — a rank fact over `𝔽₂^{64}` the `decide` does not establish;
+`det3_nonzero` only shows `φ ≠ 0` as a cochain. Full nontriviality is
+Albuquerque–Majid 1999. So the octonion *product's associator* is now an
+exhibited, pentagon-verified 3-cocycle in QOU's Lean; what is cited (not
+machine-checked) is that it cannot be gauged away.
 
 ## Formalisation
 
@@ -219,3 +234,7 @@ object, the natural next `decide`-target.
 - [`PentagonTwistAssociator.lean`](../../content/quantum-observable-universe/lean/QOU/BringsSurface/PentagonTwistAssociator.lean)
   — `assoc_pentagon`: the twist associator `dF` satisfies the pentagon (`d²=0`),
   the mechanism of the categorical route. Sorry-free, generic (§7c).
+- [`OctonionCocycle.lean`](../../content/quantum-observable-universe/lean/QOU/BringsSurface/OctonionCocycle.lean)
+  — the concrete octonion associator `det3` on `(ℤ/2)³`: `det3_is_3cocycle`
+  (pentagon-coherent, `decide` over `8⁴`) + `det3_nonzero` (non-associativity
+  fires). Sorry-free.
