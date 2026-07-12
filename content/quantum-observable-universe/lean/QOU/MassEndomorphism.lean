@@ -1,5 +1,6 @@
 import QOU.MassEndomorphism.DeltaMaxUniformBound
 import QOU.MassEndomorphism.MassEndomorphismConjecture
+import QOU.MassEndomorphism.MassLeftMulEndomorphism
 import QOU.MassEndomorphism.PhiQConvergence
 import QOU.MassEndomorphism.ZHabiroCauchy
 -- `MassEndomorphismTrivial` deliberately NOT aggregated here:
