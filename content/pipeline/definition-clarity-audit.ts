@@ -536,6 +536,27 @@ function firstDisplayIdx(md: string): number {
   return idxs.length ? Math.min(...idxs) : -1;
 }
 
+/** index of the first explicit definition anchor, or -1 — a `**Definition…`
+ *  bold lead, a `## Definition` heading, a `:defterm[…]` directive, or the first
+ *  fenced code/tex block (a Lean-class or displayed definition). Complements
+ *  `firstDisplayIdx` + `firstMarkedTermIdx` in the preamble measure: a block
+ *  that LEADS with its definition (marker near the top) and then carries trailing
+ *  exposition must not have that exposition miscounted as "preamble". Without
+ *  this, a Lean-class definition (fence is ```lean, not ```tex — invisible to
+ *  `firstDisplayIdx`) or a lead term that differs from the title (invisible to
+ *  the title-token `firstMarkedTermIdx`) yields anchor = -1 ⇒ the whole block is
+ *  counted as preamble (false positive). Only ADDS earlier anchors, so a
+ *  genuinely rambling block (definition after a long preamble) still fails. */
+function firstDefnAnchorIdx(md: string): number {
+  const idxs = [
+    md.search(/\*\*Definition\b/),
+    md.search(/^#{2,4}\s+Definition\b/im),
+    md.indexOf(":defterm["),
+    md.search(/```[a-zA-Z]/),
+  ].filter((i) => i >= 0);
+  return idxs.length ? Math.min(...idxs) : -1;
+}
+
 /** index of the first marked principal-term occurrence, or -1. */
 function firstMarkedTermIdx(md: string, pt: string[]): number {
   if (!pt.length) return -1;
@@ -658,10 +679,9 @@ function checkDefnTight(b: Block): Finding {
   const pt = principalTokens(b.title);
   const dispIdx = firstDisplayIdx(b.md);
   const termIdx = firstMarkedTermIdx(b.md, pt);
-  const anchor =
-    [dispIdx, termIdx].filter((i) => i >= 0).length === 0
-      ? -1
-      : Math.min(...[dispIdx, termIdx].filter((i) => i >= 0));
+  const markerIdx = firstDefnAnchorIdx(b.md);
+  const cands = [dispIdx, termIdx, markerIdx].filter((i) => i >= 0);
+  const anchor = cands.length === 0 ? -1 : Math.min(...cands);
   const preamble = anchor < 0 ? words : wordCount(prose(b.md.slice(0, anchor)));
   const base = mkFinding(b, "clarity-defn-tight");
   base.metrics = { words, boldHeaders: headers, preambleWords: preamble };
