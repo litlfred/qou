@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-12T00:42:48.590171+00:00",
-  "commitSha": "6bcdc989b40bd9d57d96df97a314dde026d3be24",
+  "computedAt": "2026-07-12T10:33:48.885737+00:00",
+  "commitSha": "27cbb6e2ec5168729205970a4aba0a9e1973803b",
   "assertions": [
     {
       "name": "sign_flip_structural_and_robust",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 20,
+  "durationMs": 11,
   "computation": "qbeta-c3-imq-linear-response",
   "scriptFile": "qbeta_c3_imq_linear_response_probe.py",
-  "scriptHash": "6cceb3969335",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "4d48af847198",
+  "scriptCommitSha": "f812f287d6e9a8c9b13641629f8613a4c217fa57",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
