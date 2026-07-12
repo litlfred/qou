@@ -65,7 +65,7 @@ $$
 \qquad \text{for all } r, s \in \mathbb{Z} .
 $$
 
-Choosing the sign of $rs$ to match the sign of $N_n - (q^n+1)$ gives $|rs| \cdot |N_n - (q^n+1)| \leq g\,(r^2 + s^2 q^n)$. Both sides are homogeneous of degree $2$ in $(r,s)$, so the inequality extends from integers to all rational ratios $x = r/s$ and, by continuity, to all real $x > 0$:
+Choosing the sign of $rs$ to match the sign of $N_n - (q^n+1)$ gives $|rs| \cdot |N_n - (q^n+1)| \leq g\,(r^2 + s^2 q^n)$. Both sides are homogeneous of degree $2$ in $(r,s)$ and depend only on $|r|$ and $|s|$, so the inequality extends from integers to all positive rational ratios $x = |r/s|$ and, by continuity, to all real $x > 0$:
 
 $$
 \bigl|N_n - (q^n + 1)\bigr| \;\leq\; g \cdot \frac{x^2 + q^n}{x} .
