@@ -1083,6 +1083,9 @@ export default chapter({
       blocks: [
                 "mass-physical-face-intro",
 "neutron-proton-splitting",
+        // Ledger §5 orphan integration (2026-07-12): H_4 alternating-
+        // channel Habiro-element conjecture for the Δ_pn residual.
+        "flavor-split-habiro-derivation",
         "borromean-baryon-mass-formula",
         "borromean-baryon-interpretation",
         "q-integer-mass-formula",
