@@ -65,7 +65,64 @@ only the top-row *readings* were invalid.
 
 ## Route 2 — the exact D-ladder generating function
 
-_(pending)_
+**Probe:**
+[`qbeta_dladder_generating_function_structure_probe.py`](../../computations/qbeta/qbeta_dladder_generating_function_structure_probe.py)
+(+ witness). Rebuilds the ladder (default ORD 31 → d₁…d₁₅; the analysis below
+used a 21-term ORD-43 run to sharpen the extrapolations) with O/h through the
+route-3 `ser_div`, so every `d_k ∈ ℚ(√3)` is exact — this hunts *exact*
+structure, not floats.
+
+**1 — exact parity structure.** Write `d_k = a_k + b_k√3`, `a_k, b_k ∈ ℚ`. The
+part carrying the *small* denominator alternates by parity:
+
+| k | small-denominator part | example |
+|---|---|---|
+| odd | the √3-part `b_k` | `d_1 = 1/8 − √3` (den `b`=1, den `a`=8) |
+| even | the rational part `a_k` | `d_2 = −97/6 + 5√3/288` (den `a`=6, den `b`=288) |
+
+Holds at every tested k through d₂₁.
+
+**2 — Ohtsuki/Habiro-type smooth denominators.** The simple-denominator
+interleaved sequence `s_k` (odd k → `b_k`, even k → `a_k`) has 3-smooth
+denominators: only primes {2, 3, 5, 7}, with 5 first entering at k≈7 and 7 at
+k≈10 (prime p first divides near index ~p). The 3-adic valuations
+`v₃(den s_k) = 0,1,3,4,5,7,8,9,12,13,…` climb ≈ `3k/2`. This is the signature
+of a factorial / q-factorial (Ohtsuki–Habiro) normalization.
+
+**3 — D(ũ) is CONVERGENT with a weak algebraic branch point.** Domb–Sykes
+extrapolation of the coefficient ratios (smoothed over the parity oscillation)
+is stable across windows:
+
+| window | radius ρ | exponent α |
+|---|---|---|
+| k=6…14 | 0.1461 | 0.31 |
+| k=8…16 | 0.1437 | 0.15 |
+| k=10…19 | 0.1432 | 0.11 |
+| k=12…19 | 0.1432 | 0.11 |
+
+So `D(ũ) ~ (1 − ũ/ρ)^{−α}` with **ρ ≈ 0.143** and a small exponent **α ≈ 0.1**
+(possibly log-type). This is the sharp structural contrast with routes 1: the
+state-integral **κ-tower is divergent** (Gevrey-1, `κ_n ~ Γ(n+β)/Aⁿ`, radius 0),
+whereas the net-route **D-ladder is convergent**. The two bar-odd-S routes are
+*not* the same series — a fact worth carrying forward.
+
+**4 — no holonomic recurrence.** No P-finite recurrence of order ≤ 3 / degree
+≤ 4 fits `a_k` or `b_k` (the 21-term run rules out order ≤ 4 / degree ≤ 5 too).
+`D(ũ)` is not hypergeometric or P-finite at accessible order.
+
+**5 — singularity origin (not a simple real value).** The sqrt branch points
+`q⁴+q²+1=0` and the `ũ'(q)=0` folds all map to `ũ=0` (they fold back to the
+expansion origin), and the nearest real singularity of `R(q)` — the `QA` zero
+`q=1+√2` — sits at `|ũ|=0.775 ≫ ρ`. So the branch point at ρ is a **complex**
+singularity of `log R(q(ũ))`, left unidentified. ρ lands within ~1 % of both
+`√3/12 = 0.1443` and `1/7 = 0.1429`, but the slow Domb–Sykes convergence (small
+exponent) makes a 0.3–0.7 % match meaningless — reported as data, **not** an
+identification (anti-fit).
+
+**Conclusion.** The D-ladder generating function has an exact parity +
+smooth-denominator arithmetic and is a convergent algebraic-branch-point series
+(radius ≈ 0.143), structurally distinct from the divergent κ-tower — but no
+elementary or P-finite closed form emerges at 15–21 terms.
 
 ## Route 1 — meridian-corrected Borel–Padé on the deformed rungs
 
