@@ -42,26 +42,55 @@ namespace QOU.Archimedean.ConfinedKnotBinding
 
 open QOU.Archimedean
 
-/-! ## §1  Wedderburn weights of H₃(q) -/
+/-! ## §1  Wedderburn weights of H₃(q)
 
-/-- The q-dimension of the symmetric rep (3) is 1. -/
-theorem dq_sym_eq_one : (1 : R_q) = 1 := rfl
+The symmetric `(3)` and alternating `(1,1,1)` reps of `H₃(q)` are the two
+one-dimensional reps.  Both partitions have hook-length multiset `{3,2,1}`
+(they are transposes, and the hook multiset is transpose-invariant), so
+their hook-length q-dimensions `d_q(λ) = [3]_q!/∏_{cells}[h]_q` both equal
+`1`.  Over the `CommRing` `R_q` (no division) we record this as the
+numerator/denominator identity `∏hooks = [3]_q!`. -/
 
-/-- The q-dimension of the alternating rep (1,1,1) is 1. -/
-theorem dq_alt_eq_one : (1 : R_q) = 1 := rfl
+/-- The balanced-q hook product `∏_{h ∈ hooks} [h]_q`. -/
+noncomputable def qHookProd (hooks : List ℤ) : R_q := (hooks.map qInt).prod
+
+/-- Hook lengths of the symmetric partition `(3)` (a single row): the cell
+    `(1, j)` has arm `3 - j`, leg `0`, hook `(3 - j) + 0 + 1` — giving
+    `{3, 2, 1}`. -/
+def hooksSym : List ℤ := [3, 2, 1]
+
+/-- Hook lengths of the alternating partition `(1,1,1)` (a single column):
+    the cell `(i, 1)` has arm `0`, leg `3 - i`, hook `0 + (3 - i) + 1` —
+    giving `{3, 2, 1}` (the transpose of `(3)`; identical multiset). -/
+def hooksAlt : List ℤ := [3, 2, 1]
+
+/-- `[3]_q! = [3]_q · [2]_q · [1]_q`. -/
+noncomputable def qFactorial3 : R_q := qInt 3 * qInt 2 * qInt 1
+
+/-- **The q-dimension of the symmetric rep `(3)` is `1`.**  Stated over the
+    `CommRing` `R_q` (no division) as the numerator/denominator identity
+    `∏_{h ∈ hooks}[h]_q = [3]_q!`, i.e. `d_q((3)) = [3]_q!/∏hooks = 1`. -/
+theorem dq_sym_eq_one : qHookProd hooksSym = qFactorial3 := by
+  simp only [qHookProd, hooksSym, qFactorial3, List.map_cons, List.map_nil,
+    List.prod_cons, List.prod_nil, mul_one]
+  ring
+
+/-- **The q-dimension of the alternating rep `(1,1,1)` is `1`** — same hook
+    multiset `{3,2,1}`, same identity. -/
+theorem dq_alt_eq_one : qHookProd hooksAlt = qFactorial3 := by
+  simp only [qHookProd, hooksAlt, qFactorial3, List.map_cons, List.map_nil,
+    List.prod_cons, List.prod_nil, mul_one]
+  ring
 
 /-- **Equality of the symmetric/alternating Wedderburn numerators**:
     `d_q((3))² = d_q((1,1,1))²` in `R_q`.
 
     The Wedderburn weight is `W_λ = d_q(λ)² / [3]!`.  Both channels share
     the common `[3]!` denominator, so `W_sym = W_alt` is *equivalent* to
-    this numerator equality — and both q-dimensions are `1`
-    (`dq_sym_eq_one`, `dq_alt_eq_one`), so the numerators coincide.  We
-    record only the numerator equality: division by `[3]!` is the same
-    nonzero scaling on both sides and is not available over the `CommRing`
-    `R_q`, so the weight equality itself is not stated here (it would be
-    the identical expression on both sides). -/
-theorem dq_sym_sq_eq_dq_alt_sq : (1 : R_q) ^ 2 = (1 : R_q) ^ 2 := rfl
+    this numerator equality — and both hook-products equal `[3]_q!`
+    (`dq_sym_eq_one`, `dq_alt_eq_one`), so the numerators coincide. -/
+theorem dq_sym_sq_eq_dq_alt_sq : qHookProd hooksSym ^ 2 = qHookProd hooksAlt ^ 2 := by
+  rw [dq_sym_eq_one, dq_alt_eq_one]
 
 /-! ## §2  Crossing eigenvalues -/
 
