@@ -23,12 +23,7 @@ infinitesimal loop they trace. Two structural consequences follow.
 2. **Antisymmetry.** Swapping the two observers negates the curvature,
    $F_q \mapsto -F_q$: the curvature is a genuine $2$-form on the loop.
 
-## Lean
-
-The identity and both consequences are formalised over an abstract
-non-commutative ring $R$ of germ-level perturbations in
-`QOU.LocalQ.ObservationParallelogram` — `commutator_eq_curvature`,
-`agree_iff_flat`, and `curvature_antisymm` — sorry-free. The germ
+The germ
 algebra's non-commutativity is exactly what makes the commutator, and
 hence $F_q$, non-trivial; over a commutative ring the parallelogram
 would close and $F_q$ would vanish identically.
