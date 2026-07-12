@@ -55,11 +55,12 @@ well above κ₄ (bounded below only by attainable extraction precision, which d
 
 ## Confidence
 
-κ₁ (27 digits; independently #3606-exact) and κ₂ (22 digits, height 27) are
-rock-solid. κ₃ (17 digits, height 21870) is solid. κ₄ (12 digits, height 729) is
-strong but the lowest-margin (a height-729 rational at 12 digits carries a small
-false-positive risk); a higher-N confirmation run (13 points, N ≤ 6.29M) is used
-to raise κ₃/κ₄ confidence and is reported in the witness.
+All four rungs are **firmly confirmed** by a higher-N run (13 points, N ≤ 6291456,
+dps 220): κ₁ to **36 digits**, κ₂ to **30**, κ₃ to **25**, κ₄ to **19** — each
+returning exactly its rational-multiple identification `(11/108, 2/27, 1081/21870,
+98/729)`. The earlier κ₄ margin (12 digits at N ≤ 1.5M) is superseded; a height-729
+rational reproduced to 19 digits is not a coincidence. The identifications are
+exact.
 
 ## Honest scope (anti-laundering)
 
