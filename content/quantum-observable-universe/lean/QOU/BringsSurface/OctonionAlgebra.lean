@@ -1,4 +1,5 @@
 import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Module.Defs
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.NormNum
 
@@ -110,6 +111,21 @@ instance : CommRing Cplx where
   zero_mul a := by ext <;> simp
   mul_zero a := by ext <;> simp
 
+/-- Real scalar multiplication, componentwise. -/
+instance : SMul ℝ Cplx := ⟨fun r x => ⟨r * x.re, r * x.im⟩⟩
+@[simp] theorem smul_re (r : ℝ) (x : Cplx) : (r • x).re = r * x.re := rfl
+@[simp] theorem smul_im (r : ℝ) (x : Cplx) : (r • x).im = r * x.im := rfl
+
+/-- `Cplx` is an `ℝ`-module (the vector space `ℝ²`). -/
+instance : Module ℝ Cplx where
+  smul := (· • ·)
+  one_smul a := by ext <;> simp
+  mul_smul r s a := by ext <;> simp <;> ring
+  smul_zero r := by ext <;> simp
+  smul_add r a b := by ext <;> simp <;> ring
+  add_smul r s a := by ext <;> simp <;> ring
+  zero_smul a := by ext <;> simp
+
 end Cplx
 
 /-! ## Level 2 — `Quat = CD Cplx` (the quaternions `ℍ`) -/
@@ -182,6 +198,21 @@ theorem quat_noncomm : qi * qj ≠ qj * qi := by
   have hc := congrArg (fun p => p.snd.im) h
   simp [qi, qj] at hc
   norm_num at hc
+
+/-- Real scalar multiplication, componentwise. -/
+instance : SMul ℝ Quat := ⟨fun r p => ⟨r • p.fst, r • p.snd⟩⟩
+@[simp] theorem smul_fst (r : ℝ) (p : Quat) : (r • p).fst = r • p.fst := rfl
+@[simp] theorem smul_snd (r : ℝ) (p : Quat) : (r • p).snd = r • p.snd := rfl
+
+/-- `Quat` is an `ℝ`-module (the vector space `ℝ⁴`). -/
+instance : Module ℝ Quat where
+  smul := (· • ·)
+  one_smul a := by ext <;> simp
+  mul_smul r s a := by ext <;> simp <;> ring
+  smul_zero r := by ext <;> simp
+  smul_add r a b := by ext <;> simp <;> ring
+  add_smul r s a := by ext <;> simp <;> ring
+  zero_smul a := by ext <;> simp
 
 end Quat
 
@@ -303,6 +334,23 @@ theorem one_not_imaginary : ¬ IsImaginary (1 : Oct) := by
   have hc := congrArg (fun a => a.fst.fst.re) h
   simp [conj, Quat.conj, Cplx.conj] at hc
   norm_num at hc
+
+/-- Real scalar multiplication, componentwise. -/
+instance : SMul ℝ Oct := ⟨fun r a => ⟨r • a.fst, r • a.snd⟩⟩
+@[simp] theorem smul_fst (r : ℝ) (a : Oct) : (r • a).fst = r • a.fst := rfl
+@[simp] theorem smul_snd (r : ℝ) (a : Oct) : (r • a).snd = r • a.snd := rfl
+
+/-- **`𝕆` is an `ℝ`-module** — the vector space `ℝ⁸` on which `Der(𝕆)` (Tier 3)
+lives as a linear subspace of `𝕆 →ₗ[ℝ] 𝕆`. This is the structure that makes the
+`dim 𝔤₂ = dim Der(𝕆) = 14` computation a finite linear-algebra problem. -/
+instance : Module ℝ Oct where
+  smul := (· • ·)
+  one_smul a := by ext <;> simp
+  mul_smul r s a := by ext <;> simp <;> ring
+  smul_zero r := by ext <;> simp
+  smul_add r a b := by ext <;> simp <;> ring
+  add_smul r s a := by ext <;> simp <;> ring
+  zero_smul a := by ext <;> simp
 
 end Oct
 
