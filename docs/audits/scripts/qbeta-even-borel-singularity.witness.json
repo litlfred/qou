@@ -1,0 +1,69 @@
+{
+  "computation": "qbeta-even-borel-singularity",
+  "description": "Even-channel 4\u2081 Kashaev \u03ba_n are Gevrey-1 divergent; Borel singularity A from the large-order fit \u2014 the quantitative growth-class obstruction to a term-by-term 4\u2081\u2194Q_\u03b2 bridge.",
+  "audit_only": true,
+  "tier": "numerical (large-order growth)",
+  "computedAt": "2026-07-12T11:38:09.980272+00:00",
+  "commitSha": "4c4a93620d6841c3a2312a40361f10e86023c522",
+  "engine": "mpmath",
+  "engineVersion": "1.3.0",
+  "scriptFile": "qbeta_even_borel_singularity.py",
+  "scriptHash": "6dd78ad25a32",
+  "assertions": [
+    {
+      "name": "kappa_1_4_reproduce_exact",
+      "passed": true
+    },
+    {
+      "name": "ratios_rise_gevrey1",
+      "passed": true
+    },
+    {
+      "name": "borel_singularity_finite_positive",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "kappa": {
+      "1": "0.55421647240489989879",
+      "2": "0.73108180748810063843",
+      "3": "2.6545270569495453476",
+      "4": "13.094774926381671947",
+      "5": "84.642165605038443528",
+      "6": "676.9466789641050315"
+    },
+    "confident_digits": {
+      "1": 36,
+      "2": 30,
+      "3": 25,
+      "4": 19,
+      "5": 14,
+      "6": 10
+    },
+    "reliable_ratio_rungs": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "ratios": {
+      "1": "1.31912681035",
+      "2": "3.63095761618",
+      "3": "4.93299734584",
+      "4": "6.46381217554",
+      "5": "7.99774762525"
+    },
+    "borel_singularity_A": "0.617661555754",
+    "gevrey1_beta": "0.0073498377",
+    "A_over_Vol_2pi": "1.9118745",
+    "qbeta_pole_u_substrate": "0.0085171621",
+    "verdict": "Even-channel \u03ba_n are Gevrey-1 DIVERGENT: the reliable ratios ['1.31913', '3.63096', '4.933', '6.46381', '7.99775'] rise ~linearly in n (r_n=(1/A)n+\u03b2/A), giving a finite Borel singularity A=0.61766156 (\u2248 Vol(4\u2081)/2\u03c0 \u00d7 1.9119; \u03b2\u22480.00735). This is the quantitative form of the growth-class obstruction: a Gevrey-1 divergent series cannot equal the CONVERGENT Q_\u03b2 ladder (ratio\u2192117.41, KC8) term-by-term, so the 4\u2081\u2194Q_\u03b2 bridge is necessarily the Borel/median (Faddeev \u03a6_b) resummation \u2014 i.e. the analytic continuation from the Kashaev locus |q|=1 to the real substrate q\u2080>1, NOT an \u210f\u2194u reparametrisation. Complements (does not duplicate) the \u03a6_b construction on #3544/#3596. No fit; no c_k wired; no tier change."
+  },
+  "context": {
+    "axis": "z->c_k f-map keystone: 4\u2081\u2194Q_\u03b2 bridge, even-channel Borel singularity",
+    "framing": "Kashaev |q|=1 vs substrate real q\u2080>1 \u21d2 bridge is analytic continuation (state integral), not \u210f\u2194u reparametrisation",
+    "complements": "\u03a6_b construction on #3544/#3596 (does not duplicate)"
+  }
+}
