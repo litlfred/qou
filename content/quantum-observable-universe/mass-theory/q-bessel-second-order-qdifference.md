@@ -54,7 +54,7 @@ q^{\nu}\, g(q^2 w) \;-\; \bigl(1 + q^{\nu} - w\bigr)\, g(q w) \;+\; g(w) \;=\; 0
 \qquad (\star\star)
 $$
 
-Writing $\eta$ for the $q$-shift operator $(\eta f)(w) = f(qw)$, equation $(\star\star)$ reads $\bigl[\,q^{\nu}\eta^{2} - \bigl(1 + q^{\nu} - w\bigr)\eta + 1\,\bigr] g = 0$: a genuine second-order (three-point: $w$, $qw$, $q^2 w$) $q$-difference operator, whose linear term $-w$ in the middle coefficient is the source making the coefficient ladder descend.
+Writing $\eta$ for the $q$-shift operator $(\eta f)(w) = f(qw)$, equation $(\star\star)$ reads $\bigl[\,q^{\nu}\eta^{2} - \bigl(1 + q^{\nu} - w\bigr)\eta + 1\,\bigr] g = 0$: a genuine second-order (three-point: $w$, $qw$, $q^2 w$) $q$-difference operator, whose linear term $+w$ in the middle coefficient is the source making the coefficient ladder descend.
 
 **Step 4 — equivalence of $(\star\star)$ and $(\star)$.** The computation in Steps 1–3 is reversible: $(\star\star)$ holds if and only if every $w^{k}$ coefficient vanishes, and for $k \ge 1$ that vanishing is exactly $(\star)$. The "second order" refers to the $q$-difference order (three $q$-shifted arguments); on the coefficients the equation collapses to a two-term relation between consecutive $c_k$, precisely because the middle coefficient factors through the $(\star)$ denominator as in Step 1. Equivalently, shifting the index to $k+1$, the coefficient relation is
 
