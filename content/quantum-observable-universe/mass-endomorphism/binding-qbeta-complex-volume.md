@@ -95,7 +95,7 @@ same $\mathfrak{V}$.
 - **Proved (classical limit).** The free/factorized projection
   $\chi^\lambda_{\text{free}}$ forms the disjoint-product factorization,
   proven at $q=1$ via Plancherel duality
-  ([`rem:block-multiplicativity-v-free`](../mass-theory/block-multiplicativity-v-free.md)).
+  ([`conj:block-multiplicativity-v-free`](../mass-theory/block-multiplicativity-v-free.md)).
   The $q$-deformed case remains class-axiomatized (conjectural).
 - **Conjectural (the unification itself).** We conjecture that the physical binding
   and $\mathfrak{Q}_\beta$ construct the Re/Im of the **same** $\mathfrak{V}$

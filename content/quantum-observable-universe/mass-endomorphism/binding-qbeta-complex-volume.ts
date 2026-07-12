@@ -14,7 +14,7 @@ export default conjecture({
   },
   uses: [
     "prop:categorical-mass-markov",
-    "rem:block-multiplicativity-v-free",
+    "conj:block-multiplicativity-v-free",
   ],
   cites: [
     "neumann-zagier1985",
