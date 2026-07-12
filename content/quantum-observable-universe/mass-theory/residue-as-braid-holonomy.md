@@ -1,5 +1,5 @@
 **Remark.**
-Each residue $\operatorname{Res}_{q=\zeta_\ell}[\Phi_q \cdot \mathrm{tr}_{M,\,\ell}(T_w)]$ operates gauge-theoretically as the holonomy of the braid loop $T_w$ around the singular fibre at $q = \zeta_\ell$.
+Each residue $\mathrm{Res}_{q=\zeta_\ell}[\Phi_q \cdot \mathrm{tr}_{M,\,\ell}(T_w)]$ operates gauge-theoretically as the holonomy of the braid loop $T_w$ around the singular fibre at $q = \zeta_\ell$.
 
 The complex parameter $q$ labels a flat holomorphic bundle of Hecke algebras over $\mathbb{C}^\times$. The algebra degenerates at roots of unity, creating singular fibres. The braid word defines a section that acquires monodromy when analytically continued around these fibres. The residue explicitly pairs this monodromy with the Markov trace.
 

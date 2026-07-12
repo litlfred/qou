@@ -31,7 +31,7 @@ a_D^{(n+d)} = \sum_{j<d} c_j\,a_D^{(n+j)},
 $$
 a depth-$d$ linear recurrence with $n$-independent kernel $c$. Hence a fixed-depth
 recurrence on the prolonged periods exists, with depth bounded by
-$\operatorname{rank} V$. Identifying $d$ and $c$ with the Bring Picard--Fuchs
+$\mathrm{rank}\, V$. Identifying $d$ and $c$ with the Bring Picard--Fuchs
 operator is the remaining (identification) half of
 [`conj:qdifference-kernel-prolongation-symbol`](#conj:qdifference-kernel-prolongation-symbol).
 $\qquad\blacksquare$

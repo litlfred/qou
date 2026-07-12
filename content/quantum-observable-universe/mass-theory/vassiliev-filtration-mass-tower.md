@@ -1,7 +1,7 @@
-The Markov trace $\operatorname{tr}_M(\beta)(q)$ expands about $q = 1$ in the Hecke deformation parameter $h = q - q^{-1}$:
+The Markov trace $\mathrm{tr}_M(\beta)(q)$ expands about $q = 1$ in the Hecke deformation parameter $h = q - q^{-1}$:
 
 $$
-  \operatorname{tr}_M(\beta)(q)
+  \mathrm{tr}_M(\beta)(q)
   \;=\;
   c_0(\beta)
   \;+\;

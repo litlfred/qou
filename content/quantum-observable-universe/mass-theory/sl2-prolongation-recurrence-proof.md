@@ -1,6 +1,6 @@
 By [`prop:prolonged-periods-fixed-depth`](#prop:prolonged-periods-fixed-depth)
 the prolongation acts through a $2\times 2$ operator $B$ on the $W$-Hodge plane,
-and Cayley--Hamilton gives $B^2 = \operatorname{tr}(B)\,B - \det(B)\,\mathbf 1$.
+and Cayley--Hamilton gives $B^2 = \mathrm{tr}(B)\,B - \det(B)\,\mathbf 1$.
 
 The cup-product pairing $\langle\alpha,\beta\rangle = \int \alpha\wedge\beta$ on
 $H^1$ is a symplectic form preserved by the Gauss--Manin monodromy (it is
@@ -11,7 +11,7 @@ Therefore $B$ preserves a non-degenerate alternating form on a $2$-dimensional
 space, i.e. $B \in \mathrm{Sp}(2) = \mathrm{SL}_2$, so $\det B = 1$.
 
 Substituting $\det B = 1$ into Cayley--Hamilton gives
-$B^2 = \tau\,B - \mathbf 1$ with $\tau = \operatorname{tr} B$. Multiplying by
+$B^2 = \tau\,B - \mathbf 1$ with $\tau = \mathrm{tr}\, B$. Multiplying by
 $B^n$ and using $B^{n}\!\cdot B^2 = B^{n+2}$, $B^{n}\!\cdot B = B^{n+1}$,
 $$
 B^{\,n+2} = B^n(\tau B - \mathbf 1) = \tau\,B^{\,n+1} - B^{\,n},
